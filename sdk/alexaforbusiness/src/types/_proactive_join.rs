@@ -22,9 +22,7 @@ impl ProactiveJoin {
 
 /// A builder for [`ProactiveJoin`](crate::types::ProactiveJoin).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProactiveJoinBuilder {
     pub(crate) enabled_by_motion: ::std::option::Option<bool>,
 }

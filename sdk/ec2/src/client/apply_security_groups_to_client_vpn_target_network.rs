@@ -10,7 +10,12 @@ impl super::Client {
     /// - On success, responds with [`ApplySecurityGroupsToClientVpnTargetNetworkOutput`](crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkOutput) with field(s):
     ///   - [`security_group_ids(Option<Vec<String>>)`](crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkOutput::security_group_ids): <p>The IDs of the applied security groups.</p>
     /// - On failure, responds with [`SdkError<ApplySecurityGroupsToClientVpnTargetNetworkError>`](crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkError)
-    pub fn apply_security_groups_to_client_vpn_target_network(&self) -> crate::operation::apply_security_groups_to_client_vpn_target_network::builders::ApplySecurityGroupsToClientVpnTargetNetworkFluentBuilder{
-        crate::operation::apply_security_groups_to_client_vpn_target_network::builders::ApplySecurityGroupsToClientVpnTargetNetworkFluentBuilder::new(self.handle.clone())
+    pub fn apply_security_groups_to_client_vpn_target_network(
+        &self,
+    ) -> crate::operation::apply_security_groups_to_client_vpn_target_network::builders::ApplySecurityGroupsToClientVpnTargetNetworkFluentBuilder
+    {
+        crate::operation::apply_security_groups_to_client_vpn_target_network::builders::ApplySecurityGroupsToClientVpnTargetNetworkFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

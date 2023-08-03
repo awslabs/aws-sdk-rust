@@ -10,10 +10,7 @@ impl GetPersonTrackingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_person_tracking::GetPersonTrackingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_person_tracking::GetPersonTrackingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_person_tracking::GetPersonTrackingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_person_tracking();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl GetPersonTrackingFluentBuilder {
         }
     }
     /// Access the GetPersonTracking as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_person_tracking::builders::GetPersonTrackingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_person_tracking::builders::GetPersonTrackingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl GetPersonTrackingFluentBuilder {
             crate::operation::get_person_tracking::GetPersonTracking,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_person_tracking::GetPersonTrackingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_person_tracking::GetPersonTrackingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl GetPersonTrackingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl GetPersonTrackingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_person_tracking::GetPersonTrackingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_person_tracking::GetPersonTrackingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_person_tracking::GetPersonTrackingError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl GetPersonTrackingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_person_tracking::GetPersonTrackingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_person_tracking::GetPersonTrackingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_person_tracking::GetPersonTrackingError>,
     > {
         self.send_middleware().await
     }
@@ -124,22 +110,15 @@ impl GetPersonTrackingFluentBuilder {
             crate::operation::get_person_tracking::GetPersonTracking,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_person_tracking::GetPersonTrackingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_person_tracking::GetPersonTrackingError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_person_tracking::paginator::GetPersonTrackingPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_person_tracking::paginator::GetPersonTrackingPaginator {
-        crate::operation::get_person_tracking::paginator::GetPersonTrackingPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_person_tracking::paginator::GetPersonTrackingPaginator {
+        crate::operation::get_person_tracking::paginator::GetPersonTrackingPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>. </p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -189,10 +168,7 @@ impl GetPersonTrackingFluentBuilder {
         self
     }
     /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons. If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::PersonTrackingSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::PersonTrackingSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

@@ -49,24 +49,19 @@ impl ::aws_http::request_id::RequestId for UpdateFolderPermissionsOutput {
 }
 impl UpdateFolderPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFolderPermissionsOutput`](crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsOutputBuilder {
         crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFolderPermissionsOutput`](crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFolderPermissionsOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) folder_id: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -125,17 +120,12 @@ impl UpdateFolderPermissionsOutputBuilder {
         self
     }
     /// <p>Information about the permissions for the folder.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>Information about the permissions for the folder.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.permissions
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -162,9 +152,7 @@ impl UpdateFolderPermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateFolderPermissionsOutput`](crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput {
+    pub fn build(self) -> crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput {
         crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput {
             status: self.status.unwrap_or_default(),
             arn: self.arn,

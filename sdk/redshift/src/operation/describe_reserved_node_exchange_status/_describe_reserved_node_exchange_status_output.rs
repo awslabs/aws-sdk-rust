@@ -5,8 +5,7 @@
 pub struct DescribeReservedNodeExchangeStatusOutput {
     /// <p>The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.</p>
     #[doc(hidden)]
-    pub reserved_node_exchange_status_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeExchangeStatus>>,
+    pub reserved_node_exchange_status_details: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeExchangeStatus>>,
     /// <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
     #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeReservedNodeExchangeStatusOutput {
 }
 impl DescribeReservedNodeExchangeStatusOutput {
     /// <p>The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.</p>
-    pub fn reserved_node_exchange_status_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReservedNodeExchangeStatus]> {
+    pub fn reserved_node_exchange_status_details(&self) -> ::std::option::Option<&[crate::types::ReservedNodeExchangeStatus]> {
         self.reserved_node_exchange_status_details.as_deref()
     }
     /// <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeReservedNodeExchangeStatusOut
 }
 impl DescribeReservedNodeExchangeStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedNodeExchangeStatusOutput`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusOutput).
-    pub fn builder() -> crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusOutputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusOutputBuilder {
         crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedNodeExchangeStatusOutput`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedNodeExchangeStatusOutputBuilder {
-    pub(crate) reserved_node_exchange_status_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeExchangeStatus>>,
+    pub(crate) reserved_node_exchange_status_details: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeExchangeStatus>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +47,8 @@ impl DescribeReservedNodeExchangeStatusOutputBuilder {
     /// To override the contents of this collection use [`set_reserved_node_exchange_status_details`](Self::set_reserved_node_exchange_status_details).
     ///
     /// <p>The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.</p>
-    pub fn reserved_node_exchange_status_details(
-        mut self,
-        input: crate::types::ReservedNodeExchangeStatus,
-    ) -> Self {
-        let mut v = self
-            .reserved_node_exchange_status_details
-            .unwrap_or_default();
+    pub fn reserved_node_exchange_status_details(mut self, input: crate::types::ReservedNodeExchangeStatus) -> Self {
+        let mut v = self.reserved_node_exchange_status_details.unwrap_or_default();
         v.push(input);
         self.reserved_node_exchange_status_details = ::std::option::Option::Some(v);
         self
@@ -73,9 +62,7 @@ impl DescribeReservedNodeExchangeStatusOutputBuilder {
         self
     }
     /// <p>The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.</p>
-    pub fn get_reserved_node_exchange_status_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeExchangeStatus>> {
+    pub fn get_reserved_node_exchange_status_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeExchangeStatus>> {
         &self.reserved_node_exchange_status_details
     }
     /// <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
@@ -102,12 +89,10 @@ impl DescribeReservedNodeExchangeStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReservedNodeExchangeStatusOutput`](crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusOutput).
-    pub fn build(self) -> crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusOutput{
+    pub fn build(self) -> crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusOutput {
         crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusOutput {
-            reserved_node_exchange_status_details: self.reserved_node_exchange_status_details
-            ,
-            marker: self.marker
-            ,
+            reserved_node_exchange_status_details: self.reserved_node_exchange_status_details,
+            marker: self.marker,
             _request_id: self._request_id,
         }
     }

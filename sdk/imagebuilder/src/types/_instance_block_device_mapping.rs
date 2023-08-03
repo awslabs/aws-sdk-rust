@@ -44,9 +44,7 @@ impl InstanceBlockDeviceMapping {
 
 /// A builder for [`InstanceBlockDeviceMapping`](crate::types::InstanceBlockDeviceMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceBlockDeviceMappingBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) ebs: ::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification>,
@@ -74,17 +72,12 @@ impl InstanceBlockDeviceMappingBuilder {
         self
     }
     /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
-    pub fn set_ebs(
-        mut self,
-        input: ::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification>,
-    ) -> Self {
+    pub fn set_ebs(mut self, input: ::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification>) -> Self {
         self.ebs = input;
         self
     }
     /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
-    pub fn get_ebs(
-        &self,
-    ) -> &::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification> {
+    pub fn get_ebs(&self) -> &::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification> {
         &self.ebs
     }
     /// <p>Use to manage instance ephemeral devices.</p>

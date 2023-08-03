@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`presets(Option<Vec<Preset>>)`](crate::operation::list_presets::ListPresetsOutput::presets): <p>An array of <code>Preset</code> objects.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_presets::ListPresetsOutput::next_page_token): <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListPresetsError>`](crate::operation::list_presets::ListPresetsError)
-    pub fn list_presets(
-        &self,
-    ) -> crate::operation::list_presets::builders::ListPresetsFluentBuilder {
+    pub fn list_presets(&self) -> crate::operation::list_presets::builders::ListPresetsFluentBuilder {
         crate::operation::list_presets::builders::ListPresetsFluentBuilder::new(self.handle.clone())
     }
 }

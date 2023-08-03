@@ -4,9 +4,7 @@ pub fn ser_import_tr34_key_block(
     input: &crate::types::ImportTr34KeyBlock,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.certificate_authority_public_key_identifier {
-        object
-            .key("CertificateAuthorityPublicKeyIdentifier")
-            .string(var_1.as_str());
+        object.key("CertificateAuthorityPublicKeyIdentifier").string(var_1.as_str());
     }
     if let Some(var_2) = &input.signing_key_certificate {
         object.key("SigningKeyCertificate").string(var_2.as_str());

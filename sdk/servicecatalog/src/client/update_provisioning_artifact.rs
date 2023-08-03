@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`info(Option<HashMap<String, String>>)`](crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactOutput::info): <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     ///   - [`status(Option<Status>)`](crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactOutput::status): <p>The status of the current request.</p>
     /// - On failure, responds with [`SdkError<UpdateProvisioningArtifactError>`](crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactError)
-    pub fn update_provisioning_artifact(&self) -> crate::operation::update_provisioning_artifact::builders::UpdateProvisioningArtifactFluentBuilder{
+    pub fn update_provisioning_artifact(&self) -> crate::operation::update_provisioning_artifact::builders::UpdateProvisioningArtifactFluentBuilder {
         crate::operation::update_provisioning_artifact::builders::UpdateProvisioningArtifactFluentBuilder::new(self.handle.clone())
     }
 }

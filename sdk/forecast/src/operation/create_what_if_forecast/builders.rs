@@ -37,10 +37,7 @@ impl CreateWhatIfForecastFluentBuilder {
         }
     }
     /// Access the CreateWhatIfForecast as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_what_if_forecast::builders::CreateWhatIfForecastInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_what_if_forecast::builders::CreateWhatIfForecastInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateWhatIfForecastFluentBuilder {
             crate::operation::create_what_if_forecast::CreateWhatIfForecast,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_what_if_forecast::CreateWhatIfForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_what_if_forecast::CreateWhatIfForecastError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateWhatIfForecastFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateWhatIfForecastFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_what_if_forecast::CreateWhatIfForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_what_if_forecast::CreateWhatIfForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_what_if_forecast::CreateWhatIfForecastError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateWhatIfForecastFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_what_if_forecast::CreateWhatIfForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_what_if_forecast::CreateWhatIfForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_what_if_forecast::CreateWhatIfForecastError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateWhatIfForecastFluentBuilder {
             crate::operation::create_what_if_forecast::CreateWhatIfForecast,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_what_if_forecast::CreateWhatIfForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_what_if_forecast::CreateWhatIfForecastError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
-    pub fn what_if_forecast_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_forecast_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.what_if_forecast_name(input.into());
         self
     }
     /// <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
-    pub fn set_what_if_forecast_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_forecast_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_what_if_forecast_name(input);
         self
     }
@@ -144,18 +124,12 @@ impl CreateWhatIfForecastFluentBuilder {
         self.inner.get_what_if_forecast_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
-    pub fn what_if_analysis_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn what_if_analysis_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.what_if_analysis_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
-    pub fn set_what_if_analysis_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_what_if_analysis_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_what_if_analysis_arn(input);
         self
     }
@@ -168,35 +142,24 @@ impl CreateWhatIfForecastFluentBuilder {
     /// To override the contents of this collection use [`set_time_series_transformations`](Self::set_time_series_transformations).
     ///
     /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
-    pub fn time_series_transformations(
-        mut self,
-        input: crate::types::TimeSeriesTransformation,
-    ) -> Self {
+    pub fn time_series_transformations(mut self, input: crate::types::TimeSeriesTransformation) -> Self {
         self.inner = self.inner.time_series_transformations(input);
         self
     }
     /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
-    pub fn set_time_series_transformations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesTransformation>>,
-    ) -> Self {
+    pub fn set_time_series_transformations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesTransformation>>) -> Self {
         self.inner = self.inner.set_time_series_transformations(input);
         self
     }
     /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
-    pub fn get_time_series_transformations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesTransformation>> {
+    pub fn get_time_series_transformations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesTransformation>> {
         self.inner.get_time_series_transformations()
     }
     /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast.</p>
     /// <p>This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
     /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
     /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
-    pub fn time_series_replacements_data_source(
-        mut self,
-        input: crate::types::TimeSeriesReplacementsDataSource,
-    ) -> Self {
+    pub fn time_series_replacements_data_source(mut self, input: crate::types::TimeSeriesReplacementsDataSource) -> Self {
         self.inner = self.inner.time_series_replacements_data_source(input);
         self
     }
@@ -204,10 +167,7 @@ impl CreateWhatIfForecastFluentBuilder {
     /// <p>This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
     /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
     /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
-    pub fn set_time_series_replacements_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeSeriesReplacementsDataSource>,
-    ) -> Self {
+    pub fn set_time_series_replacements_data_source(mut self, input: ::std::option::Option<crate::types::TimeSeriesReplacementsDataSource>) -> Self {
         self.inner = self.inner.set_time_series_replacements_data_source(input);
         self
     }
@@ -215,9 +175,7 @@ impl CreateWhatIfForecastFluentBuilder {
     /// <p>This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
     /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
     /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
-    pub fn get_time_series_replacements_data_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeSeriesReplacementsDataSource> {
+    pub fn get_time_series_replacements_data_source(&self) -> &::std::option::Option<crate::types::TimeSeriesReplacementsDataSource> {
         self.inner.get_time_series_replacements_data_source()
     }
     /// Appends an item to `Tags`.
@@ -230,10 +188,7 @@ impl CreateWhatIfForecastFluentBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

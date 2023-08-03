@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`items(Option<Vec<AccessLogSubscriptionSummary>>)`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput::items): <p>The access log subscriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput::next_token): <p>A pagination token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListAccessLogSubscriptionsError>`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError)
-    pub fn list_access_log_subscriptions(&self) -> crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder{
+    pub fn list_access_log_subscriptions(
+        &self,
+    ) -> crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder {
         crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder::new(self.handle.clone())
     }
 }

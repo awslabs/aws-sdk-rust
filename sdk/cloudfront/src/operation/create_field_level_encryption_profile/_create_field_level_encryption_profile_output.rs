@@ -5,8 +5,7 @@
 pub struct CreateFieldLevelEncryptionProfileOutput {
     /// <p>Returned when you create a new field-level encryption profile.</p>
     #[doc(hidden)]
-    pub field_level_encryption_profile:
-        ::std::option::Option<crate::types::FieldLevelEncryptionProfile>,
+    pub field_level_encryption_profile: ::std::option::Option<crate::types::FieldLevelEncryptionProfile>,
     /// <p>The fully qualified URI of the new profile resource just created.</p>
     #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
@@ -17,9 +16,7 @@ pub struct CreateFieldLevelEncryptionProfileOutput {
 }
 impl CreateFieldLevelEncryptionProfileOutput {
     /// <p>Returned when you create a new field-level encryption profile.</p>
-    pub fn field_level_encryption_profile(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FieldLevelEncryptionProfile> {
+    pub fn field_level_encryption_profile(&self) -> ::std::option::Option<&crate::types::FieldLevelEncryptionProfile> {
         self.field_level_encryption_profile.as_ref()
     }
     /// <p>The fully qualified URI of the new profile resource just created.</p>
@@ -38,44 +35,33 @@ impl ::aws_http::request_id::RequestId for CreateFieldLevelEncryptionProfileOutp
 }
 impl CreateFieldLevelEncryptionProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateFieldLevelEncryptionProfileOutput`](crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileOutput).
-    pub fn builder() -> crate::operation::create_field_level_encryption_profile::builders::CreateFieldLevelEncryptionProfileOutputBuilder{
+    pub fn builder() -> crate::operation::create_field_level_encryption_profile::builders::CreateFieldLevelEncryptionProfileOutputBuilder {
         crate::operation::create_field_level_encryption_profile::builders::CreateFieldLevelEncryptionProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFieldLevelEncryptionProfileOutput`](crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFieldLevelEncryptionProfileOutputBuilder {
-    pub(crate) field_level_encryption_profile:
-        ::std::option::Option<crate::types::FieldLevelEncryptionProfile>,
+    pub(crate) field_level_encryption_profile: ::std::option::Option<crate::types::FieldLevelEncryptionProfile>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateFieldLevelEncryptionProfileOutputBuilder {
     /// <p>Returned when you create a new field-level encryption profile.</p>
-    pub fn field_level_encryption_profile(
-        mut self,
-        input: crate::types::FieldLevelEncryptionProfile,
-    ) -> Self {
+    pub fn field_level_encryption_profile(mut self, input: crate::types::FieldLevelEncryptionProfile) -> Self {
         self.field_level_encryption_profile = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returned when you create a new field-level encryption profile.</p>
-    pub fn set_field_level_encryption_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldLevelEncryptionProfile>,
-    ) -> Self {
+    pub fn set_field_level_encryption_profile(mut self, input: ::std::option::Option<crate::types::FieldLevelEncryptionProfile>) -> Self {
         self.field_level_encryption_profile = input;
         self
     }
     /// <p>Returned when you create a new field-level encryption profile.</p>
-    pub fn get_field_level_encryption_profile(
-        &self,
-    ) -> &::std::option::Option<crate::types::FieldLevelEncryptionProfile> {
+    pub fn get_field_level_encryption_profile(&self) -> &::std::option::Option<crate::types::FieldLevelEncryptionProfile> {
         &self.field_level_encryption_profile
     }
     /// <p>The fully qualified URI of the new profile resource just created.</p>
@@ -116,14 +102,11 @@ impl CreateFieldLevelEncryptionProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateFieldLevelEncryptionProfileOutput`](crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileOutput).
-    pub fn build(self) -> crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileOutput{
+    pub fn build(self) -> crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileOutput {
         crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileOutput {
-            field_level_encryption_profile: self.field_level_encryption_profile
-            ,
-            location: self.location
-            ,
-            e_tag: self.e_tag
-            ,
+            field_level_encryption_profile: self.field_level_encryption_profile,
+            location: self.location,
+            e_tag: self.e_tag,
             _request_id: self._request_id,
         }
     }

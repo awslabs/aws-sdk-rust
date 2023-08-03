@@ -27,7 +27,7 @@ impl CreateVoiceConnectorGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateVoiceConnectorGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupInputBuilder,
+    inner: crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupInputBuilder,
 }
 impl CreateVoiceConnectorGroupFluentBuilder {
     /// Creates a new `CreateVoiceConnectorGroup`.
@@ -38,7 +38,7 @@ impl CreateVoiceConnectorGroupFluentBuilder {
         }
     }
     /// Access the CreateVoiceConnectorGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateVoiceConnectorGroupFluentBuilder {
             crate::operation::create_voice_connector_group::CreateVoiceConnectorGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateVoiceConnectorGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateVoiceConnectorGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateVoiceConnectorGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl CreateVoiceConnectorGroupFluentBuilder {
             crate::operation::create_voice_connector_group::CreateVoiceConnectorGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -145,17 +134,12 @@ impl CreateVoiceConnectorGroupFluentBuilder {
         self
     }
     /// <p>Lists the Voice Connectors that inbound calls are routed to.</p>
-    pub fn set_voice_connector_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
-    ) -> Self {
+    pub fn set_voice_connector_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>) -> Self {
         self.inner = self.inner.set_voice_connector_items(input);
         self
     }
     /// <p>Lists the Voice Connectors that inbound calls are routed to.</p>
-    pub fn get_voice_connector_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>> {
+    pub fn get_voice_connector_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>> {
         self.inner.get_voice_connector_items()
     }
 }

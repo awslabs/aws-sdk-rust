@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::execute_scheduled_query::builders::ExecuteScheduledQueryFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::execute_scheduled_query::builders::ExecuteScheduledQueryFluentBuilder::set_client_token): <p>Not used. </p>
     /// - On success, responds with [`ExecuteScheduledQueryOutput`](crate::operation::execute_scheduled_query::ExecuteScheduledQueryOutput)
     /// - On failure, responds with [`SdkError<ExecuteScheduledQueryError>`](crate::operation::execute_scheduled_query::ExecuteScheduledQueryError)
-    pub fn execute_scheduled_query(
-        &self,
-    ) -> crate::operation::execute_scheduled_query::builders::ExecuteScheduledQueryFluentBuilder
-    {
-        crate::operation::execute_scheduled_query::builders::ExecuteScheduledQueryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn execute_scheduled_query(&self) -> crate::operation::execute_scheduled_query::builders::ExecuteScheduledQueryFluentBuilder {
+        crate::operation::execute_scheduled_query::builders::ExecuteScheduledQueryFluentBuilder::new(self.handle.clone())
     }
 }

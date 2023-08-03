@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeletePublicIpv4PoolOutput {
 }
 impl DeletePublicIpv4PoolOutput {
     /// Creates a new builder-style object to manufacture [`DeletePublicIpv4PoolOutput`](crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_public_ipv4_pool::builders::DeletePublicIpv4PoolOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_public_ipv4_pool::builders::DeletePublicIpv4PoolOutputBuilder {
         crate::operation::delete_public_ipv4_pool::builders::DeletePublicIpv4PoolOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePublicIpv4PoolOutput`](crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePublicIpv4PoolOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,

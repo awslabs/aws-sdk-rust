@@ -30,9 +30,7 @@ impl ConditionalFormattingCustomIconOptions {
 
 /// A builder for [`ConditionalFormattingCustomIconOptions`](crate::types::ConditionalFormattingCustomIconOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConditionalFormattingCustomIconOptionsBuilder {
     pub(crate) icon: ::std::option::Option<crate::types::Icon>,
     pub(crate) unicode_icon: ::std::option::Option<::std::string::String>,

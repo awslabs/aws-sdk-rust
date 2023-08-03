@@ -23,9 +23,7 @@ impl InferenceDeviceMemoryInfo {
 
 /// A builder for [`InferenceDeviceMemoryInfo`](crate::types::InferenceDeviceMemoryInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceDeviceMemoryInfoBuilder {
     pub(crate) size_in_mi_b: ::std::option::Option<i32>,
 }

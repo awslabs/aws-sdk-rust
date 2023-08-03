@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetAccountAliasOutput`](crate::operation::get_account_alias::GetAccountAliasOutput) with field(s):
     ///   - [`account_alias(Option<String>)`](crate::operation::get_account_alias::GetAccountAliasOutput::account_alias): <p>An alias or short name for an Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<GetAccountAliasError>`](crate::operation::get_account_alias::GetAccountAliasError)
-    pub fn get_account_alias(
-        &self,
-    ) -> crate::operation::get_account_alias::builders::GetAccountAliasFluentBuilder {
-        crate::operation::get_account_alias::builders::GetAccountAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_account_alias(&self) -> crate::operation::get_account_alias::builders::GetAccountAliasFluentBuilder {
+        crate::operation::get_account_alias::builders::GetAccountAliasFluentBuilder::new(self.handle.clone())
     }
 }

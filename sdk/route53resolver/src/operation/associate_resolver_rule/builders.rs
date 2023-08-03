@@ -37,10 +37,7 @@ impl AssociateResolverRuleFluentBuilder {
         }
     }
     /// Access the AssociateResolverRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_resolver_rule::builders::AssociateResolverRuleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_resolver_rule::builders::AssociateResolverRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AssociateResolverRuleFluentBuilder {
             crate::operation::associate_resolver_rule::AssociateResolverRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resolver_rule::AssociateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resolver_rule::AssociateResolverRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AssociateResolverRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AssociateResolverRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_resolver_rule::AssociateResolverRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resolver_rule::AssociateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resolver_rule::AssociateResolverRuleError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AssociateResolverRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_resolver_rule::AssociateResolverRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resolver_rule::AssociateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resolver_rule::AssociateResolverRuleError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl AssociateResolverRuleFluentBuilder {
             crate::operation::associate_resolver_rule::AssociateResolverRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_resolver_rule::AssociateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_resolver_rule::AssociateResolverRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
-    pub fn resolver_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_rule_id(input.into());
         self
     }
     /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
-    pub fn set_resolver_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolver_rule_id(input);
         self
     }

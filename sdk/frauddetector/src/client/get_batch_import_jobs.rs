@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`batch_imports(Option<Vec<BatchImport>>)`](crate::operation::get_batch_import_jobs::GetBatchImportJobsOutput::batch_imports): <p>An array containing the details of each batch import job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_batch_import_jobs::GetBatchImportJobsOutput::next_token): <p>The next token for the subsequent resquest.</p>
     /// - On failure, responds with [`SdkError<GetBatchImportJobsError>`](crate::operation::get_batch_import_jobs::GetBatchImportJobsError)
-    pub fn get_batch_import_jobs(
-        &self,
-    ) -> crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsFluentBuilder {
-        crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_batch_import_jobs(&self) -> crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsFluentBuilder {
+        crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsFluentBuilder::new(self.handle.clone())
     }
 }

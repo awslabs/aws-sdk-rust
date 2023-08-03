@@ -39,10 +39,7 @@ impl IsAuthorizedWithTokenFluentBuilder {
         }
     }
     /// Access the IsAuthorizedWithToken as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl IsAuthorizedWithTokenFluentBuilder {
             crate::operation::is_authorized_with_token::IsAuthorizedWithToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::is_authorized_with_token::IsAuthorizedWithTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::is_authorized_with_token::IsAuthorizedWithTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl IsAuthorizedWithTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl IsAuthorizedWithTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::is_authorized_with_token::IsAuthorizedWithTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::is_authorized_with_token::IsAuthorizedWithTokenError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl IsAuthorizedWithTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::is_authorized_with_token::IsAuthorizedWithTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::is_authorized_with_token::IsAuthorizedWithTokenError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl IsAuthorizedWithTokenFluentBuilder {
             crate::operation::is_authorized_with_token::IsAuthorizedWithToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::is_authorized_with_token::IsAuthorizedWithTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::is_authorized_with_token::IsAuthorizedWithTokenError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
@@ -146,18 +126,12 @@ impl IsAuthorizedWithTokenFluentBuilder {
         self.inner.get_policy_store_id()
     }
     /// <p>Specifies an identity token for the principal to be authorized. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an <code>AccessToken</code> or an <code>IdentityToken</code>, but not both.</p>
-    pub fn identity_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_token(input.into());
         self
     }
     /// <p>Specifies an identity token for the principal to be authorized. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an <code>AccessToken</code> or an <code>IdentityToken</code>, but not both.</p>
-    pub fn set_identity_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_token(input);
         self
     }
@@ -185,10 +159,7 @@ impl IsAuthorizedWithTokenFluentBuilder {
         self
     }
     /// <p>Specifies the requested action to be authorized. Is the specified principal authorized to perform this action on the specified resource.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionIdentifier>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::ActionIdentifier>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
@@ -202,10 +173,7 @@ impl IsAuthorizedWithTokenFluentBuilder {
         self
     }
     /// <p>Specifies the resource for which the authorization decision is made. For example, is the principal allowed to perform the action on the resource?</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityIdentifier>,
-    ) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
         self.inner = self.inner.set_resource(input);
         self
     }
@@ -219,10 +187,7 @@ impl IsAuthorizedWithTokenFluentBuilder {
         self
     }
     /// <p>Specifies additional context that can be used to make more granular authorization decisions.</p>
-    pub fn set_context(
-        mut self,
-        input: ::std::option::Option<crate::types::ContextDefinition>,
-    ) -> Self {
+    pub fn set_context(mut self, input: ::std::option::Option<crate::types::ContextDefinition>) -> Self {
         self.inner = self.inner.set_context(input);
         self
     }
@@ -240,10 +205,7 @@ impl IsAuthorizedWithTokenFluentBuilder {
     /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
     /// </note>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<crate::types::EntitiesDefinition>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<crate::types::EntitiesDefinition>) -> Self {
         self.inner = self.inner.set_entities(input);
         self
     }

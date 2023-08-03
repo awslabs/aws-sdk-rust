@@ -40,10 +40,7 @@ impl PublishPackageVersionFluentBuilder {
         }
     }
     /// Access the PublishPackageVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::publish_package_version::builders::PublishPackageVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::publish_package_version::builders::PublishPackageVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl PublishPackageVersionFluentBuilder {
             crate::operation::publish_package_version::PublishPackageVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::publish_package_version::PublishPackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish_package_version::PublishPackageVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl PublishPackageVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl PublishPackageVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::publish_package_version::PublishPackageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::publish_package_version::PublishPackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish_package_version::PublishPackageVersionError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl PublishPackageVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::publish_package_version::PublishPackageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::publish_package_version::PublishPackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish_package_version::PublishPackageVersionError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl PublishPackageVersionFluentBuilder {
             crate::operation::publish_package_version::PublishPackageVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::publish_package_version::PublishPackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish_package_version::PublishPackageVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -214,18 +200,12 @@ impl PublishPackageVersionFluentBuilder {
         self.inner.get_package()
     }
     /// <p>The package version to publish (for example, <code>3.5.2</code>).</p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package_version(input.into());
         self
     }
     /// <p>The package version to publish (for example, <code>3.5.2</code>).</p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package_version(input);
         self
     }
@@ -239,17 +219,12 @@ impl PublishPackageVersionFluentBuilder {
         self
     }
     /// <p>The content of the asset to publish.</p>
-    pub fn set_asset_content(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_asset_content(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_asset_content(input);
         self
     }
     /// <p>The content of the asset to publish.</p>
-    pub fn get_asset_content(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_asset_content(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         self.inner.get_asset_content()
     }
     /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> </p>

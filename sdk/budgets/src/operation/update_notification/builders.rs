@@ -10,10 +10,7 @@ impl UpdateNotificationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_notification::UpdateNotificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_notification::UpdateNotificationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_notification::UpdateNotificationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_notification();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateNotificationFluentBuilder {
         }
     }
     /// Access the UpdateNotification as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_notification::builders::UpdateNotificationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_notification::builders::UpdateNotificationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateNotificationFluentBuilder {
             crate::operation::update_notification::UpdateNotification,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_notification::UpdateNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_notification::UpdateNotificationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateNotificationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateNotificationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_notification::UpdateNotificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_notification::UpdateNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_notification::UpdateNotificationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateNotificationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_notification::UpdateNotificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_notification::UpdateNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_notification::UpdateNotificationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateNotificationFluentBuilder {
             crate::operation::update_notification::UpdateNotification,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_notification::UpdateNotificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_notification::UpdateNotificationError>,
     > {
         self.customize_middleware().await
     }
@@ -156,10 +140,7 @@ impl UpdateNotificationFluentBuilder {
         self
     }
     /// <p>The previous notification that is associated with a budget.</p>
-    pub fn set_old_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::Notification>,
-    ) -> Self {
+    pub fn set_old_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
         self.inner = self.inner.set_old_notification(input);
         self
     }
@@ -173,10 +154,7 @@ impl UpdateNotificationFluentBuilder {
         self
     }
     /// <p>The updated notification to be associated with a budget.</p>
-    pub fn set_new_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::Notification>,
-    ) -> Self {
+    pub fn set_new_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
         self.inner = self.inner.set_new_notification(input);
         self
     }

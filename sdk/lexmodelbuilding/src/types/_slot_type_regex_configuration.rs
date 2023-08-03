@@ -51,9 +51,7 @@ impl SlotTypeRegexConfiguration {
 
 /// A builder for [`SlotTypeRegexConfiguration`](crate::types::SlotTypeRegexConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotTypeRegexConfigurationBuilder {
     pub(crate) pattern: ::std::option::Option<::std::string::String>,
 }
@@ -116,8 +114,6 @@ impl SlotTypeRegexConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`SlotTypeRegexConfiguration`](crate::types::SlotTypeRegexConfiguration).
     pub fn build(self) -> crate::types::SlotTypeRegexConfiguration {
-        crate::types::SlotTypeRegexConfiguration {
-            pattern: self.pattern,
-        }
+        crate::types::SlotTypeRegexConfiguration { pattern: self.pattern }
     }
 }

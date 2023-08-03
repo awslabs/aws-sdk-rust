@@ -30,9 +30,7 @@ impl ProcessingOutputConfig {
 
 /// A builder for [`ProcessingOutputConfig`](crate::types::ProcessingOutputConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessingOutputConfigBuilder {
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingOutput>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -50,17 +48,12 @@ impl ProcessingOutputConfigBuilder {
         self
     }
     /// <p>An array of outputs configuring the data to upload from the processing container.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingOutput>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingOutput>>) -> Self {
         self.outputs = input;
         self
     }
     /// <p>An array of outputs configuring the data to upload from the processing container.</p>
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessingOutput>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessingOutput>> {
         &self.outputs
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.</p>

@@ -39,18 +39,10 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
-#[deprecated(
-    note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel."
-)]
+#[deprecated(note = "This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel.")]
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WorkflowState {
     #[allow(missing_docs)] // documentation missing in model
@@ -74,9 +66,7 @@ impl ::std::convert::From<&str> for WorkflowState {
             "IN_PROGRESS" => WorkflowState::InProgress,
             "NEW" => WorkflowState::New,
             "RESOLVED" => WorkflowState::Resolved,
-            other => {
-                WorkflowState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => WorkflowState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

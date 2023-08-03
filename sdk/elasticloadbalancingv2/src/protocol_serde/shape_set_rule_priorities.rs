@@ -4,79 +4,69 @@ pub fn de_set_rule_priorities_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::set_rule_priorities::SetRulePrioritiesOutput,
-    crate::operation::set_rule_priorities::SetRulePrioritiesError,
-> {
+) -> std::result::Result<crate::operation::set_rule_priorities::SetRulePrioritiesOutput, crate::operation::set_rule_priorities::SetRulePrioritiesError>
+{
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::set_rule_priorities::SetRulePrioritiesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::set_rule_priorities::SetRulePrioritiesError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::set_rule_priorities::SetRulePrioritiesError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::set_rule_priorities::SetRulePrioritiesError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "OperationNotPermitted" => crate::operation::set_rule_priorities::SetRulePrioritiesError::OperationNotPermittedException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_xml_err(_response_body, output).map_err(crate::operation::set_rule_priorities::SetRulePrioritiesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::set_rule_priorities::SetRulePrioritiesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "PriorityInUse" => crate::operation::set_rule_priorities::SetRulePrioritiesError::PriorityInUseException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::PriorityInUseExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_priority_in_use_exception::de_priority_in_use_exception_xml_err(_response_body, output).map_err(crate::operation::set_rule_priorities::SetRulePrioritiesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::PriorityInUseExceptionBuilder::default();
+                output = crate::protocol_serde::shape_priority_in_use_exception::de_priority_in_use_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::set_rule_priorities::SetRulePrioritiesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "RuleNotFound" => crate::operation::set_rule_priorities::SetRulePrioritiesError::RuleNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::RuleNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_rule_not_found_exception::de_rule_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::set_rule_priorities::SetRulePrioritiesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RuleNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_rule_not_found_exception::de_rule_not_found_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::set_rule_priorities::SetRulePrioritiesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::set_rule_priorities::SetRulePrioritiesError::generic(generic)
+        _ => crate::operation::set_rule_priorities::SetRulePrioritiesError::generic(generic),
     })
 }
 
@@ -85,21 +75,14 @@ pub fn de_set_rule_priorities_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::set_rule_priorities::SetRulePrioritiesOutput,
-    crate::operation::set_rule_priorities::SetRulePrioritiesError,
-> {
+) -> std::result::Result<crate::operation::set_rule_priorities::SetRulePrioritiesOutput, crate::operation::set_rule_priorities::SetRulePrioritiesError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::set_rule_priorities::builders::SetRulePrioritiesOutputBuilder::default();
-        output = crate::protocol_serde::shape_set_rule_priorities::de_set_rule_priorities(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::set_rule_priorities::SetRulePrioritiesError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_set_rule_priorities::de_set_rule_priorities(_response_body, output)
+            .map_err(crate::operation::set_rule_priorities::SetRulePrioritiesError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -108,10 +91,7 @@ pub fn de_set_rule_priorities_http_response_with_props(
 pub fn de_set_rule_priorities(
     inp: &[u8],
     mut builder: crate::operation::set_rule_priorities::builders::SetRulePrioritiesOutputBuilder,
-) -> Result<
-    crate::operation::set_rule_priorities::builders::SetRulePrioritiesOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::set_rule_priorities::builders::SetRulePrioritiesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -148,9 +128,7 @@ pub fn de_set_rule_priorities(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected SetRulePrioritiesResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected SetRulePrioritiesResult tag"));
     };
     Ok(builder)
 }

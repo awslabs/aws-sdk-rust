@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetSubscriptionStateOutput {
 }
 impl GetSubscriptionStateOutput {
     /// Creates a new builder-style object to manufacture [`GetSubscriptionStateOutput`](crate::operation::get_subscription_state::GetSubscriptionStateOutput).
-    pub fn builder(
-    ) -> crate::operation::get_subscription_state::builders::GetSubscriptionStateOutputBuilder {
+    pub fn builder() -> crate::operation::get_subscription_state::builders::GetSubscriptionStateOutputBuilder {
         crate::operation::get_subscription_state::builders::GetSubscriptionStateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSubscriptionStateOutput`](crate::operation::get_subscription_state::GetSubscriptionStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSubscriptionStateOutputBuilder {
     pub(crate) subscription_state: ::std::option::Option<crate::types::SubscriptionState>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl GetSubscriptionStateOutputBuilder {
         self
     }
     /// <p>The status of the subscription.</p>
-    pub fn set_subscription_state(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriptionState>,
-    ) -> Self {
+    pub fn set_subscription_state(mut self, input: ::std::option::Option<crate::types::SubscriptionState>) -> Self {
         self.subscription_state = input;
         self
     }
     /// <p>The status of the subscription.</p>
-    pub fn get_subscription_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::SubscriptionState> {
+    pub fn get_subscription_state(&self) -> &::std::option::Option<crate::types::SubscriptionState> {
         &self.subscription_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

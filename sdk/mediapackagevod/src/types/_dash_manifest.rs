@@ -58,9 +58,7 @@ impl DashManifest {
 
 /// A builder for [`DashManifest`](crate::types::DashManifest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DashManifestBuilder {
     pub(crate) manifest_layout: ::std::option::Option<crate::types::ManifestLayout>,
     pub(crate) manifest_name: ::std::option::Option<::std::string::String>,
@@ -76,10 +74,7 @@ impl DashManifestBuilder {
         self
     }
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
-    pub fn set_manifest_layout(
-        mut self,
-        input: ::std::option::Option<crate::types::ManifestLayout>,
-    ) -> Self {
+    pub fn set_manifest_layout(mut self, input: ::std::option::Option<crate::types::ManifestLayout>) -> Self {
         self.manifest_layout = input;
         self
     }
@@ -88,18 +83,12 @@ impl DashManifestBuilder {
         &self.manifest_layout
     }
     /// An optional string to include in the name of the manifest.
-    pub fn manifest_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn manifest_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_name = ::std::option::Option::Some(input.into());
         self
     }
     /// An optional string to include in the name of the manifest.
-    pub fn set_manifest_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_manifest_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manifest_name = input;
         self
     }
@@ -141,17 +130,12 @@ impl DashManifestBuilder {
         self
     }
     /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
-    pub fn set_scte_markers_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ScteMarkersSource>,
-    ) -> Self {
+    pub fn set_scte_markers_source(mut self, input: ::std::option::Option<crate::types::ScteMarkersSource>) -> Self {
         self.scte_markers_source = input;
         self
     }
     /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
-    pub fn get_scte_markers_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScteMarkersSource> {
+    pub fn get_scte_markers_source(&self) -> &::std::option::Option<crate::types::ScteMarkersSource> {
         &self.scte_markers_source
     }
     /// A StreamSelection configuration.
@@ -160,10 +144,7 @@ impl DashManifestBuilder {
         self
     }
     /// A StreamSelection configuration.
-    pub fn set_stream_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamSelection>,
-    ) -> Self {
+    pub fn set_stream_selection(mut self, input: ::std::option::Option<crate::types::StreamSelection>) -> Self {
         self.stream_selection = input;
         self
     }

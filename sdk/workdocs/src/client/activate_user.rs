@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ActivateUserOutput`](crate::operation::activate_user::ActivateUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::operation::activate_user::ActivateUserOutput::user): <p>The user information.</p>
     /// - On failure, responds with [`SdkError<ActivateUserError>`](crate::operation::activate_user::ActivateUserError)
-    pub fn activate_user(
-        &self,
-    ) -> crate::operation::activate_user::builders::ActivateUserFluentBuilder {
-        crate::operation::activate_user::builders::ActivateUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn activate_user(&self) -> crate::operation::activate_user::builders::ActivateUserFluentBuilder {
+        crate::operation::activate_user::builders::ActivateUserFluentBuilder::new(self.handle.clone())
     }
 }

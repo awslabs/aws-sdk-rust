@@ -36,38 +36,28 @@ impl IncreaseReplicaCountInput {
 }
 impl IncreaseReplicaCountInput {
     /// Creates a new builder-style object to manufacture [`IncreaseReplicaCountInput`](crate::operation::increase_replica_count::IncreaseReplicaCountInput).
-    pub fn builder(
-    ) -> crate::operation::increase_replica_count::builders::IncreaseReplicaCountInputBuilder {
+    pub fn builder() -> crate::operation::increase_replica_count::builders::IncreaseReplicaCountInputBuilder {
         crate::operation::increase_replica_count::builders::IncreaseReplicaCountInputBuilder::default()
     }
 }
 
 /// A builder for [`IncreaseReplicaCountInput`](crate::operation::increase_replica_count::IncreaseReplicaCountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IncreaseReplicaCountInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) new_replica_count: ::std::option::Option<i32>,
-    pub(crate) replica_configuration:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>,
+    pub(crate) replica_configuration: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>,
     pub(crate) apply_immediately: ::std::option::Option<bool>,
 }
 impl IncreaseReplicaCountInputBuilder {
     /// <p>The id of the replication group to which you want to add replica nodes.</p>
-    pub fn replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The id of the replication group to which you want to add replica nodes.</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_group_id = input;
         self
     }
@@ -101,17 +91,12 @@ impl IncreaseReplicaCountInputBuilder {
         self
     }
     /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
-    pub fn set_replica_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>,
-    ) -> Self {
+    pub fn set_replica_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>) -> Self {
         self.replica_configuration = input;
         self
     }
     /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
-    pub fn get_replica_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>> {
+    pub fn get_replica_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>> {
         &self.replica_configuration
     }
     /// <p>If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
@@ -131,17 +116,13 @@ impl IncreaseReplicaCountInputBuilder {
     /// Consumes the builder and constructs a [`IncreaseReplicaCountInput`](crate::operation::increase_replica_count::IncreaseReplicaCountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::increase_replica_count::IncreaseReplicaCountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::increase_replica_count::IncreaseReplicaCountInput {
-                replication_group_id: self.replication_group_id,
-                new_replica_count: self.new_replica_count,
-                replica_configuration: self.replica_configuration,
-                apply_immediately: self.apply_immediately.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::increase_replica_count::IncreaseReplicaCountInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::increase_replica_count::IncreaseReplicaCountInput {
+            replication_group_id: self.replication_group_id,
+            new_replica_count: self.new_replica_count,
+            replica_configuration: self.replica_configuration,
+            apply_immediately: self.apply_immediately.unwrap_or_default(),
+        })
     }
 }

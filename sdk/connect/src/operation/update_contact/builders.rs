@@ -10,10 +10,7 @@ impl UpdateContactInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_contact::UpdateContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_contact::UpdateContactError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contact::UpdateContactError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_contact();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl UpdateContactFluentBuilder {
         }
     }
     /// Access the UpdateContact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_contact::builders::UpdateContactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_contact::builders::UpdateContactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl UpdateContactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -178,30 +170,20 @@ impl UpdateContactFluentBuilder {
     /// To override the contents of this collection use [`set_references`](Self::set_references).
     ///
     /// <p>Well-formed data on contact, shown to agents on Contact Control Panel (CCP).</p>
-    pub fn references(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Reference,
-    ) -> Self {
+    pub fn references(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Reference) -> Self {
         self.inner = self.inner.references(k.into(), v);
         self
     }
     /// <p>Well-formed data on contact, shown to agents on Contact Control Panel (CCP).</p>
     pub fn set_references(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Reference>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
     ) -> Self {
         self.inner = self.inner.set_references(input);
         self
     }
     /// <p>Well-formed data on contact, shown to agents on Contact Control Panel (CCP).</p>
-    pub fn get_references(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Reference>,
-    > {
+    pub fn get_references(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         self.inner.get_references()
     }
 }

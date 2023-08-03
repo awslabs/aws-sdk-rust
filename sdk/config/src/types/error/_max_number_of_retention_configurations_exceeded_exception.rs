@@ -27,35 +27,27 @@ impl ::std::fmt::Display for MaxNumberOfRetentionConfigurationsExceededException
     }
 }
 impl ::std::error::Error for MaxNumberOfRetentionConfigurationsExceededException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::MaxNumberOfRetentionConfigurationsExceededException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::MaxNumberOfRetentionConfigurationsExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for MaxNumberOfRetentionConfigurationsExceededException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MaxNumberOfRetentionConfigurationsExceededException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl MaxNumberOfRetentionConfigurationsExceededException {
     /// Creates a new builder-style object to manufacture [`MaxNumberOfRetentionConfigurationsExceededException`](crate::types::error::MaxNumberOfRetentionConfigurationsExceededException).
-    pub fn builder(
-    ) -> crate::types::error::builders::MaxNumberOfRetentionConfigurationsExceededExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::MaxNumberOfRetentionConfigurationsExceededExceptionBuilder {
         crate::types::error::builders::MaxNumberOfRetentionConfigurationsExceededExceptionBuilder::default()
     }
 }
 
 /// A builder for [`MaxNumberOfRetentionConfigurationsExceededException`](crate::types::error::MaxNumberOfRetentionConfigurationsExceededException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MaxNumberOfRetentionConfigurationsExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -82,10 +74,7 @@ impl MaxNumberOfRetentionConfigurationsExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

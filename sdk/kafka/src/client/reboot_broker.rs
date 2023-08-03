@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`cluster_arn(Option<String>)`](crate::operation::reboot_broker::RebootBrokerOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::operation::reboot_broker::RebootBrokerOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     /// - On failure, responds with [`SdkError<RebootBrokerError>`](crate::operation::reboot_broker::RebootBrokerError)
-    pub fn reboot_broker(
-        &self,
-    ) -> crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder {
-        crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reboot_broker(&self) -> crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder {
+        crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder::new(self.handle.clone())
     }
 }

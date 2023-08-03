@@ -37,9 +37,7 @@ impl FindMatchesTaskRunProperties {
 
 /// A builder for [`FindMatchesTaskRunProperties`](crate::types::FindMatchesTaskRunProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindMatchesTaskRunPropertiesBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,

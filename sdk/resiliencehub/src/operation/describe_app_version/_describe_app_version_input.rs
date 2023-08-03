@@ -22,17 +22,14 @@ impl DescribeAppVersionInput {
 }
 impl DescribeAppVersionInput {
     /// Creates a new builder-style object to manufacture [`DescribeAppVersionInput`](crate::operation::describe_app_version::DescribeAppVersionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_app_version::builders::DescribeAppVersionInputBuilder {
+    pub fn builder() -> crate::operation::describe_app_version::builders::DescribeAppVersionInputBuilder {
         crate::operation::describe_app_version::builders::DescribeAppVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppVersionInput`](crate::operation::describe_app_version::DescribeAppVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppVersionInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl DescribeAppVersionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAppVersionInput`](crate::operation::describe_app_version::DescribeAppVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_app_version::DescribeAppVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_app_version::DescribeAppVersionInput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_app_version::DescribeAppVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_app_version::DescribeAppVersionInput {
+            app_arn: self.app_arn,
+            app_version: self.app_version,
+        })
     }
 }

@@ -15,9 +15,7 @@ impl super::Client {
     ///   - [`create_time(Option<DateTime>)`](crate::operation::describe_map::DescribeMapOutput::create_time): <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     ///   - [`update_time(Option<DateTime>)`](crate::operation::describe_map::DescribeMapOutput::update_time): <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeMapError>`](crate::operation::describe_map::DescribeMapError)
-    pub fn describe_map(
-        &self,
-    ) -> crate::operation::describe_map::builders::DescribeMapFluentBuilder {
+    pub fn describe_map(&self) -> crate::operation::describe_map::builders::DescribeMapFluentBuilder {
         crate::operation::describe_map::builders::DescribeMapFluentBuilder::new(self.handle.clone())
     }
 }

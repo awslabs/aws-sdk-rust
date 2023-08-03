@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeMetricAttributionOutput`](crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput) with field(s):
     ///   - [`metric_attribution(Option<MetricAttribution>)`](crate::operation::describe_metric_attribution::DescribeMetricAttributionOutput::metric_attribution): <p>The details of the metric attribution.</p>
     /// - On failure, responds with [`SdkError<DescribeMetricAttributionError>`](crate::operation::describe_metric_attribution::DescribeMetricAttributionError)
-    pub fn describe_metric_attribution(&self) -> crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionFluentBuilder{
+    pub fn describe_metric_attribution(&self) -> crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionFluentBuilder {
         crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionFluentBuilder::new(self.handle.clone())
     }
 }

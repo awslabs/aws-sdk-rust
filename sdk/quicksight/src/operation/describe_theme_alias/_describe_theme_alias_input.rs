@@ -29,17 +29,14 @@ impl DescribeThemeAliasInput {
 }
 impl DescribeThemeAliasInput {
     /// Creates a new builder-style object to manufacture [`DescribeThemeAliasInput`](crate::operation::describe_theme_alias::DescribeThemeAliasInput).
-    pub fn builder(
-    ) -> crate::operation::describe_theme_alias::builders::DescribeThemeAliasInputBuilder {
+    pub fn builder() -> crate::operation::describe_theme_alias::builders::DescribeThemeAliasInputBuilder {
         crate::operation::describe_theme_alias::builders::DescribeThemeAliasInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeThemeAliasInput`](crate::operation::describe_theme_alias::DescribeThemeAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeThemeAliasInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) theme_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct DescribeThemeAliasInputBuilder {
 }
 impl DescribeThemeAliasInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're describing.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're describing.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -97,16 +88,11 @@ impl DescribeThemeAliasInputBuilder {
     /// Consumes the builder and constructs a [`DescribeThemeAliasInput`](crate::operation::describe_theme_alias::DescribeThemeAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_theme_alias::DescribeThemeAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_theme_alias::DescribeThemeAliasInput {
-                aws_account_id: self.aws_account_id,
-                theme_id: self.theme_id,
-                alias_name: self.alias_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_theme_alias::DescribeThemeAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_theme_alias::DescribeThemeAliasInput {
+            aws_account_id: self.aws_account_id,
+            theme_id: self.theme_id,
+            alias_name: self.alias_name,
+        })
     }
 }

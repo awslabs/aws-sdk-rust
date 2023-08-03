@@ -23,9 +23,7 @@ impl GradientColor {
 
 /// A builder for [`GradientColor`](crate::types::GradientColor).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GradientColorBuilder {
     pub(crate) stops: ::std::option::Option<::std::vec::Vec<crate::types::GradientStop>>,
 }
@@ -42,10 +40,7 @@ impl GradientColorBuilder {
         self
     }
     /// <p>The list of gradient color stops.</p>
-    pub fn set_stops(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GradientStop>>,
-    ) -> Self {
+    pub fn set_stops(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GradientStop>>) -> Self {
         self.stops = input;
         self
     }

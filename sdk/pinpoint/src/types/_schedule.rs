@@ -77,9 +77,7 @@ impl Schedule {
 
 /// A builder for [`Schedule`](crate::types::Schedule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleBuilder {
     pub(crate) end_time: ::std::option::Option<::std::string::String>,
     pub(crate) event_filter: ::std::option::Option<crate::types::CampaignEventFilter>,
@@ -110,10 +108,7 @@ impl ScheduleBuilder {
         self
     }
     /// <p>The type of event that causes the campaign to be sent, if the value of the Frequency property is EVENT.</p>
-    pub fn set_event_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::CampaignEventFilter>,
-    ) -> Self {
+    pub fn set_event_filter(mut self, input: ::std::option::Option<crate::types::CampaignEventFilter>) -> Self {
         self.event_filter = input;
         self
     }

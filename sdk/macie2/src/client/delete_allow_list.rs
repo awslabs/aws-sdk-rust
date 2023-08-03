@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`ignore_job_checks(impl ::std::convert::Into<String>)`](crate::operation::delete_allow_list::builders::DeleteAllowListFluentBuilder::ignore_job_checks) / [`set_ignore_job_checks(Option<String>)`](crate::operation::delete_allow_list::builders::DeleteAllowListFluentBuilder::set_ignore_job_checks): <p>Specifies whether to force deletion of the allow list, even if active classification jobs are configured to use the list.</p>  <p>When you try to delete an allow list, Amazon Macie checks for classification jobs that use the list and have a status other than COMPLETE or CANCELLED. By default, Macie rejects your request if any jobs meet these criteria. To skip these checks and delete the list, set this value to true. To delete the list only if no active jobs are configured to use it, set this value to false.</p>
     /// - On success, responds with [`DeleteAllowListOutput`](crate::operation::delete_allow_list::DeleteAllowListOutput)
     /// - On failure, responds with [`SdkError<DeleteAllowListError>`](crate::operation::delete_allow_list::DeleteAllowListError)
-    pub fn delete_allow_list(
-        &self,
-    ) -> crate::operation::delete_allow_list::builders::DeleteAllowListFluentBuilder {
-        crate::operation::delete_allow_list::builders::DeleteAllowListFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_allow_list(&self) -> crate::operation::delete_allow_list::builders::DeleteAllowListFluentBuilder {
+        crate::operation::delete_allow_list::builders::DeleteAllowListFluentBuilder::new(self.handle.clone())
     }
 }

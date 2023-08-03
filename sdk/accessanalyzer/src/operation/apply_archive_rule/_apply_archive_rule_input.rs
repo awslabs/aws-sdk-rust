@@ -30,17 +30,14 @@ impl ApplyArchiveRuleInput {
 }
 impl ApplyArchiveRuleInput {
     /// Creates a new builder-style object to manufacture [`ApplyArchiveRuleInput`](crate::operation::apply_archive_rule::ApplyArchiveRuleInput).
-    pub fn builder() -> crate::operation::apply_archive_rule::builders::ApplyArchiveRuleInputBuilder
-    {
+    pub fn builder() -> crate::operation::apply_archive_rule::builders::ApplyArchiveRuleInputBuilder {
         crate::operation::apply_archive_rule::builders::ApplyArchiveRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`ApplyArchiveRuleInput`](crate::operation::apply_archive_rule::ApplyArchiveRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplyArchiveRuleInputBuilder {
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
@@ -92,16 +89,11 @@ impl ApplyArchiveRuleInputBuilder {
     /// Consumes the builder and constructs a [`ApplyArchiveRuleInput`](crate::operation::apply_archive_rule::ApplyArchiveRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::apply_archive_rule::ApplyArchiveRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::apply_archive_rule::ApplyArchiveRuleInput {
-                analyzer_arn: self.analyzer_arn,
-                rule_name: self.rule_name,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::apply_archive_rule::ApplyArchiveRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::apply_archive_rule::ApplyArchiveRuleInput {
+            analyzer_arn: self.analyzer_arn,
+            rule_name: self.rule_name,
+            client_token: self.client_token,
+        })
     }
 }

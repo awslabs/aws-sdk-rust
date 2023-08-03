@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`aliases(Option<Vec<Alias>>)`](crate::operation::list_aliases::ListAliasesOutput::aliases): <p>The list of aliases. Each alias describes the <code>KeyArn</code> contained within.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_aliases::ListAliasesOutput::next_token): <p>The token for the next set of results, or an empty or null value if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAliasesError>`](crate::operation::list_aliases::ListAliasesError)
-    pub fn list_aliases(
-        &self,
-    ) -> crate::operation::list_aliases::builders::ListAliasesFluentBuilder {
+    pub fn list_aliases(&self) -> crate::operation::list_aliases::builders::ListAliasesFluentBuilder {
         crate::operation::list_aliases::builders::ListAliasesFluentBuilder::new(self.handle.clone())
     }
 }

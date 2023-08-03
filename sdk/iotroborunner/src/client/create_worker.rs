@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::create_worker::CreateWorkerOutput::updated_at): Timestamp at which the resource was last updated.
     ///   - [`site(Option<String>)`](crate::operation::create_worker::CreateWorkerOutput::site): Site ARN.
     /// - On failure, responds with [`SdkError<CreateWorkerError>`](crate::operation::create_worker::CreateWorkerError)
-    pub fn create_worker(
-        &self,
-    ) -> crate::operation::create_worker::builders::CreateWorkerFluentBuilder {
-        crate::operation::create_worker::builders::CreateWorkerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_worker(&self) -> crate::operation::create_worker::builders::CreateWorkerFluentBuilder {
+        crate::operation::create_worker::builders::CreateWorkerFluentBuilder::new(self.handle.clone())
     }
 }

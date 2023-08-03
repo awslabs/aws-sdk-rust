@@ -6,17 +6,14 @@
 pub struct AutomaticTapeCreationPolicyInfo {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
     #[doc(hidden)]
-    pub automatic_tape_creation_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>>,
+    pub automatic_tape_creation_rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
 }
 impl AutomaticTapeCreationPolicyInfo {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
-    pub fn automatic_tape_creation_rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AutomaticTapeCreationRule]> {
+    pub fn automatic_tape_creation_rules(&self) -> ::std::option::Option<&[crate::types::AutomaticTapeCreationRule]> {
         self.automatic_tape_creation_rules.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
@@ -33,12 +30,9 @@ impl AutomaticTapeCreationPolicyInfo {
 
 /// A builder for [`AutomaticTapeCreationPolicyInfo`](crate::types::AutomaticTapeCreationPolicyInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutomaticTapeCreationPolicyInfoBuilder {
-    pub(crate) automatic_tape_creation_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>>,
+    pub(crate) automatic_tape_creation_rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>>,
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
 impl AutomaticTapeCreationPolicyInfoBuilder {
@@ -47,10 +41,7 @@ impl AutomaticTapeCreationPolicyInfoBuilder {
     /// To override the contents of this collection use [`set_automatic_tape_creation_rules`](Self::set_automatic_tape_creation_rules).
     ///
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
-    pub fn automatic_tape_creation_rules(
-        mut self,
-        input: crate::types::AutomaticTapeCreationRule,
-    ) -> Self {
+    pub fn automatic_tape_creation_rules(mut self, input: crate::types::AutomaticTapeCreationRule) -> Self {
         let mut v = self.automatic_tape_creation_rules.unwrap_or_default();
         v.push(input);
         self.automatic_tape_creation_rules = ::std::option::Option::Some(v);
@@ -65,9 +56,7 @@ impl AutomaticTapeCreationPolicyInfoBuilder {
         self
     }
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
-    pub fn get_automatic_tape_creation_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>> {
+    pub fn get_automatic_tape_creation_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>> {
         &self.automatic_tape_creation_rules
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>

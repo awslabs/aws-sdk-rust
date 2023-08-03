@@ -105,17 +105,14 @@ impl GetUsageForecastInput {
 }
 impl GetUsageForecastInput {
     /// Creates a new builder-style object to manufacture [`GetUsageForecastInput`](crate::operation::get_usage_forecast::GetUsageForecastInput).
-    pub fn builder() -> crate::operation::get_usage_forecast::builders::GetUsageForecastInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_usage_forecast::builders::GetUsageForecastInputBuilder {
         crate::operation::get_usage_forecast::builders::GetUsageForecastInputBuilder::default()
     }
 }
 
 /// A builder for [`GetUsageForecastInput`](crate::operation::get_usage_forecast::GetUsageForecastInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsageForecastInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) metric: ::std::option::Option<crate::types::Metric>,
@@ -130,10 +127,7 @@ impl GetUsageForecastInputBuilder {
         self
     }
     /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn't included in the period. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.time_period = input;
         self
     }
@@ -178,10 +172,7 @@ impl GetUsageForecastInputBuilder {
     }
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn set_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::Granularity>,
-    ) -> Self {
+    pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
         self.granularity = input;
         self
     }
@@ -296,18 +287,13 @@ impl GetUsageForecastInputBuilder {
     /// Consumes the builder and constructs a [`GetUsageForecastInput`](crate::operation::get_usage_forecast::GetUsageForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_usage_forecast::GetUsageForecastInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_usage_forecast::GetUsageForecastInput {
-                time_period: self.time_period,
-                metric: self.metric,
-                granularity: self.granularity,
-                filter: self.filter,
-                prediction_interval_level: self.prediction_interval_level,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_usage_forecast::GetUsageForecastInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_usage_forecast::GetUsageForecastInput {
+            time_period: self.time_period,
+            metric: self.metric,
+            granularity: self.granularity,
+            filter: self.filter,
+            prediction_interval_level: self.prediction_interval_level,
+        })
     }
 }

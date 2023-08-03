@@ -6,8 +6,7 @@ pub struct ListApplicationVersionsOutput {
     /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
     /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
     #[doc(hidden)]
-    pub application_version_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>>,
+    pub application_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>>,
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -16,9 +15,7 @@ pub struct ListApplicationVersionsOutput {
 impl ListApplicationVersionsOutput {
     /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
     /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
-    pub fn application_version_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationVersionSummary]> {
+    pub fn application_version_summaries(&self) -> ::std::option::Option<&[crate::types::ApplicationVersionSummary]> {
         self.application_version_summaries.as_deref()
     }
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
@@ -33,21 +30,16 @@ impl ::aws_http::request_id::RequestId for ListApplicationVersionsOutput {
 }
 impl ListApplicationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_application_versions::builders::ListApplicationVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_application_versions::builders::ListApplicationVersionsOutputBuilder {
         crate::operation::list_application_versions::builders::ListApplicationVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationVersionsOutputBuilder {
-    pub(crate) application_version_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>>,
+    pub(crate) application_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,10 +50,7 @@ impl ListApplicationVersionsOutputBuilder {
     ///
     /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
     /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
-    pub fn application_version_summaries(
-        mut self,
-        input: crate::types::ApplicationVersionSummary,
-    ) -> Self {
+    pub fn application_version_summaries(mut self, input: crate::types::ApplicationVersionSummary) -> Self {
         let mut v = self.application_version_summaries.unwrap_or_default();
         v.push(input);
         self.application_version_summaries = ::std::option::Option::Some(v);
@@ -78,9 +67,7 @@ impl ListApplicationVersionsOutputBuilder {
     }
     /// <p>A list of the application versions and the associated configuration summaries. The list includes application versions that were rolled back.</p>
     /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p>
-    pub fn get_application_version_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>> {
+    pub fn get_application_version_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>> {
         &self.application_version_summaries
     }
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. To retrieve the next set of items, pass this token into a subsequent invocation of this operation. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
@@ -107,9 +94,7 @@ impl ListApplicationVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_application_versions::ListApplicationVersionsOutput {
+    pub fn build(self) -> crate::operation::list_application_versions::ListApplicationVersionsOutput {
         crate::operation::list_application_versions::ListApplicationVersionsOutput {
             application_version_summaries: self.application_version_summaries,
             next_token: self.next_token,

@@ -107,9 +107,7 @@ impl WorkflowStepSummary {
 
 /// A builder for [`WorkflowStepSummary`](crate::types::WorkflowStepSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowStepSummaryBuilder {
     pub(crate) step_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -160,10 +158,7 @@ impl WorkflowStepSummaryBuilder {
         self
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn set_step_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StepActionType>,
-    ) -> Self {
+    pub fn set_step_action_type(mut self, input: ::std::option::Option<crate::types::StepActionType>) -> Self {
         self.step_action_type = input;
         self
     }
@@ -197,10 +192,7 @@ impl WorkflowStepSummaryBuilder {
         self
     }
     /// <p>The previous step.</p>
-    pub fn set_previous(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.previous = input;
         self
     }
@@ -220,10 +212,7 @@ impl WorkflowStepSummaryBuilder {
         self
     }
     /// <p>The next step.</p>
-    pub fn set_next(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.next = input;
         self
     }
@@ -246,18 +235,12 @@ impl WorkflowStepSummaryBuilder {
         &self.status
     }
     /// <p>The status message of the migration workflow.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message of the migration workflow.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -322,18 +305,12 @@ impl WorkflowStepSummaryBuilder {
         &self.description
     }
     /// <p>The location of the script.</p>
-    pub fn script_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn script_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the script.</p>
-    pub fn set_script_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_script_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.script_location = input;
         self
     }

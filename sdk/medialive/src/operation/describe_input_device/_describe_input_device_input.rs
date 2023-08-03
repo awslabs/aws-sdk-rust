@@ -16,35 +16,25 @@ impl DescribeInputDeviceInput {
 }
 impl DescribeInputDeviceInput {
     /// Creates a new builder-style object to manufacture [`DescribeInputDeviceInput`](crate::operation::describe_input_device::DescribeInputDeviceInput).
-    pub fn builder(
-    ) -> crate::operation::describe_input_device::builders::DescribeInputDeviceInputBuilder {
-        crate::operation::describe_input_device::builders::DescribeInputDeviceInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_input_device::builders::DescribeInputDeviceInputBuilder {
+        crate::operation::describe_input_device::builders::DescribeInputDeviceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInputDeviceInput`](crate::operation::describe_input_device::DescribeInputDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInputDeviceInputBuilder {
     pub(crate) input_device_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInputDeviceInputBuilder {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub fn input_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub fn set_input_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_device_id = input;
         self
     }
@@ -55,14 +45,10 @@ impl DescribeInputDeviceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInputDeviceInput`](crate::operation::describe_input_device::DescribeInputDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_input_device::DescribeInputDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_input_device::DescribeInputDeviceInput {
-                input_device_id: self.input_device_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_input_device::DescribeInputDeviceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_input_device::DescribeInputDeviceInput {
+            input_device_id: self.input_device_id,
+        })
     }
 }

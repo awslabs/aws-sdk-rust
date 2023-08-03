@@ -22,17 +22,14 @@ impl ModifyActivityStreamInput {
 }
 impl ModifyActivityStreamInput {
     /// Creates a new builder-style object to manufacture [`ModifyActivityStreamInput`](crate::operation::modify_activity_stream::ModifyActivityStreamInput).
-    pub fn builder(
-    ) -> crate::operation::modify_activity_stream::builders::ModifyActivityStreamInputBuilder {
+    pub fn builder() -> crate::operation::modify_activity_stream::builders::ModifyActivityStreamInputBuilder {
         crate::operation::modify_activity_stream::builders::ModifyActivityStreamInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyActivityStreamInput`](crate::operation::modify_activity_stream::ModifyActivityStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyActivityStreamInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) audit_policy_state: ::std::option::Option<crate::types::AuditPolicyState>,
@@ -58,10 +55,7 @@ impl ModifyActivityStreamInputBuilder {
         self
     }
     /// <p>The audit policy state. When a policy is unlocked, it is read/write. When it is locked, it is read-only. You can edit your audit policy only when the activity stream is unlocked or stopped.</p>
-    pub fn set_audit_policy_state(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditPolicyState>,
-    ) -> Self {
+    pub fn set_audit_policy_state(mut self, input: ::std::option::Option<crate::types::AuditPolicyState>) -> Self {
         self.audit_policy_state = input;
         self
     }
@@ -72,15 +66,11 @@ impl ModifyActivityStreamInputBuilder {
     /// Consumes the builder and constructs a [`ModifyActivityStreamInput`](crate::operation::modify_activity_stream::ModifyActivityStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_activity_stream::ModifyActivityStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_activity_stream::ModifyActivityStreamInput {
-                resource_arn: self.resource_arn,
-                audit_policy_state: self.audit_policy_state,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_activity_stream::ModifyActivityStreamInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_activity_stream::ModifyActivityStreamInput {
+            resource_arn: self.resource_arn,
+            audit_policy_state: self.audit_policy_state,
+        })
     }
 }

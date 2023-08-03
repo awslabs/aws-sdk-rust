@@ -26,7 +26,7 @@ impl ModifyClusterMaintenanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyClusterMaintenanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceInputBuilder,
+    inner: crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceInputBuilder,
 }
 impl ModifyClusterMaintenanceFluentBuilder {
     /// Creates a new `ModifyClusterMaintenance`.
@@ -37,10 +37,7 @@ impl ModifyClusterMaintenanceFluentBuilder {
         }
     }
     /// Access the ModifyClusterMaintenance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ModifyClusterMaintenanceFluentBuilder {
             crate::operation::modify_cluster_maintenance::ModifyClusterMaintenance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ModifyClusterMaintenanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ModifyClusterMaintenanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ModifyClusterMaintenanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl ModifyClusterMaintenanceFluentBuilder {
             crate::operation::modify_cluster_maintenance::ModifyClusterMaintenance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the cluster.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>A unique identifier for the cluster.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -158,25 +138,17 @@ impl ModifyClusterMaintenanceFluentBuilder {
         self.inner.get_defer_maintenance()
     }
     /// <p>A unique identifier for the deferred maintenance window.</p>
-    pub fn defer_maintenance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn defer_maintenance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.defer_maintenance_identifier(input.into());
         self
     }
     /// <p>A unique identifier for the deferred maintenance window.</p>
-    pub fn set_defer_maintenance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_defer_maintenance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_defer_maintenance_identifier(input);
         self
     }
     /// <p>A unique identifier for the deferred maintenance window.</p>
-    pub fn get_defer_maintenance_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_defer_maintenance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_defer_maintenance_identifier()
     }
     /// <p>A timestamp indicating the start time for the deferred maintenance window.</p>
@@ -185,17 +157,12 @@ impl ModifyClusterMaintenanceFluentBuilder {
         self
     }
     /// <p>A timestamp indicating the start time for the deferred maintenance window.</p>
-    pub fn set_defer_maintenance_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_defer_maintenance_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_defer_maintenance_start_time(input);
         self
     }
     /// <p>A timestamp indicating the start time for the deferred maintenance window.</p>
-    pub fn get_defer_maintenance_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_defer_maintenance_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_defer_maintenance_start_time()
     }
     /// <p>A timestamp indicating end time for the deferred maintenance window. If you specify an end time, you can't specify a duration.</p>
@@ -204,17 +171,12 @@ impl ModifyClusterMaintenanceFluentBuilder {
         self
     }
     /// <p>A timestamp indicating end time for the deferred maintenance window. If you specify an end time, you can't specify a duration.</p>
-    pub fn set_defer_maintenance_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_defer_maintenance_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_defer_maintenance_end_time(input);
         self
     }
     /// <p>A timestamp indicating end time for the deferred maintenance window. If you specify an end time, you can't specify a duration.</p>
-    pub fn get_defer_maintenance_end_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_defer_maintenance_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_defer_maintenance_end_time()
     }
     /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.</p>

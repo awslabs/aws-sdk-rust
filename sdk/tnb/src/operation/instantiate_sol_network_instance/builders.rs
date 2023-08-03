@@ -28,7 +28,7 @@ impl InstantiateSolNetworkInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InstantiateSolNetworkInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::instantiate_sol_network_instance::builders::InstantiateSolNetworkInstanceInputBuilder,
+    inner: crate::operation::instantiate_sol_network_instance::builders::InstantiateSolNetworkInstanceInputBuilder,
 }
 impl InstantiateSolNetworkInstanceFluentBuilder {
     /// Creates a new `InstantiateSolNetworkInstance`.
@@ -39,7 +39,7 @@ impl InstantiateSolNetworkInstanceFluentBuilder {
         }
     }
     /// Access the InstantiateSolNetworkInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::instantiate_sol_network_instance::builders::InstantiateSolNetworkInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::instantiate_sol_network_instance::builders::InstantiateSolNetworkInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl InstantiateSolNetworkInstanceFluentBuilder {
             crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl InstantiateSolNetworkInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl InstantiateSolNetworkInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl InstantiateSolNetworkInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl InstantiateSolNetworkInstanceFluentBuilder {
             crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>ID of the network instance.</p>
-    pub fn ns_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ns_instance_id(input.into());
         self
     }
     /// <p>ID of the network instance.</p>
-    pub fn set_ns_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ns_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ns_instance_id(input);
         self
     }
@@ -162,17 +145,12 @@ impl InstantiateSolNetworkInstanceFluentBuilder {
         self
     }
     /// <p>Provides values for the configurable properties.</p>
-    pub fn set_additional_params_for_ns(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Document>,
-    ) -> Self {
+    pub fn set_additional_params_for_ns(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.inner = self.inner.set_additional_params_for_ns(input);
         self
     }
     /// <p>Provides values for the configurable properties.</p>
-    pub fn get_additional_params_for_ns(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::Document> {
+    pub fn get_additional_params_for_ns(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_additional_params_for_ns()
     }
     /// Adds a key-value pair to `tags`.
@@ -180,30 +158,17 @@ impl InstantiateSolNetworkInstanceFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

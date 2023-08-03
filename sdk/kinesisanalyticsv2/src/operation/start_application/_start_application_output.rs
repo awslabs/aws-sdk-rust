@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StartApplicationOutput {
 }
 impl StartApplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartApplicationOutput`](crate::operation::start_application::StartApplicationOutput).
-    pub fn builder() -> crate::operation::start_application::builders::StartApplicationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_application::builders::StartApplicationOutputBuilder {
         crate::operation::start_application::builders::StartApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartApplicationOutput`](crate::operation::start_application::StartApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartApplicationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListCandidatesForAutoMlJobOutput {
 }
 impl ListCandidatesForAutoMlJobOutput {
     /// Creates a new builder-style object to manufacture [`ListCandidatesForAutoMlJobOutput`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobOutput).
-    pub fn builder() -> crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMlJobOutputBuilder{
+    pub fn builder() -> crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMlJobOutputBuilder {
         crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMlJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCandidatesForAutoMlJobOutput`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCandidatesForAutoMlJobOutputBuilder {
     pub(crate) candidates: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlCandidate>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListCandidatesForAutoMlJobOutputBuilder {
         self
     }
     /// <p>Summaries about the <code>AutoMLCandidates</code>.</p>
-    pub fn set_candidates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlCandidate>>,
-    ) -> Self {
+    pub fn set_candidates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlCandidate>>) -> Self {
         self.candidates = input;
         self
     }
     /// <p>Summaries about the <code>AutoMLCandidates</code>.</p>
-    pub fn get_candidates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlCandidate>> {
+    pub fn get_candidates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlCandidate>> {
         &self.candidates
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
@@ -93,9 +86,7 @@ impl ListCandidatesForAutoMlJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCandidatesForAutoMlJobOutput`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobOutput {
+    pub fn build(self) -> crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobOutput {
         crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobOutput {
             candidates: self.candidates,
             next_token: self.next_token,

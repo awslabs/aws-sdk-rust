@@ -5,8 +5,7 @@
 pub struct DescribeRegionsOutput {
     /// <p>List of Region information related to the directory for each replicated Region.</p>
     #[doc(hidden)]
-    pub regions_description:
-        ::std::option::Option<::std::vec::Vec<crate::types::RegionDescription>>,
+    pub regions_description: ::std::option::Option<::std::vec::Vec<crate::types::RegionDescription>>,
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeRegions</code> to retrieve the next set of items.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -36,12 +35,9 @@ impl DescribeRegionsOutput {
 
 /// A builder for [`DescribeRegionsOutput`](crate::operation::describe_regions::DescribeRegionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRegionsOutputBuilder {
-    pub(crate) regions_description:
-        ::std::option::Option<::std::vec::Vec<crate::types::RegionDescription>>,
+    pub(crate) regions_description: ::std::option::Option<::std::vec::Vec<crate::types::RegionDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl DescribeRegionsOutputBuilder {
         self
     }
     /// <p>List of Region information related to the directory for each replicated Region.</p>
-    pub fn set_regions_description(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegionDescription>>,
-    ) -> Self {
+    pub fn set_regions_description(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionDescription>>) -> Self {
         self.regions_description = input;
         self
     }
     /// <p>List of Region information related to the directory for each replicated Region.</p>
-    pub fn get_regions_description(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionDescription>> {
+    pub fn get_regions_description(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionDescription>> {
         &self.regions_description
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeRegions</code> to retrieve the next set of items.</p>

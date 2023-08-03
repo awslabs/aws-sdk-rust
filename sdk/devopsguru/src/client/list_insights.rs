@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`reactive_insights(Option<Vec<ReactiveInsightSummary>>)`](crate::operation::list_insights::ListInsightsOutput::reactive_insights): <p> The returned list of reactive insights. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_insights::ListInsightsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListInsightsError>`](crate::operation::list_insights::ListInsightsError)
-    pub fn list_insights(
-        &self,
-    ) -> crate::operation::list_insights::builders::ListInsightsFluentBuilder {
-        crate::operation::list_insights::builders::ListInsightsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_insights(&self) -> crate::operation::list_insights::builders::ListInsightsFluentBuilder {
+        crate::operation::list_insights::builders::ListInsightsFluentBuilder::new(self.handle.clone())
     }
 }

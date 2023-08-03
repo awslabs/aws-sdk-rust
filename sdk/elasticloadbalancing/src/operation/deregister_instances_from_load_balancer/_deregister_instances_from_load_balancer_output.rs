@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for DeregisterInstancesFromLoadBalancerOu
 }
 impl DeregisterInstancesFromLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterInstancesFromLoadBalancerOutput`](crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerOutput).
-    pub fn builder() -> crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerOutputBuilder{
+    pub fn builder() -> crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerOutputBuilder {
         crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterInstancesFromLoadBalancerOutput`](crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterInstancesFromLoadBalancerOutputBuilder {
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     _request_id: Option<String>,
@@ -49,10 +47,7 @@ impl DeregisterInstancesFromLoadBalancerOutputBuilder {
         self
     }
     /// <p>The remaining instances registered with the load balancer.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
         self.instances = input;
         self
     }
@@ -70,10 +65,9 @@ impl DeregisterInstancesFromLoadBalancerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterInstancesFromLoadBalancerOutput`](crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerOutput).
-    pub fn build(self) -> crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerOutput{
+    pub fn build(self) -> crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerOutput {
         crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerOutput {
-            instances: self.instances
-            ,
+            instances: self.instances,
             _request_id: self._request_id,
         }
     }

@@ -10,10 +10,7 @@ impl GetPlanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_plan::GetPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_plan::GetPlanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_plan::GetPlanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_plan();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetPlanFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_plan::GetPlan,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_plan::GetPlan, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_plan::GetPlanError>,
     > {
         let handle = self.handle.clone();
@@ -59,20 +53,15 @@ impl GetPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_plan::GetPlanOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_plan::GetPlanError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_plan::GetPlanOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_plan::GetPlanError>>
+    {
         let op = self
             .inner
             .build()
@@ -92,10 +81,8 @@ impl GetPlanFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_plan::GetPlanOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_plan::GetPlanError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_plan::GetPlanOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_plan::GetPlanError>>
+    {
         self.send_middleware().await
     }
 
@@ -104,10 +91,7 @@ impl GetPlanFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_plan::GetPlan,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_plan::GetPlan, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_plan::GetPlanError>,
     > {
         self.customize_middleware().await
@@ -122,17 +106,12 @@ impl GetPlanFluentBuilder {
         self
     }
     /// <p>The list of mappings from a source table to target tables.</p>
-    pub fn set_mapping(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>>,
-    ) -> Self {
+    pub fn set_mapping(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>>) -> Self {
         self.inner = self.inner.set_mapping(input);
         self
     }
     /// <p>The list of mappings from a source table to target tables.</p>
-    pub fn get_mapping(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>> {
+    pub fn get_mapping(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>> {
         self.inner.get_mapping()
     }
     /// <p>The source table.</p>
@@ -159,10 +138,7 @@ impl GetPlanFluentBuilder {
         self
     }
     /// <p>The target tables.</p>
-    pub fn set_sinks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CatalogEntry>>,
-    ) -> Self {
+    pub fn set_sinks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CatalogEntry>>) -> Self {
         self.inner = self.inner.set_sinks(input);
         self
     }
@@ -222,9 +198,7 @@ impl GetPlanFluentBuilder {
     /// </ul>
     pub fn set_additional_plan_options_map(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_additional_plan_options_map(input);
         self
@@ -236,9 +210,7 @@ impl GetPlanFluentBuilder {
     /// </ul>
     pub fn get_additional_plan_options_map(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_additional_plan_options_map()
     }
 }

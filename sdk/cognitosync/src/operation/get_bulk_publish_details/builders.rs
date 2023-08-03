@@ -38,10 +38,7 @@ impl GetBulkPublishDetailsFluentBuilder {
         }
     }
     /// Access the GetBulkPublishDetails as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_bulk_publish_details::builders::GetBulkPublishDetailsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_bulk_publish_details::builders::GetBulkPublishDetailsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl GetBulkPublishDetailsFluentBuilder {
             crate::operation::get_bulk_publish_details::GetBulkPublishDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl GetBulkPublishDetailsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl GetBulkPublishDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bulk_publish_details::GetBulkPublishDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl GetBulkPublishDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bulk_publish_details::GetBulkPublishDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl GetBulkPublishDetailsFluentBuilder {
             crate::operation::get_bulk_publish_details::GetBulkPublishDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError>,
     > {
         self.customize_middleware().await
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }

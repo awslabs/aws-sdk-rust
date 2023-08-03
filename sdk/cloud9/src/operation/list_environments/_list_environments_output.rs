@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListEnvironmentsOutput {
 }
 impl ListEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput).
-    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder {
         crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) environment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,27 +61,19 @@ impl ListEnvironmentsOutputBuilder {
     /// To override the contents of this collection use [`set_environment_ids`](Self::set_environment_ids).
     ///
     /// <p>The list of environment identifiers.</p>
-    pub fn environment_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.environment_ids.unwrap_or_default();
         v.push(input.into());
         self.environment_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of environment identifiers.</p>
-    pub fn set_environment_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_environment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.environment_ids = input;
         self
     }
     /// <p>The list of environment identifiers.</p>
-    pub fn get_environment_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_environment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.environment_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

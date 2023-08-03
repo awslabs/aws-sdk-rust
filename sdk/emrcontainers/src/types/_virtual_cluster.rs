@@ -24,9 +24,7 @@ pub struct VirtualCluster {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The assigned tags of the virtual cluster.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl VirtualCluster {
     /// <p>The ID of the virtual cluster.</p>
@@ -54,11 +52,7 @@ impl VirtualCluster {
         self.created_at.as_ref()
     }
     /// <p>The assigned tags of the virtual cluster.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -71,9 +65,7 @@ impl VirtualCluster {
 
 /// A builder for [`VirtualCluster`](crate::types::VirtualCluster).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualClusterBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -81,9 +73,7 @@ pub struct VirtualClusterBuilder {
     pub(crate) state: ::std::option::Option<crate::types::VirtualClusterState>,
     pub(crate) container_provider: ::std::option::Option<crate::types::ContainerProvider>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl VirtualClusterBuilder {
     /// <p>The ID of the virtual cluster.</p>
@@ -134,10 +124,7 @@ impl VirtualClusterBuilder {
         self
     }
     /// <p>The state of the virtual cluster.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualClusterState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::VirtualClusterState>) -> Self {
         self.state = input;
         self
     }
@@ -151,17 +138,12 @@ impl VirtualClusterBuilder {
         self
     }
     /// <p>The container provider of the virtual cluster.</p>
-    pub fn set_container_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerProvider>,
-    ) -> Self {
+    pub fn set_container_provider(mut self, input: ::std::option::Option<crate::types::ContainerProvider>) -> Self {
         self.container_provider = input;
         self
     }
     /// <p>The container provider of the virtual cluster.</p>
-    pub fn get_container_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerProvider> {
+    pub fn get_container_provider(&self) -> &::std::option::Option<crate::types::ContainerProvider> {
         &self.container_provider
     }
     /// <p>The date and time when the virtual cluster is created.</p>
@@ -170,10 +152,7 @@ impl VirtualClusterBuilder {
         self
     }
     /// <p>The date and time when the virtual cluster is created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -186,32 +165,19 @@ impl VirtualClusterBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The assigned tags of the virtual cluster.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The assigned tags of the virtual cluster.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The assigned tags of the virtual cluster.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`VirtualCluster`](crate::types::VirtualCluster).

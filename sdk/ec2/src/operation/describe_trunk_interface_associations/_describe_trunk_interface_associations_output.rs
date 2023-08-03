@@ -5,8 +5,7 @@
 pub struct DescribeTrunkInterfaceAssociationsOutput {
     /// <p>Information about the trunk associations.</p>
     #[doc(hidden)]
-    pub interface_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrunkInterfaceAssociation>>,
+    pub interface_associations: ::std::option::Option<::std::vec::Vec<crate::types::TrunkInterfaceAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeTrunkInterfaceAssociationsOutput {
 }
 impl DescribeTrunkInterfaceAssociationsOutput {
     /// <p>Information about the trunk associations.</p>
-    pub fn interface_associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TrunkInterfaceAssociation]> {
+    pub fn interface_associations(&self) -> ::std::option::Option<&[crate::types::TrunkInterfaceAssociation]> {
         self.interface_associations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeTrunkInterfaceAssociationsOut
 }
 impl DescribeTrunkInterfaceAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrunkInterfaceAssociationsOutput`](crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput).
-    pub fn builder() -> crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsOutputBuilder {
         crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTrunkInterfaceAssociationsOutput`](crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrunkInterfaceAssociationsOutputBuilder {
-    pub(crate) interface_associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::TrunkInterfaceAssociation>>,
+    pub(crate) interface_associations: ::std::option::Option<::std::vec::Vec<crate::types::TrunkInterfaceAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl DescribeTrunkInterfaceAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_interface_associations`](Self::set_interface_associations).
     ///
     /// <p>Information about the trunk associations.</p>
-    pub fn interface_associations(
-        mut self,
-        input: crate::types::TrunkInterfaceAssociation,
-    ) -> Self {
+    pub fn interface_associations(mut self, input: crate::types::TrunkInterfaceAssociation) -> Self {
         let mut v = self.interface_associations.unwrap_or_default();
         v.push(input);
         self.interface_associations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the trunk associations.</p>
-    pub fn set_interface_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrunkInterfaceAssociation>>,
-    ) -> Self {
+    pub fn set_interface_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrunkInterfaceAssociation>>) -> Self {
         self.interface_associations = input;
         self
     }
     /// <p>Information about the trunk associations.</p>
-    pub fn get_interface_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrunkInterfaceAssociation>> {
+    pub fn get_interface_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrunkInterfaceAssociation>> {
         &self.interface_associations
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -100,12 +86,10 @@ impl DescribeTrunkInterfaceAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTrunkInterfaceAssociationsOutput`](crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput).
-    pub fn build(self) -> crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput{
+    pub fn build(self) -> crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput {
         crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput {
-            interface_associations: self.interface_associations
-            ,
-            next_token: self.next_token
-            ,
+            interface_associations: self.interface_associations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

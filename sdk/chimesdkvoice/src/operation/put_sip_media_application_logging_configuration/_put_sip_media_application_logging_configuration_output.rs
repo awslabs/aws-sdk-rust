@@ -5,15 +5,12 @@
 pub struct PutSipMediaApplicationLoggingConfigurationOutput {
     /// <p>The updated logging configuration for the specified SIP media application.</p>
     #[doc(hidden)]
-    pub sip_media_application_logging_configuration:
-        ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
+    pub sip_media_application_logging_configuration: ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
     _request_id: Option<String>,
 }
 impl PutSipMediaApplicationLoggingConfigurationOutput {
     /// <p>The updated logging configuration for the specified SIP media application.</p>
-    pub fn sip_media_application_logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SipMediaApplicationLoggingConfiguration> {
+    pub fn sip_media_application_logging_configuration(&self) -> ::std::option::Option<&crate::types::SipMediaApplicationLoggingConfiguration> {
         self.sip_media_application_logging_configuration.as_ref()
     }
 }
@@ -24,27 +21,23 @@ impl ::aws_http::request_id::RequestId for PutSipMediaApplicationLoggingConfigur
 }
 impl PutSipMediaApplicationLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutSipMediaApplicationLoggingConfigurationOutput`](crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput).
-    pub fn builder() -> crate::operation::put_sip_media_application_logging_configuration::builders::PutSipMediaApplicationLoggingConfigurationOutputBuilder{
-        crate::operation::put_sip_media_application_logging_configuration::builders::PutSipMediaApplicationLoggingConfigurationOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::put_sip_media_application_logging_configuration::builders::PutSipMediaApplicationLoggingConfigurationOutputBuilder {
+        crate::operation::put_sip_media_application_logging_configuration::builders::PutSipMediaApplicationLoggingConfigurationOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`PutSipMediaApplicationLoggingConfigurationOutput`](crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutSipMediaApplicationLoggingConfigurationOutputBuilder {
-    pub(crate) sip_media_application_logging_configuration:
-        ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
+    pub(crate) sip_media_application_logging_configuration: ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
     _request_id: Option<String>,
 }
 impl PutSipMediaApplicationLoggingConfigurationOutputBuilder {
     /// <p>The updated logging configuration for the specified SIP media application.</p>
-    pub fn sip_media_application_logging_configuration(
-        mut self,
-        input: crate::types::SipMediaApplicationLoggingConfiguration,
-    ) -> Self {
+    pub fn sip_media_application_logging_configuration(mut self, input: crate::types::SipMediaApplicationLoggingConfiguration) -> Self {
         self.sip_media_application_logging_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +50,7 @@ impl PutSipMediaApplicationLoggingConfigurationOutputBuilder {
         self
     }
     /// <p>The updated logging configuration for the specified SIP media application.</p>
-    pub fn get_sip_media_application_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration> {
+    pub fn get_sip_media_application_logging_configuration(&self) -> &::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration> {
         &self.sip_media_application_logging_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +63,9 @@ impl PutSipMediaApplicationLoggingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutSipMediaApplicationLoggingConfigurationOutput`](crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput).
-    pub fn build(self) -> crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput{
+    pub fn build(self) -> crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput {
         crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput {
-            sip_media_application_logging_configuration: self.sip_media_application_logging_configuration
-            ,
+            sip_media_application_logging_configuration: self.sip_media_application_logging_configuration,
             _request_id: self._request_id,
         }
     }

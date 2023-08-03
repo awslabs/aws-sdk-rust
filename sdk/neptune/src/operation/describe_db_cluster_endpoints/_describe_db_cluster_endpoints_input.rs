@@ -47,16 +47,14 @@ impl DescribeDbClusterEndpointsInput {
 }
 impl DescribeDbClusterEndpointsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterEndpointsInput`](crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsInput).
-    pub fn builder() -> crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsInputBuilder{
+    pub fn builder() -> crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsInputBuilder {
         crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbClusterEndpointsInput`](crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClusterEndpointsInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_endpoint_identifier: ::std::option::Option<::std::string::String>,
@@ -66,18 +64,12 @@ pub struct DescribeDbClusterEndpointsInputBuilder {
 }
 impl DescribeDbClusterEndpointsInputBuilder {
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -86,25 +78,17 @@ impl DescribeDbClusterEndpointsInputBuilder {
         &self.db_cluster_identifier
     }
     /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_endpoint_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_endpoint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_endpoint_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_endpoint_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_endpoint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_endpoint_identifier = input;
         self
     }
     /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
-    pub fn get_db_cluster_endpoint_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_endpoint_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_endpoint_identifier
     }
     /// Appends an item to `filters`.
@@ -119,10 +103,7 @@ impl DescribeDbClusterEndpointsInputBuilder {
         self
     }
     /// <p>A set of name-value pairs that define which endpoints to include in the output. The filters are specified as name-value pairs, in the format <code>Name=<i>endpoint_type</i>,Values=<i>endpoint_type1</i>,<i>endpoint_type2</i>,...</code>. <code>Name</code> can be one of: <code>db-cluster-endpoint-type</code>, <code>db-cluster-endpoint-custom-type</code>, <code>db-cluster-endpoint-id</code>, <code>db-cluster-endpoint-status</code>. <code>Values</code> for the <code> db-cluster-endpoint-type</code> filter can be one or more of: <code>reader</code>, <code>writer</code>, <code>custom</code>. <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>, <code>any</code>. <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -171,14 +152,12 @@ impl DescribeDbClusterEndpointsInputBuilder {
         crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsInput {
-                db_cluster_identifier: self.db_cluster_identifier,
-                db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsInput {
+            db_cluster_identifier: self.db_cluster_identifier,
+            db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

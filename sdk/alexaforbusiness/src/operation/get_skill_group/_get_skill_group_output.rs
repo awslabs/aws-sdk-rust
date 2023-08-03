@@ -28,9 +28,7 @@ impl GetSkillGroupOutput {
 
 /// A builder for [`GetSkillGroupOutput`](crate::operation::get_skill_group::GetSkillGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSkillGroupOutputBuilder {
     pub(crate) skill_group: ::std::option::Option<crate::types::SkillGroup>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetSkillGroupOutputBuilder {
         self
     }
     /// <p>The details of the skill group requested. Required.</p>
-    pub fn set_skill_group(
-        mut self,
-        input: ::std::option::Option<crate::types::SkillGroup>,
-    ) -> Self {
+    pub fn set_skill_group(mut self, input: ::std::option::Option<crate::types::SkillGroup>) -> Self {
         self.skill_group = input;
         self
     }

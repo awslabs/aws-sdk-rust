@@ -10,10 +10,7 @@ impl GetMediaInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_media::GetMediaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_media::GetMediaError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_media::GetMediaError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_media();
         fluent_builder.inner = self;
@@ -61,10 +58,7 @@ impl GetMediaFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_media::GetMedia,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_media::GetMedia, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_media::GetMediaError>,
     > {
         let handle = self.handle.clone();
@@ -75,10 +69,7 @@ impl GetMediaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -120,10 +111,7 @@ impl GetMediaFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_media::GetMedia,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_media::GetMedia, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_media::GetMediaError>,
     > {
         self.customize_middleware().await
@@ -162,10 +150,7 @@ impl GetMediaFluentBuilder {
         self
     }
     /// <p>Identifies the starting chunk to get from the specified stream. </p>
-    pub fn set_start_selector(
-        mut self,
-        input: ::std::option::Option<crate::types::StartSelector>,
-    ) -> Self {
+    pub fn set_start_selector(mut self, input: ::std::option::Option<crate::types::StartSelector>) -> Self {
         self.inner = self.inner.set_start_selector(input);
         self
     }

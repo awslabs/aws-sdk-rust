@@ -143,8 +143,7 @@ pub struct ParameterHistoryBuilder {
     pub(crate) version: ::std::option::Option<i64>,
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tier: ::std::option::Option<crate::types::ParameterTier>,
-    pub(crate) policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>,
+    pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>,
     pub(crate) data_type: ::std::option::Option<::std::string::String>,
 }
 impl ParameterHistoryBuilder {
@@ -196,10 +195,7 @@ impl ParameterHistoryBuilder {
         self
     }
     /// <p>Date the parameter was last changed or updated.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -208,18 +204,12 @@ impl ParameterHistoryBuilder {
         &self.last_modified_date
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
-    pub fn last_modified_user(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
-    pub fn set_last_modified_user(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_user = input;
         self
     }
@@ -257,19 +247,13 @@ impl ParameterHistoryBuilder {
     }
     /// <p>Parameter names can include the following letters and symbols.</p>
     /// <p>a-zA-Z0-9_.-</p>
-    pub fn allowed_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Parameter names can include the following letters and symbols.</p>
     /// <p>a-zA-Z0-9_.-</p>
-    pub fn set_allowed_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allowed_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allowed_pattern = input;
         self
     }
@@ -304,10 +288,7 @@ impl ParameterHistoryBuilder {
         self
     }
     /// <p>Labels assigned to the parameter version.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
@@ -343,18 +324,13 @@ impl ParameterHistoryBuilder {
     }
     /// <p>Information about the policies assigned to a parameter.</p>
     /// <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>,
-    ) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>) -> Self {
         self.policies = input;
         self
     }
     /// <p>Information about the policies assigned to a parameter.</p>
     /// <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn get_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>> {
+    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>> {
         &self.policies
     }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>

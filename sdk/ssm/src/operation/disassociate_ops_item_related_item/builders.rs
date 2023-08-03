@@ -5,16 +5,16 @@ pub use crate::operation::disassociate_ops_item_related_item::_disassociate_ops_
 
 impl DisassociateOpsItemRelatedItemInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.disassociate_ops_item_related_item();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DisassociateOpsItemRelatedItemInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateOpsItemRelatedItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemInputBuilder,
+    inner: crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemInputBuilder,
 }
 impl DisassociateOpsItemRelatedItemFluentBuilder {
     /// Creates a new `DisassociateOpsItemRelatedItem`.
@@ -37,15 +37,20 @@ impl DisassociateOpsItemRelatedItemFluentBuilder {
         }
     }
     /// Access the DisassociateOpsItemRelatedItem as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItem, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItem,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DisassociateOpsItemRelatedItemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl DisassociateOpsItemRelatedItemFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItem, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItem,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the OpsItem for which you want to delete an association between the OpsItem and a related item.</p>
@@ -109,18 +124,12 @@ impl DisassociateOpsItemRelatedItemFluentBuilder {
         self.inner.get_ops_item_id()
     }
     /// <p>The ID of the association for which you want to delete an association between the OpsItem and a related item.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
     /// <p>The ID of the association for which you want to delete an association between the OpsItem and a related item.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }

@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for GetSignedBluinsightsUrlOutput {
 }
 impl GetSignedBluinsightsUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetSignedBluinsightsUrlOutput`](crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput).
-    pub fn builder(
-    ) -> crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlOutputBuilder {
         crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSignedBluinsightsUrlOutput`](crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSignedBluinsightsUrlOutputBuilder {
     pub(crate) signed_bi_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetSignedBluinsightsUrlOutputBuilder {
     /// <p>Single sign-on AWS Blu Insights URL.</p>
-    pub fn signed_bi_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signed_bi_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signed_bi_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Single sign-on AWS Blu Insights URL.</p>
-    pub fn set_signed_bi_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signed_bi_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signed_bi_url = input;
         self
     }
@@ -68,9 +58,7 @@ impl GetSignedBluinsightsUrlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSignedBluinsightsUrlOutput`](crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput {
+    pub fn build(self) -> crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput {
         crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput {
             signed_bi_url: self.signed_bi_url,
             _request_id: self._request_id,

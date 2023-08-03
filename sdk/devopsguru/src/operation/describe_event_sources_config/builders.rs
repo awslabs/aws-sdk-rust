@@ -26,7 +26,7 @@ impl DescribeEventSourcesConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEventSourcesConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_event_sources_config::builders::DescribeEventSourcesConfigInputBuilder,
+    inner: crate::operation::describe_event_sources_config::builders::DescribeEventSourcesConfigInputBuilder,
 }
 impl DescribeEventSourcesConfigFluentBuilder {
     /// Creates a new `DescribeEventSourcesConfig`.
@@ -37,7 +37,7 @@ impl DescribeEventSourcesConfigFluentBuilder {
         }
     }
     /// Access the DescribeEventSourcesConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_event_sources_config::builders::DescribeEventSourcesConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_event_sources_config::builders::DescribeEventSourcesConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeEventSourcesConfigFluentBuilder {
             crate::operation::describe_event_sources_config::DescribeEventSourcesConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_sources_config::DescribeEventSourcesConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_sources_config::DescribeEventSourcesConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeEventSourcesConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeEventSourcesConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_sources_config::DescribeEventSourcesConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_sources_config::DescribeEventSourcesConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_sources_config::DescribeEventSourcesConfigError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeEventSourcesConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_sources_config::DescribeEventSourcesConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_sources_config::DescribeEventSourcesConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_sources_config::DescribeEventSourcesConfigError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeEventSourcesConfigFluentBuilder {
             crate::operation::describe_event_sources_config::DescribeEventSourcesConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_sources_config::DescribeEventSourcesConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_sources_config::DescribeEventSourcesConfigError>,
     > {
         self.customize_middleware().await
     }

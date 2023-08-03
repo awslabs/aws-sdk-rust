@@ -30,16 +30,15 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
 }
 impl SetLoadBalancerPoliciesForBackendServerInput {
     /// Creates a new builder-style object to manufacture [`SetLoadBalancerPoliciesForBackendServerInput`](crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerInput).
-    pub fn builder() -> crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerInputBuilder{
+    pub fn builder() -> crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerInputBuilder
+    {
         crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerInputBuilder::default()
     }
 }
 
 /// A builder for [`SetLoadBalancerPoliciesForBackendServerInput`](crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetLoadBalancerPoliciesForBackendServerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_port: ::std::option::Option<i32>,
@@ -47,18 +46,12 @@ pub struct SetLoadBalancerPoliciesForBackendServerInputBuilder {
 }
 impl SetLoadBalancerPoliciesForBackendServerInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -92,30 +85,27 @@ impl SetLoadBalancerPoliciesForBackendServerInputBuilder {
         self
     }
     /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policy_names = input;
         self
     }
     /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
-    pub fn get_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.policy_names
     }
     /// Consumes the builder and constructs a [`SetLoadBalancerPoliciesForBackendServerInput`](crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerInput {
-                load_balancer_name: self.load_balancer_name
-                ,
-                instance_port: self.instance_port
-                ,
-                policy_names: self.policy_names
-                ,
-            }
+                load_balancer_name: self.load_balancer_name,
+                instance_port: self.instance_port,
+                policy_names: self.policy_names,
+            },
         )
     }
 }

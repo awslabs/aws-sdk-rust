@@ -36,17 +36,14 @@ impl DescribeHubContentInput {
 }
 impl DescribeHubContentInput {
     /// Creates a new builder-style object to manufacture [`DescribeHubContentInput`](crate::operation::describe_hub_content::DescribeHubContentInput).
-    pub fn builder(
-    ) -> crate::operation::describe_hub_content::builders::DescribeHubContentInputBuilder {
+    pub fn builder() -> crate::operation::describe_hub_content::builders::DescribeHubContentInputBuilder {
         crate::operation::describe_hub_content::builders::DescribeHubContentInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHubContentInput`](crate::operation::describe_hub_content::DescribeHubContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHubContentInputBuilder {
     pub(crate) hub_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_type: ::std::option::Option<crate::types::HubContentType>,
@@ -74,10 +71,7 @@ impl DescribeHubContentInputBuilder {
         self
     }
     /// <p>The type of content in the hub.</p>
-    pub fn set_hub_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HubContentType>,
-    ) -> Self {
+    pub fn set_hub_content_type(mut self, input: ::std::option::Option<crate::types::HubContentType>) -> Self {
         self.hub_content_type = input;
         self
     }
@@ -86,18 +80,12 @@ impl DescribeHubContentInputBuilder {
         &self.hub_content_type
     }
     /// <p>The name of the content to describe.</p>
-    pub fn hub_content_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the content to describe.</p>
-    pub fn set_hub_content_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_content_name = input;
         self
     }
@@ -106,18 +94,12 @@ impl DescribeHubContentInputBuilder {
         &self.hub_content_name
     }
     /// <p>The version of the content to describe.</p>
-    pub fn hub_content_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_content_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the content to describe.</p>
-    pub fn set_hub_content_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_content_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_content_version = input;
         self
     }
@@ -128,17 +110,12 @@ impl DescribeHubContentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeHubContentInput`](crate::operation::describe_hub_content::DescribeHubContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_hub_content::DescribeHubContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_hub_content::DescribeHubContentInput {
-                hub_name: self.hub_name,
-                hub_content_type: self.hub_content_type,
-                hub_content_name: self.hub_content_name,
-                hub_content_version: self.hub_content_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_hub_content::DescribeHubContentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_hub_content::DescribeHubContentInput {
+            hub_name: self.hub_name,
+            hub_content_type: self.hub_content_type,
+            hub_content_name: self.hub_content_name,
+            hub_content_version: self.hub_content_version,
+        })
     }
 }

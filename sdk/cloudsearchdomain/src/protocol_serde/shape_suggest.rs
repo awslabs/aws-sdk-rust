@@ -4,17 +4,10 @@ pub fn de_suggest_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::suggest::SuggestOutput,
-    crate::operation::suggest::SuggestError,
-> {
+) -> std::result::Result<crate::operation::suggest::SuggestOutput, crate::operation::suggest::SuggestError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::suggest::SuggestError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::suggest::SuggestError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
@@ -24,23 +17,21 @@ pub fn de_suggest_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "SearchException" => {
-            crate::operation::suggest::SuggestError::SearchException({
+        "SearchException" => crate::operation::suggest::SuggestError::SearchException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::SearchExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_search_exception::de_search_exception_json_err(_response_body, output).map_err(crate::operation::suggest::SuggestError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::SearchExceptionBuilder::default();
+                output = crate::protocol_serde::shape_search_exception::de_search_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::suggest::SuggestError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::suggest::SuggestError::generic(generic),
     })
 }
@@ -50,18 +41,13 @@ pub fn de_suggest_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::suggest::SuggestOutput,
-    crate::operation::suggest::SuggestError,
-> {
+) -> std::result::Result<crate::operation::suggest::SuggestOutput, crate::operation::suggest::SuggestError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::suggest::builders::SuggestOutputBuilder::default();
-        output = crate::protocol_serde::shape_suggest::de_suggest(_response_body, output)
-            .map_err(crate::operation::suggest::SuggestError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output =
+            crate::protocol_serde::shape_suggest::de_suggest(_response_body, output).map_err(crate::operation::suggest::SuggestError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -69,49 +55,34 @@ pub fn de_suggest_http_response_with_props(
 pub(crate) fn de_suggest(
     value: &[u8],
     mut builder: crate::operation::suggest::builders::SuggestOutputBuilder,
-) -> Result<
-    crate::operation::suggest::builders::SuggestOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+) -> Result<crate::operation::suggest::builders::SuggestOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "status" => {
-                        builder = builder.set_status(
-                            crate::protocol_serde::shape_suggest_status::de_suggest_status(tokens)?,
-                        );
-                    }
-                    "suggest" => {
-                        builder = builder.set_suggest(
-                            crate::protocol_serde::shape_suggest_model::de_suggest_model(tokens)?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "status" => {
+                    builder = builder.set_status(crate::protocol_serde::shape_suggest_status::de_suggest_status(tokens)?);
                 }
-            }
+                "suggest" => {
+                    builder = builder.set_suggest(crate::protocol_serde::shape_suggest_model::de_suggest_model(tokens)?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

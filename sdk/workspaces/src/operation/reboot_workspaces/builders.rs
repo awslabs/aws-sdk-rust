@@ -10,10 +10,7 @@ impl RebootWorkspacesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::reboot_workspaces::RebootWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_workspaces::RebootWorkspacesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_workspaces::RebootWorkspacesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.reboot_workspaces();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl RebootWorkspacesFluentBuilder {
         }
     }
     /// Access the RebootWorkspaces as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reboot_workspaces::builders::RebootWorkspacesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::reboot_workspaces::builders::RebootWorkspacesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl RebootWorkspacesFluentBuilder {
             crate::operation::reboot_workspaces::RebootWorkspaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_workspaces::RebootWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_workspaces::RebootWorkspacesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl RebootWorkspacesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl RebootWorkspacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_workspaces::RebootWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_workspaces::RebootWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_workspaces::RebootWorkspacesError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl RebootWorkspacesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_workspaces::RebootWorkspacesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_workspaces::RebootWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_workspaces::RebootWorkspacesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl RebootWorkspacesFluentBuilder {
             crate::operation::reboot_workspaces::RebootWorkspaces,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reboot_workspaces::RebootWorkspacesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reboot_workspaces::RebootWorkspacesError>,
     > {
         self.customize_middleware().await
     }
@@ -134,17 +118,12 @@ impl RebootWorkspacesFluentBuilder {
         self
     }
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
-    pub fn set_reboot_workspace_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RebootRequest>>,
-    ) -> Self {
+    pub fn set_reboot_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RebootRequest>>) -> Self {
         self.inner = self.inner.set_reboot_workspace_requests(input);
         self
     }
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
-    pub fn get_reboot_workspace_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RebootRequest>> {
+    pub fn get_reboot_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RebootRequest>> {
         self.inner.get_reboot_workspace_requests()
     }
 }

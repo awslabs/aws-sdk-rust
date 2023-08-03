@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsFluentBuilder::set_tags): <p>One or more tags.</p>
     /// - On success, responds with [`CreateOrUpdateTagsOutput`](crate::operation::create_or_update_tags::CreateOrUpdateTagsOutput)
     /// - On failure, responds with [`SdkError<CreateOrUpdateTagsError>`](crate::operation::create_or_update_tags::CreateOrUpdateTagsError)
-    pub fn create_or_update_tags(
-        &self,
-    ) -> crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsFluentBuilder {
-        crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_or_update_tags(&self) -> crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsFluentBuilder {
+        crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsFluentBuilder::new(self.handle.clone())
     }
 }

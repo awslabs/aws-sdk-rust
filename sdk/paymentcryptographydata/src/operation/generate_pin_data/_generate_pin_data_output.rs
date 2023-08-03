@@ -56,17 +56,14 @@ impl ::aws_http::request_id::RequestId for GeneratePinDataOutput {
 }
 impl GeneratePinDataOutput {
     /// Creates a new builder-style object to manufacture [`GeneratePinDataOutput`](crate::operation::generate_pin_data::GeneratePinDataOutput).
-    pub fn builder() -> crate::operation::generate_pin_data::builders::GeneratePinDataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::generate_pin_data::builders::GeneratePinDataOutputBuilder {
         crate::operation::generate_pin_data::builders::GeneratePinDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GeneratePinDataOutput`](crate::operation::generate_pin_data::GeneratePinDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeneratePinDataOutputBuilder {
     pub(crate) generation_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) generation_key_check_value: ::std::option::Option<::std::string::String>,
@@ -78,18 +75,12 @@ pub struct GeneratePinDataOutputBuilder {
 }
 impl GeneratePinDataOutputBuilder {
     /// <p>The <code>keyARN</code> of the pin data generation key that Amazon Web Services Payment Cryptography uses for PIN, PVV or PIN Offset generation.</p>
-    pub fn generation_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generation_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generation_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the pin data generation key that Amazon Web Services Payment Cryptography uses for PIN, PVV or PIN Offset generation.</p>
-    pub fn set_generation_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generation_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generation_key_arn = input;
         self
     }
@@ -98,18 +89,12 @@ impl GeneratePinDataOutputBuilder {
         &self.generation_key_arn
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn generation_key_check_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generation_key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generation_key_check_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn set_generation_key_check_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generation_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generation_key_check_value = input;
         self
     }
@@ -118,18 +103,12 @@ impl GeneratePinDataOutputBuilder {
         &self.generation_key_check_value
     }
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block generation.</p>
-    pub fn encryption_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block generation.</p>
-    pub fn set_encryption_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_arn = input;
         self
     }
@@ -138,18 +117,12 @@ impl GeneratePinDataOutputBuilder {
         &self.encryption_key_arn
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn encryption_key_check_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_check_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn set_encryption_key_check_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_check_value = input;
         self
     }
@@ -158,18 +131,12 @@ impl GeneratePinDataOutputBuilder {
         &self.encryption_key_check_value
     }
     /// <p>The PIN block encrypted under PEK from Amazon Web Services Payment Cryptography. The encrypted PIN block is a composite of PAN (Primary Account Number) and PIN (Personal Identification Number), generated in accordance with ISO 9564 standard.</p>
-    pub fn encrypted_pin_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encrypted_pin_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encrypted_pin_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The PIN block encrypted under PEK from Amazon Web Services Payment Cryptography. The encrypted PIN block is a composite of PAN (Primary Account Number) and PIN (Personal Identification Number), generated in accordance with ISO 9564 standard.</p>
-    pub fn set_encrypted_pin_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encrypted_pin_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encrypted_pin_block = input;
         self
     }

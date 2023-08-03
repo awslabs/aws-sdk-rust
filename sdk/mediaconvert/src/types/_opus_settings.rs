@@ -37,9 +37,7 @@ impl OpusSettings {
 
 /// A builder for [`OpusSettings`](crate::types::OpusSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpusSettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<i32>,
     pub(crate) channels: ::std::option::Option<i32>,

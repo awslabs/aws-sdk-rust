@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetCoverageStatisticsOutput`](crate::operation::get_coverage_statistics::GetCoverageStatisticsOutput) with field(s):
     ///   - [`coverage_statistics(Option<CoverageStatistics>)`](crate::operation::get_coverage_statistics::GetCoverageStatisticsOutput::coverage_statistics): <p>Represents the count aggregated by the <code>statusCode</code> and <code>resourceType</code>.</p>
     /// - On failure, responds with [`SdkError<GetCoverageStatisticsError>`](crate::operation::get_coverage_statistics::GetCoverageStatisticsError)
-    pub fn get_coverage_statistics(
-        &self,
-    ) -> crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsFluentBuilder
-    {
-        crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_coverage_statistics(&self) -> crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsFluentBuilder {
+        crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

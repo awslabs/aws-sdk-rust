@@ -13,7 +13,9 @@ impl super::Client {
     /// - On success, responds with [`PutOrganizationConformancePackOutput`](crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput) with field(s):
     ///   - [`organization_conformance_pack_arn(Option<String>)`](crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput::organization_conformance_pack_arn): <p>ARN of the organization conformance pack.</p>
     /// - On failure, responds with [`SdkError<PutOrganizationConformancePackError>`](crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError)
-    pub fn put_organization_conformance_pack(&self) -> crate::operation::put_organization_conformance_pack::builders::PutOrganizationConformancePackFluentBuilder{
+    pub fn put_organization_conformance_pack(
+        &self,
+    ) -> crate::operation::put_organization_conformance_pack::builders::PutOrganizationConformancePackFluentBuilder {
         crate::operation::put_organization_conformance_pack::builders::PutOrganizationConformancePackFluentBuilder::new(self.handle.clone())
     }
 }

@@ -43,16 +43,14 @@ impl GetTransitGatewayPolicyTableEntriesInput {
 }
 impl GetTransitGatewayPolicyTableEntriesInput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayPolicyTableEntriesInput`](crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesInput).
-    pub fn builder() -> crate::operation::get_transit_gateway_policy_table_entries::builders::GetTransitGatewayPolicyTableEntriesInputBuilder{
+    pub fn builder() -> crate::operation::get_transit_gateway_policy_table_entries::builders::GetTransitGatewayPolicyTableEntriesInputBuilder {
         crate::operation::get_transit_gateway_policy_table_entries::builders::GetTransitGatewayPolicyTableEntriesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTransitGatewayPolicyTableEntriesInput`](crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransitGatewayPolicyTableEntriesInputBuilder {
     pub(crate) transit_gateway_policy_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -62,25 +60,17 @@ pub struct GetTransitGatewayPolicyTableEntriesInputBuilder {
 }
 impl GetTransitGatewayPolicyTableEntriesInputBuilder {
     /// <p>The ID of the transit gateway policy table.</p>
-    pub fn transit_gateway_policy_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_policy_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_policy_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway policy table.</p>
-    pub fn set_transit_gateway_policy_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_policy_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_policy_table_id = input;
         self
     }
     /// <p>The ID of the transit gateway policy table.</p>
-    pub fn get_transit_gateway_policy_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_policy_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_policy_table_id
     }
     /// Appends an item to `filters`.
@@ -95,10 +85,7 @@ impl GetTransitGatewayPolicyTableEntriesInputBuilder {
         self
     }
     /// <p>The filters associated with the transit gateway policy table.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -149,20 +136,20 @@ impl GetTransitGatewayPolicyTableEntriesInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayPolicyTableEntriesInput`](crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesInput {
-                transit_gateway_policy_table_id: self.transit_gateway_policy_table_id
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_policy_table_id: self.transit_gateway_policy_table_id,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

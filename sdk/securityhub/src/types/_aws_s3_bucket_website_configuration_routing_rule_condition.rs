@@ -23,58 +23,40 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
 }
 impl AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
     /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition).
-    pub fn builder(
-    ) -> crate::types::builders::AwsS3BucketWebsiteConfigurationRoutingRuleConditionBuilder {
-        crate::types::builders::AwsS3BucketWebsiteConfigurationRoutingRuleConditionBuilder::default(
-        )
+    pub fn builder() -> crate::types::builders::AwsS3BucketWebsiteConfigurationRoutingRuleConditionBuilder {
+        crate::types::builders::AwsS3BucketWebsiteConfigurationRoutingRuleConditionBuilder::default()
     }
 }
 
 /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketWebsiteConfigurationRoutingRuleConditionBuilder {
     pub(crate) http_error_code_returned_equals: ::std::option::Option<::std::string::String>,
     pub(crate) key_prefix_equals: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketWebsiteConfigurationRoutingRuleConditionBuilder {
     /// <p>Indicates to redirect the request if the HTTP error code matches this value.</p>
-    pub fn http_error_code_returned_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn http_error_code_returned_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_error_code_returned_equals = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates to redirect the request if the HTTP error code matches this value.</p>
-    pub fn set_http_error_code_returned_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_http_error_code_returned_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_error_code_returned_equals = input;
         self
     }
     /// <p>Indicates to redirect the request if the HTTP error code matches this value.</p>
-    pub fn get_http_error_code_returned_equals(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_http_error_code_returned_equals(&self) -> &::std::option::Option<::std::string::String> {
         &self.http_error_code_returned_equals
     }
     /// <p>Indicates to redirect the request if the key prefix matches this value.</p>
-    pub fn key_prefix_equals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_prefix_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_prefix_equals = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates to redirect the request if the key prefix matches this value.</p>
-    pub fn set_key_prefix_equals(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_prefix_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_prefix_equals = input;
         self
     }

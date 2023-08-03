@@ -43,9 +43,7 @@ impl GetModelsInput {
 
 /// A builder for [`GetModelsInput`](crate::operation::get_models::GetModelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetModelsInputBuilder {
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
@@ -73,10 +71,7 @@ impl GetModelsInputBuilder {
         self
     }
     /// <p>The model type.</p>
-    pub fn set_model_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelTypeEnum>,
-    ) -> Self {
+    pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
         self.model_type = input;
         self
     }
@@ -113,12 +108,7 @@ impl GetModelsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetModelsInput`](crate::operation::get_models::GetModelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_models::GetModelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_models::GetModelsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_models::GetModelsInput {
             model_id: self.model_id,
             model_type: self.model_type,

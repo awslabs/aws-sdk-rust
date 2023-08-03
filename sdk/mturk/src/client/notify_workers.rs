@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`NotifyWorkersOutput`](crate::operation::notify_workers::NotifyWorkersOutput) with field(s):
     ///   - [`notify_workers_failure_statuses(Option<Vec<NotifyWorkersFailureStatus>>)`](crate::operation::notify_workers::NotifyWorkersOutput::notify_workers_failure_statuses): <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
     /// - On failure, responds with [`SdkError<NotifyWorkersError>`](crate::operation::notify_workers::NotifyWorkersError)
-    pub fn notify_workers(
-        &self,
-    ) -> crate::operation::notify_workers::builders::NotifyWorkersFluentBuilder {
-        crate::operation::notify_workers::builders::NotifyWorkersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn notify_workers(&self) -> crate::operation::notify_workers::builders::NotifyWorkersFluentBuilder {
+        crate::operation::notify_workers::builders::NotifyWorkersFluentBuilder::new(self.handle.clone())
     }
 }

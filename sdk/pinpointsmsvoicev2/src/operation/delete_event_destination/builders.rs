@@ -38,10 +38,7 @@ impl DeleteEventDestinationFluentBuilder {
         }
     }
     /// Access the DeleteEventDestination as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_event_destination::builders::DeleteEventDestinationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_event_destination::builders::DeleteEventDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DeleteEventDestinationFluentBuilder {
             crate::operation::delete_event_destination::DeleteEventDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_destination::DeleteEventDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_destination::DeleteEventDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DeleteEventDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DeleteEventDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_event_destination::DeleteEventDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_destination::DeleteEventDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_destination::DeleteEventDestinationError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DeleteEventDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_event_destination::DeleteEventDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_destination::DeleteEventDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_destination::DeleteEventDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl DeleteEventDestinationFluentBuilder {
             crate::operation::delete_event_destination::DeleteEventDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_destination::DeleteEventDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_destination::DeleteEventDestinationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
@@ -145,18 +125,12 @@ impl DeleteEventDestinationFluentBuilder {
         self.inner.get_configuration_set_name()
     }
     /// <p>The name of the event destination to delete.</p>
-    pub fn event_destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_destination_name(input.into());
         self
     }
     /// <p>The name of the event destination to delete.</p>
-    pub fn set_event_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_destination_name(input);
         self
     }

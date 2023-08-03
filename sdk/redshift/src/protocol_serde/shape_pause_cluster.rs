@@ -4,17 +4,10 @@ pub fn de_pause_cluster_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::pause_cluster::PauseClusterOutput,
-    crate::operation::pause_cluster::PauseClusterError,
-> {
+) -> std::result::Result<crate::operation::pause_cluster::PauseClusterOutput, crate::operation::pause_cluster::PauseClusterError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::pause_cluster::PauseClusterError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::pause_cluster::PauseClusterError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
@@ -24,40 +17,36 @@ pub fn de_pause_cluster_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => {
-            crate::operation::pause_cluster::PauseClusterError::ClusterNotFoundFault({
+        "ClusterNotFound" => crate::operation::pause_cluster::PauseClusterError::ClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::pause_cluster::PauseClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidClusterState" => {
-            crate::operation::pause_cluster::PauseClusterError::InvalidClusterStateFault({
+                let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::pause_cluster::PauseClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidClusterState" => crate::operation::pause_cluster::PauseClusterError::InvalidClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(_response_body, output).map_err(crate::operation::pause_cluster::PauseClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::pause_cluster::PauseClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::pause_cluster::PauseClusterError::generic(generic),
     })
 }
@@ -67,20 +56,13 @@ pub fn de_pause_cluster_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::pause_cluster::PauseClusterOutput,
-    crate::operation::pause_cluster::PauseClusterError,
-> {
+) -> std::result::Result<crate::operation::pause_cluster::PauseClusterOutput, crate::operation::pause_cluster::PauseClusterError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::pause_cluster::builders::PauseClusterOutputBuilder::default();
-        output =
-            crate::protocol_serde::shape_pause_cluster::de_pause_cluster(_response_body, output)
-                .map_err(crate::operation::pause_cluster::PauseClusterError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::pause_cluster::builders::PauseClusterOutputBuilder::default();
+        output = crate::protocol_serde::shape_pause_cluster::de_pause_cluster(_response_body, output)
+            .map_err(crate::operation::pause_cluster::PauseClusterError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -89,10 +71,7 @@ pub fn de_pause_cluster_http_response_with_props(
 pub fn de_pause_cluster(
     inp: &[u8],
     mut builder: crate::operation::pause_cluster::builders::PauseClusterOutputBuilder,
-) -> Result<
-    crate::operation::pause_cluster::builders::PauseClusterOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::pause_cluster::builders::PauseClusterOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -129,9 +108,7 @@ pub fn de_pause_cluster(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected PauseClusterResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected PauseClusterResult tag"));
     };
     Ok(builder)
 }

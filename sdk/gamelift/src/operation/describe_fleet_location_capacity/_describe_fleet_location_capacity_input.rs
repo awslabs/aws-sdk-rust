@@ -22,16 +22,14 @@ impl DescribeFleetLocationCapacityInput {
 }
 impl DescribeFleetLocationCapacityInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetLocationCapacityInput`](crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityInput).
-    pub fn builder() -> crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityInputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityInputBuilder {
         crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetLocationCapacityInput`](crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationCapacityInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -72,13 +70,9 @@ impl DescribeFleetLocationCapacityInputBuilder {
         crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityInput {
-                fleet_id: self.fleet_id
-                ,
-                location: self.location
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityInput {
+            fleet_id: self.fleet_id,
+            location: self.location,
+        })
     }
 }

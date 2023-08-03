@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`SendRawEmailOutput`](crate::operation::send_raw_email::SendRawEmailOutput) with field(s):
     ///   - [`message_id(Option<String>)`](crate::operation::send_raw_email::SendRawEmailOutput::message_id): <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
     /// - On failure, responds with [`SdkError<SendRawEmailError>`](crate::operation::send_raw_email::SendRawEmailError)
-    pub fn send_raw_email(
-        &self,
-    ) -> crate::operation::send_raw_email::builders::SendRawEmailFluentBuilder {
-        crate::operation::send_raw_email::builders::SendRawEmailFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_raw_email(&self) -> crate::operation::send_raw_email::builders::SendRawEmailFluentBuilder {
+        crate::operation::send_raw_email::builders::SendRawEmailFluentBuilder::new(self.handle.clone())
     }
 }

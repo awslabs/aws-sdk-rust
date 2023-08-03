@@ -29,18 +29,14 @@ impl CreateDataSetImportTaskInput {
 }
 impl CreateDataSetImportTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateDataSetImportTaskInput`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput).
-    pub fn builder(
-    ) -> crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskInputBuilder {
         crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataSetImportTaskInput`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataSetImportTaskInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) import_config: ::std::option::Option<crate::types::DataSetImportConfig>,
@@ -48,18 +44,12 @@ pub struct CreateDataSetImportTaskInputBuilder {
 }
 impl CreateDataSetImportTaskInputBuilder {
     /// <p>The unique identifier of the application for which you want to import data sets.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the application for which you want to import data sets.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -73,10 +63,7 @@ impl CreateDataSetImportTaskInputBuilder {
         self
     }
     /// <p>The data set import task configuration.</p>
-    pub fn set_import_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSetImportConfig>,
-    ) -> Self {
+    pub fn set_import_config(mut self, input: ::std::option::Option<crate::types::DataSetImportConfig>) -> Self {
         self.import_config = input;
         self
     }
@@ -105,12 +92,10 @@ impl CreateDataSetImportTaskInputBuilder {
         crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput {
-                application_id: self.application_id,
-                import_config: self.import_config,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput {
+            application_id: self.application_id,
+            import_config: self.import_config,
+            client_token: self.client_token,
+        })
     }
 }

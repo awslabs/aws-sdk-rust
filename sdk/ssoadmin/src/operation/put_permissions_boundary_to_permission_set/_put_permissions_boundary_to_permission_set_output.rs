@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutPermissionsBoundaryToPermissionSet
 }
 impl PutPermissionsBoundaryToPermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`PutPermissionsBoundaryToPermissionSetOutput`](crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetOutput).
-    pub fn builder() -> crate::operation::put_permissions_boundary_to_permission_set::builders::PutPermissionsBoundaryToPermissionSetOutputBuilder{
+    pub fn builder() -> crate::operation::put_permissions_boundary_to_permission_set::builders::PutPermissionsBoundaryToPermissionSetOutputBuilder {
         crate::operation::put_permissions_boundary_to_permission_set::builders::PutPermissionsBoundaryToPermissionSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutPermissionsBoundaryToPermissionSetOutput`](crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPermissionsBoundaryToPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl PutPermissionsBoundaryToPermissionSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutPermissionsBoundaryToPermissionSetOutput`](crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetOutput).
-    pub fn build(self) -> crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetOutput{
+    pub fn build(self) -> crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetOutput {
         crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetOutput {
             _request_id: self._request_id,
         }

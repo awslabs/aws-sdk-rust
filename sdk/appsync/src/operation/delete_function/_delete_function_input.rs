@@ -29,9 +29,7 @@ impl DeleteFunctionInput {
 
 /// A builder for [`DeleteFunctionInput`](crate::operation::delete_function::DeleteFunctionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFunctionInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) function_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DeleteFunctionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFunctionInput`](crate::operation::delete_function::DeleteFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_function::DeleteFunctionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_function::DeleteFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_function::DeleteFunctionInput {
             api_id: self.api_id,
             function_id: self.function_id,

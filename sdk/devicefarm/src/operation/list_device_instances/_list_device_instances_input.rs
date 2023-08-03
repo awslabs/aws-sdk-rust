@@ -22,18 +22,14 @@ impl ListDeviceInstancesInput {
 }
 impl ListDeviceInstancesInput {
     /// Creates a new builder-style object to manufacture [`ListDeviceInstancesInput`](crate::operation::list_device_instances::ListDeviceInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::list_device_instances::builders::ListDeviceInstancesInputBuilder {
-        crate::operation::list_device_instances::builders::ListDeviceInstancesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_device_instances::builders::ListDeviceInstancesInputBuilder {
+        crate::operation::list_device_instances::builders::ListDeviceInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceInstancesInput`](crate::operation::list_device_instances::ListDeviceInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceInstancesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListDeviceInstancesInputBuilder {
     /// Consumes the builder and constructs a [`ListDeviceInstancesInput`](crate::operation::list_device_instances::ListDeviceInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_device_instances::ListDeviceInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_device_instances::ListDeviceInstancesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_device_instances::ListDeviceInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_device_instances::ListDeviceInstancesInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

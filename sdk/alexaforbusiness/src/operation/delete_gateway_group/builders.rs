@@ -10,10 +10,7 @@ impl DeleteGatewayGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_gateway_group::DeleteGatewayGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_gateway_group::DeleteGatewayGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_gateway_group::DeleteGatewayGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_gateway_group();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteGatewayGroupFluentBuilder {
         }
     }
     /// Access the DeleteGatewayGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_gateway_group::builders::DeleteGatewayGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_gateway_group::builders::DeleteGatewayGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteGatewayGroupFluentBuilder {
             crate::operation::delete_gateway_group::DeleteGatewayGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_gateway_group::DeleteGatewayGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_gateway_group::DeleteGatewayGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteGatewayGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteGatewayGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_gateway_group::DeleteGatewayGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_gateway_group::DeleteGatewayGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_gateway_group::DeleteGatewayGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteGatewayGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_gateway_group::DeleteGatewayGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_gateway_group::DeleteGatewayGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_gateway_group::DeleteGatewayGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DeleteGatewayGroupFluentBuilder {
             crate::operation::delete_gateway_group::DeleteGatewayGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_gateway_group::DeleteGatewayGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_gateway_group::DeleteGatewayGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the gateway group to delete.</p>
-    pub fn gateway_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_group_arn(input.into());
         self
     }
     /// <p>The ARN of the gateway group to delete.</p>
-    pub fn set_gateway_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_group_arn(input);
         self
     }

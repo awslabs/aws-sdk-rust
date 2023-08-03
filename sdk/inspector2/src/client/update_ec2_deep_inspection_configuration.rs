@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`status(Option<Ec2DeepInspectionStatus>)`](crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationOutput::status): <p>The status of Amazon Inspector deep inspection in your account.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationOutput::error_message): <p>An error message explaining why new Amazon Inspector deep inspection custom paths could not be added.</p>
     /// - On failure, responds with [`SdkError<UpdateEc2DeepInspectionConfigurationError>`](crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError)
-    pub fn update_ec2_deep_inspection_configuration(&self) -> crate::operation::update_ec2_deep_inspection_configuration::builders::UpdateEc2DeepInspectionConfigurationFluentBuilder{
-        crate::operation::update_ec2_deep_inspection_configuration::builders::UpdateEc2DeepInspectionConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn update_ec2_deep_inspection_configuration(
+        &self,
+    ) -> crate::operation::update_ec2_deep_inspection_configuration::builders::UpdateEc2DeepInspectionConfigurationFluentBuilder {
+        crate::operation::update_ec2_deep_inspection_configuration::builders::UpdateEc2DeepInspectionConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

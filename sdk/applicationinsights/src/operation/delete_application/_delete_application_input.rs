@@ -15,34 +15,25 @@ impl DeleteApplicationInput {
 }
 impl DeleteApplicationInput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
-    pub fn builder() -> crate::operation::delete_application::builders::DeleteApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_application::builders::DeleteApplicationInputBuilder {
         crate::operation::delete_application::builders::DeleteApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationInputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApplicationInputBuilder {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteApplicationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_application::DeleteApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_application::DeleteApplicationInput {
-                resource_group_name: self.resource_group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_application::DeleteApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_application::DeleteApplicationInput {
+            resource_group_name: self.resource_group_name,
+        })
     }
 }

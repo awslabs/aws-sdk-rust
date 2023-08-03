@@ -46,9 +46,7 @@ impl ProcessType {
 
 /// A builder for [`ProcessType`](crate::types::ProcessType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessTypeBuilder {
     pub(crate) process_name: ::std::option::Option<::std::string::String>,
 }

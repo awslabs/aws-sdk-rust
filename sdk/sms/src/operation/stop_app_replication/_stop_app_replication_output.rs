@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for StopAppReplicationOutput {
 }
 impl StopAppReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StopAppReplicationOutput`](crate::operation::stop_app_replication::StopAppReplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_app_replication::builders::StopAppReplicationOutputBuilder {
+    pub fn builder() -> crate::operation::stop_app_replication::builders::StopAppReplicationOutputBuilder {
         crate::operation::stop_app_replication::builders::StopAppReplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopAppReplicationOutput`](crate::operation::stop_app_replication::StopAppReplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopAppReplicationOutputBuilder {
     _request_id: Option<String>,
 }

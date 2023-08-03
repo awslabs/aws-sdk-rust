@@ -6,10 +6,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAdjustmentTypesOutput`](crate::operation::describe_adjustment_types::DescribeAdjustmentTypesOutput) with field(s):
     ///   - [`adjustment_types(Option<Vec<AdjustmentType>>)`](crate::operation::describe_adjustment_types::DescribeAdjustmentTypesOutput::adjustment_types): <p>The policy adjustment types.</p>
     /// - On failure, responds with [`SdkError<DescribeAdjustmentTypesError>`](crate::operation::describe_adjustment_types::DescribeAdjustmentTypesError)
-    pub fn describe_adjustment_types(
-        &self,
-    ) -> crate::operation::describe_adjustment_types::builders::DescribeAdjustmentTypesFluentBuilder
-    {
+    pub fn describe_adjustment_types(&self) -> crate::operation::describe_adjustment_types::builders::DescribeAdjustmentTypesFluentBuilder {
         crate::operation::describe_adjustment_types::builders::DescribeAdjustmentTypesFluentBuilder::new(self.handle.clone())
     }
 }

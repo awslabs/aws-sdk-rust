@@ -9,81 +9,87 @@ pub fn de_cancel_audit_mitigation_actions_task_http_error(
     crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InternalFailureException" => {
+            crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output).map_err(crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidRequestException" => crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::InvalidRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidRequestException" => {
+            crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ThrottlingException" => crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ThrottlingException" => {
+            crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError::generic(generic),
     })
 }
 
@@ -99,9 +105,7 @@ pub fn de_cancel_audit_mitigation_actions_task_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::cancel_audit_mitigation_actions_task::builders::CancelAuditMitigationActionsTaskOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

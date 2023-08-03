@@ -15,34 +15,25 @@ impl GetConfiguredTableInput {
 }
 impl GetConfiguredTableInput {
     /// Creates a new builder-style object to manufacture [`GetConfiguredTableInput`](crate::operation::get_configured_table::GetConfiguredTableInput).
-    pub fn builder(
-    ) -> crate::operation::get_configured_table::builders::GetConfiguredTableInputBuilder {
+    pub fn builder() -> crate::operation::get_configured_table::builders::GetConfiguredTableInputBuilder {
         crate::operation::get_configured_table::builders::GetConfiguredTableInputBuilder::default()
     }
 }
 
 /// A builder for [`GetConfiguredTableInput`](crate::operation::get_configured_table::GetConfiguredTableInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConfiguredTableInputBuilder {
     pub(crate) configured_table_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetConfiguredTableInputBuilder {
     /// <p>The unique ID for the configured table to retrieve.</p>
-    pub fn configured_table_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the configured table to retrieve.</p>
-    pub fn set_configured_table_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configured_table_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configured_table_identifier = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetConfiguredTableInputBuilder {
     /// Consumes the builder and constructs a [`GetConfiguredTableInput`](crate::operation::get_configured_table::GetConfiguredTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_configured_table::GetConfiguredTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_configured_table::GetConfiguredTableInput {
-                configured_table_identifier: self.configured_table_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_configured_table::GetConfiguredTableInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_configured_table::GetConfiguredTableInput {
+            configured_table_identifier: self.configured_table_identifier,
+        })
     }
 }

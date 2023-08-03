@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`features(Option<Vec<String>>)`](crate::operation::update_account::UpdateAccountOutput::features): <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
     ///   - [`api_key_version(Option<String>)`](crate::operation::update_account::UpdateAccountOutput::api_key_version): <p>The version of the API keys used for the account.</p>
     /// - On failure, responds with [`SdkError<UpdateAccountError>`](crate::operation::update_account::UpdateAccountError)
-    pub fn update_account(
-        &self,
-    ) -> crate::operation::update_account::builders::UpdateAccountFluentBuilder {
-        crate::operation::update_account::builders::UpdateAccountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_account(&self) -> crate::operation::update_account::builders::UpdateAccountFluentBuilder {
+        crate::operation::update_account::builders::UpdateAccountFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl ChildShard {
 
 /// A builder for [`ChildShard`](crate::types::ChildShard).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChildShardBuilder {
     pub(crate) shard_id: ::std::option::Option<::std::string::String>,
     pub(crate) parent_shards: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -65,27 +63,19 @@ impl ChildShardBuilder {
     /// To override the contents of this collection use [`set_parent_shards`](Self::set_parent_shards).
     ///
     /// <p>The current shard that is the parent of the existing child shard.</p>
-    pub fn parent_shards(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_shards(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.parent_shards.unwrap_or_default();
         v.push(input.into());
         self.parent_shards = ::std::option::Option::Some(v);
         self
     }
     /// <p>The current shard that is the parent of the existing child shard.</p>
-    pub fn set_parent_shards(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_parent_shards(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.parent_shards = input;
         self
     }
     /// <p>The current shard that is the parent of the existing child shard.</p>
-    pub fn get_parent_shards(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_parent_shards(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.parent_shards
     }
     /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
@@ -94,10 +84,7 @@ impl ChildShardBuilder {
         self
     }
     /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
-    pub fn set_hash_key_range(
-        mut self,
-        input: ::std::option::Option<crate::types::HashKeyRange>,
-    ) -> Self {
+    pub fn set_hash_key_range(mut self, input: ::std::option::Option<crate::types::HashKeyRange>) -> Self {
         self.hash_key_range = input;
         self
     }

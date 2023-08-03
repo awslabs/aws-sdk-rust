@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateAutomationRuleOutput {
 }
 impl CreateAutomationRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateAutomationRuleOutput`](crate::operation::create_automation_rule::CreateAutomationRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::create_automation_rule::builders::CreateAutomationRuleOutputBuilder {
+    pub fn builder() -> crate::operation::create_automation_rule::builders::CreateAutomationRuleOutputBuilder {
         crate::operation::create_automation_rule::builders::CreateAutomationRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAutomationRuleOutput`](crate::operation::create_automation_rule::CreateAutomationRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAutomationRuleOutputBuilder {
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

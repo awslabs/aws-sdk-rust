@@ -10,10 +10,7 @@ impl DeleteApplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_application::DeleteApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application::DeleteApplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application::DeleteApplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_application();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteApplicationFluentBuilder {
         }
     }
     /// Access the DeleteApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_application::builders::DeleteApplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_application::builders::DeleteApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteApplicationFluentBuilder {
             crate::operation::delete_application::DeleteApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application::DeleteApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application::DeleteApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application::DeleteApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application::DeleteApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application::DeleteApplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application::DeleteApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application::DeleteApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application::DeleteApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteApplicationFluentBuilder {
             crate::operation::delete_application::DeleteApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application::DeleteApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application::DeleteApplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>Application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

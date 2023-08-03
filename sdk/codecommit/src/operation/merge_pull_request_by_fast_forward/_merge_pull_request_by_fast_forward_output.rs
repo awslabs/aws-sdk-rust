@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for MergePullRequestByFastForwardOutput {
 }
 impl MergePullRequestByFastForwardOutput {
     /// Creates a new builder-style object to manufacture [`MergePullRequestByFastForwardOutput`](crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput).
-    pub fn builder() -> crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardOutputBuilder{
+    pub fn builder() -> crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardOutputBuilder {
         crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardOutputBuilder::default()
     }
 }
 
 /// A builder for [`MergePullRequestByFastForwardOutput`](crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MergePullRequestByFastForwardOutputBuilder {
     pub(crate) pull_request: ::std::option::Option<crate::types::PullRequest>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl MergePullRequestByFastForwardOutputBuilder {
         self
     }
     /// <p>Information about the specified pull request, including the merge.</p>
-    pub fn set_pull_request(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequest>,
-    ) -> Self {
+    pub fn set_pull_request(mut self, input: ::std::option::Option<crate::types::PullRequest>) -> Self {
         self.pull_request = input;
         self
     }
@@ -63,10 +58,7 @@ impl MergePullRequestByFastForwardOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`MergePullRequestByFastForwardOutput`](crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput
-    {
+    pub fn build(self) -> crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput {
         crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput {
             pull_request: self.pull_request,
             _request_id: self._request_id,

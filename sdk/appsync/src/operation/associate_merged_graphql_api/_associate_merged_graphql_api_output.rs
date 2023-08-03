@@ -10,9 +10,7 @@ pub struct AssociateMergedGraphqlApiOutput {
 }
 impl AssociateMergedGraphqlApiOutput {
     /// <p>The <code>SourceApiAssociation</code> object data.</p>
-    pub fn source_api_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceApiAssociation> {
+    pub fn source_api_association(&self) -> ::std::option::Option<&crate::types::SourceApiAssociation> {
         self.source_api_association.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for AssociateMergedGraphqlApiOutput {
 }
 impl AssociateMergedGraphqlApiOutput {
     /// Creates a new builder-style object to manufacture [`AssociateMergedGraphqlApiOutput`](crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiOutput).
-    pub fn builder() -> crate::operation::associate_merged_graphql_api::builders::AssociateMergedGraphqlApiOutputBuilder{
+    pub fn builder() -> crate::operation::associate_merged_graphql_api::builders::AssociateMergedGraphqlApiOutputBuilder {
         crate::operation::associate_merged_graphql_api::builders::AssociateMergedGraphqlApiOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateMergedGraphqlApiOutput`](crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateMergedGraphqlApiOutputBuilder {
     pub(crate) source_api_association: ::std::option::Option<crate::types::SourceApiAssociation>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl AssociateMergedGraphqlApiOutputBuilder {
         self
     }
     /// <p>The <code>SourceApiAssociation</code> object data.</p>
-    pub fn set_source_api_association(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceApiAssociation>,
-    ) -> Self {
+    pub fn set_source_api_association(mut self, input: ::std::option::Option<crate::types::SourceApiAssociation>) -> Self {
         self.source_api_association = input;
         self
     }
     /// <p>The <code>SourceApiAssociation</code> object data.</p>
-    pub fn get_source_api_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceApiAssociation> {
+    pub fn get_source_api_association(&self) -> &::std::option::Option<crate::types::SourceApiAssociation> {
         &self.source_api_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl AssociateMergedGraphqlApiOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateMergedGraphqlApiOutput`](crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiOutput {
+    pub fn build(self) -> crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiOutput {
         crate::operation::associate_merged_graphql_api::AssociateMergedGraphqlApiOutput {
             source_api_association: self.source_api_association,
             _request_id: self._request_id,

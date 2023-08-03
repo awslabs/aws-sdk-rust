@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`AttachTypedLinkOutput`](crate::operation::attach_typed_link::AttachTypedLinkOutput) with field(s):
     ///   - [`typed_link_specifier(Option<TypedLinkSpecifier>)`](crate::operation::attach_typed_link::AttachTypedLinkOutput::typed_link_specifier): <p>Returns a typed link specifier as output.</p>
     /// - On failure, responds with [`SdkError<AttachTypedLinkError>`](crate::operation::attach_typed_link::AttachTypedLinkError)
-    pub fn attach_typed_link(
-        &self,
-    ) -> crate::operation::attach_typed_link::builders::AttachTypedLinkFluentBuilder {
-        crate::operation::attach_typed_link::builders::AttachTypedLinkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_typed_link(&self) -> crate::operation::attach_typed_link::builders::AttachTypedLinkFluentBuilder {
+        crate::operation::attach_typed_link::builders::AttachTypedLinkFluentBuilder::new(self.handle.clone())
     }
 }

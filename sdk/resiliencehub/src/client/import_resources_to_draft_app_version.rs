@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`terraform_sources(Option<Vec<TerraformSource>>)`](crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput::terraform_sources): <p> A list of terraform file s3 URLs you have imported. </p>
     ///   - [`eks_sources(Option<Vec<EksSource>>)`](crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput::eks_sources): <p>The input sources of the Amazon Elastic Kubernetes Service resources you have imported.</p>
     /// - On failure, responds with [`SdkError<ImportResourcesToDraftAppVersionError>`](crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError)
-    pub fn import_resources_to_draft_app_version(&self) -> crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionFluentBuilder{
+    pub fn import_resources_to_draft_app_version(
+        &self,
+    ) -> crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionFluentBuilder {
         crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionFluentBuilder::new(self.handle.clone())
     }
 }

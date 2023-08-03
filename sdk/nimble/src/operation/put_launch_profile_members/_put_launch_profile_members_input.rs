@@ -43,24 +43,19 @@ impl PutLaunchProfileMembersInput {
 }
 impl PutLaunchProfileMembersInput {
     /// Creates a new builder-style object to manufacture [`PutLaunchProfileMembersInput`](crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput).
-    pub fn builder(
-    ) -> crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersInputBuilder {
         crate::operation::put_launch_profile_members::builders::PutLaunchProfileMembersInputBuilder::default()
     }
 }
 
 /// A builder for [`PutLaunchProfileMembersInput`](crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutLaunchProfileMembersInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_profile_id: ::std::option::Option<::std::string::String>,
-    pub(crate) members:
-        ::std::option::Option<::std::vec::Vec<crate::types::NewLaunchProfileMember>>,
+    pub(crate) members: ::std::option::Option<::std::vec::Vec<crate::types::NewLaunchProfileMember>>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
 }
 impl PutLaunchProfileMembersInputBuilder {
@@ -79,18 +74,12 @@ impl PutLaunchProfileMembersInputBuilder {
         &self.client_token
     }
     /// <p>The ID of the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_store_id = input;
         self
     }
@@ -99,18 +88,12 @@ impl PutLaunchProfileMembersInputBuilder {
         &self.identity_store_id
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn set_launch_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_profile_id = input;
         self
     }
@@ -130,17 +113,12 @@ impl PutLaunchProfileMembersInputBuilder {
         self
     }
     /// <p>A list of members.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NewLaunchProfileMember>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NewLaunchProfileMember>>) -> Self {
         self.members = input;
         self
     }
     /// <p>A list of members.</p>
-    pub fn get_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NewLaunchProfileMember>> {
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NewLaunchProfileMember>> {
         &self.members
     }
     /// <p>The studio ID. </p>
@@ -164,14 +142,12 @@ impl PutLaunchProfileMembersInputBuilder {
         crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput {
-                client_token: self.client_token,
-                identity_store_id: self.identity_store_id,
-                launch_profile_id: self.launch_profile_id,
-                members: self.members,
-                studio_id: self.studio_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_launch_profile_members::PutLaunchProfileMembersInput {
+            client_token: self.client_token,
+            identity_store_id: self.identity_store_id,
+            launch_profile_id: self.launch_profile_id,
+            members: self.members,
+            studio_id: self.studio_id,
+        })
     }
 }

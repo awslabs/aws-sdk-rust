@@ -29,7 +29,7 @@ impl SetIdentityMailFromDomainInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetIdentityMailFromDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::set_identity_mail_from_domain::builders::SetIdentityMailFromDomainInputBuilder,
+    inner: crate::operation::set_identity_mail_from_domain::builders::SetIdentityMailFromDomainInputBuilder,
 }
 impl SetIdentityMailFromDomainFluentBuilder {
     /// Creates a new `SetIdentityMailFromDomain`.
@@ -40,7 +40,7 @@ impl SetIdentityMailFromDomainFluentBuilder {
         }
     }
     /// Access the SetIdentityMailFromDomain as a reference.
-    pub fn as_input(&self) -> &crate::operation::set_identity_mail_from_domain::builders::SetIdentityMailFromDomainInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::set_identity_mail_from_domain::builders::SetIdentityMailFromDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl SetIdentityMailFromDomainFluentBuilder {
             crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl SetIdentityMailFromDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl SetIdentityMailFromDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl SetIdentityMailFromDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl SetIdentityMailFromDomainFluentBuilder {
             crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +127,12 @@ impl SetIdentityMailFromDomainFluentBuilder {
         self.inner.get_identity()
     }
     /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination of email feedback forwarding (for more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
-    pub fn mail_from_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mail_from_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mail_from_domain(input.into());
         self
     }
     /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination of email feedback forwarding (for more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
-    pub fn set_mail_from_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mail_from_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mail_from_domain(input);
         self
     }
@@ -165,18 +148,13 @@ impl SetIdentityMailFromDomainFluentBuilder {
     }
     /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>, Amazon SES will return a <code>MailFromDomainNotVerified</code> error and not send the email.</p>
     /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
-    pub fn set_behavior_on_mx_failure(
-        mut self,
-        input: ::std::option::Option<crate::types::BehaviorOnMxFailure>,
-    ) -> Self {
+    pub fn set_behavior_on_mx_failure(mut self, input: ::std::option::Option<crate::types::BehaviorOnMxFailure>) -> Self {
         self.inner = self.inner.set_behavior_on_mx_failure(input);
         self
     }
     /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>, Amazon SES will return a <code>MailFromDomainNotVerified</code> error and not send the email.</p>
     /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
-    pub fn get_behavior_on_mx_failure(
-        &self,
-    ) -> &::std::option::Option<crate::types::BehaviorOnMxFailure> {
+    pub fn get_behavior_on_mx_failure(&self) -> &::std::option::Option<crate::types::BehaviorOnMxFailure> {
         self.inner.get_behavior_on_mx_failure()
     }
 }

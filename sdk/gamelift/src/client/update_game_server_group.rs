@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateGameServerGroupOutput`](crate::operation::update_game_server_group::UpdateGameServerGroupOutput) with field(s):
     ///   - [`game_server_group(Option<GameServerGroup>)`](crate::operation::update_game_server_group::UpdateGameServerGroupOutput::game_server_group): <p>An object that describes the game server group resource with updated properties. </p>
     /// - On failure, responds with [`SdkError<UpdateGameServerGroupError>`](crate::operation::update_game_server_group::UpdateGameServerGroupError)
-    pub fn update_game_server_group(
-        &self,
-    ) -> crate::operation::update_game_server_group::builders::UpdateGameServerGroupFluentBuilder
-    {
+    pub fn update_game_server_group(&self) -> crate::operation::update_game_server_group::builders::UpdateGameServerGroupFluentBuilder {
         crate::operation::update_game_server_group::builders::UpdateGameServerGroupFluentBuilder::new(self.handle.clone())
     }
 }

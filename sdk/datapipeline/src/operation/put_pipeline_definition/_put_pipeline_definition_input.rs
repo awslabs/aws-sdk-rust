@@ -37,26 +37,19 @@ impl PutPipelineDefinitionInput {
 }
 impl PutPipelineDefinitionInput {
     /// Creates a new builder-style object to manufacture [`PutPipelineDefinitionInput`](crate::operation::put_pipeline_definition::PutPipelineDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionInputBuilder {
         crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`PutPipelineDefinitionInput`](crate::operation::put_pipeline_definition::PutPipelineDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPipelineDefinitionInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
-    pub(crate) pipeline_objects:
-        ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
-    pub(crate) parameter_objects:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
-    pub(crate) parameter_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
+    pub(crate) pipeline_objects: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
+    pub(crate) parameter_objects: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
+    pub(crate) parameter_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
 }
 impl PutPipelineDefinitionInputBuilder {
     /// <p>The ID of the pipeline.</p>
@@ -85,17 +78,12 @@ impl PutPipelineDefinitionInputBuilder {
         self
     }
     /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
-    pub fn set_pipeline_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
-    ) -> Self {
+    pub fn set_pipeline_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>) -> Self {
         self.pipeline_objects = input;
         self
     }
     /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
-    pub fn get_pipeline_objects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
+    pub fn get_pipeline_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
         &self.pipeline_objects
     }
     /// Appends an item to `parameter_objects`.
@@ -110,17 +98,12 @@ impl PutPipelineDefinitionInputBuilder {
         self
     }
     /// <p>The parameter objects used with the pipeline.</p>
-    pub fn set_parameter_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
-    ) -> Self {
+    pub fn set_parameter_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>) -> Self {
         self.parameter_objects = input;
         self
     }
     /// <p>The parameter objects used with the pipeline.</p>
-    pub fn get_parameter_objects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>> {
+    pub fn get_parameter_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>> {
         &self.parameter_objects
     }
     /// Appends an item to `parameter_values`.
@@ -135,33 +118,24 @@ impl PutPipelineDefinitionInputBuilder {
         self
     }
     /// <p>The parameter values used with the pipeline.</p>
-    pub fn set_parameter_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
-    ) -> Self {
+    pub fn set_parameter_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>) -> Self {
         self.parameter_values = input;
         self
     }
     /// <p>The parameter values used with the pipeline.</p>
-    pub fn get_parameter_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
+    pub fn get_parameter_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
         &self.parameter_values
     }
     /// Consumes the builder and constructs a [`PutPipelineDefinitionInput`](crate::operation::put_pipeline_definition::PutPipelineDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_pipeline_definition::PutPipelineDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_pipeline_definition::PutPipelineDefinitionInput {
-                pipeline_id: self.pipeline_id,
-                pipeline_objects: self.pipeline_objects,
-                parameter_objects: self.parameter_objects,
-                parameter_values: self.parameter_values,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_pipeline_definition::PutPipelineDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_pipeline_definition::PutPipelineDefinitionInput {
+            pipeline_id: self.pipeline_id,
+            pipeline_objects: self.pipeline_objects,
+            parameter_objects: self.parameter_objects,
+            parameter_values: self.parameter_values,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl SetIpAddressTypeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_ip_address_type::SetIpAddressTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_ip_address_type::SetIpAddressTypeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_ip_address_type::SetIpAddressTypeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_ip_address_type();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SetIpAddressTypeFluentBuilder {
         }
     }
     /// Access the SetIpAddressType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_ip_address_type::builders::SetIpAddressTypeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_ip_address_type::builders::SetIpAddressTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SetIpAddressTypeFluentBuilder {
             crate::operation::set_ip_address_type::SetIpAddressType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_ip_address_type::SetIpAddressTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_ip_address_type::SetIpAddressTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SetIpAddressTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SetIpAddressTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_ip_address_type::SetIpAddressTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_ip_address_type::SetIpAddressTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_ip_address_type::SetIpAddressTypeError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SetIpAddressTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_ip_address_type::SetIpAddressTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_ip_address_type::SetIpAddressTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_ip_address_type::SetIpAddressTypeError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl SetIpAddressTypeFluentBuilder {
             crate::operation::set_ip_address_type::SetIpAddressType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_ip_address_type::SetIpAddressTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_ip_address_type::SetIpAddressTypeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_arn(input);
         self
     }
@@ -148,10 +126,7 @@ impl SetIpAddressTypeFluentBuilder {
         self
     }
     /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }

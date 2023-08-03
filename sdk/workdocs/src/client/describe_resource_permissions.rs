@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`principals(Option<Vec<Principal>>)`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput::principals): <p>The principals.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeResourcePermissionsError>`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsError)
-    pub fn describe_resource_permissions(&self) -> crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder{
+    pub fn describe_resource_permissions(
+        &self,
+    ) -> crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder {
         crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

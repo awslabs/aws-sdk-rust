@@ -30,13 +30,10 @@ impl ArtifactSource {
 
 /// A builder for [`ArtifactSource`](crate::types::ArtifactSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArtifactSourceBuilder {
     pub(crate) source_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) source_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSourceType>>,
+    pub(crate) source_types: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSourceType>>,
 }
 impl ArtifactSourceBuilder {
     /// <p>The URI of the source.</p>
@@ -65,17 +62,12 @@ impl ArtifactSourceBuilder {
         self
     }
     /// <p>A list of source types.</p>
-    pub fn set_source_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSourceType>>,
-    ) -> Self {
+    pub fn set_source_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSourceType>>) -> Self {
         self.source_types = input;
         self
     }
     /// <p>A list of source types.</p>
-    pub fn get_source_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactSourceType>> {
+    pub fn get_source_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactSourceType>> {
         &self.source_types
     }
     /// Consumes the builder and constructs a [`ArtifactSource`](crate::types::ArtifactSource).

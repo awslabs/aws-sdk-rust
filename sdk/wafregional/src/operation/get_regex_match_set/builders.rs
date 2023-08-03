@@ -10,10 +10,7 @@ impl GetRegexMatchSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_regex_match_set::GetRegexMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_regex_match_set::GetRegexMatchSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_regex_match_set::GetRegexMatchSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_regex_match_set();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl GetRegexMatchSetFluentBuilder {
         }
     }
     /// Access the GetRegexMatchSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_regex_match_set::builders::GetRegexMatchSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_regex_match_set::builders::GetRegexMatchSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl GetRegexMatchSetFluentBuilder {
             crate::operation::get_regex_match_set::GetRegexMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_regex_match_set::GetRegexMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_regex_match_set::GetRegexMatchSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl GetRegexMatchSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl GetRegexMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_regex_match_set::GetRegexMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_regex_match_set::GetRegexMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_regex_match_set::GetRegexMatchSetError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl GetRegexMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_regex_match_set::GetRegexMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_regex_match_set::GetRegexMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_regex_match_set::GetRegexMatchSetError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +106,17 @@ impl GetRegexMatchSetFluentBuilder {
             crate::operation::get_regex_match_set::GetRegexMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_regex_match_set::GetRegexMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_regex_match_set::GetRegexMatchSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    pub fn regex_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn regex_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.regex_match_set_id(input.into());
         self
     }
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    pub fn set_regex_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_regex_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_regex_match_set_id(input);
         self
     }

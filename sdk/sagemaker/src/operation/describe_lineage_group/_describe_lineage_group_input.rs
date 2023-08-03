@@ -15,34 +15,25 @@ impl DescribeLineageGroupInput {
 }
 impl DescribeLineageGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeLineageGroupInput`](crate::operation::describe_lineage_group::DescribeLineageGroupInput).
-    pub fn builder(
-    ) -> crate::operation::describe_lineage_group::builders::DescribeLineageGroupInputBuilder {
+    pub fn builder() -> crate::operation::describe_lineage_group::builders::DescribeLineageGroupInputBuilder {
         crate::operation::describe_lineage_group::builders::DescribeLineageGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLineageGroupInput`](crate::operation::describe_lineage_group::DescribeLineageGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLineageGroupInputBuilder {
     pub(crate) lineage_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLineageGroupInputBuilder {
     /// <p>The name of the lineage group.</p>
-    pub fn lineage_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lineage_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lineage_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the lineage group.</p>
-    pub fn set_lineage_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lineage_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lineage_group_name = input;
         self
     }
@@ -53,14 +44,10 @@ impl DescribeLineageGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLineageGroupInput`](crate::operation::describe_lineage_group::DescribeLineageGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_lineage_group::DescribeLineageGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_lineage_group::DescribeLineageGroupInput {
-                lineage_group_name: self.lineage_group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_lineage_group::DescribeLineageGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_lineage_group::DescribeLineageGroupInput {
+            lineage_group_name: self.lineage_group_name,
+        })
     }
 }

@@ -40,13 +40,7 @@
 /// Special features, 'ADVANCED_AUDIO' 'AUDIO_NORMALIZATION' 'MGHD' or 'MGUHD'
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ReservationSpecialFeature {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ReservationSpecialFeature {
             "AUDIO_NORMALIZATION" => ReservationSpecialFeature::AudioNormalization,
             "MGHD" => ReservationSpecialFeature::Mghd,
             "MGUHD" => ReservationSpecialFeature::Mguhd,
-            other => ReservationSpecialFeature::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ReservationSpecialFeature::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

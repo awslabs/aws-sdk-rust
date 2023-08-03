@@ -65,17 +65,14 @@ impl OAuth2CustomParameter {
 
 /// A builder for [`OAuth2CustomParameter`](crate::types::OAuth2CustomParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OAuth2CustomParameterBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) is_required: ::std::option::Option<bool>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) is_sensitive_field: ::std::option::Option<bool>,
-    pub(crate) connector_supplied_values:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) connector_supplied_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::OAuth2CustomPropType>,
 }
 impl OAuth2CustomParameterBuilder {
@@ -154,27 +151,19 @@ impl OAuth2CustomParameterBuilder {
     /// To override the contents of this collection use [`set_connector_supplied_values`](Self::set_connector_supplied_values).
     ///
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
-    pub fn connector_supplied_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_supplied_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.connector_supplied_values.unwrap_or_default();
         v.push(input.into());
         self.connector_supplied_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
-    pub fn set_connector_supplied_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_connector_supplied_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.connector_supplied_values = input;
         self
     }
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
-    pub fn get_connector_supplied_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connector_supplied_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.connector_supplied_values
     }
     /// <p>Indicates whether custom parameter is used with TokenUrl or AuthUrl.</p>
@@ -183,10 +172,7 @@ impl OAuth2CustomParameterBuilder {
         self
     }
     /// <p>Indicates whether custom parameter is used with TokenUrl or AuthUrl.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OAuth2CustomPropType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::OAuth2CustomPropType>) -> Self {
         self.r#type = input;
         self
     }

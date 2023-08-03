@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`container_name(impl ::std::convert::Into<String>)`](crate::operation::delete_metric_policy::builders::DeleteMetricPolicyFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::delete_metric_policy::builders::DeleteMetricPolicyFluentBuilder::set_container_name): <p>The name of the container that is associated with the metric policy that you want to delete.</p>
     /// - On success, responds with [`DeleteMetricPolicyOutput`](crate::operation::delete_metric_policy::DeleteMetricPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteMetricPolicyError>`](crate::operation::delete_metric_policy::DeleteMetricPolicyError)
-    pub fn delete_metric_policy(
-        &self,
-    ) -> crate::operation::delete_metric_policy::builders::DeleteMetricPolicyFluentBuilder {
-        crate::operation::delete_metric_policy::builders::DeleteMetricPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_metric_policy(&self) -> crate::operation::delete_metric_policy::builders::DeleteMetricPolicyFluentBuilder {
+        crate::operation::delete_metric_policy::builders::DeleteMetricPolicyFluentBuilder::new(self.handle.clone())
     }
 }

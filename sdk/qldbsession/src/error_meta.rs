@@ -31,28 +31,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::send_command::SendCommandError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -62,27 +50,13 @@ where
 impl From<crate::operation::send_command::SendCommandError> for Error {
     fn from(err: crate::operation::send_command::SendCommandError) -> Self {
         match err {
-            crate::operation::send_command::SendCommandError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::send_command::SendCommandError::CapacityExceededException(inner) => {
-                Error::CapacityExceededException(inner)
-            }
-            crate::operation::send_command::SendCommandError::InvalidSessionException(inner) => {
-                Error::InvalidSessionException(inner)
-            }
-            crate::operation::send_command::SendCommandError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::send_command::SendCommandError::OccConflictException(inner) => {
-                Error::OccConflictException(inner)
-            }
-            crate::operation::send_command::SendCommandError::RateExceededException(inner) => {
-                Error::RateExceededException(inner)
-            }
-            crate::operation::send_command::SendCommandError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::send_command::SendCommandError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::send_command::SendCommandError::CapacityExceededException(inner) => Error::CapacityExceededException(inner),
+            crate::operation::send_command::SendCommandError::InvalidSessionException(inner) => Error::InvalidSessionException(inner),
+            crate::operation::send_command::SendCommandError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::send_command::SendCommandError::OccConflictException(inner) => Error::OccConflictException(inner),
+            crate::operation::send_command::SendCommandError::RateExceededException(inner) => Error::RateExceededException(inner),
+            crate::operation::send_command::SendCommandError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

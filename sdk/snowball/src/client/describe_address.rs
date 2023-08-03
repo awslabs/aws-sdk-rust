@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAddressOutput`](crate::operation::describe_address::DescribeAddressOutput) with field(s):
     ///   - [`address(Option<Address>)`](crate::operation::describe_address::DescribeAddressOutput::address): <p>The address that you want the Snow device(s) associated with a specific job to be shipped to.</p>
     /// - On failure, responds with [`SdkError<DescribeAddressError>`](crate::operation::describe_address::DescribeAddressError)
-    pub fn describe_address(
-        &self,
-    ) -> crate::operation::describe_address::builders::DescribeAddressFluentBuilder {
-        crate::operation::describe_address::builders::DescribeAddressFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_address(&self) -> crate::operation::describe_address::builders::DescribeAddressFluentBuilder {
+        crate::operation::describe_address::builders::DescribeAddressFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,16 +44,14 @@ impl DescribeSubscribersForNotificationInput {
 }
 impl DescribeSubscribersForNotificationInput {
     /// Creates a new builder-style object to manufacture [`DescribeSubscribersForNotificationInput`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput).
-    pub fn builder() -> crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationInputBuilder{
+    pub fn builder() -> crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationInputBuilder {
         crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSubscribersForNotificationInput`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSubscribersForNotificationInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
@@ -96,10 +94,7 @@ impl DescribeSubscribersForNotificationInputBuilder {
         self
     }
     /// <p>The notification whose subscribers you want to list.</p>
-    pub fn set_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::Notification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: ::std::option::Option<crate::types::Notification>) -> Self {
         self.notification = input;
         self
     }
@@ -136,20 +131,20 @@ impl DescribeSubscribersForNotificationInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeSubscribersForNotificationInput`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput {
-                account_id: self.account_id
-                ,
-                budget_name: self.budget_name
-                ,
-                notification: self.notification
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                account_id: self.account_id,
+                budget_name: self.budget_name,
+                notification: self.notification,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

@@ -31,17 +31,14 @@ impl ListCidrLocationsInput {
 }
 impl ListCidrLocationsInput {
     /// Creates a new builder-style object to manufacture [`ListCidrLocationsInput`](crate::operation::list_cidr_locations::ListCidrLocationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_cidr_locations::builders::ListCidrLocationsInputBuilder {
+    pub fn builder() -> crate::operation::list_cidr_locations::builders::ListCidrLocationsInputBuilder {
         crate::operation::list_cidr_locations::builders::ListCidrLocationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCidrLocationsInput`](crate::operation::list_cidr_locations::ListCidrLocationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCidrLocationsInputBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -49,18 +46,12 @@ pub struct ListCidrLocationsInputBuilder {
 }
 impl ListCidrLocationsInputBuilder {
     /// <p>The CIDR collection ID.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CIDR collection ID.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_id = input;
         self
     }
@@ -102,16 +93,11 @@ impl ListCidrLocationsInputBuilder {
     /// Consumes the builder and constructs a [`ListCidrLocationsInput`](crate::operation::list_cidr_locations::ListCidrLocationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_cidr_locations::ListCidrLocationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_cidr_locations::ListCidrLocationsInput {
-                collection_id: self.collection_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_cidr_locations::ListCidrLocationsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_cidr_locations::ListCidrLocationsInput {
+            collection_id: self.collection_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

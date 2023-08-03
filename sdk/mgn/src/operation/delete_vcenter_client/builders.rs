@@ -37,9 +37,7 @@ impl DeleteVcenterClientFluentBuilder {
         }
     }
     /// Access the DeleteVcenterClient as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_vcenter_client::builders::DeleteVcenterClientInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_vcenter_client::builders::DeleteVcenterClientInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteVcenterClientFluentBuilder {
             crate::operation::delete_vcenter_client::DeleteVcenterClient,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vcenter_client::DeleteVcenterClientError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vcenter_client::DeleteVcenterClientError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteVcenterClientFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteVcenterClientFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vcenter_client::DeleteVcenterClientOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vcenter_client::DeleteVcenterClientError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vcenter_client::DeleteVcenterClientError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteVcenterClientFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vcenter_client::DeleteVcenterClientOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vcenter_client::DeleteVcenterClientError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vcenter_client::DeleteVcenterClientError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteVcenterClientFluentBuilder {
             crate::operation::delete_vcenter_client::DeleteVcenterClient,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vcenter_client::DeleteVcenterClientError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vcenter_client::DeleteVcenterClientError>,
     > {
         self.customize_middleware().await
     }
     /// <p>ID of resource to be deleted.</p>
-    pub fn vcenter_client_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vcenter_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vcenter_client_id(input.into());
         self
     }
     /// <p>ID of resource to be deleted.</p>
-    pub fn set_vcenter_client_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vcenter_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vcenter_client_id(input);
         self
     }

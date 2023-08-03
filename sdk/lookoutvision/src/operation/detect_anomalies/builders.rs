@@ -10,10 +10,7 @@ impl DetectAnomaliesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detect_anomalies::DetectAnomaliesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_anomalies::DetectAnomaliesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_anomalies::DetectAnomaliesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.detect_anomalies();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl DetectAnomaliesFluentBuilder {
         }
     }
     /// Access the DetectAnomalies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detect_anomalies::builders::DetectAnomaliesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::detect_anomalies::builders::DetectAnomaliesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl DetectAnomaliesFluentBuilder {
             crate::operation::detect_anomalies::DetectAnomalies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_anomalies::DetectAnomaliesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_anomalies::DetectAnomaliesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl DetectAnomaliesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl DetectAnomaliesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_anomalies::DetectAnomaliesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_anomalies::DetectAnomaliesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_anomalies::DetectAnomaliesError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl DetectAnomaliesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_anomalies::DetectAnomaliesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_anomalies::DetectAnomaliesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_anomalies::DetectAnomaliesError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl DetectAnomaliesFluentBuilder {
             crate::operation::detect_anomalies::DetectAnomalies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_anomalies::DetectAnomaliesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_anomalies::DetectAnomaliesError>,
     > {
         self.customize_middleware().await
     }
@@ -142,18 +126,12 @@ impl DetectAnomaliesFluentBuilder {
         self.inner.get_project_name()
     }
     /// <p>The version of the model that you want to use.</p>
-    pub fn model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_version(input.into());
         self
     }
     /// <p>The version of the model that you want to use.</p>
-    pub fn set_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_version(input);
         self
     }
@@ -167,10 +145,7 @@ impl DetectAnomaliesFluentBuilder {
         self
     }
     /// <p>The unencrypted image bytes that you want to analyze. </p>
-    pub fn set_body(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_body(input);
         self
     }

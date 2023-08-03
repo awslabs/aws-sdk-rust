@@ -36,16 +36,14 @@ impl DescribeScalingPlanResourcesInput {
 }
 impl DescribeScalingPlanResourcesInput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingPlanResourcesInput`](crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesInput).
-    pub fn builder() -> crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesInputBuilder{
+    pub fn builder() -> crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesInputBuilder {
         crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScalingPlanResourcesInput`](crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalingPlanResourcesInputBuilder {
     pub(crate) scaling_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_plan_version: ::std::option::Option<i64>,
@@ -54,18 +52,12 @@ pub struct DescribeScalingPlanResourcesInputBuilder {
 }
 impl DescribeScalingPlanResourcesInputBuilder {
     /// <p>The name of the scaling plan.</p>
-    pub fn scaling_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scaling_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scaling_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scaling plan.</p>
-    pub fn set_scaling_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scaling_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scaling_plan_name = input;
         self
     }
@@ -122,13 +114,11 @@ impl DescribeScalingPlanResourcesInputBuilder {
         crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesInput {
-                scaling_plan_name: self.scaling_plan_name,
-                scaling_plan_version: self.scaling_plan_version,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesInput {
+            scaling_plan_name: self.scaling_plan_name,
+            scaling_plan_version: self.scaling_plan_version,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

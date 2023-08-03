@@ -15,17 +15,14 @@ impl GetMaintenanceWindowInput {
 }
 impl GetMaintenanceWindowInput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowInput`](crate::operation::get_maintenance_window::GetMaintenanceWindowInput).
-    pub fn builder(
-    ) -> crate::operation::get_maintenance_window::builders::GetMaintenanceWindowInputBuilder {
+    pub fn builder() -> crate::operation::get_maintenance_window::builders::GetMaintenanceWindowInputBuilder {
         crate::operation::get_maintenance_window::builders::GetMaintenanceWindowInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMaintenanceWindowInput`](crate::operation::get_maintenance_window::GetMaintenanceWindowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMaintenanceWindowInputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,8 @@ impl GetMaintenanceWindowInputBuilder {
     /// Consumes the builder and constructs a [`GetMaintenanceWindowInput`](crate::operation::get_maintenance_window::GetMaintenanceWindowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_maintenance_window::GetMaintenanceWindowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_maintenance_window::GetMaintenanceWindowInput {
-                window_id: self.window_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_maintenance_window::GetMaintenanceWindowInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_maintenance_window::GetMaintenanceWindowInput { window_id: self.window_id })
     }
 }

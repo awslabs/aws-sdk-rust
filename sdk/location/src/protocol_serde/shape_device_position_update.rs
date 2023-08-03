@@ -26,10 +26,7 @@ pub fn ser_device_position_update(
     if let Some(var_6) = &input.accuracy {
         #[allow(unused_mut)]
         let mut object_7 = object.key("Accuracy").start_object();
-        crate::protocol_serde::shape_positional_accuracy::ser_positional_accuracy(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_positional_accuracy::ser_positional_accuracy(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.position_properties {

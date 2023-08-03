@@ -19,9 +19,7 @@ impl UpdateClusterOutput {
 
 /// A builder for [`UpdateClusterOutput`](crate::operation::update_cluster::UpdateClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClusterOutputBuilder {
     _request_id: Option<String>,
 }

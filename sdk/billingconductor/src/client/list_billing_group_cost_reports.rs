@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`billing_group_cost_reports(Option<Vec<BillingGroupCostReportElement>>)`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput::billing_group_cost_reports): <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput::next_token): <p>The pagination token that's used on subsequent calls to get reports. </p>
     /// - On failure, responds with [`SdkError<ListBillingGroupCostReportsError>`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError)
-    pub fn list_billing_group_cost_reports(&self) -> crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder{
+    pub fn list_billing_group_cost_reports(
+        &self,
+    ) -> crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder {
         crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder::new(self.handle.clone())
     }
 }

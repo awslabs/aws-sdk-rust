@@ -19,7 +19,9 @@ impl super::Client {
     ///   - [`file_size_bytes(Option<i64>)`](crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListOutput::file_size_bytes): <p>The current size of the block list text file in S3.</p>
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListOutput::role_arn): <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>  <p>The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
     /// - On failure, responds with [`SdkError<DescribeQuerySuggestionsBlockListError>`](crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListError)
-    pub fn describe_query_suggestions_block_list(&self) -> crate::operation::describe_query_suggestions_block_list::builders::DescribeQuerySuggestionsBlockListFluentBuilder{
+    pub fn describe_query_suggestions_block_list(
+        &self,
+    ) -> crate::operation::describe_query_suggestions_block_list::builders::DescribeQuerySuggestionsBlockListFluentBuilder {
         crate::operation::describe_query_suggestions_block_list::builders::DescribeQuerySuggestionsBlockListFluentBuilder::new(self.handle.clone())
     }
 }

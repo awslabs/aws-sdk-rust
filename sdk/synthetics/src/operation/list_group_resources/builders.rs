@@ -10,10 +10,7 @@ impl ListGroupResourcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_group_resources::ListGroupResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_resources::ListGroupResourcesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_resources::ListGroupResourcesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_group_resources();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListGroupResourcesFluentBuilder {
         }
     }
     /// Access the ListGroupResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_group_resources::builders::ListGroupResourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_group_resources::builders::ListGroupResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListGroupResourcesFluentBuilder {
             crate::operation::list_group_resources::ListGroupResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_resources::ListGroupResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_resources::ListGroupResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListGroupResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListGroupResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_group_resources::ListGroupResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_resources::ListGroupResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_resources::ListGroupResourcesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListGroupResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_group_resources::ListGroupResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_resources::ListGroupResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_resources::ListGroupResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListGroupResourcesFluentBuilder {
             crate::operation::list_group_resources::ListGroupResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_group_resources::ListGroupResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_group_resources::ListGroupResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_group_resources::paginator::ListGroupResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_group_resources::paginator::ListGroupResourcesPaginator {
-        crate::operation::list_group_resources::paginator::ListGroupResourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_group_resources::paginator::ListGroupResourcesPaginator {
+        crate::operation::list_group_resources::paginator::ListGroupResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,18 +141,12 @@ impl ListGroupResourcesFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    pub fn group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_identifier(input.into());
         self
     }
     /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    pub fn set_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_identifier(input);
         self
     }

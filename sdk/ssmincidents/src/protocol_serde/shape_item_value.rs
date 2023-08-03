@@ -19,13 +19,7 @@ pub fn ser_item_value(
             crate::protocol_serde::shape_pager_duty_incident_detail::ser_pager_duty_incident_detail(&mut object_1, inner)?;
             object_1.finish();
         }
-        crate::types::ItemValue::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ItemValue",
-                ),
-            )
-        }
+        crate::types::ItemValue::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("ItemValue")),
     }
     Ok(())
 }
@@ -34,12 +28,7 @@ pub(crate) fn de_item_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::ItemValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -49,71 +38,52 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "arn" => {
-                                Some(crate::types::ItemValue::Arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
-                                        s.to_unescaped().map(|u|
-                                            u.into_owned()
-                                        )
-                                    ).transpose()?
-                                    .unwrap_or_default()
-                                ))
-                            }
-                            "url" => {
-                                Some(crate::types::ItemValue::Url(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
-                                        s.to_unescaped().map(|u|
-                                            u.into_owned()
-                                        )
-                                    ).transpose()?
-                                    .unwrap_or_default()
-                                ))
-                            }
-                            "metricDefinition" => {
-                                Some(crate::types::ItemValue::MetricDefinition(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
-                                        s.to_unescaped().map(|u|
-                                            u.into_owned()
-                                        )
-                                    ).transpose()?
-                                    .unwrap_or_default()
-                                ))
-                            }
-                            "pagerDutyIncidentDetail" => {
-                                Some(crate::types::ItemValue::PagerDutyIncidentDetail(
-                                    crate::protocol_serde::shape_pager_duty_incident_detail::de_pager_duty_incident_detail(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'pagerDutyIncidentDetail' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::ItemValue::Unknown)
-                                                                    }
-                        };
+                        "arn" => Some(crate::types::ItemValue::Arn(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?
+                                .unwrap_or_default(),
+                        )),
+                        "url" => Some(crate::types::ItemValue::Url(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?
+                                .unwrap_or_default(),
+                        )),
+                        "metricDefinition" => Some(crate::types::ItemValue::MetricDefinition(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?
+                                .unwrap_or_default(),
+                        )),
+                        "pagerDutyIncidentDetail" => Some(crate::types::ItemValue::PagerDutyIncidentDetail(
+                            crate::protocol_serde::shape_pager_duty_incident_detail::de_pager_duty_incident_detail(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'pagerDutyIncidentDetail' cannot be null")
+                            })?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::ItemValue::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

@@ -40,13 +40,7 @@
 /// Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HlsAudioTrackType {
     #[allow(missing_docs)] // documentation missing in model
@@ -64,14 +58,10 @@ impl ::std::convert::From<&str> for HlsAudioTrackType {
     fn from(s: &str) -> Self {
         match s {
             "ALTERNATE_AUDIO_AUTO_SELECT" => HlsAudioTrackType::AlternateAudioAutoSelect,
-            "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT" => {
-                HlsAudioTrackType::AlternateAudioAutoSelectDefault
-            }
+            "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT" => HlsAudioTrackType::AlternateAudioAutoSelectDefault,
             "ALTERNATE_AUDIO_NOT_AUTO_SELECT" => HlsAudioTrackType::AlternateAudioNotAutoSelect,
             "AUDIO_ONLY_VARIANT_STREAM" => HlsAudioTrackType::AudioOnlyVariantStream,
-            other => {
-                HlsAudioTrackType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => HlsAudioTrackType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -87,9 +77,7 @@ impl HlsAudioTrackType {
     pub fn as_str(&self) -> &str {
         match self {
             HlsAudioTrackType::AlternateAudioAutoSelect => "ALTERNATE_AUDIO_AUTO_SELECT",
-            HlsAudioTrackType::AlternateAudioAutoSelectDefault => {
-                "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT"
-            }
+            HlsAudioTrackType::AlternateAudioAutoSelectDefault => "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT",
             HlsAudioTrackType::AlternateAudioNotAutoSelect => "ALTERNATE_AUDIO_NOT_AUTO_SELECT",
             HlsAudioTrackType::AudioOnlyVariantStream => "AUDIO_ONLY_VARIANT_STREAM",
             HlsAudioTrackType::Unknown(value) => value.as_str(),

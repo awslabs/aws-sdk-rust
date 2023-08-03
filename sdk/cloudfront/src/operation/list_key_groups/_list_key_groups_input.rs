@@ -29,9 +29,7 @@ impl ListKeyGroupsInput {
 
 /// A builder for [`ListKeyGroupsInput`](crate::operation::list_key_groups::ListKeyGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKeyGroupsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -68,10 +66,7 @@ impl ListKeyGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListKeyGroupsInput`](crate::operation::list_key_groups::ListKeyGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_key_groups::ListKeyGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_key_groups::ListKeyGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_key_groups::ListKeyGroupsInput {
             marker: self.marker,
             max_items: self.max_items,

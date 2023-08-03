@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EventTypeCategory {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for EventTypeCategory {
             "investigation" => EventTypeCategory::Investigation,
             "issue" => EventTypeCategory::Issue,
             "scheduledChange" => EventTypeCategory::ScheduledChange,
-            other => {
-                EventTypeCategory::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => EventTypeCategory::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl EventTypeCategory {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "accountNotification",
-            "investigation",
-            "issue",
-            "scheduledChange",
-        ]
+        &["accountNotification", "investigation", "issue", "scheduledChange"]
     }
 }
 impl ::std::convert::AsRef<str> for EventTypeCategory {

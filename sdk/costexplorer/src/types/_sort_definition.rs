@@ -30,9 +30,7 @@ impl SortDefinition {
 
 /// A builder for [`SortDefinition`](crate::types::SortDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SortDefinitionBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,

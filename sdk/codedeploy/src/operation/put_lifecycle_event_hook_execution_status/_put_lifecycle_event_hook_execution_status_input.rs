@@ -29,16 +29,14 @@ impl PutLifecycleEventHookExecutionStatusInput {
 }
 impl PutLifecycleEventHookExecutionStatusInput {
     /// Creates a new builder-style object to manufacture [`PutLifecycleEventHookExecutionStatusInput`](crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusInput).
-    pub fn builder() -> crate::operation::put_lifecycle_event_hook_execution_status::builders::PutLifecycleEventHookExecutionStatusInputBuilder{
+    pub fn builder() -> crate::operation::put_lifecycle_event_hook_execution_status::builders::PutLifecycleEventHookExecutionStatusInputBuilder {
         crate::operation::put_lifecycle_event_hook_execution_status::builders::PutLifecycleEventHookExecutionStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`PutLifecycleEventHookExecutionStatusInput`](crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutLifecycleEventHookExecutionStatusInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle_event_hook_execution_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct PutLifecycleEventHookExecutionStatusInputBuilder {
 }
 impl PutLifecycleEventHookExecutionStatusInputBuilder {
     /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -66,25 +58,17 @@ impl PutLifecycleEventHookExecutionStatusInputBuilder {
         &self.deployment_id
     }
     /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
-    pub fn lifecycle_event_hook_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_event_hook_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_event_hook_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
-    pub fn set_lifecycle_event_hook_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_event_hook_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_event_hook_execution_id = input;
         self
     }
     /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
-    pub fn get_lifecycle_event_hook_execution_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_lifecycle_event_hook_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_event_hook_execution_id
     }
     /// <p>The result of a Lambda function that validates a deployment lifecycle event. The values listed in <b>Valid Values</b> are valid for lifecycle statuses in general; however, only <code>Succeeded</code> and <code>Failed</code> can be passed successfully in your API call.</p>
@@ -93,10 +77,7 @@ impl PutLifecycleEventHookExecutionStatusInputBuilder {
         self
     }
     /// <p>The result of a Lambda function that validates a deployment lifecycle event. The values listed in <b>Valid Values</b> are valid for lifecycle statuses in general; however, only <code>Succeeded</code> and <code>Failed</code> can be passed successfully in your API call.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LifecycleEventStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::LifecycleEventStatus>) -> Self {
         self.status = input;
         self
     }
@@ -105,16 +86,18 @@ impl PutLifecycleEventHookExecutionStatusInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`PutLifecycleEventHookExecutionStatusInput`](crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusInput {
-                deployment_id: self.deployment_id
-                ,
-                lifecycle_event_hook_execution_id: self.lifecycle_event_hook_execution_id
-                ,
-                status: self.status
-                ,
-            }
+                deployment_id: self.deployment_id,
+                lifecycle_event_hook_execution_id: self.lifecycle_event_hook_execution_id,
+                status: self.status,
+            },
         )
     }
 }

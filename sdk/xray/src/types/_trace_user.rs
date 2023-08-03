@@ -30,9 +30,7 @@ impl TraceUser {
 
 /// A builder for [`TraceUser`](crate::types::TraceUser).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TraceUserBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_ids: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>,
@@ -64,17 +62,12 @@ impl TraceUserBuilder {
         self
     }
     /// <p>Services that the user's request hit.</p>
-    pub fn set_service_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>,
-    ) -> Self {
+    pub fn set_service_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>) -> Self {
         self.service_ids = input;
         self
     }
     /// <p>Services that the user's request hit.</p>
-    pub fn get_service_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceId>> {
+    pub fn get_service_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceId>> {
         &self.service_ids
     }
     /// Consumes the builder and constructs a [`TraceUser`](crate::types::TraceUser).

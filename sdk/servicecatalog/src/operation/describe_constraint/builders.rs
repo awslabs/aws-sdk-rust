@@ -10,10 +10,7 @@ impl DescribeConstraintInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_constraint::DescribeConstraintOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_constraint::DescribeConstraintError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_constraint::DescribeConstraintError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_constraint();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeConstraintFluentBuilder {
         }
     }
     /// Access the DescribeConstraint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_constraint::builders::DescribeConstraintInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_constraint::builders::DescribeConstraintInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeConstraintFluentBuilder {
             crate::operation::describe_constraint::DescribeConstraint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_constraint::DescribeConstraintError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_constraint::DescribeConstraintError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeConstraintFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeConstraintFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_constraint::DescribeConstraintOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_constraint::DescribeConstraintError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_constraint::DescribeConstraintError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeConstraintFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_constraint::DescribeConstraintOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_constraint::DescribeConstraintError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_constraint::DescribeConstraintError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeConstraintFluentBuilder {
             crate::operation::describe_constraint::DescribeConstraint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_constraint::DescribeConstraintError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_constraint::DescribeConstraintError>,
     > {
         self.customize_middleware().await
     }
@@ -127,10 +111,7 @@ impl DescribeConstraintFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -139,10 +120,7 @@ impl DescribeConstraintFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }

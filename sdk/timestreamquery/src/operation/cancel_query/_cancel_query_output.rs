@@ -28,27 +28,19 @@ impl CancelQueryOutput {
 
 /// A builder for [`CancelQueryOutput`](crate::operation::cancel_query::CancelQueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelQueryOutputBuilder {
     pub(crate) cancellation_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CancelQueryOutputBuilder {
     /// <p> A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued. </p>
-    pub fn cancellation_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cancellation_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cancellation_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued. </p>
-    pub fn set_cancellation_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cancellation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cancellation_message = input;
         self
     }

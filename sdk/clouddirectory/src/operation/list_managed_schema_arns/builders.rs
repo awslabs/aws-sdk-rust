@@ -37,10 +37,7 @@ impl ListManagedSchemaArnsFluentBuilder {
         }
     }
     /// Access the ListManagedSchemaArns as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_managed_schema_arns::builders::ListManagedSchemaArnsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListManagedSchemaArnsFluentBuilder {
             crate::operation::list_managed_schema_arns::ListManagedSchemaArns,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_schema_arns::ListManagedSchemaArnsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_schema_arns::ListManagedSchemaArnsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListManagedSchemaArnsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListManagedSchemaArnsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_managed_schema_arns::ListManagedSchemaArnsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_schema_arns::ListManagedSchemaArnsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_schema_arns::ListManagedSchemaArnsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListManagedSchemaArnsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_managed_schema_arns::ListManagedSchemaArnsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_schema_arns::ListManagedSchemaArnsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_schema_arns::ListManagedSchemaArnsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListManagedSchemaArnsFluentBuilder {
             crate::operation::list_managed_schema_arns::ListManagedSchemaArns,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_schema_arns::ListManagedSchemaArnsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_schema_arns::ListManagedSchemaArnsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_managed_schema_arns::paginator::ListManagedSchemaArnsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_managed_schema_arns::paginator::ListManagedSchemaArnsPaginator {
-        crate::operation::list_managed_schema_arns::paginator::ListManagedSchemaArnsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_managed_schema_arns::paginator::ListManagedSchemaArnsPaginator {
+        crate::operation::list_managed_schema_arns::paginator::ListManagedSchemaArnsPaginator::new(self.handle, self.inner)
     }
     /// <p>The response for ListManagedSchemaArns. When this parameter is used, all minor version ARNs for a major version are listed.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

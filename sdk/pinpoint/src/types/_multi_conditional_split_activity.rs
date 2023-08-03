@@ -39,12 +39,9 @@ impl MultiConditionalSplitActivity {
 
 /// A builder for [`MultiConditionalSplitActivity`](crate::types::MultiConditionalSplitActivity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultiConditionalSplitActivityBuilder {
-    pub(crate) branches:
-        ::std::option::Option<::std::vec::Vec<crate::types::MultiConditionalBranch>>,
+    pub(crate) branches: ::std::option::Option<::std::vec::Vec<crate::types::MultiConditionalBranch>>,
     pub(crate) default_activity: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_wait_time: ::std::option::Option<crate::types::WaitTime>,
 }
@@ -61,32 +58,21 @@ impl MultiConditionalSplitActivityBuilder {
         self
     }
     /// <p>The paths for the activity, including the conditions for entering each path and the activity to perform for each path.</p>
-    pub fn set_branches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MultiConditionalBranch>>,
-    ) -> Self {
+    pub fn set_branches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MultiConditionalBranch>>) -> Self {
         self.branches = input;
         self
     }
     /// <p>The paths for the activity, including the conditions for entering each path and the activity to perform for each path.</p>
-    pub fn get_branches(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiConditionalBranch>> {
+    pub fn get_branches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiConditionalBranch>> {
         &self.branches
     }
     /// <p>The unique identifier for the activity to perform for participants who don't meet any of the conditions specified for other paths in the activity.</p>
-    pub fn default_activity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_activity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_activity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the activity to perform for participants who don't meet any of the conditions specified for other paths in the activity.</p>
-    pub fn set_default_activity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_activity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_activity = input;
         self
     }
@@ -100,10 +86,7 @@ impl MultiConditionalSplitActivityBuilder {
         self
     }
     /// <p>The amount of time to wait or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
-    pub fn set_evaluation_wait_time(
-        mut self,
-        input: ::std::option::Option<crate::types::WaitTime>,
-    ) -> Self {
+    pub fn set_evaluation_wait_time(mut self, input: ::std::option::Option<crate::types::WaitTime>) -> Self {
         self.evaluation_wait_time = input;
         self
     }

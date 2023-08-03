@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdatePhoneNumberSettingsOutput {
 }
 impl UpdatePhoneNumberSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberSettingsOutput`](crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsOutput).
-    pub fn builder() -> crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsOutputBuilder {
         crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePhoneNumberSettingsOutput`](crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePhoneNumberSettingsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdatePhoneNumberSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdatePhoneNumberSettingsOutput`](crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsOutput {
+    pub fn build(self) -> crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsOutput {
         crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsOutput {
             _request_id: self._request_id,
         }

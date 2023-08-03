@@ -30,9 +30,7 @@ impl RenewOfferingInput {
 
 /// A builder for [`RenewOfferingInput`](crate::operation::renew_offering::RenewOfferingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RenewOfferingInputBuilder {
     pub(crate) offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) quantity: ::std::option::Option<i32>,
@@ -69,10 +67,7 @@ impl RenewOfferingInputBuilder {
     /// Consumes the builder and constructs a [`RenewOfferingInput`](crate::operation::renew_offering::RenewOfferingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::renew_offering::RenewOfferingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::renew_offering::RenewOfferingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::renew_offering::RenewOfferingInput {
             offering_id: self.offering_id,
             quantity: self.quantity,

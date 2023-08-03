@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCacheSecurityGroupOutput`](crate::operation::create_cache_security_group::CreateCacheSecurityGroupOutput) with field(s):
     ///   - [`cache_security_group(Option<CacheSecurityGroup>)`](crate::operation::create_cache_security_group::CreateCacheSecurityGroupOutput::cache_security_group): <p>Represents the output of one of the following operations:</p>  <ul>   <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>   <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>   <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<CreateCacheSecurityGroupError>`](crate::operation::create_cache_security_group::CreateCacheSecurityGroupError)
-    pub fn create_cache_security_group(&self) -> crate::operation::create_cache_security_group::builders::CreateCacheSecurityGroupFluentBuilder{
+    pub fn create_cache_security_group(&self) -> crate::operation::create_cache_security_group::builders::CreateCacheSecurityGroupFluentBuilder {
         crate::operation::create_cache_security_group::builders::CreateCacheSecurityGroupFluentBuilder::new(self.handle.clone())
     }
 }

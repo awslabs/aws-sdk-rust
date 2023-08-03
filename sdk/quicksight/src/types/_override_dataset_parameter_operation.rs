@@ -37,9 +37,7 @@ impl OverrideDatasetParameterOperation {
 
 /// A builder for [`OverrideDatasetParameterOperation`](crate::types::OverrideDatasetParameterOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OverrideDatasetParameterOperationBuilder {
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_parameter_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct OverrideDatasetParameterOperationBuilder {
 }
 impl OverrideDatasetParameterOperationBuilder {
     /// <p>The name of the parameter to be overridden with different values.</p>
-    pub fn parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter to be overridden with different values.</p>
-    pub fn set_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_name = input;
         self
     }
@@ -67,18 +59,12 @@ impl OverrideDatasetParameterOperationBuilder {
         &self.parameter_name
     }
     /// <p>The new name for the parameter.</p>
-    pub fn new_parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new name for the parameter.</p>
-    pub fn set_new_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_parameter_name = input;
         self
     }
@@ -92,10 +78,7 @@ impl OverrideDatasetParameterOperationBuilder {
         self
     }
     /// <p>The new default values for the parameter.</p>
-    pub fn set_new_default_values(
-        mut self,
-        input: ::std::option::Option<crate::types::NewDefaultValues>,
-    ) -> Self {
+    pub fn set_new_default_values(mut self, input: ::std::option::Option<crate::types::NewDefaultValues>) -> Self {
         self.new_default_values = input;
         self
     }

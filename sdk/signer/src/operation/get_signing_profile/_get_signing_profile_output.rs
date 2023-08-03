@@ -32,9 +32,7 @@ pub struct GetSigningProfileOutput {
     pub overrides: ::std::option::Option<crate::types::SigningPlatformOverrides>,
     /// <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
     #[doc(hidden)]
-    pub signing_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub signing_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the target signing profile.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SigningProfileStatus>,
@@ -46,9 +44,7 @@ pub struct GetSigningProfileOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags associated with the signing profile.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSigningProfileOutput {
@@ -65,9 +61,7 @@ impl GetSigningProfileOutput {
         self.profile_version_arn.as_deref()
     }
     /// <p>Revocation information for a signing profile.</p>
-    pub fn revocation_record(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SigningProfileRevocationRecord> {
+    pub fn revocation_record(&self) -> ::std::option::Option<&crate::types::SigningProfileRevocationRecord> {
         self.revocation_record.as_ref()
     }
     /// <p>The ARN of the certificate that the target profile uses for signing operations.</p>
@@ -83,9 +77,7 @@ impl GetSigningProfileOutput {
         self.platform_display_name.as_deref()
     }
     /// <p>The validity period for a signing job.</p>
-    pub fn signature_validity_period(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SignatureValidityPeriod> {
+    pub fn signature_validity_period(&self) -> ::std::option::Option<&crate::types::SignatureValidityPeriod> {
         self.signature_validity_period.as_ref()
     }
     /// <p>A list of overrides applied by the target signing profile for signing operations.</p>
@@ -93,11 +85,7 @@ impl GetSigningProfileOutput {
         self.overrides.as_ref()
     }
     /// <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
-    pub fn signing_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn signing_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.signing_parameters.as_ref()
     }
     /// <p>The status of the target signing profile.</p>
@@ -113,11 +101,7 @@ impl GetSigningProfileOutput {
         self.arn.as_deref()
     }
     /// <p>A list of tags associated with the signing profile.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -128,38 +112,29 @@ impl ::aws_http::request_id::RequestId for GetSigningProfileOutput {
 }
 impl GetSigningProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetSigningProfileOutput`](crate::operation::get_signing_profile::GetSigningProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::get_signing_profile::builders::GetSigningProfileOutputBuilder {
+    pub fn builder() -> crate::operation::get_signing_profile::builders::GetSigningProfileOutputBuilder {
         crate::operation::get_signing_profile::builders::GetSigningProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSigningProfileOutput`](crate::operation::get_signing_profile::GetSigningProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSigningProfileOutputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_version: ::std::option::Option<::std::string::String>,
     pub(crate) profile_version_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) revocation_record:
-        ::std::option::Option<crate::types::SigningProfileRevocationRecord>,
+    pub(crate) revocation_record: ::std::option::Option<crate::types::SigningProfileRevocationRecord>,
     pub(crate) signing_material: ::std::option::Option<crate::types::SigningMaterial>,
     pub(crate) platform_id: ::std::option::Option<::std::string::String>,
     pub(crate) platform_display_name: ::std::option::Option<::std::string::String>,
-    pub(crate) signature_validity_period:
-        ::std::option::Option<crate::types::SignatureValidityPeriod>,
+    pub(crate) signature_validity_period: ::std::option::Option<crate::types::SignatureValidityPeriod>,
     pub(crate) overrides: ::std::option::Option<crate::types::SigningPlatformOverrides>,
-    pub(crate) signing_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) signing_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::SigningProfileStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSigningProfileOutputBuilder {
@@ -178,18 +153,12 @@ impl GetSigningProfileOutputBuilder {
         &self.profile_name
     }
     /// <p>The current version of the signing profile.</p>
-    pub fn profile_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current version of the signing profile.</p>
-    pub fn set_profile_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_version = input;
         self
     }
@@ -198,18 +167,12 @@ impl GetSigningProfileOutputBuilder {
         &self.profile_version
     }
     /// <p>The signing profile ARN, including the profile version.</p>
-    pub fn profile_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signing profile ARN, including the profile version.</p>
-    pub fn set_profile_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_version_arn = input;
         self
     }
@@ -218,25 +181,17 @@ impl GetSigningProfileOutputBuilder {
         &self.profile_version_arn
     }
     /// <p>Revocation information for a signing profile.</p>
-    pub fn revocation_record(
-        mut self,
-        input: crate::types::SigningProfileRevocationRecord,
-    ) -> Self {
+    pub fn revocation_record(mut self, input: crate::types::SigningProfileRevocationRecord) -> Self {
         self.revocation_record = ::std::option::Option::Some(input);
         self
     }
     /// <p>Revocation information for a signing profile.</p>
-    pub fn set_revocation_record(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningProfileRevocationRecord>,
-    ) -> Self {
+    pub fn set_revocation_record(mut self, input: ::std::option::Option<crate::types::SigningProfileRevocationRecord>) -> Self {
         self.revocation_record = input;
         self
     }
     /// <p>Revocation information for a signing profile.</p>
-    pub fn get_revocation_record(
-        &self,
-    ) -> &::std::option::Option<crate::types::SigningProfileRevocationRecord> {
+    pub fn get_revocation_record(&self) -> &::std::option::Option<crate::types::SigningProfileRevocationRecord> {
         &self.revocation_record
     }
     /// <p>The ARN of the certificate that the target profile uses for signing operations.</p>
@@ -245,10 +200,7 @@ impl GetSigningProfileOutputBuilder {
         self
     }
     /// <p>The ARN of the certificate that the target profile uses for signing operations.</p>
-    pub fn set_signing_material(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningMaterial>,
-    ) -> Self {
+    pub fn set_signing_material(mut self, input: ::std::option::Option<crate::types::SigningMaterial>) -> Self {
         self.signing_material = input;
         self
     }
@@ -271,18 +223,12 @@ impl GetSigningProfileOutputBuilder {
         &self.platform_id
     }
     /// <p>A human-readable name for the signing platform associated with the signing profile.</p>
-    pub fn platform_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A human-readable name for the signing platform associated with the signing profile.</p>
-    pub fn set_platform_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_display_name = input;
         self
     }
@@ -291,25 +237,17 @@ impl GetSigningProfileOutputBuilder {
         &self.platform_display_name
     }
     /// <p>The validity period for a signing job.</p>
-    pub fn signature_validity_period(
-        mut self,
-        input: crate::types::SignatureValidityPeriod,
-    ) -> Self {
+    pub fn signature_validity_period(mut self, input: crate::types::SignatureValidityPeriod) -> Self {
         self.signature_validity_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The validity period for a signing job.</p>
-    pub fn set_signature_validity_period(
-        mut self,
-        input: ::std::option::Option<crate::types::SignatureValidityPeriod>,
-    ) -> Self {
+    pub fn set_signature_validity_period(mut self, input: ::std::option::Option<crate::types::SignatureValidityPeriod>) -> Self {
         self.signature_validity_period = input;
         self
     }
     /// <p>The validity period for a signing job.</p>
-    pub fn get_signature_validity_period(
-        &self,
-    ) -> &::std::option::Option<crate::types::SignatureValidityPeriod> {
+    pub fn get_signature_validity_period(&self) -> &::std::option::Option<crate::types::SignatureValidityPeriod> {
         &self.signature_validity_period
     }
     /// <p>A list of overrides applied by the target signing profile for signing operations.</p>
@@ -318,10 +256,7 @@ impl GetSigningProfileOutputBuilder {
         self
     }
     /// <p>A list of overrides applied by the target signing profile for signing operations.</p>
-    pub fn set_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningPlatformOverrides>,
-    ) -> Self {
+    pub fn set_overrides(mut self, input: ::std::option::Option<crate::types::SigningPlatformOverrides>) -> Self {
         self.overrides = input;
         self
     }
@@ -347,19 +282,13 @@ impl GetSigningProfileOutputBuilder {
     /// <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
     pub fn set_signing_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.signing_parameters = input;
         self
     }
     /// <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
-    pub fn get_signing_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_signing_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.signing_parameters
     }
     /// <p>The status of the target signing profile.</p>
@@ -368,10 +297,7 @@ impl GetSigningProfileOutputBuilder {
         self
     }
     /// <p>The status of the target signing profile.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningProfileStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SigningProfileStatus>) -> Self {
         self.status = input;
         self
     }
@@ -380,18 +306,12 @@ impl GetSigningProfileOutputBuilder {
         &self.status
     }
     /// <p>Reason for the status of the target signing profile.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reason for the status of the target signing profile.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -418,32 +338,19 @@ impl GetSigningProfileOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags associated with the signing profile.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of tags associated with the signing profile.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of tags associated with the signing profile.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -23,12 +23,9 @@ impl UtteranceLevelTestResults {
 
 /// A builder for [`UtteranceLevelTestResults`](crate::types::UtteranceLevelTestResults).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UtteranceLevelTestResultsBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::UtteranceLevelTestResultItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceLevelTestResultItem>>,
 }
 impl UtteranceLevelTestResultsBuilder {
     /// Appends an item to `items`.
@@ -43,17 +40,12 @@ impl UtteranceLevelTestResultsBuilder {
         self
     }
     /// <p>Contains information about an utterance in the results of the test set execution.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceLevelTestResultItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceLevelTestResultItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Contains information about an utterance in the results of the test set execution.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceLevelTestResultItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceLevelTestResultItem>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`UtteranceLevelTestResults`](crate::types::UtteranceLevelTestResults).

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetDistributionBundlesOutput {
 }
 impl GetDistributionBundlesOutput {
     /// Creates a new builder-style object to manufacture [`GetDistributionBundlesOutput`](crate::operation::get_distribution_bundles::GetDistributionBundlesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_distribution_bundles::builders::GetDistributionBundlesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_distribution_bundles::builders::GetDistributionBundlesOutputBuilder {
         crate::operation::get_distribution_bundles::builders::GetDistributionBundlesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDistributionBundlesOutput`](crate::operation::get_distribution_bundles::GetDistributionBundlesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDistributionBundlesOutputBuilder {
     pub(crate) bundles: ::std::option::Option<::std::vec::Vec<crate::types::DistributionBundle>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl GetDistributionBundlesOutputBuilder {
         self
     }
     /// <p>An object that describes a distribution bundle.</p>
-    pub fn set_bundles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DistributionBundle>>,
-    ) -> Self {
+    pub fn set_bundles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DistributionBundle>>) -> Self {
         self.bundles = input;
         self
     }
     /// <p>An object that describes a distribution bundle.</p>
-    pub fn get_bundles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributionBundle>> {
+    pub fn get_bundles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributionBundle>> {
         &self.bundles
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

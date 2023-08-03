@@ -15,17 +15,14 @@ impl GetAssociatedRoleInput {
 }
 impl GetAssociatedRoleInput {
     /// Creates a new builder-style object to manufacture [`GetAssociatedRoleInput`](crate::operation::get_associated_role::GetAssociatedRoleInput).
-    pub fn builder(
-    ) -> crate::operation::get_associated_role::builders::GetAssociatedRoleInputBuilder {
+    pub fn builder() -> crate::operation::get_associated_role::builders::GetAssociatedRoleInputBuilder {
         crate::operation::get_associated_role::builders::GetAssociatedRoleInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAssociatedRoleInput`](crate::operation::get_associated_role::GetAssociatedRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssociatedRoleInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl GetAssociatedRoleInputBuilder {
     /// Consumes the builder and constructs a [`GetAssociatedRoleInput`](crate::operation::get_associated_role::GetAssociatedRoleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_associated_role::GetAssociatedRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_associated_role::GetAssociatedRoleInput {
-                group_id: self.group_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_associated_role::GetAssociatedRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_associated_role::GetAssociatedRoleInput { group_id: self.group_id })
     }
 }

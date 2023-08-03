@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_endpoint_types::DescribeEndpointTypesOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     ///   - [`supported_endpoint_types(Option<Vec<SupportedEndpointType>>)`](crate::operation::describe_endpoint_types::DescribeEndpointTypesOutput::supported_endpoint_types): <p>The types of endpoints that are supported.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointTypesError>`](crate::operation::describe_endpoint_types::DescribeEndpointTypesError)
-    pub fn describe_endpoint_types(
-        &self,
-    ) -> crate::operation::describe_endpoint_types::builders::DescribeEndpointTypesFluentBuilder
-    {
-        crate::operation::describe_endpoint_types::builders::DescribeEndpointTypesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_endpoint_types(&self) -> crate::operation::describe_endpoint_types::builders::DescribeEndpointTypesFluentBuilder {
+        crate::operation::describe_endpoint_types::builders::DescribeEndpointTypesFluentBuilder::new(self.handle.clone())
     }
 }

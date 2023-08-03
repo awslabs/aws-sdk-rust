@@ -63,13 +63,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExportableLambdaFunctionField {
     #[allow(missing_docs)] // documentation missing in model
@@ -132,35 +126,43 @@ pub enum ExportableLambdaFunctionField {
 impl ::std::convert::From<&str> for ExportableLambdaFunctionField {
     fn from(s: &str) -> Self {
         match s {
-                        "AccountId" => ExportableLambdaFunctionField::AccountId,
-"CurrentConfigurationMemorySize" => ExportableLambdaFunctionField::CurrentConfigurationMemorySize,
-"CurrentConfigurationTimeout" => ExportableLambdaFunctionField::CurrentConfigurationTimeout,
-"CurrentCostAverage" => ExportableLambdaFunctionField::CurrentCostAverage,
-"CurrentCostTotal" => ExportableLambdaFunctionField::CurrentCostTotal,
-"CurrentPerformanceRisk" => ExportableLambdaFunctionField::CurrentPerformanceRisk,
-"Finding" => ExportableLambdaFunctionField::Finding,
-"FindingReasonCodes" => ExportableLambdaFunctionField::FindingReasonCodes,
-"FunctionArn" => ExportableLambdaFunctionField::FunctionArn,
-"FunctionVersion" => ExportableLambdaFunctionField::FunctionVersion,
-"LastRefreshTimestamp" => ExportableLambdaFunctionField::LastRefreshTimestamp,
-"LookbackPeriodInDays" => ExportableLambdaFunctionField::LookbackPeriodInDays,
-"NumberOfInvocations" => ExportableLambdaFunctionField::NumberOfInvocations,
-"RecommendationOptionsConfigurationMemorySize" => ExportableLambdaFunctionField::RecommendationOptionsConfigurationMemorySize,
-"RecommendationOptionsCostHigh" => ExportableLambdaFunctionField::RecommendationOptionsCostHigh,
-"RecommendationOptionsCostLow" => ExportableLambdaFunctionField::RecommendationOptionsCostLow,
-"RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
-"RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue,
-"RecommendationOptionsProjectedUtilizationMetricsDurationExpected" => ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationExpected,
-"RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound" => ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound,
-"RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound" => ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound,
-"RecommendationOptionsSavingsOpportunityPercentage" => ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage,
-"Tags" => ExportableLambdaFunctionField::Tags,
-"UtilizationMetricsDurationAverage" => ExportableLambdaFunctionField::UtilizationMetricsDurationAverage,
-"UtilizationMetricsDurationMaximum" => ExportableLambdaFunctionField::UtilizationMetricsDurationMaximum,
-"UtilizationMetricsMemoryAverage" => ExportableLambdaFunctionField::UtilizationMetricsMemoryAverage,
-"UtilizationMetricsMemoryMaximum" => ExportableLambdaFunctionField::UtilizationMetricsMemoryMaximum,
-other => ExportableLambdaFunctionField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
+            "AccountId" => ExportableLambdaFunctionField::AccountId,
+            "CurrentConfigurationMemorySize" => ExportableLambdaFunctionField::CurrentConfigurationMemorySize,
+            "CurrentConfigurationTimeout" => ExportableLambdaFunctionField::CurrentConfigurationTimeout,
+            "CurrentCostAverage" => ExportableLambdaFunctionField::CurrentCostAverage,
+            "CurrentCostTotal" => ExportableLambdaFunctionField::CurrentCostTotal,
+            "CurrentPerformanceRisk" => ExportableLambdaFunctionField::CurrentPerformanceRisk,
+            "Finding" => ExportableLambdaFunctionField::Finding,
+            "FindingReasonCodes" => ExportableLambdaFunctionField::FindingReasonCodes,
+            "FunctionArn" => ExportableLambdaFunctionField::FunctionArn,
+            "FunctionVersion" => ExportableLambdaFunctionField::FunctionVersion,
+            "LastRefreshTimestamp" => ExportableLambdaFunctionField::LastRefreshTimestamp,
+            "LookbackPeriodInDays" => ExportableLambdaFunctionField::LookbackPeriodInDays,
+            "NumberOfInvocations" => ExportableLambdaFunctionField::NumberOfInvocations,
+            "RecommendationOptionsConfigurationMemorySize" => ExportableLambdaFunctionField::RecommendationOptionsConfigurationMemorySize,
+            "RecommendationOptionsCostHigh" => ExportableLambdaFunctionField::RecommendationOptionsCostHigh,
+            "RecommendationOptionsCostLow" => ExportableLambdaFunctionField::RecommendationOptionsCostLow,
+            "RecommendationOptionsEstimatedMonthlySavingsCurrency" => {
+                ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency
+            }
+            "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue,
+            "RecommendationOptionsProjectedUtilizationMetricsDurationExpected" => {
+                ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationExpected
+            }
+            "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound" => {
+                ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound
+            }
+            "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound" => {
+                ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound
+            }
+            "RecommendationOptionsSavingsOpportunityPercentage" => ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage,
+            "Tags" => ExportableLambdaFunctionField::Tags,
+            "UtilizationMetricsDurationAverage" => ExportableLambdaFunctionField::UtilizationMetricsDurationAverage,
+            "UtilizationMetricsDurationMaximum" => ExportableLambdaFunctionField::UtilizationMetricsDurationMaximum,
+            "UtilizationMetricsMemoryAverage" => ExportableLambdaFunctionField::UtilizationMetricsMemoryAverage,
+            "UtilizationMetricsMemoryMaximum" => ExportableLambdaFunctionField::UtilizationMetricsMemoryMaximum,
+            other => ExportableLambdaFunctionField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
     }
 }
 impl ::std::str::FromStr for ExportableLambdaFunctionField {
@@ -174,35 +176,43 @@ impl ExportableLambdaFunctionField {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-    ExportableLambdaFunctionField::AccountId => "AccountId",
-    ExportableLambdaFunctionField::CurrentConfigurationMemorySize => "CurrentConfigurationMemorySize",
-    ExportableLambdaFunctionField::CurrentConfigurationTimeout => "CurrentConfigurationTimeout",
-    ExportableLambdaFunctionField::CurrentCostAverage => "CurrentCostAverage",
-    ExportableLambdaFunctionField::CurrentCostTotal => "CurrentCostTotal",
-    ExportableLambdaFunctionField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
-    ExportableLambdaFunctionField::Finding => "Finding",
-    ExportableLambdaFunctionField::FindingReasonCodes => "FindingReasonCodes",
-    ExportableLambdaFunctionField::FunctionArn => "FunctionArn",
-    ExportableLambdaFunctionField::FunctionVersion => "FunctionVersion",
-    ExportableLambdaFunctionField::LastRefreshTimestamp => "LastRefreshTimestamp",
-    ExportableLambdaFunctionField::LookbackPeriodInDays => "LookbackPeriodInDays",
-    ExportableLambdaFunctionField::NumberOfInvocations => "NumberOfInvocations",
-    ExportableLambdaFunctionField::RecommendationOptionsConfigurationMemorySize => "RecommendationOptionsConfigurationMemorySize",
-    ExportableLambdaFunctionField::RecommendationOptionsCostHigh => "RecommendationOptionsCostHigh",
-    ExportableLambdaFunctionField::RecommendationOptionsCostLow => "RecommendationOptionsCostLow",
-    ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-    ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
-    ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationExpected => "RecommendationOptionsProjectedUtilizationMetricsDurationExpected",
-    ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound => "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound",
-    ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound => "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound",
-    ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
-    ExportableLambdaFunctionField::Tags => "Tags",
-    ExportableLambdaFunctionField::UtilizationMetricsDurationAverage => "UtilizationMetricsDurationAverage",
-    ExportableLambdaFunctionField::UtilizationMetricsDurationMaximum => "UtilizationMetricsDurationMaximum",
-    ExportableLambdaFunctionField::UtilizationMetricsMemoryAverage => "UtilizationMetricsMemoryAverage",
-    ExportableLambdaFunctionField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
-    ExportableLambdaFunctionField::Unknown(value) => value.as_str()
-}
+            ExportableLambdaFunctionField::AccountId => "AccountId",
+            ExportableLambdaFunctionField::CurrentConfigurationMemorySize => "CurrentConfigurationMemorySize",
+            ExportableLambdaFunctionField::CurrentConfigurationTimeout => "CurrentConfigurationTimeout",
+            ExportableLambdaFunctionField::CurrentCostAverage => "CurrentCostAverage",
+            ExportableLambdaFunctionField::CurrentCostTotal => "CurrentCostTotal",
+            ExportableLambdaFunctionField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
+            ExportableLambdaFunctionField::Finding => "Finding",
+            ExportableLambdaFunctionField::FindingReasonCodes => "FindingReasonCodes",
+            ExportableLambdaFunctionField::FunctionArn => "FunctionArn",
+            ExportableLambdaFunctionField::FunctionVersion => "FunctionVersion",
+            ExportableLambdaFunctionField::LastRefreshTimestamp => "LastRefreshTimestamp",
+            ExportableLambdaFunctionField::LookbackPeriodInDays => "LookbackPeriodInDays",
+            ExportableLambdaFunctionField::NumberOfInvocations => "NumberOfInvocations",
+            ExportableLambdaFunctionField::RecommendationOptionsConfigurationMemorySize => "RecommendationOptionsConfigurationMemorySize",
+            ExportableLambdaFunctionField::RecommendationOptionsCostHigh => "RecommendationOptionsCostHigh",
+            ExportableLambdaFunctionField::RecommendationOptionsCostLow => "RecommendationOptionsCostLow",
+            ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
+                "RecommendationOptionsEstimatedMonthlySavingsCurrency"
+            }
+            ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+            ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationExpected => {
+                "RecommendationOptionsProjectedUtilizationMetricsDurationExpected"
+            }
+            ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound => {
+                "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound"
+            }
+            ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound => {
+                "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound"
+            }
+            ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
+            ExportableLambdaFunctionField::Tags => "Tags",
+            ExportableLambdaFunctionField::UtilizationMetricsDurationAverage => "UtilizationMetricsDurationAverage",
+            ExportableLambdaFunctionField::UtilizationMetricsDurationMaximum => "UtilizationMetricsDurationMaximum",
+            ExportableLambdaFunctionField::UtilizationMetricsMemoryAverage => "UtilizationMetricsMemoryAverage",
+            ExportableLambdaFunctionField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
+            ExportableLambdaFunctionField::Unknown(value) => value.as_str(),
+        }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {

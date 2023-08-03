@@ -51,9 +51,7 @@ impl FeaturedResultsSetSummary {
 
 /// A builder for [`FeaturedResultsSetSummary`](crate::types::FeaturedResultsSetSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeaturedResultsSetSummaryBuilder {
     pub(crate) featured_results_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) featured_results_set_name: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct FeaturedResultsSetSummaryBuilder {
 }
 impl FeaturedResultsSetSummaryBuilder {
     /// <p>The identifier of the set of featured results.</p>
-    pub fn featured_results_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn featured_results_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.featured_results_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the set of featured results.</p>
-    pub fn set_featured_results_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_featured_results_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.featured_results_set_id = input;
         self
     }
@@ -83,18 +75,12 @@ impl FeaturedResultsSetSummaryBuilder {
         &self.featured_results_set_id
     }
     /// <p>The name for the set of featured results.</p>
-    pub fn featured_results_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn featured_results_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.featured_results_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the set of featured results.</p>
-    pub fn set_featured_results_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_featured_results_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.featured_results_set_name = input;
         self
     }
@@ -108,10 +94,7 @@ impl FeaturedResultsSetSummaryBuilder {
         self
     }
     /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FeaturedResultsSetStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeaturedResultsSetStatus>) -> Self {
         self.status = input;
         self
     }

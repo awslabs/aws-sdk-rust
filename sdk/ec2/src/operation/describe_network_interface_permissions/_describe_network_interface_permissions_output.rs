@@ -6,8 +6,7 @@
 pub struct DescribeNetworkInterfacePermissionsOutput {
     /// <p>The network interface permissions.</p>
     #[doc(hidden)]
-    pub network_interface_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterfacePermission>>,
+    pub network_interface_permissions: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterfacePermission>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct DescribeNetworkInterfacePermissionsOutput {
 }
 impl DescribeNetworkInterfacePermissionsOutput {
     /// <p>The network interface permissions.</p>
-    pub fn network_interface_permissions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NetworkInterfacePermission]> {
+    pub fn network_interface_permissions(&self) -> ::std::option::Option<&[crate::types::NetworkInterfacePermission]> {
         self.network_interface_permissions.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -32,19 +29,16 @@ impl ::aws_http::request_id::RequestId for DescribeNetworkInterfacePermissionsOu
 }
 impl DescribeNetworkInterfacePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInterfacePermissionsOutput`](crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput).
-    pub fn builder() -> crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsOutputBuilder {
         crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkInterfacePermissionsOutput`](crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfacePermissionsOutputBuilder {
-    pub(crate) network_interface_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterfacePermission>>,
+    pub(crate) network_interface_permissions: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterfacePermission>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,10 +48,7 @@ impl DescribeNetworkInterfacePermissionsOutputBuilder {
     /// To override the contents of this collection use [`set_network_interface_permissions`](Self::set_network_interface_permissions).
     ///
     /// <p>The network interface permissions.</p>
-    pub fn network_interface_permissions(
-        mut self,
-        input: crate::types::NetworkInterfacePermission,
-    ) -> Self {
+    pub fn network_interface_permissions(mut self, input: crate::types::NetworkInterfacePermission) -> Self {
         let mut v = self.network_interface_permissions.unwrap_or_default();
         v.push(input);
         self.network_interface_permissions = ::std::option::Option::Some(v);
@@ -72,9 +63,7 @@ impl DescribeNetworkInterfacePermissionsOutputBuilder {
         self
     }
     /// <p>The network interface permissions.</p>
-    pub fn get_network_interface_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterfacePermission>> {
+    pub fn get_network_interface_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterfacePermission>> {
         &self.network_interface_permissions
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -101,12 +90,10 @@ impl DescribeNetworkInterfacePermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInterfacePermissionsOutput`](crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput).
-    pub fn build(self) -> crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput{
+    pub fn build(self) -> crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput {
         crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput {
-            network_interface_permissions: self.network_interface_permissions
-            ,
-            next_token: self.next_token
-            ,
+            network_interface_permissions: self.network_interface_permissions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

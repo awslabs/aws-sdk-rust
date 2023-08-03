@@ -21,16 +21,16 @@ impl ::aws_http::request_id::RequestId for GetAccessPointConfigurationForObjectL
 }
 impl GetAccessPointConfigurationForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaOutput).
-    pub fn builder() -> crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaOutputBuilder{
-        crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaOutputBuilder {
+        crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessPointConfigurationForObjectLambdaOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::ObjectLambdaConfiguration>,
     _request_id: Option<String>,
@@ -42,17 +42,12 @@ impl GetAccessPointConfigurationForObjectLambdaOutputBuilder {
         self
     }
     /// <p>Object Lambda Access Point configuration document.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectLambdaConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ObjectLambdaConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>Object Lambda Access Point configuration document.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObjectLambdaConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ObjectLambdaConfiguration> {
         &self.configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,10 +60,9 @@ impl GetAccessPointConfigurationForObjectLambdaOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaOutput).
-    pub fn build(self) -> crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaOutput{
+    pub fn build(self) -> crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaOutput {
         crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaOutput {
-            configuration: self.configuration
-            ,
+            configuration: self.configuration,
             _request_id: self._request_id,
         }
     }

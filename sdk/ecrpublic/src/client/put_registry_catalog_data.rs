@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`PutRegistryCatalogDataOutput`](crate::operation::put_registry_catalog_data::PutRegistryCatalogDataOutput) with field(s):
     ///   - [`registry_catalog_data(Option<RegistryCatalogData>)`](crate::operation::put_registry_catalog_data::PutRegistryCatalogDataOutput::registry_catalog_data): <p>The catalog data for the public registry.</p>
     /// - On failure, responds with [`SdkError<PutRegistryCatalogDataError>`](crate::operation::put_registry_catalog_data::PutRegistryCatalogDataError)
-    pub fn put_registry_catalog_data(
-        &self,
-    ) -> crate::operation::put_registry_catalog_data::builders::PutRegistryCatalogDataFluentBuilder
-    {
+    pub fn put_registry_catalog_data(&self) -> crate::operation::put_registry_catalog_data::builders::PutRegistryCatalogDataFluentBuilder {
         crate::operation::put_registry_catalog_data::builders::PutRegistryCatalogDataFluentBuilder::new(self.handle.clone())
     }
 }

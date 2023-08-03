@@ -10,10 +10,7 @@ impl SearchPromptsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_prompts::SearchPromptsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_prompts::SearchPromptsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_prompts::SearchPromptsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_prompts();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SearchPromptsFluentBuilder {
         }
     }
     /// Access the SearchPrompts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_prompts::builders::SearchPromptsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_prompts::builders::SearchPromptsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl SearchPromptsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl SearchPromptsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_prompts::paginator::SearchPromptsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_prompts::paginator::SearchPromptsPaginator {
-        crate::operation::search_prompts::paginator::SearchPromptsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_prompts::paginator::SearchPromptsPaginator {
+        crate::operation::search_prompts::paginator::SearchPromptsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,10 +160,7 @@ impl SearchPromptsFluentBuilder {
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn set_search_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::PromptSearchFilter>,
-    ) -> Self {
+    pub fn set_search_filter(mut self, input: ::std::option::Option<crate::types::PromptSearchFilter>) -> Self {
         self.inner = self.inner.set_search_filter(input);
         self
     }
@@ -190,17 +174,12 @@ impl SearchPromptsFluentBuilder {
         self
     }
     /// <p>The search criteria to be used to return prompts.</p>
-    pub fn set_search_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::PromptSearchCriteria>,
-    ) -> Self {
+    pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::PromptSearchCriteria>) -> Self {
         self.inner = self.inner.set_search_criteria(input);
         self
     }
     /// <p>The search criteria to be used to return prompts.</p>
-    pub fn get_search_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::PromptSearchCriteria> {
+    pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::PromptSearchCriteria> {
         self.inner.get_search_criteria()
     }
 }

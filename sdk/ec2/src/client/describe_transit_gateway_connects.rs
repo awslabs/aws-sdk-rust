@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`transit_gateway_connects(Option<Vec<TransitGatewayConnect>>)`](crate::operation::describe_transit_gateway_connects::DescribeTransitGatewayConnectsOutput::transit_gateway_connects): <p>Information about the Connect attachments.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_transit_gateway_connects::DescribeTransitGatewayConnectsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeTransitGatewayConnectsError>`](crate::operation::describe_transit_gateway_connects::DescribeTransitGatewayConnectsError)
-    pub fn describe_transit_gateway_connects(&self) -> crate::operation::describe_transit_gateway_connects::builders::DescribeTransitGatewayConnectsFluentBuilder{
+    pub fn describe_transit_gateway_connects(
+        &self,
+    ) -> crate::operation::describe_transit_gateway_connects::builders::DescribeTransitGatewayConnectsFluentBuilder {
         crate::operation::describe_transit_gateway_connects::builders::DescribeTransitGatewayConnectsFluentBuilder::new(self.handle.clone())
     }
 }

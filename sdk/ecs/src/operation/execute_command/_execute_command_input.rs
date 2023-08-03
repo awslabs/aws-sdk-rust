@@ -50,9 +50,7 @@ impl ExecuteCommandInput {
 
 /// A builder for [`ExecuteCommandInput`](crate::operation::execute_command::ExecuteCommandInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteCommandInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) container: ::std::option::Option<::std::string::String>,
@@ -134,10 +132,7 @@ impl ExecuteCommandInputBuilder {
     /// Consumes the builder and constructs a [`ExecuteCommandInput`](crate::operation::execute_command::ExecuteCommandInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::execute_command::ExecuteCommandInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::execute_command::ExecuteCommandInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_command::ExecuteCommandInput {
             cluster: self.cluster,
             container: self.container,

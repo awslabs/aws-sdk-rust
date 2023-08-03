@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`findings_metrics(Option<Vec<AccountFindingsMetric>>)`](crate::operation::list_findings_metrics::ListFindingsMetricsOutput::findings_metrics): <p>A list of <code>AccountFindingsMetric</code> objects retrieved from the specified time interval.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_findings_metrics::ListFindingsMetricsOutput::next_token): <p>A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page. </p>
     /// - On failure, responds with [`SdkError<ListFindingsMetricsError>`](crate::operation::list_findings_metrics::ListFindingsMetricsError)
-    pub fn list_findings_metrics(
-        &self,
-    ) -> crate::operation::list_findings_metrics::builders::ListFindingsMetricsFluentBuilder {
-        crate::operation::list_findings_metrics::builders::ListFindingsMetricsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_findings_metrics(&self) -> crate::operation::list_findings_metrics::builders::ListFindingsMetricsFluentBuilder {
+        crate::operation::list_findings_metrics::builders::ListFindingsMetricsFluentBuilder::new(self.handle.clone())
     }
 }

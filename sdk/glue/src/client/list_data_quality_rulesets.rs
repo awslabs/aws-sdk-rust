@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`rulesets(Option<Vec<DataQualityRulesetListDetails>>)`](crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput::rulesets): <p>A paginated list of rulesets for the specified list of Glue tables.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput::next_token): <p>A pagination token, if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListDataQualityRulesetsError>`](crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsError)
-    pub fn list_data_quality_rulesets(
-        &self,
-    ) -> crate::operation::list_data_quality_rulesets::builders::ListDataQualityRulesetsFluentBuilder
-    {
+    pub fn list_data_quality_rulesets(&self) -> crate::operation::list_data_quality_rulesets::builders::ListDataQualityRulesetsFluentBuilder {
         crate::operation::list_data_quality_rulesets::builders::ListDataQualityRulesetsFluentBuilder::new(self.handle.clone())
     }
 }

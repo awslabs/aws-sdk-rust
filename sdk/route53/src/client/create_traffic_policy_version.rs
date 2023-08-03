@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`traffic_policy(Option<TrafficPolicy>)`](crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionOutput::traffic_policy): <p>A complex type that contains settings for the new version of the traffic policy.</p>
     ///   - [`location(Option<String>)`](crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionOutput::location): <p>A unique URL that represents a new traffic policy version.</p>
     /// - On failure, responds with [`SdkError<CreateTrafficPolicyVersionError>`](crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionError)
-    pub fn create_traffic_policy_version(&self) -> crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionFluentBuilder{
+    pub fn create_traffic_policy_version(
+        &self,
+    ) -> crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionFluentBuilder {
         crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionFluentBuilder::new(self.handle.clone())
     }
 }

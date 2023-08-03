@@ -10,10 +10,7 @@ impl UpdatePipelineInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_pipeline::UpdatePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pipeline::UpdatePipelineError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline::UpdatePipelineError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_pipeline();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdatePipelineFluentBuilder {
         }
     }
     /// Access the UpdatePipeline as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_pipeline::builders::UpdatePipelineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_pipeline::builders::UpdatePipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdatePipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -120,10 +112,7 @@ impl UpdatePipelineFluentBuilder {
         self
     }
     /// <p>The name of the pipeline to be updated.</p>
-    pub fn set_pipeline(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineDeclaration>,
-    ) -> Self {
+    pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::PipelineDeclaration>) -> Self {
         self.inner = self.inner.set_pipeline(input);
         self
     }

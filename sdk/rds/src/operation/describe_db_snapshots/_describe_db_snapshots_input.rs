@@ -136,18 +136,14 @@ impl DescribeDbSnapshotsInput {
 }
 impl DescribeDbSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbSnapshotsInput`](crate::operation::describe_db_snapshots::DescribeDbSnapshotsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsInputBuilder {
-        crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsInputBuilder {
+        crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbSnapshotsInput`](crate::operation::describe_db_snapshots::DescribeDbSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbSnapshotsInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_snapshot_identifier: ::std::option::Option<::std::string::String>,
@@ -165,10 +161,7 @@ impl DescribeDbSnapshotsInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -177,10 +170,7 @@ impl DescribeDbSnapshotsInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -198,10 +188,7 @@ impl DescribeDbSnapshotsInputBuilder {
     /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li>
     /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
-    pub fn db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -211,10 +198,7 @@ impl DescribeDbSnapshotsInputBuilder {
     /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li>
     /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
-    pub fn set_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_snapshot_identifier = input;
         self
     }
@@ -237,10 +221,7 @@ impl DescribeDbSnapshotsInputBuilder {
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
-    pub fn snapshot_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -254,10 +235,7 @@ impl DescribeDbSnapshotsInputBuilder {
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
-    pub fn set_snapshot_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_type = input;
         self
     }
@@ -302,10 +280,7 @@ impl DescribeDbSnapshotsInputBuilder {
     /// <li> <p> <code>snapshot-type</code> - Accepts types of DB snapshots.</p> </li>
     /// <li> <p> <code>engine</code> - Accepts names of database engines.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -396,18 +371,12 @@ impl DescribeDbSnapshotsInputBuilder {
         &self.include_public
     }
     /// <p>A specific DB resource ID to describe.</p>
-    pub fn dbi_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dbi_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dbi_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A specific DB resource ID to describe.</p>
-    pub fn set_dbi_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dbi_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dbi_resource_id = input;
         self
     }
@@ -418,22 +387,18 @@ impl DescribeDbSnapshotsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDbSnapshotsInput`](crate::operation::describe_db_snapshots::DescribeDbSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_snapshots::DescribeDbSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_db_snapshots::DescribeDbSnapshotsInput {
-                db_instance_identifier: self.db_instance_identifier,
-                db_snapshot_identifier: self.db_snapshot_identifier,
-                snapshot_type: self.snapshot_type,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-                include_shared: self.include_shared.unwrap_or_default(),
-                include_public: self.include_public.unwrap_or_default(),
-                dbi_resource_id: self.dbi_resource_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_db_snapshots::DescribeDbSnapshotsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_db_snapshots::DescribeDbSnapshotsInput {
+            db_instance_identifier: self.db_instance_identifier,
+            db_snapshot_identifier: self.db_snapshot_identifier,
+            snapshot_type: self.snapshot_type,
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+            include_shared: self.include_shared.unwrap_or_default(),
+            include_public: self.include_public.unwrap_or_default(),
+            dbi_resource_id: self.dbi_resource_id,
+        })
     }
 }

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsOutput::id): <p> The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>. </p>
     ///   - [`recommendation_report_details(Option<RecommendationReportDetails>)`](crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsOutput::recommendation_report_details): <p> Detailed information about the recommendation report. </p>
     /// - On failure, responds with [`SdkError<GetRecommendationReportDetailsError>`](crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsError)
-    pub fn get_recommendation_report_details(&self) -> crate::operation::get_recommendation_report_details::builders::GetRecommendationReportDetailsFluentBuilder{
+    pub fn get_recommendation_report_details(
+        &self,
+    ) -> crate::operation::get_recommendation_report_details::builders::GetRecommendationReportDetailsFluentBuilder {
         crate::operation::get_recommendation_report_details::builders::GetRecommendationReportDetailsFluentBuilder::new(self.handle.clone())
     }
 }

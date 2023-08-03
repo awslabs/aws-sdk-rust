@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetOutpostResolverOutput`](crate::operation::get_outpost_resolver::GetOutpostResolverOutput) with field(s):
     ///   - [`outpost_resolver(Option<OutpostResolver>)`](crate::operation::get_outpost_resolver::GetOutpostResolverOutput::outpost_resolver): <p>Information about the <code>GetOutpostResolver</code> request, including the status of the request.</p>
     /// - On failure, responds with [`SdkError<GetOutpostResolverError>`](crate::operation::get_outpost_resolver::GetOutpostResolverError)
-    pub fn get_outpost_resolver(
-        &self,
-    ) -> crate::operation::get_outpost_resolver::builders::GetOutpostResolverFluentBuilder {
-        crate::operation::get_outpost_resolver::builders::GetOutpostResolverFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_outpost_resolver(&self) -> crate::operation::get_outpost_resolver::builders::GetOutpostResolverFluentBuilder {
+        crate::operation::get_outpost_resolver::builders::GetOutpostResolverFluentBuilder::new(self.handle.clone())
     }
 }

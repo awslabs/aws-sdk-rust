@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for RejectAssignmentOutput {
 }
 impl RejectAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`RejectAssignmentOutput`](crate::operation::reject_assignment::RejectAssignmentOutput).
-    pub fn builder() -> crate::operation::reject_assignment::builders::RejectAssignmentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reject_assignment::builders::RejectAssignmentOutputBuilder {
         crate::operation::reject_assignment::builders::RejectAssignmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`RejectAssignmentOutput`](crate::operation::reject_assignment::RejectAssignmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectAssignmentOutputBuilder {
     _request_id: Option<String>,
 }

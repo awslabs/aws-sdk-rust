@@ -15,18 +15,14 @@ impl GetLoggingConfigurationInput {
 }
 impl GetLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationInput`](crate::operation::get_logging_configuration::GetLoggingConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_logging_configuration::builders::GetLoggingConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_logging_configuration::builders::GetLoggingConfigurationInputBuilder {
         crate::operation::get_logging_configuration::builders::GetLoggingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLoggingConfigurationInput`](crate::operation::get_logging_configuration::GetLoggingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoggingConfigurationInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,8 @@ impl GetLoggingConfigurationInputBuilder {
         crate::operation::get_logging_configuration::GetLoggingConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_logging_configuration::GetLoggingConfigurationInput {
-                resource_arn: self.resource_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_logging_configuration::GetLoggingConfigurationInput {
+            resource_arn: self.resource_arn,
+        })
     }
 }

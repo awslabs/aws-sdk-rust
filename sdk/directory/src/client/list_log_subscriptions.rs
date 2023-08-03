@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`log_subscriptions(Option<Vec<LogSubscription>>)`](crate::operation::list_log_subscriptions::ListLogSubscriptionsOutput::log_subscriptions): <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_log_subscriptions::ListLogSubscriptionsOutput::next_token): <p>The token for the next set of items to return.</p>
     /// - On failure, responds with [`SdkError<ListLogSubscriptionsError>`](crate::operation::list_log_subscriptions::ListLogSubscriptionsError)
-    pub fn list_log_subscriptions(
-        &self,
-    ) -> crate::operation::list_log_subscriptions::builders::ListLogSubscriptionsFluentBuilder {
-        crate::operation::list_log_subscriptions::builders::ListLogSubscriptionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_log_subscriptions(&self) -> crate::operation::list_log_subscriptions::builders::ListLogSubscriptionsFluentBuilder {
+        crate::operation::list_log_subscriptions::builders::ListLogSubscriptionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -38,13 +38,7 @@
 /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To create assets that have unique TIC values for each audio track, choose Use unique TICs.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NielsenUniqueTicPerAudioTrackType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,13 +51,9 @@ pub enum NielsenUniqueTicPerAudioTrackType {
 impl ::std::convert::From<&str> for NielsenUniqueTicPerAudioTrackType {
     fn from(s: &str) -> Self {
         match s {
-            "RESERVE_UNIQUE_TICS_PER_TRACK" => {
-                NielsenUniqueTicPerAudioTrackType::ReserveUniqueTicsPerTrack
-            }
+            "RESERVE_UNIQUE_TICS_PER_TRACK" => NielsenUniqueTicPerAudioTrackType::ReserveUniqueTicsPerTrack,
             "SAME_TICS_PER_TRACK" => NielsenUniqueTicPerAudioTrackType::SameTicsPerTrack,
-            other => NielsenUniqueTicPerAudioTrackType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => NielsenUniqueTicPerAudioTrackType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -78,9 +68,7 @@ impl NielsenUniqueTicPerAudioTrackType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            NielsenUniqueTicPerAudioTrackType::ReserveUniqueTicsPerTrack => {
-                "RESERVE_UNIQUE_TICS_PER_TRACK"
-            }
+            NielsenUniqueTicPerAudioTrackType::ReserveUniqueTicsPerTrack => "RESERVE_UNIQUE_TICS_PER_TRACK",
             NielsenUniqueTicPerAudioTrackType::SameTicsPerTrack => "SAME_TICS_PER_TRACK",
             NielsenUniqueTicPerAudioTrackType::Unknown(value) => value.as_str(),
         }

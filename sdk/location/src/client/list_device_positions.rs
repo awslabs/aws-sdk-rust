@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`entries(Option<Vec<ListDevicePositionsResponseEntry>>)`](crate::operation::list_device_positions::ListDevicePositionsOutput::entries): <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_positions::ListDevicePositionsOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListDevicePositionsError>`](crate::operation::list_device_positions::ListDevicePositionsError)
-    pub fn list_device_positions(
-        &self,
-    ) -> crate::operation::list_device_positions::builders::ListDevicePositionsFluentBuilder {
-        crate::operation::list_device_positions::builders::ListDevicePositionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_device_positions(&self) -> crate::operation::list_device_positions::builders::ListDevicePositionsFluentBuilder {
+        crate::operation::list_device_positions::builders::ListDevicePositionsFluentBuilder::new(self.handle.clone())
     }
 }

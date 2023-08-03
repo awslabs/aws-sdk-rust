@@ -15,33 +15,25 @@ impl ExportSourceNetworkCfnTemplateInput {
 }
 impl ExportSourceNetworkCfnTemplateInput {
     /// Creates a new builder-style object to manufacture [`ExportSourceNetworkCfnTemplateInput`](crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateInput).
-    pub fn builder() -> crate::operation::export_source_network_cfn_template::builders::ExportSourceNetworkCfnTemplateInputBuilder{
+    pub fn builder() -> crate::operation::export_source_network_cfn_template::builders::ExportSourceNetworkCfnTemplateInputBuilder {
         crate::operation::export_source_network_cfn_template::builders::ExportSourceNetworkCfnTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`ExportSourceNetworkCfnTemplateInput`](crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportSourceNetworkCfnTemplateInputBuilder {
     pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
 }
 impl ExportSourceNetworkCfnTemplateInputBuilder {
     /// <p>The Source Network ID to export its CloudFormation template to an S3 bucket.</p>
-    pub fn source_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Source Network ID to export its CloudFormation template to an S3 bucket.</p>
-    pub fn set_source_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_network_id = input;
         self
     }
@@ -58,9 +50,8 @@ impl ExportSourceNetworkCfnTemplateInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateInput {
-                source_network_id: self.source_network_id
-                ,
-            }
+                source_network_id: self.source_network_id,
+            },
         )
     }
 }

@@ -11,8 +11,7 @@ pub struct GetCellReadinessSummaryOutput {
     pub readiness: ::std::option::Option<crate::types::Readiness>,
     /// <p>Summaries for the readiness checks that make up the cell.</p>
     #[doc(hidden)]
-    pub readiness_checks:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>,
+    pub readiness_checks: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>,
     _request_id: Option<String>,
 }
 impl GetCellReadinessSummaryOutput {
@@ -25,9 +24,7 @@ impl GetCellReadinessSummaryOutput {
         self.readiness.as_ref()
     }
     /// <p>Summaries for the readiness checks that make up the cell.</p>
-    pub fn readiness_checks(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReadinessCheckSummary]> {
+    pub fn readiness_checks(&self) -> ::std::option::Option<&[crate::types::ReadinessCheckSummary]> {
         self.readiness_checks.as_deref()
     }
 }
@@ -38,23 +35,18 @@ impl ::aws_http::request_id::RequestId for GetCellReadinessSummaryOutput {
 }
 impl GetCellReadinessSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetCellReadinessSummaryOutput`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryOutputBuilder {
         crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCellReadinessSummaryOutput`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCellReadinessSummaryOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) readiness: ::std::option::Option<crate::types::Readiness>,
-    pub(crate) readiness_checks:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>,
+    pub(crate) readiness_checks: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>,
     _request_id: Option<String>,
 }
 impl GetCellReadinessSummaryOutputBuilder {
@@ -98,17 +90,12 @@ impl GetCellReadinessSummaryOutputBuilder {
         self
     }
     /// <p>Summaries for the readiness checks that make up the cell.</p>
-    pub fn set_readiness_checks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>,
-    ) -> Self {
+    pub fn set_readiness_checks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>) -> Self {
         self.readiness_checks = input;
         self
     }
     /// <p>Summaries for the readiness checks that make up the cell.</p>
-    pub fn get_readiness_checks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>> {
+    pub fn get_readiness_checks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>> {
         &self.readiness_checks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -121,9 +108,7 @@ impl GetCellReadinessSummaryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCellReadinessSummaryOutput`](crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput {
+    pub fn build(self) -> crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput {
         crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput {
             next_token: self.next_token,
             readiness: self.readiness,

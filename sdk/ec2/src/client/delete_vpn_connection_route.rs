@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`vpn_connection_id(impl ::std::convert::Into<String>)`](crate::operation::delete_vpn_connection_route::builders::DeleteVpnConnectionRouteFluentBuilder::vpn_connection_id) / [`set_vpn_connection_id(Option<String>)`](crate::operation::delete_vpn_connection_route::builders::DeleteVpnConnectionRouteFluentBuilder::set_vpn_connection_id): <p>The ID of the VPN connection.</p>
     /// - On success, responds with [`DeleteVpnConnectionRouteOutput`](crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteOutput)
     /// - On failure, responds with [`SdkError<DeleteVpnConnectionRouteError>`](crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteError)
-    pub fn delete_vpn_connection_route(&self) -> crate::operation::delete_vpn_connection_route::builders::DeleteVpnConnectionRouteFluentBuilder{
+    pub fn delete_vpn_connection_route(&self) -> crate::operation::delete_vpn_connection_route::builders::DeleteVpnConnectionRouteFluentBuilder {
         crate::operation::delete_vpn_connection_route::builders::DeleteVpnConnectionRouteFluentBuilder::new(self.handle.clone())
     }
 }

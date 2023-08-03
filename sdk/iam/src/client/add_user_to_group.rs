@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`user_name(impl ::std::convert::Into<String>)`](crate::operation::add_user_to_group::builders::AddUserToGroupFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::add_user_to_group::builders::AddUserToGroupFluentBuilder::set_user_name): <p>The name of the user to add.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     /// - On success, responds with [`AddUserToGroupOutput`](crate::operation::add_user_to_group::AddUserToGroupOutput)
     /// - On failure, responds with [`SdkError<AddUserToGroupError>`](crate::operation::add_user_to_group::AddUserToGroupError)
-    pub fn add_user_to_group(
-        &self,
-    ) -> crate::operation::add_user_to_group::builders::AddUserToGroupFluentBuilder {
-        crate::operation::add_user_to_group::builders::AddUserToGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_user_to_group(&self) -> crate::operation::add_user_to_group::builders::AddUserToGroupFluentBuilder {
+        crate::operation::add_user_to_group::builders::AddUserToGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -70,23 +70,18 @@ impl ::aws_http::request_id::RequestId for CheckoutBorrowLicenseOutput {
 }
 impl CheckoutBorrowLicenseOutput {
     /// Creates a new builder-style object to manufacture [`CheckoutBorrowLicenseOutput`](crate::operation::checkout_borrow_license::CheckoutBorrowLicenseOutput).
-    pub fn builder(
-    ) -> crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseOutputBuilder
-    {
+    pub fn builder() -> crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseOutputBuilder {
         crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseOutputBuilder::default()
     }
 }
 
 /// A builder for [`CheckoutBorrowLicenseOutput`](crate::operation::checkout_borrow_license::CheckoutBorrowLicenseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckoutBorrowLicenseOutputBuilder {
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
     pub(crate) license_consumption_token: ::std::option::Option<::std::string::String>,
-    pub(crate) entitlements_allowed:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
+    pub(crate) entitlements_allowed: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
     pub(crate) signed_token: ::std::option::Option<::std::string::String>,
     pub(crate) issued_at: ::std::option::Option<::std::string::String>,
@@ -110,18 +105,12 @@ impl CheckoutBorrowLicenseOutputBuilder {
         &self.license_arn
     }
     /// <p>License consumption token.</p>
-    pub fn license_consumption_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_consumption_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_consumption_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>License consumption token.</p>
-    pub fn set_license_consumption_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_consumption_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_consumption_token = input;
         self
     }
@@ -141,17 +130,12 @@ impl CheckoutBorrowLicenseOutputBuilder {
         self
     }
     /// <p>Allowed license entitlements.</p>
-    pub fn set_entitlements_allowed(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
-    ) -> Self {
+    pub fn set_entitlements_allowed(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>) -> Self {
         self.entitlements_allowed = input;
         self
     }
     /// <p>Allowed license entitlements.</p>
-    pub fn get_entitlements_allowed(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
+    pub fn get_entitlements_allowed(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
         &self.entitlements_allowed
     }
     /// <p>Node ID.</p>
@@ -222,17 +206,12 @@ impl CheckoutBorrowLicenseOutputBuilder {
         self
     }
     /// <p>Information about constraints.</p>
-    pub fn set_checkout_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
-    ) -> Self {
+    pub fn set_checkout_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>) -> Self {
         self.checkout_metadata = input;
         self
     }
     /// <p>Information about constraints.</p>
-    pub fn get_checkout_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+    pub fn get_checkout_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
         &self.checkout_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

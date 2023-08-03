@@ -15,19 +15,13 @@ pub fn ser_update_model_version_input(
     if let Some(var_4) = &input.external_events_detail {
         #[allow(unused_mut)]
         let mut object_5 = object.key("externalEventsDetail").start_object();
-        crate::protocol_serde::shape_external_events_detail::ser_external_events_detail(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_external_events_detail::ser_external_events_detail(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.ingested_events_detail {
         #[allow(unused_mut)]
         let mut object_7 = object.key("ingestedEventsDetail").start_object();
-        crate::protocol_serde::shape_ingested_events_detail::ser_ingested_events_detail(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_ingested_events_detail::ser_ingested_events_detail(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.tags {

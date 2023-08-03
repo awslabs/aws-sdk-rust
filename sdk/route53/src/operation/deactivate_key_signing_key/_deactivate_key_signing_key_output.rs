@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeactivateKeySigningKeyOutput {
 }
 impl DeactivateKeySigningKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeactivateKeySigningKeyOutput`](crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::deactivate_key_signing_key::builders::DeactivateKeySigningKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deactivate_key_signing_key::builders::DeactivateKeySigningKeyOutputBuilder {
         crate::operation::deactivate_key_signing_key::builders::DeactivateKeySigningKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeactivateKeySigningKeyOutput`](crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeactivateKeySigningKeyOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeactivateKeySigningKeyOutputBuilder {
         self
     }
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
-    pub fn set_change_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeInfo>,
-    ) -> Self {
+    pub fn set_change_info(mut self, input: ::std::option::Option<crate::types::ChangeInfo>) -> Self {
         self.change_info = input;
         self
     }
@@ -65,9 +58,7 @@ impl DeactivateKeySigningKeyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeactivateKeySigningKeyOutput`](crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyOutput {
+    pub fn build(self) -> crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyOutput {
         crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyOutput {
             change_info: self.change_info,
             _request_id: self._request_id,

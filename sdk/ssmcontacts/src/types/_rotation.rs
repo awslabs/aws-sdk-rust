@@ -58,9 +58,7 @@ impl Rotation {
 
 /// A builder for [`Rotation`](crate::types::Rotation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RotationBuilder {
     pub(crate) rotation_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -110,17 +108,12 @@ impl RotationBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the rotation team.</p>
-    pub fn set_contact_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.contact_ids = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the rotation team.</p>
-    pub fn get_contact_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.contact_ids
     }
     /// <p>The date and time the rotation becomes active.</p>
@@ -129,10 +122,7 @@ impl RotationBuilder {
         self
     }
     /// <p>The date and time the rotation becomes active.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -160,10 +150,7 @@ impl RotationBuilder {
         self
     }
     /// <p>Information about when an on-call rotation is in effect and how long the rotation period lasts.</p>
-    pub fn set_recurrence(
-        mut self,
-        input: ::std::option::Option<crate::types::RecurrenceSettings>,
-    ) -> Self {
+    pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::RecurrenceSettings>) -> Self {
         self.recurrence = input;
         self
     }

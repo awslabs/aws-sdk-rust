@@ -10,10 +10,7 @@ impl UpdateAnswerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_answer::UpdateAnswerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_answer::UpdateAnswerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_answer::UpdateAnswerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_answer();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateAnswerFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_answer::UpdateAnswer,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_answer::UpdateAnswer, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_answer::UpdateAnswerError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateAnswerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateAnswerFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_answer::UpdateAnswer,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_answer::UpdateAnswer, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_answer::UpdateAnswerError>,
     > {
         self.customize_middleware().await
@@ -169,27 +157,19 @@ impl UpdateAnswerFluentBuilder {
     ///
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn selected_choices(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn selected_choices(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.selected_choices(input.into());
         self
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn set_selected_choices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_selected_choices(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_selected_choices(input);
         self
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn get_selected_choices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_choices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_selected_choices()
     }
     /// Adds a key-value pair to `ChoiceUpdates`.
@@ -197,30 +177,20 @@ impl UpdateAnswerFluentBuilder {
     /// To override the contents of this collection use [`set_choice_updates`](Self::set_choice_updates).
     ///
     /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
-    pub fn choice_updates(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ChoiceUpdate,
-    ) -> Self {
+    pub fn choice_updates(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ChoiceUpdate) -> Self {
         self.inner = self.inner.choice_updates(k.into(), v);
         self
     }
     /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
     pub fn set_choice_updates(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>>,
     ) -> Self {
         self.inner = self.inner.set_choice_updates(input);
         self
     }
     /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
-    pub fn get_choice_updates(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>,
-    > {
+    pub fn get_choice_updates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>> {
         self.inner.get_choice_updates()
     }
     /// <p>The notes associated with the workload.</p>

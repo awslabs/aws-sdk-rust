@@ -10,10 +10,7 @@ impl CreateTokenInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_token::CreateTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_token::CreateTokenError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_token();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl CreateTokenFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_token::CreateToken,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_token::CreateToken, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl CreateTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl CreateTokenFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_token::CreateToken,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_token::CreateToken, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError>,
     > {
         self.customize_middleware().await
@@ -137,10 +125,7 @@ impl CreateTokenFluentBuilder {
         self
     }
     /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
-    pub fn set_role_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_role_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_role_arns(input);
         self
     }
@@ -167,25 +152,17 @@ impl CreateTokenFluentBuilder {
     /// To override the contents of this collection use [`set_token_properties`](Self::set_token_properties).
     ///
     /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
-    pub fn token_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn token_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token_properties(input.into());
         self
     }
     /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
-    pub fn set_token_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_token_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_token_properties(input);
         self
     }
     /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
-    pub fn get_token_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_token_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_token_properties()
     }
     /// <p>Idempotency token, valid for 10 minutes.</p>

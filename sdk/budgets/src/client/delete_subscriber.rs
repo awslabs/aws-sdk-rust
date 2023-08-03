@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`subscriber(Subscriber)`](crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder::subscriber) / [`set_subscriber(Option<Subscriber>)`](crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder::set_subscriber): <p>The subscriber that you want to delete.</p>
     /// - On success, responds with [`DeleteSubscriberOutput`](crate::operation::delete_subscriber::DeleteSubscriberOutput)
     /// - On failure, responds with [`SdkError<DeleteSubscriberError>`](crate::operation::delete_subscriber::DeleteSubscriberError)
-    pub fn delete_subscriber(
-        &self,
-    ) -> crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder {
-        crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_subscriber(&self) -> crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder {
+        crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder::new(self.handle.clone())
     }
 }

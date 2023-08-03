@@ -52,9 +52,7 @@ impl SearchEntitiesInput {
 
 /// A builder for [`SearchEntitiesInput`](crate::operation::search_entities::SearchEntitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchEntitiesInputBuilder {
     pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>>,
@@ -75,17 +73,12 @@ impl SearchEntitiesInputBuilder {
         self
     }
     /// <p>The entity types for which to search.</p>
-    pub fn set_entity_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
-    ) -> Self {
+    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>) -> Self {
         self.entity_types = input;
         self
     }
     /// <p>The entity types for which to search.</p>
-    pub fn get_entity_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityType>> {
+    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityType>> {
         &self.entity_types
     }
     /// Appends an item to `filters`.
@@ -102,18 +95,13 @@ impl SearchEntitiesInputBuilder {
     }
     /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>> {
         &self.filters
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -161,10 +149,7 @@ impl SearchEntitiesInputBuilder {
     /// Consumes the builder and constructs a [`SearchEntitiesInput`](crate::operation::search_entities::SearchEntitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_entities::SearchEntitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::search_entities::SearchEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_entities::SearchEntitiesInput {
             entity_types: self.entity_types,
             filters: self.filters,

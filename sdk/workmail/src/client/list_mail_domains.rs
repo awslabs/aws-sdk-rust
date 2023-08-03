@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`mail_domains(Option<Vec<MailDomainSummary>>)`](crate::operation::list_mail_domains::ListMailDomainsOutput::mail_domains): <p>The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_mail_domains::ListMailDomainsOutput::next_token): <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListMailDomainsError>`](crate::operation::list_mail_domains::ListMailDomainsError)
-    pub fn list_mail_domains(
-        &self,
-    ) -> crate::operation::list_mail_domains::builders::ListMailDomainsFluentBuilder {
-        crate::operation::list_mail_domains::builders::ListMailDomainsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_mail_domains(&self) -> crate::operation::list_mail_domains::builders::ListMailDomainsFluentBuilder {
+        crate::operation::list_mail_domains::builders::ListMailDomainsFluentBuilder::new(self.handle.clone())
     }
 }

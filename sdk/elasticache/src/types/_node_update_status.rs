@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NodeUpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for NodeUpdateStatus {
             "stopped" => NodeUpdateStatus::Stopped,
             "stopping" => NodeUpdateStatus::Stopping,
             "waiting-to-start" => NodeUpdateStatus::WaitingToStart,
-            other => {
-                NodeUpdateStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => NodeUpdateStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl NodeUpdateStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "complete",
-            "in-progress",
-            "not-applied",
-            "stopped",
-            "stopping",
-            "waiting-to-start",
-        ]
+        &["complete", "in-progress", "not-applied", "stopped", "stopping", "waiting-to-start"]
     }
 }
 impl ::std::convert::AsRef<str> for NodeUpdateStatus {

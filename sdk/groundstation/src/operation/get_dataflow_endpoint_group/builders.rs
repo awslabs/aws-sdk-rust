@@ -26,7 +26,7 @@ impl GetDataflowEndpointGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDataflowEndpointGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupInputBuilder,
+    inner: crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupInputBuilder,
 }
 impl GetDataflowEndpointGroupFluentBuilder {
     /// Creates a new `GetDataflowEndpointGroup`.
@@ -37,7 +37,7 @@ impl GetDataflowEndpointGroupFluentBuilder {
         }
     }
     /// Access the GetDataflowEndpointGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetDataflowEndpointGroupFluentBuilder {
             crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetDataflowEndpointGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetDataflowEndpointGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetDataflowEndpointGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetDataflowEndpointGroupFluentBuilder {
             crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataflow_endpoint_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataflow_endpoint_group_id(input.into());
         self
     }
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn set_dataflow_endpoint_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataflow_endpoint_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataflow_endpoint_group_id(input);
         self
     }

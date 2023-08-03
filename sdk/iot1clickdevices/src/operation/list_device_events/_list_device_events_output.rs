@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListDeviceEventsOutput {
 }
 impl ListDeviceEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeviceEventsOutput`](crate::operation::list_device_events::ListDeviceEventsOutput).
-    pub fn builder() -> crate::operation::list_device_events::builders::ListDeviceEventsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_device_events::builders::ListDeviceEventsOutputBuilder {
         crate::operation::list_device_events::builders::ListDeviceEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceEventsOutput`](crate::operation::list_device_events::ListDeviceEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceEventsOutputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::DeviceEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListDeviceEventsOutputBuilder {
         self
     }
     /// <p>An array of zero or more elements describing the event(s) associated with the device.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceEvent>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceEvent>>) -> Self {
         self.events = input;
         self
     }

@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`revisions(Option<Vec<RevisionLocation>>)`](crate::operation::list_application_revisions::ListApplicationRevisionsOutput::revisions): <p>A list of locations that contain the matching revisions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_application_revisions::ListApplicationRevisionsOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
     /// - On failure, responds with [`SdkError<ListApplicationRevisionsError>`](crate::operation::list_application_revisions::ListApplicationRevisionsError)
-    pub fn list_application_revisions(
-        &self,
-    ) -> crate::operation::list_application_revisions::builders::ListApplicationRevisionsFluentBuilder
-    {
+    pub fn list_application_revisions(&self) -> crate::operation::list_application_revisions::builders::ListApplicationRevisionsFluentBuilder {
         crate::operation::list_application_revisions::builders::ListApplicationRevisionsFluentBuilder::new(self.handle.clone())
     }
 }

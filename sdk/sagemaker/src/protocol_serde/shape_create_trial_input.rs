@@ -15,10 +15,7 @@ pub fn ser_create_trial_input(
     if let Some(var_4) = &input.metadata_properties {
         #[allow(unused_mut)]
         let mut object_5 = object.key("MetadataProperties").start_object();
-        crate::protocol_serde::shape_metadata_properties::ser_metadata_properties(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_metadata_properties::ser_metadata_properties(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.tags {

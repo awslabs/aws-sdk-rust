@@ -5,8 +5,7 @@
 pub struct ListProductSubscriptionsOutput {
     /// <p>Metadata that describes the list product subscriptions operation.</p>
     #[doc(hidden)]
-    pub product_user_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProductUserSummary>>,
+    pub product_user_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProductUserSummary>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListProductSubscriptionsOutput {
 }
 impl ListProductSubscriptionsOutput {
     /// <p>Metadata that describes the list product subscriptions operation.</p>
-    pub fn product_user_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProductUserSummary]> {
+    pub fn product_user_summaries(&self) -> ::std::option::Option<&[crate::types::ProductUserSummary]> {
         self.product_user_summaries.as_deref()
     }
     /// <p>Token for the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListProductSubscriptionsOutput {
 }
 impl ListProductSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListProductSubscriptionsOutput`](crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsOutputBuilder {
         crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProductSubscriptionsOutput`](crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProductSubscriptionsOutputBuilder {
-    pub(crate) product_user_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProductUserSummary>>,
+    pub(crate) product_user_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProductUserSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListProductSubscriptionsOutputBuilder {
         self
     }
     /// <p>Metadata that describes the list product subscriptions operation.</p>
-    pub fn set_product_user_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductUserSummary>>,
-    ) -> Self {
+    pub fn set_product_user_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductUserSummary>>) -> Self {
         self.product_user_summaries = input;
         self
     }
     /// <p>Metadata that describes the list product subscriptions operation.</p>
-    pub fn get_product_user_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductUserSummary>> {
+    pub fn get_product_user_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductUserSummary>> {
         &self.product_user_summaries
     }
     /// <p>Token for the next set of results.</p>
@@ -99,9 +86,7 @@ impl ListProductSubscriptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProductSubscriptionsOutput`](crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput {
+    pub fn build(self) -> crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput {
         crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput {
             product_user_summaries: self.product_user_summaries,
             next_token: self.next_token,

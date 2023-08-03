@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMembersOutput`](crate::operation::create_members::CreateMembersOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::create_members::CreateMembersOutput::unprocessed_accounts): <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string that explains why each was unprocessed.</p>
     /// - On failure, responds with [`SdkError<CreateMembersError>`](crate::operation::create_members::CreateMembersError)
-    pub fn create_members(
-        &self,
-    ) -> crate::operation::create_members::builders::CreateMembersFluentBuilder {
-        crate::operation::create_members::builders::CreateMembersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_members(&self) -> crate::operation::create_members::builders::CreateMembersFluentBuilder {
+        crate::operation::create_members::builders::CreateMembersFluentBuilder::new(self.handle.clone())
     }
 }

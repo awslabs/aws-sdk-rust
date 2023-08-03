@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetStageDeploymentOutput {
 }
 impl GetStageDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`GetStageDeploymentOutput`](crate::operation::get_stage_deployment::GetStageDeploymentOutput).
-    pub fn builder(
-    ) -> crate::operation::get_stage_deployment::builders::GetStageDeploymentOutputBuilder {
+    pub fn builder() -> crate::operation::get_stage_deployment::builders::GetStageDeploymentOutputBuilder {
         crate::operation::get_stage_deployment::builders::GetStageDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetStageDeploymentOutput`](crate::operation::get_stage_deployment::GetStageDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStageDeploymentOutputBuilder {
     pub(crate) stage_deployment: ::std::option::Option<crate::types::StageDeploymentDetails>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl GetStageDeploymentOutputBuilder {
         self
     }
     /// <p>Properties that provide details of the stage deployment.</p>
-    pub fn set_stage_deployment(
-        mut self,
-        input: ::std::option::Option<crate::types::StageDeploymentDetails>,
-    ) -> Self {
+    pub fn set_stage_deployment(mut self, input: ::std::option::Option<crate::types::StageDeploymentDetails>) -> Self {
         self.stage_deployment = input;
         self
     }
     /// <p>Properties that provide details of the stage deployment.</p>
-    pub fn get_stage_deployment(
-        &self,
-    ) -> &::std::option::Option<crate::types::StageDeploymentDetails> {
+    pub fn get_stage_deployment(&self) -> &::std::option::Option<crate::types::StageDeploymentDetails> {
         &self.stage_deployment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateStateMachineAliasOutput {
 }
 impl CreateStateMachineAliasOutput {
     /// Creates a new builder-style object to manufacture [`CreateStateMachineAliasOutput`](crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput).
-    pub fn builder(
-    ) -> crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasOutputBuilder {
         crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStateMachineAliasOutput`](crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStateMachineAliasOutputBuilder {
     pub(crate) state_machine_alias_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -47,18 +43,12 @@ pub struct CreateStateMachineAliasOutputBuilder {
 }
 impl CreateStateMachineAliasOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine alias.</p>
-    pub fn state_machine_alias_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_alias_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine alias.</p>
-    pub fn set_state_machine_alias_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_alias_arn = input;
         self
     }
@@ -72,10 +62,7 @@ impl CreateStateMachineAliasOutputBuilder {
         self
     }
     /// <p>The date the state machine alias was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -93,9 +80,7 @@ impl CreateStateMachineAliasOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateStateMachineAliasOutput`](crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput {
+    pub fn build(self) -> crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput {
         crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput {
             state_machine_alias_arn: self.state_machine_alias_arn,
             creation_date: self.creation_date,

@@ -26,8 +26,7 @@ impl StopVectorEnrichmentJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopVectorEnrichmentJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobInputBuilder,
+    inner: crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobInputBuilder,
 }
 impl StopVectorEnrichmentJobFluentBuilder {
     /// Creates a new `StopVectorEnrichmentJob`.
@@ -38,10 +37,7 @@ impl StopVectorEnrichmentJobFluentBuilder {
         }
     }
     /// Access the StopVectorEnrichmentJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl StopVectorEnrichmentJobFluentBuilder {
             crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl StopVectorEnrichmentJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl StopVectorEnrichmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl StopVectorEnrichmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl StopVectorEnrichmentJobFluentBuilder {
             crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError>,
     > {
         self.customize_middleware().await
     }

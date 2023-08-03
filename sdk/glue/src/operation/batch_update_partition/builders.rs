@@ -37,9 +37,7 @@ impl BatchUpdatePartitionFluentBuilder {
         }
     }
     /// Access the BatchUpdatePartition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_update_partition::builders::BatchUpdatePartitionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_update_partition::builders::BatchUpdatePartitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl BatchUpdatePartitionFluentBuilder {
             crate::operation::batch_update_partition::BatchUpdatePartition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_partition::BatchUpdatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_partition::BatchUpdatePartitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl BatchUpdatePartitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl BatchUpdatePartitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_partition::BatchUpdatePartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_partition::BatchUpdatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_partition::BatchUpdatePartitionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl BatchUpdatePartitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_partition::BatchUpdatePartitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_partition::BatchUpdatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_partition::BatchUpdatePartitionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl BatchUpdatePartitionFluentBuilder {
             crate::operation::batch_update_partition::BatchUpdatePartition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_partition::BatchUpdatePartitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_partition::BatchUpdatePartitionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl BatchUpdatePartitionFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The name of the metadata database in which the partition is to be updated.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the metadata database in which the partition is to be updated.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -180,20 +161,12 @@ impl BatchUpdatePartitionFluentBuilder {
         self
     }
     /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchUpdatePartitionRequestEntry>,
-        >,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionRequestEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
     /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionRequestEntry>>
-    {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionRequestEntry>> {
         self.inner.get_entries()
     }
 }

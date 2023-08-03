@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`images(Option<Vec<WorkspaceImage>>)`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesOutput::images): <p>Information about the images.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<DescribeWorkspaceImagesError>`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesError)
-    pub fn describe_workspace_images(
-        &self,
-    ) -> crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesFluentBuilder
-    {
+    pub fn describe_workspace_images(&self) -> crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesFluentBuilder {
         crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`user_pool_id(impl ::std::convert::Into<String>)`](crate::operation::delete_user_pool::builders::DeleteUserPoolFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::delete_user_pool::builders::DeleteUserPoolFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool you want to delete.</p>
     /// - On success, responds with [`DeleteUserPoolOutput`](crate::operation::delete_user_pool::DeleteUserPoolOutput)
     /// - On failure, responds with [`SdkError<DeleteUserPoolError>`](crate::operation::delete_user_pool::DeleteUserPoolError)
-    pub fn delete_user_pool(
-        &self,
-    ) -> crate::operation::delete_user_pool::builders::DeleteUserPoolFluentBuilder {
-        crate::operation::delete_user_pool::builders::DeleteUserPoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_user_pool(&self) -> crate::operation::delete_user_pool::builders::DeleteUserPoolFluentBuilder {
+        crate::operation::delete_user_pool::builders::DeleteUserPoolFluentBuilder::new(self.handle.clone())
     }
 }

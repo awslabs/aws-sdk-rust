@@ -37,9 +37,7 @@ impl GeospatialMapAggregatedFieldWells {
 
 /// A builder for [`GeospatialMapAggregatedFieldWells`](crate::types::GeospatialMapAggregatedFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeospatialMapAggregatedFieldWellsBuilder {
     pub(crate) geospatial: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
@@ -58,17 +56,12 @@ impl GeospatialMapAggregatedFieldWellsBuilder {
         self
     }
     /// <p>The geospatial field wells of a geospatial map. Values are grouped by geospatial fields.</p>
-    pub fn set_geospatial(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
+    pub fn set_geospatial(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
         self.geospatial = input;
         self
     }
     /// <p>The geospatial field wells of a geospatial map. Values are grouped by geospatial fields.</p>
-    pub fn get_geospatial(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+    pub fn get_geospatial(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
         &self.geospatial
     }
     /// Appends an item to `values`.
@@ -83,17 +76,12 @@ impl GeospatialMapAggregatedFieldWellsBuilder {
         self
     }
     /// <p>The size field wells of a geospatial map. Values are aggregated based on geospatial fields.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
         self.values = input;
         self
     }
     /// <p>The size field wells of a geospatial map. Values are aggregated based on geospatial fields.</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
         &self.values
     }
     /// Appends an item to `colors`.
@@ -108,17 +96,12 @@ impl GeospatialMapAggregatedFieldWellsBuilder {
         self
     }
     /// <p>The color field wells of a geospatial map.</p>
-    pub fn set_colors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
+    pub fn set_colors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
         self.colors = input;
         self
     }
     /// <p>The color field wells of a geospatial map.</p>
-    pub fn get_colors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+    pub fn get_colors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
         &self.colors
     }
     /// Consumes the builder and constructs a [`GeospatialMapAggregatedFieldWells`](crate::types::GeospatialMapAggregatedFieldWells).

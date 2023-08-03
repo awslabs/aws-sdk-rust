@@ -10,10 +10,7 @@ impl DeleteWorkteamInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_workteam::DeleteWorkteamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_workteam::DeleteWorkteamError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_workteam::DeleteWorkteamError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_workteam();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteWorkteamFluentBuilder {
         }
     }
     /// Access the DeleteWorkteam as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_workteam::builders::DeleteWorkteamInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_workteam::builders::DeleteWorkteamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DeleteWorkteamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl DeleteWorkteamFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The name of the work team to delete.</p>
-    pub fn workteam_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workteam_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workteam_name(input.into());
         self
     }
     /// <p>The name of the work team to delete.</p>
-    pub fn set_workteam_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workteam_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workteam_name(input);
         self
     }

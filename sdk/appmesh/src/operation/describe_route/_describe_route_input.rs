@@ -43,9 +43,7 @@ impl DescribeRouteInput {
 
 /// A builder for [`DescribeRouteInput`](crate::operation::describe_route::DescribeRouteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRouteInputBuilder {
     pub(crate) route_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -96,18 +94,12 @@ impl DescribeRouteInputBuilder {
         &self.mesh_owner
     }
     /// <p>The name of the virtual router that the route is associated with.</p>
-    pub fn virtual_router_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual router that the route is associated with.</p>
-    pub fn set_virtual_router_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_router_name = input;
         self
     }
@@ -118,10 +110,7 @@ impl DescribeRouteInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRouteInput`](crate::operation::describe_route::DescribeRouteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_route::DescribeRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_route::DescribeRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_route::DescribeRouteInput {
             route_name: self.route_name,
             mesh_name: self.mesh_name,

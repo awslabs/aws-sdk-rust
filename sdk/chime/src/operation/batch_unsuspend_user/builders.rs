@@ -10,10 +10,7 @@ impl BatchUnsuspendUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_unsuspend_user::BatchUnsuspendUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_unsuspend_user::BatchUnsuspendUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_unsuspend_user::BatchUnsuspendUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_unsuspend_user();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl BatchUnsuspendUserFluentBuilder {
         }
     }
     /// Access the BatchUnsuspendUser as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_unsuspend_user::builders::BatchUnsuspendUserInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_unsuspend_user::builders::BatchUnsuspendUserInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl BatchUnsuspendUserFluentBuilder {
             crate::operation::batch_unsuspend_user::BatchUnsuspendUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_unsuspend_user::BatchUnsuspendUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_unsuspend_user::BatchUnsuspendUserError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl BatchUnsuspendUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl BatchUnsuspendUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_unsuspend_user::BatchUnsuspendUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_unsuspend_user::BatchUnsuspendUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_unsuspend_user::BatchUnsuspendUserError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl BatchUnsuspendUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_unsuspend_user::BatchUnsuspendUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_unsuspend_user::BatchUnsuspendUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_unsuspend_user::BatchUnsuspendUserError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl BatchUnsuspendUserFluentBuilder {
             crate::operation::batch_unsuspend_user::BatchUnsuspendUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_unsuspend_user::BatchUnsuspendUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_unsuspend_user::BatchUnsuspendUserError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +131,12 @@ impl BatchUnsuspendUserFluentBuilder {
         self
     }
     /// <p>The request containing the user IDs to unsuspend.</p>
-    pub fn set_user_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_id_list(input);
         self
     }
     /// <p>The request containing the user IDs to unsuspend.</p>
-    pub fn get_user_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_user_id_list()
     }
 }

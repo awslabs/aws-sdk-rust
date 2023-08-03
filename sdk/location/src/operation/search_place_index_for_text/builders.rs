@@ -30,7 +30,7 @@ impl SearchPlaceIndexForTextInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchPlaceIndexForTextFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextInputBuilder,
+    inner: crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextInputBuilder,
 }
 impl SearchPlaceIndexForTextFluentBuilder {
     /// Creates a new `SearchPlaceIndexForText`.
@@ -41,10 +41,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
         }
     }
     /// Access the SearchPlaceIndexForText as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
             crate::operation::search_place_index_for_text::SearchPlaceIndexForText,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +109,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
             crate::operation::search_place_index_for_text::SearchPlaceIndexForText,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError>,
     > {
         self.customize_middleware().await
     }
@@ -223,10 +209,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
     /// <ul>
     /// <li> <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country codes. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
-    pub fn filter_countries(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_countries(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_countries(input.into());
         self
     }
@@ -234,10 +217,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
     /// <ul>
     /// <li> <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country codes. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
-    pub fn set_filter_countries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_filter_countries(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_filter_countries(input);
         self
     }
@@ -245,9 +225,7 @@ impl SearchPlaceIndexForTextFluentBuilder {
     /// <ul>
     /// <li> <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country codes. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
-    pub fn get_filter_countries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_countries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_filter_countries()
     }
     /// <p>An optional parameter. The maximum number of results returned per request. </p>
@@ -299,27 +277,19 @@ impl SearchPlaceIndexForTextFluentBuilder {
     ///
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn filter_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_categories(input.into());
         self
     }
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn set_filter_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_filter_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_filter_categories(input);
         self
     }
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn get_filter_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_filter_categories()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>

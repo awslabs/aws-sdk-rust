@@ -19,9 +19,7 @@ impl DeletePortalOutput {
 
 /// A builder for [`DeletePortalOutput`](crate::operation::delete_portal::DeletePortalOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePortalOutputBuilder {
     _request_id: Option<String>,
 }

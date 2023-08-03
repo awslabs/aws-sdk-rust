@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`trail_arn(Option<String>)`](crate::operation::put_insight_selectors::PutInsightSelectorsOutput::trail_arn): <p>The Amazon Resource Name (ARN) of a trail for which you want to change or add Insights selectors.</p>
     ///   - [`insight_selectors(Option<Vec<InsightSelector>>)`](crate::operation::put_insight_selectors::PutInsightSelectorsOutput::insight_selectors): <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
     /// - On failure, responds with [`SdkError<PutInsightSelectorsError>`](crate::operation::put_insight_selectors::PutInsightSelectorsError)
-    pub fn put_insight_selectors(
-        &self,
-    ) -> crate::operation::put_insight_selectors::builders::PutInsightSelectorsFluentBuilder {
-        crate::operation::put_insight_selectors::builders::PutInsightSelectorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_insight_selectors(&self) -> crate::operation::put_insight_selectors::builders::PutInsightSelectorsFluentBuilder {
+        crate::operation::put_insight_selectors::builders::PutInsightSelectorsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,17 +29,14 @@ impl ListImportFailuresInput {
 }
 impl ListImportFailuresInput {
     /// Creates a new builder-style object to manufacture [`ListImportFailuresInput`](crate::operation::list_import_failures::ListImportFailuresInput).
-    pub fn builder(
-    ) -> crate::operation::list_import_failures::builders::ListImportFailuresInputBuilder {
+    pub fn builder() -> crate::operation::list_import_failures::builders::ListImportFailuresInputBuilder {
         crate::operation::list_import_failures::builders::ListImportFailuresInputBuilder::default()
     }
 }
 
 /// A builder for [`ListImportFailuresInput`](crate::operation::list_import_failures::ListImportFailuresInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImportFailuresInputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,16 +88,11 @@ impl ListImportFailuresInputBuilder {
     /// Consumes the builder and constructs a [`ListImportFailuresInput`](crate::operation::list_import_failures::ListImportFailuresInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_import_failures::ListImportFailuresInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_import_failures::ListImportFailuresInput {
-                import_id: self.import_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_import_failures::ListImportFailuresInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_import_failures::ListImportFailuresInput {
+            import_id: self.import_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

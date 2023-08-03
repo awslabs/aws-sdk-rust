@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteCaCertificateOutput {
 }
 impl DeleteCaCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCaCertificateOutput`](crate::operation::delete_ca_certificate::DeleteCaCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_ca_certificate::builders::DeleteCaCertificateOutputBuilder {
-        crate::operation::delete_ca_certificate::builders::DeleteCaCertificateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_ca_certificate::builders::DeleteCaCertificateOutputBuilder {
+        crate::operation::delete_ca_certificate::builders::DeleteCaCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCaCertificateOutput`](crate::operation::delete_ca_certificate::DeleteCaCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCaCertificateOutputBuilder {
     _request_id: Option<String>,
 }

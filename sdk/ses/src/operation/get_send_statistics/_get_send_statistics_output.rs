@@ -22,20 +22,16 @@ impl ::aws_http::request_id::RequestId for GetSendStatisticsOutput {
 }
 impl GetSendStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetSendStatisticsOutput`](crate::operation::get_send_statistics::GetSendStatisticsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_send_statistics::builders::GetSendStatisticsOutputBuilder {
+    pub fn builder() -> crate::operation::get_send_statistics::builders::GetSendStatisticsOutputBuilder {
         crate::operation::get_send_statistics::builders::GetSendStatisticsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSendStatisticsOutput`](crate::operation::get_send_statistics::GetSendStatisticsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSendStatisticsOutputBuilder {
-    pub(crate) send_data_points:
-        ::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>>,
+    pub(crate) send_data_points: ::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>>,
     _request_id: Option<String>,
 }
 impl GetSendStatisticsOutputBuilder {
@@ -51,17 +47,12 @@ impl GetSendStatisticsOutputBuilder {
         self
     }
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    pub fn set_send_data_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>>,
-    ) -> Self {
+    pub fn set_send_data_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>>) -> Self {
         self.send_data_points = input;
         self
     }
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    pub fn get_send_data_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>> {
+    pub fn get_send_data_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>> {
         &self.send_data_points
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

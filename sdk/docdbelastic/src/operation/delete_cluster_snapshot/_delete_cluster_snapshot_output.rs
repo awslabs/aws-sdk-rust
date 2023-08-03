@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteClusterSnapshotOutput {
 }
 impl DeleteClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteClusterSnapshotOutput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotOutputBuilder {
         crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteClusterSnapshotOutput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteClusterSnapshotOutputBuilder {
     pub(crate) snapshot: ::std::option::Option<crate::types::ClusterSnapshot>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteClusterSnapshotOutputBuilder {
         self
     }
     /// <p>Returns information about the newly deleted Elastic DocumentDB snapshot.</p>
-    pub fn set_snapshot(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterSnapshot>,
-    ) -> Self {
+    pub fn set_snapshot(mut self, input: ::std::option::Option<crate::types::ClusterSnapshot>) -> Self {
         self.snapshot = input;
         self
     }

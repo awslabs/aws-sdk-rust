@@ -10,10 +10,7 @@ impl ListOfferingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_offerings::ListOfferingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_offerings::ListOfferingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_offerings::ListOfferingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_offerings();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListOfferingsFluentBuilder {
         }
     }
     /// Access the ListOfferings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_offerings::builders::ListOfferingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_offerings::builders::ListOfferingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListOfferingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListOfferingsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_offerings::paginator::ListOfferingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_offerings::paginator::ListOfferingsPaginator {
-        crate::operation::list_offerings::paginator::ListOfferingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_offerings::paginator::ListOfferingsPaginator {
+        crate::operation::list_offerings::paginator::ListOfferingsPaginator::new(self.handle, self.inner)
     }
     /// The maximum number of results to return per API request. For example, you submit a ListOfferings request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
     pub fn max_results(mut self, input: i32) -> Self {

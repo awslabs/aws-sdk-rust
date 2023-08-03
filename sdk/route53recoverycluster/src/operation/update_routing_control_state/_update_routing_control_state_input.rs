@@ -20,9 +20,7 @@ impl UpdateRoutingControlStateInput {
         self.routing_control_arn.as_deref()
     }
     /// <p>The state of the routing control. You can set the value to be On or Off.</p>
-    pub fn routing_control_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RoutingControlState> {
+    pub fn routing_control_state(&self) -> ::std::option::Option<&crate::types::RoutingControlState> {
         self.routing_control_state.as_ref()
     }
     /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
@@ -33,36 +31,27 @@ impl UpdateRoutingControlStateInput {
 }
 impl UpdateRoutingControlStateInput {
     /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStateInput`](crate::operation::update_routing_control_state::UpdateRoutingControlStateInput).
-    pub fn builder() -> crate::operation::update_routing_control_state::builders::UpdateRoutingControlStateInputBuilder{
+    pub fn builder() -> crate::operation::update_routing_control_state::builders::UpdateRoutingControlStateInputBuilder {
         crate::operation::update_routing_control_state::builders::UpdateRoutingControlStateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRoutingControlStateInput`](crate::operation::update_routing_control_state::UpdateRoutingControlStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRoutingControlStateInputBuilder {
     pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
     pub(crate) routing_control_state: ::std::option::Option<crate::types::RoutingControlState>,
-    pub(crate) safety_rules_to_override:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) safety_rules_to_override: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateRoutingControlStateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
-    pub fn routing_control_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
-    pub fn set_routing_control_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_control_arn = input;
         self
     }
@@ -76,17 +65,12 @@ impl UpdateRoutingControlStateInputBuilder {
         self
     }
     /// <p>The state of the routing control. You can set the value to be On or Off.</p>
-    pub fn set_routing_control_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingControlState>,
-    ) -> Self {
+    pub fn set_routing_control_state(mut self, input: ::std::option::Option<crate::types::RoutingControlState>) -> Self {
         self.routing_control_state = input;
         self
     }
     /// <p>The state of the routing control. You can set the value to be On or Off.</p>
-    pub fn get_routing_control_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::RoutingControlState> {
+    pub fn get_routing_control_state(&self) -> &::std::option::Option<crate::types::RoutingControlState> {
         &self.routing_control_state
     }
     /// Appends an item to `safety_rules_to_override`.
@@ -95,10 +79,7 @@ impl UpdateRoutingControlStateInputBuilder {
     ///
     /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    pub fn safety_rules_to_override(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn safety_rules_to_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.safety_rules_to_override.unwrap_or_default();
         v.push(input.into());
         self.safety_rules_to_override = ::std::option::Option::Some(v);
@@ -106,18 +87,13 @@ impl UpdateRoutingControlStateInputBuilder {
     }
     /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    pub fn set_safety_rules_to_override(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_safety_rules_to_override(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.safety_rules_to_override = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    pub fn get_safety_rules_to_override(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_safety_rules_to_override(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.safety_rules_to_override
     }
     /// Consumes the builder and constructs a [`UpdateRoutingControlStateInput`](crate::operation::update_routing_control_state::UpdateRoutingControlStateInput).
@@ -127,12 +103,10 @@ impl UpdateRoutingControlStateInputBuilder {
         crate::operation::update_routing_control_state::UpdateRoutingControlStateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_routing_control_state::UpdateRoutingControlStateInput {
-                routing_control_arn: self.routing_control_arn,
-                routing_control_state: self.routing_control_state,
-                safety_rules_to_override: self.safety_rules_to_override,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_routing_control_state::UpdateRoutingControlStateInput {
+            routing_control_arn: self.routing_control_arn,
+            routing_control_state: self.routing_control_state,
+            safety_rules_to_override: self.safety_rules_to_override,
+        })
     }
 }

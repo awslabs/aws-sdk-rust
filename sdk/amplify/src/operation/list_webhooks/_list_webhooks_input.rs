@@ -37,9 +37,7 @@ impl ListWebhooksInput {
 
 /// A builder for [`ListWebhooksInput`](crate::operation::list_webhooks::ListWebhooksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWebhooksInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -89,12 +87,7 @@ impl ListWebhooksInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListWebhooksInput`](crate::operation::list_webhooks::ListWebhooksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_webhooks::ListWebhooksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_webhooks::ListWebhooksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_webhooks::ListWebhooksInput {
             app_id: self.app_id,
             next_token: self.next_token,

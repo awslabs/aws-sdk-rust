@@ -51,9 +51,7 @@ impl LabelDetection {
 
 /// A builder for [`LabelDetection`](crate::types::LabelDetection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LabelDetectionBuilder {
     pub(crate) timestamp: ::std::option::Option<i64>,
     pub(crate) label: ::std::option::Option<crate::types::Label>,

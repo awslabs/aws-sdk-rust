@@ -161,10 +161,7 @@ impl GetMediaOutputBuilder {
     /// <li> <p>4506 - Unable to find the KMS key specified in the stream</p> </li>
     /// <li> <p>5000 - Internal error</p> </li>
     /// </ul>
-    pub fn set_payload(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.payload = input;
         self
     }
@@ -194,9 +191,7 @@ impl GetMediaOutputBuilder {
     /// <li> <p>4506 - Unable to find the KMS key specified in the stream</p> </li>
     /// <li> <p>5000 - Internal error</p> </li>
     /// </ul>
-    pub fn get_payload(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -38,13 +38,7 @@
 /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CmfcScte35Source {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for CmfcScte35Source {
         match s {
             "NONE" => CmfcScte35Source::None,
             "PASSTHROUGH" => CmfcScte35Source::Passthrough,
-            other => {
-                CmfcScte35Source::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => CmfcScte35Source::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

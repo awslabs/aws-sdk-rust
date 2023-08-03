@@ -35,17 +35,14 @@ impl UpdateGroupQueryInput {
 }
 impl UpdateGroupQueryInput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupQueryInput`](crate::operation::update_group_query::UpdateGroupQueryInput).
-    pub fn builder() -> crate::operation::update_group_query::builders::UpdateGroupQueryInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_group_query::builders::UpdateGroupQueryInputBuilder {
         crate::operation::update_group_query::builders::UpdateGroupQueryInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGroupQueryInput`](crate::operation::update_group_query::UpdateGroupQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGroupQueryInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) group: ::std::option::Option<::std::string::String>,
@@ -93,10 +90,7 @@ impl UpdateGroupQueryInputBuilder {
     /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
-    pub fn set_resource_query(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceQuery>,
-    ) -> Self {
+    pub fn set_resource_query(mut self, input: ::std::option::Option<crate::types::ResourceQuery>) -> Self {
         self.resource_query = input;
         self
     }
@@ -109,16 +103,11 @@ impl UpdateGroupQueryInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGroupQueryInput`](crate::operation::update_group_query::UpdateGroupQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_group_query::UpdateGroupQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_group_query::UpdateGroupQueryInput {
-                group_name: self.group_name,
-                group: self.group,
-                resource_query: self.resource_query,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_group_query::UpdateGroupQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_group_query::UpdateGroupQueryInput {
+            group_name: self.group_name,
+            group: self.group,
+            resource_query: self.resource_query,
+        })
     }
 }

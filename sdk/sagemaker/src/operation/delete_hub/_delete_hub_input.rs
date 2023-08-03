@@ -22,9 +22,7 @@ impl DeleteHubInput {
 
 /// A builder for [`DeleteHubInput`](crate::operation::delete_hub::DeleteHubInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHubInputBuilder {
     pub(crate) hub_name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteHubInputBuilder {
         &self.hub_name
     }
     /// Consumes the builder and constructs a [`DeleteHubInput`](crate::operation::delete_hub::DeleteHubInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_hub::DeleteHubInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_hub::DeleteHubInput {
-            hub_name: self.hub_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hub::DeleteHubInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_hub::DeleteHubInput { hub_name: self.hub_name })
     }
 }

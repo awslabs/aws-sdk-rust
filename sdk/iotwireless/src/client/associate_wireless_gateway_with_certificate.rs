@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`AssociateWirelessGatewayWithCertificateOutput`](crate::operation::associate_wireless_gateway_with_certificate::AssociateWirelessGatewayWithCertificateOutput) with field(s):
     ///   - [`iot_certificate_id(Option<String>)`](crate::operation::associate_wireless_gateway_with_certificate::AssociateWirelessGatewayWithCertificateOutput::iot_certificate_id): <p>The ID of the certificate associated with the wireless gateway.</p>
     /// - On failure, responds with [`SdkError<AssociateWirelessGatewayWithCertificateError>`](crate::operation::associate_wireless_gateway_with_certificate::AssociateWirelessGatewayWithCertificateError)
-    pub fn associate_wireless_gateway_with_certificate(&self) -> crate::operation::associate_wireless_gateway_with_certificate::builders::AssociateWirelessGatewayWithCertificateFluentBuilder{
-        crate::operation::associate_wireless_gateway_with_certificate::builders::AssociateWirelessGatewayWithCertificateFluentBuilder::new(self.handle.clone())
+    pub fn associate_wireless_gateway_with_certificate(
+        &self,
+    ) -> crate::operation::associate_wireless_gateway_with_certificate::builders::AssociateWirelessGatewayWithCertificateFluentBuilder {
+        crate::operation::associate_wireless_gateway_with_certificate::builders::AssociateWirelessGatewayWithCertificateFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

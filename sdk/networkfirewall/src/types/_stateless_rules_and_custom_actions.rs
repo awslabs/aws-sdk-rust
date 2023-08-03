@@ -30,9 +30,7 @@ impl StatelessRulesAndCustomActions {
 
 /// A builder for [`StatelessRulesAndCustomActions`](crate::types::StatelessRulesAndCustomActions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatelessRulesAndCustomActionsBuilder {
     pub(crate) stateless_rules: ::std::option::Option<::std::vec::Vec<crate::types::StatelessRule>>,
     pub(crate) custom_actions: ::std::option::Option<::std::vec::Vec<crate::types::CustomAction>>,
@@ -50,17 +48,12 @@ impl StatelessRulesAndCustomActionsBuilder {
         self
     }
     /// <p>Defines the set of stateless rules for use in a stateless rule group. </p>
-    pub fn set_stateless_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StatelessRule>>,
-    ) -> Self {
+    pub fn set_stateless_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StatelessRule>>) -> Self {
         self.stateless_rules = input;
         self
     }
     /// <p>Defines the set of stateless rules for use in a stateless rule group. </p>
-    pub fn get_stateless_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StatelessRule>> {
+    pub fn get_stateless_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StatelessRule>> {
         &self.stateless_rules
     }
     /// Appends an item to `custom_actions`.
@@ -75,17 +68,12 @@ impl StatelessRulesAndCustomActionsBuilder {
         self
     }
     /// <p>Defines an array of individual custom action definitions that are available for use by the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification. You name each custom action that you define, and then you can use it by name in your <code>StatelessRule</code> <code>RuleDefinition</code> <code>Actions</code> specification.</p>
-    pub fn set_custom_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomAction>>,
-    ) -> Self {
+    pub fn set_custom_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomAction>>) -> Self {
         self.custom_actions = input;
         self
     }
     /// <p>Defines an array of individual custom action definitions that are available for use by the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification. You name each custom action that you define, and then you can use it by name in your <code>StatelessRule</code> <code>RuleDefinition</code> <code>Actions</code> specification.</p>
-    pub fn get_custom_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAction>> {
+    pub fn get_custom_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAction>> {
         &self.custom_actions
     }
     /// Consumes the builder and constructs a [`StatelessRulesAndCustomActions`](crate::types::StatelessRulesAndCustomActions).

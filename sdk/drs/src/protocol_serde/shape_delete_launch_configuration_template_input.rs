@@ -4,9 +4,7 @@ pub fn ser_delete_launch_configuration_template_input(
     input: &crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.launch_configuration_template_id {
-        object
-            .key("launchConfigurationTemplateID")
-            .string(var_1.as_str());
+        object.key("launchConfigurationTemplateID").string(var_1.as_str());
     }
     Ok(())
 }

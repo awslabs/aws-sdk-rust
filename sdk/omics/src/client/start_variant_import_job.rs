@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`StartVariantImportJobOutput`](crate::operation::start_variant_import_job::StartVariantImportJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_variant_import_job::StartVariantImportJobOutput::job_id): <p>The job's ID.</p>
     /// - On failure, responds with [`SdkError<StartVariantImportJobError>`](crate::operation::start_variant_import_job::StartVariantImportJobError)
-    pub fn start_variant_import_job(
-        &self,
-    ) -> crate::operation::start_variant_import_job::builders::StartVariantImportJobFluentBuilder
-    {
+    pub fn start_variant_import_job(&self) -> crate::operation::start_variant_import_job::builders::StartVariantImportJobFluentBuilder {
         crate::operation::start_variant_import_job::builders::StartVariantImportJobFluentBuilder::new(self.handle.clone())
     }
 }

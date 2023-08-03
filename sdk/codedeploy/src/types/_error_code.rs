@@ -70,13 +70,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -177,9 +171,7 @@ impl ::std::convert::From<&str> for ErrorCode {
             "INVALID_LAMBDA_FUNCTION" => ErrorCode::InvalidLambdaFunction,
             "INVALID_REVISION" => ErrorCode::InvalidRevision,
             "MANUAL_STOP" => ErrorCode::ManualStop,
-            "MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION" => {
-                ErrorCode::MissingBlueGreenDeploymentConfiguration
-            }
+            "MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION" => ErrorCode::MissingBlueGreenDeploymentConfiguration,
             "MISSING_ELB_INFORMATION" => ErrorCode::MissingElbInformation,
             "MISSING_GITHUB_TOKEN" => ErrorCode::MissingGithubToken,
             "NO_EC2_SUBSCRIPTION" => ErrorCode::NoEc2Subscription,
@@ -228,9 +220,7 @@ impl ErrorCode {
             ErrorCode::InvalidLambdaFunction => "INVALID_LAMBDA_FUNCTION",
             ErrorCode::InvalidRevision => "INVALID_REVISION",
             ErrorCode::ManualStop => "MANUAL_STOP",
-            ErrorCode::MissingBlueGreenDeploymentConfiguration => {
-                "MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION"
-            }
+            ErrorCode::MissingBlueGreenDeploymentConfiguration => "MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION",
             ErrorCode::MissingElbInformation => "MISSING_ELB_INFORMATION",
             ErrorCode::MissingGithubToken => "MISSING_GITHUB_TOKEN",
             ErrorCode::NoEc2Subscription => "NO_EC2_SUBSCRIPTION",

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`role_alias(impl ::std::convert::Into<String>)`](crate::operation::delete_role_alias::builders::DeleteRoleAliasFluentBuilder::role_alias) / [`set_role_alias(Option<String>)`](crate::operation::delete_role_alias::builders::DeleteRoleAliasFluentBuilder::set_role_alias): <p>The role alias to delete.</p>
     /// - On success, responds with [`DeleteRoleAliasOutput`](crate::operation::delete_role_alias::DeleteRoleAliasOutput)
     /// - On failure, responds with [`SdkError<DeleteRoleAliasError>`](crate::operation::delete_role_alias::DeleteRoleAliasError)
-    pub fn delete_role_alias(
-        &self,
-    ) -> crate::operation::delete_role_alias::builders::DeleteRoleAliasFluentBuilder {
-        crate::operation::delete_role_alias::builders::DeleteRoleAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_role_alias(&self) -> crate::operation::delete_role_alias::builders::DeleteRoleAliasFluentBuilder {
+        crate::operation::delete_role_alias::builders::DeleteRoleAliasFluentBuilder::new(self.handle.clone())
     }
 }

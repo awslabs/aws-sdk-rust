@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteIAMPolicyAssignmentError>`](crate::operation::delete_iam_policy_assignment::DeleteIAMPolicyAssignmentError)
-    pub fn delete_iam_policy_assignment(&self) -> crate::operation::delete_iam_policy_assignment::builders::DeleteIAMPolicyAssignmentFluentBuilder{
+    pub fn delete_iam_policy_assignment(&self) -> crate::operation::delete_iam_policy_assignment::builders::DeleteIAMPolicyAssignmentFluentBuilder {
         crate::operation::delete_iam_policy_assignment::builders::DeleteIAMPolicyAssignmentFluentBuilder::new(self.handle.clone())
     }
 }

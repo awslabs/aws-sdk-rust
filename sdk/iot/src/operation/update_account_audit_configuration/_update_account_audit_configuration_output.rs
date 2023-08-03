@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateAccountAuditConfigurationOutput
 }
 impl UpdateAccountAuditConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountAuditConfigurationOutput`](crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationOutput).
-    pub fn builder() -> crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationOutputBuilder {
         crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccountAuditConfigurationOutput`](crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccountAuditConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateAccountAuditConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateAccountAuditConfigurationOutput`](crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationOutput {
         crate::operation::update_account_audit_configuration::UpdateAccountAuditConfigurationOutput {
             _request_id: self._request_id,
         }

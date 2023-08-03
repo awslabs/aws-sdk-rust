@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`object_identifier(Option<String>)`](crate::operation::create_directory::CreateDirectoryOutput::object_identifier): <p>The root object node of the created directory.</p>
     ///   - [`applied_schema_arn(Option<String>)`](crate::operation::create_directory::CreateDirectoryOutput::applied_schema_arn): <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
     /// - On failure, responds with [`SdkError<CreateDirectoryError>`](crate::operation::create_directory::CreateDirectoryError)
-    pub fn create_directory(
-        &self,
-    ) -> crate::operation::create_directory::builders::CreateDirectoryFluentBuilder {
-        crate::operation::create_directory::builders::CreateDirectoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_directory(&self) -> crate::operation::create_directory::builders::CreateDirectoryFluentBuilder {
+        crate::operation::create_directory::builders::CreateDirectoryFluentBuilder::new(self.handle.clone())
     }
 }

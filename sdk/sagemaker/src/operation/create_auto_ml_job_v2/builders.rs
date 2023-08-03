@@ -10,10 +10,7 @@ impl CreateAutoMlJobV2InputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_auto_ml_job_v2();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl CreateAutoMLJobV2FluentBuilder {
         }
     }
     /// Access the CreateAutoMLJobV2 as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_auto_ml_job_v2::builders::CreateAutoMlJobV2InputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_auto_ml_job_v2::builders::CreateAutoMlJobV2InputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl CreateAutoMLJobV2FluentBuilder {
             crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl CreateAutoMLJobV2FluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl CreateAutoMLJobV2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl CreateAutoMLJobV2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +108,17 @@ impl CreateAutoMLJobV2FluentBuilder {
             crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error>,
     > {
         self.customize_middleware().await
     }
     /// <p>Identifies an Autopilot job. The name must be unique to your account and is case insensitive.</p>
-    pub fn auto_ml_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_ml_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_ml_job_name(input.into());
         self
     }
     /// <p>Identifies an Autopilot job. The name must be unique to your account and is case insensitive.</p>
-    pub fn set_auto_ml_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_ml_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_ml_job_name(input);
         self
     }
@@ -170,10 +148,7 @@ impl CreateAutoMLJobV2FluentBuilder {
     /// <li> <p>For text classification: <code>S3Prefix</code>.</p> </li>
     /// <li> <p>For time-series forecasting: <code>S3Prefix</code>.</p> </li>
     /// </ul>
-    pub fn set_auto_ml_job_input_data_config(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobChannel>>,
-    ) -> Self {
+    pub fn set_auto_ml_job_input_data_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobChannel>>) -> Self {
         self.inner = self.inner.set_auto_ml_job_input_data_config(input);
         self
     }
@@ -184,9 +159,7 @@ impl CreateAutoMLJobV2FluentBuilder {
     /// <li> <p>For text classification: <code>S3Prefix</code>.</p> </li>
     /// <li> <p>For time-series forecasting: <code>S3Prefix</code>.</p> </li>
     /// </ul>
-    pub fn get_auto_ml_job_input_data_config(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobChannel>> {
+    pub fn get_auto_ml_job_input_data_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobChannel>> {
         self.inner.get_auto_ml_job_input_data_config()
     }
     /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.</p>
@@ -195,39 +168,26 @@ impl CreateAutoMLJobV2FluentBuilder {
         self
     }
     /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlOutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::AutoMlOutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
     /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.</p>
-    pub fn get_output_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlOutputDataConfig> {
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::AutoMlOutputDataConfig> {
         self.inner.get_output_data_config()
     }
     /// <p>Defines the configuration settings of one of the supported problem types.</p>
-    pub fn auto_ml_problem_type_config(
-        mut self,
-        input: crate::types::AutoMlProblemTypeConfig,
-    ) -> Self {
+    pub fn auto_ml_problem_type_config(mut self, input: crate::types::AutoMlProblemTypeConfig) -> Self {
         self.inner = self.inner.auto_ml_problem_type_config(input);
         self
     }
     /// <p>Defines the configuration settings of one of the supported problem types.</p>
-    pub fn set_auto_ml_problem_type_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlProblemTypeConfig>,
-    ) -> Self {
+    pub fn set_auto_ml_problem_type_config(mut self, input: ::std::option::Option<crate::types::AutoMlProblemTypeConfig>) -> Self {
         self.inner = self.inner.set_auto_ml_problem_type_config(input);
         self
     }
     /// <p>Defines the configuration settings of one of the supported problem types.</p>
-    pub fn get_auto_ml_problem_type_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlProblemTypeConfig> {
+    pub fn get_auto_ml_problem_type_config(&self) -> &::std::option::Option<crate::types::AutoMlProblemTypeConfig> {
         self.inner.get_auto_ml_problem_type_config()
     }
     /// <p>The ARN of the role that is used to access the data.</p>
@@ -254,10 +214,7 @@ impl CreateAutoMLJobV2FluentBuilder {
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, such as by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web ServicesResources</a>. Tag keys must be unique per resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -271,17 +228,12 @@ impl CreateAutoMLJobV2FluentBuilder {
         self
     }
     /// <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
-    pub fn set_security_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlSecurityConfig>,
-    ) -> Self {
+    pub fn set_security_config(mut self, input: ::std::option::Option<crate::types::AutoMlSecurityConfig>) -> Self {
         self.inner = self.inner.set_security_config(input);
         self
     }
     /// <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
-    pub fn get_security_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlSecurityConfig> {
+    pub fn get_security_config(&self) -> &::std::option::Option<crate::types::AutoMlSecurityConfig> {
         self.inner.get_security_config()
     }
     /// <p>Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective metric depends on the problem type. For the list of default values per problem type, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p> <note>
@@ -294,19 +246,14 @@ impl CreateAutoMLJobV2FluentBuilder {
     /// <p>Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective metric depends on the problem type. For the list of default values per problem type, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p> <note>
     /// <p>For tabular problem types, you must either provide both the <code>AutoMLJobObjective</code> and indicate the type of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (<code>TabularJobConfig.ProblemType</code>), or none at all.</p>
     /// </note>
-    pub fn set_auto_ml_job_objective(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlJobObjective>,
-    ) -> Self {
+    pub fn set_auto_ml_job_objective(mut self, input: ::std::option::Option<crate::types::AutoMlJobObjective>) -> Self {
         self.inner = self.inner.set_auto_ml_job_objective(input);
         self
     }
     /// <p>Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective metric depends on the problem type. For the list of default values per problem type, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p> <note>
     /// <p>For tabular problem types, you must either provide both the <code>AutoMLJobObjective</code> and indicate the type of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (<code>TabularJobConfig.ProblemType</code>), or none at all.</p>
     /// </note>
-    pub fn get_auto_ml_job_objective(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlJobObjective> {
+    pub fn get_auto_ml_job_objective(&self) -> &::std::option::Option<crate::types::AutoMlJobObjective> {
         self.inner.get_auto_ml_job_objective()
     }
     /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.</p>
@@ -315,17 +262,12 @@ impl CreateAutoMLJobV2FluentBuilder {
         self
     }
     /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.</p>
-    pub fn set_model_deploy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelDeployConfig>,
-    ) -> Self {
+    pub fn set_model_deploy_config(mut self, input: ::std::option::Option<crate::types::ModelDeployConfig>) -> Self {
         self.inner = self.inner.set_model_deploy_config(input);
         self
     }
     /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.</p>
-    pub fn get_model_deploy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelDeployConfig> {
+    pub fn get_model_deploy_config(&self) -> &::std::option::Option<crate::types::ModelDeployConfig> {
         self.inner.get_model_deploy_config()
     }
     /// <p>This structure specifies how to split the data into train and validation datasets.</p>
@@ -340,10 +282,7 @@ impl CreateAutoMLJobV2FluentBuilder {
     /// <p>The validation and training datasets must contain the same headers. For jobs created by calling <code>CreateAutoMLJob</code>, the validation dataset must be less than 2 GB in size.</p> <note>
     /// <p>This attribute must not be set for the time-series forecasting problem type, as Autopilot automatically splits the input dataset into training and validation sets.</p>
     /// </note>
-    pub fn set_data_split_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlDataSplitConfig>,
-    ) -> Self {
+    pub fn set_data_split_config(mut self, input: ::std::option::Option<crate::types::AutoMlDataSplitConfig>) -> Self {
         self.inner = self.inner.set_data_split_config(input);
         self
     }
@@ -351,9 +290,7 @@ impl CreateAutoMLJobV2FluentBuilder {
     /// <p>The validation and training datasets must contain the same headers. For jobs created by calling <code>CreateAutoMLJob</code>, the validation dataset must be less than 2 GB in size.</p> <note>
     /// <p>This attribute must not be set for the time-series forecasting problem type, as Autopilot automatically splits the input dataset into training and validation sets.</p>
     /// </note>
-    pub fn get_data_split_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlDataSplitConfig> {
+    pub fn get_data_split_config(&self) -> &::std::option::Option<crate::types::AutoMlDataSplitConfig> {
         self.inner.get_data_split_config()
     }
 }

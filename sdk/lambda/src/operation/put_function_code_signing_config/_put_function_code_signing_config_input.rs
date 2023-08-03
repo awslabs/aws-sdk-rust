@@ -36,34 +36,26 @@ impl PutFunctionCodeSigningConfigInput {
 }
 impl PutFunctionCodeSigningConfigInput {
     /// Creates a new builder-style object to manufacture [`PutFunctionCodeSigningConfigInput`](crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigInput).
-    pub fn builder() -> crate::operation::put_function_code_signing_config::builders::PutFunctionCodeSigningConfigInputBuilder{
+    pub fn builder() -> crate::operation::put_function_code_signing_config::builders::PutFunctionCodeSigningConfigInputBuilder {
         crate::operation::put_function_code_signing_config::builders::PutFunctionCodeSigningConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`PutFunctionCodeSigningConfigInput`](crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutFunctionCodeSigningConfigInputBuilder {
     pub(crate) code_signing_config_arn: ::std::option::Option<::std::string::String>,
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
 }
 impl PutFunctionCodeSigningConfigInputBuilder {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn code_signing_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_signing_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_signing_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn set_code_signing_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_signing_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_signing_config_arn = input;
         self
     }
@@ -79,10 +71,7 @@ impl PutFunctionCodeSigningConfigInputBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -94,10 +83,7 @@ impl PutFunctionCodeSigningConfigInputBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -119,11 +105,9 @@ impl PutFunctionCodeSigningConfigInputBuilder {
         crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigInput {
-                code_signing_config_arn: self.code_signing_config_arn,
-                function_name: self.function_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigInput {
+            code_signing_config_arn: self.code_signing_config_arn,
+            function_name: self.function_name,
+        })
     }
 }

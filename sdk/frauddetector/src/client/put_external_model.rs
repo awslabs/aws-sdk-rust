@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::put_external_model::builders::PutExternalModelFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::put_external_model::builders::PutExternalModelFluentBuilder::set_tags): <p>A collection of key and value pairs.</p>
     /// - On success, responds with [`PutExternalModelOutput`](crate::operation::put_external_model::PutExternalModelOutput)
     /// - On failure, responds with [`SdkError<PutExternalModelError>`](crate::operation::put_external_model::PutExternalModelError)
-    pub fn put_external_model(
-        &self,
-    ) -> crate::operation::put_external_model::builders::PutExternalModelFluentBuilder {
-        crate::operation::put_external_model::builders::PutExternalModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_external_model(&self) -> crate::operation::put_external_model::builders::PutExternalModelFluentBuilder {
+        crate::operation::put_external_model::builders::PutExternalModelFluentBuilder::new(self.handle.clone())
     }
 }

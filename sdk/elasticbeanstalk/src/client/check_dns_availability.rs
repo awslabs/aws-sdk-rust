@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`available(Option<bool>)`](crate::operation::check_dns_availability::CheckDnsAvailabilityOutput::available): <p>Indicates if the specified CNAME is available:</p>  <ul>   <li> <p> <code>true</code> : The CNAME is available.</p> </li>   <li> <p> <code>false</code> : The CNAME is not available.</p> </li>  </ul>
     ///   - [`fully_qualified_cname(Option<String>)`](crate::operation::check_dns_availability::CheckDnsAvailabilityOutput::fully_qualified_cname): <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
     /// - On failure, responds with [`SdkError<CheckDNSAvailabilityError>`](crate::operation::check_dns_availability::CheckDNSAvailabilityError)
-    pub fn check_dns_availability(
-        &self,
-    ) -> crate::operation::check_dns_availability::builders::CheckDNSAvailabilityFluentBuilder {
-        crate::operation::check_dns_availability::builders::CheckDNSAvailabilityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn check_dns_availability(&self) -> crate::operation::check_dns_availability::builders::CheckDNSAvailabilityFluentBuilder {
+        crate::operation::check_dns_availability::builders::CheckDNSAvailabilityFluentBuilder::new(self.handle.clone())
     }
 }

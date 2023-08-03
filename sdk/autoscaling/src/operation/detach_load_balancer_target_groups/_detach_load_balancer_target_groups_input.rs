@@ -22,34 +22,26 @@ impl DetachLoadBalancerTargetGroupsInput {
 }
 impl DetachLoadBalancerTargetGroupsInput {
     /// Creates a new builder-style object to manufacture [`DetachLoadBalancerTargetGroupsInput`](crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsInput).
-    pub fn builder() -> crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsInputBuilder{
+    pub fn builder() -> crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsInputBuilder {
         crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DetachLoadBalancerTargetGroupsInput`](crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachLoadBalancerTargetGroupsInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_group_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DetachLoadBalancerTargetGroupsInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -62,27 +54,19 @@ impl DetachLoadBalancerTargetGroupsInputBuilder {
     /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
-    pub fn target_group_ar_ns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_group_ar_ns.unwrap_or_default();
         v.push(input.into());
         self.target_group_ar_ns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
-    pub fn set_target_group_ar_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_group_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_group_ar_ns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
-    pub fn get_target_group_ar_ns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_group_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_group_ar_ns
     }
     /// Consumes the builder and constructs a [`DetachLoadBalancerTargetGroupsInput`](crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsInput).
@@ -94,11 +78,9 @@ impl DetachLoadBalancerTargetGroupsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsInput {
-                auto_scaling_group_name: self.auto_scaling_group_name
-                ,
-                target_group_ar_ns: self.target_group_ar_ns
-                ,
-            }
+                auto_scaling_group_name: self.auto_scaling_group_name,
+                target_group_ar_ns: self.target_group_ar_ns,
+            },
         )
     }
 }

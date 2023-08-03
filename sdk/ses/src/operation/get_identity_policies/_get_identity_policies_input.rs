@@ -25,18 +25,14 @@ impl GetIdentityPoliciesInput {
 }
 impl GetIdentityPoliciesInput {
     /// Creates a new builder-style object to manufacture [`GetIdentityPoliciesInput`](crate::operation::get_identity_policies::GetIdentityPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::get_identity_policies::builders::GetIdentityPoliciesInputBuilder {
-        crate::operation::get_identity_policies::builders::GetIdentityPoliciesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_identity_policies::builders::GetIdentityPoliciesInputBuilder {
+        crate::operation::get_identity_policies::builders::GetIdentityPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentityPoliciesInput`](crate::operation::get_identity_policies::GetIdentityPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityPoliciesInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -71,31 +67,22 @@ impl GetIdentityPoliciesInputBuilder {
         self
     }
     /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20 policies at a time. If you do not know the names of the policies that are attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policy_names = input;
         self
     }
     /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20 policies at a time. If you do not know the names of the policies that are attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
-    pub fn get_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.policy_names
     }
     /// Consumes the builder and constructs a [`GetIdentityPoliciesInput`](crate::operation::get_identity_policies::GetIdentityPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_identity_policies::GetIdentityPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_identity_policies::GetIdentityPoliciesInput {
-                identity: self.identity,
-                policy_names: self.policy_names,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_identity_policies::GetIdentityPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_identity_policies::GetIdentityPoliciesInput {
+            identity: self.identity,
+            policy_names: self.policy_names,
+        })
     }
 }

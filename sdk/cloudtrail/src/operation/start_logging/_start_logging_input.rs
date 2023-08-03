@@ -25,9 +25,7 @@ impl StartLoggingInput {
 
 /// A builder for [`StartLoggingInput`](crate::operation::start_logging::StartLoggingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartLoggingInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -50,14 +48,7 @@ impl StartLoggingInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StartLoggingInput`](crate::operation::start_logging::StartLoggingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_logging::StartLoggingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_logging::StartLoggingInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_logging::StartLoggingInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_logging::StartLoggingInput { name: self.name })
     }
 }

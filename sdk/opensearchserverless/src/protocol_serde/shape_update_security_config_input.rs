@@ -15,10 +15,7 @@ pub fn ser_update_security_config_input(
     if let Some(var_4) = &input.saml_options {
         #[allow(unused_mut)]
         let mut object_5 = object.key("samlOptions").start_object();
-        crate::protocol_serde::shape_saml_config_options::ser_saml_config_options(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_saml_config_options::ser_saml_config_options(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.client_token {

@@ -38,10 +38,7 @@ impl DescribeCACertificateFluentBuilder {
         }
     }
     /// Access the DescribeCACertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_ca_certificate::builders::DescribeCaCertificateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_ca_certificate::builders::DescribeCaCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeCACertificateFluentBuilder {
             crate::operation::describe_ca_certificate::DescribeCACertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ca_certificate::DescribeCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ca_certificate::DescribeCACertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeCACertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeCACertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ca_certificate::DescribeCaCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ca_certificate::DescribeCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ca_certificate::DescribeCACertificateError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeCACertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ca_certificate::DescribeCaCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ca_certificate::DescribeCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ca_certificate::DescribeCACertificateError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl DescribeCACertificateFluentBuilder {
             crate::operation::describe_ca_certificate::DescribeCACertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ca_certificate::DescribeCACertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ca_certificate::DescribeCACertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The CA certificate identifier.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_id(input.into());
         self
     }
     /// <p>The CA certificate identifier.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_id(input);
         self
     }

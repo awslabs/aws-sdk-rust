@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for ListDistributionsOutput {
 }
 impl ListDistributionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsOutput`](crate::operation::list_distributions::ListDistributionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_distributions::builders::ListDistributionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_distributions::builders::ListDistributionsOutputBuilder {
         crate::operation::list_distributions::builders::ListDistributionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDistributionsOutput`](crate::operation::list_distributions::ListDistributionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributionsOutputBuilder {
     pub(crate) distribution_list: ::std::option::Option<crate::types::DistributionList>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl ListDistributionsOutputBuilder {
         self
     }
     /// <p>The <code>DistributionList</code> type.</p>
-    pub fn set_distribution_list(
-        mut self,
-        input: ::std::option::Option<crate::types::DistributionList>,
-    ) -> Self {
+    pub fn set_distribution_list(mut self, input: ::std::option::Option<crate::types::DistributionList>) -> Self {
         self.distribution_list = input;
         self
     }

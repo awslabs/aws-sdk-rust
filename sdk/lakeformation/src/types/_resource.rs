@@ -43,9 +43,7 @@ impl Resource {
         self.table.as_ref()
     }
     /// <p>The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.</p>
-    pub fn table_with_columns(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TableWithColumnsResource> {
+    pub fn table_with_columns(&self) -> ::std::option::Option<&crate::types::TableWithColumnsResource> {
         self.table_with_columns.as_ref()
     }
     /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
@@ -53,9 +51,7 @@ impl Resource {
         self.data_location.as_ref()
     }
     /// <p>A data cell filter.</p>
-    pub fn data_cells_filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataCellsFilterResource> {
+    pub fn data_cells_filter(&self) -> ::std::option::Option<&crate::types::DataCellsFilterResource> {
         self.data_cells_filter.as_ref()
     }
     /// <p>The LF-tag key and values attached to a resource.</p>
@@ -76,9 +72,7 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceBuilder {
     pub(crate) catalog: ::std::option::Option<crate::types::CatalogResource>,
     pub(crate) database: ::std::option::Option<crate::types::DatabaseResource>,
@@ -96,10 +90,7 @@ impl ResourceBuilder {
         self
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn set_catalog(
-        mut self,
-        input: ::std::option::Option<crate::types::CatalogResource>,
-    ) -> Self {
+    pub fn set_catalog(mut self, input: ::std::option::Option<crate::types::CatalogResource>) -> Self {
         self.catalog = input;
         self
     }
@@ -113,10 +104,7 @@ impl ResourceBuilder {
         self
     }
     /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>
-    pub fn set_database(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabaseResource>,
-    ) -> Self {
+    pub fn set_database(mut self, input: ::std::option::Option<crate::types::DatabaseResource>) -> Self {
         self.database = input;
         self
     }
@@ -144,17 +132,12 @@ impl ResourceBuilder {
         self
     }
     /// <p>The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.</p>
-    pub fn set_table_with_columns(
-        mut self,
-        input: ::std::option::Option<crate::types::TableWithColumnsResource>,
-    ) -> Self {
+    pub fn set_table_with_columns(mut self, input: ::std::option::Option<crate::types::TableWithColumnsResource>) -> Self {
         self.table_with_columns = input;
         self
     }
     /// <p>The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.</p>
-    pub fn get_table_with_columns(
-        &self,
-    ) -> &::std::option::Option<crate::types::TableWithColumnsResource> {
+    pub fn get_table_with_columns(&self) -> &::std::option::Option<crate::types::TableWithColumnsResource> {
         &self.table_with_columns
     }
     /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
@@ -163,10 +146,7 @@ impl ResourceBuilder {
         self
     }
     /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
-    pub fn set_data_location(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLocationResource>,
-    ) -> Self {
+    pub fn set_data_location(mut self, input: ::std::option::Option<crate::types::DataLocationResource>) -> Self {
         self.data_location = input;
         self
     }
@@ -180,17 +160,12 @@ impl ResourceBuilder {
         self
     }
     /// <p>A data cell filter.</p>
-    pub fn set_data_cells_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DataCellsFilterResource>,
-    ) -> Self {
+    pub fn set_data_cells_filter(mut self, input: ::std::option::Option<crate::types::DataCellsFilterResource>) -> Self {
         self.data_cells_filter = input;
         self
     }
     /// <p>A data cell filter.</p>
-    pub fn get_data_cells_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataCellsFilterResource> {
+    pub fn get_data_cells_filter(&self) -> &::std::option::Option<crate::types::DataCellsFilterResource> {
         &self.data_cells_filter
     }
     /// <p>The LF-tag key and values attached to a resource.</p>
@@ -199,10 +174,7 @@ impl ResourceBuilder {
         self
     }
     /// <p>The LF-tag key and values attached to a resource.</p>
-    pub fn set_lf_tag(
-        mut self,
-        input: ::std::option::Option<crate::types::LfTagKeyResource>,
-    ) -> Self {
+    pub fn set_lf_tag(mut self, input: ::std::option::Option<crate::types::LfTagKeyResource>) -> Self {
         self.lf_tag = input;
         self
     }
@@ -216,10 +188,7 @@ impl ResourceBuilder {
         self
     }
     /// <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
-    pub fn set_lf_tag_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::LfTagPolicyResource>,
-    ) -> Self {
+    pub fn set_lf_tag_policy(mut self, input: ::std::option::Option<crate::types::LfTagPolicyResource>) -> Self {
         self.lf_tag_policy = input;
         self
     }

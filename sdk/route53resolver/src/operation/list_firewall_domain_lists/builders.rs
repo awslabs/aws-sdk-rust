@@ -27,8 +27,7 @@ impl ListFirewallDomainListsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFirewallDomainListsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_firewall_domain_lists::builders::ListFirewallDomainListsInputBuilder,
+    inner: crate::operation::list_firewall_domain_lists::builders::ListFirewallDomainListsInputBuilder,
 }
 impl ListFirewallDomainListsFluentBuilder {
     /// Creates a new `ListFirewallDomainLists`.
@@ -39,10 +38,7 @@ impl ListFirewallDomainListsFluentBuilder {
         }
     }
     /// Access the ListFirewallDomainLists as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_firewall_domain_lists::builders::ListFirewallDomainListsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_firewall_domain_lists::builders::ListFirewallDomainListsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl ListFirewallDomainListsFluentBuilder {
             crate::operation::list_firewall_domain_lists::ListFirewallDomainLists,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl ListFirewallDomainListsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl ListFirewallDomainListsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_firewall_domain_lists::ListFirewallDomainListsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl ListFirewallDomainListsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_firewall_domain_lists::ListFirewallDomainListsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError>,
     > {
         self.send_middleware().await
     }
@@ -119,19 +106,14 @@ impl ListFirewallDomainListsFluentBuilder {
             crate::operation::list_firewall_domain_lists::ListFirewallDomainLists,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_firewall_domain_lists::paginator::ListFirewallDomainListsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_firewall_domain_lists::paginator::ListFirewallDomainListsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_firewall_domain_lists::paginator::ListFirewallDomainListsPaginator {
         crate::operation::list_firewall_domain_lists::paginator::ListFirewallDomainListsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>

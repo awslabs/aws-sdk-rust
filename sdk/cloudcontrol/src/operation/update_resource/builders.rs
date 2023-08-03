@@ -10,10 +10,7 @@ impl UpdateResourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_resource::UpdateResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resource::UpdateResourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource::UpdateResourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_resource();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl UpdateResourceFluentBuilder {
         }
     }
     /// Access the UpdateResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_resource::builders::UpdateResourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_resource::builders::UpdateResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,10 +60,7 @@ impl UpdateResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -133,18 +125,12 @@ impl UpdateResourceFluentBuilder {
         self.inner.get_type_name()
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    pub fn type_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.type_version_id(input.into());
         self
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    pub fn set_type_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type_version_id(input);
         self
     }
@@ -219,18 +205,12 @@ impl UpdateResourceFluentBuilder {
         self.inner.get_identifier()
     }
     /// <p>A JavaScript Object Notation (JSON) document listing the patch operations that represent the updates to apply to the current resource properties. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html#resource-operations-update-patch">Composing the patch document</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    pub fn patch_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn patch_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.patch_document(input.into());
         self
     }
     /// <p>A JavaScript Object Notation (JSON) document listing the patch operations that represent the updates to apply to the current resource properties. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html#resource-operations-update-patch">Composing the patch document</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    pub fn set_patch_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_patch_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_patch_document(input);
         self
     }

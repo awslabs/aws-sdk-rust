@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ActivateAnomalyDetectorOutput {
 }
 impl ActivateAnomalyDetectorOutput {
     /// Creates a new builder-style object to manufacture [`ActivateAnomalyDetectorOutput`](crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorOutput).
-    pub fn builder(
-    ) -> crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorOutputBuilder {
         crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`ActivateAnomalyDetectorOutput`](crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivateAnomalyDetectorOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl ActivateAnomalyDetectorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ActivateAnomalyDetectorOutput`](crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorOutput {
+    pub fn build(self) -> crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorOutput {
         crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorOutput {
             _request_id: self._request_id,
         }

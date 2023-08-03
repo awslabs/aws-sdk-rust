@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeNotebookExecutionOutput`](crate::operation::describe_notebook_execution::DescribeNotebookExecutionOutput) with field(s):
     ///   - [`notebook_execution(Option<NotebookExecution>)`](crate::operation::describe_notebook_execution::DescribeNotebookExecutionOutput::notebook_execution): <p>Properties of the notebook execution.</p>
     /// - On failure, responds with [`SdkError<DescribeNotebookExecutionError>`](crate::operation::describe_notebook_execution::DescribeNotebookExecutionError)
-    pub fn describe_notebook_execution(&self) -> crate::operation::describe_notebook_execution::builders::DescribeNotebookExecutionFluentBuilder{
+    pub fn describe_notebook_execution(&self) -> crate::operation::describe_notebook_execution::builders::DescribeNotebookExecutionFluentBuilder {
         crate::operation::describe_notebook_execution::builders::DescribeNotebookExecutionFluentBuilder::new(self.handle.clone())
     }
 }

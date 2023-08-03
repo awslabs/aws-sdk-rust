@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`voice_recording_configuration(VoiceRecordingConfiguration)`](crate::operation::start_contact_recording::builders::StartContactRecordingFluentBuilder::voice_recording_configuration) / [`set_voice_recording_configuration(Option<VoiceRecordingConfiguration>)`](crate::operation::start_contact_recording::builders::StartContactRecordingFluentBuilder::set_voice_recording_configuration): <p>The person being recorded.</p>
     /// - On success, responds with [`StartContactRecordingOutput`](crate::operation::start_contact_recording::StartContactRecordingOutput)
     /// - On failure, responds with [`SdkError<StartContactRecordingError>`](crate::operation::start_contact_recording::StartContactRecordingError)
-    pub fn start_contact_recording(
-        &self,
-    ) -> crate::operation::start_contact_recording::builders::StartContactRecordingFluentBuilder
-    {
-        crate::operation::start_contact_recording::builders::StartContactRecordingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_contact_recording(&self) -> crate::operation::start_contact_recording::builders::StartContactRecordingFluentBuilder {
+        crate::operation::start_contact_recording::builders::StartContactRecordingFluentBuilder::new(self.handle.clone())
     }
 }

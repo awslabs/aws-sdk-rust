@@ -22,16 +22,14 @@ impl AssociateBudgetWithResourceInput {
 }
 impl AssociateBudgetWithResourceInput {
     /// Creates a new builder-style object to manufacture [`AssociateBudgetWithResourceInput`](crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceInput).
-    pub fn builder() -> crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceInputBuilder{
+    pub fn builder() -> crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceInputBuilder {
         crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateBudgetWithResourceInput`](crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateBudgetWithResourceInputBuilder {
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl AssociateBudgetWithResourceInputBuilder {
         crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceInput {
-                budget_name: self.budget_name,
-                resource_id: self.resource_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceInput {
+            budget_name: self.budget_name,
+            resource_id: self.resource_id,
+        })
     }
 }

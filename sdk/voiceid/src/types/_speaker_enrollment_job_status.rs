@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SpeakerEnrollmentJobStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for SpeakerEnrollmentJobStatus {
             "FAILED" => SpeakerEnrollmentJobStatus::Failed,
             "IN_PROGRESS" => SpeakerEnrollmentJobStatus::InProgress,
             "SUBMITTED" => SpeakerEnrollmentJobStatus::Submitted,
-            other => SpeakerEnrollmentJobStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SpeakerEnrollmentJobStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl SpeakerEnrollmentJobStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETED",
-            "COMPLETED_WITH_ERRORS",
-            "FAILED",
-            "IN_PROGRESS",
-            "SUBMITTED",
-        ]
+        &["COMPLETED", "COMPLETED_WITH_ERRORS", "FAILED", "IN_PROGRESS", "SUBMITTED"]
     }
 }
 impl ::std::convert::AsRef<str> for SpeakerEnrollmentJobStatus {

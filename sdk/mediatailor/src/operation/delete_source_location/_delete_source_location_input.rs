@@ -15,34 +15,25 @@ impl DeleteSourceLocationInput {
 }
 impl DeleteSourceLocationInput {
     /// Creates a new builder-style object to manufacture [`DeleteSourceLocationInput`](crate::operation::delete_source_location::DeleteSourceLocationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_source_location::builders::DeleteSourceLocationInputBuilder {
+    pub fn builder() -> crate::operation::delete_source_location::builders::DeleteSourceLocationInputBuilder {
         crate::operation::delete_source_location::builders::DeleteSourceLocationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSourceLocationInput`](crate::operation::delete_source_location::DeleteSourceLocationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSourceLocationInputBuilder {
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSourceLocationInputBuilder {
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source location.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_location_name = input;
         self
     }
@@ -53,14 +44,10 @@ impl DeleteSourceLocationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSourceLocationInput`](crate::operation::delete_source_location::DeleteSourceLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_source_location::DeleteSourceLocationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_source_location::DeleteSourceLocationInput {
-                source_location_name: self.source_location_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_source_location::DeleteSourceLocationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_source_location::DeleteSourceLocationInput {
+            source_location_name: self.source_location_name,
+        })
     }
 }

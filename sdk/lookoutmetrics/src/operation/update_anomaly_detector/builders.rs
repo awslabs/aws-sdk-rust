@@ -37,10 +37,7 @@ impl UpdateAnomalyDetectorFluentBuilder {
         }
     }
     /// Access the UpdateAnomalyDetector as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_anomaly_detector::builders::UpdateAnomalyDetectorInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_anomaly_detector::builders::UpdateAnomalyDetectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateAnomalyDetectorFluentBuilder {
             crate::operation::update_anomaly_detector::UpdateAnomalyDetector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_anomaly_detector::UpdateAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_anomaly_detector::UpdateAnomalyDetectorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateAnomalyDetectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateAnomalyDetectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_anomaly_detector::UpdateAnomalyDetectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_anomaly_detector::UpdateAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_anomaly_detector::UpdateAnomalyDetectorError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateAnomalyDetectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_anomaly_detector::UpdateAnomalyDetectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_anomaly_detector::UpdateAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_anomaly_detector::UpdateAnomalyDetectorError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateAnomalyDetectorFluentBuilder {
             crate::operation::update_anomaly_detector::UpdateAnomalyDetector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_anomaly_detector::UpdateAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_anomaly_detector::UpdateAnomalyDetectorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the detector to update.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_detector_arn(input.into());
         self
     }
     /// <p>The ARN of the detector to update.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
     }
@@ -158,25 +138,17 @@ impl UpdateAnomalyDetectorFluentBuilder {
         self.inner.get_kms_key_arn()
     }
     /// <p>The updated detector description.</p>
-    pub fn anomaly_detector_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_detector_description(input.into());
         self
     }
     /// <p>The updated detector description.</p>
-    pub fn set_anomaly_detector_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_detector_description(input);
         self
     }
     /// <p>The updated detector description.</p>
-    pub fn get_anomaly_detector_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_anomaly_detector_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_anomaly_detector_description()
     }
     /// <p>Contains information about the configuration to which the detector will be updated.</p>
@@ -185,17 +157,12 @@ impl UpdateAnomalyDetectorFluentBuilder {
         self
     }
     /// <p>Contains information about the configuration to which the detector will be updated.</p>
-    pub fn set_anomaly_detector_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyDetectorConfig>,
-    ) -> Self {
+    pub fn set_anomaly_detector_config(mut self, input: ::std::option::Option<crate::types::AnomalyDetectorConfig>) -> Self {
         self.inner = self.inner.set_anomaly_detector_config(input);
         self
     }
     /// <p>Contains information about the configuration to which the detector will be updated.</p>
-    pub fn get_anomaly_detector_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalyDetectorConfig> {
+    pub fn get_anomaly_detector_config(&self) -> &::std::option::Option<crate::types::AnomalyDetectorConfig> {
         self.inner.get_anomaly_detector_config()
     }
 }

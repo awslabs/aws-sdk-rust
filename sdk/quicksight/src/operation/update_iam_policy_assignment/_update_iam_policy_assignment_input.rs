@@ -25,9 +25,7 @@ pub struct UpdateIamPolicyAssignmentInput {
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
     #[doc(hidden)]
-    pub identities: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub identities: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl UpdateIamPolicyAssignmentInput {
     /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
@@ -56,50 +54,36 @@ impl UpdateIamPolicyAssignmentInput {
         self.policy_arn.as_deref()
     }
     /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
-    pub fn identities(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn identities(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.identities.as_ref()
     }
 }
 impl UpdateIamPolicyAssignmentInput {
     /// Creates a new builder-style object to manufacture [`UpdateIamPolicyAssignmentInput`](crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentInput).
-    pub fn builder() -> crate::operation::update_iam_policy_assignment::builders::UpdateIamPolicyAssignmentInputBuilder{
+    pub fn builder() -> crate::operation::update_iam_policy_assignment::builders::UpdateIamPolicyAssignmentInputBuilder {
         crate::operation::update_iam_policy_assignment::builders::UpdateIamPolicyAssignmentInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIamPolicyAssignmentInput`](crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIamPolicyAssignmentInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) assignment_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) assignment_status: ::std::option::Option<crate::types::AssignmentStatus>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) identities: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) identities: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl UpdateIamPolicyAssignmentInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -108,18 +92,12 @@ impl UpdateIamPolicyAssignmentInputBuilder {
         &self.aws_account_id
     }
     /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
-    pub fn assignment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
-    pub fn set_assignment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assignment_name = input;
         self
     }
@@ -157,10 +135,7 @@ impl UpdateIamPolicyAssignmentInputBuilder {
     /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
     /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
-    pub fn set_assignment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssignmentStatus>,
-    ) -> Self {
+    pub fn set_assignment_status(mut self, input: ::std::option::Option<crate::types::AssignmentStatus>) -> Self {
         self.assignment_status = input;
         self
     }
@@ -192,11 +167,7 @@ impl UpdateIamPolicyAssignmentInputBuilder {
     /// To override the contents of this collection use [`set_identities`](Self::set_identities).
     ///
     /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
-    pub fn identities(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn identities(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.identities.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.identities = ::std::option::Option::Some(hash_map);
@@ -205,12 +176,7 @@ impl UpdateIamPolicyAssignmentInputBuilder {
     /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
     pub fn set_identities(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.identities = input;
         self
@@ -218,9 +184,7 @@ impl UpdateIamPolicyAssignmentInputBuilder {
     /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
     pub fn get_identities(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.identities
     }
     /// Consumes the builder and constructs a [`UpdateIamPolicyAssignmentInput`](crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentInput).
@@ -230,15 +194,13 @@ impl UpdateIamPolicyAssignmentInputBuilder {
         crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentInput {
-                aws_account_id: self.aws_account_id,
-                assignment_name: self.assignment_name,
-                namespace: self.namespace,
-                assignment_status: self.assignment_status,
-                policy_arn: self.policy_arn,
-                identities: self.identities,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_iam_policy_assignment::UpdateIamPolicyAssignmentInput {
+            aws_account_id: self.aws_account_id,
+            assignment_name: self.assignment_name,
+            namespace: self.namespace,
+            assignment_status: self.assignment_status,
+            policy_arn: self.policy_arn,
+            identities: self.identities,
+        })
     }
 }

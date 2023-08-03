@@ -23,9 +23,7 @@ impl Tags {
 
 /// A builder for [`Tags`](crate::types::Tags).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagsBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -42,10 +40,7 @@ impl TagsBuilder {
         self
     }
     /// <p>A complex type that contains <code>Tag</code> elements.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.items = input;
         self
     }

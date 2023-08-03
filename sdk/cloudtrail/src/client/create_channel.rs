@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`destinations(Option<Vec<Destination>>)`](crate::operation::create_channel::CreateChannelOutput::destinations): <p>The event data stores that log the events arriving through the channel.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_channel::CreateChannelOutput::tags): <p>A list of tags.</p>
     /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::operation::create_channel::CreateChannelError)
-    pub fn create_channel(
-        &self,
-    ) -> crate::operation::create_channel::builders::CreateChannelFluentBuilder {
-        crate::operation::create_channel::builders::CreateChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_channel(&self) -> crate::operation::create_channel::builders::CreateChannelFluentBuilder {
+        crate::operation::create_channel::builders::CreateChannelFluentBuilder::new(self.handle.clone())
     }
 }

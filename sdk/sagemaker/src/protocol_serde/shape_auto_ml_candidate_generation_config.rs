@@ -4,9 +4,7 @@ pub fn ser_auto_ml_candidate_generation_config(
     input: &crate::types::AutoMlCandidateGenerationConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.feature_specification_s3_uri {
-        object
-            .key("FeatureSpecificationS3Uri")
-            .string(var_1.as_str());
+        object.key("FeatureSpecificationS3Uri").string(var_1.as_str());
     }
     if let Some(var_2) = &input.algorithms_config {
         let mut array_3 = object.key("AlgorithmsConfig").start_array();
@@ -25,61 +23,45 @@ pub fn ser_auto_ml_candidate_generation_config(
 
 pub(crate) fn de_auto_ml_candidate_generation_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AutoMlCandidateGenerationConfig>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AutoMlCandidateGenerationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AutoMlCandidateGenerationConfigBuilder::default();
+            let mut builder = crate::types::builders::AutoMlCandidateGenerationConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "FeatureSpecificationS3Uri" => {
-                                builder = builder.set_feature_specification_s3_uri(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "FeatureSpecificationS3Uri" => {
+                            builder = builder.set_feature_specification_s3_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "AlgorithmsConfig" => {
-                                builder = builder.set_algorithms_config(
-                                    crate::protocol_serde::shape_auto_ml_algorithms_config::de_auto_ml_algorithms_config(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "AlgorithmsConfig" => {
+                            builder = builder.set_algorithms_config(
+                                crate::protocol_serde::shape_auto_ml_algorithms_config::de_auto_ml_algorithms_config(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

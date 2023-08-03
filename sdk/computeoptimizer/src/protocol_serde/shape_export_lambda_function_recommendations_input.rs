@@ -36,10 +36,7 @@ pub fn ser_export_lambda_function_recommendations_input(
     if let Some(var_11) = &input.s3_destination_config {
         #[allow(unused_mut)]
         let mut object_12 = object.key("s3DestinationConfig").start_object();
-        crate::protocol_serde::shape_s3_destination_config::ser_s3_destination_config(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_s3_destination_config::ser_s3_destination_config(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.file_format {

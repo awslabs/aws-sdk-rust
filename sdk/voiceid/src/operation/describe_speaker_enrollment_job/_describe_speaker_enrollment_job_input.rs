@@ -22,16 +22,14 @@ impl DescribeSpeakerEnrollmentJobInput {
 }
 impl DescribeSpeakerEnrollmentJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeSpeakerEnrollmentJobInput`](crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobInput).
-    pub fn builder() -> crate::operation::describe_speaker_enrollment_job::builders::DescribeSpeakerEnrollmentJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_speaker_enrollment_job::builders::DescribeSpeakerEnrollmentJobInputBuilder {
         crate::operation::describe_speaker_enrollment_job::builders::DescribeSpeakerEnrollmentJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSpeakerEnrollmentJobInput`](crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpeakerEnrollmentJobInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl DescribeSpeakerEnrollmentJobInputBuilder {
         crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobInput {
-                domain_id: self.domain_id,
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobInput {
+            domain_id: self.domain_id,
+            job_id: self.job_id,
+        })
     }
 }

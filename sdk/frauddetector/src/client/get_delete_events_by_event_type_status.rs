@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`event_type_name(Option<String>)`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput::event_type_name): <p>The event type name.</p>
     ///   - [`events_deletion_status(Option<AsyncJobStatus>)`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput::events_deletion_status): <p>The deletion status.</p>
     /// - On failure, responds with [`SdkError<GetDeleteEventsByEventTypeStatusError>`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError)
-    pub fn get_delete_events_by_event_type_status(&self) -> crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusFluentBuilder{
+    pub fn get_delete_events_by_event_type_status(
+        &self,
+    ) -> crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusFluentBuilder {
         crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`constraint_parameters(Option<String>)`](crate::operation::create_constraint::CreateConstraintOutput::constraint_parameters): <p>The constraint parameters.</p>
     ///   - [`status(Option<Status>)`](crate::operation::create_constraint::CreateConstraintOutput::status): <p>The status of the current request.</p>
     /// - On failure, responds with [`SdkError<CreateConstraintError>`](crate::operation::create_constraint::CreateConstraintError)
-    pub fn create_constraint(
-        &self,
-    ) -> crate::operation::create_constraint::builders::CreateConstraintFluentBuilder {
-        crate::operation::create_constraint::builders::CreateConstraintFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_constraint(&self) -> crate::operation::create_constraint::builders::CreateConstraintFluentBuilder {
+        crate::operation::create_constraint::builders::CreateConstraintFluentBuilder::new(self.handle.clone())
     }
 }

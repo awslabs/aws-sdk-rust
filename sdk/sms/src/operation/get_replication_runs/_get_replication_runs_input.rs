@@ -29,17 +29,14 @@ impl GetReplicationRunsInput {
 }
 impl GetReplicationRunsInput {
     /// Creates a new builder-style object to manufacture [`GetReplicationRunsInput`](crate::operation::get_replication_runs::GetReplicationRunsInput).
-    pub fn builder(
-    ) -> crate::operation::get_replication_runs::builders::GetReplicationRunsInputBuilder {
+    pub fn builder() -> crate::operation::get_replication_runs::builders::GetReplicationRunsInputBuilder {
         crate::operation::get_replication_runs::builders::GetReplicationRunsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReplicationRunsInput`](crate::operation::get_replication_runs::GetReplicationRunsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReplicationRunsInputBuilder {
     pub(crate) replication_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct GetReplicationRunsInputBuilder {
 }
 impl GetReplicationRunsInputBuilder {
     /// <p>The ID of the replication job.</p>
-    pub fn replication_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the replication job.</p>
-    pub fn set_replication_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_job_id = input;
         self
     }
@@ -97,16 +88,11 @@ impl GetReplicationRunsInputBuilder {
     /// Consumes the builder and constructs a [`GetReplicationRunsInput`](crate::operation::get_replication_runs::GetReplicationRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_replication_runs::GetReplicationRunsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_replication_runs::GetReplicationRunsInput {
-                replication_job_id: self.replication_job_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_replication_runs::GetReplicationRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_replication_runs::GetReplicationRunsInput {
+            replication_job_id: self.replication_job_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

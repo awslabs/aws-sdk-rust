@@ -17,10 +17,7 @@ impl super::Client {
     ///   - [`connection_mode(Option<ConnectionMode>)`](crate::operation::create_outbound_connection::CreateOutboundConnectionOutput::connection_mode): <p>The connection mode.</p>
     ///   - [`connection_properties(Option<ConnectionProperties>)`](crate::operation::create_outbound_connection::CreateOutboundConnectionOutput::connection_properties): <p>The <code>ConnectionProperties</code> for the newly created connection.</p>
     /// - On failure, responds with [`SdkError<CreateOutboundConnectionError>`](crate::operation::create_outbound_connection::CreateOutboundConnectionError)
-    pub fn create_outbound_connection(
-        &self,
-    ) -> crate::operation::create_outbound_connection::builders::CreateOutboundConnectionFluentBuilder
-    {
+    pub fn create_outbound_connection(&self) -> crate::operation::create_outbound_connection::builders::CreateOutboundConnectionFluentBuilder {
         crate::operation::create_outbound_connection::builders::CreateOutboundConnectionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_folders::SearchFoldersOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::search_folders::SearchFoldersOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<SearchFoldersError>`](crate::operation::search_folders::SearchFoldersError)
-    pub fn search_folders(
-        &self,
-    ) -> crate::operation::search_folders::builders::SearchFoldersFluentBuilder {
-        crate::operation::search_folders::builders::SearchFoldersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_folders(&self) -> crate::operation::search_folders::builders::SearchFoldersFluentBuilder {
+        crate::operation::search_folders::builders::SearchFoldersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,9 +36,7 @@ impl ListListenersInput {
 
 /// A builder for [`ListListenersInput`](crate::operation::list_listeners::ListListenersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListListenersInputBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct ListListenersInputBuilder {
 }
 impl ListListenersInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>
-    pub fn accelerator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>
-    pub fn set_accelerator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accelerator_arn = input;
         self
     }
@@ -96,10 +88,7 @@ impl ListListenersInputBuilder {
     /// Consumes the builder and constructs a [`ListListenersInput`](crate::operation::list_listeners::ListListenersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_listeners::ListListenersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_listeners::ListListenersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_listeners::ListListenersInput {
             accelerator_arn: self.accelerator_arn,
             max_results: self.max_results,

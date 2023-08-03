@@ -19,9 +19,7 @@ pub struct VirtualGatewayListener {
 }
 impl VirtualGatewayListener {
     /// <p>The health check information for the listener.</p>
-    pub fn health_check(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VirtualGatewayHealthCheckPolicy> {
+    pub fn health_check(&self) -> ::std::option::Option<&crate::types::VirtualGatewayHealthCheckPolicy> {
         self.health_check.as_ref()
     }
     /// <p>The port mapping information for the listener.</p>
@@ -33,9 +31,7 @@ impl VirtualGatewayListener {
         self.tls.as_ref()
     }
     /// <p>The connection pool information for the virtual gateway listener.</p>
-    pub fn connection_pool(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VirtualGatewayConnectionPool> {
+    pub fn connection_pool(&self) -> ::std::option::Option<&crate::types::VirtualGatewayConnectionPool> {
         self.connection_pool.as_ref()
     }
 }
@@ -48,9 +44,7 @@ impl VirtualGatewayListener {
 
 /// A builder for [`VirtualGatewayListener`](crate::types::VirtualGatewayListener).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualGatewayListenerBuilder {
     pub(crate) health_check: ::std::option::Option<crate::types::VirtualGatewayHealthCheckPolicy>,
     pub(crate) port_mapping: ::std::option::Option<crate::types::VirtualGatewayPortMapping>,
@@ -64,17 +58,12 @@ impl VirtualGatewayListenerBuilder {
         self
     }
     /// <p>The health check information for the listener.</p>
-    pub fn set_health_check(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewayHealthCheckPolicy>,
-    ) -> Self {
+    pub fn set_health_check(mut self, input: ::std::option::Option<crate::types::VirtualGatewayHealthCheckPolicy>) -> Self {
         self.health_check = input;
         self
     }
     /// <p>The health check information for the listener.</p>
-    pub fn get_health_check(
-        &self,
-    ) -> &::std::option::Option<crate::types::VirtualGatewayHealthCheckPolicy> {
+    pub fn get_health_check(&self) -> &::std::option::Option<crate::types::VirtualGatewayHealthCheckPolicy> {
         &self.health_check
     }
     /// <p>The port mapping information for the listener.</p>
@@ -83,17 +72,12 @@ impl VirtualGatewayListenerBuilder {
         self
     }
     /// <p>The port mapping information for the listener.</p>
-    pub fn set_port_mapping(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewayPortMapping>,
-    ) -> Self {
+    pub fn set_port_mapping(mut self, input: ::std::option::Option<crate::types::VirtualGatewayPortMapping>) -> Self {
         self.port_mapping = input;
         self
     }
     /// <p>The port mapping information for the listener.</p>
-    pub fn get_port_mapping(
-        &self,
-    ) -> &::std::option::Option<crate::types::VirtualGatewayPortMapping> {
+    pub fn get_port_mapping(&self) -> &::std::option::Option<crate::types::VirtualGatewayPortMapping> {
         &self.port_mapping
     }
     /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for the listener.</p>
@@ -102,10 +86,7 @@ impl VirtualGatewayListenerBuilder {
         self
     }
     /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for the listener.</p>
-    pub fn set_tls(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewayListenerTls>,
-    ) -> Self {
+    pub fn set_tls(mut self, input: ::std::option::Option<crate::types::VirtualGatewayListenerTls>) -> Self {
         self.tls = input;
         self
     }
@@ -119,17 +100,12 @@ impl VirtualGatewayListenerBuilder {
         self
     }
     /// <p>The connection pool information for the virtual gateway listener.</p>
-    pub fn set_connection_pool(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewayConnectionPool>,
-    ) -> Self {
+    pub fn set_connection_pool(mut self, input: ::std::option::Option<crate::types::VirtualGatewayConnectionPool>) -> Self {
         self.connection_pool = input;
         self
     }
     /// <p>The connection pool information for the virtual gateway listener.</p>
-    pub fn get_connection_pool(
-        &self,
-    ) -> &::std::option::Option<crate::types::VirtualGatewayConnectionPool> {
+    pub fn get_connection_pool(&self) -> &::std::option::Option<crate::types::VirtualGatewayConnectionPool> {
         &self.connection_pool
     }
     /// Consumes the builder and constructs a [`VirtualGatewayListener`](crate::types::VirtualGatewayListener).

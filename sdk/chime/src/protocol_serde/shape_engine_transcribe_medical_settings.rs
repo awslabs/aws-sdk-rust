@@ -19,9 +19,7 @@ pub fn ser_engine_transcribe_medical_settings(
         object.key("Region").string(var_5.as_str());
     }
     if let Some(var_6) = &input.content_identification_type {
-        object
-            .key("ContentIdentificationType")
-            .string(var_6.as_str());
+        object.key("ContentIdentificationType").string(var_6.as_str());
     }
     Ok(())
 }

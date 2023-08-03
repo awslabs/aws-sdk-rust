@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListApprovalRuleTemplatesOutput {
 }
 impl ListApprovalRuleTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListApprovalRuleTemplatesOutput`](crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesOutput).
-    pub fn builder() -> crate::operation::list_approval_rule_templates::builders::ListApprovalRuleTemplatesOutputBuilder{
+    pub fn builder() -> crate::operation::list_approval_rule_templates::builders::ListApprovalRuleTemplatesOutputBuilder {
         crate::operation::list_approval_rule_templates::builders::ListApprovalRuleTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApprovalRuleTemplatesOutput`](crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApprovalRuleTemplatesOutputBuilder {
-    pub(crate) approval_rule_template_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) approval_rule_template_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,27 +47,19 @@ impl ListApprovalRuleTemplatesOutputBuilder {
     /// To override the contents of this collection use [`set_approval_rule_template_names`](Self::set_approval_rule_template_names).
     ///
     /// <p>The names of all the approval rule templates found in the AWS Region for your AWS account.</p>
-    pub fn approval_rule_template_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.approval_rule_template_names.unwrap_or_default();
         v.push(input.into());
         self.approval_rule_template_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of all the approval rule templates found in the AWS Region for your AWS account.</p>
-    pub fn set_approval_rule_template_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_approval_rule_template_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.approval_rule_template_names = input;
         self
     }
     /// <p>The names of all the approval rule templates found in the AWS Region for your AWS account.</p>
-    pub fn get_approval_rule_template_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_approval_rule_template_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.approval_rule_template_names
     }
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
@@ -97,9 +86,7 @@ impl ListApprovalRuleTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListApprovalRuleTemplatesOutput`](crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesOutput {
+    pub fn build(self) -> crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesOutput {
         crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesOutput {
             approval_rule_template_names: self.approval_rule_template_names,
             next_token: self.next_token,

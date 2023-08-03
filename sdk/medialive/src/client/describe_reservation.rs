@@ -25,11 +25,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_reservation::DescribeReservationOutput::tags): A collection of key-value pairs
     ///   - [`usage_price(Option<f64>)`](crate::operation::describe_reservation::DescribeReservationOutput::usage_price): Recurring usage charge for each reserved resource, e.g. '157.0'
     /// - On failure, responds with [`SdkError<DescribeReservationError>`](crate::operation::describe_reservation::DescribeReservationError)
-    pub fn describe_reservation(
-        &self,
-    ) -> crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder {
-        crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_reservation(&self) -> crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder {
+        crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder::new(self.handle.clone())
     }
 }

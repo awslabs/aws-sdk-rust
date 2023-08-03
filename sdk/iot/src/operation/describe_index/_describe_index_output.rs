@@ -56,9 +56,7 @@ impl DescribeIndexOutput {
 
 /// A builder for [`DescribeIndexOutput`](crate::operation::describe_index::DescribeIndexOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIndexOutputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) index_status: ::std::option::Option<crate::types::IndexStatus>,
@@ -86,10 +84,7 @@ impl DescribeIndexOutputBuilder {
         self
     }
     /// <p>The index status.</p>
-    pub fn set_index_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IndexStatus>,
-    ) -> Self {
+    pub fn set_index_status(mut self, input: ::std::option::Option<crate::types::IndexStatus>) -> Self {
         self.index_status = input;
         self
     }

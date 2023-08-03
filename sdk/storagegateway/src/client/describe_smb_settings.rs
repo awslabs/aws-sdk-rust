@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`file_shares_visible(Option<bool>)`](crate::operation::describe_smb_settings::DescribeSmbSettingsOutput::file_shares_visible): <p>The shares on this gateway appear when listing shares. Only supported for S3 File Gateways. </p>
     ///   - [`smb_local_groups(Option<SmbLocalGroups>)`](crate::operation::describe_smb_settings::DescribeSmbSettingsOutput::smb_local_groups): <p>A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>
     /// - On failure, responds with [`SdkError<DescribeSMBSettingsError>`](crate::operation::describe_smb_settings::DescribeSMBSettingsError)
-    pub fn describe_smb_settings(
-        &self,
-    ) -> crate::operation::describe_smb_settings::builders::DescribeSMBSettingsFluentBuilder {
-        crate::operation::describe_smb_settings::builders::DescribeSMBSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_smb_settings(&self) -> crate::operation::describe_smb_settings::builders::DescribeSMBSettingsFluentBuilder {
+        crate::operation::describe_smb_settings::builders::DescribeSMBSettingsFluentBuilder::new(self.handle.clone())
     }
 }

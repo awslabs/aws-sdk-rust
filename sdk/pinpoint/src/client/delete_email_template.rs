@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteEmailTemplateOutput`](crate::operation::delete_email_template::DeleteEmailTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::operation::delete_email_template::DeleteEmailTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<DeleteEmailTemplateError>`](crate::operation::delete_email_template::DeleteEmailTemplateError)
-    pub fn delete_email_template(
-        &self,
-    ) -> crate::operation::delete_email_template::builders::DeleteEmailTemplateFluentBuilder {
-        crate::operation::delete_email_template::builders::DeleteEmailTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_email_template(&self) -> crate::operation::delete_email_template::builders::DeleteEmailTemplateFluentBuilder {
+        crate::operation::delete_email_template::builders::DeleteEmailTemplateFluentBuilder::new(self.handle.clone())
     }
 }

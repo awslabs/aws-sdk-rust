@@ -38,9 +38,7 @@ impl GetQuerySuggestionsFluentBuilder {
         }
     }
     /// Access the GetQuerySuggestions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_query_suggestions::builders::GetQuerySuggestionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_query_suggestions::builders::GetQuerySuggestionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetQuerySuggestionsFluentBuilder {
             crate::operation::get_query_suggestions::GetQuerySuggestions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_query_suggestions::GetQuerySuggestionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_query_suggestions::GetQuerySuggestionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetQuerySuggestionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetQuerySuggestionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_query_suggestions::GetQuerySuggestionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_query_suggestions::GetQuerySuggestionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_query_suggestions::GetQuerySuggestionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetQuerySuggestionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_query_suggestions::GetQuerySuggestionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_query_suggestions::GetQuerySuggestionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_query_suggestions::GetQuerySuggestionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl GetQuerySuggestionsFluentBuilder {
             crate::operation::get_query_suggestions::GetQuerySuggestions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_query_suggestions::GetQuerySuggestionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_query_suggestions::GetQuerySuggestionsError>,
     > {
         self.customize_middleware().await
     }
@@ -185,41 +172,28 @@ impl GetQuerySuggestionsFluentBuilder {
     /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
     /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
     /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
-    pub fn set_suggestion_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionType>>,
-    ) -> Self {
+    pub fn set_suggestion_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionType>>) -> Self {
         self.inner = self.inner.set_suggestion_types(input);
         self
     }
     /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
     /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
     /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
-    pub fn get_suggestion_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestionType>> {
+    pub fn get_suggestion_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestionType>> {
         self.inner.get_suggestion_types()
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
-    pub fn attribute_suggestions_config(
-        mut self,
-        input: crate::types::AttributeSuggestionsGetConfig,
-    ) -> Self {
+    pub fn attribute_suggestions_config(mut self, input: crate::types::AttributeSuggestionsGetConfig) -> Self {
         self.inner = self.inner.attribute_suggestions_config(input);
         self
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
-    pub fn set_attribute_suggestions_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeSuggestionsGetConfig>,
-    ) -> Self {
+    pub fn set_attribute_suggestions_config(mut self, input: ::std::option::Option<crate::types::AttributeSuggestionsGetConfig>) -> Self {
         self.inner = self.inner.set_attribute_suggestions_config(input);
         self
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
-    pub fn get_attribute_suggestions_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeSuggestionsGetConfig> {
+    pub fn get_attribute_suggestions_config(&self) -> &::std::option::Option<crate::types::AttributeSuggestionsGetConfig> {
         self.inner.get_attribute_suggestions_config()
     }
 }

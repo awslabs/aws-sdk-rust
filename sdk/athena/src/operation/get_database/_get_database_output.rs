@@ -28,9 +28,7 @@ impl GetDatabaseOutput {
 
 /// A builder for [`GetDatabaseOutput`](crate::operation::get_database::GetDatabaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDatabaseOutputBuilder {
     pub(crate) database: ::std::option::Option<crate::types::Database>,
     _request_id: Option<String>,

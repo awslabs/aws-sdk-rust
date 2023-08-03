@@ -30,9 +30,7 @@ impl ScalingParametersStatus {
 
 /// A builder for [`ScalingParametersStatus`](crate::types::ScalingParametersStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScalingParametersStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::ScalingParameters>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
@@ -44,10 +42,7 @@ impl ScalingParametersStatusBuilder {
         self
     }
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalingParameters>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::ScalingParameters>) -> Self {
         self.options = input;
         self
     }

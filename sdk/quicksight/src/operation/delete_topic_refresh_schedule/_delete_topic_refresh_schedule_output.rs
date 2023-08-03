@@ -49,16 +49,14 @@ impl ::aws_http::request_id::RequestId for DeleteTopicRefreshScheduleOutput {
 }
 impl DeleteTopicRefreshScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTopicRefreshScheduleOutput`](crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleOutput).
-    pub fn builder() -> crate::operation::delete_topic_refresh_schedule::builders::DeleteTopicRefreshScheduleOutputBuilder{
+    pub fn builder() -> crate::operation::delete_topic_refresh_schedule::builders::DeleteTopicRefreshScheduleOutputBuilder {
         crate::operation::delete_topic_refresh_schedule::builders::DeleteTopicRefreshScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTopicRefreshScheduleOutput`](crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTopicRefreshScheduleOutputBuilder {
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
@@ -148,9 +146,7 @@ impl DeleteTopicRefreshScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteTopicRefreshScheduleOutput`](crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleOutput {
+    pub fn build(self) -> crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleOutput {
         crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleOutput {
             topic_id: self.topic_id,
             topic_arn: self.topic_arn,

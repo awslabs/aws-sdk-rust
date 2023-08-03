@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`CreateNetworkProfileOutput`](crate::operation::create_network_profile::CreateNetworkProfileOutput) with field(s):
     ///   - [`network_profile(Option<NetworkProfile>)`](crate::operation::create_network_profile::CreateNetworkProfileOutput::network_profile): <p>The network profile that is returned by the create network profile request.</p>
     /// - On failure, responds with [`SdkError<CreateNetworkProfileError>`](crate::operation::create_network_profile::CreateNetworkProfileError)
-    pub fn create_network_profile(
-        &self,
-    ) -> crate::operation::create_network_profile::builders::CreateNetworkProfileFluentBuilder {
-        crate::operation::create_network_profile::builders::CreateNetworkProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_network_profile(&self) -> crate::operation::create_network_profile::builders::CreateNetworkProfileFluentBuilder {
+        crate::operation::create_network_profile::builders::CreateNetworkProfileFluentBuilder::new(self.handle.clone())
     }
 }

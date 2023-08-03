@@ -10,10 +10,7 @@ impl UntagMfaDeviceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::untag_mfa_device::UntagMfaDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_mfa_device::UntagMFADeviceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_mfa_device::UntagMFADeviceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.untag_mfa_device();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UntagMFADeviceFluentBuilder {
         }
     }
     /// Access the UntagMFADevice as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::untag_mfa_device::builders::UntagMfaDeviceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::untag_mfa_device::builders::UntagMfaDeviceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UntagMFADeviceFluentBuilder {
             crate::operation::untag_mfa_device::UntagMFADevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_mfa_device::UntagMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_mfa_device::UntagMFADeviceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UntagMFADeviceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UntagMFADeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::untag_mfa_device::UntagMfaDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_mfa_device::UntagMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_mfa_device::UntagMFADeviceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UntagMFADeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::untag_mfa_device::UntagMfaDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_mfa_device::UntagMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_mfa_device::UntagMFADeviceError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +102,19 @@ impl UntagMFADeviceFluentBuilder {
             crate::operation::untag_mfa_device::UntagMFADevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_mfa_device::UntagMFADeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_mfa_device::UntagMFADeviceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the IAM virtual MFA device from which you want to remove tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn serial_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.serial_number(input.into());
         self
     }
     /// <p>The unique identifier for the IAM virtual MFA device from which you want to remove tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_serial_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_serial_number(input);
         self
     }
@@ -155,10 +133,7 @@ impl UntagMFADeviceFluentBuilder {
         self
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified instance profile.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }

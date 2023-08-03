@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeIdentityProviderConfigOutput`](crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigOutput) with field(s):
     ///   - [`identity_provider_config(Option<IdentityProviderConfigResponse>)`](crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigOutput::identity_provider_config): <p>The object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeIdentityProviderConfigError>`](crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigError)
-    pub fn describe_identity_provider_config(&self) -> crate::operation::describe_identity_provider_config::builders::DescribeIdentityProviderConfigFluentBuilder{
+    pub fn describe_identity_provider_config(
+        &self,
+    ) -> crate::operation::describe_identity_provider_config::builders::DescribeIdentityProviderConfigFluentBuilder {
         crate::operation::describe_identity_provider_config::builders::DescribeIdentityProviderConfigFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,9 +10,7 @@ pub struct SlotTypeConfiguration {
 }
 impl SlotTypeConfiguration {
     /// <p>A regular expression used to validate the value of a slot.</p>
-    pub fn regex_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SlotTypeRegexConfiguration> {
+    pub fn regex_configuration(&self) -> ::std::option::Option<&crate::types::SlotTypeRegexConfiguration> {
         self.regex_configuration.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl SlotTypeConfiguration {
 
 /// A builder for [`SlotTypeConfiguration`](crate::types::SlotTypeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotTypeConfigurationBuilder {
     pub(crate) regex_configuration: ::std::option::Option<crate::types::SlotTypeRegexConfiguration>,
 }
@@ -38,17 +34,12 @@ impl SlotTypeConfigurationBuilder {
         self
     }
     /// <p>A regular expression used to validate the value of a slot.</p>
-    pub fn set_regex_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotTypeRegexConfiguration>,
-    ) -> Self {
+    pub fn set_regex_configuration(mut self, input: ::std::option::Option<crate::types::SlotTypeRegexConfiguration>) -> Self {
         self.regex_configuration = input;
         self
     }
     /// <p>A regular expression used to validate the value of a slot.</p>
-    pub fn get_regex_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SlotTypeRegexConfiguration> {
+    pub fn get_regex_configuration(&self) -> &::std::option::Option<crate::types::SlotTypeRegexConfiguration> {
         &self.regex_configuration
     }
     /// Consumes the builder and constructs a [`SlotTypeConfiguration`](crate::types::SlotTypeConfiguration).

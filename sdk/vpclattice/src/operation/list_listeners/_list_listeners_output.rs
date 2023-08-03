@@ -35,9 +35,7 @@ impl ListListenersOutput {
 
 /// A builder for [`ListListenersOutput`](crate::operation::list_listeners::ListListenersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListListenersOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListenerSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListListenersOutputBuilder {
         self
     }
     /// <p>Information about the listeners.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListenerSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListenerSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Information about the listeners.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListenerSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListenerSummary>> {
         &self.items
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>

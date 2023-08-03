@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`retain_record_until(Option<DateTime>)`](crate::operation::get_legal_hold::GetLegalHoldOutput::retain_record_until): <p>This is the date and time until which the legal hold record will be retained.</p>
     ///   - [`recovery_point_selection(Option<RecoveryPointSelection>)`](crate::operation::get_legal_hold::GetLegalHoldOutput::recovery_point_selection): <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
     /// - On failure, responds with [`SdkError<GetLegalHoldError>`](crate::operation::get_legal_hold::GetLegalHoldError)
-    pub fn get_legal_hold(
-        &self,
-    ) -> crate::operation::get_legal_hold::builders::GetLegalHoldFluentBuilder {
-        crate::operation::get_legal_hold::builders::GetLegalHoldFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_legal_hold(&self) -> crate::operation::get_legal_hold::builders::GetLegalHoldFluentBuilder {
+        crate::operation::get_legal_hold::builders::GetLegalHoldFluentBuilder::new(self.handle.clone())
     }
 }

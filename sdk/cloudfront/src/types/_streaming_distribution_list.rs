@@ -58,17 +58,14 @@ impl StreamingDistributionList {
 
 /// A builder for [`StreamingDistributionList`](crate::types::StreamingDistributionList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamingDistributionListBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::StreamingDistributionSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::StreamingDistributionSummary>>,
 }
 impl StreamingDistributionListBuilder {
     /// <p>The value you provided for the <code>Marker</code> request parameter.</p>
@@ -153,17 +150,12 @@ impl StreamingDistributionListBuilder {
         self
     }
     /// <p>A complex type that contains one <code>StreamingDistributionSummary</code> element for each distribution that was created by the current Amazon Web Services account.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingDistributionSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingDistributionSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>A complex type that contains one <code>StreamingDistributionSummary</code> element for each distribution that was created by the current Amazon Web Services account.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingDistributionSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingDistributionSummary>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`StreamingDistributionList`](crate::types::StreamingDistributionList).

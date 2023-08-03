@@ -18,9 +18,7 @@ pub struct CreateAllowListInput {
     /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
     /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAllowListInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -41,11 +39,7 @@ impl CreateAllowListInput {
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
     /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -58,17 +52,13 @@ impl CreateAllowListInput {
 
 /// A builder for [`CreateAllowListInput`](crate::operation::create_allow_list::CreateAllowListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAllowListInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) criteria: ::std::option::Option<crate::types::AllowListCriteria>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAllowListInputBuilder {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -91,10 +81,7 @@ impl CreateAllowListInputBuilder {
         self
     }
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
-    pub fn set_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowListCriteria>,
-    ) -> Self {
+    pub fn set_criteria(mut self, input: ::std::option::Option<crate::types::AllowListCriteria>) -> Self {
         self.criteria = input;
         self
     }
@@ -136,11 +123,7 @@ impl CreateAllowListInputBuilder {
     ///
     /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
     /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -148,31 +131,19 @@ impl CreateAllowListInputBuilder {
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
     /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
     /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAllowListInput`](crate::operation::create_allow_list::CreateAllowListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_allow_list::CreateAllowListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_allow_list::CreateAllowListInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_allow_list::CreateAllowListInput {
             client_token: self.client_token,
             criteria: self.criteria,

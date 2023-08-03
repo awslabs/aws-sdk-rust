@@ -30,9 +30,7 @@ impl CancelRetrievalInput {
 
 /// A builder for [`CancelRetrievalInput`](crate::operation::cancel_retrieval::CancelRetrievalInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelRetrievalInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
@@ -69,10 +67,7 @@ impl CancelRetrievalInputBuilder {
     /// Consumes the builder and constructs a [`CancelRetrievalInput`](crate::operation::cancel_retrieval::CancelRetrievalInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_retrieval::CancelRetrievalInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::cancel_retrieval::CancelRetrievalInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_retrieval::CancelRetrievalInput {
             gateway_arn: self.gateway_arn,
             tape_arn: self.tape_arn,

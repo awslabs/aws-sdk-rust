@@ -8,8 +8,7 @@ pub struct TargetTrackingMetric {
     /// <p>The dimensions for the metric. For the list of available dimensions, see the Amazon Web Services documentation available from the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
     #[doc(hidden)]
-    pub dimensions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDimension>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDimension>>,
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
@@ -20,9 +19,7 @@ pub struct TargetTrackingMetric {
 impl TargetTrackingMetric {
     /// <p>The dimensions for the metric. For the list of available dimensions, see the Amazon Web Services documentation available from the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
-    pub fn dimensions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TargetTrackingMetricDimension]> {
+    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::TargetTrackingMetricDimension]> {
         self.dimensions.as_deref()
     }
     /// <p>The name of the metric.</p>
@@ -43,12 +40,9 @@ impl TargetTrackingMetric {
 
 /// A builder for [`TargetTrackingMetric`](crate::types::TargetTrackingMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetTrackingMetricBuilder {
-    pub(crate) dimensions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDimension>>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDimension>>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
 }
@@ -67,18 +61,13 @@ impl TargetTrackingMetricBuilder {
     }
     /// <p>The dimensions for the metric. For the list of available dimensions, see the Amazon Web Services documentation available from the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDimension>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The dimensions for the metric. For the list of available dimensions, see the Amazon Web Services documentation available from the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics </a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingMetricDimension>> {
         &self.dimensions
     }
     /// <p>The name of the metric.</p>

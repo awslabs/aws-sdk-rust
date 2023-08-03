@@ -42,9 +42,7 @@ impl TableVisual {
         self.chart_configuration.as_ref()
     }
     /// <p>The conditional formatting for a <code>PivotTableVisual</code>.</p>
-    pub fn conditional_formatting(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TableConditionalFormatting> {
+    pub fn conditional_formatting(&self) -> ::std::option::Option<&crate::types::TableConditionalFormatting> {
         self.conditional_formatting.as_ref()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
@@ -61,16 +59,13 @@ impl TableVisual {
 
 /// A builder for [`TableVisual`](crate::types::TableVisual).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableVisualBuilder {
     pub(crate) visual_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
     pub(crate) subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     pub(crate) chart_configuration: ::std::option::Option<crate::types::TableConfiguration>,
-    pub(crate) conditional_formatting:
-        ::std::option::Option<crate::types::TableConditionalFormatting>,
+    pub(crate) conditional_formatting: ::std::option::Option<crate::types::TableConditionalFormatting>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
 }
 impl TableVisualBuilder {
@@ -94,10 +89,7 @@ impl TableVisualBuilder {
         self
     }
     /// <p>The title that is displayed on the visual.</p>
-    pub fn set_title(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
-    ) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<crate::types::VisualTitleLabelOptions>) -> Self {
         self.title = input;
         self
     }
@@ -111,10 +103,7 @@ impl TableVisualBuilder {
         self
     }
     /// <p>The subtitle that is displayed on the visual.</p>
-    pub fn set_subtitle(
-        mut self,
-        input: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
-    ) -> Self {
+    pub fn set_subtitle(mut self, input: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>) -> Self {
         self.subtitle = input;
         self
     }
@@ -128,39 +117,26 @@ impl TableVisualBuilder {
         self
     }
     /// <p>The configuration settings of the visual.</p>
-    pub fn set_chart_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TableConfiguration>,
-    ) -> Self {
+    pub fn set_chart_configuration(mut self, input: ::std::option::Option<crate::types::TableConfiguration>) -> Self {
         self.chart_configuration = input;
         self
     }
     /// <p>The configuration settings of the visual.</p>
-    pub fn get_chart_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TableConfiguration> {
+    pub fn get_chart_configuration(&self) -> &::std::option::Option<crate::types::TableConfiguration> {
         &self.chart_configuration
     }
     /// <p>The conditional formatting for a <code>PivotTableVisual</code>.</p>
-    pub fn conditional_formatting(
-        mut self,
-        input: crate::types::TableConditionalFormatting,
-    ) -> Self {
+    pub fn conditional_formatting(mut self, input: crate::types::TableConditionalFormatting) -> Self {
         self.conditional_formatting = ::std::option::Option::Some(input);
         self
     }
     /// <p>The conditional formatting for a <code>PivotTableVisual</code>.</p>
-    pub fn set_conditional_formatting(
-        mut self,
-        input: ::std::option::Option<crate::types::TableConditionalFormatting>,
-    ) -> Self {
+    pub fn set_conditional_formatting(mut self, input: ::std::option::Option<crate::types::TableConditionalFormatting>) -> Self {
         self.conditional_formatting = input;
         self
     }
     /// <p>The conditional formatting for a <code>PivotTableVisual</code>.</p>
-    pub fn get_conditional_formatting(
-        &self,
-    ) -> &::std::option::Option<crate::types::TableConditionalFormatting> {
+    pub fn get_conditional_formatting(&self) -> &::std::option::Option<crate::types::TableConditionalFormatting> {
         &self.conditional_formatting
     }
     /// Appends an item to `actions`.
@@ -175,17 +151,12 @@ impl TableVisualBuilder {
         self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`TableVisual`](crate::types::TableVisual).

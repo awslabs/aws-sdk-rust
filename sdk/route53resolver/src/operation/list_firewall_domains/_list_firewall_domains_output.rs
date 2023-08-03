@@ -30,18 +30,14 @@ impl ::aws_http::request_id::RequestId for ListFirewallDomainsOutput {
 }
 impl ListFirewallDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallDomainsOutput`](crate::operation::list_firewall_domains::ListFirewallDomainsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_firewall_domains::builders::ListFirewallDomainsOutputBuilder {
-        crate::operation::list_firewall_domains::builders::ListFirewallDomainsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_firewall_domains::builders::ListFirewallDomainsOutputBuilder {
+        crate::operation::list_firewall_domains::builders::ListFirewallDomainsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFirewallDomainsOutput`](crate::operation::list_firewall_domains::ListFirewallDomainsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallDomainsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -76,10 +72,7 @@ impl ListFirewallDomainsOutputBuilder {
     }
     /// <p>A list of the domains in the firewall domain list. </p>
     /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>. </p>
-    pub fn set_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.domains = input;
         self
     }

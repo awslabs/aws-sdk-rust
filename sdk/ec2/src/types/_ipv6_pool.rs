@@ -44,14 +44,11 @@ impl Ipv6Pool {
 
 /// A builder for [`Ipv6Pool`](crate::types::Ipv6Pool).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ipv6PoolBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) pool_cidr_blocks:
-        ::std::option::Option<::std::vec::Vec<crate::types::PoolCidrBlock>>,
+    pub(crate) pool_cidr_blocks: ::std::option::Option<::std::vec::Vec<crate::types::PoolCidrBlock>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Ipv6PoolBuilder {
@@ -95,17 +92,12 @@ impl Ipv6PoolBuilder {
         self
     }
     /// <p>The CIDR blocks for the address pool.</p>
-    pub fn set_pool_cidr_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PoolCidrBlock>>,
-    ) -> Self {
+    pub fn set_pool_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PoolCidrBlock>>) -> Self {
         self.pool_cidr_blocks = input;
         self
     }
     /// <p>The CIDR blocks for the address pool.</p>
-    pub fn get_pool_cidr_blocks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PoolCidrBlock>> {
+    pub fn get_pool_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PoolCidrBlock>> {
         &self.pool_cidr_blocks
     }
     /// Appends an item to `tags`.
@@ -120,10 +112,7 @@ impl Ipv6PoolBuilder {
         self
     }
     /// <p>Any tags for the address pool.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

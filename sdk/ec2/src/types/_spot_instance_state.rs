@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SpotInstanceState {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for SpotInstanceState {
             "disabled" => SpotInstanceState::Disabled,
             "failed" => SpotInstanceState::Failed,
             "open" => SpotInstanceState::Open,
-            other => {
-                SpotInstanceState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SpotInstanceState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl SpotInstanceState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "active",
-            "cancelled",
-            "closed",
-            "disabled",
-            "failed",
-            "open",
-        ]
+        &["active", "cancelled", "closed", "disabled", "failed", "open"]
     }
 }
 impl ::std::convert::AsRef<str> for SpotInstanceState {

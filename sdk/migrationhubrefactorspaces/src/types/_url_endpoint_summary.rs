@@ -30,9 +30,7 @@ impl UrlEndpointSummary {
 
 /// A builder for [`UrlEndpointSummary`](crate::types::UrlEndpointSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UrlEndpointSummaryBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) health_url: ::std::option::Option<::std::string::String>,

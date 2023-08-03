@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociateIdentityProviderConfigOutput`](crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigOutput) with field(s):
     ///   - [`update(Option<Update>)`](crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigOutput::update): <p>An object representing an asynchronous update.</p>
     /// - On failure, responds with [`SdkError<DisassociateIdentityProviderConfigError>`](crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigError)
-    pub fn disassociate_identity_provider_config(&self) -> crate::operation::disassociate_identity_provider_config::builders::DisassociateIdentityProviderConfigFluentBuilder{
+    pub fn disassociate_identity_provider_config(
+        &self,
+    ) -> crate::operation::disassociate_identity_provider_config::builders::DisassociateIdentityProviderConfigFluentBuilder {
         crate::operation::disassociate_identity_provider_config::builders::DisassociateIdentityProviderConfigFluentBuilder::new(self.handle.clone())
     }
 }

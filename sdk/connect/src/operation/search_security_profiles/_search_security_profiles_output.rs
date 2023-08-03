@@ -5,8 +5,7 @@
 pub struct SearchSecurityProfilesOutput {
     /// <p>Information about the security profiles.</p>
     #[doc(hidden)]
-    pub security_profiles:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileSearchSummary>>,
+    pub security_profiles: ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileSearchSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,9 +16,7 @@ pub struct SearchSecurityProfilesOutput {
 }
 impl SearchSecurityProfilesOutput {
     /// <p>Information about the security profiles.</p>
-    pub fn security_profiles(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SecurityProfileSearchSummary]> {
+    pub fn security_profiles(&self) -> ::std::option::Option<&[crate::types::SecurityProfileSearchSummary]> {
         self.security_profiles.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -38,21 +35,16 @@ impl ::aws_http::request_id::RequestId for SearchSecurityProfilesOutput {
 }
 impl SearchSecurityProfilesOutput {
     /// Creates a new builder-style object to manufacture [`SearchSecurityProfilesOutput`](crate::operation::search_security_profiles::SearchSecurityProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::search_security_profiles::builders::SearchSecurityProfilesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::search_security_profiles::builders::SearchSecurityProfilesOutputBuilder {
         crate::operation::search_security_profiles::builders::SearchSecurityProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchSecurityProfilesOutput`](crate::operation::search_security_profiles::SearchSecurityProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchSecurityProfilesOutputBuilder {
-    pub(crate) security_profiles:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileSearchSummary>>,
+    pub(crate) security_profiles: ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileSearchSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -70,17 +62,12 @@ impl SearchSecurityProfilesOutputBuilder {
         self
     }
     /// <p>Information about the security profiles.</p>
-    pub fn set_security_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileSearchSummary>>,
-    ) -> Self {
+    pub fn set_security_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileSearchSummary>>) -> Self {
         self.security_profiles = input;
         self
     }
     /// <p>Information about the security profiles.</p>
-    pub fn get_security_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileSearchSummary>> {
+    pub fn get_security_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileSearchSummary>> {
         &self.security_profiles
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`environment_id(impl ::std::convert::Into<String>)`](crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentFluentBuilder::set_environment_id): <p>A unique identifier for the kdb environment.</p>
     /// - On success, responds with [`DeleteKxEnvironmentOutput`](crate::operation::delete_kx_environment::DeleteKxEnvironmentOutput)
     /// - On failure, responds with [`SdkError<DeleteKxEnvironmentError>`](crate::operation::delete_kx_environment::DeleteKxEnvironmentError)
-    pub fn delete_kx_environment(
-        &self,
-    ) -> crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentFluentBuilder {
-        crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_kx_environment(&self) -> crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentFluentBuilder {
+        crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

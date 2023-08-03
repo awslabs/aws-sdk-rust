@@ -2,8 +2,7 @@
 pub fn ser_put_storage_lens_configuration_headers(
     input: &crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.account_id {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_put_storage_lens_configuration_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "account_id",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-account-id", header_value);
@@ -25,8 +21,7 @@ pub fn ser_put_storage_lens_configuration_headers(
 
 pub fn ser_put_storage_lens_configuration_op_input(
     input: &crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -49,14 +44,11 @@ pub fn de_put_storage_lens_configuration_http_error(
     crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(
-        crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError::generic(
-            generic,
-        ),
-    )
+    Err(crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -71,9 +63,7 @@ pub fn de_put_storage_lens_configuration_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_storage_lens_configuration::builders::PutStorageLensConfigurationOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

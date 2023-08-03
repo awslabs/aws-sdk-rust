@@ -38,9 +38,7 @@ pub fn ser_request_spot_launch_specification(
         for item_15 in var_14 {
             #[allow(unused_mut)]
             let mut entry_17 = list_16.entry();
-            crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(
-                entry_17, item_15,
-            )?;
+            crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(entry_17, item_15)?;
         }
         list_16.finish();
     }

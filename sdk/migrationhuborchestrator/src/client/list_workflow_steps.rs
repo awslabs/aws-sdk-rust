@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_workflow_steps::ListWorkflowStepsOutput::next_token): <p>The pagination token.</p>
     ///   - [`workflow_steps_summary(Option<Vec<WorkflowStepSummary>>)`](crate::operation::list_workflow_steps::ListWorkflowStepsOutput::workflow_steps_summary): <p>The summary of steps in a migration workflow.</p>
     /// - On failure, responds with [`SdkError<ListWorkflowStepsError>`](crate::operation::list_workflow_steps::ListWorkflowStepsError)
-    pub fn list_workflow_steps(
-        &self,
-    ) -> crate::operation::list_workflow_steps::builders::ListWorkflowStepsFluentBuilder {
-        crate::operation::list_workflow_steps::builders::ListWorkflowStepsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_workflow_steps(&self) -> crate::operation::list_workflow_steps::builders::ListWorkflowStepsFluentBuilder {
+        crate::operation::list_workflow_steps::builders::ListWorkflowStepsFluentBuilder::new(self.handle.clone())
     }
 }

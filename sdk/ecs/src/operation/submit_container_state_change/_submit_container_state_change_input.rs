@@ -64,16 +64,14 @@ impl SubmitContainerStateChangeInput {
 }
 impl SubmitContainerStateChangeInput {
     /// Creates a new builder-style object to manufacture [`SubmitContainerStateChangeInput`](crate::operation::submit_container_state_change::SubmitContainerStateChangeInput).
-    pub fn builder() -> crate::operation::submit_container_state_change::builders::SubmitContainerStateChangeInputBuilder{
+    pub fn builder() -> crate::operation::submit_container_state_change::builders::SubmitContainerStateChangeInputBuilder {
         crate::operation::submit_container_state_change::builders::SubmitContainerStateChangeInputBuilder::default()
     }
 }
 
 /// A builder for [`SubmitContainerStateChangeInput`](crate::operation::submit_container_state_change::SubmitContainerStateChangeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubmitContainerStateChangeInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) task: ::std::option::Option<::std::string::String>,
@@ -82,8 +80,7 @@ pub struct SubmitContainerStateChangeInputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) exit_code: ::std::option::Option<i32>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
-    pub(crate) network_bindings:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
+    pub(crate) network_bindings: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
 }
 impl SubmitContainerStateChangeInputBuilder {
     /// <p>The short name or full ARN of the cluster that hosts the container.</p>
@@ -115,18 +112,12 @@ impl SubmitContainerStateChangeInputBuilder {
         &self.task
     }
     /// <p>The name of the container.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
@@ -202,17 +193,12 @@ impl SubmitContainerStateChangeInputBuilder {
         self
     }
     /// <p>The network bindings of the container.</p>
-    pub fn set_network_bindings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
-    ) -> Self {
+    pub fn set_network_bindings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>) -> Self {
         self.network_bindings = input;
         self
     }
     /// <p>The network bindings of the container.</p>
-    pub fn get_network_bindings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>> {
+    pub fn get_network_bindings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>> {
         &self.network_bindings
     }
     /// Consumes the builder and constructs a [`SubmitContainerStateChangeInput`](crate::operation::submit_container_state_change::SubmitContainerStateChangeInput).
@@ -222,17 +208,15 @@ impl SubmitContainerStateChangeInputBuilder {
         crate::operation::submit_container_state_change::SubmitContainerStateChangeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::submit_container_state_change::SubmitContainerStateChangeInput {
-                cluster: self.cluster,
-                task: self.task,
-                container_name: self.container_name,
-                runtime_id: self.runtime_id,
-                status: self.status,
-                exit_code: self.exit_code,
-                reason: self.reason,
-                network_bindings: self.network_bindings,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::submit_container_state_change::SubmitContainerStateChangeInput {
+            cluster: self.cluster,
+            task: self.task,
+            container_name: self.container_name,
+            runtime_id: self.runtime_id,
+            status: self.status,
+            exit_code: self.exit_code,
+            reason: self.reason,
+            network_bindings: self.network_bindings,
+        })
     }
 }

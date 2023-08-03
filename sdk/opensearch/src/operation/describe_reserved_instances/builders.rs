@@ -26,7 +26,7 @@ impl DescribeReservedInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesInputBuilder,
+    inner: crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesInputBuilder,
 }
 impl DescribeReservedInstancesFluentBuilder {
     /// Creates a new `DescribeReservedInstances`.
@@ -37,7 +37,7 @@ impl DescribeReservedInstancesFluentBuilder {
         }
     }
     /// Access the DescribeReservedInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeReservedInstancesFluentBuilder {
             crate::operation::describe_reserved_instances::DescribeReservedInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_instances::DescribeReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances::DescribeReservedInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeReservedInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeReservedInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_instances::DescribeReservedInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_instances::DescribeReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances::DescribeReservedInstancesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeReservedInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_instances::DescribeReservedInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_instances::DescribeReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances::DescribeReservedInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -114,34 +105,23 @@ impl DescribeReservedInstancesFluentBuilder {
             crate::operation::describe_reserved_instances::DescribeReservedInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_instances::DescribeReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances::DescribeReservedInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_instances::paginator::DescribeReservedInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_reserved_instances::paginator::DescribeReservedInstancesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_reserved_instances::paginator::DescribeReservedInstancesPaginator {
         crate::operation::describe_reserved_instances::paginator::DescribeReservedInstancesPaginator::new(self.handle, self.inner)
     }
     /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID.</p>
-    pub fn reserved_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_instance_id(input.into());
         self
     }
     /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID.</p>
-    pub fn set_reserved_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_instance_id(input);
         self
     }

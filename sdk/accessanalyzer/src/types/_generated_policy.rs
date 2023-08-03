@@ -23,9 +23,7 @@ impl GeneratedPolicy {
 
 /// A builder for [`GeneratedPolicy`](crate::types::GeneratedPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeneratedPolicyBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl GeneratedPolicyBuilder {
     }
     /// Consumes the builder and constructs a [`GeneratedPolicy`](crate::types::GeneratedPolicy).
     pub fn build(self) -> crate::types::GeneratedPolicy {
-        crate::types::GeneratedPolicy {
-            policy: self.policy,
-        }
+        crate::types::GeneratedPolicy { policy: self.policy }
     }
 }

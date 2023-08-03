@@ -36,16 +36,14 @@ impl RemoveThingFromThingGroupInput {
 }
 impl RemoveThingFromThingGroupInput {
     /// Creates a new builder-style object to manufacture [`RemoveThingFromThingGroupInput`](crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupInput).
-    pub fn builder() -> crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupInputBuilder{
+    pub fn builder() -> crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupInputBuilder {
         crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveThingFromThingGroupInput`](crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveThingFromThingGroupInputBuilder {
     pub(crate) thing_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) thing_group_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct RemoveThingFromThingGroupInputBuilder {
 }
 impl RemoveThingFromThingGroupInputBuilder {
     /// <p>The group name.</p>
-    pub fn thing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The group name.</p>
-    pub fn set_thing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_name = input;
         self
     }
@@ -74,18 +66,12 @@ impl RemoveThingFromThingGroupInputBuilder {
         &self.thing_group_name
     }
     /// <p>The group ARN.</p>
-    pub fn thing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The group ARN.</p>
-    pub fn set_thing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_group_arn = input;
         self
     }
@@ -128,13 +114,11 @@ impl RemoveThingFromThingGroupInputBuilder {
         crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupInput {
-                thing_group_name: self.thing_group_name,
-                thing_group_arn: self.thing_group_arn,
-                thing_name: self.thing_name,
-                thing_arn: self.thing_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupInput {
+            thing_group_name: self.thing_group_name,
+            thing_group_arn: self.thing_group_arn,
+            thing_name: self.thing_name,
+            thing_arn: self.thing_arn,
+        })
     }
 }

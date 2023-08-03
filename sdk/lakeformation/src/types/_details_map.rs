@@ -24,9 +24,7 @@ impl DetailsMap {
 
 /// A builder for [`DetailsMap`](crate::types::DetailsMap).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetailsMapBuilder {
     pub(crate) resource_share: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -36,27 +34,19 @@ impl DetailsMapBuilder {
     /// To override the contents of this collection use [`set_resource_share`](Self::set_resource_share).
     ///
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
-    pub fn resource_share(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_share.unwrap_or_default();
         v.push(input.into());
         self.resource_share = ::std::option::Option::Some(v);
         self
     }
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
-    pub fn set_resource_share(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_share(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_share = input;
         self
     }
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
-    pub fn get_resource_share(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_share(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_share
     }
     /// Consumes the builder and constructs a [`DetailsMap`](crate::types::DetailsMap).

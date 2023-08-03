@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`dev_endpoints(Option<Vec<DevEndpoint>>)`](crate::operation::get_dev_endpoints::GetDevEndpointsOutput::dev_endpoints): <p>A list of <code>DevEndpoint</code> definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_dev_endpoints::GetDevEndpointsOutput::next_token): <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
     /// - On failure, responds with [`SdkError<GetDevEndpointsError>`](crate::operation::get_dev_endpoints::GetDevEndpointsError)
-    pub fn get_dev_endpoints(
-        &self,
-    ) -> crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder {
-        crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_dev_endpoints(&self) -> crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder {
+        crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

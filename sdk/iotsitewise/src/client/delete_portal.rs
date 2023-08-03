@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeletePortalOutput`](crate::operation::delete_portal::DeletePortalOutput) with field(s):
     ///   - [`portal_status(Option<PortalStatus>)`](crate::operation::delete_portal::DeletePortalOutput::portal_status): <p>The status of the portal, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
     /// - On failure, responds with [`SdkError<DeletePortalError>`](crate::operation::delete_portal::DeletePortalError)
-    pub fn delete_portal(
-        &self,
-    ) -> crate::operation::delete_portal::builders::DeletePortalFluentBuilder {
-        crate::operation::delete_portal::builders::DeletePortalFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_portal(&self) -> crate::operation::delete_portal::builders::DeletePortalFluentBuilder {
+        crate::operation::delete_portal::builders::DeletePortalFluentBuilder::new(self.handle.clone())
     }
 }

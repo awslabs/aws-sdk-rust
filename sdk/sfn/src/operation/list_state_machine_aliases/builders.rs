@@ -35,8 +35,7 @@ impl ListStateMachineAliasesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStateMachineAliasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesInputBuilder,
+    inner: crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesInputBuilder,
 }
 impl ListStateMachineAliasesFluentBuilder {
     /// Creates a new `ListStateMachineAliases`.
@@ -47,10 +46,7 @@ impl ListStateMachineAliasesFluentBuilder {
         }
     }
     /// Access the ListStateMachineAliases as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +58,7 @@ impl ListStateMachineAliasesFluentBuilder {
             crate::operation::list_state_machine_aliases::ListStateMachineAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_state_machine_aliases::ListStateMachineAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_state_machine_aliases::ListStateMachineAliasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +68,7 @@ impl ListStateMachineAliasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +77,7 @@ impl ListStateMachineAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_state_machine_aliases::ListStateMachineAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_state_machine_aliases::ListStateMachineAliasesError>,
     > {
         let op = self
             .inner
@@ -111,9 +100,7 @@ impl ListStateMachineAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_state_machine_aliases::ListStateMachineAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_state_machine_aliases::ListStateMachineAliasesError>,
     > {
         self.send_middleware().await
     }
@@ -127,27 +114,19 @@ impl ListStateMachineAliasesFluentBuilder {
             crate::operation::list_state_machine_aliases::ListStateMachineAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_state_machine_aliases::ListStateMachineAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_state_machine_aliases::ListStateMachineAliasesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine for which you want to list aliases.</p>
     /// <p>If you specify a state machine version ARN, this API returns a list of aliases for that version.</p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.state_machine_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine for which you want to list aliases.</p>
     /// <p>If you specify a state machine version ARN, this API returns a list of aliases for that version.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_state_machine_arn(input);
         self
     }

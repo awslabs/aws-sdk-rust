@@ -10,10 +10,7 @@ impl GetScreenDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_screen_data::GetScreenDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_screen_data::GetScreenDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_screen_data::GetScreenDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_screen_data();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetScreenDataFluentBuilder {
         }
     }
     /// Access the GetScreenData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_screen_data::builders::GetScreenDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_screen_data::builders::GetScreenDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetScreenDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -161,30 +153,20 @@ impl GetScreenDataFluentBuilder {
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
     /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
-    pub fn variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::VariableValue,
-    ) -> Self {
+    pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::VariableValue) -> Self {
         self.inner = self.inner.variables(k.into(), v);
         self
     }
     /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
     pub fn set_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::VariableValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>>,
     ) -> Self {
         self.inner = self.inner.set_variables(input);
         self
     }
     /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
-    pub fn get_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::VariableValue>,
-    > {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>> {
         self.inner.get_variables()
     }
     /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>

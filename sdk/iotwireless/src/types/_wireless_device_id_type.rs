@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WirelessDeviceIdType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for WirelessDeviceIdType {
             "SidewalkManufacturingSn" => WirelessDeviceIdType::SidewalkManufacturingSn,
             "ThingName" => WirelessDeviceIdType::ThingName,
             "WirelessDeviceId" => WirelessDeviceIdType::WirelessDeviceId,
-            other => WirelessDeviceIdType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WirelessDeviceIdType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl WirelessDeviceIdType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DevEui",
-            "SidewalkManufacturingSn",
-            "ThingName",
-            "WirelessDeviceId",
-        ]
+        &["DevEui", "SidewalkManufacturingSn", "ThingName", "WirelessDeviceId"]
     }
 }
 impl ::std::convert::AsRef<str> for WirelessDeviceIdType {

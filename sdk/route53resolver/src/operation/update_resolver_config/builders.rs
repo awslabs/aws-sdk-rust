@@ -37,9 +37,7 @@ impl UpdateResolverConfigFluentBuilder {
         }
     }
     /// Access the UpdateResolverConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_resolver_config::builders::UpdateResolverConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_resolver_config::builders::UpdateResolverConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateResolverConfigFluentBuilder {
             crate::operation::update_resolver_config::UpdateResolverConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_config::UpdateResolverConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_config::UpdateResolverConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateResolverConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateResolverConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resolver_config::UpdateResolverConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_config::UpdateResolverConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_config::UpdateResolverConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateResolverConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resolver_config::UpdateResolverConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_config::UpdateResolverConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_config::UpdateResolverConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateResolverConfigFluentBuilder {
             crate::operation::update_resolver_config::UpdateResolverConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_config::UpdateResolverConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_config::UpdateResolverConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -152,10 +139,7 @@ impl UpdateResolverConfigFluentBuilder {
     /// <p>It can take some time for the status change to be completed.</p>
     /// </note>
     /// <p></p>
-    pub fn set_autodefined_reverse_flag(
-        mut self,
-        input: ::std::option::Option<crate::types::AutodefinedReverseFlag>,
-    ) -> Self {
+    pub fn set_autodefined_reverse_flag(mut self, input: ::std::option::Option<crate::types::AutodefinedReverseFlag>) -> Self {
         self.inner = self.inner.set_autodefined_reverse_flag(input);
         self
     }
@@ -165,9 +149,7 @@ impl UpdateResolverConfigFluentBuilder {
     /// <p>It can take some time for the status change to be completed.</p>
     /// </note>
     /// <p></p>
-    pub fn get_autodefined_reverse_flag(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutodefinedReverseFlag> {
+    pub fn get_autodefined_reverse_flag(&self) -> &::std::option::Option<crate::types::AutodefinedReverseFlag> {
         self.inner.get_autodefined_reverse_flag()
     }
 }

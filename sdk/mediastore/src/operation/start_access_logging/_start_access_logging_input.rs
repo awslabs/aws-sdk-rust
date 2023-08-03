@@ -15,34 +15,25 @@ impl StartAccessLoggingInput {
 }
 impl StartAccessLoggingInput {
     /// Creates a new builder-style object to manufacture [`StartAccessLoggingInput`](crate::operation::start_access_logging::StartAccessLoggingInput).
-    pub fn builder(
-    ) -> crate::operation::start_access_logging::builders::StartAccessLoggingInputBuilder {
+    pub fn builder() -> crate::operation::start_access_logging::builders::StartAccessLoggingInputBuilder {
         crate::operation::start_access_logging::builders::StartAccessLoggingInputBuilder::default()
     }
 }
 
 /// A builder for [`StartAccessLoggingInput`](crate::operation::start_access_logging::StartAccessLoggingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartAccessLoggingInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
 }
 impl StartAccessLoggingInputBuilder {
     /// <p>The name of the container that you want to start access logging on.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container that you want to start access logging on.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl StartAccessLoggingInputBuilder {
     /// Consumes the builder and constructs a [`StartAccessLoggingInput`](crate::operation::start_access_logging::StartAccessLoggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_access_logging::StartAccessLoggingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_access_logging::StartAccessLoggingInput {
-                container_name: self.container_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_access_logging::StartAccessLoggingInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_access_logging::StartAccessLoggingInput {
+            container_name: self.container_name,
+        })
     }
 }

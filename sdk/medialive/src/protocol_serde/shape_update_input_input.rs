@@ -21,10 +21,7 @@ pub fn ser_update_input_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_input_device_request::ser_input_device_request(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_input_device_request::ser_input_device_request(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -63,10 +60,7 @@ pub fn ser_update_input_input(
             {
                 #[allow(unused_mut)]
                 let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_input_source_request::ser_input_source_request(
-                    &mut object_21,
-                    item_20,
-                )?;
+                crate::protocol_serde::shape_input_source_request::ser_input_source_request(&mut object_21, item_20)?;
                 object_21.finish();
             }
         }

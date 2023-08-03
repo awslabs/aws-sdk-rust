@@ -51,9 +51,7 @@ impl ByoipCidr {
 
 /// A builder for [`ByoipCidr`](crate::types::ByoipCidr).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ByoipCidrBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ByoipCidrState>,
@@ -100,17 +98,12 @@ impl ByoipCidrBuilder {
         self
     }
     /// <p>A history of status changes for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidrEvent>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidrEvent>>) -> Self {
         self.events = input;
         self
     }
     /// <p>A history of status changes for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ByoipCidrEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ByoipCidrEvent>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`ByoipCidr`](crate::types::ByoipCidr).

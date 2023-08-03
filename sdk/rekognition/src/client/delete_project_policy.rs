@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`policy_revision_id(impl ::std::convert::Into<String>)`](crate::operation::delete_project_policy::builders::DeleteProjectPolicyFluentBuilder::policy_revision_id) / [`set_policy_revision_id(Option<String>)`](crate::operation::delete_project_policy::builders::DeleteProjectPolicyFluentBuilder::set_policy_revision_id): <p>The ID of the project policy revision that you want to delete.</p>
     /// - On success, responds with [`DeleteProjectPolicyOutput`](crate::operation::delete_project_policy::DeleteProjectPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteProjectPolicyError>`](crate::operation::delete_project_policy::DeleteProjectPolicyError)
-    pub fn delete_project_policy(
-        &self,
-    ) -> crate::operation::delete_project_policy::builders::DeleteProjectPolicyFluentBuilder {
-        crate::operation::delete_project_policy::builders::DeleteProjectPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_project_policy(&self) -> crate::operation::delete_project_policy::builders::DeleteProjectPolicyFluentBuilder {
+        crate::operation::delete_project_policy::builders::DeleteProjectPolicyFluentBuilder::new(self.handle.clone())
     }
 }

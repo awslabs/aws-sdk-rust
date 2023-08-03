@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateAccountSettingsOutput {
 }
 impl UpdateAccountSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountSettingsOutput`](crate::operation::update_account_settings::UpdateAccountSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_account_settings::builders::UpdateAccountSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_account_settings::builders::UpdateAccountSettingsOutputBuilder {
         crate::operation::update_account_settings::builders::UpdateAccountSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccountSettingsOutput`](crate::operation::update_account_settings::UpdateAccountSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccountSettingsOutputBuilder {
     pub(crate) account_settings: ::std::option::Option<crate::types::AccountSettings>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateAccountSettingsOutputBuilder {
         self
     }
     /// <p>A structure that displays the status of the optional features in the account.</p>
-    pub fn set_account_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountSettings>,
-    ) -> Self {
+    pub fn set_account_settings(mut self, input: ::std::option::Option<crate::types::AccountSettings>) -> Self {
         self.account_settings = input;
         self
     }

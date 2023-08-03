@@ -15,12 +15,7 @@ pub struct ListDeploymentTargetsInput {
     /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub target_filters: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::TargetFilterName,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub target_filters: ::std::option::Option<::std::collections::HashMap<crate::types::TargetFilterName, ::std::vec::Vec<::std::string::String>>>,
 }
 impl ListDeploymentTargetsInput {
     /// <p> The unique ID of a deployment. </p>
@@ -38,53 +33,34 @@ impl ListDeploymentTargetsInput {
     /// </ul>
     pub fn target_filters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::TargetFilterName,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TargetFilterName, ::std::vec::Vec<::std::string::String>>> {
         self.target_filters.as_ref()
     }
 }
 impl ListDeploymentTargetsInput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentTargetsInput`](crate::operation::list_deployment_targets::ListDeploymentTargetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_deployment_targets::builders::ListDeploymentTargetsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_deployment_targets::builders::ListDeploymentTargetsInputBuilder {
         crate::operation::list_deployment_targets::builders::ListDeploymentTargetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeploymentTargetsInput`](crate::operation::list_deployment_targets::ListDeploymentTargetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentTargetsInputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) target_filters: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::TargetFilterName,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    >,
+    pub(crate) target_filters:
+        ::std::option::Option<::std::collections::HashMap<crate::types::TargetFilterName, ::std::vec::Vec<::std::string::String>>>,
 }
 impl ListDeploymentTargetsInputBuilder {
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -115,11 +91,7 @@ impl ListDeploymentTargetsInputBuilder {
     /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
     /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
     /// </ul>
-    pub fn target_filters(
-        mut self,
-        k: crate::types::TargetFilterName,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn target_filters(mut self, k: crate::types::TargetFilterName, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.target_filters.unwrap_or_default();
         hash_map.insert(k, v);
         self.target_filters = ::std::option::Option::Some(hash_map);
@@ -132,12 +104,7 @@ impl ListDeploymentTargetsInputBuilder {
     /// </ul>
     pub fn set_target_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::TargetFilterName,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::TargetFilterName, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.target_filters = input;
         self
@@ -149,27 +116,18 @@ impl ListDeploymentTargetsInputBuilder {
     /// </ul>
     pub fn get_target_filters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::TargetFilterName,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TargetFilterName, ::std::vec::Vec<::std::string::String>>> {
         &self.target_filters
     }
     /// Consumes the builder and constructs a [`ListDeploymentTargetsInput`](crate::operation::list_deployment_targets::ListDeploymentTargetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_deployment_targets::ListDeploymentTargetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_deployment_targets::ListDeploymentTargetsInput {
-                deployment_id: self.deployment_id,
-                next_token: self.next_token,
-                target_filters: self.target_filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_deployment_targets::ListDeploymentTargetsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_deployment_targets::ListDeploymentTargetsInput {
+            deployment_id: self.deployment_id,
+            next_token: self.next_token,
+            target_filters: self.target_filters,
+        })
     }
 }

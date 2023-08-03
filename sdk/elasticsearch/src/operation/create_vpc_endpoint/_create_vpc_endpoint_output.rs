@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateVpcEndpointOutput {
 }
 impl CreateVpcEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpcEndpointOutput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointOutputBuilder {
         crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcEndpointOutput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointOutputBuilder {
     pub(crate) vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl CreateVpcEndpointOutputBuilder {
         self
     }
     /// <p>Information about the newly created VPC endpoint.</p>
-    pub fn set_vpc_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcEndpoint>,
-    ) -> Self {
+    pub fn set_vpc_endpoint(mut self, input: ::std::option::Option<crate::types::VpcEndpoint>) -> Self {
         self.vpc_endpoint = input;
         self
     }

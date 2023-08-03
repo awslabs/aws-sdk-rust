@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AdminGetDeviceOutput`](crate::operation::admin_get_device::AdminGetDeviceOutput) with field(s):
     ///   - [`device(Option<DeviceType>)`](crate::operation::admin_get_device::AdminGetDeviceOutput::device): <p>The device.</p>
     /// - On failure, responds with [`SdkError<AdminGetDeviceError>`](crate::operation::admin_get_device::AdminGetDeviceError)
-    pub fn admin_get_device(
-        &self,
-    ) -> crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder {
-        crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn admin_get_device(&self) -> crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder {
+        crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder::new(self.handle.clone())
     }
 }

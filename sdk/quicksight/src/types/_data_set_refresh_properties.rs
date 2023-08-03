@@ -10,9 +10,7 @@ pub struct DataSetRefreshProperties {
 }
 impl DataSetRefreshProperties {
     /// <p>The refresh configuration for a dataset.</p>
-    pub fn refresh_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RefreshConfiguration> {
+    pub fn refresh_configuration(&self) -> ::std::option::Option<&crate::types::RefreshConfiguration> {
         self.refresh_configuration.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl DataSetRefreshProperties {
 
 /// A builder for [`DataSetRefreshProperties`](crate::types::DataSetRefreshProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSetRefreshPropertiesBuilder {
     pub(crate) refresh_configuration: ::std::option::Option<crate::types::RefreshConfiguration>,
 }
@@ -38,17 +34,12 @@ impl DataSetRefreshPropertiesBuilder {
         self
     }
     /// <p>The refresh configuration for a dataset.</p>
-    pub fn set_refresh_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RefreshConfiguration>,
-    ) -> Self {
+    pub fn set_refresh_configuration(mut self, input: ::std::option::Option<crate::types::RefreshConfiguration>) -> Self {
         self.refresh_configuration = input;
         self
     }
     /// <p>The refresh configuration for a dataset.</p>
-    pub fn get_refresh_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RefreshConfiguration> {
+    pub fn get_refresh_configuration(&self) -> &::std::option::Option<crate::types::RefreshConfiguration> {
         &self.refresh_configuration
     }
     /// Consumes the builder and constructs a [`DataSetRefreshProperties`](crate::types::DataSetRefreshProperties).

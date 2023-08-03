@@ -37,10 +37,7 @@ impl DescribeLoggingStatusFluentBuilder {
         }
     }
     /// Access the DescribeLoggingStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_logging_status::builders::DescribeLoggingStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_logging_status::builders::DescribeLoggingStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeLoggingStatusFluentBuilder {
             crate::operation::describe_logging_status::DescribeLoggingStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_logging_status::DescribeLoggingStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_logging_status::DescribeLoggingStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeLoggingStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeLoggingStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_logging_status::DescribeLoggingStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_logging_status::DescribeLoggingStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_logging_status::DescribeLoggingStatusError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeLoggingStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_logging_status::DescribeLoggingStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_logging_status::DescribeLoggingStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_logging_status::DescribeLoggingStatusError>,
     > {
         self.send_middleware().await
     }
@@ -117,27 +105,19 @@ impl DescribeLoggingStatusFluentBuilder {
             crate::operation::describe_logging_status::DescribeLoggingStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_logging_status::DescribeLoggingStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_logging_status::DescribeLoggingStatusError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the cluster from which to get the logging status.</p>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The identifier of the cluster from which to get the logging status.</p>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }

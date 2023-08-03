@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`lex_region(impl ::std::convert::Into<String>)`](crate::operation::disassociate_lex_bot::builders::DisassociateLexBotFluentBuilder::lex_region) / [`set_lex_region(Option<String>)`](crate::operation::disassociate_lex_bot::builders::DisassociateLexBotFluentBuilder::set_lex_region): <p>The Amazon Web Services Region in which the Amazon Lex bot has been created.</p>
     /// - On success, responds with [`DisassociateLexBotOutput`](crate::operation::disassociate_lex_bot::DisassociateLexBotOutput)
     /// - On failure, responds with [`SdkError<DisassociateLexBotError>`](crate::operation::disassociate_lex_bot::DisassociateLexBotError)
-    pub fn disassociate_lex_bot(
-        &self,
-    ) -> crate::operation::disassociate_lex_bot::builders::DisassociateLexBotFluentBuilder {
-        crate::operation::disassociate_lex_bot::builders::DisassociateLexBotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_lex_bot(&self) -> crate::operation::disassociate_lex_bot::builders::DisassociateLexBotFluentBuilder {
+        crate::operation::disassociate_lex_bot::builders::DisassociateLexBotFluentBuilder::new(self.handle.clone())
     }
 }

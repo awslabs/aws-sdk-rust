@@ -30,16 +30,14 @@ impl DecreaseStreamRetentionPeriodInput {
 }
 impl DecreaseStreamRetentionPeriodInput {
     /// Creates a new builder-style object to manufacture [`DecreaseStreamRetentionPeriodInput`](crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodInput).
-    pub fn builder() -> crate::operation::decrease_stream_retention_period::builders::DecreaseStreamRetentionPeriodInputBuilder{
+    pub fn builder() -> crate::operation::decrease_stream_retention_period::builders::DecreaseStreamRetentionPeriodInputBuilder {
         crate::operation::decrease_stream_retention_period::builders::DecreaseStreamRetentionPeriodInputBuilder::default()
     }
 }
 
 /// A builder for [`DecreaseStreamRetentionPeriodInput`](crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecreaseStreamRetentionPeriodInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) retention_period_hours: ::std::option::Option<i32>,
@@ -95,15 +93,10 @@ impl DecreaseStreamRetentionPeriodInputBuilder {
         crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodInput {
-                stream_name: self.stream_name
-                ,
-                retention_period_hours: self.retention_period_hours
-                ,
-                stream_arn: self.stream_arn
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodInput {
+            stream_name: self.stream_name,
+            retention_period_hours: self.retention_period_hours,
+            stream_arn: self.stream_arn,
+        })
     }
 }

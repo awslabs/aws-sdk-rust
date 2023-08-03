@@ -10,10 +10,7 @@ impl UpdateGatewayInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_gateway::UpdateGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway::UpdateGatewayError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway::UpdateGatewayError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_gateway();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateGatewayFluentBuilder {
         }
     }
     /// Access the UpdateGateway as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_gateway::builders::UpdateGatewayInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_gateway::builders::UpdateGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl UpdateGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -158,18 +150,12 @@ impl UpdateGatewayFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
-    pub fn software_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn software_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.software_version(input.into());
         self
     }
     /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
-    pub fn set_software_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_software_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_software_version(input);
         self
     }

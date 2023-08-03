@@ -36,21 +36,16 @@ impl PutTelemetryRecordsInput {
 }
 impl PutTelemetryRecordsInput {
     /// Creates a new builder-style object to manufacture [`PutTelemetryRecordsInput`](crate::operation::put_telemetry_records::PutTelemetryRecordsInput).
-    pub fn builder(
-    ) -> crate::operation::put_telemetry_records::builders::PutTelemetryRecordsInputBuilder {
-        crate::operation::put_telemetry_records::builders::PutTelemetryRecordsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_telemetry_records::builders::PutTelemetryRecordsInputBuilder {
+        crate::operation::put_telemetry_records::builders::PutTelemetryRecordsInputBuilder::default()
     }
 }
 
 /// A builder for [`PutTelemetryRecordsInput`](crate::operation::put_telemetry_records::PutTelemetryRecordsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutTelemetryRecordsInputBuilder {
-    pub(crate) telemetry_records:
-        ::std::option::Option<::std::vec::Vec<crate::types::TelemetryRecord>>,
+    pub(crate) telemetry_records: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryRecord>>,
     pub(crate) ec2_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -68,32 +63,21 @@ impl PutTelemetryRecordsInputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_telemetry_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryRecord>>,
-    ) -> Self {
+    pub fn set_telemetry_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryRecord>>) -> Self {
         self.telemetry_records = input;
         self
     }
     /// <p></p>
-    pub fn get_telemetry_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TelemetryRecord>> {
+    pub fn get_telemetry_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TelemetryRecord>> {
         &self.telemetry_records
     }
     /// <p></p>
-    pub fn ec2_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_ec2_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_instance_id = input;
         self
     }
@@ -132,17 +116,13 @@ impl PutTelemetryRecordsInputBuilder {
     /// Consumes the builder and constructs a [`PutTelemetryRecordsInput`](crate::operation::put_telemetry_records::PutTelemetryRecordsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_telemetry_records::PutTelemetryRecordsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_telemetry_records::PutTelemetryRecordsInput {
-                telemetry_records: self.telemetry_records,
-                ec2_instance_id: self.ec2_instance_id,
-                hostname: self.hostname,
-                resource_arn: self.resource_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_telemetry_records::PutTelemetryRecordsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_telemetry_records::PutTelemetryRecordsInput {
+            telemetry_records: self.telemetry_records,
+            ec2_instance_id: self.ec2_instance_id,
+            hostname: self.hostname,
+            resource_arn: self.resource_arn,
+        })
     }
 }

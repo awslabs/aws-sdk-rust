@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::disable_vgw_route_propagation::builders::DisableVgwRoutePropagationFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::disable_vgw_route_propagation::builders::DisableVgwRoutePropagationFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`DisableVgwRoutePropagationOutput`](crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationOutput)
     /// - On failure, responds with [`SdkError<DisableVgwRoutePropagationError>`](crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationError)
-    pub fn disable_vgw_route_propagation(&self) -> crate::operation::disable_vgw_route_propagation::builders::DisableVgwRoutePropagationFluentBuilder{
+    pub fn disable_vgw_route_propagation(
+        &self,
+    ) -> crate::operation::disable_vgw_route_propagation::builders::DisableVgwRoutePropagationFluentBuilder {
         crate::operation::disable_vgw_route_propagation::builders::DisableVgwRoutePropagationFluentBuilder::new(self.handle.clone())
     }
 }

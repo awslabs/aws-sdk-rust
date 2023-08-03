@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`product_id(Option<String>)`](crate::operation::describe_algorithm::DescribeAlgorithmOutput::product_id): <p>The product identifier of the algorithm.</p>
     ///   - [`certify_for_marketplace(bool)`](crate::operation::describe_algorithm::DescribeAlgorithmOutput::certify_for_marketplace): <p>Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.</p>
     /// - On failure, responds with [`SdkError<DescribeAlgorithmError>`](crate::operation::describe_algorithm::DescribeAlgorithmError)
-    pub fn describe_algorithm(
-        &self,
-    ) -> crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder {
-        crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_algorithm(&self) -> crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder {
+        crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder::new(self.handle.clone())
     }
 }

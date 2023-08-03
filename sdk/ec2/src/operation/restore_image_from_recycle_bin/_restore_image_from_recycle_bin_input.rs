@@ -22,16 +22,14 @@ impl RestoreImageFromRecycleBinInput {
 }
 impl RestoreImageFromRecycleBinInput {
     /// Creates a new builder-style object to manufacture [`RestoreImageFromRecycleBinInput`](crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinInput).
-    pub fn builder() -> crate::operation::restore_image_from_recycle_bin::builders::RestoreImageFromRecycleBinInputBuilder{
+    pub fn builder() -> crate::operation::restore_image_from_recycle_bin::builders::RestoreImageFromRecycleBinInputBuilder {
         crate::operation::restore_image_from_recycle_bin::builders::RestoreImageFromRecycleBinInputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreImageFromRecycleBinInput`](crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreImageFromRecycleBinInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -72,11 +70,9 @@ impl RestoreImageFromRecycleBinInputBuilder {
         crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinInput {
-                image_id: self.image_id,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinInput {
+            image_id: self.image_id,
+            dry_run: self.dry_run,
+        })
     }
 }

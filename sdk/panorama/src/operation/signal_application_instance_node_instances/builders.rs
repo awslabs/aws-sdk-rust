@@ -5,16 +5,16 @@ pub use crate::operation::signal_application_instance_node_instances::_signal_ap
 
 impl SignalApplicationInstanceNodeInstancesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.signal_application_instance_node_instances();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl SignalApplicationInstanceNodeInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SignalApplicationInstanceNodeInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesInputBuilder,
+    inner: crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesInputBuilder,
 }
 impl SignalApplicationInstanceNodeInstancesFluentBuilder {
     /// Creates a new `SignalApplicationInstanceNodeInstances`.
@@ -37,15 +37,24 @@ impl SignalApplicationInstanceNodeInstancesFluentBuilder {
         }
     }
     /// Access the SignalApplicationInstanceNodeInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstances, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstances,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl SignalApplicationInstanceNodeInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput, ::aws_smithy_http::result::SdkError<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +93,39 @@ impl SignalApplicationInstanceNodeInstancesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput, ::aws_smithy_http::result::SdkError<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstances, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstances,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>An application instance ID.</p>
-    pub fn application_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_instance_id(input.into());
         self
     }
     /// <p>An application instance ID.</p>
-    pub fn set_application_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_instance_id(input);
         self
     }
@@ -124,17 +143,12 @@ impl SignalApplicationInstanceNodeInstancesFluentBuilder {
         self
     }
     /// <p>A list of signals.</p>
-    pub fn set_node_signals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>>,
-    ) -> Self {
+    pub fn set_node_signals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>>) -> Self {
         self.inner = self.inner.set_node_signals(input);
         self
     }
     /// <p>A list of signals.</p>
-    pub fn get_node_signals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>> {
+    pub fn get_node_signals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeSignal>> {
         self.inner.get_node_signals()
     }
 }

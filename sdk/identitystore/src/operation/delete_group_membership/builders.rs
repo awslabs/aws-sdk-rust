@@ -37,10 +37,7 @@ impl DeleteGroupMembershipFluentBuilder {
         }
     }
     /// Access the DeleteGroupMembership as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteGroupMembershipFluentBuilder {
             crate::operation::delete_group_membership::DeleteGroupMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_group_membership::DeleteGroupMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_group_membership::DeleteGroupMembershipError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteGroupMembershipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteGroupMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_group_membership::DeleteGroupMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_group_membership::DeleteGroupMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_group_membership::DeleteGroupMembershipError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteGroupMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_group_membership::DeleteGroupMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_group_membership::DeleteGroupMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_group_membership::DeleteGroupMembershipError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteGroupMembershipFluentBuilder {
             crate::operation::delete_group_membership::DeleteGroupMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_group_membership::DeleteGroupMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_group_membership::DeleteGroupMembershipError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
@@ -144,18 +124,12 @@ impl DeleteGroupMembershipFluentBuilder {
         self.inner.get_identity_store_id()
     }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    pub fn membership_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.membership_id(input.into());
         self
     }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    pub fn set_membership_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_membership_id(input);
         self
     }

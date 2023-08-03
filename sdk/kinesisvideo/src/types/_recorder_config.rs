@@ -30,9 +30,7 @@ impl RecorderConfig {
 
 /// A builder for [`RecorderConfig`](crate::types::RecorderConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecorderConfigBuilder {
     pub(crate) media_source_config: ::std::option::Option<crate::types::MediaSourceConfig>,
     pub(crate) schedule_config: ::std::option::Option<crate::types::ScheduleConfig>,
@@ -44,17 +42,12 @@ impl RecorderConfigBuilder {
         self
     }
     /// <p>The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files streamed to the camera. </p>
-    pub fn set_media_source_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaSourceConfig>,
-    ) -> Self {
+    pub fn set_media_source_config(mut self, input: ::std::option::Option<crate::types::MediaSourceConfig>) -> Self {
         self.media_source_config = input;
         self
     }
     /// <p>The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files streamed to the camera. </p>
-    pub fn get_media_source_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MediaSourceConfig> {
+    pub fn get_media_source_config(&self) -> &::std::option::Option<crate::types::MediaSourceConfig> {
         &self.media_source_config
     }
     /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> attribute is not provided, then the Edge Agent will always be set to recording mode.</p>
@@ -63,10 +56,7 @@ impl RecorderConfigBuilder {
         self
     }
     /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> attribute is not provided, then the Edge Agent will always be set to recording mode.</p>
-    pub fn set_schedule_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleConfig>,
-    ) -> Self {
+    pub fn set_schedule_config(mut self, input: ::std::option::Option<crate::types::ScheduleConfig>) -> Self {
         self.schedule_config = input;
         self
     }

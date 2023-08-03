@@ -92,18 +92,12 @@ pub struct RedshiftDataParametersBuilder {
 }
 impl RedshiftDataParametersBuilder {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
-    pub fn secret_manager_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_manager_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
-    pub fn set_secret_manager_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_manager_arn = input;
         self
     }
@@ -157,18 +151,12 @@ impl RedshiftDataParametersBuilder {
         &self.sql
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
-    pub fn statement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
-    pub fn set_statement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement_name = input;
         self
     }
@@ -202,10 +190,7 @@ impl RedshiftDataParametersBuilder {
         self
     }
     /// A list of SQLs.
-    pub fn set_sqls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sqls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sqls = input;
         self
     }

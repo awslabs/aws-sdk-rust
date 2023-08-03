@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobOutput::job_id): <p>The identifier of the entities detection job to stop.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobOutput::job_status): <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopEntitiesDetectionJob</code> operation.</p>
     /// - On failure, responds with [`SdkError<StopEntitiesDetectionJobError>`](crate::operation::stop_entities_detection_job::StopEntitiesDetectionJobError)
-    pub fn stop_entities_detection_job(&self) -> crate::operation::stop_entities_detection_job::builders::StopEntitiesDetectionJobFluentBuilder{
+    pub fn stop_entities_detection_job(&self) -> crate::operation::stop_entities_detection_job::builders::StopEntitiesDetectionJobFluentBuilder {
         crate::operation::stop_entities_detection_job::builders::StopEntitiesDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

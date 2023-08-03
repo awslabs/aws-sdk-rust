@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`ImportCertificateOutput`](crate::operation::import_certificate::ImportCertificateOutput) with field(s):
     ///   - [`certificate_arn(Option<String>)`](crate::operation::import_certificate::ImportCertificateOutput::certificate_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
     /// - On failure, responds with [`SdkError<ImportCertificateError>`](crate::operation::import_certificate::ImportCertificateError)
-    pub fn import_certificate(
-        &self,
-    ) -> crate::operation::import_certificate::builders::ImportCertificateFluentBuilder {
-        crate::operation::import_certificate::builders::ImportCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_certificate(&self) -> crate::operation::import_certificate::builders::ImportCertificateFluentBuilder {
+        crate::operation::import_certificate::builders::ImportCertificateFluentBuilder::new(self.handle.clone())
     }
 }

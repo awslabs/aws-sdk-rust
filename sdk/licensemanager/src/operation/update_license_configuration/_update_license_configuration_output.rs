@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateLicenseConfigurationOutput {
 }
 impl UpdateLicenseConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLicenseConfigurationOutput`](crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput).
-    pub fn builder() -> crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationOutputBuilder {
         crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLicenseConfigurationOutput`](crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLicenseConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateLicenseConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateLicenseConfigurationOutput`](crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput {
         crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput {
             _request_id: self._request_id,
         }

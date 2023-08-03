@@ -47,18 +47,14 @@ impl ChangeTagsForResourceInput {
 }
 impl ChangeTagsForResourceInput {
     /// Creates a new builder-style object to manufacture [`ChangeTagsForResourceInput`](crate::operation::change_tags_for_resource::ChangeTagsForResourceInput).
-    pub fn builder(
-    ) -> crate::operation::change_tags_for_resource::builders::ChangeTagsForResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::change_tags_for_resource::builders::ChangeTagsForResourceInputBuilder {
         crate::operation::change_tags_for_resource::builders::ChangeTagsForResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`ChangeTagsForResourceInput`](crate::operation::change_tags_for_resource::ChangeTagsForResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeTagsForResourceInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::TagResourceType>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -80,10 +76,7 @@ impl ChangeTagsForResourceInputBuilder {
     /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
     /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TagResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TagResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -123,10 +116,7 @@ impl ChangeTagsForResourceInputBuilder {
     }
     /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
     /// <p>You can add a maximum of 10 tags to a health check or a hosted zone.</p>
-    pub fn set_add_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_add_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.add_tags = input;
         self
     }
@@ -140,43 +130,31 @@ impl ChangeTagsForResourceInputBuilder {
     /// To override the contents of this collection use [`set_remove_tag_keys`](Self::set_remove_tag_keys).
     ///
     /// <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone. You can specify up to 10 keys.</p>
-    pub fn remove_tag_keys(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remove_tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_tag_keys.unwrap_or_default();
         v.push(input.into());
         self.remove_tag_keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone. You can specify up to 10 keys.</p>
-    pub fn set_remove_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.remove_tag_keys = input;
         self
     }
     /// <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone. You can specify up to 10 keys.</p>
-    pub fn get_remove_tag_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_tag_keys
     }
     /// Consumes the builder and constructs a [`ChangeTagsForResourceInput`](crate::operation::change_tags_for_resource::ChangeTagsForResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::change_tags_for_resource::ChangeTagsForResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::change_tags_for_resource::ChangeTagsForResourceInput {
-                resource_type: self.resource_type,
-                resource_id: self.resource_id,
-                add_tags: self.add_tags,
-                remove_tag_keys: self.remove_tag_keys,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::change_tags_for_resource::ChangeTagsForResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::change_tags_for_resource::ChangeTagsForResourceInput {
+            resource_type: self.resource_type,
+            resource_id: self.resource_id,
+            add_tags: self.add_tags,
+            remove_tag_keys: self.remove_tag_keys,
+        })
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeSuggestersOutput`](crate::operation::describe_suggesters::DescribeSuggestersOutput) with field(s):
     ///   - [`suggesters(Option<Vec<SuggesterStatus>>)`](crate::operation::describe_suggesters::DescribeSuggestersOutput::suggesters): <p>The suggesters configured for the domain specified in the request.</p>
     /// - On failure, responds with [`SdkError<DescribeSuggestersError>`](crate::operation::describe_suggesters::DescribeSuggestersError)
-    pub fn describe_suggesters(
-        &self,
-    ) -> crate::operation::describe_suggesters::builders::DescribeSuggestersFluentBuilder {
-        crate::operation::describe_suggesters::builders::DescribeSuggestersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_suggesters(&self) -> crate::operation::describe_suggesters::builders::DescribeSuggestersFluentBuilder {
+        crate::operation::describe_suggesters::builders::DescribeSuggestersFluentBuilder::new(self.handle.clone())
     }
 }

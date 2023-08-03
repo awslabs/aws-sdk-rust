@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RecoveryOptionNameType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for RecoveryOptionNameType {
             "admin_only" => RecoveryOptionNameType::AdminOnly,
             "verified_email" => RecoveryOptionNameType::VerifiedEmail,
             "verified_phone_number" => RecoveryOptionNameType::VerifiedPhoneNumber,
-            other => RecoveryOptionNameType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RecoveryOptionNameType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

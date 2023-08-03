@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`volume_arn(Option<String>)`](crate::operation::attach_volume::AttachVolumeOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume that was attached to the gateway.</p>
     ///   - [`target_arn(Option<String>)`](crate::operation::attach_volume::AttachVolumeOutput::target_arn): <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name for the initiator that was used to connect to the target.</p>
     /// - On failure, responds with [`SdkError<AttachVolumeError>`](crate::operation::attach_volume::AttachVolumeError)
-    pub fn attach_volume(
-        &self,
-    ) -> crate::operation::attach_volume::builders::AttachVolumeFluentBuilder {
-        crate::operation::attach_volume::builders::AttachVolumeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_volume(&self) -> crate::operation::attach_volume::builders::AttachVolumeFluentBuilder {
+        crate::operation::attach_volume::builders::AttachVolumeFluentBuilder::new(self.handle.clone())
     }
 }

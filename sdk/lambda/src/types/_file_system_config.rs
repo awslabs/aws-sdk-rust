@@ -30,9 +30,7 @@ impl FileSystemConfig {
 
 /// A builder for [`FileSystemConfig`](crate::types::FileSystemConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileSystemConfigBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) local_mount_path: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl FileSystemConfigBuilder {
         &self.arn
     }
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
-    pub fn local_mount_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_mount_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_mount_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
-    pub fn set_local_mount_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_mount_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_mount_path = input;
         self
     }

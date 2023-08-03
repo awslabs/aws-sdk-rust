@@ -36,9 +36,7 @@ impl RegisterUsageInput {
 
 /// A builder for [`RegisterUsageInput`](crate::operation::register_usage::RegisterUsageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterUsageInputBuilder {
     pub(crate) product_code: ::std::option::Option<::std::string::String>,
     pub(crate) public_key_version: ::std::option::Option<i32>,
@@ -90,10 +88,7 @@ impl RegisterUsageInputBuilder {
     /// Consumes the builder and constructs a [`RegisterUsageInput`](crate::operation::register_usage::RegisterUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_usage::RegisterUsageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::register_usage::RegisterUsageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_usage::RegisterUsageInput {
             product_code: self.product_code,
             public_key_version: self.public_key_version,

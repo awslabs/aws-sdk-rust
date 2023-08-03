@@ -23,9 +23,7 @@ impl Remediation {
 
 /// A builder for [`Remediation`](crate::types::Remediation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemediationBuilder {
     pub(crate) recommendation: ::std::option::Option<crate::types::Recommendation>,
 }
@@ -36,10 +34,7 @@ impl RemediationBuilder {
         self
     }
     /// <p>A recommendation on the steps to take to remediate the issue identified by a finding.</p>
-    pub fn set_recommendation(
-        mut self,
-        input: ::std::option::Option<crate::types::Recommendation>,
-    ) -> Self {
+    pub fn set_recommendation(mut self, input: ::std::option::Option<crate::types::Recommendation>) -> Self {
         self.recommendation = input;
         self
     }

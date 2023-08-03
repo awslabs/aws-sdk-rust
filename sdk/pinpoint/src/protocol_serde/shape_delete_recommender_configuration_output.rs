@@ -5,7 +5,10 @@ pub(crate) fn de_recommender_configuration_response_payload(
     ::std::option::Option<crate::types::RecommenderConfigurationResponse>,
     crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_recommender_configuration_response::de_recommender_configuration_response_payload(body).map_err(crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_recommender_configuration_response::de_recommender_configuration_response_payload(body)
+                .map_err(crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError::unhandled)
+        })
+        .transpose()
 }

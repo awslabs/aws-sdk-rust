@@ -65,8 +65,7 @@ pub struct Snapshot {
     pub encrypted_with_hsm: bool,
     /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
     #[doc(hidden)]
-    pub accounts_with_restore_access:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountWithRestoreAccess>>,
+    pub accounts_with_restore_access: ::std::option::Option<::std::vec::Vec<crate::types::AccountWithRestoreAccess>>,
     /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.</p>
     #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
@@ -195,9 +194,7 @@ impl Snapshot {
         self.encrypted_with_hsm
     }
     /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
-    pub fn accounts_with_restore_access(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AccountWithRestoreAccess]> {
+    pub fn accounts_with_restore_access(&self) -> ::std::option::Option<&[crate::types::AccountWithRestoreAccess]> {
         self.accounts_with_restore_access.as_deref()
     }
     /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.</p>
@@ -260,9 +257,7 @@ impl Snapshot {
         self.manual_snapshot_remaining_days
     }
     /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
-    pub fn snapshot_retention_start_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn snapshot_retention_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.snapshot_retention_start_time.as_ref()
     }
 }
@@ -275,9 +270,7 @@ impl Snapshot {
 
 /// A builder for [`Snapshot`](crate::types::Snapshot).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotBuilder {
     pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -297,8 +290,7 @@ pub struct SnapshotBuilder {
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) encrypted_with_hsm: ::std::option::Option<bool>,
-    pub(crate) accounts_with_restore_access:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccountWithRestoreAccess>>,
+    pub(crate) accounts_with_restore_access: ::std::option::Option<::std::vec::Vec<crate::types::AccountWithRestoreAccess>>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) total_backup_size_in_mega_bytes: ::std::option::Option<f64>,
     pub(crate) actual_incremental_backup_size_in_mega_bytes: ::std::option::Option<f64>,
@@ -317,18 +309,12 @@ pub struct SnapshotBuilder {
 }
 impl SnapshotBuilder {
     /// <p>The snapshot identifier that is provided in the request.</p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The snapshot identifier that is provided in the request.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_identifier = input;
         self
     }
@@ -337,18 +323,12 @@ impl SnapshotBuilder {
         &self.snapshot_identifier
     }
     /// <p>The identifier of the cluster for which the snapshot was taken.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster for which the snapshot was taken.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -362,10 +342,7 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this exact time.</p>
-    pub fn set_snapshot_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_snapshot_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.snapshot_create_time = input;
         self
     }
@@ -417,18 +394,12 @@ impl SnapshotBuilder {
         &self.port
     }
     /// <p>The Availability Zone in which the cluster was created.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone in which the cluster was created.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -442,10 +413,7 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The time (UTC) when the cluster was originally created.</p>
-    pub fn set_cluster_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_cluster_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.cluster_create_time = input;
         self
     }
@@ -454,18 +422,12 @@ impl SnapshotBuilder {
         &self.cluster_create_time
     }
     /// <p>The admin user name for the cluster.</p>
-    pub fn master_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The admin user name for the cluster.</p>
-    pub fn set_master_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_username = input;
         self
     }
@@ -474,18 +436,12 @@ impl SnapshotBuilder {
         &self.master_username
     }
     /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
-    pub fn cluster_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
-    pub fn set_cluster_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_version = input;
         self
     }
@@ -494,18 +450,12 @@ impl SnapshotBuilder {
         &self.cluster_version
     }
     /// <p>The cluster version of the cluster used to create the snapshot. For example, 1.0.15503. </p>
-    pub fn engine_full_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_full_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_full_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster version of the cluster used to create the snapshot. For example, 1.0.15503. </p>
-    pub fn set_engine_full_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_full_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_full_version = input;
         self
     }
@@ -514,18 +464,12 @@ impl SnapshotBuilder {
         &self.engine_full_version
     }
     /// <p>The snapshot type. Snapshots created using <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> are of type "manual". </p>
-    pub fn snapshot_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The snapshot type. Snapshots created using <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> are of type "manual". </p>
-    pub fn set_snapshot_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_type = input;
         self
     }
@@ -636,42 +580,28 @@ impl SnapshotBuilder {
     /// To override the contents of this collection use [`set_accounts_with_restore_access`](Self::set_accounts_with_restore_access).
     ///
     /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
-    pub fn accounts_with_restore_access(
-        mut self,
-        input: crate::types::AccountWithRestoreAccess,
-    ) -> Self {
+    pub fn accounts_with_restore_access(mut self, input: crate::types::AccountWithRestoreAccess) -> Self {
         let mut v = self.accounts_with_restore_access.unwrap_or_default();
         v.push(input);
         self.accounts_with_restore_access = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
-    pub fn set_accounts_with_restore_access(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountWithRestoreAccess>>,
-    ) -> Self {
+    pub fn set_accounts_with_restore_access(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountWithRestoreAccess>>) -> Self {
         self.accounts_with_restore_access = input;
         self
     }
     /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
-    pub fn get_accounts_with_restore_access(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountWithRestoreAccess>> {
+    pub fn get_accounts_with_restore_access(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountWithRestoreAccess>> {
         &self.accounts_with_restore_access
     }
     /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -685,10 +615,7 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The size of the complete set of backup data that would be used to restore the cluster.</p>
-    pub fn set_total_backup_size_in_mega_bytes(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_total_backup_size_in_mega_bytes(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total_backup_size_in_mega_bytes = input;
         self
     }
@@ -702,10 +629,7 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The size of the incremental backup.</p>
-    pub fn set_actual_incremental_backup_size_in_mega_bytes(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_actual_incremental_backup_size_in_mega_bytes(mut self, input: ::std::option::Option<f64>) -> Self {
         self.actual_incremental_backup_size_in_mega_bytes = input;
         self
     }
@@ -733,10 +657,7 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The number of megabytes per second being transferred to the snapshot backup. Returns <code>0</code> for a completed backup. </p>
-    pub fn set_current_backup_rate_in_mega_bytes_per_second(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_current_backup_rate_in_mega_bytes_per_second(mut self, input: ::std::option::Option<f64>) -> Self {
         self.current_backup_rate_in_mega_bytes_per_second = input;
         self
     }
@@ -750,10 +671,7 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The estimate of the time remaining before the snapshot backup will complete. Returns <code>0</code> for a completed backup. </p>
-    pub fn set_estimated_seconds_to_completion(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_estimated_seconds_to_completion(mut self, input: ::std::option::Option<i64>) -> Self {
         self.estimated_seconds_to_completion = input;
         self
     }
@@ -776,18 +694,12 @@ impl SnapshotBuilder {
         &self.elapsed_time_in_seconds
     }
     /// <p>The source region from which the snapshot was copied.</p>
-    pub fn source_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source region from which the snapshot was copied.</p>
-    pub fn set_source_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_region = input;
         self
     }
@@ -807,10 +719,7 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The list of tags for the cluster snapshot.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -823,27 +732,19 @@ impl SnapshotBuilder {
     /// To override the contents of this collection use [`set_restorable_node_types`](Self::set_restorable_node_types).
     ///
     /// <p>The list of node types that this cluster snapshot is able to restore into.</p>
-    pub fn restorable_node_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn restorable_node_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.restorable_node_types.unwrap_or_default();
         v.push(input.into());
         self.restorable_node_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of node types that this cluster snapshot is able to restore into.</p>
-    pub fn set_restorable_node_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_restorable_node_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.restorable_node_types = input;
         self
     }
     /// <p>The list of node types that this cluster snapshot is able to restore into.</p>
-    pub fn get_restorable_node_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_restorable_node_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.restorable_node_types
     }
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
@@ -867,18 +768,12 @@ impl SnapshotBuilder {
         &self.enhanced_vpc_routing
     }
     /// <p>The name of the maintenance track for the snapshot.</p>
-    pub fn maintenance_track_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maintenance_track_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_track_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the maintenance track for the snapshot.</p>
-    pub fn set_maintenance_track_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maintenance_track_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_track_name = input;
         self
     }
@@ -894,10 +789,7 @@ impl SnapshotBuilder {
     }
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    pub fn set_manual_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.manual_snapshot_retention_period = input;
         self
     }
@@ -926,17 +818,12 @@ impl SnapshotBuilder {
         self
     }
     /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
-    pub fn set_snapshot_retention_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_snapshot_retention_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.snapshot_retention_start_time = input;
         self
     }
     /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
-    pub fn get_snapshot_retention_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_snapshot_retention_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.snapshot_retention_start_time
     }
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).
@@ -962,19 +849,11 @@ impl SnapshotBuilder {
             encrypted_with_hsm: self.encrypted_with_hsm.unwrap_or_default(),
             accounts_with_restore_access: self.accounts_with_restore_access,
             owner_account: self.owner_account,
-            total_backup_size_in_mega_bytes: self
-                .total_backup_size_in_mega_bytes
-                .unwrap_or_default(),
-            actual_incremental_backup_size_in_mega_bytes: self
-                .actual_incremental_backup_size_in_mega_bytes
-                .unwrap_or_default(),
+            total_backup_size_in_mega_bytes: self.total_backup_size_in_mega_bytes.unwrap_or_default(),
+            actual_incremental_backup_size_in_mega_bytes: self.actual_incremental_backup_size_in_mega_bytes.unwrap_or_default(),
             backup_progress_in_mega_bytes: self.backup_progress_in_mega_bytes.unwrap_or_default(),
-            current_backup_rate_in_mega_bytes_per_second: self
-                .current_backup_rate_in_mega_bytes_per_second
-                .unwrap_or_default(),
-            estimated_seconds_to_completion: self
-                .estimated_seconds_to_completion
-                .unwrap_or_default(),
+            current_backup_rate_in_mega_bytes_per_second: self.current_backup_rate_in_mega_bytes_per_second.unwrap_or_default(),
+            estimated_seconds_to_completion: self.estimated_seconds_to_completion.unwrap_or_default(),
             elapsed_time_in_seconds: self.elapsed_time_in_seconds.unwrap_or_default(),
             source_region: self.source_region,
             tags: self.tags,

@@ -36,18 +36,14 @@ impl UpdateRateBasedRuleInput {
 }
 impl UpdateRateBasedRuleInput {
     /// Creates a new builder-style object to manufacture [`UpdateRateBasedRuleInput`](crate::operation::update_rate_based_rule::UpdateRateBasedRuleInput).
-    pub fn builder(
-    ) -> crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleInputBuilder {
-        crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleInputBuilder {
+        crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRateBasedRuleInput`](crate::operation::update_rate_based_rule::UpdateRateBasedRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRateBasedRuleInputBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -95,10 +91,7 @@ impl UpdateRateBasedRuleInputBuilder {
         self
     }
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>RateBasedRule</code>. </p>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>) -> Self {
         self.updates = input;
         self
     }
@@ -123,17 +116,13 @@ impl UpdateRateBasedRuleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRateBasedRuleInput`](crate::operation::update_rate_based_rule::UpdateRateBasedRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_rate_based_rule::UpdateRateBasedRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_rate_based_rule::UpdateRateBasedRuleInput {
-                rule_id: self.rule_id,
-                change_token: self.change_token,
-                updates: self.updates,
-                rate_limit: self.rate_limit.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_rate_based_rule::UpdateRateBasedRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_rate_based_rule::UpdateRateBasedRuleInput {
+            rule_id: self.rule_id,
+            change_token: self.change_token,
+            updates: self.updates,
+            rate_limit: self.rate_limit.unwrap_or_default(),
+        })
     }
 }

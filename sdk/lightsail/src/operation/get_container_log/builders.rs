@@ -10,10 +10,7 @@ impl GetContainerLogInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_container_log::GetContainerLogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_log::GetContainerLogError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_log::GetContainerLogError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_container_log();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl GetContainerLogFluentBuilder {
         }
     }
     /// Access the GetContainerLog as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_container_log::builders::GetContainerLogInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_container_log::builders::GetContainerLogInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl GetContainerLogFluentBuilder {
             crate::operation::get_container_log::GetContainerLog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_log::GetContainerLogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_log::GetContainerLogError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl GetContainerLogFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl GetContainerLogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_container_log::GetContainerLogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_log::GetContainerLogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_log::GetContainerLogError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl GetContainerLogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_container_log::GetContainerLogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_log::GetContainerLogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_log::GetContainerLogError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl GetContainerLogFluentBuilder {
             crate::operation::get_container_log::GetContainerLog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_container_log::GetContainerLogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_container_log::GetContainerLogError>,
     > {
         self.customize_middleware().await
     }
@@ -140,18 +124,12 @@ impl GetContainerLogFluentBuilder {
         self.inner.get_service_name()
     }
     /// <p>The name of the container that is either running or previously ran on the container service for which to return a log.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_name(input.into());
         self
     }
     /// <p>The name of the container that is either running or previously ran on the container service for which to return a log.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_name(input);
         self
     }
@@ -177,10 +155,7 @@ impl GetContainerLogFluentBuilder {
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -212,10 +187,7 @@ impl GetContainerLogFluentBuilder {
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -238,10 +210,7 @@ impl GetContainerLogFluentBuilder {
     /// <li> <p>To return log events that contain both the <code>ERROR</code> and <code>Exception</code> terms, specify a filter pattern of <code>"ERROR Exception"</code>.</p> </li>
     /// <li> <p>To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code> term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.</p> </li>
     /// </ul>
-    pub fn filter_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_pattern(input.into());
         self
     }
@@ -254,10 +223,7 @@ impl GetContainerLogFluentBuilder {
     /// <li> <p>To return log events that contain both the <code>ERROR</code> and <code>Exception</code> terms, specify a filter pattern of <code>"ERROR Exception"</code>.</p> </li>
     /// <li> <p>To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code> term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.</p> </li>
     /// </ul>
-    pub fn set_filter_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_pattern(input);
         self
     }

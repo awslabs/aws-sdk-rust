@@ -59,9 +59,7 @@ impl InterruptionFilter {
 
 /// A builder for [`InterruptionFilter`](crate::types::InterruptionFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InterruptionFilterBuilder {
     pub(crate) threshold: ::std::option::Option<i64>,
     pub(crate) participant_role: ::std::option::Option<crate::types::ParticipantRole>,
@@ -90,10 +88,7 @@ impl InterruptionFilterBuilder {
         self
     }
     /// <p>Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
-    pub fn set_participant_role(
-        mut self,
-        input: ::std::option::Option<crate::types::ParticipantRole>,
-    ) -> Self {
+    pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::ParticipantRole>) -> Self {
         self.participant_role = input;
         self
     }
@@ -107,17 +102,12 @@ impl InterruptionFilterBuilder {
         self
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for an interruption. See for more detail.</p>
-    pub fn set_absolute_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::AbsoluteTimeRange>,
-    ) -> Self {
+    pub fn set_absolute_time_range(mut self, input: ::std::option::Option<crate::types::AbsoluteTimeRange>) -> Self {
         self.absolute_time_range = input;
         self
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for an interruption. See for more detail.</p>
-    pub fn get_absolute_time_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::AbsoluteTimeRange> {
+    pub fn get_absolute_time_range(&self) -> &::std::option::Option<crate::types::AbsoluteTimeRange> {
         &self.absolute_time_range
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
@@ -126,17 +116,12 @@ impl InterruptionFilterBuilder {
         self
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
-    pub fn set_relative_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::RelativeTimeRange>,
-    ) -> Self {
+    pub fn set_relative_time_range(mut self, input: ::std::option::Option<crate::types::RelativeTimeRange>) -> Self {
         self.relative_time_range = input;
         self
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
-    pub fn get_relative_time_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelativeTimeRange> {
+    pub fn get_relative_time_range(&self) -> &::std::option::Option<crate::types::RelativeTimeRange> {
         &self.relative_time_range
     }
     /// <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to flag speech that contains interruptions.</p>

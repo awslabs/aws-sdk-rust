@@ -37,9 +37,7 @@ impl SuggestInput {
 
 /// A builder for [`SuggestInput`](crate::operation::suggest::SuggestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuggestInputBuilder {
     pub(crate) query: ::std::option::Option<::std::string::String>,
     pub(crate) suggester: ::std::option::Option<::std::string::String>,
@@ -89,12 +87,7 @@ impl SuggestInputBuilder {
         &self.size
     }
     /// Consumes the builder and constructs a [`SuggestInput`](crate::operation::suggest::SuggestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::suggest::SuggestInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::suggest::SuggestInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::suggest::SuggestInput {
             query: self.query,
             suggester: self.suggester,

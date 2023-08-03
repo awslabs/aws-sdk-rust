@@ -26,7 +26,7 @@ impl DescribeReservedCacheNodesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReservedCacheNodesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_reserved_cache_nodes::builders::DescribeReservedCacheNodesInputBuilder,
+    inner: crate::operation::describe_reserved_cache_nodes::builders::DescribeReservedCacheNodesInputBuilder,
 }
 impl DescribeReservedCacheNodesFluentBuilder {
     /// Creates a new `DescribeReservedCacheNodes`.
@@ -37,7 +37,7 @@ impl DescribeReservedCacheNodesFluentBuilder {
         }
     }
     /// Access the DescribeReservedCacheNodes as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_reserved_cache_nodes::builders::DescribeReservedCacheNodesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_reserved_cache_nodes::builders::DescribeReservedCacheNodesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeReservedCacheNodesFluentBuilder {
             crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeReservedCacheNodesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeReservedCacheNodesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeReservedCacheNodesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl DescribeReservedCacheNodesFluentBuilder {
             crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_cache_nodes::paginator::DescribeReservedCacheNodesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_reserved_cache_nodes::paginator::DescribeReservedCacheNodesPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_reserved_cache_nodes::paginator::DescribeReservedCacheNodesPaginator {
         crate::operation::describe_reserved_cache_nodes::paginator::DescribeReservedCacheNodesPaginator::new(self.handle, self.inner)
     }
     /// <p>The reserved cache node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.</p>
-    pub fn reserved_cache_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_cache_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_cache_node_id(input.into());
         self
     }
     /// <p>The reserved cache node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.</p>
-    pub fn set_reserved_cache_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_cache_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_cache_node_id(input);
         self
     }
@@ -147,25 +130,17 @@ impl DescribeReservedCacheNodesFluentBuilder {
         self.inner.get_reserved_cache_node_id()
     }
     /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
-    pub fn reserved_cache_nodes_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_cache_nodes_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_cache_nodes_offering_id(input.into());
         self
     }
     /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
-    pub fn set_reserved_cache_nodes_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_cache_nodes_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_cache_nodes_offering_id(input);
         self
     }
     /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
-    pub fn get_reserved_cache_nodes_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reserved_cache_nodes_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_reserved_cache_nodes_offering_id()
     }
     /// <p>The cache node type filter value. Use this parameter to show only those reservations matching the specified cache node type.</p>
@@ -197,10 +172,7 @@ impl DescribeReservedCacheNodesFluentBuilder {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    pub fn cache_node_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_node_type(input.into());
         self
     }
@@ -233,10 +205,7 @@ impl DescribeReservedCacheNodesFluentBuilder {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    pub fn set_cache_node_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_node_type(input);
         self
     }
@@ -290,18 +259,12 @@ impl DescribeReservedCacheNodesFluentBuilder {
         self.inner.get_duration()
     }
     /// <p>The product description filter value. Use this parameter to show only those reservations matching the specified product description.</p>
-    pub fn product_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_description(input.into());
         self
     }
     /// <p>The product description filter value. Use this parameter to show only those reservations matching the specified product description.</p>
-    pub fn set_product_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_product_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product_description(input);
         self
     }
@@ -311,19 +274,13 @@ impl DescribeReservedCacheNodesFluentBuilder {
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"|"All Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
-    pub fn offering_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.offering_type(input.into());
         self
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"|"All Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_offering_type(input);
         self
     }

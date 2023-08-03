@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeSavingsPlansOfferingsOutput {
 }
 impl DescribeSavingsPlansOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansOfferingsOutput`](crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsOutput).
-    pub fn builder() -> crate::operation::describe_savings_plans_offerings::builders::DescribeSavingsPlansOfferingsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_savings_plans_offerings::builders::DescribeSavingsPlansOfferingsOutputBuilder {
         crate::operation::describe_savings_plans_offerings::builders::DescribeSavingsPlansOfferingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSavingsPlansOfferingsOutput`](crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSavingsPlansOfferingsOutputBuilder {
-    pub(crate) search_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOffering>>,
+    pub(crate) search_results: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOffering>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeSavingsPlansOfferingsOutputBuilder {
         self
     }
     /// <p>Information about the Savings Plans offerings.</p>
-    pub fn set_search_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOffering>>,
-    ) -> Self {
+    pub fn set_search_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOffering>>) -> Self {
         self.search_results = input;
         self
     }
     /// <p>Information about the Savings Plans offerings.</p>
-    pub fn get_search_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOffering>> {
+    pub fn get_search_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOffering>> {
         &self.search_results
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -94,10 +86,7 @@ impl DescribeSavingsPlansOfferingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSavingsPlansOfferingsOutput`](crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsOutput {
         crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsOutput {
             search_results: self.search_results,
             next_token: self.next_token,

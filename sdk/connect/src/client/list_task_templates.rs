@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`task_templates(Option<Vec<TaskTemplateMetadata>>)`](crate::operation::list_task_templates::ListTaskTemplatesOutput::task_templates): <p>Provides details about a list of task templates belonging to an instance.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_task_templates::ListTaskTemplatesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p> <important>   <p>This is always returned as a null in the response.</p>  </important>
     /// - On failure, responds with [`SdkError<ListTaskTemplatesError>`](crate::operation::list_task_templates::ListTaskTemplatesError)
-    pub fn list_task_templates(
-        &self,
-    ) -> crate::operation::list_task_templates::builders::ListTaskTemplatesFluentBuilder {
-        crate::operation::list_task_templates::builders::ListTaskTemplatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_task_templates(&self) -> crate::operation::list_task_templates::builders::ListTaskTemplatesFluentBuilder {
+        crate::operation::list_task_templates::builders::ListTaskTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

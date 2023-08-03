@@ -37,9 +37,7 @@ impl ComplianceByResource {
 
 /// A builder for [`ComplianceByResource`](crate::types::ComplianceByResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComplianceByResourceBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct ComplianceByResourceBuilder {
 }
 impl ComplianceByResourceBuilder {
     /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -86,10 +78,7 @@ impl ComplianceByResourceBuilder {
         self
     }
     /// <p>Indicates whether the Amazon Web Services resource complies with all of the Config rules that evaluated it.</p>
-    pub fn set_compliance(
-        mut self,
-        input: ::std::option::Option<crate::types::Compliance>,
-    ) -> Self {
+    pub fn set_compliance(mut self, input: ::std::option::Option<crate::types::Compliance>) -> Self {
         self.compliance = input;
         self
     }

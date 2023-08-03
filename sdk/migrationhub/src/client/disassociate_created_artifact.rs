@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::disassociate_created_artifact::builders::DisassociateCreatedArtifactFluentBuilder::dry_run) / [`set_dry_run(bool)`](crate::operation::disassociate_created_artifact::builders::DisassociateCreatedArtifactFluentBuilder::set_dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     /// - On success, responds with [`DisassociateCreatedArtifactOutput`](crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactOutput)
     /// - On failure, responds with [`SdkError<DisassociateCreatedArtifactError>`](crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactError)
-    pub fn disassociate_created_artifact(&self) -> crate::operation::disassociate_created_artifact::builders::DisassociateCreatedArtifactFluentBuilder{
+    pub fn disassociate_created_artifact(
+        &self,
+    ) -> crate::operation::disassociate_created_artifact::builders::DisassociateCreatedArtifactFluentBuilder {
         crate::operation::disassociate_created_artifact::builders::DisassociateCreatedArtifactFluentBuilder::new(self.handle.clone())
     }
 }

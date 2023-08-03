@@ -30,9 +30,7 @@ impl GetChunkOutput {
         self.checksum.as_deref()
     }
     /// Checksum algorithm
-    pub fn checksum_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataChecksumAlgorithm> {
+    pub fn checksum_algorithm(&self) -> ::std::option::Option<&crate::types::DataChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
 }
@@ -65,10 +63,7 @@ impl GetChunkOutputBuilder {
         self
     }
     /// Chunk data
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.data = input;
         self
     }
@@ -110,17 +105,12 @@ impl GetChunkOutputBuilder {
         self
     }
     /// Checksum algorithm
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::DataChecksumAlgorithm>) -> Self {
         self.checksum_algorithm = input;
         self
     }
     /// Checksum algorithm
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
         &self.checksum_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`BatchDeleteDelegationByAssessmentOutput`](crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentOutput) with field(s):
     ///   - [`errors(Option<Vec<BatchDeleteDelegationByAssessmentError>>)`](crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentOutput::errors): <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
     /// - On failure, responds with [`SdkError<BatchDeleteDelegationByAssessmentError>`](crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError)
-    pub fn batch_delete_delegation_by_assessment(&self) -> crate::operation::batch_delete_delegation_by_assessment::builders::BatchDeleteDelegationByAssessmentFluentBuilder{
+    pub fn batch_delete_delegation_by_assessment(
+        &self,
+    ) -> crate::operation::batch_delete_delegation_by_assessment::builders::BatchDeleteDelegationByAssessmentFluentBuilder {
         crate::operation::batch_delete_delegation_by_assessment::builders::BatchDeleteDelegationByAssessmentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -36,9 +36,7 @@ impl RemoveTagsInput {
 
 /// A builder for [`RemoveTagsInput`](crate::operation::remove_tags::RemoveTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -79,10 +77,7 @@ impl RemoveTagsInputBuilder {
         self
     }
     /// <p>Specifies a list of tags to be removed.</p>
-    pub fn set_tags_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags_list = input;
         self
     }
@@ -91,12 +86,7 @@ impl RemoveTagsInputBuilder {
         &self.tags_list
     }
     /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::operation::remove_tags::RemoveTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_tags::RemoveTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags::RemoveTagsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_tags::RemoveTagsInput {
             resource_id: self.resource_id,
             tags_list: self.tags_list,

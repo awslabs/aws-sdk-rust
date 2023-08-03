@@ -122,17 +122,14 @@ impl UpdateImageVersionInput {
 }
 impl UpdateImageVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateImageVersionInput`](crate::operation::update_image_version::UpdateImageVersionInput).
-    pub fn builder(
-    ) -> crate::operation::update_image_version::builders::UpdateImageVersionInputBuilder {
+    pub fn builder() -> crate::operation::update_image_version::builders::UpdateImageVersionInputBuilder {
         crate::operation::update_image_version::builders::UpdateImageVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateImageVersionInput`](crate::operation::update_image_version::UpdateImageVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateImageVersionInputBuilder {
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
@@ -195,27 +192,19 @@ impl UpdateImageVersionInputBuilder {
     /// To override the contents of this collection use [`set_aliases_to_add`](Self::set_aliases_to_add).
     ///
     /// <p>A list of aliases to add.</p>
-    pub fn aliases_to_add(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aliases_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aliases_to_add.unwrap_or_default();
         v.push(input.into());
         self.aliases_to_add = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of aliases to add.</p>
-    pub fn set_aliases_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_aliases_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.aliases_to_add = input;
         self
     }
     /// <p>A list of aliases to add.</p>
-    pub fn get_aliases_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aliases_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.aliases_to_add
     }
     /// Appends an item to `aliases_to_delete`.
@@ -223,27 +212,19 @@ impl UpdateImageVersionInputBuilder {
     /// To override the contents of this collection use [`set_aliases_to_delete`](Self::set_aliases_to_delete).
     ///
     /// <p>A list of aliases to delete.</p>
-    pub fn aliases_to_delete(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aliases_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aliases_to_delete.unwrap_or_default();
         v.push(input.into());
         self.aliases_to_delete = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of aliases to delete.</p>
-    pub fn set_aliases_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_aliases_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.aliases_to_delete = input;
         self
     }
     /// <p>A list of aliases to delete.</p>
-    pub fn get_aliases_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aliases_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.aliases_to_delete
     }
     /// <p>The availability of the image version specified by the maintainer.</p>
@@ -264,10 +245,7 @@ impl UpdateImageVersionInputBuilder {
     /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
     /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
     /// </ul>
-    pub fn set_vendor_guidance(
-        mut self,
-        input: ::std::option::Option<crate::types::VendorGuidance>,
-    ) -> Self {
+    pub fn set_vendor_guidance(mut self, input: ::std::option::Option<crate::types::VendorGuidance>) -> Self {
         self.vendor_guidance = input;
         self
     }
@@ -325,18 +303,12 @@ impl UpdateImageVersionInputBuilder {
         &self.ml_framework
     }
     /// <p>The supported programming language and its version.</p>
-    pub fn programming_lang(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn programming_lang(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.programming_lang = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The supported programming language and its version.</p>
-    pub fn set_programming_lang(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_programming_lang(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.programming_lang = input;
         self
     }
@@ -385,18 +357,12 @@ impl UpdateImageVersionInputBuilder {
         &self.horovod
     }
     /// <p>The maintainer description of the image version.</p>
-    pub fn release_notes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_notes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maintainer description of the image version.</p>
-    pub fn set_release_notes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_notes = input;
         self
     }
@@ -407,25 +373,20 @@ impl UpdateImageVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateImageVersionInput`](crate::operation::update_image_version::UpdateImageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_image_version::UpdateImageVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_image_version::UpdateImageVersionInput {
-                image_name: self.image_name,
-                alias: self.alias,
-                version: self.version,
-                aliases_to_add: self.aliases_to_add,
-                aliases_to_delete: self.aliases_to_delete,
-                vendor_guidance: self.vendor_guidance,
-                job_type: self.job_type,
-                ml_framework: self.ml_framework,
-                programming_lang: self.programming_lang,
-                processor: self.processor,
-                horovod: self.horovod,
-                release_notes: self.release_notes,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_image_version::UpdateImageVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_image_version::UpdateImageVersionInput {
+            image_name: self.image_name,
+            alias: self.alias,
+            version: self.version,
+            aliases_to_add: self.aliases_to_add,
+            aliases_to_delete: self.aliases_to_delete,
+            vendor_guidance: self.vendor_guidance,
+            job_type: self.job_type,
+            ml_framework: self.ml_framework,
+            programming_lang: self.programming_lang,
+            processor: self.processor,
+            horovod: self.horovod,
+            release_notes: self.release_notes,
+        })
     }
 }

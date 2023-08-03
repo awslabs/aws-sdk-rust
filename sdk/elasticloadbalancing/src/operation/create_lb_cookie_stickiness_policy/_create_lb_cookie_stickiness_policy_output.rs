@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for CreateLbCookieStickinessPolicyOutput 
 }
 impl CreateLbCookieStickinessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateLbCookieStickinessPolicyOutput`](crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput).
-    pub fn builder() -> crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLbCookieStickinessPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLbCookieStickinessPolicyOutputBuilder {
         crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLbCookieStickinessPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLbCookieStickinessPolicyOutput`](crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLbCookieStickinessPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,10 +35,7 @@ impl CreateLbCookieStickinessPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLbCookieStickinessPolicyOutput`](crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput
-    {
+    pub fn build(self) -> crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput {
         crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput {
             _request_id: self._request_id,
         }

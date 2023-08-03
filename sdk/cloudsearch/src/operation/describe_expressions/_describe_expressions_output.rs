@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeExpressionsOutput {
 }
 impl DescribeExpressionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExpressionsOutput`](crate::operation::describe_expressions::DescribeExpressionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_expressions::builders::DescribeExpressionsOutputBuilder {
-        crate::operation::describe_expressions::builders::DescribeExpressionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_expressions::builders::DescribeExpressionsOutputBuilder {
+        crate::operation::describe_expressions::builders::DescribeExpressionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExpressionsOutput`](crate::operation::describe_expressions::DescribeExpressionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExpressionsOutputBuilder {
     pub(crate) expressions: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionStatus>>,
     _request_id: Option<String>,
@@ -51,17 +47,12 @@ impl DescribeExpressionsOutputBuilder {
         self
     }
     /// <p>The expressions configured for the domain.</p>
-    pub fn set_expressions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionStatus>>,
-    ) -> Self {
+    pub fn set_expressions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionStatus>>) -> Self {
         self.expressions = input;
         self
     }
     /// <p>The expressions configured for the domain.</p>
-    pub fn get_expressions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpressionStatus>> {
+    pub fn get_expressions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpressionStatus>> {
         &self.expressions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

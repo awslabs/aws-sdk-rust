@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`web_token(Option<String>)`](crate::operation::create_web_login_token::CreateWebLoginTokenOutput::web_token): <p>An Airflow web server login token.</p>
     ///   - [`web_server_hostname(Option<String>)`](crate::operation::create_web_login_token::CreateWebLoginTokenOutput::web_server_hostname): <p>The Airflow web server hostname for the environment.</p>
     /// - On failure, responds with [`SdkError<CreateWebLoginTokenError>`](crate::operation::create_web_login_token::CreateWebLoginTokenError)
-    pub fn create_web_login_token(
-        &self,
-    ) -> crate::operation::create_web_login_token::builders::CreateWebLoginTokenFluentBuilder {
-        crate::operation::create_web_login_token::builders::CreateWebLoginTokenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_web_login_token(&self) -> crate::operation::create_web_login_token::builders::CreateWebLoginTokenFluentBuilder {
+        crate::operation::create_web_login_token::builders::CreateWebLoginTokenFluentBuilder::new(self.handle.clone())
     }
 }

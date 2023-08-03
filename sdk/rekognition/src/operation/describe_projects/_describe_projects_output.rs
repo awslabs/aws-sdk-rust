@@ -5,8 +5,7 @@
 pub struct DescribeProjectsOutput {
     /// <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
     #[doc(hidden)]
-    pub project_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProjectDescription>>,
+    pub project_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectDescription>>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeProjectsOutput {
 }
 impl DescribeProjectsOutput {
     /// <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
-    pub fn project_descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProjectDescription]> {
+    pub fn project_descriptions(&self) -> ::std::option::Option<&[crate::types::ProjectDescription]> {
         self.project_descriptions.as_deref()
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeProjectsOutput {
 }
 impl DescribeProjectsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectsOutput`](crate::operation::describe_projects::DescribeProjectsOutput).
-    pub fn builder() -> crate::operation::describe_projects::builders::DescribeProjectsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_projects::builders::DescribeProjectsOutputBuilder {
         crate::operation::describe_projects::builders::DescribeProjectsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProjectsOutput`](crate::operation::describe_projects::DescribeProjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProjectsOutputBuilder {
-    pub(crate) project_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProjectDescription>>,
+    pub(crate) project_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl DescribeProjectsOutputBuilder {
         self
     }
     /// <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
-    pub fn set_project_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectDescription>>,
-    ) -> Self {
+    pub fn set_project_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectDescription>>) -> Self {
         self.project_descriptions = input;
         self
     }
     /// <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
-    pub fn get_project_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectDescription>> {
+    pub fn get_project_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectDescription>> {
         &self.project_descriptions
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>

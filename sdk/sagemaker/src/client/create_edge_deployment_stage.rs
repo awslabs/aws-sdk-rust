@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`stages(Vec<DeploymentStage>)`](crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageFluentBuilder::stages) / [`set_stages(Option<Vec<DeploymentStage>>)`](crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageFluentBuilder::set_stages): <p>List of stages to be added to the edge deployment plan.</p>
     /// - On success, responds with [`CreateEdgeDeploymentStageOutput`](crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageOutput)
     /// - On failure, responds with [`SdkError<CreateEdgeDeploymentStageError>`](crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageError)
-    pub fn create_edge_deployment_stage(&self) -> crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageFluentBuilder{
+    pub fn create_edge_deployment_stage(&self) -> crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageFluentBuilder {
         crate::operation::create_edge_deployment_stage::builders::CreateEdgeDeploymentStageFluentBuilder::new(self.handle.clone())
     }
 }

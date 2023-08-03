@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for TagSamlProviderOutput {
 }
 impl TagSamlProviderOutput {
     /// Creates a new builder-style object to manufacture [`TagSamlProviderOutput`](crate::operation::tag_saml_provider::TagSamlProviderOutput).
-    pub fn builder() -> crate::operation::tag_saml_provider::builders::TagSamlProviderOutputBuilder
-    {
+    pub fn builder() -> crate::operation::tag_saml_provider::builders::TagSamlProviderOutputBuilder {
         crate::operation::tag_saml_provider::builders::TagSamlProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`TagSamlProviderOutput`](crate::operation::tag_saml_provider::TagSamlProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagSamlProviderOutputBuilder {
     _request_id: Option<String>,
 }

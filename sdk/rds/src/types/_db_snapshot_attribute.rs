@@ -35,9 +35,7 @@ impl DbSnapshotAttribute {
 
 /// A builder for [`DbSnapshotAttribute`](crate::types::DbSnapshotAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbSnapshotAttributeBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -45,19 +43,13 @@ pub struct DbSnapshotAttributeBuilder {
 impl DbSnapshotAttributeBuilder {
     /// <p>The name of the manual DB snapshot attribute.</p>
     /// <p>The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that have permission to copy or restore the manual DB cluster snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the manual DB snapshot attribute.</p>
     /// <p>The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that have permission to copy or restore the manual DB cluster snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }
@@ -72,10 +64,7 @@ impl DbSnapshotAttributeBuilder {
     ///
     /// <p>The value or values for the manual DB snapshot attribute.</p>
     /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual DB snapshot. If a value of <code>all</code> is in the list, then the manual DB snapshot is public and available for any Amazon Web Services account to copy or restore.</p>
-    pub fn attribute_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attribute_values.unwrap_or_default();
         v.push(input.into());
         self.attribute_values = ::std::option::Option::Some(v);
@@ -83,18 +72,13 @@ impl DbSnapshotAttributeBuilder {
     }
     /// <p>The value or values for the manual DB snapshot attribute.</p>
     /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual DB snapshot. If a value of <code>all</code> is in the list, then the manual DB snapshot is public and available for any Amazon Web Services account to copy or restore.</p>
-    pub fn set_attribute_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_attribute_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.attribute_values = input;
         self
     }
     /// <p>The value or values for the manual DB snapshot attribute.</p>
     /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual DB snapshot. If a value of <code>all</code> is in the list, then the manual DB snapshot is public and available for any Amazon Web Services account to copy or restore.</p>
-    pub fn get_attribute_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attribute_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.attribute_values
     }
     /// Consumes the builder and constructs a [`DbSnapshotAttribute`](crate::types::DbSnapshotAttribute).

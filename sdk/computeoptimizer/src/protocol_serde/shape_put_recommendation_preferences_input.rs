@@ -13,9 +13,7 @@ pub fn ser_put_recommendation_preferences_input(
         object_3.finish();
     }
     if let Some(var_4) = &input.enhanced_infrastructure_metrics {
-        object
-            .key("enhancedInfrastructureMetrics")
-            .string(var_4.as_str());
+        object.key("enhancedInfrastructureMetrics").string(var_4.as_str());
     }
     if let Some(var_5) = &input.inferred_workload_types {
         object.key("inferredWorkloadTypes").string(var_5.as_str());
@@ -23,10 +21,7 @@ pub fn ser_put_recommendation_preferences_input(
     if let Some(var_6) = &input.external_metrics_preference {
         #[allow(unused_mut)]
         let mut object_7 = object.key("externalMetricsPreference").start_object();
-        crate::protocol_serde::shape_external_metrics_preference::ser_external_metrics_preference(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_external_metrics_preference::ser_external_metrics_preference(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())

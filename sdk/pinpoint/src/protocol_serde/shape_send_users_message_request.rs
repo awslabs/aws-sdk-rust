@@ -22,10 +22,7 @@ pub fn ser_send_users_message_request(
     if let Some(var_7) = &input.template_configuration {
         #[allow(unused_mut)]
         let mut object_8 = object.key("TemplateConfiguration").start_object();
-        crate::protocol_serde::shape_template_configuration::ser_template_configuration(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_template_configuration::ser_template_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.trace_id {

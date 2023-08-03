@@ -30,18 +30,14 @@ impl GetPackageVersionHistoryInput {
 }
 impl GetPackageVersionHistoryInput {
     /// Creates a new builder-style object to manufacture [`GetPackageVersionHistoryInput`](crate::operation::get_package_version_history::GetPackageVersionHistoryInput).
-    pub fn builder(
-    ) -> crate::operation::get_package_version_history::builders::GetPackageVersionHistoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_package_version_history::builders::GetPackageVersionHistoryInputBuilder {
         crate::operation::get_package_version_history::builders::GetPackageVersionHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPackageVersionHistoryInput`](crate::operation::get_package_version_history::GetPackageVersionHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPackageVersionHistoryInputBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -97,12 +93,10 @@ impl GetPackageVersionHistoryInputBuilder {
         crate::operation::get_package_version_history::GetPackageVersionHistoryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_package_version_history::GetPackageVersionHistoryInput {
-                package_id: self.package_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_package_version_history::GetPackageVersionHistoryInput {
+            package_id: self.package_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

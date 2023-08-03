@@ -5,16 +5,16 @@ pub use crate::operation::put_provisioned_concurrency_config::_put_provisioned_c
 
 impl PutProvisionedConcurrencyConfigInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_provisioned_concurrency_config();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl PutProvisionedConcurrencyConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutProvisionedConcurrencyConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_provisioned_concurrency_config::builders::PutProvisionedConcurrencyConfigInputBuilder,
+    inner: crate::operation::put_provisioned_concurrency_config::builders::PutProvisionedConcurrencyConfigInputBuilder,
 }
 impl PutProvisionedConcurrencyConfigFluentBuilder {
     /// Creates a new `PutProvisionedConcurrencyConfig`.
@@ -37,15 +37,20 @@ impl PutProvisionedConcurrencyConfigFluentBuilder {
         }
     }
     /// Access the PutProvisionedConcurrencyConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_provisioned_concurrency_config::builders::PutProvisionedConcurrencyConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_provisioned_concurrency_config::builders::PutProvisionedConcurrencyConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfig,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl PutProvisionedConcurrencyConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl PutProvisionedConcurrencyConfigFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfig,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the Lambda function.</p>
@@ -102,10 +117,7 @@ impl PutProvisionedConcurrencyConfigFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -117,10 +129,7 @@ impl PutProvisionedConcurrencyConfigFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }
@@ -155,10 +164,7 @@ impl PutProvisionedConcurrencyConfigFluentBuilder {
         self
     }
     /// <p>The amount of provisioned concurrency to allocate for the version or alias.</p>
-    pub fn set_provisioned_concurrent_executions(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_provisioned_concurrent_executions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_provisioned_concurrent_executions(input);
         self
     }

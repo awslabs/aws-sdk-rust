@@ -36,16 +36,14 @@ impl ListAccountAssignmentCreationStatusInput {
 }
 impl ListAccountAssignmentCreationStatusInput {
     /// Creates a new builder-style object to manufacture [`ListAccountAssignmentCreationStatusInput`](crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusInput).
-    pub fn builder() -> crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusInputBuilder{
+    pub fn builder() -> crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusInputBuilder {
         crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountAssignmentCreationStatusInput`](crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountAssignmentCreationStatusInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -101,10 +99,7 @@ impl ListAccountAssignmentCreationStatusInputBuilder {
         self
     }
     /// <p>Filters results based on the passed attribute value.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationStatusFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::OperationStatusFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -113,18 +108,19 @@ impl ListAccountAssignmentCreationStatusInputBuilder {
         &self.filter
     }
     /// Consumes the builder and constructs a [`ListAccountAssignmentCreationStatusInput`](crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusInput {
-                instance_arn: self.instance_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                filter: self.filter
-                ,
-            }
+                instance_arn: self.instance_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                filter: self.filter,
+            },
         )
     }
 }

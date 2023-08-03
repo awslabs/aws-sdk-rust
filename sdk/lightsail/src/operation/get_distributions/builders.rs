@@ -10,10 +10,7 @@ impl GetDistributionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_distributions::GetDistributionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_distributions::GetDistributionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distributions::GetDistributionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_distributions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetDistributionsFluentBuilder {
         }
     }
     /// Access the GetDistributions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_distributions::builders::GetDistributionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_distributions::builders::GetDistributionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetDistributionsFluentBuilder {
             crate::operation::get_distributions::GetDistributions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_distributions::GetDistributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distributions::GetDistributionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetDistributionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetDistributionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_distributions::GetDistributionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_distributions::GetDistributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distributions::GetDistributionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetDistributionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_distributions::GetDistributionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_distributions::GetDistributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distributions::GetDistributionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +102,19 @@ impl GetDistributionsFluentBuilder {
             crate::operation::get_distributions::GetDistributions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_distributions::GetDistributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distributions::GetDistributionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the distribution for which to return information.</p>
     /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
-    pub fn distribution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_name(input.into());
         self
     }
     /// <p>The name of the distribution for which to return information.</p>
     /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_name(input);
         self
     }

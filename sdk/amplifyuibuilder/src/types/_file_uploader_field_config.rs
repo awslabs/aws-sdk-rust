@@ -60,9 +60,7 @@ impl FileUploaderFieldConfig {
 
 /// A builder for [`FileUploaderFieldConfig`](crate::types::FileUploaderFieldConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileUploaderFieldConfigBuilder {
     pub(crate) access_level: ::std::option::Option<crate::types::StorageAccessLevel>,
     pub(crate) accepted_file_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -78,10 +76,7 @@ impl FileUploaderFieldConfigBuilder {
         self
     }
     /// <p>The access level to assign to the uploaded files in the Amazon S3 bucket where they are stored. The valid values for this property are <code>private</code>, <code>protected</code>, or <code>public</code>. For detailed information about the permissions associated with each access level, see <a href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File access levels</a> in the <i>Amplify documentation</i>.</p>
-    pub fn set_access_level(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageAccessLevel>,
-    ) -> Self {
+    pub fn set_access_level(mut self, input: ::std::option::Option<crate::types::StorageAccessLevel>) -> Self {
         self.access_level = input;
         self
     }
@@ -94,27 +89,19 @@ impl FileUploaderFieldConfigBuilder {
     /// To override the contents of this collection use [`set_accepted_file_types`](Self::set_accepted_file_types).
     ///
     /// <p>The file types that are allowed to be uploaded by the file uploader. Provide this information in an array of strings specifying the valid file extensions.</p>
-    pub fn accepted_file_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accepted_file_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accepted_file_types.unwrap_or_default();
         v.push(input.into());
         self.accepted_file_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The file types that are allowed to be uploaded by the file uploader. Provide this information in an array of strings specifying the valid file extensions.</p>
-    pub fn set_accepted_file_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_accepted_file_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.accepted_file_types = input;
         self
     }
     /// <p>The file types that are allowed to be uploaded by the file uploader. Provide this information in an array of strings specifying the valid file extensions.</p>
-    pub fn get_accepted_file_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_accepted_file_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.accepted_file_types
     }
     /// <p>Specifies whether to display or hide the image preview after selecting a file for upload. The default value is <code>true</code> to display the image preview.</p>

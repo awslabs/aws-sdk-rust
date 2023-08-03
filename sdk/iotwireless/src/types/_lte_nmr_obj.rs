@@ -51,9 +51,7 @@ impl LteNmrObj {
 
 /// A builder for [`LteNmrObj`](crate::types::LteNmrObj).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LteNmrObjBuilder {
     pub(crate) pci: ::std::option::Option<i32>,
     pub(crate) earfcn: ::std::option::Option<i32>,

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetCampaignVersionOutput`](crate::operation::get_campaign_version::GetCampaignVersionOutput) with field(s):
     ///   - [`campaign_response(Option<CampaignResponse>)`](crate::operation::get_campaign_version::GetCampaignVersionOutput::campaign_response): <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     /// - On failure, responds with [`SdkError<GetCampaignVersionError>`](crate::operation::get_campaign_version::GetCampaignVersionError)
-    pub fn get_campaign_version(
-        &self,
-    ) -> crate::operation::get_campaign_version::builders::GetCampaignVersionFluentBuilder {
-        crate::operation::get_campaign_version::builders::GetCampaignVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_campaign_version(&self) -> crate::operation::get_campaign_version::builders::GetCampaignVersionFluentBuilder {
+        crate::operation::get_campaign_version::builders::GetCampaignVersionFluentBuilder::new(self.handle.clone())
     }
 }

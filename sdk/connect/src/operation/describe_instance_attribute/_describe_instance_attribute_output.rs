@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeInstanceAttributeOutput {
 }
 impl DescribeInstanceAttributeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceAttributeOutput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput).
-    pub fn builder() -> crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeOutputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeOutputBuilder {
         crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceAttributeOutput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceAttributeOutputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::Attribute>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl DescribeInstanceAttributeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeInstanceAttributeOutput`](crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput {
+    pub fn build(self) -> crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput {
         crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput {
             attribute: self.attribute,
             _request_id: self._request_id,

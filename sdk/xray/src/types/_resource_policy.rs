@@ -44,9 +44,7 @@ impl ResourcePolicy {
 
 /// A builder for [`ResourcePolicy`](crate::types::ResourcePolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourcePolicyBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl ResourcePolicyBuilder {
         &self.policy_name
     }
     /// <p>The resource policy document, which can be up to 5kb in size.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource policy document, which can be up to 5kb in size.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -89,18 +81,12 @@ impl ResourcePolicyBuilder {
         &self.policy_document
     }
     /// <p>Returns the current policy revision id for this policy name.</p>
-    pub fn policy_revision_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_revision_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the current policy revision id for this policy name.</p>
-    pub fn set_policy_revision_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_revision_id = input;
         self
     }
@@ -114,10 +100,7 @@ impl ResourcePolicyBuilder {
         self
     }
     /// <p>When the policy was last updated, in Unix time seconds.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }

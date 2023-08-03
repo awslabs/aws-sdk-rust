@@ -37,9 +37,7 @@ impl ListFileSharesInput {
 
 /// A builder for [`ListFileSharesInput`](crate::operation::list_file_shares::ListFileSharesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFileSharesInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -91,10 +89,7 @@ impl ListFileSharesInputBuilder {
     /// Consumes the builder and constructs a [`ListFileSharesInput`](crate::operation::list_file_shares::ListFileSharesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_file_shares::ListFileSharesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_file_shares::ListFileSharesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_file_shares::ListFileSharesInput {
             gateway_arn: self.gateway_arn,
             limit: self.limit,

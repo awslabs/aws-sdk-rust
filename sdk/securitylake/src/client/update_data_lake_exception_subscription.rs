@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`exception_time_to_live(i64)`](crate::operation::update_data_lake_exception_subscription::builders::UpdateDataLakeExceptionSubscriptionFluentBuilder::exception_time_to_live) / [`set_exception_time_to_live(Option<i64>)`](crate::operation::update_data_lake_exception_subscription::builders::UpdateDataLakeExceptionSubscriptionFluentBuilder::set_exception_time_to_live): <p>The time-to-live (TTL) for the exception message to remain.</p>
     /// - On success, responds with [`UpdateDataLakeExceptionSubscriptionOutput`](crate::operation::update_data_lake_exception_subscription::UpdateDataLakeExceptionSubscriptionOutput)
     /// - On failure, responds with [`SdkError<UpdateDataLakeExceptionSubscriptionError>`](crate::operation::update_data_lake_exception_subscription::UpdateDataLakeExceptionSubscriptionError)
-    pub fn update_data_lake_exception_subscription(&self) -> crate::operation::update_data_lake_exception_subscription::builders::UpdateDataLakeExceptionSubscriptionFluentBuilder{
-        crate::operation::update_data_lake_exception_subscription::builders::UpdateDataLakeExceptionSubscriptionFluentBuilder::new(self.handle.clone())
+    pub fn update_data_lake_exception_subscription(
+        &self,
+    ) -> crate::operation::update_data_lake_exception_subscription::builders::UpdateDataLakeExceptionSubscriptionFluentBuilder {
+        crate::operation::update_data_lake_exception_subscription::builders::UpdateDataLakeExceptionSubscriptionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

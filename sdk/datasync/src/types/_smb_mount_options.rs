@@ -43,9 +43,7 @@ impl SmbMountOptions {
 
 /// A builder for [`SmbMountOptions`](crate::types::SmbMountOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SmbMountOptionsBuilder {
     pub(crate) version: ::std::option::Option<crate::types::SmbVersion>,
 }
@@ -96,8 +94,6 @@ impl SmbMountOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`SmbMountOptions`](crate::types::SmbMountOptions).
     pub fn build(self) -> crate::types::SmbMountOptions {
-        crate::types::SmbMountOptions {
-            version: self.version,
-        }
+        crate::types::SmbMountOptions { version: self.version }
     }
 }

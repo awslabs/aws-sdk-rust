@@ -33,9 +33,7 @@ pub fn ser_stream_configuration_create(
     if input.max_stopped_session_length_in_minutes != 0 {
         object.key("maxStoppedSessionLengthInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt(
-                (input.max_stopped_session_length_in_minutes).into(),
-            ),
+            ::aws_smithy_types::Number::NegInt((input.max_stopped_session_length_in_minutes).into()),
         );
     }
     if let Some(var_9) = &input.session_storage {
@@ -56,16 +54,11 @@ pub fn ser_stream_configuration_create(
     if let Some(var_14) = &input.volume_configuration {
         #[allow(unused_mut)]
         let mut object_15 = object.key("volumeConfiguration").start_object();
-        crate::protocol_serde::shape_volume_configuration::ser_volume_configuration(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_volume_configuration::ser_volume_configuration(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.automatic_termination_mode {
-        object
-            .key("automaticTerminationMode")
-            .string(var_16.as_str());
+        object.key("automaticTerminationMode").string(var_16.as_str());
     }
     Ok(())
 }

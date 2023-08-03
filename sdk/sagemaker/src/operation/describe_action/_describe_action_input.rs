@@ -22,9 +22,7 @@ impl DescribeActionInput {
 
 /// A builder for [`DescribeActionInput`](crate::operation::describe_action::DescribeActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeActionInputBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DescribeActionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeActionInput`](crate::operation::describe_action::DescribeActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_action::DescribeActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_action::DescribeActionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_action::DescribeActionInput {
             action_name: self.action_name,
         })

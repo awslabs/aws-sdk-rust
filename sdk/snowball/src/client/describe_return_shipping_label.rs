@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`expiration_date(Option<DateTime>)`](crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelOutput::expiration_date): <p>The expiration date of the current return shipping label.</p>
     ///   - [`return_shipping_label_uri(Option<String>)`](crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelOutput::return_shipping_label_uri): <p>The pre-signed Amazon S3 URI used to download the return shipping label.</p>
     /// - On failure, responds with [`SdkError<DescribeReturnShippingLabelError>`](crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError)
-    pub fn describe_return_shipping_label(&self) -> crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelFluentBuilder{
+    pub fn describe_return_shipping_label(
+        &self,
+    ) -> crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelFluentBuilder {
         crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelFluentBuilder::new(self.handle.clone())
     }
 }

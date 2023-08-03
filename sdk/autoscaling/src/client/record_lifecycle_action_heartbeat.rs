@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatFluentBuilder::set_instance_id): <p>The ID of the instance.</p>
     /// - On success, responds with [`RecordLifecycleActionHeartbeatOutput`](crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatOutput)
     /// - On failure, responds with [`SdkError<RecordLifecycleActionHeartbeatError>`](crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatError)
-    pub fn record_lifecycle_action_heartbeat(&self) -> crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatFluentBuilder{
+    pub fn record_lifecycle_action_heartbeat(
+        &self,
+    ) -> crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatFluentBuilder {
         crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatFluentBuilder::new(self.handle.clone())
     }
 }

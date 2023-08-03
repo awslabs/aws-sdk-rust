@@ -39,13 +39,7 @@
 /// Optional. Choose a specific entropy encoding mode only when you want to override XAVC recommendations. If you choose the value auto, MediaConvert uses the mode that the XAVC file format specifies given this output's operating point.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum XavcEntropyEncoding {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for XavcEntropyEncoding {
             "AUTO" => XavcEntropyEncoding::Auto,
             "CABAC" => XavcEntropyEncoding::Cabac,
             "CAVLC" => XavcEntropyEncoding::Cavlc,
-            other => XavcEntropyEncoding::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => XavcEntropyEncoding::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

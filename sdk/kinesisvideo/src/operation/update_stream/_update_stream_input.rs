@@ -58,9 +58,7 @@ impl UpdateStreamInput {
 
 /// A builder for [`UpdateStreamInput`](crate::operation::update_stream::UpdateStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStreamInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
@@ -101,18 +99,12 @@ impl UpdateStreamInputBuilder {
         &self.stream_arn
     }
     /// <p>The version of the stream whose metadata you want to update.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the stream whose metadata you want to update.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }
@@ -158,12 +150,7 @@ impl UpdateStreamInputBuilder {
         &self.media_type
     }
     /// Consumes the builder and constructs a [`UpdateStreamInput`](crate::operation::update_stream::UpdateStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_stream::UpdateStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_stream::UpdateStreamInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stream::UpdateStreamInput {
             stream_name: self.stream_name,
             stream_arn: self.stream_arn,

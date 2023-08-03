@@ -5,15 +5,12 @@
 pub struct DescribeKeyPhrasesDetectionJobOutput {
     /// <p>An object that contains the properties associated with a key phrases detection job. </p>
     #[doc(hidden)]
-    pub key_phrases_detection_job_properties:
-        ::std::option::Option<crate::types::KeyPhrasesDetectionJobProperties>,
+    pub key_phrases_detection_job_properties: ::std::option::Option<crate::types::KeyPhrasesDetectionJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeKeyPhrasesDetectionJobOutput {
     /// <p>An object that contains the properties associated with a key phrases detection job. </p>
-    pub fn key_phrases_detection_job_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KeyPhrasesDetectionJobProperties> {
+    pub fn key_phrases_detection_job_properties(&self) -> ::std::option::Option<&crate::types::KeyPhrasesDetectionJobProperties> {
         self.key_phrases_detection_job_properties.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeKeyPhrasesDetectionJobOutput 
 }
 impl DescribeKeyPhrasesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeKeyPhrasesDetectionJobOutput`](crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput).
-    pub fn builder() -> crate::operation::describe_key_phrases_detection_job::builders::DescribeKeyPhrasesDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_key_phrases_detection_job::builders::DescribeKeyPhrasesDetectionJobOutputBuilder {
         crate::operation::describe_key_phrases_detection_job::builders::DescribeKeyPhrasesDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeKeyPhrasesDetectionJobOutput`](crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeKeyPhrasesDetectionJobOutputBuilder {
-    pub(crate) key_phrases_detection_job_properties:
-        ::std::option::Option<crate::types::KeyPhrasesDetectionJobProperties>,
+    pub(crate) key_phrases_detection_job_properties: ::std::option::Option<crate::types::KeyPhrasesDetectionJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeKeyPhrasesDetectionJobOutputBuilder {
     /// <p>An object that contains the properties associated with a key phrases detection job. </p>
-    pub fn key_phrases_detection_job_properties(
-        mut self,
-        input: crate::types::KeyPhrasesDetectionJobProperties,
-    ) -> Self {
+    pub fn key_phrases_detection_job_properties(mut self, input: crate::types::KeyPhrasesDetectionJobProperties) -> Self {
         self.key_phrases_detection_job_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the properties associated with a key phrases detection job. </p>
-    pub fn set_key_phrases_detection_job_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyPhrasesDetectionJobProperties>,
-    ) -> Self {
+    pub fn set_key_phrases_detection_job_properties(mut self, input: ::std::option::Option<crate::types::KeyPhrasesDetectionJobProperties>) -> Self {
         self.key_phrases_detection_job_properties = input;
         self
     }
     /// <p>An object that contains the properties associated with a key phrases detection job. </p>
-    pub fn get_key_phrases_detection_job_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::KeyPhrasesDetectionJobProperties> {
+    pub fn get_key_phrases_detection_job_properties(&self) -> &::std::option::Option<crate::types::KeyPhrasesDetectionJobProperties> {
         &self.key_phrases_detection_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,7 @@ impl DescribeKeyPhrasesDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeKeyPhrasesDetectionJobOutput`](crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput
-    {
+    pub fn build(self) -> crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput {
         crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput {
             key_phrases_detection_job_properties: self.key_phrases_detection_job_properties,
             _request_id: self._request_id,

@@ -56,22 +56,17 @@ impl ::aws_http::request_id::RequestId for ExecuteStatementOutput {
 }
 impl ExecuteStatementOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteStatementOutput`](crate::operation::execute_statement::ExecuteStatementOutput).
-    pub fn builder() -> crate::operation::execute_statement::builders::ExecuteStatementOutputBuilder
-    {
+    pub fn builder() -> crate::operation::execute_statement::builders::ExecuteStatementOutputBuilder {
         crate::operation::execute_statement::builders::ExecuteStatementOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExecuteStatementOutput`](crate::operation::execute_statement::ExecuteStatementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteStatementOutputBuilder {
-    pub(crate) records:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>,
-    pub(crate) column_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>,
+    pub(crate) column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
     pub(crate) number_of_records_updated: ::std::option::Option<i64>,
     pub(crate) generated_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
     pub(crate) formatted_records: ::std::option::Option<::std::string::String>,
@@ -90,17 +85,12 @@ impl ExecuteStatementOutputBuilder {
         self
     }
     /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    pub fn set_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>,
-    ) -> Self {
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>) -> Self {
         self.records = input;
         self
     }
     /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    pub fn get_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>> {
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>> {
         &self.records
     }
     /// Appends an item to `column_metadata`.
@@ -115,17 +105,12 @@ impl ExecuteStatementOutputBuilder {
         self
     }
     /// <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    pub fn set_column_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
-    ) -> Self {
+    pub fn set_column_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>) -> Self {
         self.column_metadata = input;
         self
     }
     /// <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    pub fn get_column_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
+    pub fn get_column_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
         &self.column_metadata
     }
     /// <p>The number of records updated by the request.</p>
@@ -158,36 +143,25 @@ impl ExecuteStatementOutputBuilder {
     /// <p>Values for fields generated during a DML request.</p> <note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
-    pub fn set_generated_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
-    ) -> Self {
+    pub fn set_generated_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>) -> Self {
         self.generated_fields = input;
         self
     }
     /// <p>Values for fields generated during a DML request.</p> <note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
-    pub fn get_generated_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+    pub fn get_generated_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
         &self.generated_fields
     }
     /// <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     /// <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
-    pub fn formatted_records(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn formatted_records(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.formatted_records = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     /// <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
-    pub fn set_formatted_records(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_formatted_records(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.formatted_records = input;
         self
     }

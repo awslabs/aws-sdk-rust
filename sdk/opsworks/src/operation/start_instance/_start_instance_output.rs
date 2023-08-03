@@ -19,9 +19,7 @@ impl StartInstanceOutput {
 
 /// A builder for [`StartInstanceOutput`](crate::operation::start_instance::StartInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartInstanceOutputBuilder {
     _request_id: Option<String>,
 }

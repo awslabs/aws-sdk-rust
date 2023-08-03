@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`message(Option<String>)`](crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportOutput::message): <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportOutput::tags): <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
     /// - On failure, responds with [`SdkError<GetDeliverabilityTestReportError>`](crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError)
-    pub fn get_deliverability_test_report(&self) -> crate::operation::get_deliverability_test_report::builders::GetDeliverabilityTestReportFluentBuilder{
+    pub fn get_deliverability_test_report(
+        &self,
+    ) -> crate::operation::get_deliverability_test_report::builders::GetDeliverabilityTestReportFluentBuilder {
         crate::operation::get_deliverability_test_report::builders::GetDeliverabilityTestReportFluentBuilder::new(self.handle.clone())
     }
 }

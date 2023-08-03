@@ -10,10 +10,7 @@ impl PutMetricPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_metric_policy::PutMetricPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metric_policy::PutMetricPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metric_policy::PutMetricPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_metric_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutMetricPolicyFluentBuilder {
         }
     }
     /// Access the PutMetricPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_metric_policy::builders::PutMetricPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_metric_policy::builders::PutMetricPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutMetricPolicyFluentBuilder {
             crate::operation::put_metric_policy::PutMetricPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metric_policy::PutMetricPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metric_policy::PutMetricPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutMetricPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutMetricPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_metric_policy::PutMetricPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metric_policy::PutMetricPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metric_policy::PutMetricPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutMetricPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_metric_policy::PutMetricPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metric_policy::PutMetricPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metric_policy::PutMetricPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl PutMetricPolicyFluentBuilder {
             crate::operation::put_metric_policy::PutMetricPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metric_policy::PutMetricPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metric_policy::PutMetricPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the container that you want to add the metric policy to.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_name(input.into());
         self
     }
     /// <p>The name of the container that you want to add the metric policy to.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_name(input);
         self
     }
@@ -156,10 +134,7 @@ impl PutMetricPolicyFluentBuilder {
     /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
     /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
     /// </ul>
-    pub fn set_metric_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricPolicy>,
-    ) -> Self {
+    pub fn set_metric_policy(mut self, input: ::std::option::Option<crate::types::MetricPolicy>) -> Self {
         self.inner = self.inner.set_metric_policy(input);
         self
     }

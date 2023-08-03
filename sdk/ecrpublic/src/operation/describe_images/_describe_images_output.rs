@@ -35,9 +35,7 @@ impl DescribeImagesOutput {
 
 /// A builder for [`DescribeImagesOutput`](crate::operation::describe_images::DescribeImagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImagesOutputBuilder {
     pub(crate) image_details: ::std::option::Option<::std::vec::Vec<crate::types::ImageDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeImagesOutputBuilder {
         self
     }
     /// <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
-    pub fn set_image_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageDetail>>,
-    ) -> Self {
+    pub fn set_image_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageDetail>>) -> Self {
         self.image_details = input;
         self
     }
     /// <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
-    pub fn get_image_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageDetail>> {
+    pub fn get_image_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageDetail>> {
         &self.image_details
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>

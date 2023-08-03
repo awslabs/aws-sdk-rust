@@ -58,9 +58,7 @@ impl PackageImportJob {
 
 /// A builder for [`PackageImportJob`](crate::types::PackageImportJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PackageImportJobBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_type: ::std::option::Option<crate::types::PackageImportJobType>,
@@ -90,10 +88,7 @@ impl PackageImportJobBuilder {
         self
     }
     /// <p>The job's type.</p>
-    pub fn set_job_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageImportJobType>,
-    ) -> Self {
+    pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::PackageImportJobType>) -> Self {
         self.job_type = input;
         self
     }
@@ -107,10 +102,7 @@ impl PackageImportJobBuilder {
         self
     }
     /// <p>The job's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageImportJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PackageImportJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -119,18 +111,12 @@ impl PackageImportJobBuilder {
         &self.status
     }
     /// <p>The job's status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -144,10 +130,7 @@ impl PackageImportJobBuilder {
         self
     }
     /// <p>When the job was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -161,10 +144,7 @@ impl PackageImportJobBuilder {
         self
     }
     /// <p>When the job was updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }

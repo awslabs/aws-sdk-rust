@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput::next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     ///   - [`revisions(Option<Vec<ConfigurationRevision>>)`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput::revisions): <p>The list of all revisions for the specified configuration.</p>
     /// - On failure, responds with [`SdkError<ListConfigurationRevisionsError>`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsError)
-    pub fn list_configuration_revisions(&self) -> crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsFluentBuilder{
+    pub fn list_configuration_revisions(&self) -> crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsFluentBuilder {
         crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -14,7 +14,11 @@ impl super::Client {
     ///   - [`instance_types(Option<Vec<InstanceTypeInfoFromInstanceRequirements>>)`](crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput::instance_types): <p>The instance types with the specified instance attributes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<GetInstanceTypesFromInstanceRequirementsError>`](crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError)
-    pub fn get_instance_types_from_instance_requirements(&self) -> crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsFluentBuilder{
-        crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsFluentBuilder::new(self.handle.clone())
+    pub fn get_instance_types_from_instance_requirements(
+        &self,
+    ) -> crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsFluentBuilder {
+        crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

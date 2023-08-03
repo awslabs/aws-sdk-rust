@@ -10,10 +10,7 @@ impl DescribeIpv6PoolsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_ipv6_pools();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeIpv6PoolsFluentBuilder {
         }
     }
     /// Access the DescribeIpv6Pools as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_ipv6_pools::builders::DescribeIpv6PoolsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeIpv6PoolsFluentBuilder {
             crate::operation::describe_ipv6_pools::DescribeIpv6Pools,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeIpv6PoolsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeIpv6PoolsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeIpv6PoolsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeIpv6PoolsFluentBuilder {
             crate::operation::describe_ipv6_pools::DescribeIpv6Pools,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_ipv6_pools::paginator::DescribeIpv6PoolsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_ipv6_pools::paginator::DescribeIpv6PoolsPaginator {
-        crate::operation::describe_ipv6_pools::paginator::DescribeIpv6PoolsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_ipv6_pools::paginator::DescribeIpv6PoolsPaginator {
+        crate::operation::describe_ipv6_pools::paginator::DescribeIpv6PoolsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `PoolIds`.
     ///
@@ -143,10 +122,7 @@ impl DescribeIpv6PoolsFluentBuilder {
         self
     }
     /// <p>The IDs of the IPv6 address pools.</p>
-    pub fn set_pool_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pool_ids(input);
         self
     }
@@ -226,10 +202,7 @@ impl DescribeIpv6PoolsFluentBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

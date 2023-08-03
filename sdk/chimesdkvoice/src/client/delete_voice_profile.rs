@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`voice_profile_id(impl ::std::convert::Into<String>)`](crate::operation::delete_voice_profile::builders::DeleteVoiceProfileFluentBuilder::voice_profile_id) / [`set_voice_profile_id(Option<String>)`](crate::operation::delete_voice_profile::builders::DeleteVoiceProfileFluentBuilder::set_voice_profile_id): <p>The voice profile ID.</p>
     /// - On success, responds with [`DeleteVoiceProfileOutput`](crate::operation::delete_voice_profile::DeleteVoiceProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteVoiceProfileError>`](crate::operation::delete_voice_profile::DeleteVoiceProfileError)
-    pub fn delete_voice_profile(
-        &self,
-    ) -> crate::operation::delete_voice_profile::builders::DeleteVoiceProfileFluentBuilder {
-        crate::operation::delete_voice_profile::builders::DeleteVoiceProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_voice_profile(&self) -> crate::operation::delete_voice_profile::builders::DeleteVoiceProfileFluentBuilder {
+        crate::operation::delete_voice_profile::builders::DeleteVoiceProfileFluentBuilder::new(self.handle.clone())
     }
 }

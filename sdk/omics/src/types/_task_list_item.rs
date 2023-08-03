@@ -79,9 +79,7 @@ impl TaskListItem {
 
 /// A builder for [`TaskListItem`](crate::types::TaskListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskListItemBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TaskStatus>,
@@ -170,10 +168,7 @@ impl TaskListItemBuilder {
         self
     }
     /// <p>When the task was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -187,10 +182,7 @@ impl TaskListItemBuilder {
         self
     }
     /// <p>When the task started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -204,10 +196,7 @@ impl TaskListItemBuilder {
         self
     }
     /// <p>When the task stopped.</p>
-    pub fn set_stop_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stop_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stop_time = input;
         self
     }

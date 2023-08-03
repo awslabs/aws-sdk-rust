@@ -30,9 +30,7 @@ impl ModifyVerifiedAccessEndpointEniOptions {
 
 /// A builder for [`ModifyVerifiedAccessEndpointEniOptions`](crate::types::ModifyVerifiedAccessEndpointEniOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessEndpointEniOptionsBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
     pub(crate) port: ::std::option::Option<i32>,
@@ -44,17 +42,12 @@ impl ModifyVerifiedAccessEndpointEniOptionsBuilder {
         self
     }
     /// <p>The IP protocol.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>) -> Self {
         self.protocol = input;
         self
     }
     /// <p>The IP protocol.</p>
-    pub fn get_protocol(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessEndpointProtocol> {
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::VerifiedAccessEndpointProtocol> {
         &self.protocol
     }
     /// <p>The IP port number.</p>

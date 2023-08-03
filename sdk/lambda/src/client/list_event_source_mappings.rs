@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_event_source_mappings::ListEventSourceMappingsOutput::next_marker): <p>A pagination token that's returned when the response doesn't contain all event source mappings.</p>
     ///   - [`event_source_mappings(Option<Vec<EventSourceMappingConfiguration>>)`](crate::operation::list_event_source_mappings::ListEventSourceMappingsOutput::event_source_mappings): <p>A list of event source mappings.</p>
     /// - On failure, responds with [`SdkError<ListEventSourceMappingsError>`](crate::operation::list_event_source_mappings::ListEventSourceMappingsError)
-    pub fn list_event_source_mappings(
-        &self,
-    ) -> crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsFluentBuilder
-    {
+    pub fn list_event_source_mappings(&self) -> crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsFluentBuilder {
         crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsFluentBuilder::new(self.handle.clone())
     }
 }

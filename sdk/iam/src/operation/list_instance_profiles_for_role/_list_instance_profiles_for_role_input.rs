@@ -33,16 +33,14 @@ impl ListInstanceProfilesForRoleInput {
 }
 impl ListInstanceProfilesForRoleInput {
     /// Creates a new builder-style object to manufacture [`ListInstanceProfilesForRoleInput`](crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleInput).
-    pub fn builder() -> crate::operation::list_instance_profiles_for_role::builders::ListInstanceProfilesForRoleInputBuilder{
+    pub fn builder() -> crate::operation::list_instance_profiles_for_role::builders::ListInstanceProfilesForRoleInputBuilder {
         crate::operation::list_instance_profiles_for_role::builders::ListInstanceProfilesForRoleInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInstanceProfilesForRoleInput`](crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceProfilesForRoleInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -104,12 +102,10 @@ impl ListInstanceProfilesForRoleInputBuilder {
         crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleInput {
-                role_name: self.role_name,
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleInput {
+            role_name: self.role_name,
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

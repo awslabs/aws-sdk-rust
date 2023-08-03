@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateBackendConfigOutput {
 }
 impl CreateBackendConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackendConfigOutput`](crate::operation::create_backend_config::CreateBackendConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::create_backend_config::builders::CreateBackendConfigOutputBuilder {
-        crate::operation::create_backend_config::builders::CreateBackendConfigOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_backend_config::builders::CreateBackendConfigOutputBuilder {
+        crate::operation::create_backend_config::builders::CreateBackendConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBackendConfigOutput`](crate::operation::create_backend_config::CreateBackendConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBackendConfigOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,
@@ -77,18 +73,12 @@ impl CreateBackendConfigOutputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_name = input;
         self
     }

@@ -14,8 +14,7 @@ pub struct EngineTranscribeSettings {
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     #[doc(hidden)]
-    pub vocabulary_filter_method:
-        ::std::option::Option<crate::types::TranscribeVocabularyFilterMethod>,
+    pub vocabulary_filter_method: ::std::option::Option<crate::types::TranscribeVocabularyFilterMethod>,
     /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive. </p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary filter must be available in Amazon Transcribe in each Region.</p>
     /// <p>If you include <code>IdentifyLanguage</code> and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> parameter instead.</p>
@@ -37,13 +36,11 @@ pub struct EngineTranscribeSettings {
     /// <p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
     #[doc(hidden)]
-    pub partial_results_stability:
-        ::std::option::Option<crate::types::TranscribePartialResultsStability>,
+    pub partial_results_stability: ::std::option::Option<crate::types::TranscribePartialResultsStability>,
     /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
     #[doc(hidden)]
-    pub content_identification_type:
-        ::std::option::Option<crate::types::TranscribeContentIdentificationType>,
+    pub content_identification_type: ::std::option::Option<crate::types::TranscribeContentIdentificationType>,
     /// <p>Content redaction is performed at the segment level. If you don't include <code>PiiEntityTypes</code>, all PII is redacted.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
     #[doc(hidden)]
@@ -98,9 +95,7 @@ impl EngineTranscribeSettings {
     /// <p> To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
-    pub fn vocabulary_filter_method(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TranscribeVocabularyFilterMethod> {
+    pub fn vocabulary_filter_method(&self) -> ::std::option::Option<&crate::types::TranscribeVocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
     }
     /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive. </p>
@@ -127,23 +122,17 @@ impl EngineTranscribeSettings {
     }
     /// <p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
-    pub fn partial_results_stability(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TranscribePartialResultsStability> {
+    pub fn partial_results_stability(&self) -> ::std::option::Option<&crate::types::TranscribePartialResultsStability> {
         self.partial_results_stability.as_ref()
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
-    pub fn content_identification_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TranscribeContentIdentificationType> {
+    pub fn content_identification_type(&self) -> ::std::option::Option<&crate::types::TranscribeContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
     /// <p>Content redaction is performed at the segment level. If you don't include <code>PiiEntityTypes</code>, all PII is redacted.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
-    pub fn content_redaction_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TranscribeContentRedactionType> {
+    pub fn content_redaction_type(&self) -> ::std::option::Option<&crate::types::TranscribeContentRedactionType> {
         self.content_redaction_type.as_ref()
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
@@ -177,9 +166,7 @@ impl EngineTranscribeSettings {
     }
     /// <p>Specify a preferred language from the subset of languages codes you specified in <code>LanguageOptions</code>.</p>
     /// <p>You can only use this parameter if you include <code>IdentifyLanguage</code> and <code>LanguageOptions</code>.</p>
-    pub fn preferred_language(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TranscribeLanguageCode> {
+    pub fn preferred_language(&self) -> ::std::option::Option<&crate::types::TranscribeLanguageCode> {
         self.preferred_language.as_ref()
     }
     /// <p>Specify the names of the custom vocabularies that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
@@ -204,23 +191,17 @@ impl EngineTranscribeSettings {
 
 /// A builder for [`EngineTranscribeSettings`](crate::types::EngineTranscribeSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EngineTranscribeSettingsBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::TranscribeLanguageCode>,
-    pub(crate) vocabulary_filter_method:
-        ::std::option::Option<crate::types::TranscribeVocabularyFilterMethod>,
+    pub(crate) vocabulary_filter_method: ::std::option::Option<crate::types::TranscribeVocabularyFilterMethod>,
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<crate::types::TranscribeRegion>,
     pub(crate) enable_partial_results_stabilization: ::std::option::Option<bool>,
-    pub(crate) partial_results_stability:
-        ::std::option::Option<crate::types::TranscribePartialResultsStability>,
-    pub(crate) content_identification_type:
-        ::std::option::Option<crate::types::TranscribeContentIdentificationType>,
-    pub(crate) content_redaction_type:
-        ::std::option::Option<crate::types::TranscribeContentRedactionType>,
+    pub(crate) partial_results_stability: ::std::option::Option<crate::types::TranscribePartialResultsStability>,
+    pub(crate) content_identification_type: ::std::option::Option<crate::types::TranscribeContentIdentificationType>,
+    pub(crate) content_redaction_type: ::std::option::Option<crate::types::TranscribeContentRedactionType>,
     pub(crate) pii_entity_types: ::std::option::Option<::std::string::String>,
     pub(crate) language_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) identify_language: ::std::option::Option<bool>,
@@ -238,28 +219,20 @@ impl EngineTranscribeSettingsBuilder {
     }
     /// <p>Specify the language code that represents the language spoken.</p>
     /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscribeLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::TranscribeLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
     /// <p>Specify the language code that represents the language spoken.</p>
     /// <p>If you're unsure of the language spoken in your audio, consider using <code>IdentifyLanguage</code> to enable automatic language identification.</p>
-    pub fn get_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranscribeLanguageCode> {
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::TranscribeLanguageCode> {
         &self.language_code
     }
     /// <p>Specify how you want your vocabulary filter applied to your transcript.</p>
     /// <p> To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
-    pub fn vocabulary_filter_method(
-        mut self,
-        input: crate::types::TranscribeVocabularyFilterMethod,
-    ) -> Self {
+    pub fn vocabulary_filter_method(mut self, input: crate::types::TranscribeVocabularyFilterMethod) -> Self {
         self.vocabulary_filter_method = ::std::option::Option::Some(input);
         self
     }
@@ -267,10 +240,7 @@ impl EngineTranscribeSettingsBuilder {
     /// <p> To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
-    pub fn set_vocabulary_filter_method(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscribeVocabularyFilterMethod>,
-    ) -> Self {
+    pub fn set_vocabulary_filter_method(mut self, input: ::std::option::Option<crate::types::TranscribeVocabularyFilterMethod>) -> Self {
         self.vocabulary_filter_method = input;
         self
     }
@@ -278,28 +248,20 @@ impl EngineTranscribeSettingsBuilder {
     /// <p> To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
-    pub fn get_vocabulary_filter_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranscribeVocabularyFilterMethod> {
+    pub fn get_vocabulary_filter_method(&self) -> &::std::option::Option<crate::types::TranscribeVocabularyFilterMethod> {
         &self.vocabulary_filter_method
     }
     /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive. </p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary filter must be available in Amazon Transcribe in each Region.</p>
     /// <p>If you include <code>IdentifyLanguage</code> and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> parameter instead.</p>
-    pub fn vocabulary_filter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the name of the custom vocabulary filter that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive. </p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary filter must be available in Amazon Transcribe in each Region.</p>
     /// <p>If you include <code>IdentifyLanguage</code> and want to use one or more vocabulary filters with your transcription, use the <code>VocabularyFilterNames</code> parameter instead.</p>
-    pub fn set_vocabulary_filter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_filter_name = input;
         self
     }
@@ -312,20 +274,14 @@ impl EngineTranscribeSettingsBuilder {
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe multiple Regions, the vocabulary must be available in Amazon Transcribe in each Region.</p>
     /// <p>If you include <code>IdentifyLanguage</code> and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> parameter instead.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe multiple Regions, the vocabulary must be available in Amazon Transcribe in each Region.</p>
     /// <p>If you include <code>IdentifyLanguage</code> and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> parameter instead.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_name = input;
         self
     }
@@ -345,10 +301,7 @@ impl EngineTranscribeSettingsBuilder {
     /// <p>The AWS Region in which to use Amazon Transcribe.</p>
     /// <p>If you don't specify a Region, then the <code>MediaRegion</code> parameter of the <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html">CreateMeeting.html</a> API will be used. However, if Amazon Transcribe is not available in the <code>MediaRegion</code>, then a TranscriptFailed event is sent.</p>
     /// <p>Use <code>auto</code> to use Amazon Transcribe in a Region near the meeting’s <code>MediaRegion</code>. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/transcription-options.html#choose-region">Choosing a transcription Region</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
-    pub fn set_region(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscribeRegion>,
-    ) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<crate::types::TranscribeRegion>) -> Self {
         self.region = input;
         self
     }
@@ -364,10 +317,7 @@ impl EngineTranscribeSettingsBuilder {
         self
     }
     /// <p>Enables partial result stabilization for your transcription. Partial result stabilization can reduce latency in your output, but may impact accuracy.</p>
-    pub fn set_enable_partial_results_stabilization(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_partial_results_stabilization(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_partial_results_stabilization = input;
         self
     }
@@ -377,87 +327,60 @@ impl EngineTranscribeSettingsBuilder {
     }
     /// <p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
-    pub fn partial_results_stability(
-        mut self,
-        input: crate::types::TranscribePartialResultsStability,
-    ) -> Self {
+    pub fn partial_results_stability(mut self, input: crate::types::TranscribePartialResultsStability) -> Self {
         self.partial_results_stability = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
-    pub fn set_partial_results_stability(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscribePartialResultsStability>,
-    ) -> Self {
+    pub fn set_partial_results_stability(mut self, input: ::std::option::Option<crate::types::TranscribePartialResultsStability>) -> Self {
         self.partial_results_stability = input;
         self
     }
     /// <p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
-    pub fn get_partial_results_stability(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranscribePartialResultsStability> {
+    pub fn get_partial_results_stability(&self) -> &::std::option::Option<crate::types::TranscribePartialResultsStability> {
         &self.partial_results_stability
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
-    pub fn content_identification_type(
-        mut self,
-        input: crate::types::TranscribeContentIdentificationType,
-    ) -> Self {
+    pub fn content_identification_type(mut self, input: crate::types::TranscribeContentIdentificationType) -> Self {
         self.content_identification_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
-    pub fn set_content_identification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscribeContentIdentificationType>,
-    ) -> Self {
+    pub fn set_content_identification_type(mut self, input: ::std::option::Option<crate::types::TranscribeContentIdentificationType>) -> Self {
         self.content_identification_type = input;
         self
     }
     /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
-    pub fn get_content_identification_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranscribeContentIdentificationType> {
+    pub fn get_content_identification_type(&self) -> &::std::option::Option<crate::types::TranscribeContentIdentificationType> {
         &self.content_identification_type
     }
     /// <p>Content redaction is performed at the segment level. If you don't include <code>PiiEntityTypes</code>, all PII is redacted.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
-    pub fn content_redaction_type(
-        mut self,
-        input: crate::types::TranscribeContentRedactionType,
-    ) -> Self {
+    pub fn content_redaction_type(mut self, input: crate::types::TranscribeContentRedactionType) -> Self {
         self.content_redaction_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Content redaction is performed at the segment level. If you don't include <code>PiiEntityTypes</code>, all PII is redacted.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
-    pub fn set_content_redaction_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscribeContentRedactionType>,
-    ) -> Self {
+    pub fn set_content_redaction_type(mut self, input: ::std::option::Option<crate::types::TranscribeContentRedactionType>) -> Self {
         self.content_redaction_type = input;
         self
     }
     /// <p>Content redaction is performed at the segment level. If you don't include <code>PiiEntityTypes</code>, all PII is redacted.</p>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
-    pub fn get_content_redaction_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranscribeContentRedactionType> {
+    pub fn get_content_redaction_type(&self) -> &::std::option::Option<crate::types::TranscribeContentRedactionType> {
         &self.content_redaction_type
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
     /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code> <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>,<code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
     /// <p>Note that if you include <code>PiiEntityTypes</code>, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
     /// <p>If you include <code>ContentRedactionType</code> or <code>ContentIdentificationType</code>, but do not include <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
-    pub fn pii_entity_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pii_entity_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pii_entity_types = ::std::option::Option::Some(input.into());
         self
     }
@@ -465,10 +388,7 @@ impl EngineTranscribeSettingsBuilder {
     /// <p>Values must be comma-separated and can include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code> <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>,<code>NAME</code>, <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
     /// <p>Note that if you include <code>PiiEntityTypes</code>, you must also include <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
     /// <p>If you include <code>ContentRedactionType</code> or <code>ContentIdentificationType</code>, but do not include <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
-    pub fn set_pii_entity_types(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pii_entity_types(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pii_entity_types = input;
         self
     }
@@ -482,20 +402,14 @@ impl EngineTranscribeSettingsBuilder {
     /// <p>Specify the name of the custom language model that you want to use when processing your transcription. Note that language model names are case sensitive.</p>
     /// <p>The language of the specified language model must match the language code. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the custom language model must be available in Amazon Transcribe in each Region.</p>
-    pub fn language_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the name of the custom language model that you want to use when processing your transcription. Note that language model names are case sensitive.</p>
     /// <p>The language of the specified language model must match the language code. If the languages don't match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the custom language model must be available in Amazon Transcribe in each Region.</p>
-    pub fn set_language_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_model_name = input;
         self
     }
@@ -536,10 +450,7 @@ impl EngineTranscribeSettingsBuilder {
     /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p> <important>
     /// <p>You can only include one language dialect per language. For example, you cannot include <code>en-US</code> and <code>en-AU</code>.</p>
     /// </important>
-    pub fn language_options(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_options = ::std::option::Option::Some(input.into());
         self
     }
@@ -548,10 +459,7 @@ impl EngineTranscribeSettingsBuilder {
     /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p> <important>
     /// <p>You can only include one language dialect per language. For example, you cannot include <code>en-US</code> and <code>en-AU</code>.</p>
     /// </important>
-    pub fn set_language_options(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_options = input;
         self
     }
@@ -571,37 +479,26 @@ impl EngineTranscribeSettingsBuilder {
     }
     /// <p>Specify a preferred language from the subset of languages codes you specified in <code>LanguageOptions</code>.</p>
     /// <p>You can only use this parameter if you include <code>IdentifyLanguage</code> and <code>LanguageOptions</code>.</p>
-    pub fn set_preferred_language(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscribeLanguageCode>,
-    ) -> Self {
+    pub fn set_preferred_language(mut self, input: ::std::option::Option<crate::types::TranscribeLanguageCode>) -> Self {
         self.preferred_language = input;
         self
     }
     /// <p>Specify a preferred language from the subset of languages codes you specified in <code>LanguageOptions</code>.</p>
     /// <p>You can only use this parameter if you include <code>IdentifyLanguage</code> and <code>LanguageOptions</code>.</p>
-    pub fn get_preferred_language(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranscribeLanguageCode> {
+    pub fn get_preferred_language(&self) -> &::std::option::Option<crate::types::TranscribeLanguageCode> {
         &self.preferred_language
     }
     /// <p>Specify the names of the custom vocabularies that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary must be available in Amazon Transcribe in each Region.</p>
     /// <p>If you don't include <code>IdentifyLanguage</code> and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> parameter instead.</p>
-    pub fn vocabulary_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_names = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the names of the custom vocabularies that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary must be available in Amazon Transcribe in each Region.</p>
     /// <p>If you don't include <code>IdentifyLanguage</code> and want to use a custom vocabulary with your transcription, use the <code>VocabularyName</code> parameter instead.</p>
-    pub fn set_vocabulary_names(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_names(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_names = input;
         self
     }
@@ -614,20 +511,14 @@ impl EngineTranscribeSettingsBuilder {
     /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary filter must be available in Amazon Transcribe in each Region.</p>
     /// <p> If you're <i>not</i> including <code>IdentifyLanguage</code> and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
-    pub fn vocabulary_filter_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_filter_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_filter_names = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the names of the custom vocabulary filters that you want to use when processing your transcription. Note that vocabulary filter names are case sensitive.</p>
     /// <p>If you use Amazon Transcribe in multiple Regions, the vocabulary filter must be available in Amazon Transcribe in each Region.</p>
     /// <p> If you're <i>not</i> including <code>IdentifyLanguage</code> and want to use a custom vocabulary filter with your transcription, use the <code>VocabularyFilterName</code> parameter instead.</p>
-    pub fn set_vocabulary_filter_names(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_filter_names(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_filter_names = input;
         self
     }

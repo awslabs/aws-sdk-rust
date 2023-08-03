@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for GetTrafficDistributionOutput {
 }
 impl GetTrafficDistributionOutput {
     /// Creates a new builder-style object to manufacture [`GetTrafficDistributionOutput`](crate::operation::get_traffic_distribution::GetTrafficDistributionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_traffic_distribution::builders::GetTrafficDistributionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_traffic_distribution::builders::GetTrafficDistributionOutputBuilder {
         crate::operation::get_traffic_distribution::builders::GetTrafficDistributionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTrafficDistributionOutput`](crate::operation::get_traffic_distribution::GetTrafficDistributionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTrafficDistributionOutputBuilder {
     pub(crate) telephony_config: ::std::option::Option<crate::types::TelephonyConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -60,10 +56,7 @@ impl GetTrafficDistributionOutputBuilder {
         self
     }
     /// <p>The distribution of traffic between the instance and its replicas.</p>
-    pub fn set_telephony_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TelephonyConfig>,
-    ) -> Self {
+    pub fn set_telephony_config(mut self, input: ::std::option::Option<crate::types::TelephonyConfig>) -> Self {
         self.telephony_config = input;
         self
     }

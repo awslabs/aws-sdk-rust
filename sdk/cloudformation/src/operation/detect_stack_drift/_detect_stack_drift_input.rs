@@ -22,17 +22,14 @@ impl DetectStackDriftInput {
 }
 impl DetectStackDriftInput {
     /// Creates a new builder-style object to manufacture [`DetectStackDriftInput`](crate::operation::detect_stack_drift::DetectStackDriftInput).
-    pub fn builder() -> crate::operation::detect_stack_drift::builders::DetectStackDriftInputBuilder
-    {
+    pub fn builder() -> crate::operation::detect_stack_drift::builders::DetectStackDriftInputBuilder {
         crate::operation::detect_stack_drift::builders::DetectStackDriftInputBuilder::default()
     }
 }
 
 /// A builder for [`DetectStackDriftInput`](crate::operation::detect_stack_drift::DetectStackDriftInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectStackDriftInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) logical_resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,41 +54,28 @@ impl DetectStackDriftInputBuilder {
     /// To override the contents of this collection use [`set_logical_resource_ids`](Self::set_logical_resource_ids).
     ///
     /// <p>The logical names of any resources you want to use as filters.</p>
-    pub fn logical_resource_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.logical_resource_ids.unwrap_or_default();
         v.push(input.into());
         self.logical_resource_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The logical names of any resources you want to use as filters.</p>
-    pub fn set_logical_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_logical_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.logical_resource_ids = input;
         self
     }
     /// <p>The logical names of any resources you want to use as filters.</p>
-    pub fn get_logical_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_logical_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.logical_resource_ids
     }
     /// Consumes the builder and constructs a [`DetectStackDriftInput`](crate::operation::detect_stack_drift::DetectStackDriftInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_stack_drift::DetectStackDriftInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::detect_stack_drift::DetectStackDriftInput {
-                stack_name: self.stack_name,
-                logical_resource_ids: self.logical_resource_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::detect_stack_drift::DetectStackDriftInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::detect_stack_drift::DetectStackDriftInput {
+            stack_name: self.stack_name,
+            logical_resource_ids: self.logical_resource_ids,
+        })
     }
 }

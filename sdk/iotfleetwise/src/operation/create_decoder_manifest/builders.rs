@@ -43,10 +43,7 @@ impl CreateDecoderManifestFluentBuilder {
         }
     }
     /// Access the CreateDecoderManifest as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_decoder_manifest::builders::CreateDecoderManifestInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_decoder_manifest::builders::CreateDecoderManifestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +55,7 @@ impl CreateDecoderManifestFluentBuilder {
             crate::operation::create_decoder_manifest::CreateDecoderManifest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_decoder_manifest::CreateDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_decoder_manifest::CreateDecoderManifestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +65,7 @@ impl CreateDecoderManifestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +74,7 @@ impl CreateDecoderManifestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_decoder_manifest::CreateDecoderManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_decoder_manifest::CreateDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_decoder_manifest::CreateDecoderManifestError>,
     > {
         let op = self
             .inner
@@ -107,9 +97,7 @@ impl CreateDecoderManifestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_decoder_manifest::CreateDecoderManifestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_decoder_manifest::CreateDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_decoder_manifest::CreateDecoderManifestError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +111,7 @@ impl CreateDecoderManifestFluentBuilder {
             crate::operation::create_decoder_manifest::CreateDecoderManifest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_decoder_manifest::CreateDecoderManifestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_decoder_manifest::CreateDecoderManifestError>,
     > {
         self.customize_middleware().await
     }
@@ -158,18 +144,12 @@ impl CreateDecoderManifestFluentBuilder {
         self.inner.get_description()
     }
     /// <p> The Amazon Resource Name (ARN) of the vehicle model (model manifest). </p>
-    pub fn model_manifest_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_manifest_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_manifest_arn(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the vehicle model (model manifest). </p>
-    pub fn set_model_manifest_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_manifest_arn(input);
         self
     }
@@ -187,17 +167,12 @@ impl CreateDecoderManifestFluentBuilder {
         self
     }
     /// <p> A list of information about signal decoders. </p>
-    pub fn set_signal_decoders(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>,
-    ) -> Self {
+    pub fn set_signal_decoders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>) -> Self {
         self.inner = self.inner.set_signal_decoders(input);
         self
     }
     /// <p> A list of information about signal decoders. </p>
-    pub fn get_signal_decoders(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>> {
+    pub fn get_signal_decoders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>> {
         self.inner.get_signal_decoders()
     }
     /// Appends an item to `networkInterfaces`.
@@ -210,17 +185,12 @@ impl CreateDecoderManifestFluentBuilder {
         self
     }
     /// <p> A list of information about available network interfaces. </p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
-    ) -> Self {
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
         self.inner = self.inner.set_network_interfaces(input);
         self
     }
     /// <p> A list of information about available network interfaces. </p>
-    pub fn get_network_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
         self.inner.get_network_interfaces()
     }
     /// Appends an item to `tags`.
@@ -233,10 +203,7 @@ impl CreateDecoderManifestFluentBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the decoder manifest.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

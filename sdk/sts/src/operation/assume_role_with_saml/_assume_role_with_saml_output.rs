@@ -120,10 +120,8 @@ impl ::aws_http::request_id::RequestId for AssumeRoleWithSamlOutput {
 }
 impl AssumeRoleWithSamlOutput {
     /// Creates a new builder-style object to manufacture [`AssumeRoleWithSamlOutput`](crate::operation::assume_role_with_saml::AssumeRoleWithSamlOutput).
-    pub fn builder(
-    ) -> crate::operation::assume_role_with_saml::builders::AssumeRoleWithSamlOutputBuilder {
-        crate::operation::assume_role_with_saml::builders::AssumeRoleWithSamlOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::assume_role_with_saml::builders::AssumeRoleWithSamlOutputBuilder {
+        crate::operation::assume_role_with_saml::builders::AssumeRoleWithSamlOutputBuilder::default()
     }
 }
 
@@ -153,10 +151,7 @@ impl AssumeRoleWithSamlOutputBuilder {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::Credentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
         self.credentials = input;
         self
     }
@@ -172,10 +167,7 @@ impl AssumeRoleWithSamlOutputBuilder {
         self
     }
     /// <p>The identifiers for the temporary security credentials that the operation returns.</p>
-    pub fn set_assumed_role_user(
-        mut self,
-        input: ::std::option::Option<crate::types::AssumedRoleUser>,
-    ) -> Self {
+    pub fn set_assumed_role_user(mut self, input: ::std::option::Option<crate::types::AssumedRoleUser>) -> Self {
         self.assumed_role_user = input;
         self
     }
@@ -265,10 +257,7 @@ impl AssumeRoleWithSamlOutputBuilder {
     /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.</p>
     /// <p>The following pseudocode shows how the hash value is calculated:</p>
     /// <p> <code>BASE64 ( SHA1 ( "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code> </p>
-    pub fn name_qualifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_qualifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -281,10 +270,7 @@ impl AssumeRoleWithSamlOutputBuilder {
     /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.</p>
     /// <p>The following pseudocode shows how the hash value is calculated:</p>
     /// <p> <code>BASE64 ( SHA1 ( "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code> </p>
-    pub fn set_name_qualifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_qualifier = input;
         self
     }
@@ -303,20 +289,14 @@ impl AssumeRoleWithSamlOutputBuilder {
     /// <p>The value in the <code>SourceIdentity</code> attribute in the SAML assertion. </p>
     /// <p>You can require users to set a source identity value when they assume a role. You do this by using the <code>sts:SourceIdentity</code> condition key in a role trust policy. That way, actions that are taken with the role are associated with that user. After the source identity is set, the value cannot be changed. It is present in the request for all actions that are taken by the role and persists across <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining">chained role</a> sessions. You can configure your SAML identity provider to use an attribute associated with your users, like user name or email, as the source identity when calling <code>AssumeRoleWithSAML</code>. You do this by adding an attribute to the SAML assertion. For more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
-    pub fn source_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value in the <code>SourceIdentity</code> attribute in the SAML assertion. </p>
     /// <p>You can require users to set a source identity value when they assume a role. You do this by using the <code>sts:SourceIdentity</code> condition key in a role trust policy. That way, actions that are taken with the role are associated with that user. After the source identity is set, the value cannot be changed. It is present in the request for all actions that are taken by the role and persists across <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining">chained role</a> sessions. You can configure your SAML identity provider to use an attribute associated with your users, like user name or email, as the source identity when calling <code>AssumeRoleWithSAML</code>. You do this by adding an attribute to the SAML assertion. For more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
-    pub fn set_source_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_identity = input;
         self
     }

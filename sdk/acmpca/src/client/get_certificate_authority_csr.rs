@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetCertificateAuthorityCsrOutput`](crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrOutput) with field(s):
     ///   - [`csr(Option<String>)`](crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrOutput::csr): <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.</p>
     /// - On failure, responds with [`SdkError<GetCertificateAuthorityCsrError>`](crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrError)
-    pub fn get_certificate_authority_csr(&self) -> crate::operation::get_certificate_authority_csr::builders::GetCertificateAuthorityCsrFluentBuilder{
+    pub fn get_certificate_authority_csr(
+        &self,
+    ) -> crate::operation::get_certificate_authority_csr::builders::GetCertificateAuthorityCsrFluentBuilder {
         crate::operation::get_certificate_authority_csr::builders::GetCertificateAuthorityCsrFluentBuilder::new(self.handle.clone())
     }
 }

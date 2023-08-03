@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`sampling_statistic_summaries(Option<Vec<SamplingStatisticSummary>>)`](crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesOutput::sampling_statistic_summaries): <p>Information about the number of requests instrumented for each sampling rule.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<GetSamplingStatisticSummariesError>`](crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesError)
-    pub fn get_sampling_statistic_summaries(&self) -> crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesFluentBuilder{
+    pub fn get_sampling_statistic_summaries(
+        &self,
+    ) -> crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesFluentBuilder {
         crate::operation::get_sampling_statistic_summaries::builders::GetSamplingStatisticSummariesFluentBuilder::new(self.handle.clone())
     }
 }

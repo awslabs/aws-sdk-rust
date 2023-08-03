@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeSpeakerEnrollmentJobOutput`](crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobOutput) with field(s):
     ///   - [`job(Option<SpeakerEnrollmentJob>)`](crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobOutput::job): <p>Contains details about the specified speaker enrollment job.</p>
     /// - On failure, responds with [`SdkError<DescribeSpeakerEnrollmentJobError>`](crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobError)
-    pub fn describe_speaker_enrollment_job(&self) -> crate::operation::describe_speaker_enrollment_job::builders::DescribeSpeakerEnrollmentJobFluentBuilder{
+    pub fn describe_speaker_enrollment_job(
+        &self,
+    ) -> crate::operation::describe_speaker_enrollment_job::builders::DescribeSpeakerEnrollmentJobFluentBuilder {
         crate::operation::describe_speaker_enrollment_job::builders::DescribeSpeakerEnrollmentJobFluentBuilder::new(self.handle.clone())
     }
 }

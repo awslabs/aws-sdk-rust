@@ -21,8 +21,7 @@ pub struct AmazonopensearchserviceDestinationDescription {
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon OpenSearch Service index rotation period</p>
     #[doc(hidden)]
-    pub index_rotation_period:
-        ::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod>,
+    pub index_rotation_period: ::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod>,
     /// <p>The buffering options.</p>
     #[doc(hidden)]
     pub buffering_hints: ::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints>,
@@ -43,8 +42,7 @@ pub struct AmazonopensearchserviceDestinationDescription {
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>The details of the VPC of the Amazon ES destination.</p>
     #[doc(hidden)]
-    pub vpc_configuration_description:
-        ::std::option::Option<crate::types::VpcConfigurationDescription>,
+    pub vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
 }
 impl AmazonopensearchserviceDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. </p>
@@ -68,89 +66,62 @@ impl AmazonopensearchserviceDestinationDescription {
         self.type_name.as_deref()
     }
     /// <p>The Amazon OpenSearch Service index rotation period</p>
-    pub fn index_rotation_period(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AmazonopensearchserviceIndexRotationPeriod> {
+    pub fn index_rotation_period(&self) -> ::std::option::Option<&crate::types::AmazonopensearchserviceIndexRotationPeriod> {
         self.index_rotation_period.as_ref()
     }
     /// <p>The buffering options.</p>
-    pub fn buffering_hints(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AmazonopensearchserviceBufferingHints> {
+    pub fn buffering_hints(&self) -> ::std::option::Option<&crate::types::AmazonopensearchserviceBufferingHints> {
         self.buffering_hints.as_ref()
     }
     /// <p>The Amazon OpenSearch Service retry options.</p>
-    pub fn retry_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AmazonopensearchserviceRetryOptions> {
+    pub fn retry_options(&self) -> ::std::option::Option<&crate::types::AmazonopensearchserviceRetryOptions> {
         self.retry_options.as_ref()
     }
     /// <p>The Amazon S3 backup mode.</p>
-    pub fn s3_backup_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AmazonopensearchserviceS3BackupMode> {
+    pub fn s3_backup_mode(&self) -> ::std::option::Option<&crate::types::AmazonopensearchserviceS3BackupMode> {
         self.s3_backup_mode.as_ref()
     }
     /// <p>Describes a destination in Amazon S3.</p>
-    pub fn s3_destination_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
+    pub fn s3_destination_description(&self) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
         self.s3_destination_description.as_ref()
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn processing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    pub fn vpc_configuration_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcConfigurationDescription> {
+    pub fn vpc_configuration_description(&self) -> ::std::option::Option<&crate::types::VpcConfigurationDescription> {
         self.vpc_configuration_description.as_ref()
     }
 }
 impl AmazonopensearchserviceDestinationDescription {
     /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceDestinationDescription`](crate::types::AmazonopensearchserviceDestinationDescription).
-    pub fn builder() -> crate::types::builders::AmazonopensearchserviceDestinationDescriptionBuilder
-    {
+    pub fn builder() -> crate::types::builders::AmazonopensearchserviceDestinationDescriptionBuilder {
         crate::types::builders::AmazonopensearchserviceDestinationDescriptionBuilder::default()
     }
 }
 
 /// A builder for [`AmazonopensearchserviceDestinationDescription`](crate::types::AmazonopensearchserviceDestinationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmazonopensearchserviceDestinationDescriptionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
-    pub(crate) index_rotation_period:
-        ::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod>,
-    pub(crate) buffering_hints:
-        ::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints>,
-    pub(crate) retry_options:
-        ::std::option::Option<crate::types::AmazonopensearchserviceRetryOptions>,
-    pub(crate) s3_backup_mode:
-        ::std::option::Option<crate::types::AmazonopensearchserviceS3BackupMode>,
-    pub(crate) s3_destination_description:
-        ::std::option::Option<crate::types::S3DestinationDescription>,
-    pub(crate) processing_configuration:
-        ::std::option::Option<crate::types::ProcessingConfiguration>,
-    pub(crate) cloud_watch_logging_options:
-        ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    pub(crate) vpc_configuration_description:
-        ::std::option::Option<crate::types::VpcConfigurationDescription>,
+    pub(crate) index_rotation_period: ::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod>,
+    pub(crate) buffering_hints: ::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints>,
+    pub(crate) retry_options: ::std::option::Option<crate::types::AmazonopensearchserviceRetryOptions>,
+    pub(crate) s3_backup_mode: ::std::option::Option<crate::types::AmazonopensearchserviceS3BackupMode>,
+    pub(crate) s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
+    pub(crate) processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
+    pub(crate) cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    pub(crate) vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
 }
 impl AmazonopensearchserviceDestinationDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. </p>
@@ -182,18 +153,12 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
         &self.domain_arn
     }
     /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service. </p>
-    pub fn cluster_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service. </p>
-    pub fn set_cluster_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_endpoint = input;
         self
     }
@@ -230,179 +195,115 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
         &self.type_name
     }
     /// <p>The Amazon OpenSearch Service index rotation period</p>
-    pub fn index_rotation_period(
-        mut self,
-        input: crate::types::AmazonopensearchserviceIndexRotationPeriod,
-    ) -> Self {
+    pub fn index_rotation_period(mut self, input: crate::types::AmazonopensearchserviceIndexRotationPeriod) -> Self {
         self.index_rotation_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon OpenSearch Service index rotation period</p>
-    pub fn set_index_rotation_period(
-        mut self,
-        input: ::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod>,
-    ) -> Self {
+    pub fn set_index_rotation_period(mut self, input: ::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod>) -> Self {
         self.index_rotation_period = input;
         self
     }
     /// <p>The Amazon OpenSearch Service index rotation period</p>
-    pub fn get_index_rotation_period(
-        &self,
-    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod> {
+    pub fn get_index_rotation_period(&self) -> &::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod> {
         &self.index_rotation_period
     }
     /// <p>The buffering options.</p>
-    pub fn buffering_hints(
-        mut self,
-        input: crate::types::AmazonopensearchserviceBufferingHints,
-    ) -> Self {
+    pub fn buffering_hints(mut self, input: crate::types::AmazonopensearchserviceBufferingHints) -> Self {
         self.buffering_hints = ::std::option::Option::Some(input);
         self
     }
     /// <p>The buffering options.</p>
-    pub fn set_buffering_hints(
-        mut self,
-        input: ::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints>,
-    ) -> Self {
+    pub fn set_buffering_hints(mut self, input: ::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints>) -> Self {
         self.buffering_hints = input;
         self
     }
     /// <p>The buffering options.</p>
-    pub fn get_buffering_hints(
-        &self,
-    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints> {
+    pub fn get_buffering_hints(&self) -> &::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints> {
         &self.buffering_hints
     }
     /// <p>The Amazon OpenSearch Service retry options.</p>
-    pub fn retry_options(
-        mut self,
-        input: crate::types::AmazonopensearchserviceRetryOptions,
-    ) -> Self {
+    pub fn retry_options(mut self, input: crate::types::AmazonopensearchserviceRetryOptions) -> Self {
         self.retry_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon OpenSearch Service retry options.</p>
-    pub fn set_retry_options(
-        mut self,
-        input: ::std::option::Option<crate::types::AmazonopensearchserviceRetryOptions>,
-    ) -> Self {
+    pub fn set_retry_options(mut self, input: ::std::option::Option<crate::types::AmazonopensearchserviceRetryOptions>) -> Self {
         self.retry_options = input;
         self
     }
     /// <p>The Amazon OpenSearch Service retry options.</p>
-    pub fn get_retry_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceRetryOptions> {
+    pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::AmazonopensearchserviceRetryOptions> {
         &self.retry_options
     }
     /// <p>The Amazon S3 backup mode.</p>
-    pub fn s3_backup_mode(
-        mut self,
-        input: crate::types::AmazonopensearchserviceS3BackupMode,
-    ) -> Self {
+    pub fn s3_backup_mode(mut self, input: crate::types::AmazonopensearchserviceS3BackupMode) -> Self {
         self.s3_backup_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 backup mode.</p>
-    pub fn set_s3_backup_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::AmazonopensearchserviceS3BackupMode>,
-    ) -> Self {
+    pub fn set_s3_backup_mode(mut self, input: ::std::option::Option<crate::types::AmazonopensearchserviceS3BackupMode>) -> Self {
         self.s3_backup_mode = input;
         self
     }
     /// <p>The Amazon S3 backup mode.</p>
-    pub fn get_s3_backup_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceS3BackupMode> {
+    pub fn get_s3_backup_mode(&self) -> &::std::option::Option<crate::types::AmazonopensearchserviceS3BackupMode> {
         &self.s3_backup_mode
     }
     /// <p>Describes a destination in Amazon S3.</p>
-    pub fn s3_destination_description(
-        mut self,
-        input: crate::types::S3DestinationDescription,
-    ) -> Self {
+    pub fn s3_destination_description(mut self, input: crate::types::S3DestinationDescription) -> Self {
         self.s3_destination_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes a destination in Amazon S3.</p>
-    pub fn set_s3_destination_description(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DestinationDescription>,
-    ) -> Self {
+    pub fn set_s3_destination_description(mut self, input: ::std::option::Option<crate::types::S3DestinationDescription>) -> Self {
         self.s3_destination_description = input;
         self
     }
     /// <p>Describes a destination in Amazon S3.</p>
-    pub fn get_s3_destination_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DestinationDescription> {
+    pub fn get_s3_destination_description(&self) -> &::std::option::Option<crate::types::S3DestinationDescription> {
         &self.s3_destination_description
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn processing_configuration(
-        mut self,
-        input: crate::types::ProcessingConfiguration,
-    ) -> Self {
+    pub fn processing_configuration(mut self, input: crate::types::ProcessingConfiguration) -> Self {
         self.processing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn set_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingConfiguration>,
-    ) -> Self {
+    pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
         self.processing_configuration = input;
         self
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn get_processing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+    pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
         &self.processing_configuration
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(
-        mut self,
-        input: crate::types::CloudWatchLoggingOptions,
-    ) -> Self {
+    pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOptions) -> Self {
         self.cloud_watch_logging_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn set_cloud_watch_logging_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    ) -> Self {
+    pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
         self.cloud_watch_logging_options = input;
         self
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn get_cloud_watch_logging_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
+    pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    pub fn vpc_configuration_description(
-        mut self,
-        input: crate::types::VpcConfigurationDescription,
-    ) -> Self {
+    pub fn vpc_configuration_description(mut self, input: crate::types::VpcConfigurationDescription) -> Self {
         self.vpc_configuration_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    pub fn set_vpc_configuration_description(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfigurationDescription>,
-    ) -> Self {
+    pub fn set_vpc_configuration_description(mut self, input: ::std::option::Option<crate::types::VpcConfigurationDescription>) -> Self {
         self.vpc_configuration_description = input;
         self
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    pub fn get_vpc_configuration_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcConfigurationDescription> {
+    pub fn get_vpc_configuration_description(&self) -> &::std::option::Option<crate::types::VpcConfigurationDescription> {
         &self.vpc_configuration_description
     }
     /// Consumes the builder and constructs a [`AmazonopensearchserviceDestinationDescription`](crate::types::AmazonopensearchserviceDestinationDescription).

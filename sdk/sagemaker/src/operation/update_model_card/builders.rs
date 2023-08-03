@@ -10,10 +10,7 @@ impl UpdateModelCardInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_model_card::UpdateModelCardOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_card::UpdateModelCardError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_card::UpdateModelCardError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_model_card();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl UpdateModelCardFluentBuilder {
         }
     }
     /// Access the UpdateModelCard as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_model_card::builders::UpdateModelCardInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_model_card::builders::UpdateModelCardInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl UpdateModelCardFluentBuilder {
             crate::operation::update_model_card::UpdateModelCard,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_card::UpdateModelCardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_card::UpdateModelCardError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl UpdateModelCardFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl UpdateModelCardFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_model_card::UpdateModelCardOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_card::UpdateModelCardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_card::UpdateModelCardError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl UpdateModelCardFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_model_card::UpdateModelCardOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_card::UpdateModelCardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_card::UpdateModelCardError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl UpdateModelCardFluentBuilder {
             crate::operation::update_model_card::UpdateModelCard,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_model_card::UpdateModelCardError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_model_card::UpdateModelCardError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the model card to update.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_card_name(input.into());
         self
     }
     /// <p>The name of the model card to update.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_card_name(input);
         self
     }
@@ -179,10 +157,7 @@ impl UpdateModelCardFluentBuilder {
     /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
     /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
-    pub fn set_model_card_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardStatus>,
-    ) -> Self {
+    pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
         self.inner = self.inner.set_model_card_status(input);
         self
     }

@@ -35,12 +35,9 @@ impl ListRoutesOutput {
 
 /// A builder for [`ListRoutesOutput`](crate::operation::list_routes::ListRoutesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoutesOutputBuilder {
-    pub(crate) route_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::RouteSummary>>,
+    pub(crate) route_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RouteSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListRoutesOutputBuilder {
         self
     }
     /// <p>The list of <code>RouteSummary</code> objects. </p>
-    pub fn set_route_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RouteSummary>>,
-    ) -> Self {
+    pub fn set_route_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteSummary>>) -> Self {
         self.route_summary_list = input;
         self
     }
     /// <p>The list of <code>RouteSummary</code> objects. </p>
-    pub fn get_route_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteSummary>> {
+    pub fn get_route_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteSummary>> {
         &self.route_summary_list
     }
     /// <p>The token for the next page of results.</p>

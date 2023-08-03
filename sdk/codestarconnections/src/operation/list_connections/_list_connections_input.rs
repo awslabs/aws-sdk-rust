@@ -43,9 +43,7 @@ impl ListConnectionsInput {
 
 /// A builder for [`ListConnectionsInput`](crate::operation::list_connections::ListConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectionsInputBuilder {
     pub(crate) provider_type_filter: ::std::option::Option<crate::types::ProviderType>,
     pub(crate) host_arn_filter: ::std::option::Option<::std::string::String>,
@@ -59,10 +57,7 @@ impl ListConnectionsInputBuilder {
         self
     }
     /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
-    pub fn set_provider_type_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ProviderType>,
-    ) -> Self {
+    pub fn set_provider_type_filter(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
         self.provider_type_filter = input;
         self
     }
@@ -71,18 +66,12 @@ impl ListConnectionsInputBuilder {
         &self.provider_type_filter
     }
     /// <p>Filters the list of connections to those associated with a specified host.</p>
-    pub fn host_arn_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_arn_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_arn_filter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters the list of connections to those associated with a specified host.</p>
-    pub fn set_host_arn_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_host_arn_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_arn_filter = input;
         self
     }
@@ -121,10 +110,7 @@ impl ListConnectionsInputBuilder {
     /// Consumes the builder and constructs a [`ListConnectionsInput`](crate::operation::list_connections::ListConnectionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_connections::ListConnectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_connections::ListConnectionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_connections::ListConnectionsInput {
             provider_type_filter: self.provider_type_filter,
             host_arn_filter: self.host_arn_filter,

@@ -19,9 +19,7 @@ impl StopBackupJobOutput {
 
 /// A builder for [`StopBackupJobOutput`](crate::operation::stop_backup_job::StopBackupJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopBackupJobOutputBuilder {
     _request_id: Option<String>,
 }

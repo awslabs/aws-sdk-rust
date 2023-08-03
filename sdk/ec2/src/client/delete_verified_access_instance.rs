@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteVerifiedAccessInstanceOutput`](crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceOutput) with field(s):
     ///   - [`verified_access_instance(Option<VerifiedAccessInstance>)`](crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceOutput::verified_access_instance): <p>The ID of the Verified Access instance.</p>
     /// - On failure, responds with [`SdkError<DeleteVerifiedAccessInstanceError>`](crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceError)
-    pub fn delete_verified_access_instance(&self) -> crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceFluentBuilder{
+    pub fn delete_verified_access_instance(
+        &self,
+    ) -> crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceFluentBuilder {
         crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceFluentBuilder::new(self.handle.clone())
     }
 }

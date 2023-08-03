@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`results_by_time(Option<Vec<ResultByTime>>)`](crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesOutput::results_by_time): <p>The time period that's covered by the results in the response.</p>
     ///   - [`dimension_value_attributes(Option<Vec<DimensionValuesWithAttributes>>)`](crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesOutput::dimension_value_attributes): <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
     /// - On failure, responds with [`SdkError<GetCostAndUsageWithResourcesError>`](crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError)
-    pub fn get_cost_and_usage_with_resources(&self) -> crate::operation::get_cost_and_usage_with_resources::builders::GetCostAndUsageWithResourcesFluentBuilder{
+    pub fn get_cost_and_usage_with_resources(
+        &self,
+    ) -> crate::operation::get_cost_and_usage_with_resources::builders::GetCostAndUsageWithResourcesFluentBuilder {
         crate::operation::get_cost_and_usage_with_resources::builders::GetCostAndUsageWithResourcesFluentBuilder::new(self.handle.clone())
     }
 }

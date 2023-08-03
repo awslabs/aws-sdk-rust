@@ -5,25 +5,18 @@
 pub struct ListObjectParentsOutput {
     /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
     #[doc(hidden)]
-    pub parents: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parents: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
     #[doc(hidden)]
-    pub parent_links:
-        ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>,
+    pub parent_links: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>,
     _request_id: Option<String>,
 }
 impl ListObjectParentsOutput {
     /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
-    pub fn parents(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parents(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parents.as_ref()
     }
     /// <p>The pagination token.</p>
@@ -31,9 +24,7 @@ impl ListObjectParentsOutput {
         self.next_token.as_deref()
     }
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    pub fn parent_links(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ObjectIdentifierAndLinkNameTuple]> {
+    pub fn parent_links(&self) -> ::std::option::Option<&[crate::types::ObjectIdentifierAndLinkNameTuple]> {
         self.parent_links.as_deref()
     }
 }
@@ -44,24 +35,18 @@ impl ::aws_http::request_id::RequestId for ListObjectParentsOutput {
 }
 impl ListObjectParentsOutput {
     /// Creates a new builder-style object to manufacture [`ListObjectParentsOutput`](crate::operation::list_object_parents::ListObjectParentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_object_parents::builders::ListObjectParentsOutputBuilder {
+    pub fn builder() -> crate::operation::list_object_parents::builders::ListObjectParentsOutputBuilder {
         crate::operation::list_object_parents::builders::ListObjectParentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListObjectParentsOutput`](crate::operation::list_object_parents::ListObjectParentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListObjectParentsOutputBuilder {
-    pub(crate) parents: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parents: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) parent_links:
-        ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>,
+    pub(crate) parent_links: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>,
     _request_id: Option<String>,
 }
 impl ListObjectParentsOutputBuilder {
@@ -70,32 +55,19 @@ impl ListObjectParentsOutputBuilder {
     /// To override the contents of this collection use [`set_parents`](Self::set_parents).
     ///
     /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
-    pub fn parents(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parents(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parents.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parents = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
-    pub fn set_parents(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parents(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parents = input;
         self
     }
     /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
-    pub fn get_parents(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parents(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parents
     }
     /// <p>The pagination token.</p>
@@ -124,20 +96,12 @@ impl ListObjectParentsOutputBuilder {
         self
     }
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    pub fn set_parent_links(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>,
-        >,
-    ) -> Self {
+    pub fn set_parent_links(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>) -> Self {
         self.parent_links = input;
         self
     }
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    pub fn get_parent_links(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>
-    {
+    pub fn get_parent_links(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>> {
         &self.parent_links
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

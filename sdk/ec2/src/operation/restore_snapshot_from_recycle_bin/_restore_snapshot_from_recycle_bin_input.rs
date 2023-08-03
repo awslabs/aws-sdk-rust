@@ -22,16 +22,14 @@ impl RestoreSnapshotFromRecycleBinInput {
 }
 impl RestoreSnapshotFromRecycleBinInput {
     /// Creates a new builder-style object to manufacture [`RestoreSnapshotFromRecycleBinInput`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinInput).
-    pub fn builder() -> crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinInputBuilder{
+    pub fn builder() -> crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinInputBuilder {
         crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinInputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreSnapshotFromRecycleBinInput`](crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreSnapshotFromRecycleBinInputBuilder {
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -72,13 +70,9 @@ impl RestoreSnapshotFromRecycleBinInputBuilder {
         crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinInput {
-                snapshot_id: self.snapshot_id
-                ,
-                dry_run: self.dry_run
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinInput {
+            snapshot_id: self.snapshot_id,
+            dry_run: self.dry_run,
+        })
     }
 }

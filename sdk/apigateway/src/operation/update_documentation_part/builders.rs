@@ -26,8 +26,7 @@ impl UpdateDocumentationPartInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDocumentationPartFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_documentation_part::builders::UpdateDocumentationPartInputBuilder,
+    inner: crate::operation::update_documentation_part::builders::UpdateDocumentationPartInputBuilder,
 }
 impl UpdateDocumentationPartFluentBuilder {
     /// Creates a new `UpdateDocumentationPart`.
@@ -38,10 +37,7 @@ impl UpdateDocumentationPartFluentBuilder {
         }
     }
     /// Access the UpdateDocumentationPart as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_documentation_part::builders::UpdateDocumentationPartInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_documentation_part::builders::UpdateDocumentationPartInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateDocumentationPartFluentBuilder {
             crate::operation::update_documentation_part::UpdateDocumentationPart,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_documentation_part::UpdateDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_documentation_part::UpdateDocumentationPartError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateDocumentationPartFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateDocumentationPartFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_documentation_part::UpdateDocumentationPartOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_documentation_part::UpdateDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_documentation_part::UpdateDocumentationPartError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateDocumentationPartFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_documentation_part::UpdateDocumentationPartOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_documentation_part::UpdateDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_documentation_part::UpdateDocumentationPartError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl UpdateDocumentationPartFluentBuilder {
             crate::operation::update_documentation_part::UpdateDocumentationPart,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_documentation_part::UpdateDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_documentation_part::UpdateDocumentationPartError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl UpdateDocumentationPartFluentBuilder {
         self.inner.get_rest_api_id()
     }
     /// <p>The identifier of the to-be-updated documentation part.</p>
-    pub fn documentation_part_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documentation_part_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.documentation_part_id(input.into());
         self
     }
     /// <p>The identifier of the to-be-updated documentation part.</p>
-    pub fn set_documentation_part_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documentation_part_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_documentation_part_id(input);
         self
     }
@@ -168,17 +147,12 @@ impl UpdateDocumentationPartFluentBuilder {
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
         self.inner.get_patch_operations()
     }
 }

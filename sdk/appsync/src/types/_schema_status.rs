@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SchemaStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for SchemaStatus {
             "NOT_APPLICABLE" => SchemaStatus::NotApplicable,
             "PROCESSING" => SchemaStatus::Processing,
             "SUCCESS" => SchemaStatus::Success,
-            other => {
-                SchemaStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SchemaStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl SchemaStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "DELETING",
-            "FAILED",
-            "NOT_APPLICABLE",
-            "PROCESSING",
-            "SUCCESS",
-        ]
+        &["ACTIVE", "DELETING", "FAILED", "NOT_APPLICABLE", "PROCESSING", "SUCCESS"]
     }
 }
 impl ::std::convert::AsRef<str> for SchemaStatus {

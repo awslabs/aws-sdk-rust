@@ -37,9 +37,7 @@ impl UniqueValuesComputation {
 
 /// A builder for [`UniqueValuesComputation`](crate::types::UniqueValuesComputation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UniqueValuesComputationBuilder {
     pub(crate) computation_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct UniqueValuesComputationBuilder {
 }
 impl UniqueValuesComputationBuilder {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn computation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.computation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for a computation.</p>
-    pub fn set_computation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_computation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.computation_id = input;
         self
     }
@@ -86,10 +78,7 @@ impl UniqueValuesComputationBuilder {
         self
     }
     /// <p>The category field that is used in a computation.</p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::DimensionField>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::DimensionField>) -> Self {
         self.category = input;
         self
     }

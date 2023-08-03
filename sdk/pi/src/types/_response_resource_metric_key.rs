@@ -16,9 +16,7 @@ pub struct ResponseResourceMetricKey {
     pub metric: ::std::option::Option<::std::string::String>,
     /// <p>The valid dimensions for the metric.</p>
     #[doc(hidden)]
-    pub dimensions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ResponseResourceMetricKey {
     /// <p>The name of a Performance Insights metric to be measured.</p>
@@ -33,11 +31,7 @@ impl ResponseResourceMetricKey {
         self.metric.as_deref()
     }
     /// <p>The valid dimensions for the metric.</p>
-    pub fn dimensions(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn dimensions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.dimensions.as_ref()
     }
 }
@@ -50,14 +44,10 @@ impl ResponseResourceMetricKey {
 
 /// A builder for [`ResponseResourceMetricKey`](crate::types::ResponseResourceMetricKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseResourceMetricKeyBuilder {
     pub(crate) metric: ::std::option::Option<::std::string::String>,
-    pub(crate) dimensions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ResponseResourceMetricKeyBuilder {
     /// <p>The name of a Performance Insights metric to be measured.</p>
@@ -100,32 +90,19 @@ impl ResponseResourceMetricKeyBuilder {
     /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
     ///
     /// <p>The valid dimensions for the metric.</p>
-    pub fn dimensions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimensions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.dimensions.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.dimensions = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The valid dimensions for the metric.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The valid dimensions for the metric.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.dimensions
     }
     /// Consumes the builder and constructs a [`ResponseResourceMetricKey`](crate::types::ResponseResourceMetricKey).

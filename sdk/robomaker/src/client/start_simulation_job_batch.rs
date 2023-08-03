@@ -20,10 +20,7 @@ impl super::Client {
     ///   - [`created_requests(Option<Vec<SimulationJobSummary>>)`](crate::operation::start_simulation_job_batch::StartSimulationJobBatchOutput::created_requests): <p>A list of created simulation job request summaries.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::start_simulation_job_batch::StartSimulationJobBatchOutput::tags): <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
     /// - On failure, responds with [`SdkError<StartSimulationJobBatchError>`](crate::operation::start_simulation_job_batch::StartSimulationJobBatchError)
-    pub fn start_simulation_job_batch(
-        &self,
-    ) -> crate::operation::start_simulation_job_batch::builders::StartSimulationJobBatchFluentBuilder
-    {
+    pub fn start_simulation_job_batch(&self) -> crate::operation::start_simulation_job_batch::builders::StartSimulationJobBatchFluentBuilder {
         crate::operation::start_simulation_job_batch::builders::StartSimulationJobBatchFluentBuilder::new(self.handle.clone())
     }
 }

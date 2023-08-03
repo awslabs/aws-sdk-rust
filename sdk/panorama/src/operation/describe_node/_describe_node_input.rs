@@ -29,9 +29,7 @@ impl DescribeNodeInput {
 
 /// A builder for [`DescribeNodeInput`](crate::operation::describe_node::DescribeNodeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNodeInputBuilder {
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DescribeNodeInputBuilder {
         &self.node_id
     }
     /// <p>The account ID of the node's owner.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the node's owner.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -72,12 +64,7 @@ impl DescribeNodeInputBuilder {
         &self.owner_account
     }
     /// Consumes the builder and constructs a [`DescribeNodeInput`](crate::operation::describe_node::DescribeNodeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_node::DescribeNodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_node::DescribeNodeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_node::DescribeNodeInput {
             node_id: self.node_id,
             owner_account: self.owner_account,

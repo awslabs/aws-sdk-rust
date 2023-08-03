@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutConfigurationRecorderOutput {
 }
 impl PutConfigurationRecorderOutput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationRecorderOutput`](crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput).
-    pub fn builder(
-    ) -> crate::operation::put_configuration_recorder::builders::PutConfigurationRecorderOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_configuration_recorder::builders::PutConfigurationRecorderOutputBuilder {
         crate::operation::put_configuration_recorder::builders::PutConfigurationRecorderOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutConfigurationRecorderOutput`](crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutConfigurationRecorderOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl PutConfigurationRecorderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutConfigurationRecorderOutput`](crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput {
+    pub fn build(self) -> crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput {
         crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput {
             _request_id: self._request_id,
         }

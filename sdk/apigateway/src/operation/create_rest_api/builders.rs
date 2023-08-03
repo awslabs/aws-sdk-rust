@@ -10,10 +10,7 @@ impl CreateRestApiInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_rest_api::CreateRestApiOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rest_api::CreateRestApiError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rest_api::CreateRestApiError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_rest_api();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateRestApiFluentBuilder {
         }
     }
     /// Access the CreateRestApi as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_rest_api::builders::CreateRestApiInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_rest_api::builders::CreateRestApiInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateRestApiFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -175,25 +167,17 @@ impl CreateRestApiFluentBuilder {
     /// To override the contents of this collection use [`set_binary_media_types`](Self::set_binary_media_types).
     ///
     /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
-    pub fn binary_media_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn binary_media_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.binary_media_types(input.into());
         self
     }
     /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
-    pub fn set_binary_media_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_binary_media_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_binary_media_types(input);
         self
     }
     /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
-    pub fn get_binary_media_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_binary_media_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_binary_media_types()
     }
     /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
@@ -216,10 +200,7 @@ impl CreateRestApiFluentBuilder {
         self
     }
     /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
-    pub fn set_api_key_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiKeySourceType>,
-    ) -> Self {
+    pub fn set_api_key_source(mut self, input: ::std::option::Option<crate::types::ApiKeySourceType>) -> Self {
         self.inner = self.inner.set_api_key_source(input);
         self
     }
@@ -233,17 +214,12 @@ impl CreateRestApiFluentBuilder {
         self
     }
     /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
-    pub fn set_endpoint_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointConfiguration>,
-    ) -> Self {
+    pub fn set_endpoint_configuration(mut self, input: ::std::option::Option<crate::types::EndpointConfiguration>) -> Self {
         self.inner = self.inner.set_endpoint_configuration(input);
         self
     }
     /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
-    pub fn get_endpoint_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EndpointConfiguration> {
+    pub fn get_endpoint_configuration(&self) -> &::std::option::Option<crate::types::EndpointConfiguration> {
         self.inner.get_endpoint_configuration()
     }
     /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
@@ -265,30 +241,17 @@ impl CreateRestApiFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint</p>

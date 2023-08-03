@@ -26,8 +26,7 @@ impl GetOriginEndpointPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOriginEndpointPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_origin_endpoint_policy::builders::GetOriginEndpointPolicyInputBuilder,
+    inner: crate::operation::get_origin_endpoint_policy::builders::GetOriginEndpointPolicyInputBuilder,
 }
 impl GetOriginEndpointPolicyFluentBuilder {
     /// Creates a new `GetOriginEndpointPolicy`.
@@ -38,10 +37,7 @@ impl GetOriginEndpointPolicyFluentBuilder {
         }
     }
     /// Access the GetOriginEndpointPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_origin_endpoint_policy::builders::GetOriginEndpointPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_origin_endpoint_policy::builders::GetOriginEndpointPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl GetOriginEndpointPolicyFluentBuilder {
             crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl GetOriginEndpointPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl GetOriginEndpointPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl GetOriginEndpointPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl GetOriginEndpointPolicyFluentBuilder {
             crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_group_name(input.into());
         self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn set_channel_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_group_name(input);
         self
     }
@@ -159,18 +138,12 @@ impl GetOriginEndpointPolicyFluentBuilder {
         self.inner.get_channel_name()
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    pub fn origin_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origin_endpoint_name(input.into());
         self
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    pub fn set_origin_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origin_endpoint_name(input);
         self
     }

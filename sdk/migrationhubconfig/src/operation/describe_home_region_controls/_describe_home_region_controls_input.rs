@@ -43,16 +43,14 @@ impl DescribeHomeRegionControlsInput {
 }
 impl DescribeHomeRegionControlsInput {
     /// Creates a new builder-style object to manufacture [`DescribeHomeRegionControlsInput`](crate::operation::describe_home_region_controls::DescribeHomeRegionControlsInput).
-    pub fn builder() -> crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsInputBuilder{
+    pub fn builder() -> crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsInputBuilder {
         crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHomeRegionControlsInput`](crate::operation::describe_home_region_controls::DescribeHomeRegionControlsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHomeRegionControlsInputBuilder {
     pub(crate) control_id: ::std::option::Option<::std::string::String>,
     pub(crate) home_region: ::std::option::Option<::std::string::String>,
@@ -138,14 +136,12 @@ impl DescribeHomeRegionControlsInputBuilder {
         crate::operation::describe_home_region_controls::DescribeHomeRegionControlsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsInput {
-                control_id: self.control_id,
-                home_region: self.home_region,
-                target: self.target,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_home_region_controls::DescribeHomeRegionControlsInput {
+            control_id: self.control_id,
+            home_region: self.home_region,
+            target: self.target,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

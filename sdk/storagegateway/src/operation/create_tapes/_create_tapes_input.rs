@@ -104,9 +104,7 @@ impl CreateTapesInput {
 
 /// A builder for [`CreateTapesInput`](crate::operation::create_tapes::CreateTapesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTapesInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tape_size_in_bytes: ::std::option::Option<i64>,
@@ -191,20 +189,14 @@ impl CreateTapesInputBuilder {
     /// <p>A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
-    pub fn tape_barcode_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tape_barcode_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tape_barcode_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the barcode unique.</p> <note>
     /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
     /// </note>
-    pub fn set_tape_barcode_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tape_barcode_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tape_barcode_prefix = input;
         self
     }
@@ -289,10 +281,7 @@ impl CreateTapesInputBuilder {
     /// <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -303,12 +292,7 @@ impl CreateTapesInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTapesInput`](crate::operation::create_tapes::CreateTapesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_tapes::CreateTapesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_tapes::CreateTapesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_tapes::CreateTapesInput {
             gateway_arn: self.gateway_arn,
             tape_size_in_bytes: self.tape_size_in_bytes,

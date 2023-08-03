@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifySamlPropertiesOutput {
 }
 impl ModifySamlPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`ModifySamlPropertiesOutput`](crate::operation::modify_saml_properties::ModifySamlPropertiesOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_saml_properties::builders::ModifySamlPropertiesOutputBuilder {
+    pub fn builder() -> crate::operation::modify_saml_properties::builders::ModifySamlPropertiesOutputBuilder {
         crate::operation::modify_saml_properties::builders::ModifySamlPropertiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifySamlPropertiesOutput`](crate::operation::modify_saml_properties::ModifySamlPropertiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifySamlPropertiesOutputBuilder {
     _request_id: Option<String>,
 }

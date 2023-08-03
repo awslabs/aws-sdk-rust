@@ -11,8 +11,7 @@ pub struct GetRecoveryGroupReadinessSummaryOutput {
     pub readiness: ::std::option::Option<crate::types::Readiness>,
     /// <p>Summaries of the readiness checks for the recovery group.</p>
     #[doc(hidden)]
-    pub readiness_checks:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>,
+    pub readiness_checks: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>,
     _request_id: Option<String>,
 }
 impl GetRecoveryGroupReadinessSummaryOutput {
@@ -25,9 +24,7 @@ impl GetRecoveryGroupReadinessSummaryOutput {
         self.readiness.as_ref()
     }
     /// <p>Summaries of the readiness checks for the recovery group.</p>
-    pub fn readiness_checks(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReadinessCheckSummary]> {
+    pub fn readiness_checks(&self) -> ::std::option::Option<&[crate::types::ReadinessCheckSummary]> {
         self.readiness_checks.as_deref()
     }
 }
@@ -38,21 +35,18 @@ impl ::aws_http::request_id::RequestId for GetRecoveryGroupReadinessSummaryOutpu
 }
 impl GetRecoveryGroupReadinessSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetRecoveryGroupReadinessSummaryOutput`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput).
-    pub fn builder() -> crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryOutputBuilder{
+    pub fn builder() -> crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryOutputBuilder {
         crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecoveryGroupReadinessSummaryOutput`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecoveryGroupReadinessSummaryOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) readiness: ::std::option::Option<crate::types::Readiness>,
-    pub(crate) readiness_checks:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>,
+    pub(crate) readiness_checks: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>,
     _request_id: Option<String>,
 }
 impl GetRecoveryGroupReadinessSummaryOutputBuilder {
@@ -96,17 +90,12 @@ impl GetRecoveryGroupReadinessSummaryOutputBuilder {
         self
     }
     /// <p>Summaries of the readiness checks for the recovery group.</p>
-    pub fn set_readiness_checks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>,
-    ) -> Self {
+    pub fn set_readiness_checks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>) -> Self {
         self.readiness_checks = input;
         self
     }
     /// <p>Summaries of the readiness checks for the recovery group.</p>
-    pub fn get_readiness_checks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>> {
+    pub fn get_readiness_checks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>> {
         &self.readiness_checks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -119,14 +108,11 @@ impl GetRecoveryGroupReadinessSummaryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRecoveryGroupReadinessSummaryOutput`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput).
-    pub fn build(self) -> crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput{
+    pub fn build(self) -> crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput {
         crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput {
-            next_token: self.next_token
-            ,
-            readiness: self.readiness
-            ,
-            readiness_checks: self.readiness_checks
-            ,
+            next_token: self.next_token,
+            readiness: self.readiness,
+            readiness_checks: self.readiness_checks,
             _request_id: self._request_id,
         }
     }

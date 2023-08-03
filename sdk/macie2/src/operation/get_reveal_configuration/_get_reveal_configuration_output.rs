@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetRevealConfigurationOutput {
 }
 impl GetRevealConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetRevealConfigurationOutput`](crate::operation::get_reveal_configuration::GetRevealConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_reveal_configuration::builders::GetRevealConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_reveal_configuration::builders::GetRevealConfigurationOutputBuilder {
         crate::operation::get_reveal_configuration::builders::GetRevealConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRevealConfigurationOutput`](crate::operation::get_reveal_configuration::GetRevealConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRevealConfigurationOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::RevealConfiguration>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetRevealConfigurationOutputBuilder {
         self
     }
     /// <p>The current configuration settings and the status of the configuration for the account.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RevealConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RevealConfiguration>) -> Self {
         self.configuration = input;
         self
     }

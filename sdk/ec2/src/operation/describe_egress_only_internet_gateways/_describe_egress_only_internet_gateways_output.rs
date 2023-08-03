@@ -5,8 +5,7 @@
 pub struct DescribeEgressOnlyInternetGatewaysOutput {
     /// <p>Information about the egress-only internet gateways.</p>
     #[doc(hidden)]
-    pub egress_only_internet_gateways:
-        ::std::option::Option<::std::vec::Vec<crate::types::EgressOnlyInternetGateway>>,
+    pub egress_only_internet_gateways: ::std::option::Option<::std::vec::Vec<crate::types::EgressOnlyInternetGateway>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeEgressOnlyInternetGatewaysOutput {
 }
 impl DescribeEgressOnlyInternetGatewaysOutput {
     /// <p>Information about the egress-only internet gateways.</p>
-    pub fn egress_only_internet_gateways(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EgressOnlyInternetGateway]> {
+    pub fn egress_only_internet_gateways(&self) -> ::std::option::Option<&[crate::types::EgressOnlyInternetGateway]> {
         self.egress_only_internet_gateways.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeEgressOnlyInternetGatewaysOut
 }
 impl DescribeEgressOnlyInternetGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEgressOnlyInternetGatewaysOutput`](crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput).
-    pub fn builder() -> crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysOutputBuilder{
+    pub fn builder() -> crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysOutputBuilder {
         crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEgressOnlyInternetGatewaysOutput`](crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEgressOnlyInternetGatewaysOutputBuilder {
-    pub(crate) egress_only_internet_gateways:
-        ::std::option::Option<::std::vec::Vec<crate::types::EgressOnlyInternetGateway>>,
+    pub(crate) egress_only_internet_gateways: ::std::option::Option<::std::vec::Vec<crate::types::EgressOnlyInternetGateway>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeEgressOnlyInternetGatewaysOutputBuilder {
     /// To override the contents of this collection use [`set_egress_only_internet_gateways`](Self::set_egress_only_internet_gateways).
     ///
     /// <p>Information about the egress-only internet gateways.</p>
-    pub fn egress_only_internet_gateways(
-        mut self,
-        input: crate::types::EgressOnlyInternetGateway,
-    ) -> Self {
+    pub fn egress_only_internet_gateways(mut self, input: crate::types::EgressOnlyInternetGateway) -> Self {
         let mut v = self.egress_only_internet_gateways.unwrap_or_default();
         v.push(input);
         self.egress_only_internet_gateways = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeEgressOnlyInternetGatewaysOutputBuilder {
         self
     }
     /// <p>Information about the egress-only internet gateways.</p>
-    pub fn get_egress_only_internet_gateways(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EgressOnlyInternetGateway>> {
+    pub fn get_egress_only_internet_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EgressOnlyInternetGateway>> {
         &self.egress_only_internet_gateways
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -100,12 +89,10 @@ impl DescribeEgressOnlyInternetGatewaysOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEgressOnlyInternetGatewaysOutput`](crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput).
-    pub fn build(self) -> crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput{
+    pub fn build(self) -> crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput {
         crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput {
-            egress_only_internet_gateways: self.egress_only_internet_gateways
-            ,
-            next_token: self.next_token
-            ,
+            egress_only_internet_gateways: self.egress_only_internet_gateways,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

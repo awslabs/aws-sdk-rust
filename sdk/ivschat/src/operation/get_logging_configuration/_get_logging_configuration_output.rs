@@ -26,9 +26,7 @@ pub struct GetLoggingConfigurationOutput {
     pub state: ::std::option::Option<crate::types::LoggingConfigurationState>,
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetLoggingConfigurationOutput {
@@ -53,9 +51,7 @@ impl GetLoggingConfigurationOutput {
         self.name.as_deref()
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn destination_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
+    pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
     /// <p>The state of the logging configuration. When the state is <code>ACTIVE</code>, the configuration is ready to log chat content.</p>
@@ -63,11 +59,7 @@ impl GetLoggingConfigurationOutput {
         self.state.as_ref()
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -78,30 +70,23 @@ impl ::aws_http::request_id::RequestId for GetLoggingConfigurationOutput {
 }
 impl GetLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationOutput`](crate::operation::get_logging_configuration::GetLoggingConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_logging_configuration::builders::GetLoggingConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_logging_configuration::builders::GetLoggingConfigurationOutputBuilder {
         crate::operation::get_logging_configuration::builders::GetLoggingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLoggingConfigurationOutput`](crate::operation::get_logging_configuration::GetLoggingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoggingConfigurationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) destination_configuration:
-        ::std::option::Option<crate::types::DestinationConfiguration>,
+    pub(crate) destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     pub(crate) state: ::std::option::Option<crate::types::LoggingConfigurationState>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetLoggingConfigurationOutputBuilder {
@@ -139,10 +124,7 @@ impl GetLoggingConfigurationOutputBuilder {
         self
     }
     /// <p>Time when the logging configuration was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -156,10 +138,7 @@ impl GetLoggingConfigurationOutputBuilder {
         self
     }
     /// <p>Time of the logging configuration’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -182,25 +161,17 @@ impl GetLoggingConfigurationOutputBuilder {
         &self.name
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn destination_configuration(
-        mut self,
-        input: crate::types::DestinationConfiguration,
-    ) -> Self {
+    pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn set_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
         self.destination_configuration = input;
         self
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn get_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+    pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
         &self.destination_configuration
     }
     /// <p>The state of the logging configuration. When the state is <code>ACTIVE</code>, the configuration is ready to log chat content.</p>
@@ -209,10 +180,7 @@ impl GetLoggingConfigurationOutputBuilder {
         self
     }
     /// <p>The state of the logging configuration. When the state is <code>ACTIVE</code>, the configuration is ready to log chat content.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfigurationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::LoggingConfigurationState>) -> Self {
         self.state = input;
         self
     }
@@ -225,32 +193,19 @@ impl GetLoggingConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -263,9 +218,7 @@ impl GetLoggingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetLoggingConfigurationOutput`](crate::operation::get_logging_configuration::GetLoggingConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_logging_configuration::GetLoggingConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_logging_configuration::GetLoggingConfigurationOutput {
         crate::operation::get_logging_configuration::GetLoggingConfigurationOutput {
             arn: self.arn,
             id: self.id,

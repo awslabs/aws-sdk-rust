@@ -36,9 +36,7 @@ impl DisassociateBotInput {
 
 /// A builder for [`DisassociateBotInput`](crate::operation::disassociate_bot::DisassociateBotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateBotInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) lex_bot: ::std::option::Option<crate::types::LexBot>,
@@ -90,10 +88,7 @@ impl DisassociateBotInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateBotInput`](crate::operation::disassociate_bot::DisassociateBotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_bot::DisassociateBotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::disassociate_bot::DisassociateBotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_bot::DisassociateBotInput {
             instance_id: self.instance_id,
             lex_bot: self.lex_bot,

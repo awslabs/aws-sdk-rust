@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetMetricsSummaryOutput {
 }
 impl GetMetricsSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetMetricsSummaryOutput`](crate::operation::get_metrics_summary::GetMetricsSummaryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_metrics_summary::builders::GetMetricsSummaryOutputBuilder {
+    pub fn builder() -> crate::operation::get_metrics_summary::builders::GetMetricsSummaryOutputBuilder {
         crate::operation::get_metrics_summary::builders::GetMetricsSummaryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMetricsSummaryOutput`](crate::operation::get_metrics_summary::GetMetricsSummaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMetricsSummaryOutputBuilder {
     pub(crate) metrics_summary: ::std::option::Option<crate::types::MetricsSummary>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetMetricsSummaryOutputBuilder {
         self
     }
     /// <p>The summary metrics from the specified date.</p>
-    pub fn set_metrics_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricsSummary>,
-    ) -> Self {
+    pub fn set_metrics_summary(mut self, input: ::std::option::Option<crate::types::MetricsSummary>) -> Self {
         self.metrics_summary = input;
         self
     }

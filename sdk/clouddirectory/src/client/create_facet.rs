@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`facet_style(FacetStyle)`](crate::operation::create_facet::builders::CreateFacetFluentBuilder::facet_style) / [`set_facet_style(Option<FacetStyle>)`](crate::operation::create_facet::builders::CreateFacetFluentBuilder::set_facet_style): <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     /// - On success, responds with [`CreateFacetOutput`](crate::operation::create_facet::CreateFacetOutput)
     /// - On failure, responds with [`SdkError<CreateFacetError>`](crate::operation::create_facet::CreateFacetError)
-    pub fn create_facet(
-        &self,
-    ) -> crate::operation::create_facet::builders::CreateFacetFluentBuilder {
+    pub fn create_facet(&self) -> crate::operation::create_facet::builders::CreateFacetFluentBuilder {
         crate::operation::create_facet::builders::CreateFacetFluentBuilder::new(self.handle.clone())
     }
 }

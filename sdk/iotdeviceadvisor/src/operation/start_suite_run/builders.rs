@@ -10,10 +10,7 @@ impl StartSuiteRunInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_suite_run::StartSuiteRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_suite_run::StartSuiteRunError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_suite_run::StartSuiteRunError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_suite_run();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl StartSuiteRunFluentBuilder {
         }
     }
     /// Access the StartSuiteRun as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_suite_run::builders::StartSuiteRunInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_suite_run::builders::StartSuiteRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl StartSuiteRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -116,18 +108,12 @@ impl StartSuiteRunFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>Suite definition ID of the test suite.</p>
-    pub fn suite_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.suite_definition_id(input.into());
         self
     }
     /// <p>Suite definition ID of the test suite.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_suite_definition_id(input);
         self
     }
@@ -136,18 +122,12 @@ impl StartSuiteRunFluentBuilder {
         self.inner.get_suite_definition_id()
     }
     /// <p>Suite definition version of the test suite.</p>
-    pub fn suite_definition_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.suite_definition_version(input.into());
         self
     }
     /// <p>Suite definition version of the test suite.</p>
-    pub fn set_suite_definition_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_suite_definition_version(input);
         self
     }
@@ -161,17 +141,12 @@ impl StartSuiteRunFluentBuilder {
         self
     }
     /// <p>Suite run configuration.</p>
-    pub fn set_suite_run_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SuiteRunConfiguration>,
-    ) -> Self {
+    pub fn set_suite_run_configuration(mut self, input: ::std::option::Option<crate::types::SuiteRunConfiguration>) -> Self {
         self.inner = self.inner.set_suite_run_configuration(input);
         self
     }
     /// <p>Suite run configuration.</p>
-    pub fn get_suite_run_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SuiteRunConfiguration> {
+    pub fn get_suite_run_configuration(&self) -> &::std::option::Option<crate::types::SuiteRunConfiguration> {
         self.inner.get_suite_run_configuration()
     }
     /// Adds a key-value pair to `tags`.
@@ -179,30 +154,17 @@ impl StartSuiteRunFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be attached to the suite run.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to be attached to the suite run.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to be attached to the suite run.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

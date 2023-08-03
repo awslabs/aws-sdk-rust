@@ -20,9 +20,7 @@ impl ReferenceDataSource {
         self.table_name.as_deref()
     }
     /// <p>Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf. An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
-    pub fn s3_reference_data_source(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3ReferenceDataSource> {
+    pub fn s3_reference_data_source(&self) -> ::std::option::Option<&crate::types::S3ReferenceDataSource> {
         self.s3_reference_data_source.as_ref()
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
@@ -39,9 +37,7 @@ impl ReferenceDataSource {
 
 /// A builder for [`ReferenceDataSource`](crate::types::ReferenceDataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReferenceDataSourceBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_reference_data_source: ::std::option::Option<crate::types::S3ReferenceDataSource>,
@@ -68,17 +64,12 @@ impl ReferenceDataSourceBuilder {
         self
     }
     /// <p>Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf. An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
-    pub fn set_s3_reference_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::S3ReferenceDataSource>,
-    ) -> Self {
+    pub fn set_s3_reference_data_source(mut self, input: ::std::option::Option<crate::types::S3ReferenceDataSource>) -> Self {
         self.s3_reference_data_source = input;
         self
     }
     /// <p>Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf. An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
-    pub fn get_s3_reference_data_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3ReferenceDataSource> {
+    pub fn get_s3_reference_data_source(&self) -> &::std::option::Option<crate::types::S3ReferenceDataSource> {
         &self.s3_reference_data_source
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
@@ -87,10 +78,7 @@ impl ReferenceDataSourceBuilder {
         self
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
-    pub fn set_reference_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceSchema>,
-    ) -> Self {
+    pub fn set_reference_schema(mut self, input: ::std::option::Option<crate::types::SourceSchema>) -> Self {
         self.reference_schema = input;
         self
     }

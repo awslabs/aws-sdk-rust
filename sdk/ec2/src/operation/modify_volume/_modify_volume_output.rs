@@ -28,9 +28,7 @@ impl ModifyVolumeOutput {
 
 /// A builder for [`ModifyVolumeOutput`](crate::operation::modify_volume::ModifyVolumeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVolumeOutputBuilder {
     pub(crate) volume_modification: ::std::option::Option<crate::types::VolumeModification>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl ModifyVolumeOutputBuilder {
         self
     }
     /// <p>Information about the volume modification.</p>
-    pub fn set_volume_modification(
-        mut self,
-        input: ::std::option::Option<crate::types::VolumeModification>,
-    ) -> Self {
+    pub fn set_volume_modification(mut self, input: ::std::option::Option<crate::types::VolumeModification>) -> Self {
         self.volume_modification = input;
         self
     }
     /// <p>Information about the volume modification.</p>
-    pub fn get_volume_modification(
-        &self,
-    ) -> &::std::option::Option<crate::types::VolumeModification> {
+    pub fn get_volume_modification(&self) -> &::std::option::Option<crate::types::VolumeModification> {
         &self.volume_modification
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

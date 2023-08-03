@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for EnableAwsOrganizationsAccessOutput {
 }
 impl EnableAwsOrganizationsAccessOutput {
     /// Creates a new builder-style object to manufacture [`EnableAwsOrganizationsAccessOutput`](crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessOutput).
-    pub fn builder() -> crate::operation::enable_aws_organizations_access::builders::EnableAwsOrganizationsAccessOutputBuilder{
+    pub fn builder() -> crate::operation::enable_aws_organizations_access::builders::EnableAwsOrganizationsAccessOutputBuilder {
         crate::operation::enable_aws_organizations_access::builders::EnableAwsOrganizationsAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`EnableAwsOrganizationsAccessOutput`](crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableAwsOrganizationsAccessOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl EnableAwsOrganizationsAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableAwsOrganizationsAccessOutput`](crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessOutput {
+    pub fn build(self) -> crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessOutput {
         crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessOutput {
             _request_id: self._request_id,
         }

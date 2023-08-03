@@ -5,8 +5,7 @@
 pub struct ListResourceComplianceSummariesOutput {
     /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
     #[doc(hidden)]
-    pub resource_compliance_summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceComplianceSummaryItem>>,
+    pub resource_compliance_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ResourceComplianceSummaryItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListResourceComplianceSummariesOutput {
 }
 impl ListResourceComplianceSummariesOutput {
     /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
-    pub fn resource_compliance_summary_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceComplianceSummaryItem]> {
+    pub fn resource_compliance_summary_items(&self) -> ::std::option::Option<&[crate::types::ResourceComplianceSummaryItem]> {
         self.resource_compliance_summary_items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListResourceComplianceSummariesOutput
 }
 impl ListResourceComplianceSummariesOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceComplianceSummariesOutput`](crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesOutput).
-    pub fn builder() -> crate::operation::list_resource_compliance_summaries::builders::ListResourceComplianceSummariesOutputBuilder{
+    pub fn builder() -> crate::operation::list_resource_compliance_summaries::builders::ListResourceComplianceSummariesOutputBuilder {
         crate::operation::list_resource_compliance_summaries::builders::ListResourceComplianceSummariesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceComplianceSummariesOutput`](crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceComplianceSummariesOutputBuilder {
-    pub(crate) resource_compliance_summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceComplianceSummaryItem>>,
+    pub(crate) resource_compliance_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ResourceComplianceSummaryItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListResourceComplianceSummariesOutputBuilder {
     /// To override the contents of this collection use [`set_resource_compliance_summary_items`](Self::set_resource_compliance_summary_items).
     ///
     /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
-    pub fn resource_compliance_summary_items(
-        mut self,
-        input: crate::types::ResourceComplianceSummaryItem,
-    ) -> Self {
+    pub fn resource_compliance_summary_items(mut self, input: crate::types::ResourceComplianceSummaryItem) -> Self {
         let mut v = self.resource_compliance_summary_items.unwrap_or_default();
         v.push(input);
         self.resource_compliance_summary_items = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListResourceComplianceSummariesOutputBuilder {
         self
     }
     /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
-    pub fn get_resource_compliance_summary_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceComplianceSummaryItem>> {
+    pub fn get_resource_compliance_summary_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceComplianceSummaryItem>> {
         &self.resource_compliance_summary_items
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -100,15 +89,10 @@ impl ListResourceComplianceSummariesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResourceComplianceSummariesOutput`](crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesOutput
-    {
+    pub fn build(self) -> crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesOutput {
         crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesOutput {
-            resource_compliance_summary_items: self.resource_compliance_summary_items
-            ,
-            next_token: self.next_token
-            ,
+            resource_compliance_summary_items: self.resource_compliance_summary_items,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

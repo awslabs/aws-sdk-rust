@@ -4,19 +4,13 @@ pub fn ser_ios_import_client_branding_attributes(
     input: &crate::types::IosImportClientBrandingAttributes,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.logo {
-        object
-            .key("Logo")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+        object.key("Logo").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
     if let Some(var_2) = &input.logo2x {
-        object
-            .key("Logo2x")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+        object.key("Logo2x").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
     if let Some(var_3) = &input.logo3x {
-        object
-            .key("Logo3x")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_3));
+        object.key("Logo3x").string_unchecked(&::aws_smithy_types::base64::encode(var_3));
     }
     if let Some(var_4) = &input.support_email {
         object.key("SupportEmail").string(var_4.as_str());

@@ -30,27 +30,19 @@ impl AnomalyGroupTimeSeries {
 
 /// A builder for [`AnomalyGroupTimeSeries`](crate::types::AnomalyGroupTimeSeries).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyGroupTimeSeriesBuilder {
     pub(crate) anomaly_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) time_series_id: ::std::option::Option<::std::string::String>,
 }
 impl AnomalyGroupTimeSeriesBuilder {
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn set_anomaly_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_group_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl AnomalyGroupTimeSeriesBuilder {
         &self.anomaly_group_id
     }
     /// <p>The ID of the metric.</p>
-    pub fn time_series_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn time_series_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_series_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the metric.</p>
-    pub fn set_time_series_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_time_series_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_series_id = input;
         self
     }

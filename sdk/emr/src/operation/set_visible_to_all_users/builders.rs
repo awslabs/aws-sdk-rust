@@ -42,10 +42,7 @@ impl SetVisibleToAllUsersFluentBuilder {
         }
     }
     /// Access the SetVisibleToAllUsers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl SetVisibleToAllUsersFluentBuilder {
             crate::operation::set_visible_to_all_users::SetVisibleToAllUsers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl SetVisibleToAllUsersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl SetVisibleToAllUsersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl SetVisibleToAllUsersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_visible_to_all_users::SetVisibleToAllUsersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +110,7 @@ impl SetVisibleToAllUsersFluentBuilder {
             crate::operation::set_visible_to_all_users::SetVisibleToAllUsers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError>,
     > {
         self.customize_middleware().await
     }
@@ -138,17 +124,12 @@ impl SetVisibleToAllUsersFluentBuilder {
         self
     }
     /// <p>The unique identifier of the job flow (cluster).</p>
-    pub fn set_job_flow_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_job_flow_ids(input);
         self
     }
     /// <p>The unique identifier of the job flow (cluster).</p>
-    pub fn get_job_flow_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_job_flow_ids()
     }
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>

@@ -38,9 +38,7 @@ impl BatchDeleteDocumentFluentBuilder {
         }
     }
     /// Access the BatchDeleteDocument as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_delete_document::builders::BatchDeleteDocumentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_delete_document::builders::BatchDeleteDocumentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl BatchDeleteDocumentFluentBuilder {
             crate::operation::batch_delete_document::BatchDeleteDocument,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_document::BatchDeleteDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_document::BatchDeleteDocumentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl BatchDeleteDocumentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl BatchDeleteDocumentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_document::BatchDeleteDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_document::BatchDeleteDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_document::BatchDeleteDocumentError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl BatchDeleteDocumentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_document::BatchDeleteDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_document::BatchDeleteDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_document::BatchDeleteDocumentError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl BatchDeleteDocumentFluentBuilder {
             crate::operation::batch_delete_document::BatchDeleteDocument,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_document::BatchDeleteDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_document::BatchDeleteDocumentError>,
     > {
         self.customize_middleware().await
     }
@@ -142,47 +129,31 @@ impl BatchDeleteDocumentFluentBuilder {
     /// To override the contents of this collection use [`set_document_id_list`](Self::set_document_id_list).
     ///
     /// <p>One or more identifiers for documents to delete from the index.</p>
-    pub fn document_id_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_id_list(input.into());
         self
     }
     /// <p>One or more identifiers for documents to delete from the index.</p>
-    pub fn set_document_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_document_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_document_id_list(input);
         self
     }
     /// <p>One or more identifiers for documents to delete from the index.</p>
-    pub fn get_document_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_document_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_document_id_list()
     }
     /// <p>Maps a particular data source sync job to a particular data source.</p>
-    pub fn data_source_sync_job_metric_target(
-        mut self,
-        input: crate::types::DataSourceSyncJobMetricTarget,
-    ) -> Self {
+    pub fn data_source_sync_job_metric_target(mut self, input: crate::types::DataSourceSyncJobMetricTarget) -> Self {
         self.inner = self.inner.data_source_sync_job_metric_target(input);
         self
     }
     /// <p>Maps a particular data source sync job to a particular data source.</p>
-    pub fn set_data_source_sync_job_metric_target(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceSyncJobMetricTarget>,
-    ) -> Self {
+    pub fn set_data_source_sync_job_metric_target(mut self, input: ::std::option::Option<crate::types::DataSourceSyncJobMetricTarget>) -> Self {
         self.inner = self.inner.set_data_source_sync_job_metric_target(input);
         self
     }
     /// <p>Maps a particular data source sync job to a particular data source.</p>
-    pub fn get_data_source_sync_job_metric_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceSyncJobMetricTarget> {
+    pub fn get_data_source_sync_job_metric_target(&self) -> &::std::option::Option<crate::types::DataSourceSyncJobMetricTarget> {
         self.inner.get_data_source_sync_job_metric_target()
     }
 }

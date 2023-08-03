@@ -44,9 +44,7 @@ impl VolumeStatusAction {
 
 /// A builder for [`VolumeStatusAction`](crate::types::VolumeStatusAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeStatusActionBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,

@@ -22,9 +22,7 @@ impl GetContactInput {
 
 /// A builder for [`GetContactInput`](crate::operation::get_contact::GetContactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContactInputBuilder {
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetContactInputBuilder {
         &self.contact_id
     }
     /// Consumes the builder and constructs a [`GetContactInput`](crate::operation::get_contact::GetContactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_contact::GetContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_contact::GetContactInput {
-            contact_id: self.contact_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact::GetContactInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_contact::GetContactInput { contact_id: self.contact_id })
     }
 }

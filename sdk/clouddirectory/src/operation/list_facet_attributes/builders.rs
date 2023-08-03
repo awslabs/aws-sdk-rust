@@ -37,9 +37,7 @@ impl ListFacetAttributesFluentBuilder {
         }
     }
     /// Access the ListFacetAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_facet_attributes::builders::ListFacetAttributesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_facet_attributes::builders::ListFacetAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListFacetAttributesFluentBuilder {
             crate::operation::list_facet_attributes::ListFacetAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_facet_attributes::ListFacetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_facet_attributes::ListFacetAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListFacetAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListFacetAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_facet_attributes::ListFacetAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_facet_attributes::ListFacetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_facet_attributes::ListFacetAttributesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListFacetAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_facet_attributes::ListFacetAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_facet_attributes::ListFacetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_facet_attributes::ListFacetAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListFacetAttributesFluentBuilder {
             crate::operation::list_facet_attributes::ListFacetAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_facet_attributes::ListFacetAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_facet_attributes::ListFacetAttributesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_facet_attributes::paginator::ListFacetAttributesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_facet_attributes::paginator::ListFacetAttributesPaginator {
-        crate::operation::list_facet_attributes::paginator::ListFacetAttributesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_facet_attributes::paginator::ListFacetAttributesPaginator {
+        crate::operation::list_facet_attributes::paginator::ListFacetAttributesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the schema where the facet resides.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

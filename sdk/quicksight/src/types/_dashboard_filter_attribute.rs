@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DashboardFilterAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,15 +69,11 @@ impl ::std::convert::From<&str> for DashboardFilterAttribute {
             "DASHBOARD_NAME" => DashboardFilterAttribute::DashboardName,
             "DIRECT_QUICKSIGHT_OWNER" => DashboardFilterAttribute::DirectQuicksightOwner,
             "DIRECT_QUICKSIGHT_SOLE_OWNER" => DashboardFilterAttribute::DirectQuicksightSoleOwner,
-            "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" => {
-                DashboardFilterAttribute::DirectQuicksightViewerOrOwner
-            }
+            "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" => DashboardFilterAttribute::DirectQuicksightViewerOrOwner,
             "QUICKSIGHT_OWNER" => DashboardFilterAttribute::QuicksightOwner,
             "QUICKSIGHT_USER" => DashboardFilterAttribute::QuicksightUser,
             "QUICKSIGHT_VIEWER_OR_OWNER" => DashboardFilterAttribute::QuicksightViewerOrOwner,
-            other => DashboardFilterAttribute::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DashboardFilterAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -101,9 +91,7 @@ impl DashboardFilterAttribute {
             DashboardFilterAttribute::DashboardName => "DASHBOARD_NAME",
             DashboardFilterAttribute::DirectQuicksightOwner => "DIRECT_QUICKSIGHT_OWNER",
             DashboardFilterAttribute::DirectQuicksightSoleOwner => "DIRECT_QUICKSIGHT_SOLE_OWNER",
-            DashboardFilterAttribute::DirectQuicksightViewerOrOwner => {
-                "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"
-            }
+            DashboardFilterAttribute::DirectQuicksightViewerOrOwner => "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER",
             DashboardFilterAttribute::QuicksightOwner => "QUICKSIGHT_OWNER",
             DashboardFilterAttribute::QuicksightUser => "QUICKSIGHT_USER",
             DashboardFilterAttribute::QuicksightViewerOrOwner => "QUICKSIGHT_VIEWER_OR_OWNER",

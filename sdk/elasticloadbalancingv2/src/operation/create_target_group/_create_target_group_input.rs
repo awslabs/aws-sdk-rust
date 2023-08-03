@@ -139,25 +139,20 @@ impl CreateTargetGroupInput {
         self.tags.as_deref()
     }
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    pub fn ip_address_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetGroupIpAddressTypeEnum> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::TargetGroupIpAddressTypeEnum> {
         self.ip_address_type.as_ref()
     }
 }
 impl CreateTargetGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateTargetGroupInput`](crate::operation::create_target_group::CreateTargetGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_target_group::builders::CreateTargetGroupInputBuilder {
+    pub fn builder() -> crate::operation::create_target_group::builders::CreateTargetGroupInputBuilder {
         crate::operation::create_target_group::builders::CreateTargetGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTargetGroupInput`](crate::operation::create_target_group::CreateTargetGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTargetGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::ProtocolEnum>,
@@ -201,10 +196,7 @@ impl CreateTargetGroupInputBuilder {
         self
     }
     /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolEnum>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolEnum>) -> Self {
         self.protocol = input;
         self
     }
@@ -213,18 +205,12 @@ impl CreateTargetGroupInputBuilder {
         &self.protocol
     }
     /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
-    pub fn protocol_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protocol_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
-    pub fn set_protocol_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protocol_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol_version = input;
         self
     }
@@ -266,10 +252,7 @@ impl CreateTargetGroupInputBuilder {
         self
     }
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-    pub fn set_health_check_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolEnum>,
-    ) -> Self {
+    pub fn set_health_check_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolEnum>) -> Self {
         self.health_check_protocol = input;
         self
     }
@@ -278,18 +261,12 @@ impl CreateTargetGroupInputBuilder {
         &self.health_check_protocol
     }
     /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
-    pub fn health_check_port(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_port(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_port = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
-    pub fn set_health_check_port(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_port = input;
         self
     }
@@ -314,20 +291,14 @@ impl CreateTargetGroupInputBuilder {
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    pub fn health_check_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    pub fn set_health_check_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_path = input;
         self
     }
@@ -425,10 +396,7 @@ impl CreateTargetGroupInputBuilder {
     /// <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>
     /// <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>
     /// </ul>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetTypeEnum>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::TargetTypeEnum>) -> Self {
         self.target_type = input;
         self
     }
@@ -454,10 +422,7 @@ impl CreateTargetGroupInputBuilder {
         self
     }
     /// <p>The tags to assign to the target group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -471,46 +436,36 @@ impl CreateTargetGroupInputBuilder {
         self
     }
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>) -> Self {
         self.ip_address_type = input;
         self
     }
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    pub fn get_ip_address_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum> {
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum> {
         &self.ip_address_type
     }
     /// Consumes the builder and constructs a [`CreateTargetGroupInput`](crate::operation::create_target_group::CreateTargetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_target_group::CreateTargetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_target_group::CreateTargetGroupInput {
-                name: self.name,
-                protocol: self.protocol,
-                protocol_version: self.protocol_version,
-                port: self.port,
-                vpc_id: self.vpc_id,
-                health_check_protocol: self.health_check_protocol,
-                health_check_port: self.health_check_port,
-                health_check_enabled: self.health_check_enabled,
-                health_check_path: self.health_check_path,
-                health_check_interval_seconds: self.health_check_interval_seconds,
-                health_check_timeout_seconds: self.health_check_timeout_seconds,
-                healthy_threshold_count: self.healthy_threshold_count,
-                unhealthy_threshold_count: self.unhealthy_threshold_count,
-                matcher: self.matcher,
-                target_type: self.target_type,
-                tags: self.tags,
-                ip_address_type: self.ip_address_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_target_group::CreateTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_target_group::CreateTargetGroupInput {
+            name: self.name,
+            protocol: self.protocol,
+            protocol_version: self.protocol_version,
+            port: self.port,
+            vpc_id: self.vpc_id,
+            health_check_protocol: self.health_check_protocol,
+            health_check_port: self.health_check_port,
+            health_check_enabled: self.health_check_enabled,
+            health_check_path: self.health_check_path,
+            health_check_interval_seconds: self.health_check_interval_seconds,
+            health_check_timeout_seconds: self.health_check_timeout_seconds,
+            healthy_threshold_count: self.healthy_threshold_count,
+            unhealthy_threshold_count: self.unhealthy_threshold_count,
+            matcher: self.matcher,
+            target_type: self.target_type,
+            tags: self.tags,
+            ip_address_type: self.ip_address_type,
+        })
     }
 }

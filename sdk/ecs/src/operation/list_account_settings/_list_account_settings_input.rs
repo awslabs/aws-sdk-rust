@@ -58,18 +58,14 @@ impl ListAccountSettingsInput {
 }
 impl ListAccountSettingsInput {
     /// Creates a new builder-style object to manufacture [`ListAccountSettingsInput`](crate::operation::list_account_settings::ListAccountSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::list_account_settings::builders::ListAccountSettingsInputBuilder {
-        crate::operation::list_account_settings::builders::ListAccountSettingsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_account_settings::builders::ListAccountSettingsInputBuilder {
+        crate::operation::list_account_settings::builders::ListAccountSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccountSettingsInput`](crate::operation::list_account_settings::ListAccountSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountSettingsInputBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SettingName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -110,20 +106,14 @@ impl ListAccountSettingsInputBuilder {
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_arn = input;
         self
     }
@@ -184,19 +174,15 @@ impl ListAccountSettingsInputBuilder {
     /// Consumes the builder and constructs a [`ListAccountSettingsInput`](crate::operation::list_account_settings::ListAccountSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_account_settings::ListAccountSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_account_settings::ListAccountSettingsInput {
-                name: self.name,
-                value: self.value,
-                principal_arn: self.principal_arn,
-                effective_settings: self.effective_settings,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_account_settings::ListAccountSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_account_settings::ListAccountSettingsInput {
+            name: self.name,
+            value: self.value,
+            principal_arn: self.principal_arn,
+            effective_settings: self.effective_settings,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

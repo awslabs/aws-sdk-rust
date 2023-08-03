@@ -21,18 +21,14 @@ impl GetAuthorizationTokenInput {
 }
 impl GetAuthorizationTokenInput {
     /// Creates a new builder-style object to manufacture [`GetAuthorizationTokenInput`](crate::operation::get_authorization_token::GetAuthorizationTokenInput).
-    pub fn builder(
-    ) -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenInputBuilder {
         crate::operation::get_authorization_token::builders::GetAuthorizationTokenInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAuthorizationTokenInput`](crate::operation::get_authorization_token::GetAuthorizationTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAuthorizationTokenInputBuilder {
     pub(crate) registry_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -55,10 +51,7 @@ impl GetAuthorizationTokenInputBuilder {
     #[deprecated(
         note = "This field is deprecated. The returned authorization token can be used to access any Amazon ECR registry that the IAM principal has access to, specifying a registry ID doesn't change the permissions scope of the authorization token."
     )]
-    pub fn set_registry_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_registry_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.registry_ids = input;
         self
     }
@@ -66,22 +59,16 @@ impl GetAuthorizationTokenInputBuilder {
     #[deprecated(
         note = "This field is deprecated. The returned authorization token can be used to access any Amazon ECR registry that the IAM principal has access to, specifying a registry ID doesn't change the permissions scope of the authorization token."
     )]
-    pub fn get_registry_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_registry_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.registry_ids
     }
     /// Consumes the builder and constructs a [`GetAuthorizationTokenInput`](crate::operation::get_authorization_token::GetAuthorizationTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_authorization_token::GetAuthorizationTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_authorization_token::GetAuthorizationTokenInput {
-                registry_ids: self.registry_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_authorization_token::GetAuthorizationTokenInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_authorization_token::GetAuthorizationTokenInput {
+            registry_ids: self.registry_ids,
+        })
     }
 }

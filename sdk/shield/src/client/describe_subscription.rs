@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeSubscriptionOutput`](crate::operation::describe_subscription::DescribeSubscriptionOutput) with field(s):
     ///   - [`subscription(Option<Subscription>)`](crate::operation::describe_subscription::DescribeSubscriptionOutput::subscription): <p>The Shield Advanced subscription details for an account.</p>
     /// - On failure, responds with [`SdkError<DescribeSubscriptionError>`](crate::operation::describe_subscription::DescribeSubscriptionError)
-    pub fn describe_subscription(
-        &self,
-    ) -> crate::operation::describe_subscription::builders::DescribeSubscriptionFluentBuilder {
-        crate::operation::describe_subscription::builders::DescribeSubscriptionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_subscription(&self) -> crate::operation::describe_subscription::builders::DescribeSubscriptionFluentBuilder {
+        crate::operation::describe_subscription::builders::DescribeSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

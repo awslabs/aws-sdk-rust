@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`partition_serial_list(Option<Vec<String>>)`](crate::operation::describe_hapg::DescribeHapgOutput::partition_serial_list): <p>The list of partition serial numbers that belong to the high-availability partition group.</p>
     ///   - [`state(Option<CloudHsmObjectState>)`](crate::operation::describe_hapg::DescribeHapgOutput::state): <p>The state of the high-availability partition group.</p>
     /// - On failure, responds with [`SdkError<DescribeHapgError>`](crate::operation::describe_hapg::DescribeHapgError)
-    pub fn describe_hapg(
-        &self,
-    ) -> crate::operation::describe_hapg::builders::DescribeHapgFluentBuilder {
-        crate::operation::describe_hapg::builders::DescribeHapgFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_hapg(&self) -> crate::operation::describe_hapg::builders::DescribeHapgFluentBuilder {
+        crate::operation::describe_hapg::builders::DescribeHapgFluentBuilder::new(self.handle.clone())
     }
 }

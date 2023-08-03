@@ -39,10 +39,7 @@ impl UpdateDataIntegrationFluentBuilder {
         }
     }
     /// Access the UpdateDataIntegration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_data_integration::builders::UpdateDataIntegrationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_data_integration::builders::UpdateDataIntegrationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl UpdateDataIntegrationFluentBuilder {
             crate::operation::update_data_integration::UpdateDataIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_integration::UpdateDataIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_integration::UpdateDataIntegrationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl UpdateDataIntegrationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl UpdateDataIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_integration::UpdateDataIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_integration::UpdateDataIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_integration::UpdateDataIntegrationError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl UpdateDataIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_integration::UpdateDataIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_integration::UpdateDataIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_integration::UpdateDataIntegrationError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl UpdateDataIntegrationFluentBuilder {
             crate::operation::update_data_integration::UpdateDataIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_integration::UpdateDataIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_integration::UpdateDataIntegrationError>,
     > {
         self.customize_middleware().await
     }

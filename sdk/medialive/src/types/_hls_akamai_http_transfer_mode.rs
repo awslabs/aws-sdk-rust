@@ -38,13 +38,7 @@
 /// Hls Akamai Http Transfer Mode
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HlsAkamaiHttpTransferMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for HlsAkamaiHttpTransferMode {
         match s {
             "CHUNKED" => HlsAkamaiHttpTransferMode::Chunked,
             "NON_CHUNKED" => HlsAkamaiHttpTransferMode::NonChunked,
-            other => HlsAkamaiHttpTransferMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => HlsAkamaiHttpTransferMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

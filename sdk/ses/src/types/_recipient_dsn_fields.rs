@@ -70,9 +70,7 @@ impl RecipientDsnFields {
 
 /// A builder for [`RecipientDsnFields`](crate::types::RecipientDsnFields).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecipientDsnFieldsBuilder {
     pub(crate) final_recipient: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<crate::types::DsnAction>,
@@ -80,27 +78,20 @@ pub struct RecipientDsnFieldsBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) diagnostic_code: ::std::option::Option<::std::string::String>,
     pub(crate) last_attempt_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) extension_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>>,
+    pub(crate) extension_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>>,
 }
 impl RecipientDsnFieldsBuilder {
     /// <p>The email address that the message was ultimately delivered to. This corresponds to the <code>Final-Recipient</code> in the DSN. If not specified, <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified in the <code>BouncedRecipientInfo</code> structure. Either <code>FinalRecipient</code> or the recipient in <code>BouncedRecipientInfo</code> must be a recipient of the original bounced message.</p> <note>
     /// <p>Do not prepend the <code>FinalRecipient</code> email address with <code>rfc 822;</code>, as described in <a href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p>
     /// </note>
-    pub fn final_recipient(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn final_recipient(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.final_recipient = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address that the message was ultimately delivered to. This corresponds to the <code>Final-Recipient</code> in the DSN. If not specified, <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified in the <code>BouncedRecipientInfo</code> structure. Either <code>FinalRecipient</code> or the recipient in <code>BouncedRecipientInfo</code> must be a recipient of the original bounced message.</p> <note>
     /// <p>Do not prepend the <code>FinalRecipient</code> email address with <code>rfc 822;</code>, as described in <a href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p>
     /// </note>
-    pub fn set_final_recipient(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_final_recipient(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.final_recipient = input;
         self
     }
@@ -153,18 +144,12 @@ impl RecipientDsnFieldsBuilder {
         &self.status
     }
     /// <p>An extended explanation of what went wrong; this is usually an SMTP response. See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct formatting of this parameter.</p>
-    pub fn diagnostic_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn diagnostic_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.diagnostic_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An extended explanation of what went wrong; this is usually an SMTP response. See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct formatting of this parameter.</p>
-    pub fn set_diagnostic_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_diagnostic_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.diagnostic_code = input;
         self
     }
@@ -178,10 +163,7 @@ impl RecipientDsnFieldsBuilder {
         self
     }
     /// <p>The time the final delivery attempt was made, in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
-    pub fn set_last_attempt_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_attempt_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_attempt_date = input;
         self
     }
@@ -201,17 +183,12 @@ impl RecipientDsnFieldsBuilder {
         self
     }
     /// <p>Additional X-headers to include in the DSN.</p>
-    pub fn set_extension_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>>,
-    ) -> Self {
+    pub fn set_extension_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>>) -> Self {
         self.extension_fields = input;
         self
     }
     /// <p>Additional X-headers to include in the DSN.</p>
-    pub fn get_extension_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>> {
+    pub fn get_extension_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>> {
         &self.extension_fields
     }
     /// Consumes the builder and constructs a [`RecipientDsnFields`](crate::types::RecipientDsnFields).

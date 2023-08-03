@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`gateway_name(impl ::std::convert::Into<String>)`](crate::operation::update_gateway::builders::UpdateGatewayFluentBuilder::gateway_name) / [`set_gateway_name(Option<String>)`](crate::operation::update_gateway::builders::UpdateGatewayFluentBuilder::set_gateway_name): <p>A unique, friendly name for the gateway.</p>
     /// - On success, responds with [`UpdateGatewayOutput`](crate::operation::update_gateway::UpdateGatewayOutput)
     /// - On failure, responds with [`SdkError<UpdateGatewayError>`](crate::operation::update_gateway::UpdateGatewayError)
-    pub fn update_gateway(
-        &self,
-    ) -> crate::operation::update_gateway::builders::UpdateGatewayFluentBuilder {
-        crate::operation::update_gateway::builders::UpdateGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_gateway(&self) -> crate::operation::update_gateway::builders::UpdateGatewayFluentBuilder {
+        crate::operation::update_gateway::builders::UpdateGatewayFluentBuilder::new(self.handle.clone())
     }
 }

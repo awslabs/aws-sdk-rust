@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`ListDistributionsByCachePolicyIdOutput`](crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdOutput) with field(s):
     ///   - [`distribution_id_list(Option<DistributionIdList>)`](crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdOutput::distribution_id_list): <p>A list of distribution IDs.</p>
     /// - On failure, responds with [`SdkError<ListDistributionsByCachePolicyIdError>`](crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError)
-    pub fn list_distributions_by_cache_policy_id(&self) -> crate::operation::list_distributions_by_cache_policy_id::builders::ListDistributionsByCachePolicyIdFluentBuilder{
+    pub fn list_distributions_by_cache_policy_id(
+        &self,
+    ) -> crate::operation::list_distributions_by_cache_policy_id::builders::ListDistributionsByCachePolicyIdFluentBuilder {
         crate::operation::list_distributions_by_cache_policy_id::builders::ListDistributionsByCachePolicyIdFluentBuilder::new(self.handle.clone())
     }
 }

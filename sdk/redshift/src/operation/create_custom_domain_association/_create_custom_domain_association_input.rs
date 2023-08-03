@@ -29,16 +29,14 @@ impl CreateCustomDomainAssociationInput {
 }
 impl CreateCustomDomainAssociationInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomDomainAssociationInput`](crate::operation::create_custom_domain_association::CreateCustomDomainAssociationInput).
-    pub fn builder() -> crate::operation::create_custom_domain_association::builders::CreateCustomDomainAssociationInputBuilder{
+    pub fn builder() -> crate::operation::create_custom_domain_association::builders::CreateCustomDomainAssociationInputBuilder {
         crate::operation::create_custom_domain_association::builders::CreateCustomDomainAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomDomainAssociationInput`](crate::operation::create_custom_domain_association::CreateCustomDomainAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomDomainAssociationInputBuilder {
     pub(crate) custom_domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct CreateCustomDomainAssociationInputBuilder {
 }
 impl CreateCustomDomainAssociationInputBuilder {
     /// <p>The custom domain name for a custom domain association.</p>
-    pub fn custom_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom domain name for a custom domain association.</p>
-    pub fn set_custom_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_domain_name = input;
         self
     }
@@ -66,40 +58,26 @@ impl CreateCustomDomainAssociationInputBuilder {
         &self.custom_domain_name
     }
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name association.</p>
-    pub fn custom_domain_certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_domain_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_domain_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name association.</p>
-    pub fn set_custom_domain_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_domain_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_domain_certificate_arn = input;
         self
     }
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name association.</p>
-    pub fn get_custom_domain_certificate_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_custom_domain_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_domain_certificate_arn
     }
     /// <p>The cluster identifier that the custom domain is associated with.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier that the custom domain is associated with.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -114,15 +92,10 @@ impl CreateCustomDomainAssociationInputBuilder {
         crate::operation::create_custom_domain_association::CreateCustomDomainAssociationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationInput {
-                custom_domain_name: self.custom_domain_name
-                ,
-                custom_domain_certificate_arn: self.custom_domain_certificate_arn
-                ,
-                cluster_identifier: self.cluster_identifier
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::create_custom_domain_association::CreateCustomDomainAssociationInput {
+            custom_domain_name: self.custom_domain_name,
+            custom_domain_certificate_arn: self.custom_domain_certificate_arn,
+            cluster_identifier: self.cluster_identifier,
+        })
     }
 }

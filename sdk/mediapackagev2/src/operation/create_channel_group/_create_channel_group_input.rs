@@ -16,9 +16,7 @@ pub struct CreateChannelGroupInput {
     /// <p> <code>"Key1": "Value1",</code> </p>
     /// <p> <code>"Key2": "Value2"</code> </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateChannelGroupInput {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region. You can't use spaces in the name. You can't change the name after you create the channel group.</p>
@@ -36,49 +34,34 @@ impl CreateChannelGroupInput {
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p> <code>"Key1": "Value1",</code> </p>
     /// <p> <code>"Key2": "Value2"</code> </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateChannelGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateChannelGroupInput`](crate::operation::create_channel_group::CreateChannelGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_channel_group::builders::CreateChannelGroupInputBuilder {
+    pub fn builder() -> crate::operation::create_channel_group::builders::CreateChannelGroupInputBuilder {
         crate::operation::create_channel_group::builders::CreateChannelGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateChannelGroupInput`](crate::operation::create_channel_group::CreateChannelGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateChannelGroupInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateChannelGroupInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region. You can't use spaces in the name. You can't change the name after you create the channel group.</p>
-    pub fn channel_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region. You can't use spaces in the name. You can't change the name after you create the channel group.</p>
-    pub fn set_channel_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_group_name = input;
         self
     }
@@ -121,11 +104,7 @@ impl CreateChannelGroupInputBuilder {
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p> <code>"Key1": "Value1",</code> </p>
     /// <p> <code>"Key2": "Value2"</code> </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -134,39 +113,25 @@ impl CreateChannelGroupInputBuilder {
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p> <code>"Key1": "Value1",</code> </p>
     /// <p> <code>"Key2": "Value2"</code> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p> <code>"Key1": "Value1",</code> </p>
     /// <p> <code>"Key2": "Value2"</code> </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateChannelGroupInput`](crate::operation::create_channel_group::CreateChannelGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_channel_group::CreateChannelGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_channel_group::CreateChannelGroupInput {
-                channel_group_name: self.channel_group_name,
-                client_token: self.client_token,
-                description: self.description,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_channel_group::CreateChannelGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_channel_group::CreateChannelGroupInput {
+            channel_group_name: self.channel_group_name,
+            client_token: self.client_token,
+            description: self.description,
+            tags: self.tags,
+        })
     }
 }

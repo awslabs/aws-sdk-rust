@@ -30,13 +30,10 @@ impl ElicitSubSlot {
 
 /// A builder for [`ElicitSubSlot`](crate::types::ElicitSubSlot).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElicitSubSlotBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) sub_slot_to_elicit:
-        ::std::option::Option<::std::boxed::Box<crate::types::ElicitSubSlot>>,
+    pub(crate) sub_slot_to_elicit: ::std::option::Option<::std::boxed::Box<crate::types::ElicitSubSlot>>,
 }
 impl ElicitSubSlotBuilder {
     /// <p>The name of the slot that should be elicited from the user.</p>
@@ -54,25 +51,17 @@ impl ElicitSubSlotBuilder {
         &self.name
     }
     /// <p>The field is not supported.</p>
-    pub fn sub_slot_to_elicit(
-        mut self,
-        input: impl ::std::convert::Into<::std::boxed::Box<crate::types::ElicitSubSlot>>,
-    ) -> Self {
+    pub fn sub_slot_to_elicit(mut self, input: impl ::std::convert::Into<::std::boxed::Box<crate::types::ElicitSubSlot>>) -> Self {
         self.sub_slot_to_elicit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field is not supported.</p>
-    pub fn set_sub_slot_to_elicit(
-        mut self,
-        input: ::std::option::Option<::std::boxed::Box<crate::types::ElicitSubSlot>>,
-    ) -> Self {
+    pub fn set_sub_slot_to_elicit(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::ElicitSubSlot>>) -> Self {
         self.sub_slot_to_elicit = input;
         self
     }
     /// <p>The field is not supported.</p>
-    pub fn get_sub_slot_to_elicit(
-        &self,
-    ) -> &::std::option::Option<::std::boxed::Box<crate::types::ElicitSubSlot>> {
+    pub fn get_sub_slot_to_elicit(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::ElicitSubSlot>> {
         &self.sub_slot_to_elicit
     }
     /// Consumes the builder and constructs a [`ElicitSubSlot`](crate::types::ElicitSubSlot).

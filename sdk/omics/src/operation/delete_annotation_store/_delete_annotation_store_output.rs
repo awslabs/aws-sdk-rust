@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteAnnotationStoreOutput {
 }
 impl DeleteAnnotationStoreOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAnnotationStoreOutput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreOutputBuilder {
         crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAnnotationStoreOutput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAnnotationStoreOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StoreStatus>,
     _request_id: Option<String>,

@@ -28,7 +28,7 @@ impl UpdatePublicSharingSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePublicSharingSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsInputBuilder,
+    inner: crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsInputBuilder,
 }
 impl UpdatePublicSharingSettingsFluentBuilder {
     /// Creates a new `UpdatePublicSharingSettings`.
@@ -39,7 +39,7 @@ impl UpdatePublicSharingSettingsFluentBuilder {
         }
     }
     /// Access the UpdatePublicSharingSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl UpdatePublicSharingSettingsFluentBuilder {
             crate::operation::update_public_sharing_settings::UpdatePublicSharingSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl UpdatePublicSharingSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl UpdatePublicSharingSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl UpdatePublicSharingSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl UpdatePublicSharingSettingsFluentBuilder {
             crate::operation::update_public_sharing_settings::UpdatePublicSharingSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

@@ -36,18 +36,14 @@ impl ListDiscoveredResourcesInput {
 }
 impl ListDiscoveredResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesInput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder {
         crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDiscoveredResourcesInput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDiscoveredResourcesInputBuilder {
     pub(crate) progress_update_stream: ::std::option::Option<::std::string::String>,
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct ListDiscoveredResourcesInputBuilder {
 }
 impl ListDiscoveredResourcesInputBuilder {
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn progress_update_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress_update_stream = input;
         self
     }
@@ -76,18 +66,12 @@ impl ListDiscoveredResourcesInputBuilder {
         &self.progress_update_stream
     }
     /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.migration_task_name = input;
         self
     }
@@ -130,13 +114,11 @@ impl ListDiscoveredResourcesInputBuilder {
         crate::operation::list_discovered_resources::ListDiscoveredResourcesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_discovered_resources::ListDiscoveredResourcesInput {
-                progress_update_stream: self.progress_update_stream,
-                migration_task_name: self.migration_task_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_discovered_resources::ListDiscoveredResourcesInput {
+            progress_update_stream: self.progress_update_stream,
+            migration_task_name: self.migration_task_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

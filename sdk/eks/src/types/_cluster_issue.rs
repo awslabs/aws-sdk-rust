@@ -37,9 +37,7 @@ impl ClusterIssue {
 
 /// A builder for [`ClusterIssue`](crate::types::ClusterIssue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterIssueBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ClusterIssueCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl ClusterIssueBuilder {
         self
     }
     /// <p>The error code of the issue.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterIssueCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::ClusterIssueCode>) -> Self {
         self.code = input;
         self
     }
@@ -89,17 +84,12 @@ impl ClusterIssueBuilder {
         self
     }
     /// <p>The resource IDs that the issue relates to.</p>
-    pub fn set_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_ids = input;
         self
     }
     /// <p>The resource IDs that the issue relates to.</p>
-    pub fn get_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_ids
     }
     /// Consumes the builder and constructs a [`ClusterIssue`](crate::types::ClusterIssue).

@@ -2,8 +2,7 @@
 pub fn ser_validate_sol_network_package_content_headers(
     input: &crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.content_type {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_validate_sol_network_package_content_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_type",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("Content-Type", header_value);
@@ -33,97 +29,104 @@ pub fn de_validate_sol_network_package_content_http_error(
     crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AccessDeniedException" => {
+            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InternalServerException" => crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ThrottlingException" => crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ThrottlingException" => {
+            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "ValidationException" => crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::generic(generic),
     })
 }
 
@@ -139,18 +142,21 @@ pub fn de_validate_sol_network_package_content_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder::default();
-        output = crate::protocol_serde::shape_validate_sol_network_package_content::de_validate_sol_network_package_content(_response_body, output).map_err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_validate_sol_network_package_content::de_validate_sol_network_package_content(_response_body, output)
+            .map_err(crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
-pub(crate) fn de_validate_sol_network_package_content(value: &[u8], mut builder: crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder) -> Result<crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+pub(crate) fn de_validate_sol_network_package_content(
+    value: &[u8],
+    mut builder: crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder,
+) -> Result<
+    crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -160,20 +166,16 @@ pub(crate) fn de_validate_sol_network_package_content(value: &[u8], mut builder:
                 match key.to_unescaped()?.as_ref() {
                     "arn" => {
                         builder = builder.set_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
                         );
                     }
                     "id" => {
                         builder = builder.set_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
                         );
                     }
                     "metadata" => {
@@ -183,57 +185,43 @@ pub(crate) fn de_validate_sol_network_package_content(value: &[u8], mut builder:
                     }
                     "nsdId" => {
                         builder = builder.set_nsd_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
                         );
                     }
                     "nsdName" => {
                         builder = builder.set_nsd_name(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
                         );
                     }
                     "nsdVersion" => {
                         builder = builder.set_nsd_version(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
                         );
                     }
                     "vnfPkgIds" => {
-                        builder = builder.set_vnf_pkg_ids(
-                            crate::protocol_serde::shape_vnf_pkg_id_list::de_vnf_pkg_id_list(
-                                tokens,
-                            )?,
-                        );
+                        builder = builder.set_vnf_pkg_ids(crate::protocol_serde::shape_vnf_pkg_id_list::de_vnf_pkg_id_list(tokens)?);
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

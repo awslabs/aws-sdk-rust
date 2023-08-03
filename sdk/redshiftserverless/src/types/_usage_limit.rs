@@ -65,9 +65,7 @@ impl UsageLimit {
 
 /// A builder for [`UsageLimit`](crate::types::UsageLimit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageLimitBuilder {
     pub(crate) usage_limit_id: ::std::option::Option<::std::string::String>,
     pub(crate) usage_limit_arn: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct UsageLimitBuilder {
 }
 impl UsageLimitBuilder {
     /// <p>The identifier of the usage limit.</p>
-    pub fn usage_limit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_limit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the usage limit.</p>
-    pub fn set_usage_limit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.usage_limit_id = input;
         self
     }
@@ -99,18 +91,12 @@ impl UsageLimitBuilder {
         &self.usage_limit_id
     }
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the usage limit.</p>
-    pub fn usage_limit_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_limit_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_limit_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the usage limit.</p>
-    pub fn set_usage_limit_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_limit_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.usage_limit_arn = input;
         self
     }
@@ -138,10 +124,7 @@ impl UsageLimitBuilder {
         self
     }
     /// <p>The Amazon Redshift Serverless feature to limit.</p>
-    pub fn set_usage_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageLimitUsageType>,
-    ) -> Self {
+    pub fn set_usage_type(mut self, input: ::std::option::Option<crate::types::UsageLimitUsageType>) -> Self {
         self.usage_type = input;
         self
     }
@@ -169,10 +152,7 @@ impl UsageLimitBuilder {
         self
     }
     /// <p>The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.</p>
-    pub fn set_period(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageLimitPeriod>,
-    ) -> Self {
+    pub fn set_period(mut self, input: ::std::option::Option<crate::types::UsageLimitPeriod>) -> Self {
         self.period = input;
         self
     }
@@ -186,17 +166,12 @@ impl UsageLimitBuilder {
         self
     }
     /// <p>The action that Amazon Redshift Serverless takes when the limit is reached.</p>
-    pub fn set_breach_action(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageLimitBreachAction>,
-    ) -> Self {
+    pub fn set_breach_action(mut self, input: ::std::option::Option<crate::types::UsageLimitBreachAction>) -> Self {
         self.breach_action = input;
         self
     }
     /// <p>The action that Amazon Redshift Serverless takes when the limit is reached.</p>
-    pub fn get_breach_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
+    pub fn get_breach_action(&self) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
         &self.breach_action
     }
     /// Consumes the builder and constructs a [`UsageLimit`](crate::types::UsageLimit).

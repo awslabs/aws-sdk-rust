@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`constraint_parameters(Option<String>)`](crate::operation::describe_constraint::DescribeConstraintOutput::constraint_parameters): <p>The constraint parameters.</p>
     ///   - [`status(Option<Status>)`](crate::operation::describe_constraint::DescribeConstraintOutput::status): <p>The status of the current request.</p>
     /// - On failure, responds with [`SdkError<DescribeConstraintError>`](crate::operation::describe_constraint::DescribeConstraintError)
-    pub fn describe_constraint(
-        &self,
-    ) -> crate::operation::describe_constraint::builders::DescribeConstraintFluentBuilder {
-        crate::operation::describe_constraint::builders::DescribeConstraintFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_constraint(&self) -> crate::operation::describe_constraint::builders::DescribeConstraintFluentBuilder {
+        crate::operation::describe_constraint::builders::DescribeConstraintFluentBuilder::new(self.handle.clone())
     }
 }

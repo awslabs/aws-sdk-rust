@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`path(Option<String>)`](crate::operation::update_resource::UpdateResourceOutput::path): <p>The full path for this resource.</p>
     ///   - [`resource_methods(Option<HashMap<String, Method>>)`](crate::operation::update_resource::UpdateResourceOutput::resource_methods): <p>Gets an API resource's method of a given HTTP verb.</p>
     /// - On failure, responds with [`SdkError<UpdateResourceError>`](crate::operation::update_resource::UpdateResourceError)
-    pub fn update_resource(
-        &self,
-    ) -> crate::operation::update_resource::builders::UpdateResourceFluentBuilder {
-        crate::operation::update_resource::builders::UpdateResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_resource(&self) -> crate::operation::update_resource::builders::UpdateResourceFluentBuilder {
+        crate::operation::update_resource::builders::UpdateResourceFluentBuilder::new(self.handle.clone())
     }
 }

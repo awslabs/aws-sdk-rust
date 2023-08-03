@@ -63,9 +63,7 @@ impl UpdateThemeOutput {
 
 /// A builder for [`UpdateThemeOutput`](crate::operation::update_theme::UpdateThemeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThemeOutputBuilder {
     pub(crate) theme_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -124,10 +122,7 @@ impl UpdateThemeOutputBuilder {
         self
     }
     /// <p>The creation status of the theme.</p>
-    pub fn set_creation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_creation_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.creation_status = input;
         self
     }

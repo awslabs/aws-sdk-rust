@@ -21,10 +21,7 @@ pub fn ser_analyze_document_input(
     if let Some(var_6) = &input.human_loop_config {
         #[allow(unused_mut)]
         let mut object_7 = object.key("HumanLoopConfig").start_object();
-        crate::protocol_serde::shape_human_loop_config::ser_human_loop_config(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_human_loop_config::ser_human_loop_config(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.queries_config {

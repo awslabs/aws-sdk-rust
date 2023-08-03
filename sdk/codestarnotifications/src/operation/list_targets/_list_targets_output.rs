@@ -35,9 +35,7 @@ impl ListTargetsOutput {
 
 /// A builder for [`ListTargetsOutput`](crate::operation::list_targets::ListTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetsOutputBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListTargetsOutputBuilder {
         self
     }
     /// <p>The list of notification rule targets. </p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>>) -> Self {
         self.targets = input;
         self
     }
     /// <p>The list of notification rule targets. </p>
-    pub fn get_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>> {
         &self.targets
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of results.</p>

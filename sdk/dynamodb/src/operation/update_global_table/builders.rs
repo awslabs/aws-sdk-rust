@@ -10,10 +10,7 @@ impl UpdateGlobalTableInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_global_table::UpdateGlobalTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_table::UpdateGlobalTableError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_table::UpdateGlobalTableError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_global_table();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl UpdateGlobalTableFluentBuilder {
         }
     }
     /// Access the UpdateGlobalTable as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_global_table::builders::UpdateGlobalTableInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_global_table::builders::UpdateGlobalTableInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +57,7 @@ impl UpdateGlobalTableFluentBuilder {
             crate::operation::update_global_table::UpdateGlobalTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_table::UpdateGlobalTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_table::UpdateGlobalTableError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +67,7 @@ impl UpdateGlobalTableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +76,7 @@ impl UpdateGlobalTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_global_table::UpdateGlobalTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_table::UpdateGlobalTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_table::UpdateGlobalTableError>,
     > {
         let op = self
             .inner
@@ -111,9 +99,7 @@ impl UpdateGlobalTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_global_table::UpdateGlobalTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_table::UpdateGlobalTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_table::UpdateGlobalTableError>,
     > {
         self.send_middleware().await
     }
@@ -127,25 +113,17 @@ impl UpdateGlobalTableFluentBuilder {
             crate::operation::update_global_table::UpdateGlobalTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_table::UpdateGlobalTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_table::UpdateGlobalTableError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The global table name.</p>
-    pub fn global_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_table_name(input.into());
         self
     }
     /// <p>The global table name.</p>
-    pub fn set_global_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_table_name(input);
         self
     }
@@ -163,17 +141,12 @@ impl UpdateGlobalTableFluentBuilder {
         self
     }
     /// <p>A list of Regions that should be added or removed from the global table.</p>
-    pub fn set_replica_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>>,
-    ) -> Self {
+    pub fn set_replica_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>>) -> Self {
         self.inner = self.inner.set_replica_updates(input);
         self
     }
     /// <p>A list of Regions that should be added or removed from the global table.</p>
-    pub fn get_replica_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>> {
+    pub fn get_replica_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>> {
         self.inner.get_replica_updates()
     }
 }

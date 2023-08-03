@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::create_vpc_connection::CreateVpcConnectionOutput::creation_time): <p>The creation time of VPC connection.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_vpc_connection::CreateVpcConnectionOutput::tags): <p>A map of tags for the VPC connection.</p>
     /// - On failure, responds with [`SdkError<CreateVpcConnectionError>`](crate::operation::create_vpc_connection::CreateVpcConnectionError)
-    pub fn create_vpc_connection(
-        &self,
-    ) -> crate::operation::create_vpc_connection::builders::CreateVpcConnectionFluentBuilder {
-        crate::operation::create_vpc_connection::builders::CreateVpcConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_vpc_connection(&self) -> crate::operation::create_vpc_connection::builders::CreateVpcConnectionFluentBuilder {
+        crate::operation::create_vpc_connection::builders::CreateVpcConnectionFluentBuilder::new(self.handle.clone())
     }
 }

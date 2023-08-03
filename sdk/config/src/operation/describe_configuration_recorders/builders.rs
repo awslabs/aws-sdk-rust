@@ -28,7 +28,7 @@ impl DescribeConfigurationRecordersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRecordersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersInputBuilder,
+    inner: crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersInputBuilder,
 }
 impl DescribeConfigurationRecordersFluentBuilder {
     /// Creates a new `DescribeConfigurationRecorders`.
@@ -39,7 +39,7 @@ impl DescribeConfigurationRecordersFluentBuilder {
         }
     }
     /// Access the DescribeConfigurationRecorders as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeConfigurationRecordersFluentBuilder {
             crate::operation::describe_configuration_recorders::DescribeConfigurationRecorders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeConfigurationRecordersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeConfigurationRecordersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeConfigurationRecordersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl DescribeConfigurationRecordersFluentBuilder {
             crate::operation::describe_configuration_recorders::DescribeConfigurationRecorders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError>,
     > {
         self.customize_middleware().await
     }
@@ -127,25 +116,17 @@ impl DescribeConfigurationRecordersFluentBuilder {
     /// To override the contents of this collection use [`set_configuration_recorder_names`](Self::set_configuration_recorder_names).
     ///
     /// <p>A list of configuration recorder names.</p>
-    pub fn configuration_recorder_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_recorder_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_recorder_names(input.into());
         self
     }
     /// <p>A list of configuration recorder names.</p>
-    pub fn set_configuration_recorder_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_configuration_recorder_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_configuration_recorder_names(input);
         self
     }
     /// <p>A list of configuration recorder names.</p>
-    pub fn get_configuration_recorder_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configuration_recorder_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_configuration_recorder_names()
     }
 }

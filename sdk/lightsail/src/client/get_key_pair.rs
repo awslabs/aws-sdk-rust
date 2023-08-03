@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetKeyPairOutput`](crate::operation::get_key_pair::GetKeyPairOutput) with field(s):
     ///   - [`key_pair(Option<KeyPair>)`](crate::operation::get_key_pair::GetKeyPairOutput::key_pair): <p>An array of key-value pairs containing information about the key pair.</p>
     /// - On failure, responds with [`SdkError<GetKeyPairError>`](crate::operation::get_key_pair::GetKeyPairError)
-    pub fn get_key_pair(
-        &self,
-    ) -> crate::operation::get_key_pair::builders::GetKeyPairFluentBuilder {
+    pub fn get_key_pair(&self) -> crate::operation::get_key_pair::builders::GetKeyPairFluentBuilder {
         crate::operation::get_key_pair::builders::GetKeyPairFluentBuilder::new(self.handle.clone())
     }
 }

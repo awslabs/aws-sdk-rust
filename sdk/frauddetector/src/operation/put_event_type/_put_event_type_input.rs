@@ -71,9 +71,7 @@ impl PutEventTypeInput {
 
 /// A builder for [`PutEventTypeInput`](crate::operation::put_event_type::PutEventTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEventTypeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -118,27 +116,19 @@ impl PutEventTypeInputBuilder {
     /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
     ///
     /// <p>The event type variables.</p>
-    pub fn event_variables(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_variables(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_variables.unwrap_or_default();
         v.push(input.into());
         self.event_variables = ::std::option::Option::Some(v);
         self
     }
     /// <p>The event type variables.</p>
-    pub fn set_event_variables(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_variables(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_variables = input;
         self
     }
     /// <p>The event type variables.</p>
-    pub fn get_event_variables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_variables(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_variables
     }
     /// Appends an item to `labels`.
@@ -153,10 +143,7 @@ impl PutEventTypeInputBuilder {
         self
     }
     /// <p>The event type labels.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
@@ -176,17 +163,12 @@ impl PutEventTypeInputBuilder {
         self
     }
     /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
-    pub fn set_entity_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.entity_types = input;
         self
     }
     /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
-    pub fn get_entity_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.entity_types
     }
     /// <p>Specifies if ingestion is enabled or disabled.</p>
@@ -195,10 +177,7 @@ impl PutEventTypeInputBuilder {
         self
     }
     /// <p>Specifies if ingestion is enabled or disabled.</p>
-    pub fn set_event_ingestion(
-        mut self,
-        input: ::std::option::Option<crate::types::EventIngestion>,
-    ) -> Self {
+    pub fn set_event_ingestion(mut self, input: ::std::option::Option<crate::types::EventIngestion>) -> Self {
         self.event_ingestion = input;
         self
     }
@@ -218,10 +197,7 @@ impl PutEventTypeInputBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -235,26 +211,18 @@ impl PutEventTypeInputBuilder {
         self
     }
     /// <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
-    pub fn set_event_orchestration(
-        mut self,
-        input: ::std::option::Option<crate::types::EventOrchestration>,
-    ) -> Self {
+    pub fn set_event_orchestration(mut self, input: ::std::option::Option<crate::types::EventOrchestration>) -> Self {
         self.event_orchestration = input;
         self
     }
     /// <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
-    pub fn get_event_orchestration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventOrchestration> {
+    pub fn get_event_orchestration(&self) -> &::std::option::Option<crate::types::EventOrchestration> {
         &self.event_orchestration
     }
     /// Consumes the builder and constructs a [`PutEventTypeInput`](crate::operation::put_event_type::PutEventTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_event_type::PutEventTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_event_type::PutEventTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_event_type::PutEventTypeInput {
             name: self.name,
             description: self.description,

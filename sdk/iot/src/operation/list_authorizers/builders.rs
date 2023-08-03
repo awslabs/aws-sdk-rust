@@ -10,10 +10,7 @@ impl ListAuthorizersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_authorizers::ListAuthorizersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_authorizers::ListAuthorizersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_authorizers::ListAuthorizersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_authorizers();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListAuthorizersFluentBuilder {
         }
     }
     /// Access the ListAuthorizers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_authorizers::builders::ListAuthorizersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_authorizers::builders::ListAuthorizersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListAuthorizersFluentBuilder {
             crate::operation::list_authorizers::ListAuthorizers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_authorizers::ListAuthorizersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_authorizers::ListAuthorizersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListAuthorizersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListAuthorizersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_authorizers::ListAuthorizersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_authorizers::ListAuthorizersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_authorizers::ListAuthorizersError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListAuthorizersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_authorizers::ListAuthorizersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_authorizers::ListAuthorizersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_authorizers::ListAuthorizersError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListAuthorizersFluentBuilder {
             crate::operation::list_authorizers::ListAuthorizers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_authorizers::ListAuthorizersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_authorizers::ListAuthorizersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_authorizers::paginator::ListAuthorizersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_authorizers::paginator::ListAuthorizersPaginator {
-        crate::operation::list_authorizers::paginator::ListAuthorizersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_authorizers::paginator::ListAuthorizersPaginator {
+        crate::operation::list_authorizers::paginator::ListAuthorizersPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -182,10 +161,7 @@ impl ListAuthorizersFluentBuilder {
         self
     }
     /// <p>The status of the list authorizers request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizerStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AuthorizerStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

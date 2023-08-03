@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ResetNotificationSettingsOutput`](crate::operation::reset_notification_settings::ResetNotificationSettingsOutput) with field(s):
     ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::operation::reset_notification_settings::ResetNotificationSettingsOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation. </p>
     /// - On failure, responds with [`SdkError<ResetNotificationSettingsError>`](crate::operation::reset_notification_settings::ResetNotificationSettingsError)
-    pub fn reset_notification_settings(&self) -> crate::operation::reset_notification_settings::builders::ResetNotificationSettingsFluentBuilder{
+    pub fn reset_notification_settings(&self) -> crate::operation::reset_notification_settings::builders::ResetNotificationSettingsFluentBuilder {
         crate::operation::reset_notification_settings::builders::ResetNotificationSettingsFluentBuilder::new(self.handle.clone())
     }
 }

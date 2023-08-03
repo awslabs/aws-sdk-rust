@@ -5,28 +5,19 @@
 pub struct DescribeAssessmentTemplatesOutput {
     /// <p>Information about the assessment templates.</p>
     #[doc(hidden)]
-    pub assessment_templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTemplate>>,
+    pub assessment_templates: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTemplate>>,
     /// <p>Assessment template details that cannot be described. An error code is provided for each failed item.</p>
     #[doc(hidden)]
-    pub failed_items: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    >,
+    pub failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }
 impl DescribeAssessmentTemplatesOutput {
     /// <p>Information about the assessment templates.</p>
-    pub fn assessment_templates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssessmentTemplate]> {
+    pub fn assessment_templates(&self) -> ::std::option::Option<&[crate::types::AssessmentTemplate]> {
         self.assessment_templates.as_deref()
     }
     /// <p>Assessment template details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    > {
+    pub fn failed_items(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
         self.failed_items.as_ref()
     }
 }
@@ -37,22 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeAssessmentTemplatesOutput {
 }
 impl DescribeAssessmentTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssessmentTemplatesOutput`](crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput).
-    pub fn builder() -> crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesOutputBuilder {
         crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAssessmentTemplatesOutput`](crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssessmentTemplatesOutputBuilder {
-    pub(crate) assessment_templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTemplate>>,
-    pub(crate) failed_items: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    >,
+    pub(crate) assessment_templates: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTemplate>>,
+    pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }
 impl DescribeAssessmentTemplatesOutputBuilder {
@@ -68,17 +54,12 @@ impl DescribeAssessmentTemplatesOutputBuilder {
         self
     }
     /// <p>Information about the assessment templates.</p>
-    pub fn set_assessment_templates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTemplate>>,
-    ) -> Self {
+    pub fn set_assessment_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTemplate>>) -> Self {
         self.assessment_templates = input;
         self
     }
     /// <p>Information about the assessment templates.</p>
-    pub fn get_assessment_templates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentTemplate>> {
+    pub fn get_assessment_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentTemplate>> {
         &self.assessment_templates
     }
     /// Adds a key-value pair to `failed_items`.
@@ -86,11 +67,7 @@ impl DescribeAssessmentTemplatesOutputBuilder {
     /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
     ///
     /// <p>Assessment template details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::FailedItemDetails,
-    ) -> Self {
+    pub fn failed_items(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FailedItemDetails) -> Self {
         let mut hash_map = self.failed_items.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.failed_items = ::std::option::Option::Some(hash_map);
@@ -99,19 +76,13 @@ impl DescribeAssessmentTemplatesOutputBuilder {
     /// <p>Assessment template details that cannot be described. An error code is provided for each failed item.</p>
     pub fn set_failed_items(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     ) -> Self {
         self.failed_items = input;
         self
     }
     /// <p>Assessment template details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn get_failed_items(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    > {
+    pub fn get_failed_items(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
         &self.failed_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -124,9 +95,7 @@ impl DescribeAssessmentTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAssessmentTemplatesOutput`](crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput {
+    pub fn build(self) -> crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput {
         crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput {
             assessment_templates: self.assessment_templates,
             failed_items: self.failed_items,

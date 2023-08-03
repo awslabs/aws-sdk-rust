@@ -15,10 +15,7 @@ pub fn ser_search_tables_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_property_predicate::ser_property_predicate(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_property_predicate::ser_property_predicate(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -33,10 +30,7 @@ pub fn ser_search_tables_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_sort_criterion::ser_sort_criterion(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_sort_criterion::ser_sort_criterion(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }

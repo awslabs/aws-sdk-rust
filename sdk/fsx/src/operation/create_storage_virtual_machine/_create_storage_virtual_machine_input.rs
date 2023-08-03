@@ -5,8 +5,7 @@
 pub struct CreateStorageVirtualMachineInput {
     /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
     #[doc(hidden)]
-    pub active_directory_configuration:
-        ::std::option::Option<crate::types::CreateSvmActiveDirectoryConfiguration>,
+    pub active_directory_configuration: ::std::option::Option<crate::types::CreateSvmActiveDirectoryConfiguration>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -29,14 +28,11 @@ pub struct CreateStorageVirtualMachineInput {
     /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub root_volume_security_style:
-        ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
+    pub root_volume_security_style: ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
 }
 impl CreateStorageVirtualMachineInput {
     /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
-    pub fn active_directory_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateSvmActiveDirectoryConfiguration> {
+    pub fn active_directory_configuration(&self) -> ::std::option::Option<&crate::types::CreateSvmActiveDirectoryConfiguration> {
         self.active_directory_configuration.as_ref()
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
@@ -65,34 +61,26 @@ impl CreateStorageVirtualMachineInput {
     /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
     /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
     /// </ul>
-    pub fn root_volume_security_style(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
+    pub fn root_volume_security_style(&self) -> ::std::option::Option<&crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
         self.root_volume_security_style.as_ref()
     }
 }
 impl ::std::fmt::Debug for CreateStorageVirtualMachineInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStorageVirtualMachineInput");
-        formatter.field(
-            "active_directory_configuration",
-            &self.active_directory_configuration,
-        );
+        formatter.field("active_directory_configuration", &self.active_directory_configuration);
         formatter.field("client_request_token", &self.client_request_token);
         formatter.field("file_system_id", &self.file_system_id);
         formatter.field("name", &self.name);
         formatter.field("svm_admin_password", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
-        formatter.field(
-            "root_volume_security_style",
-            &self.root_volume_security_style,
-        );
+        formatter.field("root_volume_security_style", &self.root_volume_security_style);
         formatter.finish()
     }
 }
 impl CreateStorageVirtualMachineInput {
     /// Creates a new builder-style object to manufacture [`CreateStorageVirtualMachineInput`](crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineInput).
-    pub fn builder() -> crate::operation::create_storage_virtual_machine::builders::CreateStorageVirtualMachineInputBuilder{
+    pub fn builder() -> crate::operation::create_storage_virtual_machine::builders::CreateStorageVirtualMachineInputBuilder {
         crate::operation::create_storage_virtual_machine::builders::CreateStorageVirtualMachineInputBuilder::default()
     }
 }
@@ -101,52 +89,36 @@ impl CreateStorageVirtualMachineInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateStorageVirtualMachineInputBuilder {
-    pub(crate) active_directory_configuration:
-        ::std::option::Option<crate::types::CreateSvmActiveDirectoryConfiguration>,
+    pub(crate) active_directory_configuration: ::std::option::Option<crate::types::CreateSvmActiveDirectoryConfiguration>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) svm_admin_password: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) root_volume_security_style:
-        ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
+    pub(crate) root_volume_security_style: ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
 }
 impl CreateStorageVirtualMachineInputBuilder {
     /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
-    pub fn active_directory_configuration(
-        mut self,
-        input: crate::types::CreateSvmActiveDirectoryConfiguration,
-    ) -> Self {
+    pub fn active_directory_configuration(mut self, input: crate::types::CreateSvmActiveDirectoryConfiguration) -> Self {
         self.active_directory_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
-    pub fn set_active_directory_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateSvmActiveDirectoryConfiguration>,
-    ) -> Self {
+    pub fn set_active_directory_configuration(mut self, input: ::std::option::Option<crate::types::CreateSvmActiveDirectoryConfiguration>) -> Self {
         self.active_directory_configuration = input;
         self
     }
     /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
-    pub fn get_active_directory_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateSvmActiveDirectoryConfiguration> {
+    pub fn get_active_directory_configuration(&self) -> &::std::option::Option<crate::types::CreateSvmActiveDirectoryConfiguration> {
         &self.active_directory_configuration
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -155,18 +127,12 @@ impl CreateStorageVirtualMachineInputBuilder {
         &self.client_request_token
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -189,18 +155,12 @@ impl CreateStorageVirtualMachineInputBuilder {
         &self.name
     }
     /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API. If you do not specify a password, you can still use the file system's <code>fsxadmin</code> user to manage the SVM.</p>
-    pub fn svm_admin_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn svm_admin_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.svm_admin_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API. If you do not specify a password, you can still use the file system's <code>fsxadmin</code> user to manage the SVM.</p>
-    pub fn set_svm_admin_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_svm_admin_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.svm_admin_password = input;
         self
     }
@@ -220,10 +180,7 @@ impl CreateStorageVirtualMachineInputBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -237,10 +194,7 @@ impl CreateStorageVirtualMachineInputBuilder {
     /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
     /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
     /// </ul>
-    pub fn root_volume_security_style(
-        mut self,
-        input: crate::types::StorageVirtualMachineRootVolumeSecurityStyle,
-    ) -> Self {
+    pub fn root_volume_security_style(mut self, input: crate::types::StorageVirtualMachineRootVolumeSecurityStyle) -> Self {
         self.root_volume_security_style = ::std::option::Option::Some(input);
         self
     }
@@ -263,9 +217,7 @@ impl CreateStorageVirtualMachineInputBuilder {
     /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
     /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
     /// </ul>
-    pub fn get_root_volume_security_style(
-        &self,
-    ) -> &::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
+    pub fn get_root_volume_security_style(&self) -> &::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
         &self.root_volume_security_style
     }
     /// Consumes the builder and constructs a [`CreateStorageVirtualMachineInput`](crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineInput).
@@ -275,35 +227,27 @@ impl CreateStorageVirtualMachineInputBuilder {
         crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineInput {
-                active_directory_configuration: self.active_directory_configuration,
-                client_request_token: self.client_request_token,
-                file_system_id: self.file_system_id,
-                name: self.name,
-                svm_admin_password: self.svm_admin_password,
-                tags: self.tags,
-                root_volume_security_style: self.root_volume_security_style,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineInput {
+            active_directory_configuration: self.active_directory_configuration,
+            client_request_token: self.client_request_token,
+            file_system_id: self.file_system_id,
+            name: self.name,
+            svm_admin_password: self.svm_admin_password,
+            tags: self.tags,
+            root_volume_security_style: self.root_volume_security_style,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateStorageVirtualMachineInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStorageVirtualMachineInputBuilder");
-        formatter.field(
-            "active_directory_configuration",
-            &self.active_directory_configuration,
-        );
+        formatter.field("active_directory_configuration", &self.active_directory_configuration);
         formatter.field("client_request_token", &self.client_request_token);
         formatter.field("file_system_id", &self.file_system_id);
         formatter.field("name", &self.name);
         formatter.field("svm_admin_password", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
-        formatter.field(
-            "root_volume_security_style",
-            &self.root_volume_security_style,
-        );
+        formatter.field("root_volume_security_style", &self.root_volume_security_style);
         formatter.finish()
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteVpcConnectorOutput`](crate::operation::delete_vpc_connector::DeleteVpcConnectorOutput) with field(s):
     ///   - [`vpc_connector(Option<VpcConnector>)`](crate::operation::delete_vpc_connector::DeleteVpcConnectorOutput::vpc_connector): <p>A description of the App Runner VPC connector that this request just deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteVpcConnectorError>`](crate::operation::delete_vpc_connector::DeleteVpcConnectorError)
-    pub fn delete_vpc_connector(
-        &self,
-    ) -> crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorFluentBuilder {
-        crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_vpc_connector(&self) -> crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorFluentBuilder {
+        crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorFluentBuilder::new(self.handle.clone())
     }
 }

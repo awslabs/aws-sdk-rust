@@ -26,7 +26,7 @@ impl DescribePortfolioShareStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePortfolioShareStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_portfolio_share_status::builders::DescribePortfolioShareStatusInputBuilder,
+    inner: crate::operation::describe_portfolio_share_status::builders::DescribePortfolioShareStatusInputBuilder,
 }
 impl DescribePortfolioShareStatusFluentBuilder {
     /// Creates a new `DescribePortfolioShareStatus`.
@@ -37,7 +37,7 @@ impl DescribePortfolioShareStatusFluentBuilder {
         }
     }
     /// Access the DescribePortfolioShareStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_portfolio_share_status::builders::DescribePortfolioShareStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_portfolio_share_status::builders::DescribePortfolioShareStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribePortfolioShareStatusFluentBuilder {
             crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribePortfolioShareStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribePortfolioShareStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribePortfolioShareStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribePortfolioShareStatusFluentBuilder {
             crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
-    pub fn portfolio_share_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn portfolio_share_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.portfolio_share_token(input.into());
         self
     }
     /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
-    pub fn set_portfolio_share_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_portfolio_share_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_portfolio_share_token(input);
         self
     }

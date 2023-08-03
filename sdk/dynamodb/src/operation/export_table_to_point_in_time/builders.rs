@@ -26,7 +26,7 @@ impl ExportTableToPointInTimeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportTableToPointInTimeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeInputBuilder,
+    inner: crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeInputBuilder,
 }
 impl ExportTableToPointInTimeFluentBuilder {
     /// Creates a new `ExportTableToPointInTime`.
@@ -37,7 +37,7 @@ impl ExportTableToPointInTimeFluentBuilder {
         }
     }
     /// Access the ExportTableToPointInTime as a reference.
-    pub fn as_input(&self) -> &crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ExportTableToPointInTimeFluentBuilder {
             crate::operation::export_table_to_point_in_time::ExportTableToPointInTime,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ExportTableToPointInTimeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ExportTableToPointInTimeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ExportTableToPointInTimeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ExportTableToPointInTimeFluentBuilder {
             crate::operation::export_table_to_point_in_time::ExportTableToPointInTime,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +129,7 @@ impl ExportTableToPointInTimeFluentBuilder {
         self
     }
     /// <p>Time in the past from which to export table data, counted in seconds from the start of the Unix epoch. The table export will be a snapshot of the table's state at this point in time.</p>
-    pub fn set_export_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_export_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_export_time(input);
         self
     }
@@ -186,18 +172,12 @@ impl ExportTableToPointInTimeFluentBuilder {
         self.inner.get_s3_bucket()
     }
     /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
-    pub fn s3_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket_owner(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
-    pub fn set_s3_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket_owner(input);
         self
     }
@@ -233,10 +213,7 @@ impl ExportTableToPointInTimeFluentBuilder {
     /// <li> <p> <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p> </li>
     /// <li> <p> <code>KMS</code> - server-side encryption with KMS managed keys</p> </li>
     /// </ul>
-    pub fn set_s3_sse_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::S3SseAlgorithm>,
-    ) -> Self {
+    pub fn set_s3_sse_algorithm(mut self, input: ::std::option::Option<crate::types::S3SseAlgorithm>) -> Self {
         self.inner = self.inner.set_s3_sse_algorithm(input);
         self
     }
@@ -249,18 +226,12 @@ impl ExportTableToPointInTimeFluentBuilder {
         self.inner.get_s3_sse_algorithm()
     }
     /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data will be stored (if applicable).</p>
-    pub fn s3_sse_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_sse_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_sse_kms_key_id(input.into());
         self
     }
     /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data will be stored (if applicable).</p>
-    pub fn set_s3_sse_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_sse_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_sse_kms_key_id(input);
         self
     }
@@ -274,10 +245,7 @@ impl ExportTableToPointInTimeFluentBuilder {
         self
     }
     /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
-    pub fn set_export_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportFormat>,
-    ) -> Self {
+    pub fn set_export_format(mut self, input: ::std::option::Option<crate::types::ExportFormat>) -> Self {
         self.inner = self.inner.set_export_format(input);
         self
     }

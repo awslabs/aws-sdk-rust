@@ -31,9 +31,7 @@ impl CookieObject {
 
 /// A builder for [`CookieObject`](crate::types::CookieObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CookieObjectBuilder {
     pub(crate) option: ::std::option::Option<crate::types::ForwardValues>,
     pub(crate) cookies_allow_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -58,27 +56,19 @@ impl CookieObjectBuilder {
     /// To override the contents of this collection use [`set_cookies_allow_list`](Self::set_cookies_allow_list).
     ///
     /// <p>The specific cookies to forward to your distribution's origin.</p>
-    pub fn cookies_allow_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cookies_allow_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cookies_allow_list.unwrap_or_default();
         v.push(input.into());
         self.cookies_allow_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The specific cookies to forward to your distribution's origin.</p>
-    pub fn set_cookies_allow_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cookies_allow_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cookies_allow_list = input;
         self
     }
     /// <p>The specific cookies to forward to your distribution's origin.</p>
-    pub fn get_cookies_allow_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cookies_allow_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cookies_allow_list
     }
     /// Consumes the builder and constructs a [`CookieObject`](crate::types::CookieObject).

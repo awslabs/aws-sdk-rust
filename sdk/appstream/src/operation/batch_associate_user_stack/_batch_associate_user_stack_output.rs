@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchAssociateUserStackOutput {
 }
 impl BatchAssociateUserStackOutput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateUserStackOutput`](crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_associate_user_stack::builders::BatchAssociateUserStackOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_associate_user_stack::builders::BatchAssociateUserStackOutputBuilder {
         crate::operation::batch_associate_user_stack::builders::BatchAssociateUserStackOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchAssociateUserStackOutput`](crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateUserStackOutputBuilder {
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociationError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociationError>>,
     _request_id: Option<String>,
 }
 impl BatchAssociateUserStackOutputBuilder {
@@ -51,17 +46,12 @@ impl BatchAssociateUserStackOutputBuilder {
         self
     }
     /// <p>The list of UserStackAssociationError objects.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociationError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociationError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>The list of UserStackAssociationError objects.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociationError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociationError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +64,7 @@ impl BatchAssociateUserStackOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchAssociateUserStackOutput`](crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput {
+    pub fn build(self) -> crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput {
         crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput {
             errors: self.errors,
             _request_id: self._request_id,

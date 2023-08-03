@@ -4,9 +4,7 @@ pub fn ser_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_
     input: &crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.on_demand_allocation_strategy {
-        object
-            .key("OnDemandAllocationStrategy")
-            .string(var_1.as_str());
+        object.key("OnDemandAllocationStrategy").string(var_1.as_str());
     }
     if input.on_demand_base_capacity != 0 {
         object.key("OnDemandBaseCapacity").number(
@@ -17,9 +15,7 @@ pub fn ser_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_
     if input.on_demand_percentage_above_base_capacity != 0 {
         object.key("OnDemandPercentageAboveBaseCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt(
-                (input.on_demand_percentage_above_base_capacity).into(),
-            ),
+            ::aws_smithy_types::Number::NegInt((input.on_demand_percentage_above_base_capacity).into()),
         );
     }
     if let Some(var_2) = &input.spot_allocation_strategy {
@@ -37,90 +33,81 @@ pub fn ser_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_
     Ok(())
 }
 
-pub(crate) fn de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details<'a, I>(tokens: &mut ::std::iter::Peekable<I>) -> Result<Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
-where I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>{
+pub(crate) fn de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details<'a, I>(
+    tokens: &mut ::std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
+where
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
+{
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::types::builders::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetailsBuilder::default();
+            let mut builder =
+                crate::types::builders::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "OnDemandAllocationStrategy" => {
-                                builder = builder.set_on_demand_allocation_strategy(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "OnDemandAllocationStrategy" => {
+                            builder = builder.set_on_demand_allocation_strategy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "OnDemandBaseCapacity" => {
-                                builder = builder.set_on_demand_base_capacity(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "OnDemandPercentageAboveBaseCapacity" => {
-                                builder = builder.set_on_demand_percentage_above_base_capacity(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "SpotAllocationStrategy" => {
-                                builder = builder.set_spot_allocation_strategy(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "SpotInstancePools" => {
-                                builder = builder.set_spot_instance_pools(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "SpotMaxPrice" => {
-                                builder = builder.set_spot_max_price(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "OnDemandBaseCapacity" => {
+                            builder = builder.set_on_demand_base_capacity(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "OnDemandPercentageAboveBaseCapacity" => {
+                            builder = builder.set_on_demand_percentage_above_base_capacity(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "SpotAllocationStrategy" => {
+                            builder = builder.set_spot_allocation_strategy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "SpotInstancePools" => {
+                            builder = builder.set_spot_instance_pools(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "SpotMaxPrice" => {
+                            builder = builder.set_spot_max_price(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

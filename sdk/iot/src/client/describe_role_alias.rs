@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeRoleAliasOutput`](crate::operation::describe_role_alias::DescribeRoleAliasOutput) with field(s):
     ///   - [`role_alias_description(Option<RoleAliasDescription>)`](crate::operation::describe_role_alias::DescribeRoleAliasOutput::role_alias_description): <p>The role alias description.</p>
     /// - On failure, responds with [`SdkError<DescribeRoleAliasError>`](crate::operation::describe_role_alias::DescribeRoleAliasError)
-    pub fn describe_role_alias(
-        &self,
-    ) -> crate::operation::describe_role_alias::builders::DescribeRoleAliasFluentBuilder {
-        crate::operation::describe_role_alias::builders::DescribeRoleAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_role_alias(&self) -> crate::operation::describe_role_alias::builders::DescribeRoleAliasFluentBuilder {
+        crate::operation::describe_role_alias::builders::DescribeRoleAliasFluentBuilder::new(self.handle.clone())
     }
 }

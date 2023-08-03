@@ -37,9 +37,7 @@ impl TelephonySettings {
 
 /// A builder for [`TelephonySettings`](crate::types::TelephonySettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TelephonySettingsBuilder {
     pub(crate) inbound_calling: ::std::option::Option<bool>,
     pub(crate) outbound_calling: ::std::option::Option<bool>,

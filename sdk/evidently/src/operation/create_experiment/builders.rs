@@ -10,10 +10,7 @@ impl CreateExperimentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_experiment::CreateExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_experiment::CreateExperimentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_experiment::CreateExperimentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_experiment();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateExperimentFluentBuilder {
         }
     }
     /// Access the CreateExperiment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_experiment::builders::CreateExperimentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_experiment::builders::CreateExperimentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateExperimentFluentBuilder {
             crate::operation::create_experiment::CreateExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_experiment::CreateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_experiment::CreateExperimentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateExperimentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_experiment::CreateExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_experiment::CreateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_experiment::CreateExperimentError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateExperimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_experiment::CreateExperimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_experiment::CreateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_experiment::CreateExperimentError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl CreateExperimentFluentBuilder {
             crate::operation::create_experiment::CreateExperiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_experiment::CreateExperimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_experiment::CreateExperimentError>,
     > {
         self.customize_middleware().await
     }
@@ -177,17 +161,12 @@ impl CreateExperimentFluentBuilder {
         self
     }
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    pub fn set_treatments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>,
-    ) -> Self {
+    pub fn set_treatments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>) -> Self {
         self.inner = self.inner.set_treatments(input);
         self
     }
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    pub fn get_treatments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>> {
+    pub fn get_treatments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>> {
         self.inner.get_treatments()
     }
     /// Appends an item to `metricGoals`.
@@ -200,32 +179,21 @@ impl CreateExperimentFluentBuilder {
         self
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn set_metric_goals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>,
-    ) -> Self {
+    pub fn set_metric_goals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>) -> Self {
         self.inner = self.inner.set_metric_goals(input);
         self
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn get_metric_goals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>> {
+    pub fn get_metric_goals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>> {
         self.inner.get_metric_goals()
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
-    pub fn randomization_salt(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn randomization_salt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.randomization_salt(input.into());
         self
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
-    pub fn set_randomization_salt(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_randomization_salt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_randomization_salt(input);
         self
     }
@@ -256,10 +224,7 @@ impl CreateExperimentFluentBuilder {
         self
     }
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
-    pub fn set_online_ab_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OnlineAbConfig>,
-    ) -> Self {
+    pub fn set_online_ab_config(mut self, input: ::std::option::Option<crate::types::OnlineAbConfig>) -> Self {
         self.inner = self.inner.set_online_ab_config(input);
         self
     }
@@ -290,11 +255,7 @@ impl CreateExperimentFluentBuilder {
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an experiment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
@@ -303,12 +264,7 @@ impl CreateExperimentFluentBuilder {
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an experiment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -317,11 +273,7 @@ impl CreateExperimentFluentBuilder {
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
     /// <p>You can associate as many as 50 tags with an experiment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

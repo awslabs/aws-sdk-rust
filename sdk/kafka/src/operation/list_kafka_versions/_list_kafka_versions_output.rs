@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListKafkaVersionsOutput {
 }
 impl ListKafkaVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListKafkaVersionsOutput`](crate::operation::list_kafka_versions::ListKafkaVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_kafka_versions::builders::ListKafkaVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_kafka_versions::builders::ListKafkaVersionsOutputBuilder {
         crate::operation::list_kafka_versions::builders::ListKafkaVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListKafkaVersionsOutput`](crate::operation::list_kafka_versions::ListKafkaVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKafkaVersionsOutputBuilder {
     pub(crate) kafka_versions: ::std::option::Option<::std::vec::Vec<crate::types::KafkaVersion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +53,12 @@ impl ListKafkaVersionsOutputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_kafka_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KafkaVersion>>,
-    ) -> Self {
+    pub fn set_kafka_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KafkaVersion>>) -> Self {
         self.kafka_versions = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_kafka_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KafkaVersion>> {
+    pub fn get_kafka_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KafkaVersion>> {
         &self.kafka_versions
     }
     #[allow(missing_docs)] // documentation missing in model

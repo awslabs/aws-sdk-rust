@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`firewall(Option<Firewall>)`](crate::operation::describe_firewall::DescribeFirewallOutput::firewall): <p>The configuration settings for the firewall. These settings include the firewall policy and the subnets in your VPC to use for the firewall endpoints. </p>
     ///   - [`firewall_status(Option<FirewallStatus>)`](crate::operation::describe_firewall::DescribeFirewallOutput::firewall_status): <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     /// - On failure, responds with [`SdkError<DescribeFirewallError>`](crate::operation::describe_firewall::DescribeFirewallError)
-    pub fn describe_firewall(
-        &self,
-    ) -> crate::operation::describe_firewall::builders::DescribeFirewallFluentBuilder {
-        crate::operation::describe_firewall::builders::DescribeFirewallFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_firewall(&self) -> crate::operation::describe_firewall::builders::DescribeFirewallFluentBuilder {
+        crate::operation::describe_firewall::builders::DescribeFirewallFluentBuilder::new(self.handle.clone())
     }
 }

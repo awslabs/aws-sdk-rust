@@ -29,16 +29,14 @@ impl DescribeWorkspaceDirectoriesInput {
 }
 impl DescribeWorkspaceDirectoriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceDirectoriesInput`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesInput).
-    pub fn builder() -> crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesInputBuilder{
+    pub fn builder() -> crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesInputBuilder {
         crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspaceDirectoriesInput`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceDirectoriesInputBuilder {
     pub(crate) directory_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -50,27 +48,19 @@ impl DescribeWorkspaceDirectoriesInputBuilder {
     /// To override the contents of this collection use [`set_directory_ids`](Self::set_directory_ids).
     ///
     /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
-    pub fn directory_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.directory_ids.unwrap_or_default();
         v.push(input.into());
         self.directory_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
-    pub fn set_directory_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_directory_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.directory_ids = input;
         self
     }
     /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
-    pub fn get_directory_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_directory_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.directory_ids
     }
     /// <p>The maximum number of directories to return.</p>
@@ -108,12 +98,10 @@ impl DescribeWorkspaceDirectoriesInputBuilder {
         crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesInput {
-                directory_ids: self.directory_ids,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesInput {
+            directory_ids: self.directory_ids,
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }

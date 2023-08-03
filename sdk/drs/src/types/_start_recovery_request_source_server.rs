@@ -30,27 +30,19 @@ impl StartRecoveryRequestSourceServer {
 
 /// A builder for [`StartRecoveryRequestSourceServer`](crate::types::StartRecoveryRequestSourceServer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRecoveryRequestSourceServerBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_snapshot_id: ::std::option::Option<::std::string::String>,
 }
 impl StartRecoveryRequestSourceServerBuilder {
     /// <p>The ID of the Source Server you want to recover.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Source Server you want to recover.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl StartRecoveryRequestSourceServerBuilder {
         &self.source_server_id
     }
     /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
-    pub fn recovery_snapshot_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
-    pub fn set_recovery_snapshot_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_snapshot_id = input;
         self
     }

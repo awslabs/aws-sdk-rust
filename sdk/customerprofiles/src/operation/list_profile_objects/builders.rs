@@ -10,10 +10,7 @@ impl ListProfileObjectsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_profile_objects::ListProfileObjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_objects::ListProfileObjectsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_objects::ListProfileObjectsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_profile_objects();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListProfileObjectsFluentBuilder {
         }
     }
     /// Access the ListProfileObjects as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_profile_objects::builders::ListProfileObjectsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_profile_objects::builders::ListProfileObjectsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListProfileObjectsFluentBuilder {
             crate::operation::list_profile_objects::ListProfileObjects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_objects::ListProfileObjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_objects::ListProfileObjectsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListProfileObjectsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListProfileObjectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_profile_objects::ListProfileObjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_objects::ListProfileObjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_objects::ListProfileObjectsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListProfileObjectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_profile_objects::ListProfileObjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_objects::ListProfileObjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_objects::ListProfileObjectsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ListProfileObjectsFluentBuilder {
             crate::operation::list_profile_objects::ListProfileObjects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_objects::ListProfileObjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_objects::ListProfileObjectsError>,
     > {
         self.customize_middleware().await
     }
@@ -165,18 +149,12 @@ impl ListProfileObjectsFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.object_type_name(input.into());
         self
     }
     /// <p>The name of the profile object type.</p>
-    pub fn set_object_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_object_type_name(input);
         self
     }
@@ -204,10 +182,7 @@ impl ListProfileObjectsFluentBuilder {
         self
     }
     /// <p>Applies a filter to the response to include profile objects with the specified index values.</p>
-    pub fn set_object_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectFilter>,
-    ) -> Self {
+    pub fn set_object_filter(mut self, input: ::std::option::Option<crate::types::ObjectFilter>) -> Self {
         self.inner = self.inner.set_object_filter(input);
         self
     }

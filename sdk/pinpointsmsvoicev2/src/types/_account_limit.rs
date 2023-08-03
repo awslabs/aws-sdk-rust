@@ -37,9 +37,7 @@ impl AccountLimit {
 
 /// A builder for [`AccountLimit`](crate::types::AccountLimit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountLimitBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AccountLimitName>,
     pub(crate) used: ::std::option::Option<i64>,
@@ -52,10 +50,7 @@ impl AccountLimitBuilder {
         self
     }
     /// <p>The name of the attribute to apply the account limit to.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountLimitName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AccountLimitName>) -> Self {
         self.name = input;
         self
     }

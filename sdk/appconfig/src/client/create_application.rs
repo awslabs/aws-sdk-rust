@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::create_application::CreateApplicationOutput::name): <p>The application name.</p>
     ///   - [`description(Option<String>)`](crate::operation::create_application::CreateApplicationOutput::description): <p>The description of the application.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::operation::create_application::CreateApplicationError)
-    pub fn create_application(
-        &self,
-    ) -> crate::operation::create_application::builders::CreateApplicationFluentBuilder {
-        crate::operation::create_application::builders::CreateApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_application(&self) -> crate::operation::create_application::builders::CreateApplicationFluentBuilder {
+        crate::operation::create_application::builders::CreateApplicationFluentBuilder::new(self.handle.clone())
     }
 }

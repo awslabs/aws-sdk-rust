@@ -107,9 +107,7 @@ impl Endpoint {
 
 /// A builder for [`Endpoint`](crate::types::Endpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -174,10 +172,7 @@ impl EndpointBuilder {
         self
     }
     /// <p>The routing configuration of the endpoint.</p>
-    pub fn set_routing_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingConfig>,
-    ) -> Self {
+    pub fn set_routing_config(mut self, input: ::std::option::Option<crate::types::RoutingConfig>) -> Self {
         self.routing_config = input;
         self
     }
@@ -191,17 +186,12 @@ impl EndpointBuilder {
         self
     }
     /// <p>Whether event replication was enabled or disabled for this endpoint. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
-    pub fn set_replication_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfig>,
-    ) -> Self {
+    pub fn set_replication_config(mut self, input: ::std::option::Option<crate::types::ReplicationConfig>) -> Self {
         self.replication_config = input;
         self
     }
     /// <p>Whether event replication was enabled or disabled for this endpoint. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
-    pub fn get_replication_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfig> {
+    pub fn get_replication_config(&self) -> &::std::option::Option<crate::types::ReplicationConfig> {
         &self.replication_config
     }
     /// Appends an item to `event_buses`.
@@ -216,17 +206,12 @@ impl EndpointBuilder {
         self
     }
     /// <p>The event buses being used by the endpoint.</p>
-    pub fn set_event_buses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>,
-    ) -> Self {
+    pub fn set_event_buses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>) -> Self {
         self.event_buses = input;
         self
     }
     /// <p>The event buses being used by the endpoint.</p>
-    pub fn get_event_buses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
+    pub fn get_event_buses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
         &self.event_buses
     }
     /// <p>The ARN of the role used by event replication for the endpoint.</p>
@@ -305,10 +290,7 @@ impl EndpointBuilder {
         self
     }
     /// <p>The time the endpoint was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -322,10 +304,7 @@ impl EndpointBuilder {
         self
     }
     /// <p>The last time the endpoint was modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

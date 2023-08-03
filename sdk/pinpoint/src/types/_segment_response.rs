@@ -40,9 +40,7 @@ pub struct SegmentResponse {
     pub segment_type: ::std::option::Option<crate::types::SegmentType>,
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag consists of a required tag key and an associated tag value.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The version number of the segment.</p>
     #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
@@ -93,11 +91,7 @@ impl SegmentResponse {
         self.segment_type.as_ref()
     }
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The version number of the segment.</p>
@@ -114,9 +108,7 @@ impl SegmentResponse {
 
 /// A builder for [`SegmentResponse`](crate::types::SegmentResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -128,25 +120,17 @@ pub struct SegmentResponseBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) segment_groups: ::std::option::Option<crate::types::SegmentGroupList>,
     pub(crate) segment_type: ::std::option::Option<crate::types::SegmentType>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) version: ::std::option::Option<i32>,
 }
 impl SegmentResponseBuilder {
     /// <p>The unique identifier for the application that the segment is associated with.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application that the segment is associated with.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -169,18 +153,12 @@ impl SegmentResponseBuilder {
         &self.arn
     }
     /// <p>The date and time when the segment was created.</p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time when the segment was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date = input;
         self
     }
@@ -194,10 +172,7 @@ impl SegmentResponseBuilder {
         self
     }
     /// <p>The dimension settings for the segment.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentDimensions>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<crate::types::SegmentDimensions>) -> Self {
         self.dimensions = input;
         self
     }
@@ -225,32 +200,21 @@ impl SegmentResponseBuilder {
         self
     }
     /// <p>The settings for the import job that's associated with the segment.</p>
-    pub fn set_import_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentImportResource>,
-    ) -> Self {
+    pub fn set_import_definition(mut self, input: ::std::option::Option<crate::types::SegmentImportResource>) -> Self {
         self.import_definition = input;
         self
     }
     /// <p>The settings for the import job that's associated with the segment.</p>
-    pub fn get_import_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::SegmentImportResource> {
+    pub fn get_import_definition(&self) -> &::std::option::Option<crate::types::SegmentImportResource> {
         &self.import_definition
     }
     /// <p>The date and time when the segment was last modified.</p>
-    pub fn last_modified_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time when the segment was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -278,10 +242,7 @@ impl SegmentResponseBuilder {
         self
     }
     /// <p>A list of one or more segment groups that apply to the segment. Each segment group consists of zero or more base segments and the dimensions that are applied to those base segments.</p>
-    pub fn set_segment_groups(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentGroupList>,
-    ) -> Self {
+    pub fn set_segment_groups(mut self, input: ::std::option::Option<crate::types::SegmentGroupList>) -> Self {
         self.segment_groups = input;
         self
     }
@@ -303,10 +264,7 @@ impl SegmentResponseBuilder {
     /// <li><p>DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on endpoint data that's reported by your app. Dynamic segments can change over time.</p></li>
     /// <li><p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li>
     /// </ul>
-    pub fn set_segment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SegmentType>,
-    ) -> Self {
+    pub fn set_segment_type(mut self, input: ::std::option::Option<crate::types::SegmentType>) -> Self {
         self.segment_type = input;
         self
     }
@@ -323,32 +281,19 @@ impl SegmentResponseBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The version number of the segment.</p>

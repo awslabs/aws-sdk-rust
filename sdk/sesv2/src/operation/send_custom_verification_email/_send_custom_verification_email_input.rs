@@ -30,16 +30,14 @@ impl SendCustomVerificationEmailInput {
 }
 impl SendCustomVerificationEmailInput {
     /// Creates a new builder-style object to manufacture [`SendCustomVerificationEmailInput`](crate::operation::send_custom_verification_email::SendCustomVerificationEmailInput).
-    pub fn builder() -> crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailInputBuilder{
+    pub fn builder() -> crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailInputBuilder {
         crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailInputBuilder::default()
     }
 }
 
 /// A builder for [`SendCustomVerificationEmailInput`](crate::operation::send_custom_verification_email::SendCustomVerificationEmailInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendCustomVerificationEmailInputBuilder {
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct SendCustomVerificationEmailInputBuilder {
 }
 impl SendCustomVerificationEmailInputBuilder {
     /// <p>The email address to verify.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address to verify.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
@@ -67,18 +59,12 @@ impl SendCustomVerificationEmailInputBuilder {
         &self.email_address
     }
     /// <p>The name of the custom verification email template to use when sending the verification email.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the custom verification email template to use when sending the verification email.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -87,18 +73,12 @@ impl SendCustomVerificationEmailInputBuilder {
         &self.template_name
     }
     /// <p>Name of a configuration set to use when sending the verification email.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a configuration set to use when sending the verification email.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -113,12 +93,10 @@ impl SendCustomVerificationEmailInputBuilder {
         crate::operation::send_custom_verification_email::SendCustomVerificationEmailInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::send_custom_verification_email::SendCustomVerificationEmailInput {
-                email_address: self.email_address,
-                template_name: self.template_name,
-                configuration_set_name: self.configuration_set_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::send_custom_verification_email::SendCustomVerificationEmailInput {
+            email_address: self.email_address,
+            template_name: self.template_name,
+            configuration_set_name: self.configuration_set_name,
+        })
     }
 }

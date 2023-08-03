@@ -50,17 +50,14 @@ impl ListObjectAttributesInput {
 }
 impl ListObjectAttributesInput {
     /// Creates a new builder-style object to manufacture [`ListObjectAttributesInput`](crate::operation::list_object_attributes::ListObjectAttributesInput).
-    pub fn builder(
-    ) -> crate::operation::list_object_attributes::builders::ListObjectAttributesInputBuilder {
+    pub fn builder() -> crate::operation::list_object_attributes::builders::ListObjectAttributesInputBuilder {
         crate::operation::list_object_attributes::builders::ListObjectAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListObjectAttributesInput`](crate::operation::list_object_attributes::ListObjectAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListObjectAttributesInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -71,18 +68,12 @@ pub struct ListObjectAttributesInputBuilder {
 }
 impl ListObjectAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }
@@ -96,10 +87,7 @@ impl ListObjectAttributesInputBuilder {
         self
     }
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.object_reference = input;
         self
     }
@@ -141,10 +129,7 @@ impl ListObjectAttributesInputBuilder {
         self
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
+    pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
         self.consistency_level = input;
         self
     }
@@ -158,10 +143,7 @@ impl ListObjectAttributesInputBuilder {
         self
     }
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
-    pub fn set_facet_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaFacet>,
-    ) -> Self {
+    pub fn set_facet_filter(mut self, input: ::std::option::Option<crate::types::SchemaFacet>) -> Self {
         self.facet_filter = input;
         self
     }
@@ -172,19 +154,15 @@ impl ListObjectAttributesInputBuilder {
     /// Consumes the builder and constructs a [`ListObjectAttributesInput`](crate::operation::list_object_attributes::ListObjectAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_object_attributes::ListObjectAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_object_attributes::ListObjectAttributesInput {
-                directory_arn: self.directory_arn,
-                object_reference: self.object_reference,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                consistency_level: self.consistency_level,
-                facet_filter: self.facet_filter,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_object_attributes::ListObjectAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_object_attributes::ListObjectAttributesInput {
+            directory_arn: self.directory_arn,
+            object_reference: self.object_reference,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            consistency_level: self.consistency_level,
+            facet_filter: self.facet_filter,
+        })
     }
 }

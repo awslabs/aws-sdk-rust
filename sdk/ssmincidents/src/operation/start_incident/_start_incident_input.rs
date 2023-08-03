@@ -73,9 +73,7 @@ impl StartIncidentInput {
 
 /// A builder for [`StartIncidentInput`](crate::operation::start_incident::StartIncidentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartIncidentInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) response_plan_arn: ::std::option::Option<::std::string::String>,
@@ -100,18 +98,12 @@ impl StartIncidentInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
-    pub fn response_plan_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
-    pub fn set_response_plan_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_plan_arn = input;
         self
     }
@@ -177,10 +169,7 @@ impl StartIncidentInputBuilder {
         self
     }
     /// <p>Details of what created the incident record in Incident Manager.</p>
-    pub fn set_trigger_details(
-        mut self,
-        input: ::std::option::Option<crate::types::TriggerDetails>,
-    ) -> Self {
+    pub fn set_trigger_details(mut self, input: ::std::option::Option<crate::types::TriggerDetails>) -> Self {
         self.trigger_details = input;
         self
     }
@@ -200,26 +189,18 @@ impl StartIncidentInputBuilder {
         self
     }
     /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
-    pub fn set_related_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>>,
-    ) -> Self {
+    pub fn set_related_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>>) -> Self {
         self.related_items = input;
         self
     }
     /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
-    pub fn get_related_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>> {
+    pub fn get_related_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>> {
         &self.related_items
     }
     /// Consumes the builder and constructs a [`StartIncidentInput`](crate::operation::start_incident::StartIncidentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_incident::StartIncidentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_incident::StartIncidentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_incident::StartIncidentInput {
             client_token: self.client_token,
             response_plan_arn: self.response_plan_arn,

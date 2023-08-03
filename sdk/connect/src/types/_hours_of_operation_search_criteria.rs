@@ -6,12 +6,10 @@
 pub struct HoursOfOperationSearchCriteria {
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
     #[doc(hidden)]
-    pub or_conditions:
-        ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>>,
+    pub or_conditions: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>>,
     /// <p>A list of conditions which would be applied together with an AND condition.</p>
     #[doc(hidden)]
-    pub and_conditions:
-        ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>>,
+    pub and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>>,
     /// <p>A leaf node condition which can be used to specify a string condition.</p> <note>
     /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, <code>timezone</code>, and <code>resourceID</code>.</p>
     /// </note>
@@ -20,15 +18,11 @@ pub struct HoursOfOperationSearchCriteria {
 }
 impl HoursOfOperationSearchCriteria {
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
-    pub fn or_conditions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HoursOfOperationSearchCriteria]> {
+    pub fn or_conditions(&self) -> ::std::option::Option<&[crate::types::HoursOfOperationSearchCriteria]> {
         self.or_conditions.as_deref()
     }
     /// <p>A list of conditions which would be applied together with an AND condition.</p>
-    pub fn and_conditions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HoursOfOperationSearchCriteria]> {
+    pub fn and_conditions(&self) -> ::std::option::Option<&[crate::types::HoursOfOperationSearchCriteria]> {
         self.and_conditions.as_deref()
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p> <note>
@@ -47,14 +41,10 @@ impl HoursOfOperationSearchCriteria {
 
 /// A builder for [`HoursOfOperationSearchCriteria`](crate::types::HoursOfOperationSearchCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HoursOfOperationSearchCriteriaBuilder {
-    pub(crate) or_conditions:
-        ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>>,
-    pub(crate) and_conditions:
-        ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>>,
+    pub(crate) or_conditions: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>>,
+    pub(crate) and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>>,
     pub(crate) string_condition: ::std::option::Option<crate::types::StringCondition>,
 }
 impl HoursOfOperationSearchCriteriaBuilder {
@@ -70,17 +60,12 @@ impl HoursOfOperationSearchCriteriaBuilder {
         self
     }
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
-    pub fn set_or_conditions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>>,
-    ) -> Self {
+    pub fn set_or_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>>) -> Self {
         self.or_conditions = input;
         self
     }
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
-    pub fn get_or_conditions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>> {
+    pub fn get_or_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>> {
         &self.or_conditions
     }
     /// Appends an item to `and_conditions`.
@@ -95,17 +80,12 @@ impl HoursOfOperationSearchCriteriaBuilder {
         self
     }
     /// <p>A list of conditions which would be applied together with an AND condition.</p>
-    pub fn set_and_conditions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>>,
-    ) -> Self {
+    pub fn set_and_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>>) -> Self {
         self.and_conditions = input;
         self
     }
     /// <p>A list of conditions which would be applied together with an AND condition.</p>
-    pub fn get_and_conditions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>> {
+    pub fn get_and_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationSearchCriteria>> {
         &self.and_conditions
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p> <note>
@@ -118,10 +98,7 @@ impl HoursOfOperationSearchCriteriaBuilder {
     /// <p>A leaf node condition which can be used to specify a string condition.</p> <note>
     /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, <code>timezone</code>, and <code>resourceID</code>.</p>
     /// </note>
-    pub fn set_string_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::StringCondition>,
-    ) -> Self {
+    pub fn set_string_condition(mut self, input: ::std::option::Option<crate::types::StringCondition>) -> Self {
         self.string_condition = input;
         self
     }

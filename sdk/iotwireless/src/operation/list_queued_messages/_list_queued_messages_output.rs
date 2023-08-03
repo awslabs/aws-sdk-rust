@@ -8,8 +8,7 @@ pub struct ListQueuedMessagesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The messages in the downlink queue.</p>
     #[doc(hidden)]
-    pub downlink_queue_messages_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DownlinkQueueMessage>>,
+    pub downlink_queue_messages_list: ::std::option::Option<::std::vec::Vec<crate::types::DownlinkQueueMessage>>,
     _request_id: Option<String>,
 }
 impl ListQueuedMessagesOutput {
@@ -18,9 +17,7 @@ impl ListQueuedMessagesOutput {
         self.next_token.as_deref()
     }
     /// <p>The messages in the downlink queue.</p>
-    pub fn downlink_queue_messages_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DownlinkQueueMessage]> {
+    pub fn downlink_queue_messages_list(&self) -> ::std::option::Option<&[crate::types::DownlinkQueueMessage]> {
         self.downlink_queue_messages_list.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListQueuedMessagesOutput {
 }
 impl ListQueuedMessagesOutput {
     /// Creates a new builder-style object to manufacture [`ListQueuedMessagesOutput`](crate::operation::list_queued_messages::ListQueuedMessagesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_queued_messages::builders::ListQueuedMessagesOutputBuilder {
+    pub fn builder() -> crate::operation::list_queued_messages::builders::ListQueuedMessagesOutputBuilder {
         crate::operation::list_queued_messages::builders::ListQueuedMessagesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListQueuedMessagesOutput`](crate::operation::list_queued_messages::ListQueuedMessagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueuedMessagesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) downlink_queue_messages_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DownlinkQueueMessage>>,
+    pub(crate) downlink_queue_messages_list: ::std::option::Option<::std::vec::Vec<crate::types::DownlinkQueueMessage>>,
     _request_id: Option<String>,
 }
 impl ListQueuedMessagesOutputBuilder {
@@ -68,27 +61,19 @@ impl ListQueuedMessagesOutputBuilder {
     /// To override the contents of this collection use [`set_downlink_queue_messages_list`](Self::set_downlink_queue_messages_list).
     ///
     /// <p>The messages in the downlink queue.</p>
-    pub fn downlink_queue_messages_list(
-        mut self,
-        input: crate::types::DownlinkQueueMessage,
-    ) -> Self {
+    pub fn downlink_queue_messages_list(mut self, input: crate::types::DownlinkQueueMessage) -> Self {
         let mut v = self.downlink_queue_messages_list.unwrap_or_default();
         v.push(input);
         self.downlink_queue_messages_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The messages in the downlink queue.</p>
-    pub fn set_downlink_queue_messages_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DownlinkQueueMessage>>,
-    ) -> Self {
+    pub fn set_downlink_queue_messages_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DownlinkQueueMessage>>) -> Self {
         self.downlink_queue_messages_list = input;
         self
     }
     /// <p>The messages in the downlink queue.</p>
-    pub fn get_downlink_queue_messages_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DownlinkQueueMessage>> {
+    pub fn get_downlink_queue_messages_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DownlinkQueueMessage>> {
         &self.downlink_queue_messages_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

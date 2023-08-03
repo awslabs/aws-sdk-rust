@@ -22,9 +22,7 @@ impl DeleteMonitorInput {
 
 /// A builder for [`DeleteMonitorInput`](crate::operation::delete_monitor::DeleteMonitorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMonitorInputBuilder {
     pub(crate) monitor_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DeleteMonitorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMonitorInput`](crate::operation::delete_monitor::DeleteMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_monitor::DeleteMonitorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_monitor::DeleteMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_monitor::DeleteMonitorInput {
             monitor_arn: self.monitor_arn,
         })

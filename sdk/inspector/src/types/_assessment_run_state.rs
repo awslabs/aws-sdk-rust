@@ -49,13 +49,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AssessmentRunState {
     #[allow(missing_docs)] // documentation missing in model
@@ -99,15 +93,11 @@ impl ::std::convert::From<&str> for AssessmentRunState {
             "ERROR" => AssessmentRunState::Error,
             "EVALUATING_RULES" => AssessmentRunState::EvaluatingRules,
             "FAILED" => AssessmentRunState::Failed,
-            "START_DATA_COLLECTION_IN_PROGRESS" => {
-                AssessmentRunState::StartDataCollectionInProgress
-            }
+            "START_DATA_COLLECTION_IN_PROGRESS" => AssessmentRunState::StartDataCollectionInProgress,
             "START_DATA_COLLECTION_PENDING" => AssessmentRunState::StartDataCollectionPending,
             "START_EVALUATING_RULES_PENDING" => AssessmentRunState::StartEvaluatingRulesPending,
             "STOP_DATA_COLLECTION_PENDING" => AssessmentRunState::StopDataCollectionPending,
-            other => AssessmentRunState::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AssessmentRunState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -131,9 +121,7 @@ impl AssessmentRunState {
             AssessmentRunState::Error => "ERROR",
             AssessmentRunState::EvaluatingRules => "EVALUATING_RULES",
             AssessmentRunState::Failed => "FAILED",
-            AssessmentRunState::StartDataCollectionInProgress => {
-                "START_DATA_COLLECTION_IN_PROGRESS"
-            }
+            AssessmentRunState::StartDataCollectionInProgress => "START_DATA_COLLECTION_IN_PROGRESS",
             AssessmentRunState::StartDataCollectionPending => "START_DATA_COLLECTION_PENDING",
             AssessmentRunState::StartEvaluatingRulesPending => "START_EVALUATING_RULES_PENDING",
             AssessmentRunState::StopDataCollectionPending => "STOP_DATA_COLLECTION_PENDING",

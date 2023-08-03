@@ -168,18 +168,14 @@ impl CreateServerInput {
         self.host_key.as_deref()
     }
     /// <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code>, <code>Amazon Web Services_LAMBDA</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
-    pub fn identity_provider_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IdentityProviderDetails> {
+    pub fn identity_provider_details(&self) -> ::std::option::Option<&crate::types::IdentityProviderDetails> {
         self.identity_provider_details.as_ref()
     }
     /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
     /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
     /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
     /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
-    pub fn identity_provider_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IdentityProviderType> {
+    pub fn identity_provider_type(&self) -> ::std::option::Option<&crate::types::IdentityProviderType> {
         self.identity_provider_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
@@ -259,23 +255,14 @@ impl ::std::fmt::Debug for CreateServerInput {
         formatter.field("identity_provider_details", &self.identity_provider_details);
         formatter.field("identity_provider_type", &self.identity_provider_type);
         formatter.field("logging_role", &self.logging_role);
-        formatter.field(
-            "post_authentication_login_banner",
-            &self.post_authentication_login_banner,
-        );
-        formatter.field(
-            "pre_authentication_login_banner",
-            &self.pre_authentication_login_banner,
-        );
+        formatter.field("post_authentication_login_banner", &self.post_authentication_login_banner);
+        formatter.field("pre_authentication_login_banner", &self.pre_authentication_login_banner);
         formatter.field("protocols", &self.protocols);
         formatter.field("protocol_details", &self.protocol_details);
         formatter.field("security_policy_name", &self.security_policy_name);
         formatter.field("tags", &self.tags);
         formatter.field("workflow_details", &self.workflow_details);
-        formatter.field(
-            "structured_log_destinations",
-            &self.structured_log_destinations,
-        );
+        formatter.field("structured_log_destinations", &self.structured_log_destinations);
         formatter.finish()
     }
 }
@@ -295,8 +282,7 @@ pub struct CreateServerInputBuilder {
     pub(crate) endpoint_details: ::std::option::Option<crate::types::EndpointDetails>,
     pub(crate) endpoint_type: ::std::option::Option<crate::types::EndpointType>,
     pub(crate) host_key: ::std::option::Option<::std::string::String>,
-    pub(crate) identity_provider_details:
-        ::std::option::Option<crate::types::IdentityProviderDetails>,
+    pub(crate) identity_provider_details: ::std::option::Option<crate::types::IdentityProviderDetails>,
     pub(crate) identity_provider_type: ::std::option::Option<crate::types::IdentityProviderType>,
     pub(crate) logging_role: ::std::option::Option<::std::string::String>,
     pub(crate) post_authentication_login_banner: ::std::option::Option<::std::string::String>,
@@ -306,8 +292,7 @@ pub struct CreateServerInputBuilder {
     pub(crate) security_policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) workflow_details: ::std::option::Option<crate::types::WorkflowDetails>,
-    pub(crate) structured_log_destinations:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateServerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
@@ -389,10 +374,7 @@ impl CreateServerInputBuilder {
         self
     }
     /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
-    pub fn set_endpoint_details(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointDetails>,
-    ) -> Self {
+    pub fn set_endpoint_details(mut self, input: ::std::option::Option<crate::types::EndpointDetails>) -> Self {
         self.endpoint_details = input;
         self
     }
@@ -414,10 +396,7 @@ impl CreateServerInputBuilder {
     /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
     /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
     /// </note>
-    pub fn set_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointType>,
-    ) -> Self {
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::EndpointType>) -> Self {
         self.endpoint_type = input;
         self
     }
@@ -480,25 +459,17 @@ impl CreateServerInputBuilder {
         &self.host_key
     }
     /// <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code>, <code>Amazon Web Services_LAMBDA</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
-    pub fn identity_provider_details(
-        mut self,
-        input: crate::types::IdentityProviderDetails,
-    ) -> Self {
+    pub fn identity_provider_details(mut self, input: crate::types::IdentityProviderDetails) -> Self {
         self.identity_provider_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code>, <code>Amazon Web Services_LAMBDA</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
-    pub fn set_identity_provider_details(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderDetails>,
-    ) -> Self {
+    pub fn set_identity_provider_details(mut self, input: ::std::option::Option<crate::types::IdentityProviderDetails>) -> Self {
         self.identity_provider_details = input;
         self
     }
     /// <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code>, <code>Amazon Web Services_LAMBDA</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
-    pub fn get_identity_provider_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentityProviderDetails> {
+    pub fn get_identity_provider_details(&self) -> &::std::option::Option<crate::types::IdentityProviderDetails> {
         &self.identity_provider_details
     }
     /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
@@ -513,10 +484,7 @@ impl CreateServerInputBuilder {
     /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
     /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
     /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
-    pub fn set_identity_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderType>,
-    ) -> Self {
+    pub fn set_identity_provider_type(mut self, input: ::std::option::Option<crate::types::IdentityProviderType>) -> Self {
         self.identity_provider_type = input;
         self
     }
@@ -524,9 +492,7 @@ impl CreateServerInputBuilder {
     /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
     /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
     /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
-    pub fn get_identity_provider_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentityProviderType> {
+    pub fn get_identity_provider_type(&self) -> &::std::option::Option<crate::types::IdentityProviderType> {
         &self.identity_provider_type
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
@@ -546,54 +512,38 @@ impl CreateServerInputBuilder {
     /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
-    pub fn post_authentication_login_banner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn post_authentication_login_banner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.post_authentication_login_banner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
-    pub fn set_post_authentication_login_banner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_post_authentication_login_banner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.post_authentication_login_banner = input;
         self
     }
     /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
-    pub fn get_post_authentication_login_banner(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_post_authentication_login_banner(&self) -> &::std::option::Option<::std::string::String> {
         &self.post_authentication_login_banner
     }
     /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
-    pub fn pre_authentication_login_banner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_authentication_login_banner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_authentication_login_banner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
-    pub fn set_pre_authentication_login_banner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_authentication_login_banner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_authentication_login_banner = input;
         self
     }
     /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
-    pub fn get_pre_authentication_login_banner(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_pre_authentication_login_banner(&self) -> &::std::option::Option<::std::string::String> {
         &self.pre_authentication_login_banner
     }
     /// Appends an item to `protocols`.
@@ -636,10 +586,7 @@ impl CreateServerInputBuilder {
     /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
     /// </ul>
     /// </note>
-    pub fn set_protocols(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
-    ) -> Self {
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
         self.protocols = input;
         self
     }
@@ -679,10 +626,7 @@ impl CreateServerInputBuilder {
     /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
     /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
     /// </ul>
-    pub fn set_protocol_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolDetails>,
-    ) -> Self {
+    pub fn set_protocol_details(mut self, input: ::std::option::Option<crate::types::ProtocolDetails>) -> Self {
         self.protocol_details = input;
         self
     }
@@ -697,18 +641,12 @@ impl CreateServerInputBuilder {
         &self.protocol_details
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    pub fn security_policy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    pub fn set_security_policy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_policy_name = input;
         self
     }
@@ -728,10 +666,7 @@ impl CreateServerInputBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for servers.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -747,10 +682,7 @@ impl CreateServerInputBuilder {
     }
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
-    pub fn set_workflow_details(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowDetails>,
-    ) -> Self {
+    pub fn set_workflow_details(mut self, input: ::std::option::Option<crate::types::WorkflowDetails>) -> Self {
         self.workflow_details = input;
         self
     }
@@ -769,10 +701,7 @@ impl CreateServerInputBuilder {
     /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
     /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
     /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
-    pub fn structured_log_destinations(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn structured_log_destinations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.structured_log_destinations.unwrap_or_default();
         v.push(input.into());
         self.structured_log_destinations = ::std::option::Option::Some(v);
@@ -784,10 +713,7 @@ impl CreateServerInputBuilder {
     /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
     /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
     /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
-    pub fn set_structured_log_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_structured_log_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.structured_log_destinations = input;
         self
     }
@@ -797,18 +723,11 @@ impl CreateServerInputBuilder {
     /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
     /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
     /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
-    pub fn get_structured_log_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_structured_log_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.structured_log_destinations
     }
     /// Consumes the builder and constructs a [`CreateServerInput`](crate::operation::create_server::CreateServerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_server::CreateServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_server::CreateServerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_server::CreateServerInput {
             certificate: self.certificate,
             domain: self.domain,
@@ -840,23 +759,14 @@ impl ::std::fmt::Debug for CreateServerInputBuilder {
         formatter.field("identity_provider_details", &self.identity_provider_details);
         formatter.field("identity_provider_type", &self.identity_provider_type);
         formatter.field("logging_role", &self.logging_role);
-        formatter.field(
-            "post_authentication_login_banner",
-            &self.post_authentication_login_banner,
-        );
-        formatter.field(
-            "pre_authentication_login_banner",
-            &self.pre_authentication_login_banner,
-        );
+        formatter.field("post_authentication_login_banner", &self.post_authentication_login_banner);
+        formatter.field("pre_authentication_login_banner", &self.pre_authentication_login_banner);
         formatter.field("protocols", &self.protocols);
         formatter.field("protocol_details", &self.protocol_details);
         formatter.field("security_policy_name", &self.security_policy_name);
         formatter.field("tags", &self.tags);
         formatter.field("workflow_details", &self.workflow_details);
-        formatter.field(
-            "structured_log_destinations",
-            &self.structured_log_destinations,
-        );
+        formatter.field("structured_log_destinations", &self.structured_log_destinations);
         formatter.finish()
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetControlOperationOutput {
 }
 impl GetControlOperationOutput {
     /// Creates a new builder-style object to manufacture [`GetControlOperationOutput`](crate::operation::get_control_operation::GetControlOperationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_control_operation::builders::GetControlOperationOutputBuilder {
-        crate::operation::get_control_operation::builders::GetControlOperationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_control_operation::builders::GetControlOperationOutputBuilder {
+        crate::operation::get_control_operation::builders::GetControlOperationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetControlOperationOutput`](crate::operation::get_control_operation::GetControlOperationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetControlOperationOutputBuilder {
     pub(crate) control_operation: ::std::option::Option<crate::types::ControlOperation>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetControlOperationOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_control_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlOperation>,
-    ) -> Self {
+    pub fn set_control_operation(mut self, input: ::std::option::Option<crate::types::ControlOperation>) -> Self {
         self.control_operation = input;
         self
     }

@@ -26,7 +26,7 @@ impl RejectInputDeviceTransferInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RejectInputDeviceTransferFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reject_input_device_transfer::builders::RejectInputDeviceTransferInputBuilder,
+    inner: crate::operation::reject_input_device_transfer::builders::RejectInputDeviceTransferInputBuilder,
 }
 impl RejectInputDeviceTransferFluentBuilder {
     /// Creates a new `RejectInputDeviceTransfer`.
@@ -37,7 +37,7 @@ impl RejectInputDeviceTransferFluentBuilder {
         }
     }
     /// Access the RejectInputDeviceTransfer as a reference.
-    pub fn as_input(&self) -> &crate::operation::reject_input_device_transfer::builders::RejectInputDeviceTransferInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::reject_input_device_transfer::builders::RejectInputDeviceTransferInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RejectInputDeviceTransferFluentBuilder {
             crate::operation::reject_input_device_transfer::RejectInputDeviceTransfer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_input_device_transfer::RejectInputDeviceTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_input_device_transfer::RejectInputDeviceTransferError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RejectInputDeviceTransferFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RejectInputDeviceTransferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_input_device_transfer::RejectInputDeviceTransferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_input_device_transfer::RejectInputDeviceTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_input_device_transfer::RejectInputDeviceTransferError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RejectInputDeviceTransferFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_input_device_transfer::RejectInputDeviceTransferOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_input_device_transfer::RejectInputDeviceTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_input_device_transfer::RejectInputDeviceTransferError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl RejectInputDeviceTransferFluentBuilder {
             crate::operation::reject_input_device_transfer::RejectInputDeviceTransfer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reject_input_device_transfer::RejectInputDeviceTransferError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reject_input_device_transfer::RejectInputDeviceTransferError>,
     > {
         self.customize_middleware().await
     }
     /// The unique ID of the input device to reject. For example, hd-123456789abcdef.
-    pub fn input_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_device_id(input.into());
         self
     }
     /// The unique ID of the input device to reject. For example, hd-123456789abcdef.
-    pub fn set_input_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_device_id(input);
         self
     }

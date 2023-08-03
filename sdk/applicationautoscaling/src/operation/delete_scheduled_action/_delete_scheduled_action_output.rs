@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteScheduledActionOutput {
 }
 impl DeleteScheduledActionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScheduledActionOutput`](crate::operation::delete_scheduled_action::DeleteScheduledActionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_scheduled_action::builders::DeleteScheduledActionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_scheduled_action::builders::DeleteScheduledActionOutputBuilder {
         crate::operation::delete_scheduled_action::builders::DeleteScheduledActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteScheduledActionOutput`](crate::operation::delete_scheduled_action::DeleteScheduledActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteScheduledActionOutputBuilder {
     _request_id: Option<String>,
 }

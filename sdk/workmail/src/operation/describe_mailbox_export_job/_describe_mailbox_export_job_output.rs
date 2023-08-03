@@ -98,16 +98,14 @@ impl ::aws_http::request_id::RequestId for DescribeMailboxExportJobOutput {
 }
 impl DescribeMailboxExportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMailboxExportJobOutput`](crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput).
-    pub fn builder() -> crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobOutputBuilder {
         crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMailboxExportJobOutput`](crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMailboxExportJobOutputBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -181,18 +179,12 @@ impl DescribeMailboxExportJobOutputBuilder {
         &self.kms_key_arn
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
@@ -248,10 +240,7 @@ impl DescribeMailboxExportJobOutputBuilder {
         self
     }
     /// <p>The state of the mailbox export job.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::MailboxExportJobState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::MailboxExportJobState>) -> Self {
         self.state = input;
         self
     }
@@ -279,10 +268,7 @@ impl DescribeMailboxExportJobOutputBuilder {
         self
     }
     /// <p>The mailbox export job start timestamp.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -296,10 +282,7 @@ impl DescribeMailboxExportJobOutputBuilder {
         self
     }
     /// <p>The mailbox export job end timestamp.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -317,9 +300,7 @@ impl DescribeMailboxExportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMailboxExportJobOutput`](crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput {
+    pub fn build(self) -> crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput {
         crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput {
             entity_id: self.entity_id,
             description: self.description,

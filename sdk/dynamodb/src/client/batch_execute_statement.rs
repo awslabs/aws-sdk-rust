@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`responses(Option<Vec<BatchStatementResponse>>)`](crate::operation::batch_execute_statement::BatchExecuteStatementOutput::responses): <p>The response to each PartiQL statement in the batch. The values of the list are ordered according to the ordering of the request statements.</p>
     ///   - [`consumed_capacity(Option<Vec<ConsumedCapacity>>)`](crate::operation::batch_execute_statement::BatchExecuteStatementOutput::consumed_capacity): <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
     /// - On failure, responds with [`SdkError<BatchExecuteStatementError>`](crate::operation::batch_execute_statement::BatchExecuteStatementError)
-    pub fn batch_execute_statement(
-        &self,
-    ) -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementFluentBuilder
-    {
-        crate::operation::batch_execute_statement::builders::BatchExecuteStatementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_execute_statement(&self) -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementFluentBuilder {
+        crate::operation::batch_execute_statement::builders::BatchExecuteStatementFluentBuilder::new(self.handle.clone())
     }
 }

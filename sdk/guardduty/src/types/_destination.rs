@@ -37,9 +37,7 @@ impl Destination {
 
 /// A builder for [`Destination`](crate::types::Destination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationBuilder {
     pub(crate) destination_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_type: ::std::option::Option<crate::types::DestinationType>,
@@ -47,18 +45,12 @@ pub struct DestinationBuilder {
 }
 impl DestinationBuilder {
     /// <p>The unique ID of the publishing destination.</p>
-    pub fn destination_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the publishing destination.</p>
-    pub fn set_destination_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_id = input;
         self
     }
@@ -72,10 +64,7 @@ impl DestinationBuilder {
         self
     }
     /// <p>The type of resource used for the publishing destination. Currently, only Amazon S3 buckets are supported.</p>
-    pub fn set_destination_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationType>,
-    ) -> Self {
+    pub fn set_destination_type(mut self, input: ::std::option::Option<crate::types::DestinationType>) -> Self {
         self.destination_type = input;
         self
     }
@@ -89,10 +78,7 @@ impl DestinationBuilder {
         self
     }
     /// <p>The status of the publishing destination.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PublishingStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PublishingStatus>) -> Self {
         self.status = input;
         self
     }

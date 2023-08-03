@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for ResetConnectorMetadataCacheOutput {
 }
 impl ResetConnectorMetadataCacheOutput {
     /// Creates a new builder-style object to manufacture [`ResetConnectorMetadataCacheOutput`](crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput).
-    pub fn builder() -> crate::operation::reset_connector_metadata_cache::builders::ResetConnectorMetadataCacheOutputBuilder{
+    pub fn builder() -> crate::operation::reset_connector_metadata_cache::builders::ResetConnectorMetadataCacheOutputBuilder {
         crate::operation::reset_connector_metadata_cache::builders::ResetConnectorMetadataCacheOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetConnectorMetadataCacheOutput`](crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetConnectorMetadataCacheOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl ResetConnectorMetadataCacheOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResetConnectorMetadataCacheOutput`](crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput {
+    pub fn build(self) -> crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput {
         crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput {
             _request_id: self._request_id,
         }

@@ -17,9 +17,7 @@ impl ContinuousDeploymentSingleWeightConfig {
         self.weight
     }
     /// <p>Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.</p>
-    pub fn session_stickiness_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SessionStickinessConfig> {
+    pub fn session_stickiness_config(&self) -> ::std::option::Option<&crate::types::SessionStickinessConfig> {
         self.session_stickiness_config.as_ref()
     }
 }
@@ -32,13 +30,10 @@ impl ContinuousDeploymentSingleWeightConfig {
 
 /// A builder for [`ContinuousDeploymentSingleWeightConfig`](crate::types::ContinuousDeploymentSingleWeightConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContinuousDeploymentSingleWeightConfigBuilder {
     pub(crate) weight: ::std::option::Option<f32>,
-    pub(crate) session_stickiness_config:
-        ::std::option::Option<crate::types::SessionStickinessConfig>,
+    pub(crate) session_stickiness_config: ::std::option::Option<crate::types::SessionStickinessConfig>,
 }
 impl ContinuousDeploymentSingleWeightConfigBuilder {
     /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and .15.</p>
@@ -56,25 +51,17 @@ impl ContinuousDeploymentSingleWeightConfigBuilder {
         &self.weight
     }
     /// <p>Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.</p>
-    pub fn session_stickiness_config(
-        mut self,
-        input: crate::types::SessionStickinessConfig,
-    ) -> Self {
+    pub fn session_stickiness_config(mut self, input: crate::types::SessionStickinessConfig) -> Self {
         self.session_stickiness_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.</p>
-    pub fn set_session_stickiness_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionStickinessConfig>,
-    ) -> Self {
+    pub fn set_session_stickiness_config(mut self, input: ::std::option::Option<crate::types::SessionStickinessConfig>) -> Self {
         self.session_stickiness_config = input;
         self
     }
     /// <p>Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.</p>
-    pub fn get_session_stickiness_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::SessionStickinessConfig> {
+    pub fn get_session_stickiness_config(&self) -> &::std::option::Option<crate::types::SessionStickinessConfig> {
         &self.session_stickiness_config
     }
     /// Consumes the builder and constructs a [`ContinuousDeploymentSingleWeightConfig`](crate::types::ContinuousDeploymentSingleWeightConfig).

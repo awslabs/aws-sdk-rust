@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`BatchUpdateUserOutput`](crate::operation::batch_update_user::BatchUpdateUserOutput) with field(s):
     ///   - [`user_errors(Option<Vec<UserError>>)`](crate::operation::batch_update_user::BatchUpdateUserOutput::user_errors): <p>If the <code>BatchUpdateUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
     /// - On failure, responds with [`SdkError<BatchUpdateUserError>`](crate::operation::batch_update_user::BatchUpdateUserError)
-    pub fn batch_update_user(
-        &self,
-    ) -> crate::operation::batch_update_user::builders::BatchUpdateUserFluentBuilder {
-        crate::operation::batch_update_user::builders::BatchUpdateUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_update_user(&self) -> crate::operation::batch_update_user::builders::BatchUpdateUserFluentBuilder {
+        crate::operation::batch_update_user::builders::BatchUpdateUserFluentBuilder::new(self.handle.clone())
     }
 }

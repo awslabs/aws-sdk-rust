@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSbomExportOutput`](crate::operation::create_sbom_export::CreateSbomExportOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::operation::create_sbom_export::CreateSbomExportOutput::report_id): <p>The report ID for the software bill of materials (SBOM) report.</p>
     /// - On failure, responds with [`SdkError<CreateSbomExportError>`](crate::operation::create_sbom_export::CreateSbomExportError)
-    pub fn create_sbom_export(
-        &self,
-    ) -> crate::operation::create_sbom_export::builders::CreateSbomExportFluentBuilder {
-        crate::operation::create_sbom_export::builders::CreateSbomExportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_sbom_export(&self) -> crate::operation::create_sbom_export::builders::CreateSbomExportFluentBuilder {
+        crate::operation::create_sbom_export::builders::CreateSbomExportFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl RestoreWorkspaceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::restore_workspace::RestoreWorkspaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_workspace::RestoreWorkspaceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_workspace::RestoreWorkspaceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.restore_workspace();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl RestoreWorkspaceFluentBuilder {
         }
     }
     /// Access the RestoreWorkspace as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::restore_workspace::builders::RestoreWorkspaceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::restore_workspace::builders::RestoreWorkspaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl RestoreWorkspaceFluentBuilder {
             crate::operation::restore_workspace::RestoreWorkspace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_workspace::RestoreWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_workspace::RestoreWorkspaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl RestoreWorkspaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl RestoreWorkspaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_workspace::RestoreWorkspaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_workspace::RestoreWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_workspace::RestoreWorkspaceError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl RestoreWorkspaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_workspace::RestoreWorkspaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_workspace::RestoreWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_workspace::RestoreWorkspaceError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl RestoreWorkspaceFluentBuilder {
             crate::operation::restore_workspace::RestoreWorkspace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_workspace::RestoreWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_workspace::RestoreWorkspaceError>,
     > {
         self.customize_middleware().await
     }

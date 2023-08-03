@@ -40,17 +40,14 @@ impl UpdateKeyDescriptionInput {
 }
 impl UpdateKeyDescriptionInput {
     /// Creates a new builder-style object to manufacture [`UpdateKeyDescriptionInput`](crate::operation::update_key_description::UpdateKeyDescriptionInput).
-    pub fn builder(
-    ) -> crate::operation::update_key_description::builders::UpdateKeyDescriptionInputBuilder {
+    pub fn builder() -> crate::operation::update_key_description::builders::UpdateKeyDescriptionInputBuilder {
         crate::operation::update_key_description::builders::UpdateKeyDescriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateKeyDescriptionInput`](crate::operation::update_key_description::UpdateKeyDescriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateKeyDescriptionInputBuilder {
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -114,15 +111,11 @@ impl UpdateKeyDescriptionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateKeyDescriptionInput`](crate::operation::update_key_description::UpdateKeyDescriptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_key_description::UpdateKeyDescriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_key_description::UpdateKeyDescriptionInput {
-                key_id: self.key_id,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_key_description::UpdateKeyDescriptionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_key_description::UpdateKeyDescriptionInput {
+            key_id: self.key_id,
+            description: self.description,
+        })
     }
 }

@@ -29,18 +29,14 @@ impl CreateFirewallRuleGroupInput {
 }
 impl CreateFirewallRuleGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateFirewallRuleGroupInput`](crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_firewall_rule_group::builders::CreateFirewallRuleGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_firewall_rule_group::builders::CreateFirewallRuleGroupInputBuilder {
         crate::operation::create_firewall_rule_group::builders::CreateFirewallRuleGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFirewallRuleGroupInput`](crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFirewallRuleGroupInputBuilder {
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct CreateFirewallRuleGroupInputBuilder {
 }
 impl CreateFirewallRuleGroupInputBuilder {
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
@@ -93,10 +83,7 @@ impl CreateFirewallRuleGroupInputBuilder {
         self
     }
     /// <p>A list of the tag keys and values that you want to associate with the rule group. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -111,12 +98,10 @@ impl CreateFirewallRuleGroupInputBuilder {
         crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupInput {
-                creator_request_id: self.creator_request_id,
-                name: self.name,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_firewall_rule_group::CreateFirewallRuleGroupInput {
+            creator_request_id: self.creator_request_id,
+            name: self.name,
+            tags: self.tags,
+        })
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeStepOutput`](crate::operation::describe_step::DescribeStepOutput) with field(s):
     ///   - [`step(Option<Step>)`](crate::operation::describe_step::DescribeStepOutput::step): <p>The step details for the requested step identifier.</p>
     /// - On failure, responds with [`SdkError<DescribeStepError>`](crate::operation::describe_step::DescribeStepError)
-    pub fn describe_step(
-        &self,
-    ) -> crate::operation::describe_step::builders::DescribeStepFluentBuilder {
-        crate::operation::describe_step::builders::DescribeStepFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_step(&self) -> crate::operation::describe_step::builders::DescribeStepFluentBuilder {
+        crate::operation::describe_step::builders::DescribeStepFluentBuilder::new(self.handle.clone())
     }
 }

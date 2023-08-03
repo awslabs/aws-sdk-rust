@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::get_sync_job::GetSyncJobOutput::creation_date_time): <p>The creation date and time.</p>
     ///   - [`update_date_time(Option<DateTime>)`](crate::operation::get_sync_job::GetSyncJobOutput::update_date_time): <p>The update date and time.</p>
     /// - On failure, responds with [`SdkError<GetSyncJobError>`](crate::operation::get_sync_job::GetSyncJobError)
-    pub fn get_sync_job(
-        &self,
-    ) -> crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder {
+    pub fn get_sync_job(&self) -> crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder {
         crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder::new(self.handle.clone())
     }
 }

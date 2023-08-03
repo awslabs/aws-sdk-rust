@@ -32,9 +32,7 @@ impl LambdaLinuxProcessParams {
 
 /// A builder for [`LambdaLinuxProcessParams`](crate::types::LambdaLinuxProcessParams).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaLinuxProcessParamsBuilder {
     pub(crate) isolation_mode: ::std::option::Option<crate::types::LambdaIsolationMode>,
     pub(crate) container_params: ::std::option::Option<crate::types::LambdaContainerParams>,
@@ -48,10 +46,7 @@ impl LambdaLinuxProcessParamsBuilder {
     }
     /// <p>The isolation mode for the process that contains the Lambda function. The process can run in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside any container.</p>
     /// <p>Default: <code>GreengrassContainer</code> </p>
-    pub fn set_isolation_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaIsolationMode>,
-    ) -> Self {
+    pub fn set_isolation_mode(mut self, input: ::std::option::Option<crate::types::LambdaIsolationMode>) -> Self {
         self.isolation_mode = input;
         self
     }
@@ -66,17 +61,12 @@ impl LambdaLinuxProcessParamsBuilder {
         self
     }
     /// <p>The parameters for the container in which the Lambda function runs.</p>
-    pub fn set_container_params(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaContainerParams>,
-    ) -> Self {
+    pub fn set_container_params(mut self, input: ::std::option::Option<crate::types::LambdaContainerParams>) -> Self {
         self.container_params = input;
         self
     }
     /// <p>The parameters for the container in which the Lambda function runs.</p>
-    pub fn get_container_params(
-        &self,
-    ) -> &::std::option::Option<crate::types::LambdaContainerParams> {
+    pub fn get_container_params(&self) -> &::std::option::Option<crate::types::LambdaContainerParams> {
         &self.container_params
     }
     /// Consumes the builder and constructs a [`LambdaLinuxProcessParams`](crate::types::LambdaLinuxProcessParams).

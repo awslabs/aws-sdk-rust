@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeImportImageTasksOutput {
 }
 impl DescribeImportImageTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImportImageTasksOutput`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput).
-    pub fn builder() -> crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksOutputBuilder{
+    pub fn builder() -> crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksOutputBuilder {
         crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImportImageTasksOutput`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImportImageTasksOutputBuilder {
-    pub(crate) import_image_tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImportImageTask>>,
+    pub(crate) import_image_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageTask>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeImportImageTasksOutputBuilder {
         self
     }
     /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
-    pub fn set_import_image_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageTask>>,
-    ) -> Self {
+    pub fn set_import_image_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageTask>>) -> Self {
         self.import_image_tasks = input;
         self
     }
     /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
-    pub fn get_import_image_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportImageTask>> {
+    pub fn get_import_image_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportImageTask>> {
         &self.import_image_tasks
     }
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -94,9 +86,7 @@ impl DescribeImportImageTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeImportImageTasksOutput`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput {
+    pub fn build(self) -> crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput {
         crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput {
             import_image_tasks: self.import_image_tasks,
             next_token: self.next_token,

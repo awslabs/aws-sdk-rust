@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateExtendedSourceServerOutput {
 }
 impl CreateExtendedSourceServerOutput {
     /// Creates a new builder-style object to manufacture [`CreateExtendedSourceServerOutput`](crate::operation::create_extended_source_server::CreateExtendedSourceServerOutput).
-    pub fn builder() -> crate::operation::create_extended_source_server::builders::CreateExtendedSourceServerOutputBuilder{
+    pub fn builder() -> crate::operation::create_extended_source_server::builders::CreateExtendedSourceServerOutputBuilder {
         crate::operation::create_extended_source_server::builders::CreateExtendedSourceServerOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateExtendedSourceServerOutput`](crate::operation::create_extended_source_server::CreateExtendedSourceServerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExtendedSourceServerOutputBuilder {
     pub(crate) source_server: ::std::option::Option<crate::types::SourceServer>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateExtendedSourceServerOutputBuilder {
         self
     }
     /// <p>Created extended source server.</p>
-    pub fn set_source_server(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceServer>,
-    ) -> Self {
+    pub fn set_source_server(mut self, input: ::std::option::Option<crate::types::SourceServer>) -> Self {
         self.source_server = input;
         self
     }
@@ -63,9 +58,7 @@ impl CreateExtendedSourceServerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateExtendedSourceServerOutput`](crate::operation::create_extended_source_server::CreateExtendedSourceServerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_extended_source_server::CreateExtendedSourceServerOutput {
+    pub fn build(self) -> crate::operation::create_extended_source_server::CreateExtendedSourceServerOutput {
         crate::operation::create_extended_source_server::CreateExtendedSourceServerOutput {
             source_server: self.source_server,
             _request_id: self._request_id,

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteResolverRuleOutput`](crate::operation::delete_resolver_rule::DeleteResolverRuleOutput) with field(s):
     ///   - [`resolver_rule(Option<ResolverRule>)`](crate::operation::delete_resolver_rule::DeleteResolverRuleOutput::resolver_rule): <p>Information about the <code>DeleteResolverRule</code> request, including the status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteResolverRuleError>`](crate::operation::delete_resolver_rule::DeleteResolverRuleError)
-    pub fn delete_resolver_rule(
-        &self,
-    ) -> crate::operation::delete_resolver_rule::builders::DeleteResolverRuleFluentBuilder {
-        crate::operation::delete_resolver_rule::builders::DeleteResolverRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_resolver_rule(&self) -> crate::operation::delete_resolver_rule::builders::DeleteResolverRuleFluentBuilder {
+        crate::operation::delete_resolver_rule::builders::DeleteResolverRuleFluentBuilder::new(self.handle.clone())
     }
 }

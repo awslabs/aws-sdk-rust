@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetAppliedSchemaVersionOutput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput) with field(s):
     ///   - [`applied_schema_arn(Option<String>)`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionOutput::applied_schema_arn): <p>Current applied schema ARN, including the minor version in use if one was provided.</p>
     /// - On failure, responds with [`SdkError<GetAppliedSchemaVersionError>`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionError)
-    pub fn get_applied_schema_version(
-        &self,
-    ) -> crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionFluentBuilder
-    {
+    pub fn get_applied_schema_version(&self) -> crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionFluentBuilder {
         crate::operation::get_applied_schema_version::builders::GetAppliedSchemaVersionFluentBuilder::new(self.handle.clone())
     }
 }

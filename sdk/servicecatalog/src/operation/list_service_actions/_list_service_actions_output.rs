@@ -5,8 +5,7 @@
 pub struct ListServiceActionsOutput {
     /// <p>An object containing information about the service actions associated with the provisioning artifact.</p>
     #[doc(hidden)]
-    pub service_action_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>>,
+    pub service_action_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListServiceActionsOutput {
 }
 impl ListServiceActionsOutput {
     /// <p>An object containing information about the service actions associated with the provisioning artifact.</p>
-    pub fn service_action_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServiceActionSummary]> {
+    pub fn service_action_summaries(&self) -> ::std::option::Option<&[crate::types::ServiceActionSummary]> {
         self.service_action_summaries.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListServiceActionsOutput {
 }
 impl ListServiceActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceActionsOutput`](crate::operation::list_service_actions::ListServiceActionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_service_actions::builders::ListServiceActionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_service_actions::builders::ListServiceActionsOutputBuilder {
         crate::operation::list_service_actions::builders::ListServiceActionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceActionsOutput`](crate::operation::list_service_actions::ListServiceActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceActionsOutputBuilder {
-    pub(crate) service_action_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>>,
+    pub(crate) service_action_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,32 +54,21 @@ impl ListServiceActionsOutputBuilder {
         self
     }
     /// <p>An object containing information about the service actions associated with the provisioning artifact.</p>
-    pub fn set_service_action_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>>,
-    ) -> Self {
+    pub fn set_service_action_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>>) -> Self {
         self.service_action_summaries = input;
         self
     }
     /// <p>An object containing information about the service actions associated with the provisioning artifact.</p>
-    pub fn get_service_action_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>> {
+    pub fn get_service_action_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceActionSummary>> {
         &self.service_action_summaries
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

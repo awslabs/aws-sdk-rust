@@ -43,18 +43,14 @@ impl CompleteLifecycleActionInput {
 }
 impl CompleteLifecycleActionInput {
     /// Creates a new builder-style object to manufacture [`CompleteLifecycleActionInput`](crate::operation::complete_lifecycle_action::CompleteLifecycleActionInput).
-    pub fn builder(
-    ) -> crate::operation::complete_lifecycle_action::builders::CompleteLifecycleActionInputBuilder
-    {
+    pub fn builder() -> crate::operation::complete_lifecycle_action::builders::CompleteLifecycleActionInputBuilder {
         crate::operation::complete_lifecycle_action::builders::CompleteLifecycleActionInputBuilder::default()
     }
 }
 
 /// A builder for [`CompleteLifecycleActionInput`](crate::operation::complete_lifecycle_action::CompleteLifecycleActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteLifecycleActionInputBuilder {
     pub(crate) lifecycle_hook_name: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
@@ -64,18 +60,12 @@ pub struct CompleteLifecycleActionInputBuilder {
 }
 impl CompleteLifecycleActionInputBuilder {
     /// <p>The name of the lifecycle hook.</p>
-    pub fn lifecycle_hook_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_hook_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_hook_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the lifecycle hook.</p>
-    pub fn set_lifecycle_hook_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_hook_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_hook_name = input;
         self
     }
@@ -84,18 +74,12 @@ impl CompleteLifecycleActionInputBuilder {
         &self.lifecycle_hook_name
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -104,18 +88,12 @@ impl CompleteLifecycleActionInputBuilder {
         &self.auto_scaling_group_name
     }
     /// <p>A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
-    pub fn lifecycle_action_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_action_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_action_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
-    pub fn set_lifecycle_action_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_action_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_action_token = input;
         self
     }
@@ -124,18 +102,12 @@ impl CompleteLifecycleActionInputBuilder {
         &self.lifecycle_action_token
     }
     /// <p>The action for the group to take. You can specify either <code>CONTINUE</code> or <code>ABANDON</code>.</p>
-    pub fn lifecycle_action_result(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_action_result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_action_result = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action for the group to take. You can specify either <code>CONTINUE</code> or <code>ABANDON</code>.</p>
-    pub fn set_lifecycle_action_result(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_action_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_action_result = input;
         self
     }
@@ -164,14 +136,12 @@ impl CompleteLifecycleActionInputBuilder {
         crate::operation::complete_lifecycle_action::CompleteLifecycleActionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::complete_lifecycle_action::CompleteLifecycleActionInput {
-                lifecycle_hook_name: self.lifecycle_hook_name,
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                lifecycle_action_token: self.lifecycle_action_token,
-                lifecycle_action_result: self.lifecycle_action_result,
-                instance_id: self.instance_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::complete_lifecycle_action::CompleteLifecycleActionInput {
+            lifecycle_hook_name: self.lifecycle_hook_name,
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            lifecycle_action_token: self.lifecycle_action_token,
+            lifecycle_action_result: self.lifecycle_action_result,
+            instance_id: self.instance_id,
+        })
     }
 }

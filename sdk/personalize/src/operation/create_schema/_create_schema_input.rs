@@ -36,9 +36,7 @@ impl CreateSchemaInput {
 
 /// A builder for [`CreateSchemaInput`](crate::operation::create_schema::CreateSchemaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSchemaInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) schema: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl CreateSchemaInputBuilder {
         &self.domain
     }
     /// Consumes the builder and constructs a [`CreateSchemaInput`](crate::operation::create_schema::CreateSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_schema::CreateSchemaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_schema::CreateSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_schema::CreateSchemaInput {
             name: self.name,
             schema: self.schema,

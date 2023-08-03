@@ -22,18 +22,14 @@ impl DeleteProfileObjectTypeInput {
 }
 impl DeleteProfileObjectTypeInput {
     /// Creates a new builder-style object to manufacture [`DeleteProfileObjectTypeInput`](crate::operation::delete_profile_object_type::DeleteProfileObjectTypeInput).
-    pub fn builder(
-    ) -> crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeInputBuilder {
         crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProfileObjectTypeInput`](crate::operation::delete_profile_object_type::DeleteProfileObjectTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProfileObjectTypeInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) object_type_name: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DeleteProfileObjectTypeInputBuilder {
         &self.domain_name
     }
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the profile object type.</p>
-    pub fn set_object_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_type_name = input;
         self
     }
@@ -80,11 +70,9 @@ impl DeleteProfileObjectTypeInputBuilder {
         crate::operation::delete_profile_object_type::DeleteProfileObjectTypeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_profile_object_type::DeleteProfileObjectTypeInput {
-                domain_name: self.domain_name,
-                object_type_name: self.object_type_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_profile_object_type::DeleteProfileObjectTypeInput {
+            domain_name: self.domain_name,
+            object_type_name: self.object_type_name,
+        })
     }
 }

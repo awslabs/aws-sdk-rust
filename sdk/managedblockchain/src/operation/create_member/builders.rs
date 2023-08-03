@@ -10,10 +10,7 @@ impl CreateMemberInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_member::CreateMemberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_member::CreateMemberError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_member::CreateMemberError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_member();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl CreateMemberFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_member::CreateMember,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_member::CreateMember, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_member::CreateMemberError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl CreateMemberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,27 +96,18 @@ impl CreateMemberFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_member::CreateMember,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_member::CreateMember, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_member::CreateMemberError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -134,18 +116,12 @@ impl CreateMemberFluentBuilder {
         self.inner.get_client_request_token()
     }
     /// <p>The unique identifier of the invitation that is sent to the member to join the network.</p>
-    pub fn invitation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.invitation_id(input.into());
         self
     }
     /// <p>The unique identifier of the invitation that is sent to the member to join the network.</p>
-    pub fn set_invitation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_invitation_id(input);
         self
     }
@@ -173,17 +149,12 @@ impl CreateMemberFluentBuilder {
         self
     }
     /// <p>Member configuration parameters.</p>
-    pub fn set_member_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberConfiguration>,
-    ) -> Self {
+    pub fn set_member_configuration(mut self, input: ::std::option::Option<crate::types::MemberConfiguration>) -> Self {
         self.inner = self.inner.set_member_configuration(input);
         self
     }
     /// <p>Member configuration parameters.</p>
-    pub fn get_member_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MemberConfiguration> {
+    pub fn get_member_configuration(&self) -> &::std::option::Option<crate::types::MemberConfiguration> {
         self.inner.get_member_configuration()
     }
 }

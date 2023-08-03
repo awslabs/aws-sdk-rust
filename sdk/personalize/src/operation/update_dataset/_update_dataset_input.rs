@@ -29,9 +29,7 @@ impl UpdateDatasetInput {
 
 /// A builder for [`UpdateDatasetInput`](crate::operation::update_dataset::UpdateDatasetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatasetInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl UpdateDatasetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDatasetInput`](crate::operation::update_dataset::UpdateDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_dataset::UpdateDatasetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_dataset::UpdateDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_dataset::UpdateDatasetInput {
             dataset_arn: self.dataset_arn,
             schema_arn: self.schema_arn,

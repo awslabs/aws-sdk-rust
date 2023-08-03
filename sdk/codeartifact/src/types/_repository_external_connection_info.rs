@@ -49,9 +49,7 @@ impl RepositoryExternalConnectionInfo {
 
 /// A builder for [`RepositoryExternalConnectionInfo`](crate::types::RepositoryExternalConnectionInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryExternalConnectionInfoBuilder {
     pub(crate) external_connection_name: ::std::option::Option<::std::string::String>,
     pub(crate) package_format: ::std::option::Option<crate::types::PackageFormat>,
@@ -59,18 +57,12 @@ pub struct RepositoryExternalConnectionInfoBuilder {
 }
 impl RepositoryExternalConnectionInfoBuilder {
     /// <p> The name of the external connection associated with a repository. </p>
-    pub fn external_connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the external connection associated with a repository. </p>
-    pub fn set_external_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_connection_name = input;
         self
     }
@@ -96,10 +88,7 @@ impl RepositoryExternalConnectionInfoBuilder {
     /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
     /// <li> <p> <code>nuget</code>: A NuGet package. </p> </li>
     /// </ul>
-    pub fn set_package_format(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageFormat>,
-    ) -> Self {
+    pub fn set_package_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.package_format = input;
         self
     }
@@ -119,10 +108,7 @@ impl RepositoryExternalConnectionInfoBuilder {
         self
     }
     /// <p> The status of the external connection of a repository. There is one valid value, <code>Available</code>. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExternalConnectionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExternalConnectionStatus>) -> Self {
         self.status = input;
         self
     }

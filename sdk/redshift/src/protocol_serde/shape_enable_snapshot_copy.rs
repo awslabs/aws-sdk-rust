@@ -9,202 +9,195 @@ pub fn de_enable_snapshot_copy_http_error(
     crate::operation::enable_snapshot_copy::EnableSnapshotCopyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClusterNotFound" => crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::ClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "CopyToRegionDisabledFault" => crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::CopyToRegionDisabledFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CopyToRegionDisabledFaultBuilder::default();
-                    output = crate::protocol_serde::shape_copy_to_region_disabled_fault::de_copy_to_region_disabled_fault_xml_err(_response_body, output).map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CopyToRegionDisabledFaultBuilder::default();
+                output = crate::protocol_serde::shape_copy_to_region_disabled_fault::de_copy_to_region_disabled_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "DependentServiceRequestThrottlingFault" => crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::DependentServiceRequestThrottlingFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DependentServiceRequestThrottlingFault" => {
+            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::DependentServiceRequestThrottlingFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DependentServiceRequestThrottlingFaultBuilder::default();
                     output = crate::protocol_serde::shape_dependent_service_request_throttling_fault::de_dependent_service_request_throttling_fault_xml_err(_response_body, output).map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "IncompatibleOrderableOptions" => crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::IncompatibleOrderableOptions({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::IncompatibleOrderableOptionsBuilder::default();
-                    output = crate::protocol_serde::shape_incompatible_orderable_options::de_incompatible_orderable_options_xml_err(_response_body, output).map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::IncompatibleOrderableOptionsBuilder::default();
+                output =
+                    crate::protocol_serde::shape_incompatible_orderable_options::de_incompatible_orderable_options_xml_err(_response_body, output)
+                        .map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidClusterState" => crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::InvalidClusterStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(_response_body, output).map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidRetentionPeriodFault" => crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::InvalidRetentionPeriodFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidRetentionPeriodFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_retention_period_fault::de_invalid_retention_period_fault_xml_err(_response_body, output).map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidRetentionPeriodFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_retention_period_fault::de_invalid_retention_period_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "LimitExceededFault" => crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::LimitExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::LimitExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "SnapshotCopyAlreadyEnabledFault" => crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::SnapshotCopyAlreadyEnabledFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SnapshotCopyAlreadyEnabledFaultBuilder::default();
-                    output = crate::protocol_serde::shape_snapshot_copy_already_enabled_fault::de_snapshot_copy_already_enabled_fault_xml_err(_response_body, output).map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SnapshotCopyAlreadyEnabledFaultBuilder::default();
+                output = crate::protocol_serde::shape_snapshot_copy_already_enabled_fault::de_snapshot_copy_already_enabled_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "SnapshotCopyGrantNotFoundFault" => crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::SnapshotCopyGrantNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SnapshotCopyGrantNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_snapshot_copy_grant_not_found_fault::de_snapshot_copy_grant_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SnapshotCopyGrantNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_snapshot_copy_grant_not_found_fault::de_snapshot_copy_grant_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnauthorizedOperation" => crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::UnauthorizedOperation({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnauthorizedOperationBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_operation::de_unauthorized_operation_xml_err(_response_body, output).map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedOperationBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_operation::de_unauthorized_operation_xml_err(_response_body, output)
+                    .map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnknownSnapshotCopyRegionFault" => crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::UnknownSnapshotCopyRegionFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnknownSnapshotCopyRegionFaultBuilder::default();
-                    output = crate::protocol_serde::shape_unknown_snapshot_copy_region_fault::de_unknown_snapshot_copy_region_fault_xml_err(_response_body, output).map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnknownSnapshotCopyRegionFaultBuilder::default();
+                output = crate::protocol_serde::shape_unknown_snapshot_copy_region_fault::de_unknown_snapshot_copy_region_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::generic(generic)
+        _ => crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::generic(generic),
     })
 }
 
@@ -220,14 +213,9 @@ pub fn de_enable_snapshot_copy_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::enable_snapshot_copy::builders::EnableSnapshotCopyOutputBuilder::default();
-        output = crate::protocol_serde::shape_enable_snapshot_copy::de_enable_snapshot_copy(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_enable_snapshot_copy::de_enable_snapshot_copy(_response_body, output)
+            .map_err(crate::operation::enable_snapshot_copy::EnableSnapshotCopyError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -236,10 +224,7 @@ pub fn de_enable_snapshot_copy_http_response_with_props(
 pub fn de_enable_snapshot_copy(
     inp: &[u8],
     mut builder: crate::operation::enable_snapshot_copy::builders::EnableSnapshotCopyOutputBuilder,
-) -> Result<
-    crate::operation::enable_snapshot_copy::builders::EnableSnapshotCopyOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::enable_snapshot_copy::builders::EnableSnapshotCopyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -276,9 +261,7 @@ pub fn de_enable_snapshot_copy(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected EnableSnapshotCopyResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected EnableSnapshotCopyResult tag"));
     };
     Ok(builder)
 }

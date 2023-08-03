@@ -30,10 +30,7 @@ impl super::Client {
     ///   - [`allow_unassociated_targets(bool)`](crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput::allow_unassociated_targets): <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
     ///   - [`enabled(bool)`](crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput::enabled): <p>Whether the maintenance window is enabled.</p>
     /// - On failure, responds with [`SdkError<UpdateMaintenanceWindowError>`](crate::operation::update_maintenance_window::UpdateMaintenanceWindowError)
-    pub fn update_maintenance_window(
-        &self,
-    ) -> crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowFluentBuilder
-    {
+    pub fn update_maintenance_window(&self) -> crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowFluentBuilder {
         crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowFluentBuilder::new(self.handle.clone())
     }
 }

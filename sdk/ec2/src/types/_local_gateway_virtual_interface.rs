@@ -79,9 +79,7 @@ impl LocalGatewayVirtualInterface {
 
 /// A builder for [`LocalGatewayVirtualInterface`](crate::types::LocalGatewayVirtualInterface).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocalGatewayVirtualInterfaceBuilder {
     pub(crate) local_gateway_virtual_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) local_gateway_id: ::std::option::Option<::std::string::String>,
@@ -95,40 +93,26 @@ pub struct LocalGatewayVirtualInterfaceBuilder {
 }
 impl LocalGatewayVirtualInterfaceBuilder {
     /// <p>The ID of the virtual interface.</p>
-    pub fn local_gateway_virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_virtual_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_local_gateway_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_virtual_interface_id = input;
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn get_local_gateway_virtual_interface_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_virtual_interface_id
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn local_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn set_local_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_id = input;
         self
     }
@@ -151,18 +135,12 @@ impl LocalGatewayVirtualInterfaceBuilder {
         &self.vlan
     }
     /// <p>The local address.</p>
-    pub fn local_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The local address.</p>
-    pub fn set_local_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_address = input;
         self
     }
@@ -238,10 +216,7 @@ impl LocalGatewayVirtualInterfaceBuilder {
         self
     }
     /// <p>The tags assigned to the virtual interface.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

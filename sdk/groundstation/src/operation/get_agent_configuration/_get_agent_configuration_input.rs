@@ -15,18 +15,14 @@ impl GetAgentConfigurationInput {
 }
 impl GetAgentConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetAgentConfigurationInput`](crate::operation::get_agent_configuration::GetAgentConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_agent_configuration::builders::GetAgentConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_agent_configuration::builders::GetAgentConfigurationInputBuilder {
         crate::operation::get_agent_configuration::builders::GetAgentConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAgentConfigurationInput`](crate::operation::get_agent_configuration::GetAgentConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAgentConfigurationInputBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl GetAgentConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetAgentConfigurationInput`](crate::operation::get_agent_configuration::GetAgentConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_agent_configuration::GetAgentConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_agent_configuration::GetAgentConfigurationInput {
-                agent_id: self.agent_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_agent_configuration::GetAgentConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_agent_configuration::GetAgentConfigurationInput { agent_id: self.agent_id })
     }
 }

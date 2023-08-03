@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateAccountsOutput`](crate::operation::associate_accounts::AssociateAccountsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::associate_accounts::AssociateAccountsOutput::arn): <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
     /// - On failure, responds with [`SdkError<AssociateAccountsError>`](crate::operation::associate_accounts::AssociateAccountsError)
-    pub fn associate_accounts(
-        &self,
-    ) -> crate::operation::associate_accounts::builders::AssociateAccountsFluentBuilder {
-        crate::operation::associate_accounts::builders::AssociateAccountsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_accounts(&self) -> crate::operation::associate_accounts::builders::AssociateAccountsFluentBuilder {
+        crate::operation::associate_accounts::builders::AssociateAccountsFluentBuilder::new(self.handle.clone())
     }
 }

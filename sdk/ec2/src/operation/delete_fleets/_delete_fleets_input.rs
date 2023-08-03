@@ -40,9 +40,7 @@ impl DeleteFleetsInput {
 
 /// A builder for [`DeleteFleetsInput`](crate::operation::delete_fleets::DeleteFleetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFleetsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) fleet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -75,10 +73,7 @@ impl DeleteFleetsInputBuilder {
         self
     }
     /// <p>The IDs of the EC2 Fleets.</p>
-    pub fn set_fleet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.fleet_ids = input;
         self
     }
@@ -107,12 +102,7 @@ impl DeleteFleetsInputBuilder {
         &self.terminate_instances
     }
     /// Consumes the builder and constructs a [`DeleteFleetsInput`](crate::operation::delete_fleets::DeleteFleetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_fleets::DeleteFleetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_fleets::DeleteFleetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_fleets::DeleteFleetsInput {
             dry_run: self.dry_run,
             fleet_ids: self.fleet_ids,

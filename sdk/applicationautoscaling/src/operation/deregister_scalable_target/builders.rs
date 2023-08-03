@@ -28,7 +28,7 @@ impl DeregisterScalableTargetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterScalableTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deregister_scalable_target::builders::DeregisterScalableTargetInputBuilder,
+    inner: crate::operation::deregister_scalable_target::builders::DeregisterScalableTargetInputBuilder,
 }
 impl DeregisterScalableTargetFluentBuilder {
     /// Creates a new `DeregisterScalableTarget`.
@@ -39,10 +39,7 @@ impl DeregisterScalableTargetFluentBuilder {
         }
     }
     /// Access the DeregisterScalableTarget as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deregister_scalable_target::builders::DeregisterScalableTargetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deregister_scalable_target::builders::DeregisterScalableTargetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DeregisterScalableTargetFluentBuilder {
             crate::operation::deregister_scalable_target::DeregisterScalableTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_scalable_target::DeregisterScalableTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_scalable_target::DeregisterScalableTargetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DeregisterScalableTargetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DeregisterScalableTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_scalable_target::DeregisterScalableTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_scalable_target::DeregisterScalableTargetError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DeregisterScalableTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_scalable_target::DeregisterScalableTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_scalable_target::DeregisterScalableTargetError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl DeregisterScalableTargetFluentBuilder {
             crate::operation::deregister_scalable_target::DeregisterScalableTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_scalable_target::DeregisterScalableTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_scalable_target::DeregisterScalableTargetError>,
     > {
         self.customize_middleware().await
     }
@@ -131,10 +117,7 @@ impl DeregisterScalableTargetFluentBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.inner = self.inner.set_service_namespace(input);
         self
     }
@@ -265,10 +248,7 @@ impl DeregisterScalableTargetFluentBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.inner = self.inner.set_scalable_dimension(input);
         self
     }
@@ -296,9 +276,7 @@ impl DeregisterScalableTargetFluentBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         self.inner.get_scalable_dimension()
     }
 }

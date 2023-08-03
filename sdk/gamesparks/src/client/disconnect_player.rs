@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`disconnect_successes(Option<Vec<String>>)`](crate::operation::disconnect_player::DisconnectPlayerOutput::disconnect_successes): <p>The list of the connection ids that were disconnected.</p>
     ///   - [`disconnect_failures(Option<Vec<String>>)`](crate::operation::disconnect_player::DisconnectPlayerOutput::disconnect_failures): <p>The list of the connection ids that could not be disconnected.</p>
     /// - On failure, responds with [`SdkError<DisconnectPlayerError>`](crate::operation::disconnect_player::DisconnectPlayerError)
-    pub fn disconnect_player(
-        &self,
-    ) -> crate::operation::disconnect_player::builders::DisconnectPlayerFluentBuilder {
-        crate::operation::disconnect_player::builders::DisconnectPlayerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disconnect_player(&self) -> crate::operation::disconnect_player::builders::DisconnectPlayerFluentBuilder {
+        crate::operation::disconnect_player::builders::DisconnectPlayerFluentBuilder::new(self.handle.clone())
     }
 }

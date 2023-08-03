@@ -5,16 +5,16 @@ pub use crate::operation::create_observability_configuration::_create_observabil
 
 impl CreateObservabilityConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_observability_configuration::CreateObservabilityConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_observability_configuration::CreateObservabilityConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_observability_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl CreateObservabilityConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateObservabilityConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationInputBuilder,
+    inner: crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationInputBuilder,
 }
 impl CreateObservabilityConfigurationFluentBuilder {
     /// Creates a new `CreateObservabilityConfiguration`.
@@ -39,15 +39,20 @@ impl CreateObservabilityConfigurationFluentBuilder {
         }
     }
     /// Access the CreateObservabilityConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_observability_configuration::builders::CreateObservabilityConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_observability_configuration::CreateObservabilityConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_observability_configuration::CreateObservabilityConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_observability_configuration::CreateObservabilityConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_observability_configuration::CreateObservabilityConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl CreateObservabilityConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_observability_configuration::CreateObservabilityConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_observability_configuration::CreateObservabilityConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,27 +89,33 @@ impl CreateObservabilityConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_observability_configuration::CreateObservabilityConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_observability_configuration::CreateObservabilityConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_observability_configuration::CreateObservabilityConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_observability_configuration::CreateObservabilityConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_observability_configuration::CreateObservabilityConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_observability_configuration::CreateObservabilityConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_observability_configuration::CreateObservabilityConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
     /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
     /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
-    pub fn observability_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn observability_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.observability_configuration_name(input.into());
         self
     }
@@ -111,10 +123,7 @@ impl CreateObservabilityConfigurationFluentBuilder {
     /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
     /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
-    pub fn set_observability_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_observability_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_observability_configuration_name(input);
         self
     }
@@ -122,9 +131,7 @@ impl CreateObservabilityConfigurationFluentBuilder {
     /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
     /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
-    pub fn get_observability_configuration_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_observability_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_observability_configuration_name()
     }
     /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
@@ -133,17 +140,12 @@ impl CreateObservabilityConfigurationFluentBuilder {
         self
     }
     /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
-    pub fn set_trace_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TraceConfiguration>,
-    ) -> Self {
+    pub fn set_trace_configuration(mut self, input: ::std::option::Option<crate::types::TraceConfiguration>) -> Self {
         self.inner = self.inner.set_trace_configuration(input);
         self
     }
     /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
-    pub fn get_trace_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::TraceConfiguration> {
+    pub fn get_trace_configuration(&self) -> &::std::option::Option<crate::types::TraceConfiguration> {
         self.inner.get_trace_configuration()
     }
     /// Appends an item to `Tags`.
@@ -156,10 +158,7 @@ impl CreateObservabilityConfigurationFluentBuilder {
         self
     }
     /// <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

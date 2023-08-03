@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAdministratorAccountOutput {
 }
 impl GetAdministratorAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetAdministratorAccountOutput`](crate::operation::get_administrator_account::GetAdministratorAccountOutput).
-    pub fn builder(
-    ) -> crate::operation::get_administrator_account::builders::GetAdministratorAccountOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_administrator_account::builders::GetAdministratorAccountOutputBuilder {
         crate::operation::get_administrator_account::builders::GetAdministratorAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAdministratorAccountOutput`](crate::operation::get_administrator_account::GetAdministratorAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAdministratorAccountOutputBuilder {
     pub(crate) administrator: ::std::option::Option<crate::types::Invitation>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetAdministratorAccountOutputBuilder {
         self
     }
     /// <p>Details about an invitation.</p>
-    pub fn set_administrator(
-        mut self,
-        input: ::std::option::Option<crate::types::Invitation>,
-    ) -> Self {
+    pub fn set_administrator(mut self, input: ::std::option::Option<crate::types::Invitation>) -> Self {
         self.administrator = input;
         self
     }
@@ -65,9 +58,7 @@ impl GetAdministratorAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAdministratorAccountOutput`](crate::operation::get_administrator_account::GetAdministratorAccountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_administrator_account::GetAdministratorAccountOutput {
+    pub fn build(self) -> crate::operation::get_administrator_account::GetAdministratorAccountOutput {
         crate::operation::get_administrator_account::GetAdministratorAccountOutput {
             administrator: self.administrator,
             _request_id: self._request_id,

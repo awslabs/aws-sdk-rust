@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`assigned_ipv6_prefixes(Option<Vec<String>>)`](crate::operation::assign_ipv6_addresses::AssignIpv6AddressesOutput::assigned_ipv6_prefixes): <p>The IPv6 prefixes that are assigned to the network interface.</p>
     ///   - [`network_interface_id(Option<String>)`](crate::operation::assign_ipv6_addresses::AssignIpv6AddressesOutput::network_interface_id): <p>The ID of the network interface.</p>
     /// - On failure, responds with [`SdkError<AssignIpv6AddressesError>`](crate::operation::assign_ipv6_addresses::AssignIpv6AddressesError)
-    pub fn assign_ipv6_addresses(
-        &self,
-    ) -> crate::operation::assign_ipv6_addresses::builders::AssignIpv6AddressesFluentBuilder {
-        crate::operation::assign_ipv6_addresses::builders::AssignIpv6AddressesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn assign_ipv6_addresses(&self) -> crate::operation::assign_ipv6_addresses::builders::AssignIpv6AddressesFluentBuilder {
+        crate::operation::assign_ipv6_addresses::builders::AssignIpv6AddressesFluentBuilder::new(self.handle.clone())
     }
 }

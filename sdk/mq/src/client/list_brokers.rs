@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`broker_summaries(Option<Vec<BrokerSummary>>)`](crate::operation::list_brokers::ListBrokersOutput::broker_summaries): <p>A list of information about all brokers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_brokers::ListBrokersOutput::next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     /// - On failure, responds with [`SdkError<ListBrokersError>`](crate::operation::list_brokers::ListBrokersError)
-    pub fn list_brokers(
-        &self,
-    ) -> crate::operation::list_brokers::builders::ListBrokersFluentBuilder {
+    pub fn list_brokers(&self) -> crate::operation::list_brokers::builders::ListBrokersFluentBuilder {
         crate::operation::list_brokers::builders::ListBrokersFluentBuilder::new(self.handle.clone())
     }
 }

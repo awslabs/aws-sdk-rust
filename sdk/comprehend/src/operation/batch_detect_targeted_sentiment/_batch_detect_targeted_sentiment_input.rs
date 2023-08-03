@@ -30,7 +30,7 @@ impl ::std::fmt::Debug for BatchDetectTargetedSentimentInput {
 }
 impl BatchDetectTargetedSentimentInput {
     /// Creates a new builder-style object to manufacture [`BatchDetectTargetedSentimentInput`](crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentInput).
-    pub fn builder() -> crate::operation::batch_detect_targeted_sentiment::builders::BatchDetectTargetedSentimentInputBuilder{
+    pub fn builder() -> crate::operation::batch_detect_targeted_sentiment::builders::BatchDetectTargetedSentimentInputBuilder {
         crate::operation::batch_detect_targeted_sentiment::builders::BatchDetectTargetedSentimentInputBuilder::default()
     }
 }
@@ -55,10 +55,7 @@ impl BatchDetectTargetedSentimentInputBuilder {
         self
     }
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
-    pub fn set_text_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_text_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.text_list = input;
         self
     }
@@ -72,10 +69,7 @@ impl BatchDetectTargetedSentimentInputBuilder {
         self
     }
     /// <p>The language of the input documents. Currently, English is the only supported language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -90,12 +84,10 @@ impl BatchDetectTargetedSentimentInputBuilder {
         crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentInput {
-                text_list: self.text_list,
-                language_code: self.language_code,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentInput {
+            text_list: self.text_list,
+            language_code: self.language_code,
+        })
     }
 }
 impl ::std::fmt::Debug for BatchDetectTargetedSentimentInputBuilder {

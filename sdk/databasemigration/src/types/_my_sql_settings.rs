@@ -133,10 +133,7 @@ impl ::std::fmt::Debug for MySqlSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MySqlSettings");
         formatter.field("after_connect_script", &self.after_connect_script);
-        formatter.field(
-            "clean_source_metadata_on_mismatch",
-            &self.clean_source_metadata_on_mismatch,
-        );
+        formatter.field("clean_source_metadata_on_mismatch", &self.clean_source_metadata_on_mismatch);
         formatter.field("database_name", &self.database_name);
         formatter.field("events_poll_interval", &self.events_poll_interval);
         formatter.field("target_db_type", &self.target_db_type);
@@ -147,10 +144,7 @@ impl ::std::fmt::Debug for MySqlSettings {
         formatter.field("server_name", &self.server_name);
         formatter.field("server_timezone", &self.server_timezone);
         formatter.field("username", &self.username);
-        formatter.field(
-            "secrets_manager_access_role_arn",
-            &self.secrets_manager_access_role_arn,
-        );
+        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.finish()
     }
@@ -184,19 +178,13 @@ pub struct MySqlSettingsBuilder {
 impl MySqlSettingsBuilder {
     /// <p>Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.</p>
     /// <p>For this parameter, provide the code of the script itself, not the name of a file containing the script.</p>
-    pub fn after_connect_script(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_connect_script(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_connect_script = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.</p>
     /// <p>For this parameter, provide the code of the script itself, not the name of a file containing the script.</p>
-    pub fn set_after_connect_script(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_connect_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_connect_script = input;
         self
     }
@@ -211,10 +199,7 @@ impl MySqlSettingsBuilder {
         self
     }
     /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example, in a situation where running an alter DDL on the table could result in different information about the table cached in the replication instance. </p>
-    pub fn set_clean_source_metadata_on_mismatch(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_clean_source_metadata_on_mismatch(mut self, input: ::std::option::Option<bool>) -> Self {
         self.clean_source_metadata_on_mismatch = input;
         self
     }
@@ -223,18 +208,12 @@ impl MySqlSettingsBuilder {
         &self.clean_source_metadata_on_mismatch
     }
     /// <p>Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code> or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code> or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -270,10 +249,7 @@ impl MySqlSettingsBuilder {
     }
     /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
     /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code> </p>
-    pub fn set_target_db_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetDbType>,
-    ) -> Self {
+    pub fn set_target_db_type(mut self, input: ::std::option::Option<crate::types::TargetDbType>) -> Self {
         self.target_db_type = input;
         self
     }
@@ -367,20 +343,14 @@ impl MySqlSettingsBuilder {
     /// <p>Specifies the time zone for the source MySQL database.</p>
     /// <p>Example: <code>serverTimezone=US/Pacific;</code> </p>
     /// <p>Note: Do not enclose time zones in single quotes.</p>
-    pub fn server_timezone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the time zone for the source MySQL database.</p>
     /// <p>Example: <code>serverTimezone=US/Pacific;</code> </p>
     /// <p>Note: Do not enclose time zones in single quotes.</p>
-    pub fn set_server_timezone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_timezone = input;
         self
     }
@@ -407,44 +377,30 @@ impl MySqlSettingsBuilder {
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MySQL endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn secrets_manager_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secrets_manager_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secrets_manager_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MySQL endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn set_secrets_manager_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secrets_manager_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secrets_manager_access_role_arn = input;
         self
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MySQL endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn get_secrets_manager_access_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_secrets_manager_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secrets_manager_access_role_arn
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection details.</p>
-    pub fn secrets_manager_secret_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secrets_manager_secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secrets_manager_secret_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection details.</p>
-    pub fn set_secrets_manager_secret_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secrets_manager_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secrets_manager_secret_id = input;
         self
     }
@@ -476,10 +432,7 @@ impl ::std::fmt::Debug for MySqlSettingsBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MySqlSettingsBuilder");
         formatter.field("after_connect_script", &self.after_connect_script);
-        formatter.field(
-            "clean_source_metadata_on_mismatch",
-            &self.clean_source_metadata_on_mismatch,
-        );
+        formatter.field("clean_source_metadata_on_mismatch", &self.clean_source_metadata_on_mismatch);
         formatter.field("database_name", &self.database_name);
         formatter.field("events_poll_interval", &self.events_poll_interval);
         formatter.field("target_db_type", &self.target_db_type);
@@ -490,10 +443,7 @@ impl ::std::fmt::Debug for MySqlSettingsBuilder {
         formatter.field("server_name", &self.server_name);
         formatter.field("server_timezone", &self.server_timezone);
         formatter.field("username", &self.username);
-        formatter.field(
-            "secrets_manager_access_role_arn",
-            &self.secrets_manager_access_role_arn,
-        );
+        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.finish()
     }

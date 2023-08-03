@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for ListVolumeInitiatorsOutput {
 }
 impl ListVolumeInitiatorsOutput {
     /// Creates a new builder-style object to manufacture [`ListVolumeInitiatorsOutput`](crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsOutputBuilder {
+    pub fn builder() -> crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsOutputBuilder {
         crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVolumeInitiatorsOutput`](crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVolumeInitiatorsOutputBuilder {
     pub(crate) initiators: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -50,10 +47,7 @@ impl ListVolumeInitiatorsOutputBuilder {
         self
     }
     /// <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
-    pub fn set_initiators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_initiators(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.initiators = input;
         self
     }

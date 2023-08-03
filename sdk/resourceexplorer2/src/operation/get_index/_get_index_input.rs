@@ -12,18 +12,11 @@ impl GetIndexInput {
 
 /// A builder for [`GetIndexInput`](crate::operation::get_index::GetIndexInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIndexInputBuilder {}
 impl GetIndexInputBuilder {
     /// Consumes the builder and constructs a [`GetIndexInput`](crate::operation::get_index::GetIndexInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_index::GetIndexInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_index::GetIndexInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_index::GetIndexInput {})
     }
 }

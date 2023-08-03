@@ -18,10 +18,7 @@ pub fn ser_search_entities_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_entity_filter::ser_entity_filter(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_entity_filter::ser_entity_filter(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }

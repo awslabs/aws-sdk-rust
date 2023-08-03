@@ -6,8 +6,7 @@
 pub struct ClusterPendingModifiedValues {
     /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
     #[doc(hidden)]
-    pub pending_cloudwatch_logs_exports:
-        ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
+    pub pending_cloudwatch_logs_exports: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
     /// <p>The DBClusterIdentifier value for the DB cluster.</p>
     #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -29,9 +28,7 @@ pub struct ClusterPendingModifiedValues {
 }
 impl ClusterPendingModifiedValues {
     /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
-    pub fn pending_cloudwatch_logs_exports(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PendingCloudwatchLogsExports> {
+    pub fn pending_cloudwatch_logs_exports(&self) -> ::std::option::Option<&crate::types::PendingCloudwatchLogsExports> {
         self.pending_cloudwatch_logs_exports.as_ref()
     }
     /// <p>The DBClusterIdentifier value for the DB cluster.</p>
@@ -68,12 +65,9 @@ impl ClusterPendingModifiedValues {
 
 /// A builder for [`ClusterPendingModifiedValues`](crate::types::ClusterPendingModifiedValues).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterPendingModifiedValuesBuilder {
-    pub(crate) pending_cloudwatch_logs_exports:
-        ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
+    pub(crate) pending_cloudwatch_logs_exports: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
@@ -83,40 +77,26 @@ pub struct ClusterPendingModifiedValuesBuilder {
 }
 impl ClusterPendingModifiedValuesBuilder {
     /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
-    pub fn pending_cloudwatch_logs_exports(
-        mut self,
-        input: crate::types::PendingCloudwatchLogsExports,
-    ) -> Self {
+    pub fn pending_cloudwatch_logs_exports(mut self, input: crate::types::PendingCloudwatchLogsExports) -> Self {
         self.pending_cloudwatch_logs_exports = ::std::option::Option::Some(input);
         self
     }
     /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
-    pub fn set_pending_cloudwatch_logs_exports(
-        mut self,
-        input: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
-    ) -> Self {
+    pub fn set_pending_cloudwatch_logs_exports(mut self, input: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>) -> Self {
         self.pending_cloudwatch_logs_exports = input;
         self
     }
     /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
-    pub fn get_pending_cloudwatch_logs_exports(
-        &self,
-    ) -> &::std::option::Option<crate::types::PendingCloudwatchLogsExports> {
+    pub fn get_pending_cloudwatch_logs_exports(&self) -> &::std::option::Option<crate::types::PendingCloudwatchLogsExports> {
         &self.pending_cloudwatch_logs_exports
     }
     /// <p>The DBClusterIdentifier value for the DB cluster.</p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DBClusterIdentifier value for the DB cluster.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -130,10 +110,7 @@ impl ClusterPendingModifiedValuesBuilder {
         self
     }
     /// <p>A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-    pub fn set_iam_database_authentication_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_iam_database_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.iam_database_authentication_enabled = input;
         self
     }
@@ -142,18 +119,12 @@ impl ClusterPendingModifiedValuesBuilder {
         &self.iam_database_authentication_enabled
     }
     /// <p>The database engine version.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database engine version.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }

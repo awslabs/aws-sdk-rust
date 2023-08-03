@@ -40,10 +40,7 @@ impl ListVirtualMFADevicesFluentBuilder {
         }
     }
     /// Access the ListVirtualMFADevices as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_virtual_mfa_devices::builders::ListVirtualMfaDevicesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_virtual_mfa_devices::builders::ListVirtualMfaDevicesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl ListVirtualMFADevicesFluentBuilder {
             crate::operation::list_virtual_mfa_devices::ListVirtualMFADevices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_virtual_mfa_devices::ListVirtualMFADevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_virtual_mfa_devices::ListVirtualMFADevicesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl ListVirtualMFADevicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl ListVirtualMFADevicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_virtual_mfa_devices::ListVirtualMFADevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_virtual_mfa_devices::ListVirtualMFADevicesError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl ListVirtualMFADevicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_virtual_mfa_devices::ListVirtualMFADevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_virtual_mfa_devices::ListVirtualMFADevicesError>,
     > {
         self.send_middleware().await
     }
@@ -120,22 +108,15 @@ impl ListVirtualMFADevicesFluentBuilder {
             crate::operation::list_virtual_mfa_devices::ListVirtualMFADevices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_virtual_mfa_devices::ListVirtualMFADevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_virtual_mfa_devices::ListVirtualMFADevicesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_virtual_mfa_devices::paginator::ListVirtualMfaDevicesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_virtual_mfa_devices::paginator::ListVirtualMfaDevicesPaginator {
-        crate::operation::list_virtual_mfa_devices::paginator::ListVirtualMfaDevicesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_virtual_mfa_devices::paginator::ListVirtualMfaDevicesPaginator {
+        crate::operation::list_virtual_mfa_devices::paginator::ListVirtualMfaDevicesPaginator::new(self.handle, self.inner)
     }
     /// <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code>, which lists both assigned and unassigned virtual MFA devices.,</p>
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatusType) -> Self {
@@ -143,17 +124,12 @@ impl ListVirtualMFADevicesFluentBuilder {
         self
     }
     /// <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code>, which lists both assigned and unassigned virtual MFA devices.,</p>
-    pub fn set_assignment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssignmentStatusType>,
-    ) -> Self {
+    pub fn set_assignment_status(mut self, input: ::std::option::Option<crate::types::AssignmentStatusType>) -> Self {
         self.inner = self.inner.set_assignment_status(input);
         self
     }
     /// <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code>, which lists both assigned and unassigned virtual MFA devices.,</p>
-    pub fn get_assignment_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssignmentStatusType> {
+    pub fn get_assignment_status(&self) -> &::std::option::Option<crate::types::AssignmentStatusType> {
         self.inner.get_assignment_status()
     }
     /// <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>

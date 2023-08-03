@@ -15,18 +15,14 @@ impl DescribeLanguageModelInput {
 }
 impl DescribeLanguageModelInput {
     /// Creates a new builder-style object to manufacture [`DescribeLanguageModelInput`](crate::operation::describe_language_model::DescribeLanguageModelInput).
-    pub fn builder(
-    ) -> crate::operation::describe_language_model::builders::DescribeLanguageModelInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_language_model::builders::DescribeLanguageModelInputBuilder {
         crate::operation::describe_language_model::builders::DescribeLanguageModelInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLanguageModelInput`](crate::operation::describe_language_model::DescribeLanguageModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLanguageModelInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl DescribeLanguageModelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLanguageModelInput`](crate::operation::describe_language_model::DescribeLanguageModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_language_model::DescribeLanguageModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_language_model::DescribeLanguageModelInput {
-                model_name: self.model_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_language_model::DescribeLanguageModelInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_language_model::DescribeLanguageModelInput { model_name: self.model_name })
     }
 }

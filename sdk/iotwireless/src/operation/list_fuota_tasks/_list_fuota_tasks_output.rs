@@ -35,9 +35,7 @@ impl ListFuotaTasksOutput {
 
 /// A builder for [`ListFuotaTasksOutput`](crate::operation::list_fuota_tasks::ListFuotaTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFuotaTasksOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) fuota_task_list: ::std::option::Option<::std::vec::Vec<crate::types::FuotaTask>>,
@@ -70,17 +68,12 @@ impl ListFuotaTasksOutputBuilder {
         self
     }
     /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
-    pub fn set_fuota_task_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FuotaTask>>,
-    ) -> Self {
+    pub fn set_fuota_task_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FuotaTask>>) -> Self {
         self.fuota_task_list = input;
         self
     }
     /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
-    pub fn get_fuota_task_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FuotaTask>> {
+    pub fn get_fuota_task_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FuotaTask>> {
         &self.fuota_task_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

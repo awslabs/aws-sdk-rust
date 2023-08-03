@@ -22,16 +22,14 @@ impl DescribeSimulationApplicationInput {
 }
 impl DescribeSimulationApplicationInput {
     /// Creates a new builder-style object to manufacture [`DescribeSimulationApplicationInput`](crate::operation::describe_simulation_application::DescribeSimulationApplicationInput).
-    pub fn builder() -> crate::operation::describe_simulation_application::builders::DescribeSimulationApplicationInputBuilder{
+    pub fn builder() -> crate::operation::describe_simulation_application::builders::DescribeSimulationApplicationInputBuilder {
         crate::operation::describe_simulation_application::builders::DescribeSimulationApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSimulationApplicationInput`](crate::operation::describe_simulation_application::DescribeSimulationApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSimulationApplicationInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) application_version: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DescribeSimulationApplicationInputBuilder {
         &self.application
     }
     /// <p>The version of the simulation application to describe.</p>
-    pub fn application_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the simulation application to describe.</p>
-    pub fn set_application_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_version = input;
         self
     }
@@ -78,11 +70,9 @@ impl DescribeSimulationApplicationInputBuilder {
         crate::operation::describe_simulation_application::DescribeSimulationApplicationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_simulation_application::DescribeSimulationApplicationInput {
-                application: self.application,
-                application_version: self.application_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_simulation_application::DescribeSimulationApplicationInput {
+            application: self.application,
+            application_version: self.application_version,
+        })
     }
 }

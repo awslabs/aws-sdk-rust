@@ -12,10 +12,7 @@ pub fn ser_create_table_input(
     if let Some(var_3) = &input.schema_definition {
         #[allow(unused_mut)]
         let mut object_4 = object.key("schemaDefinition").start_object();
-        crate::protocol_serde::shape_schema_definition::ser_schema_definition(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_schema_definition::ser_schema_definition(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.comment {
@@ -27,28 +24,19 @@ pub fn ser_create_table_input(
     if let Some(var_7) = &input.capacity_specification {
         #[allow(unused_mut)]
         let mut object_8 = object.key("capacitySpecification").start_object();
-        crate::protocol_serde::shape_capacity_specification::ser_capacity_specification(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_capacity_specification::ser_capacity_specification(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.encryption_specification {
         #[allow(unused_mut)]
         let mut object_10 = object.key("encryptionSpecification").start_object();
-        crate::protocol_serde::shape_encryption_specification::ser_encryption_specification(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_encryption_specification::ser_encryption_specification(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.point_in_time_recovery {
         #[allow(unused_mut)]
         let mut object_12 = object.key("pointInTimeRecovery").start_object();
-        crate::protocol_serde::shape_point_in_time_recovery::ser_point_in_time_recovery(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_point_in_time_recovery::ser_point_in_time_recovery(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.ttl {
@@ -78,10 +66,7 @@ pub fn ser_create_table_input(
     if let Some(var_20) = &input.client_side_timestamps {
         #[allow(unused_mut)]
         let mut object_21 = object.key("clientSideTimestamps").start_object();
-        crate::protocol_serde::shape_client_side_timestamps::ser_client_side_timestamps(
-            &mut object_21,
-            var_20,
-        )?;
+        crate::protocol_serde::shape_client_side_timestamps::ser_client_side_timestamps(&mut object_21, var_20)?;
         object_21.finish();
     }
     Ok(())

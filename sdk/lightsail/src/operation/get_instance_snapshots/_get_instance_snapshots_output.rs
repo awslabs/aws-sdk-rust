@@ -32,20 +32,16 @@ impl ::aws_http::request_id::RequestId for GetInstanceSnapshotsOutput {
 }
 impl GetInstanceSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceSnapshotsOutput`](crate::operation::get_instance_snapshots::GetInstanceSnapshotsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_snapshots::builders::GetInstanceSnapshotsOutputBuilder {
+    pub fn builder() -> crate::operation::get_instance_snapshots::builders::GetInstanceSnapshotsOutputBuilder {
         crate::operation::get_instance_snapshots::builders::GetInstanceSnapshotsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceSnapshotsOutput`](crate::operation::get_instance_snapshots::GetInstanceSnapshotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceSnapshotsOutputBuilder {
-    pub(crate) instance_snapshots:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceSnapshot>>,
+    pub(crate) instance_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSnapshot>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,36 +58,25 @@ impl GetInstanceSnapshotsOutputBuilder {
         self
     }
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
-    pub fn set_instance_snapshots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSnapshot>>,
-    ) -> Self {
+    pub fn set_instance_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSnapshot>>) -> Self {
         self.instance_snapshots = input;
         self
     }
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
-    pub fn get_instance_snapshots(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSnapshot>> {
+    pub fn get_instance_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSnapshot>> {
         &self.instance_snapshots
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

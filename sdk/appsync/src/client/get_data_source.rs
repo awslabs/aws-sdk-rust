@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetDataSourceOutput`](crate::operation::get_data_source::GetDataSourceOutput) with field(s):
     ///   - [`data_source(Option<DataSource>)`](crate::operation::get_data_source::GetDataSourceOutput::data_source): <p>The <code>DataSource</code> object.</p>
     /// - On failure, responds with [`SdkError<GetDataSourceError>`](crate::operation::get_data_source::GetDataSourceError)
-    pub fn get_data_source(
-        &self,
-    ) -> crate::operation::get_data_source::builders::GetDataSourceFluentBuilder {
-        crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_data_source(&self) -> crate::operation::get_data_source::builders::GetDataSourceFluentBuilder {
+        crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::new(self.handle.clone())
     }
 }

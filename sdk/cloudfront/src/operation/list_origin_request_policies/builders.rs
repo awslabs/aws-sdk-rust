@@ -28,7 +28,7 @@ impl ListOriginRequestPoliciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOriginRequestPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_origin_request_policies::builders::ListOriginRequestPoliciesInputBuilder,
+    inner: crate::operation::list_origin_request_policies::builders::ListOriginRequestPoliciesInputBuilder,
 }
 impl ListOriginRequestPoliciesFluentBuilder {
     /// Creates a new `ListOriginRequestPolicies`.
@@ -39,7 +39,7 @@ impl ListOriginRequestPoliciesFluentBuilder {
         }
     }
     /// Access the ListOriginRequestPolicies as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_origin_request_policies::builders::ListOriginRequestPoliciesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_origin_request_policies::builders::ListOriginRequestPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl ListOriginRequestPoliciesFluentBuilder {
             crate::operation::list_origin_request_policies::ListOriginRequestPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl ListOriginRequestPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl ListOriginRequestPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_origin_request_policies::ListOriginRequestPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl ListOriginRequestPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_origin_request_policies::ListOriginRequestPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl ListOriginRequestPoliciesFluentBuilder {
             crate::operation::list_origin_request_policies::ListOriginRequestPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError>,
     > {
         self.customize_middleware().await
     }
@@ -136,10 +125,7 @@ impl ListOriginRequestPoliciesFluentBuilder {
     /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
     /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginRequestPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

@@ -10,10 +10,7 @@ impl CreateDiskSnapshotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_disk_snapshot::CreateDiskSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_disk_snapshot::CreateDiskSnapshotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_disk_snapshot::CreateDiskSnapshotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_disk_snapshot();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateDiskSnapshotFluentBuilder {
         }
     }
     /// Access the CreateDiskSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_disk_snapshot::builders::CreateDiskSnapshotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_disk_snapshot::builders::CreateDiskSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateDiskSnapshotFluentBuilder {
             crate::operation::create_disk_snapshot::CreateDiskSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_disk_snapshot::CreateDiskSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_disk_snapshot::CreateDiskSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateDiskSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateDiskSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_disk_snapshot::CreateDiskSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_disk_snapshot::CreateDiskSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_disk_snapshot::CreateDiskSnapshotError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateDiskSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_disk_snapshot::CreateDiskSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_disk_snapshot::CreateDiskSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_disk_snapshot::CreateDiskSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl CreateDiskSnapshotFluentBuilder {
             crate::operation::create_disk_snapshot::CreateDiskSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_disk_snapshot::CreateDiskSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_disk_snapshot::CreateDiskSnapshotError>,
     > {
         self.customize_middleware().await
     }
@@ -146,18 +130,12 @@ impl CreateDiskSnapshotFluentBuilder {
         self.inner.get_disk_name()
     }
     /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
-    pub fn disk_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disk_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.disk_snapshot_name(input.into());
         self
     }
     /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
-    pub fn set_disk_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_disk_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_disk_snapshot_name(input);
         self
     }
@@ -168,20 +146,14 @@ impl CreateDiskSnapshotFluentBuilder {
     /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
     /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_name(input.into());
         self
     }
     /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
     /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
     }
@@ -203,10 +175,7 @@ impl CreateDiskSnapshotFluentBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

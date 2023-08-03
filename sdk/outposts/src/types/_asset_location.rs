@@ -23,9 +23,7 @@ impl AssetLocation {
 
 /// A builder for [`AssetLocation`](crate::types::AssetLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetLocationBuilder {
     pub(crate) rack_elevation: ::std::option::Option<f32>,
 }

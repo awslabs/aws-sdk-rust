@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetBucketLifecycleConfigurationOutput`](crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput) with field(s):
     ///   - [`rules(Option<Vec<LifecycleRule>>)`](crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput::rules): <p>Container for the lifecycle rule of the Outposts bucket.</p>
     /// - On failure, responds with [`SdkError<GetBucketLifecycleConfigurationError>`](crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationError)
-    pub fn get_bucket_lifecycle_configuration(&self) -> crate::operation::get_bucket_lifecycle_configuration::builders::GetBucketLifecycleConfigurationFluentBuilder{
+    pub fn get_bucket_lifecycle_configuration(
+        &self,
+    ) -> crate::operation::get_bucket_lifecycle_configuration::builders::GetBucketLifecycleConfigurationFluentBuilder {
         crate::operation::get_bucket_lifecycle_configuration::builders::GetBucketLifecycleConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

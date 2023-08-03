@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteGlobalReplicationGroupOutput`](crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupOutput) with field(s):
     ///   - [`global_replication_group(Option<GlobalReplicationGroup>)`](crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupOutput::global_replication_group): <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>  <ul>   <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DeleteGlobalReplicationGroupError>`](crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError)
-    pub fn delete_global_replication_group(&self) -> crate::operation::delete_global_replication_group::builders::DeleteGlobalReplicationGroupFluentBuilder{
+    pub fn delete_global_replication_group(
+        &self,
+    ) -> crate::operation::delete_global_replication_group::builders::DeleteGlobalReplicationGroupFluentBuilder {
         crate::operation::delete_global_replication_group::builders::DeleteGlobalReplicationGroupFluentBuilder::new(self.handle.clone())
     }
 }

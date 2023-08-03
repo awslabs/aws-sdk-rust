@@ -10,10 +10,7 @@ impl CreateProgramInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_program::CreateProgramOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_program::CreateProgramError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_program::CreateProgramError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_program();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateProgramFluentBuilder {
         }
     }
     /// Access the CreateProgram as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_program::builders::CreateProgramInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_program::builders::CreateProgramInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateProgramFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -124,10 +116,7 @@ impl CreateProgramFluentBuilder {
         self
     }
     /// <p>The ad break configuration settings.</p>
-    pub fn set_ad_breaks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>,
-    ) -> Self {
+    pub fn set_ad_breaks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>) -> Self {
         self.inner = self.inner.set_ad_breaks(input);
         self
     }
@@ -150,18 +139,12 @@ impl CreateProgramFluentBuilder {
         self.inner.get_channel_name()
     }
     /// <p>The name of the LiveSource for this Program.</p>
-    pub fn live_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn live_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.live_source_name(input.into());
         self
     }
     /// <p>The name of the LiveSource for this Program.</p>
-    pub fn set_live_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_live_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_live_source_name(input);
         self
     }
@@ -189,32 +172,21 @@ impl CreateProgramFluentBuilder {
         self
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn set_schedule_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleConfiguration>,
-    ) -> Self {
+    pub fn set_schedule_configuration(mut self, input: ::std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
         self.inner = self.inner.set_schedule_configuration(input);
         self
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn get_schedule_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
+    pub fn get_schedule_configuration(&self) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
         self.inner.get_schedule_configuration()
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_location_name(input.into());
         self
     }
     /// <p>The name of the source location.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
     }
@@ -223,18 +195,12 @@ impl CreateProgramFluentBuilder {
         self.inner.get_source_location_name()
     }
     /// <p>The name that's used to refer to a VOD source.</p>
-    pub fn vod_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vod_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vod_source_name(input.into());
         self
     }
     /// <p>The name that's used to refer to a VOD source.</p>
-    pub fn set_vod_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vod_source_name(input);
         self
     }

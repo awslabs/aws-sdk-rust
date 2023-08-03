@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`channel_name(impl ::std::convert::Into<String>)`](crate::operation::start_channel::builders::StartChannelFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::start_channel::builders::StartChannelFluentBuilder::set_channel_name): <p>The name of the channel.</p>
     /// - On success, responds with [`StartChannelOutput`](crate::operation::start_channel::StartChannelOutput)
     /// - On failure, responds with [`SdkError<StartChannelError>`](crate::operation::start_channel::StartChannelError)
-    pub fn start_channel(
-        &self,
-    ) -> crate::operation::start_channel::builders::StartChannelFluentBuilder {
-        crate::operation::start_channel::builders::StartChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_channel(&self) -> crate::operation::start_channel::builders::StartChannelFluentBuilder {
+        crate::operation::start_channel::builders::StartChannelFluentBuilder::new(self.handle.clone())
     }
 }

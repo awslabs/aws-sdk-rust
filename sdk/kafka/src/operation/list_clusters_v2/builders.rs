@@ -10,10 +10,7 @@ impl ListClustersV2InputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_clusters_v2::ListClustersV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_clusters_v2::ListClustersV2Error,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_clusters_v2::ListClustersV2Error, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_clusters_v2();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListClustersV2FluentBuilder {
         }
     }
     /// Access the ListClustersV2 as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_clusters_v2::builders::ListClustersV2InputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_clusters_v2::builders::ListClustersV2InputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListClustersV2FluentBuilder {
             crate::operation::list_clusters_v2::ListClustersV2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_clusters_v2::ListClustersV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_clusters_v2::ListClustersV2Error>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListClustersV2FluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListClustersV2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_clusters_v2::ListClustersV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_clusters_v2::ListClustersV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_clusters_v2::ListClustersV2Error>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListClustersV2FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_clusters_v2::ListClustersV2Output,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_clusters_v2::ListClustersV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_clusters_v2::ListClustersV2Error>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListClustersV2FluentBuilder {
             crate::operation::list_clusters_v2::ListClustersV2,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_clusters_v2::ListClustersV2Error,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_clusters_v2::ListClustersV2Error>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_clusters_v2::paginator::ListClustersV2Paginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_clusters_v2::paginator::ListClustersV2Paginator {
-        crate::operation::list_clusters_v2::paginator::ListClustersV2Paginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_clusters_v2::paginator::ListClustersV2Paginator {
+        crate::operation::list_clusters_v2::paginator::ListClustersV2Paginator::new(self.handle, self.inner)
     }
     /// <p>Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
-    pub fn cluster_name_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_name_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name_filter(input.into());
         self
     }
     /// <p>Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
-    pub fn set_cluster_name_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_name_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name_filter(input);
         self
     }
@@ -154,18 +127,12 @@ impl ListClustersV2FluentBuilder {
         self.inner.get_cluster_name_filter()
     }
     /// <p>Specify either PROVISIONED or SERVERLESS.</p>
-    pub fn cluster_type_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_type_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_type_filter(input.into());
         self
     }
     /// <p>Specify either PROVISIONED or SERVERLESS.</p>
-    pub fn set_cluster_type_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_type_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_type_filter(input);
         self
     }

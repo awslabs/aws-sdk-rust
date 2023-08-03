@@ -15,34 +15,25 @@ impl GetWorkflowExecutionInput {
 }
 impl GetWorkflowExecutionInput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowExecutionInput`](crate::operation::get_workflow_execution::GetWorkflowExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::get_workflow_execution::builders::GetWorkflowExecutionInputBuilder {
+    pub fn builder() -> crate::operation::get_workflow_execution::builders::GetWorkflowExecutionInputBuilder {
         crate::operation::get_workflow_execution::builders::GetWorkflowExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorkflowExecutionInput`](crate::operation::get_workflow_execution::GetWorkflowExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkflowExecutionInputBuilder {
     pub(crate) workflow_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkflowExecutionInputBuilder {
     /// <p>Use the unique identifier for a runtime instance of the workflow to get runtime details.</p>
-    pub fn workflow_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Use the unique identifier for a runtime instance of the workflow to get runtime details.</p>
-    pub fn set_workflow_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_execution_id = input;
         self
     }
@@ -53,14 +44,10 @@ impl GetWorkflowExecutionInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkflowExecutionInput`](crate::operation::get_workflow_execution::GetWorkflowExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_workflow_execution::GetWorkflowExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_workflow_execution::GetWorkflowExecutionInput {
-                workflow_execution_id: self.workflow_execution_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_workflow_execution::GetWorkflowExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_workflow_execution::GetWorkflowExecutionInput {
+            workflow_execution_id: self.workflow_execution_id,
+        })
     }
 }

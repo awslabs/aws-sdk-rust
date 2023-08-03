@@ -10,9 +10,7 @@ pub struct GetMultiRegionAccessPointOutput {
 }
 impl GetMultiRegionAccessPointOutput {
     /// <p>A container element containing the details of the requested Multi-Region Access Point.</p>
-    pub fn access_point(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MultiRegionAccessPointReport> {
+    pub fn access_point(&self) -> ::std::option::Option<&crate::types::MultiRegionAccessPointReport> {
         self.access_point.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetMultiRegionAccessPointOutput {
 }
 impl GetMultiRegionAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointOutput`](crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointOutput).
-    pub fn builder() -> crate::operation::get_multi_region_access_point::builders::GetMultiRegionAccessPointOutputBuilder{
+    pub fn builder() -> crate::operation::get_multi_region_access_point::builders::GetMultiRegionAccessPointOutputBuilder {
         crate::operation::get_multi_region_access_point::builders::GetMultiRegionAccessPointOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMultiRegionAccessPointOutput`](crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointOutputBuilder {
     pub(crate) access_point: ::std::option::Option<crate::types::MultiRegionAccessPointReport>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetMultiRegionAccessPointOutputBuilder {
         self
     }
     /// <p>A container element containing the details of the requested Multi-Region Access Point.</p>
-    pub fn set_access_point(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiRegionAccessPointReport>,
-    ) -> Self {
+    pub fn set_access_point(mut self, input: ::std::option::Option<crate::types::MultiRegionAccessPointReport>) -> Self {
         self.access_point = input;
         self
     }
     /// <p>A container element containing the details of the requested Multi-Region Access Point.</p>
-    pub fn get_access_point(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiRegionAccessPointReport> {
+    pub fn get_access_point(&self) -> &::std::option::Option<crate::types::MultiRegionAccessPointReport> {
         &self.access_point
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl GetMultiRegionAccessPointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMultiRegionAccessPointOutput`](crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointOutput {
+    pub fn build(self) -> crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointOutput {
         crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointOutput {
             access_point: self.access_point,
             _request_id: self._request_id,

@@ -51,9 +51,7 @@ impl CookiePreference {
 
 /// A builder for [`CookiePreference`](crate::types::CookiePreference).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CookiePreferenceBuilder {
     pub(crate) forward: ::std::option::Option<crate::types::ItemSelection>,
     pub(crate) whitelisted_names: ::std::option::Option<crate::types::CookieNames>,
@@ -73,10 +71,7 @@ impl CookiePreferenceBuilder {
     /// <p>If you want to send cookies to the origin but not include them in the cache key, use origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies specified in the <code>WhitelistedNames</code> complex type.</p>
     /// <p>Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin, specify none for the <code>Forward</code> element.</p>
-    pub fn set_forward(
-        mut self,
-        input: ::std::option::Option<crate::types::ItemSelection>,
-    ) -> Self {
+    pub fn set_forward(mut self, input: ::std::option::Option<crate::types::ItemSelection>) -> Self {
         self.forward = input;
         self
     }
@@ -104,10 +99,7 @@ impl CookiePreferenceBuilder {
     /// <p>Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if you want to forward selected cookies, the names of those cookies.</p>
     /// <p>If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>, omit <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from <code>whitelist</code> to <code>all</code> or <code>none</code> and you don't delete the <code>WhitelistedNames</code> element and its child elements, CloudFront deletes them automatically.</p>
     /// <p>For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront"> CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_whitelisted_names(
-        mut self,
-        input: ::std::option::Option<crate::types::CookieNames>,
-    ) -> Self {
+    pub fn set_whitelisted_names(mut self, input: ::std::option::Option<crate::types::CookieNames>) -> Self {
         self.whitelisted_names = input;
         self
     }

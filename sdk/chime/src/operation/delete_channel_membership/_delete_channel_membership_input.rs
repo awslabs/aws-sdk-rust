@@ -29,18 +29,14 @@ impl DeleteChannelMembershipInput {
 }
 impl DeleteChannelMembershipInput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelMembershipInput`](crate::operation::delete_channel_membership::DeleteChannelMembershipInput).
-    pub fn builder(
-    ) -> crate::operation::delete_channel_membership::builders::DeleteChannelMembershipInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_channel_membership::builders::DeleteChannelMembershipInputBuilder {
         crate::operation::delete_channel_membership::builders::DeleteChannelMembershipInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteChannelMembershipInput`](crate::operation::delete_channel_membership::DeleteChannelMembershipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteChannelMembershipInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) member_arn: ::std::option::Option<::std::string::String>,
@@ -96,12 +92,10 @@ impl DeleteChannelMembershipInputBuilder {
         crate::operation::delete_channel_membership::DeleteChannelMembershipInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_channel_membership::DeleteChannelMembershipInput {
-                channel_arn: self.channel_arn,
-                member_arn: self.member_arn,
-                chime_bearer: self.chime_bearer,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_channel_membership::DeleteChannelMembershipInput {
+            channel_arn: self.channel_arn,
+            member_arn: self.member_arn,
+            chime_bearer: self.chime_bearer,
+        })
     }
 }

@@ -27,16 +27,14 @@ impl ::aws_http::request_id::RequestId for PutObjectLockConfigurationOutput {
 }
 impl PutObjectLockConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutObjectLockConfigurationOutput`](crate::operation::put_object_lock_configuration::PutObjectLockConfigurationOutput).
-    pub fn builder() -> crate::operation::put_object_lock_configuration::builders::PutObjectLockConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_object_lock_configuration::builders::PutObjectLockConfigurationOutputBuilder {
         crate::operation::put_object_lock_configuration::builders::PutObjectLockConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutObjectLockConfigurationOutput`](crate::operation::put_object_lock_configuration::PutObjectLockConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutObjectLockConfigurationOutputBuilder {
     pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
@@ -49,10 +47,7 @@ impl PutObjectLockConfigurationOutputBuilder {
         self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    pub fn set_request_charged(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestCharged>,
-    ) -> Self {
+    pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
         self.request_charged = input;
         self
     }
@@ -65,10 +60,7 @@ impl PutObjectLockConfigurationOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }
@@ -82,9 +74,7 @@ impl PutObjectLockConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutObjectLockConfigurationOutput`](crate::operation::put_object_lock_configuration::PutObjectLockConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_object_lock_configuration::PutObjectLockConfigurationOutput {
+    pub fn build(self) -> crate::operation::put_object_lock_configuration::PutObjectLockConfigurationOutput {
         crate::operation::put_object_lock_configuration::PutObjectLockConfigurationOutput {
             request_charged: self.request_charged,
             _extended_request_id: self._extended_request_id,

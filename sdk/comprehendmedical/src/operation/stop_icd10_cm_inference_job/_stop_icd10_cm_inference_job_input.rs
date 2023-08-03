@@ -15,18 +15,14 @@ impl StopIcd10CmInferenceJobInput {
 }
 impl StopIcd10CmInferenceJobInput {
     /// Creates a new builder-style object to manufacture [`StopIcd10CmInferenceJobInput`](crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobInput).
-    pub fn builder(
-    ) -> crate::operation::stop_icd10_cm_inference_job::builders::StopIcd10CmInferenceJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_icd10_cm_inference_job::builders::StopIcd10CmInferenceJobInputBuilder {
         crate::operation::stop_icd10_cm_inference_job::builders::StopIcd10CmInferenceJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopIcd10CmInferenceJobInput`](crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopIcd10CmInferenceJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl StopIcd10CmInferenceJobInputBuilder {
         crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobInput { job_id: self.job_id })
     }
 }

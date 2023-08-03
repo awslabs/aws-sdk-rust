@@ -37,9 +37,7 @@ impl BotAliasHistoryEvent {
 
 /// A builder for [`BotAliasHistoryEvent`](crate::types::BotAliasHistoryEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BotAliasHistoryEventBuilder {
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -66,10 +64,7 @@ impl BotAliasHistoryEventBuilder {
         self
     }
     /// <p>The date and time that the event started.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
@@ -83,10 +78,7 @@ impl BotAliasHistoryEventBuilder {
         self
     }
     /// <p>The date and time that the event ended.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date = input;
         self
     }

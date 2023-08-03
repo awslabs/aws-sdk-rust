@@ -17,9 +17,7 @@ pub fn ser_vpc(
     Ok(())
 }
 
-pub fn de_vpc(
-    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Vpc, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_vpc(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Vpc, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Vpc::builder();
     while let Some(mut tag) = decoder.next_tag() {

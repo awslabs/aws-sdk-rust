@@ -10,10 +10,7 @@ impl DescribeSenderIdsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_sender_ids::DescribeSenderIdsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sender_ids::DescribeSenderIdsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sender_ids::DescribeSenderIdsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_sender_ids();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DescribeSenderIdsFluentBuilder {
         }
     }
     /// Access the DescribeSenderIds as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_sender_ids::builders::DescribeSenderIdsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_sender_ids::builders::DescribeSenderIdsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl DescribeSenderIdsFluentBuilder {
             crate::operation::describe_sender_ids::DescribeSenderIds,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sender_ids::DescribeSenderIdsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sender_ids::DescribeSenderIdsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl DescribeSenderIdsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl DescribeSenderIdsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_sender_ids::DescribeSenderIdsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sender_ids::DescribeSenderIdsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sender_ids::DescribeSenderIdsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl DescribeSenderIdsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_sender_ids::DescribeSenderIdsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sender_ids::DescribeSenderIdsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sender_ids::DescribeSenderIdsError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl DescribeSenderIdsFluentBuilder {
             crate::operation::describe_sender_ids::DescribeSenderIds,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sender_ids::DescribeSenderIdsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sender_ids::DescribeSenderIdsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_sender_ids::paginator::DescribeSenderIdsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_sender_ids::paginator::DescribeSenderIdsPaginator {
-        crate::operation::describe_sender_ids::paginator::DescribeSenderIdsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_sender_ids::paginator::DescribeSenderIdsPaginator {
+        crate::operation::describe_sender_ids::paginator::DescribeSenderIdsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `SenderIds`.
     ///
@@ -145,17 +124,12 @@ impl DescribeSenderIdsFluentBuilder {
         self
     }
     /// <p>An array of SenderIdAndCountry objects to search for.</p>
-    pub fn set_sender_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>>,
-    ) -> Self {
+    pub fn set_sender_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>>) -> Self {
         self.inner = self.inner.set_sender_ids(input);
         self
     }
     /// <p>An array of SenderIdAndCountry objects to search for.</p>
-    pub fn get_sender_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>> {
+    pub fn get_sender_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>> {
         self.inner.get_sender_ids()
     }
     /// Appends an item to `Filters`.
@@ -168,17 +142,12 @@ impl DescribeSenderIdsFluentBuilder {
         self
     }
     /// <p>An array of SenderIdFilter objects to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>An array of SenderIdFilter objects to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SenderIdFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SenderIdFilter>> {
         self.inner.get_filters()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>

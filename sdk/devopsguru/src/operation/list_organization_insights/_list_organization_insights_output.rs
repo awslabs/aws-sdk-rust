@@ -5,12 +5,10 @@
 pub struct ListOrganizationInsightsOutput {
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub proactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProactiveOrganizationInsightSummary>>,
+    pub proactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveOrganizationInsightSummary>>,
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub reactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReactiveOrganizationInsightSummary>>,
+    pub reactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveOrganizationInsightSummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -18,15 +16,11 @@ pub struct ListOrganizationInsightsOutput {
 }
 impl ListOrganizationInsightsOutput {
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
-    pub fn proactive_insights(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProactiveOrganizationInsightSummary]> {
+    pub fn proactive_insights(&self) -> ::std::option::Option<&[crate::types::ProactiveOrganizationInsightSummary]> {
         self.proactive_insights.as_deref()
     }
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
-    pub fn reactive_insights(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReactiveOrganizationInsightSummary]> {
+    pub fn reactive_insights(&self) -> ::std::option::Option<&[crate::types::ReactiveOrganizationInsightSummary]> {
         self.reactive_insights.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -41,23 +35,17 @@ impl ::aws_http::request_id::RequestId for ListOrganizationInsightsOutput {
 }
 impl ListOrganizationInsightsOutput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationInsightsOutput`](crate::operation::list_organization_insights::ListOrganizationInsightsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_organization_insights::builders::ListOrganizationInsightsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_organization_insights::builders::ListOrganizationInsightsOutputBuilder {
         crate::operation::list_organization_insights::builders::ListOrganizationInsightsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOrganizationInsightsOutput`](crate::operation::list_organization_insights::ListOrganizationInsightsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOrganizationInsightsOutputBuilder {
-    pub(crate) proactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProactiveOrganizationInsightSummary>>,
-    pub(crate) reactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReactiveOrganizationInsightSummary>>,
+    pub(crate) proactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveOrganizationInsightSummary>>,
+    pub(crate) reactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveOrganizationInsightSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -67,10 +55,7 @@ impl ListOrganizationInsightsOutputBuilder {
     /// To override the contents of this collection use [`set_proactive_insights`](Self::set_proactive_insights).
     ///
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
-    pub fn proactive_insights(
-        mut self,
-        input: crate::types::ProactiveOrganizationInsightSummary,
-    ) -> Self {
+    pub fn proactive_insights(mut self, input: crate::types::ProactiveOrganizationInsightSummary) -> Self {
         let mut v = self.proactive_insights.unwrap_or_default();
         v.push(input);
         self.proactive_insights = ::std::option::Option::Some(v);
@@ -79,18 +64,13 @@ impl ListOrganizationInsightsOutputBuilder {
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub fn set_proactive_insights(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ProactiveOrganizationInsightSummary>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveOrganizationInsightSummary>>,
     ) -> Self {
         self.proactive_insights = input;
         self
     }
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
-    pub fn get_proactive_insights(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProactiveOrganizationInsightSummary>>
-    {
+    pub fn get_proactive_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProactiveOrganizationInsightSummary>> {
         &self.proactive_insights
     }
     /// Appends an item to `reactive_insights`.
@@ -98,30 +78,19 @@ impl ListOrganizationInsightsOutputBuilder {
     /// To override the contents of this collection use [`set_reactive_insights`](Self::set_reactive_insights).
     ///
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
-    pub fn reactive_insights(
-        mut self,
-        input: crate::types::ReactiveOrganizationInsightSummary,
-    ) -> Self {
+    pub fn reactive_insights(mut self, input: crate::types::ReactiveOrganizationInsightSummary) -> Self {
         let mut v = self.reactive_insights.unwrap_or_default();
         v.push(input);
         self.reactive_insights = ::std::option::Option::Some(v);
         self
     }
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
-    pub fn set_reactive_insights(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ReactiveOrganizationInsightSummary>,
-        >,
-    ) -> Self {
+    pub fn set_reactive_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveOrganizationInsightSummary>>) -> Self {
         self.reactive_insights = input;
         self
     }
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
-    pub fn get_reactive_insights(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReactiveOrganizationInsightSummary>>
-    {
+    pub fn get_reactive_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReactiveOrganizationInsightSummary>> {
         &self.reactive_insights
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -148,9 +117,7 @@ impl ListOrganizationInsightsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListOrganizationInsightsOutput`](crate::operation::list_organization_insights::ListOrganizationInsightsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_organization_insights::ListOrganizationInsightsOutput {
+    pub fn build(self) -> crate::operation::list_organization_insights::ListOrganizationInsightsOutput {
         crate::operation::list_organization_insights::ListOrganizationInsightsOutput {
             proactive_insights: self.proactive_insights,
             reactive_insights: self.reactive_insights,

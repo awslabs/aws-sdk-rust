@@ -6,8 +6,7 @@
 pub struct ImportAssetsFromRedshiftDataSharesRequestDetails {
     /// <p>A list of Amazon Redshift datashare assets.</p>
     #[doc(hidden)]
-    pub asset_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>,
+    pub asset_sources: ::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
     #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
@@ -17,9 +16,7 @@ pub struct ImportAssetsFromRedshiftDataSharesRequestDetails {
 }
 impl ImportAssetsFromRedshiftDataSharesRequestDetails {
     /// <p>A list of Amazon Redshift datashare assets.</p>
-    pub fn asset_sources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RedshiftDataShareAssetSourceEntry]> {
+    pub fn asset_sources(&self) -> ::std::option::Option<&[crate::types::RedshiftDataShareAssetSourceEntry]> {
         self.asset_sources.as_deref()
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
@@ -33,20 +30,16 @@ impl ImportAssetsFromRedshiftDataSharesRequestDetails {
 }
 impl ImportAssetsFromRedshiftDataSharesRequestDetails {
     /// Creates a new builder-style object to manufacture [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::types::ImportAssetsFromRedshiftDataSharesRequestDetails).
-    pub fn builder(
-    ) -> crate::types::builders::ImportAssetsFromRedshiftDataSharesRequestDetailsBuilder {
+    pub fn builder() -> crate::types::builders::ImportAssetsFromRedshiftDataSharesRequestDetailsBuilder {
         crate::types::builders::ImportAssetsFromRedshiftDataSharesRequestDetailsBuilder::default()
     }
 }
 
 /// A builder for [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::types::ImportAssetsFromRedshiftDataSharesRequestDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportAssetsFromRedshiftDataSharesRequestDetailsBuilder {
-    pub(crate) asset_sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>,
+    pub(crate) asset_sources: ::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
 }
@@ -63,20 +56,12 @@ impl ImportAssetsFromRedshiftDataSharesRequestDetailsBuilder {
         self
     }
     /// <p>A list of Amazon Redshift datashare assets.</p>
-    pub fn set_asset_sources(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>,
-        >,
-    ) -> Self {
+    pub fn set_asset_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>) -> Self {
         self.asset_sources = input;
         self
     }
     /// <p>A list of Amazon Redshift datashare assets.</p>
-    pub fn get_asset_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>
-    {
+    pub fn get_asset_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>> {
         &self.asset_sources
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>

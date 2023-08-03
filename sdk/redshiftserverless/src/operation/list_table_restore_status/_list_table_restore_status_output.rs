@@ -8,8 +8,7 @@ pub struct ListTableRestoreStatusOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
     #[doc(hidden)]
-    pub table_restore_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
+    pub table_restore_statuses: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
     _request_id: Option<String>,
 }
 impl ListTableRestoreStatusOutput {
@@ -18,9 +17,7 @@ impl ListTableRestoreStatusOutput {
         self.next_token.as_deref()
     }
     /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
-    pub fn table_restore_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TableRestoreStatus]> {
+    pub fn table_restore_statuses(&self) -> ::std::option::Option<&[crate::types::TableRestoreStatus]> {
         self.table_restore_statuses.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListTableRestoreStatusOutput {
 }
 impl ListTableRestoreStatusOutput {
     /// Creates a new builder-style object to manufacture [`ListTableRestoreStatusOutput`](crate::operation::list_table_restore_status::ListTableRestoreStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::list_table_restore_status::builders::ListTableRestoreStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_table_restore_status::builders::ListTableRestoreStatusOutputBuilder {
         crate::operation::list_table_restore_status::builders::ListTableRestoreStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTableRestoreStatusOutput`](crate::operation::list_table_restore_status::ListTableRestoreStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTableRestoreStatusOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) table_restore_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
+    pub(crate) table_restore_statuses: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
     _request_id: Option<String>,
 }
 impl ListTableRestoreStatusOutputBuilder {
@@ -76,17 +68,12 @@ impl ListTableRestoreStatusOutputBuilder {
         self
     }
     /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
-    pub fn set_table_restore_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
-    ) -> Self {
+    pub fn set_table_restore_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>) -> Self {
         self.table_restore_statuses = input;
         self
     }
     /// <p>The array of returned <code>TableRestoreStatus</code> objects.</p>
-    pub fn get_table_restore_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>> {
+    pub fn get_table_restore_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>> {
         &self.table_restore_statuses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -99,9 +86,7 @@ impl ListTableRestoreStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTableRestoreStatusOutput`](crate::operation::list_table_restore_status::ListTableRestoreStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_table_restore_status::ListTableRestoreStatusOutput {
+    pub fn build(self) -> crate::operation::list_table_restore_status::ListTableRestoreStatusOutput {
         crate::operation::list_table_restore_status::ListTableRestoreStatusOutput {
             next_token: self.next_token,
             table_restore_statuses: self.table_restore_statuses,

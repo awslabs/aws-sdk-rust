@@ -5,15 +5,12 @@
 pub struct DeleteAccountAssignmentOutput {
     /// <p>The status object for the account assignment deletion operation.</p>
     #[doc(hidden)]
-    pub account_assignment_deletion_status:
-        ::std::option::Option<crate::types::AccountAssignmentOperationStatus>,
+    pub account_assignment_deletion_status: ::std::option::Option<crate::types::AccountAssignmentOperationStatus>,
     _request_id: Option<String>,
 }
 impl DeleteAccountAssignmentOutput {
     /// <p>The status object for the account assignment deletion operation.</p>
-    pub fn account_assignment_deletion_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AccountAssignmentOperationStatus> {
+    pub fn account_assignment_deletion_status(&self) -> ::std::option::Option<&crate::types::AccountAssignmentOperationStatus> {
         self.account_assignment_deletion_status.as_ref()
     }
 }
@@ -24,44 +21,31 @@ impl ::aws_http::request_id::RequestId for DeleteAccountAssignmentOutput {
 }
 impl DeleteAccountAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountAssignmentOutput`](crate::operation::delete_account_assignment::DeleteAccountAssignmentOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_account_assignment::builders::DeleteAccountAssignmentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_account_assignment::builders::DeleteAccountAssignmentOutputBuilder {
         crate::operation::delete_account_assignment::builders::DeleteAccountAssignmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccountAssignmentOutput`](crate::operation::delete_account_assignment::DeleteAccountAssignmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccountAssignmentOutputBuilder {
-    pub(crate) account_assignment_deletion_status:
-        ::std::option::Option<crate::types::AccountAssignmentOperationStatus>,
+    pub(crate) account_assignment_deletion_status: ::std::option::Option<crate::types::AccountAssignmentOperationStatus>,
     _request_id: Option<String>,
 }
 impl DeleteAccountAssignmentOutputBuilder {
     /// <p>The status object for the account assignment deletion operation.</p>
-    pub fn account_assignment_deletion_status(
-        mut self,
-        input: crate::types::AccountAssignmentOperationStatus,
-    ) -> Self {
+    pub fn account_assignment_deletion_status(mut self, input: crate::types::AccountAssignmentOperationStatus) -> Self {
         self.account_assignment_deletion_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status object for the account assignment deletion operation.</p>
-    pub fn set_account_assignment_deletion_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountAssignmentOperationStatus>,
-    ) -> Self {
+    pub fn set_account_assignment_deletion_status(mut self, input: ::std::option::Option<crate::types::AccountAssignmentOperationStatus>) -> Self {
         self.account_assignment_deletion_status = input;
         self
     }
     /// <p>The status object for the account assignment deletion operation.</p>
-    pub fn get_account_assignment_deletion_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountAssignmentOperationStatus> {
+    pub fn get_account_assignment_deletion_status(&self) -> &::std::option::Option<crate::types::AccountAssignmentOperationStatus> {
         &self.account_assignment_deletion_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +58,7 @@ impl DeleteAccountAssignmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAccountAssignmentOutput`](crate::operation::delete_account_assignment::DeleteAccountAssignmentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_account_assignment::DeleteAccountAssignmentOutput {
+    pub fn build(self) -> crate::operation::delete_account_assignment::DeleteAccountAssignmentOutput {
         crate::operation::delete_account_assignment::DeleteAccountAssignmentOutput {
             account_assignment_deletion_status: self.account_assignment_deletion_status,
             _request_id: self._request_id,

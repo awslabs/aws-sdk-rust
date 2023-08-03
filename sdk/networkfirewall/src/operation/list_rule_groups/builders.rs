@@ -10,10 +10,7 @@ impl ListRuleGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_rule_groups::ListRuleGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rule_groups::ListRuleGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rule_groups::ListRuleGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_rule_groups();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListRuleGroupsFluentBuilder {
         }
     }
     /// Access the ListRuleGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_rule_groups::builders::ListRuleGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_rule_groups::builders::ListRuleGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListRuleGroupsFluentBuilder {
             crate::operation::list_rule_groups::ListRuleGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rule_groups::ListRuleGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rule_groups::ListRuleGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListRuleGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListRuleGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rule_groups::ListRuleGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rule_groups::ListRuleGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rule_groups::ListRuleGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListRuleGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rule_groups::ListRuleGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rule_groups::ListRuleGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rule_groups::ListRuleGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListRuleGroupsFluentBuilder {
             crate::operation::list_rule_groups::ListRuleGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rule_groups::ListRuleGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rule_groups::ListRuleGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_rule_groups::paginator::ListRuleGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_rule_groups::paginator::ListRuleGroupsPaginator {
-        crate::operation::list_rule_groups::paginator::ListRuleGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_rule_groups::paginator::ListRuleGroupsPaginator {
+        crate::operation::list_rule_groups::paginator::ListRuleGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,10 +146,7 @@ impl ListRuleGroupsFluentBuilder {
         self
     }
     /// <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule groups.</p>
-    pub fn set_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceManagedStatus>,
-    ) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::ResourceManagedStatus>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
     }
@@ -184,10 +160,7 @@ impl ListRuleGroupsFluentBuilder {
         self
     }
     /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
-    pub fn set_managed_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceManagedType>,
-    ) -> Self {
+    pub fn set_managed_type(mut self, input: ::std::option::Option<crate::types::ResourceManagedType>) -> Self {
         self.inner = self.inner.set_managed_type(input);
         self
     }

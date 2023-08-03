@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetSoftwareUpdatesOutput {
 }
 impl GetSoftwareUpdatesOutput {
     /// Creates a new builder-style object to manufacture [`GetSoftwareUpdatesOutput`](crate::operation::get_software_updates::GetSoftwareUpdatesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_software_updates::builders::GetSoftwareUpdatesOutputBuilder {
+    pub fn builder() -> crate::operation::get_software_updates::builders::GetSoftwareUpdatesOutputBuilder {
         crate::operation::get_software_updates::builders::GetSoftwareUpdatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSoftwareUpdatesOutput`](crate::operation::get_software_updates::GetSoftwareUpdatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSoftwareUpdatesOutputBuilder {
     pub(crate) updates_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -15,18 +15,14 @@ impl BatchGetCodeSnippetInput {
 }
 impl BatchGetCodeSnippetInput {
     /// Creates a new builder-style object to manufacture [`BatchGetCodeSnippetInput`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetInputBuilder {
-        crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetInputBuilder {
+        crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetCodeSnippetInput`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCodeSnippetInputBuilder {
     pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -43,30 +39,21 @@ impl BatchGetCodeSnippetInputBuilder {
         self
     }
     /// <p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>
-    pub fn set_finding_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.finding_arns = input;
         self
     }
     /// <p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>
-    pub fn get_finding_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.finding_arns
     }
     /// Consumes the builder and constructs a [`BatchGetCodeSnippetInput`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput {
-                finding_arns: self.finding_arns,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput {
+            finding_arns: self.finding_arns,
+        })
     }
 }

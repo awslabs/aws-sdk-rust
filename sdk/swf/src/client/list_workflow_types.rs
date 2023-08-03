@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`type_infos(Option<Vec<WorkflowTypeInfo>>)`](crate::operation::list_workflow_types::ListWorkflowTypesOutput::type_infos): <p>The list of workflow type information.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_workflow_types::ListWorkflowTypesOutput::next_page_token): <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     /// - On failure, responds with [`SdkError<ListWorkflowTypesError>`](crate::operation::list_workflow_types::ListWorkflowTypesError)
-    pub fn list_workflow_types(
-        &self,
-    ) -> crate::operation::list_workflow_types::builders::ListWorkflowTypesFluentBuilder {
-        crate::operation::list_workflow_types::builders::ListWorkflowTypesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_workflow_types(&self) -> crate::operation::list_workflow_types::builders::ListWorkflowTypesFluentBuilder {
+        crate::operation::list_workflow_types::builders::ListWorkflowTypesFluentBuilder::new(self.handle.clone())
     }
 }

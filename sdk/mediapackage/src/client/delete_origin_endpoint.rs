@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointFluentBuilder::set_id): The ID of the OriginEndpoint to delete.
     /// - On success, responds with [`DeleteOriginEndpointOutput`](crate::operation::delete_origin_endpoint::DeleteOriginEndpointOutput)
     /// - On failure, responds with [`SdkError<DeleteOriginEndpointError>`](crate::operation::delete_origin_endpoint::DeleteOriginEndpointError)
-    pub fn delete_origin_endpoint(
-        &self,
-    ) -> crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointFluentBuilder {
-        crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_origin_endpoint(&self) -> crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointFluentBuilder {
+        crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`lambda_functions(Option<Vec<String>>)`](crate::operation::list_lambda_functions::ListLambdaFunctionsOutput::lambda_functions): <p>The Lambdafunction ARNs associated with the specified instance.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_lambda_functions::ListLambdaFunctionsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLambdaFunctionsError>`](crate::operation::list_lambda_functions::ListLambdaFunctionsError)
-    pub fn list_lambda_functions(
-        &self,
-    ) -> crate::operation::list_lambda_functions::builders::ListLambdaFunctionsFluentBuilder {
-        crate::operation::list_lambda_functions::builders::ListLambdaFunctionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_lambda_functions(&self) -> crate::operation::list_lambda_functions::builders::ListLambdaFunctionsFluentBuilder {
+        crate::operation::list_lambda_functions::builders::ListLambdaFunctionsFluentBuilder::new(self.handle.clone())
     }
 }

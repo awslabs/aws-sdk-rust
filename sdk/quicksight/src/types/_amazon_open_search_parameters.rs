@@ -23,9 +23,7 @@ impl AmazonOpenSearchParameters {
 
 /// A builder for [`AmazonOpenSearchParameters`](crate::types::AmazonOpenSearchParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmazonOpenSearchParametersBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AmazonOpenSearchParametersBuilder {
     }
     /// Consumes the builder and constructs a [`AmazonOpenSearchParameters`](crate::types::AmazonOpenSearchParameters).
     pub fn build(self) -> crate::types::AmazonOpenSearchParameters {
-        crate::types::AmazonOpenSearchParameters {
-            domain: self.domain,
-        }
+        crate::types::AmazonOpenSearchParameters { domain: self.domain }
     }
 }

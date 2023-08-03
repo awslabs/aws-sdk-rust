@@ -10,10 +10,7 @@ impl GetFederationTokenInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_federation_token::GetFederationTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_federation_token::GetFederationTokenError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_federation_token::GetFederationTokenError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_federation_token();
         fluent_builder.inner = self;
@@ -59,9 +56,7 @@ impl GetFederationTokenFluentBuilder {
         }
     }
     /// Access the GetFederationToken as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_federation_token::builders::GetFederationTokenInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_federation_token::builders::GetFederationTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetFederationTokenFluentBuilder {
             crate::operation::get_federation_token::GetFederationToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_federation_token::GetFederationTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_federation_token::GetFederationTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -85,10 +78,7 @@ impl GetFederationTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -97,9 +87,7 @@ impl GetFederationTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_federation_token::GetFederationTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_federation_token::GetFederationTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_federation_token::GetFederationTokenError>,
     > {
         let op = self
             .inner
@@ -122,9 +110,7 @@ impl GetFederationTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_federation_token::GetFederationTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_federation_token::GetFederationTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_federation_token::GetFederationTokenError>,
     > {
         self.send_middleware().await
     }
@@ -138,9 +124,7 @@ impl GetFederationTokenFluentBuilder {
             crate::operation::get_federation_token::GetFederationToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_federation_token::GetFederationTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_federation_token::GetFederationTokenError>,
     > {
         self.customize_middleware().await
     }
@@ -218,10 +202,7 @@ impl GetFederationTokenFluentBuilder {
     /// <p>The resulting credentials can be used to access a resource that has a resource-based policy. If that policy specifically references the federated user session in the <code>Principal</code> element of the policy, the session has the permissions allowed by the policy. These permissions are granted in addition to the permissions that are granted by the session policies.</p> <note>
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
-    pub fn set_policy_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>>,
-    ) -> Self {
+    pub fn set_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>>) -> Self {
         self.inner = self.inner.set_policy_arns(input);
         self
     }
@@ -232,9 +213,7 @@ impl GetFederationTokenFluentBuilder {
     /// <p>The resulting credentials can be used to access a resource that has a resource-based policy. If that policy specifically references the federated user session in the <code>Principal</code> element of the policy, the session has the permissions allowed by the policy. These permissions are granted in addition to the permissions that are granted by the session policies.</p> <note>
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
-    pub fn get_policy_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>> {
+    pub fn get_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>> {
         self.inner.get_policy_arns()
     }
     /// <p>The duration, in seconds, that the session should last. Acceptable durations for federation sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default. Sessions obtained using root user credentials are restricted to a maximum of 3,600 seconds (one hour). If the specified duration is longer than one hour, the session obtained by using root user credentials defaults to one hour.</p>
@@ -271,10 +250,7 @@ impl GetFederationTokenFluentBuilder {
     /// </note>
     /// <p>You can pass a session tag with the same key as a tag that is already attached to the user you are federating. When you do, session tags override a user tag with the same key. </p>
     /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume that the role has the <code>Department</code>=<code>Marketing</code> tag and you pass the <code>department</code>=<code>engineering</code> session tag. <code>Department</code> and <code>department</code> are not saved as separate tags, and the session tag passed in the request takes precedence over the role tag.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

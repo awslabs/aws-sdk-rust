@@ -65,9 +65,7 @@ impl Webhook {
 
 /// A builder for [`Webhook`](crate::types::Webhook).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WebhookBuilder {
     pub(crate) webhook_arn: ::std::option::Option<::std::string::String>,
     pub(crate) webhook_id: ::std::option::Option<::std::string::String>,
@@ -154,10 +152,7 @@ impl WebhookBuilder {
         self
     }
     /// <p> The create date and time for a webhook. </p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -171,10 +166,7 @@ impl WebhookBuilder {
         self
     }
     /// <p> Updates the date and time for a webhook. </p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }

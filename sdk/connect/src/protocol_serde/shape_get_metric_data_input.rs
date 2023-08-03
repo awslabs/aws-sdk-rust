@@ -29,10 +29,7 @@ pub fn ser_get_metric_data_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_historical_metric::ser_historical_metric(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_historical_metric::ser_historical_metric(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

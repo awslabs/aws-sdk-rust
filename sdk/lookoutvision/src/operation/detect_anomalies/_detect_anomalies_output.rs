@@ -10,9 +10,7 @@ pub struct DetectAnomaliesOutput {
 }
 impl DetectAnomaliesOutput {
     /// <p>The results of the <code>DetectAnomalies</code> operation.</p>
-    pub fn detect_anomaly_result(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DetectAnomalyResult> {
+    pub fn detect_anomaly_result(&self) -> ::std::option::Option<&crate::types::DetectAnomalyResult> {
         self.detect_anomaly_result.as_ref()
     }
 }
@@ -30,9 +28,7 @@ impl DetectAnomaliesOutput {
 
 /// A builder for [`DetectAnomaliesOutput`](crate::operation::detect_anomalies::DetectAnomaliesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectAnomaliesOutputBuilder {
     pub(crate) detect_anomaly_result: ::std::option::Option<crate::types::DetectAnomalyResult>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl DetectAnomaliesOutputBuilder {
         self
     }
     /// <p>The results of the <code>DetectAnomalies</code> operation.</p>
-    pub fn set_detect_anomaly_result(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectAnomalyResult>,
-    ) -> Self {
+    pub fn set_detect_anomaly_result(mut self, input: ::std::option::Option<crate::types::DetectAnomalyResult>) -> Self {
         self.detect_anomaly_result = input;
         self
     }
     /// <p>The results of the <code>DetectAnomalies</code> operation.</p>
-    pub fn get_detect_anomaly_result(
-        &self,
-    ) -> &::std::option::Option<crate::types::DetectAnomalyResult> {
+    pub fn get_detect_anomaly_result(&self) -> &::std::option::Option<crate::types::DetectAnomalyResult> {
         &self.detect_anomaly_result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

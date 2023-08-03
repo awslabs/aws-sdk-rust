@@ -15,16 +15,14 @@ impl DisassociateConnectionAliasInput {
 }
 impl DisassociateConnectionAliasInput {
     /// Creates a new builder-style object to manufacture [`DisassociateConnectionAliasInput`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput).
-    pub fn builder() -> crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasInputBuilder {
         crate::operation::disassociate_connection_alias::builders::DisassociateConnectionAliasInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateConnectionAliasInput`](crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateConnectionAliasInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DisassociateConnectionAliasInputBuilder {
         crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput {
-                alias_id: self.alias_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_connection_alias::DisassociateConnectionAliasInput { alias_id: self.alias_id })
     }
 }

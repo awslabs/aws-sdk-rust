@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`desired_shard_level_metrics(Option<Vec<MetricsName>>)`](crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringOutput::desired_shard_level_metrics): <p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>
     ///   - [`stream_arn(Option<String>)`](crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringOutput::stream_arn): <p>The ARN of the stream.</p>
     /// - On failure, responds with [`SdkError<EnableEnhancedMonitoringError>`](crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError)
-    pub fn enable_enhanced_monitoring(
-        &self,
-    ) -> crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringFluentBuilder
-    {
+    pub fn enable_enhanced_monitoring(&self) -> crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringFluentBuilder {
         crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringFluentBuilder::new(self.handle.clone())
     }
 }

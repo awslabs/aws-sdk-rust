@@ -10,10 +10,7 @@ impl BundleInstanceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::bundle_instance::BundleInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::bundle_instance::BundleInstanceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::bundle_instance::BundleInstanceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.bundle_instance();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl BundleInstanceFluentBuilder {
         }
     }
     /// Access the BundleInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::bundle_instance::builders::BundleInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::bundle_instance::builders::BundleInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl BundleInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`api_key_summaries(Option<Vec<ApiKeySummary>>)`](crate::operation::list_api_keys::ListApiKeysOutput::api_key_summaries): <p>The array of key summaries. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     ///   - [`application_integration_url(Option<String>)`](crate::operation::list_api_keys::ListApiKeysOutput::application_integration_url): <p>The CAPTCHA application integration URL, for use in your JavaScript implementation. </p>
     /// - On failure, responds with [`SdkError<ListAPIKeysError>`](crate::operation::list_api_keys::ListAPIKeysError)
-    pub fn list_api_keys(
-        &self,
-    ) -> crate::operation::list_api_keys::builders::ListAPIKeysFluentBuilder {
-        crate::operation::list_api_keys::builders::ListAPIKeysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_api_keys(&self) -> crate::operation::list_api_keys::builders::ListAPIKeysFluentBuilder {
+        crate::operation::list_api_keys::builders::ListAPIKeysFluentBuilder::new(self.handle.clone())
     }
 }

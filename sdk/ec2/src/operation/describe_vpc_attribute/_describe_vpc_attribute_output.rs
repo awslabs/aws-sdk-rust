@@ -14,8 +14,7 @@ pub struct DescribeVpcAttributeOutput {
     pub enable_dns_support: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
     #[doc(hidden)]
-    pub enable_network_address_usage_metrics:
-        ::std::option::Option<crate::types::AttributeBooleanValue>,
+    pub enable_network_address_usage_metrics: ::std::option::Option<crate::types::AttributeBooleanValue>,
     _request_id: Option<String>,
 }
 impl DescribeVpcAttributeOutput {
@@ -24,21 +23,15 @@ impl DescribeVpcAttributeOutput {
         self.vpc_id.as_deref()
     }
     /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
-    pub fn enable_dns_hostnames(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
+    pub fn enable_dns_hostnames(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.enable_dns_hostnames.as_ref()
     }
     /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
-    pub fn enable_dns_support(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
+    pub fn enable_dns_support(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.enable_dns_support.as_ref()
     }
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
-    pub fn enable_network_address_usage_metrics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
+    pub fn enable_network_address_usage_metrics(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.enable_network_address_usage_metrics.as_ref()
     }
 }
@@ -49,23 +42,19 @@ impl ::aws_http::request_id::RequestId for DescribeVpcAttributeOutput {
 }
 impl DescribeVpcAttributeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcAttributeOutput`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeOutputBuilder {
+    pub fn builder() -> crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeOutputBuilder {
         crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcAttributeOutput`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcAttributeOutputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable_dns_hostnames: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) enable_dns_support: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    pub(crate) enable_network_address_usage_metrics:
-        ::std::option::Option<crate::types::AttributeBooleanValue>,
+    pub(crate) enable_network_address_usage_metrics: ::std::option::Option<crate::types::AttributeBooleanValue>,
     _request_id: Option<String>,
 }
 impl DescribeVpcAttributeOutputBuilder {
@@ -89,17 +78,12 @@ impl DescribeVpcAttributeOutputBuilder {
         self
     }
     /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
-    pub fn set_enable_dns_hostnames(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_enable_dns_hostnames(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.enable_dns_hostnames = input;
         self
     }
     /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
-    pub fn get_enable_dns_hostnames(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_enable_dns_hostnames(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.enable_dns_hostnames
     }
     /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
@@ -108,39 +92,26 @@ impl DescribeVpcAttributeOutputBuilder {
         self
     }
     /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
-    pub fn set_enable_dns_support(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_enable_dns_support(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.enable_dns_support = input;
         self
     }
     /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
-    pub fn get_enable_dns_support(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_enable_dns_support(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.enable_dns_support
     }
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
-    pub fn enable_network_address_usage_metrics(
-        mut self,
-        input: crate::types::AttributeBooleanValue,
-    ) -> Self {
+    pub fn enable_network_address_usage_metrics(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.enable_network_address_usage_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
-    pub fn set_enable_network_address_usage_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_enable_network_address_usage_metrics(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.enable_network_address_usage_metrics = input;
         self
     }
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
-    pub fn get_enable_network_address_usage_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_enable_network_address_usage_metrics(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.enable_network_address_usage_metrics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

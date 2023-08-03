@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`vpn_tunnel_outside_ip_address(Option<String>)`](crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusOutput::vpn_tunnel_outside_ip_address): <p>The external IP address of the VPN tunnel.</p>
     ///   - [`maintenance_details(Option<MaintenanceDetails>)`](crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusOutput::maintenance_details): <p>Get details of pending tunnel endpoint maintenance.</p>
     /// - On failure, responds with [`SdkError<GetVpnTunnelReplacementStatusError>`](crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusError)
-    pub fn get_vpn_tunnel_replacement_status(&self) -> crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusFluentBuilder{
+    pub fn get_vpn_tunnel_replacement_status(
+        &self,
+    ) -> crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusFluentBuilder {
         crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusFluentBuilder::new(self.handle.clone())
     }
 }

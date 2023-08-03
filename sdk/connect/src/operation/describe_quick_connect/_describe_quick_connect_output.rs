@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeQuickConnectOutput {
 }
 impl DescribeQuickConnectOutput {
     /// Creates a new builder-style object to manufacture [`DescribeQuickConnectOutput`](crate::operation::describe_quick_connect::DescribeQuickConnectOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_quick_connect::builders::DescribeQuickConnectOutputBuilder {
+    pub fn builder() -> crate::operation::describe_quick_connect::builders::DescribeQuickConnectOutputBuilder {
         crate::operation::describe_quick_connect::builders::DescribeQuickConnectOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeQuickConnectOutput`](crate::operation::describe_quick_connect::DescribeQuickConnectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeQuickConnectOutputBuilder {
     pub(crate) quick_connect: ::std::option::Option<crate::types::QuickConnect>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeQuickConnectOutputBuilder {
         self
     }
     /// <p>Information about the quick connect.</p>
-    pub fn set_quick_connect(
-        mut self,
-        input: ::std::option::Option<crate::types::QuickConnect>,
-    ) -> Self {
+    pub fn set_quick_connect(mut self, input: ::std::option::Option<crate::types::QuickConnect>) -> Self {
         self.quick_connect = input;
         self
     }

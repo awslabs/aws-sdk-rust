@@ -37,9 +37,7 @@ impl ListDevicePositionsFluentBuilder {
         }
     }
     /// Access the ListDevicePositions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_device_positions::builders::ListDevicePositionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_device_positions::builders::ListDevicePositionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListDevicePositionsFluentBuilder {
             crate::operation::list_device_positions::ListDevicePositions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_positions::ListDevicePositionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_positions::ListDevicePositionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListDevicePositionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListDevicePositionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_device_positions::ListDevicePositionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_positions::ListDevicePositionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_positions::ListDevicePositionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListDevicePositionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_device_positions::ListDevicePositionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_positions::ListDevicePositionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_positions::ListDevicePositionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListDevicePositionsFluentBuilder {
             crate::operation::list_device_positions::ListDevicePositions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_positions::ListDevicePositionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_positions::ListDevicePositionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_device_positions::paginator::ListDevicePositionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_device_positions::paginator::ListDevicePositionsPaginator {
-        crate::operation::list_device_positions::paginator::ListDevicePositionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_device_positions::paginator::ListDevicePositionsPaginator {
+        crate::operation::list_device_positions::paginator::ListDevicePositionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The tracker resource containing the requested devices.</p>
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

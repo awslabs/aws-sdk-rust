@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`source_access_token(Option<String>)`](crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenOutput::source_access_token): <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
     ///   - [`destination_access_token(Option<String>)`](crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenOutput::destination_access_token): <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
     /// - On failure, responds with [`SdkError<RotateTunnelAccessTokenError>`](crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenError)
-    pub fn rotate_tunnel_access_token(
-        &self,
-    ) -> crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenFluentBuilder
-    {
+    pub fn rotate_tunnel_access_token(&self) -> crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenFluentBuilder {
         crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenFluentBuilder::new(self.handle.clone())
     }
 }

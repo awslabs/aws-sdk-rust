@@ -28,15 +28,11 @@ impl Output {
         self.name.as_deref()
     }
     /// <p>Identifies an Amazon Kinesis stream as the destination.</p>
-    pub fn kinesis_streams_output(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KinesisStreamsOutput> {
+    pub fn kinesis_streams_output(&self) -> ::std::option::Option<&crate::types::KinesisStreamsOutput> {
         self.kinesis_streams_output.as_ref()
     }
     /// <p>Identifies an Amazon Kinesis Firehose delivery stream as the destination.</p>
-    pub fn kinesis_firehose_output(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KinesisFirehoseOutput> {
+    pub fn kinesis_firehose_output(&self) -> ::std::option::Option<&crate::types::KinesisFirehoseOutput> {
         self.kinesis_firehose_output.as_ref()
     }
     /// <p>Identifies an AWS Lambda function as the destination.</p>
@@ -57,9 +53,7 @@ impl Output {
 
 /// A builder for [`Output`](crate::types::Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) kinesis_streams_output: ::std::option::Option<crate::types::KinesisStreamsOutput>,
@@ -88,17 +82,12 @@ impl OutputBuilder {
         self
     }
     /// <p>Identifies an Amazon Kinesis stream as the destination.</p>
-    pub fn set_kinesis_streams_output(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisStreamsOutput>,
-    ) -> Self {
+    pub fn set_kinesis_streams_output(mut self, input: ::std::option::Option<crate::types::KinesisStreamsOutput>) -> Self {
         self.kinesis_streams_output = input;
         self
     }
     /// <p>Identifies an Amazon Kinesis stream as the destination.</p>
-    pub fn get_kinesis_streams_output(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisStreamsOutput> {
+    pub fn get_kinesis_streams_output(&self) -> &::std::option::Option<crate::types::KinesisStreamsOutput> {
         &self.kinesis_streams_output
     }
     /// <p>Identifies an Amazon Kinesis Firehose delivery stream as the destination.</p>
@@ -107,17 +96,12 @@ impl OutputBuilder {
         self
     }
     /// <p>Identifies an Amazon Kinesis Firehose delivery stream as the destination.</p>
-    pub fn set_kinesis_firehose_output(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisFirehoseOutput>,
-    ) -> Self {
+    pub fn set_kinesis_firehose_output(mut self, input: ::std::option::Option<crate::types::KinesisFirehoseOutput>) -> Self {
         self.kinesis_firehose_output = input;
         self
     }
     /// <p>Identifies an Amazon Kinesis Firehose delivery stream as the destination.</p>
-    pub fn get_kinesis_firehose_output(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisFirehoseOutput> {
+    pub fn get_kinesis_firehose_output(&self) -> &::std::option::Option<crate::types::KinesisFirehoseOutput> {
         &self.kinesis_firehose_output
     }
     /// <p>Identifies an AWS Lambda function as the destination.</p>
@@ -126,10 +110,7 @@ impl OutputBuilder {
         self
     }
     /// <p>Identifies an AWS Lambda function as the destination.</p>
-    pub fn set_lambda_output(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaOutput>,
-    ) -> Self {
+    pub fn set_lambda_output(mut self, input: ::std::option::Option<crate::types::LambdaOutput>) -> Self {
         self.lambda_output = input;
         self
     }
@@ -143,17 +124,12 @@ impl OutputBuilder {
         self
     }
     /// <p>Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
-    pub fn set_destination_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationSchema>,
-    ) -> Self {
+    pub fn set_destination_schema(mut self, input: ::std::option::Option<crate::types::DestinationSchema>) -> Self {
         self.destination_schema = input;
         self
     }
     /// <p>Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
-    pub fn get_destination_schema(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationSchema> {
+    pub fn get_destination_schema(&self) -> &::std::option::Option<crate::types::DestinationSchema> {
         &self.destination_schema
     }
     /// Consumes the builder and constructs a [`Output`](crate::types::Output).

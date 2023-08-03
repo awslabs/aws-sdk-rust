@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListProtectedResourcesOutput {
 }
 impl ListProtectedResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListProtectedResourcesOutput`](crate::operation::list_protected_resources::ListProtectedResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_protected_resources::builders::ListProtectedResourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_protected_resources::builders::ListProtectedResourcesOutputBuilder {
         crate::operation::list_protected_resources::builders::ListProtectedResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProtectedResourcesOutput`](crate::operation::list_protected_resources::ListProtectedResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProtectedResourcesOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListProtectedResourcesOutputBuilder {
         self
     }
     /// <p>An array of resources successfully backed up by Backup including the time the resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource type.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResource>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResource>>) -> Self {
         self.results = input;
         self
     }
     /// <p>An array of resources successfully backed up by Backup including the time the resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource type.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedResource>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedResource>> {
         &self.results
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>

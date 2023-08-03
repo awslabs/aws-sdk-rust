@@ -36,9 +36,7 @@ impl TagAttendeeInput {
 
 /// A builder for [`TagAttendeeInput`](crate::operation::tag_attendee::TagAttendeeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagAttendeeInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
     pub(crate) attendee_id: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl TagAttendeeInputBuilder {
         self
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -97,12 +92,7 @@ impl TagAttendeeInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagAttendeeInput`](crate::operation::tag_attendee::TagAttendeeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::tag_attendee::TagAttendeeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::tag_attendee::TagAttendeeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::tag_attendee::TagAttendeeInput {
             meeting_id: self.meeting_id,
             attendee_id: self.attendee_id,

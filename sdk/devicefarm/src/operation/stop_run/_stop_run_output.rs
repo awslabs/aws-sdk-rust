@@ -29,9 +29,7 @@ impl StopRunOutput {
 
 /// A builder for [`StopRunOutput`](crate::operation::stop_run::StopRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopRunOutputBuilder {
     pub(crate) run: ::std::option::Option<crate::types::Run>,
     _request_id: Option<String>,

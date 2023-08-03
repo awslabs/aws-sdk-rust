@@ -10,10 +10,7 @@ impl DeleteClassifierInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_classifier::DeleteClassifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_classifier::DeleteClassifierError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_classifier::DeleteClassifierError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_classifier();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteClassifierFluentBuilder {
         }
     }
     /// Access the DeleteClassifier as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_classifier::builders::DeleteClassifierInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_classifier::builders::DeleteClassifierInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteClassifierFluentBuilder {
             crate::operation::delete_classifier::DeleteClassifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_classifier::DeleteClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_classifier::DeleteClassifierError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteClassifierFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteClassifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_classifier::DeleteClassifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_classifier::DeleteClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_classifier::DeleteClassifierError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteClassifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_classifier::DeleteClassifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_classifier::DeleteClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_classifier::DeleteClassifierError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteClassifierFluentBuilder {
             crate::operation::delete_classifier::DeleteClassifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_classifier::DeleteClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_classifier::DeleteClassifierError>,
     > {
         self.customize_middleware().await
     }

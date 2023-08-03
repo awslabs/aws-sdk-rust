@@ -44,9 +44,7 @@ impl Maintenance {
 
 /// A builder for [`Maintenance`](crate::types::Maintenance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MaintenanceBuilder {
     pub(crate) maintenance_day: ::std::option::Option<crate::types::MaintenanceDay>,
     pub(crate) maintenance_deadline: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl MaintenanceBuilder {
         self
     }
     /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-    pub fn set_maintenance_day(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceDay>,
-    ) -> Self {
+    pub fn set_maintenance_day(mut self, input: ::std::option::Option<crate::types::MaintenanceDay>) -> Self {
         self.maintenance_day = input;
         self
     }
@@ -72,18 +67,12 @@ impl MaintenanceBuilder {
         &self.maintenance_day
     }
     /// The Maintenance has to be performed before this deadline in ISO UTC format. Example: 2021-01-30T08:30:00Z.
-    pub fn maintenance_deadline(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maintenance_deadline(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_deadline = ::std::option::Option::Some(input.into());
         self
     }
     /// The Maintenance has to be performed before this deadline in ISO UTC format. Example: 2021-01-30T08:30:00Z.
-    pub fn set_maintenance_deadline(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maintenance_deadline(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_deadline = input;
         self
     }
@@ -92,18 +81,12 @@ impl MaintenanceBuilder {
         &self.maintenance_deadline
     }
     /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
-    pub fn maintenance_scheduled_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maintenance_scheduled_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_scheduled_date = ::std::option::Option::Some(input.into());
         self
     }
     /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
-    pub fn set_maintenance_scheduled_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maintenance_scheduled_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_scheduled_date = input;
         self
     }
@@ -112,18 +95,12 @@ impl MaintenanceBuilder {
         &self.maintenance_scheduled_date
     }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
-    pub fn maintenance_start_hour(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maintenance_start_hour(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_start_hour = ::std::option::Option::Some(input.into());
         self
     }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
-    pub fn set_maintenance_start_hour(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maintenance_start_hour(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_start_hour = input;
         self
     }

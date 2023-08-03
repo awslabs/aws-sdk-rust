@@ -29,18 +29,14 @@ impl EnableAddressTransferInput {
 }
 impl EnableAddressTransferInput {
     /// Creates a new builder-style object to manufacture [`EnableAddressTransferInput`](crate::operation::enable_address_transfer::EnableAddressTransferInput).
-    pub fn builder(
-    ) -> crate::operation::enable_address_transfer::builders::EnableAddressTransferInputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_address_transfer::builders::EnableAddressTransferInputBuilder {
         crate::operation::enable_address_transfer::builders::EnableAddressTransferInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableAddressTransferInput`](crate::operation::enable_address_transfer::EnableAddressTransferInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableAddressTransferInputBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) transfer_account_id: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct EnableAddressTransferInputBuilder {
 }
 impl EnableAddressTransferInputBuilder {
     /// <p>The allocation ID of an Elastic IP address.</p>
-    pub fn allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The allocation ID of an Elastic IP address.</p>
-    pub fn set_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allocation_id = input;
         self
     }
@@ -68,18 +58,12 @@ impl EnableAddressTransferInputBuilder {
         &self.allocation_id
     }
     /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
-    pub fn transfer_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transfer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transfer_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
-    pub fn set_transfer_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transfer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transfer_account_id = input;
         self
     }
@@ -104,16 +88,12 @@ impl EnableAddressTransferInputBuilder {
     /// Consumes the builder and constructs a [`EnableAddressTransferInput`](crate::operation::enable_address_transfer::EnableAddressTransferInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_address_transfer::EnableAddressTransferInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::enable_address_transfer::EnableAddressTransferInput {
-                allocation_id: self.allocation_id,
-                transfer_account_id: self.transfer_account_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::enable_address_transfer::EnableAddressTransferInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::enable_address_transfer::EnableAddressTransferInput {
+            allocation_id: self.allocation_id,
+            transfer_account_id: self.transfer_account_id,
+            dry_run: self.dry_run,
+        })
     }
 }

@@ -15,7 +15,10 @@ pub fn ser_salesforce_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_salesforce_standard_object_configuration::ser_salesforce_standard_object_configuration(&mut object_6, item_5)?;
+                crate::protocol_serde::shape_salesforce_standard_object_configuration::ser_salesforce_standard_object_configuration(
+                    &mut object_6,
+                    item_5,
+                )?;
                 object_6.finish();
             }
         }
@@ -24,7 +27,10 @@ pub fn ser_salesforce_configuration(
     if let Some(var_7) = &input.knowledge_article_configuration {
         #[allow(unused_mut)]
         let mut object_8 = object.key("KnowledgeArticleConfiguration").start_object();
-        crate::protocol_serde::shape_salesforce_knowledge_article_configuration::ser_salesforce_knowledge_article_configuration(&mut object_8, var_7)?;
+        crate::protocol_serde::shape_salesforce_knowledge_article_configuration::ser_salesforce_knowledge_article_configuration(
+            &mut object_8,
+            var_7,
+        )?;
         object_8.finish();
     }
     if let Some(var_9) = &input.chatter_feed_configuration {
@@ -34,16 +40,15 @@ pub fn ser_salesforce_configuration(
         object_10.finish();
     }
     if input.crawl_attachments {
-        object
-            .key("CrawlAttachments")
-            .boolean(input.crawl_attachments);
+        object.key("CrawlAttachments").boolean(input.crawl_attachments);
     }
     if let Some(var_11) = &input.standard_object_attachment_configuration {
         #[allow(unused_mut)]
-        let mut object_12 = object
-            .key("StandardObjectAttachmentConfiguration")
-            .start_object();
-        crate::protocol_serde::shape_salesforce_standard_object_attachment_configuration::ser_salesforce_standard_object_attachment_configuration(&mut object_12, var_11)?;
+        let mut object_12 = object.key("StandardObjectAttachmentConfiguration").start_object();
+        crate::protocol_serde::shape_salesforce_standard_object_attachment_configuration::ser_salesforce_standard_object_attachment_configuration(
+            &mut object_12,
+            var_11,
+        )?;
         object_12.finish();
     }
     if let Some(var_13) = &input.include_attachment_file_patterns {
@@ -69,17 +74,9 @@ pub fn ser_salesforce_configuration(
 
 pub(crate) fn de_salesforce_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SalesforceConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SalesforceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -93,20 +90,16 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "ServerUrl" => {
                                 builder = builder.set_server_url(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "SecretArn" => {
                                 builder = builder.set_secret_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "StandardObjectConfigurations" => {
@@ -121,15 +114,13 @@ where
                             }
                             "ChatterFeedConfiguration" => {
                                 builder = builder.set_chatter_feed_configuration(
-                                    crate::protocol_serde::shape_salesforce_chatter_feed_configuration::de_salesforce_chatter_feed_configuration(tokens)?
+                                    crate::protocol_serde::shape_salesforce_chatter_feed_configuration::de_salesforce_chatter_feed_configuration(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "CrawlAttachments" => {
-                                builder = builder.set_crawl_attachments(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
+                                builder = builder.set_crawl_attachments(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                             }
                             "StandardObjectAttachmentConfiguration" => {
                                 builder = builder.set_standard_object_attachment_configuration(
@@ -150,20 +141,17 @@ where
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeAcceleratorOfferingsOutput`](crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput) with field(s):
     ///   - [`accelerator_type_offerings(Option<Vec<AcceleratorTypeOffering>>)`](crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput::accelerator_type_offerings): <p> The list of accelerator type offerings for a specific location. </p>
     /// - On failure, responds with [`SdkError<DescribeAcceleratorOfferingsError>`](crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError)
-    pub fn describe_accelerator_offerings(&self) -> crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsFluentBuilder{
+    pub fn describe_accelerator_offerings(
+        &self,
+    ) -> crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsFluentBuilder {
         crate::operation::describe_accelerator_offerings::builders::DescribeAcceleratorOfferingsFluentBuilder::new(self.handle.clone())
     }
 }

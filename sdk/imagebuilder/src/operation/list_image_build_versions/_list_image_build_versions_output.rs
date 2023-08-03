@@ -35,22 +35,17 @@ impl ::aws_http::request_id::RequestId for ListImageBuildVersionsOutput {
 }
 impl ListImageBuildVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListImageBuildVersionsOutput`](crate::operation::list_image_build_versions::ListImageBuildVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_image_build_versions::builders::ListImageBuildVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_image_build_versions::builders::ListImageBuildVersionsOutputBuilder {
         crate::operation::list_image_build_versions::builders::ListImageBuildVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListImageBuildVersionsOutput`](crate::operation::list_image_build_versions::ListImageBuildVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImageBuildVersionsOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) image_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImageSummary>>,
+    pub(crate) image_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ImageSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -81,17 +76,12 @@ impl ListImageBuildVersionsOutputBuilder {
         self
     }
     /// <p>The list of image build versions.</p>
-    pub fn set_image_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageSummary>>,
-    ) -> Self {
+    pub fn set_image_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageSummary>>) -> Self {
         self.image_summary_list = input;
         self
     }
     /// <p>The list of image build versions.</p>
-    pub fn get_image_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageSummary>> {
+    pub fn get_image_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageSummary>> {
         &self.image_summary_list
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
@@ -118,9 +108,7 @@ impl ListImageBuildVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListImageBuildVersionsOutput`](crate::operation::list_image_build_versions::ListImageBuildVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_image_build_versions::ListImageBuildVersionsOutput {
+    pub fn build(self) -> crate::operation::list_image_build_versions::ListImageBuildVersionsOutput {
         crate::operation::list_image_build_versions::ListImageBuildVersionsOutput {
             request_id: self.request_id,
             image_summary_list: self.image_summary_list,

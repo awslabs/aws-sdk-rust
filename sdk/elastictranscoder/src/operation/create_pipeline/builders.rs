@@ -10,10 +10,7 @@ impl CreatePipelineInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_pipeline::CreatePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pipeline::CreatePipelineError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pipeline::CreatePipelineError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_pipeline();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreatePipelineFluentBuilder {
         }
     }
     /// Access the CreatePipeline as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_pipeline::builders::CreatePipelineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_pipeline::builders::CreatePipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreatePipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -156,10 +148,7 @@ impl CreatePipelineFluentBuilder {
     /// <li> <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p> </li>
     /// </ul>
     /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit <code>OutputBucket</code> and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.</p>
-    pub fn output_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_bucket(input.into());
         self
     }
@@ -174,10 +163,7 @@ impl CreatePipelineFluentBuilder {
     /// <li> <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p> </li>
     /// </ul>
     /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit <code>OutputBucket</code> and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.</p>
-    pub fn set_output_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_bucket(input);
         self
     }
@@ -211,19 +197,13 @@ impl CreatePipelineFluentBuilder {
     }
     /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
     /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
-    pub fn aws_kms_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_kms_key_arn(input.into());
         self
     }
     /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
     /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
-    pub fn set_aws_kms_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_kms_key_arn(input);
         self
     }
@@ -254,10 +234,7 @@ impl CreatePipelineFluentBuilder {
     /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition while processing a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition while processing a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// </ul>
-    pub fn set_notifications(
-        mut self,
-        input: ::std::option::Option<crate::types::Notifications>,
-    ) -> Self {
+    pub fn set_notifications(mut self, input: ::std::option::Option<crate::types::Notifications>) -> Self {
         self.inner = self.inner.set_notifications(input);
         self
     }
@@ -325,10 +302,7 @@ impl CreatePipelineFluentBuilder {
     /// </ul> </li>
     /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p> </li>
     /// </ul>
-    pub fn set_content_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineOutputConfig>,
-    ) -> Self {
+    pub fn set_content_config(mut self, input: ::std::option::Option<crate::types::PipelineOutputConfig>) -> Self {
         self.inner = self.inner.set_content_config(input);
         self
     }
@@ -411,10 +385,7 @@ impl CreatePipelineFluentBuilder {
     /// </ul> </li>
     /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket.</p> </li>
     /// </ul>
-    pub fn set_thumbnail_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineOutputConfig>,
-    ) -> Self {
+    pub fn set_thumbnail_config(mut self, input: ::std::option::Option<crate::types::PipelineOutputConfig>) -> Self {
         self.inner = self.inner.set_thumbnail_config(input);
         self
     }
@@ -442,9 +413,7 @@ impl CreatePipelineFluentBuilder {
     /// </ul> </li>
     /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket.</p> </li>
     /// </ul>
-    pub fn get_thumbnail_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipelineOutputConfig> {
+    pub fn get_thumbnail_config(&self) -> &::std::option::Option<crate::types::PipelineOutputConfig> {
         self.inner.get_thumbnail_config()
     }
 }

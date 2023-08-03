@@ -37,9 +37,7 @@ impl GrpcGatewayRouteMetadata {
 
 /// A builder for [`GrpcGatewayRouteMetadata`](crate::types::GrpcGatewayRouteMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrpcGatewayRouteMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) invert: ::std::option::Option<bool>,
@@ -80,10 +78,7 @@ impl GrpcGatewayRouteMetadataBuilder {
         self
     }
     /// <p>The criteria for determining a metadata match.</p>
-    pub fn set_match(
-        mut self,
-        input: ::std::option::Option<crate::types::GrpcMetadataMatchMethod>,
-    ) -> Self {
+    pub fn set_match(mut self, input: ::std::option::Option<crate::types::GrpcMetadataMatchMethod>) -> Self {
         self.r#match = input;
         self
     }

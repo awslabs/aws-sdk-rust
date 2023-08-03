@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateWebAclOutput {
 }
 impl AssociateWebAclOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWebAclOutput`](crate::operation::associate_web_acl::AssociateWebAclOutput).
-    pub fn builder() -> crate::operation::associate_web_acl::builders::AssociateWebAclOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_web_acl::builders::AssociateWebAclOutputBuilder {
         crate::operation::associate_web_acl::builders::AssociateWebAclOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateWebAclOutput`](crate::operation::associate_web_acl::AssociateWebAclOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateWebAclOutputBuilder {
     _request_id: Option<String>,
 }

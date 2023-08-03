@@ -28,27 +28,19 @@ impl GetPromptFileOutput {
 
 /// A builder for [`GetPromptFileOutput`](crate::operation::get_prompt_file::GetPromptFileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPromptFileOutputBuilder {
     pub(crate) prompt_presigned_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPromptFileOutputBuilder {
     /// <p>A generated URL to the prompt that can be given to an unauthorized user so they can access the prompt in S3.</p>
-    pub fn prompt_presigned_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prompt_presigned_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prompt_presigned_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A generated URL to the prompt that can be given to an unauthorized user so they can access the prompt in S3.</p>
-    pub fn set_prompt_presigned_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prompt_presigned_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prompt_presigned_url = input;
         self
     }

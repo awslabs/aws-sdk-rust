@@ -65,18 +65,14 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
 }
 impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails`](crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails`](crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder {
     pub(crate) delete_on_termination: ::std::option::Option<bool>,
     pub(crate) encrypted: ::std::option::Option<bool>,

@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_project::DescribeProjectOutput::last_modified_time): <p>The timestamp when project was last modified.</p>
     ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_project::DescribeProjectOutput::last_modified_by): <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     /// - On failure, responds with [`SdkError<DescribeProjectError>`](crate::operation::describe_project::DescribeProjectError)
-    pub fn describe_project(
-        &self,
-    ) -> crate::operation::describe_project::builders::DescribeProjectFluentBuilder {
-        crate::operation::describe_project::builders::DescribeProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_project(&self) -> crate::operation::describe_project::builders::DescribeProjectFluentBuilder {
+        crate::operation::describe_project::builders::DescribeProjectFluentBuilder::new(self.handle.clone())
     }
 }

@@ -41,9 +41,7 @@ impl RelatedItem {
 
 /// A builder for [`RelatedItem`](crate::types::RelatedItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelatedItemBuilder {
     pub(crate) identifier: ::std::option::Option<crate::types::ItemIdentifier>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl RelatedItemBuilder {
         self
     }
     /// <p>Details about the related item.</p>
-    pub fn set_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ItemIdentifier>,
-    ) -> Self {
+    pub fn set_identifier(mut self, input: ::std::option::Option<crate::types::ItemIdentifier>) -> Self {
         self.identifier = input;
         self
     }

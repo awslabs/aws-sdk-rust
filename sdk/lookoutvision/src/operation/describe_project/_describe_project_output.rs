@@ -28,9 +28,7 @@ impl DescribeProjectOutput {
 
 /// A builder for [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProjectOutputBuilder {
     pub(crate) project_description: ::std::option::Option<crate::types::ProjectDescription>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl DescribeProjectOutputBuilder {
         self
     }
     /// <p>The description of the project.</p>
-    pub fn set_project_description(
-        mut self,
-        input: ::std::option::Option<crate::types::ProjectDescription>,
-    ) -> Self {
+    pub fn set_project_description(mut self, input: ::std::option::Option<crate::types::ProjectDescription>) -> Self {
         self.project_description = input;
         self
     }
     /// <p>The description of the project.</p>
-    pub fn get_project_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProjectDescription> {
+    pub fn get_project_description(&self) -> &::std::option::Option<crate::types::ProjectDescription> {
         &self.project_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

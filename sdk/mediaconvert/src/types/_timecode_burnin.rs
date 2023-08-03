@@ -37,9 +37,7 @@ impl TimecodeBurnin {
 
 /// A builder for [`TimecodeBurnin`](crate::types::TimecodeBurnin).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimecodeBurninBuilder {
     pub(crate) font_size: ::std::option::Option<i32>,
     pub(crate) position: ::std::option::Option<crate::types::TimecodeBurninPosition>,
@@ -66,10 +64,7 @@ impl TimecodeBurninBuilder {
         self
     }
     /// Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
-    pub fn set_position(
-        mut self,
-        input: ::std::option::Option<crate::types::TimecodeBurninPosition>,
-    ) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<crate::types::TimecodeBurninPosition>) -> Self {
         self.position = input;
         self
     }

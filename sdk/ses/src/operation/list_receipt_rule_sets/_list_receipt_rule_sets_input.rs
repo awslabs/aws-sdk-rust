@@ -16,18 +16,14 @@ impl ListReceiptRuleSetsInput {
 }
 impl ListReceiptRuleSetsInput {
     /// Creates a new builder-style object to manufacture [`ListReceiptRuleSetsInput`](crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_receipt_rule_sets::builders::ListReceiptRuleSetsInputBuilder {
-        crate::operation::list_receipt_rule_sets::builders::ListReceiptRuleSetsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_receipt_rule_sets::builders::ListReceiptRuleSetsInputBuilder {
+        crate::operation::list_receipt_rule_sets::builders::ListReceiptRuleSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReceiptRuleSetsInput`](crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReceiptRuleSetsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -49,14 +45,8 @@ impl ListReceiptRuleSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListReceiptRuleSetsInput`](crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput {
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput { next_token: self.next_token })
     }
 }

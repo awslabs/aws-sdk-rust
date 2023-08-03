@@ -30,7 +30,7 @@ impl ::std::fmt::Debug for DescribeRiskConfigurationInput {
 }
 impl DescribeRiskConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeRiskConfigurationInput`](crate::operation::describe_risk_configuration::DescribeRiskConfigurationInput).
-    pub fn builder() -> crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationInputBuilder {
         crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationInputBuilder::default()
     }
 }
@@ -78,12 +78,10 @@ impl DescribeRiskConfigurationInputBuilder {
         crate::operation::describe_risk_configuration::DescribeRiskConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_risk_configuration::DescribeRiskConfigurationInput {
-                user_pool_id: self.user_pool_id,
-                client_id: self.client_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_risk_configuration::DescribeRiskConfigurationInput {
+            user_pool_id: self.user_pool_id,
+            client_id: self.client_id,
+        })
     }
 }
 impl ::std::fmt::Debug for DescribeRiskConfigurationInputBuilder {

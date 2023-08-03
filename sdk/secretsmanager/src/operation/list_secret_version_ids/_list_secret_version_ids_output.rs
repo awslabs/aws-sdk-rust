@@ -42,21 +42,16 @@ impl ::aws_http::request_id::RequestId for ListSecretVersionIdsOutput {
 }
 impl ListSecretVersionIdsOutput {
     /// Creates a new builder-style object to manufacture [`ListSecretVersionIdsOutput`](crate::operation::list_secret_version_ids::ListSecretVersionIdsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_secret_version_ids::builders::ListSecretVersionIdsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_secret_version_ids::builders::ListSecretVersionIdsOutputBuilder {
         crate::operation::list_secret_version_ids::builders::ListSecretVersionIdsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecretVersionIdsOutput`](crate::operation::list_secret_version_ids::ListSecretVersionIdsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecretVersionIdsOutputBuilder {
-    pub(crate) versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecretVersionsListEntry>>,
+    pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::SecretVersionsListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -75,17 +70,12 @@ impl ListSecretVersionIdsOutputBuilder {
         self
     }
     /// <p>A list of the versions of the secret.</p>
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecretVersionsListEntry>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecretVersionsListEntry>>) -> Self {
         self.versions = input;
         self
     }
     /// <p>A list of the versions of the secret.</p>
-    pub fn get_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecretVersionsListEntry>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecretVersionsListEntry>> {
         &self.versions
     }
     /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>ListSecretVersionIds</code> again with this value. </p>

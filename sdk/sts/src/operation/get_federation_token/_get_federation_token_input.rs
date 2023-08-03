@@ -81,22 +81,18 @@ impl GetFederationTokenInput {
 }
 impl GetFederationTokenInput {
     /// Creates a new builder-style object to manufacture [`GetFederationTokenInput`](crate::operation::get_federation_token::GetFederationTokenInput).
-    pub fn builder(
-    ) -> crate::operation::get_federation_token::builders::GetFederationTokenInputBuilder {
+    pub fn builder() -> crate::operation::get_federation_token::builders::GetFederationTokenInputBuilder {
         crate::operation::get_federation_token::builders::GetFederationTokenInputBuilder::default()
     }
 }
 
 /// A builder for [`GetFederationTokenInput`](crate::operation::get_federation_token::GetFederationTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFederationTokenInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
-    pub(crate) policy_arns:
-        ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>>,
+    pub(crate) policy_arns: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>>,
     pub(crate) duration_seconds: ::std::option::Option<i32>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -177,10 +173,7 @@ impl GetFederationTokenInputBuilder {
     /// <p>The resulting credentials can be used to access a resource that has a resource-based policy. If that policy specifically references the federated user session in the <code>Principal</code> element of the policy, the session has the permissions allowed by the policy. These permissions are granted in addition to the permissions that are granted by the session policies.</p> <note>
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
-    pub fn set_policy_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>>,
-    ) -> Self {
+    pub fn set_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>>) -> Self {
         self.policy_arns = input;
         self
     }
@@ -191,9 +184,7 @@ impl GetFederationTokenInputBuilder {
     /// <p>The resulting credentials can be used to access a resource that has a resource-based policy. If that policy specifically references the federated user session in the <code>Principal</code> element of the policy, the session has the permissions allowed by the policy. These permissions are granted in addition to the permissions that are granted by the session policies.</p> <note>
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
-    pub fn get_policy_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>> {
+    pub fn get_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>> {
         &self.policy_arns
     }
     /// <p>The duration, in seconds, that the session should last. Acceptable durations for federation sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default. Sessions obtained using root user credentials are restricted to a maximum of 3,600 seconds (one hour). If the specified duration is longer than one hour, the session obtained by using root user credentials defaults to one hour.</p>
@@ -232,10 +223,7 @@ impl GetFederationTokenInputBuilder {
     /// </note>
     /// <p>You can pass a session tag with the same key as a tag that is already attached to the user you are federating. When you do, session tags override a user tag with the same key. </p>
     /// <p>Tag key–value pairs are not case sensitive, but case is preserved. This means that you cannot have separate <code>Department</code> and <code>department</code> tag keys. Assume that the role has the <code>Department</code>=<code>Marketing</code> tag and you pass the <code>department</code>=<code>engineering</code> session tag. <code>Department</code> and <code>department</code> are not saved as separate tags, and the session tag passed in the request takes precedence over the role tag.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -251,18 +239,13 @@ impl GetFederationTokenInputBuilder {
     /// Consumes the builder and constructs a [`GetFederationTokenInput`](crate::operation::get_federation_token::GetFederationTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_federation_token::GetFederationTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_federation_token::GetFederationTokenInput {
-                name: self.name,
-                policy: self.policy,
-                policy_arns: self.policy_arns,
-                duration_seconds: self.duration_seconds,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_federation_token::GetFederationTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_federation_token::GetFederationTokenInput {
+            name: self.name,
+            policy: self.policy,
+            policy_arns: self.policy_arns,
+            duration_seconds: self.duration_seconds,
+            tags: self.tags,
+        })
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_name): <p>The name of the build project.</p>
     /// - On success, responds with [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput)
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::operation::delete_project::DeleteProjectError)
-    pub fn delete_project(
-        &self,
-    ) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {
-        crate::operation::delete_project::builders::DeleteProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_project(&self) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {
+        crate::operation::delete_project::builders::DeleteProjectFluentBuilder::new(self.handle.clone())
     }
 }

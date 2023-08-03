@@ -50,16 +50,14 @@ impl GetAwsNetworkPerformanceDataInput {
 }
 impl GetAwsNetworkPerformanceDataInput {
     /// Creates a new builder-style object to manufacture [`GetAwsNetworkPerformanceDataInput`](crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataInput).
-    pub fn builder() -> crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataInputBuilder{
+    pub fn builder() -> crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataInputBuilder {
         crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAwsNetworkPerformanceDataInput`](crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAwsNetworkPerformanceDataInputBuilder {
     pub(crate) data_queries: ::std::option::Option<::std::vec::Vec<crate::types::DataQuery>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -81,17 +79,12 @@ impl GetAwsNetworkPerformanceDataInputBuilder {
         self
     }
     /// <p>A list of network performance data queries.</p>
-    pub fn set_data_queries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataQuery>>,
-    ) -> Self {
+    pub fn set_data_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataQuery>>) -> Self {
         self.data_queries = input;
         self
     }
     /// <p>A list of network performance data queries.</p>
-    pub fn get_data_queries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQuery>> {
+    pub fn get_data_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQuery>> {
         &self.data_queries
     }
     /// <p>The starting time for the performance data request. The starting time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.</p>
@@ -100,10 +93,7 @@ impl GetAwsNetworkPerformanceDataInputBuilder {
         self
     }
     /// <p>The starting time for the performance data request. The starting time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -117,10 +107,7 @@ impl GetAwsNetworkPerformanceDataInputBuilder {
         self
     }
     /// <p>The ending time for the performance data request. The end time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-12T12:00:00.000Z</code>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -177,15 +164,13 @@ impl GetAwsNetworkPerformanceDataInputBuilder {
         crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataInput {
-                data_queries: self.data_queries,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataInput {
+            data_queries: self.data_queries,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            dry_run: self.dry_run,
+        })
     }
 }

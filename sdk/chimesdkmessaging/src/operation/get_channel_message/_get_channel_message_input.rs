@@ -40,17 +40,14 @@ impl GetChannelMessageInput {
 }
 impl GetChannelMessageInput {
     /// Creates a new builder-style object to manufacture [`GetChannelMessageInput`](crate::operation::get_channel_message::GetChannelMessageInput).
-    pub fn builder(
-    ) -> crate::operation::get_channel_message::builders::GetChannelMessageInputBuilder {
+    pub fn builder() -> crate::operation::get_channel_message::builders::GetChannelMessageInputBuilder {
         crate::operation::get_channel_message::builders::GetChannelMessageInputBuilder::default()
     }
 }
 
 /// A builder for [`GetChannelMessageInput`](crate::operation::get_channel_message::GetChannelMessageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetChannelMessageInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
@@ -103,20 +100,14 @@ impl GetChannelMessageInputBuilder {
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when getting messages in a SubChannel that the user belongs to.</p>
     /// </note>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when getting messages in a SubChannel that the user belongs to.</p>
     /// </note>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_channel_id = input;
         self
     }
@@ -129,17 +120,12 @@ impl GetChannelMessageInputBuilder {
     /// Consumes the builder and constructs a [`GetChannelMessageInput`](crate::operation::get_channel_message::GetChannelMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_channel_message::GetChannelMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_channel_message::GetChannelMessageInput {
-                channel_arn: self.channel_arn,
-                message_id: self.message_id,
-                chime_bearer: self.chime_bearer,
-                sub_channel_id: self.sub_channel_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_channel_message::GetChannelMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_channel_message::GetChannelMessageInput {
+            channel_arn: self.channel_arn,
+            message_id: self.message_id,
+            chime_bearer: self.chime_bearer,
+            sub_channel_id: self.sub_channel_id,
+        })
     }
 }

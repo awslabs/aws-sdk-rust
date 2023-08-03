@@ -16,34 +16,25 @@ impl RuleGroupSourceStatelessRuleMatchAttributesSources {
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesSources {
     /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesSources).
-    pub fn builder(
-    ) -> crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesSourcesBuilder {
+    pub fn builder() -> crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesSourcesBuilder {
         crate::types::builders::RuleGroupSourceStatelessRuleMatchAttributesSourcesBuilder::default()
     }
 }
 
 /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesSources).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesSourcesBuilder {
     pub(crate) address_definition: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesSourcesBuilder {
     /// <p>An IP address or a block of IP addresses.</p>
-    pub fn address_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IP address or a block of IP addresses.</p>
-    pub fn set_address_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_definition = input;
         self
     }

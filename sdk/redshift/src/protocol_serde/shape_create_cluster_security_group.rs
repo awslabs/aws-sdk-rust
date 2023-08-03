@@ -9,88 +9,80 @@ pub fn de_create_cluster_security_group_http_error(
     crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterSecurityGroupAlreadyExists" => crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::ClusterSecurityGroupAlreadyExistsFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ClusterSecurityGroupAlreadyExists" => {
+            crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::ClusterSecurityGroupAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClusterSecurityGroupAlreadyExistsFaultBuilder::default();
                     output = crate::protocol_serde::shape_cluster_security_group_already_exists_fault::de_cluster_security_group_already_exists_fault_xml_err(_response_body, output).map_err(crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "QuotaExceeded.ClusterSecurityGroup" => crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::ClusterSecurityGroupQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "QuotaExceeded.ClusterSecurityGroup" => {
+            crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::ClusterSecurityGroupQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ClusterSecurityGroupQuotaExceededFaultBuilder::default();
                     output = crate::protocol_serde::shape_cluster_security_group_quota_exceeded_fault::de_cluster_security_group_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InvalidTagFault" => crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::InvalidTagFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidTagFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(_response_body, output).map_err(crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidTagFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TagLimitExceededFault" => crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::TagLimitExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TagLimitExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TagLimitExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::generic(generic)
+        _ => crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::generic(generic),
     })
 }
 
@@ -106,16 +98,21 @@ pub fn de_create_cluster_security_group_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_cluster_security_group::de_create_cluster_security_group(_response_body, output).map_err(crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_create_cluster_security_group::de_create_cluster_security_group(_response_body, output)
+            .map_err(crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_create_cluster_security_group(inp: &[u8], mut builder: crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupOutputBuilder) -> Result<crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_create_cluster_security_group(
+    inp: &[u8],
+    mut builder: crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupOutputBuilder,
+) -> Result<
+    crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

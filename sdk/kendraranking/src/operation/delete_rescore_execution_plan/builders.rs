@@ -26,7 +26,7 @@ impl DeleteRescoreExecutionPlanInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRescoreExecutionPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanInputBuilder,
+    inner: crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanInputBuilder,
 }
 impl DeleteRescoreExecutionPlanFluentBuilder {
     /// Creates a new `DeleteRescoreExecutionPlan`.
@@ -37,7 +37,7 @@ impl DeleteRescoreExecutionPlanFluentBuilder {
         }
     }
     /// Access the DeleteRescoreExecutionPlan as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteRescoreExecutionPlanFluentBuilder {
             crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteRescoreExecutionPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteRescoreExecutionPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteRescoreExecutionPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteRescoreExecutionPlanFluentBuilder {
             crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanError>,
     > {
         self.customize_middleware().await
     }

@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for RestoreFromSnapshotOutput {
 }
 impl RestoreFromSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`RestoreFromSnapshotOutput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotOutput).
-    pub fn builder(
-    ) -> crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotOutputBuilder {
-        crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotOutputBuilder {
+        crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreFromSnapshotOutput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreFromSnapshotOutputBuilder {
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
@@ -55,18 +51,12 @@ pub struct RestoreFromSnapshotOutputBuilder {
 }
 impl RestoreFromSnapshotOutputBuilder {
     /// <p>The name of the snapshot used to restore the namespace.</p>
-    pub fn snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the snapshot used to restore the namespace.</p>
-    pub fn set_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
@@ -75,18 +65,12 @@ impl RestoreFromSnapshotOutputBuilder {
         &self.snapshot_name
     }
     /// <p>The owner Amazon Web Services; account of the snapshot that was restored.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The owner Amazon Web Services; account of the snapshot that was restored.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }

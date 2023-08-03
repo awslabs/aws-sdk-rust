@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`violation_events(Option<Vec<ViolationEvent>>)`](crate::operation::list_violation_events::ListViolationEventsOutput::violation_events): <p>The security profile violation alerts issued for this account during the given time period, potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_violation_events::ListViolationEventsOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListViolationEventsError>`](crate::operation::list_violation_events::ListViolationEventsError)
-    pub fn list_violation_events(
-        &self,
-    ) -> crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder {
-        crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_violation_events(&self) -> crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder {
+        crate::operation::list_violation_events::builders::ListViolationEventsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,26 +5,20 @@
 pub struct GetAccountSummaryInput {}
 impl GetAccountSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetAccountSummaryInput`](crate::operation::get_account_summary::GetAccountSummaryInput).
-    pub fn builder(
-    ) -> crate::operation::get_account_summary::builders::GetAccountSummaryInputBuilder {
+    pub fn builder() -> crate::operation::get_account_summary::builders::GetAccountSummaryInputBuilder {
         crate::operation::get_account_summary::builders::GetAccountSummaryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccountSummaryInput`](crate::operation::get_account_summary::GetAccountSummaryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccountSummaryInputBuilder {}
 impl GetAccountSummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountSummaryInput`](crate::operation::get_account_summary::GetAccountSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_account_summary::GetAccountSummaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_account_summary::GetAccountSummaryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_account_summary::GetAccountSummaryInput {})
     }
 }

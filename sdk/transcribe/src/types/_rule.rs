@@ -28,9 +28,7 @@ pub enum Rule {
 impl Rule {
     /// Tries to convert the enum instance into [`InterruptionFilter`](crate::types::Rule::InterruptionFilter), extracting the inner [`InterruptionFilter`](crate::types::InterruptionFilter).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_interruption_filter(
-        &self,
-    ) -> ::std::result::Result<&crate::types::InterruptionFilter, &Self> {
+    pub fn as_interruption_filter(&self) -> ::std::result::Result<&crate::types::InterruptionFilter, &Self> {
         if let Rule::InterruptionFilter(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -43,9 +41,7 @@ impl Rule {
     }
     /// Tries to convert the enum instance into [`NonTalkTimeFilter`](crate::types::Rule::NonTalkTimeFilter), extracting the inner [`NonTalkTimeFilter`](crate::types::NonTalkTimeFilter).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_non_talk_time_filter(
-        &self,
-    ) -> ::std::result::Result<&crate::types::NonTalkTimeFilter, &Self> {
+    pub fn as_non_talk_time_filter(&self) -> ::std::result::Result<&crate::types::NonTalkTimeFilter, &Self> {
         if let Rule::NonTalkTimeFilter(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -58,9 +54,7 @@ impl Rule {
     }
     /// Tries to convert the enum instance into [`SentimentFilter`](crate::types::Rule::SentimentFilter), extracting the inner [`SentimentFilter`](crate::types::SentimentFilter).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sentiment_filter(
-        &self,
-    ) -> ::std::result::Result<&crate::types::SentimentFilter, &Self> {
+    pub fn as_sentiment_filter(&self) -> ::std::result::Result<&crate::types::SentimentFilter, &Self> {
         if let Rule::SentimentFilter(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -73,9 +67,7 @@ impl Rule {
     }
     /// Tries to convert the enum instance into [`TranscriptFilter`](crate::types::Rule::TranscriptFilter), extracting the inner [`TranscriptFilter`](crate::types::TranscriptFilter).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_transcript_filter(
-        &self,
-    ) -> ::std::result::Result<&crate::types::TranscriptFilter, &Self> {
+    pub fn as_transcript_filter(&self) -> ::std::result::Result<&crate::types::TranscriptFilter, &Self> {
         if let Rule::TranscriptFilter(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`feature_name(impl ::std::convert::Into<String>)`](crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDBClusterFluentBuilder::feature_name) / [`set_feature_name(Option<String>)`](crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDBClusterFluentBuilder::set_feature_name): <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     /// - On success, responds with [`RemoveRoleFromDbClusterOutput`](crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterOutput)
     /// - On failure, responds with [`SdkError<RemoveRoleFromDBClusterError>`](crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError)
-    pub fn remove_role_from_db_cluster(
-        &self,
-    ) -> crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDBClusterFluentBuilder
-    {
+    pub fn remove_role_from_db_cluster(&self) -> crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDBClusterFluentBuilder {
         crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDBClusterFluentBuilder::new(self.handle.clone())
     }
 }

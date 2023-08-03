@@ -16,9 +16,7 @@ pub struct NumericQuestionPropertyValueAutomation {
 }
 impl NumericQuestionPropertyValueAutomation {
     /// <p>The property label of the automation.</p>
-    pub fn label(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NumericQuestionPropertyAutomationLabel> {
+    pub fn label(&self) -> ::std::option::Option<&crate::types::NumericQuestionPropertyAutomationLabel> {
         self.label.as_ref()
     }
 }
@@ -31,9 +29,7 @@ impl NumericQuestionPropertyValueAutomation {
 
 /// A builder for [`NumericQuestionPropertyValueAutomation`](crate::types::NumericQuestionPropertyValueAutomation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NumericQuestionPropertyValueAutomationBuilder {
     pub(crate) label: ::std::option::Option<crate::types::NumericQuestionPropertyAutomationLabel>,
 }
@@ -44,17 +40,12 @@ impl NumericQuestionPropertyValueAutomationBuilder {
         self
     }
     /// <p>The property label of the automation.</p>
-    pub fn set_label(
-        mut self,
-        input: ::std::option::Option<crate::types::NumericQuestionPropertyAutomationLabel>,
-    ) -> Self {
+    pub fn set_label(mut self, input: ::std::option::Option<crate::types::NumericQuestionPropertyAutomationLabel>) -> Self {
         self.label = input;
         self
     }
     /// <p>The property label of the automation.</p>
-    pub fn get_label(
-        &self,
-    ) -> &::std::option::Option<crate::types::NumericQuestionPropertyAutomationLabel> {
+    pub fn get_label(&self) -> &::std::option::Option<crate::types::NumericQuestionPropertyAutomationLabel> {
         &self.label
     }
     /// Consumes the builder and constructs a [`NumericQuestionPropertyValueAutomation`](crate::types::NumericQuestionPropertyValueAutomation).

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateElasticIpOutput {
 }
 impl AssociateElasticIpOutput {
     /// Creates a new builder-style object to manufacture [`AssociateElasticIpOutput`](crate::operation::associate_elastic_ip::AssociateElasticIpOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_elastic_ip::builders::AssociateElasticIpOutputBuilder {
+    pub fn builder() -> crate::operation::associate_elastic_ip::builders::AssociateElasticIpOutputBuilder {
         crate::operation::associate_elastic_ip::builders::AssociateElasticIpOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateElasticIpOutput`](crate::operation::associate_elastic_ip::AssociateElasticIpOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateElasticIpOutputBuilder {
     _request_id: Option<String>,
 }

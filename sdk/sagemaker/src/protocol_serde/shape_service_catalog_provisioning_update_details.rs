@@ -12,10 +12,7 @@ pub fn ser_service_catalog_provisioning_update_details(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_provisioning_parameter::ser_provisioning_parameter(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_provisioning_parameter::ser_provisioning_parameter(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

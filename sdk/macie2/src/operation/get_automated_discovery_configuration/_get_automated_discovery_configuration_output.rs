@@ -56,16 +56,14 @@ impl ::aws_http::request_id::RequestId for GetAutomatedDiscoveryConfigurationOut
 }
 impl GetAutomatedDiscoveryConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetAutomatedDiscoveryConfigurationOutput`](crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationOutput).
-    pub fn builder() -> crate::operation::get_automated_discovery_configuration::builders::GetAutomatedDiscoveryConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_automated_discovery_configuration::builders::GetAutomatedDiscoveryConfigurationOutputBuilder {
         crate::operation::get_automated_discovery_configuration::builders::GetAutomatedDiscoveryConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAutomatedDiscoveryConfigurationOutput`](crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAutomatedDiscoveryConfigurationOutputBuilder {
     pub(crate) classification_scope_id: ::std::option::Option<::std::string::String>,
     pub(crate) disabled_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -77,18 +75,12 @@ pub struct GetAutomatedDiscoveryConfigurationOutputBuilder {
 }
 impl GetAutomatedDiscoveryConfigurationOutputBuilder {
     /// <p>The unique identifier for the classification scope that's used when performing automated sensitive data discovery for the account. The classification scope specifies S3 buckets to exclude from automated sensitive data discovery.</p>
-    pub fn classification_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn classification_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classification_scope_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the classification scope that's used when performing automated sensitive data discovery for the account. The classification scope specifies S3 buckets to exclude from automated sensitive data discovery.</p>
-    pub fn set_classification_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_classification_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.classification_scope_id = input;
         self
     }
@@ -102,10 +94,7 @@ impl GetAutomatedDiscoveryConfigurationOutputBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently disabled for the account. This value is null if automated sensitive data discovery wasn't enabled and subsequently disabled for the account.</p>
-    pub fn set_disabled_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_disabled_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.disabled_at = input;
         self
     }
@@ -119,10 +108,7 @@ impl GetAutomatedDiscoveryConfigurationOutputBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was initially enabled for the account. This value is null if automated sensitive data discovery has never been enabled for the account.</p>
-    pub fn set_first_enabled_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_first_enabled_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.first_enabled_at = input;
         self
     }
@@ -136,10 +122,7 @@ impl GetAutomatedDiscoveryConfigurationOutputBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when automated sensitive data discovery was most recently enabled or disabled for the account.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -148,25 +131,17 @@ impl GetAutomatedDiscoveryConfigurationOutputBuilder {
         &self.last_updated_at
     }
     /// <p>The unique identifier for the sensitivity inspection template that's used when performing automated sensitive data discovery for the account. The template specifies which allow lists, custom data identifiers, and managed data identifiers to use when analyzing data.</p>
-    pub fn sensitivity_inspection_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sensitivity_inspection_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sensitivity_inspection_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the sensitivity inspection template that's used when performing automated sensitive data discovery for the account. The template specifies which allow lists, custom data identifiers, and managed data identifiers to use when analyzing data.</p>
-    pub fn set_sensitivity_inspection_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sensitivity_inspection_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sensitivity_inspection_template_id = input;
         self
     }
     /// <p>The unique identifier for the sensitivity inspection template that's used when performing automated sensitive data discovery for the account. The template specifies which allow lists, custom data identifiers, and managed data identifiers to use when analyzing data.</p>
-    pub fn get_sensitivity_inspection_template_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_sensitivity_inspection_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sensitivity_inspection_template_id
     }
     /// <p>The current status of the automated sensitive data discovery configuration for the account. Possible values are: ENABLED, use the specified settings to perform automated sensitive data discovery activities for the account; and, DISABLED, don't perform automated sensitive data discovery activities for the account.</p>
@@ -175,10 +150,7 @@ impl GetAutomatedDiscoveryConfigurationOutputBuilder {
         self
     }
     /// <p>The current status of the automated sensitive data discovery configuration for the account. Possible values are: ENABLED, use the specified settings to perform automated sensitive data discovery activities for the account; and, DISABLED, don't perform automated sensitive data discovery activities for the account.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AutomatedDiscoveryStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AutomatedDiscoveryStatus>) -> Self {
         self.status = input;
         self
     }
@@ -196,20 +168,14 @@ impl GetAutomatedDiscoveryConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAutomatedDiscoveryConfigurationOutput`](crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationOutput{
+    pub fn build(self) -> crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationOutput {
         crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationOutput {
-            classification_scope_id: self.classification_scope_id
-            ,
-            disabled_at: self.disabled_at
-            ,
-            first_enabled_at: self.first_enabled_at
-            ,
-            last_updated_at: self.last_updated_at
-            ,
-            sensitivity_inspection_template_id: self.sensitivity_inspection_template_id
-            ,
-            status: self.status
-            ,
+            classification_scope_id: self.classification_scope_id,
+            disabled_at: self.disabled_at,
+            first_enabled_at: self.first_enabled_at,
+            last_updated_at: self.last_updated_at,
+            sensitivity_inspection_template_id: self.sensitivity_inspection_template_id,
+            status: self.status,
             _request_id: self._request_id,
         }
     }

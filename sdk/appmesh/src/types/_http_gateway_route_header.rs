@@ -37,9 +37,7 @@ impl HttpGatewayRouteHeader {
 
 /// A builder for [`HttpGatewayRouteHeader`](crate::types::HttpGatewayRouteHeader).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpGatewayRouteHeaderBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) invert: ::std::option::Option<bool>,
@@ -80,10 +78,7 @@ impl HttpGatewayRouteHeaderBuilder {
         self
     }
     /// <p>An object that represents the method and value to match with the header value sent in a request. Specify one match method.</p>
-    pub fn set_match(
-        mut self,
-        input: ::std::option::Option<crate::types::HeaderMatchMethod>,
-    ) -> Self {
+    pub fn set_match(mut self, input: ::std::option::Option<crate::types::HeaderMatchMethod>) -> Self {
         self.r#match = input;
         self
     }

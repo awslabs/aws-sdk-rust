@@ -15,16 +15,14 @@ impl RegisterCrossAccountAccessRoleInput {
 }
 impl RegisterCrossAccountAccessRoleInput {
     /// Creates a new builder-style object to manufacture [`RegisterCrossAccountAccessRoleInput`](crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput).
-    pub fn builder() -> crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleInputBuilder{
+    pub fn builder() -> crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleInputBuilder {
         crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterCrossAccountAccessRoleInput`](crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterCrossAccountAccessRoleInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +49,7 @@ impl RegisterCrossAccountAccessRoleInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(
-            crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput {
-                role_arn: self.role_arn
-                ,
-            }
+            crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput { role_arn: self.role_arn },
         )
     }
 }

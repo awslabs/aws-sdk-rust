@@ -27,7 +27,7 @@ impl DescribeAssetBundleImportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAssetBundleImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_asset_bundle_import_job::builders::DescribeAssetBundleImportJobInputBuilder,
+    inner: crate::operation::describe_asset_bundle_import_job::builders::DescribeAssetBundleImportJobInputBuilder,
 }
 impl DescribeAssetBundleImportJobFluentBuilder {
     /// Creates a new `DescribeAssetBundleImportJob`.
@@ -38,7 +38,7 @@ impl DescribeAssetBundleImportJobFluentBuilder {
         }
     }
     /// Access the DescribeAssetBundleImportJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_asset_bundle_import_job::builders::DescribeAssetBundleImportJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_asset_bundle_import_job::builders::DescribeAssetBundleImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeAssetBundleImportJobFluentBuilder {
             crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeAssetBundleImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeAssetBundleImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeAssetBundleImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DescribeAssetBundleImportJobFluentBuilder {
             crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_asset_bundle_import_job::DescribeAssetBundleImportJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -142,18 +125,12 @@ impl DescribeAssetBundleImportJobFluentBuilder {
         self.inner.get_aws_account_id()
     }
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleImportJob</code> API call.</p>
-    pub fn asset_bundle_import_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_bundle_import_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_bundle_import_job_id(input.into());
         self
     }
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleImportJob</code> API call.</p>
-    pub fn set_asset_bundle_import_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_bundle_import_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_bundle_import_job_id(input);
         self
     }

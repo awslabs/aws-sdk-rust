@@ -56,9 +56,7 @@ impl GetServiceNetworkServiceAssociationOutput {
         self.id.as_deref()
     }
     /// <p>The status of the association.</p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceNetworkServiceAssociationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceNetworkServiceAssociationStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
@@ -121,16 +119,14 @@ impl ::aws_http::request_id::RequestId for GetServiceNetworkServiceAssociationOu
 }
 impl GetServiceNetworkServiceAssociationOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceNetworkServiceAssociationOutput`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationOutput).
-    pub fn builder() -> crate::operation::get_service_network_service_association::builders::GetServiceNetworkServiceAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::get_service_network_service_association::builders::GetServiceNetworkServiceAssociationOutputBuilder {
         crate::operation::get_service_network_service_association::builders::GetServiceNetworkServiceAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceNetworkServiceAssociationOutput`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceNetworkServiceAssociationOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus>,
@@ -170,17 +166,12 @@ impl GetServiceNetworkServiceAssociationOutputBuilder {
         self
     }
     /// <p>The status of the association.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the association.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus> {
         &self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
@@ -217,10 +208,7 @@ impl GetServiceNetworkServiceAssociationOutputBuilder {
         self
     }
     /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -271,18 +259,12 @@ impl GetServiceNetworkServiceAssociationOutputBuilder {
         &self.service_arn
     }
     /// <p>The ID of the service network.</p>
-    pub fn service_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the service network.</p>
-    pub fn set_service_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_id = input;
         self
     }
@@ -291,18 +273,12 @@ impl GetServiceNetworkServiceAssociationOutputBuilder {
         &self.service_network_id
     }
     /// <p>The name of the service network.</p>
-    pub fn service_network_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service network.</p>
-    pub fn set_service_network_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_name = input;
         self
     }
@@ -311,18 +287,12 @@ impl GetServiceNetworkServiceAssociationOutputBuilder {
         &self.service_network_name
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
-    pub fn service_network_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
-    pub fn set_service_network_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_network_arn = input;
         self
     }
@@ -345,18 +315,12 @@ impl GetServiceNetworkServiceAssociationOutputBuilder {
         &self.dns_entry
     }
     /// <p>The custom domain name of the service. </p>
-    pub fn custom_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom domain name of the service. </p>
-    pub fn set_custom_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_domain_name = input;
         self
     }
@@ -365,18 +329,12 @@ impl GetServiceNetworkServiceAssociationOutputBuilder {
         &self.custom_domain_name
     }
     /// <p>The failure message.</p>
-    pub fn failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The failure message.</p>
-    pub fn set_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_message = input;
         self
     }
@@ -408,38 +366,23 @@ impl GetServiceNetworkServiceAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetServiceNetworkServiceAssociationOutput`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationOutput).
-    pub fn build(self) -> crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationOutput{
+    pub fn build(self) -> crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationOutput {
         crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationOutput {
-            id: self.id
-            ,
-            status: self.status
-            ,
-            arn: self.arn
-            ,
-            created_by: self.created_by
-            ,
-            created_at: self.created_at
-            ,
-            service_id: self.service_id
-            ,
-            service_name: self.service_name
-            ,
-            service_arn: self.service_arn
-            ,
-            service_network_id: self.service_network_id
-            ,
-            service_network_name: self.service_network_name
-            ,
-            service_network_arn: self.service_network_arn
-            ,
-            dns_entry: self.dns_entry
-            ,
-            custom_domain_name: self.custom_domain_name
-            ,
-            failure_message: self.failure_message
-            ,
-            failure_code: self.failure_code
-            ,
+            id: self.id,
+            status: self.status,
+            arn: self.arn,
+            created_by: self.created_by,
+            created_at: self.created_at,
+            service_id: self.service_id,
+            service_name: self.service_name,
+            service_arn: self.service_arn,
+            service_network_id: self.service_network_id,
+            service_network_name: self.service_network_name,
+            service_network_arn: self.service_network_arn,
+            dns_entry: self.dns_entry,
+            custom_domain_name: self.custom_domain_name,
+            failure_message: self.failure_message,
+            failure_code: self.failure_code,
             _request_id: self._request_id,
         }
     }

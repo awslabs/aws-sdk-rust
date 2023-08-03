@@ -22,17 +22,14 @@ impl UnshareDirectoryInput {
 }
 impl UnshareDirectoryInput {
     /// Creates a new builder-style object to manufacture [`UnshareDirectoryInput`](crate::operation::unshare_directory::UnshareDirectoryInput).
-    pub fn builder() -> crate::operation::unshare_directory::builders::UnshareDirectoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::unshare_directory::builders::UnshareDirectoryInputBuilder {
         crate::operation::unshare_directory::builders::UnshareDirectoryInputBuilder::default()
     }
 }
 
 /// A builder for [`UnshareDirectoryInput`](crate::operation::unshare_directory::UnshareDirectoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnshareDirectoryInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) unshare_target: ::std::option::Option<crate::types::UnshareTarget>,
@@ -58,10 +55,7 @@ impl UnshareDirectoryInputBuilder {
         self
     }
     /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
-    pub fn set_unshare_target(
-        mut self,
-        input: ::std::option::Option<crate::types::UnshareTarget>,
-    ) -> Self {
+    pub fn set_unshare_target(mut self, input: ::std::option::Option<crate::types::UnshareTarget>) -> Self {
         self.unshare_target = input;
         self
     }
@@ -72,10 +66,7 @@ impl UnshareDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`UnshareDirectoryInput`](crate::operation::unshare_directory::UnshareDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::unshare_directory::UnshareDirectoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::unshare_directory::UnshareDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::unshare_directory::UnshareDirectoryInput {
             directory_id: self.directory_id,
             unshare_target: self.unshare_target,

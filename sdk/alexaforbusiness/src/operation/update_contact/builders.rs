@@ -10,10 +10,7 @@ impl UpdateContactInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_contact::UpdateContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_contact::UpdateContactError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contact::UpdateContactError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_contact();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateContactFluentBuilder {
         }
     }
     /// Access the UpdateContact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_contact::builders::UpdateContactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_contact::builders::UpdateContactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl UpdateContactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -195,17 +187,12 @@ impl UpdateContactFluentBuilder {
         self
     }
     /// <p>The list of phone numbers for the contact.</p>
-    pub fn set_phone_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
-    ) -> Self {
+    pub fn set_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>) -> Self {
         self.inner = self.inner.set_phone_numbers(input);
         self
     }
     /// <p>The list of phone numbers for the contact.</p>
-    pub fn get_phone_numbers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
+    pub fn get_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
         self.inner.get_phone_numbers()
     }
     /// Appends an item to `SipAddresses`.
@@ -218,17 +205,12 @@ impl UpdateContactFluentBuilder {
         self
     }
     /// <p>The list of SIP addresses for the contact.</p>
-    pub fn set_sip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SipAddress>>,
-    ) -> Self {
+    pub fn set_sip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipAddress>>) -> Self {
         self.inner = self.inner.set_sip_addresses(input);
         self
     }
     /// <p>The list of SIP addresses for the contact.</p>
-    pub fn get_sip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipAddress>> {
+    pub fn get_sip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipAddress>> {
         self.inner.get_sip_addresses()
     }
 }

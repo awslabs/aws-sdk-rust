@@ -35,9 +35,7 @@ impl ListJobsOutput {
 
 /// A builder for [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobsOutputBuilder {
     pub(crate) job_list_entries: ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListJobsOutputBuilder {
         self
     }
     /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
-    pub fn set_job_list_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>>,
-    ) -> Self {
+    pub fn set_job_list_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>>) -> Self {
         self.job_list_entries = input;
         self
     }
     /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
-    pub fn get_job_list_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>> {
+    pub fn get_job_list_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>> {
         &self.job_list_entries
     }
     /// <p>HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the array.</p>

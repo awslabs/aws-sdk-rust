@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for GetV2LoggingOptionsOutput {
 }
 impl GetV2LoggingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`GetV2LoggingOptionsOutput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsOutputBuilder {
+    pub fn builder() -> crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsOutputBuilder {
         crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetV2LoggingOptionsOutput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetV2LoggingOptionsOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_log_level: ::std::option::Option<crate::types::LogLevel>,
@@ -73,10 +70,7 @@ impl GetV2LoggingOptionsOutputBuilder {
         self
     }
     /// <p>The default log level.</p>
-    pub fn set_default_log_level(
-        mut self,
-        input: ::std::option::Option<crate::types::LogLevel>,
-    ) -> Self {
+    pub fn set_default_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.default_log_level = input;
         self
     }

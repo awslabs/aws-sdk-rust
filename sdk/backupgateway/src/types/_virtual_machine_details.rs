@@ -65,9 +65,7 @@ impl VirtualMachineDetails {
 
 /// A builder for [`VirtualMachineDetails`](crate::types::VirtualMachineDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualMachineDetailsBuilder {
     pub(crate) host_name: ::std::option::Option<::std::string::String>,
     pub(crate) hypervisor_id: ::std::option::Option<::std::string::String>,
@@ -93,18 +91,12 @@ impl VirtualMachineDetailsBuilder {
         &self.host_name
     }
     /// <p>The ID of the virtual machine's hypervisor.</p>
-    pub fn hypervisor_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual machine's hypervisor.</p>
-    pub fn set_hypervisor_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hypervisor_id = input;
         self
     }
@@ -160,10 +152,7 @@ impl VirtualMachineDetailsBuilder {
         self
     }
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
-    pub fn set_last_backup_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_backup_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_backup_date = input;
         self
     }
@@ -183,17 +172,12 @@ impl VirtualMachineDetailsBuilder {
         self
     }
     /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
-    pub fn set_vmware_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VmwareTag>>,
-    ) -> Self {
+    pub fn set_vmware_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VmwareTag>>) -> Self {
         self.vmware_tags = input;
         self
     }
     /// <p>These are the details of the VMware tags associated with the specified virtual machine.</p>
-    pub fn get_vmware_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VmwareTag>> {
+    pub fn get_vmware_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VmwareTag>> {
         &self.vmware_tags
     }
     /// Consumes the builder and constructs a [`VirtualMachineDetails`](crate::types::VirtualMachineDetails).

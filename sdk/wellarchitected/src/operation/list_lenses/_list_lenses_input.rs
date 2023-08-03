@@ -51,9 +51,7 @@ impl ListLensesInput {
 
 /// A builder for [`ListLensesInput`](crate::operation::list_lenses::ListLensesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLensesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -110,10 +108,7 @@ impl ListLensesInputBuilder {
         self
     }
     /// <p>The status of lenses to be returned.</p>
-    pub fn set_lens_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LensStatusType>,
-    ) -> Self {
+    pub fn set_lens_status(mut self, input: ::std::option::Option<crate::types::LensStatusType>) -> Self {
         self.lens_status = input;
         self
     }
@@ -136,12 +131,7 @@ impl ListLensesInputBuilder {
         &self.lens_name
     }
     /// Consumes the builder and constructs a [`ListLensesInput`](crate::operation::list_lenses::ListLensesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_lenses::ListLensesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_lenses::ListLensesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_lenses::ListLensesInput {
             next_token: self.next_token,
             max_results: self.max_results,

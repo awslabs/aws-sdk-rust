@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for SubmitMultiRegionAccessPointRoutesOut
 }
 impl SubmitMultiRegionAccessPointRoutesOutput {
     /// Creates a new builder-style object to manufacture [`SubmitMultiRegionAccessPointRoutesOutput`](crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput).
-    pub fn builder() -> crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesOutputBuilder{
+    pub fn builder() -> crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesOutputBuilder {
         crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SubmitMultiRegionAccessPointRoutesOutput`](crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubmitMultiRegionAccessPointRoutesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl SubmitMultiRegionAccessPointRoutesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SubmitMultiRegionAccessPointRoutesOutput`](crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput).
-    pub fn build(self) -> crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput{
+    pub fn build(self) -> crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput {
         crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput {
             _request_id: self._request_id,
         }

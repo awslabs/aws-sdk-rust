@@ -9,12 +9,10 @@ pub struct DomainSettings {
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
     #[doc(hidden)]
-    pub r_studio_server_pro_domain_settings:
-        ::std::option::Option<crate::types::RStudioServerProDomainSettings>,
+    pub r_studio_server_pro_domain_settings: ::std::option::Option<crate::types::RStudioServerProDomainSettings>,
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
     #[doc(hidden)]
-    pub execution_role_identity_config:
-        ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
+    pub execution_role_identity_config: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
 }
 impl DomainSettings {
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
@@ -22,15 +20,11 @@ impl DomainSettings {
         self.security_group_ids.as_deref()
     }
     /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
-    pub fn r_studio_server_pro_domain_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RStudioServerProDomainSettings> {
+    pub fn r_studio_server_pro_domain_settings(&self) -> ::std::option::Option<&crate::types::RStudioServerProDomainSettings> {
         self.r_studio_server_pro_domain_settings.as_ref()
     }
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
-    pub fn execution_role_identity_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExecutionRoleIdentityConfig> {
+    pub fn execution_role_identity_config(&self) -> ::std::option::Option<&crate::types::ExecutionRoleIdentityConfig> {
         self.execution_role_identity_config.as_ref()
     }
 }
@@ -43,15 +37,11 @@ impl DomainSettings {
 
 /// A builder for [`DomainSettings`](crate::types::DomainSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainSettingsBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) r_studio_server_pro_domain_settings:
-        ::std::option::Option<crate::types::RStudioServerProDomainSettings>,
-    pub(crate) execution_role_identity_config:
-        ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
+    pub(crate) r_studio_server_pro_domain_settings: ::std::option::Option<crate::types::RStudioServerProDomainSettings>,
+    pub(crate) execution_role_identity_config: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
 }
 impl DomainSettingsBuilder {
     /// Appends an item to `security_group_ids`.
@@ -59,71 +49,47 @@ impl DomainSettingsBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
-    pub fn r_studio_server_pro_domain_settings(
-        mut self,
-        input: crate::types::RStudioServerProDomainSettings,
-    ) -> Self {
+    pub fn r_studio_server_pro_domain_settings(mut self, input: crate::types::RStudioServerProDomainSettings) -> Self {
         self.r_studio_server_pro_domain_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
-    pub fn set_r_studio_server_pro_domain_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RStudioServerProDomainSettings>,
-    ) -> Self {
+    pub fn set_r_studio_server_pro_domain_settings(mut self, input: ::std::option::Option<crate::types::RStudioServerProDomainSettings>) -> Self {
         self.r_studio_server_pro_domain_settings = input;
         self
     }
     /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
-    pub fn get_r_studio_server_pro_domain_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::RStudioServerProDomainSettings> {
+    pub fn get_r_studio_server_pro_domain_settings(&self) -> &::std::option::Option<crate::types::RStudioServerProDomainSettings> {
         &self.r_studio_server_pro_domain_settings
     }
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
-    pub fn execution_role_identity_config(
-        mut self,
-        input: crate::types::ExecutionRoleIdentityConfig,
-    ) -> Self {
+    pub fn execution_role_identity_config(mut self, input: crate::types::ExecutionRoleIdentityConfig) -> Self {
         self.execution_role_identity_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
-    pub fn set_execution_role_identity_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
-    ) -> Self {
+    pub fn set_execution_role_identity_config(mut self, input: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>) -> Self {
         self.execution_role_identity_config = input;
         self
     }
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
-    pub fn get_execution_role_identity_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecutionRoleIdentityConfig> {
+    pub fn get_execution_role_identity_config(&self) -> &::std::option::Option<crate::types::ExecutionRoleIdentityConfig> {
         &self.execution_role_identity_config
     }
     /// Consumes the builder and constructs a [`DomainSettings`](crate::types::DomainSettings).

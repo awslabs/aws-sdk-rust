@@ -29,8 +29,7 @@ impl ListCreateAccountStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCreateAccountStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_create_account_status::builders::ListCreateAccountStatusInputBuilder,
+    inner: crate::operation::list_create_account_status::builders::ListCreateAccountStatusInputBuilder,
 }
 impl ListCreateAccountStatusFluentBuilder {
     /// Creates a new `ListCreateAccountStatus`.
@@ -41,10 +40,7 @@ impl ListCreateAccountStatusFluentBuilder {
         }
     }
     /// Access the ListCreateAccountStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_create_account_status::builders::ListCreateAccountStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_create_account_status::builders::ListCreateAccountStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl ListCreateAccountStatusFluentBuilder {
             crate::operation::list_create_account_status::ListCreateAccountStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_create_account_status::ListCreateAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_create_account_status::ListCreateAccountStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl ListCreateAccountStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl ListCreateAccountStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_create_account_status::ListCreateAccountStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_create_account_status::ListCreateAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_create_account_status::ListCreateAccountStatusError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl ListCreateAccountStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_create_account_status::ListCreateAccountStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_create_account_status::ListCreateAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_create_account_status::ListCreateAccountStatusError>,
     > {
         self.send_middleware().await
     }
@@ -121,19 +108,14 @@ impl ListCreateAccountStatusFluentBuilder {
             crate::operation::list_create_account_status::ListCreateAccountStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_create_account_status::ListCreateAccountStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_create_account_status::ListCreateAccountStatusError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_create_account_status::paginator::ListCreateAccountStatusPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_create_account_status::paginator::ListCreateAccountStatusPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_create_account_status::paginator::ListCreateAccountStatusPaginator {
         crate::operation::list_create_account_status::paginator::ListCreateAccountStatusPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `States`.
@@ -146,17 +128,12 @@ impl ListCreateAccountStatusFluentBuilder {
         self
     }
     /// <p>A list of one or more states that you want included in the response. If this parameter isn't present, all requests are included in the response.</p>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAccountState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAccountState>>) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
     /// <p>A list of one or more states that you want included in the response. If this parameter isn't present, all requests are included in the response.</p>
-    pub fn get_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAccountState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAccountState>> {
         self.inner.get_states()
     }
     /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>

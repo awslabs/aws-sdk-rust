@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`federated_user(Option<FederatedUser>)`](crate::operation::get_federation_token::GetFederationTokenOutput::federated_user): <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy. </p>
     ///   - [`packed_policy_size(Option<i32>)`](crate::operation::get_federation_token::GetFederationTokenOutput::packed_policy_size): <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
     /// - On failure, responds with [`SdkError<GetFederationTokenError>`](crate::operation::get_federation_token::GetFederationTokenError)
-    pub fn get_federation_token(
-        &self,
-    ) -> crate::operation::get_federation_token::builders::GetFederationTokenFluentBuilder {
-        crate::operation::get_federation_token::builders::GetFederationTokenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_federation_token(&self) -> crate::operation::get_federation_token::builders::GetFederationTokenFluentBuilder {
+        crate::operation::get_federation_token::builders::GetFederationTokenFluentBuilder::new(self.handle.clone())
     }
 }

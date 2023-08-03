@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PatchDeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for PatchDeploymentStatus {
             "EXPLICIT_APPROVED" => PatchDeploymentStatus::ExplicitApproved,
             "EXPLICIT_REJECTED" => PatchDeploymentStatus::ExplicitRejected,
             "PENDING_APPROVAL" => PatchDeploymentStatus::PendingApproval,
-            other => PatchDeploymentStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PatchDeploymentStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl PatchDeploymentStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "APPROVED",
-            "EXPLICIT_APPROVED",
-            "EXPLICIT_REJECTED",
-            "PENDING_APPROVAL",
-        ]
+        &["APPROVED", "EXPLICIT_APPROVED", "EXPLICIT_REJECTED", "PENDING_APPROVAL"]
     }
 }
 impl ::std::convert::AsRef<str> for PatchDeploymentStatus {

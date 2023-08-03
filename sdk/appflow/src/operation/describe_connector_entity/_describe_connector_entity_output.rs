@@ -5,15 +5,12 @@
 pub struct DescribeConnectorEntityOutput {
     /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
     #[doc(hidden)]
-    pub connector_entity_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>>,
+    pub connector_entity_fields: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>>,
     _request_id: Option<String>,
 }
 impl DescribeConnectorEntityOutput {
     /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
-    pub fn connector_entity_fields(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConnectorEntityField]> {
+    pub fn connector_entity_fields(&self) -> ::std::option::Option<&[crate::types::ConnectorEntityField]> {
         self.connector_entity_fields.as_deref()
     }
 }
@@ -24,21 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeConnectorEntityOutput {
 }
 impl DescribeConnectorEntityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorEntityOutput`](crate::operation::describe_connector_entity::DescribeConnectorEntityOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_connector_entity::builders::DescribeConnectorEntityOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_connector_entity::builders::DescribeConnectorEntityOutputBuilder {
         crate::operation::describe_connector_entity::builders::DescribeConnectorEntityOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectorEntityOutput`](crate::operation::describe_connector_entity::DescribeConnectorEntityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectorEntityOutputBuilder {
-    pub(crate) connector_entity_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>>,
+    pub(crate) connector_entity_fields: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>>,
     _request_id: Option<String>,
 }
 impl DescribeConnectorEntityOutputBuilder {
@@ -54,17 +46,12 @@ impl DescribeConnectorEntityOutputBuilder {
         self
     }
     /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
-    pub fn set_connector_entity_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>>,
-    ) -> Self {
+    pub fn set_connector_entity_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>>) -> Self {
         self.connector_entity_fields = input;
         self
     }
     /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
-    pub fn get_connector_entity_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>> {
+    pub fn get_connector_entity_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>> {
         &self.connector_entity_fields
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -77,9 +64,7 @@ impl DescribeConnectorEntityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConnectorEntityOutput`](crate::operation::describe_connector_entity::DescribeConnectorEntityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_connector_entity::DescribeConnectorEntityOutput {
+    pub fn build(self) -> crate::operation::describe_connector_entity::DescribeConnectorEntityOutput {
         crate::operation::describe_connector_entity::DescribeConnectorEntityOutput {
             connector_entity_fields: self.connector_entity_fields,
             _request_id: self._request_id,

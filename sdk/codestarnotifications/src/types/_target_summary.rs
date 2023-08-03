@@ -62,18 +62,12 @@ pub struct TargetSummaryBuilder {
 }
 impl TargetSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
-    pub fn target_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
-    pub fn set_target_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_address = input;
         self
     }
@@ -113,10 +107,7 @@ impl TargetSummaryBuilder {
         self
     }
     /// <p>The status of the target.</p>
-    pub fn set_target_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetStatus>,
-    ) -> Self {
+    pub fn set_target_status(mut self, input: ::std::option::Option<crate::types::TargetStatus>) -> Self {
         self.target_status = input;
         self
     }

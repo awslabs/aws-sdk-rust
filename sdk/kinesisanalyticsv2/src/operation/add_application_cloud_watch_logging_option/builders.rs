@@ -5,16 +5,16 @@ pub use crate::operation::add_application_cloud_watch_logging_option::_add_appli
 
 impl AddApplicationCloudWatchLoggingOptionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.add_application_cloud_watch_logging_option();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl AddApplicationCloudWatchLoggingOptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddApplicationCloudWatchLoggingOptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionInputBuilder,
+    inner: crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionInputBuilder,
 }
 impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
     /// Creates a new `AddApplicationCloudWatchLoggingOption`.
@@ -37,15 +37,22 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
         }
     }
     /// Access the AddApplicationCloudWatchLoggingOption as a reference.
-    pub fn as_input(&self) -> &crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_application_cloud_watch_logging_option::builders::AddApplicationCloudWatchLoggingOptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOption, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOption,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +89,35 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOption, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOption,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Kinesis Data Analytics application name.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The Kinesis Data Analytics application name.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -129,40 +140,26 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
         self.inner.get_current_application_version_id()
     }
     /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
-    pub fn cloud_watch_logging_option(
-        mut self,
-        input: crate::types::CloudWatchLoggingOption,
-    ) -> Self {
+    pub fn cloud_watch_logging_option(mut self, input: crate::types::CloudWatchLoggingOption) -> Self {
         self.inner = self.inner.cloud_watch_logging_option(input);
         self
     }
     /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
-    pub fn set_cloud_watch_logging_option(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLoggingOption>,
-    ) -> Self {
+    pub fn set_cloud_watch_logging_option(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOption>) -> Self {
         self.inner = self.inner.set_cloud_watch_logging_option(input);
         self
     }
     /// <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
-    pub fn get_cloud_watch_logging_option(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOption> {
+    pub fn get_cloud_watch_logging_option(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOption> {
         self.inner.get_cloud_watch_logging_option()
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn conditional_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conditional_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conditional_token(input.into());
         self
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn set_conditional_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conditional_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_conditional_token(input);
         self
     }

@@ -15,33 +15,25 @@ impl DescribeVpcIngressConnectionInput {
 }
 impl DescribeVpcIngressConnectionInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcIngressConnectionInput`](crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionInput).
-    pub fn builder() -> crate::operation::describe_vpc_ingress_connection::builders::DescribeVpcIngressConnectionInputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_ingress_connection::builders::DescribeVpcIngressConnectionInputBuilder {
         crate::operation::describe_vpc_ingress_connection::builders::DescribeVpcIngressConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcIngressConnectionInput`](crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcIngressConnectionInputBuilder {
     pub(crate) vpc_ingress_connection_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeVpcIngressConnectionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want a description for.</p>
-    pub fn vpc_ingress_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_ingress_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_ingress_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want a description for.</p>
-    pub fn set_vpc_ingress_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_ingress_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_ingress_connection_arn = input;
         self
     }
@@ -56,10 +48,8 @@ impl DescribeVpcIngressConnectionInputBuilder {
         crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionInput {
-                vpc_ingress_connection_arn: self.vpc_ingress_connection_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionInput {
+            vpc_ingress_connection_arn: self.vpc_ingress_connection_arn,
+        })
     }
 }

@@ -5,16 +5,16 @@ pub use crate::operation::get_context_keys_for_custom_policy::_get_context_keys_
 
 impl GetContextKeysForCustomPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_context_keys_for_custom_policy();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl GetContextKeysForCustomPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetContextKeysForCustomPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_context_keys_for_custom_policy::builders::GetContextKeysForCustomPolicyInputBuilder,
+    inner: crate::operation::get_context_keys_for_custom_policy::builders::GetContextKeysForCustomPolicyInputBuilder,
 }
 impl GetContextKeysForCustomPolicyFluentBuilder {
     /// Creates a new `GetContextKeysForCustomPolicy`.
@@ -38,15 +38,20 @@ impl GetContextKeysForCustomPolicyFluentBuilder {
         }
     }
     /// Access the GetContextKeysForCustomPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_context_keys_for_custom_policy::builders::GetContextKeysForCustomPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_context_keys_for_custom_policy::builders::GetContextKeysForCustomPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicy,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl GetContextKeysForCustomPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +88,26 @@ impl GetContextKeysForCustomPolicyFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicy,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `PolicyInputList`.
@@ -106,10 +121,7 @@ impl GetContextKeysForCustomPolicyFluentBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    pub fn policy_input_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_input_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_input_list(input.into());
         self
     }
@@ -120,10 +132,7 @@ impl GetContextKeysForCustomPolicyFluentBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    pub fn set_policy_input_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_input_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_policy_input_list(input);
         self
     }
@@ -134,9 +143,7 @@ impl GetContextKeysForCustomPolicyFluentBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    pub fn get_policy_input_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_input_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_policy_input_list()
     }
 }

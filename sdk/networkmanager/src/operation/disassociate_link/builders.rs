@@ -10,10 +10,7 @@ impl DisassociateLinkInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_link::DisassociateLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_link::DisassociateLinkError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_link::DisassociateLinkError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disassociate_link();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DisassociateLinkFluentBuilder {
         }
     }
     /// Access the DisassociateLink as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_link::builders::DisassociateLinkInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_link::builders::DisassociateLinkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DisassociateLinkFluentBuilder {
             crate::operation::disassociate_link::DisassociateLink,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_link::DisassociateLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_link::DisassociateLinkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DisassociateLinkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DisassociateLinkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_link::DisassociateLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_link::DisassociateLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_link::DisassociateLinkError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DisassociateLinkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_link::DisassociateLinkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_link::DisassociateLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_link::DisassociateLinkError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DisassociateLinkFluentBuilder {
             crate::operation::disassociate_link::DisassociateLink,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_link::DisassociateLinkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_link::DisassociateLinkError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }

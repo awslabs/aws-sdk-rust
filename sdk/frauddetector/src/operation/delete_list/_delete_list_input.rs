@@ -22,9 +22,7 @@ impl DeleteListInput {
 
 /// A builder for [`DeleteListInput`](crate::operation::delete_list::DeleteListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteListInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteListInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteListInput`](crate::operation::delete_list::DeleteListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_list::DeleteListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_list::DeleteListInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_list::DeleteListInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_list::DeleteListInput { name: self.name })
     }
 }

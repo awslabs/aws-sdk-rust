@@ -30,9 +30,7 @@ impl ExecuteCommandSessionConfiguration {
 
 /// A builder for [`ExecuteCommandSessionConfiguration`](crate::types::ExecuteCommandSessionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteCommandSessionConfigurationBuilder {
     pub(crate) command: ::std::option::Option<::std::string::String>,
     pub(crate) arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +62,7 @@ impl ExecuteCommandSessionConfigurationBuilder {
         self
     }
     /// <p>An array of arguments containing arguments and members.</p>
-    pub fn set_arguments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_arguments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.arguments = input;
         self
     }

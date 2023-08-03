@@ -53,9 +53,7 @@ impl SessionKeyDerivation {
     }
     /// Tries to convert the enum instance into [`EmvCommon`](crate::types::SessionKeyDerivation::EmvCommon), extracting the inner [`SessionKeyEmvCommon`](crate::types::SessionKeyEmvCommon).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_emv_common(
-        &self,
-    ) -> ::std::result::Result<&crate::types::SessionKeyEmvCommon, &Self> {
+    pub fn as_emv_common(&self) -> ::std::result::Result<&crate::types::SessionKeyEmvCommon, &Self> {
         if let SessionKeyDerivation::EmvCommon(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -68,9 +66,7 @@ impl SessionKeyDerivation {
     }
     /// Tries to convert the enum instance into [`Mastercard`](crate::types::SessionKeyDerivation::Mastercard), extracting the inner [`SessionKeyMastercard`](crate::types::SessionKeyMastercard).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_mastercard(
-        &self,
-    ) -> ::std::result::Result<&crate::types::SessionKeyMastercard, &Self> {
+    pub fn as_mastercard(&self) -> ::std::result::Result<&crate::types::SessionKeyMastercard, &Self> {
         if let SessionKeyDerivation::Mastercard(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

@@ -44,9 +44,7 @@ impl InstanceBlockDeviceMappingSpecification {
 
 /// A builder for [`InstanceBlockDeviceMappingSpecification`](crate::types::InstanceBlockDeviceMappingSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceBlockDeviceMappingSpecificationBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) ebs: ::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification>,
@@ -74,17 +72,12 @@ impl InstanceBlockDeviceMappingSpecificationBuilder {
         self
     }
     /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    pub fn set_ebs(
-        mut self,
-        input: ::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification>,
-    ) -> Self {
+    pub fn set_ebs(mut self, input: ::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification>) -> Self {
         self.ebs = input;
         self
     }
     /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    pub fn get_ebs(
-        &self,
-    ) -> &::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification> {
+    pub fn get_ebs(&self) -> &::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification> {
         &self.ebs
     }
     /// <p>suppress the specified device included in the block device mapping.</p>

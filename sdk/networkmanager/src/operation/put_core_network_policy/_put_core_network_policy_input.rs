@@ -43,17 +43,14 @@ impl PutCoreNetworkPolicyInput {
 }
 impl PutCoreNetworkPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutCoreNetworkPolicyInput`](crate::operation::put_core_network_policy::PutCoreNetworkPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyInputBuilder {
         crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutCoreNetworkPolicyInput`](crate::operation::put_core_network_policy::PutCoreNetworkPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutCoreNetworkPolicyInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
@@ -63,18 +60,12 @@ pub struct PutCoreNetworkPolicyInputBuilder {
 }
 impl PutCoreNetworkPolicyInputBuilder {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
@@ -83,18 +74,12 @@ impl PutCoreNetworkPolicyInputBuilder {
         &self.core_network_id
     }
     /// <p>The policy document.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy document.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -147,18 +132,14 @@ impl PutCoreNetworkPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutCoreNetworkPolicyInput`](crate::operation::put_core_network_policy::PutCoreNetworkPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_core_network_policy::PutCoreNetworkPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_core_network_policy::PutCoreNetworkPolicyInput {
-                core_network_id: self.core_network_id,
-                policy_document: self.policy_document,
-                description: self.description,
-                latest_version_id: self.latest_version_id,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_core_network_policy::PutCoreNetworkPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_core_network_policy::PutCoreNetworkPolicyInput {
+            core_network_id: self.core_network_id,
+            policy_document: self.policy_document,
+            description: self.description,
+            latest_version_id: self.latest_version_id,
+            client_token: self.client_token,
+        })
     }
 }

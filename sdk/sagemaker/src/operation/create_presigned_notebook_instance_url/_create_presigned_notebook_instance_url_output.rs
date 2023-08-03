@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for CreatePresignedNotebookInstanceUrlOut
 }
 impl CreatePresignedNotebookInstanceUrlOutput {
     /// Creates a new builder-style object to manufacture [`CreatePresignedNotebookInstanceUrlOutput`](crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlOutput).
-    pub fn builder() -> crate::operation::create_presigned_notebook_instance_url::builders::CreatePresignedNotebookInstanceUrlOutputBuilder{
+    pub fn builder() -> crate::operation::create_presigned_notebook_instance_url::builders::CreatePresignedNotebookInstanceUrlOutputBuilder {
         crate::operation::create_presigned_notebook_instance_url::builders::CreatePresignedNotebookInstanceUrlOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePresignedNotebookInstanceUrlOutput`](crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePresignedNotebookInstanceUrlOutputBuilder {
     pub(crate) authorized_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePresignedNotebookInstanceUrlOutputBuilder {
     /// <p>A JSON object that contains the URL string. </p>
-    pub fn authorized_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorized_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorized_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON object that contains the URL string. </p>
-    pub fn set_authorized_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorized_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorized_url = input;
         self
     }
@@ -66,10 +58,9 @@ impl CreatePresignedNotebookInstanceUrlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreatePresignedNotebookInstanceUrlOutput`](crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlOutput).
-    pub fn build(self) -> crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlOutput{
+    pub fn build(self) -> crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlOutput {
         crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlOutput {
-            authorized_url: self.authorized_url
-            ,
+            authorized_url: self.authorized_url,
             _request_id: self._request_id,
         }
     }

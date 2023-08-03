@@ -29,17 +29,14 @@ impl DeleteOrganizationInput {
 }
 impl DeleteOrganizationInput {
     /// Creates a new builder-style object to manufacture [`DeleteOrganizationInput`](crate::operation::delete_organization::DeleteOrganizationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_organization::builders::DeleteOrganizationInputBuilder {
+    pub fn builder() -> crate::operation::delete_organization::builders::DeleteOrganizationInputBuilder {
         crate::operation::delete_organization::builders::DeleteOrganizationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOrganizationInput`](crate::operation::delete_organization::DeleteOrganizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOrganizationInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl DeleteOrganizationInputBuilder {
         &self.client_token
     }
     /// <p>The organization ID.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The organization ID.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -97,16 +88,11 @@ impl DeleteOrganizationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOrganizationInput`](crate::operation::delete_organization::DeleteOrganizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_organization::DeleteOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_organization::DeleteOrganizationInput {
-                client_token: self.client_token,
-                organization_id: self.organization_id,
-                delete_directory: self.delete_directory.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_organization::DeleteOrganizationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_organization::DeleteOrganizationInput {
+            client_token: self.client_token,
+            organization_id: self.organization_id,
+            delete_directory: self.delete_directory.unwrap_or_default(),
+        })
     }
 }

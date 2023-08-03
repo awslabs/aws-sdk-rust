@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for SkipWaitTimeForInstanceTerminationOut
 }
 impl SkipWaitTimeForInstanceTerminationOutput {
     /// Creates a new builder-style object to manufacture [`SkipWaitTimeForInstanceTerminationOutput`](crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput).
-    pub fn builder() -> crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationOutputBuilder{
+    pub fn builder() -> crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationOutputBuilder {
         crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationOutputBuilder::default()
     }
 }
 
 /// A builder for [`SkipWaitTimeForInstanceTerminationOutput`](crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SkipWaitTimeForInstanceTerminationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl SkipWaitTimeForInstanceTerminationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SkipWaitTimeForInstanceTerminationOutput`](crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput).
-    pub fn build(self) -> crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput{
+    pub fn build(self) -> crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput {
         crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput {
             _request_id: self._request_id,
         }

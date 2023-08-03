@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`virtual_interface_id(Option<String>)`](crate::operation::describe_router_configuration::DescribeRouterConfigurationOutput::virtual_interface_id): <p>The ID assigned to the virtual interface.</p>
     ///   - [`virtual_interface_name(Option<String>)`](crate::operation::describe_router_configuration::DescribeRouterConfigurationOutput::virtual_interface_name): <p>Provides the details about a virtual interface's router.</p>
     /// - On failure, responds with [`SdkError<DescribeRouterConfigurationError>`](crate::operation::describe_router_configuration::DescribeRouterConfigurationError)
-    pub fn describe_router_configuration(&self) -> crate::operation::describe_router_configuration::builders::DescribeRouterConfigurationFluentBuilder{
+    pub fn describe_router_configuration(
+        &self,
+    ) -> crate::operation::describe_router_configuration::builders::DescribeRouterConfigurationFluentBuilder {
         crate::operation::describe_router_configuration::builders::DescribeRouterConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

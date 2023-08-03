@@ -44,9 +44,7 @@ impl FinalAutoMlJobObjectiveMetric {
 
 /// A builder for [`FinalAutoMlJobObjectiveMetric`](crate::types::FinalAutoMlJobObjectiveMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FinalAutoMlJobObjectiveMetricBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AutoMlJobObjectiveType>,
     pub(crate) metric_name: ::std::option::Option<crate::types::AutoMlMetricEnum>,
@@ -60,10 +58,7 @@ impl FinalAutoMlJobObjectiveMetricBuilder {
         self
     }
     /// <p>The type of metric with the best result.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlJobObjectiveType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AutoMlJobObjectiveType>) -> Self {
         self.r#type = input;
         self
     }
@@ -77,10 +72,7 @@ impl FinalAutoMlJobObjectiveMetricBuilder {
         self
     }
     /// <p>The name of the metric with the best result. For a description of the possible objective metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>.</p>
-    pub fn set_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlMetricEnum>,
-    ) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::AutoMlMetricEnum>) -> Self {
         self.metric_name = input;
         self
     }
@@ -108,17 +100,12 @@ impl FinalAutoMlJobObjectiveMetricBuilder {
         self
     }
     /// <p>The name of the standard metric. For a description of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot candidate metrics</a>.</p>
-    pub fn set_standard_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlMetricEnum>,
-    ) -> Self {
+    pub fn set_standard_metric_name(mut self, input: ::std::option::Option<crate::types::AutoMlMetricEnum>) -> Self {
         self.standard_metric_name = input;
         self
     }
     /// <p>The name of the standard metric. For a description of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot candidate metrics</a>.</p>
-    pub fn get_standard_metric_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlMetricEnum> {
+    pub fn get_standard_metric_name(&self) -> &::std::option::Option<crate::types::AutoMlMetricEnum> {
         &self.standard_metric_name
     }
     /// Consumes the builder and constructs a [`FinalAutoMlJobObjectiveMetric`](crate::types::FinalAutoMlJobObjectiveMetric).

@@ -34,27 +34,19 @@ impl StageExecution {
 
 /// A builder for [`StageExecution`](crate::types::StageExecution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StageExecutionBuilder {
     pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::StageExecutionStatus>,
 }
 impl StageExecutionBuilder {
     /// <p>The ID of the pipeline execution associated with the stage.</p>
-    pub fn pipeline_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the pipeline execution associated with the stage.</p>
-    pub fn set_pipeline_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_execution_id = input;
         self
     }
@@ -72,10 +64,7 @@ impl StageExecutionBuilder {
     /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
     /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
     /// </note>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StageExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StageExecutionStatus>) -> Self {
         self.status = input;
         self
     }

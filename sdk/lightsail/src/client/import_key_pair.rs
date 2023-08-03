@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ImportKeyPairOutput`](crate::operation::import_key_pair::ImportKeyPairOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::import_key_pair::ImportKeyPairOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<ImportKeyPairError>`](crate::operation::import_key_pair::ImportKeyPairError)
-    pub fn import_key_pair(
-        &self,
-    ) -> crate::operation::import_key_pair::builders::ImportKeyPairFluentBuilder {
-        crate::operation::import_key_pair::builders::ImportKeyPairFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_key_pair(&self) -> crate::operation::import_key_pair::builders::ImportKeyPairFluentBuilder {
+        crate::operation::import_key_pair::builders::ImportKeyPairFluentBuilder::new(self.handle.clone())
     }
 }

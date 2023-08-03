@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`domain_controllers(Option<Vec<DomainController>>)`](crate::operation::describe_domain_controllers::DescribeDomainControllersOutput::domain_controllers): <p>List of the <code>DomainController</code> objects that were retrieved.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_domain_controllers::DescribeDomainControllersOutput::next_token): <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDomainControllers</code> retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainControllersError>`](crate::operation::describe_domain_controllers::DescribeDomainControllersError)
-    pub fn describe_domain_controllers(&self) -> crate::operation::describe_domain_controllers::builders::DescribeDomainControllersFluentBuilder{
+    pub fn describe_domain_controllers(&self) -> crate::operation::describe_domain_controllers::builders::DescribeDomainControllersFluentBuilder {
         crate::operation::describe_domain_controllers::builders::DescribeDomainControllersFluentBuilder::new(self.handle.clone())
     }
 }

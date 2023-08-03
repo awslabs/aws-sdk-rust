@@ -22,9 +22,7 @@ impl DeleteInstanceAccessControlAttributeConfigurationInput {
 
 /// A builder for [`DeleteInstanceAccessControlAttributeConfigurationInput`](crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInstanceAccessControlAttributeConfigurationInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,16 @@ impl DeleteInstanceAccessControlAttributeConfigurationInputBuilder {
         &self.instance_arn
     }
     /// Consumes the builder and constructs a [`DeleteInstanceAccessControlAttributeConfigurationInput`](crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationInput {
-                instance_arn: self.instance_arn
-                ,
-            }
+                instance_arn: self.instance_arn,
+            },
         )
     }
 }

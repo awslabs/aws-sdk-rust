@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetLineageGroupPolicyOutput {
 }
 impl GetLineageGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetLineageGroupPolicyOutput`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyOutputBuilder {
         crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLineageGroupPolicyOutput`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLineageGroupPolicyOutputBuilder {
     pub(crate) lineage_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_policy: ::std::option::Option<::std::string::String>,
@@ -47,18 +43,12 @@ pub struct GetLineageGroupPolicyOutputBuilder {
 }
 impl GetLineageGroupPolicyOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn lineage_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lineage_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lineage_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn set_lineage_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lineage_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lineage_group_arn = input;
         self
     }
@@ -67,18 +57,12 @@ impl GetLineageGroupPolicyOutputBuilder {
         &self.lineage_group_arn
     }
     /// <p>The resource policy that gives access to the lineage group in another account.</p>
-    pub fn resource_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource policy that gives access to the lineage group in another account.</p>
-    pub fn set_resource_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_policy = input;
         self
     }

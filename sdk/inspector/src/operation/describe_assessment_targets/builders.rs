@@ -26,7 +26,7 @@ impl DescribeAssessmentTargetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAssessmentTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsInputBuilder,
+    inner: crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsInputBuilder,
 }
 impl DescribeAssessmentTargetsFluentBuilder {
     /// Creates a new `DescribeAssessmentTargets`.
@@ -37,7 +37,7 @@ impl DescribeAssessmentTargetsFluentBuilder {
         }
     }
     /// Access the DescribeAssessmentTargets as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeAssessmentTargetsFluentBuilder {
             crate::operation::describe_assessment_targets::DescribeAssessmentTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeAssessmentTargetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeAssessmentTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_assessment_targets::DescribeAssessmentTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeAssessmentTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_assessment_targets::DescribeAssessmentTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeAssessmentTargetsFluentBuilder {
             crate::operation::describe_assessment_targets::DescribeAssessmentTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError>,
     > {
         self.customize_middleware().await
     }
@@ -125,25 +114,17 @@ impl DescribeAssessmentTargetsFluentBuilder {
     /// To override the contents of this collection use [`set_assessment_target_arns`](Self::set_assessment_target_arns).
     ///
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-    pub fn assessment_target_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_target_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_target_arns(input.into());
         self
     }
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-    pub fn set_assessment_target_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_assessment_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_assessment_target_arns(input);
         self
     }
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-    pub fn get_assessment_target_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_target_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_assessment_target_arns()
     }
 }

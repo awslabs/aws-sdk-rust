@@ -10,10 +10,7 @@ impl CreateDataCatalogInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_data_catalog::CreateDataCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_catalog::CreateDataCatalogError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_catalog::CreateDataCatalogError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_data_catalog();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateDataCatalogFluentBuilder {
         }
     }
     /// Access the CreateDataCatalog as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_data_catalog::builders::CreateDataCatalogInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_data_catalog::builders::CreateDataCatalogInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateDataCatalogFluentBuilder {
             crate::operation::create_data_catalog::CreateDataCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_catalog::CreateDataCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_catalog::CreateDataCatalogError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateDataCatalogFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateDataCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_catalog::CreateDataCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_catalog::CreateDataCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_catalog::CreateDataCatalogError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateDataCatalogFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_catalog::CreateDataCatalogOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_catalog::CreateDataCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_catalog::CreateDataCatalogError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateDataCatalogFluentBuilder {
             crate::operation::create_data_catalog::CreateDataCatalog,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_data_catalog::CreateDataCatalogError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_catalog::CreateDataCatalogError>,
     > {
         self.customize_middleware().await
     }
@@ -183,11 +167,7 @@ impl CreateDataCatalogFluentBuilder {
     /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameters(k.into(), v.into());
         self
     }
@@ -206,12 +186,7 @@ impl CreateDataCatalogFluentBuilder {
     /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
@@ -230,11 +205,7 @@ impl CreateDataCatalogFluentBuilder {
     /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_parameters()
     }
     /// Appends an item to `Tags`.
@@ -247,10 +218,7 @@ impl CreateDataCatalogFluentBuilder {
         self
     }
     /// <p>A list of comma separated tags to add to the data catalog that is created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

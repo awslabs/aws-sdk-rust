@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DisableHostedZoneDnssecOutput {
 }
 impl DisableHostedZoneDnssecOutput {
     /// Creates a new builder-style object to manufacture [`DisableHostedZoneDnssecOutput`](crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecOutput).
-    pub fn builder(
-    ) -> crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDnssecOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDnssecOutputBuilder {
         crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDnssecOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisableHostedZoneDnssecOutput`](crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableHostedZoneDnssecOutputBuilder {
     pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DisableHostedZoneDnssecOutputBuilder {
         self
     }
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
-    pub fn set_change_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeInfo>,
-    ) -> Self {
+    pub fn set_change_info(mut self, input: ::std::option::Option<crate::types::ChangeInfo>) -> Self {
         self.change_info = input;
         self
     }
@@ -65,9 +58,7 @@ impl DisableHostedZoneDnssecOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableHostedZoneDnssecOutput`](crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecOutput {
+    pub fn build(self) -> crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecOutput {
         crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecOutput {
             change_info: self.change_info,
             _request_id: self._request_id,

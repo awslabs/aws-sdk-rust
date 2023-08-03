@@ -23,9 +23,7 @@ impl VolumeDetail {
 
 /// A builder for [`VolumeDetail`](crate::types::VolumeDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeDetailBuilder {
     pub(crate) size: ::std::option::Option<i64>,
 }

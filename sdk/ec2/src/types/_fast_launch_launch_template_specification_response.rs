@@ -30,17 +30,14 @@ impl FastLaunchLaunchTemplateSpecificationResponse {
 }
 impl FastLaunchLaunchTemplateSpecificationResponse {
     /// Creates a new builder-style object to manufacture [`FastLaunchLaunchTemplateSpecificationResponse`](crate::types::FastLaunchLaunchTemplateSpecificationResponse).
-    pub fn builder() -> crate::types::builders::FastLaunchLaunchTemplateSpecificationResponseBuilder
-    {
+    pub fn builder() -> crate::types::builders::FastLaunchLaunchTemplateSpecificationResponseBuilder {
         crate::types::builders::FastLaunchLaunchTemplateSpecificationResponseBuilder::default()
     }
 }
 
 /// A builder for [`FastLaunchLaunchTemplateSpecificationResponse`](crate::types::FastLaunchLaunchTemplateSpecificationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FastLaunchLaunchTemplateSpecificationResponseBuilder {
     pub(crate) launch_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_template_name: ::std::option::Option<::std::string::String>,
@@ -48,18 +45,12 @@ pub struct FastLaunchLaunchTemplateSpecificationResponseBuilder {
 }
 impl FastLaunchLaunchTemplateSpecificationResponseBuilder {
     /// <p>The ID of the launch template for faster launching of the associated Windows AMI.</p>
-    pub fn launch_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the launch template for faster launching of the associated Windows AMI.</p>
-    pub fn set_launch_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_template_id = input;
         self
     }
@@ -68,18 +59,12 @@ impl FastLaunchLaunchTemplateSpecificationResponseBuilder {
         &self.launch_template_id
     }
     /// <p>The name of the launch template for faster launching of the associated Windows AMI.</p>
-    pub fn launch_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the launch template for faster launching of the associated Windows AMI.</p>
-    pub fn set_launch_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_template_name = input;
         self
     }

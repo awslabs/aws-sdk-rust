@@ -30,9 +30,7 @@ impl SqlQueryDatasetAction {
 
 /// A builder for [`SqlQueryDatasetAction`](crate::types::SqlQueryDatasetAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SqlQueryDatasetActionBuilder {
     pub(crate) sql_query: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>,
@@ -64,17 +62,12 @@ impl SqlQueryDatasetActionBuilder {
         self
     }
     /// <p>Prefilters applied to message data.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Prefilters applied to message data.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SqlQueryDatasetAction`](crate::types::SqlQueryDatasetAction).

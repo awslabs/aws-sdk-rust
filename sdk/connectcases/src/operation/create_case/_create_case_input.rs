@@ -43,9 +43,7 @@ impl CreateCaseInput {
 
 /// A builder for [`CreateCaseInput`](crate::operation::create_case::CreateCaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCaseInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
@@ -93,10 +91,7 @@ impl CreateCaseInputBuilder {
         self
     }
     /// <p>An array of objects with field ID (matching ListFields/DescribeField) and value union data.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>) -> Self {
         self.fields = input;
         self
     }
@@ -119,12 +114,7 @@ impl CreateCaseInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateCaseInput`](crate::operation::create_case::CreateCaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_case::CreateCaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_case::CreateCaseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_case::CreateCaseInput {
             domain_id: self.domain_id,
             template_id: self.template_id,

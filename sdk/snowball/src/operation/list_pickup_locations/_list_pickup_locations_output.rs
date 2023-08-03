@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPickupLocationsOutput {
 }
 impl ListPickupLocationsOutput {
     /// Creates a new builder-style object to manufacture [`ListPickupLocationsOutput`](crate::operation::list_pickup_locations::ListPickupLocationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_pickup_locations::builders::ListPickupLocationsOutputBuilder {
-        crate::operation::list_pickup_locations::builders::ListPickupLocationsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_pickup_locations::builders::ListPickupLocationsOutputBuilder {
+        crate::operation::list_pickup_locations::builders::ListPickupLocationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPickupLocationsOutput`](crate::operation::list_pickup_locations::ListPickupLocationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPickupLocationsOutputBuilder {
     pub(crate) addresses: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListPickupLocationsOutputBuilder {
         self
     }
     /// <p>Information about the address of pickup locations.</p>
-    pub fn set_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
-    ) -> Self {
+    pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Address>>) -> Self {
         self.addresses = input;
         self
     }

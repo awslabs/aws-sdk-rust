@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`client_token(Option<String>)`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
     ///   - [`image_build_version_arn(Option<String>)`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionOutput::image_build_version_arn): <p>The Amazon Resource Name (ARN) of the image that was created by this request.</p>
     /// - On failure, responds with [`SdkError<StartImagePipelineExecutionError>`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionError)
-    pub fn start_image_pipeline_execution(&self) -> crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionFluentBuilder{
+    pub fn start_image_pipeline_execution(
+        &self,
+    ) -> crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionFluentBuilder {
         crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionFluentBuilder::new(self.handle.clone())
     }
 }

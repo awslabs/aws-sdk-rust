@@ -37,15 +37,11 @@ impl CustomPluginRevisionSummary {
         self.description.as_deref()
     }
     /// <p>Details about the custom plugin file.</p>
-    pub fn file_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomPluginFileDescription> {
+    pub fn file_description(&self) -> ::std::option::Option<&crate::types::CustomPluginFileDescription> {
         self.file_description.as_ref()
     }
     /// <p>Information about the location of the custom plugin.</p>
-    pub fn location(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomPluginLocationDescription> {
+    pub fn location(&self) -> ::std::option::Option<&crate::types::CustomPluginLocationDescription> {
         self.location.as_ref()
     }
     /// <p>The revision of the custom plugin.</p>
@@ -62,9 +58,7 @@ impl CustomPluginRevisionSummary {
 
 /// A builder for [`CustomPluginRevisionSummary`](crate::types::CustomPluginRevisionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomPluginRevisionSummaryBuilder {
     pub(crate) content_type: ::std::option::Option<crate::types::CustomPluginContentType>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -80,17 +74,12 @@ impl CustomPluginRevisionSummaryBuilder {
         self
     }
     /// <p>The format of the plugin file.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomPluginContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::CustomPluginContentType>) -> Self {
         self.content_type = input;
         self
     }
     /// <p>The format of the plugin file.</p>
-    pub fn get_content_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomPluginContentType> {
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::CustomPluginContentType> {
         &self.content_type
     }
     /// <p>The time that the custom plugin was created.</p>
@@ -99,10 +88,7 @@ impl CustomPluginRevisionSummaryBuilder {
         self
     }
     /// <p>The time that the custom plugin was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -130,17 +116,12 @@ impl CustomPluginRevisionSummaryBuilder {
         self
     }
     /// <p>Details about the custom plugin file.</p>
-    pub fn set_file_description(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomPluginFileDescription>,
-    ) -> Self {
+    pub fn set_file_description(mut self, input: ::std::option::Option<crate::types::CustomPluginFileDescription>) -> Self {
         self.file_description = input;
         self
     }
     /// <p>Details about the custom plugin file.</p>
-    pub fn get_file_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomPluginFileDescription> {
+    pub fn get_file_description(&self) -> &::std::option::Option<crate::types::CustomPluginFileDescription> {
         &self.file_description
     }
     /// <p>Information about the location of the custom plugin.</p>
@@ -149,17 +130,12 @@ impl CustomPluginRevisionSummaryBuilder {
         self
     }
     /// <p>Information about the location of the custom plugin.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomPluginLocationDescription>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::CustomPluginLocationDescription>) -> Self {
         self.location = input;
         self
     }
     /// <p>Information about the location of the custom plugin.</p>
-    pub fn get_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomPluginLocationDescription> {
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::CustomPluginLocationDescription> {
         &self.location
     }
     /// <p>The revision of the custom plugin.</p>

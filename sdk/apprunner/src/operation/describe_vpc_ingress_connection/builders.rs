@@ -26,7 +26,7 @@ impl DescribeVpcIngressConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVpcIngressConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_vpc_ingress_connection::builders::DescribeVpcIngressConnectionInputBuilder,
+    inner: crate::operation::describe_vpc_ingress_connection::builders::DescribeVpcIngressConnectionInputBuilder,
 }
 impl DescribeVpcIngressConnectionFluentBuilder {
     /// Creates a new `DescribeVpcIngressConnection`.
@@ -37,7 +37,7 @@ impl DescribeVpcIngressConnectionFluentBuilder {
         }
     }
     /// Access the DescribeVpcIngressConnection as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_vpc_ingress_connection::builders::DescribeVpcIngressConnectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_vpc_ingress_connection::builders::DescribeVpcIngressConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeVpcIngressConnectionFluentBuilder {
             crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeVpcIngressConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeVpcIngressConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeVpcIngressConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeVpcIngressConnectionFluentBuilder {
             crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want a description for.</p>
-    pub fn vpc_ingress_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_ingress_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_ingress_connection_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want a description for.</p>
-    pub fn set_vpc_ingress_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_ingress_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_ingress_connection_arn(input);
         self
     }

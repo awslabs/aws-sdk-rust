@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateAuthEventFeedbackOutput {
 }
 impl UpdateAuthEventFeedbackOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAuthEventFeedbackOutput`](crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackOutput).
-    pub fn builder(
-    ) -> crate::operation::update_auth_event_feedback::builders::UpdateAuthEventFeedbackOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_auth_event_feedback::builders::UpdateAuthEventFeedbackOutputBuilder {
         crate::operation::update_auth_event_feedback::builders::UpdateAuthEventFeedbackOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAuthEventFeedbackOutput`](crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAuthEventFeedbackOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateAuthEventFeedbackOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateAuthEventFeedbackOutput`](crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackOutput {
+    pub fn build(self) -> crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackOutput {
         crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackOutput {
             _request_id: self._request_id,
         }

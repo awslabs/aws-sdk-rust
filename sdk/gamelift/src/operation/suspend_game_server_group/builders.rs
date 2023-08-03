@@ -33,8 +33,7 @@ impl SuspendGameServerGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SuspendGameServerGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupInputBuilder,
+    inner: crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupInputBuilder,
 }
 impl SuspendGameServerGroupFluentBuilder {
     /// Creates a new `SuspendGameServerGroup`.
@@ -45,10 +44,7 @@ impl SuspendGameServerGroupFluentBuilder {
         }
     }
     /// Access the SuspendGameServerGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +56,7 @@ impl SuspendGameServerGroupFluentBuilder {
             crate::operation::suspend_game_server_group::SuspendGameServerGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::suspend_game_server_group::SuspendGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::suspend_game_server_group::SuspendGameServerGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +66,7 @@ impl SuspendGameServerGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +75,7 @@ impl SuspendGameServerGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::suspend_game_server_group::SuspendGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::suspend_game_server_group::SuspendGameServerGroupError>,
     > {
         let op = self
             .inner
@@ -109,9 +98,7 @@ impl SuspendGameServerGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::suspend_game_server_group::SuspendGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::suspend_game_server_group::SuspendGameServerGroupError>,
     > {
         self.send_middleware().await
     }
@@ -125,25 +112,17 @@ impl SuspendGameServerGroupFluentBuilder {
             crate::operation::suspend_game_server_group::SuspendGameServerGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::suspend_game_server_group::SuspendGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::suspend_game_server_group::SuspendGameServerGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_group_name(input.into());
         self
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
@@ -161,17 +140,12 @@ impl SuspendGameServerGroupFluentBuilder {
         self
     }
     /// <p>The activity to suspend for this game server group.</p>
-    pub fn set_suspend_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
-    ) -> Self {
+    pub fn set_suspend_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>) -> Self {
         self.inner = self.inner.set_suspend_actions(input);
         self
     }
     /// <p>The activity to suspend for this game server group.</p>
-    pub fn get_suspend_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>> {
+    pub fn get_suspend_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>> {
         self.inner.get_suspend_actions()
     }
 }

@@ -45,18 +45,14 @@ impl UpdateGatewayInformationInput {
 }
 impl UpdateGatewayInformationInput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewayInformationInput`](crate::operation::update_gateway_information::UpdateGatewayInformationInput).
-    pub fn builder(
-    ) -> crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder {
         crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGatewayInformationInput`](crate::operation::update_gateway_information::UpdateGatewayInformationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGatewayInformationInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_name: ::std::option::Option<::std::string::String>,
@@ -94,18 +90,12 @@ impl UpdateGatewayInformationInputBuilder {
         &self.gateway_name
     }
     /// <p>A value that indicates the time zone of the gateway.</p>
-    pub fn gateway_timezone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that indicates the time zone of the gateway.</p>
-    pub fn set_gateway_timezone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_timezone = input;
         self
     }
@@ -115,19 +105,13 @@ impl UpdateGatewayInformationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs?</a> </p>
-    pub fn cloud_watch_log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs?</a> </p>
-    pub fn set_cloud_watch_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = input;
         self
     }
@@ -142,10 +126,7 @@ impl UpdateGatewayInformationInputBuilder {
         self
     }
     /// <p>Specifies the size of the gateway's metadata cache.</p>
-    pub fn set_gateway_capacity(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayCapacity>,
-    ) -> Self {
+    pub fn set_gateway_capacity(mut self, input: ::std::option::Option<crate::types::GatewayCapacity>) -> Self {
         self.gateway_capacity = input;
         self
     }
@@ -160,14 +141,12 @@ impl UpdateGatewayInformationInputBuilder {
         crate::operation::update_gateway_information::UpdateGatewayInformationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_gateway_information::UpdateGatewayInformationInput {
-                gateway_arn: self.gateway_arn,
-                gateway_name: self.gateway_name,
-                gateway_timezone: self.gateway_timezone,
-                cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
-                gateway_capacity: self.gateway_capacity,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_gateway_information::UpdateGatewayInformationInput {
+            gateway_arn: self.gateway_arn,
+            gateway_name: self.gateway_name,
+            gateway_timezone: self.gateway_timezone,
+            cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
+            gateway_capacity: self.gateway_capacity,
+        })
     }
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GrantFlowEntitlementsOutput {
 }
 impl GrantFlowEntitlementsOutput {
     /// Creates a new builder-style object to manufacture [`GrantFlowEntitlementsOutput`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput).
-    pub fn builder(
-    ) -> crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsOutputBuilder {
         crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GrantFlowEntitlementsOutput`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrantFlowEntitlementsOutputBuilder {
     pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl GrantFlowEntitlementsOutputBuilder {
         self
     }
     /// The entitlements that were just granted.
-    pub fn set_entitlements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
-    ) -> Self {
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>) -> Self {
         self.entitlements = input;
         self
     }
     /// The entitlements that were just granted.
-    pub fn get_entitlements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
         &self.entitlements
     }
     /// The ARN of the flow that these entitlements were granted to.

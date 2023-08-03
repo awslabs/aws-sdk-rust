@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetCapacityReservationOutput`](crate::operation::get_capacity_reservation::GetCapacityReservationOutput) with field(s):
     ///   - [`capacity_reservation(Option<CapacityReservation>)`](crate::operation::get_capacity_reservation::GetCapacityReservationOutput::capacity_reservation): <p>The requested capacity reservation structure.</p>
     /// - On failure, responds with [`SdkError<GetCapacityReservationError>`](crate::operation::get_capacity_reservation::GetCapacityReservationError)
-    pub fn get_capacity_reservation(
-        &self,
-    ) -> crate::operation::get_capacity_reservation::builders::GetCapacityReservationFluentBuilder
-    {
+    pub fn get_capacity_reservation(&self) -> crate::operation::get_capacity_reservation::builders::GetCapacityReservationFluentBuilder {
         crate::operation::get_capacity_reservation::builders::GetCapacityReservationFluentBuilder::new(self.handle.clone())
     }
 }

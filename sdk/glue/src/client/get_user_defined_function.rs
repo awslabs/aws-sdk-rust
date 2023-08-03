@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetUserDefinedFunctionOutput`](crate::operation::get_user_defined_function::GetUserDefinedFunctionOutput) with field(s):
     ///   - [`user_defined_function(Option<UserDefinedFunction>)`](crate::operation::get_user_defined_function::GetUserDefinedFunctionOutput::user_defined_function): <p>The requested function definition.</p>
     /// - On failure, responds with [`SdkError<GetUserDefinedFunctionError>`](crate::operation::get_user_defined_function::GetUserDefinedFunctionError)
-    pub fn get_user_defined_function(
-        &self,
-    ) -> crate::operation::get_user_defined_function::builders::GetUserDefinedFunctionFluentBuilder
-    {
+    pub fn get_user_defined_function(&self) -> crate::operation::get_user_defined_function::builders::GetUserDefinedFunctionFluentBuilder {
         crate::operation::get_user_defined_function::builders::GetUserDefinedFunctionFluentBuilder::new(self.handle.clone())
     }
 }

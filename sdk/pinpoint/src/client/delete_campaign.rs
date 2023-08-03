@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteCampaignOutput`](crate::operation::delete_campaign::DeleteCampaignOutput) with field(s):
     ///   - [`campaign_response(Option<CampaignResponse>)`](crate::operation::delete_campaign::DeleteCampaignOutput::campaign_response): <p>Provides information about the status, configuration, and other settings for a campaign.</p>
     /// - On failure, responds with [`SdkError<DeleteCampaignError>`](crate::operation::delete_campaign::DeleteCampaignError)
-    pub fn delete_campaign(
-        &self,
-    ) -> crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder {
-        crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_campaign(&self) -> crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder {
+        crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::new(self.handle.clone())
     }
 }

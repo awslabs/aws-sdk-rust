@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAppVersionsOutput {
 }
 impl ListAppVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppVersionsOutput`](crate::operation::list_app_versions::ListAppVersionsOutput).
-    pub fn builder() -> crate::operation::list_app_versions::builders::ListAppVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_app_versions::builders::ListAppVersionsOutputBuilder {
         crate::operation::list_app_versions::builders::ListAppVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppVersionsOutput`](crate::operation::list_app_versions::ListAppVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppVersionsOutputBuilder {
-    pub(crate) app_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppVersionSummary>>,
+    pub(crate) app_versions: ::std::option::Option<::std::vec::Vec<crate::types::AppVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListAppVersionsOutputBuilder {
         self
     }
     /// <p>The version of the application.</p>
-    pub fn set_app_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppVersionSummary>>,
-    ) -> Self {
+    pub fn set_app_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppVersionSummary>>) -> Self {
         self.app_versions = input;
         self
     }
     /// <p>The version of the application.</p>
-    pub fn get_app_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppVersionSummary>> {
+    pub fn get_app_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppVersionSummary>> {
         &self.app_versions
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

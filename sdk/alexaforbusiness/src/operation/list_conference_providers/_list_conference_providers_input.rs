@@ -22,18 +22,14 @@ impl ListConferenceProvidersInput {
 }
 impl ListConferenceProvidersInput {
     /// Creates a new builder-style object to manufacture [`ListConferenceProvidersInput`](crate::operation::list_conference_providers::ListConferenceProvidersInput).
-    pub fn builder(
-    ) -> crate::operation::list_conference_providers::builders::ListConferenceProvidersInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_conference_providers::builders::ListConferenceProvidersInputBuilder {
         crate::operation::list_conference_providers::builders::ListConferenceProvidersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListConferenceProvidersInput`](crate::operation::list_conference_providers::ListConferenceProvidersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConferenceProvidersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -74,11 +70,9 @@ impl ListConferenceProvidersInputBuilder {
         crate::operation::list_conference_providers::ListConferenceProvidersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_conference_providers::ListConferenceProvidersInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_conference_providers::ListConferenceProvidersInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

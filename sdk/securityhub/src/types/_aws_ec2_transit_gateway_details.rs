@@ -100,17 +100,14 @@ impl AwsEc2TransitGatewayDetails {
 
 /// A builder for [`AwsEc2TransitGatewayDetails`](crate::types::AwsEc2TransitGatewayDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2TransitGatewayDetailsBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) default_route_table_propagation: ::std::option::Option<::std::string::String>,
     pub(crate) auto_accept_shared_attachments: ::std::option::Option<::std::string::String>,
     pub(crate) default_route_table_association: ::std::option::Option<::std::string::String>,
-    pub(crate) transit_gateway_cidr_blocks:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) association_default_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) propagation_default_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_ecmp_support: ::std::option::Option<::std::string::String>,
@@ -148,69 +145,45 @@ impl AwsEc2TransitGatewayDetailsBuilder {
         &self.description
     }
     /// <p>Turn on or turn off automatic propagation of routes to the default propagation route table. </p>
-    pub fn default_route_table_propagation(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_route_table_propagation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_route_table_propagation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Turn on or turn off automatic propagation of routes to the default propagation route table. </p>
-    pub fn set_default_route_table_propagation(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_route_table_propagation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_route_table_propagation = input;
         self
     }
     /// <p>Turn on or turn off automatic propagation of routes to the default propagation route table. </p>
-    pub fn get_default_route_table_propagation(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_default_route_table_propagation(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_route_table_propagation
     }
     /// <p>Turn on or turn off automatic acceptance of attachment requests. </p>
-    pub fn auto_accept_shared_attachments(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_accept_shared_attachments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_accept_shared_attachments = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Turn on or turn off automatic acceptance of attachment requests. </p>
-    pub fn set_auto_accept_shared_attachments(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_accept_shared_attachments(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_accept_shared_attachments = input;
         self
     }
     /// <p>Turn on or turn off automatic acceptance of attachment requests. </p>
-    pub fn get_auto_accept_shared_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_auto_accept_shared_attachments(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_accept_shared_attachments
     }
     /// <p>Turn on or turn off automatic association with the default association route table. </p>
-    pub fn default_route_table_association(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_route_table_association(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_route_table_association = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Turn on or turn off automatic association with the default association route table. </p>
-    pub fn set_default_route_table_association(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_route_table_association(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_route_table_association = input;
         self
     }
     /// <p>Turn on or turn off automatic association with the default association route table. </p>
-    pub fn get_default_route_table_association(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_default_route_table_association(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_route_table_association
     }
     /// Appends an item to `transit_gateway_cidr_blocks`.
@@ -218,86 +191,56 @@ impl AwsEc2TransitGatewayDetailsBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_cidr_blocks`](Self::set_transit_gateway_cidr_blocks).
     ///
     /// <p>The transit gateway Classless Inter-Domain Routing (CIDR) blocks. </p>
-    pub fn transit_gateway_cidr_blocks(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_cidr_blocks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.transit_gateway_cidr_blocks.unwrap_or_default();
         v.push(input.into());
         self.transit_gateway_cidr_blocks = ::std::option::Option::Some(v);
         self
     }
     /// <p>The transit gateway Classless Inter-Domain Routing (CIDR) blocks. </p>
-    pub fn set_transit_gateway_cidr_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_transit_gateway_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.transit_gateway_cidr_blocks = input;
         self
     }
     /// <p>The transit gateway Classless Inter-Domain Routing (CIDR) blocks. </p>
-    pub fn get_transit_gateway_cidr_blocks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_transit_gateway_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.transit_gateway_cidr_blocks
     }
     /// <p>The ID of the default association route table. </p>
-    pub fn association_default_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_default_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_default_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the default association route table. </p>
-    pub fn set_association_default_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_default_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_default_route_table_id = input;
         self
     }
     /// <p>The ID of the default association route table. </p>
-    pub fn get_association_default_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_association_default_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.association_default_route_table_id
     }
     /// <p>The ID of the default propagation route table. </p>
-    pub fn propagation_default_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn propagation_default_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.propagation_default_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the default propagation route table. </p>
-    pub fn set_propagation_default_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_propagation_default_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.propagation_default_route_table_id = input;
         self
     }
     /// <p>The ID of the default propagation route table. </p>
-    pub fn get_propagation_default_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_propagation_default_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.propagation_default_route_table_id
     }
     /// <p>Turn on or turn off Equal Cost Multipath Protocol (ECMP) support. </p>
-    pub fn vpn_ecmp_support(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_ecmp_support(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_ecmp_support = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Turn on or turn off Equal Cost Multipath Protocol (ECMP) support. </p>
-    pub fn set_vpn_ecmp_support(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_ecmp_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_ecmp_support = input;
         self
     }
@@ -320,18 +263,12 @@ impl AwsEc2TransitGatewayDetailsBuilder {
         &self.dns_support
     }
     /// <p>Indicates whether multicast is supported on the transit gateway. </p>
-    pub fn multicast_support(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn multicast_support(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multicast_support = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates whether multicast is supported on the transit gateway. </p>
-    pub fn set_multicast_support(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_multicast_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.multicast_support = input;
         self
     }

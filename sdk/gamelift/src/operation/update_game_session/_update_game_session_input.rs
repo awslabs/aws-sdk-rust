@@ -14,8 +14,7 @@ pub struct UpdateGameSessionInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A policy that determines whether the game session is accepting new players.</p>
     #[doc(hidden)]
-    pub player_session_creation_policy:
-        ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
+    pub player_session_creation_policy: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
@@ -38,9 +37,7 @@ impl UpdateGameSessionInput {
         self.name.as_deref()
     }
     /// <p>A policy that determines whether the game session is accepting new players.</p>
-    pub fn player_session_creation_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PlayerSessionCreationPolicy> {
+    pub fn player_session_creation_policy(&self) -> ::std::option::Option<&crate::types::PlayerSessionCreationPolicy> {
         self.player_session_creation_policy.as_ref()
     }
     /// <p>Game session protection policy to apply to this game session only.</p>
@@ -54,39 +51,29 @@ impl UpdateGameSessionInput {
 }
 impl UpdateGameSessionInput {
     /// Creates a new builder-style object to manufacture [`UpdateGameSessionInput`](crate::operation::update_game_session::UpdateGameSessionInput).
-    pub fn builder(
-    ) -> crate::operation::update_game_session::builders::UpdateGameSessionInputBuilder {
+    pub fn builder() -> crate::operation::update_game_session::builders::UpdateGameSessionInputBuilder {
         crate::operation::update_game_session::builders::UpdateGameSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGameSessionInput`](crate::operation::update_game_session::UpdateGameSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGameSessionInputBuilder {
     pub(crate) game_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) maximum_player_session_count: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) player_session_creation_policy:
-        ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
+    pub(crate) player_session_creation_policy: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
     pub(crate) protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
 }
 impl UpdateGameSessionInputBuilder {
     /// <p>A unique identifier for the game session to update. </p>
-    pub fn game_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game session to update. </p>
-    pub fn set_game_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
@@ -123,25 +110,17 @@ impl UpdateGameSessionInputBuilder {
         &self.name
     }
     /// <p>A policy that determines whether the game session is accepting new players.</p>
-    pub fn player_session_creation_policy(
-        mut self,
-        input: crate::types::PlayerSessionCreationPolicy,
-    ) -> Self {
+    pub fn player_session_creation_policy(mut self, input: crate::types::PlayerSessionCreationPolicy) -> Self {
         self.player_session_creation_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A policy that determines whether the game session is accepting new players.</p>
-    pub fn set_player_session_creation_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
-    ) -> Self {
+    pub fn set_player_session_creation_policy(mut self, input: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>) -> Self {
         self.player_session_creation_policy = input;
         self
     }
     /// <p>A policy that determines whether the game session is accepting new players.</p>
-    pub fn get_player_session_creation_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::PlayerSessionCreationPolicy> {
+    pub fn get_player_session_creation_policy(&self) -> &::std::option::Option<crate::types::PlayerSessionCreationPolicy> {
         &self.player_session_creation_policy
     }
     /// <p>Game session protection policy to apply to this game session only.</p>
@@ -158,10 +137,7 @@ impl UpdateGameSessionInputBuilder {
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn set_protection_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectionPolicy>,
-    ) -> Self {
+    pub fn set_protection_policy(mut self, input: ::std::option::Option<crate::types::ProtectionPolicy>) -> Self {
         self.protection_policy = input;
         self
     }
@@ -176,18 +152,13 @@ impl UpdateGameSessionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGameSessionInput`](crate::operation::update_game_session::UpdateGameSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_game_session::UpdateGameSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_game_session::UpdateGameSessionInput {
-                game_session_id: self.game_session_id,
-                maximum_player_session_count: self.maximum_player_session_count,
-                name: self.name,
-                player_session_creation_policy: self.player_session_creation_policy,
-                protection_policy: self.protection_policy,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_game_session::UpdateGameSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_game_session::UpdateGameSessionInput {
+            game_session_id: self.game_session_id,
+            maximum_player_session_count: self.maximum_player_session_count,
+            name: self.name,
+            player_session_creation_policy: self.player_session_creation_policy,
+            protection_policy: self.protection_policy,
+        })
     }
 }

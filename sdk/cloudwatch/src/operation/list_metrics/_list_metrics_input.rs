@@ -68,9 +68,7 @@ impl ListMetricsInput {
 
 /// A builder for [`ListMetricsInput`](crate::operation::list_metrics::ListMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMetricsInputBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
@@ -121,17 +119,12 @@ impl ListMetricsInputBuilder {
         self
     }
     /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>> {
         &self.dimensions
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
@@ -156,10 +149,7 @@ impl ListMetricsInputBuilder {
     }
     /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
     /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
-    pub fn set_recently_active(
-        mut self,
-        input: ::std::option::Option<crate::types::RecentlyActive>,
-    ) -> Self {
+    pub fn set_recently_active(mut self, input: ::std::option::Option<crate::types::RecentlyActive>) -> Self {
         self.recently_active = input;
         self
     }
@@ -186,18 +176,12 @@ impl ListMetricsInputBuilder {
         &self.include_linked_accounts
     }
     /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
-    pub fn owning_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owning_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
-    pub fn set_owning_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owning_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owning_account = input;
         self
     }
@@ -206,12 +190,7 @@ impl ListMetricsInputBuilder {
         &self.owning_account
     }
     /// Consumes the builder and constructs a [`ListMetricsInput`](crate::operation::list_metrics::ListMetricsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_metrics::ListMetricsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_metrics::ListMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_metrics::ListMetricsInput {
             namespace: self.namespace,
             metric_name: self.metric_name,

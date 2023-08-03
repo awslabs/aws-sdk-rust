@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdatePipelineNotificationsOutput`](crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsOutput) with field(s):
     ///   - [`pipeline(Option<Pipeline>)`](crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsOutput::pipeline): <p>A section of the response body that provides information about the pipeline associated with this notification.</p>
     /// - On failure, responds with [`SdkError<UpdatePipelineNotificationsError>`](crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsError)
-    pub fn update_pipeline_notifications(&self) -> crate::operation::update_pipeline_notifications::builders::UpdatePipelineNotificationsFluentBuilder{
+    pub fn update_pipeline_notifications(
+        &self,
+    ) -> crate::operation::update_pipeline_notifications::builders::UpdatePipelineNotificationsFluentBuilder {
         crate::operation::update_pipeline_notifications::builders::UpdatePipelineNotificationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,9 +29,7 @@ impl CreateBackupInput {
 
 /// A builder for [`CreateBackupInput`](crate::operation::create_backup::CreateBackupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBackupInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) backup_name: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl CreateBackupInputBuilder {
         &self.backup_name
     }
     /// Consumes the builder and constructs a [`CreateBackupInput`](crate::operation::create_backup::CreateBackupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_backup::CreateBackupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_backup::CreateBackupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_backup::CreateBackupInput {
             table_name: self.table_name,
             backup_name: self.backup_name,

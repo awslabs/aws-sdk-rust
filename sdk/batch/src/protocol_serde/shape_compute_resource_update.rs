@@ -88,10 +88,7 @@ pub fn ser_compute_resource_update(
             {
                 #[allow(unused_mut)]
                 let mut object_27 = array_25.value().start_object();
-                crate::protocol_serde::shape_ec2_configuration::ser_ec2_configuration(
-                    &mut object_27,
-                    item_26,
-                )?;
+                crate::protocol_serde::shape_ec2_configuration::ser_ec2_configuration(&mut object_27, item_26)?;
                 object_27.finish();
             }
         }

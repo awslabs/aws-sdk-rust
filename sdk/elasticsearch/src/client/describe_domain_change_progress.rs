@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeDomainChangeProgressOutput`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput) with field(s):
     ///   - [`change_progress_status(Option<ChangeProgressStatusDetails>)`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput::change_progress_status): <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
     /// - On failure, responds with [`SdkError<DescribeDomainChangeProgressError>`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError)
-    pub fn describe_domain_change_progress(&self) -> crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressFluentBuilder{
+    pub fn describe_domain_change_progress(
+        &self,
+    ) -> crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressFluentBuilder {
         crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressFluentBuilder::new(self.handle.clone())
     }
 }

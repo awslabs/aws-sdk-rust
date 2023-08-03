@@ -47,9 +47,7 @@ impl CommitmentConfiguration {
 
 /// A builder for [`CommitmentConfiguration`](crate::types::CommitmentConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommitmentConfigurationBuilder {
     pub(crate) commitment_length: ::std::option::Option<crate::types::CommitmentLength>,
     pub(crate) automatic_renewal: ::std::option::Option<bool>,
@@ -61,10 +59,7 @@ impl CommitmentConfigurationBuilder {
         self
     }
     /// <p>The duration of the commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.</p>
-    pub fn set_commitment_length(
-        mut self,
-        input: ::std::option::Option<crate::types::CommitmentLength>,
-    ) -> Self {
+    pub fn set_commitment_length(mut self, input: ::std::option::Option<crate::types::CommitmentLength>) -> Self {
         self.commitment_length = input;
         self
     }

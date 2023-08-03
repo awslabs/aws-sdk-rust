@@ -23,17 +23,14 @@ impl ListInstanceGroupsInput {
 }
 impl ListInstanceGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListInstanceGroupsInput`](crate::operation::list_instance_groups::ListInstanceGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_instance_groups::builders::ListInstanceGroupsInputBuilder {
+    pub fn builder() -> crate::operation::list_instance_groups::builders::ListInstanceGroupsInputBuilder {
         crate::operation::list_instance_groups::builders::ListInstanceGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInstanceGroupsInput`](crate::operation::list_instance_groups::ListInstanceGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceGroupsInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -70,15 +67,10 @@ impl ListInstanceGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListInstanceGroupsInput`](crate::operation::list_instance_groups::ListInstanceGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_instance_groups::ListInstanceGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_instance_groups::ListInstanceGroupsInput {
-                cluster_id: self.cluster_id,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_instance_groups::ListInstanceGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_instance_groups::ListInstanceGroupsInput {
+            cluster_id: self.cluster_id,
+            marker: self.marker,
+        })
     }
 }

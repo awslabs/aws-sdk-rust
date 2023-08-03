@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`enable_network_isolation(bool)`](crate::operation::describe_model::DescribeModelOutput::enable_network_isolation): <p>If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.</p>
     ///   - [`deployment_recommendation(Option<DeploymentRecommendation>)`](crate::operation::describe_model::DescribeModelOutput::deployment_recommendation): <p>A set of recommended deployment configurations for the model.</p>
     /// - On failure, responds with [`SdkError<DescribeModelError>`](crate::operation::describe_model::DescribeModelError)
-    pub fn describe_model(
-        &self,
-    ) -> crate::operation::describe_model::builders::DescribeModelFluentBuilder {
-        crate::operation::describe_model::builders::DescribeModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_model(&self) -> crate::operation::describe_model::builders::DescribeModelFluentBuilder {
+        crate::operation::describe_model::builders::DescribeModelFluentBuilder::new(self.handle.clone())
     }
 }

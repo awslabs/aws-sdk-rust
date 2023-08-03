@@ -15,18 +15,14 @@ impl DescribeConfigurationsInput {
 }
 impl DescribeConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationsInput`](crate::operation::describe_configurations::DescribeConfigurationsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_configurations::builders::DescribeConfigurationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_configurations::builders::DescribeConfigurationsInputBuilder {
         crate::operation::describe_configurations::builders::DescribeConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationsInput`](crate::operation::describe_configurations::DescribeConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationsInputBuilder {
     pub(crate) configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -36,40 +32,28 @@ impl DescribeConfigurationsInputBuilder {
     /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
     ///
     /// <p>One or more configuration IDs.</p>
-    pub fn configuration_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.configuration_ids.unwrap_or_default();
         v.push(input.into());
         self.configuration_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more configuration IDs.</p>
-    pub fn set_configuration_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_configuration_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.configuration_ids = input;
         self
     }
     /// <p>One or more configuration IDs.</p>
-    pub fn get_configuration_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configuration_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.configuration_ids
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationsInput`](crate::operation::describe_configurations::DescribeConfigurationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_configurations::DescribeConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_configurations::DescribeConfigurationsInput {
-                configuration_ids: self.configuration_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_configurations::DescribeConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_configurations::DescribeConfigurationsInput {
+            configuration_ids: self.configuration_ids,
+        })
     }
 }

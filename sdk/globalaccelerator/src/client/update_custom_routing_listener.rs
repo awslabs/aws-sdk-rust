@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateCustomRoutingListenerOutput`](crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerOutput) with field(s):
     ///   - [`listener(Option<CustomRoutingListener>)`](crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerOutput::listener): <p>Information for the updated listener for a custom routing accelerator.</p>
     /// - On failure, responds with [`SdkError<UpdateCustomRoutingListenerError>`](crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerError)
-    pub fn update_custom_routing_listener(&self) -> crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerFluentBuilder{
+    pub fn update_custom_routing_listener(
+        &self,
+    ) -> crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerFluentBuilder {
         crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerFluentBuilder::new(self.handle.clone())
     }
 }

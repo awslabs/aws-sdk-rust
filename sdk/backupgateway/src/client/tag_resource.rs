@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput) with field(s):
     ///   - [`resource_arn(Option<String>)`](crate::operation::tag_resource::TagResourceOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource you tagged.</p>
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)
-    pub fn tag_resource(
-        &self,
-    ) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {
+    pub fn tag_resource(&self) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {
         crate::operation::tag_resource::builders::TagResourceFluentBuilder::new(self.handle.clone())
     }
 }

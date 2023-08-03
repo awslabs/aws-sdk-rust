@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
     ///   - [`log_group_arn(Option<String>)`](crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput::log_group_arn): <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeEmailMonitoringConfigurationError>`](crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError)
-    pub fn describe_email_monitoring_configuration(&self) -> crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationFluentBuilder{
-        crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn describe_email_monitoring_configuration(
+        &self,
+    ) -> crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationFluentBuilder {
+        crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

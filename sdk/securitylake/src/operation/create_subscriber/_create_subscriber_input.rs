@@ -50,17 +50,14 @@ impl CreateSubscriberInput {
 }
 impl CreateSubscriberInput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriberInput`](crate::operation::create_subscriber::CreateSubscriberInput).
-    pub fn builder() -> crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder {
         crate::operation::create_subscriber::builders::CreateSubscriberInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSubscriberInput`](crate::operation::create_subscriber::CreateSubscriberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSubscriberInputBuilder {
     pub(crate) subscriber_identity: ::std::option::Option<crate::types::AwsIdentity>,
     pub(crate) subscriber_name: ::std::option::Option<::std::string::String>,
@@ -76,10 +73,7 @@ impl CreateSubscriberInputBuilder {
         self
     }
     /// <p>The AWS identity used to access your data.</p>
-    pub fn set_subscriber_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsIdentity>,
-    ) -> Self {
+    pub fn set_subscriber_identity(mut self, input: ::std::option::Option<crate::types::AwsIdentity>) -> Self {
         self.subscriber_identity = input;
         self
     }
@@ -88,18 +82,12 @@ impl CreateSubscriberInputBuilder {
         &self.subscriber_identity
     }
     /// <p>The name of your Security Lake subscriber account.</p>
-    pub fn subscriber_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscriber_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your Security Lake subscriber account.</p>
-    pub fn set_subscriber_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscriber_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscriber_name = input;
         self
     }
@@ -108,18 +96,12 @@ impl CreateSubscriberInputBuilder {
         &self.subscriber_name
     }
     /// <p>The description for your subscriber account in Security Lake.</p>
-    pub fn subscriber_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscriber_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for your subscriber account in Security Lake.</p>
-    pub fn set_subscriber_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscriber_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscriber_description = input;
         self
     }
@@ -139,17 +121,12 @@ impl CreateSubscriberInputBuilder {
         self
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
         &self.sources
     }
     /// Appends an item to `access_types`.
@@ -164,17 +141,12 @@ impl CreateSubscriberInputBuilder {
         self
     }
     /// <p>The Amazon S3 or Lake Formation access type.</p>
-    pub fn set_access_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessType>>,
-    ) -> Self {
+    pub fn set_access_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessType>>) -> Self {
         self.access_types = input;
         self
     }
     /// <p>The Amazon S3 or Lake Formation access type.</p>
-    pub fn get_access_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessType>> {
+    pub fn get_access_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessType>> {
         &self.access_types
     }
     /// Appends an item to `tags`.
@@ -189,10 +161,7 @@ impl CreateSubscriberInputBuilder {
         self
     }
     /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -203,10 +172,7 @@ impl CreateSubscriberInputBuilder {
     /// Consumes the builder and constructs a [`CreateSubscriberInput`](crate::operation::create_subscriber::CreateSubscriberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_subscriber::CreateSubscriberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_subscriber::CreateSubscriberInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_subscriber::CreateSubscriberInput {
             subscriber_identity: self.subscriber_identity,
             subscriber_name: self.subscriber_name,

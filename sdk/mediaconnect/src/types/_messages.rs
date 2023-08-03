@@ -23,9 +23,7 @@ impl Messages {
 
 /// A builder for [`Messages`](crate::types::Messages).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessagesBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl MessagesBuilder {
         self
     }
     /// A list of errors that might have been generated from processes on this flow.
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.errors = input;
         self
     }
@@ -55,8 +50,6 @@ impl MessagesBuilder {
     }
     /// Consumes the builder and constructs a [`Messages`](crate::types::Messages).
     pub fn build(self) -> crate::types::Messages {
-        crate::types::Messages {
-            errors: self.errors,
-        }
+        crate::types::Messages { errors: self.errors }
     }
 }

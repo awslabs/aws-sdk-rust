@@ -29,17 +29,14 @@ impl GetBatchImportJobsInput {
 }
 impl GetBatchImportJobsInput {
     /// Creates a new builder-style object to manufacture [`GetBatchImportJobsInput`](crate::operation::get_batch_import_jobs::GetBatchImportJobsInput).
-    pub fn builder(
-    ) -> crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsInputBuilder {
+    pub fn builder() -> crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsInputBuilder {
         crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBatchImportJobsInput`](crate::operation::get_batch_import_jobs::GetBatchImportJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBatchImportJobsInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,16 +88,12 @@ impl GetBatchImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`GetBatchImportJobsInput`](crate::operation::get_batch_import_jobs::GetBatchImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_batch_import_jobs::GetBatchImportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_batch_import_jobs::GetBatchImportJobsInput {
-                job_id: self.job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_batch_import_jobs::GetBatchImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_batch_import_jobs::GetBatchImportJobsInput {
+            job_id: self.job_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -22,35 +22,26 @@ impl DescribeFeatureGroupInput {
 }
 impl DescribeFeatureGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeFeatureGroupInput`](crate::operation::describe_feature_group::DescribeFeatureGroupInput).
-    pub fn builder(
-    ) -> crate::operation::describe_feature_group::builders::DescribeFeatureGroupInputBuilder {
+    pub fn builder() -> crate::operation::describe_feature_group::builders::DescribeFeatureGroupInputBuilder {
         crate::operation::describe_feature_group::builders::DescribeFeatureGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFeatureGroupInput`](crate::operation::describe_feature_group::DescribeFeatureGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFeatureGroupInputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFeatureGroupInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described. </p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described. </p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_name = input;
         self
     }
@@ -75,15 +66,11 @@ impl DescribeFeatureGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFeatureGroupInput`](crate::operation::describe_feature_group::DescribeFeatureGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_feature_group::DescribeFeatureGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_feature_group::DescribeFeatureGroupInput {
-                feature_group_name: self.feature_group_name,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_feature_group::DescribeFeatureGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_feature_group::DescribeFeatureGroupInput {
+            feature_group_name: self.feature_group_name,
+            next_token: self.next_token,
+        })
     }
 }

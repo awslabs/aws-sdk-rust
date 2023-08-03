@@ -21,10 +21,7 @@ pub fn ser_list_provisioned_product_plans_input(
     if let Some(var_5) = &input.access_level_filter {
         #[allow(unused_mut)]
         let mut object_6 = object.key("AccessLevelFilter").start_object();
-        crate::protocol_serde::shape_access_level_filter::ser_access_level_filter(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_access_level_filter::ser_access_level_filter(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAnomalySubscriptionOutput {
 }
 impl DeleteAnomalySubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAnomalySubscriptionOutput`](crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionOutput).
-    pub fn builder() -> crate::operation::delete_anomaly_subscription::builders::DeleteAnomalySubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_anomaly_subscription::builders::DeleteAnomalySubscriptionOutputBuilder {
         crate::operation::delete_anomaly_subscription::builders::DeleteAnomalySubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAnomalySubscriptionOutput`](crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAnomalySubscriptionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteAnomalySubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAnomalySubscriptionOutput`](crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionOutput {
+    pub fn build(self) -> crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionOutput {
         crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionOutput {
             _request_id: self._request_id,
         }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateInstanceProfileOutput {
 }
 impl UpdateInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceProfileOutput`](crate::operation::update_instance_profile::UpdateInstanceProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::update_instance_profile::builders::UpdateInstanceProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_instance_profile::builders::UpdateInstanceProfileOutputBuilder {
         crate::operation::update_instance_profile::builders::UpdateInstanceProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateInstanceProfileOutput`](crate::operation::update_instance_profile::UpdateInstanceProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInstanceProfileOutputBuilder {
     pub(crate) instance_profile: ::std::option::Option<crate::types::InstanceProfile>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateInstanceProfileOutputBuilder {
         self
     }
     /// <p>An object that contains information about your instance profile.</p>
-    pub fn set_instance_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceProfile>,
-    ) -> Self {
+    pub fn set_instance_profile(mut self, input: ::std::option::Option<crate::types::InstanceProfile>) -> Self {
         self.instance_profile = input;
         self
     }

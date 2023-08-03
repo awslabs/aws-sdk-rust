@@ -30,7 +30,7 @@ impl UpdateConnectorRegistrationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConnectorRegistrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_connector_registration::builders::UpdateConnectorRegistrationInputBuilder,
+    inner: crate::operation::update_connector_registration::builders::UpdateConnectorRegistrationInputBuilder,
 }
 impl UpdateConnectorRegistrationFluentBuilder {
     /// Creates a new `UpdateConnectorRegistration`.
@@ -41,7 +41,7 @@ impl UpdateConnectorRegistrationFluentBuilder {
         }
     }
     /// Access the UpdateConnectorRegistration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_connector_registration::builders::UpdateConnectorRegistrationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_connector_registration::builders::UpdateConnectorRegistrationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl UpdateConnectorRegistrationFluentBuilder {
             crate::operation::update_connector_registration::UpdateConnectorRegistration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector_registration::UpdateConnectorRegistrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector_registration::UpdateConnectorRegistrationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl UpdateConnectorRegistrationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl UpdateConnectorRegistrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connector_registration::UpdateConnectorRegistrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector_registration::UpdateConnectorRegistrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector_registration::UpdateConnectorRegistrationError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl UpdateConnectorRegistrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connector_registration::UpdateConnectorRegistrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector_registration::UpdateConnectorRegistrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector_registration::UpdateConnectorRegistrationError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +109,17 @@ impl UpdateConnectorRegistrationFluentBuilder {
             crate::operation::update_connector_registration::UpdateConnectorRegistration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connector_registration::UpdateConnectorRegistrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connector_registration::UpdateConnectorRegistrationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the connector. The name is unique for each connector registration in your AWS account.</p>
-    pub fn connector_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_label(input.into());
         self
     }
     /// <p>The name of the connector. The name is unique for each connector registration in your AWS account.</p>
-    pub fn set_connector_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_label(input);
         self
     }
@@ -159,25 +142,17 @@ impl UpdateConnectorRegistrationFluentBuilder {
         self.inner.get_description()
     }
     /// <p>Contains information about the configuration of the connector being registered.</p>
-    pub fn connector_provisioning_config(
-        mut self,
-        input: crate::types::ConnectorProvisioningConfig,
-    ) -> Self {
+    pub fn connector_provisioning_config(mut self, input: crate::types::ConnectorProvisioningConfig) -> Self {
         self.inner = self.inner.connector_provisioning_config(input);
         self
     }
     /// <p>Contains information about the configuration of the connector being registered.</p>
-    pub fn set_connector_provisioning_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorProvisioningConfig>,
-    ) -> Self {
+    pub fn set_connector_provisioning_config(mut self, input: ::std::option::Option<crate::types::ConnectorProvisioningConfig>) -> Self {
         self.inner = self.inner.set_connector_provisioning_config(input);
         self
     }
     /// <p>Contains information about the configuration of the connector being registered.</p>
-    pub fn get_connector_provisioning_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectorProvisioningConfig> {
+    pub fn get_connector_provisioning_config(&self) -> &::std::option::Option<crate::types::ConnectorProvisioningConfig> {
         self.inner.get_connector_provisioning_config()
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorRegistration</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>

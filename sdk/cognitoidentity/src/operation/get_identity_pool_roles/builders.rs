@@ -38,10 +38,7 @@ impl GetIdentityPoolRolesFluentBuilder {
         }
     }
     /// Access the GetIdentityPoolRoles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl GetIdentityPoolRolesFluentBuilder {
             crate::operation::get_identity_pool_roles::GetIdentityPoolRoles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl GetIdentityPoolRolesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl GetIdentityPoolRolesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_pool_roles::GetIdentityPoolRolesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl GetIdentityPoolRolesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_pool_roles::GetIdentityPoolRolesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl GetIdentityPoolRolesFluentBuilder {
             crate::operation::get_identity_pool_roles::GetIdentityPoolRoles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_pool_roles::GetIdentityPoolRolesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }

@@ -27,11 +27,7 @@ impl super::Client {
     ///   - [`jwt_configuration(Option<JwtConfiguration>)`](crate::operation::create_authorizer::CreateAuthorizerOutput::jwt_configuration): <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
     ///   - [`name(Option<String>)`](crate::operation::create_authorizer::CreateAuthorizerOutput::name): <p>The name of the authorizer.</p>
     /// - On failure, responds with [`SdkError<CreateAuthorizerError>`](crate::operation::create_authorizer::CreateAuthorizerError)
-    pub fn create_authorizer(
-        &self,
-    ) -> crate::operation::create_authorizer::builders::CreateAuthorizerFluentBuilder {
-        crate::operation::create_authorizer::builders::CreateAuthorizerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_authorizer(&self) -> crate::operation::create_authorizer::builders::CreateAuthorizerFluentBuilder {
+        crate::operation::create_authorizer::builders::CreateAuthorizerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for RegisterMailDomainOutput {
 }
 impl RegisterMailDomainOutput {
     /// Creates a new builder-style object to manufacture [`RegisterMailDomainOutput`](crate::operation::register_mail_domain::RegisterMailDomainOutput).
-    pub fn builder(
-    ) -> crate::operation::register_mail_domain::builders::RegisterMailDomainOutputBuilder {
+    pub fn builder() -> crate::operation::register_mail_domain::builders::RegisterMailDomainOutputBuilder {
         crate::operation::register_mail_domain::builders::RegisterMailDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterMailDomainOutput`](crate::operation::register_mail_domain::RegisterMailDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterMailDomainOutputBuilder {
     _request_id: Option<String>,
 }

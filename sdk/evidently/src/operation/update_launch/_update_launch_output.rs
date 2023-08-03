@@ -28,9 +28,7 @@ impl UpdateLaunchOutput {
 
 /// A builder for [`UpdateLaunchOutput`](crate::operation::update_launch::UpdateLaunchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLaunchOutputBuilder {
     pub(crate) launch: ::std::option::Option<crate::types::Launch>,
     _request_id: Option<String>,

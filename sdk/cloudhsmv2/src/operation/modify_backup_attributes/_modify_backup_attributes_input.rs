@@ -22,18 +22,14 @@ impl ModifyBackupAttributesInput {
 }
 impl ModifyBackupAttributesInput {
     /// Creates a new builder-style object to manufacture [`ModifyBackupAttributesInput`](crate::operation::modify_backup_attributes::ModifyBackupAttributesInput).
-    pub fn builder(
-    ) -> crate::operation::modify_backup_attributes::builders::ModifyBackupAttributesInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_backup_attributes::builders::ModifyBackupAttributesInputBuilder {
         crate::operation::modify_backup_attributes::builders::ModifyBackupAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyBackupAttributesInput`](crate::operation::modify_backup_attributes::ModifyBackupAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyBackupAttributesInputBuilder {
     pub(crate) backup_id: ::std::option::Option<::std::string::String>,
     pub(crate) never_expires: ::std::option::Option<bool>,
@@ -70,15 +66,11 @@ impl ModifyBackupAttributesInputBuilder {
     /// Consumes the builder and constructs a [`ModifyBackupAttributesInput`](crate::operation::modify_backup_attributes::ModifyBackupAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_backup_attributes::ModifyBackupAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_backup_attributes::ModifyBackupAttributesInput {
-                backup_id: self.backup_id,
-                never_expires: self.never_expires,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_backup_attributes::ModifyBackupAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_backup_attributes::ModifyBackupAttributesInput {
+            backup_id: self.backup_id,
+            never_expires: self.never_expires,
+        })
     }
 }

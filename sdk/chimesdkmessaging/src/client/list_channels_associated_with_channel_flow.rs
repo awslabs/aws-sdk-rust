@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`channels(Option<Vec<ChannelAssociatedWithFlowSummary>>)`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowOutput::channels): <p>The information about each channel.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowOutput::next_token): <p>The token passed by previous API calls until all requested channels are returned.</p>
     /// - On failure, responds with [`SdkError<ListChannelsAssociatedWithChannelFlowError>`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowError)
-    pub fn list_channels_associated_with_channel_flow(&self) -> crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder{
-        crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder::new(self.handle.clone())
+    pub fn list_channels_associated_with_channel_flow(
+        &self,
+    ) -> crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder {
+        crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

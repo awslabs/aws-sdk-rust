@@ -15,19 +15,14 @@ pub fn ser_update_game_server_group_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_instance_definition::ser_instance_definition(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_instance_definition::ser_instance_definition(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
         array_4.finish();
     }
     if let Some(var_7) = &input.game_server_protection_policy {
-        object
-            .key("GameServerProtectionPolicy")
-            .string(var_7.as_str());
+        object.key("GameServerProtectionPolicy").string(var_7.as_str());
     }
     if let Some(var_8) = &input.balancing_strategy {
         object.key("BalancingStrategy").string(var_8.as_str());

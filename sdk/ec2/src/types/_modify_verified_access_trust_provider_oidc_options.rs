@@ -71,8 +71,7 @@ impl ::std::fmt::Debug for ModifyVerifiedAccessTrustProviderOidcOptions {
 }
 impl ModifyVerifiedAccessTrustProviderOidcOptions {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessTrustProviderOidcOptions`](crate::types::ModifyVerifiedAccessTrustProviderOidcOptions).
-    pub fn builder() -> crate::types::builders::ModifyVerifiedAccessTrustProviderOidcOptionsBuilder
-    {
+    pub fn builder() -> crate::types::builders::ModifyVerifiedAccessTrustProviderOidcOptionsBuilder {
         crate::types::builders::ModifyVerifiedAccessTrustProviderOidcOptionsBuilder::default()
     }
 }
@@ -105,18 +104,12 @@ impl ModifyVerifiedAccessTrustProviderOidcOptionsBuilder {
         &self.issuer
     }
     /// <p>The OIDC authorization endpoint.</p>
-    pub fn authorization_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorization_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OIDC authorization endpoint.</p>
-    pub fn set_authorization_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorization_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorization_endpoint = input;
         self
     }
@@ -125,18 +118,12 @@ impl ModifyVerifiedAccessTrustProviderOidcOptionsBuilder {
         &self.authorization_endpoint
     }
     /// <p>The OIDC token endpoint.</p>
-    pub fn token_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn token_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OIDC token endpoint.</p>
-    pub fn set_token_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_token_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_endpoint = input;
         self
     }
@@ -145,18 +132,12 @@ impl ModifyVerifiedAccessTrustProviderOidcOptionsBuilder {
         &self.token_endpoint
     }
     /// <p>The OIDC user info endpoint.</p>
-    pub fn user_info_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_info_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_info_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OIDC user info endpoint.</p>
-    pub fn set_user_info_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_info_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_info_endpoint = input;
         self
     }
@@ -179,18 +160,12 @@ impl ModifyVerifiedAccessTrustProviderOidcOptionsBuilder {
         &self.client_id
     }
     /// <p>The client secret.</p>
-    pub fn client_secret(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The client secret.</p>
-    pub fn set_client_secret(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_secret = input;
         self
     }

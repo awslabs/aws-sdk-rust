@@ -22,11 +22,7 @@ impl super::Client {
     /// - On success, responds with [`CreateIpamPoolOutput`](crate::operation::create_ipam_pool::CreateIpamPoolOutput) with field(s):
     ///   - [`ipam_pool(Option<IpamPool>)`](crate::operation::create_ipam_pool::CreateIpamPoolOutput::ipam_pool): <p>Information about the IPAM pool created.</p>
     /// - On failure, responds with [`SdkError<CreateIpamPoolError>`](crate::operation::create_ipam_pool::CreateIpamPoolError)
-    pub fn create_ipam_pool(
-        &self,
-    ) -> crate::operation::create_ipam_pool::builders::CreateIpamPoolFluentBuilder {
-        crate::operation::create_ipam_pool::builders::CreateIpamPoolFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_ipam_pool(&self) -> crate::operation::create_ipam_pool::builders::CreateIpamPoolFluentBuilder {
+        crate::operation::create_ipam_pool::builders::CreateIpamPoolFluentBuilder::new(self.handle.clone())
     }
 }

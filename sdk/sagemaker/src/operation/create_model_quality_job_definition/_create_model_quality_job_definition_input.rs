@@ -8,19 +8,16 @@ pub struct CreateModelQualityJobDefinitionInput {
     pub job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the constraints and baselines for the monitoring job.</p>
     #[doc(hidden)]
-    pub model_quality_baseline_config:
-        ::std::option::Option<crate::types::ModelQualityBaselineConfig>,
+    pub model_quality_baseline_config: ::std::option::Option<crate::types::ModelQualityBaselineConfig>,
     /// <p>The container that runs the monitoring job.</p>
     #[doc(hidden)]
-    pub model_quality_app_specification:
-        ::std::option::Option<crate::types::ModelQualityAppSpecification>,
+    pub model_quality_app_specification: ::std::option::Option<crate::types::ModelQualityAppSpecification>,
     /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
     #[doc(hidden)]
     pub model_quality_job_input: ::std::option::Option<crate::types::ModelQualityJobInput>,
     /// <p>The output configuration for monitoring jobs.</p>
     #[doc(hidden)]
-    pub model_quality_job_output_config:
-        ::std::option::Option<crate::types::MonitoringOutputConfig>,
+    pub model_quality_job_output_config: ::std::option::Option<crate::types::MonitoringOutputConfig>,
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
     #[doc(hidden)]
     pub job_resources: ::std::option::Option<crate::types::MonitoringResources>,
@@ -43,27 +40,19 @@ impl CreateModelQualityJobDefinitionInput {
         self.job_definition_name.as_deref()
     }
     /// <p>Specifies the constraints and baselines for the monitoring job.</p>
-    pub fn model_quality_baseline_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelQualityBaselineConfig> {
+    pub fn model_quality_baseline_config(&self) -> ::std::option::Option<&crate::types::ModelQualityBaselineConfig> {
         self.model_quality_baseline_config.as_ref()
     }
     /// <p>The container that runs the monitoring job.</p>
-    pub fn model_quality_app_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelQualityAppSpecification> {
+    pub fn model_quality_app_specification(&self) -> ::std::option::Option<&crate::types::ModelQualityAppSpecification> {
         self.model_quality_app_specification.as_ref()
     }
     /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
-    pub fn model_quality_job_input(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelQualityJobInput> {
+    pub fn model_quality_job_input(&self) -> ::std::option::Option<&crate::types::ModelQualityJobInput> {
         self.model_quality_job_input.as_ref()
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn model_quality_job_output_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MonitoringOutputConfig> {
+    pub fn model_quality_job_output_config(&self) -> ::std::option::Option<&crate::types::MonitoringOutputConfig> {
         self.model_quality_job_output_config.as_ref()
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
@@ -79,9 +68,7 @@ impl CreateModelQualityJobDefinitionInput {
         self.role_arn.as_deref()
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    pub fn stopping_condition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MonitoringStoppingCondition> {
+    pub fn stopping_condition(&self) -> ::std::option::Option<&crate::types::MonitoringStoppingCondition> {
         self.stopping_condition.as_ref()
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
@@ -91,25 +78,20 @@ impl CreateModelQualityJobDefinitionInput {
 }
 impl CreateModelQualityJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`CreateModelQualityJobDefinitionInput`](crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionInput).
-    pub fn builder() -> crate::operation::create_model_quality_job_definition::builders::CreateModelQualityJobDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::create_model_quality_job_definition::builders::CreateModelQualityJobDefinitionInputBuilder {
         crate::operation::create_model_quality_job_definition::builders::CreateModelQualityJobDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateModelQualityJobDefinitionInput`](crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateModelQualityJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
-    pub(crate) model_quality_baseline_config:
-        ::std::option::Option<crate::types::ModelQualityBaselineConfig>,
-    pub(crate) model_quality_app_specification:
-        ::std::option::Option<crate::types::ModelQualityAppSpecification>,
+    pub(crate) model_quality_baseline_config: ::std::option::Option<crate::types::ModelQualityBaselineConfig>,
+    pub(crate) model_quality_app_specification: ::std::option::Option<crate::types::ModelQualityAppSpecification>,
     pub(crate) model_quality_job_input: ::std::option::Option<crate::types::ModelQualityJobInput>,
-    pub(crate) model_quality_job_output_config:
-        ::std::option::Option<crate::types::MonitoringOutputConfig>,
+    pub(crate) model_quality_job_output_config: ::std::option::Option<crate::types::MonitoringOutputConfig>,
     pub(crate) job_resources: ::std::option::Option<crate::types::MonitoringResources>,
     pub(crate) network_config: ::std::option::Option<crate::types::MonitoringNetworkConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -118,18 +100,12 @@ pub struct CreateModelQualityJobDefinitionInputBuilder {
 }
 impl CreateModelQualityJobDefinitionInputBuilder {
     /// <p>The name of the monitoring job definition.</p>
-    pub fn job_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the monitoring job definition.</p>
-    pub fn set_job_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_definition_name = input;
         self
     }
@@ -138,47 +114,31 @@ impl CreateModelQualityJobDefinitionInputBuilder {
         &self.job_definition_name
     }
     /// <p>Specifies the constraints and baselines for the monitoring job.</p>
-    pub fn model_quality_baseline_config(
-        mut self,
-        input: crate::types::ModelQualityBaselineConfig,
-    ) -> Self {
+    pub fn model_quality_baseline_config(mut self, input: crate::types::ModelQualityBaselineConfig) -> Self {
         self.model_quality_baseline_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the constraints and baselines for the monitoring job.</p>
-    pub fn set_model_quality_baseline_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelQualityBaselineConfig>,
-    ) -> Self {
+    pub fn set_model_quality_baseline_config(mut self, input: ::std::option::Option<crate::types::ModelQualityBaselineConfig>) -> Self {
         self.model_quality_baseline_config = input;
         self
     }
     /// <p>Specifies the constraints and baselines for the monitoring job.</p>
-    pub fn get_model_quality_baseline_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelQualityBaselineConfig> {
+    pub fn get_model_quality_baseline_config(&self) -> &::std::option::Option<crate::types::ModelQualityBaselineConfig> {
         &self.model_quality_baseline_config
     }
     /// <p>The container that runs the monitoring job.</p>
-    pub fn model_quality_app_specification(
-        mut self,
-        input: crate::types::ModelQualityAppSpecification,
-    ) -> Self {
+    pub fn model_quality_app_specification(mut self, input: crate::types::ModelQualityAppSpecification) -> Self {
         self.model_quality_app_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The container that runs the monitoring job.</p>
-    pub fn set_model_quality_app_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelQualityAppSpecification>,
-    ) -> Self {
+    pub fn set_model_quality_app_specification(mut self, input: ::std::option::Option<crate::types::ModelQualityAppSpecification>) -> Self {
         self.model_quality_app_specification = input;
         self
     }
     /// <p>The container that runs the monitoring job.</p>
-    pub fn get_model_quality_app_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelQualityAppSpecification> {
+    pub fn get_model_quality_app_specification(&self) -> &::std::option::Option<crate::types::ModelQualityAppSpecification> {
         &self.model_quality_app_specification
     }
     /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
@@ -187,39 +147,26 @@ impl CreateModelQualityJobDefinitionInputBuilder {
         self
     }
     /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
-    pub fn set_model_quality_job_input(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelQualityJobInput>,
-    ) -> Self {
+    pub fn set_model_quality_job_input(mut self, input: ::std::option::Option<crate::types::ModelQualityJobInput>) -> Self {
         self.model_quality_job_input = input;
         self
     }
     /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
-    pub fn get_model_quality_job_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelQualityJobInput> {
+    pub fn get_model_quality_job_input(&self) -> &::std::option::Option<crate::types::ModelQualityJobInput> {
         &self.model_quality_job_input
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn model_quality_job_output_config(
-        mut self,
-        input: crate::types::MonitoringOutputConfig,
-    ) -> Self {
+    pub fn model_quality_job_output_config(mut self, input: crate::types::MonitoringOutputConfig) -> Self {
         self.model_quality_job_output_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn set_model_quality_job_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringOutputConfig>,
-    ) -> Self {
+    pub fn set_model_quality_job_output_config(mut self, input: ::std::option::Option<crate::types::MonitoringOutputConfig>) -> Self {
         self.model_quality_job_output_config = input;
         self
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn get_model_quality_job_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringOutputConfig> {
+    pub fn get_model_quality_job_output_config(&self) -> &::std::option::Option<crate::types::MonitoringOutputConfig> {
         &self.model_quality_job_output_config
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
@@ -228,10 +175,7 @@ impl CreateModelQualityJobDefinitionInputBuilder {
         self
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
-    pub fn set_job_resources(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringResources>,
-    ) -> Self {
+    pub fn set_job_resources(mut self, input: ::std::option::Option<crate::types::MonitoringResources>) -> Self {
         self.job_resources = input;
         self
     }
@@ -245,17 +189,12 @@ impl CreateModelQualityJobDefinitionInputBuilder {
         self
     }
     /// <p>Specifies the network configuration for the monitoring job.</p>
-    pub fn set_network_config(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringNetworkConfig>,
-    ) -> Self {
+    pub fn set_network_config(mut self, input: ::std::option::Option<crate::types::MonitoringNetworkConfig>) -> Self {
         self.network_config = input;
         self
     }
     /// <p>Specifies the network configuration for the monitoring job.</p>
-    pub fn get_network_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringNetworkConfig> {
+    pub fn get_network_config(&self) -> &::std::option::Option<crate::types::MonitoringNetworkConfig> {
         &self.network_config
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
@@ -278,17 +217,12 @@ impl CreateModelQualityJobDefinitionInputBuilder {
         self
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    pub fn set_stopping_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringStoppingCondition>,
-    ) -> Self {
+    pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::MonitoringStoppingCondition>) -> Self {
         self.stopping_condition = input;
         self
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    pub fn get_stopping_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringStoppingCondition> {
+    pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::MonitoringStoppingCondition> {
         &self.stopping_condition
     }
     /// Appends an item to `tags`.
@@ -303,10 +237,7 @@ impl CreateModelQualityJobDefinitionInputBuilder {
         self
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -323,27 +254,17 @@ impl CreateModelQualityJobDefinitionInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionInput {
-                job_definition_name: self.job_definition_name
-                ,
-                model_quality_baseline_config: self.model_quality_baseline_config
-                ,
-                model_quality_app_specification: self.model_quality_app_specification
-                ,
-                model_quality_job_input: self.model_quality_job_input
-                ,
-                model_quality_job_output_config: self.model_quality_job_output_config
-                ,
-                job_resources: self.job_resources
-                ,
-                network_config: self.network_config
-                ,
-                role_arn: self.role_arn
-                ,
-                stopping_condition: self.stopping_condition
-                ,
-                tags: self.tags
-                ,
-            }
+                job_definition_name: self.job_definition_name,
+                model_quality_baseline_config: self.model_quality_baseline_config,
+                model_quality_app_specification: self.model_quality_app_specification,
+                model_quality_job_input: self.model_quality_job_input,
+                model_quality_job_output_config: self.model_quality_job_output_config,
+                job_resources: self.job_resources,
+                network_config: self.network_config,
+                role_arn: self.role_arn,
+                stopping_condition: self.stopping_condition,
+                tags: self.tags,
+            },
         )
     }
 }

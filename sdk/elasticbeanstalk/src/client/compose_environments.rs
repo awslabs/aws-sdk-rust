@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`environments(Option<Vec<EnvironmentDescription>>)`](crate::operation::compose_environments::ComposeEnvironmentsOutput::environments): <p> Returns an <code>EnvironmentDescription</code> list. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::compose_environments::ComposeEnvironmentsOutput::next_token): <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     /// - On failure, responds with [`SdkError<ComposeEnvironmentsError>`](crate::operation::compose_environments::ComposeEnvironmentsError)
-    pub fn compose_environments(
-        &self,
-    ) -> crate::operation::compose_environments::builders::ComposeEnvironmentsFluentBuilder {
-        crate::operation::compose_environments::builders::ComposeEnvironmentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn compose_environments(&self) -> crate::operation::compose_environments::builders::ComposeEnvironmentsFluentBuilder {
+        crate::operation::compose_environments::builders::ComposeEnvironmentsFluentBuilder::new(self.handle.clone())
     }
 }

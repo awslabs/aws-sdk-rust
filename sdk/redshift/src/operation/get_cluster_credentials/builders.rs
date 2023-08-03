@@ -41,10 +41,7 @@ impl GetClusterCredentialsFluentBuilder {
         }
     }
     /// Access the GetClusterCredentials as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_cluster_credentials::builders::GetClusterCredentialsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_cluster_credentials::builders::GetClusterCredentialsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl GetClusterCredentialsFluentBuilder {
             crate::operation::get_cluster_credentials::GetClusterCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cluster_credentials::GetClusterCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cluster_credentials::GetClusterCredentialsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl GetClusterCredentialsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl GetClusterCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cluster_credentials::GetClusterCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cluster_credentials::GetClusterCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cluster_credentials::GetClusterCredentialsError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl GetClusterCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cluster_credentials::GetClusterCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cluster_credentials::GetClusterCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cluster_credentials::GetClusterCredentialsError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +109,7 @@ impl GetClusterCredentialsFluentBuilder {
             crate::operation::get_cluster_credentials::GetClusterCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cluster_credentials::GetClusterCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cluster_credentials::GetClusterCredentialsError>,
     > {
         self.customize_middleware().await
     }
@@ -207,18 +193,12 @@ impl GetClusterCredentialsFluentBuilder {
         self.inner.get_db_name()
     }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -286,10 +266,7 @@ impl GetClusterCredentialsFluentBuilder {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
-    pub fn set_db_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_db_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_db_groups(input);
         self
     }
@@ -306,18 +283,12 @@ impl GetClusterCredentialsFluentBuilder {
         self.inner.get_db_groups()
     }
     /// <p>The custom domain name for the cluster credentials.</p>
-    pub fn custom_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_domain_name(input.into());
         self
     }
     /// <p>The custom domain name for the cluster credentials.</p>
-    pub fn set_custom_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_domain_name(input);
         self
     }

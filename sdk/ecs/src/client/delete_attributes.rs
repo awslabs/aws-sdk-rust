@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteAttributesOutput`](crate::operation::delete_attributes::DeleteAttributesOutput) with field(s):
     ///   - [`attributes(Option<Vec<Attribute>>)`](crate::operation::delete_attributes::DeleteAttributesOutput::attributes): <p>A list of attribute objects that were successfully deleted from your resource.</p>
     /// - On failure, responds with [`SdkError<DeleteAttributesError>`](crate::operation::delete_attributes::DeleteAttributesError)
-    pub fn delete_attributes(
-        &self,
-    ) -> crate::operation::delete_attributes::builders::DeleteAttributesFluentBuilder {
-        crate::operation::delete_attributes::builders::DeleteAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_attributes(&self) -> crate::operation::delete_attributes::builders::DeleteAttributesFluentBuilder {
+        crate::operation::delete_attributes::builders::DeleteAttributesFluentBuilder::new(self.handle.clone())
     }
 }

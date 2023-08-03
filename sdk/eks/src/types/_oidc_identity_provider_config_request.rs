@@ -27,9 +27,7 @@ pub struct OidcIdentityProviderConfigRequest {
     pub groups_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The key value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value. For the maximum number of claims that you can require, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
     #[doc(hidden)]
-    pub required_claims: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub required_claims: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OidcIdentityProviderConfigRequest {
     /// <p>The name of the OIDC provider configuration.</p>
@@ -61,11 +59,7 @@ impl OidcIdentityProviderConfigRequest {
         self.groups_prefix.as_deref()
     }
     /// <p>The key value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value. For the maximum number of claims that you can require, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn required_claims(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn required_claims(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.required_claims.as_ref()
     }
 }
@@ -78,9 +72,7 @@ impl OidcIdentityProviderConfigRequest {
 
 /// A builder for [`OidcIdentityProviderConfigRequest`](crate::types::OidcIdentityProviderConfigRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OidcIdentityProviderConfigRequestBuilder {
     pub(crate) identity_provider_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) issuer_url: ::std::option::Option<::std::string::String>,
@@ -89,31 +81,21 @@ pub struct OidcIdentityProviderConfigRequestBuilder {
     pub(crate) username_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) groups_claim: ::std::option::Option<::std::string::String>,
     pub(crate) groups_prefix: ::std::option::Option<::std::string::String>,
-    pub(crate) required_claims: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) required_claims: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OidcIdentityProviderConfigRequestBuilder {
     /// <p>The name of the OIDC provider configuration.</p>
-    pub fn identity_provider_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_provider_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the OIDC provider configuration.</p>
-    pub fn set_identity_provider_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_provider_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_provider_config_name = input;
         self
     }
     /// <p>The name of the OIDC provider configuration.</p>
-    pub fn get_identity_provider_config_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_identity_provider_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_provider_config_name
     }
     /// <p>The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying tokens. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the provider's OIDC ID tokens. Per the OIDC standard, path components are allowed but query parameters are not. Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or <code>https://example.com</code>. This URL should point to the level below <code>.well-known/openid-configuration</code> and must be publicly accessible over the internet.</p>
@@ -145,18 +127,12 @@ impl OidcIdentityProviderConfigRequestBuilder {
         &self.client_id
     }
     /// <p>The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected to be a unique identifier of the end user. You can choose other claims, such as <code>email</code> or <code>name</code>, depending on the OpenID identity provider. Claims other than <code>email</code> are prefixed with the issuer URL to prevent naming clashes with other plug-ins.</p>
-    pub fn username_claim(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn username_claim(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username_claim = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected to be a unique identifier of the end user. You can choose other claims, such as <code>email</code> or <code>name</code>, depending on the OpenID identity provider. Claims other than <code>email</code> are prefixed with the issuer URL to prevent naming clashes with other plug-ins.</p>
-    pub fn set_username_claim(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_username_claim(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username_claim = input;
         self
     }
@@ -165,18 +141,12 @@ impl OidcIdentityProviderConfigRequestBuilder {
         &self.username_claim
     }
     /// <p>The prefix that is prepended to username claims to prevent clashes with existing names. If you do not provide this field, and <code>username</code> is a value other than <code>email</code>, the prefix defaults to <code>issuerurl#</code>. You can use the value <code>-</code> to disable all prefixing.</p>
-    pub fn username_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn username_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix that is prepended to username claims to prevent clashes with existing names. If you do not provide this field, and <code>username</code> is a value other than <code>email</code>, the prefix defaults to <code>issuerurl#</code>. You can use the value <code>-</code> to disable all prefixing.</p>
-    pub fn set_username_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_username_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username_prefix = input;
         self
     }
@@ -199,18 +169,12 @@ impl OidcIdentityProviderConfigRequestBuilder {
         &self.groups_claim
     }
     /// <p>The prefix that is prepended to group claims to prevent clashes with existing names (such as <code>system:</code> groups). For example, the value<code> oidc:</code> will create group names like <code>oidc:engineering</code> and <code>oidc:infra</code>.</p>
-    pub fn groups_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn groups_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.groups_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix that is prepended to group claims to prevent clashes with existing names (such as <code>system:</code> groups). For example, the value<code> oidc:</code> will create group names like <code>oidc:engineering</code> and <code>oidc:infra</code>.</p>
-    pub fn set_groups_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_groups_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.groups_prefix = input;
         self
     }
@@ -236,19 +200,13 @@ impl OidcIdentityProviderConfigRequestBuilder {
     /// <p>The key value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value. For the maximum number of claims that you can require, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn set_required_claims(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.required_claims = input;
         self
     }
     /// <p>The key value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value. For the maximum number of claims that you can require, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn get_required_claims(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_required_claims(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.required_claims
     }
     /// Consumes the builder and constructs a [`OidcIdentityProviderConfigRequest`](crate::types::OidcIdentityProviderConfigRequest).

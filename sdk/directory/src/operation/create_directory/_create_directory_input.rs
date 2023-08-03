@@ -230,10 +230,7 @@ impl CreateDirectoryInputBuilder {
         self
     }
     /// <p>A <code>DirectoryVpcSettings</code> object that contains additional information for the operation.</p>
-    pub fn set_vpc_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryVpcSettings>,
-    ) -> Self {
+    pub fn set_vpc_settings(mut self, input: ::std::option::Option<crate::types::DirectoryVpcSettings>) -> Self {
         self.vpc_settings = input;
         self
     }
@@ -253,10 +250,7 @@ impl CreateDirectoryInputBuilder {
         self
     }
     /// <p>The tags to be assigned to the Simple AD directory.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -267,10 +261,7 @@ impl CreateDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`CreateDirectoryInput`](crate::operation::create_directory::CreateDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_directory::CreateDirectoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_directory::CreateDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_directory::CreateDirectoryInput {
             name: self.name,
             short_name: self.short_name,

@@ -37,9 +37,7 @@ impl BatchDeleteDelegationByAssessmentError {
 
 /// A builder for [`BatchDeleteDelegationByAssessmentError`](crate::types::BatchDeleteDelegationByAssessmentError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteDelegationByAssessmentErrorBuilder {
     pub(crate) delegation_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct BatchDeleteDelegationByAssessmentErrorBuilder {
 }
 impl BatchDeleteDelegationByAssessmentErrorBuilder {
     /// <p> The identifier for the delegation. </p>
-    pub fn delegation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delegation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the delegation. </p>
-    pub fn set_delegation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delegation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delegation_id = input;
         self
     }
@@ -81,18 +73,12 @@ impl BatchDeleteDelegationByAssessmentErrorBuilder {
         &self.error_code
     }
     /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

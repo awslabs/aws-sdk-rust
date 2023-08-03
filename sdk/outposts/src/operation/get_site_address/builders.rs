@@ -10,10 +10,7 @@ impl GetSiteAddressInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_site_address::GetSiteAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_site_address::GetSiteAddressError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_site_address::GetSiteAddressError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_site_address();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetSiteAddressFluentBuilder {
         }
     }
     /// Access the GetSiteAddress as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_site_address::builders::GetSiteAddressInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_site_address::builders::GetSiteAddressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetSiteAddressFluentBuilder {
             crate::operation::get_site_address::GetSiteAddress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_site_address::GetSiteAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_site_address::GetSiteAddressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetSiteAddressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetSiteAddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_site_address::GetSiteAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_site_address::GetSiteAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_site_address::GetSiteAddressError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetSiteAddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_site_address::GetSiteAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_site_address::GetSiteAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_site_address::GetSiteAddressError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetSiteAddressFluentBuilder {
             crate::operation::get_site_address::GetSiteAddress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_site_address::GetSiteAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_site_address::GetSiteAddressError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl GetSiteAddressFluentBuilder {
         self
     }
     /// <p>The type of the address you request. </p>
-    pub fn set_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressType>,
-    ) -> Self {
+    pub fn set_address_type(mut self, input: ::std::option::Option<crate::types::AddressType>) -> Self {
         self.inner = self.inner.set_address_type(input);
         self
     }

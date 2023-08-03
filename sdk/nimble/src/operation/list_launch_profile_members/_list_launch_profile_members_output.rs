@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListLaunchProfileMembersOutput {
 }
 impl ListLaunchProfileMembersOutput {
     /// Creates a new builder-style object to manufacture [`ListLaunchProfileMembersOutput`](crate::operation::list_launch_profile_members::ListLaunchProfileMembersOutput).
-    pub fn builder() -> crate::operation::list_launch_profile_members::builders::ListLaunchProfileMembersOutputBuilder{
+    pub fn builder() -> crate::operation::list_launch_profile_members::builders::ListLaunchProfileMembersOutputBuilder {
         crate::operation::list_launch_profile_members::builders::ListLaunchProfileMembersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLaunchProfileMembersOutput`](crate::operation::list_launch_profile_members::ListLaunchProfileMembersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLaunchProfileMembersOutputBuilder {
-    pub(crate) members:
-        ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileMembership>>,
+    pub(crate) members: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileMembership>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListLaunchProfileMembersOutputBuilder {
         self
     }
     /// <p>A list of members.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileMembership>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileMembership>>) -> Self {
         self.members = input;
         self
     }
     /// <p>A list of members.</p>
-    pub fn get_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileMembership>> {
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchProfileMembership>> {
         &self.members
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -94,9 +86,7 @@ impl ListLaunchProfileMembersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListLaunchProfileMembersOutput`](crate::operation::list_launch_profile_members::ListLaunchProfileMembersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_launch_profile_members::ListLaunchProfileMembersOutput {
+    pub fn build(self) -> crate::operation::list_launch_profile_members::ListLaunchProfileMembersOutput {
         crate::operation::list_launch_profile_members::ListLaunchProfileMembersOutput {
             members: self.members,
             next_token: self.next_token,

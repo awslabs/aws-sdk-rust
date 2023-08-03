@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`version_id(impl ::std::convert::Into<String>)`](crate::operation::delete_dataset_content::builders::DeleteDatasetContentFluentBuilder::version_id) / [`set_version_id(Option<String>)`](crate::operation::delete_dataset_content::builders::DeleteDatasetContentFluentBuilder::set_version_id): <p>The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
     /// - On success, responds with [`DeleteDatasetContentOutput`](crate::operation::delete_dataset_content::DeleteDatasetContentOutput)
     /// - On failure, responds with [`SdkError<DeleteDatasetContentError>`](crate::operation::delete_dataset_content::DeleteDatasetContentError)
-    pub fn delete_dataset_content(
-        &self,
-    ) -> crate::operation::delete_dataset_content::builders::DeleteDatasetContentFluentBuilder {
-        crate::operation::delete_dataset_content::builders::DeleteDatasetContentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_dataset_content(&self) -> crate::operation::delete_dataset_content::builders::DeleteDatasetContentFluentBuilder {
+        crate::operation::delete_dataset_content::builders::DeleteDatasetContentFluentBuilder::new(self.handle.clone())
     }
 }

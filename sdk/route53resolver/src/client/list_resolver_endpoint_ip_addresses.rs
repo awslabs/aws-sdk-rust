@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`max_results(Option<i32>)`](crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput::max_results): <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     ///   - [`ip_addresses(Option<Vec<IpAddressResponse>>)`](crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput::ip_addresses): <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
     /// - On failure, responds with [`SdkError<ListResolverEndpointIpAddressesError>`](crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError)
-    pub fn list_resolver_endpoint_ip_addresses(&self) -> crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesFluentBuilder{
+    pub fn list_resolver_endpoint_ip_addresses(
+        &self,
+    ) -> crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesFluentBuilder {
         crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesFluentBuilder::new(self.handle.clone())
     }
 }

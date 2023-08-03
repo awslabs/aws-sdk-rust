@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StopMonitoringScheduleOutput {
 }
 impl StopMonitoringScheduleOutput {
     /// Creates a new builder-style object to manufacture [`StopMonitoringScheduleOutput`](crate::operation::stop_monitoring_schedule::StopMonitoringScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleOutputBuilder {
         crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopMonitoringScheduleOutput`](crate::operation::stop_monitoring_schedule::StopMonitoringScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopMonitoringScheduleOutputBuilder {
     _request_id: Option<String>,
 }

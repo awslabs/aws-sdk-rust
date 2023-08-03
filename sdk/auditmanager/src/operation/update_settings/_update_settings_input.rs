@@ -8,8 +8,7 @@ pub struct UpdateSettingsInput {
     pub sns_topic: ::std::option::Option<::std::string::String>,
     /// <p> The default S3 destination bucket for storing assessment reports. </p>
     #[doc(hidden)]
-    pub default_assessment_reports_destination:
-        ::std::option::Option<crate::types::AssessmentReportsDestination>,
+    pub default_assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
     /// <p> A list of the default audit owners. </p>
     #[doc(hidden)]
     pub default_process_owners: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
@@ -34,9 +33,7 @@ impl UpdateSettingsInput {
         self.sns_topic.as_deref()
     }
     /// <p> The default S3 destination bucket for storing assessment reports. </p>
-    pub fn default_assessment_reports_destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AssessmentReportsDestination> {
+    pub fn default_assessment_reports_destination(&self) -> ::std::option::Option<&crate::types::AssessmentReportsDestination> {
         self.default_assessment_reports_destination.as_ref()
     }
     /// <p> A list of the default audit owners. </p>
@@ -54,15 +51,11 @@ impl UpdateSettingsInput {
         self.evidence_finder_enabled
     }
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
-    pub fn deregistration_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeregistrationPolicy> {
+    pub fn deregistration_policy(&self) -> ::std::option::Option<&crate::types::DeregistrationPolicy> {
         self.deregistration_policy.as_ref()
     }
     /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
-    pub fn default_export_destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DefaultExportDestination> {
+    pub fn default_export_destination(&self) -> ::std::option::Option<&crate::types::DefaultExportDestination> {
         self.default_export_destination.as_ref()
     }
 }
@@ -75,19 +68,15 @@ impl UpdateSettingsInput {
 
 /// A builder for [`UpdateSettingsInput`](crate::operation::update_settings::UpdateSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSettingsInputBuilder {
     pub(crate) sns_topic: ::std::option::Option<::std::string::String>,
-    pub(crate) default_assessment_reports_destination:
-        ::std::option::Option<crate::types::AssessmentReportsDestination>,
+    pub(crate) default_assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
     pub(crate) default_process_owners: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
     pub(crate) evidence_finder_enabled: ::std::option::Option<bool>,
     pub(crate) deregistration_policy: ::std::option::Option<crate::types::DeregistrationPolicy>,
-    pub(crate) default_export_destination:
-        ::std::option::Option<crate::types::DefaultExportDestination>,
+    pub(crate) default_export_destination: ::std::option::Option<crate::types::DefaultExportDestination>,
 }
 impl UpdateSettingsInputBuilder {
     /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
@@ -105,25 +94,17 @@ impl UpdateSettingsInputBuilder {
         &self.sns_topic
     }
     /// <p> The default S3 destination bucket for storing assessment reports. </p>
-    pub fn default_assessment_reports_destination(
-        mut self,
-        input: crate::types::AssessmentReportsDestination,
-    ) -> Self {
+    pub fn default_assessment_reports_destination(mut self, input: crate::types::AssessmentReportsDestination) -> Self {
         self.default_assessment_reports_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p> The default S3 destination bucket for storing assessment reports. </p>
-    pub fn set_default_assessment_reports_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentReportsDestination>,
-    ) -> Self {
+    pub fn set_default_assessment_reports_destination(mut self, input: ::std::option::Option<crate::types::AssessmentReportsDestination>) -> Self {
         self.default_assessment_reports_destination = input;
         self
     }
     /// <p> The default S3 destination bucket for storing assessment reports. </p>
-    pub fn get_default_assessment_reports_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
+    pub fn get_default_assessment_reports_destination(&self) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
         &self.default_assessment_reports_destination
     }
     /// Appends an item to `default_process_owners`.
@@ -138,17 +119,12 @@ impl UpdateSettingsInputBuilder {
         self
     }
     /// <p> A list of the default audit owners. </p>
-    pub fn set_default_process_owners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
-    ) -> Self {
+    pub fn set_default_process_owners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>) -> Self {
         self.default_process_owners = input;
         self
     }
     /// <p> A list of the default audit owners. </p>
-    pub fn get_default_process_owners(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
+    pub fn get_default_process_owners(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
         &self.default_process_owners
     }
     /// <p> The KMS key details. </p>
@@ -191,48 +167,32 @@ impl UpdateSettingsInputBuilder {
         self
     }
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
-    pub fn set_deregistration_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::DeregistrationPolicy>,
-    ) -> Self {
+    pub fn set_deregistration_policy(mut self, input: ::std::option::Option<crate::types::DeregistrationPolicy>) -> Self {
         self.deregistration_policy = input;
         self
     }
     /// <p>The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.</p>
-    pub fn get_deregistration_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeregistrationPolicy> {
+    pub fn get_deregistration_policy(&self) -> &::std::option::Option<crate::types::DeregistrationPolicy> {
         &self.deregistration_policy
     }
     /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
-    pub fn default_export_destination(
-        mut self,
-        input: crate::types::DefaultExportDestination,
-    ) -> Self {
+    pub fn default_export_destination(mut self, input: crate::types::DefaultExportDestination) -> Self {
         self.default_export_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
-    pub fn set_default_export_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultExportDestination>,
-    ) -> Self {
+    pub fn set_default_export_destination(mut self, input: ::std::option::Option<crate::types::DefaultExportDestination>) -> Self {
         self.default_export_destination = input;
         self
     }
     /// <p> The default S3 destination bucket for storing evidence finder exports. </p>
-    pub fn get_default_export_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultExportDestination> {
+    pub fn get_default_export_destination(&self) -> &::std::option::Option<crate::types::DefaultExportDestination> {
         &self.default_export_destination
     }
     /// Consumes the builder and constructs a [`UpdateSettingsInput`](crate::operation::update_settings::UpdateSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_settings::UpdateSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_settings::UpdateSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_settings::UpdateSettingsInput {
             sns_topic: self.sns_topic,
             default_assessment_reports_destination: self.default_assessment_reports_destination,

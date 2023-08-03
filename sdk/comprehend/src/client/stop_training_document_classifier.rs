@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`document_classifier_arn(impl ::std::convert::Into<String>)`](crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierFluentBuilder::document_classifier_arn) / [`set_document_classifier_arn(Option<String>)`](crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierFluentBuilder::set_document_classifier_arn): <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>
     /// - On success, responds with [`StopTrainingDocumentClassifierOutput`](crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierOutput)
     /// - On failure, responds with [`SdkError<StopTrainingDocumentClassifierError>`](crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierError)
-    pub fn stop_training_document_classifier(&self) -> crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierFluentBuilder{
+    pub fn stop_training_document_classifier(
+        &self,
+    ) -> crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierFluentBuilder {
         crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierFluentBuilder::new(self.handle.clone())
     }
 }

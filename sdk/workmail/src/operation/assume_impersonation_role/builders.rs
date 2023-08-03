@@ -26,8 +26,7 @@ impl AssumeImpersonationRoleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssumeImpersonationRoleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleInputBuilder,
+    inner: crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleInputBuilder,
 }
 impl AssumeImpersonationRoleFluentBuilder {
     /// Creates a new `AssumeImpersonationRole`.
@@ -38,10 +37,7 @@ impl AssumeImpersonationRoleFluentBuilder {
         }
     }
     /// Access the AssumeImpersonationRole as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl AssumeImpersonationRoleFluentBuilder {
             crate::operation::assume_impersonation_role::AssumeImpersonationRole,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assume_impersonation_role::AssumeImpersonationRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assume_impersonation_role::AssumeImpersonationRoleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl AssumeImpersonationRoleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl AssumeImpersonationRoleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assume_impersonation_role::AssumeImpersonationRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assume_impersonation_role::AssumeImpersonationRoleError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl AssumeImpersonationRoleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assume_impersonation_role::AssumeImpersonationRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assume_impersonation_role::AssumeImpersonationRoleError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl AssumeImpersonationRoleFluentBuilder {
             crate::operation::assume_impersonation_role::AssumeImpersonationRole,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assume_impersonation_role::AssumeImpersonationRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assume_impersonation_role::AssumeImpersonationRoleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The WorkMail organization under which the impersonation role will be assumed.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The WorkMail organization under which the impersonation role will be assumed.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }
@@ -145,18 +124,12 @@ impl AssumeImpersonationRoleFluentBuilder {
         self.inner.get_organization_id()
     }
     /// <p>The impersonation role ID to assume.</p>
-    pub fn impersonation_role_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn impersonation_role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.impersonation_role_id(input.into());
         self
     }
     /// <p>The impersonation role ID to assume.</p>
-    pub fn set_impersonation_role_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_impersonation_role_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_impersonation_role_id(input);
         self
     }

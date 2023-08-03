@@ -29,16 +29,14 @@ impl ListKeyPhrasesDetectionJobsInput {
 }
 impl ListKeyPhrasesDetectionJobsInput {
     /// Creates a new builder-style object to manufacture [`ListKeyPhrasesDetectionJobsInput`](crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsInput).
-    pub fn builder() -> crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsInputBuilder {
         crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListKeyPhrasesDetectionJobsInput`](crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKeyPhrasesDetectionJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::KeyPhrasesDetectionJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,10 +49,7 @@ impl ListKeyPhrasesDetectionJobsInputBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyPhrasesDetectionJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::KeyPhrasesDetectionJobFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -97,12 +92,10 @@ impl ListKeyPhrasesDetectionJobsInputBuilder {
         crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsInput {
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsInput {
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

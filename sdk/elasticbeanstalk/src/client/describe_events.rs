@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`events(Option<Vec<EventDescription>>)`](crate::operation::describe_events::DescribeEventsOutput::events): <p> A list of <code>EventDescription</code>. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_events::DescribeEventsOutput::next_token): <p> If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events. </p>
     /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::operation::describe_events::DescribeEventsError)
-    pub fn describe_events(
-        &self,
-    ) -> crate::operation::describe_events::builders::DescribeEventsFluentBuilder {
-        crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_events(&self) -> crate::operation::describe_events::builders::DescribeEventsFluentBuilder {
+        crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(self.handle.clone())
     }
 }

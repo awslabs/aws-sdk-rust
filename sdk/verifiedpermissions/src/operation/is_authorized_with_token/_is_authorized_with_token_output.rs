@@ -8,8 +8,7 @@ pub struct IsAuthorizedWithTokenOutput {
     pub decision: ::std::option::Option<crate::types::Decision>,
     /// <p>The list of determining policies used to make the authorization decision. For example, if there are multiple matching policies, where at least one is a forbid policy, then because forbid always overrides permit the forbid policies are the determining policies. If all matching policies are permit policies, then those policies are the determining policies. When no policies match and the response is the default DENY, there are no determining policies.</p>
     #[doc(hidden)]
-    pub determining_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>>,
+    pub determining_policies: ::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>>,
     /// <p>Errors that occurred while making an authorization decision. For example, a policy references an entity or entity attribute that does not exist in the slice.</p>
     #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>>,
@@ -21,9 +20,7 @@ impl IsAuthorizedWithTokenOutput {
         self.decision.as_ref()
     }
     /// <p>The list of determining policies used to make the authorization decision. For example, if there are multiple matching policies, where at least one is a forbid policy, then because forbid always overrides permit the forbid policies are the determining policies. If all matching policies are permit policies, then those policies are the determining policies. When no policies match and the response is the default DENY, there are no determining policies.</p>
-    pub fn determining_policies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeterminingPolicyItem]> {
+    pub fn determining_policies(&self) -> ::std::option::Option<&[crate::types::DeterminingPolicyItem]> {
         self.determining_policies.as_deref()
     }
     /// <p>Errors that occurred while making an authorization decision. For example, a policy references an entity or entity attribute that does not exist in the slice.</p>
@@ -38,22 +35,17 @@ impl ::aws_http::request_id::RequestId for IsAuthorizedWithTokenOutput {
 }
 impl IsAuthorizedWithTokenOutput {
     /// Creates a new builder-style object to manufacture [`IsAuthorizedWithTokenOutput`](crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenOutputBuilder
-    {
+    pub fn builder() -> crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenOutputBuilder {
         crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenOutputBuilder::default()
     }
 }
 
 /// A builder for [`IsAuthorizedWithTokenOutput`](crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IsAuthorizedWithTokenOutputBuilder {
     pub(crate) decision: ::std::option::Option<crate::types::Decision>,
-    pub(crate) determining_policies:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>>,
+    pub(crate) determining_policies: ::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>>,
     _request_id: Option<String>,
 }
@@ -84,17 +76,12 @@ impl IsAuthorizedWithTokenOutputBuilder {
         self
     }
     /// <p>The list of determining policies used to make the authorization decision. For example, if there are multiple matching policies, where at least one is a forbid policy, then because forbid always overrides permit the forbid policies are the determining policies. If all matching policies are permit policies, then those policies are the determining policies. When no policies match and the response is the default DENY, there are no determining policies.</p>
-    pub fn set_determining_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>>,
-    ) -> Self {
+    pub fn set_determining_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>>) -> Self {
         self.determining_policies = input;
         self
     }
     /// <p>The list of determining policies used to make the authorization decision. For example, if there are multiple matching policies, where at least one is a forbid policy, then because forbid always overrides permit the forbid policies are the determining policies. If all matching policies are permit policies, then those policies are the determining policies. When no policies match and the response is the default DENY, there are no determining policies.</p>
-    pub fn get_determining_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>> {
+    pub fn get_determining_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>> {
         &self.determining_policies
     }
     /// Appends an item to `errors`.
@@ -109,17 +96,12 @@ impl IsAuthorizedWithTokenOutputBuilder {
         self
     }
     /// <p>Errors that occurred while making an authorization decision. For example, a policy references an entity or entity attribute that does not exist in the slice.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Errors that occurred while making an authorization decision. For example, a policy references an entity or entity attribute that does not exist in the slice.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

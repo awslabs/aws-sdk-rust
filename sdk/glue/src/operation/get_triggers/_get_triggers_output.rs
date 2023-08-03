@@ -35,9 +35,7 @@ impl GetTriggersOutput {
 
 /// A builder for [`GetTriggersOutput`](crate::operation::get_triggers::GetTriggersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTriggersOutputBuilder {
     pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetTriggersOutputBuilder {
         self
     }
     /// <p>A list of triggers for the specified job.</p>
-    pub fn set_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
-    ) -> Self {
+    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>) -> Self {
         self.triggers = input;
         self
     }

@@ -18,11 +18,7 @@ impl super::Client {
     /// - On success, responds with [`TransferDomainOutput`](crate::operation::transfer_domain::TransferDomainOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::transfer_domain::TransferDomainOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     /// - On failure, responds with [`SdkError<TransferDomainError>`](crate::operation::transfer_domain::TransferDomainError)
-    pub fn transfer_domain(
-        &self,
-    ) -> crate::operation::transfer_domain::builders::TransferDomainFluentBuilder {
-        crate::operation::transfer_domain::builders::TransferDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn transfer_domain(&self) -> crate::operation::transfer_domain::builders::TransferDomainFluentBuilder {
+        crate::operation::transfer_domain::builders::TransferDomainFluentBuilder::new(self.handle.clone())
     }
 }

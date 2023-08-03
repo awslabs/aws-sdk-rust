@@ -12,10 +12,7 @@ pub fn ser_create_multicast_group_input(
     if let Some(var_3) = &input.lo_ra_wan {
         #[allow(unused_mut)]
         let mut object_4 = object.key("LoRaWAN").start_object();
-        crate::protocol_serde::shape_lo_ra_wan_multicast::ser_lo_ra_wan_multicast(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_lo_ra_wan_multicast::ser_lo_ra_wan_multicast(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.name {

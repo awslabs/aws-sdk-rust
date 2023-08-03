@@ -29,16 +29,14 @@ impl CreateResourceDefinitionVersionInput {
 }
 impl CreateResourceDefinitionVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateResourceDefinitionVersionInput`](crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionInput).
-    pub fn builder() -> crate::operation::create_resource_definition_version::builders::CreateResourceDefinitionVersionInputBuilder{
+    pub fn builder() -> crate::operation::create_resource_definition_version::builders::CreateResourceDefinitionVersionInputBuilder {
         crate::operation::create_resource_definition_version::builders::CreateResourceDefinitionVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateResourceDefinitionVersionInput`](crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateResourceDefinitionVersionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_definition_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct CreateResourceDefinitionVersionInputBuilder {
 }
 impl CreateResourceDefinitionVersionInputBuilder {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amzn_client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amzn_client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amzn_client_token = input;
         self
     }
@@ -66,18 +58,12 @@ impl CreateResourceDefinitionVersionInputBuilder {
         &self.amzn_client_token
     }
     /// The ID of the resource definition.
-    pub fn resource_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the resource definition.
-    pub fn set_resource_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_definition_id = input;
         self
     }
@@ -97,10 +83,7 @@ impl CreateResourceDefinitionVersionInputBuilder {
         self
     }
     /// A list of resources.
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.resources = input;
         self
     }
@@ -117,13 +100,10 @@ impl CreateResourceDefinitionVersionInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionInput {
-                amzn_client_token: self.amzn_client_token
-                ,
-                resource_definition_id: self.resource_definition_id
-                ,
-                resources: self.resources
-                ,
-            }
+                amzn_client_token: self.amzn_client_token,
+                resource_definition_id: self.resource_definition_id,
+                resources: self.resources,
+            },
         )
     }
 }

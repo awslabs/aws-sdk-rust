@@ -70,9 +70,7 @@ impl AccessKeyLastUsed {
 
 /// A builder for [`AccessKeyLastUsed`](crate::types::AccessKeyLastUsed).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessKeyLastUsedBuilder {
     pub(crate) last_used_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
@@ -95,10 +93,7 @@ impl AccessKeyLastUsedBuilder {
     /// <li> <p>An access key exists but has not been used since IAM began tracking this information.</p> </li>
     /// <li> <p>There is no sign-in data associated with the user.</p> </li>
     /// </ul>
-    pub fn set_last_used_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_used_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_used_date = input;
         self
     }

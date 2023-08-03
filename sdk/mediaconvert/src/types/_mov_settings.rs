@@ -30,9 +30,7 @@ impl MovSettings {
         self.cslg_atom.as_ref()
     }
     /// When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This increases compatibility with Apple editors and players, but may decrease compatibility with other players. Only applicable when the video codec is MPEG2.
-    pub fn mpeg2_four_cc_control(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MovMpeg2FourCcControl> {
+    pub fn mpeg2_four_cc_control(&self) -> ::std::option::Option<&crate::types::MovMpeg2FourCcControl> {
         self.mpeg2_four_cc_control.as_ref()
     }
     /// Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with Omneon: Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note that this might cause file rejections when a recipient of the output file doesn't expect this extra padding.
@@ -53,9 +51,7 @@ impl MovSettings {
 
 /// A builder for [`MovSettings`](crate::types::MovSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MovSettingsBuilder {
     pub(crate) clap_atom: ::std::option::Option<crate::types::MovClapAtom>,
     pub(crate) cslg_atom: ::std::option::Option<crate::types::MovCslgAtom>,
@@ -70,10 +66,7 @@ impl MovSettingsBuilder {
         self
     }
     /// When enabled, include 'clap' atom if appropriate for the video output settings.
-    pub fn set_clap_atom(
-        mut self,
-        input: ::std::option::Option<crate::types::MovClapAtom>,
-    ) -> Self {
+    pub fn set_clap_atom(mut self, input: ::std::option::Option<crate::types::MovClapAtom>) -> Self {
         self.clap_atom = input;
         self
     }
@@ -87,10 +80,7 @@ impl MovSettingsBuilder {
         self
     }
     /// When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
-    pub fn set_cslg_atom(
-        mut self,
-        input: ::std::option::Option<crate::types::MovCslgAtom>,
-    ) -> Self {
+    pub fn set_cslg_atom(mut self, input: ::std::option::Option<crate::types::MovCslgAtom>) -> Self {
         self.cslg_atom = input;
         self
     }
@@ -104,17 +94,12 @@ impl MovSettingsBuilder {
         self
     }
     /// When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This increases compatibility with Apple editors and players, but may decrease compatibility with other players. Only applicable when the video codec is MPEG2.
-    pub fn set_mpeg2_four_cc_control(
-        mut self,
-        input: ::std::option::Option<crate::types::MovMpeg2FourCcControl>,
-    ) -> Self {
+    pub fn set_mpeg2_four_cc_control(mut self, input: ::std::option::Option<crate::types::MovMpeg2FourCcControl>) -> Self {
         self.mpeg2_four_cc_control = input;
         self
     }
     /// When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This increases compatibility with Apple editors and players, but may decrease compatibility with other players. Only applicable when the video codec is MPEG2.
-    pub fn get_mpeg2_four_cc_control(
-        &self,
-    ) -> &::std::option::Option<crate::types::MovMpeg2FourCcControl> {
+    pub fn get_mpeg2_four_cc_control(&self) -> &::std::option::Option<crate::types::MovMpeg2FourCcControl> {
         &self.mpeg2_four_cc_control
     }
     /// Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with Omneon: Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note that this might cause file rejections when a recipient of the output file doesn't expect this extra padding.
@@ -123,10 +108,7 @@ impl MovSettingsBuilder {
         self
     }
     /// Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with Omneon: Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note that this might cause file rejections when a recipient of the output file doesn't expect this extra padding.
-    pub fn set_padding_control(
-        mut self,
-        input: ::std::option::Option<crate::types::MovPaddingControl>,
-    ) -> Self {
+    pub fn set_padding_control(mut self, input: ::std::option::Option<crate::types::MovPaddingControl>) -> Self {
         self.padding_control = input;
         self
     }
@@ -140,10 +122,7 @@ impl MovSettingsBuilder {
         self
     }
     /// Always keep the default value (SELF_CONTAINED) for this setting.
-    pub fn set_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::MovReference>,
-    ) -> Self {
+    pub fn set_reference(mut self, input: ::std::option::Option<crate::types::MovReference>) -> Self {
         self.reference = input;
         self
     }

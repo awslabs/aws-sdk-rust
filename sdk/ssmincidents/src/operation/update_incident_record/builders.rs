@@ -37,9 +37,7 @@ impl UpdateIncidentRecordFluentBuilder {
         }
     }
     /// Access the UpdateIncidentRecord as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_incident_record::builders::UpdateIncidentRecordInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_incident_record::builders::UpdateIncidentRecordInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateIncidentRecordFluentBuilder {
             crate::operation::update_incident_record::UpdateIncidentRecord,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_incident_record::UpdateIncidentRecordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_incident_record::UpdateIncidentRecordError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateIncidentRecordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateIncidentRecordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_incident_record::UpdateIncidentRecordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_incident_record::UpdateIncidentRecordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_incident_record::UpdateIncidentRecordError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateIncidentRecordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_incident_record::UpdateIncidentRecordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_incident_record::UpdateIncidentRecordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_incident_record::UpdateIncidentRecordError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateIncidentRecordFluentBuilder {
             crate::operation::update_incident_record::UpdateIncidentRecord,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_incident_record::UpdateIncidentRecordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_incident_record::UpdateIncidentRecordError>,
     > {
         self.customize_middleware().await
     }
@@ -222,10 +209,7 @@ impl UpdateIncidentRecordFluentBuilder {
         self
     }
     /// <p>The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IncidentRecordStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::IncidentRecordStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -239,10 +223,7 @@ impl UpdateIncidentRecordFluentBuilder {
         self
     }
     /// <p>The Chatbot chat channel where responders can collaborate.</p>
-    pub fn set_chat_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::ChatChannel>,
-    ) -> Self {
+    pub fn set_chat_channel(mut self, input: ::std::option::Option<crate::types::ChatChannel>) -> Self {
         self.inner = self.inner.set_chat_channel(input);
         self
     }
@@ -262,18 +243,13 @@ impl UpdateIncidentRecordFluentBuilder {
     }
     /// <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
-    pub fn set_notification_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
-    ) -> Self {
+    pub fn set_notification_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>) -> Self {
         self.inner = self.inner.set_notification_targets(input);
         self
     }
     /// <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
-    pub fn get_notification_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>> {
+    pub fn get_notification_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>> {
         self.inner.get_notification_targets()
     }
 }

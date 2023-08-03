@@ -22,34 +22,26 @@ impl AcceptQualificationRequestInput {
 }
 impl AcceptQualificationRequestInput {
     /// Creates a new builder-style object to manufacture [`AcceptQualificationRequestInput`](crate::operation::accept_qualification_request::AcceptQualificationRequestInput).
-    pub fn builder() -> crate::operation::accept_qualification_request::builders::AcceptQualificationRequestInputBuilder{
+    pub fn builder() -> crate::operation::accept_qualification_request::builders::AcceptQualificationRequestInputBuilder {
         crate::operation::accept_qualification_request::builders::AcceptQualificationRequestInputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptQualificationRequestInput`](crate::operation::accept_qualification_request::AcceptQualificationRequestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptQualificationRequestInputBuilder {
     pub(crate) qualification_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) integer_value: ::std::option::Option<i32>,
 }
 impl AcceptQualificationRequestInputBuilder {
     /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
-    pub fn qualification_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
-    pub fn set_qualification_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualification_request_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl AcceptQualificationRequestInputBuilder {
         crate::operation::accept_qualification_request::AcceptQualificationRequestInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::accept_qualification_request::AcceptQualificationRequestInput {
-                qualification_request_id: self.qualification_request_id,
-                integer_value: self.integer_value,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::accept_qualification_request::AcceptQualificationRequestInput {
+            qualification_request_id: self.qualification_request_id,
+            integer_value: self.integer_value,
+        })
     }
 }

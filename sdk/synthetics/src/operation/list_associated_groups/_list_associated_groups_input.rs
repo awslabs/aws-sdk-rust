@@ -29,17 +29,14 @@ impl ListAssociatedGroupsInput {
 }
 impl ListAssociatedGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedGroupsInput`](crate::operation::list_associated_groups::ListAssociatedGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_associated_groups::builders::ListAssociatedGroupsInputBuilder {
+    pub fn builder() -> crate::operation::list_associated_groups::builders::ListAssociatedGroupsInputBuilder {
         crate::operation::list_associated_groups::builders::ListAssociatedGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociatedGroupsInput`](crate::operation::list_associated_groups::ListAssociatedGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,16 +88,12 @@ impl ListAssociatedGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssociatedGroupsInput`](crate::operation::list_associated_groups::ListAssociatedGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_associated_groups::ListAssociatedGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_associated_groups::ListAssociatedGroupsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                resource_arn: self.resource_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_associated_groups::ListAssociatedGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_associated_groups::ListAssociatedGroupsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            resource_arn: self.resource_arn,
+        })
     }
 }

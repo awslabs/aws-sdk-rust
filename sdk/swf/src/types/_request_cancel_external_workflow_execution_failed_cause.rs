@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RequestCancelExternalWorkflowExecutionFailedCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,11 +54,13 @@ pub enum RequestCancelExternalWorkflowExecutionFailedCause {
 impl ::std::convert::From<&str> for RequestCancelExternalWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
         match s {
-                        "OPERATION_NOT_PERMITTED" => RequestCancelExternalWorkflowExecutionFailedCause::OperationNotPermitted,
-"REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED" => RequestCancelExternalWorkflowExecutionFailedCause::RequestCancelExternalWorkflowExecutionRateExceeded,
-"UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION" => RequestCancelExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution,
-other => RequestCancelExternalWorkflowExecutionFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
+            "OPERATION_NOT_PERMITTED" => RequestCancelExternalWorkflowExecutionFailedCause::OperationNotPermitted,
+            "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED" => {
+                RequestCancelExternalWorkflowExecutionFailedCause::RequestCancelExternalWorkflowExecutionRateExceeded
+            }
+            "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION" => RequestCancelExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution,
+            other => RequestCancelExternalWorkflowExecutionFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
     }
 }
 impl ::std::str::FromStr for RequestCancelExternalWorkflowExecutionFailedCause {
@@ -78,11 +74,13 @@ impl RequestCancelExternalWorkflowExecutionFailedCause {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-    RequestCancelExternalWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
-    RequestCancelExternalWorkflowExecutionFailedCause::RequestCancelExternalWorkflowExecutionRateExceeded => "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED",
-    RequestCancelExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION",
-    RequestCancelExternalWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
-}
+            RequestCancelExternalWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
+            RequestCancelExternalWorkflowExecutionFailedCause::RequestCancelExternalWorkflowExecutionRateExceeded => {
+                "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED"
+            }
+            RequestCancelExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION",
+            RequestCancelExternalWorkflowExecutionFailedCause::Unknown(value) => value.as_str(),
+        }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {

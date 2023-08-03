@@ -38,9 +38,7 @@ impl GetSolFunctionPackageMetadata {
 
 /// A builder for [`GetSolFunctionPackageMetadata`](crate::types::GetSolFunctionPackageMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolFunctionPackageMetadataBuilder {
     pub(crate) vnfd: ::std::option::Option<crate::types::FunctionArtifactMeta>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -53,10 +51,7 @@ impl GetSolFunctionPackageMetadataBuilder {
         self
     }
     /// <p>Metadata related to the function package descriptor of the function package.</p>
-    pub fn set_vnfd(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionArtifactMeta>,
-    ) -> Self {
+    pub fn set_vnfd(mut self, input: ::std::option::Option<crate::types::FunctionArtifactMeta>) -> Self {
         self.vnfd = input;
         self
     }
@@ -70,10 +65,7 @@ impl GetSolFunctionPackageMetadataBuilder {
         self
     }
     /// <p>The date that the resource was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -87,10 +79,7 @@ impl GetSolFunctionPackageMetadataBuilder {
         self
     }
     /// <p>The date that the resource was last modified.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }

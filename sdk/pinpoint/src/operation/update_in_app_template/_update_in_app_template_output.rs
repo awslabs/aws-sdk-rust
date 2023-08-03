@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateInAppTemplateOutput {
 }
 impl UpdateInAppTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInAppTemplateOutput`](crate::operation::update_in_app_template::UpdateInAppTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::update_in_app_template::builders::UpdateInAppTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::update_in_app_template::builders::UpdateInAppTemplateOutputBuilder {
         crate::operation::update_in_app_template::builders::UpdateInAppTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateInAppTemplateOutput`](crate::operation::update_in_app_template::UpdateInAppTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInAppTemplateOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateInAppTemplateOutputBuilder {
         self
     }
     /// <p>Provides information about an API request or response.</p>
-    pub fn set_message_body(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageBody>,
-    ) -> Self {
+    pub fn set_message_body(mut self, input: ::std::option::Option<crate::types::MessageBody>) -> Self {
         self.message_body = input;
         self
     }

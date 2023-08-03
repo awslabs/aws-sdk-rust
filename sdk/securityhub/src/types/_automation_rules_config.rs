@@ -97,9 +97,7 @@ impl AutomationRulesConfig {
 
 /// A builder for [`AutomationRulesConfig`](crate::types::AutomationRulesConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutomationRulesConfigBuilder {
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) rule_status: ::std::option::Option<crate::types::RuleStatus>,
@@ -134,10 +132,7 @@ impl AutomationRulesConfigBuilder {
         self
     }
     /// <p> Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. </p>
-    pub fn set_rule_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleStatus>,
-    ) -> Self {
+    pub fn set_rule_status(mut self, input: ::std::option::Option<crate::types::RuleStatus>) -> Self {
         self.rule_status = input;
         self
     }
@@ -207,17 +202,12 @@ impl AutomationRulesConfigBuilder {
         self
     }
     /// <p> A set of <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> finding field attributes and corresponding expected values that Security Hub uses to filter findings. If a rule is enabled and a finding matches the conditions specified in this parameter, Security Hub applies the rule action to the finding. </p>
-    pub fn set_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::AutomationRulesFindingFilters>,
-    ) -> Self {
+    pub fn set_criteria(mut self, input: ::std::option::Option<crate::types::AutomationRulesFindingFilters>) -> Self {
         self.criteria = input;
         self
     }
     /// <p> A set of <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> finding field attributes and corresponding expected values that Security Hub uses to filter findings. If a rule is enabled and a finding matches the conditions specified in this parameter, Security Hub applies the rule action to the finding. </p>
-    pub fn get_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutomationRulesFindingFilters> {
+    pub fn get_criteria(&self) -> &::std::option::Option<crate::types::AutomationRulesFindingFilters> {
         &self.criteria
     }
     /// Appends an item to `actions`.
@@ -232,17 +222,12 @@ impl AutomationRulesConfigBuilder {
         self
     }
     /// <p> One or more actions to update finding fields if a finding matches the defined criteria of the rule. </p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>>) -> Self {
         self.actions = input;
         self
     }
     /// <p> One or more actions to update finding fields if a finding matches the defined criteria of the rule. </p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>> {
         &self.actions
     }
     /// <p> A timestamp that indicates when the rule was created. </p>
@@ -253,10 +238,7 @@ impl AutomationRulesConfigBuilder {
     }
     /// <p> A timestamp that indicates when the rule was created. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -273,10 +255,7 @@ impl AutomationRulesConfigBuilder {
     }
     /// <p> A timestamp that indicates when the rule was most recently updated. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

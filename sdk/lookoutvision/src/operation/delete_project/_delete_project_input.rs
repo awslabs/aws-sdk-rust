@@ -33,9 +33,7 @@ impl DeleteProjectInput {
 
 /// A builder for [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProjectInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -78,10 +76,7 @@ impl DeleteProjectInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_project::DeleteProjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_project::DeleteProjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_project::DeleteProjectInput {
             project_name: self.project_name,
             client_token: self.client_token,

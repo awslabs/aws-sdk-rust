@@ -23,9 +23,7 @@ impl AddonHealth {
 
 /// A builder for [`AddonHealth`](crate::types::AddonHealth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddonHealthBuilder {
     pub(crate) issues: ::std::option::Option<::std::vec::Vec<crate::types::AddonIssue>>,
 }
@@ -42,10 +40,7 @@ impl AddonHealthBuilder {
         self
     }
     /// <p>An object representing the health issues for an add-on.</p>
-    pub fn set_issues(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddonIssue>>,
-    ) -> Self {
+    pub fn set_issues(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddonIssue>>) -> Self {
         self.issues = input;
         self
     }
@@ -55,8 +50,6 @@ impl AddonHealthBuilder {
     }
     /// Consumes the builder and constructs a [`AddonHealth`](crate::types::AddonHealth).
     pub fn build(self) -> crate::types::AddonHealth {
-        crate::types::AddonHealth {
-            issues: self.issues,
-        }
+        crate::types::AddonHealth { issues: self.issues }
     }
 }

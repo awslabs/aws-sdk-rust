@@ -62,9 +62,7 @@ impl S3DestinationConfiguration {
 
 /// A builder for [`S3DestinationConfiguration`](crate::types::S3DestinationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3DestinationConfigurationBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -133,17 +131,12 @@ impl S3DestinationConfigurationBuilder {
         self
     }
     /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
-    pub fn set_glue_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::GlueConfiguration>,
-    ) -> Self {
+    pub fn set_glue_configuration(mut self, input: ::std::option::Option<crate::types::GlueConfiguration>) -> Self {
         self.glue_configuration = input;
         self
     }
     /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
-    pub fn get_glue_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::GlueConfiguration> {
+    pub fn get_glue_configuration(&self) -> &::std::option::Option<crate::types::GlueConfiguration> {
         &self.glue_configuration
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.</p>

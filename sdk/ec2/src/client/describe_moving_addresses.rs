@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`moving_address_statuses(Option<Vec<MovingAddressStatus>>)`](crate::operation::describe_moving_addresses::DescribeMovingAddressesOutput::moving_address_statuses): <p>The status for each Elastic IP address.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_moving_addresses::DescribeMovingAddressesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeMovingAddressesError>`](crate::operation::describe_moving_addresses::DescribeMovingAddressesError)
-    pub fn describe_moving_addresses(
-        &self,
-    ) -> crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesFluentBuilder
-    {
+    pub fn describe_moving_addresses(&self) -> crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesFluentBuilder {
         crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesFluentBuilder::new(self.handle.clone())
     }
 }

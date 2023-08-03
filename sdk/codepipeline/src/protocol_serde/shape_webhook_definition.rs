@@ -18,10 +18,7 @@ pub fn ser_webhook_definition(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_webhook_filter_rule::ser_webhook_filter_rule(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_webhook_filter_rule::ser_webhook_filter_rule(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -33,10 +30,7 @@ pub fn ser_webhook_definition(
     if let Some(var_9) = &input.authentication_configuration {
         #[allow(unused_mut)]
         let mut object_10 = object.key("authenticationConfiguration").start_object();
-        crate::protocol_serde::shape_webhook_auth_configuration::ser_webhook_auth_configuration(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_webhook_auth_configuration::ser_webhook_auth_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
     Ok(())
@@ -44,17 +38,9 @@ pub fn ser_webhook_definition(
 
 pub(crate) fn de_webhook_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::WebhookDefinition>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::WebhookDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -64,78 +50,57 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "name" => {
-                                builder = builder.set_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "name" => {
+                            builder = builder.set_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "targetPipeline" => {
-                                builder = builder.set_target_pipeline(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "targetAction" => {
-                                builder = builder.set_target_action(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "filters" => {
-                                builder = builder.set_filters(
-                                    crate::protocol_serde::shape_webhook_filters::de_webhook_filters(tokens)?
-                                );
-                            }
-                            "authentication" => {
-                                builder = builder.set_authentication(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::WebhookAuthenticationType::from(
-                                                u.as_ref(),
-                                            )
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "authenticationConfiguration" => {
-                                builder = builder.set_authentication_configuration(
-                                    crate::protocol_serde::shape_webhook_auth_configuration::de_webhook_auth_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "targetPipeline" => {
+                            builder = builder.set_target_pipeline(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "targetAction" => {
+                            builder = builder.set_target_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "filters" => {
+                            builder = builder.set_filters(crate::protocol_serde::shape_webhook_filters::de_webhook_filters(tokens)?);
+                        }
+                        "authentication" => {
+                            builder = builder.set_authentication(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::WebhookAuthenticationType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "authenticationConfiguration" => {
+                            builder = builder.set_authentication_configuration(
+                                crate::protocol_serde::shape_webhook_auth_configuration::de_webhook_auth_configuration(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`references(HashMap<String, Reference>)`](crate::operation::update_contact::builders::UpdateContactFluentBuilder::references) / [`set_references(Option<HashMap<String, Reference>>)`](crate::operation::update_contact::builders::UpdateContactFluentBuilder::set_references): <p>Well-formed data on contact, shown to agents on Contact Control Panel (CCP).</p>
     /// - On success, responds with [`UpdateContactOutput`](crate::operation::update_contact::UpdateContactOutput)
     /// - On failure, responds with [`SdkError<UpdateContactError>`](crate::operation::update_contact::UpdateContactError)
-    pub fn update_contact(
-        &self,
-    ) -> crate::operation::update_contact::builders::UpdateContactFluentBuilder {
-        crate::operation::update_contact::builders::UpdateContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_contact(&self) -> crate::operation::update_contact::builders::UpdateContactFluentBuilder {
+        crate::operation::update_contact::builders::UpdateContactFluentBuilder::new(self.handle.clone())
     }
 }

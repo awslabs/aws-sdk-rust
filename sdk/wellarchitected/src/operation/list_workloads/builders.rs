@@ -10,10 +10,7 @@ impl ListWorkloadsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_workloads::ListWorkloadsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_workloads::ListWorkloadsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_workloads::ListWorkloadsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_workloads();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListWorkloadsFluentBuilder {
         }
     }
     /// Access the ListWorkloads as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_workloads::builders::ListWorkloadsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_workloads::builders::ListWorkloadsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListWorkloadsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,27 +109,16 @@ impl ListWorkloadsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_workloads::paginator::ListWorkloadsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_workloads::paginator::ListWorkloadsPaginator {
-        crate::operation::list_workloads::paginator::ListWorkloadsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_workloads::paginator::ListWorkloadsPaginator {
+        crate::operation::list_workloads::paginator::ListWorkloadsPaginator::new(self.handle, self.inner)
     }
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
-    pub fn workload_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workload_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workload_name_prefix(input.into());
         self
     }
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
-    pub fn set_workload_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workload_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workload_name_prefix(input);
         self
     }

@@ -5,8 +5,7 @@
 pub struct GetCoreNetworkChangeSetOutput {
     /// <p>Describes a core network changes.</p>
     #[doc(hidden)]
-    pub core_network_changes:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChange>>,
+    pub core_network_changes: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChange>>,
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetCoreNetworkChangeSetOutput {
 }
 impl GetCoreNetworkChangeSetOutput {
     /// <p>Describes a core network changes.</p>
-    pub fn core_network_changes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CoreNetworkChange]> {
+    pub fn core_network_changes(&self) -> ::std::option::Option<&[crate::types::CoreNetworkChange]> {
         self.core_network_changes.as_deref()
     }
     /// <p>The token for the next page of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for GetCoreNetworkChangeSetOutput {
 }
 impl GetCoreNetworkChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`GetCoreNetworkChangeSetOutput`](crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetOutput).
-    pub fn builder(
-    ) -> crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetOutputBuilder {
         crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCoreNetworkChangeSetOutput`](crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCoreNetworkChangeSetOutputBuilder {
-    pub(crate) core_network_changes:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChange>>,
+    pub(crate) core_network_changes: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChange>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl GetCoreNetworkChangeSetOutputBuilder {
         self
     }
     /// <p>Describes a core network changes.</p>
-    pub fn set_core_network_changes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChange>>,
-    ) -> Self {
+    pub fn set_core_network_changes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChange>>) -> Self {
         self.core_network_changes = input;
         self
     }
     /// <p>Describes a core network changes.</p>
-    pub fn get_core_network_changes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChange>> {
+    pub fn get_core_network_changes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkChange>> {
         &self.core_network_changes
     }
     /// <p>The token for the next page of results.</p>
@@ -99,9 +86,7 @@ impl GetCoreNetworkChangeSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCoreNetworkChangeSetOutput`](crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetOutput {
+    pub fn build(self) -> crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetOutput {
         crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetOutput {
             core_network_changes: self.core_network_changes,
             next_token: self.next_token,

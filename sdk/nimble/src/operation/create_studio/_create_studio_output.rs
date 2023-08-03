@@ -28,9 +28,7 @@ impl CreateStudioOutput {
 
 /// A builder for [`CreateStudioOutput`](crate::operation::create_studio::CreateStudioOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStudioOutputBuilder {
     pub(crate) studio: ::std::option::Option<crate::types::Studio>,
     _request_id: Option<String>,

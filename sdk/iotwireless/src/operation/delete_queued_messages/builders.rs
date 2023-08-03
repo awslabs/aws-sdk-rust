@@ -37,9 +37,7 @@ impl DeleteQueuedMessagesFluentBuilder {
         }
     }
     /// Access the DeleteQueuedMessages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteQueuedMessagesFluentBuilder {
             crate::operation::delete_queued_messages::DeleteQueuedMessages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_queued_messages::DeleteQueuedMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_queued_messages::DeleteQueuedMessagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteQueuedMessagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteQueuedMessagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_queued_messages::DeleteQueuedMessagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_queued_messages::DeleteQueuedMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_queued_messages::DeleteQueuedMessagesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteQueuedMessagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_queued_messages::DeleteQueuedMessagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_queued_messages::DeleteQueuedMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_queued_messages::DeleteQueuedMessagesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteQueuedMessagesFluentBuilder {
             crate::operation::delete_queued_messages::DeleteQueuedMessages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_queued_messages::DeleteQueuedMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_queued_messages::DeleteQueuedMessagesError>,
     > {
         self.customize_middleware().await
     }
@@ -156,17 +143,12 @@ impl DeleteQueuedMessagesFluentBuilder {
         self
     }
     /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
-    pub fn set_wireless_device_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessDeviceType>,
-    ) -> Self {
+    pub fn set_wireless_device_type(mut self, input: ::std::option::Option<crate::types::WirelessDeviceType>) -> Self {
         self.inner = self.inner.set_wireless_device_type(input);
         self
     }
     /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
-    pub fn get_wireless_device_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+    pub fn get_wireless_device_type(&self) -> &::std::option::Option<crate::types::WirelessDeviceType> {
         self.inner.get_wireless_device_type()
     }
 }

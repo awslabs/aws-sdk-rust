@@ -12,7 +12,11 @@ impl super::Client {
     /// - On success, responds with [`CreateMediaInsightsPipelineConfigurationOutput`](crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationOutput) with field(s):
     ///   - [`media_insights_pipeline_configuration(Option<MediaInsightsPipelineConfiguration>)`](crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationOutput::media_insights_pipeline_configuration): <p>The configuration settings for the media insights pipeline.</p>
     /// - On failure, responds with [`SdkError<CreateMediaInsightsPipelineConfigurationError>`](crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError)
-    pub fn create_media_insights_pipeline_configuration(&self) -> crate::operation::create_media_insights_pipeline_configuration::builders::CreateMediaInsightsPipelineConfigurationFluentBuilder{
-        crate::operation::create_media_insights_pipeline_configuration::builders::CreateMediaInsightsPipelineConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn create_media_insights_pipeline_configuration(
+        &self,
+    ) -> crate::operation::create_media_insights_pipeline_configuration::builders::CreateMediaInsightsPipelineConfigurationFluentBuilder {
+        crate::operation::create_media_insights_pipeline_configuration::builders::CreateMediaInsightsPipelineConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::update_project::UpdateProjectOutput::last_modified_date): <p>The date and time that the project was last modified.</p>
     ///   - [`name(Option<String>)`](crate::operation::update_project::UpdateProjectOutput::name): <p>The name of the project that you updated.</p>
     /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::operation::update_project::UpdateProjectError)
-    pub fn update_project(
-        &self,
-    ) -> crate::operation::update_project::builders::UpdateProjectFluentBuilder {
-        crate::operation::update_project::builders::UpdateProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_project(&self) -> crate::operation::update_project::builders::UpdateProjectFluentBuilder {
+        crate::operation::update_project::builders::UpdateProjectFluentBuilder::new(self.handle.clone())
     }
 }

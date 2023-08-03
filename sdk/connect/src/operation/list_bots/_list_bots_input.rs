@@ -43,9 +43,7 @@ impl ListBotsInput {
 
 /// A builder for [`ListBotsInput`](crate::operation::list_bots::ListBotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -101,10 +99,7 @@ impl ListBotsInputBuilder {
         self
     }
     /// <p>The version of Amazon Lex or Amazon Lex V2.</p>
-    pub fn set_lex_version(
-        mut self,
-        input: ::std::option::Option<crate::types::LexVersion>,
-    ) -> Self {
+    pub fn set_lex_version(mut self, input: ::std::option::Option<crate::types::LexVersion>) -> Self {
         self.lex_version = input;
         self
     }
@@ -113,12 +108,7 @@ impl ListBotsInputBuilder {
         &self.lex_version
     }
     /// Consumes the builder and constructs a [`ListBotsInput`](crate::operation::list_bots::ListBotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bots::ListBotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bots::ListBotsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_bots::ListBotsInput {
             instance_id: self.instance_id,
             next_token: self.next_token,

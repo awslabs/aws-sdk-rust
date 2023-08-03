@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_keyspaces::ListKeyspacesOutput::next_token): <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
     ///   - [`keyspaces(Option<Vec<KeyspaceSummary>>)`](crate::operation::list_keyspaces::ListKeyspacesOutput::keyspaces): <p>A list of keyspaces.</p>
     /// - On failure, responds with [`SdkError<ListKeyspacesError>`](crate::operation::list_keyspaces::ListKeyspacesError)
-    pub fn list_keyspaces(
-        &self,
-    ) -> crate::operation::list_keyspaces::builders::ListKeyspacesFluentBuilder {
-        crate::operation::list_keyspaces::builders::ListKeyspacesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_keyspaces(&self) -> crate::operation::list_keyspaces::builders::ListKeyspacesFluentBuilder {
+        crate::operation::list_keyspaces::builders::ListKeyspacesFluentBuilder::new(self.handle.clone())
     }
 }

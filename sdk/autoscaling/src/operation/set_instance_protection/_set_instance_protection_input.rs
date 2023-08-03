@@ -29,18 +29,14 @@ impl SetInstanceProtectionInput {
 }
 impl SetInstanceProtectionInput {
     /// Creates a new builder-style object to manufacture [`SetInstanceProtectionInput`](crate::operation::set_instance_protection::SetInstanceProtectionInput).
-    pub fn builder(
-    ) -> crate::operation::set_instance_protection::builders::SetInstanceProtectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_instance_protection::builders::SetInstanceProtectionInputBuilder {
         crate::operation::set_instance_protection::builders::SetInstanceProtectionInputBuilder::default()
     }
 }
 
 /// A builder for [`SetInstanceProtectionInput`](crate::operation::set_instance_protection::SetInstanceProtectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetInstanceProtectionInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
@@ -59,32 +55,21 @@ impl SetInstanceProtectionInputBuilder {
         self
     }
     /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -109,16 +94,12 @@ impl SetInstanceProtectionInputBuilder {
     /// Consumes the builder and constructs a [`SetInstanceProtectionInput`](crate::operation::set_instance_protection::SetInstanceProtectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_instance_protection::SetInstanceProtectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_instance_protection::SetInstanceProtectionInput {
-                instance_ids: self.instance_ids,
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                protected_from_scale_in: self.protected_from_scale_in,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_instance_protection::SetInstanceProtectionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::set_instance_protection::SetInstanceProtectionInput {
+            instance_ids: self.instance_ids,
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            protected_from_scale_in: self.protected_from_scale_in,
+        })
     }
 }

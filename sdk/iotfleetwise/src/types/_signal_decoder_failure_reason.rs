@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SignalDecoderFailureReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -84,18 +78,12 @@ impl ::std::convert::From<&str> for SignalDecoderFailureReason {
             "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE" => {
                 SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType
             }
-            "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL" => {
-                SignalDecoderFailureReason::NoDecoderInfoForSignalInModel
-            }
+            "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL" => SignalDecoderFailureReason::NoDecoderInfoForSignalInModel,
             "OBD_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::ObdSignalInfoIsNull,
-            "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE" => {
-                SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface
-            }
+            "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE" => SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface,
             "SIGNAL_NOT_IN_MODEL" => SignalDecoderFailureReason::SignalNotInModel,
             "SIGNAL_TO_ADD_ALREADY_EXISTS" => SignalDecoderFailureReason::SignalToAddAlreadyExists,
-            other => SignalDecoderFailureReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SignalDecoderFailureReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -116,13 +104,9 @@ impl SignalDecoderFailureReason {
             SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType => {
                 "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE"
             }
-            SignalDecoderFailureReason::NoDecoderInfoForSignalInModel => {
-                "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL"
-            }
+            SignalDecoderFailureReason::NoDecoderInfoForSignalInModel => "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL",
             SignalDecoderFailureReason::ObdSignalInfoIsNull => "OBD_SIGNAL_INFO_IS_NULL",
-            SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface => {
-                "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE"
-            }
+            SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface => "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE",
             SignalDecoderFailureReason::SignalNotInModel => "SIGNAL_NOT_IN_MODEL",
             SignalDecoderFailureReason::SignalToAddAlreadyExists => "SIGNAL_TO_ADD_ALREADY_EXISTS",
             SignalDecoderFailureReason::Unknown(value) => value.as_str(),

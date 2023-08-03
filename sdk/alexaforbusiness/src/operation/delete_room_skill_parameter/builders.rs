@@ -27,7 +27,7 @@ impl DeleteRoomSkillParameterInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRoomSkillParameterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_room_skill_parameter::builders::DeleteRoomSkillParameterInputBuilder,
+    inner: crate::operation::delete_room_skill_parameter::builders::DeleteRoomSkillParameterInputBuilder,
 }
 impl DeleteRoomSkillParameterFluentBuilder {
     /// Creates a new `DeleteRoomSkillParameter`.
@@ -38,7 +38,7 @@ impl DeleteRoomSkillParameterFluentBuilder {
         }
     }
     /// Access the DeleteRoomSkillParameter as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_room_skill_parameter::builders::DeleteRoomSkillParameterInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_room_skill_parameter::builders::DeleteRoomSkillParameterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DeleteRoomSkillParameterFluentBuilder {
             crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DeleteRoomSkillParameterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DeleteRoomSkillParameterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DeleteRoomSkillParameterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DeleteRoomSkillParameterFluentBuilder {
             crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterError>,
     > {
         self.customize_middleware().await
     }
@@ -150,18 +139,12 @@ impl DeleteRoomSkillParameterFluentBuilder {
         self.inner.get_skill_id()
     }
     /// <p>The room skill parameter key for which to remove details.</p>
-    pub fn parameter_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_key(input.into());
         self
     }
     /// <p>The room skill parameter key for which to remove details.</p>
-    pub fn set_parameter_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parameter_key(input);
         self
     }

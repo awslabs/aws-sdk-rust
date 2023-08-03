@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetProtectedQueryOutput`](crate::operation::get_protected_query::GetProtectedQueryOutput) with field(s):
     ///   - [`protected_query(Option<ProtectedQuery>)`](crate::operation::get_protected_query::GetProtectedQueryOutput::protected_query): <p>The query processing metadata.</p>
     /// - On failure, responds with [`SdkError<GetProtectedQueryError>`](crate::operation::get_protected_query::GetProtectedQueryError)
-    pub fn get_protected_query(
-        &self,
-    ) -> crate::operation::get_protected_query::builders::GetProtectedQueryFluentBuilder {
-        crate::operation::get_protected_query::builders::GetProtectedQueryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_protected_query(&self) -> crate::operation::get_protected_query::builders::GetProtectedQueryFluentBuilder {
+        crate::operation::get_protected_query::builders::GetProtectedQueryFluentBuilder::new(self.handle.clone())
     }
 }

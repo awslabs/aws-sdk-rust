@@ -26,7 +26,7 @@ impl DescribeMultiplexProgramInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMultiplexProgramFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_multiplex_program::builders::DescribeMultiplexProgramInputBuilder,
+    inner: crate::operation::describe_multiplex_program::builders::DescribeMultiplexProgramInputBuilder,
 }
 impl DescribeMultiplexProgramFluentBuilder {
     /// Creates a new `DescribeMultiplexProgram`.
@@ -37,10 +37,7 @@ impl DescribeMultiplexProgramFluentBuilder {
         }
     }
     /// Access the DescribeMultiplexProgram as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_multiplex_program::builders::DescribeMultiplexProgramInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_multiplex_program::builders::DescribeMultiplexProgramInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeMultiplexProgramFluentBuilder {
             crate::operation::describe_multiplex_program::DescribeMultiplexProgram,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_multiplex_program::DescribeMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_multiplex_program::DescribeMultiplexProgramError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeMultiplexProgramFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeMultiplexProgramFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_multiplex_program::DescribeMultiplexProgramOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_multiplex_program::DescribeMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_multiplex_program::DescribeMultiplexProgramError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeMultiplexProgramFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_multiplex_program::DescribeMultiplexProgramOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_multiplex_program::DescribeMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_multiplex_program::DescribeMultiplexProgramError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeMultiplexProgramFluentBuilder {
             crate::operation::describe_multiplex_program::DescribeMultiplexProgram,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_multiplex_program::DescribeMultiplexProgramError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_multiplex_program::DescribeMultiplexProgramError>,
     > {
         self.customize_middleware().await
     }

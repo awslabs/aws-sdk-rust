@@ -48,12 +48,7 @@ impl super::Client {
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::create_multipart_upload::CreateMultipartUploadOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     ///   - [`checksum_algorithm(Option<ChecksumAlgorithm>)`](crate::operation::create_multipart_upload::CreateMultipartUploadOutput::checksum_algorithm): <p>The algorithm that was used to create a checksum of the object.</p>
     /// - On failure, responds with [`SdkError<CreateMultipartUploadError>`](crate::operation::create_multipart_upload::CreateMultipartUploadError)
-    pub fn create_multipart_upload(
-        &self,
-    ) -> crate::operation::create_multipart_upload::builders::CreateMultipartUploadFluentBuilder
-    {
-        crate::operation::create_multipart_upload::builders::CreateMultipartUploadFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_multipart_upload(&self) -> crate::operation::create_multipart_upload::builders::CreateMultipartUploadFluentBuilder {
+        crate::operation::create_multipart_upload::builders::CreateMultipartUploadFluentBuilder::new(self.handle.clone())
     }
 }

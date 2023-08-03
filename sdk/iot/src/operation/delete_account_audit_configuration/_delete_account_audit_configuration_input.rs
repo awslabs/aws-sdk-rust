@@ -15,16 +15,14 @@ impl DeleteAccountAuditConfigurationInput {
 }
 impl DeleteAccountAuditConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountAuditConfigurationInput`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput).
-    pub fn builder() -> crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationInputBuilder {
         crate::operation::delete_account_audit_configuration::builders::DeleteAccountAuditConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccountAuditConfigurationInput`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccountAuditConfigurationInputBuilder {
     pub(crate) delete_scheduled_audits: ::std::option::Option<bool>,
 }
@@ -52,9 +50,8 @@ impl DeleteAccountAuditConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput {
-                delete_scheduled_audits: self.delete_scheduled_audits
-                ,
-            }
+                delete_scheduled_audits: self.delete_scheduled_audits,
+            },
         )
     }
 }

@@ -37,9 +37,7 @@ impl ExecutionStatistics {
 
 /// A builder for [`ExecutionStatistics`](crate::types::ExecutionStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecutionStatisticsBuilder {
     pub(crate) average_execution_time_millis: ::std::option::Option<i64>,
     pub(crate) data_scanned_bytes: ::std::option::Option<i64>,

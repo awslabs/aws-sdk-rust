@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`browser_settings(Option<Vec<BrowserSettingsSummary>>)`](crate::operation::list_browser_settings::ListBrowserSettingsOutput::browser_settings): <p>The browser settings.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_browser_settings::ListBrowserSettingsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<ListBrowserSettingsError>`](crate::operation::list_browser_settings::ListBrowserSettingsError)
-    pub fn list_browser_settings(
-        &self,
-    ) -> crate::operation::list_browser_settings::builders::ListBrowserSettingsFluentBuilder {
-        crate::operation::list_browser_settings::builders::ListBrowserSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_browser_settings(&self) -> crate::operation::list_browser_settings::builders::ListBrowserSettingsFluentBuilder {
+        crate::operation::list_browser_settings::builders::ListBrowserSettingsFluentBuilder::new(self.handle.clone())
     }
 }

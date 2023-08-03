@@ -10,10 +10,7 @@ impl UpdateGameSessionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_game_session::UpdateGameSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_session::UpdateGameSessionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_session::UpdateGameSessionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_game_session();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl UpdateGameSessionFluentBuilder {
         }
     }
     /// Access the UpdateGameSession as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_game_session::builders::UpdateGameSessionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_game_session::builders::UpdateGameSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl UpdateGameSessionFluentBuilder {
             crate::operation::update_game_session::UpdateGameSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_session::UpdateGameSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_session::UpdateGameSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl UpdateGameSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl UpdateGameSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_game_session::UpdateGameSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_session::UpdateGameSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_session::UpdateGameSessionError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl UpdateGameSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_game_session::UpdateGameSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_session::UpdateGameSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_session::UpdateGameSessionError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl UpdateGameSessionFluentBuilder {
             crate::operation::update_game_session::UpdateGameSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_session::UpdateGameSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_session::UpdateGameSessionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the game session to update. </p>
-    pub fn game_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_session_id(input.into());
         self
     }
     /// <p>A unique identifier for the game session to update. </p>
-    pub fn set_game_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_session_id(input);
         self
     }
@@ -174,25 +152,17 @@ impl UpdateGameSessionFluentBuilder {
         self.inner.get_name()
     }
     /// <p>A policy that determines whether the game session is accepting new players.</p>
-    pub fn player_session_creation_policy(
-        mut self,
-        input: crate::types::PlayerSessionCreationPolicy,
-    ) -> Self {
+    pub fn player_session_creation_policy(mut self, input: crate::types::PlayerSessionCreationPolicy) -> Self {
         self.inner = self.inner.player_session_creation_policy(input);
         self
     }
     /// <p>A policy that determines whether the game session is accepting new players.</p>
-    pub fn set_player_session_creation_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
-    ) -> Self {
+    pub fn set_player_session_creation_policy(mut self, input: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>) -> Self {
         self.inner = self.inner.set_player_session_creation_policy(input);
         self
     }
     /// <p>A policy that determines whether the game session is accepting new players.</p>
-    pub fn get_player_session_creation_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::PlayerSessionCreationPolicy> {
+    pub fn get_player_session_creation_policy(&self) -> &::std::option::Option<crate::types::PlayerSessionCreationPolicy> {
         self.inner.get_player_session_creation_policy()
     }
     /// <p>Game session protection policy to apply to this game session only.</p>
@@ -209,10 +179,7 @@ impl UpdateGameSessionFluentBuilder {
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn set_protection_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectionPolicy>,
-    ) -> Self {
+    pub fn set_protection_policy(mut self, input: ::std::option::Option<crate::types::ProtectionPolicy>) -> Self {
         self.inner = self.inner.set_protection_policy(input);
         self
     }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateQueueMaxContactsOutput {
 }
 impl UpdateQueueMaxContactsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateQueueMaxContactsOutput`](crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_queue_max_contacts::builders::UpdateQueueMaxContactsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_queue_max_contacts::builders::UpdateQueueMaxContactsOutputBuilder {
         crate::operation::update_queue_max_contacts::builders::UpdateQueueMaxContactsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateQueueMaxContactsOutput`](crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateQueueMaxContactsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateQueueMaxContactsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateQueueMaxContactsOutput`](crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsOutput {
+    pub fn build(self) -> crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsOutput {
         crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsOutput {
             _request_id: self._request_id,
         }

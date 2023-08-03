@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`voice_connector(Option<VoiceConnector>)`](crate::operation::get_voice_connector::GetVoiceConnectorOutput::voice_connector): <p>The Amazon Chime Voice Connector details.</p>
     /// - On failure, responds with [`SdkError<GetVoiceConnectorError>`](crate::operation::get_voice_connector::GetVoiceConnectorError)
     #[deprecated(note = "Replaced by GetVoiceConnector in the Amazon Chime SDK Voice Namespace")]
-    pub fn get_voice_connector(
-        &self,
-    ) -> crate::operation::get_voice_connector::builders::GetVoiceConnectorFluentBuilder {
-        crate::operation::get_voice_connector::builders::GetVoiceConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_voice_connector(&self) -> crate::operation::get_voice_connector::builders::GetVoiceConnectorFluentBuilder {
+        crate::operation::get_voice_connector::builders::GetVoiceConnectorFluentBuilder::new(self.handle.clone())
     }
 }

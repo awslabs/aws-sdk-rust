@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteBandwidthRateLimitOutput`](crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<DeleteBandwidthRateLimitError>`](crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitError)
-    pub fn delete_bandwidth_rate_limit(&self) -> crate::operation::delete_bandwidth_rate_limit::builders::DeleteBandwidthRateLimitFluentBuilder{
+    pub fn delete_bandwidth_rate_limit(&self) -> crate::operation::delete_bandwidth_rate_limit::builders::DeleteBandwidthRateLimitFluentBuilder {
         crate::operation::delete_bandwidth_rate_limit::builders::DeleteBandwidthRateLimitFluentBuilder::new(self.handle.clone())
     }
 }

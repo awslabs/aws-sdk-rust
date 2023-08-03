@@ -15,17 +15,14 @@ impl GetPlaybackKeyPairInput {
 }
 impl GetPlaybackKeyPairInput {
     /// Creates a new builder-style object to manufacture [`GetPlaybackKeyPairInput`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput).
-    pub fn builder(
-    ) -> crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairInputBuilder {
+    pub fn builder() -> crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairInputBuilder {
         crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPlaybackKeyPairInput`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPlaybackKeyPairInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,8 @@ impl GetPlaybackKeyPairInputBuilder {
     /// Consumes the builder and constructs a [`GetPlaybackKeyPairInput`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput { arn: self.arn },
-        )
+    ) -> ::std::result::Result<crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput { arn: self.arn })
     }
 }

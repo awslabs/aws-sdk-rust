@@ -26,7 +26,7 @@ impl DescribeNodeFromTemplateJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeNodeFromTemplateJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobInputBuilder,
+    inner: crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobInputBuilder,
 }
 impl DescribeNodeFromTemplateJobFluentBuilder {
     /// Creates a new `DescribeNodeFromTemplateJob`.
@@ -37,7 +37,7 @@ impl DescribeNodeFromTemplateJobFluentBuilder {
         }
     }
     /// Access the DescribeNodeFromTemplateJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeNodeFromTemplateJobFluentBuilder {
             crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeNodeFromTemplateJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeNodeFromTemplateJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeNodeFromTemplateJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeNodeFromTemplateJobFluentBuilder {
             crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError>,
     > {
         self.customize_middleware().await
     }

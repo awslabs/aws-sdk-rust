@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ResetServiceSettingOutput`](crate::operation::reset_service_setting::ResetServiceSettingOutput) with field(s):
     ///   - [`service_setting(Option<ServiceSetting>)`](crate::operation::reset_service_setting::ResetServiceSettingOutput::service_setting): <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
     /// - On failure, responds with [`SdkError<ResetServiceSettingError>`](crate::operation::reset_service_setting::ResetServiceSettingError)
-    pub fn reset_service_setting(
-        &self,
-    ) -> crate::operation::reset_service_setting::builders::ResetServiceSettingFluentBuilder {
-        crate::operation::reset_service_setting::builders::ResetServiceSettingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reset_service_setting(&self) -> crate::operation::reset_service_setting::builders::ResetServiceSettingFluentBuilder {
+        crate::operation::reset_service_setting::builders::ResetServiceSettingFluentBuilder::new(self.handle.clone())
     }
 }

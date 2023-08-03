@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`event_tracker_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_event_tracker::builders::DeleteEventTrackerFluentBuilder::event_tracker_arn) / [`set_event_tracker_arn(Option<String>)`](crate::operation::delete_event_tracker::builders::DeleteEventTrackerFluentBuilder::set_event_tracker_arn): <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
     /// - On success, responds with [`DeleteEventTrackerOutput`](crate::operation::delete_event_tracker::DeleteEventTrackerOutput)
     /// - On failure, responds with [`SdkError<DeleteEventTrackerError>`](crate::operation::delete_event_tracker::DeleteEventTrackerError)
-    pub fn delete_event_tracker(
-        &self,
-    ) -> crate::operation::delete_event_tracker::builders::DeleteEventTrackerFluentBuilder {
-        crate::operation::delete_event_tracker::builders::DeleteEventTrackerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_event_tracker(&self) -> crate::operation::delete_event_tracker::builders::DeleteEventTrackerFluentBuilder {
+        crate::operation::delete_event_tracker::builders::DeleteEventTrackerFluentBuilder::new(self.handle.clone())
     }
 }

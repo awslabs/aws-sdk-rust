@@ -42,9 +42,7 @@ impl UpdateGroupInput {
 
 /// A builder for [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGroupInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_path: ::std::option::Option<::std::string::String>,
@@ -87,19 +85,13 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>New name for the IAM group. Only include this if changing the group's name.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
-    pub fn new_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>New name for the IAM group. Only include this if changing the group's name.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
-    pub fn set_new_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_group_name = input;
         self
     }
@@ -109,12 +101,7 @@ impl UpdateGroupInputBuilder {
         &self.new_group_name
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_group::UpdateGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_group::UpdateGroupInput {
             group_name: self.group_name,
             new_path: self.new_path,

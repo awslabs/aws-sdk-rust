@@ -5,8 +5,7 @@
 pub struct ListEventsDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub events_detection_job_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventsDetectionJobProperties>>,
+    pub events_detection_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::EventsDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListEventsDetectionJobsOutput {
 }
 impl ListEventsDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn events_detection_job_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EventsDetectionJobProperties]> {
+    pub fn events_detection_job_properties_list(&self) -> ::std::option::Option<&[crate::types::EventsDetectionJobProperties]> {
         self.events_detection_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEventsDetectionJobsOutput {
 }
 impl ListEventsDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventsDetectionJobsOutput`](crate::operation::list_events_detection_jobs::ListEventsDetectionJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsOutputBuilder {
         crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventsDetectionJobsOutput`](crate::operation::list_events_detection_jobs::ListEventsDetectionJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventsDetectionJobsOutputBuilder {
-    pub(crate) events_detection_job_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventsDetectionJobProperties>>,
+    pub(crate) events_detection_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::EventsDetectionJobProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,13 +47,8 @@ impl ListEventsDetectionJobsOutputBuilder {
     /// To override the contents of this collection use [`set_events_detection_job_properties_list`](Self::set_events_detection_job_properties_list).
     ///
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn events_detection_job_properties_list(
-        mut self,
-        input: crate::types::EventsDetectionJobProperties,
-    ) -> Self {
-        let mut v = self
-            .events_detection_job_properties_list
-            .unwrap_or_default();
+    pub fn events_detection_job_properties_list(mut self, input: crate::types::EventsDetectionJobProperties) -> Self {
+        let mut v = self.events_detection_job_properties_list.unwrap_or_default();
         v.push(input);
         self.events_detection_job_properties_list = ::std::option::Option::Some(v);
         self
@@ -75,9 +62,7 @@ impl ListEventsDetectionJobsOutputBuilder {
         self
     }
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn get_events_detection_job_properties_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventsDetectionJobProperties>> {
+    pub fn get_events_detection_job_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventsDetectionJobProperties>> {
         &self.events_detection_job_properties_list
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -104,9 +89,7 @@ impl ListEventsDetectionJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEventsDetectionJobsOutput`](crate::operation::list_events_detection_jobs::ListEventsDetectionJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_events_detection_jobs::ListEventsDetectionJobsOutput {
+    pub fn build(self) -> crate::operation::list_events_detection_jobs::ListEventsDetectionJobsOutput {
         crate::operation::list_events_detection_jobs::ListEventsDetectionJobsOutput {
             events_detection_job_properties_list: self.events_detection_job_properties_list,
             next_token: self.next_token,

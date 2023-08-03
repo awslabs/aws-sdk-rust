@@ -27,7 +27,7 @@ impl ResetConnectorMetadataCacheInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetConnectorMetadataCacheFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reset_connector_metadata_cache::builders::ResetConnectorMetadataCacheInputBuilder,
+    inner: crate::operation::reset_connector_metadata_cache::builders::ResetConnectorMetadataCacheInputBuilder,
 }
 impl ResetConnectorMetadataCacheFluentBuilder {
     /// Creates a new `ResetConnectorMetadataCache`.
@@ -38,7 +38,7 @@ impl ResetConnectorMetadataCacheFluentBuilder {
         }
     }
     /// Access the ResetConnectorMetadataCache as a reference.
-    pub fn as_input(&self) -> &crate::operation::reset_connector_metadata_cache::builders::ResetConnectorMetadataCacheInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::reset_connector_metadata_cache::builders::ResetConnectorMetadataCacheInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ResetConnectorMetadataCacheFluentBuilder {
             crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ResetConnectorMetadataCacheFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ResetConnectorMetadataCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ResetConnectorMetadataCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError>,
     > {
         self.send_middleware().await
     }
@@ -115,27 +106,19 @@ impl ResetConnectorMetadataCacheFluentBuilder {
             crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the connector profile that you want to reset cached metadata for.</p>
     /// <p>You can omit this parameter if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you must include this parameter in your request.</p>
-    pub fn connector_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_profile_name(input.into());
         self
     }
     /// <p>The name of the connector profile that you want to reset cached metadata for.</p>
     /// <p>You can omit this parameter if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you must include this parameter in your request.</p>
-    pub fn set_connector_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }
@@ -152,10 +135,7 @@ impl ResetConnectorMetadataCacheFluentBuilder {
     }
     /// <p>The type of connector to reset cached metadata for.</p>
     /// <p>You must include this parameter in your request if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you can omit this parameter from your request. </p>
-    pub fn set_connector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorType>,
-    ) -> Self {
+    pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.inner = self.inner.set_connector_type(input);
         self
     }
@@ -166,19 +146,13 @@ impl ResetConnectorMetadataCacheFluentBuilder {
     }
     /// <p>Use this parameter if you want to reset cached metadata about the details for an individual entity.</p>
     /// <p>If you don't include this parameter in your request, Amazon AppFlow only resets cached metadata about entity names, not entity details.</p>
-    pub fn connector_entity_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_entity_name(input.into());
         self
     }
     /// <p>Use this parameter if you want to reset cached metadata about the details for an individual entity.</p>
     /// <p>If you don't include this parameter in your request, Amazon AppFlow only resets cached metadata about entity names, not entity details.</p>
-    pub fn set_connector_entity_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_entity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_entity_name(input);
         self
     }
@@ -189,19 +163,13 @@ impl ResetConnectorMetadataCacheFluentBuilder {
     }
     /// <p>Use this parameter only if you’re resetting the cached metadata about a nested entity. Only some connectors support nested entities. A nested entity is one that has another entity as a parent. To use this parameter, specify the name of the parent entity.</p>
     /// <p>To look up the parent-child relationship of entities, you can send a ListConnectorEntities request that omits the entitiesPath parameter. Amazon AppFlow will return a list of top-level entities. For each one, it indicates whether the entity has nested entities. Then, in a subsequent ListConnectorEntities request, you can specify a parent entity name for the entitiesPath parameter. Amazon AppFlow will return a list of the child entities for that parent.</p>
-    pub fn entities_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entities_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entities_path(input.into());
         self
     }
     /// <p>Use this parameter only if you’re resetting the cached metadata about a nested entity. Only some connectors support nested entities. A nested entity is one that has another entity as a parent. To use this parameter, specify the name of the parent entity.</p>
     /// <p>To look up the parent-child relationship of entities, you can send a ListConnectorEntities request that omits the entitiesPath parameter. Amazon AppFlow will return a list of top-level entities. For each one, it indicates whether the entity has nested entities. Then, in a subsequent ListConnectorEntities request, you can specify a parent entity name for the entitiesPath parameter. Amazon AppFlow will return a list of the child entities for that parent.</p>
-    pub fn set_entities_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entities_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entities_path(input);
         self
     }

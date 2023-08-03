@@ -29,9 +29,7 @@ impl UpdateTrustInput {
 
 /// A builder for [`UpdateTrustInput`](crate::operation::update_trust::UpdateTrustInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTrustInputBuilder {
     pub(crate) trust_id: ::std::option::Option<::std::string::String>,
     pub(crate) selective_auth: ::std::option::Option<crate::types::SelectiveAuth>,
@@ -57,10 +55,7 @@ impl UpdateTrustInputBuilder {
         self
     }
     /// <p>Updates selective authentication for the trust.</p>
-    pub fn set_selective_auth(
-        mut self,
-        input: ::std::option::Option<crate::types::SelectiveAuth>,
-    ) -> Self {
+    pub fn set_selective_auth(mut self, input: ::std::option::Option<crate::types::SelectiveAuth>) -> Self {
         self.selective_auth = input;
         self
     }
@@ -69,12 +64,7 @@ impl UpdateTrustInputBuilder {
         &self.selective_auth
     }
     /// Consumes the builder and constructs a [`UpdateTrustInput`](crate::operation::update_trust::UpdateTrustInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_trust::UpdateTrustInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_trust::UpdateTrustInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_trust::UpdateTrustInput {
             trust_id: self.trust_id,
             selective_auth: self.selective_auth,

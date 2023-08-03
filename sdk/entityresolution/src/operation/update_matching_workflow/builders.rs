@@ -37,10 +37,7 @@ impl UpdateMatchingWorkflowFluentBuilder {
         }
     }
     /// Access the UpdateMatchingWorkflow as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_matching_workflow::builders::UpdateMatchingWorkflowInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_matching_workflow::builders::UpdateMatchingWorkflowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateMatchingWorkflowFluentBuilder {
             crate::operation::update_matching_workflow::UpdateMatchingWorkflow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_matching_workflow::UpdateMatchingWorkflowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_matching_workflow::UpdateMatchingWorkflowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateMatchingWorkflowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateMatchingWorkflowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_matching_workflow::UpdateMatchingWorkflowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_matching_workflow::UpdateMatchingWorkflowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_matching_workflow::UpdateMatchingWorkflowError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateMatchingWorkflowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_matching_workflow::UpdateMatchingWorkflowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_matching_workflow::UpdateMatchingWorkflowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_matching_workflow::UpdateMatchingWorkflowError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateMatchingWorkflowFluentBuilder {
             crate::operation::update_matching_workflow::UpdateMatchingWorkflow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_matching_workflow::UpdateMatchingWorkflowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_matching_workflow::UpdateMatchingWorkflowError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the workflow to be retrieved.</p>
-    pub fn workflow_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_name(input.into());
         self
     }
     /// <p>The name of the workflow to be retrieved.</p>
-    pub fn set_workflow_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_name(input);
         self
     }
@@ -167,17 +147,12 @@ impl UpdateMatchingWorkflowFluentBuilder {
         self
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn set_input_source_config(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>,
-    ) -> Self {
+    pub fn set_input_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>) -> Self {
         self.inner = self.inner.set_input_source_config(input);
         self
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn get_input_source_config(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSource>> {
+    pub fn get_input_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSource>> {
         self.inner.get_input_source_config()
     }
     /// Appends an item to `outputSourceConfig`.
@@ -190,17 +165,12 @@ impl UpdateMatchingWorkflowFluentBuilder {
         self
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
-    pub fn set_output_source_config(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputSource>>,
-    ) -> Self {
+    pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputSource>>) -> Self {
         self.inner = self.inner.set_output_source_config(input);
         self
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
-    pub fn get_output_source_config(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputSource>> {
+    pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputSource>> {
         self.inner.get_output_source_config()
     }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
@@ -209,17 +179,12 @@ impl UpdateMatchingWorkflowFluentBuilder {
         self
     }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
-    pub fn set_resolution_techniques(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolutionTechniques>,
-    ) -> Self {
+    pub fn set_resolution_techniques(mut self, input: ::std::option::Option<crate::types::ResolutionTechniques>) -> Self {
         self.inner = self.inner.set_resolution_techniques(input);
         self
     }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
-    pub fn get_resolution_techniques(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResolutionTechniques> {
+    pub fn get_resolution_techniques(&self) -> &::std::option::Option<crate::types::ResolutionTechniques> {
         self.inner.get_resolution_techniques()
     }
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
@@ -228,17 +193,12 @@ impl UpdateMatchingWorkflowFluentBuilder {
         self
     }
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
-    pub fn set_incremental_run_config(
-        mut self,
-        input: ::std::option::Option<crate::types::IncrementalRunConfig>,
-    ) -> Self {
+    pub fn set_incremental_run_config(mut self, input: ::std::option::Option<crate::types::IncrementalRunConfig>) -> Self {
         self.inner = self.inner.set_incremental_run_config(input);
         self
     }
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
-    pub fn get_incremental_run_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::IncrementalRunConfig> {
+    pub fn get_incremental_run_config(&self) -> &::std::option::Option<crate::types::IncrementalRunConfig> {
         self.inner.get_incremental_run_config()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>

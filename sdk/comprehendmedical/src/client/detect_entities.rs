@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`model_version(Option<String>)`](crate::operation::detect_entities::DetectEntitiesOutput::model_version): <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     /// - On failure, responds with [`SdkError<DetectEntitiesError>`](crate::operation::detect_entities::DetectEntitiesError)
     #[deprecated(note = "This operation is deprecated, use DetectEntitiesV2 instead.")]
-    pub fn detect_entities(
-        &self,
-    ) -> crate::operation::detect_entities::builders::DetectEntitiesFluentBuilder {
-        crate::operation::detect_entities::builders::DetectEntitiesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detect_entities(&self) -> crate::operation::detect_entities::builders::DetectEntitiesFluentBuilder {
+        crate::operation::detect_entities::builders::DetectEntitiesFluentBuilder::new(self.handle.clone())
     }
 }

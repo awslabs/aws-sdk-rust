@@ -26,7 +26,7 @@ impl UpdateDirectConnectGatewayInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayInputBuilder,
+    inner: crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayInputBuilder,
 }
 impl UpdateDirectConnectGatewayFluentBuilder {
     /// Creates a new `UpdateDirectConnectGateway`.
@@ -37,7 +37,7 @@ impl UpdateDirectConnectGatewayFluentBuilder {
         }
     }
     /// Access the UpdateDirectConnectGateway as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateDirectConnectGatewayFluentBuilder {
             crate::operation::update_direct_connect_gateway::UpdateDirectConnectGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateDirectConnectGatewayFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateDirectConnectGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateDirectConnectGatewayFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateDirectConnectGatewayFluentBuilder {
             crate::operation::update_direct_connect_gateway::UpdateDirectConnectGateway,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Direct Connect gateway to update.</p>
-    pub fn direct_connect_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.direct_connect_gateway_id(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway to update.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_direct_connect_gateway_id(input);
         self
     }
@@ -141,25 +124,17 @@ impl UpdateDirectConnectGatewayFluentBuilder {
         self.inner.get_direct_connect_gateway_id()
     }
     /// <p>The new name for the Direct Connect gateway.</p>
-    pub fn new_direct_connect_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_direct_connect_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_direct_connect_gateway_name(input.into());
         self
     }
     /// <p>The new name for the Direct Connect gateway.</p>
-    pub fn set_new_direct_connect_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_direct_connect_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_direct_connect_gateway_name(input);
         self
     }
     /// <p>The new name for the Direct Connect gateway.</p>
-    pub fn get_new_direct_connect_gateway_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_new_direct_connect_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_new_direct_connect_gateway_name()
     }
 }

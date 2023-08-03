@@ -36,44 +36,35 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsInput {
 }
 impl GetNetworkInsightsAccessScopeAnalysisFindingsInput {
     /// Creates a new builder-style object to manufacture [`GetNetworkInsightsAccessScopeAnalysisFindingsInput`](crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsInput).
-    pub fn builder() -> crate::operation::get_network_insights_access_scope_analysis_findings::builders::GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::get_network_insights_access_scope_analysis_findings::builders::GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder
+    {
         crate::operation::get_network_insights_access_scope_analysis_findings::builders::GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetNetworkInsightsAccessScopeAnalysisFindingsInput`](crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder {
-    pub(crate) network_insights_access_scope_analysis_id:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) network_insights_access_scope_analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder {
     /// <p>The ID of the Network Access Scope analysis.</p>
-    pub fn network_insights_access_scope_analysis_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_access_scope_analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_access_scope_analysis_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Network Access Scope analysis.</p>
-    pub fn set_network_insights_access_scope_analysis_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_insights_access_scope_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_insights_access_scope_analysis_id = input;
         self
     }
     /// <p>The ID of the Network Access Scope analysis.</p>
-    pub fn get_network_insights_access_scope_analysis_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_network_insights_access_scope_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_insights_access_scope_analysis_id
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -119,18 +110,19 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`GetNetworkInsightsAccessScopeAnalysisFindingsInput`](crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsInput {
-                network_insights_access_scope_analysis_id: self.network_insights_access_scope_analysis_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                network_insights_access_scope_analysis_id: self.network_insights_access_scope_analysis_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

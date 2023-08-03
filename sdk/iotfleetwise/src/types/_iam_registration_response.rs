@@ -37,9 +37,7 @@ impl IamRegistrationResponse {
 
 /// A builder for [`IamRegistrationResponse`](crate::types::IamRegistrationResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IamRegistrationResponseBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
@@ -66,32 +64,21 @@ impl IamRegistrationResponseBuilder {
         self
     }
     /// <p>The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
-    pub fn set_registration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationStatus>,
-    ) -> Self {
+    pub fn set_registration_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.registration_status = input;
         self
     }
     /// <p>The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
-    pub fn get_registration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistrationStatus> {
+    pub fn get_registration_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
         &self.registration_status
     }
     /// <p>A message associated with a registration error.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message associated with a registration error.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

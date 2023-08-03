@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteConnectPeerOutput`](crate::operation::delete_connect_peer::DeleteConnectPeerOutput) with field(s):
     ///   - [`connect_peer(Option<ConnectPeer>)`](crate::operation::delete_connect_peer::DeleteConnectPeerOutput::connect_peer): <p>Information about the deleted Connect peer.</p>
     /// - On failure, responds with [`SdkError<DeleteConnectPeerError>`](crate::operation::delete_connect_peer::DeleteConnectPeerError)
-    pub fn delete_connect_peer(
-        &self,
-    ) -> crate::operation::delete_connect_peer::builders::DeleteConnectPeerFluentBuilder {
-        crate::operation::delete_connect_peer::builders::DeleteConnectPeerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_connect_peer(&self) -> crate::operation::delete_connect_peer::builders::DeleteConnectPeerFluentBuilder {
+        crate::operation::delete_connect_peer::builders::DeleteConnectPeerFluentBuilder::new(self.handle.clone())
     }
 }

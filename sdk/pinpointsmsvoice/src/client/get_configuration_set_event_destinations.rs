@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`GetConfigurationSetEventDestinationsOutput`](crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsOutput) with field(s):
     ///   - [`event_destinations(Option<Vec<EventDestination>>)`](crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsOutput::event_destinations): An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
     /// - On failure, responds with [`SdkError<GetConfigurationSetEventDestinationsError>`](crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsError)
-    pub fn get_configuration_set_event_destinations(&self) -> crate::operation::get_configuration_set_event_destinations::builders::GetConfigurationSetEventDestinationsFluentBuilder{
-        crate::operation::get_configuration_set_event_destinations::builders::GetConfigurationSetEventDestinationsFluentBuilder::new(self.handle.clone())
+    pub fn get_configuration_set_event_destinations(
+        &self,
+    ) -> crate::operation::get_configuration_set_event_destinations::builders::GetConfigurationSetEventDestinationsFluentBuilder {
+        crate::operation::get_configuration_set_event_destinations::builders::GetConfigurationSetEventDestinationsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

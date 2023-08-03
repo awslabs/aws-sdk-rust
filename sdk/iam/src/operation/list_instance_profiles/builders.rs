@@ -40,9 +40,7 @@ impl ListInstanceProfilesFluentBuilder {
         }
     }
     /// Access the ListInstanceProfiles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_instance_profiles::builders::ListInstanceProfilesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_instance_profiles::builders::ListInstanceProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl ListInstanceProfilesFluentBuilder {
             crate::operation::list_instance_profiles::ListInstanceProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_profiles::ListInstanceProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_profiles::ListInstanceProfilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl ListInstanceProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl ListInstanceProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_profiles::ListInstanceProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_profiles::ListInstanceProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_profiles::ListInstanceProfilesError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl ListInstanceProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_profiles::ListInstanceProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_profiles::ListInstanceProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_profiles::ListInstanceProfilesError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +108,15 @@ impl ListInstanceProfilesFluentBuilder {
             crate::operation::list_instance_profiles::ListInstanceProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_profiles::ListInstanceProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_profiles::ListInstanceProfilesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_instance_profiles::paginator::ListInstanceProfilesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_instance_profiles::paginator::ListInstanceProfilesPaginator {
-        crate::operation::list_instance_profiles::paginator::ListInstanceProfilesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_instance_profiles::paginator::ListInstanceProfilesPaginator {
+        crate::operation::list_instance_profiles::paginator::ListInstanceProfilesPaginator::new(self.handle, self.inner)
     }
     /// <p> The path prefix for filtering the results. For example, the prefix <code>/application_abc/component_xyz/</code> gets all instance profiles whose path starts with <code>/application_abc/component_xyz/</code>.</p>
     /// <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing all instance profiles. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>

@@ -31,16 +31,14 @@ impl ListPoliciesGrantingServiceAccessInput {
 }
 impl ListPoliciesGrantingServiceAccessInput {
     /// Creates a new builder-style object to manufacture [`ListPoliciesGrantingServiceAccessInput`](crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessInput).
-    pub fn builder() -> crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessInputBuilder{
+    pub fn builder() -> crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessInputBuilder {
         crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPoliciesGrantingServiceAccessInput`](crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPoliciesGrantingServiceAccessInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -81,10 +79,7 @@ impl ListPoliciesGrantingServiceAccessInputBuilder {
     ///
     /// <p>The service namespace for the Amazon Web Services services whose policies you want to list.</p>
     /// <p>To learn the service namespace for a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>IAM User Guide</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services service namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
-    pub fn service_namespaces(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_namespaces(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.service_namespaces.unwrap_or_default();
         v.push(input.into());
         self.service_namespaces = ::std::option::Option::Some(v);
@@ -92,31 +87,28 @@ impl ListPoliciesGrantingServiceAccessInputBuilder {
     }
     /// <p>The service namespace for the Amazon Web Services services whose policies you want to list.</p>
     /// <p>To learn the service namespace for a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>IAM User Guide</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services service namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_service_namespaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_service_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.service_namespaces = input;
         self
     }
     /// <p>The service namespace for the Amazon Web Services services whose policies you want to list.</p>
     /// <p>To learn the service namespace for a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>IAM User Guide</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services service namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
-    pub fn get_service_namespaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.service_namespaces
     }
     /// Consumes the builder and constructs a [`ListPoliciesGrantingServiceAccessInput`](crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessInput {
-                marker: self.marker
-                ,
-                arn: self.arn
-                ,
-                service_namespaces: self.service_namespaces
-                ,
-            }
+                marker: self.marker,
+                arn: self.arn,
+                service_namespaces: self.service_namespaces,
+            },
         )
     }
 }

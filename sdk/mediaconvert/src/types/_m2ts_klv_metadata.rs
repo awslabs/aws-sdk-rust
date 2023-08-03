@@ -38,13 +38,7 @@
 /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M2tsKlvMetadata {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for M2tsKlvMetadata {
         match s {
             "NONE" => M2tsKlvMetadata::None,
             "PASSTHROUGH" => M2tsKlvMetadata::Passthrough,
-            other => {
-                M2tsKlvMetadata::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => M2tsKlvMetadata::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

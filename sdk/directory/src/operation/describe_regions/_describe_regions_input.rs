@@ -36,9 +36,7 @@ impl DescribeRegionsInput {
 
 /// A builder for [`DescribeRegionsInput`](crate::operation::describe_regions::DescribeRegionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRegionsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl DescribeRegionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRegionsInput`](crate::operation::describe_regions::DescribeRegionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_regions::DescribeRegionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_regions::DescribeRegionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_regions::DescribeRegionsInput {
             directory_id: self.directory_id,
             region_name: self.region_name,

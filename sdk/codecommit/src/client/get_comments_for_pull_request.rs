@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`comments_for_pull_request_data(Option<Vec<CommentsForPullRequest>>)`](crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestOutput::comments_for_pull_request_data): <p>An array of comment objects on the pull request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     /// - On failure, responds with [`SdkError<GetCommentsForPullRequestError>`](crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError)
-    pub fn get_comments_for_pull_request(&self) -> crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestFluentBuilder{
+    pub fn get_comments_for_pull_request(&self) -> crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestFluentBuilder {
         crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestFluentBuilder::new(self.handle.clone())
     }
 }

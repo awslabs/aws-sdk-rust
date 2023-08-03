@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for StopKeyPhrasesDetectionJobOutput {
 }
 impl StopKeyPhrasesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopKeyPhrasesDetectionJobOutput`](crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput).
-    pub fn builder() -> crate::operation::stop_key_phrases_detection_job::builders::StopKeyPhrasesDetectionJobOutputBuilder{
+    pub fn builder() -> crate::operation::stop_key_phrases_detection_job::builders::StopKeyPhrasesDetectionJobOutputBuilder {
         crate::operation::stop_key_phrases_detection_job::builders::StopKeyPhrasesDetectionJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopKeyPhrasesDetectionJobOutput`](crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopKeyPhrasesDetectionJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -82,9 +80,7 @@ impl StopKeyPhrasesDetectionJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopKeyPhrasesDetectionJobOutput`](crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput {
+    pub fn build(self) -> crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput {
         crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput {
             job_id: self.job_id,
             job_status: self.job_status,

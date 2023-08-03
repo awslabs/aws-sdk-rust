@@ -16,8 +16,7 @@ pub struct RuleGroupReferenceStatement {
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change. </p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
     #[doc(hidden)]
-    pub rule_action_overrides:
-        ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
+    pub rule_action_overrides: ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
 }
 impl RuleGroupReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
@@ -32,9 +31,7 @@ impl RuleGroupReferenceStatement {
     }
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change. </p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
-    pub fn rule_action_overrides(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RuleActionOverride]> {
+    pub fn rule_action_overrides(&self) -> ::std::option::Option<&[crate::types::RuleActionOverride]> {
         self.rule_action_overrides.as_deref()
     }
 }
@@ -47,14 +44,11 @@ impl RuleGroupReferenceStatement {
 
 /// A builder for [`RuleGroupReferenceStatement`](crate::types::RuleGroupReferenceStatement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupReferenceStatementBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) excluded_rules: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>,
-    pub(crate) rule_action_overrides:
-        ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
+    pub(crate) rule_action_overrides: ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
 }
 impl RuleGroupReferenceStatementBuilder {
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
@@ -87,19 +81,14 @@ impl RuleGroupReferenceStatementBuilder {
     /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
-    pub fn set_excluded_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>,
-    ) -> Self {
+    pub fn set_excluded_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>) -> Self {
         self.excluded_rules = input;
         self
     }
     /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
-    pub fn get_excluded_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>> {
+    pub fn get_excluded_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>> {
         &self.excluded_rules
     }
     /// Appends an item to `rule_action_overrides`.
@@ -116,18 +105,13 @@ impl RuleGroupReferenceStatementBuilder {
     }
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change. </p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
-    pub fn set_rule_action_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
-    ) -> Self {
+    pub fn set_rule_action_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>) -> Self {
         self.rule_action_overrides = input;
         self
     }
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change. </p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
-    pub fn get_rule_action_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>> {
+    pub fn get_rule_action_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>> {
         &self.rule_action_overrides
     }
     /// Consumes the builder and constructs a [`RuleGroupReferenceStatement`](crate::types::RuleGroupReferenceStatement).

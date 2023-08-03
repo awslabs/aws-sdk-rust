@@ -22,16 +22,14 @@ impl DeleteFieldLevelEncryptionProfileInput {
 }
 impl DeleteFieldLevelEncryptionProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteFieldLevelEncryptionProfileInput`](crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileInput).
-    pub fn builder() -> crate::operation::delete_field_level_encryption_profile::builders::DeleteFieldLevelEncryptionProfileInputBuilder{
+    pub fn builder() -> crate::operation::delete_field_level_encryption_profile::builders::DeleteFieldLevelEncryptionProfileInputBuilder {
         crate::operation::delete_field_level_encryption_profile::builders::DeleteFieldLevelEncryptionProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFieldLevelEncryptionProfileInput`](crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFieldLevelEncryptionProfileInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DeleteFieldLevelEncryptionProfileInputBuilder {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`DeleteFieldLevelEncryptionProfileInput`](crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileInput {
-                id: self.id
-                ,
-                if_match: self.if_match
-                ,
-            }
+                id: self.id,
+                if_match: self.if_match,
+            },
         )
     }
 }

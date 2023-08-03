@@ -5,12 +5,8 @@
 pub struct DescribeConnectorsOutput {
     /// <p> The configuration that is applied to the connectors used in the flow. </p>
     #[doc(hidden)]
-    pub connector_configurations: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ConnectorType,
-            crate::types::ConnectorConfiguration,
-        >,
-    >,
+    pub connector_configurations:
+        ::std::option::Option<::std::collections::HashMap<crate::types::ConnectorType, crate::types::ConnectorConfiguration>>,
     /// <p>Information about the connectors supported in Amazon AppFlow.</p>
     #[doc(hidden)]
     pub connectors: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>>,
@@ -23,12 +19,7 @@ impl DescribeConnectorsOutput {
     /// <p> The configuration that is applied to the connectors used in the flow. </p>
     pub fn connector_configurations(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::ConnectorType,
-            crate::types::ConnectorConfiguration,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ConnectorType, crate::types::ConnectorConfiguration>> {
         self.connector_configurations.as_ref()
     }
     /// <p>Information about the connectors supported in Amazon AppFlow.</p>
@@ -47,24 +38,17 @@ impl ::aws_http::request_id::RequestId for DescribeConnectorsOutput {
 }
 impl DescribeConnectorsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorsOutput`](crate::operation::describe_connectors::DescribeConnectorsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_connectors::builders::DescribeConnectorsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_connectors::builders::DescribeConnectorsOutputBuilder {
         crate::operation::describe_connectors::builders::DescribeConnectorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectorsOutput`](crate::operation::describe_connectors::DescribeConnectorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectorsOutputBuilder {
-    pub(crate) connector_configurations: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ConnectorType,
-            crate::types::ConnectorConfiguration,
-        >,
-    >,
+    pub(crate) connector_configurations:
+        ::std::option::Option<::std::collections::HashMap<crate::types::ConnectorType, crate::types::ConnectorConfiguration>>,
     pub(crate) connectors: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -75,11 +59,7 @@ impl DescribeConnectorsOutputBuilder {
     /// To override the contents of this collection use [`set_connector_configurations`](Self::set_connector_configurations).
     ///
     /// <p> The configuration that is applied to the connectors used in the flow. </p>
-    pub fn connector_configurations(
-        mut self,
-        k: crate::types::ConnectorType,
-        v: crate::types::ConnectorConfiguration,
-    ) -> Self {
+    pub fn connector_configurations(mut self, k: crate::types::ConnectorType, v: crate::types::ConnectorConfiguration) -> Self {
         let mut hash_map = self.connector_configurations.unwrap_or_default();
         hash_map.insert(k, v);
         self.connector_configurations = ::std::option::Option::Some(hash_map);
@@ -88,12 +68,7 @@ impl DescribeConnectorsOutputBuilder {
     /// <p> The configuration that is applied to the connectors used in the flow. </p>
     pub fn set_connector_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::ConnectorType,
-                crate::types::ConnectorConfiguration,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectorType, crate::types::ConnectorConfiguration>>,
     ) -> Self {
         self.connector_configurations = input;
         self
@@ -101,12 +76,7 @@ impl DescribeConnectorsOutputBuilder {
     /// <p> The configuration that is applied to the connectors used in the flow. </p>
     pub fn get_connector_configurations(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ConnectorType,
-            crate::types::ConnectorConfiguration,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ConnectorType, crate::types::ConnectorConfiguration>> {
         &self.connector_configurations
     }
     /// Appends an item to `connectors`.
@@ -121,17 +91,12 @@ impl DescribeConnectorsOutputBuilder {
         self
     }
     /// <p>Information about the connectors supported in Amazon AppFlow.</p>
-    pub fn set_connectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>>,
-    ) -> Self {
+    pub fn set_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>>) -> Self {
         self.connectors = input;
         self
     }
     /// <p>Information about the connectors supported in Amazon AppFlow.</p>
-    pub fn get_connectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>> {
+    pub fn get_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorDetail>> {
         &self.connectors
     }
     /// <p> The pagination token for the next page of data. </p>

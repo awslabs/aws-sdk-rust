@@ -70,9 +70,7 @@ impl ModelError {
 
 /// A builder for [`ModelError`](crate::types::error::ModelError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelErrorBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) original_status_code: ::std::option::Option<i32>,
@@ -110,18 +108,12 @@ impl ModelErrorBuilder {
         &self.original_status_code
     }
     /// <p> Original message. </p>
-    pub fn original_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn original_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Original message. </p>
-    pub fn set_original_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_original_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original_message = input;
         self
     }
@@ -130,18 +122,12 @@ impl ModelErrorBuilder {
         &self.original_message
     }
     /// <p> The Amazon Resource Name (ARN) of the log stream. </p>
-    pub fn log_stream_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the log stream. </p>
-    pub fn set_log_stream_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_stream_arn = input;
         self
     }
@@ -156,10 +142,7 @@ impl ModelErrorBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

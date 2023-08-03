@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`role_arn(impl ::std::convert::Into<String>)`](crate::operation::put_principal_mapping::builders::PutPrincipalMappingFluentBuilder::role_arn) / [`set_role_arn(Option<String>)`](crate::operation::put_principal_mapping::builders::PutPrincipalMappingFluentBuilder::set_role_arn): <p>The Amazon Resource Name (ARN) of a role that has access to the S3 file that contains your list of users or sub groups that belong to a group.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-ds">IAM roles for Amazon Kendra</a>.</p>
     /// - On success, responds with [`PutPrincipalMappingOutput`](crate::operation::put_principal_mapping::PutPrincipalMappingOutput)
     /// - On failure, responds with [`SdkError<PutPrincipalMappingError>`](crate::operation::put_principal_mapping::PutPrincipalMappingError)
-    pub fn put_principal_mapping(
-        &self,
-    ) -> crate::operation::put_principal_mapping::builders::PutPrincipalMappingFluentBuilder {
-        crate::operation::put_principal_mapping::builders::PutPrincipalMappingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_principal_mapping(&self) -> crate::operation::put_principal_mapping::builders::PutPrincipalMappingFluentBuilder {
+        crate::operation::put_principal_mapping::builders::PutPrincipalMappingFluentBuilder::new(self.handle.clone())
     }
 }

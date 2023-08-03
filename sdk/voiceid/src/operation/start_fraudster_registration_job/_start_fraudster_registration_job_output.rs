@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartFraudsterRegistrationJobOutput {
 }
 impl StartFraudsterRegistrationJobOutput {
     /// Creates a new builder-style object to manufacture [`StartFraudsterRegistrationJobOutput`](crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput).
-    pub fn builder() -> crate::operation::start_fraudster_registration_job::builders::StartFraudsterRegistrationJobOutputBuilder{
+    pub fn builder() -> crate::operation::start_fraudster_registration_job::builders::StartFraudsterRegistrationJobOutputBuilder {
         crate::operation::start_fraudster_registration_job::builders::StartFraudsterRegistrationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartFraudsterRegistrationJobOutput`](crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFraudsterRegistrationJobOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::FraudsterRegistrationJob>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StartFraudsterRegistrationJobOutputBuilder {
         self
     }
     /// <p>Details about the started fraudster registration job.</p>
-    pub fn set_job(
-        mut self,
-        input: ::std::option::Option<crate::types::FraudsterRegistrationJob>,
-    ) -> Self {
+    pub fn set_job(mut self, input: ::std::option::Option<crate::types::FraudsterRegistrationJob>) -> Self {
         self.job = input;
         self
     }
@@ -63,10 +58,7 @@ impl StartFraudsterRegistrationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartFraudsterRegistrationJobOutput`](crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput
-    {
+    pub fn build(self) -> crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput {
         crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput {
             job: self.job,
             _request_id: self._request_id,

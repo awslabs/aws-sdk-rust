@@ -24,10 +24,7 @@ pub fn ser_size_constraint_statement(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_text_transformation::ser_text_transformation(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_text_transformation::ser_text_transformation(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -38,17 +35,9 @@ pub fn ser_size_constraint_statement(
 
 pub(crate) fn de_size_constraint_statement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SizeConstraintStatement>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SizeConstraintStatement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -58,60 +47,42 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "FieldToMatch" => {
-                                builder = builder.set_field_to_match(
-                                    crate::protocol_serde::shape_field_to_match::de_field_to_match(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "ComparisonOperator" => {
-                                builder = builder.set_comparison_operator(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::ComparisonOperator::from(u.as_ref())
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "FieldToMatch" => {
+                            builder = builder.set_field_to_match(crate::protocol_serde::shape_field_to_match::de_field_to_match(tokens)?);
+                        }
+                        "ComparisonOperator" => {
+                            builder = builder.set_comparison_operator(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ComparisonOperator::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "Size" => {
-                                builder = builder.set_size(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "Size" => {
+                            builder = builder.set_size(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "TextTransformations" => {
-                                builder = builder.set_text_transformations(
-                                    crate::protocol_serde::shape_text_transformations::de_text_transformations(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "TextTransformations" => {
+                            builder =
+                                builder.set_text_transformations(crate::protocol_serde::shape_text_transformations::de_text_transformations(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

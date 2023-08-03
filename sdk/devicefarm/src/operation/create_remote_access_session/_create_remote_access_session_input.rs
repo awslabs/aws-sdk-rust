@@ -91,9 +91,7 @@ impl CreateRemoteAccessSessionInput {
         self.client_id.as_deref()
     }
     /// <p>The configuration information for the remote access session request.</p>
-    pub fn configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CreateRemoteAccessSessionConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::CreateRemoteAccessSessionConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
@@ -113,16 +111,14 @@ impl CreateRemoteAccessSessionInput {
 }
 impl CreateRemoteAccessSessionInput {
     /// Creates a new builder-style object to manufacture [`CreateRemoteAccessSessionInput`](crate::operation::create_remote_access_session::CreateRemoteAccessSessionInput).
-    pub fn builder() -> crate::operation::create_remote_access_session::builders::CreateRemoteAccessSessionInputBuilder{
+    pub fn builder() -> crate::operation::create_remote_access_session::builders::CreateRemoteAccessSessionInputBuilder {
         crate::operation::create_remote_access_session::builders::CreateRemoteAccessSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRemoteAccessSessionInput`](crate::operation::create_remote_access_session::CreateRemoteAccessSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRemoteAccessSessionInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
@@ -133,8 +129,7 @@ pub struct CreateRemoteAccessSessionInputBuilder {
     pub(crate) remote_record_app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
-    pub(crate) configuration:
-        ::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration>,
+    pub(crate) configuration: ::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration>,
     pub(crate) interaction_mode: ::std::option::Option<crate::types::InteractionMode>,
     pub(crate) skip_app_resign: ::std::option::Option<bool>,
 }
@@ -183,19 +178,13 @@ impl CreateRemoteAccessSessionInputBuilder {
     }
     /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn ssh_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn set_ssh_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_public_key = input;
         self
     }
@@ -236,18 +225,12 @@ impl CreateRemoteAccessSessionInputBuilder {
         &self.remote_record_enabled
     }
     /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
-    pub fn remote_record_app_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_record_app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_record_app_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
-    pub fn set_remote_record_app_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_record_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remote_record_app_arn = input;
         self
     }
@@ -287,25 +270,17 @@ impl CreateRemoteAccessSessionInputBuilder {
         &self.client_id
     }
     /// <p>The configuration information for the remote access session request.</p>
-    pub fn configuration(
-        mut self,
-        input: crate::types::CreateRemoteAccessSessionConfiguration,
-    ) -> Self {
+    pub fn configuration(mut self, input: crate::types::CreateRemoteAccessSessionConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration information for the remote access session request.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>The configuration information for the remote access session request.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration> {
         &self.configuration
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
@@ -324,10 +299,7 @@ impl CreateRemoteAccessSessionInputBuilder {
     /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
     /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
-    pub fn set_interaction_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::InteractionMode>,
-    ) -> Self {
+    pub fn set_interaction_mode(mut self, input: ::std::option::Option<crate::types::InteractionMode>) -> Self {
         self.interaction_mode = input;
         self
     }
@@ -364,21 +336,19 @@ impl CreateRemoteAccessSessionInputBuilder {
         crate::operation::create_remote_access_session::CreateRemoteAccessSessionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_remote_access_session::CreateRemoteAccessSessionInput {
-                project_arn: self.project_arn,
-                device_arn: self.device_arn,
-                instance_arn: self.instance_arn,
-                ssh_public_key: self.ssh_public_key,
-                remote_debug_enabled: self.remote_debug_enabled,
-                remote_record_enabled: self.remote_record_enabled,
-                remote_record_app_arn: self.remote_record_app_arn,
-                name: self.name,
-                client_id: self.client_id,
-                configuration: self.configuration,
-                interaction_mode: self.interaction_mode,
-                skip_app_resign: self.skip_app_resign,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_remote_access_session::CreateRemoteAccessSessionInput {
+            project_arn: self.project_arn,
+            device_arn: self.device_arn,
+            instance_arn: self.instance_arn,
+            ssh_public_key: self.ssh_public_key,
+            remote_debug_enabled: self.remote_debug_enabled,
+            remote_record_enabled: self.remote_record_enabled,
+            remote_record_app_arn: self.remote_record_app_arn,
+            name: self.name,
+            client_id: self.client_id,
+            configuration: self.configuration,
+            interaction_mode: self.interaction_mode,
+            skip_app_resign: self.skip_app_resign,
+        })
     }
 }

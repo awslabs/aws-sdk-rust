@@ -30,9 +30,7 @@ impl TimeZone {
 
 /// A builder for [`TimeZone`](crate::types::TimeZone).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeZoneBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) offset: ::std::option::Option<i32>,

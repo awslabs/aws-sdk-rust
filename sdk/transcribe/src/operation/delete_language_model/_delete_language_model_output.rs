@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteLanguageModelOutput {
 }
 impl DeleteLanguageModelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLanguageModelOutput`](crate::operation::delete_language_model::DeleteLanguageModelOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_language_model::builders::DeleteLanguageModelOutputBuilder {
-        crate::operation::delete_language_model::builders::DeleteLanguageModelOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_language_model::builders::DeleteLanguageModelOutputBuilder {
+        crate::operation::delete_language_model::builders::DeleteLanguageModelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLanguageModelOutput`](crate::operation::delete_language_model::DeleteLanguageModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLanguageModelOutputBuilder {
     _request_id: Option<String>,
 }

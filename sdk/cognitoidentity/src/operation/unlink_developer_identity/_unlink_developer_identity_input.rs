@@ -37,18 +37,14 @@ impl UnlinkDeveloperIdentityInput {
 }
 impl UnlinkDeveloperIdentityInput {
     /// Creates a new builder-style object to manufacture [`UnlinkDeveloperIdentityInput`](crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityInput).
-    pub fn builder(
-    ) -> crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityInputBuilder
-    {
+    pub fn builder() -> crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityInputBuilder {
         crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityInputBuilder::default()
     }
 }
 
 /// A builder for [`UnlinkDeveloperIdentityInput`](crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnlinkDeveloperIdentityInputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
@@ -71,18 +67,12 @@ impl UnlinkDeveloperIdentityInputBuilder {
         &self.identity_id
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -91,18 +81,12 @@ impl UnlinkDeveloperIdentityInputBuilder {
         &self.identity_pool_id
     }
     /// <p>The "domain" by which Cognito will refer to your users.</p>
-    pub fn developer_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn developer_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.developer_provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The "domain" by which Cognito will refer to your users.</p>
-    pub fn set_developer_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_developer_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.developer_provider_name = input;
         self
     }
@@ -111,18 +95,12 @@ impl UnlinkDeveloperIdentityInputBuilder {
         &self.developer_provider_name
     }
     /// <p>A unique ID used by your backend authentication process to identify a user.</p>
-    pub fn developer_user_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn developer_user_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.developer_user_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique ID used by your backend authentication process to identify a user.</p>
-    pub fn set_developer_user_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_developer_user_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.developer_user_identifier = input;
         self
     }
@@ -137,13 +115,11 @@ impl UnlinkDeveloperIdentityInputBuilder {
         crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityInput {
-                identity_id: self.identity_id,
-                identity_pool_id: self.identity_pool_id,
-                developer_provider_name: self.developer_provider_name,
-                developer_user_identifier: self.developer_user_identifier,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityInput {
+            identity_id: self.identity_id,
+            identity_pool_id: self.identity_pool_id,
+            developer_provider_name: self.developer_provider_name,
+            developer_user_identifier: self.developer_user_identifier,
+        })
     }
 }

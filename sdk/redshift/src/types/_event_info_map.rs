@@ -46,9 +46,7 @@ impl EventInfoMap {
 
 /// A builder for [`EventInfoMap`](crate::types::EventInfoMap).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventInfoMapBuilder {
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -75,42 +73,28 @@ impl EventInfoMapBuilder {
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
     ///
     /// <p>The category of an Amazon Redshift event.</p>
-    pub fn event_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_categories.unwrap_or_default();
         v.push(input.into());
         self.event_categories = ::std::option::Option::Some(v);
         self
     }
     /// <p>The category of an Amazon Redshift event.</p>
-    pub fn set_event_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_categories = input;
         self
     }
     /// <p>The category of an Amazon Redshift event.</p>
-    pub fn get_event_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_categories
     }
     /// <p>The description of an Amazon Redshift event.</p>
-    pub fn event_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of an Amazon Redshift event.</p>
-    pub fn set_event_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_description = input;
         self
     }

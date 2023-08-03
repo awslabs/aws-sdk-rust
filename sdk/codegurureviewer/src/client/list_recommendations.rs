@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`recommendation_summaries(Option<Vec<RecommendationSummary>>)`](crate::operation::list_recommendations::ListRecommendationsOutput::recommendation_summaries): <p>List of recommendations for the requested code review.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_recommendations::ListRecommendationsOutput::next_token): <p>Pagination token.</p>
     /// - On failure, responds with [`SdkError<ListRecommendationsError>`](crate::operation::list_recommendations::ListRecommendationsError)
-    pub fn list_recommendations(
-        &self,
-    ) -> crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder {
-        crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_recommendations(&self) -> crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder {
+        crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

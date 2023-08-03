@@ -5,25 +5,19 @@
 pub struct GetAppValidationConfigurationOutput {
     /// <p>The configuration for application validation.</p>
     #[doc(hidden)]
-    pub app_validation_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppValidationConfiguration>>,
+    pub app_validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AppValidationConfiguration>>,
     /// <p>The configuration for instance validation.</p>
     #[doc(hidden)]
-    pub server_group_validation_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>>,
+    pub server_group_validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetAppValidationConfigurationOutput {
     /// <p>The configuration for application validation.</p>
-    pub fn app_validation_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AppValidationConfiguration]> {
+    pub fn app_validation_configurations(&self) -> ::std::option::Option<&[crate::types::AppValidationConfiguration]> {
         self.app_validation_configurations.as_deref()
     }
     /// <p>The configuration for instance validation.</p>
-    pub fn server_group_validation_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServerGroupValidationConfiguration]> {
+    pub fn server_group_validation_configurations(&self) -> ::std::option::Option<&[crate::types::ServerGroupValidationConfiguration]> {
         self.server_group_validation_configurations.as_deref()
     }
 }
@@ -34,21 +28,17 @@ impl ::aws_http::request_id::RequestId for GetAppValidationConfigurationOutput {
 }
 impl GetAppValidationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetAppValidationConfigurationOutput`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationOutput).
-    pub fn builder() -> crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationOutputBuilder {
         crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAppValidationConfigurationOutput`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAppValidationConfigurationOutputBuilder {
-    pub(crate) app_validation_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppValidationConfiguration>>,
-    pub(crate) server_group_validation_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>>,
+    pub(crate) app_validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AppValidationConfiguration>>,
+    pub(crate) server_group_validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetAppValidationConfigurationOutputBuilder {
@@ -57,10 +47,7 @@ impl GetAppValidationConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_app_validation_configurations`](Self::set_app_validation_configurations).
     ///
     /// <p>The configuration for application validation.</p>
-    pub fn app_validation_configurations(
-        mut self,
-        input: crate::types::AppValidationConfiguration,
-    ) -> Self {
+    pub fn app_validation_configurations(mut self, input: crate::types::AppValidationConfiguration) -> Self {
         let mut v = self.app_validation_configurations.unwrap_or_default();
         v.push(input);
         self.app_validation_configurations = ::std::option::Option::Some(v);
@@ -75,9 +62,7 @@ impl GetAppValidationConfigurationOutputBuilder {
         self
     }
     /// <p>The configuration for application validation.</p>
-    pub fn get_app_validation_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppValidationConfiguration>> {
+    pub fn get_app_validation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppValidationConfiguration>> {
         &self.app_validation_configurations
     }
     /// Appends an item to `server_group_validation_configurations`.
@@ -85,13 +70,8 @@ impl GetAppValidationConfigurationOutputBuilder {
     /// To override the contents of this collection use [`set_server_group_validation_configurations`](Self::set_server_group_validation_configurations).
     ///
     /// <p>The configuration for instance validation.</p>
-    pub fn server_group_validation_configurations(
-        mut self,
-        input: crate::types::ServerGroupValidationConfiguration,
-    ) -> Self {
-        let mut v = self
-            .server_group_validation_configurations
-            .unwrap_or_default();
+    pub fn server_group_validation_configurations(mut self, input: crate::types::ServerGroupValidationConfiguration) -> Self {
+        let mut v = self.server_group_validation_configurations.unwrap_or_default();
         v.push(input);
         self.server_group_validation_configurations = ::std::option::Option::Some(v);
         self
@@ -99,9 +79,7 @@ impl GetAppValidationConfigurationOutputBuilder {
     /// <p>The configuration for instance validation.</p>
     pub fn set_server_group_validation_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>>,
     ) -> Self {
         self.server_group_validation_configurations = input;
         self
@@ -109,8 +87,7 @@ impl GetAppValidationConfigurationOutputBuilder {
     /// <p>The configuration for instance validation.</p>
     pub fn get_server_group_validation_configurations(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupValidationConfiguration>> {
         &self.server_group_validation_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -123,10 +100,7 @@ impl GetAppValidationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAppValidationConfigurationOutput`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_app_validation_configuration::GetAppValidationConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::get_app_validation_configuration::GetAppValidationConfigurationOutput {
         crate::operation::get_app_validation_configuration::GetAppValidationConfigurationOutput {
             app_validation_configurations: self.app_validation_configurations,
             server_group_validation_configurations: self.server_group_validation_configurations,

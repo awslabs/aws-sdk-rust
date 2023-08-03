@@ -64,9 +64,7 @@ impl ListPipelinesInput {
 
 /// A builder for [`ListPipelinesInput`](crate::operation::list_pipelines::ListPipelinesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelinesInputBuilder {
     pub(crate) pipeline_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -78,18 +76,12 @@ pub struct ListPipelinesInputBuilder {
 }
 impl ListPipelinesInputBuilder {
     /// <p>The prefix of the pipeline name.</p>
-    pub fn pipeline_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix of the pipeline name.</p>
-    pub fn set_pipeline_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name_prefix = input;
         self
     }
@@ -103,10 +95,7 @@ impl ListPipelinesInputBuilder {
         self
     }
     /// <p>A filter that returns the pipelines that were created after a specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -120,10 +109,7 @@ impl ListPipelinesInputBuilder {
         self
     }
     /// <p>A filter that returns the pipelines that were created before a specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -137,10 +123,7 @@ impl ListPipelinesInputBuilder {
         self
     }
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortPipelinesBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortPipelinesBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -193,10 +176,7 @@ impl ListPipelinesInputBuilder {
     /// Consumes the builder and constructs a [`ListPipelinesInput`](crate::operation::list_pipelines::ListPipelinesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pipelines::ListPipelinesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_pipelines::ListPipelinesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_pipelines::ListPipelinesInput {
             pipeline_name_prefix: self.pipeline_name_prefix,
             created_after: self.created_after,

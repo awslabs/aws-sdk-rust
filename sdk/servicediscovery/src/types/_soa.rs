@@ -23,9 +23,7 @@ impl Soa {
 
 /// A builder for [`Soa`](crate::types::Soa).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SoaBuilder {
     pub(crate) ttl: ::std::option::Option<i64>,
 }

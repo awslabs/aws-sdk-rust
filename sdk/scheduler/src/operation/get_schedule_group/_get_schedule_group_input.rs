@@ -15,17 +15,14 @@ impl GetScheduleGroupInput {
 }
 impl GetScheduleGroupInput {
     /// Creates a new builder-style object to manufacture [`GetScheduleGroupInput`](crate::operation::get_schedule_group::GetScheduleGroupInput).
-    pub fn builder() -> crate::operation::get_schedule_group::builders::GetScheduleGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schedule_group::builders::GetScheduleGroupInputBuilder {
         crate::operation::get_schedule_group::builders::GetScheduleGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`GetScheduleGroupInput`](crate::operation::get_schedule_group::GetScheduleGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetScheduleGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl GetScheduleGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetScheduleGroupInput`](crate::operation::get_schedule_group::GetScheduleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_schedule_group::GetScheduleGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_schedule_group::GetScheduleGroupInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::get_schedule_group::GetScheduleGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_schedule_group::GetScheduleGroupInput { name: self.name })
     }
 }

@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`deployment_strategy_id(impl ::std::convert::Into<String>)`](crate::operation::delete_deployment_strategy::builders::DeleteDeploymentStrategyFluentBuilder::deployment_strategy_id) / [`set_deployment_strategy_id(Option<String>)`](crate::operation::delete_deployment_strategy::builders::DeleteDeploymentStrategyFluentBuilder::set_deployment_strategy_id): <p>The ID of the deployment strategy you want to delete.</p>
     /// - On success, responds with [`DeleteDeploymentStrategyOutput`](crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyOutput)
     /// - On failure, responds with [`SdkError<DeleteDeploymentStrategyError>`](crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyError)
-    pub fn delete_deployment_strategy(
-        &self,
-    ) -> crate::operation::delete_deployment_strategy::builders::DeleteDeploymentStrategyFluentBuilder
-    {
+    pub fn delete_deployment_strategy(&self) -> crate::operation::delete_deployment_strategy::builders::DeleteDeploymentStrategyFluentBuilder {
         crate::operation::delete_deployment_strategy::builders::DeleteDeploymentStrategyFluentBuilder::new(self.handle.clone())
     }
 }

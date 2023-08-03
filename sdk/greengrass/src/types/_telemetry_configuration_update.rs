@@ -23,9 +23,7 @@ impl TelemetryConfigurationUpdate {
 
 /// A builder for [`TelemetryConfigurationUpdate`](crate::types::TelemetryConfigurationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TelemetryConfigurationUpdateBuilder {
     pub(crate) telemetry: ::std::option::Option<crate::types::Telemetry>,
 }
@@ -46,8 +44,6 @@ impl TelemetryConfigurationUpdateBuilder {
     }
     /// Consumes the builder and constructs a [`TelemetryConfigurationUpdate`](crate::types::TelemetryConfigurationUpdate).
     pub fn build(self) -> crate::types::TelemetryConfigurationUpdate {
-        crate::types::TelemetryConfigurationUpdate {
-            telemetry: self.telemetry,
-        }
+        crate::types::TelemetryConfigurationUpdate { telemetry: self.telemetry }
     }
 }

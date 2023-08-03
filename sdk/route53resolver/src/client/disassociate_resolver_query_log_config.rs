@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociateResolverQueryLogConfigOutput`](crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigOutput) with field(s):
     ///   - [`resolver_query_log_config_association(Option<ResolverQueryLogConfigAssociation>)`](crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigOutput::resolver_query_log_config_association): <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
     /// - On failure, responds with [`SdkError<DisassociateResolverQueryLogConfigError>`](crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigError)
-    pub fn disassociate_resolver_query_log_config(&self) -> crate::operation::disassociate_resolver_query_log_config::builders::DisassociateResolverQueryLogConfigFluentBuilder{
+    pub fn disassociate_resolver_query_log_config(
+        &self,
+    ) -> crate::operation::disassociate_resolver_query_log_config::builders::DisassociateResolverQueryLogConfigFluentBuilder {
         crate::operation::disassociate_resolver_query_log_config::builders::DisassociateResolverQueryLogConfigFluentBuilder::new(self.handle.clone())
     }
 }

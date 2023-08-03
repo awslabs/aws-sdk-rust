@@ -13,10 +13,7 @@ pub fn ser_update_resiliency_policy_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = object_3.key(key_4.as_str()).start_object();
-                crate::protocol_serde::shape_failure_policy::ser_failure_policy(
-                    &mut object_6,
-                    value_5,
-                )?;
+                crate::protocol_serde::shape_failure_policy::ser_failure_policy(&mut object_6, value_5)?;
                 object_6.finish();
             }
         }

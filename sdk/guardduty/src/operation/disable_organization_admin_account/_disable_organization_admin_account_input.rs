@@ -15,33 +15,25 @@ impl DisableOrganizationAdminAccountInput {
 }
 impl DisableOrganizationAdminAccountInput {
     /// Creates a new builder-style object to manufacture [`DisableOrganizationAdminAccountInput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput).
-    pub fn builder() -> crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountInputBuilder{
+    pub fn builder() -> crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountInputBuilder {
         crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`DisableOrganizationAdminAccountInput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableOrganizationAdminAccountInputBuilder {
     pub(crate) admin_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DisableOrganizationAdminAccountInputBuilder {
     /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
-    pub fn admin_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
-    pub fn set_admin_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_account_id = input;
         self
     }
@@ -58,9 +50,8 @@ impl DisableOrganizationAdminAccountInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput {
-                admin_account_id: self.admin_account_id
-                ,
-            }
+                admin_account_id: self.admin_account_id,
+            },
         )
     }
 }

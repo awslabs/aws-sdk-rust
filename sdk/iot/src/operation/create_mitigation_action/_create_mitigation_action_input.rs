@@ -36,18 +36,14 @@ impl CreateMitigationActionInput {
 }
 impl CreateMitigationActionInput {
     /// Creates a new builder-style object to manufacture [`CreateMitigationActionInput`](crate::operation::create_mitigation_action::CreateMitigationActionInput).
-    pub fn builder(
-    ) -> crate::operation::create_mitigation_action::builders::CreateMitigationActionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_mitigation_action::builders::CreateMitigationActionInputBuilder {
         crate::operation::create_mitigation_action::builders::CreateMitigationActionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMitigationActionInput`](crate::operation::create_mitigation_action::CreateMitigationActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMitigationActionInputBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -89,17 +85,12 @@ impl CreateMitigationActionInputBuilder {
         self
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
-    pub fn set_action_params(
-        mut self,
-        input: ::std::option::Option<crate::types::MitigationActionParams>,
-    ) -> Self {
+    pub fn set_action_params(mut self, input: ::std::option::Option<crate::types::MitigationActionParams>) -> Self {
         self.action_params = input;
         self
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
-    pub fn get_action_params(
-        &self,
-    ) -> &::std::option::Option<crate::types::MitigationActionParams> {
+    pub fn get_action_params(&self) -> &::std::option::Option<crate::types::MitigationActionParams> {
         &self.action_params
     }
     /// Appends an item to `tags`.
@@ -114,10 +105,7 @@ impl CreateMitigationActionInputBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the mitigation action.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -128,17 +116,13 @@ impl CreateMitigationActionInputBuilder {
     /// Consumes the builder and constructs a [`CreateMitigationActionInput`](crate::operation::create_mitigation_action::CreateMitigationActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_mitigation_action::CreateMitigationActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_mitigation_action::CreateMitigationActionInput {
-                action_name: self.action_name,
-                role_arn: self.role_arn,
-                action_params: self.action_params,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_mitigation_action::CreateMitigationActionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_mitigation_action::CreateMitigationActionInput {
+            action_name: self.action_name,
+            role_arn: self.role_arn,
+            action_params: self.action_params,
+            tags: self.tags,
+        })
     }
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for RevokeFlowEntitlementOutput {
 }
 impl RevokeFlowEntitlementOutput {
     /// Creates a new builder-style object to manufacture [`RevokeFlowEntitlementOutput`](crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementOutput).
-    pub fn builder(
-    ) -> crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementOutputBuilder
-    {
+    pub fn builder() -> crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementOutputBuilder {
         crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementOutputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeFlowEntitlementOutput`](crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeFlowEntitlementOutputBuilder {
     pub(crate) entitlement_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
@@ -47,18 +43,12 @@ pub struct RevokeFlowEntitlementOutputBuilder {
 }
 impl RevokeFlowEntitlementOutputBuilder {
     /// The ARN of the entitlement that was revoked.
-    pub fn entitlement_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entitlement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entitlement_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the entitlement that was revoked.
-    pub fn set_entitlement_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entitlement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entitlement_arn = input;
         self
     }

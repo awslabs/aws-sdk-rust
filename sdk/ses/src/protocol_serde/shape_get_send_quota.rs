@@ -4,17 +4,10 @@ pub fn de_get_send_quota_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_send_quota::GetSendQuotaOutput,
-    crate::operation::get_send_quota::GetSendQuotaError,
-> {
+) -> std::result::Result<crate::operation::get_send_quota::GetSendQuotaOutput, crate::operation::get_send_quota::GetSendQuotaError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_send_quota::GetSendQuotaError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_send_quota::GetSendQuotaError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::get_send_quota::GetSendQuotaError::generic(generic))
@@ -25,20 +18,13 @@ pub fn de_get_send_quota_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_send_quota::GetSendQuotaOutput,
-    crate::operation::get_send_quota::GetSendQuotaError,
-> {
+) -> std::result::Result<crate::operation::get_send_quota::GetSendQuotaOutput, crate::operation::get_send_quota::GetSendQuotaError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::get_send_quota::builders::GetSendQuotaOutputBuilder::default();
-        output =
-            crate::protocol_serde::shape_get_send_quota::de_get_send_quota(_response_body, output)
-                .map_err(crate::operation::get_send_quota::GetSendQuotaError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::get_send_quota::builders::GetSendQuotaOutputBuilder::default();
+        output = crate::protocol_serde::shape_get_send_quota::de_get_send_quota(_response_body, output)
+            .map_err(crate::operation::get_send_quota::GetSendQuotaError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -47,10 +33,7 @@ pub fn de_get_send_quota_http_response_with_props(
 pub fn de_get_send_quota(
     inp: &[u8],
     mut builder: crate::operation::get_send_quota::builders::GetSendQuotaOutputBuilder,
-) -> Result<
-    crate::operation::get_send_quota::builders::GetSendQuotaOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::get_send_quota::builders::GetSendQuotaOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -122,9 +105,7 @@ pub fn de_get_send_quota(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected GetSendQuotaResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected GetSendQuotaResult tag"));
     };
     Ok(builder)
 }

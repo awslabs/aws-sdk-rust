@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateConnectPeerOutput {
 }
 impl CreateConnectPeerOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectPeerOutput`](crate::operation::create_connect_peer::CreateConnectPeerOutput).
-    pub fn builder(
-    ) -> crate::operation::create_connect_peer::builders::CreateConnectPeerOutputBuilder {
+    pub fn builder() -> crate::operation::create_connect_peer::builders::CreateConnectPeerOutputBuilder {
         crate::operation::create_connect_peer::builders::CreateConnectPeerOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConnectPeerOutput`](crate::operation::create_connect_peer::CreateConnectPeerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectPeerOutputBuilder {
     pub(crate) connect_peer: ::std::option::Option<crate::types::ConnectPeer>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateConnectPeerOutputBuilder {
         self
     }
     /// <p>The response to the request.</p>
-    pub fn set_connect_peer(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectPeer>,
-    ) -> Self {
+    pub fn set_connect_peer(mut self, input: ::std::option::Option<crate::types::ConnectPeer>) -> Self {
         self.connect_peer = input;
         self
     }

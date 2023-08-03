@@ -48,10 +48,7 @@ impl BatchEvaluateGeofencesFluentBuilder {
         }
     }
     /// Access the BatchEvaluateGeofences as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +60,7 @@ impl BatchEvaluateGeofencesFluentBuilder {
             crate::operation::batch_evaluate_geofences::BatchEvaluateGeofences,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +70,7 @@ impl BatchEvaluateGeofencesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +79,7 @@ impl BatchEvaluateGeofencesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError>,
     > {
         let op = self
             .inner
@@ -112,9 +102,7 @@ impl BatchEvaluateGeofencesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError>,
     > {
         self.send_middleware().await
     }
@@ -128,25 +116,17 @@ impl BatchEvaluateGeofencesFluentBuilder {
             crate::operation::batch_evaluate_geofences::BatchEvaluateGeofences,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collection_name(input.into());
         self
     }
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collection_name(input);
         self
     }
@@ -164,17 +144,12 @@ impl BatchEvaluateGeofencesFluentBuilder {
         self
     }
     /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
-    pub fn set_device_position_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
-    ) -> Self {
+    pub fn set_device_position_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>) -> Self {
         self.inner = self.inner.set_device_position_updates(input);
         self
     }
     /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
-    pub fn get_device_position_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>> {
+    pub fn get_device_position_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>> {
         self.inner.get_device_position_updates()
     }
 }

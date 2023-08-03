@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`profiles(Option<Vec<SigningProfile>>)`](crate::operation::list_signing_profiles::ListSigningProfilesOutput::profiles): <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_signing_profiles::ListSigningProfilesOutput::next_token): <p>Value for specifying the next set of paginated results to return.</p>
     /// - On failure, responds with [`SdkError<ListSigningProfilesError>`](crate::operation::list_signing_profiles::ListSigningProfilesError)
-    pub fn list_signing_profiles(
-        &self,
-    ) -> crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder {
-        crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_signing_profiles(&self) -> crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder {
+        crate::operation::list_signing_profiles::builders::ListSigningProfilesFluentBuilder::new(self.handle.clone())
     }
 }

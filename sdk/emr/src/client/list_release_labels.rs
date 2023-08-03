@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`release_labels(Option<Vec<String>>)`](crate::operation::list_release_labels::ListReleaseLabelsOutput::release_labels): <p>The returned release labels.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_release_labels::ListReleaseLabelsOutput::next_token): <p>Used to paginate the next page of results if specified in the next <code>ListReleaseLabels</code> request.</p>
     /// - On failure, responds with [`SdkError<ListReleaseLabelsError>`](crate::operation::list_release_labels::ListReleaseLabelsError)
-    pub fn list_release_labels(
-        &self,
-    ) -> crate::operation::list_release_labels::builders::ListReleaseLabelsFluentBuilder {
-        crate::operation::list_release_labels::builders::ListReleaseLabelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_release_labels(&self) -> crate::operation::list_release_labels::builders::ListReleaseLabelsFluentBuilder {
+        crate::operation::list_release_labels::builders::ListReleaseLabelsFluentBuilder::new(self.handle.clone())
     }
 }

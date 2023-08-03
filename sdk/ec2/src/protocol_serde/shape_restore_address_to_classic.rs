@@ -9,21 +9,13 @@ pub fn de_restore_address_to_classic_http_error(
     crate::operation::restore_address_to_classic::RestoreAddressToClassicError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::restore_address_to_classic::RestoreAddressToClassicError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::restore_address_to_classic::RestoreAddressToClassicError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(
-        crate::operation::restore_address_to_classic::RestoreAddressToClassicError::generic(
-            generic,
-        ),
-    )
+    Err(crate::operation::restore_address_to_classic::RestoreAddressToClassicError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -38,10 +30,9 @@ pub fn de_restore_address_to_classic_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder::default();
-        output = crate::protocol_serde::shape_restore_address_to_classic::de_restore_address_to_classic(_response_body, output).map_err(crate::operation::restore_address_to_classic::RestoreAddressToClassicError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_restore_address_to_classic::de_restore_address_to_classic(_response_body, output)
+            .map_err(crate::operation::restore_address_to_classic::RestoreAddressToClassicError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -50,10 +41,7 @@ pub fn de_restore_address_to_classic_http_response_with_props(
 pub fn de_restore_address_to_classic(
     inp: &[u8],
     mut builder: crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder,
-) -> Result<
-    crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

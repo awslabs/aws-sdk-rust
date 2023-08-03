@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`targets(Option<Vec<String>>)`](crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput::targets): <p>The policy targets.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput::next_marker): <p>A marker used to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListTargetsForPolicyError>`](crate::operation::list_targets_for_policy::ListTargetsForPolicyError)
-    pub fn list_targets_for_policy(
-        &self,
-    ) -> crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder
-    {
-        crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_targets_for_policy(&self) -> crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder {
+        crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyFluentBuilder::new(self.handle.clone())
     }
 }

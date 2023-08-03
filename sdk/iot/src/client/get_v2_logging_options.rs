@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`default_log_level(Option<LogLevel>)`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput::default_log_level): <p>The default log level.</p>
     ///   - [`disable_all_logs(bool)`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput::disable_all_logs): <p>Disables all logs.</p>
     /// - On failure, responds with [`SdkError<GetV2LoggingOptionsError>`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsError)
-    pub fn get_v2_logging_options(
-        &self,
-    ) -> crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsFluentBuilder {
-        crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_v2_logging_options(&self) -> crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsFluentBuilder {
+        crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateTrafficPolicyInstanceOutput`](crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceOutput) with field(s):
     ///   - [`traffic_policy_instance(Option<TrafficPolicyInstance>)`](crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceOutput::traffic_policy_instance): <p>A complex type that contains settings for the updated traffic policy instance.</p>
     /// - On failure, responds with [`SdkError<UpdateTrafficPolicyInstanceError>`](crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceError)
-    pub fn update_traffic_policy_instance(&self) -> crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceFluentBuilder{
+    pub fn update_traffic_policy_instance(
+        &self,
+    ) -> crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceFluentBuilder {
         crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutMailboxPermissionsOutput {
 }
 impl PutMailboxPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`PutMailboxPermissionsOutput`](crate::operation::put_mailbox_permissions::PutMailboxPermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsOutputBuilder {
         crate::operation::put_mailbox_permissions::builders::PutMailboxPermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutMailboxPermissionsOutput`](crate::operation::put_mailbox_permissions::PutMailboxPermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMailboxPermissionsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`ListDistributionsByRealtimeLogConfigOutput`](crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigOutput) with field(s):
     ///   - [`distribution_list(Option<DistributionList>)`](crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigOutput::distribution_list): <p>A distribution list.</p>
     /// - On failure, responds with [`SdkError<ListDistributionsByRealtimeLogConfigError>`](crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError)
-    pub fn list_distributions_by_realtime_log_config(&self) -> crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigFluentBuilder{
-        crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigFluentBuilder::new(self.handle.clone())
+    pub fn list_distributions_by_realtime_log_config(
+        &self,
+    ) -> crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigFluentBuilder {
+        crate::operation::list_distributions_by_realtime_log_config::builders::ListDistributionsByRealtimeLogConfigFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

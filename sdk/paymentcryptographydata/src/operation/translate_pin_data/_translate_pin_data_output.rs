@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for TranslatePinDataOutput {
 }
 impl TranslatePinDataOutput {
     /// Creates a new builder-style object to manufacture [`TranslatePinDataOutput`](crate::operation::translate_pin_data::TranslatePinDataOutput).
-    pub fn builder() -> crate::operation::translate_pin_data::builders::TranslatePinDataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::translate_pin_data::builders::TranslatePinDataOutputBuilder {
         crate::operation::translate_pin_data::builders::TranslatePinDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`TranslatePinDataOutput`](crate::operation::translate_pin_data::TranslatePinDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TranslatePinDataOutputBuilder {
     pub(crate) pin_block: ::std::option::Option<::std::string::String>,
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
@@ -82,18 +79,12 @@ impl TranslatePinDataOutputBuilder {
         &self.key_arn
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn key_check_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_check_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn set_key_check_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_check_value = input;
         self
     }

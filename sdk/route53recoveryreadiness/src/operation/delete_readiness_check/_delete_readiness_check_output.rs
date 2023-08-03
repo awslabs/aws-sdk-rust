@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteReadinessCheckOutput {
 }
 impl DeleteReadinessCheckOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReadinessCheckOutput`](crate::operation::delete_readiness_check::DeleteReadinessCheckOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_readiness_check::builders::DeleteReadinessCheckOutputBuilder {
+    pub fn builder() -> crate::operation::delete_readiness_check::builders::DeleteReadinessCheckOutputBuilder {
         crate::operation::delete_readiness_check::builders::DeleteReadinessCheckOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReadinessCheckOutput`](crate::operation::delete_readiness_check::DeleteReadinessCheckOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReadinessCheckOutputBuilder {
     _request_id: Option<String>,
 }

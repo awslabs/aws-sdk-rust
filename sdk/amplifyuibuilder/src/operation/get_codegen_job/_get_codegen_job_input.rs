@@ -36,9 +36,7 @@ impl GetCodegenJobInput {
 
 /// A builder for [`GetCodegenJobInput`](crate::operation::get_codegen_job::GetCodegenJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCodegenJobInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl GetCodegenJobInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is a part of the Amplify app associated with the code generation job.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment that is a part of the Amplify app associated with the code generation job.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -96,10 +88,7 @@ impl GetCodegenJobInputBuilder {
     /// Consumes the builder and constructs a [`GetCodegenJobInput`](crate::operation::get_codegen_job::GetCodegenJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_codegen_job::GetCodegenJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_codegen_job::GetCodegenJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_codegen_job::GetCodegenJobInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

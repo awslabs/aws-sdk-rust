@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`if_match(impl ::std::convert::Into<String>)`](crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityFluentBuilder::set_if_match): <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On success, responds with [`DeleteCloudFrontOriginAccessIdentityOutput`](crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityOutput)
     /// - On failure, responds with [`SdkError<DeleteCloudFrontOriginAccessIdentityError>`](crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError)
-    pub fn delete_cloud_front_origin_access_identity(&self) -> crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityFluentBuilder{
-        crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityFluentBuilder::new(self.handle.clone())
+    pub fn delete_cloud_front_origin_access_identity(
+        &self,
+    ) -> crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityFluentBuilder {
+        crate::operation::delete_cloud_front_origin_access_identity::builders::DeleteCloudFrontOriginAccessIdentityFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

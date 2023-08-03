@@ -44,9 +44,7 @@ impl Insight {
 
 /// A builder for [`Insight`](crate::types::Insight).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InsightBuilder {
     pub(crate) insight_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl InsightBuilder {
         self
     }
     /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>) -> Self {
         self.filters = input;
         self
     }
@@ -100,18 +95,12 @@ impl InsightBuilder {
         &self.filters
     }
     /// <p>The grouping attribute for the insight's findings. Indicates how to group the matching findings, and identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
-    pub fn group_by_attribute(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_by_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_by_attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The grouping attribute for the insight's findings. Indicates how to group the matching findings, and identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
-    pub fn set_group_by_attribute(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_by_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_by_attribute = input;
         self
     }

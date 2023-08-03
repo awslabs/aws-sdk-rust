@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::create_distribution::CreateDistributionOutput::location): <p>The fully qualified URI of the new distribution resource just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::create_distribution::CreateDistributionOutput::e_tag): <p>The current version of the distribution created.</p>
     /// - On failure, responds with [`SdkError<CreateDistributionError>`](crate::operation::create_distribution::CreateDistributionError)
-    pub fn create_distribution(
-        &self,
-    ) -> crate::operation::create_distribution::builders::CreateDistributionFluentBuilder {
-        crate::operation::create_distribution::builders::CreateDistributionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_distribution(&self) -> crate::operation::create_distribution::builders::CreateDistributionFluentBuilder {
+        crate::operation::create_distribution::builders::CreateDistributionFluentBuilder::new(self.handle.clone())
     }
 }

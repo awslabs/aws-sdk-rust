@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`EnableAllFeaturesOutput`](crate::operation::enable_all_features::EnableAllFeaturesOutput) with field(s):
     ///   - [`handshake(Option<Handshake>)`](crate::operation::enable_all_features::EnableAllFeaturesOutput::handshake): <p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>
     /// - On failure, responds with [`SdkError<EnableAllFeaturesError>`](crate::operation::enable_all_features::EnableAllFeaturesError)
-    pub fn enable_all_features(
-        &self,
-    ) -> crate::operation::enable_all_features::builders::EnableAllFeaturesFluentBuilder {
-        crate::operation::enable_all_features::builders::EnableAllFeaturesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn enable_all_features(&self) -> crate::operation::enable_all_features::builders::EnableAllFeaturesFluentBuilder {
+        crate::operation::enable_all_features::builders::EnableAllFeaturesFluentBuilder::new(self.handle.clone())
     }
 }

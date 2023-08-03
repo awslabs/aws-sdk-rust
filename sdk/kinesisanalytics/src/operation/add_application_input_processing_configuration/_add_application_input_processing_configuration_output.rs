@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for AddApplicationInputProcessingConfigur
 }
 impl AddApplicationInputProcessingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationInputProcessingConfigurationOutput`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput).
-    pub fn builder() -> crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationOutputBuilder {
         crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddApplicationInputProcessingConfigurationOutput`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddApplicationInputProcessingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl AddApplicationInputProcessingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddApplicationInputProcessingConfigurationOutput`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput).
-    pub fn build(self) -> crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput{
+    pub fn build(self) -> crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput {
         crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput {
             _request_id: self._request_id,
         }

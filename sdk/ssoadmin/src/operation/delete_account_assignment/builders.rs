@@ -28,8 +28,7 @@ impl DeleteAccountAssignmentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccountAssignmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_account_assignment::builders::DeleteAccountAssignmentInputBuilder,
+    inner: crate::operation::delete_account_assignment::builders::DeleteAccountAssignmentInputBuilder,
 }
 impl DeleteAccountAssignmentFluentBuilder {
     /// Creates a new `DeleteAccountAssignment`.
@@ -40,10 +39,7 @@ impl DeleteAccountAssignmentFluentBuilder {
         }
     }
     /// Access the DeleteAccountAssignment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_account_assignment::builders::DeleteAccountAssignmentInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_account_assignment::builders::DeleteAccountAssignmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl DeleteAccountAssignmentFluentBuilder {
             crate::operation::delete_account_assignment::DeleteAccountAssignment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_assignment::DeleteAccountAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_assignment::DeleteAccountAssignmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl DeleteAccountAssignmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl DeleteAccountAssignmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_account_assignment::DeleteAccountAssignmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_assignment::DeleteAccountAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_assignment::DeleteAccountAssignmentError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl DeleteAccountAssignmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_account_assignment::DeleteAccountAssignmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_assignment::DeleteAccountAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_assignment::DeleteAccountAssignmentError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl DeleteAccountAssignmentFluentBuilder {
             crate::operation::delete_account_assignment::DeleteAccountAssignment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_assignment::DeleteAccountAssignmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_assignment::DeleteAccountAssignmentError>,
     > {
         self.customize_middleware().await
     }
@@ -160,10 +145,7 @@ impl DeleteAccountAssignmentFluentBuilder {
         self
     }
     /// <p>The entity type for which the assignment will be deleted.</p>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetType>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::TargetType>) -> Self {
         self.inner = self.inner.set_target_type(input);
         self
     }
@@ -172,18 +154,12 @@ impl DeleteAccountAssignmentFluentBuilder {
         self.inner.get_target_type()
     }
     /// <p>The ARN of the permission set that will be used to remove access.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_set_arn(input.into());
         self
     }
     /// <p>The ARN of the permission set that will be used to remove access.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_set_arn(input);
         self
     }
@@ -197,10 +173,7 @@ impl DeleteAccountAssignmentFluentBuilder {
         self
     }
     /// <p>The entity type for which the assignment will be deleted.</p>
-    pub fn set_principal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PrincipalType>,
-    ) -> Self {
+    pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
         self.inner = self.inner.set_principal_type(input);
         self
     }

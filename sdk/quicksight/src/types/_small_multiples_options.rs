@@ -55,9 +55,7 @@ impl SmallMultiplesOptions {
 
 /// A builder for [`SmallMultiplesOptions`](crate::types::SmallMultiplesOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SmallMultiplesOptionsBuilder {
     pub(crate) max_visible_rows: ::std::option::Option<i64>,
     pub(crate) max_visible_columns: ::std::option::Option<i64>,
@@ -106,17 +104,12 @@ impl SmallMultiplesOptionsBuilder {
         self
     }
     /// <p>Configures the display options for each small multiples panel.</p>
-    pub fn set_panel_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::PanelConfiguration>,
-    ) -> Self {
+    pub fn set_panel_configuration(mut self, input: ::std::option::Option<crate::types::PanelConfiguration>) -> Self {
         self.panel_configuration = input;
         self
     }
     /// <p>Configures the display options for each small multiples panel.</p>
-    pub fn get_panel_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::PanelConfiguration> {
+    pub fn get_panel_configuration(&self) -> &::std::option::Option<crate::types::PanelConfiguration> {
         &self.panel_configuration
     }
     /// <p>The properties of a small multiples X axis.</p>
@@ -125,10 +118,7 @@ impl SmallMultiplesOptionsBuilder {
         self
     }
     /// <p>The properties of a small multiples X axis.</p>
-    pub fn set_x_axis(
-        mut self,
-        input: ::std::option::Option<crate::types::SmallMultiplesAxisProperties>,
-    ) -> Self {
+    pub fn set_x_axis(mut self, input: ::std::option::Option<crate::types::SmallMultiplesAxisProperties>) -> Self {
         self.x_axis = input;
         self
     }
@@ -142,10 +132,7 @@ impl SmallMultiplesOptionsBuilder {
         self
     }
     /// <p>The properties of a small multiples Y axis.</p>
-    pub fn set_y_axis(
-        mut self,
-        input: ::std::option::Option<crate::types::SmallMultiplesAxisProperties>,
-    ) -> Self {
+    pub fn set_y_axis(mut self, input: ::std::option::Option<crate::types::SmallMultiplesAxisProperties>) -> Self {
         self.y_axis = input;
         self
     }

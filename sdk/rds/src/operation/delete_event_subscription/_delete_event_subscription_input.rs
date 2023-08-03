@@ -16,35 +16,25 @@ impl DeleteEventSubscriptionInput {
 }
 impl DeleteEventSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`DeleteEventSubscriptionInput`](crate::operation::delete_event_subscription::DeleteEventSubscriptionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionInputBuilder {
         crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEventSubscriptionInput`](crate::operation::delete_event_subscription::DeleteEventSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEventSubscriptionInputBuilder {
     pub(crate) subscription_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEventSubscriptionInputBuilder {
     /// <p>The name of the RDS event notification subscription you want to delete.</p>
-    pub fn subscription_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the RDS event notification subscription you want to delete.</p>
-    pub fn set_subscription_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_name = input;
         self
     }
@@ -59,10 +49,8 @@ impl DeleteEventSubscriptionInputBuilder {
         crate::operation::delete_event_subscription::DeleteEventSubscriptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_event_subscription::DeleteEventSubscriptionInput {
-                subscription_name: self.subscription_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_event_subscription::DeleteEventSubscriptionInput {
+            subscription_name: self.subscription_name,
+        })
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteOriginAccessControlOutput {
 }
 impl DeleteOriginAccessControlOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOriginAccessControlOutput`](crate::operation::delete_origin_access_control::DeleteOriginAccessControlOutput).
-    pub fn builder() -> crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlOutputBuilder{
+    pub fn builder() -> crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlOutputBuilder {
         crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOriginAccessControlOutput`](crate::operation::delete_origin_access_control::DeleteOriginAccessControlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOriginAccessControlOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteOriginAccessControlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteOriginAccessControlOutput`](crate::operation::delete_origin_access_control::DeleteOriginAccessControlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_origin_access_control::DeleteOriginAccessControlOutput {
+    pub fn build(self) -> crate::operation::delete_origin_access_control::DeleteOriginAccessControlOutput {
         crate::operation::delete_origin_access_control::DeleteOriginAccessControlOutput {
             _request_id: self._request_id,
         }

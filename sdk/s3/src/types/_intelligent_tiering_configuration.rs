@@ -45,9 +45,7 @@ impl IntelligentTieringConfiguration {
 
 /// A builder for [`IntelligentTieringConfiguration`](crate::types::IntelligentTieringConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntelligentTieringConfigurationBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::IntelligentTieringFilter>,
@@ -75,10 +73,7 @@ impl IntelligentTieringConfigurationBuilder {
         self
     }
     /// <p>Specifies a bucket filter. The configuration only includes objects that meet the filter's criteria.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::IntelligentTieringFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::IntelligentTieringFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -92,10 +87,7 @@ impl IntelligentTieringConfigurationBuilder {
         self
     }
     /// <p>Specifies the status of the configuration.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IntelligentTieringStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::IntelligentTieringStatus>) -> Self {
         self.status = input;
         self
     }
@@ -115,10 +107,7 @@ impl IntelligentTieringConfigurationBuilder {
         self
     }
     /// <p>Specifies the S3 Intelligent-Tiering storage class tier of the configuration.</p>
-    pub fn set_tierings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tiering>>,
-    ) -> Self {
+    pub fn set_tierings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tiering>>) -> Self {
         self.tierings = input;
         self
     }

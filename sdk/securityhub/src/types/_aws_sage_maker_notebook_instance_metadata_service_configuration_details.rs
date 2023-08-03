@@ -16,50 +16,36 @@ impl AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails {
 }
 impl AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails {
     /// Creates a new builder-style object to manufacture [`AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails`](crate::types::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails).
-    pub fn builder() -> crate::types::builders::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetailsBuilder {
         crate::types::builders::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails`](crate::types::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetailsBuilder {
-    pub(crate) minimum_instance_metadata_service_version:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) minimum_instance_metadata_service_version: ::std::option::Option<::std::string::String>,
 }
 impl AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetailsBuilder {
     /// <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
-    pub fn minimum_instance_metadata_service_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minimum_instance_metadata_service_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_instance_metadata_service_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
-    pub fn set_minimum_instance_metadata_service_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minimum_instance_metadata_service_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minimum_instance_metadata_service_version = input;
         self
     }
     /// <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
-    pub fn get_minimum_instance_metadata_service_version(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_minimum_instance_metadata_service_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.minimum_instance_metadata_service_version
     }
     /// Consumes the builder and constructs a [`AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails`](crate::types::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails {
+    pub fn build(self) -> crate::types::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails {
         crate::types::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails {
-            minimum_instance_metadata_service_version: self
-                .minimum_instance_metadata_service_version,
+            minimum_instance_metadata_service_version: self.minimum_instance_metadata_service_version,
         }
     }
 }

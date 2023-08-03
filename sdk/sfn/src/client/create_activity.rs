@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`activity_arn(Option<String>)`](crate::operation::create_activity::CreateActivityOutput::activity_arn): <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::create_activity::CreateActivityOutput::creation_date): <p>The date the activity is created.</p>
     /// - On failure, responds with [`SdkError<CreateActivityError>`](crate::operation::create_activity::CreateActivityError)
-    pub fn create_activity(
-        &self,
-    ) -> crate::operation::create_activity::builders::CreateActivityFluentBuilder {
-        crate::operation::create_activity::builders::CreateActivityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_activity(&self) -> crate::operation::create_activity::builders::CreateActivityFluentBuilder {
+        crate::operation::create_activity::builders::CreateActivityFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,9 +9,7 @@ pub struct UserTurnIntentOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The slots associated with the intent.</p>
     #[doc(hidden)]
-    pub slots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>,
-    >,
+    pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>>,
 }
 impl UserTurnIntentOutput {
     /// <p>The name of the intent.</p>
@@ -19,11 +17,7 @@ impl UserTurnIntentOutput {
         self.name.as_deref()
     }
     /// <p>The slots associated with the intent.</p>
-    pub fn slots(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>,
-    > {
+    pub fn slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>> {
         self.slots.as_ref()
     }
 }
@@ -36,14 +30,10 @@ impl UserTurnIntentOutput {
 
 /// A builder for [`UserTurnIntentOutput`](crate::types::UserTurnIntentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserTurnIntentOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) slots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>,
-    >,
+    pub(crate) slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>>,
 }
 impl UserTurnIntentOutputBuilder {
     /// <p>The name of the intent.</p>
@@ -65,11 +55,7 @@ impl UserTurnIntentOutputBuilder {
     /// To override the contents of this collection use [`set_slots`](Self::set_slots).
     ///
     /// <p>The slots associated with the intent.</p>
-    pub fn slots(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::UserTurnSlotOutput,
-    ) -> Self {
+    pub fn slots(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::UserTurnSlotOutput) -> Self {
         let mut hash_map = self.slots.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.slots = ::std::option::Option::Some(hash_map);
@@ -78,19 +64,13 @@ impl UserTurnIntentOutputBuilder {
     /// <p>The slots associated with the intent.</p>
     pub fn set_slots(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>>,
     ) -> Self {
         self.slots = input;
         self
     }
     /// <p>The slots associated with the intent.</p>
-    pub fn get_slots(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>,
-    > {
+    pub fn get_slots(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>> {
         &self.slots
     }
     /// Consumes the builder and constructs a [`UserTurnIntentOutput`](crate::types::UserTurnIntentOutput).

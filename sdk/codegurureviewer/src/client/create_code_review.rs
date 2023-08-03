@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCodeReviewOutput`](crate::operation::create_code_review::CreateCodeReviewOutput) with field(s):
     ///   - [`code_review(Option<CodeReview>)`](crate::operation::create_code_review::CreateCodeReviewOutput::code_review): <p>Information about a code review. A code review belongs to the associated repository that contains the reviewed code.</p>
     /// - On failure, responds with [`SdkError<CreateCodeReviewError>`](crate::operation::create_code_review::CreateCodeReviewError)
-    pub fn create_code_review(
-        &self,
-    ) -> crate::operation::create_code_review::builders::CreateCodeReviewFluentBuilder {
-        crate::operation::create_code_review::builders::CreateCodeReviewFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_code_review(&self) -> crate::operation::create_code_review::builders::CreateCodeReviewFluentBuilder {
+        crate::operation::create_code_review::builders::CreateCodeReviewFluentBuilder::new(self.handle.clone())
     }
 }

@@ -42,9 +42,7 @@ impl CreateSecurityGroupFluentBuilder {
         }
     }
     /// Access the CreateSecurityGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_security_group::builders::CreateSecurityGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_security_group::builders::CreateSecurityGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl CreateSecurityGroupFluentBuilder {
             crate::operation::create_security_group::CreateSecurityGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_group::CreateSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_group::CreateSecurityGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl CreateSecurityGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl CreateSecurityGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_security_group::CreateSecurityGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_group::CreateSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_group::CreateSecurityGroupError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl CreateSecurityGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_security_group::CreateSecurityGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_group::CreateSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_group::CreateSecurityGroupError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +110,7 @@ impl CreateSecurityGroupFluentBuilder {
             crate::operation::create_security_group::CreateSecurityGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_security_group::CreateSecurityGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_security_group::CreateSecurityGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -191,17 +178,12 @@ impl CreateSecurityGroupFluentBuilder {
         self
     }
     /// <p>The tags to assign to the security group.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to assign to the security group.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

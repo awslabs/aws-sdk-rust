@@ -85,9 +85,7 @@ impl GetImportJobOutput {
 
 /// A builder for [`GetImportJobOutput`](crate::operation::get_import_job::GetImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImportJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) import_destination: ::std::option::Option<crate::types::ImportDestination>,
@@ -121,17 +119,12 @@ impl GetImportJobOutputBuilder {
         self
     }
     /// <p>The destination of the import job.</p>
-    pub fn set_import_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportDestination>,
-    ) -> Self {
+    pub fn set_import_destination(mut self, input: ::std::option::Option<crate::types::ImportDestination>) -> Self {
         self.import_destination = input;
         self
     }
     /// <p>The destination of the import job.</p>
-    pub fn get_import_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImportDestination> {
+    pub fn get_import_destination(&self) -> &::std::option::Option<crate::types::ImportDestination> {
         &self.import_destination
     }
     /// <p>The data source of the import job.</p>
@@ -140,10 +133,7 @@ impl GetImportJobOutputBuilder {
         self
     }
     /// <p>The data source of the import job.</p>
-    pub fn set_import_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportDataSource>,
-    ) -> Self {
+    pub fn set_import_data_source(mut self, input: ::std::option::Option<crate::types::ImportDataSource>) -> Self {
         self.import_data_source = input;
         self
     }
@@ -157,10 +147,7 @@ impl GetImportJobOutputBuilder {
         self
     }
     /// <p>The failure details about an import job.</p>
-    pub fn set_failure_info(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureInfo>,
-    ) -> Self {
+    pub fn set_failure_info(mut self, input: ::std::option::Option<crate::types::FailureInfo>) -> Self {
         self.failure_info = input;
         self
     }
@@ -188,10 +175,7 @@ impl GetImportJobOutputBuilder {
         self
     }
     /// <p>The time stamp of when the import job was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -205,10 +189,7 @@ impl GetImportJobOutputBuilder {
         self
     }
     /// <p>The time stamp of when the import job was completed.</p>
-    pub fn set_completed_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_timestamp = input;
         self
     }

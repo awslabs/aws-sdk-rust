@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`service_specific_credential_id(impl ::std::convert::Into<String>)`](crate::operation::delete_service_specific_credential::builders::DeleteServiceSpecificCredentialFluentBuilder::service_specific_credential_id) / [`set_service_specific_credential_id(Option<String>)`](crate::operation::delete_service_specific_credential::builders::DeleteServiceSpecificCredentialFluentBuilder::set_service_specific_credential_id): <p>The unique identifier of the service-specific credential. You can get this value by calling <code>ListServiceSpecificCredentials</code>.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     /// - On success, responds with [`DeleteServiceSpecificCredentialOutput`](crate::operation::delete_service_specific_credential::DeleteServiceSpecificCredentialOutput)
     /// - On failure, responds with [`SdkError<DeleteServiceSpecificCredentialError>`](crate::operation::delete_service_specific_credential::DeleteServiceSpecificCredentialError)
-    pub fn delete_service_specific_credential(&self) -> crate::operation::delete_service_specific_credential::builders::DeleteServiceSpecificCredentialFluentBuilder{
+    pub fn delete_service_specific_credential(
+        &self,
+    ) -> crate::operation::delete_service_specific_credential::builders::DeleteServiceSpecificCredentialFluentBuilder {
         crate::operation::delete_service_specific_credential::builders::DeleteServiceSpecificCredentialFluentBuilder::new(self.handle.clone())
     }
 }

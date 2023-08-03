@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`group_names(Vec<String>)`](crate::operation::disassociate_signin_delegate_groups_from_account::builders::DisassociateSigninDelegateGroupsFromAccountFluentBuilder::group_names) / [`set_group_names(Option<Vec<String>>)`](crate::operation::disassociate_signin_delegate_groups_from_account::builders::DisassociateSigninDelegateGroupsFromAccountFluentBuilder::set_group_names): <p>The sign-in delegate group names.</p>
     /// - On success, responds with [`DisassociateSigninDelegateGroupsFromAccountOutput`](crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountOutput)
     /// - On failure, responds with [`SdkError<DisassociateSigninDelegateGroupsFromAccountError>`](crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountError)
-    pub fn disassociate_signin_delegate_groups_from_account(&self) -> crate::operation::disassociate_signin_delegate_groups_from_account::builders::DisassociateSigninDelegateGroupsFromAccountFluentBuilder{
-        crate::operation::disassociate_signin_delegate_groups_from_account::builders::DisassociateSigninDelegateGroupsFromAccountFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_signin_delegate_groups_from_account(
+        &self,
+    ) -> crate::operation::disassociate_signin_delegate_groups_from_account::builders::DisassociateSigninDelegateGroupsFromAccountFluentBuilder {
+        crate::operation::disassociate_signin_delegate_groups_from_account::builders::DisassociateSigninDelegateGroupsFromAccountFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

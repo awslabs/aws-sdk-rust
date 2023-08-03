@@ -5,16 +5,16 @@ pub use crate::operation::update_cost_allocation_tags_status::_update_cost_alloc
 
 impl UpdateCostAllocationTagsStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_cost_allocation_tags_status();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateCostAllocationTagsStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCostAllocationTagsStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_cost_allocation_tags_status::builders::UpdateCostAllocationTagsStatusInputBuilder,
+    inner: crate::operation::update_cost_allocation_tags_status::builders::UpdateCostAllocationTagsStatusInputBuilder,
 }
 impl UpdateCostAllocationTagsStatusFluentBuilder {
     /// Creates a new `UpdateCostAllocationTagsStatus`.
@@ -37,15 +37,20 @@ impl UpdateCostAllocationTagsStatusFluentBuilder {
         }
     }
     /// Access the UpdateCostAllocationTagsStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_cost_allocation_tags_status::builders::UpdateCostAllocationTagsStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_cost_allocation_tags_status::builders::UpdateCostAllocationTagsStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl UpdateCostAllocationTagsStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl UpdateCostAllocationTagsStatusFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `CostAllocationTagsStatus`.
@@ -99,10 +114,7 @@ impl UpdateCostAllocationTagsStatusFluentBuilder {
     /// To override the contents of this collection use [`set_cost_allocation_tags_status`](Self::set_cost_allocation_tags_status).
     ///
     /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
-    pub fn cost_allocation_tags_status(
-        mut self,
-        input: crate::types::CostAllocationTagStatusEntry,
-    ) -> Self {
+    pub fn cost_allocation_tags_status(mut self, input: crate::types::CostAllocationTagStatusEntry) -> Self {
         self.inner = self.inner.cost_allocation_tags_status(input);
         self
     }
@@ -115,9 +127,7 @@ impl UpdateCostAllocationTagsStatusFluentBuilder {
         self
     }
     /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
-    pub fn get_cost_allocation_tags_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagStatusEntry>> {
+    pub fn get_cost_allocation_tags_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagStatusEntry>> {
         self.inner.get_cost_allocation_tags_status()
     }
 }

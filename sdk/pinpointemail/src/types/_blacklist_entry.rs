@@ -37,9 +37,7 @@ impl BlacklistEntry {
 
 /// A builder for [`BlacklistEntry`](crate::types::BlacklistEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlacklistEntryBuilder {
     pub(crate) rbl_name: ::std::option::Option<::std::string::String>,
     pub(crate) listing_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -66,10 +64,7 @@ impl BlacklistEntryBuilder {
         self
     }
     /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
-    pub fn set_listing_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_listing_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.listing_time = input;
         self
     }

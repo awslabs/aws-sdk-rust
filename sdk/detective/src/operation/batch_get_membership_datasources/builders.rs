@@ -26,7 +26,7 @@ impl BatchGetMembershipDatasourcesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetMembershipDatasourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesInputBuilder,
+    inner: crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesInputBuilder,
 }
 impl BatchGetMembershipDatasourcesFluentBuilder {
     /// Creates a new `BatchGetMembershipDatasources`.
@@ -37,7 +37,7 @@ impl BatchGetMembershipDatasourcesFluentBuilder {
         }
     }
     /// Access the BatchGetMembershipDatasources as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchGetMembershipDatasourcesFluentBuilder {
             crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchGetMembershipDatasourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchGetMembershipDatasourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchGetMembershipDatasourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchGetMembershipDatasourcesFluentBuilder {
             crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +119,7 @@ impl BatchGetMembershipDatasourcesFluentBuilder {
         self
     }
     /// <p>The ARN of the behavior graph.</p>
-    pub fn set_graph_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_graph_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_graph_arns(input);
         self
     }

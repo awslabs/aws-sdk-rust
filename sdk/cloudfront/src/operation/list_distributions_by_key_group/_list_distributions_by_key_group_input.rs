@@ -29,16 +29,14 @@ impl ListDistributionsByKeyGroupInput {
 }
 impl ListDistributionsByKeyGroupInput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByKeyGroupInput`](crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupInput).
-    pub fn builder() -> crate::operation::list_distributions_by_key_group::builders::ListDistributionsByKeyGroupInputBuilder{
+    pub fn builder() -> crate::operation::list_distributions_by_key_group::builders::ListDistributionsByKeyGroupInputBuilder {
         crate::operation::list_distributions_by_key_group::builders::ListDistributionsByKeyGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDistributionsByKeyGroupInput`](crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributionsByKeyGroupInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -94,12 +92,10 @@ impl ListDistributionsByKeyGroupInputBuilder {
         crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupInput {
-                marker: self.marker,
-                max_items: self.max_items,
-                key_group_id: self.key_group_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupInput {
+            marker: self.marker,
+            max_items: self.max_items,
+            key_group_id: self.key_group_id,
+        })
     }
 }

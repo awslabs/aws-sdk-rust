@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`member_details(Option<Vec<MemberDetail>>)`](crate::operation::list_members::ListMembersOutput::member_details): <p>The list of member accounts in the behavior graph.</p>  <p>For invited accounts, the results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.</p>  <p>For the organization behavior graph, the results do not include organization accounts that the Detective administrator account has not enabled as member accounts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_members::ListMembersOutput::next_token): <p>If there are more member accounts remaining in the results, then use this pagination token to request the next page of member accounts.</p>
     /// - On failure, responds with [`SdkError<ListMembersError>`](crate::operation::list_members::ListMembersError)
-    pub fn list_members(
-        &self,
-    ) -> crate::operation::list_members::builders::ListMembersFluentBuilder {
+    pub fn list_members(&self) -> crate::operation::list_members::builders::ListMembersFluentBuilder {
         crate::operation::list_members::builders::ListMembersFluentBuilder::new(self.handle.clone())
     }
 }

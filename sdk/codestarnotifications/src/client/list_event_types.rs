@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`event_types(Option<Vec<EventTypeSummary>>)`](crate::operation::list_event_types::ListEventTypesOutput::event_types): <p>Information about each event, including service name, resource type, event ID, and event name.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_types::ListEventTypesOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     /// - On failure, responds with [`SdkError<ListEventTypesError>`](crate::operation::list_event_types::ListEventTypesError)
-    pub fn list_event_types(
-        &self,
-    ) -> crate::operation::list_event_types::builders::ListEventTypesFluentBuilder {
-        crate::operation::list_event_types::builders::ListEventTypesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_event_types(&self) -> crate::operation::list_event_types::builders::ListEventTypesFluentBuilder {
+        crate::operation::list_event_types::builders::ListEventTypesFluentBuilder::new(self.handle.clone())
     }
 }

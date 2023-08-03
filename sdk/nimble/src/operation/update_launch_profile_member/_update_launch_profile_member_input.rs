@@ -43,16 +43,14 @@ impl UpdateLaunchProfileMemberInput {
 }
 impl UpdateLaunchProfileMemberInput {
     /// Creates a new builder-style object to manufacture [`UpdateLaunchProfileMemberInput`](crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberInput).
-    pub fn builder() -> crate::operation::update_launch_profile_member::builders::UpdateLaunchProfileMemberInputBuilder{
+    pub fn builder() -> crate::operation::update_launch_profile_member::builders::UpdateLaunchProfileMemberInputBuilder {
         crate::operation::update_launch_profile_member::builders::UpdateLaunchProfileMemberInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLaunchProfileMemberInput`](crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLaunchProfileMemberInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) launch_profile_id: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl UpdateLaunchProfileMemberInputBuilder {
         &self.client_token
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn set_launch_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_profile_id = input;
         self
     }
@@ -101,10 +93,7 @@ impl UpdateLaunchProfileMemberInputBuilder {
         self
     }
     /// <p>The persona.</p>
-    pub fn set_persona(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchProfilePersona>,
-    ) -> Self {
+    pub fn set_persona(mut self, input: ::std::option::Option<crate::types::LaunchProfilePersona>) -> Self {
         self.persona = input;
         self
     }
@@ -147,14 +136,12 @@ impl UpdateLaunchProfileMemberInputBuilder {
         crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberInput {
-                client_token: self.client_token,
-                launch_profile_id: self.launch_profile_id,
-                persona: self.persona,
-                principal_id: self.principal_id,
-                studio_id: self.studio_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberInput {
+            client_token: self.client_token,
+            launch_profile_id: self.launch_profile_id,
+            persona: self.persona,
+            principal_id: self.principal_id,
+            studio_id: self.studio_id,
+        })
     }
 }

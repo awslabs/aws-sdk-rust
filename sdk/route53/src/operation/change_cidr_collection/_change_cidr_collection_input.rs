@@ -39,17 +39,14 @@ impl ChangeCidrCollectionInput {
 }
 impl ChangeCidrCollectionInput {
     /// Creates a new builder-style object to manufacture [`ChangeCidrCollectionInput`](crate::operation::change_cidr_collection::ChangeCidrCollectionInput).
-    pub fn builder(
-    ) -> crate::operation::change_cidr_collection::builders::ChangeCidrCollectionInputBuilder {
+    pub fn builder() -> crate::operation::change_cidr_collection::builders::ChangeCidrCollectionInputBuilder {
         crate::operation::change_cidr_collection::builders::ChangeCidrCollectionInputBuilder::default()
     }
 }
 
 /// A builder for [`ChangeCidrCollectionInput`](crate::operation::change_cidr_collection::ChangeCidrCollectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeCidrCollectionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) collection_version: ::std::option::Option<i64>,
@@ -111,32 +108,23 @@ impl ChangeCidrCollectionInputBuilder {
         self
     }
     /// <p> Information about changes to a CIDR collection.</p>
-    pub fn set_changes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>>,
-    ) -> Self {
+    pub fn set_changes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>>) -> Self {
         self.changes = input;
         self
     }
     /// <p> Information about changes to a CIDR collection.</p>
-    pub fn get_changes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>> {
+    pub fn get_changes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>> {
         &self.changes
     }
     /// Consumes the builder and constructs a [`ChangeCidrCollectionInput`](crate::operation::change_cidr_collection::ChangeCidrCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::change_cidr_collection::ChangeCidrCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::change_cidr_collection::ChangeCidrCollectionInput {
-                id: self.id,
-                collection_version: self.collection_version,
-                changes: self.changes,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::change_cidr_collection::ChangeCidrCollectionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::change_cidr_collection::ChangeCidrCollectionInput {
+            id: self.id,
+            collection_version: self.collection_version,
+            changes: self.changes,
+        })
     }
 }

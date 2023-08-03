@@ -37,9 +37,7 @@ impl ListDataCellsFilterFluentBuilder {
         }
     }
     /// Access the ListDataCellsFilter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_data_cells_filter::builders::ListDataCellsFilterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_data_cells_filter::builders::ListDataCellsFilterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListDataCellsFilterFluentBuilder {
             crate::operation::list_data_cells_filter::ListDataCellsFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_cells_filter::ListDataCellsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_cells_filter::ListDataCellsFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListDataCellsFilterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListDataCellsFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_cells_filter::ListDataCellsFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_cells_filter::ListDataCellsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_cells_filter::ListDataCellsFilterError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListDataCellsFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_cells_filter::ListDataCellsFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_cells_filter::ListDataCellsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_cells_filter::ListDataCellsFilterError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListDataCellsFilterFluentBuilder {
             crate::operation::list_data_cells_filter::ListDataCellsFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_data_cells_filter::ListDataCellsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_data_cells_filter::ListDataCellsFilterError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_data_cells_filter::paginator::ListDataCellsFilterPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_data_cells_filter::paginator::ListDataCellsFilterPaginator {
-        crate::operation::list_data_cells_filter::paginator::ListDataCellsFilterPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_data_cells_filter::paginator::ListDataCellsFilterPaginator {
+        crate::operation::list_data_cells_filter::paginator::ListDataCellsFilterPaginator::new(self.handle, self.inner)
     }
     /// <p>A table in the Glue Data Catalog.</p>
     pub fn table(mut self, input: crate::types::TableResource) -> Self {

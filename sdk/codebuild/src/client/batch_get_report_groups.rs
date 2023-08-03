@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`report_groups(Option<Vec<ReportGroup>>)`](crate::operation::batch_get_report_groups::BatchGetReportGroupsOutput::report_groups): <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
     ///   - [`report_groups_not_found(Option<Vec<String>>)`](crate::operation::batch_get_report_groups::BatchGetReportGroupsOutput::report_groups_not_found): <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
     /// - On failure, responds with [`SdkError<BatchGetReportGroupsError>`](crate::operation::batch_get_report_groups::BatchGetReportGroupsError)
-    pub fn batch_get_report_groups(
-        &self,
-    ) -> crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsFluentBuilder
-    {
-        crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_report_groups(&self) -> crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsFluentBuilder {
+        crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsFluentBuilder::new(self.handle.clone())
     }
 }

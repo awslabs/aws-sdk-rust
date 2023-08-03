@@ -190,18 +190,12 @@ impl UserBuilder {
         &self.username
     }
     /// <p>The email address of the user.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address of the user.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
@@ -238,18 +232,12 @@ impl UserBuilder {
         &self.surname
     }
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -258,18 +246,12 @@ impl UserBuilder {
         &self.organization_id
     }
     /// <p>The ID of the root folder.</p>
-    pub fn root_folder_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn root_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.root_folder_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the root folder.</p>
-    pub fn set_root_folder_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_root_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.root_folder_id = input;
         self
     }
@@ -278,18 +260,12 @@ impl UserBuilder {
         &self.root_folder_id
     }
     /// <p>The ID of the recycle bin folder.</p>
-    pub fn recycle_bin_folder_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recycle_bin_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recycle_bin_folder_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the recycle bin folder.</p>
-    pub fn set_recycle_bin_folder_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recycle_bin_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recycle_bin_folder_id = input;
         self
     }
@@ -303,10 +279,7 @@ impl UserBuilder {
         self
     }
     /// <p>The status of the user.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UserStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::UserStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -334,10 +307,7 @@ impl UserBuilder {
         self
     }
     /// <p>The time when the user was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -351,10 +321,7 @@ impl UserBuilder {
         self
     }
     /// <p>The time when the user was modified.</p>
-    pub fn set_modified_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_timestamp = input;
         self
     }
@@ -396,10 +363,7 @@ impl UserBuilder {
         self
     }
     /// <p>The storage for the user.</p>
-    pub fn set_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::UserStorageMetadata>,
-    ) -> Self {
+    pub fn set_storage(mut self, input: ::std::option::Option<crate::types::UserStorageMetadata>) -> Self {
         self.storage = input;
         self
     }

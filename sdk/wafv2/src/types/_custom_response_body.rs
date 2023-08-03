@@ -34,9 +34,7 @@ impl CustomResponseBody {
 
 /// A builder for [`CustomResponseBody`](crate::types::CustomResponseBody).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomResponseBodyBuilder {
     pub(crate) content_type: ::std::option::Option<crate::types::ResponseContentType>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
@@ -48,10 +46,7 @@ impl CustomResponseBodyBuilder {
         self
     }
     /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::ResponseContentType>) -> Self {
         self.content_type = input;
         self
     }

@@ -6,19 +6,13 @@ pub fn ser_activity(
     if let Some(var_1) = &input.custom {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CUSTOM").start_object();
-        crate::protocol_serde::shape_custom_message_activity::ser_custom_message_activity(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_custom_message_activity::ser_custom_message_activity(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.conditional_split {
         #[allow(unused_mut)]
         let mut object_4 = object.key("ConditionalSplit").start_object();
-        crate::protocol_serde::shape_conditional_split_activity::ser_conditional_split_activity(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_conditional_split_activity::ser_conditional_split_activity(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.description {
@@ -27,10 +21,7 @@ pub fn ser_activity(
     if let Some(var_6) = &input.email {
         #[allow(unused_mut)]
         let mut object_7 = object.key("EMAIL").start_object();
-        crate::protocol_serde::shape_email_message_activity::ser_email_message_activity(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_email_message_activity::ser_email_message_activity(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.holdout {
@@ -48,28 +39,19 @@ pub fn ser_activity(
     if let Some(var_12) = &input.push {
         #[allow(unused_mut)]
         let mut object_13 = object.key("PUSH").start_object();
-        crate::protocol_serde::shape_push_message_activity::ser_push_message_activity(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_push_message_activity::ser_push_message_activity(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.random_split {
         #[allow(unused_mut)]
         let mut object_15 = object.key("RandomSplit").start_object();
-        crate::protocol_serde::shape_random_split_activity::ser_random_split_activity(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_random_split_activity::ser_random_split_activity(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.sms {
         #[allow(unused_mut)]
         let mut object_17 = object.key("SMS").start_object();
-        crate::protocol_serde::shape_sms_message_activity::ser_sms_message_activity(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_sms_message_activity::ser_sms_message_activity(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.wait {
@@ -81,10 +63,7 @@ pub fn ser_activity(
     if let Some(var_20) = &input.contact_center {
         #[allow(unused_mut)]
         let mut object_21 = object.key("ContactCenter").start_object();
-        crate::protocol_serde::shape_contact_center_activity::ser_contact_center_activity(
-            &mut object_21,
-            var_20,
-        )?;
+        crate::protocol_serde::shape_contact_center_activity::ser_contact_center_activity(&mut object_21, var_20)?;
         object_21.finish();
     }
     Ok(())
@@ -94,12 +73,7 @@ pub(crate) fn de_activity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::Activity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -109,87 +83,63 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "CUSTOM" => {
-                                builder = builder.set_custom(
-                                    crate::protocol_serde::shape_custom_message_activity::de_custom_message_activity(tokens)?
-                                );
-                            }
-                            "ConditionalSplit" => {
-                                builder = builder.set_conditional_split(
-                                    crate::protocol_serde::shape_conditional_split_activity::de_conditional_split_activity(tokens)?
-                                );
-                            }
-                            "Description" => {
-                                builder = builder.set_description(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "CUSTOM" => {
+                            builder = builder.set_custom(crate::protocol_serde::shape_custom_message_activity::de_custom_message_activity(tokens)?);
+                        }
+                        "ConditionalSplit" => {
+                            builder = builder.set_conditional_split(
+                                crate::protocol_serde::shape_conditional_split_activity::de_conditional_split_activity(tokens)?,
+                            );
+                        }
+                        "Description" => {
+                            builder = builder.set_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "EMAIL" => {
-                                builder = builder.set_email(
-                                    crate::protocol_serde::shape_email_message_activity::de_email_message_activity(tokens)?
-                                );
-                            }
-                            "Holdout" => {
-                                builder = builder.set_holdout(
-                                    crate::protocol_serde::shape_holdout_activity::de_holdout_activity(tokens)?
-                                );
-                            }
-                            "MultiCondition" => {
-                                builder = builder.set_multi_condition(
-                                    crate::protocol_serde::shape_multi_conditional_split_activity::de_multi_conditional_split_activity(tokens)?
-                                );
-                            }
-                            "PUSH" => {
-                                builder = builder.set_push(
-                                    crate::protocol_serde::shape_push_message_activity::de_push_message_activity(tokens)?
-                                );
-                            }
-                            "RandomSplit" => {
-                                builder = builder.set_random_split(
-                                    crate::protocol_serde::shape_random_split_activity::de_random_split_activity(tokens)?
-                                );
-                            }
-                            "SMS" => {
-                                builder = builder.set_sms(
-                                    crate::protocol_serde::shape_sms_message_activity::de_sms_message_activity(tokens)?
-                                );
-                            }
-                            "Wait" => {
-                                builder = builder.set_wait(
-                                    crate::protocol_serde::shape_wait_activity::de_wait_activity(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "ContactCenter" => {
-                                builder = builder.set_contact_center(
-                                    crate::protocol_serde::shape_contact_center_activity::de_contact_center_activity(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "EMAIL" => {
+                            builder = builder.set_email(crate::protocol_serde::shape_email_message_activity::de_email_message_activity(tokens)?);
+                        }
+                        "Holdout" => {
+                            builder = builder.set_holdout(crate::protocol_serde::shape_holdout_activity::de_holdout_activity(tokens)?);
+                        }
+                        "MultiCondition" => {
+                            builder = builder.set_multi_condition(
+                                crate::protocol_serde::shape_multi_conditional_split_activity::de_multi_conditional_split_activity(tokens)?,
+                            );
+                        }
+                        "PUSH" => {
+                            builder = builder.set_push(crate::protocol_serde::shape_push_message_activity::de_push_message_activity(tokens)?);
+                        }
+                        "RandomSplit" => {
+                            builder = builder.set_random_split(crate::protocol_serde::shape_random_split_activity::de_random_split_activity(tokens)?);
+                        }
+                        "SMS" => {
+                            builder = builder.set_sms(crate::protocol_serde::shape_sms_message_activity::de_sms_message_activity(tokens)?);
+                        }
+                        "Wait" => {
+                            builder = builder.set_wait(crate::protocol_serde::shape_wait_activity::de_wait_activity(tokens)?);
+                        }
+                        "ContactCenter" => {
+                            builder =
+                                builder.set_contact_center(crate::protocol_serde::shape_contact_center_activity::de_contact_center_activity(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

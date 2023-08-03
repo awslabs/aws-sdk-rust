@@ -88,9 +88,7 @@ impl SecurityGroupRule {
         self.prefix_list_id.as_deref()
     }
     /// <p>Describes the security group that is referenced in the rule.</p>
-    pub fn referenced_group_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReferencedSecurityGroup> {
+    pub fn referenced_group_info(&self) -> ::std::option::Option<&crate::types::ReferencedSecurityGroup> {
         self.referenced_group_info.as_ref()
     }
     /// <p>The security group rule description.</p>
@@ -111,9 +109,7 @@ impl SecurityGroupRule {
 
 /// A builder for [`SecurityGroupRule`](crate::types::SecurityGroupRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityGroupRuleBuilder {
     pub(crate) security_group_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
@@ -131,18 +127,12 @@ pub struct SecurityGroupRuleBuilder {
 }
 impl SecurityGroupRuleBuilder {
     /// <p>The ID of the security group rule.</p>
-    pub fn security_group_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_group_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the security group rule.</p>
-    pub fn set_security_group_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_group_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_group_rule_id = input;
         self
     }
@@ -165,18 +155,12 @@ impl SecurityGroupRuleBuilder {
         &self.group_id
     }
     /// <p>The ID of the Amazon Web Services account that owns the security group. </p>
-    pub fn group_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the security group. </p>
-    pub fn set_group_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_owner_id = input;
         self
     }
@@ -272,18 +256,12 @@ impl SecurityGroupRuleBuilder {
         &self.cidr_ipv6
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_id = input;
         self
     }
@@ -297,17 +275,12 @@ impl SecurityGroupRuleBuilder {
         self
     }
     /// <p>Describes the security group that is referenced in the rule.</p>
-    pub fn set_referenced_group_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferencedSecurityGroup>,
-    ) -> Self {
+    pub fn set_referenced_group_info(mut self, input: ::std::option::Option<crate::types::ReferencedSecurityGroup>) -> Self {
         self.referenced_group_info = input;
         self
     }
     /// <p>Describes the security group that is referenced in the rule.</p>
-    pub fn get_referenced_group_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReferencedSecurityGroup> {
+    pub fn get_referenced_group_info(&self) -> &::std::option::Option<crate::types::ReferencedSecurityGroup> {
         &self.referenced_group_info
     }
     /// <p>The security group rule description.</p>
@@ -336,10 +309,7 @@ impl SecurityGroupRuleBuilder {
         self
     }
     /// <p>The tags applied to the security group rule.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

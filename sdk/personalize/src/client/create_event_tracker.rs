@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`event_tracker_arn(Option<String>)`](crate::operation::create_event_tracker::CreateEventTrackerOutput::event_tracker_arn): <p>The ARN of the event tracker.</p>
     ///   - [`tracking_id(Option<String>)`](crate::operation::create_event_tracker::CreateEventTrackerOutput::tracking_id): <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
     /// - On failure, responds with [`SdkError<CreateEventTrackerError>`](crate::operation::create_event_tracker::CreateEventTrackerError)
-    pub fn create_event_tracker(
-        &self,
-    ) -> crate::operation::create_event_tracker::builders::CreateEventTrackerFluentBuilder {
-        crate::operation::create_event_tracker::builders::CreateEventTrackerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_event_tracker(&self) -> crate::operation::create_event_tracker::builders::CreateEventTrackerFluentBuilder {
+        crate::operation::create_event_tracker::builders::CreateEventTrackerFluentBuilder::new(self.handle.clone())
     }
 }

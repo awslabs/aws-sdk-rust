@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartStudioSsoConfigurationRepairOutp
 }
 impl StartStudioSsoConfigurationRepairOutput {
     /// Creates a new builder-style object to manufacture [`StartStudioSsoConfigurationRepairOutput`](crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput).
-    pub fn builder() -> crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairOutputBuilder{
+    pub fn builder() -> crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairOutputBuilder {
         crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartStudioSsoConfigurationRepairOutput`](crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartStudioSsoConfigurationRepairOutputBuilder {
     pub(crate) studio: ::std::option::Option<crate::types::Studio>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl StartStudioSsoConfigurationRepairOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartStudioSsoConfigurationRepairOutput`](crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput).
-    pub fn build(self) -> crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput{
+    pub fn build(self) -> crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput {
         crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput {
-            studio: self.studio
-            ,
+            studio: self.studio,
             _request_id: self._request_id,
         }
     }

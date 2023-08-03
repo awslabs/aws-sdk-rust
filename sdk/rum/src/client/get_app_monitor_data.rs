@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`events(Option<Vec<String>>)`](crate::operation::get_app_monitor_data::GetAppMonitorDataOutput::events): <p>The events that RUM collected that match your request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_app_monitor_data::GetAppMonitorDataOutput::next_token): <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<GetAppMonitorDataError>`](crate::operation::get_app_monitor_data::GetAppMonitorDataError)
-    pub fn get_app_monitor_data(
-        &self,
-    ) -> crate::operation::get_app_monitor_data::builders::GetAppMonitorDataFluentBuilder {
-        crate::operation::get_app_monitor_data::builders::GetAppMonitorDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_app_monitor_data(&self) -> crate::operation::get_app_monitor_data::builders::GetAppMonitorDataFluentBuilder {
+        crate::operation::get_app_monitor_data::builders::GetAppMonitorDataFluentBuilder::new(self.handle.clone())
     }
 }

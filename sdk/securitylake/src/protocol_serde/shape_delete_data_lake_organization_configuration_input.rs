@@ -9,7 +9,10 @@ pub fn ser_delete_data_lake_organization_configuration_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_data_lake_auto_enable_new_account_configuration::ser_data_lake_auto_enable_new_account_configuration(&mut object_4, item_3)?;
+                crate::protocol_serde::shape_data_lake_auto_enable_new_account_configuration::ser_data_lake_auto_enable_new_account_configuration(
+                    &mut object_4,
+                    item_3,
+                )?;
                 object_4.finish();
             }
         }

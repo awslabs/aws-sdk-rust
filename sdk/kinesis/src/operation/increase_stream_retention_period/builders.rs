@@ -29,7 +29,7 @@ impl IncreaseStreamRetentionPeriodInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct IncreaseStreamRetentionPeriodFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::increase_stream_retention_period::builders::IncreaseStreamRetentionPeriodInputBuilder,
+    inner: crate::operation::increase_stream_retention_period::builders::IncreaseStreamRetentionPeriodInputBuilder,
 }
 impl IncreaseStreamRetentionPeriodFluentBuilder {
     /// Creates a new `IncreaseStreamRetentionPeriod`.
@@ -40,7 +40,7 @@ impl IncreaseStreamRetentionPeriodFluentBuilder {
         }
     }
     /// Access the IncreaseStreamRetentionPeriod as a reference.
-    pub fn as_input(&self) -> &crate::operation::increase_stream_retention_period::builders::IncreaseStreamRetentionPeriodInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::increase_stream_retention_period::builders::IncreaseStreamRetentionPeriodInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl IncreaseStreamRetentionPeriodFluentBuilder {
             crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriod,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl IncreaseStreamRetentionPeriodFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl IncreaseStreamRetentionPeriodFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl IncreaseStreamRetentionPeriodFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl IncreaseStreamRetentionPeriodFluentBuilder {
             crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriod,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError>,
     > {
         self.customize_middleware().await
     }

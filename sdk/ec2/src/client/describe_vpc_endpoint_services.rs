@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`service_details(Option<Vec<ServiceDetail>>)`](crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesOutput::service_details): <p>Information about the service.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcEndpointServicesError>`](crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesError)
-    pub fn describe_vpc_endpoint_services(&self) -> crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesFluentBuilder{
+    pub fn describe_vpc_endpoint_services(
+        &self,
+    ) -> crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesFluentBuilder {
         crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesFluentBuilder::new(self.handle.clone())
     }
 }

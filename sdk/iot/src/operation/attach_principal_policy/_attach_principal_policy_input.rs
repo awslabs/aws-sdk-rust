@@ -23,18 +23,14 @@ impl AttachPrincipalPolicyInput {
 }
 impl AttachPrincipalPolicyInput {
     /// Creates a new builder-style object to manufacture [`AttachPrincipalPolicyInput`](crate::operation::attach_principal_policy::AttachPrincipalPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyInputBuilder {
         crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`AttachPrincipalPolicyInput`](crate::operation::attach_principal_policy::AttachPrincipalPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachPrincipalPolicyInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
@@ -71,15 +67,11 @@ impl AttachPrincipalPolicyInputBuilder {
     /// Consumes the builder and constructs a [`AttachPrincipalPolicyInput`](crate::operation::attach_principal_policy::AttachPrincipalPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::attach_principal_policy::AttachPrincipalPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::attach_principal_policy::AttachPrincipalPolicyInput {
-                policy_name: self.policy_name,
-                principal: self.principal,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::attach_principal_policy::AttachPrincipalPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::attach_principal_policy::AttachPrincipalPolicyInput {
+            policy_name: self.policy_name,
+            principal: self.principal,
+        })
     }
 }

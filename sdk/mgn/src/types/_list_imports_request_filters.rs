@@ -23,9 +23,7 @@ impl ListImportsRequestFilters {
 
 /// A builder for [`ListImportsRequestFilters`](crate::types::ListImportsRequestFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImportsRequestFiltersBuilder {
     pub(crate) import_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,17 +40,12 @@ impl ListImportsRequestFiltersBuilder {
         self
     }
     /// <p>List imports request filters import IDs.</p>
-    pub fn set_import_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_import_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.import_i_ds = input;
         self
     }
     /// <p>List imports request filters import IDs.</p>
-    pub fn get_import_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_import_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.import_i_ds
     }
     /// Consumes the builder and constructs a [`ListImportsRequestFilters`](crate::types::ListImportsRequestFilters).

@@ -10,10 +10,7 @@ impl ListVirtualRoutersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_virtual_routers::ListVirtualRoutersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_virtual_routers::ListVirtualRoutersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_virtual_routers::ListVirtualRoutersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_virtual_routers();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListVirtualRoutersFluentBuilder {
         }
     }
     /// Access the ListVirtualRouters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_virtual_routers::builders::ListVirtualRoutersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_virtual_routers::builders::ListVirtualRoutersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListVirtualRoutersFluentBuilder {
             crate::operation::list_virtual_routers::ListVirtualRouters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_virtual_routers::ListVirtualRoutersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_virtual_routers::ListVirtualRoutersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListVirtualRoutersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListVirtualRoutersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_virtual_routers::ListVirtualRoutersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_virtual_routers::ListVirtualRoutersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_virtual_routers::ListVirtualRoutersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListVirtualRoutersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_virtual_routers::ListVirtualRoutersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_virtual_routers::ListVirtualRoutersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_virtual_routers::ListVirtualRoutersError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListVirtualRoutersFluentBuilder {
             crate::operation::list_virtual_routers::ListVirtualRouters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_virtual_routers::ListVirtualRoutersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_virtual_routers::ListVirtualRoutersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_virtual_routers::paginator::ListVirtualRoutersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_virtual_routers::paginator::ListVirtualRoutersPaginator {
-        crate::operation::list_virtual_routers::paginator::ListVirtualRoutersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_virtual_routers::paginator::ListVirtualRoutersPaginator {
+        crate::operation::list_virtual_routers::paginator::ListVirtualRoutersPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the service mesh to list virtual routers in.</p>
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`status(Option<StopStatus>)`](crate::operation::stop_deployment::StopDeploymentOutput::status): <p>The status of the stop deployment operation:</p>  <ul>   <li> <p>Pending: The stop operation is pending.</p> </li>   <li> <p>Succeeded: The stop operation was successful.</p> </li>  </ul>
     ///   - [`status_message(Option<String>)`](crate::operation::stop_deployment::StopDeploymentOutput::status_message): <p>An accompanying status message.</p>
     /// - On failure, responds with [`SdkError<StopDeploymentError>`](crate::operation::stop_deployment::StopDeploymentError)
-    pub fn stop_deployment(
-        &self,
-    ) -> crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder {
-        crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_deployment(&self) -> crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder {
+        crate::operation::stop_deployment::builders::StopDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

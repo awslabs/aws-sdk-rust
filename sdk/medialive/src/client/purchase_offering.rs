@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`PurchaseOfferingOutput`](crate::operation::purchase_offering::PurchaseOfferingOutput) with field(s):
     ///   - [`reservation(Option<Reservation>)`](crate::operation::purchase_offering::PurchaseOfferingOutput::reservation): Reserved resources available to use
     /// - On failure, responds with [`SdkError<PurchaseOfferingError>`](crate::operation::purchase_offering::PurchaseOfferingError)
-    pub fn purchase_offering(
-        &self,
-    ) -> crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder {
-        crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn purchase_offering(&self) -> crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder {
+        crate::operation::purchase_offering::builders::PurchaseOfferingFluentBuilder::new(self.handle.clone())
     }
 }

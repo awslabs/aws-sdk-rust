@@ -37,9 +37,7 @@ impl ListResourceServersFluentBuilder {
         }
     }
     /// Access the ListResourceServers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_resource_servers::builders::ListResourceServersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_resource_servers::builders::ListResourceServersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListResourceServersFluentBuilder {
             crate::operation::list_resource_servers::ListResourceServers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_servers::ListResourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_servers::ListResourceServersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListResourceServersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListResourceServersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_servers::ListResourceServersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_servers::ListResourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_servers::ListResourceServersError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListResourceServersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_servers::ListResourceServersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_servers::ListResourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_servers::ListResourceServersError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListResourceServersFluentBuilder {
             crate::operation::list_resource_servers::ListResourceServers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_servers::ListResourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_servers::ListResourceServersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resource_servers::paginator::ListResourceServersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_resource_servers::paginator::ListResourceServersPaginator {
-        crate::operation::list_resource_servers::paginator::ListResourceServersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_resource_servers::paginator::ListResourceServersPaginator {
+        crate::operation::list_resource_servers::paginator::ListResourceServersPaginator::new(self.handle, self.inner)
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

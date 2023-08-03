@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for StartReadSetActivationJobOutput {
 }
 impl StartReadSetActivationJobOutput {
     /// Creates a new builder-style object to manufacture [`StartReadSetActivationJobOutput`](crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput).
-    pub fn builder() -> crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobOutputBuilder{
+    pub fn builder() -> crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobOutputBuilder {
         crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartReadSetActivationJobOutput`](crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReadSetActivationJobOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl StartReadSetActivationJobOutputBuilder {
         &self.id
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
@@ -100,10 +92,7 @@ impl StartReadSetActivationJobOutputBuilder {
         self
     }
     /// <p>The job's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReadSetActivationJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReadSetActivationJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -117,10 +106,7 @@ impl StartReadSetActivationJobOutputBuilder {
         self
     }
     /// <p>When the job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -138,9 +124,7 @@ impl StartReadSetActivationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartReadSetActivationJobOutput`](crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput {
+    pub fn build(self) -> crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput {
         crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput {
             id: self.id,
             sequence_store_id: self.sequence_store_id,

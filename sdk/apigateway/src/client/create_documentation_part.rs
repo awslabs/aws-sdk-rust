@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`location(Option<DocumentationPartLocation>)`](crate::operation::create_documentation_part::CreateDocumentationPartOutput::location): <p>The location of the API entity to which the documentation applies. Valid fields depend on the targeted API entity type. All the valid location fields are not required. If not explicitly specified, a valid location field is treated as a wildcard and associated documentation content may be inherited by matching entities, unless overridden.</p>
     ///   - [`properties(Option<String>)`](crate::operation::create_documentation_part::CreateDocumentationPartOutput::properties): <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant documentation-related fields from the properties map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
     /// - On failure, responds with [`SdkError<CreateDocumentationPartError>`](crate::operation::create_documentation_part::CreateDocumentationPartError)
-    pub fn create_documentation_part(
-        &self,
-    ) -> crate::operation::create_documentation_part::builders::CreateDocumentationPartFluentBuilder
-    {
+    pub fn create_documentation_part(&self) -> crate::operation::create_documentation_part::builders::CreateDocumentationPartFluentBuilder {
         crate::operation::create_documentation_part::builders::CreateDocumentationPartFluentBuilder::new(self.handle.clone())
     }
 }

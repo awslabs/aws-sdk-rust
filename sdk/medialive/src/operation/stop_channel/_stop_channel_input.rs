@@ -23,9 +23,7 @@ impl StopChannelInput {
 
 /// A builder for [`StopChannelInput`](crate::operation::stop_channel::StopChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopChannelInputBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
 }
@@ -45,14 +43,7 @@ impl StopChannelInputBuilder {
         &self.channel_id
     }
     /// Consumes the builder and constructs a [`StopChannelInput`](crate::operation::stop_channel::StopChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_channel::StopChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_channel::StopChannelInput {
-            channel_id: self.channel_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_channel::StopChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_channel::StopChannelInput { channel_id: self.channel_id })
     }
 }

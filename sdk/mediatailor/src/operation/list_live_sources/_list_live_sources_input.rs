@@ -36,9 +36,7 @@ impl ListLiveSourcesInput {
 
 /// A builder for [`ListLiveSourcesInput`](crate::operation::list_live_sources::ListLiveSourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLiveSourcesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,18 +72,12 @@ impl ListLiveSourcesInputBuilder {
         &self.next_token
     }
     /// <p>The name of the source location associated with this Live Sources list.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source location associated with this Live Sources list.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_location_name = input;
         self
     }
@@ -96,10 +88,7 @@ impl ListLiveSourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListLiveSourcesInput`](crate::operation::list_live_sources::ListLiveSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_live_sources::ListLiveSourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_live_sources::ListLiveSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_live_sources::ListLiveSourcesInput {
             max_results: self.max_results.unwrap_or_default(),
             next_token: self.next_token,

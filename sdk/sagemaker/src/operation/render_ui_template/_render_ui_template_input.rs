@@ -38,17 +38,14 @@ impl RenderUiTemplateInput {
 }
 impl RenderUiTemplateInput {
     /// Creates a new builder-style object to manufacture [`RenderUiTemplateInput`](crate::operation::render_ui_template::RenderUiTemplateInput).
-    pub fn builder() -> crate::operation::render_ui_template::builders::RenderUiTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::render_ui_template::builders::RenderUiTemplateInputBuilder {
         crate::operation::render_ui_template::builders::RenderUiTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`RenderUiTemplateInput`](crate::operation::render_ui_template::RenderUiTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RenderUiTemplateInputBuilder {
     pub(crate) ui_template: ::std::option::Option<crate::types::UiTemplate>,
     pub(crate) task: ::std::option::Option<crate::types::RenderableTask>,
@@ -62,10 +59,7 @@ impl RenderUiTemplateInputBuilder {
         self
     }
     /// <p>A <code>Template</code> object containing the worker UI template to render.</p>
-    pub fn set_ui_template(
-        mut self,
-        input: ::std::option::Option<crate::types::UiTemplate>,
-    ) -> Self {
+    pub fn set_ui_template(mut self, input: ::std::option::Option<crate::types::UiTemplate>) -> Self {
         self.ui_template = input;
         self
     }
@@ -103,19 +97,13 @@ impl RenderUiTemplateInputBuilder {
     }
     /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
     /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
-    pub fn human_task_ui_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_task_ui_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
     /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
-    pub fn set_human_task_ui_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_task_ui_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.human_task_ui_arn = input;
         self
     }
@@ -127,17 +115,12 @@ impl RenderUiTemplateInputBuilder {
     /// Consumes the builder and constructs a [`RenderUiTemplateInput`](crate::operation::render_ui_template::RenderUiTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::render_ui_template::RenderUiTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::render_ui_template::RenderUiTemplateInput {
-                ui_template: self.ui_template,
-                task: self.task,
-                role_arn: self.role_arn,
-                human_task_ui_arn: self.human_task_ui_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::render_ui_template::RenderUiTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::render_ui_template::RenderUiTemplateInput {
+            ui_template: self.ui_template,
+            task: self.task,
+            role_arn: self.role_arn,
+            human_task_ui_arn: self.human_task_ui_arn,
+        })
     }
 }

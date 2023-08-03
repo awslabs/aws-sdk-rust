@@ -73,15 +73,11 @@ impl CreateDocumentClassifierInput {
         self.tags.as_deref()
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn input_data_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentClassifierInputDataConfig> {
+    pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::DocumentClassifierInputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native classifier model.</p>
-    pub fn output_data_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentClassifierOutputDataConfig> {
+    pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::DocumentClassifierOutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
@@ -127,27 +123,21 @@ impl CreateDocumentClassifierInput {
 }
 impl CreateDocumentClassifierInput {
     /// Creates a new builder-style object to manufacture [`CreateDocumentClassifierInput`](crate::operation::create_document_classifier::CreateDocumentClassifierInput).
-    pub fn builder(
-    ) -> crate::operation::create_document_classifier::builders::CreateDocumentClassifierInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_document_classifier::builders::CreateDocumentClassifierInputBuilder {
         crate::operation::create_document_classifier::builders::CreateDocumentClassifierInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDocumentClassifierInput`](crate::operation::create_document_classifier::CreateDocumentClassifierInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDocumentClassifierInputBuilder {
     pub(crate) document_classifier_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) input_data_config:
-        ::std::option::Option<crate::types::DocumentClassifierInputDataConfig>,
-    pub(crate) output_data_config:
-        ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>,
+    pub(crate) input_data_config: ::std::option::Option<crate::types::DocumentClassifierInputDataConfig>,
+    pub(crate) output_data_config: ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
     pub(crate) volume_kms_key_id: ::std::option::Option<::std::string::String>,
@@ -158,18 +148,12 @@ pub struct CreateDocumentClassifierInputBuilder {
 }
 impl CreateDocumentClassifierInputBuilder {
     /// <p>The name of the document classifier.</p>
-    pub fn document_classifier_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_classifier_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_classifier_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the document classifier.</p>
-    pub fn set_document_classifier_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_classifier_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_classifier_name = input;
         self
     }
@@ -192,18 +176,12 @@ impl CreateDocumentClassifierInputBuilder {
         &self.version_name
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -223,10 +201,7 @@ impl CreateDocumentClassifierInputBuilder {
         self
     }
     /// <p>Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -235,62 +210,40 @@ impl CreateDocumentClassifierInputBuilder {
         &self.tags
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn input_data_config(
-        mut self,
-        input: crate::types::DocumentClassifierInputDataConfig,
-    ) -> Self {
+    pub fn input_data_config(mut self, input: crate::types::DocumentClassifierInputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentClassifierInputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::DocumentClassifierInputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn get_input_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentClassifierInputDataConfig> {
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::DocumentClassifierInputDataConfig> {
         &self.input_data_config
     }
     /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native classifier model.</p>
-    pub fn output_data_config(
-        mut self,
-        input: crate::types::DocumentClassifierOutputDataConfig,
-    ) -> Self {
+    pub fn output_data_config(mut self, input: crate::types::DocumentClassifierOutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native classifier model.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::DocumentClassifierOutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
     /// <p>Specifies the location for the output files from a custom classifier job. This parameter is required for a request that creates a native classifier model.</p>
-    pub fn get_output_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentClassifierOutputDataConfig> {
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::DocumentClassifierOutputDataConfig> {
         &self.output_data_config
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -304,10 +257,7 @@ impl CreateDocumentClassifierInputBuilder {
         self
     }
     /// <p>The language of the input documents. You can specify any of the languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -320,10 +270,7 @@ impl CreateDocumentClassifierInputBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn volume_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -332,10 +279,7 @@ impl CreateDocumentClassifierInputBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn set_volume_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_kms_key_id = input;
         self
     }
@@ -367,10 +311,7 @@ impl CreateDocumentClassifierInputBuilder {
         self
     }
     /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode, which identifies one and only one class for each document, or multi-label mode, which identifies one or more labels for each document. In multi-label mode, multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentClassifierMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::DocumentClassifierMode>) -> Self {
         self.mode = input;
         self
     }
@@ -383,10 +324,7 @@ impl CreateDocumentClassifierInputBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn model_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -395,10 +333,7 @@ impl CreateDocumentClassifierInputBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn set_model_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_kms_key_id = input;
         self
     }
@@ -443,22 +378,20 @@ impl CreateDocumentClassifierInputBuilder {
         crate::operation::create_document_classifier::CreateDocumentClassifierInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_document_classifier::CreateDocumentClassifierInput {
-                document_classifier_name: self.document_classifier_name,
-                version_name: self.version_name,
-                data_access_role_arn: self.data_access_role_arn,
-                tags: self.tags,
-                input_data_config: self.input_data_config,
-                output_data_config: self.output_data_config,
-                client_request_token: self.client_request_token,
-                language_code: self.language_code,
-                volume_kms_key_id: self.volume_kms_key_id,
-                vpc_config: self.vpc_config,
-                mode: self.mode,
-                model_kms_key_id: self.model_kms_key_id,
-                model_policy: self.model_policy,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_document_classifier::CreateDocumentClassifierInput {
+            document_classifier_name: self.document_classifier_name,
+            version_name: self.version_name,
+            data_access_role_arn: self.data_access_role_arn,
+            tags: self.tags,
+            input_data_config: self.input_data_config,
+            output_data_config: self.output_data_config,
+            client_request_token: self.client_request_token,
+            language_code: self.language_code,
+            volume_kms_key_id: self.volume_kms_key_id,
+            vpc_config: self.vpc_config,
+            mode: self.mode,
+            model_kms_key_id: self.model_kms_key_id,
+            model_policy: self.model_policy,
+        })
     }
 }

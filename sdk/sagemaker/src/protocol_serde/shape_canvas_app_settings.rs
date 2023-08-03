@@ -12,19 +12,13 @@ pub fn ser_canvas_app_settings(
     if let Some(var_3) = &input.model_register_settings {
         #[allow(unused_mut)]
         let mut object_4 = object.key("ModelRegisterSettings").start_object();
-        crate::protocol_serde::shape_model_register_settings::ser_model_register_settings(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_model_register_settings::ser_model_register_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.workspace_settings {
         #[allow(unused_mut)]
         let mut object_6 = object.key("WorkspaceSettings").start_object();
-        crate::protocol_serde::shape_workspace_settings::ser_workspace_settings(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_workspace_settings::ser_workspace_settings(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())
@@ -32,17 +26,9 @@ pub fn ser_canvas_app_settings(
 
 pub(crate) fn de_canvas_app_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::CanvasAppSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::CanvasAppSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -52,41 +38,34 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "TimeSeriesForecastingSettings" => {
-                                builder = builder.set_time_series_forecasting_settings(
-                                    crate::protocol_serde::shape_time_series_forecasting_settings::de_time_series_forecasting_settings(tokens)?
-                                );
-                            }
-                            "ModelRegisterSettings" => {
-                                builder = builder.set_model_register_settings(
-                                    crate::protocol_serde::shape_model_register_settings::de_model_register_settings(tokens)?
-                                );
-                            }
-                            "WorkspaceSettings" => {
-                                builder = builder.set_workspace_settings(
-                                    crate::protocol_serde::shape_workspace_settings::de_workspace_settings(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "TimeSeriesForecastingSettings" => {
+                            builder = builder.set_time_series_forecasting_settings(
+                                crate::protocol_serde::shape_time_series_forecasting_settings::de_time_series_forecasting_settings(tokens)?,
+                            );
                         }
-                    }
+                        "ModelRegisterSettings" => {
+                            builder = builder.set_model_register_settings(
+                                crate::protocol_serde::shape_model_register_settings::de_model_register_settings(tokens)?,
+                            );
+                        }
+                        "WorkspaceSettings" => {
+                            builder = builder.set_workspace_settings(crate::protocol_serde::shape_workspace_settings::de_workspace_settings(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

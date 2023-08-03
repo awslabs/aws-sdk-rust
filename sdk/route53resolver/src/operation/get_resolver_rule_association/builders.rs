@@ -26,7 +26,7 @@ impl GetResolverRuleAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResolverRuleAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_resolver_rule_association::builders::GetResolverRuleAssociationInputBuilder,
+    inner: crate::operation::get_resolver_rule_association::builders::GetResolverRuleAssociationInputBuilder,
 }
 impl GetResolverRuleAssociationFluentBuilder {
     /// Creates a new `GetResolverRuleAssociation`.
@@ -37,7 +37,7 @@ impl GetResolverRuleAssociationFluentBuilder {
         }
     }
     /// Access the GetResolverRuleAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_resolver_rule_association::builders::GetResolverRuleAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_resolver_rule_association::builders::GetResolverRuleAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetResolverRuleAssociationFluentBuilder {
             crate::operation::get_resolver_rule_association::GetResolverRuleAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetResolverRuleAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetResolverRuleAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resolver_rule_association::GetResolverRuleAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetResolverRuleAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resolver_rule_association::GetResolverRuleAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl GetResolverRuleAssociationFluentBuilder {
             crate::operation::get_resolver_rule_association::GetResolverRuleAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Resolver rule association that you want to get information about.</p>
-    pub fn resolver_rule_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_rule_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_rule_association_id(input.into());
         self
     }
     /// <p>The ID of the Resolver rule association that you want to get information about.</p>
-    pub fn set_resolver_rule_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_rule_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolver_rule_association_id(input);
         self
     }
     /// <p>The ID of the Resolver rule association that you want to get information about.</p>
-    pub fn get_resolver_rule_association_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_resolver_rule_association_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resolver_rule_association_id()
     }
 }

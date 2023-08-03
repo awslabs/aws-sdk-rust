@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`username(impl ::std::convert::Into<String>)`](crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutFluentBuilder::set_username): <p>The user name.</p>
     /// - On success, responds with [`AdminUserGlobalSignOutOutput`](crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutOutput)
     /// - On failure, responds with [`SdkError<AdminUserGlobalSignOutError>`](crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError)
-    pub fn admin_user_global_sign_out(
-        &self,
-    ) -> crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutFluentBuilder
-    {
+    pub fn admin_user_global_sign_out(&self) -> crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutFluentBuilder {
         crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutFluentBuilder::new(self.handle.clone())
     }
 }

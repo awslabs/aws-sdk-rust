@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PollForThirdPartyJobsOutput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsOutput) with field(s):
     ///   - [`jobs(Option<Vec<ThirdPartyJob>>)`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsOutput::jobs): <p>Information about the jobs to take action on.</p>
     /// - On failure, responds with [`SdkError<PollForThirdPartyJobsError>`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsError)
-    pub fn poll_for_third_party_jobs(
-        &self,
-    ) -> crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsFluentBuilder
-    {
+    pub fn poll_for_third_party_jobs(&self) -> crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsFluentBuilder {
         crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsFluentBuilder::new(self.handle.clone())
     }
 }

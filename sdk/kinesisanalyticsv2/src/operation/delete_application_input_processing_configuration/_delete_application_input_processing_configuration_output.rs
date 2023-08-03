@@ -28,16 +28,16 @@ impl ::aws_http::request_id::RequestId for DeleteApplicationInputProcessingConfi
 }
 impl DeleteApplicationInputProcessingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationInputProcessingConfigurationOutput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationOutputBuilder
+    {
         crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationInputProcessingConfigurationOutput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationInputProcessingConfigurationOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,
@@ -45,18 +45,12 @@ pub struct DeleteApplicationInputProcessingConfigurationOutputBuilder {
 }
 impl DeleteApplicationInputProcessingConfigurationOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -88,12 +82,10 @@ impl DeleteApplicationInputProcessingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteApplicationInputProcessingConfigurationOutput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput{
+    pub fn build(self) -> crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput {
         crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput {
-            application_arn: self.application_arn
-            ,
-            application_version_id: self.application_version_id
-            ,
+            application_arn: self.application_arn,
+            application_version_id: self.application_version_id,
             _request_id: self._request_id,
         }
     }

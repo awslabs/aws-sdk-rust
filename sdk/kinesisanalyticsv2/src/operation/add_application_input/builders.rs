@@ -39,9 +39,7 @@ impl AddApplicationInputFluentBuilder {
         }
     }
     /// Access the AddApplicationInput as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_application_input::builders::AddApplicationInputInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_application_input::builders::AddApplicationInputInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl AddApplicationInputFluentBuilder {
             crate::operation::add_application_input::AddApplicationInput,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_application_input::AddApplicationInputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_application_input::AddApplicationInputError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl AddApplicationInputFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl AddApplicationInputFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_application_input::AddApplicationInputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_application_input::AddApplicationInputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_application_input::AddApplicationInputError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl AddApplicationInputFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_application_input::AddApplicationInputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_application_input::AddApplicationInputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_application_input::AddApplicationInputError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +107,17 @@ impl AddApplicationInputFluentBuilder {
             crate::operation::add_application_input::AddApplicationInput,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_application_input::AddApplicationInputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_application_input::AddApplicationInputError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of your existing application to which you want to add the streaming source.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of your existing application to which you want to add the streaming source.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateProgressUpdateStreamOutput {
 }
 impl CreateProgressUpdateStreamOutput {
     /// Creates a new builder-style object to manufacture [`CreateProgressUpdateStreamOutput`](crate::operation::create_progress_update_stream::CreateProgressUpdateStreamOutput).
-    pub fn builder() -> crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamOutputBuilder{
+    pub fn builder() -> crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamOutputBuilder {
         crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProgressUpdateStreamOutput`](crate::operation::create_progress_update_stream::CreateProgressUpdateStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProgressUpdateStreamOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CreateProgressUpdateStreamOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateProgressUpdateStreamOutput`](crate::operation::create_progress_update_stream::CreateProgressUpdateStreamOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_progress_update_stream::CreateProgressUpdateStreamOutput {
+    pub fn build(self) -> crate::operation::create_progress_update_stream::CreateProgressUpdateStreamOutput {
         crate::operation::create_progress_update_stream::CreateProgressUpdateStreamOutput {
             _request_id: self._request_id,
         }

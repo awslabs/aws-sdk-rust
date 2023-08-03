@@ -10,10 +10,7 @@ impl GetResourceMetricsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_resource_metrics::GetResourceMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_metrics::GetResourceMetricsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_metrics::GetResourceMetricsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_resource_metrics();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetResourceMetricsFluentBuilder {
         }
     }
     /// Access the GetResourceMetrics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_resource_metrics::builders::GetResourceMetricsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_resource_metrics::builders::GetResourceMetricsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl GetResourceMetricsFluentBuilder {
             crate::operation::get_resource_metrics::GetResourceMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_metrics::GetResourceMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_metrics::GetResourceMetricsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl GetResourceMetricsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl GetResourceMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_metrics::GetResourceMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_metrics::GetResourceMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_metrics::GetResourceMetricsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl GetResourceMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_metrics::GetResourceMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_metrics::GetResourceMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_metrics::GetResourceMetricsError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl GetResourceMetricsFluentBuilder {
             crate::operation::get_resource_metrics::GetResourceMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_metrics::GetResourceMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_metrics::GetResourceMetricsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_resource_metrics::paginator::GetResourceMetricsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_resource_metrics::paginator::GetResourceMetricsPaginator {
-        crate::operation::get_resource_metrics::paginator::GetResourceMetricsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_resource_metrics::paginator::GetResourceMetricsPaginator {
+        crate::operation::get_resource_metrics::paginator::GetResourceMetricsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:</p>
     /// <ul>
@@ -149,10 +128,7 @@ impl GetResourceMetricsFluentBuilder {
     /// <li> <p> <code>RDS</code> </p> </li>
     /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.inner = self.inner.set_service_type(input);
         self
     }
@@ -191,17 +167,12 @@ impl GetResourceMetricsFluentBuilder {
         self
     }
     /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
-    pub fn set_metric_queries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricQuery>>,
-    ) -> Self {
+    pub fn set_metric_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricQuery>>) -> Self {
         self.inner = self.inner.set_metric_queries(input);
         self
     }
     /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.</p>
-    pub fn get_metric_queries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricQuery>> {
+    pub fn get_metric_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricQuery>> {
         self.inner.get_metric_queries()
     }
     /// <p>The date and time specifying the beginning of the requested time series query range. You can't specify a <code>StartTime</code> that is earlier than 7 days ago. By default, Performance Insights has 7 days of retention, but you can extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus, the command returns data points equal to or greater than <code>StartTime</code>.</p>
@@ -212,10 +183,7 @@ impl GetResourceMetricsFluentBuilder {
     }
     /// <p>The date and time specifying the beginning of the requested time series query range. You can't specify a <code>StartTime</code> that is earlier than 7 days ago. By default, Performance Insights has 7 days of retention, but you can extend this range up to 2 years. The value specified is <i>inclusive</i>. Thus, the command returns data points equal to or greater than <code>StartTime</code>.</p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -232,10 +200,7 @@ impl GetResourceMetricsFluentBuilder {
     }
     /// <p>The date and time specifying the end of the requested time series query range. The value specified is <i>exclusive</i>. Thus, the command returns data points less than (but not equal to) <code>EndTime</code>.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -316,10 +281,7 @@ impl GetResourceMetricsFluentBuilder {
         self
     }
     /// <p>The returned timestamp which is the start or end time of the time periods. The default value is <code>END_TIME</code>.</p>
-    pub fn set_period_alignment(
-        mut self,
-        input: ::std::option::Option<crate::types::PeriodAlignment>,
-    ) -> Self {
+    pub fn set_period_alignment(mut self, input: ::std::option::Option<crate::types::PeriodAlignment>) -> Self {
         self.inner = self.inner.set_period_alignment(input);
         self
     }

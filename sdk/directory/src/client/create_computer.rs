@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateComputerOutput`](crate::operation::create_computer::CreateComputerOutput) with field(s):
     ///   - [`computer(Option<Computer>)`](crate::operation::create_computer::CreateComputerOutput::computer): <p>A <code>Computer</code> object that represents the computer account.</p>
     /// - On failure, responds with [`SdkError<CreateComputerError>`](crate::operation::create_computer::CreateComputerError)
-    pub fn create_computer(
-        &self,
-    ) -> crate::operation::create_computer::builders::CreateComputerFluentBuilder {
-        crate::operation::create_computer::builders::CreateComputerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_computer(&self) -> crate::operation::create_computer::builders::CreateComputerFluentBuilder {
+        crate::operation::create_computer::builders::CreateComputerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl JobManifest {
 
 /// A builder for [`JobManifest`](crate::types::JobManifest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobManifestBuilder {
     pub(crate) spec: ::std::option::Option<crate::types::JobManifestSpec>,
     pub(crate) location: ::std::option::Option<crate::types::JobManifestLocation>,
@@ -58,10 +56,7 @@ impl JobManifestBuilder {
         self
     }
     /// <p>Contains the information required to locate the specified job's manifest.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::JobManifestLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::JobManifestLocation>) -> Self {
         self.location = input;
         self
     }

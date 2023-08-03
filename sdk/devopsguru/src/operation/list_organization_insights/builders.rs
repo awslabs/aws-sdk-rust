@@ -26,7 +26,7 @@ impl ListOrganizationInsightsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOrganizationInsightsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_organization_insights::builders::ListOrganizationInsightsInputBuilder,
+    inner: crate::operation::list_organization_insights::builders::ListOrganizationInsightsInputBuilder,
 }
 impl ListOrganizationInsightsFluentBuilder {
     /// Creates a new `ListOrganizationInsights`.
@@ -37,10 +37,7 @@ impl ListOrganizationInsightsFluentBuilder {
         }
     }
     /// Access the ListOrganizationInsights as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_organization_insights::builders::ListOrganizationInsightsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_organization_insights::builders::ListOrganizationInsightsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListOrganizationInsightsFluentBuilder {
             crate::operation::list_organization_insights::ListOrganizationInsights,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_organization_insights::ListOrganizationInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organization_insights::ListOrganizationInsightsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListOrganizationInsightsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListOrganizationInsightsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_organization_insights::ListOrganizationInsightsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_organization_insights::ListOrganizationInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organization_insights::ListOrganizationInsightsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListOrganizationInsightsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_organization_insights::ListOrganizationInsightsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_organization_insights::ListOrganizationInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organization_insights::ListOrganizationInsightsError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl ListOrganizationInsightsFluentBuilder {
             crate::operation::list_organization_insights::ListOrganizationInsights,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_organization_insights::ListOrganizationInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organization_insights::ListOrganizationInsightsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_organization_insights::paginator::ListOrganizationInsightsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_organization_insights::paginator::ListOrganizationInsightsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_organization_insights::paginator::ListOrganizationInsightsPaginator {
         crate::operation::list_organization_insights::paginator::ListOrganizationInsightsPaginator::new(self.handle, self.inner)
     }
     /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
@@ -138,17 +121,12 @@ impl ListOrganizationInsightsFluentBuilder {
         self
     }
     /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
-    pub fn set_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListInsightsStatusFilter>,
-    ) -> Self {
+    pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::ListInsightsStatusFilter>) -> Self {
         self.inner = self.inner.set_status_filter(input);
         self
     }
     /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
-    pub fn get_status_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListInsightsStatusFilter> {
+    pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::ListInsightsStatusFilter> {
         self.inner.get_status_filter()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -175,17 +153,12 @@ impl ListOrganizationInsightsFluentBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services account. </p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The ID of the Amazon Web Services account. </p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// Appends an item to `OrganizationalUnitIds`.
@@ -193,25 +166,17 @@ impl ListOrganizationInsightsFluentBuilder {
     /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
     ///
     /// <p>The ID of the organizational unit.</p>
-    pub fn organizational_unit_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organizational_unit_ids(input.into());
         self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn set_organizational_unit_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_organizational_unit_ids(input);
         self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn get_organizational_unit_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_organizational_unit_ids()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>

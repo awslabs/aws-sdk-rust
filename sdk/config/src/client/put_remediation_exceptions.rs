@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`PutRemediationExceptionsOutput`](crate::operation::put_remediation_exceptions::PutRemediationExceptionsOutput) with field(s):
     ///   - [`failed_batches(Option<Vec<FailedRemediationExceptionBatch>>)`](crate::operation::put_remediation_exceptions::PutRemediationExceptionsOutput::failed_batches): <p>Returns a list of failed remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
     /// - On failure, responds with [`SdkError<PutRemediationExceptionsError>`](crate::operation::put_remediation_exceptions::PutRemediationExceptionsError)
-    pub fn put_remediation_exceptions(
-        &self,
-    ) -> crate::operation::put_remediation_exceptions::builders::PutRemediationExceptionsFluentBuilder
-    {
+    pub fn put_remediation_exceptions(&self) -> crate::operation::put_remediation_exceptions::builders::PutRemediationExceptionsFluentBuilder {
         crate::operation::put_remediation_exceptions::builders::PutRemediationExceptionsFluentBuilder::new(self.handle.clone())
     }
 }

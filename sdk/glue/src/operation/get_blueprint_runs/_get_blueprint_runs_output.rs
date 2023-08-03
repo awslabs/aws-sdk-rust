@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetBlueprintRunsOutput {
 }
 impl GetBlueprintRunsOutput {
     /// Creates a new builder-style object to manufacture [`GetBlueprintRunsOutput`](crate::operation::get_blueprint_runs::GetBlueprintRunsOutput).
-    pub fn builder() -> crate::operation::get_blueprint_runs::builders::GetBlueprintRunsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_blueprint_runs::builders::GetBlueprintRunsOutputBuilder {
         crate::operation::get_blueprint_runs::builders::GetBlueprintRunsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBlueprintRunsOutput`](crate::operation::get_blueprint_runs::GetBlueprintRunsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBlueprintRunsOutputBuilder {
     pub(crate) blueprint_runs: ::std::option::Option<::std::vec::Vec<crate::types::BlueprintRun>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetBlueprintRunsOutputBuilder {
         self
     }
     /// <p>Returns a list of <code>BlueprintRun</code> objects.</p>
-    pub fn set_blueprint_runs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BlueprintRun>>,
-    ) -> Self {
+    pub fn set_blueprint_runs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlueprintRun>>) -> Self {
         self.blueprint_runs = input;
         self
     }
     /// <p>Returns a list of <code>BlueprintRun</code> objects.</p>
-    pub fn get_blueprint_runs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlueprintRun>> {
+    pub fn get_blueprint_runs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlueprintRun>> {
         &self.blueprint_runs
     }
     /// <p>A continuation token, if not all blueprint runs have been returned.</p>

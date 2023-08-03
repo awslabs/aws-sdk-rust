@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`hub_arn(Option<String>)`](crate::operation::import_hub_content::ImportHubContentOutput::hub_arn): <p>The ARN of the hub that the content was imported into.</p>
     ///   - [`hub_content_arn(Option<String>)`](crate::operation::import_hub_content::ImportHubContentOutput::hub_content_arn): <p>The ARN of the hub content that was imported.</p>
     /// - On failure, responds with [`SdkError<ImportHubContentError>`](crate::operation::import_hub_content::ImportHubContentError)
-    pub fn import_hub_content(
-        &self,
-    ) -> crate::operation::import_hub_content::builders::ImportHubContentFluentBuilder {
-        crate::operation::import_hub_content::builders::ImportHubContentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_hub_content(&self) -> crate::operation::import_hub_content::builders::ImportHubContentFluentBuilder {
+        crate::operation::import_hub_content::builders::ImportHubContentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl TargetGroupsConfig {
 
 /// A builder for [`TargetGroupsConfig`](crate::types::TargetGroupsConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetGroupsConfigBuilder {
     pub(crate) target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
 }
@@ -42,17 +40,12 @@ impl TargetGroupsConfigBuilder {
         self
     }
     /// <p>One or more target groups.</p>
-    pub fn set_target_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
-    ) -> Self {
+    pub fn set_target_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>) -> Self {
         self.target_groups = input;
         self
     }
     /// <p>One or more target groups.</p>
-    pub fn get_target_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>> {
+    pub fn get_target_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>> {
         &self.target_groups
     }
     /// Consumes the builder and constructs a [`TargetGroupsConfig`](crate::types::TargetGroupsConfig).

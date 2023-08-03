@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`execution_list(Option<Vec<ExecutionStatus>>)`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput::execution_list): <p>A list of detection jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<DescribeAnomalyDetectionExecutionsError>`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError)
-    pub fn describe_anomaly_detection_executions(&self) -> crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder{
+    pub fn describe_anomaly_detection_executions(
+        &self,
+    ) -> crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder {
         crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

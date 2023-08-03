@@ -50,9 +50,7 @@ impl CreateWebAclInput {
 
 /// A builder for [`CreateWebAclInput`](crate::operation::create_web_acl::CreateWebAclInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWebAclInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
@@ -95,10 +93,7 @@ impl CreateWebAclInputBuilder {
         self
     }
     /// <p>The action that you want AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code> objects that are associated with the <code>WebACL</code>.</p>
-    pub fn set_default_action(
-        mut self,
-        input: ::std::option::Option<crate::types::WafAction>,
-    ) -> Self {
+    pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::WafAction>) -> Self {
         self.default_action = input;
         self
     }
@@ -132,10 +127,7 @@ impl CreateWebAclInputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -146,10 +138,7 @@ impl CreateWebAclInputBuilder {
     /// Consumes the builder and constructs a [`CreateWebAclInput`](crate::operation::create_web_acl::CreateWebAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_web_acl::CreateWebAclInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_web_acl::CreateWebAclInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_web_acl::CreateWebAclInput {
             name: self.name,
             metric_name: self.metric_name,

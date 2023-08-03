@@ -26,7 +26,7 @@ impl ModifyAuthenticationProfileInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyAuthenticationProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_authentication_profile::builders::ModifyAuthenticationProfileInputBuilder,
+    inner: crate::operation::modify_authentication_profile::builders::ModifyAuthenticationProfileInputBuilder,
 }
 impl ModifyAuthenticationProfileFluentBuilder {
     /// Creates a new `ModifyAuthenticationProfile`.
@@ -37,7 +37,7 @@ impl ModifyAuthenticationProfileFluentBuilder {
         }
     }
     /// Access the ModifyAuthenticationProfile as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_authentication_profile::builders::ModifyAuthenticationProfileInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_authentication_profile::builders::ModifyAuthenticationProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyAuthenticationProfileFluentBuilder {
             crate::operation::modify_authentication_profile::ModifyAuthenticationProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyAuthenticationProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyAuthenticationProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_authentication_profile::ModifyAuthenticationProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyAuthenticationProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_authentication_profile::ModifyAuthenticationProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ModifyAuthenticationProfileFluentBuilder {
             crate::operation::modify_authentication_profile::ModifyAuthenticationProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the authentication profile to replace.</p>
-    pub fn authentication_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_profile_name(input.into());
         self
     }
     /// <p>The name of the authentication profile to replace.</p>
-    pub fn set_authentication_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_profile_name(input);
         self
     }
@@ -141,25 +124,17 @@ impl ModifyAuthenticationProfileFluentBuilder {
         self.inner.get_authentication_profile_name()
     }
     /// <p>The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
-    pub fn authentication_profile_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_profile_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_profile_content(input.into());
         self
     }
     /// <p>The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
-    pub fn set_authentication_profile_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_profile_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_profile_content(input);
         self
     }
     /// <p>The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
-    pub fn get_authentication_profile_content(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_authentication_profile_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_authentication_profile_content()
     }
 }

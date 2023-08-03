@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`operation(Option<String>)`](crate::operation::delete_backend_auth::DeleteBackendAuthOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::operation::delete_backend_auth::DeleteBackendAuthOutput::status): <p>The current status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteBackendAuthError>`](crate::operation::delete_backend_auth::DeleteBackendAuthError)
-    pub fn delete_backend_auth(
-        &self,
-    ) -> crate::operation::delete_backend_auth::builders::DeleteBackendAuthFluentBuilder {
-        crate::operation::delete_backend_auth::builders::DeleteBackendAuthFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_backend_auth(&self) -> crate::operation::delete_backend_auth::builders::DeleteBackendAuthFluentBuilder {
+        crate::operation::delete_backend_auth::builders::DeleteBackendAuthFluentBuilder::new(self.handle.clone())
     }
 }

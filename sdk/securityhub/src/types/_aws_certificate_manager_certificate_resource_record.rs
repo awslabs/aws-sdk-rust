@@ -30,17 +30,14 @@ impl AwsCertificateManagerCertificateResourceRecord {
 }
 impl AwsCertificateManagerCertificateResourceRecord {
     /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateResourceRecord`](crate::types::AwsCertificateManagerCertificateResourceRecord).
-    pub fn builder() -> crate::types::builders::AwsCertificateManagerCertificateResourceRecordBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsCertificateManagerCertificateResourceRecordBuilder {
         crate::types::builders::AwsCertificateManagerCertificateResourceRecordBuilder::default()
     }
 }
 
 /// A builder for [`AwsCertificateManagerCertificateResourceRecord`](crate::types::AwsCertificateManagerCertificateResourceRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCertificateManagerCertificateResourceRecordBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,

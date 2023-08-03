@@ -26,7 +26,7 @@ impl DeleteApnsSandboxChannelInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApnsSandboxChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_apns_sandbox_channel::builders::DeleteApnsSandboxChannelInputBuilder,
+    inner: crate::operation::delete_apns_sandbox_channel::builders::DeleteApnsSandboxChannelInputBuilder,
 }
 impl DeleteApnsSandboxChannelFluentBuilder {
     /// Creates a new `DeleteApnsSandboxChannel`.
@@ -37,7 +37,7 @@ impl DeleteApnsSandboxChannelFluentBuilder {
         }
     }
     /// Access the DeleteApnsSandboxChannel as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_apns_sandbox_channel::builders::DeleteApnsSandboxChannelInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_apns_sandbox_channel::builders::DeleteApnsSandboxChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteApnsSandboxChannelFluentBuilder {
             crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteApnsSandboxChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteApnsSandboxChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteApnsSandboxChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteApnsSandboxChannelFluentBuilder {
             crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

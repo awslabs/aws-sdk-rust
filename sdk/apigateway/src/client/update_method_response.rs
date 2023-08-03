@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`response_parameters(Option<HashMap<String, bool>>)`](crate::operation::update_method_response::UpdateMethodResponseOutput::response_parameters): <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's IntegrationResponse. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
     ///   - [`response_models(Option<HashMap<String, String>>)`](crate::operation::update_method_response::UpdateMethodResponseOutput::response_models): <p>Specifies the Model resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a Model name as the value.</p>
     /// - On failure, responds with [`SdkError<UpdateMethodResponseError>`](crate::operation::update_method_response::UpdateMethodResponseError)
-    pub fn update_method_response(
-        &self,
-    ) -> crate::operation::update_method_response::builders::UpdateMethodResponseFluentBuilder {
-        crate::operation::update_method_response::builders::UpdateMethodResponseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_method_response(&self) -> crate::operation::update_method_response::builders::UpdateMethodResponseFluentBuilder {
+        crate::operation::update_method_response::builders::UpdateMethodResponseFluentBuilder::new(self.handle.clone())
     }
 }

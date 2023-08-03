@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`table_name(Option<String>)`](crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput::table_name): <p>The name of the table being described.</p>
     ///   - [`kinesis_data_stream_destinations(Option<Vec<KinesisDataStreamDestination>>)`](crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput::kinesis_data_stream_destinations): <p>The list of replica structures for the table being described.</p>
     /// - On failure, responds with [`SdkError<DescribeKinesisStreamingDestinationError>`](crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationError)
-    pub fn describe_kinesis_streaming_destination(&self) -> crate::operation::describe_kinesis_streaming_destination::builders::DescribeKinesisStreamingDestinationFluentBuilder{
+    pub fn describe_kinesis_streaming_destination(
+        &self,
+    ) -> crate::operation::describe_kinesis_streaming_destination::builders::DescribeKinesisStreamingDestinationFluentBuilder {
         crate::operation::describe_kinesis_streaming_destination::builders::DescribeKinesisStreamingDestinationFluentBuilder::new(self.handle.clone())
     }
 }

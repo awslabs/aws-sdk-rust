@@ -10,10 +10,7 @@ impl GetDevEndpointsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_dev_endpoints::GetDevEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dev_endpoints::GetDevEndpointsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dev_endpoints::GetDevEndpointsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_dev_endpoints();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetDevEndpointsFluentBuilder {
         }
     }
     /// Access the GetDevEndpoints as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_dev_endpoints::builders::GetDevEndpointsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_dev_endpoints::builders::GetDevEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl GetDevEndpointsFluentBuilder {
             crate::operation::get_dev_endpoints::GetDevEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dev_endpoints::GetDevEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dev_endpoints::GetDevEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl GetDevEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl GetDevEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_dev_endpoints::GetDevEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dev_endpoints::GetDevEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dev_endpoints::GetDevEndpointsError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl GetDevEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_dev_endpoints::GetDevEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dev_endpoints::GetDevEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dev_endpoints::GetDevEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +104,15 @@ impl GetDevEndpointsFluentBuilder {
             crate::operation::get_dev_endpoints::GetDevEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dev_endpoints::GetDevEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dev_endpoints::GetDevEndpointsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_dev_endpoints::paginator::GetDevEndpointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_dev_endpoints::paginator::GetDevEndpointsPaginator {
-        crate::operation::get_dev_endpoints::paginator::GetDevEndpointsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_dev_endpoints::paginator::GetDevEndpointsPaginator {
+        crate::operation::get_dev_endpoints::paginator::GetDevEndpointsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum size of information to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {

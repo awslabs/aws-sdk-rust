@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`permissions_with_grant_option(Vec<Permission>)`](crate::operation::grant_permissions::builders::GrantPermissionsFluentBuilder::permissions_with_grant_option) / [`set_permissions_with_grant_option(Option<Vec<Permission>>)`](crate::operation::grant_permissions::builders::GrantPermissionsFluentBuilder::set_permissions_with_grant_option): <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
     /// - On success, responds with [`GrantPermissionsOutput`](crate::operation::grant_permissions::GrantPermissionsOutput)
     /// - On failure, responds with [`SdkError<GrantPermissionsError>`](crate::operation::grant_permissions::GrantPermissionsError)
-    pub fn grant_permissions(
-        &self,
-    ) -> crate::operation::grant_permissions::builders::GrantPermissionsFluentBuilder {
-        crate::operation::grant_permissions::builders::GrantPermissionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn grant_permissions(&self) -> crate::operation::grant_permissions::builders::GrantPermissionsFluentBuilder {
+        crate::operation::grant_permissions::builders::GrantPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

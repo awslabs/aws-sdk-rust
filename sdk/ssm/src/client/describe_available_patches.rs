@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`patches(Option<Vec<Patch>>)`](crate::operation::describe_available_patches::DescribeAvailablePatchesOutput::patches): <p>An array of patches. Each entry in the array is a patch structure.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_available_patches::DescribeAvailablePatchesOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeAvailablePatchesError>`](crate::operation::describe_available_patches::DescribeAvailablePatchesError)
-    pub fn describe_available_patches(
-        &self,
-    ) -> crate::operation::describe_available_patches::builders::DescribeAvailablePatchesFluentBuilder
-    {
+    pub fn describe_available_patches(&self) -> crate::operation::describe_available_patches::builders::DescribeAvailablePatchesFluentBuilder {
         crate::operation::describe_available_patches::builders::DescribeAvailablePatchesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,9 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateTrialOutput`](crate::operation::create_trial::CreateTrialOutput) with field(s):
     ///   - [`trial_arn(Option<String>)`](crate::operation::create_trial::CreateTrialOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial.</p>
     /// - On failure, responds with [`SdkError<CreateTrialError>`](crate::operation::create_trial::CreateTrialError)
-    pub fn create_trial(
-        &self,
-    ) -> crate::operation::create_trial::builders::CreateTrialFluentBuilder {
+    pub fn create_trial(&self) -> crate::operation::create_trial::builders::CreateTrialFluentBuilder {
         crate::operation::create_trial::builders::CreateTrialFluentBuilder::new(self.handle.clone())
     }
 }

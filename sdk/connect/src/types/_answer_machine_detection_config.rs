@@ -30,9 +30,7 @@ impl AnswerMachineDetectionConfig {
 
 /// A builder for [`AnswerMachineDetectionConfig`](crate::types::AnswerMachineDetectionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnswerMachineDetectionConfigBuilder {
     pub(crate) enable_answer_machine_detection: ::std::option::Option<bool>,
     pub(crate) await_answer_machine_prompt: ::std::option::Option<bool>,
@@ -44,10 +42,7 @@ impl AnswerMachineDetectionConfigBuilder {
         self
     }
     /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>. </p>
-    pub fn set_enable_answer_machine_detection(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_answer_machine_detection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_answer_machine_detection = input;
         self
     }
@@ -72,9 +67,7 @@ impl AnswerMachineDetectionConfigBuilder {
     /// Consumes the builder and constructs a [`AnswerMachineDetectionConfig`](crate::types::AnswerMachineDetectionConfig).
     pub fn build(self) -> crate::types::AnswerMachineDetectionConfig {
         crate::types::AnswerMachineDetectionConfig {
-            enable_answer_machine_detection: self
-                .enable_answer_machine_detection
-                .unwrap_or_default(),
+            enable_answer_machine_detection: self.enable_answer_machine_detection.unwrap_or_default(),
             await_answer_machine_prompt: self.await_answer_machine_prompt.unwrap_or_default(),
         }
     }

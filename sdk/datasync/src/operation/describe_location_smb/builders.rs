@@ -37,9 +37,7 @@ impl DescribeLocationSmbFluentBuilder {
         }
     }
     /// Access the DescribeLocationSmb as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_location_smb::builders::DescribeLocationSmbInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_location_smb::builders::DescribeLocationSmbInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeLocationSmbFluentBuilder {
             crate::operation::describe_location_smb::DescribeLocationSmb,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_smb::DescribeLocationSmbError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_smb::DescribeLocationSmbError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeLocationSmbFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeLocationSmbFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_smb::DescribeLocationSmbOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_smb::DescribeLocationSmbError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_smb::DescribeLocationSmbError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeLocationSmbFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_smb::DescribeLocationSmbOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_smb::DescribeLocationSmbError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_smb::DescribeLocationSmbError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeLocationSmbFluentBuilder {
             crate::operation::describe_location_smb::DescribeLocationSmb,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_location_smb::DescribeLocationSmbError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_location_smb::DescribeLocationSmbError>,
     > {
         self.customize_middleware().await
     }

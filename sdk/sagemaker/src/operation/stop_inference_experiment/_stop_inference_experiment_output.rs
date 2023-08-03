@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for StopInferenceExperimentOutput {
 }
 impl StopInferenceExperimentOutput {
     /// Creates a new builder-style object to manufacture [`StopInferenceExperimentOutput`](crate::operation::stop_inference_experiment::StopInferenceExperimentOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_inference_experiment::builders::StopInferenceExperimentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_inference_experiment::builders::StopInferenceExperimentOutputBuilder {
         crate::operation::stop_inference_experiment::builders::StopInferenceExperimentOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopInferenceExperimentOutput`](crate::operation::stop_inference_experiment::StopInferenceExperimentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopInferenceExperimentOutputBuilder {
     pub(crate) inference_experiment_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StopInferenceExperimentOutputBuilder {
     /// <p>The ARN of the stopped inference experiment.</p>
-    pub fn inference_experiment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_experiment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_experiment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the stopped inference experiment.</p>
-    pub fn set_inference_experiment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_experiment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_experiment_arn = input;
         self
     }
@@ -68,9 +58,7 @@ impl StopInferenceExperimentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopInferenceExperimentOutput`](crate::operation::stop_inference_experiment::StopInferenceExperimentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_inference_experiment::StopInferenceExperimentOutput {
+    pub fn build(self) -> crate::operation::stop_inference_experiment::StopInferenceExperimentOutput {
         crate::operation::stop_inference_experiment::StopInferenceExperimentOutput {
             inference_experiment_arn: self.inference_experiment_arn,
             _request_id: self._request_id,

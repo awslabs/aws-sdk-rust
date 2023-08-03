@@ -5,16 +5,16 @@ pub use crate::operation::list_query_suggestions_block_lists::_list_query_sugges
 
 impl ListQuerySuggestionsBlockListsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_query_suggestions_block_lists();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl ListQuerySuggestionsBlockListsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListQuerySuggestionsBlockListsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsInputBuilder,
+    inner: crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsInputBuilder,
 }
 impl ListQuerySuggestionsBlockListsFluentBuilder {
     /// Creates a new `ListQuerySuggestionsBlockLists`.
@@ -39,15 +39,20 @@ impl ListQuerySuggestionsBlockListsFluentBuilder {
         }
     }
     /// Access the ListQuerySuggestionsBlockLists as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockLists, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockLists,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl ListQuerySuggestionsBlockListsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,23 +89,32 @@ impl ListQuerySuggestionsBlockListsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockLists, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockLists,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_query_suggestions_block_lists::paginator::ListQuerySuggestionsBlockListsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_query_suggestions_block_lists::paginator::ListQuerySuggestionsBlockListsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_query_suggestions_block_lists::paginator::ListQuerySuggestionsBlockListsPaginator {
         crate::operation::list_query_suggestions_block_lists::paginator::ListQuerySuggestionsBlockListsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the index for a list of all block lists that exist for that index.</p>

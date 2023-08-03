@@ -38,13 +38,7 @@
 /// Mpeg2 Display Ratio
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Mpeg2DisplayRatio {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Mpeg2DisplayRatio {
         match s {
             "DISPLAYRATIO16X9" => Mpeg2DisplayRatio::Displayratio16X9,
             "DISPLAYRATIO4X3" => Mpeg2DisplayRatio::Displayratio4X3,
-            other => {
-                Mpeg2DisplayRatio::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Mpeg2DisplayRatio::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

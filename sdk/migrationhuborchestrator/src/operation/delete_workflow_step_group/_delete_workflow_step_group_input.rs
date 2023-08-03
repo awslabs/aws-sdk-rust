@@ -22,18 +22,14 @@ impl DeleteWorkflowStepGroupInput {
 }
 impl DeleteWorkflowStepGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkflowStepGroupInput`](crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupInputBuilder {
         crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorkflowStepGroupInput`](crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkflowStepGroupInputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl DeleteWorkflowStepGroupInputBuilder {
         crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput {
-                workflow_id: self.workflow_id,
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput {
+            workflow_id: self.workflow_id,
+            id: self.id,
+        })
     }
 }

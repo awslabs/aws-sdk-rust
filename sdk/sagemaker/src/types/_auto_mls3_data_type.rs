@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AutoMls3DataType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for AutoMls3DataType {
             "AugmentedManifestFile" => AutoMls3DataType::AugmentedManifestFile,
             "ManifestFile" => AutoMls3DataType::ManifestFile,
             "S3Prefix" => AutoMls3DataType::S3Prefix,
-            other => {
-                AutoMls3DataType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AutoMls3DataType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

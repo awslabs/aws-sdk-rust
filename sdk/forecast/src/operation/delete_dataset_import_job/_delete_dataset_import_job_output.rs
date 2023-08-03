@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDatasetImportJobOutput {
 }
 impl DeleteDatasetImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDatasetImportJobOutput`](crate::operation::delete_dataset_import_job::DeleteDatasetImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobOutputBuilder {
         crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDatasetImportJobOutput`](crate::operation::delete_dataset_import_job::DeleteDatasetImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDatasetImportJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteDatasetImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDatasetImportJobOutput`](crate::operation::delete_dataset_import_job::DeleteDatasetImportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_dataset_import_job::DeleteDatasetImportJobOutput {
+    pub fn build(self) -> crate::operation::delete_dataset_import_job::DeleteDatasetImportJobOutput {
         crate::operation::delete_dataset_import_job::DeleteDatasetImportJobOutput {
             _request_id: self._request_id,
         }

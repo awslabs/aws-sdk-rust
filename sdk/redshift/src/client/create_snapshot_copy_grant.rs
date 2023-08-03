@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSnapshotCopyGrantOutput`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput) with field(s):
     ///   - [`snapshot_copy_grant(Option<SnapshotCopyGrant>)`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput::snapshot_copy_grant): <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p>  <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     /// - On failure, responds with [`SdkError<CreateSnapshotCopyGrantError>`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError)
-    pub fn create_snapshot_copy_grant(
-        &self,
-    ) -> crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantFluentBuilder
-    {
+    pub fn create_snapshot_copy_grant(&self) -> crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantFluentBuilder {
         crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantFluentBuilder::new(self.handle.clone())
     }
 }

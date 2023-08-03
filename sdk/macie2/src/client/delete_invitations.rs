@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteInvitationsOutput`](crate::operation::delete_invitations::DeleteInvitationsOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::delete_invitations::DeleteInvitationsOutput::unprocessed_accounts): <p>An array of objects, one for each account whose invitation hasn't been deleted. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
     /// - On failure, responds with [`SdkError<DeleteInvitationsError>`](crate::operation::delete_invitations::DeleteInvitationsError)
-    pub fn delete_invitations(
-        &self,
-    ) -> crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder {
-        crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_invitations(&self) -> crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder {
+        crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder::new(self.handle.clone())
     }
 }

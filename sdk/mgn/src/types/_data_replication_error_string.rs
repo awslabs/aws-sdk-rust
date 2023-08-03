@@ -52,13 +52,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DataReplicationErrorString {
     #[allow(missing_docs)] // documentation missing in model
@@ -100,46 +94,22 @@ impl ::std::convert::From<&str> for DataReplicationErrorString {
     fn from(s: &str) -> Self {
         match s {
             "AGENT_NOT_SEEN" => DataReplicationErrorString::AgentNotSeen,
-            "FAILED_TO_ATTACH_STAGING_DISKS" => {
-                DataReplicationErrorString::FailedToAttachStagingDisks
-            }
-            "FAILED_TO_AUTHENTICATE_WITH_SERVICE" => {
-                DataReplicationErrorString::FailedToAuthenticateWithService
-            }
-            "FAILED_TO_BOOT_REPLICATION_SERVER" => {
-                DataReplicationErrorString::FailedToBootReplicationServer
-            }
-            "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER" => {
-                DataReplicationErrorString::FailedToConnectAgentToReplicationServer
-            }
-            "FAILED_TO_CREATE_SECURITY_GROUP" => {
-                DataReplicationErrorString::FailedToCreateSecurityGroup
-            }
-            "FAILED_TO_CREATE_STAGING_DISKS" => {
-                DataReplicationErrorString::FailedToCreateStagingDisks
-            }
-            "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE" => {
-                DataReplicationErrorString::FailedToDownloadReplicationSoftware
-            }
-            "FAILED_TO_LAUNCH_REPLICATION_SERVER" => {
-                DataReplicationErrorString::FailedToLaunchReplicationServer
-            }
-            "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT" => {
-                DataReplicationErrorString::FailedToPairReplicationServerWithAgent
-            }
-            "FAILED_TO_START_DATA_TRANSFER" => {
-                DataReplicationErrorString::FailedToStartDataTransfer
-            }
+            "FAILED_TO_ATTACH_STAGING_DISKS" => DataReplicationErrorString::FailedToAttachStagingDisks,
+            "FAILED_TO_AUTHENTICATE_WITH_SERVICE" => DataReplicationErrorString::FailedToAuthenticateWithService,
+            "FAILED_TO_BOOT_REPLICATION_SERVER" => DataReplicationErrorString::FailedToBootReplicationServer,
+            "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER" => DataReplicationErrorString::FailedToConnectAgentToReplicationServer,
+            "FAILED_TO_CREATE_SECURITY_GROUP" => DataReplicationErrorString::FailedToCreateSecurityGroup,
+            "FAILED_TO_CREATE_STAGING_DISKS" => DataReplicationErrorString::FailedToCreateStagingDisks,
+            "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE" => DataReplicationErrorString::FailedToDownloadReplicationSoftware,
+            "FAILED_TO_LAUNCH_REPLICATION_SERVER" => DataReplicationErrorString::FailedToLaunchReplicationServer,
+            "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT" => DataReplicationErrorString::FailedToPairReplicationServerWithAgent,
+            "FAILED_TO_START_DATA_TRANSFER" => DataReplicationErrorString::FailedToStartDataTransfer,
             "LAST_SNAPSHOT_JOB_FAILED" => DataReplicationErrorString::LastSnapshotJobFailed,
             "NOT_CONVERGING" => DataReplicationErrorString::NotConverging,
             "SNAPSHOTS_FAILURE" => DataReplicationErrorString::SnapshotsFailure,
             "UNSTABLE_NETWORK" => DataReplicationErrorString::UnstableNetwork,
-            "UNSUPPORTED_VM_CONFIGURATION" => {
-                DataReplicationErrorString::UnsupportedVmConfiguration
-            }
-            other => DataReplicationErrorString::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "UNSUPPORTED_VM_CONFIGURATION" => DataReplicationErrorString::UnsupportedVmConfiguration,
+            other => DataReplicationErrorString::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -155,43 +125,21 @@ impl DataReplicationErrorString {
     pub fn as_str(&self) -> &str {
         match self {
             DataReplicationErrorString::AgentNotSeen => "AGENT_NOT_SEEN",
-            DataReplicationErrorString::FailedToAttachStagingDisks => {
-                "FAILED_TO_ATTACH_STAGING_DISKS"
-            }
-            DataReplicationErrorString::FailedToAuthenticateWithService => {
-                "FAILED_TO_AUTHENTICATE_WITH_SERVICE"
-            }
-            DataReplicationErrorString::FailedToBootReplicationServer => {
-                "FAILED_TO_BOOT_REPLICATION_SERVER"
-            }
-            DataReplicationErrorString::FailedToConnectAgentToReplicationServer => {
-                "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER"
-            }
-            DataReplicationErrorString::FailedToCreateSecurityGroup => {
-                "FAILED_TO_CREATE_SECURITY_GROUP"
-            }
-            DataReplicationErrorString::FailedToCreateStagingDisks => {
-                "FAILED_TO_CREATE_STAGING_DISKS"
-            }
-            DataReplicationErrorString::FailedToDownloadReplicationSoftware => {
-                "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE"
-            }
-            DataReplicationErrorString::FailedToLaunchReplicationServer => {
-                "FAILED_TO_LAUNCH_REPLICATION_SERVER"
-            }
-            DataReplicationErrorString::FailedToPairReplicationServerWithAgent => {
-                "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT"
-            }
-            DataReplicationErrorString::FailedToStartDataTransfer => {
-                "FAILED_TO_START_DATA_TRANSFER"
-            }
+            DataReplicationErrorString::FailedToAttachStagingDisks => "FAILED_TO_ATTACH_STAGING_DISKS",
+            DataReplicationErrorString::FailedToAuthenticateWithService => "FAILED_TO_AUTHENTICATE_WITH_SERVICE",
+            DataReplicationErrorString::FailedToBootReplicationServer => "FAILED_TO_BOOT_REPLICATION_SERVER",
+            DataReplicationErrorString::FailedToConnectAgentToReplicationServer => "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER",
+            DataReplicationErrorString::FailedToCreateSecurityGroup => "FAILED_TO_CREATE_SECURITY_GROUP",
+            DataReplicationErrorString::FailedToCreateStagingDisks => "FAILED_TO_CREATE_STAGING_DISKS",
+            DataReplicationErrorString::FailedToDownloadReplicationSoftware => "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE",
+            DataReplicationErrorString::FailedToLaunchReplicationServer => "FAILED_TO_LAUNCH_REPLICATION_SERVER",
+            DataReplicationErrorString::FailedToPairReplicationServerWithAgent => "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT",
+            DataReplicationErrorString::FailedToStartDataTransfer => "FAILED_TO_START_DATA_TRANSFER",
             DataReplicationErrorString::LastSnapshotJobFailed => "LAST_SNAPSHOT_JOB_FAILED",
             DataReplicationErrorString::NotConverging => "NOT_CONVERGING",
             DataReplicationErrorString::SnapshotsFailure => "SNAPSHOTS_FAILURE",
             DataReplicationErrorString::UnstableNetwork => "UNSTABLE_NETWORK",
-            DataReplicationErrorString::UnsupportedVmConfiguration => {
-                "UNSUPPORTED_VM_CONFIGURATION"
-            }
+            DataReplicationErrorString::UnsupportedVmConfiguration => "UNSUPPORTED_VM_CONFIGURATION",
             DataReplicationErrorString::Unknown(value) => value.as_str(),
         }
     }

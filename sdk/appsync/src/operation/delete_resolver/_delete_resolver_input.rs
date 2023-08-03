@@ -36,9 +36,7 @@ impl DeleteResolverInput {
 
 /// A builder for [`DeleteResolverInput`](crate::operation::delete_resolver::DeleteResolverInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResolverInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl DeleteResolverInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResolverInput`](crate::operation::delete_resolver::DeleteResolverInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_resolver::DeleteResolverInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_resolver::DeleteResolverInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_resolver::DeleteResolverInput {
             api_id: self.api_id,
             type_name: self.type_name,

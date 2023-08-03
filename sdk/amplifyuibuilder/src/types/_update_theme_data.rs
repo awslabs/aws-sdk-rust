@@ -44,9 +44,7 @@ impl UpdateThemeData {
 
 /// A builder for [`UpdateThemeData`](crate::types::UpdateThemeData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThemeDataBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -94,10 +92,7 @@ impl UpdateThemeDataBuilder {
         self
     }
     /// <p>A list of key-value pairs that define the theme's properties.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>) -> Self {
         self.values = input;
         self
     }
@@ -117,17 +112,12 @@ impl UpdateThemeDataBuilder {
         self
     }
     /// <p>Describes the properties that can be overriden to customize the theme.</p>
-    pub fn set_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
-    ) -> Self {
+    pub fn set_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>) -> Self {
         self.overrides = input;
         self
     }
     /// <p>Describes the properties that can be overriden to customize the theme.</p>
-    pub fn get_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>> {
+    pub fn get_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>> {
         &self.overrides
     }
     /// Consumes the builder and constructs a [`UpdateThemeData`](crate::types::UpdateThemeData).

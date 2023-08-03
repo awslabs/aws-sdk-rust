@@ -26,7 +26,7 @@ impl RestoreClusterFromSnapshotInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreClusterFromSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotInputBuilder,
+    inner: crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotInputBuilder,
 }
 impl RestoreClusterFromSnapshotFluentBuilder {
     /// Creates a new `RestoreClusterFromSnapshot`.
@@ -37,7 +37,7 @@ impl RestoreClusterFromSnapshotFluentBuilder {
         }
     }
     /// Access the RestoreClusterFromSnapshot as a reference.
-    pub fn as_input(&self) -> &crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RestoreClusterFromSnapshotFluentBuilder {
             crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RestoreClusterFromSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RestoreClusterFromSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RestoreClusterFromSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl RestoreClusterFromSnapshotFluentBuilder {
             crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotError>,
     > {
         self.customize_middleware().await
     }
@@ -153,25 +142,17 @@ impl RestoreClusterFromSnapshotFluentBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>A list of EC2 VPC security groups to associate with the Elastic DocumentDB cluster.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_security_group_ids(input.into());
         self
     }
     /// <p>A list of EC2 VPC security groups to associate with the Elastic DocumentDB cluster.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
     /// <p>A list of EC2 VPC security groups to associate with the Elastic DocumentDB cluster.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
     /// Appends an item to `subnetIds`.
@@ -184,10 +165,7 @@ impl RestoreClusterFromSnapshotFluentBuilder {
         self
     }
     /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -220,30 +198,17 @@ impl RestoreClusterFromSnapshotFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of the tag names to be assigned to the restored DB cluster, in the form of an array of key-value pairs in which the key is the tag name and the value is the key value.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of the tag names to be assigned to the restored DB cluster, in the form of an array of key-value pairs in which the key is the tag name and the value is the key value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of the tag names to be assigned to the restored DB cluster, in the form of an array of key-value pairs in which the key is the tag name and the value is the key value.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

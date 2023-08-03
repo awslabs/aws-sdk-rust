@@ -3,10 +3,7 @@
 pub fn de_invalid_key_signing_key_status_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidKeySigningKeyStatusBuilder,
-) -> Result<
-    crate::types::error::builders::InvalidKeySigningKeyStatusBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::InvalidKeySigningKeyStatusBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

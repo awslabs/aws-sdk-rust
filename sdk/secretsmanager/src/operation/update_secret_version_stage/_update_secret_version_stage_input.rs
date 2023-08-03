@@ -40,18 +40,14 @@ impl UpdateSecretVersionStageInput {
 }
 impl UpdateSecretVersionStageInput {
     /// Creates a new builder-style object to manufacture [`UpdateSecretVersionStageInput`](crate::operation::update_secret_version_stage::UpdateSecretVersionStageInput).
-    pub fn builder(
-    ) -> crate::operation::update_secret_version_stage::builders::UpdateSecretVersionStageInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_secret_version_stage::builders::UpdateSecretVersionStageInputBuilder {
         crate::operation::update_secret_version_stage::builders::UpdateSecretVersionStageInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSecretVersionStageInput`](crate::operation::update_secret_version_stage::UpdateSecretVersionStageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSecretVersionStageInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_stage: ::std::option::Option<::std::string::String>,
@@ -77,18 +73,12 @@ impl UpdateSecretVersionStageInputBuilder {
         &self.secret_id
     }
     /// <p>The staging label to add to this version.</p>
-    pub fn version_stage(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_stage = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The staging label to add to this version.</p>
-    pub fn set_version_stage(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_stage = input;
         self
     }
@@ -97,18 +87,12 @@ impl UpdateSecretVersionStageInputBuilder {
         &self.version_stage
     }
     /// <p>The ID of the version that the staging label is to be removed from. If the staging label you are trying to attach to one version is already attached to a different version, then you must include this parameter and specify the version that the label is to be removed from. If the label is attached and you either do not specify this parameter, or the version ID does not match, then the operation fails.</p>
-    pub fn remove_from_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remove_from_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remove_from_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the version that the staging label is to be removed from. If the staging label you are trying to attach to one version is already attached to a different version, then you must include this parameter and specify the version that the label is to be removed from. If the label is attached and you either do not specify this parameter, or the version ID does not match, then the operation fails.</p>
-    pub fn set_remove_from_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remove_from_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remove_from_version_id = input;
         self
     }
@@ -118,19 +102,13 @@ impl UpdateSecretVersionStageInputBuilder {
     }
     /// <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>
     /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
-    pub fn move_to_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn move_to_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.move_to_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>
     /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
-    pub fn set_move_to_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_move_to_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.move_to_version_id = input;
         self
     }
@@ -146,13 +124,11 @@ impl UpdateSecretVersionStageInputBuilder {
         crate::operation::update_secret_version_stage::UpdateSecretVersionStageInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_secret_version_stage::UpdateSecretVersionStageInput {
-                secret_id: self.secret_id,
-                version_stage: self.version_stage,
-                remove_from_version_id: self.remove_from_version_id,
-                move_to_version_id: self.move_to_version_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_secret_version_stage::UpdateSecretVersionStageInput {
+            secret_id: self.secret_id,
+            version_stage: self.version_stage,
+            remove_from_version_id: self.remove_from_version_id,
+            move_to_version_id: self.move_to_version_id,
+        })
     }
 }

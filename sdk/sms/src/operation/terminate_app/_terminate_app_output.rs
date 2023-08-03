@@ -19,9 +19,7 @@ impl TerminateAppOutput {
 
 /// A builder for [`TerminateAppOutput`](crate::operation::terminate_app::TerminateAppOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateAppOutputBuilder {
     _request_id: Option<String>,
 }

@@ -65,9 +65,7 @@ impl ComponentConditionProperty {
 
 /// A builder for [`ComponentConditionProperty`](crate::types::ComponentConditionProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentConditionPropertyBuilder {
     pub(crate) property: ::std::option::Option<::std::string::String>,
     pub(crate) field: ::std::option::Option<::std::string::String>,
@@ -135,47 +133,31 @@ impl ComponentConditionPropertyBuilder {
         &self.operand
     }
     /// <p>The value to assign to the property if the condition is met.</p>
-    pub fn then(
-        mut self,
-        input: impl ::std::convert::Into<::std::boxed::Box<crate::types::ComponentProperty>>,
-    ) -> Self {
+    pub fn then(mut self, input: impl ::std::convert::Into<::std::boxed::Box<crate::types::ComponentProperty>>) -> Self {
         self.then = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value to assign to the property if the condition is met.</p>
-    pub fn set_then(
-        mut self,
-        input: ::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>>,
-    ) -> Self {
+    pub fn set_then(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>>) -> Self {
         self.then = input;
         self
     }
     /// <p>The value to assign to the property if the condition is met.</p>
-    pub fn get_then(
-        &self,
-    ) -> &::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>> {
+    pub fn get_then(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>> {
         &self.then
     }
     /// <p>The value to assign to the property if the condition is not met.</p>
-    pub fn r#else(
-        mut self,
-        input: impl ::std::convert::Into<::std::boxed::Box<crate::types::ComponentProperty>>,
-    ) -> Self {
+    pub fn r#else(mut self, input: impl ::std::convert::Into<::std::boxed::Box<crate::types::ComponentProperty>>) -> Self {
         self.r#else = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value to assign to the property if the condition is not met.</p>
-    pub fn set_else(
-        mut self,
-        input: ::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>>,
-    ) -> Self {
+    pub fn set_else(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>>) -> Self {
         self.r#else = input;
         self
     }
     /// <p>The value to assign to the property if the condition is not met.</p>
-    pub fn get_else(
-        &self,
-    ) -> &::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>> {
+    pub fn get_else(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>> {
         &self.r#else
     }
     /// <p>The type of the property to evaluate.</p>

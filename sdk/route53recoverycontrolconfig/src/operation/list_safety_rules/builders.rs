@@ -10,10 +10,7 @@ impl ListSafetyRulesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_safety_rules::ListSafetyRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_safety_rules::ListSafetyRulesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_safety_rules::ListSafetyRulesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_safety_rules();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListSafetyRulesFluentBuilder {
         }
     }
     /// Access the ListSafetyRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_safety_rules::builders::ListSafetyRulesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_safety_rules::builders::ListSafetyRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListSafetyRulesFluentBuilder {
             crate::operation::list_safety_rules::ListSafetyRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_safety_rules::ListSafetyRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_safety_rules::ListSafetyRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListSafetyRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListSafetyRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_safety_rules::ListSafetyRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_safety_rules::ListSafetyRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_safety_rules::ListSafetyRulesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListSafetyRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_safety_rules::ListSafetyRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_safety_rules::ListSafetyRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_safety_rules::ListSafetyRulesError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListSafetyRulesFluentBuilder {
             crate::operation::list_safety_rules::ListSafetyRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_safety_rules::ListSafetyRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_safety_rules::ListSafetyRulesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_safety_rules::paginator::ListSafetyRulesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_safety_rules::paginator::ListSafetyRulesPaginator {
-        crate::operation::list_safety_rules::paginator::ListSafetyRulesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_safety_rules::paginator::ListSafetyRulesPaginator {
+        crate::operation::list_safety_rules::paginator::ListSafetyRulesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_panel_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn set_control_panel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_panel_arn(input);
         self
     }

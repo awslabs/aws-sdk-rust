@@ -46,18 +46,14 @@ impl DescribeStackInstanceInput {
 }
 impl DescribeStackInstanceInput {
     /// Creates a new builder-style object to manufacture [`DescribeStackInstanceInput`](crate::operation::describe_stack_instance::DescribeStackInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::describe_stack_instance::builders::DescribeStackInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_stack_instance::builders::DescribeStackInstanceInputBuilder {
         crate::operation::describe_stack_instance::builders::DescribeStackInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackInstanceInput`](crate::operation::describe_stack_instance::DescribeStackInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackInstanceInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_instance_account: ::std::option::Option<::std::string::String>,
@@ -66,18 +62,12 @@ pub struct DescribeStackInstanceInputBuilder {
 }
 impl DescribeStackInstanceInputBuilder {
     /// <p>The name or the unique stack ID of the stack set that you want to get stack instance information for.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or the unique stack ID of the stack set that you want to get stack instance information for.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
@@ -86,18 +76,12 @@ impl DescribeStackInstanceInputBuilder {
         &self.stack_set_name
     }
     /// <p>The ID of an Amazon Web Services account that's associated with this stack instance.</p>
-    pub fn stack_instance_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_instance_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_instance_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an Amazon Web Services account that's associated with this stack instance.</p>
-    pub fn set_stack_instance_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_instance_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_instance_account = input;
         self
     }
@@ -106,18 +90,12 @@ impl DescribeStackInstanceInputBuilder {
         &self.stack_instance_account
     }
     /// <p>The name of a Region that's associated with this stack instance.</p>
-    pub fn stack_instance_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_instance_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_instance_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a Region that's associated with this stack instance.</p>
-    pub fn set_stack_instance_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_instance_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_instance_region = input;
         self
     }
@@ -157,17 +135,13 @@ impl DescribeStackInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStackInstanceInput`](crate::operation::describe_stack_instance::DescribeStackInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stack_instance::DescribeStackInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_stack_instance::DescribeStackInstanceInput {
-                stack_set_name: self.stack_set_name,
-                stack_instance_account: self.stack_instance_account,
-                stack_instance_region: self.stack_instance_region,
-                call_as: self.call_as,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_stack_instance::DescribeStackInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_stack_instance::DescribeStackInstanceInput {
+            stack_set_name: self.stack_set_name,
+            stack_instance_account: self.stack_instance_account,
+            stack_instance_region: self.stack_instance_region,
+            call_as: self.call_as,
+        })
     }
 }

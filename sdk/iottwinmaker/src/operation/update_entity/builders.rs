@@ -10,10 +10,7 @@ impl UpdateEntityInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_entity::UpdateEntityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_entity::UpdateEntityError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_entity::UpdateEntityError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_entity();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateEntityFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_entity::UpdateEntity,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_entity::UpdateEntity, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_entity::UpdateEntityError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateEntityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateEntityFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_entity::UpdateEntity,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_entity::UpdateEntity, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_entity::UpdateEntityError>,
     > {
         self.customize_middleware().await
@@ -173,23 +161,14 @@ impl UpdateEntityFluentBuilder {
     /// To override the contents of this collection use [`set_component_updates`](Self::set_component_updates).
     ///
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
-    pub fn component_updates(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ComponentUpdateRequest,
-    ) -> Self {
+    pub fn component_updates(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentUpdateRequest) -> Self {
         self.inner = self.inner.component_updates(k.into(), v);
         self
     }
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
     pub fn set_component_updates(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::ComponentUpdateRequest,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>>,
     ) -> Self {
         self.inner = self.inner.set_component_updates(input);
         self
@@ -197,9 +176,7 @@ impl UpdateEntityFluentBuilder {
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
     pub fn get_component_updates(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>> {
         self.inner.get_component_updates()
     }
     /// <p>An object that describes the update request for a parent entity.</p>
@@ -208,17 +185,12 @@ impl UpdateEntityFluentBuilder {
         self
     }
     /// <p>An object that describes the update request for a parent entity.</p>
-    pub fn set_parent_entity_update(
-        mut self,
-        input: ::std::option::Option<crate::types::ParentEntityUpdateRequest>,
-    ) -> Self {
+    pub fn set_parent_entity_update(mut self, input: ::std::option::Option<crate::types::ParentEntityUpdateRequest>) -> Self {
         self.inner = self.inner.set_parent_entity_update(input);
         self
     }
     /// <p>An object that describes the update request for a parent entity.</p>
-    pub fn get_parent_entity_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParentEntityUpdateRequest> {
+    pub fn get_parent_entity_update(&self) -> &::std::option::Option<crate::types::ParentEntityUpdateRequest> {
         self.inner.get_parent_entity_update()
     }
 }

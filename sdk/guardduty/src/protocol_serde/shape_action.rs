@@ -3,12 +3,7 @@ pub(crate) fn de_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::Action>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -18,65 +13,53 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "actionType" => {
-                                builder = builder.set_action_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "actionType" => {
+                            builder = builder.set_action_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "awsApiCallAction" => {
-                                builder = builder.set_aws_api_call_action(
-                                    crate::protocol_serde::shape_aws_api_call_action::de_aws_api_call_action(tokens)?
-                                );
-                            }
-                            "dnsRequestAction" => {
-                                builder = builder.set_dns_request_action(
-                                    crate::protocol_serde::shape_dns_request_action::de_dns_request_action(tokens)?
-                                );
-                            }
-                            "networkConnectionAction" => {
-                                builder = builder.set_network_connection_action(
-                                    crate::protocol_serde::shape_network_connection_action::de_network_connection_action(tokens)?
-                                );
-                            }
-                            "portProbeAction" => {
-                                builder = builder.set_port_probe_action(
-                                    crate::protocol_serde::shape_port_probe_action::de_port_probe_action(tokens)?
-                                );
-                            }
-                            "kubernetesApiCallAction" => {
-                                builder = builder.set_kubernetes_api_call_action(
-                                    crate::protocol_serde::shape_kubernetes_api_call_action::de_kubernetes_api_call_action(tokens)?
-                                );
-                            }
-                            "rdsLoginAttemptAction" => {
-                                builder = builder.set_rds_login_attempt_action(
-                                    crate::protocol_serde::shape_rds_login_attempt_action::de_rds_login_attempt_action(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "awsApiCallAction" => {
+                            builder =
+                                builder.set_aws_api_call_action(crate::protocol_serde::shape_aws_api_call_action::de_aws_api_call_action(tokens)?);
+                        }
+                        "dnsRequestAction" => {
+                            builder = builder.set_dns_request_action(crate::protocol_serde::shape_dns_request_action::de_dns_request_action(tokens)?);
+                        }
+                        "networkConnectionAction" => {
+                            builder = builder.set_network_connection_action(
+                                crate::protocol_serde::shape_network_connection_action::de_network_connection_action(tokens)?,
+                            );
+                        }
+                        "portProbeAction" => {
+                            builder = builder.set_port_probe_action(crate::protocol_serde::shape_port_probe_action::de_port_probe_action(tokens)?);
+                        }
+                        "kubernetesApiCallAction" => {
+                            builder = builder.set_kubernetes_api_call_action(
+                                crate::protocol_serde::shape_kubernetes_api_call_action::de_kubernetes_api_call_action(tokens)?,
+                            );
+                        }
+                        "rdsLoginAttemptAction" => {
+                            builder = builder.set_rds_login_attempt_action(
+                                crate::protocol_serde::shape_rds_login_attempt_action::de_rds_login_attempt_action(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

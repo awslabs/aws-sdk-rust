@@ -37,10 +37,7 @@ impl UpdateCustomLineItemFluentBuilder {
         }
     }
     /// Access the UpdateCustomLineItem as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_custom_line_item::builders::UpdateCustomLineItemInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_custom_line_item::builders::UpdateCustomLineItemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateCustomLineItemFluentBuilder {
             crate::operation::update_custom_line_item::UpdateCustomLineItem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_custom_line_item::UpdateCustomLineItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_custom_line_item::UpdateCustomLineItemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateCustomLineItemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateCustomLineItemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_custom_line_item::UpdateCustomLineItemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_custom_line_item::UpdateCustomLineItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_custom_line_item::UpdateCustomLineItemError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateCustomLineItemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_custom_line_item::UpdateCustomLineItemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_custom_line_item::UpdateCustomLineItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_custom_line_item::UpdateCustomLineItemError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateCustomLineItemFluentBuilder {
             crate::operation::update_custom_line_item::UpdateCustomLineItem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_custom_line_item::UpdateCustomLineItemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_custom_line_item::UpdateCustomLineItemError>,
     > {
         self.customize_middleware().await
     }
@@ -166,47 +152,31 @@ impl UpdateCustomLineItemFluentBuilder {
         self.inner.get_description()
     }
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item. </p>
-    pub fn charge_details(
-        mut self,
-        input: crate::types::UpdateCustomLineItemChargeDetails,
-    ) -> Self {
+    pub fn charge_details(mut self, input: crate::types::UpdateCustomLineItemChargeDetails) -> Self {
         self.inner = self.inner.charge_details(input);
         self
     }
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item. </p>
-    pub fn set_charge_details(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateCustomLineItemChargeDetails>,
-    ) -> Self {
+    pub fn set_charge_details(mut self, input: ::std::option::Option<crate::types::UpdateCustomLineItemChargeDetails>) -> Self {
         self.inner = self.inner.set_charge_details(input);
         self
     }
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item. </p>
-    pub fn get_charge_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateCustomLineItemChargeDetails> {
+    pub fn get_charge_details(&self) -> &::std::option::Option<crate::types::UpdateCustomLineItemChargeDetails> {
         self.inner.get_charge_details()
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    pub fn billing_period_range(
-        mut self,
-        input: crate::types::CustomLineItemBillingPeriodRange,
-    ) -> Self {
+    pub fn billing_period_range(mut self, input: crate::types::CustomLineItemBillingPeriodRange) -> Self {
         self.inner = self.inner.billing_period_range(input);
         self
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    pub fn set_billing_period_range(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
-    ) -> Self {
+    pub fn set_billing_period_range(mut self, input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>) -> Self {
         self.inner = self.inner.set_billing_period_range(input);
         self
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    pub fn get_billing_period_range(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
+    pub fn get_billing_period_range(&self) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
         self.inner.get_billing_period_range()
     }
 }

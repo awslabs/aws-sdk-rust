@@ -35,9 +35,7 @@ impl ListPipelinesOutput {
 
 /// A builder for [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelinesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) pipelines: ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>>,
@@ -70,17 +68,12 @@ impl ListPipelinesOutputBuilder {
         self
     }
     /// <p>A list of all existing Data Prepper pipelines.</p>
-    pub fn set_pipelines(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>>,
-    ) -> Self {
+    pub fn set_pipelines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>>) -> Self {
         self.pipelines = input;
         self
     }
     /// <p>A list of all existing Data Prepper pipelines.</p>
-    pub fn get_pipelines(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>> {
+    pub fn get_pipelines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>> {
         &self.pipelines
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

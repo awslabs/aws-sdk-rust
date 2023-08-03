@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateParticipantRoleConfigOutput {
 }
 impl UpdateParticipantRoleConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateParticipantRoleConfigOutput`](crate::operation::update_participant_role_config::UpdateParticipantRoleConfigOutput).
-    pub fn builder() -> crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigOutputBuilder{
+    pub fn builder() -> crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigOutputBuilder {
         crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateParticipantRoleConfigOutput`](crate::operation::update_participant_role_config::UpdateParticipantRoleConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateParticipantRoleConfigOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateParticipantRoleConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateParticipantRoleConfigOutput`](crate::operation::update_participant_role_config::UpdateParticipantRoleConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_participant_role_config::UpdateParticipantRoleConfigOutput {
+    pub fn build(self) -> crate::operation::update_participant_role_config::UpdateParticipantRoleConfigOutput {
         crate::operation::update_participant_role_config::UpdateParticipantRoleConfigOutput {
             _request_id: self._request_id,
         }

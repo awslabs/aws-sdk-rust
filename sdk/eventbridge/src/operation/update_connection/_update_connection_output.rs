@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for UpdateConnectionOutput {
 }
 impl UpdateConnectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionOutput`](crate::operation::update_connection::UpdateConnectionOutput).
-    pub fn builder() -> crate::operation::update_connection::builders::UpdateConnectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_connection::builders::UpdateConnectionOutputBuilder {
         crate::operation::update_connection::builders::UpdateConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConnectionOutput`](crate::operation::update_connection::UpdateConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConnectionOutputBuilder {
     pub(crate) connection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) connection_state: ::std::option::Option<crate::types::ConnectionState>,
@@ -70,18 +67,12 @@ pub struct UpdateConnectionOutputBuilder {
 }
 impl UpdateConnectionOutputBuilder {
     /// <p>The ARN of the connection that was updated.</p>
-    pub fn connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the connection that was updated.</p>
-    pub fn set_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_arn = input;
         self
     }
@@ -95,10 +86,7 @@ impl UpdateConnectionOutputBuilder {
         self
     }
     /// <p>The state of the connection that was updated.</p>
-    pub fn set_connection_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionState>,
-    ) -> Self {
+    pub fn set_connection_state(mut self, input: ::std::option::Option<crate::types::ConnectionState>) -> Self {
         self.connection_state = input;
         self
     }
@@ -112,10 +100,7 @@ impl UpdateConnectionOutputBuilder {
         self
     }
     /// <p>A time stamp for the time that the connection was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -129,10 +114,7 @@ impl UpdateConnectionOutputBuilder {
         self
     }
     /// <p>A time stamp for the time that the connection was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -146,10 +128,7 @@ impl UpdateConnectionOutputBuilder {
         self
     }
     /// <p>A time stamp for the time that the connection was last authorized.</p>
-    pub fn set_last_authorized_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_authorized_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_authorized_time = input;
         self
     }

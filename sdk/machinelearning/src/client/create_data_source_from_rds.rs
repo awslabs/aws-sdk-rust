@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateDataSourceFromRdsOutput`](crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsOutput) with field(s):
     ///   - [`data_source_id(Option<String>)`](crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsOutput::data_source_id): <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
     /// - On failure, responds with [`SdkError<CreateDataSourceFromRDSError>`](crate::operation::create_data_source_from_rds::CreateDataSourceFromRDSError)
-    pub fn create_data_source_from_rds(
-        &self,
-    ) -> crate::operation::create_data_source_from_rds::builders::CreateDataSourceFromRDSFluentBuilder
-    {
+    pub fn create_data_source_from_rds(&self) -> crate::operation::create_data_source_from_rds::builders::CreateDataSourceFromRDSFluentBuilder {
         crate::operation::create_data_source_from_rds::builders::CreateDataSourceFromRDSFluentBuilder::new(self.handle.clone())
     }
 }

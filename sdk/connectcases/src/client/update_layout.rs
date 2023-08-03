@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`content(LayoutContent)`](crate::operation::update_layout::builders::UpdateLayoutFluentBuilder::content) / [`set_content(Option<LayoutContent>)`](crate::operation::update_layout::builders::UpdateLayoutFluentBuilder::set_content): <p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>
     /// - On success, responds with [`UpdateLayoutOutput`](crate::operation::update_layout::UpdateLayoutOutput)
     /// - On failure, responds with [`SdkError<UpdateLayoutError>`](crate::operation::update_layout::UpdateLayoutError)
-    pub fn update_layout(
-        &self,
-    ) -> crate::operation::update_layout::builders::UpdateLayoutFluentBuilder {
-        crate::operation::update_layout::builders::UpdateLayoutFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_layout(&self) -> crate::operation::update_layout::builders::UpdateLayoutFluentBuilder {
+        crate::operation::update_layout::builders::UpdateLayoutFluentBuilder::new(self.handle.clone())
     }
 }

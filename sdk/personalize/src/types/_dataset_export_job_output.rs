@@ -23,9 +23,7 @@ impl DatasetExportJobOutput {
 
 /// A builder for [`DatasetExportJobOutput`](crate::types::DatasetExportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetExportJobOutputBuilder {
     pub(crate) s3_data_destination: ::std::option::Option<crate::types::S3DataConfig>,
 }
@@ -36,10 +34,7 @@ impl DatasetExportJobOutputBuilder {
         self
     }
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    pub fn set_s3_data_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DataConfig>,
-    ) -> Self {
+    pub fn set_s3_data_destination(mut self, input: ::std::option::Option<crate::types::S3DataConfig>) -> Self {
         self.s3_data_destination = input;
         self
     }

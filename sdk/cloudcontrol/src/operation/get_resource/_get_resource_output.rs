@@ -17,9 +17,7 @@ impl GetResourceOutput {
         self.type_name.as_deref()
     }
     /// <p>Represents information about a provisioned resource.</p>
-    pub fn resource_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceDescription> {
+    pub fn resource_description(&self) -> ::std::option::Option<&crate::types::ResourceDescription> {
         self.resource_description.as_ref()
     }
 }
@@ -37,9 +35,7 @@ impl GetResourceOutput {
 
 /// A builder for [`GetResourceOutput`](crate::operation::get_resource::GetResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceOutputBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_description: ::std::option::Option<crate::types::ResourceDescription>,
@@ -66,17 +62,12 @@ impl GetResourceOutputBuilder {
         self
     }
     /// <p>Represents information about a provisioned resource.</p>
-    pub fn set_resource_description(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDescription>,
-    ) -> Self {
+    pub fn set_resource_description(mut self, input: ::std::option::Option<crate::types::ResourceDescription>) -> Self {
         self.resource_description = input;
         self
     }
     /// <p>Represents information about a provisioned resource.</p>
-    pub fn get_resource_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceDescription> {
+    pub fn get_resource_description(&self) -> &::std::option::Option<crate::types::ResourceDescription> {
         &self.resource_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

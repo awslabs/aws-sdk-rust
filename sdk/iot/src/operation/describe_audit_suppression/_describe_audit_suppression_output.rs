@@ -49,18 +49,14 @@ impl ::aws_http::request_id::RequestId for DescribeAuditSuppressionOutput {
 }
 impl DescribeAuditSuppressionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAuditSuppressionOutput`](crate::operation::describe_audit_suppression::DescribeAuditSuppressionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionOutputBuilder {
         crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAuditSuppressionOutput`](crate::operation::describe_audit_suppression::DescribeAuditSuppressionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAuditSuppressionOutputBuilder {
     pub(crate) check_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
@@ -90,17 +86,12 @@ impl DescribeAuditSuppressionOutputBuilder {
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
         self.resource_identifier = input;
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn get_resource_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
         &self.resource_identifier
     }
     /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
@@ -109,10 +100,7 @@ impl DescribeAuditSuppressionOutputBuilder {
         self
     }
     /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
-    pub fn set_expiration_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_date = input;
         self
     }
@@ -158,9 +146,7 @@ impl DescribeAuditSuppressionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAuditSuppressionOutput`](crate::operation::describe_audit_suppression::DescribeAuditSuppressionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_audit_suppression::DescribeAuditSuppressionOutput {
+    pub fn build(self) -> crate::operation::describe_audit_suppression::DescribeAuditSuppressionOutput {
         crate::operation::describe_audit_suppression::DescribeAuditSuppressionOutput {
             check_name: self.check_name,
             resource_identifier: self.resource_identifier,

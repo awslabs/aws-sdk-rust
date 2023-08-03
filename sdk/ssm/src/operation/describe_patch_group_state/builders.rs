@@ -26,8 +26,7 @@ impl DescribePatchGroupStateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePatchGroupStateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateInputBuilder,
+    inner: crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateInputBuilder,
 }
 impl DescribePatchGroupStateFluentBuilder {
     /// Creates a new `DescribePatchGroupState`.
@@ -38,10 +37,7 @@ impl DescribePatchGroupStateFluentBuilder {
         }
     }
     /// Access the DescribePatchGroupState as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribePatchGroupStateFluentBuilder {
             crate::operation::describe_patch_group_state::DescribePatchGroupState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_patch_group_state::DescribePatchGroupStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_group_state::DescribePatchGroupStateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribePatchGroupStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribePatchGroupStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_patch_group_state::DescribePatchGroupStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_patch_group_state::DescribePatchGroupStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_group_state::DescribePatchGroupStateError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribePatchGroupStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_patch_group_state::DescribePatchGroupStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_patch_group_state::DescribePatchGroupStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_group_state::DescribePatchGroupStateError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DescribePatchGroupStateFluentBuilder {
             crate::operation::describe_patch_group_state::DescribePatchGroupState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_patch_group_state::DescribePatchGroupStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_patch_group_state::DescribePatchGroupStateError>,
     > {
         self.customize_middleware().await
     }

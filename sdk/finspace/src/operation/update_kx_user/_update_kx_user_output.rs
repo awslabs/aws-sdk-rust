@@ -49,9 +49,7 @@ impl UpdateKxUserOutput {
 
 /// A builder for [`UpdateKxUserOutput`](crate::operation::update_kx_user::UpdateKxUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateKxUserOutputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
@@ -89,18 +87,12 @@ impl UpdateKxUserOutputBuilder {
         &self.user_arn
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }

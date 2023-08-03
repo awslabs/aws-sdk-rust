@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAttendeeOutput`](crate::operation::create_attendee::CreateAttendeeOutput) with field(s):
     ///   - [`attendee(Option<Attendee>)`](crate::operation::create_attendee::CreateAttendeeOutput::attendee): <p>The attendee information, including attendee ID and join token.</p>
     /// - On failure, responds with [`SdkError<CreateAttendeeError>`](crate::operation::create_attendee::CreateAttendeeError)
-    pub fn create_attendee(
-        &self,
-    ) -> crate::operation::create_attendee::builders::CreateAttendeeFluentBuilder {
-        crate::operation::create_attendee::builders::CreateAttendeeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_attendee(&self) -> crate::operation::create_attendee::builders::CreateAttendeeFluentBuilder {
+        crate::operation::create_attendee::builders::CreateAttendeeFluentBuilder::new(self.handle.clone())
     }
 }

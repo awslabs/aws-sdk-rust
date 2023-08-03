@@ -22,9 +22,7 @@ impl DescribePageInput {
 
 /// A builder for [`DescribePageInput`](crate::operation::describe_page::DescribePageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePageInputBuilder {
     pub(crate) page_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DescribePageInputBuilder {
         &self.page_id
     }
     /// Consumes the builder and constructs a [`DescribePageInput`](crate::operation::describe_page::DescribePageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_page::DescribePageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_page::DescribePageInput {
-            page_id: self.page_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_page::DescribePageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_page::DescribePageInput { page_id: self.page_id })
     }
 }

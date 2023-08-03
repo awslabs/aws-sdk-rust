@@ -19,9 +19,7 @@ impl ModifyIdFormatOutput {
 
 /// A builder for [`ModifyIdFormatOutput`](crate::operation::modify_id_format::ModifyIdFormatOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyIdFormatOutputBuilder {
     _request_id: Option<String>,
 }

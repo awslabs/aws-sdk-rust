@@ -57,9 +57,7 @@ impl ListAuditTasksInput {
 
 /// A builder for [`ListAuditTasksInput`](crate::operation::list_audit_tasks::ListAuditTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAuditTasksInputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -75,10 +73,7 @@ impl ListAuditTasksInputBuilder {
         self
     }
     /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -92,10 +87,7 @@ impl ListAuditTasksInputBuilder {
         self
     }
     /// <p>The end of the time period.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -109,10 +101,7 @@ impl ListAuditTasksInputBuilder {
         self
     }
     /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
-    pub fn set_task_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditTaskType>,
-    ) -> Self {
+    pub fn set_task_type(mut self, input: ::std::option::Option<crate::types::AuditTaskType>) -> Self {
         self.task_type = input;
         self
     }
@@ -126,10 +115,7 @@ impl ListAuditTasksInputBuilder {
         self
     }
     /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
-    pub fn set_task_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditTaskStatus>,
-    ) -> Self {
+    pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::AuditTaskStatus>) -> Self {
         self.task_status = input;
         self
     }
@@ -168,10 +154,7 @@ impl ListAuditTasksInputBuilder {
     /// Consumes the builder and constructs a [`ListAuditTasksInput`](crate::operation::list_audit_tasks::ListAuditTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_audit_tasks::ListAuditTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_audit_tasks::ListAuditTasksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_audit_tasks::ListAuditTasksInput {
             start_time: self.start_time,
             end_time: self.end_time,

@@ -9,10 +9,7 @@ pub fn ser_processing_output(
     if let Some(var_2) = &input.s3_output {
         #[allow(unused_mut)]
         let mut object_3 = object.key("S3Output").start_object();
-        crate::protocol_serde::shape_processing_s3_output::ser_processing_s3_output(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_processing_s3_output::ser_processing_s3_output(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.feature_store_output {
@@ -29,17 +26,9 @@ pub fn ser_processing_output(
 
 pub(crate) fn de_processing_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ProcessingOutput>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ProcessingOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -49,52 +38,39 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "OutputName" => {
-                                builder = builder.set_output_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "OutputName" => {
+                            builder = builder.set_output_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "S3Output" => {
-                                builder = builder.set_s3_output(
-                                    crate::protocol_serde::shape_processing_s3_output::de_processing_s3_output(tokens)?
-                                );
-                            }
-                            "FeatureStoreOutput" => {
-                                builder = builder.set_feature_store_output(
-                                    crate::protocol_serde::shape_processing_feature_store_output::de_processing_feature_store_output(tokens)?
-                                );
-                            }
-                            "AppManaged" => {
-                                builder = builder.set_app_managed(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "S3Output" => {
+                            builder = builder.set_s3_output(crate::protocol_serde::shape_processing_s3_output::de_processing_s3_output(tokens)?);
+                        }
+                        "FeatureStoreOutput" => {
+                            builder = builder.set_feature_store_output(
+                                crate::protocol_serde::shape_processing_feature_store_output::de_processing_feature_store_output(tokens)?,
+                            );
+                        }
+                        "AppManaged" => {
+                            builder = builder.set_app_managed(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

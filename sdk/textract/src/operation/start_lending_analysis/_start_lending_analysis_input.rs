@@ -41,9 +41,7 @@ impl StartLendingAnalysisInput {
         self.job_tag.as_deref()
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation. </p>
-    pub fn notification_channel(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationChannel> {
+    pub fn notification_channel(&self) -> ::std::option::Option<&crate::types::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file.</p>
@@ -60,17 +58,14 @@ impl StartLendingAnalysisInput {
 }
 impl StartLendingAnalysisInput {
     /// Creates a new builder-style object to manufacture [`StartLendingAnalysisInput`](crate::operation::start_lending_analysis::StartLendingAnalysisInput).
-    pub fn builder(
-    ) -> crate::operation::start_lending_analysis::builders::StartLendingAnalysisInputBuilder {
+    pub fn builder() -> crate::operation::start_lending_analysis::builders::StartLendingAnalysisInputBuilder {
         crate::operation::start_lending_analysis::builders::StartLendingAnalysisInputBuilder::default()
     }
 }
 
 /// A builder for [`StartLendingAnalysisInput`](crate::operation::start_lending_analysis::StartLendingAnalysisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartLendingAnalysisInputBuilder {
     pub(crate) document_location: ::std::option::Option<crate::types::DocumentLocation>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -88,10 +83,7 @@ impl StartLendingAnalysisInputBuilder {
     }
     /// <p>The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous operations.</p>
     /// <p>The input document can be an image file in JPEG or PNG format. It can also be a file in PDF format.</p>
-    pub fn set_document_location(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentLocation>,
-    ) -> Self {
+    pub fn set_document_location(mut self, input: ::std::option::Option<crate::types::DocumentLocation>) -> Self {
         self.document_location = input;
         self
     }
@@ -101,18 +93,12 @@ impl StartLendingAnalysisInputBuilder {
         &self.document_location
     }
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartLendingAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-sync.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartLendingAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-sync.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -140,17 +126,12 @@ impl StartLendingAnalysisInputBuilder {
         self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation. </p>
-    pub fn set_notification_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
+    pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
         self.notification_channel = input;
         self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation. </p>
-    pub fn get_notification_channel(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+    pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
         &self.notification_channel
     }
     /// <p>Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file.</p>
@@ -165,10 +146,7 @@ impl StartLendingAnalysisInputBuilder {
     /// <p> <code>OutputConfig</code> is an optional parameter which lets you adjust where your output will be placed. By default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With <code>OutputConfig</code> enabled, you can set the name of the bucket the output will be sent to the file prefix of the results where you can download your results. Additionally, you can set the <code>KMSKeyID</code> parameter to a customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side using the AWS managed CMK for Amazon S3.</p>
     /// <p>Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted after the Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html"> Managing AI services opt-out policy. </a> </p>
     /// <p>For more information on data privacy, see the <a href="https://aws.amazon.com/compliance/data-privacy-faq/">Data Privacy FAQ</a>.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
         self.output_config = input;
         self
     }
@@ -196,19 +174,15 @@ impl StartLendingAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`StartLendingAnalysisInput`](crate::operation::start_lending_analysis::StartLendingAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_lending_analysis::StartLendingAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_lending_analysis::StartLendingAnalysisInput {
-                document_location: self.document_location,
-                client_request_token: self.client_request_token,
-                job_tag: self.job_tag,
-                notification_channel: self.notification_channel,
-                output_config: self.output_config,
-                kms_key_id: self.kms_key_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_lending_analysis::StartLendingAnalysisInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_lending_analysis::StartLendingAnalysisInput {
+            document_location: self.document_location,
+            client_request_token: self.client_request_token,
+            job_tag: self.job_tag,
+            notification_channel: self.notification_channel,
+            output_config: self.output_config,
+            kms_key_id: self.kms_key_id,
+        })
     }
 }

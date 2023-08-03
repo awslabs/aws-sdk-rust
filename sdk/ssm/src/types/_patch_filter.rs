@@ -37,9 +37,7 @@ impl PatchFilter {
 
 /// A builder for [`PatchFilter`](crate::types::PatchFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PatchFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::PatchFilterKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -76,10 +74,7 @@ impl PatchFilterBuilder {
     }
     /// <p>The value for the filter key.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid values for each key based on operating system type.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

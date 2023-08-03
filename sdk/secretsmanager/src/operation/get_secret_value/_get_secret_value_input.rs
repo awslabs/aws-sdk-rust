@@ -42,9 +42,7 @@ impl GetSecretValueInput {
 
 /// A builder for [`GetSecretValueInput`](crate::operation::get_secret_value::GetSecretValueInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSecretValueInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
@@ -87,19 +85,13 @@ impl GetSecretValueInputBuilder {
     }
     /// <p>The staging label of the version of the secret to retrieve. </p>
     /// <p>Secrets Manager uses staging labels to keep track of different versions during the rotation process. If you include both this parameter and <code>VersionId</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, Secrets Manager returns the <code>AWSCURRENT</code> version.</p>
-    pub fn version_stage(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_stage = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The staging label of the version of the secret to retrieve. </p>
     /// <p>Secrets Manager uses staging labels to keep track of different versions during the rotation process. If you include both this parameter and <code>VersionId</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, Secrets Manager returns the <code>AWSCURRENT</code> version.</p>
-    pub fn set_version_stage(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_stage = input;
         self
     }
@@ -111,10 +103,7 @@ impl GetSecretValueInputBuilder {
     /// Consumes the builder and constructs a [`GetSecretValueInput`](crate::operation::get_secret_value::GetSecretValueInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_secret_value::GetSecretValueInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_secret_value::GetSecretValueInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_secret_value::GetSecretValueInput {
             secret_id: self.secret_id,
             version_id: self.version_id,

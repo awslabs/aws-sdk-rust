@@ -27,8 +27,7 @@ pub struct TemplateVersion {
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
     #[doc(hidden)]
-    pub data_set_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>,
+    pub data_set_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>,
     /// <p>The description of the template.</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -69,9 +68,7 @@ impl TemplateVersion {
         self.status.as_ref()
     }
     /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
-    pub fn data_set_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataSetConfiguration]> {
+    pub fn data_set_configurations(&self) -> ::std::option::Option<&[crate::types::DataSetConfiguration]> {
         self.data_set_configurations.as_deref()
     }
     /// <p>The description of the template.</p>
@@ -100,16 +97,13 @@ impl TemplateVersion {
 
 /// A builder for [`TemplateVersion`](crate::types::TemplateVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemplateVersionBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::TemplateError>>,
     pub(crate) version_number: ::std::option::Option<i64>,
     pub(crate) status: ::std::option::Option<crate::types::ResourceStatus>,
-    pub(crate) data_set_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>,
+    pub(crate) data_set_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) source_entity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) theme_arn: ::std::option::Option<::std::string::String>,
@@ -122,10 +116,7 @@ impl TemplateVersionBuilder {
         self
     }
     /// <p>The time that this template version was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -145,17 +136,12 @@ impl TemplateVersionBuilder {
         self
     }
     /// <p>Errors associated with this template version.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Errors associated with this template version.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateError>> {
         &self.errors
     }
     /// <p>The version number of the template version.</p>
@@ -196,10 +182,7 @@ impl TemplateVersionBuilder {
     /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
     /// <li> <p> <code>DELETED</code> </p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -228,17 +211,12 @@ impl TemplateVersionBuilder {
         self
     }
     /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
-    pub fn set_data_set_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>,
-    ) -> Self {
+    pub fn set_data_set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>) -> Self {
         self.data_set_configurations = input;
         self
     }
     /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
-    pub fn get_data_set_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>> {
+    pub fn get_data_set_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>> {
         &self.data_set_configurations
     }
     /// <p>The description of the template.</p>
@@ -256,18 +234,12 @@ impl TemplateVersionBuilder {
         &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.</p>
-    pub fn source_entity_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_entity_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_entity_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.</p>
-    pub fn set_source_entity_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_entity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_entity_arn = input;
         self
     }
@@ -301,10 +273,7 @@ impl TemplateVersionBuilder {
         self
     }
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-    pub fn set_sheets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
-    ) -> Self {
+    pub fn set_sheets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>) -> Self {
         self.sheets = input;
         self
     }

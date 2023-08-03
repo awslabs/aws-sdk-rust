@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`transit_gateway_multicast_domains(Option<Vec<TransitGatewayMulticastDomain>>)`](crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsOutput::transit_gateway_multicast_domains): <p>Information about the transit gateway multicast domains.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeTransitGatewayMulticastDomainsError>`](crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsError)
-    pub fn describe_transit_gateway_multicast_domains(&self) -> crate::operation::describe_transit_gateway_multicast_domains::builders::DescribeTransitGatewayMulticastDomainsFluentBuilder{
-        crate::operation::describe_transit_gateway_multicast_domains::builders::DescribeTransitGatewayMulticastDomainsFluentBuilder::new(self.handle.clone())
+    pub fn describe_transit_gateway_multicast_domains(
+        &self,
+    ) -> crate::operation::describe_transit_gateway_multicast_domains::builders::DescribeTransitGatewayMulticastDomainsFluentBuilder {
+        crate::operation::describe_transit_gateway_multicast_domains::builders::DescribeTransitGatewayMulticastDomainsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

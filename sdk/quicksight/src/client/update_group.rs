@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::update_group::UpdateGroupOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::update_group::UpdateGroupOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<UpdateGroupError>`](crate::operation::update_group::UpdateGroupError)
-    pub fn update_group(
-        &self,
-    ) -> crate::operation::update_group::builders::UpdateGroupFluentBuilder {
+    pub fn update_group(&self) -> crate::operation::update_group::builders::UpdateGroupFluentBuilder {
         crate::operation::update_group::builders::UpdateGroupFluentBuilder::new(self.handle.clone())
     }
 }

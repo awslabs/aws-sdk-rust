@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::create_schema_mapping::CreateSchemaMappingOutput::description): <p>A description of the schema.</p>
     ///   - [`mapped_input_fields(Option<Vec<SchemaInputAttribute>>)`](crate::operation::create_schema_mapping::CreateSchemaMappingOutput::mapped_input_fields): <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
     /// - On failure, responds with [`SdkError<CreateSchemaMappingError>`](crate::operation::create_schema_mapping::CreateSchemaMappingError)
-    pub fn create_schema_mapping(
-        &self,
-    ) -> crate::operation::create_schema_mapping::builders::CreateSchemaMappingFluentBuilder {
-        crate::operation::create_schema_mapping::builders::CreateSchemaMappingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_schema_mapping(&self) -> crate::operation::create_schema_mapping::builders::CreateSchemaMappingFluentBuilder {
+        crate::operation::create_schema_mapping::builders::CreateSchemaMappingFluentBuilder::new(self.handle.clone())
     }
 }

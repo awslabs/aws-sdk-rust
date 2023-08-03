@@ -11,14 +11,10 @@ pub fn ser_refresh_token_body_http_payload(
 
 pub fn ser_refresh_token_body_payload(
     input: &crate::types::RefreshTokenRequestBody,
-) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_refresh_token_request_body::ser_refresh_token_request_body(
-        &mut object,
-        input,
-    )?;
+    crate::protocol_serde::shape_refresh_token_request_body::ser_refresh_token_request_body(&mut object, input)?;
     object.finish();
     Ok(out.into_bytes())
 }

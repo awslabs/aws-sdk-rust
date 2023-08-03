@@ -6,10 +6,7 @@ pub fn ser_update_detector_input(
     if let Some(var_1) = &input.data_sources {
         #[allow(unused_mut)]
         let mut object_2 = object.key("dataSources").start_object();
-        crate::protocol_serde::shape_data_source_configurations::ser_data_source_configurations(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_data_source_configurations::ser_data_source_configurations(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.enable {
@@ -28,9 +25,7 @@ pub fn ser_update_detector_input(
         array_5.finish();
     }
     if let Some(var_8) = &input.finding_publishing_frequency {
-        object
-            .key("findingPublishingFrequency")
-            .string(var_8.as_str());
+        object.key("findingPublishingFrequency").string(var_8.as_str());
     }
     Ok(())
 }

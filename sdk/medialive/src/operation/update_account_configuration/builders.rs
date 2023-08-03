@@ -26,7 +26,7 @@ impl UpdateAccountConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAccountConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_account_configuration::builders::UpdateAccountConfigurationInputBuilder,
+    inner: crate::operation::update_account_configuration::builders::UpdateAccountConfigurationInputBuilder,
 }
 impl UpdateAccountConfigurationFluentBuilder {
     /// Creates a new `UpdateAccountConfiguration`.
@@ -37,7 +37,7 @@ impl UpdateAccountConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateAccountConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_account_configuration::builders::UpdateAccountConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_account_configuration::builders::UpdateAccountConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateAccountConfigurationFluentBuilder {
             crate::operation::update_account_configuration::UpdateAccountConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_configuration::UpdateAccountConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_configuration::UpdateAccountConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateAccountConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateAccountConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_account_configuration::UpdateAccountConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_configuration::UpdateAccountConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_configuration::UpdateAccountConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateAccountConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_account_configuration::UpdateAccountConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_configuration::UpdateAccountConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_configuration::UpdateAccountConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateAccountConfigurationFluentBuilder {
             crate::operation::update_account_configuration::UpdateAccountConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_configuration::UpdateAccountConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_configuration::UpdateAccountConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -126,17 +115,12 @@ impl UpdateAccountConfigurationFluentBuilder {
         self
     }
     /// Placeholder documentation for AccountConfiguration
-    pub fn set_account_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountConfiguration>,
-    ) -> Self {
+    pub fn set_account_configuration(mut self, input: ::std::option::Option<crate::types::AccountConfiguration>) -> Self {
         self.inner = self.inner.set_account_configuration(input);
         self
     }
     /// Placeholder documentation for AccountConfiguration
-    pub fn get_account_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountConfiguration> {
+    pub fn get_account_configuration(&self) -> &::std::option::Option<crate::types::AccountConfiguration> {
         self.inner.get_account_configuration()
     }
 }

@@ -72,9 +72,7 @@ impl Archive {
 
 /// A builder for [`Archive`](crate::types::Archive).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArchiveBuilder {
     pub(crate) archive_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_source_arn: ::std::option::Option<::std::string::String>,
@@ -101,18 +99,12 @@ impl ArchiveBuilder {
         &self.archive_name
     }
     /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
-    pub fn event_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
-    pub fn set_event_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_source_arn = input;
         self
     }
@@ -196,10 +188,7 @@ impl ArchiveBuilder {
         self
     }
     /// <p>The time stamp for the time that the archive was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

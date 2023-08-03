@@ -50,20 +50,17 @@ impl ListReviewPolicyResultsForHitInput {
 }
 impl ListReviewPolicyResultsForHitInput {
     /// Creates a new builder-style object to manufacture [`ListReviewPolicyResultsForHitInput`](crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitInput).
-    pub fn builder() -> crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHitInputBuilder{
+    pub fn builder() -> crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHitInputBuilder {
         crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHitInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReviewPolicyResultsForHitInput`](crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReviewPolicyResultsForHitInputBuilder {
     pub(crate) hit_id: ::std::option::Option<::std::string::String>,
-    pub(crate) policy_levels:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>>,
+    pub(crate) policy_levels: ::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>>,
     pub(crate) retrieve_actions: ::std::option::Option<bool>,
     pub(crate) retrieve_results: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,17 +93,12 @@ impl ListReviewPolicyResultsForHitInputBuilder {
         self
     }
     /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
-    pub fn set_policy_levels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>>,
-    ) -> Self {
+    pub fn set_policy_levels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>>) -> Self {
         self.policy_levels = input;
         self
     }
     /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
-    pub fn get_policy_levels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>> {
+    pub fn get_policy_levels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>> {
         &self.policy_levels
     }
     /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
@@ -172,21 +164,13 @@ impl ListReviewPolicyResultsForHitInputBuilder {
         crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitInput {
-                hit_id: self.hit_id
-                ,
-                policy_levels: self.policy_levels
-                ,
-                retrieve_actions: self.retrieve_actions
-                ,
-                retrieve_results: self.retrieve_results
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitInput {
+            hit_id: self.hit_id,
+            policy_levels: self.policy_levels,
+            retrieve_actions: self.retrieve_actions,
+            retrieve_results: self.retrieve_results,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

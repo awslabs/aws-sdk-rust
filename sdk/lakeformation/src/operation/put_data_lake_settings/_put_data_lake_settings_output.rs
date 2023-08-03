@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutDataLakeSettingsOutput {
 }
 impl PutDataLakeSettingsOutput {
     /// Creates a new builder-style object to manufacture [`PutDataLakeSettingsOutput`](crate::operation::put_data_lake_settings::PutDataLakeSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsOutputBuilder {
         crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutDataLakeSettingsOutput`](crate::operation::put_data_lake_settings::PutDataLakeSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDataLakeSettingsOutputBuilder {
     _request_id: Option<String>,
 }

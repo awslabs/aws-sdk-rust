@@ -62,8 +62,7 @@ impl ::std::fmt::Debug for UpdateRuleVersionInput {
 }
 impl UpdateRuleVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleVersionInput`](crate::operation::update_rule_version::UpdateRuleVersionInput).
-    pub fn builder(
-    ) -> crate::operation::update_rule_version::builders::UpdateRuleVersionInputBuilder {
+    pub fn builder() -> crate::operation::update_rule_version::builders::UpdateRuleVersionInputBuilder {
         crate::operation::update_rule_version::builders::UpdateRuleVersionInputBuilder::default()
     }
 }
@@ -148,10 +147,7 @@ impl UpdateRuleVersionInputBuilder {
         self
     }
     /// <p>The outcomes.</p>
-    pub fn set_outcomes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_outcomes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.outcomes = input;
         self
     }
@@ -171,10 +167,7 @@ impl UpdateRuleVersionInputBuilder {
         self
     }
     /// <p>The tags to assign to the rule version.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -185,20 +178,15 @@ impl UpdateRuleVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRuleVersionInput`](crate::operation::update_rule_version::UpdateRuleVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_rule_version::UpdateRuleVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_rule_version::UpdateRuleVersionInput {
-                rule: self.rule,
-                description: self.description,
-                expression: self.expression,
-                language: self.language,
-                outcomes: self.outcomes,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_rule_version::UpdateRuleVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_rule_version::UpdateRuleVersionInput {
+            rule: self.rule,
+            description: self.description,
+            expression: self.expression,
+            language: self.language,
+            outcomes: self.outcomes,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateRuleVersionInputBuilder {

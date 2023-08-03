@@ -6,19 +6,13 @@ pub fn ser_update_alarm_model_input(
     if let Some(var_1) = &input.alarm_capabilities {
         #[allow(unused_mut)]
         let mut object_2 = object.key("alarmCapabilities").start_object();
-        crate::protocol_serde::shape_alarm_capabilities::ser_alarm_capabilities(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_alarm_capabilities::ser_alarm_capabilities(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.alarm_event_actions {
         #[allow(unused_mut)]
         let mut object_4 = object.key("alarmEventActions").start_object();
-        crate::protocol_serde::shape_alarm_event_actions::ser_alarm_event_actions(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_alarm_event_actions::ser_alarm_event_actions(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.alarm_model_description {
@@ -27,10 +21,7 @@ pub fn ser_update_alarm_model_input(
     if let Some(var_6) = &input.alarm_notification {
         #[allow(unused_mut)]
         let mut object_7 = object.key("alarmNotification").start_object();
-        crate::protocol_serde::shape_alarm_notification::ser_alarm_notification(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_alarm_notification::ser_alarm_notification(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.alarm_rule {

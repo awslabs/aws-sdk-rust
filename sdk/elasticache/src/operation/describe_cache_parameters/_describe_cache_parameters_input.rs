@@ -43,18 +43,14 @@ impl DescribeCacheParametersInput {
 }
 impl DescribeCacheParametersInput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheParametersInput`](crate::operation::describe_cache_parameters::DescribeCacheParametersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_cache_parameters::builders::DescribeCacheParametersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_cache_parameters::builders::DescribeCacheParametersInputBuilder {
         crate::operation::describe_cache_parameters::builders::DescribeCacheParametersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCacheParametersInput`](crate::operation::describe_cache_parameters::DescribeCacheParametersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCacheParametersInputBuilder {
     pub(crate) cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
@@ -63,18 +59,12 @@ pub struct DescribeCacheParametersInputBuilder {
 }
 impl DescribeCacheParametersInputBuilder {
     /// <p>The name of a specific cache parameter group to return details for.</p>
-    pub fn cache_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a specific cache parameter group to return details for.</p>
-    pub fn set_cache_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_parameter_group_name = input;
         self
     }
@@ -140,13 +130,11 @@ impl DescribeCacheParametersInputBuilder {
         crate::operation::describe_cache_parameters::DescribeCacheParametersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cache_parameters::DescribeCacheParametersInput {
-                cache_parameter_group_name: self.cache_parameter_group_name,
-                source: self.source,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_cache_parameters::DescribeCacheParametersInput {
+            cache_parameter_group_name: self.cache_parameter_group_name,
+            source: self.source,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

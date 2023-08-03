@@ -22,41 +22,31 @@ impl UpdateGroupCertificateConfigurationInput {
 }
 impl UpdateGroupCertificateConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupCertificateConfigurationInput`](crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationInput).
-    pub fn builder() -> crate::operation::update_group_certificate_configuration::builders::UpdateGroupCertificateConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_group_certificate_configuration::builders::UpdateGroupCertificateConfigurationInputBuilder {
         crate::operation::update_group_certificate_configuration::builders::UpdateGroupCertificateConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGroupCertificateConfigurationInput`](crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGroupCertificateConfigurationInputBuilder {
     pub(crate) certificate_expiry_in_milliseconds: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGroupCertificateConfigurationInputBuilder {
     /// The amount of time remaining before the certificate expires, in milliseconds.
-    pub fn certificate_expiry_in_milliseconds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_expiry_in_milliseconds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_expiry_in_milliseconds = ::std::option::Option::Some(input.into());
         self
     }
     /// The amount of time remaining before the certificate expires, in milliseconds.
-    pub fn set_certificate_expiry_in_milliseconds(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_expiry_in_milliseconds(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_expiry_in_milliseconds = input;
         self
     }
     /// The amount of time remaining before the certificate expires, in milliseconds.
-    pub fn get_certificate_expiry_in_milliseconds(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_certificate_expiry_in_milliseconds(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_expiry_in_milliseconds
     }
     /// The ID of the Greengrass group.
@@ -74,14 +64,17 @@ impl UpdateGroupCertificateConfigurationInputBuilder {
         &self.group_id
     }
     /// Consumes the builder and constructs a [`UpdateGroupCertificateConfigurationInput`](crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationInput {
-                certificate_expiry_in_milliseconds: self.certificate_expiry_in_milliseconds
-                ,
-                group_id: self.group_id
-                ,
-            }
+                certificate_expiry_in_milliseconds: self.certificate_expiry_in_milliseconds,
+                group_id: self.group_id,
+            },
         )
     }
 }

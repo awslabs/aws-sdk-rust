@@ -10,10 +10,7 @@ impl DeleteExperienceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_experience::DeleteExperienceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_experience::DeleteExperienceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_experience::DeleteExperienceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_experience();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteExperienceFluentBuilder {
         }
     }
     /// Access the DeleteExperience as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_experience::builders::DeleteExperienceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_experience::builders::DeleteExperienceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteExperienceFluentBuilder {
             crate::operation::delete_experience::DeleteExperience,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_experience::DeleteExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_experience::DeleteExperienceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteExperienceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteExperienceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_experience::DeleteExperienceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_experience::DeleteExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_experience::DeleteExperienceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteExperienceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_experience::DeleteExperienceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_experience::DeleteExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_experience::DeleteExperienceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteExperienceFluentBuilder {
             crate::operation::delete_experience::DeleteExperience,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_experience::DeleteExperienceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_experience::DeleteExperienceError>,
     > {
         self.customize_middleware().await
     }

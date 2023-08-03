@@ -37,9 +37,7 @@ impl GetModelInput {
 
 /// A builder for [`GetModelInput`](crate::operation::get_model::GetModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetModelInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
@@ -89,12 +87,7 @@ impl GetModelInputBuilder {
         &self.flatten
     }
     /// Consumes the builder and constructs a [`GetModelInput`](crate::operation::get_model::GetModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_model::GetModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_model::GetModelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_model::GetModelInput {
             rest_api_id: self.rest_api_id,
             model_name: self.model_name,

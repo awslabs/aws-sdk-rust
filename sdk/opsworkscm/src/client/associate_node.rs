@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateNodeOutput`](crate::operation::associate_node::AssociateNodeOutput) with field(s):
     ///   - [`node_association_status_token(Option<String>)`](crate::operation::associate_node::AssociateNodeOutput::node_association_status_token): <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>
     /// - On failure, responds with [`SdkError<AssociateNodeError>`](crate::operation::associate_node::AssociateNodeError)
-    pub fn associate_node(
-        &self,
-    ) -> crate::operation::associate_node::builders::AssociateNodeFluentBuilder {
-        crate::operation::associate_node::builders::AssociateNodeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_node(&self) -> crate::operation::associate_node::builders::AssociateNodeFluentBuilder {
+        crate::operation::associate_node::builders::AssociateNodeFluentBuilder::new(self.handle.clone())
     }
 }

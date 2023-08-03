@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteEvaluationFormOutput {
 }
 impl DeleteEvaluationFormOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEvaluationFormOutput`](crate::operation::delete_evaluation_form::DeleteEvaluationFormOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_evaluation_form::builders::DeleteEvaluationFormOutputBuilder {
+    pub fn builder() -> crate::operation::delete_evaluation_form::builders::DeleteEvaluationFormOutputBuilder {
         crate::operation::delete_evaluation_form::builders::DeleteEvaluationFormOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEvaluationFormOutput`](crate::operation::delete_evaluation_form::DeleteEvaluationFormOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEvaluationFormOutputBuilder {
     _request_id: Option<String>,
 }

@@ -16,35 +16,25 @@ impl StopReplicationTaskInput {
 }
 impl StopReplicationTaskInput {
     /// Creates a new builder-style object to manufacture [`StopReplicationTaskInput`](crate::operation::stop_replication_task::StopReplicationTaskInput).
-    pub fn builder(
-    ) -> crate::operation::stop_replication_task::builders::StopReplicationTaskInputBuilder {
-        crate::operation::stop_replication_task::builders::StopReplicationTaskInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::stop_replication_task::builders::StopReplicationTaskInputBuilder {
+        crate::operation::stop_replication_task::builders::StopReplicationTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`StopReplicationTaskInput`](crate::operation::stop_replication_task::StopReplicationTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopReplicationTaskInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
 }
 impl StopReplicationTaskInputBuilder {
     /// <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_arn = input;
         self
     }
@@ -55,14 +45,10 @@ impl StopReplicationTaskInputBuilder {
     /// Consumes the builder and constructs a [`StopReplicationTaskInput`](crate::operation::stop_replication_task::StopReplicationTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_replication_task::StopReplicationTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_replication_task::StopReplicationTaskInput {
-                replication_task_arn: self.replication_task_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_replication_task::StopReplicationTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_replication_task::StopReplicationTaskInput {
+            replication_task_arn: self.replication_task_arn,
+        })
     }
 }

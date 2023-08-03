@@ -59,8 +59,7 @@ impl GetChannelMessageStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetChannelMessageStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_channel_message_status::builders::GetChannelMessageStatusInputBuilder,
+    inner: crate::operation::get_channel_message_status::builders::GetChannelMessageStatusInputBuilder,
 }
 impl GetChannelMessageStatusFluentBuilder {
     /// Creates a new `GetChannelMessageStatus`.
@@ -71,10 +70,7 @@ impl GetChannelMessageStatusFluentBuilder {
         }
     }
     /// Access the GetChannelMessageStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_channel_message_status::builders::GetChannelMessageStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_channel_message_status::builders::GetChannelMessageStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +82,7 @@ impl GetChannelMessageStatusFluentBuilder {
             crate::operation::get_channel_message_status::GetChannelMessageStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_message_status::GetChannelMessageStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_channel_message_status::GetChannelMessageStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -98,10 +92,7 @@ impl GetChannelMessageStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -110,9 +101,7 @@ impl GetChannelMessageStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_channel_message_status::GetChannelMessageStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_message_status::GetChannelMessageStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_channel_message_status::GetChannelMessageStatusError>,
     > {
         let op = self
             .inner
@@ -135,9 +124,7 @@ impl GetChannelMessageStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_channel_message_status::GetChannelMessageStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_message_status::GetChannelMessageStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_channel_message_status::GetChannelMessageStatusError>,
     > {
         self.send_middleware().await
     }
@@ -151,9 +138,7 @@ impl GetChannelMessageStatusFluentBuilder {
             crate::operation::get_channel_message_status::GetChannelMessageStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_message_status::GetChannelMessageStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_channel_message_status::GetChannelMessageStatusError>,
     > {
         self.customize_middleware().await
     }
@@ -202,20 +187,14 @@ impl GetChannelMessageStatusFluentBuilder {
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when getting message status in a SubChannel that the user belongs to.</p>
     /// </note>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sub_channel_id(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when getting message status in a SubChannel that the user belongs to.</p>
     /// </note>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateQualificationFromWorkerOu
 }
 impl DisassociateQualificationFromWorkerOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateQualificationFromWorkerOutput`](crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerOutput).
-    pub fn builder() -> crate::operation::disassociate_qualification_from_worker::builders::DisassociateQualificationFromWorkerOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_qualification_from_worker::builders::DisassociateQualificationFromWorkerOutputBuilder {
         crate::operation::disassociate_qualification_from_worker::builders::DisassociateQualificationFromWorkerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateQualificationFromWorkerOutput`](crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateQualificationFromWorkerOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DisassociateQualificationFromWorkerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateQualificationFromWorkerOutput`](crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerOutput).
-    pub fn build(self) -> crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerOutput{
+    pub fn build(self) -> crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerOutput {
         crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerOutput {
             _request_id: self._request_id,
         }

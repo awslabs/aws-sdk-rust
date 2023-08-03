@@ -10,10 +10,7 @@ impl CancelCommandInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_command::CancelCommandOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_command::CancelCommandError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_command::CancelCommandError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_command();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CancelCommandFluentBuilder {
         }
     }
     /// Access the CancelCommand as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_command::builders::CancelCommandInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_command::builders::CancelCommandInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CancelCommandFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -138,17 +130,12 @@ impl CancelCommandFluentBuilder {
         self
     }
     /// <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided, the command is canceled on every node on which it was requested.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
     /// <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided, the command is canceled on every node on which it was requested.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
 }

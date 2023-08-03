@@ -28,8 +28,7 @@ impl GetSpotPlacementScoresInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSpotPlacementScoresFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresInputBuilder,
+    inner: crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresInputBuilder,
 }
 impl GetSpotPlacementScoresFluentBuilder {
     /// Creates a new `GetSpotPlacementScores`.
@@ -40,10 +39,7 @@ impl GetSpotPlacementScoresFluentBuilder {
         }
     }
     /// Access the GetSpotPlacementScores as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl GetSpotPlacementScoresFluentBuilder {
             crate::operation::get_spot_placement_scores::GetSpotPlacementScores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_spot_placement_scores::GetSpotPlacementScoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_spot_placement_scores::GetSpotPlacementScoresError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl GetSpotPlacementScoresFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl GetSpotPlacementScoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_spot_placement_scores::GetSpotPlacementScoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_spot_placement_scores::GetSpotPlacementScoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_spot_placement_scores::GetSpotPlacementScoresError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl GetSpotPlacementScoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_spot_placement_scores::GetSpotPlacementScoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_spot_placement_scores::GetSpotPlacementScoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_spot_placement_scores::GetSpotPlacementScoresError>,
     > {
         self.send_middleware().await
     }
@@ -120,23 +107,15 @@ impl GetSpotPlacementScoresFluentBuilder {
             crate::operation::get_spot_placement_scores::GetSpotPlacementScores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_spot_placement_scores::GetSpotPlacementScoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_spot_placement_scores::GetSpotPlacementScoresError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_spot_placement_scores::paginator::GetSpotPlacementScoresPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_spot_placement_scores::paginator::GetSpotPlacementScoresPaginator
-    {
-        crate::operation::get_spot_placement_scores::paginator::GetSpotPlacementScoresPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_spot_placement_scores::paginator::GetSpotPlacementScoresPaginator {
+        crate::operation::get_spot_placement_scores::paginator::GetSpotPlacementScoresPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `InstanceTypes`.
     ///
@@ -144,27 +123,19 @@ impl GetSpotPlacementScoresFluentBuilder {
     ///
     /// <p>The instance types. We recommend that you specify at least three instance types. If you specify one or two instance types, or specify variations of a single instance type (for example, an <code>m3.xlarge</code> with and without instance storage), the returned placement score will always be low. </p>
     /// <p>If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirementsWithMetadata</code>.</p>
-    pub fn instance_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_types(input.into());
         self
     }
     /// <p>The instance types. We recommend that you specify at least three instance types. If you specify one or two instance types, or specify variations of a single instance type (for example, an <code>m3.xlarge</code> with and without instance storage), the returned placement score will always be low. </p>
     /// <p>If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirementsWithMetadata</code>.</p>
-    pub fn set_instance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_types(input);
         self
     }
     /// <p>The instance types. We recommend that you specify at least three instance types. If you specify one or two instance types, or specify variations of a single instance type (for example, an <code>m3.xlarge</code> with and without instance storage), the returned placement score will always be low. </p>
     /// <p>If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirementsWithMetadata</code>.</p>
-    pub fn get_instance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_types()
     }
     /// <p>The target capacity.</p>
@@ -183,27 +154,19 @@ impl GetSpotPlacementScoresFluentBuilder {
     }
     /// <p>The unit for the target capacity.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    pub fn target_capacity_unit_type(
-        mut self,
-        input: crate::types::TargetCapacityUnitType,
-    ) -> Self {
+    pub fn target_capacity_unit_type(mut self, input: crate::types::TargetCapacityUnitType) -> Self {
         self.inner = self.inner.target_capacity_unit_type(input);
         self
     }
     /// <p>The unit for the target capacity.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    pub fn set_target_capacity_unit_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetCapacityUnitType>,
-    ) -> Self {
+    pub fn set_target_capacity_unit_type(mut self, input: ::std::option::Option<crate::types::TargetCapacityUnitType>) -> Self {
         self.inner = self.inner.set_target_capacity_unit_type(input);
         self
     }
     /// <p>The unit for the target capacity.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    pub fn get_target_capacity_unit_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetCapacityUnitType> {
+    pub fn get_target_capacity_unit_type(&self) -> &::std::option::Option<crate::types::TargetCapacityUnitType> {
         self.inner.get_target_capacity_unit_type()
     }
     /// <p>Specify <code>true</code> so that the response returns a list of scored Availability Zones. Otherwise, the response returns a list of scored Regions.</p>
@@ -233,25 +196,17 @@ impl GetSpotPlacementScoresFluentBuilder {
         self
     }
     /// <p>The Regions used to narrow down the list of Regions to be scored. Enter the Region code, for example, <code>us-east-1</code>.</p>
-    pub fn set_region_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_region_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_region_names(input);
         self
     }
     /// <p>The Regions used to narrow down the list of Regions to be scored. Enter the Region code, for example, <code>us-east-1</code>.</p>
-    pub fn get_region_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_region_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_region_names()
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
     /// <p>If you specify <code>InstanceRequirementsWithMetadata</code>, you can't specify <code>InstanceTypes</code>.</p>
-    pub fn instance_requirements_with_metadata(
-        mut self,
-        input: crate::types::InstanceRequirementsWithMetadataRequest,
-    ) -> Self {
+    pub fn instance_requirements_with_metadata(mut self, input: crate::types::InstanceRequirementsWithMetadataRequest) -> Self {
         self.inner = self.inner.instance_requirements_with_metadata(input);
         self
     }
@@ -266,9 +221,7 @@ impl GetSpotPlacementScoresFluentBuilder {
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
     /// <p>If you specify <code>InstanceRequirementsWithMetadata</code>, you can't specify <code>InstanceTypes</code>.</p>
-    pub fn get_instance_requirements_with_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceRequirementsWithMetadataRequest> {
+    pub fn get_instance_requirements_with_metadata(&self) -> &::std::option::Option<crate::types::InstanceRequirementsWithMetadataRequest> {
         self.inner.get_instance_requirements_with_metadata()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

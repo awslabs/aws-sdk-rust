@@ -17,9 +17,7 @@ impl AgentVersion {
         self.version.as_deref()
     }
     /// <p>The configuration manager.</p>
-    pub fn configuration_manager(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackConfigurationManager> {
+    pub fn configuration_manager(&self) -> ::std::option::Option<&crate::types::StackConfigurationManager> {
         self.configuration_manager.as_ref()
     }
 }
@@ -32,13 +30,10 @@ impl AgentVersion {
 
 /// A builder for [`AgentVersion`](crate::types::AgentVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentVersionBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
-    pub(crate) configuration_manager:
-        ::std::option::Option<crate::types::StackConfigurationManager>,
+    pub(crate) configuration_manager: ::std::option::Option<crate::types::StackConfigurationManager>,
 }
 impl AgentVersionBuilder {
     /// <p>The agent version.</p>
@@ -61,17 +56,12 @@ impl AgentVersionBuilder {
         self
     }
     /// <p>The configuration manager.</p>
-    pub fn set_configuration_manager(
-        mut self,
-        input: ::std::option::Option<crate::types::StackConfigurationManager>,
-    ) -> Self {
+    pub fn set_configuration_manager(mut self, input: ::std::option::Option<crate::types::StackConfigurationManager>) -> Self {
         self.configuration_manager = input;
         self
     }
     /// <p>The configuration manager.</p>
-    pub fn get_configuration_manager(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackConfigurationManager> {
+    pub fn get_configuration_manager(&self) -> &::std::option::Option<crate::types::StackConfigurationManager> {
         &self.configuration_manager
     }
     /// Consumes the builder and constructs a [`AgentVersion`](crate::types::AgentVersion).

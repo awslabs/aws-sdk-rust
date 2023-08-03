@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::delete_public_access_block::builders::DeletePublicAccessBlockFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_public_access_block::builders::DeletePublicAccessBlockFluentBuilder::set_account_id): <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to remove.</p>
     /// - On success, responds with [`DeletePublicAccessBlockOutput`](crate::operation::delete_public_access_block::DeletePublicAccessBlockOutput)
     /// - On failure, responds with [`SdkError<DeletePublicAccessBlockError>`](crate::operation::delete_public_access_block::DeletePublicAccessBlockError)
-    pub fn delete_public_access_block(
-        &self,
-    ) -> crate::operation::delete_public_access_block::builders::DeletePublicAccessBlockFluentBuilder
-    {
+    pub fn delete_public_access_block(&self) -> crate::operation::delete_public_access_block::builders::DeletePublicAccessBlockFluentBuilder {
         crate::operation::delete_public_access_block::builders::DeletePublicAccessBlockFluentBuilder::new(self.handle.clone())
     }
 }

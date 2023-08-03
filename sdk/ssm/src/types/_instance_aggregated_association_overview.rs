@@ -9,8 +9,7 @@ pub struct InstanceAggregatedAssociationOverview {
     pub detailed_status: ::std::option::Option<::std::string::String>,
     /// <p>The number of associations for the managed node(s).</p>
     #[doc(hidden)]
-    pub instance_association_status_aggregated_count:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub instance_association_status_aggregated_count: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl InstanceAggregatedAssociationOverview {
     /// <p>Detailed status information about the aggregated associations.</p>
@@ -18,9 +17,7 @@ impl InstanceAggregatedAssociationOverview {
         self.detailed_status.as_deref()
     }
     /// <p>The number of associations for the managed node(s).</p>
-    pub fn instance_association_status_aggregated_count(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn instance_association_status_aggregated_count(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
         self.instance_association_status_aggregated_count.as_ref()
     }
 }
@@ -33,28 +30,19 @@ impl InstanceAggregatedAssociationOverview {
 
 /// A builder for [`InstanceAggregatedAssociationOverview`](crate::types::InstanceAggregatedAssociationOverview).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceAggregatedAssociationOverviewBuilder {
     pub(crate) detailed_status: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_association_status_aggregated_count:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub(crate) instance_association_status_aggregated_count: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl InstanceAggregatedAssociationOverviewBuilder {
     /// <p>Detailed status information about the aggregated associations.</p>
-    pub fn detailed_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detailed_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detailed_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Detailed status information about the aggregated associations.</p>
-    pub fn set_detailed_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detailed_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detailed_status = input;
         self
     }
@@ -67,14 +55,8 @@ impl InstanceAggregatedAssociationOverviewBuilder {
     /// To override the contents of this collection use [`set_instance_association_status_aggregated_count`](Self::set_instance_association_status_aggregated_count).
     ///
     /// <p>The number of associations for the managed node(s).</p>
-    pub fn instance_association_status_aggregated_count(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: i32,
-    ) -> Self {
-        let mut hash_map = self
-            .instance_association_status_aggregated_count
-            .unwrap_or_default();
+    pub fn instance_association_status_aggregated_count(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i32) -> Self {
+        let mut hash_map = self.instance_association_status_aggregated_count.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.instance_association_status_aggregated_count = ::std::option::Option::Some(hash_map);
         self
@@ -97,8 +79,7 @@ impl InstanceAggregatedAssociationOverviewBuilder {
     pub fn build(self) -> crate::types::InstanceAggregatedAssociationOverview {
         crate::types::InstanceAggregatedAssociationOverview {
             detailed_status: self.detailed_status,
-            instance_association_status_aggregated_count: self
-                .instance_association_status_aggregated_count,
+            instance_association_status_aggregated_count: self.instance_association_status_aggregated_count,
         }
     }
 }

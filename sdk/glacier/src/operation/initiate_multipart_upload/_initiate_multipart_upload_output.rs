@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for InitiateMultipartUploadOutput {
 }
 impl InitiateMultipartUploadOutput {
     /// Creates a new builder-style object to manufacture [`InitiateMultipartUploadOutput`](crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput).
-    pub fn builder(
-    ) -> crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadOutputBuilder
-    {
+    pub fn builder() -> crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadOutputBuilder {
         crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadOutputBuilder::default()
     }
 }
 
 /// A builder for [`InitiateMultipartUploadOutput`](crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InitiateMultipartUploadOutputBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
@@ -85,9 +81,7 @@ impl InitiateMultipartUploadOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`InitiateMultipartUploadOutput`](crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput {
+    pub fn build(self) -> crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput {
         crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput {
             location: self.location,
             upload_id: self.upload_id,

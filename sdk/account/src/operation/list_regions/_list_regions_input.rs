@@ -17,8 +17,7 @@ pub struct ListRegionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of Region statuses (Enabling, Enabled, Disabling, Disabled, Enabled_by_default) to use to filter the list of Regions for a given account. For example, passing in a value of ENABLING will only return a list of Regions with a Region status of ENABLING.</p>
     #[doc(hidden)]
-    pub region_opt_status_contains:
-        ::std::option::Option<::std::vec::Vec<crate::types::RegionOptStatus>>,
+    pub region_opt_status_contains: ::std::option::Option<::std::vec::Vec<crate::types::RegionOptStatus>>,
 }
 impl ListRegionsInput {
     /// <p>Specifies the 12-digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. If you don't specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation. To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account. The specified account ID must also be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>
@@ -37,9 +36,7 @@ impl ListRegionsInput {
         self.next_token.as_deref()
     }
     /// <p>A list of Region statuses (Enabling, Enabled, Disabling, Disabled, Enabled_by_default) to use to filter the list of Regions for a given account. For example, passing in a value of ENABLING will only return a list of Regions with a Region status of ENABLING.</p>
-    pub fn region_opt_status_contains(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RegionOptStatus]> {
+    pub fn region_opt_status_contains(&self) -> ::std::option::Option<&[crate::types::RegionOptStatus]> {
         self.region_opt_status_contains.as_deref()
     }
 }
@@ -52,15 +49,12 @@ impl ListRegionsInput {
 
 /// A builder for [`ListRegionsInput`](crate::operation::list_regions::ListRegionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRegionsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) region_opt_status_contains:
-        ::std::option::Option<::std::vec::Vec<crate::types::RegionOptStatus>>,
+    pub(crate) region_opt_status_contains: ::std::option::Option<::std::vec::Vec<crate::types::RegionOptStatus>>,
 }
 impl ListRegionsInputBuilder {
     /// <p>Specifies the 12-digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. If you don't specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation. To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account. The specified account ID must also be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>
@@ -126,26 +120,16 @@ impl ListRegionsInputBuilder {
         self
     }
     /// <p>A list of Region statuses (Enabling, Enabled, Disabling, Disabled, Enabled_by_default) to use to filter the list of Regions for a given account. For example, passing in a value of ENABLING will only return a list of Regions with a Region status of ENABLING.</p>
-    pub fn set_region_opt_status_contains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegionOptStatus>>,
-    ) -> Self {
+    pub fn set_region_opt_status_contains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionOptStatus>>) -> Self {
         self.region_opt_status_contains = input;
         self
     }
     /// <p>A list of Region statuses (Enabling, Enabled, Disabling, Disabled, Enabled_by_default) to use to filter the list of Regions for a given account. For example, passing in a value of ENABLING will only return a list of Regions with a Region status of ENABLING.</p>
-    pub fn get_region_opt_status_contains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionOptStatus>> {
+    pub fn get_region_opt_status_contains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionOptStatus>> {
         &self.region_opt_status_contains
     }
     /// Consumes the builder and constructs a [`ListRegionsInput`](crate::operation::list_regions::ListRegionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_regions::ListRegionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_regions::ListRegionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_regions::ListRegionsInput {
             account_id: self.account_id,
             max_results: self.max_results,

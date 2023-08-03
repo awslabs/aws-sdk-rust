@@ -43,9 +43,7 @@ impl ListRoomsInput {
 
 /// A builder for [`ListRoomsInput`](crate::operation::list_rooms::ListRoomsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoomsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_id: ::std::option::Option<::std::string::String>,
@@ -110,12 +108,7 @@ impl ListRoomsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRoomsInput`](crate::operation::list_rooms::ListRoomsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_rooms::ListRoomsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rooms::ListRoomsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rooms::ListRoomsInput {
             account_id: self.account_id,
             member_id: self.member_id,

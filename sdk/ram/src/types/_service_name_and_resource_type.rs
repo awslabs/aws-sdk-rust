@@ -32,9 +32,7 @@ impl ServiceNameAndResourceType {
     /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
     /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
     /// </ul>
-    pub fn resource_region_scope(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceRegionScope> {
+    pub fn resource_region_scope(&self) -> ::std::option::Option<&crate::types::ResourceRegionScope> {
         self.resource_region_scope.as_ref()
     }
 }
@@ -47,9 +45,7 @@ impl ServiceNameAndResourceType {
 
 /// A builder for [`ServiceNameAndResourceType`](crate::types::ServiceNameAndResourceType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceNameAndResourceTypeBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
@@ -57,18 +53,12 @@ pub struct ServiceNameAndResourceTypeBuilder {
 }
 impl ServiceNameAndResourceTypeBuilder {
     /// <p>The type of the resource. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the resource. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -104,10 +94,7 @@ impl ServiceNameAndResourceTypeBuilder {
     /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
     /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
     /// </ul>
-    pub fn set_resource_region_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceRegionScope>,
-    ) -> Self {
+    pub fn set_resource_region_scope(mut self, input: ::std::option::Option<crate::types::ResourceRegionScope>) -> Self {
         self.resource_region_scope = input;
         self
     }
@@ -116,9 +103,7 @@ impl ServiceNameAndResourceTypeBuilder {
     /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
     /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
     /// </ul>
-    pub fn get_resource_region_scope(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceRegionScope> {
+    pub fn get_resource_region_scope(&self) -> &::std::option::Option<crate::types::ResourceRegionScope> {
         &self.resource_region_scope
     }
     /// Consumes the builder and constructs a [`ServiceNameAndResourceType`](crate::types::ServiceNameAndResourceType).

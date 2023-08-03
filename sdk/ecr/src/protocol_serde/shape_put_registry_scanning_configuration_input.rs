@@ -12,10 +12,7 @@ pub fn ser_put_registry_scanning_configuration_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_registry_scanning_rule::ser_registry_scanning_rule(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_registry_scanning_rule::ser_registry_scanning_rule(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

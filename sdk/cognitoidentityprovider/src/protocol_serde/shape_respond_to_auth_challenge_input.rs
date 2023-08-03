@@ -25,19 +25,13 @@ pub fn ser_respond_to_auth_challenge_input(
     if let Some(var_8) = &input.analytics_metadata {
         #[allow(unused_mut)]
         let mut object_9 = object.key("AnalyticsMetadata").start_object();
-        crate::protocol_serde::shape_analytics_metadata_type::ser_analytics_metadata_type(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_analytics_metadata_type::ser_analytics_metadata_type(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.user_context_data {
         #[allow(unused_mut)]
         let mut object_11 = object.key("UserContextData").start_object();
-        crate::protocol_serde::shape_user_context_data_type::ser_user_context_data_type(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_user_context_data_type::ser_user_context_data_type(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.client_metadata {

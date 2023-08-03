@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListDeploymentTargetsOutput {
 }
 impl ListDeploymentTargetsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentTargetsOutput`](crate::operation::list_deployment_targets::ListDeploymentTargetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_deployment_targets::builders::ListDeploymentTargetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_deployment_targets::builders::ListDeploymentTargetsOutputBuilder {
         crate::operation::list_deployment_targets::builders::ListDeploymentTargetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeploymentTargetsOutput`](crate::operation::list_deployment_targets::ListDeploymentTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentTargetsOutputBuilder {
     pub(crate) target_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListDeploymentTargetsOutputBuilder {
         self
     }
     /// <p> The unique IDs of deployment targets. </p>
-    pub fn set_target_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_target_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_ids = input;
         self
     }

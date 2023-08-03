@@ -38,9 +38,7 @@ impl AssociateHealthCheckFluentBuilder {
         }
     }
     /// Access the AssociateHealthCheck as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_health_check::builders::AssociateHealthCheckInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_health_check::builders::AssociateHealthCheckInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl AssociateHealthCheckFluentBuilder {
             crate::operation::associate_health_check::AssociateHealthCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_health_check::AssociateHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_health_check::AssociateHealthCheckError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl AssociateHealthCheckFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl AssociateHealthCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_health_check::AssociateHealthCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_health_check::AssociateHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_health_check::AssociateHealthCheckError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl AssociateHealthCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_health_check::AssociateHealthCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_health_check::AssociateHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_health_check::AssociateHealthCheckError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl AssociateHealthCheckFluentBuilder {
             crate::operation::associate_health_check::AssociateHealthCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_health_check::AssociateHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_health_check::AssociateHealthCheckError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
-    pub fn protection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protection_id(input.into());
         self
     }
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
-    pub fn set_protection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protection_id(input);
         self
     }
@@ -144,18 +125,12 @@ impl AssociateHealthCheckFluentBuilder {
         self.inner.get_protection_id()
     }
     /// <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
-    pub fn health_check_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.health_check_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
-    pub fn set_health_check_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_health_check_arn(input);
         self
     }

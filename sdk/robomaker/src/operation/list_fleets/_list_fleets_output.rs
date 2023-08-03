@@ -38,9 +38,7 @@ impl ListFleetsOutput {
 
 /// A builder for [`ListFleetsOutput`](crate::operation::list_fleets::ListFleetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFleetsOutputBuilder {
     pub(crate) fleet_details: ::std::option::Option<::std::vec::Vec<crate::types::Fleet>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,17 +57,12 @@ impl ListFleetsOutputBuilder {
         self
     }
     /// <p>A list of fleet details meeting the request criteria.</p>
-    pub fn set_fleet_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Fleet>>,
-    ) -> Self {
+    pub fn set_fleet_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Fleet>>) -> Self {
         self.fleet_details = input;
         self
     }
     /// <p>A list of fleet details meeting the request criteria.</p>
-    pub fn get_fleet_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Fleet>> {
+    pub fn get_fleet_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Fleet>> {
         &self.fleet_details
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>

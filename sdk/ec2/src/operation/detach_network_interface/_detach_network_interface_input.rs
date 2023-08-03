@@ -42,18 +42,14 @@ impl DetachNetworkInterfaceInput {
 }
 impl DetachNetworkInterfaceInput {
     /// Creates a new builder-style object to manufacture [`DetachNetworkInterfaceInput`](crate::operation::detach_network_interface::DetachNetworkInterfaceInput).
-    pub fn builder(
-    ) -> crate::operation::detach_network_interface::builders::DetachNetworkInterfaceInputBuilder
-    {
+    pub fn builder() -> crate::operation::detach_network_interface::builders::DetachNetworkInterfaceInputBuilder {
         crate::operation::detach_network_interface::builders::DetachNetworkInterfaceInputBuilder::default()
     }
 }
 
 /// A builder for [`DetachNetworkInterfaceInput`](crate::operation::detach_network_interface::DetachNetworkInterfaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachNetworkInterfaceInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -61,18 +57,12 @@ pub struct DetachNetworkInterfaceInputBuilder {
 }
 impl DetachNetworkInterfaceInputBuilder {
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_id = input;
         self
     }
@@ -129,16 +119,12 @@ impl DetachNetworkInterfaceInputBuilder {
     /// Consumes the builder and constructs a [`DetachNetworkInterfaceInput`](crate::operation::detach_network_interface::DetachNetworkInterfaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_network_interface::DetachNetworkInterfaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::detach_network_interface::DetachNetworkInterfaceInput {
-                attachment_id: self.attachment_id,
-                dry_run: self.dry_run,
-                force: self.force,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::detach_network_interface::DetachNetworkInterfaceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::detach_network_interface::DetachNetworkInterfaceInput {
+            attachment_id: self.attachment_id,
+            dry_run: self.dry_run,
+            force: self.force,
+        })
     }
 }

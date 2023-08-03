@@ -54,9 +54,7 @@ impl TrafficRoutingConfig {
 
 /// A builder for [`TrafficRoutingConfig`](crate::types::TrafficRoutingConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrafficRoutingConfigBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TrafficRoutingConfigType>,
     pub(crate) wait_interval_in_seconds: ::std::option::Option<i32>,
@@ -80,10 +78,7 @@ impl TrafficRoutingConfigBuilder {
     /// <li> <p> <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which is a small portion of the traffic. The second step is the remainder of the traffic. </p> </li>
     /// <li> <p> <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size. </p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficRoutingConfigType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TrafficRoutingConfigType>) -> Self {
         self.r#type = input;
         self
     }
@@ -116,10 +111,7 @@ impl TrafficRoutingConfigBuilder {
         self
     }
     /// <p>Batch size for the first step to turn on traffic on the new endpoint fleet. <code>Value</code> must be less than or equal to 50% of the variant's total instance count.</p>
-    pub fn set_canary_size(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacitySize>,
-    ) -> Self {
+    pub fn set_canary_size(mut self, input: ::std::option::Option<crate::types::CapacitySize>) -> Self {
         self.canary_size = input;
         self
     }
@@ -133,10 +125,7 @@ impl TrafficRoutingConfigBuilder {
         self
     }
     /// <p>Batch size for each step to turn on traffic on the new endpoint fleet. <code>Value</code> must be 10-50% of the variant's total instance count.</p>
-    pub fn set_linear_step_size(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacitySize>,
-    ) -> Self {
+    pub fn set_linear_step_size(mut self, input: ::std::option::Option<crate::types::CapacitySize>) -> Self {
         self.linear_step_size = input;
         self
     }

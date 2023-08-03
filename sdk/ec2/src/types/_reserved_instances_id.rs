@@ -23,26 +23,18 @@ impl ReservedInstancesId {
 
 /// A builder for [`ReservedInstancesId`](crate::types::ReservedInstancesId).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservedInstancesIdBuilder {
     pub(crate) reserved_instances_id: ::std::option::Option<::std::string::String>,
 }
 impl ReservedInstancesIdBuilder {
     /// <p>The ID of the Reserved Instance.</p>
-    pub fn reserved_instances_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instances_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_instances_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Reserved Instance.</p>
-    pub fn set_reserved_instances_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_instances_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_instances_id = input;
         self
     }

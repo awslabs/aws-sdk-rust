@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_service_profile::CreateServiceProfileOutput::arn): <p>The Amazon Resource Name of the new resource.</p>
     ///   - [`id(Option<String>)`](crate::operation::create_service_profile::CreateServiceProfileOutput::id): <p>The ID of the new service profile.</p>
     /// - On failure, responds with [`SdkError<CreateServiceProfileError>`](crate::operation::create_service_profile::CreateServiceProfileError)
-    pub fn create_service_profile(
-        &self,
-    ) -> crate::operation::create_service_profile::builders::CreateServiceProfileFluentBuilder {
-        crate::operation::create_service_profile::builders::CreateServiceProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_service_profile(&self) -> crate::operation::create_service_profile::builders::CreateServiceProfileFluentBuilder {
+        crate::operation::create_service_profile::builders::CreateServiceProfileFluentBuilder::new(self.handle.clone())
     }
 }

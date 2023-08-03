@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutContactInformationOutput {
 }
 impl PutContactInformationOutput {
     /// Creates a new builder-style object to manufacture [`PutContactInformationOutput`](crate::operation::put_contact_information::PutContactInformationOutput).
-    pub fn builder(
-    ) -> crate::operation::put_contact_information::builders::PutContactInformationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_contact_information::builders::PutContactInformationOutputBuilder {
         crate::operation::put_contact_information::builders::PutContactInformationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutContactInformationOutput`](crate::operation::put_contact_information::PutContactInformationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutContactInformationOutputBuilder {
     _request_id: Option<String>,
 }

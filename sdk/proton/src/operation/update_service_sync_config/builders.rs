@@ -26,8 +26,7 @@ impl UpdateServiceSyncConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceSyncConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_service_sync_config::builders::UpdateServiceSyncConfigInputBuilder,
+    inner: crate::operation::update_service_sync_config::builders::UpdateServiceSyncConfigInputBuilder,
 }
 impl UpdateServiceSyncConfigFluentBuilder {
     /// Creates a new `UpdateServiceSyncConfig`.
@@ -38,10 +37,7 @@ impl UpdateServiceSyncConfigFluentBuilder {
         }
     }
     /// Access the UpdateServiceSyncConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_service_sync_config::builders::UpdateServiceSyncConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_service_sync_config::builders::UpdateServiceSyncConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateServiceSyncConfigFluentBuilder {
             crate::operation::update_service_sync_config::UpdateServiceSyncConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_sync_config::UpdateServiceSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_sync_config::UpdateServiceSyncConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateServiceSyncConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateServiceSyncConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_sync_config::UpdateServiceSyncConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_sync_config::UpdateServiceSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_sync_config::UpdateServiceSyncConfigError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateServiceSyncConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_sync_config::UpdateServiceSyncConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_sync_config::UpdateServiceSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_sync_config::UpdateServiceSyncConfigError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl UpdateServiceSyncConfigFluentBuilder {
             crate::operation::update_service_sync_config::UpdateServiceSyncConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_service_sync_config::UpdateServiceSyncConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_service_sync_config::UpdateServiceSyncConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -144,32 +129,21 @@ impl UpdateServiceSyncConfigFluentBuilder {
         self
     }
     /// <p>The name of the repository provider where the Proton Ops file is found.</p>
-    pub fn set_repository_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_repository_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.inner = self.inner.set_repository_provider(input);
         self
     }
     /// <p>The name of the repository provider where the Proton Ops file is found.</p>
-    pub fn get_repository_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+    pub fn get_repository_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
         self.inner.get_repository_provider()
     }
     /// <p>The name of the repository where the Proton Ops file is found.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository where the Proton Ops file is found.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }

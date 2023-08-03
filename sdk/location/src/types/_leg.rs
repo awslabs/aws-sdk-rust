@@ -120,10 +120,7 @@ impl LegBuilder {
     /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p> <note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>. </p>
     /// </note>
-    pub fn set_start_position(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<f64>>,
-    ) -> Self {
+    pub fn set_start_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.start_position = input;
         self
     }
@@ -222,10 +219,7 @@ impl LegBuilder {
         self
     }
     /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
-    ) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Step>>) -> Self {
         self.steps = input;
         self
     }

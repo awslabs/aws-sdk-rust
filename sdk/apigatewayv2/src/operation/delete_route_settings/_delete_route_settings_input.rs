@@ -29,18 +29,14 @@ impl DeleteRouteSettingsInput {
 }
 impl DeleteRouteSettingsInput {
     /// Creates a new builder-style object to manufacture [`DeleteRouteSettingsInput`](crate::operation::delete_route_settings::DeleteRouteSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::delete_route_settings::builders::DeleteRouteSettingsInputBuilder {
-        crate::operation::delete_route_settings::builders::DeleteRouteSettingsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_route_settings::builders::DeleteRouteSettingsInputBuilder {
+        crate::operation::delete_route_settings::builders::DeleteRouteSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRouteSettingsInput`](crate::operation::delete_route_settings::DeleteRouteSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRouteSettingsInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) route_key: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl DeleteRouteSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRouteSettingsInput`](crate::operation::delete_route_settings::DeleteRouteSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_route_settings::DeleteRouteSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_route_settings::DeleteRouteSettingsInput {
-                api_id: self.api_id,
-                route_key: self.route_key,
-                stage_name: self.stage_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_route_settings::DeleteRouteSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_route_settings::DeleteRouteSettingsInput {
+            api_id: self.api_id,
+            route_key: self.route_key,
+            stage_name: self.stage_name,
+        })
     }
 }

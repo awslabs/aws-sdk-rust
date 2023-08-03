@@ -29,16 +29,14 @@ impl DisassociateDeviceFromPlacementInput {
 }
 impl DisassociateDeviceFromPlacementInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDeviceFromPlacementInput`](crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementInput).
-    pub fn builder() -> crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementInputBuilder {
         crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDeviceFromPlacementInput`](crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDeviceFromPlacementInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) placement_name: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl DisassociateDeviceFromPlacementInputBuilder {
         &self.project_name
     }
     /// <p>The name of the placement that the device should be removed from.</p>
-    pub fn placement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn placement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the placement that the device should be removed from.</p>
-    pub fn set_placement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_placement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.placement_name = input;
         self
     }
@@ -80,18 +72,12 @@ impl DisassociateDeviceFromPlacementInputBuilder {
         &self.placement_name
     }
     /// <p>The device ID that should be removed from the placement.</p>
-    pub fn device_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device ID that should be removed from the placement.</p>
-    pub fn set_device_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_template_name = input;
         self
     }
@@ -108,13 +94,10 @@ impl DisassociateDeviceFromPlacementInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementInput {
-                project_name: self.project_name
-                ,
-                placement_name: self.placement_name
-                ,
-                device_template_name: self.device_template_name
-                ,
-            }
+                project_name: self.project_name,
+                placement_name: self.placement_name,
+                device_template_name: self.device_template_name,
+            },
         )
     }
 }

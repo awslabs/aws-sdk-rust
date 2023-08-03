@@ -23,9 +23,7 @@ impl AnalysisResultLocation {
 
 /// A builder for [`AnalysisResultLocation`](crate::types::AnalysisResultLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisResultLocationBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
 }

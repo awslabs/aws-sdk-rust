@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`thumbprint_list(Vec<String>)`](crate::operation::update_open_id_connect_provider_thumbprint::builders::UpdateOpenIDConnectProviderThumbprintFluentBuilder::thumbprint_list) / [`set_thumbprint_list(Option<Vec<String>>)`](crate::operation::update_open_id_connect_provider_thumbprint::builders::UpdateOpenIDConnectProviderThumbprintFluentBuilder::set_thumbprint_list): <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
     /// - On success, responds with [`UpdateOpenIdConnectProviderThumbprintOutput`](crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIdConnectProviderThumbprintOutput)
     /// - On failure, responds with [`SdkError<UpdateOpenIDConnectProviderThumbprintError>`](crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIDConnectProviderThumbprintError)
-    pub fn update_open_id_connect_provider_thumbprint(&self) -> crate::operation::update_open_id_connect_provider_thumbprint::builders::UpdateOpenIDConnectProviderThumbprintFluentBuilder{
-        crate::operation::update_open_id_connect_provider_thumbprint::builders::UpdateOpenIDConnectProviderThumbprintFluentBuilder::new(self.handle.clone())
+    pub fn update_open_id_connect_provider_thumbprint(
+        &self,
+    ) -> crate::operation::update_open_id_connect_provider_thumbprint::builders::UpdateOpenIDConnectProviderThumbprintFluentBuilder {
+        crate::operation::update_open_id_connect_provider_thumbprint::builders::UpdateOpenIDConnectProviderThumbprintFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

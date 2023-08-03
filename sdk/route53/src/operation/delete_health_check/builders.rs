@@ -10,10 +10,7 @@ impl DeleteHealthCheckInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_health_check::DeleteHealthCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_health_check::DeleteHealthCheckError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_health_check::DeleteHealthCheckError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_health_check();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DeleteHealthCheckFluentBuilder {
         }
     }
     /// Access the DeleteHealthCheck as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_health_check::builders::DeleteHealthCheckInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_health_check::builders::DeleteHealthCheckInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DeleteHealthCheckFluentBuilder {
             crate::operation::delete_health_check::DeleteHealthCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_health_check::DeleteHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_health_check::DeleteHealthCheckError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DeleteHealthCheckFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DeleteHealthCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_health_check::DeleteHealthCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_health_check::DeleteHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_health_check::DeleteHealthCheckError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DeleteHealthCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_health_check::DeleteHealthCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_health_check::DeleteHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_health_check::DeleteHealthCheckError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl DeleteHealthCheckFluentBuilder {
             crate::operation::delete_health_check::DeleteHealthCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_health_check::DeleteHealthCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_health_check::DeleteHealthCheckError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the health check that you want to delete.</p>
-    pub fn health_check_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.health_check_id(input.into());
         self
     }
     /// <p>The ID of the health check that you want to delete.</p>
-    pub fn set_health_check_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_health_check_id(input);
         self
     }

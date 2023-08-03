@@ -10,10 +10,7 @@ impl PostToConnectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::post_to_connection::PostToConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_to_connection::PostToConnectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_to_connection::PostToConnectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.post_to_connection();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PostToConnectionFluentBuilder {
         }
     }
     /// Access the PostToConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::post_to_connection::builders::PostToConnectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::post_to_connection::builders::PostToConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PostToConnectionFluentBuilder {
             crate::operation::post_to_connection::PostToConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_to_connection::PostToConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_to_connection::PostToConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PostToConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PostToConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::post_to_connection::PostToConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_to_connection::PostToConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_to_connection::PostToConnectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PostToConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::post_to_connection::PostToConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_to_connection::PostToConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_to_connection::PostToConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PostToConnectionFluentBuilder {
             crate::operation::post_to_connection::PostToConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::post_to_connection::PostToConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::post_to_connection::PostToConnectionError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl PostToConnectionFluentBuilder {
         self.inner.get_data()
     }
     /// <p>The identifier of the connection that a specific client is using.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The identifier of the connection that a specific client is using.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }

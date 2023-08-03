@@ -5,16 +5,16 @@ pub use crate::operation::list_stack_instances_for_provisioned_product::_list_st
 
 impl ListStackInstancesForProvisionedProductInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_stack_instances_for_provisioned_product();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStackInstancesForProvisionedProductFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductInputBuilder,
+    inner: crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductInputBuilder,
 }
 impl ListStackInstancesForProvisionedProductFluentBuilder {
     /// Creates a new `ListStackInstancesForProvisionedProduct`.
@@ -37,15 +37,24 @@ impl ListStackInstancesForProvisionedProductFluentBuilder {
         }
     }
     /// Access the ListStackInstancesForProvisionedProduct as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProduct, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProduct,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl ListStackInstancesForProvisionedProductFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl ListStackInstancesForProvisionedProductFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProduct, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProduct,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The language code.</p>
@@ -99,10 +124,7 @@ impl ListStackInstancesForProvisionedProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -111,10 +133,7 @@ impl ListStackInstancesForProvisionedProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -127,18 +146,12 @@ impl ListStackInstancesForProvisionedProductFluentBuilder {
         self.inner.get_accept_language()
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn provisioned_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioned_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provisioned_product_id(input.into());
         self
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn set_provisioned_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioned_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provisioned_product_id(input);
         self
     }

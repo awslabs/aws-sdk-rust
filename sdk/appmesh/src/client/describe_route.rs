@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeRouteOutput`](crate::operation::describe_route::DescribeRouteOutput) with field(s):
     ///   - [`route(Option<RouteData>)`](crate::operation::describe_route::DescribeRouteOutput::route): <p>The full description of your route.</p>
     /// - On failure, responds with [`SdkError<DescribeRouteError>`](crate::operation::describe_route::DescribeRouteError)
-    pub fn describe_route(
-        &self,
-    ) -> crate::operation::describe_route::builders::DescribeRouteFluentBuilder {
-        crate::operation::describe_route::builders::DescribeRouteFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_route(&self) -> crate::operation::describe_route::builders::DescribeRouteFluentBuilder {
+        crate::operation::describe_route::builders::DescribeRouteFluentBuilder::new(self.handle.clone())
     }
 }

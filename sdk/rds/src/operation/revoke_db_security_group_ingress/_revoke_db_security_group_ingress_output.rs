@@ -23,16 +23,14 @@ impl ::aws_http::request_id::RequestId for RevokeDbSecurityGroupIngressOutput {
 }
 impl RevokeDbSecurityGroupIngressOutput {
     /// Creates a new builder-style object to manufacture [`RevokeDbSecurityGroupIngressOutput`](crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressOutput).
-    pub fn builder() -> crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressOutputBuilder{
+    pub fn builder() -> crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressOutputBuilder {
         crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressOutputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeDbSecurityGroupIngressOutput`](crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeDbSecurityGroupIngressOutputBuilder {
     pub(crate) db_security_group: ::std::option::Option<crate::types::DbSecurityGroup>,
     _request_id: Option<String>,
@@ -46,10 +44,7 @@ impl RevokeDbSecurityGroupIngressOutputBuilder {
     }
     /// <p>Contains the details for an Amazon RDS DB security group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
-    pub fn set_db_security_group(
-        mut self,
-        input: ::std::option::Option<crate::types::DbSecurityGroup>,
-    ) -> Self {
+    pub fn set_db_security_group(mut self, input: ::std::option::Option<crate::types::DbSecurityGroup>) -> Self {
         self.db_security_group = input;
         self
     }
@@ -68,10 +63,7 @@ impl RevokeDbSecurityGroupIngressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RevokeDbSecurityGroupIngressOutput`](crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressOutput
-    {
+    pub fn build(self) -> crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressOutput {
         crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressOutput {
             db_security_group: self.db_security_group,
             _request_id: self._request_id,

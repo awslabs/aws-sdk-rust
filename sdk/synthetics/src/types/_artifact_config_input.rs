@@ -23,9 +23,7 @@ impl ArtifactConfigInput {
 
 /// A builder for [`ArtifactConfigInput`](crate::types::ArtifactConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArtifactConfigInputBuilder {
     pub(crate) s3_encryption: ::std::option::Option<crate::types::S3EncryptionConfig>,
 }
@@ -36,10 +34,7 @@ impl ArtifactConfigInputBuilder {
         self
     }
     /// <p>A structure that contains the configuration of the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3. Artifact encryption functionality is available only for canaries that use Synthetics runtime version syn-nodejs-puppeteer-3.3 or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_artifact_encryption.html">Encrypting canary artifacts</a> </p>
-    pub fn set_s3_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::S3EncryptionConfig>,
-    ) -> Self {
+    pub fn set_s3_encryption(mut self, input: ::std::option::Option<crate::types::S3EncryptionConfig>) -> Self {
         self.s3_encryption = input;
         self
     }

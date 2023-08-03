@@ -26,7 +26,7 @@ impl AcceptReservedNodeExchangeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptReservedNodeExchangeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeInputBuilder,
+    inner: crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeInputBuilder,
 }
 impl AcceptReservedNodeExchangeFluentBuilder {
     /// Creates a new `AcceptReservedNodeExchange`.
@@ -37,7 +37,7 @@ impl AcceptReservedNodeExchangeFluentBuilder {
         }
     }
     /// Access the AcceptReservedNodeExchange as a reference.
-    pub fn as_input(&self) -> &crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AcceptReservedNodeExchangeFluentBuilder {
             crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchange,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AcceptReservedNodeExchangeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AcceptReservedNodeExchangeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AcceptReservedNodeExchangeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl AcceptReservedNodeExchangeFluentBuilder {
             crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchange,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A string representing the node identifier of the DC1 Reserved Node to be exchanged.</p>
-    pub fn reserved_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_node_id(input.into());
         self
     }
     /// <p>A string representing the node identifier of the DC1 Reserved Node to be exchanged.</p>
-    pub fn set_reserved_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_node_id(input);
         self
     }
@@ -141,25 +124,17 @@ impl AcceptReservedNodeExchangeFluentBuilder {
         self.inner.get_reserved_node_id()
     }
     /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
-    pub fn target_reserved_node_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_reserved_node_offering_id(input.into());
         self
     }
     /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
-    pub fn set_target_reserved_node_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_reserved_node_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_reserved_node_offering_id(input);
         self
     }
     /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
-    pub fn get_target_reserved_node_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_reserved_node_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_reserved_node_offering_id()
     }
 }

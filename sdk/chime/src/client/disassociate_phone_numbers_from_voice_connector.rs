@@ -8,10 +8,12 @@ impl super::Client {
     /// - On success, responds with [`DisassociatePhoneNumbersFromVoiceConnectorOutput`](crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput) with field(s):
     ///   - [`phone_number_errors(Option<Vec<PhoneNumberError>>)`](crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput::phone_number_errors): <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
     /// - On failure, responds with [`SdkError<DisassociatePhoneNumbersFromVoiceConnectorError>`](crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorError)
-    #[deprecated(
-        note = "Replaced by DisassociatePhoneNumbersFromVoiceConnector in the Amazon Chime SDK Voice Namespace"
-    )]
-    pub fn disassociate_phone_numbers_from_voice_connector(&self) -> crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorFluentBuilder{
-        crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorFluentBuilder::new(self.handle.clone())
+    #[deprecated(note = "Replaced by DisassociatePhoneNumbersFromVoiceConnector in the Amazon Chime SDK Voice Namespace")]
+    pub fn disassociate_phone_numbers_from_voice_connector(
+        &self,
+    ) -> crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorFluentBuilder {
+        crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

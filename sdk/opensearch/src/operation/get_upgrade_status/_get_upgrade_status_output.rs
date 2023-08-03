@@ -36,17 +36,14 @@ impl ::aws_http::request_id::RequestId for GetUpgradeStatusOutput {
 }
 impl GetUpgradeStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetUpgradeStatusOutput`](crate::operation::get_upgrade_status::GetUpgradeStatusOutput).
-    pub fn builder() -> crate::operation::get_upgrade_status::builders::GetUpgradeStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_upgrade_status::builders::GetUpgradeStatusOutputBuilder {
         crate::operation::get_upgrade_status::builders::GetUpgradeStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUpgradeStatusOutput`](crate::operation::get_upgrade_status::GetUpgradeStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUpgradeStatusOutputBuilder {
     pub(crate) upgrade_step: ::std::option::Option<crate::types::UpgradeStep>,
     pub(crate) step_status: ::std::option::Option<crate::types::UpgradeStatus>,
@@ -60,10 +57,7 @@ impl GetUpgradeStatusOutputBuilder {
         self
     }
     /// <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
-    pub fn set_upgrade_step(
-        mut self,
-        input: ::std::option::Option<crate::types::UpgradeStep>,
-    ) -> Self {
+    pub fn set_upgrade_step(mut self, input: ::std::option::Option<crate::types::UpgradeStep>) -> Self {
         self.upgrade_step = input;
         self
     }
@@ -77,10 +71,7 @@ impl GetUpgradeStatusOutputBuilder {
         self
     }
     /// <p>The status of the current step that an upgrade is on.</p>
-    pub fn set_step_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UpgradeStatus>,
-    ) -> Self {
+    pub fn set_step_status(mut self, input: ::std::option::Option<crate::types::UpgradeStatus>) -> Self {
         self.step_status = input;
         self
     }

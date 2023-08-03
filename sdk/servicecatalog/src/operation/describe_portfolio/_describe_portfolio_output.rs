@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for DescribePortfolioOutput {
 }
 impl DescribePortfolioOutput {
     /// Creates a new builder-style object to manufacture [`DescribePortfolioOutput`](crate::operation::describe_portfolio::DescribePortfolioOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_portfolio::builders::DescribePortfolioOutputBuilder {
+    pub fn builder() -> crate::operation::describe_portfolio::builders::DescribePortfolioOutputBuilder {
         crate::operation::describe_portfolio::builders::DescribePortfolioOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePortfolioOutput`](crate::operation::describe_portfolio::DescribePortfolioOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePortfolioOutputBuilder {
     pub(crate) portfolio_detail: ::std::option::Option<crate::types::PortfolioDetail>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -67,10 +64,7 @@ impl DescribePortfolioOutputBuilder {
         self
     }
     /// <p>Information about the portfolio.</p>
-    pub fn set_portfolio_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::PortfolioDetail>,
-    ) -> Self {
+    pub fn set_portfolio_detail(mut self, input: ::std::option::Option<crate::types::PortfolioDetail>) -> Self {
         self.portfolio_detail = input;
         self
     }
@@ -90,10 +84,7 @@ impl DescribePortfolioOutputBuilder {
         self
     }
     /// <p>Information about the tags associated with the portfolio.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -113,17 +104,12 @@ impl DescribePortfolioOutputBuilder {
         self
     }
     /// <p>Information about the TagOptions associated with the portfolio.</p>
-    pub fn set_tag_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>>,
-    ) -> Self {
+    pub fn set_tag_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>>) -> Self {
         self.tag_options = input;
         self
     }
     /// <p>Information about the TagOptions associated with the portfolio.</p>
-    pub fn get_tag_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>> {
+    pub fn get_tag_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>> {
         &self.tag_options
     }
     /// Appends an item to `budgets`.
@@ -138,17 +124,12 @@ impl DescribePortfolioOutputBuilder {
         self
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn set_budgets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>,
-    ) -> Self {
+    pub fn set_budgets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>) -> Self {
         self.budgets = input;
         self
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn get_budgets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>> {
+    pub fn get_budgets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>> {
         &self.budgets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

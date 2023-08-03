@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`AddStorageSystemOutput`](crate::operation::add_storage_system::AddStorageSystemOutput) with field(s):
     ///   - [`storage_system_arn(Option<String>)`](crate::operation::add_storage_system::AddStorageSystemOutput::storage_system_arn): <p>The ARN of the on-premises storage system that you can use with DataSync Discovery.</p>
     /// - On failure, responds with [`SdkError<AddStorageSystemError>`](crate::operation::add_storage_system::AddStorageSystemError)
-    pub fn add_storage_system(
-        &self,
-    ) -> crate::operation::add_storage_system::builders::AddStorageSystemFluentBuilder {
-        crate::operation::add_storage_system::builders::AddStorageSystemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_storage_system(&self) -> crate::operation::add_storage_system::builders::AddStorageSystemFluentBuilder {
+        crate::operation::add_storage_system::builders::AddStorageSystemFluentBuilder::new(self.handle.clone())
     }
 }

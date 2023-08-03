@@ -26,8 +26,7 @@ impl DescribeProductAsAdminInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeProductAsAdminFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminInputBuilder,
+    inner: crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminInputBuilder,
 }
 impl DescribeProductAsAdminFluentBuilder {
     /// Creates a new `DescribeProductAsAdmin`.
@@ -38,10 +37,7 @@ impl DescribeProductAsAdminFluentBuilder {
         }
     }
     /// Access the DescribeProductAsAdmin as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeProductAsAdminFluentBuilder {
             crate::operation::describe_product_as_admin::DescribeProductAsAdmin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_product_as_admin::DescribeProductAsAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_product_as_admin::DescribeProductAsAdminError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeProductAsAdminFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeProductAsAdminFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_product_as_admin::DescribeProductAsAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_product_as_admin::DescribeProductAsAdminError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeProductAsAdminFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_product_as_admin::DescribeProductAsAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_product_as_admin::DescribeProductAsAdminError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DescribeProductAsAdminFluentBuilder {
             crate::operation::describe_product_as_admin::DescribeProductAsAdmin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_product_as_admin::DescribeProductAsAdminError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_product_as_admin::DescribeProductAsAdminError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +114,7 @@ impl DescribeProductAsAdminFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -141,10 +123,7 @@ impl DescribeProductAsAdminFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -186,19 +165,13 @@ impl DescribeProductAsAdminFluentBuilder {
     }
     /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
     /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
-    pub fn source_portfolio_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_portfolio_id(input.into());
         self
     }
     /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
     /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
-    pub fn set_source_portfolio_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_portfolio_id(input);
         self
     }

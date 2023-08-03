@@ -38,13 +38,7 @@
 /// Blackout Slate Network End Blackout
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BlackoutSlateNetworkEndBlackout {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for BlackoutSlateNetworkEndBlackout {
         match s {
             "DISABLED" => BlackoutSlateNetworkEndBlackout::Disabled,
             "ENABLED" => BlackoutSlateNetworkEndBlackout::Enabled,
-            other => BlackoutSlateNetworkEndBlackout::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => BlackoutSlateNetworkEndBlackout::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

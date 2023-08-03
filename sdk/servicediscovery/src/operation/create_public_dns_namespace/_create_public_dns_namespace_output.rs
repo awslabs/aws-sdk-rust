@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreatePublicDnsNamespaceOutput {
 }
 impl CreatePublicDnsNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`CreatePublicDnsNamespaceOutput`](crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceOutput).
-    pub fn builder() -> crate::operation::create_public_dns_namespace::builders::CreatePublicDnsNamespaceOutputBuilder{
+    pub fn builder() -> crate::operation::create_public_dns_namespace::builders::CreatePublicDnsNamespaceOutputBuilder {
         crate::operation::create_public_dns_namespace::builders::CreatePublicDnsNamespaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePublicDnsNamespaceOutput`](crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePublicDnsNamespaceOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl CreatePublicDnsNamespaceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreatePublicDnsNamespaceOutput`](crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceOutput {
+    pub fn build(self) -> crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceOutput {
         crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceOutput {
             operation_id: self.operation_id,
             _request_id: self._request_id,

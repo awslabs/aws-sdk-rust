@@ -10,10 +10,7 @@ impl StartQueryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_query::StartQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_query::StartQueryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_query::StartQueryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_query();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl StartQueryFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_query::StartQuery,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_query::StartQuery, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_query::StartQueryError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl StartQueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,27 +96,18 @@ impl StartQueryFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_query::StartQuery,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::start_query::StartQuery, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::start_query::StartQueryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The SQL code of your query.</p>
-    pub fn query_statement(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_statement(input.into());
         self
     }
     /// <p>The SQL code of your query.</p>
-    pub fn set_query_statement(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_statement(input);
         self
     }
@@ -134,18 +116,12 @@ impl StartQueryFluentBuilder {
         self.inner.get_query_statement()
     }
     /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
-    pub fn delivery_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_s3_uri(input.into());
         self
     }
     /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
-    pub fn set_delivery_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_s3_uri(input);
         self
     }
@@ -172,25 +148,17 @@ impl StartQueryFluentBuilder {
     /// To override the contents of this collection use [`set_query_parameters`](Self::set_query_parameters).
     ///
     /// <p> The query parameters for the specified <code>QueryAlias</code>. </p>
-    pub fn query_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_parameters(input.into());
         self
     }
     /// <p> The query parameters for the specified <code>QueryAlias</code>. </p>
-    pub fn set_query_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_query_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_query_parameters(input);
         self
     }
     /// <p> The query parameters for the specified <code>QueryAlias</code>. </p>
-    pub fn get_query_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_query_parameters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_query_parameters()
     }
 }

@@ -27,7 +27,7 @@ impl AddLayerVersionPermissionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddLayerVersionPermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::add_layer_version_permission::builders::AddLayerVersionPermissionInputBuilder,
+    inner: crate::operation::add_layer_version_permission::builders::AddLayerVersionPermissionInputBuilder,
 }
 impl AddLayerVersionPermissionFluentBuilder {
     /// Creates a new `AddLayerVersionPermission`.
@@ -38,7 +38,7 @@ impl AddLayerVersionPermissionFluentBuilder {
         }
     }
     /// Access the AddLayerVersionPermission as a reference.
-    pub fn as_input(&self) -> &crate::operation::add_layer_version_permission::builders::AddLayerVersionPermissionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::add_layer_version_permission::builders::AddLayerVersionPermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl AddLayerVersionPermissionFluentBuilder {
             crate::operation::add_layer_version_permission::AddLayerVersionPermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_layer_version_permission::AddLayerVersionPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_layer_version_permission::AddLayerVersionPermissionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl AddLayerVersionPermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl AddLayerVersionPermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_layer_version_permission::AddLayerVersionPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_layer_version_permission::AddLayerVersionPermissionError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl AddLayerVersionPermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_layer_version_permission::AddLayerVersionPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_layer_version_permission::AddLayerVersionPermissionError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl AddLayerVersionPermissionFluentBuilder {
             crate::operation::add_layer_version_permission::AddLayerVersionPermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_layer_version_permission::AddLayerVersionPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_layer_version_permission::AddLayerVersionPermissionError>,
     > {
         self.customize_middleware().await
     }
@@ -192,18 +181,12 @@ impl AddLayerVersionPermissionFluentBuilder {
         self.inner.get_principal()
     }
     /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

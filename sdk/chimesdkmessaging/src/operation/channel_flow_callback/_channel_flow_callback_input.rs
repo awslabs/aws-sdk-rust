@@ -36,18 +36,14 @@ impl ChannelFlowCallbackInput {
 }
 impl ChannelFlowCallbackInput {
     /// Creates a new builder-style object to manufacture [`ChannelFlowCallbackInput`](crate::operation::channel_flow_callback::ChannelFlowCallbackInput).
-    pub fn builder(
-    ) -> crate::operation::channel_flow_callback::builders::ChannelFlowCallbackInputBuilder {
-        crate::operation::channel_flow_callback::builders::ChannelFlowCallbackInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::channel_flow_callback::builders::ChannelFlowCallbackInputBuilder {
+        crate::operation::channel_flow_callback::builders::ChannelFlowCallbackInputBuilder::default()
     }
 }
 
 /// A builder for [`ChannelFlowCallbackInput`](crate::operation::channel_flow_callback::ChannelFlowCallbackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelFlowCallbackInputBuilder {
     pub(crate) callback_id: ::std::option::Option<::std::string::String>,
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
@@ -103,33 +99,24 @@ impl ChannelFlowCallbackInputBuilder {
         self
     }
     /// <p>Stores information about the processed message.</p>
-    pub fn set_channel_message(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessageCallback>,
-    ) -> Self {
+    pub fn set_channel_message(mut self, input: ::std::option::Option<crate::types::ChannelMessageCallback>) -> Self {
         self.channel_message = input;
         self
     }
     /// <p>Stores information about the processed message.</p>
-    pub fn get_channel_message(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChannelMessageCallback> {
+    pub fn get_channel_message(&self) -> &::std::option::Option<crate::types::ChannelMessageCallback> {
         &self.channel_message
     }
     /// Consumes the builder and constructs a [`ChannelFlowCallbackInput`](crate::operation::channel_flow_callback::ChannelFlowCallbackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::channel_flow_callback::ChannelFlowCallbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::channel_flow_callback::ChannelFlowCallbackInput {
-                callback_id: self.callback_id,
-                channel_arn: self.channel_arn,
-                delete_resource: self.delete_resource,
-                channel_message: self.channel_message,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::channel_flow_callback::ChannelFlowCallbackInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::channel_flow_callback::ChannelFlowCallbackInput {
+            callback_id: self.callback_id,
+            channel_arn: self.channel_arn,
+            delete_resource: self.delete_resource,
+            channel_message: self.channel_message,
+        })
     }
 }

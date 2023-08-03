@@ -13,9 +13,7 @@ pub struct DescribeActivationsFilter {
 }
 impl DescribeActivationsFilter {
     /// <p>The name of the filter.</p>
-    pub fn filter_key(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DescribeActivationsFilterKeys> {
+    pub fn filter_key(&self) -> ::std::option::Option<&crate::types::DescribeActivationsFilterKeys> {
         self.filter_key.as_ref()
     }
     /// <p>The filter values.</p>
@@ -32,9 +30,7 @@ impl DescribeActivationsFilter {
 
 /// A builder for [`DescribeActivationsFilter`](crate::types::DescribeActivationsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeActivationsFilterBuilder {
     pub(crate) filter_key: ::std::option::Option<crate::types::DescribeActivationsFilterKeys>,
     pub(crate) filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -46,17 +42,12 @@ impl DescribeActivationsFilterBuilder {
         self
     }
     /// <p>The name of the filter.</p>
-    pub fn set_filter_key(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribeActivationsFilterKeys>,
-    ) -> Self {
+    pub fn set_filter_key(mut self, input: ::std::option::Option<crate::types::DescribeActivationsFilterKeys>) -> Self {
         self.filter_key = input;
         self
     }
     /// <p>The name of the filter.</p>
-    pub fn get_filter_key(
-        &self,
-    ) -> &::std::option::Option<crate::types::DescribeActivationsFilterKeys> {
+    pub fn get_filter_key(&self) -> &::std::option::Option<crate::types::DescribeActivationsFilterKeys> {
         &self.filter_key
     }
     /// Appends an item to `filter_values`.
@@ -64,27 +55,19 @@ impl DescribeActivationsFilterBuilder {
     /// To override the contents of this collection use [`set_filter_values`](Self::set_filter_values).
     ///
     /// <p>The filter values.</p>
-    pub fn filter_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_values.unwrap_or_default();
         v.push(input.into());
         self.filter_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The filter values.</p>
-    pub fn set_filter_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_filter_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_values = input;
         self
     }
     /// <p>The filter values.</p>
-    pub fn get_filter_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_values
     }
     /// Consumes the builder and constructs a [`DescribeActivationsFilter`](crate::types::DescribeActivationsFilter).

@@ -10,10 +10,7 @@ impl GetSystemTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_system_template::GetSystemTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_system_template::GetSystemTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_system_template::GetSystemTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_system_template();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetSystemTemplateFluentBuilder {
         }
     }
     /// Access the GetSystemTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_system_template::builders::GetSystemTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_system_template::builders::GetSystemTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl GetSystemTemplateFluentBuilder {
             crate::operation::get_system_template::GetSystemTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_system_template::GetSystemTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_system_template::GetSystemTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl GetSystemTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl GetSystemTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_system_template::GetSystemTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_system_template::GetSystemTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_system_template::GetSystemTemplateError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl GetSystemTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_system_template::GetSystemTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_system_template::GetSystemTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_system_template::GetSystemTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl GetSystemTemplateFluentBuilder {
             crate::operation::get_system_template::GetSystemTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_system_template::GetSystemTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_system_template::GetSystemTemplateError>,
     > {
         self.customize_middleware().await
     }

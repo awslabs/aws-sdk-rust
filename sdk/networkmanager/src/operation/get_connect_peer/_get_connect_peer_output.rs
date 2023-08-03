@@ -28,9 +28,7 @@ impl GetConnectPeerOutput {
 
 /// A builder for [`GetConnectPeerOutput`](crate::operation::get_connect_peer::GetConnectPeerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectPeerOutputBuilder {
     pub(crate) connect_peer: ::std::option::Option<crate::types::ConnectPeer>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetConnectPeerOutputBuilder {
         self
     }
     /// <p>Returns information about a core network Connect peer.</p>
-    pub fn set_connect_peer(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectPeer>,
-    ) -> Self {
+    pub fn set_connect_peer(mut self, input: ::std::option::Option<crate::types::ConnectPeer>) -> Self {
         self.connect_peer = input;
         self
     }

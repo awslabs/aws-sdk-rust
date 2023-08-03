@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`successful(Option<Vec<RuleUpdateSuccess>>)`](crate::operation::batch_update_rule::BatchUpdateRuleOutput::successful): <p>The rules that were successfully updated.</p>
     ///   - [`unsuccessful(Option<Vec<RuleUpdateFailure>>)`](crate::operation::batch_update_rule::BatchUpdateRuleOutput::unsuccessful): <p>The rules that the operation couldn't update.</p>
     /// - On failure, responds with [`SdkError<BatchUpdateRuleError>`](crate::operation::batch_update_rule::BatchUpdateRuleError)
-    pub fn batch_update_rule(
-        &self,
-    ) -> crate::operation::batch_update_rule::builders::BatchUpdateRuleFluentBuilder {
-        crate::operation::batch_update_rule::builders::BatchUpdateRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_update_rule(&self) -> crate::operation::batch_update_rule::builders::BatchUpdateRuleFluentBuilder {
+        crate::operation::batch_update_rule::builders::BatchUpdateRuleFluentBuilder::new(self.handle.clone())
     }
 }

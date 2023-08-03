@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`forwarding_enabled(bool)`](crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledFluentBuilder::forwarding_enabled) / [`set_forwarding_enabled(bool)`](crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledFluentBuilder::set_forwarding_enabled): <p>Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> specifies that Amazon SES will forward bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES will publish bounce and complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.</p>
     /// - On success, responds with [`SetIdentityFeedbackForwardingEnabledOutput`](crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledOutput)
     /// - On failure, responds with [`SdkError<SetIdentityFeedbackForwardingEnabledError>`](crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledError)
-    pub fn set_identity_feedback_forwarding_enabled(&self) -> crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledFluentBuilder{
-        crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledFluentBuilder::new(self.handle.clone())
+    pub fn set_identity_feedback_forwarding_enabled(
+        &self,
+    ) -> crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledFluentBuilder {
+        crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

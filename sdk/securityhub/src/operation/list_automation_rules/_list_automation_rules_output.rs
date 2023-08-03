@@ -5,8 +5,7 @@
 pub struct ListAutomationRulesOutput {
     /// <p> Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>. </p>
     #[doc(hidden)]
-    pub automation_rules_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>>,
+    pub automation_rules_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>>,
     /// <p> A pagination token for the response. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAutomationRulesOutput {
 }
 impl ListAutomationRulesOutput {
     /// <p> Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>. </p>
-    pub fn automation_rules_metadata(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AutomationRulesMetadata]> {
+    pub fn automation_rules_metadata(&self) -> ::std::option::Option<&[crate::types::AutomationRulesMetadata]> {
         self.automation_rules_metadata.as_deref()
     }
     /// <p> A pagination token for the response. </p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAutomationRulesOutput {
 }
 impl ListAutomationRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListAutomationRulesOutput`](crate::operation::list_automation_rules::ListAutomationRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_automation_rules::builders::ListAutomationRulesOutputBuilder {
-        crate::operation::list_automation_rules::builders::ListAutomationRulesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_automation_rules::builders::ListAutomationRulesOutputBuilder {
+        crate::operation::list_automation_rules::builders::ListAutomationRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAutomationRulesOutput`](crate::operation::list_automation_rules::ListAutomationRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAutomationRulesOutputBuilder {
-    pub(crate) automation_rules_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>>,
+    pub(crate) automation_rules_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,27 +47,19 @@ impl ListAutomationRulesOutputBuilder {
     /// To override the contents of this collection use [`set_automation_rules_metadata`](Self::set_automation_rules_metadata).
     ///
     /// <p> Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>. </p>
-    pub fn automation_rules_metadata(
-        mut self,
-        input: crate::types::AutomationRulesMetadata,
-    ) -> Self {
+    pub fn automation_rules_metadata(mut self, input: crate::types::AutomationRulesMetadata) -> Self {
         let mut v = self.automation_rules_metadata.unwrap_or_default();
         v.push(input);
         self.automation_rules_metadata = ::std::option::Option::Some(v);
         self
     }
     /// <p> Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>. </p>
-    pub fn set_automation_rules_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>>,
-    ) -> Self {
+    pub fn set_automation_rules_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>>) -> Self {
         self.automation_rules_metadata = input;
         self
     }
     /// <p> Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>. </p>
-    pub fn get_automation_rules_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>> {
+    pub fn get_automation_rules_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>> {
         &self.automation_rules_metadata
     }
     /// <p> A pagination token for the response. </p>

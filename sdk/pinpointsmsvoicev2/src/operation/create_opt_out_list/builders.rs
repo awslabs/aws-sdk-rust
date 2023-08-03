@@ -10,10 +10,7 @@ impl CreateOptOutListInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_opt_out_list::CreateOptOutListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_opt_out_list::CreateOptOutListError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_opt_out_list::CreateOptOutListError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_opt_out_list();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateOptOutListFluentBuilder {
         }
     }
     /// Access the CreateOptOutList as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_opt_out_list::builders::CreateOptOutListInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_opt_out_list::builders::CreateOptOutListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CreateOptOutListFluentBuilder {
             crate::operation::create_opt_out_list::CreateOptOutList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_opt_out_list::CreateOptOutListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_opt_out_list::CreateOptOutListError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CreateOptOutListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CreateOptOutListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_opt_out_list::CreateOptOutListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_opt_out_list::CreateOptOutListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_opt_out_list::CreateOptOutListError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CreateOptOutListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_opt_out_list::CreateOptOutListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_opt_out_list::CreateOptOutListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_opt_out_list::CreateOptOutListError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl CreateOptOutListFluentBuilder {
             crate::operation::create_opt_out_list::CreateOptOutList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_opt_out_list::CreateOptOutListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_opt_out_list::CreateOptOutListError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the new OptOutList.</p>
-    pub fn opt_out_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opt_out_list_name(input.into());
         self
     }
     /// <p>The name of the new OptOutList.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }
@@ -154,10 +132,7 @@ impl CreateOptOutListFluentBuilder {
         self
     }
     /// <p>An array of tags (key and value pairs) to associate with the new OptOutList.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

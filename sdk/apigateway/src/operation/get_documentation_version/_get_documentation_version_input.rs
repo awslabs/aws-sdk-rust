@@ -23,18 +23,14 @@ impl GetDocumentationVersionInput {
 }
 impl GetDocumentationVersionInput {
     /// Creates a new builder-style object to manufacture [`GetDocumentationVersionInput`](crate::operation::get_documentation_version::GetDocumentationVersionInput).
-    pub fn builder(
-    ) -> crate::operation::get_documentation_version::builders::GetDocumentationVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_documentation_version::builders::GetDocumentationVersionInputBuilder {
         crate::operation::get_documentation_version::builders::GetDocumentationVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDocumentationVersionInput`](crate::operation::get_documentation_version::GetDocumentationVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDocumentationVersionInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) documentation_version: ::std::option::Option<::std::string::String>,
@@ -55,18 +51,12 @@ impl GetDocumentationVersionInputBuilder {
         &self.rest_api_id
     }
     /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
-    pub fn documentation_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documentation_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.documentation_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
-    pub fn set_documentation_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documentation_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.documentation_version = input;
         self
     }
@@ -81,11 +71,9 @@ impl GetDocumentationVersionInputBuilder {
         crate::operation::get_documentation_version::GetDocumentationVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_documentation_version::GetDocumentationVersionInput {
-                rest_api_id: self.rest_api_id,
-                documentation_version: self.documentation_version,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_documentation_version::GetDocumentationVersionInput {
+            rest_api_id: self.rest_api_id,
+            documentation_version: self.documentation_version,
+        })
     }
 }

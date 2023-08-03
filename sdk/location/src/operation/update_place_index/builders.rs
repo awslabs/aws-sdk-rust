@@ -10,10 +10,7 @@ impl UpdatePlaceIndexInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_place_index::UpdatePlaceIndexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_place_index::UpdatePlaceIndexError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_place_index::UpdatePlaceIndexError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_place_index();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdatePlaceIndexFluentBuilder {
         }
     }
     /// Access the UpdatePlaceIndex as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_place_index::builders::UpdatePlaceIndexInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_place_index::builders::UpdatePlaceIndexInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdatePlaceIndexFluentBuilder {
             crate::operation::update_place_index::UpdatePlaceIndex,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_place_index::UpdatePlaceIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_place_index::UpdatePlaceIndexError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdatePlaceIndexFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdatePlaceIndexFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_place_index::UpdatePlaceIndexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_place_index::UpdatePlaceIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_place_index::UpdatePlaceIndexError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdatePlaceIndexFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_place_index::UpdatePlaceIndexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_place_index::UpdatePlaceIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_place_index::UpdatePlaceIndexError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdatePlaceIndexFluentBuilder {
             crate::operation::update_place_index::UpdatePlaceIndex,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_place_index::UpdatePlaceIndexError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_place_index::UpdatePlaceIndexError>,
     > {
         self.customize_middleware().await
     }
@@ -137,31 +121,19 @@ impl UpdatePlaceIndexFluentBuilder {
         self.inner.get_index_name()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.inner = self.inner.pricing_plan(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn set_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
+    pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.inner = self.inner.set_pricing_plan(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
         self.inner.get_pricing_plan()
     }
@@ -180,25 +152,17 @@ impl UpdatePlaceIndexFluentBuilder {
         self.inner.get_description()
     }
     /// <p>Updates the data storage option for the place index resource.</p>
-    pub fn data_source_configuration(
-        mut self,
-        input: crate::types::DataSourceConfiguration,
-    ) -> Self {
+    pub fn data_source_configuration(mut self, input: crate::types::DataSourceConfiguration) -> Self {
         self.inner = self.inner.data_source_configuration(input);
         self
     }
     /// <p>Updates the data storage option for the place index resource.</p>
-    pub fn set_data_source_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceConfiguration>,
-    ) -> Self {
+    pub fn set_data_source_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
         self.inner = self.inner.set_data_source_configuration(input);
         self
     }
     /// <p>Updates the data storage option for the place index resource.</p>
-    pub fn get_data_source_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
+    pub fn get_data_source_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
         self.inner.get_data_source_configuration()
     }
 }

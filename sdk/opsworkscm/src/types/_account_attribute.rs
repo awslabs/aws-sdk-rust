@@ -45,9 +45,7 @@ impl AccountAttribute {
 
 /// A builder for [`AccountAttribute`](crate::types::AccountAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountAttributeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) maximum: ::std::option::Option<i32>,

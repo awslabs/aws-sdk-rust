@@ -37,9 +37,7 @@ impl ListResourcePoliciesFluentBuilder {
         }
     }
     /// Access the ListResourcePolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_resource_policies::builders::ListResourcePoliciesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_resource_policies::builders::ListResourcePoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListResourcePoliciesFluentBuilder {
             crate::operation::list_resource_policies::ListResourcePolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_policies::ListResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_policies::ListResourcePoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListResourcePoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListResourcePoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_policies::ListResourcePoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_policies::ListResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_policies::ListResourcePoliciesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListResourcePoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_policies::ListResourcePoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_policies::ListResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_policies::ListResourcePoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListResourcePoliciesFluentBuilder {
             crate::operation::list_resource_policies::ListResourcePolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_policies::ListResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_resource_policies::ListResourcePoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_resource_policies::paginator::ListResourcePoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_resource_policies::paginator::ListResourcePoliciesPaginator {
-        crate::operation::list_resource_policies::paginator::ListResourcePoliciesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_resource_policies::paginator::ListResourcePoliciesPaginator {
+        crate::operation::list_resource_policies::paginator::ListResourcePoliciesPaginator::new(self.handle, self.inner)
     }
     /// <p>Not currently supported.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -37,9 +37,7 @@ impl DeleteIdentitySourceFluentBuilder {
         }
     }
     /// Access the DeleteIdentitySource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_identity_source::builders::DeleteIdentitySourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_identity_source::builders::DeleteIdentitySourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteIdentitySourceFluentBuilder {
             crate::operation::delete_identity_source::DeleteIdentitySource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_identity_source::DeleteIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_identity_source::DeleteIdentitySourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteIdentitySourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteIdentitySourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_identity_source::DeleteIdentitySourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_identity_source::DeleteIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_identity_source::DeleteIdentitySourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteIdentitySourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_identity_source::DeleteIdentitySourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_identity_source::DeleteIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_identity_source::DeleteIdentitySourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteIdentitySourceFluentBuilder {
             crate::operation::delete_identity_source::DeleteIdentitySource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_identity_source::DeleteIdentitySourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_identity_source::DeleteIdentitySourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to delete.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to delete.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
@@ -143,18 +124,12 @@ impl DeleteIdentitySourceFluentBuilder {
         self.inner.get_policy_store_id()
     }
     /// <p>Specifies the ID of the identity source that you want to delete.</p>
-    pub fn identity_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_source_id(input.into());
         self
     }
     /// <p>Specifies the ID of the identity source that you want to delete.</p>
-    pub fn set_identity_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_source_id(input);
         self
     }

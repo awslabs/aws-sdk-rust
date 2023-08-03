@@ -9,10 +9,7 @@ pub fn ser_raster_data_collection_query_input(
     if let Some(var_2) = &input.time_range_filter {
         #[allow(unused_mut)]
         let mut object_3 = object.key("TimeRangeFilter").start_object();
-        crate::protocol_serde::shape_time_range_filter_input::ser_time_range_filter_input(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_time_range_filter_input::ser_time_range_filter_input(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.area_of_interest {

@@ -21,8 +21,7 @@ pub struct AssessmentTemplate {
     pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user-defined attributes that are assigned to every generated finding from the assessment run that uses this assessment template.</p>
     #[doc(hidden)]
-    pub user_attributes_for_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub user_attributes_for_findings: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This value exists only when the value of assessmentRunCount is greaterpa than zero.</p>
     #[doc(hidden)]
     pub last_assessment_run_arn: ::std::option::Option<::std::string::String>,
@@ -55,9 +54,7 @@ impl AssessmentTemplate {
         self.rules_package_arns.as_deref()
     }
     /// <p>The user-defined attributes that are assigned to every generated finding from the assessment run that uses this assessment template.</p>
-    pub fn user_attributes_for_findings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::Attribute]> {
+    pub fn user_attributes_for_findings(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
         self.user_attributes_for_findings.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This value exists only when the value of assessmentRunCount is greaterpa than zero.</p>
@@ -82,17 +79,14 @@ impl AssessmentTemplate {
 
 /// A builder for [`AssessmentTemplate`](crate::types::AssessmentTemplate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentTemplateBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) duration_in_seconds: ::std::option::Option<i32>,
     pub(crate) rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) user_attributes_for_findings:
-        ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) user_attributes_for_findings: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     pub(crate) last_assessment_run_arn: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_run_count: ::std::option::Option<i32>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -127,18 +121,12 @@ impl AssessmentTemplateBuilder {
         &self.name
     }
     /// <p>The ARN of the assessment target that corresponds to this assessment template.</p>
-    pub fn assessment_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the assessment target that corresponds to this assessment template.</p>
-    pub fn set_assessment_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_target_arn = input;
         self
     }
@@ -165,27 +153,19 @@ impl AssessmentTemplateBuilder {
     /// To override the contents of this collection use [`set_rules_package_arns`](Self::set_rules_package_arns).
     ///
     /// <p>The rules packages that are specified for this assessment template.</p>
-    pub fn rules_package_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rules_package_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rules_package_arns.unwrap_or_default();
         v.push(input.into());
         self.rules_package_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The rules packages that are specified for this assessment template.</p>
-    pub fn set_rules_package_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rules_package_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.rules_package_arns = input;
         self
     }
     /// <p>The rules packages that are specified for this assessment template.</p>
-    pub fn get_rules_package_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rules_package_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.rules_package_arns
     }
     /// Appends an item to `user_attributes_for_findings`.
@@ -200,32 +180,21 @@ impl AssessmentTemplateBuilder {
         self
     }
     /// <p>The user-defined attributes that are assigned to every generated finding from the assessment run that uses this assessment template.</p>
-    pub fn set_user_attributes_for_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_user_attributes_for_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.user_attributes_for_findings = input;
         self
     }
     /// <p>The user-defined attributes that are assigned to every generated finding from the assessment run that uses this assessment template.</p>
-    pub fn get_user_attributes_for_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_user_attributes_for_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.user_attributes_for_findings
     }
     /// <p>The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This value exists only when the value of assessmentRunCount is greaterpa than zero.</p>
-    pub fn last_assessment_run_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_assessment_run_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This value exists only when the value of assessmentRunCount is greaterpa than zero.</p>
-    pub fn set_last_assessment_run_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_assessment_run_arn = input;
         self
     }
@@ -253,10 +222,7 @@ impl AssessmentTemplateBuilder {
         self
     }
     /// <p>The time at which the assessment template is created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

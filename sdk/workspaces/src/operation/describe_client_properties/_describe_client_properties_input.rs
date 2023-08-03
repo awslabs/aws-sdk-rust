@@ -15,18 +15,14 @@ impl DescribeClientPropertiesInput {
 }
 impl DescribeClientPropertiesInput {
     /// Creates a new builder-style object to manufacture [`DescribeClientPropertiesInput`](crate::operation::describe_client_properties::DescribeClientPropertiesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_client_properties::builders::DescribeClientPropertiesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_client_properties::builders::DescribeClientPropertiesInputBuilder {
         crate::operation::describe_client_properties::builders::DescribeClientPropertiesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClientPropertiesInput`](crate::operation::describe_client_properties::DescribeClientPropertiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClientPropertiesInputBuilder {
     pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -43,17 +39,12 @@ impl DescribeClientPropertiesInputBuilder {
         self
     }
     /// <p>The resource identifier, in the form of directory IDs.</p>
-    pub fn set_resource_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_ids = input;
         self
     }
     /// <p>The resource identifier, in the form of directory IDs.</p>
-    pub fn get_resource_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_ids
     }
     /// Consumes the builder and constructs a [`DescribeClientPropertiesInput`](crate::operation::describe_client_properties::DescribeClientPropertiesInput).
@@ -63,10 +54,8 @@ impl DescribeClientPropertiesInputBuilder {
         crate::operation::describe_client_properties::DescribeClientPropertiesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_client_properties::DescribeClientPropertiesInput {
-                resource_ids: self.resource_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_client_properties::DescribeClientPropertiesInput {
+            resource_ids: self.resource_ids,
+        })
     }
 }

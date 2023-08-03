@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`force_delete(bool)`](crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupFluentBuilder::force_delete) / [`set_force_delete(Option<bool>)`](crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupFluentBuilder::set_force_delete): <p>Specifies that the group is to be deleted along with all instances associated with the group, without waiting for all instances to be terminated. This action also deletes any outstanding lifecycle actions associated with the group.</p>
     /// - On success, responds with [`DeleteAutoScalingGroupOutput`](crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteAutoScalingGroupError>`](crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError)
-    pub fn delete_auto_scaling_group(
-        &self,
-    ) -> crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupFluentBuilder
-    {
+    pub fn delete_auto_scaling_group(&self) -> crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupFluentBuilder {
         crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupFluentBuilder::new(self.handle.clone())
     }
 }

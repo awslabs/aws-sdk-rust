@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`types(Option<Vec<Type>>)`](crate::operation::list_types_by_association::ListTypesByAssociationOutput::types): <p>The <code>Type</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_types_by_association::ListTypesByAssociationOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListTypesByAssociationError>`](crate::operation::list_types_by_association::ListTypesByAssociationError)
-    pub fn list_types_by_association(
-        &self,
-    ) -> crate::operation::list_types_by_association::builders::ListTypesByAssociationFluentBuilder
-    {
+    pub fn list_types_by_association(&self) -> crate::operation::list_types_by_association::builders::ListTypesByAssociationFluentBuilder {
         crate::operation::list_types_by_association::builders::ListTypesByAssociationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -70,18 +70,14 @@ impl ::aws_http::request_id::RequestId for DescribeMitigationActionOutput {
 }
 impl DescribeMitigationActionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMitigationActionOutput`](crate::operation::describe_mitigation_action::DescribeMitigationActionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_mitigation_action::builders::DescribeMitigationActionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_mitigation_action::builders::DescribeMitigationActionOutputBuilder {
         crate::operation::describe_mitigation_action::builders::DescribeMitigationActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMitigationActionOutput`](crate::operation::describe_mitigation_action::DescribeMitigationActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMitigationActionOutputBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) action_type: ::std::option::Option<crate::types::MitigationActionType>,
@@ -114,10 +110,7 @@ impl DescribeMitigationActionOutputBuilder {
         self
     }
     /// <p>The type of mitigation action.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MitigationActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::MitigationActionType>) -> Self {
         self.action_type = input;
         self
     }
@@ -173,17 +166,12 @@ impl DescribeMitigationActionOutputBuilder {
         self
     }
     /// <p>Parameters that control how the mitigation action is applied, specific to the type of mitigation action.</p>
-    pub fn set_action_params(
-        mut self,
-        input: ::std::option::Option<crate::types::MitigationActionParams>,
-    ) -> Self {
+    pub fn set_action_params(mut self, input: ::std::option::Option<crate::types::MitigationActionParams>) -> Self {
         self.action_params = input;
         self
     }
     /// <p>Parameters that control how the mitigation action is applied, specific to the type of mitigation action.</p>
-    pub fn get_action_params(
-        &self,
-    ) -> &::std::option::Option<crate::types::MitigationActionParams> {
+    pub fn get_action_params(&self) -> &::std::option::Option<crate::types::MitigationActionParams> {
         &self.action_params
     }
     /// <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
@@ -192,10 +180,7 @@ impl DescribeMitigationActionOutputBuilder {
         self
     }
     /// <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -209,10 +194,7 @@ impl DescribeMitigationActionOutputBuilder {
         self
     }
     /// <p>The date and time when the mitigation action was last changed.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }
@@ -230,9 +212,7 @@ impl DescribeMitigationActionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMitigationActionOutput`](crate::operation::describe_mitigation_action::DescribeMitigationActionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_mitigation_action::DescribeMitigationActionOutput {
+    pub fn build(self) -> crate::operation::describe_mitigation_action::DescribeMitigationActionOutput {
         crate::operation::describe_mitigation_action::DescribeMitigationActionOutput {
             action_name: self.action_name,
             action_type: self.action_type,

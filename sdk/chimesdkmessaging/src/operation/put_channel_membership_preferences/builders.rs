@@ -5,16 +5,16 @@ pub use crate::operation::put_channel_membership_preferences::_put_channel_membe
 
 impl PutChannelMembershipPreferencesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_channel_membership_preferences();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl PutChannelMembershipPreferencesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutChannelMembershipPreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_channel_membership_preferences::builders::PutChannelMembershipPreferencesInputBuilder,
+    inner: crate::operation::put_channel_membership_preferences::builders::PutChannelMembershipPreferencesInputBuilder,
 }
 impl PutChannelMembershipPreferencesFluentBuilder {
     /// Creates a new `PutChannelMembershipPreferences`.
@@ -39,15 +39,20 @@ impl PutChannelMembershipPreferencesFluentBuilder {
         }
     }
     /// Access the PutChannelMembershipPreferences as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_channel_membership_preferences::builders::PutChannelMembershipPreferencesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_channel_membership_preferences::builders::PutChannelMembershipPreferencesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferences, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferences,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl PutChannelMembershipPreferencesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,17 +89,26 @@ impl PutChannelMembershipPreferencesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferences, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferences,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the channel.</p>
@@ -144,17 +159,12 @@ impl PutChannelMembershipPreferencesFluentBuilder {
         self
     }
     /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
-    pub fn set_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMembershipPreferences>,
-    ) -> Self {
+    pub fn set_preferences(mut self, input: ::std::option::Option<crate::types::ChannelMembershipPreferences>) -> Self {
         self.inner = self.inner.set_preferences(input);
         self
     }
     /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
-    pub fn get_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChannelMembershipPreferences> {
+    pub fn get_preferences(&self) -> &::std::option::Option<crate::types::ChannelMembershipPreferences> {
         self.inner.get_preferences()
     }
 }

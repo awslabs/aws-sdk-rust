@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`max_size_in_mb(i32)`](crate::operation::get_signing_platform::GetSigningPlatformOutput::max_size_in_mb): <p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>
     ///   - [`revocation_supported(bool)`](crate::operation::get_signing_platform::GetSigningPlatformOutput::revocation_supported): <p>A flag indicating whether signatures generated for the signing platform can be revoked.</p>
     /// - On failure, responds with [`SdkError<GetSigningPlatformError>`](crate::operation::get_signing_platform::GetSigningPlatformError)
-    pub fn get_signing_platform(
-        &self,
-    ) -> crate::operation::get_signing_platform::builders::GetSigningPlatformFluentBuilder {
-        crate::operation::get_signing_platform::builders::GetSigningPlatformFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_signing_platform(&self) -> crate::operation::get_signing_platform::builders::GetSigningPlatformFluentBuilder {
+        crate::operation::get_signing_platform::builders::GetSigningPlatformFluentBuilder::new(self.handle.clone())
     }
 }

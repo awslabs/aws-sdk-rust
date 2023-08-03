@@ -18,10 +18,7 @@ pub fn ser_create_user_input(
     if let Some(var_5) = &input.storage_rule {
         #[allow(unused_mut)]
         let mut object_6 = object.key("StorageRule").start_object();
-        crate::protocol_serde::shape_storage_rule_type::ser_storage_rule_type(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_storage_rule_type::ser_storage_rule_type(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.surname {

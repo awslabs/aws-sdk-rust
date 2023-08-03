@@ -10,10 +10,7 @@ impl CreateOrganizationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_organization::CreateOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_organization::CreateOrganizationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_organization::CreateOrganizationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_organization();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CreateOrganizationFluentBuilder {
         }
     }
     /// Access the CreateOrganization as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_organization::builders::CreateOrganizationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_organization::builders::CreateOrganizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CreateOrganizationFluentBuilder {
             crate::operation::create_organization::CreateOrganization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_organization::CreateOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_organization::CreateOrganizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CreateOrganizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CreateOrganizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_organization::CreateOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_organization::CreateOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_organization::CreateOrganizationError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CreateOrganizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_organization::CreateOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_organization::CreateOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_organization::CreateOrganizationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl CreateOrganizationFluentBuilder {
             crate::operation::create_organization::CreateOrganization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_organization::CreateOrganizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_organization::CreateOrganizationError>,
     > {
         self.customize_middleware().await
     }
@@ -176,10 +160,7 @@ impl CreateOrganizationFluentBuilder {
         self
     }
     /// <p>The email domains to associate with the organization.</p>
-    pub fn set_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>,
-    ) -> Self {
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>) -> Self {
         self.inner = self.inner.set_domains(input);
         self
     }

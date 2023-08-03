@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartMlLabelingSetGenerationTaskRunOu
 }
 impl StartMlLabelingSetGenerationTaskRunOutput {
     /// Creates a new builder-style object to manufacture [`StartMlLabelingSetGenerationTaskRunOutput`](crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput).
-    pub fn builder() -> crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunOutputBuilder{
+    pub fn builder() -> crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunOutputBuilder {
         crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartMlLabelingSetGenerationTaskRunOutput`](crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartMlLabelingSetGenerationTaskRunOutputBuilder {
     pub(crate) task_run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl StartMlLabelingSetGenerationTaskRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartMlLabelingSetGenerationTaskRunOutput`](crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput).
-    pub fn build(self) -> crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput{
+    pub fn build(self) -> crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput {
         crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunOutput {
-            task_run_id: self.task_run_id
-            ,
+            task_run_id: self.task_run_id,
             _request_id: self._request_id,
         }
     }

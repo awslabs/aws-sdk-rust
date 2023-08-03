@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteLifecycleHookOutput {
 }
 impl DeleteLifecycleHookOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLifecycleHookOutput`](crate::operation::delete_lifecycle_hook::DeleteLifecycleHookOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookOutputBuilder {
-        crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookOutputBuilder {
+        crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLifecycleHookOutput`](crate::operation::delete_lifecycle_hook::DeleteLifecycleHookOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLifecycleHookOutputBuilder {
     _request_id: Option<String>,
 }

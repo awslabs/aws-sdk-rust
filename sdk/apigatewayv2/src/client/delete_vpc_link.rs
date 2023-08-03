@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`vpc_link_id(impl ::std::convert::Into<String>)`](crate::operation::delete_vpc_link::builders::DeleteVpcLinkFluentBuilder::vpc_link_id) / [`set_vpc_link_id(Option<String>)`](crate::operation::delete_vpc_link::builders::DeleteVpcLinkFluentBuilder::set_vpc_link_id): <p>The ID of the VPC link.</p>
     /// - On success, responds with [`DeleteVpcLinkOutput`](crate::operation::delete_vpc_link::DeleteVpcLinkOutput)
     /// - On failure, responds with [`SdkError<DeleteVpcLinkError>`](crate::operation::delete_vpc_link::DeleteVpcLinkError)
-    pub fn delete_vpc_link(
-        &self,
-    ) -> crate::operation::delete_vpc_link::builders::DeleteVpcLinkFluentBuilder {
-        crate::operation::delete_vpc_link::builders::DeleteVpcLinkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_vpc_link(&self) -> crate::operation::delete_vpc_link::builders::DeleteVpcLinkFluentBuilder {
+        crate::operation::delete_vpc_link::builders::DeleteVpcLinkFluentBuilder::new(self.handle.clone())
     }
 }

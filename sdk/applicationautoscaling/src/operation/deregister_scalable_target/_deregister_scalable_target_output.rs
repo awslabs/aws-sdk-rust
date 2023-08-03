@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterScalableTargetOutput {
 }
 impl DeregisterScalableTargetOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterScalableTargetOutput`](crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_scalable_target::builders::DeregisterScalableTargetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_scalable_target::builders::DeregisterScalableTargetOutputBuilder {
         crate::operation::deregister_scalable_target::builders::DeregisterScalableTargetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterScalableTargetOutput`](crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterScalableTargetOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeregisterScalableTargetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterScalableTargetOutput`](crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput {
+    pub fn build(self) -> crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput {
         crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput {
             _request_id: self._request_id,
         }

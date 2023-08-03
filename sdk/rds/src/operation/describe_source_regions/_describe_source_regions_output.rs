@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeSourceRegionsOutput {
 }
 impl DescribeSourceRegionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSourceRegionsOutput`](crate::operation::describe_source_regions::DescribeSourceRegionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_source_regions::builders::DescribeSourceRegionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_source_regions::builders::DescribeSourceRegionsOutputBuilder {
         crate::operation::describe_source_regions::builders::DescribeSourceRegionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSourceRegionsOutput`](crate::operation::describe_source_regions::DescribeSourceRegionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSourceRegionsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) source_regions: ::std::option::Option<::std::vec::Vec<crate::types::SourceRegion>>,
@@ -73,17 +69,12 @@ impl DescribeSourceRegionsOutputBuilder {
         self
     }
     /// <p>A list of <code>SourceRegion</code> instances that contains each source Amazon Web Services Region that the current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
-    pub fn set_source_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceRegion>>,
-    ) -> Self {
+    pub fn set_source_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceRegion>>) -> Self {
         self.source_regions = input;
         self
     }
     /// <p>A list of <code>SourceRegion</code> instances that contains each source Amazon Web Services Region that the current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
-    pub fn get_source_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceRegion>> {
+    pub fn get_source_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceRegion>> {
         &self.source_regions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

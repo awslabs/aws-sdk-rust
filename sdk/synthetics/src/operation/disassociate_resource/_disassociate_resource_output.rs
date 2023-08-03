@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateResourceOutput {
 }
 impl DisassociateResourceOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateResourceOutput`](crate::operation::disassociate_resource::DisassociateResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_resource::builders::DisassociateResourceOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_resource::builders::DisassociateResourceOutputBuilder {
         crate::operation::disassociate_resource::builders::DisassociateResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateResourceOutput`](crate::operation::disassociate_resource::DisassociateResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateResourceOutputBuilder {
     _request_id: Option<String>,
 }

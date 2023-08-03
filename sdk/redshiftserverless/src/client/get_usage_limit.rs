@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetUsageLimitOutput`](crate::operation::get_usage_limit::GetUsageLimitOutput) with field(s):
     ///   - [`usage_limit(Option<UsageLimit>)`](crate::operation::get_usage_limit::GetUsageLimitOutput::usage_limit): <p>The returned usage limit object.</p>
     /// - On failure, responds with [`SdkError<GetUsageLimitError>`](crate::operation::get_usage_limit::GetUsageLimitError)
-    pub fn get_usage_limit(
-        &self,
-    ) -> crate::operation::get_usage_limit::builders::GetUsageLimitFluentBuilder {
-        crate::operation::get_usage_limit::builders::GetUsageLimitFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_usage_limit(&self) -> crate::operation::get_usage_limit::builders::GetUsageLimitFluentBuilder {
+        crate::operation::get_usage_limit::builders::GetUsageLimitFluentBuilder::new(self.handle.clone())
     }
 }

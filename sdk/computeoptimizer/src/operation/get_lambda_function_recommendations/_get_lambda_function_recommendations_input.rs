@@ -14,8 +14,7 @@ pub struct GetLambdaFunctionRecommendationsInput {
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of objects to specify a filter that returns a more specific list of function recommendations.</p>
     #[doc(hidden)]
-    pub filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>>,
     /// <p>The token to advance to the next page of function recommendations.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -37,9 +36,7 @@ impl GetLambdaFunctionRecommendationsInput {
         self.account_ids.as_deref()
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of function recommendations.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LambdaFunctionRecommendationFilter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::LambdaFunctionRecommendationFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token to advance to the next page of function recommendations.</p>
@@ -54,21 +51,18 @@ impl GetLambdaFunctionRecommendationsInput {
 }
 impl GetLambdaFunctionRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`GetLambdaFunctionRecommendationsInput`](crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsInput).
-    pub fn builder() -> crate::operation::get_lambda_function_recommendations::builders::GetLambdaFunctionRecommendationsInputBuilder{
+    pub fn builder() -> crate::operation::get_lambda_function_recommendations::builders::GetLambdaFunctionRecommendationsInputBuilder {
         crate::operation::get_lambda_function_recommendations::builders::GetLambdaFunctionRecommendationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLambdaFunctionRecommendationsInput`](crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLambdaFunctionRecommendationsInputBuilder {
     pub(crate) function_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -79,10 +73,7 @@ impl GetLambdaFunctionRecommendationsInputBuilder {
     ///
     /// <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
-    pub fn function_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.function_arns.unwrap_or_default();
         v.push(input.into());
         self.function_arns = ::std::option::Option::Some(v);
@@ -90,18 +81,13 @@ impl GetLambdaFunctionRecommendationsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
-    pub fn set_function_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_function_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.function_arns = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
-    pub fn get_function_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_function_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.function_arns
     }
     /// Appends an item to `account_ids`.
@@ -120,19 +106,14 @@ impl GetLambdaFunctionRecommendationsInputBuilder {
     /// <p>The ID of the Amazon Web Services account for which to return function recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return function recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account for which to return function recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return function recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Appends an item to `filters`.
@@ -147,20 +128,12 @@ impl GetLambdaFunctionRecommendationsInputBuilder {
         self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of function recommendations.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>,
-        >,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of function recommendations.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>>
-    {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>> {
         &self.filters
     }
     /// <p>The token to advance to the next page of function recommendations.</p>
@@ -195,20 +168,20 @@ impl GetLambdaFunctionRecommendationsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetLambdaFunctionRecommendationsInput`](crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsInput {
-                function_arns: self.function_arns
-                ,
-                account_ids: self.account_ids
-                ,
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                function_arns: self.function_arns,
+                account_ids: self.account_ids,
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

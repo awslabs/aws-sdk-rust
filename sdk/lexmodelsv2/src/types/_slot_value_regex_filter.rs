@@ -51,9 +51,7 @@ impl SlotValueRegexFilter {
 
 /// A builder for [`SlotValueRegexFilter`](crate::types::SlotValueRegexFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotValueRegexFilterBuilder {
     pub(crate) pattern: ::std::option::Option<::std::string::String>,
 }
@@ -116,8 +114,6 @@ impl SlotValueRegexFilterBuilder {
     }
     /// Consumes the builder and constructs a [`SlotValueRegexFilter`](crate::types::SlotValueRegexFilter).
     pub fn build(self) -> crate::types::SlotValueRegexFilter {
-        crate::types::SlotValueRegexFilter {
-            pattern: self.pattern,
-        }
+        crate::types::SlotValueRegexFilter { pattern: self.pattern }
     }
 }

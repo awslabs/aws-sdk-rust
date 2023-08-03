@@ -10,10 +10,7 @@ impl ListImageVersionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_image_versions::ListImageVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_versions::ListImageVersionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_versions::ListImageVersionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_image_versions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListImageVersionsFluentBuilder {
         }
     }
     /// Access the ListImageVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_image_versions::builders::ListImageVersionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_image_versions::builders::ListImageVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListImageVersionsFluentBuilder {
             crate::operation::list_image_versions::ListImageVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_versions::ListImageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_versions::ListImageVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListImageVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListImageVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_image_versions::ListImageVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_versions::ListImageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_versions::ListImageVersionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListImageVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_image_versions::ListImageVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_versions::ListImageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_versions::ListImageVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListImageVersionsFluentBuilder {
             crate::operation::list_image_versions::ListImageVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_image_versions::ListImageVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_image_versions::ListImageVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_image_versions::paginator::ListImageVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_image_versions::paginator::ListImageVersionsPaginator {
-        crate::operation::list_image_versions::paginator::ListImageVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_image_versions::paginator::ListImageVersionsPaginator {
+        crate::operation::list_image_versions::paginator::ListImageVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>A filter that returns only versions created on or after the specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -139,10 +118,7 @@ impl ListImageVersionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only versions created on or after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -156,10 +132,7 @@ impl ListImageVersionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only versions created on or before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -187,17 +160,12 @@ impl ListImageVersionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only versions modified on or after the specified time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
     /// <p>A filter that returns only versions modified on or after the specified time.</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_after()
     }
     /// <p>A filter that returns only versions modified on or before the specified time.</p>
@@ -206,17 +174,12 @@ impl ListImageVersionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only versions modified on or before the specified time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
     /// <p>A filter that returns only versions modified on or before the specified time.</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_before()
     }
     /// <p>The maximum number of versions to return in the response. The default value is 10. </p>
@@ -253,10 +216,7 @@ impl ListImageVersionsFluentBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageVersionSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ImageVersionSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -270,10 +230,7 @@ impl ListImageVersionsFluentBuilder {
         self
     }
     /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageVersionSortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::ImageVersionSortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }

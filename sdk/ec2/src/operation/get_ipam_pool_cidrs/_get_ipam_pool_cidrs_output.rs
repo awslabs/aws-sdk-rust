@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetIpamPoolCidrsOutput {
 }
 impl GetIpamPoolCidrsOutput {
     /// Creates a new builder-style object to manufacture [`GetIpamPoolCidrsOutput`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsOutputBuilder {
+    pub fn builder() -> crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsOutputBuilder {
         crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIpamPoolCidrsOutput`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpamPoolCidrsOutputBuilder {
     pub(crate) ipam_pool_cidrs: ::std::option::Option<::std::vec::Vec<crate::types::IpamPoolCidr>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetIpamPoolCidrsOutputBuilder {
         self
     }
     /// <p>Information about the CIDRs provisioned to an IPAM pool.</p>
-    pub fn set_ipam_pool_cidrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpamPoolCidr>>,
-    ) -> Self {
+    pub fn set_ipam_pool_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamPoolCidr>>) -> Self {
         self.ipam_pool_cidrs = input;
         self
     }
     /// <p>Information about the CIDRs provisioned to an IPAM pool.</p>
-    pub fn get_ipam_pool_cidrs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamPoolCidr>> {
+    pub fn get_ipam_pool_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamPoolCidr>> {
         &self.ipam_pool_cidrs
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

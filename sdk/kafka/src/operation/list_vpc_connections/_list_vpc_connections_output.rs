@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListVpcConnectionsOutput {
 }
 impl ListVpcConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListVpcConnectionsOutput`](crate::operation::list_vpc_connections::ListVpcConnectionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_vpc_connections::builders::ListVpcConnectionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_vpc_connections::builders::ListVpcConnectionsOutputBuilder {
         crate::operation::list_vpc_connections::builders::ListVpcConnectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVpcConnectionsOutput`](crate::operation::list_vpc_connections::ListVpcConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpcConnectionsOutputBuilder {
     pub(crate) vpc_connections: ::std::option::Option<::std::vec::Vec<crate::types::VpcConnection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListVpcConnectionsOutputBuilder {
         self
     }
     /// <p>List of VPC connections.</p>
-    pub fn set_vpc_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcConnection>>,
-    ) -> Self {
+    pub fn set_vpc_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcConnection>>) -> Self {
         self.vpc_connections = input;
         self
     }
     /// <p>List of VPC connections.</p>
-    pub fn get_vpc_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcConnection>> {
+    pub fn get_vpc_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcConnection>> {
         &self.vpc_connections
     }
     /// <p>The paginated results marker. When the result of a ListClientVpcConnections operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>

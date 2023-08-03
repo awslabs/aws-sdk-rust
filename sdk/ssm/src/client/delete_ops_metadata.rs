@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`ops_metadata_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataFluentBuilder::ops_metadata_arn) / [`set_ops_metadata_arn(Option<String>)`](crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataFluentBuilder::set_ops_metadata_arn): <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
     /// - On success, responds with [`DeleteOpsMetadataOutput`](crate::operation::delete_ops_metadata::DeleteOpsMetadataOutput)
     /// - On failure, responds with [`SdkError<DeleteOpsMetadataError>`](crate::operation::delete_ops_metadata::DeleteOpsMetadataError)
-    pub fn delete_ops_metadata(
-        &self,
-    ) -> crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataFluentBuilder {
-        crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_ops_metadata(&self) -> crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataFluentBuilder {
+        crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,15 +6,12 @@
 pub struct RequestSpotInstancesOutput {
     /// <p>The Spot Instance requests.</p>
     #[doc(hidden)]
-    pub spot_instance_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
+    pub spot_instance_requests: ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
     _request_id: Option<String>,
 }
 impl RequestSpotInstancesOutput {
     /// <p>The Spot Instance requests.</p>
-    pub fn spot_instance_requests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SpotInstanceRequest]> {
+    pub fn spot_instance_requests(&self) -> ::std::option::Option<&[crate::types::SpotInstanceRequest]> {
         self.spot_instance_requests.as_deref()
     }
 }
@@ -25,20 +22,16 @@ impl ::aws_http::request_id::RequestId for RequestSpotInstancesOutput {
 }
 impl RequestSpotInstancesOutput {
     /// Creates a new builder-style object to manufacture [`RequestSpotInstancesOutput`](crate::operation::request_spot_instances::RequestSpotInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::request_spot_instances::builders::RequestSpotInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::request_spot_instances::builders::RequestSpotInstancesOutputBuilder {
         crate::operation::request_spot_instances::builders::RequestSpotInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`RequestSpotInstancesOutput`](crate::operation::request_spot_instances::RequestSpotInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestSpotInstancesOutputBuilder {
-    pub(crate) spot_instance_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
+    pub(crate) spot_instance_requests: ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
     _request_id: Option<String>,
 }
 impl RequestSpotInstancesOutputBuilder {
@@ -54,17 +47,12 @@ impl RequestSpotInstancesOutputBuilder {
         self
     }
     /// <p>The Spot Instance requests.</p>
-    pub fn set_spot_instance_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
-    ) -> Self {
+    pub fn set_spot_instance_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>) -> Self {
         self.spot_instance_requests = input;
         self
     }
     /// <p>The Spot Instance requests.</p>
-    pub fn get_spot_instance_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>> {
+    pub fn get_spot_instance_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>> {
         &self.spot_instance_requests
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

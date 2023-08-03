@@ -51,9 +51,7 @@ impl Ec2DeleteRouteAction {
 
 /// A builder for [`Ec2DeleteRouteAction`](crate::types::Ec2DeleteRouteAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2DeleteRouteActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl Ec2DeleteRouteActionBuilder {
         &self.description
     }
     /// <p>Information about the IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_cidr_block = input;
         self
     }
@@ -97,18 +89,12 @@ impl Ec2DeleteRouteActionBuilder {
         &self.destination_cidr_block
     }
     /// <p>Information about the ID of the prefix list for the route.</p>
-    pub fn destination_prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the ID of the prefix list for the route.</p>
-    pub fn set_destination_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_prefix_list_id = input;
         self
     }
@@ -117,18 +103,12 @@ impl Ec2DeleteRouteActionBuilder {
         &self.destination_prefix_list_id
     }
     /// <p>Information about the IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn destination_ipv6_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn set_destination_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_ipv6_cidr_block = input;
         self
     }
@@ -142,10 +122,7 @@ impl Ec2DeleteRouteActionBuilder {
         self
     }
     /// <p>Information about the ID of the route table.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTarget>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<crate::types::ActionTarget>) -> Self {
         self.route_table_id = input;
         self
     }

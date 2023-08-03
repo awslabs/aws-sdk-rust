@@ -10,10 +10,7 @@ impl ListTunnelsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_tunnels::ListTunnelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tunnels::ListTunnelsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tunnels::ListTunnelsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_tunnels();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ListTunnelsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_tunnels::ListTunnels,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_tunnels::ListTunnels, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_tunnels::ListTunnelsError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ListTunnelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ListTunnelsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_tunnels::ListTunnels,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_tunnels::ListTunnels, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_tunnels::ListTunnelsError>,
     > {
         self.customize_middleware().await
@@ -117,10 +105,7 @@ impl ListTunnelsFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_tunnels::paginator::ListTunnelsPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_tunnels::paginator::ListTunnelsPaginator {
-        crate::operation::list_tunnels::paginator::ListTunnelsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_tunnels::paginator::ListTunnelsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the IoT thing associated with the destination device.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

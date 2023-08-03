@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateCollectionOutput`](crate::operation::update_collection::UpdateCollectionOutput) with field(s):
     ///   - [`update_collection_detail(Option<UpdateCollectionDetail>)`](crate::operation::update_collection::UpdateCollectionOutput::update_collection_detail): <p>Details about the updated collection.</p>
     /// - On failure, responds with [`SdkError<UpdateCollectionError>`](crate::operation::update_collection::UpdateCollectionError)
-    pub fn update_collection(
-        &self,
-    ) -> crate::operation::update_collection::builders::UpdateCollectionFluentBuilder {
-        crate::operation::update_collection::builders::UpdateCollectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_collection(&self) -> crate::operation::update_collection::builders::UpdateCollectionFluentBuilder {
+        crate::operation::update_collection::builders::UpdateCollectionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl DeleteBackendStorageFluentBuilder {
         }
     }
     /// Access the DeleteBackendStorage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_backend_storage::builders::DeleteBackendStorageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_backend_storage::builders::DeleteBackendStorageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteBackendStorageFluentBuilder {
             crate::operation::delete_backend_storage::DeleteBackendStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backend_storage::DeleteBackendStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backend_storage::DeleteBackendStorageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteBackendStorageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteBackendStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_backend_storage::DeleteBackendStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backend_storage::DeleteBackendStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backend_storage::DeleteBackendStorageError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteBackendStorageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_backend_storage::DeleteBackendStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backend_storage::DeleteBackendStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backend_storage::DeleteBackendStorageError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteBackendStorageFluentBuilder {
             crate::operation::delete_backend_storage::DeleteBackendStorage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backend_storage::DeleteBackendStorageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backend_storage::DeleteBackendStorageError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl DeleteBackendStorageFluentBuilder {
         self.inner.get_app_id()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backend_environment_name(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backend_environment_name(input);
         self
     }
@@ -157,18 +138,12 @@ impl DeleteBackendStorageFluentBuilder {
         self.inner.get_backend_environment_name()
     }
     /// <p>The name of the storage resource.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The name of the storage resource.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }
@@ -182,10 +157,7 @@ impl DeleteBackendStorageFluentBuilder {
         self
     }
     /// <p>The name of the storage service.</p>
-    pub fn set_service_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceName>,
-    ) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<crate::types::ServiceName>) -> Self {
         self.inner = self.inner.set_service_name(input);
         self
     }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateWorkspaceAliasOutput {
 }
 impl UpdateWorkspaceAliasOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceAliasOutput`](crate::operation::update_workspace_alias::UpdateWorkspaceAliasOutput).
-    pub fn builder(
-    ) -> crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasOutputBuilder {
+    pub fn builder() -> crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasOutputBuilder {
         crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkspaceAliasOutput`](crate::operation::update_workspace_alias::UpdateWorkspaceAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceAliasOutputBuilder {
     _request_id: Option<String>,
 }

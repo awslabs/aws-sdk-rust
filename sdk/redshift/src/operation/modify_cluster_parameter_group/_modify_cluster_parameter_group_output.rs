@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for ModifyClusterParameterGroupOutput {
 }
 impl ModifyClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterParameterGroupOutput`](crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupOutput).
-    pub fn builder() -> crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupOutputBuilder{
+    pub fn builder() -> crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupOutputBuilder {
         crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyClusterParameterGroupOutput`](crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClusterParameterGroupOutputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_group_status: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ModifyClusterParameterGroupOutputBuilder {
 }
 impl ModifyClusterParameterGroupOutputBuilder {
     /// <p>The name of the cluster parameter group.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster parameter group.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }
@@ -66,18 +58,12 @@ impl ModifyClusterParameterGroupOutputBuilder {
         &self.parameter_group_name
     }
     /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
-    pub fn parameter_group_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
-    pub fn set_parameter_group_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_status = input;
         self
     }
@@ -95,9 +81,7 @@ impl ModifyClusterParameterGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyClusterParameterGroupOutput`](crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupOutput {
+    pub fn build(self) -> crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupOutput {
         crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupOutput {
             parameter_group_name: self.parameter_group_name,
             parameter_group_status: self.parameter_group_status,

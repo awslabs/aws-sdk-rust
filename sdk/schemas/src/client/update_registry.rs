@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`registry_name(Option<String>)`](crate::operation::update_registry::UpdateRegistryOutput::registry_name): <p>The name of the registry.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_registry::UpdateRegistryOutput::tags): <p>Tags associated with the registry.</p>
     /// - On failure, responds with [`SdkError<UpdateRegistryError>`](crate::operation::update_registry::UpdateRegistryError)
-    pub fn update_registry(
-        &self,
-    ) -> crate::operation::update_registry::builders::UpdateRegistryFluentBuilder {
-        crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_registry(&self) -> crate::operation::update_registry::builders::UpdateRegistryFluentBuilder {
+        crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::new(self.handle.clone())
     }
 }

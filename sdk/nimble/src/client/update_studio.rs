@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateStudioOutput`](crate::operation::update_studio::UpdateStudioOutput) with field(s):
     ///   - [`studio(Option<Studio>)`](crate::operation::update_studio::UpdateStudioOutput::studio): <p>Information about a studio.</p>
     /// - On failure, responds with [`SdkError<UpdateStudioError>`](crate::operation::update_studio::UpdateStudioError)
-    pub fn update_studio(
-        &self,
-    ) -> crate::operation::update_studio::builders::UpdateStudioFluentBuilder {
-        crate::operation::update_studio::builders::UpdateStudioFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_studio(&self) -> crate::operation::update_studio::builders::UpdateStudioFluentBuilder {
+        crate::operation::update_studio::builders::UpdateStudioFluentBuilder::new(self.handle.clone())
     }
 }

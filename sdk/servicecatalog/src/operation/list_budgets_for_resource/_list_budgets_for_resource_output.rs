@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListBudgetsForResourceOutput {
 }
 impl ListBudgetsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListBudgetsForResourceOutput`](crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::list_budgets_for_resource::builders::ListBudgetsForResourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_budgets_for_resource::builders::ListBudgetsForResourceOutputBuilder {
         crate::operation::list_budgets_for_resource::builders::ListBudgetsForResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBudgetsForResourceOutput`](crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBudgetsForResourceOutputBuilder {
     pub(crate) budgets: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -58,32 +54,21 @@ impl ListBudgetsForResourceOutputBuilder {
         self
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn set_budgets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>,
-    ) -> Self {
+    pub fn set_budgets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>) -> Self {
         self.budgets = input;
         self
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn get_budgets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>> {
+    pub fn get_budgets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>> {
         &self.budgets
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -101,9 +86,7 @@ impl ListBudgetsForResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListBudgetsForResourceOutput`](crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput {
+    pub fn build(self) -> crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput {
         crate::operation::list_budgets_for_resource::ListBudgetsForResourceOutput {
             budgets: self.budgets,
             next_page_token: self.next_page_token,

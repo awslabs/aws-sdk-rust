@@ -24,18 +24,14 @@ impl TagCertificateAuthorityInput {
 }
 impl TagCertificateAuthorityInput {
     /// Creates a new builder-style object to manufacture [`TagCertificateAuthorityInput`](crate::operation::tag_certificate_authority::TagCertificateAuthorityInput).
-    pub fn builder(
-    ) -> crate::operation::tag_certificate_authority::builders::TagCertificateAuthorityInputBuilder
-    {
+    pub fn builder() -> crate::operation::tag_certificate_authority::builders::TagCertificateAuthorityInputBuilder {
         crate::operation::tag_certificate_authority::builders::TagCertificateAuthorityInputBuilder::default()
     }
 }
 
 /// A builder for [`TagCertificateAuthorityInput`](crate::operation::tag_certificate_authority::TagCertificateAuthorityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagCertificateAuthorityInputBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -43,19 +39,13 @@ pub struct TagCertificateAuthorityInputBuilder {
 impl TagCertificateAuthorityInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_arn = input;
         self
     }
@@ -76,10 +66,7 @@ impl TagCertificateAuthorityInputBuilder {
         self
     }
     /// <p>List of tags to be associated with the CA.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -94,11 +81,9 @@ impl TagCertificateAuthorityInputBuilder {
         crate::operation::tag_certificate_authority::TagCertificateAuthorityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::tag_certificate_authority::TagCertificateAuthorityInput {
-                certificate_authority_arn: self.certificate_authority_arn,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::tag_certificate_authority::TagCertificateAuthorityInput {
+            certificate_authority_arn: self.certificate_authority_arn,
+            tags: self.tags,
+        })
     }
 }

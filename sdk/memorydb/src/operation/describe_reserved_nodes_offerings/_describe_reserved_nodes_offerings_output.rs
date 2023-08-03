@@ -8,8 +8,7 @@ pub struct DescribeReservedNodesOfferingsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Lists available reserved node offerings.</p>
     #[doc(hidden)]
-    pub reserved_nodes_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodesOffering>>,
+    pub reserved_nodes_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodesOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedNodesOfferingsOutput {
@@ -18,9 +17,7 @@ impl DescribeReservedNodesOfferingsOutput {
         self.next_token.as_deref()
     }
     /// <p>Lists available reserved node offerings.</p>
-    pub fn reserved_nodes_offerings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReservedNodesOffering]> {
+    pub fn reserved_nodes_offerings(&self) -> ::std::option::Option<&[crate::types::ReservedNodesOffering]> {
         self.reserved_nodes_offerings.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeReservedNodesOfferingsOutput 
 }
 impl DescribeReservedNodesOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedNodesOfferingsOutput`](crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput).
-    pub fn builder() -> crate::operation::describe_reserved_nodes_offerings::builders::DescribeReservedNodesOfferingsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_nodes_offerings::builders::DescribeReservedNodesOfferingsOutputBuilder {
         crate::operation::describe_reserved_nodes_offerings::builders::DescribeReservedNodesOfferingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedNodesOfferingsOutput`](crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedNodesOfferingsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_nodes_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodesOffering>>,
+    pub(crate) reserved_nodes_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodesOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedNodesOfferingsOutputBuilder {
@@ -74,17 +68,12 @@ impl DescribeReservedNodesOfferingsOutputBuilder {
         self
     }
     /// <p>Lists available reserved node offerings.</p>
-    pub fn set_reserved_nodes_offerings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodesOffering>>,
-    ) -> Self {
+    pub fn set_reserved_nodes_offerings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodesOffering>>) -> Self {
         self.reserved_nodes_offerings = input;
         self
     }
     /// <p>Lists available reserved node offerings.</p>
-    pub fn get_reserved_nodes_offerings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedNodesOffering>> {
+    pub fn get_reserved_nodes_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedNodesOffering>> {
         &self.reserved_nodes_offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,10 +86,7 @@ impl DescribeReservedNodesOfferingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReservedNodesOfferingsOutput`](crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput {
         crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput {
             next_token: self.next_token,
             reserved_nodes_offerings: self.reserved_nodes_offerings,

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`notification_configuration(NotificationConfiguration)`](crate::operation::update_notification_configuration::builders::UpdateNotificationConfigurationFluentBuilder::notification_configuration) / [`set_notification_configuration(Option<NotificationConfiguration>)`](crate::operation::update_notification_configuration::builders::UpdateNotificationConfigurationFluentBuilder::set_notification_configuration): <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
     /// - On success, responds with [`UpdateNotificationConfigurationOutput`](crate::operation::update_notification_configuration::UpdateNotificationConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateNotificationConfigurationError>`](crate::operation::update_notification_configuration::UpdateNotificationConfigurationError)
-    pub fn update_notification_configuration(&self) -> crate::operation::update_notification_configuration::builders::UpdateNotificationConfigurationFluentBuilder{
+    pub fn update_notification_configuration(
+        &self,
+    ) -> crate::operation::update_notification_configuration::builders::UpdateNotificationConfigurationFluentBuilder {
         crate::operation::update_notification_configuration::builders::UpdateNotificationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

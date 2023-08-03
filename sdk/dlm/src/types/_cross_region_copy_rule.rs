@@ -62,9 +62,7 @@ impl CrossRegionCopyRule {
         self.retain_rule.as_ref()
     }
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
-    pub fn deprecate_rule(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CrossRegionCopyDeprecateRule> {
+    pub fn deprecate_rule(&self) -> ::std::option::Option<&crate::types::CrossRegionCopyDeprecateRule> {
         self.deprecate_rule.as_ref()
     }
 }
@@ -77,9 +75,7 @@ impl CrossRegionCopyRule {
 
 /// A builder for [`CrossRegionCopyRule`](crate::types::CrossRegionCopyRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CrossRegionCopyRuleBuilder {
     pub(crate) target_region: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<::std::string::String>,
@@ -94,10 +90,7 @@ impl CrossRegionCopyRuleBuilder {
     /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a target Outpost for snapshot copies.</p>
     /// <p>For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for snapshot copies.</p>
     /// </note>
-    pub fn target_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_region = ::std::option::Option::Some(input.into());
         self
     }
@@ -105,10 +98,7 @@ impl CrossRegionCopyRuleBuilder {
     /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a target Outpost for snapshot copies.</p>
     /// <p>For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for snapshot copies.</p>
     /// </note>
-    pub fn set_target_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_region = input;
         self
     }
@@ -184,17 +174,12 @@ impl CrossRegionCopyRuleBuilder {
         self
     }
     /// <p>The retention rule that indicates how long the cross-Region snapshot or AMI copies are to be retained in the destination Region.</p>
-    pub fn set_retain_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::CrossRegionCopyRetainRule>,
-    ) -> Self {
+    pub fn set_retain_rule(mut self, input: ::std::option::Option<crate::types::CrossRegionCopyRetainRule>) -> Self {
         self.retain_rule = input;
         self
     }
     /// <p>The retention rule that indicates how long the cross-Region snapshot or AMI copies are to be retained in the destination Region.</p>
-    pub fn get_retain_rule(
-        &self,
-    ) -> &::std::option::Option<crate::types::CrossRegionCopyRetainRule> {
+    pub fn get_retain_rule(&self) -> &::std::option::Option<crate::types::CrossRegionCopyRetainRule> {
         &self.retain_rule
     }
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
@@ -203,17 +188,12 @@ impl CrossRegionCopyRuleBuilder {
         self
     }
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
-    pub fn set_deprecate_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::CrossRegionCopyDeprecateRule>,
-    ) -> Self {
+    pub fn set_deprecate_rule(mut self, input: ::std::option::Option<crate::types::CrossRegionCopyDeprecateRule>) -> Self {
         self.deprecate_rule = input;
         self
     }
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
-    pub fn get_deprecate_rule(
-        &self,
-    ) -> &::std::option::Option<crate::types::CrossRegionCopyDeprecateRule> {
+    pub fn get_deprecate_rule(&self) -> &::std::option::Option<crate::types::CrossRegionCopyDeprecateRule> {
         &self.deprecate_rule
     }
     /// Consumes the builder and constructs a [`CrossRegionCopyRule`](crate::types::CrossRegionCopyRule).

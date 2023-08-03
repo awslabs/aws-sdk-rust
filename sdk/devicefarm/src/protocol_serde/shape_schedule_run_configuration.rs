@@ -30,10 +30,7 @@ pub fn ser_schedule_run_configuration(
     if let Some(var_9) = &input.customer_artifact_paths {
         #[allow(unused_mut)]
         let mut object_10 = object.key("customerArtifactPaths").start_object();
-        crate::protocol_serde::shape_customer_artifact_paths::ser_customer_artifact_paths(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_customer_artifact_paths::ser_customer_artifact_paths(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.radios {

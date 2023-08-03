@@ -55,9 +55,7 @@ impl UpdateWebAclInput {
 
 /// A builder for [`UpdateWebAclInput`](crate::operation::update_web_acl::UpdateWebAclInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWebAclInputBuilder {
     pub(crate) web_acl_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -117,10 +115,7 @@ impl UpdateWebAclInputBuilder {
     /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
     /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WebAclUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WebAclUpdate>>) -> Self {
         self.updates = input;
         self
     }
@@ -131,9 +126,7 @@ impl UpdateWebAclInputBuilder {
     /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
     /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WebAclUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WebAclUpdate>> {
         &self.updates
     }
     /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
@@ -142,10 +135,7 @@ impl UpdateWebAclInputBuilder {
         self
     }
     /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
-    pub fn set_default_action(
-        mut self,
-        input: ::std::option::Option<crate::types::WafAction>,
-    ) -> Self {
+    pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::WafAction>) -> Self {
         self.default_action = input;
         self
     }
@@ -156,10 +146,7 @@ impl UpdateWebAclInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWebAclInput`](crate::operation::update_web_acl::UpdateWebAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_web_acl::UpdateWebAclInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_web_acl::UpdateWebAclInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_web_acl::UpdateWebAclInput {
             web_acl_id: self.web_acl_id,
             change_token: self.change_token,

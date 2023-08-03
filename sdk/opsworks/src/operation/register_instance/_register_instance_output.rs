@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for RegisterInstanceOutput {
 }
 impl RegisterInstanceOutput {
     /// Creates a new builder-style object to manufacture [`RegisterInstanceOutput`](crate::operation::register_instance::RegisterInstanceOutput).
-    pub fn builder() -> crate::operation::register_instance::builders::RegisterInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::register_instance::builders::RegisterInstanceOutputBuilder {
         crate::operation::register_instance::builders::RegisterInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterInstanceOutput`](crate::operation::register_instance::RegisterInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterInstanceOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

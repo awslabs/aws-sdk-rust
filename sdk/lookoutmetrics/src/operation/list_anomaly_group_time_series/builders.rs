@@ -26,7 +26,7 @@ impl ListAnomalyGroupTimeSeriesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAnomalyGroupTimeSeriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesInputBuilder,
+    inner: crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesInputBuilder,
 }
 impl ListAnomalyGroupTimeSeriesFluentBuilder {
     /// Creates a new `ListAnomalyGroupTimeSeries`.
@@ -37,7 +37,7 @@ impl ListAnomalyGroupTimeSeriesFluentBuilder {
         }
     }
     /// Access the ListAnomalyGroupTimeSeries as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_anomaly_group_time_series::builders::ListAnomalyGroupTimeSeriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListAnomalyGroupTimeSeriesFluentBuilder {
             crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListAnomalyGroupTimeSeriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListAnomalyGroupTimeSeriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListAnomalyGroupTimeSeriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListAnomalyGroupTimeSeriesFluentBuilder {
             crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_anomaly_group_time_series::paginator::ListAnomalyGroupTimeSeriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_anomaly_group_time_series::paginator::ListAnomalyGroupTimeSeriesPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_anomaly_group_time_series::paginator::ListAnomalyGroupTimeSeriesPaginator {
         crate::operation::list_anomaly_group_time_series::paginator::ListAnomalyGroupTimeSeriesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_detector_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
     }
@@ -147,18 +130,12 @@ impl ListAnomalyGroupTimeSeriesFluentBuilder {
         self.inner.get_anomaly_detector_arn()
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_group_id(input.into());
         self
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn set_anomaly_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_group_id(input);
         self
     }

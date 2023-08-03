@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`parameters(Option<Vec<ParameterHistory>>)`](crate::operation::get_parameter_history::GetParameterHistoryOutput::parameters): <p>A list of parameters returned by the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_parameter_history::GetParameterHistoryOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<GetParameterHistoryError>`](crate::operation::get_parameter_history::GetParameterHistoryError)
-    pub fn get_parameter_history(
-        &self,
-    ) -> crate::operation::get_parameter_history::builders::GetParameterHistoryFluentBuilder {
-        crate::operation::get_parameter_history::builders::GetParameterHistoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_parameter_history(&self) -> crate::operation::get_parameter_history::builders::GetParameterHistoryFluentBuilder {
+        crate::operation::get_parameter_history::builders::GetParameterHistoryFluentBuilder::new(self.handle.clone())
     }
 }

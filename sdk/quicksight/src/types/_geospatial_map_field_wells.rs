@@ -7,14 +7,11 @@
 pub struct GeospatialMapFieldWells {
     /// <p>The aggregated field well for a geospatial map.</p>
     #[doc(hidden)]
-    pub geospatial_map_aggregated_field_wells:
-        ::std::option::Option<crate::types::GeospatialMapAggregatedFieldWells>,
+    pub geospatial_map_aggregated_field_wells: ::std::option::Option<crate::types::GeospatialMapAggregatedFieldWells>,
 }
 impl GeospatialMapFieldWells {
     /// <p>The aggregated field well for a geospatial map.</p>
-    pub fn geospatial_map_aggregated_field_wells(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GeospatialMapAggregatedFieldWells> {
+    pub fn geospatial_map_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::GeospatialMapAggregatedFieldWells> {
         self.geospatial_map_aggregated_field_wells.as_ref()
     }
 }
@@ -27,19 +24,13 @@ impl GeospatialMapFieldWells {
 
 /// A builder for [`GeospatialMapFieldWells`](crate::types::GeospatialMapFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeospatialMapFieldWellsBuilder {
-    pub(crate) geospatial_map_aggregated_field_wells:
-        ::std::option::Option<crate::types::GeospatialMapAggregatedFieldWells>,
+    pub(crate) geospatial_map_aggregated_field_wells: ::std::option::Option<crate::types::GeospatialMapAggregatedFieldWells>,
 }
 impl GeospatialMapFieldWellsBuilder {
     /// <p>The aggregated field well for a geospatial map.</p>
-    pub fn geospatial_map_aggregated_field_wells(
-        mut self,
-        input: crate::types::GeospatialMapAggregatedFieldWells,
-    ) -> Self {
+    pub fn geospatial_map_aggregated_field_wells(mut self, input: crate::types::GeospatialMapAggregatedFieldWells) -> Self {
         self.geospatial_map_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
@@ -52,9 +43,7 @@ impl GeospatialMapFieldWellsBuilder {
         self
     }
     /// <p>The aggregated field well for a geospatial map.</p>
-    pub fn get_geospatial_map_aggregated_field_wells(
-        &self,
-    ) -> &::std::option::Option<crate::types::GeospatialMapAggregatedFieldWells> {
+    pub fn get_geospatial_map_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::GeospatialMapAggregatedFieldWells> {
         &self.geospatial_map_aggregated_field_wells
     }
     /// Consumes the builder and constructs a [`GeospatialMapFieldWells`](crate::types::GeospatialMapFieldWells).

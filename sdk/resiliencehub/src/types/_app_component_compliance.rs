@@ -12,12 +12,7 @@ pub struct AppComponentCompliance {
     pub app_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The compliance of the Application Component against the resiliency policy.</p>
     #[doc(hidden)]
-    pub compliance: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DisruptionType,
-            crate::types::DisruptionCompliance,
-        >,
-    >,
+    pub compliance: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
     /// <p>The compliance message.</p>
     #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
@@ -40,12 +35,7 @@ impl AppComponentCompliance {
     /// <p>The compliance of the Application Component against the resiliency policy.</p>
     pub fn compliance(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            crate::types::DisruptionType,
-            crate::types::DisruptionCompliance,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
         self.compliance.as_ref()
     }
     /// <p>The compliance message.</p>
@@ -70,18 +60,11 @@ impl AppComponentCompliance {
 
 /// A builder for [`AppComponentCompliance`](crate::types::AppComponentCompliance).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppComponentComplianceBuilder {
     pub(crate) cost: ::std::option::Option<crate::types::Cost>,
     pub(crate) app_component_name: ::std::option::Option<::std::string::String>,
-    pub(crate) compliance: ::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DisruptionType,
-            crate::types::DisruptionCompliance,
-        >,
-    >,
+    pub(crate) compliance: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ComplianceStatus>,
     pub(crate) resiliency_score: ::std::option::Option<crate::types::ResiliencyScore>,
@@ -102,18 +85,12 @@ impl AppComponentComplianceBuilder {
         &self.cost
     }
     /// <p>The name of the Application Component.</p>
-    pub fn app_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Application Component.</p>
-    pub fn set_app_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_component_name = input;
         self
     }
@@ -126,11 +103,7 @@ impl AppComponentComplianceBuilder {
     /// To override the contents of this collection use [`set_compliance`](Self::set_compliance).
     ///
     /// <p>The compliance of the Application Component against the resiliency policy.</p>
-    pub fn compliance(
-        mut self,
-        k: crate::types::DisruptionType,
-        v: crate::types::DisruptionCompliance,
-    ) -> Self {
+    pub fn compliance(mut self, k: crate::types::DisruptionType, v: crate::types::DisruptionCompliance) -> Self {
         let mut hash_map = self.compliance.unwrap_or_default();
         hash_map.insert(k, v);
         self.compliance = ::std::option::Option::Some(hash_map);
@@ -139,12 +112,7 @@ impl AppComponentComplianceBuilder {
     /// <p>The compliance of the Application Component against the resiliency policy.</p>
     pub fn set_compliance(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::DisruptionType,
-                crate::types::DisruptionCompliance,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
     ) -> Self {
         self.compliance = input;
         self
@@ -152,12 +120,7 @@ impl AppComponentComplianceBuilder {
     /// <p>The compliance of the Application Component against the resiliency policy.</p>
     pub fn get_compliance(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::DisruptionType,
-            crate::types::DisruptionCompliance,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
         &self.compliance
     }
     /// <p>The compliance message.</p>
@@ -180,10 +143,7 @@ impl AppComponentComplianceBuilder {
         self
     }
     /// <p>The status of the action.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -197,10 +157,7 @@ impl AppComponentComplianceBuilder {
         self
     }
     /// <p>The current resiliency score for the application.</p>
-    pub fn set_resiliency_score(
-        mut self,
-        input: ::std::option::Option<crate::types::ResiliencyScore>,
-    ) -> Self {
+    pub fn set_resiliency_score(mut self, input: ::std::option::Option<crate::types::ResiliencyScore>) -> Self {
         self.resiliency_score = input;
         self
     }

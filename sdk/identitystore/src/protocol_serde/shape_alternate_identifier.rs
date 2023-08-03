@@ -13,18 +13,13 @@ pub fn ser_alternate_identifier(
         crate::types::AlternateIdentifier::UniqueAttribute(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_3.key("UniqueAttribute").start_object();
-            crate::protocol_serde::shape_unique_attribute::ser_unique_attribute(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_unique_attribute::ser_unique_attribute(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::AlternateIdentifier::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "AlternateIdentifier",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "AlternateIdentifier",
+            ))
         }
     }
     Ok(())

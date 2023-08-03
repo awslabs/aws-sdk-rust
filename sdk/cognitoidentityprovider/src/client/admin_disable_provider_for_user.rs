@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`user(ProviderUserIdentifierType)`](crate::operation::admin_disable_provider_for_user::builders::AdminDisableProviderForUserFluentBuilder::user) / [`set_user(Option<ProviderUserIdentifierType>)`](crate::operation::admin_disable_provider_for_user::builders::AdminDisableProviderForUserFluentBuilder::set_user): <p>The user to be disabled.</p>
     /// - On success, responds with [`AdminDisableProviderForUserOutput`](crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserOutput)
     /// - On failure, responds with [`SdkError<AdminDisableProviderForUserError>`](crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError)
-    pub fn admin_disable_provider_for_user(&self) -> crate::operation::admin_disable_provider_for_user::builders::AdminDisableProviderForUserFluentBuilder{
+    pub fn admin_disable_provider_for_user(
+        &self,
+    ) -> crate::operation::admin_disable_provider_for_user::builders::AdminDisableProviderForUserFluentBuilder {
         crate::operation::admin_disable_provider_for_user::builders::AdminDisableProviderForUserFluentBuilder::new(self.handle.clone())
     }
 }

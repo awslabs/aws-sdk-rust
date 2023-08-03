@@ -137,9 +137,7 @@ impl UpdateInstanceInput {
 
 /// A builder for [`UpdateInstanceInput`](crate::operation::update_instance::UpdateInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -181,10 +179,7 @@ impl UpdateInstanceInputBuilder {
         self
     }
     /// <p>The instance's layer IDs.</p>
-    pub fn set_layer_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.layer_ids = input;
         self
     }
@@ -193,18 +188,12 @@ impl UpdateInstanceInputBuilder {
         &self.layer_ids
     }
     /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -218,10 +207,7 @@ impl UpdateInstanceInputBuilder {
         self
     }
     /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
-    pub fn set_auto_scaling_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingType>,
-    ) -> Self {
+    pub fn set_auto_scaling_type(mut self, input: ::std::option::Option<crate::types::AutoScalingType>) -> Self {
         self.auto_scaling_type = input;
         self
     }
@@ -324,10 +310,7 @@ impl UpdateInstanceInputBuilder {
         self
     }
     /// <p>The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
-    pub fn set_architecture(
-        mut self,
-        input: ::std::option::Option<crate::types::Architecture>,
-    ) -> Self {
+    pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
         self.architecture = input;
         self
     }
@@ -376,10 +359,7 @@ impl UpdateInstanceInputBuilder {
     /// </ul>
     /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>.</p>
     /// <p>AgentVersion cannot be set to Chef 12.2.</p>
-    pub fn agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_version = ::std::option::Option::Some(input.into());
         self
     }
@@ -390,10 +370,7 @@ impl UpdateInstanceInputBuilder {
     /// </ul>
     /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>.</p>
     /// <p>AgentVersion cannot be set to Chef 12.2.</p>
-    pub fn set_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_version = input;
         self
     }
@@ -410,10 +387,7 @@ impl UpdateInstanceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateInstanceInput`](crate::operation::update_instance::UpdateInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_instance::UpdateInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_instance::UpdateInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_instance::UpdateInstanceInput {
             instance_id: self.instance_id,
             layer_ids: self.layer_ids,

@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for AdminEnableUserOutput {
 }
 impl AdminEnableUserOutput {
     /// Creates a new builder-style object to manufacture [`AdminEnableUserOutput`](crate::operation::admin_enable_user::AdminEnableUserOutput).
-    pub fn builder() -> crate::operation::admin_enable_user::builders::AdminEnableUserOutputBuilder
-    {
+    pub fn builder() -> crate::operation::admin_enable_user::builders::AdminEnableUserOutputBuilder {
         crate::operation::admin_enable_user::builders::AdminEnableUserOutputBuilder::default()
     }
 }
 
 /// A builder for [`AdminEnableUserOutput`](crate::operation::admin_enable_user::AdminEnableUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdminEnableUserOutputBuilder {
     _request_id: Option<String>,
 }

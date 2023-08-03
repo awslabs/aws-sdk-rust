@@ -10,10 +10,7 @@ impl ListDeploymentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_deployments::ListDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_deployments();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListDeploymentsFluentBuilder {
         }
     }
     /// Access the ListDeployments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_deployments::builders::ListDeploymentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_deployments::builders::ListDeploymentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListDeploymentsFluentBuilder {
             crate::operation::list_deployments::ListDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListDeploymentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployments::ListDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListDeploymentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployments::ListDeploymentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListDeploymentsFluentBuilder {
             crate::operation::list_deployments::ListDeployments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployments::ListDeploymentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployments::ListDeploymentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_deployments::paginator::ListDeploymentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
-        crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
+        crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -163,10 +142,7 @@ impl ListDeploymentsFluentBuilder {
     /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
     /// </ul>
     /// <p>Default: <code>LATEST_ONLY</code> </p>
-    pub fn set_history_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentHistoryFilter>,
-    ) -> Self {
+    pub fn set_history_filter(mut self, input: ::std::option::Option<crate::types::DeploymentHistoryFilter>) -> Self {
         self.inner = self.inner.set_history_filter(input);
         self
     }
@@ -176,24 +152,16 @@ impl ListDeploymentsFluentBuilder {
     /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
     /// </ul>
     /// <p>Default: <code>LATEST_ONLY</code> </p>
-    pub fn get_history_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentHistoryFilter> {
+    pub fn get_history_filter(&self) -> &::std::option::Option<crate::types::DeploymentHistoryFilter> {
         self.inner.get_history_filter()
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    pub fn parent_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_target_arn(input.into());
         self
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    pub fn set_parent_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_target_arn(input);
         self
     }

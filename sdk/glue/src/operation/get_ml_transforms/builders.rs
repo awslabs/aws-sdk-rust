@@ -10,10 +10,7 @@ impl GetMlTransformsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_ml_transforms::GetMlTransformsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ml_transforms::GetMLTransformsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ml_transforms::GetMLTransformsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_ml_transforms();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetMLTransformsFluentBuilder {
         }
     }
     /// Access the GetMLTransforms as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_ml_transforms::builders::GetMlTransformsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_ml_transforms::builders::GetMlTransformsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetMLTransformsFluentBuilder {
             crate::operation::get_ml_transforms::GetMLTransforms,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ml_transforms::GetMLTransformsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ml_transforms::GetMLTransformsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetMLTransformsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetMLTransformsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ml_transforms::GetMlTransformsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ml_transforms::GetMLTransformsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ml_transforms::GetMLTransformsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetMLTransformsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ml_transforms::GetMlTransformsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ml_transforms::GetMLTransformsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ml_transforms::GetMLTransformsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetMLTransformsFluentBuilder {
             crate::operation::get_ml_transforms::GetMLTransforms,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ml_transforms::GetMLTransformsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ml_transforms::GetMLTransformsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_ml_transforms::paginator::GetMlTransformsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_ml_transforms::paginator::GetMlTransformsPaginator {
-        crate::operation::get_ml_transforms::paginator::GetMlTransformsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_ml_transforms::paginator::GetMlTransformsPaginator {
+        crate::operation::get_ml_transforms::paginator::GetMlTransformsPaginator::new(self.handle, self.inner)
     }
     /// <p>A paginated token to offset the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,10 +146,7 @@ impl GetMLTransformsFluentBuilder {
         self
     }
     /// <p>The filter transformation criteria.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::TransformFilterCriteria>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -184,10 +160,7 @@ impl GetMLTransformsFluentBuilder {
         self
     }
     /// <p>The sorting criteria.</p>
-    pub fn set_sort(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformSortCriteria>,
-    ) -> Self {
+    pub fn set_sort(mut self, input: ::std::option::Option<crate::types::TransformSortCriteria>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
     }

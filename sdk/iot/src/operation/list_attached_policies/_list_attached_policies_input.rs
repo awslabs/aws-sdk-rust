@@ -36,17 +36,14 @@ impl ListAttachedPoliciesInput {
 }
 impl ListAttachedPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListAttachedPoliciesInput`](crate::operation::list_attached_policies::ListAttachedPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_attached_policies::builders::ListAttachedPoliciesInputBuilder {
+    pub fn builder() -> crate::operation::list_attached_policies::builders::ListAttachedPoliciesInputBuilder {
         crate::operation::list_attached_policies::builders::ListAttachedPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAttachedPoliciesInput`](crate::operation::list_attached_policies::ListAttachedPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttachedPoliciesInputBuilder {
     pub(crate) target: ::std::option::Option<::std::string::String>,
     pub(crate) recursive: ::std::option::Option<bool>,
@@ -113,17 +110,13 @@ impl ListAttachedPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListAttachedPoliciesInput`](crate::operation::list_attached_policies::ListAttachedPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_attached_policies::ListAttachedPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_attached_policies::ListAttachedPoliciesInput {
-                target: self.target,
-                recursive: self.recursive,
-                marker: self.marker,
-                page_size: self.page_size,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_attached_policies::ListAttachedPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_attached_policies::ListAttachedPoliciesInput {
+            target: self.target,
+            recursive: self.recursive,
+            marker: self.marker,
+            page_size: self.page_size,
+        })
     }
 }

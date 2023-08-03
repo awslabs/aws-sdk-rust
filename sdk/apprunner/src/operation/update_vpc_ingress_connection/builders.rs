@@ -31,7 +31,7 @@ impl UpdateVpcIngressConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateVpcIngressConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_vpc_ingress_connection::builders::UpdateVpcIngressConnectionInputBuilder,
+    inner: crate::operation::update_vpc_ingress_connection::builders::UpdateVpcIngressConnectionInputBuilder,
 }
 impl UpdateVpcIngressConnectionFluentBuilder {
     /// Creates a new `UpdateVpcIngressConnection`.
@@ -42,7 +42,7 @@ impl UpdateVpcIngressConnectionFluentBuilder {
         }
     }
     /// Access the UpdateVpcIngressConnection as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_vpc_ingress_connection::builders::UpdateVpcIngressConnectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_vpc_ingress_connection::builders::UpdateVpcIngressConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl UpdateVpcIngressConnectionFluentBuilder {
             crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl UpdateVpcIngressConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl UpdateVpcIngressConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl UpdateVpcIngressConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +110,17 @@ impl UpdateVpcIngressConnectionFluentBuilder {
             crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (Arn) for the App Runner VPC Ingress Connection resource that you want to update.</p>
-    pub fn vpc_ingress_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_ingress_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_ingress_connection_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (Arn) for the App Runner VPC Ingress Connection resource that you want to update.</p>
-    pub fn set_vpc_ingress_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_ingress_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_ingress_connection_arn(input);
         self
     }
@@ -146,25 +129,17 @@ impl UpdateVpcIngressConnectionFluentBuilder {
         self.inner.get_vpc_ingress_connection_arn()
     }
     /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to update the VPC Ingress Connection resource.</p>
-    pub fn ingress_vpc_configuration(
-        mut self,
-        input: crate::types::IngressVpcConfiguration,
-    ) -> Self {
+    pub fn ingress_vpc_configuration(mut self, input: crate::types::IngressVpcConfiguration) -> Self {
         self.inner = self.inner.ingress_vpc_configuration(input);
         self
     }
     /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to update the VPC Ingress Connection resource.</p>
-    pub fn set_ingress_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::IngressVpcConfiguration>,
-    ) -> Self {
+    pub fn set_ingress_vpc_configuration(mut self, input: ::std::option::Option<crate::types::IngressVpcConfiguration>) -> Self {
         self.inner = self.inner.set_ingress_vpc_configuration(input);
         self
     }
     /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to update the VPC Ingress Connection resource.</p>
-    pub fn get_ingress_vpc_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngressVpcConfiguration> {
+    pub fn get_ingress_vpc_configuration(&self) -> &::std::option::Option<crate::types::IngressVpcConfiguration> {
         self.inner.get_ingress_vpc_configuration()
     }
 }

@@ -43,13 +43,7 @@
 /// </p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PrincipalType {
     #[allow(missing_docs)] // documentation missing in model
@@ -64,9 +58,7 @@ impl ::std::convert::From<&str> for PrincipalType {
         match s {
             "AWS_ACCOUNT" => PrincipalType::AwsAccount,
             "AWS_SERVICE" => PrincipalType::AwsService,
-            other => {
-                PrincipalType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => PrincipalType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

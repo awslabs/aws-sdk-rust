@@ -70,9 +70,7 @@ impl GetFolderOutput {
 
 /// A builder for [`GetFolderOutput`](crate::operation::get_folder::GetFolderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFolderOutputBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) folder_path: ::std::option::Option<::std::string::String>,
@@ -138,10 +136,7 @@ impl GetFolderOutputBuilder {
         self
     }
     /// <p>The list of folders that exist under the specified folder, if any.</p>
-    pub fn set_sub_folders(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Folder>>,
-    ) -> Self {
+    pub fn set_sub_folders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Folder>>) -> Self {
         self.sub_folders = input;
         self
     }
@@ -161,10 +156,7 @@ impl GetFolderOutputBuilder {
         self
     }
     /// <p>The list of files in the specified folder, if any.</p>
-    pub fn set_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::File>>,
-    ) -> Self {
+    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::File>>) -> Self {
         self.files = input;
         self
     }
@@ -184,17 +176,12 @@ impl GetFolderOutputBuilder {
         self
     }
     /// <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
-    pub fn set_symbolic_links(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SymbolicLink>>,
-    ) -> Self {
+    pub fn set_symbolic_links(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SymbolicLink>>) -> Self {
         self.symbolic_links = input;
         self
     }
     /// <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
-    pub fn get_symbolic_links(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SymbolicLink>> {
+    pub fn get_symbolic_links(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SymbolicLink>> {
         &self.symbolic_links
     }
     /// Appends an item to `sub_modules`.
@@ -209,17 +196,12 @@ impl GetFolderOutputBuilder {
         self
     }
     /// <p>The list of submodules in the specified folder, if any.</p>
-    pub fn set_sub_modules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubModule>>,
-    ) -> Self {
+    pub fn set_sub_modules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubModule>>) -> Self {
         self.sub_modules = input;
         self
     }
     /// <p>The list of submodules in the specified folder, if any.</p>
-    pub fn get_sub_modules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubModule>> {
+    pub fn get_sub_modules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubModule>> {
         &self.sub_modules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

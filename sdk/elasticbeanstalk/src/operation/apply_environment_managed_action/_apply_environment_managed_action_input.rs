@@ -30,16 +30,14 @@ impl ApplyEnvironmentManagedActionInput {
 }
 impl ApplyEnvironmentManagedActionInput {
     /// Creates a new builder-style object to manufacture [`ApplyEnvironmentManagedActionInput`](crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionInput).
-    pub fn builder() -> crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionInputBuilder{
+    pub fn builder() -> crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionInputBuilder {
         crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionInputBuilder::default()
     }
 }
 
 /// A builder for [`ApplyEnvironmentManagedActionInput`](crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplyEnvironmentManagedActionInputBuilder {
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct ApplyEnvironmentManagedActionInputBuilder {
 }
 impl ApplyEnvironmentManagedActionInputBuilder {
     /// <p>The name of the target environment.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the target environment.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -67,18 +59,12 @@ impl ApplyEnvironmentManagedActionInputBuilder {
         &self.environment_name
     }
     /// <p>The environment ID of the target environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The environment ID of the target environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -107,15 +93,10 @@ impl ApplyEnvironmentManagedActionInputBuilder {
         crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionInput {
-                environment_name: self.environment_name
-                ,
-                environment_id: self.environment_id
-                ,
-                action_id: self.action_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionInput {
+            environment_name: self.environment_name,
+            environment_id: self.environment_id,
+            action_id: self.action_id,
+        })
     }
 }

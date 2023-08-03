@@ -9,10 +9,7 @@ pub fn ser_put_managed_scaling_policy_input(
     if let Some(var_2) = &input.managed_scaling_policy {
         #[allow(unused_mut)]
         let mut object_3 = object.key("ManagedScalingPolicy").start_object();
-        crate::protocol_serde::shape_managed_scaling_policy::ser_managed_scaling_policy(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_managed_scaling_policy::ser_managed_scaling_policy(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateDistributionBundleOutput {
 }
 impl UpdateDistributionBundleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDistributionBundleOutput`](crate::operation::update_distribution_bundle::UpdateDistributionBundleOutput).
-    pub fn builder(
-    ) -> crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleOutputBuilder {
         crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDistributionBundleOutput`](crate::operation::update_distribution_bundle::UpdateDistributionBundleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDistributionBundleOutputBuilder {
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl UpdateDistributionBundleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDistributionBundleOutput`](crate::operation::update_distribution_bundle::UpdateDistributionBundleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_distribution_bundle::UpdateDistributionBundleOutput {
+    pub fn build(self) -> crate::operation::update_distribution_bundle::UpdateDistributionBundleOutput {
         crate::operation::update_distribution_bundle::UpdateDistributionBundleOutput {
             operation: self.operation,
             _request_id: self._request_id,

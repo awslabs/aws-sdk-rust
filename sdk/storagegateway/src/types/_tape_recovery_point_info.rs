@@ -46,9 +46,7 @@ impl TapeRecoveryPointInfo {
 
 /// A builder for [`TapeRecoveryPointInfo`](crate::types::TapeRecoveryPointInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TapeRecoveryPointInfoBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tape_recovery_point_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -78,18 +76,13 @@ impl TapeRecoveryPointInfoBuilder {
     }
     /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
     /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-    pub fn set_tape_recovery_point_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_tape_recovery_point_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.tape_recovery_point_time = input;
         self
     }
     /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
     /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-    pub fn get_tape_recovery_point_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_tape_recovery_point_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.tape_recovery_point_time
     }
     /// <p>The size, in bytes, of the virtual tapes to recover.</p>

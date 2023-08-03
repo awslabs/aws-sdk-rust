@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`enforced(bool)`](crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsFluentBuilder::enforced) / [`set_enforced(Option<bool>)`](crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsFluentBuilder::set_enforced): <p>Enforces or suspends a policy after it's applied.</p>
     /// - On success, responds with [`PutInboundDmarcSettingsOutput`](crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput)
     /// - On failure, responds with [`SdkError<PutInboundDmarcSettingsError>`](crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError)
-    pub fn put_inbound_dmarc_settings(
-        &self,
-    ) -> crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsFluentBuilder
-    {
+    pub fn put_inbound_dmarc_settings(&self) -> crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsFluentBuilder {
         crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsFluentBuilder::new(self.handle.clone())
     }
 }

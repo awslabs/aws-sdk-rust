@@ -93,9 +93,7 @@ impl Session {
 
 /// A builder for [`Session`](crate::types::Session).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SessionBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<::std::string::String>,
@@ -158,10 +156,7 @@ impl SessionBuilder {
         self
     }
     /// <p>The date and time, in ISO-8601 Extended format, when the session began.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
@@ -175,10 +170,7 @@ impl SessionBuilder {
         self
     }
     /// <p>The date and time, in ISO-8601 Extended format, when the session was terminated.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date = input;
         self
     }
@@ -187,18 +179,12 @@ impl SessionBuilder {
         &self.end_date
     }
     /// <p>The name of the Session Manager SSM document used to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>.</p>
-    pub fn document_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Session Manager SSM document used to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>.</p>
-    pub fn set_document_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_name = input;
         self
     }
@@ -254,10 +240,7 @@ impl SessionBuilder {
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_output_url(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionManagerOutputUrl>,
-    ) -> Self {
+    pub fn set_output_url(mut self, input: ::std::option::Option<crate::types::SessionManagerOutputUrl>) -> Self {
         self.output_url = input;
         self
     }
@@ -266,18 +249,12 @@ impl SessionBuilder {
         &self.output_url
     }
     /// <p>The maximum duration of a session before it terminates.</p>
-    pub fn max_session_duration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn max_session_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_session_duration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum duration of a session before it terminates.</p>
-    pub fn set_max_session_duration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_max_session_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_session_duration = input;
         self
     }

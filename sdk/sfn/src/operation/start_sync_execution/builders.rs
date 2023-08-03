@@ -10,10 +10,7 @@ impl StartSyncExecutionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_sync_execution::StartSyncExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_sync_execution::StartSyncExecutionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_sync_execution::StartSyncExecutionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_sync_execution();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl StartSyncExecutionFluentBuilder {
         }
     }
     /// Access the StartSyncExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_sync_execution::builders::StartSyncExecutionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_sync_execution::builders::StartSyncExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl StartSyncExecutionFluentBuilder {
             crate::operation::start_sync_execution::StartSyncExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_sync_execution::StartSyncExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_sync_execution::StartSyncExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl StartSyncExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl StartSyncExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_sync_execution::StartSyncExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_sync_execution::StartSyncExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_sync_execution::StartSyncExecutionError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl StartSyncExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_sync_execution::StartSyncExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_sync_execution::StartSyncExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_sync_execution::StartSyncExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +106,17 @@ impl StartSyncExecutionFluentBuilder {
             crate::operation::start_sync_execution::StartSyncExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_sync_execution::StartSyncExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_sync_execution::StartSyncExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.state_machine_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_state_machine_arn(input);
         self
     }

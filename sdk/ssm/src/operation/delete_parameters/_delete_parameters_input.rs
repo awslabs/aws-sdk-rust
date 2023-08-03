@@ -15,17 +15,14 @@ impl DeleteParametersInput {
 }
 impl DeleteParametersInput {
     /// Creates a new builder-style object to manufacture [`DeleteParametersInput`](crate::operation::delete_parameters::DeleteParametersInput).
-    pub fn builder() -> crate::operation::delete_parameters::builders::DeleteParametersInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_parameters::builders::DeleteParametersInputBuilder {
         crate::operation::delete_parameters::builders::DeleteParametersInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteParametersInput`](crate::operation::delete_parameters::DeleteParametersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteParametersInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +39,7 @@ impl DeleteParametersInputBuilder {
         self
     }
     /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -56,12 +50,7 @@ impl DeleteParametersInputBuilder {
     /// Consumes the builder and constructs a [`DeleteParametersInput`](crate::operation::delete_parameters::DeleteParametersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_parameters::DeleteParametersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_parameters::DeleteParametersInput {
-            names: self.names,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_parameters::DeleteParametersInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_parameters::DeleteParametersInput { names: self.names })
     }
 }

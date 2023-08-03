@@ -5,15 +5,12 @@
 pub struct DescribeVpcPeeringConnectionsOutput {
     /// <p>A collection of VPC peering connection records that match the request.</p>
     #[doc(hidden)]
-    pub vpc_peering_connections:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>>,
+    pub vpc_peering_connections: ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>>,
     _request_id: Option<String>,
 }
 impl DescribeVpcPeeringConnectionsOutput {
     /// <p>A collection of VPC peering connection records that match the request.</p>
-    pub fn vpc_peering_connections(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VpcPeeringConnection]> {
+    pub fn vpc_peering_connections(&self) -> ::std::option::Option<&[crate::types::VpcPeeringConnection]> {
         self.vpc_peering_connections.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeVpcPeeringConnectionsOutput {
 }
 impl DescribeVpcPeeringConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcPeeringConnectionsOutput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput).
-    pub fn builder() -> crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsOutputBuilder {
         crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcPeeringConnectionsOutput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcPeeringConnectionsOutputBuilder {
-    pub(crate) vpc_peering_connections:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>>,
+    pub(crate) vpc_peering_connections: ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>>,
     _request_id: Option<String>,
 }
 impl DescribeVpcPeeringConnectionsOutputBuilder {
@@ -52,17 +46,12 @@ impl DescribeVpcPeeringConnectionsOutputBuilder {
         self
     }
     /// <p>A collection of VPC peering connection records that match the request.</p>
-    pub fn set_vpc_peering_connections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>>,
-    ) -> Self {
+    pub fn set_vpc_peering_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>>) -> Self {
         self.vpc_peering_connections = input;
         self
     }
     /// <p>A collection of VPC peering connection records that match the request.</p>
-    pub fn get_vpc_peering_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>> {
+    pub fn get_vpc_peering_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringConnection>> {
         &self.vpc_peering_connections
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,10 +64,7 @@ impl DescribeVpcPeeringConnectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVpcPeeringConnectionsOutput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput {
         crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput {
             vpc_peering_connections: self.vpc_peering_connections,
             _request_id: self._request_id,

@@ -10,10 +10,7 @@ impl AddRegionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_region::AddRegionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_region::AddRegionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_region::AddRegionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_region();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl AddRegionFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::add_region::AddRegion,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::add_region::AddRegion, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::add_region::AddRegionError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl AddRegionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl AddRegionFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::add_region::AddRegion,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::add_region::AddRegion, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::add_region::AddRegionError>,
     > {
         self.customize_middleware().await
@@ -146,10 +134,7 @@ impl AddRegionFluentBuilder {
         self
     }
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
-    pub fn set_vpc_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryVpcSettings>,
-    ) -> Self {
+    pub fn set_vpc_settings(mut self, input: ::std::option::Option<crate::types::DirectoryVpcSettings>) -> Self {
         self.inner = self.inner.set_vpc_settings(input);
         self
     }

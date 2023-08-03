@@ -35,9 +35,7 @@ impl ListTypesOutput {
 
 /// A builder for [`ListTypesOutput`](crate::operation::list_types::ListTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTypesOutputBuilder {
     pub(crate) type_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TypeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListTypesOutputBuilder {
         self
     }
     /// <p>A list of <code>TypeSummary</code> structures that contain information about the specified extensions.</p>
-    pub fn set_type_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TypeSummary>>,
-    ) -> Self {
+    pub fn set_type_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TypeSummary>>) -> Self {
         self.type_summaries = input;
         self
     }
     /// <p>A list of <code>TypeSummary</code> structures that contain information about the specified extensions.</p>
-    pub fn get_type_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypeSummary>> {
+    pub fn get_type_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TypeSummary>> {
         &self.type_summaries
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>

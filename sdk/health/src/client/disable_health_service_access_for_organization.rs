@@ -5,7 +5,11 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationFluentBuilder::send) it.
     /// - On success, responds with [`DisableHealthServiceAccessForOrganizationOutput`](crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput)
     /// - On failure, responds with [`SdkError<DisableHealthServiceAccessForOrganizationError>`](crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError)
-    pub fn disable_health_service_access_for_organization(&self) -> crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationFluentBuilder{
-        crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationFluentBuilder::new(self.handle.clone())
+    pub fn disable_health_service_access_for_organization(
+        &self,
+    ) -> crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationFluentBuilder {
+        crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -30,7 +30,7 @@ impl DeregisterContainerInstanceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterContainerInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deregister_container_instance::builders::DeregisterContainerInstanceInputBuilder,
+    inner: crate::operation::deregister_container_instance::builders::DeregisterContainerInstanceInputBuilder,
 }
 impl DeregisterContainerInstanceFluentBuilder {
     /// Creates a new `DeregisterContainerInstance`.
@@ -41,7 +41,7 @@ impl DeregisterContainerInstanceFluentBuilder {
         }
     }
     /// Access the DeregisterContainerInstance as a reference.
-    pub fn as_input(&self) -> &crate::operation::deregister_container_instance::builders::DeregisterContainerInstanceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::deregister_container_instance::builders::DeregisterContainerInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl DeregisterContainerInstanceFluentBuilder {
             crate::operation::deregister_container_instance::DeregisterContainerInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_container_instance::DeregisterContainerInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_container_instance::DeregisterContainerInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl DeregisterContainerInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl DeregisterContainerInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_container_instance::DeregisterContainerInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_container_instance::DeregisterContainerInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_container_instance::DeregisterContainerInstanceError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl DeregisterContainerInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_container_instance::DeregisterContainerInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_container_instance::DeregisterContainerInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_container_instance::DeregisterContainerInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +109,7 @@ impl DeregisterContainerInstanceFluentBuilder {
             crate::operation::deregister_container_instance::DeregisterContainerInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_container_instance::DeregisterContainerInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_container_instance::DeregisterContainerInstanceError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +128,12 @@ impl DeregisterContainerInstanceFluentBuilder {
         self.inner.get_cluster()
     }
     /// <p>The container instance ID or full ARN of the container instance to deregister. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn container_instance(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_instance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_instance(input.into());
         self
     }
     /// <p>The container instance ID or full ARN of the container instance to deregister. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn set_container_instance(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_instance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_instance(input);
         self
     }

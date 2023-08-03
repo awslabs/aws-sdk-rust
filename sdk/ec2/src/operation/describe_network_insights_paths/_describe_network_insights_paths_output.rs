@@ -5,8 +5,7 @@
 pub struct DescribeNetworkInsightsPathsOutput {
     /// <p>Information about the paths.</p>
     #[doc(hidden)]
-    pub network_insights_paths:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsPath>>,
+    pub network_insights_paths: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsPath>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeNetworkInsightsPathsOutput {
 }
 impl DescribeNetworkInsightsPathsOutput {
     /// <p>Information about the paths.</p>
-    pub fn network_insights_paths(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NetworkInsightsPath]> {
+    pub fn network_insights_paths(&self) -> ::std::option::Option<&[crate::types::NetworkInsightsPath]> {
         self.network_insights_paths.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeNetworkInsightsPathsOutput {
 }
 impl DescribeNetworkInsightsPathsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInsightsPathsOutput`](crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsOutput).
-    pub fn builder() -> crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsOutputBuilder {
         crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkInsightsPathsOutput`](crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkInsightsPathsOutputBuilder {
-    pub(crate) network_insights_paths:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsPath>>,
+    pub(crate) network_insights_paths: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsPath>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeNetworkInsightsPathsOutputBuilder {
         self
     }
     /// <p>Information about the paths.</p>
-    pub fn set_network_insights_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsPath>>,
-    ) -> Self {
+    pub fn set_network_insights_paths(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsPath>>) -> Self {
         self.network_insights_paths = input;
         self
     }
     /// <p>Information about the paths.</p>
-    pub fn get_network_insights_paths(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsPath>> {
+    pub fn get_network_insights_paths(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInsightsPath>> {
         &self.network_insights_paths
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -97,9 +86,7 @@ impl DescribeNetworkInsightsPathsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInsightsPathsOutput`](crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsOutput {
+    pub fn build(self) -> crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsOutput {
         crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsOutput {
             network_insights_paths: self.network_insights_paths,
             next_token: self.next_token,

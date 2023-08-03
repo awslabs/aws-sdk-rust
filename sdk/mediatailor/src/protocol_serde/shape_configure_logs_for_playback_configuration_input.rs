@@ -10,9 +10,7 @@ pub fn ser_configure_logs_for_playback_configuration_input(
         );
     }
     if let Some(var_1) = &input.playback_configuration_name {
-        object
-            .key("PlaybackConfigurationName")
-            .string(var_1.as_str());
+        object.key("PlaybackConfigurationName").string(var_1.as_str());
     }
     Ok(())
 }

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetJobBookmarkOutput`](crate::operation::get_job_bookmark::GetJobBookmarkOutput) with field(s):
     ///   - [`job_bookmark_entry(Option<JobBookmarkEntry>)`](crate::operation::get_job_bookmark::GetJobBookmarkOutput::job_bookmark_entry): <p>A structure that defines a point that a job can resume processing.</p>
     /// - On failure, responds with [`SdkError<GetJobBookmarkError>`](crate::operation::get_job_bookmark::GetJobBookmarkError)
-    pub fn get_job_bookmark(
-        &self,
-    ) -> crate::operation::get_job_bookmark::builders::GetJobBookmarkFluentBuilder {
-        crate::operation::get_job_bookmark::builders::GetJobBookmarkFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_job_bookmark(&self) -> crate::operation::get_job_bookmark::builders::GetJobBookmarkFluentBuilder {
+        crate::operation::get_job_bookmark::builders::GetJobBookmarkFluentBuilder::new(self.handle.clone())
     }
 }

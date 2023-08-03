@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeSnomedctInferenceJobOutput`](crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobOutput) with field(s):
     ///   - [`comprehend_medical_async_job_properties(Option<ComprehendMedicalAsyncJobProperties>)`](crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobOutput::comprehend_medical_async_job_properties): <p>Provides information about a detection job.</p>
     /// - On failure, responds with [`SdkError<DescribeSNOMEDCTInferenceJobError>`](crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError)
-    pub fn describe_snomedct_inference_job(&self) -> crate::operation::describe_snomedct_inference_job::builders::DescribeSNOMEDCTInferenceJobFluentBuilder{
+    pub fn describe_snomedct_inference_job(
+        &self,
+    ) -> crate::operation::describe_snomedct_inference_job::builders::DescribeSNOMEDCTInferenceJobFluentBuilder {
         crate::operation::describe_snomedct_inference_job::builders::DescribeSNOMEDCTInferenceJobFluentBuilder::new(self.handle.clone())
     }
 }

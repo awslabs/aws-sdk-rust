@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`user_profile_name(impl ::std::convert::Into<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::set_user_profile_name): <p>The user profile name.</p>
     /// - On success, responds with [`DeleteUserProfileOutput`](crate::operation::delete_user_profile::DeleteUserProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteUserProfileError>`](crate::operation::delete_user_profile::DeleteUserProfileError)
-    pub fn delete_user_profile(
-        &self,
-    ) -> crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder {
-        crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_user_profile(&self) -> crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder {
+        crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::new(self.handle.clone())
     }
 }

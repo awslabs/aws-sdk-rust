@@ -10,10 +10,7 @@ impl DescribeFleetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_fleets::DescribeFleetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleets::DescribeFleetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleets::DescribeFleetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_fleets();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeFleetsFluentBuilder {
         }
     }
     /// Access the DescribeFleets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_fleets::builders::DescribeFleetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_fleets::builders::DescribeFleetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DescribeFleetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl DescribeFleetsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_fleets::paginator::DescribeFleetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_fleets::paginator::DescribeFleetsPaginator {
-        crate::operation::describe_fleets::paginator::DescribeFleetsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_fleets::paginator::DescribeFleetsPaginator {
+        crate::operation::describe_fleets::paginator::DescribeFleetsPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -182,10 +169,7 @@ impl DescribeFleetsFluentBuilder {
     /// <p>The IDs of the EC2 Fleets.</p> <note>
     /// <p>If a fleet is of type <code>instant</code>, you must specify the fleet ID, otherwise it does not appear in the response.</p>
     /// </note>
-    pub fn set_fleet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_fleet_ids(input);
         self
     }
@@ -219,10 +203,7 @@ impl DescribeFleetsFluentBuilder {
     /// <li> <p> <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
     /// <li> <p> <code>type</code> - The type of request (<code>instant</code> | <code>request</code> | <code>maintain</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -5,16 +5,16 @@ pub use crate::operation::put_registry_scanning_configuration::_put_registry_sca
 
 impl PutRegistryScanningConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_registry_scanning_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl PutRegistryScanningConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRegistryScanningConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_registry_scanning_configuration::builders::PutRegistryScanningConfigurationInputBuilder,
+    inner: crate::operation::put_registry_scanning_configuration::builders::PutRegistryScanningConfigurationInputBuilder,
 }
 impl PutRegistryScanningConfigurationFluentBuilder {
     /// Creates a new `PutRegistryScanningConfiguration`.
@@ -37,15 +37,20 @@ impl PutRegistryScanningConfigurationFluentBuilder {
         }
     }
     /// Access the PutRegistryScanningConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_registry_scanning_configuration::builders::PutRegistryScanningConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_registry_scanning_configuration::builders::PutRegistryScanningConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl PutRegistryScanningConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl PutRegistryScanningConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The scanning type to set for the registry.</p>
@@ -124,17 +139,12 @@ impl PutRegistryScanningConfigurationFluentBuilder {
         self
     }
     /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
     /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>> {
         self.inner.get_rules()
     }
 }

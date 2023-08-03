@@ -12,10 +12,7 @@ pub fn ser_start_resource_evaluation_input(
     if let Some(var_3) = &input.evaluation_context {
         #[allow(unused_mut)]
         let mut object_4 = object.key("EvaluationContext").start_object();
-        crate::protocol_serde::shape_evaluation_context::ser_evaluation_context(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_evaluation_context::ser_evaluation_context(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.evaluation_mode {

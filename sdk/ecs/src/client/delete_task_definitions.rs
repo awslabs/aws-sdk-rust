@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`task_definitions(Option<Vec<TaskDefinition>>)`](crate::operation::delete_task_definitions::DeleteTaskDefinitionsOutput::task_definitions): <p>The list of deleted task definitions.</p>
     ///   - [`failures(Option<Vec<Failure>>)`](crate::operation::delete_task_definitions::DeleteTaskDefinitionsOutput::failures): <p>Any failures associated with the call.</p>
     /// - On failure, responds with [`SdkError<DeleteTaskDefinitionsError>`](crate::operation::delete_task_definitions::DeleteTaskDefinitionsError)
-    pub fn delete_task_definitions(
-        &self,
-    ) -> crate::operation::delete_task_definitions::builders::DeleteTaskDefinitionsFluentBuilder
-    {
-        crate::operation::delete_task_definitions::builders::DeleteTaskDefinitionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_task_definitions(&self) -> crate::operation::delete_task_definitions::builders::DeleteTaskDefinitionsFluentBuilder {
+        crate::operation::delete_task_definitions::builders::DeleteTaskDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

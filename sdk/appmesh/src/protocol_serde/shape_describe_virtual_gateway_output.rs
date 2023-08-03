@@ -5,7 +5,10 @@ pub(crate) fn de_virtual_gateway_payload(
     ::std::option::Option<crate::types::VirtualGatewayData>,
     crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_virtual_gateway_data::de_virtual_gateway_data_payload(body).map_err(crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_virtual_gateway_data::de_virtual_gateway_data_payload(body)
+                .map_err(crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError::unhandled)
+        })
+        .transpose()
 }

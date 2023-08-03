@@ -9,9 +9,7 @@ pub struct InlineArchiveRule {
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The condition and values for a criterion.</p>
     #[doc(hidden)]
-    pub filter: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    >,
+    pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
 }
 impl InlineArchiveRule {
     /// <p>The name of the rule.</p>
@@ -19,11 +17,7 @@ impl InlineArchiveRule {
         self.rule_name.as_deref()
     }
     /// <p>The condition and values for a criterion.</p>
-    pub fn filter(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    > {
+    pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
         self.filter.as_ref()
     }
 }
@@ -36,14 +30,10 @@ impl InlineArchiveRule {
 
 /// A builder for [`InlineArchiveRule`](crate::types::InlineArchiveRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InlineArchiveRuleBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
-    pub(crate) filter: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    >,
+    pub(crate) filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
 }
 impl InlineArchiveRuleBuilder {
     /// <p>The name of the rule.</p>
@@ -65,32 +55,19 @@ impl InlineArchiveRuleBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>The condition and values for a criterion.</p>
-    pub fn filter(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Criterion,
-    ) -> Self {
+    pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Criterion) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.filter = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The condition and values for a criterion.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-        >,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>) -> Self {
         self.filter = input;
         self
     }
     /// <p>The condition and values for a criterion.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    > {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
         &self.filter
     }
     /// Consumes the builder and constructs a [`InlineArchiveRule`](crate::types::InlineArchiveRule).

@@ -53,7 +53,7 @@ impl ::aws_http::request_id::RequestId for GetClusterCredentialsWithIamOutput {
 }
 impl GetClusterCredentialsWithIamOutput {
     /// Creates a new builder-style object to manufacture [`GetClusterCredentialsWithIamOutput`](crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput).
-    pub fn builder() -> crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamOutputBuilder{
+    pub fn builder() -> crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamOutputBuilder {
         crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamOutputBuilder::default()
     }
 }
@@ -103,10 +103,7 @@ impl GetClusterCredentialsWithIamOutputBuilder {
         self
     }
     /// <p>The time (UTC) when the temporary password expires. After this timestamp, a log in with the temporary password fails.</p>
-    pub fn set_expiration(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration = input;
         self
     }
@@ -120,10 +117,7 @@ impl GetClusterCredentialsWithIamOutputBuilder {
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_next_refresh_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_next_refresh_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.next_refresh_time = input;
         self
     }
@@ -141,10 +135,7 @@ impl GetClusterCredentialsWithIamOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetClusterCredentialsWithIamOutput`](crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput
-    {
+    pub fn build(self) -> crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput {
         crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput {
             db_user: self.db_user,
             db_password: self.db_password,

@@ -37,9 +37,7 @@ impl SetSMBGuestPasswordFluentBuilder {
         }
     }
     /// Access the SetSMBGuestPassword as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_smb_guest_password::builders::SetSmbGuestPasswordInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_smb_guest_password::builders::SetSmbGuestPasswordInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl SetSMBGuestPasswordFluentBuilder {
             crate::operation::set_smb_guest_password::SetSMBGuestPassword,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_smb_guest_password::SetSMBGuestPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_smb_guest_password::SetSMBGuestPasswordError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl SetSMBGuestPasswordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl SetSMBGuestPasswordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_smb_guest_password::SetSmbGuestPasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_smb_guest_password::SetSMBGuestPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_smb_guest_password::SetSMBGuestPasswordError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl SetSMBGuestPasswordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_smb_guest_password::SetSmbGuestPasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_smb_guest_password::SetSMBGuestPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_smb_guest_password::SetSMBGuestPasswordError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl SetSMBGuestPasswordFluentBuilder {
             crate::operation::set_smb_guest_password::SetSMBGuestPassword,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_smb_guest_password::SetSMBGuestPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_smb_guest_password::SetSMBGuestPasswordError>,
     > {
         self.customize_middleware().await
     }

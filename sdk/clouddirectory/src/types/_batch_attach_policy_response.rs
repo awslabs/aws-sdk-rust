@@ -13,9 +13,7 @@ impl BatchAttachPolicyResponse {
 
 /// A builder for [`BatchAttachPolicyResponse`](crate::types::BatchAttachPolicyResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAttachPolicyResponseBuilder {}
 impl BatchAttachPolicyResponseBuilder {
     /// Consumes the builder and constructs a [`BatchAttachPolicyResponse`](crate::types::BatchAttachPolicyResponse).

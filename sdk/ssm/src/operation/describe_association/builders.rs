@@ -10,10 +10,7 @@ impl DescribeAssociationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_association::DescribeAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_association::DescribeAssociationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_association::DescribeAssociationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_association();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeAssociationFluentBuilder {
         }
     }
     /// Access the DescribeAssociation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_association::builders::DescribeAssociationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_association::builders::DescribeAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeAssociationFluentBuilder {
             crate::operation::describe_association::DescribeAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_association::DescribeAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_association::DescribeAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_association::DescribeAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_association::DescribeAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_association::DescribeAssociationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_association::DescribeAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_association::DescribeAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_association::DescribeAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeAssociationFluentBuilder {
             crate::operation::describe_association::DescribeAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_association::DescribeAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_association::DescribeAssociationError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl DescribeAssociationFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The association ID for which you want information.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
     /// <p>The association ID for which you want information.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }
@@ -171,18 +149,12 @@ impl DescribeAssociationFluentBuilder {
         self.inner.get_association_id()
     }
     /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>. </p>
-    pub fn association_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_version(input.into());
         self
     }
     /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>. </p>
-    pub fn set_association_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_version(input);
         self
     }

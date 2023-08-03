@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAvailabilityZonesOutput`](crate::operation::describe_availability_zones::DescribeAvailabilityZonesOutput) with field(s):
     ///   - [`availability_zones(Option<Vec<AvailabilityZone>>)`](crate::operation::describe_availability_zones::DescribeAvailabilityZonesOutput::availability_zones): <p>Information about the Availability Zones, Local Zones, and Wavelength Zones.</p>
     /// - On failure, responds with [`SdkError<DescribeAvailabilityZonesError>`](crate::operation::describe_availability_zones::DescribeAvailabilityZonesError)
-    pub fn describe_availability_zones(&self) -> crate::operation::describe_availability_zones::builders::DescribeAvailabilityZonesFluentBuilder{
+    pub fn describe_availability_zones(&self) -> crate::operation::describe_availability_zones::builders::DescribeAvailabilityZonesFluentBuilder {
         crate::operation::describe_availability_zones::builders::DescribeAvailabilityZonesFluentBuilder::new(self.handle.clone())
     }
 }

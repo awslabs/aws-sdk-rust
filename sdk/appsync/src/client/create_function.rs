@@ -17,11 +17,7 @@ impl super::Client {
     /// - On success, responds with [`CreateFunctionOutput`](crate::operation::create_function::CreateFunctionOutput) with field(s):
     ///   - [`function_configuration(Option<FunctionConfiguration>)`](crate::operation::create_function::CreateFunctionOutput::function_configuration): <p>The <code>Function</code> object.</p>
     /// - On failure, responds with [`SdkError<CreateFunctionError>`](crate::operation::create_function::CreateFunctionError)
-    pub fn create_function(
-        &self,
-    ) -> crate::operation::create_function::builders::CreateFunctionFluentBuilder {
-        crate::operation::create_function::builders::CreateFunctionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_function(&self) -> crate::operation::create_function::builders::CreateFunctionFluentBuilder {
+        crate::operation::create_function::builders::CreateFunctionFluentBuilder::new(self.handle.clone())
     }
 }

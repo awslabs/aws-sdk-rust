@@ -10,10 +10,7 @@ impl ResetPasswordInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::reset_password::ResetPasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_password::ResetPasswordError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_password::ResetPasswordError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.reset_password();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ResetPasswordFluentBuilder {
         }
     }
     /// Access the ResetPassword as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reset_password::builders::ResetPasswordInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::reset_password::builders::ResetPasswordInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ResetPasswordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl ResetPasswordFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

@@ -5,9 +5,7 @@
 pub struct DescribeVerifiedAccessInstanceLoggingConfigurationsOutput {
     /// <p>The current logging configuration for the Verified Access instances.</p>
     #[doc(hidden)]
-    pub logging_configurations: ::std::option::Option<
-        ::std::vec::Vec<crate::types::VerifiedAccessInstanceLoggingConfiguration>,
-    >,
+    pub logging_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstanceLoggingConfiguration>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +13,7 @@ pub struct DescribeVerifiedAccessInstanceLoggingConfigurationsOutput {
 }
 impl DescribeVerifiedAccessInstanceLoggingConfigurationsOutput {
     /// <p>The current logging configuration for the Verified Access instances.</p>
-    pub fn logging_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VerifiedAccessInstanceLoggingConfiguration]> {
+    pub fn logging_configurations(&self) -> ::std::option::Option<&[crate::types::VerifiedAccessInstanceLoggingConfiguration]> {
         self.logging_configurations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -25,9 +21,7 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId
-    for DescribeVerifiedAccessInstanceLoggingConfigurationsOutput
-{
+impl ::aws_http::request_id::RequestId for DescribeVerifiedAccessInstanceLoggingConfigurationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,13 +35,9 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsOutput {
 
 /// A builder for [`DescribeVerifiedAccessInstanceLoggingConfigurationsOutput`](crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVerifiedAccessInstanceLoggingConfigurationsOutputBuilder {
-    pub(crate) logging_configurations: ::std::option::Option<
-        ::std::vec::Vec<crate::types::VerifiedAccessInstanceLoggingConfiguration>,
-    >,
+    pub(crate) logging_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstanceLoggingConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,10 +47,7 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_logging_configurations`](Self::set_logging_configurations).
     ///
     /// <p>The current logging configuration for the Verified Access instances.</p>
-    pub fn logging_configurations(
-        mut self,
-        input: crate::types::VerifiedAccessInstanceLoggingConfiguration,
-    ) -> Self {
+    pub fn logging_configurations(mut self, input: crate::types::VerifiedAccessInstanceLoggingConfiguration) -> Self {
         let mut v = self.logging_configurations.unwrap_or_default();
         v.push(input);
         self.logging_configurations = ::std::option::Option::Some(v);
@@ -69,19 +56,13 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsOutputBuilder {
     /// <p>The current logging configuration for the Verified Access instances.</p>
     pub fn set_logging_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::VerifiedAccessInstanceLoggingConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstanceLoggingConfiguration>>,
     ) -> Self {
         self.logging_configurations = input;
         self
     }
     /// <p>The current logging configuration for the Verified Access instances.</p>
-    pub fn get_logging_configurations(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::VerifiedAccessInstanceLoggingConfiguration>,
-    > {
+    pub fn get_logging_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessInstanceLoggingConfiguration>> {
         &self.logging_configurations
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -108,12 +89,12 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVerifiedAccessInstanceLoggingConfigurationsOutput`](crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput).
-    pub fn build(self) -> crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput {
         crate::operation::describe_verified_access_instance_logging_configurations::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput {
-            logging_configurations: self.logging_configurations
-            ,
-            next_token: self.next_token
-            ,
+            logging_configurations: self.logging_configurations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

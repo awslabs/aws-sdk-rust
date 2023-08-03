@@ -51,9 +51,7 @@ impl RdsDbUserDetails {
 
 /// A builder for [`RdsDbUserDetails`](crate::types::RdsDbUserDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RdsDbUserDetailsBuilder {
     pub(crate) user: ::std::option::Option<::std::string::String>,
     pub(crate) application: ::std::option::Option<::std::string::String>,

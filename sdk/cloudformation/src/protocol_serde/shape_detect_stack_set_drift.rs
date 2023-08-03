@@ -9,76 +9,64 @@ pub fn de_detect_stack_set_drift_http_error(
     crate::operation::detect_stack_set_drift::DetectStackSetDriftError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidOperationException" => crate::operation::detect_stack_set_drift::DetectStackSetDriftError::InvalidOperationException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidOperationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_xml_err(_response_body, output).map_err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidOperationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "OperationInProgressException" => crate::operation::detect_stack_set_drift::DetectStackSetDriftError::OperationInProgressException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::OperationInProgressExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_operation_in_progress_exception::de_operation_in_progress_exception_xml_err(_response_body, output).map_err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationInProgressExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_operation_in_progress_exception::de_operation_in_progress_exception_xml_err(_response_body, output)
+                        .map_err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "StackSetNotFoundException" => crate::operation::detect_stack_set_drift::DetectStackSetDriftError::StackSetNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::StackSetNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_stack_set_not_found_exception::de_stack_set_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::StackSetNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_stack_set_not_found_exception::de_stack_set_not_found_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::detect_stack_set_drift::DetectStackSetDriftError::generic(generic)
+        _ => crate::operation::detect_stack_set_drift::DetectStackSetDriftError::generic(generic),
     })
 }
 
@@ -94,14 +82,9 @@ pub fn de_detect_stack_set_drift_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftOutputBuilder::default();
-        output = crate::protocol_serde::shape_detect_stack_set_drift::de_detect_stack_set_drift(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_detect_stack_set_drift::de_detect_stack_set_drift(_response_body, output)
+            .map_err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -110,10 +93,7 @@ pub fn de_detect_stack_set_drift_http_response_with_props(
 pub fn de_detect_stack_set_drift(
     inp: &[u8],
     mut builder: crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftOutputBuilder,
-) -> Result<
-    crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -153,9 +133,7 @@ pub fn de_detect_stack_set_drift(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected DetectStackSetDriftResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected DetectStackSetDriftResult tag"));
     };
     Ok(builder)
 }

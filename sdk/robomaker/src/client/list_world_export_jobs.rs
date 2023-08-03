@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`world_export_job_summaries(Option<Vec<WorldExportJobSummary>>)`](crate::operation::list_world_export_jobs::ListWorldExportJobsOutput::world_export_job_summaries): <p>Summary information for world export jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_world_export_jobs::ListWorldExportJobsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     /// - On failure, responds with [`SdkError<ListWorldExportJobsError>`](crate::operation::list_world_export_jobs::ListWorldExportJobsError)
-    pub fn list_world_export_jobs(
-        &self,
-    ) -> crate::operation::list_world_export_jobs::builders::ListWorldExportJobsFluentBuilder {
-        crate::operation::list_world_export_jobs::builders::ListWorldExportJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_world_export_jobs(&self) -> crate::operation::list_world_export_jobs::builders::ListWorldExportJobsFluentBuilder {
+        crate::operation::list_world_export_jobs::builders::ListWorldExportJobsFluentBuilder::new(self.handle.clone())
     }
 }

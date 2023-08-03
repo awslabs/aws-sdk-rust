@@ -84,18 +84,14 @@ impl ::aws_http::request_id::RequestId for DescribePackageVersionOutput {
 }
 impl DescribePackageVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribePackageVersionOutput`](crate::operation::describe_package_version::DescribePackageVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder {
         crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePackageVersionOutput`](crate::operation::describe_package_version::DescribePackageVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePackageVersionOutputBuilder {
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
@@ -111,18 +107,12 @@ pub struct DescribePackageVersionOutputBuilder {
 }
 impl DescribePackageVersionOutputBuilder {
     /// <p>The account ID of the version's owner.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the version's owner.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -173,18 +163,12 @@ impl DescribePackageVersionOutputBuilder {
         &self.package_name
     }
     /// <p>The version's version.</p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version's version.</p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_version = input;
         self
     }
@@ -193,18 +177,12 @@ impl DescribePackageVersionOutputBuilder {
         &self.package_version
     }
     /// <p>The version's patch version.</p>
-    pub fn patch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version's patch version.</p>
-    pub fn set_patch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.patch_version = input;
         self
     }
@@ -232,10 +210,7 @@ impl DescribePackageVersionOutputBuilder {
         self
     }
     /// <p>The version's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -244,18 +219,12 @@ impl DescribePackageVersionOutputBuilder {
         &self.status
     }
     /// <p>The version's status description.</p>
-    pub fn status_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version's status description.</p>
-    pub fn set_status_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_description = input;
         self
     }
@@ -269,10 +238,7 @@ impl DescribePackageVersionOutputBuilder {
         self
     }
     /// <p>The version's registered time.</p>
-    pub fn set_registered_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_registered_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.registered_time = input;
         self
     }

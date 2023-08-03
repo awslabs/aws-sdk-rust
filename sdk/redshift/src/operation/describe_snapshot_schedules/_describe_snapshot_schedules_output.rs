@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeSnapshotSchedulesOutput {
 }
 impl DescribeSnapshotSchedulesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotSchedulesOutput`](crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesOutput).
-    pub fn builder() -> crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesOutputBuilder {
         crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSnapshotSchedulesOutput`](crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotSchedulesOutputBuilder {
-    pub(crate) snapshot_schedules:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSchedule>>,
+    pub(crate) snapshot_schedules: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSchedule>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeSnapshotSchedulesOutputBuilder {
         self
     }
     /// <p>A list of SnapshotSchedules.</p>
-    pub fn set_snapshot_schedules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSchedule>>,
-    ) -> Self {
+    pub fn set_snapshot_schedules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSchedule>>) -> Self {
         self.snapshot_schedules = input;
         self
     }
     /// <p>A list of SnapshotSchedules.</p>
-    pub fn get_snapshot_schedules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotSchedule>> {
+    pub fn get_snapshot_schedules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotSchedule>> {
         &self.snapshot_schedules
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
@@ -94,9 +86,7 @@ impl DescribeSnapshotSchedulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotSchedulesOutput`](crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesOutput {
+    pub fn build(self) -> crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesOutput {
         crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedulesOutput {
             snapshot_schedules: self.snapshot_schedules,
             marker: self.marker,

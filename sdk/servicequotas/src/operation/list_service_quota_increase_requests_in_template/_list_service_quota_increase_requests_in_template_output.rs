@@ -5,8 +5,7 @@
 pub struct ListServiceQuotaIncreaseRequestsInTemplateOutput {
     /// <p>Information about the quota increase requests.</p>
     #[doc(hidden)]
-    pub service_quota_increase_request_in_template_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuotaIncreaseRequestInTemplate>>,
+    pub service_quota_increase_request_in_template_list: ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuotaIncreaseRequestInTemplate>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,11 +13,8 @@ pub struct ListServiceQuotaIncreaseRequestsInTemplateOutput {
 }
 impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
     /// <p>Information about the quota increase requests.</p>
-    pub fn service_quota_increase_request_in_template_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServiceQuotaIncreaseRequestInTemplate]> {
-        self.service_quota_increase_request_in_template_list
-            .as_deref()
+    pub fn service_quota_increase_request_in_template_list(&self) -> ::std::option::Option<&[crate::types::ServiceQuotaIncreaseRequestInTemplate]> {
+        self.service_quota_increase_request_in_template_list.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -32,16 +28,16 @@ impl ::aws_http::request_id::RequestId for ListServiceQuotaIncreaseRequestsInTem
 }
 impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateOutput).
-    pub fn builder() -> crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateOutputBuilder{
-        crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateOutputBuilder {
+        crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceQuotaIncreaseRequestsInTemplateOutputBuilder {
     pub(crate) service_quota_increase_request_in_template_list:
         ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuotaIncreaseRequestInTemplate>>,
@@ -54,13 +50,8 @@ impl ListServiceQuotaIncreaseRequestsInTemplateOutputBuilder {
     /// To override the contents of this collection use [`set_service_quota_increase_request_in_template_list`](Self::set_service_quota_increase_request_in_template_list).
     ///
     /// <p>Information about the quota increase requests.</p>
-    pub fn service_quota_increase_request_in_template_list(
-        mut self,
-        input: crate::types::ServiceQuotaIncreaseRequestInTemplate,
-    ) -> Self {
-        let mut v = self
-            .service_quota_increase_request_in_template_list
-            .unwrap_or_default();
+    pub fn service_quota_increase_request_in_template_list(mut self, input: crate::types::ServiceQuotaIncreaseRequestInTemplate) -> Self {
+        let mut v = self.service_quota_increase_request_in_template_list.unwrap_or_default();
         v.push(input);
         self.service_quota_increase_request_in_template_list = ::std::option::Option::Some(v);
         self
@@ -68,9 +59,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateOutputBuilder {
     /// <p>Information about the quota increase requests.</p>
     pub fn set_service_quota_increase_request_in_template_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ServiceQuotaIncreaseRequestInTemplate>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuotaIncreaseRequestInTemplate>>,
     ) -> Self {
         self.service_quota_increase_request_in_template_list = input;
         self
@@ -78,8 +67,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateOutputBuilder {
     /// <p>Information about the quota increase requests.</p>
     pub fn get_service_quota_increase_request_in_template_list(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceQuotaIncreaseRequestInTemplate>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceQuotaIncreaseRequestInTemplate>> {
         &self.service_quota_increase_request_in_template_list
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -106,12 +94,10 @@ impl ListServiceQuotaIncreaseRequestsInTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateOutput).
-    pub fn build(self) -> crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateOutput{
+    pub fn build(self) -> crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateOutput {
         crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateOutput {
-            service_quota_increase_request_in_template_list: self.service_quota_increase_request_in_template_list
-            ,
-            next_token: self.next_token
-            ,
+            service_quota_increase_request_in_template_list: self.service_quota_increase_request_in_template_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

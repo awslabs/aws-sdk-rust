@@ -30,9 +30,7 @@ impl PortRangeFromTo {
 
 /// A builder for [`PortRangeFromTo`](crate::types::PortRangeFromTo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PortRangeFromToBuilder {
     pub(crate) from: ::std::option::Option<i32>,
     pub(crate) to: ::std::option::Option<i32>,

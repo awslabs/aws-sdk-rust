@@ -15,9 +15,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateTableOutput`](crate::operation::update_table::UpdateTableOutput) with field(s):
     ///   - [`resource_arn(Option<String>)`](crate::operation::update_table::UpdateTableOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the modified table.</p>
     /// - On failure, responds with [`SdkError<UpdateTableError>`](crate::operation::update_table::UpdateTableError)
-    pub fn update_table(
-        &self,
-    ) -> crate::operation::update_table::builders::UpdateTableFluentBuilder {
+    pub fn update_table(&self) -> crate::operation::update_table::builders::UpdateTableFluentBuilder {
         crate::operation::update_table::builders::UpdateTableFluentBuilder::new(self.handle.clone())
     }
 }

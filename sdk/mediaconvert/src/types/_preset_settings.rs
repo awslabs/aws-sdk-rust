@@ -9,8 +9,7 @@ pub struct PresetSettings {
     pub audio_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,
     /// This object holds groups of settings related to captions for one output. For each output that has captions, include one instance of CaptionDescriptions.
     #[doc(hidden)]
-    pub caption_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescriptionPreset>>,
+    pub caption_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescriptionPreset>>,
     /// Container specific settings.
     #[doc(hidden)]
     pub container_settings: ::std::option::Option<crate::types::ContainerSettings>,
@@ -24,9 +23,7 @@ impl PresetSettings {
         self.audio_descriptions.as_deref()
     }
     /// This object holds groups of settings related to captions for one output. For each output that has captions, include one instance of CaptionDescriptions.
-    pub fn caption_descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CaptionDescriptionPreset]> {
+    pub fn caption_descriptions(&self) -> ::std::option::Option<&[crate::types::CaptionDescriptionPreset]> {
         self.caption_descriptions.as_deref()
     }
     /// Container specific settings.
@@ -47,14 +44,10 @@ impl PresetSettings {
 
 /// A builder for [`PresetSettings`](crate::types::PresetSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PresetSettingsBuilder {
-    pub(crate) audio_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,
-    pub(crate) caption_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescriptionPreset>>,
+    pub(crate) audio_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,
+    pub(crate) caption_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescriptionPreset>>,
     pub(crate) container_settings: ::std::option::Option<crate::types::ContainerSettings>,
     pub(crate) video_description: ::std::option::Option<crate::types::VideoDescription>,
 }
@@ -71,17 +64,12 @@ impl PresetSettingsBuilder {
         self
     }
     /// Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can contain multiple groups of encoding settings.
-    pub fn set_audio_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,
-    ) -> Self {
+    pub fn set_audio_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>) -> Self {
         self.audio_descriptions = input;
         self
     }
     /// Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can contain multiple groups of encoding settings.
-    pub fn get_audio_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>> {
+    pub fn get_audio_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>> {
         &self.audio_descriptions
     }
     /// Appends an item to `caption_descriptions`.
@@ -96,17 +84,12 @@ impl PresetSettingsBuilder {
         self
     }
     /// This object holds groups of settings related to captions for one output. For each output that has captions, include one instance of CaptionDescriptions.
-    pub fn set_caption_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescriptionPreset>>,
-    ) -> Self {
+    pub fn set_caption_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescriptionPreset>>) -> Self {
         self.caption_descriptions = input;
         self
     }
     /// This object holds groups of settings related to captions for one output. For each output that has captions, include one instance of CaptionDescriptions.
-    pub fn get_caption_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionDescriptionPreset>> {
+    pub fn get_caption_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionDescriptionPreset>> {
         &self.caption_descriptions
     }
     /// Container specific settings.
@@ -115,17 +98,12 @@ impl PresetSettingsBuilder {
         self
     }
     /// Container specific settings.
-    pub fn set_container_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerSettings>,
-    ) -> Self {
+    pub fn set_container_settings(mut self, input: ::std::option::Option<crate::types::ContainerSettings>) -> Self {
         self.container_settings = input;
         self
     }
     /// Container specific settings.
-    pub fn get_container_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerSettings> {
+    pub fn get_container_settings(&self) -> &::std::option::Option<crate::types::ContainerSettings> {
         &self.container_settings
     }
     /// VideoDescription contains a group of video encoding settings. The specific video settings depend on the video codec that you choose for the property codec. Include one instance of VideoDescription per output.
@@ -134,10 +112,7 @@ impl PresetSettingsBuilder {
         self
     }
     /// VideoDescription contains a group of video encoding settings. The specific video settings depend on the video codec that you choose for the property codec. Include one instance of VideoDescription per output.
-    pub fn set_video_description(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoDescription>,
-    ) -> Self {
+    pub fn set_video_description(mut self, input: ::std::option::Option<crate::types::VideoDescription>) -> Self {
         self.video_description = input;
         self
     }

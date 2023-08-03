@@ -6,19 +6,13 @@ pub fn ser_request_output_item(
     if let Some(var_1) = &input.dash_playlist_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DashPlaylistSettings").start_object();
-        crate::protocol_serde::shape_dash_playlist_settings::ser_dash_playlist_settings(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_dash_playlist_settings::ser_dash_playlist_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.hls_playlist_settings {
         #[allow(unused_mut)]
         let mut object_4 = object.key("HlsPlaylistSettings").start_object();
-        crate::protocol_serde::shape_hls_playlist_settings::ser_hls_playlist_settings(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_hls_playlist_settings::ser_hls_playlist_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.manifest_name {

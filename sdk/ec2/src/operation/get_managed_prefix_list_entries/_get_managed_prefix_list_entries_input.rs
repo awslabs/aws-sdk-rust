@@ -43,16 +43,14 @@ impl GetManagedPrefixListEntriesInput {
 }
 impl GetManagedPrefixListEntriesInput {
     /// Creates a new builder-style object to manufacture [`GetManagedPrefixListEntriesInput`](crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesInput).
-    pub fn builder() -> crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesInputBuilder{
+    pub fn builder() -> crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesInputBuilder {
         crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetManagedPrefixListEntriesInput`](crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetManagedPrefixListEntriesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl GetManagedPrefixListEntriesInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn set_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix_list_id = input;
         self
     }
@@ -144,14 +136,12 @@ impl GetManagedPrefixListEntriesInputBuilder {
         crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesInput {
-                dry_run: self.dry_run,
-                prefix_list_id: self.prefix_list_id,
-                target_version: self.target_version,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesInput {
+            dry_run: self.dry_run,
+            prefix_list_id: self.prefix_list_id,
+            target_version: self.target_version,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

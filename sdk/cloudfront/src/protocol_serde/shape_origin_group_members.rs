@@ -14,10 +14,7 @@ pub fn ser_origin_group_members(
         for list_item_3 in var_2 {
             {
                 let inner_writer = inner_writer.start_el("OriginGroupMember");
-                crate::protocol_serde::shape_origin_group_member::ser_origin_group_member(
-                    list_item_3,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_origin_group_member::ser_origin_group_member(list_item_3, inner_writer)?
             }
         }
     }

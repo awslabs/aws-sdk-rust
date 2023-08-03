@@ -37,9 +37,7 @@ impl CidrCollectionChange {
 
 /// A builder for [`CidrCollectionChange`](crate::types::CidrCollectionChange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CidrCollectionChangeBuilder {
     pub(crate) location_name: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<crate::types::CidrCollectionChangeAction>,
@@ -47,18 +45,12 @@ pub struct CidrCollectionChangeBuilder {
 }
 impl CidrCollectionChangeBuilder {
     /// <p>Name of the location that is associated with the CIDR collection.</p>
-    pub fn location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the location that is associated with the CIDR collection.</p>
-    pub fn set_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_name = input;
         self
     }
@@ -72,10 +64,7 @@ impl CidrCollectionChangeBuilder {
         self
     }
     /// <p>CIDR collection change action. </p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::CidrCollectionChangeAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::CidrCollectionChangeAction>) -> Self {
         self.action = input;
         self
     }
@@ -95,10 +84,7 @@ impl CidrCollectionChangeBuilder {
         self
     }
     /// <p>List of CIDR blocks.</p>
-    pub fn set_cidr_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cidr_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cidr_list = input;
         self
     }

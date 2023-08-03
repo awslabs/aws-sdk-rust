@@ -10,10 +10,7 @@ impl CreateOptionGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_option_group::CreateOptionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_option_group::CreateOptionGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_option_group::CreateOptionGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_option_group();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateOptionGroupFluentBuilder {
         }
     }
     /// Access the CreateOptionGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_option_group::builders::CreateOptionGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_option_group::builders::CreateOptionGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateOptionGroupFluentBuilder {
             crate::operation::create_option_group::CreateOptionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_option_group::CreateOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_option_group::CreateOptionGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateOptionGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateOptionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_option_group::CreateOptionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_option_group::CreateOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_option_group::CreateOptionGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateOptionGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_option_group::CreateOptionGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_option_group::CreateOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_option_group::CreateOptionGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateOptionGroupFluentBuilder {
             crate::operation::create_option_group::CreateOptionGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_option_group::CreateOptionGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_option_group::CreateOptionGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -131,10 +115,7 @@ impl CreateOptionGroupFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>myoptiongroup</code> </p>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.option_group_name(input.into());
         self
     }
@@ -146,10 +127,7 @@ impl CreateOptionGroupFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>myoptiongroup</code> </p>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
     }
@@ -221,18 +199,12 @@ impl CreateOptionGroupFluentBuilder {
         self.inner.get_engine_name()
     }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
-    pub fn major_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.major_engine_version(input.into());
         self
     }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
-    pub fn set_major_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_major_engine_version(input);
         self
     }
@@ -241,18 +213,12 @@ impl CreateOptionGroupFluentBuilder {
         self.inner.get_major_engine_version()
     }
     /// <p>The description of the option group.</p>
-    pub fn option_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.option_group_description(input.into());
         self
     }
     /// <p>The description of the option group.</p>
-    pub fn set_option_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_option_group_description(input);
         self
     }
@@ -270,10 +236,7 @@ impl CreateOptionGroupFluentBuilder {
         self
     }
     /// <p>Tags to assign to the option group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -8,8 +8,7 @@ pub struct GetFeedbackInput {
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The anomalous metric and group ID.</p>
     #[doc(hidden)]
-    pub anomaly_group_time_series_feedback:
-        ::std::option::Option<crate::types::AnomalyGroupTimeSeries>,
+    pub anomaly_group_time_series_feedback: ::std::option::Option<crate::types::AnomalyGroupTimeSeries>,
     /// <p>The maximum number of results to return.</p>
     #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
@@ -23,9 +22,7 @@ impl GetFeedbackInput {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>The anomalous metric and group ID.</p>
-    pub fn anomaly_group_time_series_feedback(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnomalyGroupTimeSeries> {
+    pub fn anomaly_group_time_series_feedback(&self) -> ::std::option::Option<&crate::types::AnomalyGroupTimeSeries> {
         self.anomaly_group_time_series_feedback.as_ref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -46,30 +43,21 @@ impl GetFeedbackInput {
 
 /// A builder for [`GetFeedbackInput`](crate::operation::get_feedback::GetFeedbackInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFeedbackInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) anomaly_group_time_series_feedback:
-        ::std::option::Option<crate::types::AnomalyGroupTimeSeries>,
+    pub(crate) anomaly_group_time_series_feedback: ::std::option::Option<crate::types::AnomalyGroupTimeSeries>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetFeedbackInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_detector_arn = input;
         self
     }
@@ -78,25 +66,17 @@ impl GetFeedbackInputBuilder {
         &self.anomaly_detector_arn
     }
     /// <p>The anomalous metric and group ID.</p>
-    pub fn anomaly_group_time_series_feedback(
-        mut self,
-        input: crate::types::AnomalyGroupTimeSeries,
-    ) -> Self {
+    pub fn anomaly_group_time_series_feedback(mut self, input: crate::types::AnomalyGroupTimeSeries) -> Self {
         self.anomaly_group_time_series_feedback = ::std::option::Option::Some(input);
         self
     }
     /// <p>The anomalous metric and group ID.</p>
-    pub fn set_anomaly_group_time_series_feedback(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyGroupTimeSeries>,
-    ) -> Self {
+    pub fn set_anomaly_group_time_series_feedback(mut self, input: ::std::option::Option<crate::types::AnomalyGroupTimeSeries>) -> Self {
         self.anomaly_group_time_series_feedback = input;
         self
     }
     /// <p>The anomalous metric and group ID.</p>
-    pub fn get_anomaly_group_time_series_feedback(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalyGroupTimeSeries> {
+    pub fn get_anomaly_group_time_series_feedback(&self) -> &::std::option::Option<crate::types::AnomalyGroupTimeSeries> {
         &self.anomaly_group_time_series_feedback
     }
     /// <p>The maximum number of results to return.</p>
@@ -128,12 +108,7 @@ impl GetFeedbackInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetFeedbackInput`](crate::operation::get_feedback::GetFeedbackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_feedback::GetFeedbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_feedback::GetFeedbackInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_feedback::GetFeedbackInput {
             anomaly_detector_arn: self.anomaly_detector_arn,
             anomaly_group_time_series_feedback: self.anomaly_group_time_series_feedback,

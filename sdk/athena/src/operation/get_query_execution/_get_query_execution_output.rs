@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetQueryExecutionOutput {
 }
 impl GetQueryExecutionOutput {
     /// Creates a new builder-style object to manufacture [`GetQueryExecutionOutput`](crate::operation::get_query_execution::GetQueryExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_query_execution::builders::GetQueryExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::get_query_execution::builders::GetQueryExecutionOutputBuilder {
         crate::operation::get_query_execution::builders::GetQueryExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetQueryExecutionOutput`](crate::operation::get_query_execution::GetQueryExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueryExecutionOutputBuilder {
     pub(crate) query_execution: ::std::option::Option<crate::types::QueryExecution>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetQueryExecutionOutputBuilder {
         self
     }
     /// <p>Information about the query execution.</p>
-    pub fn set_query_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryExecution>,
-    ) -> Self {
+    pub fn set_query_execution(mut self, input: ::std::option::Option<crate::types::QueryExecution>) -> Self {
         self.query_execution = input;
         self
     }

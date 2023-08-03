@@ -19,9 +19,7 @@ impl DeleteSegmentOutput {
 
 /// A builder for [`DeleteSegmentOutput`](crate::operation::delete_segment::DeleteSegmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSegmentOutputBuilder {
     _request_id: Option<String>,
 }

@@ -26,7 +26,7 @@ impl DescribeCacheSubnetGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCacheSubnetGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_cache_subnet_groups::builders::DescribeCacheSubnetGroupsInputBuilder,
+    inner: crate::operation::describe_cache_subnet_groups::builders::DescribeCacheSubnetGroupsInputBuilder,
 }
 impl DescribeCacheSubnetGroupsFluentBuilder {
     /// Creates a new `DescribeCacheSubnetGroups`.
@@ -37,7 +37,7 @@ impl DescribeCacheSubnetGroupsFluentBuilder {
         }
     }
     /// Access the DescribeCacheSubnetGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_cache_subnet_groups::builders::DescribeCacheSubnetGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_cache_subnet_groups::builders::DescribeCacheSubnetGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeCacheSubnetGroupsFluentBuilder {
             crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeCacheSubnetGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeCacheSubnetGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeCacheSubnetGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -114,34 +105,23 @@ impl DescribeCacheSubnetGroupsFluentBuilder {
             crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_cache_subnet_groups::paginator::DescribeCacheSubnetGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_cache_subnet_groups::paginator::DescribeCacheSubnetGroupsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_cache_subnet_groups::paginator::DescribeCacheSubnetGroupsPaginator {
         crate::operation::describe_cache_subnet_groups::paginator::DescribeCacheSubnetGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the cache subnet group to return details for.</p>
-    pub fn cache_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_subnet_group_name(input.into());
         self
     }
     /// <p>The name of the cache subnet group to return details for.</p>
-    pub fn set_cache_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_subnet_group_name(input);
         self
     }

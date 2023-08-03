@@ -15,18 +15,14 @@ impl DeletePlaybackKeyPairInput {
 }
 impl DeletePlaybackKeyPairInput {
     /// Creates a new builder-style object to manufacture [`DeletePlaybackKeyPairInput`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput).
-    pub fn builder(
-    ) -> crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairInputBuilder {
         crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePlaybackKeyPairInput`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePlaybackKeyPairInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl DeletePlaybackKeyPairInputBuilder {
     /// Consumes the builder and constructs a [`DeletePlaybackKeyPairInput`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput {
-                arn: self.arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput { arn: self.arn })
     }
 }

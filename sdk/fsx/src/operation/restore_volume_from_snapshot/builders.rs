@@ -26,7 +26,7 @@ impl RestoreVolumeFromSnapshotInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreVolumeFromSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder,
+    inner: crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder,
 }
 impl RestoreVolumeFromSnapshotFluentBuilder {
     /// Creates a new `RestoreVolumeFromSnapshot`.
@@ -37,7 +37,7 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
         }
     }
     /// Access the RestoreVolumeFromSnapshot as a reference.
-    pub fn as_input(&self) -> &crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
             crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
             crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError>,
     > {
         self.customize_middleware().await
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -186,10 +169,7 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
     /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// </ul>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
@@ -198,9 +178,7 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
     /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
     /// </ul>
-    pub fn get_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>> {
         self.inner.get_options()
     }
 }

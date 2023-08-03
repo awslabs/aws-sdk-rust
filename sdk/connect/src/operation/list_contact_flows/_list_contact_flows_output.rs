@@ -5,8 +5,7 @@
 pub struct ListContactFlowsOutput {
     /// <p>Information about the flows.</p>
     #[doc(hidden)]
-    pub contact_flow_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowSummary>>,
+    pub contact_flow_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListContactFlowsOutput {
 }
 impl ListContactFlowsOutput {
     /// <p>Information about the flows.</p>
-    pub fn contact_flow_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ContactFlowSummary]> {
+    pub fn contact_flow_summary_list(&self) -> ::std::option::Option<&[crate::types::ContactFlowSummary]> {
         self.contact_flow_summary_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListContactFlowsOutput {
 }
 impl ListContactFlowsOutput {
     /// Creates a new builder-style object to manufacture [`ListContactFlowsOutput`](crate::operation::list_contact_flows::ListContactFlowsOutput).
-    pub fn builder() -> crate::operation::list_contact_flows::builders::ListContactFlowsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_contact_flows::builders::ListContactFlowsOutputBuilder {
         crate::operation::list_contact_flows::builders::ListContactFlowsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListContactFlowsOutput`](crate::operation::list_contact_flows::ListContactFlowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactFlowsOutputBuilder {
-    pub(crate) contact_flow_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowSummary>>,
+    pub(crate) contact_flow_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListContactFlowsOutputBuilder {
         self
     }
     /// <p>Information about the flows.</p>
-    pub fn set_contact_flow_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowSummary>>,
-    ) -> Self {
+    pub fn set_contact_flow_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowSummary>>) -> Self {
         self.contact_flow_summary_list = input;
         self
     }
     /// <p>Information about the flows.</p>
-    pub fn get_contact_flow_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactFlowSummary>> {
+    pub fn get_contact_flow_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactFlowSummary>> {
         &self.contact_flow_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

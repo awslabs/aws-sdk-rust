@@ -16,18 +16,14 @@ impl GetReusableDelegationSetInput {
 }
 impl GetReusableDelegationSetInput {
     /// Creates a new builder-style object to manufacture [`GetReusableDelegationSetInput`](crate::operation::get_reusable_delegation_set::GetReusableDelegationSetInput).
-    pub fn builder(
-    ) -> crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetInputBuilder {
         crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReusableDelegationSetInput`](crate::operation::get_reusable_delegation_set::GetReusableDelegationSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReusableDelegationSetInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -53,10 +49,6 @@ impl GetReusableDelegationSetInputBuilder {
         crate::operation::get_reusable_delegation_set::GetReusableDelegationSetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_reusable_delegation_set::GetReusableDelegationSetInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_reusable_delegation_set::GetReusableDelegationSetInput { id: self.id })
     }
 }

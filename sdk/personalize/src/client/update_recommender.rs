@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRecommenderOutput`](crate::operation::update_recommender::UpdateRecommenderOutput) with field(s):
     ///   - [`recommender_arn(Option<String>)`](crate::operation::update_recommender::UpdateRecommenderOutput::recommender_arn): <p>The same recommender Amazon Resource Name (ARN) as given in the request.</p>
     /// - On failure, responds with [`SdkError<UpdateRecommenderError>`](crate::operation::update_recommender::UpdateRecommenderError)
-    pub fn update_recommender(
-        &self,
-    ) -> crate::operation::update_recommender::builders::UpdateRecommenderFluentBuilder {
-        crate::operation::update_recommender::builders::UpdateRecommenderFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_recommender(&self) -> crate::operation::update_recommender::builders::UpdateRecommenderFluentBuilder {
+        crate::operation::update_recommender::builders::UpdateRecommenderFluentBuilder::new(self.handle.clone())
     }
 }

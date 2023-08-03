@@ -37,10 +37,7 @@ impl DeauthorizeConnectionFluentBuilder {
         }
     }
     /// Access the DeauthorizeConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deauthorize_connection::builders::DeauthorizeConnectionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deauthorize_connection::builders::DeauthorizeConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeauthorizeConnectionFluentBuilder {
             crate::operation::deauthorize_connection::DeauthorizeConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deauthorize_connection::DeauthorizeConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deauthorize_connection::DeauthorizeConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeauthorizeConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeauthorizeConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deauthorize_connection::DeauthorizeConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deauthorize_connection::DeauthorizeConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deauthorize_connection::DeauthorizeConnectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeauthorizeConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deauthorize_connection::DeauthorizeConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deauthorize_connection::DeauthorizeConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deauthorize_connection::DeauthorizeConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeauthorizeConnectionFluentBuilder {
             crate::operation::deauthorize_connection::DeauthorizeConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deauthorize_connection::DeauthorizeConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deauthorize_connection::DeauthorizeConnectionError>,
     > {
         self.customize_middleware().await
     }

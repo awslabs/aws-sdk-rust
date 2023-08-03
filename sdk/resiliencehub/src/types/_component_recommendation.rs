@@ -12,8 +12,7 @@ pub struct ComponentRecommendation {
     pub recommendation_status: ::std::option::Option<crate::types::RecommendationComplianceStatus>,
     /// <p>The list of recommendations.</p>
     #[doc(hidden)]
-    pub config_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigRecommendation>>,
+    pub config_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::ConfigRecommendation>>,
 }
 impl ComponentRecommendation {
     /// <p>The name of the Application Component.</p>
@@ -21,15 +20,11 @@ impl ComponentRecommendation {
         self.app_component_name.as_deref()
     }
     /// <p>The recommendation status.</p>
-    pub fn recommendation_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RecommendationComplianceStatus> {
+    pub fn recommendation_status(&self) -> ::std::option::Option<&crate::types::RecommendationComplianceStatus> {
         self.recommendation_status.as_ref()
     }
     /// <p>The list of recommendations.</p>
-    pub fn config_recommendations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConfigRecommendation]> {
+    pub fn config_recommendations(&self) -> ::std::option::Option<&[crate::types::ConfigRecommendation]> {
         self.config_recommendations.as_deref()
     }
 }
@@ -42,30 +37,20 @@ impl ComponentRecommendation {
 
 /// A builder for [`ComponentRecommendation`](crate::types::ComponentRecommendation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentRecommendationBuilder {
     pub(crate) app_component_name: ::std::option::Option<::std::string::String>,
-    pub(crate) recommendation_status:
-        ::std::option::Option<crate::types::RecommendationComplianceStatus>,
-    pub(crate) config_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigRecommendation>>,
+    pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationComplianceStatus>,
+    pub(crate) config_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::ConfigRecommendation>>,
 }
 impl ComponentRecommendationBuilder {
     /// <p>The name of the Application Component.</p>
-    pub fn app_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Application Component.</p>
-    pub fn set_app_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_component_name = input;
         self
     }
@@ -74,25 +59,17 @@ impl ComponentRecommendationBuilder {
         &self.app_component_name
     }
     /// <p>The recommendation status.</p>
-    pub fn recommendation_status(
-        mut self,
-        input: crate::types::RecommendationComplianceStatus,
-    ) -> Self {
+    pub fn recommendation_status(mut self, input: crate::types::RecommendationComplianceStatus) -> Self {
         self.recommendation_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The recommendation status.</p>
-    pub fn set_recommendation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationComplianceStatus>,
-    ) -> Self {
+    pub fn set_recommendation_status(mut self, input: ::std::option::Option<crate::types::RecommendationComplianceStatus>) -> Self {
         self.recommendation_status = input;
         self
     }
     /// <p>The recommendation status.</p>
-    pub fn get_recommendation_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationComplianceStatus> {
+    pub fn get_recommendation_status(&self) -> &::std::option::Option<crate::types::RecommendationComplianceStatus> {
         &self.recommendation_status
     }
     /// Appends an item to `config_recommendations`.
@@ -107,17 +84,12 @@ impl ComponentRecommendationBuilder {
         self
     }
     /// <p>The list of recommendations.</p>
-    pub fn set_config_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigRecommendation>>,
-    ) -> Self {
+    pub fn set_config_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigRecommendation>>) -> Self {
         self.config_recommendations = input;
         self
     }
     /// <p>The list of recommendations.</p>
-    pub fn get_config_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigRecommendation>> {
+    pub fn get_config_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigRecommendation>> {
         &self.config_recommendations
     }
     /// Consumes the builder and constructs a [`ComponentRecommendation`](crate::types::ComponentRecommendation).

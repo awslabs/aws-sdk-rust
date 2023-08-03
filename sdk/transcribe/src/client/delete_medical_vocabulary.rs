@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`vocabulary_name(impl ::std::convert::Into<String>)`](crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyFluentBuilder::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyFluentBuilder::set_vocabulary_name): <p>The name of the custom medical vocabulary you want to delete. Custom medical vocabulary names are case sensitive.</p>
     /// - On success, responds with [`DeleteMedicalVocabularyOutput`](crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyOutput)
     /// - On failure, responds with [`SdkError<DeleteMedicalVocabularyError>`](crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyError)
-    pub fn delete_medical_vocabulary(
-        &self,
-    ) -> crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyFluentBuilder
-    {
+    pub fn delete_medical_vocabulary(&self) -> crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyFluentBuilder {
         crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyFluentBuilder::new(self.handle.clone())
     }
 }

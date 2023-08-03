@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StartMigrationOutput`](crate::operation::start_migration::StartMigrationOutput) with field(s):
     ///   - [`replication_group(Option<ReplicationGroup>)`](crate::operation::start_migration::StartMigrationOutput::replication_group): <p>Contains all of the attributes of a specific Redis replication group.</p>
     /// - On failure, responds with [`SdkError<StartMigrationError>`](crate::operation::start_migration::StartMigrationError)
-    pub fn start_migration(
-        &self,
-    ) -> crate::operation::start_migration::builders::StartMigrationFluentBuilder {
-        crate::operation::start_migration::builders::StartMigrationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_migration(&self) -> crate::operation::start_migration::builders::StartMigrationFluentBuilder {
+        crate::operation::start_migration::builders::StartMigrationFluentBuilder::new(self.handle.clone())
     }
 }

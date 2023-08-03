@@ -23,9 +23,7 @@ impl StateChangeConfiguration {
 
 /// A builder for [`StateChangeConfiguration`](crate::types::StateChangeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StateChangeConfigurationBuilder {
     pub(crate) trigger_type: ::std::option::Option<crate::types::TriggerType>,
 }
@@ -36,10 +34,7 @@ impl StateChangeConfigurationBuilder {
         self
     }
     /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends and the alarm automatically changes to the <code>NORMAL</code> state.</p>
-    pub fn set_trigger_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TriggerType>,
-    ) -> Self {
+    pub fn set_trigger_type(mut self, input: ::std::option::Option<crate::types::TriggerType>) -> Self {
         self.trigger_type = input;
         self
     }

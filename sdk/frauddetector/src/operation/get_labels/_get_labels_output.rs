@@ -35,9 +35,7 @@ impl GetLabelsOutput {
 
 /// A builder for [`GetLabelsOutput`](crate::operation::get_labels::GetLabelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLabelsOutputBuilder {
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetLabelsOutputBuilder {
         self
     }
     /// <p>An array of labels.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Label>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Label>>) -> Self {
         self.labels = input;
         self
     }

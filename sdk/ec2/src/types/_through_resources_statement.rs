@@ -23,9 +23,7 @@ impl ThroughResourcesStatement {
 
 /// A builder for [`ThroughResourcesStatement`](crate::types::ThroughResourcesStatement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThroughResourcesStatementBuilder {
     pub(crate) resource_statement: ::std::option::Option<crate::types::ResourceStatement>,
 }
@@ -36,17 +34,12 @@ impl ThroughResourcesStatementBuilder {
         self
     }
     /// <p>The resource statement.</p>
-    pub fn set_resource_statement(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatement>,
-    ) -> Self {
+    pub fn set_resource_statement(mut self, input: ::std::option::Option<crate::types::ResourceStatement>) -> Self {
         self.resource_statement = input;
         self
     }
     /// <p>The resource statement.</p>
-    pub fn get_resource_statement(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceStatement> {
+    pub fn get_resource_statement(&self) -> &::std::option::Option<crate::types::ResourceStatement> {
         &self.resource_statement
     }
     /// Consumes the builder and constructs a [`ThroughResourcesStatement`](crate::types::ThroughResourcesStatement).

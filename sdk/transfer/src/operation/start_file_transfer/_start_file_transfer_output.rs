@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartFileTransferOutput {
 }
 impl StartFileTransferOutput {
     /// Creates a new builder-style object to manufacture [`StartFileTransferOutput`](crate::operation::start_file_transfer::StartFileTransferOutput).
-    pub fn builder(
-    ) -> crate::operation::start_file_transfer::builders::StartFileTransferOutputBuilder {
+    pub fn builder() -> crate::operation::start_file_transfer::builders::StartFileTransferOutputBuilder {
         crate::operation::start_file_transfer::builders::StartFileTransferOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartFileTransferOutput`](crate::operation::start_file_transfer::StartFileTransferOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFileTransferOutputBuilder {
     pub(crate) transfer_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

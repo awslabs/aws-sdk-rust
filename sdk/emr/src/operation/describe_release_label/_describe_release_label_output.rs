@@ -42,40 +42,29 @@ impl ::aws_http::request_id::RequestId for DescribeReleaseLabelOutput {
 }
 impl DescribeReleaseLabelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReleaseLabelOutput`](crate::operation::describe_release_label::DescribeReleaseLabelOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_release_label::builders::DescribeReleaseLabelOutputBuilder {
+    pub fn builder() -> crate::operation::describe_release_label::builders::DescribeReleaseLabelOutputBuilder {
         crate::operation::describe_release_label::builders::DescribeReleaseLabelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReleaseLabelOutput`](crate::operation::describe_release_label::DescribeReleaseLabelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReleaseLabelOutputBuilder {
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
-    pub(crate) applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::SimplifiedApplication>>,
+    pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::SimplifiedApplication>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) available_os_releases:
-        ::std::option::Option<::std::vec::Vec<crate::types::OsRelease>>,
+    pub(crate) available_os_releases: ::std::option::Option<::std::vec::Vec<crate::types::OsRelease>>,
     _request_id: Option<String>,
 }
 impl DescribeReleaseLabelOutputBuilder {
     /// <p>The target release label described in the response.</p>
-    pub fn release_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target release label described in the response.</p>
-    pub fn set_release_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_label = input;
         self
     }
@@ -95,17 +84,12 @@ impl DescribeReleaseLabelOutputBuilder {
         self
     }
     /// <p>The list of applications available for the target release label. <code>Name</code> is the name of the application. <code>Version</code> is the concise version of the application.</p>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SimplifiedApplication>>,
-    ) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SimplifiedApplication>>) -> Self {
         self.applications = input;
         self
     }
     /// <p>The list of applications available for the target release label. <code>Name</code> is the name of the application. <code>Version</code> is the concise version of the application.</p>
-    pub fn get_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SimplifiedApplication>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimplifiedApplication>> {
         &self.applications
     }
     /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
@@ -134,17 +118,12 @@ impl DescribeReleaseLabelOutputBuilder {
         self
     }
     /// <p>The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
-    pub fn set_available_os_releases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OsRelease>>,
-    ) -> Self {
+    pub fn set_available_os_releases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OsRelease>>) -> Self {
         self.available_os_releases = input;
         self
     }
     /// <p>The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
-    pub fn get_available_os_releases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OsRelease>> {
+    pub fn get_available_os_releases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OsRelease>> {
         &self.available_os_releases
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -28,7 +28,7 @@ impl RemoveRoleFromDbClusterInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveRoleFromDBClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDbClusterInputBuilder,
+    inner: crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDbClusterInputBuilder,
 }
 impl RemoveRoleFromDBClusterFluentBuilder {
     /// Creates a new `RemoveRoleFromDBCluster`.
@@ -39,10 +39,7 @@ impl RemoveRoleFromDBClusterFluentBuilder {
         }
     }
     /// Access the RemoveRoleFromDBCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDbClusterInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::remove_role_from_db_cluster::builders::RemoveRoleFromDbClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl RemoveRoleFromDBClusterFluentBuilder {
             crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl RemoveRoleFromDBClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl RemoveRoleFromDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl RemoveRoleFromDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl RemoveRoleFromDBClusterFluentBuilder {
             crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
     /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }

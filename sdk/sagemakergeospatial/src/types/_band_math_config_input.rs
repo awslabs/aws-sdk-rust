@@ -30,9 +30,7 @@ impl BandMathConfigInput {
 
 /// A builder for [`BandMathConfigInput`](crate::types::BandMathConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BandMathConfigInputBuilder {
     pub(crate) predefined_indices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) custom_indices: ::std::option::Option<crate::types::CustomIndicesInput>,
@@ -43,27 +41,19 @@ impl BandMathConfigInputBuilder {
     /// To override the contents of this collection use [`set_predefined_indices`](Self::set_predefined_indices).
     ///
     /// <p>One or many of the supported predefined indices to compute. Allowed values: <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>, <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
-    pub fn predefined_indices(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predefined_indices(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.predefined_indices.unwrap_or_default();
         v.push(input.into());
         self.predefined_indices = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or many of the supported predefined indices to compute. Allowed values: <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>, <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
-    pub fn set_predefined_indices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_predefined_indices(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.predefined_indices = input;
         self
     }
     /// <p>One or many of the supported predefined indices to compute. Allowed values: <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>, <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
-    pub fn get_predefined_indices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_predefined_indices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.predefined_indices
     }
     /// <p>CustomIndices that are computed.</p>
@@ -72,10 +62,7 @@ impl BandMathConfigInputBuilder {
         self
     }
     /// <p>CustomIndices that are computed.</p>
-    pub fn set_custom_indices(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomIndicesInput>,
-    ) -> Self {
+    pub fn set_custom_indices(mut self, input: ::std::option::Option<crate::types::CustomIndicesInput>) -> Self {
         self.custom_indices = input;
         self
     }

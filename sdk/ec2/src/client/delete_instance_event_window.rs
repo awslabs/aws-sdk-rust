@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteInstanceEventWindowOutput`](crate::operation::delete_instance_event_window::DeleteInstanceEventWindowOutput) with field(s):
     ///   - [`instance_event_window_state(Option<InstanceEventWindowStateChange>)`](crate::operation::delete_instance_event_window::DeleteInstanceEventWindowOutput::instance_event_window_state): <p>The state of the event window.</p>
     /// - On failure, responds with [`SdkError<DeleteInstanceEventWindowError>`](crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError)
-    pub fn delete_instance_event_window(&self) -> crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowFluentBuilder{
+    pub fn delete_instance_event_window(&self) -> crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowFluentBuilder {
         crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowFluentBuilder::new(self.handle.clone())
     }
 }

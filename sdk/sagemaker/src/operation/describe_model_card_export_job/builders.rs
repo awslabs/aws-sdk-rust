@@ -26,7 +26,7 @@ impl DescribeModelCardExportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeModelCardExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobInputBuilder,
+    inner: crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobInputBuilder,
 }
 impl DescribeModelCardExportJobFluentBuilder {
     /// Creates a new `DescribeModelCardExportJob`.
@@ -37,7 +37,7 @@ impl DescribeModelCardExportJobFluentBuilder {
         }
     }
     /// Access the DescribeModelCardExportJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeModelCardExportJobFluentBuilder {
             crate::operation::describe_model_card_export_job::DescribeModelCardExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_card_export_job::DescribeModelCardExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_card_export_job::DescribeModelCardExportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeModelCardExportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeModelCardExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_card_export_job::DescribeModelCardExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_card_export_job::DescribeModelCardExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_card_export_job::DescribeModelCardExportJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeModelCardExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_card_export_job::DescribeModelCardExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_card_export_job::DescribeModelCardExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_card_export_job::DescribeModelCardExportJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeModelCardExportJobFluentBuilder {
             crate::operation::describe_model_card_export_job::DescribeModelCardExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_model_card_export_job::DescribeModelCardExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_model_card_export_job::DescribeModelCardExportJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
-    pub fn model_card_export_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_card_export_job_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
-    pub fn set_model_card_export_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_card_export_job_arn(input);
         self
     }

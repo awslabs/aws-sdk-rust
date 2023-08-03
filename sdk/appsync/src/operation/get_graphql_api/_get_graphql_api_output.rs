@@ -28,9 +28,7 @@ impl GetGraphqlApiOutput {
 
 /// A builder for [`GetGraphqlApiOutput`](crate::operation::get_graphql_api::GetGraphqlApiOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGraphqlApiOutputBuilder {
     pub(crate) graphql_api: ::std::option::Option<crate::types::GraphqlApi>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetGraphqlApiOutputBuilder {
         self
     }
     /// <p>The <code>GraphqlApi</code> object.</p>
-    pub fn set_graphql_api(
-        mut self,
-        input: ::std::option::Option<crate::types::GraphqlApi>,
-    ) -> Self {
+    pub fn set_graphql_api(mut self, input: ::std::option::Option<crate::types::GraphqlApi>) -> Self {
         self.graphql_api = input;
         self
     }

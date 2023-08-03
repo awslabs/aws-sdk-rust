@@ -37,9 +37,7 @@ impl AddFlowMediaStreamsFluentBuilder {
         }
     }
     /// Access the AddFlowMediaStreams as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl AddFlowMediaStreamsFluentBuilder {
             crate::operation::add_flow_media_streams::AddFlowMediaStreams,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_media_streams::AddFlowMediaStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_media_streams::AddFlowMediaStreamsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl AddFlowMediaStreamsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl AddFlowMediaStreamsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_flow_media_streams::AddFlowMediaStreamsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_media_streams::AddFlowMediaStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_media_streams::AddFlowMediaStreamsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl AddFlowMediaStreamsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_flow_media_streams::AddFlowMediaStreamsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_media_streams::AddFlowMediaStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_media_streams::AddFlowMediaStreamsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl AddFlowMediaStreamsFluentBuilder {
             crate::operation::add_flow_media_streams::AddFlowMediaStreams,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_media_streams::AddFlowMediaStreamsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_flow_media_streams::AddFlowMediaStreamsError>,
     > {
         self.customize_middleware().await
     }
@@ -146,17 +133,12 @@ impl AddFlowMediaStreamsFluentBuilder {
         self
     }
     /// The media streams that you want to add to the flow.
-    pub fn set_media_streams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>,
-    ) -> Self {
+    pub fn set_media_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>) -> Self {
         self.inner = self.inner.set_media_streams(input);
         self
     }
     /// The media streams that you want to add to the flow.
-    pub fn get_media_streams(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>> {
+    pub fn get_media_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>> {
         self.inner.get_media_streams()
     }
 }

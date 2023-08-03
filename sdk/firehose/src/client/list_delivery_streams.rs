@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`delivery_stream_names(Option<Vec<String>>)`](crate::operation::list_delivery_streams::ListDeliveryStreamsOutput::delivery_stream_names): <p>The names of the delivery streams.</p>
     ///   - [`has_more_delivery_streams(Option<bool>)`](crate::operation::list_delivery_streams::ListDeliveryStreamsOutput::has_more_delivery_streams): <p>Indicates whether there are more delivery streams available to list.</p>
     /// - On failure, responds with [`SdkError<ListDeliveryStreamsError>`](crate::operation::list_delivery_streams::ListDeliveryStreamsError)
-    pub fn list_delivery_streams(
-        &self,
-    ) -> crate::operation::list_delivery_streams::builders::ListDeliveryStreamsFluentBuilder {
-        crate::operation::list_delivery_streams::builders::ListDeliveryStreamsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_delivery_streams(&self) -> crate::operation::list_delivery_streams::builders::ListDeliveryStreamsFluentBuilder {
+        crate::operation::list_delivery_streams::builders::ListDeliveryStreamsFluentBuilder::new(self.handle.clone())
     }
 }

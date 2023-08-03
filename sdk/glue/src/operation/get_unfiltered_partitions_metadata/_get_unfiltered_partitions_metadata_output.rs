@@ -5,8 +5,7 @@
 pub struct GetUnfilteredPartitionsMetadataOutput {
     /// <p>A list of requested partitions.</p>
     #[doc(hidden)]
-    pub unfiltered_partitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnfilteredPartition>>,
+    pub unfiltered_partitions: ::std::option::Option<::std::vec::Vec<crate::types::UnfilteredPartition>>,
     /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetUnfilteredPartitionsMetadataOutput {
 }
 impl GetUnfilteredPartitionsMetadataOutput {
     /// <p>A list of requested partitions.</p>
-    pub fn unfiltered_partitions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnfilteredPartition]> {
+    pub fn unfiltered_partitions(&self) -> ::std::option::Option<&[crate::types::UnfilteredPartition]> {
         self.unfiltered_partitions.as_deref()
     }
     /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetUnfilteredPartitionsMetadataOutput
 }
 impl GetUnfilteredPartitionsMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetUnfilteredPartitionsMetadataOutput`](crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput).
-    pub fn builder() -> crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataOutputBuilder{
+    pub fn builder() -> crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataOutputBuilder {
         crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUnfilteredPartitionsMetadataOutput`](crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUnfilteredPartitionsMetadataOutputBuilder {
-    pub(crate) unfiltered_partitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnfilteredPartition>>,
+    pub(crate) unfiltered_partitions: ::std::option::Option<::std::vec::Vec<crate::types::UnfilteredPartition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl GetUnfilteredPartitionsMetadataOutputBuilder {
         self
     }
     /// <p>A list of requested partitions.</p>
-    pub fn set_unfiltered_partitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnfilteredPartition>>,
-    ) -> Self {
+    pub fn set_unfiltered_partitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnfilteredPartition>>) -> Self {
         self.unfiltered_partitions = input;
         self
     }
     /// <p>A list of requested partitions.</p>
-    pub fn get_unfiltered_partitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnfilteredPartition>> {
+    pub fn get_unfiltered_partitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnfilteredPartition>> {
         &self.unfiltered_partitions
     }
     /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
@@ -97,15 +86,10 @@ impl GetUnfilteredPartitionsMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetUnfilteredPartitionsMetadataOutput`](crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput
-    {
+    pub fn build(self) -> crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput {
         crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput {
-            unfiltered_partitions: self.unfiltered_partitions
-            ,
-            next_token: self.next_token
-            ,
+            unfiltered_partitions: self.unfiltered_partitions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

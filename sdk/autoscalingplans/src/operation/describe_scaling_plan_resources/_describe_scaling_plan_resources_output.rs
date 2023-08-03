@@ -5,8 +5,7 @@
 pub struct DescribeScalingPlanResourcesOutput {
     /// <p>Information about the scalable resources.</p>
     #[doc(hidden)]
-    pub scaling_plan_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScalingPlanResource>>,
+    pub scaling_plan_resources: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPlanResource>>,
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeScalingPlanResourcesOutput {
 }
 impl DescribeScalingPlanResourcesOutput {
     /// <p>Information about the scalable resources.</p>
-    pub fn scaling_plan_resources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ScalingPlanResource]> {
+    pub fn scaling_plan_resources(&self) -> ::std::option::Option<&[crate::types::ScalingPlanResource]> {
         self.scaling_plan_resources.as_deref()
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeScalingPlanResourcesOutput {
 }
 impl DescribeScalingPlanResourcesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingPlanResourcesOutput`](crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesOutput).
-    pub fn builder() -> crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesOutputBuilder {
         crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScalingPlanResourcesOutput`](crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalingPlanResourcesOutputBuilder {
-    pub(crate) scaling_plan_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScalingPlanResource>>,
+    pub(crate) scaling_plan_resources: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPlanResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeScalingPlanResourcesOutputBuilder {
         self
     }
     /// <p>Information about the scalable resources.</p>
-    pub fn set_scaling_plan_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPlanResource>>,
-    ) -> Self {
+    pub fn set_scaling_plan_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPlanResource>>) -> Self {
         self.scaling_plan_resources = input;
         self
     }
     /// <p>Information about the scalable resources.</p>
-    pub fn get_scaling_plan_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingPlanResource>> {
+    pub fn get_scaling_plan_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingPlanResource>> {
         &self.scaling_plan_resources
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
@@ -97,9 +86,7 @@ impl DescribeScalingPlanResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeScalingPlanResourcesOutput`](crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesOutput {
+    pub fn build(self) -> crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesOutput {
         crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesOutput {
             scaling_plan_resources: self.scaling_plan_resources,
             next_token: self.next_token,

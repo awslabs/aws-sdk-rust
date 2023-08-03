@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for ActivateOrganizationsAccessOutput {
 }
 impl ActivateOrganizationsAccessOutput {
     /// Creates a new builder-style object to manufacture [`ActivateOrganizationsAccessOutput`](crate::operation::activate_organizations_access::ActivateOrganizationsAccessOutput).
-    pub fn builder() -> crate::operation::activate_organizations_access::builders::ActivateOrganizationsAccessOutputBuilder{
+    pub fn builder() -> crate::operation::activate_organizations_access::builders::ActivateOrganizationsAccessOutputBuilder {
         crate::operation::activate_organizations_access::builders::ActivateOrganizationsAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`ActivateOrganizationsAccessOutput`](crate::operation::activate_organizations_access::ActivateOrganizationsAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivateOrganizationsAccessOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl ActivateOrganizationsAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ActivateOrganizationsAccessOutput`](crate::operation::activate_organizations_access::ActivateOrganizationsAccessOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::activate_organizations_access::ActivateOrganizationsAccessOutput {
+    pub fn build(self) -> crate::operation::activate_organizations_access::ActivateOrganizationsAccessOutput {
         crate::operation::activate_organizations_access::ActivateOrganizationsAccessOutput {
             _request_id: self._request_id,
         }

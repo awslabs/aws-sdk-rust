@@ -10,10 +10,7 @@ impl UpdateSipRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_sip_rule::UpdateSipRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sip_rule::UpdateSipRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sip_rule::UpdateSipRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_sip_rule();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl UpdateSipRuleFluentBuilder {
         }
     }
     /// Access the UpdateSipRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_sip_rule::builders::UpdateSipRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_sip_rule::builders::UpdateSipRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,10 +60,7 @@ impl UpdateSipRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -170,17 +162,12 @@ impl UpdateSipRuleFluentBuilder {
         self
     }
     /// <p>The new value of the list of target applications.</p>
-    pub fn set_target_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>,
-    ) -> Self {
+    pub fn set_target_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>) -> Self {
         self.inner = self.inner.set_target_applications(input);
         self
     }
     /// <p>The new value of the list of target applications.</p>
-    pub fn get_target_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>> {
+    pub fn get_target_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>> {
         self.inner.get_target_applications()
     }
 }

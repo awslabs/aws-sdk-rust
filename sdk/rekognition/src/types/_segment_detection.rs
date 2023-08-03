@@ -71,9 +71,7 @@ impl SegmentDetection {
         self.duration_smpte.as_deref()
     }
     /// <p>If the segment is a technical cue, contains information about the technical cue.</p>
-    pub fn technical_cue_segment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TechnicalCueSegment> {
+    pub fn technical_cue_segment(&self) -> ::std::option::Option<&crate::types::TechnicalCueSegment> {
         self.technical_cue_segment.as_ref()
     }
     /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
@@ -102,9 +100,7 @@ impl SegmentDetection {
 
 /// A builder for [`SegmentDetection`](crate::types::SegmentDetection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentDetectionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SegmentType>,
     pub(crate) start_timestamp_millis: ::std::option::Option<i64>,
@@ -177,18 +173,12 @@ impl SegmentDetectionBuilder {
         &self.duration_millis
     }
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the start of a detected segment. <code>StartTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates). </p>
-    pub fn start_timecode_smpte(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_timecode_smpte(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_timecode_smpte = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the start of a detected segment. <code>StartTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates). </p>
-    pub fn set_start_timecode_smpte(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_timecode_smpte(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_timecode_smpte = input;
         self
     }
@@ -197,18 +187,12 @@ impl SegmentDetectionBuilder {
         &self.start_timecode_smpte
     }
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the end of a detected segment. <code>EndTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates).</p>
-    pub fn end_timecode_smpte(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn end_timecode_smpte(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_timecode_smpte = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the end of a detected segment. <code>EndTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates).</p>
-    pub fn set_end_timecode_smpte(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_end_timecode_smpte(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_timecode_smpte = input;
         self
     }
@@ -217,18 +201,12 @@ impl SegmentDetectionBuilder {
         &self.end_timecode_smpte
     }
     /// <p>The duration of the timecode for the detected segment in SMPTE format.</p>
-    pub fn duration_smpte(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn duration_smpte(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.duration_smpte = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The duration of the timecode for the detected segment in SMPTE format.</p>
-    pub fn set_duration_smpte(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_duration_smpte(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.duration_smpte = input;
         self
     }
@@ -242,17 +220,12 @@ impl SegmentDetectionBuilder {
         self
     }
     /// <p>If the segment is a technical cue, contains information about the technical cue.</p>
-    pub fn set_technical_cue_segment(
-        mut self,
-        input: ::std::option::Option<crate::types::TechnicalCueSegment>,
-    ) -> Self {
+    pub fn set_technical_cue_segment(mut self, input: ::std::option::Option<crate::types::TechnicalCueSegment>) -> Self {
         self.technical_cue_segment = input;
         self
     }
     /// <p>If the segment is a technical cue, contains information about the technical cue.</p>
-    pub fn get_technical_cue_segment(
-        &self,
-    ) -> &::std::option::Option<crate::types::TechnicalCueSegment> {
+    pub fn get_technical_cue_segment(&self) -> &::std::option::Option<crate::types::TechnicalCueSegment> {
         &self.technical_cue_segment
     }
     /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
@@ -261,10 +234,7 @@ impl SegmentDetectionBuilder {
         self
     }
     /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
-    pub fn set_shot_segment(
-        mut self,
-        input: ::std::option::Option<crate::types::ShotSegment>,
-    ) -> Self {
+    pub fn set_shot_segment(mut self, input: ::std::option::Option<crate::types::ShotSegment>) -> Self {
         self.shot_segment = input;
         self
     }

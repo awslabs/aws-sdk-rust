@@ -29,9 +29,7 @@ impl GetExtensionInput {
 
 /// A builder for [`GetExtensionInput`](crate::operation::get_extension::GetExtensionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExtensionInputBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetExtensionInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetExtensionInput`](crate::operation::get_extension::GetExtensionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_extension::GetExtensionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_extension::GetExtensionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_extension::GetExtensionInput {
             namespace: self.namespace,
             name: self.name,

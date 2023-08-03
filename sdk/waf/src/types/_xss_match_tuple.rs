@@ -108,9 +108,7 @@ impl XssMatchTuple {
 
 /// A builder for [`XssMatchTuple`](crate::types::XssMatchTuple).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct XssMatchTupleBuilder {
     pub(crate) field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     pub(crate) text_transformation: ::std::option::Option<crate::types::TextTransformation>,
@@ -122,10 +120,7 @@ impl XssMatchTupleBuilder {
         self
     }
     /// <p>Specifies where in a web request to look for cross-site scripting attacks.</p>
-    pub fn set_field_to_match(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldToMatch>,
-    ) -> Self {
+    pub fn set_field_to_match(mut self, input: ::std::option::Option<crate::types::FieldToMatch>) -> Self {
         self.field_to_match = input;
         self
     }
@@ -213,10 +208,7 @@ impl XssMatchTupleBuilder {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub fn set_text_transformation(
-        mut self,
-        input: ::std::option::Option<crate::types::TextTransformation>,
-    ) -> Self {
+    pub fn set_text_transformation(mut self, input: ::std::option::Option<crate::types::TextTransformation>) -> Self {
         self.text_transformation = input;
         self
     }
@@ -258,9 +250,7 @@ impl XssMatchTupleBuilder {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub fn get_text_transformation(
-        &self,
-    ) -> &::std::option::Option<crate::types::TextTransformation> {
+    pub fn get_text_transformation(&self) -> &::std::option::Option<crate::types::TextTransformation> {
         &self.text_transformation
     }
     /// Consumes the builder and constructs a [`XssMatchTuple`](crate::types::XssMatchTuple).

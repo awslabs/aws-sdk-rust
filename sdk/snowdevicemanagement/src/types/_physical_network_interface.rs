@@ -32,15 +32,11 @@ impl PhysicalNetworkInterface {
         self.physical_network_interface_id.as_deref()
     }
     /// <p>The physical connector type.</p>
-    pub fn physical_connector_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PhysicalConnectorType> {
+    pub fn physical_connector_type(&self) -> ::std::option::Option<&crate::types::PhysicalConnectorType> {
         self.physical_connector_type.as_ref()
     }
     /// <p>A value that describes whether the IP address is dynamic or persistent.</p>
-    pub fn ip_address_assignment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IpAddressAssignment> {
+    pub fn ip_address_assignment(&self) -> ::std::option::Option<&crate::types::IpAddressAssignment> {
         self.ip_address_assignment.as_ref()
     }
     /// <p>The IP address of the device.</p>
@@ -69,9 +65,7 @@ impl PhysicalNetworkInterface {
 
 /// A builder for [`PhysicalNetworkInterface`](crate::types::PhysicalNetworkInterface).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PhysicalNetworkInterfaceBuilder {
     pub(crate) physical_network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) physical_connector_type: ::std::option::Option<crate::types::PhysicalConnectorType>,
@@ -83,25 +77,17 @@ pub struct PhysicalNetworkInterfaceBuilder {
 }
 impl PhysicalNetworkInterfaceBuilder {
     /// <p>The physical network interface ID.</p>
-    pub fn physical_network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn physical_network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.physical_network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The physical network interface ID.</p>
-    pub fn set_physical_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_physical_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.physical_network_interface_id = input;
         self
     }
     /// <p>The physical network interface ID.</p>
-    pub fn get_physical_network_interface_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_physical_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.physical_network_interface_id
     }
     /// <p>The physical connector type.</p>
@@ -110,17 +96,12 @@ impl PhysicalNetworkInterfaceBuilder {
         self
     }
     /// <p>The physical connector type.</p>
-    pub fn set_physical_connector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PhysicalConnectorType>,
-    ) -> Self {
+    pub fn set_physical_connector_type(mut self, input: ::std::option::Option<crate::types::PhysicalConnectorType>) -> Self {
         self.physical_connector_type = input;
         self
     }
     /// <p>The physical connector type.</p>
-    pub fn get_physical_connector_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::PhysicalConnectorType> {
+    pub fn get_physical_connector_type(&self) -> &::std::option::Option<crate::types::PhysicalConnectorType> {
         &self.physical_connector_type
     }
     /// <p>A value that describes whether the IP address is dynamic or persistent.</p>
@@ -129,17 +110,12 @@ impl PhysicalNetworkInterfaceBuilder {
         self
     }
     /// <p>A value that describes whether the IP address is dynamic or persistent.</p>
-    pub fn set_ip_address_assignment(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressAssignment>,
-    ) -> Self {
+    pub fn set_ip_address_assignment(mut self, input: ::std::option::Option<crate::types::IpAddressAssignment>) -> Self {
         self.ip_address_assignment = input;
         self
     }
     /// <p>A value that describes whether the IP address is dynamic or persistent.</p>
-    pub fn get_ip_address_assignment(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpAddressAssignment> {
+    pub fn get_ip_address_assignment(&self) -> &::std::option::Option<crate::types::IpAddressAssignment> {
         &self.ip_address_assignment
     }
     /// <p>The IP address of the device.</p>
@@ -171,18 +147,12 @@ impl PhysicalNetworkInterfaceBuilder {
         &self.netmask
     }
     /// <p>The default gateway of the device.</p>
-    pub fn default_gateway(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_gateway(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_gateway = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default gateway of the device.</p>
-    pub fn set_default_gateway(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_gateway(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_gateway = input;
         self
     }

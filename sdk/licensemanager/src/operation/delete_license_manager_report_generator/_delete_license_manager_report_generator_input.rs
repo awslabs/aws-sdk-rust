@@ -15,49 +15,43 @@ impl DeleteLicenseManagerReportGeneratorInput {
 }
 impl DeleteLicenseManagerReportGeneratorInput {
     /// Creates a new builder-style object to manufacture [`DeleteLicenseManagerReportGeneratorInput`](crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorInput).
-    pub fn builder() -> crate::operation::delete_license_manager_report_generator::builders::DeleteLicenseManagerReportGeneratorInputBuilder{
+    pub fn builder() -> crate::operation::delete_license_manager_report_generator::builders::DeleteLicenseManagerReportGeneratorInputBuilder {
         crate::operation::delete_license_manager_report_generator::builders::DeleteLicenseManagerReportGeneratorInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLicenseManagerReportGeneratorInput`](crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLicenseManagerReportGeneratorInputBuilder {
     pub(crate) license_manager_report_generator_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLicenseManagerReportGeneratorInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
-    pub fn license_manager_report_generator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_manager_report_generator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_manager_report_generator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
-    pub fn set_license_manager_report_generator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_manager_report_generator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_manager_report_generator_arn = input;
         self
     }
     /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
-    pub fn get_license_manager_report_generator_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_license_manager_report_generator_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_manager_report_generator_arn
     }
     /// Consumes the builder and constructs a [`DeleteLicenseManagerReportGeneratorInput`](crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorInput {
-                license_manager_report_generator_arn: self.license_manager_report_generator_arn
-                ,
-            }
+                license_manager_report_generator_arn: self.license_manager_report_generator_arn,
+            },
         )
     }
 }

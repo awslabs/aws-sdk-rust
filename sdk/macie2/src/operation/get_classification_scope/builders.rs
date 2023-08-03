@@ -37,10 +37,7 @@ impl GetClassificationScopeFluentBuilder {
         }
     }
     /// Access the GetClassificationScope as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_classification_scope::builders::GetClassificationScopeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_classification_scope::builders::GetClassificationScopeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetClassificationScopeFluentBuilder {
             crate::operation::get_classification_scope::GetClassificationScope,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_classification_scope::GetClassificationScopeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_classification_scope::GetClassificationScopeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetClassificationScopeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetClassificationScopeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_classification_scope::GetClassificationScopeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_classification_scope::GetClassificationScopeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_classification_scope::GetClassificationScopeError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetClassificationScopeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_classification_scope::GetClassificationScopeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_classification_scope::GetClassificationScopeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_classification_scope::GetClassificationScopeError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetClassificationScopeFluentBuilder {
             crate::operation::get_classification_scope::GetClassificationScope,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_classification_scope::GetClassificationScopeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_classification_scope::GetClassificationScopeError>,
     > {
         self.customize_middleware().await
     }

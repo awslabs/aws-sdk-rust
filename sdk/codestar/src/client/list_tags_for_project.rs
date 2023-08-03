@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::list_tags_for_project::ListTagsForProjectOutput::tags): <p>The tags for the project.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tags_for_project::ListTagsForProjectOutput::next_token): <p>Reserved for future use.</p>
     /// - On failure, responds with [`SdkError<ListTagsForProjectError>`](crate::operation::list_tags_for_project::ListTagsForProjectError)
-    pub fn list_tags_for_project(
-        &self,
-    ) -> crate::operation::list_tags_for_project::builders::ListTagsForProjectFluentBuilder {
-        crate::operation::list_tags_for_project::builders::ListTagsForProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_tags_for_project(&self) -> crate::operation::list_tags_for_project::builders::ListTagsForProjectFluentBuilder {
+        crate::operation::list_tags_for_project::builders::ListTagsForProjectFluentBuilder::new(self.handle.clone())
     }
 }

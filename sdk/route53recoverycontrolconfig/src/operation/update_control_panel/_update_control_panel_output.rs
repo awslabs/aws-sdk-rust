@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateControlPanelOutput {
 }
 impl UpdateControlPanelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateControlPanelOutput`](crate::operation::update_control_panel::UpdateControlPanelOutput).
-    pub fn builder(
-    ) -> crate::operation::update_control_panel::builders::UpdateControlPanelOutputBuilder {
+    pub fn builder() -> crate::operation::update_control_panel::builders::UpdateControlPanelOutputBuilder {
         crate::operation::update_control_panel::builders::UpdateControlPanelOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateControlPanelOutput`](crate::operation::update_control_panel::UpdateControlPanelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateControlPanelOutputBuilder {
     pub(crate) control_panel: ::std::option::Option<crate::types::ControlPanel>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateControlPanelOutputBuilder {
         self
     }
     /// <p>The control panel to update.</p>
-    pub fn set_control_panel(
-        mut self,
-        input: ::std::option::Option<crate::types::ControlPanel>,
-    ) -> Self {
+    pub fn set_control_panel(mut self, input: ::std::option::Option<crate::types::ControlPanel>) -> Self {
         self.control_panel = input;
         self
     }

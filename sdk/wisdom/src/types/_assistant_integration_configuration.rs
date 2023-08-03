@@ -23,26 +23,18 @@ impl AssistantIntegrationConfiguration {
 
 /// A builder for [`AssistantIntegrationConfiguration`](crate::types::AssistantIntegrationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssistantIntegrationConfigurationBuilder {
     pub(crate) topic_integration_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssistantIntegrationConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the integrated Amazon SNS topic used for streaming chat messages.</p>
-    pub fn topic_integration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn topic_integration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_integration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the integrated Amazon SNS topic used for streaming chat messages.</p>
-    pub fn set_topic_integration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_topic_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_integration_arn = input;
         self
     }

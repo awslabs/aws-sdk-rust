@@ -58,9 +58,7 @@ pub struct Experiment {
     pub online_ab_definition: ::std::option::Option<crate::types::OnlineAbDefinition>,
     /// <p>The list of tag keys and values associated with this experiment.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Experiment {
     /// <p>The ARN of the experiment.</p>
@@ -133,11 +131,7 @@ impl Experiment {
         self.online_ab_definition.as_ref()
     }
     /// <p>The list of tag keys and values associated with this experiment.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -150,9 +144,7 @@ impl Experiment {
 
 /// A builder for [`Experiment`](crate::types::Experiment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -171,9 +163,7 @@ pub struct ExperimentBuilder {
     pub(crate) segment: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ExperimentType>,
     pub(crate) online_ab_definition: ::std::option::Option<crate::types::OnlineAbDefinition>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ExperimentBuilder {
     /// <p>The ARN of the experiment.</p>
@@ -224,10 +214,7 @@ impl ExperimentBuilder {
         self
     }
     /// <p>The current state of the experiment.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExperimentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -236,18 +223,12 @@ impl ExperimentBuilder {
         &self.status
     }
     /// <p>If the experiment was stopped, this is the string that was entered by the person who stopped the experiment, to explain why it was stopped.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the experiment was stopped, this is the string that was entered by the person who stopped the experiment, to explain why it was stopped.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -275,10 +256,7 @@ impl ExperimentBuilder {
         self
     }
     /// <p>The date and time that the experiment is first created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -292,10 +270,7 @@ impl ExperimentBuilder {
         self
     }
     /// <p>The date and time that the experiment was most recently updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -309,10 +284,7 @@ impl ExperimentBuilder {
         self
     }
     /// <p>A structure that contains the time and date that Evidently completed the analysis of the experiment.</p>
-    pub fn set_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentSchedule>,
-    ) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::ExperimentSchedule>) -> Self {
         self.schedule = input;
         self
     }
@@ -326,10 +298,7 @@ impl ExperimentBuilder {
         self
     }
     /// <p>A structure that contains the date and time that the experiment started and ended.</p>
-    pub fn set_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentExecution>,
-    ) -> Self {
+    pub fn set_execution(mut self, input: ::std::option::Option<crate::types::ExperimentExecution>) -> Self {
         self.execution = input;
         self
     }
@@ -349,17 +318,12 @@ impl ExperimentBuilder {
         self
     }
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    pub fn set_treatments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Treatment>>,
-    ) -> Self {
+    pub fn set_treatments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Treatment>>) -> Self {
         self.treatments = input;
         self
     }
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    pub fn get_treatments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Treatment>> {
+    pub fn get_treatments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Treatment>> {
         &self.treatments
     }
     /// Appends an item to `metric_goals`.
@@ -374,32 +338,21 @@ impl ExperimentBuilder {
         self
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn set_metric_goals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoal>>,
-    ) -> Self {
+    pub fn set_metric_goals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoal>>) -> Self {
         self.metric_goals = input;
         self
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn get_metric_goals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGoal>> {
+    pub fn get_metric_goals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGoal>> {
         &self.metric_goals
     }
     /// <p>This value is used when Evidently assigns a particular user session to the experiment. It helps create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
-    pub fn randomization_salt(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn randomization_salt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.randomization_salt = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This value is used when Evidently assigns a particular user session to the experiment. It helps create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
-    pub fn set_randomization_salt(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_randomization_salt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.randomization_salt = input;
         self
     }
@@ -458,17 +411,12 @@ impl ExperimentBuilder {
         self
     }
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
-    pub fn set_online_ab_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::OnlineAbDefinition>,
-    ) -> Self {
+    pub fn set_online_ab_definition(mut self, input: ::std::option::Option<crate::types::OnlineAbDefinition>) -> Self {
         self.online_ab_definition = input;
         self
     }
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
-    pub fn get_online_ab_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::OnlineAbDefinition> {
+    pub fn get_online_ab_definition(&self) -> &::std::option::Option<crate::types::OnlineAbDefinition> {
         &self.online_ab_definition
     }
     /// Adds a key-value pair to `tags`.
@@ -476,32 +424,19 @@ impl ExperimentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of tag keys and values associated with this experiment.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of tag keys and values associated with this experiment.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The list of tag keys and values associated with this experiment.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Experiment`](crate::types::Experiment).

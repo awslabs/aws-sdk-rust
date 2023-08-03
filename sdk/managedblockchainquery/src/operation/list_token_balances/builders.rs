@@ -10,10 +10,7 @@ impl ListTokenBalancesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_token_balances::ListTokenBalancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_token_balances::ListTokenBalancesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_token_balances::ListTokenBalancesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_token_balances();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl ListTokenBalancesFluentBuilder {
         }
     }
     /// Access the ListTokenBalances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_token_balances::builders::ListTokenBalancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_token_balances::builders::ListTokenBalancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl ListTokenBalancesFluentBuilder {
             crate::operation::list_token_balances::ListTokenBalances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_token_balances::ListTokenBalancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_token_balances::ListTokenBalancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl ListTokenBalancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl ListTokenBalancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_token_balances::ListTokenBalancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_token_balances::ListTokenBalancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_token_balances::ListTokenBalancesError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl ListTokenBalancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_token_balances::ListTokenBalancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_token_balances::ListTokenBalancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_token_balances::ListTokenBalancesError>,
     > {
         self.send_middleware().await
     }
@@ -123,22 +109,15 @@ impl ListTokenBalancesFluentBuilder {
             crate::operation::list_token_balances::ListTokenBalances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_token_balances::ListTokenBalancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_token_balances::ListTokenBalancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_token_balances::paginator::ListTokenBalancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_token_balances::paginator::ListTokenBalancesPaginator {
-        crate::operation::list_token_balances::paginator::ListTokenBalancesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_token_balances::paginator::ListTokenBalancesPaginator {
+        crate::operation::list_token_balances::paginator::ListTokenBalancesPaginator::new(self.handle, self.inner)
     }
     /// <p>The contract or wallet address on the blockchain network by which to filter the request. You must specify the <code>address</code> property of the <code>ownerFilter</code> when listing balances of tokens owned by the address.</p>
     pub fn owner_filter(mut self, input: crate::types::OwnerFilter) -> Self {
@@ -146,10 +125,7 @@ impl ListTokenBalancesFluentBuilder {
         self
     }
     /// <p>The contract or wallet address on the blockchain network by which to filter the request. You must specify the <code>address</code> property of the <code>ownerFilter</code> when listing balances of tokens owned by the address.</p>
-    pub fn set_owner_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::OwnerFilter>,
-    ) -> Self {
+    pub fn set_owner_filter(mut self, input: ::std::option::Option<crate::types::OwnerFilter>) -> Self {
         self.inner = self.inner.set_owner_filter(input);
         self
     }
@@ -167,10 +143,7 @@ impl ListTokenBalancesFluentBuilder {
     /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the contractAddress property of this container when listing tokens minted by a contract.</p> <note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
-    pub fn set_token_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TokenFilter>,
-    ) -> Self {
+    pub fn set_token_filter(mut self, input: ::std::option::Option<crate::types::TokenFilter>) -> Self {
         self.inner = self.inner.set_token_filter(input);
         self
     }

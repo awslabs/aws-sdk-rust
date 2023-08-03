@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_device_profile::CreateDeviceProfileOutput::arn): <p>The Amazon Resource Name of the new resource.</p>
     ///   - [`id(Option<String>)`](crate::operation::create_device_profile::CreateDeviceProfileOutput::id): <p>The ID of the new device profile.</p>
     /// - On failure, responds with [`SdkError<CreateDeviceProfileError>`](crate::operation::create_device_profile::CreateDeviceProfileError)
-    pub fn create_device_profile(
-        &self,
-    ) -> crate::operation::create_device_profile::builders::CreateDeviceProfileFluentBuilder {
-        crate::operation::create_device_profile::builders::CreateDeviceProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_device_profile(&self) -> crate::operation::create_device_profile::builders::CreateDeviceProfileFluentBuilder {
+        crate::operation::create_device_profile::builders::CreateDeviceProfileFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`campaign_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::campaign_arn) / [`set_campaign_arn(Option<String>)`](crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::set_campaign_arn): <p>The Amazon Resource Name (ARN) of the campaign to delete.</p>
     /// - On success, responds with [`DeleteCampaignOutput`](crate::operation::delete_campaign::DeleteCampaignOutput)
     /// - On failure, responds with [`SdkError<DeleteCampaignError>`](crate::operation::delete_campaign::DeleteCampaignError)
-    pub fn delete_campaign(
-        &self,
-    ) -> crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder {
-        crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_campaign(&self) -> crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder {
+        crate::operation::delete_campaign::builders::DeleteCampaignFluentBuilder::new(self.handle.clone())
     }
 }

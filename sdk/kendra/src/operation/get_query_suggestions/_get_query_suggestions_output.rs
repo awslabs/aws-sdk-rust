@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetQuerySuggestionsOutput {
 }
 impl GetQuerySuggestionsOutput {
     /// Creates a new builder-style object to manufacture [`GetQuerySuggestionsOutput`](crate::operation::get_query_suggestions::GetQuerySuggestionsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_query_suggestions::builders::GetQuerySuggestionsOutputBuilder {
-        crate::operation::get_query_suggestions::builders::GetQuerySuggestionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_query_suggestions::builders::GetQuerySuggestionsOutputBuilder {
+        crate::operation::get_query_suggestions::builders::GetQuerySuggestionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetQuerySuggestionsOutput`](crate::operation::get_query_suggestions::GetQuerySuggestionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQuerySuggestionsOutputBuilder {
     pub(crate) query_suggestions_id: ::std::option::Option<::std::string::String>,
     pub(crate) suggestions: ::std::option::Option<::std::vec::Vec<crate::types::Suggestion>>,
@@ -47,18 +43,12 @@ pub struct GetQuerySuggestionsOutputBuilder {
 }
 impl GetQuerySuggestionsOutputBuilder {
     /// <p>The identifier for a list of query suggestions for an index.</p>
-    pub fn query_suggestions_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_suggestions_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_suggestions_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a list of query suggestions for an index.</p>
-    pub fn set_query_suggestions_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_suggestions_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_suggestions_id = input;
         self
     }
@@ -78,17 +68,12 @@ impl GetQuerySuggestionsOutputBuilder {
         self
     }
     /// <p>A list of query suggestions for an index.</p>
-    pub fn set_suggestions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Suggestion>>,
-    ) -> Self {
+    pub fn set_suggestions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Suggestion>>) -> Self {
         self.suggestions = input;
         self
     }
     /// <p>A list of query suggestions for an index.</p>
-    pub fn get_suggestions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Suggestion>> {
+    pub fn get_suggestions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Suggestion>> {
         &self.suggestions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

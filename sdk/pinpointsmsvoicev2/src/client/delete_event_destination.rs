@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`configuration_set_name(Option<String>)`](crate::operation::delete_event_destination::DeleteEventDestinationOutput::configuration_set_name): <p>The name of the configuration set the event destination was deleted from.</p>
     ///   - [`event_destination(Option<EventDestination>)`](crate::operation::delete_event_destination::DeleteEventDestinationOutput::event_destination): <p>The event destination object that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteEventDestinationError>`](crate::operation::delete_event_destination::DeleteEventDestinationError)
-    pub fn delete_event_destination(
-        &self,
-    ) -> crate::operation::delete_event_destination::builders::DeleteEventDestinationFluentBuilder
-    {
+    pub fn delete_event_destination(&self) -> crate::operation::delete_event_destination::builders::DeleteEventDestinationFluentBuilder {
         crate::operation::delete_event_destination::builders::DeleteEventDestinationFluentBuilder::new(self.handle.clone())
     }
 }

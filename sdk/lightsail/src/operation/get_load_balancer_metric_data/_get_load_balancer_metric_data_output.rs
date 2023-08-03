@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetLoadBalancerMetricDataOutput {
 }
 impl GetLoadBalancerMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`GetLoadBalancerMetricDataOutput`](crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataOutput).
-    pub fn builder() -> crate::operation::get_load_balancer_metric_data::builders::GetLoadBalancerMetricDataOutputBuilder{
+    pub fn builder() -> crate::operation::get_load_balancer_metric_data::builders::GetLoadBalancerMetricDataOutputBuilder {
         crate::operation::get_load_balancer_metric_data::builders::GetLoadBalancerMetricDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLoadBalancerMetricDataOutput`](crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLoadBalancerMetricDataOutputBuilder {
     pub(crate) metric_name: ::std::option::Option<crate::types::LoadBalancerMetricName>,
     pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>,
@@ -50,10 +48,7 @@ impl GetLoadBalancerMetricDataOutputBuilder {
         self
     }
     /// <p>The name of the metric returned.</p>
-    pub fn set_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerMetricName>,
-    ) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::LoadBalancerMetricName>) -> Self {
         self.metric_name = input;
         self
     }
@@ -73,17 +68,12 @@ impl GetLoadBalancerMetricDataOutputBuilder {
         self
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn set_metric_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>,
-    ) -> Self {
+    pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>) -> Self {
         self.metric_data = input;
         self
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn get_metric_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>> {
+    pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>> {
         &self.metric_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -96,9 +86,7 @@ impl GetLoadBalancerMetricDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetLoadBalancerMetricDataOutput`](crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataOutput {
+    pub fn build(self) -> crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataOutput {
         crate::operation::get_load_balancer_metric_data::GetLoadBalancerMetricDataOutput {
             metric_name: self.metric_name,
             metric_data: self.metric_data,

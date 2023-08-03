@@ -50,11 +50,7 @@ impl super::Client {
     ///   - [`requester_id(Option<String>)`](crate::operation::run_instances::RunInstancesOutput::requester_id): <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
     ///   - [`reservation_id(Option<String>)`](crate::operation::run_instances::RunInstancesOutput::reservation_id): <p>The ID of the reservation.</p>
     /// - On failure, responds with [`SdkError<RunInstancesError>`](crate::operation::run_instances::RunInstancesError)
-    pub fn run_instances(
-        &self,
-    ) -> crate::operation::run_instances::builders::RunInstancesFluentBuilder {
-        crate::operation::run_instances::builders::RunInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn run_instances(&self) -> crate::operation::run_instances::builders::RunInstancesFluentBuilder {
+        crate::operation::run_instances::builders::RunInstancesFluentBuilder::new(self.handle.clone())
     }
 }

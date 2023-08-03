@@ -23,17 +23,14 @@ impl AwsEc2LaunchTemplateDataIamInstanceProfileDetails {
 }
 impl AwsEc2LaunchTemplateDataIamInstanceProfileDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataIamInstanceProfileDetails`](crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataIamInstanceProfileDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataIamInstanceProfileDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataIamInstanceProfileDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataIamInstanceProfileDetails`](crate::types::AwsEc2LaunchTemplateDataIamInstanceProfileDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataIamInstanceProfileDetailsBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

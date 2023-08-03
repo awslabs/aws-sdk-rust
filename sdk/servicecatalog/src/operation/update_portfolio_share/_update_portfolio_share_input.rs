@@ -58,17 +58,14 @@ impl UpdatePortfolioShareInput {
 }
 impl UpdatePortfolioShareInput {
     /// Creates a new builder-style object to manufacture [`UpdatePortfolioShareInput`](crate::operation::update_portfolio_share::UpdatePortfolioShareInput).
-    pub fn builder(
-    ) -> crate::operation::update_portfolio_share::builders::UpdatePortfolioShareInputBuilder {
+    pub fn builder() -> crate::operation::update_portfolio_share::builders::UpdatePortfolioShareInputBuilder {
         crate::operation::update_portfolio_share::builders::UpdatePortfolioShareInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePortfolioShareInput`](crate::operation::update_portfolio_share::UpdatePortfolioShareInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePortfolioShareInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,
@@ -83,10 +80,7 @@ impl UpdatePortfolioShareInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -95,10 +89,7 @@ impl UpdatePortfolioShareInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -144,10 +135,7 @@ impl UpdatePortfolioShareInputBuilder {
         self
     }
     /// <p>Information about the organization node.</p>
-    pub fn set_organization_node(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationNode>,
-    ) -> Self {
+    pub fn set_organization_node(mut self, input: ::std::option::Option<crate::types::OrganizationNode>) -> Self {
         self.organization_node = input;
         self
     }
@@ -186,19 +174,15 @@ impl UpdatePortfolioShareInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePortfolioShareInput`](crate::operation::update_portfolio_share::UpdatePortfolioShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_portfolio_share::UpdatePortfolioShareInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_portfolio_share::UpdatePortfolioShareInput {
-                accept_language: self.accept_language,
-                portfolio_id: self.portfolio_id,
-                account_id: self.account_id,
-                organization_node: self.organization_node,
-                share_tag_options: self.share_tag_options,
-                share_principals: self.share_principals,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_portfolio_share::UpdatePortfolioShareInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_portfolio_share::UpdatePortfolioShareInput {
+            accept_language: self.accept_language,
+            portfolio_id: self.portfolio_id,
+            account_id: self.account_id,
+            organization_node: self.organization_node,
+            share_tag_options: self.share_tag_options,
+            share_principals: self.share_principals,
+        })
     }
 }

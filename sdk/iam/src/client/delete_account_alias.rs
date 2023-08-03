@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`account_alias(impl ::std::convert::Into<String>)`](crate::operation::delete_account_alias::builders::DeleteAccountAliasFluentBuilder::account_alias) / [`set_account_alias(Option<String>)`](crate::operation::delete_account_alias::builders::DeleteAccountAliasFluentBuilder::set_account_alias): <p>The name of the account alias to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two dashes in a row.</p>
     /// - On success, responds with [`DeleteAccountAliasOutput`](crate::operation::delete_account_alias::DeleteAccountAliasOutput)
     /// - On failure, responds with [`SdkError<DeleteAccountAliasError>`](crate::operation::delete_account_alias::DeleteAccountAliasError)
-    pub fn delete_account_alias(
-        &self,
-    ) -> crate::operation::delete_account_alias::builders::DeleteAccountAliasFluentBuilder {
-        crate::operation::delete_account_alias::builders::DeleteAccountAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_account_alias(&self) -> crate::operation::delete_account_alias::builders::DeleteAccountAliasFluentBuilder {
+        crate::operation::delete_account_alias::builders::DeleteAccountAliasFluentBuilder::new(self.handle.clone())
     }
 }

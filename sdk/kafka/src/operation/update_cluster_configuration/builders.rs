@@ -26,7 +26,7 @@ impl UpdateClusterConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateClusterConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_cluster_configuration::builders::UpdateClusterConfigurationInputBuilder,
+    inner: crate::operation::update_cluster_configuration::builders::UpdateClusterConfigurationInputBuilder,
 }
 impl UpdateClusterConfigurationFluentBuilder {
     /// Creates a new `UpdateClusterConfiguration`.
@@ -37,7 +37,7 @@ impl UpdateClusterConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateClusterConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_cluster_configuration::builders::UpdateClusterConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_cluster_configuration::builders::UpdateClusterConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateClusterConfigurationFluentBuilder {
             crate::operation::update_cluster_configuration::UpdateClusterConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_cluster_configuration::UpdateClusterConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cluster_configuration::UpdateClusterConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateClusterConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateClusterConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_cluster_configuration::UpdateClusterConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_cluster_configuration::UpdateClusterConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cluster_configuration::UpdateClusterConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateClusterConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_cluster_configuration::UpdateClusterConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_cluster_configuration::UpdateClusterConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cluster_configuration::UpdateClusterConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateClusterConfigurationFluentBuilder {
             crate::operation::update_cluster_configuration::UpdateClusterConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_cluster_configuration::UpdateClusterConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cluster_configuration::UpdateClusterConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -140,32 +129,21 @@ impl UpdateClusterConfigurationFluentBuilder {
         self
     }
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
-    pub fn set_configuration_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationInfo>,
-    ) -> Self {
+    pub fn set_configuration_info(mut self, input: ::std::option::Option<crate::types::ConfigurationInfo>) -> Self {
         self.inner = self.inner.set_configuration_info(input);
         self
     }
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
-    pub fn get_configuration_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationInfo> {
+    pub fn get_configuration_info(&self) -> &::std::option::Option<crate::types::ConfigurationInfo> {
         self.inner.get_configuration_info()
     }
     /// <p>The version of the cluster that needs to be updated.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_version(input.into());
         self
     }
     /// <p>The version of the cluster that needs to be updated.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }

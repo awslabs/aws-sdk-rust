@@ -15,18 +15,14 @@ impl GetTopicRuleDestinationInput {
 }
 impl GetTopicRuleDestinationInput {
     /// Creates a new builder-style object to manufacture [`GetTopicRuleDestinationInput`](crate::operation::get_topic_rule_destination::GetTopicRuleDestinationInput).
-    pub fn builder(
-    ) -> crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationInputBuilder {
         crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTopicRuleDestinationInput`](crate::operation::get_topic_rule_destination::GetTopicRuleDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTopicRuleDestinationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl GetTopicRuleDestinationInputBuilder {
         crate::operation::get_topic_rule_destination::GetTopicRuleDestinationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_topic_rule_destination::GetTopicRuleDestinationInput {
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_topic_rule_destination::GetTopicRuleDestinationInput { arn: self.arn })
     }
 }

@@ -30,9 +30,7 @@ impl ActionLocalPortDetails {
 
 /// A builder for [`ActionLocalPortDetails`](crate::types::ActionLocalPortDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionLocalPortDetailsBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) port_name: ::std::option::Option<::std::string::String>,

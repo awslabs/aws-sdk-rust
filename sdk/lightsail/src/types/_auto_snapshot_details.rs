@@ -44,15 +44,12 @@ impl AutoSnapshotDetails {
 
 /// A builder for [`AutoSnapshotDetails`](crate::types::AutoSnapshotDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoSnapshotDetailsBuilder {
     pub(crate) date: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::AutoSnapshotStatus>,
-    pub(crate) from_attached_disks:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttachedDisk>>,
+    pub(crate) from_attached_disks: ::std::option::Option<::std::vec::Vec<crate::types::AttachedDisk>>,
 }
 impl AutoSnapshotDetailsBuilder {
     /// <p>The date of the automatic snapshot in <code>YYYY-MM-DD</code> format.</p>
@@ -75,10 +72,7 @@ impl AutoSnapshotDetailsBuilder {
         self
     }
     /// <p>The timestamp when the automatic snapshot was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -92,10 +86,7 @@ impl AutoSnapshotDetailsBuilder {
         self
     }
     /// <p>The status of the automatic snapshot.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoSnapshotStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AutoSnapshotStatus>) -> Self {
         self.status = input;
         self
     }
@@ -115,17 +106,12 @@ impl AutoSnapshotDetailsBuilder {
         self
     }
     /// <p>An array of objects that describe the block storage disks attached to the instance when the automatic snapshot was created.</p>
-    pub fn set_from_attached_disks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttachedDisk>>,
-    ) -> Self {
+    pub fn set_from_attached_disks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachedDisk>>) -> Self {
         self.from_attached_disks = input;
         self
     }
     /// <p>An array of objects that describe the block storage disks attached to the instance when the automatic snapshot was created.</p>
-    pub fn get_from_attached_disks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachedDisk>> {
+    pub fn get_from_attached_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachedDisk>> {
         &self.from_attached_disks
     }
     /// Consumes the builder and constructs a [`AutoSnapshotDetails`](crate::types::AutoSnapshotDetails).

@@ -168,18 +168,12 @@ impl FolderMetadataBuilder {
         &self.creator_id
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn parent_folder_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_folder_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn set_parent_folder_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_folder_id = input;
         self
     }
@@ -193,10 +187,7 @@ impl FolderMetadataBuilder {
         self
     }
     /// <p>The time when the folder was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -210,10 +201,7 @@ impl FolderMetadataBuilder {
         self
     }
     /// <p>The time when the folder was updated.</p>
-    pub fn set_modified_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_timestamp = input;
         self
     }
@@ -227,10 +215,7 @@ impl FolderMetadataBuilder {
         self
     }
     /// <p>The resource state of the folder.</p>
-    pub fn set_resource_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStateType>,
-    ) -> Self {
+    pub fn set_resource_state(mut self, input: ::std::option::Option<crate::types::ResourceStateType>) -> Self {
         self.resource_state = input;
         self
     }
@@ -264,10 +249,7 @@ impl FolderMetadataBuilder {
         self
     }
     /// <p>List of labels on the folder.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }

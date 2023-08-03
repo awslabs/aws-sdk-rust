@@ -38,9 +38,7 @@ impl ProtectiveEquipmentSummary {
 
 /// A builder for [`ProtectiveEquipmentSummary`](crate::types::ProtectiveEquipmentSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectiveEquipmentSummaryBuilder {
     pub(crate) persons_with_required_equipment: ::std::option::Option<::std::vec::Vec<i32>>,
     pub(crate) persons_without_required_equipment: ::std::option::Option<::std::vec::Vec<i32>>,
@@ -59,17 +57,12 @@ impl ProtectiveEquipmentSummaryBuilder {
         self
     }
     /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
-    pub fn set_persons_with_required_equipment(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_persons_with_required_equipment(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.persons_with_required_equipment = input;
         self
     }
     /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
-    pub fn get_persons_with_required_equipment(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_persons_with_required_equipment(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.persons_with_required_equipment
     }
     /// Appends an item to `persons_without_required_equipment`.
@@ -84,17 +77,12 @@ impl ProtectiveEquipmentSummaryBuilder {
         self
     }
     /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment. </p>
-    pub fn set_persons_without_required_equipment(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_persons_without_required_equipment(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.persons_without_required_equipment = input;
         self
     }
     /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment. </p>
-    pub fn get_persons_without_required_equipment(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_persons_without_required_equipment(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.persons_without_required_equipment
     }
     /// Appends an item to `persons_indeterminate`.
@@ -109,10 +97,7 @@ impl ProtectiveEquipmentSummaryBuilder {
         self
     }
     /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment. </p>
-    pub fn set_persons_indeterminate(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_persons_indeterminate(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.persons_indeterminate = input;
         self
     }

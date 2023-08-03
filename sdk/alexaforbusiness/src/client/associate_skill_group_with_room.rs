@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`AssociateSkillGroupWithRoomOutput`](crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomOutput)
     /// - On failure, responds with [`SdkError<AssociateSkillGroupWithRoomError>`](crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn associate_skill_group_with_room(&self) -> crate::operation::associate_skill_group_with_room::builders::AssociateSkillGroupWithRoomFluentBuilder{
+    pub fn associate_skill_group_with_room(
+        &self,
+    ) -> crate::operation::associate_skill_group_with_room::builders::AssociateSkillGroupWithRoomFluentBuilder {
         crate::operation::associate_skill_group_with_room::builders::AssociateSkillGroupWithRoomFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,7 +29,7 @@ impl DescribeDbClusterBacktracksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBClusterBacktracksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksInputBuilder,
+    inner: crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksInputBuilder,
 }
 impl DescribeDBClusterBacktracksFluentBuilder {
     /// Creates a new `DescribeDBClusterBacktracks`.
@@ -40,7 +40,7 @@ impl DescribeDBClusterBacktracksFluentBuilder {
         }
     }
     /// Access the DescribeDBClusterBacktracks as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl DescribeDBClusterBacktracksFluentBuilder {
             crate::operation::describe_db_cluster_backtracks::DescribeDBClusterBacktracks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_backtracks::DescribeDBClusterBacktracksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_backtracks::DescribeDBClusterBacktracksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl DescribeDBClusterBacktracksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl DescribeDBClusterBacktracksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_backtracks::DescribeDBClusterBacktracksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_backtracks::DescribeDBClusterBacktracksError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl DescribeDBClusterBacktracksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_backtracks::DescribeDBClusterBacktracksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_backtracks::DescribeDBClusterBacktracksError>,
     > {
         self.send_middleware().await
     }
@@ -117,16 +108,14 @@ impl DescribeDBClusterBacktracksFluentBuilder {
             crate::operation::describe_db_cluster_backtracks::DescribeDBClusterBacktracks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_backtracks::DescribeDBClusterBacktracksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_backtracks::DescribeDBClusterBacktracksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_db_cluster_backtracks::paginator::DescribeDbClusterBacktracksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_db_cluster_backtracks::paginator::DescribeDbClusterBacktracksPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_db_cluster_backtracks::paginator::DescribeDbClusterBacktracksPaginator {
         crate::operation::describe_db_cluster_backtracks::paginator::DescribeDbClusterBacktracksPaginator::new(self.handle, self.inner)
     }
     /// <p>The DB cluster identifier of the DB cluster to be described. This parameter is stored as a lowercase string.</p>
@@ -137,10 +126,7 @@ impl DescribeDBClusterBacktracksFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
@@ -152,10 +138,7 @@ impl DescribeDBClusterBacktracksFluentBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
@@ -176,10 +159,7 @@ impl DescribeDBClusterBacktracksFluentBuilder {
     /// <li> <p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p> </li>
     /// </ul>
     /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
-    pub fn backtrack_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backtrack_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backtrack_identifier(input.into());
         self
     }
@@ -189,10 +169,7 @@ impl DescribeDBClusterBacktracksFluentBuilder {
     /// <li> <p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p> </li>
     /// </ul>
     /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
-    pub fn set_backtrack_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backtrack_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backtrack_identifier(input);
         self
     }
@@ -235,10 +212,7 @@ impl DescribeDBClusterBacktracksFluentBuilder {
     /// <li> <p> <code>pending</code> </p> </li>
     /// </ul> <p>The results list includes information about only the backtracks identified by these values.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -29,17 +29,14 @@ impl UpdateDiscovererInput {
 }
 impl UpdateDiscovererInput {
     /// Creates a new builder-style object to manufacture [`UpdateDiscovererInput`](crate::operation::update_discoverer::UpdateDiscovererInput).
-    pub fn builder() -> crate::operation::update_discoverer::builders::UpdateDiscovererInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_discoverer::builders::UpdateDiscovererInputBuilder {
         crate::operation::update_discoverer::builders::UpdateDiscovererInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDiscovererInput`](crate::operation::update_discoverer::UpdateDiscovererInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDiscovererInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) discoverer_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +58,12 @@ impl UpdateDiscovererInputBuilder {
         &self.description
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discoverer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discoverer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn set_discoverer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discoverer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discoverer_id = input;
         self
     }
@@ -97,10 +88,7 @@ impl UpdateDiscovererInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDiscovererInput`](crate::operation::update_discoverer::UpdateDiscovererInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_discoverer::UpdateDiscovererInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_discoverer::UpdateDiscovererInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_discoverer::UpdateDiscovererInput {
             description: self.description,
             discoverer_id: self.discoverer_id,

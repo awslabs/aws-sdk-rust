@@ -9,13 +9,14 @@ pub fn de_create_field_level_encryption_config_http_error(
     crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
@@ -164,19 +165,23 @@ pub fn de_create_field_level_encryption_config_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::create_field_level_encryption_config::builders::CreateFieldLevelEncryptionConfigOutputBuilder::default();
         output = output.set_e_tag(
-            crate::protocol_serde::shape_create_field_level_encryption_config_output::de_e_tag_header(_response_headers)
-                                    .map_err(|_|crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+            crate::protocol_serde::shape_create_field_level_encryption_config_output::de_e_tag_header(_response_headers).map_err(|_| {
+                crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled(
+                    "Failed to parse ETag from header `ETag",
+                )
+            })?,
         );
         output = output.set_field_level_encryption(
-            crate::protocol_serde::shape_create_field_level_encryption_config_output::de_field_level_encryption_payload(_response_body)?
+            crate::protocol_serde::shape_create_field_level_encryption_config_output::de_field_level_encryption_payload(_response_body)?,
         );
         output = output.set_location(
-            crate::protocol_serde::shape_create_field_level_encryption_config_output::de_location_header(_response_headers)
-                                    .map_err(|_|crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled("Failed to parse Location from header `Location"))?
+            crate::protocol_serde::shape_create_field_level_encryption_config_output::de_location_header(_response_headers).map_err(|_| {
+                crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled(
+                    "Failed to parse Location from header `Location",
+                )
+            })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

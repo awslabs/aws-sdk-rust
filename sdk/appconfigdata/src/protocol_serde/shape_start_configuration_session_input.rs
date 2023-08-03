@@ -7,9 +7,7 @@ pub fn ser_start_configuration_session_input(
         object.key("ApplicationIdentifier").string(var_1.as_str());
     }
     if let Some(var_2) = &input.configuration_profile_identifier {
-        object
-            .key("ConfigurationProfileIdentifier")
-            .string(var_2.as_str());
+        object.key("ConfigurationProfileIdentifier").string(var_2.as_str());
     }
     if let Some(var_3) = &input.environment_identifier {
         object.key("EnvironmentIdentifier").string(var_3.as_str());

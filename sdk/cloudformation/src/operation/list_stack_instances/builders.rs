@@ -10,10 +10,7 @@ impl ListStackInstancesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_stack_instances::ListStackInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_instances::ListStackInstancesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_instances::ListStackInstancesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_stack_instances();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListStackInstancesFluentBuilder {
         }
     }
     /// Access the ListStackInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_stack_instances::builders::ListStackInstancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_stack_instances::builders::ListStackInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListStackInstancesFluentBuilder {
             crate::operation::list_stack_instances::ListStackInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_instances::ListStackInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_instances::ListStackInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListStackInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListStackInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stack_instances::ListStackInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_instances::ListStackInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_instances::ListStackInstancesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListStackInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stack_instances::ListStackInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_instances::ListStackInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_instances::ListStackInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListStackInstancesFluentBuilder {
             crate::operation::list_stack_instances::ListStackInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_stack_instances::ListStackInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_stack_instances::ListStackInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_stack_instances::paginator::ListStackInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_stack_instances::paginator::ListStackInstancesPaginator {
-        crate::operation::list_stack_instances::paginator::ListStackInstancesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_stack_instances::paginator::ListStackInstancesPaginator {
+        crate::operation::list_stack_instances::paginator::ListStackInstancesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name or unique ID of the stack set that you want to list stack instances for.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set that you want to list stack instances for.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
@@ -191,32 +164,21 @@ impl ListStackInstancesFluentBuilder {
         self
     }
     /// <p>The filter to apply to stack instances</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackInstanceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackInstanceFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The filter to apply to stack instances</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackInstanceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackInstanceFilter>> {
         self.inner.get_filters()
     }
     /// <p>The name of the Amazon Web Services account that you want to list stack instances for.</p>
-    pub fn stack_instance_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_instance_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_instance_account(input.into());
         self
     }
     /// <p>The name of the Amazon Web Services account that you want to list stack instances for.</p>
-    pub fn set_stack_instance_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_instance_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_instance_account(input);
         self
     }
@@ -225,18 +187,12 @@ impl ListStackInstancesFluentBuilder {
         self.inner.get_stack_instance_account()
     }
     /// <p>The name of the Region where you want to list stack instances.</p>
-    pub fn stack_instance_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_instance_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_instance_region(input.into());
         self
     }
     /// <p>The name of the Region where you want to list stack instances.</p>
-    pub fn set_stack_instance_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_instance_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_instance_region(input);
         self
     }

@@ -10,10 +10,7 @@ impl CreateEphemerisInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_ephemeris::CreateEphemerisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ephemeris::CreateEphemerisError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ephemeris::CreateEphemerisError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_ephemeris();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateEphemerisFluentBuilder {
         }
     }
     /// Access the CreateEphemeris as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_ephemeris::builders::CreateEphemerisInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_ephemeris::builders::CreateEphemerisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateEphemerisFluentBuilder {
             crate::operation::create_ephemeris::CreateEphemeris,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ephemeris::CreateEphemerisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ephemeris::CreateEphemerisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateEphemerisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateEphemerisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ephemeris::CreateEphemerisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ephemeris::CreateEphemerisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ephemeris::CreateEphemerisError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateEphemerisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ephemeris::CreateEphemerisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ephemeris::CreateEphemerisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ephemeris::CreateEphemerisError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateEphemerisFluentBuilder {
             crate::operation::create_ephemeris::CreateEphemeris,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ephemeris::CreateEphemerisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ephemeris::CreateEphemerisError>,
     > {
         self.customize_middleware().await
     }
@@ -179,10 +163,7 @@ impl CreateEphemerisFluentBuilder {
         self
     }
     /// <p>An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.</p>
-    pub fn set_expiration_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_expiration_time(input);
         self
     }
@@ -224,10 +205,7 @@ impl CreateEphemerisFluentBuilder {
         self
     }
     /// <p>Ephemeris data.</p>
-    pub fn set_ephemeris(
-        mut self,
-        input: ::std::option::Option<crate::types::EphemerisData>,
-    ) -> Self {
+    pub fn set_ephemeris(mut self, input: ::std::option::Option<crate::types::EphemerisData>) -> Self {
         self.inner = self.inner.set_ephemeris(input);
         self
     }
@@ -240,30 +218,17 @@ impl CreateEphemerisFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags assigned to an ephemeris.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Tags assigned to an ephemeris.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Tags assigned to an ephemeris.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

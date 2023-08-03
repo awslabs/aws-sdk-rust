@@ -48,8 +48,7 @@ pub struct DescribeDataSourceOutput {
     /// <p>Configuration information for altering document metadata and content during the document ingestion process when you describe a data source.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     #[doc(hidden)]
-    pub custom_document_enrichment_configuration:
-        ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
+    pub custom_document_enrichment_configuration: ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeDataSourceOutput {
@@ -74,9 +73,7 @@ impl DescribeDataSourceOutput {
         self.configuration.as_ref()
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    pub fn vpc_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>The Unix timestamp when the data source connector was created.</p>
@@ -113,9 +110,7 @@ impl DescribeDataSourceOutput {
     }
     /// <p>Configuration information for altering document metadata and content during the document ingestion process when you describe a data source.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn custom_document_enrichment_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomDocumentEnrichmentConfiguration> {
+    pub fn custom_document_enrichment_configuration(&self) -> ::std::option::Option<&crate::types::CustomDocumentEnrichmentConfiguration> {
         self.custom_document_enrichment_configuration.as_ref()
     }
 }
@@ -126,17 +121,14 @@ impl ::aws_http::request_id::RequestId for DescribeDataSourceOutput {
 }
 impl DescribeDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSourceOutput`](crate::operation::describe_data_source::DescribeDataSourceOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_data_source::builders::DescribeDataSourceOutputBuilder {
+    pub fn builder() -> crate::operation::describe_data_source::builders::DescribeDataSourceOutputBuilder {
         crate::operation::describe_data_source::builders::DescribeDataSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataSourceOutput`](crate::operation::describe_data_source::DescribeDataSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataSourceOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
@@ -152,8 +144,7 @@ pub struct DescribeDataSourceOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_document_enrichment_configuration:
-        ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
+    pub(crate) custom_document_enrichment_configuration: ::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeDataSourceOutputBuilder {
@@ -219,17 +210,12 @@ impl DescribeDataSourceOutputBuilder {
         self
     }
     /// <p>Configuration details for the data source connector. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>Configuration details for the data source connector. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
         &self.configuration
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
@@ -238,17 +224,12 @@ impl DescribeDataSourceOutputBuilder {
         self
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
-    ) -> Self {
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>) -> Self {
         self.vpc_configuration = input;
         self
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    pub fn get_vpc_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
         &self.vpc_configuration
     }
     /// <p>The Unix timestamp when the data source connector was created.</p>
@@ -257,10 +238,7 @@ impl DescribeDataSourceOutputBuilder {
         self
     }
     /// <p>The Unix timestamp when the data source connector was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -274,10 +252,7 @@ impl DescribeDataSourceOutputBuilder {
         self
     }
     /// <p>The Unix timestamp when the data source connector was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -305,10 +280,7 @@ impl DescribeDataSourceOutputBuilder {
         self
     }
     /// <p>The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -345,18 +317,12 @@ impl DescribeDataSourceOutputBuilder {
         &self.role_arn
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source to fail.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source to fail.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -365,18 +331,12 @@ impl DescribeDataSourceOutputBuilder {
         &self.error_message
     }
     /// <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    pub fn language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_code = input;
         self
     }
@@ -386,10 +346,7 @@ impl DescribeDataSourceOutputBuilder {
     }
     /// <p>Configuration information for altering document metadata and content during the document ingestion process when you describe a data source.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn custom_document_enrichment_configuration(
-        mut self,
-        input: crate::types::CustomDocumentEnrichmentConfiguration,
-    ) -> Self {
+    pub fn custom_document_enrichment_configuration(mut self, input: crate::types::CustomDocumentEnrichmentConfiguration) -> Self {
         self.custom_document_enrichment_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -404,9 +361,7 @@ impl DescribeDataSourceOutputBuilder {
     }
     /// <p>Configuration information for altering document metadata and content during the document ingestion process when you describe a data source.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn get_custom_document_enrichment_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration> {
+    pub fn get_custom_document_enrichment_configuration(&self) -> &::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration> {
         &self.custom_document_enrichment_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

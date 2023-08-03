@@ -27,32 +27,19 @@ impl PostCommentForPullRequestInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         if self.client_request_token.is_none() {
-            self.client_request_token = ::std::option::Option::Some(
-                _config.idempotency_token_provider.make_idempotency_token(),
-            );
+            self.client_request_token = ::std::option::Option::Some(_config.idempotency_token_provider.make_idempotency_token());
         }
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -61,20 +48,13 @@ impl PostCommentForPullRequestInput {
             fn update_http_builder(
                 input: &crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
-            builder = ::aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                ::http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = ::aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 ::http::header::HeaderName::from_static("x-amz-target"),
@@ -85,14 +65,10 @@ impl PostCommentForPullRequestInput {
         let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = ::aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_post_comment_for_pull_request::ser_post_comment_for_pull_request_input(&self)?
+            crate::protocol_serde::shape_post_comment_for_pull_request::ser_post_comment_for_pull_request_input(&self)?,
         );
         if let ::std::option::Option::Some(content_length) = body.content_length() {
-            request = ::aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                ::http::header::CONTENT_LENGTH,
-                content_length,
-            );
+            request = ::aws_smithy_http::header::set_request_header_if_absent(request, ::http::header::CONTENT_LENGTH, content_length);
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -104,10 +80,8 @@ impl PostCommentForPullRequestInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -116,29 +90,17 @@ impl PostCommentForPullRequestInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::post_comment_for_pull_request::PostCommentForPullRequest::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "PostCommentForPullRequest",
-            "codecommit",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op =
+            ::aws_smithy_http::operation::Operation::new(request, crate::operation::post_comment_for_pull_request::PostCommentForPullRequest::new())
+                .with_metadata(::aws_smithy_http::operation::Metadata::new("PostCommentForPullRequest", "codecommit"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -167,7 +129,9 @@ impl ::aws_smithy_http::response::ParseStrictResponse for PostCommentForPullRequ
         if !success && status != 200 {
             crate::protocol_serde::shape_post_comment_for_pull_request::de_post_comment_for_pull_request_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_post_comment_for_pull_request::de_post_comment_for_pull_request_http_response_with_props(status, headers, body)
+            crate::protocol_serde::shape_post_comment_for_pull_request::de_post_comment_for_pull_request_http_response_with_props(
+                status, headers, body,
+            )
         }
     }
 }
@@ -184,25 +148,19 @@ pub type PostCommentForPullRequestErrorKind = PostCommentForPullRequestError;
 #[derive(::std::fmt::Debug)]
 pub enum PostCommentForPullRequestError {
     /// <p>The before commit ID and the after commit ID are the same, which is not valid. The before commit ID and the after commit ID must be different commit IDs.</p>
-    BeforeCommitIdAndAfterCommitIdAreSameException(
-        crate::types::error::BeforeCommitIdAndAfterCommitIdAreSameException,
-    ),
+    BeforeCommitIdAndAfterCommitIdAreSameException(crate::types::error::BeforeCommitIdAndAfterCommitIdAreSameException),
     /// <p>A client request token is required. A client request token is an unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     ClientRequestTokenRequiredException(crate::types::error::ClientRequestTokenRequiredException),
     /// <p>The comment is empty. You must provide some content for a comment. The content cannot be null.</p>
     CommentContentRequiredException(crate::types::error::CommentContentRequiredException),
     /// <p>The comment is too large. Comments are limited to 1,000 characters.</p>
-    CommentContentSizeLimitExceededException(
-        crate::types::error::CommentContentSizeLimitExceededException,
-    ),
+    CommentContentSizeLimitExceededException(crate::types::error::CommentContentSizeLimitExceededException),
     /// <p>The specified commit does not exist or no commit was specified, and the specified repository has no default branch.</p>
     CommitDoesNotExistException(crate::types::error::CommitDoesNotExistException),
     /// <p>A commit ID was not specified.</p>
     CommitIdRequiredException(crate::types::error::CommitIdRequiredException),
     /// <p>An encryption integrity check failed.</p>
-    EncryptionIntegrityChecksFailedException(
-        crate::types::error::EncryptionIntegrityChecksFailedException,
-    ),
+    EncryptionIntegrityChecksFailedException(crate::types::error::EncryptionIntegrityChecksFailedException),
     /// <p>An encryption key could not be accessed.</p>
     EncryptionKeyAccessDeniedException(crate::types::error::EncryptionKeyAccessDeniedException),
     /// <p>The encryption key is disabled.</p>
@@ -212,9 +170,7 @@ pub enum PostCommentForPullRequestError {
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::types::error::EncryptionKeyUnavailableException),
     /// <p>The client request token is not valid. Either the token is not in a valid format, or the token has been used in a previous request and cannot be reused.</p>
-    IdempotencyParameterMismatchException(
-        crate::types::error::IdempotencyParameterMismatchException,
-    ),
+    IdempotencyParameterMismatchException(crate::types::error::IdempotencyParameterMismatchException),
     /// <p>The client request token is not valid.</p>
     InvalidClientRequestTokenException(crate::types::error::InvalidClientRequestTokenException),
     /// <p>The specified commit ID is not valid.</p>
@@ -228,9 +184,7 @@ pub enum PostCommentForPullRequestError {
     /// <p>The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request is in the specified repository, and then try again.</p>
     InvalidPullRequestIdException(crate::types::error::InvalidPullRequestIdException),
     /// <p>Either the enum is not in a valid format, or the specified file version enum is not valid in respect to the current file version.</p>
-    InvalidRelativeFileVersionEnumException(
-        crate::types::error::InvalidRelativeFileVersionEnumException,
-    ),
+    InvalidRelativeFileVersionEnumException(crate::types::error::InvalidRelativeFileVersionEnumException),
     /// <p>A specified repository name is not valid.</p> <note>
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
@@ -248,17 +202,13 @@ pub enum PostCommentForPullRequestError {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::types::error::RepositoryNameRequiredException),
     /// <p>The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify the correct repository name for the pull request ID.</p>
-    RepositoryNotAssociatedWithPullRequestException(
-        crate::types::error::RepositoryNotAssociatedWithPullRequestException,
-    ),
+    RepositoryNotAssociatedWithPullRequestException(crate::types::error::RepositoryNotAssociatedWithPullRequestException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for PostCommentForPullRequestError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -305,96 +255,38 @@ impl ::std::fmt::Display for PostCommentForPullRequestError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PostCommentForPullRequestError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::BeforeCommitIdAndAfterCommitIdAreSameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ClientRequestTokenRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::CommentContentRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::CommentContentSizeLimitExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::CommitDoesNotExistException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::CommitIdRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionIntegrityChecksFailedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyAccessDeniedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyDisabledException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyNotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyUnavailableException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::IdempotencyParameterMismatchException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidClientRequestTokenException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidCommitIdException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidFileLocationException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidFilePositionException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidPathException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidPullRequestIdException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidRelativeFileVersionEnumException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidRepositoryNameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::PathDoesNotExistException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::PathRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::PullRequestDoesNotExistException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::PullRequestIdRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::RepositoryDoesNotExistException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::RepositoryNameRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::RepositoryNotAssociatedWithPullRequestException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::BeforeCommitIdAndAfterCommitIdAreSameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ClientRequestTokenRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CommentContentRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CommentContentSizeLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CommitDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CommitIdRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionIntegrityChecksFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::IdempotencyParameterMismatchException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidClientRequestTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidCommitIdException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidFileLocationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidFilePositionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidPathException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidPullRequestIdException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRelativeFileVersionEnumException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRepositoryNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::PathDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::PathRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::PullRequestDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::PullRequestIdRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RepositoryDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RepositoryNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RepositoryNotAssociatedWithPullRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -410,27 +302,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for PostCommentForPullRequestEr
 impl PostCommentForPullRequestError {
     /// Creates the `PostCommentForPullRequestError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `PostCommentForPullRequestError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,
@@ -471,10 +350,7 @@ impl PostCommentForPullRequestError {
     }
     /// Returns `true` if the error kind is `PostCommentForPullRequestError::BeforeCommitIdAndAfterCommitIdAreSameException`.
     pub fn is_before_commit_id_and_after_commit_id_are_same_exception(&self) -> bool {
-        matches!(
-            self,
-            Self::BeforeCommitIdAndAfterCommitIdAreSameException(_)
-        )
+        matches!(self, Self::BeforeCommitIdAndAfterCommitIdAreSameException(_))
     }
     /// Returns `true` if the error kind is `PostCommentForPullRequestError::ClientRequestTokenRequiredException`.
     pub fn is_client_request_token_required_exception(&self) -> bool {
@@ -578,46 +454,31 @@ impl PostCommentForPullRequestError {
     }
     /// Returns `true` if the error kind is `PostCommentForPullRequestError::RepositoryNotAssociatedWithPullRequestException`.
     pub fn is_repository_not_associated_with_pull_request_exception(&self) -> bool {
-        matches!(
-            self,
-            Self::RepositoryNotAssociatedWithPullRequestException(_)
-        )
+        matches!(self, Self::RepositoryNotAssociatedWithPullRequestException(_))
     }
 }
 impl ::std::error::Error for PostCommentForPullRequestError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::BeforeCommitIdAndAfterCommitIdAreSameException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::ClientRequestTokenRequiredException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::BeforeCommitIdAndAfterCommitIdAreSameException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ClientRequestTokenRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::CommentContentRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::CommentContentSizeLimitExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::CommentContentSizeLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::CommitDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
             Self::CommitIdRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::EncryptionIntegrityChecksFailedException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::EncryptionIntegrityChecksFailedException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyDisabledException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyUnavailableException(_inner) => ::std::option::Option::Some(_inner),
-            Self::IdempotencyParameterMismatchException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::IdempotencyParameterMismatchException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidClientRequestTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidCommitIdException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidFileLocationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidFilePositionException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidPathException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidPullRequestIdException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidRelativeFileVersionEnumException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::InvalidRelativeFileVersionEnumException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRepositoryNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::PathDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
             Self::PathRequiredException(_inner) => ::std::option::Option::Some(_inner),
@@ -625,9 +486,7 @@ impl ::std::error::Error for PostCommentForPullRequestError {
             Self::PullRequestIdRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::RepositoryDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
             Self::RepositoryNameRequiredException(_inner) => ::std::option::Option::Some(_inner),
-            Self::RepositoryNotAssociatedWithPullRequestException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::RepositoryNotAssociatedWithPullRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

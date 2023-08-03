@@ -11,8 +11,7 @@ pub struct UpdateMemberInput {
     pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub log_publishing_configuration:
-        ::std::option::Option<crate::types::MemberLogPublishingConfiguration>,
+    pub log_publishing_configuration: ::std::option::Option<crate::types::MemberLogPublishingConfiguration>,
 }
 impl UpdateMemberInput {
     /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
@@ -24,9 +23,7 @@ impl UpdateMemberInput {
         self.member_id.as_deref()
     }
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
-    pub fn log_publishing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MemberLogPublishingConfiguration> {
+    pub fn log_publishing_configuration(&self) -> ::std::option::Option<&crate::types::MemberLogPublishingConfiguration> {
         self.log_publishing_configuration.as_ref()
     }
 }
@@ -39,14 +36,11 @@ impl UpdateMemberInput {
 
 /// A builder for [`UpdateMemberInput`](crate::operation::update_member::UpdateMemberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMemberInputBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_id: ::std::option::Option<::std::string::String>,
-    pub(crate) log_publishing_configuration:
-        ::std::option::Option<crate::types::MemberLogPublishingConfiguration>,
+    pub(crate) log_publishing_configuration: ::std::option::Option<crate::types::MemberLogPublishingConfiguration>,
 }
 impl UpdateMemberInputBuilder {
     /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
@@ -78,34 +72,21 @@ impl UpdateMemberInputBuilder {
         &self.member_id
     }
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
-    pub fn log_publishing_configuration(
-        mut self,
-        input: crate::types::MemberLogPublishingConfiguration,
-    ) -> Self {
+    pub fn log_publishing_configuration(mut self, input: crate::types::MemberLogPublishingConfiguration) -> Self {
         self.log_publishing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
-    pub fn set_log_publishing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberLogPublishingConfiguration>,
-    ) -> Self {
+    pub fn set_log_publishing_configuration(mut self, input: ::std::option::Option<crate::types::MemberLogPublishingConfiguration>) -> Self {
         self.log_publishing_configuration = input;
         self
     }
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
-    pub fn get_log_publishing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MemberLogPublishingConfiguration> {
+    pub fn get_log_publishing_configuration(&self) -> &::std::option::Option<crate::types::MemberLogPublishingConfiguration> {
         &self.log_publishing_configuration
     }
     /// Consumes the builder and constructs a [`UpdateMemberInput`](crate::operation::update_member::UpdateMemberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_member::UpdateMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_member::UpdateMemberInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_member::UpdateMemberInput {
             network_id: self.network_id,
             member_id: self.member_id,

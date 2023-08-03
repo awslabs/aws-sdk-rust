@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateHomeRegionControlOutput`](crate::operation::create_home_region_control::CreateHomeRegionControlOutput) with field(s):
     ///   - [`home_region_control(Option<HomeRegionControl>)`](crate::operation::create_home_region_control::CreateHomeRegionControlOutput::home_region_control): <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
     /// - On failure, responds with [`SdkError<CreateHomeRegionControlError>`](crate::operation::create_home_region_control::CreateHomeRegionControlError)
-    pub fn create_home_region_control(
-        &self,
-    ) -> crate::operation::create_home_region_control::builders::CreateHomeRegionControlFluentBuilder
-    {
+    pub fn create_home_region_control(&self) -> crate::operation::create_home_region_control::builders::CreateHomeRegionControlFluentBuilder {
         crate::operation::create_home_region_control::builders::CreateHomeRegionControlFluentBuilder::new(self.handle.clone())
     }
 }

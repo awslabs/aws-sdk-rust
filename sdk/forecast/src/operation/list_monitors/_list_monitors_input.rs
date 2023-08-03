@@ -52,9 +52,7 @@ impl ListMonitorsInput {
 
 /// A builder for [`ListMonitorsInput`](crate::operation::list_monitors::ListMonitorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitorsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -117,10 +115,7 @@ impl ListMonitorsInputBuilder {
     /// </ul>
     /// <p>For example, to list all monitors who's status is ACTIVE, you would specify:</p>
     /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -137,12 +132,7 @@ impl ListMonitorsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListMonitorsInput`](crate::operation::list_monitors::ListMonitorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_monitors::ListMonitorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_monitors::ListMonitorsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_monitors::ListMonitorsInput {
             next_token: self.next_token,
             max_results: self.max_results,

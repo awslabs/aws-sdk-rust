@@ -27,7 +27,7 @@ impl DeleteEventSourceMappingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEventSourceMappingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingInputBuilder,
+    inner: crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingInputBuilder,
 }
 impl DeleteEventSourceMappingFluentBuilder {
     /// Creates a new `DeleteEventSourceMapping`.
@@ -38,7 +38,7 @@ impl DeleteEventSourceMappingFluentBuilder {
         }
     }
     /// Access the DeleteEventSourceMapping as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DeleteEventSourceMappingFluentBuilder {
             crate::operation::delete_event_source_mapping::DeleteEventSourceMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DeleteEventSourceMappingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DeleteEventSourceMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_event_source_mapping::DeleteEventSourceMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DeleteEventSourceMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_event_source_mapping::DeleteEventSourceMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DeleteEventSourceMappingFluentBuilder {
             crate::operation::delete_event_source_mapping::DeleteEventSourceMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError>,
     > {
         self.customize_middleware().await
     }

@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "package" => ResourceType::Package,
             "package-version" => ResourceType::PackageVersion,
             "repository" => ResourceType::Repository,
-            other => {
-                ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "asset",
-            "domain",
-            "package",
-            "package-version",
-            "repository",
-        ]
+        &["asset", "domain", "package", "package-version", "repository"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceType {

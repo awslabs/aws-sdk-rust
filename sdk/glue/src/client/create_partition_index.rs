@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`partition_index(PartitionIndex)`](crate::operation::create_partition_index::builders::CreatePartitionIndexFluentBuilder::partition_index) / [`set_partition_index(Option<PartitionIndex>)`](crate::operation::create_partition_index::builders::CreatePartitionIndexFluentBuilder::set_partition_index): <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
     /// - On success, responds with [`CreatePartitionIndexOutput`](crate::operation::create_partition_index::CreatePartitionIndexOutput)
     /// - On failure, responds with [`SdkError<CreatePartitionIndexError>`](crate::operation::create_partition_index::CreatePartitionIndexError)
-    pub fn create_partition_index(
-        &self,
-    ) -> crate::operation::create_partition_index::builders::CreatePartitionIndexFluentBuilder {
-        crate::operation::create_partition_index::builders::CreatePartitionIndexFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_partition_index(&self) -> crate::operation::create_partition_index::builders::CreatePartitionIndexFluentBuilder {
+        crate::operation::create_partition_index::builders::CreatePartitionIndexFluentBuilder::new(self.handle.clone())
     }
 }

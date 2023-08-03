@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for StartPipelineReprocessingOutput {
 }
 impl StartPipelineReprocessingOutput {
     /// Creates a new builder-style object to manufacture [`StartPipelineReprocessingOutput`](crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput).
-    pub fn builder() -> crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingOutputBuilder{
+    pub fn builder() -> crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingOutputBuilder {
         crate::operation::start_pipeline_reprocessing::builders::StartPipelineReprocessingOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartPipelineReprocessingOutput`](crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartPipelineReprocessingOutputBuilder {
     pub(crate) reprocessing_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartPipelineReprocessingOutputBuilder {
     /// <p>The ID of the pipeline reprocessing activity that was started.</p>
-    pub fn reprocessing_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reprocessing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reprocessing_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the pipeline reprocessing activity that was started.</p>
-    pub fn set_reprocessing_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reprocessing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reprocessing_id = input;
         self
     }
@@ -66,9 +58,7 @@ impl StartPipelineReprocessingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartPipelineReprocessingOutput`](crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput {
+    pub fn build(self) -> crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput {
         crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput {
             reprocessing_id: self.reprocessing_id,
             _request_id: self._request_id,

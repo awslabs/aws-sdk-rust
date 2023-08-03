@@ -30,13 +30,10 @@ impl RdsLoginAttemptAction {
 
 /// A builder for [`RdsLoginAttemptAction`](crate::types::RdsLoginAttemptAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RdsLoginAttemptActionBuilder {
     pub(crate) remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
-    pub(crate) login_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoginAttribute>>,
+    pub(crate) login_attributes: ::std::option::Option<::std::vec::Vec<crate::types::LoginAttribute>>,
 }
 impl RdsLoginAttemptActionBuilder {
     /// <p>Contains information about the remote IP address of the connection.</p>
@@ -45,10 +42,7 @@ impl RdsLoginAttemptActionBuilder {
         self
     }
     /// <p>Contains information about the remote IP address of the connection.</p>
-    pub fn set_remote_ip_details(
-        mut self,
-        input: ::std::option::Option<crate::types::RemoteIpDetails>,
-    ) -> Self {
+    pub fn set_remote_ip_details(mut self, input: ::std::option::Option<crate::types::RemoteIpDetails>) -> Self {
         self.remote_ip_details = input;
         self
     }
@@ -68,17 +62,12 @@ impl RdsLoginAttemptActionBuilder {
         self
     }
     /// <p>Indicates the login attributes used in the login attempt.</p>
-    pub fn set_login_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoginAttribute>>,
-    ) -> Self {
+    pub fn set_login_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoginAttribute>>) -> Self {
         self.login_attributes = input;
         self
     }
     /// <p>Indicates the login attributes used in the login attempt.</p>
-    pub fn get_login_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoginAttribute>> {
+    pub fn get_login_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoginAttribute>> {
         &self.login_attributes
     }
     /// Consumes the builder and constructs a [`RdsLoginAttemptAction`](crate::types::RdsLoginAttemptAction).

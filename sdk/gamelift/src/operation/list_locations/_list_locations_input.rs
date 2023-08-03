@@ -36,9 +36,7 @@ impl ListLocationsInput {
 
 /// A builder for [`ListLocationsInput`](crate::operation::list_locations::ListLocationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLocationsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::LocationFilter>>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -57,17 +55,12 @@ impl ListLocationsInputBuilder {
         self
     }
     /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LocationFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationFilter>> {
         &self.filters
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -101,10 +94,7 @@ impl ListLocationsInputBuilder {
     /// Consumes the builder and constructs a [`ListLocationsInput`](crate::operation::list_locations::ListLocationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_locations::ListLocationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_locations::ListLocationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_locations::ListLocationsInput {
             filters: self.filters,
             limit: self.limit,

@@ -100,9 +100,7 @@ impl Network {
 
 /// A builder for [`Network`](crate::types::Network).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkBuilder {
     pub(crate) direction: ::std::option::Option<crate::types::NetworkDirection>,
     pub(crate) protocol: ::std::option::Option<::std::string::String>,
@@ -124,10 +122,7 @@ impl NetworkBuilder {
         self
     }
     /// <p>The direction of network traffic associated with a finding.</p>
-    pub fn set_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkDirection>,
-    ) -> Self {
+    pub fn set_direction(mut self, input: ::std::option::Option<crate::types::NetworkDirection>) -> Self {
         self.direction = input;
         self
     }
@@ -155,10 +150,7 @@ impl NetworkBuilder {
         self
     }
     /// <p>The range of open ports that is present on the network.</p>
-    pub fn set_open_port_range(
-        mut self,
-        input: ::std::option::Option<crate::types::PortRange>,
-    ) -> Self {
+    pub fn set_open_port_range(mut self, input: ::std::option::Option<crate::types::PortRange>) -> Self {
         self.open_port_range = input;
         self
     }
@@ -209,18 +201,12 @@ impl NetworkBuilder {
         &self.source_port
     }
     /// <p>The source domain of network-related information about a finding.</p>
-    pub fn source_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source domain of network-related information about a finding.</p>
-    pub fn set_source_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_domain = input;
         self
     }
@@ -243,18 +229,12 @@ impl NetworkBuilder {
         &self.source_mac
     }
     /// <p>The destination IPv4 address of network-related information about a finding.</p>
-    pub fn destination_ip_v4(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_ip_v4(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_ip_v4 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination IPv4 address of network-related information about a finding.</p>
-    pub fn set_destination_ip_v4(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_ip_v4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_ip_v4 = input;
         self
     }
@@ -263,18 +243,12 @@ impl NetworkBuilder {
         &self.destination_ip_v4
     }
     /// <p>The destination IPv6 address of network-related information about a finding.</p>
-    pub fn destination_ip_v6(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_ip_v6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_ip_v6 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination IPv6 address of network-related information about a finding.</p>
-    pub fn set_destination_ip_v6(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_ip_v6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_ip_v6 = input;
         self
     }
@@ -297,18 +271,12 @@ impl NetworkBuilder {
         &self.destination_port
     }
     /// <p>The destination domain of network-related information about a finding.</p>
-    pub fn destination_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination domain of network-related information about a finding.</p>
-    pub fn set_destination_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_domain = input;
         self
     }

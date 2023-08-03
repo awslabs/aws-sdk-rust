@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`IsMemberInGroupsOutput`](crate::operation::is_member_in_groups::IsMemberInGroupsOutput) with field(s):
     ///   - [`results(Option<Vec<GroupMembershipExistenceResult>>)`](crate::operation::is_member_in_groups::IsMemberInGroupsOutput::results): <p>A list containing the results of membership existence checks.</p>
     /// - On failure, responds with [`SdkError<IsMemberInGroupsError>`](crate::operation::is_member_in_groups::IsMemberInGroupsError)
-    pub fn is_member_in_groups(
-        &self,
-    ) -> crate::operation::is_member_in_groups::builders::IsMemberInGroupsFluentBuilder {
-        crate::operation::is_member_in_groups::builders::IsMemberInGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn is_member_in_groups(&self) -> crate::operation::is_member_in_groups::builders::IsMemberInGroupsFluentBuilder {
+        crate::operation::is_member_in_groups::builders::IsMemberInGroupsFluentBuilder::new(self.handle.clone())
     }
 }

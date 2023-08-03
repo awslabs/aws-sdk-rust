@@ -31,7 +31,7 @@ impl CreateCacheParameterGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCacheParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_cache_parameter_group::builders::CreateCacheParameterGroupInputBuilder,
+    inner: crate::operation::create_cache_parameter_group::builders::CreateCacheParameterGroupInputBuilder,
 }
 impl CreateCacheParameterGroupFluentBuilder {
     /// Creates a new `CreateCacheParameterGroup`.
@@ -42,7 +42,7 @@ impl CreateCacheParameterGroupFluentBuilder {
         }
     }
     /// Access the CreateCacheParameterGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_cache_parameter_group::builders::CreateCacheParameterGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_cache_parameter_group::builders::CreateCacheParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl CreateCacheParameterGroupFluentBuilder {
             crate::operation::create_cache_parameter_group::CreateCacheParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl CreateCacheParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl CreateCacheParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cache_parameter_group::CreateCacheParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl CreateCacheParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cache_parameter_group::CreateCacheParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +110,17 @@ impl CreateCacheParameterGroupFluentBuilder {
             crate::operation::create_cache_parameter_group::CreateCacheParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A user-specified name for the cache parameter group.</p>
-    pub fn cache_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_parameter_group_name(input.into());
         self
     }
     /// <p>A user-specified name for the cache parameter group.</p>
-    pub fn set_cache_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_parameter_group_name(input);
         self
     }
@@ -147,27 +130,19 @@ impl CreateCacheParameterGroupFluentBuilder {
     }
     /// <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
-    pub fn cache_parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_parameter_group_family(input.into());
         self
     }
     /// <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
-    pub fn set_cache_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_parameter_group_family(input);
         self
     }
     /// <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
-    pub fn get_cache_parameter_group_family(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cache_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_parameter_group_family()
     }
     /// <p>A user-specified description for the cache parameter group.</p>
@@ -194,10 +169,7 @@ impl CreateCacheParameterGroupFluentBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ResetAddressAttributeOutput {
 }
 impl ResetAddressAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ResetAddressAttributeOutput`](crate::operation::reset_address_attribute::ResetAddressAttributeOutput).
-    pub fn builder(
-    ) -> crate::operation::reset_address_attribute::builders::ResetAddressAttributeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_address_attribute::builders::ResetAddressAttributeOutputBuilder {
         crate::operation::reset_address_attribute::builders::ResetAddressAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetAddressAttributeOutput`](crate::operation::reset_address_attribute::ResetAddressAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetAddressAttributeOutputBuilder {
     pub(crate) address: ::std::option::Option<crate::types::AddressAttribute>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl ResetAddressAttributeOutputBuilder {
         self
     }
     /// <p>Information about the IP address.</p>
-    pub fn set_address(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressAttribute>,
-    ) -> Self {
+    pub fn set_address(mut self, input: ::std::option::Option<crate::types::AddressAttribute>) -> Self {
         self.address = input;
         self
     }

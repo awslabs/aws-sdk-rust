@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`authorizer_name(Option<String>)`](crate::operation::create_authorizer::CreateAuthorizerOutput::authorizer_name): <p>The authorizer's name.</p>
     ///   - [`authorizer_arn(Option<String>)`](crate::operation::create_authorizer::CreateAuthorizerOutput::authorizer_arn): <p>The authorizer ARN.</p>
     /// - On failure, responds with [`SdkError<CreateAuthorizerError>`](crate::operation::create_authorizer::CreateAuthorizerError)
-    pub fn create_authorizer(
-        &self,
-    ) -> crate::operation::create_authorizer::builders::CreateAuthorizerFluentBuilder {
-        crate::operation::create_authorizer::builders::CreateAuthorizerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_authorizer(&self) -> crate::operation::create_authorizer::builders::CreateAuthorizerFluentBuilder {
+        crate::operation::create_authorizer::builders::CreateAuthorizerFluentBuilder::new(self.handle.clone())
     }
 }

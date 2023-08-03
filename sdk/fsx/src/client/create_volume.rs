@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVolumeOutput`](crate::operation::create_volume::CreateVolumeOutput) with field(s):
     ///   - [`volume(Option<Volume>)`](crate::operation::create_volume::CreateVolumeOutput::volume): <p>Returned after a successful <code>CreateVolume</code> API operation, describing the volume just created.</p>
     /// - On failure, responds with [`SdkError<CreateVolumeError>`](crate::operation::create_volume::CreateVolumeError)
-    pub fn create_volume(
-        &self,
-    ) -> crate::operation::create_volume::builders::CreateVolumeFluentBuilder {
-        crate::operation::create_volume::builders::CreateVolumeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_volume(&self) -> crate::operation::create_volume::builders::CreateVolumeFluentBuilder {
+        crate::operation::create_volume::builders::CreateVolumeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`attribute_updates(Vec<LinkAttributeUpdate>)`](crate::operation::update_link_attributes::builders::UpdateLinkAttributesFluentBuilder::attribute_updates) / [`set_attribute_updates(Option<Vec<LinkAttributeUpdate>>)`](crate::operation::update_link_attributes::builders::UpdateLinkAttributesFluentBuilder::set_attribute_updates): <p>The attributes update structure.</p>
     /// - On success, responds with [`UpdateLinkAttributesOutput`](crate::operation::update_link_attributes::UpdateLinkAttributesOutput)
     /// - On failure, responds with [`SdkError<UpdateLinkAttributesError>`](crate::operation::update_link_attributes::UpdateLinkAttributesError)
-    pub fn update_link_attributes(
-        &self,
-    ) -> crate::operation::update_link_attributes::builders::UpdateLinkAttributesFluentBuilder {
-        crate::operation::update_link_attributes::builders::UpdateLinkAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_link_attributes(&self) -> crate::operation::update_link_attributes::builders::UpdateLinkAttributesFluentBuilder {
+        crate::operation::update_link_attributes::builders::UpdateLinkAttributesFluentBuilder::new(self.handle.clone())
     }
 }

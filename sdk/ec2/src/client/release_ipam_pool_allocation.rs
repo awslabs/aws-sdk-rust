@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ReleaseIpamPoolAllocationOutput`](crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationOutput) with field(s):
     ///   - [`success(Option<bool>)`](crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationOutput::success): <p>Indicates if the release was successful.</p>
     /// - On failure, responds with [`SdkError<ReleaseIpamPoolAllocationError>`](crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationError)
-    pub fn release_ipam_pool_allocation(&self) -> crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationFluentBuilder{
+    pub fn release_ipam_pool_allocation(&self) -> crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationFluentBuilder {
         crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationFluentBuilder::new(self.handle.clone())
     }
 }

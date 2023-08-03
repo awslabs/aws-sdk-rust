@@ -22,34 +22,26 @@ impl StartImagePipelineExecutionInput {
 }
 impl StartImagePipelineExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartImagePipelineExecutionInput`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput).
-    pub fn builder() -> crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionInputBuilder{
+    pub fn builder() -> crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionInputBuilder {
         crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`StartImagePipelineExecutionInput`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartImagePipelineExecutionInputBuilder {
     pub(crate) image_pipeline_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartImagePipelineExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
-    pub fn image_pipeline_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
-    pub fn set_image_pipeline_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_pipeline_arn = input;
         self
     }
@@ -78,11 +70,9 @@ impl StartImagePipelineExecutionInputBuilder {
         crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput {
-                image_pipeline_arn: self.image_pipeline_arn,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput {
+            image_pipeline_arn: self.image_pipeline_arn,
+            client_token: self.client_token,
+        })
     }
 }

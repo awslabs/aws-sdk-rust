@@ -30,9 +30,7 @@ impl DataConnector {
 
 /// A builder for [`DataConnector`](crate::types::DataConnector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataConnectorBuilder {
     pub(crate) lambda: ::std::option::Option<crate::types::LambdaFunction>,
     pub(crate) is_native: ::std::option::Option<bool>,
@@ -44,10 +42,7 @@ impl DataConnectorBuilder {
         self
     }
     /// <p>The Lambda function associated with this data connector.</p>
-    pub fn set_lambda(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaFunction>,
-    ) -> Self {
+    pub fn set_lambda(mut self, input: ::std::option::Option<crate::types::LambdaFunction>) -> Self {
         self.lambda = input;
         self
     }

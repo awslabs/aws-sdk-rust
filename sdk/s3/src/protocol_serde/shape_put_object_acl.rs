@@ -2,8 +2,7 @@
 pub fn ser_put_object_acl_headers(
     input: &crate::operation::put_object_acl::PutObjectAclInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.acl {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_put_object_acl_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "acl",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-acl", header_value);
@@ -27,10 +23,7 @@ pub fn ser_put_object_acl_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_md5",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("Content-MD5", header_value);
@@ -43,10 +36,7 @@ pub fn ser_put_object_acl_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "checksum_algorithm",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-sdk-checksum-algorithm", header_value);
@@ -59,10 +49,7 @@ pub fn ser_put_object_acl_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "grant_full_control",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-grant-full-control", header_value);
@@ -75,10 +62,7 @@ pub fn ser_put_object_acl_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "grant_read",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-grant-read", header_value);
@@ -91,10 +75,7 @@ pub fn ser_put_object_acl_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "grant_read_acp",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-grant-read-acp", header_value);
@@ -107,10 +88,7 @@ pub fn ser_put_object_acl_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "grant_write",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-grant-write", header_value);
@@ -123,10 +101,7 @@ pub fn ser_put_object_acl_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "grant_write_acp",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-grant-write-acp", header_value);
@@ -139,10 +114,7 @@ pub fn ser_put_object_acl_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_payer",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-request-payer", header_value);
@@ -155,10 +127,7 @@ pub fn ser_put_object_acl_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "expected_bucket_owner",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-expected-bucket-owner", header_value);
@@ -172,26 +141,16 @@ pub fn de_put_object_acl_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::put_object_acl::PutObjectAclOutput,
-    crate::operation::put_object_acl::PutObjectAclError,
-> {
+) -> std::result::Result<crate::operation::put_object_acl::PutObjectAclOutput, crate::operation::put_object_acl::PutObjectAclError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::put_object_acl::PutObjectAclError::unhandled)?;
-    generic_builder =
-        crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::put_object_acl::PutObjectAclError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::put_object_acl::PutObjectAclError::unhandled(generic))
-        }
+        None => return Err(crate::operation::put_object_acl::PutObjectAclError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
@@ -201,11 +160,8 @@ pub fn de_put_object_acl_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::NoSuchKeyBuilder::default();
-                output = crate::protocol_serde::shape_no_such_key::de_no_such_key_xml_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::put_object_acl::PutObjectAclError::unhandled)?;
+                output = crate::protocol_serde::shape_no_such_key::de_no_such_key_xml_err(_response_body, output)
+                    .map_err(crate::operation::put_object_acl::PutObjectAclError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -223,31 +179,17 @@ pub fn de_put_object_acl_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::put_object_acl::PutObjectAclOutput,
-    crate::operation::put_object_acl::PutObjectAclError,
-> {
+) -> std::result::Result<crate::operation::put_object_acl::PutObjectAclOutput, crate::operation::put_object_acl::PutObjectAclError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::put_object_acl::builders::PutObjectAclOutputBuilder::default();
+        let mut output = crate::operation::put_object_acl::builders::PutObjectAclOutputBuilder::default();
         output = output.set_request_charged(
-            crate::protocol_serde::shape_put_object_acl_output::de_request_charged_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::put_object_acl::PutObjectAclError::unhandled(
-                    "Failed to parse RequestCharged from header `x-amz-request-charged",
-                )
+            crate::protocol_serde::shape_put_object_acl_output::de_request_charged_header(_response_headers).map_err(|_| {
+                crate::operation::put_object_acl::PutObjectAclError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged")
             })?,
         );
-        output._set_extended_request_id(
-            crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers)
-                .map(str::to_string),
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

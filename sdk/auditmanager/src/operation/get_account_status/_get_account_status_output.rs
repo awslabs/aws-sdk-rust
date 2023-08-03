@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAccountStatusOutput {
 }
 impl GetAccountStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountStatusOutput`](crate::operation::get_account_status::GetAccountStatusOutput).
-    pub fn builder() -> crate::operation::get_account_status::builders::GetAccountStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_account_status::builders::GetAccountStatusOutputBuilder {
         crate::operation::get_account_status::builders::GetAccountStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccountStatusOutput`](crate::operation::get_account_status::GetAccountStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccountStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AccountStatus>,
     _request_id: Option<String>,

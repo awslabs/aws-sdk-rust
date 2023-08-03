@@ -36,18 +36,14 @@ impl CreatePreparedStatementInput {
 }
 impl CreatePreparedStatementInput {
     /// Creates a new builder-style object to manufacture [`CreatePreparedStatementInput`](crate::operation::create_prepared_statement::CreatePreparedStatementInput).
-    pub fn builder(
-    ) -> crate::operation::create_prepared_statement::builders::CreatePreparedStatementInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_prepared_statement::builders::CreatePreparedStatementInputBuilder {
         crate::operation::create_prepared_statement::builders::CreatePreparedStatementInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePreparedStatementInput`](crate::operation::create_prepared_statement::CreatePreparedStatementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePreparedStatementInputBuilder {
     pub(crate) statement_name: ::std::option::Option<::std::string::String>,
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct CreatePreparedStatementInputBuilder {
 }
 impl CreatePreparedStatementInputBuilder {
     /// <p>The name of the prepared statement.</p>
-    pub fn statement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the prepared statement.</p>
-    pub fn set_statement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement_name = input;
         self
     }
@@ -90,18 +80,12 @@ impl CreatePreparedStatementInputBuilder {
         &self.work_group
     }
     /// <p>The query string for the prepared statement.</p>
-    pub fn query_statement(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_statement = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query string for the prepared statement.</p>
-    pub fn set_query_statement(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_statement = input;
         self
     }
@@ -130,13 +114,11 @@ impl CreatePreparedStatementInputBuilder {
         crate::operation::create_prepared_statement::CreatePreparedStatementInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_prepared_statement::CreatePreparedStatementInput {
-                statement_name: self.statement_name,
-                work_group: self.work_group,
-                query_statement: self.query_statement,
-                description: self.description,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_prepared_statement::CreatePreparedStatementInput {
+            statement_name: self.statement_name,
+            work_group: self.work_group,
+            query_statement: self.query_statement,
+            description: self.description,
+        })
     }
 }

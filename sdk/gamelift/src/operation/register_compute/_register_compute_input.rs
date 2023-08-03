@@ -57,9 +57,7 @@ impl RegisterComputeInput {
 
 /// A builder for [`RegisterComputeInput`](crate::operation::register_compute::RegisterComputeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterComputeInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) compute_name: ::std::option::Option<::std::string::String>,
@@ -98,18 +96,12 @@ impl RegisterComputeInputBuilder {
         &self.compute_name
     }
     /// <p>The path to the TLS certificate on your compute resource. The path and certificate are not validated by Amazon GameLift.</p>
-    pub fn certificate_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the TLS certificate on your compute resource. The path and certificate are not validated by Amazon GameLift.</p>
-    pub fn set_certificate_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_path = input;
         self
     }
@@ -162,10 +154,7 @@ impl RegisterComputeInputBuilder {
     /// Consumes the builder and constructs a [`RegisterComputeInput`](crate::operation::register_compute::RegisterComputeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_compute::RegisterComputeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::register_compute::RegisterComputeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_compute::RegisterComputeInput {
             fleet_id: self.fleet_id,
             compute_name: self.compute_name,

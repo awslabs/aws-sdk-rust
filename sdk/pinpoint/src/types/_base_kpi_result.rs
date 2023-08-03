@@ -23,9 +23,7 @@ impl BaseKpiResult {
 
 /// A builder for [`BaseKpiResult`](crate::types::BaseKpiResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BaseKpiResultBuilder {
     pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::ResultRow>>,
 }
@@ -42,10 +40,7 @@ impl BaseKpiResultBuilder {
         self
     }
     /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
-    pub fn set_rows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResultRow>>,
-    ) -> Self {
+    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResultRow>>) -> Self {
         self.rows = input;
         self
     }

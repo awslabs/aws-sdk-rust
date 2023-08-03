@@ -23,9 +23,7 @@ impl RedshiftRetryOptions {
 
 /// A builder for [`RedshiftRetryOptions`](crate::types::RedshiftRetryOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedshiftRetryOptionsBuilder {
     pub(crate) duration_in_seconds: ::std::option::Option<i32>,
 }

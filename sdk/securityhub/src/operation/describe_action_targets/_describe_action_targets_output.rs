@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeActionTargetsOutput {
 }
 impl DescribeActionTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActionTargetsOutput`](crate::operation::describe_action_targets::DescribeActionTargetsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_action_targets::builders::DescribeActionTargetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_action_targets::builders::DescribeActionTargetsOutputBuilder {
         crate::operation::describe_action_targets::builders::DescribeActionTargetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeActionTargetsOutput`](crate::operation::describe_action_targets::DescribeActionTargetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeActionTargetsOutputBuilder {
     pub(crate) action_targets: ::std::option::Option<::std::vec::Vec<crate::types::ActionTarget>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeActionTargetsOutputBuilder {
         self
     }
     /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
-    pub fn set_action_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActionTarget>>,
-    ) -> Self {
+    pub fn set_action_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionTarget>>) -> Self {
         self.action_targets = input;
         self
     }
     /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
-    pub fn get_action_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionTarget>> {
+    pub fn get_action_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionTarget>> {
         &self.action_targets
     }
     /// <p>The pagination token to use to request the next page of results.</p>

@@ -10,10 +10,7 @@ impl GetDimensionValuesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_dimension_values::GetDimensionValuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dimension_values::GetDimensionValuesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dimension_values::GetDimensionValuesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_dimension_values();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetDimensionValuesFluentBuilder {
         }
     }
     /// Access the GetDimensionValues as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_dimension_values::builders::GetDimensionValuesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_dimension_values::builders::GetDimensionValuesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetDimensionValuesFluentBuilder {
             crate::operation::get_dimension_values::GetDimensionValues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dimension_values::GetDimensionValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dimension_values::GetDimensionValuesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetDimensionValuesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetDimensionValuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_dimension_values::GetDimensionValuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dimension_values::GetDimensionValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dimension_values::GetDimensionValuesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetDimensionValuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_dimension_values::GetDimensionValuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dimension_values::GetDimensionValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dimension_values::GetDimensionValuesError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetDimensionValuesFluentBuilder {
             crate::operation::get_dimension_values::GetDimensionValues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dimension_values::GetDimensionValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dimension_values::GetDimensionValuesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The value that you want to search the filter values for.</p>
-    pub fn search_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn search_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.search_string(input.into());
         self
     }
     /// <p>The value that you want to search the filter values for.</p>
-    pub fn set_search_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_search_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_search_string(input);
         self
     }
@@ -148,10 +126,7 @@ impl GetDimensionValuesFluentBuilder {
         self
     }
     /// <p>The start date and end date for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
     }
@@ -490,10 +465,7 @@ impl GetDimensionValuesFluentBuilder {
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -510,9 +482,7 @@ impl GetDimensionValuesFluentBuilder {
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>> {
         self.inner.get_sort_by()
     }
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
@@ -533,18 +503,12 @@ impl GetDimensionValuesFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }

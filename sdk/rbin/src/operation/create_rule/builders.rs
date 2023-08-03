@@ -10,10 +10,7 @@ impl CreateRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_rule::CreateRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_rule::CreateRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_rule();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateRuleFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_rule::CreateRule,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_rule::CreateRule, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateRuleFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_rule::CreateRule,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_rule::CreateRule, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
     > {
         self.customize_middleware().await
@@ -118,10 +106,7 @@ impl CreateRuleFluentBuilder {
         self
     }
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
-    pub fn set_retention_period(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.inner = self.inner.set_retention_period(input);
         self
     }
@@ -153,10 +138,7 @@ impl CreateRuleFluentBuilder {
         self
     }
     /// <p>Information about the tags to assign to the retention rule.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -170,10 +152,7 @@ impl CreateRuleFluentBuilder {
         self
     }
     /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -195,19 +174,14 @@ impl CreateRuleFluentBuilder {
     /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
-    pub fn set_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
-    ) -> Self {
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.inner = self.inner.set_resource_tags(input);
         self
     }
     /// <p>Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
-    pub fn get_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
         self.inner.get_resource_tags()
     }
     /// <p>Information about the retention rule lock configuration.</p>
@@ -216,17 +190,12 @@ impl CreateRuleFluentBuilder {
         self
     }
     /// <p>Information about the retention rule lock configuration.</p>
-    pub fn set_lock_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LockConfiguration>,
-    ) -> Self {
+    pub fn set_lock_configuration(mut self, input: ::std::option::Option<crate::types::LockConfiguration>) -> Self {
         self.inner = self.inner.set_lock_configuration(input);
         self
     }
     /// <p>Information about the retention rule lock configuration.</p>
-    pub fn get_lock_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LockConfiguration> {
+    pub fn get_lock_configuration(&self) -> &::std::option::Option<crate::types::LockConfiguration> {
         self.inner.get_lock_configuration()
     }
 }

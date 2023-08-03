@@ -20,9 +20,7 @@ pub struct CreateDatasetInput {
     pub path_options: ::std::option::Option<crate::types::PathOptions>,
     /// <p>Metadata tags to apply to this dataset.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDatasetInput {
     /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
@@ -46,11 +44,7 @@ impl CreateDatasetInput {
         self.path_options.as_ref()
     }
     /// <p>Metadata tags to apply to this dataset.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -63,18 +57,14 @@ impl CreateDatasetInput {
 
 /// A builder for [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDatasetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::InputFormat>,
     pub(crate) format_options: ::std::option::Option<crate::types::FormatOptions>,
     pub(crate) input: ::std::option::Option<crate::types::Input>,
     pub(crate) path_options: ::std::option::Option<crate::types::PathOptions>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDatasetInputBuilder {
     /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
@@ -111,10 +101,7 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
-    pub fn set_format_options(
-        mut self,
-        input: ::std::option::Option<crate::types::FormatOptions>,
-    ) -> Self {
+    pub fn set_format_options(mut self, input: ::std::option::Option<crate::types::FormatOptions>) -> Self {
         self.format_options = input;
         self
     }
@@ -142,10 +129,7 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-    pub fn set_path_options(
-        mut self,
-        input: ::std::option::Option<crate::types::PathOptions>,
-    ) -> Self {
+    pub fn set_path_options(mut self, input: ::std::option::Option<crate::types::PathOptions>) -> Self {
         self.path_options = input;
         self
     }
@@ -158,41 +142,25 @@ impl CreateDatasetInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata tags to apply to this dataset.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Metadata tags to apply to this dataset.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Metadata tags to apply to this dataset.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_dataset::CreateDatasetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_dataset::CreateDatasetInput {
             name: self.name,
             format: self.format,

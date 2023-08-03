@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`execution_state(Option<JobExecutionState>)`](crate::operation::update_job_execution::UpdateJobExecutionOutput::execution_state): <p>A JobExecutionState object.</p>
     ///   - [`job_document(Option<String>)`](crate::operation::update_job_execution::UpdateJobExecutionOutput::job_document): <p>The contents of the Job Documents.</p>
     /// - On failure, responds with [`SdkError<UpdateJobExecutionError>`](crate::operation::update_job_execution::UpdateJobExecutionError)
-    pub fn update_job_execution(
-        &self,
-    ) -> crate::operation::update_job_execution::builders::UpdateJobExecutionFluentBuilder {
-        crate::operation::update_job_execution::builders::UpdateJobExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_job_execution(&self) -> crate::operation::update_job_execution::builders::UpdateJobExecutionFluentBuilder {
+        crate::operation::update_job_execution::builders::UpdateJobExecutionFluentBuilder::new(self.handle.clone())
     }
 }

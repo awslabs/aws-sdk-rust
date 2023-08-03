@@ -9,107 +9,105 @@ pub fn de_delete_anomaly_detector_http_error(
     crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    let error_code =
-        match generic.code() {
-            Some(code) => code,
-            None => return Err(
-                crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled(
-                    generic,
-                ),
-            ),
-        };
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServiceError" => crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::InternalServiceFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalServiceFaultBuilder::default();
-                    output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(_response_body, output).map_err(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServiceFaultBuilder::default();
+                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InvalidParameterCombination" => crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::InvalidParameterCombinationException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidParameterCombination" => {
+            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::InvalidParameterCombinationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(_response_body, output).map_err(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InvalidParameterValue" => crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::InvalidParameterValueException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(_response_body, output).map_err(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "MissingParameter" => crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::MissingRequiredParameterException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(_response_body, output).map_err(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
+                output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::ResourceNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::generic(generic)
+        _ => crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::generic(generic),
     })
 }
 
@@ -125,9 +123,7 @@ pub fn de_delete_anomaly_detector_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

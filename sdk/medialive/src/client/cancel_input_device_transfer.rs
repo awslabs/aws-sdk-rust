@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`input_device_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferFluentBuilder::input_device_id) / [`set_input_device_id(Option<String>)`](crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferFluentBuilder::set_input_device_id): The unique ID of the input device to cancel. For example, hd-123456789abcdef.
     /// - On success, responds with [`CancelInputDeviceTransferOutput`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput)
     /// - On failure, responds with [`SdkError<CancelInputDeviceTransferError>`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferError)
-    pub fn cancel_input_device_transfer(&self) -> crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferFluentBuilder{
+    pub fn cancel_input_device_transfer(&self) -> crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferFluentBuilder {
         crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferFluentBuilder::new(self.handle.clone())
     }
 }

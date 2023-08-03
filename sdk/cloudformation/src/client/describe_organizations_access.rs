@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeOrganizationsAccessOutput`](crate::operation::describe_organizations_access::DescribeOrganizationsAccessOutput) with field(s):
     ///   - [`status(Option<OrganizationStatus>)`](crate::operation::describe_organizations_access::DescribeOrganizationsAccessOutput::status): <p>Presents the status of the <code>OrganizationAccess</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeOrganizationsAccessError>`](crate::operation::describe_organizations_access::DescribeOrganizationsAccessError)
-    pub fn describe_organizations_access(&self) -> crate::operation::describe_organizations_access::builders::DescribeOrganizationsAccessFluentBuilder{
+    pub fn describe_organizations_access(
+        &self,
+    ) -> crate::operation::describe_organizations_access::builders::DescribeOrganizationsAccessFluentBuilder {
         crate::operation::describe_organizations_access::builders::DescribeOrganizationsAccessFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ pub fn ser_transition(
     let mut scope = writer.finish();
     if let Some(var_1) = &input.date {
         let mut inner_writer = scope.start_el("Date").finish();
-        inner_writer.data(
-            var_1
-                .fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
-                .as_ref(),
-        );
+        inner_writer.data(var_1.fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref());
     }
     if input.days != 0 {
         let mut inner_writer = scope.start_el("Days").finish();

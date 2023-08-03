@@ -14,8 +14,7 @@ pub struct CandidateGenerationConfig {
     /// <p>For the list of all algorithms per problem type and training mode, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html"> AutoMLAlgorithmConfig</a>.</p>
     /// <p>For more information on each algorithm, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm support</a> section in Autopilot developer guide.</p>
     #[doc(hidden)]
-    pub algorithms_config:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithmConfig>>,
+    pub algorithms_config: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithmConfig>>,
 }
 impl CandidateGenerationConfig {
     /// <p>Stores the configuration information for the selection of algorithms used to train model candidates on tabular data.</p>
@@ -27,9 +26,7 @@ impl CandidateGenerationConfig {
     /// </ul>
     /// <p>For the list of all algorithms per problem type and training mode, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html"> AutoMLAlgorithmConfig</a>.</p>
     /// <p>For more information on each algorithm, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm support</a> section in Autopilot developer guide.</p>
-    pub fn algorithms_config(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AutoMlAlgorithmConfig]> {
+    pub fn algorithms_config(&self) -> ::std::option::Option<&[crate::types::AutoMlAlgorithmConfig]> {
         self.algorithms_config.as_deref()
     }
 }
@@ -42,12 +39,9 @@ impl CandidateGenerationConfig {
 
 /// A builder for [`CandidateGenerationConfig`](crate::types::CandidateGenerationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CandidateGenerationConfigBuilder {
-    pub(crate) algorithms_config:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithmConfig>>,
+    pub(crate) algorithms_config: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithmConfig>>,
 }
 impl CandidateGenerationConfigBuilder {
     /// Appends an item to `algorithms_config`.
@@ -78,10 +72,7 @@ impl CandidateGenerationConfigBuilder {
     /// </ul>
     /// <p>For the list of all algorithms per problem type and training mode, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html"> AutoMLAlgorithmConfig</a>.</p>
     /// <p>For more information on each algorithm, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm support</a> section in Autopilot developer guide.</p>
-    pub fn set_algorithms_config(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithmConfig>>,
-    ) -> Self {
+    pub fn set_algorithms_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithmConfig>>) -> Self {
         self.algorithms_config = input;
         self
     }
@@ -94,9 +85,7 @@ impl CandidateGenerationConfigBuilder {
     /// </ul>
     /// <p>For the list of all algorithms per problem type and training mode, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html"> AutoMLAlgorithmConfig</a>.</p>
     /// <p>For more information on each algorithm, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm support</a> section in Autopilot developer guide.</p>
-    pub fn get_algorithms_config(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithmConfig>> {
+    pub fn get_algorithms_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithmConfig>> {
         &self.algorithms_config
     }
     /// Consumes the builder and constructs a [`CandidateGenerationConfig`](crate::types::CandidateGenerationConfig).

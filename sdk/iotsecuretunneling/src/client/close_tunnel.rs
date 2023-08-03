@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`delete(bool)`](crate::operation::close_tunnel::builders::CloseTunnelFluentBuilder::delete) / [`set_delete(Option<bool>)`](crate::operation::close_tunnel::builders::CloseTunnelFluentBuilder::set_delete): <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
     /// - On success, responds with [`CloseTunnelOutput`](crate::operation::close_tunnel::CloseTunnelOutput)
     /// - On failure, responds with [`SdkError<CloseTunnelError>`](crate::operation::close_tunnel::CloseTunnelError)
-    pub fn close_tunnel(
-        &self,
-    ) -> crate::operation::close_tunnel::builders::CloseTunnelFluentBuilder {
+    pub fn close_tunnel(&self) -> crate::operation::close_tunnel::builders::CloseTunnelFluentBuilder {
         crate::operation::close_tunnel::builders::CloseTunnelFluentBuilder::new(self.handle.clone())
     }
 }

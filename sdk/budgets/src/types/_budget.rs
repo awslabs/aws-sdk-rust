@@ -22,9 +22,7 @@ pub struct Budget {
     /// <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p>
     /// <p> <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets that are created with <code>PlannedBudgetLimits</code>. Budgets that are created without <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They don't contain <code>PlannedBudgetLimits</code>.</p>
     #[doc(hidden)]
-    pub planned_budget_limits: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Spend>,
-    >,
+    pub planned_budget_limits: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Spend>>,
     /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
     /// <p>Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:</p>
     /// <ul>
@@ -35,9 +33,7 @@ pub struct Budget {
     /// <li> <p>Amazon OpenSearch Service</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub cost_filters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub cost_filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
     /// <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
     #[doc(hidden)]
@@ -82,11 +78,7 @@ impl Budget {
     /// <p>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
     /// <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p>
     /// <p> <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets that are created with <code>PlannedBudgetLimits</code>. Budgets that are created without <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They don't contain <code>PlannedBudgetLimits</code>.</p>
-    pub fn planned_budget_limits(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Spend>,
-    > {
+    pub fn planned_budget_limits(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Spend>> {
         self.planned_budget_limits.as_ref()
     }
     /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
@@ -98,11 +90,7 @@ impl Budget {
     /// <li> <p>Amazon ElastiCache</p> </li>
     /// <li> <p>Amazon OpenSearch Service</p> </li>
     /// </ul>
-    pub fn cost_filters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn cost_filters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.cost_filters.as_ref()
     }
     /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
@@ -147,18 +135,12 @@ impl Budget {
 
 /// A builder for [`Budget`](crate::types::Budget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BudgetBuilder {
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
     pub(crate) budget_limit: ::std::option::Option<crate::types::Spend>,
-    pub(crate) planned_budget_limits: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Spend>,
-    >,
-    pub(crate) cost_filters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) planned_budget_limits: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Spend>>,
+    pub(crate) cost_filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) cost_types: ::std::option::Option<crate::types::CostTypes>,
     pub(crate) time_unit: ::std::option::Option<crate::types::TimeUnit>,
     pub(crate) time_period: ::std::option::Option<crate::types::TimePeriod>,
@@ -211,11 +193,7 @@ impl BudgetBuilder {
     /// <p>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
     /// <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p>
     /// <p> <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets that are created with <code>PlannedBudgetLimits</code>. Budgets that are created without <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They don't contain <code>PlannedBudgetLimits</code>.</p>
-    pub fn planned_budget_limits(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Spend,
-    ) -> Self {
+    pub fn planned_budget_limits(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Spend) -> Self {
         let mut hash_map = self.planned_budget_limits.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.planned_budget_limits = ::std::option::Option::Some(hash_map);
@@ -231,9 +209,7 @@ impl BudgetBuilder {
     /// <p> <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets that are created with <code>PlannedBudgetLimits</code>. Budgets that are created without <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They don't contain <code>PlannedBudgetLimits</code>.</p>
     pub fn set_planned_budget_limits(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Spend>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Spend>>,
     ) -> Self {
         self.planned_budget_limits = input;
         self
@@ -246,11 +222,7 @@ impl BudgetBuilder {
     /// <p>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code> values from the start date of the budget. </p>
     /// <p>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code> are used, the budget continues to use the last limit as the <code>BudgetLimit</code>. At that point, the planned budget provides the same experience as a fixed budget. </p>
     /// <p> <code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code> representing the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This only applies to budgets that are created with <code>PlannedBudgetLimits</code>. Budgets that are created without <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>. They don't contain <code>PlannedBudgetLimits</code>.</p>
-    pub fn get_planned_budget_limits(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Spend>,
-    > {
+    pub fn get_planned_budget_limits(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Spend>> {
         &self.planned_budget_limits
     }
     /// Adds a key-value pair to `cost_filters`.
@@ -266,11 +238,7 @@ impl BudgetBuilder {
     /// <li> <p>Amazon ElastiCache</p> </li>
     /// <li> <p>Amazon OpenSearch Service</p> </li>
     /// </ul>
-    pub fn cost_filters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn cost_filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.cost_filters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.cost_filters = ::std::option::Option::Some(hash_map);
@@ -287,12 +255,7 @@ impl BudgetBuilder {
     /// </ul>
     pub fn set_cost_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.cost_filters = input;
         self
@@ -308,9 +271,7 @@ impl BudgetBuilder {
     /// </ul>
     pub fn get_cost_filters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.cost_filters
     }
     /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
@@ -356,10 +317,7 @@ impl BudgetBuilder {
     /// <p>If you create your budget and don't specify a start date, Amazon Web Services defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, Amazon Web Services set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the Billing and Cost Management console and the API. </p>
     /// <p>You can change either date with the <code>UpdateBudget</code> operation.</p>
     /// <p>After the end date, Amazon Web Services deletes the budget and all the associated notifications and subscribers.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::TimePeriod>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::TimePeriod>) -> Self {
         self.time_period = input;
         self
     }
@@ -376,10 +334,7 @@ impl BudgetBuilder {
         self
     }
     /// <p>The actual and forecasted cost or usage that the budget tracks.</p>
-    pub fn set_calculated_spend(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculatedSpend>,
-    ) -> Self {
+    pub fn set_calculated_spend(mut self, input: ::std::option::Option<crate::types::CalculatedSpend>) -> Self {
         self.calculated_spend = input;
         self
     }
@@ -393,10 +348,7 @@ impl BudgetBuilder {
         self
     }
     /// <p>Specifies whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage.</p>
-    pub fn set_budget_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BudgetType>,
-    ) -> Self {
+    pub fn set_budget_type(mut self, input: ::std::option::Option<crate::types::BudgetType>) -> Self {
         self.budget_type = input;
         self
     }
@@ -410,10 +362,7 @@ impl BudgetBuilder {
         self
     }
     /// <p>The last time that you updated this budget.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -427,10 +376,7 @@ impl BudgetBuilder {
         self
     }
     /// <p>The parameters that determine the budget amount for an auto-adjusting budget.</p>
-    pub fn set_auto_adjust_data(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoAdjustData>,
-    ) -> Self {
+    pub fn set_auto_adjust_data(mut self, input: ::std::option::Option<crate::types::AutoAdjustData>) -> Self {
         self.auto_adjust_data = input;
         self
     }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`recommenders(Option<Vec<RecommenderSummary>>)`](crate::operation::list_recommenders::ListRecommendersOutput::recommenders): <p>A list of the recommenders.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_recommenders::ListRecommendersOutput::next_token): <p>A token for getting the next set of recommenders (if they exist).</p>
     /// - On failure, responds with [`SdkError<ListRecommendersError>`](crate::operation::list_recommenders::ListRecommendersError)
-    pub fn list_recommenders(
-        &self,
-    ) -> crate::operation::list_recommenders::builders::ListRecommendersFluentBuilder {
-        crate::operation::list_recommenders::builders::ListRecommendersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_recommenders(&self) -> crate::operation::list_recommenders::builders::ListRecommendersFluentBuilder {
+        crate::operation::list_recommenders::builders::ListRecommendersFluentBuilder::new(self.handle.clone())
     }
 }

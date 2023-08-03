@@ -10,10 +10,7 @@ impl DescribeProjectsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_projects::DescribeProjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_projects::DescribeProjectsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_projects::DescribeProjectsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_projects();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeProjectsFluentBuilder {
         }
     }
     /// Access the DescribeProjects as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_projects::builders::DescribeProjectsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_projects::builders::DescribeProjectsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeProjectsFluentBuilder {
             crate::operation::describe_projects::DescribeProjects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_projects::DescribeProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_projects::DescribeProjectsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeProjectsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeProjectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_projects::DescribeProjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_projects::DescribeProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_projects::DescribeProjectsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeProjectsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_projects::DescribeProjectsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_projects::DescribeProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_projects::DescribeProjectsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl DescribeProjectsFluentBuilder {
             crate::operation::describe_projects::DescribeProjects,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_projects::DescribeProjectsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_projects::DescribeProjectsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_projects::paginator::DescribeProjectsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_projects::paginator::DescribeProjectsPaginator {
-        crate::operation::describe_projects::paginator::DescribeProjectsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_projects::paginator::DescribeProjectsPaginator {
+        crate::operation::describe_projects::paginator::DescribeProjectsPaginator::new(self.handle, self.inner)
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,25 +146,17 @@ impl DescribeProjectsFluentBuilder {
     /// To override the contents of this collection use [`set_project_names`](Self::set_project_names).
     ///
     /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
-    pub fn project_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_names(input.into());
         self
     }
     /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
-    pub fn set_project_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_project_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_project_names(input);
         self
     }
     /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
-    pub fn get_project_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_project_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_project_names()
     }
 }

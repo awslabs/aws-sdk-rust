@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`routing_controls(Option<Vec<RoutingControl>>)`](crate::operation::list_routing_controls::ListRoutingControlsOutput::routing_controls): <p>The list of routing controls.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_routing_controls::ListRoutingControlsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
     /// - On failure, responds with [`SdkError<ListRoutingControlsError>`](crate::operation::list_routing_controls::ListRoutingControlsError)
-    pub fn list_routing_controls(
-        &self,
-    ) -> crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder {
-        crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_routing_controls(&self) -> crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder {
+        crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder::new(self.handle.clone())
     }
 }

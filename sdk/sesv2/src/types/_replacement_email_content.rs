@@ -10,9 +10,7 @@ pub struct ReplacementEmailContent {
 }
 impl ReplacementEmailContent {
     /// <p>The <code>ReplacementTemplate</code> associated with <code>ReplacementEmailContent</code>.</p>
-    pub fn replacement_template(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ReplacementTemplate> {
+    pub fn replacement_template(&self) -> ::std::option::Option<&crate::types::ReplacementTemplate> {
         self.replacement_template.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl ReplacementEmailContent {
 
 /// A builder for [`ReplacementEmailContent`](crate::types::ReplacementEmailContent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplacementEmailContentBuilder {
     pub(crate) replacement_template: ::std::option::Option<crate::types::ReplacementTemplate>,
 }
@@ -38,17 +34,12 @@ impl ReplacementEmailContentBuilder {
         self
     }
     /// <p>The <code>ReplacementTemplate</code> associated with <code>ReplacementEmailContent</code>.</p>
-    pub fn set_replacement_template(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplacementTemplate>,
-    ) -> Self {
+    pub fn set_replacement_template(mut self, input: ::std::option::Option<crate::types::ReplacementTemplate>) -> Self {
         self.replacement_template = input;
         self
     }
     /// <p>The <code>ReplacementTemplate</code> associated with <code>ReplacementEmailContent</code>.</p>
-    pub fn get_replacement_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplacementTemplate> {
+    pub fn get_replacement_template(&self) -> &::std::option::Option<crate::types::ReplacementTemplate> {
         &self.replacement_template
     }
     /// Consumes the builder and constructs a [`ReplacementEmailContent`](crate::types::ReplacementEmailContent).

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartJobRunOutput`](crate::operation::start_job_run::StartJobRunOutput) with field(s):
     ///   - [`run_id(Option<String>)`](crate::operation::start_job_run::StartJobRunOutput::run_id): <p>A system-generated identifier for this particular job run.</p>
     /// - On failure, responds with [`SdkError<StartJobRunError>`](crate::operation::start_job_run::StartJobRunError)
-    pub fn start_job_run(
-        &self,
-    ) -> crate::operation::start_job_run::builders::StartJobRunFluentBuilder {
-        crate::operation::start_job_run::builders::StartJobRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_job_run(&self) -> crate::operation::start_job_run::builders::StartJobRunFluentBuilder {
+        crate::operation::start_job_run::builders::StartJobRunFluentBuilder::new(self.handle.clone())
     }
 }

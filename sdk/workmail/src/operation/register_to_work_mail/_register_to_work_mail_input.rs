@@ -29,17 +29,14 @@ impl RegisterToWorkMailInput {
 }
 impl RegisterToWorkMailInput {
     /// Creates a new builder-style object to manufacture [`RegisterToWorkMailInput`](crate::operation::register_to_work_mail::RegisterToWorkMailInput).
-    pub fn builder(
-    ) -> crate::operation::register_to_work_mail::builders::RegisterToWorkMailInputBuilder {
+    pub fn builder() -> crate::operation::register_to_work_mail::builders::RegisterToWorkMailInputBuilder {
         crate::operation::register_to_work_mail::builders::RegisterToWorkMailInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterToWorkMailInput`](crate::operation::register_to_work_mail::RegisterToWorkMailInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterToWorkMailInputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct RegisterToWorkMailInputBuilder {
 }
 impl RegisterToWorkMailInputBuilder {
     /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -97,16 +88,12 @@ impl RegisterToWorkMailInputBuilder {
     /// Consumes the builder and constructs a [`RegisterToWorkMailInput`](crate::operation::register_to_work_mail::RegisterToWorkMailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::register_to_work_mail::RegisterToWorkMailInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::register_to_work_mail::RegisterToWorkMailInput {
-                organization_id: self.organization_id,
-                entity_id: self.entity_id,
-                email: self.email,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::register_to_work_mail::RegisterToWorkMailInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::register_to_work_mail::RegisterToWorkMailInput {
+            organization_id: self.organization_id,
+            entity_id: self.entity_id,
+            email: self.email,
+        })
     }
 }

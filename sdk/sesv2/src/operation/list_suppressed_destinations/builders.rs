@@ -26,7 +26,7 @@ impl ListSuppressedDestinationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSuppressedDestinationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsInputBuilder,
+    inner: crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsInputBuilder,
 }
 impl ListSuppressedDestinationsFluentBuilder {
     /// Creates a new `ListSuppressedDestinations`.
@@ -37,7 +37,7 @@ impl ListSuppressedDestinationsFluentBuilder {
         }
     }
     /// Access the ListSuppressedDestinations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_suppressed_destinations::builders::ListSuppressedDestinationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListSuppressedDestinationsFluentBuilder {
             crate::operation::list_suppressed_destinations::ListSuppressedDestinations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListSuppressedDestinationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListSuppressedDestinationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_suppressed_destinations::ListSuppressedDestinationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListSuppressedDestinationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_suppressed_destinations::ListSuppressedDestinationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListSuppressedDestinationsFluentBuilder {
             crate::operation::list_suppressed_destinations::ListSuppressedDestinations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_suppressed_destinations::paginator::ListSuppressedDestinationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_suppressed_destinations::paginator::ListSuppressedDestinationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_suppressed_destinations::paginator::ListSuppressedDestinationsPaginator {
         crate::operation::list_suppressed_destinations::paginator::ListSuppressedDestinationsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Reasons`.
@@ -136,17 +125,12 @@ impl ListSuppressedDestinationsFluentBuilder {
         self
     }
     /// <p>The factors that caused the email address to be added to .</p>
-    pub fn set_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
-    ) -> Self {
+    pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>) -> Self {
         self.inner = self.inner.set_reasons(input);
         self
     }
     /// <p>The factors that caused the email address to be added to .</p>
-    pub fn get_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
+    pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
         self.inner.get_reasons()
     }
     /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date.</p>
@@ -155,10 +139,7 @@ impl ListSuppressedDestinationsFluentBuilder {
         self
     }
     /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_date(input);
         self
     }
@@ -172,10 +153,7 @@ impl ListSuppressedDestinationsFluentBuilder {
         self
     }
     /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
     }

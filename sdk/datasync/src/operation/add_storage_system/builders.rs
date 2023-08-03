@@ -10,10 +10,7 @@ impl AddStorageSystemInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_storage_system::AddStorageSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_storage_system::AddStorageSystemError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_storage_system::AddStorageSystemError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_storage_system();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AddStorageSystemFluentBuilder {
         }
     }
     /// Access the AddStorageSystem as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_storage_system::builders::AddStorageSystemInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_storage_system::builders::AddStorageSystemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AddStorageSystemFluentBuilder {
             crate::operation::add_storage_system::AddStorageSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_storage_system::AddStorageSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_storage_system::AddStorageSystemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AddStorageSystemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AddStorageSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_storage_system::AddStorageSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_storage_system::AddStorageSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_storage_system::AddStorageSystemError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AddStorageSystemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_storage_system::AddStorageSystemOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_storage_system::AddStorageSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_storage_system::AddStorageSystemError>,
     > {
         self.send_middleware().await
     }
@@ -116,32 +102,22 @@ impl AddStorageSystemFluentBuilder {
             crate::operation::add_storage_system::AddStorageSystem,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_storage_system::AddStorageSystemError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_storage_system::AddStorageSystemError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the server name and network port required to connect with the management interface of your on-premises storage system.</p>
-    pub fn server_configuration(
-        mut self,
-        input: crate::types::DiscoveryServerConfiguration,
-    ) -> Self {
+    pub fn server_configuration(mut self, input: crate::types::DiscoveryServerConfiguration) -> Self {
         self.inner = self.inner.server_configuration(input);
         self
     }
     /// <p>Specifies the server name and network port required to connect with the management interface of your on-premises storage system.</p>
-    pub fn set_server_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoveryServerConfiguration>,
-    ) -> Self {
+    pub fn set_server_configuration(mut self, input: ::std::option::Option<crate::types::DiscoveryServerConfiguration>) -> Self {
         self.inner = self.inner.set_server_configuration(input);
         self
     }
     /// <p>Specifies the server name and network port required to connect with the management interface of your on-premises storage system.</p>
-    pub fn get_server_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DiscoveryServerConfiguration> {
+    pub fn get_server_configuration(&self) -> &::std::option::Option<crate::types::DiscoveryServerConfiguration> {
         self.inner.get_server_configuration()
     }
     /// <p>Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.</p> <note>
@@ -154,10 +130,7 @@ impl AddStorageSystemFluentBuilder {
     /// <p>Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.</p> <note>
     /// <p>DataSync Discovery currently supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later.</p>
     /// </note>
-    pub fn set_system_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DiscoverySystemType>,
-    ) -> Self {
+    pub fn set_system_type(mut self, input: ::std::option::Option<crate::types::DiscoverySystemType>) -> Self {
         self.inner = self.inner.set_system_type(input);
         self
     }
@@ -177,10 +150,7 @@ impl AddStorageSystemFluentBuilder {
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads from your on-premises storage system's management interface. You can only specify one ARN.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
@@ -189,18 +159,12 @@ impl AddStorageSystemFluentBuilder {
         self.inner.get_agent_arns()
     }
     /// <p>Specifies the ARN of the Amazon CloudWatch log group for monitoring and logging discovery job events.</p>
-    pub fn cloud_watch_log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cloud_watch_log_group_arn(input.into());
         self
     }
     /// <p>Specifies the ARN of the Amazon CloudWatch log group for monitoring and logging discovery job events.</p>
-    pub fn set_cloud_watch_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cloud_watch_log_group_arn(input);
         self
     }
@@ -218,10 +182,7 @@ impl AddStorageSystemFluentBuilder {
         self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your on-premises storage system.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -263,10 +224,7 @@ impl AddStorageSystemFluentBuilder {
         self
     }
     /// <p>Specifies the user name and password for accessing your on-premises storage system's management interface.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::Credentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
         self.inner = self.inner.set_credentials(input);
         self
     }

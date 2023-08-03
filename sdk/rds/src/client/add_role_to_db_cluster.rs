@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`feature_name(impl ::std::convert::Into<String>)`](crate::operation::add_role_to_db_cluster::builders::AddRoleToDBClusterFluentBuilder::feature_name) / [`set_feature_name(Option<String>)`](crate::operation::add_role_to_db_cluster::builders::AddRoleToDBClusterFluentBuilder::set_feature_name): <p>The name of the feature for the DB cluster that the IAM role is to be associated with. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     /// - On success, responds with [`AddRoleToDbClusterOutput`](crate::operation::add_role_to_db_cluster::AddRoleToDbClusterOutput)
     /// - On failure, responds with [`SdkError<AddRoleToDBClusterError>`](crate::operation::add_role_to_db_cluster::AddRoleToDBClusterError)
-    pub fn add_role_to_db_cluster(
-        &self,
-    ) -> crate::operation::add_role_to_db_cluster::builders::AddRoleToDBClusterFluentBuilder {
-        crate::operation::add_role_to_db_cluster::builders::AddRoleToDBClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_role_to_db_cluster(&self) -> crate::operation::add_role_to_db_cluster::builders::AddRoleToDBClusterFluentBuilder {
+        crate::operation::add_role_to_db_cluster::builders::AddRoleToDBClusterFluentBuilder::new(self.handle.clone())
     }
 }

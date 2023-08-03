@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListEventActionsOutput {
 }
 impl ListEventActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventActionsOutput`](crate::operation::list_event_actions::ListEventActionsOutput).
-    pub fn builder() -> crate::operation::list_event_actions::builders::ListEventActionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_event_actions::builders::ListEventActionsOutputBuilder {
         crate::operation::list_event_actions::builders::ListEventActionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEventActionsOutput`](crate::operation::list_event_actions::ListEventActionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEventActionsOutputBuilder {
-    pub(crate) event_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventActionEntry>>,
+    pub(crate) event_actions: ::std::option::Option<::std::vec::Vec<crate::types::EventActionEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListEventActionsOutputBuilder {
         self
     }
     /// <p>The event action objects listed by the request.</p>
-    pub fn set_event_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventActionEntry>>,
-    ) -> Self {
+    pub fn set_event_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventActionEntry>>) -> Self {
         self.event_actions = input;
         self
     }
     /// <p>The event action objects listed by the request.</p>
-    pub fn get_event_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventActionEntry>> {
+    pub fn get_event_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventActionEntry>> {
         &self.event_actions
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>

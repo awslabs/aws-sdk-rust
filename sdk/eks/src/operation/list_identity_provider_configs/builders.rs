@@ -26,7 +26,7 @@ impl ListIdentityProviderConfigsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIdentityProviderConfigsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsInputBuilder,
+    inner: crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsInputBuilder,
 }
 impl ListIdentityProviderConfigsFluentBuilder {
     /// Creates a new `ListIdentityProviderConfigs`.
@@ -37,7 +37,7 @@ impl ListIdentityProviderConfigsFluentBuilder {
         }
     }
     /// Access the ListIdentityProviderConfigs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListIdentityProviderConfigsFluentBuilder {
             crate::operation::list_identity_provider_configs::ListIdentityProviderConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListIdentityProviderConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListIdentityProviderConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListIdentityProviderConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListIdentityProviderConfigsFluentBuilder {
             crate::operation::list_identity_provider_configs::ListIdentityProviderConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_identity_provider_configs::paginator::ListIdentityProviderConfigsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_identity_provider_configs::paginator::ListIdentityProviderConfigsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_identity_provider_configs::paginator::ListIdentityProviderConfigsPaginator {
         crate::operation::list_identity_provider_configs::paginator::ListIdentityProviderConfigsPaginator::new(self.handle, self.inner)
     }
     /// <p>The cluster name that you want to list identity provider configurations for.</p>

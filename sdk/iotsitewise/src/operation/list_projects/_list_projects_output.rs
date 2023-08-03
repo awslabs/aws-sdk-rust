@@ -35,12 +35,9 @@ impl ListProjectsOutput {
 
 /// A builder for [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProjectsOutputBuilder {
-    pub(crate) project_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
+    pub(crate) project_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListProjectsOutputBuilder {
         self
     }
     /// <p>A list that summarizes each project in the portal.</p>
-    pub fn set_project_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
-    ) -> Self {
+    pub fn set_project_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>) -> Self {
         self.project_summaries = input;
         self
     }
     /// <p>A list that summarizes each project in the portal.</p>
-    pub fn get_project_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
+    pub fn get_project_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
         &self.project_summaries
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>

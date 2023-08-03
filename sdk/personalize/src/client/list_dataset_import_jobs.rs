@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`dataset_import_jobs(Option<Vec<DatasetImportJobSummary>>)`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput::dataset_import_jobs): <p>The list of dataset import jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput::next_token): <p>A token for getting the next set of dataset import jobs (if they exist).</p>
     /// - On failure, responds with [`SdkError<ListDatasetImportJobsError>`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError)
-    pub fn list_dataset_import_jobs(
-        &self,
-    ) -> crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder
-    {
+    pub fn list_dataset_import_jobs(&self) -> crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder {
         crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsFluentBuilder::new(self.handle.clone())
     }
 }

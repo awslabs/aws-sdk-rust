@@ -8,8 +8,7 @@ pub struct DescribeBandwidthRateLimitScheduleOutput {
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
     #[doc(hidden)]
-    pub bandwidth_rate_limit_intervals:
-        ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
+    pub bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
     _request_id: Option<String>,
 }
 impl DescribeBandwidthRateLimitScheduleOutput {
@@ -18,9 +17,7 @@ impl DescribeBandwidthRateLimitScheduleOutput {
         self.gateway_arn.as_deref()
     }
     /// <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
-    pub fn bandwidth_rate_limit_intervals(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BandwidthRateLimitInterval]> {
+    pub fn bandwidth_rate_limit_intervals(&self) -> ::std::option::Option<&[crate::types::BandwidthRateLimitInterval]> {
         self.bandwidth_rate_limit_intervals.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeBandwidthRateLimitScheduleOut
 }
 impl DescribeBandwidthRateLimitScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBandwidthRateLimitScheduleOutput`](crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleOutput).
-    pub fn builder() -> crate::operation::describe_bandwidth_rate_limit_schedule::builders::DescribeBandwidthRateLimitScheduleOutputBuilder{
+    pub fn builder() -> crate::operation::describe_bandwidth_rate_limit_schedule::builders::DescribeBandwidthRateLimitScheduleOutputBuilder {
         crate::operation::describe_bandwidth_rate_limit_schedule::builders::DescribeBandwidthRateLimitScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBandwidthRateLimitScheduleOutput`](crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBandwidthRateLimitScheduleOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) bandwidth_rate_limit_intervals:
-        ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
+    pub(crate) bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
     _request_id: Option<String>,
 }
 impl DescribeBandwidthRateLimitScheduleOutputBuilder {
@@ -67,10 +61,7 @@ impl DescribeBandwidthRateLimitScheduleOutputBuilder {
     /// To override the contents of this collection use [`set_bandwidth_rate_limit_intervals`](Self::set_bandwidth_rate_limit_intervals).
     ///
     /// <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
-    pub fn bandwidth_rate_limit_intervals(
-        mut self,
-        input: crate::types::BandwidthRateLimitInterval,
-    ) -> Self {
+    pub fn bandwidth_rate_limit_intervals(mut self, input: crate::types::BandwidthRateLimitInterval) -> Self {
         let mut v = self.bandwidth_rate_limit_intervals.unwrap_or_default();
         v.push(input);
         self.bandwidth_rate_limit_intervals = ::std::option::Option::Some(v);
@@ -85,9 +76,7 @@ impl DescribeBandwidthRateLimitScheduleOutputBuilder {
         self
     }
     /// <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
-    pub fn get_bandwidth_rate_limit_intervals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>> {
+    pub fn get_bandwidth_rate_limit_intervals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>> {
         &self.bandwidth_rate_limit_intervals
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -100,12 +89,10 @@ impl DescribeBandwidthRateLimitScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeBandwidthRateLimitScheduleOutput`](crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleOutput).
-    pub fn build(self) -> crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleOutput{
+    pub fn build(self) -> crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleOutput {
         crate::operation::describe_bandwidth_rate_limit_schedule::DescribeBandwidthRateLimitScheduleOutput {
-            gateway_arn: self.gateway_arn
-            ,
-            bandwidth_rate_limit_intervals: self.bandwidth_rate_limit_intervals
-            ,
+            gateway_arn: self.gateway_arn,
+            bandwidth_rate_limit_intervals: self.bandwidth_rate_limit_intervals,
             _request_id: self._request_id,
         }
     }

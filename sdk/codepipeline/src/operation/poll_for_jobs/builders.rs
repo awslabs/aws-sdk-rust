@@ -10,10 +10,7 @@ impl PollForJobsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::poll_for_jobs::PollForJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::poll_for_jobs::PollForJobsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::poll_for_jobs::PollForJobsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.poll_for_jobs();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl PollForJobsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::poll_for_jobs::PollForJobs,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::poll_for_jobs::PollForJobs, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::poll_for_jobs::PollForJobsError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl PollForJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl PollForJobsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::poll_for_jobs::PollForJobs,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::poll_for_jobs::PollForJobs, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::poll_for_jobs::PollForJobsError>,
     > {
         self.customize_middleware().await
@@ -120,10 +108,7 @@ impl PollForJobsFluentBuilder {
         self
     }
     /// <p>Represents information about an action type.</p>
-    pub fn set_action_type_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTypeId>,
-    ) -> Self {
+    pub fn set_action_type_id(mut self, input: ::std::option::Option<crate::types::ActionTypeId>) -> Self {
         self.inner = self.inner.set_action_type_id(input);
         self
     }
@@ -150,30 +135,20 @@ impl PollForJobsFluentBuilder {
     /// To override the contents of this collection use [`set_query_param`](Self::set_query_param).
     ///
     /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
-    pub fn query_param(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_param(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_param(k.into(), v.into());
         self
     }
     /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
     pub fn set_query_param(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_query_param(input);
         self
     }
     /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
-    pub fn get_query_param(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_query_param(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_query_param()
     }
 }

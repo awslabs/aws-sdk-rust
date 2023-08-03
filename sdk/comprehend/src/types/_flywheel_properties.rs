@@ -100,9 +100,7 @@ impl FlywheelProperties {
 
 /// A builder for [`FlywheelProperties`](crate::types::FlywheelProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlywheelPropertiesBuilder {
     pub(crate) flywheel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) active_model_arn: ::std::option::Option<::std::string::String>,
@@ -133,18 +131,12 @@ impl FlywheelPropertiesBuilder {
         &self.flywheel_arn
     }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
-    pub fn active_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn active_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
-    pub fn set_active_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_active_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.active_model_arn = input;
         self
     }
@@ -153,18 +145,12 @@ impl FlywheelPropertiesBuilder {
         &self.active_model_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -178,10 +164,7 @@ impl FlywheelPropertiesBuilder {
         self
     }
     /// <p>Configuration about the custom classifier associated with the flywheel.</p>
-    pub fn set_task_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskConfig>,
-    ) -> Self {
+    pub fn set_task_config(mut self, input: ::std::option::Option<crate::types::TaskConfig>) -> Self {
         self.task_config = input;
         self
     }
@@ -190,18 +173,12 @@ impl FlywheelPropertiesBuilder {
         &self.task_config
     }
     /// <p>Amazon S3 URI of the data lake location. </p>
-    pub fn data_lake_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_lake_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_lake_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon S3 URI of the data lake location. </p>
-    pub fn set_data_lake_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_lake_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_lake_s3_uri = input;
         self
     }
@@ -215,17 +192,12 @@ impl FlywheelPropertiesBuilder {
         self
     }
     /// <p>Data security configuration.</p>
-    pub fn set_data_security_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSecurityConfig>,
-    ) -> Self {
+    pub fn set_data_security_config(mut self, input: ::std::option::Option<crate::types::DataSecurityConfig>) -> Self {
         self.data_security_config = input;
         self
     }
     /// <p>Data security configuration.</p>
-    pub fn get_data_security_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSecurityConfig> {
+    pub fn get_data_security_config(&self) -> &::std::option::Option<crate::types::DataSecurityConfig> {
         &self.data_security_config
     }
     /// <p>The status of the flywheel.</p>
@@ -234,10 +206,7 @@ impl FlywheelPropertiesBuilder {
         self
     }
     /// <p>The status of the flywheel.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FlywheelStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FlywheelStatus>) -> Self {
         self.status = input;
         self
     }
@@ -279,10 +248,7 @@ impl FlywheelPropertiesBuilder {
         self
     }
     /// <p>Creation time of the flywheel.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -296,10 +262,7 @@ impl FlywheelPropertiesBuilder {
         self
     }
     /// <p>Last modified time for the flywheel.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -308,18 +271,12 @@ impl FlywheelPropertiesBuilder {
         &self.last_modified_time
     }
     /// <p>The most recent flywheel iteration.</p>
-    pub fn latest_flywheel_iteration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_flywheel_iteration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_flywheel_iteration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The most recent flywheel iteration.</p>
-    pub fn set_latest_flywheel_iteration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_flywheel_iteration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_flywheel_iteration = input;
         self
     }

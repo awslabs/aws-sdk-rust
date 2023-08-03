@@ -22,17 +22,14 @@ impl GetSecurityPolicyInput {
 }
 impl GetSecurityPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetSecurityPolicyInput`](crate::operation::get_security_policy::GetSecurityPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_security_policy::builders::GetSecurityPolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_security_policy::builders::GetSecurityPolicyInputBuilder {
         crate::operation::get_security_policy::builders::GetSecurityPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSecurityPolicyInput`](crate::operation::get_security_policy::GetSecurityPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSecurityPolicyInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -44,10 +41,7 @@ impl GetSecurityPolicyInputBuilder {
         self
     }
     /// <p>The type of security policy.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityPolicyType>) -> Self {
         self.r#type = input;
         self
     }
@@ -72,15 +66,10 @@ impl GetSecurityPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetSecurityPolicyInput`](crate::operation::get_security_policy::GetSecurityPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_security_policy::GetSecurityPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_security_policy::GetSecurityPolicyInput {
-                r#type: self.r#type,
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_security_policy::GetSecurityPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_security_policy::GetSecurityPolicyInput {
+            r#type: self.r#type,
+            name: self.name,
+        })
     }
 }

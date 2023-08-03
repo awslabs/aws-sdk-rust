@@ -14,8 +14,7 @@ pub struct ListBotRecommendationsOutput {
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>Summary information for the bot recommendations that meet the filter specified in this request. The length of the list is specified in the maxResults parameter of the request. If there are more bot recommendations available, the nextToken field contains a token to get the next page of results.</p>
     #[doc(hidden)]
-    pub bot_recommendation_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BotRecommendationSummary>>,
+    pub bot_recommendation_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotRecommendationSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the ListBotRecommendations operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListBotRecommendations operation request to get the next page of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -35,9 +34,7 @@ impl ListBotRecommendationsOutput {
         self.locale_id.as_deref()
     }
     /// <p>Summary information for the bot recommendations that meet the filter specified in this request. The length of the list is specified in the maxResults parameter of the request. If there are more bot recommendations available, the nextToken field contains a token to get the next page of results.</p>
-    pub fn bot_recommendation_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BotRecommendationSummary]> {
+    pub fn bot_recommendation_summaries(&self) -> ::std::option::Option<&[crate::types::BotRecommendationSummary]> {
         self.bot_recommendation_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListBotRecommendations operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListBotRecommendations operation request to get the next page of results. </p>
@@ -52,24 +49,19 @@ impl ::aws_http::request_id::RequestId for ListBotRecommendationsOutput {
 }
 impl ListBotRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListBotRecommendationsOutput`](crate::operation::list_bot_recommendations::ListBotRecommendationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_bot_recommendations::builders::ListBotRecommendationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_bot_recommendations::builders::ListBotRecommendationsOutputBuilder {
         crate::operation::list_bot_recommendations::builders::ListBotRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBotRecommendationsOutput`](crate::operation::list_bot_recommendations::ListBotRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBotRecommendationsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
-    pub(crate) bot_recommendation_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BotRecommendationSummary>>,
+    pub(crate) bot_recommendation_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotRecommendationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -121,27 +113,19 @@ impl ListBotRecommendationsOutputBuilder {
     /// To override the contents of this collection use [`set_bot_recommendation_summaries`](Self::set_bot_recommendation_summaries).
     ///
     /// <p>Summary information for the bot recommendations that meet the filter specified in this request. The length of the list is specified in the maxResults parameter of the request. If there are more bot recommendations available, the nextToken field contains a token to get the next page of results.</p>
-    pub fn bot_recommendation_summaries(
-        mut self,
-        input: crate::types::BotRecommendationSummary,
-    ) -> Self {
+    pub fn bot_recommendation_summaries(mut self, input: crate::types::BotRecommendationSummary) -> Self {
         let mut v = self.bot_recommendation_summaries.unwrap_or_default();
         v.push(input);
         self.bot_recommendation_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>Summary information for the bot recommendations that meet the filter specified in this request. The length of the list is specified in the maxResults parameter of the request. If there are more bot recommendations available, the nextToken field contains a token to get the next page of results.</p>
-    pub fn set_bot_recommendation_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotRecommendationSummary>>,
-    ) -> Self {
+    pub fn set_bot_recommendation_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotRecommendationSummary>>) -> Self {
         self.bot_recommendation_summaries = input;
         self
     }
     /// <p>Summary information for the bot recommendations that meet the filter specified in this request. The length of the list is specified in the maxResults parameter of the request. If there are more bot recommendations available, the nextToken field contains a token to get the next page of results.</p>
-    pub fn get_bot_recommendation_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotRecommendationSummary>> {
+    pub fn get_bot_recommendation_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotRecommendationSummary>> {
         &self.bot_recommendation_summaries
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListBotRecommendations operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListBotRecommendations operation request to get the next page of results. </p>

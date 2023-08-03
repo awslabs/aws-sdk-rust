@@ -37,10 +37,7 @@ impl UpdateConfiguredTableFluentBuilder {
         }
     }
     /// Access the UpdateConfiguredTable as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_configured_table::builders::UpdateConfiguredTableInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_configured_table::builders::UpdateConfiguredTableInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateConfiguredTableFluentBuilder {
             crate::operation::update_configured_table::UpdateConfiguredTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_configured_table::UpdateConfiguredTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_configured_table::UpdateConfiguredTableError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateConfiguredTableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateConfiguredTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_configured_table::UpdateConfiguredTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_configured_table::UpdateConfiguredTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_configured_table::UpdateConfiguredTableError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateConfiguredTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_configured_table::UpdateConfiguredTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_configured_table::UpdateConfiguredTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_configured_table::UpdateConfiguredTableError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateConfiguredTableFluentBuilder {
             crate::operation::update_configured_table::UpdateConfiguredTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_configured_table::UpdateConfiguredTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_configured_table::UpdateConfiguredTableError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
-    pub fn configured_table_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configured_table_identifier(input.into());
         self
     }
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
-    pub fn set_configured_table_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configured_table_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configured_table_identifier(input);
         self
     }

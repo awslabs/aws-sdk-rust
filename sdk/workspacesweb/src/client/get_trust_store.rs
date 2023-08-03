@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetTrustStoreOutput`](crate::operation::get_trust_store::GetTrustStoreOutput) with field(s):
     ///   - [`trust_store(Option<TrustStore>)`](crate::operation::get_trust_store::GetTrustStoreOutput::trust_store): <p>The trust store.</p>
     /// - On failure, responds with [`SdkError<GetTrustStoreError>`](crate::operation::get_trust_store::GetTrustStoreError)
-    pub fn get_trust_store(
-        &self,
-    ) -> crate::operation::get_trust_store::builders::GetTrustStoreFluentBuilder {
-        crate::operation::get_trust_store::builders::GetTrustStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_trust_store(&self) -> crate::operation::get_trust_store::builders::GetTrustStoreFluentBuilder {
+        crate::operation::get_trust_store::builders::GetTrustStoreFluentBuilder::new(self.handle.clone())
     }
 }

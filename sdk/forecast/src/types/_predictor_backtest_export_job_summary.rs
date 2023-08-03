@@ -91,9 +91,7 @@ impl PredictorBacktestExportJobSummary {
 
 /// A builder for [`PredictorBacktestExportJobSummary`](crate::types::PredictorBacktestExportJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictorBacktestExportJobSummaryBuilder {
     pub(crate) predictor_backtest_export_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) predictor_backtest_export_job_name: ::std::option::Option<::std::string::String>,
@@ -105,47 +103,31 @@ pub struct PredictorBacktestExportJobSummaryBuilder {
 }
 impl PredictorBacktestExportJobSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-    pub fn predictor_backtest_export_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_backtest_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_backtest_export_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-    pub fn set_predictor_backtest_export_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_backtest_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predictor_backtest_export_job_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
-    pub fn get_predictor_backtest_export_job_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_predictor_backtest_export_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.predictor_backtest_export_job_arn
     }
     /// <p>The name of the predictor backtest export job.</p>
-    pub fn predictor_backtest_export_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_backtest_export_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_backtest_export_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the predictor backtest export job.</p>
-    pub fn set_predictor_backtest_export_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_backtest_export_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predictor_backtest_export_job_name = input;
         self
     }
     /// <p>The name of the predictor backtest export job.</p>
-    pub fn get_predictor_backtest_export_job_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_predictor_backtest_export_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.predictor_backtest_export_job_name
     }
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
@@ -154,10 +136,7 @@ impl PredictorBacktestExportJobSummaryBuilder {
         self
     }
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::DataDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DataDestination>) -> Self {
         self.destination = input;
         self
     }
@@ -217,10 +196,7 @@ impl PredictorBacktestExportJobSummaryBuilder {
         self
     }
     /// <p>When the predictor backtest export job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -248,10 +224,7 @@ impl PredictorBacktestExportJobSummaryBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
@@ -263,9 +236,7 @@ impl PredictorBacktestExportJobSummaryBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// Consumes the builder and constructs a [`PredictorBacktestExportJobSummary`](crate::types::PredictorBacktestExportJobSummary).

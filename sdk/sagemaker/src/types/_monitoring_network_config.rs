@@ -37,9 +37,7 @@ impl MonitoringNetworkConfig {
 
 /// A builder for [`MonitoringNetworkConfig`](crate::types::MonitoringNetworkConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringNetworkConfigBuilder {
     pub(crate) enable_inter_container_traffic_encryption: ::std::option::Option<bool>,
     pub(crate) enable_network_isolation: ::std::option::Option<bool>,
@@ -52,10 +50,7 @@ impl MonitoringNetworkConfigBuilder {
         self
     }
     /// <p>Whether to encrypt all communications between the instances used for the monitoring jobs. Choose <code>True</code> to encrypt communications. Encryption provides greater security for distributed jobs, but the processing might take longer.</p>
-    pub fn set_enable_inter_container_traffic_encryption(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_inter_container_traffic_encryption(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_inter_container_traffic_encryption = input;
         self
     }
@@ -94,9 +89,7 @@ impl MonitoringNetworkConfigBuilder {
     /// Consumes the builder and constructs a [`MonitoringNetworkConfig`](crate::types::MonitoringNetworkConfig).
     pub fn build(self) -> crate::types::MonitoringNetworkConfig {
         crate::types::MonitoringNetworkConfig {
-            enable_inter_container_traffic_encryption: self
-                .enable_inter_container_traffic_encryption
-                .unwrap_or_default(),
+            enable_inter_container_traffic_encryption: self.enable_inter_container_traffic_encryption.unwrap_or_default(),
             enable_network_isolation: self.enable_network_isolation.unwrap_or_default(),
             vpc_config: self.vpc_config,
         }

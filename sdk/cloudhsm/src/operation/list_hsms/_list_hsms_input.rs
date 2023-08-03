@@ -22,9 +22,7 @@ impl ListHsmsInput {
 
 /// A builder for [`ListHsmsInput`](crate::operation::list_hsms::ListHsmsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHsmsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl ListHsmsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListHsmsInput`](crate::operation::list_hsms::ListHsmsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_hsms::ListHsmsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_hsms::ListHsmsInput {
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_hsms::ListHsmsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_hsms::ListHsmsInput { next_token: self.next_token })
     }
 }

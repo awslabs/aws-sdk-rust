@@ -22,36 +22,26 @@ impl AssociateTrialComponentInput {
 }
 impl AssociateTrialComponentInput {
     /// Creates a new builder-style object to manufacture [`AssociateTrialComponentInput`](crate::operation::associate_trial_component::AssociateTrialComponentInput).
-    pub fn builder(
-    ) -> crate::operation::associate_trial_component::builders::AssociateTrialComponentInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_trial_component::builders::AssociateTrialComponentInputBuilder {
         crate::operation::associate_trial_component::builders::AssociateTrialComponentInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTrialComponentInput`](crate::operation::associate_trial_component::AssociateTrialComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTrialComponentInputBuilder {
     pub(crate) trial_component_name: ::std::option::Option<::std::string::String>,
     pub(crate) trial_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociateTrialComponentInputBuilder {
     /// <p>The name of the component to associated with the trial.</p>
-    pub fn trial_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component to associated with the trial.</p>
-    pub fn set_trial_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trial_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trial_component_name = input;
         self
     }
@@ -80,11 +70,9 @@ impl AssociateTrialComponentInputBuilder {
         crate::operation::associate_trial_component::AssociateTrialComponentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_trial_component::AssociateTrialComponentInput {
-                trial_component_name: self.trial_component_name,
-                trial_name: self.trial_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_trial_component::AssociateTrialComponentInput {
+            trial_component_name: self.trial_component_name,
+            trial_name: self.trial_name,
+        })
     }
 }

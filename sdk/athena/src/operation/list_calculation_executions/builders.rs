@@ -26,7 +26,7 @@ impl ListCalculationExecutionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCalculationExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_calculation_executions::builders::ListCalculationExecutionsInputBuilder,
+    inner: crate::operation::list_calculation_executions::builders::ListCalculationExecutionsInputBuilder,
 }
 impl ListCalculationExecutionsFluentBuilder {
     /// Creates a new `ListCalculationExecutions`.
@@ -37,7 +37,7 @@ impl ListCalculationExecutionsFluentBuilder {
         }
     }
     /// Access the ListCalculationExecutions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_calculation_executions::builders::ListCalculationExecutionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_calculation_executions::builders::ListCalculationExecutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListCalculationExecutionsFluentBuilder {
             crate::operation::list_calculation_executions::ListCalculationExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_calculation_executions::ListCalculationExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_calculation_executions::ListCalculationExecutionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListCalculationExecutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListCalculationExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_calculation_executions::ListCalculationExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_calculation_executions::ListCalculationExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_calculation_executions::ListCalculationExecutionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListCalculationExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_calculation_executions::ListCalculationExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_calculation_executions::ListCalculationExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_calculation_executions::ListCalculationExecutionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListCalculationExecutionsFluentBuilder {
             crate::operation::list_calculation_executions::ListCalculationExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_calculation_executions::ListCalculationExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_calculation_executions::ListCalculationExecutionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_calculation_executions::paginator::ListCalculationExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_calculation_executions::paginator::ListCalculationExecutionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_calculation_executions::paginator::ListCalculationExecutionsPaginator {
         crate::operation::list_calculation_executions::paginator::ListCalculationExecutionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The session ID.</p>
@@ -165,10 +151,7 @@ impl ListCalculationExecutionsFluentBuilder {
     /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
     /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
     /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
-    pub fn set_state_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculationExecutionState>,
-    ) -> Self {
+    pub fn set_state_filter(mut self, input: ::std::option::Option<crate::types::CalculationExecutionState>) -> Self {
         self.inner = self.inner.set_state_filter(input);
         self
     }
@@ -181,9 +164,7 @@ impl ListCalculationExecutionsFluentBuilder {
     /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
     /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
     /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
-    pub fn get_state_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::CalculationExecutionState> {
+    pub fn get_state_filter(&self) -> &::std::option::Option<crate::types::CalculationExecutionState> {
         self.inner.get_state_filter()
     }
     /// <p>The maximum number of calculation executions to return.</p>

@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`supplied_data(Option<EphemerisTypeDescription>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::supplied_data): <p>Supplied ephemeris data.</p>
     ///   - [`invalid_reason(Option<EphemerisInvalidReason>)`](crate::operation::describe_ephemeris::DescribeEphemerisOutput::invalid_reason): <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
     /// - On failure, responds with [`SdkError<DescribeEphemerisError>`](crate::operation::describe_ephemeris::DescribeEphemerisError)
-    pub fn describe_ephemeris(
-        &self,
-    ) -> crate::operation::describe_ephemeris::builders::DescribeEphemerisFluentBuilder {
-        crate::operation::describe_ephemeris::builders::DescribeEphemerisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_ephemeris(&self) -> crate::operation::describe_ephemeris::builders::DescribeEphemerisFluentBuilder {
+        crate::operation::describe_ephemeris::builders::DescribeEphemerisFluentBuilder::new(self.handle.clone())
     }
 }

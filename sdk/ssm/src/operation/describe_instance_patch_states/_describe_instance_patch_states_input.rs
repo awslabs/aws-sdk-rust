@@ -29,16 +29,14 @@ impl DescribeInstancePatchStatesInput {
 }
 impl DescribeInstancePatchStatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancePatchStatesInput`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesInput).
-    pub fn builder() -> crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesInputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesInputBuilder {
         crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstancePatchStatesInput`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstancePatchStatesInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl DescribeInstancePatchStatesInputBuilder {
         self
     }
     /// <p>The ID of the managed node for which patch state information should be retrieved.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The ID of the managed node for which patch state information should be retrieved.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -105,12 +98,10 @@ impl DescribeInstancePatchStatesInputBuilder {
         crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesInput {
-                instance_ids: self.instance_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesInput {
+            instance_ids: self.instance_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

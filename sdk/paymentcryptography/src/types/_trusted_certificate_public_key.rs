@@ -53,8 +53,7 @@ impl TrustedCertificatePublicKey {
 pub struct TrustedCertificatePublicKeyBuilder {
     pub(crate) key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
     pub(crate) public_key_certificate: ::std::option::Option<::std::string::String>,
-    pub(crate) certificate_authority_public_key_identifier:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_authority_public_key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl TrustedCertificatePublicKeyBuilder {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after a trusted public key is imported.</p>
@@ -63,10 +62,7 @@ impl TrustedCertificatePublicKeyBuilder {
         self
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after a trusted public key is imported.</p>
-    pub fn set_key_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyAttributes>,
-    ) -> Self {
+    pub fn set_key_attributes(mut self, input: ::std::option::Option<crate::types::KeyAttributes>) -> Self {
         self.key_attributes = input;
         self
     }
@@ -75,18 +71,12 @@ impl TrustedCertificatePublicKeyBuilder {
         &self.key_attributes
     }
     /// <p>Parameter information for trusted public key certificate import.</p>
-    pub fn public_key_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Parameter information for trusted public key certificate import.</p>
-    pub fn set_public_key_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_key_certificate = input;
         self
     }
@@ -95,26 +85,17 @@ impl TrustedCertificatePublicKeyBuilder {
         &self.public_key_certificate
     }
     /// <p>The <code>KeyARN</code> of the root public key certificate or certificate chain that signs the trusted public key certificate import.</p>
-    pub fn certificate_authority_public_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.certificate_authority_public_key_identifier =
-            ::std::option::Option::Some(input.into());
+    pub fn certificate_authority_public_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.certificate_authority_public_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>KeyARN</code> of the root public key certificate or certificate chain that signs the trusted public key certificate import.</p>
-    pub fn set_certificate_authority_public_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_public_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_public_key_identifier = input;
         self
     }
     /// <p>The <code>KeyARN</code> of the root public key certificate or certificate chain that signs the trusted public key certificate import.</p>
-    pub fn get_certificate_authority_public_key_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_certificate_authority_public_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_authority_public_key_identifier
     }
     /// Consumes the builder and constructs a [`TrustedCertificatePublicKey`](crate::types::TrustedCertificatePublicKey).
@@ -122,8 +103,7 @@ impl TrustedCertificatePublicKeyBuilder {
         crate::types::TrustedCertificatePublicKey {
             key_attributes: self.key_attributes,
             public_key_certificate: self.public_key_certificate,
-            certificate_authority_public_key_identifier: self
-                .certificate_authority_public_key_identifier,
+            certificate_authority_public_key_identifier: self.certificate_authority_public_key_identifier,
         }
     }
 }

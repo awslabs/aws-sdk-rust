@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`revision(RevisionLocation)`](crate::operation::register_application_revision::builders::RegisterApplicationRevisionFluentBuilder::revision) / [`set_revision(Option<RevisionLocation>)`](crate::operation::register_application_revision::builders::RegisterApplicationRevisionFluentBuilder::set_revision): <p>Information about the application revision to register, including type and location.</p>
     /// - On success, responds with [`RegisterApplicationRevisionOutput`](crate::operation::register_application_revision::RegisterApplicationRevisionOutput)
     /// - On failure, responds with [`SdkError<RegisterApplicationRevisionError>`](crate::operation::register_application_revision::RegisterApplicationRevisionError)
-    pub fn register_application_revision(&self) -> crate::operation::register_application_revision::builders::RegisterApplicationRevisionFluentBuilder{
+    pub fn register_application_revision(
+        &self,
+    ) -> crate::operation::register_application_revision::builders::RegisterApplicationRevisionFluentBuilder {
         crate::operation::register_application_revision::builders::RegisterApplicationRevisionFluentBuilder::new(self.handle.clone())
     }
 }

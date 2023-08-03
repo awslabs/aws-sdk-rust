@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`state(Option<ClusterState>)`](crate::operation::initialize_cluster::InitializeClusterOutput::state): <p>The cluster's state.</p>
     ///   - [`state_message(Option<String>)`](crate::operation::initialize_cluster::InitializeClusterOutput::state_message): <p>A description of the cluster's state.</p>
     /// - On failure, responds with [`SdkError<InitializeClusterError>`](crate::operation::initialize_cluster::InitializeClusterError)
-    pub fn initialize_cluster(
-        &self,
-    ) -> crate::operation::initialize_cluster::builders::InitializeClusterFluentBuilder {
-        crate::operation::initialize_cluster::builders::InitializeClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn initialize_cluster(&self) -> crate::operation::initialize_cluster::builders::InitializeClusterFluentBuilder {
+        crate::operation::initialize_cluster::builders::InitializeClusterFluentBuilder::new(self.handle.clone())
     }
 }

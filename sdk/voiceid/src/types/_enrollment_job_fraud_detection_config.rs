@@ -16,9 +16,7 @@ pub struct EnrollmentJobFraudDetectionConfig {
 }
 impl EnrollmentJobFraudDetectionConfig {
     /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
-    pub fn fraud_detection_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FraudDetectionAction> {
+    pub fn fraud_detection_action(&self) -> ::std::option::Option<&crate::types::FraudDetectionAction> {
         self.fraud_detection_action.as_ref()
     }
     /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
@@ -39,9 +37,7 @@ impl EnrollmentJobFraudDetectionConfig {
 
 /// A builder for [`EnrollmentJobFraudDetectionConfig`](crate::types::EnrollmentJobFraudDetectionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnrollmentJobFraudDetectionConfigBuilder {
     pub(crate) fraud_detection_action: ::std::option::Option<crate::types::FraudDetectionAction>,
     pub(crate) risk_threshold: ::std::option::Option<i32>,
@@ -54,17 +50,12 @@ impl EnrollmentJobFraudDetectionConfigBuilder {
         self
     }
     /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
-    pub fn set_fraud_detection_action(
-        mut self,
-        input: ::std::option::Option<crate::types::FraudDetectionAction>,
-    ) -> Self {
+    pub fn set_fraud_detection_action(mut self, input: ::std::option::Option<crate::types::FraudDetectionAction>) -> Self {
         self.fraud_detection_action = input;
         self
     }
     /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
-    pub fn get_fraud_detection_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::FraudDetectionAction> {
+    pub fn get_fraud_detection_action(&self) -> &::std::option::Option<crate::types::FraudDetectionAction> {
         &self.fraud_detection_action
     }
     /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
@@ -86,27 +77,19 @@ impl EnrollmentJobFraudDetectionConfigBuilder {
     /// To override the contents of this collection use [`set_watchlist_ids`](Self::set_watchlist_ids).
     ///
     /// <p>The identifier of watchlists against which fraud detection is performed. </p>
-    pub fn watchlist_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn watchlist_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.watchlist_ids.unwrap_or_default();
         v.push(input.into());
         self.watchlist_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifier of watchlists against which fraud detection is performed. </p>
-    pub fn set_watchlist_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_watchlist_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.watchlist_ids = input;
         self
     }
     /// <p>The identifier of watchlists against which fraud detection is performed. </p>
-    pub fn get_watchlist_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_watchlist_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.watchlist_ids
     }
     /// Consumes the builder and constructs a [`EnrollmentJobFraudDetectionConfig`](crate::types::EnrollmentJobFraudDetectionConfig).

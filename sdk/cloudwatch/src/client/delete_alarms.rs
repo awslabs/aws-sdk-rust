@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`alarm_names(Vec<String>)`](crate::operation::delete_alarms::builders::DeleteAlarmsFluentBuilder::alarm_names) / [`set_alarm_names(Option<Vec<String>>)`](crate::operation::delete_alarms::builders::DeleteAlarmsFluentBuilder::set_alarm_names): <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
     /// - On success, responds with [`DeleteAlarmsOutput`](crate::operation::delete_alarms::DeleteAlarmsOutput)
     /// - On failure, responds with [`SdkError<DeleteAlarmsError>`](crate::operation::delete_alarms::DeleteAlarmsError)
-    pub fn delete_alarms(
-        &self,
-    ) -> crate::operation::delete_alarms::builders::DeleteAlarmsFluentBuilder {
-        crate::operation::delete_alarms::builders::DeleteAlarmsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_alarms(&self) -> crate::operation::delete_alarms::builders::DeleteAlarmsFluentBuilder {
+        crate::operation::delete_alarms::builders::DeleteAlarmsFluentBuilder::new(self.handle.clone())
     }
 }

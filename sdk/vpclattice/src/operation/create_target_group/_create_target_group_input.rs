@@ -17,9 +17,7 @@ pub struct CreateTargetGroupInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the target group.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateTargetGroupInput {
     /// <p>The name of the target group. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
@@ -39,35 +37,26 @@ impl CreateTargetGroupInput {
         self.client_token.as_deref()
     }
     /// <p>The tags for the target group.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateTargetGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateTargetGroupInput`](crate::operation::create_target_group::CreateTargetGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_target_group::builders::CreateTargetGroupInputBuilder {
+    pub fn builder() -> crate::operation::create_target_group::builders::CreateTargetGroupInputBuilder {
         crate::operation::create_target_group::builders::CreateTargetGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTargetGroupInput`](crate::operation::create_target_group::CreateTargetGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTargetGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::TargetGroupType>,
     pub(crate) config: ::std::option::Option<crate::types::TargetGroupConfig>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateTargetGroupInputBuilder {
     /// <p>The name of the target group. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
@@ -104,10 +93,7 @@ impl CreateTargetGroupInputBuilder {
         self
     }
     /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
-    pub fn set_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupConfig>,
-    ) -> Self {
+    pub fn set_config(mut self, input: ::std::option::Option<crate::types::TargetGroupConfig>) -> Self {
         self.config = input;
         self
     }
@@ -134,49 +120,31 @@ impl CreateTargetGroupInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for the target group.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags for the target group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags for the target group.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTargetGroupInput`](crate::operation::create_target_group::CreateTargetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_target_group::CreateTargetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_target_group::CreateTargetGroupInput {
-                name: self.name,
-                r#type: self.r#type,
-                config: self.config,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_target_group::CreateTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_target_group::CreateTargetGroupInput {
+            name: self.name,
+            r#type: self.r#type,
+            config: self.config,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }

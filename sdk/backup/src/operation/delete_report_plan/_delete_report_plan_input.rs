@@ -15,34 +15,25 @@ impl DeleteReportPlanInput {
 }
 impl DeleteReportPlanInput {
     /// Creates a new builder-style object to manufacture [`DeleteReportPlanInput`](crate::operation::delete_report_plan::DeleteReportPlanInput).
-    pub fn builder() -> crate::operation::delete_report_plan::builders::DeleteReportPlanInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_report_plan::builders::DeleteReportPlanInputBuilder {
         crate::operation::delete_report_plan::builders::DeleteReportPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReportPlanInput`](crate::operation::delete_report_plan::DeleteReportPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReportPlanInputBuilder {
     pub(crate) report_plan_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReportPlanInputBuilder {
     /// <p>The unique name of a report plan.</p>
-    pub fn report_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of a report plan.</p>
-    pub fn set_report_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_plan_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteReportPlanInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReportPlanInput`](crate::operation::delete_report_plan::DeleteReportPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_report_plan::DeleteReportPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_report_plan::DeleteReportPlanInput {
-                report_plan_name: self.report_plan_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_report_plan::DeleteReportPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_report_plan::DeleteReportPlanInput {
+            report_plan_name: self.report_plan_name,
+        })
     }
 }

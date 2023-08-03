@@ -15,34 +15,25 @@ impl DeleteMetricPolicyInput {
 }
 impl DeleteMetricPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteMetricPolicyInput`](crate::operation::delete_metric_policy::DeleteMetricPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_metric_policy::builders::DeleteMetricPolicyInputBuilder {
+    pub fn builder() -> crate::operation::delete_metric_policy::builders::DeleteMetricPolicyInputBuilder {
         crate::operation::delete_metric_policy::builders::DeleteMetricPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMetricPolicyInput`](crate::operation::delete_metric_policy::DeleteMetricPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMetricPolicyInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMetricPolicyInputBuilder {
     /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteMetricPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMetricPolicyInput`](crate::operation::delete_metric_policy::DeleteMetricPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_metric_policy::DeleteMetricPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_metric_policy::DeleteMetricPolicyInput {
-                container_name: self.container_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_metric_policy::DeleteMetricPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_metric_policy::DeleteMetricPolicyInput {
+            container_name: self.container_name,
+        })
     }
 }

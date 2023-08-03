@@ -51,18 +51,14 @@ impl DescribeMovingAddressesInput {
 }
 impl DescribeMovingAddressesInput {
     /// Creates a new builder-style object to manufacture [`DescribeMovingAddressesInput`](crate::operation::describe_moving_addresses::DescribeMovingAddressesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesInputBuilder {
         crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMovingAddressesInput`](crate::operation::describe_moving_addresses::DescribeMovingAddressesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMovingAddressesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -89,10 +85,7 @@ impl DescribeMovingAddressesInputBuilder {
     /// <ul>
     /// <li> <p> <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -160,10 +153,7 @@ impl DescribeMovingAddressesInputBuilder {
         self
     }
     /// <p>One or more Elastic IP addresses.</p>
-    pub fn set_public_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_public_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.public_ips = input;
         self
     }
@@ -178,14 +168,12 @@ impl DescribeMovingAddressesInputBuilder {
         crate::operation::describe_moving_addresses::DescribeMovingAddressesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_moving_addresses::DescribeMovingAddressesInput {
-                filters: self.filters,
-                dry_run: self.dry_run,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                public_ips: self.public_ips,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_moving_addresses::DescribeMovingAddressesInput {
+            filters: self.filters,
+            dry_run: self.dry_run,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            public_ips: self.public_ips,
+        })
     }
 }

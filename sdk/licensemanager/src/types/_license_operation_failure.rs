@@ -72,9 +72,7 @@ impl LicenseOperationFailure {
 
 /// A builder for [`LicenseOperationFailure`](crate::types::LicenseOperationFailure).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LicenseOperationFailureBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -106,10 +104,7 @@ impl LicenseOperationFailureBuilder {
         self
     }
     /// <p>Resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -118,18 +113,12 @@ impl LicenseOperationFailureBuilder {
         &self.resource_type
     }
     /// <p>Error message.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Error message.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -143,10 +132,7 @@ impl LicenseOperationFailureBuilder {
         self
     }
     /// <p>Failure time.</p>
-    pub fn set_failure_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_failure_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.failure_time = input;
         self
     }
@@ -155,18 +141,12 @@ impl LicenseOperationFailureBuilder {
         &self.failure_time
     }
     /// <p>Name of the operation.</p>
-    pub fn operation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the operation.</p>
-    pub fn set_operation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_operation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_name = input;
         self
     }
@@ -175,18 +155,12 @@ impl LicenseOperationFailureBuilder {
         &self.operation_name
     }
     /// <p>ID of the Amazon Web Services account that owns the resource.</p>
-    pub fn resource_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the Amazon Web Services account that owns the resource.</p>
-    pub fn set_resource_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_owner_id = input;
         self
     }
@@ -195,18 +169,12 @@ impl LicenseOperationFailureBuilder {
         &self.resource_owner_id
     }
     /// <p>The requester is "License Manager Automated Discovery".</p>
-    pub fn operation_requested_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operation_requested_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_requested_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The requester is "License Manager Automated Discovery".</p>
-    pub fn set_operation_requested_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_operation_requested_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_requested_by = input;
         self
     }
@@ -226,17 +194,12 @@ impl LicenseOperationFailureBuilder {
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_metadata_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
-    ) -> Self {
+    pub fn set_metadata_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>) -> Self {
         self.metadata_list = input;
         self
     }
     /// <p>Reserved.</p>
-    pub fn get_metadata_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+    pub fn get_metadata_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
         &self.metadata_list
     }
     /// Consumes the builder and constructs a [`LicenseOperationFailure`](crate::types::LicenseOperationFailure).

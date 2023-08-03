@@ -10,10 +10,7 @@ impl CopyWorkspaceImageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::copy_workspace_image::CopyWorkspaceImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_workspace_image::CopyWorkspaceImageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_workspace_image::CopyWorkspaceImageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.copy_workspace_image();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl CopyWorkspaceImageFluentBuilder {
         }
     }
     /// Access the CopyWorkspaceImage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::copy_workspace_image::builders::CopyWorkspaceImageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::copy_workspace_image::builders::CopyWorkspaceImageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl CopyWorkspaceImageFluentBuilder {
             crate::operation::copy_workspace_image::CopyWorkspaceImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_workspace_image::CopyWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_workspace_image::CopyWorkspaceImageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl CopyWorkspaceImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl CopyWorkspaceImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_workspace_image::CopyWorkspaceImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_workspace_image::CopyWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_workspace_image::CopyWorkspaceImageError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl CopyWorkspaceImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_workspace_image::CopyWorkspaceImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_workspace_image::CopyWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_workspace_image::CopyWorkspaceImageError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl CopyWorkspaceImageFluentBuilder {
             crate::operation::copy_workspace_image::CopyWorkspaceImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_workspace_image::CopyWorkspaceImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_workspace_image::CopyWorkspaceImageError>,
     > {
         self.customize_middleware().await
     }
@@ -155,18 +139,12 @@ impl CopyWorkspaceImageFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The identifier of the source image.</p>
-    pub fn source_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_image_id(input.into());
         self
     }
     /// <p>The identifier of the source image.</p>
-    pub fn set_source_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_image_id(input);
         self
     }
@@ -175,18 +153,12 @@ impl CopyWorkspaceImageFluentBuilder {
         self.inner.get_source_image_id()
     }
     /// <p>The identifier of the source Region.</p>
-    pub fn source_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_region(input.into());
         self
     }
     /// <p>The identifier of the source Region.</p>
-    pub fn set_source_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_region(input);
         self
     }
@@ -204,10 +176,7 @@ impl CopyWorkspaceImageFluentBuilder {
         self
     }
     /// <p>The tags for the image.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

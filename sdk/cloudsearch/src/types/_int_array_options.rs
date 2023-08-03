@@ -51,9 +51,7 @@ impl IntArrayOptions {
 
 /// A builder for [`IntArrayOptions`](crate::types::IntArrayOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntArrayOptionsBuilder {
     pub(crate) default_value: ::std::option::Option<i64>,
     pub(crate) source_fields: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl IntArrayOptionsBuilder {
         &self.default_value
     }
     /// <p>A list of source fields to map to the field. </p>
-    pub fn source_fields(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_fields = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of source fields to map to the field. </p>
-    pub fn set_source_fields(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_fields(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_fields = input;
         self
     }

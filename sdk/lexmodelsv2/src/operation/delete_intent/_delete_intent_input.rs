@@ -43,9 +43,7 @@ impl DeleteIntentInput {
 
 /// A builder for [`DeleteIntentInput`](crate::operation::delete_intent::DeleteIntentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIntentInputBuilder {
     pub(crate) intent_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
@@ -110,12 +108,7 @@ impl DeleteIntentInputBuilder {
         &self.locale_id
     }
     /// Consumes the builder and constructs a [`DeleteIntentInput`](crate::operation::delete_intent::DeleteIntentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_intent::DeleteIntentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_intent::DeleteIntentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_intent::DeleteIntentInput {
             intent_id: self.intent_id,
             bot_id: self.bot_id,

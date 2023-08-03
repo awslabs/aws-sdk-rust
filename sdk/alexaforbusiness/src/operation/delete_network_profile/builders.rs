@@ -38,9 +38,7 @@ impl DeleteNetworkProfileFluentBuilder {
         }
     }
     /// Access the DeleteNetworkProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_network_profile::builders::DeleteNetworkProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_network_profile::builders::DeleteNetworkProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DeleteNetworkProfileFluentBuilder {
             crate::operation::delete_network_profile::DeleteNetworkProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_profile::DeleteNetworkProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_profile::DeleteNetworkProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DeleteNetworkProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DeleteNetworkProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_profile::DeleteNetworkProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_profile::DeleteNetworkProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_profile::DeleteNetworkProfileError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DeleteNetworkProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_profile::DeleteNetworkProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_profile::DeleteNetworkProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_profile::DeleteNetworkProfileError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl DeleteNetworkProfileFluentBuilder {
             crate::operation::delete_network_profile::DeleteNetworkProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_profile::DeleteNetworkProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_profile::DeleteNetworkProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_profile_arn(input.into());
         self
     }
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn set_network_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_profile_arn(input);
         self
     }

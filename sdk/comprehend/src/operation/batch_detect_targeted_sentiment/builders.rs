@@ -27,7 +27,7 @@ impl BatchDetectTargetedSentimentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDetectTargetedSentimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_detect_targeted_sentiment::builders::BatchDetectTargetedSentimentInputBuilder,
+    inner: crate::operation::batch_detect_targeted_sentiment::builders::BatchDetectTargetedSentimentInputBuilder,
 }
 impl BatchDetectTargetedSentimentFluentBuilder {
     /// Creates a new `BatchDetectTargetedSentiment`.
@@ -38,7 +38,7 @@ impl BatchDetectTargetedSentimentFluentBuilder {
         }
     }
     /// Access the BatchDetectTargetedSentiment as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_detect_targeted_sentiment::builders::BatchDetectTargetedSentimentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_detect_targeted_sentiment::builders::BatchDetectTargetedSentimentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl BatchDetectTargetedSentimentFluentBuilder {
             crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl BatchDetectTargetedSentimentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl BatchDetectTargetedSentimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl BatchDetectTargetedSentimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl BatchDetectTargetedSentimentFluentBuilder {
             crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentError>,
     > {
         self.customize_middleware().await
     }
@@ -131,10 +120,7 @@ impl BatchDetectTargetedSentimentFluentBuilder {
         self
     }
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
-    pub fn set_text_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_text_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_text_list(input);
         self
     }
@@ -148,10 +134,7 @@ impl BatchDetectTargetedSentimentFluentBuilder {
         self
     }
     /// <p>The language of the input documents. Currently, English is the only supported language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }

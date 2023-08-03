@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeHoursOfOperationOutput`](crate::operation::describe_hours_of_operation::DescribeHoursOfOperationOutput) with field(s):
     ///   - [`hours_of_operation(Option<HoursOfOperation>)`](crate::operation::describe_hours_of_operation::DescribeHoursOfOperationOutput::hours_of_operation): <p>The hours of operation.</p>
     /// - On failure, responds with [`SdkError<DescribeHoursOfOperationError>`](crate::operation::describe_hours_of_operation::DescribeHoursOfOperationError)
-    pub fn describe_hours_of_operation(&self) -> crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationFluentBuilder{
+    pub fn describe_hours_of_operation(&self) -> crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationFluentBuilder {
         crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationFluentBuilder::new(self.handle.clone())
     }
 }

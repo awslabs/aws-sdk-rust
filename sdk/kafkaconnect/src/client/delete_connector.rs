@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`connector_arn(Option<String>)`](crate::operation::delete_connector::DeleteConnectorOutput::connector_arn): <p>The Amazon Resource Name (ARN) of the connector that you requested to delete.</p>
     ///   - [`connector_state(Option<ConnectorState>)`](crate::operation::delete_connector::DeleteConnectorOutput::connector_state): <p>The state of the connector that you requested to delete.</p>
     /// - On failure, responds with [`SdkError<DeleteConnectorError>`](crate::operation::delete_connector::DeleteConnectorError)
-    pub fn delete_connector(
-        &self,
-    ) -> crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder {
-        crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_connector(&self) -> crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder {
+        crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder::new(self.handle.clone())
     }
 }

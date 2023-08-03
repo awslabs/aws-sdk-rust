@@ -22,35 +22,26 @@ impl UpdatePolicyStoreInput {
 }
 impl UpdatePolicyStoreInput {
     /// Creates a new builder-style object to manufacture [`UpdatePolicyStoreInput`](crate::operation::update_policy_store::UpdatePolicyStoreInput).
-    pub fn builder(
-    ) -> crate::operation::update_policy_store::builders::UpdatePolicyStoreInputBuilder {
+    pub fn builder() -> crate::operation::update_policy_store::builders::UpdatePolicyStoreInputBuilder {
         crate::operation::update_policy_store::builders::UpdatePolicyStoreInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePolicyStoreInput`](crate::operation::update_policy_store::UpdatePolicyStoreInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePolicyStoreInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) validation_settings: ::std::option::Option<crate::types::ValidationSettings>,
 }
 impl UpdatePolicyStoreInputBuilder {
     /// <p>Specifies the ID of the policy store that you want to update</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that you want to update</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -64,31 +55,21 @@ impl UpdatePolicyStoreInputBuilder {
         self
     }
     /// <p>A structure that defines the validation settings that want to enable for the policy store.</p>
-    pub fn set_validation_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationSettings>,
-    ) -> Self {
+    pub fn set_validation_settings(mut self, input: ::std::option::Option<crate::types::ValidationSettings>) -> Self {
         self.validation_settings = input;
         self
     }
     /// <p>A structure that defines the validation settings that want to enable for the policy store.</p>
-    pub fn get_validation_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ValidationSettings> {
+    pub fn get_validation_settings(&self) -> &::std::option::Option<crate::types::ValidationSettings> {
         &self.validation_settings
     }
     /// Consumes the builder and constructs a [`UpdatePolicyStoreInput`](crate::operation::update_policy_store::UpdatePolicyStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_policy_store::UpdatePolicyStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_policy_store::UpdatePolicyStoreInput {
-                policy_store_id: self.policy_store_id,
-                validation_settings: self.validation_settings,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_policy_store::UpdatePolicyStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_policy_store::UpdatePolicyStoreInput {
+            policy_store_id: self.policy_store_id,
+            validation_settings: self.validation_settings,
+        })
     }
 }

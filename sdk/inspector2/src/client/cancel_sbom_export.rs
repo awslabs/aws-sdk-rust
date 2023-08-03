@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CancelSbomExportOutput`](crate::operation::cancel_sbom_export::CancelSbomExportOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::operation::cancel_sbom_export::CancelSbomExportOutput::report_id): <p>The report ID of the canceled SBOM export.</p>
     /// - On failure, responds with [`SdkError<CancelSbomExportError>`](crate::operation::cancel_sbom_export::CancelSbomExportError)
-    pub fn cancel_sbom_export(
-        &self,
-    ) -> crate::operation::cancel_sbom_export::builders::CancelSbomExportFluentBuilder {
-        crate::operation::cancel_sbom_export::builders::CancelSbomExportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_sbom_export(&self) -> crate::operation::cancel_sbom_export::builders::CancelSbomExportFluentBuilder {
+        crate::operation::cancel_sbom_export::builders::CancelSbomExportFluentBuilder::new(self.handle.clone())
     }
 }

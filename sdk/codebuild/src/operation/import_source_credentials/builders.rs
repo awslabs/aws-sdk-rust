@@ -26,8 +26,7 @@ impl ImportSourceCredentialsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportSourceCredentialsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::import_source_credentials::builders::ImportSourceCredentialsInputBuilder,
+    inner: crate::operation::import_source_credentials::builders::ImportSourceCredentialsInputBuilder,
 }
 impl ImportSourceCredentialsFluentBuilder {
     /// Creates a new `ImportSourceCredentials`.
@@ -38,10 +37,7 @@ impl ImportSourceCredentialsFluentBuilder {
         }
     }
     /// Access the ImportSourceCredentials as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_source_credentials::builders::ImportSourceCredentialsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::import_source_credentials::builders::ImportSourceCredentialsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ImportSourceCredentialsFluentBuilder {
             crate::operation::import_source_credentials::ImportSourceCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_source_credentials::ImportSourceCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_source_credentials::ImportSourceCredentialsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ImportSourceCredentialsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ImportSourceCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_source_credentials::ImportSourceCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_source_credentials::ImportSourceCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_source_credentials::ImportSourceCredentialsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ImportSourceCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_source_credentials::ImportSourceCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_source_credentials::ImportSourceCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_source_credentials::ImportSourceCredentialsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl ImportSourceCredentialsFluentBuilder {
             crate::operation::import_source_credentials::ImportSourceCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_source_credentials::ImportSourceCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_source_credentials::ImportSourceCredentialsError>,
     > {
         self.customize_middleware().await
     }
@@ -158,10 +143,7 @@ impl ImportSourceCredentialsFluentBuilder {
         self
     }
     /// <p> The source provider used for this project. </p>
-    pub fn set_server_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerType>,
-    ) -> Self {
+    pub fn set_server_type(mut self, input: ::std::option::Option<crate::types::ServerType>) -> Self {
         self.inner = self.inner.set_server_type(input);
         self
     }

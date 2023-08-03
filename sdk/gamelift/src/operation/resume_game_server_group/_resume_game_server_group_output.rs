@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ResumeGameServerGroupOutput {
 }
 impl ResumeGameServerGroupOutput {
     /// Creates a new builder-style object to manufacture [`ResumeGameServerGroupOutput`](crate::operation::resume_game_server_group::ResumeGameServerGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::resume_game_server_group::builders::ResumeGameServerGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::resume_game_server_group::builders::ResumeGameServerGroupOutputBuilder {
         crate::operation::resume_game_server_group::builders::ResumeGameServerGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResumeGameServerGroupOutput`](crate::operation::resume_game_server_group::ResumeGameServerGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResumeGameServerGroupOutputBuilder {
     pub(crate) game_server_group: ::std::option::Option<crate::types::GameServerGroup>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl ResumeGameServerGroupOutputBuilder {
         self
     }
     /// <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the resumed activity.</p>
-    pub fn set_game_server_group(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServerGroup>,
-    ) -> Self {
+    pub fn set_game_server_group(mut self, input: ::std::option::Option<crate::types::GameServerGroup>) -> Self {
         self.game_server_group = input;
         self
     }

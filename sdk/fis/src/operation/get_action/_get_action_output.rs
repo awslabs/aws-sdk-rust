@@ -28,9 +28,7 @@ impl GetActionOutput {
 
 /// A builder for [`GetActionOutput`](crate::operation::get_action::GetActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetActionOutputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     _request_id: Option<String>,

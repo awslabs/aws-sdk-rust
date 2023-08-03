@@ -5,7 +5,10 @@ pub(crate) fn de_template_create_message_body_payload(
     ::std::option::Option<crate::types::TemplateCreateMessageBody>,
     crate::operation::create_in_app_template::CreateInAppTemplateError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_template_create_message_body::de_template_create_message_body_payload(body).map_err(crate::operation::create_in_app_template::CreateInAppTemplateError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_template_create_message_body::de_template_create_message_body_payload(body)
+                .map_err(crate::operation::create_in_app_template::CreateInAppTemplateError::unhandled)
+        })
+        .transpose()
 }

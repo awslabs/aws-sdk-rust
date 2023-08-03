@@ -13,9 +13,7 @@ pub fn ser_post_call_analytics_settings(
         object.key("ContentRedactionOutput").string(var_3.as_str());
     }
     if let Some(var_4) = &input.output_encryption_kms_key_id {
-        object
-            .key("OutputEncryptionKMSKeyId")
-            .string(var_4.as_str());
+        object.key("OutputEncryptionKMSKeyId").string(var_4.as_str());
     }
     Ok(())
 }

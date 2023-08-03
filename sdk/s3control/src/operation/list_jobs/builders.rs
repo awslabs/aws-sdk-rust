@@ -10,10 +10,7 @@ impl ListJobsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_jobs::ListJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_jobs::ListJobsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_jobs::ListJobsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_jobs();
         fluent_builder.inner = self;
@@ -53,10 +50,7 @@ impl ListJobsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_jobs::ListJobs,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_jobs::ListJobs, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_jobs::ListJobsError>,
     > {
         let handle = self.handle.clone();
@@ -67,10 +61,7 @@ impl ListJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -112,10 +103,7 @@ impl ListJobsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_jobs::ListJobs,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_jobs::ListJobs, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_jobs::ListJobsError>,
     > {
         self.customize_middleware().await
@@ -150,17 +138,12 @@ impl ListJobsFluentBuilder {
         self
     }
     /// <p>The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</p>
-    pub fn set_job_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobStatus>>,
-    ) -> Self {
+    pub fn set_job_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobStatus>>) -> Self {
         self.inner = self.inner.set_job_statuses(input);
         self
     }
     /// <p>The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</p>
-    pub fn get_job_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobStatus>> {
+    pub fn get_job_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobStatus>> {
         self.inner.get_job_statuses()
     }
     /// <p>A pagination token to request the next page of results. Use the token that Amazon S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code> from the previous <code>List Jobs</code> request.</p>

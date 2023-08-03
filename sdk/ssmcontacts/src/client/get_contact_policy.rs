@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`contact_arn(Option<String>)`](crate::operation::get_contact_policy::GetContactPolicyOutput::contact_arn): <p>The ARN of the contact or escalation plan.</p>
     ///   - [`policy(Option<String>)`](crate::operation::get_contact_policy::GetContactPolicyOutput::policy): <p>Details about the resource policy attached to the contact or escalation plan.</p>
     /// - On failure, responds with [`SdkError<GetContactPolicyError>`](crate::operation::get_contact_policy::GetContactPolicyError)
-    pub fn get_contact_policy(
-        &self,
-    ) -> crate::operation::get_contact_policy::builders::GetContactPolicyFluentBuilder {
-        crate::operation::get_contact_policy::builders::GetContactPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_contact_policy(&self) -> crate::operation::get_contact_policy::builders::GetContactPolicyFluentBuilder {
+        crate::operation::get_contact_policy::builders::GetContactPolicyFluentBuilder::new(self.handle.clone())
     }
 }

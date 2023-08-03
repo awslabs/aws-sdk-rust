@@ -26,7 +26,7 @@ impl DescribeDeviceEc2InstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDeviceEc2InstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesInputBuilder,
+    inner: crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesInputBuilder,
 }
 impl DescribeDeviceEc2InstancesFluentBuilder {
     /// Creates a new `DescribeDeviceEc2Instances`.
@@ -37,7 +37,7 @@ impl DescribeDeviceEc2InstancesFluentBuilder {
         }
     }
     /// Access the DescribeDeviceEc2Instances as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDeviceEc2InstancesFluentBuilder {
             crate::operation::describe_device_ec2_instances::DescribeDeviceEc2Instances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDeviceEc2InstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDeviceEc2InstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDeviceEc2InstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeDeviceEc2InstancesFluentBuilder {
             crate::operation::describe_device_ec2_instances::DescribeDeviceEc2Instances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the managed device.</p>
-    pub fn managed_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn managed_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.managed_device_id(input.into());
         self
     }
     /// <p>The ID of the managed device.</p>
-    pub fn set_managed_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_managed_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_managed_device_id(input);
         self
     }
@@ -150,17 +133,12 @@ impl DescribeDeviceEc2InstancesFluentBuilder {
         self
     }
     /// <p>A list of instance IDs associated with the managed device.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
     /// <p>A list of instance IDs associated with the managed device.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_ids()
     }
 }

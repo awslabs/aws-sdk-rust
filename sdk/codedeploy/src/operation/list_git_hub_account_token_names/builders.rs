@@ -26,7 +26,7 @@ impl ListGitHubAccountTokenNamesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGitHubAccountTokenNamesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesInputBuilder,
+    inner: crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesInputBuilder,
 }
 impl ListGitHubAccountTokenNamesFluentBuilder {
     /// Creates a new `ListGitHubAccountTokenNames`.
@@ -37,7 +37,7 @@ impl ListGitHubAccountTokenNamesFluentBuilder {
         }
     }
     /// Access the ListGitHubAccountTokenNames as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListGitHubAccountTokenNamesFluentBuilder {
             crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNames,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListGitHubAccountTokenNamesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListGitHubAccountTokenNamesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListGitHubAccountTokenNamesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ListGitHubAccountTokenNamesFluentBuilder {
             crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNames,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesError>,
     > {
         self.customize_middleware().await
     }

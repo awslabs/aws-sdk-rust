@@ -10,10 +10,7 @@ impl ProvisionByoipCidrInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::provision_byoip_cidr::ProvisionByoipCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_byoip_cidr::ProvisionByoipCidrError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_byoip_cidr::ProvisionByoipCidrError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.provision_byoip_cidr();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ProvisionByoipCidrFluentBuilder {
         }
     }
     /// Access the ProvisionByoipCidr as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ProvisionByoipCidrFluentBuilder {
             crate::operation::provision_byoip_cidr::ProvisionByoipCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_byoip_cidr::ProvisionByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_byoip_cidr::ProvisionByoipCidrError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ProvisionByoipCidrFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ProvisionByoipCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::provision_byoip_cidr::ProvisionByoipCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_byoip_cidr::ProvisionByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_byoip_cidr::ProvisionByoipCidrError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ProvisionByoipCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::provision_byoip_cidr::ProvisionByoipCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_byoip_cidr::ProvisionByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_byoip_cidr::ProvisionByoipCidrError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl ProvisionByoipCidrFluentBuilder {
             crate::operation::provision_byoip_cidr::ProvisionByoipCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::provision_byoip_cidr::ProvisionByoipCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::provision_byoip_cidr::ProvisionByoipCidrError>,
     > {
         self.customize_middleware().await
     }
@@ -139,25 +123,17 @@ impl ProvisionByoipCidrFluentBuilder {
         self.inner.get_cidr()
     }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
-    pub fn cidr_authorization_context(
-        mut self,
-        input: crate::types::CidrAuthorizationContext,
-    ) -> Self {
+    pub fn cidr_authorization_context(mut self, input: crate::types::CidrAuthorizationContext) -> Self {
         self.inner = self.inner.cidr_authorization_context(input);
         self
     }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
-    pub fn set_cidr_authorization_context(
-        mut self,
-        input: ::std::option::Option<crate::types::CidrAuthorizationContext>,
-    ) -> Self {
+    pub fn set_cidr_authorization_context(mut self, input: ::std::option::Option<crate::types::CidrAuthorizationContext>) -> Self {
         self.inner = self.inner.set_cidr_authorization_context(input);
         self
     }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
-    pub fn get_cidr_authorization_context(
-        &self,
-    ) -> &::std::option::Option<crate::types::CidrAuthorizationContext> {
+    pub fn get_cidr_authorization_context(&self) -> &::std::option::Option<crate::types::CidrAuthorizationContext> {
         self.inner.get_cidr_authorization_context()
     }
     /// <p>(IPv6 only) Indicate whether the address range will be publicly advertised to the internet.</p>
@@ -215,17 +191,12 @@ impl ProvisionByoipCidrFluentBuilder {
         self
     }
     /// <p>The tags to apply to the address pool.</p>
-    pub fn set_pool_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_pool_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_pool_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the address pool.</p>
-    pub fn get_pool_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_pool_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_pool_tag_specifications()
     }
     /// <p>Reserved.</p>

@@ -23,9 +23,7 @@ impl AmazonopensearchserviceRetryOptions {
 
 /// A builder for [`AmazonopensearchserviceRetryOptions`](crate::types::AmazonopensearchserviceRetryOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmazonopensearchserviceRetryOptionsBuilder {
     pub(crate) duration_in_seconds: ::std::option::Option<i32>,
 }

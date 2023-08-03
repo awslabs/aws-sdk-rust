@@ -62,9 +62,7 @@ impl ::std::fmt::Debug for DescribeDocumentVersionsInput {
 }
 impl DescribeDocumentVersionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentVersionsInput`](crate::operation::describe_document_versions::DescribeDocumentVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_document_versions::builders::DescribeDocumentVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_document_versions::builders::DescribeDocumentVersionsInputBuilder {
         crate::operation::describe_document_versions::builders::DescribeDocumentVersionsInputBuilder::default()
     }
 }
@@ -82,18 +80,12 @@ pub struct DescribeDocumentVersionsInputBuilder {
 }
 impl DescribeDocumentVersionsInputBuilder {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -178,16 +170,14 @@ impl DescribeDocumentVersionsInputBuilder {
         crate::operation::describe_document_versions::DescribeDocumentVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_document_versions::DescribeDocumentVersionsInput {
-                authentication_token: self.authentication_token,
-                document_id: self.document_id,
-                marker: self.marker,
-                limit: self.limit,
-                include: self.include,
-                fields: self.fields,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_document_versions::DescribeDocumentVersionsInput {
+            authentication_token: self.authentication_token,
+            document_id: self.document_id,
+            marker: self.marker,
+            limit: self.limit,
+            include: self.include,
+            fields: self.fields,
+        })
     }
 }
 impl ::std::fmt::Debug for DescribeDocumentVersionsInputBuilder {

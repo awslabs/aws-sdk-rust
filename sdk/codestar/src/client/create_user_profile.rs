@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::create_user_profile::CreateUserProfileOutput::created_timestamp): <p>The date the user profile was created, in timestamp format.</p>
     ///   - [`last_modified_timestamp(Option<DateTime>)`](crate::operation::create_user_profile::CreateUserProfileOutput::last_modified_timestamp): <p>The date the user profile was last modified, in timestamp format.</p>
     /// - On failure, responds with [`SdkError<CreateUserProfileError>`](crate::operation::create_user_profile::CreateUserProfileError)
-    pub fn create_user_profile(
-        &self,
-    ) -> crate::operation::create_user_profile::builders::CreateUserProfileFluentBuilder {
-        crate::operation::create_user_profile::builders::CreateUserProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_user_profile(&self) -> crate::operation::create_user_profile::builders::CreateUserProfileFluentBuilder {
+        crate::operation::create_user_profile::builders::CreateUserProfileFluentBuilder::new(self.handle.clone())
     }
 }

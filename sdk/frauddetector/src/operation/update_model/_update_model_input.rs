@@ -36,9 +36,7 @@ impl UpdateModelInput {
 
 /// A builder for [`UpdateModelInput`](crate::operation::update_model::UpdateModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateModelInputBuilder {
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
@@ -65,10 +63,7 @@ impl UpdateModelInputBuilder {
         self
     }
     /// <p>The model type.</p>
-    pub fn set_model_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelTypeEnum>,
-    ) -> Self {
+    pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
         self.model_type = input;
         self
     }
@@ -91,12 +86,7 @@ impl UpdateModelInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateModelInput`](crate::operation::update_model::UpdateModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_model::UpdateModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_model::UpdateModelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_model::UpdateModelInput {
             model_id: self.model_id,
             model_type: self.model_type,

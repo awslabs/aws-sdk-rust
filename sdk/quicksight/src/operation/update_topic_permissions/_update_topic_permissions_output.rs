@@ -49,23 +49,18 @@ impl ::aws_http::request_id::RequestId for UpdateTopicPermissionsOutput {
 }
 impl UpdateTopicPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTopicPermissionsOutput`](crate::operation::update_topic_permissions::UpdateTopicPermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_topic_permissions::builders::UpdateTopicPermissionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_topic_permissions::builders::UpdateTopicPermissionsOutputBuilder {
         crate::operation::update_topic_permissions::builders::UpdateTopicPermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTopicPermissionsOutput`](crate::operation::update_topic_permissions::UpdateTopicPermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTopicPermissionsOutputBuilder {
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -111,17 +106,12 @@ impl UpdateTopicPermissionsOutputBuilder {
         self
     }
     /// <p>A list of resource permissions on the topic.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>A list of resource permissions on the topic.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.permissions
     }
     /// <p>The HTTP status of the request.</p>

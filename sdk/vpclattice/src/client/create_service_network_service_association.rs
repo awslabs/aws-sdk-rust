@@ -15,7 +15,11 @@ impl super::Client {
     ///   - [`custom_domain_name(Option<String>)`](crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput::custom_domain_name): <p>The custom domain name of the service.</p>
     ///   - [`dns_entry(Option<DnsEntry>)`](crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput::dns_entry): <p>The DNS name of the service.</p>
     /// - On failure, responds with [`SdkError<CreateServiceNetworkServiceAssociationError>`](crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError)
-    pub fn create_service_network_service_association(&self) -> crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationFluentBuilder{
-        crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationFluentBuilder::new(self.handle.clone())
+    pub fn create_service_network_service_association(
+        &self,
+    ) -> crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationFluentBuilder {
+        crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

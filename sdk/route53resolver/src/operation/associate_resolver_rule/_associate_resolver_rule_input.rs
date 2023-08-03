@@ -29,18 +29,14 @@ impl AssociateResolverRuleInput {
 }
 impl AssociateResolverRuleInput {
     /// Creates a new builder-style object to manufacture [`AssociateResolverRuleInput`](crate::operation::associate_resolver_rule::AssociateResolverRuleInput).
-    pub fn builder(
-    ) -> crate::operation::associate_resolver_rule::builders::AssociateResolverRuleInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_resolver_rule::builders::AssociateResolverRuleInputBuilder {
         crate::operation::associate_resolver_rule::builders::AssociateResolverRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateResolverRuleInput`](crate::operation::associate_resolver_rule::AssociateResolverRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateResolverRuleInputBuilder {
     pub(crate) resolver_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct AssociateResolverRuleInputBuilder {
 }
 impl AssociateResolverRuleInputBuilder {
     /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
-    pub fn resolver_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
-    pub fn set_resolver_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolver_rule_id = input;
         self
     }
@@ -98,16 +88,12 @@ impl AssociateResolverRuleInputBuilder {
     /// Consumes the builder and constructs a [`AssociateResolverRuleInput`](crate::operation::associate_resolver_rule::AssociateResolverRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_resolver_rule::AssociateResolverRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_resolver_rule::AssociateResolverRuleInput {
-                resolver_rule_id: self.resolver_rule_id,
-                name: self.name,
-                vpc_id: self.vpc_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_resolver_rule::AssociateResolverRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_resolver_rule::AssociateResolverRuleInput {
+            resolver_rule_id: self.resolver_rule_id,
+            name: self.name,
+            vpc_id: self.vpc_id,
+        })
     }
 }

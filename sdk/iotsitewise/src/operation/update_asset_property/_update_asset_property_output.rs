@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateAssetPropertyOutput {
 }
 impl UpdateAssetPropertyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssetPropertyOutput`](crate::operation::update_asset_property::UpdateAssetPropertyOutput).
-    pub fn builder(
-    ) -> crate::operation::update_asset_property::builders::UpdateAssetPropertyOutputBuilder {
-        crate::operation::update_asset_property::builders::UpdateAssetPropertyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_asset_property::builders::UpdateAssetPropertyOutputBuilder {
+        crate::operation::update_asset_property::builders::UpdateAssetPropertyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAssetPropertyOutput`](crate::operation::update_asset_property::UpdateAssetPropertyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAssetPropertyOutputBuilder {
     _request_id: Option<String>,
 }

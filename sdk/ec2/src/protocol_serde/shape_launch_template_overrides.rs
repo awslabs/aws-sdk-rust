@@ -43,9 +43,7 @@ pub fn ser_launch_template_overrides(
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("InstanceRequirements");
     if let Some(var_14) = &input.instance_requirements {
-        crate::protocol_serde::shape_instance_requirements::ser_instance_requirements(
-            scope_13, var_14,
-        )?;
+        crate::protocol_serde::shape_instance_requirements::ser_instance_requirements(scope_13, var_14)?;
     }
     Ok(())
 }

@@ -54,17 +54,12 @@ impl DetectSyntaxOutputBuilder {
         self
     }
     /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
-    pub fn set_syntax_tokens(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>>,
-    ) -> Self {
+    pub fn set_syntax_tokens(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>>) -> Self {
         self.syntax_tokens = input;
         self
     }
     /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
-    pub fn get_syntax_tokens(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>> {
+    pub fn get_syntax_tokens(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>> {
         &self.syntax_tokens
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

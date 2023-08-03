@@ -33,14 +33,10 @@ pub struct OidcIdentityProviderConfig {
     pub groups_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value.</p>
     #[doc(hidden)]
-    pub required_claims: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub required_claims: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The metadata to apply to the provider configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the OIDC identity provider.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ConfigStatus>,
@@ -83,19 +79,11 @@ impl OidcIdentityProviderConfig {
         self.groups_prefix.as_deref()
     }
     /// <p>The key-value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value.</p>
-    pub fn required_claims(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn required_claims(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.required_claims.as_ref()
     }
     /// <p>The metadata to apply to the provider configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The status of the OIDC identity provider.</p>
@@ -112,9 +100,7 @@ impl OidcIdentityProviderConfig {
 
 /// A builder for [`OidcIdentityProviderConfig`](crate::types::OidcIdentityProviderConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OidcIdentityProviderConfigBuilder {
     pub(crate) identity_provider_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider_config_arn: ::std::option::Option<::std::string::String>,
@@ -125,57 +111,37 @@ pub struct OidcIdentityProviderConfigBuilder {
     pub(crate) username_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) groups_claim: ::std::option::Option<::std::string::String>,
     pub(crate) groups_prefix: ::std::option::Option<::std::string::String>,
-    pub(crate) required_claims: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) required_claims: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::ConfigStatus>,
 }
 impl OidcIdentityProviderConfigBuilder {
     /// <p>The name of the configuration.</p>
-    pub fn identity_provider_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_provider_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration.</p>
-    pub fn set_identity_provider_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_provider_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_provider_config_name = input;
         self
     }
     /// <p>The name of the configuration.</p>
-    pub fn get_identity_provider_config_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_identity_provider_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_provider_config_name
     }
     /// <p>The ARN of the configuration.</p>
-    pub fn identity_provider_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_provider_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the configuration.</p>
-    pub fn set_identity_provider_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_provider_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_provider_config_arn = input;
         self
     }
     /// <p>The ARN of the configuration.</p>
-    pub fn get_identity_provider_config_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_identity_provider_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_provider_config_arn
     }
     /// <p>The cluster that the configuration is associated to.</p>
@@ -221,18 +187,12 @@ impl OidcIdentityProviderConfigBuilder {
         &self.client_id
     }
     /// <p>The JSON Web token (JWT) claim that is used as the username.</p>
-    pub fn username_claim(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn username_claim(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username_claim = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON Web token (JWT) claim that is used as the username.</p>
-    pub fn set_username_claim(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_username_claim(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username_claim = input;
         self
     }
@@ -241,18 +201,12 @@ impl OidcIdentityProviderConfigBuilder {
         &self.username_claim
     }
     /// <p>The prefix that is prepended to username claims to prevent clashes with existing names. The prefix can't contain <code>system:</code> </p>
-    pub fn username_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn username_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix that is prepended to username claims to prevent clashes with existing names. The prefix can't contain <code>system:</code> </p>
-    pub fn set_username_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_username_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username_prefix = input;
         self
     }
@@ -275,18 +229,12 @@ impl OidcIdentityProviderConfigBuilder {
         &self.groups_claim
     }
     /// <p>The prefix that is prepended to group claims to prevent clashes with existing names (such as <code>system:</code> groups). For example, the value<code> oidc:</code> creates group names like <code>oidc:engineering</code> and <code>oidc:infra</code>. The prefix can't contain <code>system:</code> </p>
-    pub fn groups_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn groups_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.groups_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix that is prepended to group claims to prevent clashes with existing names (such as <code>system:</code> groups). For example, the value<code> oidc:</code> creates group names like <code>oidc:engineering</code> and <code>oidc:infra</code>. The prefix can't contain <code>system:</code> </p>
-    pub fn set_groups_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_groups_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.groups_prefix = input;
         self
     }
@@ -312,19 +260,13 @@ impl OidcIdentityProviderConfigBuilder {
     /// <p>The key-value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value.</p>
     pub fn set_required_claims(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.required_claims = input;
         self
     }
     /// <p>The key-value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value.</p>
-    pub fn get_required_claims(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_required_claims(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.required_claims
     }
     /// Adds a key-value pair to `tags`.
@@ -332,32 +274,19 @@ impl OidcIdentityProviderConfigBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The metadata to apply to the provider configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The metadata to apply to the provider configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The metadata to apply to the provider configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The status of the OIDC identity provider.</p>

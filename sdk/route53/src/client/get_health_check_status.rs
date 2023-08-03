@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetHealthCheckStatusOutput`](crate::operation::get_health_check_status::GetHealthCheckStatusOutput) with field(s):
     ///   - [`health_check_observations(Option<Vec<HealthCheckObservation>>)`](crate::operation::get_health_check_status::GetHealthCheckStatusOutput::health_check_observations): <p>A list that contains one <code>HealthCheckObservation</code> element for each Amazon Route 53 health checker that is reporting a status about the health check endpoint.</p>
     /// - On failure, responds with [`SdkError<GetHealthCheckStatusError>`](crate::operation::get_health_check_status::GetHealthCheckStatusError)
-    pub fn get_health_check_status(
-        &self,
-    ) -> crate::operation::get_health_check_status::builders::GetHealthCheckStatusFluentBuilder
-    {
-        crate::operation::get_health_check_status::builders::GetHealthCheckStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_health_check_status(&self) -> crate::operation::get_health_check_status::builders::GetHealthCheckStatusFluentBuilder {
+        crate::operation::get_health_check_status::builders::GetHealthCheckStatusFluentBuilder::new(self.handle.clone())
     }
 }

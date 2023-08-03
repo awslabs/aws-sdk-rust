@@ -37,14 +37,11 @@ impl InclusionProtectionFilters {
 
 /// A builder for [`InclusionProtectionFilters`](crate::types::InclusionProtectionFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InclusionProtectionFiltersBuilder {
     pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) protection_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) resource_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResourceType>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResourceType>>,
 }
 impl InclusionProtectionFiltersBuilder {
     /// Appends an item to `resource_arns`.
@@ -52,27 +49,19 @@ impl InclusionProtectionFiltersBuilder {
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
-    pub fn resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
-    pub fn set_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_arns = input;
         self
     }
     /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
-    pub fn get_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_arns
     }
     /// Appends an item to `protection_names`.
@@ -80,27 +69,19 @@ impl InclusionProtectionFiltersBuilder {
     /// To override the contents of this collection use [`set_protection_names`](Self::set_protection_names).
     ///
     /// <p>The name of the protection that you want to retrieve. </p>
-    pub fn protection_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protection_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.protection_names.unwrap_or_default();
         v.push(input.into());
         self.protection_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The name of the protection that you want to retrieve. </p>
-    pub fn set_protection_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_protection_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.protection_names = input;
         self
     }
     /// <p>The name of the protection that you want to retrieve. </p>
-    pub fn get_protection_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_protection_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.protection_names
     }
     /// Appends an item to `resource_types`.
@@ -115,17 +96,12 @@ impl InclusionProtectionFiltersBuilder {
         self
     }
     /// <p>The type of protected resource whose protections you want to retrieve. </p>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResourceType>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedResourceType>>) -> Self {
         self.resource_types = input;
         self
     }
     /// <p>The type of protected resource whose protections you want to retrieve. </p>
-    pub fn get_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedResourceType>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedResourceType>> {
         &self.resource_types
     }
     /// Consumes the builder and constructs a [`InclusionProtectionFilters`](crate::types::InclusionProtectionFilters).

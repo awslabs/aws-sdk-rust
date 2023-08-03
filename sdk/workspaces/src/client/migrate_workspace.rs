@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`source_workspace_id(Option<String>)`](crate::operation::migrate_workspace::MigrateWorkspaceOutput::source_workspace_id): <p>The original identifier of the WorkSpace that is being migrated.</p>
     ///   - [`target_workspace_id(Option<String>)`](crate::operation::migrate_workspace::MigrateWorkspaceOutput::target_workspace_id): <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed, the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
     /// - On failure, responds with [`SdkError<MigrateWorkspaceError>`](crate::operation::migrate_workspace::MigrateWorkspaceError)
-    pub fn migrate_workspace(
-        &self,
-    ) -> crate::operation::migrate_workspace::builders::MigrateWorkspaceFluentBuilder {
-        crate::operation::migrate_workspace::builders::MigrateWorkspaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn migrate_workspace(&self) -> crate::operation::migrate_workspace::builders::MigrateWorkspaceFluentBuilder {
+        crate::operation::migrate_workspace::builders::MigrateWorkspaceFluentBuilder::new(self.handle.clone())
     }
 }

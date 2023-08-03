@@ -26,7 +26,7 @@ impl CreateTransitGatewayRouteInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayRouteFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteInputBuilder,
+    inner: crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteInputBuilder,
 }
 impl CreateTransitGatewayRouteFluentBuilder {
     /// Creates a new `CreateTransitGatewayRoute`.
@@ -37,7 +37,7 @@ impl CreateTransitGatewayRouteFluentBuilder {
         }
     }
     /// Access the CreateTransitGatewayRoute as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateTransitGatewayRouteFluentBuilder {
             crate::operation::create_transit_gateway_route::CreateTransitGatewayRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateTransitGatewayRouteFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateTransitGatewayRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateTransitGatewayRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateTransitGatewayRouteFluentBuilder {
             crate::operation::create_transit_gateway_route::CreateTransitGatewayRoute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_cidr_block(input.into());
         self
     }
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }
@@ -141,47 +124,31 @@ impl CreateTransitGatewayRouteFluentBuilder {
         self.inner.get_destination_cidr_block()
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_route_table_id(input.into());
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn set_transit_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_route_table_id(input);
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn get_transit_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transit_gateway_route_table_id()
     }
     /// <p>The ID of the attachment.</p>
-    pub fn transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_attachment_id(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_attachment_id(input);
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn get_transit_gateway_attachment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transit_gateway_attachment_id()
     }
     /// <p>Indicates whether to drop traffic that matches this route.</p>

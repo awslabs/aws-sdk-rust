@@ -5,8 +5,7 @@
 pub struct ListContactFlowModulesOutput {
     /// <p>Information about the flow module.</p>
     #[doc(hidden)]
-    pub contact_flow_modules_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModuleSummary>>,
+    pub contact_flow_modules_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModuleSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListContactFlowModulesOutput {
 }
 impl ListContactFlowModulesOutput {
     /// <p>Information about the flow module.</p>
-    pub fn contact_flow_modules_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ContactFlowModuleSummary]> {
+    pub fn contact_flow_modules_summary_list(&self) -> ::std::option::Option<&[crate::types::ContactFlowModuleSummary]> {
         self.contact_flow_modules_summary_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListContactFlowModulesOutput {
 }
 impl ListContactFlowModulesOutput {
     /// Creates a new builder-style object to manufacture [`ListContactFlowModulesOutput`](crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesOutputBuilder {
         crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListContactFlowModulesOutput`](crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactFlowModulesOutputBuilder {
-    pub(crate) contact_flow_modules_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModuleSummary>>,
+    pub(crate) contact_flow_modules_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModuleSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl ListContactFlowModulesOutputBuilder {
     /// To override the contents of this collection use [`set_contact_flow_modules_summary_list`](Self::set_contact_flow_modules_summary_list).
     ///
     /// <p>Information about the flow module.</p>
-    pub fn contact_flow_modules_summary_list(
-        mut self,
-        input: crate::types::ContactFlowModuleSummary,
-    ) -> Self {
+    pub fn contact_flow_modules_summary_list(mut self, input: crate::types::ContactFlowModuleSummary) -> Self {
         let mut v = self.contact_flow_modules_summary_list.unwrap_or_default();
         v.push(input);
         self.contact_flow_modules_summary_list = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl ListContactFlowModulesOutputBuilder {
         self
     }
     /// <p>Information about the flow module.</p>
-    pub fn get_contact_flow_modules_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModuleSummary>> {
+    pub fn get_contact_flow_modules_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModuleSummary>> {
         &self.contact_flow_modules_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -102,9 +89,7 @@ impl ListContactFlowModulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListContactFlowModulesOutput`](crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput {
+    pub fn build(self) -> crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput {
         crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput {
             contact_flow_modules_summary_list: self.contact_flow_modules_summary_list,
             next_token: self.next_token,

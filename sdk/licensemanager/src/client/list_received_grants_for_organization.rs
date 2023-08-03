@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`grants(Option<Vec<Grant>>)`](crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationOutput::grants): <p>Lists the grants the organization has received.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListReceivedGrantsForOrganizationError>`](crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationError)
-    pub fn list_received_grants_for_organization(&self) -> crate::operation::list_received_grants_for_organization::builders::ListReceivedGrantsForOrganizationFluentBuilder{
+    pub fn list_received_grants_for_organization(
+        &self,
+    ) -> crate::operation::list_received_grants_for_organization::builders::ListReceivedGrantsForOrganizationFluentBuilder {
         crate::operation::list_received_grants_for_organization::builders::ListReceivedGrantsForOrganizationFluentBuilder::new(self.handle.clone())
     }
 }

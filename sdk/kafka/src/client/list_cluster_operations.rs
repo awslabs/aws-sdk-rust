@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`cluster_operation_info_list(Option<Vec<ClusterOperationInfo>>)`](crate::operation::list_cluster_operations::ListClusterOperationsOutput::cluster_operation_info_list): <p>An array of cluster operation information objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_cluster_operations::ListClusterOperationsOutput::next_token): <p>If the response of ListClusterOperations is truncated, it returns a NextToken in the response. This Nexttoken should be sent in the subsequent request to ListClusterOperations.</p>
     /// - On failure, responds with [`SdkError<ListClusterOperationsError>`](crate::operation::list_cluster_operations::ListClusterOperationsError)
-    pub fn list_cluster_operations(
-        &self,
-    ) -> crate::operation::list_cluster_operations::builders::ListClusterOperationsFluentBuilder
-    {
-        crate::operation::list_cluster_operations::builders::ListClusterOperationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_cluster_operations(&self) -> crate::operation::list_cluster_operations::builders::ListClusterOperationsFluentBuilder {
+        crate::operation::list_cluster_operations::builders::ListClusterOperationsFluentBuilder::new(self.handle.clone())
     }
 }

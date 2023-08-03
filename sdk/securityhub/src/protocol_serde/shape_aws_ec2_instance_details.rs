@@ -48,7 +48,10 @@ pub fn ser_aws_ec2_instance_details(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_instance_network_interfaces_details::ser_aws_ec2_instance_network_interfaces_details(&mut object_17, item_16)?;
+                crate::protocol_serde::shape_aws_ec2_instance_network_interfaces_details::ser_aws_ec2_instance_network_interfaces_details(
+                    &mut object_17,
+                    item_16,
+                )?;
                 object_17.finish();
             }
         }
@@ -74,17 +77,9 @@ pub fn ser_aws_ec2_instance_details(
 
 pub(crate) fn de_aws_ec2_instance_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsEc2InstanceDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsEc2InstanceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -94,124 +89,100 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
-                        "Type" => {
-                            builder = builder.set_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "ImageId" => {
-                            builder = builder.set_image_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "IpV4Addresses" => {
-                            builder = builder.set_ip_v4_addresses(
-                                crate::protocol_serde::shape_string_list::de_string_list(tokens)?,
-                            );
-                        }
-                        "IpV6Addresses" => {
-                            builder = builder.set_ip_v6_addresses(
-                                crate::protocol_serde::shape_string_list::de_string_list(tokens)?,
-                            );
-                        }
-                        "KeyName" => {
-                            builder = builder.set_key_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "IamInstanceProfileArn" => {
-                            builder = builder.set_iam_instance_profile_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "VpcId" => {
-                            builder = builder.set_vpc_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "SubnetId" => {
-                            builder = builder.set_subnet_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "LaunchedAt" => {
-                            builder = builder.set_launched_at(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "NetworkInterfaces" => {
-                            builder = builder.set_network_interfaces(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Type" => {
+                                builder = builder.set_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ImageId" => {
+                                builder = builder.set_image_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "IpV4Addresses" => {
+                                builder = builder.set_ip_v4_addresses(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            }
+                            "IpV6Addresses" => {
+                                builder = builder.set_ip_v6_addresses(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            }
+                            "KeyName" => {
+                                builder = builder.set_key_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "IamInstanceProfileArn" => {
+                                builder = builder.set_iam_instance_profile_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "VpcId" => {
+                                builder = builder.set_vpc_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "SubnetId" => {
+                                builder = builder.set_subnet_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "LaunchedAt" => {
+                                builder = builder.set_launched_at(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "NetworkInterfaces" => {
+                                builder = builder.set_network_interfaces(
                                     crate::protocol_serde::shape_aws_ec2_instance_network_interfaces_list::de_aws_ec2_instance_network_interfaces_list(tokens)?
                                 );
-                        }
-                        "VirtualizationType" => {
-                            builder = builder.set_virtualization_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                            );
-                        }
-                        "MetadataOptions" => {
-                            builder = builder.set_metadata_options(
-                                    crate::protocol_serde::shape_aws_ec2_instance_metadata_options::de_aws_ec2_instance_metadata_options(tokens)?
+                            }
+                            "VirtualizationType" => {
+                                builder = builder.set_virtualization_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
-                        }
-                        "Monitoring" => {
-                            builder = builder.set_monitoring(
-                                    crate::protocol_serde::shape_aws_ec2_instance_monitoring_details::de_aws_ec2_instance_monitoring_details(tokens)?
+                            }
+                            "MetadataOptions" => {
+                                builder = builder.set_metadata_options(
+                                    crate::protocol_serde::shape_aws_ec2_instance_metadata_options::de_aws_ec2_instance_metadata_options(tokens)?,
                                 );
+                            }
+                            "Monitoring" => {
+                                builder = builder.set_monitoring(
+                                    crate::protocol_serde::shape_aws_ec2_instance_monitoring_details::de_aws_ec2_instance_monitoring_details(tokens)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

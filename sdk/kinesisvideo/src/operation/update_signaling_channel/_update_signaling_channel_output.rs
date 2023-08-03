@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateSignalingChannelOutput {
 }
 impl UpdateSignalingChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSignalingChannelOutput`](crate::operation::update_signaling_channel::UpdateSignalingChannelOutput).
-    pub fn builder(
-    ) -> crate::operation::update_signaling_channel::builders::UpdateSignalingChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_signaling_channel::builders::UpdateSignalingChannelOutputBuilder {
         crate::operation::update_signaling_channel::builders::UpdateSignalingChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSignalingChannelOutput`](crate::operation::update_signaling_channel::UpdateSignalingChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSignalingChannelOutputBuilder {
     _request_id: Option<String>,
 }

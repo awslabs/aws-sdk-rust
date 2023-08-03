@@ -10,10 +10,7 @@ impl CreateSmbFileShareInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_smb_file_share::CreateSmbFileShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_smb_file_share::CreateSMBFileShareError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_smb_file_share::CreateSMBFileShareError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_smb_file_share();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateSMBFileShareFluentBuilder {
         }
     }
     /// Access the CreateSMBFileShare as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_smb_file_share::builders::CreateSmbFileShareInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_smb_file_share::builders::CreateSmbFileShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateSMBFileShareFluentBuilder {
             crate::operation::create_smb_file_share::CreateSMBFileShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_smb_file_share::CreateSMBFileShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_smb_file_share::CreateSMBFileShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateSMBFileShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateSMBFileShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_smb_file_share::CreateSmbFileShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_smb_file_share::CreateSMBFileShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_smb_file_share::CreateSMBFileShareError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateSMBFileShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_smb_file_share::CreateSmbFileShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_smb_file_share::CreateSMBFileShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_smb_file_share::CreateSMBFileShareError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl CreateSMBFileShareFluentBuilder {
             crate::operation::create_smb_file_share::CreateSMBFileShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_smb_file_share::CreateSMBFileShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_smb_file_share::CreateSMBFileShareError>,
     > {
         self.customize_middleware().await
     }
@@ -241,19 +225,13 @@ impl CreateSMBFileShareFluentBuilder {
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-    pub fn default_storage_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_storage_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_storage_class(input.into());
         self
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-    pub fn set_default_storage_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_storage_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_storage_class(input);
         self
     }
@@ -374,29 +352,21 @@ impl CreateSMBFileShareFluentBuilder {
     /// <p>A list of users or groups in the Active Directory that will be granted administrator privileges on the file share. These users can do all file operations as the super-user. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>.</p> <important>
     /// <p>Use this option very carefully, because any user in this list can do anything they like on the file share, regardless of file permissions.</p>
     /// </important>
-    pub fn admin_user_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_user_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_user_list(input.into());
         self
     }
     /// <p>A list of users or groups in the Active Directory that will be granted administrator privileges on the file share. These users can do all file operations as the super-user. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>.</p> <important>
     /// <p>Use this option very carefully, because any user in this list can do anything they like on the file share, regardless of file permissions.</p>
     /// </important>
-    pub fn set_admin_user_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_admin_user_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_admin_user_list(input);
         self
     }
     /// <p>A list of users or groups in the Active Directory that will be granted administrator privileges on the file share. These users can do all file operations as the super-user. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>.</p> <important>
     /// <p>Use this option very carefully, because any user in this list can do anything they like on the file share, regardless of file permissions.</p>
     /// </important>
-    pub fn get_admin_user_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_admin_user_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_admin_user_list()
     }
     /// Appends an item to `ValidUserList`.
@@ -404,25 +374,17 @@ impl CreateSMBFileShareFluentBuilder {
     /// To override the contents of this collection use [`set_valid_user_list`](Self::set_valid_user_list).
     ///
     /// <p>A list of users or groups in the Active Directory that are allowed to access the file <code></code> share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn valid_user_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn valid_user_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.valid_user_list(input.into());
         self
     }
     /// <p>A list of users or groups in the Active Directory that are allowed to access the file <code></code> share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn set_valid_user_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_valid_user_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_valid_user_list(input);
         self
     }
     /// <p>A list of users or groups in the Active Directory that are allowed to access the file <code></code> share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn get_valid_user_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_valid_user_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_valid_user_list()
     }
     /// Appends an item to `InvalidUserList`.
@@ -430,40 +392,26 @@ impl CreateSMBFileShareFluentBuilder {
     /// To override the contents of this collection use [`set_invalid_user_list`](Self::set_invalid_user_list).
     ///
     /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn invalid_user_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invalid_user_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.invalid_user_list(input.into());
         self
     }
     /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn set_invalid_user_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_invalid_user_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_invalid_user_list(input);
         self
     }
     /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn get_invalid_user_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_invalid_user_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_invalid_user_list()
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    pub fn audit_destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audit_destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.audit_destination_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    pub fn set_audit_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audit_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_audit_destination_arn(input);
         self
     }
@@ -473,19 +421,13 @@ impl CreateSMBFileShareFluentBuilder {
     }
     /// <p>The authentication method that users use to access the file share. The default is <code>ActiveDirectory</code>.</p>
     /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
-    pub fn authentication(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication(input.into());
         self
     }
     /// <p>The authentication method that users use to access the file share. The default is <code>ActiveDirectory</code>.</p>
     /// <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
-    pub fn set_authentication(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication(input);
         self
     }
@@ -500,10 +442,7 @@ impl CreateSMBFileShareFluentBuilder {
         self
     }
     /// <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
-    pub fn set_case_sensitivity(
-        mut self,
-        input: ::std::option::Option<crate::types::CaseSensitivity>,
-    ) -> Self {
+    pub fn set_case_sensitivity(mut self, input: ::std::option::Option<crate::types::CaseSensitivity>) -> Self {
         self.inner = self.inner.set_case_sensitivity(input);
         self
     }
@@ -525,10 +464,7 @@ impl CreateSMBFileShareFluentBuilder {
     /// <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -541,20 +477,14 @@ impl CreateSMBFileShareFluentBuilder {
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
-    pub fn file_share_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_share_name(input.into());
         self
     }
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
-    pub fn set_file_share_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_share_name(input);
         self
     }
@@ -570,10 +500,7 @@ impl CreateSMBFileShareFluentBuilder {
         self
     }
     /// <p>Specifies refresh cache information for the file share.</p>
-    pub fn set_cache_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheAttributes>,
-    ) -> Self {
+    pub fn set_cache_attributes(mut self, input: ::std::option::Option<crate::types::CacheAttributes>) -> Self {
         self.inner = self.inner.set_cache_attributes(input);
         self
     }
@@ -588,10 +515,7 @@ impl CreateSMBFileShareFluentBuilder {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
-    pub fn notification_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_policy(input.into());
         self
     }
@@ -602,10 +526,7 @@ impl CreateSMBFileShareFluentBuilder {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
-    pub fn set_notification_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notification_policy(input);
         self
     }
@@ -622,20 +543,14 @@ impl CreateSMBFileShareFluentBuilder {
     /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    pub fn vpc_endpoint_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_endpoint_dns_name(input.into());
         self
     }
     /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    pub fn set_vpc_endpoint_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_endpoint_dns_name(input);
         self
     }
@@ -648,20 +563,14 @@ impl CreateSMBFileShareFluentBuilder {
     /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    pub fn bucket_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bucket_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket_region(input.into());
         self
     }
     /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>
     /// <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    pub fn set_bucket_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bucket_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket_region(input);
         self
     }

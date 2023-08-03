@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`address_book_arn(Option<String>)`](crate::operation::create_address_book::CreateAddressBookOutput::address_book_arn): <p>The ARN of the newly created address book.</p>
     /// - On failure, responds with [`SdkError<CreateAddressBookError>`](crate::operation::create_address_book::CreateAddressBookError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn create_address_book(
-        &self,
-    ) -> crate::operation::create_address_book::builders::CreateAddressBookFluentBuilder {
-        crate::operation::create_address_book::builders::CreateAddressBookFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_address_book(&self) -> crate::operation::create_address_book::builders::CreateAddressBookFluentBuilder {
+        crate::operation::create_address_book::builders::CreateAddressBookFluentBuilder::new(self.handle.clone())
     }
 }

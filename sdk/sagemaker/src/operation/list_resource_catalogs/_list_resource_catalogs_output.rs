@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListResourceCatalogsOutput {
 }
 impl ListResourceCatalogsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceCatalogsOutput`](crate::operation::list_resource_catalogs::ListResourceCatalogsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_catalogs::builders::ListResourceCatalogsOutputBuilder {
+    pub fn builder() -> crate::operation::list_resource_catalogs::builders::ListResourceCatalogsOutputBuilder {
         crate::operation::list_resource_catalogs::builders::ListResourceCatalogsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceCatalogsOutput`](crate::operation::list_resource_catalogs::ListResourceCatalogsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceCatalogsOutputBuilder {
-    pub(crate) resource_catalogs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceCatalog>>,
+    pub(crate) resource_catalogs: ::std::option::Option<::std::vec::Vec<crate::types::ResourceCatalog>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListResourceCatalogsOutputBuilder {
         self
     }
     /// <p> A list of the requested <code>ResourceCatalog</code>s. </p>
-    pub fn set_resource_catalogs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceCatalog>>,
-    ) -> Self {
+    pub fn set_resource_catalogs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceCatalog>>) -> Self {
         self.resource_catalogs = input;
         self
     }
     /// <p> A list of the requested <code>ResourceCatalog</code>s. </p>
-    pub fn get_resource_catalogs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceCatalog>> {
+    pub fn get_resource_catalogs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceCatalog>> {
         &self.resource_catalogs
     }
     /// <p> A token to resume pagination of <code>ListResourceCatalogs</code> results. </p>

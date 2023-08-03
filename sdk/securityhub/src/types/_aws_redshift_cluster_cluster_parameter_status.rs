@@ -39,9 +39,7 @@ impl AwsRedshiftClusterClusterParameterStatus {
 
 /// A builder for [`AwsRedshiftClusterClusterParameterStatus`](crate::types::AwsRedshiftClusterClusterParameterStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterClusterParameterStatusBuilder {
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_apply_status: ::std::option::Option<::std::string::String>,
@@ -49,18 +47,12 @@ pub struct AwsRedshiftClusterClusterParameterStatusBuilder {
 }
 impl AwsRedshiftClusterClusterParameterStatusBuilder {
     /// <p>The name of the parameter.</p>
-    pub fn parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter.</p>
-    pub fn set_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_name = input;
         self
     }
@@ -70,19 +62,13 @@ impl AwsRedshiftClusterClusterParameterStatusBuilder {
     }
     /// <p>The status of the parameter. Indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when it was applied.</p>
     /// <p>Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code> | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code> | <code>unknown-error</code> </p>
-    pub fn parameter_apply_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_apply_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_apply_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the parameter. Indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when it was applied.</p>
     /// <p>Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code> | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code> | <code>unknown-error</code> </p>
-    pub fn set_parameter_apply_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_apply_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_apply_status = input;
         self
     }
@@ -92,25 +78,17 @@ impl AwsRedshiftClusterClusterParameterStatusBuilder {
         &self.parameter_apply_status
     }
     /// <p>The error that prevented the parameter from being applied to the database.</p>
-    pub fn parameter_apply_error_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_apply_error_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_apply_error_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error that prevented the parameter from being applied to the database.</p>
-    pub fn set_parameter_apply_error_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_apply_error_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_apply_error_description = input;
         self
     }
     /// <p>The error that prevented the parameter from being applied to the database.</p>
-    pub fn get_parameter_apply_error_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_parameter_apply_error_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_apply_error_description
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterParameterStatus`](crate::types::AwsRedshiftClusterClusterParameterStatus).

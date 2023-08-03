@@ -26,7 +26,7 @@ impl ImportHypervisorConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportHypervisorConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationInputBuilder,
+    inner: crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationInputBuilder,
 }
 impl ImportHypervisorConfigurationFluentBuilder {
     /// Creates a new `ImportHypervisorConfiguration`.
@@ -37,7 +37,7 @@ impl ImportHypervisorConfigurationFluentBuilder {
         }
     }
     /// Access the ImportHypervisorConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ImportHypervisorConfigurationFluentBuilder {
             crate::operation::import_hypervisor_configuration::ImportHypervisorConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ImportHypervisorConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ImportHypervisorConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ImportHypervisorConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ImportHypervisorConfigurationFluentBuilder {
             crate::operation::import_hypervisor_configuration::ImportHypervisorConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -200,10 +189,7 @@ impl ImportHypervisorConfigurationFluentBuilder {
         self
     }
     /// <p>The tags of the hypervisor configuration to import.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

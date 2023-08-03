@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::update_analysis::UpdateAnalysisOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::update_analysis::UpdateAnalysisOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<UpdateAnalysisError>`](crate::operation::update_analysis::UpdateAnalysisError)
-    pub fn update_analysis(
-        &self,
-    ) -> crate::operation::update_analysis::builders::UpdateAnalysisFluentBuilder {
-        crate::operation::update_analysis::builders::UpdateAnalysisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_analysis(&self) -> crate::operation::update_analysis::builders::UpdateAnalysisFluentBuilder {
+        crate::operation::update_analysis::builders::UpdateAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

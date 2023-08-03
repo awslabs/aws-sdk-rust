@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteOrganizationConformancePackOutp
 }
 impl DeleteOrganizationConformancePackOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOrganizationConformancePackOutput`](crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackOutput).
-    pub fn builder() -> crate::operation::delete_organization_conformance_pack::builders::DeleteOrganizationConformancePackOutputBuilder{
+    pub fn builder() -> crate::operation::delete_organization_conformance_pack::builders::DeleteOrganizationConformancePackOutputBuilder {
         crate::operation::delete_organization_conformance_pack::builders::DeleteOrganizationConformancePackOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteOrganizationConformancePackOutput`](crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteOrganizationConformancePackOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteOrganizationConformancePackOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteOrganizationConformancePackOutput`](crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackOutput).
-    pub fn build(self) -> crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackOutput{
+    pub fn build(self) -> crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackOutput {
         crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackOutput {
             _request_id: self._request_id,
         }

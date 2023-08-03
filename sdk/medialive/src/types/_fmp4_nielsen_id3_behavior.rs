@@ -38,13 +38,7 @@
 /// Fmp4 Nielsen Id3 Behavior
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Fmp4NielsenId3Behavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Fmp4NielsenId3Behavior {
         match s {
             "NO_PASSTHROUGH" => Fmp4NielsenId3Behavior::NoPassthrough,
             "PASSTHROUGH" => Fmp4NielsenId3Behavior::Passthrough,
-            other => Fmp4NielsenId3Behavior::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Fmp4NielsenId3Behavior::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

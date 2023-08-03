@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for AdminSetUserSettingsOutput {
 }
 impl AdminSetUserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`AdminSetUserSettingsOutput`](crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::admin_set_user_settings::builders::AdminSetUserSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::admin_set_user_settings::builders::AdminSetUserSettingsOutputBuilder {
         crate::operation::admin_set_user_settings::builders::AdminSetUserSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AdminSetUserSettingsOutput`](crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdminSetUserSettingsOutputBuilder {
     _request_id: Option<String>,
 }

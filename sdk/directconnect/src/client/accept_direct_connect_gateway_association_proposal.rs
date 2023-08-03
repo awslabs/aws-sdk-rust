@@ -10,7 +10,10 @@ impl super::Client {
     /// - On success, responds with [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalOutput) with field(s):
     ///   - [`direct_connect_gateway_association(Option<DirectConnectGatewayAssociation>)`](crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalOutput::direct_connect_gateway_association): <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
     /// - On failure, responds with [`SdkError<AcceptDirectConnectGatewayAssociationProposalError>`](crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalError)
-    pub fn accept_direct_connect_gateway_association_proposal(&self) -> crate::operation::accept_direct_connect_gateway_association_proposal::builders::AcceptDirectConnectGatewayAssociationProposalFluentBuilder{
+    pub fn accept_direct_connect_gateway_association_proposal(
+        &self,
+    ) -> crate::operation::accept_direct_connect_gateway_association_proposal::builders::AcceptDirectConnectGatewayAssociationProposalFluentBuilder
+    {
         crate::operation::accept_direct_connect_gateway_association_proposal::builders::AcceptDirectConnectGatewayAssociationProposalFluentBuilder::new(self.handle.clone())
     }
 }

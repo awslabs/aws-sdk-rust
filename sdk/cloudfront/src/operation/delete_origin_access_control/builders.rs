@@ -27,7 +27,7 @@ impl DeleteOriginAccessControlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteOriginAccessControlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlInputBuilder,
+    inner: crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlInputBuilder,
 }
 impl DeleteOriginAccessControlFluentBuilder {
     /// Creates a new `DeleteOriginAccessControl`.
@@ -38,7 +38,7 @@ impl DeleteOriginAccessControlFluentBuilder {
         }
     }
     /// Access the DeleteOriginAccessControl as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DeleteOriginAccessControlFluentBuilder {
             crate::operation::delete_origin_access_control::DeleteOriginAccessControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_access_control::DeleteOriginAccessControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_access_control::DeleteOriginAccessControlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DeleteOriginAccessControlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DeleteOriginAccessControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_origin_access_control::DeleteOriginAccessControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_access_control::DeleteOriginAccessControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_access_control::DeleteOriginAccessControlError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DeleteOriginAccessControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_origin_access_control::DeleteOriginAccessControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_access_control::DeleteOriginAccessControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_access_control::DeleteOriginAccessControlError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DeleteOriginAccessControlFluentBuilder {
             crate::operation::delete_origin_access_control::DeleteOriginAccessControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_access_control::DeleteOriginAccessControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_access_control::DeleteOriginAccessControlError>,
     > {
         self.customize_middleware().await
     }

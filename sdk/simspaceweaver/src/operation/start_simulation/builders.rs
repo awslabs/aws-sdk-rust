@@ -10,10 +10,7 @@ impl StartSimulationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_simulation::StartSimulationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_simulation::StartSimulationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_simulation::StartSimulationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_simulation();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartSimulationFluentBuilder {
         }
     }
     /// Access the StartSimulation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_simulation::builders::StartSimulationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_simulation::builders::StartSimulationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartSimulationFluentBuilder {
             crate::operation::start_simulation::StartSimulation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_simulation::StartSimulationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_simulation::StartSimulationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartSimulationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartSimulationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_simulation::StartSimulationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_simulation::StartSimulationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_simulation::StartSimulationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartSimulationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_simulation::StartSimulationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_simulation::StartSimulationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_simulation::StartSimulationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl StartSimulationFluentBuilder {
             crate::operation::start_simulation::StartSimulation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_simulation::StartSimulationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_simulation::StartSimulationError>,
     > {
         self.customize_middleware().await
     }
@@ -188,10 +172,7 @@ impl StartSimulationFluentBuilder {
     /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
     /// <p>Provide a <code>SchemaS3Location</code> to start your simulation from a schema.</p>
     /// <p>If you provide a <code>SchemaS3Location</code> then you can't provide a <code>SnapshotS3Location</code>.</p>
-    pub fn set_schema_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_schema_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.inner = self.inner.set_schema_s3_location(input);
         self
     }
@@ -202,18 +183,12 @@ impl StartSimulationFluentBuilder {
         self.inner.get_schema_s3_location()
     }
     /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
-    pub fn maximum_duration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maximum_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.maximum_duration(input.into());
         self
     }
     /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
-    pub fn set_maximum_duration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maximum_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_maximum_duration(input);
         self
     }
@@ -226,30 +201,17 @@ impl StartSimulationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags for the simulation. For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of tags for the simulation. For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of tags for the simulation. For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
@@ -264,10 +226,7 @@ impl StartSimulationFluentBuilder {
     /// <p>Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
     /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
     /// <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.</p>
-    pub fn set_snapshot_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_snapshot_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.inner = self.inner.set_snapshot_s3_location(input);
         self
     }

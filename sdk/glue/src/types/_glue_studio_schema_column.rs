@@ -30,9 +30,7 @@ impl GlueStudioSchemaColumn {
 
 /// A builder for [`GlueStudioSchemaColumn`](crate::types::GlueStudioSchemaColumn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GlueStudioSchemaColumnBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,

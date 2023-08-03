@@ -26,18 +26,14 @@ impl DeleteSigningCertificateInput {
 }
 impl DeleteSigningCertificateInput {
     /// Creates a new builder-style object to manufacture [`DeleteSigningCertificateInput`](crate::operation::delete_signing_certificate::DeleteSigningCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_signing_certificate::builders::DeleteSigningCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_signing_certificate::builders::DeleteSigningCertificateInputBuilder {
         crate::operation::delete_signing_certificate::builders::DeleteSigningCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSigningCertificateInput`](crate::operation::delete_signing_certificate::DeleteSigningCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSigningCertificateInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
@@ -62,19 +58,13 @@ impl DeleteSigningCertificateInputBuilder {
     }
     /// <p>The ID of the signing certificate to delete.</p>
     /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of characters that can be upper- or lower-cased letters or digits.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the signing certificate to delete.</p>
     /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of characters that can be upper- or lower-cased letters or digits.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -90,11 +80,9 @@ impl DeleteSigningCertificateInputBuilder {
         crate::operation::delete_signing_certificate::DeleteSigningCertificateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_signing_certificate::DeleteSigningCertificateInput {
-                user_name: self.user_name,
-                certificate_id: self.certificate_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_signing_certificate::DeleteSigningCertificateInput {
+            user_name: self.user_name,
+            certificate_id: self.certificate_id,
+        })
     }
 }

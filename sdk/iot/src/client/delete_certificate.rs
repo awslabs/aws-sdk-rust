@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`force_delete(bool)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::force_delete) / [`set_force_delete(Option<bool>)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::set_force_delete): <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
     /// - On success, responds with [`DeleteCertificateOutput`](crate::operation::delete_certificate::DeleteCertificateOutput)
     /// - On failure, responds with [`SdkError<DeleteCertificateError>`](crate::operation::delete_certificate::DeleteCertificateError)
-    pub fn delete_certificate(
-        &self,
-    ) -> crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder {
-        crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_certificate(&self) -> crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder {
+        crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::new(self.handle.clone())
     }
 }

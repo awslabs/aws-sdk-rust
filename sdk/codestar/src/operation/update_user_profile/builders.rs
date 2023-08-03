@@ -10,10 +10,7 @@ impl UpdateUserProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_user_profile::UpdateUserProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_profile::UpdateUserProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_profile::UpdateUserProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_user_profile();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateUserProfileFluentBuilder {
         }
     }
     /// Access the UpdateUserProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_user_profile::builders::UpdateUserProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_user_profile::builders::UpdateUserProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateUserProfileFluentBuilder {
             crate::operation::update_user_profile::UpdateUserProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_profile::UpdateUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_profile::UpdateUserProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateUserProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateUserProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_profile::UpdateUserProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_profile::UpdateUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_profile::UpdateUserProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateUserProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_profile::UpdateUserProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_profile::UpdateUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_profile::UpdateUserProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateUserProfileFluentBuilder {
             crate::operation::update_user_profile::UpdateUserProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user_profile::UpdateUserProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user_profile::UpdateUserProfileError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +135,12 @@ impl UpdateUserProfileFluentBuilder {
         self.inner.get_display_name()
     }
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }
@@ -171,18 +149,12 @@ impl UpdateUserProfileFluentBuilder {
         self.inner.get_email_address()
     }
     /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
-    pub fn ssh_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ssh_public_key(input.into());
         self
     }
     /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
-    pub fn set_ssh_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ssh_public_key(input);
         self
     }

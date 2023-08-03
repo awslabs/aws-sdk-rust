@@ -23,36 +23,26 @@ impl DeleteCustomerGatewayInput {
 }
 impl DeleteCustomerGatewayInput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomerGatewayInput`](crate::operation::delete_customer_gateway::DeleteCustomerGatewayInput).
-    pub fn builder(
-    ) -> crate::operation::delete_customer_gateway::builders::DeleteCustomerGatewayInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_customer_gateway::builders::DeleteCustomerGatewayInputBuilder {
         crate::operation::delete_customer_gateway::builders::DeleteCustomerGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomerGatewayInput`](crate::operation::delete_customer_gateway::DeleteCustomerGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomerGatewayInputBuilder {
     pub(crate) customer_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteCustomerGatewayInputBuilder {
     /// <p>The ID of the customer gateway.</p>
-    pub fn customer_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the customer gateway.</p>
-    pub fn set_customer_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_gateway_id = input;
         self
     }
@@ -77,15 +67,11 @@ impl DeleteCustomerGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomerGatewayInput`](crate::operation::delete_customer_gateway::DeleteCustomerGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_customer_gateway::DeleteCustomerGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_customer_gateway::DeleteCustomerGatewayInput {
-                customer_gateway_id: self.customer_gateway_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_customer_gateway::DeleteCustomerGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_customer_gateway::DeleteCustomerGatewayInput {
+            customer_gateway_id: self.customer_gateway_id,
+            dry_run: self.dry_run,
+        })
     }
 }

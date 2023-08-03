@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`recovery_group_name(Option<String>)`](crate::operation::update_recovery_group::UpdateRecoveryGroupOutput::recovery_group_name): <p>The name of the recovery group.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_recovery_group::UpdateRecoveryGroupOutput::tags): <p>The tags associated with the recovery group.</p>
     /// - On failure, responds with [`SdkError<UpdateRecoveryGroupError>`](crate::operation::update_recovery_group::UpdateRecoveryGroupError)
-    pub fn update_recovery_group(
-        &self,
-    ) -> crate::operation::update_recovery_group::builders::UpdateRecoveryGroupFluentBuilder {
-        crate::operation::update_recovery_group::builders::UpdateRecoveryGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_recovery_group(&self) -> crate::operation::update_recovery_group::builders::UpdateRecoveryGroupFluentBuilder {
+        crate::operation::update_recovery_group::builders::UpdateRecoveryGroupFluentBuilder::new(self.handle.clone())
     }
 }

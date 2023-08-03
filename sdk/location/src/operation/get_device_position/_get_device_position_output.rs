@@ -20,9 +20,7 @@ pub struct GetDevicePositionOutput {
     pub accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,
     /// <p>The properties associated with the position.</p>
     #[doc(hidden)]
-    pub position_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub position_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetDevicePositionOutput {
@@ -47,11 +45,7 @@ impl GetDevicePositionOutput {
         self.accuracy.as_ref()
     }
     /// <p>The properties associated with the position.</p>
-    pub fn position_properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn position_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.position_properties.as_ref()
     }
 }
@@ -75,8 +69,7 @@ impl ::aws_http::request_id::RequestId for GetDevicePositionOutput {
 }
 impl GetDevicePositionOutput {
     /// Creates a new builder-style object to manufacture [`GetDevicePositionOutput`](crate::operation::get_device_position::GetDevicePositionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_device_position::builders::GetDevicePositionOutputBuilder {
+    pub fn builder() -> crate::operation::get_device_position::builders::GetDevicePositionOutputBuilder {
         crate::operation::get_device_position::builders::GetDevicePositionOutputBuilder::default()
     }
 }
@@ -90,9 +83,7 @@ pub struct GetDevicePositionOutputBuilder {
     pub(crate) received_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) position: ::std::option::Option<::std::vec::Vec<f64>>,
     pub(crate) accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,
-    pub(crate) position_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) position_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetDevicePositionOutputBuilder {
@@ -116,10 +107,7 @@ impl GetDevicePositionOutputBuilder {
         self
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_sample_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_sample_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.sample_time = input;
         self
     }
@@ -133,10 +121,7 @@ impl GetDevicePositionOutputBuilder {
         self
     }
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_received_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_received_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.received_time = input;
         self
     }
@@ -170,10 +155,7 @@ impl GetDevicePositionOutputBuilder {
         self
     }
     /// <p>The accuracy of the device position.</p>
-    pub fn set_accuracy(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionalAccuracy>,
-    ) -> Self {
+    pub fn set_accuracy(mut self, input: ::std::option::Option<crate::types::PositionalAccuracy>) -> Self {
         self.accuracy = input;
         self
     }
@@ -199,19 +181,13 @@ impl GetDevicePositionOutputBuilder {
     /// <p>The properties associated with the position.</p>
     pub fn set_position_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.position_properties = input;
         self
     }
     /// <p>The properties associated with the position.</p>
-    pub fn get_position_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_position_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.position_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

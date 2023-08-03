@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteEventSubscriptionOutput`](crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput) with field(s):
     ///   - [`event_subscription(Option<EventSubscription>)`](crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput::event_subscription): <p>Detailed information about an event to which you have subscribed.</p>
     /// - On failure, responds with [`SdkError<DeleteEventSubscriptionError>`](crate::operation::delete_event_subscription::DeleteEventSubscriptionError)
-    pub fn delete_event_subscription(
-        &self,
-    ) -> crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionFluentBuilder
-    {
+    pub fn delete_event_subscription(&self) -> crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionFluentBuilder {
         crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

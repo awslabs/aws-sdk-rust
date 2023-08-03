@@ -29,9 +29,7 @@ impl GetJobTaggingInput {
 
 /// A builder for [`GetJobTaggingInput`](crate::operation::get_job_tagging::GetJobTaggingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobTaggingInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl GetJobTaggingInputBuilder {
     /// Consumes the builder and constructs a [`GetJobTaggingInput`](crate::operation::get_job_tagging::GetJobTaggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_job_tagging::GetJobTaggingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_job_tagging::GetJobTaggingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job_tagging::GetJobTaggingInput {
             account_id: self.account_id,
             job_id: self.job_id,

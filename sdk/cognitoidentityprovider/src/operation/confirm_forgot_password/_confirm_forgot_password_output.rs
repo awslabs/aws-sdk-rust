@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for ConfirmForgotPasswordOutput {
 }
 impl ConfirmForgotPasswordOutput {
     /// Creates a new builder-style object to manufacture [`ConfirmForgotPasswordOutput`](crate::operation::confirm_forgot_password::ConfirmForgotPasswordOutput).
-    pub fn builder(
-    ) -> crate::operation::confirm_forgot_password::builders::ConfirmForgotPasswordOutputBuilder
-    {
+    pub fn builder() -> crate::operation::confirm_forgot_password::builders::ConfirmForgotPasswordOutputBuilder {
         crate::operation::confirm_forgot_password::builders::ConfirmForgotPasswordOutputBuilder::default()
     }
 }
 
 /// A builder for [`ConfirmForgotPasswordOutput`](crate::operation::confirm_forgot_password::ConfirmForgotPasswordOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfirmForgotPasswordOutputBuilder {
     _request_id: Option<String>,
 }

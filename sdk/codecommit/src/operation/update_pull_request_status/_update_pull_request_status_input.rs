@@ -16,44 +16,32 @@ impl UpdatePullRequestStatusInput {
         self.pull_request_id.as_deref()
     }
     /// <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
-    pub fn pull_request_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PullRequestStatusEnum> {
+    pub fn pull_request_status(&self) -> ::std::option::Option<&crate::types::PullRequestStatusEnum> {
         self.pull_request_status.as_ref()
     }
 }
 impl UpdatePullRequestStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestStatusInput`](crate::operation::update_pull_request_status::UpdatePullRequestStatusInput).
-    pub fn builder(
-    ) -> crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusInputBuilder {
         crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePullRequestStatusInput`](crate::operation::update_pull_request_status::UpdatePullRequestStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePullRequestStatusInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) pull_request_status: ::std::option::Option<crate::types::PullRequestStatusEnum>,
 }
 impl UpdatePullRequestStatusInputBuilder {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -67,17 +55,12 @@ impl UpdatePullRequestStatusInputBuilder {
         self
     }
     /// <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
-    pub fn set_pull_request_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequestStatusEnum>,
-    ) -> Self {
+    pub fn set_pull_request_status(mut self, input: ::std::option::Option<crate::types::PullRequestStatusEnum>) -> Self {
         self.pull_request_status = input;
         self
     }
     /// <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
-    pub fn get_pull_request_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
+    pub fn get_pull_request_status(&self) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
         &self.pull_request_status
     }
     /// Consumes the builder and constructs a [`UpdatePullRequestStatusInput`](crate::operation::update_pull_request_status::UpdatePullRequestStatusInput).
@@ -87,11 +70,9 @@ impl UpdatePullRequestStatusInputBuilder {
         crate::operation::update_pull_request_status::UpdatePullRequestStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_pull_request_status::UpdatePullRequestStatusInput {
-                pull_request_id: self.pull_request_id,
-                pull_request_status: self.pull_request_status,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_pull_request_status::UpdatePullRequestStatusInput {
+            pull_request_id: self.pull_request_id,
+            pull_request_status: self.pull_request_status,
+        })
     }
 }

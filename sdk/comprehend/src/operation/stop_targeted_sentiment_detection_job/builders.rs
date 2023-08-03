@@ -5,16 +5,16 @@ pub use crate::operation::stop_targeted_sentiment_detection_job::_stop_targeted_
 
 impl StopTargetedSentimentDetectionJobInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.stop_targeted_sentiment_detection_job();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl StopTargetedSentimentDetectionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopTargetedSentimentDetectionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobInputBuilder,
+    inner: crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobInputBuilder,
 }
 impl StopTargetedSentimentDetectionJobFluentBuilder {
     /// Creates a new `StopTargetedSentimentDetectionJob`.
@@ -40,15 +40,20 @@ impl StopTargetedSentimentDetectionJobFluentBuilder {
         }
     }
     /// Access the StopTargetedSentimentDetectionJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJob,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl StopTargetedSentimentDetectionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,17 +90,26 @@ impl StopTargetedSentimentDetectionJobFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJob,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the targeted sentiment detection job to stop.</p>

@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`reference_id(impl ::std::convert::Into<String>)`](crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceFluentBuilder::reference_id) / [`set_reference_id(Option<String>)`](crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceFluentBuilder::set_reference_id): <p>ID of the reference data source. When you add a reference data source to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the reference ID. </p>
     /// - On success, responds with [`DeleteApplicationReferenceDataSourceOutput`](crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationReferenceDataSourceError>`](crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceError)
-    pub fn delete_application_reference_data_source(&self) -> crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceFluentBuilder{
-        crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceFluentBuilder::new(self.handle.clone())
+    pub fn delete_application_reference_data_source(
+        &self,
+    ) -> crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceFluentBuilder {
+        crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetNetworkSettingsOutput`](crate::operation::get_network_settings::GetNetworkSettingsOutput) with field(s):
     ///   - [`network_settings(Option<NetworkSettings>)`](crate::operation::get_network_settings::GetNetworkSettingsOutput::network_settings): <p>The network settings.</p>
     /// - On failure, responds with [`SdkError<GetNetworkSettingsError>`](crate::operation::get_network_settings::GetNetworkSettingsError)
-    pub fn get_network_settings(
-        &self,
-    ) -> crate::operation::get_network_settings::builders::GetNetworkSettingsFluentBuilder {
-        crate::operation::get_network_settings::builders::GetNetworkSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_network_settings(&self) -> crate::operation::get_network_settings::builders::GetNetworkSettingsFluentBuilder {
+        crate::operation::get_network_settings::builders::GetNetworkSettingsFluentBuilder::new(self.handle.clone())
     }
 }

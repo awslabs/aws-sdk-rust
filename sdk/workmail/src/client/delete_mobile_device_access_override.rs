@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`device_id(impl ::std::convert::Into<String>)`](crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideFluentBuilder::set_device_id): <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
     /// - On success, responds with [`DeleteMobileDeviceAccessOverrideOutput`](crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideOutput)
     /// - On failure, responds with [`SdkError<DeleteMobileDeviceAccessOverrideError>`](crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError)
-    pub fn delete_mobile_device_access_override(&self) -> crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideFluentBuilder{
+    pub fn delete_mobile_device_access_override(
+        &self,
+    ) -> crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideFluentBuilder {
         crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideFluentBuilder::new(self.handle.clone())
     }
 }

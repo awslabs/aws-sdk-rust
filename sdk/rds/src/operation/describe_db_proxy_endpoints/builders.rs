@@ -26,7 +26,7 @@ impl DescribeDbProxyEndpointsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBProxyEndpointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_db_proxy_endpoints::builders::DescribeDbProxyEndpointsInputBuilder,
+    inner: crate::operation::describe_db_proxy_endpoints::builders::DescribeDbProxyEndpointsInputBuilder,
 }
 impl DescribeDBProxyEndpointsFluentBuilder {
     /// Creates a new `DescribeDBProxyEndpoints`.
@@ -37,7 +37,7 @@ impl DescribeDBProxyEndpointsFluentBuilder {
         }
     }
     /// Access the DescribeDBProxyEndpoints as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_db_proxy_endpoints::builders::DescribeDbProxyEndpointsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_db_proxy_endpoints::builders::DescribeDbProxyEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDBProxyEndpointsFluentBuilder {
             crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDBProxyEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDBProxyEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDBProxyEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -114,34 +105,23 @@ impl DescribeDBProxyEndpointsFluentBuilder {
             crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_db_proxy_endpoints::paginator::DescribeDbProxyEndpointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_db_proxy_endpoints::paginator::DescribeDbProxyEndpointsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_db_proxy_endpoints::paginator::DescribeDbProxyEndpointsPaginator {
         crate::operation::describe_db_proxy_endpoints::paginator::DescribeDbProxyEndpointsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the DB proxy whose endpoints you want to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with all your DB proxies.</p>
-    pub fn db_proxy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_proxy_name(input.into());
         self
     }
     /// <p>The name of the DB proxy whose endpoints you want to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with all your DB proxies.</p>
-    pub fn set_db_proxy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_proxy_name(input);
         self
     }
@@ -150,18 +130,12 @@ impl DescribeDBProxyEndpointsFluentBuilder {
         self.inner.get_db_proxy_name()
     }
     /// <p>The name of a DB proxy endpoint to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with the specified proxy.</p>
-    pub fn db_proxy_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_proxy_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_proxy_endpoint_name(input.into());
         self
     }
     /// <p>The name of a DB proxy endpoint to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with the specified proxy.</p>
-    pub fn set_db_proxy_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_proxy_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_proxy_endpoint_name(input);
         self
     }
@@ -179,10 +153,7 @@ impl DescribeDBProxyEndpointsFluentBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -37,9 +37,7 @@ impl PendingMaintenanceAction {
 
 /// A builder for [`PendingMaintenanceAction`](crate::types::PendingMaintenanceAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PendingMaintenanceActionBuilder {
     pub(crate) action: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl PendingMaintenanceActionBuilder {
         self
     }
     /// <p>The effective date of the pending database maintenance action.</p>
-    pub fn set_current_apply_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_current_apply_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.current_apply_date = input;
         self
     }

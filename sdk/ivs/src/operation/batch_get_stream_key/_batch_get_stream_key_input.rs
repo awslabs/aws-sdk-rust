@@ -15,17 +15,14 @@ impl BatchGetStreamKeyInput {
 }
 impl BatchGetStreamKeyInput {
     /// Creates a new builder-style object to manufacture [`BatchGetStreamKeyInput`](crate::operation::batch_get_stream_key::BatchGetStreamKeyInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_stream_key::builders::BatchGetStreamKeyInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_stream_key::builders::BatchGetStreamKeyInputBuilder {
         crate::operation::batch_get_stream_key::builders::BatchGetStreamKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetStreamKeyInput`](crate::operation::batch_get_stream_key::BatchGetStreamKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetStreamKeyInputBuilder {
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +39,7 @@ impl BatchGetStreamKeyInputBuilder {
         self
     }
     /// <p>Array of ARNs, one per stream key.</p>
-    pub fn set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.arns = input;
         self
     }
@@ -56,12 +50,7 @@ impl BatchGetStreamKeyInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetStreamKeyInput`](crate::operation::batch_get_stream_key::BatchGetStreamKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_stream_key::BatchGetStreamKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_stream_key::BatchGetStreamKeyInput { arns: self.arns },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_stream_key::BatchGetStreamKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_get_stream_key::BatchGetStreamKeyInput { arns: self.arns })
     }
 }

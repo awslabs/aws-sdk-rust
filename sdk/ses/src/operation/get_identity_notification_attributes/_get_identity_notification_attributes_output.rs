@@ -6,24 +6,15 @@
 pub struct GetIdentityNotificationAttributesOutput {
     /// <p>A map of Identity to IdentityNotificationAttributes.</p>
     #[doc(hidden)]
-    pub notification_attributes: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::IdentityNotificationAttributes,
-        >,
-    >,
+    pub notification_attributes:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityNotificationAttributes>>,
     _request_id: Option<String>,
 }
 impl GetIdentityNotificationAttributesOutput {
     /// <p>A map of Identity to IdentityNotificationAttributes.</p>
     pub fn notification_attributes(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::IdentityNotificationAttributes,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::IdentityNotificationAttributes>> {
         self.notification_attributes.as_ref()
     }
 }
@@ -34,23 +25,17 @@ impl ::aws_http::request_id::RequestId for GetIdentityNotificationAttributesOutp
 }
 impl GetIdentityNotificationAttributesOutput {
     /// Creates a new builder-style object to manufacture [`GetIdentityNotificationAttributesOutput`](crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput).
-    pub fn builder() -> crate::operation::get_identity_notification_attributes::builders::GetIdentityNotificationAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::get_identity_notification_attributes::builders::GetIdentityNotificationAttributesOutputBuilder {
         crate::operation::get_identity_notification_attributes::builders::GetIdentityNotificationAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentityNotificationAttributesOutput`](crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityNotificationAttributesOutputBuilder {
-    pub(crate) notification_attributes: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::IdentityNotificationAttributes,
-        >,
-    >,
+    pub(crate) notification_attributes:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityNotificationAttributes>>,
     _request_id: Option<String>,
 }
 impl GetIdentityNotificationAttributesOutputBuilder {
@@ -72,12 +57,7 @@ impl GetIdentityNotificationAttributesOutputBuilder {
     /// <p>A map of Identity to IdentityNotificationAttributes.</p>
     pub fn set_notification_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::IdentityNotificationAttributes,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityNotificationAttributes>>,
     ) -> Self {
         self.notification_attributes = input;
         self
@@ -85,12 +65,7 @@ impl GetIdentityNotificationAttributesOutputBuilder {
     /// <p>A map of Identity to IdentityNotificationAttributes.</p>
     pub fn get_notification_attributes(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::IdentityNotificationAttributes,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityNotificationAttributes>> {
         &self.notification_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -103,10 +78,9 @@ impl GetIdentityNotificationAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIdentityNotificationAttributesOutput`](crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput).
-    pub fn build(self) -> crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput{
+    pub fn build(self) -> crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput {
         crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput {
-            notification_attributes: self.notification_attributes
-            ,
+            notification_attributes: self.notification_attributes,
             _request_id: self._request_id,
         }
     }

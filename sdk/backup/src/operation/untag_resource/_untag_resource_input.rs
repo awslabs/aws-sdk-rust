@@ -69,26 +69,18 @@ impl UntagResourceInputBuilder {
         self
     }
     /// <p>A list of keys to identify which key-value tags to remove from a resource.</p>
-    pub fn set_tag_key_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_key_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_key_list = input;
         self
     }
     /// <p>A list of keys to identify which key-value tags to remove from a resource.</p>
-    pub fn get_tag_key_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_key_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_key_list
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::untag_resource::UntagResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_resource::UntagResourceInput {
             resource_arn: self.resource_arn,
             tag_key_list: self.tag_key_list,

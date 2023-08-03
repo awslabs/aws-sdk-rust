@@ -34,9 +34,7 @@ impl DocumentAttributeCondition {
     }
     /// <p>The value used by the operator.</p>
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
-    pub fn condition_on_value(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentAttributeValue> {
+    pub fn condition_on_value(&self) -> ::std::option::Option<&crate::types::DocumentAttributeValue> {
         self.condition_on_value.as_ref()
     }
 }
@@ -49,9 +47,7 @@ impl DocumentAttributeCondition {
 
 /// A builder for [`DocumentAttributeCondition`](crate::types::DocumentAttributeCondition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentAttributeConditionBuilder {
     pub(crate) condition_document_attribute_key: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<crate::types::ConditionOperator>,
@@ -61,29 +57,21 @@ impl DocumentAttributeConditionBuilder {
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
-    pub fn condition_document_attribute_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn condition_document_attribute_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.condition_document_attribute_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
-    pub fn set_condition_document_attribute_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_condition_document_attribute_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.condition_document_attribute_key = input;
         self
     }
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
-    pub fn get_condition_document_attribute_key(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_condition_document_attribute_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.condition_document_attribute_key
     }
     /// <p>The condition operator.</p>
@@ -94,10 +82,7 @@ impl DocumentAttributeConditionBuilder {
     }
     /// <p>The condition operator.</p>
     /// <p>For example, you can use 'Contains' to partially match a string.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::ConditionOperator>) -> Self {
         self.operator = input;
         self
     }
@@ -114,18 +99,13 @@ impl DocumentAttributeConditionBuilder {
     }
     /// <p>The value used by the operator.</p>
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
-    pub fn set_condition_on_value(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentAttributeValue>,
-    ) -> Self {
+    pub fn set_condition_on_value(mut self, input: ::std::option::Option<crate::types::DocumentAttributeValue>) -> Self {
         self.condition_on_value = input;
         self
     }
     /// <p>The value used by the operator.</p>
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
-    pub fn get_condition_on_value(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentAttributeValue> {
+    pub fn get_condition_on_value(&self) -> &::std::option::Option<crate::types::DocumentAttributeValue> {
         &self.condition_on_value
     }
     /// Consumes the builder and constructs a [`DocumentAttributeCondition`](crate::types::DocumentAttributeCondition).

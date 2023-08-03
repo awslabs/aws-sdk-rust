@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterCertificateOutput`](crate::operation::register_certificate::RegisterCertificateOutput) with field(s):
     ///   - [`certificate_id(Option<String>)`](crate::operation::register_certificate::RegisterCertificateOutput::certificate_id): <p>The identifier of the certificate.</p>
     /// - On failure, responds with [`SdkError<RegisterCertificateError>`](crate::operation::register_certificate::RegisterCertificateError)
-    pub fn register_certificate(
-        &self,
-    ) -> crate::operation::register_certificate::builders::RegisterCertificateFluentBuilder {
-        crate::operation::register_certificate::builders::RegisterCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_certificate(&self) -> crate::operation::register_certificate::builders::RegisterCertificateFluentBuilder {
+        crate::operation::register_certificate::builders::RegisterCertificateFluentBuilder::new(self.handle.clone())
     }
 }

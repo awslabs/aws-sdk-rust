@@ -64,13 +64,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ViolationReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -136,20 +130,12 @@ impl ::std::convert::From<&str> for ViolationReason {
     fn from(s: &str) -> Self {
         match s {
             "BLACK_HOLE_ROUTE_DETECTED" => ViolationReason::BlackHoleRouteDetected,
-            "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET" => {
-                ViolationReason::BlackHoleRouteDetectedInFirewallSubnet
-            }
+            "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET" => ViolationReason::BlackHoleRouteDetectedInFirewallSubnet,
             "FIREWALL_SUBNET_IS_OUT_OF_SCOPE" => ViolationReason::FirewallSubnetIsOutOfScope,
-            "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE" => {
-                ViolationReason::FirewallSubnetMissingExpectedRoute
-            }
-            "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT" => {
-                ViolationReason::FirewallSubnetMissingVpcEndpoint
-            }
+            "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE" => ViolationReason::FirewallSubnetMissingExpectedRoute,
+            "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT" => ViolationReason::FirewallSubnetMissingVpcEndpoint,
             "FMS_CREATED_SECURITY_GROUP_EDITED" => ViolationReason::FmsCreatedSecurityGroupEdited,
-            "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE" => {
-                ViolationReason::InternetGatewayMissingExpectedRoute
-            }
+            "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE" => ViolationReason::InternetGatewayMissingExpectedRoute,
             "INTERNET_TRAFFIC_NOT_INSPECTED" => ViolationReason::InternetTrafficNotInspected,
             "INVALID_ROUTE_CONFIGURATION" => ViolationReason::InvalidRouteConfiguration,
             "MISSING_EXPECTED_ROUTE_TABLE" => ViolationReason::MissingExpectedRouteTable,
@@ -160,28 +146,18 @@ impl ::std::convert::From<&str> for ViolationReason {
             "RESOURCE_INCORRECT_WEB_ACL" => ViolationReason::ResourceIncorrectWebAcl,
             "RESOURCE_MISSING_DNS_FIREWALL" => ViolationReason::ResourceMissingDnsFirewall,
             "RESOURCE_MISSING_SECURITY_GROUP" => ViolationReason::ResourceMissingSecurityGroup,
-            "RESOURCE_MISSING_SHIELD_PROTECTION" => {
-                ViolationReason::ResourceMissingShieldProtection
-            }
+            "RESOURCE_MISSING_SHIELD_PROTECTION" => ViolationReason::ResourceMissingShieldProtection,
             "RESOURCE_MISSING_WEB_ACL" => ViolationReason::ResourceMissingWebAcl,
-            "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION" => {
-                ViolationReason::ResourceMissingWebaclOrShieldProtection
-            }
-            "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP" => {
-                ViolationReason::ResourceViolatesAuditSecurityGroup
-            }
+            "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION" => ViolationReason::ResourceMissingWebaclOrShieldProtection,
+            "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP" => ViolationReason::ResourceViolatesAuditSecurityGroup,
             "ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT" => ViolationReason::RouteHasOutOfScopeEndpoint,
             "SECURITY_GROUP_REDUNDANT" => ViolationReason::SecurityGroupRedundant,
             "SECURITY_GROUP_UNUSED" => ViolationReason::SecurityGroupUnused,
-            "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY" => {
-                ViolationReason::TrafficInspectionCrossesAzBoundary
-            }
+            "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY" => ViolationReason::TrafficInspectionCrossesAzBoundary,
             "UNEXPECTED_FIREWALL_ROUTES" => ViolationReason::UnexpectedFirewallRoutes,
             "UNEXPECTED_TARGET_GATEWAY_ROUTES" => ViolationReason::UnexpectedTargetGatewayRoutes,
             "WEB_ACL_MISSING_RULE_GROUP" => ViolationReason::WebAclMissingRuleGroup,
-            other => {
-                ViolationReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ViolationReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -197,20 +173,12 @@ impl ViolationReason {
     pub fn as_str(&self) -> &str {
         match self {
             ViolationReason::BlackHoleRouteDetected => "BLACK_HOLE_ROUTE_DETECTED",
-            ViolationReason::BlackHoleRouteDetectedInFirewallSubnet => {
-                "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET"
-            }
+            ViolationReason::BlackHoleRouteDetectedInFirewallSubnet => "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET",
             ViolationReason::FirewallSubnetIsOutOfScope => "FIREWALL_SUBNET_IS_OUT_OF_SCOPE",
-            ViolationReason::FirewallSubnetMissingExpectedRoute => {
-                "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE"
-            }
-            ViolationReason::FirewallSubnetMissingVpcEndpoint => {
-                "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT"
-            }
+            ViolationReason::FirewallSubnetMissingExpectedRoute => "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE",
+            ViolationReason::FirewallSubnetMissingVpcEndpoint => "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT",
             ViolationReason::FmsCreatedSecurityGroupEdited => "FMS_CREATED_SECURITY_GROUP_EDITED",
-            ViolationReason::InternetGatewayMissingExpectedRoute => {
-                "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE"
-            }
+            ViolationReason::InternetGatewayMissingExpectedRoute => "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE",
             ViolationReason::InternetTrafficNotInspected => "INTERNET_TRAFFIC_NOT_INSPECTED",
             ViolationReason::InvalidRouteConfiguration => "INVALID_ROUTE_CONFIGURATION",
             ViolationReason::MissingExpectedRouteTable => "MISSING_EXPECTED_ROUTE_TABLE",
@@ -221,22 +189,14 @@ impl ViolationReason {
             ViolationReason::ResourceIncorrectWebAcl => "RESOURCE_INCORRECT_WEB_ACL",
             ViolationReason::ResourceMissingDnsFirewall => "RESOURCE_MISSING_DNS_FIREWALL",
             ViolationReason::ResourceMissingSecurityGroup => "RESOURCE_MISSING_SECURITY_GROUP",
-            ViolationReason::ResourceMissingShieldProtection => {
-                "RESOURCE_MISSING_SHIELD_PROTECTION"
-            }
+            ViolationReason::ResourceMissingShieldProtection => "RESOURCE_MISSING_SHIELD_PROTECTION",
             ViolationReason::ResourceMissingWebAcl => "RESOURCE_MISSING_WEB_ACL",
-            ViolationReason::ResourceMissingWebaclOrShieldProtection => {
-                "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION"
-            }
-            ViolationReason::ResourceViolatesAuditSecurityGroup => {
-                "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP"
-            }
+            ViolationReason::ResourceMissingWebaclOrShieldProtection => "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION",
+            ViolationReason::ResourceViolatesAuditSecurityGroup => "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP",
             ViolationReason::RouteHasOutOfScopeEndpoint => "ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT",
             ViolationReason::SecurityGroupRedundant => "SECURITY_GROUP_REDUNDANT",
             ViolationReason::SecurityGroupUnused => "SECURITY_GROUP_UNUSED",
-            ViolationReason::TrafficInspectionCrossesAzBoundary => {
-                "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY"
-            }
+            ViolationReason::TrafficInspectionCrossesAzBoundary => "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY",
             ViolationReason::UnexpectedFirewallRoutes => "UNEXPECTED_FIREWALL_ROUTES",
             ViolationReason::UnexpectedTargetGatewayRoutes => "UNEXPECTED_TARGET_GATEWAY_ROUTES",
             ViolationReason::WebAclMissingRuleGroup => "WEB_ACL_MISSING_RULE_GROUP",

@@ -8,9 +8,7 @@ impl super::Client {
     ///   - [`new_group_name(impl ::std::convert::Into<String>)`](crate::operation::update_group::builders::UpdateGroupFluentBuilder::new_group_name) / [`set_new_group_name(Option<String>)`](crate::operation::update_group::builders::UpdateGroupFluentBuilder::set_new_group_name): <p>New name for the IAM group. Only include this if changing the group's name.</p>  <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
     /// - On success, responds with [`UpdateGroupOutput`](crate::operation::update_group::UpdateGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateGroupError>`](crate::operation::update_group::UpdateGroupError)
-    pub fn update_group(
-        &self,
-    ) -> crate::operation::update_group::builders::UpdateGroupFluentBuilder {
+    pub fn update_group(&self) -> crate::operation::update_group::builders::UpdateGroupFluentBuilder {
         crate::operation::update_group::builders::UpdateGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`portals(Option<Vec<PortalSummary>>)`](crate::operation::list_portals::ListPortalsOutput::portals): <p>The portals in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_portals::ListPortalsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. </p>
     /// - On failure, responds with [`SdkError<ListPortalsError>`](crate::operation::list_portals::ListPortalsError)
-    pub fn list_portals(
-        &self,
-    ) -> crate::operation::list_portals::builders::ListPortalsFluentBuilder {
+    pub fn list_portals(&self) -> crate::operation::list_portals::builders::ListPortalsFluentBuilder {
         crate::operation::list_portals::builders::ListPortalsFluentBuilder::new(self.handle.clone())
     }
 }

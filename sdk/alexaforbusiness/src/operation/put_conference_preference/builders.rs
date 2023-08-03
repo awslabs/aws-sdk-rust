@@ -27,8 +27,7 @@ impl PutConferencePreferenceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutConferencePreferenceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::put_conference_preference::builders::PutConferencePreferenceInputBuilder,
+    inner: crate::operation::put_conference_preference::builders::PutConferencePreferenceInputBuilder,
 }
 impl PutConferencePreferenceFluentBuilder {
     /// Creates a new `PutConferencePreference`.
@@ -39,10 +38,7 @@ impl PutConferencePreferenceFluentBuilder {
         }
     }
     /// Access the PutConferencePreference as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_conference_preference::builders::PutConferencePreferenceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_conference_preference::builders::PutConferencePreferenceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl PutConferencePreferenceFluentBuilder {
             crate::operation::put_conference_preference::PutConferencePreference,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_conference_preference::PutConferencePreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_conference_preference::PutConferencePreferenceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl PutConferencePreferenceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl PutConferencePreferenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_conference_preference::PutConferencePreferenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_conference_preference::PutConferencePreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_conference_preference::PutConferencePreferenceError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl PutConferencePreferenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_conference_preference::PutConferencePreferenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_conference_preference::PutConferencePreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_conference_preference::PutConferencePreferenceError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl PutConferencePreferenceFluentBuilder {
             crate::operation::put_conference_preference::PutConferencePreference,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_conference_preference::PutConferencePreferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_conference_preference::PutConferencePreferenceError>,
     > {
         self.customize_middleware().await
     }
@@ -131,17 +116,12 @@ impl PutConferencePreferenceFluentBuilder {
         self
     }
     /// <p>The conference preference of a specific conference provider.</p>
-    pub fn set_conference_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::ConferencePreference>,
-    ) -> Self {
+    pub fn set_conference_preference(mut self, input: ::std::option::Option<crate::types::ConferencePreference>) -> Self {
         self.inner = self.inner.set_conference_preference(input);
         self
     }
     /// <p>The conference preference of a specific conference provider.</p>
-    pub fn get_conference_preference(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConferencePreference> {
+    pub fn get_conference_preference(&self) -> &::std::option::Option<crate::types::ConferencePreference> {
         self.inner.get_conference_preference()
     }
 }

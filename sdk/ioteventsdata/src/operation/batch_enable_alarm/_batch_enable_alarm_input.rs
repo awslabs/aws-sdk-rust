@@ -5,33 +5,26 @@
 pub struct BatchEnableAlarmInput {
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
     #[doc(hidden)]
-    pub enable_action_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>>,
+    pub enable_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>>,
 }
 impl BatchEnableAlarmInput {
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-    pub fn enable_action_requests(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EnableAlarmActionRequest]> {
+    pub fn enable_action_requests(&self) -> ::std::option::Option<&[crate::types::EnableAlarmActionRequest]> {
         self.enable_action_requests.as_deref()
     }
 }
 impl BatchEnableAlarmInput {
     /// Creates a new builder-style object to manufacture [`BatchEnableAlarmInput`](crate::operation::batch_enable_alarm::BatchEnableAlarmInput).
-    pub fn builder() -> crate::operation::batch_enable_alarm::builders::BatchEnableAlarmInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_enable_alarm::builders::BatchEnableAlarmInputBuilder {
         crate::operation::batch_enable_alarm::builders::BatchEnableAlarmInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchEnableAlarmInput`](crate::operation::batch_enable_alarm::BatchEnableAlarmInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchEnableAlarmInputBuilder {
-    pub(crate) enable_action_requests:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>>,
+    pub(crate) enable_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>>,
 }
 impl BatchEnableAlarmInputBuilder {
     /// Appends an item to `enable_action_requests`.
@@ -46,30 +39,20 @@ impl BatchEnableAlarmInputBuilder {
         self
     }
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-    pub fn set_enable_action_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>>,
-    ) -> Self {
+    pub fn set_enable_action_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>>) -> Self {
         self.enable_action_requests = input;
         self
     }
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-    pub fn get_enable_action_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>> {
+    pub fn get_enable_action_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>> {
         &self.enable_action_requests
     }
     /// Consumes the builder and constructs a [`BatchEnableAlarmInput`](crate::operation::batch_enable_alarm::BatchEnableAlarmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_enable_alarm::BatchEnableAlarmInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_enable_alarm::BatchEnableAlarmInput {
-                enable_action_requests: self.enable_action_requests,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_enable_alarm::BatchEnableAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_enable_alarm::BatchEnableAlarmInput {
+            enable_action_requests: self.enable_action_requests,
+        })
     }
 }

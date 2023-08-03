@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`create_time(Option<DateTime>)`](crate::operation::put_geofence::PutGeofenceOutput::create_time): <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     ///   - [`update_time(Option<DateTime>)`](crate::operation::put_geofence::PutGeofenceOutput::update_time): <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     /// - On failure, responds with [`SdkError<PutGeofenceError>`](crate::operation::put_geofence::PutGeofenceError)
-    pub fn put_geofence(
-        &self,
-    ) -> crate::operation::put_geofence::builders::PutGeofenceFluentBuilder {
+    pub fn put_geofence(&self) -> crate::operation::put_geofence::builders::PutGeofenceFluentBuilder {
         crate::operation::put_geofence::builders::PutGeofenceFluentBuilder::new(self.handle.clone())
     }
 }

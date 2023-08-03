@@ -37,10 +37,7 @@ impl ListAssetRelationshipsFluentBuilder {
         }
     }
     /// Access the ListAssetRelationships as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_asset_relationships::builders::ListAssetRelationshipsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_asset_relationships::builders::ListAssetRelationshipsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListAssetRelationshipsFluentBuilder {
             crate::operation::list_asset_relationships::ListAssetRelationships,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_asset_relationships::ListAssetRelationshipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_asset_relationships::ListAssetRelationshipsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListAssetRelationshipsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListAssetRelationshipsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_asset_relationships::ListAssetRelationshipsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_asset_relationships::ListAssetRelationshipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_asset_relationships::ListAssetRelationshipsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListAssetRelationshipsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_asset_relationships::ListAssetRelationshipsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_asset_relationships::ListAssetRelationshipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_asset_relationships::ListAssetRelationshipsError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListAssetRelationshipsFluentBuilder {
             crate::operation::list_asset_relationships::ListAssetRelationships,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_asset_relationships::ListAssetRelationshipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_asset_relationships::ListAssetRelationshipsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_asset_relationships::paginator::ListAssetRelationshipsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_asset_relationships::paginator::ListAssetRelationshipsPaginator
-    {
-        crate::operation::list_asset_relationships::paginator::ListAssetRelationshipsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_asset_relationships::paginator::ListAssetRelationshipsPaginator {
+        crate::operation::list_asset_relationships::paginator::ListAssetRelationshipsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the asset.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,10 +141,7 @@ impl ListAssetRelationshipsFluentBuilder {
     /// <ul>
     /// <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>
     /// </ul>
-    pub fn set_traversal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TraversalType>,
-    ) -> Self {
+    pub fn set_traversal_type(mut self, input: ::std::option::Option<crate::types::TraversalType>) -> Self {
         self.inner = self.inner.set_traversal_type(input);
         self
     }

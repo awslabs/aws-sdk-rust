@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`cluster_security_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_cluster_security_group::builders::DeleteClusterSecurityGroupFluentBuilder::cluster_security_group_name) / [`set_cluster_security_group_name(Option<String>)`](crate::operation::delete_cluster_security_group::builders::DeleteClusterSecurityGroupFluentBuilder::set_cluster_security_group_name): <p>The name of the cluster security group to be deleted.</p>
     /// - On success, responds with [`DeleteClusterSecurityGroupOutput`](crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteClusterSecurityGroupError>`](crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupError)
-    pub fn delete_cluster_security_group(&self) -> crate::operation::delete_cluster_security_group::builders::DeleteClusterSecurityGroupFluentBuilder{
+    pub fn delete_cluster_security_group(
+        &self,
+    ) -> crate::operation::delete_cluster_security_group::builders::DeleteClusterSecurityGroupFluentBuilder {
         crate::operation::delete_cluster_security_group::builders::DeleteClusterSecurityGroupFluentBuilder::new(self.handle.clone())
     }
 }

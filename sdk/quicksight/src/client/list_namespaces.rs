@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::list_namespaces::ListNamespacesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_namespaces::ListNamespacesOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<ListNamespacesError>`](crate::operation::list_namespaces::ListNamespacesError)
-    pub fn list_namespaces(
-        &self,
-    ) -> crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder {
-        crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_namespaces(&self) -> crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder {
+        crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::new(self.handle.clone())
     }
 }

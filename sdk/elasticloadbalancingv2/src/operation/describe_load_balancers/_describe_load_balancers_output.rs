@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeLoadBalancersOutput {
 }
 impl DescribeLoadBalancersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancersOutput`](crate::operation::describe_load_balancers::DescribeLoadBalancersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_load_balancers::builders::DescribeLoadBalancersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_load_balancers::builders::DescribeLoadBalancersOutputBuilder {
         crate::operation::describe_load_balancers::builders::DescribeLoadBalancersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoadBalancersOutput`](crate::operation::describe_load_balancers::DescribeLoadBalancersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancersOutputBuilder {
     pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeLoadBalancersOutputBuilder {
         self
     }
     /// <p>Information about the load balancers.</p>
-    pub fn set_load_balancers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
-    ) -> Self {
+    pub fn set_load_balancers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>) -> Self {
         self.load_balancers = input;
         self
     }
     /// <p>Information about the load balancers.</p>
-    pub fn get_load_balancers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
+    pub fn get_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
         &self.load_balancers
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>

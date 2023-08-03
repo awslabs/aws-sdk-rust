@@ -36,9 +36,7 @@ impl ListOperationsOutput {
 
 /// A builder for [`ListOperationsOutput`](crate::operation::list_operations::ListOperationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOperationsOutputBuilder {
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>,
     pub(crate) next_page_marker: ::std::option::Option<::std::string::String>,
@@ -57,32 +55,21 @@ impl ListOperationsOutputBuilder {
         self
     }
     /// <p>Lists summaries of the operations.</p>
-    pub fn set_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>,
-    ) -> Self {
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>>) -> Self {
         self.operations = input;
         self
     }
     /// <p>Lists summaries of the operations.</p>
-    pub fn get_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationSummary>> {
         &self.operations
     }
     /// <p>If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-    pub fn next_page_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-    pub fn set_next_page_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_marker = input;
         self
     }

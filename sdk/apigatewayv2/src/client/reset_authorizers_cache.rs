@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`stage_name(impl ::std::convert::Into<String>)`](crate::operation::reset_authorizers_cache::builders::ResetAuthorizersCacheFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::reset_authorizers_cache::builders::ResetAuthorizersCacheFluentBuilder::set_stage_name): <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
     /// - On success, responds with [`ResetAuthorizersCacheOutput`](crate::operation::reset_authorizers_cache::ResetAuthorizersCacheOutput)
     /// - On failure, responds with [`SdkError<ResetAuthorizersCacheError>`](crate::operation::reset_authorizers_cache::ResetAuthorizersCacheError)
-    pub fn reset_authorizers_cache(
-        &self,
-    ) -> crate::operation::reset_authorizers_cache::builders::ResetAuthorizersCacheFluentBuilder
-    {
-        crate::operation::reset_authorizers_cache::builders::ResetAuthorizersCacheFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reset_authorizers_cache(&self) -> crate::operation::reset_authorizers_cache::builders::ResetAuthorizersCacheFluentBuilder {
+        crate::operation::reset_authorizers_cache::builders::ResetAuthorizersCacheFluentBuilder::new(self.handle.clone())
     }
 }

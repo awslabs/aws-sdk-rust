@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListKeywordsForDataSourceOutput {
 }
 impl ListKeywordsForDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`ListKeywordsForDataSourceOutput`](crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceOutput).
-    pub fn builder() -> crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceOutputBuilder{
+    pub fn builder() -> crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceOutputBuilder {
         crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListKeywordsForDataSourceOutput`](crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKeywordsForDataSourceOutputBuilder {
     pub(crate) keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListKeywordsForDataSourceOutputBuilder {
         self
     }
     /// <p> The list of keywords for the event mapping source. </p>
-    pub fn set_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.keywords = input;
         self
     }
@@ -91,9 +86,7 @@ impl ListKeywordsForDataSourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListKeywordsForDataSourceOutput`](crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceOutput {
+    pub fn build(self) -> crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceOutput {
         crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceOutput {
             keywords: self.keywords,
             next_token: self.next_token,

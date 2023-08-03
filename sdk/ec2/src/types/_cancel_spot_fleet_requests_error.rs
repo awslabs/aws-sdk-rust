@@ -30,9 +30,7 @@ impl CancelSpotFleetRequestsError {
 
 /// A builder for [`CancelSpotFleetRequestsError`](crate::types::CancelSpotFleetRequestsError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelSpotFleetRequestsErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::CancelBatchErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl CancelSpotFleetRequestsErrorBuilder {
         self
     }
     /// <p>The error code.</p>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::CancelBatchErrorCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::CancelBatchErrorCode>) -> Self {
         self.code = input;
         self
     }

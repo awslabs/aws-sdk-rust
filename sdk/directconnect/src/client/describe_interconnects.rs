@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeInterconnectsOutput`](crate::operation::describe_interconnects::DescribeInterconnectsOutput) with field(s):
     ///   - [`interconnects(Option<Vec<Interconnect>>)`](crate::operation::describe_interconnects::DescribeInterconnectsOutput::interconnects): <p>The interconnects.</p>
     /// - On failure, responds with [`SdkError<DescribeInterconnectsError>`](crate::operation::describe_interconnects::DescribeInterconnectsError)
-    pub fn describe_interconnects(
-        &self,
-    ) -> crate::operation::describe_interconnects::builders::DescribeInterconnectsFluentBuilder
-    {
-        crate::operation::describe_interconnects::builders::DescribeInterconnectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_interconnects(&self) -> crate::operation::describe_interconnects::builders::DescribeInterconnectsFluentBuilder {
+        crate::operation::describe_interconnects::builders::DescribeInterconnectsFluentBuilder::new(self.handle.clone())
     }
 }

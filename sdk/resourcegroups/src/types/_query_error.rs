@@ -30,9 +30,7 @@ impl QueryError {
 
 /// A builder for [`QueryError`](crate::types::QueryError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryErrorBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::QueryErrorCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl QueryErrorBuilder {
         self
     }
     /// <p>Specifies the error code that was raised.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::QueryErrorCode>) -> Self {
         self.error_code = input;
         self
     }

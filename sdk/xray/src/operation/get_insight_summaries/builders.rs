@@ -37,9 +37,7 @@ impl GetInsightSummariesFluentBuilder {
         }
     }
     /// Access the GetInsightSummaries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_insight_summaries::builders::GetInsightSummariesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_insight_summaries::builders::GetInsightSummariesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetInsightSummariesFluentBuilder {
             crate::operation::get_insight_summaries::GetInsightSummaries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_summaries::GetInsightSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_summaries::GetInsightSummariesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetInsightSummariesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetInsightSummariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_insight_summaries::GetInsightSummariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_summaries::GetInsightSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_summaries::GetInsightSummariesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetInsightSummariesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_insight_summaries::GetInsightSummariesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_summaries::GetInsightSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_summaries::GetInsightSummariesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl GetInsightSummariesFluentBuilder {
             crate::operation::get_insight_summaries::GetInsightSummaries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_summaries::GetInsightSummariesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_summaries::GetInsightSummariesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator {
-        crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator {
+        crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `States`.
     ///
@@ -143,17 +125,12 @@ impl GetInsightSummariesFluentBuilder {
         self
     }
     /// <p>The list of insight states. </p>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InsightState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightState>>) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
     /// <p>The list of insight states. </p>
-    pub fn get_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightState>> {
         self.inner.get_states()
     }
     /// <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
@@ -190,10 +167,7 @@ impl GetInsightSummariesFluentBuilder {
         self
     }
     /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -207,10 +181,7 @@ impl GetInsightSummariesFluentBuilder {
         self
     }
     /// <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

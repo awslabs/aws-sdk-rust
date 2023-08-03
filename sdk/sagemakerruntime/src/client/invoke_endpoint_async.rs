@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`output_location(Option<String>)`](crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput::output_location): <p>The Amazon S3 URI where the inference response payload is stored.</p>
     ///   - [`failure_location(Option<String>)`](crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput::failure_location): <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
     /// - On failure, responds with [`SdkError<InvokeEndpointAsyncError>`](crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError)
-    pub fn invoke_endpoint_async(
-        &self,
-    ) -> crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncFluentBuilder {
-        crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn invoke_endpoint_async(&self) -> crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncFluentBuilder {
+        crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncFluentBuilder::new(self.handle.clone())
     }
 }

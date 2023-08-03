@@ -38,9 +38,7 @@ impl ParameterTextAreaControl {
         self.delimiter.as_deref()
     }
     /// <p>The display options of a control.</p>
-    pub fn display_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TextAreaControlDisplayOptions> {
+    pub fn display_options(&self) -> ::std::option::Option<&crate::types::TextAreaControlDisplayOptions> {
         self.display_options.as_ref()
     }
 }
@@ -53,9 +51,7 @@ impl ParameterTextAreaControl {
 
 /// A builder for [`ParameterTextAreaControl`](crate::types::ParameterTextAreaControl).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterTextAreaControlBuilder {
     pub(crate) parameter_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
@@ -65,18 +61,12 @@ pub struct ParameterTextAreaControlBuilder {
 }
 impl ParameterTextAreaControlBuilder {
     /// <p>The ID of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn parameter_control_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn set_parameter_control_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_control_id = input;
         self
     }
@@ -99,18 +89,12 @@ impl ParameterTextAreaControlBuilder {
         &self.title
     }
     /// <p>The source parameter name of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn source_parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source parameter name of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn set_source_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_parameter_name = input;
         self
     }
@@ -138,17 +122,12 @@ impl ParameterTextAreaControlBuilder {
         self
     }
     /// <p>The display options of a control.</p>
-    pub fn set_display_options(
-        mut self,
-        input: ::std::option::Option<crate::types::TextAreaControlDisplayOptions>,
-    ) -> Self {
+    pub fn set_display_options(mut self, input: ::std::option::Option<crate::types::TextAreaControlDisplayOptions>) -> Self {
         self.display_options = input;
         self
     }
     /// <p>The display options of a control.</p>
-    pub fn get_display_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::TextAreaControlDisplayOptions> {
+    pub fn get_display_options(&self) -> &::std::option::Option<crate::types::TextAreaControlDisplayOptions> {
         &self.display_options
     }
     /// Consumes the builder and constructs a [`ParameterTextAreaControl`](crate::types::ParameterTextAreaControl).

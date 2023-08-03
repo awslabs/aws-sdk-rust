@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetBackupPlanFromJsonOutput {
 }
 impl GetBackupPlanFromJsonOutput {
     /// Creates a new builder-style object to manufacture [`GetBackupPlanFromJsonOutput`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonOutput).
-    pub fn builder(
-    ) -> crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJsonOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJsonOutputBuilder {
         crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJsonOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBackupPlanFromJsonOutput`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBackupPlanFromJsonOutputBuilder {
     pub(crate) backup_plan: ::std::option::Option<crate::types::BackupPlan>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetBackupPlanFromJsonOutputBuilder {
         self
     }
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
-    pub fn set_backup_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupPlan>,
-    ) -> Self {
+    pub fn set_backup_plan(mut self, input: ::std::option::Option<crate::types::BackupPlan>) -> Self {
         self.backup_plan = input;
         self
     }

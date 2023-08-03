@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for StartTransactionOutput {
 }
 impl StartTransactionOutput {
     /// Creates a new builder-style object to manufacture [`StartTransactionOutput`](crate::operation::start_transaction::StartTransactionOutput).
-    pub fn builder() -> crate::operation::start_transaction::builders::StartTransactionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_transaction::builders::StartTransactionOutputBuilder {
         crate::operation::start_transaction::builders::StartTransactionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartTransactionOutput`](crate::operation::start_transaction::StartTransactionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTransactionOutputBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartTransactionOutputBuilder {
     /// <p>An opaque identifier for the transaction.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An opaque identifier for the transaction.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }

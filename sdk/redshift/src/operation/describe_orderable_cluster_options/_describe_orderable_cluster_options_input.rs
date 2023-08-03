@@ -45,16 +45,14 @@ impl DescribeOrderableClusterOptionsInput {
 }
 impl DescribeOrderableClusterOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrderableClusterOptionsInput`](crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsInput).
-    pub fn builder() -> crate::operation::describe_orderable_cluster_options::builders::DescribeOrderableClusterOptionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_orderable_cluster_options::builders::DescribeOrderableClusterOptionsInputBuilder {
         crate::operation::describe_orderable_cluster_options::builders::DescribeOrderableClusterOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrderableClusterOptionsInput`](crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrderableClusterOptionsInputBuilder {
     pub(crate) cluster_version: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
@@ -65,20 +63,14 @@ impl DescribeOrderableClusterOptionsInputBuilder {
     /// <p>The version filter value. Specify this parameter to show only the available offerings matching the specified version.</p>
     /// <p>Default: All versions.</p>
     /// <p>Constraints: Must be one of the version returned from <code>DescribeClusterVersions</code>.</p>
-    pub fn cluster_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version filter value. Specify this parameter to show only the available offerings matching the specified version.</p>
     /// <p>Default: All versions.</p>
     /// <p>Constraints: Must be one of the version returned from <code>DescribeClusterVersions</code>.</p>
-    pub fn set_cluster_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_version = input;
         self
     }
@@ -145,15 +137,11 @@ impl DescribeOrderableClusterOptionsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsInput {
-                cluster_version: self.cluster_version
-                ,
-                node_type: self.node_type
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                cluster_version: self.cluster_version,
+                node_type: self.node_type,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

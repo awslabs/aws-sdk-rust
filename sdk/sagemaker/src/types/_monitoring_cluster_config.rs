@@ -44,9 +44,7 @@ impl MonitoringClusterConfig {
 
 /// A builder for [`MonitoringClusterConfig`](crate::types::MonitoringClusterConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringClusterConfigBuilder {
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ProcessingInstanceType>,
@@ -74,17 +72,12 @@ impl MonitoringClusterConfigBuilder {
         self
     }
     /// <p>The ML compute instance type for the processing job.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::ProcessingInstanceType>) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The ML compute instance type for the processing job.</p>
-    pub fn get_instance_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingInstanceType> {
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ProcessingInstanceType> {
         &self.instance_type
     }
     /// <p>The size of the ML storage volume, in gigabytes, that you want to provision. You must specify sufficient ML storage for your scenario.</p>
@@ -102,18 +95,12 @@ impl MonitoringClusterConfigBuilder {
         &self.volume_size_in_gb
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring job.</p>
-    pub fn volume_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring job.</p>
-    pub fn set_volume_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_kms_key_id = input;
         self
     }

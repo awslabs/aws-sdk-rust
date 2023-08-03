@@ -65,9 +65,7 @@ impl BotLocaleImportSpecification {
 
 /// A builder for [`BotLocaleImportSpecification`](crate::types::BotLocaleImportSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BotLocaleImportSpecificationBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -138,10 +136,7 @@ impl BotLocaleImportSpecificationBuilder {
     /// <li> <p> <code>IntentB</code> </p> </li>
     /// <li> <p> <code>IntentC</code> </p> </li>
     /// </ul>
-    pub fn set_nlu_intent_confidence_threshold(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_nlu_intent_confidence_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.nlu_intent_confidence_threshold = input;
         self
     }
@@ -162,10 +157,7 @@ impl BotLocaleImportSpecificationBuilder {
         self
     }
     /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
-    pub fn set_voice_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceSettings>,
-    ) -> Self {
+    pub fn set_voice_settings(mut self, input: ::std::option::Option<crate::types::VoiceSettings>) -> Self {
         self.voice_settings = input;
         self
     }

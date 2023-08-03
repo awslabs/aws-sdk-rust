@@ -30,27 +30,19 @@ impl Url {
 
 /// A builder for [`Url`](crate::types::Url).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UrlBuilder {
     pub(crate) hyperlink_name: ::std::option::Option<::std::string::String>,
     pub(crate) link: ::std::option::Option<::std::string::String>,
 }
 impl UrlBuilder {
     /// <p> The name or word that's used as a hyperlink to the URL. </p>
-    pub fn hyperlink_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hyperlink_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hyperlink_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name or word that's used as a hyperlink to the URL. </p>
-    pub fn set_hyperlink_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hyperlink_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hyperlink_name = input;
         self
     }

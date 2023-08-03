@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`backup_vault_list(Option<Vec<BackupVaultListMember>>)`](crate::operation::list_backup_vaults::ListBackupVaultsOutput::backup_vault_list): <p>An array of backup vault list members containing vault metadata, including Amazon Resource Name (ARN), display name, creation date, number of saved recovery points, and encryption information if the resources saved in the backup vault are encrypted.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_backup_vaults::ListBackupVaultsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     /// - On failure, responds with [`SdkError<ListBackupVaultsError>`](crate::operation::list_backup_vaults::ListBackupVaultsError)
-    pub fn list_backup_vaults(
-        &self,
-    ) -> crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder {
-        crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_backup_vaults(&self) -> crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder {
+        crate::operation::list_backup_vaults::builders::ListBackupVaultsFluentBuilder::new(self.handle.clone())
     }
 }

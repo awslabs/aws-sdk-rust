@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`voice_connector(VoiceConnectorSettings)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::voice_connector) / [`set_voice_connector(Option<VoiceConnectorSettings>)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::set_voice_connector): <p>The Amazon Chime Voice Connector settings.</p>
     /// - On success, responds with [`UpdateGlobalSettingsOutput`](crate::operation::update_global_settings::UpdateGlobalSettingsOutput)
     /// - On failure, responds with [`SdkError<UpdateGlobalSettingsError>`](crate::operation::update_global_settings::UpdateGlobalSettingsError)
-    pub fn update_global_settings(
-        &self,
-    ) -> crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder {
-        crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_global_settings(&self) -> crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder {
+        crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -25,9 +25,7 @@ impl SpotFleetMonitoring {
 
 /// A builder for [`SpotFleetMonitoring`](crate::types::SpotFleetMonitoring).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpotFleetMonitoringBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -51,8 +49,6 @@ impl SpotFleetMonitoringBuilder {
     }
     /// Consumes the builder and constructs a [`SpotFleetMonitoring`](crate::types::SpotFleetMonitoring).
     pub fn build(self) -> crate::types::SpotFleetMonitoring {
-        crate::types::SpotFleetMonitoring {
-            enabled: self.enabled,
-        }
+        crate::types::SpotFleetMonitoring { enabled: self.enabled }
     }
 }

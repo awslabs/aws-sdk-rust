@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteFolderMembershipOutput {
 }
 impl DeleteFolderMembershipOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFolderMembershipOutput`](crate::operation::delete_folder_membership::DeleteFolderMembershipOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_folder_membership::builders::DeleteFolderMembershipOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_folder_membership::builders::DeleteFolderMembershipOutputBuilder {
         crate::operation::delete_folder_membership::builders::DeleteFolderMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFolderMembershipOutput`](crate::operation::delete_folder_membership::DeleteFolderMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFolderMembershipOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

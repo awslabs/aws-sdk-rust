@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`status(Option<LicenseStatus>)`](crate::operation::create_license::CreateLicenseOutput::status): <p>License status.</p>
     ///   - [`version(Option<String>)`](crate::operation::create_license::CreateLicenseOutput::version): <p>License version.</p>
     /// - On failure, responds with [`SdkError<CreateLicenseError>`](crate::operation::create_license::CreateLicenseError)
-    pub fn create_license(
-        &self,
-    ) -> crate::operation::create_license::builders::CreateLicenseFluentBuilder {
-        crate::operation::create_license::builders::CreateLicenseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_license(&self) -> crate::operation::create_license::builders::CreateLicenseFluentBuilder {
+        crate::operation::create_license::builders::CreateLicenseFluentBuilder::new(self.handle.clone())
     }
 }

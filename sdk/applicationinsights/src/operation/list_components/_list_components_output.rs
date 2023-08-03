@@ -5,8 +5,7 @@
 pub struct ListComponentsOutput {
     /// <p>The list of application components.</p>
     #[doc(hidden)]
-    pub application_component_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponent>>,
+    pub application_component_list: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponent>>,
     /// <p>The token to request the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListComponentsOutput {
 }
 impl ListComponentsOutput {
     /// <p>The list of application components.</p>
-    pub fn application_component_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationComponent]> {
+    pub fn application_component_list(&self) -> ::std::option::Option<&[crate::types::ApplicationComponent]> {
         self.application_component_list.as_deref()
     }
     /// <p>The token to request the next page of results.</p>
@@ -38,12 +35,9 @@ impl ListComponentsOutput {
 
 /// A builder for [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentsOutputBuilder {
-    pub(crate) application_component_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponent>>,
+    pub(crate) application_component_list: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListComponentsOutputBuilder {
         self
     }
     /// <p>The list of application components.</p>
-    pub fn set_application_component_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponent>>,
-    ) -> Self {
+    pub fn set_application_component_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponent>>) -> Self {
         self.application_component_list = input;
         self
     }
     /// <p>The list of application components.</p>
-    pub fn get_application_component_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponent>> {
+    pub fn get_application_component_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponent>> {
         &self.application_component_list
     }
     /// <p>The token to request the next page of results.</p>

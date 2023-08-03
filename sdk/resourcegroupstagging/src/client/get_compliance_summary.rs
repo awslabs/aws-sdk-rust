@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`summary_list(Option<Vec<Summary>>)`](crate::operation::get_compliance_summary::GetComplianceSummaryOutput::summary_list): <p>A table that shows counts of noncompliant resources.</p>
     ///   - [`pagination_token(Option<String>)`](crate::operation::get_compliance_summary::GetComplianceSummaryOutput::pagination_token): <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     /// - On failure, responds with [`SdkError<GetComplianceSummaryError>`](crate::operation::get_compliance_summary::GetComplianceSummaryError)
-    pub fn get_compliance_summary(
-        &self,
-    ) -> crate::operation::get_compliance_summary::builders::GetComplianceSummaryFluentBuilder {
-        crate::operation::get_compliance_summary::builders::GetComplianceSummaryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_compliance_summary(&self) -> crate::operation::get_compliance_summary::builders::GetComplianceSummaryFluentBuilder {
+        crate::operation::get_compliance_summary::builders::GetComplianceSummaryFluentBuilder::new(self.handle.clone())
     }
 }

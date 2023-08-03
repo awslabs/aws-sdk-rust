@@ -17,9 +17,7 @@ pub fn ser_matcher(
     Ok(())
 }
 
-pub fn de_matcher(
-    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Matcher, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_matcher(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Matcher, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Matcher::builder();
     while let Some(mut tag) = decoder.next_tag() {

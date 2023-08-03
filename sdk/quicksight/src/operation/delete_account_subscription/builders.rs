@@ -26,7 +26,7 @@ impl DeleteAccountSubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccountSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionInputBuilder,
+    inner: crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionInputBuilder,
 }
 impl DeleteAccountSubscriptionFluentBuilder {
     /// Creates a new `DeleteAccountSubscription`.
@@ -37,7 +37,7 @@ impl DeleteAccountSubscriptionFluentBuilder {
         }
     }
     /// Access the DeleteAccountSubscription as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteAccountSubscriptionFluentBuilder {
             crate::operation::delete_account_subscription::DeleteAccountSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_subscription::DeleteAccountSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_subscription::DeleteAccountSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteAccountSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteAccountSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_account_subscription::DeleteAccountSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_subscription::DeleteAccountSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_subscription::DeleteAccountSubscriptionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteAccountSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_account_subscription::DeleteAccountSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_subscription::DeleteAccountSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_subscription::DeleteAccountSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteAccountSubscriptionFluentBuilder {
             crate::operation::delete_account_subscription::DeleteAccountSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_subscription::DeleteAccountSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_account_subscription::DeleteAccountSubscriptionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID of the account that you want to delete.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the account that you want to delete.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

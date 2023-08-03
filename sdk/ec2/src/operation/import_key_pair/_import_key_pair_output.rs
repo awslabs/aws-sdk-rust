@@ -55,9 +55,7 @@ impl ImportKeyPairOutput {
 
 /// A builder for [`ImportKeyPairOutput`](crate::operation::import_key_pair::ImportKeyPairOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportKeyPairOutputBuilder {
     pub(crate) key_fingerprint: ::std::option::Option<::std::string::String>,
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
@@ -70,10 +68,7 @@ impl ImportKeyPairOutputBuilder {
     /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li>
     /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
     /// </ul>
-    pub fn key_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_fingerprint = ::std::option::Option::Some(input.into());
         self
     }
@@ -81,10 +76,7 @@ impl ImportKeyPairOutputBuilder {
     /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC 4716.</p> </li>
     /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
     /// </ul>
-    pub fn set_key_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_fingerprint = input;
         self
     }
@@ -135,10 +127,7 @@ impl ImportKeyPairOutputBuilder {
         self
     }
     /// <p>The tags applied to the imported key pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

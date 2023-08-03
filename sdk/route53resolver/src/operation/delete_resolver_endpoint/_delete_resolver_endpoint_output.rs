@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteResolverEndpointOutput {
 }
 impl DeleteResolverEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResolverEndpointOutput`](crate::operation::delete_resolver_endpoint::DeleteResolverEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointOutputBuilder {
         crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResolverEndpointOutput`](crate::operation::delete_resolver_endpoint::DeleteResolverEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResolverEndpointOutputBuilder {
     pub(crate) resolver_endpoint: ::std::option::Option<crate::types::ResolverEndpoint>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteResolverEndpointOutputBuilder {
         self
     }
     /// <p>Information about the <code>DeleteResolverEndpoint</code> request, including the status of the request.</p>
-    pub fn set_resolver_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverEndpoint>,
-    ) -> Self {
+    pub fn set_resolver_endpoint(mut self, input: ::std::option::Option<crate::types::ResolverEndpoint>) -> Self {
         self.resolver_endpoint = input;
         self
     }

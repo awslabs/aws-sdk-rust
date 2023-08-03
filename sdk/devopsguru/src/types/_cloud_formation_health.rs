@@ -37,9 +37,7 @@ impl CloudFormationHealth {
 
 /// A builder for [`CloudFormationHealth`](crate::types::CloudFormationHealth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudFormationHealthBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) insight: ::std::option::Option<crate::types::InsightHealth>,
@@ -66,10 +64,7 @@ impl CloudFormationHealthBuilder {
         self
     }
     /// <p> Information about the health of the Amazon Web Services resources in your account that are specified by an Amazon Web Services CloudFormation stack, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
-    pub fn set_insight(
-        mut self,
-        input: ::std::option::Option<crate::types::InsightHealth>,
-    ) -> Self {
+    pub fn set_insight(mut self, input: ::std::option::Option<crate::types::InsightHealth>) -> Self {
         self.insight = input;
         self
     }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListZonalShiftsOutput {
 }
 impl ListZonalShiftsOutput {
     /// Creates a new builder-style object to manufacture [`ListZonalShiftsOutput`](crate::operation::list_zonal_shifts::ListZonalShiftsOutput).
-    pub fn builder() -> crate::operation::list_zonal_shifts::builders::ListZonalShiftsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_zonal_shifts::builders::ListZonalShiftsOutputBuilder {
         crate::operation::list_zonal_shifts::builders::ListZonalShiftsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListZonalShiftsOutput`](crate::operation::list_zonal_shifts::ListZonalShiftsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListZonalShiftsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListZonalShiftsOutputBuilder {
         self
     }
     /// <p>The items in the response list.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The items in the response list.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftSummary>> {
         &self.items
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>

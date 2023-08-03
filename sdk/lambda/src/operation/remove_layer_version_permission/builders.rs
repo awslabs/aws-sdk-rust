@@ -26,7 +26,7 @@ impl RemoveLayerVersionPermissionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveLayerVersionPermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionInputBuilder,
+    inner: crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionInputBuilder,
 }
 impl RemoveLayerVersionPermissionFluentBuilder {
     /// Creates a new `RemoveLayerVersionPermission`.
@@ -37,7 +37,7 @@ impl RemoveLayerVersionPermissionFluentBuilder {
         }
     }
     /// Access the RemoveLayerVersionPermission as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RemoveLayerVersionPermissionFluentBuilder {
             crate::operation::remove_layer_version_permission::RemoveLayerVersionPermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RemoveLayerVersionPermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RemoveLayerVersionPermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RemoveLayerVersionPermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl RemoveLayerVersionPermissionFluentBuilder {
             crate::operation::remove_layer_version_permission::RemoveLayerVersionPermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError>,
     > {
         self.customize_middleware().await
     }

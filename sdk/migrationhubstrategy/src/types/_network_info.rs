@@ -44,9 +44,7 @@ impl NetworkInfo {
 
 /// A builder for [`NetworkInfo`](crate::types::NetworkInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkInfoBuilder {
     pub(crate) interface_name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct NetworkInfoBuilder {
 }
 impl NetworkInfoBuilder {
     /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
-    pub fn interface_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interface_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
-    pub fn set_interface_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interface_name = input;
         self
     }

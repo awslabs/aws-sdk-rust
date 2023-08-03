@@ -10,10 +10,7 @@ impl UpdateDomainNameInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_domain_name::UpdateDomainNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_name::UpdateDomainNameError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_name::UpdateDomainNameError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_domain_name();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDomainNameFluentBuilder {
         }
     }
     /// Access the UpdateDomainName as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_domain_name::builders::UpdateDomainNameInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_domain_name::builders::UpdateDomainNameInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateDomainNameFluentBuilder {
             crate::operation::update_domain_name::UpdateDomainName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_name::UpdateDomainNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_name::UpdateDomainNameError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateDomainNameFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateDomainNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_name::UpdateDomainNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_name::UpdateDomainNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_name::UpdateDomainNameError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateDomainNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_name::UpdateDomainNameOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_name::UpdateDomainNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_name::UpdateDomainNameError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateDomainNameFluentBuilder {
             crate::operation::update_domain_name::UpdateDomainName,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_domain_name::UpdateDomainNameError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_domain_name::UpdateDomainNameError>,
     > {
         self.customize_middleware().await
     }
@@ -141,47 +125,31 @@ impl UpdateDomainNameFluentBuilder {
     /// To override the contents of this collection use [`set_domain_name_configurations`](Self::set_domain_name_configurations).
     ///
     /// <p>The domain name configurations.</p>
-    pub fn domain_name_configurations(
-        mut self,
-        input: crate::types::DomainNameConfiguration,
-    ) -> Self {
+    pub fn domain_name_configurations(mut self, input: crate::types::DomainNameConfiguration) -> Self {
         self.inner = self.inner.domain_name_configurations(input);
         self
     }
     /// <p>The domain name configurations.</p>
-    pub fn set_domain_name_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>>,
-    ) -> Self {
+    pub fn set_domain_name_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>>) -> Self {
         self.inner = self.inner.set_domain_name_configurations(input);
         self
     }
     /// <p>The domain name configurations.</p>
-    pub fn get_domain_name_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>> {
+    pub fn get_domain_name_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>> {
         self.inner.get_domain_name_configurations()
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
-    pub fn mutual_tls_authentication(
-        mut self,
-        input: crate::types::MutualTlsAuthenticationInput,
-    ) -> Self {
+    pub fn mutual_tls_authentication(mut self, input: crate::types::MutualTlsAuthenticationInput) -> Self {
         self.inner = self.inner.mutual_tls_authentication(input);
         self
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
-    pub fn set_mutual_tls_authentication(
-        mut self,
-        input: ::std::option::Option<crate::types::MutualTlsAuthenticationInput>,
-    ) -> Self {
+    pub fn set_mutual_tls_authentication(mut self, input: ::std::option::Option<crate::types::MutualTlsAuthenticationInput>) -> Self {
         self.inner = self.inner.set_mutual_tls_authentication(input);
         self
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
-    pub fn get_mutual_tls_authentication(
-        &self,
-    ) -> &::std::option::Option<crate::types::MutualTlsAuthenticationInput> {
+    pub fn get_mutual_tls_authentication(&self) -> &::std::option::Option<crate::types::MutualTlsAuthenticationInput> {
         self.inner.get_mutual_tls_authentication()
     }
 }

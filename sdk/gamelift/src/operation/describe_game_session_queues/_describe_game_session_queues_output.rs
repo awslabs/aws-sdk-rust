@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeGameSessionQueuesOutput {
 }
 impl DescribeGameSessionQueuesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionQueuesOutput`](crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput).
-    pub fn builder() -> crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesOutputBuilder {
         crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGameSessionQueuesOutput`](crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGameSessionQueuesOutputBuilder {
-    pub(crate) game_session_queues:
-        ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueue>>,
+    pub(crate) game_session_queues: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueue>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeGameSessionQueuesOutputBuilder {
         self
     }
     /// <p>A collection of objects that describe the requested game session queues.</p>
-    pub fn set_game_session_queues(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueue>>,
-    ) -> Self {
+    pub fn set_game_session_queues(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueue>>) -> Self {
         self.game_session_queues = input;
         self
     }
     /// <p>A collection of objects that describe the requested game session queues.</p>
-    pub fn get_game_session_queues(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueue>> {
+    pub fn get_game_session_queues(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueue>> {
         &self.game_session_queues
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -94,9 +86,7 @@ impl DescribeGameSessionQueuesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeGameSessionQueuesOutput`](crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput {
+    pub fn build(self) -> crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput {
         crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput {
             game_session_queues: self.game_session_queues,
             next_token: self.next_token,

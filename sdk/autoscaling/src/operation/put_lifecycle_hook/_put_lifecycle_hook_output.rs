@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutLifecycleHookOutput {
 }
 impl PutLifecycleHookOutput {
     /// Creates a new builder-style object to manufacture [`PutLifecycleHookOutput`](crate::operation::put_lifecycle_hook::PutLifecycleHookOutput).
-    pub fn builder() -> crate::operation::put_lifecycle_hook::builders::PutLifecycleHookOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_lifecycle_hook::builders::PutLifecycleHookOutputBuilder {
         crate::operation::put_lifecycle_hook::builders::PutLifecycleHookOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutLifecycleHookOutput`](crate::operation::put_lifecycle_hook::PutLifecycleHookOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutLifecycleHookOutputBuilder {
     _request_id: Option<String>,
 }

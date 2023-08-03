@@ -43,9 +43,7 @@ impl VoteOnProposalInput {
 
 /// A builder for [`VoteOnProposalInput`](crate::operation::vote_on_proposal::VoteOnProposalInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VoteOnProposalInputBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) proposal_id: ::std::option::Option<::std::string::String>,
@@ -82,18 +80,12 @@ impl VoteOnProposalInputBuilder {
         &self.proposal_id
     }
     /// <p>The unique identifier of the member casting the vote. </p>
-    pub fn voter_member_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voter_member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voter_member_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the member casting the vote. </p>
-    pub fn set_voter_member_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voter_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voter_member_id = input;
         self
     }
@@ -118,10 +110,7 @@ impl VoteOnProposalInputBuilder {
     /// Consumes the builder and constructs a [`VoteOnProposalInput`](crate::operation::vote_on_proposal::VoteOnProposalInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::vote_on_proposal::VoteOnProposalInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::vote_on_proposal::VoteOnProposalInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::vote_on_proposal::VoteOnProposalInput {
             network_id: self.network_id,
             proposal_id: self.proposal_id,

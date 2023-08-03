@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::describe_security_profile::DescribeSecurityProfileOutput::creation_date): <p>The time the security profile was created.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::describe_security_profile::DescribeSecurityProfileOutput::last_modified_date): <p>The time the security profile was last modified.</p>
     /// - On failure, responds with [`SdkError<DescribeSecurityProfileError>`](crate::operation::describe_security_profile::DescribeSecurityProfileError)
-    pub fn describe_security_profile(
-        &self,
-    ) -> crate::operation::describe_security_profile::builders::DescribeSecurityProfileFluentBuilder
-    {
+    pub fn describe_security_profile(&self) -> crate::operation::describe_security_profile::builders::DescribeSecurityProfileFluentBuilder {
         crate::operation::describe_security_profile::builders::DescribeSecurityProfileFluentBuilder::new(self.handle.clone())
     }
 }

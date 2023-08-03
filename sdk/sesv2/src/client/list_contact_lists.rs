@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`contact_lists(Option<Vec<ContactList>>)`](crate::operation::list_contact_lists::ListContactListsOutput::contact_lists): <p>The available contact lists.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_contact_lists::ListContactListsOutput::next_token): <p>A string token indicating that there might be additional contact lists available to be listed. Copy this token to a subsequent call to <code>ListContactLists</code> with the same parameters to retrieve the next page of contact lists.</p>
     /// - On failure, responds with [`SdkError<ListContactListsError>`](crate::operation::list_contact_lists::ListContactListsError)
-    pub fn list_contact_lists(
-        &self,
-    ) -> crate::operation::list_contact_lists::builders::ListContactListsFluentBuilder {
-        crate::operation::list_contact_lists::builders::ListContactListsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_contact_lists(&self) -> crate::operation::list_contact_lists::builders::ListContactListsFluentBuilder {
+        crate::operation::list_contact_lists::builders::ListContactListsFluentBuilder::new(self.handle.clone())
     }
 }

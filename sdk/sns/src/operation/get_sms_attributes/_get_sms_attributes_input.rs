@@ -20,17 +20,14 @@ impl GetSmsAttributesInput {
 }
 impl GetSmsAttributesInput {
     /// Creates a new builder-style object to manufacture [`GetSmsAttributesInput`](crate::operation::get_sms_attributes::GetSmsAttributesInput).
-    pub fn builder() -> crate::operation::get_sms_attributes::builders::GetSmsAttributesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_sms_attributes::builders::GetSmsAttributesInputBuilder {
         crate::operation::get_sms_attributes::builders::GetSmsAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSmsAttributesInput`](crate::operation::get_sms_attributes::GetSmsAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSmsAttributesInputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -51,10 +48,7 @@ impl GetSmsAttributesInputBuilder {
     /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p>
     /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
     /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
@@ -67,14 +61,7 @@ impl GetSmsAttributesInputBuilder {
     /// Consumes the builder and constructs a [`GetSmsAttributesInput`](crate::operation::get_sms_attributes::GetSmsAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sms_attributes::GetSmsAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_sms_attributes::GetSmsAttributesInput {
-                attributes: self.attributes,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_sms_attributes::GetSmsAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_sms_attributes::GetSmsAttributesInput { attributes: self.attributes })
     }
 }

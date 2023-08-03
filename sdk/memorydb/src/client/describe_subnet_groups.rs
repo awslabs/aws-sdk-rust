@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsOutput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     ///   - [`subnet_groups(Option<Vec<SubnetGroup>>)`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsOutput::subnet_groups): <p>A list of subnet groups. Each element in the list contains detailed information about one group.</p>
     /// - On failure, responds with [`SdkError<DescribeSubnetGroupsError>`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsError)
-    pub fn describe_subnet_groups(
-        &self,
-    ) -> crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsFluentBuilder {
-        crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_subnet_groups(&self) -> crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsFluentBuilder {
+        crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsFluentBuilder::new(self.handle.clone())
     }
 }

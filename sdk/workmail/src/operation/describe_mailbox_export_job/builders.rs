@@ -26,7 +26,7 @@ impl DescribeMailboxExportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMailboxExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobInputBuilder,
+    inner: crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobInputBuilder,
 }
 impl DescribeMailboxExportJobFluentBuilder {
     /// Creates a new `DescribeMailboxExportJob`.
@@ -37,7 +37,7 @@ impl DescribeMailboxExportJobFluentBuilder {
         }
     }
     /// Access the DescribeMailboxExportJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeMailboxExportJobFluentBuilder {
             crate::operation::describe_mailbox_export_job::DescribeMailboxExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeMailboxExportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeMailboxExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeMailboxExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeMailboxExportJobFluentBuilder {
             crate::operation::describe_mailbox_export_job::DescribeMailboxExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DescribeMailboxExportJobFluentBuilder {
         self.inner.get_job_id()
     }
     /// <p>The organization ID.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The organization ID.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

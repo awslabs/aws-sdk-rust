@@ -2,8 +2,7 @@
 pub fn ser_initiate_multipart_upload_headers(
     input: &crate::operation::initiate_multipart_upload::InitiateMultipartUploadInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.archive_description {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_initiate_multipart_upload_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "archive_description",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-archive-description", header_value);
@@ -27,10 +23,7 @@ pub fn ser_initiate_multipart_upload_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "part_size",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-part-size", header_value);
@@ -49,92 +42,93 @@ pub fn de_initiate_multipart_upload_http_error(
     crate::operation::initiate_multipart_upload::InitiateMultipartUploadError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(
-            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled(
+        None => {
+            return Err(crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled(
                 generic,
-            ),
-        ),
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidParameterValueException" => {
+            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "MissingParameterValueException" => crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::MissingParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "MissingParameterValueException" => {
+            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::MissingParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(_response_body, output).map_err(crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "ResourceNotFoundException" => crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::ResourceNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::ServiceUnavailableException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::generic(generic)
+        _ => crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::generic(generic),
     })
 }
 
@@ -151,16 +145,18 @@ pub fn de_initiate_multipart_upload_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::initiate_multipart_upload::builders::InitiateMultipartUploadOutputBuilder::default();
         output = output.set_location(
-            crate::protocol_serde::shape_initiate_multipart_upload_output::de_location_header(_response_headers)
-                                    .map_err(|_|crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled("Failed to parse location from header `Location"))?
+            crate::protocol_serde::shape_initiate_multipart_upload_output::de_location_header(_response_headers).map_err(|_| {
+                crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled("Failed to parse location from header `Location")
+            })?,
         );
         output = output.set_upload_id(
-            crate::protocol_serde::shape_initiate_multipart_upload_output::de_upload_id_header(_response_headers)
-                                    .map_err(|_|crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled("Failed to parse uploadId from header `x-amz-multipart-upload-id"))?
+            crate::protocol_serde::shape_initiate_multipart_upload_output::de_upload_id_header(_response_headers).map_err(|_| {
+                crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::unhandled(
+                    "Failed to parse uploadId from header `x-amz-multipart-upload-id",
+                )
+            })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -22,9 +22,7 @@ pub fn ser_create_cluster_input(
         object.key("kmsKeyId").string(var_6.as_str());
     }
     if let Some(var_7) = &input.preferred_maintenance_window {
-        object
-            .key("preferredMaintenanceWindow")
-            .string(var_7.as_str());
+        object.key("preferredMaintenanceWindow").string(var_7.as_str());
     }
     if let Some(var_8) = &input.shard_capacity {
         object.key("shardCapacity").number(

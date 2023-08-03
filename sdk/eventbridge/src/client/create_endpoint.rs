@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`role_arn(Option<String>)`](crate::operation::create_endpoint::CreateEndpointOutput::role_arn): <p>The ARN of the role used by event replication for this request.</p>
     ///   - [`state(Option<EndpointState>)`](crate::operation::create_endpoint::CreateEndpointOutput::state): <p>The state of the endpoint that was created by this request.</p>
     /// - On failure, responds with [`SdkError<CreateEndpointError>`](crate::operation::create_endpoint::CreateEndpointError)
-    pub fn create_endpoint(
-        &self,
-    ) -> crate::operation::create_endpoint::builders::CreateEndpointFluentBuilder {
-        crate::operation::create_endpoint::builders::CreateEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_endpoint(&self) -> crate::operation::create_endpoint::builders::CreateEndpointFluentBuilder {
+        crate::operation::create_endpoint::builders::CreateEndpointFluentBuilder::new(self.handle.clone())
     }
 }

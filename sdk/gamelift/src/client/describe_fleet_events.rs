@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`events(Option<Vec<Event>>)`](crate::operation::describe_fleet_events::DescribeFleetEventsOutput::events): <p>A collection of objects containing event log entries for the specified fleet.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fleet_events::DescribeFleetEventsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetEventsError>`](crate::operation::describe_fleet_events::DescribeFleetEventsError)
-    pub fn describe_fleet_events(
-        &self,
-    ) -> crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder {
-        crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_fleet_events(&self) -> crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder {
+        crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder::new(self.handle.clone())
     }
 }

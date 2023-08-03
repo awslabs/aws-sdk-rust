@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput::creation_time): <p>The time that the location was created.</p>
     ///   - [`server_certificate(Option<Blob>)`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput::server_certificate): <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationObjectStorageError>`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageError)
-    pub fn describe_location_object_storage(&self) -> crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageFluentBuilder{
+    pub fn describe_location_object_storage(
+        &self,
+    ) -> crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageFluentBuilder {
         crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageFluentBuilder::new(self.handle.clone())
     }
 }

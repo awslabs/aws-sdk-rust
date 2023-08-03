@@ -38,10 +38,7 @@ impl GetAuthorizationTokenFluentBuilder {
         }
     }
     /// Access the GetAuthorizationToken as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_authorization_token::builders::GetAuthorizationTokenInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_authorization_token::builders::GetAuthorizationTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl GetAuthorizationTokenFluentBuilder {
             crate::operation::get_authorization_token::GetAuthorizationToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_authorization_token::GetAuthorizationTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_authorization_token::GetAuthorizationTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl GetAuthorizationTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl GetAuthorizationTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_authorization_token::GetAuthorizationTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_authorization_token::GetAuthorizationTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_authorization_token::GetAuthorizationTokenError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl GetAuthorizationTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_authorization_token::GetAuthorizationTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_authorization_token::GetAuthorizationTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_authorization_token::GetAuthorizationTokenError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl GetAuthorizationTokenFluentBuilder {
             crate::operation::get_authorization_token::GetAuthorizationToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_authorization_token::GetAuthorizationTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_authorization_token::GetAuthorizationTokenError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +126,7 @@ impl GetAuthorizationTokenFluentBuilder {
     #[deprecated(
         note = "This field is deprecated. The returned authorization token can be used to access any Amazon ECR registry that the IAM principal has access to, specifying a registry ID doesn't change the permissions scope of the authorization token."
     )]
-    pub fn set_registry_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_registry_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_registry_ids(input);
         self
     }
@@ -151,9 +134,7 @@ impl GetAuthorizationTokenFluentBuilder {
     #[deprecated(
         note = "This field is deprecated. The returned authorization token can be used to access any Amazon ECR registry that the IAM principal has access to, specifying a registry ID doesn't change the permissions scope of the authorization token."
     )]
-    pub fn get_registry_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_registry_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_registry_ids()
     }
 }

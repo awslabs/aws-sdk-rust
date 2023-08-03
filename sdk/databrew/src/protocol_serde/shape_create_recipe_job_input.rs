@@ -9,10 +9,7 @@ pub fn ser_create_recipe_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_data_catalog_output::ser_data_catalog_output(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_data_catalog_output::ser_data_catalog_output(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_create_recipe_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_database_output::ser_database_output(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_database_output::ser_database_output(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -78,10 +72,7 @@ pub fn ser_create_recipe_job_input(
     if let Some(var_19) = &input.recipe_reference {
         #[allow(unused_mut)]
         let mut object_20 = object.key("RecipeReference").start_object();
-        crate::protocol_serde::shape_recipe_reference::ser_recipe_reference(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_recipe_reference::ser_recipe_reference(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.role_arn {

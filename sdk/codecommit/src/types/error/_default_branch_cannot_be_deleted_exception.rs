@@ -27,34 +27,27 @@ impl ::std::fmt::Display for DefaultBranchCannotBeDeletedException {
     }
 }
 impl ::std::error::Error for DefaultBranchCannotBeDeletedException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::DefaultBranchCannotBeDeletedException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::DefaultBranchCannotBeDeletedException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for DefaultBranchCannotBeDeletedException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DefaultBranchCannotBeDeletedException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl DefaultBranchCannotBeDeletedException {
     /// Creates a new builder-style object to manufacture [`DefaultBranchCannotBeDeletedException`](crate::types::error::DefaultBranchCannotBeDeletedException).
-    pub fn builder() -> crate::types::error::builders::DefaultBranchCannotBeDeletedExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::DefaultBranchCannotBeDeletedExceptionBuilder {
         crate::types::error::builders::DefaultBranchCannotBeDeletedExceptionBuilder::default()
     }
 }
 
 /// A builder for [`DefaultBranchCannotBeDeletedException`](crate::types::error::DefaultBranchCannotBeDeletedException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultBranchCannotBeDeletedExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl DefaultBranchCannotBeDeletedExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

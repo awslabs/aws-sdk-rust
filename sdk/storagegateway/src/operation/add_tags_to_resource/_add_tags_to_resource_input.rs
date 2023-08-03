@@ -27,17 +27,14 @@ impl AddTagsToResourceInput {
 }
 impl AddTagsToResourceInput {
     /// Creates a new builder-style object to manufacture [`AddTagsToResourceInput`](crate::operation::add_tags_to_resource::AddTagsToResourceInput).
-    pub fn builder(
-    ) -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
+    pub fn builder() -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
         crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`AddTagsToResourceInput`](crate::operation::add_tags_to_resource::AddTagsToResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddTagsToResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -73,10 +70,7 @@ impl AddTagsToResourceInputBuilder {
     /// <p>The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -89,15 +83,10 @@ impl AddTagsToResourceInputBuilder {
     /// Consumes the builder and constructs a [`AddTagsToResourceInput`](crate::operation::add_tags_to_resource::AddTagsToResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_tags_to_resource::AddTagsToResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_tags_to_resource::AddTagsToResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_tags_to_resource::AddTagsToResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::add_tags_to_resource::AddTagsToResourceInput {
+            resource_arn: self.resource_arn,
+            tags: self.tags,
+        })
     }
 }

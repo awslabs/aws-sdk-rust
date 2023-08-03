@@ -70,18 +70,14 @@ impl GetDevicePositionHistoryInput {
 }
 impl GetDevicePositionHistoryInput {
     /// Creates a new builder-style object to manufacture [`GetDevicePositionHistoryInput`](crate::operation::get_device_position_history::GetDevicePositionHistoryInput).
-    pub fn builder(
-    ) -> crate::operation::get_device_position_history::builders::GetDevicePositionHistoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_device_position_history::builders::GetDevicePositionHistoryInputBuilder {
         crate::operation::get_device_position_history::builders::GetDevicePositionHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDevicePositionHistoryInput`](crate::operation::get_device_position_history::GetDevicePositionHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDevicePositionHistoryInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
@@ -150,10 +146,7 @@ impl GetDevicePositionHistoryInputBuilder {
     /// <ul>
     /// <li> <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p> </li>
     /// </ul>
-    pub fn set_start_time_inclusive(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time_inclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time_inclusive = input;
         self
     }
@@ -179,10 +172,7 @@ impl GetDevicePositionHistoryInputBuilder {
     /// <ul>
     /// <li> <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p> </li>
     /// </ul>
-    pub fn set_end_time_exclusive(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time_exclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time_exclusive = input;
         self
     }
@@ -218,15 +208,13 @@ impl GetDevicePositionHistoryInputBuilder {
         crate::operation::get_device_position_history::GetDevicePositionHistoryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_device_position_history::GetDevicePositionHistoryInput {
-                tracker_name: self.tracker_name,
-                device_id: self.device_id,
-                next_token: self.next_token,
-                start_time_inclusive: self.start_time_inclusive,
-                end_time_exclusive: self.end_time_exclusive,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_device_position_history::GetDevicePositionHistoryInput {
+            tracker_name: self.tracker_name,
+            device_id: self.device_id,
+            next_token: self.next_token,
+            start_time_inclusive: self.start_time_inclusive,
+            end_time_exclusive: self.end_time_exclusive,
+            max_results: self.max_results,
+        })
     }
 }

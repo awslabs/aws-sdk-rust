@@ -50,17 +50,14 @@ impl AddProfilePermissionInput {
 }
 impl AddProfilePermissionInput {
     /// Creates a new builder-style object to manufacture [`AddProfilePermissionInput`](crate::operation::add_profile_permission::AddProfilePermissionInput).
-    pub fn builder(
-    ) -> crate::operation::add_profile_permission::builders::AddProfilePermissionInputBuilder {
+    pub fn builder() -> crate::operation::add_profile_permission::builders::AddProfilePermissionInputBuilder {
         crate::operation::add_profile_permission::builders::AddProfilePermissionInputBuilder::default()
     }
 }
 
 /// A builder for [`AddProfilePermissionInput`](crate::operation::add_profile_permission::AddProfilePermissionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddProfilePermissionInputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) profile_version: ::std::option::Option<::std::string::String>,
@@ -85,18 +82,12 @@ impl AddProfilePermissionInputBuilder {
         &self.profile_name
     }
     /// <p>The version of the signing profile.</p>
-    pub fn profile_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the signing profile.</p>
-    pub fn set_profile_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_version = input;
         self
     }
@@ -163,19 +154,15 @@ impl AddProfilePermissionInputBuilder {
     /// Consumes the builder and constructs a [`AddProfilePermissionInput`](crate::operation::add_profile_permission::AddProfilePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_profile_permission::AddProfilePermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_profile_permission::AddProfilePermissionInput {
-                profile_name: self.profile_name,
-                profile_version: self.profile_version,
-                action: self.action,
-                principal: self.principal,
-                revision_id: self.revision_id,
-                statement_id: self.statement_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_profile_permission::AddProfilePermissionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::add_profile_permission::AddProfilePermissionInput {
+            profile_name: self.profile_name,
+            profile_version: self.profile_version,
+            action: self.action,
+            principal: self.principal,
+            revision_id: self.revision_id,
+            statement_id: self.statement_id,
+        })
     }
 }

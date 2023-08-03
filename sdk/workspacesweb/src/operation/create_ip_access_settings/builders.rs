@@ -26,8 +26,7 @@ impl CreateIpAccessSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIpAccessSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_ip_access_settings::builders::CreateIpAccessSettingsInputBuilder,
+    inner: crate::operation::create_ip_access_settings::builders::CreateIpAccessSettingsInputBuilder,
 }
 impl CreateIpAccessSettingsFluentBuilder {
     /// Creates a new `CreateIpAccessSettings`.
@@ -38,10 +37,7 @@ impl CreateIpAccessSettingsFluentBuilder {
         }
     }
     /// Access the CreateIpAccessSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_ip_access_settings::builders::CreateIpAccessSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_ip_access_settings::builders::CreateIpAccessSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateIpAccessSettingsFluentBuilder {
             crate::operation::create_ip_access_settings::CreateIpAccessSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ip_access_settings::CreateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ip_access_settings::CreateIpAccessSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateIpAccessSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateIpAccessSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ip_access_settings::CreateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ip_access_settings::CreateIpAccessSettingsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateIpAccessSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ip_access_settings::CreateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ip_access_settings::CreateIpAccessSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CreateIpAccessSettingsFluentBuilder {
             crate::operation::create_ip_access_settings::CreateIpAccessSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_ip_access_settings::CreateIpAccessSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ip_access_settings::CreateIpAccessSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -162,10 +147,7 @@ impl CreateIpAccessSettingsFluentBuilder {
         self
     }
     /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -174,18 +156,12 @@ impl CreateIpAccessSettingsFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The custom managed key of the IP access settings.</p>
-    pub fn customer_managed_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_managed_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_managed_key(input.into());
         self
     }
     /// <p>The custom managed key of the IP access settings.</p>
-    pub fn set_customer_managed_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_managed_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_managed_key(input);
         self
     }
@@ -209,9 +185,7 @@ impl CreateIpAccessSettingsFluentBuilder {
     /// <p>Additional encryption context of the IP access settings.</p>
     pub fn set_additional_encryption_context(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_additional_encryption_context(input);
         self
@@ -219,9 +193,7 @@ impl CreateIpAccessSettingsFluentBuilder {
     /// <p>Additional encryption context of the IP access settings.</p>
     pub fn get_additional_encryption_context(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_additional_encryption_context()
     }
     /// Appends an item to `ipRules`.
@@ -234,10 +206,7 @@ impl CreateIpAccessSettingsFluentBuilder {
         self
     }
     /// <p>The IP rules of the IP access settings.</p>
-    pub fn set_ip_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>,
-    ) -> Self {
+    pub fn set_ip_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRule>>) -> Self {
         self.inner = self.inner.set_ip_rules(input);
         self
     }

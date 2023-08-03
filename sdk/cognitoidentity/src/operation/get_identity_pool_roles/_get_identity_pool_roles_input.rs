@@ -16,34 +16,25 @@ impl GetIdentityPoolRolesInput {
 }
 impl GetIdentityPoolRolesInput {
     /// Creates a new builder-style object to manufacture [`GetIdentityPoolRolesInput`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput).
-    pub fn builder(
-    ) -> crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesInputBuilder {
+    pub fn builder() -> crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesInputBuilder {
         crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentityPoolRolesInput`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityPoolRolesInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl GetIdentityPoolRolesInputBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -54,14 +45,10 @@ impl GetIdentityPoolRolesInputBuilder {
     /// Consumes the builder and constructs a [`GetIdentityPoolRolesInput`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput {
-                identity_pool_id: self.identity_pool_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput {
+            identity_pool_id: self.identity_pool_id,
+        })
     }
 }

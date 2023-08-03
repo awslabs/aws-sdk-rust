@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`delegates(Option<Vec<Delegate>>)`](crate::operation::list_resource_delegates::ListResourceDelegatesOutput::delegates): <p>One page of the resource's delegates.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_delegates::ListResourceDelegatesOutput::next_token): <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
     /// - On failure, responds with [`SdkError<ListResourceDelegatesError>`](crate::operation::list_resource_delegates::ListResourceDelegatesError)
-    pub fn list_resource_delegates(
-        &self,
-    ) -> crate::operation::list_resource_delegates::builders::ListResourceDelegatesFluentBuilder
-    {
-        crate::operation::list_resource_delegates::builders::ListResourceDelegatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_resource_delegates(&self) -> crate::operation::list_resource_delegates::builders::ListResourceDelegatesFluentBuilder {
+        crate::operation::list_resource_delegates::builders::ListResourceDelegatesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`stack_resource_summaries(Option<Vec<StackResourceSummary>>)`](crate::operation::list_stack_resources::ListStackResourcesOutput::stack_resource_summaries): <p>A list of <code>StackResourceSummary</code> structures.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stack_resources::ListStackResourcesOutput::next_token): <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources. If no additional page exists, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListStackResourcesError>`](crate::operation::list_stack_resources::ListStackResourcesError)
-    pub fn list_stack_resources(
-        &self,
-    ) -> crate::operation::list_stack_resources::builders::ListStackResourcesFluentBuilder {
-        crate::operation::list_stack_resources::builders::ListStackResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_stack_resources(&self) -> crate::operation::list_stack_resources::builders::ListStackResourcesFluentBuilder {
+        crate::operation::list_stack_resources::builders::ListStackResourcesFluentBuilder::new(self.handle.clone())
     }
 }

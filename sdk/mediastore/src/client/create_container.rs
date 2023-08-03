@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateContainerOutput`](crate::operation::create_container::CreateContainerOutput) with field(s):
     ///   - [`container(Option<Container>)`](crate::operation::create_container::CreateContainerOutput::container): <p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:<region>   :   <account that owns this container>    :container/    <name of container>     . For example: arn:aws:mediastore:us-west-2:111122223333:container/movies     </name>   </account>  </region></p>  <p>ContainerName: The container name as specified in the request.</p>  <p>CreationTime: Unix time stamp.</p>  <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p>  <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <code>DescribeContainer</code> or <code>ListContainers</code>.</p>
     /// - On failure, responds with [`SdkError<CreateContainerError>`](crate::operation::create_container::CreateContainerError)
-    pub fn create_container(
-        &self,
-    ) -> crate::operation::create_container::builders::CreateContainerFluentBuilder {
-        crate::operation::create_container::builders::CreateContainerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_container(&self) -> crate::operation::create_container::builders::CreateContainerFluentBuilder {
+        crate::operation::create_container::builders::CreateContainerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -13,9 +13,7 @@ impl SmpteTtDestinationSettings {
 
 /// A builder for [`SmpteTtDestinationSettings`](crate::types::SmpteTtDestinationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SmpteTtDestinationSettingsBuilder {}
 impl SmpteTtDestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`SmpteTtDestinationSettings`](crate::types::SmpteTtDestinationSettings).

@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyVolumeOutput`](crate::operation::modify_volume::ModifyVolumeOutput) with field(s):
     ///   - [`volume_modification(Option<VolumeModification>)`](crate::operation::modify_volume::ModifyVolumeOutput::volume_modification): <p>Information about the volume modification.</p>
     /// - On failure, responds with [`SdkError<ModifyVolumeError>`](crate::operation::modify_volume::ModifyVolumeError)
-    pub fn modify_volume(
-        &self,
-    ) -> crate::operation::modify_volume::builders::ModifyVolumeFluentBuilder {
-        crate::operation::modify_volume::builders::ModifyVolumeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_volume(&self) -> crate::operation::modify_volume::builders::ModifyVolumeFluentBuilder {
+        crate::operation::modify_volume::builders::ModifyVolumeFluentBuilder::new(self.handle.clone())
     }
 }

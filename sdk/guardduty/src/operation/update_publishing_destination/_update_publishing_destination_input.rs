@@ -23,24 +23,20 @@ impl UpdatePublishingDestinationInput {
         self.destination_id.as_deref()
     }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
-    pub fn destination_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DestinationProperties> {
+    pub fn destination_properties(&self) -> ::std::option::Option<&crate::types::DestinationProperties> {
         self.destination_properties.as_ref()
     }
 }
 impl UpdatePublishingDestinationInput {
     /// Creates a new builder-style object to manufacture [`UpdatePublishingDestinationInput`](crate::operation::update_publishing_destination::UpdatePublishingDestinationInput).
-    pub fn builder() -> crate::operation::update_publishing_destination::builders::UpdatePublishingDestinationInputBuilder{
+    pub fn builder() -> crate::operation::update_publishing_destination::builders::UpdatePublishingDestinationInputBuilder {
         crate::operation::update_publishing_destination::builders::UpdatePublishingDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePublishingDestinationInput`](crate::operation::update_publishing_destination::UpdatePublishingDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePublishingDestinationInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl UpdatePublishingDestinationInputBuilder {
         &self.detector_id
     }
     /// <p>The ID of the publishing destination to update.</p>
-    pub fn destination_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the publishing destination to update.</p>
-    pub fn set_destination_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_id = input;
         self
     }
@@ -87,17 +77,12 @@ impl UpdatePublishingDestinationInputBuilder {
         self
     }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
-    pub fn set_destination_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationProperties>,
-    ) -> Self {
+    pub fn set_destination_properties(mut self, input: ::std::option::Option<crate::types::DestinationProperties>) -> Self {
         self.destination_properties = input;
         self
     }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
-    pub fn get_destination_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationProperties> {
+    pub fn get_destination_properties(&self) -> &::std::option::Option<crate::types::DestinationProperties> {
         &self.destination_properties
     }
     /// Consumes the builder and constructs a [`UpdatePublishingDestinationInput`](crate::operation::update_publishing_destination::UpdatePublishingDestinationInput).
@@ -107,12 +92,10 @@ impl UpdatePublishingDestinationInputBuilder {
         crate::operation::update_publishing_destination::UpdatePublishingDestinationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_publishing_destination::UpdatePublishingDestinationInput {
-                detector_id: self.detector_id,
-                destination_id: self.destination_id,
-                destination_properties: self.destination_properties,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_publishing_destination::UpdatePublishingDestinationInput {
+            detector_id: self.detector_id,
+            destination_id: self.destination_id,
+            destination_properties: self.destination_properties,
+        })
     }
 }

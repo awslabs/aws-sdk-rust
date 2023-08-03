@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteClusterSnapshotOutput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotOutput) with field(s):
     ///   - [`snapshot(Option<Snapshot>)`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotOutput::snapshot): <p>Describes a snapshot.</p>
     /// - On failure, responds with [`SdkError<DeleteClusterSnapshotError>`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError)
-    pub fn delete_cluster_snapshot(
-        &self,
-    ) -> crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotFluentBuilder
-    {
-        crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_cluster_snapshot(&self) -> crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotFluentBuilder {
+        crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

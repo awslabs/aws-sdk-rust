@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMlModelOutput`](crate::operation::create_ml_model::CreateMlModelOutput) with field(s):
     ///   - [`ml_model_id(Option<String>)`](crate::operation::create_ml_model::CreateMlModelOutput::ml_model_id): <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request. </p>
     /// - On failure, responds with [`SdkError<CreateMLModelError>`](crate::operation::create_ml_model::CreateMLModelError)
-    pub fn create_ml_model(
-        &self,
-    ) -> crate::operation::create_ml_model::builders::CreateMLModelFluentBuilder {
-        crate::operation::create_ml_model::builders::CreateMLModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_ml_model(&self) -> crate::operation::create_ml_model::builders::CreateMLModelFluentBuilder {
+        crate::operation::create_ml_model::builders::CreateMLModelFluentBuilder::new(self.handle.clone())
     }
 }

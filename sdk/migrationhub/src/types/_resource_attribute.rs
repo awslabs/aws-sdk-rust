@@ -59,9 +59,7 @@ impl ResourceAttribute {
 
 /// A builder for [`ResourceAttribute`](crate::types::ResourceAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceAttributeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ResourceAttributeType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -73,10 +71,7 @@ impl ResourceAttributeBuilder {
         self
     }
     /// <p>Type of resource.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceAttributeType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceAttributeType>) -> Self {
         self.r#type = input;
         self
     }

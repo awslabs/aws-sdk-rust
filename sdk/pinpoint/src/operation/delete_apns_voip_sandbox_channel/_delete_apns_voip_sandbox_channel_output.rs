@@ -5,15 +5,12 @@
 pub struct DeleteApnsVoipSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
     #[doc(hidden)]
-    pub apns_voip_sandbox_channel_response:
-        ::std::option::Option<crate::types::ApnsVoipSandboxChannelResponse>,
+    pub apns_voip_sandbox_channel_response: ::std::option::Option<crate::types::ApnsVoipSandboxChannelResponse>,
     _request_id: Option<String>,
 }
 impl DeleteApnsVoipSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-    pub fn apns_voip_sandbox_channel_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApnsVoipSandboxChannelResponse> {
+    pub fn apns_voip_sandbox_channel_response(&self) -> ::std::option::Option<&crate::types::ApnsVoipSandboxChannelResponse> {
         self.apns_voip_sandbox_channel_response.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DeleteApnsVoipSandboxChannelOutput {
 }
 impl DeleteApnsVoipSandboxChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApnsVoipSandboxChannelOutput`](crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelOutput).
-    pub fn builder() -> crate::operation::delete_apns_voip_sandbox_channel::builders::DeleteApnsVoipSandboxChannelOutputBuilder{
+    pub fn builder() -> crate::operation::delete_apns_voip_sandbox_channel::builders::DeleteApnsVoipSandboxChannelOutputBuilder {
         crate::operation::delete_apns_voip_sandbox_channel::builders::DeleteApnsVoipSandboxChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApnsVoipSandboxChannelOutput`](crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApnsVoipSandboxChannelOutputBuilder {
-    pub(crate) apns_voip_sandbox_channel_response:
-        ::std::option::Option<crate::types::ApnsVoipSandboxChannelResponse>,
+    pub(crate) apns_voip_sandbox_channel_response: ::std::option::Option<crate::types::ApnsVoipSandboxChannelResponse>,
     _request_id: Option<String>,
 }
 impl DeleteApnsVoipSandboxChannelOutputBuilder {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-    pub fn apns_voip_sandbox_channel_response(
-        mut self,
-        input: crate::types::ApnsVoipSandboxChannelResponse,
-    ) -> Self {
+    pub fn apns_voip_sandbox_channel_response(mut self, input: crate::types::ApnsVoipSandboxChannelResponse) -> Self {
         self.apns_voip_sandbox_channel_response = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-    pub fn set_apns_voip_sandbox_channel_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ApnsVoipSandboxChannelResponse>,
-    ) -> Self {
+    pub fn set_apns_voip_sandbox_channel_response(mut self, input: ::std::option::Option<crate::types::ApnsVoipSandboxChannelResponse>) -> Self {
         self.apns_voip_sandbox_channel_response = input;
         self
     }
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-    pub fn get_apns_voip_sandbox_channel_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApnsVoipSandboxChannelResponse> {
+    pub fn get_apns_voip_sandbox_channel_response(&self) -> &::std::option::Option<crate::types::ApnsVoipSandboxChannelResponse> {
         &self.apns_voip_sandbox_channel_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,7 @@ impl DeleteApnsVoipSandboxChannelOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteApnsVoipSandboxChannelOutput`](crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelOutput
-    {
+    pub fn build(self) -> crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelOutput {
         crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelOutput {
             apns_voip_sandbox_channel_response: self.apns_voip_sandbox_channel_response,
             _request_id: self._request_id,

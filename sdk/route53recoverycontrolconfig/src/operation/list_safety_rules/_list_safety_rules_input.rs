@@ -36,9 +36,7 @@ impl ListSafetyRulesInput {
 
 /// A builder for [`ListSafetyRulesInput`](crate::operation::list_safety_rules::ListSafetyRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSafetyRulesInputBuilder {
     pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct ListSafetyRulesInputBuilder {
 }
 impl ListSafetyRulesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn set_control_panel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_panel_arn = input;
         self
     }
@@ -96,10 +88,7 @@ impl ListSafetyRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListSafetyRulesInput`](crate::operation::list_safety_rules::ListSafetyRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_safety_rules::ListSafetyRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_safety_rules::ListSafetyRulesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_safety_rules::ListSafetyRulesInput {
             control_panel_arn: self.control_panel_arn,
             max_results: self.max_results,

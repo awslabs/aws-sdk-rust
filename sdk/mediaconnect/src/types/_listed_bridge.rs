@@ -51,9 +51,7 @@ impl ListedBridge {
 
 /// A builder for [`ListedBridge`](crate::types::ListedBridge).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListedBridgeBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bridge_state: ::std::option::Option<crate::types::BridgeState>,
@@ -82,10 +80,7 @@ impl ListedBridgeBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_bridge_state(
-        mut self,
-        input: ::std::option::Option<crate::types::BridgeState>,
-    ) -> Self {
+    pub fn set_bridge_state(mut self, input: ::std::option::Option<crate::types::BridgeState>) -> Self {
         self.bridge_state = input;
         self
     }
@@ -122,18 +117,12 @@ impl ListedBridgeBuilder {
         &self.name
     }
     /// The ARN of the gateway associated with the bridge.
-    pub fn placement_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn placement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the gateway associated with the bridge.
-    pub fn set_placement_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_placement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.placement_arn = input;
         self
     }

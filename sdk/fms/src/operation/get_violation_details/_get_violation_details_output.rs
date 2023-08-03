@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetViolationDetailsOutput {
 }
 impl GetViolationDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetViolationDetailsOutput`](crate::operation::get_violation_details::GetViolationDetailsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_violation_details::builders::GetViolationDetailsOutputBuilder {
-        crate::operation::get_violation_details::builders::GetViolationDetailsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_violation_details::builders::GetViolationDetailsOutputBuilder {
+        crate::operation::get_violation_details::builders::GetViolationDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetViolationDetailsOutput`](crate::operation::get_violation_details::GetViolationDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetViolationDetailsOutputBuilder {
     pub(crate) violation_detail: ::std::option::Option<crate::types::ViolationDetail>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetViolationDetailsOutputBuilder {
         self
     }
     /// <p>Violation detail for a resource.</p>
-    pub fn set_violation_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ViolationDetail>,
-    ) -> Self {
+    pub fn set_violation_detail(mut self, input: ::std::option::Option<crate::types::ViolationDetail>) -> Self {
         self.violation_detail = input;
         self
     }

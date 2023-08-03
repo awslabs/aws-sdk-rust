@@ -38,7 +38,7 @@ impl StartMedicalTranscriptionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMedicalTranscriptionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_medical_transcription_job::builders::StartMedicalTranscriptionJobInputBuilder,
+    inner: crate::operation::start_medical_transcription_job::builders::StartMedicalTranscriptionJobInputBuilder,
 }
 impl StartMedicalTranscriptionJobFluentBuilder {
     /// Creates a new `StartMedicalTranscriptionJob`.
@@ -49,7 +49,7 @@ impl StartMedicalTranscriptionJobFluentBuilder {
         }
     }
     /// Access the StartMedicalTranscriptionJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_medical_transcription_job::builders::StartMedicalTranscriptionJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_medical_transcription_job::builders::StartMedicalTranscriptionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +61,7 @@ impl StartMedicalTranscriptionJobFluentBuilder {
             crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +71,7 @@ impl StartMedicalTranscriptionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +80,7 @@ impl StartMedicalTranscriptionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError>,
     > {
         let op = self
             .inner
@@ -110,9 +103,7 @@ impl StartMedicalTranscriptionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError>,
     > {
         self.send_middleware().await
     }
@@ -126,35 +117,25 @@ impl StartMedicalTranscriptionJobFluentBuilder {
             crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique name, chosen by you, for your medical transcription job. The name that you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the <code>OutputKey</code> parameter.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
-    pub fn medical_transcription_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn medical_transcription_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.medical_transcription_job_name(input.into());
         self
     }
     /// <p>A unique name, chosen by you, for your medical transcription job. The name that you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the <code>OutputKey</code> parameter.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
-    pub fn set_medical_transcription_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_medical_transcription_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_medical_transcription_job_name(input);
         self
     }
     /// <p>A unique name, chosen by you, for your medical transcription job. The name that you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the <code>OutputKey</code> parameter.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
-    pub fn get_medical_transcription_job_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_medical_transcription_job_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_medical_transcription_job_name()
     }
     /// <p>The language code that represents the language spoken in the input media file. US English (<code>en-US</code>) is the only valid value for medical transcription jobs. Any other value you enter for language code results in a <code>BadRequestException</code> error.</p>
@@ -163,10 +144,7 @@ impl StartMedicalTranscriptionJobFluentBuilder {
         self
     }
     /// <p>The language code that represents the language spoken in the input media file. US English (<code>en-US</code>) is the only valid value for medical transcription jobs. Any other value you enter for language code results in a <code>BadRequestException</code> error.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
@@ -197,10 +175,7 @@ impl StartMedicalTranscriptionJobFluentBuilder {
         self
     }
     /// <p>Specify the format of your input media file.</p>
-    pub fn set_media_format(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaFormat>,
-    ) -> Self {
+    pub fn set_media_format(mut self, input: ::std::option::Option<crate::types::MediaFormat>) -> Self {
         self.inner = self.inner.set_media_format(input);
         self
     }
@@ -229,10 +204,7 @@ impl StartMedicalTranscriptionJobFluentBuilder {
     /// <p>If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name of a bucket.</p>
     /// <p>For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.</p>
     /// <p>Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3 permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>
-    pub fn output_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_bucket_name(input.into());
         self
     }
@@ -240,10 +212,7 @@ impl StartMedicalTranscriptionJobFluentBuilder {
     /// <p>If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name of a bucket.</p>
     /// <p>For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.</p>
     /// <p>Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3 permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>
-    pub fn set_output_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_bucket_name(input);
         self
     }
@@ -308,10 +277,7 @@ impl StartMedicalTranscriptionJobFluentBuilder {
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
-    pub fn output_encryption_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_encryption_kms_key_id(input.into());
         self
     }
@@ -331,10 +297,7 @@ impl StartMedicalTranscriptionJobFluentBuilder {
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
-    pub fn set_output_encryption_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_encryption_kms_key_id(input);
         self
     }
@@ -354,9 +317,7 @@ impl StartMedicalTranscriptionJobFluentBuilder {
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
-    pub fn get_output_encryption_kms_key_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_output_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_output_encryption_kms_key_id()
     }
     /// Adds a key-value pair to `KMSEncryptionContext`.
@@ -375,19 +336,13 @@ impl StartMedicalTranscriptionJobFluentBuilder {
     /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric keys in KMS</a>.</p>
     pub fn set_kms_encryption_context(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_kms_encryption_context(input);
         self
     }
     /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/key-management.html#kms-context">KMS encryption context</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/symmetric-asymmetric.html">Asymmetric keys in KMS</a>.</p>
-    pub fn get_kms_encryption_context(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_kms_encryption_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_kms_encryption_context()
     }
     /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your transcription job.</p>
@@ -396,39 +351,26 @@ impl StartMedicalTranscriptionJobFluentBuilder {
         self
     }
     /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your transcription job.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MedicalTranscriptionSetting>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::MedicalTranscriptionSetting>) -> Self {
         self.inner = self.inner.set_settings(input);
         self
     }
     /// <p>Specify additional optional settings in your request, including channel identification, alternative transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your transcription job.</p>
-    pub fn get_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MedicalTranscriptionSetting> {
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::MedicalTranscriptionSetting> {
         self.inner.get_settings()
     }
     /// <p>Labels all personal health information (PHI) identified in your transcript. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
-    pub fn content_identification_type(
-        mut self,
-        input: crate::types::MedicalContentIdentificationType,
-    ) -> Self {
+    pub fn content_identification_type(mut self, input: crate::types::MedicalContentIdentificationType) -> Self {
         self.inner = self.inner.content_identification_type(input);
         self
     }
     /// <p>Labels all personal health information (PHI) identified in your transcript. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
-    pub fn set_content_identification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MedicalContentIdentificationType>,
-    ) -> Self {
+    pub fn set_content_identification_type(mut self, input: ::std::option::Option<crate::types::MedicalContentIdentificationType>) -> Self {
         self.inner = self.inner.set_content_identification_type(input);
         self
     }
     /// <p>Labels all personal health information (PHI) identified in your transcript. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
-    pub fn get_content_identification_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::MedicalContentIdentificationType> {
+    pub fn get_content_identification_type(&self) -> &::std::option::Option<crate::types::MedicalContentIdentificationType> {
         self.inner.get_content_identification_type()
     }
     /// <p>Specify the predominant medical specialty represented in your media. For batch transcriptions, <code>PRIMARYCARE</code> is the only valid value. If you require additional specialties, refer to .</p>
@@ -474,10 +416,7 @@ impl StartMedicalTranscriptionJobFluentBuilder {
     }
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new medical transcription job at the time you start this new job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

@@ -40,9 +40,7 @@ impl AwsDynamoDbTableProjection {
 
 /// A builder for [`AwsDynamoDbTableProjection`](crate::types::AwsDynamoDbTableProjection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableProjectionBuilder {
     pub(crate) non_key_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) projection_type: ::std::option::Option<::std::string::String>,
@@ -53,27 +51,19 @@ impl AwsDynamoDbTableProjectionBuilder {
     /// To override the contents of this collection use [`set_non_key_attributes`](Self::set_non_key_attributes).
     ///
     /// <p>The nonkey attributes that are projected into the index. For each attribute, provide the attribute name.</p>
-    pub fn non_key_attributes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn non_key_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.non_key_attributes.unwrap_or_default();
         v.push(input.into());
         self.non_key_attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The nonkey attributes that are projected into the index. For each attribute, provide the attribute name.</p>
-    pub fn set_non_key_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_non_key_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.non_key_attributes = input;
         self
     }
     /// <p>The nonkey attributes that are projected into the index. For each attribute, provide the attribute name.</p>
-    pub fn get_non_key_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_non_key_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.non_key_attributes
     }
     /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
@@ -82,10 +72,7 @@ impl AwsDynamoDbTableProjectionBuilder {
     /// <li> <p> <code>INCLUDE</code> </p> </li>
     /// <li> <p> <code>KEYS_ONLY</code> </p> </li>
     /// </ul>
-    pub fn projection_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn projection_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.projection_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -95,10 +82,7 @@ impl AwsDynamoDbTableProjectionBuilder {
     /// <li> <p> <code>INCLUDE</code> </p> </li>
     /// <li> <p> <code>KEYS_ONLY</code> </p> </li>
     /// </ul>
-    pub fn set_projection_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_projection_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.projection_type = input;
         self
     }

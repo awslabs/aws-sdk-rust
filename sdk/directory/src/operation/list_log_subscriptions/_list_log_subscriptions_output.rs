@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListLogSubscriptionsOutput {
 }
 impl ListLogSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListLogSubscriptionsOutput`](crate::operation::list_log_subscriptions::ListLogSubscriptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_log_subscriptions::builders::ListLogSubscriptionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_log_subscriptions::builders::ListLogSubscriptionsOutputBuilder {
         crate::operation::list_log_subscriptions::builders::ListLogSubscriptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLogSubscriptionsOutput`](crate::operation::list_log_subscriptions::ListLogSubscriptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLogSubscriptionsOutputBuilder {
-    pub(crate) log_subscriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::LogSubscription>>,
+    pub(crate) log_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::LogSubscription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListLogSubscriptionsOutputBuilder {
         self
     }
     /// <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
-    pub fn set_log_subscriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSubscription>>,
-    ) -> Self {
+    pub fn set_log_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSubscription>>) -> Self {
         self.log_subscriptions = input;
         self
     }
     /// <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
-    pub fn get_log_subscriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSubscription>> {
+    pub fn get_log_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSubscription>> {
         &self.log_subscriptions
     }
     /// <p>The token for the next set of items to return.</p>

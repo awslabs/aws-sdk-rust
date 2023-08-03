@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`dev_endpoint_names(Option<Vec<String>>)`](crate::operation::list_dev_endpoints::ListDevEndpointsOutput::dev_endpoint_names): <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dev_endpoints::ListDevEndpointsOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>
     /// - On failure, responds with [`SdkError<ListDevEndpointsError>`](crate::operation::list_dev_endpoints::ListDevEndpointsError)
-    pub fn list_dev_endpoints(
-        &self,
-    ) -> crate::operation::list_dev_endpoints::builders::ListDevEndpointsFluentBuilder {
-        crate::operation::list_dev_endpoints::builders::ListDevEndpointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_dev_endpoints(&self) -> crate::operation::list_dev_endpoints::builders::ListDevEndpointsFluentBuilder {
+        crate::operation::list_dev_endpoints::builders::ListDevEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

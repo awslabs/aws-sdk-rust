@@ -25,9 +25,7 @@ impl TemplateActiveVersionRequest {
 
 /// A builder for [`TemplateActiveVersionRequest`](crate::types::TemplateActiveVersionRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TemplateActiveVersionRequestBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
@@ -51,8 +49,6 @@ impl TemplateActiveVersionRequestBuilder {
     }
     /// Consumes the builder and constructs a [`TemplateActiveVersionRequest`](crate::types::TemplateActiveVersionRequest).
     pub fn build(self) -> crate::types::TemplateActiveVersionRequest {
-        crate::types::TemplateActiveVersionRequest {
-            version: self.version,
-        }
+        crate::types::TemplateActiveVersionRequest { version: self.version }
     }
 }

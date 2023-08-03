@@ -37,10 +37,7 @@ impl UpdateNodegroupConfigFluentBuilder {
         }
     }
     /// Access the UpdateNodegroupConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_nodegroup_config::builders::UpdateNodegroupConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_nodegroup_config::builders::UpdateNodegroupConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateNodegroupConfigFluentBuilder {
             crate::operation::update_nodegroup_config::UpdateNodegroupConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_nodegroup_config::UpdateNodegroupConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_nodegroup_config::UpdateNodegroupConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateNodegroupConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateNodegroupConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_nodegroup_config::UpdateNodegroupConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_nodegroup_config::UpdateNodegroupConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_nodegroup_config::UpdateNodegroupConfigError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateNodegroupConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_nodegroup_config::UpdateNodegroupConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_nodegroup_config::UpdateNodegroupConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_nodegroup_config::UpdateNodegroupConfigError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateNodegroupConfigFluentBuilder {
             crate::operation::update_nodegroup_config::UpdateNodegroupConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_nodegroup_config::UpdateNodegroupConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_nodegroup_config::UpdateNodegroupConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl UpdateNodegroupConfigFluentBuilder {
         self.inner.get_cluster_name()
     }
     /// <p>The name of the managed node group to update.</p>
-    pub fn nodegroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nodegroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nodegroup_name(input.into());
         self
     }
     /// <p>The name of the managed node group to update.</p>
-    pub fn set_nodegroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nodegroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_nodegroup_name(input);
         self
     }
@@ -163,10 +143,7 @@ impl UpdateNodegroupConfigFluentBuilder {
         self
     }
     /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateLabelsPayload>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<crate::types::UpdateLabelsPayload>) -> Self {
         self.inner = self.inner.set_labels(input);
         self
     }
@@ -180,10 +157,7 @@ impl UpdateNodegroupConfigFluentBuilder {
         self
     }
     /// <p>The Kubernetes taints to be applied to the nodes in the node group after the update. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
-    pub fn set_taints(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateTaintsPayload>,
-    ) -> Self {
+    pub fn set_taints(mut self, input: ::std::option::Option<crate::types::UpdateTaintsPayload>) -> Self {
         self.inner = self.inner.set_taints(input);
         self
     }
@@ -197,17 +171,12 @@ impl UpdateNodegroupConfigFluentBuilder {
         self
     }
     /// <p>The scaling configuration details for the Auto Scaling group after the update.</p>
-    pub fn set_scaling_config(
-        mut self,
-        input: ::std::option::Option<crate::types::NodegroupScalingConfig>,
-    ) -> Self {
+    pub fn set_scaling_config(mut self, input: ::std::option::Option<crate::types::NodegroupScalingConfig>) -> Self {
         self.inner = self.inner.set_scaling_config(input);
         self
     }
     /// <p>The scaling configuration details for the Auto Scaling group after the update.</p>
-    pub fn get_scaling_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::NodegroupScalingConfig> {
+    pub fn get_scaling_config(&self) -> &::std::option::Option<crate::types::NodegroupScalingConfig> {
         self.inner.get_scaling_config()
     }
     /// <p>The node group update configuration.</p>
@@ -216,10 +185,7 @@ impl UpdateNodegroupConfigFluentBuilder {
         self
     }
     /// <p>The node group update configuration.</p>
-    pub fn set_update_config(
-        mut self,
-        input: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
-    ) -> Self {
+    pub fn set_update_config(mut self, input: ::std::option::Option<crate::types::NodegroupUpdateConfig>) -> Self {
         self.inner = self.inner.set_update_config(input);
         self
     }
@@ -228,18 +194,12 @@ impl UpdateNodegroupConfigFluentBuilder {
         self.inner.get_update_config()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

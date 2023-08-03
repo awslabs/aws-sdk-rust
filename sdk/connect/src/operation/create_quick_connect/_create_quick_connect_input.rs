@@ -17,9 +17,7 @@ pub struct CreateQuickConnectInput {
     pub quick_connect_config: ::std::option::Option<crate::types::QuickConnectConfig>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateQuickConnectInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -39,35 +37,26 @@ impl CreateQuickConnectInput {
         self.quick_connect_config.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateQuickConnectInput {
     /// Creates a new builder-style object to manufacture [`CreateQuickConnectInput`](crate::operation::create_quick_connect::CreateQuickConnectInput).
-    pub fn builder(
-    ) -> crate::operation::create_quick_connect::builders::CreateQuickConnectInputBuilder {
+    pub fn builder() -> crate::operation::create_quick_connect::builders::CreateQuickConnectInputBuilder {
         crate::operation::create_quick_connect::builders::CreateQuickConnectInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateQuickConnectInput`](crate::operation::create_quick_connect::CreateQuickConnectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateQuickConnectInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) quick_connect_config: ::std::option::Option<crate::types::QuickConnectConfig>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateQuickConnectInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -118,17 +107,12 @@ impl CreateQuickConnectInputBuilder {
         self
     }
     /// <p>Configuration settings for the quick connect.</p>
-    pub fn set_quick_connect_config(
-        mut self,
-        input: ::std::option::Option<crate::types::QuickConnectConfig>,
-    ) -> Self {
+    pub fn set_quick_connect_config(mut self, input: ::std::option::Option<crate::types::QuickConnectConfig>) -> Self {
         self.quick_connect_config = input;
         self
     }
     /// <p>Configuration settings for the quick connect.</p>
-    pub fn get_quick_connect_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::QuickConnectConfig> {
+    pub fn get_quick_connect_config(&self) -> &::std::option::Option<crate::types::QuickConnectConfig> {
         &self.quick_connect_config
     }
     /// Adds a key-value pair to `tags`.
@@ -136,49 +120,31 @@ impl CreateQuickConnectInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateQuickConnectInput`](crate::operation::create_quick_connect::CreateQuickConnectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_quick_connect::CreateQuickConnectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_quick_connect::CreateQuickConnectInput {
-                instance_id: self.instance_id,
-                name: self.name,
-                description: self.description,
-                quick_connect_config: self.quick_connect_config,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_quick_connect::CreateQuickConnectInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_quick_connect::CreateQuickConnectInput {
+            instance_id: self.instance_id,
+            name: self.name,
+            description: self.description,
+            quick_connect_config: self.quick_connect_config,
+            tags: self.tags,
+        })
     }
 }

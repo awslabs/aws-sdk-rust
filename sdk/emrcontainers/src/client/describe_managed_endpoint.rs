@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeManagedEndpointOutput`](crate::operation::describe_managed_endpoint::DescribeManagedEndpointOutput) with field(s):
     ///   - [`endpoint(Option<Endpoint>)`](crate::operation::describe_managed_endpoint::DescribeManagedEndpointOutput::endpoint): <p>This output displays information about a managed endpoint.</p>
     /// - On failure, responds with [`SdkError<DescribeManagedEndpointError>`](crate::operation::describe_managed_endpoint::DescribeManagedEndpointError)
-    pub fn describe_managed_endpoint(
-        &self,
-    ) -> crate::operation::describe_managed_endpoint::builders::DescribeManagedEndpointFluentBuilder
-    {
+    pub fn describe_managed_endpoint(&self) -> crate::operation::describe_managed_endpoint::builders::DescribeManagedEndpointFluentBuilder {
         crate::operation::describe_managed_endpoint::builders::DescribeManagedEndpointFluentBuilder::new(self.handle.clone())
     }
 }

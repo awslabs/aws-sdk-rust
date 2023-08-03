@@ -51,9 +51,7 @@ impl SipMediaApplicationEndpointBuilder {
     }
     /// Consumes the builder and constructs a [`SipMediaApplicationEndpoint`](crate::types::SipMediaApplicationEndpoint).
     pub fn build(self) -> crate::types::SipMediaApplicationEndpoint {
-        crate::types::SipMediaApplicationEndpoint {
-            lambda_arn: self.lambda_arn,
-        }
+        crate::types::SipMediaApplicationEndpoint { lambda_arn: self.lambda_arn }
     }
 }
 impl ::std::fmt::Debug for SipMediaApplicationEndpointBuilder {

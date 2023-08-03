@@ -28,9 +28,7 @@ impl GetWorkGroupOutput {
 
 /// A builder for [`GetWorkGroupOutput`](crate::operation::get_work_group::GetWorkGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkGroupOutputBuilder {
     pub(crate) work_group: ::std::option::Option<crate::types::WorkGroup>,
     _request_id: Option<String>,

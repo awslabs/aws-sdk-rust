@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`StartFaceSearchOutput`](crate::operation::start_face_search::StartFaceSearchOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_face_search::StartFaceSearchOutput::job_id): <p>The identifier for the search job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetFaceSearch</code>. </p>
     /// - On failure, responds with [`SdkError<StartFaceSearchError>`](crate::operation::start_face_search::StartFaceSearchError)
-    pub fn start_face_search(
-        &self,
-    ) -> crate::operation::start_face_search::builders::StartFaceSearchFluentBuilder {
-        crate::operation::start_face_search::builders::StartFaceSearchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_face_search(&self) -> crate::operation::start_face_search::builders::StartFaceSearchFluentBuilder {
+        crate::operation::start_face_search::builders::StartFaceSearchFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetMediaPipelineOutput {
 }
 impl GetMediaPipelineOutput {
     /// Creates a new builder-style object to manufacture [`GetMediaPipelineOutput`](crate::operation::get_media_pipeline::GetMediaPipelineOutput).
-    pub fn builder() -> crate::operation::get_media_pipeline::builders::GetMediaPipelineOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_media_pipeline::builders::GetMediaPipelineOutputBuilder {
         crate::operation::get_media_pipeline::builders::GetMediaPipelineOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMediaPipelineOutput`](crate::operation::get_media_pipeline::GetMediaPipelineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMediaPipelineOutputBuilder {
     pub(crate) media_pipeline: ::std::option::Option<crate::types::MediaPipeline>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetMediaPipelineOutputBuilder {
         self
     }
     /// <p>The media pipeline object.</p>
-    pub fn set_media_pipeline(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaPipeline>,
-    ) -> Self {
+    pub fn set_media_pipeline(mut self, input: ::std::option::Option<crate::types::MediaPipeline>) -> Self {
         self.media_pipeline = input;
         self
     }

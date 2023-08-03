@@ -10,10 +10,7 @@ impl EnableInsightRulesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::enable_insight_rules::EnableInsightRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_insight_rules::EnableInsightRulesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_insight_rules::EnableInsightRulesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.enable_insight_rules();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl EnableInsightRulesFluentBuilder {
         }
     }
     /// Access the EnableInsightRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_insight_rules::builders::EnableInsightRulesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::enable_insight_rules::builders::EnableInsightRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl EnableInsightRulesFluentBuilder {
             crate::operation::enable_insight_rules::EnableInsightRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_insight_rules::EnableInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_insight_rules::EnableInsightRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl EnableInsightRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl EnableInsightRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_insight_rules::EnableInsightRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_insight_rules::EnableInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_insight_rules::EnableInsightRulesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl EnableInsightRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_insight_rules::EnableInsightRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_insight_rules::EnableInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_insight_rules::EnableInsightRulesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl EnableInsightRulesFluentBuilder {
             crate::operation::enable_insight_rules::EnableInsightRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_insight_rules::EnableInsightRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_insight_rules::EnableInsightRulesError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl EnableInsightRulesFluentBuilder {
         self
     }
     /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    pub fn set_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_rule_names(input);
         self
     }

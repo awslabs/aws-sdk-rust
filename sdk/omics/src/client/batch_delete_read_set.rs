@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`BatchDeleteReadSetOutput`](crate::operation::batch_delete_read_set::BatchDeleteReadSetOutput) with field(s):
     ///   - [`errors(Option<Vec<ReadSetBatchError>>)`](crate::operation::batch_delete_read_set::BatchDeleteReadSetOutput::errors): <p>Errors returned by individual delete operations.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteReadSetError>`](crate::operation::batch_delete_read_set::BatchDeleteReadSetError)
-    pub fn batch_delete_read_set(
-        &self,
-    ) -> crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetFluentBuilder {
-        crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_delete_read_set(&self) -> crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetFluentBuilder {
+        crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for AddFlowVpcInterfacesOutput {
 }
 impl AddFlowVpcInterfacesOutput {
     /// Creates a new builder-style object to manufacture [`AddFlowVpcInterfacesOutput`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput).
-    pub fn builder(
-    ) -> crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesOutputBuilder {
         crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddFlowVpcInterfacesOutput`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddFlowVpcInterfacesOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterface>>,
@@ -72,17 +68,12 @@ impl AddFlowVpcInterfacesOutputBuilder {
         self
     }
     /// The details of the newly added VPC interfaces.
-    pub fn set_vpc_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterface>>,
-    ) -> Self {
+    pub fn set_vpc_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterface>>) -> Self {
         self.vpc_interfaces = input;
         self
     }
     /// The details of the newly added VPC interfaces.
-    pub fn get_vpc_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterface>> {
+    pub fn get_vpc_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterface>> {
         &self.vpc_interfaces
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

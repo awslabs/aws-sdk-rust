@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`connection_list(Option<Vec<Connection>>)`](crate::operation::get_connections::GetConnectionsOutput::connection_list): <p>A list of requested connection definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_connections::GetConnectionsOutput::next_token): <p>A continuation token, if the list of connections returned does not include the last of the filtered connections.</p>
     /// - On failure, responds with [`SdkError<GetConnectionsError>`](crate::operation::get_connections::GetConnectionsError)
-    pub fn get_connections(
-        &self,
-    ) -> crate::operation::get_connections::builders::GetConnectionsFluentBuilder {
-        crate::operation::get_connections::builders::GetConnectionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_connections(&self) -> crate::operation::get_connections::builders::GetConnectionsFluentBuilder {
+        crate::operation::get_connections::builders::GetConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

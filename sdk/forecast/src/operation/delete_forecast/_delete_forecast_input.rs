@@ -22,9 +22,7 @@ impl DeleteForecastInput {
 
 /// A builder for [`DeleteForecastInput`](crate::operation::delete_forecast::DeleteForecastInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteForecastInputBuilder {
     pub(crate) forecast_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DeleteForecastInputBuilder {
     /// Consumes the builder and constructs a [`DeleteForecastInput`](crate::operation::delete_forecast::DeleteForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_forecast::DeleteForecastInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_forecast::DeleteForecastInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_forecast::DeleteForecastInput {
             forecast_arn: self.forecast_arn,
         })

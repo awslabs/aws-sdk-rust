@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_vocabulary_filters::ListVocabularyFiltersOutput::next_token): <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     ///   - [`vocabulary_filters(Option<Vec<VocabularyFilterInfo>>)`](crate::operation::list_vocabulary_filters::ListVocabularyFiltersOutput::vocabulary_filters): <p>Provides information about the custom vocabulary filters that match the criteria specified in your request.</p>
     /// - On failure, responds with [`SdkError<ListVocabularyFiltersError>`](crate::operation::list_vocabulary_filters::ListVocabularyFiltersError)
-    pub fn list_vocabulary_filters(
-        &self,
-    ) -> crate::operation::list_vocabulary_filters::builders::ListVocabularyFiltersFluentBuilder
-    {
-        crate::operation::list_vocabulary_filters::builders::ListVocabularyFiltersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_vocabulary_filters(&self) -> crate::operation::list_vocabulary_filters::builders::ListVocabularyFiltersFluentBuilder {
+        crate::operation::list_vocabulary_filters::builders::ListVocabularyFiltersFluentBuilder::new(self.handle.clone())
     }
 }

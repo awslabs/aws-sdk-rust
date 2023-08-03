@@ -33,19 +33,13 @@ pub fn ser_subtotal_options(
     if let Some(var_10) = &input.value_cell_style {
         #[allow(unused_mut)]
         let mut object_11 = object.key("ValueCellStyle").start_object();
-        crate::protocol_serde::shape_table_cell_style::ser_table_cell_style(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_table_cell_style::ser_table_cell_style(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.metric_header_cell_style {
         #[allow(unused_mut)]
         let mut object_13 = object.key("MetricHeaderCellStyle").start_object();
-        crate::protocol_serde::shape_table_cell_style::ser_table_cell_style(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_table_cell_style::ser_table_cell_style(&mut object_13, var_12)?;
         object_13.finish();
     }
     Ok(())
@@ -53,17 +47,9 @@ pub fn ser_subtotal_options(
 
 pub(crate) fn de_subtotal_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SubtotalOptions>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SubtotalOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -73,80 +59,59 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "TotalsVisibility" => {
-                                builder = builder.set_totals_visibility(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped()
-                                            .map(|u| crate::types::Visibility::from(u.as_ref()))
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "TotalsVisibility" => {
+                            builder = builder.set_totals_visibility(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "CustomLabel" => {
-                                builder = builder.set_custom_label(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "CustomLabel" => {
+                            builder = builder.set_custom_label(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "FieldLevel" => {
-                                builder = builder.set_field_level(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::PivotTableSubtotalLevel::from(u.as_ref())
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "FieldLevelOptions" => {
-                                builder = builder.set_field_level_options(
-                                    crate::protocol_serde::shape_pivot_table_field_subtotal_options_list::de_pivot_table_field_subtotal_options_list(tokens)?
-                                );
-                            }
-                            "TotalCellStyle" => {
-                                builder = builder.set_total_cell_style(
-                                    crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?
-                                );
-                            }
-                            "ValueCellStyle" => {
-                                builder = builder.set_value_cell_style(
-                                    crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?
-                                );
-                            }
-                            "MetricHeaderCellStyle" => {
-                                builder = builder.set_metric_header_cell_style(
-                                    crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "FieldLevel" => {
+                            builder = builder.set_field_level(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PivotTableSubtotalLevel::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "FieldLevelOptions" => {
+                            builder = builder.set_field_level_options(
+                                crate::protocol_serde::shape_pivot_table_field_subtotal_options_list::de_pivot_table_field_subtotal_options_list(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "TotalCellStyle" => {
+                            builder = builder.set_total_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                        }
+                        "ValueCellStyle" => {
+                            builder = builder.set_value_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                        }
+                        "MetricHeaderCellStyle" => {
+                            builder =
+                                builder.set_metric_header_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

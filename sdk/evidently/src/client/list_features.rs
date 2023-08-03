@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`features(Option<Vec<FeatureSummary>>)`](crate::operation::list_features::ListFeaturesOutput::features): <p>An array of structures that contain the configuration details of the features in the specified project.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_features::ListFeaturesOutput::next_token): <p>The token to use in a subsequent <code>ListFeatures</code> operation to return the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListFeaturesError>`](crate::operation::list_features::ListFeaturesError)
-    pub fn list_features(
-        &self,
-    ) -> crate::operation::list_features::builders::ListFeaturesFluentBuilder {
-        crate::operation::list_features::builders::ListFeaturesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_features(&self) -> crate::operation::list_features::builders::ListFeaturesFluentBuilder {
+        crate::operation::list_features::builders::ListFeaturesFluentBuilder::new(self.handle.clone())
     }
 }

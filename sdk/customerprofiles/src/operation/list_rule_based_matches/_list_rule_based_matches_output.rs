@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListRuleBasedMatchesOutput {
 }
 impl ListRuleBasedMatchesOutput {
     /// Creates a new builder-style object to manufacture [`ListRuleBasedMatchesOutput`](crate::operation::list_rule_based_matches::ListRuleBasedMatchesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_rule_based_matches::builders::ListRuleBasedMatchesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_rule_based_matches::builders::ListRuleBasedMatchesOutputBuilder {
         crate::operation::list_rule_based_matches::builders::ListRuleBasedMatchesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRuleBasedMatchesOutput`](crate::operation::list_rule_based_matches::ListRuleBasedMatchesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRuleBasedMatchesOutputBuilder {
     pub(crate) match_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListRuleBasedMatchesOutputBuilder {
         self
     }
     /// <p>The list of <code>MatchIds</code> for the given domain.</p>
-    pub fn set_match_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_match_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.match_ids = input;
         self
     }

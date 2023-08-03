@@ -22,16 +22,14 @@ impl DescribeModelPackagingJobInput {
 }
 impl DescribeModelPackagingJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelPackagingJobInput`](crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput).
-    pub fn builder() -> crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobInputBuilder {
         crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeModelPackagingJobInput`](crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeModelPackagingJobInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl DescribeModelPackagingJobInputBuilder {
         crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput {
-                project_name: self.project_name,
-                job_name: self.job_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput {
+            project_name: self.project_name,
+            job_name: self.job_name,
+        })
     }
 }

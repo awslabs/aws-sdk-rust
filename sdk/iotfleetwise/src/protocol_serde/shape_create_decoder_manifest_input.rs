@@ -18,10 +18,7 @@ pub fn ser_create_decoder_manifest_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_signal_decoder::ser_signal_decoder(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_signal_decoder::ser_signal_decoder(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -33,10 +30,7 @@ pub fn ser_create_decoder_manifest_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_network_interface::ser_network_interface(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_network_interface::ser_network_interface(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }

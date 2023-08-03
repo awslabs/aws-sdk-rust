@@ -22,18 +22,14 @@ impl ListClassificationScopesInput {
 }
 impl ListClassificationScopesInput {
     /// Creates a new builder-style object to manufacture [`ListClassificationScopesInput`](crate::operation::list_classification_scopes::ListClassificationScopesInput).
-    pub fn builder(
-    ) -> crate::operation::list_classification_scopes::builders::ListClassificationScopesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_classification_scopes::builders::ListClassificationScopesInputBuilder {
         crate::operation::list_classification_scopes::builders::ListClassificationScopesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListClassificationScopesInput`](crate::operation::list_classification_scopes::ListClassificationScopesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClassificationScopesInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl ListClassificationScopesInputBuilder {
         crate::operation::list_classification_scopes::ListClassificationScopesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_classification_scopes::ListClassificationScopesInput {
-                name: self.name,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_classification_scopes::ListClassificationScopesInput {
+            name: self.name,
+            next_token: self.next_token,
+        })
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder::set_tags): <p>A collection of key and value pairs.</p>
     /// - On success, responds with [`PutEntityTypeOutput`](crate::operation::put_entity_type::PutEntityTypeOutput)
     /// - On failure, responds with [`SdkError<PutEntityTypeError>`](crate::operation::put_entity_type::PutEntityTypeError)
-    pub fn put_entity_type(
-        &self,
-    ) -> crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder {
-        crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_entity_type(&self) -> crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder {
+        crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder::new(self.handle.clone())
     }
 }

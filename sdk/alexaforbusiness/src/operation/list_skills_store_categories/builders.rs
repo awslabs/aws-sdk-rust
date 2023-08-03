@@ -27,7 +27,7 @@ impl ListSkillsStoreCategoriesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSkillsStoreCategoriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesInputBuilder,
+    inner: crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesInputBuilder,
 }
 impl ListSkillsStoreCategoriesFluentBuilder {
     /// Creates a new `ListSkillsStoreCategories`.
@@ -38,7 +38,7 @@ impl ListSkillsStoreCategoriesFluentBuilder {
         }
     }
     /// Access the ListSkillsStoreCategories as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListSkillsStoreCategoriesFluentBuilder {
             crate::operation::list_skills_store_categories::ListSkillsStoreCategories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListSkillsStoreCategoriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListSkillsStoreCategoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListSkillsStoreCategoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesError>,
     > {
         self.send_middleware().await
     }
@@ -115,19 +106,14 @@ impl ListSkillsStoreCategoriesFluentBuilder {
             crate::operation::list_skills_store_categories::ListSkillsStoreCategories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_skills_store_categories::paginator::ListSkillsStoreCategoriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_skills_store_categories::paginator::ListSkillsStoreCategoriesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_skills_store_categories::paginator::ListSkillsStoreCategoriesPaginator {
         crate::operation::list_skills_store_categories::paginator::ListSkillsStoreCategoriesPaginator::new(self.handle, self.inner)
     }
     /// <p>The tokens used for pagination.</p>

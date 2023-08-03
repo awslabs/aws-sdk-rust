@@ -10,10 +10,7 @@ impl ListFirewallRulesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_firewall_rules::ListFirewallRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_rules::ListFirewallRulesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_rules::ListFirewallRulesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_firewall_rules();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListFirewallRulesFluentBuilder {
         }
     }
     /// Access the ListFirewallRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_firewall_rules::builders::ListFirewallRulesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_firewall_rules::builders::ListFirewallRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListFirewallRulesFluentBuilder {
             crate::operation::list_firewall_rules::ListFirewallRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_rules::ListFirewallRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_rules::ListFirewallRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListFirewallRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListFirewallRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_firewall_rules::ListFirewallRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_rules::ListFirewallRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_rules::ListFirewallRulesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListFirewallRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_firewall_rules::ListFirewallRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_rules::ListFirewallRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_rules::ListFirewallRulesError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +103,23 @@ impl ListFirewallRulesFluentBuilder {
             crate::operation::list_firewall_rules::ListFirewallRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewall_rules::ListFirewallRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_rules::ListFirewallRulesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_firewall_rules::paginator::ListFirewallRulesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_firewall_rules::paginator::ListFirewallRulesPaginator {
-        crate::operation::list_firewall_rules::paginator::ListFirewallRulesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_firewall_rules::paginator::ListFirewallRulesPaginator {
+        crate::operation::list_firewall_rules::paginator::ListFirewallRulesPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for. </p>
-    pub fn firewall_rule_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_rule_group_id(input.into());
         self
     }
     /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for. </p>
-    pub fn set_firewall_rule_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_rule_group_id(input);
         self
     }

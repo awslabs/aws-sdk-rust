@@ -26,7 +26,7 @@ impl SearchAvailablePhoneNumbersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder,
+    inner: crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder,
 }
 impl SearchAvailablePhoneNumbersFluentBuilder {
     /// Creates a new `SearchAvailablePhoneNumbers`.
@@ -37,7 +37,7 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
         }
     }
     /// Access the SearchAvailablePhoneNumbers as a reference.
-    pub fn as_input(&self) -> &crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
             crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
             crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator{
+    pub fn into_paginator(self) -> crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator {
         crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator::new(self.handle, self.inner)
     }
     /// <p>The area code used to filter results. Only applies to the US.</p>
@@ -183,18 +172,12 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
         self.inner.get_state()
     }
     /// <p>The toll-free prefix that you use to filter results. Only applies to the US.</p>
-    pub fn toll_free_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn toll_free_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.toll_free_prefix(input.into());
         self
     }
     /// <p>The toll-free prefix that you use to filter results. Only applies to the US.</p>
-    pub fn set_toll_free_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_toll_free_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_toll_free_prefix(input);
         self
     }
@@ -208,10 +191,7 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
         self
     }
     /// <p>The phone number type used to filter results. Required for non-US numbers.</p>
-    pub fn set_phone_number_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberType>,
-    ) -> Self {
+    pub fn set_phone_number_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberType>) -> Self {
         self.inner = self.inner.set_phone_number_type(input);
         self
     }

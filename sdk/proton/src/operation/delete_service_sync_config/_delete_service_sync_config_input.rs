@@ -15,18 +15,14 @@ impl DeleteServiceSyncConfigInput {
 }
 impl DeleteServiceSyncConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceSyncConfigInput`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput).
-    pub fn builder(
-    ) -> crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigInputBuilder {
         crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceSyncConfigInput`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceSyncConfigInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,8 @@ impl DeleteServiceSyncConfigInputBuilder {
         crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput {
-                service_name: self.service_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput {
+            service_name: self.service_name,
+        })
     }
 }

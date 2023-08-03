@@ -36,9 +36,7 @@ impl ModifyIpamScopeInput {
 
 /// A builder for [`ModifyIpamScopeInput`](crate::operation::modify_ipam_scope::ModifyIpamScopeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyIpamScopeInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_scope_id: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl ModifyIpamScopeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the scope you want to modify.</p>
-    pub fn ipam_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_scope_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the scope you want to modify.</p>
-    pub fn set_ipam_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_scope_id = input;
         self
     }
@@ -96,10 +88,7 @@ impl ModifyIpamScopeInputBuilder {
     /// Consumes the builder and constructs a [`ModifyIpamScopeInput`](crate::operation::modify_ipam_scope::ModifyIpamScopeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_ipam_scope::ModifyIpamScopeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::modify_ipam_scope::ModifyIpamScopeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_ipam_scope::ModifyIpamScopeInput {
             dry_run: self.dry_run,
             ipam_scope_id: self.ipam_scope_id,

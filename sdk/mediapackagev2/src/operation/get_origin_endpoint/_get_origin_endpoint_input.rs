@@ -29,17 +29,14 @@ impl GetOriginEndpointInput {
 }
 impl GetOriginEndpointInput {
     /// Creates a new builder-style object to manufacture [`GetOriginEndpointInput`](crate::operation::get_origin_endpoint::GetOriginEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::get_origin_endpoint::builders::GetOriginEndpointInputBuilder {
+    pub fn builder() -> crate::operation::get_origin_endpoint::builders::GetOriginEndpointInputBuilder {
         crate::operation::get_origin_endpoint::builders::GetOriginEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`GetOriginEndpointInput`](crate::operation::get_origin_endpoint::GetOriginEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOriginEndpointInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct GetOriginEndpointInputBuilder {
 }
 impl GetOriginEndpointInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn set_channel_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_group_name = input;
         self
     }
@@ -81,18 +72,12 @@ impl GetOriginEndpointInputBuilder {
         &self.channel_name
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    pub fn origin_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    pub fn set_origin_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_endpoint_name = input;
         self
     }
@@ -103,16 +88,11 @@ impl GetOriginEndpointInputBuilder {
     /// Consumes the builder and constructs a [`GetOriginEndpointInput`](crate::operation::get_origin_endpoint::GetOriginEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_origin_endpoint::GetOriginEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_origin_endpoint::GetOriginEndpointInput {
-                channel_group_name: self.channel_group_name,
-                channel_name: self.channel_name,
-                origin_endpoint_name: self.origin_endpoint_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_origin_endpoint::GetOriginEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_origin_endpoint::GetOriginEndpointInput {
+            channel_group_name: self.channel_group_name,
+            channel_name: self.channel_name,
+            origin_endpoint_name: self.origin_endpoint_name,
+        })
     }
 }

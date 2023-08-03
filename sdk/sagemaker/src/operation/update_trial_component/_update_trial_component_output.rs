@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateTrialComponentOutput {
 }
 impl UpdateTrialComponentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTrialComponentOutput`](crate::operation::update_trial_component::UpdateTrialComponentOutput).
-    pub fn builder(
-    ) -> crate::operation::update_trial_component::builders::UpdateTrialComponentOutputBuilder {
+    pub fn builder() -> crate::operation::update_trial_component::builders::UpdateTrialComponentOutputBuilder {
         crate::operation::update_trial_component::builders::UpdateTrialComponentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTrialComponentOutput`](crate::operation::update_trial_component::UpdateTrialComponentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTrialComponentOutputBuilder {
     pub(crate) trial_component_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateTrialComponentOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn trial_component_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn set_trial_component_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trial_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trial_component_arn = input;
         self
     }

@@ -24,17 +24,14 @@ impl CreateSystemTemplateInput {
 }
 impl CreateSystemTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateSystemTemplateInput`](crate::operation::create_system_template::CreateSystemTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::create_system_template::builders::CreateSystemTemplateInputBuilder {
+    pub fn builder() -> crate::operation::create_system_template::builders::CreateSystemTemplateInputBuilder {
         crate::operation::create_system_template::builders::CreateSystemTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSystemTemplateInput`](crate::operation::create_system_template::CreateSystemTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSystemTemplateInputBuilder {
     pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,
     pub(crate) compatible_namespace_version: ::std::option::Option<i64>,
@@ -46,10 +43,7 @@ impl CreateSystemTemplateInputBuilder {
         self
     }
     /// <p>The <code>DefinitionDocument</code> used to create the system.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DefinitionDocument>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
         self.definition = input;
         self
     }
@@ -77,15 +71,11 @@ impl CreateSystemTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateSystemTemplateInput`](crate::operation::create_system_template::CreateSystemTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_system_template::CreateSystemTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_system_template::CreateSystemTemplateInput {
-                definition: self.definition,
-                compatible_namespace_version: self.compatible_namespace_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_system_template::CreateSystemTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_system_template::CreateSystemTemplateInput {
+            definition: self.definition,
+            compatible_namespace_version: self.compatible_namespace_version,
+        })
     }
 }

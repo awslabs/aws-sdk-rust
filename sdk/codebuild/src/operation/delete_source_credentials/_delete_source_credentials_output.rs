@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteSourceCredentialsOutput {
 }
 impl DeleteSourceCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSourceCredentialsOutput`](crate::operation::delete_source_credentials::DeleteSourceCredentialsOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsOutputBuilder {
         crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSourceCredentialsOutput`](crate::operation::delete_source_credentials::DeleteSourceCredentialsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSourceCredentialsOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl DeleteSourceCredentialsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSourceCredentialsOutput`](crate::operation::delete_source_credentials::DeleteSourceCredentialsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_source_credentials::DeleteSourceCredentialsOutput {
+    pub fn build(self) -> crate::operation::delete_source_credentials::DeleteSourceCredentialsOutput {
         crate::operation::delete_source_credentials::DeleteSourceCredentialsOutput {
             arn: self.arn,
             _request_id: self._request_id,

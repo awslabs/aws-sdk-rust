@@ -23,9 +23,7 @@ impl OidcMemberDefinition {
 
 /// A builder for [`OidcMemberDefinition`](crate::types::OidcMemberDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OidcMemberDefinitionBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl OidcMemberDefinitionBuilder {
         self
     }
     /// <p>A list of comma seperated strings that identifies user groups in your OIDC IdP. Each user group is made up of a group of private workers.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groups = input;
         self
     }
@@ -55,8 +50,6 @@ impl OidcMemberDefinitionBuilder {
     }
     /// Consumes the builder and constructs a [`OidcMemberDefinition`](crate::types::OidcMemberDefinition).
     pub fn build(self) -> crate::types::OidcMemberDefinition {
-        crate::types::OidcMemberDefinition {
-            groups: self.groups,
-        }
+        crate::types::OidcMemberDefinition { groups: self.groups }
     }
 }

@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`data_repository_tasks(Option<Vec<DataRepositoryTask>>)`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksOutput::data_repository_tasks): <p>The collection of data repository task descriptions returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     /// - On failure, responds with [`SdkError<DescribeDataRepositoryTasksError>`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksError)
-    pub fn describe_data_repository_tasks(&self) -> crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder{
+    pub fn describe_data_repository_tasks(
+        &self,
+    ) -> crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder {
         crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder::new(self.handle.clone())
     }
 }

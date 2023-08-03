@@ -6,19 +6,13 @@ pub fn ser_update_flow_input(
     if let Some(var_1) = &input.maintenance {
         #[allow(unused_mut)]
         let mut object_2 = object.key("maintenance").start_object();
-        crate::protocol_serde::shape_update_maintenance::ser_update_maintenance(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_update_maintenance::ser_update_maintenance(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.source_failover_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("sourceFailoverConfig").start_object();
-        crate::protocol_serde::shape_update_failover_config::ser_update_failover_config(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_update_failover_config::ser_update_failover_config(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

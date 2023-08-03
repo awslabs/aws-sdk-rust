@@ -36,9 +36,7 @@ impl AcceptMatchInput {
 
 /// A builder for [`AcceptMatchInput`](crate::operation::accept_match::AcceptMatchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptMatchInputBuilder {
     pub(crate) ticket_id: ::std::option::Option<::std::string::String>,
     pub(crate) player_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -71,10 +69,7 @@ impl AcceptMatchInputBuilder {
         self
     }
     /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
-    pub fn set_player_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_player_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.player_ids = input;
         self
     }
@@ -88,10 +83,7 @@ impl AcceptMatchInputBuilder {
         self
     }
     /// <p>Player response to the proposed match.</p>
-    pub fn set_acceptance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AcceptanceType>,
-    ) -> Self {
+    pub fn set_acceptance_type(mut self, input: ::std::option::Option<crate::types::AcceptanceType>) -> Self {
         self.acceptance_type = input;
         self
     }
@@ -100,12 +92,7 @@ impl AcceptMatchInputBuilder {
         &self.acceptance_type
     }
     /// Consumes the builder and constructs a [`AcceptMatchInput`](crate::operation::accept_match::AcceptMatchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::accept_match::AcceptMatchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_match::AcceptMatchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_match::AcceptMatchInput {
             ticket_id: self.ticket_id,
             player_ids: self.player_ids,

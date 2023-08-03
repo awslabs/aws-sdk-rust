@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ImportTaskError>>)`](crate::operation::list_import_errors::ListImportErrorsOutput::items): <p>List imports errors response items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_import_errors::ListImportErrorsOutput::next_token): <p>List imports errors response next token.</p>
     /// - On failure, responds with [`SdkError<ListImportErrorsError>`](crate::operation::list_import_errors::ListImportErrorsError)
-    pub fn list_import_errors(
-        &self,
-    ) -> crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder {
-        crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_import_errors(&self) -> crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder {
+        crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::new(self.handle.clone())
     }
 }

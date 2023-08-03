@@ -21,10 +21,7 @@ pub fn ser_create_site_input(
     if let Some(var_6) = &input.rack_physical_properties {
         #[allow(unused_mut)]
         let mut object_7 = object.key("RackPhysicalProperties").start_object();
-        crate::protocol_serde::shape_rack_physical_properties::ser_rack_physical_properties(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_rack_physical_properties::ser_rack_physical_properties(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.shipping_address {

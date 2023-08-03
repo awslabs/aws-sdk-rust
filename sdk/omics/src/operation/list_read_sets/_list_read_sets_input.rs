@@ -43,9 +43,7 @@ impl ListReadSetsInput {
 
 /// A builder for [`ListReadSetsInput`](crate::operation::list_read_sets::ListReadSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReadSetsInputBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -54,18 +52,12 @@ pub struct ListReadSetsInputBuilder {
 }
 impl ListReadSetsInputBuilder {
     /// <p>The jobs' sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The jobs' sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
@@ -118,10 +110,7 @@ impl ListReadSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListReadSetsInput`](crate::operation::list_read_sets::ListReadSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_read_sets::ListReadSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_read_sets::ListReadSetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_read_sets::ListReadSetsInput {
             sequence_store_id: self.sequence_store_id,
             max_results: self.max_results,

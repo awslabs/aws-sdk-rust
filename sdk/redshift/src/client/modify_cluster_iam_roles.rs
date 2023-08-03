@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyClusterIamRolesOutput`](crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<ModifyClusterIamRolesError>`](crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesError)
-    pub fn modify_cluster_iam_roles(
-        &self,
-    ) -> crate::operation::modify_cluster_iam_roles::builders::ModifyClusterIamRolesFluentBuilder
-    {
+    pub fn modify_cluster_iam_roles(&self) -> crate::operation::modify_cluster_iam_roles::builders::ModifyClusterIamRolesFluentBuilder {
         crate::operation::modify_cluster_iam_roles::builders::ModifyClusterIamRolesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -17,10 +17,7 @@ pub fn ser_update_schedule_input(
     if let Some(var_4) = &input.flexible_time_window {
         #[allow(unused_mut)]
         let mut object_5 = object.key("FlexibleTimeWindow").start_object();
-        crate::protocol_serde::shape_flexible_time_window::ser_flexible_time_window(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_flexible_time_window::ser_flexible_time_window(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.group_name {
@@ -33,9 +30,7 @@ pub fn ser_update_schedule_input(
         object.key("ScheduleExpression").string(var_8.as_str());
     }
     if let Some(var_9) = &input.schedule_expression_timezone {
-        object
-            .key("ScheduleExpressionTimezone")
-            .string(var_9.as_str());
+        object.key("ScheduleExpressionTimezone").string(var_9.as_str());
     }
     if let Some(var_10) = &input.start_date {
         object

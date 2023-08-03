@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListBackendJobsOutput {
 }
 impl ListBackendJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListBackendJobsOutput`](crate::operation::list_backend_jobs::ListBackendJobsOutput).
-    pub fn builder() -> crate::operation::list_backend_jobs::builders::ListBackendJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_backend_jobs::builders::ListBackendJobsOutputBuilder {
         crate::operation::list_backend_jobs::builders::ListBackendJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBackendJobsOutput`](crate::operation::list_backend_jobs::ListBackendJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBackendJobsOutputBuilder {
     pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::BackendJobRespObj>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListBackendJobsOutputBuilder {
         self
     }
     /// <p>An array of jobs and their properties.</p>
-    pub fn set_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BackendJobRespObj>>,
-    ) -> Self {
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackendJobRespObj>>) -> Self {
         self.jobs = input;
         self
     }
     /// <p>An array of jobs and their properties.</p>
-    pub fn get_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackendJobRespObj>> {
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackendJobRespObj>> {
         &self.jobs
     }
     /// <p>The token for the next set of results.</p>

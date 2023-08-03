@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeBundleOutput`](crate::operation::describe_bundle::DescribeBundleOutput) with field(s):
     ///   - [`details(Option<BundleDetails>)`](crate::operation::describe_bundle::DescribeBundleOutput::details): <p> The details of the bundle. </p>
     /// - On failure, responds with [`SdkError<DescribeBundleError>`](crate::operation::describe_bundle::DescribeBundleError)
-    pub fn describe_bundle(
-        &self,
-    ) -> crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder {
-        crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_bundle(&self) -> crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder {
+        crate::operation::describe_bundle::builders::DescribeBundleFluentBuilder::new(self.handle.clone())
     }
 }

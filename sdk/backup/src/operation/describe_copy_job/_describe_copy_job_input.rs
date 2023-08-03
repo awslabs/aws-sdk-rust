@@ -22,9 +22,7 @@ impl DescribeCopyJobInput {
 
 /// A builder for [`DescribeCopyJobInput`](crate::operation::describe_copy_job::DescribeCopyJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCopyJobInputBuilder {
     pub(crate) copy_job_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DescribeCopyJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCopyJobInput`](crate::operation::describe_copy_job::DescribeCopyJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_copy_job::DescribeCopyJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_copy_job::DescribeCopyJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_copy_job::DescribeCopyJobInput {
             copy_job_id: self.copy_job_id,
         })

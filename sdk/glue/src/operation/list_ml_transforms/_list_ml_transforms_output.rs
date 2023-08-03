@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListMlTransformsOutput {
 }
 impl ListMlTransformsOutput {
     /// Creates a new builder-style object to manufacture [`ListMlTransformsOutput`](crate::operation::list_ml_transforms::ListMlTransformsOutput).
-    pub fn builder() -> crate::operation::list_ml_transforms::builders::ListMlTransformsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_ml_transforms::builders::ListMlTransformsOutputBuilder {
         crate::operation::list_ml_transforms::builders::ListMlTransformsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMlTransformsOutput`](crate::operation::list_ml_transforms::ListMlTransformsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMlTransformsOutputBuilder {
     pub(crate) transform_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,27 +47,19 @@ impl ListMlTransformsOutputBuilder {
     /// To override the contents of this collection use [`set_transform_ids`](Self::set_transform_ids).
     ///
     /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
-    pub fn transform_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transform_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.transform_ids.unwrap_or_default();
         v.push(input.into());
         self.transform_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
-    pub fn set_transform_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_transform_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.transform_ids = input;
         self
     }
     /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
-    pub fn get_transform_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_transform_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.transform_ids
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>

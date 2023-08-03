@@ -22,35 +22,26 @@ impl CancelQuantumTaskInput {
 }
 impl CancelQuantumTaskInput {
     /// Creates a new builder-style object to manufacture [`CancelQuantumTaskInput`](crate::operation::cancel_quantum_task::CancelQuantumTaskInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_quantum_task::builders::CancelQuantumTaskInputBuilder {
+    pub fn builder() -> crate::operation::cancel_quantum_task::builders::CancelQuantumTaskInputBuilder {
         crate::operation::cancel_quantum_task::builders::CancelQuantumTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelQuantumTaskInput`](crate::operation::cancel_quantum_task::CancelQuantumTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelQuantumTaskInputBuilder {
     pub(crate) quantum_task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CancelQuantumTaskInputBuilder {
     /// <p>The ARN of the task to cancel.</p>
-    pub fn quantum_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the task to cancel.</p>
-    pub fn set_quantum_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quantum_task_arn = input;
         self
     }
@@ -75,15 +66,10 @@ impl CancelQuantumTaskInputBuilder {
     /// Consumes the builder and constructs a [`CancelQuantumTaskInput`](crate::operation::cancel_quantum_task::CancelQuantumTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_quantum_task::CancelQuantumTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_quantum_task::CancelQuantumTaskInput {
-                quantum_task_arn: self.quantum_task_arn,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_quantum_task::CancelQuantumTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_quantum_task::CancelQuantumTaskInput {
+            quantum_task_arn: self.quantum_task_arn,
+            client_token: self.client_token,
+        })
     }
 }

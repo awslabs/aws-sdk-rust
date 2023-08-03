@@ -15,9 +15,7 @@ pub struct DescribeSourceNetworksInput {
 }
 impl DescribeSourceNetworksInput {
     /// <p>A set of filters by which to return Source Networks.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DescribeSourceNetworksRequestFilters> {
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::DescribeSourceNetworksRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>Maximum number of Source Networks to retrieve.</p>
@@ -31,18 +29,14 @@ impl DescribeSourceNetworksInput {
 }
 impl DescribeSourceNetworksInput {
     /// Creates a new builder-style object to manufacture [`DescribeSourceNetworksInput`](crate::operation::describe_source_networks::DescribeSourceNetworksInput).
-    pub fn builder(
-    ) -> crate::operation::describe_source_networks::builders::DescribeSourceNetworksInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_source_networks::builders::DescribeSourceNetworksInputBuilder {
         crate::operation::describe_source_networks::builders::DescribeSourceNetworksInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSourceNetworksInput`](crate::operation::describe_source_networks::DescribeSourceNetworksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSourceNetworksInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::DescribeSourceNetworksRequestFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -55,17 +49,12 @@ impl DescribeSourceNetworksInputBuilder {
         self
     }
     /// <p>A set of filters by which to return Source Networks.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribeSourceNetworksRequestFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DescribeSourceNetworksRequestFilters>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A set of filters by which to return Source Networks.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::DescribeSourceNetworksRequestFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DescribeSourceNetworksRequestFilters> {
         &self.filters
     }
     /// <p>Maximum number of Source Networks to retrieve.</p>
@@ -99,16 +88,12 @@ impl DescribeSourceNetworksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSourceNetworksInput`](crate::operation::describe_source_networks::DescribeSourceNetworksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_source_networks::DescribeSourceNetworksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_source_networks::DescribeSourceNetworksInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_source_networks::DescribeSourceNetworksInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_source_networks::DescribeSourceNetworksInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

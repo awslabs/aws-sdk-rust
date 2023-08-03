@@ -10,10 +10,7 @@ impl UpdateDiscovererInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_discoverer::UpdateDiscovererOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_discoverer::UpdateDiscovererError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_discoverer::UpdateDiscovererError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_discoverer();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDiscovererFluentBuilder {
         }
     }
     /// Access the UpdateDiscoverer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_discoverer::builders::UpdateDiscovererInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_discoverer::builders::UpdateDiscovererInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateDiscovererFluentBuilder {
             crate::operation::update_discoverer::UpdateDiscoverer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_discoverer::UpdateDiscovererError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_discoverer::UpdateDiscovererError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateDiscovererFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateDiscovererFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_discoverer::UpdateDiscovererOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_discoverer::UpdateDiscovererError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_discoverer::UpdateDiscovererError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateDiscovererFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_discoverer::UpdateDiscovererOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_discoverer::UpdateDiscovererError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_discoverer::UpdateDiscovererError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateDiscovererFluentBuilder {
             crate::operation::update_discoverer::UpdateDiscoverer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_discoverer::UpdateDiscovererError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_discoverer::UpdateDiscovererError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl UpdateDiscovererFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discoverer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.discoverer_id(input.into());
         self
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn set_discoverer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discoverer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_discoverer_id(input);
         self
     }

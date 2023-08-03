@@ -37,10 +37,7 @@ impl ResetAuthorizersCacheFluentBuilder {
         }
     }
     /// Access the ResetAuthorizersCache as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reset_authorizers_cache::builders::ResetAuthorizersCacheInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::reset_authorizers_cache::builders::ResetAuthorizersCacheInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ResetAuthorizersCacheFluentBuilder {
             crate::operation::reset_authorizers_cache::ResetAuthorizersCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_authorizers_cache::ResetAuthorizersCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_authorizers_cache::ResetAuthorizersCacheError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ResetAuthorizersCacheFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ResetAuthorizersCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_authorizers_cache::ResetAuthorizersCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_authorizers_cache::ResetAuthorizersCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_authorizers_cache::ResetAuthorizersCacheError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ResetAuthorizersCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_authorizers_cache::ResetAuthorizersCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_authorizers_cache::ResetAuthorizersCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_authorizers_cache::ResetAuthorizersCacheError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl ResetAuthorizersCacheFluentBuilder {
             crate::operation::reset_authorizers_cache::ResetAuthorizersCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_authorizers_cache::ResetAuthorizersCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_authorizers_cache::ResetAuthorizersCacheError>,
     > {
         self.customize_middleware().await
     }

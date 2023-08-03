@@ -17,13 +17,10 @@ pub struct CreateRoomInput {
     pub message_review_handler: ::std::option::Option<crate::types::MessageReviewHandler>,
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
     #[doc(hidden)]
-    pub logging_configuration_identifiers:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub logging_configuration_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateRoomInput {
     /// <p>Room name. The value does not need to be unique.</p>
@@ -39,23 +36,15 @@ impl CreateRoomInput {
         self.maximum_message_length
     }
     /// <p>Configuration information for optional review of messages.</p>
-    pub fn message_review_handler(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MessageReviewHandler> {
+    pub fn message_review_handler(&self) -> ::std::option::Option<&crate::types::MessageReviewHandler> {
         self.message_review_handler.as_ref()
     }
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn logging_configuration_identifiers(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn logging_configuration_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.logging_configuration_identifiers.as_deref()
     }
 }
@@ -68,19 +57,14 @@ impl CreateRoomInput {
 
 /// A builder for [`CreateRoomInput`](crate::operation::create_room::CreateRoomInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRoomInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) maximum_message_rate_per_second: ::std::option::Option<i32>,
     pub(crate) maximum_message_length: ::std::option::Option<i32>,
     pub(crate) message_review_handler: ::std::option::Option<crate::types::MessageReviewHandler>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) logging_configuration_identifiers:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) logging_configuration_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateRoomInputBuilder {
     /// <p>Room name. The value does not need to be unique.</p>
@@ -103,10 +87,7 @@ impl CreateRoomInputBuilder {
         self
     }
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
-    pub fn set_maximum_message_rate_per_second(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_maximum_message_rate_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_message_rate_per_second = input;
         self
     }
@@ -134,17 +115,12 @@ impl CreateRoomInputBuilder {
         self
     }
     /// <p>Configuration information for optional review of messages.</p>
-    pub fn set_message_review_handler(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageReviewHandler>,
-    ) -> Self {
+    pub fn set_message_review_handler(mut self, input: ::std::option::Option<crate::types::MessageReviewHandler>) -> Self {
         self.message_review_handler = input;
         self
     }
     /// <p>Configuration information for optional review of messages.</p>
-    pub fn get_message_review_handler(
-        &self,
-    ) -> &::std::option::Option<crate::types::MessageReviewHandler> {
+    pub fn get_message_review_handler(&self) -> &::std::option::Option<crate::types::MessageReviewHandler> {
         &self.message_review_handler
     }
     /// Adds a key-value pair to `tags`.
@@ -152,32 +128,19 @@ impl CreateRoomInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `logging_configuration_identifiers`.
@@ -185,41 +148,26 @@ impl CreateRoomInputBuilder {
     /// To override the contents of this collection use [`set_logging_configuration_identifiers`](Self::set_logging_configuration_identifiers).
     ///
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn logging_configuration_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logging_configuration_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.logging_configuration_identifiers.unwrap_or_default();
         v.push(input.into());
         self.logging_configuration_identifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn set_logging_configuration_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_logging_configuration_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.logging_configuration_identifiers = input;
         self
     }
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn get_logging_configuration_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_logging_configuration_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.logging_configuration_identifiers
     }
     /// Consumes the builder and constructs a [`CreateRoomInput`](crate::operation::create_room::CreateRoomInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_room::CreateRoomInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_room::CreateRoomInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_room::CreateRoomInput {
             name: self.name,
-            maximum_message_rate_per_second: self
-                .maximum_message_rate_per_second
-                .unwrap_or_default(),
+            maximum_message_rate_per_second: self.maximum_message_rate_per_second.unwrap_or_default(),
             maximum_message_length: self.maximum_message_length.unwrap_or_default(),
             message_review_handler: self.message_review_handler,
             tags: self.tags,

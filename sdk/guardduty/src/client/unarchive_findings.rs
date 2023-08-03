@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`finding_ids(Vec<String>)`](crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder::finding_ids) / [`set_finding_ids(Option<Vec<String>>)`](crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder::set_finding_ids): <p>The IDs of the findings to unarchive.</p>
     /// - On success, responds with [`UnarchiveFindingsOutput`](crate::operation::unarchive_findings::UnarchiveFindingsOutput)
     /// - On failure, responds with [`SdkError<UnarchiveFindingsError>`](crate::operation::unarchive_findings::UnarchiveFindingsError)
-    pub fn unarchive_findings(
-        &self,
-    ) -> crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder {
-        crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn unarchive_findings(&self) -> crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder {
+        crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder::new(self.handle.clone())
     }
 }

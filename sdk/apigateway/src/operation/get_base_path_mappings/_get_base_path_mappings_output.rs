@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for GetBasePathMappingsOutput {
 }
 impl GetBasePathMappingsOutput {
     /// Creates a new builder-style object to manufacture [`GetBasePathMappingsOutput`](crate::operation::get_base_path_mappings::GetBasePathMappingsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_base_path_mappings::builders::GetBasePathMappingsOutputBuilder {
+    pub fn builder() -> crate::operation::get_base_path_mappings::builders::GetBasePathMappingsOutputBuilder {
         crate::operation::get_base_path_mappings::builders::GetBasePathMappingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBasePathMappingsOutput`](crate::operation::get_base_path_mappings::GetBasePathMappingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBasePathMappingsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::BasePathMapping>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
@@ -58,17 +55,12 @@ impl GetBasePathMappingsOutputBuilder {
         self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BasePathMapping>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BasePathMapping>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BasePathMapping>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BasePathMapping>> {
         &self.items
     }
     /// <p>The current pagination position in the paged result set.</p>

@@ -53,9 +53,7 @@ impl GetDatabasesInput {
 
 /// A builder for [`GetDatabasesInput`](crate::operation::get_databases::GetDatabasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDatabasesInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -121,10 +119,7 @@ impl GetDatabasesInputBuilder {
     /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>
-    pub fn set_resource_share_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceShareType>,
-    ) -> Self {
+    pub fn set_resource_share_type(mut self, input: ::std::option::Option<crate::types::ResourceShareType>) -> Self {
         self.resource_share_type = input;
         self
     }
@@ -134,18 +129,11 @@ impl GetDatabasesInputBuilder {
     /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>
-    pub fn get_resource_share_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceShareType> {
+    pub fn get_resource_share_type(&self) -> &::std::option::Option<crate::types::ResourceShareType> {
         &self.resource_share_type
     }
     /// Consumes the builder and constructs a [`GetDatabasesInput`](crate::operation::get_databases::GetDatabasesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_databases::GetDatabasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_databases::GetDatabasesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_databases::GetDatabasesInput {
             catalog_id: self.catalog_id,
             next_token: self.next_token,

@@ -28,7 +28,7 @@ impl CreateDataflowEndpointGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataflowEndpointGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_dataflow_endpoint_group::builders::CreateDataflowEndpointGroupInputBuilder,
+    inner: crate::operation::create_dataflow_endpoint_group::builders::CreateDataflowEndpointGroupInputBuilder,
 }
 impl CreateDataflowEndpointGroupFluentBuilder {
     /// Creates a new `CreateDataflowEndpointGroup`.
@@ -39,7 +39,7 @@ impl CreateDataflowEndpointGroupFluentBuilder {
         }
     }
     /// Access the CreateDataflowEndpointGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_dataflow_endpoint_group::builders::CreateDataflowEndpointGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_dataflow_endpoint_group::builders::CreateDataflowEndpointGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl CreateDataflowEndpointGroupFluentBuilder {
             crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl CreateDataflowEndpointGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl CreateDataflowEndpointGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl CreateDataflowEndpointGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl CreateDataflowEndpointGroupFluentBuilder {
             crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +121,12 @@ impl CreateDataflowEndpointGroupFluentBuilder {
         self
     }
     /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
-    pub fn set_endpoint_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>>,
-    ) -> Self {
+    pub fn set_endpoint_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>>) -> Self {
         self.inner = self.inner.set_endpoint_details(input);
         self
     }
     /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
-    pub fn get_endpoint_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>> {
+    pub fn get_endpoint_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>> {
         self.inner.get_endpoint_details()
     }
     /// Adds a key-value pair to `tags`.
@@ -150,30 +134,17 @@ impl CreateDataflowEndpointGroupFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags of a dataflow endpoint group.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Tags of a dataflow endpoint group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Tags of a dataflow endpoint group.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
@@ -182,10 +153,7 @@ impl CreateDataflowEndpointGroupFluentBuilder {
         self
     }
     /// <p>Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
-    pub fn set_contact_pre_pass_duration_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_contact_pre_pass_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_contact_pre_pass_duration_seconds(input);
         self
     }
@@ -199,10 +167,7 @@ impl CreateDataflowEndpointGroupFluentBuilder {
         self
     }
     /// <p>Amount of time, in seconds, after a contact ends that the Ground Station Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.</p>
-    pub fn set_contact_post_pass_duration_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_contact_post_pass_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_contact_post_pass_duration_seconds(input);
         self
     }

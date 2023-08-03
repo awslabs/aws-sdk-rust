@@ -30,9 +30,7 @@ impl DvbSubSourceSettings {
 
 /// A builder for [`DvbSubSourceSettings`](crate::types::DvbSubSourceSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DvbSubSourceSettingsBuilder {
     pub(crate) ocr_language: ::std::option::Option<crate::types::DvbSubOcrLanguage>,
     pub(crate) pid: ::std::option::Option<i32>,
@@ -44,10 +42,7 @@ impl DvbSubSourceSettingsBuilder {
         self
     }
     /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
-    pub fn set_ocr_language(
-        mut self,
-        input: ::std::option::Option<crate::types::DvbSubOcrLanguage>,
-    ) -> Self {
+    pub fn set_ocr_language(mut self, input: ::std::option::Option<crate::types::DvbSubOcrLanguage>) -> Self {
         self.ocr_language = input;
         self
     }

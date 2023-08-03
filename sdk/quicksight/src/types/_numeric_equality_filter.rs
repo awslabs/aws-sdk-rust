@@ -54,21 +54,15 @@ impl NumericEqualityFilter {
     /// <ul>
     /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    pub fn select_all_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NumericFilterSelectAllOptions> {
+    pub fn select_all_options(&self) -> ::std::option::Option<&crate::types::NumericFilterSelectAllOptions> {
         self.select_all_options.as_ref()
     }
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    pub fn match_operator(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NumericEqualityMatchOperator> {
+    pub fn match_operator(&self) -> ::std::option::Option<&crate::types::NumericEqualityMatchOperator> {
         self.match_operator.as_ref()
     }
     /// <p>The aggregation function of the filter.</p>
-    pub fn aggregation_function(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AggregationFunction> {
+    pub fn aggregation_function(&self) -> ::std::option::Option<&crate::types::AggregationFunction> {
         self.aggregation_function.as_ref()
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
@@ -94,15 +88,12 @@ impl NumericEqualityFilter {
 
 /// A builder for [`NumericEqualityFilter`](crate::types::NumericEqualityFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NumericEqualityFilterBuilder {
     pub(crate) filter_id: ::std::option::Option<::std::string::String>,
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) value: ::std::option::Option<f64>,
-    pub(crate) select_all_options:
-        ::std::option::Option<crate::types::NumericFilterSelectAllOptions>,
+    pub(crate) select_all_options: ::std::option::Option<crate::types::NumericFilterSelectAllOptions>,
     pub(crate) match_operator: ::std::option::Option<crate::types::NumericEqualityMatchOperator>,
     pub(crate) aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
@@ -129,10 +120,7 @@ impl NumericEqualityFilterBuilder {
         self
     }
     /// <p>The column that the filter is applied to.</p>
-    pub fn set_column(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
+    pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
         self.column = input;
         self
     }
@@ -158,10 +146,7 @@ impl NumericEqualityFilterBuilder {
     /// <ul>
     /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    pub fn select_all_options(
-        mut self,
-        input: crate::types::NumericFilterSelectAllOptions,
-    ) -> Self {
+    pub fn select_all_options(mut self, input: crate::types::NumericFilterSelectAllOptions) -> Self {
         self.select_all_options = ::std::option::Option::Some(input);
         self
     }
@@ -169,10 +154,7 @@ impl NumericEqualityFilterBuilder {
     /// <ul>
     /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    pub fn set_select_all_options(
-        mut self,
-        input: ::std::option::Option<crate::types::NumericFilterSelectAllOptions>,
-    ) -> Self {
+    pub fn set_select_all_options(mut self, input: ::std::option::Option<crate::types::NumericFilterSelectAllOptions>) -> Self {
         self.select_all_options = input;
         self
     }
@@ -180,9 +162,7 @@ impl NumericEqualityFilterBuilder {
     /// <ul>
     /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    pub fn get_select_all_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::NumericFilterSelectAllOptions> {
+    pub fn get_select_all_options(&self) -> &::std::option::Option<crate::types::NumericFilterSelectAllOptions> {
         &self.select_all_options
     }
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
@@ -191,17 +171,12 @@ impl NumericEqualityFilterBuilder {
         self
     }
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    pub fn set_match_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::NumericEqualityMatchOperator>,
-    ) -> Self {
+    pub fn set_match_operator(mut self, input: ::std::option::Option<crate::types::NumericEqualityMatchOperator>) -> Self {
         self.match_operator = input;
         self
     }
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    pub fn get_match_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::NumericEqualityMatchOperator> {
+    pub fn get_match_operator(&self) -> &::std::option::Option<crate::types::NumericEqualityMatchOperator> {
         &self.match_operator
     }
     /// <p>The aggregation function of the filter.</p>
@@ -210,32 +185,21 @@ impl NumericEqualityFilterBuilder {
         self
     }
     /// <p>The aggregation function of the filter.</p>
-    pub fn set_aggregation_function(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationFunction>,
-    ) -> Self {
+    pub fn set_aggregation_function(mut self, input: ::std::option::Option<crate::types::AggregationFunction>) -> Self {
         self.aggregation_function = input;
         self
     }
     /// <p>The aggregation function of the filter.</p>
-    pub fn get_aggregation_function(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregationFunction> {
+    pub fn get_aggregation_function(&self) -> &::std::option::Option<crate::types::AggregationFunction> {
         &self.aggregation_function
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
-    pub fn parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
-    pub fn set_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_name = input;
         self
     }
@@ -259,10 +223,7 @@ impl NumericEqualityFilterBuilder {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    pub fn set_null_option(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterNullOption>,
-    ) -> Self {
+    pub fn set_null_option(mut self, input: ::std::option::Option<crate::types::FilterNullOption>) -> Self {
         self.null_option = input;
         self
     }

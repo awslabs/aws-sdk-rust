@@ -42,9 +42,7 @@ impl DescribeVolumeStatusFluentBuilder {
         }
     }
     /// Access the DescribeVolumeStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_volume_status::builders::DescribeVolumeStatusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_volume_status::builders::DescribeVolumeStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl DescribeVolumeStatusFluentBuilder {
             crate::operation::describe_volume_status::DescribeVolumeStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volume_status::DescribeVolumeStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volume_status::DescribeVolumeStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl DescribeVolumeStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl DescribeVolumeStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_volume_status::DescribeVolumeStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volume_status::DescribeVolumeStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volume_status::DescribeVolumeStatusError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl DescribeVolumeStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_volume_status::DescribeVolumeStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volume_status::DescribeVolumeStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volume_status::DescribeVolumeStatusError>,
     > {
         self.send_middleware().await
     }
@@ -121,22 +110,15 @@ impl DescribeVolumeStatusFluentBuilder {
             crate::operation::describe_volume_status::DescribeVolumeStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_volume_status::DescribeVolumeStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_volume_status::DescribeVolumeStatusError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_volume_status::paginator::DescribeVolumeStatusPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_volume_status::paginator::DescribeVolumeStatusPaginator {
-        crate::operation::describe_volume_status::paginator::DescribeVolumeStatusPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_volume_status::paginator::DescribeVolumeStatusPaginator {
+        crate::operation::describe_volume_status::paginator::DescribeVolumeStatusPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -176,10 +158,7 @@ impl DescribeVolumeStatusFluentBuilder {
     /// <li> <p> <code>volume-status.details-status</code> - The status of <code>volume-status.details-name</code> (for <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for <code>io-performance</code>: <code>normal</code> | <code>degraded</code> | <code>severely-degraded</code> | <code>stalled</code>).</p> </li>
     /// <li> <p> <code>volume-status.status</code> - The status of the volume (<code>ok</code> | <code>impaired</code> | <code>warning</code> | <code>insufficient-data</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -241,10 +220,7 @@ impl DescribeVolumeStatusFluentBuilder {
     }
     /// <p>The IDs of the volumes.</p>
     /// <p>Default: Describes all your volumes.</p>
-    pub fn set_volume_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_volume_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_volume_ids(input);
         self
     }

@@ -22,18 +22,14 @@ impl ListVpcEndpointAccessInput {
 }
 impl ListVpcEndpointAccessInput {
     /// Creates a new builder-style object to manufacture [`ListVpcEndpointAccessInput`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput).
-    pub fn builder(
-    ) -> crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessInputBuilder {
         crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVpcEndpointAccessInput`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpcEndpointAccessInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListVpcEndpointAccessInputBuilder {
     /// Consumes the builder and constructs a [`ListVpcEndpointAccessInput`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput {
-                domain_name: self.domain_name,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput {
+            domain_name: self.domain_name,
+            next_token: self.next_token,
+        })
     }
 }

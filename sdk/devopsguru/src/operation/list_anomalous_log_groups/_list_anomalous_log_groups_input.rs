@@ -29,18 +29,14 @@ impl ListAnomalousLogGroupsInput {
 }
 impl ListAnomalousLogGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListAnomalousLogGroupsInput`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsInputBuilder {
         crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAnomalousLogGroupsInput`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnomalousLogGroupsInputBuilder {
     pub(crate) insight_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -96,12 +92,10 @@ impl ListAnomalousLogGroupsInputBuilder {
         crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsInput {
-                insight_id: self.insight_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsInput {
+            insight_id: self.insight_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

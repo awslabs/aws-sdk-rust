@@ -8,8 +8,7 @@ pub struct ListWorkflowsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The summary of the migration workflow.</p>
     #[doc(hidden)]
-    pub migration_workflow_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::MigrationWorkflowSummary>>,
+    pub migration_workflow_summary: ::std::option::Option<::std::vec::Vec<crate::types::MigrationWorkflowSummary>>,
     _request_id: Option<String>,
 }
 impl ListWorkflowsOutput {
@@ -18,9 +17,7 @@ impl ListWorkflowsOutput {
         self.next_token.as_deref()
     }
     /// <p>The summary of the migration workflow.</p>
-    pub fn migration_workflow_summary(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MigrationWorkflowSummary]> {
+    pub fn migration_workflow_summary(&self) -> ::std::option::Option<&[crate::types::MigrationWorkflowSummary]> {
         self.migration_workflow_summary.as_deref()
     }
 }
@@ -38,13 +35,10 @@ impl ListWorkflowsOutput {
 
 /// A builder for [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) migration_workflow_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::MigrationWorkflowSummary>>,
+    pub(crate) migration_workflow_summary: ::std::option::Option<::std::vec::Vec<crate::types::MigrationWorkflowSummary>>,
     _request_id: Option<String>,
 }
 impl ListWorkflowsOutputBuilder {
@@ -67,27 +61,19 @@ impl ListWorkflowsOutputBuilder {
     /// To override the contents of this collection use [`set_migration_workflow_summary`](Self::set_migration_workflow_summary).
     ///
     /// <p>The summary of the migration workflow.</p>
-    pub fn migration_workflow_summary(
-        mut self,
-        input: crate::types::MigrationWorkflowSummary,
-    ) -> Self {
+    pub fn migration_workflow_summary(mut self, input: crate::types::MigrationWorkflowSummary) -> Self {
         let mut v = self.migration_workflow_summary.unwrap_or_default();
         v.push(input);
         self.migration_workflow_summary = ::std::option::Option::Some(v);
         self
     }
     /// <p>The summary of the migration workflow.</p>
-    pub fn set_migration_workflow_summary(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MigrationWorkflowSummary>>,
-    ) -> Self {
+    pub fn set_migration_workflow_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MigrationWorkflowSummary>>) -> Self {
         self.migration_workflow_summary = input;
         self
     }
     /// <p>The summary of the migration workflow.</p>
-    pub fn get_migration_workflow_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MigrationWorkflowSummary>> {
+    pub fn get_migration_workflow_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MigrationWorkflowSummary>> {
         &self.migration_workflow_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

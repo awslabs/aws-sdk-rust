@@ -12,10 +12,7 @@ pub fn ser_put_schema_version_metadata_input(
     if let Some(var_3) = &input.schema_version_number {
         #[allow(unused_mut)]
         let mut object_4 = object.key("SchemaVersionNumber").start_object();
-        crate::protocol_serde::shape_schema_version_number::ser_schema_version_number(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_schema_version_number::ser_schema_version_number(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.schema_version_id {
@@ -24,10 +21,7 @@ pub fn ser_put_schema_version_metadata_input(
     if let Some(var_6) = &input.metadata_key_value {
         #[allow(unused_mut)]
         let mut object_7 = object.key("MetadataKeyValue").start_object();
-        crate::protocol_serde::shape_metadata_key_value_pair::ser_metadata_key_value_pair(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_metadata_key_value_pair::ser_metadata_key_value_pair(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())

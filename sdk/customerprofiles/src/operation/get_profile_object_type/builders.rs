@@ -37,10 +37,7 @@ impl GetProfileObjectTypeFluentBuilder {
         }
     }
     /// Access the GetProfileObjectType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_profile_object_type::builders::GetProfileObjectTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_profile_object_type::builders::GetProfileObjectTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetProfileObjectTypeFluentBuilder {
             crate::operation::get_profile_object_type::GetProfileObjectType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_profile_object_type::GetProfileObjectTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_profile_object_type::GetProfileObjectTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetProfileObjectTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetProfileObjectTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_profile_object_type::GetProfileObjectTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_profile_object_type::GetProfileObjectTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_profile_object_type::GetProfileObjectTypeError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetProfileObjectTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_profile_object_type::GetProfileObjectTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_profile_object_type::GetProfileObjectTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_profile_object_type::GetProfileObjectTypeError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetProfileObjectTypeFluentBuilder {
             crate::operation::get_profile_object_type::GetProfileObjectType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_profile_object_type::GetProfileObjectTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_profile_object_type::GetProfileObjectTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl GetProfileObjectTypeFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.object_type_name(input.into());
         self
     }
     /// <p>The name of the profile object type.</p>
-    pub fn set_object_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_object_type_name(input);
         self
     }

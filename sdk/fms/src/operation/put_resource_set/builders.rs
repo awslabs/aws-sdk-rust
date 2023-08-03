@@ -10,10 +10,7 @@ impl PutResourceSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_resource_set::PutResourceSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resource_set::PutResourceSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resource_set::PutResourceSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_resource_set();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl PutResourceSetFluentBuilder {
         }
     }
     /// Access the PutResourceSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_resource_set::builders::PutResourceSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_resource_set::builders::PutResourceSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl PutResourceSetFluentBuilder {
             crate::operation::put_resource_set::PutResourceSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resource_set::PutResourceSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resource_set::PutResourceSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl PutResourceSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl PutResourceSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_resource_set::PutResourceSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resource_set::PutResourceSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resource_set::PutResourceSetError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl PutResourceSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_resource_set::PutResourceSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resource_set::PutResourceSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resource_set::PutResourceSetError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl PutResourceSetFluentBuilder {
             crate::operation::put_resource_set::PutResourceSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resource_set::PutResourceSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resource_set::PutResourceSetError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +113,7 @@ impl PutResourceSetFluentBuilder {
         self
     }
     /// <p>Details about the resource set to be created or updated.&gt;</p>
-    pub fn set_resource_set(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSet>,
-    ) -> Self {
+    pub fn set_resource_set(mut self, input: ::std::option::Option<crate::types::ResourceSet>) -> Self {
         self.inner = self.inner.set_resource_set(input);
         self
     }
@@ -150,10 +131,7 @@ impl PutResourceSetFluentBuilder {
         self
     }
     /// <p>Retrieves the tags associated with the specified resource set. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
-    pub fn set_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tag_list(input);
         self
     }

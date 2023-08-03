@@ -39,9 +39,7 @@ impl AdBreak {
         self.slate.as_ref()
     }
     /// <p>This defines the SCTE-35 <code>splice_insert()</code> message inserted around the ad. For information about using <code>splice_insert()</code>, see the SCTE-35 specficiaiton, section 9.7.3.1.</p>
-    pub fn splice_insert_message(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SpliceInsertMessage> {
+    pub fn splice_insert_message(&self) -> ::std::option::Option<&crate::types::SpliceInsertMessage> {
         self.splice_insert_message.as_ref()
     }
     /// <p>Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.</p>
@@ -64,17 +62,14 @@ impl AdBreak {
 
 /// A builder for [`AdBreak`](crate::types::AdBreak).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdBreakBuilder {
     pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,
     pub(crate) offset_millis: ::std::option::Option<i64>,
     pub(crate) slate: ::std::option::Option<crate::types::SlateSource>,
     pub(crate) splice_insert_message: ::std::option::Option<crate::types::SpliceInsertMessage>,
     pub(crate) time_signal_message: ::std::option::Option<crate::types::TimeSignalMessage>,
-    pub(crate) ad_break_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
+    pub(crate) ad_break_metadata: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
 }
 impl AdBreakBuilder {
     /// <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.</p>
@@ -83,10 +78,7 @@ impl AdBreakBuilder {
         self
     }
     /// <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.</p>
-    pub fn set_message_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageType>,
-    ) -> Self {
+    pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.message_type = input;
         self
     }
@@ -128,17 +120,12 @@ impl AdBreakBuilder {
         self
     }
     /// <p>This defines the SCTE-35 <code>splice_insert()</code> message inserted around the ad. For information about using <code>splice_insert()</code>, see the SCTE-35 specficiaiton, section 9.7.3.1.</p>
-    pub fn set_splice_insert_message(
-        mut self,
-        input: ::std::option::Option<crate::types::SpliceInsertMessage>,
-    ) -> Self {
+    pub fn set_splice_insert_message(mut self, input: ::std::option::Option<crate::types::SpliceInsertMessage>) -> Self {
         self.splice_insert_message = input;
         self
     }
     /// <p>This defines the SCTE-35 <code>splice_insert()</code> message inserted around the ad. For information about using <code>splice_insert()</code>, see the SCTE-35 specficiaiton, section 9.7.3.1.</p>
-    pub fn get_splice_insert_message(
-        &self,
-    ) -> &::std::option::Option<crate::types::SpliceInsertMessage> {
+    pub fn get_splice_insert_message(&self) -> &::std::option::Option<crate::types::SpliceInsertMessage> {
         &self.splice_insert_message
     }
     /// <p>Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.</p>
@@ -151,19 +138,14 @@ impl AdBreakBuilder {
     /// <p>Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.</p>
     /// <p>Programs on a channel's schedule can be configured with one or more ad breaks. You can attach a <code>splice_insert</code> SCTE-35 message to the ad break. This message provides basic metadata about the ad break.</p>
     /// <p>See section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>
-    pub fn set_time_signal_message(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeSignalMessage>,
-    ) -> Self {
+    pub fn set_time_signal_message(mut self, input: ::std::option::Option<crate::types::TimeSignalMessage>) -> Self {
         self.time_signal_message = input;
         self
     }
     /// <p>Defines the SCTE-35 <code>time_signal</code> message inserted around the ad.</p>
     /// <p>Programs on a channel's schedule can be configured with one or more ad breaks. You can attach a <code>splice_insert</code> SCTE-35 message to the ad break. This message provides basic metadata about the ad break.</p>
     /// <p>See section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>
-    pub fn get_time_signal_message(
-        &self,
-    ) -> &::std::option::Option<crate::types::TimeSignalMessage> {
+    pub fn get_time_signal_message(&self) -> &::std::option::Option<crate::types::TimeSignalMessage> {
         &self.time_signal_message
     }
     /// Appends an item to `ad_break_metadata`.
@@ -178,17 +160,12 @@ impl AdBreakBuilder {
         self
     }
     /// <p>Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
-    pub fn set_ad_break_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
-    ) -> Self {
+    pub fn set_ad_break_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
         self.ad_break_metadata = input;
         self
     }
     /// <p>Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
-    pub fn get_ad_break_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
+    pub fn get_ad_break_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
         &self.ad_break_metadata
     }
     /// Consumes the builder and constructs a [`AdBreak`](crate::types::AdBreak).

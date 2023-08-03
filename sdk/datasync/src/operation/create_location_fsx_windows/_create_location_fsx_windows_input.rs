@@ -84,9 +84,7 @@ impl ::std::fmt::Debug for CreateLocationFsxWindowsInput {
 }
 impl CreateLocationFsxWindowsInput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxWindowsInput`](crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsInput).
-    pub fn builder(
-    ) -> crate::operation::create_location_fsx_windows::builders::CreateLocationFsxWindowsInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_location_fsx_windows::builders::CreateLocationFsxWindowsInputBuilder {
         crate::operation::create_location_fsx_windows::builders::CreateLocationFsxWindowsInputBuilder::default()
     }
 }
@@ -119,18 +117,12 @@ impl CreateLocationFsxWindowsInputBuilder {
         &self.subdirectory
     }
     /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
-    pub fn fsx_filesystem_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fsx_filesystem_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fsx_filesystem_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
-    pub fn set_fsx_filesystem_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fsx_filesystem_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fsx_filesystem_arn = input;
         self
     }
@@ -149,10 +141,7 @@ impl CreateLocationFsxWindowsInputBuilder {
     /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>
     /// </ul>
     /// </note>
-    pub fn security_group_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_arns.unwrap_or_default();
         v.push(input.into());
         self.security_group_arns = ::std::option::Option::Some(v);
@@ -165,10 +154,7 @@ impl CreateLocationFsxWindowsInputBuilder {
     /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>
     /// </ul>
     /// </note>
-    pub fn set_security_group_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_arns = input;
         self
     }
@@ -179,9 +165,7 @@ impl CreateLocationFsxWindowsInputBuilder {
     /// <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_security_group_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_arns
     }
     /// Appends an item to `tags`.
@@ -196,10 +180,7 @@ impl CreateLocationFsxWindowsInputBuilder {
         self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.tags = input;
         self
     }
@@ -259,17 +240,15 @@ impl CreateLocationFsxWindowsInputBuilder {
         crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsInput {
-                subdirectory: self.subdirectory,
-                fsx_filesystem_arn: self.fsx_filesystem_arn,
-                security_group_arns: self.security_group_arns,
-                tags: self.tags,
-                user: self.user,
-                domain: self.domain,
-                password: self.password,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsInput {
+            subdirectory: self.subdirectory,
+            fsx_filesystem_arn: self.fsx_filesystem_arn,
+            security_group_arns: self.security_group_arns,
+            tags: self.tags,
+            user: self.user,
+            domain: self.domain,
+            password: self.password,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateLocationFsxWindowsInputBuilder {

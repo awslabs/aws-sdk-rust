@@ -27,7 +27,7 @@ impl ListThingsInBillingGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListThingsInBillingGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupInputBuilder,
+    inner: crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupInputBuilder,
 }
 impl ListThingsInBillingGroupFluentBuilder {
     /// Creates a new `ListThingsInBillingGroup`.
@@ -38,7 +38,7 @@ impl ListThingsInBillingGroupFluentBuilder {
         }
     }
     /// Access the ListThingsInBillingGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListThingsInBillingGroupFluentBuilder {
             crate::operation::list_things_in_billing_group::ListThingsInBillingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_things_in_billing_group::ListThingsInBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_things_in_billing_group::ListThingsInBillingGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListThingsInBillingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListThingsInBillingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_things_in_billing_group::ListThingsInBillingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_things_in_billing_group::ListThingsInBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_things_in_billing_group::ListThingsInBillingGroupError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListThingsInBillingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_things_in_billing_group::ListThingsInBillingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_things_in_billing_group::ListThingsInBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_things_in_billing_group::ListThingsInBillingGroupError>,
     > {
         self.send_middleware().await
     }
@@ -115,34 +106,23 @@ impl ListThingsInBillingGroupFluentBuilder {
             crate::operation::list_things_in_billing_group::ListThingsInBillingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_things_in_billing_group::ListThingsInBillingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_things_in_billing_group::ListThingsInBillingGroupError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_things_in_billing_group::paginator::ListThingsInBillingGroupPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_things_in_billing_group::paginator::ListThingsInBillingGroupPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_things_in_billing_group::paginator::ListThingsInBillingGroupPaginator {
         crate::operation::list_things_in_billing_group::paginator::ListThingsInBillingGroupPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the billing group.</p>
-    pub fn billing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_group_name(input.into());
         self
     }
     /// <p>The name of the billing group.</p>
-    pub fn set_billing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_group_name(input);
         self
     }

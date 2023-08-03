@@ -6,19 +6,13 @@ pub fn ser_git_hub_configuration(
     if let Some(var_1) = &input.saa_s_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SaaSConfiguration").start_object();
-        crate::protocol_serde::shape_saa_s_configuration::ser_saa_s_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_saa_s_configuration::ser_saa_s_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.on_premise_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("OnPremiseConfiguration").start_object();
-        crate::protocol_serde::shape_on_premise_configuration::ser_on_premise_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_on_premise_configuration::ser_on_premise_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.r#type {
@@ -106,9 +100,7 @@ pub fn ser_git_hub_configuration(
         object_31.finish();
     }
     if let Some(var_32) = &input.git_hub_repository_configuration_field_mappings {
-        let mut array_33 = object
-            .key("GitHubRepositoryConfigurationFieldMappings")
-            .start_array();
+        let mut array_33 = object.key("GitHubRepositoryConfigurationFieldMappings").start_array();
         for item_34 in var_32 {
             {
                 #[allow(unused_mut)]
@@ -120,9 +112,7 @@ pub fn ser_git_hub_configuration(
         array_33.finish();
     }
     if let Some(var_36) = &input.git_hub_commit_configuration_field_mappings {
-        let mut array_37 = object
-            .key("GitHubCommitConfigurationFieldMappings")
-            .start_array();
+        let mut array_37 = object.key("GitHubCommitConfigurationFieldMappings").start_array();
         for item_38 in var_36 {
             {
                 #[allow(unused_mut)]
@@ -134,9 +124,7 @@ pub fn ser_git_hub_configuration(
         array_37.finish();
     }
     if let Some(var_40) = &input.git_hub_issue_document_configuration_field_mappings {
-        let mut array_41 = object
-            .key("GitHubIssueDocumentConfigurationFieldMappings")
-            .start_array();
+        let mut array_41 = object.key("GitHubIssueDocumentConfigurationFieldMappings").start_array();
         for item_42 in var_40 {
             {
                 #[allow(unused_mut)]
@@ -148,9 +136,7 @@ pub fn ser_git_hub_configuration(
         array_41.finish();
     }
     if let Some(var_44) = &input.git_hub_issue_comment_configuration_field_mappings {
-        let mut array_45 = object
-            .key("GitHubIssueCommentConfigurationFieldMappings")
-            .start_array();
+        let mut array_45 = object.key("GitHubIssueCommentConfigurationFieldMappings").start_array();
         for item_46 in var_44 {
             {
                 #[allow(unused_mut)]
@@ -162,9 +148,7 @@ pub fn ser_git_hub_configuration(
         array_45.finish();
     }
     if let Some(var_48) = &input.git_hub_issue_attachment_configuration_field_mappings {
-        let mut array_49 = object
-            .key("GitHubIssueAttachmentConfigurationFieldMappings")
-            .start_array();
+        let mut array_49 = object.key("GitHubIssueAttachmentConfigurationFieldMappings").start_array();
         for item_50 in var_48 {
             {
                 #[allow(unused_mut)]
@@ -176,9 +160,7 @@ pub fn ser_git_hub_configuration(
         array_49.finish();
     }
     if let Some(var_52) = &input.git_hub_pull_request_comment_configuration_field_mappings {
-        let mut array_53 = object
-            .key("GitHubPullRequestCommentConfigurationFieldMappings")
-            .start_array();
+        let mut array_53 = object.key("GitHubPullRequestCommentConfigurationFieldMappings").start_array();
         for item_54 in var_52 {
             {
                 #[allow(unused_mut)]
@@ -190,9 +172,7 @@ pub fn ser_git_hub_configuration(
         array_53.finish();
     }
     if let Some(var_56) = &input.git_hub_pull_request_document_configuration_field_mappings {
-        let mut array_57 = object
-            .key("GitHubPullRequestDocumentConfigurationFieldMappings")
-            .start_array();
+        let mut array_57 = object.key("GitHubPullRequestDocumentConfigurationFieldMappings").start_array();
         for item_58 in var_56 {
             {
                 #[allow(unused_mut)]
@@ -203,12 +183,8 @@ pub fn ser_git_hub_configuration(
         }
         array_57.finish();
     }
-    if let Some(var_60) =
-        &input.git_hub_pull_request_document_attachment_configuration_field_mappings
-    {
-        let mut array_61 = object
-            .key("GitHubPullRequestDocumentAttachmentConfigurationFieldMappings")
-            .start_array();
+    if let Some(var_60) = &input.git_hub_pull_request_document_attachment_configuration_field_mappings {
+        let mut array_61 = object.key("GitHubPullRequestDocumentAttachmentConfigurationFieldMappings").start_array();
         for item_62 in var_60 {
             {
                 #[allow(unused_mut)]
@@ -224,17 +200,9 @@ pub fn ser_git_hub_configuration(
 
 pub(crate) fn de_git_hub_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::GitHubConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::GitHubConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -244,152 +212,134 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SaaSConfiguration" => {
-                            builder = builder.set_saa_s_configuration(
-                                    crate::protocol_serde::shape_saa_s_configuration::de_saa_s_configuration(tokens)?
-                                );
+                            builder =
+                                builder.set_saa_s_configuration(crate::protocol_serde::shape_saa_s_configuration::de_saa_s_configuration(tokens)?);
                         }
                         "OnPremiseConfiguration" => {
                             builder = builder.set_on_premise_configuration(
-                                    crate::protocol_serde::shape_on_premise_configuration::de_on_premise_configuration(tokens)?
-                                );
+                                crate::protocol_serde::shape_on_premise_configuration::de_on_premise_configuration(tokens)?,
+                            );
                         }
                         "Type" => {
                             builder = builder.set_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::Type::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Type::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "SecretArn" => {
                             builder = builder.set_secret_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "UseChangeLog" => {
-                            builder = builder.set_use_change_log(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_use_change_log(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "GitHubDocumentCrawlProperties" => {
                             builder = builder.set_git_hub_document_crawl_properties(
-                                    crate::protocol_serde::shape_git_hub_document_crawl_properties::de_git_hub_document_crawl_properties(tokens)?
-                                );
+                                crate::protocol_serde::shape_git_hub_document_crawl_properties::de_git_hub_document_crawl_properties(tokens)?,
+                            );
                         }
                         "RepositoryFilter" => {
-                            builder = builder.set_repository_filter(
-                                crate::protocol_serde::shape_repository_names::de_repository_names(
+                            builder = builder.set_repository_filter(crate::protocol_serde::shape_repository_names::de_repository_names(tokens)?);
+                        }
+                        "InclusionFolderNamePatterns" => {
+                            builder = builder.set_inclusion_folder_name_patterns(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                        }
+                        "InclusionFileTypePatterns" => {
+                            builder = builder.set_inclusion_file_type_patterns(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                        }
+                        "InclusionFileNamePatterns" => {
+                            builder = builder.set_inclusion_file_name_patterns(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                        }
+                        "ExclusionFolderNamePatterns" => {
+                            builder = builder.set_exclusion_folder_name_patterns(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                        }
+                        "ExclusionFileTypePatterns" => {
+                            builder = builder.set_exclusion_file_type_patterns(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                        }
+                        "ExclusionFileNamePatterns" => {
+                            builder = builder.set_exclusion_file_name_patterns(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                        }
+                        "VpcConfiguration" => {
+                            builder = builder.set_vpc_configuration(
+                                crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens)?,
+                            );
+                        }
+                        "GitHubRepositoryConfigurationFieldMappings" => {
+                            builder = builder.set_git_hub_repository_configuration_field_mappings(
+                                crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
                                     tokens,
                                 )?,
                             );
                         }
-                        "InclusionFolderNamePatterns" => {
-                            builder = builder.set_inclusion_folder_name_patterns(
-                                crate::protocol_serde::shape_string_list::de_string_list(tokens)?,
-                            );
-                        }
-                        "InclusionFileTypePatterns" => {
-                            builder = builder.set_inclusion_file_type_patterns(
-                                crate::protocol_serde::shape_string_list::de_string_list(tokens)?,
-                            );
-                        }
-                        "InclusionFileNamePatterns" => {
-                            builder = builder.set_inclusion_file_name_patterns(
-                                crate::protocol_serde::shape_string_list::de_string_list(tokens)?,
-                            );
-                        }
-                        "ExclusionFolderNamePatterns" => {
-                            builder = builder.set_exclusion_folder_name_patterns(
-                                crate::protocol_serde::shape_string_list::de_string_list(tokens)?,
-                            );
-                        }
-                        "ExclusionFileTypePatterns" => {
-                            builder = builder.set_exclusion_file_type_patterns(
-                                crate::protocol_serde::shape_string_list::de_string_list(tokens)?,
-                            );
-                        }
-                        "ExclusionFileNamePatterns" => {
-                            builder = builder.set_exclusion_file_name_patterns(
-                                crate::protocol_serde::shape_string_list::de_string_list(tokens)?,
-                            );
-                        }
-                        "VpcConfiguration" => {
-                            builder = builder.set_vpc_configuration(
-                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens)?
-                                );
-                        }
-                        "GitHubRepositoryConfigurationFieldMappings" => {
-                            builder = builder.set_git_hub_repository_configuration_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
-                                );
-                        }
                         "GitHubCommitConfigurationFieldMappings" => {
                             builder = builder.set_git_hub_commit_configuration_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
-                                );
+                                crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
+                                    tokens,
+                                )?,
+                            );
                         }
                         "GitHubIssueDocumentConfigurationFieldMappings" => {
                             builder = builder.set_git_hub_issue_document_configuration_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
-                                );
+                                crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
+                                    tokens,
+                                )?,
+                            );
                         }
                         "GitHubIssueCommentConfigurationFieldMappings" => {
                             builder = builder.set_git_hub_issue_comment_configuration_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
-                                );
+                                crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
+                                    tokens,
+                                )?,
+                            );
                         }
                         "GitHubIssueAttachmentConfigurationFieldMappings" => {
                             builder = builder.set_git_hub_issue_attachment_configuration_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
-                                );
+                                crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
+                                    tokens,
+                                )?,
+                            );
                         }
                         "GitHubPullRequestCommentConfigurationFieldMappings" => {
                             builder = builder.set_git_hub_pull_request_comment_configuration_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
-                                );
+                                crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
+                                    tokens,
+                                )?,
+                            );
                         }
                         "GitHubPullRequestDocumentConfigurationFieldMappings" => {
                             builder = builder.set_git_hub_pull_request_document_configuration_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
-                                );
+                                crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
+                                    tokens,
+                                )?,
+                            );
                         }
                         "GitHubPullRequestDocumentAttachmentConfigurationFieldMappings" => {
                             builder = builder.set_git_hub_pull_request_document_attachment_configuration_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
-                                );
+                                crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
+                                    tokens,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

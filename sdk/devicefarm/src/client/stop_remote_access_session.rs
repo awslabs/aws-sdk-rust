@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopRemoteAccessSessionOutput`](crate::operation::stop_remote_access_session::StopRemoteAccessSessionOutput) with field(s):
     ///   - [`remote_access_session(Option<RemoteAccessSession>)`](crate::operation::stop_remote_access_session::StopRemoteAccessSessionOutput::remote_access_session): <p>A container that represents the metadata from the service about the remote access session you are stopping.</p>
     /// - On failure, responds with [`SdkError<StopRemoteAccessSessionError>`](crate::operation::stop_remote_access_session::StopRemoteAccessSessionError)
-    pub fn stop_remote_access_session(
-        &self,
-    ) -> crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionFluentBuilder
-    {
+    pub fn stop_remote_access_session(&self) -> crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionFluentBuilder {
         crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionFluentBuilder::new(self.handle.clone())
     }
 }

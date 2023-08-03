@@ -30,9 +30,7 @@ impl ResourceConfiguration {
 
 /// A builder for [`ResourceConfiguration`](crate::types::ResourceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceConfigurationBuilder {
     pub(crate) compute_type: ::std::option::Option<crate::types::ComputeType>,
     pub(crate) volume_size_in_gb: ::std::option::Option<i32>,
@@ -44,10 +42,7 @@ impl ResourceConfigurationBuilder {
         self
     }
     /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
-    pub fn set_compute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeType>,
-    ) -> Self {
+    pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.compute_type = input;
         self
     }

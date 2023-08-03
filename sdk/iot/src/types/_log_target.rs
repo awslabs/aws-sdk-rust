@@ -30,9 +30,7 @@ impl LogTarget {
 
 /// A builder for [`LogTarget`](crate::types::LogTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogTargetBuilder {
     pub(crate) target_type: ::std::option::Option<crate::types::LogTargetType>,
     pub(crate) target_name: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl LogTargetBuilder {
         self
     }
     /// <p>The target type.</p>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LogTargetType>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::LogTargetType>) -> Self {
         self.target_type = input;
         self
     }

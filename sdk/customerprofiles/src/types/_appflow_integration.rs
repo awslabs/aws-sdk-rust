@@ -30,9 +30,7 @@ impl AppflowIntegration {
 
 /// A builder for [`AppflowIntegration`](crate::types::AppflowIntegration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppflowIntegrationBuilder {
     pub(crate) flow_definition: ::std::option::Option<crate::types::FlowDefinition>,
     pub(crate) batches: ::std::option::Option<::std::vec::Vec<crate::types::Batch>>,
@@ -44,10 +42,7 @@ impl AppflowIntegrationBuilder {
         self
     }
     /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
-    pub fn set_flow_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::FlowDefinition>,
-    ) -> Self {
+    pub fn set_flow_definition(mut self, input: ::std::option::Option<crate::types::FlowDefinition>) -> Self {
         self.flow_definition = input;
         self
     }
@@ -67,10 +62,7 @@ impl AppflowIntegrationBuilder {
         self
     }
     /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-    pub fn set_batches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Batch>>,
-    ) -> Self {
+    pub fn set_batches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Batch>>) -> Self {
         self.batches = input;
         self
     }

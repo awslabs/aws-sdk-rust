@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListDistributedGrantsOutput {
 }
 impl ListDistributedGrantsOutput {
     /// Creates a new builder-style object to manufacture [`ListDistributedGrantsOutput`](crate::operation::list_distributed_grants::ListDistributedGrantsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_distributed_grants::builders::ListDistributedGrantsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_distributed_grants::builders::ListDistributedGrantsOutputBuilder {
         crate::operation::list_distributed_grants::builders::ListDistributedGrantsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDistributedGrantsOutput`](crate::operation::list_distributed_grants::ListDistributedGrantsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributedGrantsOutputBuilder {
     pub(crate) grants: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl ListDistributedGrantsOutputBuilder {
         self
     }
     /// <p>Distributed grant details.</p>
-    pub fn set_grants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
-    ) -> Self {
+    pub fn set_grants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>) -> Self {
         self.grants = input;
         self
     }

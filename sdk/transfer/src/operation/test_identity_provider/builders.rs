@@ -47,9 +47,7 @@ impl TestIdentityProviderFluentBuilder {
         }
     }
     /// Access the TestIdentityProvider as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::test_identity_provider::builders::TestIdentityProviderInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::test_identity_provider::builders::TestIdentityProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +59,7 @@ impl TestIdentityProviderFluentBuilder {
             crate::operation::test_identity_provider::TestIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_identity_provider::TestIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_identity_provider::TestIdentityProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +69,7 @@ impl TestIdentityProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +78,7 @@ impl TestIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_identity_provider::TestIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_identity_provider::TestIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_identity_provider::TestIdentityProviderError>,
     > {
         let op = self
             .inner
@@ -110,9 +101,7 @@ impl TestIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_identity_provider::TestIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_identity_provider::TestIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_identity_provider::TestIdentityProviderError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +115,7 @@ impl TestIdentityProviderFluentBuilder {
             crate::operation::test_identity_provider::TestIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_identity_provider::TestIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_identity_provider::TestIdentityProviderError>,
     > {
         self.customize_middleware().await
     }
@@ -166,10 +153,7 @@ impl TestIdentityProviderFluentBuilder {
     /// <li> <p>File Transfer Protocol (FTP)</p> </li>
     /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
     /// </ul>
-    pub fn set_server_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::Protocol>,
-    ) -> Self {
+    pub fn set_server_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
         self.inner = self.inner.set_server_protocol(input);
         self
     }
@@ -213,18 +197,12 @@ impl TestIdentityProviderFluentBuilder {
         self.inner.get_user_name()
     }
     /// <p>The password of the account to be tested.</p>
-    pub fn user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_password(input.into());
         self
     }
     /// <p>The password of the account to be tested.</p>
-    pub fn set_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_password(input);
         self
     }

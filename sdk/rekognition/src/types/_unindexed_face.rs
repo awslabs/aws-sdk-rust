@@ -46,9 +46,7 @@ impl UnindexedFace {
 
 /// A builder for [`UnindexedFace`](crate::types::UnindexedFace).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnindexedFaceBuilder {
     pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::Reason>>,
     pub(crate) face_detail: ::std::option::Option<crate::types::FaceDetail>,
@@ -82,10 +80,7 @@ impl UnindexedFaceBuilder {
     /// <li> <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p> </li>
     /// <li> <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p> </li>
     /// </ul>
-    pub fn set_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Reason>>,
-    ) -> Self {
+    pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Reason>>) -> Self {
         self.reasons = input;
         self
     }
@@ -107,10 +102,7 @@ impl UnindexedFaceBuilder {
         self
     }
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index. </p>
-    pub fn set_face_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::FaceDetail>,
-    ) -> Self {
+    pub fn set_face_detail(mut self, input: ::std::option::Option<crate::types::FaceDetail>) -> Self {
         self.face_detail = input;
         self
     }

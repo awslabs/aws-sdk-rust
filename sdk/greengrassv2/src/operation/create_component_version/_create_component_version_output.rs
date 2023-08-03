@@ -49,18 +49,14 @@ impl ::aws_http::request_id::RequestId for CreateComponentVersionOutput {
 }
 impl CreateComponentVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateComponentVersionOutput`](crate::operation::create_component_version::CreateComponentVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_component_version::builders::CreateComponentVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_component_version::builders::CreateComponentVersionOutputBuilder {
         crate::operation::create_component_version::builders::CreateComponentVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateComponentVersionOutput`](crate::operation::create_component_version::CreateComponentVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateComponentVersionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
@@ -85,18 +81,12 @@ impl CreateComponentVersionOutputBuilder {
         &self.arn
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
@@ -105,18 +95,12 @@ impl CreateComponentVersionOutputBuilder {
         &self.component_name
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the component.</p>
-    pub fn set_component_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_version = input;
         self
     }
@@ -130,10 +114,7 @@ impl CreateComponentVersionOutputBuilder {
         self
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -147,10 +128,7 @@ impl CreateComponentVersionOutputBuilder {
         self
     }
     /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudComponentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CloudComponentStatus>) -> Self {
         self.status = input;
         self
     }

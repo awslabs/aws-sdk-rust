@@ -36,9 +36,7 @@ impl PutAuditEventsInput {
 
 /// A builder for [`PutAuditEventsInput`](crate::operation::put_audit_events::PutAuditEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAuditEventsInputBuilder {
     pub(crate) audit_events: ::std::option::Option<::std::vec::Vec<crate::types::AuditEvent>>,
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl PutAuditEventsInputBuilder {
         self
     }
     /// <p>The JSON payload of events that you want to ingest. You can also point to the JSON event payload in a file.</p>
-    pub fn set_audit_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuditEvent>>,
-    ) -> Self {
+    pub fn set_audit_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuditEvent>>) -> Self {
         self.audit_events = input;
         self
     }
     /// <p>The JSON payload of events that you want to ingest. You can also point to the JSON event payload in a file.</p>
-    pub fn get_audit_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditEvent>> {
+    pub fn get_audit_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditEvent>> {
         &self.audit_events
     }
     /// <p>The ARN or ID (the ARN suffix) of a channel.</p>
@@ -101,10 +94,7 @@ impl PutAuditEventsInputBuilder {
     /// Consumes the builder and constructs a [`PutAuditEventsInput`](crate::operation::put_audit_events::PutAuditEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_audit_events::PutAuditEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_audit_events::PutAuditEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_audit_events::PutAuditEventsInput {
             audit_events: self.audit_events,
             channel_arn: self.channel_arn,

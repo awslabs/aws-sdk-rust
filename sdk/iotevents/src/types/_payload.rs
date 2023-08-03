@@ -47,9 +47,7 @@ impl Payload {
 
 /// A builder for [`Payload`](crate::types::Payload).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PayloadBuilder {
     pub(crate) content_expression: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::PayloadType>,
@@ -64,10 +62,7 @@ impl PayloadBuilder {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
-    pub fn content_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_expression = ::std::option::Option::Some(input.into());
         self
     }
@@ -80,10 +75,7 @@ impl PayloadBuilder {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
-    pub fn set_content_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_expression = input;
         self
     }

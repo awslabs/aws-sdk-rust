@@ -39,13 +39,7 @@
 /// Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PresetListBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for PresetListBy {
             "CREATION_DATE" => PresetListBy::CreationDate,
             "NAME" => PresetListBy::Name,
             "SYSTEM" => PresetListBy::System,
-            other => {
-                PresetListBy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => PresetListBy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

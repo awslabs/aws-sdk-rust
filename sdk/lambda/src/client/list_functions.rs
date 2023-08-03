@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_functions::ListFunctionsOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
     ///   - [`functions(Option<Vec<FunctionConfiguration>>)`](crate::operation::list_functions::ListFunctionsOutput::functions): <p>A list of Lambda functions.</p>
     /// - On failure, responds with [`SdkError<ListFunctionsError>`](crate::operation::list_functions::ListFunctionsError)
-    pub fn list_functions(
-        &self,
-    ) -> crate::operation::list_functions::builders::ListFunctionsFluentBuilder {
-        crate::operation::list_functions::builders::ListFunctionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_functions(&self) -> crate::operation::list_functions::builders::ListFunctionsFluentBuilder {
+        crate::operation::list_functions::builders::ListFunctionsFluentBuilder::new(self.handle.clone())
     }
 }

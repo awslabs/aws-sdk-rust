@@ -43,9 +43,7 @@ impl ListUsageLimitsInput {
 
 /// A builder for [`ListUsageLimitsInput`](crate::operation::list_usage_limits::ListUsageLimitsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUsageLimitsInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) usage_type: ::std::option::Option<crate::types::UsageLimitUsageType>,
@@ -73,10 +71,7 @@ impl ListUsageLimitsInputBuilder {
         self
     }
     /// <p>The Amazon Redshift Serverless feature whose limits you want to see.</p>
-    pub fn set_usage_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageLimitUsageType>,
-    ) -> Self {
+    pub fn set_usage_type(mut self, input: ::std::option::Option<crate::types::UsageLimitUsageType>) -> Self {
         self.usage_type = input;
         self
     }
@@ -115,10 +110,7 @@ impl ListUsageLimitsInputBuilder {
     /// Consumes the builder and constructs a [`ListUsageLimitsInput`](crate::operation::list_usage_limits::ListUsageLimitsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_usage_limits::ListUsageLimitsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_usage_limits::ListUsageLimitsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_usage_limits::ListUsageLimitsInput {
             resource_arn: self.resource_arn,
             usage_type: self.usage_type,

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateDistributionOutput {
 }
 impl CreateDistributionOutput {
     /// Creates a new builder-style object to manufacture [`CreateDistributionOutput`](crate::operation::create_distribution::CreateDistributionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_distribution::builders::CreateDistributionOutputBuilder {
+    pub fn builder() -> crate::operation::create_distribution::builders::CreateDistributionOutputBuilder {
         crate::operation::create_distribution::builders::CreateDistributionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDistributionOutput`](crate::operation::create_distribution::CreateDistributionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDistributionOutputBuilder {
     pub(crate) distribution: ::std::option::Option<crate::types::LightsailDistribution>,
     pub(crate) operation: ::std::option::Option<crate::types::Operation>,
@@ -51,10 +48,7 @@ impl CreateDistributionOutputBuilder {
         self
     }
     /// <p>An object that describes the distribution created.</p>
-    pub fn set_distribution(
-        mut self,
-        input: ::std::option::Option<crate::types::LightsailDistribution>,
-    ) -> Self {
+    pub fn set_distribution(mut self, input: ::std::option::Option<crate::types::LightsailDistribution>) -> Self {
         self.distribution = input;
         self
     }

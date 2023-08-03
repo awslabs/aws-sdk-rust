@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateModelCardOutput`](crate::operation::update_model_card::UpdateModelCardOutput) with field(s):
     ///   - [`model_card_arn(Option<String>)`](crate::operation::update_model_card::UpdateModelCardOutput::model_card_arn): <p>The Amazon Resource Name (ARN) of the updated model card.</p>
     /// - On failure, responds with [`SdkError<UpdateModelCardError>`](crate::operation::update_model_card::UpdateModelCardError)
-    pub fn update_model_card(
-        &self,
-    ) -> crate::operation::update_model_card::builders::UpdateModelCardFluentBuilder {
-        crate::operation::update_model_card::builders::UpdateModelCardFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_model_card(&self) -> crate::operation::update_model_card::builders::UpdateModelCardFluentBuilder {
+        crate::operation::update_model_card::builders::UpdateModelCardFluentBuilder::new(self.handle.clone())
     }
 }

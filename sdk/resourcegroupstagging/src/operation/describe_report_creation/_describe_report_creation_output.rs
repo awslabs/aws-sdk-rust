@@ -56,18 +56,14 @@ impl ::aws_http::request_id::RequestId for DescribeReportCreationOutput {
 }
 impl DescribeReportCreationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReportCreationOutput`](crate::operation::describe_report_creation::DescribeReportCreationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_report_creation::builders::DescribeReportCreationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_report_creation::builders::DescribeReportCreationOutputBuilder {
         crate::operation::describe_report_creation::builders::DescribeReportCreationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReportCreationOutput`](crate::operation::describe_report_creation::DescribeReportCreationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReportCreationOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) s3_location: ::std::option::Option<::std::string::String>,
@@ -140,18 +136,12 @@ impl DescribeReportCreationOutputBuilder {
         &self.start_date
     }
     /// <p>Details of the common errors that all operations return.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details of the common errors that all operations return.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

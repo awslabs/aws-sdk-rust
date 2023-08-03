@@ -5,8 +5,7 @@
 pub struct ListDocumentClassifierSummariesOutput {
     /// <p>The list of summaries of document classifiers.</p>
     #[doc(hidden)]
-    pub document_classifier_summaries_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentClassifierSummary>>,
+    pub document_classifier_summaries_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentClassifierSummary>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDocumentClassifierSummariesOutput {
 }
 impl ListDocumentClassifierSummariesOutput {
     /// <p>The list of summaries of document classifiers.</p>
-    pub fn document_classifier_summaries_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DocumentClassifierSummary]> {
+    pub fn document_classifier_summaries_list(&self) -> ::std::option::Option<&[crate::types::DocumentClassifierSummary]> {
         self.document_classifier_summaries_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDocumentClassifierSummariesOutput
 }
 impl ListDocumentClassifierSummariesOutput {
     /// Creates a new builder-style object to manufacture [`ListDocumentClassifierSummariesOutput`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesOutput).
-    pub fn builder() -> crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesOutputBuilder{
+    pub fn builder() -> crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesOutputBuilder {
         crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDocumentClassifierSummariesOutput`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDocumentClassifierSummariesOutputBuilder {
-    pub(crate) document_classifier_summaries_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentClassifierSummary>>,
+    pub(crate) document_classifier_summaries_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentClassifierSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListDocumentClassifierSummariesOutputBuilder {
     /// To override the contents of this collection use [`set_document_classifier_summaries_list`](Self::set_document_classifier_summaries_list).
     ///
     /// <p>The list of summaries of document classifiers.</p>
-    pub fn document_classifier_summaries_list(
-        mut self,
-        input: crate::types::DocumentClassifierSummary,
-    ) -> Self {
+    pub fn document_classifier_summaries_list(mut self, input: crate::types::DocumentClassifierSummary) -> Self {
         let mut v = self.document_classifier_summaries_list.unwrap_or_default();
         v.push(input);
         self.document_classifier_summaries_list = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListDocumentClassifierSummariesOutputBuilder {
         self
     }
     /// <p>The list of summaries of document classifiers.</p>
-    pub fn get_document_classifier_summaries_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentClassifierSummary>> {
+    pub fn get_document_classifier_summaries_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentClassifierSummary>> {
         &self.document_classifier_summaries_list
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -100,15 +89,10 @@ impl ListDocumentClassifierSummariesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDocumentClassifierSummariesOutput`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesOutput
-    {
+    pub fn build(self) -> crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesOutput {
         crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesOutput {
-            document_classifier_summaries_list: self.document_classifier_summaries_list
-            ,
-            next_token: self.next_token
-            ,
+            document_classifier_summaries_list: self.document_classifier_summaries_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

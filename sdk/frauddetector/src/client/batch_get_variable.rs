@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`variables(Option<Vec<Variable>>)`](crate::operation::batch_get_variable::BatchGetVariableOutput::variables): <p>The returned variables.</p>
     ///   - [`errors(Option<Vec<BatchGetVariableError>>)`](crate::operation::batch_get_variable::BatchGetVariableOutput::errors): <p>The errors from the request.</p>
     /// - On failure, responds with [`SdkError<BatchGetVariableError>`](crate::operation::batch_get_variable::BatchGetVariableError)
-    pub fn batch_get_variable(
-        &self,
-    ) -> crate::operation::batch_get_variable::builders::BatchGetVariableFluentBuilder {
-        crate::operation::batch_get_variable::builders::BatchGetVariableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_variable(&self) -> crate::operation::batch_get_variable::builders::BatchGetVariableFluentBuilder {
+        crate::operation::batch_get_variable::builders::BatchGetVariableFluentBuilder::new(self.handle.clone())
     }
 }

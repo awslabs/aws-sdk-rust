@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::create_fleet::CreateFleetOutput::id): <p> The ID of the created fleet. </p>
     ///   - [`arn(Option<String>)`](crate::operation::create_fleet::CreateFleetOutput::arn): <p> The ARN of the created fleet. </p>
     /// - On failure, responds with [`SdkError<CreateFleetError>`](crate::operation::create_fleet::CreateFleetError)
-    pub fn create_fleet(
-        &self,
-    ) -> crate::operation::create_fleet::builders::CreateFleetFluentBuilder {
+    pub fn create_fleet(&self) -> crate::operation::create_fleet::builders::CreateFleetFluentBuilder {
         crate::operation::create_fleet::builders::CreateFleetFluentBuilder::new(self.handle.clone())
     }
 }

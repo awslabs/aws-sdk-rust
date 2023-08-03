@@ -37,9 +37,7 @@ impl GetContactAttributesFluentBuilder {
         }
     }
     /// Access the GetContactAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_contact_attributes::builders::GetContactAttributesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_contact_attributes::builders::GetContactAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetContactAttributesFluentBuilder {
             crate::operation::get_contact_attributes::GetContactAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_attributes::GetContactAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_attributes::GetContactAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetContactAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetContactAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_contact_attributes::GetContactAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_attributes::GetContactAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_attributes::GetContactAttributesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetContactAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_contact_attributes::GetContactAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_attributes::GetContactAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_attributes::GetContactAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetContactAttributesFluentBuilder {
             crate::operation::get_contact_attributes::GetContactAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_contact_attributes::GetContactAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_contact_attributes::GetContactAttributesError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl GetContactAttributesFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The identifier of the initial contact.</p>
-    pub fn initial_contact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initial_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.initial_contact_id(input.into());
         self
     }
     /// <p>The identifier of the initial contact.</p>
-    pub fn set_initial_contact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initial_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_initial_contact_id(input);
         self
     }

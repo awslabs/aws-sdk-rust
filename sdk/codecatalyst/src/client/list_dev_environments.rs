@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<DevEnvironmentSummary>>)`](crate::operation::list_dev_environments::ListDevEnvironmentsOutput::items): <p>Information about the Dev Environments in a project.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dev_environments::ListDevEnvironmentsOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     /// - On failure, responds with [`SdkError<ListDevEnvironmentsError>`](crate::operation::list_dev_environments::ListDevEnvironmentsError)
-    pub fn list_dev_environments(
-        &self,
-    ) -> crate::operation::list_dev_environments::builders::ListDevEnvironmentsFluentBuilder {
-        crate::operation::list_dev_environments::builders::ListDevEnvironmentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_dev_environments(&self) -> crate::operation::list_dev_environments::builders::ListDevEnvironmentsFluentBuilder {
+        crate::operation::list_dev_environments::builders::ListDevEnvironmentsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteKxClusterOutput {
 }
 impl DeleteKxClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteKxClusterOutput`](crate::operation::delete_kx_cluster::DeleteKxClusterOutput).
-    pub fn builder() -> crate::operation::delete_kx_cluster::builders::DeleteKxClusterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_kx_cluster::builders::DeleteKxClusterOutputBuilder {
         crate::operation::delete_kx_cluster::builders::DeleteKxClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteKxClusterOutput`](crate::operation::delete_kx_cluster::DeleteKxClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteKxClusterOutputBuilder {
     _request_id: Option<String>,
 }

@@ -9,10 +9,7 @@ pub fn ser_schema_definition(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_column_definition::ser_column_definition(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_column_definition::ser_column_definition(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_schema_definition(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_partition_key::ser_partition_key(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_partition_key::ser_partition_key(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
@@ -39,10 +33,7 @@ pub fn ser_schema_definition(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_clustering_key::ser_clustering_key(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_clustering_key::ser_clustering_key(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }
@@ -54,10 +45,7 @@ pub fn ser_schema_definition(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_static_column::ser_static_column(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_static_column::ser_static_column(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }
@@ -68,17 +56,9 @@ pub fn ser_schema_definition(
 
 pub(crate) fn de_schema_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SchemaDefinition>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SchemaDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -88,46 +68,34 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "allColumns" => {
-                                builder = builder.set_all_columns(
-                                    crate::protocol_serde::shape_column_definition_list::de_column_definition_list(tokens)?
-                                );
-                            }
-                            "partitionKeys" => {
-                                builder = builder.set_partition_keys(
-                                    crate::protocol_serde::shape_partition_key_list::de_partition_key_list(tokens)?
-                                );
-                            }
-                            "clusteringKeys" => {
-                                builder = builder.set_clustering_keys(
-                                    crate::protocol_serde::shape_clustering_key_list::de_clustering_key_list(tokens)?
-                                );
-                            }
-                            "staticColumns" => {
-                                builder = builder.set_static_columns(
-                                    crate::protocol_serde::shape_static_column_list::de_static_column_list(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "allColumns" => {
+                            builder =
+                                builder.set_all_columns(crate::protocol_serde::shape_column_definition_list::de_column_definition_list(tokens)?);
                         }
-                    }
+                        "partitionKeys" => {
+                            builder = builder.set_partition_keys(crate::protocol_serde::shape_partition_key_list::de_partition_key_list(tokens)?);
+                        }
+                        "clusteringKeys" => {
+                            builder = builder.set_clustering_keys(crate::protocol_serde::shape_clustering_key_list::de_clustering_key_list(tokens)?);
+                        }
+                        "staticColumns" => {
+                            builder = builder.set_static_columns(crate::protocol_serde::shape_static_column_list::de_static_column_list(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

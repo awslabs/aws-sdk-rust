@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`errors(Option<Vec<FailedCustomVocabularyItem>>)`](crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemOutput::errors): <p>A list of custom vocabulary items that failed to delete during the operation. The reason for the error is contained within each error object.</p>
     ///   - [`resources(Option<Vec<CustomVocabularyItem>>)`](crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemOutput::resources): <p>A list of custom vocabulary items that were successfully deleted during the operation.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteCustomVocabularyItemError>`](crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemError)
-    pub fn batch_delete_custom_vocabulary_item(&self) -> crate::operation::batch_delete_custom_vocabulary_item::builders::BatchDeleteCustomVocabularyItemFluentBuilder{
+    pub fn batch_delete_custom_vocabulary_item(
+        &self,
+    ) -> crate::operation::batch_delete_custom_vocabulary_item::builders::BatchDeleteCustomVocabularyItemFluentBuilder {
         crate::operation::batch_delete_custom_vocabulary_item::builders::BatchDeleteCustomVocabularyItemFluentBuilder::new(self.handle.clone())
     }
 }

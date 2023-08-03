@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSolutionVersionOutput`](crate::operation::create_solution_version::CreateSolutionVersionOutput) with field(s):
     ///   - [`solution_version_arn(Option<String>)`](crate::operation::create_solution_version::CreateSolutionVersionOutput::solution_version_arn): <p>The ARN of the new solution version.</p>
     /// - On failure, responds with [`SdkError<CreateSolutionVersionError>`](crate::operation::create_solution_version::CreateSolutionVersionError)
-    pub fn create_solution_version(
-        &self,
-    ) -> crate::operation::create_solution_version::builders::CreateSolutionVersionFluentBuilder
-    {
-        crate::operation::create_solution_version::builders::CreateSolutionVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_solution_version(&self) -> crate::operation::create_solution_version::builders::CreateSolutionVersionFluentBuilder {
+        crate::operation::create_solution_version::builders::CreateSolutionVersionFluentBuilder::new(self.handle.clone())
     }
 }

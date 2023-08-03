@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`channel_name(Option<String>)`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput::channel_name): <p>The name of the channel.</p>
     ///   - [`log_types(Option<Vec<LogType>>)`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput::log_types): <p>The types of logs collected.</p>
     /// - On failure, responds with [`SdkError<ConfigureLogsForChannelError>`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError)
-    pub fn configure_logs_for_channel(
-        &self,
-    ) -> crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder
-    {
+    pub fn configure_logs_for_channel(&self) -> crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder {
         crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelFluentBuilder::new(self.handle.clone())
     }
 }

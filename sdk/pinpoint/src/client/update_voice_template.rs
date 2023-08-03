@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateVoiceTemplateOutput`](crate::operation::update_voice_template::UpdateVoiceTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::operation::update_voice_template::UpdateVoiceTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdateVoiceTemplateError>`](crate::operation::update_voice_template::UpdateVoiceTemplateError)
-    pub fn update_voice_template(
-        &self,
-    ) -> crate::operation::update_voice_template::builders::UpdateVoiceTemplateFluentBuilder {
-        crate::operation::update_voice_template::builders::UpdateVoiceTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_voice_template(&self) -> crate::operation::update_voice_template::builders::UpdateVoiceTemplateFluentBuilder {
+        crate::operation::update_voice_template::builders::UpdateVoiceTemplateFluentBuilder::new(self.handle.clone())
     }
 }

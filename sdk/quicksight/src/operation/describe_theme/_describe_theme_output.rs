@@ -42,9 +42,7 @@ impl DescribeThemeOutput {
 
 /// A builder for [`DescribeThemeOutput`](crate::operation::describe_theme::DescribeThemeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeThemeOutputBuilder {
     pub(crate) theme: ::std::option::Option<crate::types::Theme>,
     pub(crate) status: ::std::option::Option<i32>,

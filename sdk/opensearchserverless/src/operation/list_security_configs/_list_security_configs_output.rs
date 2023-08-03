@@ -5,8 +5,7 @@
 pub struct ListSecurityConfigsOutput {
     /// <p>Details about the security configurations in your account.</p>
     #[doc(hidden)]
-    pub security_config_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigSummary>>,
+    pub security_config_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigSummary>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSecurityConfigsOutput {
 }
 impl ListSecurityConfigsOutput {
     /// <p>Details about the security configurations in your account.</p>
-    pub fn security_config_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SecurityConfigSummary]> {
+    pub fn security_config_summaries(&self) -> ::std::option::Option<&[crate::types::SecurityConfigSummary]> {
         self.security_config_summaries.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSecurityConfigsOutput {
 }
 impl ListSecurityConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityConfigsOutput`](crate::operation::list_security_configs::ListSecurityConfigsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_security_configs::builders::ListSecurityConfigsOutputBuilder {
-        crate::operation::list_security_configs::builders::ListSecurityConfigsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_security_configs::builders::ListSecurityConfigsOutputBuilder {
+        crate::operation::list_security_configs::builders::ListSecurityConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityConfigsOutput`](crate::operation::list_security_configs::ListSecurityConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityConfigsOutputBuilder {
-    pub(crate) security_config_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigSummary>>,
+    pub(crate) security_config_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListSecurityConfigsOutputBuilder {
         self
     }
     /// <p>Details about the security configurations in your account.</p>
-    pub fn set_security_config_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigSummary>>,
-    ) -> Self {
+    pub fn set_security_config_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigSummary>>) -> Self {
         self.security_config_summaries = input;
         self
     }
     /// <p>Details about the security configurations in your account.</p>
-    pub fn get_security_config_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigSummary>> {
+    pub fn get_security_config_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigSummary>> {
         &self.security_config_summaries
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>

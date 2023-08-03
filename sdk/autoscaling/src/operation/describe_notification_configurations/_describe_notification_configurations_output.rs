@@ -5,8 +5,7 @@
 pub struct DescribeNotificationConfigurationsOutput {
     /// <p>The notification configurations.</p>
     #[doc(hidden)]
-    pub notification_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationConfiguration>>,
+    pub notification_configurations: ::std::option::Option<::std::vec::Vec<crate::types::NotificationConfiguration>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeNotificationConfigurationsOutput {
 }
 impl DescribeNotificationConfigurationsOutput {
     /// <p>The notification configurations.</p>
-    pub fn notification_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotificationConfiguration]> {
+    pub fn notification_configurations(&self) -> ::std::option::Option<&[crate::types::NotificationConfiguration]> {
         self.notification_configurations.as_deref()
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeNotificationConfigurationsOut
 }
 impl DescribeNotificationConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNotificationConfigurationsOutput`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput).
-    pub fn builder() -> crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsOutputBuilder {
         crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNotificationConfigurationsOutput`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNotificationConfigurationsOutputBuilder {
-    pub(crate) notification_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationConfiguration>>,
+    pub(crate) notification_configurations: ::std::option::Option<::std::vec::Vec<crate::types::NotificationConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl DescribeNotificationConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_notification_configurations`](Self::set_notification_configurations).
     ///
     /// <p>The notification configurations.</p>
-    pub fn notification_configurations(
-        mut self,
-        input: crate::types::NotificationConfiguration,
-    ) -> Self {
+    pub fn notification_configurations(mut self, input: crate::types::NotificationConfiguration) -> Self {
         let mut v = self.notification_configurations.unwrap_or_default();
         v.push(input);
         self.notification_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The notification configurations.</p>
-    pub fn set_notification_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationConfiguration>>,
-    ) -> Self {
+    pub fn set_notification_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationConfiguration>>) -> Self {
         self.notification_configurations = input;
         self
     }
     /// <p>The notification configurations.</p>
-    pub fn get_notification_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationConfiguration>> {
+    pub fn get_notification_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationConfiguration>> {
         &self.notification_configurations
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -100,12 +86,10 @@ impl DescribeNotificationConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeNotificationConfigurationsOutput`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput).
-    pub fn build(self) -> crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput{
+    pub fn build(self) -> crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput {
         crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput {
-            notification_configurations: self.notification_configurations
-            ,
-            next_token: self.next_token
-            ,
+            notification_configurations: self.notification_configurations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

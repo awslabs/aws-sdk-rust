@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteBackupVaultLockConfigurationOut
 }
 impl DeleteBackupVaultLockConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBackupVaultLockConfigurationOutput`](crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationOutputBuilder {
         crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBackupVaultLockConfigurationOutput`](crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBackupVaultLockConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteBackupVaultLockConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteBackupVaultLockConfigurationOutput`](crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput{
+    pub fn build(self) -> crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput {
         crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput {
             _request_id: self._request_id,
         }

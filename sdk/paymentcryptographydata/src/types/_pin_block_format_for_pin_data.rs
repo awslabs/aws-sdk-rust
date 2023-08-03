@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PinBlockFormatForPinData {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for PinBlockFormatForPinData {
         match s {
             "ISO_FORMAT_0" => PinBlockFormatForPinData::IsoFormat0,
             "ISO_FORMAT_3" => PinBlockFormatForPinData::IsoFormat3,
-            other => PinBlockFormatForPinData::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PinBlockFormatForPinData::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

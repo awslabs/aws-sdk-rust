@@ -28,9 +28,7 @@ impl DescribeClusterOutput {
 
 /// A builder for [`DescribeClusterOutput`](crate::operation::describe_cluster::DescribeClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterOutputBuilder {
     pub(crate) cluster_metadata: ::std::option::Option<crate::types::ClusterMetadata>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeClusterOutputBuilder {
         self
     }
     /// <p>Information about a specific cluster, including shipping information, cluster status, and other important metadata.</p>
-    pub fn set_cluster_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterMetadata>,
-    ) -> Self {
+    pub fn set_cluster_metadata(mut self, input: ::std::option::Option<crate::types::ClusterMetadata>) -> Self {
         self.cluster_metadata = input;
         self
     }

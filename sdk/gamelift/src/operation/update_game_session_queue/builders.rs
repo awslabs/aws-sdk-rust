@@ -28,8 +28,7 @@ impl UpdateGameSessionQueueInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGameSessionQueueFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_game_session_queue::builders::UpdateGameSessionQueueInputBuilder,
+    inner: crate::operation::update_game_session_queue::builders::UpdateGameSessionQueueInputBuilder,
 }
 impl UpdateGameSessionQueueFluentBuilder {
     /// Creates a new `UpdateGameSessionQueue`.
@@ -40,10 +39,7 @@ impl UpdateGameSessionQueueFluentBuilder {
         }
     }
     /// Access the UpdateGameSessionQueue as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_game_session_queue::builders::UpdateGameSessionQueueInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_game_session_queue::builders::UpdateGameSessionQueueInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl UpdateGameSessionQueueFluentBuilder {
             crate::operation::update_game_session_queue::UpdateGameSessionQueue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_session_queue::UpdateGameSessionQueueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_session_queue::UpdateGameSessionQueueError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl UpdateGameSessionQueueFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl UpdateGameSessionQueueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_session_queue::UpdateGameSessionQueueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_session_queue::UpdateGameSessionQueueError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl UpdateGameSessionQueueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_session_queue::UpdateGameSessionQueueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_session_queue::UpdateGameSessionQueueError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl UpdateGameSessionQueueFluentBuilder {
             crate::operation::update_game_session_queue::UpdateGameSessionQueue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_session_queue::UpdateGameSessionQueueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_session_queue::UpdateGameSessionQueueError>,
     > {
         self.customize_middleware().await
     }
@@ -164,17 +149,12 @@ impl UpdateGameSessionQueueFluentBuilder {
         self
     }
     /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of policies.</p>
-    pub fn set_player_latency_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>,
-    ) -> Self {
+    pub fn set_player_latency_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>) -> Self {
         self.inner = self.inner.set_player_latency_policies(input);
         self
     }
     /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of policies.</p>
-    pub fn get_player_latency_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>> {
+    pub fn get_player_latency_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>> {
         self.inner.get_player_latency_policies()
     }
     /// Appends an item to `Destinations`.
@@ -187,17 +167,12 @@ impl UpdateGameSessionQueueFluentBuilder {
         self
     }
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
     }
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>> {
         self.inner.get_destinations()
     }
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
@@ -206,17 +181,12 @@ impl UpdateGameSessionQueueFluentBuilder {
         self
     }
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
-    pub fn set_filter_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterConfiguration>,
-    ) -> Self {
+    pub fn set_filter_configuration(mut self, input: ::std::option::Option<crate::types::FilterConfiguration>) -> Self {
         self.inner = self.inner.set_filter_configuration(input);
         self
     }
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
-    pub fn get_filter_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FilterConfiguration> {
+    pub fn get_filter_configuration(&self) -> &::std::option::Option<crate::types::FilterConfiguration> {
         self.inner.get_filter_configuration()
     }
     /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
@@ -225,32 +195,21 @@ impl UpdateGameSessionQueueFluentBuilder {
         self
     }
     /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
-    pub fn set_priority_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::PriorityConfiguration>,
-    ) -> Self {
+    pub fn set_priority_configuration(mut self, input: ::std::option::Option<crate::types::PriorityConfiguration>) -> Self {
         self.inner = self.inner.set_priority_configuration(input);
         self
     }
     /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
-    pub fn get_priority_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::PriorityConfiguration> {
+    pub fn get_priority_configuration(&self) -> &::std::option::Option<crate::types::PriorityConfiguration> {
         self.inner.get_priority_configuration()
     }
     /// <p>Information to be added to all events that are related to this game session queue.</p>
-    pub fn custom_event_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_event_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_event_data(input.into());
         self
     }
     /// <p>Information to be added to all events that are related to this game session queue.</p>
-    pub fn set_custom_event_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_event_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_event_data(input);
         self
     }
@@ -259,18 +218,12 @@ impl UpdateGameSessionQueueFluentBuilder {
         self.inner.get_custom_event_data()
     }
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
-    pub fn notification_target(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_target(input.into());
         self
     }
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
-    pub fn set_notification_target(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notification_target(input);
         self
     }

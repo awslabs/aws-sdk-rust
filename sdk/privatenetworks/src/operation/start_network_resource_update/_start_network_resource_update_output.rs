@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for StartNetworkResourceUpdateOutput {
 }
 impl StartNetworkResourceUpdateOutput {
     /// Creates a new builder-style object to manufacture [`StartNetworkResourceUpdateOutput`](crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput).
-    pub fn builder() -> crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateOutputBuilder{
+    pub fn builder() -> crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateOutputBuilder {
         crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartNetworkResourceUpdateOutput`](crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartNetworkResourceUpdateOutputBuilder {
     pub(crate) network_resource: ::std::option::Option<crate::types::NetworkResource>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl StartNetworkResourceUpdateOutputBuilder {
         self
     }
     /// <p>The network resource.</p>
-    pub fn set_network_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkResource>,
-    ) -> Self {
+    pub fn set_network_resource(mut self, input: ::std::option::Option<crate::types::NetworkResource>) -> Self {
         self.network_resource = input;
         self
     }
@@ -63,9 +58,7 @@ impl StartNetworkResourceUpdateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartNetworkResourceUpdateOutput`](crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput {
+    pub fn build(self) -> crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput {
         crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput {
             network_resource: self.network_resource,
             _request_id: self._request_id,

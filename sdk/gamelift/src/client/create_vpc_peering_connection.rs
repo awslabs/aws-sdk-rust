@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`peer_vpc_id(impl ::std::convert::Into<String>)`](crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionFluentBuilder::peer_vpc_id) / [`set_peer_vpc_id(Option<String>)`](crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionFluentBuilder::set_peer_vpc_id): <p>A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
     /// - On success, responds with [`CreateVpcPeeringConnectionOutput`](crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionOutput)
     /// - On failure, responds with [`SdkError<CreateVpcPeeringConnectionError>`](crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError)
-    pub fn create_vpc_peering_connection(&self) -> crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionFluentBuilder{
+    pub fn create_vpc_peering_connection(
+        &self,
+    ) -> crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionFluentBuilder {
         crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionFluentBuilder::new(self.handle.clone())
     }
 }

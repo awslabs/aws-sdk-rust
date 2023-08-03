@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`patches(Option<Vec<PatchComplianceData>>)`](crate::operation::describe_instance_patches::DescribeInstancePatchesOutput::patches): <p>Each entry in the array is a structure containing:</p>  <ul>   <li> <p>Title (string)</p> </li>   <li> <p>KBId (string)</p> </li>   <li> <p>Classification (string)</p> </li>   <li> <p>Severity (string)</p> </li>   <li> <p>State (string, such as "INSTALLED" or "FAILED")</p> </li>   <li> <p>InstalledTime (DateTime)</p> </li>   <li> <p>InstalledBy (string)</p> </li>  </ul>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_patches::DescribeInstancePatchesOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeInstancePatchesError>`](crate::operation::describe_instance_patches::DescribeInstancePatchesError)
-    pub fn describe_instance_patches(
-        &self,
-    ) -> crate::operation::describe_instance_patches::builders::DescribeInstancePatchesFluentBuilder
-    {
+    pub fn describe_instance_patches(&self) -> crate::operation::describe_instance_patches::builders::DescribeInstancePatchesFluentBuilder {
         crate::operation::describe_instance_patches::builders::DescribeInstancePatchesFluentBuilder::new(self.handle.clone())
     }
 }

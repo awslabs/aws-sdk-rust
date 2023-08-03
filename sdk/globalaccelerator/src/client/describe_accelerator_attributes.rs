@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeAcceleratorAttributesOutput`](crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesOutput) with field(s):
     ///   - [`accelerator_attributes(Option<AcceleratorAttributes>)`](crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesOutput::accelerator_attributes): <p>The attributes of the accelerator.</p>
     /// - On failure, responds with [`SdkError<DescribeAcceleratorAttributesError>`](crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesError)
-    pub fn describe_accelerator_attributes(&self) -> crate::operation::describe_accelerator_attributes::builders::DescribeAcceleratorAttributesFluentBuilder{
+    pub fn describe_accelerator_attributes(
+        &self,
+    ) -> crate::operation::describe_accelerator_attributes::builders::DescribeAcceleratorAttributesFluentBuilder {
         crate::operation::describe_accelerator_attributes::builders::DescribeAcceleratorAttributesFluentBuilder::new(self.handle.clone())
     }
 }

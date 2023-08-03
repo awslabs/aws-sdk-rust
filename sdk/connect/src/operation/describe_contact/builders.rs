@@ -10,10 +10,7 @@ impl DescribeContactInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_contact::DescribeContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_contact::DescribeContactError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_contact::DescribeContactError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_contact();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl DescribeContactFluentBuilder {
         }
     }
     /// Access the DescribeContact as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_contact::builders::DescribeContactInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_contact::builders::DescribeContactInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl DescribeContactFluentBuilder {
             crate::operation::describe_contact::DescribeContact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_contact::DescribeContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_contact::DescribeContactError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl DescribeContactFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl DescribeContactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_contact::DescribeContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_contact::DescribeContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_contact::DescribeContactError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl DescribeContactFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_contact::DescribeContactOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_contact::DescribeContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_contact::DescribeContactError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl DescribeContactFluentBuilder {
             crate::operation::describe_contact::DescribeContact,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_contact::DescribeContactError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_contact::DescribeContactError>,
     > {
         self.customize_middleware().await
     }

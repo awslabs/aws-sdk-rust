@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`reactions(Vec<Reaction>)`](crate::operation::put_recommendation_feedback::builders::PutRecommendationFeedbackFluentBuilder::reactions) / [`set_reactions(Option<Vec<Reaction>>)`](crate::operation::put_recommendation_feedback::builders::PutRecommendationFeedbackFluentBuilder::set_reactions): <p>List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.</p>
     /// - On success, responds with [`PutRecommendationFeedbackOutput`](crate::operation::put_recommendation_feedback::PutRecommendationFeedbackOutput)
     /// - On failure, responds with [`SdkError<PutRecommendationFeedbackError>`](crate::operation::put_recommendation_feedback::PutRecommendationFeedbackError)
-    pub fn put_recommendation_feedback(&self) -> crate::operation::put_recommendation_feedback::builders::PutRecommendationFeedbackFluentBuilder{
+    pub fn put_recommendation_feedback(&self) -> crate::operation::put_recommendation_feedback::builders::PutRecommendationFeedbackFluentBuilder {
         crate::operation::put_recommendation_feedback::builders::PutRecommendationFeedbackFluentBuilder::new(self.handle.clone())
     }
 }

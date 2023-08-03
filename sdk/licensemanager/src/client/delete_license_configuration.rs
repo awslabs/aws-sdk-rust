@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`license_configuration_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationFluentBuilder::license_configuration_arn) / [`set_license_configuration_arn(Option<String>)`](crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationFluentBuilder::set_license_configuration_arn): <p>ID of the license configuration.</p>
     /// - On success, responds with [`DeleteLicenseConfigurationOutput`](crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteLicenseConfigurationError>`](crate::operation::delete_license_configuration::DeleteLicenseConfigurationError)
-    pub fn delete_license_configuration(&self) -> crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationFluentBuilder{
+    pub fn delete_license_configuration(&self) -> crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationFluentBuilder {
         crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

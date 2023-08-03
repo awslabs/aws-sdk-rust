@@ -10,10 +10,7 @@ impl CreateImageRecipeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_image_recipe::CreateImageRecipeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_recipe::CreateImageRecipeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image_recipe::CreateImageRecipeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_image_recipe();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateImageRecipeFluentBuilder {
         }
     }
     /// Access the CreateImageRecipe as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_image_recipe::builders::CreateImageRecipeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_image_recipe::builders::CreateImageRecipeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateImageRecipeFluentBuilder {
             crate::operation::create_image_recipe::CreateImageRecipe,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_recipe::CreateImageRecipeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image_recipe::CreateImageRecipeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateImageRecipeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateImageRecipeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_image_recipe::CreateImageRecipeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_recipe::CreateImageRecipeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image_recipe::CreateImageRecipeError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateImageRecipeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_image_recipe::CreateImageRecipeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_recipe::CreateImageRecipeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image_recipe::CreateImageRecipeError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateImageRecipeFluentBuilder {
             crate::operation::create_image_recipe::CreateImageRecipe,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_image_recipe::CreateImageRecipeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image_recipe::CreateImageRecipeError>,
     > {
         self.customize_middleware().await
     }
@@ -166,10 +150,7 @@ impl CreateImageRecipeFluentBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
@@ -189,10 +170,7 @@ impl CreateImageRecipeFluentBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
@@ -225,17 +203,12 @@ impl CreateImageRecipeFluentBuilder {
         self
     }
     /// <p>The components included in the image recipe.</p>
-    pub fn set_components(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
-    ) -> Self {
+    pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>) -> Self {
         self.inner = self.inner.set_components(input);
         self
     }
     /// <p>The components included in the image recipe.</p>
-    pub fn get_components(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
+    pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
         self.inner.get_components()
     }
     /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
@@ -257,25 +230,17 @@ impl CreateImageRecipeFluentBuilder {
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
     ///
     /// <p>The block device mappings of the image recipe.</p>
-    pub fn block_device_mappings(
-        mut self,
-        input: crate::types::InstanceBlockDeviceMapping,
-    ) -> Self {
+    pub fn block_device_mappings(mut self, input: crate::types::InstanceBlockDeviceMapping) -> Self {
         self.inner = self.inner.block_device_mappings(input);
         self
     }
     /// <p>The block device mappings of the image recipe.</p>
-    pub fn set_block_device_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
-    ) -> Self {
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>) -> Self {
         self.inner = self.inner.set_block_device_mappings(input);
         self
     }
     /// <p>The block device mappings of the image recipe.</p>
-    pub fn get_block_device_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
         self.inner.get_block_device_mappings()
     }
     /// Adds a key-value pair to `tags`.
@@ -283,45 +248,26 @@ impl CreateImageRecipeFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the image recipe.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags of the image recipe.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags of the image recipe.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The working directory used during build and test workflows.</p>
-    pub fn working_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn working_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.working_directory(input.into());
         self
     }
     /// <p>The working directory used during build and test workflows.</p>
-    pub fn set_working_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_working_directory(input);
         self
     }
@@ -330,25 +276,17 @@ impl CreateImageRecipeFluentBuilder {
         self.inner.get_working_directory()
     }
     /// <p>Specify additional settings and launch scripts for your build instances.</p>
-    pub fn additional_instance_configuration(
-        mut self,
-        input: crate::types::AdditionalInstanceConfiguration,
-    ) -> Self {
+    pub fn additional_instance_configuration(mut self, input: crate::types::AdditionalInstanceConfiguration) -> Self {
         self.inner = self.inner.additional_instance_configuration(input);
         self
     }
     /// <p>Specify additional settings and launch scripts for your build instances.</p>
-    pub fn set_additional_instance_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
-    ) -> Self {
+    pub fn set_additional_instance_configuration(mut self, input: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>) -> Self {
         self.inner = self.inner.set_additional_instance_configuration(input);
         self
     }
     /// <p>Specify additional settings and launch scripts for your build instances.</p>
-    pub fn get_additional_instance_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AdditionalInstanceConfiguration> {
+    pub fn get_additional_instance_configuration(&self) -> &::std::option::Option<crate::types::AdditionalInstanceConfiguration> {
         self.inner.get_additional_instance_configuration()
     }
     /// <p>The idempotency token used to make this request idempotent.</p>

@@ -36,21 +36,17 @@ impl DescribeStorageVirtualMachinesInput {
 }
 impl DescribeStorageVirtualMachinesInput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageVirtualMachinesInput`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesInput).
-    pub fn builder() -> crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesInputBuilder{
+    pub fn builder() -> crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesInputBuilder {
         crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStorageVirtualMachinesInput`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStorageVirtualMachinesInputBuilder {
-    pub(crate) storage_virtual_machine_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachineFilter>>,
+    pub(crate) storage_virtual_machine_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachineFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -60,27 +56,19 @@ impl DescribeStorageVirtualMachinesInputBuilder {
     /// To override the contents of this collection use [`set_storage_virtual_machine_ids`](Self::set_storage_virtual_machine_ids).
     ///
     /// <p>Enter the ID of one or more SVMs that you want to view.</p>
-    pub fn storage_virtual_machine_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_virtual_machine_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.storage_virtual_machine_ids.unwrap_or_default();
         v.push(input.into());
         self.storage_virtual_machine_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Enter the ID of one or more SVMs that you want to view.</p>
-    pub fn set_storage_virtual_machine_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_storage_virtual_machine_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.storage_virtual_machine_ids = input;
         self
     }
     /// <p>Enter the ID of one or more SVMs that you want to view.</p>
-    pub fn get_storage_virtual_machine_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_storage_virtual_machine_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.storage_virtual_machine_ids
     }
     /// Appends an item to `filters`.
@@ -95,17 +83,12 @@ impl DescribeStorageVirtualMachinesInputBuilder {
         self
     }
     /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachineFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachineFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachineFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachineFilter>> {
         &self.filters
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
@@ -143,17 +126,11 @@ impl DescribeStorageVirtualMachinesInputBuilder {
         crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesInput {
-                storage_virtual_machine_ids: self.storage_virtual_machine_ids
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesInput {
+            storage_virtual_machine_ids: self.storage_virtual_machine_ids,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -22,16 +22,14 @@ impl DisassociateDelegationSignerFromDomainInput {
 }
 impl DisassociateDelegationSignerFromDomainInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDelegationSignerFromDomainInput`](crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainInput).
-    pub fn builder() -> crate::operation::disassociate_delegation_signer_from_domain::builders::DisassociateDelegationSignerFromDomainInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_delegation_signer_from_domain::builders::DisassociateDelegationSignerFromDomainInputBuilder {
         crate::operation::disassociate_delegation_signer_from_domain::builders::DisassociateDelegationSignerFromDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDelegationSignerFromDomainInput`](crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDelegationSignerFromDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DisassociateDelegationSignerFromDomainInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DisassociateDelegationSignerFromDomainInput`](crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainInput {
-                domain_name: self.domain_name
-                ,
-                id: self.id
-                ,
-            }
+                domain_name: self.domain_name,
+                id: self.id,
+            },
         )
     }
 }

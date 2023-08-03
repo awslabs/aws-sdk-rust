@@ -23,37 +23,26 @@ impl UpdateClientCertificateInput {
 }
 impl UpdateClientCertificateInput {
     /// Creates a new builder-style object to manufacture [`UpdateClientCertificateInput`](crate::operation::update_client_certificate::UpdateClientCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::update_client_certificate::builders::UpdateClientCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_client_certificate::builders::UpdateClientCertificateInputBuilder {
         crate::operation::update_client_certificate::builders::UpdateClientCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateClientCertificateInput`](crate::operation::update_client_certificate::UpdateClientCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClientCertificateInputBuilder {
     pub(crate) client_certificate_id: ::std::option::Option<::std::string::String>,
-    pub(crate) patch_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
+    pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateClientCertificateInputBuilder {
     /// <p>The identifier of the ClientCertificate resource to be updated.</p>
-    pub fn client_certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the ClientCertificate resource to be updated.</p>
-    pub fn set_client_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_certificate_id = input;
         self
     }
@@ -73,17 +62,12 @@ impl UpdateClientCertificateInputBuilder {
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
         self.patch_operations = input;
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
         &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateClientCertificateInput`](crate::operation::update_client_certificate::UpdateClientCertificateInput).
@@ -93,11 +77,9 @@ impl UpdateClientCertificateInputBuilder {
         crate::operation::update_client_certificate::UpdateClientCertificateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_client_certificate::UpdateClientCertificateInput {
-                client_certificate_id: self.client_certificate_id,
-                patch_operations: self.patch_operations,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_client_certificate::UpdateClientCertificateInput {
+            client_certificate_id: self.client_certificate_id,
+            patch_operations: self.patch_operations,
+        })
     }
 }

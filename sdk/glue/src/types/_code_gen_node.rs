@@ -44,9 +44,7 @@ impl CodeGenNode {
 
 /// A builder for [`CodeGenNode`](crate::types::CodeGenNode).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeGenNodeBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
@@ -94,17 +92,12 @@ impl CodeGenNodeBuilder {
         self
     }
     /// <p>Properties of the node, in the form of name-value pairs.</p>
-    pub fn set_args(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
-    ) -> Self {
+    pub fn set_args(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>) -> Self {
         self.args = input;
         self
     }
     /// <p>Properties of the node, in the form of name-value pairs.</p>
-    pub fn get_args(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>> {
+    pub fn get_args(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>> {
         &self.args
     }
     /// <p>The line number of the node.</p>

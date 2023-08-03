@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteLaunchProfileOutput`](crate::operation::delete_launch_profile::DeleteLaunchProfileOutput) with field(s):
     ///   - [`launch_profile(Option<LaunchProfile>)`](crate::operation::delete_launch_profile::DeleteLaunchProfileOutput::launch_profile): <p>The launch profile.</p>
     /// - On failure, responds with [`SdkError<DeleteLaunchProfileError>`](crate::operation::delete_launch_profile::DeleteLaunchProfileError)
-    pub fn delete_launch_profile(
-        &self,
-    ) -> crate::operation::delete_launch_profile::builders::DeleteLaunchProfileFluentBuilder {
-        crate::operation::delete_launch_profile::builders::DeleteLaunchProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_launch_profile(&self) -> crate::operation::delete_launch_profile::builders::DeleteLaunchProfileFluentBuilder {
+        crate::operation::delete_launch_profile::builders::DeleteLaunchProfileFluentBuilder::new(self.handle.clone())
     }
 }

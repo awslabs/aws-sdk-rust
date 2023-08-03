@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ListBulkImportJobsFilter {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for ListBulkImportJobsFilter {
             "FAILED" => ListBulkImportJobsFilter::Failed,
             "PENDING" => ListBulkImportJobsFilter::Pending,
             "RUNNING" => ListBulkImportJobsFilter::Running,
-            other => ListBulkImportJobsFilter::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ListBulkImportJobsFilter::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl ListBulkImportJobsFilter {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALL",
-            "CANCELLED",
-            "COMPLETED",
-            "COMPLETED_WITH_FAILURES",
-            "FAILED",
-            "PENDING",
-            "RUNNING",
-        ]
+        &["ALL", "CANCELLED", "COMPLETED", "COMPLETED_WITH_FAILURES", "FAILED", "PENDING", "RUNNING"]
     }
 }
 impl ::std::convert::AsRef<str> for ListBulkImportJobsFilter {

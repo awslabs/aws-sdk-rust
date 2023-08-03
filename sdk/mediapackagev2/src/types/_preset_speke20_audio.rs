@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PresetSpeke20Audio {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for PresetSpeke20Audio {
             "PRESET_AUDIO_3" => PresetSpeke20Audio::PresetAudio3,
             "SHARED" => PresetSpeke20Audio::Shared,
             "UNENCRYPTED" => PresetSpeke20Audio::Unencrypted,
-            other => PresetSpeke20Audio::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PresetSpeke20Audio::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl PresetSpeke20Audio {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "PRESET_AUDIO_1",
-            "PRESET_AUDIO_2",
-            "PRESET_AUDIO_3",
-            "SHARED",
-            "UNENCRYPTED",
-        ]
+        &["PRESET_AUDIO_1", "PRESET_AUDIO_2", "PRESET_AUDIO_3", "SHARED", "UNENCRYPTED"]
     }
 }
 impl ::std::convert::AsRef<str> for PresetSpeke20Audio {

@@ -5,8 +5,7 @@
 pub struct GetEvidenceFoldersByAssessmentOutput {
     /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
     #[doc(hidden)]
-    pub evidence_folders:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentEvidenceFolder>>,
+    pub evidence_folders: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentEvidenceFolder>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetEvidenceFoldersByAssessmentOutput {
 }
 impl GetEvidenceFoldersByAssessmentOutput {
     /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
-    pub fn evidence_folders(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssessmentEvidenceFolder]> {
+    pub fn evidence_folders(&self) -> ::std::option::Option<&[crate::types::AssessmentEvidenceFolder]> {
         self.evidence_folders.as_deref()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for GetEvidenceFoldersByAssessmentOutput 
 }
 impl GetEvidenceFoldersByAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`GetEvidenceFoldersByAssessmentOutput`](crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentOutput).
-    pub fn builder() -> crate::operation::get_evidence_folders_by_assessment::builders::GetEvidenceFoldersByAssessmentOutputBuilder{
+    pub fn builder() -> crate::operation::get_evidence_folders_by_assessment::builders::GetEvidenceFoldersByAssessmentOutputBuilder {
         crate::operation::get_evidence_folders_by_assessment::builders::GetEvidenceFoldersByAssessmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEvidenceFoldersByAssessmentOutput`](crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEvidenceFoldersByAssessmentOutputBuilder {
-    pub(crate) evidence_folders:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentEvidenceFolder>>,
+    pub(crate) evidence_folders: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentEvidenceFolder>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl GetEvidenceFoldersByAssessmentOutputBuilder {
         self
     }
     /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
-    pub fn set_evidence_folders(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentEvidenceFolder>>,
-    ) -> Self {
+    pub fn set_evidence_folders(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentEvidenceFolder>>) -> Self {
         self.evidence_folders = input;
         self
     }
     /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
-    pub fn get_evidence_folders(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentEvidenceFolder>> {
+    pub fn get_evidence_folders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentEvidenceFolder>> {
         &self.evidence_folders
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -97,10 +86,7 @@ impl GetEvidenceFoldersByAssessmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEvidenceFoldersByAssessmentOutput`](crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentOutput
-    {
+    pub fn build(self) -> crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentOutput {
         crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentOutput {
             evidence_folders: self.evidence_folders,
             next_token: self.next_token,

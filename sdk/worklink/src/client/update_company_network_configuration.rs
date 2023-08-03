@@ -9,10 +9,10 @@ impl super::Client {
     ///   - [`security_group_ids(Vec<String>)`](crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationFluentBuilder::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationFluentBuilder::set_security_group_ids): <p>The security groups associated with access to the provided subnets.</p>
     /// - On success, responds with [`UpdateCompanyNetworkConfigurationOutput`](crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateCompanyNetworkConfigurationError>`](crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn update_company_network_configuration(&self) -> crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationFluentBuilder{
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn update_company_network_configuration(
+        &self,
+    ) -> crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationFluentBuilder {
         crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

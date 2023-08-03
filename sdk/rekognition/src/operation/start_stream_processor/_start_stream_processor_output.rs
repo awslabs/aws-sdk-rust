@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartStreamProcessorOutput {
 }
 impl StartStreamProcessorOutput {
     /// Creates a new builder-style object to manufacture [`StartStreamProcessorOutput`](crate::operation::start_stream_processor::StartStreamProcessorOutput).
-    pub fn builder(
-    ) -> crate::operation::start_stream_processor::builders::StartStreamProcessorOutputBuilder {
+    pub fn builder() -> crate::operation::start_stream_processor::builders::StartStreamProcessorOutputBuilder {
         crate::operation::start_stream_processor::builders::StartStreamProcessorOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartStreamProcessorOutput`](crate::operation::start_stream_processor::StartStreamProcessorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartStreamProcessorOutputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

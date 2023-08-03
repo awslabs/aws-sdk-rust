@@ -45,9 +45,7 @@ impl UpdatePipeInput {
         self.desired_state.as_ref()
     }
     /// <p>The parameters required to set up a source for your pipe.</p>
-    pub fn source_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdatePipeSourceParameters> {
+    pub fn source_parameters(&self) -> ::std::option::Option<&crate::types::UpdatePipeSourceParameters> {
         self.source_parameters.as_ref()
     }
     /// <p>The ARN of the enrichment resource.</p>
@@ -55,9 +53,7 @@ impl UpdatePipeInput {
         self.enrichment.as_deref()
     }
     /// <p>The parameters required to set up enrichment on your pipe.</p>
-    pub fn enrichment_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PipeEnrichmentParameters> {
+    pub fn enrichment_parameters(&self) -> ::std::option::Option<&crate::types::PipeEnrichmentParameters> {
         self.enrichment_parameters.as_ref()
     }
     /// <p>The ARN of the target resource.</p>
@@ -144,10 +140,7 @@ impl UpdatePipeInputBuilder {
         self
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestedPipeState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::RequestedPipeState>) -> Self {
         self.desired_state = input;
         self
     }
@@ -161,17 +154,12 @@ impl UpdatePipeInputBuilder {
         self
     }
     /// <p>The parameters required to set up a source for your pipe.</p>
-    pub fn set_source_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdatePipeSourceParameters>,
-    ) -> Self {
+    pub fn set_source_parameters(mut self, input: ::std::option::Option<crate::types::UpdatePipeSourceParameters>) -> Self {
         self.source_parameters = input;
         self
     }
     /// <p>The parameters required to set up a source for your pipe.</p>
-    pub fn get_source_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdatePipeSourceParameters> {
+    pub fn get_source_parameters(&self) -> &::std::option::Option<crate::types::UpdatePipeSourceParameters> {
         &self.source_parameters
     }
     /// <p>The ARN of the enrichment resource.</p>
@@ -194,17 +182,12 @@ impl UpdatePipeInputBuilder {
         self
     }
     /// <p>The parameters required to set up enrichment on your pipe.</p>
-    pub fn set_enrichment_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeEnrichmentParameters>,
-    ) -> Self {
+    pub fn set_enrichment_parameters(mut self, input: ::std::option::Option<crate::types::PipeEnrichmentParameters>) -> Self {
         self.enrichment_parameters = input;
         self
     }
     /// <p>The parameters required to set up enrichment on your pipe.</p>
-    pub fn get_enrichment_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipeEnrichmentParameters> {
+    pub fn get_enrichment_parameters(&self) -> &::std::option::Option<crate::types::PipeEnrichmentParameters> {
         &self.enrichment_parameters
     }
     /// <p>The ARN of the target resource.</p>
@@ -227,17 +210,12 @@ impl UpdatePipeInputBuilder {
         self
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
-    pub fn set_target_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeTargetParameters>,
-    ) -> Self {
+    pub fn set_target_parameters(mut self, input: ::std::option::Option<crate::types::PipeTargetParameters>) -> Self {
         self.target_parameters = input;
         self
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
-    pub fn get_target_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipeTargetParameters> {
+    pub fn get_target_parameters(&self) -> &::std::option::Option<crate::types::PipeTargetParameters> {
         &self.target_parameters
     }
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
@@ -255,12 +233,7 @@ impl UpdatePipeInputBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdatePipeInput`](crate::operation::update_pipe::UpdatePipeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pipe::UpdatePipeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_pipe::UpdatePipeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pipe::UpdatePipeInput {
             name: self.name,
             description: self.description,

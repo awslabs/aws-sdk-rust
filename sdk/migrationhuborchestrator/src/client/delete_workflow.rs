@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::delete_workflow::DeleteWorkflowOutput::arn): <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
     ///   - [`status(Option<MigrationWorkflowStatusEnum>)`](crate::operation::delete_workflow::DeleteWorkflowOutput::status): <p>The status of the migration workflow.</p>
     /// - On failure, responds with [`SdkError<DeleteWorkflowError>`](crate::operation::delete_workflow::DeleteWorkflowError)
-    pub fn delete_workflow(
-        &self,
-    ) -> crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder {
-        crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_workflow(&self) -> crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder {
+        crate::operation::delete_workflow::builders::DeleteWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

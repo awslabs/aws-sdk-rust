@@ -5,36 +5,26 @@
 pub struct UpdateEventConfigurationsInput {
     /// <p>The new event configuration values.</p>
     #[doc(hidden)]
-    pub event_configurations: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>,
-    >,
+    pub event_configurations: ::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>>,
 }
 impl UpdateEventConfigurationsInput {
     /// <p>The new event configuration values.</p>
-    pub fn event_configurations(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>,
-    > {
+    pub fn event_configurations(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>> {
         self.event_configurations.as_ref()
     }
 }
 impl UpdateEventConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`UpdateEventConfigurationsInput`](crate::operation::update_event_configurations::UpdateEventConfigurationsInput).
-    pub fn builder() -> crate::operation::update_event_configurations::builders::UpdateEventConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::update_event_configurations::builders::UpdateEventConfigurationsInputBuilder {
         crate::operation::update_event_configurations::builders::UpdateEventConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEventConfigurationsInput`](crate::operation::update_event_configurations::UpdateEventConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEventConfigurationsInputBuilder {
-    pub(crate) event_configurations: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>,
-    >,
+    pub(crate) event_configurations: ::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>>,
 }
 impl UpdateEventConfigurationsInputBuilder {
     /// Adds a key-value pair to `event_configurations`.
@@ -42,11 +32,7 @@ impl UpdateEventConfigurationsInputBuilder {
     /// To override the contents of this collection use [`set_event_configurations`](Self::set_event_configurations).
     ///
     /// <p>The new event configuration values.</p>
-    pub fn event_configurations(
-        mut self,
-        k: crate::types::EventType,
-        v: crate::types::Configuration,
-    ) -> Self {
+    pub fn event_configurations(mut self, k: crate::types::EventType, v: crate::types::Configuration) -> Self {
         let mut hash_map = self.event_configurations.unwrap_or_default();
         hash_map.insert(k, v);
         self.event_configurations = ::std::option::Option::Some(hash_map);
@@ -55,9 +41,7 @@ impl UpdateEventConfigurationsInputBuilder {
     /// <p>The new event configuration values.</p>
     pub fn set_event_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>>,
     ) -> Self {
         self.event_configurations = input;
         self
@@ -65,9 +49,7 @@ impl UpdateEventConfigurationsInputBuilder {
     /// <p>The new event configuration values.</p>
     pub fn get_event_configurations(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>> {
         &self.event_configurations
     }
     /// Consumes the builder and constructs a [`UpdateEventConfigurationsInput`](crate::operation::update_event_configurations::UpdateEventConfigurationsInput).
@@ -77,10 +59,8 @@ impl UpdateEventConfigurationsInputBuilder {
         crate::operation::update_event_configurations::UpdateEventConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_event_configurations::UpdateEventConfigurationsInput {
-                event_configurations: self.event_configurations,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_event_configurations::UpdateEventConfigurationsInput {
+            event_configurations: self.event_configurations,
+        })
     }
 }

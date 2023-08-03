@@ -44,17 +44,9 @@ pub fn ser_hyper_parameter_ranges(
 
 pub(crate) fn de_hyper_parameter_ranges<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::HyperParameterRanges>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::HyperParameterRanges>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -64,41 +56,36 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "integerHyperParameterRanges" => {
-                                builder = builder.set_integer_hyper_parameter_ranges(
-                                    crate::protocol_serde::shape_integer_hyper_parameter_ranges::de_integer_hyper_parameter_ranges(tokens)?
-                                );
-                            }
-                            "continuousHyperParameterRanges" => {
-                                builder = builder.set_continuous_hyper_parameter_ranges(
-                                    crate::protocol_serde::shape_continuous_hyper_parameter_ranges::de_continuous_hyper_parameter_ranges(tokens)?
-                                );
-                            }
-                            "categoricalHyperParameterRanges" => {
-                                builder = builder.set_categorical_hyper_parameter_ranges(
-                                    crate::protocol_serde::shape_categorical_hyper_parameter_ranges::de_categorical_hyper_parameter_ranges(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "integerHyperParameterRanges" => {
+                            builder = builder.set_integer_hyper_parameter_ranges(
+                                crate::protocol_serde::shape_integer_hyper_parameter_ranges::de_integer_hyper_parameter_ranges(tokens)?,
+                            );
                         }
-                    }
+                        "continuousHyperParameterRanges" => {
+                            builder = builder.set_continuous_hyper_parameter_ranges(
+                                crate::protocol_serde::shape_continuous_hyper_parameter_ranges::de_continuous_hyper_parameter_ranges(tokens)?,
+                            );
+                        }
+                        "categoricalHyperParameterRanges" => {
+                            builder = builder.set_categorical_hyper_parameter_ranges(
+                                crate::protocol_serde::shape_categorical_hyper_parameter_ranges::de_categorical_hyper_parameter_ranges(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

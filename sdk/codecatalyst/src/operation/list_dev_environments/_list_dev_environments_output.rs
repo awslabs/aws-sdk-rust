@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListDevEnvironmentsOutput {
 }
 impl ListDevEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListDevEnvironmentsOutput`](crate::operation::list_dev_environments::ListDevEnvironmentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_dev_environments::builders::ListDevEnvironmentsOutputBuilder {
-        crate::operation::list_dev_environments::builders::ListDevEnvironmentsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_dev_environments::builders::ListDevEnvironmentsOutputBuilder {
+        crate::operation::list_dev_environments::builders::ListDevEnvironmentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDevEnvironmentsOutput`](crate::operation::list_dev_environments::ListDevEnvironmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevEnvironmentsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListDevEnvironmentsOutputBuilder {
         self
     }
     /// <p>Information about the Dev Environments in a project.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Information about the Dev Environments in a project.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSummary>> {
         &self.items
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>

@@ -10,10 +10,7 @@ impl DescribeDataSharesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_data_shares::DescribeDataSharesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_shares::DescribeDataSharesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_shares::DescribeDataSharesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_data_shares();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeDataSharesFluentBuilder {
         }
     }
     /// Access the DescribeDataShares as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_data_shares::builders::DescribeDataSharesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_data_shares::builders::DescribeDataSharesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeDataSharesFluentBuilder {
             crate::operation::describe_data_shares::DescribeDataShares,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_shares::DescribeDataSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_shares::DescribeDataSharesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeDataSharesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeDataSharesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_shares::DescribeDataSharesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_shares::DescribeDataSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_shares::DescribeDataSharesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeDataSharesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_shares::DescribeDataSharesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_shares::DescribeDataSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_shares::DescribeDataSharesError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl DescribeDataSharesFluentBuilder {
             crate::operation::describe_data_shares::DescribeDataShares,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_data_shares::DescribeDataSharesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_data_shares::DescribeDataSharesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_data_shares::paginator::DescribeDataSharesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_data_shares::paginator::DescribeDataSharesPaginator {
-        crate::operation::describe_data_shares::paginator::DescribeDataSharesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_data_shares::paginator::DescribeDataSharesPaginator {
+        crate::operation::describe_data_shares::paginator::DescribeDataSharesPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the datashare to describe details of.</p>
-    pub fn data_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_share_arn(input.into());
         self
     }
     /// <p>The identifier of the datashare to describe details of.</p>
-    pub fn set_data_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_share_arn(input);
         self
     }

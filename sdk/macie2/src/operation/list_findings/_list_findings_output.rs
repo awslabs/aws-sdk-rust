@@ -35,9 +35,7 @@ impl ListFindingsOutput {
 
 /// A builder for [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsOutputBuilder {
     pub(crate) finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListFindingsOutputBuilder {
         self
     }
     /// <p>An array of strings, where each string is the unique identifier for a finding that matches the filter criteria specified in the request.</p>
-    pub fn set_finding_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.finding_ids = input;
         self
     }
     /// <p>An array of strings, where each string is the unique identifier for a finding that matches the filter criteria specified in the request.</p>
-    pub fn get_finding_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.finding_ids
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>

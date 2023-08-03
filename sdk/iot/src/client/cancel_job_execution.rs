@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`status_details(HashMap<String, String>)`](crate::operation::cancel_job_execution::builders::CancelJobExecutionFluentBuilder::status_details) / [`set_status_details(Option<HashMap<String, String>>)`](crate::operation::cancel_job_execution::builders::CancelJobExecutionFluentBuilder::set_status_details): <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
     /// - On success, responds with [`CancelJobExecutionOutput`](crate::operation::cancel_job_execution::CancelJobExecutionOutput)
     /// - On failure, responds with [`SdkError<CancelJobExecutionError>`](crate::operation::cancel_job_execution::CancelJobExecutionError)
-    pub fn cancel_job_execution(
-        &self,
-    ) -> crate::operation::cancel_job_execution::builders::CancelJobExecutionFluentBuilder {
-        crate::operation::cancel_job_execution::builders::CancelJobExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_job_execution(&self) -> crate::operation::cancel_job_execution::builders::CancelJobExecutionFluentBuilder {
+        crate::operation::cancel_job_execution::builders::CancelJobExecutionFluentBuilder::new(self.handle.clone())
     }
 }

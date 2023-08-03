@@ -10,9 +10,7 @@ pub struct UpdateIngestionDestinationOutput {
 }
 impl UpdateIngestionDestinationOutput {
     /// <p>Contains information about an ingestion destination.</p>
-    pub fn ingestion_destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IngestionDestination> {
+    pub fn ingestion_destination(&self) -> ::std::option::Option<&crate::types::IngestionDestination> {
         self.ingestion_destination.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateIngestionDestinationOutput {
 }
 impl UpdateIngestionDestinationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIngestionDestinationOutput`](crate::operation::update_ingestion_destination::UpdateIngestionDestinationOutput).
-    pub fn builder() -> crate::operation::update_ingestion_destination::builders::UpdateIngestionDestinationOutputBuilder{
+    pub fn builder() -> crate::operation::update_ingestion_destination::builders::UpdateIngestionDestinationOutputBuilder {
         crate::operation::update_ingestion_destination::builders::UpdateIngestionDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIngestionDestinationOutput`](crate::operation::update_ingestion_destination::UpdateIngestionDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIngestionDestinationOutputBuilder {
     pub(crate) ingestion_destination: ::std::option::Option<crate::types::IngestionDestination>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl UpdateIngestionDestinationOutputBuilder {
         self
     }
     /// <p>Contains information about an ingestion destination.</p>
-    pub fn set_ingestion_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionDestination>,
-    ) -> Self {
+    pub fn set_ingestion_destination(mut self, input: ::std::option::Option<crate::types::IngestionDestination>) -> Self {
         self.ingestion_destination = input;
         self
     }
     /// <p>Contains information about an ingestion destination.</p>
-    pub fn get_ingestion_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngestionDestination> {
+    pub fn get_ingestion_destination(&self) -> &::std::option::Option<crate::types::IngestionDestination> {
         &self.ingestion_destination
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl UpdateIngestionDestinationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateIngestionDestinationOutput`](crate::operation::update_ingestion_destination::UpdateIngestionDestinationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_ingestion_destination::UpdateIngestionDestinationOutput {
+    pub fn build(self) -> crate::operation::update_ingestion_destination::UpdateIngestionDestinationOutput {
         crate::operation::update_ingestion_destination::UpdateIngestionDestinationOutput {
             ingestion_destination: self.ingestion_destination,
             _request_id: self._request_id,

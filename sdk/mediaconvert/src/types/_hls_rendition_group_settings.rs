@@ -37,9 +37,7 @@ impl HlsRenditionGroupSettings {
 
 /// A builder for [`HlsRenditionGroupSettings`](crate::types::HlsRenditionGroupSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsRenditionGroupSettingsBuilder {
     pub(crate) rendition_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) rendition_language_code: ::std::option::Option<crate::types::LanguageCode>,
@@ -47,18 +45,12 @@ pub struct HlsRenditionGroupSettingsBuilder {
 }
 impl HlsRenditionGroupSettingsBuilder {
     /// Optional. Specify alternative group ID
-    pub fn rendition_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rendition_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rendition_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Optional. Specify alternative group ID
-    pub fn set_rendition_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rendition_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rendition_group_id = input;
         self
     }
@@ -72,32 +64,21 @@ impl HlsRenditionGroupSettingsBuilder {
         self
     }
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
-    pub fn set_rendition_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_rendition_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.rendition_language_code = input;
         self
     }
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
-    pub fn get_rendition_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::LanguageCode> {
+    pub fn get_rendition_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         &self.rendition_language_code
     }
     /// Optional. Specify media name
-    pub fn rendition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rendition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rendition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// Optional. Specify media name
-    pub fn set_rendition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rendition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rendition_name = input;
         self
     }

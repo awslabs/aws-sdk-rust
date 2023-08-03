@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListManagedEndpointsOutput {
 }
 impl ListManagedEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedEndpointsOutput`](crate::operation::list_managed_endpoints::ListManagedEndpointsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_managed_endpoints::builders::ListManagedEndpointsOutputBuilder {
+    pub fn builder() -> crate::operation::list_managed_endpoints::builders::ListManagedEndpointsOutputBuilder {
         crate::operation::list_managed_endpoints::builders::ListManagedEndpointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListManagedEndpointsOutput`](crate::operation::list_managed_endpoints::ListManagedEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedEndpointsOutputBuilder {
     pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ListManagedEndpointsOutputBuilder {
         self
     }
     /// <p>The managed endpoints to be listed.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
-    ) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>) -> Self {
         self.endpoints = input;
         self
     }

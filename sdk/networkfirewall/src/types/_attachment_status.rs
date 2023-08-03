@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AttachmentStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for AttachmentStatus {
             "FAILED" => AttachmentStatus::Failed,
             "READY" => AttachmentStatus::Ready,
             "SCALING" => AttachmentStatus::Scaling,
-            other => {
-                AttachmentStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AttachmentStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,9 +95,7 @@ impl AttachmentStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATING", "DELETING", "ERROR", "FAILED", "READY", "SCALING",
-        ]
+        &["CREATING", "DELETING", "ERROR", "FAILED", "READY", "SCALING"]
     }
 }
 impl ::std::convert::AsRef<str> for AttachmentStatus {

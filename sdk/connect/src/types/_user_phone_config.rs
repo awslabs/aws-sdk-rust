@@ -48,9 +48,7 @@ impl UserPhoneConfig {
 
 /// A builder for [`UserPhoneConfig`](crate::types::UserPhoneConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserPhoneConfigBuilder {
     pub(crate) phone_type: ::std::option::Option<crate::types::PhoneType>,
     pub(crate) auto_accept: ::std::option::Option<bool>,
@@ -107,18 +105,12 @@ impl UserPhoneConfigBuilder {
         &self.after_contact_work_time_limit
     }
     /// <p>The phone number for the user's desk phone.</p>
-    pub fn desk_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn desk_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desk_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number for the user's desk phone.</p>
-    pub fn set_desk_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_desk_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.desk_phone_number = input;
         self
     }

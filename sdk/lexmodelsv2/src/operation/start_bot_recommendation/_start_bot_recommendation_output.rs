@@ -45,9 +45,7 @@ impl StartBotRecommendationOutput {
     }
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn bot_recommendation_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BotRecommendationStatus> {
+    pub fn bot_recommendation_status(&self) -> ::std::option::Option<&crate::types::BotRecommendationStatus> {
         self.bot_recommendation_status.as_ref()
     }
     /// <p>The identifier of the bot recommendation that you have created.</p>
@@ -59,9 +57,7 @@ impl StartBotRecommendationOutput {
         self.creation_date_time.as_ref()
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn transcript_source_setting(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TranscriptSourceSetting> {
+    pub fn transcript_source_setting(&self) -> ::std::option::Option<&crate::types::TranscriptSourceSetting> {
         self.transcript_source_setting.as_ref()
     }
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
@@ -76,28 +72,22 @@ impl ::aws_http::request_id::RequestId for StartBotRecommendationOutput {
 }
 impl StartBotRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`StartBotRecommendationOutput`](crate::operation::start_bot_recommendation::StartBotRecommendationOutput).
-    pub fn builder(
-    ) -> crate::operation::start_bot_recommendation::builders::StartBotRecommendationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_bot_recommendation::builders::StartBotRecommendationOutputBuilder {
         crate::operation::start_bot_recommendation::builders::StartBotRecommendationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartBotRecommendationOutput`](crate::operation::start_bot_recommendation::StartBotRecommendationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartBotRecommendationOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
-    pub(crate) bot_recommendation_status:
-        ::std::option::Option<crate::types::BotRecommendationStatus>,
+    pub(crate) bot_recommendation_status: ::std::option::Option<crate::types::BotRecommendationStatus>,
     pub(crate) bot_recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) transcript_source_setting:
-        ::std::option::Option<crate::types::TranscriptSourceSetting>,
+    pub(crate) transcript_source_setting: ::std::option::Option<crate::types::TranscriptSourceSetting>,
     pub(crate) encryption_setting: ::std::option::Option<crate::types::EncryptionSetting>,
     _request_id: Option<String>,
 }
@@ -146,42 +136,28 @@ impl StartBotRecommendationOutputBuilder {
     }
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn bot_recommendation_status(
-        mut self,
-        input: crate::types::BotRecommendationStatus,
-    ) -> Self {
+    pub fn bot_recommendation_status(mut self, input: crate::types::BotRecommendationStatus) -> Self {
         self.bot_recommendation_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn set_bot_recommendation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BotRecommendationStatus>,
-    ) -> Self {
+    pub fn set_bot_recommendation_status(mut self, input: ::std::option::Option<crate::types::BotRecommendationStatus>) -> Self {
         self.bot_recommendation_status = input;
         self
     }
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn get_bot_recommendation_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::BotRecommendationStatus> {
+    pub fn get_bot_recommendation_status(&self) -> &::std::option::Option<crate::types::BotRecommendationStatus> {
         &self.bot_recommendation_status
     }
     /// <p>The identifier of the bot recommendation that you have created.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the bot recommendation that you have created.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_recommendation_id = input;
         self
     }
@@ -195,10 +171,7 @@ impl StartBotRecommendationOutputBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -207,25 +180,17 @@ impl StartBotRecommendationOutputBuilder {
         &self.creation_date_time
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn transcript_source_setting(
-        mut self,
-        input: crate::types::TranscriptSourceSetting,
-    ) -> Self {
+    pub fn transcript_source_setting(mut self, input: crate::types::TranscriptSourceSetting) -> Self {
         self.transcript_source_setting = ::std::option::Option::Some(input);
         self
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn set_transcript_source_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::TranscriptSourceSetting>,
-    ) -> Self {
+    pub fn set_transcript_source_setting(mut self, input: ::std::option::Option<crate::types::TranscriptSourceSetting>) -> Self {
         self.transcript_source_setting = input;
         self
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn get_transcript_source_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::TranscriptSourceSetting> {
+    pub fn get_transcript_source_setting(&self) -> &::std::option::Option<crate::types::TranscriptSourceSetting> {
         &self.transcript_source_setting
     }
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
@@ -234,17 +199,12 @@ impl StartBotRecommendationOutputBuilder {
         self
     }
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn set_encryption_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionSetting>,
-    ) -> Self {
+    pub fn set_encryption_setting(mut self, input: ::std::option::Option<crate::types::EncryptionSetting>) -> Self {
         self.encryption_setting = input;
         self
     }
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn get_encryption_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionSetting> {
+    pub fn get_encryption_setting(&self) -> &::std::option::Option<crate::types::EncryptionSetting> {
         &self.encryption_setting
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

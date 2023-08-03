@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`AuthorizeDbSecurityGroupIngressOutput`](crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput) with field(s):
     ///   - [`db_security_group(Option<DbSecurityGroup>)`](crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput::db_security_group): <p>Contains the details for an Amazon RDS DB security group.</p>  <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
     /// - On failure, responds with [`SdkError<AuthorizeDBSecurityGroupIngressError>`](crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError)
-    pub fn authorize_db_security_group_ingress(&self) -> crate::operation::authorize_db_security_group_ingress::builders::AuthorizeDBSecurityGroupIngressFluentBuilder{
+    pub fn authorize_db_security_group_ingress(
+        &self,
+    ) -> crate::operation::authorize_db_security_group_ingress::builders::AuthorizeDBSecurityGroupIngressFluentBuilder {
         crate::operation::authorize_db_security_group_ingress::builders::AuthorizeDBSecurityGroupIngressFluentBuilder::new(self.handle.clone())
     }
 }

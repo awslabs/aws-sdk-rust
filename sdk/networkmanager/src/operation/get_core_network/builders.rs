@@ -10,10 +10,7 @@ impl GetCoreNetworkInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_core_network::GetCoreNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_network::GetCoreNetworkError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_network::GetCoreNetworkError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_core_network();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetCoreNetworkFluentBuilder {
         }
     }
     /// Access the GetCoreNetwork as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_core_network::builders::GetCoreNetworkInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_core_network::builders::GetCoreNetworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetCoreNetworkFluentBuilder {
             crate::operation::get_core_network::GetCoreNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_network::GetCoreNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_network::GetCoreNetworkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetCoreNetworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetCoreNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_core_network::GetCoreNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_network::GetCoreNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_network::GetCoreNetworkError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetCoreNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_core_network::GetCoreNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_network::GetCoreNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_network::GetCoreNetworkError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetCoreNetworkFluentBuilder {
             crate::operation::get_core_network::GetCoreNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_network::GetCoreNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_network::GetCoreNetworkError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
     }

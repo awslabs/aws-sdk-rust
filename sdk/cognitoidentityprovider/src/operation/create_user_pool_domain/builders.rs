@@ -37,10 +37,7 @@ impl CreateUserPoolDomainFluentBuilder {
         }
     }
     /// Access the CreateUserPoolDomain as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_user_pool_domain::builders::CreateUserPoolDomainInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_user_pool_domain::builders::CreateUserPoolDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateUserPoolDomainFluentBuilder {
             crate::operation::create_user_pool_domain::CreateUserPoolDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_pool_domain::CreateUserPoolDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_pool_domain::CreateUserPoolDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateUserPoolDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateUserPoolDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_user_pool_domain::CreateUserPoolDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_pool_domain::CreateUserPoolDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_pool_domain::CreateUserPoolDomainError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateUserPoolDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_user_pool_domain::CreateUserPoolDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_pool_domain::CreateUserPoolDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_pool_domain::CreateUserPoolDomainError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateUserPoolDomainFluentBuilder {
             crate::operation::create_user_pool_domain::CreateUserPoolDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_user_pool_domain::CreateUserPoolDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user_pool_domain::CreateUserPoolDomainError>,
     > {
         self.customize_middleware().await
     }
@@ -161,19 +147,14 @@ impl CreateUserPoolDomainFluentBuilder {
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
     /// <p>Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain instead.</p>
     /// <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
-    pub fn set_custom_domain_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomDomainConfigType>,
-    ) -> Self {
+    pub fn set_custom_domain_config(mut self, input: ::std::option::Option<crate::types::CustomDomainConfigType>) -> Self {
         self.inner = self.inner.set_custom_domain_config(input);
         self
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
     /// <p>Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain instead.</p>
     /// <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
-    pub fn get_custom_domain_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
+    pub fn get_custom_domain_config(&self) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
         self.inner.get_custom_domain_config()
     }
 }

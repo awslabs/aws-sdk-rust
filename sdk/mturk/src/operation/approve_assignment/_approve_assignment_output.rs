@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ApproveAssignmentOutput {
 }
 impl ApproveAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`ApproveAssignmentOutput`](crate::operation::approve_assignment::ApproveAssignmentOutput).
-    pub fn builder(
-    ) -> crate::operation::approve_assignment::builders::ApproveAssignmentOutputBuilder {
+    pub fn builder() -> crate::operation::approve_assignment::builders::ApproveAssignmentOutputBuilder {
         crate::operation::approve_assignment::builders::ApproveAssignmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`ApproveAssignmentOutput`](crate::operation::approve_assignment::ApproveAssignmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApproveAssignmentOutputBuilder {
     _request_id: Option<String>,
 }

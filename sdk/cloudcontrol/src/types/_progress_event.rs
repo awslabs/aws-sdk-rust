@@ -176,19 +176,13 @@ impl ProgressEventBuilder {
     }
     /// <p>The unique token representing this resource operation request.</p>
     /// <p>Use the <code>RequestToken</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
-    pub fn request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique token representing this resource operation request.</p>
     /// <p>Use the <code>RequestToken</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
-    pub fn set_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_token = input;
         self
     }
@@ -233,10 +227,7 @@ impl ProgressEventBuilder {
     /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being canceled.</p> </li>
     /// <li> <p> <code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p> </li>
     /// </ul>
-    pub fn set_operation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationStatus>,
-    ) -> Self {
+    pub fn set_operation_status(mut self, input: ::std::option::Option<crate::types::OperationStatus>) -> Self {
         self.operation_status = input;
         self
     }
@@ -258,10 +249,7 @@ impl ProgressEventBuilder {
         self
     }
     /// <p>When the resource operation request was initiated.</p>
-    pub fn set_event_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_time = input;
         self
     }
@@ -270,18 +258,12 @@ impl ProgressEventBuilder {
         &self.event_time
     }
     /// <p>A JSON string containing the resource model, consisting of each resource property and its current value.</p>
-    pub fn resource_model(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON string containing the resource model, consisting of each resource property and its current value.</p>
-    pub fn set_resource_model(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_model = input;
         self
     }
@@ -290,18 +272,12 @@ impl ProgressEventBuilder {
         &self.resource_model
     }
     /// <p>Any message explaining the current status.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Any message explaining the current status.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -317,10 +293,7 @@ impl ProgressEventBuilder {
     }
     /// <p>For requests with a status of <code>FAILED</code>, the associated error code.</p>
     /// <p>For error code definitions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-test-contract-errors.html">Handler error codes</a> in the <i>CloudFormation Command Line Interface User Guide for Extension Development</i>.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::HandlerErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::HandlerErrorCode>) -> Self {
         self.error_code = input;
         self
     }
@@ -335,10 +308,7 @@ impl ProgressEventBuilder {
         self
     }
     /// <p>When to next request the status of this resource operation request.</p>
-    pub fn set_retry_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_retry_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.retry_after = input;
         self
     }

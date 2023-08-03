@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateWirelessGatewayTaskOutput {
 }
 impl CreateWirelessGatewayTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskOutput`](crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskOutput).
-    pub fn builder() -> crate::operation::create_wireless_gateway_task::builders::CreateWirelessGatewayTaskOutputBuilder{
+    pub fn builder() -> crate::operation::create_wireless_gateway_task::builders::CreateWirelessGatewayTaskOutputBuilder {
         crate::operation::create_wireless_gateway_task::builders::CreateWirelessGatewayTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateWirelessGatewayTaskOutput`](crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWirelessGatewayTaskOutputBuilder {
     pub(crate) wireless_gateway_task_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WirelessGatewayTaskStatus>,
@@ -45,25 +43,17 @@ pub struct CreateWirelessGatewayTaskOutputBuilder {
 }
 impl CreateWirelessGatewayTaskOutputBuilder {
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
-    pub fn wireless_gateway_task_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wireless_gateway_task_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wireless_gateway_task_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
-    pub fn set_wireless_gateway_task_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_wireless_gateway_task_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wireless_gateway_task_definition_id = input;
         self
     }
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
-    pub fn get_wireless_gateway_task_definition_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_wireless_gateway_task_definition_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.wireless_gateway_task_definition_id
     }
     /// <p>The status of the request.</p>
@@ -72,10 +62,7 @@ impl CreateWirelessGatewayTaskOutputBuilder {
         self
     }
     /// <p>The status of the request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessGatewayTaskStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WirelessGatewayTaskStatus>) -> Self {
         self.status = input;
         self
     }
@@ -93,9 +80,7 @@ impl CreateWirelessGatewayTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateWirelessGatewayTaskOutput`](crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskOutput {
+    pub fn build(self) -> crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskOutput {
         crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskOutput {
             wireless_gateway_task_definition_id: self.wireless_gateway_task_definition_id,
             status: self.status,

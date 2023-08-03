@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ImportCertificateOutput {
 }
 impl ImportCertificateOutput {
     /// Creates a new builder-style object to manufacture [`ImportCertificateOutput`](crate::operation::import_certificate::ImportCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::import_certificate::builders::ImportCertificateOutputBuilder {
+    pub fn builder() -> crate::operation::import_certificate::builders::ImportCertificateOutputBuilder {
         crate::operation::import_certificate::builders::ImportCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportCertificateOutput`](crate::operation::import_certificate::ImportCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportCertificateOutputBuilder {
     pub(crate) certificate: ::std::option::Option<crate::types::Certificate>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl ImportCertificateOutputBuilder {
         self
     }
     /// <p>The certificate to be uploaded.</p>
-    pub fn set_certificate(
-        mut self,
-        input: ::std::option::Option<crate::types::Certificate>,
-    ) -> Self {
+    pub fn set_certificate(mut self, input: ::std::option::Option<crate::types::Certificate>) -> Self {
         self.certificate = input;
         self
     }

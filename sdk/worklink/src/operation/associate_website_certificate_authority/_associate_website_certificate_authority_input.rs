@@ -29,16 +29,14 @@ impl AssociateWebsiteCertificateAuthorityInput {
 }
 impl AssociateWebsiteCertificateAuthorityInput {
     /// Creates a new builder-style object to manufacture [`AssociateWebsiteCertificateAuthorityInput`](crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityInput).
-    pub fn builder() -> crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityInputBuilder{
+    pub fn builder() -> crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityInputBuilder {
         crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateWebsiteCertificateAuthorityInput`](crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateWebsiteCertificateAuthorityInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
@@ -88,16 +86,18 @@ impl AssociateWebsiteCertificateAuthorityInputBuilder {
         &self.display_name
     }
     /// Consumes the builder and constructs a [`AssociateWebsiteCertificateAuthorityInput`](crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityInput {
-                fleet_arn: self.fleet_arn
-                ,
-                certificate: self.certificate
-                ,
-                display_name: self.display_name
-                ,
-            }
+                fleet_arn: self.fleet_arn,
+                certificate: self.certificate,
+                display_name: self.display_name,
+            },
         )
     }
 }

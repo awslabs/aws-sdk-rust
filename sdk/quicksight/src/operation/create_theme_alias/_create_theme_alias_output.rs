@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateThemeAliasOutput {
 }
 impl CreateThemeAliasOutput {
     /// Creates a new builder-style object to manufacture [`CreateThemeAliasOutput`](crate::operation::create_theme_alias::CreateThemeAliasOutput).
-    pub fn builder() -> crate::operation::create_theme_alias::builders::CreateThemeAliasOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_theme_alias::builders::CreateThemeAliasOutputBuilder {
         crate::operation::create_theme_alias::builders::CreateThemeAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateThemeAliasOutput`](crate::operation::create_theme_alias::CreateThemeAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateThemeAliasOutputBuilder {
     pub(crate) theme_alias: ::std::option::Option<crate::types::ThemeAlias>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -59,10 +56,7 @@ impl CreateThemeAliasOutputBuilder {
         self
     }
     /// <p>Information about the theme alias.</p>
-    pub fn set_theme_alias(
-        mut self,
-        input: ::std::option::Option<crate::types::ThemeAlias>,
-    ) -> Self {
+    pub fn set_theme_alias(mut self, input: ::std::option::Option<crate::types::ThemeAlias>) -> Self {
         self.theme_alias = input;
         self
     }

@@ -29,17 +29,14 @@ impl DeletePackageVersionInput {
 }
 impl DeletePackageVersionInput {
     /// Creates a new builder-style object to manufacture [`DeletePackageVersionInput`](crate::operation::delete_package_version::DeletePackageVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_package_version::builders::DeletePackageVersionInputBuilder {
+    pub fn builder() -> crate::operation::delete_package_version::builders::DeletePackageVersionInputBuilder {
         crate::operation::delete_package_version::builders::DeletePackageVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePackageVersionInput`](crate::operation::delete_package_version::DeletePackageVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePackageVersionInputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,12 @@ impl DeletePackageVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeletePackageVersionInput`](crate::operation::delete_package_version::DeletePackageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_package_version::DeletePackageVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_package_version::DeletePackageVersionInput {
-                package_name: self.package_name,
-                version_name: self.version_name,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_package_version::DeletePackageVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_package_version::DeletePackageVersionInput {
+            package_name: self.package_name,
+            version_name: self.version_name,
+            client_token: self.client_token,
+        })
     }
 }

@@ -19,9 +19,7 @@ pub struct ParallelismConfigurationUpdate {
 }
 impl ParallelismConfigurationUpdate {
     /// <p>Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics service, or if a custom parallelism is used. You must set this property to <code>CUSTOM</code> in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
-    pub fn configuration_type_update(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfigurationType> {
+    pub fn configuration_type_update(&self) -> ::std::option::Option<&crate::types::ConfigurationType> {
         self.configuration_type_update.as_ref()
     }
     /// <p>Describes updates to the initial number of parallel tasks an application can perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the <code>CurrentParallelism</code> value in response to application load. The service can increase <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service will reduce <code>CurrentParallelism</code> down to the <code>Parallelism</code> setting.</p>
@@ -46,9 +44,7 @@ impl ParallelismConfigurationUpdate {
 
 /// A builder for [`ParallelismConfigurationUpdate`](crate::types::ParallelismConfigurationUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParallelismConfigurationUpdateBuilder {
     pub(crate) configuration_type_update: ::std::option::Option<crate::types::ConfigurationType>,
     pub(crate) parallelism_update: ::std::option::Option<i32>,
@@ -62,17 +58,12 @@ impl ParallelismConfigurationUpdateBuilder {
         self
     }
     /// <p>Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics service, or if a custom parallelism is used. You must set this property to <code>CUSTOM</code> in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
-    pub fn set_configuration_type_update(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationType>,
-    ) -> Self {
+    pub fn set_configuration_type_update(mut self, input: ::std::option::Option<crate::types::ConfigurationType>) -> Self {
         self.configuration_type_update = input;
         self
     }
     /// <p>Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics service, or if a custom parallelism is used. You must set this property to <code>CUSTOM</code> in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
-    pub fn get_configuration_type_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationType> {
+    pub fn get_configuration_type_update(&self) -> &::std::option::Option<crate::types::ConfigurationType> {
         &self.configuration_type_update
     }
     /// <p>Describes updates to the initial number of parallel tasks an application can perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the <code>CurrentParallelism</code> value in response to application load. The service can increase <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service will reduce <code>CurrentParallelism</code> down to the <code>Parallelism</code> setting.</p>

@@ -12,25 +12,20 @@ pub struct AnonymousUserDashboardVisualEmbeddingConfiguration {
 impl AnonymousUserDashboardVisualEmbeddingConfiguration {
     /// <p>The visual ID for the visual that you want the user to see. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
     /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
-    pub fn initial_dashboard_visual_id(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DashboardVisualId> {
+    pub fn initial_dashboard_visual_id(&self) -> ::std::option::Option<&crate::types::DashboardVisualId> {
         self.initial_dashboard_visual_id.as_ref()
     }
 }
 impl AnonymousUserDashboardVisualEmbeddingConfiguration {
     /// Creates a new builder-style object to manufacture [`AnonymousUserDashboardVisualEmbeddingConfiguration`](crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration).
-    pub fn builder(
-    ) -> crate::types::builders::AnonymousUserDashboardVisualEmbeddingConfigurationBuilder {
+    pub fn builder() -> crate::types::builders::AnonymousUserDashboardVisualEmbeddingConfigurationBuilder {
         crate::types::builders::AnonymousUserDashboardVisualEmbeddingConfigurationBuilder::default()
     }
 }
 
 /// A builder for [`AnonymousUserDashboardVisualEmbeddingConfiguration`](crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnonymousUserDashboardVisualEmbeddingConfigurationBuilder {
     pub(crate) initial_dashboard_visual_id: ::std::option::Option<crate::types::DashboardVisualId>,
 }
@@ -43,18 +38,13 @@ impl AnonymousUserDashboardVisualEmbeddingConfigurationBuilder {
     }
     /// <p>The visual ID for the visual that you want the user to see. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
     /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
-    pub fn set_initial_dashboard_visual_id(
-        mut self,
-        input: ::std::option::Option<crate::types::DashboardVisualId>,
-    ) -> Self {
+    pub fn set_initial_dashboard_visual_id(mut self, input: ::std::option::Option<crate::types::DashboardVisualId>) -> Self {
         self.initial_dashboard_visual_id = input;
         self
     }
     /// <p>The visual ID for the visual that you want the user to see. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
     /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
-    pub fn get_initial_dashboard_visual_id(
-        &self,
-    ) -> &::std::option::Option<crate::types::DashboardVisualId> {
+    pub fn get_initial_dashboard_visual_id(&self) -> &::std::option::Option<crate::types::DashboardVisualId> {
         &self.initial_dashboard_visual_id
     }
     /// Consumes the builder and constructs a [`AnonymousUserDashboardVisualEmbeddingConfiguration`](crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration).

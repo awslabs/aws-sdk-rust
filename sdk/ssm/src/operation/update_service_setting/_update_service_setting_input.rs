@@ -67,17 +67,14 @@ impl UpdateServiceSettingInput {
 }
 impl UpdateServiceSettingInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceSettingInput`](crate::operation::update_service_setting::UpdateServiceSettingInput).
-    pub fn builder(
-    ) -> crate::operation::update_service_setting::builders::UpdateServiceSettingInputBuilder {
+    pub fn builder() -> crate::operation::update_service_setting::builders::UpdateServiceSettingInputBuilder {
         crate::operation::update_service_setting::builders::UpdateServiceSettingInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServiceSettingInput`](crate::operation::update_service_setting::UpdateServiceSettingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceSettingInputBuilder {
     pub(crate) setting_id: ::std::option::Option<::std::string::String>,
     pub(crate) setting_value: ::std::option::Option<::std::string::String>,
@@ -144,10 +141,7 @@ impl UpdateServiceSettingInputBuilder {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
     /// </ul>
-    pub fn setting_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn setting_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.setting_value = ::std::option::Option::Some(input.into());
         self
     }
@@ -162,10 +156,7 @@ impl UpdateServiceSettingInputBuilder {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
     /// </ul>
-    pub fn set_setting_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_setting_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.setting_value = input;
         self
     }
@@ -186,15 +177,11 @@ impl UpdateServiceSettingInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServiceSettingInput`](crate::operation::update_service_setting::UpdateServiceSettingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_setting::UpdateServiceSettingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_service_setting::UpdateServiceSettingInput {
-                setting_id: self.setting_id,
-                setting_value: self.setting_value,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_service_setting::UpdateServiceSettingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_service_setting::UpdateServiceSettingInput {
+            setting_id: self.setting_id,
+            setting_value: self.setting_value,
+        })
     }
 }

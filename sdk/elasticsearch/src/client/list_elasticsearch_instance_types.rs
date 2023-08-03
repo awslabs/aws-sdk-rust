@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`elasticsearch_instance_types(Option<Vec<EsPartitionInstanceType>>)`](crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesOutput::elasticsearch_instance_types): <p> List of instance types supported by Amazon Elasticsearch service for given <code> <code>ElasticsearchVersion</code> </code> </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesOutput::next_token): <p>In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results. </p>
     /// - On failure, responds with [`SdkError<ListElasticsearchInstanceTypesError>`](crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesError)
-    pub fn list_elasticsearch_instance_types(&self) -> crate::operation::list_elasticsearch_instance_types::builders::ListElasticsearchInstanceTypesFluentBuilder{
+    pub fn list_elasticsearch_instance_types(
+        &self,
+    ) -> crate::operation::list_elasticsearch_instance_types::builders::ListElasticsearchInstanceTypesFluentBuilder {
         crate::operation::list_elasticsearch_instance_types::builders::ListElasticsearchInstanceTypesFluentBuilder::new(self.handle.clone())
     }
 }

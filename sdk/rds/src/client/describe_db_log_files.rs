@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`describe_db_log_files(Option<Vec<DescribeDbLogFilesDetails>>)`](crate::operation::describe_db_log_files::DescribeDbLogFilesOutput::describe_db_log_files): <p>The DB log files returned.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_log_files::DescribeDbLogFilesOutput::marker): <p>A pagination token that can be used in a later <code>DescribeDBLogFiles</code> request.</p>
     /// - On failure, responds with [`SdkError<DescribeDBLogFilesError>`](crate::operation::describe_db_log_files::DescribeDBLogFilesError)
-    pub fn describe_db_log_files(
-        &self,
-    ) -> crate::operation::describe_db_log_files::builders::DescribeDBLogFilesFluentBuilder {
-        crate::operation::describe_db_log_files::builders::DescribeDBLogFilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_db_log_files(&self) -> crate::operation::describe_db_log_files::builders::DescribeDBLogFilesFluentBuilder {
+        crate::operation::describe_db_log_files::builders::DescribeDBLogFilesFluentBuilder::new(self.handle.clone())
     }
 }

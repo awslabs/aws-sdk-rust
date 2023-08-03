@@ -32,9 +32,7 @@ impl DescribeMaintenanceWindowScheduleInput {
         self.targets.as_deref()
     }
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
-    pub fn resource_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MaintenanceWindowResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Filters used to limit the range of results. For example, you can limit maintenance window executions to only those scheduled before or after a certain date and time.</p>
@@ -52,22 +50,19 @@ impl DescribeMaintenanceWindowScheduleInput {
 }
 impl DescribeMaintenanceWindowScheduleInput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowScheduleInput`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleInput).
-    pub fn builder() -> crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleInputBuilder{
+    pub fn builder() -> crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleInputBuilder {
         crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMaintenanceWindowScheduleInput`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowScheduleInputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     pub(crate) resource_type: ::std::option::Option<crate::types::MaintenanceWindowResourceType>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -98,10 +93,7 @@ impl DescribeMaintenanceWindowScheduleInputBuilder {
         self
     }
     /// <p>The managed node ID or key-value pair to retrieve information about.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -115,17 +107,12 @@ impl DescribeMaintenanceWindowScheduleInputBuilder {
         self
     }
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::MaintenanceWindowResourceType> {
         &self.resource_type
     }
     /// Appends an item to `filters`.
@@ -140,17 +127,12 @@ impl DescribeMaintenanceWindowScheduleInputBuilder {
         self
     }
     /// <p>Filters used to limit the range of results. For example, you can limit maintenance window executions to only those scheduled before or after a certain date and time.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Filters used to limit the range of results. For example, you can limit maintenance window executions to only those scheduled before or after a certain date and time.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -182,22 +164,21 @@ impl DescribeMaintenanceWindowScheduleInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowScheduleInput`](crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleInput {
-                window_id: self.window_id
-                ,
-                targets: self.targets
-                ,
-                resource_type: self.resource_type
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                window_id: self.window_id,
+                targets: self.targets,
+                resource_type: self.resource_type,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

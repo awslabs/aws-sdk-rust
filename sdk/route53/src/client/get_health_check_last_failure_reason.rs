@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetHealthCheckLastFailureReasonOutput`](crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput) with field(s):
     ///   - [`health_check_observations(Option<Vec<HealthCheckObservation>>)`](crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput::health_check_observations): <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
     /// - On failure, responds with [`SdkError<GetHealthCheckLastFailureReasonError>`](crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonError)
-    pub fn get_health_check_last_failure_reason(&self) -> crate::operation::get_health_check_last_failure_reason::builders::GetHealthCheckLastFailureReasonFluentBuilder{
+    pub fn get_health_check_last_failure_reason(
+        &self,
+    ) -> crate::operation::get_health_check_last_failure_reason::builders::GetHealthCheckLastFailureReasonFluentBuilder {
         crate::operation::get_health_check_last_failure_reason::builders::GetHealthCheckLastFailureReasonFluentBuilder::new(self.handle.clone())
     }
 }

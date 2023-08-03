@@ -61,13 +61,7 @@
 /// <p>The historical metric names.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HistoricalMetricName {
     #[allow(missing_docs)] // documentation missing in model
@@ -140,13 +134,9 @@ impl ::std::convert::From<&str> for HistoricalMetricName {
             "CONTACTS_MISSED" => HistoricalMetricName::ContactsMissed,
             "CONTACTS_QUEUED" => HistoricalMetricName::ContactsQueued,
             "CONTACTS_TRANSFERRED_IN" => HistoricalMetricName::ContactsTransferredIn,
-            "CONTACTS_TRANSFERRED_IN_FROM_QUEUE" => {
-                HistoricalMetricName::ContactsTransferredInFromQueue
-            }
+            "CONTACTS_TRANSFERRED_IN_FROM_QUEUE" => HistoricalMetricName::ContactsTransferredInFromQueue,
             "CONTACTS_TRANSFERRED_OUT" => HistoricalMetricName::ContactsTransferredOut,
-            "CONTACTS_TRANSFERRED_OUT_FROM_QUEUE" => {
-                HistoricalMetricName::ContactsTransferredOutFromQueue
-            }
+            "CONTACTS_TRANSFERRED_OUT_FROM_QUEUE" => HistoricalMetricName::ContactsTransferredOutFromQueue,
             "HANDLE_TIME" => HistoricalMetricName::HandleTime,
             "HOLD_TIME" => HistoricalMetricName::HoldTime,
             "INTERACTION_AND_HOLD_TIME" => HistoricalMetricName::InteractionAndHoldTime,
@@ -155,9 +145,7 @@ impl ::std::convert::From<&str> for HistoricalMetricName {
             "QUEUED_TIME" => HistoricalMetricName::QueuedTime,
             "QUEUE_ANSWER_TIME" => HistoricalMetricName::QueueAnswerTime,
             "SERVICE_LEVEL" => HistoricalMetricName::ServiceLevel,
-            other => HistoricalMetricName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => HistoricalMetricName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -186,13 +174,9 @@ impl HistoricalMetricName {
             HistoricalMetricName::ContactsMissed => "CONTACTS_MISSED",
             HistoricalMetricName::ContactsQueued => "CONTACTS_QUEUED",
             HistoricalMetricName::ContactsTransferredIn => "CONTACTS_TRANSFERRED_IN",
-            HistoricalMetricName::ContactsTransferredInFromQueue => {
-                "CONTACTS_TRANSFERRED_IN_FROM_QUEUE"
-            }
+            HistoricalMetricName::ContactsTransferredInFromQueue => "CONTACTS_TRANSFERRED_IN_FROM_QUEUE",
             HistoricalMetricName::ContactsTransferredOut => "CONTACTS_TRANSFERRED_OUT",
-            HistoricalMetricName::ContactsTransferredOutFromQueue => {
-                "CONTACTS_TRANSFERRED_OUT_FROM_QUEUE"
-            }
+            HistoricalMetricName::ContactsTransferredOutFromQueue => "CONTACTS_TRANSFERRED_OUT_FROM_QUEUE",
             HistoricalMetricName::HandleTime => "HANDLE_TIME",
             HistoricalMetricName::HoldTime => "HOLD_TIME",
             HistoricalMetricName::InteractionAndHoldTime => "INTERACTION_AND_HOLD_TIME",

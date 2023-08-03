@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`rule(Option<RateBasedRule>)`](crate::operation::create_rate_based_rule::CreateRateBasedRuleOutput::rule): <p>The <code>RateBasedRule</code> that is returned in the <code>CreateRateBasedRule</code> response.</p>
     ///   - [`change_token(Option<String>)`](crate::operation::create_rate_based_rule::CreateRateBasedRuleOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<CreateRateBasedRuleError>`](crate::operation::create_rate_based_rule::CreateRateBasedRuleError)
-    pub fn create_rate_based_rule(
-        &self,
-    ) -> crate::operation::create_rate_based_rule::builders::CreateRateBasedRuleFluentBuilder {
-        crate::operation::create_rate_based_rule::builders::CreateRateBasedRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_rate_based_rule(&self) -> crate::operation::create_rate_based_rule::builders::CreateRateBasedRuleFluentBuilder {
+        crate::operation::create_rate_based_rule::builders::CreateRateBasedRuleFluentBuilder::new(self.handle.clone())
     }
 }

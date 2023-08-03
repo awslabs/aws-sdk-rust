@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`stream_mode_details(StreamModeDetails)`](crate::operation::update_stream_mode::builders::UpdateStreamModeFluentBuilder::stream_mode_details) / [`set_stream_mode_details(Option<StreamModeDetails>)`](crate::operation::update_stream_mode::builders::UpdateStreamModeFluentBuilder::set_stream_mode_details): <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
     /// - On success, responds with [`UpdateStreamModeOutput`](crate::operation::update_stream_mode::UpdateStreamModeOutput)
     /// - On failure, responds with [`SdkError<UpdateStreamModeError>`](crate::operation::update_stream_mode::UpdateStreamModeError)
-    pub fn update_stream_mode(
-        &self,
-    ) -> crate::operation::update_stream_mode::builders::UpdateStreamModeFluentBuilder {
-        crate::operation::update_stream_mode::builders::UpdateStreamModeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_stream_mode(&self) -> crate::operation::update_stream_mode::builders::UpdateStreamModeFluentBuilder {
+        crate::operation::update_stream_mode::builders::UpdateStreamModeFluentBuilder::new(self.handle.clone())
     }
 }

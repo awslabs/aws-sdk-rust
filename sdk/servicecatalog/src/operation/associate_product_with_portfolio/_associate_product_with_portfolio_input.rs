@@ -44,16 +44,14 @@ impl AssociateProductWithPortfolioInput {
 }
 impl AssociateProductWithPortfolioInput {
     /// Creates a new builder-style object to manufacture [`AssociateProductWithPortfolioInput`](crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioInput).
-    pub fn builder() -> crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioInputBuilder{
+    pub fn builder() -> crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioInputBuilder {
         crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateProductWithPortfolioInput`](crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateProductWithPortfolioInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
@@ -66,10 +64,7 @@ impl AssociateProductWithPortfolioInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -78,10 +73,7 @@ impl AssociateProductWithPortfolioInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -122,18 +114,12 @@ impl AssociateProductWithPortfolioInputBuilder {
         &self.portfolio_id
     }
     /// <p>The identifier of the source portfolio.</p>
-    pub fn source_portfolio_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_portfolio_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the source portfolio.</p>
-    pub fn set_source_portfolio_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_portfolio_id = input;
         self
     }
@@ -148,17 +134,11 @@ impl AssociateProductWithPortfolioInputBuilder {
         crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioInput {
-                accept_language: self.accept_language
-                ,
-                product_id: self.product_id
-                ,
-                portfolio_id: self.portfolio_id
-                ,
-                source_portfolio_id: self.source_portfolio_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioInput {
+            accept_language: self.accept_language,
+            product_id: self.product_id,
+            portfolio_id: self.portfolio_id,
+            source_portfolio_id: self.source_portfolio_id,
+        })
     }
 }

@@ -27,27 +27,16 @@ impl CreateDeploymentConfigInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::create_deployment_config::CreateDeploymentConfigInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -56,20 +45,13 @@ impl CreateDeploymentConfigInput {
             fn update_http_builder(
                 input: &crate::operation::create_deployment_config::CreateDeploymentConfigInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
-            builder = ::aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                ::http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = ::aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 ::http::header::HeaderName::from_static("x-amz-target"),
@@ -79,15 +61,11 @@ impl CreateDeploymentConfigInput {
         };
         let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = ::aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_create_deployment_config::ser_create_deployment_config_input(&self)?
-        );
+        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_create_deployment_config::ser_create_deployment_config_input(
+            &self,
+        )?);
         if let ::std::option::Option::Some(content_length) = body.content_length() {
-            request = ::aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                ::http::header::CONTENT_LENGTH,
-                content_length,
-            );
+            request = ::aws_smithy_http::header::set_request_header_if_absent(request, ::http::header::CONTENT_LENGTH, content_length);
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -99,10 +77,8 @@ impl CreateDeploymentConfigInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
@@ -111,29 +87,16 @@ impl CreateDeploymentConfigInput {
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::create_deployment_config::CreateDeploymentConfig::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "CreateDeploymentConfig",
-            "codedeploy",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::create_deployment_config::CreateDeploymentConfig::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("CreateDeploymentConfig", "codedeploy"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -179,37 +142,25 @@ pub type CreateDeploymentConfigErrorKind = CreateDeploymentConfigError;
 #[derive(::std::fmt::Debug)]
 pub enum CreateDeploymentConfigError {
     /// <p>A deployment configuration with the specified name with the IAM user or Amazon Web Services account already exists.</p>
-    DeploymentConfigAlreadyExistsException(
-        crate::types::error::DeploymentConfigAlreadyExistsException,
-    ),
+    DeploymentConfigAlreadyExistsException(crate::types::error::DeploymentConfigAlreadyExistsException),
     /// <p>The deployment configurations limit was exceeded.</p>
-    DeploymentConfigLimitExceededException(
-        crate::types::error::DeploymentConfigLimitExceededException,
-    ),
+    DeploymentConfigLimitExceededException(crate::types::error::DeploymentConfigLimitExceededException),
     /// <p>The deployment configuration name was not specified.</p>
-    DeploymentConfigNameRequiredException(
-        crate::types::error::DeploymentConfigNameRequiredException,
-    ),
+    DeploymentConfigNameRequiredException(crate::types::error::DeploymentConfigNameRequiredException),
     /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
     InvalidComputePlatformException(crate::types::error::InvalidComputePlatformException),
     /// <p>The deployment configuration name was specified in an invalid format.</p>
     InvalidDeploymentConfigNameException(crate::types::error::InvalidDeploymentConfigNameException),
     /// <p>The minimum healthy instance value was specified in an invalid format.</p>
-    InvalidMinimumHealthyHostValueException(
-        crate::types::error::InvalidMinimumHealthyHostValueException,
-    ),
+    InvalidMinimumHealthyHostValueException(crate::types::error::InvalidMinimumHealthyHostValueException),
     /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
-    InvalidTrafficRoutingConfigurationException(
-        crate::types::error::InvalidTrafficRoutingConfigurationException,
-    ),
+    InvalidTrafficRoutingConfigurationException(crate::types::error::InvalidTrafficRoutingConfigurationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for CreateDeploymentConfigError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -236,36 +187,18 @@ impl ::std::fmt::Display for CreateDeploymentConfigError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDeploymentConfigError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::DeploymentConfigAlreadyExistsException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::DeploymentConfigLimitExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::DeploymentConfigNameRequiredException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidComputePlatformException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidDeploymentConfigNameException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidMinimumHealthyHostValueException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidTrafficRoutingConfigurationException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::DeploymentConfigAlreadyExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DeploymentConfigLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DeploymentConfigNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidComputePlatformException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDeploymentConfigNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidMinimumHealthyHostValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTrafficRoutingConfigurationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::create_deployment_config::CreateDeploymentConfigError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::create_deployment_config::CreateDeploymentConfigError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -281,27 +214,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateDeploymentConfigError
 impl CreateDeploymentConfigError {
     /// Creates the `CreateDeploymentConfigError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `CreateDeploymentConfigError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,
@@ -352,25 +272,13 @@ impl CreateDeploymentConfigError {
 impl ::std::error::Error for CreateDeploymentConfigError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::DeploymentConfigAlreadyExistsException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::DeploymentConfigLimitExceededException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::DeploymentConfigNameRequiredException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::DeploymentConfigAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DeploymentConfigLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DeploymentConfigNameRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidComputePlatformException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidDeploymentConfigNameException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::InvalidMinimumHealthyHostValueException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
-            Self::InvalidTrafficRoutingConfigurationException(_inner) => {
-                ::std::option::Option::Some(_inner)
-            }
+            Self::InvalidDeploymentConfigNameException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidMinimumHealthyHostValueException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidTrafficRoutingConfigurationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }

@@ -37,9 +37,7 @@ impl FlowTemplateDescription {
 
 /// A builder for [`FlowTemplateDescription`](crate::types::FlowTemplateDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FlowTemplateDescriptionBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::FlowTemplateSummary>,
     pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,
@@ -52,10 +50,7 @@ impl FlowTemplateDescriptionBuilder {
         self
     }
     /// <p>An object that contains summary information about a workflow.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::FlowTemplateSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::FlowTemplateSummary>) -> Self {
         self.summary = input;
         self
     }
@@ -69,10 +64,7 @@ impl FlowTemplateDescriptionBuilder {
         self
     }
     /// <p>A workflow's definition document.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DefinitionDocument>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
         self.definition = input;
         self
     }

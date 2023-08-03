@@ -31,19 +31,14 @@ pub fn ser_put_template_action_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = object_9.key(key_10.as_str()).start_object();
-                crate::protocol_serde::shape_ssm_external_parameter::ser_ssm_external_parameter(
-                    &mut object_12,
-                    value_11,
-                )?;
+                crate::protocol_serde::shape_ssm_external_parameter::ser_ssm_external_parameter(&mut object_12, value_11)?;
                 object_12.finish();
             }
         }
         object_9.finish();
     }
     if let Some(var_13) = &input.launch_configuration_template_id {
-        object
-            .key("launchConfigurationTemplateID")
-            .string(var_13.as_str());
+        object.key("launchConfigurationTemplateID").string(var_13.as_str());
     }
     if let Some(var_14) = &input.must_succeed_for_cutover {
         object.key("mustSucceedForCutover").boolean(*var_14);

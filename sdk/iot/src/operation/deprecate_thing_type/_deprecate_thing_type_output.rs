@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for DeprecateThingTypeOutput {
 }
 impl DeprecateThingTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeprecateThingTypeOutput`](crate::operation::deprecate_thing_type::DeprecateThingTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::deprecate_thing_type::builders::DeprecateThingTypeOutputBuilder {
+    pub fn builder() -> crate::operation::deprecate_thing_type::builders::DeprecateThingTypeOutputBuilder {
         crate::operation::deprecate_thing_type::builders::DeprecateThingTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeprecateThingTypeOutput`](crate::operation::deprecate_thing_type::DeprecateThingTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeprecateThingTypeOutputBuilder {
     _request_id: Option<String>,
 }

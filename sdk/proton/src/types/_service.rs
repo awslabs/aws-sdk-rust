@@ -186,18 +186,12 @@ impl ServiceBuilder {
         &self.arn
     }
     /// <p>The name of the service template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -211,10 +205,7 @@ impl ServiceBuilder {
         self
     }
     /// <p>The time when the service was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -228,10 +219,7 @@ impl ServiceBuilder {
         self
     }
     /// <p>The time when the service was last modified.</p>
-    pub fn set_last_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_at = input;
         self
     }
@@ -254,18 +242,12 @@ impl ServiceBuilder {
         &self.status
     }
     /// <p>A service status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A service status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -293,10 +275,7 @@ impl ServiceBuilder {
         self
     }
     /// <p>The service pipeline detail data.</p>
-    pub fn set_pipeline(
-        mut self,
-        input: ::std::option::Option<crate::types::ServicePipeline>,
-    ) -> Self {
+    pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::ServicePipeline>) -> Self {
         self.pipeline = input;
         self
     }
@@ -305,18 +284,12 @@ impl ServiceBuilder {
         &self.pipeline
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
-    pub fn repository_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_repository_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_connection_arn = input;
         self
     }
@@ -325,18 +298,12 @@ impl ServiceBuilder {
         &self.repository_connection_arn
     }
     /// <p>The ID of the source code repository.</p>
-    pub fn repository_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the source code repository.</p>
-    pub fn set_repository_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_id = input;
         self
     }

@@ -15,16 +15,14 @@ impl DescribeAvailabilityMonitorTestInput {
 }
 impl DescribeAvailabilityMonitorTestInput {
     /// Creates a new builder-style object to manufacture [`DescribeAvailabilityMonitorTestInput`](crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestInput).
-    pub fn builder() -> crate::operation::describe_availability_monitor_test::builders::DescribeAvailabilityMonitorTestInputBuilder{
+    pub fn builder() -> crate::operation::describe_availability_monitor_test::builders::DescribeAvailabilityMonitorTestInputBuilder {
         crate::operation::describe_availability_monitor_test::builders::DescribeAvailabilityMonitorTestInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAvailabilityMonitorTestInput`](crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAvailabilityMonitorTestInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
@@ -52,9 +50,8 @@ impl DescribeAvailabilityMonitorTestInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestInput {
-                gateway_arn: self.gateway_arn
-                ,
-            }
+                gateway_arn: self.gateway_arn,
+            },
         )
     }
 }

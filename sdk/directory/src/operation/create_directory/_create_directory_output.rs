@@ -29,9 +29,7 @@ impl CreateDirectoryOutput {
 
 /// A builder for [`CreateDirectoryOutput`](crate::operation::create_directory::CreateDirectoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDirectoryOutputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

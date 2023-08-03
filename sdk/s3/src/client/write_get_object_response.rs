@@ -45,10 +45,7 @@ impl super::Client {
     ///   - [`bucket_key_enabled(bool)`](crate::operation::write_get_object_response::builders::WriteGetObjectResponseFluentBuilder::bucket_key_enabled) / [`set_bucket_key_enabled(Option<bool>)`](crate::operation::write_get_object_response::builders::WriteGetObjectResponseFluentBuilder::set_bucket_key_enabled): <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     /// - On success, responds with [`WriteGetObjectResponseOutput`](crate::operation::write_get_object_response::WriteGetObjectResponseOutput)
     /// - On failure, responds with [`SdkError<WriteGetObjectResponseError>`](crate::operation::write_get_object_response::WriteGetObjectResponseError)
-    pub fn write_get_object_response(
-        &self,
-    ) -> crate::operation::write_get_object_response::builders::WriteGetObjectResponseFluentBuilder
-    {
+    pub fn write_get_object_response(&self) -> crate::operation::write_get_object_response::builders::WriteGetObjectResponseFluentBuilder {
         crate::operation::write_get_object_response::builders::WriteGetObjectResponseFluentBuilder::new(self.handle.clone())
     }
 }

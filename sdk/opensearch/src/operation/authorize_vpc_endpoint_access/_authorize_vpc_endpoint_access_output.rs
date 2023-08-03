@@ -10,9 +10,7 @@ pub struct AuthorizeVpcEndpointAccessOutput {
 }
 impl AuthorizeVpcEndpointAccessOutput {
     /// <p>Information about the Amazon Web Services account or service that was provided access to the domain.</p>
-    pub fn authorized_principal(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AuthorizedPrincipal> {
+    pub fn authorized_principal(&self) -> ::std::option::Option<&crate::types::AuthorizedPrincipal> {
         self.authorized_principal.as_ref()
     }
 }
@@ -23,16 +21,14 @@ impl ::aws_http::request_id::RequestId for AuthorizeVpcEndpointAccessOutput {
 }
 impl AuthorizeVpcEndpointAccessOutput {
     /// Creates a new builder-style object to manufacture [`AuthorizeVpcEndpointAccessOutput`](crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessOutput).
-    pub fn builder() -> crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessOutputBuilder{
+    pub fn builder() -> crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessOutputBuilder {
         crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`AuthorizeVpcEndpointAccessOutput`](crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizeVpcEndpointAccessOutputBuilder {
     pub(crate) authorized_principal: ::std::option::Option<crate::types::AuthorizedPrincipal>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl AuthorizeVpcEndpointAccessOutputBuilder {
         self
     }
     /// <p>Information about the Amazon Web Services account or service that was provided access to the domain.</p>
-    pub fn set_authorized_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizedPrincipal>,
-    ) -> Self {
+    pub fn set_authorized_principal(mut self, input: ::std::option::Option<crate::types::AuthorizedPrincipal>) -> Self {
         self.authorized_principal = input;
         self
     }
     /// <p>Information about the Amazon Web Services account or service that was provided access to the domain.</p>
-    pub fn get_authorized_principal(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthorizedPrincipal> {
+    pub fn get_authorized_principal(&self) -> &::std::option::Option<crate::types::AuthorizedPrincipal> {
         &self.authorized_principal
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl AuthorizeVpcEndpointAccessOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AuthorizeVpcEndpointAccessOutput`](crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessOutput {
+    pub fn build(self) -> crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessOutput {
         crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessOutput {
             authorized_principal: self.authorized_principal,
             _request_id: self._request_id,

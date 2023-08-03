@@ -26,8 +26,7 @@ impl UpdatePipelineExecutionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePipelineExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_pipeline_execution::builders::UpdatePipelineExecutionInputBuilder,
+    inner: crate::operation::update_pipeline_execution::builders::UpdatePipelineExecutionInputBuilder,
 }
 impl UpdatePipelineExecutionFluentBuilder {
     /// Creates a new `UpdatePipelineExecution`.
@@ -38,10 +37,7 @@ impl UpdatePipelineExecutionFluentBuilder {
         }
     }
     /// Access the UpdatePipelineExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_pipeline_execution::builders::UpdatePipelineExecutionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_pipeline_execution::builders::UpdatePipelineExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdatePipelineExecutionFluentBuilder {
             crate::operation::update_pipeline_execution::UpdatePipelineExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pipeline_execution::UpdatePipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline_execution::UpdatePipelineExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdatePipelineExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdatePipelineExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pipeline_execution::UpdatePipelineExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pipeline_execution::UpdatePipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline_execution::UpdatePipelineExecutionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdatePipelineExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pipeline_execution::UpdatePipelineExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pipeline_execution::UpdatePipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline_execution::UpdatePipelineExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl UpdatePipelineExecutionFluentBuilder {
             crate::operation::update_pipeline_execution::UpdatePipelineExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pipeline_execution::UpdatePipelineExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline_execution::UpdatePipelineExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_execution_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn set_pipeline_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_execution_arn(input);
         self
     }
@@ -145,69 +124,45 @@ impl UpdatePipelineExecutionFluentBuilder {
         self.inner.get_pipeline_execution_arn()
     }
     /// <p>The description of the pipeline execution.</p>
-    pub fn pipeline_execution_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_execution_description(input.into());
         self
     }
     /// <p>The description of the pipeline execution.</p>
-    pub fn set_pipeline_execution_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_execution_description(input);
         self
     }
     /// <p>The description of the pipeline execution.</p>
-    pub fn get_pipeline_execution_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_pipeline_execution_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pipeline_execution_description()
     }
     /// <p>The display name of the pipeline execution.</p>
-    pub fn pipeline_execution_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_execution_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_execution_display_name(input.into());
         self
     }
     /// <p>The display name of the pipeline execution.</p>
-    pub fn set_pipeline_execution_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_execution_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_execution_display_name(input);
         self
     }
     /// <p>The display name of the pipeline execution.</p>
-    pub fn get_pipeline_execution_display_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_pipeline_execution_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pipeline_execution_display_name()
     }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
-    pub fn parallelism_configuration(
-        mut self,
-        input: crate::types::ParallelismConfiguration,
-    ) -> Self {
+    pub fn parallelism_configuration(mut self, input: crate::types::ParallelismConfiguration) -> Self {
         self.inner = self.inner.parallelism_configuration(input);
         self
     }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
-    pub fn set_parallelism_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelismConfiguration>,
-    ) -> Self {
+    pub fn set_parallelism_configuration(mut self, input: ::std::option::Option<crate::types::ParallelismConfiguration>) -> Self {
         self.inner = self.inner.set_parallelism_configuration(input);
         self
     }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
-    pub fn get_parallelism_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
+    pub fn get_parallelism_configuration(&self) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
         self.inner.get_parallelism_configuration()
     }
 }

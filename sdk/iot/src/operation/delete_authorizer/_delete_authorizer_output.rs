@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAuthorizerOutput {
 }
 impl DeleteAuthorizerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAuthorizerOutput`](crate::operation::delete_authorizer::DeleteAuthorizerOutput).
-    pub fn builder() -> crate::operation::delete_authorizer::builders::DeleteAuthorizerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_authorizer::builders::DeleteAuthorizerOutputBuilder {
         crate::operation::delete_authorizer::builders::DeleteAuthorizerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAuthorizerOutput`](crate::operation::delete_authorizer::DeleteAuthorizerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAuthorizerOutputBuilder {
     _request_id: Option<String>,
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`deployment_groups(Option<Vec<String>>)`](crate::operation::list_deployment_groups::ListDeploymentGroupsOutput::deployment_groups): <p>A list of deployment group names.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_deployment_groups::ListDeploymentGroupsOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
     /// - On failure, responds with [`SdkError<ListDeploymentGroupsError>`](crate::operation::list_deployment_groups::ListDeploymentGroupsError)
-    pub fn list_deployment_groups(
-        &self,
-    ) -> crate::operation::list_deployment_groups::builders::ListDeploymentGroupsFluentBuilder {
-        crate::operation::list_deployment_groups::builders::ListDeploymentGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_deployment_groups(&self) -> crate::operation::list_deployment_groups::builders::ListDeploymentGroupsFluentBuilder {
+        crate::operation::list_deployment_groups::builders::ListDeploymentGroupsFluentBuilder::new(self.handle.clone())
     }
 }

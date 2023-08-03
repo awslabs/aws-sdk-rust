@@ -37,9 +37,7 @@ impl SimpleRuleEvaluation {
 
 /// A builder for [`SimpleRuleEvaluation`](crate::types::SimpleRuleEvaluation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SimpleRuleEvaluationBuilder {
     pub(crate) input_property_value: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<crate::types::ComparisonOperator>,
@@ -47,18 +45,12 @@ pub struct SimpleRuleEvaluationBuilder {
 }
 impl SimpleRuleEvaluationBuilder {
     /// <p>The value of the input property, on the left side of the comparison operator.</p>
-    pub fn input_property_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_property_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_property_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the input property, on the left side of the comparison operator.</p>
-    pub fn set_input_property_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_property_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_property_value = input;
         self
     }
@@ -72,10 +64,7 @@ impl SimpleRuleEvaluationBuilder {
         self
     }
     /// <p>The comparison operator.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.operator = input;
         self
     }
@@ -84,18 +73,12 @@ impl SimpleRuleEvaluationBuilder {
         &self.operator
     }
     /// <p>The threshold value, on the right side of the comparison operator.</p>
-    pub fn threshold_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn threshold_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.threshold_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The threshold value, on the right side of the comparison operator.</p>
-    pub fn set_threshold_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_threshold_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.threshold_value = input;
         self
     }

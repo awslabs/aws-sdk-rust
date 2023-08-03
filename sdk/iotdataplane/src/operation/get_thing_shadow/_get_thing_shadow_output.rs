@@ -29,9 +29,7 @@ impl GetThingShadowOutput {
 
 /// A builder for [`GetThingShadowOutput`](crate::operation::get_thing_shadow::GetThingShadowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetThingShadowOutputBuilder {
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,

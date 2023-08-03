@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_archive_rule::builders::DeleteArchiveRuleFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_archive_rule::builders::DeleteArchiveRuleFluentBuilder::set_client_token): <p>A client token.</p>
     /// - On success, responds with [`DeleteArchiveRuleOutput`](crate::operation::delete_archive_rule::DeleteArchiveRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteArchiveRuleError>`](crate::operation::delete_archive_rule::DeleteArchiveRuleError)
-    pub fn delete_archive_rule(
-        &self,
-    ) -> crate::operation::delete_archive_rule::builders::DeleteArchiveRuleFluentBuilder {
-        crate::operation::delete_archive_rule::builders::DeleteArchiveRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_archive_rule(&self) -> crate::operation::delete_archive_rule::builders::DeleteArchiveRuleFluentBuilder {
+        crate::operation::delete_archive_rule::builders::DeleteArchiveRuleFluentBuilder::new(self.handle.clone())
     }
 }

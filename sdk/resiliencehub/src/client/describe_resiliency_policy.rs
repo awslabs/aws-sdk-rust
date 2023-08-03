@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeResiliencyPolicyOutput`](crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyOutput) with field(s):
     ///   - [`policy(Option<ResiliencyPolicy>)`](crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyOutput::policy): <p>Information about the specific resiliency policy, returned as an object. This object includes creation time, data location constraints, its name, description, tags, the recovery time objective (RTO) and recovery point objective (RPO) in seconds, and more.</p>
     /// - On failure, responds with [`SdkError<DescribeResiliencyPolicyError>`](crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyError)
-    pub fn describe_resiliency_policy(
-        &self,
-    ) -> crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyFluentBuilder
-    {
+    pub fn describe_resiliency_policy(&self) -> crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyFluentBuilder {
         crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyFluentBuilder::new(self.handle.clone())
     }
 }

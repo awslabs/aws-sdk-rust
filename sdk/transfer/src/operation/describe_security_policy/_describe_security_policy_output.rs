@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeSecurityPolicyOutput {
 }
 impl DescribeSecurityPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityPolicyOutput`](crate::operation::describe_security_policy::DescribeSecurityPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_security_policy::builders::DescribeSecurityPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_security_policy::builders::DescribeSecurityPolicyOutputBuilder {
         crate::operation::describe_security_policy::builders::DescribeSecurityPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSecurityPolicyOutput`](crate::operation::describe_security_policy::DescribeSecurityPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSecurityPolicyOutputBuilder {
     pub(crate) security_policy: ::std::option::Option<crate::types::DescribedSecurityPolicy>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl DescribeSecurityPolicyOutputBuilder {
         self
     }
     /// <p>An array containing the properties of the security policy.</p>
-    pub fn set_security_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribedSecurityPolicy>,
-    ) -> Self {
+    pub fn set_security_policy(mut self, input: ::std::option::Option<crate::types::DescribedSecurityPolicy>) -> Self {
         self.security_policy = input;
         self
     }
     /// <p>An array containing the properties of the security policy.</p>
-    pub fn get_security_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::DescribedSecurityPolicy> {
+    pub fn get_security_policy(&self) -> &::std::option::Option<crate::types::DescribedSecurityPolicy> {
         &self.security_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

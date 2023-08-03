@@ -29,18 +29,14 @@ impl UpdateContactScheduleInput {
 }
 impl UpdateContactScheduleInput {
     /// Creates a new builder-style object to manufacture [`UpdateContactScheduleInput`](crate::operation::update_contact_schedule::UpdateContactScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::update_contact_schedule::builders::UpdateContactScheduleInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_contact_schedule::builders::UpdateContactScheduleInputBuilder {
         crate::operation::update_contact_schedule::builders::UpdateContactScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContactScheduleInput`](crate::operation::update_contact_schedule::UpdateContactScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContactScheduleInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_id: ::std::option::Option<::std::string::String>,
@@ -81,10 +77,7 @@ impl UpdateContactScheduleInputBuilder {
         self
     }
     /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
-    pub fn set_scheduled_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.scheduled_time = input;
         self
     }
@@ -95,16 +88,12 @@ impl UpdateContactScheduleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateContactScheduleInput`](crate::operation::update_contact_schedule::UpdateContactScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_contact_schedule::UpdateContactScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_contact_schedule::UpdateContactScheduleInput {
-                instance_id: self.instance_id,
-                contact_id: self.contact_id,
-                scheduled_time: self.scheduled_time,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_contact_schedule::UpdateContactScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_contact_schedule::UpdateContactScheduleInput {
+            instance_id: self.instance_id,
+            contact_id: self.contact_id,
+            scheduled_time: self.scheduled_time,
+        })
     }
 }

@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateActionOutput`](crate::operation::create_action::CreateActionOutput) with field(s):
     ///   - [`action_arn(Option<String>)`](crate::operation::create_action::CreateActionOutput::action_arn): <p>The Amazon Resource Name (ARN) of the action.</p>
     /// - On failure, responds with [`SdkError<CreateActionError>`](crate::operation::create_action::CreateActionError)
-    pub fn create_action(
-        &self,
-    ) -> crate::operation::create_action::builders::CreateActionFluentBuilder {
-        crate::operation::create_action::builders::CreateActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_action(&self) -> crate::operation::create_action::builders::CreateActionFluentBuilder {
+        crate::operation::create_action::builders::CreateActionFluentBuilder::new(self.handle.clone())
     }
 }

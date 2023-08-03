@@ -28,15 +28,11 @@ pub struct FeaturizationMethod {
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
     #[doc(hidden)]
-    pub featurization_method_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub featurization_method_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FeaturizationMethod {
     /// <p>The name of the method. The "filling" method is the only supported method.</p>
-    pub fn featurization_method_name(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FeaturizationMethodName> {
+    pub fn featurization_method_name(&self) -> ::std::option::Option<&crate::types::FeaturizationMethodName> {
         self.featurization_method_name.as_ref()
     }
     /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
@@ -56,9 +52,7 @@ impl FeaturizationMethod {
     /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
     pub fn featurization_method_parameters(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.featurization_method_parameters.as_ref()
     }
 }
@@ -71,37 +65,24 @@ impl FeaturizationMethod {
 
 /// A builder for [`FeaturizationMethod`](crate::types::FeaturizationMethod).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FeaturizationMethodBuilder {
-    pub(crate) featurization_method_name:
-        ::std::option::Option<crate::types::FeaturizationMethodName>,
-    pub(crate) featurization_method_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) featurization_method_name: ::std::option::Option<crate::types::FeaturizationMethodName>,
+    pub(crate) featurization_method_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FeaturizationMethodBuilder {
     /// <p>The name of the method. The "filling" method is the only supported method.</p>
-    pub fn featurization_method_name(
-        mut self,
-        input: crate::types::FeaturizationMethodName,
-    ) -> Self {
+    pub fn featurization_method_name(mut self, input: crate::types::FeaturizationMethodName) -> Self {
         self.featurization_method_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the method. The "filling" method is the only supported method.</p>
-    pub fn set_featurization_method_name(
-        mut self,
-        input: ::std::option::Option<crate::types::FeaturizationMethodName>,
-    ) -> Self {
+    pub fn set_featurization_method_name(mut self, input: ::std::option::Option<crate::types::FeaturizationMethodName>) -> Self {
         self.featurization_method_name = input;
         self
     }
     /// <p>The name of the method. The "filling" method is the only supported method.</p>
-    pub fn get_featurization_method_name(
-        &self,
-    ) -> &::std::option::Option<crate::types::FeaturizationMethodName> {
+    pub fn get_featurization_method_name(&self) -> &::std::option::Option<crate::types::FeaturizationMethodName> {
         &self.featurization_method_name
     }
     /// Adds a key-value pair to `featurization_method_parameters`.
@@ -150,9 +131,7 @@ impl FeaturizationMethodBuilder {
     /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
     pub fn set_featurization_method_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.featurization_method_parameters = input;
         self
@@ -174,9 +153,7 @@ impl FeaturizationMethodBuilder {
     /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
     pub fn get_featurization_method_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.featurization_method_parameters
     }
     /// Consumes the builder and constructs a [`FeaturizationMethod`](crate::types::FeaturizationMethod).

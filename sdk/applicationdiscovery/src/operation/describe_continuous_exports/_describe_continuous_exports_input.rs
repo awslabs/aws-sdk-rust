@@ -29,16 +29,14 @@ impl DescribeContinuousExportsInput {
 }
 impl DescribeContinuousExportsInput {
     /// Creates a new builder-style object to manufacture [`DescribeContinuousExportsInput`](crate::operation::describe_continuous_exports::DescribeContinuousExportsInput).
-    pub fn builder() -> crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsInputBuilder{
+    pub fn builder() -> crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsInputBuilder {
         crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeContinuousExportsInput`](crate::operation::describe_continuous_exports::DescribeContinuousExportsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeContinuousExportsInputBuilder {
     pub(crate) export_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -57,10 +55,7 @@ impl DescribeContinuousExportsInputBuilder {
         self
     }
     /// <p>The unique IDs assigned to the exports.</p>
-    pub fn set_export_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_export_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.export_ids = input;
         self
     }
@@ -103,12 +98,10 @@ impl DescribeContinuousExportsInputBuilder {
         crate::operation::describe_continuous_exports::DescribeContinuousExportsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_continuous_exports::DescribeContinuousExportsInput {
-                export_ids: self.export_ids,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_continuous_exports::DescribeContinuousExportsInput {
+            export_ids: self.export_ids,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

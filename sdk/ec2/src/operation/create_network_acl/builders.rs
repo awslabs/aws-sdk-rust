@@ -10,10 +10,7 @@ impl CreateNetworkAclInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_network_acl::CreateNetworkAclOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_acl::CreateNetworkAclError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_acl::CreateNetworkAclError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_network_acl();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateNetworkAclFluentBuilder {
         }
     }
     /// Access the CreateNetworkAcl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_network_acl::builders::CreateNetworkAclInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_network_acl::builders::CreateNetworkAclInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateNetworkAclFluentBuilder {
             crate::operation::create_network_acl::CreateNetworkAcl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_acl::CreateNetworkAclError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_acl::CreateNetworkAclError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateNetworkAclFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateNetworkAclFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_network_acl::CreateNetworkAclOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_acl::CreateNetworkAclError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_acl::CreateNetworkAclError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateNetworkAclFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_network_acl::CreateNetworkAclOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_acl::CreateNetworkAclError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_acl::CreateNetworkAclError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateNetworkAclFluentBuilder {
             crate::operation::create_network_acl::CreateNetworkAcl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_network_acl::CreateNetworkAclError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_network_acl::CreateNetworkAclError>,
     > {
         self.customize_middleware().await
     }
@@ -161,17 +145,12 @@ impl CreateNetworkAclFluentBuilder {
         self
     }
     /// <p>The tags to assign to the network ACL.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to assign to the network ACL.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }

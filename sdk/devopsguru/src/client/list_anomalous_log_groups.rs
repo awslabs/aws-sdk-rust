@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`anomalous_log_groups(Option<Vec<AnomalousLogGroup>>)`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput::anomalous_log_groups): <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListAnomalousLogGroupsError>`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsError)
-    pub fn list_anomalous_log_groups(
-        &self,
-    ) -> crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsFluentBuilder
-    {
+    pub fn list_anomalous_log_groups(&self) -> crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsFluentBuilder {
         crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsFluentBuilder::new(self.handle.clone())
     }
 }

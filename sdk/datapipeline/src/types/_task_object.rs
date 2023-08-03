@@ -15,9 +15,7 @@ pub struct TaskObject {
     pub attempt_id: ::std::option::Option<::std::string::String>,
     /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
     #[doc(hidden)]
-    pub objects: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>,
-    >,
+    pub objects: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>>,
 }
 impl TaskObject {
     /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
@@ -33,11 +31,7 @@ impl TaskObject {
         self.attempt_id.as_deref()
     }
     /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
-    pub fn objects(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>,
-    > {
+    pub fn objects(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>> {
         self.objects.as_ref()
     }
 }
@@ -50,16 +44,12 @@ impl TaskObject {
 
 /// A builder for [`TaskObject`](crate::types::TaskObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskObjectBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) attempt_id: ::std::option::Option<::std::string::String>,
-    pub(crate) objects: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>,
-    >,
+    pub(crate) objects: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>>,
 }
 impl TaskObjectBuilder {
     /// <p>An internal identifier for the task. This ID is passed to the <code>SetTaskStatus</code> and <code>ReportTaskProgress</code> actions.</p>
@@ -109,11 +99,7 @@ impl TaskObjectBuilder {
     /// To override the contents of this collection use [`set_objects`](Self::set_objects).
     ///
     /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
-    pub fn objects(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::PipelineObject,
-    ) -> Self {
+    pub fn objects(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PipelineObject) -> Self {
         let mut hash_map = self.objects.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.objects = ::std::option::Option::Some(hash_map);
@@ -122,19 +108,13 @@ impl TaskObjectBuilder {
     /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
     pub fn set_objects(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>>,
     ) -> Self {
         self.objects = input;
         self
     }
     /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
-    pub fn get_objects(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>,
-    > {
+    pub fn get_objects(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PipelineObject>> {
         &self.objects
     }
     /// Consumes the builder and constructs a [`TaskObject`](crate::types::TaskObject).

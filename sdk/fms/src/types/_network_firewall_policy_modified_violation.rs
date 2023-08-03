@@ -9,12 +9,10 @@ pub struct NetworkFirewallPolicyModifiedViolation {
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>The policy that's currently in use in the individual account. </p>
     #[doc(hidden)]
-    pub current_policy_description:
-        ::std::option::Option<crate::types::NetworkFirewallPolicyDescription>,
+    pub current_policy_description: ::std::option::Option<crate::types::NetworkFirewallPolicyDescription>,
     /// <p>The policy that should be in use in the individual account in order to be compliant. </p>
     #[doc(hidden)]
-    pub expected_policy_description:
-        ::std::option::Option<crate::types::NetworkFirewallPolicyDescription>,
+    pub expected_policy_description: ::std::option::Option<crate::types::NetworkFirewallPolicyDescription>,
 }
 impl NetworkFirewallPolicyModifiedViolation {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
@@ -22,15 +20,11 @@ impl NetworkFirewallPolicyModifiedViolation {
         self.violation_target.as_deref()
     }
     /// <p>The policy that's currently in use in the individual account. </p>
-    pub fn current_policy_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkFirewallPolicyDescription> {
+    pub fn current_policy_description(&self) -> ::std::option::Option<&crate::types::NetworkFirewallPolicyDescription> {
         self.current_policy_description.as_ref()
     }
     /// <p>The policy that should be in use in the individual account in order to be compliant. </p>
-    pub fn expected_policy_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkFirewallPolicyDescription> {
+    pub fn expected_policy_description(&self) -> ::std::option::Option<&crate::types::NetworkFirewallPolicyDescription> {
         self.expected_policy_description.as_ref()
     }
 }
@@ -43,30 +37,20 @@ impl NetworkFirewallPolicyModifiedViolation {
 
 /// A builder for [`NetworkFirewallPolicyModifiedViolation`](crate::types::NetworkFirewallPolicyModifiedViolation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFirewallPolicyModifiedViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
-    pub(crate) current_policy_description:
-        ::std::option::Option<crate::types::NetworkFirewallPolicyDescription>,
-    pub(crate) expected_policy_description:
-        ::std::option::Option<crate::types::NetworkFirewallPolicyDescription>,
+    pub(crate) current_policy_description: ::std::option::Option<crate::types::NetworkFirewallPolicyDescription>,
+    pub(crate) expected_policy_description: ::std::option::Option<crate::types::NetworkFirewallPolicyDescription>,
 }
 impl NetworkFirewallPolicyModifiedViolationBuilder {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-    pub fn violation_target(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn violation_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.violation_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-    pub fn set_violation_target(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_violation_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.violation_target = input;
         self
     }
@@ -75,47 +59,31 @@ impl NetworkFirewallPolicyModifiedViolationBuilder {
         &self.violation_target
     }
     /// <p>The policy that's currently in use in the individual account. </p>
-    pub fn current_policy_description(
-        mut self,
-        input: crate::types::NetworkFirewallPolicyDescription,
-    ) -> Self {
+    pub fn current_policy_description(mut self, input: crate::types::NetworkFirewallPolicyDescription) -> Self {
         self.current_policy_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The policy that's currently in use in the individual account. </p>
-    pub fn set_current_policy_description(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkFirewallPolicyDescription>,
-    ) -> Self {
+    pub fn set_current_policy_description(mut self, input: ::std::option::Option<crate::types::NetworkFirewallPolicyDescription>) -> Self {
         self.current_policy_description = input;
         self
     }
     /// <p>The policy that's currently in use in the individual account. </p>
-    pub fn get_current_policy_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkFirewallPolicyDescription> {
+    pub fn get_current_policy_description(&self) -> &::std::option::Option<crate::types::NetworkFirewallPolicyDescription> {
         &self.current_policy_description
     }
     /// <p>The policy that should be in use in the individual account in order to be compliant. </p>
-    pub fn expected_policy_description(
-        mut self,
-        input: crate::types::NetworkFirewallPolicyDescription,
-    ) -> Self {
+    pub fn expected_policy_description(mut self, input: crate::types::NetworkFirewallPolicyDescription) -> Self {
         self.expected_policy_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The policy that should be in use in the individual account in order to be compliant. </p>
-    pub fn set_expected_policy_description(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkFirewallPolicyDescription>,
-    ) -> Self {
+    pub fn set_expected_policy_description(mut self, input: ::std::option::Option<crate::types::NetworkFirewallPolicyDescription>) -> Self {
         self.expected_policy_description = input;
         self
     }
     /// <p>The policy that should be in use in the individual account in order to be compliant. </p>
-    pub fn get_expected_policy_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkFirewallPolicyDescription> {
+    pub fn get_expected_policy_description(&self) -> &::std::option::Option<crate::types::NetworkFirewallPolicyDescription> {
         &self.expected_policy_description
     }
     /// Consumes the builder and constructs a [`NetworkFirewallPolicyModifiedViolation`](crate::types::NetworkFirewallPolicyModifiedViolation).

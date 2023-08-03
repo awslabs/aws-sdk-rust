@@ -10,10 +10,7 @@ impl UpdateProgramInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_program::UpdateProgramOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_program::UpdateProgramError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_program::UpdateProgramError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_program();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateProgramFluentBuilder {
         }
     }
     /// Access the UpdateProgram as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_program::builders::UpdateProgramInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_program::builders::UpdateProgramInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateProgramFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -124,10 +116,7 @@ impl UpdateProgramFluentBuilder {
         self
     }
     /// <p>The ad break configuration settings.</p>
-    pub fn set_ad_breaks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>,
-    ) -> Self {
+    pub fn set_ad_breaks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>) -> Self {
         self.inner = self.inner.set_ad_breaks(input);
         self
     }
@@ -164,25 +153,17 @@ impl UpdateProgramFluentBuilder {
         self.inner.get_program_name()
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn schedule_configuration(
-        mut self,
-        input: crate::types::UpdateProgramScheduleConfiguration,
-    ) -> Self {
+    pub fn schedule_configuration(mut self, input: crate::types::UpdateProgramScheduleConfiguration) -> Self {
         self.inner = self.inner.schedule_configuration(input);
         self
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn set_schedule_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
-    ) -> Self {
+    pub fn set_schedule_configuration(mut self, input: ::std::option::Option<crate::types::UpdateProgramScheduleConfiguration>) -> Self {
         self.inner = self.inner.set_schedule_configuration(input);
         self
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn get_schedule_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateProgramScheduleConfiguration> {
+    pub fn get_schedule_configuration(&self) -> &::std::option::Option<crate::types::UpdateProgramScheduleConfiguration> {
         self.inner.get_schedule_configuration()
     }
 }

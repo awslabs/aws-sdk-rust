@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_coverage::ListCoverageOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     ///   - [`covered_resources(Option<Vec<CoveredResource>>)`](crate::operation::list_coverage::ListCoverageOutput::covered_resources): <p>An object that contains details on the covered resources in your environment.</p>
     /// - On failure, responds with [`SdkError<ListCoverageError>`](crate::operation::list_coverage::ListCoverageError)
-    pub fn list_coverage(
-        &self,
-    ) -> crate::operation::list_coverage::builders::ListCoverageFluentBuilder {
-        crate::operation::list_coverage::builders::ListCoverageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_coverage(&self) -> crate::operation::list_coverage::builders::ListCoverageFluentBuilder {
+        crate::operation::list_coverage::builders::ListCoverageFluentBuilder::new(self.handle.clone())
     }
 }

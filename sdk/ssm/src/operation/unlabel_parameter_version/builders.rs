@@ -26,8 +26,7 @@ impl UnlabelParameterVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UnlabelParameterVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::unlabel_parameter_version::builders::UnlabelParameterVersionInputBuilder,
+    inner: crate::operation::unlabel_parameter_version::builders::UnlabelParameterVersionInputBuilder,
 }
 impl UnlabelParameterVersionFluentBuilder {
     /// Creates a new `UnlabelParameterVersion`.
@@ -38,10 +37,7 @@ impl UnlabelParameterVersionFluentBuilder {
         }
     }
     /// Access the UnlabelParameterVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::unlabel_parameter_version::builders::UnlabelParameterVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::unlabel_parameter_version::builders::UnlabelParameterVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UnlabelParameterVersionFluentBuilder {
             crate::operation::unlabel_parameter_version::UnlabelParameterVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unlabel_parameter_version::UnlabelParameterVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unlabel_parameter_version::UnlabelParameterVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UnlabelParameterVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UnlabelParameterVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unlabel_parameter_version::UnlabelParameterVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unlabel_parameter_version::UnlabelParameterVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unlabel_parameter_version::UnlabelParameterVersionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UnlabelParameterVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unlabel_parameter_version::UnlabelParameterVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unlabel_parameter_version::UnlabelParameterVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unlabel_parameter_version::UnlabelParameterVersionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl UnlabelParameterVersionFluentBuilder {
             crate::operation::unlabel_parameter_version::UnlabelParameterVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unlabel_parameter_version::UnlabelParameterVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unlabel_parameter_version::UnlabelParameterVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -162,10 +147,7 @@ impl UnlabelParameterVersionFluentBuilder {
         self
     }
     /// <p>One or more labels to delete from the specified parameter version.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_labels(input);
         self
     }

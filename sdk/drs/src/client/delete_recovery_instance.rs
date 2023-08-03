@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`recovery_instance_id(impl ::std::convert::Into<String>)`](crate::operation::delete_recovery_instance::builders::DeleteRecoveryInstanceFluentBuilder::recovery_instance_id) / [`set_recovery_instance_id(Option<String>)`](crate::operation::delete_recovery_instance::builders::DeleteRecoveryInstanceFluentBuilder::set_recovery_instance_id): <p>The ID of the Recovery Instance to be deleted.</p>
     /// - On success, responds with [`DeleteRecoveryInstanceOutput`](crate::operation::delete_recovery_instance::DeleteRecoveryInstanceOutput)
     /// - On failure, responds with [`SdkError<DeleteRecoveryInstanceError>`](crate::operation::delete_recovery_instance::DeleteRecoveryInstanceError)
-    pub fn delete_recovery_instance(
-        &self,
-    ) -> crate::operation::delete_recovery_instance::builders::DeleteRecoveryInstanceFluentBuilder
-    {
+    pub fn delete_recovery_instance(&self) -> crate::operation::delete_recovery_instance::builders::DeleteRecoveryInstanceFluentBuilder {
         crate::operation::delete_recovery_instance::builders::DeleteRecoveryInstanceFluentBuilder::new(self.handle.clone())
     }
 }

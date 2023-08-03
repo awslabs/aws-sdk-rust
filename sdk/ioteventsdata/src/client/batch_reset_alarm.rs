@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`BatchResetAlarmOutput`](crate::operation::batch_reset_alarm::BatchResetAlarmOutput) with field(s):
     ///   - [`error_entries(Option<Vec<BatchAlarmActionErrorEntry>>)`](crate::operation::batch_reset_alarm::BatchResetAlarmOutput::error_entries): <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     /// - On failure, responds with [`SdkError<BatchResetAlarmError>`](crate::operation::batch_reset_alarm::BatchResetAlarmError)
-    pub fn batch_reset_alarm(
-        &self,
-    ) -> crate::operation::batch_reset_alarm::builders::BatchResetAlarmFluentBuilder {
-        crate::operation::batch_reset_alarm::builders::BatchResetAlarmFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_reset_alarm(&self) -> crate::operation::batch_reset_alarm::builders::BatchResetAlarmFluentBuilder {
+        crate::operation::batch_reset_alarm::builders::BatchResetAlarmFluentBuilder::new(self.handle.clone())
     }
 }

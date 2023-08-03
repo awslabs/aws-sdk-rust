@@ -22,18 +22,14 @@ impl DisassociateVehicleFleetInput {
 }
 impl DisassociateVehicleFleetInput {
     /// Creates a new builder-style object to manufacture [`DisassociateVehicleFleetInput`](crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetInputBuilder {
         crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateVehicleFleetInput`](crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateVehicleFleetInputBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl DisassociateVehicleFleetInputBuilder {
         crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput {
-                vehicle_name: self.vehicle_name,
-                fleet_id: self.fleet_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput {
+            vehicle_name: self.vehicle_name,
+            fleet_id: self.fleet_id,
+        })
     }
 }

@@ -30,9 +30,7 @@ impl SchemaDefinition {
 
 /// A builder for [`SchemaDefinition`](crate::types::SchemaDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaDefinitionBuilder {
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>>,
     pub(crate) primary_key_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -50,17 +48,12 @@ impl SchemaDefinitionBuilder {
         self
     }
     /// <p>List of column definitions.</p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>>,
-    ) -> Self {
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>>) -> Self {
         self.columns = input;
         self
     }
     /// <p>List of column definitions.</p>
-    pub fn get_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>> {
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>> {
         &self.columns
     }
     /// Appends an item to `primary_key_columns`.
@@ -68,27 +61,19 @@ impl SchemaDefinitionBuilder {
     /// To override the contents of this collection use [`set_primary_key_columns`](Self::set_primary_key_columns).
     ///
     /// <p>List of column names used for primary key.</p>
-    pub fn primary_key_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_key_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.primary_key_columns.unwrap_or_default();
         v.push(input.into());
         self.primary_key_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of column names used for primary key.</p>
-    pub fn set_primary_key_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_primary_key_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.primary_key_columns = input;
         self
     }
     /// <p>List of column names used for primary key.</p>
-    pub fn get_primary_key_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_primary_key_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.primary_key_columns
     }
     /// Consumes the builder and constructs a [`SchemaDefinition`](crate::types::SchemaDefinition).

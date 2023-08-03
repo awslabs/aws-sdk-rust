@@ -26,7 +26,7 @@ impl CancelImageLaunchPermissionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelImageLaunchPermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::cancel_image_launch_permission::builders::CancelImageLaunchPermissionInputBuilder,
+    inner: crate::operation::cancel_image_launch_permission::builders::CancelImageLaunchPermissionInputBuilder,
 }
 impl CancelImageLaunchPermissionFluentBuilder {
     /// Creates a new `CancelImageLaunchPermission`.
@@ -37,7 +37,7 @@ impl CancelImageLaunchPermissionFluentBuilder {
         }
     }
     /// Access the CancelImageLaunchPermission as a reference.
-    pub fn as_input(&self) -> &crate::operation::cancel_image_launch_permission::builders::CancelImageLaunchPermissionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::cancel_image_launch_permission::builders::CancelImageLaunchPermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CancelImageLaunchPermissionFluentBuilder {
             crate::operation::cancel_image_launch_permission::CancelImageLaunchPermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CancelImageLaunchPermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CancelImageLaunchPermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CancelImageLaunchPermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CancelImageLaunchPermissionFluentBuilder {
             crate::operation::cancel_image_launch_permission::CancelImageLaunchPermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionError>,
     > {
         self.customize_middleware().await
     }

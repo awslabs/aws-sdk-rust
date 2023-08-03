@@ -36,7 +36,9 @@ impl super::Client {
     ///   - [`small_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput::small_volume_conf): <p>Small volume config.</p>
     ///   - [`large_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput::large_volume_conf): <p>Large volume config.</p>
     /// - On failure, responds with [`SdkError<CreateLaunchConfigurationTemplateError>`](crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError)
-    pub fn create_launch_configuration_template(&self) -> crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateFluentBuilder{
+    pub fn create_launch_configuration_template(
+        &self,
+    ) -> crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateFluentBuilder {
         crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateFluentBuilder::new(self.handle.clone())
     }
 }

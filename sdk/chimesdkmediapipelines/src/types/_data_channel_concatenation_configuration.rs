@@ -23,9 +23,7 @@ impl DataChannelConcatenationConfiguration {
 
 /// A builder for [`DataChannelConcatenationConfiguration`](crate::types::DataChannelConcatenationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataChannelConcatenationConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
 }
@@ -36,10 +34,7 @@ impl DataChannelConcatenationConfigurationBuilder {
         self
     }
     /// <p>Enables or disables the configuration object.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ArtifactsConcatenationState>) -> Self {
         self.state = input;
         self
     }

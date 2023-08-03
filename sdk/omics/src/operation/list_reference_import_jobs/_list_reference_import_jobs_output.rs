@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListReferenceImportJobsOutput {
 }
 impl ListReferenceImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListReferenceImportJobsOutput`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsOutputBuilder {
         crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReferenceImportJobsOutput`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReferenceImportJobsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) import_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceJobItem>>,
+    pub(crate) import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceJobItem>>,
     _request_id: Option<String>,
 }
 impl ListReferenceImportJobsOutputBuilder {
@@ -73,17 +68,12 @@ impl ListReferenceImportJobsOutputBuilder {
         self
     }
     /// <p>A lis of jobs.</p>
-    pub fn set_import_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceJobItem>>,
-    ) -> Self {
+    pub fn set_import_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceJobItem>>) -> Self {
         self.import_jobs = input;
         self
     }
     /// <p>A lis of jobs.</p>
-    pub fn get_import_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceJobItem>> {
+    pub fn get_import_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceJobItem>> {
         &self.import_jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -96,9 +86,7 @@ impl ListReferenceImportJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListReferenceImportJobsOutput`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput {
+    pub fn build(self) -> crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput {
         crate::operation::list_reference_import_jobs::ListReferenceImportJobsOutput {
             next_token: self.next_token,
             import_jobs: self.import_jobs,

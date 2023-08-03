@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`source_network_id(Option<String>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::source_network_id): <p>ID of the Source Network which is protecting this Source Server's network.</p>
     /// - On failure, responds with [`SdkError<RetryDataReplicationError>`](crate::operation::retry_data_replication::RetryDataReplicationError)
     #[deprecated(note = "WARNING: RetryDataReplication is deprecated")]
-    pub fn retry_data_replication(
-        &self,
-    ) -> crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder {
-        crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn retry_data_replication(&self) -> crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder {
+        crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::new(self.handle.clone())
     }
 }

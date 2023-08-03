@@ -15,33 +15,25 @@ impl GetBackupPlanFromTemplateInput {
 }
 impl GetBackupPlanFromTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetBackupPlanFromTemplateInput`](crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateInput).
-    pub fn builder() -> crate::operation::get_backup_plan_from_template::builders::GetBackupPlanFromTemplateInputBuilder{
+    pub fn builder() -> crate::operation::get_backup_plan_from_template::builders::GetBackupPlanFromTemplateInputBuilder {
         crate::operation::get_backup_plan_from_template::builders::GetBackupPlanFromTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBackupPlanFromTemplateInput`](crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBackupPlanFromTemplateInputBuilder {
     pub(crate) backup_plan_template_id: ::std::option::Option<::std::string::String>,
 }
 impl GetBackupPlanFromTemplateInputBuilder {
     /// <p>Uniquely identifies a stored backup plan template.</p>
-    pub fn backup_plan_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a stored backup plan template.</p>
-    pub fn set_backup_plan_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_template_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl GetBackupPlanFromTemplateInputBuilder {
         crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateInput {
-                backup_plan_template_id: self.backup_plan_template_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateInput {
+            backup_plan_template_id: self.backup_plan_template_id,
+        })
     }
 }

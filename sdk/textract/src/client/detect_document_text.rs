@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`blocks(Option<Vec<Block>>)`](crate::operation::detect_document_text::DetectDocumentTextOutput::blocks): <p>An array of <code>Block</code> objects that contain the text that's detected in the document.</p>
     ///   - [`detect_document_text_model_version(Option<String>)`](crate::operation::detect_document_text::DetectDocumentTextOutput::detect_document_text_model_version): <p></p>
     /// - On failure, responds with [`SdkError<DetectDocumentTextError>`](crate::operation::detect_document_text::DetectDocumentTextError)
-    pub fn detect_document_text(
-        &self,
-    ) -> crate::operation::detect_document_text::builders::DetectDocumentTextFluentBuilder {
-        crate::operation::detect_document_text::builders::DetectDocumentTextFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detect_document_text(&self) -> crate::operation::detect_document_text::builders::DetectDocumentTextFluentBuilder {
+        crate::operation::detect_document_text::builders::DetectDocumentTextFluentBuilder::new(self.handle.clone())
     }
 }

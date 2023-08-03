@@ -26,8 +26,7 @@ impl RevokeClientVpnIngressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeClientVpnIngressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressInputBuilder,
+    inner: crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressInputBuilder,
 }
 impl RevokeClientVpnIngressFluentBuilder {
     /// Creates a new `RevokeClientVpnIngress`.
@@ -38,10 +37,7 @@ impl RevokeClientVpnIngressFluentBuilder {
         }
     }
     /// Access the RevokeClientVpnIngress as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl RevokeClientVpnIngressFluentBuilder {
             crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl RevokeClientVpnIngressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl RevokeClientVpnIngressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl RevokeClientVpnIngressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl RevokeClientVpnIngressFluentBuilder {
             crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_vpn_endpoint_id(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_vpn_endpoint_id(input);
         self
     }
@@ -145,18 +124,12 @@ impl RevokeClientVpnIngressFluentBuilder {
         self.inner.get_client_vpn_endpoint_id()
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
-    pub fn target_network_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_network_cidr(input.into());
         self
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being removed.</p>
-    pub fn set_target_network_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_network_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_network_cidr(input);
         self
     }
@@ -165,18 +138,12 @@ impl RevokeClientVpnIngressFluentBuilder {
         self.inner.get_target_network_cidr()
     }
     /// <p>The ID of the Active Directory group for which to revoke access. </p>
-    pub fn access_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_group_id(input.into());
         self
     }
     /// <p>The ID of the Active Directory group for which to revoke access. </p>
-    pub fn set_access_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_group_id(input);
         self
     }

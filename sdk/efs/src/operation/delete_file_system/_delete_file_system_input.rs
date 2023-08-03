@@ -16,34 +16,25 @@ impl DeleteFileSystemInput {
 }
 impl DeleteFileSystemInput {
     /// Creates a new builder-style object to manufacture [`DeleteFileSystemInput`](crate::operation::delete_file_system::DeleteFileSystemInput).
-    pub fn builder() -> crate::operation::delete_file_system::builders::DeleteFileSystemInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_file_system::builders::DeleteFileSystemInputBuilder {
         crate::operation::delete_file_system::builders::DeleteFileSystemInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFileSystemInput`](crate::operation::delete_file_system::DeleteFileSystemInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFileSystemInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFileSystemInputBuilder {
     /// <p>The ID of the file system you want to delete.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the file system you want to delete.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -54,14 +45,9 @@ impl DeleteFileSystemInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFileSystemInput`](crate::operation::delete_file_system::DeleteFileSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_file_system::DeleteFileSystemInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_file_system::DeleteFileSystemInput {
-                file_system_id: self.file_system_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_file_system::DeleteFileSystemInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_file_system::DeleteFileSystemInput {
+            file_system_id: self.file_system_id,
+        })
     }
 }

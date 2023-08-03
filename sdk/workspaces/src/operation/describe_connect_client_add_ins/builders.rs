@@ -26,7 +26,7 @@ impl DescribeConnectClientAddInsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConnectClientAddInsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_connect_client_add_ins::builders::DescribeConnectClientAddInsInputBuilder,
+    inner: crate::operation::describe_connect_client_add_ins::builders::DescribeConnectClientAddInsInputBuilder,
 }
 impl DescribeConnectClientAddInsFluentBuilder {
     /// Creates a new `DescribeConnectClientAddIns`.
@@ -37,7 +37,7 @@ impl DescribeConnectClientAddInsFluentBuilder {
         }
     }
     /// Access the DescribeConnectClientAddIns as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_connect_client_add_ins::builders::DescribeConnectClientAddInsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_connect_client_add_ins::builders::DescribeConnectClientAddInsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeConnectClientAddInsFluentBuilder {
             crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddIns,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeConnectClientAddInsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeConnectClientAddInsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeConnectClientAddInsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeConnectClientAddInsFluentBuilder {
             crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddIns,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsError>,
     > {
         self.customize_middleware().await
     }

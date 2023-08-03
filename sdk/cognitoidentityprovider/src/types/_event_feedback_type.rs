@@ -37,9 +37,7 @@ impl EventFeedbackType {
 
 /// A builder for [`EventFeedbackType`](crate::types::EventFeedbackType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventFeedbackTypeBuilder {
     pub(crate) feedback_value: ::std::option::Option<crate::types::FeedbackValueType>,
     pub(crate) provider: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl EventFeedbackTypeBuilder {
         self
     }
     /// <p>The event feedback value.</p>
-    pub fn set_feedback_value(
-        mut self,
-        input: ::std::option::Option<crate::types::FeedbackValueType>,
-    ) -> Self {
+    pub fn set_feedback_value(mut self, input: ::std::option::Option<crate::types::FeedbackValueType>) -> Self {
         self.feedback_value = input;
         self
     }
@@ -83,10 +78,7 @@ impl EventFeedbackTypeBuilder {
         self
     }
     /// <p>The event feedback date.</p>
-    pub fn set_feedback_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_feedback_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.feedback_date = input;
         self
     }

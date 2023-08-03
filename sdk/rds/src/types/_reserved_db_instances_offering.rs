@@ -86,9 +86,7 @@ impl ReservedDbInstancesOffering {
 
 /// A builder for [`ReservedDbInstancesOffering`](crate::types::ReservedDbInstancesOffering).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservedDbInstancesOfferingBuilder {
     pub(crate) reserved_db_instances_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_class: ::std::option::Option<::std::string::String>,
@@ -99,45 +97,30 @@ pub struct ReservedDbInstancesOfferingBuilder {
     pub(crate) product_description: ::std::option::Option<::std::string::String>,
     pub(crate) offering_type: ::std::option::Option<::std::string::String>,
     pub(crate) multi_az: ::std::option::Option<bool>,
-    pub(crate) recurring_charges:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
+    pub(crate) recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
 }
 impl ReservedDbInstancesOfferingBuilder {
     /// <p>The offering identifier.</p>
-    pub fn reserved_db_instances_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_db_instances_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_db_instances_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offering identifier.</p>
-    pub fn set_reserved_db_instances_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_db_instances_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_db_instances_offering_id = input;
         self
     }
     /// <p>The offering identifier.</p>
-    pub fn get_reserved_db_instances_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reserved_db_instances_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_db_instances_offering_id
     }
     /// <p>The DB instance class for the reserved DB instance.</p>
-    pub fn db_instance_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB instance class for the reserved DB instance.</p>
-    pub fn set_db_instance_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_class = input;
         self
     }
@@ -188,18 +171,12 @@ impl ReservedDbInstancesOfferingBuilder {
         &self.usage_price
     }
     /// <p>The currency code for the reserved DB instance offering.</p>
-    pub fn currency_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The currency code for the reserved DB instance offering.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
@@ -208,18 +185,12 @@ impl ReservedDbInstancesOfferingBuilder {
         &self.currency_code
     }
     /// <p>The database engine used by the offering.</p>
-    pub fn product_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database engine used by the offering.</p>
-    pub fn set_product_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_product_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_description = input;
         self
     }
@@ -228,18 +199,12 @@ impl ReservedDbInstancesOfferingBuilder {
         &self.product_description
     }
     /// <p>The offering type.</p>
-    pub fn offering_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offering type.</p>
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_type = input;
         self
     }
@@ -273,17 +238,12 @@ impl ReservedDbInstancesOfferingBuilder {
         self
     }
     /// <p>The recurring price charged to run this reserved DB instance.</p>
-    pub fn set_recurring_charges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
-    ) -> Self {
+    pub fn set_recurring_charges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>) -> Self {
         self.recurring_charges = input;
         self
     }
     /// <p>The recurring price charged to run this reserved DB instance.</p>
-    pub fn get_recurring_charges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
+    pub fn get_recurring_charges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
         &self.recurring_charges
     }
     /// Consumes the builder and constructs a [`ReservedDbInstancesOffering`](crate::types::ReservedDbInstancesOffering).

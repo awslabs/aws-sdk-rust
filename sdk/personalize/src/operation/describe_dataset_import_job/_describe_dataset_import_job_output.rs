@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeDatasetImportJobOutput {
 }
 impl DescribeDatasetImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetImportJobOutput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput).
-    pub fn builder() -> crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobOutputBuilder {
         crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDatasetImportJobOutput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatasetImportJobOutputBuilder {
     pub(crate) dataset_import_job: ::std::option::Option<crate::types::DatasetImportJob>,
     _request_id: Option<String>,
@@ -70,10 +68,7 @@ impl DescribeDatasetImportJobOutputBuilder {
     /// <li> <p>ACTIVE</p> </li>
     /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
-    pub fn set_dataset_import_job(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetImportJob>,
-    ) -> Self {
+    pub fn set_dataset_import_job(mut self, input: ::std::option::Option<crate::types::DatasetImportJob>) -> Self {
         self.dataset_import_job = input;
         self
     }
@@ -98,9 +93,7 @@ impl DescribeDatasetImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDatasetImportJobOutput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput {
+    pub fn build(self) -> crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput {
         crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput {
             dataset_import_job: self.dataset_import_job,
             _request_id: self._request_id,

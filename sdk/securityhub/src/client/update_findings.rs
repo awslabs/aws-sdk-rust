@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`record_state(RecordState)`](crate::operation::update_findings::builders::UpdateFindingsFluentBuilder::record_state) / [`set_record_state(Option<RecordState>)`](crate::operation::update_findings::builders::UpdateFindingsFluentBuilder::set_record_state): <p>The updated record state for the finding.</p>
     /// - On success, responds with [`UpdateFindingsOutput`](crate::operation::update_findings::UpdateFindingsOutput)
     /// - On failure, responds with [`SdkError<UpdateFindingsError>`](crate::operation::update_findings::UpdateFindingsError)
-    pub fn update_findings(
-        &self,
-    ) -> crate::operation::update_findings::builders::UpdateFindingsFluentBuilder {
-        crate::operation::update_findings::builders::UpdateFindingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_findings(&self) -> crate::operation::update_findings::builders::UpdateFindingsFluentBuilder {
+        crate::operation::update_findings::builders::UpdateFindingsFluentBuilder::new(self.handle.clone())
     }
 }

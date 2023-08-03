@@ -29,9 +29,7 @@ impl ListEulasInput {
 
 /// A builder for [`ListEulasInput`](crate::operation::list_eulas::ListEulasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEulasInputBuilder {
     pub(crate) eula_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -49,10 +47,7 @@ impl ListEulasInputBuilder {
         self
     }
     /// <p>The list of EULA IDs that should be returned</p>
-    pub fn set_eula_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_eula_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.eula_ids = input;
         self
     }
@@ -75,12 +70,7 @@ impl ListEulasInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListEulasInput`](crate::operation::list_eulas::ListEulasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_eulas::ListEulasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_eulas::ListEulasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_eulas::ListEulasInput {
             eula_ids: self.eula_ids,
             next_token: self.next_token,

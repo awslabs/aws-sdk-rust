@@ -6,19 +6,14 @@ pub fn ser_get_dash_streaming_session_url_input(
     if let Some(var_1) = &input.dash_fragment_selector {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DASHFragmentSelector").start_object();
-        crate::protocol_serde::shape_dash_fragment_selector::ser_dash_fragment_selector(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_dash_fragment_selector::ser_dash_fragment_selector(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.display_fragment_number {
         object.key("DisplayFragmentNumber").string(var_3.as_str());
     }
     if let Some(var_4) = &input.display_fragment_timestamp {
-        object
-            .key("DisplayFragmentTimestamp")
-            .string(var_4.as_str());
+        object.key("DisplayFragmentTimestamp").string(var_4.as_str());
     }
     if let Some(var_5) = &input.expires {
         object.key("Expires").number(

@@ -22,18 +22,14 @@ impl DescribeJournalS3ExportInput {
 }
 impl DescribeJournalS3ExportInput {
     /// Creates a new builder-style object to manufacture [`DescribeJournalS3ExportInput`](crate::operation::describe_journal_s3_export::DescribeJournalS3ExportInput).
-    pub fn builder(
-    ) -> crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportInputBuilder {
         crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeJournalS3ExportInput`](crate::operation::describe_journal_s3_export::DescribeJournalS3ExportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJournalS3ExportInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl DescribeJournalS3ExportInputBuilder {
         crate::operation::describe_journal_s3_export::DescribeJournalS3ExportInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_journal_s3_export::DescribeJournalS3ExportInput {
-                name: self.name,
-                export_id: self.export_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_journal_s3_export::DescribeJournalS3ExportInput {
+            name: self.name,
+            export_id: self.export_id,
+        })
     }
 }

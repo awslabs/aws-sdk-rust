@@ -28,9 +28,7 @@ impl GetEventStreamOutput {
 
 /// A builder for [`GetEventStreamOutput`](crate::operation::get_event_stream::GetEventStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventStreamOutputBuilder {
     pub(crate) event_stream: ::std::option::Option<crate::types::EventStream>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetEventStreamOutputBuilder {
         self
     }
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
-    pub fn set_event_stream(
-        mut self,
-        input: ::std::option::Option<crate::types::EventStream>,
-    ) -> Self {
+    pub fn set_event_stream(mut self, input: ::std::option::Option<crate::types::EventStream>) -> Self {
         self.event_stream = input;
         self
     }

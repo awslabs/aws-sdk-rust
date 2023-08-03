@@ -26,7 +26,7 @@ impl DeleteExperimentTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteExperimentTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateInputBuilder,
+    inner: crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateInputBuilder,
 }
 impl DeleteExperimentTemplateFluentBuilder {
     /// Creates a new `DeleteExperimentTemplate`.
@@ -37,10 +37,7 @@ impl DeleteExperimentTemplateFluentBuilder {
         }
     }
     /// Access the DeleteExperimentTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteExperimentTemplateFluentBuilder {
             crate::operation::delete_experiment_template::DeleteExperimentTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_experiment_template::DeleteExperimentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_experiment_template::DeleteExperimentTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteExperimentTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteExperimentTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_experiment_template::DeleteExperimentTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_experiment_template::DeleteExperimentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_experiment_template::DeleteExperimentTemplateError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteExperimentTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_experiment_template::DeleteExperimentTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_experiment_template::DeleteExperimentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_experiment_template::DeleteExperimentTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteExperimentTemplateFluentBuilder {
             crate::operation::delete_experiment_template::DeleteExperimentTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_experiment_template::DeleteExperimentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_experiment_template::DeleteExperimentTemplateError>,
     > {
         self.customize_middleware().await
     }

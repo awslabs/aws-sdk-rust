@@ -23,9 +23,7 @@ impl SourceDataColumnProperties {
 
 /// A builder for [`SourceDataColumnProperties`](crate::types::SourceDataColumnProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceDataColumnPropertiesBuilder {
     pub(crate) column_index: ::std::option::Option<i32>,
 }

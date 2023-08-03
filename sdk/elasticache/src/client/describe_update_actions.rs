@@ -18,12 +18,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_update_actions::DescribeUpdateActionsOutput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`update_actions(Option<Vec<UpdateAction>>)`](crate::operation::describe_update_actions::DescribeUpdateActionsOutput::update_actions): <p>Returns a list of update actions</p>
     /// - On failure, responds with [`SdkError<DescribeUpdateActionsError>`](crate::operation::describe_update_actions::DescribeUpdateActionsError)
-    pub fn describe_update_actions(
-        &self,
-    ) -> crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder
-    {
-        crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_update_actions(&self) -> crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder {
+        crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::new(self.handle.clone())
     }
 }

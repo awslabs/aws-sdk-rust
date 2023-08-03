@@ -44,9 +44,7 @@ impl TaskRunFilterCriteria {
 
 /// A builder for [`TaskRunFilterCriteria`](crate::types::TaskRunFilterCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskRunFilterCriteriaBuilder {
     pub(crate) task_run_type: ::std::option::Option<crate::types::TaskType>,
     pub(crate) status: ::std::option::Option<crate::types::TaskStatusType>,
@@ -60,10 +58,7 @@ impl TaskRunFilterCriteriaBuilder {
         self
     }
     /// <p>The type of task run.</p>
-    pub fn set_task_run_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskType>,
-    ) -> Self {
+    pub fn set_task_run_type(mut self, input: ::std::option::Option<crate::types::TaskType>) -> Self {
         self.task_run_type = input;
         self
     }
@@ -77,10 +72,7 @@ impl TaskRunFilterCriteriaBuilder {
         self
     }
     /// <p>The current status of the task run.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -94,10 +86,7 @@ impl TaskRunFilterCriteriaBuilder {
         self
     }
     /// <p>Filter on task runs started before this date.</p>
-    pub fn set_started_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_before = input;
         self
     }
@@ -111,10 +100,7 @@ impl TaskRunFilterCriteriaBuilder {
         self
     }
     /// <p>Filter on task runs started after this date.</p>
-    pub fn set_started_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_after = input;
         self
     }

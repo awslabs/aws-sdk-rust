@@ -23,9 +23,7 @@ pub fn ser_update_model_package_input(
         object_5.finish();
     }
     if let Some(var_8) = &input.customer_metadata_properties_to_remove {
-        let mut array_9 = object
-            .key("CustomerMetadataPropertiesToRemove")
-            .start_array();
+        let mut array_9 = object.key("CustomerMetadataPropertiesToRemove").start_array();
         for item_10 in var_8 {
             {
                 array_9.value().string(item_10.as_str());
@@ -34,14 +32,15 @@ pub fn ser_update_model_package_input(
         array_9.finish();
     }
     if let Some(var_11) = &input.additional_inference_specifications_to_add {
-        let mut array_12 = object
-            .key("AdditionalInferenceSpecificationsToAdd")
-            .start_array();
+        let mut array_12 = object.key("AdditionalInferenceSpecificationsToAdd").start_array();
         for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_additional_inference_specification_definition::ser_additional_inference_specification_definition(&mut object_14, item_13)?;
+                crate::protocol_serde::shape_additional_inference_specification_definition::ser_additional_inference_specification_definition(
+                    &mut object_14,
+                    item_13,
+                )?;
                 object_14.finish();
             }
         }

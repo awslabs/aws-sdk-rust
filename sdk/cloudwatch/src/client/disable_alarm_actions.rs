@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`alarm_names(Vec<String>)`](crate::operation::disable_alarm_actions::builders::DisableAlarmActionsFluentBuilder::alarm_names) / [`set_alarm_names(Option<Vec<String>>)`](crate::operation::disable_alarm_actions::builders::DisableAlarmActionsFluentBuilder::set_alarm_names): <p>The names of the alarms.</p>
     /// - On success, responds with [`DisableAlarmActionsOutput`](crate::operation::disable_alarm_actions::DisableAlarmActionsOutput)
     /// - On failure, responds with [`SdkError<DisableAlarmActionsError>`](crate::operation::disable_alarm_actions::DisableAlarmActionsError)
-    pub fn disable_alarm_actions(
-        &self,
-    ) -> crate::operation::disable_alarm_actions::builders::DisableAlarmActionsFluentBuilder {
-        crate::operation::disable_alarm_actions::builders::DisableAlarmActionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disable_alarm_actions(&self) -> crate::operation::disable_alarm_actions::builders::DisableAlarmActionsFluentBuilder {
+        crate::operation::disable_alarm_actions::builders::DisableAlarmActionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl VpnStaticRoute {
 
 /// A builder for [`VpnStaticRoute`](crate::types::VpnStaticRoute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpnStaticRouteBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::VpnStaticRouteSource>,
@@ -47,18 +45,12 @@ pub struct VpnStaticRouteBuilder {
 }
 impl VpnStaticRouteBuilder {
     /// <p>The CIDR block associated with the local subnet of the customer data center.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CIDR block associated with the local subnet of the customer data center.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_cidr_block = input;
         self
     }
@@ -72,10 +64,7 @@ impl VpnStaticRouteBuilder {
         self
     }
     /// <p>Indicates how the routes were provided.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::VpnStaticRouteSource>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::VpnStaticRouteSource>) -> Self {
         self.source = input;
         self
     }

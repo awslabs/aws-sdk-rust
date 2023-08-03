@@ -40,18 +40,14 @@ impl CreateSolutionVersionInput {
 }
 impl CreateSolutionVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateSolutionVersionInput`](crate::operation::create_solution_version::CreateSolutionVersionInput).
-    pub fn builder(
-    ) -> crate::operation::create_solution_version::builders::CreateSolutionVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_solution_version::builders::CreateSolutionVersionInputBuilder {
         crate::operation::create_solution_version::builders::CreateSolutionVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSolutionVersionInput`](crate::operation::create_solution_version::CreateSolutionVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSolutionVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) solution_arn: ::std::option::Option<::std::string::String>,
@@ -97,10 +93,7 @@ impl CreateSolutionVersionInputBuilder {
     /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
     /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
-    pub fn set_training_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingMode>,
-    ) -> Self {
+    pub fn set_training_mode(mut self, input: ::std::option::Option<crate::types::TrainingMode>) -> Self {
         self.training_mode = input;
         self
     }
@@ -122,10 +115,7 @@ impl CreateSolutionVersionInputBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the solution version.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -136,17 +126,13 @@ impl CreateSolutionVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateSolutionVersionInput`](crate::operation::create_solution_version::CreateSolutionVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_solution_version::CreateSolutionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_solution_version::CreateSolutionVersionInput {
-                name: self.name,
-                solution_arn: self.solution_arn,
-                training_mode: self.training_mode,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_solution_version::CreateSolutionVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_solution_version::CreateSolutionVersionInput {
+            name: self.name,
+            solution_arn: self.solution_arn,
+            training_mode: self.training_mode,
+            tags: self.tags,
+        })
     }
 }

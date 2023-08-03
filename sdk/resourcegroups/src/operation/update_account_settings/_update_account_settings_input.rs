@@ -5,41 +5,30 @@
 pub struct UpdateAccountSettingsInput {
     /// <p>Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group lifecycle events</a> on or off.</p>
     #[doc(hidden)]
-    pub group_lifecycle_events_desired_status:
-        ::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus>,
+    pub group_lifecycle_events_desired_status: ::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus>,
 }
 impl UpdateAccountSettingsInput {
     /// <p>Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group lifecycle events</a> on or off.</p>
-    pub fn group_lifecycle_events_desired_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GroupLifecycleEventsDesiredStatus> {
+    pub fn group_lifecycle_events_desired_status(&self) -> ::std::option::Option<&crate::types::GroupLifecycleEventsDesiredStatus> {
         self.group_lifecycle_events_desired_status.as_ref()
     }
 }
 impl UpdateAccountSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder {
         crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccountSettingsInputBuilder {
-    pub(crate) group_lifecycle_events_desired_status:
-        ::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus>,
+    pub(crate) group_lifecycle_events_desired_status: ::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus>,
 }
 impl UpdateAccountSettingsInputBuilder {
     /// <p>Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group lifecycle events</a> on or off.</p>
-    pub fn group_lifecycle_events_desired_status(
-        mut self,
-        input: crate::types::GroupLifecycleEventsDesiredStatus,
-    ) -> Self {
+    pub fn group_lifecycle_events_desired_status(mut self, input: crate::types::GroupLifecycleEventsDesiredStatus) -> Self {
         self.group_lifecycle_events_desired_status = ::std::option::Option::Some(input);
         self
     }
@@ -52,22 +41,16 @@ impl UpdateAccountSettingsInputBuilder {
         self
     }
     /// <p>Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group lifecycle events</a> on or off.</p>
-    pub fn get_group_lifecycle_events_desired_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus> {
+    pub fn get_group_lifecycle_events_desired_status(&self) -> &::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus> {
         &self.group_lifecycle_events_desired_status
     }
     /// Consumes the builder and constructs a [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_account_settings::UpdateAccountSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_account_settings::UpdateAccountSettingsInput {
-                group_lifecycle_events_desired_status: self.group_lifecycle_events_desired_status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_account_settings::UpdateAccountSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_account_settings::UpdateAccountSettingsInput {
+            group_lifecycle_events_desired_status: self.group_lifecycle_events_desired_status,
+        })
     }
 }

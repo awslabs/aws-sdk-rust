@@ -22,34 +22,28 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
     /// Creates a new builder-style object to manufacture [`DisassociatePhoneNumbersFromVoiceConnectorGroupInput`](crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupInput).
-    pub fn builder() -> crate::operation::disassociate_phone_numbers_from_voice_connector_group::builders::DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::disassociate_phone_numbers_from_voice_connector_group::builders::DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder
+    {
         crate::operation::disassociate_phone_numbers_from_voice_connector_group::builders::DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociatePhoneNumbersFromVoiceConnectorGroupInput`](crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
     pub(crate) voice_connector_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) e164_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
-    pub fn voice_connector_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime Voice Connector group ID.</p>
-    pub fn set_voice_connector_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_group_id = input;
         self
     }
@@ -62,38 +56,33 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
     /// To override the contents of this collection use [`set_e164_phone_numbers`](Self::set_e164_phone_numbers).
     ///
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn e164_phone_numbers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn e164_phone_numbers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.e164_phone_numbers.unwrap_or_default();
         v.push(input.into());
         self.e164_phone_numbers = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn set_e164_phone_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_e164_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.e164_phone_numbers = input;
         self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn get_e164_phone_numbers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_e164_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.e164_phone_numbers
     }
     /// Consumes the builder and constructs a [`DisassociatePhoneNumbersFromVoiceConnectorGroupInput`](crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
-                voice_connector_group_id: self.voice_connector_group_id
-                ,
-                e164_phone_numbers: self.e164_phone_numbers
-                ,
-            }
+                voice_connector_group_id: self.voice_connector_group_id,
+                e164_phone_numbers: self.e164_phone_numbers,
+            },
         )
     }
 }

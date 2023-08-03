@@ -16,8 +16,7 @@ pub struct ModifySamlPropertiesInput {
     /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub properties_to_delete:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>>,
+    pub properties_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>>,
 }
 impl ModifySamlPropertiesInput {
     /// <p>The directory identifier for which you want to configure SAML properties.</p>
@@ -34,30 +33,24 @@ impl ModifySamlPropertiesInput {
     /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
     /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
     /// </ul>
-    pub fn properties_to_delete(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeletableSamlProperty]> {
+    pub fn properties_to_delete(&self) -> ::std::option::Option<&[crate::types::DeletableSamlProperty]> {
         self.properties_to_delete.as_deref()
     }
 }
 impl ModifySamlPropertiesInput {
     /// Creates a new builder-style object to manufacture [`ModifySamlPropertiesInput`](crate::operation::modify_saml_properties::ModifySamlPropertiesInput).
-    pub fn builder(
-    ) -> crate::operation::modify_saml_properties::builders::ModifySamlPropertiesInputBuilder {
+    pub fn builder() -> crate::operation::modify_saml_properties::builders::ModifySamlPropertiesInputBuilder {
         crate::operation::modify_saml_properties::builders::ModifySamlPropertiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifySamlPropertiesInput`](crate::operation::modify_saml_properties::ModifySamlPropertiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifySamlPropertiesInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) saml_properties: ::std::option::Option<crate::types::SamlProperties>,
-    pub(crate) properties_to_delete:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>>,
+    pub(crate) properties_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>>,
 }
 impl ModifySamlPropertiesInputBuilder {
     /// <p>The directory identifier for which you want to configure SAML properties.</p>
@@ -80,10 +73,7 @@ impl ModifySamlPropertiesInputBuilder {
         self
     }
     /// <p>The properties for configuring SAML 2.0 authentication.</p>
-    pub fn set_saml_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::SamlProperties>,
-    ) -> Self {
+    pub fn set_saml_properties(mut self, input: ::std::option::Option<crate::types::SamlProperties>) -> Self {
         self.saml_properties = input;
         self
     }
@@ -113,10 +103,7 @@ impl ModifySamlPropertiesInputBuilder {
     /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
     /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
     /// </ul>
-    pub fn set_properties_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>>,
-    ) -> Self {
+    pub fn set_properties_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>>) -> Self {
         self.properties_to_delete = input;
         self
     }
@@ -126,24 +113,18 @@ impl ModifySamlPropertiesInputBuilder {
     /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
     /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
     /// </ul>
-    pub fn get_properties_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>> {
+    pub fn get_properties_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>> {
         &self.properties_to_delete
     }
     /// Consumes the builder and constructs a [`ModifySamlPropertiesInput`](crate::operation::modify_saml_properties::ModifySamlPropertiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_saml_properties::ModifySamlPropertiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_saml_properties::ModifySamlPropertiesInput {
-                resource_id: self.resource_id,
-                saml_properties: self.saml_properties,
-                properties_to_delete: self.properties_to_delete,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::modify_saml_properties::ModifySamlPropertiesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::modify_saml_properties::ModifySamlPropertiesInput {
+            resource_id: self.resource_id,
+            saml_properties: self.saml_properties,
+            properties_to_delete: self.properties_to_delete,
+        })
     }
 }

@@ -16,9 +16,7 @@ pub struct CreateResponseHeadersPolicyOutput {
 }
 impl CreateResponseHeadersPolicyOutput {
     /// <p>Contains a response headers policy.</p>
-    pub fn response_headers_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicy> {
+    pub fn response_headers_policy(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicy> {
         self.response_headers_policy.as_ref()
     }
     /// <p>The URL of the response headers policy.</p>
@@ -37,16 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateResponseHeadersPolicyOutput {
 }
 impl CreateResponseHeadersPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateResponseHeadersPolicyOutput`](crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput).
-    pub fn builder() -> crate::operation::create_response_headers_policy::builders::CreateResponseHeadersPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::create_response_headers_policy::builders::CreateResponseHeadersPolicyOutputBuilder {
         crate::operation::create_response_headers_policy::builders::CreateResponseHeadersPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateResponseHeadersPolicyOutput`](crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateResponseHeadersPolicyOutputBuilder {
     pub(crate) response_headers_policy: ::std::option::Option<crate::types::ResponseHeadersPolicy>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -60,17 +56,12 @@ impl CreateResponseHeadersPolicyOutputBuilder {
         self
     }
     /// <p>Contains a response headers policy.</p>
-    pub fn set_response_headers_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseHeadersPolicy>,
-    ) -> Self {
+    pub fn set_response_headers_policy(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicy>) -> Self {
         self.response_headers_policy = input;
         self
     }
     /// <p>Contains a response headers policy.</p>
-    pub fn get_response_headers_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicy> {
+    pub fn get_response_headers_policy(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicy> {
         &self.response_headers_policy
     }
     /// <p>The URL of the response headers policy.</p>
@@ -111,9 +102,7 @@ impl CreateResponseHeadersPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateResponseHeadersPolicyOutput`](crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput {
+    pub fn build(self) -> crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput {
         crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput {
             response_headers_policy: self.response_headers_policy,
             location: self.location,

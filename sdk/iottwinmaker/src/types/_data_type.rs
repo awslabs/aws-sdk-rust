@@ -51,9 +51,7 @@ impl DataType {
 
 /// A builder for [`DataType`](crate::types::DataType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataTypeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
     pub(crate) nested_type: ::std::option::Option<::std::boxed::Box<crate::types::DataType>>,
@@ -77,25 +75,17 @@ impl DataTypeBuilder {
         &self.r#type
     }
     /// <p>The nested type in the data type.</p>
-    pub fn nested_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::boxed::Box<crate::types::DataType>>,
-    ) -> Self {
+    pub fn nested_type(mut self, input: impl ::std::convert::Into<::std::boxed::Box<crate::types::DataType>>) -> Self {
         self.nested_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The nested type in the data type.</p>
-    pub fn set_nested_type(
-        mut self,
-        input: ::std::option::Option<::std::boxed::Box<crate::types::DataType>>,
-    ) -> Self {
+    pub fn set_nested_type(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::DataType>>) -> Self {
         self.nested_type = input;
         self
     }
     /// <p>The nested type in the data type.</p>
-    pub fn get_nested_type(
-        &self,
-    ) -> &::std::option::Option<::std::boxed::Box<crate::types::DataType>> {
+    pub fn get_nested_type(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::DataType>> {
         &self.nested_type
     }
     /// Appends an item to `allowed_values`.
@@ -110,32 +100,21 @@ impl DataTypeBuilder {
         self
     }
     /// <p>The allowed values for this data type.</p>
-    pub fn set_allowed_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataValue>>,
-    ) -> Self {
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataValue>>) -> Self {
         self.allowed_values = input;
         self
     }
     /// <p>The allowed values for this data type.</p>
-    pub fn get_allowed_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataValue>> {
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataValue>> {
         &self.allowed_values
     }
     /// <p>The unit of measure used in this data type.</p>
-    pub fn unit_of_measure(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn unit_of_measure(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit_of_measure = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unit of measure used in this data type.</p>
-    pub fn set_unit_of_measure(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_unit_of_measure(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit_of_measure = input;
         self
     }
@@ -149,10 +128,7 @@ impl DataTypeBuilder {
         self
     }
     /// <p>A relationship that associates a component with another component.</p>
-    pub fn set_relationship(
-        mut self,
-        input: ::std::option::Option<crate::types::Relationship>,
-    ) -> Self {
+    pub fn set_relationship(mut self, input: ::std::option::Option<crate::types::Relationship>) -> Self {
         self.relationship = input;
         self
     }

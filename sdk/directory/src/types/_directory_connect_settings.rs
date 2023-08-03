@@ -54,9 +54,7 @@ impl DirectoryConnectSettings {
 
 /// A builder for [`DirectoryConnectSettings`](crate::types::DirectoryConnectSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DirectoryConnectSettingsBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -90,10 +88,7 @@ impl DirectoryConnectSettingsBuilder {
         self
     }
     /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -106,27 +101,19 @@ impl DirectoryConnectSettingsBuilder {
     /// To override the contents of this collection use [`set_customer_dns_ips`](Self::set_customer_dns_ips).
     ///
     /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
-    pub fn customer_dns_ips(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_dns_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.customer_dns_ips.unwrap_or_default();
         v.push(input.into());
         self.customer_dns_ips = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
-    pub fn set_customer_dns_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_customer_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.customer_dns_ips = input;
         self
     }
     /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
-    pub fn get_customer_dns_ips(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_customer_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.customer_dns_ips
     }
     /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
@@ -135,10 +122,7 @@ impl DirectoryConnectSettingsBuilder {
     /// <li> <p>Create computer objects</p> </li>
     /// <li> <p>Join computers to the domain</p> </li>
     /// </ul>
-    pub fn customer_user_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_user_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -148,10 +132,7 @@ impl DirectoryConnectSettingsBuilder {
     /// <li> <p>Create computer objects</p> </li>
     /// <li> <p>Join computers to the domain</p> </li>
     /// </ul>
-    pub fn set_customer_user_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_user_name = input;
         self
     }

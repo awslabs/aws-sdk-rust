@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CancelInstanceRefreshOutput {
 }
 impl CancelInstanceRefreshOutput {
     /// Creates a new builder-style object to manufacture [`CancelInstanceRefreshOutput`](crate::operation::cancel_instance_refresh::CancelInstanceRefreshOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_instance_refresh::builders::CancelInstanceRefreshOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_instance_refresh::builders::CancelInstanceRefreshOutputBuilder {
         crate::operation::cancel_instance_refresh::builders::CancelInstanceRefreshOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelInstanceRefreshOutput`](crate::operation::cancel_instance_refresh::CancelInstanceRefreshOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelInstanceRefreshOutputBuilder {
     pub(crate) instance_refresh_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CancelInstanceRefreshOutputBuilder {
     /// <p>The instance refresh ID associated with the request. This is the unique ID assigned to the instance refresh when it was started.</p>
-    pub fn instance_refresh_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_refresh_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_refresh_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance refresh ID associated with the request. This is the unique ID assigned to the instance refresh when it was started.</p>
-    pub fn set_instance_refresh_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_refresh_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_refresh_id = input;
         self
     }

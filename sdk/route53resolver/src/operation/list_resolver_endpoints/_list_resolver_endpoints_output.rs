@@ -35,23 +35,18 @@ impl ::aws_http::request_id::RequestId for ListResolverEndpointsOutput {
 }
 impl ListResolverEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverEndpointsOutput`](crate::operation::list_resolver_endpoints::ListResolverEndpointsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_resolver_endpoints::builders::ListResolverEndpointsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resolver_endpoints::builders::ListResolverEndpointsOutputBuilder {
         crate::operation::list_resolver_endpoints::builders::ListResolverEndpointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolverEndpointsOutput`](crate::operation::list_resolver_endpoints::ListResolverEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolverEndpointsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) resolver_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResolverEndpoint>>,
+    pub(crate) resolver_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ResolverEndpoint>>,
     _request_id: Option<String>,
 }
 impl ListResolverEndpointsOutputBuilder {
@@ -95,17 +90,12 @@ impl ListResolverEndpointsOutputBuilder {
         self
     }
     /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn set_resolver_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverEndpoint>>,
-    ) -> Self {
+    pub fn set_resolver_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverEndpoint>>) -> Self {
         self.resolver_endpoints = input;
         self
     }
     /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-    pub fn get_resolver_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverEndpoint>> {
+    pub fn get_resolver_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverEndpoint>> {
         &self.resolver_endpoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

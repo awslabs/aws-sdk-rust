@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`model_package_summary_list(Option<Vec<ModelPackageSummary>>)`](crate::operation::list_model_packages::ListModelPackagesOutput::model_package_summary_list): <p>An array of <code>ModelPackageSummary</code> objects, each of which lists a model package.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_packages::ListModelPackagesOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListModelPackagesError>`](crate::operation::list_model_packages::ListModelPackagesError)
-    pub fn list_model_packages(
-        &self,
-    ) -> crate::operation::list_model_packages::builders::ListModelPackagesFluentBuilder {
-        crate::operation::list_model_packages::builders::ListModelPackagesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_model_packages(&self) -> crate::operation::list_model_packages::builders::ListModelPackagesFluentBuilder {
+        crate::operation::list_model_packages::builders::ListModelPackagesFluentBuilder::new(self.handle.clone())
     }
 }

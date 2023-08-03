@@ -50,18 +50,14 @@ impl GetProtectionStatusInput {
 }
 impl GetProtectionStatusInput {
     /// Creates a new builder-style object to manufacture [`GetProtectionStatusInput`](crate::operation::get_protection_status::GetProtectionStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_protection_status::builders::GetProtectionStatusInputBuilder {
-        crate::operation::get_protection_status::builders::GetProtectionStatusInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_protection_status::builders::GetProtectionStatusInputBuilder {
+        crate::operation::get_protection_status::builders::GetProtectionStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetProtectionStatusInput`](crate::operation::get_protection_status::GetProtectionStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProtectionStatusInputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_account_id: ::std::option::Option<::std::string::String>,
@@ -86,18 +82,12 @@ impl GetProtectionStatusInputBuilder {
         &self.policy_id
     }
     /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details for.</p>
-    pub fn member_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details for.</p>
-    pub fn set_member_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_account_id = input;
         self
     }
@@ -111,10 +101,7 @@ impl GetProtectionStatusInputBuilder {
         self
     }
     /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -128,10 +115,7 @@ impl GetProtectionStatusInputBuilder {
         self
     }
     /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -170,19 +154,15 @@ impl GetProtectionStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetProtectionStatusInput`](crate::operation::get_protection_status::GetProtectionStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_protection_status::GetProtectionStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_protection_status::GetProtectionStatusInput {
-                policy_id: self.policy_id,
-                member_account_id: self.member_account_id,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_protection_status::GetProtectionStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_protection_status::GetProtectionStatusInput {
+            policy_id: self.policy_id,
+            member_account_id: self.member_account_id,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

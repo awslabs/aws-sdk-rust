@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListImagesInRecycleBinOutput {
 }
 impl ListImagesInRecycleBinOutput {
     /// Creates a new builder-style object to manufacture [`ListImagesInRecycleBinOutput`](crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput).
-    pub fn builder(
-    ) -> crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinOutputBuilder {
         crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListImagesInRecycleBinOutput`](crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImagesInRecycleBinOutputBuilder {
     pub(crate) images: ::std::option::Option<::std::vec::Vec<crate::types::ImageRecycleBinInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListImagesInRecycleBinOutputBuilder {
         self
     }
     /// <p>Information about the AMIs.</p>
-    pub fn set_images(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageRecycleBinInfo>>,
-    ) -> Self {
+    pub fn set_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageRecycleBinInfo>>) -> Self {
         self.images = input;
         self
     }
     /// <p>Information about the AMIs.</p>
-    pub fn get_images(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageRecycleBinInfo>> {
+    pub fn get_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageRecycleBinInfo>> {
         &self.images
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -95,9 +86,7 @@ impl ListImagesInRecycleBinOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListImagesInRecycleBinOutput`](crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput {
+    pub fn build(self) -> crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput {
         crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput {
             images: self.images,
             next_token: self.next_token,

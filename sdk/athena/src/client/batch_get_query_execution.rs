@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`query_executions(Option<Vec<QueryExecution>>)`](crate::operation::batch_get_query_execution::BatchGetQueryExecutionOutput::query_executions): <p>Information about a query execution.</p>
     ///   - [`unprocessed_query_execution_ids(Option<Vec<UnprocessedQueryExecutionId>>)`](crate::operation::batch_get_query_execution::BatchGetQueryExecutionOutput::unprocessed_query_execution_ids): <p>Information about the query executions that failed to run.</p>
     /// - On failure, responds with [`SdkError<BatchGetQueryExecutionError>`](crate::operation::batch_get_query_execution::BatchGetQueryExecutionError)
-    pub fn batch_get_query_execution(
-        &self,
-    ) -> crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionFluentBuilder
-    {
+    pub fn batch_get_query_execution(&self) -> crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionFluentBuilder {
         crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionFluentBuilder::new(self.handle.clone())
     }
 }

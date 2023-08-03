@@ -10,10 +10,7 @@ impl GetExportInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_export::GetExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_export::GetExportError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_export::GetExportError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_export();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetExportFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_export::GetExport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_export::GetExport, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_export::GetExportError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetExportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetExportFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_export::GetExport,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_export::GetExport, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_export::GetExportError>,
     > {
         self.customize_middleware().await
@@ -146,10 +134,7 @@ impl GetExportFluentBuilder {
         self
     }
     /// <p>The type of resource to export. </p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -163,10 +148,7 @@ impl GetExportFluentBuilder {
         self
     }
     /// <p>The format of the exported data.</p>
-    pub fn set_export_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportType>,
-    ) -> Self {
+    pub fn set_export_type(mut self, input: ::std::option::Option<crate::types::ExportType>) -> Self {
         self.inner = self.inner.set_export_type(input);
         self
     }

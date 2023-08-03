@@ -29,18 +29,14 @@ impl DeleteTemplateAliasInput {
 }
 impl DeleteTemplateAliasInput {
     /// Creates a new builder-style object to manufacture [`DeleteTemplateAliasInput`](crate::operation::delete_template_alias::DeleteTemplateAliasInput).
-    pub fn builder(
-    ) -> crate::operation::delete_template_alias::builders::DeleteTemplateAliasInputBuilder {
-        crate::operation::delete_template_alias::builders::DeleteTemplateAliasInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_template_alias::builders::DeleteTemplateAliasInputBuilder {
+        crate::operation::delete_template_alias::builders::DeleteTemplateAliasInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTemplateAliasInput`](crate::operation::delete_template_alias::DeleteTemplateAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTemplateAliasInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct DeleteTemplateAliasInputBuilder {
 }
 impl DeleteTemplateAliasInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -98,16 +88,12 @@ impl DeleteTemplateAliasInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTemplateAliasInput`](crate::operation::delete_template_alias::DeleteTemplateAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_template_alias::DeleteTemplateAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_template_alias::DeleteTemplateAliasInput {
-                aws_account_id: self.aws_account_id,
-                template_id: self.template_id,
-                alias_name: self.alias_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_template_alias::DeleteTemplateAliasInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_template_alias::DeleteTemplateAliasInput {
+            aws_account_id: self.aws_account_id,
+            template_id: self.template_id,
+            alias_name: self.alias_name,
+        })
     }
 }

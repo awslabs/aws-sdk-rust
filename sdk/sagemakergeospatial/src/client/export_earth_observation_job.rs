@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`output_config(Option<OutputConfigInput>)`](crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput::output_config): <p>An object containing information about the output file.</p>
     ///   - [`export_source_images(Option<bool>)`](crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput::export_source_images): <p>The source images provided to the Earth Observation job being exported.</p>
     /// - On failure, responds with [`SdkError<ExportEarthObservationJobError>`](crate::operation::export_earth_observation_job::ExportEarthObservationJobError)
-    pub fn export_earth_observation_job(&self) -> crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobFluentBuilder{
+    pub fn export_earth_observation_job(&self) -> crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobFluentBuilder {
         crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobFluentBuilder::new(self.handle.clone())
     }
 }

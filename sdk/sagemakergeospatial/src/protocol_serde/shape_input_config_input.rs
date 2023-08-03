@@ -4,9 +4,7 @@ pub fn ser_input_config_input(
     input: &crate::types::InputConfigInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.previous_earth_observation_job_arn {
-        object
-            .key("PreviousEarthObservationJobArn")
-            .string(var_1.as_str());
+        object.key("PreviousEarthObservationJobArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.raster_data_collection_query {
         #[allow(unused_mut)]

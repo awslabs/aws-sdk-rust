@@ -105,16 +105,14 @@ impl ::aws_http::request_id::RequestId for GetDataQualityRuleRecommendationRunOu
 }
 impl GetDataQualityRuleRecommendationRunOutput {
     /// Creates a new builder-style object to manufacture [`GetDataQualityRuleRecommendationRunOutput`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput).
-    pub fn builder() -> crate::operation::get_data_quality_rule_recommendation_run::builders::GetDataQualityRuleRecommendationRunOutputBuilder{
+    pub fn builder() -> crate::operation::get_data_quality_rule_recommendation_run::builders::GetDataQualityRuleRecommendationRunOutputBuilder {
         crate::operation::get_data_quality_rule_recommendation_run::builders::GetDataQualityRuleRecommendationRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataQualityRuleRecommendationRunOutput`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataQualityRuleRecommendationRunOutputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
@@ -152,10 +150,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
         self
     }
     /// <p>The data source (an Glue table) associated with this run.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }
@@ -211,10 +206,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
         self
     }
     /// <p>The status for this run.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -242,10 +234,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
         self
     }
     /// <p>The date and time when this run started.</p>
-    pub fn set_started_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_on = input;
         self
     }
@@ -259,10 +248,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
         self
     }
     /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_on = input;
         self
     }
@@ -276,10 +262,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
         self
     }
     /// <p>The date and time when this run was completed.</p>
-    pub fn set_completed_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_on = input;
         self
     }
@@ -302,18 +285,12 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
         &self.execution_time
     }
     /// <p>When a start rule recommendation run completes, it creates a recommended ruleset (a set of rules). This member has those rules in Data Quality Definition Language (DQDL) format.</p>
-    pub fn recommended_ruleset(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommended_ruleset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommended_ruleset = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When a start rule recommendation run completes, it creates a recommended ruleset (a set of rules). This member has those rules in Data Quality Definition Language (DQDL) format.</p>
-    pub fn set_recommended_ruleset(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommended_ruleset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommended_ruleset = input;
         self
     }
@@ -322,18 +299,12 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
         &self.recommended_ruleset
     }
     /// <p>The name of the ruleset that was created by the run.</p>
-    pub fn created_ruleset_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn created_ruleset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_ruleset_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ruleset that was created by the run.</p>
-    pub fn set_created_ruleset_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_created_ruleset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_ruleset_name = input;
         self
     }
@@ -351,35 +322,21 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDataQualityRuleRecommendationRunOutput`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput).
-    pub fn build(self) -> crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput{
+    pub fn build(self) -> crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput {
         crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput {
-            run_id: self.run_id
-            ,
-            data_source: self.data_source
-            ,
-            role: self.role
-            ,
-            number_of_workers: self.number_of_workers
-            ,
-            timeout: self.timeout
-            ,
-            status: self.status
-            ,
-            error_string: self.error_string
-            ,
-            started_on: self.started_on
-            ,
-            last_modified_on: self.last_modified_on
-            ,
-            completed_on: self.completed_on
-            ,
-            execution_time: self.execution_time
-                .unwrap_or_default()
-            ,
-            recommended_ruleset: self.recommended_ruleset
-            ,
-            created_ruleset_name: self.created_ruleset_name
-            ,
+            run_id: self.run_id,
+            data_source: self.data_source,
+            role: self.role,
+            number_of_workers: self.number_of_workers,
+            timeout: self.timeout,
+            status: self.status,
+            error_string: self.error_string,
+            started_on: self.started_on,
+            last_modified_on: self.last_modified_on,
+            completed_on: self.completed_on,
+            execution_time: self.execution_time.unwrap_or_default(),
+            recommended_ruleset: self.recommended_ruleset,
+            created_ruleset_name: self.created_ruleset_name,
             _request_id: self._request_id,
         }
     }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`studio_id(impl ::std::convert::Into<String>)`](crate::operation::delete_studio_member::builders::DeleteStudioMemberFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::delete_studio_member::builders::DeleteStudioMemberFluentBuilder::set_studio_id): <p>The studio ID. </p>
     /// - On success, responds with [`DeleteStudioMemberOutput`](crate::operation::delete_studio_member::DeleteStudioMemberOutput)
     /// - On failure, responds with [`SdkError<DeleteStudioMemberError>`](crate::operation::delete_studio_member::DeleteStudioMemberError)
-    pub fn delete_studio_member(
-        &self,
-    ) -> crate::operation::delete_studio_member::builders::DeleteStudioMemberFluentBuilder {
-        crate::operation::delete_studio_member::builders::DeleteStudioMemberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_studio_member(&self) -> crate::operation::delete_studio_member::builders::DeleteStudioMemberFluentBuilder {
+        crate::operation::delete_studio_member::builders::DeleteStudioMemberFluentBuilder::new(self.handle.clone())
     }
 }

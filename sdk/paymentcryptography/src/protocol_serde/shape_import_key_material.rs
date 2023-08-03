@@ -19,27 +19,19 @@ pub fn ser_import_key_material(
         crate::types::ImportKeyMaterial::Tr31KeyBlock(inner) => {
             #[allow(unused_mut)]
             let mut object_3 = object_2.key("Tr31KeyBlock").start_object();
-            crate::protocol_serde::shape_import_tr31_key_block::ser_import_tr31_key_block(
-                &mut object_3,
-                inner,
-            )?;
+            crate::protocol_serde::shape_import_tr31_key_block::ser_import_tr31_key_block(&mut object_3, inner)?;
             object_3.finish();
         }
         crate::types::ImportKeyMaterial::Tr34KeyBlock(inner) => {
             #[allow(unused_mut)]
             let mut object_4 = object_2.key("Tr34KeyBlock").start_object();
-            crate::protocol_serde::shape_import_tr34_key_block::ser_import_tr34_key_block(
-                &mut object_4,
-                inner,
-            )?;
+            crate::protocol_serde::shape_import_tr34_key_block::ser_import_tr34_key_block(&mut object_4, inner)?;
             object_4.finish();
         }
         crate::types::ImportKeyMaterial::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ImportKeyMaterial",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "ImportKeyMaterial",
+            ))
         }
     }
     Ok(())

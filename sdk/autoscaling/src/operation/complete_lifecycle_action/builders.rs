@@ -36,8 +36,7 @@ impl CompleteLifecycleActionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CompleteLifecycleActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::complete_lifecycle_action::builders::CompleteLifecycleActionInputBuilder,
+    inner: crate::operation::complete_lifecycle_action::builders::CompleteLifecycleActionInputBuilder,
 }
 impl CompleteLifecycleActionFluentBuilder {
     /// Creates a new `CompleteLifecycleAction`.
@@ -48,10 +47,7 @@ impl CompleteLifecycleActionFluentBuilder {
         }
     }
     /// Access the CompleteLifecycleAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::complete_lifecycle_action::builders::CompleteLifecycleActionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::complete_lifecycle_action::builders::CompleteLifecycleActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +59,7 @@ impl CompleteLifecycleActionFluentBuilder {
             crate::operation::complete_lifecycle_action::CompleteLifecycleAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_lifecycle_action::CompleteLifecycleActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_lifecycle_action::CompleteLifecycleActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +69,7 @@ impl CompleteLifecycleActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +78,7 @@ impl CompleteLifecycleActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_lifecycle_action::CompleteLifecycleActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_lifecycle_action::CompleteLifecycleActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_lifecycle_action::CompleteLifecycleActionError>,
     > {
         let op = self
             .inner
@@ -112,9 +101,7 @@ impl CompleteLifecycleActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_lifecycle_action::CompleteLifecycleActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_lifecycle_action::CompleteLifecycleActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_lifecycle_action::CompleteLifecycleActionError>,
     > {
         self.send_middleware().await
     }
@@ -128,25 +115,17 @@ impl CompleteLifecycleActionFluentBuilder {
             crate::operation::complete_lifecycle_action::CompleteLifecycleAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::complete_lifecycle_action::CompleteLifecycleActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::complete_lifecycle_action::CompleteLifecycleActionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the lifecycle hook.</p>
-    pub fn lifecycle_hook_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_hook_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lifecycle_hook_name(input.into());
         self
     }
     /// <p>The name of the lifecycle hook.</p>
-    pub fn set_lifecycle_hook_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_hook_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lifecycle_hook_name(input);
         self
     }
@@ -155,18 +134,12 @@ impl CompleteLifecycleActionFluentBuilder {
         self.inner.get_lifecycle_hook_name()
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -175,18 +148,12 @@ impl CompleteLifecycleActionFluentBuilder {
         self.inner.get_auto_scaling_group_name()
     }
     /// <p>A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
-    pub fn lifecycle_action_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_action_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lifecycle_action_token(input.into());
         self
     }
     /// <p>A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
-    pub fn set_lifecycle_action_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_action_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lifecycle_action_token(input);
         self
     }
@@ -195,18 +162,12 @@ impl CompleteLifecycleActionFluentBuilder {
         self.inner.get_lifecycle_action_token()
     }
     /// <p>The action for the group to take. You can specify either <code>CONTINUE</code> or <code>ABANDON</code>.</p>
-    pub fn lifecycle_action_result(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_action_result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lifecycle_action_result(input.into());
         self
     }
     /// <p>The action for the group to take. You can specify either <code>CONTINUE</code> or <code>ABANDON</code>.</p>
-    pub fn set_lifecycle_action_result(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_action_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lifecycle_action_result(input);
         self
     }

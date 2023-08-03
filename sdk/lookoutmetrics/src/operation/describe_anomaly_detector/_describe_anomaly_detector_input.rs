@@ -15,35 +15,25 @@ impl DescribeAnomalyDetectorInput {
 }
 impl DescribeAnomalyDetectorInput {
     /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectorInput`](crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorInput).
-    pub fn builder(
-    ) -> crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorInputBuilder {
         crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAnomalyDetectorInput`](crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAnomalyDetectorInputBuilder {
     pub(crate) anomaly_detector_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAnomalyDetectorInputBuilder {
     /// <p>The ARN of the detector to describe.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the detector to describe.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_detector_arn = input;
         self
     }
@@ -58,10 +48,8 @@ impl DescribeAnomalyDetectorInputBuilder {
         crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorInput {
-                anomaly_detector_arn: self.anomaly_detector_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorInput {
+            anomaly_detector_arn: self.anomaly_detector_arn,
+        })
     }
 }

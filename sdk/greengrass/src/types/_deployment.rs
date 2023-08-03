@@ -51,9 +51,7 @@ impl Deployment {
 
 /// A builder for [`Deployment`](crate::types::Deployment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentBuilder {
     pub(crate) created_at: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_arn: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl DeploymentBuilder {
         &self.created_at
     }
     /// The ARN of the deployment.
-    pub fn deployment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the deployment.
-    pub fn set_deployment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_arn = input;
         self
     }
@@ -97,18 +89,12 @@ impl DeploymentBuilder {
         &self.deployment_arn
     }
     /// The ID of the deployment.
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the deployment.
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -122,10 +108,7 @@ impl DeploymentBuilder {
         self
     }
     /// The type of the deployment.
-    pub fn set_deployment_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentType>,
-    ) -> Self {
+    pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentType>) -> Self {
         self.deployment_type = input;
         self
     }

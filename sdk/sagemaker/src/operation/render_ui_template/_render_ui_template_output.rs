@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for RenderUiTemplateOutput {
 }
 impl RenderUiTemplateOutput {
     /// Creates a new builder-style object to manufacture [`RenderUiTemplateOutput`](crate::operation::render_ui_template::RenderUiTemplateOutput).
-    pub fn builder() -> crate::operation::render_ui_template::builders::RenderUiTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::render_ui_template::builders::RenderUiTemplateOutputBuilder {
         crate::operation::render_ui_template::builders::RenderUiTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`RenderUiTemplateOutput`](crate::operation::render_ui_template::RenderUiTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RenderUiTemplateOutputBuilder {
     pub(crate) rendered_content: ::std::option::Option<::std::string::String>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::RenderingError>>,
@@ -46,18 +43,12 @@ pub struct RenderUiTemplateOutputBuilder {
 }
 impl RenderUiTemplateOutputBuilder {
     /// <p>A Liquid template that renders the HTML for the worker UI.</p>
-    pub fn rendered_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rendered_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rendered_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A Liquid template that renders the HTML for the worker UI.</p>
-    pub fn set_rendered_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rendered_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rendered_content = input;
         self
     }
@@ -77,17 +68,12 @@ impl RenderUiTemplateOutputBuilder {
         self
     }
     /// <p>A list of one or more <code>RenderingError</code> objects if any were encountered while rendering the template. If there were no errors, the list is empty.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RenderingError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RenderingError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>A list of one or more <code>RenderingError</code> objects if any were encountered while rendering the template. If there were no errors, the list is empty.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RenderingError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RenderingError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -15,34 +15,25 @@ impl DeleteAuthPolicyInput {
 }
 impl DeleteAuthPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteAuthPolicyInput`](crate::operation::delete_auth_policy::DeleteAuthPolicyInput).
-    pub fn builder() -> crate::operation::delete_auth_policy::builders::DeleteAuthPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_auth_policy::builders::DeleteAuthPolicyInputBuilder {
         crate::operation::delete_auth_policy::builders::DeleteAuthPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAuthPolicyInput`](crate::operation::delete_auth_policy::DeleteAuthPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAuthPolicyInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAuthPolicyInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteAuthPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAuthPolicyInput`](crate::operation::delete_auth_policy::DeleteAuthPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_auth_policy::DeleteAuthPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_auth_policy::DeleteAuthPolicyInput {
-                resource_identifier: self.resource_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_auth_policy::DeleteAuthPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_auth_policy::DeleteAuthPolicyInput {
+            resource_identifier: self.resource_identifier,
+        })
     }
 }

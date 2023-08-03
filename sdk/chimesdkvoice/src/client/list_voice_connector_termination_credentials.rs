@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`ListVoiceConnectorTerminationCredentialsOutput`](crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsOutput) with field(s):
     ///   - [`usernames(Option<Vec<String>>)`](crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsOutput::usernames): <p>A list of user names.</p>
     /// - On failure, responds with [`SdkError<ListVoiceConnectorTerminationCredentialsError>`](crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsError)
-    pub fn list_voice_connector_termination_credentials(&self) -> crate::operation::list_voice_connector_termination_credentials::builders::ListVoiceConnectorTerminationCredentialsFluentBuilder{
-        crate::operation::list_voice_connector_termination_credentials::builders::ListVoiceConnectorTerminationCredentialsFluentBuilder::new(self.handle.clone())
+    pub fn list_voice_connector_termination_credentials(
+        &self,
+    ) -> crate::operation::list_voice_connector_termination_credentials::builders::ListVoiceConnectorTerminationCredentialsFluentBuilder {
+        crate::operation::list_voice_connector_termination_credentials::builders::ListVoiceConnectorTerminationCredentialsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

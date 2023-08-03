@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`AuthorizeVpcEndpointAccessOutput`](crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessOutput) with field(s):
     ///   - [`authorized_principal(Option<AuthorizedPrincipal>)`](crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessOutput::authorized_principal): <p>Information about the account or service that was provided access to the domain.</p>
     /// - On failure, responds with [`SdkError<AuthorizeVpcEndpointAccessError>`](crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessError)
-    pub fn authorize_vpc_endpoint_access(&self) -> crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessFluentBuilder{
+    pub fn authorize_vpc_endpoint_access(
+        &self,
+    ) -> crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessFluentBuilder {
         crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessFluentBuilder::new(self.handle.clone())
     }
 }

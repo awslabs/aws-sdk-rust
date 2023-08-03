@@ -10,10 +10,7 @@ impl StartWorkflowInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_workflow::StartWorkflowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_workflow::StartWorkflowError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_workflow::StartWorkflowError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_workflow();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartWorkflowFluentBuilder {
         }
     }
     /// Access the StartWorkflow as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_workflow::builders::StartWorkflowInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_workflow::builders::StartWorkflowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl StartWorkflowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

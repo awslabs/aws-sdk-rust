@@ -10,10 +10,7 @@ impl ListIdentitiesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_identities::ListIdentitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identities::ListIdentitiesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_identities::ListIdentitiesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_identities();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListIdentitiesFluentBuilder {
         }
     }
     /// Access the ListIdentities as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_identities::builders::ListIdentitiesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_identities::builders::ListIdentitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl ListIdentitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -116,18 +108,12 @@ impl ListIdentitiesFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }

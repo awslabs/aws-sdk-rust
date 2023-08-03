@@ -30,27 +30,19 @@ impl FaceSearchSettings {
 
 /// A builder for [`FaceSearchSettings`](crate::types::FaceSearchSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FaceSearchSettingsBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
     pub(crate) face_match_threshold: ::std::option::Option<f32>,
 }
 impl FaceSearchSettingsBuilder {
     /// <p>The ID of a collection that contains faces that you want to search for.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a collection that contains faces that you want to search for.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_id = input;
         self
     }

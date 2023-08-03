@@ -42,10 +42,7 @@ impl GetAssetPropertyValueFluentBuilder {
         }
     }
     /// Access the GetAssetPropertyValue as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_asset_property_value::builders::GetAssetPropertyValueInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_asset_property_value::builders::GetAssetPropertyValueInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl GetAssetPropertyValueFluentBuilder {
             crate::operation::get_asset_property_value::GetAssetPropertyValue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_asset_property_value::GetAssetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_asset_property_value::GetAssetPropertyValueError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl GetAssetPropertyValueFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl GetAssetPropertyValueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_asset_property_value::GetAssetPropertyValueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_asset_property_value::GetAssetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_asset_property_value::GetAssetPropertyValueError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl GetAssetPropertyValueFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_asset_property_value::GetAssetPropertyValueOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_asset_property_value::GetAssetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_asset_property_value::GetAssetPropertyValueError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +110,7 @@ impl GetAssetPropertyValueFluentBuilder {
             crate::operation::get_asset_property_value::GetAssetPropertyValue,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_asset_property_value::GetAssetPropertyValueError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_asset_property_value::GetAssetPropertyValueError>,
     > {
         self.customize_middleware().await
     }
@@ -157,18 +143,12 @@ impl GetAssetPropertyValueFluentBuilder {
         self.inner.get_property_id()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.property_alias(input.into());
         self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_property_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_property_alias(input);
         self
     }

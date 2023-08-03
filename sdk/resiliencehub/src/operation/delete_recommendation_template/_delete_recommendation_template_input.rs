@@ -22,34 +22,26 @@ impl DeleteRecommendationTemplateInput {
 }
 impl DeleteRecommendationTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteRecommendationTemplateInput`](crate::operation::delete_recommendation_template::DeleteRecommendationTemplateInput).
-    pub fn builder() -> crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateInputBuilder{
+    pub fn builder() -> crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateInputBuilder {
         crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRecommendationTemplateInput`](crate::operation::delete_recommendation_template::DeleteRecommendationTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRecommendationTemplateInputBuilder {
     pub(crate) recommendation_template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRecommendationTemplateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    pub fn recommendation_template_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_template_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    pub fn set_recommendation_template_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_template_arn = input;
         self
     }
@@ -78,11 +70,9 @@ impl DeleteRecommendationTemplateInputBuilder {
         crate::operation::delete_recommendation_template::DeleteRecommendationTemplateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_recommendation_template::DeleteRecommendationTemplateInput {
-                recommendation_template_arn: self.recommendation_template_arn,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_recommendation_template::DeleteRecommendationTemplateInput {
+            recommendation_template_arn: self.recommendation_template_arn,
+            client_token: self.client_token,
+        })
     }
 }

@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateApnsVoipChannelOutput`](crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelOutput) with field(s):
     ///   - [`apns_voip_channel_response(Option<ApnsVoipChannelResponse>)`](crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelOutput::apns_voip_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     /// - On failure, responds with [`SdkError<UpdateApnsVoipChannelError>`](crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError)
-    pub fn update_apns_voip_channel(
-        &self,
-    ) -> crate::operation::update_apns_voip_channel::builders::UpdateApnsVoipChannelFluentBuilder
-    {
+    pub fn update_apns_voip_channel(&self) -> crate::operation::update_apns_voip_channel::builders::UpdateApnsVoipChannelFluentBuilder {
         crate::operation::update_apns_voip_channel::builders::UpdateApnsVoipChannelFluentBuilder::new(self.handle.clone())
     }
 }

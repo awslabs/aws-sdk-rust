@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteAssetModelOutput {
 }
 impl DeleteAssetModelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAssetModelOutput`](crate::operation::delete_asset_model::DeleteAssetModelOutput).
-    pub fn builder() -> crate::operation::delete_asset_model::builders::DeleteAssetModelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_asset_model::builders::DeleteAssetModelOutputBuilder {
         crate::operation::delete_asset_model::builders::DeleteAssetModelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAssetModelOutput`](crate::operation::delete_asset_model::DeleteAssetModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAssetModelOutputBuilder {
     pub(crate) asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteAssetModelOutputBuilder {
         self
     }
     /// <p>The status of the asset model, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
-    pub fn set_asset_model_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetModelStatus>,
-    ) -> Self {
+    pub fn set_asset_model_status(mut self, input: ::std::option::Option<crate::types::AssetModelStatus>) -> Self {
         self.asset_model_status = input;
         self
     }

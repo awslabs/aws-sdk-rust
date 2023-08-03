@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateLocationFsxWindowsOutput {
 }
 impl CreateLocationFsxWindowsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxWindowsOutput`](crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsOutput).
-    pub fn builder() -> crate::operation::create_location_fsx_windows::builders::CreateLocationFsxWindowsOutputBuilder{
+    pub fn builder() -> crate::operation::create_location_fsx_windows::builders::CreateLocationFsxWindowsOutputBuilder {
         crate::operation::create_location_fsx_windows::builders::CreateLocationFsxWindowsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocationFsxWindowsOutput`](crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationFsxWindowsOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl CreateLocationFsxWindowsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateLocationFsxWindowsOutput`](crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsOutput {
+    pub fn build(self) -> crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsOutput {
         crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsOutput {
             location_arn: self.location_arn,
             _request_id: self._request_id,

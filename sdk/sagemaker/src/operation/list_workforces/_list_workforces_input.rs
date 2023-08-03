@@ -50,9 +50,7 @@ impl ListWorkforcesInput {
 
 /// A builder for [`ListWorkforcesInput`](crate::operation::list_workforces::ListWorkforcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkforcesInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::ListWorkforcesSortByOptions>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
@@ -67,10 +65,7 @@ impl ListWorkforcesInputBuilder {
         self
     }
     /// <p>Sort workforces using the workforce name or creation date.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListWorkforcesSortByOptions>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListWorkforcesSortByOptions>) -> Self {
         self.sort_by = input;
         self
     }
@@ -93,18 +88,12 @@ impl ListWorkforcesInputBuilder {
         &self.sort_order
     }
     /// <p>A filter you can use to search for workforces using part of the workforce name.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter you can use to search for workforces using part of the workforce name.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -143,10 +132,7 @@ impl ListWorkforcesInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkforcesInput`](crate::operation::list_workforces::ListWorkforcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_workforces::ListWorkforcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_workforces::ListWorkforcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workforces::ListWorkforcesInput {
             sort_by: self.sort_by,
             sort_order: self.sort_order,

@@ -22,34 +22,28 @@ impl ExportClientVpnClientCertificateRevocationListInput {
 }
 impl ExportClientVpnClientCertificateRevocationListInput {
     /// Creates a new builder-style object to manufacture [`ExportClientVpnClientCertificateRevocationListInput`](crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationListInput).
-    pub fn builder() -> crate::operation::export_client_vpn_client_certificate_revocation_list::builders::ExportClientVpnClientCertificateRevocationListInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::export_client_vpn_client_certificate_revocation_list::builders::ExportClientVpnClientCertificateRevocationListInputBuilder
+    {
         crate::operation::export_client_vpn_client_certificate_revocation_list::builders::ExportClientVpnClientCertificateRevocationListInputBuilder::default()
     }
 }
 
 /// A builder for [`ExportClientVpnClientCertificateRevocationListInput`](crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportClientVpnClientCertificateRevocationListInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl ExportClientVpnClientCertificateRevocationListInputBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
@@ -72,14 +66,17 @@ impl ExportClientVpnClientCertificateRevocationListInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`ExportClientVpnClientCertificateRevocationListInput`](crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationListInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationListInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationListInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationListInput {
-                client_vpn_endpoint_id: self.client_vpn_endpoint_id
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                client_vpn_endpoint_id: self.client_vpn_endpoint_id,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`security_config_summaries(Option<Vec<SecurityConfigSummary>>)`](crate::operation::list_security_configs::ListSecurityConfigsOutput::security_config_summaries): <p>Details about the security configurations in your account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_security_configs::ListSecurityConfigsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListSecurityConfigsError>`](crate::operation::list_security_configs::ListSecurityConfigsError)
-    pub fn list_security_configs(
-        &self,
-    ) -> crate::operation::list_security_configs::builders::ListSecurityConfigsFluentBuilder {
-        crate::operation::list_security_configs::builders::ListSecurityConfigsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_security_configs(&self) -> crate::operation::list_security_configs::builders::ListSecurityConfigsFluentBuilder {
+        crate::operation::list_security_configs::builders::ListSecurityConfigsFluentBuilder::new(self.handle.clone())
     }
 }

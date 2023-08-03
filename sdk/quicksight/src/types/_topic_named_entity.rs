@@ -51,16 +51,13 @@ impl TopicNamedEntity {
 
 /// A builder for [`TopicNamedEntity`](crate::types::TopicNamedEntity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TopicNamedEntityBuilder {
     pub(crate) entity_name: ::std::option::Option<::std::string::String>,
     pub(crate) entity_description: ::std::option::Option<::std::string::String>,
     pub(crate) entity_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) semantic_entity_type: ::std::option::Option<crate::types::SemanticEntityType>,
-    pub(crate) definition:
-        ::std::option::Option<::std::vec::Vec<crate::types::NamedEntityDefinition>>,
+    pub(crate) definition: ::std::option::Option<::std::vec::Vec<crate::types::NamedEntityDefinition>>,
 }
 impl TopicNamedEntityBuilder {
     /// <p>The name of the named entity.</p>
@@ -78,18 +75,12 @@ impl TopicNamedEntityBuilder {
         &self.entity_name
     }
     /// <p>The description of the named entity.</p>
-    pub fn entity_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the named entity.</p>
-    pub fn set_entity_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entity_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_description = input;
         self
     }
@@ -102,27 +93,19 @@ impl TopicNamedEntityBuilder {
     /// To override the contents of this collection use [`set_entity_synonyms`](Self::set_entity_synonyms).
     ///
     /// <p>The other names or aliases for the named entity.</p>
-    pub fn entity_synonyms(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_synonyms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.entity_synonyms.unwrap_or_default();
         v.push(input.into());
         self.entity_synonyms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The other names or aliases for the named entity.</p>
-    pub fn set_entity_synonyms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_entity_synonyms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.entity_synonyms = input;
         self
     }
     /// <p>The other names or aliases for the named entity.</p>
-    pub fn get_entity_synonyms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entity_synonyms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.entity_synonyms
     }
     /// <p>The type of named entity that a topic represents.</p>
@@ -131,17 +114,12 @@ impl TopicNamedEntityBuilder {
         self
     }
     /// <p>The type of named entity that a topic represents.</p>
-    pub fn set_semantic_entity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SemanticEntityType>,
-    ) -> Self {
+    pub fn set_semantic_entity_type(mut self, input: ::std::option::Option<crate::types::SemanticEntityType>) -> Self {
         self.semantic_entity_type = input;
         self
     }
     /// <p>The type of named entity that a topic represents.</p>
-    pub fn get_semantic_entity_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::SemanticEntityType> {
+    pub fn get_semantic_entity_type(&self) -> &::std::option::Option<crate::types::SemanticEntityType> {
         &self.semantic_entity_type
     }
     /// Appends an item to `definition`.
@@ -156,17 +134,12 @@ impl TopicNamedEntityBuilder {
         self
     }
     /// <p>The definition of a named entity.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NamedEntityDefinition>>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NamedEntityDefinition>>) -> Self {
         self.definition = input;
         self
     }
     /// <p>The definition of a named entity.</p>
-    pub fn get_definition(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NamedEntityDefinition>> {
+    pub fn get_definition(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NamedEntityDefinition>> {
         &self.definition
     }
     /// Consumes the builder and constructs a [`TopicNamedEntity`](crate::types::TopicNamedEntity).

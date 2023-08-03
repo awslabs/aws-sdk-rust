@@ -8,7 +8,10 @@ impl super::Client {
     ///   - [`aws_region(impl ::std::convert::Into<String>)`](crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateFluentBuilder::aws_region) / [`set_aws_region(Option<String>)`](crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateFluentBuilder::set_aws_region): <p>The AWS Region.</p>
     /// - On success, responds with [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteServiceQuotaIncreaseRequestFromTemplateError>`](crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateError)
-    pub fn delete_service_quota_increase_request_from_template(&self) -> crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateFluentBuilder{
+    pub fn delete_service_quota_increase_request_from_template(
+        &self,
+    ) -> crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateFluentBuilder
+    {
         crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateFluentBuilder::new(self.handle.clone())
     }
 }

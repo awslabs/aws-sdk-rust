@@ -57,18 +57,14 @@ impl ListModelPackageGroupsInput {
 }
 impl ListModelPackageGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListModelPackageGroupsInput`](crate::operation::list_model_package_groups::ListModelPackageGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_model_package_groups::builders::ListModelPackageGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_model_package_groups::builders::ListModelPackageGroupsInputBuilder {
         crate::operation::list_model_package_groups::builders::ListModelPackageGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListModelPackageGroupsInput`](crate::operation::list_model_package_groups::ListModelPackageGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelPackageGroupsInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -85,10 +81,7 @@ impl ListModelPackageGroupsInputBuilder {
         self
     }
     /// <p>A filter that returns only model groups created after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -102,10 +95,7 @@ impl ListModelPackageGroupsInputBuilder {
         self
     }
     /// <p>A filter that returns only model groups created before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -128,18 +118,12 @@ impl ListModelPackageGroupsInputBuilder {
         &self.max_results
     }
     /// <p>A string in the model group name. This filter returns only model groups whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string in the model group name. This filter returns only model groups whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -167,10 +151,7 @@ impl ListModelPackageGroupsInputBuilder {
         self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelPackageGroupSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ModelPackageGroupSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -199,16 +180,14 @@ impl ListModelPackageGroupsInputBuilder {
         crate::operation::list_model_package_groups::ListModelPackageGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_model_package_groups::ListModelPackageGroupsInput {
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                max_results: self.max_results,
-                name_contains: self.name_contains,
-                next_token: self.next_token,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_model_package_groups::ListModelPackageGroupsInput {
+            creation_time_after: self.creation_time_after,
+            creation_time_before: self.creation_time_before,
+            max_results: self.max_results,
+            name_contains: self.name_contains,
+            next_token: self.next_token,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+        })
     }
 }

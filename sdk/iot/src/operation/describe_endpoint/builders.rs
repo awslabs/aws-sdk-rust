@@ -10,10 +10,7 @@ impl DescribeEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint::DescribeEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint::DescribeEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint::DescribeEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_endpoint();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeEndpointFluentBuilder {
         }
     }
     /// Access the DescribeEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_endpoint::builders::DescribeEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_endpoint::builders::DescribeEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeEndpointFluentBuilder {
             crate::operation::describe_endpoint::DescribeEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint::DescribeEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint::DescribeEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint::DescribeEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint::DescribeEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint::DescribeEndpointError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint::DescribeEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint::DescribeEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint::DescribeEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl DescribeEndpointFluentBuilder {
             crate::operation::describe_endpoint::DescribeEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint::DescribeEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint::DescribeEndpointError>,
     > {
         self.customize_middleware().await
     }
@@ -137,10 +121,7 @@ impl DescribeEndpointFluentBuilder {
     /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
     /// </ul>
     /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
-    pub fn endpoint_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_type(input.into());
         self
     }
@@ -158,10 +139,7 @@ impl DescribeEndpointFluentBuilder {
     /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
     /// </ul>
     /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
-    pub fn set_endpoint_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_type(input);
         self
     }

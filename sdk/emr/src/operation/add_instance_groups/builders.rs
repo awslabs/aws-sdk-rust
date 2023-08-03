@@ -10,10 +10,7 @@ impl AddInstanceGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_instance_groups::AddInstanceGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_instance_groups::AddInstanceGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_instance_groups::AddInstanceGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.add_instance_groups();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AddInstanceGroupsFluentBuilder {
         }
     }
     /// Access the AddInstanceGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_instance_groups::builders::AddInstanceGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::add_instance_groups::builders::AddInstanceGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AddInstanceGroupsFluentBuilder {
             crate::operation::add_instance_groups::AddInstanceGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_instance_groups::AddInstanceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_instance_groups::AddInstanceGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AddInstanceGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AddInstanceGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_instance_groups::AddInstanceGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_instance_groups::AddInstanceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_instance_groups::AddInstanceGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AddInstanceGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_instance_groups::AddInstanceGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_instance_groups::AddInstanceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_instance_groups::AddInstanceGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl AddInstanceGroupsFluentBuilder {
             crate::operation::add_instance_groups::AddInstanceGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_instance_groups::AddInstanceGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_instance_groups::AddInstanceGroupsError>,
     > {
         self.customize_middleware().await
     }
@@ -132,17 +116,12 @@ impl AddInstanceGroupsFluentBuilder {
         self
     }
     /// <p>Instance groups to add.</p>
-    pub fn set_instance_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>>,
-    ) -> Self {
+    pub fn set_instance_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>>) -> Self {
         self.inner = self.inner.set_instance_groups(input);
         self
     }
     /// <p>Instance groups to add.</p>
-    pub fn get_instance_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>> {
+    pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>> {
         self.inner.get_instance_groups()
     }
     /// <p>Job flow in which to add the instance groups.</p>

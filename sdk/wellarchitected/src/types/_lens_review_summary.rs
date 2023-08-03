@@ -33,8 +33,7 @@ pub struct LensReviewSummary {
     pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     #[doc(hidden)]
-    pub prioritized_risk_counts:
-        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl LensReviewSummary {
     /// <p>The alias of the lens.</p>
@@ -65,9 +64,7 @@ impl LensReviewSummary {
         self.updated_at.as_ref()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn risk_counts(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
         self.risk_counts.as_ref()
     }
     /// <p>The profiles associated with the workload.</p>
@@ -75,9 +72,7 @@ impl LensReviewSummary {
         self.profiles.as_deref()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn prioritized_risk_counts(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn prioritized_risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
         self.prioritized_risk_counts.as_ref()
     }
 }
@@ -90,9 +85,7 @@ impl LensReviewSummary {
 
 /// A builder for [`LensReviewSummary`](crate::types::LensReviewSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LensReviewSummaryBuilder {
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
@@ -100,11 +93,9 @@ pub struct LensReviewSummaryBuilder {
     pub(crate) lens_name: ::std::option::Option<::std::string::String>,
     pub(crate) lens_status: ::std::option::Option<crate::types::LensStatus>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) risk_counts:
-        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub(crate) risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
     pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
-    pub(crate) prioritized_risk_counts:
-        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub(crate) prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl LensReviewSummaryBuilder {
     /// <p>The alias of the lens.</p>
@@ -178,10 +169,7 @@ impl LensReviewSummaryBuilder {
         self
     }
     /// <p>The status of the lens.</p>
-    pub fn set_lens_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LensStatus>,
-    ) -> Self {
+    pub fn set_lens_status(mut self, input: ::std::option::Option<crate::types::LensStatus>) -> Self {
         self.lens_status = input;
         self
     }
@@ -195,10 +183,7 @@ impl LensReviewSummaryBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -218,17 +203,12 @@ impl LensReviewSummaryBuilder {
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn set_risk_counts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
-    ) -> Self {
+    pub fn set_risk_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>) -> Self {
         self.risk_counts = input;
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn get_risk_counts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn get_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
         &self.risk_counts
     }
     /// Appends an item to `profiles`.
@@ -243,17 +223,12 @@ impl LensReviewSummaryBuilder {
         self
     }
     /// <p>The profiles associated with the workload.</p>
-    pub fn set_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
-    ) -> Self {
+    pub fn set_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>) -> Self {
         self.profiles = input;
         self
     }
     /// <p>The profiles associated with the workload.</p>
-    pub fn get_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>> {
+    pub fn get_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>> {
         &self.profiles
     }
     /// Adds a key-value pair to `prioritized_risk_counts`.
@@ -268,17 +243,12 @@ impl LensReviewSummaryBuilder {
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn set_prioritized_risk_counts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
-    ) -> Self {
+    pub fn set_prioritized_risk_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>) -> Self {
         self.prioritized_risk_counts = input;
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn get_prioritized_risk_counts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn get_prioritized_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
         &self.prioritized_risk_counts
     }
     /// Consumes the builder and constructs a [`LensReviewSummary`](crate::types::LensReviewSummary).

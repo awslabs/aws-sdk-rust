@@ -41,17 +41,14 @@ impl ListBuildsForProjectInput {
 }
 impl ListBuildsForProjectInput {
     /// Creates a new builder-style object to manufacture [`ListBuildsForProjectInput`](crate::operation::list_builds_for_project::ListBuildsForProjectInput).
-    pub fn builder(
-    ) -> crate::operation::list_builds_for_project::builders::ListBuildsForProjectInputBuilder {
+    pub fn builder() -> crate::operation::list_builds_for_project::builders::ListBuildsForProjectInputBuilder {
         crate::operation::list_builds_for_project::builders::ListBuildsForProjectInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBuildsForProjectInput`](crate::operation::list_builds_for_project::ListBuildsForProjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBuildsForProjectInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrderType>,
@@ -90,10 +87,7 @@ impl ListBuildsForProjectInputBuilder {
     /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
     /// </ul>
     /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
         self
     }
@@ -124,16 +118,12 @@ impl ListBuildsForProjectInputBuilder {
     /// Consumes the builder and constructs a [`ListBuildsForProjectInput`](crate::operation::list_builds_for_project::ListBuildsForProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_builds_for_project::ListBuildsForProjectInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_builds_for_project::ListBuildsForProjectInput {
-                project_name: self.project_name,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_builds_for_project::ListBuildsForProjectInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_builds_for_project::ListBuildsForProjectInput {
+            project_name: self.project_name,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+        })
     }
 }

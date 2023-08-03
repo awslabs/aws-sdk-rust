@@ -6,17 +6,14 @@
 pub struct StreamingDistributionConfigWithTags {
     /// <p>A streaming distribution Configuration.</p>
     #[doc(hidden)]
-    pub streaming_distribution_config:
-        ::std::option::Option<crate::types::StreamingDistributionConfig>,
+    pub streaming_distribution_config: ::std::option::Option<crate::types::StreamingDistributionConfig>,
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<crate::types::Tags>,
 }
 impl StreamingDistributionConfigWithTags {
     /// <p>A streaming distribution Configuration.</p>
-    pub fn streaming_distribution_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StreamingDistributionConfig> {
+    pub fn streaming_distribution_config(&self) -> ::std::option::Option<&crate::types::StreamingDistributionConfig> {
         self.streaming_distribution_config.as_ref()
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
@@ -33,35 +30,24 @@ impl StreamingDistributionConfigWithTags {
 
 /// A builder for [`StreamingDistributionConfigWithTags`](crate::types::StreamingDistributionConfigWithTags).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamingDistributionConfigWithTagsBuilder {
-    pub(crate) streaming_distribution_config:
-        ::std::option::Option<crate::types::StreamingDistributionConfig>,
+    pub(crate) streaming_distribution_config: ::std::option::Option<crate::types::StreamingDistributionConfig>,
     pub(crate) tags: ::std::option::Option<crate::types::Tags>,
 }
 impl StreamingDistributionConfigWithTagsBuilder {
     /// <p>A streaming distribution Configuration.</p>
-    pub fn streaming_distribution_config(
-        mut self,
-        input: crate::types::StreamingDistributionConfig,
-    ) -> Self {
+    pub fn streaming_distribution_config(mut self, input: crate::types::StreamingDistributionConfig) -> Self {
         self.streaming_distribution_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A streaming distribution Configuration.</p>
-    pub fn set_streaming_distribution_config(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingDistributionConfig>,
-    ) -> Self {
+    pub fn set_streaming_distribution_config(mut self, input: ::std::option::Option<crate::types::StreamingDistributionConfig>) -> Self {
         self.streaming_distribution_config = input;
         self
     }
     /// <p>A streaming distribution Configuration.</p>
-    pub fn get_streaming_distribution_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamingDistributionConfig> {
+    pub fn get_streaming_distribution_config(&self) -> &::std::option::Option<crate::types::StreamingDistributionConfig> {
         &self.streaming_distribution_config
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>

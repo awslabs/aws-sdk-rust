@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteDeploymentOutput {
 }
 impl DeleteDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentOutput`](crate::operation::delete_deployment::DeleteDeploymentOutput).
-    pub fn builder() -> crate::operation::delete_deployment::builders::DeleteDeploymentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_deployment::builders::DeleteDeploymentOutputBuilder {
         crate::operation::delete_deployment::builders::DeleteDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDeploymentOutput`](crate::operation::delete_deployment::DeleteDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDeploymentOutputBuilder {
     pub(crate) deployment: ::std::option::Option<crate::types::Deployment>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteDeploymentOutputBuilder {
         self
     }
     /// <p>The detailed data of the deployment being deleted.</p>
-    pub fn set_deployment(
-        mut self,
-        input: ::std::option::Option<crate::types::Deployment>,
-    ) -> Self {
+    pub fn set_deployment(mut self, input: ::std::option::Option<crate::types::Deployment>) -> Self {
         self.deployment = input;
         self
     }

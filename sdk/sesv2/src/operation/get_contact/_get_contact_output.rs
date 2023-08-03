@@ -14,8 +14,7 @@ pub struct GetContactOutput {
     pub topic_preferences: ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>,
     /// <p>The default topic preferences applied to the contact.</p>
     #[doc(hidden)]
-    pub topic_default_preferences:
-        ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>,
+    pub topic_default_preferences: ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>,
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     #[doc(hidden)]
     pub unsubscribe_all: bool,
@@ -44,9 +43,7 @@ impl GetContactOutput {
         self.topic_preferences.as_deref()
     }
     /// <p>The default topic preferences applied to the contact.</p>
-    pub fn topic_default_preferences(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TopicPreference]> {
+    pub fn topic_default_preferences(&self) -> ::std::option::Option<&[crate::types::TopicPreference]> {
         self.topic_default_preferences.as_deref()
     }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
@@ -80,16 +77,12 @@ impl GetContactOutput {
 
 /// A builder for [`GetContactOutput`](crate::operation::get_contact::GetContactOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContactOutputBuilder {
     pub(crate) contact_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
-    pub(crate) topic_preferences:
-        ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>,
-    pub(crate) topic_default_preferences:
-        ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>,
+    pub(crate) topic_preferences: ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>,
+    pub(crate) topic_default_preferences: ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>,
     pub(crate) unsubscribe_all: ::std::option::Option<bool>,
     pub(crate) attributes_data: ::std::option::Option<::std::string::String>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -98,18 +91,12 @@ pub struct GetContactOutputBuilder {
 }
 impl GetContactOutputBuilder {
     /// <p>The name of the contact list to which the contact belongs.</p>
-    pub fn contact_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the contact list to which the contact belongs.</p>
-    pub fn set_contact_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_list_name = input;
         self
     }
@@ -118,18 +105,12 @@ impl GetContactOutputBuilder {
         &self.contact_list_name
     }
     /// <p>The contact's email address.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contact's email address.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email_address = input;
         self
     }
@@ -149,17 +130,12 @@ impl GetContactOutputBuilder {
         self
     }
     /// <p>The contact's preference for being opted-in to or opted-out of a topic.&gt;</p>
-    pub fn set_topic_preferences(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>,
-    ) -> Self {
+    pub fn set_topic_preferences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>) -> Self {
         self.topic_preferences = input;
         self
     }
     /// <p>The contact's preference for being opted-in to or opted-out of a topic.&gt;</p>
-    pub fn get_topic_preferences(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>> {
+    pub fn get_topic_preferences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>> {
         &self.topic_preferences
     }
     /// Appends an item to `topic_default_preferences`.
@@ -174,17 +150,12 @@ impl GetContactOutputBuilder {
         self
     }
     /// <p>The default topic preferences applied to the contact.</p>
-    pub fn set_topic_default_preferences(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>,
-    ) -> Self {
+    pub fn set_topic_default_preferences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>>) -> Self {
         self.topic_default_preferences = input;
         self
     }
     /// <p>The default topic preferences applied to the contact.</p>
-    pub fn get_topic_default_preferences(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>> {
+    pub fn get_topic_default_preferences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>> {
         &self.topic_default_preferences
     }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
@@ -202,18 +173,12 @@ impl GetContactOutputBuilder {
         &self.unsubscribe_all
     }
     /// <p>The attribute data attached to a contact.</p>
-    pub fn attributes_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attributes_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The attribute data attached to a contact.</p>
-    pub fn set_attributes_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attributes_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attributes_data = input;
         self
     }
@@ -227,10 +192,7 @@ impl GetContactOutputBuilder {
         self
     }
     /// <p>A timestamp noting when the contact was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -244,17 +206,12 @@ impl GetContactOutputBuilder {
         self
     }
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_timestamp = input;
         self
     }
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
-    pub fn get_last_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`results(Option<Vec<DataQualityResult>>)`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput::results): <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
     ///   - [`results_not_found(Option<Vec<String>>)`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput::results_not_found): <p>A list of result IDs for which results were not found.</p>
     /// - On failure, responds with [`SdkError<BatchGetDataQualityResultError>`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultError)
-    pub fn batch_get_data_quality_result(&self) -> crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultFluentBuilder{
+    pub fn batch_get_data_quality_result(&self) -> crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultFluentBuilder {
         crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultFluentBuilder::new(self.handle.clone())
     }
 }

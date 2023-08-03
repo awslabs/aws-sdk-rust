@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`firewall_name(Option<String>)`](crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput::firewall_name): <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     ///   - [`firewall_policy_change_protection(bool)`](crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput::firewall_policy_change_protection): <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateFirewallPolicyChangeProtectionError>`](crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError)
-    pub fn update_firewall_policy_change_protection(&self) -> crate::operation::update_firewall_policy_change_protection::builders::UpdateFirewallPolicyChangeProtectionFluentBuilder{
-        crate::operation::update_firewall_policy_change_protection::builders::UpdateFirewallPolicyChangeProtectionFluentBuilder::new(self.handle.clone())
+    pub fn update_firewall_policy_change_protection(
+        &self,
+    ) -> crate::operation::update_firewall_policy_change_protection::builders::UpdateFirewallPolicyChangeProtectionFluentBuilder {
+        crate::operation::update_firewall_policy_change_protection::builders::UpdateFirewallPolicyChangeProtectionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

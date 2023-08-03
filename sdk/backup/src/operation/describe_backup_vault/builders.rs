@@ -37,9 +37,7 @@ impl DescribeBackupVaultFluentBuilder {
         }
     }
     /// Access the DescribeBackupVault as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_backup_vault::builders::DescribeBackupVaultInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_backup_vault::builders::DescribeBackupVaultInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeBackupVaultFluentBuilder {
             crate::operation::describe_backup_vault::DescribeBackupVault,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backup_vault::DescribeBackupVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backup_vault::DescribeBackupVaultError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeBackupVaultFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeBackupVaultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_backup_vault::DescribeBackupVaultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backup_vault::DescribeBackupVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backup_vault::DescribeBackupVaultError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeBackupVaultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_backup_vault::DescribeBackupVaultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backup_vault::DescribeBackupVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backup_vault::DescribeBackupVaultError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeBackupVaultFluentBuilder {
             crate::operation::describe_backup_vault::DescribeBackupVault,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_backup_vault::DescribeBackupVaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_backup_vault::DescribeBackupVaultError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }

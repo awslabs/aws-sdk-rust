@@ -5,16 +5,16 @@ pub use crate::operation::modify_instance_maintenance_options::_modify_instance_
 
 impl ModifyInstanceMaintenanceOptionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.modify_instance_maintenance_options();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ModifyInstanceMaintenanceOptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyInstanceMaintenanceOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsInputBuilder,
+    inner: crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsInputBuilder,
 }
 impl ModifyInstanceMaintenanceOptionsFluentBuilder {
     /// Creates a new `ModifyInstanceMaintenanceOptions`.
@@ -37,15 +37,20 @@ impl ModifyInstanceMaintenanceOptionsFluentBuilder {
         }
     }
     /// Access the ModifyInstanceMaintenanceOptions as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ModifyInstanceMaintenanceOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl ModifyInstanceMaintenanceOptionsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the instance.</p>
@@ -114,17 +129,12 @@ impl ModifyInstanceMaintenanceOptionsFluentBuilder {
         self
     }
     /// <p>Disables the automatic recovery behavior of your instance or sets it to default.</p>
-    pub fn set_auto_recovery(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
-    ) -> Self {
+    pub fn set_auto_recovery(mut self, input: ::std::option::Option<crate::types::InstanceAutoRecoveryState>) -> Self {
         self.inner = self.inner.set_auto_recovery(input);
         self
     }
     /// <p>Disables the automatic recovery behavior of your instance or sets it to default.</p>
-    pub fn get_auto_recovery(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceAutoRecoveryState> {
+    pub fn get_auto_recovery(&self) -> &::std::option::Option<crate::types::InstanceAutoRecoveryState> {
         self.inner.get_auto_recovery()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

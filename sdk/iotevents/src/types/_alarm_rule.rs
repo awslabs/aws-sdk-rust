@@ -23,9 +23,7 @@ impl AlarmRule {
 
 /// A builder for [`AlarmRule`](crate::types::AlarmRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmRuleBuilder {
     pub(crate) simple_rule: ::std::option::Option<crate::types::SimpleRule>,
 }
@@ -36,10 +34,7 @@ impl AlarmRuleBuilder {
         self
     }
     /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
-    pub fn set_simple_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::SimpleRule>,
-    ) -> Self {
+    pub fn set_simple_rule(mut self, input: ::std::option::Option<crate::types::SimpleRule>) -> Self {
         self.simple_rule = input;
         self
     }

@@ -36,9 +36,7 @@ pub struct GetSolFunctionPackageOutput {
     pub metadata: ::std::option::Option<crate::types::GetSolFunctionPackageMetadata>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSolFunctionPackageOutput {
@@ -84,11 +82,7 @@ impl GetSolFunctionPackageOutput {
         self.metadata.as_ref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -117,9 +111,7 @@ impl ::aws_http::request_id::RequestId for GetSolFunctionPackageOutput {
 }
 impl GetSolFunctionPackageOutput {
     /// Creates a new builder-style object to manufacture [`GetSolFunctionPackageOutput`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput).
-    pub fn builder(
-    ) -> crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder {
         crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder::default()
     }
 }
@@ -138,9 +130,7 @@ pub struct GetSolFunctionPackageOutputBuilder {
     pub(crate) vnf_product_name: ::std::option::Option<::std::string::String>,
     pub(crate) vnfd_version: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<crate::types::GetSolFunctionPackageMetadata>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSolFunctionPackageOutputBuilder {
@@ -178,10 +168,7 @@ impl GetSolFunctionPackageOutputBuilder {
         self
     }
     /// <p>Function package onboarding state.</p>
-    pub fn set_onboarding_state(
-        mut self,
-        input: ::std::option::Option<crate::types::OnboardingState>,
-    ) -> Self {
+    pub fn set_onboarding_state(mut self, input: ::std::option::Option<crate::types::OnboardingState>) -> Self {
         self.onboarding_state = input;
         self
     }
@@ -195,10 +182,7 @@ impl GetSolFunctionPackageOutputBuilder {
         self
     }
     /// <p>Function package operational state.</p>
-    pub fn set_operational_state(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationalState>,
-    ) -> Self {
+    pub fn set_operational_state(mut self, input: ::std::option::Option<crate::types::OperationalState>) -> Self {
         self.operational_state = input;
         self
     }
@@ -212,10 +196,7 @@ impl GetSolFunctionPackageOutputBuilder {
         self
     }
     /// <p>Function package usage state.</p>
-    pub fn set_usage_state(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageState>,
-    ) -> Self {
+    pub fn set_usage_state(mut self, input: ::std::option::Option<crate::types::UsageState>) -> Self {
         self.usage_state = input;
         self
     }
@@ -252,18 +233,12 @@ impl GetSolFunctionPackageOutputBuilder {
         &self.vnf_provider
     }
     /// <p>Network function product name.</p>
-    pub fn vnf_product_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vnf_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_product_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Network function product name.</p>
-    pub fn set_vnf_product_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vnf_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnf_product_name = input;
         self
     }
@@ -293,18 +268,13 @@ impl GetSolFunctionPackageOutputBuilder {
     }
     /// <p>Metadata related to the function package.</p>
     /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::GetSolFunctionPackageMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::GetSolFunctionPackageMetadata>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>Metadata related to the function package.</p>
     /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::GetSolFunctionPackageMetadata> {
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::GetSolFunctionPackageMetadata> {
         &self.metadata
     }
     /// Adds a key-value pair to `tags`.
@@ -312,32 +282,19 @@ impl GetSolFunctionPackageOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

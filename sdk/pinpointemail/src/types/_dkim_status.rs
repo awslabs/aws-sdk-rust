@@ -71,13 +71,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DkimStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -126,13 +120,7 @@ impl DkimStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED",
-            "NOT_STARTED",
-            "PENDING",
-            "SUCCESS",
-            "TEMPORARY_FAILURE",
-        ]
+        &["FAILED", "NOT_STARTED", "PENDING", "SUCCESS", "TEMPORARY_FAILURE"]
     }
 }
 impl ::std::convert::AsRef<str> for DkimStatus {

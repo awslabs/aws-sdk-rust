@@ -37,9 +37,7 @@ impl CancelStepsInfo {
 
 /// A builder for [`CancelStepsInfo`](crate::types::CancelStepsInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelStepsInfoBuilder {
     pub(crate) step_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CancelStepsRequestStatus>,
@@ -66,10 +64,7 @@ impl CancelStepsInfoBuilder {
         self
     }
     /// <p>The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CancelStepsRequestStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CancelStepsRequestStatus>) -> Self {
         self.status = input;
         self
     }

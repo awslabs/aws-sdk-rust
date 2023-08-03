@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`ListAutomaticTapeCreationPoliciesOutput`](crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesOutput) with field(s):
     ///   - [`automatic_tape_creation_policy_infos(Option<Vec<AutomaticTapeCreationPolicyInfo>>)`](crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesOutput::automatic_tape_creation_policy_infos): <p>Gets a listing of information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
     /// - On failure, responds with [`SdkError<ListAutomaticTapeCreationPoliciesError>`](crate::operation::list_automatic_tape_creation_policies::ListAutomaticTapeCreationPoliciesError)
-    pub fn list_automatic_tape_creation_policies(&self) -> crate::operation::list_automatic_tape_creation_policies::builders::ListAutomaticTapeCreationPoliciesFluentBuilder{
+    pub fn list_automatic_tape_creation_policies(
+        &self,
+    ) -> crate::operation::list_automatic_tape_creation_policies::builders::ListAutomaticTapeCreationPoliciesFluentBuilder {
         crate::operation::list_automatic_tape_creation_policies::builders::ListAutomaticTapeCreationPoliciesFluentBuilder::new(self.handle.clone())
     }
 }

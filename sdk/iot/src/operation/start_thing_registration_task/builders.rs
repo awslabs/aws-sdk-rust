@@ -27,7 +27,7 @@ impl StartThingRegistrationTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartThingRegistrationTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskInputBuilder,
+    inner: crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskInputBuilder,
 }
 impl StartThingRegistrationTaskFluentBuilder {
     /// Creates a new `StartThingRegistrationTask`.
@@ -38,7 +38,7 @@ impl StartThingRegistrationTaskFluentBuilder {
         }
     }
     /// Access the StartThingRegistrationTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl StartThingRegistrationTaskFluentBuilder {
             crate::operation::start_thing_registration_task::StartThingRegistrationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_thing_registration_task::StartThingRegistrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_thing_registration_task::StartThingRegistrationTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl StartThingRegistrationTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl StartThingRegistrationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_thing_registration_task::StartThingRegistrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_thing_registration_task::StartThingRegistrationTaskError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl StartThingRegistrationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_thing_registration_task::StartThingRegistrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_thing_registration_task::StartThingRegistrationTaskError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl StartThingRegistrationTaskFluentBuilder {
             crate::operation::start_thing_registration_task::StartThingRegistrationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_thing_registration_task::StartThingRegistrationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_thing_registration_task::StartThingRegistrationTaskError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The provisioning template.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_body(input.into());
         self
     }
     /// <p>The provisioning template.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_body(input);
         self
     }
@@ -142,18 +125,12 @@ impl StartThingRegistrationTaskFluentBuilder {
         self.inner.get_template_body()
     }
     /// <p>The S3 bucket that contains the input file.</p>
-    pub fn input_file_bucket(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_file_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_file_bucket(input.into());
         self
     }
     /// <p>The S3 bucket that contains the input file.</p>
-    pub fn set_input_file_bucket(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_file_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_file_bucket(input);
         self
     }
@@ -162,18 +139,12 @@ impl StartThingRegistrationTaskFluentBuilder {
         self.inner.get_input_file_bucket()
     }
     /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
-    pub fn input_file_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_file_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_file_key(input.into());
         self
     }
     /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
-    pub fn set_input_file_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_file_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_file_key(input);
         self
     }

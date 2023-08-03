@@ -5,25 +5,19 @@ pub fn ser_parameter_range(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.integer_parameter_range_specification {
         #[allow(unused_mut)]
-        let mut object_2 = object
-            .key("IntegerParameterRangeSpecification")
-            .start_object();
+        let mut object_2 = object.key("IntegerParameterRangeSpecification").start_object();
         crate::protocol_serde::shape_integer_parameter_range_specification::ser_integer_parameter_range_specification(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.continuous_parameter_range_specification {
         #[allow(unused_mut)]
-        let mut object_4 = object
-            .key("ContinuousParameterRangeSpecification")
-            .start_object();
+        let mut object_4 = object.key("ContinuousParameterRangeSpecification").start_object();
         crate::protocol_serde::shape_continuous_parameter_range_specification::ser_continuous_parameter_range_specification(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.categorical_parameter_range_specification {
         #[allow(unused_mut)]
-        let mut object_6 = object
-            .key("CategoricalParameterRangeSpecification")
-            .start_object();
+        let mut object_6 = object.key("CategoricalParameterRangeSpecification").start_object();
         crate::protocol_serde::shape_categorical_parameter_range_specification::ser_categorical_parameter_range_specification(&mut object_6, var_5)?;
         object_6.finish();
     }
@@ -32,17 +26,9 @@ pub fn ser_parameter_range(
 
 pub(crate) fn de_parameter_range<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ParameterRange>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ParameterRange>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -56,7 +42,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "IntegerParameterRangeSpecification" => {
                                 builder = builder.set_integer_parameter_range_specification(
-                                    crate::protocol_serde::shape_integer_parameter_range_specification::de_integer_parameter_range_specification(tokens)?
+                                    crate::protocol_serde::shape_integer_parameter_range_specification::de_integer_parameter_range_specification(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "ContinuousParameterRangeSpecification" => {
@@ -73,20 +61,17 @@ where
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

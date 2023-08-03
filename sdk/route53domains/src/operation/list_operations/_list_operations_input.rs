@@ -67,9 +67,7 @@ impl ListOperationsInput {
 
 /// A builder for [`ListOperationsInput`](crate::operation::list_operations::ListOperationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOperationsInputBuilder {
     pub(crate) submitted_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl ListOperationsInputBuilder {
         self
     }
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
-    pub fn set_submitted_since(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submitted_since(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.submitted_since = input;
         self
     }
@@ -140,17 +135,12 @@ impl ListOperationsInputBuilder {
         self
     }
     /// <p> The status of the operations. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>) -> Self {
         self.status = input;
         self
     }
     /// <p> The status of the operations. </p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>> {
+    pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>> {
         &self.status
     }
     /// Appends an item to `r#type`.
@@ -165,10 +155,7 @@ impl ListOperationsInputBuilder {
         self
     }
     /// <p> An arrays of the domains operation types. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OperationType>>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationType>>) -> Self {
         self.r#type = input;
         self
     }
@@ -182,17 +169,12 @@ impl ListOperationsInputBuilder {
         self
     }
     /// <p> The sort type for returned values. </p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListOperationsSortAttributeName>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListOperationsSortAttributeName>) -> Self {
         self.sort_by = input;
         self
     }
     /// <p> The sort type for returned values. </p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListOperationsSortAttributeName> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListOperationsSortAttributeName> {
         &self.sort_by
     }
     /// <p> The sort order ofr returned values, either ascending or descending. </p>
@@ -212,10 +194,7 @@ impl ListOperationsInputBuilder {
     /// Consumes the builder and constructs a [`ListOperationsInput`](crate::operation::list_operations::ListOperationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_operations::ListOperationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_operations::ListOperationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_operations::ListOperationsInput {
             submitted_since: self.submitted_since,
             marker: self.marker,

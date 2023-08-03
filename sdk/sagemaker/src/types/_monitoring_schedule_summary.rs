@@ -47,9 +47,7 @@ impl MonitoringScheduleSummary {
         self.last_modified_time.as_ref()
     }
     /// <p>The status of the monitoring schedule.</p>
-    pub fn monitoring_schedule_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScheduleStatus> {
+    pub fn monitoring_schedule_status(&self) -> ::std::option::Option<&crate::types::ScheduleStatus> {
         self.monitoring_schedule_status.as_ref()
     }
     /// <p>The name of the endpoint using the monitoring schedule.</p>
@@ -74,9 +72,7 @@ impl MonitoringScheduleSummary {
 
 /// A builder for [`MonitoringScheduleSummary`](crate::types::MonitoringScheduleSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonitoringScheduleSummaryBuilder {
     pub(crate) monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     pub(crate) monitoring_schedule_arn: ::std::option::Option<::std::string::String>,
@@ -89,18 +85,12 @@ pub struct MonitoringScheduleSummaryBuilder {
 }
 impl MonitoringScheduleSummaryBuilder {
     /// <p>The name of the monitoring schedule.</p>
-    pub fn monitoring_schedule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the monitoring schedule.</p>
-    pub fn set_monitoring_schedule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_schedule_name = input;
         self
     }
@@ -109,18 +99,12 @@ impl MonitoringScheduleSummaryBuilder {
         &self.monitoring_schedule_name
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
-    pub fn monitoring_schedule_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_schedule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
-    pub fn set_monitoring_schedule_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_schedule_arn = input;
         self
     }
@@ -134,10 +118,7 @@ impl MonitoringScheduleSummaryBuilder {
         self
     }
     /// <p>The creation time of the monitoring schedule.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -151,10 +132,7 @@ impl MonitoringScheduleSummaryBuilder {
         self
     }
     /// <p>The last time the monitoring schedule was modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -168,32 +146,21 @@ impl MonitoringScheduleSummaryBuilder {
         self
     }
     /// <p>The status of the monitoring schedule.</p>
-    pub fn set_monitoring_schedule_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleStatus>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_status(mut self, input: ::std::option::Option<crate::types::ScheduleStatus>) -> Self {
         self.monitoring_schedule_status = input;
         self
     }
     /// <p>The status of the monitoring schedule.</p>
-    pub fn get_monitoring_schedule_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduleStatus> {
+    pub fn get_monitoring_schedule_status(&self) -> &::std::option::Option<crate::types::ScheduleStatus> {
         &self.monitoring_schedule_status
     }
     /// <p>The name of the endpoint using the monitoring schedule.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the endpoint using the monitoring schedule.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
@@ -202,25 +169,17 @@ impl MonitoringScheduleSummaryBuilder {
         &self.endpoint_name
     }
     /// <p>The name of the monitoring job definition that the schedule is for.</p>
-    pub fn monitoring_job_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_job_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the monitoring job definition that the schedule is for.</p>
-    pub fn set_monitoring_job_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_job_definition_name = input;
         self
     }
     /// <p>The name of the monitoring job definition that the schedule is for.</p>
-    pub fn get_monitoring_job_definition_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_monitoring_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitoring_job_definition_name
     }
     /// <p>The type of the monitoring job definition that the schedule is for.</p>
@@ -229,10 +188,7 @@ impl MonitoringScheduleSummaryBuilder {
         self
     }
     /// <p>The type of the monitoring job definition that the schedule is for.</p>
-    pub fn set_monitoring_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringType>,
-    ) -> Self {
+    pub fn set_monitoring_type(mut self, input: ::std::option::Option<crate::types::MonitoringType>) -> Self {
         self.monitoring_type = input;
         self
     }

@@ -5,8 +5,7 @@
 pub struct ListAttributeGroupsForApplicationOutput {
     /// <p> The details related to a specific attribute group. </p>
     #[doc(hidden)]
-    pub attribute_groups_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupDetails>>,
+    pub attribute_groups_details: ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupDetails>>,
     /// <p>The token to use to get the next page of results after a previous API call.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAttributeGroupsForApplicationOutput {
 }
 impl ListAttributeGroupsForApplicationOutput {
     /// <p> The details related to a specific attribute group. </p>
-    pub fn attribute_groups_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AttributeGroupDetails]> {
+    pub fn attribute_groups_details(&self) -> ::std::option::Option<&[crate::types::AttributeGroupDetails]> {
         self.attribute_groups_details.as_deref()
     }
     /// <p>The token to use to get the next page of results after a previous API call.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAttributeGroupsForApplicationOutp
 }
 impl ListAttributeGroupsForApplicationOutput {
     /// Creates a new builder-style object to manufacture [`ListAttributeGroupsForApplicationOutput`](crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationOutput).
-    pub fn builder() -> crate::operation::list_attribute_groups_for_application::builders::ListAttributeGroupsForApplicationOutputBuilder{
+    pub fn builder() -> crate::operation::list_attribute_groups_for_application::builders::ListAttributeGroupsForApplicationOutputBuilder {
         crate::operation::list_attribute_groups_for_application::builders::ListAttributeGroupsForApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAttributeGroupsForApplicationOutput`](crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttributeGroupsForApplicationOutputBuilder {
-    pub(crate) attribute_groups_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupDetails>>,
+    pub(crate) attribute_groups_details: ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListAttributeGroupsForApplicationOutputBuilder {
         self
     }
     /// <p> The details related to a specific attribute group. </p>
-    pub fn set_attribute_groups_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupDetails>>,
-    ) -> Self {
+    pub fn set_attribute_groups_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupDetails>>) -> Self {
         self.attribute_groups_details = input;
         self
     }
     /// <p> The details related to a specific attribute group. </p>
-    pub fn get_attribute_groups_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupDetails>> {
+    pub fn get_attribute_groups_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupDetails>> {
         &self.attribute_groups_details
     }
     /// <p>The token to use to get the next page of results after a previous API call.</p>
@@ -97,12 +86,10 @@ impl ListAttributeGroupsForApplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAttributeGroupsForApplicationOutput`](crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationOutput).
-    pub fn build(self) -> crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationOutput{
+    pub fn build(self) -> crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationOutput {
         crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationOutput {
-            attribute_groups_details: self.attribute_groups_details
-            ,
-            next_token: self.next_token
-            ,
+            attribute_groups_details: self.attribute_groups_details,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

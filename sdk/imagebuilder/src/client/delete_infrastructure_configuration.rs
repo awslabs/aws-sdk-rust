@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`infrastructure_configuration_arn(Option<String>)`](crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationOutput::infrastructure_configuration_arn): <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteInfrastructureConfigurationError>`](crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError)
-    pub fn delete_infrastructure_configuration(&self) -> crate::operation::delete_infrastructure_configuration::builders::DeleteInfrastructureConfigurationFluentBuilder{
+    pub fn delete_infrastructure_configuration(
+        &self,
+    ) -> crate::operation::delete_infrastructure_configuration::builders::DeleteInfrastructureConfigurationFluentBuilder {
         crate::operation::delete_infrastructure_configuration::builders::DeleteInfrastructureConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

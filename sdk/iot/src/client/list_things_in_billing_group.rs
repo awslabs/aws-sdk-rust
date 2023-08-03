@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`things(Option<Vec<String>>)`](crate::operation::list_things_in_billing_group::ListThingsInBillingGroupOutput::things): <p>A list of things in the billing group.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_things_in_billing_group::ListThingsInBillingGroupOutput::next_token): <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
     /// - On failure, responds with [`SdkError<ListThingsInBillingGroupError>`](crate::operation::list_things_in_billing_group::ListThingsInBillingGroupError)
-    pub fn list_things_in_billing_group(&self) -> crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupFluentBuilder{
+    pub fn list_things_in_billing_group(&self) -> crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupFluentBuilder {
         crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupFluentBuilder::new(self.handle.clone())
     }
 }

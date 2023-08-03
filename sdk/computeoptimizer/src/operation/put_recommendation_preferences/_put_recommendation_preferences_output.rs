@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutRecommendationPreferencesOutput {
 }
 impl PutRecommendationPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`PutRecommendationPreferencesOutput`](crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput).
-    pub fn builder() -> crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesOutputBuilder{
+    pub fn builder() -> crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesOutputBuilder {
         crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutRecommendationPreferencesOutput`](crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRecommendationPreferencesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl PutRecommendationPreferencesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutRecommendationPreferencesOutput`](crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput {
+    pub fn build(self) -> crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput {
         crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput {
             _request_id: self._request_id,
         }

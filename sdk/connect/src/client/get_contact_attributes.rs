@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetContactAttributesOutput`](crate::operation::get_contact_attributes::GetContactAttributesOutput) with field(s):
     ///   - [`attributes(Option<HashMap<String, String>>)`](crate::operation::get_contact_attributes::GetContactAttributesOutput::attributes): <p>Information about the attributes.</p>
     /// - On failure, responds with [`SdkError<GetContactAttributesError>`](crate::operation::get_contact_attributes::GetContactAttributesError)
-    pub fn get_contact_attributes(
-        &self,
-    ) -> crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder {
-        crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_contact_attributes(&self) -> crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder {
+        crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder::new(self.handle.clone())
     }
 }

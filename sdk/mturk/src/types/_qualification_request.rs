@@ -58,9 +58,7 @@ impl QualificationRequest {
 
 /// A builder for [`QualificationRequest`](crate::types::QualificationRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QualificationRequestBuilder {
     pub(crate) qualification_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct QualificationRequestBuilder {
 }
 impl QualificationRequestBuilder {
     /// <p>The ID of the Qualification request, a unique identifier generated when the request was submitted. </p>
-    pub fn qualification_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Qualification request, a unique identifier generated when the request was submitted. </p>
-    pub fn set_qualification_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualification_request_id = input;
         self
     }
@@ -91,18 +83,12 @@ impl QualificationRequestBuilder {
         &self.qualification_request_id
     }
     /// <p> The ID of the Qualification type the Worker is requesting, as returned by the CreateQualificationType operation. </p>
-    pub fn qualification_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the Qualification type the Worker is requesting, as returned by the CreateQualificationType operation. </p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualification_type_id = input;
         self
     }
@@ -158,10 +144,7 @@ impl QualificationRequestBuilder {
         self
     }
     /// <p>The date and time the Qualification request had a status of Submitted. This is either the time the Worker submitted answers for a Qualification test, or the time the Worker requested the Qualification if the Qualification type does not have a test. </p>
-    pub fn set_submit_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.submit_time = input;
         self
     }

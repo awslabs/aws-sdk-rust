@@ -72,13 +72,10 @@ impl ClarifyCheckStepMetadata {
 
 /// A builder for [`ClarifyCheckStepMetadata`](crate::types::ClarifyCheckStepMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClarifyCheckStepMetadataBuilder {
     pub(crate) check_type: ::std::option::Option<::std::string::String>,
-    pub(crate) baseline_used_for_drift_check_constraints:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) baseline_used_for_drift_check_constraints: ::std::option::Option<::std::string::String>,
     pub(crate) calculated_baseline_constraints: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) violation_report: ::std::option::Option<::std::string::String>,
@@ -102,62 +99,40 @@ impl ClarifyCheckStepMetadataBuilder {
         &self.check_type
     }
     /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
-    pub fn baseline_used_for_drift_check_constraints(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn baseline_used_for_drift_check_constraints(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.baseline_used_for_drift_check_constraints = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
-    pub fn set_baseline_used_for_drift_check_constraints(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_baseline_used_for_drift_check_constraints(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.baseline_used_for_drift_check_constraints = input;
         self
     }
     /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
-    pub fn get_baseline_used_for_drift_check_constraints(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_baseline_used_for_drift_check_constraints(&self) -> &::std::option::Option<::std::string::String> {
         &self.baseline_used_for_drift_check_constraints
     }
     /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
-    pub fn calculated_baseline_constraints(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculated_baseline_constraints(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculated_baseline_constraints = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
-    pub fn set_calculated_baseline_constraints(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculated_baseline_constraints(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculated_baseline_constraints = input;
         self
     }
     /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
-    pub fn get_calculated_baseline_constraints(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_calculated_baseline_constraints(&self) -> &::std::option::Option<::std::string::String> {
         &self.calculated_baseline_constraints
     }
     /// <p>The model package group name.</p>
-    pub fn model_package_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model package group name.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_name = input;
         self
     }
@@ -166,18 +141,12 @@ impl ClarifyCheckStepMetadataBuilder {
         &self.model_package_group_name
     }
     /// <p>The Amazon S3 URI of the violation report if violations are detected.</p>
-    pub fn violation_report(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn violation_report(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.violation_report = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 URI of the violation report if violations are detected.</p>
-    pub fn set_violation_report(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_violation_report(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.violation_report = input;
         self
     }
@@ -186,18 +155,12 @@ impl ClarifyCheckStepMetadataBuilder {
         &self.violation_report
     }
     /// <p>The Amazon Resource Name (ARN) of the check processing job that was run by this step's execution.</p>
-    pub fn check_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn check_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.check_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the check processing job that was run by this step's execution.</p>
-    pub fn set_check_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_check_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.check_job_arn = input;
         self
     }
@@ -237,8 +200,7 @@ impl ClarifyCheckStepMetadataBuilder {
     pub fn build(self) -> crate::types::ClarifyCheckStepMetadata {
         crate::types::ClarifyCheckStepMetadata {
             check_type: self.check_type,
-            baseline_used_for_drift_check_constraints: self
-                .baseline_used_for_drift_check_constraints,
+            baseline_used_for_drift_check_constraints: self.baseline_used_for_drift_check_constraints,
             calculated_baseline_constraints: self.calculated_baseline_constraints,
             model_package_group_name: self.model_package_group_name,
             violation_report: self.violation_report,

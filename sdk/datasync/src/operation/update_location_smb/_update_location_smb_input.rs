@@ -86,8 +86,7 @@ impl ::std::fmt::Debug for UpdateLocationSmbInput {
 }
 impl UpdateLocationSmbInput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationSmbInput`](crate::operation::update_location_smb::UpdateLocationSmbInput).
-    pub fn builder(
-    ) -> crate::operation::update_location_smb::builders::UpdateLocationSmbInputBuilder {
+    pub fn builder() -> crate::operation::update_location_smb::builders::UpdateLocationSmbInputBuilder {
         crate::operation::update_location_smb::builders::UpdateLocationSmbInputBuilder::default()
     }
 }
@@ -211,10 +210,7 @@ impl UpdateLocationSmbInputBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
@@ -228,10 +224,7 @@ impl UpdateLocationSmbInputBuilder {
         self
     }
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
-    pub fn set_mount_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SmbMountOptions>,
-    ) -> Self {
+    pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::SmbMountOptions>) -> Self {
         self.mount_options = input;
         self
     }
@@ -242,21 +235,16 @@ impl UpdateLocationSmbInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLocationSmbInput`](crate::operation::update_location_smb::UpdateLocationSmbInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_location_smb::UpdateLocationSmbInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_location_smb::UpdateLocationSmbInput {
-                location_arn: self.location_arn,
-                subdirectory: self.subdirectory,
-                user: self.user,
-                domain: self.domain,
-                password: self.password,
-                agent_arns: self.agent_arns,
-                mount_options: self.mount_options,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_location_smb::UpdateLocationSmbInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_location_smb::UpdateLocationSmbInput {
+            location_arn: self.location_arn,
+            subdirectory: self.subdirectory,
+            user: self.user,
+            domain: self.domain,
+            password: self.password,
+            agent_arns: self.agent_arns,
+            mount_options: self.mount_options,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateLocationSmbInputBuilder {

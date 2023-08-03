@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::CloudWatch::Metric" => ResourceType::AwsCloudwatchMetric,
             "AWS::Logs::LogGroup" => ResourceType::AwsLogsLoggroup,
             "AWS::XRay::Trace" => ResourceType::AwsXrayTrace,
-            other => {
-                ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl ResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS::CloudWatch::Metric",
-            "AWS::Logs::LogGroup",
-            "AWS::XRay::Trace",
-        ]
+        &["AWS::CloudWatch::Metric", "AWS::Logs::LogGroup", "AWS::XRay::Trace"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceType {

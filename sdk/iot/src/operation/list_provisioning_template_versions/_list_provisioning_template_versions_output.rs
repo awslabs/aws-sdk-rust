@@ -5,8 +5,7 @@
 pub struct ListProvisioningTemplateVersionsOutput {
     /// <p>The list of provisioning template versions.</p>
     #[doc(hidden)]
-    pub versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateVersionSummary>>,
+    pub versions: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateVersionSummary>>,
     /// <p>A token to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListProvisioningTemplateVersionsOutput {
 }
 impl ListProvisioningTemplateVersionsOutput {
     /// <p>The list of provisioning template versions.</p>
-    pub fn versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProvisioningTemplateVersionSummary]> {
+    pub fn versions(&self) -> ::std::option::Option<&[crate::types::ProvisioningTemplateVersionSummary]> {
         self.versions.as_deref()
     }
     /// <p>A token to retrieve the next set of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListProvisioningTemplateVersionsOutpu
 }
 impl ListProvisioningTemplateVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListProvisioningTemplateVersionsOutput`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput).
-    pub fn builder() -> crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsOutputBuilder {
         crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProvisioningTemplateVersionsOutput`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProvisioningTemplateVersionsOutputBuilder {
-    pub(crate) versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateVersionSummary>>,
+    pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,20 +54,12 @@ impl ListProvisioningTemplateVersionsOutputBuilder {
         self
     }
     /// <p>The list of provisioning template versions.</p>
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ProvisioningTemplateVersionSummary>,
-        >,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateVersionSummary>>) -> Self {
         self.versions = input;
         self
     }
     /// <p>The list of provisioning template versions.</p>
-    pub fn get_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateVersionSummary>>
-    {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningTemplateVersionSummary>> {
         &self.versions
     }
     /// <p>A token to retrieve the next set of results.</p>
@@ -100,15 +86,10 @@ impl ListProvisioningTemplateVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProvisioningTemplateVersionsOutput`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput
-    {
+    pub fn build(self) -> crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput {
         crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput {
-            versions: self.versions
-            ,
-            next_token: self.next_token
-            ,
+            versions: self.versions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

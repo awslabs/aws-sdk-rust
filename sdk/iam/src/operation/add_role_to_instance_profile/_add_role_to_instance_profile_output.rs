@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AddRoleToInstanceProfileOutput {
 }
 impl AddRoleToInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`AddRoleToInstanceProfileOutput`](crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput).
-    pub fn builder() -> crate::operation::add_role_to_instance_profile::builders::AddRoleToInstanceProfileOutputBuilder{
+    pub fn builder() -> crate::operation::add_role_to_instance_profile::builders::AddRoleToInstanceProfileOutputBuilder {
         crate::operation::add_role_to_instance_profile::builders::AddRoleToInstanceProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddRoleToInstanceProfileOutput`](crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddRoleToInstanceProfileOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl AddRoleToInstanceProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddRoleToInstanceProfileOutput`](crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput {
+    pub fn build(self) -> crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput {
         crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput {
             _request_id: self._request_id,
         }

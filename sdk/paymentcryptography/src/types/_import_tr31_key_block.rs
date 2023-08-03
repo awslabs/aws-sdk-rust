@@ -30,27 +30,19 @@ impl ImportTr31KeyBlock {
 
 /// A builder for [`ImportTr31KeyBlock`](crate::types::ImportTr31KeyBlock).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportTr31KeyBlockBuilder {
     pub(crate) wrapping_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) wrapped_key_block: ::std::option::Option<::std::string::String>,
 }
 impl ImportTr31KeyBlockBuilder {
     /// <p>The <code>KeyARN</code> of the key that will decrypt or unwrap a TR-31 key block during import.</p>
-    pub fn wrapping_key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wrapping_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapping_key_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>KeyARN</code> of the key that will decrypt or unwrap a TR-31 key block during import.</p>
-    pub fn set_wrapping_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_wrapping_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wrapping_key_identifier = input;
         self
     }
@@ -59,18 +51,12 @@ impl ImportTr31KeyBlockBuilder {
         &self.wrapping_key_identifier
     }
     /// <p>The TR-34 wrapped key block to import.</p>
-    pub fn wrapped_key_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn wrapped_key_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapped_key_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The TR-34 wrapped key block to import.</p>
-    pub fn set_wrapped_key_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_wrapped_key_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wrapped_key_block = input;
         self
     }

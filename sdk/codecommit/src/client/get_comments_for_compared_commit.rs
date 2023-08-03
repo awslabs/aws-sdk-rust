@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`comments_for_compared_commit_data(Option<Vec<CommentsForComparedCommit>>)`](crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitOutput::comments_for_compared_commit_data): <p>A list of comment objects on the compared commit.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     /// - On failure, responds with [`SdkError<GetCommentsForComparedCommitError>`](crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError)
-    pub fn get_comments_for_compared_commit(&self) -> crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitFluentBuilder{
+    pub fn get_comments_for_compared_commit(
+        &self,
+    ) -> crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitFluentBuilder {
         crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitFluentBuilder::new(self.handle.clone())
     }
 }

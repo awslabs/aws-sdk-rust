@@ -37,9 +37,7 @@ impl CancelSigningProfileFluentBuilder {
         }
     }
     /// Access the CancelSigningProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_signing_profile::builders::CancelSigningProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_signing_profile::builders::CancelSigningProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CancelSigningProfileFluentBuilder {
             crate::operation::cancel_signing_profile::CancelSigningProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_signing_profile::CancelSigningProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_signing_profile::CancelSigningProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CancelSigningProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CancelSigningProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_signing_profile::CancelSigningProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_signing_profile::CancelSigningProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_signing_profile::CancelSigningProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CancelSigningProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_signing_profile::CancelSigningProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_signing_profile::CancelSigningProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_signing_profile::CancelSigningProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CancelSigningProfileFluentBuilder {
             crate::operation::cancel_signing_profile::CancelSigningProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_signing_profile::CancelSigningProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_signing_profile::CancelSigningProfileError>,
     > {
         self.customize_middleware().await
     }

@@ -44,18 +44,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetailsBuilder {
     pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) interval: ::std::option::Option<i32>,
@@ -76,10 +72,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetailsBuilder {
         self
     }
     /// <p>The command that the container runs to determine whether it is healthy.</p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.command = input;
         self
     }

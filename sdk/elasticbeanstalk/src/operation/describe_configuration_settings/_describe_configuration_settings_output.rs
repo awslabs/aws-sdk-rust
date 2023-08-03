@@ -6,15 +6,12 @@
 pub struct DescribeConfigurationSettingsOutput {
     /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
     #[doc(hidden)]
-    pub configuration_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>>,
+    pub configuration_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationSettingsOutput {
     /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
-    pub fn configuration_settings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ConfigurationSettingsDescription]> {
+    pub fn configuration_settings(&self) -> ::std::option::Option<&[crate::types::ConfigurationSettingsDescription]> {
         self.configuration_settings.as_deref()
     }
 }
@@ -25,19 +22,16 @@ impl ::aws_http::request_id::RequestId for DescribeConfigurationSettingsOutput {
 }
 impl DescribeConfigurationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationSettingsOutput`](crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput).
-    pub fn builder() -> crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsOutputBuilder {
         crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationSettingsOutput`](crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationSettingsOutputBuilder {
-    pub(crate) configuration_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>>,
+    pub(crate) configuration_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationSettingsOutputBuilder {
@@ -46,10 +40,7 @@ impl DescribeConfigurationSettingsOutputBuilder {
     /// To override the contents of this collection use [`set_configuration_settings`](Self::set_configuration_settings).
     ///
     /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
-    pub fn configuration_settings(
-        mut self,
-        input: crate::types::ConfigurationSettingsDescription,
-    ) -> Self {
+    pub fn configuration_settings(mut self, input: crate::types::ConfigurationSettingsDescription) -> Self {
         let mut v = self.configuration_settings.unwrap_or_default();
         v.push(input);
         self.configuration_settings = ::std::option::Option::Some(v);
@@ -58,18 +49,13 @@ impl DescribeConfigurationSettingsOutputBuilder {
     /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
     pub fn set_configuration_settings(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ConfigurationSettingsDescription>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>>,
     ) -> Self {
         self.configuration_settings = input;
         self
     }
     /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
-    pub fn get_configuration_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>>
-    {
+    pub fn get_configuration_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>> {
         &self.configuration_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -82,10 +68,7 @@ impl DescribeConfigurationSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationSettingsOutput`](crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput
-    {
+    pub fn build(self) -> crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput {
         crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput {
             configuration_settings: self.configuration_settings,
             _request_id: self._request_id,

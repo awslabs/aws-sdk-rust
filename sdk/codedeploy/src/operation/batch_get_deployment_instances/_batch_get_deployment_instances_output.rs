@@ -29,19 +29,16 @@ impl ::aws_http::request_id::RequestId for BatchGetDeploymentInstancesOutput {
 }
 impl BatchGetDeploymentInstancesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentInstancesOutput`](crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput).
-    pub fn builder() -> crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesOutputBuilder {
         crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetDeploymentInstancesOutput`](crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentInstancesOutputBuilder {
-    pub(crate) instances_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
+    pub(crate) instances_summary: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,32 +55,21 @@ impl BatchGetDeploymentInstancesOutputBuilder {
         self
     }
     /// <p>Information about the instance.</p>
-    pub fn set_instances_summary(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
-    ) -> Self {
+    pub fn set_instances_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>) -> Self {
         self.instances_summary = input;
         self
     }
     /// <p>Information about the instance.</p>
-    pub fn get_instances_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
+    pub fn get_instances_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
         &self.instances_summary
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -101,9 +87,7 @@ impl BatchGetDeploymentInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetDeploymentInstancesOutput`](crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput {
+    pub fn build(self) -> crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput {
         crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput {
             instances_summary: self.instances_summary,
             error_message: self.error_message,

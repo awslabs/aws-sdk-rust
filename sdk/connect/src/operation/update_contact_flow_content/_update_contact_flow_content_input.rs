@@ -29,18 +29,14 @@ impl UpdateContactFlowContentInput {
 }
 impl UpdateContactFlowContentInput {
     /// Creates a new builder-style object to manufacture [`UpdateContactFlowContentInput`](crate::operation::update_contact_flow_content::UpdateContactFlowContentInput).
-    pub fn builder(
-    ) -> crate::operation::update_contact_flow_content::builders::UpdateContactFlowContentInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_contact_flow_content::builders::UpdateContactFlowContentInputBuilder {
         crate::operation::update_contact_flow_content::builders::UpdateContactFlowContentInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContactFlowContentInput`](crate::operation::update_contact_flow_content::UpdateContactFlowContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContactFlowContentInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl UpdateContactFlowContentInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the flow.</p>
-    pub fn contact_flow_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the flow.</p>
-    pub fn set_contact_flow_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_flow_id = input;
         self
     }
@@ -102,12 +92,10 @@ impl UpdateContactFlowContentInputBuilder {
         crate::operation::update_contact_flow_content::UpdateContactFlowContentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_contact_flow_content::UpdateContactFlowContentInput {
-                instance_id: self.instance_id,
-                contact_flow_id: self.contact_flow_id,
-                content: self.content,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_contact_flow_content::UpdateContactFlowContentInput {
+            instance_id: self.instance_id,
+            contact_flow_id: self.contact_flow_id,
+            content: self.content,
+        })
     }
 }

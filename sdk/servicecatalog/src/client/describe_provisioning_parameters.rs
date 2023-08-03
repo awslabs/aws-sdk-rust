@@ -19,7 +19,9 @@ impl super::Client {
     ///   - [`provisioning_artifact_outputs(Option<Vec<ProvisioningArtifactOutput>>)`](crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersOutput::provisioning_artifact_outputs): <p>The output of the provisioning artifact.</p>
     ///   - [`provisioning_artifact_output_keys(Option<Vec<ProvisioningArtifactOutput>>)`](crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersOutput::provisioning_artifact_output_keys): <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
     /// - On failure, responds with [`SdkError<DescribeProvisioningParametersError>`](crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersError)
-    pub fn describe_provisioning_parameters(&self) -> crate::operation::describe_provisioning_parameters::builders::DescribeProvisioningParametersFluentBuilder{
+    pub fn describe_provisioning_parameters(
+        &self,
+    ) -> crate::operation::describe_provisioning_parameters::builders::DescribeProvisioningParametersFluentBuilder {
         crate::operation::describe_provisioning_parameters::builders::DescribeProvisioningParametersFluentBuilder::new(self.handle.clone())
     }
 }

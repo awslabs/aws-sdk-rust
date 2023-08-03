@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     ///   - [`managed_rule_groups(Option<Vec<ManagedRuleGroupSummary>>)`](crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput::managed_rule_groups): <p>Array of managed rule groups that you can use. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     /// - On failure, responds with [`SdkError<ListAvailableManagedRuleGroupsError>`](crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsError)
-    pub fn list_available_managed_rule_groups(&self) -> crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsFluentBuilder{
+    pub fn list_available_managed_rule_groups(
+        &self,
+    ) -> crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsFluentBuilder {
         crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsFluentBuilder::new(self.handle.clone())
     }
 }

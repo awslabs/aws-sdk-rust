@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for ListDistributionsByWebAclIdOutput {
 }
 impl ListDistributionsByWebAclIdOutput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByWebAclIdOutput`](crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput).
-    pub fn builder() -> crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdOutputBuilder{
+    pub fn builder() -> crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdOutputBuilder {
         crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDistributionsByWebAclIdOutput`](crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributionsByWebAclIdOutputBuilder {
     pub(crate) distribution_list: ::std::option::Option<crate::types::DistributionList>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl ListDistributionsByWebAclIdOutputBuilder {
         self
     }
     /// <p>The <code>DistributionList</code> type.</p>
-    pub fn set_distribution_list(
-        mut self,
-        input: ::std::option::Option<crate::types::DistributionList>,
-    ) -> Self {
+    pub fn set_distribution_list(mut self, input: ::std::option::Option<crate::types::DistributionList>) -> Self {
         self.distribution_list = input;
         self
     }
@@ -64,9 +59,7 @@ impl ListDistributionsByWebAclIdOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDistributionsByWebAclIdOutput`](crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput {
+    pub fn build(self) -> crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput {
         crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput {
             distribution_list: self.distribution_list,
             _request_id: self._request_id,

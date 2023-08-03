@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`portfolio_share_type(PortfolioShareType)`](crate::operation::accept_portfolio_share::builders::AcceptPortfolioShareFluentBuilder::portfolio_share_type) / [`set_portfolio_share_type(Option<PortfolioShareType>)`](crate::operation::accept_portfolio_share::builders::AcceptPortfolioShareFluentBuilder::set_portfolio_share_type): <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>  <ul>   <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.</p> </li>   <li> <p> <code>IMPORTED</code> - Accept imported portfolios.</p> </li>   <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>  </ul>  <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
     /// - On success, responds with [`AcceptPortfolioShareOutput`](crate::operation::accept_portfolio_share::AcceptPortfolioShareOutput)
     /// - On failure, responds with [`SdkError<AcceptPortfolioShareError>`](crate::operation::accept_portfolio_share::AcceptPortfolioShareError)
-    pub fn accept_portfolio_share(
-        &self,
-    ) -> crate::operation::accept_portfolio_share::builders::AcceptPortfolioShareFluentBuilder {
-        crate::operation::accept_portfolio_share::builders::AcceptPortfolioShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn accept_portfolio_share(&self) -> crate::operation::accept_portfolio_share::builders::AcceptPortfolioShareFluentBuilder {
+        crate::operation::accept_portfolio_share::builders::AcceptPortfolioShareFluentBuilder::new(self.handle.clone())
     }
 }

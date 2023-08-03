@@ -26,7 +26,7 @@ impl CreateRemoteAccessSessionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRemoteAccessSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_remote_access_session::builders::CreateRemoteAccessSessionInputBuilder,
+    inner: crate::operation::create_remote_access_session::builders::CreateRemoteAccessSessionInputBuilder,
 }
 impl CreateRemoteAccessSessionFluentBuilder {
     /// Creates a new `CreateRemoteAccessSession`.
@@ -37,7 +37,7 @@ impl CreateRemoteAccessSessionFluentBuilder {
         }
     }
     /// Access the CreateRemoteAccessSession as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_remote_access_session::builders::CreateRemoteAccessSessionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_remote_access_session::builders::CreateRemoteAccessSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateRemoteAccessSessionFluentBuilder {
             crate::operation::create_remote_access_session::CreateRemoteAccessSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_remote_access_session::CreateRemoteAccessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_remote_access_session::CreateRemoteAccessSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateRemoteAccessSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateRemoteAccessSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_remote_access_session::CreateRemoteAccessSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_remote_access_session::CreateRemoteAccessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_remote_access_session::CreateRemoteAccessSessionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateRemoteAccessSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_remote_access_session::CreateRemoteAccessSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_remote_access_session::CreateRemoteAccessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_remote_access_session::CreateRemoteAccessSessionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateRemoteAccessSessionFluentBuilder {
             crate::operation::create_remote_access_session::CreateRemoteAccessSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_remote_access_session::CreateRemoteAccessSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_remote_access_session::CreateRemoteAccessSessionError>,
     > {
         self.customize_middleware().await
     }
@@ -164,19 +153,13 @@ impl CreateRemoteAccessSessionFluentBuilder {
     }
     /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn ssh_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ssh_public_key(input.into());
         self
     }
     /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn set_ssh_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ssh_public_key(input);
         self
     }
@@ -217,18 +200,12 @@ impl CreateRemoteAccessSessionFluentBuilder {
         self.inner.get_remote_record_enabled()
     }
     /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
-    pub fn remote_record_app_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_record_app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remote_record_app_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
-    pub fn set_remote_record_app_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_record_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_remote_record_app_arn(input);
         self
     }
@@ -268,25 +245,17 @@ impl CreateRemoteAccessSessionFluentBuilder {
         self.inner.get_client_id()
     }
     /// <p>The configuration information for the remote access session request.</p>
-    pub fn configuration(
-        mut self,
-        input: crate::types::CreateRemoteAccessSessionConfiguration,
-    ) -> Self {
+    pub fn configuration(mut self, input: crate::types::CreateRemoteAccessSessionConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
     /// <p>The configuration information for the remote access session request.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>The configuration information for the remote access session request.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration> {
         self.inner.get_configuration()
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
@@ -305,10 +274,7 @@ impl CreateRemoteAccessSessionFluentBuilder {
     /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
     /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
-    pub fn set_interaction_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::InteractionMode>,
-    ) -> Self {
+    pub fn set_interaction_mode(mut self, input: ::std::option::Option<crate::types::InteractionMode>) -> Self {
         self.inner = self.inner.set_interaction_mode(input);
         self
     }

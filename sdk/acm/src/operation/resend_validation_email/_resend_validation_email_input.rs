@@ -45,18 +45,14 @@ impl ResendValidationEmailInput {
 }
 impl ResendValidationEmailInput {
     /// Creates a new builder-style object to manufacture [`ResendValidationEmailInput`](crate::operation::resend_validation_email::ResendValidationEmailInput).
-    pub fn builder(
-    ) -> crate::operation::resend_validation_email::builders::ResendValidationEmailInputBuilder
-    {
+    pub fn builder() -> crate::operation::resend_validation_email::builders::ResendValidationEmailInputBuilder {
         crate::operation::resend_validation_email::builders::ResendValidationEmailInputBuilder::default()
     }
 }
 
 /// A builder for [`ResendValidationEmailInput`](crate::operation::resend_validation_email::ResendValidationEmailInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResendValidationEmailInputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<::std::string::String>,
@@ -65,19 +61,13 @@ pub struct ResendValidationEmailInputBuilder {
 impl ResendValidationEmailInputBuilder {
     /// <p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <code>RequestCertificate</code> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form: </p>
     /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <code>RequestCertificate</code> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form: </p>
     /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -108,10 +98,7 @@ impl ResendValidationEmailInputBuilder {
     /// <li> <p>postmaster@subdomain.example.com</p> </li>
     /// <li> <p>webmaster@subdomain.example.com</p> </li>
     /// </ul>
-    pub fn validation_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_domain = ::std::option::Option::Some(input.into());
         self
     }
@@ -123,10 +110,7 @@ impl ResendValidationEmailInputBuilder {
     /// <li> <p>postmaster@subdomain.example.com</p> </li>
     /// <li> <p>webmaster@subdomain.example.com</p> </li>
     /// </ul>
-    pub fn set_validation_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_domain = input;
         self
     }
@@ -144,16 +128,12 @@ impl ResendValidationEmailInputBuilder {
     /// Consumes the builder and constructs a [`ResendValidationEmailInput`](crate::operation::resend_validation_email::ResendValidationEmailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::resend_validation_email::ResendValidationEmailInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::resend_validation_email::ResendValidationEmailInput {
-                certificate_arn: self.certificate_arn,
-                domain: self.domain,
-                validation_domain: self.validation_domain,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::resend_validation_email::ResendValidationEmailInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::resend_validation_email::ResendValidationEmailInput {
+            certificate_arn: self.certificate_arn,
+            domain: self.domain,
+            validation_domain: self.validation_domain,
+        })
     }
 }

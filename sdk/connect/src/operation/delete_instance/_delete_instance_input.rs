@@ -22,9 +22,7 @@ impl DeleteInstanceInput {
 
 /// A builder for [`DeleteInstanceInput`](crate::operation::delete_instance::DeleteInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DeleteInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInstanceInput`](crate::operation::delete_instance::DeleteInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_instance::DeleteInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_instance::DeleteInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_instance::DeleteInstanceInput {
             instance_id: self.instance_id,
         })

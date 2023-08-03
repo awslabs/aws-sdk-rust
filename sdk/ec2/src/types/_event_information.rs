@@ -101,9 +101,7 @@ impl EventInformation {
 
 /// A builder for [`EventInformation`](crate::types::EventInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventInformationBuilder {
     pub(crate) event_description: ::std::option::Option<::std::string::String>,
     pub(crate) event_sub_type: ::std::option::Option<::std::string::String>,
@@ -111,18 +109,12 @@ pub struct EventInformationBuilder {
 }
 impl EventInformationBuilder {
     /// <p>The description of the event.</p>
-    pub fn event_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the event.</p>
-    pub fn set_event_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_description = input;
         self
     }
@@ -163,10 +155,7 @@ impl EventInformationBuilder {
     /// <li> <p> <code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the Spot price.</p> </li>
     /// <li> <p> <code>registerWithLoadBalancersFailed</code> - An attempt to register instances with load balancers failed. For more information, see the description of the event.</p> </li>
     /// </ul>
-    pub fn event_sub_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_sub_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_sub_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -203,10 +192,7 @@ impl EventInformationBuilder {
     /// <li> <p> <code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the Spot price.</p> </li>
     /// <li> <p> <code>registerWithLoadBalancersFailed</code> - An attempt to register instances with load balancers failed. For more information, see the description of the event.</p> </li>
     /// </ul>
-    pub fn set_event_sub_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_sub_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_sub_type = input;
         self
     }

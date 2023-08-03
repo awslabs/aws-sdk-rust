@@ -29,17 +29,14 @@ impl ListVpcConnectionsInput {
 }
 impl ListVpcConnectionsInput {
     /// Creates a new builder-style object to manufacture [`ListVpcConnectionsInput`](crate::operation::list_vpc_connections::ListVpcConnectionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_vpc_connections::builders::ListVpcConnectionsInputBuilder {
+    pub fn builder() -> crate::operation::list_vpc_connections::builders::ListVpcConnectionsInputBuilder {
         crate::operation::list_vpc_connections::builders::ListVpcConnectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVpcConnectionsInput`](crate::operation::list_vpc_connections::ListVpcConnectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpcConnectionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct ListVpcConnectionsInputBuilder {
 }
 impl ListVpcConnectionsInputBuilder {
     /// <p>The Amazon Web Services account ID of the account that contains the VPC connections that you want to list.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the account that contains the VPC connections that you want to list.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -97,16 +88,11 @@ impl ListVpcConnectionsInputBuilder {
     /// Consumes the builder and constructs a [`ListVpcConnectionsInput`](crate::operation::list_vpc_connections::ListVpcConnectionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_vpc_connections::ListVpcConnectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_vpc_connections::ListVpcConnectionsInput {
-                aws_account_id: self.aws_account_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_vpc_connections::ListVpcConnectionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_vpc_connections::ListVpcConnectionsInput {
+            aws_account_id: self.aws_account_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -26,8 +26,7 @@ impl DeleteCallAnalyticsJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCallAnalyticsJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobInputBuilder,
+    inner: crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobInputBuilder,
 }
 impl DeleteCallAnalyticsJobFluentBuilder {
     /// Creates a new `DeleteCallAnalyticsJob`.
@@ -38,10 +37,7 @@ impl DeleteCallAnalyticsJobFluentBuilder {
         }
     }
     /// Access the DeleteCallAnalyticsJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteCallAnalyticsJobFluentBuilder {
             crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteCallAnalyticsJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteCallAnalyticsJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteCallAnalyticsJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DeleteCallAnalyticsJobFluentBuilder {
             crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Call Analytics job you want to delete. Job names are case sensitive.</p>
-    pub fn call_analytics_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn call_analytics_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.call_analytics_job_name(input.into());
         self
     }
     /// <p>The name of the Call Analytics job you want to delete. Job names are case sensitive.</p>
-    pub fn set_call_analytics_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_call_analytics_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_call_analytics_job_name(input);
         self
     }

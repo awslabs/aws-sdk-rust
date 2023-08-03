@@ -38,10 +38,7 @@ impl DescribeFolderContentsFluentBuilder {
         }
     }
     /// Access the DescribeFolderContents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_folder_contents::builders::DescribeFolderContentsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_folder_contents::builders::DescribeFolderContentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribeFolderContentsFluentBuilder {
             crate::operation::describe_folder_contents::DescribeFolderContents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_folder_contents::DescribeFolderContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_folder_contents::DescribeFolderContentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribeFolderContentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribeFolderContentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_folder_contents::DescribeFolderContentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_folder_contents::DescribeFolderContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_folder_contents::DescribeFolderContentsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribeFolderContentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_folder_contents::DescribeFolderContentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_folder_contents::DescribeFolderContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_folder_contents::DescribeFolderContentsError>,
     > {
         self.send_middleware().await
     }
@@ -118,37 +106,23 @@ impl DescribeFolderContentsFluentBuilder {
             crate::operation::describe_folder_contents::DescribeFolderContents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_folder_contents::DescribeFolderContentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_folder_contents::DescribeFolderContentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_folder_contents::paginator::DescribeFolderContentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_folder_contents::paginator::DescribeFolderContentsPaginator
-    {
-        crate::operation::describe_folder_contents::paginator::DescribeFolderContentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_folder_contents::paginator::DescribeFolderContentsPaginator {
+        crate::operation::describe_folder_contents::paginator::DescribeFolderContentsPaginator::new(self.handle, self.inner)
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
@@ -176,10 +150,7 @@ impl DescribeFolderContentsFluentBuilder {
         self
     }
     /// <p>The sorting criteria.</p>
-    pub fn set_sort(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSortType>,
-    ) -> Self {
+    pub fn set_sort(mut self, input: ::std::option::Option<crate::types::ResourceSortType>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
     }
@@ -235,10 +206,7 @@ impl DescribeFolderContentsFluentBuilder {
         self
     }
     /// <p>The type of items.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FolderContentType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::FolderContentType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

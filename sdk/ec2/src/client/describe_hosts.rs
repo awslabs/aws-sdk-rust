@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`hosts(Option<Vec<Host>>)`](crate::operation::describe_hosts::DescribeHostsOutput::hosts): <p>Information about the Dedicated Hosts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_hosts::DescribeHostsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeHostsError>`](crate::operation::describe_hosts::DescribeHostsError)
-    pub fn describe_hosts(
-        &self,
-    ) -> crate::operation::describe_hosts::builders::DescribeHostsFluentBuilder {
-        crate::operation::describe_hosts::builders::DescribeHostsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_hosts(&self) -> crate::operation::describe_hosts::builders::DescribeHostsFluentBuilder {
+        crate::operation::describe_hosts::builders::DescribeHostsFluentBuilder::new(self.handle.clone())
     }
 }

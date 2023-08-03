@@ -42,9 +42,7 @@ impl GetBucketOutput {
 
 /// A builder for [`GetBucketOutput`](crate::operation::get_bucket::GetBucketOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketOutputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) public_access_block_enabled: ::std::option::Option<bool>,
@@ -86,10 +84,7 @@ impl GetBucketOutputBuilder {
         self
     }
     /// <p>The creation date of the Outposts bucket.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

@@ -43,16 +43,14 @@ impl ListFunctionEventInvokeConfigsInput {
 }
 impl ListFunctionEventInvokeConfigsInput {
     /// Creates a new builder-style object to manufacture [`ListFunctionEventInvokeConfigsInput`](crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsInput).
-    pub fn builder() -> crate::operation::list_function_event_invoke_configs::builders::ListFunctionEventInvokeConfigsInputBuilder{
+    pub fn builder() -> crate::operation::list_function_event_invoke_configs::builders::ListFunctionEventInvokeConfigsInputBuilder {
         crate::operation::list_function_event_invoke_configs::builders::ListFunctionEventInvokeConfigsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFunctionEventInvokeConfigsInput`](crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFunctionEventInvokeConfigsInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -67,10 +65,7 @@ impl ListFunctionEventInvokeConfigsInputBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -82,10 +77,7 @@ impl ListFunctionEventInvokeConfigsInputBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -137,13 +129,10 @@ impl ListFunctionEventInvokeConfigsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_function_event_invoke_configs::ListFunctionEventInvokeConfigsInput {
-                function_name: self.function_name
-                ,
-                marker: self.marker
-                ,
-                max_items: self.max_items
-                ,
-            }
+                function_name: self.function_name,
+                marker: self.marker,
+                max_items: self.max_items,
+            },
         )
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetProtocolsListOutput {
 }
 impl GetProtocolsListOutput {
     /// Creates a new builder-style object to manufacture [`GetProtocolsListOutput`](crate::operation::get_protocols_list::GetProtocolsListOutput).
-    pub fn builder() -> crate::operation::get_protocols_list::builders::GetProtocolsListOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_protocols_list::builders::GetProtocolsListOutputBuilder {
         crate::operation::get_protocols_list::builders::GetProtocolsListOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetProtocolsListOutput`](crate::operation::get_protocols_list::GetProtocolsListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProtocolsListOutputBuilder {
     pub(crate) protocols_list: ::std::option::Option<crate::types::ProtocolsListData>,
     pub(crate) protocols_list_arn: ::std::option::Option<::std::string::String>,
@@ -51,10 +48,7 @@ impl GetProtocolsListOutputBuilder {
         self
     }
     /// <p>Information about the specified Firewall Manager protocols list.</p>
-    pub fn set_protocols_list(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolsListData>,
-    ) -> Self {
+    pub fn set_protocols_list(mut self, input: ::std::option::Option<crate::types::ProtocolsListData>) -> Self {
         self.protocols_list = input;
         self
     }
@@ -63,18 +57,12 @@ impl GetProtocolsListOutputBuilder {
         &self.protocols_list
     }
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
-    pub fn protocols_list_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protocols_list_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocols_list_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
-    pub fn set_protocols_list_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protocols_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocols_list_arn = input;
         self
     }

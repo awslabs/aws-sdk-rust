@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`results(Option<Vec<AnalyticsSessionResult>>)`](crate::operation::list_session_metrics::ListSessionMetricsOutput::results): <p>The results for the session metrics.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_session_metrics::ListSessionMetricsOutput::next_token): <p>If the response from the ListSessionMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>  <p>Use the returned token in the nextToken parameter of a ListSessionMetrics request to return the next page of results. For a complete set of results, call the ListSessionMetrics operation until the nextToken returned in the response is null.</p>
     /// - On failure, responds with [`SdkError<ListSessionMetricsError>`](crate::operation::list_session_metrics::ListSessionMetricsError)
-    pub fn list_session_metrics(
-        &self,
-    ) -> crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder {
-        crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_session_metrics(&self) -> crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder {
+        crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::new(self.handle.clone())
     }
 }

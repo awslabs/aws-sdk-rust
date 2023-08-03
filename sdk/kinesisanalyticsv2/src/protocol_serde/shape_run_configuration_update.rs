@@ -6,10 +6,7 @@ pub fn ser_run_configuration_update(
     if let Some(var_1) = &input.flink_run_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FlinkRunConfiguration").start_object();
-        crate::protocol_serde::shape_flink_run_configuration::ser_flink_run_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_flink_run_configuration::ser_flink_run_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.application_restore_configuration {

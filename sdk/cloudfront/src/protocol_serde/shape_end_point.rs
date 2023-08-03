@@ -11,10 +11,7 @@ pub fn ser_end_point(
     }
     if let Some(var_2) = &input.kinesis_stream_config {
         let inner_writer = scope.start_el("KinesisStreamConfig");
-        crate::protocol_serde::shape_kinesis_stream_config::ser_kinesis_stream_config(
-            var_2,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_kinesis_stream_config::ser_kinesis_stream_config(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())

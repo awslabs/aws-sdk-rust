@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for ListThingPrincipalsOutput {
 }
 impl ListThingPrincipalsOutput {
     /// Creates a new builder-style object to manufacture [`ListThingPrincipalsOutput`](crate::operation::list_thing_principals::ListThingPrincipalsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_thing_principals::builders::ListThingPrincipalsOutputBuilder {
-        crate::operation::list_thing_principals::builders::ListThingPrincipalsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_thing_principals::builders::ListThingPrincipalsOutputBuilder {
+        crate::operation::list_thing_principals::builders::ListThingPrincipalsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListThingPrincipalsOutput`](crate::operation::list_thing_principals::ListThingPrincipalsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingPrincipalsOutputBuilder {
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,10 +55,7 @@ impl ListThingPrincipalsOutputBuilder {
         self
     }
     /// <p>The principals associated with the thing.</p>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.principals = input;
         self
     }

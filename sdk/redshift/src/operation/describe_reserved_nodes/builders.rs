@@ -37,10 +37,7 @@ impl DescribeReservedNodesFluentBuilder {
         }
     }
     /// Access the DescribeReservedNodes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeReservedNodesFluentBuilder {
             crate::operation::describe_reserved_nodes::DescribeReservedNodes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_nodes::DescribeReservedNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_nodes::DescribeReservedNodesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeReservedNodesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeReservedNodesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_nodes::DescribeReservedNodesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_nodes::DescribeReservedNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_nodes::DescribeReservedNodesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeReservedNodesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_nodes::DescribeReservedNodesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_nodes::DescribeReservedNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_nodes::DescribeReservedNodesError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +105,23 @@ impl DescribeReservedNodesFluentBuilder {
             crate::operation::describe_reserved_nodes::DescribeReservedNodes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_nodes::DescribeReservedNodesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_nodes::DescribeReservedNodesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_nodes::paginator::DescribeReservedNodesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_reserved_nodes::paginator::DescribeReservedNodesPaginator {
-        crate::operation::describe_reserved_nodes::paginator::DescribeReservedNodesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_reserved_nodes::paginator::DescribeReservedNodesPaginator {
+        crate::operation::describe_reserved_nodes::paginator::DescribeReservedNodesPaginator::new(self.handle, self.inner)
     }
     /// <p>Identifier for the node reservation.</p>
-    pub fn reserved_node_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_node_id(input.into());
         self
     }
     /// <p>Identifier for the node reservation.</p>
-    pub fn set_reserved_node_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_node_id(input);
         self
     }

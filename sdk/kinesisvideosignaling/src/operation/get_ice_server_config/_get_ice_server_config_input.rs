@@ -36,17 +36,14 @@ impl GetIceServerConfigInput {
 }
 impl GetIceServerConfigInput {
     /// Creates a new builder-style object to manufacture [`GetIceServerConfigInput`](crate::operation::get_ice_server_config::GetIceServerConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_ice_server_config::builders::GetIceServerConfigInputBuilder {
+    pub fn builder() -> crate::operation::get_ice_server_config::builders::GetIceServerConfigInputBuilder {
         crate::operation::get_ice_server_config::builders::GetIceServerConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIceServerConfigInput`](crate::operation::get_ice_server_config::GetIceServerConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIceServerConfigInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
@@ -113,17 +110,13 @@ impl GetIceServerConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetIceServerConfigInput`](crate::operation::get_ice_server_config::GetIceServerConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ice_server_config::GetIceServerConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_ice_server_config::GetIceServerConfigInput {
-                channel_arn: self.channel_arn,
-                client_id: self.client_id,
-                service: self.service,
-                username: self.username,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_ice_server_config::GetIceServerConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_ice_server_config::GetIceServerConfigInput {
+            channel_arn: self.channel_arn,
+            client_id: self.client_id,
+            service: self.service,
+            username: self.username,
+        })
     }
 }

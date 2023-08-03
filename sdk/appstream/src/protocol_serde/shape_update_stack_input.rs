@@ -18,10 +18,7 @@ pub fn ser_update_stack_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_storage_connector::ser_storage_connector(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_storage_connector::ser_storage_connector(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -51,10 +48,7 @@ pub fn ser_update_stack_input(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_user_setting::ser_user_setting(
-                    &mut object_17,
-                    item_16,
-                )?;
+                crate::protocol_serde::shape_user_setting::ser_user_setting(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }
@@ -63,10 +57,7 @@ pub fn ser_update_stack_input(
     if let Some(var_18) = &input.application_settings {
         #[allow(unused_mut)]
         let mut object_19 = object.key("ApplicationSettings").start_object();
-        crate::protocol_serde::shape_application_settings::ser_application_settings(
-            &mut object_19,
-            var_18,
-        )?;
+        crate::protocol_serde::shape_application_settings::ser_application_settings(&mut object_19, var_18)?;
         object_19.finish();
     }
     if let Some(var_20) = &input.access_endpoints {
@@ -75,10 +66,7 @@ pub fn ser_update_stack_input(
             {
                 #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_access_endpoint::ser_access_endpoint(
-                    &mut object_23,
-                    item_22,
-                )?;
+                crate::protocol_serde::shape_access_endpoint::ser_access_endpoint(&mut object_23, item_22)?;
                 object_23.finish();
             }
         }

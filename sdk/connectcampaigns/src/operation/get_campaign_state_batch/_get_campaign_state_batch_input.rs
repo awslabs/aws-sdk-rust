@@ -16,18 +16,14 @@ impl GetCampaignStateBatchInput {
 }
 impl GetCampaignStateBatchInput {
     /// Creates a new builder-style object to manufacture [`GetCampaignStateBatchInput`](crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput).
-    pub fn builder(
-    ) -> crate::operation::get_campaign_state_batch::builders::GetCampaignStateBatchInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_campaign_state_batch::builders::GetCampaignStateBatchInputBuilder {
         crate::operation::get_campaign_state_batch::builders::GetCampaignStateBatchInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCampaignStateBatchInput`](crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCampaignStateBatchInputBuilder {
     pub(crate) campaign_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -44,30 +40,21 @@ impl GetCampaignStateBatchInputBuilder {
         self
     }
     /// List of CampaignId
-    pub fn set_campaign_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_campaign_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.campaign_ids = input;
         self
     }
     /// List of CampaignId
-    pub fn get_campaign_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_campaign_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.campaign_ids
     }
     /// Consumes the builder and constructs a [`GetCampaignStateBatchInput`](crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput {
-                campaign_ids: self.campaign_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput {
+            campaign_ids: self.campaign_ids,
+        })
     }
 }

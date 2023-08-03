@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`metric_math_anomaly_detector(MetricMathAnomalyDetector)`](crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorFluentBuilder::metric_math_anomaly_detector) / [`set_metric_math_anomaly_detector(Option<MetricMathAnomalyDetector>)`](crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorFluentBuilder::set_metric_math_anomaly_detector): <p>The metric math anomaly detector to be created.</p>  <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>  <ul>   <li> <p> <code>Dimensions</code> </p> </li>   <li> <p> <code>MetricName</code> </p> </li>   <li> <p> <code>Namespace</code> </p> </li>   <li> <p> <code>Stat</code> </p> </li>   <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>  </ul>  <p>Instead, specify the metric math anomaly detector attributes as part of the property <code>MetricMathAnomalyDetector</code>.</p>
     /// - On success, responds with [`PutAnomalyDetectorOutput`](crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput)
     /// - On failure, responds with [`SdkError<PutAnomalyDetectorError>`](crate::operation::put_anomaly_detector::PutAnomalyDetectorError)
-    pub fn put_anomaly_detector(
-        &self,
-    ) -> crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorFluentBuilder {
-        crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_anomaly_detector(&self) -> crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorFluentBuilder {
+        crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorFluentBuilder::new(self.handle.clone())
     }
 }

@@ -5,10 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountFluentBuilder::send) it.
     /// - On success, responds with [`DisassociateAdminAccountOutput`](crate::operation::disassociate_admin_account::DisassociateAdminAccountOutput)
     /// - On failure, responds with [`SdkError<DisassociateAdminAccountError>`](crate::operation::disassociate_admin_account::DisassociateAdminAccountError)
-    pub fn disassociate_admin_account(
-        &self,
-    ) -> crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountFluentBuilder
-    {
+    pub fn disassociate_admin_account(&self) -> crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountFluentBuilder {
         crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountFluentBuilder::new(self.handle.clone())
     }
 }

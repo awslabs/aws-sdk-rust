@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ClaimDevicesByClaimCodeOutput {
 }
 impl ClaimDevicesByClaimCodeOutput {
     /// Creates a new builder-style object to manufacture [`ClaimDevicesByClaimCodeOutput`](crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput).
-    pub fn builder(
-    ) -> crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeOutputBuilder {
         crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ClaimDevicesByClaimCodeOutput`](crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClaimDevicesByClaimCodeOutputBuilder {
     pub(crate) claim_code: ::std::option::Option<::std::string::String>,
     pub(crate) total: ::std::option::Option<i32>,
@@ -84,9 +80,7 @@ impl ClaimDevicesByClaimCodeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ClaimDevicesByClaimCodeOutput`](crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput {
+    pub fn build(self) -> crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput {
         crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput {
             claim_code: self.claim_code,
             total: self.total,

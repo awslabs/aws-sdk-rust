@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteSnapshotScheduleOutput {
 }
 impl DeleteSnapshotScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSnapshotScheduleOutput`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleOutputBuilder {
         crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSnapshotScheduleOutput`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSnapshotScheduleOutputBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

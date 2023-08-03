@@ -10,10 +10,7 @@ impl UpdateGameServerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_game_server::UpdateGameServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_server::UpdateGameServerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_server::UpdateGameServerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_game_server();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl UpdateGameServerFluentBuilder {
         }
     }
     /// Access the UpdateGameServer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_game_server::builders::UpdateGameServerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_game_server::builders::UpdateGameServerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl UpdateGameServerFluentBuilder {
             crate::operation::update_game_server::UpdateGameServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_server::UpdateGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_server::UpdateGameServerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl UpdateGameServerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl UpdateGameServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_game_server::UpdateGameServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_server::UpdateGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_server::UpdateGameServerError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl UpdateGameServerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_game_server::UpdateGameServerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_server::UpdateGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_server::UpdateGameServerError>,
     > {
         self.send_middleware().await
     }
@@ -126,25 +112,17 @@ impl UpdateGameServerFluentBuilder {
             crate::operation::update_game_server::UpdateGameServer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_game_server::UpdateGameServerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_game_server::UpdateGameServerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_group_name(input.into());
         self
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
@@ -153,18 +131,12 @@ impl UpdateGameServerFluentBuilder {
         self.inner.get_game_server_group_name()
     }
     /// <p>A custom string that uniquely identifies the game server to update.</p>
-    pub fn game_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_id(input.into());
         self
     }
     /// <p>A custom string that uniquely identifies the game server to update.</p>
-    pub fn set_game_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_id(input);
         self
     }
@@ -173,18 +145,12 @@ impl UpdateGameServerFluentBuilder {
         self.inner.get_game_server_id()
     }
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
-    pub fn game_server_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_data(input.into());
         self
     }
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
-    pub fn set_game_server_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_data(input);
         self
     }
@@ -198,17 +164,12 @@ impl UpdateGameServerFluentBuilder {
         self
     }
     /// <p>Indicates whether the game server is available or is currently hosting gameplay.</p>
-    pub fn set_utilization_status(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServerUtilizationStatus>,
-    ) -> Self {
+    pub fn set_utilization_status(mut self, input: ::std::option::Option<crate::types::GameServerUtilizationStatus>) -> Self {
         self.inner = self.inner.set_utilization_status(input);
         self
     }
     /// <p>Indicates whether the game server is available or is currently hosting gameplay.</p>
-    pub fn get_utilization_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::GameServerUtilizationStatus> {
+    pub fn get_utilization_status(&self) -> &::std::option::Option<crate::types::GameServerUtilizationStatus> {
         self.inner.get_utilization_status()
     }
     /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
@@ -217,10 +178,7 @@ impl UpdateGameServerFluentBuilder {
         self
     }
     /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
-    pub fn set_health_check(
-        mut self,
-        input: ::std::option::Option<crate::types::GameServerHealthCheck>,
-    ) -> Self {
+    pub fn set_health_check(mut self, input: ::std::option::Option<crate::types::GameServerHealthCheck>) -> Self {
         self.inner = self.inner.set_health_check(input);
         self
     }

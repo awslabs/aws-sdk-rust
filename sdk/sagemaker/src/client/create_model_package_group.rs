@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateModelPackageGroupOutput`](crate::operation::create_model_package_group::CreateModelPackageGroupOutput) with field(s):
     ///   - [`model_package_group_arn(Option<String>)`](crate::operation::create_model_package_group::CreateModelPackageGroupOutput::model_package_group_arn): <p>The Amazon Resource Name (ARN) of the model group.</p>
     /// - On failure, responds with [`SdkError<CreateModelPackageGroupError>`](crate::operation::create_model_package_group::CreateModelPackageGroupError)
-    pub fn create_model_package_group(
-        &self,
-    ) -> crate::operation::create_model_package_group::builders::CreateModelPackageGroupFluentBuilder
-    {
+    pub fn create_model_package_group(&self) -> crate::operation::create_model_package_group::builders::CreateModelPackageGroupFluentBuilder {
         crate::operation::create_model_package_group::builders::CreateModelPackageGroupFluentBuilder::new(self.handle.clone())
     }
 }

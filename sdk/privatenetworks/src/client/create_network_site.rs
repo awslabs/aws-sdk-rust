@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`network_site(Option<NetworkSite>)`](crate::operation::create_network_site::CreateNetworkSiteOutput::network_site): <p>Information about the network site.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_network_site::CreateNetworkSiteOutput::tags): <p> The network site tags. </p>
     /// - On failure, responds with [`SdkError<CreateNetworkSiteError>`](crate::operation::create_network_site::CreateNetworkSiteError)
-    pub fn create_network_site(
-        &self,
-    ) -> crate::operation::create_network_site::builders::CreateNetworkSiteFluentBuilder {
-        crate::operation::create_network_site::builders::CreateNetworkSiteFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_network_site(&self) -> crate::operation::create_network_site::builders::CreateNetworkSiteFluentBuilder {
+        crate::operation::create_network_site::builders::CreateNetworkSiteFluentBuilder::new(self.handle.clone())
     }
 }

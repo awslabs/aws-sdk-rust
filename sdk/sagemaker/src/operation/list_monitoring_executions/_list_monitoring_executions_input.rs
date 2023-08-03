@@ -91,9 +91,7 @@ impl ListMonitoringExecutionsInput {
         self.creation_time_after.as_ref()
     }
     /// <p>A filter that returns only jobs modified after a specified time.</p>
-    pub fn last_modified_time_before(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>A filter that returns only jobs modified before a specified time.</p>
@@ -115,18 +113,14 @@ impl ListMonitoringExecutionsInput {
 }
 impl ListMonitoringExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListMonitoringExecutionsInput`](crate::operation::list_monitoring_executions::ListMonitoringExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsInputBuilder {
         crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMonitoringExecutionsInput`](crate::operation::list_monitoring_executions::ListMonitoringExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitoringExecutionsInputBuilder {
     pub(crate) monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
@@ -146,18 +140,12 @@ pub struct ListMonitoringExecutionsInputBuilder {
 }
 impl ListMonitoringExecutionsInputBuilder {
     /// <p>Name of a specific schedule to fetch jobs for.</p>
-    pub fn monitoring_schedule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a specific schedule to fetch jobs for.</p>
-    pub fn set_monitoring_schedule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_schedule_name = input;
         self
     }
@@ -166,18 +154,12 @@ impl ListMonitoringExecutionsInputBuilder {
         &self.monitoring_schedule_name
     }
     /// <p>Name of a specific endpoint to fetch jobs for.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a specific endpoint to fetch jobs for.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
@@ -191,10 +173,7 @@ impl ListMonitoringExecutionsInputBuilder {
         self
     }
     /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringExecutionSortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::MonitoringExecutionSortKey>) -> Self {
         self.sort_by = input;
         self
     }
@@ -250,17 +229,12 @@ impl ListMonitoringExecutionsInputBuilder {
         self
     }
     /// <p>Filter for jobs scheduled before a specified time.</p>
-    pub fn set_scheduled_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.scheduled_time_before = input;
         self
     }
     /// <p>Filter for jobs scheduled before a specified time.</p>
-    pub fn get_scheduled_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_scheduled_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.scheduled_time_before
     }
     /// <p>Filter for jobs scheduled after a specified time.</p>
@@ -269,10 +243,7 @@ impl ListMonitoringExecutionsInputBuilder {
         self
     }
     /// <p>Filter for jobs scheduled after a specified time.</p>
-    pub fn set_scheduled_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.scheduled_time_after = input;
         self
     }
@@ -286,10 +257,7 @@ impl ListMonitoringExecutionsInputBuilder {
         self
     }
     /// <p>A filter that returns only jobs created before a specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -303,10 +271,7 @@ impl ListMonitoringExecutionsInputBuilder {
         self
     }
     /// <p>A filter that returns only jobs created after a specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -320,17 +285,12 @@ impl ListMonitoringExecutionsInputBuilder {
         self
     }
     /// <p>A filter that returns only jobs modified after a specified time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_before = input;
         self
     }
     /// <p>A filter that returns only jobs modified after a specified time.</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_before
     }
     /// <p>A filter that returns only jobs modified before a specified time.</p>
@@ -339,17 +299,12 @@ impl ListMonitoringExecutionsInputBuilder {
         self
     }
     /// <p>A filter that returns only jobs modified before a specified time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_after = input;
         self
     }
     /// <p>A filter that returns only jobs modified before a specified time.</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_after
     }
     /// <p>A filter that retrieves only jobs with a specific status.</p>
@@ -358,10 +313,7 @@ impl ListMonitoringExecutionsInputBuilder {
         self
     }
     /// <p>A filter that retrieves only jobs with a specific status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.status_equals = input;
         self
     }
@@ -370,25 +322,17 @@ impl ListMonitoringExecutionsInputBuilder {
         &self.status_equals
     }
     /// <p>Gets a list of the monitoring job runs of the specified monitoring job definitions.</p>
-    pub fn monitoring_job_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_job_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Gets a list of the monitoring job runs of the specified monitoring job definitions.</p>
-    pub fn set_monitoring_job_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_job_definition_name = input;
         self
     }
     /// <p>Gets a list of the monitoring job runs of the specified monitoring job definitions.</p>
-    pub fn get_monitoring_job_definition_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_monitoring_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitoring_job_definition_name
     }
     /// <p>A filter that returns only the monitoring job runs of the specified monitoring type.</p>
@@ -397,17 +341,12 @@ impl ListMonitoringExecutionsInputBuilder {
         self
     }
     /// <p>A filter that returns only the monitoring job runs of the specified monitoring type.</p>
-    pub fn set_monitoring_type_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringType>,
-    ) -> Self {
+    pub fn set_monitoring_type_equals(mut self, input: ::std::option::Option<crate::types::MonitoringType>) -> Self {
         self.monitoring_type_equals = input;
         self
     }
     /// <p>A filter that returns only the monitoring job runs of the specified monitoring type.</p>
-    pub fn get_monitoring_type_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringType> {
+    pub fn get_monitoring_type_equals(&self) -> &::std::option::Option<crate::types::MonitoringType> {
         &self.monitoring_type_equals
     }
     /// Consumes the builder and constructs a [`ListMonitoringExecutionsInput`](crate::operation::list_monitoring_executions::ListMonitoringExecutionsInput).
@@ -417,24 +356,22 @@ impl ListMonitoringExecutionsInputBuilder {
         crate::operation::list_monitoring_executions::ListMonitoringExecutionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_monitoring_executions::ListMonitoringExecutionsInput {
-                monitoring_schedule_name: self.monitoring_schedule_name,
-                endpoint_name: self.endpoint_name,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                scheduled_time_before: self.scheduled_time_before,
-                scheduled_time_after: self.scheduled_time_after,
-                creation_time_before: self.creation_time_before,
-                creation_time_after: self.creation_time_after,
-                last_modified_time_before: self.last_modified_time_before,
-                last_modified_time_after: self.last_modified_time_after,
-                status_equals: self.status_equals,
-                monitoring_job_definition_name: self.monitoring_job_definition_name,
-                monitoring_type_equals: self.monitoring_type_equals,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_monitoring_executions::ListMonitoringExecutionsInput {
+            monitoring_schedule_name: self.monitoring_schedule_name,
+            endpoint_name: self.endpoint_name,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            scheduled_time_before: self.scheduled_time_before,
+            scheduled_time_after: self.scheduled_time_after,
+            creation_time_before: self.creation_time_before,
+            creation_time_after: self.creation_time_after,
+            last_modified_time_before: self.last_modified_time_before,
+            last_modified_time_after: self.last_modified_time_after,
+            status_equals: self.status_equals,
+            monitoring_job_definition_name: self.monitoring_job_definition_name,
+            monitoring_type_equals: self.monitoring_type_equals,
+        })
     }
 }

@@ -23,9 +23,7 @@ impl VerifyTrustInput {
 
 /// A builder for [`VerifyTrustInput`](crate::operation::verify_trust::VerifyTrustInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyTrustInputBuilder {
     pub(crate) trust_id: ::std::option::Option<::std::string::String>,
 }
@@ -45,14 +43,7 @@ impl VerifyTrustInputBuilder {
         &self.trust_id
     }
     /// Consumes the builder and constructs a [`VerifyTrustInput`](crate::operation::verify_trust::VerifyTrustInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::verify_trust::VerifyTrustInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::verify_trust::VerifyTrustInput {
-            trust_id: self.trust_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify_trust::VerifyTrustInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::verify_trust::VerifyTrustInput { trust_id: self.trust_id })
     }
 }

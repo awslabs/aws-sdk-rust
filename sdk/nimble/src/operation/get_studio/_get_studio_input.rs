@@ -22,9 +22,7 @@ impl GetStudioInput {
 
 /// A builder for [`GetStudioInput`](crate::operation::get_studio::GetStudioInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStudioInputBuilder {
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetStudioInputBuilder {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`GetStudioInput`](crate::operation::get_studio::GetStudioInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_studio::GetStudioInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_studio::GetStudioInput {
-            studio_id: self.studio_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_studio::GetStudioInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_studio::GetStudioInput { studio_id: self.studio_id })
     }
 }

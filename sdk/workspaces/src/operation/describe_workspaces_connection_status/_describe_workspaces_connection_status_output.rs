@@ -5,8 +5,7 @@
 pub struct DescribeWorkspacesConnectionStatusOutput {
     /// <p>Information about the connection status of the WorkSpace.</p>
     #[doc(hidden)]
-    pub workspaces_connection_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceConnectionStatus>>,
+    pub workspaces_connection_status: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceConnectionStatus>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeWorkspacesConnectionStatusOutput {
 }
 impl DescribeWorkspacesConnectionStatusOutput {
     /// <p>Information about the connection status of the WorkSpace.</p>
-    pub fn workspaces_connection_status(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::WorkspaceConnectionStatus]> {
+    pub fn workspaces_connection_status(&self) -> ::std::option::Option<&[crate::types::WorkspaceConnectionStatus]> {
         self.workspaces_connection_status.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeWorkspacesConnectionStatusOut
 }
 impl DescribeWorkspacesConnectionStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspacesConnectionStatusOutput`](crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusOutput).
-    pub fn builder() -> crate::operation::describe_workspaces_connection_status::builders::DescribeWorkspacesConnectionStatusOutputBuilder{
+    pub fn builder() -> crate::operation::describe_workspaces_connection_status::builders::DescribeWorkspacesConnectionStatusOutputBuilder {
         crate::operation::describe_workspaces_connection_status::builders::DescribeWorkspacesConnectionStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspacesConnectionStatusOutput`](crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspacesConnectionStatusOutputBuilder {
-    pub(crate) workspaces_connection_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceConnectionStatus>>,
+    pub(crate) workspaces_connection_status: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceConnectionStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeWorkspacesConnectionStatusOutputBuilder {
     /// To override the contents of this collection use [`set_workspaces_connection_status`](Self::set_workspaces_connection_status).
     ///
     /// <p>Information about the connection status of the WorkSpace.</p>
-    pub fn workspaces_connection_status(
-        mut self,
-        input: crate::types::WorkspaceConnectionStatus,
-    ) -> Self {
+    pub fn workspaces_connection_status(mut self, input: crate::types::WorkspaceConnectionStatus) -> Self {
         let mut v = self.workspaces_connection_status.unwrap_or_default();
         v.push(input);
         self.workspaces_connection_status = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeWorkspacesConnectionStatusOutputBuilder {
         self
     }
     /// <p>Information about the connection status of the WorkSpace.</p>
-    pub fn get_workspaces_connection_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceConnectionStatus>> {
+    pub fn get_workspaces_connection_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceConnectionStatus>> {
         &self.workspaces_connection_status
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
@@ -100,12 +89,10 @@ impl DescribeWorkspacesConnectionStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeWorkspacesConnectionStatusOutput`](crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusOutput).
-    pub fn build(self) -> crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusOutput{
+    pub fn build(self) -> crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusOutput {
         crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusOutput {
-            workspaces_connection_status: self.workspaces_connection_status
-            ,
-            next_token: self.next_token
-            ,
+            workspaces_connection_status: self.workspaces_connection_status,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

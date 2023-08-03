@@ -24,9 +24,7 @@ impl EncryptOutput {
         self.key_id.as_deref()
     }
     /// <p>The encryption algorithm that was used to encrypt the plaintext.</p>
-    pub fn encryption_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EncryptionAlgorithmSpec> {
+    pub fn encryption_algorithm(&self) -> ::std::option::Option<&crate::types::EncryptionAlgorithmSpec> {
         self.encryption_algorithm.as_ref()
     }
 }
@@ -44,9 +42,7 @@ impl EncryptOutput {
 
 /// A builder for [`EncryptOutput`](crate::operation::encrypt::EncryptOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptOutputBuilder {
     pub(crate) ciphertext_blob: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
@@ -60,10 +56,7 @@ impl EncryptOutputBuilder {
         self
     }
     /// <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn set_ciphertext_blob(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_ciphertext_blob(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.ciphertext_blob = input;
         self
     }
@@ -91,17 +84,12 @@ impl EncryptOutputBuilder {
         self
     }
     /// <p>The encryption algorithm that was used to encrypt the plaintext.</p>
-    pub fn set_encryption_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
-    ) -> Self {
+    pub fn set_encryption_algorithm(mut self, input: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>) -> Self {
         self.encryption_algorithm = input;
         self
     }
     /// <p>The encryption algorithm that was used to encrypt the plaintext.</p>
-    pub fn get_encryption_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionAlgorithmSpec> {
+    pub fn get_encryption_algorithm(&self) -> &::std::option::Option<crate::types::EncryptionAlgorithmSpec> {
         &self.encryption_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

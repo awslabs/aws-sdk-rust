@@ -5,8 +5,7 @@
 pub struct BatchGetTokenBalanceOutput {
     /// <p>An array of <code>BatchGetTokenBalanceOutputItem</code> objects returned by the response.</p>
     #[doc(hidden)]
-    pub token_balances:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceOutputItem>>,
+    pub token_balances: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceOutputItem>>,
     /// <p>An array of <code>BatchGetTokenBalanceErrorItem</code> objects returned from the request.</p>
     #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceErrorItem>>,
@@ -14,9 +13,7 @@ pub struct BatchGetTokenBalanceOutput {
 }
 impl BatchGetTokenBalanceOutput {
     /// <p>An array of <code>BatchGetTokenBalanceOutputItem</code> objects returned by the response.</p>
-    pub fn token_balances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchGetTokenBalanceOutputItem]> {
+    pub fn token_balances(&self) -> ::std::option::Option<&[crate::types::BatchGetTokenBalanceOutputItem]> {
         self.token_balances.as_deref()
     }
     /// <p>An array of <code>BatchGetTokenBalanceErrorItem</code> objects returned from the request.</p>
@@ -31,23 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetTokenBalanceOutput {
 }
 impl BatchGetTokenBalanceOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetTokenBalanceOutput`](crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceOutputBuilder {
         crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetTokenBalanceOutput`](crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetTokenBalanceOutputBuilder {
-    pub(crate) token_balances:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceOutputItem>>,
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceErrorItem>>,
+    pub(crate) token_balances: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceOutputItem>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceErrorItem>>,
     _request_id: Option<String>,
 }
 impl BatchGetTokenBalanceOutputBuilder {
@@ -63,17 +54,12 @@ impl BatchGetTokenBalanceOutputBuilder {
         self
     }
     /// <p>An array of <code>BatchGetTokenBalanceOutputItem</code> objects returned by the response.</p>
-    pub fn set_token_balances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceOutputItem>>,
-    ) -> Self {
+    pub fn set_token_balances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceOutputItem>>) -> Self {
         self.token_balances = input;
         self
     }
     /// <p>An array of <code>BatchGetTokenBalanceOutputItem</code> objects returned by the response.</p>
-    pub fn get_token_balances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceOutputItem>> {
+    pub fn get_token_balances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceOutputItem>> {
         &self.token_balances
     }
     /// Appends an item to `errors`.
@@ -88,17 +74,12 @@ impl BatchGetTokenBalanceOutputBuilder {
         self
     }
     /// <p>An array of <code>BatchGetTokenBalanceErrorItem</code> objects returned from the request.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceErrorItem>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceErrorItem>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>An array of <code>BatchGetTokenBalanceErrorItem</code> objects returned from the request.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceErrorItem>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceErrorItem>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

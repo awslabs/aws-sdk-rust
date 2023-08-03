@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`TerminateInstanceInAutoScalingGroupOutput`](crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput) with field(s):
     ///   - [`activity(Option<Activity>)`](crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput::activity): <p>A scaling activity.</p>
     /// - On failure, responds with [`SdkError<TerminateInstanceInAutoScalingGroupError>`](crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupError)
-    pub fn terminate_instance_in_auto_scaling_group(&self) -> crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupFluentBuilder{
-        crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupFluentBuilder::new(self.handle.clone())
+    pub fn terminate_instance_in_auto_scaling_group(
+        &self,
+    ) -> crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupFluentBuilder {
+        crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

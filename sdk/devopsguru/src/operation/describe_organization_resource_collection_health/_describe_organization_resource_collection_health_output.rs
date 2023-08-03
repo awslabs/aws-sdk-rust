@@ -65,19 +65,17 @@ impl ::aws_http::request_id::RequestId for DescribeOrganizationResourceCollectio
 }
 impl DescribeOrganizationResourceCollectionHealthOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationResourceCollectionHealthOutput`](crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthOutput).
-    pub fn builder() -> crate::operation::describe_organization_resource_collection_health::builders::DescribeOrganizationResourceCollectionHealthOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_organization_resource_collection_health::builders::DescribeOrganizationResourceCollectionHealthOutputBuilder {
         crate::operation::describe_organization_resource_collection_health::builders::DescribeOrganizationResourceCollectionHealthOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationResourceCollectionHealthOutput`](crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationResourceCollectionHealthOutputBuilder {
-    pub(crate) cloud_formation:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudFormationHealth>>,
+    pub(crate) cloud_formation: ::std::option::Option<::std::vec::Vec<crate::types::CloudFormationHealth>>,
     pub(crate) service: ::std::option::Option<::std::vec::Vec<crate::types::ServiceHealth>>,
     pub(crate) account: ::std::option::Option<::std::vec::Vec<crate::types::AccountHealth>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -97,17 +95,12 @@ impl DescribeOrganizationResourceCollectionHealthOutputBuilder {
         self
     }
     /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information.</p>
-    pub fn set_cloud_formation(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CloudFormationHealth>>,
-    ) -> Self {
+    pub fn set_cloud_formation(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudFormationHealth>>) -> Self {
         self.cloud_formation = input;
         self
     }
     /// <p>The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code> object with the requested system health information.</p>
-    pub fn get_cloud_formation(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudFormationHealth>> {
+    pub fn get_cloud_formation(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudFormationHealth>> {
         &self.cloud_formation
     }
     /// Appends an item to `service`.
@@ -122,17 +115,12 @@ impl DescribeOrganizationResourceCollectionHealthOutputBuilder {
         self
     }
     /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
-    pub fn set_service(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceHealth>>,
-    ) -> Self {
+    pub fn set_service(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceHealth>>) -> Self {
         self.service = input;
         self
     }
     /// <p>An array of <code>ServiceHealth</code> objects that describes the health of the Amazon Web Services services associated with the resources in the collection.</p>
-    pub fn get_service(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceHealth>> {
+    pub fn get_service(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceHealth>> {
         &self.service
     }
     /// Appends an item to `account`.
@@ -147,17 +135,12 @@ impl DescribeOrganizationResourceCollectionHealthOutputBuilder {
         self
     }
     /// <p>The name of the organization's account.</p>
-    pub fn set_account(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountHealth>>,
-    ) -> Self {
+    pub fn set_account(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountHealth>>) -> Self {
         self.account = input;
         self
     }
     /// <p>The name of the organization's account.</p>
-    pub fn get_account(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountHealth>> {
+    pub fn get_account(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountHealth>> {
         &self.account
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -202,10 +185,7 @@ impl DescribeOrganizationResourceCollectionHealthOutputBuilder {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagHealth>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagHealth>>) -> Self {
         self.tags = input;
         self
     }
@@ -231,18 +211,13 @@ impl DescribeOrganizationResourceCollectionHealthOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationResourceCollectionHealthOutput`](crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthOutput).
-    pub fn build(self) -> crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthOutput{
+    pub fn build(self) -> crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthOutput {
         crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthOutput {
-            cloud_formation: self.cloud_formation
-            ,
-            service: self.service
-            ,
-            account: self.account
-            ,
-            next_token: self.next_token
-            ,
-            tags: self.tags
-            ,
+            cloud_formation: self.cloud_formation,
+            service: self.service,
+            account: self.account,
+            next_token: self.next_token,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }

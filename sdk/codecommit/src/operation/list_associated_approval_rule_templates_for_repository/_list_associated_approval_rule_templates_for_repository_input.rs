@@ -36,9 +36,7 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryInput {
 
 /// A builder for [`ListAssociatedApprovalRuleTemplatesForRepositoryInput`](crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder {
 }
 impl ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder {
     /// <p>The name of the repository for which you want to list all associated approval rule templates.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository for which you want to list all associated approval rule templates.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -94,16 +86,18 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssociatedApprovalRuleTemplatesForRepositoryInput`](crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryInput {
-                repository_name: self.repository_name
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                repository_name: self.repository_name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

@@ -58,9 +58,7 @@ impl ServiceSpecificCredentialMetadata {
 
 /// A builder for [`ServiceSpecificCredentialMetadata`](crate::types::ServiceSpecificCredentialMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceSpecificCredentialMetadataBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::StatusType>,
@@ -99,18 +97,12 @@ impl ServiceSpecificCredentialMetadataBuilder {
         &self.status
     }
     /// <p>The generated user name for the service-specific credential.</p>
-    pub fn service_user_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The generated user name for the service-specific credential.</p>
-    pub fn set_service_user_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_user_name = input;
         self
     }
@@ -124,10 +116,7 @@ impl ServiceSpecificCredentialMetadataBuilder {
         self
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the service-specific credential were created.</p>
-    pub fn set_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_date = input;
         self
     }
@@ -136,25 +125,17 @@ impl ServiceSpecificCredentialMetadataBuilder {
         &self.create_date
     }
     /// <p>The unique identifier for the service-specific credential.</p>
-    pub fn service_specific_credential_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_specific_credential_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_specific_credential_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the service-specific credential.</p>
-    pub fn set_service_specific_credential_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_specific_credential_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_specific_credential_id = input;
         self
     }
     /// <p>The unique identifier for the service-specific credential.</p>
-    pub fn get_service_specific_credential_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_service_specific_credential_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_specific_credential_id
     }
     /// <p>The name of the service associated with the service-specific credential.</p>

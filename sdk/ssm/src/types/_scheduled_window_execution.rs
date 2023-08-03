@@ -37,9 +37,7 @@ impl ScheduledWindowExecution {
 
 /// A builder for [`ScheduledWindowExecution`](crate::types::ScheduledWindowExecution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledWindowExecutionBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl ScheduledWindowExecutionBuilder {
         &self.name
     }
     /// <p>The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.</p>
-    pub fn execution_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.</p>
-    pub fn set_execution_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_time = input;
         self
     }

@@ -6,17 +6,14 @@
 pub struct Tls {
     /// <p>List of ACM Certificate Authority ARNs.</p>
     #[doc(hidden)]
-    pub certificate_authority_arn_list:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub certificate_authority_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether you want to turn on or turn off TLS authentication.</p>
     #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl Tls {
     /// <p>List of ACM Certificate Authority ARNs.</p>
-    pub fn certificate_authority_arn_list(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn certificate_authority_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.certificate_authority_arn_list.as_deref()
     }
     /// <p>Specifies whether you want to turn on or turn off TLS authentication.</p>
@@ -33,12 +30,9 @@ impl Tls {
 
 /// A builder for [`Tls`](crate::types::Tls).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TlsBuilder {
-    pub(crate) certificate_authority_arn_list:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) certificate_authority_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl TlsBuilder {
@@ -47,27 +41,19 @@ impl TlsBuilder {
     /// To override the contents of this collection use [`set_certificate_authority_arn_list`](Self::set_certificate_authority_arn_list).
     ///
     /// <p>List of ACM Certificate Authority ARNs.</p>
-    pub fn certificate_authority_arn_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.certificate_authority_arn_list.unwrap_or_default();
         v.push(input.into());
         self.certificate_authority_arn_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of ACM Certificate Authority ARNs.</p>
-    pub fn set_certificate_authority_arn_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.certificate_authority_arn_list = input;
         self
     }
     /// <p>List of ACM Certificate Authority ARNs.</p>
-    pub fn get_certificate_authority_arn_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_authority_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.certificate_authority_arn_list
     }
     /// <p>Specifies whether you want to turn on or turn off TLS authentication.</p>

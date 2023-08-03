@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`default_result(impl ::std::convert::Into<String>)`](crate::operation::put_lifecycle_hook::builders::PutLifecycleHookFluentBuilder::default_result) / [`set_default_result(Option<String>)`](crate::operation::put_lifecycle_hook::builders::PutLifecycleHookFluentBuilder::set_default_result): <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>  <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
     /// - On success, responds with [`PutLifecycleHookOutput`](crate::operation::put_lifecycle_hook::PutLifecycleHookOutput)
     /// - On failure, responds with [`SdkError<PutLifecycleHookError>`](crate::operation::put_lifecycle_hook::PutLifecycleHookError)
-    pub fn put_lifecycle_hook(
-        &self,
-    ) -> crate::operation::put_lifecycle_hook::builders::PutLifecycleHookFluentBuilder {
-        crate::operation::put_lifecycle_hook::builders::PutLifecycleHookFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_lifecycle_hook(&self) -> crate::operation::put_lifecycle_hook::builders::PutLifecycleHookFluentBuilder {
+        crate::operation::put_lifecycle_hook::builders::PutLifecycleHookFluentBuilder::new(self.handle.clone())
     }
 }

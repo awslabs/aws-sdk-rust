@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`phone_numbers(Option<Vec<PhoneNumber>>)`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput::phone_numbers): <p>The phone number details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListPhoneNumbersError>`](crate::operation::list_phone_numbers::ListPhoneNumbersError)
-    pub fn list_phone_numbers(
-        &self,
-    ) -> crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder {
-        crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_phone_numbers(&self) -> crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder {
+        crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::new(self.handle.clone())
     }
 }

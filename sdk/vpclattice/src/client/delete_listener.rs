@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`listener_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_listener::builders::DeleteListenerFluentBuilder::listener_identifier) / [`set_listener_identifier(Option<String>)`](crate::operation::delete_listener::builders::DeleteListenerFluentBuilder::set_listener_identifier): <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     /// - On success, responds with [`DeleteListenerOutput`](crate::operation::delete_listener::DeleteListenerOutput)
     /// - On failure, responds with [`SdkError<DeleteListenerError>`](crate::operation::delete_listener::DeleteListenerError)
-    pub fn delete_listener(
-        &self,
-    ) -> crate::operation::delete_listener::builders::DeleteListenerFluentBuilder {
-        crate::operation::delete_listener::builders::DeleteListenerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_listener(&self) -> crate::operation::delete_listener::builders::DeleteListenerFluentBuilder {
+        crate::operation::delete_listener::builders::DeleteListenerFluentBuilder::new(self.handle.clone())
     }
 }

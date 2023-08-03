@@ -37,9 +37,7 @@ impl StepFunctionsAction {
 
 /// A builder for [`StepFunctionsAction`](crate::types::StepFunctionsAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StepFunctionsActionBuilder {
     pub(crate) execution_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) state_machine_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct StepFunctionsActionBuilder {
 }
 impl StepFunctionsActionBuilder {
     /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
-    pub fn execution_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
-    pub fn set_execution_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_name_prefix = input;
         self
     }
@@ -67,18 +59,12 @@ impl StepFunctionsActionBuilder {
         &self.execution_name_prefix
     }
     /// <p>The name of the Step Functions state machine whose execution will be started.</p>
-    pub fn state_machine_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Step Functions state machine whose execution will be started.</p>
-    pub fn set_state_machine_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_name = input;
         self
     }

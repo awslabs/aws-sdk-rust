@@ -28,9 +28,7 @@ impl UpdateGameOutput {
 
 /// A builder for [`UpdateGameOutput`](crate::operation::update_game::UpdateGameOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGameOutputBuilder {
     pub(crate) game: ::std::option::Option<crate::types::GameDetails>,
     _request_id: Option<String>,

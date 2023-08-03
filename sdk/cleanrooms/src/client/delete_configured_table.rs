@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`configured_table_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_configured_table::builders::DeleteConfiguredTableFluentBuilder::configured_table_identifier) / [`set_configured_table_identifier(Option<String>)`](crate::operation::delete_configured_table::builders::DeleteConfiguredTableFluentBuilder::set_configured_table_identifier): <p>The unique ID for the configured table to delete.</p>
     /// - On success, responds with [`DeleteConfiguredTableOutput`](crate::operation::delete_configured_table::DeleteConfiguredTableOutput)
     /// - On failure, responds with [`SdkError<DeleteConfiguredTableError>`](crate::operation::delete_configured_table::DeleteConfiguredTableError)
-    pub fn delete_configured_table(
-        &self,
-    ) -> crate::operation::delete_configured_table::builders::DeleteConfiguredTableFluentBuilder
-    {
-        crate::operation::delete_configured_table::builders::DeleteConfiguredTableFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_configured_table(&self) -> crate::operation::delete_configured_table::builders::DeleteConfiguredTableFluentBuilder {
+        crate::operation::delete_configured_table::builders::DeleteConfiguredTableFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,18 +22,14 @@ impl ListApplicationDpuSizesInput {
 }
 impl ListApplicationDpuSizesInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationDpuSizesInput`](crate::operation::list_application_dpu_sizes::ListApplicationDpuSizesInput).
-    pub fn builder(
-    ) -> crate::operation::list_application_dpu_sizes::builders::ListApplicationDpuSizesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_application_dpu_sizes::builders::ListApplicationDpuSizesInputBuilder {
         crate::operation::list_application_dpu_sizes::builders::ListApplicationDpuSizesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationDpuSizesInput`](crate::operation::list_application_dpu_sizes::ListApplicationDpuSizesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationDpuSizesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl ListApplicationDpuSizesInputBuilder {
         crate::operation::list_application_dpu_sizes::ListApplicationDpuSizesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_application_dpu_sizes::ListApplicationDpuSizesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_application_dpu_sizes::ListApplicationDpuSizesInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

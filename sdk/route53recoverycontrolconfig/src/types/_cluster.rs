@@ -46,13 +46,10 @@ impl Cluster {
 
 /// A builder for [`Cluster`](crate::types::Cluster).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) cluster_endpoints:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterEndpoint>>,
+    pub(crate) cluster_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ClusterEndpoint>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
 }
@@ -85,18 +82,13 @@ impl ClusterBuilder {
     }
     /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p>
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
-    pub fn set_cluster_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterEndpoint>>,
-    ) -> Self {
+    pub fn set_cluster_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterEndpoint>>) -> Self {
         self.cluster_endpoints = input;
         self
     }
     /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p>
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
-    pub fn get_cluster_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterEndpoint>> {
+    pub fn get_cluster_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterEndpoint>> {
         &self.cluster_endpoints
     }
     /// <p>The name of the cluster.</p>

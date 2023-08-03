@@ -32,9 +32,7 @@ impl Lifecycle {
 
 /// A builder for [`Lifecycle`](crate::types::Lifecycle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifecycleBuilder {
     pub(crate) move_to_cold_storage_after_days: ::std::option::Option<i64>,
     pub(crate) delete_after_days: ::std::option::Option<i64>,
@@ -46,10 +44,7 @@ impl LifecycleBuilder {
         self
     }
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage.</p>
-    pub fn set_move_to_cold_storage_after_days(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_move_to_cold_storage_after_days(mut self, input: ::std::option::Option<i64>) -> Self {
         self.move_to_cold_storage_after_days = input;
         self
     }

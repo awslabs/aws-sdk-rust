@@ -11,9 +11,7 @@ pub struct GetVaultNotificationsOutput {
 }
 impl GetVaultNotificationsOutput {
     /// <p>Returns the notification configuration set on the vault.</p>
-    pub fn vault_notification_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VaultNotificationConfig> {
+    pub fn vault_notification_config(&self) -> ::std::option::Option<&crate::types::VaultNotificationConfig> {
         self.vault_notification_config.as_ref()
     }
 }
@@ -24,44 +22,31 @@ impl ::aws_http::request_id::RequestId for GetVaultNotificationsOutput {
 }
 impl GetVaultNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`GetVaultNotificationsOutput`](crate::operation::get_vault_notifications::GetVaultNotificationsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_vault_notifications::builders::GetVaultNotificationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_vault_notifications::builders::GetVaultNotificationsOutputBuilder {
         crate::operation::get_vault_notifications::builders::GetVaultNotificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVaultNotificationsOutput`](crate::operation::get_vault_notifications::GetVaultNotificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVaultNotificationsOutputBuilder {
-    pub(crate) vault_notification_config:
-        ::std::option::Option<crate::types::VaultNotificationConfig>,
+    pub(crate) vault_notification_config: ::std::option::Option<crate::types::VaultNotificationConfig>,
     _request_id: Option<String>,
 }
 impl GetVaultNotificationsOutputBuilder {
     /// <p>Returns the notification configuration set on the vault.</p>
-    pub fn vault_notification_config(
-        mut self,
-        input: crate::types::VaultNotificationConfig,
-    ) -> Self {
+    pub fn vault_notification_config(mut self, input: crate::types::VaultNotificationConfig) -> Self {
         self.vault_notification_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns the notification configuration set on the vault.</p>
-    pub fn set_vault_notification_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VaultNotificationConfig>,
-    ) -> Self {
+    pub fn set_vault_notification_config(mut self, input: ::std::option::Option<crate::types::VaultNotificationConfig>) -> Self {
         self.vault_notification_config = input;
         self
     }
     /// <p>Returns the notification configuration set on the vault.</p>
-    pub fn get_vault_notification_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::VaultNotificationConfig> {
+    pub fn get_vault_notification_config(&self) -> &::std::option::Option<crate::types::VaultNotificationConfig> {
         &self.vault_notification_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

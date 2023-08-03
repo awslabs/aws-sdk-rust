@@ -37,9 +37,7 @@ impl SsmlMessageType {
 
 /// A builder for [`SsmlMessageType`](crate::types::SsmlMessageType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SsmlMessageTypeBuilder {
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct SsmlMessageTypeBuilder {
 }
 impl SsmlMessageTypeBuilder {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
-    pub fn language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_code = input;
         self
     }

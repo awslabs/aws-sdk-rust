@@ -22,17 +22,14 @@ impl TestSegmentPatternInput {
 }
 impl TestSegmentPatternInput {
     /// Creates a new builder-style object to manufacture [`TestSegmentPatternInput`](crate::operation::test_segment_pattern::TestSegmentPatternInput).
-    pub fn builder(
-    ) -> crate::operation::test_segment_pattern::builders::TestSegmentPatternInputBuilder {
+    pub fn builder() -> crate::operation::test_segment_pattern::builders::TestSegmentPatternInputBuilder {
         crate::operation::test_segment_pattern::builders::TestSegmentPatternInputBuilder::default()
     }
 }
 
 /// A builder for [`TestSegmentPatternInput`](crate::operation::test_segment_pattern::TestSegmentPatternInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestSegmentPatternInputBuilder {
     pub(crate) pattern: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl TestSegmentPatternInputBuilder {
     /// Consumes the builder and constructs a [`TestSegmentPatternInput`](crate::operation::test_segment_pattern::TestSegmentPatternInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::test_segment_pattern::TestSegmentPatternInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::test_segment_pattern::TestSegmentPatternInput {
-                pattern: self.pattern,
-                payload: self.payload,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::test_segment_pattern::TestSegmentPatternInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::test_segment_pattern::TestSegmentPatternInput {
+            pattern: self.pattern,
+            payload: self.payload,
+        })
     }
 }

@@ -5,15 +5,12 @@
 pub struct GetMessagingStreamingConfigurationsOutput {
     /// <p>The streaming settings.</p>
     #[doc(hidden)]
-    pub streaming_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
+    pub streaming_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetMessagingStreamingConfigurationsOutput {
     /// <p>The streaming settings.</p>
-    pub fn streaming_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StreamingConfiguration]> {
+    pub fn streaming_configurations(&self) -> ::std::option::Option<&[crate::types::StreamingConfiguration]> {
         self.streaming_configurations.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for GetMessagingStreamingConfigurationsOu
 }
 impl GetMessagingStreamingConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`GetMessagingStreamingConfigurationsOutput`](crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsOutput).
-    pub fn builder() -> crate::operation::get_messaging_streaming_configurations::builders::GetMessagingStreamingConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_messaging_streaming_configurations::builders::GetMessagingStreamingConfigurationsOutputBuilder {
         crate::operation::get_messaging_streaming_configurations::builders::GetMessagingStreamingConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMessagingStreamingConfigurationsOutput`](crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMessagingStreamingConfigurationsOutputBuilder {
-    pub(crate) streaming_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
+    pub(crate) streaming_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetMessagingStreamingConfigurationsOutputBuilder {
@@ -52,17 +46,12 @@ impl GetMessagingStreamingConfigurationsOutputBuilder {
         self
     }
     /// <p>The streaming settings.</p>
-    pub fn set_streaming_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
-    ) -> Self {
+    pub fn set_streaming_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>) -> Self {
         self.streaming_configurations = input;
         self
     }
     /// <p>The streaming settings.</p>
-    pub fn get_streaming_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>> {
+    pub fn get_streaming_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>> {
         &self.streaming_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,10 +64,9 @@ impl GetMessagingStreamingConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMessagingStreamingConfigurationsOutput`](crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsOutput).
-    pub fn build(self) -> crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsOutput{
+    pub fn build(self) -> crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsOutput {
         crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsOutput {
-            streaming_configurations: self.streaming_configurations
-            ,
+            streaming_configurations: self.streaming_configurations,
             _request_id: self._request_id,
         }
     }

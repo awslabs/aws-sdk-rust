@@ -6,19 +6,13 @@ pub fn ser_data_source_configurations(
     if let Some(var_1) = &input.s3_logs {
         #[allow(unused_mut)]
         let mut object_2 = object.key("s3Logs").start_object();
-        crate::protocol_serde::shape_s3_logs_configuration::ser_s3_logs_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_s3_logs_configuration::ser_s3_logs_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.kubernetes {
         #[allow(unused_mut)]
         let mut object_4 = object.key("kubernetes").start_object();
-        crate::protocol_serde::shape_kubernetes_configuration::ser_kubernetes_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_kubernetes_configuration::ser_kubernetes_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.malware_protection {

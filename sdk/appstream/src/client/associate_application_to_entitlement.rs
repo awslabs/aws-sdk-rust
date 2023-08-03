@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`application_identifier(impl ::std::convert::Into<String>)`](crate::operation::associate_application_to_entitlement::builders::AssociateApplicationToEntitlementFluentBuilder::application_identifier) / [`set_application_identifier(Option<String>)`](crate::operation::associate_application_to_entitlement::builders::AssociateApplicationToEntitlementFluentBuilder::set_application_identifier): <p>The identifier of the application.</p>
     /// - On success, responds with [`AssociateApplicationToEntitlementOutput`](crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementOutput)
     /// - On failure, responds with [`SdkError<AssociateApplicationToEntitlementError>`](crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementError)
-    pub fn associate_application_to_entitlement(&self) -> crate::operation::associate_application_to_entitlement::builders::AssociateApplicationToEntitlementFluentBuilder{
+    pub fn associate_application_to_entitlement(
+        &self,
+    ) -> crate::operation::associate_application_to_entitlement::builders::AssociateApplicationToEntitlementFluentBuilder {
         crate::operation::associate_application_to_entitlement::builders::AssociateApplicationToEntitlementFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateMobileDeviceAccessRuleOutput {
 }
 impl UpdateMobileDeviceAccessRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMobileDeviceAccessRuleOutput`](crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleOutput).
-    pub fn builder() -> crate::operation::update_mobile_device_access_rule::builders::UpdateMobileDeviceAccessRuleOutputBuilder{
+    pub fn builder() -> crate::operation::update_mobile_device_access_rule::builders::UpdateMobileDeviceAccessRuleOutputBuilder {
         crate::operation::update_mobile_device_access_rule::builders::UpdateMobileDeviceAccessRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMobileDeviceAccessRuleOutput`](crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMobileDeviceAccessRuleOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl UpdateMobileDeviceAccessRuleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateMobileDeviceAccessRuleOutput`](crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleOutput
-    {
+    pub fn build(self) -> crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleOutput {
         crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleOutput {
             _request_id: self._request_id,
         }

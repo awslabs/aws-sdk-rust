@@ -38,9 +38,7 @@ impl DescribeSpendLimitsFluentBuilder {
         }
     }
     /// Access the DescribeSpendLimits as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_spend_limits::builders::DescribeSpendLimitsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_spend_limits::builders::DescribeSpendLimitsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeSpendLimitsFluentBuilder {
             crate::operation::describe_spend_limits::DescribeSpendLimits,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spend_limits::DescribeSpendLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spend_limits::DescribeSpendLimitsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeSpendLimitsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeSpendLimitsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_spend_limits::DescribeSpendLimitsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spend_limits::DescribeSpendLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spend_limits::DescribeSpendLimitsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeSpendLimitsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_spend_limits::DescribeSpendLimitsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spend_limits::DescribeSpendLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spend_limits::DescribeSpendLimitsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl DescribeSpendLimitsFluentBuilder {
             crate::operation::describe_spend_limits::DescribeSpendLimits,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_spend_limits::DescribeSpendLimitsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_spend_limits::DescribeSpendLimitsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_spend_limits::paginator::DescribeSpendLimitsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_spend_limits::paginator::DescribeSpendLimitsPaginator {
-        crate::operation::describe_spend_limits::paginator::DescribeSpendLimitsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_spend_limits::paginator::DescribeSpendLimitsPaginator {
+        crate::operation::describe_spend_limits::paginator::DescribeSpendLimitsPaginator::new(self.handle, self.inner)
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

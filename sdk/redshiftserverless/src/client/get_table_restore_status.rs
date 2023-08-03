@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetTableRestoreStatusOutput`](crate::operation::get_table_restore_status::GetTableRestoreStatusOutput) with field(s):
     ///   - [`table_restore_status(Option<TableRestoreStatus>)`](crate::operation::get_table_restore_status::GetTableRestoreStatusOutput::table_restore_status): <p>The returned <code>TableRestoreStatus</code> object that contains information about the status of your <code>RestoreTableFromSnapshot</code> request.</p>
     /// - On failure, responds with [`SdkError<GetTableRestoreStatusError>`](crate::operation::get_table_restore_status::GetTableRestoreStatusError)
-    pub fn get_table_restore_status(
-        &self,
-    ) -> crate::operation::get_table_restore_status::builders::GetTableRestoreStatusFluentBuilder
-    {
+    pub fn get_table_restore_status(&self) -> crate::operation::get_table_restore_status::builders::GetTableRestoreStatusFluentBuilder {
         crate::operation::get_table_restore_status::builders::GetTableRestoreStatusFluentBuilder::new(self.handle.clone())
     }
 }

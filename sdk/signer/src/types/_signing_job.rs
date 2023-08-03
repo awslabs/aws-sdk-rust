@@ -114,9 +114,7 @@ impl SigningJob {
 
 /// A builder for [`SigningJob`](crate::types::SigningJob).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SigningJobBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::Source>,
@@ -168,10 +166,7 @@ impl SigningJobBuilder {
         self
     }
     /// <p>A <code>SignedObject</code> structure that contains information about a signing job's signed code image.</p>
-    pub fn set_signed_object(
-        mut self,
-        input: ::std::option::Option<crate::types::SignedObject>,
-    ) -> Self {
+    pub fn set_signed_object(mut self, input: ::std::option::Option<crate::types::SignedObject>) -> Self {
         self.signed_object = input;
         self
     }
@@ -185,10 +180,7 @@ impl SigningJobBuilder {
         self
     }
     /// <p>A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN) of the certificate used for the signing job.</p>
-    pub fn set_signing_material(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningMaterial>,
-    ) -> Self {
+    pub fn set_signing_material(mut self, input: ::std::option::Option<crate::types::SigningMaterial>) -> Self {
         self.signing_material = input;
         self
     }
@@ -202,10 +194,7 @@ impl SigningJobBuilder {
         self
     }
     /// <p>The date and time that the signing job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -256,18 +245,12 @@ impl SigningJobBuilder {
         &self.profile_name
     }
     /// <p>The version of the signing profile that created a signing job.</p>
-    pub fn profile_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the signing profile that created a signing job.</p>
-    pub fn set_profile_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_version = input;
         self
     }
@@ -290,18 +273,12 @@ impl SigningJobBuilder {
         &self.platform_id
     }
     /// <p>The name of a signing platform.</p>
-    pub fn platform_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a signing platform.</p>
-    pub fn set_platform_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_display_name = input;
         self
     }
@@ -315,10 +292,7 @@ impl SigningJobBuilder {
         self
     }
     /// <p>The time when the signature of a signing job expires.</p>
-    pub fn set_signature_expires_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_signature_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.signature_expires_at = input;
         self
     }

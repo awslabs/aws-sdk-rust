@@ -15,18 +15,14 @@ impl DescribePackagingGroupInput {
 }
 impl DescribePackagingGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribePackagingGroupInput`](crate::operation::describe_packaging_group::DescribePackagingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::describe_packaging_group::builders::DescribePackagingGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_packaging_group::builders::DescribePackagingGroupInputBuilder {
         crate::operation::describe_packaging_group::builders::DescribePackagingGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePackagingGroupInput`](crate::operation::describe_packaging_group::DescribePackagingGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePackagingGroupInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl DescribePackagingGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribePackagingGroupInput`](crate::operation::describe_packaging_group::DescribePackagingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_packaging_group::DescribePackagingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_packaging_group::DescribePackagingGroupInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_packaging_group::DescribePackagingGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_packaging_group::DescribePackagingGroupInput { id: self.id })
     }
 }

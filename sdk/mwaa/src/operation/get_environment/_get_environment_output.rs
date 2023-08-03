@@ -28,9 +28,7 @@ impl GetEnvironmentOutput {
 
 /// A builder for [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEnvironmentOutputBuilder {
     pub(crate) environment: ::std::option::Option<crate::types::Environment>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetEnvironmentOutputBuilder {
         self
     }
     /// <p>An object containing all available details about the environment.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
         self.environment = input;
         self
     }

@@ -48,13 +48,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LoadBalancerMetricName {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,9 +81,7 @@ pub enum LoadBalancerMetricName {
 impl ::std::convert::From<&str> for LoadBalancerMetricName {
     fn from(s: &str) -> Self {
         match s {
-            "ClientTLSNegotiationErrorCount" => {
-                LoadBalancerMetricName::ClientTlsNegotiationErrorCount
-            }
+            "ClientTLSNegotiationErrorCount" => LoadBalancerMetricName::ClientTlsNegotiationErrorCount,
             "HTTPCode_Instance_2XX_Count" => LoadBalancerMetricName::HttpCodeInstance2XxCount,
             "HTTPCode_Instance_3XX_Count" => LoadBalancerMetricName::HttpCodeInstance3XxCount,
             "HTTPCode_Instance_4XX_Count" => LoadBalancerMetricName::HttpCodeInstance4XxCount,
@@ -101,9 +93,7 @@ impl ::std::convert::From<&str> for LoadBalancerMetricName {
             "RejectedConnectionCount" => LoadBalancerMetricName::RejectedConnectionCount,
             "RequestCount" => LoadBalancerMetricName::RequestCount,
             "UnhealthyHostCount" => LoadBalancerMetricName::UnhealthyHostCount,
-            other => LoadBalancerMetricName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LoadBalancerMetricName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -118,9 +108,7 @@ impl LoadBalancerMetricName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            LoadBalancerMetricName::ClientTlsNegotiationErrorCount => {
-                "ClientTLSNegotiationErrorCount"
-            }
+            LoadBalancerMetricName::ClientTlsNegotiationErrorCount => "ClientTLSNegotiationErrorCount",
             LoadBalancerMetricName::HttpCodeInstance2XxCount => "HTTPCode_Instance_2XX_Count",
             LoadBalancerMetricName::HttpCodeInstance3XxCount => "HTTPCode_Instance_3XX_Count",
             LoadBalancerMetricName::HttpCodeInstance4XxCount => "HTTPCode_Instance_4XX_Count",

@@ -7,9 +7,7 @@ pub fn ser_update_identity_provider_configuration_input(
         object.key("FleetArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.identity_provider_saml_metadata {
-        object
-            .key("IdentityProviderSamlMetadata")
-            .string(var_2.as_str());
+        object.key("IdentityProviderSamlMetadata").string(var_2.as_str());
     }
     if let Some(var_3) = &input.identity_provider_type {
         object.key("IdentityProviderType").string(var_3.as_str());

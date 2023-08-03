@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeDbProxiesOutput {
 }
 impl DescribeDbProxiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbProxiesOutput`](crate::operation::describe_db_proxies::DescribeDbProxiesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_proxies::builders::DescribeDbProxiesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_db_proxies::builders::DescribeDbProxiesOutputBuilder {
         crate::operation::describe_db_proxies::builders::DescribeDbProxiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbProxiesOutput`](crate::operation::describe_db_proxies::DescribeDbProxiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbProxiesOutputBuilder {
     pub(crate) db_proxies: ::std::option::Option<::std::vec::Vec<crate::types::DbProxy>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl DescribeDbProxiesOutputBuilder {
         self
     }
     /// <p>A return value representing an arbitrary number of <code>DBProxy</code> data structures.</p>
-    pub fn set_db_proxies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbProxy>>,
-    ) -> Self {
+    pub fn set_db_proxies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbProxy>>) -> Self {
         self.db_proxies = input;
         self
     }

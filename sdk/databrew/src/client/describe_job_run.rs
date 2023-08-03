@@ -26,11 +26,7 @@ impl super::Client {
     ///   - [`started_on(Option<DateTime>)`](crate::operation::describe_job_run::DescribeJobRunOutput::started_on): <p>The date and time when the job run began.</p>
     ///   - [`job_sample(Option<JobSample>)`](crate::operation::describe_job_run::DescribeJobRunOutput::job_sample): <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
     /// - On failure, responds with [`SdkError<DescribeJobRunError>`](crate::operation::describe_job_run::DescribeJobRunError)
-    pub fn describe_job_run(
-        &self,
-    ) -> crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder {
-        crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_job_run(&self) -> crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder {
+        crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::new(self.handle.clone())
     }
 }

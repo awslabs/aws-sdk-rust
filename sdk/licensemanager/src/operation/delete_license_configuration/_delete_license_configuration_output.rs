@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteLicenseConfigurationOutput {
 }
 impl DeleteLicenseConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLicenseConfigurationOutput`](crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationOutputBuilder {
         crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLicenseConfigurationOutput`](crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLicenseConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteLicenseConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteLicenseConfigurationOutput`](crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput {
+    pub fn build(self) -> crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput {
         crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput {
             _request_id: self._request_id,
         }

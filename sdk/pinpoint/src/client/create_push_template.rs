@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePushTemplateOutput`](crate::operation::create_push_template::CreatePushTemplateOutput) with field(s):
     ///   - [`create_template_message_body(Option<CreateTemplateMessageBody>)`](crate::operation::create_push_template::CreatePushTemplateOutput::create_template_message_body): <p>Provides information about a request to create a message template.</p>
     /// - On failure, responds with [`SdkError<CreatePushTemplateError>`](crate::operation::create_push_template::CreatePushTemplateError)
-    pub fn create_push_template(
-        &self,
-    ) -> crate::operation::create_push_template::builders::CreatePushTemplateFluentBuilder {
-        crate::operation::create_push_template::builders::CreatePushTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_push_template(&self) -> crate::operation::create_push_template::builders::CreatePushTemplateFluentBuilder {
+        crate::operation::create_push_template::builders::CreatePushTemplateFluentBuilder::new(self.handle.clone())
     }
 }

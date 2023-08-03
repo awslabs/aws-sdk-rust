@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for SendChannelMessageOutput {
 }
 impl SendChannelMessageOutput {
     /// Creates a new builder-style object to manufacture [`SendChannelMessageOutput`](crate::operation::send_channel_message::SendChannelMessageOutput).
-    pub fn builder(
-    ) -> crate::operation::send_channel_message::builders::SendChannelMessageOutputBuilder {
+    pub fn builder() -> crate::operation::send_channel_message::builders::SendChannelMessageOutputBuilder {
         crate::operation::send_channel_message::builders::SendChannelMessageOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendChannelMessageOutput`](crate::operation::send_channel_message::SendChannelMessageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendChannelMessageOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) message_id: ::std::option::Option<::std::string::String>,

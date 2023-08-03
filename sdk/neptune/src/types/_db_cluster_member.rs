@@ -44,9 +44,7 @@ impl DbClusterMember {
 
 /// A builder for [`DbClusterMember`](crate::types::DbClusterMember).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbClusterMemberBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) is_cluster_writer: ::std::option::Option<bool>,
@@ -55,18 +53,12 @@ pub struct DbClusterMemberBuilder {
 }
 impl DbClusterMemberBuilder {
     /// <p>Specifies the instance identifier for this member of the DB cluster.</p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the instance identifier for this member of the DB cluster.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -89,25 +81,17 @@ impl DbClusterMemberBuilder {
         &self.is_cluster_writer
     }
     /// <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster.</p>
-    pub fn db_cluster_parameter_group_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster.</p>
-    pub fn set_db_cluster_parameter_group_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_status = input;
         self
     }
     /// <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster.</p>
-    pub fn get_db_cluster_parameter_group_status(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_parameter_group_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_status
     }
     /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>

@@ -21,7 +21,9 @@ impl super::Client {
     ///   - [`source_commit_id(Option<String>)`](crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsOutput::source_commit_id): <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
     ///   - [`base_commit_id(Option<String>)`](crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsOutput::base_commit_id): <p>The commit ID of the merge base.</p>
     /// - On failure, responds with [`SdkError<BatchDescribeMergeConflictsError>`](crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError)
-    pub fn batch_describe_merge_conflicts(&self) -> crate::operation::batch_describe_merge_conflicts::builders::BatchDescribeMergeConflictsFluentBuilder{
+    pub fn batch_describe_merge_conflicts(
+        &self,
+    ) -> crate::operation::batch_describe_merge_conflicts::builders::BatchDescribeMergeConflictsFluentBuilder {
         crate::operation::batch_describe_merge_conflicts::builders::BatchDescribeMergeConflictsFluentBuilder::new(self.handle.clone())
     }
 }

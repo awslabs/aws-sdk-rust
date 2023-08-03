@@ -37,9 +37,7 @@ impl DeleteReadinessCheckFluentBuilder {
         }
     }
     /// Access the DeleteReadinessCheck as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_readiness_check::builders::DeleteReadinessCheckInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_readiness_check::builders::DeleteReadinessCheckInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteReadinessCheckFluentBuilder {
             crate::operation::delete_readiness_check::DeleteReadinessCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_readiness_check::DeleteReadinessCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_readiness_check::DeleteReadinessCheckError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteReadinessCheckFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteReadinessCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_readiness_check::DeleteReadinessCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_readiness_check::DeleteReadinessCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_readiness_check::DeleteReadinessCheckError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteReadinessCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_readiness_check::DeleteReadinessCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_readiness_check::DeleteReadinessCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_readiness_check::DeleteReadinessCheckError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteReadinessCheckFluentBuilder {
             crate::operation::delete_readiness_check::DeleteReadinessCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_readiness_check::DeleteReadinessCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_readiness_check::DeleteReadinessCheckError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.readiness_check_name(input.into());
         self
     }
     /// <p>Name of a readiness check.</p>
-    pub fn set_readiness_check_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_readiness_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_readiness_check_name(input);
         self
     }

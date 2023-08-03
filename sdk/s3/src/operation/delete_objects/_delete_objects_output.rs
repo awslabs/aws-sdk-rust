@@ -48,9 +48,7 @@ impl DeleteObjectsOutput {
 
 /// A builder for [`DeleteObjectsOutput`](crate::operation::delete_objects::DeleteObjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteObjectsOutputBuilder {
     pub(crate) deleted: ::std::option::Option<::std::vec::Vec<crate::types::DeletedObject>>,
     pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,
@@ -71,17 +69,12 @@ impl DeleteObjectsOutputBuilder {
         self
     }
     /// <p>Container element for a successful delete. It identifies the object that was successfully deleted.</p>
-    pub fn set_deleted(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeletedObject>>,
-    ) -> Self {
+    pub fn set_deleted(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeletedObject>>) -> Self {
         self.deleted = input;
         self
     }
     /// <p>Container element for a successful delete. It identifies the object that was successfully deleted.</p>
-    pub fn get_deleted(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeletedObject>> {
+    pub fn get_deleted(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeletedObject>> {
         &self.deleted
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -90,10 +83,7 @@ impl DeleteObjectsOutputBuilder {
         self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    pub fn set_request_charged(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestCharged>,
-    ) -> Self {
+    pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
         self.request_charged = input;
         self
     }
@@ -113,10 +103,7 @@ impl DeleteObjectsOutputBuilder {
         self
     }
     /// <p>Container for a failed delete action that describes the object that Amazon S3 attempted to delete and the error it encountered.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Error>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Error>>) -> Self {
         self.errors = input;
         self
     }
@@ -129,10 +116,7 @@ impl DeleteObjectsOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }

@@ -29,9 +29,7 @@ impl DescribeTagsInput {
 
 /// A builder for [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTagsInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
@@ -57,10 +55,7 @@ impl DescribeTagsInputBuilder {
         self
     }
     /// <p>The type of the ML object.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TaggableResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TaggableResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -69,12 +64,7 @@ impl DescribeTagsInputBuilder {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_tags::DescribeTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tags::DescribeTagsInput {
             resource_id: self.resource_id,
             resource_type: self.resource_type,

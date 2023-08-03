@@ -43,9 +43,7 @@ impl ListFindingsInput {
 
 /// A builder for [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -87,10 +85,7 @@ impl ListFindingsInputBuilder {
         self
     }
     /// <p>Details on the filters to apply to your finding results.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::FilterCriteria>) -> Self {
         self.filter_criteria = input;
         self
     }
@@ -104,10 +99,7 @@ impl ListFindingsInputBuilder {
         self
     }
     /// <p>Details on the sort criteria to apply to your finding results.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::SortCriteria>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::SortCriteria>) -> Self {
         self.sort_criteria = input;
         self
     }
@@ -116,12 +108,7 @@ impl ListFindingsInputBuilder {
         &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_findings::ListFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_findings::ListFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsInput {
             max_results: self.max_results,
             next_token: self.next_token,

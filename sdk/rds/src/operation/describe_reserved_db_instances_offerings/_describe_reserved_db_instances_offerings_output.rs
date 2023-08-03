@@ -9,8 +9,7 @@ pub struct DescribeReservedDbInstancesOfferingsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of reserved DB instance offerings.</p>
     #[doc(hidden)]
-    pub reserved_db_instances_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstancesOffering>>,
+    pub reserved_db_instances_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstancesOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedDbInstancesOfferingsOutput {
@@ -19,9 +18,7 @@ impl DescribeReservedDbInstancesOfferingsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of reserved DB instance offerings.</p>
-    pub fn reserved_db_instances_offerings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReservedDbInstancesOffering]> {
+    pub fn reserved_db_instances_offerings(&self) -> ::std::option::Option<&[crate::types::ReservedDbInstancesOffering]> {
         self.reserved_db_instances_offerings.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeReservedDbInstancesOfferingsO
 }
 impl DescribeReservedDbInstancesOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedDbInstancesOfferingsOutput`](crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsOutput).
-    pub fn builder() -> crate::operation::describe_reserved_db_instances_offerings::builders::DescribeReservedDbInstancesOfferingsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_db_instances_offerings::builders::DescribeReservedDbInstancesOfferingsOutputBuilder {
         crate::operation::describe_reserved_db_instances_offerings::builders::DescribeReservedDbInstancesOfferingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedDbInstancesOfferingsOutput`](crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedDbInstancesOfferingsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_db_instances_offerings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstancesOffering>>,
+    pub(crate) reserved_db_instances_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstancesOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedDbInstancesOfferingsOutputBuilder {
@@ -68,10 +62,7 @@ impl DescribeReservedDbInstancesOfferingsOutputBuilder {
     /// To override the contents of this collection use [`set_reserved_db_instances_offerings`](Self::set_reserved_db_instances_offerings).
     ///
     /// <p>A list of reserved DB instance offerings.</p>
-    pub fn reserved_db_instances_offerings(
-        mut self,
-        input: crate::types::ReservedDbInstancesOffering,
-    ) -> Self {
+    pub fn reserved_db_instances_offerings(mut self, input: crate::types::ReservedDbInstancesOffering) -> Self {
         let mut v = self.reserved_db_instances_offerings.unwrap_or_default();
         v.push(input);
         self.reserved_db_instances_offerings = ::std::option::Option::Some(v);
@@ -86,9 +77,7 @@ impl DescribeReservedDbInstancesOfferingsOutputBuilder {
         self
     }
     /// <p>A list of reserved DB instance offerings.</p>
-    pub fn get_reserved_db_instances_offerings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstancesOffering>> {
+    pub fn get_reserved_db_instances_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstancesOffering>> {
         &self.reserved_db_instances_offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -101,12 +90,10 @@ impl DescribeReservedDbInstancesOfferingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReservedDbInstancesOfferingsOutput`](crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsOutput).
-    pub fn build(self) -> crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsOutput{
+    pub fn build(self) -> crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsOutput {
         crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsOutput {
-            marker: self.marker
-            ,
-            reserved_db_instances_offerings: self.reserved_db_instances_offerings
-            ,
+            marker: self.marker,
+            reserved_db_instances_offerings: self.reserved_db_instances_offerings,
             _request_id: self._request_id,
         }
     }

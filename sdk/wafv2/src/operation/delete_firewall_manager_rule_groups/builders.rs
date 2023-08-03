@@ -5,16 +5,16 @@ pub use crate::operation::delete_firewall_manager_rule_groups::_delete_firewall_
 
 impl DeleteFirewallManagerRuleGroupsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.delete_firewall_manager_rule_groups();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl DeleteFirewallManagerRuleGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFirewallManagerRuleGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_firewall_manager_rule_groups::builders::DeleteFirewallManagerRuleGroupsInputBuilder,
+    inner: crate::operation::delete_firewall_manager_rule_groups::builders::DeleteFirewallManagerRuleGroupsInputBuilder,
 }
 impl DeleteFirewallManagerRuleGroupsFluentBuilder {
     /// Creates a new `DeleteFirewallManagerRuleGroups`.
@@ -38,15 +38,20 @@ impl DeleteFirewallManagerRuleGroupsFluentBuilder {
         }
     }
     /// Access the DeleteFirewallManagerRuleGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_firewall_manager_rule_groups::builders::DeleteFirewallManagerRuleGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_firewall_manager_rule_groups::builders::DeleteFirewallManagerRuleGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroups,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl DeleteFirewallManagerRuleGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,17 +88,26 @@ impl DeleteFirewallManagerRuleGroupsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroups,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
@@ -110,18 +125,12 @@ impl DeleteFirewallManagerRuleGroupsFluentBuilder {
         self.inner.get_web_acl_arn()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn web_acl_lock_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn web_acl_lock_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.web_acl_lock_token(input.into());
         self
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn set_web_acl_lock_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_web_acl_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_web_acl_lock_token(input);
         self
     }

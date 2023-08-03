@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AdditionalConstraintsElement {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for AdditionalConstraintsElement {
             "REQUIRE_LOWERCASE" => AdditionalConstraintsElement::RequireLowercase,
             "REQUIRE_SYMBOL" => AdditionalConstraintsElement::RequireSymbol,
             "REQUIRE_UPPERCASE" => AdditionalConstraintsElement::RequireUppercase,
-            other => AdditionalConstraintsElement::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AdditionalConstraintsElement::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl AdditionalConstraintsElement {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "REQUIRE_DIGIT",
-            "REQUIRE_LOWERCASE",
-            "REQUIRE_SYMBOL",
-            "REQUIRE_UPPERCASE",
-        ]
+        &["REQUIRE_DIGIT", "REQUIRE_LOWERCASE", "REQUIRE_SYMBOL", "REQUIRE_UPPERCASE"]
     }
 }
 impl ::std::convert::AsRef<str> for AdditionalConstraintsElement {

@@ -59,9 +59,7 @@ impl OnlineStoreSecurityConfig {
 
 /// A builder for [`OnlineStoreSecurityConfig`](crate::types::OnlineStoreSecurityConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OnlineStoreSecurityConfigBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
@@ -136,8 +134,6 @@ impl OnlineStoreSecurityConfigBuilder {
     }
     /// Consumes the builder and constructs a [`OnlineStoreSecurityConfig`](crate::types::OnlineStoreSecurityConfig).
     pub fn build(self) -> crate::types::OnlineStoreSecurityConfig {
-        crate::types::OnlineStoreSecurityConfig {
-            kms_key_id: self.kms_key_id,
-        }
+        crate::types::OnlineStoreSecurityConfig { kms_key_id: self.kms_key_id }
     }
 }

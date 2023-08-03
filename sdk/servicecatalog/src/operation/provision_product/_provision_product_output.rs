@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ProvisionProductOutput {
 }
 impl ProvisionProductOutput {
     /// Creates a new builder-style object to manufacture [`ProvisionProductOutput`](crate::operation::provision_product::ProvisionProductOutput).
-    pub fn builder() -> crate::operation::provision_product::builders::ProvisionProductOutputBuilder
-    {
+    pub fn builder() -> crate::operation::provision_product::builders::ProvisionProductOutputBuilder {
         crate::operation::provision_product::builders::ProvisionProductOutputBuilder::default()
     }
 }
 
 /// A builder for [`ProvisionProductOutput`](crate::operation::provision_product::ProvisionProductOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisionProductOutputBuilder {
     pub(crate) record_detail: ::std::option::Option<crate::types::RecordDetail>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl ProvisionProductOutputBuilder {
         self
     }
     /// <p>Information about the result of provisioning the product.</p>
-    pub fn set_record_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordDetail>,
-    ) -> Self {
+    pub fn set_record_detail(mut self, input: ::std::option::Option<crate::types::RecordDetail>) -> Self {
         self.record_detail = input;
         self
     }

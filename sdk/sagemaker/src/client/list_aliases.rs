@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`sage_maker_image_version_aliases(Option<Vec<String>>)`](crate::operation::list_aliases::ListAliasesOutput::sage_maker_image_version_aliases): <p>A list of SageMaker image version aliases.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_aliases::ListAliasesOutput::next_token): <p>A token for getting the next set of aliases, if more aliases exist.</p>
     /// - On failure, responds with [`SdkError<ListAliasesError>`](crate::operation::list_aliases::ListAliasesError)
-    pub fn list_aliases(
-        &self,
-    ) -> crate::operation::list_aliases::builders::ListAliasesFluentBuilder {
+    pub fn list_aliases(&self) -> crate::operation::list_aliases::builders::ListAliasesFluentBuilder {
         crate::operation::list_aliases::builders::ListAliasesFluentBuilder::new(self.handle.clone())
     }
 }

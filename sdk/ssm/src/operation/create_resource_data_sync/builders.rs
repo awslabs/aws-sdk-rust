@@ -31,8 +31,7 @@ impl CreateResourceDataSyncInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateResourceDataSyncFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_resource_data_sync::builders::CreateResourceDataSyncInputBuilder,
+    inner: crate::operation::create_resource_data_sync::builders::CreateResourceDataSyncInputBuilder,
 }
 impl CreateResourceDataSyncFluentBuilder {
     /// Creates a new `CreateResourceDataSync`.
@@ -43,10 +42,7 @@ impl CreateResourceDataSyncFluentBuilder {
         }
     }
     /// Access the CreateResourceDataSync as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_resource_data_sync::builders::CreateResourceDataSyncInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_resource_data_sync::builders::CreateResourceDataSyncInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +54,7 @@ impl CreateResourceDataSyncFluentBuilder {
             crate::operation::create_resource_data_sync::CreateResourceDataSync,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_data_sync::CreateResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_data_sync::CreateResourceDataSyncError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +64,7 @@ impl CreateResourceDataSyncFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +73,7 @@ impl CreateResourceDataSyncFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_data_sync::CreateResourceDataSyncOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_data_sync::CreateResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_data_sync::CreateResourceDataSyncError>,
     > {
         let op = self
             .inner
@@ -107,9 +96,7 @@ impl CreateResourceDataSyncFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_data_sync::CreateResourceDataSyncOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_data_sync::CreateResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_data_sync::CreateResourceDataSyncError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +110,7 @@ impl CreateResourceDataSyncFluentBuilder {
             crate::operation::create_resource_data_sync::CreateResourceDataSync,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_resource_data_sync::CreateResourceDataSyncError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_resource_data_sync::CreateResourceDataSyncError>,
     > {
         self.customize_middleware().await
     }
@@ -149,17 +134,12 @@ impl CreateResourceDataSyncFluentBuilder {
         self
     }
     /// <p>Amazon S3 configuration details for the sync. This parameter is required if the <code>SyncType</code> value is SyncToDestination.</p>
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDataSyncS3Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::ResourceDataSyncS3Destination>) -> Self {
         self.inner = self.inner.set_s3_destination(input);
         self
     }
     /// <p>Amazon S3 configuration details for the sync. This parameter is required if the <code>SyncType</code> value is SyncToDestination.</p>
-    pub fn get_s3_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceDataSyncS3Destination> {
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::ResourceDataSyncS3Destination> {
         self.inner.get_s3_destination()
     }
     /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
@@ -182,10 +162,7 @@ impl CreateResourceDataSyncFluentBuilder {
         self
     }
     /// <p>Specify information about the data sources to synchronize. This parameter is required if the <code>SyncType</code> value is SyncFromSource.</p>
-    pub fn set_sync_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDataSyncSource>,
-    ) -> Self {
+    pub fn set_sync_source(mut self, input: ::std::option::Option<crate::types::ResourceDataSyncSource>) -> Self {
         self.inner = self.inner.set_sync_source(input);
         self
     }

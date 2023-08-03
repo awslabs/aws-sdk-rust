@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for BatchEvaluateFeatureOutput {
 }
 impl BatchEvaluateFeatureOutput {
     /// Creates a new builder-style object to manufacture [`BatchEvaluateFeatureOutput`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_evaluate_feature::builders::BatchEvaluateFeatureOutputBuilder {
+    pub fn builder() -> crate::operation::batch_evaluate_feature::builders::BatchEvaluateFeatureOutputBuilder {
         crate::operation::batch_evaluate_feature::builders::BatchEvaluateFeatureOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchEvaluateFeatureOutput`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchEvaluateFeatureOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl BatchEvaluateFeatureOutputBuilder {
         self
     }
     /// <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>) -> Self {
         self.results = input;
         self
     }
     /// <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>> {
         &self.results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

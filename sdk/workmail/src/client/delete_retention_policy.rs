@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::set_id): <p>The retention policy ID.</p>
     /// - On success, responds with [`DeleteRetentionPolicyOutput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteRetentionPolicyError>`](crate::operation::delete_retention_policy::DeleteRetentionPolicyError)
-    pub fn delete_retention_policy(
-        &self,
-    ) -> crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder
-    {
-        crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_retention_policy(&self) -> crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder {
+        crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,7 +16,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyFpgaImageAttributeOutput`](crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeOutput) with field(s):
     ///   - [`fpga_image_attribute(Option<FpgaImageAttribute>)`](crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeOutput::fpga_image_attribute): <p>Information about the attribute.</p>
     /// - On failure, responds with [`SdkError<ModifyFpgaImageAttributeError>`](crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeError)
-    pub fn modify_fpga_image_attribute(&self) -> crate::operation::modify_fpga_image_attribute::builders::ModifyFpgaImageAttributeFluentBuilder{
+    pub fn modify_fpga_image_attribute(&self) -> crate::operation::modify_fpga_image_attribute::builders::ModifyFpgaImageAttributeFluentBuilder {
         crate::operation::modify_fpga_image_attribute::builders::ModifyFpgaImageAttributeFluentBuilder::new(self.handle.clone())
     }
 }

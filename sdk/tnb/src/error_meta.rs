@@ -31,80 +31,54 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError,
-    ) -> Self {
+impl From<crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError> for Error {
+    fn from(err: crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError) -> Self {
         match err {
-            crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_function_package::CreateSolFunctionPackageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_sol_function_package::CreateSolFunctionPackageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_function_package::CreateSolFunctionPackageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_sol_function_package::CreateSolFunctionPackageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -112,45 +86,37 @@ where
     }
 }
 impl From<crate::operation::create_sol_function_package::CreateSolFunctionPackageError> for Error {
-    fn from(
-        err: crate::operation::create_sol_function_package::CreateSolFunctionPackageError,
-    ) -> Self {
+    fn from(err: crate::operation::create_sol_function_package::CreateSolFunctionPackageError) -> Self {
         match err {
-            crate::operation::create_sol_function_package::CreateSolFunctionPackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_sol_function_package::CreateSolFunctionPackageError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_sol_function_package::CreateSolFunctionPackageError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::create_sol_function_package::CreateSolFunctionPackageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::create_sol_function_package::CreateSolFunctionPackageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_sol_function_package::CreateSolFunctionPackageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_sol_function_package::CreateSolFunctionPackageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_sol_function_package::CreateSolFunctionPackageError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_sol_function_package::CreateSolFunctionPackageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_sol_function_package::CreateSolFunctionPackageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::create_sol_function_package::CreateSolFunctionPackageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -158,46 +124,40 @@ where
     }
 }
 impl From<crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError> for Error {
-    fn from(
-        err: crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError,
-    ) -> Self {
+    fn from(err: crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError) -> Self {
         match err {
-            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_network_package::CreateSolNetworkPackageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_sol_network_package::CreateSolNetworkPackageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_network_package::CreateSolNetworkPackageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_sol_network_package::CreateSolNetworkPackageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -205,45 +165,37 @@ where
     }
 }
 impl From<crate::operation::create_sol_network_package::CreateSolNetworkPackageError> for Error {
-    fn from(
-        err: crate::operation::create_sol_network_package::CreateSolNetworkPackageError,
-    ) -> Self {
+    fn from(err: crate::operation::create_sol_network_package::CreateSolNetworkPackageError) -> Self {
         match err {
-            crate::operation::create_sol_network_package::CreateSolNetworkPackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_sol_network_package::CreateSolNetworkPackageError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_sol_network_package::CreateSolNetworkPackageError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::create_sol_network_package::CreateSolNetworkPackageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::create_sol_network_package::CreateSolNetworkPackageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_sol_network_package::CreateSolNetworkPackageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_sol_network_package::CreateSolNetworkPackageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_sol_network_package::CreateSolNetworkPackageError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_sol_network_package::CreateSolNetworkPackageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_sol_network_package::CreateSolNetworkPackageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::create_sol_network_package::CreateSolNetworkPackageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -251,45 +203,37 @@ where
     }
 }
 impl From<crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError> for Error {
-    fn from(
-        err: crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError,
-    ) -> Self {
+    fn from(err: crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError) -> Self {
         match err {
-            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -297,45 +241,37 @@ where
     }
 }
 impl From<crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError> for Error {
-    fn from(
-        err: crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError,
-    ) -> Self {
+    fn from(err: crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError) -> Self {
         match err {
-            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -343,45 +279,37 @@ where
     }
 }
 impl From<crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError> for Error {
-    fn from(
-        err: crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError,
-    ) -> Self {
+    fn from(err: crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError) -> Self {
         match err {
-            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_instance::GetSolFunctionInstanceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_instance::GetSolFunctionInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_instance::GetSolFunctionInstanceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_instance::GetSolFunctionInstanceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -391,41 +319,31 @@ where
 impl From<crate::operation::get_sol_function_instance::GetSolFunctionInstanceError> for Error {
     fn from(err: crate::operation::get_sol_function_instance::GetSolFunctionInstanceError) -> Self {
         match err {
-            crate::operation::get_sol_function_instance::GetSolFunctionInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_sol_function_instance::GetSolFunctionInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_sol_function_instance::GetSolFunctionInstanceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_sol_function_instance::GetSolFunctionInstanceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_sol_function_instance::GetSolFunctionInstanceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_sol_function_instance::GetSolFunctionInstanceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_sol_function_instance::GetSolFunctionInstanceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_sol_function_instance::GetSolFunctionInstanceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_sol_function_instance::GetSolFunctionInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_package::GetSolFunctionPackageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package::GetSolFunctionPackageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_package::GetSolFunctionPackageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package::GetSolFunctionPackageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -435,120 +353,112 @@ where
 impl From<crate::operation::get_sol_function_package::GetSolFunctionPackageError> for Error {
     fn from(err: crate::operation::get_sol_function_package::GetSolFunctionPackageError) -> Self {
         match err {
-            crate::operation::get_sol_function_package::GetSolFunctionPackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_sol_function_package::GetSolFunctionPackageError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_sol_function_package::GetSolFunctionPackageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_sol_function_package::GetSolFunctionPackageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_sol_function_package::GetSolFunctionPackageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_sol_function_package::GetSolFunctionPackageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_sol_function_package::GetSolFunctionPackageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_sol_function_package::GetSolFunctionPackageError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_sol_function_package::GetSolFunctionPackageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError>
-    for Error
-{
-    fn from(
-        err: crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError,
-    ) -> Self {
+impl From<crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError> for Error {
+    fn from(err: crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError) -> Self {
         match err {
-            crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl
-    From<
-        crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError,
-    > for Error
-{
-    fn from(
-        err: crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError,
-    ) -> Self {
-        match err {
-            crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_instance::GetSolNetworkInstanceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_instance::GetSolNetworkInstanceError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError> for Error {
+    fn from(err: crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError) -> Self {
+        match err {
+            crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_instance::GetSolNetworkInstanceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_instance::GetSolNetworkInstanceError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -558,41 +468,31 @@ where
 impl From<crate::operation::get_sol_network_instance::GetSolNetworkInstanceError> for Error {
     fn from(err: crate::operation::get_sol_network_instance::GetSolNetworkInstanceError) -> Self {
         match err {
-            crate::operation::get_sol_network_instance::GetSolNetworkInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_sol_network_instance::GetSolNetworkInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_sol_network_instance::GetSolNetworkInstanceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_sol_network_instance::GetSolNetworkInstanceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_sol_network_instance::GetSolNetworkInstanceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_sol_network_instance::GetSolNetworkInstanceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_sol_network_instance::GetSolNetworkInstanceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_sol_network_instance::GetSolNetworkInstanceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_sol_network_instance::GetSolNetworkInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_operation::GetSolNetworkOperationError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_operation::GetSolNetworkOperationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_operation::GetSolNetworkOperationError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_operation::GetSolNetworkOperationError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -602,41 +502,31 @@ where
 impl From<crate::operation::get_sol_network_operation::GetSolNetworkOperationError> for Error {
     fn from(err: crate::operation::get_sol_network_operation::GetSolNetworkOperationError) -> Self {
         match err {
-            crate::operation::get_sol_network_operation::GetSolNetworkOperationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_sol_network_operation::GetSolNetworkOperationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_sol_network_operation::GetSolNetworkOperationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_sol_network_operation::GetSolNetworkOperationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_sol_network_operation::GetSolNetworkOperationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_sol_network_operation::GetSolNetworkOperationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_sol_network_operation::GetSolNetworkOperationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_sol_network_operation::GetSolNetworkOperationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_sol_network_operation::GetSolNetworkOperationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_package::GetSolNetworkPackageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package::GetSolNetworkPackageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_package::GetSolNetworkPackageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package::GetSolNetworkPackageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -647,166 +537,152 @@ impl From<crate::operation::get_sol_network_package::GetSolNetworkPackageError> 
     fn from(err: crate::operation::get_sol_network_package::GetSolNetworkPackageError) -> Self {
         match err {
             crate::operation::get_sol_network_package::GetSolNetworkPackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_sol_network_package::GetSolNetworkPackageError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_sol_network_package::GetSolNetworkPackageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_sol_network_package::GetSolNetworkPackageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_sol_network_package::GetSolNetworkPackageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_sol_network_package::GetSolNetworkPackageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_sol_network_package::GetSolNetworkPackageError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_sol_network_package::GetSolNetworkPackageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError>
-    for Error
-{
-    fn from(
-        err: crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError,
-    ) -> Self {
+impl From<crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError> for Error {
+    fn from(err: crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError) -> Self {
         match err {
-            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError, R>) -> Self {
-        match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
-        }
-    }
-}
-impl From<crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError>
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError, R>>
     for Error
-{
-    fn from(
-        err: crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError,
-    ) -> Self {
-        match err {
-            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError,
-            R,
-        >,
-    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError>
-    for Error
-{
-    fn from(
-        err: crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError,
-    ) -> Self {
+impl From<crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError> for Error {
+    fn from(err: crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError) -> Self {
         match err {
-            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_function_instances::ListSolFunctionInstancesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_function_instances::ListSolFunctionInstancesError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError> for Error {
+    fn from(err: crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError) -> Self {
+        match err {
+            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_sol_function_instances::ListSolFunctionInstancesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_sol_function_instances::ListSolFunctionInstancesError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -814,44 +690,34 @@ where
     }
 }
 impl From<crate::operation::list_sol_function_instances::ListSolFunctionInstancesError> for Error {
-    fn from(
-        err: crate::operation::list_sol_function_instances::ListSolFunctionInstancesError,
-    ) -> Self {
+    fn from(err: crate::operation::list_sol_function_instances::ListSolFunctionInstancesError) -> Self {
         match err {
-            crate::operation::list_sol_function_instances::ListSolFunctionInstancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_sol_function_instances::ListSolFunctionInstancesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_sol_function_instances::ListSolFunctionInstancesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::list_sol_function_instances::ListSolFunctionInstancesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_sol_function_instances::ListSolFunctionInstancesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_sol_function_instances::ListSolFunctionInstancesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_sol_function_instances::ListSolFunctionInstancesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_sol_function_instances::ListSolFunctionInstancesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::list_sol_function_instances::ListSolFunctionInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_sol_function_packages::ListSolFunctionPackagesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_sol_function_packages::ListSolFunctionPackagesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -859,44 +725,34 @@ where
     }
 }
 impl From<crate::operation::list_sol_function_packages::ListSolFunctionPackagesError> for Error {
-    fn from(
-        err: crate::operation::list_sol_function_packages::ListSolFunctionPackagesError,
-    ) -> Self {
+    fn from(err: crate::operation::list_sol_function_packages::ListSolFunctionPackagesError) -> Self {
         match err {
-            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_instances::ListSolNetworkInstancesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_sol_network_instances::ListSolNetworkInstancesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_instances::ListSolNetworkInstancesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_sol_network_instances::ListSolNetworkInstancesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -904,44 +760,34 @@ where
     }
 }
 impl From<crate::operation::list_sol_network_instances::ListSolNetworkInstancesError> for Error {
-    fn from(
-        err: crate::operation::list_sol_network_instances::ListSolNetworkInstancesError,
-    ) -> Self {
+    fn from(err: crate::operation::list_sol_network_instances::ListSolNetworkInstancesError) -> Self {
         match err {
-            crate::operation::list_sol_network_instances::ListSolNetworkInstancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_sol_network_instances::ListSolNetworkInstancesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_sol_network_instances::ListSolNetworkInstancesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::list_sol_network_instances::ListSolNetworkInstancesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_sol_network_instances::ListSolNetworkInstancesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_sol_network_instances::ListSolNetworkInstancesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_sol_network_instances::ListSolNetworkInstancesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_sol_network_instances::ListSolNetworkInstancesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::list_sol_network_instances::ListSolNetworkInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_operations::ListSolNetworkOperationsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_sol_network_operations::ListSolNetworkOperationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_operations::ListSolNetworkOperationsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_sol_network_operations::ListSolNetworkOperationsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -949,44 +795,34 @@ where
     }
 }
 impl From<crate::operation::list_sol_network_operations::ListSolNetworkOperationsError> for Error {
-    fn from(
-        err: crate::operation::list_sol_network_operations::ListSolNetworkOperationsError,
-    ) -> Self {
+    fn from(err: crate::operation::list_sol_network_operations::ListSolNetworkOperationsError) -> Self {
         match err {
-            crate::operation::list_sol_network_operations::ListSolNetworkOperationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_sol_network_operations::ListSolNetworkOperationsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_sol_network_operations::ListSolNetworkOperationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::list_sol_network_operations::ListSolNetworkOperationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_sol_network_operations::ListSolNetworkOperationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_sol_network_operations::ListSolNetworkOperationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_sol_network_operations::ListSolNetworkOperationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_sol_network_operations::ListSolNetworkOperationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::list_sol_network_operations::ListSolNetworkOperationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_packages::ListSolNetworkPackagesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_sol_network_packages::ListSolNetworkPackagesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_packages::ListSolNetworkPackagesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_sol_network_packages::ListSolNetworkPackagesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -996,40 +832,28 @@ where
 impl From<crate::operation::list_sol_network_packages::ListSolNetworkPackagesError> for Error {
     fn from(err: crate::operation::list_sol_network_packages::ListSolNetworkPackagesError) -> Self {
         match err {
-            crate::operation::list_sol_network_packages::ListSolNetworkPackagesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_sol_network_packages::ListSolNetworkPackagesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_sol_network_packages::ListSolNetworkPackagesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_sol_network_packages::ListSolNetworkPackagesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::list_sol_network_packages::ListSolNetworkPackagesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_sol_network_packages::ListSolNetworkPackagesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_sol_network_packages::ListSolNetworkPackagesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1040,132 +864,108 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
             crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError>
-    for Error
-{
-    fn from(
-        err: crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError,
-    ) -> Self {
+impl From<crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError> for Error {
+    fn from(err: crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError) -> Self {
         match err {
-            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError,
-            R,
-        >,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError, R>,
     ) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError>
-    for Error
-{
-    fn from(
-        err: crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError,
-    ) -> Self {
+impl From<crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError> for Error {
+    fn from(err: crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError) -> Self {
         match err {
-            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::tag_resource::TagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1175,102 +975,66 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError>
-    for Error
-{
-    fn from(
-        err: crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError,
-    ) -> Self {
+impl From<crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError> for Error {
+    fn from(err: crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError) -> Self {
         match err {
-            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1280,53 +1044,25 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_sol_function_package::UpdateSolFunctionPackageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_sol_function_package::UpdateSolFunctionPackageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1334,45 +1070,37 @@ where
     }
 }
 impl From<crate::operation::update_sol_function_package::UpdateSolFunctionPackageError> for Error {
-    fn from(
-        err: crate::operation::update_sol_function_package::UpdateSolFunctionPackageError,
-    ) -> Self {
+    fn from(err: crate::operation::update_sol_function_package::UpdateSolFunctionPackageError) -> Self {
         match err {
-            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::update_sol_function_package::UpdateSolFunctionPackageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1380,46 +1108,40 @@ where
     }
 }
 impl From<crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError> for Error {
-    fn from(
-        err: crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError,
-    ) -> Self {
+    fn from(err: crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError) -> Self {
         match err {
-            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_sol_network_package::UpdateSolNetworkPackageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_sol_network_package::UpdateSolNetworkPackageError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -1427,66 +1149,110 @@ where
     }
 }
 impl From<crate::operation::update_sol_network_package::UpdateSolNetworkPackageError> for Error {
-    fn from(
-        err: crate::operation::update_sol_network_package::UpdateSolNetworkPackageError,
-    ) -> Self {
+    fn from(err: crate::operation::update_sol_network_package::UpdateSolNetworkPackageError) -> Self {
         match err {
-            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::update_sol_network_package::UpdateSolNetworkPackageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError> for Error {
     fn from(err: crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError) -> Self {
         match err {
-            crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError> for Error {
     fn from(err: crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError) -> Self {
         match err {
-            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

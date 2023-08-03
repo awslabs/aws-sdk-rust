@@ -24,9 +24,7 @@ impl IamResources {
 
 /// A builder for [`IamResources`](crate::types::IamResources).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IamResourcesBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,8 +45,6 @@ impl IamResourcesBuilder {
     }
     /// Consumes the builder and constructs a [`IamResources`](crate::types::IamResources).
     pub fn build(self) -> crate::types::IamResources {
-        crate::types::IamResources {
-            role_arn: self.role_arn,
-        }
+        crate::types::IamResources { role_arn: self.role_arn }
     }
 }

@@ -30,9 +30,7 @@ impl Cpu {
 
 /// A builder for [`Cpu`](crate::types::Cpu).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CpuBuilder {
     pub(crate) cores: ::std::option::Option<i64>,
     pub(crate) model_name: ::std::option::Option<::std::string::String>,

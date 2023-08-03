@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetJobDetailsOutput`](crate::operation::get_job_details::GetJobDetailsOutput) with field(s):
     ///   - [`job_details(Option<JobDetails>)`](crate::operation::get_job_details::GetJobDetailsOutput::job_details): <p>The details of the job.</p> <note>   <p>If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new credentials.</p>  </note>
     /// - On failure, responds with [`SdkError<GetJobDetailsError>`](crate::operation::get_job_details::GetJobDetailsError)
-    pub fn get_job_details(
-        &self,
-    ) -> crate::operation::get_job_details::builders::GetJobDetailsFluentBuilder {
-        crate::operation::get_job_details::builders::GetJobDetailsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_job_details(&self) -> crate::operation::get_job_details::builders::GetJobDetailsFluentBuilder {
+        crate::operation::get_job_details::builders::GetJobDetailsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,8 +15,7 @@ pub struct DialogCodeHookInvocationSetting {
     pub invocation_label: ::std::option::Option<::std::string::String>,
     /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
     #[doc(hidden)]
-    pub post_code_hook_specification:
-        ::std::option::Option<crate::types::PostDialogCodeHookInvocationSpecification>,
+    pub post_code_hook_specification: ::std::option::Option<crate::types::PostDialogCodeHookInvocationSpecification>,
 }
 impl DialogCodeHookInvocationSetting {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
@@ -32,9 +31,7 @@ impl DialogCodeHookInvocationSetting {
         self.invocation_label.as_deref()
     }
     /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
-    pub fn post_code_hook_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PostDialogCodeHookInvocationSpecification> {
+    pub fn post_code_hook_specification(&self) -> ::std::option::Option<&crate::types::PostDialogCodeHookInvocationSpecification> {
         self.post_code_hook_specification.as_ref()
     }
 }
@@ -47,15 +44,12 @@ impl DialogCodeHookInvocationSetting {
 
 /// A builder for [`DialogCodeHookInvocationSetting`](crate::types::DialogCodeHookInvocationSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DialogCodeHookInvocationSettingBuilder {
     pub(crate) enable_code_hook_invocation: ::std::option::Option<bool>,
     pub(crate) active: ::std::option::Option<bool>,
     pub(crate) invocation_label: ::std::option::Option<::std::string::String>,
-    pub(crate) post_code_hook_specification:
-        ::std::option::Option<crate::types::PostDialogCodeHookInvocationSpecification>,
+    pub(crate) post_code_hook_specification: ::std::option::Option<crate::types::PostDialogCodeHookInvocationSpecification>,
 }
 impl DialogCodeHookInvocationSettingBuilder {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
@@ -87,18 +81,12 @@ impl DialogCodeHookInvocationSettingBuilder {
         &self.active
     }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
-    pub fn invocation_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invocation_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invocation_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
-    pub fn set_invocation_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_invocation_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invocation_label = input;
         self
     }
@@ -107,25 +95,17 @@ impl DialogCodeHookInvocationSettingBuilder {
         &self.invocation_label
     }
     /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
-    pub fn post_code_hook_specification(
-        mut self,
-        input: crate::types::PostDialogCodeHookInvocationSpecification,
-    ) -> Self {
+    pub fn post_code_hook_specification(mut self, input: crate::types::PostDialogCodeHookInvocationSpecification) -> Self {
         self.post_code_hook_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
-    pub fn set_post_code_hook_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::PostDialogCodeHookInvocationSpecification>,
-    ) -> Self {
+    pub fn set_post_code_hook_specification(mut self, input: ::std::option::Option<crate::types::PostDialogCodeHookInvocationSpecification>) -> Self {
         self.post_code_hook_specification = input;
         self
     }
     /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
-    pub fn get_post_code_hook_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PostDialogCodeHookInvocationSpecification> {
+    pub fn get_post_code_hook_specification(&self) -> &::std::option::Option<crate::types::PostDialogCodeHookInvocationSpecification> {
         &self.post_code_hook_specification
     }
     /// Consumes the builder and constructs a [`DialogCodeHookInvocationSetting`](crate::types::DialogCodeHookInvocationSetting).

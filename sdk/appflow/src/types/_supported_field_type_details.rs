@@ -23,9 +23,7 @@ impl SupportedFieldTypeDetails {
 
 /// A builder for [`SupportedFieldTypeDetails`](crate::types::SupportedFieldTypeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SupportedFieldTypeDetailsBuilder {
     pub(crate) v1: ::std::option::Option<crate::types::FieldTypeDetails>,
 }

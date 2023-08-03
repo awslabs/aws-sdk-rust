@@ -29,18 +29,14 @@ impl ListSmartHomeAppliancesInput {
 }
 impl ListSmartHomeAppliancesInput {
     /// Creates a new builder-style object to manufacture [`ListSmartHomeAppliancesInput`](crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesInput).
-    pub fn builder(
-    ) -> crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesInputBuilder {
         crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSmartHomeAppliancesInput`](crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSmartHomeAppliancesInputBuilder {
     pub(crate) room_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -96,12 +92,10 @@ impl ListSmartHomeAppliancesInputBuilder {
         crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesInput {
-                room_arn: self.room_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesInput {
+            room_arn: self.room_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

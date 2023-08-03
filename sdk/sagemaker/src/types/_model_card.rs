@@ -165,18 +165,12 @@ pub struct ModelCardBuilder {
 }
 impl ModelCardBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
-    pub fn model_card_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
-    pub fn set_model_card_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_arn = input;
         self
     }
@@ -185,18 +179,12 @@ impl ModelCardBuilder {
         &self.model_card_arn
     }
     /// <p>The unique name of the model card.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the model card.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_name = input;
         self
     }
@@ -250,10 +238,7 @@ impl ModelCardBuilder {
     /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
     /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
-    pub fn set_model_card_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardStatus>,
-    ) -> Self {
+    pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
         self.model_card_status = input;
         self
     }
@@ -273,17 +258,12 @@ impl ModelCardBuilder {
         self
     }
     /// <p>The security configuration used to protect model card data.</p>
-    pub fn set_security_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardSecurityConfig>,
-    ) -> Self {
+    pub fn set_security_config(mut self, input: ::std::option::Option<crate::types::ModelCardSecurityConfig>) -> Self {
         self.security_config = input;
         self
     }
     /// <p>The security configuration used to protect model card data.</p>
-    pub fn get_security_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelCardSecurityConfig> {
+    pub fn get_security_config(&self) -> &::std::option::Option<crate::types::ModelCardSecurityConfig> {
         &self.security_config
     }
     /// <p>The date and time that the model card was created.</p>
@@ -292,10 +272,7 @@ impl ModelCardBuilder {
         self
     }
     /// <p>The date and time that the model card was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -309,10 +286,7 @@ impl ModelCardBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }
@@ -326,10 +300,7 @@ impl ModelCardBuilder {
         self
     }
     /// <p>The date and time that the model card was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -343,10 +314,7 @@ impl ModelCardBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -366,10 +334,7 @@ impl ModelCardBuilder {
         self
     }
     /// <p>Key-value pairs used to manage metadata for the model card.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -406,18 +371,12 @@ impl ModelCardBuilder {
         &self.risk_rating
     }
     /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry. </p>
-    pub fn model_package_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry. </p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_name = input;
         self
     }

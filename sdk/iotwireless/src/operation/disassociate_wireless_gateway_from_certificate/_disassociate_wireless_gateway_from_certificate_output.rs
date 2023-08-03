@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for DisassociateWirelessGatewayFromCertif
 }
 impl DisassociateWirelessGatewayFromCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromCertificateOutput`](crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateOutput).
-    pub fn builder() -> crate::operation::disassociate_wireless_gateway_from_certificate::builders::DisassociateWirelessGatewayFromCertificateOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::disassociate_wireless_gateway_from_certificate::builders::DisassociateWirelessGatewayFromCertificateOutputBuilder {
         crate::operation::disassociate_wireless_gateway_from_certificate::builders::DisassociateWirelessGatewayFromCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateWirelessGatewayFromCertificateOutput`](crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateWirelessGatewayFromCertificateOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl DisassociateWirelessGatewayFromCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateWirelessGatewayFromCertificateOutput`](crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateOutput).
-    pub fn build(self) -> crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateOutput{
+    pub fn build(self) -> crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateOutput {
         crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateOutput {
             _request_id: self._request_id,
         }

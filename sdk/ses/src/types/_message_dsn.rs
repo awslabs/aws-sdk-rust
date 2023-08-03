@@ -38,29 +38,20 @@ impl MessageDsn {
 
 /// A builder for [`MessageDsn`](crate::types::MessageDsn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageDsnBuilder {
     pub(crate) reporting_mta: ::std::option::Option<::std::string::String>,
     pub(crate) arrival_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) extension_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>>,
+    pub(crate) extension_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>>,
 }
 impl MessageDsnBuilder {
     /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.</p>
-    pub fn reporting_mta(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reporting_mta(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reporting_mta = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reporting MTA that attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.</p>
-    pub fn set_reporting_mta(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reporting_mta(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reporting_mta = input;
         self
     }
@@ -74,10 +65,7 @@ impl MessageDsnBuilder {
         self
     }
     /// <p>When the message was received by the reporting mail transfer agent (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
-    pub fn set_arrival_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_arrival_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.arrival_date = input;
         self
     }
@@ -97,17 +85,12 @@ impl MessageDsnBuilder {
         self
     }
     /// <p>Additional X-headers to include in the DSN.</p>
-    pub fn set_extension_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>>,
-    ) -> Self {
+    pub fn set_extension_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>>) -> Self {
         self.extension_fields = input;
         self
     }
     /// <p>Additional X-headers to include in the DSN.</p>
-    pub fn get_extension_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>> {
+    pub fn get_extension_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>> {
         &self.extension_fields
     }
     /// Consumes the builder and constructs a [`MessageDsn`](crate::types::MessageDsn).

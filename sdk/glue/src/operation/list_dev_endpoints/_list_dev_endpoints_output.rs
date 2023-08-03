@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListDevEndpointsOutput {
 }
 impl ListDevEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListDevEndpointsOutput`](crate::operation::list_dev_endpoints::ListDevEndpointsOutput).
-    pub fn builder() -> crate::operation::list_dev_endpoints::builders::ListDevEndpointsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_dev_endpoints::builders::ListDevEndpointsOutputBuilder {
         crate::operation::list_dev_endpoints::builders::ListDevEndpointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDevEndpointsOutput`](crate::operation::list_dev_endpoints::ListDevEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevEndpointsOutputBuilder {
     pub(crate) dev_endpoint_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,27 +47,19 @@ impl ListDevEndpointsOutputBuilder {
     /// To override the contents of this collection use [`set_dev_endpoint_names`](Self::set_dev_endpoint_names).
     ///
     /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
-    pub fn dev_endpoint_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dev_endpoint_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dev_endpoint_names.unwrap_or_default();
         v.push(input.into());
         self.dev_endpoint_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
-    pub fn set_dev_endpoint_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dev_endpoint_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dev_endpoint_names = input;
         self
     }
     /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
-    pub fn get_dev_endpoint_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dev_endpoint_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dev_endpoint_names
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>

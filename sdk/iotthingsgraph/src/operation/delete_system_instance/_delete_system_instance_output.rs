@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSystemInstanceOutput {
 }
 impl DeleteSystemInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSystemInstanceOutput`](crate::operation::delete_system_instance::DeleteSystemInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_system_instance::builders::DeleteSystemInstanceOutputBuilder {
+    pub fn builder() -> crate::operation::delete_system_instance::builders::DeleteSystemInstanceOutputBuilder {
         crate::operation::delete_system_instance::builders::DeleteSystemInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSystemInstanceOutput`](crate::operation::delete_system_instance::DeleteSystemInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSystemInstanceOutputBuilder {
     _request_id: Option<String>,
 }

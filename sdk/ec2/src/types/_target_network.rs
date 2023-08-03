@@ -58,9 +58,7 @@ impl TargetNetwork {
 
 /// A builder for [`TargetNetwork`](crate::types::TargetNetwork).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetNetworkBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct TargetNetworkBuilder {
 }
 impl TargetNetworkBuilder {
     /// <p>The ID of the association.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the association.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -105,18 +97,12 @@ impl TargetNetworkBuilder {
         &self.vpc_id
     }
     /// <p>The ID of the subnet specified as the target network.</p>
-    pub fn target_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subnet specified as the target network.</p>
-    pub fn set_target_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_network_id = input;
         self
     }
@@ -125,18 +111,12 @@ impl TargetNetworkBuilder {
         &self.target_network_id
     }
     /// <p>The ID of the Client VPN endpoint with which the target network is associated.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint with which the target network is associated.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
@@ -150,10 +130,7 @@ impl TargetNetworkBuilder {
         self
     }
     /// <p>The current state of the target network association.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AssociationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -166,27 +143,19 @@ impl TargetNetworkBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The IDs of the security groups applied to the target network association.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security groups applied to the target network association.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The IDs of the security groups applied to the target network association.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// Consumes the builder and constructs a [`TargetNetwork`](crate::types::TargetNetwork).

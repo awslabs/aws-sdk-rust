@@ -10,10 +10,7 @@ impl CreateFileCacheInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_file_cache::CreateFileCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_cache::CreateFileCacheError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_cache::CreateFileCacheError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_file_cache();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl CreateFileCacheFluentBuilder {
         }
     }
     /// Access the CreateFileCache as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_file_cache::builders::CreateFileCacheInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_file_cache::builders::CreateFileCacheInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl CreateFileCacheFluentBuilder {
             crate::operation::create_file_cache::CreateFileCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_cache::CreateFileCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_cache::CreateFileCacheError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl CreateFileCacheFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl CreateFileCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_file_cache::CreateFileCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_cache::CreateFileCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_cache::CreateFileCacheError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl CreateFileCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_file_cache::CreateFileCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_cache::CreateFileCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_cache::CreateFileCacheError>,
     > {
         self.send_middleware().await
     }
@@ -123,27 +109,19 @@ impl CreateFileCacheFluentBuilder {
             crate::operation::create_file_cache::CreateFileCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_file_cache::CreateFileCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_file_cache::CreateFileCacheError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     /// <p>By using the idempotent operation, you can retry a <code>CreateFileCache</code> operation without the risk of creating an extra cache. This approach can be useful when an initial call fails in a way that makes it unclear whether a cache was created. Examples are if a transport level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a cache, the client receives success as long as the parameters are the same.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     /// <p>By using the idempotent operation, you can retry a <code>CreateFileCache</code> operation without the risk of creating an extra cache. This approach can be useful when an initial call fails in a way that makes it unclear whether a cache was created. Examples are if a transport level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a cache, the client receives success as long as the parameters are the same.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -158,10 +136,7 @@ impl CreateFileCacheFluentBuilder {
         self
     }
     /// <p>The type of cache that you're creating, which must be <code>LUSTRE</code>.</p>
-    pub fn set_file_cache_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FileCacheType>,
-    ) -> Self {
+    pub fn set_file_cache_type(mut self, input: ::std::option::Option<crate::types::FileCacheType>) -> Self {
         self.inner = self.inner.set_file_cache_type(input);
         self
     }
@@ -170,18 +145,12 @@ impl CreateFileCacheFluentBuilder {
         self.inner.get_file_cache_type()
     }
     /// <p>Sets the Lustre version for the cache that you're creating, which must be <code>2.12</code>.</p>
-    pub fn file_cache_type_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_cache_type_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_cache_type_version(input.into());
         self
     }
     /// <p>Sets the Lustre version for the cache that you're creating, which must be <code>2.12</code>.</p>
-    pub fn set_file_cache_type_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_cache_type_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_cache_type_version(input);
         self
     }
@@ -213,10 +182,7 @@ impl CreateFileCacheFluentBuilder {
         self
     }
     /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -229,25 +195,17 @@ impl CreateFileCacheFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for Amazon File Cache access. This list isn't returned in later requests to describe the cache.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for Amazon File Cache access. This list isn't returned in later requests to describe the cache.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for Amazon File Cache access. This list isn't returned in later requests to describe the cache.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// Appends an item to `Tags`.
@@ -260,10 +218,7 @@ impl CreateFileCacheFluentBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -277,13 +232,8 @@ impl CreateFileCacheFluentBuilder {
         self
     }
     /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations. This value defaults to false.</p>
-    pub fn set_copy_tags_to_data_repository_associations(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_copy_tags_to_data_repository_associations(input);
+    pub fn set_copy_tags_to_data_repository_associations(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_copy_tags_to_data_repository_associations(input);
         self
     }
     /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations. This value defaults to false.</p>
@@ -305,25 +255,17 @@ impl CreateFileCacheFluentBuilder {
         self.inner.get_kms_key_id()
     }
     /// <p>The configuration for the Amazon File Cache resource being created.</p>
-    pub fn lustre_configuration(
-        mut self,
-        input: crate::types::CreateFileCacheLustreConfiguration,
-    ) -> Self {
+    pub fn lustre_configuration(mut self, input: crate::types::CreateFileCacheLustreConfiguration) -> Self {
         self.inner = self.inner.lustre_configuration(input);
         self
     }
     /// <p>The configuration for the Amazon File Cache resource being created.</p>
-    pub fn set_lustre_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CreateFileCacheLustreConfiguration>,
-    ) -> Self {
+    pub fn set_lustre_configuration(mut self, input: ::std::option::Option<crate::types::CreateFileCacheLustreConfiguration>) -> Self {
         self.inner = self.inner.set_lustre_configuration(input);
         self
     }
     /// <p>The configuration for the Amazon File Cache resource being created.</p>
-    pub fn get_lustre_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreateFileCacheLustreConfiguration> {
+    pub fn get_lustre_configuration(&self) -> &::std::option::Option<crate::types::CreateFileCacheLustreConfiguration> {
         self.inner.get_lustre_configuration()
     }
     /// Appends an item to `DataRepositoryAssociations`.
@@ -337,10 +279,7 @@ impl CreateFileCacheFluentBuilder {
     /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li>
     /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
-    pub fn data_repository_associations(
-        mut self,
-        input: crate::types::FileCacheDataRepositoryAssociation,
-    ) -> Self {
+    pub fn data_repository_associations(mut self, input: crate::types::FileCacheDataRepositoryAssociation) -> Self {
         self.inner = self.inner.data_repository_associations(input);
         self
     }
@@ -353,9 +292,7 @@ impl CreateFileCacheFluentBuilder {
     /// <p>DRA automatic import and automatic export is not supported.</p>
     pub fn set_data_repository_associations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::FileCacheDataRepositoryAssociation>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FileCacheDataRepositoryAssociation>>,
     ) -> Self {
         self.inner = self.inner.set_data_repository_associations(input);
         self
@@ -367,10 +304,7 @@ impl CreateFileCacheFluentBuilder {
     /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li>
     /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
-    pub fn get_data_repository_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileCacheDataRepositoryAssociation>>
-    {
+    pub fn get_data_repository_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileCacheDataRepositoryAssociation>> {
         self.inner.get_data_repository_associations()
     }
 }

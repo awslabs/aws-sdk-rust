@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`recovery_points(Option<Vec<RecoveryPoint>>)`](crate::operation::list_recovery_points::ListRecoveryPointsOutput::recovery_points): <p>The returned recovery point objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_recovery_points::ListRecoveryPointsOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     /// - On failure, responds with [`SdkError<ListRecoveryPointsError>`](crate::operation::list_recovery_points::ListRecoveryPointsError)
-    pub fn list_recovery_points(
-        &self,
-    ) -> crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder {
-        crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_recovery_points(&self) -> crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder {
+        crate::operation::list_recovery_points::builders::ListRecoveryPointsFluentBuilder::new(self.handle.clone())
     }
 }

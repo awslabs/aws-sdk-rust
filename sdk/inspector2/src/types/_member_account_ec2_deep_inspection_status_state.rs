@@ -37,9 +37,7 @@ impl MemberAccountEc2DeepInspectionStatusState {
 
 /// A builder for [`MemberAccountEc2DeepInspectionStatusState`](crate::types::MemberAccountEc2DeepInspectionStatusState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberAccountEc2DeepInspectionStatusStateBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Ec2DeepInspectionStatus>,
@@ -66,10 +64,7 @@ impl MemberAccountEc2DeepInspectionStatusStateBuilder {
         self
     }
     /// <p>The state of Amazon Inspector deep inspection in the member account.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2DeepInspectionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::Ec2DeepInspectionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -78,18 +73,12 @@ impl MemberAccountEc2DeepInspectionStatusStateBuilder {
         &self.status
     }
     /// <p>The error message explaining why the account failed to activate Amazon Inspector deep inspection.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message explaining why the account failed to activate Amazon Inspector deep inspection.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

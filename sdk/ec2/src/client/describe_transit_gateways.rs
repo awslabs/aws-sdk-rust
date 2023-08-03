@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`transit_gateways(Option<Vec<TransitGateway>>)`](crate::operation::describe_transit_gateways::DescribeTransitGatewaysOutput::transit_gateways): <p>Information about the transit gateways.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_transit_gateways::DescribeTransitGatewaysOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeTransitGatewaysError>`](crate::operation::describe_transit_gateways::DescribeTransitGatewaysError)
-    pub fn describe_transit_gateways(
-        &self,
-    ) -> crate::operation::describe_transit_gateways::builders::DescribeTransitGatewaysFluentBuilder
-    {
+    pub fn describe_transit_gateways(&self) -> crate::operation::describe_transit_gateways::builders::DescribeTransitGatewaysFluentBuilder {
         crate::operation::describe_transit_gateways::builders::DescribeTransitGatewaysFluentBuilder::new(self.handle.clone())
     }
 }

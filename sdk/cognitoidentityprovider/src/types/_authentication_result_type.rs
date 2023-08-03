@@ -45,9 +45,7 @@ impl AuthenticationResultType {
         self.id_token.as_deref()
     }
     /// <p>The new device metadata from an authentication result.</p>
-    pub fn new_device_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NewDeviceMetadataType> {
+    pub fn new_device_metadata(&self) -> ::std::option::Option<&crate::types::NewDeviceMetadataType> {
         self.new_device_metadata.as_ref()
     }
 }
@@ -125,18 +123,12 @@ impl AuthenticationResultTypeBuilder {
         &self.token_type
     }
     /// <p>The refresh token.</p>
-    pub fn refresh_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn refresh_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.refresh_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The refresh token.</p>
-    pub fn set_refresh_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_refresh_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.refresh_token = input;
         self
     }
@@ -164,17 +156,12 @@ impl AuthenticationResultTypeBuilder {
         self
     }
     /// <p>The new device metadata from an authentication result.</p>
-    pub fn set_new_device_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::NewDeviceMetadataType>,
-    ) -> Self {
+    pub fn set_new_device_metadata(mut self, input: ::std::option::Option<crate::types::NewDeviceMetadataType>) -> Self {
         self.new_device_metadata = input;
         self
     }
     /// <p>The new device metadata from an authentication result.</p>
-    pub fn get_new_device_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::NewDeviceMetadataType> {
+    pub fn get_new_device_metadata(&self) -> &::std::option::Option<crate::types::NewDeviceMetadataType> {
         &self.new_device_metadata
     }
     /// Consumes the builder and constructs a [`AuthenticationResultType`](crate::types::AuthenticationResultType).

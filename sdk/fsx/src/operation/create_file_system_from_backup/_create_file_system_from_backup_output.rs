@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateFileSystemFromBackupOutput {
 }
 impl CreateFileSystemFromBackupOutput {
     /// Creates a new builder-style object to manufacture [`CreateFileSystemFromBackupOutput`](crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupOutput).
-    pub fn builder() -> crate::operation::create_file_system_from_backup::builders::CreateFileSystemFromBackupOutputBuilder{
+    pub fn builder() -> crate::operation::create_file_system_from_backup::builders::CreateFileSystemFromBackupOutputBuilder {
         crate::operation::create_file_system_from_backup::builders::CreateFileSystemFromBackupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFileSystemFromBackupOutput`](crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFileSystemFromBackupOutputBuilder {
     pub(crate) file_system: ::std::option::Option<crate::types::FileSystem>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl CreateFileSystemFromBackupOutputBuilder {
         self
     }
     /// <p>A description of the file system.</p>
-    pub fn set_file_system(
-        mut self,
-        input: ::std::option::Option<crate::types::FileSystem>,
-    ) -> Self {
+    pub fn set_file_system(mut self, input: ::std::option::Option<crate::types::FileSystem>) -> Self {
         self.file_system = input;
         self
     }
@@ -64,9 +59,7 @@ impl CreateFileSystemFromBackupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateFileSystemFromBackupOutput`](crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupOutput {
+    pub fn build(self) -> crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupOutput {
         crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupOutput {
             file_system: self.file_system,
             _request_id: self._request_id,

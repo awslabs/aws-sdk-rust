@@ -24,9 +24,7 @@ impl DetailedStatusCodesMetrics {
 
 /// A builder for [`DetailedStatusCodesMetrics`](crate::types::DetailedStatusCodesMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetailedStatusCodesMetricsBuilder {
     pub(crate) is_enabled: ::std::option::Option<bool>,
 }

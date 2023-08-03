@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeEventSourcesConfigOutput {
 }
 impl DescribeEventSourcesConfigOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventSourcesConfigOutput`](crate::operation::describe_event_sources_config::DescribeEventSourcesConfigOutput).
-    pub fn builder() -> crate::operation::describe_event_sources_config::builders::DescribeEventSourcesConfigOutputBuilder{
+    pub fn builder() -> crate::operation::describe_event_sources_config::builders::DescribeEventSourcesConfigOutputBuilder {
         crate::operation::describe_event_sources_config::builders::DescribeEventSourcesConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventSourcesConfigOutput`](crate::operation::describe_event_sources_config::DescribeEventSourcesConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventSourcesConfigOutputBuilder {
     pub(crate) event_sources: ::std::option::Option<crate::types::EventSourcesConfig>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeEventSourcesConfigOutputBuilder {
         self
     }
     /// <p>Lists the event sources in the configuration.</p>
-    pub fn set_event_sources(
-        mut self,
-        input: ::std::option::Option<crate::types::EventSourcesConfig>,
-    ) -> Self {
+    pub fn set_event_sources(mut self, input: ::std::option::Option<crate::types::EventSourcesConfig>) -> Self {
         self.event_sources = input;
         self
     }
@@ -63,9 +58,7 @@ impl DescribeEventSourcesConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEventSourcesConfigOutput`](crate::operation::describe_event_sources_config::DescribeEventSourcesConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_event_sources_config::DescribeEventSourcesConfigOutput {
+    pub fn build(self) -> crate::operation::describe_event_sources_config::DescribeEventSourcesConfigOutput {
         crate::operation::describe_event_sources_config::DescribeEventSourcesConfigOutput {
             event_sources: self.event_sources,
             _request_id: self._request_id,

@@ -51,15 +51,12 @@ impl DeploymentEvent {
 
 /// A builder for [`DeploymentEvent`](crate::types::DeploymentEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentEventBuilder {
     pub(crate) event_type: ::std::option::Option<crate::types::DeploymentEventType>,
     pub(crate) triggered_by: ::std::option::Option<crate::types::TriggeredBy>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) action_invocations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActionInvocation>>,
+    pub(crate) action_invocations: ::std::option::Option<::std::vec::Vec<crate::types::ActionInvocation>>,
     pub(crate) occurred_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeploymentEventBuilder {
@@ -69,10 +66,7 @@ impl DeploymentEventBuilder {
         self
     }
     /// <p>The type of deployment event. Deployment event types include the start, stop, or completion of a deployment; a percentage update; the start or stop of a bake period; and the start or completion of a rollback.</p>
-    pub fn set_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentEventType>,
-    ) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::DeploymentEventType>) -> Self {
         self.event_type = input;
         self
     }
@@ -86,10 +80,7 @@ impl DeploymentEventBuilder {
         self
     }
     /// <p>The entity that triggered the deployment event. Events can be triggered by a user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
-    pub fn set_triggered_by(
-        mut self,
-        input: ::std::option::Option<crate::types::TriggeredBy>,
-    ) -> Self {
+    pub fn set_triggered_by(mut self, input: ::std::option::Option<crate::types::TriggeredBy>) -> Self {
         self.triggered_by = input;
         self
     }
@@ -123,17 +114,12 @@ impl DeploymentEventBuilder {
         self
     }
     /// <p>The list of extensions that were invoked as part of the deployment.</p>
-    pub fn set_action_invocations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActionInvocation>>,
-    ) -> Self {
+    pub fn set_action_invocations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionInvocation>>) -> Self {
         self.action_invocations = input;
         self
     }
     /// <p>The list of extensions that were invoked as part of the deployment.</p>
-    pub fn get_action_invocations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionInvocation>> {
+    pub fn get_action_invocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionInvocation>> {
         &self.action_invocations
     }
     /// <p>The date and time the event occurred.</p>
@@ -142,10 +128,7 @@ impl DeploymentEventBuilder {
         self
     }
     /// <p>The date and time the event occurred.</p>
-    pub fn set_occurred_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_occurred_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.occurred_at = input;
         self
     }

@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchUpdateTableRowsOutput {
 }
 impl BatchUpdateTableRowsOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateTableRowsOutput`](crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsOutputBuilder {
         crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateTableRowsOutput`](crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateTableRowsOutputBuilder {
     pub(crate) workbook_cursor: ::std::option::Option<i64>,
-    pub(crate) failed_batch_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
+    pub(crate) failed_batch_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateTableRowsOutputBuilder {
@@ -73,17 +68,12 @@ impl BatchUpdateTableRowsOutputBuilder {
         self
     }
     /// <p> The list of batch items in the request that could not be updated in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated. </p>
-    pub fn set_failed_batch_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
-    ) -> Self {
+    pub fn set_failed_batch_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>) -> Self {
         self.failed_batch_items = input;
         self
     }
     /// <p> The list of batch items in the request that could not be updated in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated. </p>
-    pub fn get_failed_batch_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>> {
+    pub fn get_failed_batch_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>> {
         &self.failed_batch_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

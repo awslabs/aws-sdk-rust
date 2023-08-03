@@ -30,9 +30,7 @@ impl CurrentMetricData {
 
 /// A builder for [`CurrentMetricData`](crate::types::CurrentMetricData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CurrentMetricDataBuilder {
     pub(crate) metric: ::std::option::Option<crate::types::CurrentMetric>,
     pub(crate) value: ::std::option::Option<f64>,

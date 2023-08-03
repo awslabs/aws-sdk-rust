@@ -38,14 +38,7 @@
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::hash::Hash)]
 pub enum PhoneNumberType {
     #[allow(missing_docs)] // documentation missing in model
     Home,
@@ -62,9 +55,7 @@ impl ::std::convert::From<&str> for PhoneNumberType {
             "HOME" => PhoneNumberType::Home,
             "MOBILE" => PhoneNumberType::Mobile,
             "WORK" => PhoneNumberType::Work,
-            other => {
-                PhoneNumberType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => PhoneNumberType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for SignalWorkflowExecutionOutput {
 }
 impl SignalWorkflowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`SignalWorkflowExecutionOutput`](crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionOutputBuilder {
         crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`SignalWorkflowExecutionOutput`](crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignalWorkflowExecutionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl SignalWorkflowExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SignalWorkflowExecutionOutput`](crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput {
+    pub fn build(self) -> crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput {
         crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput {
             _request_id: self._request_id,
         }

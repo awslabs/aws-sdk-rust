@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateComponentOutput`](crate::operation::create_component::CreateComponentOutput) with field(s):
     ///   - [`entity(Option<Component>)`](crate::operation::create_component::CreateComponentOutput::entity): <p>Describes the configuration of the new component.</p>
     /// - On failure, responds with [`SdkError<CreateComponentError>`](crate::operation::create_component::CreateComponentError)
-    pub fn create_component(
-        &self,
-    ) -> crate::operation::create_component::builders::CreateComponentFluentBuilder {
-        crate::operation::create_component::builders::CreateComponentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_component(&self) -> crate::operation::create_component::builders::CreateComponentFluentBuilder {
+        crate::operation::create_component::builders::CreateComponentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -72,9 +72,7 @@ impl Hsm {
 
 /// A builder for [`Hsm`](crate::types::Hsm).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HsmBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
@@ -87,18 +85,12 @@ pub struct HsmBuilder {
 }
 impl HsmBuilder {
     /// <p>The Availability Zone that contains the HSM.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone that contains the HSM.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -191,18 +183,12 @@ impl HsmBuilder {
         &self.state
     }
     /// <p>A description of the HSM's state.</p>
-    pub fn state_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the HSM's state.</p>
-    pub fn set_state_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_message = input;
         self
     }

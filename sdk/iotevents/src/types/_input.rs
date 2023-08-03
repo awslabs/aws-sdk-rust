@@ -30,9 +30,7 @@ impl Input {
 
 /// A builder for [`Input`](crate::types::Input).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputBuilder {
     pub(crate) input_configuration: ::std::option::Option<crate::types::InputConfiguration>,
     pub(crate) input_definition: ::std::option::Option<crate::types::InputDefinition>,
@@ -44,17 +42,12 @@ impl InputBuilder {
         self
     }
     /// <p>Information about the configuration of an input.</p>
-    pub fn set_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InputConfiguration>,
-    ) -> Self {
+    pub fn set_input_configuration(mut self, input: ::std::option::Option<crate::types::InputConfiguration>) -> Self {
         self.input_configuration = input;
         self
     }
     /// <p>Information about the configuration of an input.</p>
-    pub fn get_input_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputConfiguration> {
+    pub fn get_input_configuration(&self) -> &::std::option::Option<crate::types::InputConfiguration> {
         &self.input_configuration
     }
     /// <p>The definition of the input.</p>
@@ -63,10 +56,7 @@ impl InputBuilder {
         self
     }
     /// <p>The definition of the input.</p>
-    pub fn set_input_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDefinition>,
-    ) -> Self {
+    pub fn set_input_definition(mut self, input: ::std::option::Option<crate::types::InputDefinition>) -> Self {
         self.input_definition = input;
         self
     }

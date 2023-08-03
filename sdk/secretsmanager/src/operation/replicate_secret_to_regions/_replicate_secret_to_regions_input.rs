@@ -8,8 +8,7 @@ pub struct ReplicateSecretToRegionsInput {
     pub secret_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of Regions in which to replicate the secret.</p>
     #[doc(hidden)]
-    pub add_replica_regions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
+    pub add_replica_regions: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
     #[doc(hidden)]
     pub force_overwrite_replica_secret: ::std::option::Option<bool>,
@@ -30,22 +29,17 @@ impl ReplicateSecretToRegionsInput {
 }
 impl ReplicateSecretToRegionsInput {
     /// Creates a new builder-style object to manufacture [`ReplicateSecretToRegionsInput`](crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsInput).
-    pub fn builder(
-    ) -> crate::operation::replicate_secret_to_regions::builders::ReplicateSecretToRegionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::replicate_secret_to_regions::builders::ReplicateSecretToRegionsInputBuilder {
         crate::operation::replicate_secret_to_regions::builders::ReplicateSecretToRegionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ReplicateSecretToRegionsInput`](crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicateSecretToRegionsInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
-    pub(crate) add_replica_regions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
+    pub(crate) add_replica_regions: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
     pub(crate) force_overwrite_replica_secret: ::std::option::Option<bool>,
 }
 impl ReplicateSecretToRegionsInputBuilder {
@@ -75,17 +69,12 @@ impl ReplicateSecretToRegionsInputBuilder {
         self
     }
     /// <p>A list of Regions in which to replicate the secret.</p>
-    pub fn set_add_replica_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
-    ) -> Self {
+    pub fn set_add_replica_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>) -> Self {
         self.add_replica_regions = input;
         self
     }
     /// <p>A list of Regions in which to replicate the secret.</p>
-    pub fn get_add_replica_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>> {
+    pub fn get_add_replica_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>> {
         &self.add_replica_regions
     }
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
@@ -94,10 +83,7 @@ impl ReplicateSecretToRegionsInputBuilder {
         self
     }
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
-    pub fn set_force_overwrite_replica_secret(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_force_overwrite_replica_secret(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_overwrite_replica_secret = input;
         self
     }
@@ -112,12 +98,10 @@ impl ReplicateSecretToRegionsInputBuilder {
         crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsInput {
-                secret_id: self.secret_id,
-                add_replica_regions: self.add_replica_regions,
-                force_overwrite_replica_secret: self.force_overwrite_replica_secret,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsInput {
+            secret_id: self.secret_id,
+            add_replica_regions: self.add_replica_regions,
+            force_overwrite_replica_secret: self.force_overwrite_replica_secret,
+        })
     }
 }

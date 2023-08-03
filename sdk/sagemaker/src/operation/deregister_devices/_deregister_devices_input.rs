@@ -22,35 +22,26 @@ impl DeregisterDevicesInput {
 }
 impl DeregisterDevicesInput {
     /// Creates a new builder-style object to manufacture [`DeregisterDevicesInput`](crate::operation::deregister_devices::DeregisterDevicesInput).
-    pub fn builder() -> crate::operation::deregister_devices::builders::DeregisterDevicesInputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_devices::builders::DeregisterDevicesInputBuilder {
         crate::operation::deregister_devices::builders::DeregisterDevicesInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterDevicesInput`](crate::operation::deregister_devices::DeregisterDevicesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterDevicesInputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeregisterDevicesInputBuilder {
     /// <p>The name of the fleet the devices belong to.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the fleet the devices belong to.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -70,31 +61,21 @@ impl DeregisterDevicesInputBuilder {
         self
     }
     /// <p>The unique IDs of the devices.</p>
-    pub fn set_device_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_device_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.device_names = input;
         self
     }
     /// <p>The unique IDs of the devices.</p>
-    pub fn get_device_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_device_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.device_names
     }
     /// Consumes the builder and constructs a [`DeregisterDevicesInput`](crate::operation::deregister_devices::DeregisterDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_devices::DeregisterDevicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::deregister_devices::DeregisterDevicesInput {
-                device_fleet_name: self.device_fleet_name,
-                device_names: self.device_names,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::deregister_devices::DeregisterDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::deregister_devices::DeregisterDevicesInput {
+            device_fleet_name: self.device_fleet_name,
+            device_names: self.device_names,
+        })
     }
 }

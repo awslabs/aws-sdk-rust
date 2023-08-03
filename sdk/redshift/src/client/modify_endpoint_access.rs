@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`vpc_security_groups(Option<Vec<VpcSecurityGroupMembership>>)`](crate::operation::modify_endpoint_access::ModifyEndpointAccessOutput::vpc_security_groups): <p>The security groups associated with the endpoint.</p>
     ///   - [`vpc_endpoint(Option<VpcEndpoint>)`](crate::operation::modify_endpoint_access::ModifyEndpointAccessOutput::vpc_endpoint): <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
     /// - On failure, responds with [`SdkError<ModifyEndpointAccessError>`](crate::operation::modify_endpoint_access::ModifyEndpointAccessError)
-    pub fn modify_endpoint_access(
-        &self,
-    ) -> crate::operation::modify_endpoint_access::builders::ModifyEndpointAccessFluentBuilder {
-        crate::operation::modify_endpoint_access::builders::ModifyEndpointAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_endpoint_access(&self) -> crate::operation::modify_endpoint_access::builders::ModifyEndpointAccessFluentBuilder {
+        crate::operation::modify_endpoint_access::builders::ModifyEndpointAccessFluentBuilder::new(self.handle.clone())
     }
 }

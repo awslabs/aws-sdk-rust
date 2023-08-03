@@ -36,16 +36,14 @@ impl DisassociateDataShareConsumerInput {
 }
 impl DisassociateDataShareConsumerInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDataShareConsumerInput`](crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerInput).
-    pub fn builder() -> crate::operation::disassociate_data_share_consumer::builders::DisassociateDataShareConsumerInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_data_share_consumer::builders::DisassociateDataShareConsumerInputBuilder {
         crate::operation::disassociate_data_share_consumer::builders::DisassociateDataShareConsumerInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDataShareConsumerInput`](crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDataShareConsumerInputBuilder {
     pub(crate) data_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) disassociate_entire_account: ::std::option::Option<bool>,
@@ -54,18 +52,12 @@ pub struct DisassociateDataShareConsumerInputBuilder {
 }
 impl DisassociateDataShareConsumerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
-    pub fn data_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
-    pub fn set_data_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_share_arn = input;
         self
     }
@@ -102,18 +94,12 @@ impl DisassociateDataShareConsumerInputBuilder {
         &self.consumer_arn
     }
     /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
-    pub fn consumer_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consumer_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
-    pub fn set_consumer_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_consumer_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.consumer_region = input;
         self
     }
@@ -128,17 +114,11 @@ impl DisassociateDataShareConsumerInputBuilder {
         crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerInput {
-                data_share_arn: self.data_share_arn
-                ,
-                disassociate_entire_account: self.disassociate_entire_account
-                ,
-                consumer_arn: self.consumer_arn
-                ,
-                consumer_region: self.consumer_region
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerInput {
+            data_share_arn: self.data_share_arn,
+            disassociate_entire_account: self.disassociate_entire_account,
+            consumer_arn: self.consumer_arn,
+            consumer_region: self.consumer_region,
+        })
     }
 }

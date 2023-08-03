@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeRuntimeConfigurationOutput`](crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationOutput) with field(s):
     ///   - [`runtime_configuration(Option<RuntimeConfiguration>)`](crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationOutput::runtime_configuration): <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
     /// - On failure, responds with [`SdkError<DescribeRuntimeConfigurationError>`](crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError)
-    pub fn describe_runtime_configuration(&self) -> crate::operation::describe_runtime_configuration::builders::DescribeRuntimeConfigurationFluentBuilder{
+    pub fn describe_runtime_configuration(
+        &self,
+    ) -> crate::operation::describe_runtime_configuration::builders::DescribeRuntimeConfigurationFluentBuilder {
         crate::operation::describe_runtime_configuration::builders::DescribeRuntimeConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

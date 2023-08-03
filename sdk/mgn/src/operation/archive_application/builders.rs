@@ -10,10 +10,7 @@ impl ArchiveApplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::archive_application::ArchiveApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::archive_application::ArchiveApplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::archive_application::ArchiveApplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.archive_application();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ArchiveApplicationFluentBuilder {
         }
     }
     /// Access the ArchiveApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::archive_application::builders::ArchiveApplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::archive_application::builders::ArchiveApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ArchiveApplicationFluentBuilder {
             crate::operation::archive_application::ArchiveApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::archive_application::ArchiveApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::archive_application::ArchiveApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ArchiveApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ArchiveApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::archive_application::ArchiveApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::archive_application::ArchiveApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::archive_application::ArchiveApplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ArchiveApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::archive_application::ArchiveApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::archive_application::ArchiveApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::archive_application::ArchiveApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl ArchiveApplicationFluentBuilder {
             crate::operation::archive_application::ArchiveApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::archive_application::ArchiveApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::archive_application::ArchiveApplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>Application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }

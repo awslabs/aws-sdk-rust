@@ -26,7 +26,7 @@ impl DescribeOperatingSystemsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOperatingSystemsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsInputBuilder,
+    inner: crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsInputBuilder,
 }
 impl DescribeOperatingSystemsFluentBuilder {
     /// Creates a new `DescribeOperatingSystems`.
@@ -37,10 +37,7 @@ impl DescribeOperatingSystemsFluentBuilder {
         }
     }
     /// Access the DescribeOperatingSystems as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeOperatingSystemsFluentBuilder {
             crate::operation::describe_operating_systems::DescribeOperatingSystems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_operating_systems::DescribeOperatingSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_operating_systems::DescribeOperatingSystemsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeOperatingSystemsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeOperatingSystemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_operating_systems::DescribeOperatingSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_operating_systems::DescribeOperatingSystemsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeOperatingSystemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_operating_systems::DescribeOperatingSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_operating_systems::DescribeOperatingSystemsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeOperatingSystemsFluentBuilder {
             crate::operation::describe_operating_systems::DescribeOperatingSystems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_operating_systems::DescribeOperatingSystemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_operating_systems::DescribeOperatingSystemsError>,
     > {
         self.customize_middleware().await
     }

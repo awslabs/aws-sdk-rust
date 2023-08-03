@@ -9,124 +9,112 @@ pub fn de_update_scaling_parameters_http_error(
     crate::operation::update_scaling_parameters::UpdateScalingParametersError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(
-            crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled(
+        None => {
+            return Err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled(
                 generic,
-            ),
-        ),
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BaseException" => crate::operation::update_scaling_parameters::UpdateScalingParametersError::BaseException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_base_exception::de_base_exception_xml_err(_response_body, output).map_err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
+                output = crate::protocol_serde::shape_base_exception::de_base_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalException" => crate::operation::update_scaling_parameters::UpdateScalingParametersError::InternalException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_xml_err(_response_body, output).map_err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidType" => crate::operation::update_scaling_parameters::UpdateScalingParametersError::InvalidTypeException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidTypeExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_type_exception::de_invalid_type_exception_xml_err(_response_body, output).map_err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidTypeExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_type_exception::de_invalid_type_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "LimitExceeded" => crate::operation::update_scaling_parameters::UpdateScalingParametersError::LimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output).map_err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFound" => crate::operation::update_scaling_parameters::UpdateScalingParametersError::ResourceNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::update_scaling_parameters::UpdateScalingParametersError::ValidationException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_xml_err(_response_body, output).map_err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::update_scaling_parameters::UpdateScalingParametersError::generic(generic)
+        _ => crate::operation::update_scaling_parameters::UpdateScalingParametersError::generic(generic),
     })
 }
 
@@ -142,10 +130,9 @@ pub fn de_update_scaling_parameters_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_scaling_parameters::builders::UpdateScalingParametersOutputBuilder::default();
-        output = crate::protocol_serde::shape_update_scaling_parameters::de_update_scaling_parameters(_response_body, output).map_err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_update_scaling_parameters::de_update_scaling_parameters(_response_body, output)
+            .map_err(crate::operation::update_scaling_parameters::UpdateScalingParametersError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -154,10 +141,7 @@ pub fn de_update_scaling_parameters_http_response_with_props(
 pub fn de_update_scaling_parameters(
     inp: &[u8],
     mut builder: crate::operation::update_scaling_parameters::builders::UpdateScalingParametersOutputBuilder,
-) -> Result<
-    crate::operation::update_scaling_parameters::builders::UpdateScalingParametersOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::update_scaling_parameters::builders::UpdateScalingParametersOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

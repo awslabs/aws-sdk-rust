@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`enable_date(Option<DateTime>)`](crate::operation::get_mfa_device::GetMfaDeviceOutput::enable_date): <p>The date that a specified user's MFA device was first enabled.</p>
     ///   - [`certifications(Option<HashMap<String, String>>)`](crate::operation::get_mfa_device::GetMfaDeviceOutput::certifications): <p>The certifications of a specified user's MFA device. We currently provide FIPS-140-2, FIPS-140-3, and FIDO certification levels obtained from <a href="https://fidoalliance.org/metadata/"> FIDO Alliance Metadata Service (MDS)</a>.</p>
     /// - On failure, responds with [`SdkError<GetMFADeviceError>`](crate::operation::get_mfa_device::GetMFADeviceError)
-    pub fn get_mfa_device(
-        &self,
-    ) -> crate::operation::get_mfa_device::builders::GetMFADeviceFluentBuilder {
-        crate::operation::get_mfa_device::builders::GetMFADeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_mfa_device(&self) -> crate::operation::get_mfa_device::builders::GetMFADeviceFluentBuilder {
+        crate::operation::get_mfa_device::builders::GetMFADeviceFluentBuilder::new(self.handle.clone())
     }
 }

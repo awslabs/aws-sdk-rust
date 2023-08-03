@@ -12,19 +12,13 @@ pub fn ser_batch_read_operation(
     if let Some(var_3) = &input.list_object_children {
         #[allow(unused_mut)]
         let mut object_4 = object.key("ListObjectChildren").start_object();
-        crate::protocol_serde::shape_batch_list_object_children::ser_batch_list_object_children(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_batch_list_object_children::ser_batch_list_object_children(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.list_attached_indices {
         #[allow(unused_mut)]
         let mut object_6 = object.key("ListAttachedIndices").start_object();
-        crate::protocol_serde::shape_batch_list_attached_indices::ser_batch_list_attached_indices(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_batch_list_attached_indices::ser_batch_list_attached_indices(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.list_object_parent_paths {
@@ -42,28 +36,19 @@ pub fn ser_batch_read_operation(
     if let Some(var_11) = &input.get_object_attributes {
         #[allow(unused_mut)]
         let mut object_12 = object.key("GetObjectAttributes").start_object();
-        crate::protocol_serde::shape_batch_get_object_attributes::ser_batch_get_object_attributes(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_batch_get_object_attributes::ser_batch_get_object_attributes(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.list_object_parents {
         #[allow(unused_mut)]
         let mut object_14 = object.key("ListObjectParents").start_object();
-        crate::protocol_serde::shape_batch_list_object_parents::ser_batch_list_object_parents(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_batch_list_object_parents::ser_batch_list_object_parents(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.list_object_policies {
         #[allow(unused_mut)]
         let mut object_16 = object.key("ListObjectPolicies").start_object();
-        crate::protocol_serde::shape_batch_list_object_policies::ser_batch_list_object_policies(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_batch_list_object_policies::ser_batch_list_object_policies(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.list_policy_attachments {
@@ -75,19 +60,13 @@ pub fn ser_batch_read_operation(
     if let Some(var_19) = &input.lookup_policy {
         #[allow(unused_mut)]
         let mut object_20 = object.key("LookupPolicy").start_object();
-        crate::protocol_serde::shape_batch_lookup_policy::ser_batch_lookup_policy(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_batch_lookup_policy::ser_batch_lookup_policy(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.list_index {
         #[allow(unused_mut)]
         let mut object_22 = object.key("ListIndex").start_object();
-        crate::protocol_serde::shape_batch_list_index::ser_batch_list_index(
-            &mut object_22,
-            var_21,
-        )?;
+        crate::protocol_serde::shape_batch_list_index::ser_batch_list_index(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.list_outgoing_typed_links {
@@ -105,10 +84,7 @@ pub fn ser_batch_read_operation(
     if let Some(var_27) = &input.get_link_attributes {
         #[allow(unused_mut)]
         let mut object_28 = object.key("GetLinkAttributes").start_object();
-        crate::protocol_serde::shape_batch_get_link_attributes::ser_batch_get_link_attributes(
-            &mut object_28,
-            var_27,
-        )?;
+        crate::protocol_serde::shape_batch_get_link_attributes::ser_batch_get_link_attributes(&mut object_28, var_27)?;
         object_28.finish();
     }
     Ok(())

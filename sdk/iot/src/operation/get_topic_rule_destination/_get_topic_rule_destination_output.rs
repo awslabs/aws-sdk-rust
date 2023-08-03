@@ -10,9 +10,7 @@ pub struct GetTopicRuleDestinationOutput {
 }
 impl GetTopicRuleDestinationOutput {
     /// <p>The topic rule destination.</p>
-    pub fn topic_rule_destination(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TopicRuleDestination> {
+    pub fn topic_rule_destination(&self) -> ::std::option::Option<&crate::types::TopicRuleDestination> {
         self.topic_rule_destination.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetTopicRuleDestinationOutput {
 }
 impl GetTopicRuleDestinationOutput {
     /// Creates a new builder-style object to manufacture [`GetTopicRuleDestinationOutput`](crate::operation::get_topic_rule_destination::GetTopicRuleDestinationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationOutputBuilder {
         crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTopicRuleDestinationOutput`](crate::operation::get_topic_rule_destination::GetTopicRuleDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTopicRuleDestinationOutputBuilder {
     pub(crate) topic_rule_destination: ::std::option::Option<crate::types::TopicRuleDestination>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl GetTopicRuleDestinationOutputBuilder {
         self
     }
     /// <p>The topic rule destination.</p>
-    pub fn set_topic_rule_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicRuleDestination>,
-    ) -> Self {
+    pub fn set_topic_rule_destination(mut self, input: ::std::option::Option<crate::types::TopicRuleDestination>) -> Self {
         self.topic_rule_destination = input;
         self
     }
     /// <p>The topic rule destination.</p>
-    pub fn get_topic_rule_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::TopicRuleDestination> {
+    pub fn get_topic_rule_destination(&self) -> &::std::option::Option<crate::types::TopicRuleDestination> {
         &self.topic_rule_destination
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -69,9 +58,7 @@ impl GetTopicRuleDestinationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTopicRuleDestinationOutput`](crate::operation::get_topic_rule_destination::GetTopicRuleDestinationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_topic_rule_destination::GetTopicRuleDestinationOutput {
+    pub fn build(self) -> crate::operation::get_topic_rule_destination::GetTopicRuleDestinationOutput {
         crate::operation::get_topic_rule_destination::GetTopicRuleDestinationOutput {
             topic_rule_destination: self.topic_rule_destination,
             _request_id: self._request_id,

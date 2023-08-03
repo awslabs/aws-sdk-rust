@@ -10,9 +10,7 @@ pub struct GetVoiceChannelOutput {
 }
 impl GetVoiceChannelOutput {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
-    pub fn voice_channel_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VoiceChannelResponse> {
+    pub fn voice_channel_response(&self) -> ::std::option::Option<&crate::types::VoiceChannelResponse> {
         self.voice_channel_response.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetVoiceChannelOutput {
 }
 impl GetVoiceChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceChannelOutput`](crate::operation::get_voice_channel::GetVoiceChannelOutput).
-    pub fn builder() -> crate::operation::get_voice_channel::builders::GetVoiceChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_voice_channel::builders::GetVoiceChannelOutputBuilder {
         crate::operation::get_voice_channel::builders::GetVoiceChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVoiceChannelOutput`](crate::operation::get_voice_channel::GetVoiceChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceChannelOutputBuilder {
     pub(crate) voice_channel_response: ::std::option::Option<crate::types::VoiceChannelResponse>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl GetVoiceChannelOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
-    pub fn set_voice_channel_response(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceChannelResponse>,
-    ) -> Self {
+    pub fn set_voice_channel_response(mut self, input: ::std::option::Option<crate::types::VoiceChannelResponse>) -> Self {
         self.voice_channel_response = input;
         self
     }
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
-    pub fn get_voice_channel_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceChannelResponse> {
+    pub fn get_voice_channel_response(&self) -> &::std::option::Option<crate::types::VoiceChannelResponse> {
         &self.voice_channel_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

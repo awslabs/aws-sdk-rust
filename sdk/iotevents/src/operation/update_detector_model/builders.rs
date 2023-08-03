@@ -37,9 +37,7 @@ impl UpdateDetectorModelFluentBuilder {
         }
     }
     /// Access the UpdateDetectorModel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_detector_model::builders::UpdateDetectorModelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_detector_model::builders::UpdateDetectorModelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateDetectorModelFluentBuilder {
             crate::operation::update_detector_model::UpdateDetectorModel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_detector_model::UpdateDetectorModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_detector_model::UpdateDetectorModelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateDetectorModelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateDetectorModelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_detector_model::UpdateDetectorModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_detector_model::UpdateDetectorModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_detector_model::UpdateDetectorModelError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateDetectorModelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_detector_model::UpdateDetectorModelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_detector_model::UpdateDetectorModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_detector_model::UpdateDetectorModelError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateDetectorModelFluentBuilder {
             crate::operation::update_detector_model::UpdateDetectorModel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_detector_model::UpdateDetectorModelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_detector_model::UpdateDetectorModelError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the detector model that is updated.</p>
-    pub fn detector_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_model_name(input.into());
         self
     }
     /// <p>The name of the detector model that is updated.</p>
-    pub fn set_detector_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_model_name(input);
         self
     }
@@ -143,40 +124,26 @@ impl UpdateDetectorModelFluentBuilder {
         self.inner.get_detector_model_name()
     }
     /// <p>Information that defines how a detector operates.</p>
-    pub fn detector_model_definition(
-        mut self,
-        input: crate::types::DetectorModelDefinition,
-    ) -> Self {
+    pub fn detector_model_definition(mut self, input: crate::types::DetectorModelDefinition) -> Self {
         self.inner = self.inner.detector_model_definition(input);
         self
     }
     /// <p>Information that defines how a detector operates.</p>
-    pub fn set_detector_model_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectorModelDefinition>,
-    ) -> Self {
+    pub fn set_detector_model_definition(mut self, input: ::std::option::Option<crate::types::DetectorModelDefinition>) -> Self {
         self.inner = self.inner.set_detector_model_definition(input);
         self
     }
     /// <p>Information that defines how a detector operates.</p>
-    pub fn get_detector_model_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::DetectorModelDefinition> {
+    pub fn get_detector_model_definition(&self) -> &::std::option::Option<crate::types::DetectorModelDefinition> {
         self.inner.get_detector_model_definition()
     }
     /// <p>A brief description of the detector model.</p>
-    pub fn detector_model_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_model_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_model_description(input.into());
         self
     }
     /// <p>A brief description of the detector model.</p>
-    pub fn set_detector_model_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_model_description(input);
         self
     }
@@ -204,10 +171,7 @@ impl UpdateDetectorModelFluentBuilder {
         self
     }
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
-    pub fn set_evaluation_method(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationMethod>,
-    ) -> Self {
+    pub fn set_evaluation_method(mut self, input: ::std::option::Option<crate::types::EvaluationMethod>) -> Self {
         self.inner = self.inner.set_evaluation_method(input);
         self
     }

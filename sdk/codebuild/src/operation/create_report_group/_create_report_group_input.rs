@@ -38,17 +38,14 @@ impl CreateReportGroupInput {
 }
 impl CreateReportGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateReportGroupInput`](crate::operation::create_report_group::CreateReportGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_report_group::builders::CreateReportGroupInputBuilder {
+    pub fn builder() -> crate::operation::create_report_group::builders::CreateReportGroupInputBuilder {
         crate::operation::create_report_group::builders::CreateReportGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateReportGroupInput`](crate::operation::create_report_group::CreateReportGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateReportGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ReportType>,
@@ -90,10 +87,7 @@ impl CreateReportGroupInputBuilder {
         self
     }
     /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
-    pub fn set_export_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportExportConfig>,
-    ) -> Self {
+    pub fn set_export_config(mut self, input: ::std::option::Option<crate::types::ReportExportConfig>) -> Self {
         self.export_config = input;
         self
     }
@@ -115,10 +109,7 @@ impl CreateReportGroupInputBuilder {
     }
     /// <p> A list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -130,17 +121,12 @@ impl CreateReportGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateReportGroupInput`](crate::operation::create_report_group::CreateReportGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_report_group::CreateReportGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_report_group::CreateReportGroupInput {
-                name: self.name,
-                r#type: self.r#type,
-                export_config: self.export_config,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_report_group::CreateReportGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_report_group::CreateReportGroupInput {
+            name: self.name,
+            r#type: self.r#type,
+            export_config: self.export_config,
+            tags: self.tags,
+        })
     }
 }

@@ -30,9 +30,7 @@ impl DataLakeSourceStatus {
 
 /// A builder for [`DataLakeSourceStatus`](crate::types::DataLakeSourceStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataLakeSourceStatusBuilder {
     pub(crate) resource: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::SourceCollectionStatus>,
@@ -58,10 +56,7 @@ impl DataLakeSourceStatusBuilder {
         self
     }
     /// <p>The health status of services, including error codes and patterns.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceCollectionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SourceCollectionStatus>) -> Self {
         self.status = input;
         self
     }

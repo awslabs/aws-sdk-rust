@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCacheParameterGroupOutput {
 }
 impl DeleteCacheParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCacheParameterGroupOutput`](crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupOutput).
-    pub fn builder() -> crate::operation::delete_cache_parameter_group::builders::DeleteCacheParameterGroupOutputBuilder{
+    pub fn builder() -> crate::operation::delete_cache_parameter_group::builders::DeleteCacheParameterGroupOutputBuilder {
         crate::operation::delete_cache_parameter_group::builders::DeleteCacheParameterGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCacheParameterGroupOutput`](crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCacheParameterGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteCacheParameterGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCacheParameterGroupOutput`](crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupOutput {
+    pub fn build(self) -> crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupOutput {
         crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupOutput {
             _request_id: self._request_id,
         }

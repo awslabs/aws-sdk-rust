@@ -36,9 +36,7 @@ impl ListDevicesJobsInput {
 
 /// A builder for [`ListDevicesJobsInput`](crate::operation::list_devices_jobs::ListDevicesJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDevicesJobsInputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl ListDevicesJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListDevicesJobsInput`](crate::operation::list_devices_jobs::ListDevicesJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_devices_jobs::ListDevicesJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_devices_jobs::ListDevicesJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_devices_jobs::ListDevicesJobsInput {
             device_id: self.device_id,
             next_token: self.next_token,

@@ -5,16 +5,16 @@ pub use crate::operation::describe_stack_drift_detection_status::_describe_stack
 
 impl DescribeStackDriftDetectionStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_stack_drift_detection_status();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl DescribeStackDriftDetectionStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStackDriftDetectionStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_stack_drift_detection_status::builders::DescribeStackDriftDetectionStatusInputBuilder,
+    inner: crate::operation::describe_stack_drift_detection_status::builders::DescribeStackDriftDetectionStatusInputBuilder,
 }
 impl DescribeStackDriftDetectionStatusFluentBuilder {
     /// Creates a new `DescribeStackDriftDetectionStatus`.
@@ -38,15 +38,20 @@ impl DescribeStackDriftDetectionStatusFluentBuilder {
         }
     }
     /// Access the DescribeStackDriftDetectionStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_stack_drift_detection_status::builders::DescribeStackDriftDetectionStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_stack_drift_detection_status::builders::DescribeStackDriftDetectionStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl DescribeStackDriftDetectionStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,34 +88,37 @@ impl DescribeStackDriftDetectionStatusFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>
-    pub fn stack_drift_detection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_drift_detection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_drift_detection_id(input.into());
         self
     }
     /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>
-    pub fn set_stack_drift_detection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_drift_detection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_drift_detection_id(input);
         self
     }

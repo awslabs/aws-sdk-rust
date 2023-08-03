@@ -38,10 +38,7 @@ impl UpdateConnectivityInfoFluentBuilder {
         }
     }
     /// Access the UpdateConnectivityInfo as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl UpdateConnectivityInfoFluentBuilder {
             crate::operation::update_connectivity_info::UpdateConnectivityInfo,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connectivity_info::UpdateConnectivityInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connectivity_info::UpdateConnectivityInfoError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl UpdateConnectivityInfoFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl UpdateConnectivityInfoFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connectivity_info::UpdateConnectivityInfoOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connectivity_info::UpdateConnectivityInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connectivity_info::UpdateConnectivityInfoError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl UpdateConnectivityInfoFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connectivity_info::UpdateConnectivityInfoOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connectivity_info::UpdateConnectivityInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connectivity_info::UpdateConnectivityInfoError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl UpdateConnectivityInfoFluentBuilder {
             crate::operation::update_connectivity_info::UpdateConnectivityInfo,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connectivity_info::UpdateConnectivityInfoError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connectivity_info::UpdateConnectivityInfoError>,
     > {
         self.customize_middleware().await
     }
@@ -148,17 +134,12 @@ impl UpdateConnectivityInfoFluentBuilder {
         self
     }
     /// <p>The connectivity information for the core device.</p>
-    pub fn set_connectivity_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>>,
-    ) -> Self {
+    pub fn set_connectivity_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>>) -> Self {
         self.inner = self.inner.set_connectivity_info(input);
         self
     }
     /// <p>The connectivity information for the core device.</p>
-    pub fn get_connectivity_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>> {
+    pub fn get_connectivity_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>> {
         self.inner.get_connectivity_info()
     }
 }

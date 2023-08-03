@@ -6,17 +6,14 @@
 pub struct BatchListObjectParentsResponse {
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
     #[doc(hidden)]
-    pub parent_links:
-        ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>,
+    pub parent_links: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListObjectParentsResponse {
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    pub fn parent_links(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ObjectIdentifierAndLinkNameTuple]> {
+    pub fn parent_links(&self) -> ::std::option::Option<&[crate::types::ObjectIdentifierAndLinkNameTuple]> {
         self.parent_links.as_deref()
     }
     /// <p>The pagination token.</p>
@@ -33,12 +30,9 @@ impl BatchListObjectParentsResponse {
 
 /// A builder for [`BatchListObjectParentsResponse`](crate::types::BatchListObjectParentsResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchListObjectParentsResponseBuilder {
-    pub(crate) parent_links:
-        ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>,
+    pub(crate) parent_links: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListObjectParentsResponseBuilder {
@@ -54,20 +48,12 @@ impl BatchListObjectParentsResponseBuilder {
         self
     }
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    pub fn set_parent_links(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>,
-        >,
-    ) -> Self {
+    pub fn set_parent_links(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>) -> Self {
         self.parent_links = input;
         self
     }
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    pub fn get_parent_links(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>
-    {
+    pub fn get_parent_links(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>> {
         &self.parent_links
     }
     /// <p>The pagination token.</p>

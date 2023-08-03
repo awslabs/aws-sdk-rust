@@ -28,9 +28,7 @@ impl TagResourceOutput {
 
 /// A builder for [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagResourceOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

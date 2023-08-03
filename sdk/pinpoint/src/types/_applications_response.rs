@@ -30,9 +30,7 @@ impl ApplicationsResponse {
 
 /// A builder for [`ApplicationsResponse`](crate::types::ApplicationsResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationsResponseBuilder {
     pub(crate) item: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,17 +48,12 @@ impl ApplicationsResponseBuilder {
         self
     }
     /// <p>An array of responses, one for each application that was returned.</p>
-    pub fn set_item(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationResponse>>,
-    ) -> Self {
+    pub fn set_item(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationResponse>>) -> Self {
         self.item = input;
         self
     }
     /// <p>An array of responses, one for each application that was returned.</p>
-    pub fn get_item(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationResponse>> {
+    pub fn get_item(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationResponse>> {
         &self.item
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>

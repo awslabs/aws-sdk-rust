@@ -10,10 +10,7 @@ impl UpdateStorageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_storage::UpdateStorageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_storage::UpdateStorageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_storage::UpdateStorageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_storage();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateStorageFluentBuilder {
         }
     }
     /// Access the UpdateStorage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_storage::builders::UpdateStorageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_storage::builders::UpdateStorageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateStorageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl UpdateStorageFluentBuilder {
         self.inner.get_cluster_arn()
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_version(input.into());
         self
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }
@@ -154,17 +140,12 @@ impl UpdateStorageFluentBuilder {
         self
     }
     /// <p>EBS volume provisioned throughput information.</p>
-    pub fn set_provisioned_throughput(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedThroughput>,
-    ) -> Self {
+    pub fn set_provisioned_throughput(mut self, input: ::std::option::Option<crate::types::ProvisionedThroughput>) -> Self {
         self.inner = self.inner.set_provisioned_throughput(input);
         self
     }
     /// <p>EBS volume provisioned throughput information.</p>
-    pub fn get_provisioned_throughput(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
+    pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
         self.inner.get_provisioned_throughput()
     }
     /// <p>Controls storage mode for supported storage tiers.</p>
@@ -173,10 +154,7 @@ impl UpdateStorageFluentBuilder {
         self
     }
     /// <p>Controls storage mode for supported storage tiers.</p>
-    pub fn set_storage_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageMode>,
-    ) -> Self {
+    pub fn set_storage_mode(mut self, input: ::std::option::Option<crate::types::StorageMode>) -> Self {
         self.inner = self.inner.set_storage_mode(input);
         self
     }

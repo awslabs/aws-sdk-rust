@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`load_balancer_ports(Vec<i32>)`](crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersFluentBuilder::load_balancer_ports) / [`set_load_balancer_ports(Option<Vec<i32>>)`](crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersFluentBuilder::set_load_balancer_ports): <p>The client port numbers of the listeners.</p>
     /// - On success, responds with [`DeleteLoadBalancerListenersOutput`](crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersOutput)
     /// - On failure, responds with [`SdkError<DeleteLoadBalancerListenersError>`](crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError)
-    pub fn delete_load_balancer_listeners(&self) -> crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersFluentBuilder{
+    pub fn delete_load_balancer_listeners(
+        &self,
+    ) -> crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersFluentBuilder {
         crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersFluentBuilder::new(self.handle.clone())
     }
 }

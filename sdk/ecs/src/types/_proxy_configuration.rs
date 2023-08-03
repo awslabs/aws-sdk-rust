@@ -56,9 +56,7 @@ impl ProxyConfiguration {
 
 /// A builder for [`ProxyConfiguration`](crate::types::ProxyConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProxyConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ProxyConfigurationType>,
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
@@ -71,10 +69,7 @@ impl ProxyConfigurationBuilder {
         self
     }
     /// <p>The proxy type. The only supported value is <code>APPMESH</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProxyConfigurationType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProxyConfigurationType>) -> Self {
         self.r#type = input;
         self
     }
@@ -83,18 +78,12 @@ impl ProxyConfigurationBuilder {
         &self.r#type
     }
     /// <p>The name of the container that will serve as the App Mesh proxy.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container that will serve as the App Mesh proxy.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
@@ -132,10 +121,7 @@ impl ProxyConfigurationBuilder {
     /// <li> <p> <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to the specified ports is ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.</p> </li>
     /// <li> <p> <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.</p> </li>
     /// </ul>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
         self.properties = input;
         self
     }
@@ -149,9 +135,7 @@ impl ProxyConfigurationBuilder {
     /// <li> <p> <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to the specified ports is ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.</p> </li>
     /// <li> <p> <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.</p> </li>
     /// </ul>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
         &self.properties
     }
     /// Consumes the builder and constructs a [`ProxyConfiguration`](crate::types::ProxyConfiguration).

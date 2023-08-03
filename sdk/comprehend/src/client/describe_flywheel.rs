@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeFlywheelOutput`](crate::operation::describe_flywheel::DescribeFlywheelOutput) with field(s):
     ///   - [`flywheel_properties(Option<FlywheelProperties>)`](crate::operation::describe_flywheel::DescribeFlywheelOutput::flywheel_properties): <p>The flywheel properties.</p>
     /// - On failure, responds with [`SdkError<DescribeFlywheelError>`](crate::operation::describe_flywheel::DescribeFlywheelError)
-    pub fn describe_flywheel(
-        &self,
-    ) -> crate::operation::describe_flywheel::builders::DescribeFlywheelFluentBuilder {
-        crate::operation::describe_flywheel::builders::DescribeFlywheelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_flywheel(&self) -> crate::operation::describe_flywheel::builders::DescribeFlywheelFluentBuilder {
+        crate::operation::describe_flywheel::builders::DescribeFlywheelFluentBuilder::new(self.handle.clone())
     }
 }

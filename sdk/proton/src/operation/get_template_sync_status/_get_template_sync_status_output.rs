@@ -20,9 +20,7 @@ impl GetTemplateSyncStatusOutput {
         self.latest_sync.as_ref()
     }
     /// <p>The details of the last successful sync that's returned by Proton.</p>
-    pub fn latest_successful_sync(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceSyncAttempt> {
+    pub fn latest_successful_sync(&self) -> ::std::option::Option<&crate::types::ResourceSyncAttempt> {
         self.latest_successful_sync.as_ref()
     }
     /// <p>The template sync desired state that's returned by Proton.</p>
@@ -37,18 +35,14 @@ impl ::aws_http::request_id::RequestId for GetTemplateSyncStatusOutput {
 }
 impl GetTemplateSyncStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetTemplateSyncStatusOutput`](crate::operation::get_template_sync_status::GetTemplateSyncStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_template_sync_status::builders::GetTemplateSyncStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_template_sync_status::builders::GetTemplateSyncStatusOutputBuilder {
         crate::operation::get_template_sync_status::builders::GetTemplateSyncStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTemplateSyncStatusOutput`](crate::operation::get_template_sync_status::GetTemplateSyncStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemplateSyncStatusOutputBuilder {
     pub(crate) latest_sync: ::std::option::Option<crate::types::ResourceSyncAttempt>,
     pub(crate) latest_successful_sync: ::std::option::Option<crate::types::ResourceSyncAttempt>,
@@ -62,10 +56,7 @@ impl GetTemplateSyncStatusOutputBuilder {
         self
     }
     /// <p>The details of the last sync that's returned by Proton.</p>
-    pub fn set_latest_sync(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSyncAttempt>,
-    ) -> Self {
+    pub fn set_latest_sync(mut self, input: ::std::option::Option<crate::types::ResourceSyncAttempt>) -> Self {
         self.latest_sync = input;
         self
     }
@@ -79,17 +70,12 @@ impl GetTemplateSyncStatusOutputBuilder {
         self
     }
     /// <p>The details of the last successful sync that's returned by Proton.</p>
-    pub fn set_latest_successful_sync(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSyncAttempt>,
-    ) -> Self {
+    pub fn set_latest_successful_sync(mut self, input: ::std::option::Option<crate::types::ResourceSyncAttempt>) -> Self {
         self.latest_successful_sync = input;
         self
     }
     /// <p>The details of the last successful sync that's returned by Proton.</p>
-    pub fn get_latest_successful_sync(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceSyncAttempt> {
+    pub fn get_latest_successful_sync(&self) -> &::std::option::Option<crate::types::ResourceSyncAttempt> {
         &self.latest_successful_sync
     }
     /// <p>The template sync desired state that's returned by Proton.</p>
@@ -98,10 +84,7 @@ impl GetTemplateSyncStatusOutputBuilder {
         self
     }
     /// <p>The template sync desired state that's returned by Proton.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::Revision>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::Revision>) -> Self {
         self.desired_state = input;
         self
     }

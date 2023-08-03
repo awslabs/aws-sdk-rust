@@ -5,16 +5,16 @@ pub use crate::operation::update_continuous_deployment_policy::_update_continuou
 
 impl UpdateContinuousDeploymentPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_continuous_deployment_policy();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -32,7 +32,7 @@ impl UpdateContinuousDeploymentPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateContinuousDeploymentPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_continuous_deployment_policy::builders::UpdateContinuousDeploymentPolicyInputBuilder,
+    inner: crate::operation::update_continuous_deployment_policy::builders::UpdateContinuousDeploymentPolicyInputBuilder,
 }
 impl UpdateContinuousDeploymentPolicyFluentBuilder {
     /// Creates a new `UpdateContinuousDeploymentPolicy`.
@@ -43,15 +43,20 @@ impl UpdateContinuousDeploymentPolicyFluentBuilder {
         }
     }
     /// Access the UpdateContinuousDeploymentPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_continuous_deployment_policy::builders::UpdateContinuousDeploymentPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_continuous_deployment_policy::builders::UpdateContinuousDeploymentPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicy,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -60,16 +65,17 @@ impl UpdateContinuousDeploymentPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError>,
+    > {
         let op = self
             .inner
             .build()
@@ -87,39 +93,40 @@ impl UpdateContinuousDeploymentPolicyFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicy,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The continuous deployment policy configuration.</p>
-    pub fn continuous_deployment_policy_config(
-        mut self,
-        input: crate::types::ContinuousDeploymentPolicyConfig,
-    ) -> Self {
+    pub fn continuous_deployment_policy_config(mut self, input: crate::types::ContinuousDeploymentPolicyConfig) -> Self {
         self.inner = self.inner.continuous_deployment_policy_config(input);
         self
     }
     /// <p>The continuous deployment policy configuration.</p>
-    pub fn set_continuous_deployment_policy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
-    ) -> Self {
+    pub fn set_continuous_deployment_policy_config(mut self, input: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>) -> Self {
         self.inner = self.inner.set_continuous_deployment_policy_config(input);
         self
     }
     /// <p>The continuous deployment policy configuration.</p>
-    pub fn get_continuous_deployment_policy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig> {
+    pub fn get_continuous_deployment_policy_config(&self) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig> {
         self.inner.get_continuous_deployment_policy_config()
     }
     /// <p>The identifier of the continuous deployment policy that you are updating.</p>

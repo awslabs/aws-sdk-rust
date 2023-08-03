@@ -30,9 +30,7 @@ impl LoRaWanMulticast {
 
 /// A builder for [`LoRaWanMulticast`](crate::types::LoRaWanMulticast).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanMulticastBuilder {
     pub(crate) rf_region: ::std::option::Option<crate::types::SupportedRfRegion>,
     pub(crate) dl_class: ::std::option::Option<crate::types::DlClass>,
@@ -44,10 +42,7 @@ impl LoRaWanMulticastBuilder {
         self
     }
     /// <p>Supported RfRegions</p>
-    pub fn set_rf_region(
-        mut self,
-        input: ::std::option::Option<crate::types::SupportedRfRegion>,
-    ) -> Self {
+    pub fn set_rf_region(mut self, input: ::std::option::Option<crate::types::SupportedRfRegion>) -> Self {
         self.rf_region = input;
         self
     }

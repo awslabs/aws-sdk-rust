@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`datastore_name(impl ::std::convert::Into<String>)`](crate::operation::delete_datastore::builders::DeleteDatastoreFluentBuilder::datastore_name) / [`set_datastore_name(Option<String>)`](crate::operation::delete_datastore::builders::DeleteDatastoreFluentBuilder::set_datastore_name): <p>The name of the data store to delete.</p>
     /// - On success, responds with [`DeleteDatastoreOutput`](crate::operation::delete_datastore::DeleteDatastoreOutput)
     /// - On failure, responds with [`SdkError<DeleteDatastoreError>`](crate::operation::delete_datastore::DeleteDatastoreError)
-    pub fn delete_datastore(
-        &self,
-    ) -> crate::operation::delete_datastore::builders::DeleteDatastoreFluentBuilder {
-        crate::operation::delete_datastore::builders::DeleteDatastoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_datastore(&self) -> crate::operation::delete_datastore::builders::DeleteDatastoreFluentBuilder {
+        crate::operation::delete_datastore::builders::DeleteDatastoreFluentBuilder::new(self.handle.clone())
     }
 }

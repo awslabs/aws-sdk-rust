@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListPageResolutionsOutput {
 }
 impl ListPageResolutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListPageResolutionsOutput`](crate::operation::list_page_resolutions::ListPageResolutionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_page_resolutions::builders::ListPageResolutionsOutputBuilder {
-        crate::operation::list_page_resolutions::builders::ListPageResolutionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_page_resolutions::builders::ListPageResolutionsOutputBuilder {
+        crate::operation::list_page_resolutions::builders::ListPageResolutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPageResolutionsOutput`](crate::operation::list_page_resolutions::ListPageResolutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPageResolutionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) page_resolutions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResolutionContact>>,
+    pub(crate) page_resolutions: ::std::option::Option<::std::vec::Vec<crate::types::ResolutionContact>>,
     _request_id: Option<String>,
 }
 impl ListPageResolutionsOutputBuilder {
@@ -73,17 +68,12 @@ impl ListPageResolutionsOutputBuilder {
         self
     }
     /// <p>Information about the resolution for an engagement.</p>
-    pub fn set_page_resolutions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResolutionContact>>,
-    ) -> Self {
+    pub fn set_page_resolutions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolutionContact>>) -> Self {
         self.page_resolutions = input;
         self
     }
     /// <p>Information about the resolution for an engagement.</p>
-    pub fn get_page_resolutions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolutionContact>> {
+    pub fn get_page_resolutions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolutionContact>> {
         &self.page_resolutions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

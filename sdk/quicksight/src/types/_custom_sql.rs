@@ -44,9 +44,7 @@ impl CustomSql {
 
 /// A builder for [`CustomSql`](crate::types::CustomSql).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomSqlBuilder {
     pub(crate) data_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct CustomSqlBuilder {
 }
 impl CustomSqlBuilder {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn data_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn set_data_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_arn = input;
         self
     }
@@ -114,17 +106,12 @@ impl CustomSqlBuilder {
         self
     }
     /// <p>The column schema from the SQL query result set.</p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>,
-    ) -> Self {
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>) -> Self {
         self.columns = input;
         self
     }
     /// <p>The column schema from the SQL query result set.</p>
-    pub fn get_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputColumn>> {
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputColumn>> {
         &self.columns
     }
     /// Consumes the builder and constructs a [`CustomSql`](crate::types::CustomSql).

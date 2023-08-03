@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`attack_summaries(Option<Vec<AttackSummary>>)`](crate::operation::list_attacks::ListAttacksOutput::attack_summaries): <p>The attack information for the specified time range.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_attacks::ListAttacksOutput::next_token): <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>  <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>  <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     /// - On failure, responds with [`SdkError<ListAttacksError>`](crate::operation::list_attacks::ListAttacksError)
-    pub fn list_attacks(
-        &self,
-    ) -> crate::operation::list_attacks::builders::ListAttacksFluentBuilder {
+    pub fn list_attacks(&self) -> crate::operation::list_attacks::builders::ListAttacksFluentBuilder {
         crate::operation::list_attacks::builders::ListAttacksFluentBuilder::new(self.handle.clone())
     }
 }

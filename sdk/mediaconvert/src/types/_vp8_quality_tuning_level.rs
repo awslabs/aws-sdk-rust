@@ -38,13 +38,7 @@
 /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Vp8QualityTuningLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Vp8QualityTuningLevel {
         match s {
             "MULTI_PASS" => Vp8QualityTuningLevel::MultiPass,
             "MULTI_PASS_HQ" => Vp8QualityTuningLevel::MultiPassHq,
-            other => Vp8QualityTuningLevel::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Vp8QualityTuningLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

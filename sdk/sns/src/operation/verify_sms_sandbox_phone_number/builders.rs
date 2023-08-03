@@ -27,7 +27,7 @@ impl VerifySmsSandboxPhoneNumberInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct VerifySMSSandboxPhoneNumberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::verify_sms_sandbox_phone_number::builders::VerifySmsSandboxPhoneNumberInputBuilder,
+    inner: crate::operation::verify_sms_sandbox_phone_number::builders::VerifySmsSandboxPhoneNumberInputBuilder,
 }
 impl VerifySMSSandboxPhoneNumberFluentBuilder {
     /// Creates a new `VerifySMSSandboxPhoneNumber`.
@@ -38,7 +38,7 @@ impl VerifySMSSandboxPhoneNumberFluentBuilder {
         }
     }
     /// Access the VerifySMSSandboxPhoneNumber as a reference.
-    pub fn as_input(&self) -> &crate::operation::verify_sms_sandbox_phone_number::builders::VerifySmsSandboxPhoneNumberInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::verify_sms_sandbox_phone_number::builders::VerifySmsSandboxPhoneNumberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl VerifySMSSandboxPhoneNumberFluentBuilder {
             crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl VerifySMSSandboxPhoneNumberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl VerifySMSSandboxPhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_sms_sandbox_phone_number::VerifySmsSandboxPhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl VerifySMSSandboxPhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_sms_sandbox_phone_number::VerifySmsSandboxPhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl VerifySMSSandboxPhoneNumberFluentBuilder {
             crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError>,
     > {
         self.customize_middleware().await
     }
@@ -136,18 +125,12 @@ impl VerifySMSSandboxPhoneNumberFluentBuilder {
         self.inner.get_phone_number()
     }
     /// <p>The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
-    pub fn one_time_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn one_time_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.one_time_password(input.into());
         self
     }
     /// <p>The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
-    pub fn set_one_time_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_one_time_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_one_time_password(input);
         self
     }

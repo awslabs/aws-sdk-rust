@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`vault_name(impl ::std::convert::Into<String>)`](crate::operation::delete_vault::builders::DeleteVaultFluentBuilder::vault_name) / [`set_vault_name(Option<String>)`](crate::operation::delete_vault::builders::DeleteVaultFluentBuilder::set_vault_name): <p>The name of the vault.</p>
     /// - On success, responds with [`DeleteVaultOutput`](crate::operation::delete_vault::DeleteVaultOutput)
     /// - On failure, responds with [`SdkError<DeleteVaultError>`](crate::operation::delete_vault::DeleteVaultError)
-    pub fn delete_vault(
-        &self,
-    ) -> crate::operation::delete_vault::builders::DeleteVaultFluentBuilder {
+    pub fn delete_vault(&self) -> crate::operation::delete_vault::builders::DeleteVaultFluentBuilder {
         crate::operation::delete_vault::builders::DeleteVaultFluentBuilder::new(self.handle.clone())
     }
 }

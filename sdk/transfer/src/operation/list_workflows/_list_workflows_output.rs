@@ -35,9 +35,7 @@ impl ListWorkflowsOutput {
 
 /// A builder for [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) workflows: ::std::option::Option<::std::vec::Vec<crate::types::ListedWorkflow>>,
@@ -70,17 +68,12 @@ impl ListWorkflowsOutputBuilder {
         self
     }
     /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
-    pub fn set_workflows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListedWorkflow>>,
-    ) -> Self {
+    pub fn set_workflows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedWorkflow>>) -> Self {
         self.workflows = input;
         self
     }
     /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
-    pub fn get_workflows(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedWorkflow>> {
+    pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedWorkflow>> {
         &self.workflows
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

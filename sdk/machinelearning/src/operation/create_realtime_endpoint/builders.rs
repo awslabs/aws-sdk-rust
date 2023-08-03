@@ -37,10 +37,7 @@ impl CreateRealtimeEndpointFluentBuilder {
         }
     }
     /// Access the CreateRealtimeEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateRealtimeEndpointFluentBuilder {
             crate::operation::create_realtime_endpoint::CreateRealtimeEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_realtime_endpoint::CreateRealtimeEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_realtime_endpoint::CreateRealtimeEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateRealtimeEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateRealtimeEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_realtime_endpoint::CreateRealtimeEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_realtime_endpoint::CreateRealtimeEndpointError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateRealtimeEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_realtime_endpoint::CreateRealtimeEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_realtime_endpoint::CreateRealtimeEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateRealtimeEndpointFluentBuilder {
             crate::operation::create_realtime_endpoint::CreateRealtimeEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_realtime_endpoint::CreateRealtimeEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_realtime_endpoint::CreateRealtimeEndpointError>,
     > {
         self.customize_middleware().await
     }

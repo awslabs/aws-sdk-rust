@@ -28,9 +28,7 @@ impl AddPermissionOutput {
 
 /// A builder for [`AddPermissionOutput`](crate::operation::add_permission::AddPermissionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddPermissionOutputBuilder {
     pub(crate) statement: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -5,16 +5,16 @@ pub use crate::operation::list_accounts_for_provisioned_permission_set::_list_ac
 
 impl ListAccountsForProvisionedPermissionSetInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_accounts_for_provisioned_permission_set();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListAccountsForProvisionedPermissionSetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAccountsForProvisionedPermissionSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetInputBuilder,
+    inner: crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetInputBuilder,
 }
 impl ListAccountsForProvisionedPermissionSetFluentBuilder {
     /// Creates a new `ListAccountsForProvisionedPermissionSet`.
@@ -37,15 +37,24 @@ impl ListAccountsForProvisionedPermissionSetFluentBuilder {
         }
     }
     /// Access the ListAccountsForProvisionedPermissionSet as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_accounts_for_provisioned_permission_set::builders::ListAccountsForProvisionedPermissionSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSet, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSet,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl ListAccountsForProvisionedPermissionSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,24 +93,42 @@ impl ListAccountsForProvisionedPermissionSetFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSet, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSet,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_accounts_for_provisioned_permission_set::ListAccountsForProvisionedPermissionSetError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_accounts_for_provisioned_permission_set::paginator::ListAccountsForProvisionedPermissionSetPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_accounts_for_provisioned_permission_set::paginator::ListAccountsForProvisionedPermissionSetPaginator{
-        crate::operation::list_accounts_for_provisioned_permission_set::paginator::ListAccountsForProvisionedPermissionSetPaginator::new(self.handle, self.inner)
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_accounts_for_provisioned_permission_set::paginator::ListAccountsForProvisionedPermissionSetPaginator {
+        crate::operation::list_accounts_for_provisioned_permission_set::paginator::ListAccountsForProvisionedPermissionSetPaginator::new(
+            self.handle,
+            self.inner,
+        )
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,18 +145,12 @@ impl ListAccountsForProvisionedPermissionSetFluentBuilder {
         self.inner.get_instance_arn()
     }
     /// <p>The ARN of the <code>PermissionSet</code> from which the associated AWS accounts will be listed.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_set_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>PermissionSet</code> from which the associated AWS accounts will be listed.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_set_arn(input);
         self
     }
@@ -140,17 +164,12 @@ impl ListAccountsForProvisionedPermissionSetFluentBuilder {
         self
     }
     /// <p>The permission set provisioning status for an AWS account.</p>
-    pub fn set_provisioning_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisioningStatus>,
-    ) -> Self {
+    pub fn set_provisioning_status(mut self, input: ::std::option::Option<crate::types::ProvisioningStatus>) -> Self {
         self.inner = self.inner.set_provisioning_status(input);
         self
     }
     /// <p>The permission set provisioning status for an AWS account.</p>
-    pub fn get_provisioning_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisioningStatus> {
+    pub fn get_provisioning_status(&self) -> &::std::option::Option<crate::types::ProvisioningStatus> {
         self.inner.get_provisioning_status()
     }
     /// <p>The maximum number of results to display for the <code>PermissionSet</code>.</p>

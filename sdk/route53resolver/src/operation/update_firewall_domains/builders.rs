@@ -37,10 +37,7 @@ impl UpdateFirewallDomainsFluentBuilder {
         }
     }
     /// Access the UpdateFirewallDomains as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateFirewallDomainsFluentBuilder {
             crate::operation::update_firewall_domains::UpdateFirewallDomains,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_domains::UpdateFirewallDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_domains::UpdateFirewallDomainsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateFirewallDomainsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateFirewallDomainsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_firewall_domains::UpdateFirewallDomainsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_domains::UpdateFirewallDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_domains::UpdateFirewallDomainsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateFirewallDomainsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_firewall_domains::UpdateFirewallDomainsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_domains::UpdateFirewallDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_domains::UpdateFirewallDomainsError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateFirewallDomainsFluentBuilder {
             crate::operation::update_firewall_domains::UpdateFirewallDomains,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_domains::UpdateFirewallDomainsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_domains::UpdateFirewallDomainsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the domain list whose domains you want to update. </p>
-    pub fn firewall_domain_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_domain_list_id(input.into());
         self
     }
     /// <p>The ID of the domain list whose domains you want to update. </p>
-    pub fn set_firewall_domain_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_domain_list_id(input);
         self
     }
@@ -159,10 +139,7 @@ impl UpdateFirewallDomainsFluentBuilder {
     /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
     /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
     /// </ul>
-    pub fn set_operation(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallDomainUpdateOperation>,
-    ) -> Self {
+    pub fn set_operation(mut self, input: ::std::option::Option<crate::types::FirewallDomainUpdateOperation>) -> Self {
         self.inner = self.inner.set_operation(input);
         self
     }
@@ -172,9 +149,7 @@ impl UpdateFirewallDomainsFluentBuilder {
     /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
     /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
     /// </ul>
-    pub fn get_operation(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirewallDomainUpdateOperation> {
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::FirewallDomainUpdateOperation> {
         self.inner.get_operation()
     }
     /// Appends an item to `Domains`.
@@ -203,10 +178,7 @@ impl UpdateFirewallDomainsFluentBuilder {
     /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
     /// <li> <p>It must be from 1-255 characters in length. </p> </li>
     /// </ul>
-    pub fn set_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_domains(input);
         self
     }

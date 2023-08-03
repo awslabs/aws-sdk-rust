@@ -10,10 +10,7 @@ impl DeleteProfileKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_profile_key::DeleteProfileKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_profile_key::DeleteProfileKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_profile_key::DeleteProfileKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_profile_key();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteProfileKeyFluentBuilder {
         }
     }
     /// Access the DeleteProfileKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_profile_key::builders::DeleteProfileKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_profile_key::builders::DeleteProfileKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteProfileKeyFluentBuilder {
             crate::operation::delete_profile_key::DeleteProfileKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_profile_key::DeleteProfileKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_profile_key::DeleteProfileKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteProfileKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteProfileKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_profile_key::DeleteProfileKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_profile_key::DeleteProfileKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_profile_key::DeleteProfileKeyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteProfileKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_profile_key::DeleteProfileKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_profile_key::DeleteProfileKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_profile_key::DeleteProfileKeyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteProfileKeyFluentBuilder {
             crate::operation::delete_profile_key::DeleteProfileKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_profile_key::DeleteProfileKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_profile_key::DeleteProfileKeyError>,
     > {
         self.customize_middleware().await
     }
@@ -160,10 +144,7 @@ impl DeleteProfileKeyFluentBuilder {
         self
     }
     /// <p>A list of key values.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_values(input);
         self
     }

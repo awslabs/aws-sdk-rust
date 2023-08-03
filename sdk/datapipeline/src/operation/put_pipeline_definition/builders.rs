@@ -75,10 +75,7 @@ impl PutPipelineDefinitionFluentBuilder {
         }
     }
     /// Access the PutPipelineDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -90,9 +87,7 @@ impl PutPipelineDefinitionFluentBuilder {
             crate::operation::put_pipeline_definition::PutPipelineDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_pipeline_definition::PutPipelineDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_pipeline_definition::PutPipelineDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -102,10 +97,7 @@ impl PutPipelineDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -114,9 +106,7 @@ impl PutPipelineDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_pipeline_definition::PutPipelineDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_pipeline_definition::PutPipelineDefinitionError>,
     > {
         let op = self
             .inner
@@ -139,9 +129,7 @@ impl PutPipelineDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_pipeline_definition::PutPipelineDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_pipeline_definition::PutPipelineDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -155,9 +143,7 @@ impl PutPipelineDefinitionFluentBuilder {
             crate::operation::put_pipeline_definition::PutPipelineDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_pipeline_definition::PutPipelineDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_pipeline_definition::PutPipelineDefinitionError>,
     > {
         self.customize_middleware().await
     }
@@ -185,17 +171,12 @@ impl PutPipelineDefinitionFluentBuilder {
         self
     }
     /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
-    pub fn set_pipeline_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
-    ) -> Self {
+    pub fn set_pipeline_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>) -> Self {
         self.inner = self.inner.set_pipeline_objects(input);
         self
     }
     /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
-    pub fn get_pipeline_objects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
+    pub fn get_pipeline_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
         self.inner.get_pipeline_objects()
     }
     /// Appends an item to `parameterObjects`.
@@ -208,17 +189,12 @@ impl PutPipelineDefinitionFluentBuilder {
         self
     }
     /// <p>The parameter objects used with the pipeline.</p>
-    pub fn set_parameter_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
-    ) -> Self {
+    pub fn set_parameter_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>) -> Self {
         self.inner = self.inner.set_parameter_objects(input);
         self
     }
     /// <p>The parameter objects used with the pipeline.</p>
-    pub fn get_parameter_objects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>> {
+    pub fn get_parameter_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>> {
         self.inner.get_parameter_objects()
     }
     /// Appends an item to `parameterValues`.
@@ -231,17 +207,12 @@ impl PutPipelineDefinitionFluentBuilder {
         self
     }
     /// <p>The parameter values used with the pipeline.</p>
-    pub fn set_parameter_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
-    ) -> Self {
+    pub fn set_parameter_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>) -> Self {
         self.inner = self.inner.set_parameter_values(input);
         self
     }
     /// <p>The parameter values used with the pipeline.</p>
-    pub fn get_parameter_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
+    pub fn get_parameter_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
         self.inner.get_parameter_values()
     }
 }

@@ -10,10 +10,7 @@ impl BatchUpdateRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_update_rule::BatchUpdateRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_rule::BatchUpdateRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_rule::BatchUpdateRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_update_rule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchUpdateRuleFluentBuilder {
         }
     }
     /// Access the BatchUpdateRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_update_rule::builders::BatchUpdateRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_update_rule::builders::BatchUpdateRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchUpdateRuleFluentBuilder {
             crate::operation::batch_update_rule::BatchUpdateRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_rule::BatchUpdateRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_rule::BatchUpdateRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchUpdateRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchUpdateRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_rule::BatchUpdateRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_rule::BatchUpdateRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_rule::BatchUpdateRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchUpdateRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_rule::BatchUpdateRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_rule::BatchUpdateRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_rule::BatchUpdateRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl BatchUpdateRuleFluentBuilder {
             crate::operation::batch_update_rule::BatchUpdateRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_rule::BatchUpdateRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_update_rule::BatchUpdateRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_identifier(input);
         self
     }
@@ -143,18 +121,12 @@ impl BatchUpdateRuleFluentBuilder {
         self.inner.get_service_identifier()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.listener_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn set_listener_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_listener_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_listener_identifier(input);
         self
     }
@@ -172,10 +144,7 @@ impl BatchUpdateRuleFluentBuilder {
         self
     }
     /// <p>The rules for the specified listener.</p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }

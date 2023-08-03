@@ -130,9 +130,7 @@ impl GetApplicationOutput {
 
 /// A builder for [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApplicationOutputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) author: ::std::option::Option<::std::string::String>,
@@ -151,18 +149,12 @@ pub struct GetApplicationOutputBuilder {
 }
 impl GetApplicationOutputBuilder {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -191,18 +183,12 @@ impl GetApplicationOutputBuilder {
         &self.author
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn creation_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_time = input;
         self
     }
@@ -228,18 +214,12 @@ impl GetApplicationOutputBuilder {
         &self.description
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    pub fn home_page_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn home_page_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_page_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    pub fn set_home_page_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_home_page_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_page_url = input;
         self
     }
@@ -277,10 +257,7 @@ impl GetApplicationOutputBuilder {
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
@@ -345,18 +322,12 @@ impl GetApplicationOutputBuilder {
         &self.readme_url
     }
     /// <p>A valid identifier from https://spdx.org/licenses/.</p>
-    pub fn spdx_license_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spdx_license_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spdx_license_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A valid identifier from https://spdx.org/licenses/.</p>
-    pub fn set_spdx_license_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spdx_license_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spdx_license_id = input;
         self
     }
@@ -365,18 +336,12 @@ impl GetApplicationOutputBuilder {
         &self.spdx_license_id
     }
     /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
-    pub fn verified_author_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_author_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_author_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
-    pub fn set_verified_author_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_author_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verified_author_url = input;
         self
     }

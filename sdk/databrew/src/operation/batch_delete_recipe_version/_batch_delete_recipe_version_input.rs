@@ -22,18 +22,14 @@ impl BatchDeleteRecipeVersionInput {
 }
 impl BatchDeleteRecipeVersionInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteRecipeVersionInput`](crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionInput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionInputBuilder {
         crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteRecipeVersionInput`](crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteRecipeVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) recipe_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -58,27 +54,19 @@ impl BatchDeleteRecipeVersionInputBuilder {
     /// To override the contents of this collection use [`set_recipe_versions`](Self::set_recipe_versions).
     ///
     /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
-    pub fn recipe_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recipe_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recipe_versions.unwrap_or_default();
         v.push(input.into());
         self.recipe_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
-    pub fn set_recipe_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_recipe_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.recipe_versions = input;
         self
     }
     /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
-    pub fn get_recipe_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recipe_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.recipe_versions
     }
     /// Consumes the builder and constructs a [`BatchDeleteRecipeVersionInput`](crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionInput).
@@ -88,11 +76,9 @@ impl BatchDeleteRecipeVersionInputBuilder {
         crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionInput {
-                name: self.name,
-                recipe_versions: self.recipe_versions,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionInput {
+            name: self.name,
+            recipe_versions: self.recipe_versions,
+        })
     }
 }

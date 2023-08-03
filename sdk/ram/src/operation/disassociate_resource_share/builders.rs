@@ -26,7 +26,7 @@ impl DisassociateResourceShareInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateResourceShareFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_resource_share::builders::DisassociateResourceShareInputBuilder,
+    inner: crate::operation::disassociate_resource_share::builders::DisassociateResourceShareInputBuilder,
 }
 impl DisassociateResourceShareFluentBuilder {
     /// Creates a new `DisassociateResourceShare`.
@@ -37,7 +37,7 @@ impl DisassociateResourceShareFluentBuilder {
         }
     }
     /// Access the DisassociateResourceShare as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_resource_share::builders::DisassociateResourceShareInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_resource_share::builders::DisassociateResourceShareInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisassociateResourceShareFluentBuilder {
             crate::operation::disassociate_resource_share::DisassociateResourceShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_resource_share::DisassociateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resource_share::DisassociateResourceShareError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisassociateResourceShareFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisassociateResourceShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_resource_share::DisassociateResourceShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_resource_share::DisassociateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resource_share::DisassociateResourceShareError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisassociateResourceShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_resource_share::DisassociateResourceShareOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_resource_share::DisassociateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resource_share::DisassociateResourceShareError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DisassociateResourceShareFluentBuilder {
             crate::operation::disassociate_resource_share::DisassociateResourceShare,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_resource_share::DisassociateResourceShareError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resource_share::DisassociateResourceShareError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to remove resources or principals from.</p>
-    pub fn resource_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_share_arn(input.into());
         self
     }
     /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to remove resources or principals from.</p>
-    pub fn set_resource_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_share_arn(input);
         self
     }
@@ -145,25 +128,17 @@ impl DisassociateResourceShareFluentBuilder {
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals associated with the resource share.</p>
-    pub fn resource_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arns(input.into());
         self
     }
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals associated with the resource share.</p>
-    pub fn set_resource_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals associated with the resource share.</p>
-    pub fn get_resource_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_arns()
     }
     /// Appends an item to `principals`.
@@ -196,10 +171,7 @@ impl DisassociateResourceShareFluentBuilder {
     /// </ul> <note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_principals(input);
         self
     }
@@ -247,10 +219,7 @@ impl DisassociateResourceShareFluentBuilder {
         self
     }
     /// <p>Specifies from which source accounts the service principal no longer has access to the resources in this resource share.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }

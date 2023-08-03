@@ -26,8 +26,7 @@ impl DeleteCodeSigningConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCodeSigningConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_code_signing_config::builders::DeleteCodeSigningConfigInputBuilder,
+    inner: crate::operation::delete_code_signing_config::builders::DeleteCodeSigningConfigInputBuilder,
 }
 impl DeleteCodeSigningConfigFluentBuilder {
     /// Creates a new `DeleteCodeSigningConfig`.
@@ -38,10 +37,7 @@ impl DeleteCodeSigningConfigFluentBuilder {
         }
     }
     /// Access the DeleteCodeSigningConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_code_signing_config::builders::DeleteCodeSigningConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_code_signing_config::builders::DeleteCodeSigningConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteCodeSigningConfigFluentBuilder {
             crate::operation::delete_code_signing_config::DeleteCodeSigningConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteCodeSigningConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteCodeSigningConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_code_signing_config::DeleteCodeSigningConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteCodeSigningConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_code_signing_config::DeleteCodeSigningConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DeleteCodeSigningConfigFluentBuilder {
             crate::operation::delete_code_signing_config::DeleteCodeSigningConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn code_signing_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_signing_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_signing_config_arn(input.into());
         self
     }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn set_code_signing_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_signing_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code_signing_config_arn(input);
         self
     }

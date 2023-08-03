@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     ///   - [`scheduled_actions(Option<Vec<ScheduledAction>>)`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput::scheduled_actions): <p>List of retrieved scheduled actions. </p>
     /// - On failure, responds with [`SdkError<DescribeScheduledActionsError>`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsError)
-    pub fn describe_scheduled_actions(
-        &self,
-    ) -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsFluentBuilder
-    {
+    pub fn describe_scheduled_actions(&self) -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsFluentBuilder {
         crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsFluentBuilder::new(self.handle.clone())
     }
 }

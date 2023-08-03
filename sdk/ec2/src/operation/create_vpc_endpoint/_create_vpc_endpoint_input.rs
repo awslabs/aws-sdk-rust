@@ -105,17 +105,14 @@ impl CreateVpcEndpointInput {
 }
 impl CreateVpcEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder {
+    pub fn builder() -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder {
         crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) vpc_endpoint_type: ::std::option::Option<crate::types::VpcEndpointType>,
@@ -129,8 +126,7 @@ pub struct CreateVpcEndpointInputBuilder {
     pub(crate) dns_options: ::std::option::Option<crate::types::DnsOptionsSpecification>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) private_dns_enabled: ::std::option::Option<bool>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateVpcEndpointInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -155,10 +151,7 @@ impl CreateVpcEndpointInputBuilder {
     }
     /// <p>The type of endpoint.</p>
     /// <p>Default: Gateway</p>
-    pub fn set_vpc_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcEndpointType>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_type(mut self, input: ::std::option::Option<crate::types::VpcEndpointType>) -> Self {
         self.vpc_endpoint_type = input;
         self
     }
@@ -196,18 +189,12 @@ impl CreateVpcEndpointInputBuilder {
         &self.service_name
     }
     /// <p>(Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format. If this parameter is not specified, we attach a default policy that allows full access to the service.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format. If this parameter is not specified, we attach a default policy that allows full access to the service.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -220,27 +207,19 @@ impl CreateVpcEndpointInputBuilder {
     /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
     ///
     /// <p>(Gateway endpoint) The route table IDs.</p>
-    pub fn route_table_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.route_table_ids.unwrap_or_default();
         v.push(input.into());
         self.route_table_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Gateway endpoint) The route table IDs.</p>
-    pub fn set_route_table_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.route_table_ids = input;
         self
     }
     /// <p>(Gateway endpoint) The route table IDs.</p>
-    pub fn get_route_table_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.route_table_ids
     }
     /// Appends an item to `subnet_ids`.
@@ -255,10 +234,7 @@ impl CreateVpcEndpointInputBuilder {
         self
     }
     /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -271,27 +247,19 @@ impl CreateVpcEndpointInputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this parameter is not specified, we use the default security group for the VPC.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this parameter is not specified, we use the default security group for the VPC.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this parameter is not specified, we use the default security group for the VPC.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>The IP address type for the endpoint.</p>
@@ -300,10 +268,7 @@ impl CreateVpcEndpointInputBuilder {
         self
     }
     /// <p>The IP address type for the endpoint.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
@@ -317,10 +282,7 @@ impl CreateVpcEndpointInputBuilder {
         self
     }
     /// <p>The DNS options for the endpoint.</p>
-    pub fn set_dns_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DnsOptionsSpecification>,
-    ) -> Self {
+    pub fn set_dns_options(mut self, input: ::std::option::Option<crate::types::DnsOptionsSpecification>) -> Self {
         self.dns_options = input;
         self
     }
@@ -374,42 +336,32 @@ impl CreateVpcEndpointInputBuilder {
         self
     }
     /// <p>The tags to associate with the endpoint.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to associate with the endpoint.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_vpc_endpoint::CreateVpcEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_vpc_endpoint::CreateVpcEndpointInput {
-                dry_run: self.dry_run,
-                vpc_endpoint_type: self.vpc_endpoint_type,
-                vpc_id: self.vpc_id,
-                service_name: self.service_name,
-                policy_document: self.policy_document,
-                route_table_ids: self.route_table_ids,
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-                ip_address_type: self.ip_address_type,
-                dns_options: self.dns_options,
-                client_token: self.client_token,
-                private_dns_enabled: self.private_dns_enabled,
-                tag_specifications: self.tag_specifications,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_vpc_endpoint::CreateVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_vpc_endpoint::CreateVpcEndpointInput {
+            dry_run: self.dry_run,
+            vpc_endpoint_type: self.vpc_endpoint_type,
+            vpc_id: self.vpc_id,
+            service_name: self.service_name,
+            policy_document: self.policy_document,
+            route_table_ids: self.route_table_ids,
+            subnet_ids: self.subnet_ids,
+            security_group_ids: self.security_group_ids,
+            ip_address_type: self.ip_address_type,
+            dns_options: self.dns_options,
+            client_token: self.client_token,
+            private_dns_enabled: self.private_dns_enabled,
+            tag_specifications: self.tag_specifications,
+        })
     }
 }

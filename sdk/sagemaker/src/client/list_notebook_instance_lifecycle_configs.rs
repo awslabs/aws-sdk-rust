@@ -17,7 +17,11 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
     ///   - [`notebook_instance_lifecycle_configs(Option<Vec<NotebookInstanceLifecycleConfigSummary>>)`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput::notebook_instance_lifecycle_configs): <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
     /// - On failure, responds with [`SdkError<ListNotebookInstanceLifecycleConfigsError>`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError)
-    pub fn list_notebook_instance_lifecycle_configs(&self) -> crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder{
-        crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::new(self.handle.clone())
+    pub fn list_notebook_instance_lifecycle_configs(
+        &self,
+    ) -> crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder {
+        crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

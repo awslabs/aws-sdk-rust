@@ -136,21 +136,16 @@ impl DescribeScheduledActionsInput {
 }
 impl DescribeScheduledActionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledActionsInput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder {
         crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScheduledActionsInput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScheduledActionsInputBuilder {
-    pub(crate) scheduled_action_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) scheduled_action_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
@@ -163,27 +158,19 @@ impl DescribeScheduledActionsInputBuilder {
     /// To override the contents of this collection use [`set_scheduled_action_names`](Self::set_scheduled_action_names).
     ///
     /// <p>The names of the scheduled actions to describe.</p>
-    pub fn scheduled_action_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.scheduled_action_names.unwrap_or_default();
         v.push(input.into());
         self.scheduled_action_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the scheduled actions to describe.</p>
-    pub fn set_scheduled_action_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_scheduled_action_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.scheduled_action_names = input;
         self
     }
     /// <p>The names of the scheduled actions to describe.</p>
-    pub fn get_scheduled_action_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_scheduled_action_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scheduled_action_names
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
@@ -192,10 +179,7 @@ impl DescribeScheduledActionsInputBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.service_namespace = input;
         self
     }
@@ -326,10 +310,7 @@ impl DescribeScheduledActionsInputBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
         self
     }
@@ -357,9 +338,7 @@ impl DescribeScheduledActionsInputBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension
     }
     /// <p>The maximum number of scheduled action results. This value can be between 1 and 50. The default value is 50.</p>
@@ -400,15 +379,13 @@ impl DescribeScheduledActionsInputBuilder {
         crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput {
-                scheduled_action_names: self.scheduled_action_names,
-                service_namespace: self.service_namespace,
-                resource_id: self.resource_id,
-                scalable_dimension: self.scalable_dimension,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput {
+            scheduled_action_names: self.scheduled_action_names,
+            service_namespace: self.service_namespace,
+            resource_id: self.resource_id,
+            scalable_dimension: self.scalable_dimension,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

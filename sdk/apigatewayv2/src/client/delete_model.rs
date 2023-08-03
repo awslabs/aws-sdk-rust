@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`model_id(impl ::std::convert::Into<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::model_id) / [`set_model_id(Option<String>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::set_model_id): <p>The model ID.</p>
     /// - On success, responds with [`DeleteModelOutput`](crate::operation::delete_model::DeleteModelOutput)
     /// - On failure, responds with [`SdkError<DeleteModelError>`](crate::operation::delete_model::DeleteModelError)
-    pub fn delete_model(
-        &self,
-    ) -> crate::operation::delete_model::builders::DeleteModelFluentBuilder {
+    pub fn delete_model(&self) -> crate::operation::delete_model::builders::DeleteModelFluentBuilder {
         crate::operation::delete_model::builders::DeleteModelFluentBuilder::new(self.handle.clone())
     }
 }

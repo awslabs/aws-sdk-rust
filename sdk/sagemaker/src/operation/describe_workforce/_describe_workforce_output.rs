@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeWorkforceOutput {
 }
 impl DescribeWorkforceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkforceOutput`](crate::operation::describe_workforce::DescribeWorkforceOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_workforce::builders::DescribeWorkforceOutputBuilder {
+    pub fn builder() -> crate::operation::describe_workforce::builders::DescribeWorkforceOutputBuilder {
         crate::operation::describe_workforce::builders::DescribeWorkforceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkforceOutput`](crate::operation::describe_workforce::DescribeWorkforceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkforceOutputBuilder {
     pub(crate) workforce: ::std::option::Option<crate::types::Workforce>,
     _request_id: Option<String>,

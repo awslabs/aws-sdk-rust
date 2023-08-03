@@ -12,12 +12,7 @@ impl super::Client {
     ///   - [`workbook_cursor(i64)`](crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput::workbook_cursor): <p>The updated workbook cursor after updating or appending rows in the table.</p>
     ///   - [`failed_batch_items(Option<Vec<FailedBatchItem>>)`](crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput::failed_batch_items): <p> The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended. </p>
     /// - On failure, responds with [`SdkError<BatchUpsertTableRowsError>`](crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsError)
-    pub fn batch_upsert_table_rows(
-        &self,
-    ) -> crate::operation::batch_upsert_table_rows::builders::BatchUpsertTableRowsFluentBuilder
-    {
-        crate::operation::batch_upsert_table_rows::builders::BatchUpsertTableRowsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_upsert_table_rows(&self) -> crate::operation::batch_upsert_table_rows::builders::BatchUpsertTableRowsFluentBuilder {
+        crate::operation::batch_upsert_table_rows::builders::BatchUpsertTableRowsFluentBuilder::new(self.handle.clone())
     }
 }

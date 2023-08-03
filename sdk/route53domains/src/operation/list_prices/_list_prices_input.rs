@@ -42,9 +42,7 @@ impl ListPricesInput {
 
 /// A builder for [`ListPricesInput`](crate::operation::list_prices::ListPricesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPricesInputBuilder {
     pub(crate) tld: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -103,12 +101,7 @@ impl ListPricesInputBuilder {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListPricesInput`](crate::operation::list_prices::ListPricesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_prices::ListPricesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_prices::ListPricesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_prices::ListPricesInput {
             tld: self.tld,
             marker: self.marker,

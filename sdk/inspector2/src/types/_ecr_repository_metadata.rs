@@ -30,9 +30,7 @@ impl EcrRepositoryMetadata {
 
 /// A builder for [`EcrRepositoryMetadata`](crate::types::EcrRepositoryMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcrRepositoryMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) scan_frequency: ::std::option::Option<crate::types::EcrScanFrequency>,
@@ -58,10 +56,7 @@ impl EcrRepositoryMetadataBuilder {
         self
     }
     /// <p>The frequency of scans.</p>
-    pub fn set_scan_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::EcrScanFrequency>,
-    ) -> Self {
+    pub fn set_scan_frequency(mut self, input: ::std::option::Option<crate::types::EcrScanFrequency>) -> Self {
         self.scan_frequency = input;
         self
     }

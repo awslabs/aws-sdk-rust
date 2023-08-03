@@ -39,9 +39,7 @@ impl BatchGetRepositoriesFluentBuilder {
         }
     }
     /// Access the BatchGetRepositories as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_repositories::builders::BatchGetRepositoriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_repositories::builders::BatchGetRepositoriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl BatchGetRepositoriesFluentBuilder {
             crate::operation::batch_get_repositories::BatchGetRepositories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_repositories::BatchGetRepositoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_repositories::BatchGetRepositoriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl BatchGetRepositoriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl BatchGetRepositoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_repositories::BatchGetRepositoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_repositories::BatchGetRepositoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_repositories::BatchGetRepositoriesError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl BatchGetRepositoriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_repositories::BatchGetRepositoriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_repositories::BatchGetRepositoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_repositories::BatchGetRepositoriesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl BatchGetRepositoriesFluentBuilder {
             crate::operation::batch_get_repositories::BatchGetRepositories,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_repositories::BatchGetRepositoriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_repositories::BatchGetRepositoriesError>,
     > {
         self.customize_middleware().await
     }
@@ -131,29 +118,21 @@ impl BatchGetRepositoriesFluentBuilder {
     /// <p>The names of the repositories to get information about.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
-    pub fn repository_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_names(input.into());
         self
     }
     /// <p>The names of the repositories to get information about.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
-    pub fn set_repository_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_repository_names(input);
         self
     }
     /// <p>The names of the repositories to get information about.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
-    pub fn get_repository_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_repository_names()
     }
 }

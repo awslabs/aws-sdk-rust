@@ -9,49 +9,53 @@ pub fn de_activate_organizations_access_http_error(
     crate::operation::activate_organizations_access::ActivateOrganizationsAccessError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidOperationException" => crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::InvalidOperationException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidOperationException" => {
+            crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::InvalidOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidOperationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_xml_err(_response_body, output).map_err(crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_xml_err(_response_body, output)
+                        .map_err(crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "OperationNotFoundException" => crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::OperationNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "OperationNotFoundException" => {
+            crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::OperationNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_operation_not_found_exception::de_operation_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_operation_not_found_exception::de_operation_not_found_exception_xml_err(_response_body, output)
+                            .map_err(crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::activate_organizations_access::ActivateOrganizationsAccessError::generic(generic),
     })
 }
 
@@ -67,9 +71,7 @@ pub fn de_activate_organizations_access_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::activate_organizations_access::builders::ActivateOrganizationsAccessOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

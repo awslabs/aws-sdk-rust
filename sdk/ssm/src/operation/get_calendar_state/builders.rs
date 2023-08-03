@@ -10,10 +10,7 @@ impl GetCalendarStateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_calendar_state::GetCalendarStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_calendar_state::GetCalendarStateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_calendar_state::GetCalendarStateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_calendar_state();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetCalendarStateFluentBuilder {
         }
     }
     /// Access the GetCalendarState as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_calendar_state::builders::GetCalendarStateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_calendar_state::builders::GetCalendarStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl GetCalendarStateFluentBuilder {
             crate::operation::get_calendar_state::GetCalendarState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_calendar_state::GetCalendarStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_calendar_state::GetCalendarStateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl GetCalendarStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl GetCalendarStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_calendar_state::GetCalendarStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_calendar_state::GetCalendarStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_calendar_state::GetCalendarStateError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl GetCalendarStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_calendar_state::GetCalendarStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_calendar_state::GetCalendarStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_calendar_state::GetCalendarStateError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl GetCalendarStateFluentBuilder {
             crate::operation::get_calendar_state::GetCalendarState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_calendar_state::GetCalendarStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_calendar_state::GetCalendarStateError>,
     > {
         self.customize_middleware().await
     }
@@ -129,25 +113,17 @@ impl GetCalendarStateFluentBuilder {
     /// To override the contents of this collection use [`set_calendar_names`](Self::set_calendar_names).
     ///
     /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
-    pub fn calendar_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calendar_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.calendar_names(input.into());
         self
     }
     /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
-    pub fn set_calendar_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_calendar_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_calendar_names(input);
         self
     }
     /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
-    pub fn get_calendar_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_calendar_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_calendar_names()
     }
     /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>

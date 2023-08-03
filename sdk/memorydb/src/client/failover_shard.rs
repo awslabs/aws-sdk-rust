@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`FailoverShardOutput`](crate::operation::failover_shard::FailoverShardOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::failover_shard::FailoverShardOutput::cluster): <p>The cluster being failed over</p>
     /// - On failure, responds with [`SdkError<FailoverShardError>`](crate::operation::failover_shard::FailoverShardError)
-    pub fn failover_shard(
-        &self,
-    ) -> crate::operation::failover_shard::builders::FailoverShardFluentBuilder {
-        crate::operation::failover_shard::builders::FailoverShardFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn failover_shard(&self) -> crate::operation::failover_shard::builders::FailoverShardFluentBuilder {
+        crate::operation::failover_shard::builders::FailoverShardFluentBuilder::new(self.handle.clone())
     }
 }

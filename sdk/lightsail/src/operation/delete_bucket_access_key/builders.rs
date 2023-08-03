@@ -39,10 +39,7 @@ impl DeleteBucketAccessKeyFluentBuilder {
         }
     }
     /// Access the DeleteBucketAccessKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_bucket_access_key::builders::DeleteBucketAccessKeyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_bucket_access_key::builders::DeleteBucketAccessKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DeleteBucketAccessKeyFluentBuilder {
             crate::operation::delete_bucket_access_key::DeleteBucketAccessKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DeleteBucketAccessKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DeleteBucketAccessKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DeleteBucketAccessKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl DeleteBucketAccessKeyFluentBuilder {
             crate::operation::delete_bucket_access_key::DeleteBucketAccessKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError>,
     > {
         self.customize_middleware().await
     }
@@ -141,19 +127,13 @@ impl DeleteBucketAccessKeyFluentBuilder {
     }
     /// <p>The ID of the access key to delete.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
-    pub fn access_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_key_id(input.into());
         self
     }
     /// <p>The ID of the access key to delete.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
-    pub fn set_access_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_key_id(input);
         self
     }

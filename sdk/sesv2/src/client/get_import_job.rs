@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`processed_records_count(Option<i32>)`](crate::operation::get_import_job::GetImportJobOutput::processed_records_count): <p>The current number of records processed.</p>
     ///   - [`failed_records_count(Option<i32>)`](crate::operation::get_import_job::GetImportJobOutput::failed_records_count): <p>The number of records that failed processing because of invalid input or other reasons.</p>
     /// - On failure, responds with [`SdkError<GetImportJobError>`](crate::operation::get_import_job::GetImportJobError)
-    pub fn get_import_job(
-        &self,
-    ) -> crate::operation::get_import_job::builders::GetImportJobFluentBuilder {
-        crate::operation::get_import_job::builders::GetImportJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_import_job(&self) -> crate::operation::get_import_job::builders::GetImportJobFluentBuilder {
+        crate::operation::get_import_job::builders::GetImportJobFluentBuilder::new(self.handle.clone())
     }
 }

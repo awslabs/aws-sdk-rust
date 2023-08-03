@@ -9,9 +9,7 @@ impl super::Client {
     ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_field::builders::UpdateFieldFluentBuilder::set_description): <p>The description of a field.</p>
     /// - On success, responds with [`UpdateFieldOutput`](crate::operation::update_field::UpdateFieldOutput)
     /// - On failure, responds with [`SdkError<UpdateFieldError>`](crate::operation::update_field::UpdateFieldError)
-    pub fn update_field(
-        &self,
-    ) -> crate::operation::update_field::builders::UpdateFieldFluentBuilder {
+    pub fn update_field(&self) -> crate::operation::update_field::builders::UpdateFieldFluentBuilder {
         crate::operation::update_field::builders::UpdateFieldFluentBuilder::new(self.handle.clone())
     }
 }

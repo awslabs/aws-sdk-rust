@@ -4,9 +4,7 @@ pub fn ser_update_graphql_api_input(
     input: &crate::operation::update_graphql_api::UpdateGraphqlApiInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.additional_authentication_providers {
-        let mut array_2 = object
-            .key("additionalAuthenticationProviders")
-            .start_array();
+        let mut array_2 = object.key("additionalAuthenticationProviders").start_array();
         for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
@@ -23,10 +21,7 @@ pub fn ser_update_graphql_api_input(
     if let Some(var_6) = &input.lambda_authorizer_config {
         #[allow(unused_mut)]
         let mut object_7 = object.key("lambdaAuthorizerConfig").start_object();
-        crate::protocol_serde::shape_lambda_authorizer_config::ser_lambda_authorizer_config(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_lambda_authorizer_config::ser_lambda_authorizer_config(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.log_config {
@@ -36,9 +31,7 @@ pub fn ser_update_graphql_api_input(
         object_9.finish();
     }
     if let Some(var_10) = &input.merged_api_execution_role_arn {
-        object
-            .key("mergedApiExecutionRoleArn")
-            .string(var_10.as_str());
+        object.key("mergedApiExecutionRoleArn").string(var_10.as_str());
     }
     if let Some(var_11) = &input.name {
         object.key("name").string(var_11.as_str());
@@ -46,10 +39,7 @@ pub fn ser_update_graphql_api_input(
     if let Some(var_12) = &input.open_id_connect_config {
         #[allow(unused_mut)]
         let mut object_13 = object.key("openIDConnectConfig").start_object();
-        crate::protocol_serde::shape_open_id_connect_config::ser_open_id_connect_config(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_open_id_connect_config::ser_open_id_connect_config(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.owner_contact {
@@ -58,10 +48,7 @@ pub fn ser_update_graphql_api_input(
     if let Some(var_15) = &input.user_pool_config {
         #[allow(unused_mut)]
         let mut object_16 = object.key("userPoolConfig").start_object();
-        crate::protocol_serde::shape_user_pool_config::ser_user_pool_config(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_user_pool_config::ser_user_pool_config(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.xray_enabled {

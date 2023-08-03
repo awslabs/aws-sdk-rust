@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SnomedctAttributeType {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for SnomedctAttributeType {
             "SYSTEM_ORGAN_SITE" => SnomedctAttributeType::SystemOrganSite,
             "TEST_UNIT" => SnomedctAttributeType::TestUnit,
             "TEST_VALUE" => SnomedctAttributeType::TestValue,
-            other => SnomedctAttributeType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SnomedctAttributeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl SnomedctAttributeType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACUITY",
-            "DIRECTION",
-            "QUALITY",
-            "SYSTEM_ORGAN_SITE",
-            "TEST_UNIT",
-            "TEST_VALUE",
-        ]
+        &["ACUITY", "DIRECTION", "QUALITY", "SYSTEM_ORGAN_SITE", "TEST_UNIT", "TEST_VALUE"]
     }
 }
 impl ::std::convert::AsRef<str> for SnomedctAttributeType {

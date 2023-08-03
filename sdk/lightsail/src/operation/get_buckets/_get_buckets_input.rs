@@ -40,9 +40,7 @@ impl GetBucketsInput {
 
 /// A builder for [`GetBucketsInput`](crate::operation::get_buckets::GetBucketsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketsInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
@@ -98,12 +96,7 @@ impl GetBucketsInputBuilder {
         &self.include_connected_resources
     }
     /// Consumes the builder and constructs a [`GetBucketsInput`](crate::operation::get_buckets::GetBucketsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_buckets::GetBucketsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_buckets::GetBucketsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_buckets::GetBucketsInput {
             bucket_name: self.bucket_name,
             page_token: self.page_token,

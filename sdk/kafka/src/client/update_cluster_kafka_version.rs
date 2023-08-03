@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`cluster_arn(Option<String>)`](crate::operation::update_cluster_kafka_version::UpdateClusterKafkaVersionOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::operation::update_cluster_kafka_version::UpdateClusterKafkaVersionOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     /// - On failure, responds with [`SdkError<UpdateClusterKafkaVersionError>`](crate::operation::update_cluster_kafka_version::UpdateClusterKafkaVersionError)
-    pub fn update_cluster_kafka_version(&self) -> crate::operation::update_cluster_kafka_version::builders::UpdateClusterKafkaVersionFluentBuilder{
+    pub fn update_cluster_kafka_version(&self) -> crate::operation::update_cluster_kafka_version::builders::UpdateClusterKafkaVersionFluentBuilder {
         crate::operation::update_cluster_kafka_version::builders::UpdateClusterKafkaVersionFluentBuilder::new(self.handle.clone())
     }
 }

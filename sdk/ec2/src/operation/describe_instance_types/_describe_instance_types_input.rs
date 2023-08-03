@@ -147,18 +147,14 @@ impl DescribeInstanceTypesInput {
 }
 impl DescribeInstanceTypesInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceTypesInput`](crate::operation::describe_instance_types::DescribeInstanceTypesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_instance_types::builders::DescribeInstanceTypesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_instance_types::builders::DescribeInstanceTypesInputBuilder {
         crate::operation::describe_instance_types::builders::DescribeInstanceTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceTypesInput`](crate::operation::describe_instance_types::DescribeInstanceTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceTypesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>,
@@ -193,17 +189,12 @@ impl DescribeInstanceTypesInputBuilder {
         self
     }
     /// <p>The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_instance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>,
-    ) -> Self {
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>) -> Self {
         self.instance_types = input;
         self
     }
     /// <p>The instance types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn get_instance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceType>> {
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceType>> {
         &self.instance_types
     }
     /// Appends an item to `filters`.
@@ -322,10 +313,7 @@ impl DescribeInstanceTypesInputBuilder {
     /// <li> <p> <code>vcpu-info.valid-cores</code> - The number of cores that can be configured for the instance type.</p> </li>
     /// <li> <p> <code>vcpu-info.valid-threads-per-core</code> - The number of threads per core that can be configured for the instance type. For example, "1" or "1,2".</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -416,18 +404,14 @@ impl DescribeInstanceTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInstanceTypesInput`](crate::operation::describe_instance_types::DescribeInstanceTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_instance_types::DescribeInstanceTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_instance_types::DescribeInstanceTypesInput {
-                dry_run: self.dry_run,
-                instance_types: self.instance_types,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_instance_types::DescribeInstanceTypesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_instance_types::DescribeInstanceTypesInput {
+            dry_run: self.dry_run,
+            instance_types: self.instance_types,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

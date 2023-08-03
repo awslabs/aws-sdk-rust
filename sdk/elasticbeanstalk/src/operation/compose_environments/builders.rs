@@ -10,10 +10,7 @@ impl ComposeEnvironmentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::compose_environments::ComposeEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::compose_environments::ComposeEnvironmentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::compose_environments::ComposeEnvironmentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.compose_environments();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ComposeEnvironmentsFluentBuilder {
         }
     }
     /// Access the ComposeEnvironments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::compose_environments::builders::ComposeEnvironmentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::compose_environments::builders::ComposeEnvironmentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ComposeEnvironmentsFluentBuilder {
             crate::operation::compose_environments::ComposeEnvironments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::compose_environments::ComposeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::compose_environments::ComposeEnvironmentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ComposeEnvironmentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ComposeEnvironmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::compose_environments::ComposeEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::compose_environments::ComposeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::compose_environments::ComposeEnvironmentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ComposeEnvironmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::compose_environments::ComposeEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::compose_environments::ComposeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::compose_environments::ComposeEnvironmentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl ComposeEnvironmentsFluentBuilder {
             crate::operation::compose_environments::ComposeEnvironments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::compose_environments::ComposeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::compose_environments::ComposeEnvironmentsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the application to which the specified source bundles belong.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of the application to which the specified source bundles belong.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -161,25 +139,17 @@ impl ComposeEnvironmentsFluentBuilder {
     /// To override the contents of this collection use [`set_version_labels`](Self::set_version_labels).
     ///
     /// <p>A list of version labels, specifying one or more application source bundles that belong to the target application. Each source bundle must include an environment manifest that specifies the name of the environment and the name of the solution stack to use, and optionally can specify environment links to create.</p>
-    pub fn version_labels(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_labels(input.into());
         self
     }
     /// <p>A list of version labels, specifying one or more application source bundles that belong to the target application. Each source bundle must include an environment manifest that specifies the name of the environment and the name of the solution stack to use, and optionally can specify environment links to create.</p>
-    pub fn set_version_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_version_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_version_labels(input);
         self
     }
     /// <p>A list of version labels, specifying one or more application source bundles that belong to the target application. Each source bundle must include an environment manifest that specifies the name of the environment and the name of the solution stack to use, and optionally can specify environment links to create.</p>
-    pub fn get_version_labels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_version_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_version_labels()
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_fuota_tasks::ListFuotaTasksOutput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     ///   - [`fuota_task_list(Option<Vec<FuotaTask>>)`](crate::operation::list_fuota_tasks::ListFuotaTasksOutput::fuota_task_list): <p>Lists the FUOTA tasks registered to your AWS account.</p>
     /// - On failure, responds with [`SdkError<ListFuotaTasksError>`](crate::operation::list_fuota_tasks::ListFuotaTasksError)
-    pub fn list_fuota_tasks(
-        &self,
-    ) -> crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder {
-        crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_fuota_tasks(&self) -> crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder {
+        crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder::new(self.handle.clone())
     }
 }

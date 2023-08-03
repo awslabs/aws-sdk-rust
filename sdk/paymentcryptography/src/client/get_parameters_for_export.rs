@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`export_token(Option<String>)`](crate::operation::get_parameters_for_export::GetParametersForExportOutput::export_token): <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
     ///   - [`parameters_valid_until_timestamp(Option<DateTime>)`](crate::operation::get_parameters_for_export::GetParametersForExportOutput::parameters_valid_until_timestamp): <p>The validity period of the export token.</p>
     /// - On failure, responds with [`SdkError<GetParametersForExportError>`](crate::operation::get_parameters_for_export::GetParametersForExportError)
-    pub fn get_parameters_for_export(
-        &self,
-    ) -> crate::operation::get_parameters_for_export::builders::GetParametersForExportFluentBuilder
-    {
+    pub fn get_parameters_for_export(&self) -> crate::operation::get_parameters_for_export::builders::GetParametersForExportFluentBuilder {
         crate::operation::get_parameters_for_export::builders::GetParametersForExportFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListOpsItemEventsOutput {
 }
 impl ListOpsItemEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListOpsItemEventsOutput`](crate::operation::list_ops_item_events::ListOpsItemEventsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_ops_item_events::builders::ListOpsItemEventsOutputBuilder {
+    pub fn builder() -> crate::operation::list_ops_item_events::builders::ListOpsItemEventsOutputBuilder {
         crate::operation::list_ops_item_events::builders::ListOpsItemEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOpsItemEventsOutput`](crate::operation::list_ops_item_events::ListOpsItemEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOpsItemEventsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemEventSummary>>,
@@ -71,17 +68,12 @@ impl ListOpsItemEventsOutputBuilder {
         self
     }
     /// <p>A list of event information for the specified OpsItems.</p>
-    pub fn set_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemEventSummary>>,
-    ) -> Self {
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemEventSummary>>) -> Self {
         self.summaries = input;
         self
     }
     /// <p>A list of event information for the specified OpsItems.</p>
-    pub fn get_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemEventSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemEventSummary>> {
         &self.summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

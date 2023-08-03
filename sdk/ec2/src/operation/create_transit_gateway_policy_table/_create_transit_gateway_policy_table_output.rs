@@ -5,15 +5,12 @@
 pub struct CreateTransitGatewayPolicyTableOutput {
     /// <p>Describes the created transit gateway policy table.</p>
     #[doc(hidden)]
-    pub transit_gateway_policy_table:
-        ::std::option::Option<crate::types::TransitGatewayPolicyTable>,
+    pub transit_gateway_policy_table: ::std::option::Option<crate::types::TransitGatewayPolicyTable>,
     _request_id: Option<String>,
 }
 impl CreateTransitGatewayPolicyTableOutput {
     /// <p>Describes the created transit gateway policy table.</p>
-    pub fn transit_gateway_policy_table(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayPolicyTable> {
+    pub fn transit_gateway_policy_table(&self) -> ::std::option::Option<&crate::types::TransitGatewayPolicyTable> {
         self.transit_gateway_policy_table.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for CreateTransitGatewayPolicyTableOutput
 }
 impl CreateTransitGatewayPolicyTableOutput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayPolicyTableOutput`](crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableOutput).
-    pub fn builder() -> crate::operation::create_transit_gateway_policy_table::builders::CreateTransitGatewayPolicyTableOutputBuilder{
+    pub fn builder() -> crate::operation::create_transit_gateway_policy_table::builders::CreateTransitGatewayPolicyTableOutputBuilder {
         crate::operation::create_transit_gateway_policy_table::builders::CreateTransitGatewayPolicyTableOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTransitGatewayPolicyTableOutput`](crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayPolicyTableOutputBuilder {
-    pub(crate) transit_gateway_policy_table:
-        ::std::option::Option<crate::types::TransitGatewayPolicyTable>,
+    pub(crate) transit_gateway_policy_table: ::std::option::Option<crate::types::TransitGatewayPolicyTable>,
     _request_id: Option<String>,
 }
 impl CreateTransitGatewayPolicyTableOutputBuilder {
     /// <p>Describes the created transit gateway policy table.</p>
-    pub fn transit_gateway_policy_table(
-        mut self,
-        input: crate::types::TransitGatewayPolicyTable,
-    ) -> Self {
+    pub fn transit_gateway_policy_table(mut self, input: crate::types::TransitGatewayPolicyTable) -> Self {
         self.transit_gateway_policy_table = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the created transit gateway policy table.</p>
-    pub fn set_transit_gateway_policy_table(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayPolicyTable>,
-    ) -> Self {
+    pub fn set_transit_gateway_policy_table(mut self, input: ::std::option::Option<crate::types::TransitGatewayPolicyTable>) -> Self {
         self.transit_gateway_policy_table = input;
         self
     }
     /// <p>Describes the created transit gateway policy table.</p>
-    pub fn get_transit_gateway_policy_table(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayPolicyTable> {
+    pub fn get_transit_gateway_policy_table(&self) -> &::std::option::Option<crate::types::TransitGatewayPolicyTable> {
         &self.transit_gateway_policy_table
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,13 +58,9 @@ impl CreateTransitGatewayPolicyTableOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayPolicyTableOutput`](crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableOutput
-    {
+    pub fn build(self) -> crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableOutput {
         crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableOutput {
-            transit_gateway_policy_table: self.transit_gateway_policy_table
-            ,
+            transit_gateway_policy_table: self.transit_gateway_policy_table,
             _request_id: self._request_id,
         }
     }

@@ -51,9 +51,7 @@ impl LogSettingsResponse {
 
 /// A builder for [`LogSettingsResponse`](crate::types::LogSettingsResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogSettingsResponseBuilder {
     pub(crate) log_type: ::std::option::Option<crate::types::LogType>,
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
@@ -82,10 +80,7 @@ impl LogSettingsResponseBuilder {
         self
     }
     /// <p>The destination where logs are delivered.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.destination = input;
         self
     }
@@ -122,18 +117,12 @@ impl LogSettingsResponseBuilder {
         &self.resource_arn
     }
     /// <p>The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified. </p>
-    pub fn resource_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified. </p>
-    pub fn set_resource_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_prefix = input;
         self
     }

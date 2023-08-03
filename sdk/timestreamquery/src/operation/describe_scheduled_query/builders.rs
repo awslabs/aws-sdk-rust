@@ -37,10 +37,7 @@ impl DescribeScheduledQueryFluentBuilder {
         }
     }
     /// Access the DescribeScheduledQuery as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_scheduled_query::builders::DescribeScheduledQueryInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_scheduled_query::builders::DescribeScheduledQueryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeScheduledQueryFluentBuilder {
             crate::operation::describe_scheduled_query::DescribeScheduledQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_query::DescribeScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_query::DescribeScheduledQueryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeScheduledQueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeScheduledQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduled_query::DescribeScheduledQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_query::DescribeScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_query::DescribeScheduledQueryError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeScheduledQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduled_query::DescribeScheduledQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_query::DescribeScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_query::DescribeScheduledQueryError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeScheduledQueryFluentBuilder {
             crate::operation::describe_scheduled_query::DescribeScheduledQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scheduled_query::DescribeScheduledQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_query::DescribeScheduledQueryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the scheduled query.</p>
-    pub fn scheduled_query_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scheduled_query_arn(input.into());
         self
     }
     /// <p>The ARN of the scheduled query.</p>
-    pub fn set_scheduled_query_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_query_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scheduled_query_arn(input);
         self
     }

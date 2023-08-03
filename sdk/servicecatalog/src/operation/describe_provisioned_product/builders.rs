@@ -26,7 +26,7 @@ impl DescribeProvisionedProductInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeProvisionedProductFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductInputBuilder,
+    inner: crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductInputBuilder,
 }
 impl DescribeProvisionedProductFluentBuilder {
     /// Creates a new `DescribeProvisionedProduct`.
@@ -37,7 +37,7 @@ impl DescribeProvisionedProductFluentBuilder {
         }
     }
     /// Access the DescribeProvisionedProduct as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeProvisionedProductFluentBuilder {
             crate::operation::describe_provisioned_product::DescribeProvisionedProduct,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_provisioned_product::DescribeProvisionedProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioned_product::DescribeProvisionedProductError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeProvisionedProductFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeProvisionedProductFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_provisioned_product::DescribeProvisionedProductOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_provisioned_product::DescribeProvisionedProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioned_product::DescribeProvisionedProductError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeProvisionedProductFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_provisioned_product::DescribeProvisionedProductOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_provisioned_product::DescribeProvisionedProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioned_product::DescribeProvisionedProductError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeProvisionedProductFluentBuilder {
             crate::operation::describe_provisioned_product::DescribeProvisionedProduct,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_provisioned_product::DescribeProvisionedProductError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioned_product::DescribeProvisionedProductError>,
     > {
         self.customize_middleware().await
     }
@@ -125,10 +114,7 @@ impl DescribeProvisionedProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -137,10 +123,7 @@ impl DescribeProvisionedProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }

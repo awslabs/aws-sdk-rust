@@ -35,9 +35,7 @@ impl ListImagesOutput {
 
 /// A builder for [`ListImagesOutput`](crate::operation::list_images::ListImagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImagesOutputBuilder {
     pub(crate) image_ids: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListImagesOutputBuilder {
         self
     }
     /// <p>The list of image IDs for the requested repository.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
-    ) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>) -> Self {
         self.image_ids = input;
         self
     }
     /// <p>The list of image IDs for the requested repository.</p>
-    pub fn get_image_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
         &self.image_ids
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListImages</code> request. When the results of a <code>ListImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

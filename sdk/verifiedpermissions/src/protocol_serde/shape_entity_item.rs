@@ -6,10 +6,7 @@ pub fn ser_entity_item(
     if let Some(var_1) = &input.identifier {
         #[allow(unused_mut)]
         let mut object_2 = object.key("identifier").start_object();
-        crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.attributes {
@@ -19,10 +16,7 @@ pub fn ser_entity_item(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = object_4.key(key_5.as_str()).start_object();
-                crate::protocol_serde::shape_attribute_value::ser_attribute_value(
-                    &mut object_7,
-                    value_6,
-                )?;
+                crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_7, value_6)?;
                 object_7.finish();
             }
         }
@@ -34,10 +28,7 @@ pub fn ser_entity_item(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }

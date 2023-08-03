@@ -16,9 +16,7 @@ pub struct StartPolicyGenerationInput {
 }
 impl StartPolicyGenerationInput {
     /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn policy_generation_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PolicyGenerationDetails> {
+    pub fn policy_generation_details(&self) -> ::std::option::Option<&crate::types::PolicyGenerationDetails> {
         self.policy_generation_details.as_ref()
     }
     /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
@@ -33,45 +31,32 @@ impl StartPolicyGenerationInput {
 }
 impl StartPolicyGenerationInput {
     /// Creates a new builder-style object to manufacture [`StartPolicyGenerationInput`](crate::operation::start_policy_generation::StartPolicyGenerationInput).
-    pub fn builder(
-    ) -> crate::operation::start_policy_generation::builders::StartPolicyGenerationInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_policy_generation::builders::StartPolicyGenerationInputBuilder {
         crate::operation::start_policy_generation::builders::StartPolicyGenerationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartPolicyGenerationInput`](crate::operation::start_policy_generation::StartPolicyGenerationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartPolicyGenerationInputBuilder {
-    pub(crate) policy_generation_details:
-        ::std::option::Option<crate::types::PolicyGenerationDetails>,
+    pub(crate) policy_generation_details: ::std::option::Option<crate::types::PolicyGenerationDetails>,
     pub(crate) cloud_trail_details: ::std::option::Option<crate::types::CloudTrailDetails>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartPolicyGenerationInputBuilder {
     /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn policy_generation_details(
-        mut self,
-        input: crate::types::PolicyGenerationDetails,
-    ) -> Self {
+    pub fn policy_generation_details(mut self, input: crate::types::PolicyGenerationDetails) -> Self {
         self.policy_generation_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn set_policy_generation_details(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyGenerationDetails>,
-    ) -> Self {
+    pub fn set_policy_generation_details(mut self, input: ::std::option::Option<crate::types::PolicyGenerationDetails>) -> Self {
         self.policy_generation_details = input;
         self
     }
     /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn get_policy_generation_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::PolicyGenerationDetails> {
+    pub fn get_policy_generation_details(&self) -> &::std::option::Option<crate::types::PolicyGenerationDetails> {
         &self.policy_generation_details
     }
     /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
@@ -80,17 +65,12 @@ impl StartPolicyGenerationInputBuilder {
         self
     }
     /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
-    pub fn set_cloud_trail_details(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudTrailDetails>,
-    ) -> Self {
+    pub fn set_cloud_trail_details(mut self, input: ::std::option::Option<crate::types::CloudTrailDetails>) -> Self {
         self.cloud_trail_details = input;
         self
     }
     /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
-    pub fn get_cloud_trail_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudTrailDetails> {
+    pub fn get_cloud_trail_details(&self) -> &::std::option::Option<crate::types::CloudTrailDetails> {
         &self.cloud_trail_details
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
@@ -113,16 +93,12 @@ impl StartPolicyGenerationInputBuilder {
     /// Consumes the builder and constructs a [`StartPolicyGenerationInput`](crate::operation::start_policy_generation::StartPolicyGenerationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_policy_generation::StartPolicyGenerationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_policy_generation::StartPolicyGenerationInput {
-                policy_generation_details: self.policy_generation_details,
-                cloud_trail_details: self.cloud_trail_details,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_policy_generation::StartPolicyGenerationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_policy_generation::StartPolicyGenerationInput {
+            policy_generation_details: self.policy_generation_details,
+            cloud_trail_details: self.cloud_trail_details,
+            client_token: self.client_token,
+        })
     }
 }

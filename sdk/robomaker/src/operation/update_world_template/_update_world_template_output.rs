@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for UpdateWorldTemplateOutput {
 }
 impl UpdateWorldTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorldTemplateOutput`](crate::operation::update_world_template::UpdateWorldTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::update_world_template::builders::UpdateWorldTemplateOutputBuilder {
-        crate::operation::update_world_template::builders::UpdateWorldTemplateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_world_template::builders::UpdateWorldTemplateOutputBuilder {
+        crate::operation::update_world_template::builders::UpdateWorldTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorldTemplateOutput`](crate::operation::update_world_template::UpdateWorldTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorldTemplateOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -96,10 +92,7 @@ impl UpdateWorldTemplateOutputBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -113,10 +106,7 @@ impl UpdateWorldTemplateOutputBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }

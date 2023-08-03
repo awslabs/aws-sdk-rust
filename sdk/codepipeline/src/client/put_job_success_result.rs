@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`output_variables(HashMap<String, String>)`](crate::operation::put_job_success_result::builders::PutJobSuccessResultFluentBuilder::output_variables) / [`set_output_variables(Option<HashMap<String, String>>)`](crate::operation::put_job_success_result::builders::PutJobSuccessResultFluentBuilder::set_output_variables): <p>Key-value pairs produced as output by a job worker that can be made available to a downstream action configuration. <code>outputVariables</code> can be included only when there is no continuation token on the request.</p>
     /// - On success, responds with [`PutJobSuccessResultOutput`](crate::operation::put_job_success_result::PutJobSuccessResultOutput)
     /// - On failure, responds with [`SdkError<PutJobSuccessResultError>`](crate::operation::put_job_success_result::PutJobSuccessResultError)
-    pub fn put_job_success_result(
-        &self,
-    ) -> crate::operation::put_job_success_result::builders::PutJobSuccessResultFluentBuilder {
-        crate::operation::put_job_success_result::builders::PutJobSuccessResultFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_job_success_result(&self) -> crate::operation::put_job_success_result::builders::PutJobSuccessResultFluentBuilder {
+        crate::operation::put_job_success_result::builders::PutJobSuccessResultFluentBuilder::new(self.handle.clone())
     }
 }

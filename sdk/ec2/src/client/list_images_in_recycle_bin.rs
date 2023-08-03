@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`images(Option<Vec<ImageRecycleBinInfo>>)`](crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput::images): <p>Information about the AMIs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<ListImagesInRecycleBinError>`](crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinError)
-    pub fn list_images_in_recycle_bin(
-        &self,
-    ) -> crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinFluentBuilder
-    {
+    pub fn list_images_in_recycle_bin(&self) -> crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinFluentBuilder {
         crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinFluentBuilder::new(self.handle.clone())
     }
 }

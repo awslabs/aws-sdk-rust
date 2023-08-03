@@ -23,9 +23,7 @@ impl InventoryFilter {
 
 /// A builder for [`InventoryFilter`](crate::types::InventoryFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InventoryFilterBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl InventoryFilterBuilder {
     }
     /// Consumes the builder and constructs a [`InventoryFilter`](crate::types::InventoryFilter).
     pub fn build(self) -> crate::types::InventoryFilter {
-        crate::types::InventoryFilter {
-            prefix: self.prefix,
-        }
+        crate::types::InventoryFilter { prefix: self.prefix }
     }
 }

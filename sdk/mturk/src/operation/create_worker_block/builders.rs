@@ -10,10 +10,7 @@ impl CreateWorkerBlockInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_worker_block::CreateWorkerBlockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_worker_block::CreateWorkerBlockError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_worker_block::CreateWorkerBlockError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_worker_block();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateWorkerBlockFluentBuilder {
         }
     }
     /// Access the CreateWorkerBlock as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_worker_block::builders::CreateWorkerBlockInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_worker_block::builders::CreateWorkerBlockInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateWorkerBlockFluentBuilder {
             crate::operation::create_worker_block::CreateWorkerBlock,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_worker_block::CreateWorkerBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_worker_block::CreateWorkerBlockError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateWorkerBlockFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateWorkerBlockFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_worker_block::CreateWorkerBlockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_worker_block::CreateWorkerBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_worker_block::CreateWorkerBlockError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateWorkerBlockFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_worker_block::CreateWorkerBlockOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_worker_block::CreateWorkerBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_worker_block::CreateWorkerBlockError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateWorkerBlockFluentBuilder {
             crate::operation::create_worker_block::CreateWorkerBlock,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_worker_block::CreateWorkerBlockError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_worker_block::CreateWorkerBlockError>,
     > {
         self.customize_middleware().await
     }

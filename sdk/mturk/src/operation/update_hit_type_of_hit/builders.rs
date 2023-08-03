@@ -37,9 +37,7 @@ impl UpdateHITTypeOfHITFluentBuilder {
         }
     }
     /// Access the UpdateHITTypeOfHIT as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateHITTypeOfHITFluentBuilder {
             crate::operation::update_hit_type_of_hit::UpdateHITTypeOfHIT,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_hit_type_of_hit::UpdateHITTypeOfHITError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_hit_type_of_hit::UpdateHITTypeOfHITError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateHITTypeOfHITFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateHITTypeOfHITFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_hit_type_of_hit::UpdateHITTypeOfHITError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_hit_type_of_hit::UpdateHITTypeOfHITError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateHITTypeOfHITFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_hit_type_of_hit::UpdateHITTypeOfHITError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_hit_type_of_hit::UpdateHITTypeOfHITError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateHITTypeOfHITFluentBuilder {
             crate::operation::update_hit_type_of_hit::UpdateHITTypeOfHIT,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_hit_type_of_hit::UpdateHITTypeOfHITError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_hit_type_of_hit::UpdateHITTypeOfHITError>,
     > {
         self.customize_middleware().await
     }

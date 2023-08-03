@@ -74,15 +74,12 @@ impl AnalysisResult {
 
 /// A builder for [`AnalysisResult`](crate::types::AnalysisResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisResultBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) level: ::std::option::Option<crate::types::AnalysisResultLevel>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) locations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResultLocation>>,
+    pub(crate) locations: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResultLocation>>,
 }
 impl AnalysisResultBuilder {
     /// <p>The type of the analysis result. Analyses fall into the following types based on the validators used to generate the analysis result:</p>
@@ -145,10 +142,7 @@ impl AnalysisResultBuilder {
     /// <li> <p> <code>WARNING</code> - A warning result draws special attention to fields that might cause issues for your detector model. We recommend that you review warnings and take necessary actions before you use your detector model in production environments. Otherwise, the detector model might not work as expected.</p> </li>
     /// <li> <p> <code>ERROR</code> - An error result notifies you about a problem found in your detector model. You must fix all errors before you can publish your detector model.</p> </li>
     /// </ul>
-    pub fn set_level(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisResultLevel>,
-    ) -> Self {
+    pub fn set_level(mut self, input: ::std::option::Option<crate::types::AnalysisResultLevel>) -> Self {
         self.level = input;
         self
     }
@@ -187,17 +181,12 @@ impl AnalysisResultBuilder {
         self
     }
     /// <p>Contains one or more locations that you can use to locate the fields in your detector model that the analysis result references.</p>
-    pub fn set_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResultLocation>>,
-    ) -> Self {
+    pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResultLocation>>) -> Self {
         self.locations = input;
         self
     }
     /// <p>Contains one or more locations that you can use to locate the fields in your detector model that the analysis result references.</p>
-    pub fn get_locations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisResultLocation>> {
+    pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisResultLocation>> {
         &self.locations
     }
     /// Consumes the builder and constructs a [`AnalysisResult`](crate::types::AnalysisResult).

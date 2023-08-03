@@ -11,12 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdatePermissionGroupOutput`](crate::operation::update_permission_group::UpdatePermissionGroupOutput) with field(s):
     ///   - [`permission_group_id(Option<String>)`](crate::operation::update_permission_group::UpdatePermissionGroupOutput::permission_group_id): <p>The unique identifier for the updated permission group.</p>
     /// - On failure, responds with [`SdkError<UpdatePermissionGroupError>`](crate::operation::update_permission_group::UpdatePermissionGroupError)
-    pub fn update_permission_group(
-        &self,
-    ) -> crate::operation::update_permission_group::builders::UpdatePermissionGroupFluentBuilder
-    {
-        crate::operation::update_permission_group::builders::UpdatePermissionGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_permission_group(&self) -> crate::operation::update_permission_group::builders::UpdatePermissionGroupFluentBuilder {
+        crate::operation::update_permission_group::builders::UpdatePermissionGroupFluentBuilder::new(self.handle.clone())
     }
 }

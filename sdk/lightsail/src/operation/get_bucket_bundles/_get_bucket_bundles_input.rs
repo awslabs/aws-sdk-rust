@@ -15,17 +15,14 @@ impl GetBucketBundlesInput {
 }
 impl GetBucketBundlesInput {
     /// Creates a new builder-style object to manufacture [`GetBucketBundlesInput`](crate::operation::get_bucket_bundles::GetBucketBundlesInput).
-    pub fn builder() -> crate::operation::get_bucket_bundles::builders::GetBucketBundlesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_bucket_bundles::builders::GetBucketBundlesInputBuilder {
         crate::operation::get_bucket_bundles::builders::GetBucketBundlesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketBundlesInput`](crate::operation::get_bucket_bundles::GetBucketBundlesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketBundlesInputBuilder {
     pub(crate) include_inactive: ::std::option::Option<bool>,
 }
@@ -47,14 +44,9 @@ impl GetBucketBundlesInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketBundlesInput`](crate::operation::get_bucket_bundles::GetBucketBundlesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bucket_bundles::GetBucketBundlesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_bucket_bundles::GetBucketBundlesInput {
-                include_inactive: self.include_inactive,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_bucket_bundles::GetBucketBundlesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_bucket_bundles::GetBucketBundlesInput {
+            include_inactive: self.include_inactive,
+        })
     }
 }

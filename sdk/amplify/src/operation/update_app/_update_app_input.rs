@@ -21,9 +21,7 @@ pub struct UpdateAppInput {
     pub iam_service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The environment variables for an Amplify app. </p>
     #[doc(hidden)]
-    pub environment_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> Enables branch auto-building for an Amplify app. </p>
     #[doc(hidden)]
     pub enable_branch_auto_build: ::std::option::Option<bool>,
@@ -50,8 +48,7 @@ pub struct UpdateAppInput {
     pub enable_auto_branch_creation: ::std::option::Option<bool>,
     /// <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
     #[doc(hidden)]
-    pub auto_branch_creation_patterns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub auto_branch_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The automated branch creation configuration for an Amplify app. </p>
     #[doc(hidden)]
     pub auto_branch_creation_config: ::std::option::Option<crate::types::AutoBranchCreationConfig>,
@@ -94,11 +91,7 @@ impl UpdateAppInput {
         self.iam_service_role_arn.as_deref()
     }
     /// <p> The environment variables for an Amplify app. </p>
-    pub fn environment_variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
     /// <p> Enables branch auto-building for an Amplify app. </p>
@@ -138,9 +131,7 @@ impl UpdateAppInput {
         self.auto_branch_creation_patterns.as_deref()
     }
     /// <p> The automated branch creation configuration for an Amplify app. </p>
-    pub fn auto_branch_creation_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoBranchCreationConfig> {
+    pub fn auto_branch_creation_config(&self) -> ::std::option::Option<&crate::types::AutoBranchCreationConfig> {
         self.auto_branch_creation_config.as_ref()
     }
     /// <p> The name of the repository for an Amplify app </p>
@@ -173,27 +164,15 @@ impl ::std::fmt::Debug for UpdateAppInput {
         formatter.field("iam_service_role_arn", &self.iam_service_role_arn);
         formatter.field("environment_variables", &self.environment_variables);
         formatter.field("enable_branch_auto_build", &self.enable_branch_auto_build);
-        formatter.field(
-            "enable_branch_auto_deletion",
-            &self.enable_branch_auto_deletion,
-        );
+        formatter.field("enable_branch_auto_deletion", &self.enable_branch_auto_deletion);
         formatter.field("enable_basic_auth", &self.enable_basic_auth);
         formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_rules", &self.custom_rules);
         formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_headers", &self.custom_headers);
-        formatter.field(
-            "enable_auto_branch_creation",
-            &self.enable_auto_branch_creation,
-        );
-        formatter.field(
-            "auto_branch_creation_patterns",
-            &self.auto_branch_creation_patterns,
-        );
-        formatter.field(
-            "auto_branch_creation_config",
-            &self.auto_branch_creation_config,
-        );
+        formatter.field("enable_auto_branch_creation", &self.enable_auto_branch_creation);
+        formatter.field("auto_branch_creation_patterns", &self.auto_branch_creation_patterns);
+        formatter.field("auto_branch_creation_config", &self.auto_branch_creation_config);
         formatter.field("repository", &self.repository);
         formatter.field("oauth_token", &"*** Sensitive Data Redacted ***");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -216,9 +195,7 @@ pub struct UpdateAppInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<crate::types::Platform>,
     pub(crate) iam_service_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) environment_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) enable_branch_auto_build: ::std::option::Option<bool>,
     pub(crate) enable_branch_auto_deletion: ::std::option::Option<bool>,
     pub(crate) enable_basic_auth: ::std::option::Option<bool>,
@@ -227,10 +204,8 @@ pub struct UpdateAppInputBuilder {
     pub(crate) build_spec: ::std::option::Option<::std::string::String>,
     pub(crate) custom_headers: ::std::option::Option<::std::string::String>,
     pub(crate) enable_auto_branch_creation: ::std::option::Option<bool>,
-    pub(crate) auto_branch_creation_patterns:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) auto_branch_creation_config:
-        ::std::option::Option<crate::types::AutoBranchCreationConfig>,
+    pub(crate) auto_branch_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) auto_branch_creation_config: ::std::option::Option<crate::types::AutoBranchCreationConfig>,
     pub(crate) repository: ::std::option::Option<::std::string::String>,
     pub(crate) oauth_token: ::std::option::Option<::std::string::String>,
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
@@ -293,18 +268,12 @@ impl UpdateAppInputBuilder {
         &self.platform
     }
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
-    pub fn iam_service_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_service_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
-    pub fn set_iam_service_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iam_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_service_role_arn = input;
         self
     }
@@ -330,19 +299,13 @@ impl UpdateAppInputBuilder {
     /// <p> The environment variables for an Amplify app. </p>
     pub fn set_environment_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.environment_variables = input;
         self
     }
     /// <p> The environment variables for an Amplify app. </p>
-    pub fn get_environment_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
     /// <p> Enables branch auto-building for an Amplify app. </p>
@@ -388,18 +351,12 @@ impl UpdateAppInputBuilder {
         &self.enable_basic_auth
     }
     /// <p> The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn basic_auth_credentials(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn basic_auth_credentials(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.basic_auth_credentials = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn set_basic_auth_credentials(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_basic_auth_credentials(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.basic_auth_credentials = input;
         self
     }
@@ -419,17 +376,12 @@ impl UpdateAppInputBuilder {
         self
     }
     /// <p> The custom redirect and rewrite rules for an Amplify app. </p>
-    pub fn set_custom_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRule>>,
-    ) -> Self {
+    pub fn set_custom_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRule>>) -> Self {
         self.custom_rules = input;
         self
     }
     /// <p> The custom redirect and rewrite rules for an Amplify app. </p>
-    pub fn get_custom_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRule>> {
+    pub fn get_custom_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRule>> {
         &self.custom_rules
     }
     /// <p> The build specification (build spec) for an Amplify app. </p>
@@ -447,18 +399,12 @@ impl UpdateAppInputBuilder {
         &self.build_spec
     }
     /// <p>The custom HTTP headers for an Amplify app.</p>
-    pub fn custom_headers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_headers = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom HTTP headers for an Amplify app.</p>
-    pub fn set_custom_headers(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_headers(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_headers = input;
         self
     }
@@ -485,49 +431,33 @@ impl UpdateAppInputBuilder {
     /// To override the contents of this collection use [`set_auto_branch_creation_patterns`](Self::set_auto_branch_creation_patterns).
     ///
     /// <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
-    pub fn auto_branch_creation_patterns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_branch_creation_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.auto_branch_creation_patterns.unwrap_or_default();
         v.push(input.into());
         self.auto_branch_creation_patterns = ::std::option::Option::Some(v);
         self
     }
     /// <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
-    pub fn set_auto_branch_creation_patterns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_auto_branch_creation_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.auto_branch_creation_patterns = input;
         self
     }
     /// <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
-    pub fn get_auto_branch_creation_patterns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_auto_branch_creation_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.auto_branch_creation_patterns
     }
     /// <p> The automated branch creation configuration for an Amplify app. </p>
-    pub fn auto_branch_creation_config(
-        mut self,
-        input: crate::types::AutoBranchCreationConfig,
-    ) -> Self {
+    pub fn auto_branch_creation_config(mut self, input: crate::types::AutoBranchCreationConfig) -> Self {
         self.auto_branch_creation_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> The automated branch creation configuration for an Amplify app. </p>
-    pub fn set_auto_branch_creation_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoBranchCreationConfig>,
-    ) -> Self {
+    pub fn set_auto_branch_creation_config(mut self, input: ::std::option::Option<crate::types::AutoBranchCreationConfig>) -> Self {
         self.auto_branch_creation_config = input;
         self
     }
     /// <p> The automated branch creation configuration for an Amplify app. </p>
-    pub fn get_auto_branch_creation_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoBranchCreationConfig> {
+    pub fn get_auto_branch_creation_config(&self) -> &::std::option::Option<crate::types::AutoBranchCreationConfig> {
         &self.auto_branch_creation_config
     }
     /// <p> The name of the repository for an Amplify app </p>
@@ -594,12 +524,7 @@ impl UpdateAppInputBuilder {
         &self.access_token
     }
     /// Consumes the builder and constructs a [`UpdateAppInput`](crate::operation::update_app::UpdateAppInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_app::UpdateAppInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_app::UpdateAppInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_app::UpdateAppInput {
             app_id: self.app_id,
             name: self.name,
@@ -633,27 +558,15 @@ impl ::std::fmt::Debug for UpdateAppInputBuilder {
         formatter.field("iam_service_role_arn", &self.iam_service_role_arn);
         formatter.field("environment_variables", &self.environment_variables);
         formatter.field("enable_branch_auto_build", &self.enable_branch_auto_build);
-        formatter.field(
-            "enable_branch_auto_deletion",
-            &self.enable_branch_auto_deletion,
-        );
+        formatter.field("enable_branch_auto_deletion", &self.enable_branch_auto_deletion);
         formatter.field("enable_basic_auth", &self.enable_basic_auth);
         formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_rules", &self.custom_rules);
         formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_headers", &self.custom_headers);
-        formatter.field(
-            "enable_auto_branch_creation",
-            &self.enable_auto_branch_creation,
-        );
-        formatter.field(
-            "auto_branch_creation_patterns",
-            &self.auto_branch_creation_patterns,
-        );
-        formatter.field(
-            "auto_branch_creation_config",
-            &self.auto_branch_creation_config,
-        );
+        formatter.field("enable_auto_branch_creation", &self.enable_auto_branch_creation);
+        formatter.field("auto_branch_creation_patterns", &self.auto_branch_creation_patterns);
+        formatter.field("auto_branch_creation_config", &self.auto_branch_creation_config);
         formatter.field("repository", &self.repository);
         formatter.field("oauth_token", &"*** Sensitive Data Redacted ***");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");

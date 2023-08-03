@@ -5,8 +5,7 @@
 pub struct ListCalculatedAttributesForProfileOutput {
     /// <p>The list of calculated attributes.</p>
     #[doc(hidden)]
-    pub items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeForProfileItem>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeForProfileItem>>,
     /// <p>The pagination token from the previous call to ListCalculatedAttributesForProfile.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListCalculatedAttributesForProfileOutput {
 }
 impl ListCalculatedAttributesForProfileOutput {
     /// <p>The list of calculated attributes.</p>
-    pub fn items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListCalculatedAttributeForProfileItem]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::ListCalculatedAttributeForProfileItem]> {
         self.items.as_deref()
     }
     /// <p>The pagination token from the previous call to ListCalculatedAttributesForProfile.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCalculatedAttributesForProfileOut
 }
 impl ListCalculatedAttributesForProfileOutput {
     /// Creates a new builder-style object to manufacture [`ListCalculatedAttributesForProfileOutput`](crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileOutput).
-    pub fn builder() -> crate::operation::list_calculated_attributes_for_profile::builders::ListCalculatedAttributesForProfileOutputBuilder{
+    pub fn builder() -> crate::operation::list_calculated_attributes_for_profile::builders::ListCalculatedAttributesForProfileOutputBuilder {
         crate::operation::list_calculated_attributes_for_profile::builders::ListCalculatedAttributesForProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCalculatedAttributesForProfileOutput`](crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCalculatedAttributesForProfileOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeForProfileItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeForProfileItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,20 +54,12 @@ impl ListCalculatedAttributesForProfileOutputBuilder {
         self
     }
     /// <p>The list of calculated attributes.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ListCalculatedAttributeForProfileItem>,
-        >,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeForProfileItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The list of calculated attributes.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeForProfileItem>>
-    {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeForProfileItem>> {
         &self.items
     }
     /// <p>The pagination token from the previous call to ListCalculatedAttributesForProfile.</p>
@@ -100,12 +86,10 @@ impl ListCalculatedAttributesForProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCalculatedAttributesForProfileOutput`](crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileOutput).
-    pub fn build(self) -> crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileOutput{
+    pub fn build(self) -> crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileOutput {
         crate::operation::list_calculated_attributes_for_profile::ListCalculatedAttributesForProfileOutput {
-            items: self.items
-            ,
-            next_token: self.next_token
-            ,
+            items: self.items,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

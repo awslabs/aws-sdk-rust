@@ -27,34 +27,27 @@ impl ::std::fmt::Display for MaxNumberOfConfigRulesExceededException {
     }
 }
 impl ::std::error::Error for MaxNumberOfConfigRulesExceededException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::MaxNumberOfConfigRulesExceededException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::MaxNumberOfConfigRulesExceededException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for MaxNumberOfConfigRulesExceededException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MaxNumberOfConfigRulesExceededException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl MaxNumberOfConfigRulesExceededException {
     /// Creates a new builder-style object to manufacture [`MaxNumberOfConfigRulesExceededException`](crate::types::error::MaxNumberOfConfigRulesExceededException).
-    pub fn builder() -> crate::types::error::builders::MaxNumberOfConfigRulesExceededExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::MaxNumberOfConfigRulesExceededExceptionBuilder {
         crate::types::error::builders::MaxNumberOfConfigRulesExceededExceptionBuilder::default()
     }
 }
 
 /// A builder for [`MaxNumberOfConfigRulesExceededException`](crate::types::error::MaxNumberOfConfigRulesExceededException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MaxNumberOfConfigRulesExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl MaxNumberOfConfigRulesExceededExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

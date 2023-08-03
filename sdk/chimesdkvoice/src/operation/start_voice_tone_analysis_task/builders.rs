@@ -28,7 +28,7 @@ impl StartVoiceToneAnalysisTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartVoiceToneAnalysisTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_voice_tone_analysis_task::builders::StartVoiceToneAnalysisTaskInputBuilder,
+    inner: crate::operation::start_voice_tone_analysis_task::builders::StartVoiceToneAnalysisTaskInputBuilder,
 }
 impl StartVoiceToneAnalysisTaskFluentBuilder {
     /// Creates a new `StartVoiceToneAnalysisTask`.
@@ -39,7 +39,7 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
         }
     }
     /// Access the StartVoiceToneAnalysisTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_voice_tone_analysis_task::builders::StartVoiceToneAnalysisTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_voice_tone_analysis_task::builders::StartVoiceToneAnalysisTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
             crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
             crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
@@ -143,18 +126,12 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
         self.inner.get_voice_connector_id()
     }
     /// <p>The transaction ID.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
     /// <p>The transaction ID.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
@@ -168,10 +145,7 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
         self
     }
     /// <p>The language code.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
@@ -180,18 +154,12 @@ impl StartVoiceToneAnalysisTaskFluentBuilder {
         self.inner.get_language_code()
     }
     /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

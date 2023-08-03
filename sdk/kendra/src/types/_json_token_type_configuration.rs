@@ -30,27 +30,19 @@ impl JsonTokenTypeConfiguration {
 
 /// A builder for [`JsonTokenTypeConfiguration`](crate::types::JsonTokenTypeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JsonTokenTypeConfigurationBuilder {
     pub(crate) user_name_attribute_field: ::std::option::Option<::std::string::String>,
     pub(crate) group_attribute_field: ::std::option::Option<::std::string::String>,
 }
 impl JsonTokenTypeConfigurationBuilder {
     /// <p>The user name attribute field.</p>
-    pub fn user_name_attribute_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_name_attribute_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name_attribute_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name attribute field.</p>
-    pub fn set_user_name_attribute_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_name_attribute_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name_attribute_field = input;
         self
     }
@@ -59,18 +51,12 @@ impl JsonTokenTypeConfigurationBuilder {
         &self.user_name_attribute_field
     }
     /// <p>The group attribute field.</p>
-    pub fn group_attribute_field(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_attribute_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_attribute_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The group attribute field.</p>
-    pub fn set_group_attribute_field(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_attribute_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_attribute_field = input;
         self
     }

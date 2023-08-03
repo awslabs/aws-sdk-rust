@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`ReceiveMessageOutput`](crate::operation::receive_message::ReceiveMessageOutput) with field(s):
     ///   - [`messages(Option<Vec<Message>>)`](crate::operation::receive_message::ReceiveMessageOutput::messages): <p>A list of messages.</p>
     /// - On failure, responds with [`SdkError<ReceiveMessageError>`](crate::operation::receive_message::ReceiveMessageError)
-    pub fn receive_message(
-        &self,
-    ) -> crate::operation::receive_message::builders::ReceiveMessageFluentBuilder {
-        crate::operation::receive_message::builders::ReceiveMessageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn receive_message(&self) -> crate::operation::receive_message::builders::ReceiveMessageFluentBuilder {
+        crate::operation::receive_message::builders::ReceiveMessageFluentBuilder::new(self.handle.clone())
     }
 }

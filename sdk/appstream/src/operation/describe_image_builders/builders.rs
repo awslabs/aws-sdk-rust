@@ -37,10 +37,7 @@ impl DescribeImageBuildersFluentBuilder {
         }
     }
     /// Access the DescribeImageBuilders as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_image_builders::builders::DescribeImageBuildersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_image_builders::builders::DescribeImageBuildersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeImageBuildersFluentBuilder {
             crate::operation::describe_image_builders::DescribeImageBuilders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_builders::DescribeImageBuildersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_builders::DescribeImageBuildersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeImageBuildersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeImageBuildersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_builders::DescribeImageBuildersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_builders::DescribeImageBuildersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_builders::DescribeImageBuildersError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeImageBuildersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_builders::DescribeImageBuildersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_builders::DescribeImageBuildersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_builders::DescribeImageBuildersError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeImageBuildersFluentBuilder {
             crate::operation::describe_image_builders::DescribeImageBuilders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_builders::DescribeImageBuildersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_builders::DescribeImageBuildersError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +119,7 @@ impl DescribeImageBuildersFluentBuilder {
         self
     }
     /// <p>The names of the image builders to describe.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }

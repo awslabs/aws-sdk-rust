@@ -20,9 +20,7 @@ impl ExportPreferences {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`Ec2RecommendationsPreferences`](crate::types::ExportPreferences::Ec2RecommendationsPreferences), extracting the inner [`Ec2RecommendationsExportPreferences`](crate::types::Ec2RecommendationsExportPreferences).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ec2_recommendations_preferences(
-        &self,
-    ) -> ::std::result::Result<&crate::types::Ec2RecommendationsExportPreferences, &Self> {
+    pub fn as_ec2_recommendations_preferences(&self) -> ::std::result::Result<&crate::types::Ec2RecommendationsExportPreferences, &Self> {
         if let ExportPreferences::Ec2RecommendationsPreferences(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

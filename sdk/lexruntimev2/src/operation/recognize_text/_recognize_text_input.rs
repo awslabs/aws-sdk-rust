@@ -24,9 +24,7 @@ pub struct RecognizeTextInput {
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     #[doc(hidden)]
-    pub request_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RecognizeTextInput {
     /// <p>The identifier of the bot that processes the request.</p>
@@ -55,11 +53,7 @@ impl RecognizeTextInput {
     }
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-    pub fn request_attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn request_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.request_attributes.as_ref()
     }
 }
@@ -93,9 +87,7 @@ pub struct RecognizeTextInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) session_state: ::std::option::Option<crate::types::SessionState>,
-    pub(crate) request_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RecognizeTextInputBuilder {
     /// <p>The identifier of the bot that processes the request.</p>
@@ -174,10 +166,7 @@ impl RecognizeTextInputBuilder {
         self
     }
     /// <p>The current state of the dialog between the user and the bot.</p>
-    pub fn set_session_state(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionState>,
-    ) -> Self {
+    pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
         self.session_state = input;
         self
     }
@@ -205,29 +194,20 @@ impl RecognizeTextInputBuilder {
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub fn set_request_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.request_attributes = input;
         self
     }
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-    pub fn get_request_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.request_attributes
     }
     /// Consumes the builder and constructs a [`RecognizeTextInput`](crate::operation::recognize_text::RecognizeTextInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::recognize_text::RecognizeTextInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::recognize_text::RecognizeTextInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::recognize_text::RecognizeTextInput {
             bot_id: self.bot_id,
             bot_alias_id: self.bot_alias_id,

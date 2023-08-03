@@ -22,18 +22,14 @@ impl GetParametersForExportInput {
 }
 impl GetParametersForExportInput {
     /// Creates a new builder-style object to manufacture [`GetParametersForExportInput`](crate::operation::get_parameters_for_export::GetParametersForExportInput).
-    pub fn builder(
-    ) -> crate::operation::get_parameters_for_export::builders::GetParametersForExportInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_parameters_for_export::builders::GetParametersForExportInputBuilder {
         crate::operation::get_parameters_for_export::builders::GetParametersForExportInputBuilder::default()
     }
 }
 
 /// A builder for [`GetParametersForExportInput`](crate::operation::get_parameters_for_export::GetParametersForExportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetParametersForExportInputBuilder {
     pub(crate) key_material_type: ::std::option::Option<crate::types::KeyMaterialType>,
     pub(crate) signing_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
@@ -45,10 +41,7 @@ impl GetParametersForExportInputBuilder {
         self
     }
     /// <p>The key block format type (for example, TR-34 or TR-31) to use during key material export. Export token is only required for a TR-34 key export, <code>TR34_KEY_BLOCK</code>. Export token is not required for TR-31 key export.</p>
-    pub fn set_key_material_type(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyMaterialType>,
-    ) -> Self {
+    pub fn set_key_material_type(mut self, input: ::std::option::Option<crate::types::KeyMaterialType>) -> Self {
         self.key_material_type = input;
         self
     }
@@ -62,10 +55,7 @@ impl GetParametersForExportInputBuilder {
         self
     }
     /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
-    pub fn set_signing_key_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyAlgorithm>,
-    ) -> Self {
+    pub fn set_signing_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
         self.signing_key_algorithm = input;
         self
     }
@@ -80,11 +70,9 @@ impl GetParametersForExportInputBuilder {
         crate::operation::get_parameters_for_export::GetParametersForExportInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_parameters_for_export::GetParametersForExportInput {
-                key_material_type: self.key_material_type,
-                signing_key_algorithm: self.signing_key_algorithm,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_parameters_for_export::GetParametersForExportInput {
+            key_material_type: self.key_material_type,
+            signing_key_algorithm: self.signing_key_algorithm,
+        })
     }
 }

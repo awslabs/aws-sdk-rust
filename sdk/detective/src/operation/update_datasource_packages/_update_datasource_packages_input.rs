@@ -8,8 +8,7 @@ pub struct UpdateDatasourcePackagesInput {
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>The data source package start for the behavior graph.</p>
     #[doc(hidden)]
-    pub datasource_packages:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>,
+    pub datasource_packages: ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>,
 }
 impl UpdateDatasourcePackagesInput {
     /// <p>The ARN of the behavior graph.</p>
@@ -23,22 +22,17 @@ impl UpdateDatasourcePackagesInput {
 }
 impl UpdateDatasourcePackagesInput {
     /// Creates a new builder-style object to manufacture [`UpdateDatasourcePackagesInput`](crate::operation::update_datasource_packages::UpdateDatasourcePackagesInput).
-    pub fn builder(
-    ) -> crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesInputBuilder {
         crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDatasourcePackagesInput`](crate::operation::update_datasource_packages::UpdateDatasourcePackagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatasourcePackagesInputBuilder {
     pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) datasource_packages:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>,
+    pub(crate) datasource_packages: ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>,
 }
 impl UpdateDatasourcePackagesInputBuilder {
     /// <p>The ARN of the behavior graph.</p>
@@ -67,17 +61,12 @@ impl UpdateDatasourcePackagesInputBuilder {
         self
     }
     /// <p>The data source package start for the behavior graph.</p>
-    pub fn set_datasource_packages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>,
-    ) -> Self {
+    pub fn set_datasource_packages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>>) -> Self {
         self.datasource_packages = input;
         self
     }
     /// <p>The data source package start for the behavior graph.</p>
-    pub fn get_datasource_packages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>> {
+    pub fn get_datasource_packages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>> {
         &self.datasource_packages
     }
     /// Consumes the builder and constructs a [`UpdateDatasourcePackagesInput`](crate::operation::update_datasource_packages::UpdateDatasourcePackagesInput).
@@ -87,11 +76,9 @@ impl UpdateDatasourcePackagesInputBuilder {
         crate::operation::update_datasource_packages::UpdateDatasourcePackagesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_datasource_packages::UpdateDatasourcePackagesInput {
-                graph_arn: self.graph_arn,
-                datasource_packages: self.datasource_packages,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_datasource_packages::UpdateDatasourcePackagesInput {
+            graph_arn: self.graph_arn,
+            datasource_packages: self.datasource_packages,
+        })
     }
 }

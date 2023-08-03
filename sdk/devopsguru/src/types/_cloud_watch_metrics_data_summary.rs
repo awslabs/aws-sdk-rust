@@ -6,23 +6,18 @@
 pub struct CloudWatchMetricsDataSummary {
     /// <p>This is a list of Amazon CloudWatch metric values at given timestamp.</p>
     #[doc(hidden)]
-    pub timestamp_metric_value_pair_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::TimestampMetricValuePair>>,
+    pub timestamp_metric_value_pair_list: ::std::option::Option<::std::vec::Vec<crate::types::TimestampMetricValuePair>>,
     /// <p>This is an enum of the status showing whether the metric value pair list has partial or complete data, or if there was an error.</p>
     #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::CloudWatchMetricDataStatusCode>,
 }
 impl CloudWatchMetricsDataSummary {
     /// <p>This is a list of Amazon CloudWatch metric values at given timestamp.</p>
-    pub fn timestamp_metric_value_pair_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TimestampMetricValuePair]> {
+    pub fn timestamp_metric_value_pair_list(&self) -> ::std::option::Option<&[crate::types::TimestampMetricValuePair]> {
         self.timestamp_metric_value_pair_list.as_deref()
     }
     /// <p>This is an enum of the status showing whether the metric value pair list has partial or complete data, or if there was an error.</p>
-    pub fn status_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchMetricDataStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<&crate::types::CloudWatchMetricDataStatusCode> {
         self.status_code.as_ref()
     }
 }
@@ -35,12 +30,9 @@ impl CloudWatchMetricsDataSummary {
 
 /// A builder for [`CloudWatchMetricsDataSummary`](crate::types::CloudWatchMetricsDataSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchMetricsDataSummaryBuilder {
-    pub(crate) timestamp_metric_value_pair_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::TimestampMetricValuePair>>,
+    pub(crate) timestamp_metric_value_pair_list: ::std::option::Option<::std::vec::Vec<crate::types::TimestampMetricValuePair>>,
     pub(crate) status_code: ::std::option::Option<crate::types::CloudWatchMetricDataStatusCode>,
 }
 impl CloudWatchMetricsDataSummaryBuilder {
@@ -49,10 +41,7 @@ impl CloudWatchMetricsDataSummaryBuilder {
     /// To override the contents of this collection use [`set_timestamp_metric_value_pair_list`](Self::set_timestamp_metric_value_pair_list).
     ///
     /// <p>This is a list of Amazon CloudWatch metric values at given timestamp.</p>
-    pub fn timestamp_metric_value_pair_list(
-        mut self,
-        input: crate::types::TimestampMetricValuePair,
-    ) -> Self {
+    pub fn timestamp_metric_value_pair_list(mut self, input: crate::types::TimestampMetricValuePair) -> Self {
         let mut v = self.timestamp_metric_value_pair_list.unwrap_or_default();
         v.push(input);
         self.timestamp_metric_value_pair_list = ::std::option::Option::Some(v);
@@ -67,9 +56,7 @@ impl CloudWatchMetricsDataSummaryBuilder {
         self
     }
     /// <p>This is a list of Amazon CloudWatch metric values at given timestamp.</p>
-    pub fn get_timestamp_metric_value_pair_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimestampMetricValuePair>> {
+    pub fn get_timestamp_metric_value_pair_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TimestampMetricValuePair>> {
         &self.timestamp_metric_value_pair_list
     }
     /// <p>This is an enum of the status showing whether the metric value pair list has partial or complete data, or if there was an error.</p>
@@ -78,17 +65,12 @@ impl CloudWatchMetricsDataSummaryBuilder {
         self
     }
     /// <p>This is an enum of the status showing whether the metric value pair list has partial or complete data, or if there was an error.</p>
-    pub fn set_status_code(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchMetricDataStatusCode>,
-    ) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::CloudWatchMetricDataStatusCode>) -> Self {
         self.status_code = input;
         self
     }
     /// <p>This is an enum of the status showing whether the metric value pair list has partial or complete data, or if there was an error.</p>
-    pub fn get_status_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchMetricDataStatusCode> {
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::CloudWatchMetricDataStatusCode> {
         &self.status_code
     }
     /// Consumes the builder and constructs a [`CloudWatchMetricsDataSummary`](crate::types::CloudWatchMetricsDataSummary).

@@ -48,10 +48,7 @@ impl ::std::fmt::Debug for LaunchProfileInitializationScript {
         formatter.field("script", &"*** Sensitive Data Redacted ***");
         formatter.field("studio_component_id", &self.studio_component_id);
         formatter.field("studio_component_name", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "secure_initialization_role_arn",
-            &self.secure_initialization_role_arn,
-        );
+        formatter.field("secure_initialization_role_arn", &self.secure_initialization_role_arn);
         formatter.field("runtime_role_arn", &self.runtime_role_arn);
         formatter.finish()
     }
@@ -89,18 +86,12 @@ impl LaunchProfileInitializationScriptBuilder {
         &self.script
     }
     /// <p>The unique identifier for a studio component resource.</p>
-    pub fn studio_component_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_component_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for a studio component resource.</p>
-    pub fn set_studio_component_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_studio_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_component_id = input;
         self
     }
@@ -109,18 +100,12 @@ impl LaunchProfileInitializationScriptBuilder {
         &self.studio_component_id
     }
     /// <p>The name for the studio component.</p>
-    pub fn studio_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the studio component.</p>
-    pub fn set_studio_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_studio_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_component_name = input;
         self
     }
@@ -129,40 +114,26 @@ impl LaunchProfileInitializationScriptBuilder {
         &self.studio_component_name
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    pub fn secure_initialization_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secure_initialization_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secure_initialization_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    pub fn set_secure_initialization_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secure_initialization_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secure_initialization_role_arn = input;
         self
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    pub fn get_secure_initialization_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_secure_initialization_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secure_initialization_role_arn
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    pub fn runtime_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn runtime_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    pub fn set_runtime_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_runtime_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime_role_arn = input;
         self
     }
@@ -187,10 +158,7 @@ impl ::std::fmt::Debug for LaunchProfileInitializationScriptBuilder {
         formatter.field("script", &"*** Sensitive Data Redacted ***");
         formatter.field("studio_component_id", &self.studio_component_id);
         formatter.field("studio_component_name", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "secure_initialization_role_arn",
-            &self.secure_initialization_role_arn,
-        );
+        formatter.field("secure_initialization_role_arn", &self.secure_initialization_role_arn);
         formatter.field("runtime_role_arn", &self.runtime_role_arn);
         formatter.finish()
     }

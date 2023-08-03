@@ -35,9 +35,7 @@ impl ListInvitationsOutput {
 
 /// A builder for [`ListInvitationsOutput`](crate::operation::list_invitations::ListInvitationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInvitationsOutputBuilder {
     pub(crate) invitations: ::std::option::Option<::std::vec::Vec<crate::types::Invitation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListInvitationsOutputBuilder {
         self
     }
     /// <p>A list of invitation descriptions.</p>
-    pub fn set_invitations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Invitation>>,
-    ) -> Self {
+    pub fn set_invitations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Invitation>>) -> Self {
         self.invitations = input;
         self
     }
     /// <p>A list of invitation descriptions.</p>
-    pub fn get_invitations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Invitation>> {
+    pub fn get_invitations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Invitation>> {
         &self.invitations
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>

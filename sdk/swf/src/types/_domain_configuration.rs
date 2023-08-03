@@ -23,42 +23,29 @@ impl DomainConfiguration {
 
 /// A builder for [`DomainConfiguration`](crate::types::DomainConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainConfigurationBuilder {
-    pub(crate) workflow_execution_retention_period_in_days:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) workflow_execution_retention_period_in_days: ::std::option::Option<::std::string::String>,
 }
 impl DomainConfigurationBuilder {
     /// <p>The retention period for workflow executions in this domain.</p>
-    pub fn workflow_execution_retention_period_in_days(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.workflow_execution_retention_period_in_days =
-            ::std::option::Option::Some(input.into());
+    pub fn workflow_execution_retention_period_in_days(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workflow_execution_retention_period_in_days = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The retention period for workflow executions in this domain.</p>
-    pub fn set_workflow_execution_retention_period_in_days(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_execution_retention_period_in_days(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_execution_retention_period_in_days = input;
         self
     }
     /// <p>The retention period for workflow executions in this domain.</p>
-    pub fn get_workflow_execution_retention_period_in_days(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_workflow_execution_retention_period_in_days(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_execution_retention_period_in_days
     }
     /// Consumes the builder and constructs a [`DomainConfiguration`](crate::types::DomainConfiguration).
     pub fn build(self) -> crate::types::DomainConfiguration {
         crate::types::DomainConfiguration {
-            workflow_execution_retention_period_in_days: self
-                .workflow_execution_retention_period_in_days,
+            workflow_execution_retention_period_in_days: self.workflow_execution_retention_period_in_days,
         }
     }
 }

@@ -30,7 +30,7 @@ impl UploadSigningCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UploadSigningCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::upload_signing_certificate::builders::UploadSigningCertificateInputBuilder,
+    inner: crate::operation::upload_signing_certificate::builders::UploadSigningCertificateInputBuilder,
 }
 impl UploadSigningCertificateFluentBuilder {
     /// Creates a new `UploadSigningCertificate`.
@@ -41,10 +41,7 @@ impl UploadSigningCertificateFluentBuilder {
         }
     }
     /// Access the UploadSigningCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::upload_signing_certificate::builders::UploadSigningCertificateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::upload_signing_certificate::builders::UploadSigningCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl UploadSigningCertificateFluentBuilder {
             crate::operation::upload_signing_certificate::UploadSigningCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_signing_certificate::UploadSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_signing_certificate::UploadSigningCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl UploadSigningCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl UploadSigningCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_signing_certificate::UploadSigningCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_signing_certificate::UploadSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_signing_certificate::UploadSigningCertificateError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl UploadSigningCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_signing_certificate::UploadSigningCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_signing_certificate::UploadSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_signing_certificate::UploadSigningCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +109,7 @@ impl UploadSigningCertificateFluentBuilder {
             crate::operation::upload_signing_certificate::UploadSigningCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_signing_certificate::UploadSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_signing_certificate::UploadSigningCertificateError>,
     > {
         self.customize_middleware().await
     }
@@ -151,10 +137,7 @@ impl UploadSigningCertificateFluentBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    pub fn certificate_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_body(input.into());
         self
     }
@@ -165,10 +148,7 @@ impl UploadSigningCertificateFluentBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    pub fn set_certificate_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_body(input);
         self
     }

@@ -44,22 +44,17 @@ impl ::aws_http::request_id::RequestId for GetCurrentMetricDataOutput {
 }
 impl GetCurrentMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`GetCurrentMetricDataOutput`](crate::operation::get_current_metric_data::GetCurrentMetricDataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_current_metric_data::builders::GetCurrentMetricDataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_current_metric_data::builders::GetCurrentMetricDataOutputBuilder {
         crate::operation::get_current_metric_data::builders::GetCurrentMetricDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCurrentMetricDataOutput`](crate::operation::get_current_metric_data::GetCurrentMetricDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCurrentMetricDataOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) metric_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricResult>>,
+    pub(crate) metric_results: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricResult>>,
     pub(crate) data_snapshot_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -94,17 +89,12 @@ impl GetCurrentMetricDataOutputBuilder {
         self
     }
     /// <p>Information about the real-time metrics.</p>
-    pub fn set_metric_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricResult>>,
-    ) -> Self {
+    pub fn set_metric_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricResult>>) -> Self {
         self.metric_results = input;
         self
     }
     /// <p>Information about the real-time metrics.</p>
-    pub fn get_metric_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricResult>> {
+    pub fn get_metric_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricResult>> {
         &self.metric_results
     }
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
@@ -113,10 +103,7 @@ impl GetCurrentMetricDataOutputBuilder {
         self
     }
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
-    pub fn set_data_snapshot_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_data_snapshot_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.data_snapshot_time = input;
         self
     }

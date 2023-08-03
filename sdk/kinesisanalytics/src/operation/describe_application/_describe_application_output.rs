@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeApplicationOutput {
 }
 impl DescribeApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_application::builders::DescribeApplicationOutputBuilder {
-        crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_application::builders::DescribeApplicationOutputBuilder {
+        crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationOutputBuilder {
     pub(crate) application_detail: ::std::option::Option<crate::types::ApplicationDetail>,
     _request_id: Option<String>,
@@ -45,17 +41,12 @@ impl DescribeApplicationOutputBuilder {
         self
     }
     /// <p>Provides a description of the application, such as the application Amazon Resource Name (ARN), status, latest version, and input and output configuration details.</p>
-    pub fn set_application_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationDetail>,
-    ) -> Self {
+    pub fn set_application_detail(mut self, input: ::std::option::Option<crate::types::ApplicationDetail>) -> Self {
         self.application_detail = input;
         self
     }
     /// <p>Provides a description of the application, such as the application Amazon Resource Name (ARN), status, latest version, and input and output configuration details.</p>
-    pub fn get_application_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationDetail> {
+    pub fn get_application_detail(&self) -> &::std::option::Option<crate::types::ApplicationDetail> {
         &self.application_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

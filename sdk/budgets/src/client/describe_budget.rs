@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeBudgetOutput`](crate::operation::describe_budget::DescribeBudgetOutput) with field(s):
     ///   - [`budget(Option<Budget>)`](crate::operation::describe_budget::DescribeBudgetOutput::budget): <p>The description of the budget.</p>
     /// - On failure, responds with [`SdkError<DescribeBudgetError>`](crate::operation::describe_budget::DescribeBudgetError)
-    pub fn describe_budget(
-        &self,
-    ) -> crate::operation::describe_budget::builders::DescribeBudgetFluentBuilder {
-        crate::operation::describe_budget::builders::DescribeBudgetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_budget(&self) -> crate::operation::describe_budget::builders::DescribeBudgetFluentBuilder {
+        crate::operation::describe_budget::builders::DescribeBudgetFluentBuilder::new(self.handle.clone())
     }
 }

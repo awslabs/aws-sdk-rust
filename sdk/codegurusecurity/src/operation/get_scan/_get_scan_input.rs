@@ -29,9 +29,7 @@ impl GetScanInput {
 
 /// A builder for [`GetScanInput`](crate::operation::get_scan::GetScanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetScanInputBuilder {
     pub(crate) scan_name: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetScanInputBuilder {
         &self.run_id
     }
     /// Consumes the builder and constructs a [`GetScanInput`](crate::operation::get_scan::GetScanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_scan::GetScanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_scan::GetScanInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_scan::GetScanInput {
             scan_name: self.scan_name,
             run_id: self.run_id,

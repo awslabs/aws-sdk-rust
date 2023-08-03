@@ -10,10 +10,7 @@ impl CreateLocationNfsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_location_nfs::CreateLocationNfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_nfs::CreateLocationNfsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_nfs::CreateLocationNfsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_location_nfs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateLocationNfsFluentBuilder {
         }
     }
     /// Access the CreateLocationNfs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_location_nfs::builders::CreateLocationNfsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_location_nfs::builders::CreateLocationNfsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateLocationNfsFluentBuilder {
             crate::operation::create_location_nfs::CreateLocationNfs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_nfs::CreateLocationNfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_nfs::CreateLocationNfsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateLocationNfsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateLocationNfsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_nfs::CreateLocationNfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_nfs::CreateLocationNfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_nfs::CreateLocationNfsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateLocationNfsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_nfs::CreateLocationNfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_nfs::CreateLocationNfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_nfs::CreateLocationNfsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateLocationNfsFluentBuilder {
             crate::operation::create_location_nfs::CreateLocationNfs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_location_nfs::CreateLocationNfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_location_nfs::CreateLocationNfsError>,
     > {
         self.customize_middleware().await
     }
@@ -149,10 +133,7 @@ impl CreateLocationNfsFluentBuilder {
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
     /// <p>You must specify be an IP version 4 address or Domain Name System (DNS)-compliant name.</p>
     /// </note>
-    pub fn server_hostname(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_hostname(input.into());
         self
     }
@@ -160,10 +141,7 @@ impl CreateLocationNfsFluentBuilder {
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
     /// <p>You must specify be an IP version 4 address or Domain Name System (DNS)-compliant name.</p>
     /// </note>
-    pub fn set_server_hostname(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_hostname(input);
         self
     }
@@ -182,10 +160,7 @@ impl CreateLocationNfsFluentBuilder {
     }
     /// <p>Specifies the Amazon Resource Names (ARNs) of agents that DataSync uses to connect to your NFS file server. </p>
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
-    pub fn set_on_prem_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OnPremConfig>,
-    ) -> Self {
+    pub fn set_on_prem_config(mut self, input: ::std::option::Option<crate::types::OnPremConfig>) -> Self {
         self.inner = self.inner.set_on_prem_config(input);
         self
     }
@@ -200,10 +175,7 @@ impl CreateLocationNfsFluentBuilder {
         self
     }
     /// <p>Specifies the mount options that DataSync can use to mount your NFS share.</p>
-    pub fn set_mount_options(
-        mut self,
-        input: ::std::option::Option<crate::types::NfsMountOptions>,
-    ) -> Self {
+    pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::NfsMountOptions>) -> Self {
         self.inner = self.inner.set_mount_options(input);
         self
     }
@@ -221,10 +193,7 @@ impl CreateLocationNfsFluentBuilder {
         self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

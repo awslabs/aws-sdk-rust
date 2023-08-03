@@ -38,13 +38,7 @@
 /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked, the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NielsenSourceWatermarkStatusType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for NielsenSourceWatermarkStatusType {
         match s {
             "CLEAN" => NielsenSourceWatermarkStatusType::Clean,
             "WATERMARKED" => NielsenSourceWatermarkStatusType::Watermarked,
-            other => NielsenSourceWatermarkStatusType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => NielsenSourceWatermarkStatusType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

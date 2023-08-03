@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateInstanceExportTaskOutput {
 }
 impl CreateInstanceExportTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateInstanceExportTaskOutput`](crate::operation::create_instance_export_task::CreateInstanceExportTaskOutput).
-    pub fn builder() -> crate::operation::create_instance_export_task::builders::CreateInstanceExportTaskOutputBuilder{
+    pub fn builder() -> crate::operation::create_instance_export_task::builders::CreateInstanceExportTaskOutputBuilder {
         crate::operation::create_instance_export_task::builders::CreateInstanceExportTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInstanceExportTaskOutput`](crate::operation::create_instance_export_task::CreateInstanceExportTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInstanceExportTaskOutputBuilder {
     pub(crate) export_task: ::std::option::Option<crate::types::ExportTask>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CreateInstanceExportTaskOutputBuilder {
         self
     }
     /// <p>Information about the export instance task.</p>
-    pub fn set_export_task(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportTask>,
-    ) -> Self {
+    pub fn set_export_task(mut self, input: ::std::option::Option<crate::types::ExportTask>) -> Self {
         self.export_task = input;
         self
     }
@@ -63,9 +58,7 @@ impl CreateInstanceExportTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateInstanceExportTaskOutput`](crate::operation::create_instance_export_task::CreateInstanceExportTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_instance_export_task::CreateInstanceExportTaskOutput {
+    pub fn build(self) -> crate::operation::create_instance_export_task::CreateInstanceExportTaskOutput {
         crate::operation::create_instance_export_task::CreateInstanceExportTaskOutput {
             export_task: self.export_task,
             _request_id: self._request_id,

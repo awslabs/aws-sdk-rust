@@ -26,7 +26,7 @@ impl ListEvaluationFormVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEvaluationFormVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_evaluation_form_versions::builders::ListEvaluationFormVersionsInputBuilder,
+    inner: crate::operation::list_evaluation_form_versions::builders::ListEvaluationFormVersionsInputBuilder,
 }
 impl ListEvaluationFormVersionsFluentBuilder {
     /// Creates a new `ListEvaluationFormVersions`.
@@ -37,7 +37,7 @@ impl ListEvaluationFormVersionsFluentBuilder {
         }
     }
     /// Access the ListEvaluationFormVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_evaluation_form_versions::builders::ListEvaluationFormVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_evaluation_form_versions::builders::ListEvaluationFormVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListEvaluationFormVersionsFluentBuilder {
             crate::operation::list_evaluation_form_versions::ListEvaluationFormVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_evaluation_form_versions::ListEvaluationFormVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_evaluation_form_versions::ListEvaluationFormVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListEvaluationFormVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListEvaluationFormVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_evaluation_form_versions::ListEvaluationFormVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_evaluation_form_versions::ListEvaluationFormVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_evaluation_form_versions::ListEvaluationFormVersionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListEvaluationFormVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_evaluation_form_versions::ListEvaluationFormVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_evaluation_form_versions::ListEvaluationFormVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_evaluation_form_versions::ListEvaluationFormVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListEvaluationFormVersionsFluentBuilder {
             crate::operation::list_evaluation_form_versions::ListEvaluationFormVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_evaluation_form_versions::ListEvaluationFormVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_evaluation_form_versions::ListEvaluationFormVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_evaluation_form_versions::paginator::ListEvaluationFormVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_evaluation_form_versions::paginator::ListEvaluationFormVersionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_evaluation_form_versions::paginator::ListEvaluationFormVersionsPaginator {
         crate::operation::list_evaluation_form_versions::paginator::ListEvaluationFormVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -141,18 +130,12 @@ impl ListEvaluationFormVersionsFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evaluation_form_id(input.into());
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evaluation_form_id(input);
         self
     }

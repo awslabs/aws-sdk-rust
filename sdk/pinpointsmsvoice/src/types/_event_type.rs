@@ -43,13 +43,7 @@
 /// The types of events that are sent to the event destination.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
@@ -106,15 +100,7 @@ impl EventType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANSWERED",
-            "BUSY",
-            "COMPLETED_CALL",
-            "FAILED",
-            "INITIATED_CALL",
-            "NO_ANSWER",
-            "RINGING",
-        ]
+        &["ANSWERED", "BUSY", "COMPLETED_CALL", "FAILED", "INITIATED_CALL", "NO_ANSWER", "RINGING"]
     }
 }
 impl ::std::convert::AsRef<str> for EventType {

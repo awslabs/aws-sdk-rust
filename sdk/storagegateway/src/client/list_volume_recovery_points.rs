@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`gateway_arn(Option<String>)`](crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     ///   - [`volume_recovery_point_infos(Option<Vec<VolumeRecoveryPointInfo>>)`](crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsOutput::volume_recovery_point_infos): <p>An array of <code>VolumeRecoveryPointInfo</code> objects.</p>
     /// - On failure, responds with [`SdkError<ListVolumeRecoveryPointsError>`](crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsError)
-    pub fn list_volume_recovery_points(&self) -> crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsFluentBuilder{
+    pub fn list_volume_recovery_points(&self) -> crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsFluentBuilder {
         crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsFluentBuilder::new(self.handle.clone())
     }
 }

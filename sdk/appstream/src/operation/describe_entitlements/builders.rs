@@ -37,9 +37,7 @@ impl DescribeEntitlementsFluentBuilder {
         }
     }
     /// Access the DescribeEntitlements as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_entitlements::builders::DescribeEntitlementsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_entitlements::builders::DescribeEntitlementsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeEntitlementsFluentBuilder {
             crate::operation::describe_entitlements::DescribeEntitlements,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_entitlements::DescribeEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_entitlements::DescribeEntitlementsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeEntitlementsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeEntitlementsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_entitlements::DescribeEntitlementsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_entitlements::DescribeEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_entitlements::DescribeEntitlementsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeEntitlementsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_entitlements::DescribeEntitlementsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_entitlements::DescribeEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_entitlements::DescribeEntitlementsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeEntitlementsFluentBuilder {
             crate::operation::describe_entitlements::DescribeEntitlements,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_entitlements::DescribeEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_entitlements::DescribeEntitlementsError>,
     > {
         self.customize_middleware().await
     }

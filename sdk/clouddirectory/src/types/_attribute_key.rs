@@ -37,9 +37,7 @@ impl AttributeKey {
 
 /// A builder for [`AttributeKey`](crate::types::AttributeKey).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributeKeyBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) facet_name: ::std::option::Option<::std::string::String>,

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::tag_mfa_device::builders::TagMFADeviceFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_mfa_device::builders::TagMFADeviceFluentBuilder::set_tags): <p>The list of tags that you want to attach to the IAM virtual MFA device. Each tag consists of a key name and an associated value.</p>
     /// - On success, responds with [`TagMfaDeviceOutput`](crate::operation::tag_mfa_device::TagMfaDeviceOutput)
     /// - On failure, responds with [`SdkError<TagMFADeviceError>`](crate::operation::tag_mfa_device::TagMFADeviceError)
-    pub fn tag_mfa_device(
-        &self,
-    ) -> crate::operation::tag_mfa_device::builders::TagMFADeviceFluentBuilder {
-        crate::operation::tag_mfa_device::builders::TagMFADeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn tag_mfa_device(&self) -> crate::operation::tag_mfa_device::builders::TagMFADeviceFluentBuilder {
+        crate::operation::tag_mfa_device::builders::TagMFADeviceFluentBuilder::new(self.handle.clone())
     }
 }

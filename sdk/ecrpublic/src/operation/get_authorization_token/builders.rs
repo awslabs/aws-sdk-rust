@@ -37,10 +37,7 @@ impl GetAuthorizationTokenFluentBuilder {
         }
     }
     /// Access the GetAuthorizationToken as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_authorization_token::builders::GetAuthorizationTokenInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_authorization_token::builders::GetAuthorizationTokenInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetAuthorizationTokenFluentBuilder {
             crate::operation::get_authorization_token::GetAuthorizationToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_authorization_token::GetAuthorizationTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_authorization_token::GetAuthorizationTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetAuthorizationTokenFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetAuthorizationTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_authorization_token::GetAuthorizationTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_authorization_token::GetAuthorizationTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_authorization_token::GetAuthorizationTokenError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetAuthorizationTokenFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_authorization_token::GetAuthorizationTokenOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_authorization_token::GetAuthorizationTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_authorization_token::GetAuthorizationTokenError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetAuthorizationTokenFluentBuilder {
             crate::operation::get_authorization_token::GetAuthorizationToken,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_authorization_token::GetAuthorizationTokenError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_authorization_token::GetAuthorizationTokenError>,
     > {
         self.customize_middleware().await
     }

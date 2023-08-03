@@ -29,17 +29,14 @@ impl SelectResourceConfigInput {
 }
 impl SelectResourceConfigInput {
     /// Creates a new builder-style object to manufacture [`SelectResourceConfigInput`](crate::operation::select_resource_config::SelectResourceConfigInput).
-    pub fn builder(
-    ) -> crate::operation::select_resource_config::builders::SelectResourceConfigInputBuilder {
+    pub fn builder() -> crate::operation::select_resource_config::builders::SelectResourceConfigInputBuilder {
         crate::operation::select_resource_config::builders::SelectResourceConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`SelectResourceConfigInput`](crate::operation::select_resource_config::SelectResourceConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelectResourceConfigInputBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -91,16 +88,12 @@ impl SelectResourceConfigInputBuilder {
     /// Consumes the builder and constructs a [`SelectResourceConfigInput`](crate::operation::select_resource_config::SelectResourceConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::select_resource_config::SelectResourceConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::select_resource_config::SelectResourceConfigInput {
-                expression: self.expression,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::select_resource_config::SelectResourceConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::select_resource_config::SelectResourceConfigInput {
+            expression: self.expression,
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeCertificateOutput`](crate::operation::describe_certificate::DescribeCertificateOutput) with field(s):
     ///   - [`certificate(Option<CertificateDetail>)`](crate::operation::describe_certificate::DescribeCertificateOutput::certificate): <p>Metadata about an ACM certificate.</p>
     /// - On failure, responds with [`SdkError<DescribeCertificateError>`](crate::operation::describe_certificate::DescribeCertificateError)
-    pub fn describe_certificate(
-        &self,
-    ) -> crate::operation::describe_certificate::builders::DescribeCertificateFluentBuilder {
-        crate::operation::describe_certificate::builders::DescribeCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_certificate(&self) -> crate::operation::describe_certificate::builders::DescribeCertificateFluentBuilder {
+        crate::operation::describe_certificate::builders::DescribeCertificateFluentBuilder::new(self.handle.clone())
     }
 }

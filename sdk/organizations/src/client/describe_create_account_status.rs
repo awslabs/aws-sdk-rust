@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeCreateAccountStatusOutput`](crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput) with field(s):
     ///   - [`create_account_status(Option<CreateAccountStatus>)`](crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput::create_account_status): <p>A structure that contains the current status of an account creation request.</p>
     /// - On failure, responds with [`SdkError<DescribeCreateAccountStatusError>`](crate::operation::describe_create_account_status::DescribeCreateAccountStatusError)
-    pub fn describe_create_account_status(&self) -> crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusFluentBuilder{
+    pub fn describe_create_account_status(
+        &self,
+    ) -> crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusFluentBuilder {
         crate::operation::describe_create_account_status::builders::DescribeCreateAccountStatusFluentBuilder::new(self.handle.clone())
     }
 }

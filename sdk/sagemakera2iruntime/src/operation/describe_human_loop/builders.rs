@@ -10,10 +10,7 @@ impl DescribeHumanLoopInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_human_loop::DescribeHumanLoopOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_human_loop::DescribeHumanLoopError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_human_loop::DescribeHumanLoopError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_human_loop();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeHumanLoopFluentBuilder {
         }
     }
     /// Access the DescribeHumanLoop as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_human_loop::builders::DescribeHumanLoopInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_human_loop::builders::DescribeHumanLoopInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeHumanLoopFluentBuilder {
             crate::operation::describe_human_loop::DescribeHumanLoop,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_human_loop::DescribeHumanLoopError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_human_loop::DescribeHumanLoopError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeHumanLoopFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeHumanLoopFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_human_loop::DescribeHumanLoopOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_human_loop::DescribeHumanLoopError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_human_loop::DescribeHumanLoopError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeHumanLoopFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_human_loop::DescribeHumanLoopOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_human_loop::DescribeHumanLoopError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_human_loop::DescribeHumanLoopError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DescribeHumanLoopFluentBuilder {
             crate::operation::describe_human_loop::DescribeHumanLoop,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_human_loop::DescribeHumanLoopError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_human_loop::DescribeHumanLoopError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the human loop that you want information about.</p>
-    pub fn human_loop_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn human_loop_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.human_loop_name(input.into());
         self
     }
     /// <p>The name of the human loop that you want information about.</p>
-    pub fn set_human_loop_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_human_loop_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_human_loop_name(input);
         self
     }

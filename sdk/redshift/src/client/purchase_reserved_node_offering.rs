@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`PurchaseReservedNodeOfferingOutput`](crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingOutput) with field(s):
     ///   - [`reserved_node(Option<ReservedNode>)`](crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingOutput::reserved_node): <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
     /// - On failure, responds with [`SdkError<PurchaseReservedNodeOfferingError>`](crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError)
-    pub fn purchase_reserved_node_offering(&self) -> crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingFluentBuilder{
+    pub fn purchase_reserved_node_offering(
+        &self,
+    ) -> crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingFluentBuilder {
         crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingFluentBuilder::new(self.handle.clone())
     }
 }

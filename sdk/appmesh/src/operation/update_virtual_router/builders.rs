@@ -37,9 +37,7 @@ impl UpdateVirtualRouterFluentBuilder {
         }
     }
     /// Access the UpdateVirtualRouter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_virtual_router::builders::UpdateVirtualRouterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_virtual_router::builders::UpdateVirtualRouterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateVirtualRouterFluentBuilder {
             crate::operation::update_virtual_router::UpdateVirtualRouter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_virtual_router::UpdateVirtualRouterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_router::UpdateVirtualRouterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateVirtualRouterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateVirtualRouterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_virtual_router::UpdateVirtualRouterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_virtual_router::UpdateVirtualRouterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_router::UpdateVirtualRouterError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateVirtualRouterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_virtual_router::UpdateVirtualRouterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_virtual_router::UpdateVirtualRouterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_router::UpdateVirtualRouterError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateVirtualRouterFluentBuilder {
             crate::operation::update_virtual_router::UpdateVirtualRouter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_virtual_router::UpdateVirtualRouterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_virtual_router::UpdateVirtualRouterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the virtual router to update.</p>
-    pub fn virtual_router_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_router_name(input.into());
         self
     }
     /// <p>The name of the virtual router to update.</p>
-    pub fn set_virtual_router_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_router_name(input);
         self
     }
@@ -162,10 +143,7 @@ impl UpdateVirtualRouterFluentBuilder {
         self
     }
     /// <p>The new virtual router specification to apply. This overwrites the existing data.</p>
-    pub fn set_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualRouterSpec>,
-    ) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::VirtualRouterSpec>) -> Self {
         self.inner = self.inner.set_spec(input);
         self
     }

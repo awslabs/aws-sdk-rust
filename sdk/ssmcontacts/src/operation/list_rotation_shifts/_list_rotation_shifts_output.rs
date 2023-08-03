@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListRotationShiftsOutput {
 }
 impl ListRotationShiftsOutput {
     /// Creates a new builder-style object to manufacture [`ListRotationShiftsOutput`](crate::operation::list_rotation_shifts::ListRotationShiftsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_rotation_shifts::builders::ListRotationShiftsOutputBuilder {
+    pub fn builder() -> crate::operation::list_rotation_shifts::builders::ListRotationShiftsOutputBuilder {
         crate::operation::list_rotation_shifts::builders::ListRotationShiftsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRotationShiftsOutput`](crate::operation::list_rotation_shifts::ListRotationShiftsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRotationShiftsOutputBuilder {
     pub(crate) rotation_shifts: ::std::option::Option<::std::vec::Vec<crate::types::RotationShift>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListRotationShiftsOutputBuilder {
         self
     }
     /// <p>Information about shifts that meet the filter criteria.</p>
-    pub fn set_rotation_shifts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RotationShift>>,
-    ) -> Self {
+    pub fn set_rotation_shifts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RotationShift>>) -> Self {
         self.rotation_shifts = input;
         self
     }
     /// <p>Information about shifts that meet the filter criteria.</p>
-    pub fn get_rotation_shifts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RotationShift>> {
+    pub fn get_rotation_shifts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RotationShift>> {
         &self.rotation_shifts
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>

@@ -37,9 +37,7 @@ impl GetSearchSuggestionsFluentBuilder {
         }
     }
     /// Access the GetSearchSuggestions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_search_suggestions::builders::GetSearchSuggestionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_search_suggestions::builders::GetSearchSuggestionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetSearchSuggestionsFluentBuilder {
             crate::operation::get_search_suggestions::GetSearchSuggestions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_search_suggestions::GetSearchSuggestionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_search_suggestions::GetSearchSuggestionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetSearchSuggestionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetSearchSuggestionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_search_suggestions::GetSearchSuggestionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_search_suggestions::GetSearchSuggestionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_search_suggestions::GetSearchSuggestionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetSearchSuggestionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_search_suggestions::GetSearchSuggestionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_search_suggestions::GetSearchSuggestionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_search_suggestions::GetSearchSuggestionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetSearchSuggestionsFluentBuilder {
             crate::operation::get_search_suggestions::GetSearchSuggestions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_search_suggestions::GetSearchSuggestionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_search_suggestions::GetSearchSuggestionsError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl GetSearchSuggestionsFluentBuilder {
         self
     }
     /// <p>The name of the SageMaker resource to search for.</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource(input);
         self
     }
@@ -145,10 +129,7 @@ impl GetSearchSuggestionsFluentBuilder {
         self
     }
     /// <p>Limits the property names that are included in the response.</p>
-    pub fn set_suggestion_query(
-        mut self,
-        input: ::std::option::Option<crate::types::SuggestionQuery>,
-    ) -> Self {
+    pub fn set_suggestion_query(mut self, input: ::std::option::Option<crate::types::SuggestionQuery>) -> Self {
         self.inner = self.inner.set_suggestion_query(input);
         self
     }

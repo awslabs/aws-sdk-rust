@@ -10,10 +10,7 @@ impl UpdateChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_channel::UpdateChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_channel::UpdateChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel::UpdateChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_channel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateChannelFluentBuilder {
         }
     }
     /// Access the UpdateChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_channel::builders::UpdateChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_channel::builders::UpdateChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -138,17 +130,12 @@ impl UpdateChannelFluentBuilder {
         self
     }
     /// <p>The ARNs of event data stores that you want to log events arriving through the channel.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
     }
     /// <p>The ARNs of event data stores that you want to log events arriving through the channel.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
         self.inner.get_destinations()
     }
     /// <p> Changes the name of the channel. </p>

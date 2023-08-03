@@ -41,10 +41,7 @@ impl ResumeGameServerGroupFluentBuilder {
         }
     }
     /// Access the ResumeGameServerGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::resume_game_server_group::builders::ResumeGameServerGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::resume_game_server_group::builders::ResumeGameServerGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl ResumeGameServerGroupFluentBuilder {
             crate::operation::resume_game_server_group::ResumeGameServerGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resume_game_server_group::ResumeGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resume_game_server_group::ResumeGameServerGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl ResumeGameServerGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl ResumeGameServerGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resume_game_server_group::ResumeGameServerGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resume_game_server_group::ResumeGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resume_game_server_group::ResumeGameServerGroupError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl ResumeGameServerGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resume_game_server_group::ResumeGameServerGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resume_game_server_group::ResumeGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resume_game_server_group::ResumeGameServerGroupError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +109,17 @@ impl ResumeGameServerGroupFluentBuilder {
             crate::operation::resume_game_server_group::ResumeGameServerGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resume_game_server_group::ResumeGameServerGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resume_game_server_group::ResumeGameServerGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn game_server_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_server_group_name(input.into());
         self
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
@@ -157,17 +137,12 @@ impl ResumeGameServerGroupFluentBuilder {
         self
     }
     /// <p>The activity to resume for this game server group.</p>
-    pub fn set_resume_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
-    ) -> Self {
+    pub fn set_resume_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>) -> Self {
         self.inner = self.inner.set_resume_actions(input);
         self
     }
     /// <p>The activity to resume for this game server group.</p>
-    pub fn get_resume_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>> {
+    pub fn get_resume_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>> {
         self.inner.get_resume_actions()
     }
 }

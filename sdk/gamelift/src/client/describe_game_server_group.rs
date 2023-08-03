@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeGameServerGroupOutput`](crate::operation::describe_game_server_group::DescribeGameServerGroupOutput) with field(s):
     ///   - [`game_server_group(Option<GameServerGroup>)`](crate::operation::describe_game_server_group::DescribeGameServerGroupOutput::game_server_group): <p>An object with the property settings for the requested game server group resource. </p>
     /// - On failure, responds with [`SdkError<DescribeGameServerGroupError>`](crate::operation::describe_game_server_group::DescribeGameServerGroupError)
-    pub fn describe_game_server_group(
-        &self,
-    ) -> crate::operation::describe_game_server_group::builders::DescribeGameServerGroupFluentBuilder
-    {
+    pub fn describe_game_server_group(&self) -> crate::operation::describe_game_server_group::builders::DescribeGameServerGroupFluentBuilder {
         crate::operation::describe_game_server_group::builders::DescribeGameServerGroupFluentBuilder::new(self.handle.clone())
     }
 }

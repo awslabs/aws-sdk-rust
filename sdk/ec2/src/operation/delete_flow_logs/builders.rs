@@ -10,10 +10,7 @@ impl DeleteFlowLogsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_flow_logs::DeleteFlowLogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_flow_logs::DeleteFlowLogsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_flow_logs::DeleteFlowLogsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_flow_logs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteFlowLogsFluentBuilder {
         }
     }
     /// Access the DeleteFlowLogs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_flow_logs::builders::DeleteFlowLogsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_flow_logs::builders::DeleteFlowLogsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteFlowLogsFluentBuilder {
             crate::operation::delete_flow_logs::DeleteFlowLogs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_flow_logs::DeleteFlowLogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_flow_logs::DeleteFlowLogsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteFlowLogsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteFlowLogsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_flow_logs::DeleteFlowLogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_flow_logs::DeleteFlowLogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_flow_logs::DeleteFlowLogsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteFlowLogsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_flow_logs::DeleteFlowLogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_flow_logs::DeleteFlowLogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_flow_logs::DeleteFlowLogsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteFlowLogsFluentBuilder {
             crate::operation::delete_flow_logs::DeleteFlowLogs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_flow_logs::DeleteFlowLogsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_flow_logs::DeleteFlowLogsError>,
     > {
         self.customize_middleware().await
     }
@@ -148,18 +132,13 @@ impl DeleteFlowLogsFluentBuilder {
     }
     /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
-    pub fn set_flow_log_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_flow_log_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_flow_log_ids(input);
         self
     }
     /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
-    pub fn get_flow_log_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_flow_log_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_flow_log_ids()
     }
 }

@@ -10,10 +10,7 @@ impl UpdateScheduleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_schedule::UpdateScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_schedule::UpdateScheduleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_schedule::UpdateScheduleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_schedule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateScheduleFluentBuilder {
         }
     }
     /// Access the UpdateSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_schedule::builders::UpdateScheduleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_schedule::builders::UpdateScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -124,10 +116,7 @@ impl UpdateScheduleFluentBuilder {
         self
     }
     /// <p>The name or names of one or more jobs to be run for this schedule.</p>
-    pub fn set_job_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_job_names(input);
         self
     }
@@ -136,18 +125,12 @@ impl UpdateScheduleFluentBuilder {
         self.inner.get_job_names()
     }
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    pub fn cron_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cron_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cron_expression(input.into());
         self
     }
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    pub fn set_cron_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cron_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cron_expression(input);
         self
     }

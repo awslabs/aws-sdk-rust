@@ -5,8 +5,7 @@
 pub struct ListParallelDataOutput {
     /// <p>The properties of the parallel data resources returned by this request.</p>
     #[doc(hidden)]
-    pub parallel_data_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParallelDataProperties>>,
+    pub parallel_data_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::ParallelDataProperties>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListParallelDataOutput {
 }
 impl ListParallelDataOutput {
     /// <p>The properties of the parallel data resources returned by this request.</p>
-    pub fn parallel_data_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ParallelDataProperties]> {
+    pub fn parallel_data_properties_list(&self) -> ::std::option::Option<&[crate::types::ParallelDataProperties]> {
         self.parallel_data_properties_list.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListParallelDataOutput {
 }
 impl ListParallelDataOutput {
     /// Creates a new builder-style object to manufacture [`ListParallelDataOutput`](crate::operation::list_parallel_data::ListParallelDataOutput).
-    pub fn builder() -> crate::operation::list_parallel_data::builders::ListParallelDataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_parallel_data::builders::ListParallelDataOutputBuilder {
         crate::operation::list_parallel_data::builders::ListParallelDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListParallelDataOutput`](crate::operation::list_parallel_data::ListParallelDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListParallelDataOutputBuilder {
-    pub(crate) parallel_data_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParallelDataProperties>>,
+    pub(crate) parallel_data_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::ParallelDataProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,27 +47,19 @@ impl ListParallelDataOutputBuilder {
     /// To override the contents of this collection use [`set_parallel_data_properties_list`](Self::set_parallel_data_properties_list).
     ///
     /// <p>The properties of the parallel data resources returned by this request.</p>
-    pub fn parallel_data_properties_list(
-        mut self,
-        input: crate::types::ParallelDataProperties,
-    ) -> Self {
+    pub fn parallel_data_properties_list(mut self, input: crate::types::ParallelDataProperties) -> Self {
         let mut v = self.parallel_data_properties_list.unwrap_or_default();
         v.push(input);
         self.parallel_data_properties_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The properties of the parallel data resources returned by this request.</p>
-    pub fn set_parallel_data_properties_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParallelDataProperties>>,
-    ) -> Self {
+    pub fn set_parallel_data_properties_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParallelDataProperties>>) -> Self {
         self.parallel_data_properties_list = input;
         self
     }
     /// <p>The properties of the parallel data resources returned by this request.</p>
-    pub fn get_parallel_data_properties_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParallelDataProperties>> {
+    pub fn get_parallel_data_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParallelDataProperties>> {
         &self.parallel_data_properties_list
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>

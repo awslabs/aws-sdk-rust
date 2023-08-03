@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::send_project_session_action::SendProjectSessionActionOutput::name): <p>The name of the project that was affected by the action.</p>
     ///   - [`action_id(Option<i32>)`](crate::operation::send_project_session_action::SendProjectSessionActionOutput::action_id): <p>A unique identifier for the action that was performed.</p>
     /// - On failure, responds with [`SdkError<SendProjectSessionActionError>`](crate::operation::send_project_session_action::SendProjectSessionActionError)
-    pub fn send_project_session_action(&self) -> crate::operation::send_project_session_action::builders::SendProjectSessionActionFluentBuilder{
+    pub fn send_project_session_action(&self) -> crate::operation::send_project_session_action::builders::SendProjectSessionActionFluentBuilder {
         crate::operation::send_project_session_action::builders::SendProjectSessionActionFluentBuilder::new(self.handle.clone())
     }
 }

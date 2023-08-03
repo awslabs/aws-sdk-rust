@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`non_deleted_network_interface_ids(Option<Vec<String>>)`](crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceOutput::non_deleted_network_interface_ids): IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
     ///   - [`vpc_interface_name(Option<String>)`](crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceOutput::vpc_interface_name): The name of the VPC interface that was removed.
     /// - On failure, responds with [`SdkError<RemoveFlowVpcInterfaceError>`](crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError)
-    pub fn remove_flow_vpc_interface(
-        &self,
-    ) -> crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceFluentBuilder
-    {
+    pub fn remove_flow_vpc_interface(&self) -> crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceFluentBuilder {
         crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,9 +21,7 @@ pub enum UpdateReplicationSetAction {
 impl UpdateReplicationSetAction {
     /// Tries to convert the enum instance into [`AddRegionAction`](crate::types::UpdateReplicationSetAction::AddRegionAction), extracting the inner [`AddRegionAction`](crate::types::AddRegionAction).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_add_region_action(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AddRegionAction, &Self> {
+    pub fn as_add_region_action(&self) -> ::std::result::Result<&crate::types::AddRegionAction, &Self> {
         if let UpdateReplicationSetAction::AddRegionAction(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -36,9 +34,7 @@ impl UpdateReplicationSetAction {
     }
     /// Tries to convert the enum instance into [`DeleteRegionAction`](crate::types::UpdateReplicationSetAction::DeleteRegionAction), extracting the inner [`DeleteRegionAction`](crate::types::DeleteRegionAction).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_delete_region_action(
-        &self,
-    ) -> ::std::result::Result<&crate::types::DeleteRegionAction, &Self> {
+    pub fn as_delete_region_action(&self) -> ::std::result::Result<&crate::types::DeleteRegionAction, &Self> {
         if let UpdateReplicationSetAction::DeleteRegionAction(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

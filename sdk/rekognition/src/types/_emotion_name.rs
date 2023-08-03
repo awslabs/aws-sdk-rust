@@ -45,13 +45,7 @@
 /// _Note: `EmotionName::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EmotionName {
     #[allow(missing_docs)] // documentation missing in model
@@ -116,17 +110,7 @@ impl EmotionName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANGRY",
-            "CALM",
-            "CONFUSED",
-            "DISGUSTED",
-            "FEAR",
-            "HAPPY",
-            "SAD",
-            "SURPRISED",
-            "UNKNOWN",
-        ]
+        &["ANGRY", "CALM", "CONFUSED", "DISGUSTED", "FEAR", "HAPPY", "SAD", "SURPRISED", "UNKNOWN"]
     }
 }
 impl ::std::convert::AsRef<str> for EmotionName {

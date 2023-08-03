@@ -30,8 +30,7 @@ impl GetSipMediaApplicationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSipMediaApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_sip_media_application::builders::GetSipMediaApplicationInputBuilder,
+    inner: crate::operation::get_sip_media_application::builders::GetSipMediaApplicationInputBuilder,
 }
 impl GetSipMediaApplicationFluentBuilder {
     /// Creates a new `GetSipMediaApplication`.
@@ -42,10 +41,7 @@ impl GetSipMediaApplicationFluentBuilder {
         }
     }
     /// Access the GetSipMediaApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_sip_media_application::builders::GetSipMediaApplicationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_sip_media_application::builders::GetSipMediaApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl GetSipMediaApplicationFluentBuilder {
             crate::operation::get_sip_media_application::GetSipMediaApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sip_media_application::GetSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sip_media_application::GetSipMediaApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl GetSipMediaApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl GetSipMediaApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sip_media_application::GetSipMediaApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sip_media_application::GetSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sip_media_application::GetSipMediaApplicationError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl GetSipMediaApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sip_media_application::GetSipMediaApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sip_media_application::GetSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sip_media_application::GetSipMediaApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +109,17 @@ impl GetSipMediaApplicationFluentBuilder {
             crate::operation::get_sip_media_application::GetSipMediaApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sip_media_application::GetSipMediaApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sip_media_application::GetSipMediaApplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sip_media_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sip_media_application_id(input.into());
         self
     }
     /// <p>The SIP media application ID.</p>
-    pub fn set_sip_media_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sip_media_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sip_media_application_id(input);
         self
     }

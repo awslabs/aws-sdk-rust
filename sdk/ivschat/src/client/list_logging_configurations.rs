@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`logging_configurations(Option<Vec<LoggingConfigurationSummary>>)`](crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput::logging_configurations): <p>List of the matching logging configurations (summary information only). There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput::next_token): <p>If there are more logging configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     /// - On failure, responds with [`SdkError<ListLoggingConfigurationsError>`](crate::operation::list_logging_configurations::ListLoggingConfigurationsError)
-    pub fn list_logging_configurations(&self) -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsFluentBuilder{
+    pub fn list_logging_configurations(&self) -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsFluentBuilder {
         crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

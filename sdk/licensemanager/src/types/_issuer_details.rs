@@ -37,9 +37,7 @@ impl IssuerDetails {
 
 /// A builder for [`IssuerDetails`](crate::types::IssuerDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IssuerDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) sign_key: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl IssuerDetailsBuilder {
         &self.sign_key
     }
     /// <p>Issuer key fingerprint.</p>
-    pub fn key_fingerprint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_fingerprint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Issuer key fingerprint.</p>
-    pub fn set_key_fingerprint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_fingerprint = input;
         self
     }

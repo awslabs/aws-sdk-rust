@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreatePermissionGroupOutput {
 }
 impl CreatePermissionGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionGroupOutput`](crate::operation::create_permission_group::CreatePermissionGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_permission_group::builders::CreatePermissionGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_permission_group::builders::CreatePermissionGroupOutputBuilder {
         crate::operation::create_permission_group::builders::CreatePermissionGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePermissionGroupOutput`](crate::operation::create_permission_group::CreatePermissionGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePermissionGroupOutputBuilder {
     pub(crate) permission_group_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePermissionGroupOutputBuilder {
     /// <p>The unique identifier for the permission group.</p>
-    pub fn permission_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the permission group.</p>
-    pub fn set_permission_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_group_id = input;
         self
     }

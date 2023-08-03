@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`custom_verification_email_templates(Option<Vec<CustomVerificationEmailTemplateMetadata>>)`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesOutput::custom_verification_email_templates): <p>A list of the custom verification email templates that exist in your account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesOutput::next_token): <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50 custom verification email templates.</p>
     /// - On failure, responds with [`SdkError<ListCustomVerificationEmailTemplatesError>`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesError)
-    pub fn list_custom_verification_email_templates(&self) -> crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesFluentBuilder{
-        crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesFluentBuilder::new(self.handle.clone())
+    pub fn list_custom_verification_email_templates(
+        &self,
+    ) -> crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesFluentBuilder {
+        crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

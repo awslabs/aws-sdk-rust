@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for ListServerCertificateTagsOutput {
 }
 impl ListServerCertificateTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListServerCertificateTagsOutput`](crate::operation::list_server_certificate_tags::ListServerCertificateTagsOutput).
-    pub fn builder() -> crate::operation::list_server_certificate_tags::builders::ListServerCertificateTagsOutputBuilder{
+    pub fn builder() -> crate::operation::list_server_certificate_tags::builders::ListServerCertificateTagsOutputBuilder {
         crate::operation::list_server_certificate_tags::builders::ListServerCertificateTagsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListServerCertificateTagsOutput`](crate::operation::list_server_certificate_tags::ListServerCertificateTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServerCertificateTagsOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
@@ -64,10 +62,7 @@ impl ListServerCertificateTagsOutputBuilder {
         self
     }
     /// <p>The list of tags that are currently attached to the IAM server certificate. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -113,9 +108,7 @@ impl ListServerCertificateTagsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServerCertificateTagsOutput`](crate::operation::list_server_certificate_tags::ListServerCertificateTagsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_server_certificate_tags::ListServerCertificateTagsOutput {
+    pub fn build(self) -> crate::operation::list_server_certificate_tags::ListServerCertificateTagsOutput {
         crate::operation::list_server_certificate_tags::ListServerCertificateTagsOutput {
             tags: self.tags,
             is_truncated: self.is_truncated.unwrap_or_default(),

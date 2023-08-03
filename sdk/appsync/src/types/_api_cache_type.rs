@@ -51,13 +51,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ApiCacheType {
     #[allow(missing_docs)] // documentation missing in model
@@ -111,9 +105,7 @@ impl ::std::convert::From<&str> for ApiCacheType {
             "T2_MEDIUM" => ApiCacheType::T2Medium,
             "T2_SMALL" => ApiCacheType::T2Small,
             "XLARGE" => ApiCacheType::Xlarge,
-            other => {
-                ApiCacheType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ApiCacheType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

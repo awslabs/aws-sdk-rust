@@ -27,18 +27,14 @@ impl ::aws_http::request_id::RequestId for DeleteObjectTaggingOutput {
 }
 impl DeleteObjectTaggingOutput {
     /// Creates a new builder-style object to manufacture [`DeleteObjectTaggingOutput`](crate::operation::delete_object_tagging::DeleteObjectTaggingOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_object_tagging::builders::DeleteObjectTaggingOutputBuilder {
-        crate::operation::delete_object_tagging::builders::DeleteObjectTaggingOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_object_tagging::builders::DeleteObjectTaggingOutputBuilder {
+        crate::operation::delete_object_tagging::builders::DeleteObjectTaggingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteObjectTaggingOutput`](crate::operation::delete_object_tagging::DeleteObjectTaggingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteObjectTaggingOutputBuilder {
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
@@ -64,10 +60,7 @@ impl DeleteObjectTaggingOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }

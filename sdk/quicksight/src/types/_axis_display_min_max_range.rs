@@ -30,9 +30,7 @@ impl AxisDisplayMinMaxRange {
 
 /// A builder for [`AxisDisplayMinMaxRange`](crate::types::AxisDisplayMinMaxRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AxisDisplayMinMaxRangeBuilder {
     pub(crate) minimum: ::std::option::Option<f64>,
     pub(crate) maximum: ::std::option::Option<f64>,

@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`ipam_pool_allocations(Option<Vec<IpamPoolAllocation>>)`](crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput::ipam_pool_allocations): <p>The IPAM pool allocations you want information on.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<GetIpamPoolAllocationsError>`](crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsError)
-    pub fn get_ipam_pool_allocations(
-        &self,
-    ) -> crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsFluentBuilder
-    {
+    pub fn get_ipam_pool_allocations(&self) -> crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsFluentBuilder {
         crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsFluentBuilder::new(self.handle.clone())
     }
 }

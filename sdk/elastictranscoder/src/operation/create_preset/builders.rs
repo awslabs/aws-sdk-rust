@@ -10,10 +10,7 @@ impl CreatePresetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_preset::CreatePresetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_preset::CreatePresetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_preset::CreatePresetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_preset();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl CreatePresetFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_preset::CreatePreset,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_preset::CreatePreset, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_preset::CreatePresetError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl CreatePresetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl CreatePresetFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_preset::CreatePreset,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_preset::CreatePreset, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_preset::CreatePresetError>,
     > {
         self.customize_middleware().await
@@ -163,10 +151,7 @@ impl CreatePresetFluentBuilder {
         self
     }
     /// <p>A section of the request body that specifies the video parameters.</p>
-    pub fn set_video(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoParameters>,
-    ) -> Self {
+    pub fn set_video(mut self, input: ::std::option::Option<crate::types::VideoParameters>) -> Self {
         self.inner = self.inner.set_video(input);
         self
     }
@@ -180,10 +165,7 @@ impl CreatePresetFluentBuilder {
         self
     }
     /// <p>A section of the request body that specifies the audio parameters.</p>
-    pub fn set_audio(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioParameters>,
-    ) -> Self {
+    pub fn set_audio(mut self, input: ::std::option::Option<crate::types::AudioParameters>) -> Self {
         self.inner = self.inner.set_audio(input);
         self
     }
@@ -197,10 +179,7 @@ impl CreatePresetFluentBuilder {
         self
     }
     /// <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
-    pub fn set_thumbnails(
-        mut self,
-        input: ::std::option::Option<crate::types::Thumbnails>,
-    ) -> Self {
+    pub fn set_thumbnails(mut self, input: ::std::option::Option<crate::types::Thumbnails>) -> Self {
         self.inner = self.inner.set_thumbnails(input);
         self
     }

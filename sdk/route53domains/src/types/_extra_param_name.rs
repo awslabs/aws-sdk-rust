@@ -67,13 +67,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExtraParamName {
     #[allow(missing_docs)] // documentation missing in model
@@ -175,9 +169,7 @@ impl ::std::convert::From<&str> for ExtraParamName {
             "UK_COMPANY_NUMBER" => ExtraParamName::UkCompanyNumber,
             "UK_CONTACT_TYPE" => ExtraParamName::UkContactType,
             "VAT_NUMBER" => ExtraParamName::VatNumber,
-            other => {
-                ExtraParamName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ExtraParamName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteEmailTemplateOutput {
 }
 impl DeleteEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEmailTemplateOutput`](crate::operation::delete_email_template::DeleteEmailTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_email_template::builders::DeleteEmailTemplateOutputBuilder {
-        crate::operation::delete_email_template::builders::DeleteEmailTemplateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_email_template::builders::DeleteEmailTemplateOutputBuilder {
+        crate::operation::delete_email_template::builders::DeleteEmailTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEmailTemplateOutput`](crate::operation::delete_email_template::DeleteEmailTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEmailTemplateOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteEmailTemplateOutputBuilder {
         self
     }
     /// <p>Provides information about an API request or response.</p>
-    pub fn set_message_body(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageBody>,
-    ) -> Self {
+    pub fn set_message_body(mut self, input: ::std::option::Option<crate::types::MessageBody>) -> Self {
         self.message_body = input;
         self
     }

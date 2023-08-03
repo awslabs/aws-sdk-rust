@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`function_input(UserDefinedFunctionInput)`](crate::operation::create_user_defined_function::builders::CreateUserDefinedFunctionFluentBuilder::function_input) / [`set_function_input(Option<UserDefinedFunctionInput>)`](crate::operation::create_user_defined_function::builders::CreateUserDefinedFunctionFluentBuilder::set_function_input): <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
     /// - On success, responds with [`CreateUserDefinedFunctionOutput`](crate::operation::create_user_defined_function::CreateUserDefinedFunctionOutput)
     /// - On failure, responds with [`SdkError<CreateUserDefinedFunctionError>`](crate::operation::create_user_defined_function::CreateUserDefinedFunctionError)
-    pub fn create_user_defined_function(&self) -> crate::operation::create_user_defined_function::builders::CreateUserDefinedFunctionFluentBuilder{
+    pub fn create_user_defined_function(&self) -> crate::operation::create_user_defined_function::builders::CreateUserDefinedFunctionFluentBuilder {
         crate::operation::create_user_defined_function::builders::CreateUserDefinedFunctionFluentBuilder::new(self.handle.clone())
     }
 }

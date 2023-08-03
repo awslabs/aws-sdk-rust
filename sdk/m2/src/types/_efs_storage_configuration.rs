@@ -30,27 +30,19 @@ impl EfsStorageConfiguration {
 
 /// A builder for [`EfsStorageConfiguration`](crate::types::EfsStorageConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EfsStorageConfigurationBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) mount_point: ::std::option::Option<::std::string::String>,
 }
 impl EfsStorageConfigurationBuilder {
     /// <p>The file system identifier.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The file system identifier.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }

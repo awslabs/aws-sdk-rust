@@ -44,9 +44,7 @@ impl AggregationAuthorization {
 
 /// A builder for [`AggregationAuthorization`](crate::types::AggregationAuthorization).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregationAuthorizationBuilder {
     pub(crate) aggregation_authorization_arn: ::std::option::Option<::std::string::String>,
     pub(crate) authorized_account_id: ::std::option::Option<::std::string::String>,
@@ -55,40 +53,26 @@ pub struct AggregationAuthorizationBuilder {
 }
 impl AggregationAuthorizationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the aggregation object.</p>
-    pub fn aggregation_authorization_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aggregation_authorization_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aggregation_authorization_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the aggregation object.</p>
-    pub fn set_aggregation_authorization_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aggregation_authorization_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aggregation_authorization_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the aggregation object.</p>
-    pub fn get_aggregation_authorization_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_aggregation_authorization_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.aggregation_authorization_arn
     }
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
-    pub fn authorized_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorized_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorized_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
-    pub fn set_authorized_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorized_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorized_account_id = input;
         self
     }
@@ -97,18 +81,12 @@ impl AggregationAuthorizationBuilder {
         &self.authorized_account_id
     }
     /// <p>The region authorized to collect aggregated data.</p>
-    pub fn authorized_aws_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorized_aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorized_aws_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The region authorized to collect aggregated data.</p>
-    pub fn set_authorized_aws_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorized_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorized_aws_region = input;
         self
     }
@@ -122,10 +100,7 @@ impl AggregationAuthorizationBuilder {
         self
     }
     /// <p>The time stamp when the aggregation authorization was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

@@ -22,16 +22,14 @@ impl DescribeConfigurationRevisionInput {
 }
 impl DescribeConfigurationRevisionInput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationRevisionInput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput).
-    pub fn builder() -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionInputBuilder{
+    pub fn builder() -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionInputBuilder {
         crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationRevisionInput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRevisionInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) revision: ::std::option::Option<i64>,
@@ -72,11 +70,9 @@ impl DescribeConfigurationRevisionInputBuilder {
         crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput {
-                arn: self.arn,
-                revision: self.revision,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput {
+            arn: self.arn,
+            revision: self.revision,
+        })
     }
 }

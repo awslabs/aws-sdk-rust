@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput::name): <p>The name of the recipe that was modified.</p>
     ///   - [`errors(Option<Vec<RecipeVersionErrorDetail>>)`](crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput::errors): <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteRecipeVersionError>`](crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionError)
-    pub fn batch_delete_recipe_version(&self) -> crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionFluentBuilder{
+    pub fn batch_delete_recipe_version(&self) -> crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionFluentBuilder {
         crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionFluentBuilder::new(self.handle.clone())
     }
 }

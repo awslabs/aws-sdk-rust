@@ -36,18 +36,14 @@ impl ListFacetAttributesInput {
 }
 impl ListFacetAttributesInput {
     /// Creates a new builder-style object to manufacture [`ListFacetAttributesInput`](crate::operation::list_facet_attributes::ListFacetAttributesInput).
-    pub fn builder(
-    ) -> crate::operation::list_facet_attributes::builders::ListFacetAttributesInputBuilder {
-        crate::operation::list_facet_attributes::builders::ListFacetAttributesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_facet_attributes::builders::ListFacetAttributesInputBuilder {
+        crate::operation::list_facet_attributes::builders::ListFacetAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFacetAttributesInput`](crate::operation::list_facet_attributes::ListFacetAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFacetAttributesInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -114,17 +110,13 @@ impl ListFacetAttributesInputBuilder {
     /// Consumes the builder and constructs a [`ListFacetAttributesInput`](crate::operation::list_facet_attributes::ListFacetAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_facet_attributes::ListFacetAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_facet_attributes::ListFacetAttributesInput {
-                schema_arn: self.schema_arn,
-                name: self.name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_facet_attributes::ListFacetAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_facet_attributes::ListFacetAttributesInput {
+            schema_arn: self.schema_arn,
+            name: self.name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

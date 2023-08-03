@@ -15,17 +15,14 @@ impl DeleteUserProfileInput {
 }
 impl DeleteUserProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteUserProfileInput`](crate::operation::delete_user_profile::DeleteUserProfileInput).
-    pub fn builder(
-    ) -> crate::operation::delete_user_profile::builders::DeleteUserProfileInputBuilder {
+    pub fn builder() -> crate::operation::delete_user_profile::builders::DeleteUserProfileInputBuilder {
         crate::operation::delete_user_profile::builders::DeleteUserProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUserProfileInput`](crate::operation::delete_user_profile::DeleteUserProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUserProfileInputBuilder {
     pub(crate) iam_user_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl DeleteUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteUserProfileInput`](crate::operation::delete_user_profile::DeleteUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_user_profile::DeleteUserProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_user_profile::DeleteUserProfileInput {
-                iam_user_arn: self.iam_user_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_user_profile::DeleteUserProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_user_profile::DeleteUserProfileInput {
+            iam_user_arn: self.iam_user_arn,
+        })
     }
 }

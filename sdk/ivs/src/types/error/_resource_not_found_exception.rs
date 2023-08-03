@@ -56,9 +56,7 @@ impl ResourceNotFoundException {
 
 /// A builder for [`ResourceNotFoundException`](crate::types::error::ResourceNotFoundException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceNotFoundExceptionBuilder {
     pub(crate) exception_message: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -66,18 +64,12 @@ pub struct ResourceNotFoundExceptionBuilder {
 }
 impl ResourceNotFoundExceptionBuilder {
     /// <p>Request references a resource which does not exist.</p>
-    pub fn exception_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exception_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exception_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Request references a resource which does not exist.</p>
-    pub fn set_exception_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exception_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exception_message = input;
         self
     }
@@ -106,10 +98,7 @@ impl ResourceNotFoundExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

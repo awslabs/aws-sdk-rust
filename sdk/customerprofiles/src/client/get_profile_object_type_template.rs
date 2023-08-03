@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`fields(Option<HashMap<String, ObjectTypeField>>)`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateOutput::fields): <p>A map of the name and ObjectType field.</p>
     ///   - [`keys(Option<HashMap<String, Vec<ObjectTypeKey>>>)`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateOutput::keys): <p>A list of unique keys that can be used to map data to the profile.</p>
     /// - On failure, responds with [`SdkError<GetProfileObjectTypeTemplateError>`](crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError)
-    pub fn get_profile_object_type_template(&self) -> crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateFluentBuilder{
+    pub fn get_profile_object_type_template(
+        &self,
+    ) -> crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateFluentBuilder {
         crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateFluentBuilder::new(self.handle.clone())
     }
 }

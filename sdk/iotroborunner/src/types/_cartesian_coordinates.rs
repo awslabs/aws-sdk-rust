@@ -37,9 +37,7 @@ impl CartesianCoordinates {
 
 /// A builder for [`CartesianCoordinates`](crate::types::CartesianCoordinates).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CartesianCoordinatesBuilder {
     pub(crate) x: ::std::option::Option<f64>,
     pub(crate) y: ::std::option::Option<f64>,

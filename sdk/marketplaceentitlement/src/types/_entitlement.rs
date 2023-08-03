@@ -51,9 +51,7 @@ impl Entitlement {
 
 /// A builder for [`Entitlement`](crate::types::Entitlement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntitlementBuilder {
     pub(crate) product_code: ::std::option::Option<::std::string::String>,
     pub(crate) dimension: ::std::option::Option<::std::string::String>,
@@ -91,18 +89,12 @@ impl EntitlementBuilder {
         &self.dimension
     }
     /// <p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>
-    pub fn customer_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>
-    pub fn set_customer_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_identifier = input;
         self
     }
@@ -116,10 +108,7 @@ impl EntitlementBuilder {
         self
     }
     /// <p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::EntitlementValue>,
-    ) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::EntitlementValue>) -> Self {
         self.value = input;
         self
     }
@@ -133,10 +122,7 @@ impl EntitlementBuilder {
         self
     }
     /// <p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>
-    pub fn set_expiration_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_date = input;
         self
     }

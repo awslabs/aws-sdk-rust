@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`subscription_definition_id(impl ::std::convert::Into<String>)`](crate::operation::update_subscription_definition::builders::UpdateSubscriptionDefinitionFluentBuilder::subscription_definition_id) / [`set_subscription_definition_id(Option<String>)`](crate::operation::update_subscription_definition::builders::UpdateSubscriptionDefinitionFluentBuilder::set_subscription_definition_id): The ID of the subscription definition.
     /// - On success, responds with [`UpdateSubscriptionDefinitionOutput`](crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionOutput)
     /// - On failure, responds with [`SdkError<UpdateSubscriptionDefinitionError>`](crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionError)
-    pub fn update_subscription_definition(&self) -> crate::operation::update_subscription_definition::builders::UpdateSubscriptionDefinitionFluentBuilder{
+    pub fn update_subscription_definition(
+        &self,
+    ) -> crate::operation::update_subscription_definition::builders::UpdateSubscriptionDefinitionFluentBuilder {
         crate::operation::update_subscription_definition::builders::UpdateSubscriptionDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

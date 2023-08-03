@@ -22,9 +22,7 @@ impl StopWorkflowInput {
 
 /// A builder for [`StopWorkflowInput`](crate::operation::stop_workflow::StopWorkflowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopWorkflowInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl StopWorkflowInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`StopWorkflowInput`](crate::operation::stop_workflow::StopWorkflowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_workflow::StopWorkflowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_workflow::StopWorkflowInput {
-            id: self.id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_workflow::StopWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_workflow::StopWorkflowInput { id: self.id })
     }
 }

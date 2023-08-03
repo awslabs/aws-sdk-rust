@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListLambdaFunctionsOutput {
 }
 impl ListLambdaFunctionsOutput {
     /// Creates a new builder-style object to manufacture [`ListLambdaFunctionsOutput`](crate::operation::list_lambda_functions::ListLambdaFunctionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_lambda_functions::builders::ListLambdaFunctionsOutputBuilder {
-        crate::operation::list_lambda_functions::builders::ListLambdaFunctionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_lambda_functions::builders::ListLambdaFunctionsOutputBuilder {
+        crate::operation::list_lambda_functions::builders::ListLambdaFunctionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLambdaFunctionsOutput`](crate::operation::list_lambda_functions::ListLambdaFunctionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLambdaFunctionsOutputBuilder {
     pub(crate) lambda_functions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,27 +47,19 @@ impl ListLambdaFunctionsOutputBuilder {
     /// To override the contents of this collection use [`set_lambda_functions`](Self::set_lambda_functions).
     ///
     /// <p>The Lambdafunction ARNs associated with the specified instance.</p>
-    pub fn lambda_functions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lambda_functions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lambda_functions.unwrap_or_default();
         v.push(input.into());
         self.lambda_functions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Lambdafunction ARNs associated with the specified instance.</p>
-    pub fn set_lambda_functions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_lambda_functions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.lambda_functions = input;
         self
     }
     /// <p>The Lambdafunction ARNs associated with the specified instance.</p>
-    pub fn get_lambda_functions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lambda_functions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.lambda_functions
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

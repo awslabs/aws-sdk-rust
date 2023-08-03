@@ -36,16 +36,14 @@ impl ListSecurityProfilesForTargetInput {
 }
 impl ListSecurityProfilesForTargetInput {
     /// Creates a new builder-style object to manufacture [`ListSecurityProfilesForTargetInput`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetInput).
-    pub fn builder() -> crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetInputBuilder{
+    pub fn builder() -> crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetInputBuilder {
         crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityProfilesForTargetInput`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityProfilesForTargetInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -96,18 +94,12 @@ impl ListSecurityProfilesForTargetInputBuilder {
         &self.recursive
     }
     /// <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
-    pub fn security_profile_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
-    pub fn set_security_profile_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_profile_target_arn = input;
         self
     }
@@ -122,17 +114,11 @@ impl ListSecurityProfilesForTargetInputBuilder {
         crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                recursive: self.recursive
-                ,
-                security_profile_target_arn: self.security_profile_target_arn
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            recursive: self.recursive,
+            security_profile_target_arn: self.security_profile_target_arn,
+        })
     }
 }

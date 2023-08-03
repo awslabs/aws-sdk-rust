@@ -53,18 +53,14 @@ impl DescribeClientVpnRoutesInput {
 }
 impl DescribeClientVpnRoutesInput {
     /// Creates a new builder-style object to manufacture [`DescribeClientVpnRoutesInput`](crate::operation::describe_client_vpn_routes::DescribeClientVpnRoutesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_client_vpn_routes::builders::DescribeClientVpnRoutesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_client_vpn_routes::builders::DescribeClientVpnRoutesInputBuilder {
         crate::operation::describe_client_vpn_routes::builders::DescribeClientVpnRoutesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClientVpnRoutesInput`](crate::operation::describe_client_vpn_routes::DescribeClientVpnRoutesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClientVpnRoutesInputBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -74,18 +70,12 @@ pub struct DescribeClientVpnRoutesInputBuilder {
 }
 impl DescribeClientVpnRoutesInputBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
@@ -115,10 +105,7 @@ impl DescribeClientVpnRoutesInputBuilder {
     /// <li> <p> <code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p> </li>
     /// <li> <p> <code>target-subnet</code> - The ID of the subnet through which traffic is routed.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -180,14 +167,12 @@ impl DescribeClientVpnRoutesInputBuilder {
         crate::operation::describe_client_vpn_routes::DescribeClientVpnRoutesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_client_vpn_routes::DescribeClientVpnRoutesInput {
-                client_vpn_endpoint_id: self.client_vpn_endpoint_id,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_client_vpn_routes::DescribeClientVpnRoutesInput {
+            client_vpn_endpoint_id: self.client_vpn_endpoint_id,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            dry_run: self.dry_run,
+        })
     }
 }

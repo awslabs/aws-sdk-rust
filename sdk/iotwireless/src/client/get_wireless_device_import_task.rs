@@ -17,7 +17,9 @@ impl super::Client {
     ///   - [`onboarded_imported_device_count(Option<i64>)`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput::onboarded_imported_device_count): <p>The number of devices in the import task that have been onboarded to the import task.</p>
     ///   - [`failed_imported_device_count(Option<i64>)`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput::failed_imported_device_count): <p>The number of devices in the import task that failed to onboard to the import task.</p>
     /// - On failure, responds with [`SdkError<GetWirelessDeviceImportTaskError>`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError)
-    pub fn get_wireless_device_import_task(&self) -> crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskFluentBuilder{
+    pub fn get_wireless_device_import_task(
+        &self,
+    ) -> crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskFluentBuilder {
         crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskFluentBuilder::new(self.handle.clone())
     }
 }

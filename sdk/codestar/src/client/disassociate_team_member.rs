@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`user_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_team_member::builders::DisassociateTeamMemberFluentBuilder::user_arn) / [`set_user_arn(Option<String>)`](crate::operation::disassociate_team_member::builders::DisassociateTeamMemberFluentBuilder::set_user_arn): <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
     /// - On success, responds with [`DisassociateTeamMemberOutput`](crate::operation::disassociate_team_member::DisassociateTeamMemberOutput)
     /// - On failure, responds with [`SdkError<DisassociateTeamMemberError>`](crate::operation::disassociate_team_member::DisassociateTeamMemberError)
-    pub fn disassociate_team_member(
-        &self,
-    ) -> crate::operation::disassociate_team_member::builders::DisassociateTeamMemberFluentBuilder
-    {
+    pub fn disassociate_team_member(&self) -> crate::operation::disassociate_team_member::builders::DisassociateTeamMemberFluentBuilder {
         crate::operation::disassociate_team_member::builders::DisassociateTeamMemberFluentBuilder::new(self.handle.clone())
     }
 }

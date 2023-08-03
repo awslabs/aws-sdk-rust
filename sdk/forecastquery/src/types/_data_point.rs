@@ -30,9 +30,7 @@ impl DataPoint {
 
 /// A builder for [`DataPoint`](crate::types::DataPoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataPointBuilder {
     pub(crate) timestamp: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<f64>,

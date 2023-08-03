@@ -6,8 +6,7 @@
 pub struct ListUserPoolClientsOutput {
     /// <p>The user pool clients in the response that lists user pool clients.</p>
     #[doc(hidden)]
-    pub user_pool_clients:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>>,
+    pub user_pool_clients: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListUserPoolClientsOutput {
 }
 impl ListUserPoolClientsOutput {
     /// <p>The user pool clients in the response that lists user pool clients.</p>
-    pub fn user_pool_clients(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UserPoolClientDescription]> {
+    pub fn user_pool_clients(&self) -> ::std::option::Option<&[crate::types::UserPoolClientDescription]> {
         self.user_pool_clients.as_deref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
@@ -32,20 +29,16 @@ impl ::aws_http::request_id::RequestId for ListUserPoolClientsOutput {
 }
 impl ListUserPoolClientsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserPoolClientsOutput`](crate::operation::list_user_pool_clients::ListUserPoolClientsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_user_pool_clients::builders::ListUserPoolClientsOutputBuilder {
+    pub fn builder() -> crate::operation::list_user_pool_clients::builders::ListUserPoolClientsOutputBuilder {
         crate::operation::list_user_pool_clients::builders::ListUserPoolClientsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListUserPoolClientsOutput`](crate::operation::list_user_pool_clients::ListUserPoolClientsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserPoolClientsOutputBuilder {
-    pub(crate) user_pool_clients:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>>,
+    pub(crate) user_pool_clients: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +55,12 @@ impl ListUserPoolClientsOutputBuilder {
         self
     }
     /// <p>The user pool clients in the response that lists user pool clients.</p>
-    pub fn set_user_pool_clients(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>>,
-    ) -> Self {
+    pub fn set_user_pool_clients(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>>) -> Self {
         self.user_pool_clients = input;
         self
     }
     /// <p>The user pool clients in the response that lists user pool clients.</p>
-    pub fn get_user_pool_clients(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>> {
+    pub fn get_user_pool_clients(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>> {
         &self.user_pool_clients
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>

@@ -26,8 +26,7 @@ impl UpdateFolderPermissionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFolderPermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsInputBuilder,
+    inner: crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsInputBuilder,
 }
 impl UpdateFolderPermissionsFluentBuilder {
     /// Creates a new `UpdateFolderPermissions`.
@@ -38,10 +37,7 @@ impl UpdateFolderPermissionsFluentBuilder {
         }
     }
     /// Access the UpdateFolderPermissions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateFolderPermissionsFluentBuilder {
             crate::operation::update_folder_permissions::UpdateFolderPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_folder_permissions::UpdateFolderPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_folder_permissions::UpdateFolderPermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateFolderPermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateFolderPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_folder_permissions::UpdateFolderPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_folder_permissions::UpdateFolderPermissionsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateFolderPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_folder_permissions::UpdateFolderPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_folder_permissions::UpdateFolderPermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl UpdateFolderPermissionsFluentBuilder {
             crate::operation::update_folder_permissions::UpdateFolderPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_folder_permissions::UpdateFolderPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_folder_permissions::UpdateFolderPermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -168,17 +147,12 @@ impl UpdateFolderPermissionsFluentBuilder {
         self
     }
     /// <p>The permissions that you want to grant on a resource.</p>
-    pub fn set_grant_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_grant_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_grant_permissions(input);
         self
     }
     /// <p>The permissions that you want to grant on a resource.</p>
-    pub fn get_grant_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_grant_permissions()
     }
     /// Appends an item to `RevokePermissions`.
@@ -191,17 +165,12 @@ impl UpdateFolderPermissionsFluentBuilder {
         self
     }
     /// <p>The permissions that you want to revoke from a resource.</p>
-    pub fn set_revoke_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_revoke_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_revoke_permissions(input);
         self
     }
     /// <p>The permissions that you want to revoke from a resource.</p>
-    pub fn get_revoke_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_revoke_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         self.inner.get_revoke_permissions()
     }
 }

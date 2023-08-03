@@ -36,18 +36,14 @@ impl ListResolversByFunctionInput {
 }
 impl ListResolversByFunctionInput {
     /// Creates a new builder-style object to manufacture [`ListResolversByFunctionInput`](crate::operation::list_resolvers_by_function::ListResolversByFunctionInput).
-    pub fn builder(
-    ) -> crate::operation::list_resolvers_by_function::builders::ListResolversByFunctionInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resolvers_by_function::builders::ListResolversByFunctionInputBuilder {
         crate::operation::list_resolvers_by_function::builders::ListResolversByFunctionInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolversByFunctionInput`](crate::operation::list_resolvers_by_function::ListResolversByFunctionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolversByFunctionInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) function_id: ::std::option::Option<::std::string::String>,
@@ -118,13 +114,11 @@ impl ListResolversByFunctionInputBuilder {
         crate::operation::list_resolvers_by_function::ListResolversByFunctionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resolvers_by_function::ListResolversByFunctionInput {
-                api_id: self.api_id,
-                function_id: self.function_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_resolvers_by_function::ListResolversByFunctionInput {
+            api_id: self.api_id,
+            function_id: self.function_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

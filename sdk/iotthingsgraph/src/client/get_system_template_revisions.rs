@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
     /// - On failure, responds with [`SdkError<GetSystemTemplateRevisionsError>`](crate::operation::get_system_template_revisions::GetSystemTemplateRevisionsError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn get_system_template_revisions(&self) -> crate::operation::get_system_template_revisions::builders::GetSystemTemplateRevisionsFluentBuilder{
+    pub fn get_system_template_revisions(
+        &self,
+    ) -> crate::operation::get_system_template_revisions::builders::GetSystemTemplateRevisionsFluentBuilder {
         crate::operation::get_system_template_revisions::builders::GetSystemTemplateRevisionsFluentBuilder::new(self.handle.clone())
     }
 }

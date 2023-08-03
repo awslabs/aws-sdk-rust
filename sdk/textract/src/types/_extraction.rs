@@ -37,9 +37,7 @@ impl Extraction {
 
 /// A builder for [`Extraction`](crate::types::Extraction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExtractionBuilder {
     pub(crate) lending_document: ::std::option::Option<crate::types::LendingDocument>,
     pub(crate) expense_document: ::std::option::Option<crate::types::ExpenseDocument>,
@@ -52,10 +50,7 @@ impl ExtractionBuilder {
         self
     }
     /// <p>Holds the structured data returned by AnalyzeDocument for lending documents.</p>
-    pub fn set_lending_document(
-        mut self,
-        input: ::std::option::Option<crate::types::LendingDocument>,
-    ) -> Self {
+    pub fn set_lending_document(mut self, input: ::std::option::Option<crate::types::LendingDocument>) -> Self {
         self.lending_document = input;
         self
     }
@@ -69,10 +64,7 @@ impl ExtractionBuilder {
         self
     }
     /// <p>The structure holding all the information returned by AnalyzeExpense</p>
-    pub fn set_expense_document(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpenseDocument>,
-    ) -> Self {
+    pub fn set_expense_document(mut self, input: ::std::option::Option<crate::types::ExpenseDocument>) -> Self {
         self.expense_document = input;
         self
     }
@@ -86,10 +78,7 @@ impl ExtractionBuilder {
         self
     }
     /// <p>The structure that lists each document processed in an AnalyzeID operation.</p>
-    pub fn set_identity_document(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityDocument>,
-    ) -> Self {
+    pub fn set_identity_document(mut self, input: ::std::option::Option<crate::types::IdentityDocument>) -> Self {
         self.identity_document = input;
         self
     }

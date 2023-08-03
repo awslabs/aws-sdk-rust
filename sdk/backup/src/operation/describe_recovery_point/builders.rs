@@ -37,10 +37,7 @@ impl DescribeRecoveryPointFluentBuilder {
         }
     }
     /// Access the DescribeRecoveryPoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_recovery_point::builders::DescribeRecoveryPointInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_recovery_point::builders::DescribeRecoveryPointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeRecoveryPointFluentBuilder {
             crate::operation::describe_recovery_point::DescribeRecoveryPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recovery_point::DescribeRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recovery_point::DescribeRecoveryPointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeRecoveryPointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeRecoveryPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_recovery_point::DescribeRecoveryPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recovery_point::DescribeRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recovery_point::DescribeRecoveryPointError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeRecoveryPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_recovery_point::DescribeRecoveryPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recovery_point::DescribeRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recovery_point::DescribeRecoveryPointError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeRecoveryPointFluentBuilder {
             crate::operation::describe_recovery_point::DescribeRecoveryPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recovery_point::DescribeRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recovery_point::DescribeRecoveryPointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }
@@ -144,18 +124,12 @@ impl DescribeRecoveryPointFluentBuilder {
         self.inner.get_backup_vault_name()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn recovery_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recovery_point_arn(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn set_recovery_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recovery_point_arn(input);
         self
     }

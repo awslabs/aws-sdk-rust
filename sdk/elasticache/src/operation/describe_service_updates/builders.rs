@@ -37,10 +37,7 @@ impl DescribeServiceUpdatesFluentBuilder {
         }
     }
     /// Access the DescribeServiceUpdates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_service_updates::builders::DescribeServiceUpdatesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_service_updates::builders::DescribeServiceUpdatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeServiceUpdatesFluentBuilder {
             crate::operation::describe_service_updates::DescribeServiceUpdates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_updates::DescribeServiceUpdatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_updates::DescribeServiceUpdatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeServiceUpdatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeServiceUpdatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_service_updates::DescribeServiceUpdatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_updates::DescribeServiceUpdatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_updates::DescribeServiceUpdatesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeServiceUpdatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_service_updates::DescribeServiceUpdatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_updates::DescribeServiceUpdatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_updates::DescribeServiceUpdatesError>,
     > {
         self.send_middleware().await
     }
@@ -117,37 +105,23 @@ impl DescribeServiceUpdatesFluentBuilder {
             crate::operation::describe_service_updates::DescribeServiceUpdates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_service_updates::DescribeServiceUpdatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_service_updates::DescribeServiceUpdatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_service_updates::paginator::DescribeServiceUpdatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_service_updates::paginator::DescribeServiceUpdatesPaginator
-    {
-        crate::operation::describe_service_updates::paginator::DescribeServiceUpdatesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_service_updates::paginator::DescribeServiceUpdatesPaginator {
+        crate::operation::describe_service_updates::paginator::DescribeServiceUpdatesPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique ID of the service update</p>
-    pub fn service_update_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_update_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_update_name(input.into());
         self
     }
     /// <p>The unique ID of the service update</p>
-    pub fn set_service_update_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_update_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_update_name(input);
         self
     }
@@ -165,17 +139,12 @@ impl DescribeServiceUpdatesFluentBuilder {
         self
     }
     /// <p>The status of the service update</p>
-    pub fn set_service_update_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>,
-    ) -> Self {
+    pub fn set_service_update_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>) -> Self {
         self.inner = self.inner.set_service_update_status(input);
         self
     }
     /// <p>The status of the service update</p>
-    pub fn get_service_update_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>> {
+    pub fn get_service_update_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>> {
         self.inner.get_service_update_status()
     }
     /// <p>The maximum number of records to include in the response</p>

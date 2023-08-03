@@ -19,9 +19,7 @@ impl AddIpRoutesOutput {
 
 /// A builder for [`AddIpRoutesOutput`](crate::operation::add_ip_routes::AddIpRoutesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddIpRoutesOutputBuilder {
     _request_id: Option<String>,
 }

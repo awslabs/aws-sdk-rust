@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`SampleChannelDataOutput`](crate::operation::sample_channel_data::SampleChannelDataOutput) with field(s):
     ///   - [`payloads(Option<Vec<Blob>>)`](crate::operation::sample_channel_data::SampleChannelDataOutput::payloads): <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
     /// - On failure, responds with [`SdkError<SampleChannelDataError>`](crate::operation::sample_channel_data::SampleChannelDataError)
-    pub fn sample_channel_data(
-        &self,
-    ) -> crate::operation::sample_channel_data::builders::SampleChannelDataFluentBuilder {
-        crate::operation::sample_channel_data::builders::SampleChannelDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn sample_channel_data(&self) -> crate::operation::sample_channel_data::builders::SampleChannelDataFluentBuilder {
+        crate::operation::sample_channel_data::builders::SampleChannelDataFluentBuilder::new(self.handle.clone())
     }
 }

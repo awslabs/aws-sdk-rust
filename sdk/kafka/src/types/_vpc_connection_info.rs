@@ -44,9 +44,7 @@ impl VpcConnectionInfo {
 
 /// A builder for [`VpcConnectionInfo`](crate::types::VpcConnectionInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcConnectionInfoBuilder {
     pub(crate) vpc_connection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct VpcConnectionInfoBuilder {
 }
 impl VpcConnectionInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
-    pub fn vpc_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
-    pub fn set_vpc_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_connection_arn = input;
         self
     }
@@ -94,10 +86,7 @@ impl VpcConnectionInfoBuilder {
         self
     }
     /// <p>Description of the requester that calls the API operation.</p>
-    pub fn set_user_identity(
-        mut self,
-        input: ::std::option::Option<crate::types::UserIdentity>,
-    ) -> Self {
+    pub fn set_user_identity(mut self, input: ::std::option::Option<crate::types::UserIdentity>) -> Self {
         self.user_identity = input;
         self
     }
@@ -111,10 +100,7 @@ impl VpcConnectionInfoBuilder {
         self
     }
     /// <p>The time when Amazon MSK creates the VPC Connnection.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

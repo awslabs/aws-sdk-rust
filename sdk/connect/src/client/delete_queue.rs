@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`queue_id(impl ::std::convert::Into<String>)`](crate::operation::delete_queue::builders::DeleteQueueFluentBuilder::queue_id) / [`set_queue_id(Option<String>)`](crate::operation::delete_queue::builders::DeleteQueueFluentBuilder::set_queue_id): <p>The identifier for the queue.</p>
     /// - On success, responds with [`DeleteQueueOutput`](crate::operation::delete_queue::DeleteQueueOutput)
     /// - On failure, responds with [`SdkError<DeleteQueueError>`](crate::operation::delete_queue::DeleteQueueError)
-    pub fn delete_queue(
-        &self,
-    ) -> crate::operation::delete_queue::builders::DeleteQueueFluentBuilder {
+    pub fn delete_queue(&self) -> crate::operation::delete_queue::builders::DeleteQueueFluentBuilder {
         crate::operation::delete_queue::builders::DeleteQueueFluentBuilder::new(self.handle.clone())
     }
 }

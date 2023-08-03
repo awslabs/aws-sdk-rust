@@ -39,10 +39,7 @@ impl UpdateWorkspaceBundleFluentBuilder {
         }
     }
     /// Access the UpdateWorkspaceBundle as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl UpdateWorkspaceBundleFluentBuilder {
             crate::operation::update_workspace_bundle::UpdateWorkspaceBundle,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace_bundle::UpdateWorkspaceBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_bundle::UpdateWorkspaceBundleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl UpdateWorkspaceBundleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl UpdateWorkspaceBundleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_workspace_bundle::UpdateWorkspaceBundleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace_bundle::UpdateWorkspaceBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_bundle::UpdateWorkspaceBundleError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl UpdateWorkspaceBundleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_workspace_bundle::UpdateWorkspaceBundleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace_bundle::UpdateWorkspaceBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_bundle::UpdateWorkspaceBundleError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl UpdateWorkspaceBundleFluentBuilder {
             crate::operation::update_workspace_bundle::UpdateWorkspaceBundle,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace_bundle::UpdateWorkspaceBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_bundle::UpdateWorkspaceBundleError>,
     > {
         self.customize_middleware().await
     }

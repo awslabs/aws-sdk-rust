@@ -10,10 +10,7 @@ impl ListFindingsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_findings::ListFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_findings::ListFindingsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_findings::ListFindingsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_findings();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListFindingsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_findings::ListFindings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_findings::ListFindings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_findings::ListFindingsError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListFindingsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_findings::ListFindings,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_findings::ListFindings, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_findings::ListFindingsError>,
     > {
         self.customize_middleware().await
@@ -115,13 +103,8 @@ impl ListFindingsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_findings::paginator::ListFindingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_findings::paginator::ListFindingsPaginator {
-        crate::operation::list_findings::paginator::ListFindingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_findings::paginator::ListFindingsPaginator {
+        crate::operation::list_findings::paginator::ListFindingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The criteria to use to filter the results.</p>
     pub fn finding_criteria(mut self, input: crate::types::FindingCriteria) -> Self {
@@ -129,10 +112,7 @@ impl ListFindingsFluentBuilder {
         self
     }
     /// <p>The criteria to use to filter the results.</p>
-    pub fn set_finding_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingCriteria>,
-    ) -> Self {
+    pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
         self.inner = self.inner.set_finding_criteria(input);
         self
     }
@@ -174,10 +154,7 @@ impl ListFindingsFluentBuilder {
         self
     }
     /// <p>The criteria to use to sort the results.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::SortCriteria>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::SortCriteria>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }

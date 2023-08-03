@@ -16,11 +16,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateExperimentOutput`](crate::operation::update_experiment::UpdateExperimentOutput) with field(s):
     ///   - [`experiment(Option<Experiment>)`](crate::operation::update_experiment::UpdateExperimentOutput::experiment): <p>A structure containing the configuration details of the experiment that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateExperimentError>`](crate::operation::update_experiment::UpdateExperimentError)
-    pub fn update_experiment(
-        &self,
-    ) -> crate::operation::update_experiment::builders::UpdateExperimentFluentBuilder {
-        crate::operation::update_experiment::builders::UpdateExperimentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_experiment(&self) -> crate::operation::update_experiment::builders::UpdateExperimentFluentBuilder {
+        crate::operation::update_experiment::builders::UpdateExperimentFluentBuilder::new(self.handle.clone())
     }
 }

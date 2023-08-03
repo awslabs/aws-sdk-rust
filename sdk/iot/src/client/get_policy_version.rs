@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::get_policy_version::GetPolicyVersionOutput::last_modified_date): <p>The date the policy was last modified.</p>
     ///   - [`generation_id(Option<String>)`](crate::operation::get_policy_version::GetPolicyVersionOutput::generation_id): <p>The generation ID of the policy version.</p>
     /// - On failure, responds with [`SdkError<GetPolicyVersionError>`](crate::operation::get_policy_version::GetPolicyVersionError)
-    pub fn get_policy_version(
-        &self,
-    ) -> crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder {
-        crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_policy_version(&self) -> crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder {
+        crate::operation::get_policy_version::builders::GetPolicyVersionFluentBuilder::new(self.handle.clone())
     }
 }

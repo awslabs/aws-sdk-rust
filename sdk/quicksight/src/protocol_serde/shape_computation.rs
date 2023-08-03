@@ -24,10 +24,7 @@ pub fn ser_computation(
     if let Some(var_7) = &input.maximum_minimum {
         #[allow(unused_mut)]
         let mut object_8 = object.key("MaximumMinimum").start_object();
-        crate::protocol_serde::shape_maximum_minimum_computation::ser_maximum_minimum_computation(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_maximum_minimum_computation::ser_maximum_minimum_computation(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.metric_comparison {
@@ -45,37 +42,25 @@ pub fn ser_computation(
     if let Some(var_13) = &input.period_to_date {
         #[allow(unused_mut)]
         let mut object_14 = object.key("PeriodToDate").start_object();
-        crate::protocol_serde::shape_period_to_date_computation::ser_period_to_date_computation(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_period_to_date_computation::ser_period_to_date_computation(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.growth_rate {
         #[allow(unused_mut)]
         let mut object_16 = object.key("GrowthRate").start_object();
-        crate::protocol_serde::shape_growth_rate_computation::ser_growth_rate_computation(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_growth_rate_computation::ser_growth_rate_computation(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.unique_values {
         #[allow(unused_mut)]
         let mut object_18 = object.key("UniqueValues").start_object();
-        crate::protocol_serde::shape_unique_values_computation::ser_unique_values_computation(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_unique_values_computation::ser_unique_values_computation(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.forecast {
         #[allow(unused_mut)]
         let mut object_20 = object.key("Forecast").start_object();
-        crate::protocol_serde::shape_forecast_computation::ser_forecast_computation(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_forecast_computation::ser_forecast_computation(&mut object_20, var_19)?;
         object_20.finish();
     }
     Ok(())
@@ -83,17 +68,9 @@ pub fn ser_computation(
 
 pub(crate) fn de_computation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::Computation>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::Computation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -103,76 +80,68 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "TopBottomRanked" => {
-                                builder = builder.set_top_bottom_ranked(
-                                    crate::protocol_serde::shape_top_bottom_ranked_computation::de_top_bottom_ranked_computation(tokens)?
-                                );
-                            }
-                            "TopBottomMovers" => {
-                                builder = builder.set_top_bottom_movers(
-                                    crate::protocol_serde::shape_top_bottom_movers_computation::de_top_bottom_movers_computation(tokens)?
-                                );
-                            }
-                            "TotalAggregation" => {
-                                builder = builder.set_total_aggregation(
-                                    crate::protocol_serde::shape_total_aggregation_computation::de_total_aggregation_computation(tokens)?
-                                );
-                            }
-                            "MaximumMinimum" => {
-                                builder = builder.set_maximum_minimum(
-                                    crate::protocol_serde::shape_maximum_minimum_computation::de_maximum_minimum_computation(tokens)?
-                                );
-                            }
-                            "MetricComparison" => {
-                                builder = builder.set_metric_comparison(
-                                    crate::protocol_serde::shape_metric_comparison_computation::de_metric_comparison_computation(tokens)?
-                                );
-                            }
-                            "PeriodOverPeriod" => {
-                                builder = builder.set_period_over_period(
-                                    crate::protocol_serde::shape_period_over_period_computation::de_period_over_period_computation(tokens)?
-                                );
-                            }
-                            "PeriodToDate" => {
-                                builder = builder.set_period_to_date(
-                                    crate::protocol_serde::shape_period_to_date_computation::de_period_to_date_computation(tokens)?
-                                );
-                            }
-                            "GrowthRate" => {
-                                builder = builder.set_growth_rate(
-                                    crate::protocol_serde::shape_growth_rate_computation::de_growth_rate_computation(tokens)?
-                                );
-                            }
-                            "UniqueValues" => {
-                                builder = builder.set_unique_values(
-                                    crate::protocol_serde::shape_unique_values_computation::de_unique_values_computation(tokens)?
-                                );
-                            }
-                            "Forecast" => {
-                                builder = builder.set_forecast(
-                                    crate::protocol_serde::shape_forecast_computation::de_forecast_computation(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "TopBottomRanked" => {
+                            builder = builder.set_top_bottom_ranked(
+                                crate::protocol_serde::shape_top_bottom_ranked_computation::de_top_bottom_ranked_computation(tokens)?,
+                            );
                         }
-                    }
+                        "TopBottomMovers" => {
+                            builder = builder.set_top_bottom_movers(
+                                crate::protocol_serde::shape_top_bottom_movers_computation::de_top_bottom_movers_computation(tokens)?,
+                            );
+                        }
+                        "TotalAggregation" => {
+                            builder = builder.set_total_aggregation(
+                                crate::protocol_serde::shape_total_aggregation_computation::de_total_aggregation_computation(tokens)?,
+                            );
+                        }
+                        "MaximumMinimum" => {
+                            builder = builder.set_maximum_minimum(
+                                crate::protocol_serde::shape_maximum_minimum_computation::de_maximum_minimum_computation(tokens)?,
+                            );
+                        }
+                        "MetricComparison" => {
+                            builder = builder.set_metric_comparison(
+                                crate::protocol_serde::shape_metric_comparison_computation::de_metric_comparison_computation(tokens)?,
+                            );
+                        }
+                        "PeriodOverPeriod" => {
+                            builder = builder.set_period_over_period(
+                                crate::protocol_serde::shape_period_over_period_computation::de_period_over_period_computation(tokens)?,
+                            );
+                        }
+                        "PeriodToDate" => {
+                            builder = builder.set_period_to_date(
+                                crate::protocol_serde::shape_period_to_date_computation::de_period_to_date_computation(tokens)?,
+                            );
+                        }
+                        "GrowthRate" => {
+                            builder =
+                                builder.set_growth_rate(crate::protocol_serde::shape_growth_rate_computation::de_growth_rate_computation(tokens)?);
+                        }
+                        "UniqueValues" => {
+                            builder = builder.set_unique_values(
+                                crate::protocol_serde::shape_unique_values_computation::de_unique_values_computation(tokens)?,
+                            );
+                        }
+                        "Forecast" => {
+                            builder = builder.set_forecast(crate::protocol_serde::shape_forecast_computation::de_forecast_computation(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

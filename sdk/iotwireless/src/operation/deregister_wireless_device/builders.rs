@@ -26,7 +26,7 @@ impl DeregisterWirelessDeviceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterWirelessDeviceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceInputBuilder,
+    inner: crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceInputBuilder,
 }
 impl DeregisterWirelessDeviceFluentBuilder {
     /// Creates a new `DeregisterWirelessDevice`.
@@ -37,10 +37,7 @@ impl DeregisterWirelessDeviceFluentBuilder {
         }
     }
     /// Access the DeregisterWirelessDevice as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeregisterWirelessDeviceFluentBuilder {
             crate::operation::deregister_wireless_device::DeregisterWirelessDevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeregisterWirelessDeviceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeregisterWirelessDeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeregisterWirelessDeviceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeregisterWirelessDeviceFluentBuilder {
             crate::operation::deregister_wireless_device::DeregisterWirelessDevice,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError>,
     > {
         self.customize_middleware().await
     }
@@ -143,17 +129,12 @@ impl DeregisterWirelessDeviceFluentBuilder {
         self
     }
     /// <p>The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
-    pub fn set_wireless_device_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessDeviceType>,
-    ) -> Self {
+    pub fn set_wireless_device_type(mut self, input: ::std::option::Option<crate::types::WirelessDeviceType>) -> Self {
         self.inner = self.inner.set_wireless_device_type(input);
         self
     }
     /// <p>The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
-    pub fn get_wireless_device_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+    pub fn get_wireless_device_type(&self) -> &::std::option::Option<crate::types::WirelessDeviceType> {
         self.inner.get_wireless_device_type()
     }
 }

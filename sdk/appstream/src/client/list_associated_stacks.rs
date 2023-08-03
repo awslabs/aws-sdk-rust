@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`names(Option<Vec<String>>)`](crate::operation::list_associated_stacks::ListAssociatedStacksOutput::names): <p>The name of the stack.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_associated_stacks::ListAssociatedStacksOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListAssociatedStacksError>`](crate::operation::list_associated_stacks::ListAssociatedStacksError)
-    pub fn list_associated_stacks(
-        &self,
-    ) -> crate::operation::list_associated_stacks::builders::ListAssociatedStacksFluentBuilder {
-        crate::operation::list_associated_stacks::builders::ListAssociatedStacksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_associated_stacks(&self) -> crate::operation::list_associated_stacks::builders::ListAssociatedStacksFluentBuilder {
+        crate::operation::list_associated_stacks::builders::ListAssociatedStacksFluentBuilder::new(self.handle.clone())
     }
 }

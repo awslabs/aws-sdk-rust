@@ -48,9 +48,7 @@ impl AwsElbLoadBalancerAccessLog {
 
 /// A builder for [`AwsElbLoadBalancerAccessLog`](crate::types::AwsElbLoadBalancerAccessLog).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerAccessLogBuilder {
     pub(crate) emit_interval: ::std::option::Option<i32>,
     pub(crate) enabled: ::std::option::Option<bool>,
@@ -90,18 +88,12 @@ impl AwsElbLoadBalancerAccessLogBuilder {
         &self.enabled
     }
     /// <p>The name of the S3 bucket where the access logs are stored.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket where the access logs are stored.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
@@ -111,19 +103,13 @@ impl AwsElbLoadBalancerAccessLogBuilder {
     }
     /// <p>The logical hierarchy that was created for the S3 bucket.</p>
     /// <p>If a prefix is not provided, the log is placed at the root level of the bucket.</p>
-    pub fn s3_bucket_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The logical hierarchy that was created for the S3 bucket.</p>
     /// <p>If a prefix is not provided, the log is placed at the root level of the bucket.</p>
-    pub fn set_s3_bucket_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_prefix = input;
         self
     }

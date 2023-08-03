@@ -5,15 +5,12 @@
 pub struct DescribeAuthenticationProfilesOutput {
     /// <p>The list of authentication profiles.</p>
     #[doc(hidden)]
-    pub authentication_profiles:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProfile>>,
+    pub authentication_profiles: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProfile>>,
     _request_id: Option<String>,
 }
 impl DescribeAuthenticationProfilesOutput {
     /// <p>The list of authentication profiles.</p>
-    pub fn authentication_profiles(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AuthenticationProfile]> {
+    pub fn authentication_profiles(&self) -> ::std::option::Option<&[crate::types::AuthenticationProfile]> {
         self.authentication_profiles.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribeAuthenticationProfilesOutput 
 }
 impl DescribeAuthenticationProfilesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAuthenticationProfilesOutput`](crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesOutput).
-    pub fn builder() -> crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesOutputBuilder {
         crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAuthenticationProfilesOutput`](crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAuthenticationProfilesOutputBuilder {
-    pub(crate) authentication_profiles:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProfile>>,
+    pub(crate) authentication_profiles: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProfile>>,
     _request_id: Option<String>,
 }
 impl DescribeAuthenticationProfilesOutputBuilder {
@@ -52,17 +46,12 @@ impl DescribeAuthenticationProfilesOutputBuilder {
         self
     }
     /// <p>The list of authentication profiles.</p>
-    pub fn set_authentication_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProfile>>,
-    ) -> Self {
+    pub fn set_authentication_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProfile>>) -> Self {
         self.authentication_profiles = input;
         self
     }
     /// <p>The list of authentication profiles.</p>
-    pub fn get_authentication_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProfile>> {
+    pub fn get_authentication_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProfile>> {
         &self.authentication_profiles
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,10 +64,7 @@ impl DescribeAuthenticationProfilesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAuthenticationProfilesOutput`](crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesOutput
-    {
+    pub fn build(self) -> crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesOutput {
         crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesOutput {
             authentication_profiles: self.authentication_profiles,
             _request_id: self._request_id,

@@ -23,9 +23,7 @@ impl StreamingNotificationTarget {
 
 /// A builder for [`StreamingNotificationTarget`](crate::types::StreamingNotificationTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamingNotificationTargetBuilder {
     pub(crate) notification_target: ::std::option::Option<crate::types::NotificationTarget>,
 }
@@ -36,17 +34,12 @@ impl StreamingNotificationTargetBuilder {
         self
     }
     /// <p>The streaming notification target.</p>
-    pub fn set_notification_target(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationTarget>,
-    ) -> Self {
+    pub fn set_notification_target(mut self, input: ::std::option::Option<crate::types::NotificationTarget>) -> Self {
         self.notification_target = input;
         self
     }
     /// <p>The streaming notification target.</p>
-    pub fn get_notification_target(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationTarget> {
+    pub fn get_notification_target(&self) -> &::std::option::Option<crate::types::NotificationTarget> {
         &self.notification_target
     }
     /// Consumes the builder and constructs a [`StreamingNotificationTarget`](crate::types::StreamingNotificationTarget).

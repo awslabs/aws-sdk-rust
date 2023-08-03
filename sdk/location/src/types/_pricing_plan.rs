@@ -2,13 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub struct PricingPlan(String);
 impl PricingPlan {
@@ -18,11 +12,7 @@ impl PricingPlan {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "MobileAssetManagement",
-            "MobileAssetTracking",
-            "RequestBasedUsage",
-        ]
+        &["MobileAssetManagement", "MobileAssetTracking", "RequestBasedUsage"]
     }
 }
 impl<T> ::std::convert::From<T> for PricingPlan

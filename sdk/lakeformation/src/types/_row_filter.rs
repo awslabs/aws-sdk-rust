@@ -30,27 +30,19 @@ impl RowFilter {
 
 /// A builder for [`RowFilter`](crate::types::RowFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RowFilterBuilder {
     pub(crate) filter_expression: ::std::option::Option<::std::string::String>,
     pub(crate) all_rows_wildcard: ::std::option::Option<crate::types::AllRowsWildcard>,
 }
 impl RowFilterBuilder {
     /// <p>A filter expression.</p>
-    pub fn filter_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter expression.</p>
-    pub fn set_filter_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_expression = input;
         self
     }
@@ -64,10 +56,7 @@ impl RowFilterBuilder {
         self
     }
     /// <p>A wildcard for all rows.</p>
-    pub fn set_all_rows_wildcard(
-        mut self,
-        input: ::std::option::Option<crate::types::AllRowsWildcard>,
-    ) -> Self {
+    pub fn set_all_rows_wildcard(mut self, input: ::std::option::Option<crate::types::AllRowsWildcard>) -> Self {
         self.all_rows_wildcard = input;
         self
     }

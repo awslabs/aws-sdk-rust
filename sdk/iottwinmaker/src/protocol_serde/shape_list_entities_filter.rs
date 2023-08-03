@@ -14,11 +14,9 @@ pub fn ser_list_entities_filter(
             object_4.key("externalId").string(inner.as_str());
         }
         crate::types::ListEntitiesFilter::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "ListEntitiesFilter",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "ListEntitiesFilter",
+            ))
         }
     }
     Ok(())

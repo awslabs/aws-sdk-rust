@@ -27,7 +27,7 @@ impl DissociateEntityFromThingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DissociateEntityFromThingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingInputBuilder,
+    inner: crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingInputBuilder,
 }
 impl DissociateEntityFromThingFluentBuilder {
     /// Creates a new `DissociateEntityFromThing`.
@@ -38,7 +38,7 @@ impl DissociateEntityFromThingFluentBuilder {
         }
     }
     /// Access the DissociateEntityFromThing as a reference.
-    pub fn as_input(&self) -> &crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DissociateEntityFromThingFluentBuilder {
             crate::operation::dissociate_entity_from_thing::DissociateEntityFromThing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DissociateEntityFromThingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DissociateEntityFromThingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DissociateEntityFromThingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DissociateEntityFromThingFluentBuilder {
             crate::operation::dissociate_entity_from_thing::DissociateEntityFromThing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError>,
     > {
         self.customize_middleware().await
     }
@@ -141,10 +130,7 @@ impl DissociateEntityFromThingFluentBuilder {
         self
     }
     /// <p>The entity type from which to disassociate the thing.</p>
-    pub fn set_entity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityType>,
-    ) -> Self {
+    pub fn set_entity_type(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
         self.inner = self.inner.set_entity_type(input);
         self
     }

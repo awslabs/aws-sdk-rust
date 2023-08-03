@@ -25,9 +25,7 @@ pub fn ser_update_launch_configuration_input(
         object.key("sourceServerID").string(var_7.as_str());
     }
     if let Some(var_8) = &input.target_instance_type_right_sizing_method {
-        object
-            .key("targetInstanceTypeRightSizingMethod")
-            .string(var_8.as_str());
+        object.key("targetInstanceTypeRightSizingMethod").string(var_8.as_str());
     }
     Ok(())
 }

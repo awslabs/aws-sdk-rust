@@ -51,9 +51,7 @@ impl StepAdjustment {
 
 /// A builder for [`StepAdjustment`](crate::types::StepAdjustment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StepAdjustmentBuilder {
     pub(crate) metric_interval_lower_bound: ::std::option::Option<f64>,
     pub(crate) metric_interval_upper_bound: ::std::option::Option<f64>,

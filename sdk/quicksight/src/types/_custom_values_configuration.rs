@@ -32,9 +32,7 @@ impl CustomValuesConfiguration {
 
 /// A builder for [`CustomValuesConfiguration`](crate::types::CustomValuesConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomValuesConfigurationBuilder {
     pub(crate) include_null_value: ::std::option::Option<bool>,
     pub(crate) custom_values: ::std::option::Option<crate::types::CustomParameterValues>,
@@ -62,10 +60,7 @@ impl CustomValuesConfigurationBuilder {
     }
     /// <p>The customized parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    pub fn set_custom_values(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomParameterValues>,
-    ) -> Self {
+    pub fn set_custom_values(mut self, input: ::std::option::Option<crate::types::CustomParameterValues>) -> Self {
         self.custom_values = input;
         self
     }

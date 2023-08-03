@@ -22,9 +22,7 @@ impl HlsFragmentSelector {
     /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the HLS media playlists will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
     /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the HLS media playlist. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p>
     /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
-    pub fn fragment_selector_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsFragmentSelectorType> {
+    pub fn fragment_selector_type(&self) -> ::std::option::Option<&crate::types::HlsFragmentSelectorType> {
         self.fragment_selector_type.as_ref()
     }
     /// <p>The start and end of the timestamp range for the requested media.</p>
@@ -42,9 +40,7 @@ impl HlsFragmentSelector {
 
 /// A builder for [`HlsFragmentSelector`](crate::types::HlsFragmentSelector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsFragmentSelectorBuilder {
     pub(crate) fragment_selector_type: ::std::option::Option<crate::types::HlsFragmentSelectorType>,
     pub(crate) timestamp_range: ::std::option::Option<crate::types::HlsTimestampRange>,
@@ -64,10 +60,7 @@ impl HlsFragmentSelectorBuilder {
     /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the HLS media playlists will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
     /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the HLS media playlist. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p>
     /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
-    pub fn set_fragment_selector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsFragmentSelectorType>,
-    ) -> Self {
+    pub fn set_fragment_selector_type(mut self, input: ::std::option::Option<crate::types::HlsFragmentSelectorType>) -> Self {
         self.fragment_selector_type = input;
         self
     }
@@ -76,9 +69,7 @@ impl HlsFragmentSelectorBuilder {
     /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the HLS media playlists will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
     /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetHLSStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the HLS media playlist. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p>
     /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
-    pub fn get_fragment_selector_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsFragmentSelectorType> {
+    pub fn get_fragment_selector_type(&self) -> &::std::option::Option<crate::types::HlsFragmentSelectorType> {
         &self.fragment_selector_type
     }
     /// <p>The start and end of the timestamp range for the requested media.</p>
@@ -89,10 +80,7 @@ impl HlsFragmentSelectorBuilder {
     }
     /// <p>The start and end of the timestamp range for the requested media.</p>
     /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
-    pub fn set_timestamp_range(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsTimestampRange>,
-    ) -> Self {
+    pub fn set_timestamp_range(mut self, input: ::std::option::Option<crate::types::HlsTimestampRange>) -> Self {
         self.timestamp_range = input;
         self
     }

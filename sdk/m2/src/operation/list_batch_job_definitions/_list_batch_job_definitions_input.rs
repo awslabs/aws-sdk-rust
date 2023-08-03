@@ -36,18 +36,14 @@ impl ListBatchJobDefinitionsInput {
 }
 impl ListBatchJobDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListBatchJobDefinitionsInput`](crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsInputBuilder {
         crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBatchJobDefinitionsInput`](crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBatchJobDefinitionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -84,18 +80,12 @@ impl ListBatchJobDefinitionsInputBuilder {
         &self.max_results
     }
     /// <p>The identifier of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -124,13 +114,11 @@ impl ListBatchJobDefinitionsInputBuilder {
         crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                application_id: self.application_id,
-                prefix: self.prefix,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            application_id: self.application_id,
+            prefix: self.prefix,
+        })
     }
 }

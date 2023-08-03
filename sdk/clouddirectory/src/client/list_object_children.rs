@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`children(Option<HashMap<String, String>>)`](crate::operation::list_object_children::ListObjectChildrenOutput::children): <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_object_children::ListObjectChildrenOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListObjectChildrenError>`](crate::operation::list_object_children::ListObjectChildrenError)
-    pub fn list_object_children(
-        &self,
-    ) -> crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder {
-        crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_object_children(&self) -> crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder {
+        crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder::new(self.handle.clone())
     }
 }

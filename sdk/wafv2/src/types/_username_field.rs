@@ -34,9 +34,7 @@ impl UsernameField {
 
 /// A builder for [`UsernameField`](crate::types::UsernameField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsernameFieldBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -72,8 +70,6 @@ impl UsernameFieldBuilder {
     }
     /// Consumes the builder and constructs a [`UsernameField`](crate::types::UsernameField).
     pub fn build(self) -> crate::types::UsernameField {
-        crate::types::UsernameField {
-            identifier: self.identifier,
-        }
+        crate::types::UsernameField { identifier: self.identifier }
     }
 }

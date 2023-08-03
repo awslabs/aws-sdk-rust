@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobFluentBuilder::set_tags): <p>Creates tags for the packaging job.</p>
     /// - On success, responds with [`CreateEdgePackagingJobOutput`](crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput)
     /// - On failure, responds with [`SdkError<CreateEdgePackagingJobError>`](crate::operation::create_edge_packaging_job::CreateEdgePackagingJobError)
-    pub fn create_edge_packaging_job(
-        &self,
-    ) -> crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobFluentBuilder
-    {
+    pub fn create_edge_packaging_job(&self) -> crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobFluentBuilder {
         crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobFluentBuilder::new(self.handle.clone())
     }
 }

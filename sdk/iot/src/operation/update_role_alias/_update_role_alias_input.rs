@@ -38,9 +38,7 @@ impl UpdateRoleAliasInput {
 
 /// A builder for [`UpdateRoleAliasInput`](crate::operation::update_role_alias::UpdateRoleAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRoleAliasInputBuilder {
     pub(crate) role_alias: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -95,10 +93,7 @@ impl UpdateRoleAliasInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRoleAliasInput`](crate::operation::update_role_alias::UpdateRoleAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_role_alias::UpdateRoleAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_role_alias::UpdateRoleAliasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_role_alias::UpdateRoleAliasInput {
             role_alias: self.role_alias,
             role_arn: self.role_arn,

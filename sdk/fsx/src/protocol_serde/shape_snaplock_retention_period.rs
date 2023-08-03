@@ -26,17 +26,9 @@ pub fn ser_snaplock_retention_period(
 
 pub(crate) fn de_snaplock_retention_period<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SnaplockRetentionPeriod>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SnaplockRetentionPeriod>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -46,41 +38,30 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "DefaultRetention" => {
-                                builder = builder.set_default_retention(
-                                    crate::protocol_serde::shape_retention_period::de_retention_period(tokens)?
-                                );
-                            }
-                            "MinimumRetention" => {
-                                builder = builder.set_minimum_retention(
-                                    crate::protocol_serde::shape_retention_period::de_retention_period(tokens)?
-                                );
-                            }
-                            "MaximumRetention" => {
-                                builder = builder.set_maximum_retention(
-                                    crate::protocol_serde::shape_retention_period::de_retention_period(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "DefaultRetention" => {
+                            builder = builder.set_default_retention(crate::protocol_serde::shape_retention_period::de_retention_period(tokens)?);
                         }
-                    }
+                        "MinimumRetention" => {
+                            builder = builder.set_minimum_retention(crate::protocol_serde::shape_retention_period::de_retention_period(tokens)?);
+                        }
+                        "MaximumRetention" => {
+                            builder = builder.set_maximum_retention(crate::protocol_serde::shape_retention_period::de_retention_period(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

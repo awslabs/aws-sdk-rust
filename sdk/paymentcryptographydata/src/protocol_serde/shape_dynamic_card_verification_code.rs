@@ -10,9 +10,7 @@ pub fn ser_dynamic_card_verification_code(
         object.key("PanSequenceNumber").string(var_2.as_str());
     }
     if let Some(var_3) = &input.application_transaction_counter {
-        object
-            .key("ApplicationTransactionCounter")
-            .string(var_3.as_str());
+        object.key("ApplicationTransactionCounter").string(var_3.as_str());
     }
     if let Some(var_4) = &input.track_data {
         object.key("TrackData").string(var_4.as_str());

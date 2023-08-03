@@ -37,10 +37,7 @@ impl DescribeEndpointAccessFluentBuilder {
         }
     }
     /// Access the DescribeEndpointAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeEndpointAccessFluentBuilder {
             crate::operation::describe_endpoint_access::DescribeEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_access::DescribeEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_access::DescribeEndpointAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeEndpointAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint_access::DescribeEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_access::DescribeEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_access::DescribeEndpointAccessError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint_access::DescribeEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_access::DescribeEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_access::DescribeEndpointAccessError>,
     > {
         self.send_middleware().await
     }
@@ -117,37 +105,23 @@ impl DescribeEndpointAccessFluentBuilder {
             crate::operation::describe_endpoint_access::DescribeEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_endpoint_access::DescribeEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_endpoint_access::DescribeEndpointAccessError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_endpoint_access::paginator::DescribeEndpointAccessPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_endpoint_access::paginator::DescribeEndpointAccessPaginator
-    {
-        crate::operation::describe_endpoint_access::paginator::DescribeEndpointAccessPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_endpoint_access::paginator::DescribeEndpointAccessPaginator {
+        crate::operation::describe_endpoint_access::paginator::DescribeEndpointAccessPaginator::new(self.handle, self.inner)
     }
     /// <p>The cluster identifier associated with the described endpoint.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier associated with the described endpoint.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -156,18 +130,12 @@ impl DescribeEndpointAccessFluentBuilder {
         self.inner.get_cluster_identifier()
     }
     /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
-    pub fn resource_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_owner(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
-    pub fn set_resource_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_owner(input);
         self
     }
@@ -176,18 +144,12 @@ impl DescribeEndpointAccessFluentBuilder {
         self.inner.get_resource_owner()
     }
     /// <p>The name of the endpoint to be described.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
         self
     }
     /// <p>The name of the endpoint to be described.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }

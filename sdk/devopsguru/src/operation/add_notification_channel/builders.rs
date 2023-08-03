@@ -39,10 +39,7 @@ impl AddNotificationChannelFluentBuilder {
         }
     }
     /// Access the AddNotificationChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::add_notification_channel::builders::AddNotificationChannelInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::add_notification_channel::builders::AddNotificationChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl AddNotificationChannelFluentBuilder {
             crate::operation::add_notification_channel::AddNotificationChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_notification_channel::AddNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_notification_channel::AddNotificationChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl AddNotificationChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl AddNotificationChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_notification_channel::AddNotificationChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_notification_channel::AddNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_notification_channel::AddNotificationChannelError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl AddNotificationChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_notification_channel::AddNotificationChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_notification_channel::AddNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_notification_channel::AddNotificationChannelError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl AddNotificationChannelFluentBuilder {
             crate::operation::add_notification_channel::AddNotificationChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::add_notification_channel::AddNotificationChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::add_notification_channel::AddNotificationChannelError>,
     > {
         self.customize_middleware().await
     }
@@ -131,10 +117,7 @@ impl AddNotificationChannelFluentBuilder {
         self
     }
     /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
-    pub fn set_config(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationChannelConfig>,
-    ) -> Self {
+    pub fn set_config(mut self, input: ::std::option::Option<crate::types::NotificationChannelConfig>) -> Self {
         self.inner = self.inner.set_config(input);
         self
     }

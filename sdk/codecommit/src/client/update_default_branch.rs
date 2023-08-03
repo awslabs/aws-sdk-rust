@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`default_branch_name(impl ::std::convert::Into<String>)`](crate::operation::update_default_branch::builders::UpdateDefaultBranchFluentBuilder::default_branch_name) / [`set_default_branch_name(Option<String>)`](crate::operation::update_default_branch::builders::UpdateDefaultBranchFluentBuilder::set_default_branch_name): <p>The name of the branch to set as the default.</p>
     /// - On success, responds with [`UpdateDefaultBranchOutput`](crate::operation::update_default_branch::UpdateDefaultBranchOutput)
     /// - On failure, responds with [`SdkError<UpdateDefaultBranchError>`](crate::operation::update_default_branch::UpdateDefaultBranchError)
-    pub fn update_default_branch(
-        &self,
-    ) -> crate::operation::update_default_branch::builders::UpdateDefaultBranchFluentBuilder {
-        crate::operation::update_default_branch::builders::UpdateDefaultBranchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_default_branch(&self) -> crate::operation::update_default_branch::builders::UpdateDefaultBranchFluentBuilder {
+        crate::operation::update_default_branch::builders::UpdateDefaultBranchFluentBuilder::new(self.handle.clone())
     }
 }

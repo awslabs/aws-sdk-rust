@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::create_backend_storage::CreateBackendStorageOutput::job_id): <p>The ID for the job.</p>
     ///   - [`status(Option<String>)`](crate::operation::create_backend_storage::CreateBackendStorageOutput::status): <p>The current status of the request.</p>
     /// - On failure, responds with [`SdkError<CreateBackendStorageError>`](crate::operation::create_backend_storage::CreateBackendStorageError)
-    pub fn create_backend_storage(
-        &self,
-    ) -> crate::operation::create_backend_storage::builders::CreateBackendStorageFluentBuilder {
-        crate::operation::create_backend_storage::builders::CreateBackendStorageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_backend_storage(&self) -> crate::operation::create_backend_storage::builders::CreateBackendStorageFluentBuilder {
+        crate::operation::create_backend_storage::builders::CreateBackendStorageFluentBuilder::new(self.handle.clone())
     }
 }

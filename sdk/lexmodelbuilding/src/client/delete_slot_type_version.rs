@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`version(impl ::std::convert::Into<String>)`](crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionFluentBuilder::set_version): <p>The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To delete the <code>$LATEST</code> version, use the <code>DeleteSlotType</code> operation.</p>
     /// - On success, responds with [`DeleteSlotTypeVersionOutput`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteSlotTypeVersionError>`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError)
-    pub fn delete_slot_type_version(
-        &self,
-    ) -> crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionFluentBuilder
-    {
+    pub fn delete_slot_type_version(&self) -> crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionFluentBuilder {
         crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionFluentBuilder::new(self.handle.clone())
     }
 }

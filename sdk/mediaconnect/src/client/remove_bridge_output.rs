@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`bridge_arn(Option<String>)`](crate::operation::remove_bridge_output::RemoveBridgeOutputOutput::bridge_arn): (undocumented)
     ///   - [`output_name(Option<String>)`](crate::operation::remove_bridge_output::RemoveBridgeOutputOutput::output_name): (undocumented)
     /// - On failure, responds with [`SdkError<RemoveBridgeOutputError>`](crate::operation::remove_bridge_output::RemoveBridgeOutputError)
-    pub fn remove_bridge_output(
-        &self,
-    ) -> crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder {
-        crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_bridge_output(&self) -> crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder {
+        crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::new(self.handle.clone())
     }
 }

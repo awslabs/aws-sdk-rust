@@ -67,9 +67,7 @@ impl Recommendation {
 
 /// A builder for [`Recommendation`](crate::types::Recommendation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationBuilder {
     pub(crate) database_id: ::std::option::Option<::std::string::String>,
     pub(crate) engine_name: ::std::option::Option<::std::string::String>,
@@ -156,10 +154,7 @@ impl RecommendationBuilder {
         self
     }
     /// <p>The settings in JSON format for the preferred target engine parameters. These parameters include capacity, resource utilization, and the usage type (production, development, or testing).</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationSettings>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::RecommendationSettings>) -> Self {
         self.settings = input;
         self
     }
@@ -173,10 +168,7 @@ impl RecommendationBuilder {
         self
     }
     /// <p>The recommendation of a target engine for the specified source database.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationData>,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<crate::types::RecommendationData>) -> Self {
         self.data = input;
         self
     }

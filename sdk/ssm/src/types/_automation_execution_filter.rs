@@ -30,9 +30,7 @@ impl AutomationExecutionFilter {
 
 /// A builder for [`AutomationExecutionFilter`](crate::types::AutomationExecutionFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutomationExecutionFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::AutomationExecutionFilterKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl AutomationExecutionFilterBuilder {
         self
     }
     /// <p>One or more keys to limit the results.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::AutomationExecutionFilterKey>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::AutomationExecutionFilterKey>) -> Self {
         self.key = input;
         self
     }
@@ -67,10 +62,7 @@ impl AutomationExecutionFilterBuilder {
         self
     }
     /// <p>The values used to limit the execution information associated with the filter's key.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

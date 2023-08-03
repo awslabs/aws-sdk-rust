@@ -77,9 +77,7 @@ impl GetFaceSearchOutput {
 
 /// A builder for [`GetFaceSearchOutput`](crate::operation::get_face_search::GetFaceSearchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFaceSearchOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
@@ -98,10 +96,7 @@ impl GetFaceSearchOutputBuilder {
         self
     }
     /// <p>The current status of the face search job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::VideoJobStatus>) -> Self {
         self.job_status = input;
         self
     }
@@ -110,18 +105,12 @@ impl GetFaceSearchOutputBuilder {
         &self.job_status
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -149,10 +138,7 @@ impl GetFaceSearchOutputBuilder {
         self
     }
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation. </p>
-    pub fn set_video_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoMetadata>,
-    ) -> Self {
+    pub fn set_video_metadata(mut self, input: ::std::option::Option<crate::types::VideoMetadata>) -> Self {
         self.video_metadata = input;
         self
     }
@@ -172,17 +158,12 @@ impl GetFaceSearchOutputBuilder {
         self
     }
     /// <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person. </p>
-    pub fn set_persons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PersonMatch>>,
-    ) -> Self {
+    pub fn set_persons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PersonMatch>>) -> Self {
         self.persons = input;
         self
     }
     /// <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person. </p>
-    pub fn get_persons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PersonMatch>> {
+    pub fn get_persons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PersonMatch>> {
         &self.persons
     }
     /// <p>Job identifier for the face search operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceSearch.</p>

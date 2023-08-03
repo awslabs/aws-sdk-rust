@@ -30,9 +30,7 @@ impl AssessmentRunStateChange {
 
 /// A builder for [`AssessmentRunStateChange`](crate::types::AssessmentRunStateChange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentRunStateChangeBuilder {
     pub(crate) state_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) state: ::std::option::Option<crate::types::AssessmentRunState>,
@@ -44,10 +42,7 @@ impl AssessmentRunStateChangeBuilder {
         self
     }
     /// <p>The last time the assessment run state changed.</p>
-    pub fn set_state_changed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_state_changed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.state_changed_at = input;
         self
     }
@@ -61,10 +56,7 @@ impl AssessmentRunStateChangeBuilder {
         self
     }
     /// <p>The assessment run state.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentRunState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AssessmentRunState>) -> Self {
         self.state = input;
         self
     }

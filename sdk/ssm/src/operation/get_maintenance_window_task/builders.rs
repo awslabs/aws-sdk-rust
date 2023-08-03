@@ -29,7 +29,7 @@ impl GetMaintenanceWindowTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMaintenanceWindowTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_maintenance_window_task::builders::GetMaintenanceWindowTaskInputBuilder,
+    inner: crate::operation::get_maintenance_window_task::builders::GetMaintenanceWindowTaskInputBuilder,
 }
 impl GetMaintenanceWindowTaskFluentBuilder {
     /// Creates a new `GetMaintenanceWindowTask`.
@@ -40,7 +40,7 @@ impl GetMaintenanceWindowTaskFluentBuilder {
         }
     }
     /// Access the GetMaintenanceWindowTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_maintenance_window_task::builders::GetMaintenanceWindowTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_maintenance_window_task::builders::GetMaintenanceWindowTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl GetMaintenanceWindowTaskFluentBuilder {
             crate::operation::get_maintenance_window_task::GetMaintenanceWindowTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl GetMaintenanceWindowTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl GetMaintenanceWindowTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl GetMaintenanceWindowTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl GetMaintenanceWindowTaskFluentBuilder {
             crate::operation::get_maintenance_window_task::GetMaintenanceWindowTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +127,12 @@ impl GetMaintenanceWindowTaskFluentBuilder {
         self.inner.get_window_id()
     }
     /// <p>The maintenance window task ID to retrieve.</p>
-    pub fn window_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.window_task_id(input.into());
         self
     }
     /// <p>The maintenance window task ID to retrieve.</p>
-    pub fn set_window_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_window_task_id(input);
         self
     }

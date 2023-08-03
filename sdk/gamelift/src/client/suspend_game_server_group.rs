@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`SuspendGameServerGroupOutput`](crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput) with field(s):
     ///   - [`game_server_group(Option<GameServerGroup>)`](crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput::game_server_group): <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the suspended activity.</p>
     /// - On failure, responds with [`SdkError<SuspendGameServerGroupError>`](crate::operation::suspend_game_server_group::SuspendGameServerGroupError)
-    pub fn suspend_game_server_group(
-        &self,
-    ) -> crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupFluentBuilder
-    {
+    pub fn suspend_game_server_group(&self) -> crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupFluentBuilder {
         crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupFluentBuilder::new(self.handle.clone())
     }
 }

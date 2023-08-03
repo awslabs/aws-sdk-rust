@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`dashboard_body(Option<String>)`](crate::operation::get_dashboard::GetDashboardOutput::dashboard_body): <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
     ///   - [`dashboard_name(Option<String>)`](crate::operation::get_dashboard::GetDashboardOutput::dashboard_name): <p>The name of the dashboard.</p>
     /// - On failure, responds with [`SdkError<GetDashboardError>`](crate::operation::get_dashboard::GetDashboardError)
-    pub fn get_dashboard(
-        &self,
-    ) -> crate::operation::get_dashboard::builders::GetDashboardFluentBuilder {
-        crate::operation::get_dashboard::builders::GetDashboardFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_dashboard(&self) -> crate::operation::get_dashboard::builders::GetDashboardFluentBuilder {
+        crate::operation::get_dashboard::builders::GetDashboardFluentBuilder::new(self.handle.clone())
     }
 }

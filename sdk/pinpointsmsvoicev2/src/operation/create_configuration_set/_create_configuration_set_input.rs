@@ -29,18 +29,14 @@ impl CreateConfigurationSetInput {
 }
 impl CreateConfigurationSetInput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder {
         crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -48,18 +44,12 @@ pub struct CreateConfigurationSetInputBuilder {
 }
 impl CreateConfigurationSetInputBuilder {
     /// <p>The name to use for the new configuration set.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name to use for the new configuration set.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -79,10 +69,7 @@ impl CreateConfigurationSetInputBuilder {
         self
     }
     /// <p>An array of key and value pair tags that's associated with the new configuration set. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -107,16 +94,12 @@ impl CreateConfigurationSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_configuration_set::CreateConfigurationSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_configuration_set::CreateConfigurationSetInput {
-                configuration_set_name: self.configuration_set_name,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_configuration_set::CreateConfigurationSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_configuration_set::CreateConfigurationSetInput {
+            configuration_set_name: self.configuration_set_name,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }

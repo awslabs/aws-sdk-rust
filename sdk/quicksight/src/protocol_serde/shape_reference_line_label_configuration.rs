@@ -18,10 +18,7 @@ pub fn ser_reference_line_label_configuration(
     if let Some(var_5) = &input.font_configuration {
         #[allow(unused_mut)]
         let mut object_6 = object.key("FontConfiguration").start_object();
-        crate::protocol_serde::shape_font_configuration::ser_font_configuration(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_font_configuration::ser_font_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.font_color {
@@ -38,24 +35,15 @@ pub fn ser_reference_line_label_configuration(
 
 pub(crate) fn de_reference_line_label_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ReferenceLineLabelConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ReferenceLineLabelConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::ReferenceLineLabelConfigurationBuilder::default();
+            let mut builder = crate::types::builders::ReferenceLineLabelConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -72,61 +60,51 @@ where
                                 );
                             }
                             "FontConfiguration" => {
-                                builder = builder.set_font_configuration(
-                                    crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?
-                                );
+                                builder =
+                                    builder.set_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?);
                             }
                             "FontColor" => {
                                 builder = builder.set_font_color(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "HorizontalPosition" => {
                                 builder = builder.set_horizontal_position(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
-                                        s.to_unescaped().map(|u|
-                                            crate::types::ReferenceLineLabelHorizontalPosition::from(u.as_ref())
-                                        )
-                                    ).transpose()?
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| {
+                                            s.to_unescaped()
+                                                .map(|u| crate::types::ReferenceLineLabelHorizontalPosition::from(u.as_ref()))
+                                        })
+                                        .transpose()?,
                                 );
                             }
                             "VerticalPosition" => {
                                 builder = builder.set_vertical_position(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::ReferenceLineLabelVerticalPosition::from(
-                                                u.as_ref(),
-                                            )
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| {
+                                            s.to_unescaped()
+                                                .map(|u| crate::types::ReferenceLineLabelVerticalPosition::from(u.as_ref()))
                                         })
-                                    })
-                                    .transpose()?,
+                                        .transpose()?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -26,17 +26,14 @@ impl DeleteFirewallPolicyInput {
 }
 impl DeleteFirewallPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteFirewallPolicyInput`](crate::operation::delete_firewall_policy::DeleteFirewallPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_firewall_policy::builders::DeleteFirewallPolicyInputBuilder {
+    pub fn builder() -> crate::operation::delete_firewall_policy::builders::DeleteFirewallPolicyInputBuilder {
         crate::operation::delete_firewall_policy::builders::DeleteFirewallPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFirewallPolicyInput`](crate::operation::delete_firewall_policy::DeleteFirewallPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFirewallPolicyInputBuilder {
     pub(crate) firewall_policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_policy_arn: ::std::option::Option<::std::string::String>,
@@ -44,19 +41,13 @@ pub struct DeleteFirewallPolicyInputBuilder {
 impl DeleteFirewallPolicyInputBuilder {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_policy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_policy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_name = input;
         self
     }
@@ -67,19 +58,13 @@ impl DeleteFirewallPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_policy_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_policy_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_arn = input;
         self
     }
@@ -91,15 +76,11 @@ impl DeleteFirewallPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFirewallPolicyInput`](crate::operation::delete_firewall_policy::DeleteFirewallPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_firewall_policy::DeleteFirewallPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_firewall_policy::DeleteFirewallPolicyInput {
-                firewall_policy_name: self.firewall_policy_name,
-                firewall_policy_arn: self.firewall_policy_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_firewall_policy::DeleteFirewallPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_firewall_policy::DeleteFirewallPolicyInput {
+            firewall_policy_name: self.firewall_policy_name,
+            firewall_policy_arn: self.firewall_policy_arn,
+        })
     }
 }

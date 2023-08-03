@@ -5,8 +5,7 @@
 pub struct BatchStopJobRunOutput {
     /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
     #[doc(hidden)]
-    pub successful_submissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>>,
+    pub successful_submissions: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>>,
     /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
     #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunError>>,
@@ -14,9 +13,7 @@ pub struct BatchStopJobRunOutput {
 }
 impl BatchStopJobRunOutput {
     /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
-    pub fn successful_submissions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchStopJobRunSuccessfulSubmission]> {
+    pub fn successful_submissions(&self) -> ::std::option::Option<&[crate::types::BatchStopJobRunSuccessfulSubmission]> {
         self.successful_submissions.as_deref()
     }
     /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for BatchStopJobRunOutput {
 }
 impl BatchStopJobRunOutput {
     /// Creates a new builder-style object to manufacture [`BatchStopJobRunOutput`](crate::operation::batch_stop_job_run::BatchStopJobRunOutput).
-    pub fn builder() -> crate::operation::batch_stop_job_run::builders::BatchStopJobRunOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_stop_job_run::builders::BatchStopJobRunOutputBuilder {
         crate::operation::batch_stop_job_run::builders::BatchStopJobRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchStopJobRunOutput`](crate::operation::batch_stop_job_run::BatchStopJobRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStopJobRunOutputBuilder {
-    pub(crate) successful_submissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>>,
+    pub(crate) successful_submissions: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunError>>,
     _request_id: Option<String>,
 }
@@ -54,10 +47,7 @@ impl BatchStopJobRunOutputBuilder {
     /// To override the contents of this collection use [`set_successful_submissions`](Self::set_successful_submissions).
     ///
     /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
-    pub fn successful_submissions(
-        mut self,
-        input: crate::types::BatchStopJobRunSuccessfulSubmission,
-    ) -> Self {
+    pub fn successful_submissions(mut self, input: crate::types::BatchStopJobRunSuccessfulSubmission) -> Self {
         let mut v = self.successful_submissions.unwrap_or_default();
         v.push(input);
         self.successful_submissions = ::std::option::Option::Some(v);
@@ -66,18 +56,13 @@ impl BatchStopJobRunOutputBuilder {
     /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
     pub fn set_successful_submissions(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>>,
     ) -> Self {
         self.successful_submissions = input;
         self
     }
     /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
-    pub fn get_successful_submissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>>
-    {
+    pub fn get_successful_submissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>> {
         &self.successful_submissions
     }
     /// Appends an item to `errors`.
@@ -92,17 +77,12 @@ impl BatchStopJobRunOutputBuilder {
         self
     }
     /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

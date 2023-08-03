@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`segments(Option<Vec<RealtimeContactAnalysisSegment>>)`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsOutput::segments): <p>An analyzed transcript or category.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsOutput::next_token): <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>  <ul>   <li> <p>There are more segments so another call is required to get them.</p> </li>   <li> <p>There are no more segments at this time, but more may be available later (real-time analysis is in progress) so the client should call the operation again to get new segments.</p> </li>  </ul>  <p>If response does not include <code>nextToken</code>, the analysis is completed (successfully or failed) and there are no more segments to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListRealtimeContactAnalysisSegmentsError>`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsError)
-    pub fn list_realtime_contact_analysis_segments(&self) -> crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsFluentBuilder{
-        crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsFluentBuilder::new(self.handle.clone())
+    pub fn list_realtime_contact_analysis_segments(
+        &self,
+    ) -> crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsFluentBuilder {
+        crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

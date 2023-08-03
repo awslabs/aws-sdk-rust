@@ -9,65 +9,70 @@ pub fn de_create_custom_domain_association_http_error(
     crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClusterNotFound" => crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::ClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "CustomCnameAssociationFault" => crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::CustomCnameAssociationFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "CustomCnameAssociationFault" => {
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::CustomCnameAssociationFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CustomCnameAssociationFaultBuilder::default();
-                    output = crate::protocol_serde::shape_custom_cname_association_fault::de_custom_cname_association_fault_xml_err(_response_body, output).map_err(crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_custom_cname_association_fault::de_custom_cname_association_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "UnsupportedOperation" => crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::UnsupportedOperationFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnsupportedOperation" => {
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::UnsupportedOperationFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
-                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(_response_body, output).map_err(crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::generic(generic),
     })
 }
 
@@ -83,16 +88,21 @@ pub fn de_create_custom_domain_association_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_custom_domain_association::builders::CreateCustomDomainAssociationOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_custom_domain_association::de_create_custom_domain_association(_response_body, output).map_err(crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_create_custom_domain_association::de_create_custom_domain_association(_response_body, output)
+            .map_err(crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_create_custom_domain_association(inp: &[u8], mut builder: crate::operation::create_custom_domain_association::builders::CreateCustomDomainAssociationOutputBuilder) -> Result<crate::operation::create_custom_domain_association::builders::CreateCustomDomainAssociationOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_create_custom_domain_association(
+    inp: &[u8],
+    mut builder: crate::operation::create_custom_domain_association::builders::CreateCustomDomainAssociationOutputBuilder,
+) -> Result<
+    crate::operation::create_custom_domain_association::builders::CreateCustomDomainAssociationOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

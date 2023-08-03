@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetConfigurationOutput {
 }
 impl GetConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationOutput`](crate::operation::get_configuration::GetConfigurationOutput).
-    pub fn builder() -> crate::operation::get_configuration::builders::GetConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_configuration::builders::GetConfigurationOutputBuilder {
         crate::operation::get_configuration::builders::GetConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetConfigurationOutput`](crate::operation::get_configuration::GetConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConfigurationOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::AppRegistryConfiguration>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl GetConfigurationOutputBuilder {
         self
     }
     /// <p> Retrieves <code>TagKey</code> configuration from an account. </p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AppRegistryConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AppRegistryConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p> Retrieves <code>TagKey</code> configuration from an account. </p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppRegistryConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AppRegistryConfiguration> {
         &self.configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

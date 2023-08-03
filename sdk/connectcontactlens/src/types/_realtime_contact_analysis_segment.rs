@@ -30,9 +30,7 @@ impl RealtimeContactAnalysisSegment {
 
 /// A builder for [`RealtimeContactAnalysisSegment`](crate::types::RealtimeContactAnalysisSegment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RealtimeContactAnalysisSegmentBuilder {
     pub(crate) transcript: ::std::option::Option<crate::types::Transcript>,
     pub(crate) categories: ::std::option::Option<crate::types::Categories>,
@@ -44,10 +42,7 @@ impl RealtimeContactAnalysisSegmentBuilder {
         self
     }
     /// <p>The analyzed transcript.</p>
-    pub fn set_transcript(
-        mut self,
-        input: ::std::option::Option<crate::types::Transcript>,
-    ) -> Self {
+    pub fn set_transcript(mut self, input: ::std::option::Option<crate::types::Transcript>) -> Self {
         self.transcript = input;
         self
     }
@@ -61,10 +56,7 @@ impl RealtimeContactAnalysisSegmentBuilder {
         self
     }
     /// <p>The matched category rules.</p>
-    pub fn set_categories(
-        mut self,
-        input: ::std::option::Option<crate::types::Categories>,
-    ) -> Self {
+    pub fn set_categories(mut self, input: ::std::option::Option<crate::types::Categories>) -> Self {
         self.categories = input;
         self
     }

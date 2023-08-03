@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`operation(Option<String>)`](crate::operation::update_backend_api::UpdateBackendApiOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::operation::update_backend_api::UpdateBackendApiOutput::status): <p>The current status of the request.</p>
     /// - On failure, responds with [`SdkError<UpdateBackendAPIError>`](crate::operation::update_backend_api::UpdateBackendAPIError)
-    pub fn update_backend_api(
-        &self,
-    ) -> crate::operation::update_backend_api::builders::UpdateBackendAPIFluentBuilder {
-        crate::operation::update_backend_api::builders::UpdateBackendAPIFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_backend_api(&self) -> crate::operation::update_backend_api::builders::UpdateBackendAPIFluentBuilder {
+        crate::operation::update_backend_api::builders::UpdateBackendAPIFluentBuilder::new(self.handle.clone())
     }
 }

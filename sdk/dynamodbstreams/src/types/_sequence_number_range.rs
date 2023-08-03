@@ -30,27 +30,19 @@ impl SequenceNumberRange {
 
 /// A builder for [`SequenceNumberRange`](crate::types::SequenceNumberRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SequenceNumberRangeBuilder {
     pub(crate) starting_sequence_number: ::std::option::Option<::std::string::String>,
     pub(crate) ending_sequence_number: ::std::option::Option<::std::string::String>,
 }
 impl SequenceNumberRangeBuilder {
     /// <p>The first sequence number for the stream records contained within a shard. String contains numeric characters only.</p>
-    pub fn starting_sequence_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn starting_sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.starting_sequence_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The first sequence number for the stream records contained within a shard. String contains numeric characters only.</p>
-    pub fn set_starting_sequence_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_starting_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.starting_sequence_number = input;
         self
     }
@@ -59,18 +51,12 @@ impl SequenceNumberRangeBuilder {
         &self.starting_sequence_number
     }
     /// <p>The last sequence number for the stream records contained within a shard. String contains numeric characters only.</p>
-    pub fn ending_sequence_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ending_sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ending_sequence_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last sequence number for the stream records contained within a shard. String contains numeric characters only.</p>
-    pub fn set_ending_sequence_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ending_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ending_sequence_number = input;
         self
     }

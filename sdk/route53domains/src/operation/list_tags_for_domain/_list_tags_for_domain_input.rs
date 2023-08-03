@@ -16,17 +16,14 @@ impl ListTagsForDomainInput {
 }
 impl ListTagsForDomainInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForDomainInput`](crate::operation::list_tags_for_domain::ListTagsForDomainInput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_domain::builders::ListTagsForDomainInputBuilder {
+    pub fn builder() -> crate::operation::list_tags_for_domain::builders::ListTagsForDomainInputBuilder {
         crate::operation::list_tags_for_domain::builders::ListTagsForDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsForDomainInput`](crate::operation::list_tags_for_domain::ListTagsForDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +45,9 @@ impl ListTagsForDomainInputBuilder {
     /// Consumes the builder and constructs a [`ListTagsForDomainInput`](crate::operation::list_tags_for_domain::ListTagsForDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tags_for_domain::ListTagsForDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_tags_for_domain::ListTagsForDomainInput {
-                domain_name: self.domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_tags_for_domain::ListTagsForDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_tags_for_domain::ListTagsForDomainInput {
+            domain_name: self.domain_name,
+        })
     }
 }

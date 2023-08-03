@@ -23,9 +23,7 @@ impl Ec2Specification {
 
 /// A builder for [`Ec2Specification`](crate::types::Ec2Specification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2SpecificationBuilder {
     pub(crate) offering_class: ::std::option::Option<crate::types::OfferingClass>,
 }
@@ -36,10 +34,7 @@ impl Ec2SpecificationBuilder {
         self
     }
     /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
-    pub fn set_offering_class(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingClass>,
-    ) -> Self {
+    pub fn set_offering_class(mut self, input: ::std::option::Option<crate::types::OfferingClass>) -> Self {
         self.offering_class = input;
         self
     }

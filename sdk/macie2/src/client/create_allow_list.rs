@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_allow_list::CreateAllowListOutput::arn): <p>The Amazon Resource Name (ARN) of the allow list.</p>
     ///   - [`id(Option<String>)`](crate::operation::create_allow_list::CreateAllowListOutput::id): <p>The unique identifier for the allow list.</p>
     /// - On failure, responds with [`SdkError<CreateAllowListError>`](crate::operation::create_allow_list::CreateAllowListError)
-    pub fn create_allow_list(
-        &self,
-    ) -> crate::operation::create_allow_list::builders::CreateAllowListFluentBuilder {
-        crate::operation::create_allow_list::builders::CreateAllowListFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_allow_list(&self) -> crate::operation::create_allow_list::builders::CreateAllowListFluentBuilder {
+        crate::operation::create_allow_list::builders::CreateAllowListFluentBuilder::new(self.handle.clone())
     }
 }

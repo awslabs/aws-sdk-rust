@@ -17,17 +17,13 @@ pub struct CreateResiliencyPolicyInput {
     pub tier: ::std::option::Option<crate::types::ResiliencyPolicyTier>,
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     #[doc(hidden)]
-    pub policy: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>,
-    >,
+    pub policy: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateResiliencyPolicyInput {
     /// <p>The name of the policy</p>
@@ -39,9 +35,7 @@ impl CreateResiliencyPolicyInput {
         self.policy_description.as_deref()
     }
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
-    pub fn data_location_constraint(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataLocationConstraint> {
+    pub fn data_location_constraint(&self) -> ::std::option::Option<&crate::types::DataLocationConstraint> {
         self.data_location_constraint.as_ref()
     }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
@@ -49,11 +43,7 @@ impl CreateResiliencyPolicyInput {
         self.tier.as_ref()
     }
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-    pub fn policy(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>,
-    > {
+    pub fn policy(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>> {
         self.policy.as_ref()
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
@@ -61,11 +51,7 @@ impl CreateResiliencyPolicyInput {
         self.client_token.as_deref()
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -84,9 +70,7 @@ impl ::std::fmt::Debug for CreateResiliencyPolicyInput {
 }
 impl CreateResiliencyPolicyInput {
     /// Creates a new builder-style object to manufacture [`CreateResiliencyPolicyInput`](crate::operation::create_resiliency_policy::CreateResiliencyPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::create_resiliency_policy::builders::CreateResiliencyPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_resiliency_policy::builders::CreateResiliencyPolicyInputBuilder {
         crate::operation::create_resiliency_policy::builders::CreateResiliencyPolicyInputBuilder::default()
     }
 }
@@ -97,16 +81,11 @@ impl CreateResiliencyPolicyInput {
 pub struct CreateResiliencyPolicyInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_description: ::std::option::Option<::std::string::String>,
-    pub(crate) data_location_constraint:
-        ::std::option::Option<crate::types::DataLocationConstraint>,
+    pub(crate) data_location_constraint: ::std::option::Option<crate::types::DataLocationConstraint>,
     pub(crate) tier: ::std::option::Option<crate::types::ResiliencyPolicyTier>,
-    pub(crate) policy: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>,
-    >,
+    pub(crate) policy: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateResiliencyPolicyInputBuilder {
     /// <p>The name of the policy</p>
@@ -124,18 +103,12 @@ impl CreateResiliencyPolicyInputBuilder {
         &self.policy_name
     }
     /// <p>The description for the policy.</p>
-    pub fn policy_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the policy.</p>
-    pub fn set_policy_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_description = input;
         self
     }
@@ -149,17 +122,12 @@ impl CreateResiliencyPolicyInputBuilder {
         self
     }
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
-    pub fn set_data_location_constraint(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLocationConstraint>,
-    ) -> Self {
+    pub fn set_data_location_constraint(mut self, input: ::std::option::Option<crate::types::DataLocationConstraint>) -> Self {
         self.data_location_constraint = input;
         self
     }
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
-    pub fn get_data_location_constraint(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataLocationConstraint> {
+    pub fn get_data_location_constraint(&self) -> &::std::option::Option<crate::types::DataLocationConstraint> {
         &self.data_location_constraint
     }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
@@ -168,10 +136,7 @@ impl CreateResiliencyPolicyInputBuilder {
         self
     }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
-    pub fn set_tier(
-        mut self,
-        input: ::std::option::Option<crate::types::ResiliencyPolicyTier>,
-    ) -> Self {
+    pub fn set_tier(mut self, input: ::std::option::Option<crate::types::ResiliencyPolicyTier>) -> Self {
         self.tier = input;
         self
     }
@@ -184,11 +149,7 @@ impl CreateResiliencyPolicyInputBuilder {
     /// To override the contents of this collection use [`set_policy`](Self::set_policy).
     ///
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-    pub fn policy(
-        mut self,
-        k: crate::types::DisruptionType,
-        v: crate::types::FailurePolicy,
-    ) -> Self {
+    pub fn policy(mut self, k: crate::types::DisruptionType, v: crate::types::FailurePolicy) -> Self {
         let mut hash_map = self.policy.unwrap_or_default();
         hash_map.insert(k, v);
         self.policy = ::std::option::Option::Some(hash_map);
@@ -197,19 +158,13 @@ impl CreateResiliencyPolicyInputBuilder {
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
     pub fn set_policy(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>,
     ) -> Self {
         self.policy = input;
         self
     }
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-    pub fn get_policy(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>,
-    > {
+    pub fn get_policy(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>> {
         &self.policy
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
@@ -231,52 +186,35 @@ impl CreateResiliencyPolicyInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateResiliencyPolicyInput`](crate::operation::create_resiliency_policy::CreateResiliencyPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_resiliency_policy::CreateResiliencyPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_resiliency_policy::CreateResiliencyPolicyInput {
-                policy_name: self.policy_name,
-                policy_description: self.policy_description,
-                data_location_constraint: self.data_location_constraint,
-                tier: self.tier,
-                policy: self.policy,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_resiliency_policy::CreateResiliencyPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_resiliency_policy::CreateResiliencyPolicyInput {
+            policy_name: self.policy_name,
+            policy_description: self.policy_description,
+            data_location_constraint: self.data_location_constraint,
+            tier: self.tier,
+            policy: self.policy,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateResiliencyPolicyInputBuilder {

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeResourceOutput {
 }
 impl DescribeResourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourceOutput`](crate::operation::describe_resource::DescribeResourceOutput).
-    pub fn builder() -> crate::operation::describe_resource::builders::DescribeResourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_resource::builders::DescribeResourceOutputBuilder {
         crate::operation::describe_resource::builders::DescribeResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeResourceOutput`](crate::operation::describe_resource::DescribeResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeResourceOutputBuilder {
     pub(crate) resource_info: ::std::option::Option<crate::types::ResourceInfo>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeResourceOutputBuilder {
         self
     }
     /// <p>A structure containing information about an Lake Formation resource.</p>
-    pub fn set_resource_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceInfo>,
-    ) -> Self {
+    pub fn set_resource_info(mut self, input: ::std::option::Option<crate::types::ResourceInfo>) -> Self {
         self.resource_info = input;
         self
     }

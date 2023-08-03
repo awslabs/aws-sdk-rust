@@ -36,8 +36,7 @@ pub struct CertificateAuthority {
     pub failure_reason: ::std::option::Option<crate::types::FailureReason>,
     /// <p>Your private CA configuration.</p>
     #[doc(hidden)]
-    pub certificate_authority_configuration:
-        ::std::option::Option<crate::types::CertificateAuthorityConfiguration>,
+    pub certificate_authority_configuration: ::std::option::Option<crate::types::CertificateAuthorityConfiguration>,
     /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or certificate revocation list (CRL) created and maintained by your private CA. </p>
     #[doc(hidden)]
     pub revocation_configuration: ::std::option::Option<crate::types::RevocationConfiguration>,
@@ -48,8 +47,7 @@ pub struct CertificateAuthority {
     /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
     /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
     #[doc(hidden)]
-    pub key_storage_security_standard:
-        ::std::option::Option<crate::types::KeyStorageSecurityStandard>,
+    pub key_storage_security_standard: ::std::option::Option<crate::types::KeyStorageSecurityStandard>,
     /// <p>Specifies whether the CA issues general-purpose certificates that typically require a revocation mechanism, or short-lived certificates that may optionally omit revocation because they expire quickly. Short-lived certificate validity is limited to seven days.</p>
     /// <p>The default value is GENERAL_PURPOSE.</p>
     #[doc(hidden)]
@@ -97,15 +95,11 @@ impl CertificateAuthority {
         self.failure_reason.as_ref()
     }
     /// <p>Your private CA configuration.</p>
-    pub fn certificate_authority_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CertificateAuthorityConfiguration> {
+    pub fn certificate_authority_configuration(&self) -> ::std::option::Option<&crate::types::CertificateAuthorityConfiguration> {
         self.certificate_authority_configuration.as_ref()
     }
     /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or certificate revocation list (CRL) created and maintained by your private CA. </p>
-    pub fn revocation_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RevocationConfiguration> {
+    pub fn revocation_configuration(&self) -> ::std::option::Option<&crate::types::RevocationConfiguration> {
         self.revocation_configuration.as_ref()
     }
     /// <p>The period during which a deleted CA can be restored. For more information, see the <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
@@ -115,16 +109,12 @@ impl CertificateAuthority {
     /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
     /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
     /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
-    pub fn key_storage_security_standard(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KeyStorageSecurityStandard> {
+    pub fn key_storage_security_standard(&self) -> ::std::option::Option<&crate::types::KeyStorageSecurityStandard> {
         self.key_storage_security_standard.as_ref()
     }
     /// <p>Specifies whether the CA issues general-purpose certificates that typically require a revocation mechanism, or short-lived certificates that may optionally omit revocation because they expire quickly. Short-lived certificate validity is limited to seven days.</p>
     /// <p>The default value is GENERAL_PURPOSE.</p>
-    pub fn usage_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CertificateAuthorityUsageMode> {
+    pub fn usage_mode(&self) -> ::std::option::Option<&crate::types::CertificateAuthorityUsageMode> {
         self.usage_mode.as_ref()
     }
 }
@@ -137,9 +127,7 @@ impl CertificateAuthority {
 
 /// A builder for [`CertificateAuthority`](crate::types::CertificateAuthority).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateAuthorityBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
@@ -151,13 +139,10 @@ pub struct CertificateAuthorityBuilder {
     pub(crate) not_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) not_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<crate::types::FailureReason>,
-    pub(crate) certificate_authority_configuration:
-        ::std::option::Option<crate::types::CertificateAuthorityConfiguration>,
-    pub(crate) revocation_configuration:
-        ::std::option::Option<crate::types::RevocationConfiguration>,
+    pub(crate) certificate_authority_configuration: ::std::option::Option<crate::types::CertificateAuthorityConfiguration>,
+    pub(crate) revocation_configuration: ::std::option::Option<crate::types::RevocationConfiguration>,
     pub(crate) restorable_until: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) key_storage_security_standard:
-        ::std::option::Option<crate::types::KeyStorageSecurityStandard>,
+    pub(crate) key_storage_security_standard: ::std::option::Option<crate::types::KeyStorageSecurityStandard>,
     pub(crate) usage_mode: ::std::option::Option<crate::types::CertificateAuthorityUsageMode>,
 }
 impl CertificateAuthorityBuilder {
@@ -176,18 +161,12 @@ impl CertificateAuthorityBuilder {
         &self.arn
     }
     /// <p>The Amazon Web Services account ID that owns the certificate authority.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID that owns the certificate authority.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -201,10 +180,7 @@ impl CertificateAuthorityBuilder {
         self
     }
     /// <p>Date and time at which your private CA was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -218,10 +194,7 @@ impl CertificateAuthorityBuilder {
         self
     }
     /// <p>Date and time at which your private CA was last updated.</p>
-    pub fn set_last_state_change_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_state_change_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_state_change_at = input;
         self
     }
@@ -235,10 +208,7 @@ impl CertificateAuthorityBuilder {
         self
     }
     /// <p>Type of your private CA.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateAuthorityType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::CertificateAuthorityType>) -> Self {
         self.r#type = input;
         self
     }
@@ -266,10 +236,7 @@ impl CertificateAuthorityBuilder {
         self
     }
     /// <p>Status of your private CA.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateAuthorityStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateAuthorityStatus>) -> Self {
         self.status = input;
         self
     }
@@ -283,10 +250,7 @@ impl CertificateAuthorityBuilder {
         self
     }
     /// <p>Date and time before which your private CA certificate is not valid.</p>
-    pub fn set_not_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.not_before = input;
         self
     }
@@ -300,10 +264,7 @@ impl CertificateAuthorityBuilder {
         self
     }
     /// <p>Date and time after which your private CA certificate is not valid.</p>
-    pub fn set_not_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.not_after = input;
         self
     }
@@ -317,10 +278,7 @@ impl CertificateAuthorityBuilder {
         self
     }
     /// <p>Reason the request to create your private CA failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureReason>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<crate::types::FailureReason>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -329,47 +287,31 @@ impl CertificateAuthorityBuilder {
         &self.failure_reason
     }
     /// <p>Your private CA configuration.</p>
-    pub fn certificate_authority_configuration(
-        mut self,
-        input: crate::types::CertificateAuthorityConfiguration,
-    ) -> Self {
+    pub fn certificate_authority_configuration(mut self, input: crate::types::CertificateAuthorityConfiguration) -> Self {
         self.certificate_authority_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Your private CA configuration.</p>
-    pub fn set_certificate_authority_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateAuthorityConfiguration>,
-    ) -> Self {
+    pub fn set_certificate_authority_configuration(mut self, input: ::std::option::Option<crate::types::CertificateAuthorityConfiguration>) -> Self {
         self.certificate_authority_configuration = input;
         self
     }
     /// <p>Your private CA configuration.</p>
-    pub fn get_certificate_authority_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CertificateAuthorityConfiguration> {
+    pub fn get_certificate_authority_configuration(&self) -> &::std::option::Option<crate::types::CertificateAuthorityConfiguration> {
         &self.certificate_authority_configuration
     }
     /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or certificate revocation list (CRL) created and maintained by your private CA. </p>
-    pub fn revocation_configuration(
-        mut self,
-        input: crate::types::RevocationConfiguration,
-    ) -> Self {
+    pub fn revocation_configuration(mut self, input: crate::types::RevocationConfiguration) -> Self {
         self.revocation_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or certificate revocation list (CRL) created and maintained by your private CA. </p>
-    pub fn set_revocation_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::RevocationConfiguration>,
-    ) -> Self {
+    pub fn set_revocation_configuration(mut self, input: ::std::option::Option<crate::types::RevocationConfiguration>) -> Self {
         self.revocation_configuration = input;
         self
     }
     /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or certificate revocation list (CRL) created and maintained by your private CA. </p>
-    pub fn get_revocation_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::RevocationConfiguration> {
+    pub fn get_revocation_configuration(&self) -> &::std::option::Option<crate::types::RevocationConfiguration> {
         &self.revocation_configuration
     }
     /// <p>The period during which a deleted CA can be restored. For more information, see the <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
@@ -378,10 +320,7 @@ impl CertificateAuthorityBuilder {
         self
     }
     /// <p>The period during which a deleted CA can be restored. For more information, see the <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
-    pub fn set_restorable_until(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_restorable_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.restorable_until = input;
         self
     }
@@ -392,29 +331,21 @@ impl CertificateAuthorityBuilder {
     /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
     /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
     /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
-    pub fn key_storage_security_standard(
-        mut self,
-        input: crate::types::KeyStorageSecurityStandard,
-    ) -> Self {
+    pub fn key_storage_security_standard(mut self, input: crate::types::KeyStorageSecurityStandard) -> Self {
         self.key_storage_security_standard = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
     /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
     /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
-    pub fn set_key_storage_security_standard(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyStorageSecurityStandard>,
-    ) -> Self {
+    pub fn set_key_storage_security_standard(mut self, input: ::std::option::Option<crate::types::KeyStorageSecurityStandard>) -> Self {
         self.key_storage_security_standard = input;
         self
     }
     /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
     /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
     /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
-    pub fn get_key_storage_security_standard(
-        &self,
-    ) -> &::std::option::Option<crate::types::KeyStorageSecurityStandard> {
+    pub fn get_key_storage_security_standard(&self) -> &::std::option::Option<crate::types::KeyStorageSecurityStandard> {
         &self.key_storage_security_standard
     }
     /// <p>Specifies whether the CA issues general-purpose certificates that typically require a revocation mechanism, or short-lived certificates that may optionally omit revocation because they expire quickly. Short-lived certificate validity is limited to seven days.</p>
@@ -425,18 +356,13 @@ impl CertificateAuthorityBuilder {
     }
     /// <p>Specifies whether the CA issues general-purpose certificates that typically require a revocation mechanism, or short-lived certificates that may optionally omit revocation because they expire quickly. Short-lived certificate validity is limited to seven days.</p>
     /// <p>The default value is GENERAL_PURPOSE.</p>
-    pub fn set_usage_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateAuthorityUsageMode>,
-    ) -> Self {
+    pub fn set_usage_mode(mut self, input: ::std::option::Option<crate::types::CertificateAuthorityUsageMode>) -> Self {
         self.usage_mode = input;
         self
     }
     /// <p>Specifies whether the CA issues general-purpose certificates that typically require a revocation mechanism, or short-lived certificates that may optionally omit revocation because they expire quickly. Short-lived certificate validity is limited to seven days.</p>
     /// <p>The default value is GENERAL_PURPOSE.</p>
-    pub fn get_usage_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::CertificateAuthorityUsageMode> {
+    pub fn get_usage_mode(&self) -> &::std::option::Option<crate::types::CertificateAuthorityUsageMode> {
         &self.usage_mode
     }
     /// Consumes the builder and constructs a [`CertificateAuthority`](crate::types::CertificateAuthority).

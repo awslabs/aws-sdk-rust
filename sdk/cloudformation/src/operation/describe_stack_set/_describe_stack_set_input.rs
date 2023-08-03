@@ -32,35 +32,26 @@ impl DescribeStackSetInput {
 }
 impl DescribeStackSetInput {
     /// Creates a new builder-style object to manufacture [`DescribeStackSetInput`](crate::operation::describe_stack_set::DescribeStackSetInput).
-    pub fn builder() -> crate::operation::describe_stack_set::builders::DescribeStackSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_stack_set::builders::DescribeStackSetInputBuilder {
         crate::operation::describe_stack_set::builders::DescribeStackSetInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackSetInput`](crate::operation::describe_stack_set::DescribeStackSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackSetInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl DescribeStackSetInputBuilder {
     /// <p>The name or unique ID of the stack set whose description you want.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set whose description you want.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
@@ -100,15 +91,10 @@ impl DescribeStackSetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStackSetInput`](crate::operation::describe_stack_set::DescribeStackSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stack_set::DescribeStackSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_stack_set::DescribeStackSetInput {
-                stack_set_name: self.stack_set_name,
-                call_as: self.call_as,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_stack_set::DescribeStackSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_stack_set::DescribeStackSetInput {
+            stack_set_name: self.stack_set_name,
+            call_as: self.call_as,
+        })
     }
 }

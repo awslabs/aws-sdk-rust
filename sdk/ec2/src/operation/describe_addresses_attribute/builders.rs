@@ -26,7 +26,7 @@ impl DescribeAddressesAttributeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAddressesAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeInputBuilder,
+    inner: crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeInputBuilder,
 }
 impl DescribeAddressesAttributeFluentBuilder {
     /// Creates a new `DescribeAddressesAttribute`.
@@ -37,7 +37,7 @@ impl DescribeAddressesAttributeFluentBuilder {
         }
     }
     /// Access the DescribeAddressesAttribute as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeAddressesAttributeFluentBuilder {
             crate::operation::describe_addresses_attribute::DescribeAddressesAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addresses_attribute::DescribeAddressesAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addresses_attribute::DescribeAddressesAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeAddressesAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeAddressesAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_addresses_attribute::DescribeAddressesAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addresses_attribute::DescribeAddressesAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addresses_attribute::DescribeAddressesAttributeError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeAddressesAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_addresses_attribute::DescribeAddressesAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addresses_attribute::DescribeAddressesAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addresses_attribute::DescribeAddressesAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeAddressesAttributeFluentBuilder {
             crate::operation::describe_addresses_attribute::DescribeAddressesAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addresses_attribute::DescribeAddressesAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addresses_attribute::DescribeAddressesAttributeError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_addresses_attribute::paginator::DescribeAddressesAttributePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_addresses_attribute::paginator::DescribeAddressesAttributePaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_addresses_attribute::paginator::DescribeAddressesAttributePaginator {
         crate::operation::describe_addresses_attribute::paginator::DescribeAddressesAttributePaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `AllocationIds`.
@@ -131,25 +120,17 @@ impl DescribeAddressesAttributeFluentBuilder {
     /// To override the contents of this collection use [`set_allocation_ids`](Self::set_allocation_ids).
     ///
     /// <p>[EC2-VPC] The allocation IDs.</p>
-    pub fn allocation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allocation_ids(input.into());
         self
     }
     /// <p>[EC2-VPC] The allocation IDs.</p>
-    pub fn set_allocation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_allocation_ids(input);
         self
     }
     /// <p>[EC2-VPC] The allocation IDs.</p>
-    pub fn get_allocation_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allocation_ids()
     }
     /// <p>The attribute of the IP address.</p>
@@ -158,10 +139,7 @@ impl DescribeAddressesAttributeFluentBuilder {
         self
     }
     /// <p>The attribute of the IP address.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::AddressAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`lo_ra_wan(LoRaWanMulticast)`](crate::operation::update_multicast_group::builders::UpdateMulticastGroupFluentBuilder::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanMulticast>)`](crate::operation::update_multicast_group::builders::UpdateMulticastGroupFluentBuilder::set_lo_ra_wan): <p>The LoRaWAN information that is to be used with the multicast group.</p>
     /// - On success, responds with [`UpdateMulticastGroupOutput`](crate::operation::update_multicast_group::UpdateMulticastGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateMulticastGroupError>`](crate::operation::update_multicast_group::UpdateMulticastGroupError)
-    pub fn update_multicast_group(
-        &self,
-    ) -> crate::operation::update_multicast_group::builders::UpdateMulticastGroupFluentBuilder {
-        crate::operation::update_multicast_group::builders::UpdateMulticastGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_multicast_group(&self) -> crate::operation::update_multicast_group::builders::UpdateMulticastGroupFluentBuilder {
+        crate::operation::update_multicast_group::builders::UpdateMulticastGroupFluentBuilder::new(self.handle.clone())
     }
 }

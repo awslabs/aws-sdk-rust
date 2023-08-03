@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DataSourceFilterAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,12 +60,8 @@ impl ::std::convert::From<&str> for DataSourceFilterAttribute {
             "DATASOURCE_NAME" => DataSourceFilterAttribute::DatasourceName,
             "DIRECT_QUICKSIGHT_OWNER" => DataSourceFilterAttribute::DirectQuicksightOwner,
             "DIRECT_QUICKSIGHT_SOLE_OWNER" => DataSourceFilterAttribute::DirectQuicksightSoleOwner,
-            "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" => {
-                DataSourceFilterAttribute::DirectQuicksightViewerOrOwner
-            }
-            other => DataSourceFilterAttribute::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" => DataSourceFilterAttribute::DirectQuicksightViewerOrOwner,
+            other => DataSourceFilterAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -89,9 +79,7 @@ impl DataSourceFilterAttribute {
             DataSourceFilterAttribute::DatasourceName => "DATASOURCE_NAME",
             DataSourceFilterAttribute::DirectQuicksightOwner => "DIRECT_QUICKSIGHT_OWNER",
             DataSourceFilterAttribute::DirectQuicksightSoleOwner => "DIRECT_QUICKSIGHT_SOLE_OWNER",
-            DataSourceFilterAttribute::DirectQuicksightViewerOrOwner => {
-                "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"
-            }
+            DataSourceFilterAttribute::DirectQuicksightViewerOrOwner => "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER",
             DataSourceFilterAttribute::Unknown(value) => value.as_str(),
         }
     }

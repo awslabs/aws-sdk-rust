@@ -64,17 +64,14 @@ impl UpdateAlarmModelInput {
 }
 impl UpdateAlarmModelInput {
     /// Creates a new builder-style object to manufacture [`UpdateAlarmModelInput`](crate::operation::update_alarm_model::UpdateAlarmModelInput).
-    pub fn builder() -> crate::operation::update_alarm_model::builders::UpdateAlarmModelInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_alarm_model::builders::UpdateAlarmModelInputBuilder {
         crate::operation::update_alarm_model::builders::UpdateAlarmModelInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAlarmModelInput`](crate::operation::update_alarm_model::UpdateAlarmModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAlarmModelInputBuilder {
     pub(crate) alarm_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_model_description: ::std::option::Option<::std::string::String>,
@@ -87,18 +84,12 @@ pub struct UpdateAlarmModelInputBuilder {
 }
 impl UpdateAlarmModelInputBuilder {
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the alarm model.</p>
-    pub fn set_alarm_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_model_name = input;
         self
     }
@@ -107,18 +98,12 @@ impl UpdateAlarmModelInputBuilder {
         &self.alarm_model_name
     }
     /// <p>The description of the alarm model.</p>
-    pub fn alarm_model_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alarm_model_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the alarm model.</p>
-    pub fn set_alarm_model_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_model_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_model_description = input;
         self
     }
@@ -174,17 +159,12 @@ impl UpdateAlarmModelInputBuilder {
         self
     }
     /// <p>Contains information about one or more notification actions.</p>
-    pub fn set_alarm_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmNotification>,
-    ) -> Self {
+    pub fn set_alarm_notification(mut self, input: ::std::option::Option<crate::types::AlarmNotification>) -> Self {
         self.alarm_notification = input;
         self
     }
     /// <p>Contains information about one or more notification actions.</p>
-    pub fn get_alarm_notification(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlarmNotification> {
+    pub fn get_alarm_notification(&self) -> &::std::option::Option<crate::types::AlarmNotification> {
         &self.alarm_notification
     }
     /// <p>Contains information about one or more alarm actions.</p>
@@ -193,17 +173,12 @@ impl UpdateAlarmModelInputBuilder {
         self
     }
     /// <p>Contains information about one or more alarm actions.</p>
-    pub fn set_alarm_event_actions(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmEventActions>,
-    ) -> Self {
+    pub fn set_alarm_event_actions(mut self, input: ::std::option::Option<crate::types::AlarmEventActions>) -> Self {
         self.alarm_event_actions = input;
         self
     }
     /// <p>Contains information about one or more alarm actions.</p>
-    pub fn get_alarm_event_actions(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlarmEventActions> {
+    pub fn get_alarm_event_actions(&self) -> &::std::option::Option<crate::types::AlarmEventActions> {
         &self.alarm_event_actions
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
@@ -212,37 +187,27 @@ impl UpdateAlarmModelInputBuilder {
         self
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
-    pub fn set_alarm_capabilities(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmCapabilities>,
-    ) -> Self {
+    pub fn set_alarm_capabilities(mut self, input: ::std::option::Option<crate::types::AlarmCapabilities>) -> Self {
         self.alarm_capabilities = input;
         self
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
-    pub fn get_alarm_capabilities(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlarmCapabilities> {
+    pub fn get_alarm_capabilities(&self) -> &::std::option::Option<crate::types::AlarmCapabilities> {
         &self.alarm_capabilities
     }
     /// Consumes the builder and constructs a [`UpdateAlarmModelInput`](crate::operation::update_alarm_model::UpdateAlarmModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_alarm_model::UpdateAlarmModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_alarm_model::UpdateAlarmModelInput {
-                alarm_model_name: self.alarm_model_name,
-                alarm_model_description: self.alarm_model_description,
-                role_arn: self.role_arn,
-                severity: self.severity,
-                alarm_rule: self.alarm_rule,
-                alarm_notification: self.alarm_notification,
-                alarm_event_actions: self.alarm_event_actions,
-                alarm_capabilities: self.alarm_capabilities,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_alarm_model::UpdateAlarmModelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_alarm_model::UpdateAlarmModelInput {
+            alarm_model_name: self.alarm_model_name,
+            alarm_model_description: self.alarm_model_description,
+            role_arn: self.role_arn,
+            severity: self.severity,
+            alarm_rule: self.alarm_rule,
+            alarm_notification: self.alarm_notification,
+            alarm_event_actions: self.alarm_event_actions,
+            alarm_capabilities: self.alarm_capabilities,
+        })
     }
 }

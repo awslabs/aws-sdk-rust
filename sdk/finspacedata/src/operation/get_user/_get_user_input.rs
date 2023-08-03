@@ -22,9 +22,7 @@ impl GetUserInput {
 
 /// A builder for [`GetUserInput`](crate::operation::get_user::GetUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUserInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetUserInputBuilder {
         &self.user_id
     }
     /// Consumes the builder and constructs a [`GetUserInput`](crate::operation::get_user::GetUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_user::GetUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_user::GetUserInput {
-            user_id: self.user_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_user::GetUserInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_user::GetUserInput { user_id: self.user_id })
     }
 }

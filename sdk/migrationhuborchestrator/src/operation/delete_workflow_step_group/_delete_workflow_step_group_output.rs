@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteWorkflowStepGroupOutput {
 }
 impl DeleteWorkflowStepGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkflowStepGroupOutput`](crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupOutputBuilder {
         crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorkflowStepGroupOutput`](crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkflowStepGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteWorkflowStepGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteWorkflowStepGroupOutput`](crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupOutput {
+    pub fn build(self) -> crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupOutput {
         crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupOutput {
             _request_id: self._request_id,
         }

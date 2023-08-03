@@ -56,9 +56,7 @@ impl BillingGroupListElement {
         self.primary_account_id.as_deref()
     }
     /// <p>The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.</p>
-    pub fn computation_preference(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ComputationPreference> {
+    pub fn computation_preference(&self) -> ::std::option::Option<&crate::types::ComputationPreference> {
         self.computation_preference.as_ref()
     }
     /// <p>The number of accounts in the particular billing group.</p>
@@ -82,9 +80,7 @@ impl BillingGroupListElement {
         self.status_reason.as_deref()
     }
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
-    pub fn account_grouping(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ListBillingGroupAccountGrouping> {
+    pub fn account_grouping(&self) -> ::std::option::Option<&crate::types::ListBillingGroupAccountGrouping> {
         self.account_grouping.as_ref()
     }
 }
@@ -126,8 +122,7 @@ pub struct BillingGroupListElementBuilder {
     pub(crate) last_modified_time: ::std::option::Option<i64>,
     pub(crate) status: ::std::option::Option<crate::types::BillingGroupStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) account_grouping:
-        ::std::option::Option<crate::types::ListBillingGroupAccountGrouping>,
+    pub(crate) account_grouping: ::std::option::Option<crate::types::ListBillingGroupAccountGrouping>,
 }
 impl BillingGroupListElementBuilder {
     /// <p>The name of the billing group.</p>
@@ -173,18 +168,12 @@ impl BillingGroupListElementBuilder {
         &self.description
     }
     /// <p>The account ID that serves as the main account in a billing group.</p>
-    pub fn primary_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID that serves as the main account in a billing group.</p>
-    pub fn set_primary_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_account_id = input;
         self
     }
@@ -198,17 +187,12 @@ impl BillingGroupListElementBuilder {
         self
     }
     /// <p>The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.</p>
-    pub fn set_computation_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputationPreference>,
-    ) -> Self {
+    pub fn set_computation_preference(mut self, input: ::std::option::Option<crate::types::ComputationPreference>) -> Self {
         self.computation_preference = input;
         self
     }
     /// <p>The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.</p>
-    pub fn get_computation_preference(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComputationPreference> {
+    pub fn get_computation_preference(&self) -> &::std::option::Option<crate::types::ComputationPreference> {
         &self.computation_preference
     }
     /// <p>The number of accounts in the particular billing group.</p>
@@ -259,10 +243,7 @@ impl BillingGroupListElementBuilder {
         self
     }
     /// <p>The billing group status. Only one of the valid values can be used.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BillingGroupStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::BillingGroupStatus>) -> Self {
         self.status = input;
         self
     }
@@ -271,18 +252,12 @@ impl BillingGroupListElementBuilder {
         &self.status
     }
     /// <p>The reason why the billing group is in its current status.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason why the billing group is in its current status.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -291,25 +266,17 @@ impl BillingGroupListElementBuilder {
         &self.status_reason
     }
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
-    pub fn account_grouping(
-        mut self,
-        input: crate::types::ListBillingGroupAccountGrouping,
-    ) -> Self {
+    pub fn account_grouping(mut self, input: crate::types::ListBillingGroupAccountGrouping) -> Self {
         self.account_grouping = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
-    pub fn set_account_grouping(
-        mut self,
-        input: ::std::option::Option<crate::types::ListBillingGroupAccountGrouping>,
-    ) -> Self {
+    pub fn set_account_grouping(mut self, input: ::std::option::Option<crate::types::ListBillingGroupAccountGrouping>) -> Self {
         self.account_grouping = input;
         self
     }
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
-    pub fn get_account_grouping(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListBillingGroupAccountGrouping> {
+    pub fn get_account_grouping(&self) -> &::std::option::Option<crate::types::ListBillingGroupAccountGrouping> {
         &self.account_grouping
     }
     /// Consumes the builder and constructs a [`BillingGroupListElement`](crate::types::BillingGroupListElement).

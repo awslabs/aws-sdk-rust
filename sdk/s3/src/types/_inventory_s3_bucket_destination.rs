@@ -55,9 +55,7 @@ impl InventoryS3BucketDestination {
 
 /// A builder for [`InventoryS3BucketDestination`](crate::types::InventoryS3BucketDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InventoryS3BucketDestinationBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
@@ -106,10 +104,7 @@ impl InventoryS3BucketDestinationBuilder {
         self
     }
     /// <p>Specifies the output format of the inventory results.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::InventoryFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::InventoryFormat>) -> Self {
         self.format = input;
         self
     }
@@ -137,10 +132,7 @@ impl InventoryS3BucketDestinationBuilder {
         self
     }
     /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::InventoryEncryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::InventoryEncryption>) -> Self {
         self.encryption = input;
         self
     }

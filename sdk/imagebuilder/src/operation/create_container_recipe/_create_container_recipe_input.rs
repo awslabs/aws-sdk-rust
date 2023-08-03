@@ -53,9 +53,7 @@ pub struct CreateContainerRecipeInput {
     pub parent_image: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are attached to the container recipe.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The working directory for use during build and test workflows.</p>
     #[doc(hidden)]
     pub working_directory: ::std::option::Option<::std::string::String>,
@@ -106,9 +104,7 @@ impl CreateContainerRecipeInput {
         self.components.as_deref()
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-    pub fn instance_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceConfiguration> {
+    pub fn instance_configuration(&self) -> ::std::option::Option<&crate::types::InstanceConfiguration> {
         self.instance_configuration.as_ref()
     }
     /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
@@ -132,11 +128,7 @@ impl CreateContainerRecipeInput {
         self.parent_image.as_deref()
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The working directory for use during build and test workflows.</p>
@@ -144,9 +136,7 @@ impl CreateContainerRecipeInput {
         self.working_directory.as_deref()
     }
     /// <p>The destination repository for the container image.</p>
-    pub fn target_repository(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetContainerRepository> {
+    pub fn target_repository(&self) -> ::std::option::Option<&crate::types::TargetContainerRepository> {
         self.target_repository.as_ref()
     }
     /// <p>Identifies which KMS key is used to encrypt the container image.</p>
@@ -160,34 +150,27 @@ impl CreateContainerRecipeInput {
 }
 impl CreateContainerRecipeInput {
     /// Creates a new builder-style object to manufacture [`CreateContainerRecipeInput`](crate::operation::create_container_recipe::CreateContainerRecipeInput).
-    pub fn builder(
-    ) -> crate::operation::create_container_recipe::builders::CreateContainerRecipeInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_container_recipe::builders::CreateContainerRecipeInputBuilder {
         crate::operation::create_container_recipe::builders::CreateContainerRecipeInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateContainerRecipeInput`](crate::operation::create_container_recipe::CreateContainerRecipeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateContainerRecipeInputBuilder {
     pub(crate) container_type: ::std::option::Option<crate::types::ContainerType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) semantic_version: ::std::option::Option<::std::string::String>,
-    pub(crate) components:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
+    pub(crate) components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
     pub(crate) instance_configuration: ::std::option::Option<crate::types::InstanceConfiguration>,
     pub(crate) dockerfile_template_data: ::std::option::Option<::std::string::String>,
     pub(crate) dockerfile_template_uri: ::std::option::Option<::std::string::String>,
     pub(crate) platform_override: ::std::option::Option<crate::types::Platform>,
     pub(crate) image_os_version_override: ::std::option::Option<::std::string::String>,
     pub(crate) parent_image: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) working_directory: ::std::option::Option<::std::string::String>,
     pub(crate) target_repository: ::std::option::Option<crate::types::TargetContainerRepository>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -200,10 +183,7 @@ impl CreateContainerRecipeInputBuilder {
         self
     }
     /// <p>The type of container to create.</p>
-    pub fn set_container_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerType>,
-    ) -> Self {
+    pub fn set_container_type(mut self, input: ::std::option::Option<crate::types::ContainerType>) -> Self {
         self.container_type = input;
         self
     }
@@ -255,10 +235,7 @@ impl CreateContainerRecipeInputBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
@@ -278,10 +255,7 @@ impl CreateContainerRecipeInputBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.semantic_version = input;
         self
     }
@@ -316,17 +290,12 @@ impl CreateContainerRecipeInputBuilder {
         self
     }
     /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn set_components(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
-    ) -> Self {
+    pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>) -> Self {
         self.components = input;
         self
     }
     /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn get_components(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
+    pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
         &self.components
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
@@ -335,32 +304,21 @@ impl CreateContainerRecipeInputBuilder {
         self
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-    pub fn set_instance_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceConfiguration>,
-    ) -> Self {
+    pub fn set_instance_configuration(mut self, input: ::std::option::Option<crate::types::InstanceConfiguration>) -> Self {
         self.instance_configuration = input;
         self
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-    pub fn get_instance_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceConfiguration> {
+    pub fn get_instance_configuration(&self) -> &::std::option::Option<crate::types::InstanceConfiguration> {
         &self.instance_configuration
     }
     /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
-    pub fn dockerfile_template_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dockerfile_template_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dockerfile_template_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
-    pub fn set_dockerfile_template_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dockerfile_template_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dockerfile_template_data = input;
         self
     }
@@ -369,18 +327,12 @@ impl CreateContainerRecipeInputBuilder {
         &self.dockerfile_template_data
     }
     /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
-    pub fn dockerfile_template_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dockerfile_template_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dockerfile_template_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
-    pub fn set_dockerfile_template_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dockerfile_template_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dockerfile_template_uri = input;
         self
     }
@@ -394,10 +346,7 @@ impl CreateContainerRecipeInputBuilder {
         self
     }
     /// <p>Specifies the operating system platform when you use a custom base image.</p>
-    pub fn set_platform_override(
-        mut self,
-        input: ::std::option::Option<crate::types::Platform>,
-    ) -> Self {
+    pub fn set_platform_override(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
         self.platform_override = input;
         self
     }
@@ -406,18 +355,12 @@ impl CreateContainerRecipeInputBuilder {
         &self.platform_override
     }
     /// <p>Specifies the operating system version for the base image.</p>
-    pub fn image_os_version_override(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_os_version_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_os_version_override = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the operating system version for the base image.</p>
-    pub fn set_image_os_version_override(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_os_version_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_os_version_override = input;
         self
     }
@@ -444,47 +387,28 @@ impl CreateContainerRecipeInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The working directory for use during build and test workflows.</p>
-    pub fn working_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn working_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.working_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The working directory for use during build and test workflows.</p>
-    pub fn set_working_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.working_directory = input;
         self
     }
@@ -498,17 +422,12 @@ impl CreateContainerRecipeInputBuilder {
         self
     }
     /// <p>The destination repository for the container image.</p>
-    pub fn set_target_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetContainerRepository>,
-    ) -> Self {
+    pub fn set_target_repository(mut self, input: ::std::option::Option<crate::types::TargetContainerRepository>) -> Self {
         self.target_repository = input;
         self
     }
     /// <p>The destination repository for the container image.</p>
-    pub fn get_target_repository(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetContainerRepository> {
+    pub fn get_target_repository(&self) -> &::std::option::Option<crate::types::TargetContainerRepository> {
         &self.target_repository
     }
     /// <p>Identifies which KMS key is used to encrypt the container image.</p>
@@ -542,29 +461,25 @@ impl CreateContainerRecipeInputBuilder {
     /// Consumes the builder and constructs a [`CreateContainerRecipeInput`](crate::operation::create_container_recipe::CreateContainerRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_container_recipe::CreateContainerRecipeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_container_recipe::CreateContainerRecipeInput {
-                container_type: self.container_type,
-                name: self.name,
-                description: self.description,
-                semantic_version: self.semantic_version,
-                components: self.components,
-                instance_configuration: self.instance_configuration,
-                dockerfile_template_data: self.dockerfile_template_data,
-                dockerfile_template_uri: self.dockerfile_template_uri,
-                platform_override: self.platform_override,
-                image_os_version_override: self.image_os_version_override,
-                parent_image: self.parent_image,
-                tags: self.tags,
-                working_directory: self.working_directory,
-                target_repository: self.target_repository,
-                kms_key_id: self.kms_key_id,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_container_recipe::CreateContainerRecipeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_container_recipe::CreateContainerRecipeInput {
+            container_type: self.container_type,
+            name: self.name,
+            description: self.description,
+            semantic_version: self.semantic_version,
+            components: self.components,
+            instance_configuration: self.instance_configuration,
+            dockerfile_template_data: self.dockerfile_template_data,
+            dockerfile_template_uri: self.dockerfile_template_uri,
+            platform_override: self.platform_override,
+            image_os_version_override: self.image_os_version_override,
+            parent_image: self.parent_image,
+            tags: self.tags,
+            working_directory: self.working_directory,
+            target_repository: self.target_repository,
+            kms_key_id: self.kms_key_id,
+            client_token: self.client_token,
+        })
     }
 }

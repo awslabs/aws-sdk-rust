@@ -37,9 +37,7 @@ impl ListServiceTemplatesFluentBuilder {
         }
     }
     /// Access the ListServiceTemplates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_service_templates::builders::ListServiceTemplatesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_service_templates::builders::ListServiceTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListServiceTemplatesFluentBuilder {
             crate::operation::list_service_templates::ListServiceTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_templates::ListServiceTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_templates::ListServiceTemplatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListServiceTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListServiceTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_templates::ListServiceTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_templates::ListServiceTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_templates::ListServiceTemplatesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListServiceTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_templates::ListServiceTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_templates::ListServiceTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_templates::ListServiceTemplatesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListServiceTemplatesFluentBuilder {
             crate::operation::list_service_templates::ListServiceTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_templates::ListServiceTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_templates::ListServiceTemplatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_service_templates::paginator::ListServiceTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_service_templates::paginator::ListServiceTemplatesPaginator {
-        crate::operation::list_service_templates::paginator::ListServiceTemplatesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_service_templates::paginator::ListServiceTemplatesPaginator {
+        crate::operation::list_service_templates::paginator::ListServiceTemplatesPaginator::new(self.handle, self.inner)
     }
     /// <p>A token that indicates the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

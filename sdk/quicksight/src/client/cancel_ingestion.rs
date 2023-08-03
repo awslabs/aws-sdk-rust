@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::cancel_ingestion::CancelIngestionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::cancel_ingestion::CancelIngestionOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<CancelIngestionError>`](crate::operation::cancel_ingestion::CancelIngestionError)
-    pub fn cancel_ingestion(
-        &self,
-    ) -> crate::operation::cancel_ingestion::builders::CancelIngestionFluentBuilder {
-        crate::operation::cancel_ingestion::builders::CancelIngestionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_ingestion(&self) -> crate::operation::cancel_ingestion::builders::CancelIngestionFluentBuilder {
+        crate::operation::cancel_ingestion::builders::CancelIngestionFluentBuilder::new(self.handle.clone())
     }
 }

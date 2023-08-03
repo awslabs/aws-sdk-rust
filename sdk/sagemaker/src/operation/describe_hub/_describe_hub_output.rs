@@ -91,9 +91,7 @@ impl DescribeHubOutput {
 
 /// A builder for [`DescribeHubOutput`](crate::operation::describe_hub::DescribeHubOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHubOutputBuilder {
     pub(crate) hub_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_arn: ::std::option::Option<::std::string::String>,
@@ -137,18 +135,12 @@ impl DescribeHubOutputBuilder {
         &self.hub_arn
     }
     /// <p>The display name of the hub.</p>
-    pub fn hub_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the hub.</p>
-    pub fn set_hub_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_display_name = input;
         self
     }
@@ -157,18 +149,12 @@ impl DescribeHubOutputBuilder {
         &self.hub_display_name
     }
     /// <p>A description of the hub.</p>
-    pub fn hub_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the hub.</p>
-    pub fn set_hub_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_description = input;
         self
     }
@@ -181,27 +167,19 @@ impl DescribeHubOutputBuilder {
     /// To override the contents of this collection use [`set_hub_search_keywords`](Self::set_hub_search_keywords).
     ///
     /// <p>The searchable keywords for the hub.</p>
-    pub fn hub_search_keywords(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_search_keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hub_search_keywords.unwrap_or_default();
         v.push(input.into());
         self.hub_search_keywords = ::std::option::Option::Some(v);
         self
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn set_hub_search_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_hub_search_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.hub_search_keywords = input;
         self
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn get_hub_search_keywords(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hub_search_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.hub_search_keywords
     }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
@@ -210,17 +188,12 @@ impl DescribeHubOutputBuilder {
         self
     }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
-    pub fn set_s3_storage_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HubS3StorageConfig>,
-    ) -> Self {
+    pub fn set_s3_storage_config(mut self, input: ::std::option::Option<crate::types::HubS3StorageConfig>) -> Self {
         self.s3_storage_config = input;
         self
     }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
-    pub fn get_s3_storage_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HubS3StorageConfig> {
+    pub fn get_s3_storage_config(&self) -> &::std::option::Option<crate::types::HubS3StorageConfig> {
         &self.s3_storage_config
     }
     /// <p>The status of the hub.</p>
@@ -238,18 +211,12 @@ impl DescribeHubOutputBuilder {
         &self.hub_status
     }
     /// <p>The failure reason if importing hub content failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The failure reason if importing hub content failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -263,10 +230,7 @@ impl DescribeHubOutputBuilder {
         self
     }
     /// <p>The date and time that the hub was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -280,10 +244,7 @@ impl DescribeHubOutputBuilder {
         self
     }
     /// <p>The date and time that the hub was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

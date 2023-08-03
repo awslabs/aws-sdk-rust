@@ -23,9 +23,7 @@ impl LexV2Bot {
 
 /// A builder for [`LexV2Bot`](crate::types::LexV2Bot).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LexV2BotBuilder {
     pub(crate) alias_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl LexV2BotBuilder {
     }
     /// Consumes the builder and constructs a [`LexV2Bot`](crate::types::LexV2Bot).
     pub fn build(self) -> crate::types::LexV2Bot {
-        crate::types::LexV2Bot {
-            alias_arn: self.alias_arn,
-        }
+        crate::types::LexV2Bot { alias_arn: self.alias_arn }
     }
 }

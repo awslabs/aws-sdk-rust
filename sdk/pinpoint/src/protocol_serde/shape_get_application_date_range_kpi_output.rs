@@ -5,7 +5,10 @@ pub(crate) fn de_application_date_range_kpi_response_payload(
     ::std::option::Option<crate::types::ApplicationDateRangeKpiResponse>,
     crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_application_date_range_kpi_response::de_application_date_range_kpi_response_payload(body).map_err(crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_application_date_range_kpi_response::de_application_date_range_kpi_response_payload(body)
+                .map_err(crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError::unhandled)
+        })
+        .transpose()
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeApplicationsOutput`](crate::operation::describe_applications::DescribeApplicationsOutput) with field(s):
     ///   - [`applications(Option<Vec<ApplicationDescription>>)`](crate::operation::describe_applications::DescribeApplicationsOutput::applications): <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationsError>`](crate::operation::describe_applications::DescribeApplicationsError)
-    pub fn describe_applications(
-        &self,
-    ) -> crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder {
-        crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_applications(&self) -> crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder {
+        crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

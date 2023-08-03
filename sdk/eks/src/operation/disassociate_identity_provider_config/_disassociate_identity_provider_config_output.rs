@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DisassociateIdentityProviderConfigOut
 }
 impl DisassociateIdentityProviderConfigOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateIdentityProviderConfigOutput`](crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigOutput).
-    pub fn builder() -> crate::operation::disassociate_identity_provider_config::builders::DisassociateIdentityProviderConfigOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_identity_provider_config::builders::DisassociateIdentityProviderConfigOutputBuilder {
         crate::operation::disassociate_identity_provider_config::builders::DisassociateIdentityProviderConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateIdentityProviderConfigOutput`](crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateIdentityProviderConfigOutputBuilder {
     pub(crate) update: ::std::option::Option<crate::types::Update>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl DisassociateIdentityProviderConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateIdentityProviderConfigOutput`](crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigOutput).
-    pub fn build(self) -> crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigOutput{
+    pub fn build(self) -> crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigOutput {
         crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigOutput {
-            update: self.update
-            ,
+            update: self.update,
             _request_id: self._request_id,
         }
     }

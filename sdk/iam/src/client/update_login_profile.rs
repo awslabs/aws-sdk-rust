@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`password_reset_required(bool)`](crate::operation::update_login_profile::builders::UpdateLoginProfileFluentBuilder::password_reset_required) / [`set_password_reset_required(Option<bool>)`](crate::operation::update_login_profile::builders::UpdateLoginProfileFluentBuilder::set_password_reset_required): <p>Allows this new password to be used only once by requiring the specified IAM user to set a new password on next sign-in.</p>
     /// - On success, responds with [`UpdateLoginProfileOutput`](crate::operation::update_login_profile::UpdateLoginProfileOutput)
     /// - On failure, responds with [`SdkError<UpdateLoginProfileError>`](crate::operation::update_login_profile::UpdateLoginProfileError)
-    pub fn update_login_profile(
-        &self,
-    ) -> crate::operation::update_login_profile::builders::UpdateLoginProfileFluentBuilder {
-        crate::operation::update_login_profile::builders::UpdateLoginProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_login_profile(&self) -> crate::operation::update_login_profile::builders::UpdateLoginProfileFluentBuilder {
+        crate::operation::update_login_profile::builders::UpdateLoginProfileFluentBuilder::new(self.handle.clone())
     }
 }

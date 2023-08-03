@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListPolicyTemplatesOutput {
 }
 impl ListPolicyTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListPolicyTemplatesOutput`](crate::operation::list_policy_templates::ListPolicyTemplatesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_policy_templates::builders::ListPolicyTemplatesOutputBuilder {
-        crate::operation::list_policy_templates::builders::ListPolicyTemplatesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_policy_templates::builders::ListPolicyTemplatesOutputBuilder {
+        crate::operation::list_policy_templates::builders::ListPolicyTemplatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPolicyTemplatesOutput`](crate::operation::list_policy_templates::ListPolicyTemplatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPolicyTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) policy_templates:
-        ::std::option::Option<::std::vec::Vec<crate::types::PolicyTemplateItem>>,
+    pub(crate) policy_templates: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTemplateItem>>,
     _request_id: Option<String>,
 }
 impl ListPolicyTemplatesOutputBuilder {
@@ -73,17 +68,12 @@ impl ListPolicyTemplatesOutputBuilder {
         self
     }
     /// <p>The list of the policy templates in the specified policy store.</p>
-    pub fn set_policy_templates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTemplateItem>>,
-    ) -> Self {
+    pub fn set_policy_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTemplateItem>>) -> Self {
         self.policy_templates = input;
         self
     }
     /// <p>The list of the policy templates in the specified policy store.</p>
-    pub fn get_policy_templates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyTemplateItem>> {
+    pub fn get_policy_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyTemplateItem>> {
         &self.policy_templates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

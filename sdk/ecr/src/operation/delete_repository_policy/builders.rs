@@ -37,10 +37,7 @@ impl DeleteRepositoryPolicyFluentBuilder {
         }
     }
     /// Access the DeleteRepositoryPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_repository_policy::builders::DeleteRepositoryPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_repository_policy::builders::DeleteRepositoryPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteRepositoryPolicyFluentBuilder {
             crate::operation::delete_repository_policy::DeleteRepositoryPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_repository_policy::DeleteRepositoryPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_repository_policy::DeleteRepositoryPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteRepositoryPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteRepositoryPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_repository_policy::DeleteRepositoryPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_repository_policy::DeleteRepositoryPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_repository_policy::DeleteRepositoryPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteRepositoryPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_repository_policy::DeleteRepositoryPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_repository_policy::DeleteRepositoryPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_repository_policy::DeleteRepositoryPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteRepositoryPolicyFluentBuilder {
             crate::operation::delete_repository_policy::DeleteRepositoryPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_repository_policy::DeleteRepositoryPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_repository_policy::DeleteRepositoryPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DeleteRepositoryPolicyFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name of the repository that is associated with the repository policy to delete.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository that is associated with the repository policy to delete.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }

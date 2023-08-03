@@ -31,16 +31,14 @@ impl DescribeRecommendationLimitationsInput {
 }
 impl DescribeRecommendationLimitationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommendationLimitationsInput`](crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsInput).
-    pub fn builder() -> crate::operation::describe_recommendation_limitations::builders::DescribeRecommendationLimitationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_recommendation_limitations::builders::DescribeRecommendationLimitationsInputBuilder {
         crate::operation::describe_recommendation_limitations::builders::DescribeRecommendationLimitationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRecommendationLimitationsInput`](crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecommendationLimitationsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -59,10 +57,7 @@ impl DescribeRecommendationLimitationsInputBuilder {
         self
     }
     /// <p>Filters applied to the limitations described in the form of key-value pairs.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -102,16 +97,18 @@ impl DescribeRecommendationLimitationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeRecommendationLimitationsInput`](crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsInput {
-                filters: self.filters
-                ,
-                max_records: self.max_records
-                ,
-                next_token: self.next_token
-                ,
-            }
+                filters: self.filters,
+                max_records: self.max_records,
+                next_token: self.next_token,
+            },
         )
     }
 }

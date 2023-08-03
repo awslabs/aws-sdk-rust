@@ -36,18 +36,14 @@ impl UpdateContactFlowNameInput {
 }
 impl UpdateContactFlowNameInput {
     /// Creates a new builder-style object to manufacture [`UpdateContactFlowNameInput`](crate::operation::update_contact_flow_name::UpdateContactFlowNameInput).
-    pub fn builder(
-    ) -> crate::operation::update_contact_flow_name::builders::UpdateContactFlowNameInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_contact_flow_name::builders::UpdateContactFlowNameInputBuilder {
         crate::operation::update_contact_flow_name::builders::UpdateContactFlowNameInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContactFlowNameInput`](crate::operation::update_contact_flow_name::UpdateContactFlowNameInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContactFlowNameInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_id: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl UpdateContactFlowNameInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the flow.</p>
-    pub fn contact_flow_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the flow.</p>
-    pub fn set_contact_flow_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_flow_id = input;
         self
     }
@@ -120,17 +110,13 @@ impl UpdateContactFlowNameInputBuilder {
     /// Consumes the builder and constructs a [`UpdateContactFlowNameInput`](crate::operation::update_contact_flow_name::UpdateContactFlowNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_contact_flow_name::UpdateContactFlowNameInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_contact_flow_name::UpdateContactFlowNameInput {
-                instance_id: self.instance_id,
-                contact_flow_id: self.contact_flow_id,
-                name: self.name,
-                description: self.description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_contact_flow_name::UpdateContactFlowNameInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_contact_flow_name::UpdateContactFlowNameInput {
+            instance_id: self.instance_id,
+            contact_flow_id: self.contact_flow_id,
+            name: self.name,
+            description: self.description,
+        })
     }
 }

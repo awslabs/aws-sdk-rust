@@ -30,9 +30,7 @@ impl PivotFieldSortOptions {
 
 /// A builder for [`PivotFieldSortOptions`](crate::types::PivotFieldSortOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PivotFieldSortOptionsBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::PivotTableSortBy>,
@@ -58,10 +56,7 @@ impl PivotFieldSortOptionsBuilder {
         self
     }
     /// <p>The sort by field for the field sort options.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::PivotTableSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::PivotTableSortBy>) -> Self {
         self.sort_by = input;
         self
     }

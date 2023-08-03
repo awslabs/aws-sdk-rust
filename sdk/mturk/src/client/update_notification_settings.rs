@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`active(bool)`](crate::operation::update_notification_settings::builders::UpdateNotificationSettingsFluentBuilder::active) / [`set_active(Option<bool>)`](crate::operation::update_notification_settings::builders::UpdateNotificationSettingsFluentBuilder::set_active): <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
     /// - On success, responds with [`UpdateNotificationSettingsOutput`](crate::operation::update_notification_settings::UpdateNotificationSettingsOutput)
     /// - On failure, responds with [`SdkError<UpdateNotificationSettingsError>`](crate::operation::update_notification_settings::UpdateNotificationSettingsError)
-    pub fn update_notification_settings(&self) -> crate::operation::update_notification_settings::builders::UpdateNotificationSettingsFluentBuilder{
+    pub fn update_notification_settings(&self) -> crate::operation::update_notification_settings::builders::UpdateNotificationSettingsFluentBuilder {
         crate::operation::update_notification_settings::builders::UpdateNotificationSettingsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ResetUserPasswordInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::reset_user_password::ResetUserPasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_user_password::ResetUserPasswordError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_user_password::ResetUserPasswordError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.reset_user_password();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl ResetUserPasswordFluentBuilder {
         }
     }
     /// Access the ResetUserPassword as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::reset_user_password::builders::ResetUserPasswordInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::reset_user_password::builders::ResetUserPasswordInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl ResetUserPasswordFluentBuilder {
             crate::operation::reset_user_password::ResetUserPassword,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_user_password::ResetUserPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_user_password::ResetUserPasswordError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl ResetUserPasswordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl ResetUserPasswordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_user_password::ResetUserPasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_user_password::ResetUserPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_user_password::ResetUserPasswordError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl ResetUserPasswordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_user_password::ResetUserPasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_user_password::ResetUserPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_user_password::ResetUserPasswordError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl ResetUserPasswordFluentBuilder {
             crate::operation::reset_user_password::ResetUserPassword,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_user_password::ResetUserPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_user_password::ResetUserPasswordError>,
     > {
         self.customize_middleware().await
     }

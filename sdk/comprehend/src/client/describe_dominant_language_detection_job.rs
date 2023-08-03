@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`DescribeDominantLanguageDetectionJobOutput`](crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobOutput) with field(s):
     ///   - [`dominant_language_detection_job_properties(Option<DominantLanguageDetectionJobProperties>)`](crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobOutput::dominant_language_detection_job_properties): <p>An object that contains the properties associated with a dominant language detection job.</p>
     /// - On failure, responds with [`SdkError<DescribeDominantLanguageDetectionJobError>`](crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobError)
-    pub fn describe_dominant_language_detection_job(&self) -> crate::operation::describe_dominant_language_detection_job::builders::DescribeDominantLanguageDetectionJobFluentBuilder{
-        crate::operation::describe_dominant_language_detection_job::builders::DescribeDominantLanguageDetectionJobFluentBuilder::new(self.handle.clone())
+    pub fn describe_dominant_language_detection_job(
+        &self,
+    ) -> crate::operation::describe_dominant_language_detection_job::builders::DescribeDominantLanguageDetectionJobFluentBuilder {
+        crate::operation::describe_dominant_language_detection_job::builders::DescribeDominantLanguageDetectionJobFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

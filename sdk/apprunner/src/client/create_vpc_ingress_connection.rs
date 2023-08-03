@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`CreateVpcIngressConnectionOutput`](crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionOutput) with field(s):
     ///   - [`vpc_ingress_connection(Option<VpcIngressConnection>)`](crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionOutput::vpc_ingress_connection): <p>A description of the App Runner VPC Ingress Connection resource that's created by this request. </p>
     /// - On failure, responds with [`SdkError<CreateVpcIngressConnectionError>`](crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionError)
-    pub fn create_vpc_ingress_connection(&self) -> crate::operation::create_vpc_ingress_connection::builders::CreateVpcIngressConnectionFluentBuilder{
+    pub fn create_vpc_ingress_connection(
+        &self,
+    ) -> crate::operation::create_vpc_ingress_connection::builders::CreateVpcIngressConnectionFluentBuilder {
         crate::operation::create_vpc_ingress_connection::builders::CreateVpcIngressConnectionFluentBuilder::new(self.handle.clone())
     }
 }

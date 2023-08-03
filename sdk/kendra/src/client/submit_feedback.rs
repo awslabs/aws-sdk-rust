@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`relevance_feedback_items(Vec<RelevanceFeedback>)`](crate::operation::submit_feedback::builders::SubmitFeedbackFluentBuilder::relevance_feedback_items) / [`set_relevance_feedback_items(Option<Vec<RelevanceFeedback>>)`](crate::operation::submit_feedback::builders::SubmitFeedbackFluentBuilder::set_relevance_feedback_items): <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
     /// - On success, responds with [`SubmitFeedbackOutput`](crate::operation::submit_feedback::SubmitFeedbackOutput)
     /// - On failure, responds with [`SdkError<SubmitFeedbackError>`](crate::operation::submit_feedback::SubmitFeedbackError)
-    pub fn submit_feedback(
-        &self,
-    ) -> crate::operation::submit_feedback::builders::SubmitFeedbackFluentBuilder {
-        crate::operation::submit_feedback::builders::SubmitFeedbackFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn submit_feedback(&self) -> crate::operation::submit_feedback::builders::SubmitFeedbackFluentBuilder {
+        crate::operation::submit_feedback::builders::SubmitFeedbackFluentBuilder::new(self.handle.clone())
     }
 }

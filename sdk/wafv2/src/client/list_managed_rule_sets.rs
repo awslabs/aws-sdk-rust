@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_managed_rule_sets::ListManagedRuleSetsOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     ///   - [`managed_rule_sets(Option<Vec<ManagedRuleSetSummary>>)`](crate::operation::list_managed_rule_sets::ListManagedRuleSetsOutput::managed_rule_sets): <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     /// - On failure, responds with [`SdkError<ListManagedRuleSetsError>`](crate::operation::list_managed_rule_sets::ListManagedRuleSetsError)
-    pub fn list_managed_rule_sets(
-        &self,
-    ) -> crate::operation::list_managed_rule_sets::builders::ListManagedRuleSetsFluentBuilder {
-        crate::operation::list_managed_rule_sets::builders::ListManagedRuleSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_managed_rule_sets(&self) -> crate::operation::list_managed_rule_sets::builders::ListManagedRuleSetsFluentBuilder {
+        crate::operation::list_managed_rule_sets::builders::ListManagedRuleSetsFluentBuilder::new(self.handle.clone())
     }
 }

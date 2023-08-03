@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`package_objects(Option<Vec<PackageObject>>)`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput::package_objects): <p>A list of package objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListApplicationInstanceDependenciesError>`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesError)
-    pub fn list_application_instance_dependencies(&self) -> crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesFluentBuilder{
+    pub fn list_application_instance_dependencies(
+        &self,
+    ) -> crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesFluentBuilder {
         crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesFluentBuilder::new(self.handle.clone())
     }
 }

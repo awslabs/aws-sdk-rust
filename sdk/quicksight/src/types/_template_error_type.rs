@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TemplateErrorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for TemplateErrorType {
             "DATA_SET_NOT_FOUND" => TemplateErrorType::DataSetNotFound,
             "INTERNAL_FAILURE" => TemplateErrorType::InternalFailure,
             "SOURCE_NOT_FOUND" => TemplateErrorType::SourceNotFound,
-            other => {
-                TemplateErrorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => TemplateErrorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl TemplateErrorType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED",
-            "DATA_SET_NOT_FOUND",
-            "INTERNAL_FAILURE",
-            "SOURCE_NOT_FOUND",
-        ]
+        &["ACCESS_DENIED", "DATA_SET_NOT_FOUND", "INTERNAL_FAILURE", "SOURCE_NOT_FOUND"]
     }
 }
 impl ::std::convert::AsRef<str> for TemplateErrorType {

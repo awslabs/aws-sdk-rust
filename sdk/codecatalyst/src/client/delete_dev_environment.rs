@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`project_name(Option<String>)`](crate::operation::delete_dev_environment::DeleteDevEnvironmentOutput::project_name): <p>The name of the project in the space.</p>
     ///   - [`id(Option<String>)`](crate::operation::delete_dev_environment::DeleteDevEnvironmentOutput::id): <p>The system-generated unique ID of the deleted Dev Environment. </p>
     /// - On failure, responds with [`SdkError<DeleteDevEnvironmentError>`](crate::operation::delete_dev_environment::DeleteDevEnvironmentError)
-    pub fn delete_dev_environment(
-        &self,
-    ) -> crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentFluentBuilder {
-        crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_dev_environment(&self) -> crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentFluentBuilder {
+        crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

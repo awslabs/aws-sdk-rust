@@ -30,31 +30,19 @@ pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
     pub ipv4_prefix_count: i32,
     /// <p> One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option. </p>
     #[doc(hidden)]
-    pub ipv4_prefixes: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails,
-        >,
-    >,
+    pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails>>,
     /// <p> The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if you use <code>Ipv6Addresses</code>. </p>
     #[doc(hidden)]
     pub ipv6_address_count: i32,
     /// <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you use <code>Ipv6AddressCount</code>. </p>
     #[doc(hidden)]
-    pub ipv6_addresses: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails,
-        >,
-    >,
+    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails>>,
     /// <p> The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option. </p>
     #[doc(hidden)]
     pub ipv6_prefix_count: i32,
     /// <p> One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option. </p>
     #[doc(hidden)]
-    pub ipv6_prefixes: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails,
-        >,
-    >,
+    pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails>>,
     /// <p> The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index <code>0</code>. The default is network card index <code>0</code>. </p>
     #[doc(hidden)]
     pub network_card_index: i32,
@@ -66,11 +54,8 @@ pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p> One or more private IPv4 addresses. </p>
     #[doc(hidden)]
-    pub private_ip_addresses: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails,
-        >,
-    >,
+    pub private_ip_addresses:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails>>,
     /// <p> The number of secondary private IPv4 addresses to assign to a network interface. </p>
     #[doc(hidden)]
     pub secondary_private_ip_address_count: i32,
@@ -112,11 +97,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
         self.ipv4_prefix_count
     }
     /// <p> One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option. </p>
-    pub fn ipv4_prefixes(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails],
-    > {
+    pub fn ipv4_prefixes(&self) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails]> {
         self.ipv4_prefixes.as_deref()
     }
     /// <p> The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if you use <code>Ipv6Addresses</code>. </p>
@@ -124,11 +105,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
         self.ipv6_address_count
     }
     /// <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you use <code>Ipv6AddressCount</code>. </p>
-    pub fn ipv6_addresses(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails],
-    > {
+    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails]> {
         self.ipv6_addresses.as_deref()
     }
     /// <p> The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option. </p>
@@ -136,11 +113,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
         self.ipv6_prefix_count
     }
     /// <p> One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option. </p>
-    pub fn ipv6_prefixes(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails],
-    > {
+    pub fn ipv6_prefixes(&self) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails]> {
         self.ipv6_prefixes.as_deref()
     }
     /// <p> The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index <code>0</code>. The default is network card index <code>0</code>. </p>
@@ -158,9 +131,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
     /// <p> One or more private IPv4 addresses. </p>
     pub fn private_ip_addresses(
         &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails],
-    > {
+    ) -> ::std::option::Option<&[crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails]> {
         self.private_ip_addresses.as_deref()
     }
     /// <p> The number of secondary private IPv4 addresses to assign to a network interface. </p>
@@ -174,17 +145,14 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
 }
 impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     pub(crate) associate_carrier_ip_address: ::std::option::Option<bool>,
     pub(crate) associate_public_ip_address: ::std::option::Option<bool>,
@@ -194,31 +162,16 @@ pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) interface_type: ::std::option::Option<::std::string::String>,
     pub(crate) ipv4_prefix_count: ::std::option::Option<i32>,
-    pub(crate) ipv4_prefixes: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails,
-        >,
-    >,
+    pub(crate) ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails>>,
     pub(crate) ipv6_address_count: ::std::option::Option<i32>,
-    pub(crate) ipv6_addresses: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails,
-        >,
-    >,
+    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails>>,
     pub(crate) ipv6_prefix_count: ::std::option::Option<i32>,
-    pub(crate) ipv6_prefixes: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails,
-        >,
-    >,
+    pub(crate) ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails>>,
     pub(crate) network_card_index: ::std::option::Option<i32>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
-    pub(crate) private_ip_addresses: ::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails,
-        >,
-    >,
+    pub(crate) private_ip_addresses:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails>>,
     pub(crate) secondary_private_ip_address_count: ::std::option::Option<i32>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
 }
@@ -305,10 +258,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
         self
     }
     /// <p> The IDs of one or more security groups. </p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groups = input;
         self
     }
@@ -317,18 +267,12 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
         &self.groups
     }
     /// <p> The type of network interface. </p>
-    pub fn interface_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn interface_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interface_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The type of network interface. </p>
-    pub fn set_interface_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_interface_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interface_type = input;
         self
     }
@@ -355,10 +299,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     /// To override the contents of this collection use [`set_ipv4_prefixes`](Self::set_ipv4_prefixes).
     ///
     /// <p> One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option. </p>
-    pub fn ipv4_prefixes(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails,
-    ) -> Self {
+    pub fn ipv4_prefixes(mut self, input: crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails) -> Self {
         let mut v = self.ipv4_prefixes.unwrap_or_default();
         v.push(input);
         self.ipv4_prefixes = ::std::option::Option::Some(v);
@@ -367,11 +308,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     /// <p> One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option. </p>
     pub fn set_ipv4_prefixes(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails>>,
     ) -> Self {
         self.ipv4_prefixes = input;
         self
@@ -379,11 +316,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     /// <p> One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option. </p>
     pub fn get_ipv4_prefixes(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails>> {
         &self.ipv4_prefixes
     }
     /// <p> The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if you use <code>Ipv6Addresses</code>. </p>
@@ -405,10 +338,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
     ///
     /// <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you use <code>Ipv6AddressCount</code>. </p>
-    pub fn ipv6_addresses(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails,
-    ) -> Self {
+    pub fn ipv6_addresses(mut self, input: crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails) -> Self {
         let mut v = self.ipv6_addresses.unwrap_or_default();
         v.push(input);
         self.ipv6_addresses = ::std::option::Option::Some(v);
@@ -417,11 +347,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     /// <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you use <code>Ipv6AddressCount</code>. </p>
     pub fn set_ipv6_addresses(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails>>,
     ) -> Self {
         self.ipv6_addresses = input;
         self
@@ -429,11 +355,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     /// <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you use <code>Ipv6AddressCount</code>. </p>
     pub fn get_ipv6_addresses(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails>> {
         &self.ipv6_addresses
     }
     /// <p> The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option. </p>
@@ -455,10 +377,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     /// To override the contents of this collection use [`set_ipv6_prefixes`](Self::set_ipv6_prefixes).
     ///
     /// <p> One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option. </p>
-    pub fn ipv6_prefixes(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails,
-    ) -> Self {
+    pub fn ipv6_prefixes(mut self, input: crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails) -> Self {
         let mut v = self.ipv6_prefixes.unwrap_or_default();
         v.push(input);
         self.ipv6_prefixes = ::std::option::Option::Some(v);
@@ -467,11 +386,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     /// <p> One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option. </p>
     pub fn set_ipv6_prefixes(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails>>,
     ) -> Self {
         self.ipv6_prefixes = input;
         self
@@ -479,11 +394,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     /// <p> One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option. </p>
     pub fn get_ipv6_prefixes(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails>> {
         &self.ipv6_prefixes
     }
     /// <p> The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index <code>0</code>. The default is network card index <code>0</code>. </p>
@@ -501,18 +412,12 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
         &self.network_card_index
     }
     /// <p> The ID of the network interface. </p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the network interface. </p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -521,18 +426,12 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
         &self.network_interface_id
     }
     /// <p> The primary private IPv4 address of the network interface. </p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The primary private IPv4 address of the network interface. </p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }
@@ -545,10 +444,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
     ///
     /// <p> One or more private IPv4 addresses. </p>
-    pub fn private_ip_addresses(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails,
-    ) -> Self {
+    pub fn private_ip_addresses(mut self, input: crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails) -> Self {
         let mut v = self.private_ip_addresses.unwrap_or_default();
         v.push(input);
         self.private_ip_addresses = ::std::option::Option::Some(v);
@@ -557,11 +453,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     /// <p> One or more private IPv4 addresses. </p>
     pub fn set_private_ip_addresses(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<
-                crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails>>,
     ) -> Self {
         self.private_ip_addresses = input;
         self
@@ -569,11 +461,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
     /// <p> One or more private IPv4 addresses. </p>
     pub fn get_private_ip_addresses(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<
-            crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails>> {
         &self.private_ip_addresses
     }
     /// <p> The number of secondary private IPv4 addresses to assign to a network interface. </p>
@@ -582,10 +470,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
         self
     }
     /// <p> The number of secondary private IPv4 addresses to assign to a network interface. </p>
-    pub fn set_secondary_private_ip_address_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_secondary_private_ip_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.secondary_private_ip_address_count = input;
         self
     }
@@ -627,9 +512,7 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsBuilder {
             network_interface_id: self.network_interface_id,
             private_ip_address: self.private_ip_address,
             private_ip_addresses: self.private_ip_addresses,
-            secondary_private_ip_address_count: self
-                .secondary_private_ip_address_count
-                .unwrap_or_default(),
+            secondary_private_ip_address_count: self.secondary_private_ip_address_count.unwrap_or_default(),
             subnet_id: self.subnet_id,
         }
     }

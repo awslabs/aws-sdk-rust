@@ -40,10 +40,7 @@ pub fn ser_ops_aggregator(
             {
                 #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_ops_aggregator::ser_ops_aggregator(
-                    &mut object_15,
-                    item_14,
-                )?;
+                crate::protocol_serde::shape_ops_aggregator::ser_ops_aggregator(&mut object_15, item_14)?;
                 object_15.finish();
             }
         }

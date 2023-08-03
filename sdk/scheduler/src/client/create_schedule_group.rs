@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateScheduleGroupOutput`](crate::operation::create_schedule_group::CreateScheduleGroupOutput) with field(s):
     ///   - [`schedule_group_arn(Option<String>)`](crate::operation::create_schedule_group::CreateScheduleGroupOutput::schedule_group_arn): <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     /// - On failure, responds with [`SdkError<CreateScheduleGroupError>`](crate::operation::create_schedule_group::CreateScheduleGroupError)
-    pub fn create_schedule_group(
-        &self,
-    ) -> crate::operation::create_schedule_group::builders::CreateScheduleGroupFluentBuilder {
-        crate::operation::create_schedule_group::builders::CreateScheduleGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_schedule_group(&self) -> crate::operation::create_schedule_group::builders::CreateScheduleGroupFluentBuilder {
+        crate::operation::create_schedule_group::builders::CreateScheduleGroupFluentBuilder::new(self.handle.clone())
     }
 }

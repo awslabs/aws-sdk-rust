@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_consolidated_report::GetConsolidatedReportOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     ///   - [`base64_string(Option<String>)`](crate::operation::get_consolidated_report::GetConsolidatedReportOutput::base64_string): <p>The Base64-encoded string representation of a lens review report.</p>  <p>This data can be used to create a PDF file.</p>  <p>Only returned by <code>GetConsolidatedReport</code> when <code>PDF</code> format is requested.</p>
     /// - On failure, responds with [`SdkError<GetConsolidatedReportError>`](crate::operation::get_consolidated_report::GetConsolidatedReportError)
-    pub fn get_consolidated_report(
-        &self,
-    ) -> crate::operation::get_consolidated_report::builders::GetConsolidatedReportFluentBuilder
-    {
-        crate::operation::get_consolidated_report::builders::GetConsolidatedReportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_consolidated_report(&self) -> crate::operation::get_consolidated_report::builders::GetConsolidatedReportFluentBuilder {
+        crate::operation::get_consolidated_report::builders::GetConsolidatedReportFluentBuilder::new(self.handle.clone())
     }
 }

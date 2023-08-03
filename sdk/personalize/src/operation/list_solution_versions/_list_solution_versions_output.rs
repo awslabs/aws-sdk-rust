@@ -5,8 +5,7 @@
 pub struct ListSolutionVersionsOutput {
     /// <p>A list of solution versions describing the version properties.</p>
     #[doc(hidden)]
-    pub solution_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::SolutionVersionSummary>>,
+    pub solution_versions: ::std::option::Option<::std::vec::Vec<crate::types::SolutionVersionSummary>>,
     /// <p>A token for getting the next set of solution versions (if they exist).</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSolutionVersionsOutput {
 }
 impl ListSolutionVersionsOutput {
     /// <p>A list of solution versions describing the version properties.</p>
-    pub fn solution_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SolutionVersionSummary]> {
+    pub fn solution_versions(&self) -> ::std::option::Option<&[crate::types::SolutionVersionSummary]> {
         self.solution_versions.as_deref()
     }
     /// <p>A token for getting the next set of solution versions (if they exist).</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSolutionVersionsOutput {
 }
 impl ListSolutionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSolutionVersionsOutput`](crate::operation::list_solution_versions::ListSolutionVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_solution_versions::builders::ListSolutionVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_solution_versions::builders::ListSolutionVersionsOutputBuilder {
         crate::operation::list_solution_versions::builders::ListSolutionVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSolutionVersionsOutput`](crate::operation::list_solution_versions::ListSolutionVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolutionVersionsOutputBuilder {
-    pub(crate) solution_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::SolutionVersionSummary>>,
+    pub(crate) solution_versions: ::std::option::Option<::std::vec::Vec<crate::types::SolutionVersionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListSolutionVersionsOutputBuilder {
         self
     }
     /// <p>A list of solution versions describing the version properties.</p>
-    pub fn set_solution_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SolutionVersionSummary>>,
-    ) -> Self {
+    pub fn set_solution_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SolutionVersionSummary>>) -> Self {
         self.solution_versions = input;
         self
     }
     /// <p>A list of solution versions describing the version properties.</p>
-    pub fn get_solution_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SolutionVersionSummary>> {
+    pub fn get_solution_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SolutionVersionSummary>> {
         &self.solution_versions
     }
     /// <p>A token for getting the next set of solution versions (if they exist).</p>

@@ -30,9 +30,7 @@ impl ListVpcIngressConnectionsFilter {
 
 /// A builder for [`ListVpcIngressConnectionsFilter`](crate::types::ListVpcIngressConnectionsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpcIngressConnectionsFilterBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl ListVpcIngressConnectionsFilterBuilder {
         &self.service_arn
     }
     /// <p>The ID of a VPC Endpoint to filter by. </p>
-    pub fn vpc_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a VPC Endpoint to filter by. </p>
-    pub fn set_vpc_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_endpoint_id = input;
         self
     }

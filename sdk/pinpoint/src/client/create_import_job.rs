@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateImportJobOutput`](crate::operation::create_import_job::CreateImportJobOutput) with field(s):
     ///   - [`import_job_response(Option<ImportJobResponse>)`](crate::operation::create_import_job::CreateImportJobOutput::import_job_response): <p>Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console.</p>
     /// - On failure, responds with [`SdkError<CreateImportJobError>`](crate::operation::create_import_job::CreateImportJobError)
-    pub fn create_import_job(
-        &self,
-    ) -> crate::operation::create_import_job::builders::CreateImportJobFluentBuilder {
-        crate::operation::create_import_job::builders::CreateImportJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_import_job(&self) -> crate::operation::create_import_job::builders::CreateImportJobFluentBuilder {
+        crate::operation::create_import_job::builders::CreateImportJobFluentBuilder::new(self.handle.clone())
     }
 }

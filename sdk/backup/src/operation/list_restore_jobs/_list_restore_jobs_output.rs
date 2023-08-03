@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListRestoreJobsOutput {
 }
 impl ListRestoreJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListRestoreJobsOutput`](crate::operation::list_restore_jobs::ListRestoreJobsOutput).
-    pub fn builder() -> crate::operation::list_restore_jobs::builders::ListRestoreJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_restore_jobs::builders::ListRestoreJobsOutputBuilder {
         crate::operation::list_restore_jobs::builders::ListRestoreJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRestoreJobsOutput`](crate::operation::list_restore_jobs::ListRestoreJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRestoreJobsOutputBuilder {
-    pub(crate) restore_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::RestoreJobsListMember>>,
+    pub(crate) restore_jobs: ::std::option::Option<::std::vec::Vec<crate::types::RestoreJobsListMember>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListRestoreJobsOutputBuilder {
         self
     }
     /// <p>An array of objects that contain detailed information about jobs to restore saved resources.</p>
-    pub fn set_restore_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RestoreJobsListMember>>,
-    ) -> Self {
+    pub fn set_restore_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RestoreJobsListMember>>) -> Self {
         self.restore_jobs = input;
         self
     }
     /// <p>An array of objects that contain detailed information about jobs to restore saved resources.</p>
-    pub fn get_restore_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RestoreJobsListMember>> {
+    pub fn get_restore_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RestoreJobsListMember>> {
         &self.restore_jobs
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>

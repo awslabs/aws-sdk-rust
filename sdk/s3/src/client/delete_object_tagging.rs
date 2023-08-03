@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteObjectTaggingOutput`](crate::operation::delete_object_tagging::DeleteObjectTaggingOutput) with field(s):
     ///   - [`version_id(Option<String>)`](crate::operation::delete_object_tagging::DeleteObjectTaggingOutput::version_id): <p>The versionId of the object the tag-set was removed from.</p>
     /// - On failure, responds with [`SdkError<DeleteObjectTaggingError>`](crate::operation::delete_object_tagging::DeleteObjectTaggingError)
-    pub fn delete_object_tagging(
-        &self,
-    ) -> crate::operation::delete_object_tagging::builders::DeleteObjectTaggingFluentBuilder {
-        crate::operation::delete_object_tagging::builders::DeleteObjectTaggingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_object_tagging(&self) -> crate::operation::delete_object_tagging::builders::DeleteObjectTaggingFluentBuilder {
+        crate::operation::delete_object_tagging::builders::DeleteObjectTaggingFluentBuilder::new(self.handle.clone())
     }
 }

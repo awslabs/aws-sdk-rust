@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`schema_summaries(Option<Vec<SchemaSummary>>)`](crate::operation::list_schemas::ListSchemasOutput::schema_summaries): <p>The retrieved list of schemas.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_schemas::ListSchemasOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::operation::list_schemas::ListSchemasError)
-    pub fn list_schemas(
-        &self,
-    ) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {
+    pub fn list_schemas(&self) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {
         crate::operation::list_schemas::builders::ListSchemasFluentBuilder::new(self.handle.clone())
     }
 }

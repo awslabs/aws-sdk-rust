@@ -35,9 +35,7 @@ impl ListSchedulesOutput {
 
 /// A builder for [`ListSchedulesOutput`](crate::operation::list_schedules::ListSchedulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchedulesOutputBuilder {
     pub(crate) schedules: ::std::option::Option<::std::vec::Vec<crate::types::Schedule>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListSchedulesOutputBuilder {
         self
     }
     /// <p>A list of schedules that are defined.</p>
-    pub fn set_schedules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Schedule>>,
-    ) -> Self {
+    pub fn set_schedules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Schedule>>) -> Self {
         self.schedules = input;
         self
     }

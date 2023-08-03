@@ -23,9 +23,7 @@ pub enum AnalyzerNameUnion {
 impl AnalyzerNameUnion {
     /// Tries to convert the enum instance into [`BinaryAnalyzerName`](crate::types::AnalyzerNameUnion::BinaryAnalyzerName), extracting the inner [`BinaryAnalyzerName`](crate::types::BinaryAnalyzerName).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_binary_analyzer_name(
-        &self,
-    ) -> ::std::result::Result<&crate::types::BinaryAnalyzerName, &Self> {
+    pub fn as_binary_analyzer_name(&self) -> ::std::result::Result<&crate::types::BinaryAnalyzerName, &Self> {
         if let AnalyzerNameUnion::BinaryAnalyzerName(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -38,9 +36,7 @@ impl AnalyzerNameUnion {
     }
     /// Tries to convert the enum instance into [`RunTimeAnalyzerName`](crate::types::AnalyzerNameUnion::RunTimeAnalyzerName), extracting the inner [`RunTimeAnalyzerName`](crate::types::RunTimeAnalyzerName).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_run_time_analyzer_name(
-        &self,
-    ) -> ::std::result::Result<&crate::types::RunTimeAnalyzerName, &Self> {
+    pub fn as_run_time_analyzer_name(&self) -> ::std::result::Result<&crate::types::RunTimeAnalyzerName, &Self> {
         if let AnalyzerNameUnion::RunTimeAnalyzerName(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -53,9 +49,7 @@ impl AnalyzerNameUnion {
     }
     /// Tries to convert the enum instance into [`SourceCodeAnalyzerName`](crate::types::AnalyzerNameUnion::SourceCodeAnalyzerName), extracting the inner [`SourceCodeAnalyzerName`](crate::types::SourceCodeAnalyzerName).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_source_code_analyzer_name(
-        &self,
-    ) -> ::std::result::Result<&crate::types::SourceCodeAnalyzerName, &Self> {
+    pub fn as_source_code_analyzer_name(&self) -> ::std::result::Result<&crate::types::SourceCodeAnalyzerName, &Self> {
         if let AnalyzerNameUnion::SourceCodeAnalyzerName(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

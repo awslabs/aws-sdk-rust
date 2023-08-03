@@ -52,10 +52,7 @@ impl DeleteCustomKeyStoreFluentBuilder {
         }
     }
     /// Access the DeleteCustomKeyStore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_custom_key_store::builders::DeleteCustomKeyStoreInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_custom_key_store::builders::DeleteCustomKeyStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -67,9 +64,7 @@ impl DeleteCustomKeyStoreFluentBuilder {
             crate::operation::delete_custom_key_store::DeleteCustomKeyStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -79,10 +74,7 @@ impl DeleteCustomKeyStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -91,9 +83,7 @@ impl DeleteCustomKeyStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError>,
     > {
         let op = self
             .inner
@@ -116,9 +106,7 @@ impl DeleteCustomKeyStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError>,
     > {
         self.send_middleware().await
     }
@@ -132,25 +120,17 @@ impl DeleteCustomKeyStoreFluentBuilder {
             crate::operation::delete_custom_key_store::DeleteCustomKeyStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    pub fn custom_key_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_key_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_key_store_id(input.into());
         self
     }
     /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    pub fn set_custom_key_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_key_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_key_store_id(input);
         self
     }

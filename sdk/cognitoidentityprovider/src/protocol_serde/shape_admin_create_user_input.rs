@@ -15,10 +15,7 @@ pub fn ser_admin_create_user_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_attribute_type::ser_attribute_type(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_attribute_type::ser_attribute_type(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -30,10 +27,7 @@ pub fn ser_admin_create_user_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_attribute_type::ser_attribute_type(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_attribute_type::ser_attribute_type(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

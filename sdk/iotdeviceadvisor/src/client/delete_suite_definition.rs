@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`suite_definition_id(impl ::std::convert::Into<String>)`](crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionFluentBuilder::suite_definition_id) / [`set_suite_definition_id(Option<String>)`](crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionFluentBuilder::set_suite_definition_id): <p>Suite definition ID of the test suite to be deleted.</p>
     /// - On success, responds with [`DeleteSuiteDefinitionOutput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteSuiteDefinitionError>`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionError)
-    pub fn delete_suite_definition(
-        &self,
-    ) -> crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionFluentBuilder
-    {
-        crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_suite_definition(&self) -> crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionFluentBuilder {
+        crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

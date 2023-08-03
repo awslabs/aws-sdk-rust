@@ -37,9 +37,7 @@ impl DeleteServiceNetworkFluentBuilder {
         }
     }
     /// Access the DeleteServiceNetwork as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_service_network::builders::DeleteServiceNetworkInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_service_network::builders::DeleteServiceNetworkInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteServiceNetworkFluentBuilder {
             crate::operation::delete_service_network::DeleteServiceNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_network::DeleteServiceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_network::DeleteServiceNetworkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteServiceNetworkFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteServiceNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_service_network::DeleteServiceNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_network::DeleteServiceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_network::DeleteServiceNetworkError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteServiceNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_service_network::DeleteServiceNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_network::DeleteServiceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_network::DeleteServiceNetworkError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteServiceNetworkFluentBuilder {
             crate::operation::delete_service_network::DeleteServiceNetwork,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_service_network::DeleteServiceNetworkError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_service_network::DeleteServiceNetworkError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
-    pub fn service_network_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_network_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
-    pub fn set_service_network_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_network_identifier(input);
         self
     }

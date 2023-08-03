@@ -27,34 +27,27 @@ impl ::std::fmt::Display for ResourceShareInvitationArnNotFoundException {
     }
 }
 impl ::std::error::Error for ResourceShareInvitationArnNotFoundException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::ResourceShareInvitationArnNotFoundException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::ResourceShareInvitationArnNotFoundException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ResourceShareInvitationArnNotFoundException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceShareInvitationArnNotFoundException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl ResourceShareInvitationArnNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceShareInvitationArnNotFoundException`](crate::types::error::ResourceShareInvitationArnNotFoundException).
-    pub fn builder(
-    ) -> crate::types::error::builders::ResourceShareInvitationArnNotFoundExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::ResourceShareInvitationArnNotFoundExceptionBuilder {
         crate::types::error::builders::ResourceShareInvitationArnNotFoundExceptionBuilder::default()
     }
 }
 
 /// A builder for [`ResourceShareInvitationArnNotFoundException`](crate::types::error::ResourceShareInvitationArnNotFoundException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceShareInvitationArnNotFoundExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl ResourceShareInvitationArnNotFoundExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

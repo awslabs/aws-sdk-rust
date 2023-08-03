@@ -37,9 +37,7 @@ impl ListClusterSnapshotsFluentBuilder {
         }
     }
     /// Access the ListClusterSnapshots as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListClusterSnapshotsFluentBuilder {
             crate::operation::list_cluster_snapshots::ListClusterSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cluster_snapshots::ListClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cluster_snapshots::ListClusterSnapshotsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListClusterSnapshotsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListClusterSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cluster_snapshots::ListClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cluster_snapshots::ListClusterSnapshotsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListClusterSnapshotsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cluster_snapshots::ListClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cluster_snapshots::ListClusterSnapshotsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListClusterSnapshotsFluentBuilder {
             crate::operation::list_cluster_snapshots::ListClusterSnapshots,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_cluster_snapshots::ListClusterSnapshotsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_cluster_snapshots::ListClusterSnapshotsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_cluster_snapshots::paginator::ListClusterSnapshotsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_cluster_snapshots::paginator::ListClusterSnapshotsPaginator {
-        crate::operation::list_cluster_snapshots::paginator::ListClusterSnapshotsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_cluster_snapshots::paginator::ListClusterSnapshotsPaginator {
+        crate::operation::list_cluster_snapshots::paginator::ListClusterSnapshotsPaginator::new(self.handle, self.inner)
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

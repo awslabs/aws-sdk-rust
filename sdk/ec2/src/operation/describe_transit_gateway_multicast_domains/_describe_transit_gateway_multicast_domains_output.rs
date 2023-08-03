@@ -5,8 +5,7 @@
 pub struct DescribeTransitGatewayMulticastDomainsOutput {
     /// <p>Information about the transit gateway multicast domains.</p>
     #[doc(hidden)]
-    pub transit_gateway_multicast_domains:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastDomain>>,
+    pub transit_gateway_multicast_domains: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastDomain>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeTransitGatewayMulticastDomainsOutput {
 }
 impl DescribeTransitGatewayMulticastDomainsOutput {
     /// <p>Information about the transit gateway multicast domains.</p>
-    pub fn transit_gateway_multicast_domains(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransitGatewayMulticastDomain]> {
+    pub fn transit_gateway_multicast_domains(&self) -> ::std::option::Option<&[crate::types::TransitGatewayMulticastDomain]> {
         self.transit_gateway_multicast_domains.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeTransitGatewayMulticastDomain
 }
 impl DescribeTransitGatewayMulticastDomainsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayMulticastDomainsOutput`](crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsOutput).
-    pub fn builder() -> crate::operation::describe_transit_gateway_multicast_domains::builders::DescribeTransitGatewayMulticastDomainsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_transit_gateway_multicast_domains::builders::DescribeTransitGatewayMulticastDomainsOutputBuilder {
         crate::operation::describe_transit_gateway_multicast_domains::builders::DescribeTransitGatewayMulticastDomainsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTransitGatewayMulticastDomainsOutput`](crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTransitGatewayMulticastDomainsOutputBuilder {
-    pub(crate) transit_gateway_multicast_domains:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastDomain>>,
+    pub(crate) transit_gateway_multicast_domains: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastDomain>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeTransitGatewayMulticastDomainsOutputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_multicast_domains`](Self::set_transit_gateway_multicast_domains).
     ///
     /// <p>Information about the transit gateway multicast domains.</p>
-    pub fn transit_gateway_multicast_domains(
-        mut self,
-        input: crate::types::TransitGatewayMulticastDomain,
-    ) -> Self {
+    pub fn transit_gateway_multicast_domains(mut self, input: crate::types::TransitGatewayMulticastDomain) -> Self {
         let mut v = self.transit_gateway_multicast_domains.unwrap_or_default();
         v.push(input);
         self.transit_gateway_multicast_domains = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeTransitGatewayMulticastDomainsOutputBuilder {
         self
     }
     /// <p>Information about the transit gateway multicast domains.</p>
-    pub fn get_transit_gateway_multicast_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastDomain>> {
+    pub fn get_transit_gateway_multicast_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastDomain>> {
         &self.transit_gateway_multicast_domains
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -100,12 +89,10 @@ impl DescribeTransitGatewayMulticastDomainsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTransitGatewayMulticastDomainsOutput`](crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsOutput).
-    pub fn build(self) -> crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsOutput{
+    pub fn build(self) -> crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsOutput {
         crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsOutput {
-            transit_gateway_multicast_domains: self.transit_gateway_multicast_domains
-            ,
-            next_token: self.next_token
-            ,
+            transit_gateway_multicast_domains: self.transit_gateway_multicast_domains,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

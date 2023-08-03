@@ -30,17 +30,14 @@ impl UpdateConnectivityInput {
 }
 impl UpdateConnectivityInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectivityInput`](crate::operation::update_connectivity::UpdateConnectivityInput).
-    pub fn builder(
-    ) -> crate::operation::update_connectivity::builders::UpdateConnectivityInputBuilder {
+    pub fn builder() -> crate::operation::update_connectivity::builders::UpdateConnectivityInputBuilder {
         crate::operation::update_connectivity::builders::UpdateConnectivityInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConnectivityInput`](crate::operation::update_connectivity::UpdateConnectivityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConnectivityInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) connectivity_info: ::std::option::Option<crate::types::ConnectivityInfo>,
@@ -67,10 +64,7 @@ impl UpdateConnectivityInputBuilder {
         self
     }
     /// <p>Information about the broker access configuration.</p>
-    pub fn set_connectivity_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectivityInfo>,
-    ) -> Self {
+    pub fn set_connectivity_info(mut self, input: ::std::option::Option<crate::types::ConnectivityInfo>) -> Self {
         self.connectivity_info = input;
         self
     }
@@ -79,18 +73,12 @@ impl UpdateConnectivityInputBuilder {
         &self.connectivity_info
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }
@@ -101,16 +89,11 @@ impl UpdateConnectivityInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectivityInput`](crate::operation::update_connectivity::UpdateConnectivityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_connectivity::UpdateConnectivityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_connectivity::UpdateConnectivityInput {
-                cluster_arn: self.cluster_arn,
-                connectivity_info: self.connectivity_info,
-                current_version: self.current_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_connectivity::UpdateConnectivityInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_connectivity::UpdateConnectivityInput {
+            cluster_arn: self.cluster_arn,
+            connectivity_info: self.connectivity_info,
+            current_version: self.current_version,
+        })
     }
 }

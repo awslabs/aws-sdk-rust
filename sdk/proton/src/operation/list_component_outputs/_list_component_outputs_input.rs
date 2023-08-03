@@ -29,17 +29,14 @@ impl ListComponentOutputsInput {
 }
 impl ListComponentOutputsInput {
     /// Creates a new builder-style object to manufacture [`ListComponentOutputsInput`](crate::operation::list_component_outputs::ListComponentOutputsInput).
-    pub fn builder(
-    ) -> crate::operation::list_component_outputs::builders::ListComponentOutputsInputBuilder {
+    pub fn builder() -> crate::operation::list_component_outputs::builders::ListComponentOutputsInputBuilder {
         crate::operation::list_component_outputs::builders::ListComponentOutputsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListComponentOutputsInput`](crate::operation::list_component_outputs::ListComponentOutputsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentOutputsInputBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct ListComponentOutputsInputBuilder {
 }
 impl ListComponentOutputsInputBuilder {
     /// <p>The name of the component whose outputs you want.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component whose outputs you want.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
@@ -81,18 +72,12 @@ impl ListComponentOutputsInputBuilder {
         &self.next_token
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -103,16 +88,12 @@ impl ListComponentOutputsInputBuilder {
     /// Consumes the builder and constructs a [`ListComponentOutputsInput`](crate::operation::list_component_outputs::ListComponentOutputsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_component_outputs::ListComponentOutputsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_component_outputs::ListComponentOutputsInput {
-                component_name: self.component_name,
-                next_token: self.next_token,
-                deployment_id: self.deployment_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_component_outputs::ListComponentOutputsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_component_outputs::ListComponentOutputsInput {
+            component_name: self.component_name,
+            next_token: self.next_token,
+            deployment_id: self.deployment_id,
+        })
     }
 }

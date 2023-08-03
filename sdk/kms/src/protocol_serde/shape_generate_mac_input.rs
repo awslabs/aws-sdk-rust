@@ -4,9 +4,7 @@ pub fn ser_generate_mac_input(
     input: &crate::operation::generate_mac::GenerateMacInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.message {
-        object
-            .key("Message")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+        object.key("Message").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
     if let Some(var_2) = &input.key_id {
         object.key("KeyId").string(var_2.as_str());

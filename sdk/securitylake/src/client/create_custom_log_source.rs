@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateCustomLogSourceOutput`](crate::operation::create_custom_log_source::CreateCustomLogSourceOutput) with field(s):
     ///   - [`source(Option<CustomLogSourceResource>)`](crate::operation::create_custom_log_source::CreateCustomLogSourceOutput::source): <p>The created third-party custom source.</p>
     /// - On failure, responds with [`SdkError<CreateCustomLogSourceError>`](crate::operation::create_custom_log_source::CreateCustomLogSourceError)
-    pub fn create_custom_log_source(
-        &self,
-    ) -> crate::operation::create_custom_log_source::builders::CreateCustomLogSourceFluentBuilder
-    {
+    pub fn create_custom_log_source(&self) -> crate::operation::create_custom_log_source::builders::CreateCustomLogSourceFluentBuilder {
         crate::operation::create_custom_log_source::builders::CreateCustomLogSourceFluentBuilder::new(self.handle.clone())
     }
 }

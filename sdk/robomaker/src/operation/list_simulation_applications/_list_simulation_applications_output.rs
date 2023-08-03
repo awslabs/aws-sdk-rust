@@ -5,8 +5,7 @@
 pub struct ListSimulationApplicationsOutput {
     /// <p>A list of simulation application summaries that meet the criteria of the request.</p>
     #[doc(hidden)]
-    pub simulation_application_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationSummary>>,
+    pub simulation_application_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationSummary>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSimulationApplicationsOutput {
 }
 impl ListSimulationApplicationsOutput {
     /// <p>A list of simulation application summaries that meet the criteria of the request.</p>
-    pub fn simulation_application_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SimulationApplicationSummary]> {
+    pub fn simulation_application_summaries(&self) -> ::std::option::Option<&[crate::types::SimulationApplicationSummary]> {
         self.simulation_application_summaries.as_deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSimulationApplicationsOutput {
 }
 impl ListSimulationApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSimulationApplicationsOutput`](crate::operation::list_simulation_applications::ListSimulationApplicationsOutput).
-    pub fn builder() -> crate::operation::list_simulation_applications::builders::ListSimulationApplicationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_simulation_applications::builders::ListSimulationApplicationsOutputBuilder {
         crate::operation::list_simulation_applications::builders::ListSimulationApplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSimulationApplicationsOutput`](crate::operation::list_simulation_applications::ListSimulationApplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSimulationApplicationsOutputBuilder {
-    pub(crate) simulation_application_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationSummary>>,
+    pub(crate) simulation_application_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListSimulationApplicationsOutputBuilder {
     /// To override the contents of this collection use [`set_simulation_application_summaries`](Self::set_simulation_application_summaries).
     ///
     /// <p>A list of simulation application summaries that meet the criteria of the request.</p>
-    pub fn simulation_application_summaries(
-        mut self,
-        input: crate::types::SimulationApplicationSummary,
-    ) -> Self {
+    pub fn simulation_application_summaries(mut self, input: crate::types::SimulationApplicationSummary) -> Self {
         let mut v = self.simulation_application_summaries.unwrap_or_default();
         v.push(input);
         self.simulation_application_summaries = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListSimulationApplicationsOutputBuilder {
         self
     }
     /// <p>A list of simulation application summaries that meet the criteria of the request.</p>
-    pub fn get_simulation_application_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationSummary>> {
+    pub fn get_simulation_application_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationSummary>> {
         &self.simulation_application_summaries
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
@@ -100,9 +89,7 @@ impl ListSimulationApplicationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSimulationApplicationsOutput`](crate::operation::list_simulation_applications::ListSimulationApplicationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_simulation_applications::ListSimulationApplicationsOutput {
+    pub fn build(self) -> crate::operation::list_simulation_applications::ListSimulationApplicationsOutput {
         crate::operation::list_simulation_applications::ListSimulationApplicationsOutput {
             simulation_application_summaries: self.simulation_application_summaries,
             next_token: self.next_token,

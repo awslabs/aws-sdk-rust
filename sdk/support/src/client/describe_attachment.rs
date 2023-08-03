@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAttachmentOutput`](crate::operation::describe_attachment::DescribeAttachmentOutput) with field(s):
     ///   - [`attachment(Option<Attachment>)`](crate::operation::describe_attachment::DescribeAttachmentOutput::attachment): <p>This object includes the attachment content and file name.</p>  <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeAttachmentError>`](crate::operation::describe_attachment::DescribeAttachmentError)
-    pub fn describe_attachment(
-        &self,
-    ) -> crate::operation::describe_attachment::builders::DescribeAttachmentFluentBuilder {
-        crate::operation::describe_attachment::builders::DescribeAttachmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_attachment(&self) -> crate::operation::describe_attachment::builders::DescribeAttachmentFluentBuilder {
+        crate::operation::describe_attachment::builders::DescribeAttachmentFluentBuilder::new(self.handle.clone())
     }
 }

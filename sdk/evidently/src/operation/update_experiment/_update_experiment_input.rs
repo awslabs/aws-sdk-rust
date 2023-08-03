@@ -80,17 +80,14 @@ impl UpdateExperimentInput {
 }
 impl UpdateExperimentInput {
     /// Creates a new builder-style object to manufacture [`UpdateExperimentInput`](crate::operation::update_experiment::UpdateExperimentInput).
-    pub fn builder() -> crate::operation::update_experiment::builders::UpdateExperimentInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_experiment::builders::UpdateExperimentInputBuilder {
         crate::operation::update_experiment::builders::UpdateExperimentInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateExperimentInput`](crate::operation::update_experiment::UpdateExperimentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateExperimentInputBuilder {
     pub(crate) project: ::std::option::Option<::std::string::String>,
     pub(crate) experiment: ::std::option::Option<::std::string::String>,
@@ -158,17 +155,12 @@ impl UpdateExperimentInputBuilder {
         self
     }
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
-    pub fn set_treatments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>,
-    ) -> Self {
+    pub fn set_treatments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>) -> Self {
         self.treatments = input;
         self
     }
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
-    pub fn get_treatments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>> {
+    pub fn get_treatments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>> {
         &self.treatments
     }
     /// Appends an item to `metric_goals`.
@@ -183,32 +175,21 @@ impl UpdateExperimentInputBuilder {
         self
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn set_metric_goals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>,
-    ) -> Self {
+    pub fn set_metric_goals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>) -> Self {
         self.metric_goals = input;
         self
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn get_metric_goals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>> {
+    pub fn get_metric_goals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>> {
         &self.metric_goals
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
-    pub fn randomization_salt(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn randomization_salt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.randomization_salt = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
-    pub fn set_randomization_salt(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_randomization_salt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.randomization_salt = input;
         self
     }
@@ -267,10 +248,7 @@ impl UpdateExperimentInputBuilder {
         self
     }
     /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
-    pub fn set_online_ab_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OnlineAbConfig>,
-    ) -> Self {
+    pub fn set_online_ab_config(mut self, input: ::std::option::Option<crate::types::OnlineAbConfig>) -> Self {
         self.online_ab_config = input;
         self
     }
@@ -281,10 +259,7 @@ impl UpdateExperimentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateExperimentInput`](crate::operation::update_experiment::UpdateExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_experiment::UpdateExperimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_experiment::UpdateExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_experiment::UpdateExperimentInput {
             project: self.project,
             experiment: self.experiment,

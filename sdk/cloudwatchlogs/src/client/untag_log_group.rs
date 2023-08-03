@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UntagLogGroupOutput`](crate::operation::untag_log_group::UntagLogGroupOutput)
     /// - On failure, responds with [`SdkError<UntagLogGroupError>`](crate::operation::untag_log_group::UntagLogGroupError)
     #[deprecated(note = "Please use the generic tagging API UntagResource")]
-    pub fn untag_log_group(
-        &self,
-    ) -> crate::operation::untag_log_group::builders::UntagLogGroupFluentBuilder {
-        crate::operation::untag_log_group::builders::UntagLogGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn untag_log_group(&self) -> crate::operation::untag_log_group::builders::UntagLogGroupFluentBuilder {
+        crate::operation::untag_log_group::builders::UntagLogGroupFluentBuilder::new(self.handle.clone())
     }
 }

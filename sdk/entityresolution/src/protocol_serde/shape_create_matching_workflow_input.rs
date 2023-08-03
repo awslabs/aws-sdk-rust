@@ -9,10 +9,7 @@ pub fn ser_create_matching_workflow_input(
     if let Some(var_2) = &input.incremental_run_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("incrementalRunConfig").start_object();
-        crate::protocol_serde::shape_incremental_run_config::ser_incremental_run_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_incremental_run_config::ser_incremental_run_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.input_source_config {
@@ -33,10 +30,7 @@ pub fn ser_create_matching_workflow_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_output_source::ser_output_source(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_output_source::ser_output_source(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }
@@ -45,10 +39,7 @@ pub fn ser_create_matching_workflow_input(
     if let Some(var_12) = &input.resolution_techniques {
         #[allow(unused_mut)]
         let mut object_13 = object.key("resolutionTechniques").start_object();
-        crate::protocol_serde::shape_resolution_techniques::ser_resolution_techniques(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_resolution_techniques::ser_resolution_techniques(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.role_arn {

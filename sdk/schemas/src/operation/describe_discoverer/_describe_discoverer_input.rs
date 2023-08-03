@@ -15,34 +15,25 @@ impl DescribeDiscovererInput {
 }
 impl DescribeDiscovererInput {
     /// Creates a new builder-style object to manufacture [`DescribeDiscovererInput`](crate::operation::describe_discoverer::DescribeDiscovererInput).
-    pub fn builder(
-    ) -> crate::operation::describe_discoverer::builders::DescribeDiscovererInputBuilder {
+    pub fn builder() -> crate::operation::describe_discoverer::builders::DescribeDiscovererInputBuilder {
         crate::operation::describe_discoverer::builders::DescribeDiscovererInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDiscovererInput`](crate::operation::describe_discoverer::DescribeDiscovererInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDiscovererInputBuilder {
     pub(crate) discoverer_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDiscovererInputBuilder {
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discoverer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discoverer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn set_discoverer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discoverer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discoverer_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl DescribeDiscovererInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDiscovererInput`](crate::operation::describe_discoverer::DescribeDiscovererInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_discoverer::DescribeDiscovererInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_discoverer::DescribeDiscovererInput {
-                discoverer_id: self.discoverer_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_discoverer::DescribeDiscovererInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_discoverer::DescribeDiscovererInput {
+            discoverer_id: self.discoverer_id,
+        })
     }
 }

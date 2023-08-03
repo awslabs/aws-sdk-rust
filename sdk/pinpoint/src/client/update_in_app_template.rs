@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateInAppTemplateOutput`](crate::operation::update_in_app_template::UpdateInAppTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::operation::update_in_app_template::UpdateInAppTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdateInAppTemplateError>`](crate::operation::update_in_app_template::UpdateInAppTemplateError)
-    pub fn update_in_app_template(
-        &self,
-    ) -> crate::operation::update_in_app_template::builders::UpdateInAppTemplateFluentBuilder {
-        crate::operation::update_in_app_template::builders::UpdateInAppTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_in_app_template(&self) -> crate::operation::update_in_app_template::builders::UpdateInAppTemplateFluentBuilder {
+        crate::operation::update_in_app_template::builders::UpdateInAppTemplateFluentBuilder::new(self.handle.clone())
     }
 }

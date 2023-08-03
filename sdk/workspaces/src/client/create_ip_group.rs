@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateIpGroupOutput`](crate::operation::create_ip_group::CreateIpGroupOutput) with field(s):
     ///   - [`group_id(Option<String>)`](crate::operation::create_ip_group::CreateIpGroupOutput::group_id): <p>The identifier of the group.</p>
     /// - On failure, responds with [`SdkError<CreateIpGroupError>`](crate::operation::create_ip_group::CreateIpGroupError)
-    pub fn create_ip_group(
-        &self,
-    ) -> crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder {
-        crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_ip_group(&self) -> crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder {
+        crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder::new(self.handle.clone())
     }
 }

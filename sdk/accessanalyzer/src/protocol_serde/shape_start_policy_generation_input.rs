@@ -9,19 +9,13 @@ pub fn ser_start_policy_generation_input(
     if let Some(var_2) = &input.cloud_trail_details {
         #[allow(unused_mut)]
         let mut object_3 = object.key("cloudTrailDetails").start_object();
-        crate::protocol_serde::shape_cloud_trail_details::ser_cloud_trail_details(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_cloud_trail_details::ser_cloud_trail_details(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.policy_generation_details {
         #[allow(unused_mut)]
         let mut object_5 = object.key("policyGenerationDetails").start_object();
-        crate::protocol_serde::shape_policy_generation_details::ser_policy_generation_details(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_policy_generation_details::ser_policy_generation_details(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

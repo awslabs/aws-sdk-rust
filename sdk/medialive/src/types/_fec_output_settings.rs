@@ -37,9 +37,7 @@ impl FecOutputSettings {
 
 /// A builder for [`FecOutputSettings`](crate::types::FecOutputSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FecOutputSettingsBuilder {
     pub(crate) column_depth: ::std::option::Option<i32>,
     pub(crate) include_fec: ::std::option::Option<crate::types::FecOutputIncludeFec>,
@@ -66,10 +64,7 @@ impl FecOutputSettingsBuilder {
         self
     }
     /// Enables column only or column and row based FEC
-    pub fn set_include_fec(
-        mut self,
-        input: ::std::option::Option<crate::types::FecOutputIncludeFec>,
-    ) -> Self {
+    pub fn set_include_fec(mut self, input: ::std::option::Option<crate::types::FecOutputIncludeFec>) -> Self {
         self.include_fec = input;
         self
     }

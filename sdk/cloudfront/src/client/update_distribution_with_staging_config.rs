@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`distribution(Option<Distribution>)`](crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput::distribution): <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput::e_tag): <p>The current version of the primary distribution (after it's updated).</p>
     /// - On failure, responds with [`SdkError<UpdateDistributionWithStagingConfigError>`](crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError)
-    pub fn update_distribution_with_staging_config(&self) -> crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigFluentBuilder{
-        crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigFluentBuilder::new(self.handle.clone())
+    pub fn update_distribution_with_staging_config(
+        &self,
+    ) -> crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigFluentBuilder {
+        crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

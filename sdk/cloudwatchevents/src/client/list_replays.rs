@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`replays(Option<Vec<Replay>>)`](crate::operation::list_replays::ListReplaysOutput::replays): <p>An array of <code>Replay</code> objects that contain information about the replay.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_replays::ListReplaysOutput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListReplaysError>`](crate::operation::list_replays::ListReplaysError)
-    pub fn list_replays(
-        &self,
-    ) -> crate::operation::list_replays::builders::ListReplaysFluentBuilder {
+    pub fn list_replays(&self) -> crate::operation::list_replays::builders::ListReplaysFluentBuilder {
         crate::operation::list_replays::builders::ListReplaysFluentBuilder::new(self.handle.clone())
     }
 }

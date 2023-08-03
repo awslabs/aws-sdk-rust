@@ -35,9 +35,7 @@ pub struct DescribeRobotOutput {
     pub last_deployment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified robot.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeRobotOutput {
@@ -78,11 +76,7 @@ impl DescribeRobotOutput {
         self.last_deployment_time.as_ref()
     }
     /// <p>The list of all tags added to the specified robot.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -100,9 +94,7 @@ impl DescribeRobotOutput {
 
 /// A builder for [`DescribeRobotOutput`](crate::operation::describe_robot::DescribeRobotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRobotOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -113,9 +105,7 @@ pub struct DescribeRobotOutputBuilder {
     pub(crate) architecture: ::std::option::Option<crate::types::Architecture>,
     pub(crate) last_deployment_job: ::std::option::Option<::std::string::String>,
     pub(crate) last_deployment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeRobotOutputBuilder {
@@ -176,18 +166,12 @@ impl DescribeRobotOutputBuilder {
         &self.status
     }
     /// <p>The Greengrass group id.</p>
-    pub fn greengrass_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn greengrass_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.greengrass_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Greengrass group id.</p>
-    pub fn set_greengrass_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_greengrass_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.greengrass_group_id = input;
         self
     }
@@ -201,10 +185,7 @@ impl DescribeRobotOutputBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -218,10 +199,7 @@ impl DescribeRobotOutputBuilder {
         self
     }
     /// <p>The target architecture of the robot application.</p>
-    pub fn set_architecture(
-        mut self,
-        input: ::std::option::Option<crate::types::Architecture>,
-    ) -> Self {
+    pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
         self.architecture = input;
         self
     }
@@ -230,18 +208,12 @@ impl DescribeRobotOutputBuilder {
         &self.architecture
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    pub fn last_deployment_job(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_deployment_job(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_deployment_job = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    pub fn set_last_deployment_job(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_deployment_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_deployment_job = input;
         self
     }
@@ -255,10 +227,7 @@ impl DescribeRobotOutputBuilder {
         self
     }
     /// <p>The time of the last deployment job.</p>
-    pub fn set_last_deployment_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_deployment_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_deployment_time = input;
         self
     }
@@ -271,32 +240,19 @@ impl DescribeRobotOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of all tags added to the specified robot.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of all tags added to the specified robot.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The list of all tags added to the specified robot.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

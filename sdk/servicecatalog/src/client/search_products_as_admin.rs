@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`product_view_details(Option<Vec<ProductViewDetail>>)`](crate::operation::search_products_as_admin::SearchProductsAsAdminOutput::product_view_details): <p>Information about the product views.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::search_products_as_admin::SearchProductsAsAdminOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<SearchProductsAsAdminError>`](crate::operation::search_products_as_admin::SearchProductsAsAdminError)
-    pub fn search_products_as_admin(
-        &self,
-    ) -> crate::operation::search_products_as_admin::builders::SearchProductsAsAdminFluentBuilder
-    {
+    pub fn search_products_as_admin(&self) -> crate::operation::search_products_as_admin::builders::SearchProductsAsAdminFluentBuilder {
         crate::operation::search_products_as_admin::builders::SearchProductsAsAdminFluentBuilder::new(self.handle.clone())
     }
 }

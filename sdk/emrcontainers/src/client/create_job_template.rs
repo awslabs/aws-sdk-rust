@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_job_template::CreateJobTemplateOutput::arn): <p>This output display the ARN of the created job template.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::create_job_template::CreateJobTemplateOutput::created_at): <p>This output displays the date and time when the job template was created.</p>
     /// - On failure, responds with [`SdkError<CreateJobTemplateError>`](crate::operation::create_job_template::CreateJobTemplateError)
-    pub fn create_job_template(
-        &self,
-    ) -> crate::operation::create_job_template::builders::CreateJobTemplateFluentBuilder {
-        crate::operation::create_job_template::builders::CreateJobTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_job_template(&self) -> crate::operation::create_job_template::builders::CreateJobTemplateFluentBuilder {
+        crate::operation::create_job_template::builders::CreateJobTemplateFluentBuilder::new(self.handle.clone())
     }
 }

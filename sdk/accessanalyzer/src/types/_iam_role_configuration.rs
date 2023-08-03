@@ -23,9 +23,7 @@ impl IamRoleConfiguration {
 
 /// A builder for [`IamRoleConfiguration`](crate::types::IamRoleConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IamRoleConfigurationBuilder {
     pub(crate) trust_policy: ::std::option::Option<::std::string::String>,
 }

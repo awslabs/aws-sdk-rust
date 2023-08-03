@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for StartRemediationExecutionOutput {
 }
 impl StartRemediationExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartRemediationExecutionOutput`](crate::operation::start_remediation_execution::StartRemediationExecutionOutput).
-    pub fn builder() -> crate::operation::start_remediation_execution::builders::StartRemediationExecutionOutputBuilder{
+    pub fn builder() -> crate::operation::start_remediation_execution::builders::StartRemediationExecutionOutputBuilder {
         crate::operation::start_remediation_execution::builders::StartRemediationExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartRemediationExecutionOutput`](crate::operation::start_remediation_execution::StartRemediationExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRemediationExecutionOutputBuilder {
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) failed_items: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
@@ -45,18 +43,12 @@ pub struct StartRemediationExecutionOutputBuilder {
 }
 impl StartRemediationExecutionOutputBuilder {
     /// <p>Returns a failure message. For example, the resource is already compliant.</p>
-    pub fn failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns a failure message. For example, the resource is already compliant.</p>
-    pub fn set_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_message = input;
         self
     }
@@ -76,17 +68,12 @@ impl StartRemediationExecutionOutputBuilder {
         self
     }
     /// <p>For resources that have failed to start execution, the API returns a resource key object.</p>
-    pub fn set_failed_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
-    ) -> Self {
+    pub fn set_failed_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>) -> Self {
         self.failed_items = input;
         self
     }
     /// <p>For resources that have failed to start execution, the API returns a resource key object.</p>
-    pub fn get_failed_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+    pub fn get_failed_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
         &self.failed_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -99,9 +86,7 @@ impl StartRemediationExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartRemediationExecutionOutput`](crate::operation::start_remediation_execution::StartRemediationExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_remediation_execution::StartRemediationExecutionOutput {
+    pub fn build(self) -> crate::operation::start_remediation_execution::StartRemediationExecutionOutput {
         crate::operation::start_remediation_execution::StartRemediationExecutionOutput {
             failure_message: self.failure_message,
             failed_items: self.failed_items,

@@ -53,9 +53,7 @@ impl GetRuleGroupInput {
 
 /// A builder for [`GetRuleGroupInput`](crate::operation::get_rule_group::GetRuleGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRuleGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
@@ -137,10 +135,7 @@ impl GetRuleGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetRuleGroupInput`](crate::operation::get_rule_group::GetRuleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_rule_group::GetRuleGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_rule_group::GetRuleGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rule_group::GetRuleGroupInput {
             name: self.name,
             scope: self.scope,

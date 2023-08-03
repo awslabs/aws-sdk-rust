@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput) with field(s):
     ///   - [`domain_status(Option<DomainStatus>)`](crate::operation::describe_domain::DescribeDomainOutput::domain_status): <p>List that contains the status of each specified OpenSearch Service domain.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::operation::describe_domain::DescribeDomainError)
-    pub fn describe_domain(
-        &self,
-    ) -> crate::operation::describe_domain::builders::DescribeDomainFluentBuilder {
-        crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_domain(&self) -> crate::operation::describe_domain::builders::DescribeDomainFluentBuilder {
+        crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::new(self.handle.clone())
     }
 }

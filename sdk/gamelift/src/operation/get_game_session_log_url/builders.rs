@@ -40,10 +40,7 @@ impl GetGameSessionLogUrlFluentBuilder {
         }
     }
     /// Access the GetGameSessionLogUrl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_game_session_log_url::builders::GetGameSessionLogUrlInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_game_session_log_url::builders::GetGameSessionLogUrlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl GetGameSessionLogUrlFluentBuilder {
             crate::operation::get_game_session_log_url::GetGameSessionLogUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_game_session_log_url::GetGameSessionLogUrlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl GetGameSessionLogUrlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl GetGameSessionLogUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_game_session_log_url::GetGameSessionLogUrlError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl GetGameSessionLogUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_game_session_log_url::GetGameSessionLogUrlError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +108,17 @@ impl GetGameSessionLogUrlFluentBuilder {
             crate::operation::get_game_session_log_url::GetGameSessionLogUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_game_session_log_url::GetGameSessionLogUrlError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the game session to get logs for. </p>
-    pub fn game_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_session_id(input.into());
         self
     }
     /// <p>A unique identifier for the game session to get logs for. </p>
-    pub fn set_game_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_session_id(input);
         self
     }

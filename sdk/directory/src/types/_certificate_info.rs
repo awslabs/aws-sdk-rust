@@ -51,9 +51,7 @@ impl CertificateInfo {
 
 /// A builder for [`CertificateInfo`](crate::types::CertificateInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CertificateInfoBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) common_name: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct CertificateInfoBuilder {
 }
 impl CertificateInfoBuilder {
     /// <p>The identifier of the certificate.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the certificate.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -102,10 +94,7 @@ impl CertificateInfoBuilder {
         self
     }
     /// <p>The state of the certificate.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CertificateState>) -> Self {
         self.state = input;
         self
     }
@@ -119,10 +108,7 @@ impl CertificateInfoBuilder {
         self
     }
     /// <p>The date and time when the certificate will expire.</p>
-    pub fn set_expiry_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiry_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiry_date_time = input;
         self
     }

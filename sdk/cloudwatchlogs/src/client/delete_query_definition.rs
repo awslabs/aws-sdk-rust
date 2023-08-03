@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteQueryDefinitionOutput`](crate::operation::delete_query_definition::DeleteQueryDefinitionOutput) with field(s):
     ///   - [`success(bool)`](crate::operation::delete_query_definition::DeleteQueryDefinitionOutput::success): <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that the operation failed.</p>
     /// - On failure, responds with [`SdkError<DeleteQueryDefinitionError>`](crate::operation::delete_query_definition::DeleteQueryDefinitionError)
-    pub fn delete_query_definition(
-        &self,
-    ) -> crate::operation::delete_query_definition::builders::DeleteQueryDefinitionFluentBuilder
-    {
-        crate::operation::delete_query_definition::builders::DeleteQueryDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_query_definition(&self) -> crate::operation::delete_query_definition::builders::DeleteQueryDefinitionFluentBuilder {
+        crate::operation::delete_query_definition::builders::DeleteQueryDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

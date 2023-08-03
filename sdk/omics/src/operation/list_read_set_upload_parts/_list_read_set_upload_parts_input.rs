@@ -50,18 +50,14 @@ impl ListReadSetUploadPartsInput {
 }
 impl ListReadSetUploadPartsInput {
     /// Creates a new builder-style object to manufacture [`ListReadSetUploadPartsInput`](crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsInput).
-    pub fn builder(
-    ) -> crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsInputBuilder {
         crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReadSetUploadPartsInput`](crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReadSetUploadPartsInputBuilder {
     pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
@@ -72,18 +68,12 @@ pub struct ListReadSetUploadPartsInputBuilder {
 }
 impl ListReadSetUploadPartsInputBuilder {
     /// <p> The Sequence Store ID used for the multipart uploads. </p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Sequence Store ID used for the multipart uploads. </p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_store_id = input;
         self
     }
@@ -111,10 +101,7 @@ impl ListReadSetUploadPartsInputBuilder {
         self
     }
     /// <p> The source file for the upload part. </p>
-    pub fn set_part_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ReadSetPartSource>,
-    ) -> Self {
+    pub fn set_part_source(mut self, input: ::std::option::Option<crate::types::ReadSetPartSource>) -> Self {
         self.part_source = input;
         self
     }
@@ -156,10 +143,7 @@ impl ListReadSetUploadPartsInputBuilder {
         self
     }
     /// <p> Attributes used to filter for a specific subset of read set part uploads. </p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ReadSetUploadPartListFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ReadSetUploadPartListFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -174,15 +158,13 @@ impl ListReadSetUploadPartsInputBuilder {
         crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsInput {
-                sequence_store_id: self.sequence_store_id,
-                upload_id: self.upload_id,
-                part_source: self.part_source,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filter: self.filter,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsInput {
+            sequence_store_id: self.sequence_store_id,
+            upload_id: self.upload_id,
+            part_source: self.part_source,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filter: self.filter,
+        })
     }
 }

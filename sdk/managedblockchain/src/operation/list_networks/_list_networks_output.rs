@@ -35,9 +35,7 @@ impl ListNetworksOutput {
 
 /// A builder for [`ListNetworksOutput`](crate::operation::list_networks::ListNetworksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNetworksOutputBuilder {
     pub(crate) networks: ::std::option::Option<::std::vec::Vec<crate::types::NetworkSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListNetworksOutputBuilder {
         self
     }
     /// <p>An array of <code>NetworkSummary</code> objects that contain configuration properties for each network.</p>
-    pub fn set_networks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkSummary>>,
-    ) -> Self {
+    pub fn set_networks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkSummary>>) -> Self {
         self.networks = input;
         self
     }
     /// <p>An array of <code>NetworkSummary</code> objects that contain configuration properties for each network.</p>
-    pub fn get_networks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkSummary>> {
+    pub fn get_networks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkSummary>> {
         &self.networks
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>

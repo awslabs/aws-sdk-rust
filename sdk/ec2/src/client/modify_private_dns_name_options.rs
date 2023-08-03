@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`ModifyPrivateDnsNameOptionsOutput`](crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<ModifyPrivateDnsNameOptionsError>`](crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsError)
-    pub fn modify_private_dns_name_options(&self) -> crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsFluentBuilder{
+    pub fn modify_private_dns_name_options(
+        &self,
+    ) -> crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsFluentBuilder {
         crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsFluentBuilder::new(self.handle.clone())
     }
 }

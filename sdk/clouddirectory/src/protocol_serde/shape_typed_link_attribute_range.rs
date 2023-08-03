@@ -9,10 +9,7 @@ pub fn ser_typed_link_attribute_range(
     if let Some(var_2) = &input.range {
         #[allow(unused_mut)]
         let mut object_3 = object.key("Range").start_object();
-        crate::protocol_serde::shape_typed_attribute_value_range::ser_typed_attribute_value_range(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_typed_attribute_value_range::ser_typed_attribute_value_range(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

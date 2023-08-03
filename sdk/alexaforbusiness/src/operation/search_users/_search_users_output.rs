@@ -42,9 +42,7 @@ impl SearchUsersOutput {
 
 /// A builder for [`SearchUsersOutput`](crate::operation::search_users::SearchUsersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchUsersOutputBuilder {
     pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::UserData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,10 +62,7 @@ impl SearchUsersOutputBuilder {
         self
     }
     /// <p>The users that meet the specified set of filter criteria, in sort order.</p>
-    pub fn set_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserData>>,
-    ) -> Self {
+    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserData>>) -> Self {
         self.users = input;
         self
     }

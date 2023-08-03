@@ -18,9 +18,7 @@ impl EnaSrdSpecification {
         self.ena_srd_enabled
     }
     /// <p>Configures ENA Express for UDP network traffic.</p>
-    pub fn ena_srd_udp_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EnaSrdUdpSpecification> {
+    pub fn ena_srd_udp_specification(&self) -> ::std::option::Option<&crate::types::EnaSrdUdpSpecification> {
         self.ena_srd_udp_specification.as_ref()
     }
 }
@@ -33,13 +31,10 @@ impl EnaSrdSpecification {
 
 /// A builder for [`EnaSrdSpecification`](crate::types::EnaSrdSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnaSrdSpecificationBuilder {
     pub(crate) ena_srd_enabled: ::std::option::Option<bool>,
-    pub(crate) ena_srd_udp_specification:
-        ::std::option::Option<crate::types::EnaSrdUdpSpecification>,
+    pub(crate) ena_srd_udp_specification: ::std::option::Option<crate::types::EnaSrdUdpSpecification>,
 }
 impl EnaSrdSpecificationBuilder {
     /// <p>Indicates whether ENA Express is enabled for the network interface.</p>
@@ -57,25 +52,17 @@ impl EnaSrdSpecificationBuilder {
         &self.ena_srd_enabled
     }
     /// <p>Configures ENA Express for UDP network traffic.</p>
-    pub fn ena_srd_udp_specification(
-        mut self,
-        input: crate::types::EnaSrdUdpSpecification,
-    ) -> Self {
+    pub fn ena_srd_udp_specification(mut self, input: crate::types::EnaSrdUdpSpecification) -> Self {
         self.ena_srd_udp_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures ENA Express for UDP network traffic.</p>
-    pub fn set_ena_srd_udp_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::EnaSrdUdpSpecification>,
-    ) -> Self {
+    pub fn set_ena_srd_udp_specification(mut self, input: ::std::option::Option<crate::types::EnaSrdUdpSpecification>) -> Self {
         self.ena_srd_udp_specification = input;
         self
     }
     /// <p>Configures ENA Express for UDP network traffic.</p>
-    pub fn get_ena_srd_udp_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnaSrdUdpSpecification> {
+    pub fn get_ena_srd_udp_specification(&self) -> &::std::option::Option<crate::types::EnaSrdUdpSpecification> {
         &self.ena_srd_udp_specification
     }
     /// Consumes the builder and constructs a [`EnaSrdSpecification`](crate::types::EnaSrdSpecification).

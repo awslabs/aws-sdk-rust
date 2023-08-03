@@ -10,10 +10,7 @@ impl GetOfferingStatusInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_offering_status::GetOfferingStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_offering_status::GetOfferingStatusError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_offering_status::GetOfferingStatusError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_offering_status();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetOfferingStatusFluentBuilder {
         }
     }
     /// Access the GetOfferingStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_offering_status::builders::GetOfferingStatusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_offering_status::builders::GetOfferingStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetOfferingStatusFluentBuilder {
             crate::operation::get_offering_status::GetOfferingStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_offering_status::GetOfferingStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_offering_status::GetOfferingStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetOfferingStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetOfferingStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_offering_status::GetOfferingStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_offering_status::GetOfferingStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_offering_status::GetOfferingStatusError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetOfferingStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_offering_status::GetOfferingStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_offering_status::GetOfferingStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_offering_status::GetOfferingStatusError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetOfferingStatusFluentBuilder {
             crate::operation::get_offering_status::GetOfferingStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_offering_status::GetOfferingStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_offering_status::GetOfferingStatusError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_offering_status::paginator::GetOfferingStatusPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_offering_status::paginator::GetOfferingStatusPaginator {
-        crate::operation::get_offering_status::paginator::GetOfferingStatusPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_offering_status::paginator::GetOfferingStatusPaginator {
+        crate::operation::get_offering_status::paginator::GetOfferingStatusPaginator::new(self.handle, self.inner)
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

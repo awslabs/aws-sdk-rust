@@ -10,10 +10,7 @@ impl CreateQuickConnectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_quick_connect::CreateQuickConnectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_quick_connect::CreateQuickConnectError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_quick_connect::CreateQuickConnectError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_quick_connect();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateQuickConnectFluentBuilder {
         }
     }
     /// Access the CreateQuickConnect as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_quick_connect::builders::CreateQuickConnectInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_quick_connect::builders::CreateQuickConnectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateQuickConnectFluentBuilder {
             crate::operation::create_quick_connect::CreateQuickConnect,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_quick_connect::CreateQuickConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_quick_connect::CreateQuickConnectError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateQuickConnectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateQuickConnectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_quick_connect::CreateQuickConnectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_quick_connect::CreateQuickConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_quick_connect::CreateQuickConnectError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateQuickConnectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_quick_connect::CreateQuickConnectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_quick_connect::CreateQuickConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_quick_connect::CreateQuickConnectError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateQuickConnectFluentBuilder {
             crate::operation::create_quick_connect::CreateQuickConnect,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_quick_connect::CreateQuickConnectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_quick_connect::CreateQuickConnectError>,
     > {
         self.customize_middleware().await
     }
@@ -170,17 +154,12 @@ impl CreateQuickConnectFluentBuilder {
         self
     }
     /// <p>Configuration settings for the quick connect.</p>
-    pub fn set_quick_connect_config(
-        mut self,
-        input: ::std::option::Option<crate::types::QuickConnectConfig>,
-    ) -> Self {
+    pub fn set_quick_connect_config(mut self, input: ::std::option::Option<crate::types::QuickConnectConfig>) -> Self {
         self.inner = self.inner.set_quick_connect_config(input);
         self
     }
     /// <p>Configuration settings for the quick connect.</p>
-    pub fn get_quick_connect_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::QuickConnectConfig> {
+    pub fn get_quick_connect_config(&self) -> &::std::option::Option<crate::types::QuickConnectConfig> {
         self.inner.get_quick_connect_config()
     }
     /// Adds a key-value pair to `Tags`.
@@ -188,30 +167,17 @@ impl CreateQuickConnectFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

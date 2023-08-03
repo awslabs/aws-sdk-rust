@@ -22,18 +22,14 @@ impl ListVoiceConnectorGroupsInput {
 }
 impl ListVoiceConnectorGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListVoiceConnectorGroupsInput`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsInputBuilder {
         crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVoiceConnectorGroupsInput`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVoiceConnectorGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -74,11 +70,9 @@ impl ListVoiceConnectorGroupsInputBuilder {
         crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

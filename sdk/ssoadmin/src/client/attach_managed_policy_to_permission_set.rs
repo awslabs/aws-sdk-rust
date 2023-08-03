@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`managed_policy_arn(impl ::std::convert::Into<String>)`](crate::operation::attach_managed_policy_to_permission_set::builders::AttachManagedPolicyToPermissionSetFluentBuilder::managed_policy_arn) / [`set_managed_policy_arn(Option<String>)`](crate::operation::attach_managed_policy_to_permission_set::builders::AttachManagedPolicyToPermissionSetFluentBuilder::set_managed_policy_arn): <p>The AWS managed policy ARN to be attached to a permission set.</p>
     /// - On success, responds with [`AttachManagedPolicyToPermissionSetOutput`](crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetOutput)
     /// - On failure, responds with [`SdkError<AttachManagedPolicyToPermissionSetError>`](crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError)
-    pub fn attach_managed_policy_to_permission_set(&self) -> crate::operation::attach_managed_policy_to_permission_set::builders::AttachManagedPolicyToPermissionSetFluentBuilder{
+    pub fn attach_managed_policy_to_permission_set(
+        &self,
+    ) -> crate::operation::attach_managed_policy_to_permission_set::builders::AttachManagedPolicyToPermissionSetFluentBuilder {
         crate::operation::attach_managed_policy_to_permission_set::builders::AttachManagedPolicyToPermissionSetFluentBuilder::new(self.handle.clone())
     }
 }

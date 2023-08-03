@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRequestValidatorOutput {
 }
 impl DeleteRequestValidatorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRequestValidatorOutput`](crate::operation::delete_request_validator::DeleteRequestValidatorOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_request_validator::builders::DeleteRequestValidatorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_request_validator::builders::DeleteRequestValidatorOutputBuilder {
         crate::operation::delete_request_validator::builders::DeleteRequestValidatorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRequestValidatorOutput`](crate::operation::delete_request_validator::DeleteRequestValidatorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRequestValidatorOutputBuilder {
     _request_id: Option<String>,
 }

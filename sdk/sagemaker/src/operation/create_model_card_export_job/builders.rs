@@ -26,7 +26,7 @@ impl CreateModelCardExportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateModelCardExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_model_card_export_job::builders::CreateModelCardExportJobInputBuilder,
+    inner: crate::operation::create_model_card_export_job::builders::CreateModelCardExportJobInputBuilder,
 }
 impl CreateModelCardExportJobFluentBuilder {
     /// Creates a new `CreateModelCardExportJob`.
@@ -37,7 +37,7 @@ impl CreateModelCardExportJobFluentBuilder {
         }
     }
     /// Access the CreateModelCardExportJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_model_card_export_job::builders::CreateModelCardExportJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_model_card_export_job::builders::CreateModelCardExportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateModelCardExportJobFluentBuilder {
             crate::operation::create_model_card_export_job::CreateModelCardExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_model_card_export_job::CreateModelCardExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_card_export_job::CreateModelCardExportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateModelCardExportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateModelCardExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_model_card_export_job::CreateModelCardExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_model_card_export_job::CreateModelCardExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_card_export_job::CreateModelCardExportJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateModelCardExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_model_card_export_job::CreateModelCardExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_model_card_export_job::CreateModelCardExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_card_export_job::CreateModelCardExportJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateModelCardExportJobFluentBuilder {
             crate::operation::create_model_card_export_job::CreateModelCardExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_model_card_export_job::CreateModelCardExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model_card_export_job::CreateModelCardExportJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the model card to export.</p>
-    pub fn model_card_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_card_name(input.into());
         self
     }
     /// <p>The name of the model card to export.</p>
-    pub fn set_model_card_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_card_name(input);
         self
     }
@@ -155,18 +138,12 @@ impl CreateModelCardExportJobFluentBuilder {
         self.inner.get_model_card_version()
     }
     /// <p>The name of the model card export job.</p>
-    pub fn model_card_export_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_export_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_card_export_job_name(input.into());
         self
     }
     /// <p>The name of the model card export job.</p>
-    pub fn set_model_card_export_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_export_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_card_export_job_name(input);
         self
     }
@@ -180,17 +157,12 @@ impl CreateModelCardExportJobFluentBuilder {
         self
     }
     /// <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelCardExportOutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::ModelCardExportOutputConfig>) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }
     /// <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
-    pub fn get_output_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelCardExportOutputConfig> {
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::ModelCardExportOutputConfig> {
         self.inner.get_output_config()
     }
 }

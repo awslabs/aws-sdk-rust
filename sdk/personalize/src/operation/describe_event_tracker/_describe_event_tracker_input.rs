@@ -15,34 +15,25 @@ impl DescribeEventTrackerInput {
 }
 impl DescribeEventTrackerInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventTrackerInput`](crate::operation::describe_event_tracker::DescribeEventTrackerInput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_tracker::builders::DescribeEventTrackerInputBuilder {
+    pub fn builder() -> crate::operation::describe_event_tracker::builders::DescribeEventTrackerInputBuilder {
         crate::operation::describe_event_tracker::builders::DescribeEventTrackerInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventTrackerInput`](crate::operation::describe_event_tracker::DescribeEventTrackerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventTrackerInputBuilder {
     pub(crate) event_tracker_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEventTrackerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the event tracker to describe.</p>
-    pub fn event_tracker_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_tracker_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_tracker_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the event tracker to describe.</p>
-    pub fn set_event_tracker_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_tracker_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_tracker_arn = input;
         self
     }
@@ -53,14 +44,10 @@ impl DescribeEventTrackerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventTrackerInput`](crate::operation::describe_event_tracker::DescribeEventTrackerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_event_tracker::DescribeEventTrackerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_event_tracker::DescribeEventTrackerInput {
-                event_tracker_arn: self.event_tracker_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_event_tracker::DescribeEventTrackerInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_event_tracker::DescribeEventTrackerInput {
+            event_tracker_arn: self.event_tracker_arn,
+        })
     }
 }

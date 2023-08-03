@@ -6,8 +6,7 @@
 pub struct ProtectiveEquipmentPerson {
     /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
     #[doc(hidden)]
-    pub body_parts:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>,
+    pub body_parts: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>,
     /// <p>A bounding box around the detected person.</p>
     #[doc(hidden)]
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
@@ -20,9 +19,7 @@ pub struct ProtectiveEquipmentPerson {
 }
 impl ProtectiveEquipmentPerson {
     /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
-    pub fn body_parts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProtectiveEquipmentBodyPart]> {
+    pub fn body_parts(&self) -> ::std::option::Option<&[crate::types::ProtectiveEquipmentBodyPart]> {
         self.body_parts.as_deref()
     }
     /// <p>A bounding box around the detected person.</p>
@@ -47,12 +44,9 @@ impl ProtectiveEquipmentPerson {
 
 /// A builder for [`ProtectiveEquipmentPerson`](crate::types::ProtectiveEquipmentPerson).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectiveEquipmentPersonBuilder {
-    pub(crate) body_parts:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>,
+    pub(crate) body_parts: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>,
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     pub(crate) confidence: ::std::option::Option<f32>,
     pub(crate) id: ::std::option::Option<i32>,
@@ -70,17 +64,12 @@ impl ProtectiveEquipmentPersonBuilder {
         self
     }
     /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
-    pub fn set_body_parts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>,
-    ) -> Self {
+    pub fn set_body_parts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>>) -> Self {
         self.body_parts = input;
         self
     }
     /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
-    pub fn get_body_parts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>> {
+    pub fn get_body_parts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>> {
         &self.body_parts
     }
     /// <p>A bounding box around the detected person.</p>
@@ -89,10 +78,7 @@ impl ProtectiveEquipmentPersonBuilder {
         self
     }
     /// <p>A bounding box around the detected person.</p>
-    pub fn set_bounding_box(
-        mut self,
-        input: ::std::option::Option<crate::types::BoundingBox>,
-    ) -> Self {
+    pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
         self.bounding_box = input;
         self
     }

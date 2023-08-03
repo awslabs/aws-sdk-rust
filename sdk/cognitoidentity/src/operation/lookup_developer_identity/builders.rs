@@ -28,8 +28,7 @@ impl LookupDeveloperIdentityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct LookupDeveloperIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::lookup_developer_identity::builders::LookupDeveloperIdentityInputBuilder,
+    inner: crate::operation::lookup_developer_identity::builders::LookupDeveloperIdentityInputBuilder,
 }
 impl LookupDeveloperIdentityFluentBuilder {
     /// Creates a new `LookupDeveloperIdentity`.
@@ -40,10 +39,7 @@ impl LookupDeveloperIdentityFluentBuilder {
         }
     }
     /// Access the LookupDeveloperIdentity as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::lookup_developer_identity::builders::LookupDeveloperIdentityInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::lookup_developer_identity::builders::LookupDeveloperIdentityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl LookupDeveloperIdentityFluentBuilder {
             crate::operation::lookup_developer_identity::LookupDeveloperIdentity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::lookup_developer_identity::LookupDeveloperIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::lookup_developer_identity::LookupDeveloperIdentityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl LookupDeveloperIdentityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl LookupDeveloperIdentityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::lookup_developer_identity::LookupDeveloperIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::lookup_developer_identity::LookupDeveloperIdentityError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl LookupDeveloperIdentityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::lookup_developer_identity::LookupDeveloperIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::lookup_developer_identity::LookupDeveloperIdentityError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +107,17 @@ impl LookupDeveloperIdentityFluentBuilder {
             crate::operation::lookup_developer_identity::LookupDeveloperIdentity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::lookup_developer_identity::LookupDeveloperIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::lookup_developer_identity::LookupDeveloperIdentityError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }
@@ -161,18 +140,12 @@ impl LookupDeveloperIdentityFluentBuilder {
         self.inner.get_identity_id()
     }
     /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    pub fn developer_user_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn developer_user_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.developer_user_identifier(input.into());
         self
     }
     /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    pub fn set_developer_user_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_developer_user_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_developer_user_identifier(input);
         self
     }

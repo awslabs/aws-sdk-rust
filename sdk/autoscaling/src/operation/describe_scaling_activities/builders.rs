@@ -28,7 +28,7 @@ impl DescribeScalingActivitiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeScalingActivitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder,
+    inner: crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder,
 }
 impl DescribeScalingActivitiesFluentBuilder {
     /// Creates a new `DescribeScalingActivities`.
@@ -39,7 +39,7 @@ impl DescribeScalingActivitiesFluentBuilder {
         }
     }
     /// Access the DescribeScalingActivities as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeScalingActivitiesFluentBuilder {
             crate::operation::describe_scaling_activities::DescribeScalingActivities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_activities::DescribeScalingActivitiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeScalingActivitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeScalingActivitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_activities::DescribeScalingActivitiesError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeScalingActivitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_activities::DescribeScalingActivitiesError>,
     > {
         self.send_middleware().await
     }
@@ -116,19 +107,14 @@ impl DescribeScalingActivitiesFluentBuilder {
             crate::operation::describe_scaling_activities::DescribeScalingActivities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_activities::DescribeScalingActivitiesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator {
         crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `ActivityIds`.
@@ -143,33 +129,22 @@ impl DescribeScalingActivitiesFluentBuilder {
     }
     /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
     /// <p>Array Members: Maximum number of 50 IDs.</p>
-    pub fn set_activity_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_activity_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_activity_ids(input);
         self
     }
     /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
     /// <p>Array Members: Maximum number of 50 IDs.</p>
-    pub fn get_activity_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_activity_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_activity_ids()
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }

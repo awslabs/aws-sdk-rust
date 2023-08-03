@@ -22,26 +22,18 @@ impl DeleteComponentInput {
 
 /// A builder for [`DeleteComponentInput`](crate::operation::delete_component::DeleteComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteComponentInputBuilder {
     pub(crate) component_build_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteComponentInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
-    pub fn component_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
-    pub fn set_component_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_build_version_arn = input;
         self
     }
@@ -52,10 +44,7 @@ impl DeleteComponentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteComponentInput`](crate::operation::delete_component::DeleteComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_component::DeleteComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_component::DeleteComponentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_component::DeleteComponentInput {
             component_build_version_arn: self.component_build_version_arn,
         })

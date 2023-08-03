@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`workspace_properties(WorkspaceProperties)`](crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesFluentBuilder::workspace_properties) / [`set_workspace_properties(Option<WorkspaceProperties>)`](crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesFluentBuilder::set_workspace_properties): <p>The properties of the WorkSpace.</p>
     /// - On success, responds with [`ModifyWorkspacePropertiesOutput`](crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesOutput)
     /// - On failure, responds with [`SdkError<ModifyWorkspacePropertiesError>`](crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesError)
-    pub fn modify_workspace_properties(&self) -> crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesFluentBuilder{
+    pub fn modify_workspace_properties(&self) -> crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesFluentBuilder {
         crate::operation::modify_workspace_properties::builders::ModifyWorkspacePropertiesFluentBuilder::new(self.handle.clone())
     }
 }

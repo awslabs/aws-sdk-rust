@@ -33,9 +33,7 @@ impl RuleGroup {
         self.rules_source.as_ref()
     }
     /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings.</p>
-    pub fn stateful_rule_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StatefulRuleOptions> {
+    pub fn stateful_rule_options(&self) -> ::std::option::Option<&crate::types::StatefulRuleOptions> {
         self.stateful_rule_options.as_ref()
     }
 }
@@ -48,9 +46,7 @@ impl RuleGroup {
 
 /// A builder for [`RuleGroup`](crate::types::RuleGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupBuilder {
     pub(crate) rule_variables: ::std::option::Option<crate::types::RuleVariables>,
     pub(crate) reference_sets: ::std::option::Option<crate::types::ReferenceSets>,
@@ -64,10 +60,7 @@ impl RuleGroupBuilder {
         self
     }
     /// <p>Settings that are available for use in the rules in the rule group. You can only use these for stateful rule groups. </p>
-    pub fn set_rule_variables(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleVariables>,
-    ) -> Self {
+    pub fn set_rule_variables(mut self, input: ::std::option::Option<crate::types::RuleVariables>) -> Self {
         self.rule_variables = input;
         self
     }
@@ -81,10 +74,7 @@ impl RuleGroupBuilder {
         self
     }
     /// <p>The list of a rule group's reference sets.</p>
-    pub fn set_reference_sets(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceSets>,
-    ) -> Self {
+    pub fn set_reference_sets(mut self, input: ::std::option::Option<crate::types::ReferenceSets>) -> Self {
         self.reference_sets = input;
         self
     }
@@ -98,10 +88,7 @@ impl RuleGroupBuilder {
         self
     }
     /// <p>The stateful rules or stateless rules for the rule group. </p>
-    pub fn set_rules_source(
-        mut self,
-        input: ::std::option::Option<crate::types::RulesSource>,
-    ) -> Self {
+    pub fn set_rules_source(mut self, input: ::std::option::Option<crate::types::RulesSource>) -> Self {
         self.rules_source = input;
         self
     }
@@ -115,17 +102,12 @@ impl RuleGroupBuilder {
         self
     }
     /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings.</p>
-    pub fn set_stateful_rule_options(
-        mut self,
-        input: ::std::option::Option<crate::types::StatefulRuleOptions>,
-    ) -> Self {
+    pub fn set_stateful_rule_options(mut self, input: ::std::option::Option<crate::types::StatefulRuleOptions>) -> Self {
         self.stateful_rule_options = input;
         self
     }
     /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings.</p>
-    pub fn get_stateful_rule_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::StatefulRuleOptions> {
+    pub fn get_stateful_rule_options(&self) -> &::std::option::Option<crate::types::StatefulRuleOptions> {
         &self.stateful_rule_options
     }
     /// Consumes the builder and constructs a [`RuleGroup`](crate::types::RuleGroup).

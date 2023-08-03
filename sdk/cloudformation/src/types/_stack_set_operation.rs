@@ -51,8 +51,7 @@ pub struct StackSetOperation {
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
     #[doc(hidden)]
-    pub stack_set_drift_detection_details:
-        ::std::option::Option<crate::types::StackSetDriftDetectionDetails>,
+    pub stack_set_drift_detection_details: ::std::option::Option<crate::types::StackSetDriftDetectionDetails>,
     /// <p>The status of the operation in details.</p>
     #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
@@ -86,9 +85,7 @@ impl StackSetOperation {
         self.status.as_ref()
     }
     /// <p>The preferences for how CloudFormation performs this stack set operation.</p>
-    pub fn operation_preferences(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackSetOperationPreferences> {
+    pub fn operation_preferences(&self) -> ::std::option::Option<&crate::types::StackSetOperationPreferences> {
         self.operation_preferences.as_ref()
     }
     /// <p>For stack set operations of action type <code>DELETE</code>, specifies whether to remove the stack instances from the specified stack set, but doesn't delete the stacks. You can't re-associate a retained stack, or add an existing, saved stack to a new stack set.</p>
@@ -120,9 +117,7 @@ impl StackSetOperation {
     /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
-    pub fn stack_set_drift_detection_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackSetDriftDetectionDetails> {
+    pub fn stack_set_drift_detection_details(&self) -> ::std::option::Option<&crate::types::StackSetDriftDetectionDetails> {
         self.stack_set_drift_detection_details.as_ref()
     }
     /// <p>The status of the operation in details.</p>
@@ -130,9 +125,7 @@ impl StackSetOperation {
         self.status_reason.as_deref()
     }
     /// <p>Detailed information about the StackSet operation.</p>
-    pub fn status_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackSetOperationStatusDetails> {
+    pub fn status_details(&self) -> ::std::option::Option<&crate::types::StackSetOperationStatusDetails> {
         self.status_details.as_ref()
     }
 }
@@ -145,24 +138,20 @@ impl StackSetOperation {
 
 /// A builder for [`StackSetOperation`](crate::types::StackSetOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackSetOperationBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<crate::types::StackSetOperationAction>,
     pub(crate) status: ::std::option::Option<crate::types::StackSetOperationStatus>,
-    pub(crate) operation_preferences:
-        ::std::option::Option<crate::types::StackSetOperationPreferences>,
+    pub(crate) operation_preferences: ::std::option::Option<crate::types::StackSetOperationPreferences>,
     pub(crate) retain_stacks: ::std::option::Option<bool>,
     pub(crate) administration_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) deployment_targets: ::std::option::Option<crate::types::DeploymentTargets>,
-    pub(crate) stack_set_drift_detection_details:
-        ::std::option::Option<crate::types::StackSetDriftDetectionDetails>,
+    pub(crate) stack_set_drift_detection_details: ::std::option::Option<crate::types::StackSetDriftDetectionDetails>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) status_details: ::std::option::Option<crate::types::StackSetOperationStatusDetails>,
 }
@@ -201,10 +190,7 @@ impl StackSetOperationBuilder {
         self
     }
     /// <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>. Create and delete operations affect only the specified stack set instances that are associated with the specified stack set. Update operations affect both the stack set itself, in addition to <i>all</i> associated stack set instances.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetOperationAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::StackSetOperationAction>) -> Self {
         self.action = input;
         self
     }
@@ -234,10 +220,7 @@ impl StackSetOperationBuilder {
     /// <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at user request.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code>: The operation completed creating or updating all the specified stacks without exceeding the failure tolerance for the operation.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetOperationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StackSetOperationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -254,25 +237,17 @@ impl StackSetOperationBuilder {
         &self.status
     }
     /// <p>The preferences for how CloudFormation performs this stack set operation.</p>
-    pub fn operation_preferences(
-        mut self,
-        input: crate::types::StackSetOperationPreferences,
-    ) -> Self {
+    pub fn operation_preferences(mut self, input: crate::types::StackSetOperationPreferences) -> Self {
         self.operation_preferences = ::std::option::Option::Some(input);
         self
     }
     /// <p>The preferences for how CloudFormation performs this stack set operation.</p>
-    pub fn set_operation_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetOperationPreferences>,
-    ) -> Self {
+    pub fn set_operation_preferences(mut self, input: ::std::option::Option<crate::types::StackSetOperationPreferences>) -> Self {
         self.operation_preferences = input;
         self
     }
     /// <p>The preferences for how CloudFormation performs this stack set operation.</p>
-    pub fn get_operation_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
+    pub fn get_operation_preferences(&self) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
         &self.operation_preferences
     }
     /// <p>For stack set operations of action type <code>DELETE</code>, specifies whether to remove the stack instances from the specified stack set, but doesn't delete the stacks. You can't re-associate a retained stack, or add an existing, saved stack to a new stack set.</p>
@@ -291,19 +266,13 @@ impl StackSetOperationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.</p>
     /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn administration_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn administration_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.administration_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to perform this stack set operation.</p>
     /// <p>Use customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/stacksets-prereqs.html">Define Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn set_administration_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_administration_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.administration_role_arn = input;
         self
     }
@@ -314,19 +283,13 @@ impl StackSetOperationBuilder {
     }
     /// <p>The name of the IAM execution role used to create or update the stack set.</p>
     /// <p>Use customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
-    pub fn execution_role_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IAM execution role used to create or update the stack set.</p>
     /// <p>Use customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
-    pub fn set_execution_role_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_name = input;
         self
     }
@@ -341,10 +304,7 @@ impl StackSetOperationBuilder {
         self
     }
     /// <p>The time at which the operation was initiated. Note that the creation times for the stack set operation might differ from the creation time of the individual stacks themselves. This is because CloudFormation needs to perform preparatory work for the operation, such as dispatching the work to the requested Regions, before actually creating the first stacks.</p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -358,10 +318,7 @@ impl StackSetOperationBuilder {
         self
     }
     /// <p>The time at which the stack set operation ended, across all accounts and Regions specified. Note that this doesn't necessarily mean that the stack set operation was successful, or even attempted, in each account or Region.</p>
-    pub fn set_end_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_timestamp = input;
         self
     }
@@ -375,60 +332,41 @@ impl StackSetOperationBuilder {
         self
     }
     /// <p>[Service-managed permissions] The Organizations accounts affected by the stack operation.</p>
-    pub fn set_deployment_targets(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentTargets>,
-    ) -> Self {
+    pub fn set_deployment_targets(mut self, input: ::std::option::Option<crate::types::DeploymentTargets>) -> Self {
         self.deployment_targets = input;
         self
     }
     /// <p>[Service-managed permissions] The Organizations accounts affected by the stack operation.</p>
-    pub fn get_deployment_targets(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentTargets> {
+    pub fn get_deployment_targets(&self) -> &::std::option::Option<crate::types::DeploymentTargets> {
         &self.deployment_targets
     }
     /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
-    pub fn stack_set_drift_detection_details(
-        mut self,
-        input: crate::types::StackSetDriftDetectionDetails,
-    ) -> Self {
+    pub fn stack_set_drift_detection_details(mut self, input: crate::types::StackSetDriftDetectionDetails) -> Self {
         self.stack_set_drift_detection_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
-    pub fn set_stack_set_drift_detection_details(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetDriftDetectionDetails>,
-    ) -> Self {
+    pub fn set_stack_set_drift_detection_details(mut self, input: ::std::option::Option<crate::types::StackSetDriftDetectionDetails>) -> Self {
         self.stack_set_drift_detection_details = input;
         self
     }
     /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
-    pub fn get_stack_set_drift_detection_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackSetDriftDetectionDetails> {
+    pub fn get_stack_set_drift_detection_details(&self) -> &::std::option::Option<crate::types::StackSetDriftDetectionDetails> {
         &self.stack_set_drift_detection_details
     }
     /// <p>The status of the operation in details.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the operation in details.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -442,17 +380,12 @@ impl StackSetOperationBuilder {
         self
     }
     /// <p>Detailed information about the StackSet operation.</p>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetOperationStatusDetails>,
-    ) -> Self {
+    pub fn set_status_details(mut self, input: ::std::option::Option<crate::types::StackSetOperationStatusDetails>) -> Self {
         self.status_details = input;
         self
     }
     /// <p>Detailed information about the StackSet operation.</p>
-    pub fn get_status_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackSetOperationStatusDetails> {
+    pub fn get_status_details(&self) -> &::std::option::Option<crate::types::StackSetOperationStatusDetails> {
         &self.status_details
     }
     /// Consumes the builder and constructs a [`StackSetOperation`](crate::types::StackSetOperation).

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteThreatIntelSetOutput {
 }
 impl DeleteThreatIntelSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteThreatIntelSetOutput`](crate::operation::delete_threat_intel_set::DeleteThreatIntelSetOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_threat_intel_set::builders::DeleteThreatIntelSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_threat_intel_set::builders::DeleteThreatIntelSetOutputBuilder {
         crate::operation::delete_threat_intel_set::builders::DeleteThreatIntelSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteThreatIntelSetOutput`](crate::operation::delete_threat_intel_set::DeleteThreatIntelSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteThreatIntelSetOutputBuilder {
     _request_id: Option<String>,
 }

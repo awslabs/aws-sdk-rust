@@ -10,10 +10,7 @@ impl ListPolicyStoresInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_policy_stores::ListPolicyStoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_stores::ListPolicyStoresError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_stores::ListPolicyStoresError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_policy_stores();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListPolicyStoresFluentBuilder {
         }
     }
     /// Access the ListPolicyStores as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_policy_stores::builders::ListPolicyStoresInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_policy_stores::builders::ListPolicyStoresInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListPolicyStoresFluentBuilder {
             crate::operation::list_policy_stores::ListPolicyStores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_stores::ListPolicyStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_stores::ListPolicyStoresError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListPolicyStoresFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListPolicyStoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_policy_stores::ListPolicyStoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_stores::ListPolicyStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_stores::ListPolicyStoresError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListPolicyStoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_policy_stores::ListPolicyStoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_stores::ListPolicyStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_stores::ListPolicyStoresError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListPolicyStoresFluentBuilder {
             crate::operation::list_policy_stores::ListPolicyStores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_policy_stores::ListPolicyStoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_policy_stores::ListPolicyStoresError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_policy_stores::paginator::ListPolicyStoresPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_policy_stores::paginator::ListPolicyStoresPaginator {
-        crate::operation::list_policy_stores::paginator::ListPolicyStoresPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_policy_stores::paginator::ListPolicyStoresPaginator {
+        crate::operation::list_policy_stores::paginator::ListPolicyStoresPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

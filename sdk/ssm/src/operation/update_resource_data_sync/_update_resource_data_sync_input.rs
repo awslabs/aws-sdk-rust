@@ -29,18 +29,14 @@ impl UpdateResourceDataSyncInput {
 }
 impl UpdateResourceDataSyncInput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceDataSyncInput`](crate::operation::update_resource_data_sync::UpdateResourceDataSyncInput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncInputBuilder {
         crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResourceDataSyncInput`](crate::operation::update_resource_data_sync::UpdateResourceDataSyncInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceDataSyncInputBuilder {
     pub(crate) sync_name: ::std::option::Option<::std::string::String>,
     pub(crate) sync_type: ::std::option::Option<::std::string::String>,
@@ -81,10 +77,7 @@ impl UpdateResourceDataSyncInputBuilder {
         self
     }
     /// <p>Specify information about the data sources to synchronize.</p>
-    pub fn set_sync_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceDataSyncSource>,
-    ) -> Self {
+    pub fn set_sync_source(mut self, input: ::std::option::Option<crate::types::ResourceDataSyncSource>) -> Self {
         self.sync_source = input;
         self
     }
@@ -99,12 +92,10 @@ impl UpdateResourceDataSyncInputBuilder {
         crate::operation::update_resource_data_sync::UpdateResourceDataSyncInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_resource_data_sync::UpdateResourceDataSyncInput {
-                sync_name: self.sync_name,
-                sync_type: self.sync_type,
-                sync_source: self.sync_source,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_resource_data_sync::UpdateResourceDataSyncInput {
+            sync_name: self.sync_name,
+            sync_type: self.sync_type,
+            sync_source: self.sync_source,
+        })
     }
 }

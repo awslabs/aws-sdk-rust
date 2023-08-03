@@ -37,9 +37,7 @@ impl GetDocumentationPartFluentBuilder {
         }
     }
     /// Access the GetDocumentationPart as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_documentation_part::builders::GetDocumentationPartInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_documentation_part::builders::GetDocumentationPartInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetDocumentationPartFluentBuilder {
             crate::operation::get_documentation_part::GetDocumentationPart,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_documentation_part::GetDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_documentation_part::GetDocumentationPartError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetDocumentationPartFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetDocumentationPartFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_documentation_part::GetDocumentationPartOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_documentation_part::GetDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_documentation_part::GetDocumentationPartError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetDocumentationPartFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_documentation_part::GetDocumentationPartOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_documentation_part::GetDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_documentation_part::GetDocumentationPartError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetDocumentationPartFluentBuilder {
             crate::operation::get_documentation_part::GetDocumentationPart,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_documentation_part::GetDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_documentation_part::GetDocumentationPartError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl GetDocumentationPartFluentBuilder {
         self.inner.get_rest_api_id()
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn documentation_part_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documentation_part_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.documentation_part_id(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_documentation_part_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documentation_part_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_documentation_part_id(input);
         self
     }

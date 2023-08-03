@@ -16,9 +16,7 @@ pub struct AppflowIntegrationWorkflowAttributes {
 }
 impl AppflowIntegrationWorkflowAttributes {
     /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
-    pub fn source_connector_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceConnectorType> {
+    pub fn source_connector_type(&self) -> ::std::option::Option<&crate::types::SourceConnectorType> {
         self.source_connector_type.as_ref()
     }
     /// <p>The name of the AppFlow connector profile used for ingestion.</p>
@@ -39,9 +37,7 @@ impl AppflowIntegrationWorkflowAttributes {
 
 /// A builder for [`AppflowIntegrationWorkflowAttributes`](crate::types::AppflowIntegrationWorkflowAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppflowIntegrationWorkflowAttributesBuilder {
     pub(crate) source_connector_type: ::std::option::Option<crate::types::SourceConnectorType>,
     pub(crate) connector_profile_name: ::std::option::Option<::std::string::String>,
@@ -54,32 +50,21 @@ impl AppflowIntegrationWorkflowAttributesBuilder {
         self
     }
     /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
-    pub fn set_source_connector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceConnectorType>,
-    ) -> Self {
+    pub fn set_source_connector_type(mut self, input: ::std::option::Option<crate::types::SourceConnectorType>) -> Self {
         self.source_connector_type = input;
         self
     }
     /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
-    pub fn get_source_connector_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceConnectorType> {
+    pub fn get_source_connector_type(&self) -> &::std::option::Option<crate::types::SourceConnectorType> {
         &self.source_connector_type
     }
     /// <p>The name of the AppFlow connector profile used for ingestion.</p>
-    pub fn connector_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the AppFlow connector profile used for ingestion.</p>
-    pub fn set_connector_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_profile_name = input;
         self
     }

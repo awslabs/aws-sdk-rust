@@ -25,18 +25,14 @@ impl DescribeEventCategoriesInput {
 }
 impl DescribeEventCategoriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventCategoriesInput`](crate::operation::describe_event_categories::DescribeEventCategoriesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_categories::builders::DescribeEventCategoriesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_event_categories::builders::DescribeEventCategoriesInputBuilder {
         crate::operation::describe_event_categories::builders::DescribeEventCategoriesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventCategoriesInput`](crate::operation::describe_event_categories::DescribeEventCategoriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventCategoriesInputBuilder {
     pub(crate) source_type: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -71,10 +67,7 @@ impl DescribeEventCategoriesInputBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -89,11 +82,9 @@ impl DescribeEventCategoriesInputBuilder {
         crate::operation::describe_event_categories::DescribeEventCategoriesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_event_categories::DescribeEventCategoriesInput {
-                source_type: self.source_type,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_event_categories::DescribeEventCategoriesInput {
+            source_type: self.source_type,
+            filters: self.filters,
+        })
     }
 }

@@ -6,9 +6,7 @@
 pub struct LambdaFunctionMetadata {
     /// <p>The resource tags on an AWS Lambda function.</p>
     #[doc(hidden)]
-    pub function_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub function_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The layers for an AWS Lambda function. A Lambda function can have up to five layers.</p>
     #[doc(hidden)]
     pub layers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -21,11 +19,7 @@ pub struct LambdaFunctionMetadata {
 }
 impl LambdaFunctionMetadata {
     /// <p>The resource tags on an AWS Lambda function.</p>
-    pub fn function_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn function_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.function_tags.as_ref()
     }
     /// <p>The layers for an AWS Lambda function. A Lambda function can have up to five layers.</p>
@@ -50,13 +44,9 @@ impl LambdaFunctionMetadata {
 
 /// A builder for [`LambdaFunctionMetadata`](crate::types::LambdaFunctionMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaFunctionMetadataBuilder {
-    pub(crate) function_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) function_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) layers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) runtime: ::std::option::Option<crate::types::Runtime>,
@@ -67,11 +57,7 @@ impl LambdaFunctionMetadataBuilder {
     /// To override the contents of this collection use [`set_function_tags`](Self::set_function_tags).
     ///
     /// <p>The resource tags on an AWS Lambda function.</p>
-    pub fn function_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.function_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.function_tags = ::std::option::Option::Some(hash_map);
@@ -80,19 +66,13 @@ impl LambdaFunctionMetadataBuilder {
     /// <p>The resource tags on an AWS Lambda function.</p>
     pub fn set_function_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.function_tags = input;
         self
     }
     /// <p>The resource tags on an AWS Lambda function.</p>
-    pub fn get_function_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_function_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.function_tags
     }
     /// Appends an item to `layers`.
@@ -107,10 +87,7 @@ impl LambdaFunctionMetadataBuilder {
         self
     }
     /// <p>The layers for an AWS Lambda function. A Lambda function can have up to five layers.</p>
-    pub fn set_layers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_layers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.layers = input;
         self
     }
@@ -119,18 +96,12 @@ impl LambdaFunctionMetadataBuilder {
         &self.layers
     }
     /// <p>The name of a function.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a function.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }

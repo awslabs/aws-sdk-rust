@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateTrackerConsumerOutput {
 }
 impl DisassociateTrackerConsumerOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateTrackerConsumerOutput`](crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerOutput).
-    pub fn builder() -> crate::operation::disassociate_tracker_consumer::builders::DisassociateTrackerConsumerOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_tracker_consumer::builders::DisassociateTrackerConsumerOutputBuilder {
         crate::operation::disassociate_tracker_consumer::builders::DisassociateTrackerConsumerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateTrackerConsumerOutput`](crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateTrackerConsumerOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisassociateTrackerConsumerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateTrackerConsumerOutput`](crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerOutput {
+    pub fn build(self) -> crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerOutput {
         crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerOutput {
             _request_id: self._request_id,
         }

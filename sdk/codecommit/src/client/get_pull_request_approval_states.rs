@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetPullRequestApprovalStatesOutput`](crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesOutput) with field(s):
     ///   - [`approvals(Option<Vec<Approval>>)`](crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesOutput::approvals): <p>Information about users who have approved the pull request.</p>
     /// - On failure, responds with [`SdkError<GetPullRequestApprovalStatesError>`](crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError)
-    pub fn get_pull_request_approval_states(&self) -> crate::operation::get_pull_request_approval_states::builders::GetPullRequestApprovalStatesFluentBuilder{
+    pub fn get_pull_request_approval_states(
+        &self,
+    ) -> crate::operation::get_pull_request_approval_states::builders::GetPullRequestApprovalStatesFluentBuilder {
         crate::operation::get_pull_request_approval_states::builders::GetPullRequestApprovalStatesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`operation_summary_list(Option<Vec<OperationSummary>>)`](crate::operation::list_operations::ListOperationsOutput::operation_summary_list): <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_operations::ListOperationsOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     /// - On failure, responds with [`SdkError<ListOperationsError>`](crate::operation::list_operations::ListOperationsError)
-    pub fn list_operations(
-        &self,
-    ) -> crate::operation::list_operations::builders::ListOperationsFluentBuilder {
-        crate::operation::list_operations::builders::ListOperationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_operations(&self) -> crate::operation::list_operations::builders::ListOperationsFluentBuilder {
+        crate::operation::list_operations::builders::ListOperationsFluentBuilder::new(self.handle.clone())
     }
 }

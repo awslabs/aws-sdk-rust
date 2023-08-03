@@ -79,9 +79,7 @@ impl EvaluationFormVersionSummary {
 
 /// A builder for [`EvaluationFormVersionSummary`](crate::types::EvaluationFormVersionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluationFormVersionSummaryBuilder {
     pub(crate) evaluation_form_arn: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_form_id: ::std::option::Option<::std::string::String>,
@@ -95,18 +93,12 @@ pub struct EvaluationFormVersionSummaryBuilder {
 }
 impl EvaluationFormVersionSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    pub fn evaluation_form_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    pub fn set_evaluation_form_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_form_arn = input;
         self
     }
@@ -115,18 +107,12 @@ impl EvaluationFormVersionSummaryBuilder {
         &self.evaluation_form_arn
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_form_id = input;
         self
     }
@@ -168,10 +154,7 @@ impl EvaluationFormVersionSummaryBuilder {
         self
     }
     /// <p>The status of the evaluation form.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationFormVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EvaluationFormVersionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -185,10 +168,7 @@ impl EvaluationFormVersionSummaryBuilder {
         self
     }
     /// <p>The timestamp for when the evaluation form was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -216,10 +196,7 @@ impl EvaluationFormVersionSummaryBuilder {
         self
     }
     /// <p>The timestamp for when the evaluation form was last updated.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -228,18 +205,12 @@ impl EvaluationFormVersionSummaryBuilder {
         &self.last_modified_time
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation form.</p>
-    pub fn last_modified_by(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation form.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_by = input;
         self
     }

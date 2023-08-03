@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`scheduled_time(DateTime)`](crate::operation::update_contact_schedule::builders::UpdateContactScheduleFluentBuilder::scheduled_time) / [`set_scheduled_time(Option<DateTime>)`](crate::operation::update_contact_schedule::builders::UpdateContactScheduleFluentBuilder::set_scheduled_time): <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
     /// - On success, responds with [`UpdateContactScheduleOutput`](crate::operation::update_contact_schedule::UpdateContactScheduleOutput)
     /// - On failure, responds with [`SdkError<UpdateContactScheduleError>`](crate::operation::update_contact_schedule::UpdateContactScheduleError)
-    pub fn update_contact_schedule(
-        &self,
-    ) -> crate::operation::update_contact_schedule::builders::UpdateContactScheduleFluentBuilder
-    {
-        crate::operation::update_contact_schedule::builders::UpdateContactScheduleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_contact_schedule(&self) -> crate::operation::update_contact_schedule::builders::UpdateContactScheduleFluentBuilder {
+        crate::operation::update_contact_schedule::builders::UpdateContactScheduleFluentBuilder::new(self.handle.clone())
     }
 }

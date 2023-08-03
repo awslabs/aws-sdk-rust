@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`s3(S3ClassificationScopeUpdate)`](crate::operation::update_classification_scope::builders::UpdateClassificationScopeFluentBuilder::s3) / [`set_s3(Option<S3ClassificationScopeUpdate>)`](crate::operation::update_classification_scope::builders::UpdateClassificationScopeFluentBuilder::set_s3): <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
     /// - On success, responds with [`UpdateClassificationScopeOutput`](crate::operation::update_classification_scope::UpdateClassificationScopeOutput)
     /// - On failure, responds with [`SdkError<UpdateClassificationScopeError>`](crate::operation::update_classification_scope::UpdateClassificationScopeError)
-    pub fn update_classification_scope(&self) -> crate::operation::update_classification_scope::builders::UpdateClassificationScopeFluentBuilder{
+    pub fn update_classification_scope(&self) -> crate::operation::update_classification_scope::builders::UpdateClassificationScopeFluentBuilder {
         crate::operation::update_classification_scope::builders::UpdateClassificationScopeFluentBuilder::new(self.handle.clone())
     }
 }

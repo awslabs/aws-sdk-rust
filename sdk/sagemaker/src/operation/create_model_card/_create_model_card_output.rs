@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateModelCardOutput {
 }
 impl CreateModelCardOutput {
     /// Creates a new builder-style object to manufacture [`CreateModelCardOutput`](crate::operation::create_model_card::CreateModelCardOutput).
-    pub fn builder() -> crate::operation::create_model_card::builders::CreateModelCardOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_model_card::builders::CreateModelCardOutputBuilder {
         crate::operation::create_model_card::builders::CreateModelCardOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateModelCardOutput`](crate::operation::create_model_card::CreateModelCardOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateModelCardOutputBuilder {
     pub(crate) model_card_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateModelCardOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the successfully created model card.</p>
-    pub fn model_card_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the successfully created model card.</p>
-    pub fn set_model_card_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_arn = input;
         self
     }

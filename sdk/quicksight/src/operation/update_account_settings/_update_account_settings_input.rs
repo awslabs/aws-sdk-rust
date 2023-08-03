@@ -36,18 +36,14 @@ impl UpdateAccountSettingsInput {
 }
 impl UpdateAccountSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder {
         crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccountSettingsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) default_namespace: ::std::option::Option<::std::string::String>,
@@ -56,18 +52,12 @@ pub struct UpdateAccountSettingsInputBuilder {
 }
 impl UpdateAccountSettingsInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -76,18 +66,12 @@ impl UpdateAccountSettingsInputBuilder {
         &self.aws_account_id
     }
     /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
-    pub fn default_namespace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
-    pub fn set_default_namespace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_namespace = input;
         self
     }
@@ -96,18 +80,12 @@ impl UpdateAccountSettingsInputBuilder {
         &self.default_namespace
     }
     /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
-    pub fn notification_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
-    pub fn set_notification_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notification_email = input;
         self
     }
@@ -121,10 +99,7 @@ impl UpdateAccountSettingsInputBuilder {
         self
     }
     /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the account to be deleted.</p>
-    pub fn set_termination_protection_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_termination_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.termination_protection_enabled = input;
         self
     }
@@ -135,17 +110,13 @@ impl UpdateAccountSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_account_settings::UpdateAccountSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_account_settings::UpdateAccountSettingsInput {
-                aws_account_id: self.aws_account_id,
-                default_namespace: self.default_namespace,
-                notification_email: self.notification_email,
-                termination_protection_enabled: self.termination_protection_enabled,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_account_settings::UpdateAccountSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_account_settings::UpdateAccountSettingsInput {
+            aws_account_id: self.aws_account_id,
+            default_namespace: self.default_namespace,
+            notification_email: self.notification_email,
+            termination_protection_enabled: self.termination_protection_enabled,
+        })
     }
 }

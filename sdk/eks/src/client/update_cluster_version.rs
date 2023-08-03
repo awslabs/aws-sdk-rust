@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateClusterVersionOutput`](crate::operation::update_cluster_version::UpdateClusterVersionOutput) with field(s):
     ///   - [`update(Option<Update>)`](crate::operation::update_cluster_version::UpdateClusterVersionOutput::update): <p>The full description of the specified update</p>
     /// - On failure, responds with [`SdkError<UpdateClusterVersionError>`](crate::operation::update_cluster_version::UpdateClusterVersionError)
-    pub fn update_cluster_version(
-        &self,
-    ) -> crate::operation::update_cluster_version::builders::UpdateClusterVersionFluentBuilder {
-        crate::operation::update_cluster_version::builders::UpdateClusterVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_cluster_version(&self) -> crate::operation::update_cluster_version::builders::UpdateClusterVersionFluentBuilder {
+        crate::operation::update_cluster_version::builders::UpdateClusterVersionFluentBuilder::new(self.handle.clone())
     }
 }

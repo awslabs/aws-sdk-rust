@@ -40,17 +40,14 @@ impl ListActionExecutionsInput {
 }
 impl ListActionExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListActionExecutionsInput`](crate::operation::list_action_executions::ListActionExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_action_executions::builders::ListActionExecutionsInputBuilder {
+    pub fn builder() -> crate::operation::list_action_executions::builders::ListActionExecutionsInputBuilder {
         crate::operation::list_action_executions::builders::ListActionExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListActionExecutionsInput`](crate::operation::list_action_executions::ListActionExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActionExecutionsInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::ActionExecutionFilter>,
@@ -59,18 +56,12 @@ pub struct ListActionExecutionsInputBuilder {
 }
 impl ListActionExecutionsInputBuilder {
     /// <p> The name of the pipeline for which you want to list action execution history.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the pipeline for which you want to list action execution history.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -84,10 +75,7 @@ impl ListActionExecutionsInputBuilder {
         self
     }
     /// <p>Input information used to filter action execution history.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionExecutionFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ActionExecutionFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -132,17 +120,13 @@ impl ListActionExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`ListActionExecutionsInput`](crate::operation::list_action_executions::ListActionExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_action_executions::ListActionExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_action_executions::ListActionExecutionsInput {
-                pipeline_name: self.pipeline_name,
-                filter: self.filter,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_action_executions::ListActionExecutionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_action_executions::ListActionExecutionsInput {
+            pipeline_name: self.pipeline_name,
+            filter: self.filter,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -10,9 +10,7 @@ pub struct ModifyVerifiedAccessInstanceOutput {
 }
 impl ModifyVerifiedAccessInstanceOutput {
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn verified_access_instance(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VerifiedAccessInstance> {
+    pub fn verified_access_instance(&self) -> ::std::option::Option<&crate::types::VerifiedAccessInstance> {
         self.verified_access_instance.as_ref()
     }
 }
@@ -23,19 +21,16 @@ impl ::aws_http::request_id::RequestId for ModifyVerifiedAccessInstanceOutput {
 }
 impl ModifyVerifiedAccessInstanceOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessInstanceOutput`](crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceOutput).
-    pub fn builder() -> crate::operation::modify_verified_access_instance::builders::ModifyVerifiedAccessInstanceOutputBuilder{
+    pub fn builder() -> crate::operation::modify_verified_access_instance::builders::ModifyVerifiedAccessInstanceOutputBuilder {
         crate::operation::modify_verified_access_instance::builders::ModifyVerifiedAccessInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVerifiedAccessInstanceOutput`](crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessInstanceOutputBuilder {
-    pub(crate) verified_access_instance:
-        ::std::option::Option<crate::types::VerifiedAccessInstance>,
+    pub(crate) verified_access_instance: ::std::option::Option<crate::types::VerifiedAccessInstance>,
     _request_id: Option<String>,
 }
 impl ModifyVerifiedAccessInstanceOutputBuilder {
@@ -45,17 +40,12 @@ impl ModifyVerifiedAccessInstanceOutputBuilder {
         self
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn set_verified_access_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessInstance>,
-    ) -> Self {
+    pub fn set_verified_access_instance(mut self, input: ::std::option::Option<crate::types::VerifiedAccessInstance>) -> Self {
         self.verified_access_instance = input;
         self
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn get_verified_access_instance(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessInstance> {
+    pub fn get_verified_access_instance(&self) -> &::std::option::Option<crate::types::VerifiedAccessInstance> {
         &self.verified_access_instance
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,9 +58,7 @@ impl ModifyVerifiedAccessInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessInstanceOutput`](crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceOutput {
+    pub fn build(self) -> crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceOutput {
         crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceOutput {
             verified_access_instance: self.verified_access_instance,
             _request_id: self._request_id,

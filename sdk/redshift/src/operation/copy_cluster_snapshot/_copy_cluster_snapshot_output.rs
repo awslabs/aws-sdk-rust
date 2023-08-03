@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CopyClusterSnapshotOutput {
 }
 impl CopyClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CopyClusterSnapshotOutput`](crate::operation::copy_cluster_snapshot::CopyClusterSnapshotOutput).
-    pub fn builder(
-    ) -> crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotOutputBuilder {
-        crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotOutputBuilder {
+        crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`CopyClusterSnapshotOutput`](crate::operation::copy_cluster_snapshot::CopyClusterSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyClusterSnapshotOutputBuilder {
     pub(crate) snapshot: ::std::option::Option<crate::types::Snapshot>,
     _request_id: Option<String>,

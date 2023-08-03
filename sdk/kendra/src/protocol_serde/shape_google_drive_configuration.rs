@@ -68,17 +68,9 @@ pub fn ser_google_drive_configuration(
 
 pub(crate) fn de_google_drive_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::GoogleDriveConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::GoogleDriveConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -92,11 +84,9 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "SecretArn" => {
                                 builder = builder.set_secret_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "InclusionPatterns" => {
@@ -111,42 +101,41 @@ where
                             }
                             "FieldMappings" => {
                                 builder = builder.set_field_mappings(
-                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(tokens)?
+                                    crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "ExcludeMimeTypes" => {
                                 builder = builder.set_exclude_mime_types(
-                                    crate::protocol_serde::shape_exclude_mime_types_list::de_exclude_mime_types_list(tokens)?
+                                    crate::protocol_serde::shape_exclude_mime_types_list::de_exclude_mime_types_list(tokens)?,
                                 );
                             }
                             "ExcludeUserAccounts" => {
                                 builder = builder.set_exclude_user_accounts(
-                                    crate::protocol_serde::shape_exclude_user_accounts_list::de_exclude_user_accounts_list(tokens)?
+                                    crate::protocol_serde::shape_exclude_user_accounts_list::de_exclude_user_accounts_list(tokens)?,
                                 );
                             }
                             "ExcludeSharedDrives" => {
                                 builder = builder.set_exclude_shared_drives(
-                                    crate::protocol_serde::shape_exclude_shared_drives_list::de_exclude_shared_drives_list(tokens)?
+                                    crate::protocol_serde::shape_exclude_shared_drives_list::de_exclude_shared_drives_list(tokens)?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

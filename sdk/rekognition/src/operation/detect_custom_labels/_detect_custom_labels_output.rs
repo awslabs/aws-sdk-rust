@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DetectCustomLabelsOutput {
 }
 impl DetectCustomLabelsOutput {
     /// Creates a new builder-style object to manufacture [`DetectCustomLabelsOutput`](crate::operation::detect_custom_labels::DetectCustomLabelsOutput).
-    pub fn builder(
-    ) -> crate::operation::detect_custom_labels::builders::DetectCustomLabelsOutputBuilder {
+    pub fn builder() -> crate::operation::detect_custom_labels::builders::DetectCustomLabelsOutputBuilder {
         crate::operation::detect_custom_labels::builders::DetectCustomLabelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetectCustomLabelsOutput`](crate::operation::detect_custom_labels::DetectCustomLabelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectCustomLabelsOutputBuilder {
     pub(crate) custom_labels: ::std::option::Option<::std::vec::Vec<crate::types::CustomLabel>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl DetectCustomLabelsOutputBuilder {
         self
     }
     /// <p>An array of custom labels detected in the input image.</p>
-    pub fn set_custom_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomLabel>>,
-    ) -> Self {
+    pub fn set_custom_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomLabel>>) -> Self {
         self.custom_labels = input;
         self
     }
     /// <p>An array of custom labels detected in the input image.</p>
-    pub fn get_custom_labels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomLabel>> {
+    pub fn get_custom_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomLabel>> {
         &self.custom_labels
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -42,9 +42,7 @@ impl SearchPromptsOutput {
 
 /// A builder for [`SearchPromptsOutput`](crate::operation::search_prompts::SearchPromptsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchPromptsOutputBuilder {
     pub(crate) prompts: ::std::option::Option<::std::vec::Vec<crate::types::Prompt>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,10 +62,7 @@ impl SearchPromptsOutputBuilder {
         self
     }
     /// <p>Information about the prompts.</p>
-    pub fn set_prompts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Prompt>>,
-    ) -> Self {
+    pub fn set_prompts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Prompt>>) -> Self {
         self.prompts = input;
         self
     }

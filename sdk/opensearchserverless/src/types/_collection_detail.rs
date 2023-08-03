@@ -93,9 +93,7 @@ impl CollectionDetail {
 
 /// A builder for [`CollectionDetail`](crate::types::CollectionDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CollectionDetailBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -144,10 +142,7 @@ impl CollectionDetailBuilder {
         self
     }
     /// <p>The current status of the collection.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CollectionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CollectionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -240,18 +235,12 @@ impl CollectionDetailBuilder {
         &self.last_modified_date
     }
     /// <p>Collection-specific endpoint used to submit index, search, and data upload requests to an OpenSearch Serverless collection.</p>
-    pub fn collection_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Collection-specific endpoint used to submit index, search, and data upload requests to an OpenSearch Serverless collection.</p>
-    pub fn set_collection_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_endpoint = input;
         self
     }
@@ -260,18 +249,12 @@ impl CollectionDetailBuilder {
         &self.collection_endpoint
     }
     /// <p>Collection-specific endpoint used to access OpenSearch Dashboards.</p>
-    pub fn dashboard_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dashboard_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Collection-specific endpoint used to access OpenSearch Dashboards.</p>
-    pub fn set_dashboard_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dashboard_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_endpoint = input;
         self
     }

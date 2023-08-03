@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UntagDeliveryStreamOutput {
 }
 impl UntagDeliveryStreamOutput {
     /// Creates a new builder-style object to manufacture [`UntagDeliveryStreamOutput`](crate::operation::untag_delivery_stream::UntagDeliveryStreamOutput).
-    pub fn builder(
-    ) -> crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamOutputBuilder {
-        crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamOutputBuilder {
+        crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`UntagDeliveryStreamOutput`](crate::operation::untag_delivery_stream::UntagDeliveryStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagDeliveryStreamOutputBuilder {
     _request_id: Option<String>,
 }

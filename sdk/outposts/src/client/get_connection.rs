@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`connection_id(Option<String>)`](crate::operation::get_connection::GetConnectionOutput::connection_id): <p> The ID of the connection. </p>
     ///   - [`connection_details(Option<ConnectionDetails>)`](crate::operation::get_connection::GetConnectionOutput::connection_details): <p> Information about the connection. </p>
     /// - On failure, responds with [`SdkError<GetConnectionError>`](crate::operation::get_connection::GetConnectionError)
-    pub fn get_connection(
-        &self,
-    ) -> crate::operation::get_connection::builders::GetConnectionFluentBuilder {
-        crate::operation::get_connection::builders::GetConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_connection(&self) -> crate::operation::get_connection::builders::GetConnectionFluentBuilder {
+        crate::operation::get_connection::builders::GetConnectionFluentBuilder::new(self.handle.clone())
     }
 }

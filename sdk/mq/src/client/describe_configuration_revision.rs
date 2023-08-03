@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`data(Option<String>)`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput::data): <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput::description): <p>The description of the configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationRevisionError>`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionError)
-    pub fn describe_configuration_revision(&self) -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionFluentBuilder{
+    pub fn describe_configuration_revision(
+        &self,
+    ) -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionFluentBuilder {
         crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionFluentBuilder::new(self.handle.clone())
     }
 }

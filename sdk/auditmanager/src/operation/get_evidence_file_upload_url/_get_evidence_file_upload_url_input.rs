@@ -15,16 +15,14 @@ impl GetEvidenceFileUploadUrlInput {
 }
 impl GetEvidenceFileUploadUrlInput {
     /// Creates a new builder-style object to manufacture [`GetEvidenceFileUploadUrlInput`](crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlInput).
-    pub fn builder() -> crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlInputBuilder{
+    pub fn builder() -> crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlInputBuilder {
         crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEvidenceFileUploadUrlInput`](crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEvidenceFileUploadUrlInputBuilder {
     pub(crate) file_name: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl GetEvidenceFileUploadUrlInputBuilder {
         crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlInput {
-                file_name: self.file_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlInput { file_name: self.file_name })
     }
 }

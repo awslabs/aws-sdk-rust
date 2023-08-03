@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`user_provided_id(Option<String>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::user_provided_id): <p>Source server user provided ID.</p>
     ///   - [`fqdn_for_action_framework(Option<String>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::fqdn_for_action_framework): <p>Source server fqdn for action framework.</p>
     /// - On failure, responds with [`SdkError<MarkAsArchivedError>`](crate::operation::mark_as_archived::MarkAsArchivedError)
-    pub fn mark_as_archived(
-        &self,
-    ) -> crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder {
-        crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn mark_as_archived(&self) -> crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder {
+        crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`resource_arn(Option<String>)`](crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy statement was removed from.</p>
     ///   - [`revision_id(Option<String>)`](crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementOutput::revision_id): <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
     /// - On failure, responds with [`SdkError<DeleteResourcePolicyStatementError>`](crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementError)
-    pub fn delete_resource_policy_statement(&self) -> crate::operation::delete_resource_policy_statement::builders::DeleteResourcePolicyStatementFluentBuilder{
+    pub fn delete_resource_policy_statement(
+        &self,
+    ) -> crate::operation::delete_resource_policy_statement::builders::DeleteResourcePolicyStatementFluentBuilder {
         crate::operation::delete_resource_policy_statement::builders::DeleteResourcePolicyStatementFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`resolution_id(Option<String>)`](crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesOutput::resolution_id): <p>The identifier for a specific resolution.</p>
     ///   - [`status(Option<ResourceResolutionStatusType>)`](crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesOutput::status): <p>The status of the action.</p>
     /// - On failure, responds with [`SdkError<ResolveAppVersionResourcesError>`](crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesError)
-    pub fn resolve_app_version_resources(&self) -> crate::operation::resolve_app_version_resources::builders::ResolveAppVersionResourcesFluentBuilder{
+    pub fn resolve_app_version_resources(
+        &self,
+    ) -> crate::operation::resolve_app_version_resources::builders::ResolveAppVersionResourcesFluentBuilder {
         crate::operation::resolve_app_version_resources::builders::ResolveAppVersionResourcesFluentBuilder::new(self.handle.clone())
     }
 }

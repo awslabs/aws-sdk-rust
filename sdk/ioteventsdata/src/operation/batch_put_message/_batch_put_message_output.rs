@@ -5,15 +5,12 @@
 pub struct BatchPutMessageOutput {
     /// <p>A list of any errors encountered when sending the messages.</p>
     #[doc(hidden)]
-    pub batch_put_message_error_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchPutMessageErrorEntry>>,
+    pub batch_put_message_error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutMessageErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchPutMessageOutput {
     /// <p>A list of any errors encountered when sending the messages.</p>
-    pub fn batch_put_message_error_entries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchPutMessageErrorEntry]> {
+    pub fn batch_put_message_error_entries(&self) -> ::std::option::Option<&[crate::types::BatchPutMessageErrorEntry]> {
         self.batch_put_message_error_entries.as_deref()
     }
 }
@@ -24,20 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchPutMessageOutput {
 }
 impl BatchPutMessageOutput {
     /// Creates a new builder-style object to manufacture [`BatchPutMessageOutput`](crate::operation::batch_put_message::BatchPutMessageOutput).
-    pub fn builder() -> crate::operation::batch_put_message::builders::BatchPutMessageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_put_message::builders::BatchPutMessageOutputBuilder {
         crate::operation::batch_put_message::builders::BatchPutMessageOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchPutMessageOutput`](crate::operation::batch_put_message::BatchPutMessageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutMessageOutputBuilder {
-    pub(crate) batch_put_message_error_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchPutMessageErrorEntry>>,
+    pub(crate) batch_put_message_error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutMessageErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchPutMessageOutputBuilder {
@@ -46,10 +39,7 @@ impl BatchPutMessageOutputBuilder {
     /// To override the contents of this collection use [`set_batch_put_message_error_entries`](Self::set_batch_put_message_error_entries).
     ///
     /// <p>A list of any errors encountered when sending the messages.</p>
-    pub fn batch_put_message_error_entries(
-        mut self,
-        input: crate::types::BatchPutMessageErrorEntry,
-    ) -> Self {
+    pub fn batch_put_message_error_entries(mut self, input: crate::types::BatchPutMessageErrorEntry) -> Self {
         let mut v = self.batch_put_message_error_entries.unwrap_or_default();
         v.push(input);
         self.batch_put_message_error_entries = ::std::option::Option::Some(v);
@@ -64,9 +54,7 @@ impl BatchPutMessageOutputBuilder {
         self
     }
     /// <p>A list of any errors encountered when sending the messages.</p>
-    pub fn get_batch_put_message_error_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutMessageErrorEntry>> {
+    pub fn get_batch_put_message_error_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutMessageErrorEntry>> {
         &self.batch_put_message_error_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

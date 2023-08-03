@@ -23,9 +23,7 @@ impl BoxPlotStyleOptions {
 
 /// A builder for [`BoxPlotStyleOptions`](crate::types::BoxPlotStyleOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BoxPlotStyleOptionsBuilder {
     pub(crate) fill_style: ::std::option::Option<crate::types::BoxPlotFillStyle>,
 }
@@ -36,10 +34,7 @@ impl BoxPlotStyleOptionsBuilder {
         self
     }
     /// <p>The fill styles (solid, transparent) of the box plot.</p>
-    pub fn set_fill_style(
-        mut self,
-        input: ::std::option::Option<crate::types::BoxPlotFillStyle>,
-    ) -> Self {
+    pub fn set_fill_style(mut self, input: ::std::option::Option<crate::types::BoxPlotFillStyle>) -> Self {
         self.fill_style = input;
         self
     }
@@ -49,8 +44,6 @@ impl BoxPlotStyleOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`BoxPlotStyleOptions`](crate::types::BoxPlotStyleOptions).
     pub fn build(self) -> crate::types::BoxPlotStyleOptions {
-        crate::types::BoxPlotStyleOptions {
-            fill_style: self.fill_style,
-        }
+        crate::types::BoxPlotStyleOptions { fill_style: self.fill_style }
     }
 }

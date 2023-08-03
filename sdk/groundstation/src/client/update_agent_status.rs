@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAgentStatusOutput`](crate::operation::update_agent_status::UpdateAgentStatusOutput) with field(s):
     ///   - [`agent_id(Option<String>)`](crate::operation::update_agent_status::UpdateAgentStatusOutput::agent_id): <p>UUID of updated agent.</p>
     /// - On failure, responds with [`SdkError<UpdateAgentStatusError>`](crate::operation::update_agent_status::UpdateAgentStatusError)
-    pub fn update_agent_status(
-        &self,
-    ) -> crate::operation::update_agent_status::builders::UpdateAgentStatusFluentBuilder {
-        crate::operation::update_agent_status::builders::UpdateAgentStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_agent_status(&self) -> crate::operation::update_agent_status::builders::UpdateAgentStatusFluentBuilder {
+        crate::operation::update_agent_status::builders::UpdateAgentStatusFluentBuilder::new(self.handle.clone())
     }
 }

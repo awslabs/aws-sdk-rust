@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeWorkspaceConfigurationOutput 
 }
 impl DescribeWorkspaceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceConfigurationOutput`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationOutputBuilder {
         crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspaceConfigurationOutput`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceConfigurationOutputBuilder {
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
     pub(crate) grafana_version: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct DescribeWorkspaceConfigurationOutputBuilder {
 }
 impl DescribeWorkspaceConfigurationOutputBuilder {
     /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    pub fn configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration = input;
         self
     }
@@ -65,18 +57,12 @@ impl DescribeWorkspaceConfigurationOutputBuilder {
         &self.configuration
     }
     /// <p>The supported Grafana version for the workspace.</p>
-    pub fn grafana_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn grafana_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grafana_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The supported Grafana version for the workspace.</p>
-    pub fn set_grafana_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_grafana_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grafana_version = input;
         self
     }
@@ -94,10 +80,7 @@ impl DescribeWorkspaceConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceConfigurationOutput`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput {
         crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput {
             configuration: self.configuration,
             grafana_version: self.grafana_version,

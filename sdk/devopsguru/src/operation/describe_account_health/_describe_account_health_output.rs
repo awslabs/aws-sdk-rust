@@ -49,18 +49,14 @@ impl ::aws_http::request_id::RequestId for DescribeAccountHealthOutput {
 }
 impl DescribeAccountHealthOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountHealthOutput`](crate::operation::describe_account_health::DescribeAccountHealthOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_health::builders::DescribeAccountHealthOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_health::builders::DescribeAccountHealthOutputBuilder {
         crate::operation::describe_account_health::builders::DescribeAccountHealthOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAccountHealthOutput`](crate::operation::describe_account_health::DescribeAccountHealthOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountHealthOutputBuilder {
     pub(crate) open_reactive_insights: ::std::option::Option<i32>,
     pub(crate) open_proactive_insights: ::std::option::Option<i32>,

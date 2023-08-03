@@ -70,9 +70,7 @@ impl DomainValidation {
 
 /// A builder for [`DomainValidation`](crate::types::DomainValidation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainValidationBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) validation_emails: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -101,42 +99,28 @@ impl DomainValidationBuilder {
     /// To override the contents of this collection use [`set_validation_emails`](Self::set_validation_emails).
     ///
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
-    pub fn validation_emails(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_emails(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.validation_emails.unwrap_or_default();
         v.push(input.into());
         self.validation_emails = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
-    pub fn set_validation_emails(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_validation_emails(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.validation_emails = input;
         self
     }
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
-    pub fn get_validation_emails(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_validation_emails(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.validation_emails
     }
     /// <p>The domain name that ACM used to send domain validation emails.</p>
-    pub fn validation_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name that ACM used to send domain validation emails.</p>
-    pub fn set_validation_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_domain = input;
         self
     }
@@ -160,10 +144,7 @@ impl DomainValidationBuilder {
     /// <li> <p> <code></code>SUCCESS</p> </li>
     /// <li> <p> <code></code>FAILED</p> </li>
     /// </ul>
-    pub fn set_validation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainStatus>,
-    ) -> Self {
+    pub fn set_validation_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
         self.validation_status = input;
         self
     }
@@ -184,10 +165,7 @@ impl DomainValidationBuilder {
     }
     /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
     /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
-    pub fn set_resource_record(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceRecord>,
-    ) -> Self {
+    pub fn set_resource_record(mut self, input: ::std::option::Option<crate::types::ResourceRecord>) -> Self {
         self.resource_record = input;
         self
     }
@@ -202,10 +180,7 @@ impl DomainValidationBuilder {
         self
     }
     /// <p>Specifies the domain validation method.</p>
-    pub fn set_validation_method(
-        mut self,
-        input: ::std::option::Option<crate::types::ValidationMethod>,
-    ) -> Self {
+    pub fn set_validation_method(mut self, input: ::std::option::Option<crate::types::ValidationMethod>) -> Self {
         self.validation_method = input;
         self
     }

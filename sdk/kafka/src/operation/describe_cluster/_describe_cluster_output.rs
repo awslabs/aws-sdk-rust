@@ -28,9 +28,7 @@ impl DescribeClusterOutput {
 
 /// A builder for [`DescribeClusterOutput`](crate::operation::describe_cluster::DescribeClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterOutputBuilder {
     pub(crate) cluster_info: ::std::option::Option<crate::types::ClusterInfo>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeClusterOutputBuilder {
         self
     }
     /// <p>The cluster information.</p>
-    pub fn set_cluster_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterInfo>,
-    ) -> Self {
+    pub fn set_cluster_info(mut self, input: ::std::option::Option<crate::types::ClusterInfo>) -> Self {
         self.cluster_info = input;
         self
     }

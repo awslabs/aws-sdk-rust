@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`connection_alias_permission(ConnectionAliasPermission)`](crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionFluentBuilder::connection_alias_permission) / [`set_connection_alias_permission(Option<ConnectionAliasPermission>)`](crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionFluentBuilder::set_connection_alias_permission): <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
     /// - On success, responds with [`UpdateConnectionAliasPermissionOutput`](crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput)
     /// - On failure, responds with [`SdkError<UpdateConnectionAliasPermissionError>`](crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionError)
-    pub fn update_connection_alias_permission(&self) -> crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionFluentBuilder{
+    pub fn update_connection_alias_permission(
+        &self,
+    ) -> crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionFluentBuilder {
         crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionFluentBuilder::new(self.handle.clone())
     }
 }

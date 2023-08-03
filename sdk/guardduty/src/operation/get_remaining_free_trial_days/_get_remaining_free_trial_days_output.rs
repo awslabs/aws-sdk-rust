@@ -8,8 +8,7 @@ pub struct GetRemainingFreeTrialDaysOutput {
     pub accounts: ::std::option::Option<::std::vec::Vec<crate::types::AccountFreeTrialInfo>>,
     /// <p>The member account that was included in a request but for which the request could not be processed.</p>
     #[doc(hidden)]
-    pub unprocessed_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl GetRemainingFreeTrialDaysOutput {
@@ -18,9 +17,7 @@ impl GetRemainingFreeTrialDaysOutput {
         self.accounts.as_deref()
     }
     /// <p>The member account that was included in a request but for which the request could not be processed.</p>
-    pub fn unprocessed_accounts(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedAccount]> {
+    pub fn unprocessed_accounts(&self) -> ::std::option::Option<&[crate::types::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for GetRemainingFreeTrialDaysOutput {
 }
 impl GetRemainingFreeTrialDaysOutput {
     /// Creates a new builder-style object to manufacture [`GetRemainingFreeTrialDaysOutput`](crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysOutput).
-    pub fn builder() -> crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysOutputBuilder{
+    pub fn builder() -> crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysOutputBuilder {
         crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRemainingFreeTrialDaysOutput`](crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRemainingFreeTrialDaysOutputBuilder {
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::AccountFreeTrialInfo>>,
-    pub(crate) unprocessed_accounts:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl GetRemainingFreeTrialDaysOutputBuilder {
@@ -60,17 +54,12 @@ impl GetRemainingFreeTrialDaysOutputBuilder {
         self
     }
     /// <p>The member accounts which were included in a request and were processed successfully.</p>
-    pub fn set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountFreeTrialInfo>>,
-    ) -> Self {
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountFreeTrialInfo>>) -> Self {
         self.accounts = input;
         self
     }
     /// <p>The member accounts which were included in a request and were processed successfully.</p>
-    pub fn get_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountFreeTrialInfo>> {
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountFreeTrialInfo>> {
         &self.accounts
     }
     /// Appends an item to `unprocessed_accounts`.
@@ -85,17 +74,12 @@ impl GetRemainingFreeTrialDaysOutputBuilder {
         self
     }
     /// <p>The member account that was included in a request but for which the request could not be processed.</p>
-    pub fn set_unprocessed_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
-    ) -> Self {
+    pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>) -> Self {
         self.unprocessed_accounts = input;
         self
     }
     /// <p>The member account that was included in a request but for which the request could not be processed.</p>
-    pub fn get_unprocessed_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+    pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
         &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -108,9 +92,7 @@ impl GetRemainingFreeTrialDaysOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRemainingFreeTrialDaysOutput`](crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysOutput {
+    pub fn build(self) -> crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysOutput {
         crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysOutput {
             accounts: self.accounts,
             unprocessed_accounts: self.unprocessed_accounts,

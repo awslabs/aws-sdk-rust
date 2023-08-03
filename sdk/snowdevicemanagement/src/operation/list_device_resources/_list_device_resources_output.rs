@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListDeviceResourcesOutput {
 }
 impl ListDeviceResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListDeviceResourcesOutput`](crate::operation::list_device_resources::ListDeviceResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_device_resources::builders::ListDeviceResourcesOutputBuilder {
-        crate::operation::list_device_resources::builders::ListDeviceResourcesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_device_resources::builders::ListDeviceResourcesOutputBuilder {
+        crate::operation::list_device_resources::builders::ListDeviceResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceResourcesOutput`](crate::operation::list_device_resources::ListDeviceResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceResourcesOutputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListDeviceResourcesOutputBuilder {
         self
     }
     /// <p>A structure defining the resource's type, Amazon Resource Name (ARN), and ID.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSummary>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSummary>>) -> Self {
         self.resources = input;
         self
     }
     /// <p>A structure defining the resource's type, Amazon Resource Name (ARN), and ID.</p>
-    pub fn get_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceSummary>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceSummary>> {
         &self.resources
     }
     /// <p>A pagination token to continue to the next page of results.</p>

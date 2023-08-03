@@ -38,13 +38,7 @@
 /// Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H264UnregisteredSeiTimecode {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for H264UnregisteredSeiTimecode {
         match s {
             "DISABLED" => H264UnregisteredSeiTimecode::Disabled,
             "ENABLED" => H264UnregisteredSeiTimecode::Enabled,
-            other => H264UnregisteredSeiTimecode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => H264UnregisteredSeiTimecode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

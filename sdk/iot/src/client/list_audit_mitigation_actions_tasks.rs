@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`tasks(Option<Vec<AuditMitigationActionsTaskMetadata>>)`](crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput::tasks): <p>The collection of audit mitigation tasks that matched the filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput::next_token): <p>The token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListAuditMitigationActionsTasksError>`](crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksError)
-    pub fn list_audit_mitigation_actions_tasks(&self) -> crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder{
+    pub fn list_audit_mitigation_actions_tasks(
+        &self,
+    ) -> crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder {
         crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::new(self.handle.clone())
     }
 }

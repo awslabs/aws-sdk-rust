@@ -30,9 +30,7 @@ impl SavingsPlansSavings {
 
 /// A builder for [`SavingsPlansSavings`](crate::types::SavingsPlansSavings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SavingsPlansSavingsBuilder {
     pub(crate) net_savings: ::std::option::Option<::std::string::String>,
     pub(crate) on_demand_cost_equivalent: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl SavingsPlansSavingsBuilder {
         &self.net_savings
     }
     /// <p>How much the amount that the usage would have cost if it was accrued at the On-Demand rate.</p>
-    pub fn on_demand_cost_equivalent(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn on_demand_cost_equivalent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.on_demand_cost_equivalent = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>How much the amount that the usage would have cost if it was accrued at the On-Demand rate.</p>
-    pub fn set_on_demand_cost_equivalent(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_on_demand_cost_equivalent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.on_demand_cost_equivalent = input;
         self
     }

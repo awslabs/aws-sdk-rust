@@ -44,9 +44,7 @@ impl PullRequestCreatedEventMetadata {
 
 /// A builder for [`PullRequestCreatedEventMetadata`](crate::types::PullRequestCreatedEventMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PullRequestCreatedEventMetadataBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_commit_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct PullRequestCreatedEventMetadataBuilder {
 }
 impl PullRequestCreatedEventMetadataBuilder {
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -75,18 +67,12 @@ impl PullRequestCreatedEventMetadataBuilder {
         &self.repository_name
     }
     /// <p>The commit ID on the source branch used when the pull request was created.</p>
-    pub fn source_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The commit ID on the source branch used when the pull request was created.</p>
-    pub fn set_source_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_commit_id = input;
         self
     }
@@ -95,18 +81,12 @@ impl PullRequestCreatedEventMetadataBuilder {
         &self.source_commit_id
     }
     /// <p>The commit ID of the tip of the branch specified as the destination branch when the pull request was created.</p>
-    pub fn destination_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The commit ID of the tip of the branch specified as the destination branch when the pull request was created.</p>
-    pub fn set_destination_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_commit_id = input;
         self
     }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyDbSubnetGroupOutput`](crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupOutput) with field(s):
     ///   - [`db_subnet_group(Option<DbSubnetGroup>)`](crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupOutput::db_subnet_group): <p>Detailed information about a subnet group. </p>
     /// - On failure, responds with [`SdkError<ModifyDBSubnetGroupError>`](crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError)
-    pub fn modify_db_subnet_group(
-        &self,
-    ) -> crate::operation::modify_db_subnet_group::builders::ModifyDBSubnetGroupFluentBuilder {
-        crate::operation::modify_db_subnet_group::builders::ModifyDBSubnetGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_db_subnet_group(&self) -> crate::operation::modify_db_subnet_group::builders::ModifyDBSubnetGroupFluentBuilder {
+        crate::operation::modify_db_subnet_group::builders::ModifyDBSubnetGroupFluentBuilder::new(self.handle.clone())
     }
 }

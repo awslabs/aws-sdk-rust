@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteSystemTemplateOutput`](crate::operation::delete_system_template::DeleteSystemTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteSystemTemplateError>`](crate::operation::delete_system_template::DeleteSystemTemplateError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn delete_system_template(
-        &self,
-    ) -> crate::operation::delete_system_template::builders::DeleteSystemTemplateFluentBuilder {
-        crate::operation::delete_system_template::builders::DeleteSystemTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_system_template(&self) -> crate::operation::delete_system_template::builders::DeleteSystemTemplateFluentBuilder {
+        crate::operation::delete_system_template::builders::DeleteSystemTemplateFluentBuilder::new(self.handle.clone())
     }
 }

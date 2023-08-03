@@ -26,7 +26,7 @@ impl DeleteNotificationSubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteNotificationSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_notification_subscription::builders::DeleteNotificationSubscriptionInputBuilder,
+    inner: crate::operation::delete_notification_subscription::builders::DeleteNotificationSubscriptionInputBuilder,
 }
 impl DeleteNotificationSubscriptionFluentBuilder {
     /// Creates a new `DeleteNotificationSubscription`.
@@ -37,7 +37,7 @@ impl DeleteNotificationSubscriptionFluentBuilder {
         }
     }
     /// Access the DeleteNotificationSubscription as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_notification_subscription::builders::DeleteNotificationSubscriptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_notification_subscription::builders::DeleteNotificationSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteNotificationSubscriptionFluentBuilder {
             crate::operation::delete_notification_subscription::DeleteNotificationSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteNotificationSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteNotificationSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteNotificationSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteNotificationSubscriptionFluentBuilder {
             crate::operation::delete_notification_subscription::DeleteNotificationSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the subscription.</p>
-    pub fn subscription_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_id(input.into());
         self
     }
     /// <p>The ID of the subscription.</p>
-    pub fn set_subscription_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl DeleteNotificationSubscriptionFluentBuilder {
         self.inner.get_subscription_id()
     }
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The ID of the organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

@@ -103,10 +103,7 @@ impl TerminologyDataBuilder {
         self
     }
     /// <p>The data format of the custom terminology.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::TerminologyDataFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::TerminologyDataFormat>) -> Self {
         self.format = input;
         self
     }
@@ -150,10 +147,7 @@ impl TerminologyDataBuilder {
     /// </dd>
     /// </dl>
     /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
-    pub fn set_directionality(
-        mut self,
-        input: ::std::option::Option<crate::types::Directionality>,
-    ) -> Self {
+    pub fn set_directionality(mut self, input: ::std::option::Option<crate::types::Directionality>) -> Self {
         self.directionality = input;
         self
     }

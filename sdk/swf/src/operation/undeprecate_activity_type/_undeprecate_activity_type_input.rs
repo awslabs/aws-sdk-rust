@@ -22,18 +22,14 @@ impl UndeprecateActivityTypeInput {
 }
 impl UndeprecateActivityTypeInput {
     /// Creates a new builder-style object to manufacture [`UndeprecateActivityTypeInput`](crate::operation::undeprecate_activity_type::UndeprecateActivityTypeInput).
-    pub fn builder(
-    ) -> crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeInputBuilder {
         crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`UndeprecateActivityTypeInput`](crate::operation::undeprecate_activity_type::UndeprecateActivityTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UndeprecateActivityTypeInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) activity_type: ::std::option::Option<crate::types::ActivityType>,
@@ -59,10 +55,7 @@ impl UndeprecateActivityTypeInputBuilder {
         self
     }
     /// <p>The activity type to undeprecate.</p>
-    pub fn set_activity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActivityType>,
-    ) -> Self {
+    pub fn set_activity_type(mut self, input: ::std::option::Option<crate::types::ActivityType>) -> Self {
         self.activity_type = input;
         self
     }
@@ -77,11 +70,9 @@ impl UndeprecateActivityTypeInputBuilder {
         crate::operation::undeprecate_activity_type::UndeprecateActivityTypeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::undeprecate_activity_type::UndeprecateActivityTypeInput {
-                domain: self.domain,
-                activity_type: self.activity_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::undeprecate_activity_type::UndeprecateActivityTypeInput {
+            domain: self.domain,
+            activity_type: self.activity_type,
+        })
     }
 }

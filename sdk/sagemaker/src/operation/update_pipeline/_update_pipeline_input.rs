@@ -14,8 +14,7 @@ pub struct UpdatePipelineInput {
     pub pipeline_definition: ::std::option::Option<::std::string::String>,
     /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
     #[doc(hidden)]
-    pub pipeline_definition_s3_location:
-        ::std::option::Option<crate::types::PipelineDefinitionS3Location>,
+    pub pipeline_definition_s3_location: ::std::option::Option<crate::types::PipelineDefinitionS3Location>,
     /// <p>The description of the pipeline.</p>
     #[doc(hidden)]
     pub pipeline_description: ::std::option::Option<::std::string::String>,
@@ -40,9 +39,7 @@ impl UpdatePipelineInput {
         self.pipeline_definition.as_deref()
     }
     /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
-    pub fn pipeline_definition_s3_location(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PipelineDefinitionS3Location> {
+    pub fn pipeline_definition_s3_location(&self) -> ::std::option::Option<&crate::types::PipelineDefinitionS3Location> {
         self.pipeline_definition_s3_location.as_ref()
     }
     /// <p>The description of the pipeline.</p>
@@ -54,9 +51,7 @@ impl UpdatePipelineInput {
         self.role_arn.as_deref()
     }
     /// <p>If specified, it applies to all executions of this pipeline by default.</p>
-    pub fn parallelism_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ParallelismConfiguration> {
+    pub fn parallelism_configuration(&self) -> ::std::option::Option<&crate::types::ParallelismConfiguration> {
         self.parallelism_configuration.as_ref()
     }
 }
@@ -69,34 +64,24 @@ impl UpdatePipelineInput {
 
 /// A builder for [`UpdatePipelineInput`](crate::operation::update_pipeline::UpdatePipelineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePipelineInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_definition: ::std::option::Option<::std::string::String>,
-    pub(crate) pipeline_definition_s3_location:
-        ::std::option::Option<crate::types::PipelineDefinitionS3Location>,
+    pub(crate) pipeline_definition_s3_location: ::std::option::Option<crate::types::PipelineDefinitionS3Location>,
     pub(crate) pipeline_description: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) parallelism_configuration:
-        ::std::option::Option<crate::types::ParallelismConfiguration>,
+    pub(crate) parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
 }
 impl UpdatePipelineInputBuilder {
     /// <p>The name of the pipeline to update.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline to update.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -105,18 +90,12 @@ impl UpdatePipelineInputBuilder {
         &self.pipeline_name
     }
     /// <p>The display name of the pipeline.</p>
-    pub fn pipeline_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the pipeline.</p>
-    pub fn set_pipeline_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_display_name = input;
         self
     }
@@ -125,18 +104,12 @@ impl UpdatePipelineInputBuilder {
         &self.pipeline_display_name
     }
     /// <p>The JSON pipeline definition.</p>
-    pub fn pipeline_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON pipeline definition.</p>
-    pub fn set_pipeline_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_definition = input;
         self
     }
@@ -145,40 +118,26 @@ impl UpdatePipelineInputBuilder {
         &self.pipeline_definition
     }
     /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
-    pub fn pipeline_definition_s3_location(
-        mut self,
-        input: crate::types::PipelineDefinitionS3Location,
-    ) -> Self {
+    pub fn pipeline_definition_s3_location(mut self, input: crate::types::PipelineDefinitionS3Location) -> Self {
         self.pipeline_definition_s3_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
-    pub fn set_pipeline_definition_s3_location(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineDefinitionS3Location>,
-    ) -> Self {
+    pub fn set_pipeline_definition_s3_location(mut self, input: ::std::option::Option<crate::types::PipelineDefinitionS3Location>) -> Self {
         self.pipeline_definition_s3_location = input;
         self
     }
     /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
-    pub fn get_pipeline_definition_s3_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipelineDefinitionS3Location> {
+    pub fn get_pipeline_definition_s3_location(&self) -> &::std::option::Option<crate::types::PipelineDefinitionS3Location> {
         &self.pipeline_definition_s3_location
     }
     /// <p>The description of the pipeline.</p>
-    pub fn pipeline_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the pipeline.</p>
-    pub fn set_pipeline_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_description = input;
         self
     }
@@ -201,34 +160,23 @@ impl UpdatePipelineInputBuilder {
         &self.role_arn
     }
     /// <p>If specified, it applies to all executions of this pipeline by default.</p>
-    pub fn parallelism_configuration(
-        mut self,
-        input: crate::types::ParallelismConfiguration,
-    ) -> Self {
+    pub fn parallelism_configuration(mut self, input: crate::types::ParallelismConfiguration) -> Self {
         self.parallelism_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>If specified, it applies to all executions of this pipeline by default.</p>
-    pub fn set_parallelism_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelismConfiguration>,
-    ) -> Self {
+    pub fn set_parallelism_configuration(mut self, input: ::std::option::Option<crate::types::ParallelismConfiguration>) -> Self {
         self.parallelism_configuration = input;
         self
     }
     /// <p>If specified, it applies to all executions of this pipeline by default.</p>
-    pub fn get_parallelism_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
+    pub fn get_parallelism_configuration(&self) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
         &self.parallelism_configuration
     }
     /// Consumes the builder and constructs a [`UpdatePipelineInput`](crate::operation::update_pipeline::UpdatePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pipeline::UpdatePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_pipeline::UpdatePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pipeline::UpdatePipelineInput {
             pipeline_name: self.pipeline_name,
             pipeline_display_name: self.pipeline_display_name,

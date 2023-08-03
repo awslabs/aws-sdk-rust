@@ -27,7 +27,7 @@ impl GetFunctionConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFunctionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_function_configuration::builders::GetFunctionConfigurationInputBuilder,
+    inner: crate::operation::get_function_configuration::builders::GetFunctionConfigurationInputBuilder,
 }
 impl GetFunctionConfigurationFluentBuilder {
     /// Creates a new `GetFunctionConfiguration`.
@@ -38,10 +38,7 @@ impl GetFunctionConfigurationFluentBuilder {
         }
     }
     /// Access the GetFunctionConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_function_configuration::builders::GetFunctionConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_function_configuration::builders::GetFunctionConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl GetFunctionConfigurationFluentBuilder {
             crate::operation::get_function_configuration::GetFunctionConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_function_configuration::GetFunctionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_function_configuration::GetFunctionConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl GetFunctionConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl GetFunctionConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_function_configuration::GetFunctionConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_function_configuration::GetFunctionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_function_configuration::GetFunctionConfigurationError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl GetFunctionConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_function_configuration::GetFunctionConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_function_configuration::GetFunctionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_function_configuration::GetFunctionConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl GetFunctionConfigurationFluentBuilder {
             crate::operation::get_function_configuration::GetFunctionConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_function_configuration::GetFunctionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_function_configuration::GetFunctionConfigurationError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +118,7 @@ impl GetFunctionConfigurationFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -147,10 +130,7 @@ impl GetFunctionConfigurationFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }

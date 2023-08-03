@@ -26,7 +26,7 @@ impl CreateEnvironmentMembershipInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEnvironmentMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipInputBuilder,
+    inner: crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipInputBuilder,
 }
 impl CreateEnvironmentMembershipFluentBuilder {
     /// Creates a new `CreateEnvironmentMembership`.
@@ -37,7 +37,7 @@ impl CreateEnvironmentMembershipFluentBuilder {
         }
     }
     /// Access the CreateEnvironmentMembership as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateEnvironmentMembershipFluentBuilder {
             crate::operation::create_environment_membership::CreateEnvironmentMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment_membership::CreateEnvironmentMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment_membership::CreateEnvironmentMembershipError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateEnvironmentMembershipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateEnvironmentMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_environment_membership::CreateEnvironmentMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment_membership::CreateEnvironmentMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment_membership::CreateEnvironmentMembershipError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateEnvironmentMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_environment_membership::CreateEnvironmentMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment_membership::CreateEnvironmentMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment_membership::CreateEnvironmentMembershipError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateEnvironmentMembershipFluentBuilder {
             crate::operation::create_environment_membership::CreateEnvironmentMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment_membership::CreateEnvironmentMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment_membership::CreateEnvironmentMembershipError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the environment that contains the environment member you want to add.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>The ID of the environment that contains the environment member you want to add.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -168,10 +151,7 @@ impl CreateEnvironmentMembershipFluentBuilder {
     /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberPermissions>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::MemberPermissions>) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }

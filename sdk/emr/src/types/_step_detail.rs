@@ -17,9 +17,7 @@ impl StepDetail {
         self.step_config.as_ref()
     }
     /// <p>The description of the step status.</p>
-    pub fn execution_status_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StepExecutionStatusDetail> {
+    pub fn execution_status_detail(&self) -> ::std::option::Option<&crate::types::StepExecutionStatusDetail> {
         self.execution_status_detail.as_ref()
     }
 }
@@ -32,13 +30,10 @@ impl StepDetail {
 
 /// A builder for [`StepDetail`](crate::types::StepDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StepDetailBuilder {
     pub(crate) step_config: ::std::option::Option<crate::types::StepConfig>,
-    pub(crate) execution_status_detail:
-        ::std::option::Option<crate::types::StepExecutionStatusDetail>,
+    pub(crate) execution_status_detail: ::std::option::Option<crate::types::StepExecutionStatusDetail>,
 }
 impl StepDetailBuilder {
     /// <p>The step configuration.</p>
@@ -47,10 +42,7 @@ impl StepDetailBuilder {
         self
     }
     /// <p>The step configuration.</p>
-    pub fn set_step_config(
-        mut self,
-        input: ::std::option::Option<crate::types::StepConfig>,
-    ) -> Self {
+    pub fn set_step_config(mut self, input: ::std::option::Option<crate::types::StepConfig>) -> Self {
         self.step_config = input;
         self
     }
@@ -59,25 +51,17 @@ impl StepDetailBuilder {
         &self.step_config
     }
     /// <p>The description of the step status.</p>
-    pub fn execution_status_detail(
-        mut self,
-        input: crate::types::StepExecutionStatusDetail,
-    ) -> Self {
+    pub fn execution_status_detail(mut self, input: crate::types::StepExecutionStatusDetail) -> Self {
         self.execution_status_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>The description of the step status.</p>
-    pub fn set_execution_status_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::StepExecutionStatusDetail>,
-    ) -> Self {
+    pub fn set_execution_status_detail(mut self, input: ::std::option::Option<crate::types::StepExecutionStatusDetail>) -> Self {
         self.execution_status_detail = input;
         self
     }
     /// <p>The description of the step status.</p>
-    pub fn get_execution_status_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::StepExecutionStatusDetail> {
+    pub fn get_execution_status_detail(&self) -> &::std::option::Option<crate::types::StepExecutionStatusDetail> {
         &self.execution_status_detail
     }
     /// Consumes the builder and constructs a [`StepDetail`](crate::types::StepDetail).

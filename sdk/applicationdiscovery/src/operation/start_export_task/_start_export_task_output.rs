@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartExportTaskOutput {
 }
 impl StartExportTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartExportTaskOutput`](crate::operation::start_export_task::StartExportTaskOutput).
-    pub fn builder() -> crate::operation::start_export_task::builders::StartExportTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_export_task::builders::StartExportTaskOutputBuilder {
         crate::operation::start_export_task::builders::StartExportTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartExportTaskOutput`](crate::operation::start_export_task::StartExportTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartExportTaskOutputBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

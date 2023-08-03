@@ -43,9 +43,7 @@ impl ListChannelsInput {
 
 /// A builder for [`ListChannelsInput`](crate::operation::list_channels::ListChannelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChannelsInputBuilder {
     pub(crate) filter_by_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter_by_recording_configuration_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct ListChannelsInputBuilder {
 }
 impl ListChannelsInputBuilder {
     /// <p>Filters the channel list to match the specified name.</p>
-    pub fn filter_by_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_by_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_by_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters the channel list to match the specified name.</p>
-    pub fn set_filter_by_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_by_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_by_name = input;
         self
     }
@@ -74,25 +66,17 @@ impl ListChannelsInputBuilder {
         &self.filter_by_name
     }
     /// <p>Filters the channel list to match the specified recording-configuration ARN.</p>
-    pub fn filter_by_recording_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_by_recording_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_by_recording_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters the channel list to match the specified recording-configuration ARN.</p>
-    pub fn set_filter_by_recording_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_by_recording_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_by_recording_configuration_arn = input;
         self
     }
     /// <p>Filters the channel list to match the specified recording-configuration ARN.</p>
-    pub fn get_filter_by_recording_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_filter_by_recording_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.filter_by_recording_configuration_arn
     }
     /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
@@ -124,12 +108,7 @@ impl ListChannelsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListChannelsInput`](crate::operation::list_channels::ListChannelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_channels::ListChannelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_channels::ListChannelsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_channels::ListChannelsInput {
             filter_by_name: self.filter_by_name,
             filter_by_recording_configuration_arn: self.filter_by_recording_configuration_arn,

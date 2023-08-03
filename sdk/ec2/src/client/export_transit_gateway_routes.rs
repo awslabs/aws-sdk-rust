@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`ExportTransitGatewayRoutesOutput`](crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput) with field(s):
     ///   - [`s3_location(Option<String>)`](crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput::s3_location): <p>The URL of the exported file in Amazon S3. For example, s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
     /// - On failure, responds with [`SdkError<ExportTransitGatewayRoutesError>`](crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError)
-    pub fn export_transit_gateway_routes(&self) -> crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesFluentBuilder{
+    pub fn export_transit_gateway_routes(
+        &self,
+    ) -> crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesFluentBuilder {
         crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesFluentBuilder::new(self.handle.clone())
     }
 }

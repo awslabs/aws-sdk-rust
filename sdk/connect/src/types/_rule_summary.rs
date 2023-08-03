@@ -72,17 +72,14 @@ impl RuleSummary {
 
 /// A builder for [`RuleSummary`](crate::types::RuleSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_source_name: ::std::option::Option<crate::types::EventSourceName>,
     pub(crate) publish_status: ::std::option::Option<crate::types::RulePublishStatus>,
-    pub(crate) action_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>,
+    pub(crate) action_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -135,10 +132,7 @@ impl RuleSummaryBuilder {
         self
     }
     /// <p>The name of the event source.</p>
-    pub fn set_event_source_name(
-        mut self,
-        input: ::std::option::Option<crate::types::EventSourceName>,
-    ) -> Self {
+    pub fn set_event_source_name(mut self, input: ::std::option::Option<crate::types::EventSourceName>) -> Self {
         self.event_source_name = input;
         self
     }
@@ -152,10 +146,7 @@ impl RuleSummaryBuilder {
         self
     }
     /// <p>The publish status of the rule.</p>
-    pub fn set_publish_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RulePublishStatus>,
-    ) -> Self {
+    pub fn set_publish_status(mut self, input: ::std::option::Option<crate::types::RulePublishStatus>) -> Self {
         self.publish_status = input;
         self
     }
@@ -175,17 +166,12 @@ impl RuleSummaryBuilder {
         self
     }
     /// <p>A list of ActionTypes associated with a rule. </p>
-    pub fn set_action_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>,
-    ) -> Self {
+    pub fn set_action_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>) -> Self {
         self.action_summaries = input;
         self
     }
     /// <p>A list of ActionTypes associated with a rule. </p>
-    pub fn get_action_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
+    pub fn get_action_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
         &self.action_summaries
     }
     /// <p>The timestamp for when the rule was created. </p>
@@ -194,10 +180,7 @@ impl RuleSummaryBuilder {
         self
     }
     /// <p>The timestamp for when the rule was created. </p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -211,10 +194,7 @@ impl RuleSummaryBuilder {
         self
     }
     /// <p>The timestamp for when the rule was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }

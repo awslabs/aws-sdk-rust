@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateTaskSetOutput`](crate::operation::update_task_set::UpdateTaskSetOutput) with field(s):
     ///   - [`task_set(Option<TaskSet>)`](crate::operation::update_task_set::UpdateTaskSetOutput::task_set): <p>Details about the task set.</p>
     /// - On failure, responds with [`SdkError<UpdateTaskSetError>`](crate::operation::update_task_set::UpdateTaskSetError)
-    pub fn update_task_set(
-        &self,
-    ) -> crate::operation::update_task_set::builders::UpdateTaskSetFluentBuilder {
-        crate::operation::update_task_set::builders::UpdateTaskSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_task_set(&self) -> crate::operation::update_task_set::builders::UpdateTaskSetFluentBuilder {
+        crate::operation::update_task_set::builders::UpdateTaskSetFluentBuilder::new(self.handle.clone())
     }
 }

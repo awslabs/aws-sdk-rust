@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`matching_resources(Option<Vec<MatchingResource>>)`](crate::operation::search_resources::SearchResourcesOutput::matching_resources): <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_resources::SearchResourcesOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     /// - On failure, responds with [`SdkError<SearchResourcesError>`](crate::operation::search_resources::SearchResourcesError)
-    pub fn search_resources(
-        &self,
-    ) -> crate::operation::search_resources::builders::SearchResourcesFluentBuilder {
-        crate::operation::search_resources::builders::SearchResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_resources(&self) -> crate::operation::search_resources::builders::SearchResourcesFluentBuilder {
+        crate::operation::search_resources::builders::SearchResourcesFluentBuilder::new(self.handle.clone())
     }
 }

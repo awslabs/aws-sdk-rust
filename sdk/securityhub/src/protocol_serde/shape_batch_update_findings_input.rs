@@ -39,10 +39,7 @@ pub fn ser_batch_update_findings_input(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_related_finding::ser_related_finding(
-                    &mut object_12,
-                    item_11,
-                )?;
+                crate::protocol_serde::shape_related_finding::ser_related_finding(&mut object_12, item_11)?;
                 object_12.finish();
             }
         }

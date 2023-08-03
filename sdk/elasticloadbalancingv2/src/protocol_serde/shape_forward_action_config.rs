@@ -11,9 +11,7 @@ pub fn ser_forward_action_config(
         for item_3 in var_2 {
             #[allow(unused_mut)]
             let mut entry_5 = list_4.entry();
-            crate::protocol_serde::shape_target_group_tuple::ser_target_group_tuple(
-                entry_5, item_3,
-            )?;
+            crate::protocol_serde::shape_target_group_tuple::ser_target_group_tuple(entry_5, item_3)?;
         }
         list_4.finish();
     }

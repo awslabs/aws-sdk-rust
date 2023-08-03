@@ -70,9 +70,7 @@ impl DescribeCacheOutput {
 
 /// A builder for [`DescribeCacheOutput`](crate::operation::describe_cache::DescribeCacheOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCacheOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) disk_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -110,10 +108,7 @@ impl DescribeCacheOutputBuilder {
         self
     }
     /// <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
-    pub fn set_disk_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_disk_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.disk_ids = input;
         self
     }

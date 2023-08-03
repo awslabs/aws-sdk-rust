@@ -21,10 +21,7 @@ pub fn ser_create_edge_packaging_job_input(
     if let Some(var_6) = &input.output_config {
         #[allow(unused_mut)]
         let mut object_7 = object.key("OutputConfig").start_object();
-        crate::protocol_serde::shape_edge_output_config::ser_edge_output_config(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_edge_output_config::ser_edge_output_config(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.resource_key {

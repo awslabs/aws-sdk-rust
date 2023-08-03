@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAllowListOutput {
 }
 impl DeleteAllowListOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAllowListOutput`](crate::operation::delete_allow_list::DeleteAllowListOutput).
-    pub fn builder() -> crate::operation::delete_allow_list::builders::DeleteAllowListOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_allow_list::builders::DeleteAllowListOutputBuilder {
         crate::operation::delete_allow_list::builders::DeleteAllowListOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAllowListOutput`](crate::operation::delete_allow_list::DeleteAllowListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAllowListOutputBuilder {
     _request_id: Option<String>,
 }

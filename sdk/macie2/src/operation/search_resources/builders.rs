@@ -10,10 +10,7 @@ impl SearchResourcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_resources::SearchResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_resources::SearchResourcesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_resources::SearchResourcesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_resources();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SearchResourcesFluentBuilder {
         }
     }
     /// Access the SearchResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_resources::builders::SearchResourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_resources::builders::SearchResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SearchResourcesFluentBuilder {
             crate::operation::search_resources::SearchResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_resources::SearchResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_resources::SearchResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SearchResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SearchResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_resources::SearchResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_resources::SearchResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_resources::SearchResourcesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SearchResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_resources::SearchResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_resources::SearchResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_resources::SearchResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl SearchResourcesFluentBuilder {
             crate::operation::search_resources::SearchResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_resources::SearchResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_resources::SearchResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_resources::paginator::SearchResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_resources::paginator::SearchResourcesPaginator {
-        crate::operation::search_resources::paginator::SearchResourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_resources::paginator::SearchResourcesPaginator {
+        crate::operation::search_resources::paginator::SearchResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p>
     pub fn bucket_criteria(mut self, input: crate::types::SearchResourcesBucketCriteria) -> Self {
@@ -139,17 +118,12 @@ impl SearchResourcesFluentBuilder {
         self
     }
     /// <p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p>
-    pub fn set_bucket_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchResourcesBucketCriteria>,
-    ) -> Self {
+    pub fn set_bucket_criteria(mut self, input: ::std::option::Option<crate::types::SearchResourcesBucketCriteria>) -> Self {
         self.inner = self.inner.set_bucket_criteria(input);
         self
     }
     /// <p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p>
-    pub fn get_bucket_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::SearchResourcesBucketCriteria> {
+    pub fn get_bucket_criteria(&self) -> &::std::option::Option<crate::types::SearchResourcesBucketCriteria> {
         self.inner.get_bucket_criteria()
     }
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
@@ -186,17 +160,12 @@ impl SearchResourcesFluentBuilder {
         self
     }
     /// <p>The criteria to use to sort the results.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchResourcesSortCriteria>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::SearchResourcesSortCriteria>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }
     /// <p>The criteria to use to sort the results.</p>
-    pub fn get_sort_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::SearchResourcesSortCriteria> {
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::SearchResourcesSortCriteria> {
         self.inner.get_sort_criteria()
     }
 }

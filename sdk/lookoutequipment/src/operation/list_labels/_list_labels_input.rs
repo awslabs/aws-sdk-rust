@@ -64,9 +64,7 @@ impl ListLabelsInput {
 
 /// A builder for [`ListLabelsInput`](crate::operation::list_labels::ListLabelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLabelsInputBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) interval_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -78,18 +76,12 @@ pub struct ListLabelsInputBuilder {
 }
 impl ListLabelsInputBuilder {
     /// <p> Retruns the name of the label group. </p>
-    pub fn label_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Retruns the name of the label group. </p>
-    pub fn set_label_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_name = input;
         self
     }
@@ -103,10 +95,7 @@ impl ListLabelsInputBuilder {
         self
     }
     /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
-    pub fn set_interval_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_interval_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.interval_start_time = input;
         self
     }
@@ -120,10 +109,7 @@ impl ListLabelsInputBuilder {
         self
     }
     /// <p> Returns all labels with a start time earlier than the end time given. </p>
-    pub fn set_interval_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_interval_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.interval_end_time = input;
         self
     }
@@ -188,12 +174,7 @@ impl ListLabelsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListLabelsInput`](crate::operation::list_labels::ListLabelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_labels::ListLabelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_labels::ListLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_labels::ListLabelsInput {
             label_group_name: self.label_group_name,
             interval_start_time: self.interval_start_time,

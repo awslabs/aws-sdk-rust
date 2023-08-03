@@ -6,9 +6,7 @@
 pub struct AwsCertificateManagerCertificateRenewalSummary {
     /// <p>Information about the validation of each domain name in the certificate, as it pertains to Certificate Manager managed renewal. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
     #[doc(hidden)]
-    pub domain_validation_options: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
-    >,
+    pub domain_validation_options: ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>>,
     /// <p>The status of the Certificate Manager managed renewal of the certificate.</p>
     /// <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> | <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code> </p>
     #[doc(hidden)]
@@ -24,11 +22,7 @@ pub struct AwsCertificateManagerCertificateRenewalSummary {
 }
 impl AwsCertificateManagerCertificateRenewalSummary {
     /// <p>Information about the validation of each domain name in the certificate, as it pertains to Certificate Manager managed renewal. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    pub fn domain_validation_options(
-        &self,
-    ) -> ::std::option::Option<
-        &[crate::types::AwsCertificateManagerCertificateDomainValidationOption],
-    > {
+    pub fn domain_validation_options(&self) -> ::std::option::Option<&[crate::types::AwsCertificateManagerCertificateDomainValidationOption]> {
         self.domain_validation_options.as_deref()
     }
     /// <p>The status of the Certificate Manager managed renewal of the certificate.</p>
@@ -49,21 +43,17 @@ impl AwsCertificateManagerCertificateRenewalSummary {
 }
 impl AwsCertificateManagerCertificateRenewalSummary {
     /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateRenewalSummary`](crate::types::AwsCertificateManagerCertificateRenewalSummary).
-    pub fn builder() -> crate::types::builders::AwsCertificateManagerCertificateRenewalSummaryBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsCertificateManagerCertificateRenewalSummaryBuilder {
         crate::types::builders::AwsCertificateManagerCertificateRenewalSummaryBuilder::default()
     }
 }
 
 /// A builder for [`AwsCertificateManagerCertificateRenewalSummary`](crate::types::AwsCertificateManagerCertificateRenewalSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCertificateManagerCertificateRenewalSummaryBuilder {
-    pub(crate) domain_validation_options: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
-    >,
+    pub(crate) domain_validation_options:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>>,
     pub(crate) renewal_status: ::std::option::Option<::std::string::String>,
     pub(crate) renewal_status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::std::string::String>,
@@ -74,10 +64,7 @@ impl AwsCertificateManagerCertificateRenewalSummaryBuilder {
     /// To override the contents of this collection use [`set_domain_validation_options`](Self::set_domain_validation_options).
     ///
     /// <p>Information about the validation of each domain name in the certificate, as it pertains to Certificate Manager managed renewal. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    pub fn domain_validation_options(
-        mut self,
-        input: crate::types::AwsCertificateManagerCertificateDomainValidationOption,
-    ) -> Self {
+    pub fn domain_validation_options(mut self, input: crate::types::AwsCertificateManagerCertificateDomainValidationOption) -> Self {
         let mut v = self.domain_validation_options.unwrap_or_default();
         v.push(input);
         self.domain_validation_options = ::std::option::Option::Some(v);
@@ -86,9 +73,7 @@ impl AwsCertificateManagerCertificateRenewalSummaryBuilder {
     /// <p>Information about the validation of each domain name in the certificate, as it pertains to Certificate Manager managed renewal. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
     pub fn set_domain_validation_options(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>>,
     ) -> Self {
         self.domain_validation_options = input;
         self
@@ -96,26 +81,18 @@ impl AwsCertificateManagerCertificateRenewalSummaryBuilder {
     /// <p>Information about the validation of each domain name in the certificate, as it pertains to Certificate Manager managed renewal. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
     pub fn get_domain_validation_options(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>> {
         &self.domain_validation_options
     }
     /// <p>The status of the Certificate Manager managed renewal of the certificate.</p>
     /// <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> | <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code> </p>
-    pub fn renewal_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn renewal_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.renewal_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the Certificate Manager managed renewal of the certificate.</p>
     /// <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> | <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code> </p>
-    pub fn set_renewal_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_renewal_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.renewal_status = input;
         self
     }
@@ -126,19 +103,13 @@ impl AwsCertificateManagerCertificateRenewalSummaryBuilder {
     }
     /// <p>The reason that a renewal request was unsuccessful. This attribute is used only when <code>RenewalStatus</code> is <code>FAILED</code>.</p>
     /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
-    pub fn renewal_status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn renewal_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.renewal_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason that a renewal request was unsuccessful. This attribute is used only when <code>RenewalStatus</code> is <code>FAILED</code>.</p>
     /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
-    pub fn set_renewal_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_renewal_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.renewal_status_reason = input;
         self
     }

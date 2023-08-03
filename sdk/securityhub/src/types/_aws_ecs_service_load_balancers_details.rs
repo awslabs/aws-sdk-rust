@@ -48,9 +48,7 @@ impl AwsEcsServiceLoadBalancersDetails {
 
 /// A builder for [`AwsEcsServiceLoadBalancersDetails`](crate::types::AwsEcsServiceLoadBalancersDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsServiceLoadBalancersDetailsBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
     pub(crate) container_port: ::std::option::Option<i32>,
@@ -59,18 +57,12 @@ pub struct AwsEcsServiceLoadBalancersDetailsBuilder {
 }
 impl AwsEcsServiceLoadBalancersDetailsBuilder {
     /// <p>The name of the container to associate with the load balancer.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container to associate with the load balancer.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
@@ -94,19 +86,13 @@ impl AwsEcsServiceLoadBalancersDetailsBuilder {
     }
     /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
     /// <p>Only specified when using a Classic Load Balancer. For an Application Load Balancer or a Network Load Balancer, the load balancer name is omitted.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
     /// <p>Only specified when using a Classic Load Balancer. For an Application Load Balancer or a Network Load Balancer, the load balancer name is omitted.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -117,19 +103,13 @@ impl AwsEcsServiceLoadBalancersDetailsBuilder {
     }
     /// <p>The ARN of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
     /// <p>Only specified when using an Application Load Balancer or a Network Load Balancer. For a Classic Load Balancer, the target group ARN is omitted.</p>
-    pub fn target_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
     /// <p>Only specified when using an Application Load Balancer or a Network Load Balancer. For a Classic Load Balancer, the target group ARN is omitted.</p>
-    pub fn set_target_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_group_arn = input;
         self
     }

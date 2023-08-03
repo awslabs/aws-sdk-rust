@@ -10,10 +10,7 @@ impl GetDevEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_dev_endpoint::GetDevEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dev_endpoint::GetDevEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dev_endpoint::GetDevEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_dev_endpoint();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetDevEndpointFluentBuilder {
         }
     }
     /// Access the GetDevEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_dev_endpoint::builders::GetDevEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_dev_endpoint::builders::GetDevEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl GetDevEndpointFluentBuilder {
             crate::operation::get_dev_endpoint::GetDevEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dev_endpoint::GetDevEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dev_endpoint::GetDevEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl GetDevEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl GetDevEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_dev_endpoint::GetDevEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dev_endpoint::GetDevEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dev_endpoint::GetDevEndpointError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl GetDevEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_dev_endpoint::GetDevEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dev_endpoint::GetDevEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dev_endpoint::GetDevEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl GetDevEndpointFluentBuilder {
             crate::operation::get_dev_endpoint::GetDevEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_dev_endpoint::GetDevEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_dev_endpoint::GetDevEndpointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
         self
     }
     /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }

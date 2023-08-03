@@ -18,10 +18,7 @@ pub fn ser_create_job_input(
     if let Some(var_5) = &input.execution_property {
         #[allow(unused_mut)]
         let mut object_6 = object.key("ExecutionProperty").start_object();
-        crate::protocol_serde::shape_execution_property::ser_execution_property(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_execution_property::ser_execution_property(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.command {
@@ -53,10 +50,7 @@ pub fn ser_create_job_input(
     if let Some(var_17) = &input.connections {
         #[allow(unused_mut)]
         let mut object_18 = object.key("Connections").start_object();
-        crate::protocol_serde::shape_connections_list::ser_connections_list(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_connections_list::ser_connections_list(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.max_retries {
@@ -99,10 +93,7 @@ pub fn ser_create_job_input(
     if let Some(var_28) = &input.notification_property {
         #[allow(unused_mut)]
         let mut object_29 = object.key("NotificationProperty").start_object();
-        crate::protocol_serde::shape_notification_property::ser_notification_property(
-            &mut object_29,
-            var_28,
-        )?;
+        crate::protocol_serde::shape_notification_property::ser_notification_property(&mut object_29, var_28)?;
         object_29.finish();
     }
     if let Some(var_30) = &input.glue_version {
@@ -136,10 +127,7 @@ pub fn ser_create_job_input(
     if let Some(var_39) = &input.source_control_details {
         #[allow(unused_mut)]
         let mut object_40 = object.key("SourceControlDetails").start_object();
-        crate::protocol_serde::shape_source_control_details::ser_source_control_details(
-            &mut object_40,
-            var_39,
-        )?;
+        crate::protocol_serde::shape_source_control_details::ser_source_control_details(&mut object_40, var_39)?;
         object_40.finish();
     }
     Ok(())

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_product::builders::DeleteProductFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_product::builders::DeleteProductFluentBuilder::set_id): <p>The product identifier.</p>
     /// - On success, responds with [`DeleteProductOutput`](crate::operation::delete_product::DeleteProductOutput)
     /// - On failure, responds with [`SdkError<DeleteProductError>`](crate::operation::delete_product::DeleteProductError)
-    pub fn delete_product(
-        &self,
-    ) -> crate::operation::delete_product::builders::DeleteProductFluentBuilder {
-        crate::operation::delete_product::builders::DeleteProductFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_product(&self) -> crate::operation::delete_product::builders::DeleteProductFluentBuilder {
+        crate::operation::delete_product::builders::DeleteProductFluentBuilder::new(self.handle.clone())
     }
 }

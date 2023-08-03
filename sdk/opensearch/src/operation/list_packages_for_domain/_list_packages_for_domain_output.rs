@@ -6,8 +6,7 @@
 pub struct ListPackagesForDomainOutput {
     /// <p>List of all packages associated with a domain.</p>
     #[doc(hidden)]
-    pub domain_package_details_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
+    pub domain_package_details_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListPackagesForDomainOutput {
 }
 impl ListPackagesForDomainOutput {
     /// <p>List of all packages associated with a domain.</p>
-    pub fn domain_package_details_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DomainPackageDetails]> {
+    pub fn domain_package_details_list(&self) -> ::std::option::Option<&[crate::types::DomainPackageDetails]> {
         self.domain_package_details_list.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -32,21 +29,16 @@ impl ::aws_http::request_id::RequestId for ListPackagesForDomainOutput {
 }
 impl ListPackagesForDomainOutput {
     /// Creates a new builder-style object to manufacture [`ListPackagesForDomainOutput`](crate::operation::list_packages_for_domain::ListPackagesForDomainOutput).
-    pub fn builder(
-    ) -> crate::operation::list_packages_for_domain::builders::ListPackagesForDomainOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_packages_for_domain::builders::ListPackagesForDomainOutputBuilder {
         crate::operation::list_packages_for_domain::builders::ListPackagesForDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPackagesForDomainOutput`](crate::operation::list_packages_for_domain::ListPackagesForDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackagesForDomainOutputBuilder {
-    pub(crate) domain_package_details_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
+    pub(crate) domain_package_details_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -56,27 +48,19 @@ impl ListPackagesForDomainOutputBuilder {
     /// To override the contents of this collection use [`set_domain_package_details_list`](Self::set_domain_package_details_list).
     ///
     /// <p>List of all packages associated with a domain.</p>
-    pub fn domain_package_details_list(
-        mut self,
-        input: crate::types::DomainPackageDetails,
-    ) -> Self {
+    pub fn domain_package_details_list(mut self, input: crate::types::DomainPackageDetails) -> Self {
         let mut v = self.domain_package_details_list.unwrap_or_default();
         v.push(input);
         self.domain_package_details_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of all packages associated with a domain.</p>
-    pub fn set_domain_package_details_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
-    ) -> Self {
+    pub fn set_domain_package_details_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>) -> Self {
         self.domain_package_details_list = input;
         self
     }
     /// <p>List of all packages associated with a domain.</p>
-    pub fn get_domain_package_details_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>> {
+    pub fn get_domain_package_details_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>> {
         &self.domain_package_details_list
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>

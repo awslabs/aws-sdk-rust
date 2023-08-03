@@ -63,9 +63,7 @@ impl GeoLocation {
 
 /// A builder for [`GeoLocation`](crate::types::GeoLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeoLocationBuilder {
     pub(crate) continent_code: ::std::option::Option<::std::string::String>,
     pub(crate) country_code: ::std::option::Option<::std::string::String>,
@@ -84,10 +82,7 @@ impl GeoLocationBuilder {
     /// <li> <p> <b>SA</b>: South America</p> </li>
     /// </ul>
     /// <p>Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
-    pub fn continent_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn continent_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.continent_code = ::std::option::Option::Some(input.into());
         self
     }
@@ -103,10 +98,7 @@ impl GeoLocationBuilder {
     /// <li> <p> <b>SA</b>: South America</p> </li>
     /// </ul>
     /// <p>Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
-    pub fn set_continent_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_continent_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.continent_code = input;
         self
     }
@@ -144,19 +136,13 @@ impl GeoLocationBuilder {
     }
     /// <p>For geolocation resource record sets, the two-letter code for a state of the United States. Route 53 doesn't support any other values for <code>SubdivisionCode</code>. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. </p>
     /// <p>If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>. </p>
-    pub fn subdivision_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subdivision_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subdivision_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For geolocation resource record sets, the two-letter code for a state of the United States. Route 53 doesn't support any other values for <code>SubdivisionCode</code>. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. </p>
     /// <p>If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>. </p>
-    pub fn set_subdivision_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subdivision_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subdivision_code = input;
         self
     }

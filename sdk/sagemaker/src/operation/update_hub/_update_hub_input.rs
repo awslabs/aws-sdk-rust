@@ -43,9 +43,7 @@ impl UpdateHubInput {
 
 /// A builder for [`UpdateHubInput`](crate::operation::update_hub::UpdateHubInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateHubInputBuilder {
     pub(crate) hub_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_description: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl UpdateHubInputBuilder {
         &self.hub_name
     }
     /// <p>A description of the updated hub.</p>
-    pub fn hub_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the updated hub.</p>
-    pub fn set_hub_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_description = input;
         self
     }
@@ -88,18 +80,12 @@ impl UpdateHubInputBuilder {
         &self.hub_description
     }
     /// <p>The display name of the hub.</p>
-    pub fn hub_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the hub.</p>
-    pub fn set_hub_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hub_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hub_display_name = input;
         self
     }
@@ -112,36 +98,23 @@ impl UpdateHubInputBuilder {
     /// To override the contents of this collection use [`set_hub_search_keywords`](Self::set_hub_search_keywords).
     ///
     /// <p>The searchable keywords for the hub.</p>
-    pub fn hub_search_keywords(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hub_search_keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hub_search_keywords.unwrap_or_default();
         v.push(input.into());
         self.hub_search_keywords = ::std::option::Option::Some(v);
         self
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn set_hub_search_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_hub_search_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.hub_search_keywords = input;
         self
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn get_hub_search_keywords(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hub_search_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.hub_search_keywords
     }
     /// Consumes the builder and constructs a [`UpdateHubInput`](crate::operation::update_hub::UpdateHubInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_hub::UpdateHubInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_hub::UpdateHubInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_hub::UpdateHubInput {
             hub_name: self.hub_name,
             hub_description: self.hub_description,

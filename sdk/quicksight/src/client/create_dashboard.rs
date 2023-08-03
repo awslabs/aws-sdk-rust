@@ -22,11 +22,7 @@ impl super::Client {
     ///   - [`status(i32)`](crate::operation::create_dashboard::CreateDashboardOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::create_dashboard::CreateDashboardOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     /// - On failure, responds with [`SdkError<CreateDashboardError>`](crate::operation::create_dashboard::CreateDashboardError)
-    pub fn create_dashboard(
-        &self,
-    ) -> crate::operation::create_dashboard::builders::CreateDashboardFluentBuilder {
-        crate::operation::create_dashboard::builders::CreateDashboardFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_dashboard(&self) -> crate::operation::create_dashboard::builders::CreateDashboardFluentBuilder {
+        crate::operation::create_dashboard::builders::CreateDashboardFluentBuilder::new(self.handle.clone())
     }
 }

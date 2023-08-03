@@ -15,17 +15,14 @@ impl DeleteSystemInstanceInput {
 }
 impl DeleteSystemInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeleteSystemInstanceInput`](crate::operation::delete_system_instance::DeleteSystemInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::delete_system_instance::builders::DeleteSystemInstanceInputBuilder {
+    pub fn builder() -> crate::operation::delete_system_instance::builders::DeleteSystemInstanceInputBuilder {
         crate::operation::delete_system_instance::builders::DeleteSystemInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSystemInstanceInput`](crate::operation::delete_system_instance::DeleteSystemInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSystemInstanceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,8 @@ impl DeleteSystemInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSystemInstanceInput`](crate::operation::delete_system_instance::DeleteSystemInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_system_instance::DeleteSystemInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_system_instance::DeleteSystemInstanceInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_system_instance::DeleteSystemInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_system_instance::DeleteSystemInstanceInput { id: self.id })
     }
 }

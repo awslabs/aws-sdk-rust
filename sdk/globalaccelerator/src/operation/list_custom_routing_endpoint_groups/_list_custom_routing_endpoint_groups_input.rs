@@ -29,16 +29,14 @@ impl ListCustomRoutingEndpointGroupsInput {
 }
 impl ListCustomRoutingEndpointGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingEndpointGroupsInput`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsInput).
-    pub fn builder() -> crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsInputBuilder{
+    pub fn builder() -> crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsInputBuilder {
         crate::operation::list_custom_routing_endpoint_groups::builders::ListCustomRoutingEndpointGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomRoutingEndpointGroupsInput`](crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomRoutingEndpointGroupsInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -96,13 +94,10 @@ impl ListCustomRoutingEndpointGroupsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsInput {
-                listener_arn: self.listener_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                listener_arn: self.listener_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

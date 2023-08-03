@@ -14,10 +14,7 @@ pub fn ser_encryption_entities(
         for list_item_3 in var_2 {
             {
                 let inner_writer = inner_writer.start_el("EncryptionEntity");
-                crate::protocol_serde::shape_encryption_entity::ser_encryption_entity(
-                    list_item_3,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_encryption_entity::ser_encryption_entity(list_item_3, inner_writer)?
             }
         }
     }

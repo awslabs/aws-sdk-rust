@@ -28,9 +28,7 @@ impl ExportLensOutput {
 
 /// A builder for [`ExportLensOutput`](crate::operation::export_lens::ExportLensOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportLensOutputBuilder {
     pub(crate) lens_json: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

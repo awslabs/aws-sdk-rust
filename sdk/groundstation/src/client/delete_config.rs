@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`config_type(Option<ConfigCapabilityType>)`](crate::operation::delete_config::DeleteConfigOutput::config_type): <p>Type of a <code>Config</code>.</p>
     ///   - [`config_arn(Option<String>)`](crate::operation::delete_config::DeleteConfigOutput::config_arn): <p>ARN of a <code>Config</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteConfigError>`](crate::operation::delete_config::DeleteConfigError)
-    pub fn delete_config(
-        &self,
-    ) -> crate::operation::delete_config::builders::DeleteConfigFluentBuilder {
-        crate::operation::delete_config::builders::DeleteConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_config(&self) -> crate::operation::delete_config::builders::DeleteConfigFluentBuilder {
+        crate::operation::delete_config::builders::DeleteConfigFluentBuilder::new(self.handle.clone())
     }
 }

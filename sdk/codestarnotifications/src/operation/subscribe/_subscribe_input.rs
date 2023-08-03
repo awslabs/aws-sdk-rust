@@ -36,9 +36,7 @@ impl SubscribeInput {
 
 /// A builder for [`SubscribeInput`](crate::operation::subscribe::SubscribeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubscribeInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<crate::types::Target>,
@@ -74,18 +72,12 @@ impl SubscribeInputBuilder {
         &self.target
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -94,12 +86,7 @@ impl SubscribeInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`SubscribeInput`](crate::operation::subscribe::SubscribeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::subscribe::SubscribeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::subscribe::SubscribeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::subscribe::SubscribeInput {
             arn: self.arn,
             target: self.target,

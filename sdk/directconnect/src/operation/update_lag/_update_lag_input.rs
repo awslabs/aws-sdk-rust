@@ -45,9 +45,7 @@ impl UpdateLagInput {
 
 /// A builder for [`UpdateLagInput`](crate::operation::update_lag::UpdateLagInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLagInputBuilder {
     pub(crate) lag_id: ::std::option::Option<::std::string::String>,
     pub(crate) lag_name: ::std::option::Option<::std::string::String>,
@@ -99,19 +97,13 @@ impl UpdateLagInputBuilder {
     }
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
-    pub fn encryption_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_mode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
-    pub fn set_encryption_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_mode = input;
         self
     }
@@ -121,12 +113,7 @@ impl UpdateLagInputBuilder {
         &self.encryption_mode
     }
     /// Consumes the builder and constructs a [`UpdateLagInput`](crate::operation::update_lag::UpdateLagInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_lag::UpdateLagInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_lag::UpdateLagInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_lag::UpdateLagInput {
             lag_id: self.lag_id,
             lag_name: self.lag_name,

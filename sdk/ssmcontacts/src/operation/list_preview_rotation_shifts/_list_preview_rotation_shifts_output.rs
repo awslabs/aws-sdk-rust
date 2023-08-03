@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPreviewRotationShiftsOutput {
 }
 impl ListPreviewRotationShiftsOutput {
     /// Creates a new builder-style object to manufacture [`ListPreviewRotationShiftsOutput`](crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput).
-    pub fn builder() -> crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsOutputBuilder{
+    pub fn builder() -> crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsOutputBuilder {
         crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPreviewRotationShiftsOutput`](crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPreviewRotationShiftsOutputBuilder {
     pub(crate) rotation_shifts: ::std::option::Option<::std::vec::Vec<crate::types::RotationShift>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListPreviewRotationShiftsOutputBuilder {
         self
     }
     /// <p>Details about a rotation shift, including times, types, and contacts.</p>
-    pub fn set_rotation_shifts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RotationShift>>,
-    ) -> Self {
+    pub fn set_rotation_shifts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RotationShift>>) -> Self {
         self.rotation_shifts = input;
         self
     }
     /// <p>Details about a rotation shift, including times, types, and contacts.</p>
-    pub fn get_rotation_shifts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RotationShift>> {
+    pub fn get_rotation_shifts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RotationShift>> {
         &self.rotation_shifts
     }
     /// <p>The token for the next set of items to return. This token is used to get the next set of results.</p>
@@ -93,9 +86,7 @@ impl ListPreviewRotationShiftsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPreviewRotationShiftsOutput`](crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput {
+    pub fn build(self) -> crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput {
         crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput {
             rotation_shifts: self.rotation_shifts,
             next_token: self.next_token,

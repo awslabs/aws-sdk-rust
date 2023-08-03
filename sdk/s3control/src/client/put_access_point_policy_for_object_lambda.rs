@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`policy(impl ::std::convert::Into<String>)`](crate::operation::put_access_point_policy_for_object_lambda::builders::PutAccessPointPolicyForObjectLambdaFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_access_point_policy_for_object_lambda::builders::PutAccessPointPolicyForObjectLambdaFluentBuilder::set_policy): <p>Object Lambda Access Point resource policy document.</p>
     /// - On success, responds with [`PutAccessPointPolicyForObjectLambdaOutput`](crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaOutput)
     /// - On failure, responds with [`SdkError<PutAccessPointPolicyForObjectLambdaError>`](crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaError)
-    pub fn put_access_point_policy_for_object_lambda(&self) -> crate::operation::put_access_point_policy_for_object_lambda::builders::PutAccessPointPolicyForObjectLambdaFluentBuilder{
-        crate::operation::put_access_point_policy_for_object_lambda::builders::PutAccessPointPolicyForObjectLambdaFluentBuilder::new(self.handle.clone())
+    pub fn put_access_point_policy_for_object_lambda(
+        &self,
+    ) -> crate::operation::put_access_point_policy_for_object_lambda::builders::PutAccessPointPolicyForObjectLambdaFluentBuilder {
+        crate::operation::put_access_point_policy_for_object_lambda::builders::PutAccessPointPolicyForObjectLambdaFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

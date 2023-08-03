@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`status(Option<ReportStatus>)`](crate::operation::get_assessment_report::GetAssessmentReportOutput::status): <p>Specifies the status of the request to generate an assessment report. </p>
     ///   - [`url(Option<String>)`](crate::operation::get_assessment_report::GetAssessmentReportOutput::url): <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
     /// - On failure, responds with [`SdkError<GetAssessmentReportError>`](crate::operation::get_assessment_report::GetAssessmentReportError)
-    pub fn get_assessment_report(
-        &self,
-    ) -> crate::operation::get_assessment_report::builders::GetAssessmentReportFluentBuilder {
-        crate::operation::get_assessment_report::builders::GetAssessmentReportFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_assessment_report(&self) -> crate::operation::get_assessment_report::builders::GetAssessmentReportFluentBuilder {
+        crate::operation::get_assessment_report::builders::GetAssessmentReportFluentBuilder::new(self.handle.clone())
     }
 }

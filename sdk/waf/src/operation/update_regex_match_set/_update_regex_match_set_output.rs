@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateRegexMatchSetOutput {
 }
 impl UpdateRegexMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRegexMatchSetOutput`](crate::operation::update_regex_match_set::UpdateRegexMatchSetOutput).
-    pub fn builder(
-    ) -> crate::operation::update_regex_match_set::builders::UpdateRegexMatchSetOutputBuilder {
+    pub fn builder() -> crate::operation::update_regex_match_set::builders::UpdateRegexMatchSetOutputBuilder {
         crate::operation::update_regex_match_set::builders::UpdateRegexMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRegexMatchSetOutput`](crate::operation::update_regex_match_set::UpdateRegexMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRegexMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

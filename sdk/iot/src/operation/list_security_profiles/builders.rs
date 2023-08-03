@@ -40,9 +40,7 @@ impl ListSecurityProfilesFluentBuilder {
         }
     }
     /// Access the ListSecurityProfiles as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_security_profiles::builders::ListSecurityProfilesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_security_profiles::builders::ListSecurityProfilesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl ListSecurityProfilesFluentBuilder {
             crate::operation::list_security_profiles::ListSecurityProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_profiles::ListSecurityProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_profiles::ListSecurityProfilesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl ListSecurityProfilesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl ListSecurityProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_security_profiles::ListSecurityProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_profiles::ListSecurityProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_profiles::ListSecurityProfilesError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl ListSecurityProfilesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_security_profiles::ListSecurityProfilesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_profiles::ListSecurityProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_profiles::ListSecurityProfilesError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +108,15 @@ impl ListSecurityProfilesFluentBuilder {
             crate::operation::list_security_profiles::ListSecurityProfiles,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_profiles::ListSecurityProfilesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_profiles::ListSecurityProfilesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_security_profiles::paginator::ListSecurityProfilesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_security_profiles::paginator::ListSecurityProfilesPaginator {
-        crate::operation::list_security_profiles::paginator::ListSecurityProfilesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_security_profiles::paginator::ListSecurityProfilesPaginator {
+        crate::operation::list_security_profiles::paginator::ListSecurityProfilesPaginator::new(self.handle, self.inner)
     }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -165,18 +147,12 @@ impl ListSecurityProfilesFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
-    pub fn dimension_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dimension_name(input.into());
         self
     }
     /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
-    pub fn set_dimension_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dimension_name(input);
         self
     }

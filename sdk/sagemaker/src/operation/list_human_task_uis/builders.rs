@@ -10,10 +10,7 @@ impl ListHumanTaskUisInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_human_task_uis::ListHumanTaskUisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_human_task_uis::ListHumanTaskUisError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_human_task_uis::ListHumanTaskUisError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_human_task_uis();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListHumanTaskUisFluentBuilder {
         }
     }
     /// Access the ListHumanTaskUis as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_human_task_uis::builders::ListHumanTaskUisInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_human_task_uis::builders::ListHumanTaskUisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListHumanTaskUisFluentBuilder {
             crate::operation::list_human_task_uis::ListHumanTaskUis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_human_task_uis::ListHumanTaskUisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_human_task_uis::ListHumanTaskUisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListHumanTaskUisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListHumanTaskUisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_human_task_uis::ListHumanTaskUisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_human_task_uis::ListHumanTaskUisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_human_task_uis::ListHumanTaskUisError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListHumanTaskUisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_human_task_uis::ListHumanTaskUisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_human_task_uis::ListHumanTaskUisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_human_task_uis::ListHumanTaskUisError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListHumanTaskUisFluentBuilder {
             crate::operation::list_human_task_uis::ListHumanTaskUis,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_human_task_uis::ListHumanTaskUisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_human_task_uis::ListHumanTaskUisError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_human_task_uis::paginator::ListHumanTaskUisPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_human_task_uis::paginator::ListHumanTaskUisPaginator {
-        crate::operation::list_human_task_uis::paginator::ListHumanTaskUisPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_human_task_uis::paginator::ListHumanTaskUisPaginator {
+        crate::operation::list_human_task_uis::paginator::ListHumanTaskUisPaginator::new(self.handle, self.inner)
     }
     /// <p>A filter that returns only human task user interfaces with a creation time greater than or equal to the specified timestamp.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -139,10 +118,7 @@ impl ListHumanTaskUisFluentBuilder {
         self
     }
     /// <p>A filter that returns only human task user interfaces with a creation time greater than or equal to the specified timestamp.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -156,10 +132,7 @@ impl ListHumanTaskUisFluentBuilder {
         self
     }
     /// <p>A filter that returns only human task user interfaces that were created before the specified timestamp.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }

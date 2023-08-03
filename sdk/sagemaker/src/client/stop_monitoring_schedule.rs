@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`monitoring_schedule_name(impl ::std::convert::Into<String>)`](crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleFluentBuilder::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleFluentBuilder::set_monitoring_schedule_name): <p>The name of the schedule to stop.</p>
     /// - On success, responds with [`StopMonitoringScheduleOutput`](crate::operation::stop_monitoring_schedule::StopMonitoringScheduleOutput)
     /// - On failure, responds with [`SdkError<StopMonitoringScheduleError>`](crate::operation::stop_monitoring_schedule::StopMonitoringScheduleError)
-    pub fn stop_monitoring_schedule(
-        &self,
-    ) -> crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleFluentBuilder
-    {
+    pub fn stop_monitoring_schedule(&self) -> crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleFluentBuilder {
         crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleFluentBuilder::new(self.handle.clone())
     }
 }

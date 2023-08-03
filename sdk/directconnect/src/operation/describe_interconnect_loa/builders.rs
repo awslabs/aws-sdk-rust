@@ -29,8 +29,7 @@ impl DescribeInterconnectLoaInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInterconnectLoaFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaInputBuilder,
+    inner: crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaInputBuilder,
 }
 impl DescribeInterconnectLoaFluentBuilder {
     /// Creates a new `DescribeInterconnectLoa`.
@@ -41,10 +40,7 @@ impl DescribeInterconnectLoaFluentBuilder {
         }
     }
     /// Access the DescribeInterconnectLoa as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl DescribeInterconnectLoaFluentBuilder {
             crate::operation::describe_interconnect_loa::DescribeInterconnectLoa,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_interconnect_loa::DescribeInterconnectLoaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_interconnect_loa::DescribeInterconnectLoaError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl DescribeInterconnectLoaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl DescribeInterconnectLoaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_interconnect_loa::DescribeInterconnectLoaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_interconnect_loa::DescribeInterconnectLoaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_interconnect_loa::DescribeInterconnectLoaError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl DescribeInterconnectLoaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_interconnect_loa::DescribeInterconnectLoaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_interconnect_loa::DescribeInterconnectLoaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_interconnect_loa::DescribeInterconnectLoaError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +108,17 @@ impl DescribeInterconnectLoaFluentBuilder {
             crate::operation::describe_interconnect_loa::DescribeInterconnectLoa,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_interconnect_loa::DescribeInterconnectLoaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_interconnect_loa::DescribeInterconnectLoaError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the interconnect.</p>
-    pub fn interconnect_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn interconnect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.interconnect_id(input.into());
         self
     }
     /// <p>The ID of the interconnect.</p>
-    pub fn set_interconnect_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_interconnect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_interconnect_id(input);
         self
     }
@@ -148,18 +127,12 @@ impl DescribeInterconnectLoaFluentBuilder {
         self.inner.get_interconnect_id()
     }
     /// <p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider_name(input.into());
         self
     }
     /// <p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
     }
@@ -173,10 +146,7 @@ impl DescribeInterconnectLoaFluentBuilder {
         self
     }
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
-    pub fn set_loa_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LoaContentType>,
-    ) -> Self {
+    pub fn set_loa_content_type(mut self, input: ::std::option::Option<crate::types::LoaContentType>) -> Self {
         self.inner = self.inner.set_loa_content_type(input);
         self
     }

@@ -9,10 +9,7 @@ pub fn ser_model_metadata_search_expression(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_model_metadata_filter::ser_model_metadata_filter(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_model_metadata_filter::ser_model_metadata_filter(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

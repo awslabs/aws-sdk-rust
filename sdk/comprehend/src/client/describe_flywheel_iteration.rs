@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeFlywheelIterationOutput`](crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationOutput) with field(s):
     ///   - [`flywheel_iteration_properties(Option<FlywheelIterationProperties>)`](crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationOutput::flywheel_iteration_properties): <p>The configuration properties of a flywheel iteration.</p>
     /// - On failure, responds with [`SdkError<DescribeFlywheelIterationError>`](crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationError)
-    pub fn describe_flywheel_iteration(&self) -> crate::operation::describe_flywheel_iteration::builders::DescribeFlywheelIterationFluentBuilder{
+    pub fn describe_flywheel_iteration(&self) -> crate::operation::describe_flywheel_iteration::builders::DescribeFlywheelIterationFluentBuilder {
         crate::operation::describe_flywheel_iteration::builders::DescribeFlywheelIterationFluentBuilder::new(self.handle.clone())
     }
 }

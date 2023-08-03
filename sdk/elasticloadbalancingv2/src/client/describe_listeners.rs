@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`listeners(Option<Vec<Listener>>)`](crate::operation::describe_listeners::DescribeListenersOutput::listeners): <p>Information about the listeners.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::describe_listeners::DescribeListenersOutput::next_marker): <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     /// - On failure, responds with [`SdkError<DescribeListenersError>`](crate::operation::describe_listeners::DescribeListenersError)
-    pub fn describe_listeners(
-        &self,
-    ) -> crate::operation::describe_listeners::builders::DescribeListenersFluentBuilder {
-        crate::operation::describe_listeners::builders::DescribeListenersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_listeners(&self) -> crate::operation::describe_listeners::builders::DescribeListenersFluentBuilder {
+        crate::operation::describe_listeners::builders::DescribeListenersFluentBuilder::new(self.handle.clone())
     }
 }

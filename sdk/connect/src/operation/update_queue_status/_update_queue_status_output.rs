@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateQueueStatusOutput {
 }
 impl UpdateQueueStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateQueueStatusOutput`](crate::operation::update_queue_status::UpdateQueueStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::update_queue_status::builders::UpdateQueueStatusOutputBuilder {
+    pub fn builder() -> crate::operation::update_queue_status::builders::UpdateQueueStatusOutputBuilder {
         crate::operation::update_queue_status::builders::UpdateQueueStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateQueueStatusOutput`](crate::operation::update_queue_status::UpdateQueueStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateQueueStatusOutputBuilder {
     _request_id: Option<String>,
 }

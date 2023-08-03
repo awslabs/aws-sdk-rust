@@ -5,15 +5,12 @@
 pub struct UpdateFirewallRuleGroupAssociationOutput {
     /// <p>The association that you just updated. </p>
     #[doc(hidden)]
-    pub firewall_rule_group_association:
-        ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
+    pub firewall_rule_group_association: ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
     _request_id: Option<String>,
 }
 impl UpdateFirewallRuleGroupAssociationOutput {
     /// <p>The association that you just updated. </p>
-    pub fn firewall_rule_group_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FirewallRuleGroupAssociation> {
+    pub fn firewall_rule_group_association(&self) -> ::std::option::Option<&crate::types::FirewallRuleGroupAssociation> {
         self.firewall_rule_group_association.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for UpdateFirewallRuleGroupAssociationOut
 }
 impl UpdateFirewallRuleGroupAssociationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleGroupAssociationOutput`](crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationOutput).
-    pub fn builder() -> crate::operation::update_firewall_rule_group_association::builders::UpdateFirewallRuleGroupAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::update_firewall_rule_group_association::builders::UpdateFirewallRuleGroupAssociationOutputBuilder {
         crate::operation::update_firewall_rule_group_association::builders::UpdateFirewallRuleGroupAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFirewallRuleGroupAssociationOutput`](crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFirewallRuleGroupAssociationOutputBuilder {
-    pub(crate) firewall_rule_group_association:
-        ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
+    pub(crate) firewall_rule_group_association: ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
     _request_id: Option<String>,
 }
 impl UpdateFirewallRuleGroupAssociationOutputBuilder {
     /// <p>The association that you just updated. </p>
-    pub fn firewall_rule_group_association(
-        mut self,
-        input: crate::types::FirewallRuleGroupAssociation,
-    ) -> Self {
+    pub fn firewall_rule_group_association(mut self, input: crate::types::FirewallRuleGroupAssociation) -> Self {
         self.firewall_rule_group_association = ::std::option::Option::Some(input);
         self
     }
     /// <p>The association that you just updated. </p>
-    pub fn set_firewall_rule_group_association(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
-    ) -> Self {
+    pub fn set_firewall_rule_group_association(mut self, input: ::std::option::Option<crate::types::FirewallRuleGroupAssociation>) -> Self {
         self.firewall_rule_group_association = input;
         self
     }
     /// <p>The association that you just updated. </p>
-    pub fn get_firewall_rule_group_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirewallRuleGroupAssociation> {
+    pub fn get_firewall_rule_group_association(&self) -> &::std::option::Option<crate::types::FirewallRuleGroupAssociation> {
         &self.firewall_rule_group_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,9 @@ impl UpdateFirewallRuleGroupAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateFirewallRuleGroupAssociationOutput`](crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationOutput).
-    pub fn build(self) -> crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationOutput{
+    pub fn build(self) -> crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationOutput {
         crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationOutput {
-            firewall_rule_group_association: self.firewall_rule_group_association
-            ,
+            firewall_rule_group_association: self.firewall_rule_group_association,
             _request_id: self._request_id,
         }
     }

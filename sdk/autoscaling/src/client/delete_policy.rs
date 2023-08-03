@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`policy_name(impl ::std::convert::Into<String>)`](crate::operation::delete_policy::builders::DeletePolicyFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::delete_policy::builders::DeletePolicyFluentBuilder::set_policy_name): <p>The name or Amazon Resource Name (ARN) of the policy.</p>
     /// - On success, responds with [`DeletePolicyOutput`](crate::operation::delete_policy::DeletePolicyOutput)
     /// - On failure, responds with [`SdkError<DeletePolicyError>`](crate::operation::delete_policy::DeletePolicyError)
-    pub fn delete_policy(
-        &self,
-    ) -> crate::operation::delete_policy::builders::DeletePolicyFluentBuilder {
-        crate::operation::delete_policy::builders::DeletePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_policy(&self) -> crate::operation::delete_policy::builders::DeletePolicyFluentBuilder {
+        crate::operation::delete_policy::builders::DeletePolicyFluentBuilder::new(self.handle.clone())
     }
 }

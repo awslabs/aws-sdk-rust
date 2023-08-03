@@ -5,8 +5,7 @@
 pub struct GetUserDefinedFunctionsOutput {
     /// <p>A list of requested function definitions.</p>
     #[doc(hidden)]
-    pub user_defined_functions:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserDefinedFunction>>,
+    pub user_defined_functions: ::std::option::Option<::std::vec::Vec<crate::types::UserDefinedFunction>>,
     /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct GetUserDefinedFunctionsOutput {
 }
 impl GetUserDefinedFunctionsOutput {
     /// <p>A list of requested function definitions.</p>
-    pub fn user_defined_functions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UserDefinedFunction]> {
+    pub fn user_defined_functions(&self) -> ::std::option::Option<&[crate::types::UserDefinedFunction]> {
         self.user_defined_functions.as_deref()
     }
     /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for GetUserDefinedFunctionsOutput {
 }
 impl GetUserDefinedFunctionsOutput {
     /// Creates a new builder-style object to manufacture [`GetUserDefinedFunctionsOutput`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsOutputBuilder {
         crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUserDefinedFunctionsOutput`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUserDefinedFunctionsOutputBuilder {
-    pub(crate) user_defined_functions:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserDefinedFunction>>,
+    pub(crate) user_defined_functions: ::std::option::Option<::std::vec::Vec<crate::types::UserDefinedFunction>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl GetUserDefinedFunctionsOutputBuilder {
         self
     }
     /// <p>A list of requested function definitions.</p>
-    pub fn set_user_defined_functions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserDefinedFunction>>,
-    ) -> Self {
+    pub fn set_user_defined_functions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserDefinedFunction>>) -> Self {
         self.user_defined_functions = input;
         self
     }
     /// <p>A list of requested function definitions.</p>
-    pub fn get_user_defined_functions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserDefinedFunction>> {
+    pub fn get_user_defined_functions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserDefinedFunction>> {
         &self.user_defined_functions
     }
     /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
@@ -99,9 +86,7 @@ impl GetUserDefinedFunctionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetUserDefinedFunctionsOutput`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput {
+    pub fn build(self) -> crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput {
         crate::operation::get_user_defined_functions::GetUserDefinedFunctionsOutput {
             user_defined_functions: self.user_defined_functions,
             next_token: self.next_token,

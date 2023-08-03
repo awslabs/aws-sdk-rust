@@ -15,34 +15,25 @@ impl DeleteAttributeGroupInput {
 }
 impl DeleteAttributeGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteAttributeGroupInput`](crate::operation::delete_attribute_group::DeleteAttributeGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_attribute_group::builders::DeleteAttributeGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_attribute_group::builders::DeleteAttributeGroupInputBuilder {
         crate::operation::delete_attribute_group::builders::DeleteAttributeGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAttributeGroupInput`](crate::operation::delete_attribute_group::DeleteAttributeGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAttributeGroupInputBuilder {
     pub(crate) attribute_group: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAttributeGroupInputBuilder {
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
-    pub fn attribute_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
-    pub fn set_attribute_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_group = input;
         self
     }
@@ -53,14 +44,10 @@ impl DeleteAttributeGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAttributeGroupInput`](crate::operation::delete_attribute_group::DeleteAttributeGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_attribute_group::DeleteAttributeGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_attribute_group::DeleteAttributeGroupInput {
-                attribute_group: self.attribute_group,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_attribute_group::DeleteAttributeGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_attribute_group::DeleteAttributeGroupInput {
+            attribute_group: self.attribute_group,
+        })
     }
 }

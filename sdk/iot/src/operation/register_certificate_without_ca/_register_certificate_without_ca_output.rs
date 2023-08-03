@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for RegisterCertificateWithoutCaOutput {
 }
 impl RegisterCertificateWithoutCaOutput {
     /// Creates a new builder-style object to manufacture [`RegisterCertificateWithoutCaOutput`](crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput).
-    pub fn builder() -> crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaOutputBuilder{
+    pub fn builder() -> crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaOutputBuilder {
         crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterCertificateWithoutCaOutput`](crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterCertificateWithoutCaOutputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct RegisterCertificateWithoutCaOutputBuilder {
 }
 impl RegisterCertificateWithoutCaOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the registered certificate.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the registered certificate.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -65,18 +57,12 @@ impl RegisterCertificateWithoutCaOutputBuilder {
         &self.certificate_arn
     }
     /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -94,9 +80,7 @@ impl RegisterCertificateWithoutCaOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterCertificateWithoutCaOutput`](crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput {
+    pub fn build(self) -> crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput {
         crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput {
             certificate_arn: self.certificate_arn,
             certificate_id: self.certificate_id,

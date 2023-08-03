@@ -21,10 +21,7 @@ pub fn ser_send_heartbeat_input(
     if let Some(var_6) = &input.deployment_result {
         #[allow(unused_mut)]
         let mut object_7 = object.key("DeploymentResult").start_object();
-        crate::protocol_serde::shape_deployment_result::ser_deployment_result(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_deployment_result::ser_deployment_result(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.device_fleet_name {

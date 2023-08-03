@@ -39,13 +39,7 @@
 /// If the sample range metadata in your input video is accurate, or if you don't know about sample range, keep the default value, Follow, for this setting. When you do, the service automatically detects your input sample range. If your input video has metadata indicating the wrong sample range, specify the accurate sample range here. When you do, MediaConvert ignores any sample range information in the input metadata. Regardless of whether MediaConvert uses the input sample range or the sample range that you specify, MediaConvert uses the sample range for transcoding and also writes it to the output metadata.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InputSampleRange {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for InputSampleRange {
             "FOLLOW" => InputSampleRange::Follow,
             "FULL_RANGE" => InputSampleRange::FullRange,
             "LIMITED_RANGE" => InputSampleRange::LimitedRange,
-            other => {
-                InputSampleRange::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => InputSampleRange::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

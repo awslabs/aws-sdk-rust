@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AccessDeniedExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -58,12 +52,8 @@ impl ::std::convert::From<&str> for AccessDeniedExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_DISABLED" => AccessDeniedExceptionReason::AccountDisabled,
-            "INSUFFICIENT_ACCOUNT_REPUTATION" => {
-                AccessDeniedExceptionReason::InsufficientAccountReputation
-            }
-            other => AccessDeniedExceptionReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "INSUFFICIENT_ACCOUNT_REPUTATION" => AccessDeniedExceptionReason::InsufficientAccountReputation,
+            other => AccessDeniedExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -79,9 +69,7 @@ impl AccessDeniedExceptionReason {
     pub fn as_str(&self) -> &str {
         match self {
             AccessDeniedExceptionReason::AccountDisabled => "ACCOUNT_DISABLED",
-            AccessDeniedExceptionReason::InsufficientAccountReputation => {
-                "INSUFFICIENT_ACCOUNT_REPUTATION"
-            }
+            AccessDeniedExceptionReason::InsufficientAccountReputation => "INSUFFICIENT_ACCOUNT_REPUTATION",
             AccessDeniedExceptionReason::Unknown(value) => value.as_str(),
         }
     }

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`CreateVpcPeeringAuthorizationOutput`](crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationOutput) with field(s):
     ///   - [`vpc_peering_authorization(Option<VpcPeeringAuthorization>)`](crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationOutput::vpc_peering_authorization): <p>Details on the requested VPC peering authorization, including expiration.</p>
     /// - On failure, responds with [`SdkError<CreateVpcPeeringAuthorizationError>`](crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationError)
-    pub fn create_vpc_peering_authorization(&self) -> crate::operation::create_vpc_peering_authorization::builders::CreateVpcPeeringAuthorizationFluentBuilder{
+    pub fn create_vpc_peering_authorization(
+        &self,
+    ) -> crate::operation::create_vpc_peering_authorization::builders::CreateVpcPeeringAuthorizationFluentBuilder {
         crate::operation::create_vpc_peering_authorization::builders::CreateVpcPeeringAuthorizationFluentBuilder::new(self.handle.clone())
     }
 }

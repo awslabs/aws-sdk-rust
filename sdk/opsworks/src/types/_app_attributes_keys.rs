@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AppAttributesKeys {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for AppAttributesKeys {
             "AwsFlowRubySettings" => AppAttributesKeys::AwsFlowRubySettings,
             "DocumentRoot" => AppAttributesKeys::DocumentRoot,
             "RailsEnv" => AppAttributesKeys::RailsEnv,
-            other => {
-                AppAttributesKeys::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AppAttributesKeys::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl AppAttributesKeys {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AutoBundleOnDeploy",
-            "AwsFlowRubySettings",
-            "DocumentRoot",
-            "RailsEnv",
-        ]
+        &["AutoBundleOnDeploy", "AwsFlowRubySettings", "DocumentRoot", "RailsEnv"]
     }
 }
 impl ::std::convert::AsRef<str> for AppAttributesKeys {

@@ -114,18 +114,14 @@ impl ::aws_http::request_id::RequestId for DescribeTaskExecutionOutput {
 }
 impl DescribeTaskExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTaskExecutionOutput`](crate::operation::describe_task_execution::DescribeTaskExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_task_execution::builders::DescribeTaskExecutionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_task_execution::builders::DescribeTaskExecutionOutputBuilder {
         crate::operation::describe_task_execution::builders::DescribeTaskExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTaskExecutionOutput`](crate::operation::describe_task_execution::DescribeTaskExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTaskExecutionOutputBuilder {
     pub(crate) task_execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TaskExecutionStatus>,
@@ -145,19 +141,13 @@ pub struct DescribeTaskExecutionOutputBuilder {
 impl DescribeTaskExecutionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
     /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
-    pub fn task_execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
     /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
-    pub fn set_task_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_execution_arn = input;
         self
     }
@@ -174,10 +164,7 @@ impl DescribeTaskExecutionOutputBuilder {
     }
     /// <p>The status of the task execution. </p>
     /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide.</i> </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -215,17 +202,12 @@ impl DescribeTaskExecutionOutputBuilder {
         self
     }
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn set_excludes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    ) -> Self {
+    pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.excludes = input;
         self
     }
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn get_excludes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.excludes
     }
     /// Appends an item to `includes`.
@@ -240,17 +222,12 @@ impl DescribeTaskExecutionOutputBuilder {
         self
     }
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn set_includes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    ) -> Self {
+    pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
         self.includes = input;
         self
     }
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn get_includes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.includes
     }
     /// <p>The time that the task execution was started.</p>
@@ -259,10 +236,7 @@ impl DescribeTaskExecutionOutputBuilder {
         self
     }
     /// <p>The time that the task execution was started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -349,10 +323,7 @@ impl DescribeTaskExecutionOutputBuilder {
         self
     }
     /// <p>The result of the task execution.</p>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskExecutionResultDetail>,
-    ) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<crate::types::TaskExecutionResultDetail>) -> Self {
         self.result = input;
         self
     }

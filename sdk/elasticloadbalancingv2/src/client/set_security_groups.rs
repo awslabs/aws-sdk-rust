@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`SetSecurityGroupsOutput`](crate::operation::set_security_groups::SetSecurityGroupsOutput) with field(s):
     ///   - [`security_group_ids(Option<Vec<String>>)`](crate::operation::set_security_groups::SetSecurityGroupsOutput::security_group_ids): <p>The IDs of the security groups associated with the load balancer.</p>
     /// - On failure, responds with [`SdkError<SetSecurityGroupsError>`](crate::operation::set_security_groups::SetSecurityGroupsError)
-    pub fn set_security_groups(
-        &self,
-    ) -> crate::operation::set_security_groups::builders::SetSecurityGroupsFluentBuilder {
-        crate::operation::set_security_groups::builders::SetSecurityGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_security_groups(&self) -> crate::operation::set_security_groups::builders::SetSecurityGroupsFluentBuilder {
+        crate::operation::set_security_groups::builders::SetSecurityGroupsFluentBuilder::new(self.handle.clone())
     }
 }

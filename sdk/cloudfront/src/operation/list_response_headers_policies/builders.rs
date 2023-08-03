@@ -28,7 +28,7 @@ impl ListResponseHeadersPoliciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResponseHeadersPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_response_headers_policies::builders::ListResponseHeadersPoliciesInputBuilder,
+    inner: crate::operation::list_response_headers_policies::builders::ListResponseHeadersPoliciesInputBuilder,
 }
 impl ListResponseHeadersPoliciesFluentBuilder {
     /// Creates a new `ListResponseHeadersPolicies`.
@@ -39,7 +39,7 @@ impl ListResponseHeadersPoliciesFluentBuilder {
         }
     }
     /// Access the ListResponseHeadersPolicies as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_response_headers_policies::builders::ListResponseHeadersPoliciesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_response_headers_policies::builders::ListResponseHeadersPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl ListResponseHeadersPoliciesFluentBuilder {
             crate::operation::list_response_headers_policies::ListResponseHeadersPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl ListResponseHeadersPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl ListResponseHeadersPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl ListResponseHeadersPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl ListResponseHeadersPoliciesFluentBuilder {
             crate::operation::list_response_headers_policies::ListResponseHeadersPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError>,
     > {
         self.customize_middleware().await
     }
@@ -136,10 +125,7 @@ impl ListResponseHeadersPoliciesFluentBuilder {
     /// <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li>
     /// <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseHeadersPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

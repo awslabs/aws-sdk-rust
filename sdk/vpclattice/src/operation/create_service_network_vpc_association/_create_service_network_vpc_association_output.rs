@@ -26,9 +26,7 @@ impl CreateServiceNetworkVpcAssociationOutput {
         self.id.as_deref()
     }
     /// <p>The operation's status.</p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceNetworkVpcAssociationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceNetworkVpcAssociationStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
@@ -51,16 +49,14 @@ impl ::aws_http::request_id::RequestId for CreateServiceNetworkVpcAssociationOut
 }
 impl CreateServiceNetworkVpcAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceNetworkVpcAssociationOutput`](crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationOutput).
-    pub fn builder() -> crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationOutputBuilder {
         crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateServiceNetworkVpcAssociationOutput`](crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateServiceNetworkVpcAssociationOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>,
@@ -90,17 +86,12 @@ impl CreateServiceNetworkVpcAssociationOutputBuilder {
         self
     }
     /// <p>The operation's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The operation's status.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus> {
         &self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
@@ -136,27 +127,19 @@ impl CreateServiceNetworkVpcAssociationOutputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The IDs of the security groups.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -169,18 +152,13 @@ impl CreateServiceNetworkVpcAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateServiceNetworkVpcAssociationOutput`](crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationOutput).
-    pub fn build(self) -> crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationOutput{
+    pub fn build(self) -> crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationOutput {
         crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationOutput {
-            id: self.id
-            ,
-            status: self.status
-            ,
-            arn: self.arn
-            ,
-            created_by: self.created_by
-            ,
-            security_group_ids: self.security_group_ids
-            ,
+            id: self.id,
+            status: self.status,
+            arn: self.arn,
+            created_by: self.created_by,
+            security_group_ids: self.security_group_ids,
             _request_id: self._request_id,
         }
     }

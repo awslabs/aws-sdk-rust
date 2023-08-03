@@ -5,8 +5,7 @@
 pub struct DescribeProjectVersionsOutput {
     /// <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
     #[doc(hidden)]
-    pub project_version_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>>,
+    pub project_version_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeProjectVersionsOutput {
 }
 impl DescribeProjectVersionsOutput {
     /// <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
-    pub fn project_version_descriptions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProjectVersionDescription]> {
+    pub fn project_version_descriptions(&self) -> ::std::option::Option<&[crate::types::ProjectVersionDescription]> {
         self.project_version_descriptions.as_deref()
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeProjectVersionsOutput {
 }
 impl DescribeProjectVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectVersionsOutput`](crate::operation::describe_project_versions::DescribeProjectVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_project_versions::builders::DescribeProjectVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_project_versions::builders::DescribeProjectVersionsOutputBuilder {
         crate::operation::describe_project_versions::builders::DescribeProjectVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProjectVersionsOutput`](crate::operation::describe_project_versions::DescribeProjectVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProjectVersionsOutputBuilder {
-    pub(crate) project_version_descriptions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>>,
+    pub(crate) project_version_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl DescribeProjectVersionsOutputBuilder {
     /// To override the contents of this collection use [`set_project_version_descriptions`](Self::set_project_version_descriptions).
     ///
     /// <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
-    pub fn project_version_descriptions(
-        mut self,
-        input: crate::types::ProjectVersionDescription,
-    ) -> Self {
+    pub fn project_version_descriptions(mut self, input: crate::types::ProjectVersionDescription) -> Self {
         let mut v = self.project_version_descriptions.unwrap_or_default();
         v.push(input);
         self.project_version_descriptions = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl DescribeProjectVersionsOutputBuilder {
         self
     }
     /// <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
-    pub fn get_project_version_descriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>> {
+    pub fn get_project_version_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectVersionDescription>> {
         &self.project_version_descriptions
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -102,9 +89,7 @@ impl DescribeProjectVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeProjectVersionsOutput`](crate::operation::describe_project_versions::DescribeProjectVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_project_versions::DescribeProjectVersionsOutput {
+    pub fn build(self) -> crate::operation::describe_project_versions::DescribeProjectVersionsOutput {
         crate::operation::describe_project_versions::DescribeProjectVersionsOutput {
             project_version_descriptions: self.project_version_descriptions,
             next_token: self.next_token,

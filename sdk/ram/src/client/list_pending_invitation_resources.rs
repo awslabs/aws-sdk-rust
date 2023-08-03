@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`resources(Option<Vec<Resource>>)`](crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput::resources): <p>An array of objects that contain the information about the resources included the specified resource share.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     /// - On failure, responds with [`SdkError<ListPendingInvitationResourcesError>`](crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError)
-    pub fn list_pending_invitation_resources(&self) -> crate::operation::list_pending_invitation_resources::builders::ListPendingInvitationResourcesFluentBuilder{
+    pub fn list_pending_invitation_resources(
+        &self,
+    ) -> crate::operation::list_pending_invitation_resources::builders::ListPendingInvitationResourcesFluentBuilder {
         crate::operation::list_pending_invitation_resources::builders::ListPendingInvitationResourcesFluentBuilder::new(self.handle.clone())
     }
 }

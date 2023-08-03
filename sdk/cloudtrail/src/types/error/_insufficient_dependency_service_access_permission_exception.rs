@@ -27,35 +27,27 @@ impl ::std::fmt::Display for InsufficientDependencyServiceAccessPermissionExcept
     }
 }
 impl ::std::error::Error for InsufficientDependencyServiceAccessPermissionException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InsufficientDependencyServiceAccessPermissionException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InsufficientDependencyServiceAccessPermissionException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InsufficientDependencyServiceAccessPermissionException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InsufficientDependencyServiceAccessPermissionException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InsufficientDependencyServiceAccessPermissionException {
     /// Creates a new builder-style object to manufacture [`InsufficientDependencyServiceAccessPermissionException`](crate::types::error::InsufficientDependencyServiceAccessPermissionException).
-    pub fn builder(
-    ) -> crate::types::error::builders::InsufficientDependencyServiceAccessPermissionExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::InsufficientDependencyServiceAccessPermissionExceptionBuilder {
         crate::types::error::builders::InsufficientDependencyServiceAccessPermissionExceptionBuilder::default()
     }
 }
 
 /// A builder for [`InsufficientDependencyServiceAccessPermissionException`](crate::types::error::InsufficientDependencyServiceAccessPermissionException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InsufficientDependencyServiceAccessPermissionExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -82,17 +74,12 @@ impl InsufficientDependencyServiceAccessPermissionExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }
     /// Consumes the builder and constructs a [`InsufficientDependencyServiceAccessPermissionException`](crate::types::error::InsufficientDependencyServiceAccessPermissionException).
-    pub fn build(
-        self,
-    ) -> crate::types::error::InsufficientDependencyServiceAccessPermissionException {
+    pub fn build(self) -> crate::types::error::InsufficientDependencyServiceAccessPermissionException {
         crate::types::error::InsufficientDependencyServiceAccessPermissionException {
             message: self.message,
             meta: self.meta.unwrap_or_default(),

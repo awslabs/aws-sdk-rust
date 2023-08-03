@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`cluster_info_list(Option<Vec<Cluster>>)`](crate::operation::list_clusters_v2::ListClustersV2Output::cluster_info_list): <p>Information on each of the MSK clusters in the response.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_clusters_v2::ListClustersV2Output::next_token): <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
     /// - On failure, responds with [`SdkError<ListClustersV2Error>`](crate::operation::list_clusters_v2::ListClustersV2Error)
-    pub fn list_clusters_v2(
-        &self,
-    ) -> crate::operation::list_clusters_v2::builders::ListClustersV2FluentBuilder {
-        crate::operation::list_clusters_v2::builders::ListClustersV2FluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_clusters_v2(&self) -> crate::operation::list_clusters_v2::builders::ListClustersV2FluentBuilder {
+        crate::operation::list_clusters_v2::builders::ListClustersV2FluentBuilder::new(self.handle.clone())
     }
 }

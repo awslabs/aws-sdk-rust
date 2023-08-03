@@ -29,17 +29,14 @@ impl AssociateResourceInput {
 }
 impl AssociateResourceInput {
     /// Creates a new builder-style object to manufacture [`AssociateResourceInput`](crate::operation::associate_resource::AssociateResourceInput).
-    pub fn builder() -> crate::operation::associate_resource::builders::AssociateResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_resource::builders::AssociateResourceInputBuilder {
         crate::operation::associate_resource::builders::AssociateResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateResourceInput`](crate::operation::associate_resource::AssociateResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateResourceInputBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -66,10 +63,7 @@ impl AssociateResourceInputBuilder {
         self
     }
     /// <p>The type of resource of which the application will be associated.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -94,16 +88,11 @@ impl AssociateResourceInputBuilder {
     /// Consumes the builder and constructs a [`AssociateResourceInput`](crate::operation::associate_resource::AssociateResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_resource::AssociateResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_resource::AssociateResourceInput {
-                application: self.application,
-                resource_type: self.resource_type,
-                resource: self.resource,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_resource::AssociateResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::associate_resource::AssociateResourceInput {
+            application: self.application,
+            resource_type: self.resource_type,
+            resource: self.resource,
+        })
     }
 }

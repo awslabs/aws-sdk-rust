@@ -22,16 +22,14 @@ impl DisassociatePhoneNumberFromUserInput {
 }
 impl DisassociatePhoneNumberFromUserInput {
     /// Creates a new builder-style object to manufacture [`DisassociatePhoneNumberFromUserInput`](crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserInput).
-    pub fn builder() -> crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserInputBuilder {
         crate::operation::disassociate_phone_number_from_user::builders::DisassociatePhoneNumberFromUserInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociatePhoneNumberFromUserInput`](crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociatePhoneNumberFromUserInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -74,11 +72,9 @@ impl DisassociatePhoneNumberFromUserInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserInput {
-                account_id: self.account_id
-                ,
-                user_id: self.user_id
-                ,
-            }
+                account_id: self.account_id,
+                user_id: self.user_id,
+            },
         )
     }
 }

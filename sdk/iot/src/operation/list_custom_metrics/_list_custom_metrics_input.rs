@@ -22,17 +22,14 @@ impl ListCustomMetricsInput {
 }
 impl ListCustomMetricsInput {
     /// Creates a new builder-style object to manufacture [`ListCustomMetricsInput`](crate::operation::list_custom_metrics::ListCustomMetricsInput).
-    pub fn builder(
-    ) -> crate::operation::list_custom_metrics::builders::ListCustomMetricsInputBuilder {
+    pub fn builder() -> crate::operation::list_custom_metrics::builders::ListCustomMetricsInputBuilder {
         crate::operation::list_custom_metrics::builders::ListCustomMetricsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomMetricsInput`](crate::operation::list_custom_metrics::ListCustomMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomMetricsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,15 +66,10 @@ impl ListCustomMetricsInputBuilder {
     /// Consumes the builder and constructs a [`ListCustomMetricsInput`](crate::operation::list_custom_metrics::ListCustomMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_custom_metrics::ListCustomMetricsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_custom_metrics::ListCustomMetricsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_custom_metrics::ListCustomMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_custom_metrics::ListCustomMetricsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

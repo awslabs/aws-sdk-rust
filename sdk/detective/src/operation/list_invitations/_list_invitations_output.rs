@@ -35,9 +35,7 @@ impl ListInvitationsOutput {
 
 /// A builder for [`ListInvitationsOutput`](crate::operation::list_invitations::ListInvitationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInvitationsOutputBuilder {
     pub(crate) invitations: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListInvitationsOutputBuilder {
         self
     }
     /// <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
-    pub fn set_invitations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>,
-    ) -> Self {
+    pub fn set_invitations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>) -> Self {
         self.invitations = input;
         self
     }
     /// <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
-    pub fn get_invitations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>> {
+    pub fn get_invitations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>> {
         &self.invitations
     }
     /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>

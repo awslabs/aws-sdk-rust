@@ -28,7 +28,7 @@ impl SendCustomVerificationEmailInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendCustomVerificationEmailFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailInputBuilder,
+    inner: crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailInputBuilder,
 }
 impl SendCustomVerificationEmailFluentBuilder {
     /// Creates a new `SendCustomVerificationEmail`.
@@ -39,7 +39,7 @@ impl SendCustomVerificationEmailFluentBuilder {
         }
     }
     /// Access the SendCustomVerificationEmail as a reference.
-    pub fn as_input(&self) -> &crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl SendCustomVerificationEmailFluentBuilder {
             crate::operation::send_custom_verification_email::SendCustomVerificationEmail,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_custom_verification_email::SendCustomVerificationEmailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_custom_verification_email::SendCustomVerificationEmailError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl SendCustomVerificationEmailFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl SendCustomVerificationEmailFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_custom_verification_email::SendCustomVerificationEmailOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_custom_verification_email::SendCustomVerificationEmailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_custom_verification_email::SendCustomVerificationEmailError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl SendCustomVerificationEmailFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_custom_verification_email::SendCustomVerificationEmailOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_custom_verification_email::SendCustomVerificationEmailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_custom_verification_email::SendCustomVerificationEmailError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl SendCustomVerificationEmailFluentBuilder {
             crate::operation::send_custom_verification_email::SendCustomVerificationEmail,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_custom_verification_email::SendCustomVerificationEmailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_custom_verification_email::SendCustomVerificationEmailError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The email address to verify.</p>
-    pub fn email_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
         self
     }
     /// <p>The email address to verify.</p>
-    pub fn set_email_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
     }
@@ -143,18 +126,12 @@ impl SendCustomVerificationEmailFluentBuilder {
         self.inner.get_email_address()
     }
     /// <p>The name of the custom verification email template to use when sending the verification email.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the custom verification email template to use when sending the verification email.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -163,18 +140,12 @@ impl SendCustomVerificationEmailFluentBuilder {
         self.inner.get_template_name()
     }
     /// <p>Name of a configuration set to use when sending the verification email.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>Name of a configuration set to use when sending the verification email.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }

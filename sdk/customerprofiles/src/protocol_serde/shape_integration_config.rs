@@ -6,10 +6,7 @@ pub fn ser_integration_config(
     if let Some(var_1) = &input.appflow_integration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AppflowIntegration").start_object();
-        crate::protocol_serde::shape_appflow_integration::ser_appflow_integration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_appflow_integration::ser_appflow_integration(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

@@ -44,9 +44,7 @@ impl InstanceHealthCheckResult {
 
 /// A builder for [`InstanceHealthCheckResult`](crate::types::InstanceHealthCheckResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceHealthCheckResultBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::InstanceHealthCheckType>,
     pub(crate) status: ::std::option::Option<crate::types::InstanceHealthCheckState>,
@@ -60,10 +58,7 @@ impl InstanceHealthCheckResultBuilder {
         self
     }
     /// <p>The type of container instance health status that was verified.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceHealthCheckType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::InstanceHealthCheckType>) -> Self {
         self.r#type = input;
         self
     }
@@ -77,10 +72,7 @@ impl InstanceHealthCheckResultBuilder {
         self
     }
     /// <p>The container instance health status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceHealthCheckState>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::InstanceHealthCheckState>) -> Self {
         self.status = input;
         self
     }
@@ -94,10 +86,7 @@ impl InstanceHealthCheckResultBuilder {
         self
     }
     /// <p>The Unix timestamp for when the container instance health status was last updated.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }
@@ -111,10 +100,7 @@ impl InstanceHealthCheckResultBuilder {
         self
     }
     /// <p>The Unix timestamp for when the container instance health status last changed.</p>
-    pub fn set_last_status_change(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_status_change(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_status_change = input;
         self
     }

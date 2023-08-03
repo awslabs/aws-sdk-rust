@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteTransitGatewayPolicyTableOutput`](crate::operation::delete_transit_gateway_policy_table::DeleteTransitGatewayPolicyTableOutput) with field(s):
     ///   - [`transit_gateway_policy_table(Option<TransitGatewayPolicyTable>)`](crate::operation::delete_transit_gateway_policy_table::DeleteTransitGatewayPolicyTableOutput::transit_gateway_policy_table): <p>Provides details about the deleted transit gateway policy table.</p>
     /// - On failure, responds with [`SdkError<DeleteTransitGatewayPolicyTableError>`](crate::operation::delete_transit_gateway_policy_table::DeleteTransitGatewayPolicyTableError)
-    pub fn delete_transit_gateway_policy_table(&self) -> crate::operation::delete_transit_gateway_policy_table::builders::DeleteTransitGatewayPolicyTableFluentBuilder{
+    pub fn delete_transit_gateway_policy_table(
+        &self,
+    ) -> crate::operation::delete_transit_gateway_policy_table::builders::DeleteTransitGatewayPolicyTableFluentBuilder {
         crate::operation::delete_transit_gateway_policy_table::builders::DeleteTransitGatewayPolicyTableFluentBuilder::new(self.handle.clone())
     }
 }

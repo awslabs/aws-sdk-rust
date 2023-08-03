@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`BatchGetApplicationsOutput`](crate::operation::batch_get_applications::BatchGetApplicationsOutput) with field(s):
     ///   - [`applications_info(Option<Vec<ApplicationInfo>>)`](crate::operation::batch_get_applications::BatchGetApplicationsOutput::applications_info): <p>Information about the applications.</p>
     /// - On failure, responds with [`SdkError<BatchGetApplicationsError>`](crate::operation::batch_get_applications::BatchGetApplicationsError)
-    pub fn batch_get_applications(
-        &self,
-    ) -> crate::operation::batch_get_applications::builders::BatchGetApplicationsFluentBuilder {
-        crate::operation::batch_get_applications::builders::BatchGetApplicationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_applications(&self) -> crate::operation::batch_get_applications::builders::BatchGetApplicationsFluentBuilder {
+        crate::operation::batch_get_applications::builders::BatchGetApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

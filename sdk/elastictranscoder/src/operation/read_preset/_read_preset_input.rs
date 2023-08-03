@@ -23,9 +23,7 @@ impl ReadPresetInput {
 
 /// A builder for [`ReadPresetInput`](crate::operation::read_preset::ReadPresetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReadPresetInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -45,12 +43,7 @@ impl ReadPresetInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`ReadPresetInput`](crate::operation::read_preset::ReadPresetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::read_preset::ReadPresetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::read_preset::ReadPresetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::read_preset::ReadPresetInput { id: self.id })
     }
 }

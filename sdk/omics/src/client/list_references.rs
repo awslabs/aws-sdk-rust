@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_references::ListReferencesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     ///   - [`references(Option<Vec<ReferenceListItem>>)`](crate::operation::list_references::ListReferencesOutput::references): <p>A list of references.</p>
     /// - On failure, responds with [`SdkError<ListReferencesError>`](crate::operation::list_references::ListReferencesError)
-    pub fn list_references(
-        &self,
-    ) -> crate::operation::list_references::builders::ListReferencesFluentBuilder {
-        crate::operation::list_references::builders::ListReferencesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_references(&self) -> crate::operation::list_references::builders::ListReferencesFluentBuilder {
+        crate::operation::list_references::builders::ListReferencesFluentBuilder::new(self.handle.clone())
     }
 }

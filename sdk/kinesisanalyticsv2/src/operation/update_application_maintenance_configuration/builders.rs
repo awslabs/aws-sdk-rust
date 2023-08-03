@@ -5,16 +5,16 @@ pub use crate::operation::update_application_maintenance_configuration::_update_
 
 impl UpdateApplicationMaintenanceConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_application_maintenance_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -31,7 +31,7 @@ impl UpdateApplicationMaintenanceConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationMaintenanceConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationInputBuilder,
+    inner: crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationInputBuilder,
 }
 impl UpdateApplicationMaintenanceConfigurationFluentBuilder {
     /// Creates a new `UpdateApplicationMaintenanceConfiguration`.
@@ -42,15 +42,24 @@ impl UpdateApplicationMaintenanceConfigurationFluentBuilder {
         }
     }
     /// Access the UpdateApplicationMaintenanceConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -59,16 +68,19 @@ impl UpdateApplicationMaintenanceConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -86,32 +98,39 @@ impl UpdateApplicationMaintenanceConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the application for which you want to update the maintenance configuration.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of the application for which you want to update the maintenance configuration.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -120,13 +139,8 @@ impl UpdateApplicationMaintenanceConfigurationFluentBuilder {
         self.inner.get_application_name()
     }
     /// <p>Describes the application maintenance configuration update.</p>
-    pub fn application_maintenance_configuration_update(
-        mut self,
-        input: crate::types::ApplicationMaintenanceConfigurationUpdate,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .application_maintenance_configuration_update(input);
+    pub fn application_maintenance_configuration_update(mut self, input: crate::types::ApplicationMaintenanceConfigurationUpdate) -> Self {
+        self.inner = self.inner.application_maintenance_configuration_update(input);
         self
     }
     /// <p>Describes the application maintenance configuration update.</p>
@@ -134,16 +148,13 @@ impl UpdateApplicationMaintenanceConfigurationFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationUpdate>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_application_maintenance_configuration_update(input);
+        self.inner = self.inner.set_application_maintenance_configuration_update(input);
         self
     }
     /// <p>Describes the application maintenance configuration update.</p>
     pub fn get_application_maintenance_configuration_update(
         &self,
     ) -> &::std::option::Option<crate::types::ApplicationMaintenanceConfigurationUpdate> {
-        self.inner
-            .get_application_maintenance_configuration_update()
+        self.inner.get_application_maintenance_configuration_update()
     }
 }

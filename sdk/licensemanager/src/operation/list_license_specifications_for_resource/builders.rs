@@ -5,16 +5,16 @@ pub use crate::operation::list_license_specifications_for_resource::_list_licens
 
 impl ListLicenseSpecificationsForResourceInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_license_specifications_for_resource();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListLicenseSpecificationsForResourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLicenseSpecificationsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_license_specifications_for_resource::builders::ListLicenseSpecificationsForResourceInputBuilder,
+    inner: crate::operation::list_license_specifications_for_resource::builders::ListLicenseSpecificationsForResourceInputBuilder,
 }
 impl ListLicenseSpecificationsForResourceFluentBuilder {
     /// Creates a new `ListLicenseSpecificationsForResource`.
@@ -37,15 +37,22 @@ impl ListLicenseSpecificationsForResourceFluentBuilder {
         }
     }
     /// Access the ListLicenseSpecificationsForResource as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_license_specifications_for_resource::builders::ListLicenseSpecificationsForResourceInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_license_specifications_for_resource::builders::ListLicenseSpecificationsForResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResource, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResource,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl ListLicenseSpecificationsForResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +89,26 @@ impl ListLicenseSpecificationsForResourceFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResource, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResource,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_license_specifications_for_resource::ListLicenseSpecificationsForResourceError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>

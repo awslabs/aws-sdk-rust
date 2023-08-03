@@ -124,9 +124,7 @@ impl StartExportTaskInput {
 
 /// A builder for [`StartExportTaskInput`](crate::operation::start_export_task::StartExportTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartExportTaskInputBuilder {
     pub(crate) export_task_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
@@ -138,18 +136,12 @@ pub struct StartExportTaskInputBuilder {
 }
 impl StartExportTaskInputBuilder {
     /// <p>A unique identifier for the export task. This ID isn't an identifier for the Amazon S3 bucket where the data is to be exported.</p>
-    pub fn export_task_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_task_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_task_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the export task. This ID isn't an identifier for the Amazon S3 bucket where the data is to be exported.</p>
-    pub fn set_export_task_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_export_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_task_identifier = input;
         self
     }
@@ -172,18 +164,12 @@ impl StartExportTaskInputBuilder {
         &self.source_arn
     }
     /// <p>The name of the Amazon S3 bucket to export the snapshot or cluster data to.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon S3 bucket to export the snapshot or cluster data to.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
@@ -329,10 +315,7 @@ impl StartExportTaskInputBuilder {
     /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
-    pub fn set_export_only(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_export_only(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.export_only = input;
         self
     }
@@ -343,18 +326,13 @@ impl StartExportTaskInputBuilder {
     /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
-    pub fn get_export_only(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_export_only(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.export_only
     }
     /// Consumes the builder and constructs a [`StartExportTaskInput`](crate::operation::start_export_task::StartExportTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_export_task::StartExportTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_export_task::StartExportTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_export_task::StartExportTaskInput {
             export_task_identifier: self.export_task_identifier,
             source_arn: self.source_arn,

@@ -27,7 +27,7 @@ impl ModifyClusterParameterGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyClusterParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupInputBuilder,
+    inner: crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupInputBuilder,
 }
 impl ModifyClusterParameterGroupFluentBuilder {
     /// Creates a new `ModifyClusterParameterGroup`.
@@ -38,7 +38,7 @@ impl ModifyClusterParameterGroupFluentBuilder {
         }
     }
     /// Access the ModifyClusterParameterGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ModifyClusterParameterGroupFluentBuilder {
             crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ModifyClusterParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ModifyClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ModifyClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl ModifyClusterParameterGroupFluentBuilder {
             crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the parameter group to be modified.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_name(input.into());
         self
     }
     /// <p>The name of the parameter group to be modified.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }
@@ -155,19 +138,14 @@ impl ModifyClusterParameterGroupFluentBuilder {
     /// <p>An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.</p>
     /// <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.</p>
     /// <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         self.inner.get_parameters()
     }
 }

@@ -35,9 +35,7 @@ impl DescribeIpamsOutput {
 
 /// A builder for [`DescribeIpamsOutput`](crate::operation::describe_ipams::DescribeIpamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpamsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) ipams: ::std::option::Option<::std::vec::Vec<crate::types::Ipam>>,
@@ -70,10 +68,7 @@ impl DescribeIpamsOutputBuilder {
         self
     }
     /// <p>Information about the IPAMs.</p>
-    pub fn set_ipams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ipam>>,
-    ) -> Self {
+    pub fn set_ipams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ipam>>) -> Self {
         self.ipams = input;
         self
     }

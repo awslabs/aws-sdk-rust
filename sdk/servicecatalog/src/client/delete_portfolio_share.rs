@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DeletePortfolioShareOutput`](crate::operation::delete_portfolio_share::DeletePortfolioShareOutput) with field(s):
     ///   - [`portfolio_share_token(Option<String>)`](crate::operation::delete_portfolio_share::DeletePortfolioShareOutput::portfolio_share_token): <p>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</p>
     /// - On failure, responds with [`SdkError<DeletePortfolioShareError>`](crate::operation::delete_portfolio_share::DeletePortfolioShareError)
-    pub fn delete_portfolio_share(
-        &self,
-    ) -> crate::operation::delete_portfolio_share::builders::DeletePortfolioShareFluentBuilder {
-        crate::operation::delete_portfolio_share::builders::DeletePortfolioShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_portfolio_share(&self) -> crate::operation::delete_portfolio_share::builders::DeletePortfolioShareFluentBuilder {
+        crate::operation::delete_portfolio_share::builders::DeletePortfolioShareFluentBuilder::new(self.handle.clone())
     }
 }

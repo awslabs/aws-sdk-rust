@@ -43,9 +43,7 @@ impl AssociateAssetsInput {
 
 /// A builder for [`AssociateAssetsInput`](crate::operation::associate_assets::AssociateAssetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateAssetsInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) hierarchy_id: ::std::option::Option<::std::string::String>,
@@ -82,18 +80,12 @@ impl AssociateAssetsInputBuilder {
         &self.hierarchy_id
     }
     /// <p>The ID of the child asset to be associated.</p>
-    pub fn child_asset_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn child_asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.child_asset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the child asset to be associated.</p>
-    pub fn set_child_asset_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_child_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.child_asset_id = input;
         self
     }
@@ -118,10 +110,7 @@ impl AssociateAssetsInputBuilder {
     /// Consumes the builder and constructs a [`AssociateAssetsInput`](crate::operation::associate_assets::AssociateAssetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_assets::AssociateAssetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::associate_assets::AssociateAssetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_assets::AssociateAssetsInput {
             asset_id: self.asset_id,
             hierarchy_id: self.hierarchy_id,

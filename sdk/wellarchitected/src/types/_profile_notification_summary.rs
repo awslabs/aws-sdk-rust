@@ -67,9 +67,7 @@ impl ProfileNotificationSummary {
 
 /// A builder for [`ProfileNotificationSummary`](crate::types::ProfileNotificationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProfileNotificationSummaryBuilder {
     pub(crate) current_profile_version: ::std::option::Option<::std::string::String>,
     pub(crate) latest_profile_version: ::std::option::Option<::std::string::String>,
@@ -81,18 +79,12 @@ pub struct ProfileNotificationSummaryBuilder {
 }
 impl ProfileNotificationSummaryBuilder {
     /// <p>The current profile version.</p>
-    pub fn current_profile_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_profile_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current profile version.</p>
-    pub fn set_current_profile_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_profile_version = input;
         self
     }
@@ -101,18 +93,12 @@ impl ProfileNotificationSummaryBuilder {
         &self.current_profile_version
     }
     /// <p>The latest profile version.</p>
-    pub fn latest_profile_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_profile_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The latest profile version.</p>
-    pub fn set_latest_profile_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_profile_version = input;
         self
     }
@@ -126,10 +112,7 @@ impl ProfileNotificationSummaryBuilder {
         self
     }
     /// <p>Type of notification.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProfileNotificationType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProfileNotificationType>) -> Self {
         self.r#type = input;
         self
     }
@@ -181,19 +164,13 @@ impl ProfileNotificationSummaryBuilder {
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn workload_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workload_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn set_workload_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_name = input;
         self
     }

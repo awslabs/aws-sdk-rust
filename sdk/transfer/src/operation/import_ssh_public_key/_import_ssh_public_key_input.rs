@@ -31,17 +31,14 @@ impl ImportSshPublicKeyInput {
 }
 impl ImportSshPublicKeyInput {
     /// Creates a new builder-style object to manufacture [`ImportSshPublicKeyInput`](crate::operation::import_ssh_public_key::ImportSshPublicKeyInput).
-    pub fn builder(
-    ) -> crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyInputBuilder {
+    pub fn builder() -> crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyInputBuilder {
         crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`ImportSshPublicKeyInput`](crate::operation::import_ssh_public_key::ImportSshPublicKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportSshPublicKeyInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) ssh_public_key_body: ::std::option::Option<::std::string::String>,
@@ -64,19 +61,13 @@ impl ImportSshPublicKeyInputBuilder {
     }
     /// <p>The public key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    pub fn ssh_public_key_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    pub fn set_ssh_public_key_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_public_key_body = input;
         self
     }
@@ -102,16 +93,12 @@ impl ImportSshPublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`ImportSshPublicKeyInput`](crate::operation::import_ssh_public_key::ImportSshPublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_ssh_public_key::ImportSshPublicKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::import_ssh_public_key::ImportSshPublicKeyInput {
-                server_id: self.server_id,
-                ssh_public_key_body: self.ssh_public_key_body,
-                user_name: self.user_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::import_ssh_public_key::ImportSshPublicKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::import_ssh_public_key::ImportSshPublicKeyInput {
+            server_id: self.server_id,
+            ssh_public_key_body: self.ssh_public_key_body,
+            user_name: self.user_name,
+        })
     }
 }

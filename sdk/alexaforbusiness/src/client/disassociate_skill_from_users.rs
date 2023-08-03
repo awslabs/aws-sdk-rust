@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociateSkillFromUsersOutput`](crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersOutput)
     /// - On failure, responds with [`SdkError<DisassociateSkillFromUsersError>`](crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn disassociate_skill_from_users(&self) -> crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersFluentBuilder{
+    pub fn disassociate_skill_from_users(
+        &self,
+    ) -> crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersFluentBuilder {
         crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersFluentBuilder::new(self.handle.clone())
     }
 }

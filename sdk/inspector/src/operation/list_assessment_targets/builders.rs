@@ -37,10 +37,7 @@ impl ListAssessmentTargetsFluentBuilder {
         }
     }
     /// Access the ListAssessmentTargets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_assessment_targets::builders::ListAssessmentTargetsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_assessment_targets::builders::ListAssessmentTargetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListAssessmentTargetsFluentBuilder {
             crate::operation::list_assessment_targets::ListAssessmentTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_targets::ListAssessmentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_targets::ListAssessmentTargetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListAssessmentTargetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListAssessmentTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assessment_targets::ListAssessmentTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_targets::ListAssessmentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_targets::ListAssessmentTargetsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListAssessmentTargetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assessment_targets::ListAssessmentTargetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_targets::ListAssessmentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_targets::ListAssessmentTargetsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListAssessmentTargetsFluentBuilder {
             crate::operation::list_assessment_targets::ListAssessmentTargets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_targets::ListAssessmentTargetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_targets::ListAssessmentTargetsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_assessment_targets::paginator::ListAssessmentTargetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_assessment_targets::paginator::ListAssessmentTargetsPaginator {
-        crate::operation::list_assessment_targets::paginator::ListAssessmentTargetsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_assessment_targets::paginator::ListAssessmentTargetsPaginator {
+        crate::operation::list_assessment_targets::paginator::ListAssessmentTargetsPaginator::new(self.handle, self.inner)
     }
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
@@ -142,10 +123,7 @@ impl ListAssessmentTargetsFluentBuilder {
     }
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::AssessmentTargetFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::AssessmentTargetFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

@@ -22,9 +22,7 @@ impl GetServiceInput {
 
 /// A builder for [`GetServiceInput`](crate::operation::get_service::GetServiceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,7 @@ impl GetServiceInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetServiceInput`](crate::operation::get_service::GetServiceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_service::GetServiceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_service::GetServiceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_service::GetServiceInput { id: self.id })
     }
 }

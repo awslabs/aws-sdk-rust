@@ -10,10 +10,7 @@ impl DeleteDirectoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_directory::DeleteDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_directory::DeleteDirectoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_directory::DeleteDirectoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_directory();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteDirectoryFluentBuilder {
         }
     }
     /// Access the DeleteDirectory as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_directory::builders::DeleteDirectoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_directory::builders::DeleteDirectoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteDirectoryFluentBuilder {
             crate::operation::delete_directory::DeleteDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_directory::DeleteDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_directory::DeleteDirectoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteDirectoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_directory::DeleteDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_directory::DeleteDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_directory::DeleteDirectoryError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_directory::DeleteDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_directory::DeleteDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_directory::DeleteDirectoryError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteDirectoryFluentBuilder {
             crate::operation::delete_directory::DeleteDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_directory::DeleteDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_directory::DeleteDirectoryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the directory to delete.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The ARN of the directory to delete.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }

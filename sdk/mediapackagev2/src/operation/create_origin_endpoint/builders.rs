@@ -37,9 +37,7 @@ impl CreateOriginEndpointFluentBuilder {
         }
     }
     /// Access the CreateOriginEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_origin_endpoint::builders::CreateOriginEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_origin_endpoint::builders::CreateOriginEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateOriginEndpointFluentBuilder {
             crate::operation::create_origin_endpoint::CreateOriginEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_origin_endpoint::CreateOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_origin_endpoint::CreateOriginEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateOriginEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateOriginEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_origin_endpoint::CreateOriginEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_origin_endpoint::CreateOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_origin_endpoint::CreateOriginEndpointError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateOriginEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_origin_endpoint::CreateOriginEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_origin_endpoint::CreateOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_origin_endpoint::CreateOriginEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl CreateOriginEndpointFluentBuilder {
             crate::operation::create_origin_endpoint::CreateOriginEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_origin_endpoint::CreateOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_origin_endpoint::CreateOriginEndpointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_group_name(input.into());
         self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn set_channel_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_group_name(input);
         self
     }
@@ -157,18 +138,12 @@ impl CreateOriginEndpointFluentBuilder {
         self.inner.get_channel_name()
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and must be unique for your account in the AWS Region and channel. You can't use spaces in the name. You can't change the name after you create the endpoint.</p>
-    pub fn origin_endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origin_endpoint_name(input.into());
         self
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and must be unique for your account in the AWS Region and channel. You can't use spaces in the name. You can't change the name after you create the endpoint.</p>
-    pub fn set_origin_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origin_endpoint_name(input);
         self
     }
@@ -182,10 +157,7 @@ impl CreateOriginEndpointFluentBuilder {
         self
     }
     /// <p>The type of container to attach to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. You can't change the container type after you create the endpoint.</p>
-    pub fn set_container_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerType>,
-    ) -> Self {
+    pub fn set_container_type(mut self, input: ::std::option::Option<crate::types::ContainerType>) -> Self {
         self.inner = self.inner.set_container_type(input);
         self
     }
@@ -259,17 +231,12 @@ impl CreateOriginEndpointFluentBuilder {
         self
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn set_hls_manifests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
-    ) -> Self {
+    pub fn set_hls_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>) -> Self {
         self.inner = self.inner.set_hls_manifests(input);
         self
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn get_hls_manifests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>> {
+    pub fn get_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>> {
         self.inner.get_hls_manifests()
     }
     /// Appends an item to `LowLatencyHlsManifests`.
@@ -277,29 +244,20 @@ impl CreateOriginEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_low_latency_hls_manifests`](Self::set_low_latency_hls_manifests).
     ///
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn low_latency_hls_manifests(
-        mut self,
-        input: crate::types::CreateLowLatencyHlsManifestConfiguration,
-    ) -> Self {
+    pub fn low_latency_hls_manifests(mut self, input: crate::types::CreateLowLatencyHlsManifestConfiguration) -> Self {
         self.inner = self.inner.low_latency_hls_manifests(input);
         self
     }
     /// <p>A low-latency HLS manifest configuration.</p>
     pub fn set_low_latency_hls_manifests(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_low_latency_hls_manifests(input);
         self
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn get_low_latency_hls_manifests(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>,
-    > {
+    pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>> {
         self.inner.get_low_latency_hls_manifests()
     }
     /// Adds a key-value pair to `Tags`.
@@ -309,34 +267,21 @@ impl CreateOriginEndpointFluentBuilder {
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p> <code>"Key1": "Value1",</code> </p>
     /// <p> <code>"Key2": "Value2"</code> </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p> <code>"Key1": "Value1",</code> </p>
     /// <p> <code>"Key2": "Value2"</code> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p> <code>"Key1": "Value1",</code> </p>
     /// <p> <code>"Key2": "Value2"</code> </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

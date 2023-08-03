@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateTrustStoreOutput {
 }
 impl UpdateTrustStoreOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTrustStoreOutput`](crate::operation::update_trust_store::UpdateTrustStoreOutput).
-    pub fn builder() -> crate::operation::update_trust_store::builders::UpdateTrustStoreOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_trust_store::builders::UpdateTrustStoreOutputBuilder {
         crate::operation::update_trust_store::builders::UpdateTrustStoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTrustStoreOutput`](crate::operation::update_trust_store::UpdateTrustStoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTrustStoreOutputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateTrustStoreOutputBuilder {
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn set_trust_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_store_arn = input;
         self
     }

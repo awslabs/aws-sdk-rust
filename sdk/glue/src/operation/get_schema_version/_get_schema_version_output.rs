@@ -63,17 +63,14 @@ impl ::aws_http::request_id::RequestId for GetSchemaVersionOutput {
 }
 impl GetSchemaVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetSchemaVersionOutput`](crate::operation::get_schema_version::GetSchemaVersionOutput).
-    pub fn builder() -> crate::operation::get_schema_version::builders::GetSchemaVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schema_version::builders::GetSchemaVersionOutputBuilder {
         crate::operation::get_schema_version::builders::GetSchemaVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSchemaVersionOutput`](crate::operation::get_schema_version::GetSchemaVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaVersionOutputBuilder {
     pub(crate) schema_version_id: ::std::option::Option<::std::string::String>,
     pub(crate) schema_definition: ::std::option::Option<::std::string::String>,
@@ -86,18 +83,12 @@ pub struct GetSchemaVersionOutputBuilder {
 }
 impl GetSchemaVersionOutputBuilder {
     /// <p>The <code>SchemaVersionId</code> of the schema version.</p>
-    pub fn schema_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>SchemaVersionId</code> of the schema version.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version_id = input;
         self
     }
@@ -106,18 +97,12 @@ impl GetSchemaVersionOutputBuilder {
         &self.schema_version_id
     }
     /// <p>The schema definition for the schema ID.</p>
-    pub fn schema_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema definition for the schema ID.</p>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_definition = input;
         self
     }
@@ -131,10 +116,7 @@ impl GetSchemaVersionOutputBuilder {
         self
     }
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
-    pub fn set_data_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DataFormat>,
-    ) -> Self {
+    pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormat>) -> Self {
         self.data_format = input;
         self
     }
@@ -176,10 +158,7 @@ impl GetSchemaVersionOutputBuilder {
         self
     }
     /// <p>The status of the schema version. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SchemaVersionStatus>) -> Self {
         self.status = input;
         self
     }

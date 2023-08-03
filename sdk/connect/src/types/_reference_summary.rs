@@ -29,9 +29,7 @@ pub enum ReferenceSummary {
 impl ReferenceSummary {
     /// Tries to convert the enum instance into [`Attachment`](crate::types::ReferenceSummary::Attachment), extracting the inner [`AttachmentReference`](crate::types::AttachmentReference).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_attachment(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AttachmentReference, &Self> {
+    pub fn as_attachment(&self) -> ::std::result::Result<&crate::types::AttachmentReference, &Self> {
         if let ReferenceSummary::Attachment(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

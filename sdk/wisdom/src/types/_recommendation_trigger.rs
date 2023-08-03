@@ -59,9 +59,7 @@ impl RecommendationTrigger {
 
 /// A builder for [`RecommendationTrigger`](crate::types::RecommendationTrigger).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationTriggerBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::RecommendationTriggerType>,
@@ -90,10 +88,7 @@ impl RecommendationTriggerBuilder {
         self
     }
     /// <p>The type of recommendation trigger.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationTriggerType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RecommendationTriggerType>) -> Self {
         self.r#type = input;
         self
     }
@@ -115,10 +110,7 @@ impl RecommendationTriggerBuilder {
     /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
     /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
     /// </ul>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationSourceType>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::RecommendationSourceType>) -> Self {
         self.source = input;
         self
     }
@@ -136,10 +128,7 @@ impl RecommendationTriggerBuilder {
         self
     }
     /// <p>A union type containing information related to the trigger.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationTriggerData>,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<crate::types::RecommendationTriggerData>) -> Self {
         self.data = input;
         self
     }
@@ -152,27 +141,19 @@ impl RecommendationTriggerBuilder {
     /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
     ///
     /// <p>The identifiers of the recommendations.</p>
-    pub fn recommendation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recommendation_ids.unwrap_or_default();
         v.push(input.into());
         self.recommendation_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn set_recommendation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_recommendation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.recommendation_ids = input;
         self
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn get_recommendation_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recommendation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.recommendation_ids
     }
     /// Consumes the builder and constructs a [`RecommendationTrigger`](crate::types::RecommendationTrigger).

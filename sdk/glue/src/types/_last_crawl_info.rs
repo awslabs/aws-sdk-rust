@@ -58,9 +58,7 @@ impl LastCrawlInfo {
 
 /// A builder for [`LastCrawlInfo`](crate::types::LastCrawlInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LastCrawlInfoBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LastCrawlStatus>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
@@ -76,10 +74,7 @@ impl LastCrawlInfoBuilder {
         self
     }
     /// <p>Status of the last crawl.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LastCrawlStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::LastCrawlStatus>) -> Self {
         self.status = input;
         self
     }
@@ -88,18 +83,12 @@ impl LastCrawlInfoBuilder {
         &self.status
     }
     /// <p>If an error occurred, the error information about the last crawl.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If an error occurred, the error information about the last crawl.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }
@@ -136,18 +125,12 @@ impl LastCrawlInfoBuilder {
         &self.log_stream
     }
     /// <p>The prefix for a message about this crawl.</p>
-    pub fn message_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn message_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix for a message about this crawl.</p>
-    pub fn set_message_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_message_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_prefix = input;
         self
     }
@@ -161,10 +144,7 @@ impl LastCrawlInfoBuilder {
         self
     }
     /// <p>The time at which the crawl started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }

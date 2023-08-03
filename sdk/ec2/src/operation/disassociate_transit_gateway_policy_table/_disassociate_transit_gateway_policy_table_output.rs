@@ -10,9 +10,7 @@ pub struct DisassociateTransitGatewayPolicyTableOutput {
 }
 impl DisassociateTransitGatewayPolicyTableOutput {
     /// <p>Returns details about the transit gateway policy table disassociation.</p>
-    pub fn association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayPolicyTableAssociation> {
+    pub fn association(&self) -> ::std::option::Option<&crate::types::TransitGatewayPolicyTableAssociation> {
         self.association.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DisassociateTransitGatewayPolicyTable
 }
 impl DisassociateTransitGatewayPolicyTableOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateTransitGatewayPolicyTableOutput`](crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTableOutput).
-    pub fn builder() -> crate::operation::disassociate_transit_gateway_policy_table::builders::DisassociateTransitGatewayPolicyTableOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_transit_gateway_policy_table::builders::DisassociateTransitGatewayPolicyTableOutputBuilder {
         crate::operation::disassociate_transit_gateway_policy_table::builders::DisassociateTransitGatewayPolicyTableOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateTransitGatewayPolicyTableOutput`](crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateTransitGatewayPolicyTableOutputBuilder {
-    pub(crate) association:
-        ::std::option::Option<crate::types::TransitGatewayPolicyTableAssociation>,
+    pub(crate) association: ::std::option::Option<crate::types::TransitGatewayPolicyTableAssociation>,
     _request_id: Option<String>,
 }
 impl DisassociateTransitGatewayPolicyTableOutputBuilder {
     /// <p>Returns details about the transit gateway policy table disassociation.</p>
-    pub fn association(
-        mut self,
-        input: crate::types::TransitGatewayPolicyTableAssociation,
-    ) -> Self {
+    pub fn association(mut self, input: crate::types::TransitGatewayPolicyTableAssociation) -> Self {
         self.association = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns details about the transit gateway policy table disassociation.</p>
-    pub fn set_association(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayPolicyTableAssociation>,
-    ) -> Self {
+    pub fn set_association(mut self, input: ::std::option::Option<crate::types::TransitGatewayPolicyTableAssociation>) -> Self {
         self.association = input;
         self
     }
     /// <p>Returns details about the transit gateway policy table disassociation.</p>
-    pub fn get_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayPolicyTableAssociation> {
+    pub fn get_association(&self) -> &::std::option::Option<crate::types::TransitGatewayPolicyTableAssociation> {
         &self.association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,10 +58,9 @@ impl DisassociateTransitGatewayPolicyTableOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateTransitGatewayPolicyTableOutput`](crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTableOutput).
-    pub fn build(self) -> crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTableOutput{
+    pub fn build(self) -> crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTableOutput {
         crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTableOutput {
-            association: self.association
-            ,
+            association: self.association,
             _request_id: self._request_id,
         }
     }

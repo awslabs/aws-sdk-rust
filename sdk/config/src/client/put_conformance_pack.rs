@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`PutConformancePackOutput`](crate::operation::put_conformance_pack::PutConformancePackOutput) with field(s):
     ///   - [`conformance_pack_arn(Option<String>)`](crate::operation::put_conformance_pack::PutConformancePackOutput::conformance_pack_arn): <p>ARN of the conformance pack.</p>
     /// - On failure, responds with [`SdkError<PutConformancePackError>`](crate::operation::put_conformance_pack::PutConformancePackError)
-    pub fn put_conformance_pack(
-        &self,
-    ) -> crate::operation::put_conformance_pack::builders::PutConformancePackFluentBuilder {
-        crate::operation::put_conformance_pack::builders::PutConformancePackFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_conformance_pack(&self) -> crate::operation::put_conformance_pack::builders::PutConformancePackFluentBuilder {
+        crate::operation::put_conformance_pack::builders::PutConformancePackFluentBuilder::new(self.handle.clone())
     }
 }

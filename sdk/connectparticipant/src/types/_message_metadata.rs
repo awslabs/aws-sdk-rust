@@ -30,9 +30,7 @@ impl MessageMetadata {
 
 /// A builder for [`MessageMetadata`](crate::types::MessageMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageMetadataBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) receipts: ::std::option::Option<::std::vec::Vec<crate::types::Receipt>>,
@@ -64,10 +62,7 @@ impl MessageMetadataBuilder {
         self
     }
     /// <p>The list of receipt information for a message for different recipients.</p>
-    pub fn set_receipts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Receipt>>,
-    ) -> Self {
+    pub fn set_receipts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Receipt>>) -> Self {
         self.receipts = input;
         self
     }

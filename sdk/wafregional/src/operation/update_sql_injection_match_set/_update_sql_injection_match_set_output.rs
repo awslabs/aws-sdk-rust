@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateSqlInjectionMatchSetOutput {
 }
 impl UpdateSqlInjectionMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSqlInjectionMatchSetOutput`](crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetOutput).
-    pub fn builder() -> crate::operation::update_sql_injection_match_set::builders::UpdateSqlInjectionMatchSetOutputBuilder{
+    pub fn builder() -> crate::operation::update_sql_injection_match_set::builders::UpdateSqlInjectionMatchSetOutputBuilder {
         crate::operation::update_sql_injection_match_set::builders::UpdateSqlInjectionMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSqlInjectionMatchSetOutput`](crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSqlInjectionMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -61,9 +59,7 @@ impl UpdateSqlInjectionMatchSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSqlInjectionMatchSetOutput`](crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetOutput {
+    pub fn build(self) -> crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetOutput {
         crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetOutput {
             change_token: self.change_token,
             _request_id: self._request_id,

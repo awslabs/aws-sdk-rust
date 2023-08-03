@@ -29,17 +29,14 @@ impl ListSequenceStoresInput {
 }
 impl ListSequenceStoresInput {
     /// Creates a new builder-style object to manufacture [`ListSequenceStoresInput`](crate::operation::list_sequence_stores::ListSequenceStoresInput).
-    pub fn builder(
-    ) -> crate::operation::list_sequence_stores::builders::ListSequenceStoresInputBuilder {
+    pub fn builder() -> crate::operation::list_sequence_stores::builders::ListSequenceStoresInputBuilder {
         crate::operation::list_sequence_stores::builders::ListSequenceStoresInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSequenceStoresInput`](crate::operation::list_sequence_stores::ListSequenceStoresInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSequenceStoresInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -80,10 +77,7 @@ impl ListSequenceStoresInputBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::SequenceStoreFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::SequenceStoreFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -94,16 +88,11 @@ impl ListSequenceStoresInputBuilder {
     /// Consumes the builder and constructs a [`ListSequenceStoresInput`](crate::operation::list_sequence_stores::ListSequenceStoresInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_sequence_stores::ListSequenceStoresInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_sequence_stores::ListSequenceStoresInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filter: self.filter,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_sequence_stores::ListSequenceStoresInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_sequence_stores::ListSequenceStoresInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filter: self.filter,
+        })
     }
 }

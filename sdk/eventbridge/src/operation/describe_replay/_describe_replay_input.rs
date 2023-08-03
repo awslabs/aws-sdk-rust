@@ -22,9 +22,7 @@ impl DescribeReplayInput {
 
 /// A builder for [`DescribeReplayInput`](crate::operation::describe_replay::DescribeReplayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplayInputBuilder {
     pub(crate) replay_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DescribeReplayInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReplayInput`](crate::operation::describe_replay::DescribeReplayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_replay::DescribeReplayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_replay::DescribeReplayInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_replay::DescribeReplayInput {
             replay_name: self.replay_name,
         })

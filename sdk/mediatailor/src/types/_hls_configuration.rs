@@ -23,26 +23,18 @@ impl HlsConfiguration {
 
 /// A builder for [`HlsConfiguration`](crate::types::HlsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsConfigurationBuilder {
     pub(crate) manifest_endpoint_prefix: ::std::option::Option<::std::string::String>,
 }
 impl HlsConfigurationBuilder {
     /// <p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
-    pub fn manifest_endpoint_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn manifest_endpoint_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_endpoint_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
-    pub fn set_manifest_endpoint_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_manifest_endpoint_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manifest_endpoint_prefix = input;
         self
     }

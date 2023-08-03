@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`db_instance_automated_backups(Option<Vec<DbInstanceAutomatedBackup>>)`](crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsOutput::db_instance_automated_backups): <p>A list of <code>DBInstanceAutomatedBackup</code> instances.</p>
     /// - On failure, responds with [`SdkError<DescribeDBInstanceAutomatedBackupsError>`](crate::operation::describe_db_instance_automated_backups::DescribeDBInstanceAutomatedBackupsError)
-    pub fn describe_db_instance_automated_backups(&self) -> crate::operation::describe_db_instance_automated_backups::builders::DescribeDBInstanceAutomatedBackupsFluentBuilder{
+    pub fn describe_db_instance_automated_backups(
+        &self,
+    ) -> crate::operation::describe_db_instance_automated_backups::builders::DescribeDBInstanceAutomatedBackupsFluentBuilder {
         crate::operation::describe_db_instance_automated_backups::builders::DescribeDBInstanceAutomatedBackupsFluentBuilder::new(self.handle.clone())
     }
 }

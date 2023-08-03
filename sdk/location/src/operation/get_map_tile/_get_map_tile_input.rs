@@ -141,12 +141,7 @@ impl GetMapTileInputBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`GetMapTileInput`](crate::operation::get_map_tile::GetMapTileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_map_tile::GetMapTileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_map_tile::GetMapTileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_map_tile::GetMapTileInput {
             map_name: self.map_name,
             z: self.z,

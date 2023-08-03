@@ -26,7 +26,9 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput::tags): <p> The tags to add to the read set. </p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput::creation_time): <p> The creation time of the multipart upload. </p>
     /// - On failure, responds with [`SdkError<CreateMultipartReadSetUploadError>`](crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError)
-    pub fn create_multipart_read_set_upload(&self) -> crate::operation::create_multipart_read_set_upload::builders::CreateMultipartReadSetUploadFluentBuilder{
+    pub fn create_multipart_read_set_upload(
+        &self,
+    ) -> crate::operation::create_multipart_read_set_upload::builders::CreateMultipartReadSetUploadFluentBuilder {
         crate::operation::create_multipart_read_set_upload::builders::CreateMultipartReadSetUploadFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`budgets(Option<Vec<Budget>>)`](crate::operation::describe_budgets::DescribeBudgetsOutput::budgets): <p>A list of budgets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_budgets::DescribeBudgetsOutput::next_token): <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     /// - On failure, responds with [`SdkError<DescribeBudgetsError>`](crate::operation::describe_budgets::DescribeBudgetsError)
-    pub fn describe_budgets(
-        &self,
-    ) -> crate::operation::describe_budgets::builders::DescribeBudgetsFluentBuilder {
-        crate::operation::describe_budgets::builders::DescribeBudgetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_budgets(&self) -> crate::operation::describe_budgets::builders::DescribeBudgetsFluentBuilder {
+        crate::operation::describe_budgets::builders::DescribeBudgetsFluentBuilder::new(self.handle.clone())
     }
 }

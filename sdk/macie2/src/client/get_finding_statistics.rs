@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetFindingStatisticsOutput`](crate::operation::get_finding_statistics::GetFindingStatisticsOutput) with field(s):
     ///   - [`counts_by_group(Option<Vec<GroupCount>>)`](crate::operation::get_finding_statistics::GetFindingStatisticsOutput::counts_by_group): <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
     /// - On failure, responds with [`SdkError<GetFindingStatisticsError>`](crate::operation::get_finding_statistics::GetFindingStatisticsError)
-    pub fn get_finding_statistics(
-        &self,
-    ) -> crate::operation::get_finding_statistics::builders::GetFindingStatisticsFluentBuilder {
-        crate::operation::get_finding_statistics::builders::GetFindingStatisticsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_finding_statistics(&self) -> crate::operation::get_finding_statistics::builders::GetFindingStatisticsFluentBuilder {
+        crate::operation::get_finding_statistics::builders::GetFindingStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

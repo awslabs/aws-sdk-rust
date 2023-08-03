@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`collection_arn(Option<String>)`](crate::operation::create_geofence_collection::CreateGeofenceCollectionOutput::collection_arn): <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all Amazon Web Services. </p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>  </ul>
     ///   - [`create_time(Option<DateTime>)`](crate::operation::create_geofence_collection::CreateGeofenceCollectionOutput::create_time): <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     /// - On failure, responds with [`SdkError<CreateGeofenceCollectionError>`](crate::operation::create_geofence_collection::CreateGeofenceCollectionError)
-    pub fn create_geofence_collection(
-        &self,
-    ) -> crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionFluentBuilder
-    {
+    pub fn create_geofence_collection(&self) -> crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionFluentBuilder {
         crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionFluentBuilder::new(self.handle.clone())
     }
 }

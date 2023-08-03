@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_firewall_configs::ListFirewallConfigsOutput::next_token): <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     ///   - [`firewall_configs(Option<Vec<FirewallConfig>>)`](crate::operation::list_firewall_configs::ListFirewallConfigsOutput::firewall_configs): <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
     /// - On failure, responds with [`SdkError<ListFirewallConfigsError>`](crate::operation::list_firewall_configs::ListFirewallConfigsError)
-    pub fn list_firewall_configs(
-        &self,
-    ) -> crate::operation::list_firewall_configs::builders::ListFirewallConfigsFluentBuilder {
-        crate::operation::list_firewall_configs::builders::ListFirewallConfigsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_firewall_configs(&self) -> crate::operation::list_firewall_configs::builders::ListFirewallConfigsFluentBuilder {
+        crate::operation::list_firewall_configs::builders::ListFirewallConfigsFluentBuilder::new(self.handle.clone())
     }
 }

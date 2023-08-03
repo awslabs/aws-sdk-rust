@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`successful_versions(Option<HashMap<String, SuccessfulPackageVersionInfo>>)`](crate::operation::copy_package_versions::CopyPackageVersionsOutput::successful_versions): <p> A list of the package versions that were successfully copied to your repository. </p>
     ///   - [`failed_versions(Option<HashMap<String, PackageVersionError>>)`](crate::operation::copy_package_versions::CopyPackageVersionsOutput::failed_versions): <p> A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are: </p>  <ul>   <li> <p> <code>ALREADY_EXISTS</code> </p> </li>   <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>   <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>   <li> <p> <code>NOT_ALLOWED</code> </p> </li>   <li> <p> <code>NOT_FOUND</code> </p> </li>   <li> <p> <code>SKIPPED</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<CopyPackageVersionsError>`](crate::operation::copy_package_versions::CopyPackageVersionsError)
-    pub fn copy_package_versions(
-        &self,
-    ) -> crate::operation::copy_package_versions::builders::CopyPackageVersionsFluentBuilder {
-        crate::operation::copy_package_versions::builders::CopyPackageVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn copy_package_versions(&self) -> crate::operation::copy_package_versions::builders::CopyPackageVersionsFluentBuilder {
+        crate::operation::copy_package_versions::builders::CopyPackageVersionsFluentBuilder::new(self.handle.clone())
     }
 }

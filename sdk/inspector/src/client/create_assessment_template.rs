@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAssessmentTemplateOutput`](crate::operation::create_assessment_template::CreateAssessmentTemplateOutput) with field(s):
     ///   - [`assessment_template_arn(Option<String>)`](crate::operation::create_assessment_template::CreateAssessmentTemplateOutput::assessment_template_arn): <p>The ARN that specifies the assessment template that is created.</p>
     /// - On failure, responds with [`SdkError<CreateAssessmentTemplateError>`](crate::operation::create_assessment_template::CreateAssessmentTemplateError)
-    pub fn create_assessment_template(
-        &self,
-    ) -> crate::operation::create_assessment_template::builders::CreateAssessmentTemplateFluentBuilder
-    {
+    pub fn create_assessment_template(&self) -> crate::operation::create_assessment_template::builders::CreateAssessmentTemplateFluentBuilder {
         crate::operation::create_assessment_template::builders::CreateAssessmentTemplateFluentBuilder::new(self.handle.clone())
     }
 }

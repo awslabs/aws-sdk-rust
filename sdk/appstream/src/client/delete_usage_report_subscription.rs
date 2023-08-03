@@ -5,7 +5,9 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::delete_usage_report_subscription::builders::DeleteUsageReportSubscriptionFluentBuilder::send) it.
     /// - On success, responds with [`DeleteUsageReportSubscriptionOutput`](crate::operation::delete_usage_report_subscription::DeleteUsageReportSubscriptionOutput)
     /// - On failure, responds with [`SdkError<DeleteUsageReportSubscriptionError>`](crate::operation::delete_usage_report_subscription::DeleteUsageReportSubscriptionError)
-    pub fn delete_usage_report_subscription(&self) -> crate::operation::delete_usage_report_subscription::builders::DeleteUsageReportSubscriptionFluentBuilder{
+    pub fn delete_usage_report_subscription(
+        &self,
+    ) -> crate::operation::delete_usage_report_subscription::builders::DeleteUsageReportSubscriptionFluentBuilder {
         crate::operation::delete_usage_report_subscription::builders::DeleteUsageReportSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

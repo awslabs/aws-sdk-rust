@@ -57,9 +57,7 @@ impl ClusterParameterStatus {
 
 /// A builder for [`ClusterParameterStatus`](crate::types::ClusterParameterStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterParameterStatusBuilder {
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_apply_status: ::std::option::Option<::std::string::String>,
@@ -67,18 +65,12 @@ pub struct ClusterParameterStatusBuilder {
 }
 impl ClusterParameterStatusBuilder {
     /// <p>The name of the parameter.</p>
-    pub fn parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter.</p>
-    pub fn set_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_name = input;
         self
     }
@@ -97,10 +89,7 @@ impl ClusterParameterStatusBuilder {
     /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li>
     /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li>
     /// </ul>
-    pub fn parameter_apply_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_apply_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_apply_status = ::std::option::Option::Some(input.into());
         self
     }
@@ -115,10 +104,7 @@ impl ClusterParameterStatusBuilder {
     /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li>
     /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li>
     /// </ul>
-    pub fn set_parameter_apply_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_apply_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_apply_status = input;
         self
     }
@@ -137,25 +123,17 @@ impl ClusterParameterStatusBuilder {
         &self.parameter_apply_status
     }
     /// <p>The error that prevented the parameter from being applied to the database.</p>
-    pub fn parameter_apply_error_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_apply_error_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_apply_error_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error that prevented the parameter from being applied to the database.</p>
-    pub fn set_parameter_apply_error_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_apply_error_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_apply_error_description = input;
         self
     }
     /// <p>The error that prevented the parameter from being applied to the database.</p>
-    pub fn get_parameter_apply_error_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_parameter_apply_error_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_apply_error_description
     }
     /// Consumes the builder and constructs a [`ClusterParameterStatus`](crate::types::ClusterParameterStatus).

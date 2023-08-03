@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`server_certificate_metadata(Option<ServerCertificateMetadata>)`](crate::operation::upload_server_certificate::UploadServerCertificateOutput::server_certificate_metadata): <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::upload_server_certificate::UploadServerCertificateOutput::tags): <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<UploadServerCertificateError>`](crate::operation::upload_server_certificate::UploadServerCertificateError)
-    pub fn upload_server_certificate(
-        &self,
-    ) -> crate::operation::upload_server_certificate::builders::UploadServerCertificateFluentBuilder
-    {
+    pub fn upload_server_certificate(&self) -> crate::operation::upload_server_certificate::builders::UploadServerCertificateFluentBuilder {
         crate::operation::upload_server_certificate::builders::UploadServerCertificateFluentBuilder::new(self.handle.clone())
     }
 }

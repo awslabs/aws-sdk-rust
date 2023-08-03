@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateProfileOutput`](crate::operation::create_profile::CreateProfileOutput) with field(s):
     ///   - [`profile_id(Option<String>)`](crate::operation::create_profile::CreateProfileOutput::profile_id): <p>The unique identifier for the AS2 profile, returned after the API call succeeds.</p>
     /// - On failure, responds with [`SdkError<CreateProfileError>`](crate::operation::create_profile::CreateProfileError)
-    pub fn create_profile(
-        &self,
-    ) -> crate::operation::create_profile::builders::CreateProfileFluentBuilder {
-        crate::operation::create_profile::builders::CreateProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_profile(&self) -> crate::operation::create_profile::builders::CreateProfileFluentBuilder {
+        crate::operation::create_profile::builders::CreateProfileFluentBuilder::new(self.handle.clone())
     }
 }

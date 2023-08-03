@@ -8,8 +8,7 @@ pub struct GetEcsServiceRecommendationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
     #[doc(hidden)]
-    pub ecs_service_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendation>>,
+    pub ecs_service_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendation>>,
     /// <p> An array of objects that describe errors of the request. </p>
     #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
@@ -21,9 +20,7 @@ impl GetEcsServiceRecommendationsOutput {
         self.next_token.as_deref()
     }
     /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
-    pub fn ecs_service_recommendations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EcsServiceRecommendation]> {
+    pub fn ecs_service_recommendations(&self) -> ::std::option::Option<&[crate::types::EcsServiceRecommendation]> {
         self.ecs_service_recommendations.as_deref()
     }
     /// <p> An array of objects that describe errors of the request. </p>
@@ -38,20 +35,17 @@ impl ::aws_http::request_id::RequestId for GetEcsServiceRecommendationsOutput {
 }
 impl GetEcsServiceRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetEcsServiceRecommendationsOutput`](crate::operation::get_ecs_service_recommendations::GetEcsServiceRecommendationsOutput).
-    pub fn builder() -> crate::operation::get_ecs_service_recommendations::builders::GetEcsServiceRecommendationsOutputBuilder{
+    pub fn builder() -> crate::operation::get_ecs_service_recommendations::builders::GetEcsServiceRecommendationsOutputBuilder {
         crate::operation::get_ecs_service_recommendations::builders::GetEcsServiceRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEcsServiceRecommendationsOutput`](crate::operation::get_ecs_service_recommendations::GetEcsServiceRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEcsServiceRecommendationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) ecs_service_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendation>>,
+    pub(crate) ecs_service_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendation>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
     _request_id: Option<String>,
 }
@@ -75,27 +69,19 @@ impl GetEcsServiceRecommendationsOutputBuilder {
     /// To override the contents of this collection use [`set_ecs_service_recommendations`](Self::set_ecs_service_recommendations).
     ///
     /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
-    pub fn ecs_service_recommendations(
-        mut self,
-        input: crate::types::EcsServiceRecommendation,
-    ) -> Self {
+    pub fn ecs_service_recommendations(mut self, input: crate::types::EcsServiceRecommendation) -> Self {
         let mut v = self.ecs_service_recommendations.unwrap_or_default();
         v.push(input);
         self.ecs_service_recommendations = ::std::option::Option::Some(v);
         self
     }
     /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
-    pub fn set_ecs_service_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendation>>,
-    ) -> Self {
+    pub fn set_ecs_service_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendation>>) -> Self {
         self.ecs_service_recommendations = input;
         self
     }
     /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
-    pub fn get_ecs_service_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendation>> {
+    pub fn get_ecs_service_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendation>> {
         &self.ecs_service_recommendations
     }
     /// Appends an item to `errors`.
@@ -110,17 +96,12 @@ impl GetEcsServiceRecommendationsOutputBuilder {
         self
     }
     /// <p> An array of objects that describe errors of the request. </p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p> An array of objects that describe errors of the request. </p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -133,9 +114,7 @@ impl GetEcsServiceRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEcsServiceRecommendationsOutput`](crate::operation::get_ecs_service_recommendations::GetEcsServiceRecommendationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_ecs_service_recommendations::GetEcsServiceRecommendationsOutput {
+    pub fn build(self) -> crate::operation::get_ecs_service_recommendations::GetEcsServiceRecommendationsOutput {
         crate::operation::get_ecs_service_recommendations::GetEcsServiceRecommendationsOutput {
             next_token: self.next_token,
             ecs_service_recommendations: self.ecs_service_recommendations,

@@ -82,9 +82,7 @@ impl ScheduledUpdateGroupActionRequest {
 
 /// A builder for [`ScheduledUpdateGroupActionRequest`](crate::types::ScheduledUpdateGroupActionRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledUpdateGroupActionRequestBuilder {
     pub(crate) scheduled_action_name: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -97,18 +95,12 @@ pub struct ScheduledUpdateGroupActionRequestBuilder {
 }
 impl ScheduledUpdateGroupActionRequestBuilder {
     /// <p>The name of the scaling action.</p>
-    pub fn scheduled_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scaling action.</p>
-    pub fn set_scheduled_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_action_name = input;
         self
     }
@@ -126,10 +118,7 @@ impl ScheduledUpdateGroupActionRequestBuilder {
     /// <p>The date and time for the action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).</p>
     /// <p>If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs the action at this time, and then performs the action based on the specified recurrence.</p>
     /// <p>If you try to schedule the action in the past, Amazon EC2 Auto Scaling returns an error message.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -145,10 +134,7 @@ impl ScheduledUpdateGroupActionRequestBuilder {
         self
     }
     /// <p>The date and time for the recurring schedule to end, in UTC.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }

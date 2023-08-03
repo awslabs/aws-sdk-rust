@@ -60,9 +60,7 @@ impl HostedZone {
 
 /// A builder for [`HostedZone`](crate::types::HostedZone).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HostedZoneBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -104,18 +102,12 @@ impl HostedZoneBuilder {
         &self.name
     }
     /// <p>The value that you specified for <code>CallerReference</code> when you created the hosted zone.</p>
-    pub fn caller_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that you specified for <code>CallerReference</code> when you created the hosted zone.</p>
-    pub fn set_caller_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.caller_reference = input;
         self
     }
@@ -129,10 +121,7 @@ impl HostedZoneBuilder {
         self
     }
     /// <p>A complex type that includes the <code>Comment</code> and <code>PrivateZone</code> elements. If you omitted the <code>HostedZoneConfig</code> and <code>Comment</code> elements from the request, the <code>Config</code> and <code>Comment</code> elements don't appear in the response.</p>
-    pub fn set_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HostedZoneConfig>,
-    ) -> Self {
+    pub fn set_config(mut self, input: ::std::option::Option<crate::types::HostedZoneConfig>) -> Self {
         self.config = input;
         self
     }
@@ -160,10 +149,7 @@ impl HostedZoneBuilder {
         self
     }
     /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53. </p>
-    pub fn set_linked_service(
-        mut self,
-        input: ::std::option::Option<crate::types::LinkedService>,
-    ) -> Self {
+    pub fn set_linked_service(mut self, input: ::std::option::Option<crate::types::LinkedService>) -> Self {
         self.linked_service = input;
         self
     }

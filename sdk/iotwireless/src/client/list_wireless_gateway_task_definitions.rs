@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`task_definitions(Option<Vec<UpdateWirelessGatewayTaskEntry>>)`](crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput::task_definitions): <p>The list of task definitions.</p>
     /// - On failure, responds with [`SdkError<ListWirelessGatewayTaskDefinitionsError>`](crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsError)
-    pub fn list_wireless_gateway_task_definitions(&self) -> crate::operation::list_wireless_gateway_task_definitions::builders::ListWirelessGatewayTaskDefinitionsFluentBuilder{
+    pub fn list_wireless_gateway_task_definitions(
+        &self,
+    ) -> crate::operation::list_wireless_gateway_task_definitions::builders::ListWirelessGatewayTaskDefinitionsFluentBuilder {
         crate::operation::list_wireless_gateway_task_definitions::builders::ListWirelessGatewayTaskDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`sip_media_applications(Option<Vec<SipMediaApplication>>)`](crate::operation::list_sip_media_applications::ListSipMediaApplicationsOutput::sip_media_applications): <p>The list of SIP media applications and application details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sip_media_applications::ListSipMediaApplicationsOutput::next_token): <p>The token used to return the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListSipMediaApplicationsError>`](crate::operation::list_sip_media_applications::ListSipMediaApplicationsError)
-    pub fn list_sip_media_applications(&self) -> crate::operation::list_sip_media_applications::builders::ListSipMediaApplicationsFluentBuilder{
+    pub fn list_sip_media_applications(&self) -> crate::operation::list_sip_media_applications::builders::ListSipMediaApplicationsFluentBuilder {
         crate::operation::list_sip_media_applications::builders::ListSipMediaApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

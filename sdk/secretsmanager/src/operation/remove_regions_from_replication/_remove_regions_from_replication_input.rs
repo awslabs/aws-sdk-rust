@@ -22,20 +22,17 @@ impl RemoveRegionsFromReplicationInput {
 }
 impl RemoveRegionsFromReplicationInput {
     /// Creates a new builder-style object to manufacture [`RemoveRegionsFromReplicationInput`](crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput).
-    pub fn builder() -> crate::operation::remove_regions_from_replication::builders::RemoveRegionsFromReplicationInputBuilder{
+    pub fn builder() -> crate::operation::remove_regions_from_replication::builders::RemoveRegionsFromReplicationInputBuilder {
         crate::operation::remove_regions_from_replication::builders::RemoveRegionsFromReplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveRegionsFromReplicationInput`](crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveRegionsFromReplicationInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
-    pub(crate) remove_replica_regions:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) remove_replica_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveRegionsFromReplicationInputBuilder {
     /// <p>The ARN or name of the secret.</p>
@@ -57,27 +54,19 @@ impl RemoveRegionsFromReplicationInputBuilder {
     /// To override the contents of this collection use [`set_remove_replica_regions`](Self::set_remove_replica_regions).
     ///
     /// <p>The Regions of the replicas to remove.</p>
-    pub fn remove_replica_regions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remove_replica_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_replica_regions.unwrap_or_default();
         v.push(input.into());
         self.remove_replica_regions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Regions of the replicas to remove.</p>
-    pub fn set_remove_replica_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_replica_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.remove_replica_regions = input;
         self
     }
     /// <p>The Regions of the replicas to remove.</p>
-    pub fn get_remove_replica_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_replica_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_replica_regions
     }
     /// Consumes the builder and constructs a [`RemoveRegionsFromReplicationInput`](crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput).
@@ -87,11 +76,9 @@ impl RemoveRegionsFromReplicationInputBuilder {
         crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput {
-                secret_id: self.secret_id,
-                remove_replica_regions: self.remove_replica_regions,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput {
+            secret_id: self.secret_id,
+            remove_replica_regions: self.remove_replica_regions,
+        })
     }
 }

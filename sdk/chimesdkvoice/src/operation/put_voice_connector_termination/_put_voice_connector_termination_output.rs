@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for PutVoiceConnectorTerminationOutput {
 }
 impl PutVoiceConnectorTerminationOutput {
     /// Creates a new builder-style object to manufacture [`PutVoiceConnectorTerminationOutput`](crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationOutput).
-    pub fn builder() -> crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationOutputBuilder{
+    pub fn builder() -> crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationOutputBuilder {
         crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutVoiceConnectorTerminationOutput`](crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationOutputBuilder {
     pub(crate) termination: ::std::option::Option<crate::types::Termination>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl PutVoiceConnectorTerminationOutputBuilder {
         self
     }
     /// <p>The updated termination settings.</p>
-    pub fn set_termination(
-        mut self,
-        input: ::std::option::Option<crate::types::Termination>,
-    ) -> Self {
+    pub fn set_termination(mut self, input: ::std::option::Option<crate::types::Termination>) -> Self {
         self.termination = input;
         self
     }
@@ -63,9 +58,7 @@ impl PutVoiceConnectorTerminationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorTerminationOutput`](crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationOutput {
+    pub fn build(self) -> crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationOutput {
         crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationOutput {
             termination: self.termination,
             _request_id: self._request_id,

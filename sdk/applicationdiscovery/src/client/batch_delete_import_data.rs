@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`BatchDeleteImportDataOutput`](crate::operation::batch_delete_import_data::BatchDeleteImportDataOutput) with field(s):
     ///   - [`errors(Option<Vec<BatchDeleteImportDataError>>)`](crate::operation::batch_delete_import_data::BatchDeleteImportDataOutput::errors): <p>Error messages returned for each import task that you deleted as a response for this command.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteImportDataError>`](crate::operation::batch_delete_import_data::BatchDeleteImportDataError)
-    pub fn batch_delete_import_data(
-        &self,
-    ) -> crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataFluentBuilder
-    {
+    pub fn batch_delete_import_data(&self) -> crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataFluentBuilder {
         crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataFluentBuilder::new(self.handle.clone())
     }
 }

@@ -51,16 +51,14 @@ impl CreatePullRequestApprovalRuleInput {
 }
 impl CreatePullRequestApprovalRuleInput {
     /// Creates a new builder-style object to manufacture [`CreatePullRequestApprovalRuleInput`](crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleInput).
-    pub fn builder() -> crate::operation::create_pull_request_approval_rule::builders::CreatePullRequestApprovalRuleInputBuilder{
+    pub fn builder() -> crate::operation::create_pull_request_approval_rule::builders::CreatePullRequestApprovalRuleInputBuilder {
         crate::operation::create_pull_request_approval_rule::builders::CreatePullRequestApprovalRuleInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePullRequestApprovalRuleInput`](crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePullRequestApprovalRuleInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) approval_rule_name: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ pub struct CreatePullRequestApprovalRuleInputBuilder {
 }
 impl CreatePullRequestApprovalRuleInputBuilder {
     /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -88,18 +80,12 @@ impl CreatePullRequestApprovalRuleInputBuilder {
         &self.pull_request_id
     }
     /// <p>The name for the approval rule.</p>
-    pub fn approval_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the approval rule.</p>
-    pub fn set_approval_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_name = input;
         self
     }
@@ -119,10 +105,7 @@ impl CreatePullRequestApprovalRuleInputBuilder {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    pub fn approval_rule_content(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_content = ::std::option::Option::Some(input.into());
         self
     }
@@ -138,10 +121,7 @@ impl CreatePullRequestApprovalRuleInputBuilder {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    pub fn set_approval_rule_content(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_content = input;
         self
     }
@@ -167,15 +147,10 @@ impl CreatePullRequestApprovalRuleInputBuilder {
         crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleInput {
-                pull_request_id: self.pull_request_id
-                ,
-                approval_rule_name: self.approval_rule_name
-                ,
-                approval_rule_content: self.approval_rule_content
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleInput {
+            pull_request_id: self.pull_request_id,
+            approval_rule_name: self.approval_rule_name,
+            approval_rule_content: self.approval_rule_content,
+        })
     }
 }

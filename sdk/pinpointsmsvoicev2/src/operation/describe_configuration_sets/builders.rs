@@ -28,7 +28,7 @@ impl DescribeConfigurationSetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConfigurationSetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsInputBuilder,
+    inner: crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsInputBuilder,
 }
 impl DescribeConfigurationSetsFluentBuilder {
     /// Creates a new `DescribeConfigurationSets`.
@@ -39,7 +39,7 @@ impl DescribeConfigurationSetsFluentBuilder {
         }
     }
     /// Access the DescribeConfigurationSets as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_configuration_sets::builders::DescribeConfigurationSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeConfigurationSetsFluentBuilder {
             crate::operation::describe_configuration_sets::DescribeConfigurationSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_sets::DescribeConfigurationSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_sets::DescribeConfigurationSetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeConfigurationSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeConfigurationSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_sets::DescribeConfigurationSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_sets::DescribeConfigurationSetsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeConfigurationSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_sets::DescribeConfigurationSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_sets::DescribeConfigurationSetsError>,
     > {
         self.send_middleware().await
     }
@@ -116,19 +107,14 @@ impl DescribeConfigurationSetsFluentBuilder {
             crate::operation::describe_configuration_sets::DescribeConfigurationSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_sets::DescribeConfigurationSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_sets::DescribeConfigurationSetsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_configuration_sets::paginator::DescribeConfigurationSetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_configuration_sets::paginator::DescribeConfigurationSetsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_configuration_sets::paginator::DescribeConfigurationSetsPaginator {
         crate::operation::describe_configuration_sets::paginator::DescribeConfigurationSetsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `ConfigurationSetNames`.
@@ -136,25 +122,17 @@ impl DescribeConfigurationSetsFluentBuilder {
     /// To override the contents of this collection use [`set_configuration_set_names`](Self::set_configuration_set_names).
     ///
     /// <p>An array of strings. Each element can be either a ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_names(input.into());
         self
     }
     /// <p>An array of strings. Each element can be either a ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn set_configuration_set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_configuration_set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_configuration_set_names(input);
         self
     }
     /// <p>An array of strings. Each element can be either a ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn get_configuration_set_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configuration_set_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_configuration_set_names()
     }
     /// Appends an item to `Filters`.
@@ -167,17 +145,12 @@ impl DescribeConfigurationSetsFluentBuilder {
         self
     }
     /// <p>An array of filters to apply to the results that are returned.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>An array of filters to apply to the results that are returned.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetFilter>> {
         self.inner.get_filters()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>

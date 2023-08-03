@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateLocationNfsOutput {
 }
 impl CreateLocationNfsOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationNfsOutput`](crate::operation::create_location_nfs::CreateLocationNfsOutput).
-    pub fn builder(
-    ) -> crate::operation::create_location_nfs::builders::CreateLocationNfsOutputBuilder {
+    pub fn builder() -> crate::operation::create_location_nfs::builders::CreateLocationNfsOutputBuilder {
         crate::operation::create_location_nfs::builders::CreateLocationNfsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocationNfsOutput`](crate::operation::create_location_nfs::CreateLocationNfsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationNfsOutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

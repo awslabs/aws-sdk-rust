@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`object_lambda_access_point_arn(Option<String>)`](crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaOutput::object_lambda_access_point_arn): <p>Specifies the ARN for the Object Lambda Access Point.</p>
     ///   - [`alias(Option<ObjectLambdaAccessPointAlias>)`](crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaOutput::alias): <p>The alias of the Object Lambda Access Point.</p>
     /// - On failure, responds with [`SdkError<CreateAccessPointForObjectLambdaError>`](crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError)
-    pub fn create_access_point_for_object_lambda(&self) -> crate::operation::create_access_point_for_object_lambda::builders::CreateAccessPointForObjectLambdaFluentBuilder{
+    pub fn create_access_point_for_object_lambda(
+        &self,
+    ) -> crate::operation::create_access_point_for_object_lambda::builders::CreateAccessPointForObjectLambdaFluentBuilder {
         crate::operation::create_access_point_for_object_lambda::builders::CreateAccessPointForObjectLambdaFluentBuilder::new(self.handle.clone())
     }
 }

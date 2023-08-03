@@ -43,18 +43,14 @@ impl SignalWorkflowExecutionInput {
 }
 impl SignalWorkflowExecutionInput {
     /// Creates a new builder-style object to manufacture [`SignalWorkflowExecutionInput`](crate::operation::signal_workflow_execution::SignalWorkflowExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionInputBuilder {
         crate::operation::signal_workflow_execution::builders::SignalWorkflowExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`SignalWorkflowExecutionInput`](crate::operation::signal_workflow_execution::SignalWorkflowExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SignalWorkflowExecutionInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
@@ -140,14 +136,12 @@ impl SignalWorkflowExecutionInputBuilder {
         crate::operation::signal_workflow_execution::SignalWorkflowExecutionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::signal_workflow_execution::SignalWorkflowExecutionInput {
-                domain: self.domain,
-                workflow_id: self.workflow_id,
-                run_id: self.run_id,
-                signal_name: self.signal_name,
-                input: self.input,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::signal_workflow_execution::SignalWorkflowExecutionInput {
+            domain: self.domain,
+            workflow_id: self.workflow_id,
+            run_id: self.run_id,
+            signal_name: self.signal_name,
+            input: self.input,
+        })
     }
 }

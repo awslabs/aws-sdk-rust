@@ -5,8 +5,7 @@
 pub struct GetCostEstimationOutput {
     /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost estimate.</p>
     #[doc(hidden)]
-    pub resource_collection:
-        ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>,
+    pub resource_collection: ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>,
     /// <p>The status of creating this cost estimate. If it's still in progress, the status <code>ONGOING</code> is returned. If it is finished, the status <code>COMPLETED</code> is returned.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CostEstimationStatus>,
@@ -26,9 +25,7 @@ pub struct GetCostEstimationOutput {
 }
 impl GetCostEstimationOutput {
     /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost estimate.</p>
-    pub fn resource_collection(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CostEstimationResourceCollectionFilter> {
+    pub fn resource_collection(&self) -> ::std::option::Option<&crate::types::CostEstimationResourceCollectionFilter> {
         self.resource_collection.as_ref()
     }
     /// <p>The status of creating this cost estimate. If it's still in progress, the status <code>ONGOING</code> is returned. If it is finished, the status <code>COMPLETED</code> is returned.</p>
@@ -59,20 +56,16 @@ impl ::aws_http::request_id::RequestId for GetCostEstimationOutput {
 }
 impl GetCostEstimationOutput {
     /// Creates a new builder-style object to manufacture [`GetCostEstimationOutput`](crate::operation::get_cost_estimation::GetCostEstimationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_cost_estimation::builders::GetCostEstimationOutputBuilder {
+    pub fn builder() -> crate::operation::get_cost_estimation::builders::GetCostEstimationOutputBuilder {
         crate::operation::get_cost_estimation::builders::GetCostEstimationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCostEstimationOutput`](crate::operation::get_cost_estimation::GetCostEstimationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCostEstimationOutputBuilder {
-    pub(crate) resource_collection:
-        ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>,
+    pub(crate) resource_collection: ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>,
     pub(crate) status: ::std::option::Option<crate::types::CostEstimationStatus>,
     pub(crate) costs: ::std::option::Option<::std::vec::Vec<crate::types::ServiceResourceCost>>,
     pub(crate) time_range: ::std::option::Option<crate::types::CostEstimationTimeRange>,
@@ -82,25 +75,17 @@ pub struct GetCostEstimationOutputBuilder {
 }
 impl GetCostEstimationOutputBuilder {
     /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost estimate.</p>
-    pub fn resource_collection(
-        mut self,
-        input: crate::types::CostEstimationResourceCollectionFilter,
-    ) -> Self {
+    pub fn resource_collection(mut self, input: crate::types::CostEstimationResourceCollectionFilter) -> Self {
         self.resource_collection = ::std::option::Option::Some(input);
         self
     }
     /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost estimate.</p>
-    pub fn set_resource_collection(
-        mut self,
-        input: ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>,
-    ) -> Self {
+    pub fn set_resource_collection(mut self, input: ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>) -> Self {
         self.resource_collection = input;
         self
     }
     /// <p>The collection of the Amazon Web Services resources used to create your monthly DevOps Guru cost estimate.</p>
-    pub fn get_resource_collection(
-        &self,
-    ) -> &::std::option::Option<crate::types::CostEstimationResourceCollectionFilter> {
+    pub fn get_resource_collection(&self) -> &::std::option::Option<crate::types::CostEstimationResourceCollectionFilter> {
         &self.resource_collection
     }
     /// <p>The status of creating this cost estimate. If it's still in progress, the status <code>ONGOING</code> is returned. If it is finished, the status <code>COMPLETED</code> is returned.</p>
@@ -109,10 +94,7 @@ impl GetCostEstimationOutputBuilder {
         self
     }
     /// <p>The status of creating this cost estimate. If it's still in progress, the status <code>ONGOING</code> is returned. If it is finished, the status <code>COMPLETED</code> is returned.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CostEstimationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CostEstimationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -132,17 +114,12 @@ impl GetCostEstimationOutputBuilder {
         self
     }
     /// <p>An array of <code>ResourceCost</code> objects that each contains details about the monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
-    pub fn set_costs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceResourceCost>>,
-    ) -> Self {
+    pub fn set_costs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceResourceCost>>) -> Self {
         self.costs = input;
         self
     }
     /// <p>An array of <code>ResourceCost</code> objects that each contains details about the monthly cost estimate to analyze one of your Amazon Web Services resources.</p>
-    pub fn get_costs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceResourceCost>> {
+    pub fn get_costs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceResourceCost>> {
         &self.costs
     }
     /// <p>The start and end time of the cost estimation.</p>
@@ -151,10 +128,7 @@ impl GetCostEstimationOutputBuilder {
         self
     }
     /// <p>The start and end time of the cost estimation.</p>
-    pub fn set_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::CostEstimationTimeRange>,
-    ) -> Self {
+    pub fn set_time_range(mut self, input: ::std::option::Option<crate::types::CostEstimationTimeRange>) -> Self {
         self.time_range = input;
         self
     }

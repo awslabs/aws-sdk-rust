@@ -50,9 +50,7 @@ impl UpdateDashboardInput {
 
 /// A builder for [`UpdateDashboardInput`](crate::operation::update_dashboard::UpdateDashboardInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDashboardInputBuilder {
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
     pub(crate) dashboard_name: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl UpdateDashboardInputBuilder {
         &self.dashboard_id
     }
     /// <p>A new friendly name for the dashboard.</p>
-    pub fn dashboard_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dashboard_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A new friendly name for the dashboard.</p>
-    pub fn set_dashboard_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dashboard_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_name = input;
         self
     }
@@ -96,18 +88,12 @@ impl UpdateDashboardInputBuilder {
         &self.dashboard_name
     }
     /// <p>A new description for the dashboard.</p>
-    pub fn dashboard_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dashboard_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A new description for the dashboard.</p>
-    pub fn set_dashboard_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dashboard_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_description = input;
         self
     }
@@ -116,18 +102,12 @@ impl UpdateDashboardInputBuilder {
         &self.dashboard_description
     }
     /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn dashboard_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dashboard_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_dashboard_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dashboard_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_definition = input;
         self
     }
@@ -152,10 +132,7 @@ impl UpdateDashboardInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDashboardInput`](crate::operation::update_dashboard::UpdateDashboardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_dashboard::UpdateDashboardInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_dashboard::UpdateDashboardInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_dashboard::UpdateDashboardInput {
             dashboard_id: self.dashboard_id,
             dashboard_name: self.dashboard_name,

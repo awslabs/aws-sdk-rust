@@ -13,19 +13,13 @@ pub fn ser_create_relational_database_from_snapshot_input(
         object.key("publiclyAccessible").boolean(*var_3);
     }
     if let Some(var_4) = &input.relational_database_snapshot_name {
-        object
-            .key("relationalDatabaseSnapshotName")
-            .string(var_4.as_str());
+        object.key("relationalDatabaseSnapshotName").string(var_4.as_str());
     }
     if let Some(var_5) = &input.relational_database_bundle_id {
-        object
-            .key("relationalDatabaseBundleId")
-            .string(var_5.as_str());
+        object.key("relationalDatabaseBundleId").string(var_5.as_str());
     }
     if let Some(var_6) = &input.source_relational_database_name {
-        object
-            .key("sourceRelationalDatabaseName")
-            .string(var_6.as_str());
+        object.key("sourceRelationalDatabaseName").string(var_6.as_str());
     }
     if let Some(var_7) = &input.restore_time {
         object

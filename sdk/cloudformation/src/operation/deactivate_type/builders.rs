@@ -10,10 +10,7 @@ impl DeactivateTypeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::deactivate_type::DeactivateTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deactivate_type::DeactivateTypeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deactivate_type::DeactivateTypeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.deactivate_type();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeactivateTypeFluentBuilder {
         }
     }
     /// Access the DeactivateType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deactivate_type::builders::DeactivateTypeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::deactivate_type::builders::DeactivateTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl DeactivateTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

@@ -57,9 +57,7 @@ impl ReplicationConfigurationDescription {
 
 /// A builder for [`ReplicationConfigurationDescription`](crate::types::ReplicationConfigurationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationConfigurationDescriptionBuilder {
     pub(crate) source_file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_file_system_region: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ pub struct ReplicationConfigurationDescriptionBuilder {
 }
 impl ReplicationConfigurationDescriptionBuilder {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
-    pub fn source_file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
-    pub fn set_source_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_file_system_id = input;
         self
     }
@@ -90,18 +82,12 @@ impl ReplicationConfigurationDescriptionBuilder {
         &self.source_file_system_id
     }
     /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
-    pub fn source_file_system_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_file_system_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_file_system_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
-    pub fn set_source_file_system_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_file_system_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_file_system_region = input;
         self
     }
@@ -110,18 +96,12 @@ impl ReplicationConfigurationDescriptionBuilder {
         &self.source_file_system_region
     }
     /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
-    pub fn source_file_system_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_file_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_file_system_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
-    pub fn set_source_file_system_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_file_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_file_system_arn = input;
         self
     }
@@ -130,25 +110,17 @@ impl ReplicationConfigurationDescriptionBuilder {
         &self.source_file_system_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
-    pub fn original_source_file_system_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn original_source_file_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original_source_file_system_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
-    pub fn set_original_source_file_system_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_original_source_file_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original_source_file_system_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
-    pub fn get_original_source_file_system_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_original_source_file_system_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.original_source_file_system_arn
     }
     /// <p>Describes when the replication configuration was created.</p>
@@ -157,10 +129,7 @@ impl ReplicationConfigurationDescriptionBuilder {
         self
     }
     /// <p>Describes when the replication configuration was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -180,17 +149,12 @@ impl ReplicationConfigurationDescriptionBuilder {
         self
     }
     /// <p>An array of destination objects. Only one destination object is supported.</p>
-    pub fn set_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
-    ) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>) -> Self {
         self.destinations = input;
         self
     }
     /// <p>An array of destination objects. Only one destination object is supported.</p>
-    pub fn get_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
         &self.destinations
     }
     /// Consumes the builder and constructs a [`ReplicationConfigurationDescription`](crate::types::ReplicationConfigurationDescription).

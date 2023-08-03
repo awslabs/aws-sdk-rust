@@ -10,10 +10,7 @@ impl UpdateCertificateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_certificate::UpdateCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate::UpdateCertificateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate::UpdateCertificateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_certificate();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl UpdateCertificateFluentBuilder {
         }
     }
     /// Access the UpdateCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_certificate::builders::UpdateCertificateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_certificate::builders::UpdateCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl UpdateCertificateFluentBuilder {
             crate::operation::update_certificate::UpdateCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate::UpdateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate::UpdateCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl UpdateCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl UpdateCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_certificate::UpdateCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate::UpdateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate::UpdateCertificateError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl UpdateCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_certificate::UpdateCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate::UpdateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate::UpdateCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl UpdateCertificateFluentBuilder {
             crate::operation::update_certificate::UpdateCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_certificate::UpdateCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_certificate::UpdateCertificateError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_id(input.into());
         self
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_id(input);
         self
     }
@@ -155,10 +133,7 @@ impl UpdateCertificateFluentBuilder {
     /// <p>The new status.</p>
     /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
     /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
-    pub fn set_new_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateStatus>,
-    ) -> Self {
+    pub fn set_new_status(mut self, input: ::std::option::Option<crate::types::CertificateStatus>) -> Self {
         self.inner = self.inner.set_new_status(input);
         self
     }

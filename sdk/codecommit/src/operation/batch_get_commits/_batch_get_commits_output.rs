@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for BatchGetCommitsOutput {
 }
 impl BatchGetCommitsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetCommitsOutput`](crate::operation::batch_get_commits::BatchGetCommitsOutput).
-    pub fn builder() -> crate::operation::batch_get_commits::builders::BatchGetCommitsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_commits::builders::BatchGetCommitsOutputBuilder {
         crate::operation::batch_get_commits::builders::BatchGetCommitsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetCommitsOutput`](crate::operation::batch_get_commits::BatchGetCommitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCommitsOutputBuilder {
     pub(crate) commits: ::std::option::Option<::std::vec::Vec<crate::types::Commit>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetCommitsError>>,
@@ -57,10 +54,7 @@ impl BatchGetCommitsOutputBuilder {
         self
     }
     /// <p>An array of commit data type objects, each of which contains information about a specified commit.</p>
-    pub fn set_commits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Commit>>,
-    ) -> Self {
+    pub fn set_commits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Commit>>) -> Self {
         self.commits = input;
         self
     }
@@ -80,17 +74,12 @@ impl BatchGetCommitsOutputBuilder {
         self
     }
     /// <p>Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with more information.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetCommitsError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetCommitsError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with more information.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetCommitsError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetCommitsError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

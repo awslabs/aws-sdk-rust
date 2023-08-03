@@ -22,34 +22,26 @@ impl AssociateSkillGroupWithRoomInput {
 }
 impl AssociateSkillGroupWithRoomInput {
     /// Creates a new builder-style object to manufacture [`AssociateSkillGroupWithRoomInput`](crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomInput).
-    pub fn builder() -> crate::operation::associate_skill_group_with_room::builders::AssociateSkillGroupWithRoomInputBuilder{
+    pub fn builder() -> crate::operation::associate_skill_group_with_room::builders::AssociateSkillGroupWithRoomInputBuilder {
         crate::operation::associate_skill_group_with_room::builders::AssociateSkillGroupWithRoomInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateSkillGroupWithRoomInput`](crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateSkillGroupWithRoomInputBuilder {
     pub(crate) skill_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) room_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateSkillGroupWithRoomInputBuilder {
     /// <p>The ARN of the skill group to associate with a room. Required.</p>
-    pub fn skill_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the skill group to associate with a room. Required.</p>
-    pub fn set_skill_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.skill_group_arn = input;
         self
     }
@@ -78,11 +70,9 @@ impl AssociateSkillGroupWithRoomInputBuilder {
         crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomInput {
-                skill_group_arn: self.skill_group_arn,
-                room_arn: self.room_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomInput {
+            skill_group_arn: self.skill_group_arn,
+            room_arn: self.room_arn,
+        })
     }
 }

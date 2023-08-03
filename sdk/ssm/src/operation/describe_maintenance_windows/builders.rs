@@ -26,7 +26,7 @@ impl DescribeMaintenanceWindowsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsInputBuilder,
+    inner: crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsInputBuilder,
 }
 impl DescribeMaintenanceWindowsFluentBuilder {
     /// Creates a new `DescribeMaintenanceWindows`.
@@ -37,7 +37,7 @@ impl DescribeMaintenanceWindowsFluentBuilder {
         }
     }
     /// Access the DescribeMaintenanceWindows as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeMaintenanceWindowsFluentBuilder {
             crate::operation::describe_maintenance_windows::DescribeMaintenanceWindows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeMaintenanceWindowsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeMaintenanceWindowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeMaintenanceWindowsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeMaintenanceWindowsFluentBuilder {
             crate::operation::describe_maintenance_windows::DescribeMaintenanceWindows,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_windows::paginator::DescribeMaintenanceWindowsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_maintenance_windows::paginator::DescribeMaintenanceWindowsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_maintenance_windows::paginator::DescribeMaintenanceWindowsPaginator {
         crate::operation::describe_maintenance_windows::paginator::DescribeMaintenanceWindowsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -136,17 +125,12 @@ impl DescribeMaintenanceWindowsFluentBuilder {
         self
     }
     /// <p>Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example, <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example, <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>

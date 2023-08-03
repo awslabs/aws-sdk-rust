@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for SearchVulnerabilitiesOutput {
 }
 impl SearchVulnerabilitiesOutput {
     /// Creates a new builder-style object to manufacture [`SearchVulnerabilitiesOutput`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput).
-    pub fn builder(
-    ) -> crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder {
         crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchVulnerabilitiesOutput`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchVulnerabilitiesOutputBuilder {
     pub(crate) vulnerabilities: ::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl SearchVulnerabilitiesOutputBuilder {
         self
     }
     /// <p>Details about the listed vulnerability.</p>
-    pub fn set_vulnerabilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>>,
-    ) -> Self {
+    pub fn set_vulnerabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>>) -> Self {
         self.vulnerabilities = input;
         self
     }
     /// <p>Details about the listed vulnerability.</p>
-    pub fn get_vulnerabilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>> {
+    pub fn get_vulnerabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>> {
         &self.vulnerabilities
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>

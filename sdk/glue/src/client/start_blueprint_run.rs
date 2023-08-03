@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartBlueprintRunOutput`](crate::operation::start_blueprint_run::StartBlueprintRunOutput) with field(s):
     ///   - [`run_id(Option<String>)`](crate::operation::start_blueprint_run::StartBlueprintRunOutput::run_id): <p>The run ID for this blueprint run.</p>
     /// - On failure, responds with [`SdkError<StartBlueprintRunError>`](crate::operation::start_blueprint_run::StartBlueprintRunError)
-    pub fn start_blueprint_run(
-        &self,
-    ) -> crate::operation::start_blueprint_run::builders::StartBlueprintRunFluentBuilder {
-        crate::operation::start_blueprint_run::builders::StartBlueprintRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_blueprint_run(&self) -> crate::operation::start_blueprint_run::builders::StartBlueprintRunFluentBuilder {
+        crate::operation::start_blueprint_run::builders::StartBlueprintRunFluentBuilder::new(self.handle.clone())
     }
 }

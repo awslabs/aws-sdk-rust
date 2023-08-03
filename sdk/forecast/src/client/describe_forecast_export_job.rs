@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::describe_forecast_export_job::DescribeForecastExportJobOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
     ///   - [`format(Option<String>)`](crate::operation::describe_forecast_export_job::DescribeForecastExportJobOutput::format): <p>The format of the exported data, CSV or PARQUET.</p>
     /// - On failure, responds with [`SdkError<DescribeForecastExportJobError>`](crate::operation::describe_forecast_export_job::DescribeForecastExportJobError)
-    pub fn describe_forecast_export_job(&self) -> crate::operation::describe_forecast_export_job::builders::DescribeForecastExportJobFluentBuilder{
+    pub fn describe_forecast_export_job(&self) -> crate::operation::describe_forecast_export_job::builders::DescribeForecastExportJobFluentBuilder {
         crate::operation::describe_forecast_export_job::builders::DescribeForecastExportJobFluentBuilder::new(self.handle.clone())
     }
 }

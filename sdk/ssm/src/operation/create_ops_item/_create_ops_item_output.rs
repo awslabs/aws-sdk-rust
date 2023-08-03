@@ -35,9 +35,7 @@ impl CreateOpsItemOutput {
 
 /// A builder for [`CreateOpsItemOutput`](crate::operation::create_ops_item::CreateOpsItemOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOpsItemOutputBuilder {
     pub(crate) ops_item_id: ::std::option::Option<::std::string::String>,
     pub(crate) ops_item_arn: ::std::option::Option<::std::string::String>,

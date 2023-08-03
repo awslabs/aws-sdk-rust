@@ -37,17 +37,14 @@ impl CreateVerifiedAccessEndpointLoadBalancerOptions {
 }
 impl CreateVerifiedAccessEndpointLoadBalancerOptions {
     /// Creates a new builder-style object to manufacture [`CreateVerifiedAccessEndpointLoadBalancerOptions`](crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions).
-    pub fn builder(
-    ) -> crate::types::builders::CreateVerifiedAccessEndpointLoadBalancerOptionsBuilder {
+    pub fn builder() -> crate::types::builders::CreateVerifiedAccessEndpointLoadBalancerOptionsBuilder {
         crate::types::builders::CreateVerifiedAccessEndpointLoadBalancerOptionsBuilder::default()
     }
 }
 
 /// A builder for [`CreateVerifiedAccessEndpointLoadBalancerOptions`](crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessEndpointLoadBalancerOptionsBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
     pub(crate) port: ::std::option::Option<i32>,
@@ -61,17 +58,12 @@ impl CreateVerifiedAccessEndpointLoadBalancerOptionsBuilder {
         self
     }
     /// <p>The IP protocol.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>) -> Self {
         self.protocol = input;
         self
     }
     /// <p>The IP protocol.</p>
-    pub fn get_protocol(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessEndpointProtocol> {
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::VerifiedAccessEndpointProtocol> {
         &self.protocol
     }
     /// <p>The IP port number.</p>
@@ -89,18 +81,12 @@ impl CreateVerifiedAccessEndpointLoadBalancerOptionsBuilder {
         &self.port
     }
     /// <p>The ARN of the load balancer.</p>
-    pub fn load_balancer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the load balancer.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_arn = input;
         self
     }
@@ -120,10 +106,7 @@ impl CreateVerifiedAccessEndpointLoadBalancerOptionsBuilder {
         self
     }
     /// <p>The IDs of the subnets.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }

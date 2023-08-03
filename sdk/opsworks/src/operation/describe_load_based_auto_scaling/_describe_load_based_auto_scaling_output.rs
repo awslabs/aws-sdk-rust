@@ -6,15 +6,12 @@
 pub struct DescribeLoadBasedAutoScalingOutput {
     /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
     #[doc(hidden)]
-    pub load_based_auto_scaling_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoadBasedAutoScalingConfiguration>>,
+    pub load_based_auto_scaling_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LoadBasedAutoScalingConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeLoadBasedAutoScalingOutput {
     /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
-    pub fn load_based_auto_scaling_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LoadBasedAutoScalingConfiguration]> {
+    pub fn load_based_auto_scaling_configurations(&self) -> ::std::option::Option<&[crate::types::LoadBasedAutoScalingConfiguration]> {
         self.load_based_auto_scaling_configurations.as_deref()
     }
 }
@@ -25,19 +22,16 @@ impl ::aws_http::request_id::RequestId for DescribeLoadBasedAutoScalingOutput {
 }
 impl DescribeLoadBasedAutoScalingOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBasedAutoScalingOutput`](crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingOutput).
-    pub fn builder() -> crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingOutputBuilder{
+    pub fn builder() -> crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingOutputBuilder {
         crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLoadBasedAutoScalingOutput`](crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoadBasedAutoScalingOutputBuilder {
-    pub(crate) load_based_auto_scaling_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::LoadBasedAutoScalingConfiguration>>,
+    pub(crate) load_based_auto_scaling_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LoadBasedAutoScalingConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeLoadBasedAutoScalingOutputBuilder {
@@ -46,13 +40,8 @@ impl DescribeLoadBasedAutoScalingOutputBuilder {
     /// To override the contents of this collection use [`set_load_based_auto_scaling_configurations`](Self::set_load_based_auto_scaling_configurations).
     ///
     /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
-    pub fn load_based_auto_scaling_configurations(
-        mut self,
-        input: crate::types::LoadBasedAutoScalingConfiguration,
-    ) -> Self {
-        let mut v = self
-            .load_based_auto_scaling_configurations
-            .unwrap_or_default();
+    pub fn load_based_auto_scaling_configurations(mut self, input: crate::types::LoadBasedAutoScalingConfiguration) -> Self {
+        let mut v = self.load_based_auto_scaling_configurations.unwrap_or_default();
         v.push(input);
         self.load_based_auto_scaling_configurations = ::std::option::Option::Some(v);
         self
@@ -60,9 +49,7 @@ impl DescribeLoadBasedAutoScalingOutputBuilder {
     /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
     pub fn set_load_based_auto_scaling_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::LoadBasedAutoScalingConfiguration>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBasedAutoScalingConfiguration>>,
     ) -> Self {
         self.load_based_auto_scaling_configurations = input;
         self
@@ -70,8 +57,7 @@ impl DescribeLoadBasedAutoScalingOutputBuilder {
     /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
     pub fn get_load_based_auto_scaling_configurations(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBasedAutoScalingConfiguration>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBasedAutoScalingConfiguration>> {
         &self.load_based_auto_scaling_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -84,10 +70,7 @@ impl DescribeLoadBasedAutoScalingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeLoadBasedAutoScalingOutput`](crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingOutput
-    {
+    pub fn build(self) -> crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingOutput {
         crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingOutput {
             load_based_auto_scaling_configurations: self.load_based_auto_scaling_configurations,
             _request_id: self._request_id,

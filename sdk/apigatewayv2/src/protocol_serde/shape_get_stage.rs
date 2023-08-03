@@ -4,26 +4,15 @@ pub fn de_get_stage_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_stage::GetStageOutput,
-    crate::operation::get_stage::GetStageError,
-> {
+) -> std::result::Result<crate::operation::get_stage::GetStageOutput, crate::operation::get_stage::GetStageError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_stage::GetStageError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_stage::GetStageError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::get_stage::GetStageError::unhandled(
-                generic,
-            ))
-        }
+        None => return Err(crate::operation::get_stage::GetStageError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
@@ -33,7 +22,8 @@ pub fn de_get_stage_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_stage::GetStageError::unhandled)?;
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_stage::GetStageError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -42,23 +32,21 @@ pub fn de_get_stage_http_error(
             }
             tmp
         }),
-        "TooManyRequestsException" => {
-            crate::operation::get_stage::GetStageError::TooManyRequestsException({
+        "TooManyRequestsException" => crate::operation::get_stage::GetStageError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::get_stage::GetStageError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_stage::GetStageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::get_stage::GetStageError::generic(generic),
     })
 }
@@ -68,18 +56,13 @@ pub fn de_get_stage_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_stage::GetStageOutput,
-    crate::operation::get_stage::GetStageError,
-> {
+) -> std::result::Result<crate::operation::get_stage::GetStageOutput, crate::operation::get_stage::GetStageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_stage::builders::GetStageOutputBuilder::default();
         output = crate::protocol_serde::shape_get_stage::de_get_stage(_response_body, output)
             .map_err(crate::operation::get_stage::GetStageError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -87,140 +70,96 @@ pub fn de_get_stage_http_response_with_props(
 pub(crate) fn de_get_stage(
     value: &[u8],
     mut builder: crate::operation::get_stage::builders::GetStageOutputBuilder,
-) -> Result<
-    crate::operation::get_stage::builders::GetStageOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned =
-        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
-            .peekable();
+) -> Result<crate::operation::get_stage::builders::GetStageOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "accessLogSettings" => {
-                        builder = builder.set_access_log_settings(
-                            crate::protocol_serde::shape_access_log_settings::de_access_log_settings(tokens)?
-                        );
-                    }
-                    "apiGatewayManaged" => {
-                        builder = builder.set_api_gateway_managed(
-                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                tokens.next(),
-                            )?,
-                        );
-                    }
-                    "autoDeploy" => {
-                        builder = builder.set_auto_deploy(
-                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                tokens.next(),
-                            )?,
-                        );
-                    }
-                    "clientCertificateId" => {
-                        builder = builder.set_client_certificate_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "createdDate" => {
-                        builder = builder.set_created_date(
-                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                            )?,
-                        );
-                    }
-                    "defaultRouteSettings" => {
-                        builder = builder.set_default_route_settings(
-                            crate::protocol_serde::shape_route_settings::de_route_settings(tokens)?,
-                        );
-                    }
-                    "deploymentId" => {
-                        builder = builder.set_deployment_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "description" => {
-                        builder = builder.set_description(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "lastDeploymentStatusMessage" => {
-                        builder = builder.set_last_deployment_status_message(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "lastUpdatedDate" => {
-                        builder = builder.set_last_updated_date(
-                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                tokens.next(),
-                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                            )?,
-                        );
-                    }
-                    "routeSettings" => {
-                        builder = builder.set_route_settings(
-                            crate::protocol_serde::shape_route_settings_map::de_route_settings_map(
-                                tokens,
-                            )?,
-                        );
-                    }
-                    "stageName" => {
-                        builder = builder.set_stage_name(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                tokens.next(),
-                            )?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                        );
-                    }
-                    "stageVariables" => {
-                        builder = builder.set_stage_variables(
-                            crate::protocol_serde::shape_stage_variables_map::de_stage_variables_map(tokens)?
-                        );
-                    }
-                    "tags" => {
-                        builder =
-                            builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "accessLogSettings" => {
+                    builder = builder.set_access_log_settings(crate::protocol_serde::shape_access_log_settings::de_access_log_settings(tokens)?);
                 }
-            }
+                "apiGatewayManaged" => {
+                    builder = builder.set_api_gateway_managed(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
+                "autoDeploy" => {
+                    builder = builder.set_auto_deploy(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
+                "clientCertificateId" => {
+                    builder = builder.set_client_certificate_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "createdDate" => {
+                    builder = builder.set_created_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
+                "defaultRouteSettings" => {
+                    builder = builder.set_default_route_settings(crate::protocol_serde::shape_route_settings::de_route_settings(tokens)?);
+                }
+                "deploymentId" => {
+                    builder = builder.set_deployment_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "description" => {
+                    builder = builder.set_description(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "lastDeploymentStatusMessage" => {
+                    builder = builder.set_last_deployment_status_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "lastUpdatedDate" => {
+                    builder = builder.set_last_updated_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
+                "routeSettings" => {
+                    builder = builder.set_route_settings(crate::protocol_serde::shape_route_settings_map::de_route_settings_map(tokens)?);
+                }
+                "stageName" => {
+                    builder = builder.set_stage_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "stageVariables" => {
+                    builder = builder.set_stage_variables(crate::protocol_serde::shape_stage_variables_map::de_stage_variables_map(tokens)?);
+                }
+                "tags" => {
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
-                return Err(
-                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {:?}",
-                        other
-                    )),
-                )
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
             }
         }
     }
     if tokens.next().is_some() {
-        return Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "found more JSON tokens after completing parsing",
-            ),
-        );
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
     }
     Ok(builder)
 }

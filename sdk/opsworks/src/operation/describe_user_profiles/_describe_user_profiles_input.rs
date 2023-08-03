@@ -15,17 +15,14 @@ impl DescribeUserProfilesInput {
 }
 impl DescribeUserProfilesInput {
     /// Creates a new builder-style object to manufacture [`DescribeUserProfilesInput`](crate::operation::describe_user_profiles::DescribeUserProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_user_profiles::builders::DescribeUserProfilesInputBuilder {
+    pub fn builder() -> crate::operation::describe_user_profiles::builders::DescribeUserProfilesInputBuilder {
         crate::operation::describe_user_profiles::builders::DescribeUserProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUserProfilesInput`](crate::operation::describe_user_profiles::DescribeUserProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUserProfilesInputBuilder {
     pub(crate) iam_user_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -35,40 +32,28 @@ impl DescribeUserProfilesInputBuilder {
     /// To override the contents of this collection use [`set_iam_user_arns`](Self::set_iam_user_arns).
     ///
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
-    pub fn iam_user_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_user_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.iam_user_arns.unwrap_or_default();
         v.push(input.into());
         self.iam_user_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
-    pub fn set_iam_user_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_iam_user_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.iam_user_arns = input;
         self
     }
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
-    pub fn get_iam_user_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_iam_user_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.iam_user_arns
     }
     /// Consumes the builder and constructs a [`DescribeUserProfilesInput`](crate::operation::describe_user_profiles::DescribeUserProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_user_profiles::DescribeUserProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_user_profiles::DescribeUserProfilesInput {
-                iam_user_arns: self.iam_user_arns,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_user_profiles::DescribeUserProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_user_profiles::DescribeUserProfilesInput {
+            iam_user_arns: self.iam_user_arns,
+        })
     }
 }

@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteInferenceExperimentOutput`](crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput) with field(s):
     ///   - [`inference_experiment_arn(Option<String>)`](crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput::inference_experiment_arn): <p>The ARN of the deleted inference experiment.</p>
     /// - On failure, responds with [`SdkError<DeleteInferenceExperimentError>`](crate::operation::delete_inference_experiment::DeleteInferenceExperimentError)
-    pub fn delete_inference_experiment(&self) -> crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentFluentBuilder{
+    pub fn delete_inference_experiment(&self) -> crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentFluentBuilder {
         crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentFluentBuilder::new(self.handle.clone())
     }
 }

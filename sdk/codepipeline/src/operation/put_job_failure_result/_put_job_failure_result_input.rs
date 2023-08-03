@@ -23,18 +23,14 @@ impl PutJobFailureResultInput {
 }
 impl PutJobFailureResultInput {
     /// Creates a new builder-style object to manufacture [`PutJobFailureResultInput`](crate::operation::put_job_failure_result::PutJobFailureResultInput).
-    pub fn builder(
-    ) -> crate::operation::put_job_failure_result::builders::PutJobFailureResultInputBuilder {
-        crate::operation::put_job_failure_result::builders::PutJobFailureResultInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_job_failure_result::builders::PutJobFailureResultInputBuilder {
+        crate::operation::put_job_failure_result::builders::PutJobFailureResultInputBuilder::default()
     }
 }
 
 /// A builder for [`PutJobFailureResultInput`](crate::operation::put_job_failure_result::PutJobFailureResultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutJobFailureResultInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) failure_details: ::std::option::Option<crate::types::FailureDetails>,
@@ -60,10 +56,7 @@ impl PutJobFailureResultInputBuilder {
         self
     }
     /// <p>The details about the failure of a job.</p>
-    pub fn set_failure_details(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureDetails>,
-    ) -> Self {
+    pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::FailureDetails>) -> Self {
         self.failure_details = input;
         self
     }
@@ -74,15 +67,11 @@ impl PutJobFailureResultInputBuilder {
     /// Consumes the builder and constructs a [`PutJobFailureResultInput`](crate::operation::put_job_failure_result::PutJobFailureResultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_job_failure_result::PutJobFailureResultInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_job_failure_result::PutJobFailureResultInput {
-                job_id: self.job_id,
-                failure_details: self.failure_details,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_job_failure_result::PutJobFailureResultInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_job_failure_result::PutJobFailureResultInput {
+            job_id: self.job_id,
+            failure_details: self.failure_details,
+        })
     }
 }

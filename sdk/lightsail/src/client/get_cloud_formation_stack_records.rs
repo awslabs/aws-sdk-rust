@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`cloud_formation_stack_records(Option<Vec<CloudFormationStackRecord>>)`](crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsOutput::cloud_formation_stack_records): <p>A list of objects describing the CloudFormation stack records.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetCloudFormationStackRecordsError>`](crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsError)
-    pub fn get_cloud_formation_stack_records(&self) -> crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsFluentBuilder{
+    pub fn get_cloud_formation_stack_records(
+        &self,
+    ) -> crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsFluentBuilder {
         crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsFluentBuilder::new(self.handle.clone())
     }
 }

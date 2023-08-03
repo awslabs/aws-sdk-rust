@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetClusterPolicyOutput {
 }
 impl GetClusterPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetClusterPolicyOutput`](crate::operation::get_cluster_policy::GetClusterPolicyOutput).
-    pub fn builder() -> crate::operation::get_cluster_policy::builders::GetClusterPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_cluster_policy::builders::GetClusterPolicyOutputBuilder {
         crate::operation::get_cluster_policy::builders::GetClusterPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetClusterPolicyOutput`](crate::operation::get_cluster_policy::GetClusterPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClusterPolicyOutputBuilder {
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
@@ -46,18 +43,12 @@ pub struct GetClusterPolicyOutputBuilder {
 }
 impl GetClusterPolicyOutputBuilder {
     /// <p>The version of cluster policy.</p>
-    pub fn current_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of cluster policy.</p>
-    pub fn set_current_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_version = input;
         self
     }

@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FraudDetectionDecision {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for FraudDetectionDecision {
             "HIGH_RISK" => FraudDetectionDecision::HighRisk,
             "LOW_RISK" => FraudDetectionDecision::LowRisk,
             "NOT_ENOUGH_SPEECH" => FraudDetectionDecision::NotEnoughSpeech,
-            other => FraudDetectionDecision::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => FraudDetectionDecision::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for BatchGetChannelOutput {
 }
 impl BatchGetChannelOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetChannelOutput`](crate::operation::batch_get_channel::BatchGetChannelOutput).
-    pub fn builder() -> crate::operation::batch_get_channel::builders::BatchGetChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_channel::builders::BatchGetChannelOutputBuilder {
         crate::operation::batch_get_channel::builders::BatchGetChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetChannelOutput`](crate::operation::batch_get_channel::BatchGetChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetChannelOutputBuilder {
     pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchError>>,
@@ -57,10 +54,7 @@ impl BatchGetChannelOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_channels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
-    ) -> Self {
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>) -> Self {
         self.channels = input;
         self
     }
@@ -80,10 +74,7 @@ impl BatchGetChannelOutputBuilder {
         self
     }
     /// <p>Each error object is related to a specific ARN in the request.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchError>>) -> Self {
         self.errors = input;
         self
     }

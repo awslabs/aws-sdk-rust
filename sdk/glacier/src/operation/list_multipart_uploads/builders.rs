@@ -41,9 +41,7 @@ impl ListMultipartUploadsFluentBuilder {
         }
     }
     /// Access the ListMultipartUploads as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_multipart_uploads::builders::ListMultipartUploadsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_multipart_uploads::builders::ListMultipartUploadsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl ListMultipartUploadsFluentBuilder {
             crate::operation::list_multipart_uploads::ListMultipartUploads,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multipart_uploads::ListMultipartUploadsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multipart_uploads::ListMultipartUploadsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl ListMultipartUploadsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl ListMultipartUploadsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_multipart_uploads::ListMultipartUploadsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multipart_uploads::ListMultipartUploadsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multipart_uploads::ListMultipartUploadsError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl ListMultipartUploadsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_multipart_uploads::ListMultipartUploadsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multipart_uploads::ListMultipartUploadsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multipart_uploads::ListMultipartUploadsError>,
     > {
         self.send_middleware().await
     }
@@ -120,22 +109,15 @@ impl ListMultipartUploadsFluentBuilder {
             crate::operation::list_multipart_uploads::ListMultipartUploads,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_multipart_uploads::ListMultipartUploadsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_multipart_uploads::ListMultipartUploadsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_multipart_uploads::paginator::ListMultipartUploadsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_multipart_uploads::paginator::ListMultipartUploadsPaginator {
-        crate::operation::list_multipart_uploads::paginator::ListMultipartUploadsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_multipart_uploads::paginator::ListMultipartUploadsPaginator {
+        crate::operation::list_multipart_uploads::paginator::ListMultipartUploadsPaginator::new(self.handle, self.inner)
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

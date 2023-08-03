@@ -28,32 +28,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_record::BatchGetRecordError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::batch_get_record::BatchGetRecordError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_record::BatchGetRecordError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::batch_get_record::BatchGetRecordError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -63,46 +47,24 @@ where
 impl From<crate::operation::batch_get_record::BatchGetRecordError> for Error {
     fn from(err: crate::operation::batch_get_record::BatchGetRecordError) -> Self {
         match err {
-            crate::operation::batch_get_record::BatchGetRecordError::AccessForbidden(inner) => {
-                Error::AccessForbidden(inner)
-            }
-            crate::operation::batch_get_record::BatchGetRecordError::InternalFailure(inner) => {
-                Error::InternalFailure(inner)
-            }
-            crate::operation::batch_get_record::BatchGetRecordError::ServiceUnavailable(inner) => {
-                Error::ServiceUnavailable(inner)
-            }
-            crate::operation::batch_get_record::BatchGetRecordError::ValidationError(inner) => {
-                Error::ValidationError(inner)
-            }
-            crate::operation::batch_get_record::BatchGetRecordError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::batch_get_record::BatchGetRecordError::AccessForbidden(inner) => Error::AccessForbidden(inner),
+            crate::operation::batch_get_record::BatchGetRecordError::InternalFailure(inner) => Error::InternalFailure(inner),
+            crate::operation::batch_get_record::BatchGetRecordError::ServiceUnavailable(inner) => Error::ServiceUnavailable(inner),
+            crate::operation::batch_get_record::BatchGetRecordError::ValidationError(inner) => Error::ValidationError(inner),
+            crate::operation::batch_get_record::BatchGetRecordError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_http::result::SdkError<crate::operation::delete_record::DeleteRecordError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_record::DeleteRecordError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_record::DeleteRecordError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_record::DeleteRecordError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -112,42 +74,24 @@ where
 impl From<crate::operation::delete_record::DeleteRecordError> for Error {
     fn from(err: crate::operation::delete_record::DeleteRecordError) -> Self {
         match err {
-            crate::operation::delete_record::DeleteRecordError::AccessForbidden(inner) => {
-                Error::AccessForbidden(inner)
-            }
-            crate::operation::delete_record::DeleteRecordError::InternalFailure(inner) => {
-                Error::InternalFailure(inner)
-            }
-            crate::operation::delete_record::DeleteRecordError::ServiceUnavailable(inner) => {
-                Error::ServiceUnavailable(inner)
-            }
-            crate::operation::delete_record::DeleteRecordError::ValidationError(inner) => {
-                Error::ValidationError(inner)
-            }
-            crate::operation::delete_record::DeleteRecordError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_record::DeleteRecordError::AccessForbidden(inner) => Error::AccessForbidden(inner),
+            crate::operation::delete_record::DeleteRecordError::InternalFailure(inner) => Error::InternalFailure(inner),
+            crate::operation::delete_record::DeleteRecordError::ServiceUnavailable(inner) => Error::ServiceUnavailable(inner),
+            crate::operation::delete_record::DeleteRecordError::ValidationError(inner) => Error::ValidationError(inner),
+            crate::operation::delete_record::DeleteRecordError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_record::GetRecordError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_record::GetRecordError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::get_record::GetRecordError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_record::GetRecordError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -157,45 +101,25 @@ where
 impl From<crate::operation::get_record::GetRecordError> for Error {
     fn from(err: crate::operation::get_record::GetRecordError) -> Self {
         match err {
-            crate::operation::get_record::GetRecordError::AccessForbidden(inner) => {
-                Error::AccessForbidden(inner)
-            }
-            crate::operation::get_record::GetRecordError::InternalFailure(inner) => {
-                Error::InternalFailure(inner)
-            }
-            crate::operation::get_record::GetRecordError::ResourceNotFound(inner) => {
-                Error::ResourceNotFound(inner)
-            }
-            crate::operation::get_record::GetRecordError::ServiceUnavailable(inner) => {
-                Error::ServiceUnavailable(inner)
-            }
-            crate::operation::get_record::GetRecordError::ValidationError(inner) => {
-                Error::ValidationError(inner)
-            }
-            crate::operation::get_record::GetRecordError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_record::GetRecordError::AccessForbidden(inner) => Error::AccessForbidden(inner),
+            crate::operation::get_record::GetRecordError::InternalFailure(inner) => Error::InternalFailure(inner),
+            crate::operation::get_record::GetRecordError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::get_record::GetRecordError::ServiceUnavailable(inner) => Error::ServiceUnavailable(inner),
+            crate::operation::get_record::GetRecordError::ValidationError(inner) => Error::ValidationError(inner),
+            crate::operation::get_record::GetRecordError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_record::PutRecordError, R>>
-    for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_record::PutRecordError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::put_record::PutRecordError, R>,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_record::PutRecordError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -205,21 +129,11 @@ where
 impl From<crate::operation::put_record::PutRecordError> for Error {
     fn from(err: crate::operation::put_record::PutRecordError) -> Self {
         match err {
-            crate::operation::put_record::PutRecordError::AccessForbidden(inner) => {
-                Error::AccessForbidden(inner)
-            }
-            crate::operation::put_record::PutRecordError::InternalFailure(inner) => {
-                Error::InternalFailure(inner)
-            }
-            crate::operation::put_record::PutRecordError::ServiceUnavailable(inner) => {
-                Error::ServiceUnavailable(inner)
-            }
-            crate::operation::put_record::PutRecordError::ValidationError(inner) => {
-                Error::ValidationError(inner)
-            }
-            crate::operation::put_record::PutRecordError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::put_record::PutRecordError::AccessForbidden(inner) => Error::AccessForbidden(inner),
+            crate::operation::put_record::PutRecordError::InternalFailure(inner) => Error::InternalFailure(inner),
+            crate::operation::put_record::PutRecordError::ServiceUnavailable(inner) => Error::ServiceUnavailable(inner),
+            crate::operation::put_record::PutRecordError::ValidationError(inner) => Error::ValidationError(inner),
+            crate::operation::put_record::PutRecordError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

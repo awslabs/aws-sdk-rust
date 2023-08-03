@@ -10,10 +10,7 @@ impl CreateKxChangesetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_kx_changeset::CreateKxChangesetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_kx_changeset::CreateKxChangesetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_kx_changeset::CreateKxChangesetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_kx_changeset();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateKxChangesetFluentBuilder {
         }
     }
     /// Access the CreateKxChangeset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_kx_changeset::builders::CreateKxChangesetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_kx_changeset::builders::CreateKxChangesetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateKxChangesetFluentBuilder {
             crate::operation::create_kx_changeset::CreateKxChangeset,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_kx_changeset::CreateKxChangesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_kx_changeset::CreateKxChangesetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateKxChangesetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateKxChangesetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_kx_changeset::CreateKxChangesetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_kx_changeset::CreateKxChangesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_kx_changeset::CreateKxChangesetError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateKxChangesetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_kx_changeset::CreateKxChangesetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_kx_changeset::CreateKxChangesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_kx_changeset::CreateKxChangesetError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateKxChangesetFluentBuilder {
             crate::operation::create_kx_changeset::CreateKxChangeset,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_kx_changeset::CreateKxChangesetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_kx_changeset::CreateKxChangesetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A unique identifier of the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>A unique identifier of the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl CreateKxChangesetFluentBuilder {
         self.inner.get_environment_id()
     }
     /// <p>The name of the kdb database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the kdb database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -188,10 +160,7 @@ impl CreateKxChangesetFluentBuilder {
     /// <p>Here is an example of how you can use the change request object:</p>
     /// <p> <code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}, { "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}, { "changeType": "DELETE", "dbPath": "/2020.01.01/"} ]</code> </p>
     /// <p>In this example, the first request with <i>PUT</i> change type allows you to add files in the given s3Path under the <i>2020.01.02</i> partition of the database. The second request with <i>PUT</i> change type allows you to add a single sym file at database root location. The last request with <i>DELETE</i> change type allows you to delete the files under the <i>2020.01.01</i> partition of the database. </p>
-    pub fn set_change_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>,
-    ) -> Self {
+    pub fn set_change_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>) -> Self {
         self.inner = self.inner.set_change_requests(input);
         self
     }
@@ -204,9 +173,7 @@ impl CreateKxChangesetFluentBuilder {
     /// <p>Here is an example of how you can use the change request object:</p>
     /// <p> <code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}, { "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}, { "changeType": "DELETE", "dbPath": "/2020.01.01/"} ]</code> </p>
     /// <p>In this example, the first request with <i>PUT</i> change type allows you to add files in the given s3Path under the <i>2020.01.02</i> partition of the database. The second request with <i>PUT</i> change type allows you to add a single sym file at database root location. The last request with <i>DELETE</i> change type allows you to delete the files under the <i>2020.01.01</i> partition of the database. </p>
-    pub fn get_change_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>> {
+    pub fn get_change_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>> {
         self.inner.get_change_requests()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>

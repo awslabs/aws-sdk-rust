@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`resource_identifier(impl ::std::convert::Into<String>)`](crate::operation::associate_kms_key::builders::AssociateKmsKeyFluentBuilder::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::operation::associate_kms_key::builders::AssociateKmsKeyFluentBuilder::set_resource_identifier): <p>Specifies the target for this operation. You must specify one of the following:</p>  <ul>   <li> <p>Specify the following ARN to have future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a> operations in this account encrypt the results with the specified KMS key. Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code> </p> </li>   <li> <p>Specify the ARN of a log group to have CloudWatch Logs use the KMS key to encrypt log events that are ingested and stored by that log group. The log group ARN must be in the following format. Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i> </code> </p> </li>  </ul>  <p>In your <code>AssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code> parameter or the <code>logGroup</code> parameter, but you can't specify both.</p>
     /// - On success, responds with [`AssociateKmsKeyOutput`](crate::operation::associate_kms_key::AssociateKmsKeyOutput)
     /// - On failure, responds with [`SdkError<AssociateKmsKeyError>`](crate::operation::associate_kms_key::AssociateKmsKeyError)
-    pub fn associate_kms_key(
-        &self,
-    ) -> crate::operation::associate_kms_key::builders::AssociateKmsKeyFluentBuilder {
-        crate::operation::associate_kms_key::builders::AssociateKmsKeyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_kms_key(&self) -> crate::operation::associate_kms_key::builders::AssociateKmsKeyFluentBuilder {
+        crate::operation::associate_kms_key::builders::AssociateKmsKeyFluentBuilder::new(self.handle.clone())
     }
 }

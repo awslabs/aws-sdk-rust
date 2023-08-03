@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRealtimeLogConfigOutput {
 }
 impl DeleteRealtimeLogConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRealtimeLogConfigOutput`](crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigOutputBuilder {
         crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRealtimeLogConfigOutput`](crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRealtimeLogConfigOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteRealtimeLogConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteRealtimeLogConfigOutput`](crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput {
+    pub fn build(self) -> crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput {
         crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput {
             _request_id: self._request_id,
         }

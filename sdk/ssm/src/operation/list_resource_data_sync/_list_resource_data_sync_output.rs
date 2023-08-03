@@ -5,8 +5,7 @@
 pub struct ListResourceDataSyncOutput {
     /// <p>A list of your current resource data sync configurations and their statuses.</p>
     #[doc(hidden)]
-    pub resource_data_sync_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncItem>>,
+    pub resource_data_sync_items: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListResourceDataSyncOutput {
 }
 impl ListResourceDataSyncOutput {
     /// <p>A list of your current resource data sync configurations and their statuses.</p>
-    pub fn resource_data_sync_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceDataSyncItem]> {
+    pub fn resource_data_sync_items(&self) -> ::std::option::Option<&[crate::types::ResourceDataSyncItem]> {
         self.resource_data_sync_items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListResourceDataSyncOutput {
 }
 impl ListResourceDataSyncOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceDataSyncOutput`](crate::operation::list_resource_data_sync::ListResourceDataSyncOutput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_data_sync::builders::ListResourceDataSyncOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resource_data_sync::builders::ListResourceDataSyncOutputBuilder {
         crate::operation::list_resource_data_sync::builders::ListResourceDataSyncOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceDataSyncOutput`](crate::operation::list_resource_data_sync::ListResourceDataSyncOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceDataSyncOutputBuilder {
-    pub(crate) resource_data_sync_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncItem>>,
+    pub(crate) resource_data_sync_items: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListResourceDataSyncOutputBuilder {
         self
     }
     /// <p>A list of your current resource data sync configurations and their statuses.</p>
-    pub fn set_resource_data_sync_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncItem>>,
-    ) -> Self {
+    pub fn set_resource_data_sync_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncItem>>) -> Self {
         self.resource_data_sync_items = input;
         self
     }
     /// <p>A list of your current resource data sync configurations and their statuses.</p>
-    pub fn get_resource_data_sync_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncItem>> {
+    pub fn get_resource_data_sync_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDataSyncItem>> {
         &self.resource_data_sync_items
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>

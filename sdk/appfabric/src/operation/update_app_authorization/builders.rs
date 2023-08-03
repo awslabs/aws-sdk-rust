@@ -38,10 +38,7 @@ impl UpdateAppAuthorizationFluentBuilder {
         }
     }
     /// Access the UpdateAppAuthorization as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_app_authorization::builders::UpdateAppAuthorizationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_app_authorization::builders::UpdateAppAuthorizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl UpdateAppAuthorizationFluentBuilder {
             crate::operation::update_app_authorization::UpdateAppAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_authorization::UpdateAppAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_authorization::UpdateAppAuthorizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl UpdateAppAuthorizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl UpdateAppAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_authorization::UpdateAppAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_authorization::UpdateAppAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_authorization::UpdateAppAuthorizationError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl UpdateAppAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_authorization::UpdateAppAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_authorization::UpdateAppAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_authorization::UpdateAppAuthorizationError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl UpdateAppAuthorizationFluentBuilder {
             crate::operation::update_app_authorization::UpdateAppAuthorization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_app_authorization::UpdateAppAuthorizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_app_authorization::UpdateAppAuthorizationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_bundle_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }
@@ -145,25 +125,17 @@ impl UpdateAppAuthorizationFluentBuilder {
         self.inner.get_app_bundle_identifier()
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    pub fn app_authorization_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_authorization_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_authorization_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    pub fn set_app_authorization_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_authorization_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_authorization_identifier(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    pub fn get_app_authorization_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_app_authorization_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_authorization_identifier()
     }
     /// <p>Contains credentials for the application, such as an API key or OAuth2 client ID and secret.</p>
@@ -174,10 +146,7 @@ impl UpdateAppAuthorizationFluentBuilder {
     }
     /// <p>Contains credentials for the application, such as an API key or OAuth2 client ID and secret.</p>
     /// <p>Specify credentials that match the authorization type of the app authorization to update. For example, if the authorization type of the app authorization is OAuth2 (<code>oauth2</code>), then you should provide only the OAuth2 credentials.</p>
-    pub fn set_credential(
-        mut self,
-        input: ::std::option::Option<crate::types::Credential>,
-    ) -> Self {
+    pub fn set_credential(mut self, input: ::std::option::Option<crate::types::Credential>) -> Self {
         self.inner = self.inner.set_credential(input);
         self
     }

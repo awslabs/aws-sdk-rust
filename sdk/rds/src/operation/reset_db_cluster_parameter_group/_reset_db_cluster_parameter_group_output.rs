@@ -38,16 +38,14 @@ impl ::aws_http::request_id::RequestId for ResetDbClusterParameterGroupOutput {
 }
 impl ResetDbClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ResetDbClusterParameterGroupOutput`](crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupOutput).
-    pub fn builder() -> crate::operation::reset_db_cluster_parameter_group::builders::ResetDbClusterParameterGroupOutputBuilder{
+    pub fn builder() -> crate::operation::reset_db_cluster_parameter_group::builders::ResetDbClusterParameterGroupOutputBuilder {
         crate::operation::reset_db_cluster_parameter_group::builders::ResetDbClusterParameterGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`ResetDbClusterParameterGroupOutput`](crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetDbClusterParameterGroupOutputBuilder {
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,10 +60,7 @@ impl ResetDbClusterParameterGroupOutputBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -78,10 +73,7 @@ impl ResetDbClusterParameterGroupOutputBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = input;
         self
     }
@@ -94,9 +86,7 @@ impl ResetDbClusterParameterGroupOutputBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
-    pub fn get_db_cluster_parameter_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -109,10 +99,7 @@ impl ResetDbClusterParameterGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResetDbClusterParameterGroupOutput`](crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupOutput
-    {
+    pub fn build(self) -> crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupOutput {
         crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupOutput {
             db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
             _request_id: self._request_id,

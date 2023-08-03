@@ -49,9 +49,7 @@ impl CreateDirectoryOutput {
 
 /// A builder for [`CreateDirectoryOutput`](crate::operation::create_directory::CreateDirectoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDirectoryOutputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ pub struct CreateDirectoryOutputBuilder {
 }
 impl CreateDirectoryOutputBuilder {
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }
@@ -95,18 +87,12 @@ impl CreateDirectoryOutputBuilder {
         &self.name
     }
     /// <p>The root object node of the created directory.</p>
-    pub fn object_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The root object node of the created directory.</p>
-    pub fn set_object_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_identifier = input;
         self
     }
@@ -115,18 +101,12 @@ impl CreateDirectoryOutputBuilder {
         &self.object_identifier
     }
     /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
-    pub fn applied_schema_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn applied_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.applied_schema_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
-    pub fn set_applied_schema_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_applied_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.applied_schema_arn = input;
         self
     }

@@ -56,18 +56,14 @@ impl ::aws_http::request_id::RequestId for StartDeviceAuthorizationOutput {
 }
 impl StartDeviceAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`StartDeviceAuthorizationOutput`](crate::operation::start_device_authorization::StartDeviceAuthorizationOutput).
-    pub fn builder(
-    ) -> crate::operation::start_device_authorization::builders::StartDeviceAuthorizationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_device_authorization::builders::StartDeviceAuthorizationOutputBuilder {
         crate::operation::start_device_authorization::builders::StartDeviceAuthorizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDeviceAuthorizationOutput`](crate::operation::start_device_authorization::StartDeviceAuthorizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDeviceAuthorizationOutputBuilder {
     pub(crate) device_code: ::std::option::Option<::std::string::String>,
     pub(crate) user_code: ::std::option::Option<::std::string::String>,
@@ -107,18 +103,12 @@ impl StartDeviceAuthorizationOutputBuilder {
         &self.user_code
     }
     /// <p>The URI of the verification page that takes the <code>userCode</code> to authorize the device.</p>
-    pub fn verification_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verification_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verification_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI of the verification page that takes the <code>userCode</code> to authorize the device.</p>
-    pub fn set_verification_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verification_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verification_uri = input;
         self
     }
@@ -127,18 +117,12 @@ impl StartDeviceAuthorizationOutputBuilder {
         &self.verification_uri
     }
     /// <p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>
-    pub fn verification_uri_complete(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verification_uri_complete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verification_uri_complete = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>
-    pub fn set_verification_uri_complete(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verification_uri_complete(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verification_uri_complete = input;
         self
     }
@@ -184,9 +168,7 @@ impl StartDeviceAuthorizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDeviceAuthorizationOutput`](crate::operation::start_device_authorization::StartDeviceAuthorizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_device_authorization::StartDeviceAuthorizationOutput {
+    pub fn build(self) -> crate::operation::start_device_authorization::StartDeviceAuthorizationOutput {
         crate::operation::start_device_authorization::StartDeviceAuthorizationOutput {
             device_code: self.device_code,
             user_code: self.user_code,

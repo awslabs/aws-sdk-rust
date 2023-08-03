@@ -39,13 +39,7 @@
 /// Dvb Sub Destination Alignment
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DvbSubDestinationAlignment {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for DvbSubDestinationAlignment {
             "CENTERED" => DvbSubDestinationAlignment::Centered,
             "LEFT" => DvbSubDestinationAlignment::Left,
             "SMART" => DvbSubDestinationAlignment::Smart,
-            other => DvbSubDestinationAlignment::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DvbSubDestinationAlignment::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

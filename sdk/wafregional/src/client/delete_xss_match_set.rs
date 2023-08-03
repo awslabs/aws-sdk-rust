@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteXssMatchSetOutput`](crate::operation::delete_xss_match_set::DeleteXssMatchSetOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::delete_xss_match_set::DeleteXssMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteXssMatchSetError>`](crate::operation::delete_xss_match_set::DeleteXssMatchSetError)
-    pub fn delete_xss_match_set(
-        &self,
-    ) -> crate::operation::delete_xss_match_set::builders::DeleteXssMatchSetFluentBuilder {
-        crate::operation::delete_xss_match_set::builders::DeleteXssMatchSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_xss_match_set(&self) -> crate::operation::delete_xss_match_set::builders::DeleteXssMatchSetFluentBuilder {
+        crate::operation::delete_xss_match_set::builders::DeleteXssMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

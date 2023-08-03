@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`model_package_group_summary_list(Option<Vec<ModelPackageGroupSummary>>)`](crate::operation::list_model_package_groups::ListModelPackageGroupsOutput::model_package_group_summary_list): <p>A list of summaries of the model groups in your Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_package_groups::ListModelPackageGroupsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model groups, use it in the subsequent request.</p>
     /// - On failure, responds with [`SdkError<ListModelPackageGroupsError>`](crate::operation::list_model_package_groups::ListModelPackageGroupsError)
-    pub fn list_model_package_groups(
-        &self,
-    ) -> crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder
-    {
+    pub fn list_model_package_groups(&self) -> crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder {
         crate::operation::list_model_package_groups::builders::ListModelPackageGroupsFluentBuilder::new(self.handle.clone())
     }
 }

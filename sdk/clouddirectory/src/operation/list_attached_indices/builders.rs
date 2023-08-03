@@ -37,9 +37,7 @@ impl ListAttachedIndicesFluentBuilder {
         }
     }
     /// Access the ListAttachedIndices as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_attached_indices::builders::ListAttachedIndicesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_attached_indices::builders::ListAttachedIndicesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListAttachedIndicesFluentBuilder {
             crate::operation::list_attached_indices::ListAttachedIndices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_indices::ListAttachedIndicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_indices::ListAttachedIndicesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListAttachedIndicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListAttachedIndicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attached_indices::ListAttachedIndicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_indices::ListAttachedIndicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_indices::ListAttachedIndicesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListAttachedIndicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attached_indices::ListAttachedIndicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_indices::ListAttachedIndicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_indices::ListAttachedIndicesError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl ListAttachedIndicesFluentBuilder {
             crate::operation::list_attached_indices::ListAttachedIndices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_indices::ListAttachedIndicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_indices::ListAttachedIndicesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_attached_indices::paginator::ListAttachedIndicesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_attached_indices::paginator::ListAttachedIndicesPaginator {
-        crate::operation::list_attached_indices::paginator::ListAttachedIndicesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_attached_indices::paginator::ListAttachedIndicesPaginator {
+        crate::operation::list_attached_indices::paginator::ListAttachedIndicesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the directory.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The ARN of the directory.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -159,10 +135,7 @@ impl ListAttachedIndicesFluentBuilder {
         self
     }
     /// <p>A reference to the object that has indices attached.</p>
-    pub fn set_target_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_target_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_target_reference(input);
         self
     }
@@ -204,10 +177,7 @@ impl ListAttachedIndicesFluentBuilder {
         self
     }
     /// <p>The consistency level to use for this operation.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
+    pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
     }

@@ -44,16 +44,16 @@ impl AssociateServiceActionWithProvisioningArtifactInput {
 }
 impl AssociateServiceActionWithProvisioningArtifactInput {
     /// Creates a new builder-style object to manufacture [`AssociateServiceActionWithProvisioningArtifactInput`](crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactInput).
-    pub fn builder() -> crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactInputBuilder
+    {
         crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateServiceActionWithProvisioningArtifactInput`](crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateServiceActionWithProvisioningArtifactInputBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_artifact_id: ::std::option::Option<::std::string::String>,
@@ -76,18 +76,12 @@ impl AssociateServiceActionWithProvisioningArtifactInputBuilder {
         &self.product_id
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn provisioning_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioning_artifact_id = input;
         self
     }
@@ -96,18 +90,12 @@ impl AssociateServiceActionWithProvisioningArtifactInputBuilder {
         &self.provisioning_artifact_id
     }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    pub fn service_action_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_action_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    pub fn set_service_action_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_action_id = input;
         self
     }
@@ -120,10 +108,7 @@ impl AssociateServiceActionWithProvisioningArtifactInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -132,10 +117,7 @@ impl AssociateServiceActionWithProvisioningArtifactInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -148,18 +130,19 @@ impl AssociateServiceActionWithProvisioningArtifactInputBuilder {
         &self.accept_language
     }
     /// Consumes the builder and constructs a [`AssociateServiceActionWithProvisioningArtifactInput`](crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactInput {
-                product_id: self.product_id
-                ,
-                provisioning_artifact_id: self.provisioning_artifact_id
-                ,
-                service_action_id: self.service_action_id
-                ,
-                accept_language: self.accept_language
-                ,
-            }
+                product_id: self.product_id,
+                provisioning_artifact_id: self.provisioning_artifact_id,
+                service_action_id: self.service_action_id,
+                accept_language: self.accept_language,
+            },
         )
     }
 }

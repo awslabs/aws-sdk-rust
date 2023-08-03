@@ -98,18 +98,12 @@ impl ListResourcesInputBuilder {
         &self.type_name
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    pub fn type_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn type_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
-    pub fn set_type_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_type_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_version_id = input;
         self
     }
@@ -166,18 +160,12 @@ impl ListResourcesInputBuilder {
         &self.max_results
     }
     /// <p>The resource model to use to select the resources to return.</p>
-    pub fn resource_model(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource model to use to select the resources to return.</p>
-    pub fn set_resource_model(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_model = input;
         self
     }
@@ -188,10 +176,7 @@ impl ListResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListResourcesInput`](crate::operation::list_resources::ListResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resources::ListResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_resources::ListResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_resources::ListResourcesInput {
             type_name: self.type_name,
             type_version_id: self.type_version_id,

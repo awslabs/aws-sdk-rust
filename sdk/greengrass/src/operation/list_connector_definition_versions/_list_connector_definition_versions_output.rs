@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListConnectorDefinitionVersionsOutput
 }
 impl ListConnectorDefinitionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListConnectorDefinitionVersionsOutput`](crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsOutput).
-    pub fn builder() -> crate::operation::list_connector_definition_versions::builders::ListConnectorDefinitionVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_connector_definition_versions::builders::ListConnectorDefinitionVersionsOutputBuilder {
         crate::operation::list_connector_definition_versions::builders::ListConnectorDefinitionVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListConnectorDefinitionVersionsOutput`](crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectorDefinitionVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>,
@@ -70,17 +68,12 @@ impl ListConnectorDefinitionVersionsOutputBuilder {
         self
     }
     /// Information about a version.
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>) -> Self {
         self.versions = input;
         self
     }
     /// Information about a version.
-    pub fn get_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>> {
         &self.versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,15 +86,10 @@ impl ListConnectorDefinitionVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListConnectorDefinitionVersionsOutput`](crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsOutput
-    {
+    pub fn build(self) -> crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsOutput {
         crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsOutput {
-            next_token: self.next_token
-            ,
-            versions: self.versions
-            ,
+            next_token: self.next_token,
+            versions: self.versions,
             _request_id: self._request_id,
         }
     }

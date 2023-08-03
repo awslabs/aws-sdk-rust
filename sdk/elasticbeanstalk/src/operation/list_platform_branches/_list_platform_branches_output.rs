@@ -5,8 +5,7 @@
 pub struct ListPlatformBranchesOutput {
     /// <p>Summary information about the platform branches.</p>
     #[doc(hidden)]
-    pub platform_branch_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlatformBranchSummary>>,
+    pub platform_branch_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::PlatformBranchSummary>>,
     /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListPlatformBranchesOutput {
 }
 impl ListPlatformBranchesOutput {
     /// <p>Summary information about the platform branches.</p>
-    pub fn platform_branch_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PlatformBranchSummary]> {
+    pub fn platform_branch_summary_list(&self) -> ::std::option::Option<&[crate::types::PlatformBranchSummary]> {
         self.platform_branch_summary_list.as_deref()
     }
     /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPlatformBranchesOutput {
 }
 impl ListPlatformBranchesOutput {
     /// Creates a new builder-style object to manufacture [`ListPlatformBranchesOutput`](crate::operation::list_platform_branches::ListPlatformBranchesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_platform_branches::builders::ListPlatformBranchesOutputBuilder {
+    pub fn builder() -> crate::operation::list_platform_branches::builders::ListPlatformBranchesOutputBuilder {
         crate::operation::list_platform_branches::builders::ListPlatformBranchesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPlatformBranchesOutput`](crate::operation::list_platform_branches::ListPlatformBranchesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPlatformBranchesOutputBuilder {
-    pub(crate) platform_branch_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlatformBranchSummary>>,
+    pub(crate) platform_branch_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::PlatformBranchSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,27 +47,19 @@ impl ListPlatformBranchesOutputBuilder {
     /// To override the contents of this collection use [`set_platform_branch_summary_list`](Self::set_platform_branch_summary_list).
     ///
     /// <p>Summary information about the platform branches.</p>
-    pub fn platform_branch_summary_list(
-        mut self,
-        input: crate::types::PlatformBranchSummary,
-    ) -> Self {
+    pub fn platform_branch_summary_list(mut self, input: crate::types::PlatformBranchSummary) -> Self {
         let mut v = self.platform_branch_summary_list.unwrap_or_default();
         v.push(input);
         self.platform_branch_summary_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Summary information about the platform branches.</p>
-    pub fn set_platform_branch_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformBranchSummary>>,
-    ) -> Self {
+    pub fn set_platform_branch_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformBranchSummary>>) -> Self {
         self.platform_branch_summary_list = input;
         self
     }
     /// <p>Summary information about the platform branches.</p>
-    pub fn get_platform_branch_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformBranchSummary>> {
+    pub fn get_platform_branch_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformBranchSummary>> {
         &self.platform_branch_summary_list
     }
     /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>

@@ -9,97 +9,109 @@ pub fn de_create_custom_db_engine_version_http_error(
     crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::unhandled(generic))
-                            };
+        Some(code) => code,
+        None => return Err(crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CreateCustomDBEngineVersionFault" => crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::CreateCustomDbEngineVersionFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "CreateCustomDBEngineVersionFault" => {
+            crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::CreateCustomDbEngineVersionFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CreateCustomDbEngineVersionFaultBuilder::default();
-                    output = crate::protocol_serde::shape_create_custom_db_engine_version_fault::de_create_custom_db_engine_version_fault_xml_err(_response_body, output).map_err(crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_create_custom_db_engine_version_fault::de_create_custom_db_engine_version_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "CustomDBEngineVersionAlreadyExistsFault" => crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::CustomDbEngineVersionAlreadyExistsFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "CustomDBEngineVersionAlreadyExistsFault" => {
+            crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::CustomDbEngineVersionAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CustomDbEngineVersionAlreadyExistsFaultBuilder::default();
                     output = crate::protocol_serde::shape_custom_db_engine_version_already_exists_fault::de_custom_db_engine_version_already_exists_fault_xml_err(_response_body, output).map_err(crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "CustomDBEngineVersionQuotaExceededFault" => crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::CustomDbEngineVersionQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "CustomDBEngineVersionQuotaExceededFault" => {
+            crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::CustomDbEngineVersionQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::CustomDbEngineVersionQuotaExceededFaultBuilder::default();
                     output = crate::protocol_serde::shape_custom_db_engine_version_quota_exceeded_fault::de_custom_db_engine_version_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "Ec2ImagePropertiesNotSupportedFault" => crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::Ec2ImagePropertiesNotSupportedFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "Ec2ImagePropertiesNotSupportedFault" => {
+            crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::Ec2ImagePropertiesNotSupportedFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::Ec2ImagePropertiesNotSupportedFaultBuilder::default();
-                    output = crate::protocol_serde::shape_ec2_image_properties_not_supported_fault::de_ec2_image_properties_not_supported_fault_xml_err(_response_body, output).map_err(crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_ec2_image_properties_not_supported_fault::de_ec2_image_properties_not_supported_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "KMSKeyNotAccessibleFault" => crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::KmsKeyNotAccessibleFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "KMSKeyNotAccessibleFault" => {
+            crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::KmsKeyNotAccessibleFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
-                    output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(_response_body, output).map_err(crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(_response_body, output)
+                            .map_err(crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::generic(generic),
     })
 }
 
@@ -115,16 +127,21 @@ pub fn de_create_custom_db_engine_version_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_custom_db_engine_version::builders::CreateCustomDbEngineVersionOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_custom_db_engine_version::de_create_custom_db_engine_version(_response_body, output).map_err(crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_create_custom_db_engine_version::de_create_custom_db_engine_version(_response_body, output)
+            .map_err(crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_create_custom_db_engine_version(inp: &[u8], mut builder: crate::operation::create_custom_db_engine_version::builders::CreateCustomDbEngineVersionOutputBuilder) -> Result<crate::operation::create_custom_db_engine_version::builders::CreateCustomDbEngineVersionOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_create_custom_db_engine_version(
+    inp: &[u8],
+    mut builder: crate::operation::create_custom_db_engine_version::builders::CreateCustomDbEngineVersionOutputBuilder,
+) -> Result<
+    crate::operation::create_custom_db_engine_version::builders::CreateCustomDbEngineVersionOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -39,9 +39,7 @@ impl UpdateAssetPropertyFluentBuilder {
         }
     }
     /// Access the UpdateAssetProperty as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_asset_property::builders::UpdateAssetPropertyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_asset_property::builders::UpdateAssetPropertyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl UpdateAssetPropertyFluentBuilder {
             crate::operation::update_asset_property::UpdateAssetProperty,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_asset_property::UpdateAssetPropertyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_asset_property::UpdateAssetPropertyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl UpdateAssetPropertyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl UpdateAssetPropertyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_asset_property::UpdateAssetPropertyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_asset_property::UpdateAssetPropertyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_asset_property::UpdateAssetPropertyError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl UpdateAssetPropertyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_asset_property::UpdateAssetPropertyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_asset_property::UpdateAssetPropertyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_asset_property::UpdateAssetPropertyError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl UpdateAssetPropertyFluentBuilder {
             crate::operation::update_asset_property::UpdateAssetProperty,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_asset_property::UpdateAssetPropertyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_asset_property::UpdateAssetPropertyError>,
     > {
         self.customize_middleware().await
     }
@@ -154,19 +141,13 @@ impl UpdateAssetPropertyFluentBuilder {
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the alias is removed from the property.</p>
-    pub fn property_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.property_alias(input.into());
         self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the alias is removed from the property.</p>
-    pub fn set_property_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_property_alias(input);
         self
     }
@@ -177,27 +158,19 @@ impl UpdateAssetPropertyFluentBuilder {
     }
     /// <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
-    pub fn property_notification_state(
-        mut self,
-        input: crate::types::PropertyNotificationState,
-    ) -> Self {
+    pub fn property_notification_state(mut self, input: crate::types::PropertyNotificationState) -> Self {
         self.inner = self.inner.property_notification_state(input);
         self
     }
     /// <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
-    pub fn set_property_notification_state(
-        mut self,
-        input: ::std::option::Option<crate::types::PropertyNotificationState>,
-    ) -> Self {
+    pub fn set_property_notification_state(mut self, input: ::std::option::Option<crate::types::PropertyNotificationState>) -> Self {
         self.inner = self.inner.set_property_notification_state(input);
         self
     }
     /// <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
-    pub fn get_property_notification_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::PropertyNotificationState> {
+    pub fn get_property_notification_state(&self) -> &::std::option::Option<crate::types::PropertyNotificationState> {
         self.inner.get_property_notification_state()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -215,18 +188,12 @@ impl UpdateAssetPropertyFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.</p>
-    pub fn property_unit(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.property_unit(input.into());
         self
     }
     /// <p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.</p>
-    pub fn set_property_unit(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_property_unit(input);
         self
     }

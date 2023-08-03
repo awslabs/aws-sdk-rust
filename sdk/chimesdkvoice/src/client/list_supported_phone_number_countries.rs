@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`ListSupportedPhoneNumberCountriesOutput`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesOutput) with field(s):
     ///   - [`phone_number_countries(Option<Vec<PhoneNumberCountry>>)`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesOutput::phone_number_countries): <p>The supported phone number countries.</p>
     /// - On failure, responds with [`SdkError<ListSupportedPhoneNumberCountriesError>`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesError)
-    pub fn list_supported_phone_number_countries(&self) -> crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesFluentBuilder{
+    pub fn list_supported_phone_number_countries(
+        &self,
+    ) -> crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesFluentBuilder {
         crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesFluentBuilder::new(self.handle.clone())
     }
 }

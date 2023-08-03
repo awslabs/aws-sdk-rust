@@ -10,10 +10,7 @@ impl SetTaskStatusInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_task_status::SetTaskStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_task_status::SetTaskStatusError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_task_status::SetTaskStatusError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_task_status();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl SetTaskStatusFluentBuilder {
         }
     }
     /// Access the SetTaskStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_task_status::builders::SetTaskStatusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_task_status::builders::SetTaskStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -68,10 +63,7 @@ impl SetTaskStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -141,10 +133,7 @@ impl SetTaskStatusFluentBuilder {
         self
     }
     /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
-    pub fn set_task_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskStatus>,
-    ) -> Self {
+    pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
         self.inner = self.inner.set_task_status(input);
         self
     }
@@ -167,18 +156,12 @@ impl SetTaskStatusFluentBuilder {
         self.inner.get_error_id()
     }
     /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.error_message(input.into());
         self
     }
     /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_error_message(input);
         self
     }
@@ -187,18 +170,12 @@ impl SetTaskStatusFluentBuilder {
         self.inner.get_error_message()
     }
     /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    pub fn error_stack_trace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_stack_trace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.error_stack_trace(input.into());
         self
     }
     /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    pub fn set_error_stack_trace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_stack_trace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_error_stack_trace(input);
         self
     }

@@ -46,9 +46,7 @@ impl DeleteSecretInput {
 
 /// A builder for [`DeleteSecretInput`](crate::operation::delete_secret::DeleteSecretInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSecretInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_window_in_days: ::std::option::Option<i64>,
@@ -113,12 +111,7 @@ impl DeleteSecretInputBuilder {
         &self.force_delete_without_recovery
     }
     /// Consumes the builder and constructs a [`DeleteSecretInput`](crate::operation::delete_secret::DeleteSecretInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_secret::DeleteSecretInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_secret::DeleteSecretInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_secret::DeleteSecretInput {
             secret_id: self.secret_id,
             recovery_window_in_days: self.recovery_window_in_days,

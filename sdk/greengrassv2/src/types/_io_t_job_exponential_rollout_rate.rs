@@ -26,9 +26,7 @@ impl IoTJobExponentialRolloutRate {
         self.increment_factor
     }
     /// <p>The criteria to increase the rollout rate for the job.</p>
-    pub fn rate_increase_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IoTJobRateIncreaseCriteria> {
+    pub fn rate_increase_criteria(&self) -> ::std::option::Option<&crate::types::IoTJobRateIncreaseCriteria> {
         self.rate_increase_criteria.as_ref()
     }
 }
@@ -41,14 +39,11 @@ impl IoTJobExponentialRolloutRate {
 
 /// A builder for [`IoTJobExponentialRolloutRate`](crate::types::IoTJobExponentialRolloutRate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IoTJobExponentialRolloutRateBuilder {
     pub(crate) base_rate_per_minute: ::std::option::Option<i32>,
     pub(crate) increment_factor: ::std::option::Option<f64>,
-    pub(crate) rate_increase_criteria:
-        ::std::option::Option<crate::types::IoTJobRateIncreaseCriteria>,
+    pub(crate) rate_increase_criteria: ::std::option::Option<crate::types::IoTJobRateIncreaseCriteria>,
 }
 impl IoTJobExponentialRolloutRateBuilder {
     /// <p>The minimum number of devices that receive a pending job notification, per minute, when the job starts. This parameter defines the initial rollout rate of the job.</p>
@@ -83,25 +78,17 @@ impl IoTJobExponentialRolloutRateBuilder {
         &self.increment_factor
     }
     /// <p>The criteria to increase the rollout rate for the job.</p>
-    pub fn rate_increase_criteria(
-        mut self,
-        input: crate::types::IoTJobRateIncreaseCriteria,
-    ) -> Self {
+    pub fn rate_increase_criteria(mut self, input: crate::types::IoTJobRateIncreaseCriteria) -> Self {
         self.rate_increase_criteria = ::std::option::Option::Some(input);
         self
     }
     /// <p>The criteria to increase the rollout rate for the job.</p>
-    pub fn set_rate_increase_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::IoTJobRateIncreaseCriteria>,
-    ) -> Self {
+    pub fn set_rate_increase_criteria(mut self, input: ::std::option::Option<crate::types::IoTJobRateIncreaseCriteria>) -> Self {
         self.rate_increase_criteria = input;
         self
     }
     /// <p>The criteria to increase the rollout rate for the job.</p>
-    pub fn get_rate_increase_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::IoTJobRateIncreaseCriteria> {
+    pub fn get_rate_increase_criteria(&self) -> &::std::option::Option<crate::types::IoTJobRateIncreaseCriteria> {
         &self.rate_increase_criteria
     }
     /// Consumes the builder and constructs a [`IoTJobExponentialRolloutRate`](crate::types::IoTJobExponentialRolloutRate).

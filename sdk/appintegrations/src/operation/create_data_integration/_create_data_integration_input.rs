@@ -20,9 +20,7 @@ pub struct CreateDataIntegrationInput {
     pub schedule_config: ::std::option::Option<crate::types::ScheduleConfiguration>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -34,10 +32,7 @@ pub struct CreateDataIntegrationInput {
     pub object_configuration: ::std::option::Option<
         ::std::collections::HashMap<
             ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
         >,
     >,
 }
@@ -63,11 +58,7 @@ impl CreateDataIntegrationInput {
         self.schedule_config.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -84,10 +75,7 @@ impl CreateDataIntegrationInput {
     ) -> ::std::option::Option<
         &::std::collections::HashMap<
             ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
         >,
     > {
         self.object_configuration.as_ref()
@@ -95,36 +83,27 @@ impl CreateDataIntegrationInput {
 }
 impl CreateDataIntegrationInput {
     /// Creates a new builder-style object to manufacture [`CreateDataIntegrationInput`](crate::operation::create_data_integration::CreateDataIntegrationInput).
-    pub fn builder(
-    ) -> crate::operation::create_data_integration::builders::CreateDataIntegrationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_data_integration::builders::CreateDataIntegrationInputBuilder {
         crate::operation::create_data_integration::builders::CreateDataIntegrationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataIntegrationInput`](crate::operation::create_data_integration::CreateDataIntegrationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataIntegrationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key: ::std::option::Option<::std::string::String>,
     pub(crate) source_uri: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_config: ::std::option::Option<crate::types::ScheduleConfiguration>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) file_configuration: ::std::option::Option<crate::types::FileConfiguration>,
     pub(crate) object_configuration: ::std::option::Option<
         ::std::collections::HashMap<
             ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
         >,
     >,
 }
@@ -191,17 +170,12 @@ impl CreateDataIntegrationInputBuilder {
         self
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
-    pub fn set_schedule_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleConfiguration>,
-    ) -> Self {
+    pub fn set_schedule_config(mut self, input: ::std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
         self.schedule_config = input;
         self
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
-    pub fn get_schedule_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
+    pub fn get_schedule_config(&self) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
         &self.schedule_config
     }
     /// Adds a key-value pair to `tags`.
@@ -209,32 +183,19 @@ impl CreateDataIntegrationInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -257,17 +218,12 @@ impl CreateDataIntegrationInputBuilder {
         self
     }
     /// <p>The configuration for what files should be pulled from the source.</p>
-    pub fn set_file_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FileConfiguration>,
-    ) -> Self {
+    pub fn set_file_configuration(mut self, input: ::std::option::Option<crate::types::FileConfiguration>) -> Self {
         self.file_configuration = input;
         self
     }
     /// <p>The configuration for what files should be pulled from the source.</p>
-    pub fn get_file_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FileConfiguration> {
+    pub fn get_file_configuration(&self) -> &::std::option::Option<crate::types::FileConfiguration> {
         &self.file_configuration
     }
     /// Adds a key-value pair to `object_configuration`.
@@ -278,10 +234,7 @@ impl CreateDataIntegrationInputBuilder {
     pub fn object_configuration(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::vec::Vec<::std::string::String>,
-        >,
+        v: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         let mut hash_map = self.object_configuration.unwrap_or_default();
         hash_map.insert(k.into(), v);
@@ -294,10 +247,7 @@ impl CreateDataIntegrationInputBuilder {
         input: ::std::option::Option<
             ::std::collections::HashMap<
                 ::std::string::String,
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    ::std::vec::Vec<::std::string::String>,
-                >,
+                ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
             >,
         >,
     ) -> Self {
@@ -310,10 +260,7 @@ impl CreateDataIntegrationInputBuilder {
     ) -> &::std::option::Option<
         ::std::collections::HashMap<
             ::std::string::String,
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
+            ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
         >,
     > {
         &self.object_configuration
@@ -321,22 +268,18 @@ impl CreateDataIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`CreateDataIntegrationInput`](crate::operation::create_data_integration::CreateDataIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_data_integration::CreateDataIntegrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_data_integration::CreateDataIntegrationInput {
-                name: self.name,
-                description: self.description,
-                kms_key: self.kms_key,
-                source_uri: self.source_uri,
-                schedule_config: self.schedule_config,
-                tags: self.tags,
-                client_token: self.client_token,
-                file_configuration: self.file_configuration,
-                object_configuration: self.object_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_data_integration::CreateDataIntegrationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_data_integration::CreateDataIntegrationInput {
+            name: self.name,
+            description: self.description,
+            kms_key: self.kms_key,
+            source_uri: self.source_uri,
+            schedule_config: self.schedule_config,
+            tags: self.tags,
+            client_token: self.client_token,
+            file_configuration: self.file_configuration,
+            object_configuration: self.object_configuration,
+        })
     }
 }

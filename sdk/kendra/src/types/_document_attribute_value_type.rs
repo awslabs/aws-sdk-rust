@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DocumentAttributeValueType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for DocumentAttributeValueType {
             "LONG_VALUE" => DocumentAttributeValueType::LongValue,
             "STRING_LIST_VALUE" => DocumentAttributeValueType::StringListValue,
             "STRING_VALUE" => DocumentAttributeValueType::StringValue,
-            other => DocumentAttributeValueType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DocumentAttributeValueType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl DocumentAttributeValueType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DATE_VALUE",
-            "LONG_VALUE",
-            "STRING_LIST_VALUE",
-            "STRING_VALUE",
-        ]
+        &["DATE_VALUE", "LONG_VALUE", "STRING_LIST_VALUE", "STRING_VALUE"]
     }
 }
 impl ::std::convert::AsRef<str> for DocumentAttributeValueType {

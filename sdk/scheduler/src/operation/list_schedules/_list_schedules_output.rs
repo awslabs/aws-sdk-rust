@@ -35,9 +35,7 @@ impl ListSchedulesOutput {
 
 /// A builder for [`ListSchedulesOutput`](crate::operation::list_schedules::ListSchedulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchedulesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) schedules: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleSummary>>,
@@ -70,17 +68,12 @@ impl ListSchedulesOutputBuilder {
         self
     }
     /// <p>The schedules that match the specified criteria.</p>
-    pub fn set_schedules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleSummary>>,
-    ) -> Self {
+    pub fn set_schedules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleSummary>>) -> Self {
         self.schedules = input;
         self
     }
     /// <p>The schedules that match the specified criteria.</p>
-    pub fn get_schedules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleSummary>> {
+    pub fn get_schedules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleSummary>> {
         &self.schedules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

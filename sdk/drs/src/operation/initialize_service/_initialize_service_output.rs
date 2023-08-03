@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for InitializeServiceOutput {
 }
 impl InitializeServiceOutput {
     /// Creates a new builder-style object to manufacture [`InitializeServiceOutput`](crate::operation::initialize_service::InitializeServiceOutput).
-    pub fn builder(
-    ) -> crate::operation::initialize_service::builders::InitializeServiceOutputBuilder {
+    pub fn builder() -> crate::operation::initialize_service::builders::InitializeServiceOutputBuilder {
         crate::operation::initialize_service::builders::InitializeServiceOutputBuilder::default()
     }
 }
 
 /// A builder for [`InitializeServiceOutput`](crate::operation::initialize_service::InitializeServiceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InitializeServiceOutputBuilder {
     _request_id: Option<String>,
 }

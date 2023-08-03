@@ -4,14 +4,10 @@ pub fn ser_date_time_range(
     input: &crate::types::DateTimeRange,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.from {
-        object
-            .key("from")
-            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+        object.key("from").date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_2) = &input.to {
-        object
-            .key("to")
-            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+        object.key("to").date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

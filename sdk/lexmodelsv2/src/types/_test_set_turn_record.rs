@@ -44,9 +44,7 @@ impl TestSetTurnRecord {
 
 /// A builder for [`TestSetTurnRecord`](crate::types::TestSetTurnRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestSetTurnRecordBuilder {
     pub(crate) record_number: ::std::option::Option<i64>,
     pub(crate) conversation_id: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl TestSetTurnRecordBuilder {
         &self.record_number
     }
     /// <p>The unique identifier for the conversation associated with the turn.</p>
-    pub fn conversation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conversation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the conversation associated with the turn.</p>
-    pub fn set_conversation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.conversation_id = input;
         self
     }
@@ -108,17 +100,12 @@ impl TestSetTurnRecordBuilder {
         self
     }
     /// <p>Contains information about the agent or user turn depending upon type of turn.</p>
-    pub fn set_turn_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::TurnSpecification>,
-    ) -> Self {
+    pub fn set_turn_specification(mut self, input: ::std::option::Option<crate::types::TurnSpecification>) -> Self {
         self.turn_specification = input;
         self
     }
     /// <p>Contains information about the agent or user turn depending upon type of turn.</p>
-    pub fn get_turn_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::TurnSpecification> {
+    pub fn get_turn_specification(&self) -> &::std::option::Option<crate::types::TurnSpecification> {
         &self.turn_specification
     }
     /// Consumes the builder and constructs a [`TestSetTurnRecord`](crate::types::TestSetTurnRecord).

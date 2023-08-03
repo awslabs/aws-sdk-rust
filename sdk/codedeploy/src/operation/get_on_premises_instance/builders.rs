@@ -37,10 +37,7 @@ impl GetOnPremisesInstanceFluentBuilder {
         }
     }
     /// Access the GetOnPremisesInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_on_premises_instance::builders::GetOnPremisesInstanceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_on_premises_instance::builders::GetOnPremisesInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetOnPremisesInstanceFluentBuilder {
             crate::operation::get_on_premises_instance::GetOnPremisesInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_on_premises_instance::GetOnPremisesInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_on_premises_instance::GetOnPremisesInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetOnPremisesInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetOnPremisesInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_on_premises_instance::GetOnPremisesInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_on_premises_instance::GetOnPremisesInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_on_premises_instance::GetOnPremisesInstanceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetOnPremisesInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_on_premises_instance::GetOnPremisesInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_on_premises_instance::GetOnPremisesInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_on_premises_instance::GetOnPremisesInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetOnPremisesInstanceFluentBuilder {
             crate::operation::get_on_premises_instance::GetOnPremisesInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_on_premises_instance::GetOnPremisesInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_on_premises_instance::GetOnPremisesInstanceError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The name of the on-premises instance about which to get information. </p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_name(input.into());
         self
     }
     /// <p> The name of the on-premises instance about which to get information. </p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
     }

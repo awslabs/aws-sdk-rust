@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeFleetLocationUtilizationOutpu
 }
 impl DescribeFleetLocationUtilizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetLocationUtilizationOutput`](crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationOutput).
-    pub fn builder() -> crate::operation::describe_fleet_location_utilization::builders::DescribeFleetLocationUtilizationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_location_utilization::builders::DescribeFleetLocationUtilizationOutputBuilder {
         crate::operation::describe_fleet_location_utilization::builders::DescribeFleetLocationUtilizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetLocationUtilizationOutput`](crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationUtilizationOutputBuilder {
     pub(crate) fleet_utilization: ::std::option::Option<crate::types::FleetUtilization>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeFleetLocationUtilizationOutputBuilder {
         self
     }
     /// <p>Utilization information for the requested fleet location. Utilization objects are returned only for fleets and locations that currently exist.</p>
-    pub fn set_fleet_utilization(
-        mut self,
-        input: ::std::option::Option<crate::types::FleetUtilization>,
-    ) -> Self {
+    pub fn set_fleet_utilization(mut self, input: ::std::option::Option<crate::types::FleetUtilization>) -> Self {
         self.fleet_utilization = input;
         self
     }
@@ -63,13 +58,9 @@ impl DescribeFleetLocationUtilizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFleetLocationUtilizationOutput`](crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationOutput
-    {
+    pub fn build(self) -> crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationOutput {
         crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationOutput {
-            fleet_utilization: self.fleet_utilization
-            ,
+            fleet_utilization: self.fleet_utilization,
             _request_id: self._request_id,
         }
     }

@@ -38,13 +38,7 @@
 /// Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set adaptiveQuantization to a value other than Off.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H265FlickerAdaptiveQuantization {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for H265FlickerAdaptiveQuantization {
         match s {
             "DISABLED" => H265FlickerAdaptiveQuantization::Disabled,
             "ENABLED" => H265FlickerAdaptiveQuantization::Enabled,
-            other => H265FlickerAdaptiveQuantization::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => H265FlickerAdaptiveQuantization::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

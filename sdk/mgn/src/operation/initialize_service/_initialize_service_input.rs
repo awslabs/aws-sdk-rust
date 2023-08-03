@@ -5,26 +5,20 @@
 pub struct InitializeServiceInput {}
 impl InitializeServiceInput {
     /// Creates a new builder-style object to manufacture [`InitializeServiceInput`](crate::operation::initialize_service::InitializeServiceInput).
-    pub fn builder() -> crate::operation::initialize_service::builders::InitializeServiceInputBuilder
-    {
+    pub fn builder() -> crate::operation::initialize_service::builders::InitializeServiceInputBuilder {
         crate::operation::initialize_service::builders::InitializeServiceInputBuilder::default()
     }
 }
 
 /// A builder for [`InitializeServiceInput`](crate::operation::initialize_service::InitializeServiceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InitializeServiceInputBuilder {}
 impl InitializeServiceInputBuilder {
     /// Consumes the builder and constructs a [`InitializeServiceInput`](crate::operation::initialize_service::InitializeServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::initialize_service::InitializeServiceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::initialize_service::InitializeServiceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::initialize_service::InitializeServiceInput {})
     }
 }

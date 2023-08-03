@@ -9,9 +9,7 @@ pub struct CollectionConfiguration {
     pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>Parameter values for the tensor collection. The allowed parameters are <code>"name"</code>, <code>"include_regex"</code>, <code>"reduction_config"</code>, <code>"save_config"</code>, <code>"tensor_names"</code>, and <code>"save_histogram"</code>.</p>
     #[doc(hidden)]
-    pub collection_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub collection_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CollectionConfiguration {
     /// <p>The name of the tensor collection. The name must be unique relative to other rule configuration names.</p>
@@ -19,11 +17,7 @@ impl CollectionConfiguration {
         self.collection_name.as_deref()
     }
     /// <p>Parameter values for the tensor collection. The allowed parameters are <code>"name"</code>, <code>"include_regex"</code>, <code>"reduction_config"</code>, <code>"save_config"</code>, <code>"tensor_names"</code>, and <code>"save_histogram"</code>.</p>
-    pub fn collection_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn collection_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.collection_parameters.as_ref()
     }
 }
@@ -36,29 +30,19 @@ impl CollectionConfiguration {
 
 /// A builder for [`CollectionConfiguration`](crate::types::CollectionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CollectionConfigurationBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
-    pub(crate) collection_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) collection_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CollectionConfigurationBuilder {
     /// <p>The name of the tensor collection. The name must be unique relative to other rule configuration names.</p>
-    pub fn collection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the tensor collection. The name must be unique relative to other rule configuration names.</p>
-    pub fn set_collection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_name = input;
         self
     }
@@ -84,19 +68,13 @@ impl CollectionConfigurationBuilder {
     /// <p>Parameter values for the tensor collection. The allowed parameters are <code>"name"</code>, <code>"include_regex"</code>, <code>"reduction_config"</code>, <code>"save_config"</code>, <code>"tensor_names"</code>, and <code>"save_histogram"</code>.</p>
     pub fn set_collection_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.collection_parameters = input;
         self
     }
     /// <p>Parameter values for the tensor collection. The allowed parameters are <code>"name"</code>, <code>"include_regex"</code>, <code>"reduction_config"</code>, <code>"save_config"</code>, <code>"tensor_names"</code>, and <code>"save_histogram"</code>.</p>
-    pub fn get_collection_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_collection_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.collection_parameters
     }
     /// Consumes the builder and constructs a [`CollectionConfiguration`](crate::types::CollectionConfiguration).

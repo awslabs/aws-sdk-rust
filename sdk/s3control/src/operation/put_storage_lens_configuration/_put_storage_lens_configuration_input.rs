@@ -28,9 +28,7 @@ impl PutStorageLensConfigurationInput {
         self.account_id.as_deref()
     }
     /// <p>The S3 Storage Lens configuration.</p>
-    pub fn storage_lens_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StorageLensConfiguration> {
+    pub fn storage_lens_configuration(&self) -> ::std::option::Option<&crate::types::StorageLensConfiguration> {
         self.storage_lens_configuration.as_ref()
     }
     /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
@@ -42,21 +40,18 @@ impl PutStorageLensConfigurationInput {
 }
 impl PutStorageLensConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationInput`](crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput).
-    pub fn builder() -> crate::operation::put_storage_lens_configuration::builders::PutStorageLensConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_storage_lens_configuration::builders::PutStorageLensConfigurationInputBuilder {
         crate::operation::put_storage_lens_configuration::builders::PutStorageLensConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutStorageLensConfigurationInput`](crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutStorageLensConfigurationInputBuilder {
     pub(crate) config_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_lens_configuration:
-        ::std::option::Option<crate::types::StorageLensConfiguration>,
+    pub(crate) storage_lens_configuration: ::std::option::Option<crate::types::StorageLensConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>,
 }
 impl PutStorageLensConfigurationInputBuilder {
@@ -89,25 +84,17 @@ impl PutStorageLensConfigurationInputBuilder {
         &self.account_id
     }
     /// <p>The S3 Storage Lens configuration.</p>
-    pub fn storage_lens_configuration(
-        mut self,
-        input: crate::types::StorageLensConfiguration,
-    ) -> Self {
+    pub fn storage_lens_configuration(mut self, input: crate::types::StorageLensConfiguration) -> Self {
         self.storage_lens_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 Storage Lens configuration.</p>
-    pub fn set_storage_lens_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageLensConfiguration>,
-    ) -> Self {
+    pub fn set_storage_lens_configuration(mut self, input: ::std::option::Option<crate::types::StorageLensConfiguration>) -> Self {
         self.storage_lens_configuration = input;
         self
     }
     /// <p>The S3 Storage Lens configuration.</p>
-    pub fn get_storage_lens_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::StorageLensConfiguration> {
+    pub fn get_storage_lens_configuration(&self) -> &::std::option::Option<crate::types::StorageLensConfiguration> {
         &self.storage_lens_configuration
     }
     /// Appends an item to `tags`.
@@ -126,19 +113,14 @@ impl PutStorageLensConfigurationInputBuilder {
     /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutStorageLensConfigurationInput`](crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput).
@@ -148,13 +130,11 @@ impl PutStorageLensConfigurationInputBuilder {
         crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput {
-                config_id: self.config_id,
-                account_id: self.account_id,
-                storage_lens_configuration: self.storage_lens_configuration,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput {
+            config_id: self.config_id,
+            account_id: self.account_id,
+            storage_lens_configuration: self.storage_lens_configuration,
+            tags: self.tags,
+        })
     }
 }

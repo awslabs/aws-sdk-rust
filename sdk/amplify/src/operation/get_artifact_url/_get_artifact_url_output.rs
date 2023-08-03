@@ -36,9 +36,7 @@ impl GetArtifactUrlOutput {
 
 /// A builder for [`GetArtifactUrlOutput`](crate::operation::get_artifact_url::GetArtifactUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetArtifactUrlOutputBuilder {
     pub(crate) artifact_id: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_url: ::std::option::Option<::std::string::String>,

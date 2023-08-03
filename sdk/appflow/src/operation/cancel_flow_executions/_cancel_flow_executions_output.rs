@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CancelFlowExecutionsOutput {
 }
 impl CancelFlowExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`CancelFlowExecutionsOutput`](crate::operation::cancel_flow_executions::CancelFlowExecutionsOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsOutputBuilder {
+    pub fn builder() -> crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsOutputBuilder {
         crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelFlowExecutionsOutput`](crate::operation::cancel_flow_executions::CancelFlowExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelFlowExecutionsOutputBuilder {
     pub(crate) invalid_executions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -42,27 +39,19 @@ impl CancelFlowExecutionsOutputBuilder {
     /// To override the contents of this collection use [`set_invalid_executions`](Self::set_invalid_executions).
     ///
     /// <p>The IDs of runs that Amazon AppFlow couldn't cancel. These runs might be ineligible for canceling because they haven't started yet or have already completed.</p>
-    pub fn invalid_executions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn invalid_executions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.invalid_executions.unwrap_or_default();
         v.push(input.into());
         self.invalid_executions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of runs that Amazon AppFlow couldn't cancel. These runs might be ineligible for canceling because they haven't started yet or have already completed.</p>
-    pub fn set_invalid_executions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_invalid_executions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.invalid_executions = input;
         self
     }
     /// <p>The IDs of runs that Amazon AppFlow couldn't cancel. These runs might be ineligible for canceling because they haven't started yet or have already completed.</p>
-    pub fn get_invalid_executions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_invalid_executions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.invalid_executions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

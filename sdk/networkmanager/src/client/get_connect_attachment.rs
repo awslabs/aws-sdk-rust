@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetConnectAttachmentOutput`](crate::operation::get_connect_attachment::GetConnectAttachmentOutput) with field(s):
     ///   - [`connect_attachment(Option<ConnectAttachment>)`](crate::operation::get_connect_attachment::GetConnectAttachmentOutput::connect_attachment): <p>Details about the Connect attachment.</p>
     /// - On failure, responds with [`SdkError<GetConnectAttachmentError>`](crate::operation::get_connect_attachment::GetConnectAttachmentError)
-    pub fn get_connect_attachment(
-        &self,
-    ) -> crate::operation::get_connect_attachment::builders::GetConnectAttachmentFluentBuilder {
-        crate::operation::get_connect_attachment::builders::GetConnectAttachmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_connect_attachment(&self) -> crate::operation::get_connect_attachment::builders::GetConnectAttachmentFluentBuilder {
+        crate::operation::get_connect_attachment::builders::GetConnectAttachmentFluentBuilder::new(self.handle.clone())
     }
 }

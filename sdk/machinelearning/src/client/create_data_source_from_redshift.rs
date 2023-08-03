@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`CreateDataSourceFromRedshiftOutput`](crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftOutput) with field(s):
     ///   - [`data_source_id(Option<String>)`](crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftOutput::data_source_id): <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
     /// - On failure, responds with [`SdkError<CreateDataSourceFromRedshiftError>`](crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftError)
-    pub fn create_data_source_from_redshift(&self) -> crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftFluentBuilder{
+    pub fn create_data_source_from_redshift(
+        &self,
+    ) -> crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftFluentBuilder {
         crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`output(Option<String>)`](crate::operation::get_console_output::GetConsoleOutputOutput::output): <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
     ///   - [`timestamp(Option<DateTime>)`](crate::operation::get_console_output::GetConsoleOutputOutput::timestamp): <p>The time at which the output was last updated.</p>
     /// - On failure, responds with [`SdkError<GetConsoleOutputError>`](crate::operation::get_console_output::GetConsoleOutputError)
-    pub fn get_console_output(
-        &self,
-    ) -> crate::operation::get_console_output::builders::GetConsoleOutputFluentBuilder {
-        crate::operation::get_console_output::builders::GetConsoleOutputFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_console_output(&self) -> crate::operation::get_console_output::builders::GetConsoleOutputFluentBuilder {
+        crate::operation::get_console_output::builders::GetConsoleOutputFluentBuilder::new(self.handle.clone())
     }
 }

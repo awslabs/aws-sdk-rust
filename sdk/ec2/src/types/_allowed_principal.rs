@@ -51,9 +51,7 @@ impl AllowedPrincipal {
 
 /// A builder for [`AllowedPrincipal`](crate::types::AllowedPrincipal).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllowedPrincipalBuilder {
     pub(crate) principal_type: ::std::option::Option<crate::types::PrincipalType>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl AllowedPrincipalBuilder {
         self
     }
     /// <p>The type of principal.</p>
-    pub fn set_principal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PrincipalType>,
-    ) -> Self {
+    pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
         self.principal_type = input;
         self
     }
@@ -94,18 +89,12 @@ impl AllowedPrincipalBuilder {
         &self.principal
     }
     /// <p>The ID of the service permission.</p>
-    pub fn service_permission_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_permission_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_permission_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the service permission.</p>
-    pub fn set_service_permission_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_permission_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_permission_id = input;
         self
     }
@@ -125,10 +114,7 @@ impl AllowedPrincipalBuilder {
         self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

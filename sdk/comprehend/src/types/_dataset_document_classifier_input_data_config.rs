@@ -35,9 +35,7 @@ impl DatasetDocumentClassifierInputDataConfig {
 
 /// A builder for [`DatasetDocumentClassifierInputDataConfig`](crate::types::DatasetDocumentClassifierInputDataConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetDocumentClassifierInputDataConfigBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) label_delimiter: ::std::option::Option<::std::string::String>,
@@ -64,18 +62,12 @@ impl DatasetDocumentClassifierInputDataConfigBuilder {
         &self.s3_uri
     }
     /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the delimiter you specify, the labels on that line will be combined to make a single unique label, such as LABELLABELLABEL.</p>
-    pub fn label_delimiter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the delimiter you specify, the labels on that line will be combined to make a single unique label, such as LABELLABELLABEL.</p>
-    pub fn set_label_delimiter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_delimiter = input;
         self
     }

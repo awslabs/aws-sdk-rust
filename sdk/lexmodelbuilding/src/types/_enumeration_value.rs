@@ -36,9 +36,7 @@ impl EnumerationValue {
 
 /// A builder for [`EnumerationValue`](crate::types::EnumerationValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnumerationValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -70,10 +68,7 @@ impl EnumerationValueBuilder {
         self
     }
     /// <p>Additional values related to the slot type value.</p>
-    pub fn set_synonyms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_synonyms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.synonyms = input;
         self
     }

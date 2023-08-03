@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetContainerServiceDeploymentsOutput`](crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsOutput) with field(s):
     ///   - [`deployments(Option<Vec<ContainerServiceDeployment>>)`](crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsOutput::deployments): <p>An array of objects that describe deployments for a container service.</p>
     /// - On failure, responds with [`SdkError<GetContainerServiceDeploymentsError>`](crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsError)
-    pub fn get_container_service_deployments(&self) -> crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsFluentBuilder{
+    pub fn get_container_service_deployments(
+        &self,
+    ) -> crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsFluentBuilder {
         crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsFluentBuilder::new(self.handle.clone())
     }
 }

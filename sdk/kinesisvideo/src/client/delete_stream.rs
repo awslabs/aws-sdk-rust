@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`current_version(impl ::std::convert::Into<String>)`](crate::operation::delete_stream::builders::DeleteStreamFluentBuilder::current_version) / [`set_current_version(Option<String>)`](crate::operation::delete_stream::builders::DeleteStreamFluentBuilder::set_current_version): <p>Optional: The version of the stream that you want to delete. </p>  <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>  <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
     /// - On success, responds with [`DeleteStreamOutput`](crate::operation::delete_stream::DeleteStreamOutput)
     /// - On failure, responds with [`SdkError<DeleteStreamError>`](crate::operation::delete_stream::DeleteStreamError)
-    pub fn delete_stream(
-        &self,
-    ) -> crate::operation::delete_stream::builders::DeleteStreamFluentBuilder {
-        crate::operation::delete_stream::builders::DeleteStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_stream(&self) -> crate::operation::delete_stream::builders::DeleteStreamFluentBuilder {
+        crate::operation::delete_stream::builders::DeleteStreamFluentBuilder::new(self.handle.clone())
     }
 }

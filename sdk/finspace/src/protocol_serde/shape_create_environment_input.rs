@@ -21,10 +21,7 @@ pub fn ser_create_environment_input(
     if let Some(var_6) = &input.federation_parameters {
         #[allow(unused_mut)]
         let mut object_7 = object.key("federationParameters").start_object();
-        crate::protocol_serde::shape_federation_parameters::ser_federation_parameters(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_federation_parameters::ser_federation_parameters(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.kms_key_id {
@@ -36,10 +33,7 @@ pub fn ser_create_environment_input(
     if let Some(var_10) = &input.superuser_parameters {
         #[allow(unused_mut)]
         let mut object_11 = object.key("superuserParameters").start_object();
-        crate::protocol_serde::shape_superuser_parameters::ser_superuser_parameters(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_superuser_parameters::ser_superuser_parameters(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.tags {

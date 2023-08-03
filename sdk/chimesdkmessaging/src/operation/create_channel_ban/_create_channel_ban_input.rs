@@ -29,17 +29,14 @@ impl CreateChannelBanInput {
 }
 impl CreateChannelBanInput {
     /// Creates a new builder-style object to manufacture [`CreateChannelBanInput`](crate::operation::create_channel_ban::CreateChannelBanInput).
-    pub fn builder() -> crate::operation::create_channel_ban::builders::CreateChannelBanInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_channel_ban::builders::CreateChannelBanInputBuilder {
         crate::operation::create_channel_ban::builders::CreateChannelBanInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateChannelBanInput`](crate::operation::create_channel_ban::CreateChannelBanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateChannelBanInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) member_arn: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl CreateChannelBanInputBuilder {
     /// Consumes the builder and constructs a [`CreateChannelBanInput`](crate::operation::create_channel_ban::CreateChannelBanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_channel_ban::CreateChannelBanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_channel_ban::CreateChannelBanInput {
-                channel_arn: self.channel_arn,
-                member_arn: self.member_arn,
-                chime_bearer: self.chime_bearer,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_channel_ban::CreateChannelBanInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_channel_ban::CreateChannelBanInput {
+            channel_arn: self.channel_arn,
+            member_arn: self.member_arn,
+            chime_bearer: self.chime_bearer,
+        })
     }
 }

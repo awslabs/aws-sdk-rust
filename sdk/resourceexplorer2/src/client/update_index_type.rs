@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`state(Option<IndexState>)`](crate::operation::update_index_type::UpdateIndexTypeOutput::state): <p>Indicates the state of the request to update the index. This operation is asynchronous. Call the <code>GetIndex</code> operation to check for changes.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::update_index_type::UpdateIndexTypeOutput::last_updated_at): <p>The date and timestamp when the index was last updated.</p>
     /// - On failure, responds with [`SdkError<UpdateIndexTypeError>`](crate::operation::update_index_type::UpdateIndexTypeError)
-    pub fn update_index_type(
-        &self,
-    ) -> crate::operation::update_index_type::builders::UpdateIndexTypeFluentBuilder {
-        crate::operation::update_index_type::builders::UpdateIndexTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_index_type(&self) -> crate::operation::update_index_type::builders::UpdateIndexTypeFluentBuilder {
+        crate::operation::update_index_type::builders::UpdateIndexTypeFluentBuilder::new(self.handle.clone())
     }
 }

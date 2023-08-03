@@ -22,9 +22,7 @@ impl DeleteDetectorInput {
 
 /// A builder for [`DeleteDetectorInput`](crate::operation::delete_detector::DeleteDetectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDetectorInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DeleteDetectorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDetectorInput`](crate::operation::delete_detector::DeleteDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_detector::DeleteDetectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_detector::DeleteDetectorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_detector::DeleteDetectorInput {
             detector_id: self.detector_id,
         })

@@ -5,8 +5,7 @@
 pub struct AssociateSubnetCidrBlockOutput {
     /// <p>Information about the IPv6 association.</p>
     #[doc(hidden)]
-    pub ipv6_cidr_block_association:
-        ::std::option::Option<crate::types::SubnetIpv6CidrBlockAssociation>,
+    pub ipv6_cidr_block_association: ::std::option::Option<crate::types::SubnetIpv6CidrBlockAssociation>,
     /// <p>The ID of the subnet.</p>
     #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct AssociateSubnetCidrBlockOutput {
 }
 impl AssociateSubnetCidrBlockOutput {
     /// <p>Information about the IPv6 association.</p>
-    pub fn ipv6_cidr_block_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SubnetIpv6CidrBlockAssociation> {
+    pub fn ipv6_cidr_block_association(&self) -> ::std::option::Option<&crate::types::SubnetIpv6CidrBlockAssociation> {
         self.ipv6_cidr_block_association.as_ref()
     }
     /// <p>The ID of the subnet.</p>
@@ -31,43 +28,32 @@ impl ::aws_http::request_id::RequestId for AssociateSubnetCidrBlockOutput {
 }
 impl AssociateSubnetCidrBlockOutput {
     /// Creates a new builder-style object to manufacture [`AssociateSubnetCidrBlockOutput`](crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockOutput).
-    pub fn builder() -> crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockOutputBuilder{
+    pub fn builder() -> crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockOutputBuilder {
         crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateSubnetCidrBlockOutput`](crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateSubnetCidrBlockOutputBuilder {
-    pub(crate) ipv6_cidr_block_association:
-        ::std::option::Option<crate::types::SubnetIpv6CidrBlockAssociation>,
+    pub(crate) ipv6_cidr_block_association: ::std::option::Option<crate::types::SubnetIpv6CidrBlockAssociation>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociateSubnetCidrBlockOutputBuilder {
     /// <p>Information about the IPv6 association.</p>
-    pub fn ipv6_cidr_block_association(
-        mut self,
-        input: crate::types::SubnetIpv6CidrBlockAssociation,
-    ) -> Self {
+    pub fn ipv6_cidr_block_association(mut self, input: crate::types::SubnetIpv6CidrBlockAssociation) -> Self {
         self.ipv6_cidr_block_association = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the IPv6 association.</p>
-    pub fn set_ipv6_cidr_block_association(
-        mut self,
-        input: ::std::option::Option<crate::types::SubnetIpv6CidrBlockAssociation>,
-    ) -> Self {
+    pub fn set_ipv6_cidr_block_association(mut self, input: ::std::option::Option<crate::types::SubnetIpv6CidrBlockAssociation>) -> Self {
         self.ipv6_cidr_block_association = input;
         self
     }
     /// <p>Information about the IPv6 association.</p>
-    pub fn get_ipv6_cidr_block_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::SubnetIpv6CidrBlockAssociation> {
+    pub fn get_ipv6_cidr_block_association(&self) -> &::std::option::Option<crate::types::SubnetIpv6CidrBlockAssociation> {
         &self.ipv6_cidr_block_association
     }
     /// <p>The ID of the subnet.</p>
@@ -94,9 +80,7 @@ impl AssociateSubnetCidrBlockOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateSubnetCidrBlockOutput`](crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockOutput {
+    pub fn build(self) -> crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockOutput {
         crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockOutput {
             ipv6_cidr_block_association: self.ipv6_cidr_block_association,
             subnet_id: self.subnet_id,

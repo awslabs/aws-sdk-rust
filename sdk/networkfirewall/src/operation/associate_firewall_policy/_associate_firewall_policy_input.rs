@@ -44,18 +44,14 @@ impl AssociateFirewallPolicyInput {
 }
 impl AssociateFirewallPolicyInput {
     /// Creates a new builder-style object to manufacture [`AssociateFirewallPolicyInput`](crate::operation::associate_firewall_policy::AssociateFirewallPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::associate_firewall_policy::builders::AssociateFirewallPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_firewall_policy::builders::AssociateFirewallPolicyInputBuilder {
         crate::operation::associate_firewall_policy::builders::AssociateFirewallPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateFirewallPolicyInput`](crate::operation::associate_firewall_policy::AssociateFirewallPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateFirewallPolicyInputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
@@ -102,19 +98,13 @@ impl AssociateFirewallPolicyInputBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_name = input;
         self
     }
@@ -124,18 +114,12 @@ impl AssociateFirewallPolicyInputBuilder {
         &self.firewall_name
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    pub fn firewall_policy_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-    pub fn set_firewall_policy_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_policy_arn = input;
         self
     }
@@ -150,13 +134,11 @@ impl AssociateFirewallPolicyInputBuilder {
         crate::operation::associate_firewall_policy::AssociateFirewallPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_firewall_policy::AssociateFirewallPolicyInput {
-                update_token: self.update_token,
-                firewall_arn: self.firewall_arn,
-                firewall_name: self.firewall_name,
-                firewall_policy_arn: self.firewall_policy_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_firewall_policy::AssociateFirewallPolicyInput {
+            update_token: self.update_token,
+            firewall_arn: self.firewall_arn,
+            firewall_name: self.firewall_name,
+            firewall_policy_arn: self.firewall_policy_arn,
+        })
     }
 }

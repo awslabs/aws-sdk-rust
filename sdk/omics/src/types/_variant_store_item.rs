@@ -93,9 +93,7 @@ impl VariantStoreItem {
 
 /// A builder for [`VariantStoreItem`](crate::types::VariantStoreItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VariantStoreItemBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,
@@ -130,10 +128,7 @@ impl VariantStoreItemBuilder {
         self
     }
     /// <p>The store's genome reference.</p>
-    pub fn set_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceItem>,
-    ) -> Self {
+    pub fn set_reference(mut self, input: ::std::option::Option<crate::types::ReferenceItem>) -> Self {
         self.reference = input;
         self
     }
@@ -217,10 +212,7 @@ impl VariantStoreItemBuilder {
         self
     }
     /// <p>When the store was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -234,10 +226,7 @@ impl VariantStoreItemBuilder {
         self
     }
     /// <p>When the store was updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -246,18 +235,12 @@ impl VariantStoreItemBuilder {
         &self.update_time
     }
     /// <p>The store's status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The store's status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

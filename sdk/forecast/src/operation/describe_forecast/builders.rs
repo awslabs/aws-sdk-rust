@@ -10,10 +10,7 @@ impl DescribeForecastInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_forecast::DescribeForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_forecast::DescribeForecastError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_forecast::DescribeForecastError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_forecast();
         fluent_builder.inner = self;
@@ -45,9 +42,7 @@ impl DescribeForecastFluentBuilder {
         }
     }
     /// Access the DescribeForecast as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_forecast::builders::DescribeForecastInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_forecast::builders::DescribeForecastInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +54,7 @@ impl DescribeForecastFluentBuilder {
             crate::operation::describe_forecast::DescribeForecast,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_forecast::DescribeForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_forecast::DescribeForecastError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +64,7 @@ impl DescribeForecastFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +73,7 @@ impl DescribeForecastFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_forecast::DescribeForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_forecast::DescribeForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_forecast::DescribeForecastError>,
     > {
         let op = self
             .inner
@@ -108,9 +96,7 @@ impl DescribeForecastFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_forecast::DescribeForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_forecast::DescribeForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_forecast::DescribeForecastError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +110,7 @@ impl DescribeForecastFluentBuilder {
             crate::operation::describe_forecast::DescribeForecast,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_forecast::DescribeForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_forecast::DescribeForecastError>,
     > {
         self.customize_middleware().await
     }

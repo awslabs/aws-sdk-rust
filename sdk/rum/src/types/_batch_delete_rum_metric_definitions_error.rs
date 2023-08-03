@@ -37,9 +37,7 @@ impl BatchDeleteRumMetricDefinitionsError {
 
 /// A builder for [`BatchDeleteRumMetricDefinitionsError`](crate::types::BatchDeleteRumMetricDefinitionsError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteRumMetricDefinitionsErrorBuilder {
     pub(crate) metric_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct BatchDeleteRumMetricDefinitionsErrorBuilder {
 }
 impl BatchDeleteRumMetricDefinitionsErrorBuilder {
     /// <p>The ID of the metric definition that caused this error.</p>
-    pub fn metric_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the metric definition that caused this error.</p>
-    pub fn set_metric_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_definition_id = input;
         self
     }
@@ -81,18 +73,12 @@ impl BatchDeleteRumMetricDefinitionsErrorBuilder {
         &self.error_code
     }
     /// <p>The error message for this metric definition.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message for this metric definition.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`recommendations(Option<Vec<RecommendationData>>)`](crate::operation::get_recommendations::GetRecommendationsOutput::recommendations): <p>The recommendations.</p>
     ///   - [`triggers(Option<Vec<RecommendationTrigger>>)`](crate::operation::get_recommendations::GetRecommendationsOutput::triggers): <p>The triggers corresponding to recommendations.</p>
     /// - On failure, responds with [`SdkError<GetRecommendationsError>`](crate::operation::get_recommendations::GetRecommendationsError)
-    pub fn get_recommendations(
-        &self,
-    ) -> crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder {
-        crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_recommendations(&self) -> crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder {
+        crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

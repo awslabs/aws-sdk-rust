@@ -24,10 +24,7 @@ pub fn ser_virtual_gateway_spec(
     if let Some(var_7) = &input.logging {
         #[allow(unused_mut)]
         let mut object_8 = object.key("logging").start_object();
-        crate::protocol_serde::shape_virtual_gateway_logging::ser_virtual_gateway_logging(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_virtual_gateway_logging::ser_virtual_gateway_logging(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())
@@ -35,17 +32,9 @@ pub fn ser_virtual_gateway_spec(
 
 pub(crate) fn de_virtual_gateway_spec<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::VirtualGatewaySpec>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::VirtualGatewaySpec>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -55,41 +44,34 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "backendDefaults" => {
-                                builder = builder.set_backend_defaults(
-                                    crate::protocol_serde::shape_virtual_gateway_backend_defaults::de_virtual_gateway_backend_defaults(tokens)?
-                                );
-                            }
-                            "listeners" => {
-                                builder = builder.set_listeners(
-                                    crate::protocol_serde::shape_virtual_gateway_listeners::de_virtual_gateway_listeners(tokens)?
-                                );
-                            }
-                            "logging" => {
-                                builder = builder.set_logging(
-                                    crate::protocol_serde::shape_virtual_gateway_logging::de_virtual_gateway_logging(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "backendDefaults" => {
+                            builder = builder.set_backend_defaults(
+                                crate::protocol_serde::shape_virtual_gateway_backend_defaults::de_virtual_gateway_backend_defaults(tokens)?,
+                            );
                         }
-                    }
+                        "listeners" => {
+                            builder = builder.set_listeners(crate::protocol_serde::shape_virtual_gateway_listeners::de_virtual_gateway_listeners(
+                                tokens,
+                            )?);
+                        }
+                        "logging" => {
+                            builder = builder.set_logging(crate::protocol_serde::shape_virtual_gateway_logging::de_virtual_gateway_logging(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

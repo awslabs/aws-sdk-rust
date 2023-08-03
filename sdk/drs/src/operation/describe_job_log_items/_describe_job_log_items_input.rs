@@ -29,18 +29,14 @@ impl DescribeJobLogItemsInput {
 }
 impl DescribeJobLogItemsInput {
     /// Creates a new builder-style object to manufacture [`DescribeJobLogItemsInput`](crate::operation::describe_job_log_items::DescribeJobLogItemsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_job_log_items::builders::DescribeJobLogItemsInputBuilder {
-        crate::operation::describe_job_log_items::builders::DescribeJobLogItemsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_job_log_items::builders::DescribeJobLogItemsInputBuilder {
+        crate::operation::describe_job_log_items::builders::DescribeJobLogItemsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeJobLogItemsInput`](crate::operation::describe_job_log_items::DescribeJobLogItemsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobLogItemsInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,16 +88,12 @@ impl DescribeJobLogItemsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobLogItemsInput`](crate::operation::describe_job_log_items::DescribeJobLogItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_job_log_items::DescribeJobLogItemsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_job_log_items::DescribeJobLogItemsInput {
-                job_id: self.job_id,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_job_log_items::DescribeJobLogItemsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_job_log_items::DescribeJobLogItemsInput {
+            job_id: self.job_id,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }

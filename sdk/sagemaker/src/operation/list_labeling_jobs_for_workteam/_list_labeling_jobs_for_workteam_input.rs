@@ -54,9 +54,7 @@ impl ListLabelingJobsForWorkteamInput {
         self.job_reference_code_contains.as_deref()
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn sort_by(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ListLabelingJobsForWorkteamSortByOptions> {
+    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ListLabelingJobsForWorkteamSortByOptions> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
@@ -66,16 +64,14 @@ impl ListLabelingJobsForWorkteamInput {
 }
 impl ListLabelingJobsForWorkteamInput {
     /// Creates a new builder-style object to manufacture [`ListLabelingJobsForWorkteamInput`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamInput).
-    pub fn builder() -> crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamInputBuilder{
+    pub fn builder() -> crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamInputBuilder {
         crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLabelingJobsForWorkteamInput`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLabelingJobsForWorkteamInputBuilder {
     pub(crate) workteam_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -83,8 +79,7 @@ pub struct ListLabelingJobsForWorkteamInputBuilder {
     pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) job_reference_code_contains: ::std::option::Option<::std::string::String>,
-    pub(crate) sort_by:
-        ::std::option::Option<crate::types::ListLabelingJobsForWorkteamSortByOptions>,
+    pub(crate) sort_by: ::std::option::Option<crate::types::ListLabelingJobsForWorkteamSortByOptions>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListLabelingJobsForWorkteamInputBuilder {
@@ -136,10 +131,7 @@ impl ListLabelingJobsForWorkteamInputBuilder {
         self
     }
     /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -153,10 +145,7 @@ impl ListLabelingJobsForWorkteamInputBuilder {
         self
     }
     /// <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -165,18 +154,12 @@ impl ListLabelingJobsForWorkteamInputBuilder {
         &self.creation_time_before
     }
     /// <p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p>
-    pub fn job_reference_code_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_reference_code_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_reference_code_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p>
-    pub fn set_job_reference_code_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_reference_code_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_reference_code_contains = input;
         self
     }
@@ -185,25 +168,17 @@ impl ListLabelingJobsForWorkteamInputBuilder {
         &self.job_reference_code_contains
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn sort_by(
-        mut self,
-        input: crate::types::ListLabelingJobsForWorkteamSortByOptions,
-    ) -> Self {
+    pub fn sort_by(mut self, input: crate::types::ListLabelingJobsForWorkteamSortByOptions) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListLabelingJobsForWorkteamSortByOptions>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListLabelingJobsForWorkteamSortByOptions>) -> Self {
         self.sort_by = input;
         self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListLabelingJobsForWorkteamSortByOptions> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListLabelingJobsForWorkteamSortByOptions> {
         &self.sort_by
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
@@ -227,17 +202,15 @@ impl ListLabelingJobsForWorkteamInputBuilder {
         crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamInput {
-                workteam_arn: self.workteam_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                job_reference_code_contains: self.job_reference_code_contains,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamInput {
+            workteam_arn: self.workteam_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            creation_time_after: self.creation_time_after,
+            creation_time_before: self.creation_time_before,
+            job_reference_code_contains: self.job_reference_code_contains,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+        })
     }
 }

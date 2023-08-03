@@ -15,7 +15,7 @@ impl super::Client {
     /// - On success, responds with [`ExportTableToPointInTimeOutput`](crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeOutput) with field(s):
     ///   - [`export_description(Option<ExportDescription>)`](crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeOutput::export_description): <p>Contains a description of the table export.</p>
     /// - On failure, responds with [`SdkError<ExportTableToPointInTimeError>`](crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeError)
-    pub fn export_table_to_point_in_time(&self) -> crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeFluentBuilder{
+    pub fn export_table_to_point_in_time(&self) -> crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeFluentBuilder {
         crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeFluentBuilder::new(self.handle.clone())
     }
 }

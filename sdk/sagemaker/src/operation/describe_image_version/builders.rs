@@ -37,9 +37,7 @@ impl DescribeImageVersionFluentBuilder {
         }
     }
     /// Access the DescribeImageVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_image_version::builders::DescribeImageVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_image_version::builders::DescribeImageVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeImageVersionFluentBuilder {
             crate::operation::describe_image_version::DescribeImageVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_version::DescribeImageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_version::DescribeImageVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeImageVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeImageVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_version::DescribeImageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_version::DescribeImageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_version::DescribeImageVersionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeImageVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_version::DescribeImageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_version::DescribeImageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_version::DescribeImageVersionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeImageVersionFluentBuilder {
             crate::operation::describe_image_version::DescribeImageVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_version::DescribeImageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_version::DescribeImageVersionError>,
     > {
         self.customize_middleware().await
     }

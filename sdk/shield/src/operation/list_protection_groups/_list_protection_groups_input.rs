@@ -31,30 +31,24 @@ impl ListProtectionGroupsInput {
         self.max_results
     }
     /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with specific pattern or aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
-    pub fn inclusion_filters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InclusionProtectionGroupFilters> {
+    pub fn inclusion_filters(&self) -> ::std::option::Option<&crate::types::InclusionProtectionGroupFilters> {
         self.inclusion_filters.as_ref()
     }
 }
 impl ListProtectionGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListProtectionGroupsInput`](crate::operation::list_protection_groups::ListProtectionGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_protection_groups::builders::ListProtectionGroupsInputBuilder {
+    pub fn builder() -> crate::operation::list_protection_groups::builders::ListProtectionGroupsInputBuilder {
         crate::operation::list_protection_groups::builders::ListProtectionGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProtectionGroupsInput`](crate::operation::list_protection_groups::ListProtectionGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProtectionGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) inclusion_filters:
-        ::std::option::Option<crate::types::InclusionProtectionGroupFilters>,
+    pub(crate) inclusion_filters: ::std::option::Option<crate::types::InclusionProtectionGroupFilters>,
 }
 impl ListProtectionGroupsInputBuilder {
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
@@ -98,40 +92,28 @@ impl ListProtectionGroupsInputBuilder {
         &self.max_results
     }
     /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with specific pattern or aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
-    pub fn inclusion_filters(
-        mut self,
-        input: crate::types::InclusionProtectionGroupFilters,
-    ) -> Self {
+    pub fn inclusion_filters(mut self, input: crate::types::InclusionProtectionGroupFilters) -> Self {
         self.inclusion_filters = ::std::option::Option::Some(input);
         self
     }
     /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with specific pattern or aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
-    pub fn set_inclusion_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::InclusionProtectionGroupFilters>,
-    ) -> Self {
+    pub fn set_inclusion_filters(mut self, input: ::std::option::Option<crate::types::InclusionProtectionGroupFilters>) -> Self {
         self.inclusion_filters = input;
         self
     }
     /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with specific pattern or aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
-    pub fn get_inclusion_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::InclusionProtectionGroupFilters> {
+    pub fn get_inclusion_filters(&self) -> &::std::option::Option<crate::types::InclusionProtectionGroupFilters> {
         &self.inclusion_filters
     }
     /// Consumes the builder and constructs a [`ListProtectionGroupsInput`](crate::operation::list_protection_groups::ListProtectionGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_protection_groups::ListProtectionGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_protection_groups::ListProtectionGroupsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                inclusion_filters: self.inclusion_filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_protection_groups::ListProtectionGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_protection_groups::ListProtectionGroupsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            inclusion_filters: self.inclusion_filters,
+        })
     }
 }

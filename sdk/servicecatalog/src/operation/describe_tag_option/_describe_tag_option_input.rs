@@ -15,17 +15,14 @@ impl DescribeTagOptionInput {
 }
 impl DescribeTagOptionInput {
     /// Creates a new builder-style object to manufacture [`DescribeTagOptionInput`](crate::operation::describe_tag_option::DescribeTagOptionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_tag_option::builders::DescribeTagOptionInputBuilder {
+    pub fn builder() -> crate::operation::describe_tag_option::builders::DescribeTagOptionInputBuilder {
         crate::operation::describe_tag_option::builders::DescribeTagOptionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTagOptionInput`](crate::operation::describe_tag_option::DescribeTagOptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTagOptionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DescribeTagOptionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTagOptionInput`](crate::operation::describe_tag_option::DescribeTagOptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_tag_option::DescribeTagOptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_tag_option::DescribeTagOptionInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_tag_option::DescribeTagOptionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_tag_option::DescribeTagOptionInput { id: self.id })
     }
 }

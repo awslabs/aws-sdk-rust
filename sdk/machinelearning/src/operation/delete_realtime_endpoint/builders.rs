@@ -37,10 +37,7 @@ impl DeleteRealtimeEndpointFluentBuilder {
         }
     }
     /// Access the DeleteRealtimeEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_realtime_endpoint::builders::DeleteRealtimeEndpointInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_realtime_endpoint::builders::DeleteRealtimeEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteRealtimeEndpointFluentBuilder {
             crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteRealtimeEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteRealtimeEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteRealtimeEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteRealtimeEndpointFluentBuilder {
             crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointError>,
     > {
         self.customize_middleware().await
     }

@@ -10,10 +10,7 @@ impl AssociateIpGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_ip_groups::AssociateIpGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_ip_groups::AssociateIpGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_ip_groups::AssociateIpGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.associate_ip_groups();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl AssociateIpGroupsFluentBuilder {
         }
     }
     /// Access the AssociateIpGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_ip_groups::builders::AssociateIpGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_ip_groups::builders::AssociateIpGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl AssociateIpGroupsFluentBuilder {
             crate::operation::associate_ip_groups::AssociateIpGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_ip_groups::AssociateIpGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_ip_groups::AssociateIpGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl AssociateIpGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl AssociateIpGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_ip_groups::AssociateIpGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_ip_groups::AssociateIpGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_ip_groups::AssociateIpGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl AssociateIpGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_ip_groups::AssociateIpGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_ip_groups::AssociateIpGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_ip_groups::AssociateIpGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl AssociateIpGroupsFluentBuilder {
             crate::operation::associate_ip_groups::AssociateIpGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_ip_groups::AssociateIpGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_ip_groups::AssociateIpGroupsError>,
     > {
         self.customize_middleware().await
     }
@@ -146,10 +130,7 @@ impl AssociateIpGroupsFluentBuilder {
         self
     }
     /// <p>The identifiers of one or more IP access control groups.</p>
-    pub fn set_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_group_ids(input);
         self
     }

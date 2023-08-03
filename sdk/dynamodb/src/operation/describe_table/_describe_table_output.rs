@@ -29,9 +29,7 @@ impl DescribeTableOutput {
 
 /// A builder for [`DescribeTableOutput`](crate::operation::describe_table::DescribeTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTableOutputBuilder {
     pub(crate) table: ::std::option::Option<crate::types::TableDescription>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl DescribeTableOutputBuilder {
         self
     }
     /// <p>The properties of the table.</p>
-    pub fn set_table(
-        mut self,
-        input: ::std::option::Option<crate::types::TableDescription>,
-    ) -> Self {
+    pub fn set_table(mut self, input: ::std::option::Option<crate::types::TableDescription>) -> Self {
         self.table = input;
         self
     }

@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMonitoringScheduleOutput`](crate::operation::create_monitoring_schedule::CreateMonitoringScheduleOutput) with field(s):
     ///   - [`monitoring_schedule_arn(Option<String>)`](crate::operation::create_monitoring_schedule::CreateMonitoringScheduleOutput::monitoring_schedule_arn): <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
     /// - On failure, responds with [`SdkError<CreateMonitoringScheduleError>`](crate::operation::create_monitoring_schedule::CreateMonitoringScheduleError)
-    pub fn create_monitoring_schedule(
-        &self,
-    ) -> crate::operation::create_monitoring_schedule::builders::CreateMonitoringScheduleFluentBuilder
-    {
+    pub fn create_monitoring_schedule(&self) -> crate::operation::create_monitoring_schedule::builders::CreateMonitoringScheduleFluentBuilder {
         crate::operation::create_monitoring_schedule::builders::CreateMonitoringScheduleFluentBuilder::new(self.handle.clone())
     }
 }

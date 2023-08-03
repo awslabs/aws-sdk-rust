@@ -10,10 +10,7 @@ impl ListTagsForStreamInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_stream::ListTagsForStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_stream::ListTagsForStreamError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_stream::ListTagsForStreamError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_tags_for_stream();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ListTagsForStreamFluentBuilder {
         }
     }
     /// Access the ListTagsForStream as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_tags_for_stream::builders::ListTagsForStreamInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_tags_for_stream::builders::ListTagsForStreamInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ListTagsForStreamFluentBuilder {
             crate::operation::list_tags_for_stream::ListTagsForStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_stream::ListTagsForStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_stream::ListTagsForStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ListTagsForStreamFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ListTagsForStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_stream::ListTagsForStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_stream::ListTagsForStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_stream::ListTagsForStreamError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ListTagsForStreamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_stream::ListTagsForStreamOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_stream::ListTagsForStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_stream::ListTagsForStreamError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl ListTagsForStreamFluentBuilder {
             crate::operation::list_tags_for_stream::ListTagsForStream,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_stream::ListTagsForStreamError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_tags_for_stream::ListTagsForStreamError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +123,12 @@ impl ListTagsForStreamFluentBuilder {
         self.inner.get_stream_name()
     }
     /// <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>. </p>
-    pub fn exclusive_start_tag_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusive_start_tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.exclusive_start_tag_key(input.into());
         self
     }
     /// <p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>. </p>
-    pub fn set_exclusive_start_tag_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exclusive_start_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_exclusive_start_tag_key(input);
         self
     }

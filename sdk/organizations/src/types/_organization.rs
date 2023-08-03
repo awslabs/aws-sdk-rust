@@ -31,8 +31,7 @@ pub struct Organization {
     /// </important>
     /// <p>To determine the policies that are enabled and available for use in your organization, use the <code>ListRoots</code> operation instead.</p>
     #[doc(hidden)]
-    pub available_policy_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>,
+    pub available_policy_types: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>,
 }
 impl Organization {
     /// <p>The unique identifier (ID) of an organization.</p>
@@ -67,9 +66,7 @@ impl Organization {
     /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p>
     /// </important>
     /// <p>To determine the policies that are enabled and available for use in your organization, use the <code>ListRoots</code> operation instead.</p>
-    pub fn available_policy_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PolicyTypeSummary]> {
+    pub fn available_policy_types(&self) -> ::std::option::Option<&[crate::types::PolicyTypeSummary]> {
         self.available_policy_types.as_deref()
     }
 }
@@ -103,8 +100,7 @@ pub struct OrganizationBuilder {
     pub(crate) master_account_arn: ::std::option::Option<::std::string::String>,
     pub(crate) master_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) master_account_email: ::std::option::Option<::std::string::String>,
-    pub(crate) available_policy_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>,
+    pub(crate) available_policy_types: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>,
 }
 impl OrganizationBuilder {
     /// <p>The unique identifier (ID) of an organization.</p>
@@ -147,10 +143,7 @@ impl OrganizationBuilder {
         self
     }
     /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
-    pub fn set_feature_set(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationFeatureSet>,
-    ) -> Self {
+    pub fn set_feature_set(mut self, input: ::std::option::Option<crate::types::OrganizationFeatureSet>) -> Self {
         self.feature_set = input;
         self
     }
@@ -160,19 +153,13 @@ impl OrganizationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    pub fn master_account_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_account_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_account_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    pub fn set_master_account_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_account_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_account_arn = input;
         self
     }
@@ -183,19 +170,13 @@ impl OrganizationBuilder {
     }
     /// <p>The unique identifier (ID) of the management account of an organization.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    pub fn master_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier (ID) of the management account of an organization.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    pub fn set_master_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_account_id = input;
         self
     }
@@ -205,18 +186,12 @@ impl OrganizationBuilder {
         &self.master_account_id
     }
     /// <p>The email address that is associated with the Amazon Web Services account that is designated as the management account for the organization.</p>
-    pub fn master_account_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_account_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_account_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address that is associated with the Amazon Web Services account that is designated as the management account for the organization.</p>
-    pub fn set_master_account_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_account_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_account_email = input;
         self
     }
@@ -242,10 +217,7 @@ impl OrganizationBuilder {
     /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p>
     /// </important>
     /// <p>To determine the policies that are enabled and available for use in your organization, use the <code>ListRoots</code> operation instead.</p>
-    pub fn set_available_policy_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>,
-    ) -> Self {
+    pub fn set_available_policy_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>) -> Self {
         self.available_policy_types = input;
         self
     }
@@ -253,9 +225,7 @@ impl OrganizationBuilder {
     /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p>
     /// </important>
     /// <p>To determine the policies that are enabled and available for use in your organization, use the <code>ListRoots</code> operation instead.</p>
-    pub fn get_available_policy_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>> {
+    pub fn get_available_policy_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>> {
         &self.available_policy_types
     }
     /// Consumes the builder and constructs a [`Organization`](crate::types::Organization).

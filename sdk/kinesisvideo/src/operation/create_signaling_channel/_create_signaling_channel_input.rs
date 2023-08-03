@@ -26,9 +26,7 @@ impl CreateSignalingChannelInput {
         self.channel_type.as_ref()
     }
     /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
-    pub fn single_master_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SingleMasterConfiguration> {
+    pub fn single_master_configuration(&self) -> ::std::option::Option<&crate::types::SingleMasterConfiguration> {
         self.single_master_configuration.as_ref()
     }
     /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
@@ -38,23 +36,18 @@ impl CreateSignalingChannelInput {
 }
 impl CreateSignalingChannelInput {
     /// Creates a new builder-style object to manufacture [`CreateSignalingChannelInput`](crate::operation::create_signaling_channel::CreateSignalingChannelInput).
-    pub fn builder(
-    ) -> crate::operation::create_signaling_channel::builders::CreateSignalingChannelInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_signaling_channel::builders::CreateSignalingChannelInputBuilder {
         crate::operation::create_signaling_channel::builders::CreateSignalingChannelInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSignalingChannelInput`](crate::operation::create_signaling_channel::CreateSignalingChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSignalingChannelInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_type: ::std::option::Option<crate::types::ChannelType>,
-    pub(crate) single_master_configuration:
-        ::std::option::Option<crate::types::SingleMasterConfiguration>,
+    pub(crate) single_master_configuration: ::std::option::Option<crate::types::SingleMasterConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSignalingChannelInputBuilder {
@@ -78,10 +71,7 @@ impl CreateSignalingChannelInputBuilder {
         self
     }
     /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
-    pub fn set_channel_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelType>,
-    ) -> Self {
+    pub fn set_channel_type(mut self, input: ::std::option::Option<crate::types::ChannelType>) -> Self {
         self.channel_type = input;
         self
     }
@@ -90,25 +80,17 @@ impl CreateSignalingChannelInputBuilder {
         &self.channel_type
     }
     /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
-    pub fn single_master_configuration(
-        mut self,
-        input: crate::types::SingleMasterConfiguration,
-    ) -> Self {
+    pub fn single_master_configuration(mut self, input: crate::types::SingleMasterConfiguration) -> Self {
         self.single_master_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
-    pub fn set_single_master_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SingleMasterConfiguration>,
-    ) -> Self {
+    pub fn set_single_master_configuration(mut self, input: ::std::option::Option<crate::types::SingleMasterConfiguration>) -> Self {
         self.single_master_configuration = input;
         self
     }
     /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
-    pub fn get_single_master_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
+    pub fn get_single_master_configuration(&self) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
         &self.single_master_configuration
     }
     /// Appends an item to `tags`.
@@ -123,10 +105,7 @@ impl CreateSignalingChannelInputBuilder {
         self
     }
     /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -137,17 +116,13 @@ impl CreateSignalingChannelInputBuilder {
     /// Consumes the builder and constructs a [`CreateSignalingChannelInput`](crate::operation::create_signaling_channel::CreateSignalingChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_signaling_channel::CreateSignalingChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_signaling_channel::CreateSignalingChannelInput {
-                channel_name: self.channel_name,
-                channel_type: self.channel_type,
-                single_master_configuration: self.single_master_configuration,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_signaling_channel::CreateSignalingChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_signaling_channel::CreateSignalingChannelInput {
+            channel_name: self.channel_name,
+            channel_type: self.channel_type,
+            single_master_configuration: self.single_master_configuration,
+            tags: self.tags,
+        })
     }
 }

@@ -28,9 +28,7 @@ impl DescribeDomainOutput {
 
 /// A builder for [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainOutputBuilder {
     pub(crate) domain: ::std::option::Option<crate::types::DomainDescription>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
-    pub fn set_domain(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainDescription>,
-    ) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<crate::types::DomainDescription>) -> Self {
         self.domain = input;
         self
     }

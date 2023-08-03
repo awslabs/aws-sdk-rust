@@ -50,9 +50,7 @@ impl UpdatePromptInput {
 
 /// A builder for [`UpdatePromptInput`](crate::operation::update_prompt::UpdatePromptInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePromptInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) prompt_id: ::std::option::Option<::std::string::String>,
@@ -132,12 +130,7 @@ impl UpdatePromptInputBuilder {
         &self.s3_uri
     }
     /// Consumes the builder and constructs a [`UpdatePromptInput`](crate::operation::update_prompt::UpdatePromptInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_prompt::UpdatePromptInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_prompt::UpdatePromptInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_prompt::UpdatePromptInput {
             instance_id: self.instance_id,
             prompt_id: self.prompt_id,

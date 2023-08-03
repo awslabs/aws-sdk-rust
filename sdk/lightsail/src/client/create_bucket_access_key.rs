@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`access_key(Option<AccessKey>)`](crate::operation::create_bucket_access_key::CreateBucketAccessKeyOutput::access_key): <p>An object that describes the access key that is created.</p>
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::create_bucket_access_key::CreateBucketAccessKeyOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CreateBucketAccessKeyError>`](crate::operation::create_bucket_access_key::CreateBucketAccessKeyError)
-    pub fn create_bucket_access_key(
-        &self,
-    ) -> crate::operation::create_bucket_access_key::builders::CreateBucketAccessKeyFluentBuilder
-    {
+    pub fn create_bucket_access_key(&self) -> crate::operation::create_bucket_access_key::builders::CreateBucketAccessKeyFluentBuilder {
         crate::operation::create_bucket_access_key::builders::CreateBucketAccessKeyFluentBuilder::new(self.handle.clone())
     }
 }

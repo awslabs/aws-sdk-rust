@@ -26,7 +26,7 @@ impl ListBuildBatchesForProjectInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBuildBatchesForProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_build_batches_for_project::builders::ListBuildBatchesForProjectInputBuilder,
+    inner: crate::operation::list_build_batches_for_project::builders::ListBuildBatchesForProjectInputBuilder,
 }
 impl ListBuildBatchesForProjectFluentBuilder {
     /// Creates a new `ListBuildBatchesForProject`.
@@ -37,7 +37,7 @@ impl ListBuildBatchesForProjectFluentBuilder {
         }
     }
     /// Access the ListBuildBatchesForProject as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_build_batches_for_project::builders::ListBuildBatchesForProjectInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_build_batches_for_project::builders::ListBuildBatchesForProjectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListBuildBatchesForProjectFluentBuilder {
             crate::operation::list_build_batches_for_project::ListBuildBatchesForProject,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListBuildBatchesForProjectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListBuildBatchesForProjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListBuildBatchesForProjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListBuildBatchesForProjectFluentBuilder {
             crate::operation::list_build_batches_for_project::ListBuildBatchesForProject,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_build_batches_for_project::paginator::ListBuildBatchesForProjectPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_build_batches_for_project::paginator::ListBuildBatchesForProjectPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_build_batches_for_project::paginator::ListBuildBatchesForProjectPaginator {
         crate::operation::list_build_batches_for_project::paginator::ListBuildBatchesForProjectPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the project.</p>
@@ -146,10 +135,7 @@ impl ListBuildBatchesForProjectFluentBuilder {
         self
     }
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::BuildBatchFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::BuildBatchFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -185,10 +171,7 @@ impl ListBuildBatchesForProjectFluentBuilder {
     /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
     /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
     /// </ul>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }

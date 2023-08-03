@@ -26,8 +26,7 @@ impl SendAlexaOfferToMasterInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendAlexaOfferToMasterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterInputBuilder,
+    inner: crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterInputBuilder,
 }
 impl SendAlexaOfferToMasterFluentBuilder {
     /// Creates a new `SendAlexaOfferToMaster`.
@@ -38,10 +37,7 @@ impl SendAlexaOfferToMasterFluentBuilder {
         }
     }
     /// Access the SendAlexaOfferToMaster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl SendAlexaOfferToMasterFluentBuilder {
             crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMaster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl SendAlexaOfferToMasterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl SendAlexaOfferToMasterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl SendAlexaOfferToMasterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl SendAlexaOfferToMasterFluentBuilder {
             crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMaster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +124,12 @@ impl SendAlexaOfferToMasterFluentBuilder {
         self.inner.get_channel_arn()
     }
     /// <p>The unique identifier for the sender client.</p>
-    pub fn sender_client_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sender_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sender_client_id(input.into());
         self
     }
     /// <p>The unique identifier for the sender client.</p>
-    pub fn set_sender_client_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sender_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sender_client_id(input);
         self
     }
@@ -159,18 +138,12 @@ impl SendAlexaOfferToMasterFluentBuilder {
         self.inner.get_sender_client_id()
     }
     /// <p>The base64-encoded SDP offer content.</p>
-    pub fn message_payload(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn message_payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message_payload(input.into());
         self
     }
     /// <p>The base64-encoded SDP offer content.</p>
-    pub fn set_message_payload(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_message_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_message_payload(input);
         self
     }

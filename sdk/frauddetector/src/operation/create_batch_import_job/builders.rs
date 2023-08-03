@@ -37,10 +37,7 @@ impl CreateBatchImportJobFluentBuilder {
         }
     }
     /// Access the CreateBatchImportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_batch_import_job::builders::CreateBatchImportJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_batch_import_job::builders::CreateBatchImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateBatchImportJobFluentBuilder {
             crate::operation::create_batch_import_job::CreateBatchImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_import_job::CreateBatchImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_import_job::CreateBatchImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateBatchImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateBatchImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_batch_import_job::CreateBatchImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_import_job::CreateBatchImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_import_job::CreateBatchImportJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateBatchImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_batch_import_job::CreateBatchImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_import_job::CreateBatchImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_import_job::CreateBatchImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateBatchImportJobFluentBuilder {
             crate::operation::create_batch_import_job::CreateBatchImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_import_job::CreateBatchImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_import_job::CreateBatchImportJobError>,
     > {
         self.customize_middleware().await
     }
@@ -166,18 +152,12 @@ impl CreateBatchImportJobFluentBuilder {
         self.inner.get_output_path()
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_type_name(input.into());
         self
     }
     /// <p>The name of the event type.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_type_name(input);
         self
     }
@@ -212,10 +192,7 @@ impl CreateBatchImportJobFluentBuilder {
         self
     }
     /// <p>A collection of key-value pairs associated with this request. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

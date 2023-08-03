@@ -10,10 +10,7 @@ impl GetAttachmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_attachment::GetAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_attachment::GetAttachmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_attachment::GetAttachmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_attachment();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl GetAttachmentFluentBuilder {
         }
     }
     /// Access the GetAttachment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_attachment::builders::GetAttachmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_attachment::builders::GetAttachmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,10 +59,7 @@ impl GetAttachmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,18 +110,12 @@ impl GetAttachmentFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>A unique identifier for the attachment.</p>
-    pub fn attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attachment_id(input.into());
         self
     }
     /// <p>A unique identifier for the attachment.</p>
-    pub fn set_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attachment_id(input);
         self
     }
@@ -138,18 +124,12 @@ impl GetAttachmentFluentBuilder {
         self.inner.get_attachment_id()
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn connection_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_token(input.into());
         self
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn set_connection_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_token(input);
         self
     }

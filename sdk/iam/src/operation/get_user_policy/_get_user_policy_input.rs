@@ -33,9 +33,7 @@ impl GetUserPolicyInput {
 
 /// A builder for [`GetUserPolicyInput`](crate::operation::get_user_policy::GetUserPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUserPolicyInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
@@ -78,10 +76,7 @@ impl GetUserPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetUserPolicyInput`](crate::operation::get_user_policy::GetUserPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_user_policy::GetUserPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_user_policy::GetUserPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_user_policy::GetUserPolicyInput {
             user_name: self.user_name,
             policy_name: self.policy_name,

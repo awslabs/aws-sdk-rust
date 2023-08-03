@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`events(Option<Vec<HistoryEvent>>)`](crate::operation::get_execution_history::GetExecutionHistoryOutput::events): <p>The list of events that occurred in the execution.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_execution_history::GetExecutionHistoryOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     /// - On failure, responds with [`SdkError<GetExecutionHistoryError>`](crate::operation::get_execution_history::GetExecutionHistoryError)
-    pub fn get_execution_history(
-        &self,
-    ) -> crate::operation::get_execution_history::builders::GetExecutionHistoryFluentBuilder {
-        crate::operation::get_execution_history::builders::GetExecutionHistoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_execution_history(&self) -> crate::operation::get_execution_history::builders::GetExecutionHistoryFluentBuilder {
+        crate::operation::get_execution_history::builders::GetExecutionHistoryFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,18 +26,14 @@ impl ListFirewallDomainListsInput {
 }
 impl ListFirewallDomainListsInput {
     /// Creates a new builder-style object to manufacture [`ListFirewallDomainListsInput`](crate::operation::list_firewall_domain_lists::ListFirewallDomainListsInput).
-    pub fn builder(
-    ) -> crate::operation::list_firewall_domain_lists::builders::ListFirewallDomainListsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_firewall_domain_lists::builders::ListFirewallDomainListsInputBuilder {
         crate::operation::list_firewall_domain_lists::builders::ListFirewallDomainListsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListFirewallDomainListsInput`](crate::operation::list_firewall_domain_lists::ListFirewallDomainListsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallDomainListsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -84,11 +80,9 @@ impl ListFirewallDomainListsInputBuilder {
         crate::operation::list_firewall_domain_lists::ListFirewallDomainListsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_firewall_domain_lists::ListFirewallDomainListsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_firewall_domain_lists::ListFirewallDomainListsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

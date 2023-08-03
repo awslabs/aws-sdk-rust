@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`memberships(Option<Vec<EnvironmentMember>>)`](crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput::memberships): <p>Information about the environment members for the environment.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput::next_token): <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     /// - On failure, responds with [`SdkError<DescribeEnvironmentMembershipsError>`](crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError)
-    pub fn describe_environment_memberships(&self) -> crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsFluentBuilder{
+    pub fn describe_environment_memberships(
+        &self,
+    ) -> crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsFluentBuilder {
         crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsFluentBuilder::new(self.handle.clone())
     }
 }

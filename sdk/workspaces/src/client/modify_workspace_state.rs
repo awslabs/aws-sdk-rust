@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`workspace_state(TargetWorkspaceState)`](crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateFluentBuilder::workspace_state) / [`set_workspace_state(Option<TargetWorkspaceState>)`](crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateFluentBuilder::set_workspace_state): <p>The WorkSpace state.</p>
     /// - On success, responds with [`ModifyWorkspaceStateOutput`](crate::operation::modify_workspace_state::ModifyWorkspaceStateOutput)
     /// - On failure, responds with [`SdkError<ModifyWorkspaceStateError>`](crate::operation::modify_workspace_state::ModifyWorkspaceStateError)
-    pub fn modify_workspace_state(
-        &self,
-    ) -> crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateFluentBuilder {
-        crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_workspace_state(&self) -> crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateFluentBuilder {
+        crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateFluentBuilder::new(self.handle.clone())
     }
 }

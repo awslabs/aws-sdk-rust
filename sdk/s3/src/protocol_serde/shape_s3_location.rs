@@ -39,10 +39,7 @@ pub fn ser_s3_location(
         for list_item_9 in var_8 {
             {
                 let inner_writer = inner_writer.start_el("MetadataEntry");
-                crate::protocol_serde::shape_metadata_entry::ser_metadata_entry(
-                    list_item_9,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_metadata_entry::ser_metadata_entry(list_item_9, inner_writer)?
             }
         }
     }

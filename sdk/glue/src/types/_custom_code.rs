@@ -51,9 +51,7 @@ impl CustomCode {
 
 /// A builder for [`CustomCode`](crate::types::CustomCode).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomCodeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -88,10 +86,7 @@ impl CustomCodeBuilder {
         self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }
@@ -139,17 +134,12 @@ impl CustomCodeBuilder {
         self
     }
     /// <p>Specifies the data schema for the custom code transform.</p>
-    pub fn set_output_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
-    ) -> Self {
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
         self.output_schemas = input;
         self
     }
     /// <p>Specifies the data schema for the custom code transform.</p>
-    pub fn get_output_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`CustomCode`](crate::types::CustomCode).

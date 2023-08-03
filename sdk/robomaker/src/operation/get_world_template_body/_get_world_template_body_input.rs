@@ -22,17 +22,14 @@ impl GetWorldTemplateBodyInput {
 }
 impl GetWorldTemplateBodyInput {
     /// Creates a new builder-style object to manufacture [`GetWorldTemplateBodyInput`](crate::operation::get_world_template_body::GetWorldTemplateBodyInput).
-    pub fn builder(
-    ) -> crate::operation::get_world_template_body::builders::GetWorldTemplateBodyInputBuilder {
+    pub fn builder() -> crate::operation::get_world_template_body::builders::GetWorldTemplateBodyInputBuilder {
         crate::operation::get_world_template_body::builders::GetWorldTemplateBodyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWorldTemplateBodyInput`](crate::operation::get_world_template_body::GetWorldTemplateBodyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorldTemplateBodyInputBuilder {
     pub(crate) template: ::std::option::Option<::std::string::String>,
     pub(crate) generation_job: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl GetWorldTemplateBodyInputBuilder {
         &self.template
     }
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
-    pub fn generation_job(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generation_job(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generation_job = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
-    pub fn set_generation_job(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generation_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generation_job = input;
         self
     }
@@ -75,15 +66,11 @@ impl GetWorldTemplateBodyInputBuilder {
     /// Consumes the builder and constructs a [`GetWorldTemplateBodyInput`](crate::operation::get_world_template_body::GetWorldTemplateBodyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_world_template_body::GetWorldTemplateBodyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_world_template_body::GetWorldTemplateBodyInput {
-                template: self.template,
-                generation_job: self.generation_job,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_world_template_body::GetWorldTemplateBodyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_world_template_body::GetWorldTemplateBodyInput {
+            template: self.template,
+            generation_job: self.generation_job,
+        })
     }
 }

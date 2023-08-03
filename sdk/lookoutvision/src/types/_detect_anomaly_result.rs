@@ -59,9 +59,7 @@ impl DetectAnomalyResult {
 
 /// A builder for [`DetectAnomalyResult`](crate::types::DetectAnomalyResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectAnomalyResultBuilder {
     pub(crate) source: ::std::option::Option<crate::types::ImageSource>,
     pub(crate) is_anomalous: ::std::option::Option<bool>,
@@ -130,10 +128,7 @@ impl DetectAnomalyResultBuilder {
     /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
     /// <p></p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
-    pub fn set_anomalies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>,
-    ) -> Self {
+    pub fn set_anomalies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>) -> Self {
         self.anomalies = input;
         self
     }
@@ -152,10 +147,7 @@ impl DetectAnomalyResultBuilder {
     }
     /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
-    pub fn set_anomaly_mask(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_anomaly_mask(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.anomaly_mask = input;
         self
     }

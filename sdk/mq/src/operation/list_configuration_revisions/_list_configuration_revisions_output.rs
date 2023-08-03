@@ -42,38 +42,29 @@ impl ::aws_http::request_id::RequestId for ListConfigurationRevisionsOutput {
 }
 impl ListConfigurationRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationRevisionsOutput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput).
-    pub fn builder() -> crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsOutputBuilder {
         crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListConfigurationRevisionsOutput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfigurationRevisionsOutputBuilder {
     pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) revisions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRevision>>,
+    pub(crate) revisions: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRevision>>,
     _request_id: Option<String>,
 }
 impl ListConfigurationRevisionsOutputBuilder {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn configuration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn set_configuration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_id = input;
         self
     }
@@ -121,17 +112,12 @@ impl ListConfigurationRevisionsOutputBuilder {
         self
     }
     /// <p>The list of all revisions for the specified configuration.</p>
-    pub fn set_revisions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRevision>>,
-    ) -> Self {
+    pub fn set_revisions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRevision>>) -> Self {
         self.revisions = input;
         self
     }
     /// <p>The list of all revisions for the specified configuration.</p>
-    pub fn get_revisions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRevision>> {
+    pub fn get_revisions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRevision>> {
         &self.revisions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -144,9 +130,7 @@ impl ListConfigurationRevisionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListConfigurationRevisionsOutput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput {
+    pub fn build(self) -> crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput {
         crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput {
             configuration_id: self.configuration_id,
             max_results: self.max_results,

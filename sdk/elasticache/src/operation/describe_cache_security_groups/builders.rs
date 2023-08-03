@@ -26,7 +26,7 @@ impl DescribeCacheSecurityGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCacheSecurityGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsInputBuilder,
+    inner: crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsInputBuilder,
 }
 impl DescribeCacheSecurityGroupsFluentBuilder {
     /// Creates a new `DescribeCacheSecurityGroups`.
@@ -37,7 +37,7 @@ impl DescribeCacheSecurityGroupsFluentBuilder {
         }
     }
     /// Access the DescribeCacheSecurityGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeCacheSecurityGroupsFluentBuilder {
             crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeCacheSecurityGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeCacheSecurityGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeCacheSecurityGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl DescribeCacheSecurityGroupsFluentBuilder {
             crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_cache_security_groups::paginator::DescribeCacheSecurityGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_cache_security_groups::paginator::DescribeCacheSecurityGroupsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_cache_security_groups::paginator::DescribeCacheSecurityGroupsPaginator {
         crate::operation::describe_cache_security_groups::paginator::DescribeCacheSecurityGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the cache security group to return details for.</p>
-    pub fn cache_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_security_group_name(input.into());
         self
     }
     /// <p>The name of the cache security group to return details for.</p>
-    pub fn set_cache_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_security_group_name(input);
         self
     }

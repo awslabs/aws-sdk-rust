@@ -22,16 +22,14 @@ impl DeregisterPatchBaselineForPatchGroupInput {
 }
 impl DeregisterPatchBaselineForPatchGroupInput {
     /// Creates a new builder-style object to manufacture [`DeregisterPatchBaselineForPatchGroupInput`](crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupInput).
-    pub fn builder() -> crate::operation::deregister_patch_baseline_for_patch_group::builders::DeregisterPatchBaselineForPatchGroupInputBuilder{
+    pub fn builder() -> crate::operation::deregister_patch_baseline_for_patch_group::builders::DeregisterPatchBaselineForPatchGroupInputBuilder {
         crate::operation::deregister_patch_baseline_for_patch_group::builders::DeregisterPatchBaselineForPatchGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterPatchBaselineForPatchGroupInput`](crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterPatchBaselineForPatchGroupInputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
     pub(crate) patch_group: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DeregisterPatchBaselineForPatchGroupInputBuilder {
         &self.patch_group
     }
     /// Consumes the builder and constructs a [`DeregisterPatchBaselineForPatchGroupInput`](crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupInput {
-                baseline_id: self.baseline_id
-                ,
-                patch_group: self.patch_group
-                ,
-            }
+                baseline_id: self.baseline_id,
+                patch_group: self.patch_group,
+            },
         )
     }
 }

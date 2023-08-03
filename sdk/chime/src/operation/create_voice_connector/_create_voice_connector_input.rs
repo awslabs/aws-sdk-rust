@@ -29,17 +29,14 @@ impl CreateVoiceConnectorInput {
 }
 impl CreateVoiceConnectorInput {
     /// Creates a new builder-style object to manufacture [`CreateVoiceConnectorInput`](crate::operation::create_voice_connector::CreateVoiceConnectorInput).
-    pub fn builder(
-    ) -> crate::operation::create_voice_connector::builders::CreateVoiceConnectorInputBuilder {
+    pub fn builder() -> crate::operation::create_voice_connector::builders::CreateVoiceConnectorInputBuilder {
         crate::operation::create_voice_connector::builders::CreateVoiceConnectorInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVoiceConnectorInput`](crate::operation::create_voice_connector::CreateVoiceConnectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVoiceConnectorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) aws_region: ::std::option::Option<crate::types::VoiceConnectorAwsRegion>,
@@ -66,10 +63,7 @@ impl CreateVoiceConnectorInputBuilder {
         self
     }
     /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
-    pub fn set_aws_region(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceConnectorAwsRegion>,
-    ) -> Self {
+    pub fn set_aws_region(mut self, input: ::std::option::Option<crate::types::VoiceConnectorAwsRegion>) -> Self {
         self.aws_region = input;
         self
     }
@@ -94,16 +88,12 @@ impl CreateVoiceConnectorInputBuilder {
     /// Consumes the builder and constructs a [`CreateVoiceConnectorInput`](crate::operation::create_voice_connector::CreateVoiceConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_voice_connector::CreateVoiceConnectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_voice_connector::CreateVoiceConnectorInput {
-                name: self.name,
-                aws_region: self.aws_region,
-                require_encryption: self.require_encryption,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_voice_connector::CreateVoiceConnectorInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_voice_connector::CreateVoiceConnectorInput {
+            name: self.name,
+            aws_region: self.aws_region,
+            require_encryption: self.require_encryption,
+        })
     }
 }

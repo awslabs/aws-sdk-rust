@@ -53,8 +53,7 @@ pub struct UpdateUserPoolClientInput {
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
     #[doc(hidden)]
-    pub explicit_auth_flows:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>>,
+    pub explicit_auth_flows: ::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>>,
     /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
     #[doc(hidden)]
     pub supported_identity_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -126,8 +125,7 @@ pub struct UpdateUserPoolClientInput {
     /// <li> <p> <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub prevent_user_existence_errors:
-        ::std::option::Option<crate::types::PreventUserExistenceErrorTypes>,
+    pub prevent_user_existence_errors: ::std::option::Option<crate::types::PreventUserExistenceErrorTypes>,
     /// <p>Activates or deactivates token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
     #[doc(hidden)]
     pub enable_token_revocation: ::std::option::Option<bool>,
@@ -173,9 +171,7 @@ impl UpdateUserPoolClientInput {
         self.id_token_validity
     }
     /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
-    pub fn token_validity_units(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TokenValidityUnitsType> {
+    pub fn token_validity_units(&self) -> ::std::option::Option<&crate::types::TokenValidityUnitsType> {
         self.token_validity_units.as_ref()
     }
     /// <p>The read-only attributes of the user pool.</p>
@@ -198,9 +194,7 @@ impl UpdateUserPoolClientInput {
     /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
-    pub fn explicit_auth_flows(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ExplicitAuthFlowsType]> {
+    pub fn explicit_auth_flows(&self) -> ::std::option::Option<&[crate::types::ExplicitAuthFlowsType]> {
         self.explicit_auth_flows.as_deref()
     }
     /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
@@ -272,9 +266,7 @@ impl UpdateUserPoolClientInput {
     /// <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for this user pool.</p> <note>
     /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
     /// </note>
-    pub fn analytics_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AnalyticsConfigurationType> {
+    pub fn analytics_configuration(&self) -> ::std::option::Option<&crate::types::AnalyticsConfigurationType> {
         self.analytics_configuration.as_ref()
     }
     /// <p>Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't exist in the user pool.</p>
@@ -283,9 +275,7 @@ impl UpdateUserPoolClientInput {
     /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
     /// <li> <p> <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p> </li>
     /// </ul>
-    pub fn prevent_user_existence_errors(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PreventUserExistenceErrorTypes> {
+    pub fn prevent_user_existence_errors(&self) -> ::std::option::Option<&crate::types::PreventUserExistenceErrorTypes> {
         self.prevent_user_existence_errors.as_ref()
     }
     /// <p>Activates or deactivates token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
@@ -314,24 +304,15 @@ impl ::std::fmt::Debug for UpdateUserPoolClientInput {
         formatter.field("read_attributes", &self.read_attributes);
         formatter.field("write_attributes", &self.write_attributes);
         formatter.field("explicit_auth_flows", &self.explicit_auth_flows);
-        formatter.field(
-            "supported_identity_providers",
-            &self.supported_identity_providers,
-        );
+        formatter.field("supported_identity_providers", &self.supported_identity_providers);
         formatter.field("callback_ur_ls", &self.callback_ur_ls);
         formatter.field("logout_ur_ls", &self.logout_ur_ls);
         formatter.field("default_redirect_uri", &self.default_redirect_uri);
         formatter.field("allowed_o_auth_flows", &self.allowed_o_auth_flows);
         formatter.field("allowed_o_auth_scopes", &self.allowed_o_auth_scopes);
-        formatter.field(
-            "allowed_o_auth_flows_user_pool_client",
-            &self.allowed_o_auth_flows_user_pool_client,
-        );
+        formatter.field("allowed_o_auth_flows_user_pool_client", &self.allowed_o_auth_flows_user_pool_client);
         formatter.field("analytics_configuration", &self.analytics_configuration);
-        formatter.field(
-            "prevent_user_existence_errors",
-            &self.prevent_user_existence_errors,
-        );
+        formatter.field("prevent_user_existence_errors", &self.prevent_user_existence_errors);
         formatter.field("enable_token_revocation", &self.enable_token_revocation);
         formatter.field(
             "enable_propagate_additional_user_context_data",
@@ -343,8 +324,7 @@ impl ::std::fmt::Debug for UpdateUserPoolClientInput {
 }
 impl UpdateUserPoolClientInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserPoolClientInput`](crate::operation::update_user_pool_client::UpdateUserPoolClientInput).
-    pub fn builder(
-    ) -> crate::operation::update_user_pool_client::builders::UpdateUserPoolClientInputBuilder {
+    pub fn builder() -> crate::operation::update_user_pool_client::builders::UpdateUserPoolClientInputBuilder {
         crate::operation::update_user_pool_client::builders::UpdateUserPoolClientInputBuilder::default()
     }
 }
@@ -362,21 +342,16 @@ pub struct UpdateUserPoolClientInputBuilder {
     pub(crate) token_validity_units: ::std::option::Option<crate::types::TokenValidityUnitsType>,
     pub(crate) read_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) write_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) explicit_auth_flows:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>>,
-    pub(crate) supported_identity_providers:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) explicit_auth_flows: ::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>>,
+    pub(crate) supported_identity_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) callback_ur_ls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) logout_ur_ls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) default_redirect_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) allowed_o_auth_flows:
-        ::std::option::Option<::std::vec::Vec<crate::types::OAuthFlowType>>,
+    pub(crate) allowed_o_auth_flows: ::std::option::Option<::std::vec::Vec<crate::types::OAuthFlowType>>,
     pub(crate) allowed_o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_o_auth_flows_user_pool_client: ::std::option::Option<bool>,
-    pub(crate) analytics_configuration:
-        ::std::option::Option<crate::types::AnalyticsConfigurationType>,
-    pub(crate) prevent_user_existence_errors:
-        ::std::option::Option<crate::types::PreventUserExistenceErrorTypes>,
+    pub(crate) analytics_configuration: ::std::option::Option<crate::types::AnalyticsConfigurationType>,
+    pub(crate) prevent_user_existence_errors: ::std::option::Option<crate::types::PreventUserExistenceErrorTypes>,
     pub(crate) enable_token_revocation: ::std::option::Option<bool>,
     pub(crate) enable_propagate_additional_user_context_data: ::std::option::Option<bool>,
     pub(crate) auth_session_validity: ::std::option::Option<i32>,
@@ -499,17 +474,12 @@ impl UpdateUserPoolClientInputBuilder {
         self
     }
     /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
-    pub fn set_token_validity_units(
-        mut self,
-        input: ::std::option::Option<crate::types::TokenValidityUnitsType>,
-    ) -> Self {
+    pub fn set_token_validity_units(mut self, input: ::std::option::Option<crate::types::TokenValidityUnitsType>) -> Self {
         self.token_validity_units = input;
         self
     }
     /// <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and the default for ID and access tokens is hours.</p>
-    pub fn get_token_validity_units(
-        &self,
-    ) -> &::std::option::Option<crate::types::TokenValidityUnitsType> {
+    pub fn get_token_validity_units(&self) -> &::std::option::Option<crate::types::TokenValidityUnitsType> {
         &self.token_validity_units
     }
     /// Appends an item to `read_attributes`.
@@ -517,27 +487,19 @@ impl UpdateUserPoolClientInputBuilder {
     /// To override the contents of this collection use [`set_read_attributes`](Self::set_read_attributes).
     ///
     /// <p>The read-only attributes of the user pool.</p>
-    pub fn read_attributes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn read_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.read_attributes.unwrap_or_default();
         v.push(input.into());
         self.read_attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The read-only attributes of the user pool.</p>
-    pub fn set_read_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_read_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.read_attributes = input;
         self
     }
     /// <p>The read-only attributes of the user pool.</p>
-    pub fn get_read_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_read_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.read_attributes
     }
     /// Appends an item to `write_attributes`.
@@ -545,27 +507,19 @@ impl UpdateUserPoolClientInputBuilder {
     /// To override the contents of this collection use [`set_write_attributes`](Self::set_write_attributes).
     ///
     /// <p>The writeable attributes of the user pool.</p>
-    pub fn write_attributes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn write_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.write_attributes.unwrap_or_default();
         v.push(input.into());
         self.write_attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The writeable attributes of the user pool.</p>
-    pub fn set_write_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_write_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.write_attributes = input;
         self
     }
     /// <p>The writeable attributes of the user pool.</p>
-    pub fn get_write_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_write_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.write_attributes
     }
     /// Appends an item to `explicit_auth_flows`.
@@ -602,10 +556,7 @@ impl UpdateUserPoolClientInputBuilder {
     /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
-    pub fn set_explicit_auth_flows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>>,
-    ) -> Self {
+    pub fn set_explicit_auth_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>>) -> Self {
         self.explicit_auth_flows = input;
         self
     }
@@ -621,9 +572,7 @@ impl UpdateUserPoolClientInputBuilder {
     /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
-    pub fn get_explicit_auth_flows(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>> {
+    pub fn get_explicit_auth_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>> {
         &self.explicit_auth_flows
     }
     /// Appends an item to `supported_identity_providers`.
@@ -631,27 +580,19 @@ impl UpdateUserPoolClientInputBuilder {
     /// To override the contents of this collection use [`set_supported_identity_providers`](Self::set_supported_identity_providers).
     ///
     /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
-    pub fn supported_identity_providers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supported_identity_providers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_identity_providers.unwrap_or_default();
         v.push(input.into());
         self.supported_identity_providers = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
-    pub fn set_supported_identity_providers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supported_identity_providers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_identity_providers = input;
         self
     }
     /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
-    pub fn get_supported_identity_providers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_identity_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_identity_providers
     }
     /// Appends an item to `callback_ur_ls`.
@@ -668,10 +609,7 @@ impl UpdateUserPoolClientInputBuilder {
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
-    pub fn callback_ur_ls(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn callback_ur_ls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.callback_ur_ls.unwrap_or_default();
         v.push(input.into());
         self.callback_ur_ls = ::std::option::Option::Some(v);
@@ -687,10 +625,7 @@ impl UpdateUserPoolClientInputBuilder {
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
-    pub fn set_callback_ur_ls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_callback_ur_ls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.callback_ur_ls = input;
         self
     }
@@ -704,9 +639,7 @@ impl UpdateUserPoolClientInputBuilder {
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
-    pub fn get_callback_ur_ls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_callback_ur_ls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.callback_ur_ls
     }
     /// Appends an item to `logout_ur_ls`.
@@ -721,17 +654,12 @@ impl UpdateUserPoolClientInputBuilder {
         self
     }
     /// <p>A list of allowed logout URLs for the IdPs.</p>
-    pub fn set_logout_ur_ls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_logout_ur_ls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.logout_ur_ls = input;
         self
     }
     /// <p>A list of allowed logout URLs for the IdPs.</p>
-    pub fn get_logout_ur_ls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_logout_ur_ls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.logout_ur_ls
     }
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
@@ -744,10 +672,7 @@ impl UpdateUserPoolClientInputBuilder {
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for <code>http://localhost</code> for testing purposes only.</p>
     /// <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
-    pub fn default_redirect_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_redirect_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_redirect_uri = ::std::option::Option::Some(input.into());
         self
     }
@@ -761,10 +686,7 @@ impl UpdateUserPoolClientInputBuilder {
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for <code>http://localhost</code> for testing purposes only.</p>
     /// <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
-    pub fn set_default_redirect_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_redirect_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_redirect_uri = input;
         self
     }
@@ -833,10 +755,7 @@ impl UpdateUserPoolClientInputBuilder {
     /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
     /// </dd>
     /// </dl>
-    pub fn set_allowed_o_auth_flows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OAuthFlowType>>,
-    ) -> Self {
+    pub fn set_allowed_o_auth_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OAuthFlowType>>) -> Self {
         self.allowed_o_auth_flows = input;
         self
     }
@@ -861,9 +780,7 @@ impl UpdateUserPoolClientInputBuilder {
     /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
     /// </dd>
     /// </dl>
-    pub fn get_allowed_o_auth_flows(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OAuthFlowType>> {
+    pub fn get_allowed_o_auth_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OAuthFlowType>> {
         &self.allowed_o_auth_flows
     }
     /// Appends an item to `allowed_o_auth_scopes`.
@@ -871,27 +788,19 @@ impl UpdateUserPoolClientInputBuilder {
     /// To override the contents of this collection use [`set_allowed_o_auth_scopes`](Self::set_allowed_o_auth_scopes).
     ///
     /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
-    pub fn allowed_o_auth_scopes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_o_auth_scopes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_o_auth_scopes.unwrap_or_default();
         v.push(input.into());
         self.allowed_o_auth_scopes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
-    pub fn set_allowed_o_auth_scopes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_o_auth_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_o_auth_scopes = input;
         self
     }
     /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
-    pub fn get_allowed_o_auth_scopes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_o_auth_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_o_auth_scopes
     }
     /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
@@ -900,10 +809,7 @@ impl UpdateUserPoolClientInputBuilder {
         self
     }
     /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
-    pub fn set_allowed_o_auth_flows_user_pool_client(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_allowed_o_auth_flows_user_pool_client(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allowed_o_auth_flows_user_pool_client = input;
         self
     }
@@ -914,29 +820,21 @@ impl UpdateUserPoolClientInputBuilder {
     /// <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for this user pool.</p> <note>
     /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
     /// </note>
-    pub fn analytics_configuration(
-        mut self,
-        input: crate::types::AnalyticsConfigurationType,
-    ) -> Self {
+    pub fn analytics_configuration(mut self, input: crate::types::AnalyticsConfigurationType) -> Self {
         self.analytics_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for this user pool.</p> <note>
     /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
     /// </note>
-    pub fn set_analytics_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsConfigurationType>,
-    ) -> Self {
+    pub fn set_analytics_configuration(mut self, input: ::std::option::Option<crate::types::AnalyticsConfigurationType>) -> Self {
         self.analytics_configuration = input;
         self
     }
     /// <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for this user pool.</p> <note>
     /// <p>In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
     /// </note>
-    pub fn get_analytics_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnalyticsConfigurationType> {
+    pub fn get_analytics_configuration(&self) -> &::std::option::Option<crate::types::AnalyticsConfigurationType> {
         &self.analytics_configuration
     }
     /// <p>Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't exist in the user pool.</p>
@@ -945,10 +843,7 @@ impl UpdateUserPoolClientInputBuilder {
     /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
     /// <li> <p> <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p> </li>
     /// </ul>
-    pub fn prevent_user_existence_errors(
-        mut self,
-        input: crate::types::PreventUserExistenceErrorTypes,
-    ) -> Self {
+    pub fn prevent_user_existence_errors(mut self, input: crate::types::PreventUserExistenceErrorTypes) -> Self {
         self.prevent_user_existence_errors = ::std::option::Option::Some(input);
         self
     }
@@ -958,10 +853,7 @@ impl UpdateUserPoolClientInputBuilder {
     /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
     /// <li> <p> <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p> </li>
     /// </ul>
-    pub fn set_prevent_user_existence_errors(
-        mut self,
-        input: ::std::option::Option<crate::types::PreventUserExistenceErrorTypes>,
-    ) -> Self {
+    pub fn set_prevent_user_existence_errors(mut self, input: ::std::option::Option<crate::types::PreventUserExistenceErrorTypes>) -> Self {
         self.prevent_user_existence_errors = input;
         self
     }
@@ -971,9 +863,7 @@ impl UpdateUserPoolClientInputBuilder {
     /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
     /// <li> <p> <code>LEGACY</code> - This represents the early behavior of Amazon Cognito where user existence related errors aren't prevented.</p> </li>
     /// </ul>
-    pub fn get_prevent_user_existence_errors(
-        &self,
-    ) -> &::std::option::Option<crate::types::PreventUserExistenceErrorTypes> {
+    pub fn get_prevent_user_existence_errors(&self) -> &::std::option::Option<crate::types::PreventUserExistenceErrorTypes> {
         &self.prevent_user_existence_errors
     }
     /// <p>Activates or deactivates token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
@@ -996,17 +886,12 @@ impl UpdateUserPoolClientInputBuilder {
         self
     }
     /// <p>Activates the propagation of additional user context data. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> Adding advanced security to a user pool</a>. If you don’t include this parameter, you can't send device fingerprint information, including source IP address, to Amazon Cognito advanced security. You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret.</p>
-    pub fn set_enable_propagate_additional_user_context_data(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_propagate_additional_user_context_data(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_propagate_additional_user_context_data = input;
         self
     }
     /// <p>Activates the propagation of additional user context data. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"> Adding advanced security to a user pool</a>. If you don’t include this parameter, you can't send device fingerprint information, including source IP address, to Amazon Cognito advanced security. You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret.</p>
-    pub fn get_enable_propagate_additional_user_context_data(
-        &self,
-    ) -> &::std::option::Option<bool> {
+    pub fn get_enable_propagate_additional_user_context_data(&self) -> &::std::option::Option<bool> {
         &self.enable_propagate_additional_user_context_data
     }
     /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
@@ -1026,37 +911,32 @@ impl UpdateUserPoolClientInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUserPoolClientInput`](crate::operation::update_user_pool_client::UpdateUserPoolClientInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_user_pool_client::UpdateUserPoolClientInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_user_pool_client::UpdateUserPoolClientInput {
-                user_pool_id: self.user_pool_id,
-                client_id: self.client_id,
-                client_name: self.client_name,
-                refresh_token_validity: self.refresh_token_validity,
-                access_token_validity: self.access_token_validity,
-                id_token_validity: self.id_token_validity,
-                token_validity_units: self.token_validity_units,
-                read_attributes: self.read_attributes,
-                write_attributes: self.write_attributes,
-                explicit_auth_flows: self.explicit_auth_flows,
-                supported_identity_providers: self.supported_identity_providers,
-                callback_ur_ls: self.callback_ur_ls,
-                logout_ur_ls: self.logout_ur_ls,
-                default_redirect_uri: self.default_redirect_uri,
-                allowed_o_auth_flows: self.allowed_o_auth_flows,
-                allowed_o_auth_scopes: self.allowed_o_auth_scopes,
-                allowed_o_auth_flows_user_pool_client: self.allowed_o_auth_flows_user_pool_client,
-                analytics_configuration: self.analytics_configuration,
-                prevent_user_existence_errors: self.prevent_user_existence_errors,
-                enable_token_revocation: self.enable_token_revocation,
-                enable_propagate_additional_user_context_data: self
-                    .enable_propagate_additional_user_context_data,
-                auth_session_validity: self.auth_session_validity,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_user_pool_client::UpdateUserPoolClientInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_user_pool_client::UpdateUserPoolClientInput {
+            user_pool_id: self.user_pool_id,
+            client_id: self.client_id,
+            client_name: self.client_name,
+            refresh_token_validity: self.refresh_token_validity,
+            access_token_validity: self.access_token_validity,
+            id_token_validity: self.id_token_validity,
+            token_validity_units: self.token_validity_units,
+            read_attributes: self.read_attributes,
+            write_attributes: self.write_attributes,
+            explicit_auth_flows: self.explicit_auth_flows,
+            supported_identity_providers: self.supported_identity_providers,
+            callback_ur_ls: self.callback_ur_ls,
+            logout_ur_ls: self.logout_ur_ls,
+            default_redirect_uri: self.default_redirect_uri,
+            allowed_o_auth_flows: self.allowed_o_auth_flows,
+            allowed_o_auth_scopes: self.allowed_o_auth_scopes,
+            allowed_o_auth_flows_user_pool_client: self.allowed_o_auth_flows_user_pool_client,
+            analytics_configuration: self.analytics_configuration,
+            prevent_user_existence_errors: self.prevent_user_existence_errors,
+            enable_token_revocation: self.enable_token_revocation,
+            enable_propagate_additional_user_context_data: self.enable_propagate_additional_user_context_data,
+            auth_session_validity: self.auth_session_validity,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateUserPoolClientInputBuilder {
@@ -1072,24 +952,15 @@ impl ::std::fmt::Debug for UpdateUserPoolClientInputBuilder {
         formatter.field("read_attributes", &self.read_attributes);
         formatter.field("write_attributes", &self.write_attributes);
         formatter.field("explicit_auth_flows", &self.explicit_auth_flows);
-        formatter.field(
-            "supported_identity_providers",
-            &self.supported_identity_providers,
-        );
+        formatter.field("supported_identity_providers", &self.supported_identity_providers);
         formatter.field("callback_ur_ls", &self.callback_ur_ls);
         formatter.field("logout_ur_ls", &self.logout_ur_ls);
         formatter.field("default_redirect_uri", &self.default_redirect_uri);
         formatter.field("allowed_o_auth_flows", &self.allowed_o_auth_flows);
         formatter.field("allowed_o_auth_scopes", &self.allowed_o_auth_scopes);
-        formatter.field(
-            "allowed_o_auth_flows_user_pool_client",
-            &self.allowed_o_auth_flows_user_pool_client,
-        );
+        formatter.field("allowed_o_auth_flows_user_pool_client", &self.allowed_o_auth_flows_user_pool_client);
         formatter.field("analytics_configuration", &self.analytics_configuration);
-        formatter.field(
-            "prevent_user_existence_errors",
-            &self.prevent_user_existence_errors,
-        );
+        formatter.field("prevent_user_existence_errors", &self.prevent_user_existence_errors);
         formatter.field("enable_token_revocation", &self.enable_token_revocation);
         formatter.field(
             "enable_propagate_additional_user_context_data",

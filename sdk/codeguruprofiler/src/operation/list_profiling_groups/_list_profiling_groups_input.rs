@@ -34,18 +34,14 @@ impl ListProfilingGroupsInput {
 }
 impl ListProfilingGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListProfilingGroupsInput`](crate::operation::list_profiling_groups::ListProfilingGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_profiling_groups::builders::ListProfilingGroupsInputBuilder {
-        crate::operation::list_profiling_groups::builders::ListProfilingGroupsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_profiling_groups::builders::ListProfilingGroupsInputBuilder {
+        crate::operation::list_profiling_groups::builders::ListProfilingGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfilingGroupsInput`](crate::operation::list_profiling_groups::ListProfilingGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfilingGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -103,16 +99,12 @@ impl ListProfilingGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListProfilingGroupsInput`](crate::operation::list_profiling_groups::ListProfilingGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_profiling_groups::ListProfilingGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_profiling_groups::ListProfilingGroupsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                include_description: self.include_description,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_profiling_groups::ListProfilingGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_profiling_groups::ListProfilingGroupsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            include_description: self.include_description,
+        })
     }
 }

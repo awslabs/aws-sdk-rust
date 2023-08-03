@@ -19,9 +19,7 @@ impl CreateVariableOutput {
 
 /// A builder for [`CreateVariableOutput`](crate::operation::create_variable::CreateVariableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVariableOutputBuilder {
     _request_id: Option<String>,
 }

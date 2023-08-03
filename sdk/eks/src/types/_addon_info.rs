@@ -45,9 +45,7 @@ impl AddonInfo {
         self.owner.as_deref()
     }
     /// <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
-    pub fn marketplace_information(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MarketplaceInformation> {
+    pub fn marketplace_information(&self) -> ::std::option::Option<&crate::types::MarketplaceInformation> {
         self.marketplace_information.as_ref()
     }
 }
@@ -60,14 +58,11 @@ impl AddonInfo {
 
 /// A builder for [`AddonInfo`](crate::types::AddonInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddonInfoBuilder {
     pub(crate) addon_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
-    pub(crate) addon_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AddonVersionInfo>>,
+    pub(crate) addon_versions: ::std::option::Option<::std::vec::Vec<crate::types::AddonVersionInfo>>,
     pub(crate) publisher: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) marketplace_information: ::std::option::Option<crate::types::MarketplaceInformation>,
@@ -113,17 +108,12 @@ impl AddonInfoBuilder {
         self
     }
     /// <p>An object representing information about available add-on versions and compatible Kubernetes versions.</p>
-    pub fn set_addon_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddonVersionInfo>>,
-    ) -> Self {
+    pub fn set_addon_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddonVersionInfo>>) -> Self {
         self.addon_versions = input;
         self
     }
     /// <p>An object representing information about available add-on versions and compatible Kubernetes versions.</p>
-    pub fn get_addon_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddonVersionInfo>> {
+    pub fn get_addon_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddonVersionInfo>> {
         &self.addon_versions
     }
     /// <p>The publisher of the add-on.</p>
@@ -160,17 +150,12 @@ impl AddonInfoBuilder {
         self
     }
     /// <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
-    pub fn set_marketplace_information(
-        mut self,
-        input: ::std::option::Option<crate::types::MarketplaceInformation>,
-    ) -> Self {
+    pub fn set_marketplace_information(mut self, input: ::std::option::Option<crate::types::MarketplaceInformation>) -> Self {
         self.marketplace_information = input;
         self
     }
     /// <p>Information about the add-on from the Amazon Web Services Marketplace.</p>
-    pub fn get_marketplace_information(
-        &self,
-    ) -> &::std::option::Option<crate::types::MarketplaceInformation> {
+    pub fn get_marketplace_information(&self) -> &::std::option::Option<crate::types::MarketplaceInformation> {
         &self.marketplace_information
     }
     /// Consumes the builder and constructs a [`AddonInfo`](crate::types::AddonInfo).

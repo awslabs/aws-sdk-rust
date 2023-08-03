@@ -50,9 +50,7 @@ impl GetRulesInput {
 
 /// A builder for [`GetRulesInput`](crate::operation::get_rules::GetRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRulesInputBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
@@ -132,12 +130,7 @@ impl GetRulesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetRulesInput`](crate::operation::get_rules::GetRulesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_rules::GetRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rules::GetRulesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rules::GetRulesInput {
             rule_id: self.rule_id,
             detector_id: self.detector_id,

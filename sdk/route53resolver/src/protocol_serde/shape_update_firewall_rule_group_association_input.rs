@@ -4,9 +4,7 @@ pub fn ser_update_firewall_rule_group_association_input(
     input: &crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.firewall_rule_group_association_id {
-        object
-            .key("FirewallRuleGroupAssociationId")
-            .string(var_1.as_str());
+        object.key("FirewallRuleGroupAssociationId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.priority {
         object.key("Priority").number(

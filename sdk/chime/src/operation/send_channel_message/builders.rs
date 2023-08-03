@@ -10,10 +10,7 @@ impl SendChannelMessageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_channel_message::SendChannelMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_channel_message::SendChannelMessageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_channel_message::SendChannelMessageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_channel_message();
         fluent_builder.inner = self;
@@ -44,9 +41,7 @@ impl SendChannelMessageFluentBuilder {
         }
     }
     /// Access the SendChannelMessage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_channel_message::builders::SendChannelMessageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::send_channel_message::builders::SendChannelMessageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +53,7 @@ impl SendChannelMessageFluentBuilder {
             crate::operation::send_channel_message::SendChannelMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_channel_message::SendChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_channel_message::SendChannelMessageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +63,7 @@ impl SendChannelMessageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +72,7 @@ impl SendChannelMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_channel_message::SendChannelMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_channel_message::SendChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_channel_message::SendChannelMessageError>,
     > {
         let op = self
             .inner
@@ -107,9 +95,7 @@ impl SendChannelMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_channel_message::SendChannelMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_channel_message::SendChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_channel_message::SendChannelMessageError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +109,7 @@ impl SendChannelMessageFluentBuilder {
             crate::operation::send_channel_message::SendChannelMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_channel_message::SendChannelMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_channel_message::SendChannelMessageError>,
     > {
         self.customize_middleware().await
     }
@@ -163,10 +147,7 @@ impl SendChannelMessageFluentBuilder {
         self
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessageType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMessageType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -180,17 +161,12 @@ impl SendChannelMessageFluentBuilder {
         self
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-    pub fn set_persistence(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessagePersistenceType>,
-    ) -> Self {
+    pub fn set_persistence(mut self, input: ::std::option::Option<crate::types::ChannelMessagePersistenceType>) -> Self {
         self.inner = self.inner.set_persistence(input);
         self
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-    pub fn get_persistence(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChannelMessagePersistenceType> {
+    pub fn get_persistence(&self) -> &::std::option::Option<crate::types::ChannelMessagePersistenceType> {
         self.inner.get_persistence()
     }
     /// <p>The optional metadata for each message.</p>
@@ -208,18 +184,12 @@ impl SendChannelMessageFluentBuilder {
         self.inner.get_metadata()
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

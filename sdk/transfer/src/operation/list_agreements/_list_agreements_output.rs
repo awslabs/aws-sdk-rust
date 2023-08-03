@@ -35,9 +35,7 @@ impl ListAgreementsOutput {
 
 /// A builder for [`ListAgreementsOutput`](crate::operation::list_agreements::ListAgreementsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAgreementsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) agreements: ::std::option::Option<::std::vec::Vec<crate::types::ListedAgreement>>,
@@ -70,17 +68,12 @@ impl ListAgreementsOutputBuilder {
         self
     }
     /// <p>Returns an array, where each item contains the details of an agreement.</p>
-    pub fn set_agreements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListedAgreement>>,
-    ) -> Self {
+    pub fn set_agreements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedAgreement>>) -> Self {
         self.agreements = input;
         self
     }
     /// <p>Returns an array, where each item contains the details of an agreement.</p>
-    pub fn get_agreements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedAgreement>> {
+    pub fn get_agreements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedAgreement>> {
         &self.agreements
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

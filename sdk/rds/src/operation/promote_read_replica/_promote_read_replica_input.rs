@@ -68,17 +68,14 @@ impl PromoteReadReplicaInput {
 }
 impl PromoteReadReplicaInput {
     /// Creates a new builder-style object to manufacture [`PromoteReadReplicaInput`](crate::operation::promote_read_replica::PromoteReadReplicaInput).
-    pub fn builder(
-    ) -> crate::operation::promote_read_replica::builders::PromoteReadReplicaInputBuilder {
+    pub fn builder() -> crate::operation::promote_read_replica::builders::PromoteReadReplicaInputBuilder {
         crate::operation::promote_read_replica::builders::PromoteReadReplicaInputBuilder::default()
     }
 }
 
 /// A builder for [`PromoteReadReplicaInput`](crate::operation::promote_read_replica::PromoteReadReplicaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PromoteReadReplicaInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,
@@ -91,10 +88,7 @@ impl PromoteReadReplicaInputBuilder {
     /// <li> <p>Must match the identifier of an existing read replica DB instance.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -104,10 +98,7 @@ impl PromoteReadReplicaInputBuilder {
     /// <li> <p>Must match the identifier of an existing read replica DB instance.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -161,10 +152,7 @@ impl PromoteReadReplicaInputBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn preferred_backup_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -177,10 +165,7 @@ impl PromoteReadReplicaInputBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn set_preferred_backup_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
         self
     }
@@ -199,16 +184,11 @@ impl PromoteReadReplicaInputBuilder {
     /// Consumes the builder and constructs a [`PromoteReadReplicaInput`](crate::operation::promote_read_replica::PromoteReadReplicaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::promote_read_replica::PromoteReadReplicaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::promote_read_replica::PromoteReadReplicaInput {
-                db_instance_identifier: self.db_instance_identifier,
-                backup_retention_period: self.backup_retention_period,
-                preferred_backup_window: self.preferred_backup_window,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::promote_read_replica::PromoteReadReplicaInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::promote_read_replica::PromoteReadReplicaInput {
+            db_instance_identifier: self.db_instance_identifier,
+            backup_retention_period: self.backup_retention_period,
+            preferred_backup_window: self.preferred_backup_window,
+        })
     }
 }

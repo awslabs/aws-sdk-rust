@@ -41,16 +41,14 @@ impl ListExplainabilityExportsInput {
 }
 impl ListExplainabilityExportsInput {
     /// Creates a new builder-style object to manufacture [`ListExplainabilityExportsInput`](crate::operation::list_explainability_exports::ListExplainabilityExportsInput).
-    pub fn builder() -> crate::operation::list_explainability_exports::builders::ListExplainabilityExportsInputBuilder{
+    pub fn builder() -> crate::operation::list_explainability_exports::builders::ListExplainabilityExportsInputBuilder {
         crate::operation::list_explainability_exports::builders::ListExplainabilityExportsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListExplainabilityExportsInput`](crate::operation::list_explainability_exports::ListExplainabilityExportsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExplainabilityExportsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -109,10 +107,7 @@ impl ListExplainabilityExportsInputBuilder {
     /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>
     /// <li> <p> <code>Value</code> - The value to match.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -133,12 +128,10 @@ impl ListExplainabilityExportsInputBuilder {
         crate::operation::list_explainability_exports::ListExplainabilityExportsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_explainability_exports::ListExplainabilityExportsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_explainability_exports::ListExplainabilityExportsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+        })
     }
 }

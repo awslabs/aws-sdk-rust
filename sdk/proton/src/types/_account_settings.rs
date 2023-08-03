@@ -20,9 +20,7 @@ impl AccountSettings {
         self.pipeline_service_role_arn.as_deref()
     }
     /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
-    pub fn pipeline_provisioning_repository(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RepositoryBranch> {
+    pub fn pipeline_provisioning_repository(&self) -> ::std::option::Option<&crate::types::RepositoryBranch> {
         self.pipeline_provisioning_repository.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
@@ -39,29 +37,20 @@ impl AccountSettings {
 
 /// A builder for [`AccountSettings`](crate::types::AccountSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountSettingsBuilder {
     pub(crate) pipeline_service_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) pipeline_provisioning_repository:
-        ::std::option::Option<crate::types::RepositoryBranch>,
+    pub(crate) pipeline_provisioning_repository: ::std::option::Option<crate::types::RepositoryBranch>,
     pub(crate) pipeline_codebuild_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AccountSettingsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
-    pub fn pipeline_service_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_service_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
-    pub fn set_pipeline_service_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_service_role_arn = input;
         self
     }
@@ -70,40 +59,26 @@ impl AccountSettingsBuilder {
         &self.pipeline_service_role_arn
     }
     /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
-    pub fn pipeline_provisioning_repository(
-        mut self,
-        input: crate::types::RepositoryBranch,
-    ) -> Self {
+    pub fn pipeline_provisioning_repository(mut self, input: crate::types::RepositoryBranch) -> Self {
         self.pipeline_provisioning_repository = ::std::option::Option::Some(input);
         self
     }
     /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
-    pub fn set_pipeline_provisioning_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryBranch>,
-    ) -> Self {
+    pub fn set_pipeline_provisioning_repository(mut self, input: ::std::option::Option<crate::types::RepositoryBranch>) -> Self {
         self.pipeline_provisioning_repository = input;
         self
     }
     /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
-    pub fn get_pipeline_provisioning_repository(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryBranch> {
+    pub fn get_pipeline_provisioning_repository(&self) -> &::std::option::Option<crate::types::RepositoryBranch> {
         &self.pipeline_provisioning_repository
     }
     /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
-    pub fn pipeline_codebuild_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_codebuild_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_codebuild_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
-    pub fn set_pipeline_codebuild_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_codebuild_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_codebuild_role_arn = input;
         self
     }

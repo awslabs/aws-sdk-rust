@@ -37,9 +37,7 @@ impl TableColumn {
 
 /// A builder for [`TableColumn`](crate::types::TableColumn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableColumnBuilder {
     pub(crate) table_column_id: ::std::option::Option<::std::string::String>,
     pub(crate) table_column_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct TableColumnBuilder {
 }
 impl TableColumnBuilder {
     /// <p>The id of the column in the table.</p>
-    pub fn table_column_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_column_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_column_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The id of the column in the table.</p>
-    pub fn set_table_column_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_table_column_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_column_id = input;
         self
     }
@@ -67,18 +59,12 @@ impl TableColumnBuilder {
         &self.table_column_id
     }
     /// <p>The name of the column in the table.</p>
-    pub fn table_column_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_column_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the column in the table.</p>
-    pub fn set_table_column_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_table_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_column_name = input;
         self
     }

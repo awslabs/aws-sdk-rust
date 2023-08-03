@@ -30,9 +30,7 @@ impl RepositoryTriggerExecutionFailure {
 
 /// A builder for [`RepositoryTriggerExecutionFailure`](crate::types::RepositoryTriggerExecutionFailure).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryTriggerExecutionFailureBuilder {
     pub(crate) trigger: ::std::option::Option<::std::string::String>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl RepositoryTriggerExecutionFailureBuilder {
         &self.trigger
     }
     /// <p>Message information about the trigger that did not run.</p>
-    pub fn failure_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Message information about the trigger that did not run.</p>
-    pub fn set_failure_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_message = input;
         self
     }

@@ -54,16 +54,13 @@ impl UsageRecord {
 
 /// A builder for [`UsageRecord`](crate::types::UsageRecord).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageRecordBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) customer_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) dimension: ::std::option::Option<::std::string::String>,
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) usage_allocations:
-        ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>,
+    pub(crate) usage_allocations: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>,
 }
 impl UsageRecordBuilder {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
@@ -74,10 +71,7 @@ impl UsageRecordBuilder {
     }
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
     /// <p>Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -87,18 +81,12 @@ impl UsageRecordBuilder {
         &self.timestamp
     }
     /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
-    pub fn customer_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
-    pub fn set_customer_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_identifier = input;
         self
     }
@@ -146,17 +134,12 @@ impl UsageRecordBuilder {
         self
     }
     /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
-    pub fn set_usage_allocations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>,
-    ) -> Self {
+    pub fn set_usage_allocations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>) -> Self {
         self.usage_allocations = input;
         self
     }
     /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
-    pub fn get_usage_allocations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>> {
+    pub fn get_usage_allocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>> {
         &self.usage_allocations
     }
     /// Consumes the builder and constructs a [`UsageRecord`](crate::types::UsageRecord).

@@ -38,18 +38,14 @@ impl ListRobotApplicationsInput {
 }
 impl ListRobotApplicationsInput {
     /// Creates a new builder-style object to manufacture [`ListRobotApplicationsInput`](crate::operation::list_robot_applications::ListRobotApplicationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_robot_applications::builders::ListRobotApplicationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_robot_applications::builders::ListRobotApplicationsInputBuilder {
         crate::operation::list_robot_applications::builders::ListRobotApplicationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRobotApplicationsInput`](crate::operation::list_robot_applications::ListRobotApplicationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRobotApplicationsInputBuilder {
     pub(crate) version_qualifier: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,18 +54,12 @@ pub struct ListRobotApplicationsInputBuilder {
 }
 impl ListRobotApplicationsInputBuilder {
     /// <p>The version qualifier of the robot application.</p>
-    pub fn version_qualifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_qualifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version qualifier of the robot application.</p>
-    pub fn set_version_qualifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_qualifier = input;
         self
     }
@@ -119,10 +109,7 @@ impl ListRobotApplicationsInputBuilder {
     }
     /// <p>Optional filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -134,17 +121,13 @@ impl ListRobotApplicationsInputBuilder {
     /// Consumes the builder and constructs a [`ListRobotApplicationsInput`](crate::operation::list_robot_applications::ListRobotApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_robot_applications::ListRobotApplicationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_robot_applications::ListRobotApplicationsInput {
-                version_qualifier: self.version_qualifier,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_robot_applications::ListRobotApplicationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_robot_applications::ListRobotApplicationsInput {
+            version_qualifier: self.version_qualifier,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filters: self.filters,
+        })
     }
 }

@@ -32,18 +32,14 @@ impl ListHostedZonesByNameInput {
 }
 impl ListHostedZonesByNameInput {
     /// Creates a new builder-style object to manufacture [`ListHostedZonesByNameInput`](crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameInput).
-    pub fn builder(
-    ) -> crate::operation::list_hosted_zones_by_name::builders::ListHostedZonesByNameInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_hosted_zones_by_name::builders::ListHostedZonesByNameInputBuilder {
         crate::operation::list_hosted_zones_by_name::builders::ListHostedZonesByNameInputBuilder::default()
     }
 }
 
 /// A builder for [`ListHostedZonesByNameInput`](crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHostedZonesByNameInputBuilder {
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
@@ -66,19 +62,13 @@ impl ListHostedZonesByNameInputBuilder {
     }
     /// <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the <code>hostedzoneid</code> parameter.</p>
     /// <p>If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZonesByName</code> returns only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted zones, submit another request to <code>ListHostedZonesByName</code> and include both <code>dnsname</code> and <code>hostedzoneid</code> parameters. For the value of <code>hostedzoneid</code>, specify the value of the <code>NextHostedZoneId</code> element from the previous response.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the <code>hostedzoneid</code> parameter.</p>
     /// <p>If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZonesByName</code> returns only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted zones, submit another request to <code>ListHostedZonesByName</code> and include both <code>dnsname</code> and <code>hostedzoneid</code> parameters. For the value of <code>hostedzoneid</code>, specify the value of the <code>NextHostedZoneId</code> element from the previous response.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id = input;
         self
     }
@@ -104,16 +94,12 @@ impl ListHostedZonesByNameInputBuilder {
     /// Consumes the builder and constructs a [`ListHostedZonesByNameInput`](crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameInput {
-                dns_name: self.dns_name,
-                hosted_zone_id: self.hosted_zone_id,
-                max_items: self.max_items,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameInput {
+            dns_name: self.dns_name,
+            hosted_zone_id: self.hosted_zone_id,
+            max_items: self.max_items,
+        })
     }
 }

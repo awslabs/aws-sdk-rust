@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`lens_share_summaries(Option<Vec<LensShareSummary>>)`](crate::operation::list_lens_shares::ListLensSharesOutput::lens_share_summaries): <p>A list of lens share summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_lens_shares::ListLensSharesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLensSharesError>`](crate::operation::list_lens_shares::ListLensSharesError)
-    pub fn list_lens_shares(
-        &self,
-    ) -> crate::operation::list_lens_shares::builders::ListLensSharesFluentBuilder {
-        crate::operation::list_lens_shares::builders::ListLensSharesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_lens_shares(&self) -> crate::operation::list_lens_shares::builders::ListLensSharesFluentBuilder {
+        crate::operation::list_lens_shares::builders::ListLensSharesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl HttpAuthorization {
 
 /// A builder for [`HttpAuthorization`](crate::types::HttpAuthorization).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HttpAuthorizationBuilder {
     pub(crate) sigv4: ::std::option::Option<crate::types::SigV4Authorization>,
 }
@@ -36,10 +34,7 @@ impl HttpAuthorizationBuilder {
         self
     }
     /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p>
-    pub fn set_sigv4(
-        mut self,
-        input: ::std::option::Option<crate::types::SigV4Authorization>,
-    ) -> Self {
+    pub fn set_sigv4(mut self, input: ::std::option::Option<crate::types::SigV4Authorization>) -> Self {
         self.sigv4 = input;
         self
     }

@@ -12,10 +12,7 @@ pub fn ser_create_deployment_input(
     if let Some(var_3) = &input.revision {
         #[allow(unused_mut)]
         let mut object_4 = object.key("revision").start_object();
-        crate::protocol_serde::shape_revision_location::ser_revision_location(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_revision_location::ser_revision_location(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.deployment_config_name {
@@ -38,16 +35,11 @@ pub fn ser_create_deployment_input(
     if let Some(var_9) = &input.auto_rollback_configuration {
         #[allow(unused_mut)]
         let mut object_10 = object.key("autoRollbackConfiguration").start_object();
-        crate::protocol_serde::shape_auto_rollback_configuration::ser_auto_rollback_configuration(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_auto_rollback_configuration::ser_auto_rollback_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
     if input.update_outdated_instances_only {
-        object
-            .key("updateOutdatedInstancesOnly")
-            .boolean(input.update_outdated_instances_only);
+        object.key("updateOutdatedInstancesOnly").boolean(input.update_outdated_instances_only);
     }
     if let Some(var_11) = &input.file_exists_behavior {
         object.key("fileExistsBehavior").string(var_11.as_str());
@@ -55,10 +47,7 @@ pub fn ser_create_deployment_input(
     if let Some(var_12) = &input.override_alarm_configuration {
         #[allow(unused_mut)]
         let mut object_13 = object.key("overrideAlarmConfiguration").start_object();
-        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_13, var_12)?;
         object_13.finish();
     }
     Ok(())

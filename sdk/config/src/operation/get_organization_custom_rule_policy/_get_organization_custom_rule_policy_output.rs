@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for GetOrganizationCustomRulePolicyOutput
 }
 impl GetOrganizationCustomRulePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetOrganizationCustomRulePolicyOutput`](crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyOutput).
-    pub fn builder() -> crate::operation::get_organization_custom_rule_policy::builders::GetOrganizationCustomRulePolicyOutputBuilder{
+    pub fn builder() -> crate::operation::get_organization_custom_rule_policy::builders::GetOrganizationCustomRulePolicyOutputBuilder {
         crate::operation::get_organization_custom_rule_policy::builders::GetOrganizationCustomRulePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetOrganizationCustomRulePolicyOutput`](crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOrganizationCustomRulePolicyOutputBuilder {
     pub(crate) policy_text: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,13 +58,9 @@ impl GetOrganizationCustomRulePolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetOrganizationCustomRulePolicyOutput`](crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyOutput
-    {
+    pub fn build(self) -> crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyOutput {
         crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyOutput {
-            policy_text: self.policy_text
-            ,
+            policy_text: self.policy_text,
             _request_id: self._request_id,
         }
     }

@@ -10,10 +10,7 @@ impl TestInvokeMethodInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::test_invoke_method::TestInvokeMethodOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_invoke_method::TestInvokeMethodError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_invoke_method::TestInvokeMethodError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.test_invoke_method();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl TestInvokeMethodFluentBuilder {
         }
     }
     /// Access the TestInvokeMethod as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::test_invoke_method::builders::TestInvokeMethodInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::test_invoke_method::builders::TestInvokeMethodInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl TestInvokeMethodFluentBuilder {
             crate::operation::test_invoke_method::TestInvokeMethod,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_invoke_method::TestInvokeMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_invoke_method::TestInvokeMethodError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl TestInvokeMethodFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl TestInvokeMethodFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_invoke_method::TestInvokeMethodOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_invoke_method::TestInvokeMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_invoke_method::TestInvokeMethodError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl TestInvokeMethodFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_invoke_method::TestInvokeMethodOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_invoke_method::TestInvokeMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_invoke_method::TestInvokeMethodError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl TestInvokeMethodFluentBuilder {
             crate::operation::test_invoke_method::TestInvokeMethod,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_invoke_method::TestInvokeMethodError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_invoke_method::TestInvokeMethodError>,
     > {
         self.customize_middleware().await
     }
@@ -165,18 +149,12 @@ impl TestInvokeMethodFluentBuilder {
         self.inner.get_http_method()
     }
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
-    pub fn path_with_query_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn path_with_query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.path_with_query_string(input.into());
         self
     }
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
-    pub fn set_path_with_query_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_path_with_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_path_with_query_string(input);
         self
     }
@@ -203,30 +181,17 @@ impl TestInvokeMethodFluentBuilder {
     /// To override the contents of this collection use [`set_headers`](Self::set_headers).
     ///
     /// <p>A key-value map of headers to simulate an incoming invocation request.</p>
-    pub fn headers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn headers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.headers(k.into(), v.into());
         self
     }
     /// <p>A key-value map of headers to simulate an incoming invocation request.</p>
-    pub fn set_headers(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_headers(input);
         self
     }
     /// <p>A key-value map of headers to simulate an incoming invocation request.</p>
-    pub fn get_headers(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_headers()
     }
     /// Adds a key-value pair to `multiValueHeaders`.
@@ -234,23 +199,14 @@ impl TestInvokeMethodFluentBuilder {
     /// To override the contents of this collection use [`set_multi_value_headers`](Self::set_multi_value_headers).
     ///
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request.</p>
-    pub fn multi_value_headers(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn multi_value_headers(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.multi_value_headers(k.into(), v);
         self
     }
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request.</p>
     pub fn set_multi_value_headers(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_multi_value_headers(input);
         self
@@ -258,24 +214,16 @@ impl TestInvokeMethodFluentBuilder {
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request.</p>
     pub fn get_multi_value_headers(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_multi_value_headers()
     }
     /// <p>A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
-    pub fn client_certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_certificate_id(input.into());
         self
     }
     /// <p>A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
-    pub fn set_client_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_certificate_id(input);
         self
     }
@@ -299,19 +247,13 @@ impl TestInvokeMethodFluentBuilder {
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
     pub fn set_stage_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_stage_variables(input);
         self
     }
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
-    pub fn get_stage_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_stage_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_stage_variables()
     }
 }

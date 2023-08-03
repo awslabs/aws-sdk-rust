@@ -38,9 +38,7 @@ impl ListTransactionsInput {
         self.network.as_ref()
     }
     /// <p>The container for time.</p>
-    pub fn from_blockchain_instant(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BlockchainInstant> {
+    pub fn from_blockchain_instant(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
         self.from_blockchain_instant.as_ref()
     }
     /// <p>The container for time.</p>
@@ -65,17 +63,14 @@ impl ListTransactionsInput {
 }
 impl ListTransactionsInput {
     /// Creates a new builder-style object to manufacture [`ListTransactionsInput`](crate::operation::list_transactions::ListTransactionsInput).
-    pub fn builder() -> crate::operation::list_transactions::builders::ListTransactionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_transactions::builders::ListTransactionsInputBuilder {
         crate::operation::list_transactions::builders::ListTransactionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTransactionsInput`](crate::operation::list_transactions::ListTransactionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTransactionsInputBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
     pub(crate) network: ::std::option::Option<crate::types::QueryNetwork>,
@@ -120,17 +115,12 @@ impl ListTransactionsInputBuilder {
         self
     }
     /// <p>The container for time.</p>
-    pub fn set_from_blockchain_instant(
-        mut self,
-        input: ::std::option::Option<crate::types::BlockchainInstant>,
-    ) -> Self {
+    pub fn set_from_blockchain_instant(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
         self.from_blockchain_instant = input;
         self
     }
     /// <p>The container for time.</p>
-    pub fn get_from_blockchain_instant(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlockchainInstant> {
+    pub fn get_from_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
         &self.from_blockchain_instant
     }
     /// <p>The container for time.</p>
@@ -139,17 +129,12 @@ impl ListTransactionsInputBuilder {
         self
     }
     /// <p>The container for time.</p>
-    pub fn set_to_blockchain_instant(
-        mut self,
-        input: ::std::option::Option<crate::types::BlockchainInstant>,
-    ) -> Self {
+    pub fn set_to_blockchain_instant(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
         self.to_blockchain_instant = input;
         self
     }
     /// <p>The container for time.</p>
-    pub fn get_to_blockchain_instant(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlockchainInstant> {
+    pub fn get_to_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
         &self.to_blockchain_instant
     }
     /// <p>Sorts items in an ascending order if the first page starts at <code>fromTime</code>. Sorts items in a descending order if the first page starts at <code>toTime</code>.</p>
@@ -158,10 +143,7 @@ impl ListTransactionsInputBuilder {
         self
     }
     /// <p>Sorts items in an ascending order if the first page starts at <code>fromTime</code>. Sorts items in a descending order if the first page starts at <code>toTime</code>.</p>
-    pub fn set_sort(
-        mut self,
-        input: ::std::option::Option<crate::types::ListTransactionsSort>,
-    ) -> Self {
+    pub fn set_sort(mut self, input: ::std::option::Option<crate::types::ListTransactionsSort>) -> Self {
         self.sort = input;
         self
     }
@@ -209,10 +191,7 @@ impl ListTransactionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTransactionsInput`](crate::operation::list_transactions::ListTransactionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_transactions::ListTransactionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_transactions::ListTransactionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_transactions::ListTransactionsInput {
             address: self.address,
             network: self.network,

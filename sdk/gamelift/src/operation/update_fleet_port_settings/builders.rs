@@ -30,8 +30,7 @@ impl UpdateFleetPortSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFleetPortSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_fleet_port_settings::builders::UpdateFleetPortSettingsInputBuilder,
+    inner: crate::operation::update_fleet_port_settings::builders::UpdateFleetPortSettingsInputBuilder,
 }
 impl UpdateFleetPortSettingsFluentBuilder {
     /// Creates a new `UpdateFleetPortSettings`.
@@ -42,10 +41,7 @@ impl UpdateFleetPortSettingsFluentBuilder {
         }
     }
     /// Access the UpdateFleetPortSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_fleet_port_settings::builders::UpdateFleetPortSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_fleet_port_settings::builders::UpdateFleetPortSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl UpdateFleetPortSettingsFluentBuilder {
             crate::operation::update_fleet_port_settings::UpdateFleetPortSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl UpdateFleetPortSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl UpdateFleetPortSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl UpdateFleetPortSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +109,7 @@ impl UpdateFleetPortSettingsFluentBuilder {
             crate::operation::update_fleet_port_settings::UpdateFleetPortSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -152,17 +137,12 @@ impl UpdateFleetPortSettingsFluentBuilder {
         self
     }
     /// <p>A collection of port settings to be added to the fleet resource.</p>
-    pub fn set_inbound_permission_authorizations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
-    ) -> Self {
+    pub fn set_inbound_permission_authorizations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.inner = self.inner.set_inbound_permission_authorizations(input);
         self
     }
     /// <p>A collection of port settings to be added to the fleet resource.</p>
-    pub fn get_inbound_permission_authorizations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+    pub fn get_inbound_permission_authorizations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         self.inner.get_inbound_permission_authorizations()
     }
     /// Appends an item to `InboundPermissionRevocations`.
@@ -175,17 +155,12 @@ impl UpdateFleetPortSettingsFluentBuilder {
         self
     }
     /// <p>A collection of port settings to be removed from the fleet resource.</p>
-    pub fn set_inbound_permission_revocations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
-    ) -> Self {
+    pub fn set_inbound_permission_revocations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.inner = self.inner.set_inbound_permission_revocations(input);
         self
     }
     /// <p>A collection of port settings to be removed from the fleet resource.</p>
-    pub fn get_inbound_permission_revocations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+    pub fn get_inbound_permission_revocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         self.inner.get_inbound_permission_revocations()
     }
 }

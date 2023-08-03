@@ -11,12 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateWhatIfForecastOutput`](crate::operation::create_what_if_forecast::CreateWhatIfForecastOutput) with field(s):
     ///   - [`what_if_forecast_arn(Option<String>)`](crate::operation::create_what_if_forecast::CreateWhatIfForecastOutput::what_if_forecast_arn): <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
     /// - On failure, responds with [`SdkError<CreateWhatIfForecastError>`](crate::operation::create_what_if_forecast::CreateWhatIfForecastError)
-    pub fn create_what_if_forecast(
-        &self,
-    ) -> crate::operation::create_what_if_forecast::builders::CreateWhatIfForecastFluentBuilder
-    {
-        crate::operation::create_what_if_forecast::builders::CreateWhatIfForecastFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_what_if_forecast(&self) -> crate::operation::create_what_if_forecast::builders::CreateWhatIfForecastFluentBuilder {
+        crate::operation::create_what_if_forecast::builders::CreateWhatIfForecastFluentBuilder::new(self.handle.clone())
     }
 }

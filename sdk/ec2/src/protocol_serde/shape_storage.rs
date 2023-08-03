@@ -12,9 +12,7 @@ pub fn ser_storage(
     Ok(())
 }
 
-pub fn de_storage(
-    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Storage, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_storage(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Storage, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Storage::builder();
     while let Some(mut tag) = decoder.next_tag() {

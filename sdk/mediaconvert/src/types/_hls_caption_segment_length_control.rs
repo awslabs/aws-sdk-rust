@@ -38,13 +38,7 @@
 /// Set Caption segment length control to Match video to create caption segments that align with the video segments from the first video output in this output group. For example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments to create caption segments that are 300 seconds long.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HlsCaptionSegmentLengthControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for HlsCaptionSegmentLengthControl {
         match s {
             "LARGE_SEGMENTS" => HlsCaptionSegmentLengthControl::LargeSegments,
             "MATCH_VIDEO" => HlsCaptionSegmentLengthControl::MatchVideo,
-            other => HlsCaptionSegmentLengthControl::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => HlsCaptionSegmentLengthControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

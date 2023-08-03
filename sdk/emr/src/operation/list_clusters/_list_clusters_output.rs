@@ -36,9 +36,7 @@ impl ListClustersOutput {
 
 /// A builder for [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClustersOutputBuilder {
     pub(crate) clusters: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSummary>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListClustersOutputBuilder {
         self
     }
     /// <p>The list of clusters for the account based on the given filters.</p>
-    pub fn set_clusters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSummary>>,
-    ) -> Self {
+    pub fn set_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSummary>>) -> Self {
         self.clusters = input;
         self
     }
     /// <p>The list of clusters for the account based on the given filters.</p>
-    pub fn get_clusters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSummary>> {
+    pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSummary>> {
         &self.clusters
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>

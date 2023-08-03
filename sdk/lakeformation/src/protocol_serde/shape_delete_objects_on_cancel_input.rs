@@ -15,10 +15,7 @@ pub fn ser_delete_objects_on_cancel_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_virtual_object::ser_virtual_object(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_virtual_object::ser_virtual_object(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

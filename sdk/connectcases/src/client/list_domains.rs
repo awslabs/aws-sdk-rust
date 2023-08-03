@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`domains(Option<Vec<DomainSummary>>)`](crate::operation::list_domains::ListDomainsOutput::domains): <p>The Cases domain.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domains::ListDomainsOutput::next_token): <p>The token for the next set of results. This is null if there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
-    pub fn list_domains(
-        &self,
-    ) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
+    pub fn list_domains(&self) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
         crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
     }
 }

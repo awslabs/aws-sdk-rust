@@ -37,10 +37,7 @@ impl AssociateSourceServersFluentBuilder {
         }
     }
     /// Access the AssociateSourceServers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_source_servers::builders::AssociateSourceServersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_source_servers::builders::AssociateSourceServersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl AssociateSourceServersFluentBuilder {
             crate::operation::associate_source_servers::AssociateSourceServers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_source_servers::AssociateSourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_source_servers::AssociateSourceServersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl AssociateSourceServersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl AssociateSourceServersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_source_servers::AssociateSourceServersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_source_servers::AssociateSourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_source_servers::AssociateSourceServersError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl AssociateSourceServersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_source_servers::AssociateSourceServersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_source_servers::AssociateSourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_source_servers::AssociateSourceServersError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl AssociateSourceServersFluentBuilder {
             crate::operation::associate_source_servers::AssociateSourceServers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_source_servers::AssociateSourceServersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_source_servers::AssociateSourceServersError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Application ID.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>Application ID.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -148,25 +128,17 @@ impl AssociateSourceServersFluentBuilder {
     /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
     ///
     /// <p>Source server IDs list.</p>
-    pub fn source_server_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_i_ds(input.into());
         self
     }
     /// <p>Source server IDs list.</p>
-    pub fn set_source_server_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_server_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_source_server_i_ds(input);
         self
     }
     /// <p>Source server IDs list.</p>
-    pub fn get_source_server_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_server_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_source_server_i_ds()
     }
     /// <p>Account ID.</p>

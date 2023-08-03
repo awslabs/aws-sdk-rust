@@ -3,8 +3,7 @@
 /// <p> Information about the target Capacity Reservation or Capacity Reservation group in which to run an Amazon EC2 instance. </p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails
-{
+pub struct AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails {
     /// <p> The ID of the Capacity Reservation in which to run the instance. </p>
     #[doc(hidden)]
     pub capacity_reservation_id: ::std::option::Option<::std::string::String>,
@@ -24,38 +23,26 @@ impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservation
 }
 impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails`](crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails).
-    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails`](crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
-pub struct AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetailsBuilder
-{
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+pub struct AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetailsBuilder {
     pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
-    pub(crate) capacity_reservation_resource_group_arn:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) capacity_reservation_resource_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl
-    AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetailsBuilder
-{
+impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetailsBuilder {
     /// <p> The ID of the Capacity Reservation in which to run the instance. </p>
-    pub fn capacity_reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the Capacity Reservation in which to run the instance. </p>
-    pub fn set_capacity_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_id = input;
         self
     }
@@ -64,34 +51,24 @@ impl
         &self.capacity_reservation_id
     }
     /// <p> The Amazon Resource Name (ARN) of the Capacity Reservation resource group in which to run the instance. </p>
-    pub fn capacity_reservation_resource_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_resource_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the Capacity Reservation resource group in which to run the instance. </p>
-    pub fn set_capacity_reservation_resource_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_resource_group_arn = input;
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the Capacity Reservation resource group in which to run the instance. </p>
-    pub fn get_capacity_reservation_resource_group_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_capacity_reservation_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_reservation_resource_group_arn
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails`](crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails).
-    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails{
+    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails {
         crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails {
-            capacity_reservation_id: self.capacity_reservation_id
-            ,
-            capacity_reservation_resource_group_arn: self.capacity_reservation_resource_group_arn
-            ,
+            capacity_reservation_id: self.capacity_reservation_id,
+            capacity_reservation_resource_group_arn: self.capacity_reservation_resource_group_arn,
         }
     }
 }

@@ -30,9 +30,7 @@ impl AwsAmazonMqBrokerEncryptionOptionsDetails {
 
 /// A builder for [`AwsAmazonMqBrokerEncryptionOptionsDetails`](crate::types::AwsAmazonMqBrokerEncryptionOptionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAmazonMqBrokerEncryptionOptionsDetailsBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) use_aws_owned_key: ::std::option::Option<bool>,

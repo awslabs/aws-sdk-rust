@@ -10,9 +10,7 @@ pub struct TranscriptFilter {
 }
 impl TranscriptFilter {
     /// <p>The object representing the filter that Amazon Lex will use to select the appropriate transcript when the transcript format is the Amazon Lex format.</p>
-    pub fn lex_transcript_filter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LexTranscriptFilter> {
+    pub fn lex_transcript_filter(&self) -> ::std::option::Option<&crate::types::LexTranscriptFilter> {
         self.lex_transcript_filter.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl TranscriptFilter {
 
 /// A builder for [`TranscriptFilter`](crate::types::TranscriptFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TranscriptFilterBuilder {
     pub(crate) lex_transcript_filter: ::std::option::Option<crate::types::LexTranscriptFilter>,
 }
@@ -38,17 +34,12 @@ impl TranscriptFilterBuilder {
         self
     }
     /// <p>The object representing the filter that Amazon Lex will use to select the appropriate transcript when the transcript format is the Amazon Lex format.</p>
-    pub fn set_lex_transcript_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::LexTranscriptFilter>,
-    ) -> Self {
+    pub fn set_lex_transcript_filter(mut self, input: ::std::option::Option<crate::types::LexTranscriptFilter>) -> Self {
         self.lex_transcript_filter = input;
         self
     }
     /// <p>The object representing the filter that Amazon Lex will use to select the appropriate transcript when the transcript format is the Amazon Lex format.</p>
-    pub fn get_lex_transcript_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::LexTranscriptFilter> {
+    pub fn get_lex_transcript_filter(&self) -> &::std::option::Option<crate::types::LexTranscriptFilter> {
         &self.lex_transcript_filter
     }
     /// Consumes the builder and constructs a [`TranscriptFilter`](crate::types::TranscriptFilter).

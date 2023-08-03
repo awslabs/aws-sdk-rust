@@ -29,16 +29,16 @@ impl ListDistributionsByResponseHeadersPolicyIdInput {
 }
 impl ListDistributionsByResponseHeadersPolicyIdInput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByResponseHeadersPolicyIdInput`](crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdInput).
-    pub fn builder() -> crate::operation::list_distributions_by_response_headers_policy_id::builders::ListDistributionsByResponseHeadersPolicyIdInputBuilder{
-        crate::operation::list_distributions_by_response_headers_policy_id::builders::ListDistributionsByResponseHeadersPolicyIdInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_distributions_by_response_headers_policy_id::builders::ListDistributionsByResponseHeadersPolicyIdInputBuilder {
+        crate::operation::list_distributions_by_response_headers_policy_id::builders::ListDistributionsByResponseHeadersPolicyIdInputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`ListDistributionsByResponseHeadersPolicyIdInput`](crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDistributionsByResponseHeadersPolicyIdInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -74,18 +74,12 @@ impl ListDistributionsByResponseHeadersPolicyIdInputBuilder {
         &self.max_items
     }
     /// <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
-    pub fn response_headers_policy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_headers_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_headers_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
-    pub fn set_response_headers_policy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_headers_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_headers_policy_id = input;
         self
     }
@@ -94,16 +88,18 @@ impl ListDistributionsByResponseHeadersPolicyIdInputBuilder {
         &self.response_headers_policy_id
     }
     /// Consumes the builder and constructs a [`ListDistributionsByResponseHeadersPolicyIdInput`](crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdInput {
-                marker: self.marker
-                ,
-                max_items: self.max_items
-                ,
-                response_headers_policy_id: self.response_headers_policy_id
-                ,
-            }
+                marker: self.marker,
+                max_items: self.max_items,
+                response_headers_policy_id: self.response_headers_policy_id,
+            },
         )
     }
 }

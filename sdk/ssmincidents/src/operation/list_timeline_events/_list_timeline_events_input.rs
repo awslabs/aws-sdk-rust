@@ -70,17 +70,14 @@ impl ListTimelineEventsInput {
 }
 impl ListTimelineEventsInput {
     /// Creates a new builder-style object to manufacture [`ListTimelineEventsInput`](crate::operation::list_timeline_events::ListTimelineEventsInput).
-    pub fn builder(
-    ) -> crate::operation::list_timeline_events::builders::ListTimelineEventsInputBuilder {
+    pub fn builder() -> crate::operation::list_timeline_events::builders::ListTimelineEventsInputBuilder {
         crate::operation::list_timeline_events::builders::ListTimelineEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTimelineEventsInput`](crate::operation::list_timeline_events::ListTimelineEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTimelineEventsInputBuilder {
     pub(crate) incident_record_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -91,18 +88,12 @@ pub struct ListTimelineEventsInputBuilder {
 }
 impl ListTimelineEventsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn incident_record_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn set_incident_record_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.incident_record_arn = input;
         self
     }
@@ -142,10 +133,7 @@ impl ListTimelineEventsInputBuilder {
     /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
     /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -169,10 +157,7 @@ impl ListTimelineEventsInputBuilder {
         self
     }
     /// <p>Sort timeline events by the specified key value pair.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::TimelineEventSort>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::TimelineEventSort>) -> Self {
         self.sort_by = input;
         self
     }
@@ -225,19 +210,14 @@ impl ListTimelineEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListTimelineEventsInput`](crate::operation::list_timeline_events::ListTimelineEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_timeline_events::ListTimelineEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_timeline_events::ListTimelineEventsInput {
-                incident_record_arn: self.incident_record_arn,
-                filters: self.filters,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_timeline_events::ListTimelineEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_timeline_events::ListTimelineEventsInput {
+            incident_record_arn: self.incident_record_arn,
+            filters: self.filters,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

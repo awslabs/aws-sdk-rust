@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`outposts(Option<Vec<Outpost>>)`](crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output::outposts): <p>Returns the list of Outposts that have the following characteristics:</p>  <ul>   <li> <p>outposts that have S3 provisioned</p> </li>   <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li>   <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li>  </ul>
     ///   - [`next_token(Option<String>)`](crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output::next_token): <p>Returns a token that you can use to call <code>ListOutpostsWithS3</code> again and receive additional results, if there are any.</p>
     /// - On failure, responds with [`SdkError<ListOutpostsWithS3Error>`](crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error)
-    pub fn list_outposts_with_s3(
-        &self,
-    ) -> crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3FluentBuilder {
-        crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3FluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_outposts_with_s3(&self) -> crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3FluentBuilder {
+        crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3FluentBuilder::new(self.handle.clone())
     }
 }

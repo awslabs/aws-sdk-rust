@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DeleteDevEnvironmentOutput {
 }
 impl DeleteDevEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDevEnvironmentOutput`](crate::operation::delete_dev_environment::DeleteDevEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentOutputBuilder {
         crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDevEnvironmentOutput`](crate::operation::delete_dev_environment::DeleteDevEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDevEnvironmentOutputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,

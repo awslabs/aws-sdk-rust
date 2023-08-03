@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EntityRecognizerDataFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for EntityRecognizerDataFormat {
         match s {
             "AUGMENTED_MANIFEST" => EntityRecognizerDataFormat::AugmentedManifest,
             "COMPREHEND_CSV" => EntityRecognizerDataFormat::ComprehendCsv,
-            other => EntityRecognizerDataFormat::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EntityRecognizerDataFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

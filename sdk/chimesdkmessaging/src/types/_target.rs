@@ -23,9 +23,7 @@ impl Target {
 
 /// A builder for [`Target`](crate::types::Target).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetBuilder {
     pub(crate) member_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl TargetBuilder {
     }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
     pub fn build(self) -> crate::types::Target {
-        crate::types::Target {
-            member_arn: self.member_arn,
-        }
+        crate::types::Target { member_arn: self.member_arn }
     }
 }

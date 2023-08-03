@@ -37,9 +37,7 @@ impl DescribeVirtualNodeFluentBuilder {
         }
     }
     /// Access the DescribeVirtualNode as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_virtual_node::builders::DescribeVirtualNodeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_virtual_node::builders::DescribeVirtualNodeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeVirtualNodeFluentBuilder {
             crate::operation::describe_virtual_node::DescribeVirtualNode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_node::DescribeVirtualNodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_node::DescribeVirtualNodeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeVirtualNodeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeVirtualNodeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_virtual_node::DescribeVirtualNodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_node::DescribeVirtualNodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_node::DescribeVirtualNodeError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeVirtualNodeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_virtual_node::DescribeVirtualNodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_node::DescribeVirtualNodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_node::DescribeVirtualNodeError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeVirtualNodeFluentBuilder {
             crate::operation::describe_virtual_node::DescribeVirtualNode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_virtual_node::DescribeVirtualNodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_virtual_node::DescribeVirtualNodeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the virtual node to describe.</p>
-    pub fn virtual_node_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_node_name(input.into());
         self
     }
     /// <p>The name of the virtual node to describe.</p>
-    pub fn set_virtual_node_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_node_name(input);
         self
     }

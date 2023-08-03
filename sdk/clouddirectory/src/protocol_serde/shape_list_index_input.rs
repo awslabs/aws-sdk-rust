@@ -24,10 +24,7 @@ pub fn ser_list_index_input(
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_object_attribute_range::ser_object_attribute_range(
-                    &mut object_8,
-                    item_7,
-                )?;
+                crate::protocol_serde::shape_object_attribute_range::ser_object_attribute_range(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }

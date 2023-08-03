@@ -38,10 +38,7 @@ impl StartContactStreamingFluentBuilder {
         }
     }
     /// Access the StartContactStreaming as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_contact_streaming::builders::StartContactStreamingInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_contact_streaming::builders::StartContactStreamingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl StartContactStreamingFluentBuilder {
             crate::operation::start_contact_streaming::StartContactStreaming,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_contact_streaming::StartContactStreamingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_contact_streaming::StartContactStreamingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl StartContactStreamingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl StartContactStreamingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_contact_streaming::StartContactStreamingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_contact_streaming::StartContactStreamingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_contact_streaming::StartContactStreamingError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl StartContactStreamingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_contact_streaming::StartContactStreamingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_contact_streaming::StartContactStreamingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_contact_streaming::StartContactStreamingError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl StartContactStreamingFluentBuilder {
             crate::operation::start_contact_streaming::StartContactStreaming,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_contact_streaming::StartContactStreamingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_contact_streaming::StartContactStreamingError>,
     > {
         self.customize_middleware().await
     }
@@ -153,25 +139,17 @@ impl StartContactStreamingFluentBuilder {
         self.inner.get_contact_id()
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
-    pub fn chat_streaming_configuration(
-        mut self,
-        input: crate::types::ChatStreamingConfiguration,
-    ) -> Self {
+    pub fn chat_streaming_configuration(mut self, input: crate::types::ChatStreamingConfiguration) -> Self {
         self.inner = self.inner.chat_streaming_configuration(input);
         self
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
-    pub fn set_chat_streaming_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ChatStreamingConfiguration>,
-    ) -> Self {
+    pub fn set_chat_streaming_configuration(mut self, input: ::std::option::Option<crate::types::ChatStreamingConfiguration>) -> Self {
         self.inner = self.inner.set_chat_streaming_configuration(input);
         self
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
-    pub fn get_chat_streaming_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChatStreamingConfiguration> {
+    pub fn get_chat_streaming_configuration(&self) -> &::std::option::Option<crate::types::ChatStreamingConfiguration> {
         self.inner.get_chat_streaming_configuration()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>

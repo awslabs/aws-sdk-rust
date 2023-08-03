@@ -30,9 +30,7 @@ impl SnapshotFilter {
 
 /// A builder for [`SnapshotFilter`](crate::types::SnapshotFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SnapshotFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl SnapshotFilterBuilder {
         self
     }
     /// <p>The name of the filter to use. You can filter by the <code>file-system-id</code> or by <code>volume-id</code>.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::SnapshotFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -67,10 +62,7 @@ impl SnapshotFilterBuilder {
         self
     }
     /// <p>The <code>file-system-id</code> or <code>volume-id</code> that you are filtering for.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

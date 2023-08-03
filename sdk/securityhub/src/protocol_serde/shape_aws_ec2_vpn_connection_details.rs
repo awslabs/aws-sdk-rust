@@ -13,9 +13,7 @@ pub fn ser_aws_ec2_vpn_connection_details(
         object.key("CustomerGatewayId").string(var_3.as_str());
     }
     if let Some(var_4) = &input.customer_gateway_configuration {
-        object
-            .key("CustomerGatewayConfiguration")
-            .string(var_4.as_str());
+        object.key("CustomerGatewayConfiguration").string(var_4.as_str());
     }
     if let Some(var_5) = &input.r#type {
         object.key("Type").string(var_5.as_str());
@@ -32,7 +30,10 @@ pub fn ser_aws_ec2_vpn_connection_details(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_vpn_connection_vgw_telemetry_details::ser_aws_ec2_vpn_connection_vgw_telemetry_details(&mut object_11, item_10)?;
+                crate::protocol_serde::shape_aws_ec2_vpn_connection_vgw_telemetry_details::ser_aws_ec2_vpn_connection_vgw_telemetry_details(
+                    &mut object_11,
+                    item_10,
+                )?;
                 object_11.finish();
             }
         }
@@ -50,7 +51,10 @@ pub fn ser_aws_ec2_vpn_connection_details(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_aws_ec2_vpn_connection_routes_details::ser_aws_ec2_vpn_connection_routes_details(&mut object_17, item_16)?;
+                crate::protocol_serde::shape_aws_ec2_vpn_connection_routes_details::ser_aws_ec2_vpn_connection_routes_details(
+                    &mut object_17,
+                    item_16,
+                )?;
                 object_17.finish();
             }
         }
@@ -64,17 +68,9 @@ pub fn ser_aws_ec2_vpn_connection_details(
 
 pub(crate) fn de_aws_ec2_vpn_connection_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsEc2VpnConnectionDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsEc2VpnConnectionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -88,65 +84,51 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "VpnConnectionId" => {
                                 builder = builder.set_vpn_connection_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "State" => {
                                 builder = builder.set_state(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "CustomerGatewayId" => {
                                 builder = builder.set_customer_gateway_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "CustomerGatewayConfiguration" => {
                                 builder = builder.set_customer_gateway_configuration(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "Type" => {
                                 builder = builder.set_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "VpnGatewayId" => {
                                 builder = builder.set_vpn_gateway_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "Category" => {
                                 builder = builder.set_category(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "VgwTelemetry" => {
@@ -156,41 +138,38 @@ where
                             }
                             "Options" => {
                                 builder = builder.set_options(
-                                    crate::protocol_serde::shape_aws_ec2_vpn_connection_options_details::de_aws_ec2_vpn_connection_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_vpn_connection_options_details::de_aws_ec2_vpn_connection_options_details(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "Routes" => {
                                 builder = builder.set_routes(
-                                    crate::protocol_serde::shape_aws_ec2_vpn_connection_routes_list::de_aws_ec2_vpn_connection_routes_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_vpn_connection_routes_list::de_aws_ec2_vpn_connection_routes_list(tokens)?,
                                 );
                             }
                             "TransitGatewayId" => {
                                 builder = builder.set_transit_gateway_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

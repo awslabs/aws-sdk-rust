@@ -35,11 +35,7 @@ impl super::Client {
     ///   - [`vpc_config(Option<VpcConfigResponse>)`](crate::operation::create_simulation_job::CreateSimulationJobOutput::vpc_config): <p>Information about the vpc configuration.</p>
     ///   - [`compute(Option<ComputeResponse>)`](crate::operation::create_simulation_job::CreateSimulationJobOutput::compute): <p>Compute information for the simulation job.</p>
     /// - On failure, responds with [`SdkError<CreateSimulationJobError>`](crate::operation::create_simulation_job::CreateSimulationJobError)
-    pub fn create_simulation_job(
-        &self,
-    ) -> crate::operation::create_simulation_job::builders::CreateSimulationJobFluentBuilder {
-        crate::operation::create_simulation_job::builders::CreateSimulationJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_simulation_job(&self) -> crate::operation::create_simulation_job::builders::CreateSimulationJobFluentBuilder {
+        crate::operation::create_simulation_job::builders::CreateSimulationJobFluentBuilder::new(self.handle.clone())
     }
 }

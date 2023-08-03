@@ -61,9 +61,7 @@ impl EnvironmentMember {
 
 /// A builder for [`EnvironmentMember`](crate::types::EnvironmentMember).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentMemberBuilder {
     pub(crate) permissions: ::std::option::Option<crate::types::Permissions>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl EnvironmentMemberBuilder {
     /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<crate::types::Permissions>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::Permissions>) -> Self {
         self.permissions = input;
         self
     }
@@ -133,18 +128,12 @@ impl EnvironmentMemberBuilder {
         &self.user_arn
     }
     /// <p>The ID of the environment for the environment member.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the environment for the environment member.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -158,10 +147,7 @@ impl EnvironmentMemberBuilder {
         self
     }
     /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
-    pub fn set_last_access(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_access(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_access = input;
         self
     }

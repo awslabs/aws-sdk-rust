@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`instance_types(Option<Vec<InstanceTypeInfo>>)`](crate::operation::describe_instance_types::DescribeInstanceTypesOutput::instance_types): <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_types::DescribeInstanceTypesOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceTypesError>`](crate::operation::describe_instance_types::DescribeInstanceTypesError)
-    pub fn describe_instance_types(
-        &self,
-    ) -> crate::operation::describe_instance_types::builders::DescribeInstanceTypesFluentBuilder
-    {
-        crate::operation::describe_instance_types::builders::DescribeInstanceTypesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_instance_types(&self) -> crate::operation::describe_instance_types::builders::DescribeInstanceTypesFluentBuilder {
+        crate::operation::describe_instance_types::builders::DescribeInstanceTypesFluentBuilder::new(self.handle.clone())
     }
 }

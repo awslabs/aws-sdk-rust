@@ -58,9 +58,7 @@ impl PolicyGrantingServiceAccess {
 
 /// A builder for [`PolicyGrantingServiceAccess`](crate::types::PolicyGrantingServiceAccess).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyGrantingServiceAccessBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyType>,
@@ -89,10 +87,7 @@ impl PolicyGrantingServiceAccessBuilder {
         self
     }
     /// <p>The policy type. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.policy_type = input;
         self
     }
@@ -125,10 +120,7 @@ impl PolicyGrantingServiceAccessBuilder {
     }
     /// <p>The type of entity (user or role) that used the policy to access the service to which the inline policy is attached.</p>
     /// <p>This field is null for managed policies. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_entity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyOwnerEntityType>,
-    ) -> Self {
+    pub fn set_entity_type(mut self, input: ::std::option::Option<crate::types::PolicyOwnerEntityType>) -> Self {
         self.entity_type = input;
         self
     }

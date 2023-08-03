@@ -22,9 +22,7 @@ impl DeleteCrlInput {
 
 /// A builder for [`DeleteCrlInput`](crate::operation::delete_crl::DeleteCrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCrlInputBuilder {
     pub(crate) crl_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteCrlInputBuilder {
         &self.crl_id
     }
     /// Consumes the builder and constructs a [`DeleteCrlInput`](crate::operation::delete_crl::DeleteCrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_crl::DeleteCrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_crl::DeleteCrlInput {
-            crl_id: self.crl_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_crl::DeleteCrlInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_crl::DeleteCrlInput { crl_id: self.crl_id })
     }
 }

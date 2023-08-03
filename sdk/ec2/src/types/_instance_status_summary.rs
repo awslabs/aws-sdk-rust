@@ -30,9 +30,7 @@ impl InstanceStatusSummary {
 
 /// A builder for [`InstanceStatusSummary`](crate::types::InstanceStatusSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceStatusSummaryBuilder {
     pub(crate) details: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusDetails>>,
     pub(crate) status: ::std::option::Option<crate::types::SummaryStatus>,
@@ -50,17 +48,12 @@ impl InstanceStatusSummaryBuilder {
         self
     }
     /// <p>The system instance health or application instance health.</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusDetails>>,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusDetails>>) -> Self {
         self.details = input;
         self
     }
     /// <p>The system instance health or application instance health.</p>
-    pub fn get_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusDetails>> {
+    pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusDetails>> {
         &self.details
     }
     /// <p>The status.</p>

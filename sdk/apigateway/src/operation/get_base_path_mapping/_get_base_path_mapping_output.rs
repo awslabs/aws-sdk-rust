@@ -36,18 +36,14 @@ impl ::aws_http::request_id::RequestId for GetBasePathMappingOutput {
 }
 impl GetBasePathMappingOutput {
     /// Creates a new builder-style object to manufacture [`GetBasePathMappingOutput`](crate::operation::get_base_path_mapping::GetBasePathMappingOutput).
-    pub fn builder(
-    ) -> crate::operation::get_base_path_mapping::builders::GetBasePathMappingOutputBuilder {
-        crate::operation::get_base_path_mapping::builders::GetBasePathMappingOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_base_path_mapping::builders::GetBasePathMappingOutputBuilder {
+        crate::operation::get_base_path_mapping::builders::GetBasePathMappingOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBasePathMappingOutput`](crate::operation::get_base_path_mapping::GetBasePathMappingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBasePathMappingOutputBuilder {
     pub(crate) base_path: ::std::option::Option<::std::string::String>,
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,

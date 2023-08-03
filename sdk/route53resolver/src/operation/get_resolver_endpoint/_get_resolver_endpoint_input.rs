@@ -15,35 +15,25 @@ impl GetResolverEndpointInput {
 }
 impl GetResolverEndpointInput {
     /// Creates a new builder-style object to manufacture [`GetResolverEndpointInput`](crate::operation::get_resolver_endpoint::GetResolverEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::get_resolver_endpoint::builders::GetResolverEndpointInputBuilder {
-        crate::operation::get_resolver_endpoint::builders::GetResolverEndpointInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_resolver_endpoint::builders::GetResolverEndpointInputBuilder {
+        crate::operation::get_resolver_endpoint::builders::GetResolverEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`GetResolverEndpointInput`](crate::operation::get_resolver_endpoint::GetResolverEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResolverEndpointInputBuilder {
     pub(crate) resolver_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl GetResolverEndpointInputBuilder {
     /// <p>The ID of the Resolver endpoint that you want to get information about.</p>
-    pub fn resolver_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Resolver endpoint that you want to get information about.</p>
-    pub fn set_resolver_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolver_endpoint_id = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetResolverEndpointInputBuilder {
     /// Consumes the builder and constructs a [`GetResolverEndpointInput`](crate::operation::get_resolver_endpoint::GetResolverEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_resolver_endpoint::GetResolverEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_resolver_endpoint::GetResolverEndpointInput {
-                resolver_endpoint_id: self.resolver_endpoint_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_resolver_endpoint::GetResolverEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_resolver_endpoint::GetResolverEndpointInput {
+            resolver_endpoint_id: self.resolver_endpoint_id,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl CancelQueryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_query::CancelQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_query::CancelQueryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_query::CancelQueryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_query();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CancelQueryFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::cancel_query::CancelQuery,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::cancel_query::CancelQuery, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::cancel_query::CancelQueryError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CancelQueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,29 +95,20 @@ impl CancelQueryFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::cancel_query::CancelQuery,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::cancel_query::CancelQuery, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::cancel_query::CancelQueryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
     #[deprecated(note = "EventDataStore is no longer required by CancelQueryRequest")]
-    pub fn event_data_store(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_data_store(input.into());
         self
     }
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
     #[deprecated(note = "EventDataStore is no longer required by CancelQueryRequest")]
-    pub fn set_event_data_store(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_data_store(input);
         self
     }

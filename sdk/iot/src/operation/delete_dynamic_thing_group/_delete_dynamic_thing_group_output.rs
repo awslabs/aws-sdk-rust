@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDynamicThingGroupOutput {
 }
 impl DeleteDynamicThingGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDynamicThingGroupOutput`](crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_dynamic_thing_group::builders::DeleteDynamicThingGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_dynamic_thing_group::builders::DeleteDynamicThingGroupOutputBuilder {
         crate::operation::delete_dynamic_thing_group::builders::DeleteDynamicThingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDynamicThingGroupOutput`](crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDynamicThingGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteDynamicThingGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDynamicThingGroupOutput`](crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupOutput {
+    pub fn build(self) -> crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupOutput {
         crate::operation::delete_dynamic_thing_group::DeleteDynamicThingGroupOutput {
             _request_id: self._request_id,
         }

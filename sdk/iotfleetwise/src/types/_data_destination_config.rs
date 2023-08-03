@@ -34,9 +34,7 @@ impl DataDestinationConfig {
     }
     /// Tries to convert the enum instance into [`TimestreamConfig`](crate::types::DataDestinationConfig::TimestreamConfig), extracting the inner [`TimestreamConfig`](crate::types::TimestreamConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_timestream_config(
-        &self,
-    ) -> ::std::result::Result<&crate::types::TimestreamConfig, &Self> {
+    pub fn as_timestream_config(&self) -> ::std::result::Result<&crate::types::TimestreamConfig, &Self> {
         if let DataDestinationConfig::TimestreamConfig(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

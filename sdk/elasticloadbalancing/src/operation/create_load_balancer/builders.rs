@@ -10,10 +10,7 @@ impl CreateLoadBalancerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer::CreateLoadBalancerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer::CreateLoadBalancerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_load_balancer();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateLoadBalancerFluentBuilder {
         }
     }
     /// Access the CreateLoadBalancer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_load_balancer::builders::CreateLoadBalancerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateLoadBalancerFluentBuilder {
             crate::operation::create_load_balancer::CreateLoadBalancer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer::CreateLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateLoadBalancerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateLoadBalancerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer::CreateLoadBalancerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer::CreateLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateLoadBalancerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer::CreateLoadBalancerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer::CreateLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError>,
     > {
         self.send_middleware().await
     }
@@ -119,27 +105,19 @@ impl CreateLoadBalancerFluentBuilder {
             crate::operation::create_load_balancer::CreateLoadBalancer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_load_balancer::CreateLoadBalancerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the load balancer.</p>
     /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
     /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
@@ -160,10 +138,7 @@ impl CreateLoadBalancerFluentBuilder {
     }
     /// <p>The listeners.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    pub fn set_listeners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
-    ) -> Self {
+    pub fn set_listeners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>) -> Self {
         self.inner = self.inner.set_listeners(input);
         self
     }
@@ -179,29 +154,21 @@ impl CreateLoadBalancerFluentBuilder {
     /// <p>One or more Availability Zones from the same region as the load balancer.</p>
     /// <p>You must specify at least one Availability Zone.</p>
     /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zones(input.into());
         self
     }
     /// <p>One or more Availability Zones from the same region as the load balancer.</p>
     /// <p>You must specify at least one Availability Zone.</p>
     /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_availability_zones(input);
         self
     }
     /// <p>One or more Availability Zones from the same region as the load balancer.</p>
     /// <p>You must specify at least one Availability Zone.</p>
     /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_availability_zones()
     }
     /// Appends an item to `Subnets`.
@@ -214,10 +181,7 @@ impl CreateLoadBalancerFluentBuilder {
         self
     }
     /// <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnets(input);
         self
     }
@@ -230,25 +194,17 @@ impl CreateLoadBalancerFluentBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The IDs of the security groups to assign to the load balancer.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_groups(input.into());
         self
     }
     /// <p>The IDs of the security groups to assign to the load balancer.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
     }
     /// <p>The IDs of the security groups to assign to the load balancer.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_groups()
     }
     /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
@@ -283,10 +239,7 @@ impl CreateLoadBalancerFluentBuilder {
     }
     /// <p>A list of tags to assign to the load balancer.</p>
     /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

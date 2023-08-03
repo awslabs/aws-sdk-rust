@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ResetParameterGroupOutput`](crate::operation::reset_parameter_group::ResetParameterGroupOutput) with field(s):
     ///   - [`parameter_group(Option<ParameterGroup>)`](crate::operation::reset_parameter_group::ResetParameterGroupOutput::parameter_group): <p>The parameter group being reset.</p>
     /// - On failure, responds with [`SdkError<ResetParameterGroupError>`](crate::operation::reset_parameter_group::ResetParameterGroupError)
-    pub fn reset_parameter_group(
-        &self,
-    ) -> crate::operation::reset_parameter_group::builders::ResetParameterGroupFluentBuilder {
-        crate::operation::reset_parameter_group::builders::ResetParameterGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn reset_parameter_group(&self) -> crate::operation::reset_parameter_group::builders::ResetParameterGroupFluentBuilder {
+        crate::operation::reset_parameter_group::builders::ResetParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -72,9 +72,7 @@ impl ServiceQuotaIncreaseRequestInTemplate {
 
 /// A builder for [`ServiceQuotaIncreaseRequestInTemplate`](crate::types::ServiceQuotaIncreaseRequestInTemplate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceQuotaIncreaseRequestInTemplateBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,

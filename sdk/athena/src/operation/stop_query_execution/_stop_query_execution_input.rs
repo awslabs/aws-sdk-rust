@@ -15,34 +15,25 @@ impl StopQueryExecutionInput {
 }
 impl StopQueryExecutionInput {
     /// Creates a new builder-style object to manufacture [`StopQueryExecutionInput`](crate::operation::stop_query_execution::StopQueryExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_query_execution::builders::StopQueryExecutionInputBuilder {
+    pub fn builder() -> crate::operation::stop_query_execution::builders::StopQueryExecutionInputBuilder {
         crate::operation::stop_query_execution::builders::StopQueryExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`StopQueryExecutionInput`](crate::operation::stop_query_execution::StopQueryExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopQueryExecutionInputBuilder {
     pub(crate) query_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl StopQueryExecutionInputBuilder {
     /// <p>The unique ID of the query execution to stop.</p>
-    pub fn query_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the query execution to stop.</p>
-    pub fn set_query_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_execution_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl StopQueryExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StopQueryExecutionInput`](crate::operation::stop_query_execution::StopQueryExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_query_execution::StopQueryExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_query_execution::StopQueryExecutionInput {
-                query_execution_id: self.query_execution_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_query_execution::StopQueryExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_query_execution::StopQueryExecutionInput {
+            query_execution_id: self.query_execution_id,
+        })
     }
 }

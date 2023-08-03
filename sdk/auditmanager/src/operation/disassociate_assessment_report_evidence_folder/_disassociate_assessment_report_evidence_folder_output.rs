@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for DisassociateAssessmentReportEvidenceF
 }
 impl DisassociateAssessmentReportEvidenceFolderOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateAssessmentReportEvidenceFolderOutput`](crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderOutput).
-    pub fn builder() -> crate::operation::disassociate_assessment_report_evidence_folder::builders::DisassociateAssessmentReportEvidenceFolderOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::disassociate_assessment_report_evidence_folder::builders::DisassociateAssessmentReportEvidenceFolderOutputBuilder {
         crate::operation::disassociate_assessment_report_evidence_folder::builders::DisassociateAssessmentReportEvidenceFolderOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateAssessmentReportEvidenceFolderOutput`](crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateAssessmentReportEvidenceFolderOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl DisassociateAssessmentReportEvidenceFolderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateAssessmentReportEvidenceFolderOutput`](crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderOutput).
-    pub fn build(self) -> crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderOutput{
+    pub fn build(self) -> crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderOutput {
         crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderOutput {
             _request_id: self._request_id,
         }

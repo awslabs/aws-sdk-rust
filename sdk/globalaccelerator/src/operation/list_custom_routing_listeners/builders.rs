@@ -26,7 +26,7 @@ impl ListCustomRoutingListenersInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCustomRoutingListenersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_custom_routing_listeners::builders::ListCustomRoutingListenersInputBuilder,
+    inner: crate::operation::list_custom_routing_listeners::builders::ListCustomRoutingListenersInputBuilder,
 }
 impl ListCustomRoutingListenersFluentBuilder {
     /// Creates a new `ListCustomRoutingListeners`.
@@ -37,7 +37,7 @@ impl ListCustomRoutingListenersFluentBuilder {
         }
     }
     /// Access the ListCustomRoutingListeners as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_custom_routing_listeners::builders::ListCustomRoutingListenersInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_custom_routing_listeners::builders::ListCustomRoutingListenersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListCustomRoutingListenersFluentBuilder {
             crate::operation::list_custom_routing_listeners::ListCustomRoutingListeners,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListCustomRoutingListenersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListCustomRoutingListenersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListCustomRoutingListenersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListCustomRoutingListenersFluentBuilder {
             crate::operation::list_custom_routing_listeners::ListCustomRoutingListeners,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_custom_routing_listeners::paginator::ListCustomRoutingListenersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_custom_routing_listeners::paginator::ListCustomRoutingListenersPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_custom_routing_listeners::paginator::ListCustomRoutingListenersPaginator {
         crate::operation::list_custom_routing_listeners::paginator::ListCustomRoutingListenersPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list listeners for.</p>
-    pub fn accelerator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accelerator_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list listeners for.</p>
-    pub fn set_accelerator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accelerator_arn(input);
         self
     }

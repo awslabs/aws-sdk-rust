@@ -61,9 +61,7 @@ impl BuildConfiguration {
 
 /// A builder for [`BuildConfiguration`](crate::types::BuildConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuildConfigurationBuilder {
     pub(crate) artifact_name: ::std::option::Option<::std::string::String>,
     pub(crate) code_build_service_role: ::std::option::Option<::std::string::String>,
@@ -73,18 +71,12 @@ pub struct BuildConfigurationBuilder {
 }
 impl BuildConfigurationBuilder {
     /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
-    pub fn artifact_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
-    pub fn set_artifact_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_name = input;
         self
     }
@@ -93,18 +85,12 @@ impl BuildConfigurationBuilder {
         &self.artifact_name
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
-    pub fn code_build_service_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_build_service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_build_service_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
-    pub fn set_code_build_service_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_build_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_build_service_role = input;
         self
     }
@@ -128,10 +114,7 @@ impl BuildConfigurationBuilder {
     /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li>
     /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>
     /// </ul>
-    pub fn set_compute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeType>,
-    ) -> Self {
+    pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.compute_type = input;
         self
     }

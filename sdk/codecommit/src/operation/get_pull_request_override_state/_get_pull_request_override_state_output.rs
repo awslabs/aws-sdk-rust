@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetPullRequestOverrideStateOutput {
 }
 impl GetPullRequestOverrideStateOutput {
     /// Creates a new builder-style object to manufacture [`GetPullRequestOverrideStateOutput`](crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput).
-    pub fn builder() -> crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateOutputBuilder{
+    pub fn builder() -> crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateOutputBuilder {
         crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPullRequestOverrideStateOutput`](crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPullRequestOverrideStateOutputBuilder {
     pub(crate) overridden: ::std::option::Option<bool>,
     pub(crate) overrider: ::std::option::Option<::std::string::String>,
@@ -82,9 +80,7 @@ impl GetPullRequestOverrideStateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPullRequestOverrideStateOutput`](crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput {
+    pub fn build(self) -> crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput {
         crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput {
             overridden: self.overridden.unwrap_or_default(),
             overrider: self.overrider,

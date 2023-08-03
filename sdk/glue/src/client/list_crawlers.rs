@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`crawler_names(Option<Vec<String>>)`](crate::operation::list_crawlers::ListCrawlersOutput::crawler_names): <p>The names of all crawlers in the account, or the crawlers with the specified tags.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_crawlers::ListCrawlersOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>
     /// - On failure, responds with [`SdkError<ListCrawlersError>`](crate::operation::list_crawlers::ListCrawlersError)
-    pub fn list_crawlers(
-        &self,
-    ) -> crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder {
-        crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_crawlers(&self) -> crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder {
+        crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::new(self.handle.clone())
     }
 }

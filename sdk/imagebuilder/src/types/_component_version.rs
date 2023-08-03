@@ -137,9 +137,7 @@ impl ComponentVersion {
 
 /// A builder for [`ComponentVersion`](crate::types::ComponentVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentVersionBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -314,27 +312,19 @@ impl ComponentVersionBuilder {
     /// To override the contents of this collection use [`set_supported_os_versions`](Self::set_supported_os_versions).
     ///
     /// <p>he operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
-    pub fn supported_os_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supported_os_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_os_versions.unwrap_or_default();
         v.push(input.into());
         self.supported_os_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>he operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
-    pub fn set_supported_os_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supported_os_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_os_versions = input;
         self
     }
     /// <p>he operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
-    pub fn get_supported_os_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_os_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_os_versions
     }
     /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>

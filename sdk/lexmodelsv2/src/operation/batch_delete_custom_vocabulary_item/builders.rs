@@ -5,16 +5,16 @@ pub use crate::operation::batch_delete_custom_vocabulary_item::_batch_delete_cus
 
 impl BatchDeleteCustomVocabularyItemInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.batch_delete_custom_vocabulary_item();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl BatchDeleteCustomVocabularyItemInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteCustomVocabularyItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_delete_custom_vocabulary_item::builders::BatchDeleteCustomVocabularyItemInputBuilder,
+    inner: crate::operation::batch_delete_custom_vocabulary_item::builders::BatchDeleteCustomVocabularyItemInputBuilder,
 }
 impl BatchDeleteCustomVocabularyItemFluentBuilder {
     /// Creates a new `BatchDeleteCustomVocabularyItem`.
@@ -37,15 +37,20 @@ impl BatchDeleteCustomVocabularyItemFluentBuilder {
         }
     }
     /// Access the BatchDeleteCustomVocabularyItem as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_delete_custom_vocabulary_item::builders::BatchDeleteCustomVocabularyItemInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_delete_custom_vocabulary_item::builders::BatchDeleteCustomVocabularyItemInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItem, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItem,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl BatchDeleteCustomVocabularyItemFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl BatchDeleteCustomVocabularyItemFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItem, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItem,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the bot associated with this custom vocabulary.</p>
@@ -141,25 +156,17 @@ impl BatchDeleteCustomVocabularyItemFluentBuilder {
     /// To override the contents of this collection use [`set_custom_vocabulary_item_list`](Self::set_custom_vocabulary_item_list).
     ///
     /// <p>A list of custom vocabulary items requested to be deleted. Each entry must contain the unique custom vocabulary entry identifier.</p>
-    pub fn custom_vocabulary_item_list(
-        mut self,
-        input: crate::types::CustomVocabularyEntryId,
-    ) -> Self {
+    pub fn custom_vocabulary_item_list(mut self, input: crate::types::CustomVocabularyEntryId) -> Self {
         self.inner = self.inner.custom_vocabulary_item_list(input);
         self
     }
     /// <p>A list of custom vocabulary items requested to be deleted. Each entry must contain the unique custom vocabulary entry identifier.</p>
-    pub fn set_custom_vocabulary_item_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyEntryId>>,
-    ) -> Self {
+    pub fn set_custom_vocabulary_item_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyEntryId>>) -> Self {
         self.inner = self.inner.set_custom_vocabulary_item_list(input);
         self
     }
     /// <p>A list of custom vocabulary items requested to be deleted. Each entry must contain the unique custom vocabulary entry identifier.</p>
-    pub fn get_custom_vocabulary_item_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyEntryId>> {
+    pub fn get_custom_vocabulary_item_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyEntryId>> {
         self.inner.get_custom_vocabulary_item_list()
     }
 }

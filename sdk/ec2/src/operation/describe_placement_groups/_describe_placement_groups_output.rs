@@ -21,21 +21,16 @@ impl ::aws_http::request_id::RequestId for DescribePlacementGroupsOutput {
 }
 impl DescribePlacementGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribePlacementGroupsOutput`](crate::operation::describe_placement_groups::DescribePlacementGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_placement_groups::builders::DescribePlacementGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_placement_groups::builders::DescribePlacementGroupsOutputBuilder {
         crate::operation::describe_placement_groups::builders::DescribePlacementGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePlacementGroupsOutput`](crate::operation::describe_placement_groups::DescribePlacementGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePlacementGroupsOutputBuilder {
-    pub(crate) placement_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroup>>,
+    pub(crate) placement_groups: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroup>>,
     _request_id: Option<String>,
 }
 impl DescribePlacementGroupsOutputBuilder {
@@ -51,17 +46,12 @@ impl DescribePlacementGroupsOutputBuilder {
         self
     }
     /// <p>Information about the placement groups.</p>
-    pub fn set_placement_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroup>>,
-    ) -> Self {
+    pub fn set_placement_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroup>>) -> Self {
         self.placement_groups = input;
         self
     }
     /// <p>Information about the placement groups.</p>
-    pub fn get_placement_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementGroup>> {
+    pub fn get_placement_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementGroup>> {
         &self.placement_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +64,7 @@ impl DescribePlacementGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePlacementGroupsOutput`](crate::operation::describe_placement_groups::DescribePlacementGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_placement_groups::DescribePlacementGroupsOutput {
+    pub fn build(self) -> crate::operation::describe_placement_groups::DescribePlacementGroupsOutput {
         crate::operation::describe_placement_groups::DescribePlacementGroupsOutput {
             placement_groups: self.placement_groups,
             _request_id: self._request_id,

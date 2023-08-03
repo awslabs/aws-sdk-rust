@@ -26,7 +26,7 @@ impl UpdateInferenceSchedulerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInferenceSchedulerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerInputBuilder,
+    inner: crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerInputBuilder,
 }
 impl UpdateInferenceSchedulerFluentBuilder {
     /// Creates a new `UpdateInferenceScheduler`.
@@ -37,10 +37,7 @@ impl UpdateInferenceSchedulerFluentBuilder {
         }
     }
     /// Access the UpdateInferenceScheduler as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateInferenceSchedulerFluentBuilder {
             crate::operation::update_inference_scheduler::UpdateInferenceScheduler,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_inference_scheduler::UpdateInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_inference_scheduler::UpdateInferenceSchedulerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateInferenceSchedulerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateInferenceSchedulerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_inference_scheduler::UpdateInferenceSchedulerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_inference_scheduler::UpdateInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_inference_scheduler::UpdateInferenceSchedulerError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateInferenceSchedulerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_inference_scheduler::UpdateInferenceSchedulerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_inference_scheduler::UpdateInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_inference_scheduler::UpdateInferenceSchedulerError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateInferenceSchedulerFluentBuilder {
             crate::operation::update_inference_scheduler::UpdateInferenceScheduler,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_inference_scheduler::UpdateInferenceSchedulerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_inference_scheduler::UpdateInferenceSchedulerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the inference scheduler to be updated. </p>
-    pub fn inference_scheduler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.inference_scheduler_name(input.into());
         self
     }
     /// <p>The name of the inference scheduler to be updated. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_inference_scheduler_name(input);
         self
     }
@@ -163,61 +143,40 @@ impl UpdateInferenceSchedulerFluentBuilder {
         self
     }
     /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
-    pub fn set_data_upload_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::DataUploadFrequency>,
-    ) -> Self {
+    pub fn set_data_upload_frequency(mut self, input: ::std::option::Option<crate::types::DataUploadFrequency>) -> Self {
         self.inner = self.inner.set_data_upload_frequency(input);
         self
     }
     /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
-    pub fn get_data_upload_frequency(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataUploadFrequency> {
+    pub fn get_data_upload_frequency(&self) -> &::std::option::Option<crate::types::DataUploadFrequency> {
         self.inner.get_data_upload_frequency()
     }
     /// <p> Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    pub fn data_input_configuration(
-        mut self,
-        input: crate::types::InferenceInputConfiguration,
-    ) -> Self {
+    pub fn data_input_configuration(mut self, input: crate::types::InferenceInputConfiguration) -> Self {
         self.inner = self.inner.data_input_configuration(input);
         self
     }
     /// <p> Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    pub fn set_data_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceInputConfiguration>,
-    ) -> Self {
+    pub fn set_data_input_configuration(mut self, input: ::std::option::Option<crate::types::InferenceInputConfiguration>) -> Self {
         self.inner = self.inner.set_data_input_configuration(input);
         self
     }
     /// <p> Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    pub fn get_data_input_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceInputConfiguration> {
+    pub fn get_data_input_configuration(&self) -> &::std::option::Option<crate::types::InferenceInputConfiguration> {
         self.inner.get_data_input_configuration()
     }
     /// <p> Specifies information for the output results from the inference scheduler, including the output S3 location. </p>
-    pub fn data_output_configuration(
-        mut self,
-        input: crate::types::InferenceOutputConfiguration,
-    ) -> Self {
+    pub fn data_output_configuration(mut self, input: crate::types::InferenceOutputConfiguration) -> Self {
         self.inner = self.inner.data_output_configuration(input);
         self
     }
     /// <p> Specifies information for the output results from the inference scheduler, including the output S3 location. </p>
-    pub fn set_data_output_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceOutputConfiguration>,
-    ) -> Self {
+    pub fn set_data_output_configuration(mut self, input: ::std::option::Option<crate::types::InferenceOutputConfiguration>) -> Self {
         self.inner = self.inner.set_data_output_configuration(input);
         self
     }
     /// <p> Specifies information for the output results from the inference scheduler, including the output S3 location. </p>
-    pub fn get_data_output_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
+    pub fn get_data_output_configuration(&self) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
         self.inner.get_data_output_configuration()
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler. </p>

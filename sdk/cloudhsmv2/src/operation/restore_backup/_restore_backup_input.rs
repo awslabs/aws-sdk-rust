@@ -22,9 +22,7 @@ impl RestoreBackupInput {
 
 /// A builder for [`RestoreBackupInput`](crate::operation::restore_backup::RestoreBackupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreBackupInputBuilder {
     pub(crate) backup_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl RestoreBackupInputBuilder {
     /// Consumes the builder and constructs a [`RestoreBackupInput`](crate::operation::restore_backup::RestoreBackupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_backup::RestoreBackupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::restore_backup::RestoreBackupInput {
-            backup_id: self.backup_id,
-        })
+    ) -> ::std::result::Result<crate::operation::restore_backup::RestoreBackupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::restore_backup::RestoreBackupInput { backup_id: self.backup_id })
     }
 }

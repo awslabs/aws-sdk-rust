@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeFleetLocationUtilizationOutput`](crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationOutput) with field(s):
     ///   - [`fleet_utilization(Option<FleetUtilization>)`](crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationOutput::fleet_utilization): <p>Utilization information for the requested fleet location. Utilization objects are returned only for fleets and locations that currently exist.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetLocationUtilizationError>`](crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationError)
-    pub fn describe_fleet_location_utilization(&self) -> crate::operation::describe_fleet_location_utilization::builders::DescribeFleetLocationUtilizationFluentBuilder{
+    pub fn describe_fleet_location_utilization(
+        &self,
+    ) -> crate::operation::describe_fleet_location_utilization::builders::DescribeFleetLocationUtilizationFluentBuilder {
         crate::operation::describe_fleet_location_utilization::builders::DescribeFleetLocationUtilizationFluentBuilder::new(self.handle.clone())
     }
 }

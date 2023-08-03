@@ -18,12 +18,10 @@ pub struct Recommendation {
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p> Events that are related to the problem. Use these events to learn more about what's happening and to help address the issue. </p>
     #[doc(hidden)]
-    pub related_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEvent>>,
+    pub related_events: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEvent>>,
     /// <p> Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help address the issue. </p>
     #[doc(hidden)]
-    pub related_anomalies:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomaly>>,
+    pub related_anomalies: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomaly>>,
     /// <p>The category type of the recommendation.</p>
     #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
@@ -46,15 +44,11 @@ impl Recommendation {
         self.reason.as_deref()
     }
     /// <p> Events that are related to the problem. Use these events to learn more about what's happening and to help address the issue. </p>
-    pub fn related_events(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RecommendationRelatedEvent]> {
+    pub fn related_events(&self) -> ::std::option::Option<&[crate::types::RecommendationRelatedEvent]> {
         self.related_events.as_deref()
     }
     /// <p> Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help address the issue. </p>
-    pub fn related_anomalies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RecommendationRelatedAnomaly]> {
+    pub fn related_anomalies(&self) -> ::std::option::Option<&[crate::types::RecommendationRelatedAnomaly]> {
         self.related_anomalies.as_deref()
     }
     /// <p>The category type of the recommendation.</p>
@@ -71,18 +65,14 @@ impl Recommendation {
 
 /// A builder for [`Recommendation`](crate::types::Recommendation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) link: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
-    pub(crate) related_events:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEvent>>,
-    pub(crate) related_anomalies:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomaly>>,
+    pub(crate) related_events: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEvent>>,
+    pub(crate) related_anomalies: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomaly>>,
     pub(crate) category: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationBuilder {
@@ -154,17 +144,12 @@ impl RecommendationBuilder {
         self
     }
     /// <p> Events that are related to the problem. Use these events to learn more about what's happening and to help address the issue. </p>
-    pub fn set_related_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEvent>>,
-    ) -> Self {
+    pub fn set_related_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEvent>>) -> Self {
         self.related_events = input;
         self
     }
     /// <p> Events that are related to the problem. Use these events to learn more about what's happening and to help address the issue. </p>
-    pub fn get_related_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEvent>> {
+    pub fn get_related_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEvent>> {
         &self.related_events
     }
     /// Appends an item to `related_anomalies`.
@@ -179,17 +164,12 @@ impl RecommendationBuilder {
         self
     }
     /// <p> Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help address the issue. </p>
-    pub fn set_related_anomalies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomaly>>,
-    ) -> Self {
+    pub fn set_related_anomalies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomaly>>) -> Self {
         self.related_anomalies = input;
         self
     }
     /// <p> Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help address the issue. </p>
-    pub fn get_related_anomalies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomaly>> {
+    pub fn get_related_anomalies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomaly>> {
         &self.related_anomalies
     }
     /// <p>The category type of the recommendation.</p>

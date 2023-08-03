@@ -37,9 +37,7 @@ impl BatchGetCommitsError {
 
 /// A builder for [`BatchGetCommitsError`](crate::types::BatchGetCommitsError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCommitsErrorBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl BatchGetCommitsErrorBuilder {
         &self.error_code
     }
     /// <p>An error message that provides detail about why the commit ID either was not found or was not valid.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An error message that provides detail about why the commit ID either was not found or was not valid.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

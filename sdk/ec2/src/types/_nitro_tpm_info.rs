@@ -23,9 +23,7 @@ impl NitroTpmInfo {
 
 /// A builder for [`NitroTpmInfo`](crate::types::NitroTpmInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NitroTpmInfoBuilder {
     pub(crate) supported_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -35,27 +33,19 @@ impl NitroTpmInfoBuilder {
     /// To override the contents of this collection use [`set_supported_versions`](Self::set_supported_versions).
     ///
     /// <p>Indicates the supported NitroTPM versions.</p>
-    pub fn supported_versions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supported_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_versions.unwrap_or_default();
         v.push(input.into());
         self.supported_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Indicates the supported NitroTPM versions.</p>
-    pub fn set_supported_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supported_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_versions = input;
         self
     }
     /// <p>Indicates the supported NitroTPM versions.</p>
-    pub fn get_supported_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_versions
     }
     /// Consumes the builder and constructs a [`NitroTpmInfo`](crate::types::NitroTpmInfo).

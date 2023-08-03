@@ -32,9 +32,7 @@ impl ImportDataSource {
 
 /// A builder for [`ImportDataSource`](crate::types::ImportDataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportDataSourceBuilder {
     pub(crate) s3_url: ::std::option::Option<::std::string::String>,
     pub(crate) data_format: ::std::option::Option<crate::types::DataFormat>,
@@ -63,10 +61,7 @@ impl ImportDataSourceBuilder {
         self
     }
     /// <p>The data format of the import job's data source.</p>
-    pub fn set_data_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DataFormat>,
-    ) -> Self {
+    pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormat>) -> Self {
         self.data_format = input;
         self
     }

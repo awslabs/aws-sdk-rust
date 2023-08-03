@@ -36,18 +36,14 @@ impl StopBotRecommendationInput {
 }
 impl StopBotRecommendationInput {
     /// Creates a new builder-style object to manufacture [`StopBotRecommendationInput`](crate::operation::stop_bot_recommendation::StopBotRecommendationInput).
-    pub fn builder(
-    ) -> crate::operation::stop_bot_recommendation::builders::StopBotRecommendationInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_bot_recommendation::builders::StopBotRecommendationInputBuilder {
         crate::operation::stop_bot_recommendation::builders::StopBotRecommendationInputBuilder::default()
     }
 }
 
 /// A builder for [`StopBotRecommendationInput`](crate::operation::stop_bot_recommendation::StopBotRecommendationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopBotRecommendationInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -98,18 +94,12 @@ impl StopBotRecommendationInputBuilder {
         &self.locale_id
     }
     /// <p>The unique identifier of the bot recommendation to be stopped.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the bot recommendation to be stopped.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_recommendation_id = input;
         self
     }
@@ -120,17 +110,13 @@ impl StopBotRecommendationInputBuilder {
     /// Consumes the builder and constructs a [`StopBotRecommendationInput`](crate::operation::stop_bot_recommendation::StopBotRecommendationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_bot_recommendation::StopBotRecommendationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_bot_recommendation::StopBotRecommendationInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                bot_recommendation_id: self.bot_recommendation_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_bot_recommendation::StopBotRecommendationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_bot_recommendation::StopBotRecommendationInput {
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+            bot_recommendation_id: self.bot_recommendation_id,
+        })
     }
 }

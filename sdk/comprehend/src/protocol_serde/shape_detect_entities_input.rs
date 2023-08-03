@@ -13,17 +13,12 @@ pub fn ser_detect_entities_input(
         object.key("EndpointArn").string(var_3.as_str());
     }
     if let Some(var_4) = &input.bytes {
-        object
-            .key("Bytes")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_4));
+        object.key("Bytes").string_unchecked(&::aws_smithy_types::base64::encode(var_4));
     }
     if let Some(var_5) = &input.document_reader_config {
         #[allow(unused_mut)]
         let mut object_6 = object.key("DocumentReaderConfig").start_object();
-        crate::protocol_serde::shape_document_reader_config::ser_document_reader_config(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_document_reader_config::ser_document_reader_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

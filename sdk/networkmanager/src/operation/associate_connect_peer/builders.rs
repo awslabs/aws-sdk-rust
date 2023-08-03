@@ -38,9 +38,7 @@ impl AssociateConnectPeerFluentBuilder {
         }
     }
     /// Access the AssociateConnectPeer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_connect_peer::builders::AssociateConnectPeerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::associate_connect_peer::builders::AssociateConnectPeerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl AssociateConnectPeerFluentBuilder {
             crate::operation::associate_connect_peer::AssociateConnectPeer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_connect_peer::AssociateConnectPeerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_connect_peer::AssociateConnectPeerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl AssociateConnectPeerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl AssociateConnectPeerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_connect_peer::AssociateConnectPeerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_connect_peer::AssociateConnectPeerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_connect_peer::AssociateConnectPeerError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl AssociateConnectPeerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_connect_peer::AssociateConnectPeerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_connect_peer::AssociateConnectPeerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_connect_peer::AssociateConnectPeerError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl AssociateConnectPeerFluentBuilder {
             crate::operation::associate_connect_peer::AssociateConnectPeer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_connect_peer::AssociateConnectPeerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_connect_peer::AssociateConnectPeerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of your global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of your global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -144,18 +125,12 @@ impl AssociateConnectPeerFluentBuilder {
         self.inner.get_global_network_id()
     }
     /// <p>The ID of the Connect peer.</p>
-    pub fn connect_peer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connect_peer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connect_peer_id(input.into());
         self
     }
     /// <p>The ID of the Connect peer.</p>
-    pub fn set_connect_peer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connect_peer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connect_peer_id(input);
         self
     }

@@ -5,16 +5,16 @@ pub use crate::operation::get_identity_provider_by_identifier::_get_identity_pro
 
 impl GetIdentityProviderByIdentifierInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_identity_provider_by_identifier();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetIdentityProviderByIdentifierInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIdentityProviderByIdentifierFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_identity_provider_by_identifier::builders::GetIdentityProviderByIdentifierInputBuilder,
+    inner: crate::operation::get_identity_provider_by_identifier::builders::GetIdentityProviderByIdentifierInputBuilder,
 }
 impl GetIdentityProviderByIdentifierFluentBuilder {
     /// Creates a new `GetIdentityProviderByIdentifier`.
@@ -37,15 +37,20 @@ impl GetIdentityProviderByIdentifierFluentBuilder {
         }
     }
     /// Access the GetIdentityProviderByIdentifier as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_identity_provider_by_identifier::builders::GetIdentityProviderByIdentifierInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_identity_provider_by_identifier::builders::GetIdentityProviderByIdentifierInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifier, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl GetIdentityProviderByIdentifierFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl GetIdentityProviderByIdentifierFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifier, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The user pool ID.</p>
@@ -109,18 +124,12 @@ impl GetIdentityProviderByIdentifierFluentBuilder {
         self.inner.get_user_pool_id()
     }
     /// <p>The IdP identifier.</p>
-    pub fn idp_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idp_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idp_identifier(input.into());
         self
     }
     /// <p>The IdP identifier.</p>
-    pub fn set_idp_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idp_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idp_identifier(input);
         self
     }

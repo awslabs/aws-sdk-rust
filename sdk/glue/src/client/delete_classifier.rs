@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_classifier::builders::DeleteClassifierFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_classifier::builders::DeleteClassifierFluentBuilder::set_name): <p>Name of the classifier to remove.</p>
     /// - On success, responds with [`DeleteClassifierOutput`](crate::operation::delete_classifier::DeleteClassifierOutput)
     /// - On failure, responds with [`SdkError<DeleteClassifierError>`](crate::operation::delete_classifier::DeleteClassifierError)
-    pub fn delete_classifier(
-        &self,
-    ) -> crate::operation::delete_classifier::builders::DeleteClassifierFluentBuilder {
-        crate::operation::delete_classifier::builders::DeleteClassifierFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_classifier(&self) -> crate::operation::delete_classifier::builders::DeleteClassifierFluentBuilder {
+        crate::operation::delete_classifier::builders::DeleteClassifierFluentBuilder::new(self.handle.clone())
     }
 }

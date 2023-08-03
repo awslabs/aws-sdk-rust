@@ -100,9 +100,7 @@ impl AnnotationStoreItem {
 
 /// A builder for [`AnnotationStoreItem`](crate::types::AnnotationStoreItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnnotationStoreItemBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,
@@ -138,10 +136,7 @@ impl AnnotationStoreItemBuilder {
         self
     }
     /// <p>The store's genome reference.</p>
-    pub fn set_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceItem>,
-    ) -> Self {
+    pub fn set_reference(mut self, input: ::std::option::Option<crate::types::ReferenceItem>) -> Self {
         self.reference = input;
         self
     }
@@ -197,10 +192,7 @@ impl AnnotationStoreItemBuilder {
         self
     }
     /// <p>The store's file format.</p>
-    pub fn set_store_format(
-        mut self,
-        input: ::std::option::Option<crate::types::StoreFormat>,
-    ) -> Self {
+    pub fn set_store_format(mut self, input: ::std::option::Option<crate::types::StoreFormat>) -> Self {
         self.store_format = input;
         self
     }
@@ -242,10 +234,7 @@ impl AnnotationStoreItemBuilder {
         self
     }
     /// <p>The store's creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -259,10 +248,7 @@ impl AnnotationStoreItemBuilder {
         self
     }
     /// <p>When the store was updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -271,18 +257,12 @@ impl AnnotationStoreItemBuilder {
         &self.update_time
     }
     /// <p>The store's status message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The store's status message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

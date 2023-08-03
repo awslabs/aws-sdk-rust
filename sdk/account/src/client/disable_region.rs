@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`region_name(impl ::std::convert::Into<String>)`](crate::operation::disable_region::builders::DisableRegionFluentBuilder::region_name) / [`set_region_name(Option<String>)`](crate::operation::disable_region::builders::DisableRegionFluentBuilder::set_region_name): <p>Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>). When you disable a Region, Amazon Web Services performs actions to deactivate that Region in your account, such as destroying IAM resources in the Region. This process takes a few minutes for most accounts, but this can take several hours. You cannot enable the Region until the disabling process is fully completed.</p>
     /// - On success, responds with [`DisableRegionOutput`](crate::operation::disable_region::DisableRegionOutput)
     /// - On failure, responds with [`SdkError<DisableRegionError>`](crate::operation::disable_region::DisableRegionError)
-    pub fn disable_region(
-        &self,
-    ) -> crate::operation::disable_region::builders::DisableRegionFluentBuilder {
-        crate::operation::disable_region::builders::DisableRegionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disable_region(&self) -> crate::operation::disable_region::builders::DisableRegionFluentBuilder {
+        crate::operation::disable_region::builders::DisableRegionFluentBuilder::new(self.handle.clone())
     }
 }

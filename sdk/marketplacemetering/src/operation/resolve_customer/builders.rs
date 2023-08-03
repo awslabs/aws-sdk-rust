@@ -10,10 +10,7 @@ impl ResolveCustomerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::resolve_customer::ResolveCustomerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_customer::ResolveCustomerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_customer::ResolveCustomerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.resolve_customer();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl ResolveCustomerFluentBuilder {
         }
     }
     /// Access the ResolveCustomer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::resolve_customer::builders::ResolveCustomerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::resolve_customer::builders::ResolveCustomerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl ResolveCustomerFluentBuilder {
             crate::operation::resolve_customer::ResolveCustomer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_customer::ResolveCustomerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_customer::ResolveCustomerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl ResolveCustomerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl ResolveCustomerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resolve_customer::ResolveCustomerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_customer::ResolveCustomerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_customer::ResolveCustomerError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl ResolveCustomerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resolve_customer::ResolveCustomerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_customer::ResolveCustomerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_customer::ResolveCustomerError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl ResolveCustomerFluentBuilder {
             crate::operation::resolve_customer::ResolveCustomer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::resolve_customer::ResolveCustomerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_customer::ResolveCustomerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
-    pub fn registration_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registration_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registration_token(input.into());
         self
     }
     /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
-    pub fn set_registration_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registration_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_registration_token(input);
         self
     }

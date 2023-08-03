@@ -24,8 +24,7 @@ pub struct SpotMarketOptions {
     pub valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
     #[doc(hidden)]
-    pub instance_interruption_behavior:
-        ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
+    pub instance_interruption_behavior: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
 }
 impl SpotMarketOptions {
     /// <p>The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
@@ -51,9 +50,7 @@ impl SpotMarketOptions {
         self.valid_until.as_ref()
     }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
-    pub fn instance_interruption_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceInterruptionBehavior> {
+    pub fn instance_interruption_behavior(&self) -> ::std::option::Option<&crate::types::InstanceInterruptionBehavior> {
         self.instance_interruption_behavior.as_ref()
     }
 }
@@ -66,16 +63,13 @@ impl SpotMarketOptions {
 
 /// A builder for [`SpotMarketOptions`](crate::types::SpotMarketOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpotMarketOptionsBuilder {
     pub(crate) max_price: ::std::option::Option<::std::string::String>,
     pub(crate) spot_instance_type: ::std::option::Option<crate::types::SpotInstanceType>,
     pub(crate) block_duration_minutes: ::std::option::Option<i32>,
     pub(crate) valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) instance_interruption_behavior:
-        ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
+    pub(crate) instance_interruption_behavior: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
 }
 impl SpotMarketOptionsBuilder {
     /// <p>The maximum hourly price that you're willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
@@ -104,10 +98,7 @@ impl SpotMarketOptionsBuilder {
         self
     }
     /// <p>The Spot Instance request type. For <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>, persistent Spot Instance requests are only supported when the instance interruption behavior is either <code>hibernate</code> or <code>stop</code>.</p>
-    pub fn set_spot_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SpotInstanceType>,
-    ) -> Self {
+    pub fn set_spot_instance_type(mut self, input: ::std::option::Option<crate::types::SpotInstanceType>) -> Self {
         self.spot_instance_type = input;
         self
     }
@@ -143,10 +134,7 @@ impl SpotMarketOptionsBuilder {
     /// <li> <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it.</p> </li>
     /// <li> <p>For a one-time request, <code>ValidUntil</code> is not supported. The request remains active until all instances launch or you cancel the request.</p> </li>
     /// </ul>
-    pub fn set_valid_until(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_valid_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.valid_until = input;
         self
     }
@@ -159,25 +147,17 @@ impl SpotMarketOptionsBuilder {
         &self.valid_until
     }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
-    pub fn instance_interruption_behavior(
-        mut self,
-        input: crate::types::InstanceInterruptionBehavior,
-    ) -> Self {
+    pub fn instance_interruption_behavior(mut self, input: crate::types::InstanceInterruptionBehavior) -> Self {
         self.instance_interruption_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
-    pub fn set_instance_interruption_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
-    ) -> Self {
+    pub fn set_instance_interruption_behavior(mut self, input: ::std::option::Option<crate::types::InstanceInterruptionBehavior>) -> Self {
         self.instance_interruption_behavior = input;
         self
     }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
-    pub fn get_instance_interruption_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceInterruptionBehavior> {
+    pub fn get_instance_interruption_behavior(&self) -> &::std::option::Option<crate::types::InstanceInterruptionBehavior> {
         &self.instance_interruption_behavior
     }
     /// Consumes the builder and constructs a [`SpotMarketOptions`](crate::types::SpotMarketOptions).

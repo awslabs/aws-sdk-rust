@@ -78,9 +78,7 @@ impl ListSchemasInput {
 
 /// A builder for [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchemasInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
@@ -94,18 +92,12 @@ pub struct ListSchemasInputBuilder {
 }
 impl ListSchemasInputBuilder {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -156,18 +148,12 @@ impl ListSchemasInputBuilder {
         &self.database
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-    pub fn connected_database(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connected_database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connected_database = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-    pub fn set_connected_database(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connected_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connected_database = input;
         self
     }
@@ -176,18 +162,12 @@ impl ListSchemasInputBuilder {
         &self.connected_database
     }
     /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. </p>
-    pub fn schema_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. </p>
-    pub fn set_schema_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_pattern = input;
         self
     }
@@ -224,18 +204,12 @@ impl ListSchemasInputBuilder {
         &self.max_results
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workgroup_name = input;
         self
     }
@@ -244,12 +218,7 @@ impl ListSchemasInputBuilder {
         &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_schemas::ListSchemasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_schemas::ListSchemasInput {
             cluster_identifier: self.cluster_identifier,
             secret_arn: self.secret_arn,

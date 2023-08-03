@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetParticipantOutput`](crate::operation::get_participant::GetParticipantOutput) with field(s):
     ///   - [`participant(Option<Participant>)`](crate::operation::get_participant::GetParticipantOutput::participant): <p>The participant that is returned.</p>
     /// - On failure, responds with [`SdkError<GetParticipantError>`](crate::operation::get_participant::GetParticipantError)
-    pub fn get_participant(
-        &self,
-    ) -> crate::operation::get_participant::builders::GetParticipantFluentBuilder {
-        crate::operation::get_participant::builders::GetParticipantFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_participant(&self) -> crate::operation::get_participant::builders::GetParticipantFluentBuilder {
+        crate::operation::get_participant::builders::GetParticipantFluentBuilder::new(self.handle.clone())
     }
 }

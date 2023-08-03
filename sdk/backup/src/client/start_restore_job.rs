@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`StartRestoreJobOutput`](crate::operation::start_restore_job::StartRestoreJobOutput) with field(s):
     ///   - [`restore_job_id(Option<String>)`](crate::operation::start_restore_job::StartRestoreJobOutput::restore_job_id): <p>Uniquely identifies the job that restores a recovery point.</p>
     /// - On failure, responds with [`SdkError<StartRestoreJobError>`](crate::operation::start_restore_job::StartRestoreJobError)
-    pub fn start_restore_job(
-        &self,
-    ) -> crate::operation::start_restore_job::builders::StartRestoreJobFluentBuilder {
-        crate::operation::start_restore_job::builders::StartRestoreJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_restore_job(&self) -> crate::operation::start_restore_job::builders::StartRestoreJobFluentBuilder {
+        crate::operation::start_restore_job::builders::StartRestoreJobFluentBuilder::new(self.handle.clone())
     }
 }

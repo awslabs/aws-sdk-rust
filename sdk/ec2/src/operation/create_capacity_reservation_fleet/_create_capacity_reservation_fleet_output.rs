@@ -32,8 +32,7 @@ pub struct CreateCapacityReservationFleetOutput {
     pub tenancy: ::std::option::Option<crate::types::FleetCapacityReservationTenancy>,
     /// <p>Information about the individual Capacity Reservations in the Capacity Reservation Fleet.</p>
     #[doc(hidden)]
-    pub fleet_capacity_reservations:
-        ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>>,
+    pub fleet_capacity_reservations: ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>>,
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
     #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -57,9 +56,7 @@ impl CreateCapacityReservationFleetOutput {
         self.total_fulfilled_capacity
     }
     /// <p>The instance matching criteria for the Capacity Reservation Fleet.</p>
-    pub fn instance_match_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FleetInstanceMatchCriteria> {
+    pub fn instance_match_criteria(&self) -> ::std::option::Option<&crate::types::FleetInstanceMatchCriteria> {
         self.instance_match_criteria.as_ref()
     }
     /// <p>The allocation strategy used by the Capacity Reservation Fleet.</p>
@@ -79,9 +76,7 @@ impl CreateCapacityReservationFleetOutput {
         self.tenancy.as_ref()
     }
     /// <p>Information about the individual Capacity Reservations in the Capacity Reservation Fleet.</p>
-    pub fn fleet_capacity_reservations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FleetCapacityReservation]> {
+    pub fn fleet_capacity_reservations(&self) -> ::std::option::Option<&[crate::types::FleetCapacityReservation]> {
         self.fleet_capacity_reservations.as_deref()
     }
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
@@ -96,53 +91,41 @@ impl ::aws_http::request_id::RequestId for CreateCapacityReservationFleetOutput 
 }
 impl CreateCapacityReservationFleetOutput {
     /// Creates a new builder-style object to manufacture [`CreateCapacityReservationFleetOutput`](crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput).
-    pub fn builder() -> crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetOutputBuilder{
+    pub fn builder() -> crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetOutputBuilder {
         crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCapacityReservationFleetOutput`](crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCapacityReservationFleetOutputBuilder {
     pub(crate) capacity_reservation_fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::CapacityReservationFleetState>,
     pub(crate) total_target_capacity: ::std::option::Option<i32>,
     pub(crate) total_fulfilled_capacity: ::std::option::Option<f64>,
-    pub(crate) instance_match_criteria:
-        ::std::option::Option<crate::types::FleetInstanceMatchCriteria>,
+    pub(crate) instance_match_criteria: ::std::option::Option<crate::types::FleetInstanceMatchCriteria>,
     pub(crate) allocation_strategy: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tenancy: ::std::option::Option<crate::types::FleetCapacityReservationTenancy>,
-    pub(crate) fleet_capacity_reservations:
-        ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>>,
+    pub(crate) fleet_capacity_reservations: ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl CreateCapacityReservationFleetOutputBuilder {
     /// <p>The ID of the Capacity Reservation Fleet.</p>
-    pub fn capacity_reservation_fleet_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_fleet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation Fleet.</p>
-    pub fn set_capacity_reservation_fleet_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_fleet_id = input;
         self
     }
     /// <p>The ID of the Capacity Reservation Fleet.</p>
-    pub fn get_capacity_reservation_fleet_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_capacity_reservation_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_reservation_fleet_id
     }
     /// <p>The status of the Capacity Reservation Fleet.</p>
@@ -151,10 +134,7 @@ impl CreateCapacityReservationFleetOutputBuilder {
         self
     }
     /// <p>The status of the Capacity Reservation Fleet.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationFleetState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CapacityReservationFleetState>) -> Self {
         self.state = input;
         self
     }
@@ -191,40 +171,26 @@ impl CreateCapacityReservationFleetOutputBuilder {
         &self.total_fulfilled_capacity
     }
     /// <p>The instance matching criteria for the Capacity Reservation Fleet.</p>
-    pub fn instance_match_criteria(
-        mut self,
-        input: crate::types::FleetInstanceMatchCriteria,
-    ) -> Self {
+    pub fn instance_match_criteria(mut self, input: crate::types::FleetInstanceMatchCriteria) -> Self {
         self.instance_match_criteria = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instance matching criteria for the Capacity Reservation Fleet.</p>
-    pub fn set_instance_match_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FleetInstanceMatchCriteria>,
-    ) -> Self {
+    pub fn set_instance_match_criteria(mut self, input: ::std::option::Option<crate::types::FleetInstanceMatchCriteria>) -> Self {
         self.instance_match_criteria = input;
         self
     }
     /// <p>The instance matching criteria for the Capacity Reservation Fleet.</p>
-    pub fn get_instance_match_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::FleetInstanceMatchCriteria> {
+    pub fn get_instance_match_criteria(&self) -> &::std::option::Option<crate::types::FleetInstanceMatchCriteria> {
         &self.instance_match_criteria
     }
     /// <p>The allocation strategy used by the Capacity Reservation Fleet.</p>
-    pub fn allocation_strategy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_strategy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_strategy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The allocation strategy used by the Capacity Reservation Fleet.</p>
-    pub fn set_allocation_strategy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allocation_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allocation_strategy = input;
         self
     }
@@ -238,10 +204,7 @@ impl CreateCapacityReservationFleetOutputBuilder {
         self
     }
     /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -255,10 +218,7 @@ impl CreateCapacityReservationFleetOutputBuilder {
         self
     }
     /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date = input;
         self
     }
@@ -272,17 +232,12 @@ impl CreateCapacityReservationFleetOutputBuilder {
         self
     }
     /// <p>Indicates the tenancy of Capacity Reservation Fleet.</p>
-    pub fn set_tenancy(
-        mut self,
-        input: ::std::option::Option<crate::types::FleetCapacityReservationTenancy>,
-    ) -> Self {
+    pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::FleetCapacityReservationTenancy>) -> Self {
         self.tenancy = input;
         self
     }
     /// <p>Indicates the tenancy of Capacity Reservation Fleet.</p>
-    pub fn get_tenancy(
-        &self,
-    ) -> &::std::option::Option<crate::types::FleetCapacityReservationTenancy> {
+    pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::FleetCapacityReservationTenancy> {
         &self.tenancy
     }
     /// Appends an item to `fleet_capacity_reservations`.
@@ -290,27 +245,19 @@ impl CreateCapacityReservationFleetOutputBuilder {
     /// To override the contents of this collection use [`set_fleet_capacity_reservations`](Self::set_fleet_capacity_reservations).
     ///
     /// <p>Information about the individual Capacity Reservations in the Capacity Reservation Fleet.</p>
-    pub fn fleet_capacity_reservations(
-        mut self,
-        input: crate::types::FleetCapacityReservation,
-    ) -> Self {
+    pub fn fleet_capacity_reservations(mut self, input: crate::types::FleetCapacityReservation) -> Self {
         let mut v = self.fleet_capacity_reservations.unwrap_or_default();
         v.push(input);
         self.fleet_capacity_reservations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the individual Capacity Reservations in the Capacity Reservation Fleet.</p>
-    pub fn set_fleet_capacity_reservations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>>,
-    ) -> Self {
+    pub fn set_fleet_capacity_reservations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>>) -> Self {
         self.fleet_capacity_reservations = input;
         self
     }
     /// <p>Information about the individual Capacity Reservations in the Capacity Reservation Fleet.</p>
-    pub fn get_fleet_capacity_reservations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>> {
+    pub fn get_fleet_capacity_reservations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>> {
         &self.fleet_capacity_reservations
     }
     /// Appends an item to `tags`.
@@ -325,10 +272,7 @@ impl CreateCapacityReservationFleetOutputBuilder {
         self
     }
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -346,10 +290,7 @@ impl CreateCapacityReservationFleetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateCapacityReservationFleetOutput`](crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput
-    {
+    pub fn build(self) -> crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput {
         crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput {
             capacity_reservation_fleet_id: self.capacity_reservation_fleet_id,
             state: self.state,

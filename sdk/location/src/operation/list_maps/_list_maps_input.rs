@@ -33,9 +33,7 @@ impl ListMapsInput {
 
 /// A builder for [`ListMapsInput`](crate::operation::list_maps::ListMapsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMapsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -76,12 +74,7 @@ impl ListMapsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListMapsInput`](crate::operation::list_maps::ListMapsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_maps::ListMapsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_maps::ListMapsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_maps::ListMapsInput {
             max_results: self.max_results,
             next_token: self.next_token,

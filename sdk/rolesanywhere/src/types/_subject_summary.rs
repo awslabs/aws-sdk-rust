@@ -65,9 +65,7 @@ impl SubjectSummary {
 
 /// A builder for [`SubjectSummary`](crate::types::SubjectSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubjectSummaryBuilder {
     pub(crate) subject_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subject_id: ::std::option::Option<::std::string::String>,
@@ -140,10 +138,7 @@ impl SubjectSummaryBuilder {
         self
     }
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
-    pub fn set_last_seen_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_seen_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_seen_at = input;
         self
     }
@@ -157,10 +152,7 @@ impl SubjectSummaryBuilder {
         self
     }
     /// <p>The ISO-8601 time stamp of when the certificate was first used in a temporary credential request.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -174,10 +166,7 @@ impl SubjectSummaryBuilder {
         self
     }
     /// <p>The ISO-8601 timestamp when the subject was last updated. </p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

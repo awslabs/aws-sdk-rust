@@ -16,9 +16,7 @@ pub struct BatchGetAssetPropertyValueHistoryErrorEntry {
 }
 impl BatchGetAssetPropertyValueHistoryErrorEntry {
     /// <p>The error code.</p>
-    pub fn error_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BatchGetAssetPropertyValueHistoryErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::BatchGetAssetPropertyValueHistoryErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The associated error message.</p>
@@ -39,51 +37,34 @@ impl BatchGetAssetPropertyValueHistoryErrorEntry {
 
 /// A builder for [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::types::BatchGetAssetPropertyValueHistoryErrorEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistoryErrorEntryBuilder {
-    pub(crate) error_code:
-        ::std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>,
+    pub(crate) error_code: ::std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) entry_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetAssetPropertyValueHistoryErrorEntryBuilder {
     /// <p>The error code.</p>
-    pub fn error_code(
-        mut self,
-        input: crate::types::BatchGetAssetPropertyValueHistoryErrorCode,
-    ) -> Self {
+    pub fn error_code(mut self, input: crate::types::BatchGetAssetPropertyValueHistoryErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The error code.</p>
-    pub fn get_error_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode> {
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode> {
         &self.error_code
     }
     /// <p>The associated error message.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The associated error message.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

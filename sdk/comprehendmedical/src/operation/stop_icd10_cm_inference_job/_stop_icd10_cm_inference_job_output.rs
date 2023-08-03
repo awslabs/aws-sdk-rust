@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StopIcd10CmInferenceJobOutput {
 }
 impl StopIcd10CmInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`StopIcd10CmInferenceJobOutput`](crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_icd10_cm_inference_job::builders::StopIcd10CmInferenceJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_icd10_cm_inference_job::builders::StopIcd10CmInferenceJobOutputBuilder {
         crate::operation::stop_icd10_cm_inference_job::builders::StopIcd10CmInferenceJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopIcd10CmInferenceJobOutput`](crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopIcd10CmInferenceJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl StopIcd10CmInferenceJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopIcd10CmInferenceJobOutput`](crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput {
+    pub fn build(self) -> crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput {
         crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput {
             job_id: self.job_id,
             _request_id: self._request_id,

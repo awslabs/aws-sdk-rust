@@ -10,10 +10,7 @@ impl UpdateClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_cluster::UpdateClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_cluster::UpdateClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_cluster::UpdateClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_cluster();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateClusterFluentBuilder {
         }
     }
     /// Access the UpdateCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_cluster::builders::UpdateClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_cluster::builders::UpdateClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -138,17 +130,12 @@ impl UpdateClusterFluentBuilder {
         self
     }
     /// <p>The cluster settings for your cluster.</p>
-    pub fn set_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>>,
-    ) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>>) -> Self {
         self.inner = self.inner.set_settings(input);
         self
     }
     /// <p>The cluster settings for your cluster.</p>
-    pub fn get_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>> {
+    pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>> {
         self.inner.get_settings()
     }
     /// <p>The execute command configuration for the cluster.</p>
@@ -157,10 +144,7 @@ impl UpdateClusterFluentBuilder {
         self
     }
     /// <p>The execute command configuration for the cluster.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ClusterConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
@@ -170,27 +154,19 @@ impl UpdateClusterFluentBuilder {
     }
     /// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn service_connect_defaults(
-        mut self,
-        input: crate::types::ClusterServiceConnectDefaultsRequest,
-    ) -> Self {
+    pub fn service_connect_defaults(mut self, input: crate::types::ClusterServiceConnectDefaultsRequest) -> Self {
         self.inner = self.inner.service_connect_defaults(input);
         self
     }
     /// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_service_connect_defaults(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterServiceConnectDefaultsRequest>,
-    ) -> Self {
+    pub fn set_service_connect_defaults(mut self, input: ::std::option::Option<crate::types::ClusterServiceConnectDefaultsRequest>) -> Self {
         self.inner = self.inner.set_service_connect_defaults(input);
         self
     }
     /// <p>Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn get_service_connect_defaults(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClusterServiceConnectDefaultsRequest> {
+    pub fn get_service_connect_defaults(&self) -> &::std::option::Option<crate::types::ClusterServiceConnectDefaultsRequest> {
         self.inner.get_service_connect_defaults()
     }
 }

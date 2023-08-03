@@ -29,18 +29,14 @@ impl CreateModelPackageGroupInput {
 }
 impl CreateModelPackageGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateModelPackageGroupInput`](crate::operation::create_model_package_group::CreateModelPackageGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_model_package_group::builders::CreateModelPackageGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_model_package_group::builders::CreateModelPackageGroupInputBuilder {
         crate::operation::create_model_package_group::builders::CreateModelPackageGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateModelPackageGroupInput`](crate::operation::create_model_package_group::CreateModelPackageGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateModelPackageGroupInputBuilder {
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_group_description: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct CreateModelPackageGroupInputBuilder {
 }
 impl CreateModelPackageGroupInputBuilder {
     /// <p>The name of the model group.</p>
-    pub fn model_package_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model group.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_name = input;
         self
     }
@@ -68,25 +58,17 @@ impl CreateModelPackageGroupInputBuilder {
         &self.model_package_group_name
     }
     /// <p>A description for the model group.</p>
-    pub fn model_package_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the model group.</p>
-    pub fn set_model_package_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_description = input;
         self
     }
     /// <p>A description for the model group.</p>
-    pub fn get_model_package_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_model_package_group_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_package_group_description
     }
     /// Appends an item to `tags`.
@@ -101,10 +83,7 @@ impl CreateModelPackageGroupInputBuilder {
         self
     }
     /// <p>A list of key value pairs associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -119,12 +98,10 @@ impl CreateModelPackageGroupInputBuilder {
         crate::operation::create_model_package_group::CreateModelPackageGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_model_package_group::CreateModelPackageGroupInput {
-                model_package_group_name: self.model_package_group_name,
-                model_package_group_description: self.model_package_group_description,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_model_package_group::CreateModelPackageGroupInput {
+            model_package_group_name: self.model_package_group_name,
+            model_package_group_description: self.model_package_group_description,
+            tags: self.tags,
+        })
     }
 }

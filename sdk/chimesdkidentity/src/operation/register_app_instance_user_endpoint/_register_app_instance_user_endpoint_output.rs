@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for RegisterAppInstanceUserEndpointOutput
 }
 impl RegisterAppInstanceUserEndpointOutput {
     /// Creates a new builder-style object to manufacture [`RegisterAppInstanceUserEndpointOutput`](crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput).
-    pub fn builder() -> crate::operation::register_app_instance_user_endpoint::builders::RegisterAppInstanceUserEndpointOutputBuilder{
+    pub fn builder() -> crate::operation::register_app_instance_user_endpoint::builders::RegisterAppInstanceUserEndpointOutputBuilder {
         crate::operation::register_app_instance_user_endpoint::builders::RegisterAppInstanceUserEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterAppInstanceUserEndpointOutput`](crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterAppInstanceUserEndpointOutputBuilder {
     pub(crate) app_instance_user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct RegisterAppInstanceUserEndpointOutputBuilder {
 }
 impl RegisterAppInstanceUserEndpointOutputBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_user_arn = input;
         self
     }
@@ -88,15 +80,10 @@ impl RegisterAppInstanceUserEndpointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterAppInstanceUserEndpointOutput`](crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput
-    {
+    pub fn build(self) -> crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput {
         crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput {
-            app_instance_user_arn: self.app_instance_user_arn
-            ,
-            endpoint_id: self.endpoint_id
-            ,
+            app_instance_user_arn: self.app_instance_user_arn,
+            endpoint_id: self.endpoint_id,
             _request_id: self._request_id,
         }
     }

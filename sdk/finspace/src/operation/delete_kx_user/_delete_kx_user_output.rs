@@ -19,9 +19,7 @@ impl DeleteKxUserOutput {
 
 /// A builder for [`DeleteKxUserOutput`](crate::operation::delete_kx_user::DeleteKxUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteKxUserOutputBuilder {
     _request_id: Option<String>,
 }

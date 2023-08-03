@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`client_id(impl ::std::convert::Into<String>)`](crate::operation::remove_client_id_from_open_id_connect_provider::builders::RemoveClientIDFromOpenIDConnectProviderFluentBuilder::client_id) / [`set_client_id(Option<String>)`](crate::operation::remove_client_id_from_open_id_connect_provider::builders::RemoveClientIDFromOpenIDConnectProviderFluentBuilder::set_client_id): <p>The client ID (also known as audience) to remove from the IAM OIDC provider resource. For more information about client IDs, see <code>CreateOpenIDConnectProvider</code>.</p>
     /// - On success, responds with [`RemoveClientIdFromOpenIdConnectProviderOutput`](crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIdFromOpenIdConnectProviderOutput)
     /// - On failure, responds with [`SdkError<RemoveClientIDFromOpenIDConnectProviderError>`](crate::operation::remove_client_id_from_open_id_connect_provider::RemoveClientIDFromOpenIDConnectProviderError)
-    pub fn remove_client_id_from_open_id_connect_provider(&self) -> crate::operation::remove_client_id_from_open_id_connect_provider::builders::RemoveClientIDFromOpenIDConnectProviderFluentBuilder{
-        crate::operation::remove_client_id_from_open_id_connect_provider::builders::RemoveClientIDFromOpenIDConnectProviderFluentBuilder::new(self.handle.clone())
+    pub fn remove_client_id_from_open_id_connect_provider(
+        &self,
+    ) -> crate::operation::remove_client_id_from_open_id_connect_provider::builders::RemoveClientIDFromOpenIDConnectProviderFluentBuilder {
+        crate::operation::remove_client_id_from_open_id_connect_provider::builders::RemoveClientIDFromOpenIDConnectProviderFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

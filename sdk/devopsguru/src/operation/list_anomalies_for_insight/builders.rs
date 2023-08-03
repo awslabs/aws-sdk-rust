@@ -26,8 +26,7 @@ impl ListAnomaliesForInsightInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAnomaliesForInsightFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightInputBuilder,
+    inner: crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightInputBuilder,
 }
 impl ListAnomaliesForInsightFluentBuilder {
     /// Creates a new `ListAnomaliesForInsight`.
@@ -38,10 +37,7 @@ impl ListAnomaliesForInsightFluentBuilder {
         }
     }
     /// Access the ListAnomaliesForInsight as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListAnomaliesForInsightFluentBuilder {
             crate::operation::list_anomalies_for_insight::ListAnomaliesForInsight,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListAnomaliesForInsightFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListAnomaliesForInsightFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListAnomaliesForInsightFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListAnomaliesForInsightFluentBuilder {
             crate::operation::list_anomalies_for_insight::ListAnomaliesForInsight,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_anomalies_for_insight::paginator::ListAnomaliesForInsightPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_anomalies_for_insight::paginator::ListAnomaliesForInsightPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_anomalies_for_insight::paginator::ListAnomaliesForInsightPaginator {
         crate::operation::list_anomalies_for_insight::paginator::ListAnomaliesForInsightPaginator::new(self.handle, self.inner)
     }
     /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
@@ -153,10 +135,7 @@ impl ListAnomaliesForInsightFluentBuilder {
         self
     }
     /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
-    pub fn set_start_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::StartTimeRange>,
-    ) -> Self {
+    pub fn set_start_time_range(mut self, input: ::std::option::Option<crate::types::StartTimeRange>) -> Self {
         self.inner = self.inner.set_start_time_range(input);
         self
     }
@@ -212,17 +191,12 @@ impl ListAnomaliesForInsightFluentBuilder {
         self
     }
     /// <p> Specifies one or more service names that are used to list anomalies. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListAnomaliesForInsightFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListAnomaliesForInsightFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p> Specifies one or more service names that are used to list anomalies. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListAnomaliesForInsightFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListAnomaliesForInsightFilters> {
         self.inner.get_filters()
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEndpointOutput`](crate::operation::create_endpoint::CreateEndpointOutput) with field(s):
     ///   - [`endpoint_arn(Option<String>)`](crate::operation::create_endpoint::CreateEndpointOutput::endpoint_arn): <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     /// - On failure, responds with [`SdkError<CreateEndpointError>`](crate::operation::create_endpoint::CreateEndpointError)
-    pub fn create_endpoint(
-        &self,
-    ) -> crate::operation::create_endpoint::builders::CreateEndpointFluentBuilder {
-        crate::operation::create_endpoint::builders::CreateEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_endpoint(&self) -> crate::operation::create_endpoint::builders::CreateEndpointFluentBuilder {
+        crate::operation::create_endpoint::builders::CreateEndpointFluentBuilder::new(self.handle.clone())
     }
 }

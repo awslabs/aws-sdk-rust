@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for AddListenerCertificatesOutput {
 }
 impl AddListenerCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`AddListenerCertificatesOutput`](crate::operation::add_listener_certificates::AddListenerCertificatesOutput).
-    pub fn builder(
-    ) -> crate::operation::add_listener_certificates::builders::AddListenerCertificatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::add_listener_certificates::builders::AddListenerCertificatesOutputBuilder {
         crate::operation::add_listener_certificates::builders::AddListenerCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddListenerCertificatesOutput`](crate::operation::add_listener_certificates::AddListenerCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddListenerCertificatesOutputBuilder {
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl AddListenerCertificatesOutputBuilder {
         self
     }
     /// <p>Information about the certificates in the certificate list.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
-    ) -> Self {
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
         self.certificates = input;
         self
     }
     /// <p>Information about the certificates in the certificate list.</p>
-    pub fn get_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
         &self.certificates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,9 +64,7 @@ impl AddListenerCertificatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddListenerCertificatesOutput`](crate::operation::add_listener_certificates::AddListenerCertificatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::add_listener_certificates::AddListenerCertificatesOutput {
+    pub fn build(self) -> crate::operation::add_listener_certificates::AddListenerCertificatesOutput {
         crate::operation::add_listener_certificates::AddListenerCertificatesOutput {
             certificates: self.certificates,
             _request_id: self._request_id,

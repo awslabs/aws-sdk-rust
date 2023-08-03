@@ -21,10 +21,7 @@ pub fn ser_list_permissions_input(
     if let Some(var_5) = &input.principal {
         #[allow(unused_mut)]
         let mut object_6 = object.key("Principal").start_object();
-        crate::protocol_serde::shape_data_lake_principal::ser_data_lake_principal(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_data_lake_principal::ser_data_lake_principal(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.resource {

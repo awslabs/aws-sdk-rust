@@ -29,16 +29,14 @@ impl ListPermissionGroupsByUserInput {
 }
 impl ListPermissionGroupsByUserInput {
     /// Creates a new builder-style object to manufacture [`ListPermissionGroupsByUserInput`](crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserInput).
-    pub fn builder() -> crate::operation::list_permission_groups_by_user::builders::ListPermissionGroupsByUserInputBuilder{
+    pub fn builder() -> crate::operation::list_permission_groups_by_user::builders::ListPermissionGroupsByUserInputBuilder {
         crate::operation::list_permission_groups_by_user::builders::ListPermissionGroupsByUserInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPermissionGroupsByUserInput`](crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionGroupsByUserInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -94,12 +92,10 @@ impl ListPermissionGroupsByUserInputBuilder {
         crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserInput {
-                user_id: self.user_id,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserInput {
+            user_id: self.user_id,
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+        })
     }
 }

@@ -4,9 +4,7 @@ pub fn ser_create_explainability_export_input(
     input: &crate::operation::create_explainability_export::CreateExplainabilityExportInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.explainability_export_name {
-        object
-            .key("ExplainabilityExportName")
-            .string(var_1.as_str());
+        object.key("ExplainabilityExportName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.explainability_arn {
         object.key("ExplainabilityArn").string(var_2.as_str());

@@ -29,9 +29,7 @@ impl CreateServiceNetworkServiceAssociationOutput {
         self.id.as_deref()
     }
     /// <p>The operation's status.</p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ServiceNetworkServiceAssociationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceNetworkServiceAssociationStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
@@ -58,16 +56,14 @@ impl ::aws_http::request_id::RequestId for CreateServiceNetworkServiceAssociatio
 }
 impl CreateServiceNetworkServiceAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceNetworkServiceAssociationOutput`](crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput).
-    pub fn builder() -> crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationOutputBuilder {
         crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateServiceNetworkServiceAssociationOutput`](crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateServiceNetworkServiceAssociationOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus>,
@@ -98,17 +94,12 @@ impl CreateServiceNetworkServiceAssociationOutputBuilder {
         self
     }
     /// <p>The operation's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The operation's status.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus> {
         &self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
@@ -140,18 +131,12 @@ impl CreateServiceNetworkServiceAssociationOutputBuilder {
         &self.created_by
     }
     /// <p>The custom domain name of the service.</p>
-    pub fn custom_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom domain name of the service.</p>
-    pub fn set_custom_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_domain_name = input;
         self
     }
@@ -183,20 +168,14 @@ impl CreateServiceNetworkServiceAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateServiceNetworkServiceAssociationOutput`](crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput).
-    pub fn build(self) -> crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput{
+    pub fn build(self) -> crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput {
         crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput {
-            id: self.id
-            ,
-            status: self.status
-            ,
-            arn: self.arn
-            ,
-            created_by: self.created_by
-            ,
-            custom_domain_name: self.custom_domain_name
-            ,
-            dns_entry: self.dns_entry
-            ,
+            id: self.id,
+            status: self.status,
+            arn: self.arn,
+            created_by: self.created_by,
+            custom_domain_name: self.custom_domain_name,
+            dns_entry: self.dns_entry,
             _request_id: self._request_id,
         }
     }

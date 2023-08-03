@@ -10,10 +10,7 @@ impl CreateProjectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_project::CreateProjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_project::CreateProjectError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_project::CreateProjectError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_project();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateProjectFluentBuilder {
         }
     }
     /// Access the CreateProject as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_project::builders::CreateProjectInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_project::builders::CreateProjectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateProjectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl CreateProjectFluentBuilder {
         self.inner.get_project_name()
     }
     /// <p>A description for the project.</p>
-    pub fn project_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_description(input.into());
         self
     }
     /// <p>A description for the project.</p>
-    pub fn set_project_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_description(input);
         self
     }
@@ -149,25 +135,17 @@ impl CreateProjectFluentBuilder {
         self.inner.get_project_description()
     }
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn service_catalog_provisioning_details(
-        mut self,
-        input: crate::types::ServiceCatalogProvisioningDetails,
-    ) -> Self {
+    pub fn service_catalog_provisioning_details(mut self, input: crate::types::ServiceCatalogProvisioningDetails) -> Self {
         self.inner = self.inner.service_catalog_provisioning_details(input);
         self
     }
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn set_service_catalog_provisioning_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
-    ) -> Self {
+    pub fn set_service_catalog_provisioning_details(mut self, input: ::std::option::Option<crate::types::ServiceCatalogProvisioningDetails>) -> Self {
         self.inner = self.inner.set_service_catalog_provisioning_details(input);
         self
     }
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    pub fn get_service_catalog_provisioning_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceCatalogProvisioningDetails> {
+    pub fn get_service_catalog_provisioning_details(&self) -> &::std::option::Option<crate::types::ServiceCatalogProvisioningDetails> {
         self.inner.get_service_catalog_provisioning_details()
     }
     /// Appends an item to `Tags`.
@@ -180,10 +158,7 @@ impl CreateProjectFluentBuilder {
         self
     }
     /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

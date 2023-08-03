@@ -37,10 +37,7 @@ impl GetEndpointAttributesFluentBuilder {
         }
     }
     /// Access the GetEndpointAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_endpoint_attributes::builders::GetEndpointAttributesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_endpoint_attributes::builders::GetEndpointAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetEndpointAttributesFluentBuilder {
             crate::operation::get_endpoint_attributes::GetEndpointAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_endpoint_attributes::GetEndpointAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_endpoint_attributes::GetEndpointAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetEndpointAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetEndpointAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_endpoint_attributes::GetEndpointAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_endpoint_attributes::GetEndpointAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_endpoint_attributes::GetEndpointAttributesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetEndpointAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_endpoint_attributes::GetEndpointAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_endpoint_attributes::GetEndpointAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_endpoint_attributes::GetEndpointAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetEndpointAttributesFluentBuilder {
             crate::operation::get_endpoint_attributes::GetEndpointAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_endpoint_attributes::GetEndpointAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_endpoint_attributes::GetEndpointAttributesError>,
     > {
         self.customize_middleware().await
     }

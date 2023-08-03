@@ -36,9 +36,7 @@ impl ListTasksInput {
 
 /// A builder for [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTasksInputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::TaskState>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -88,12 +86,7 @@ impl ListTasksInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tasks::ListTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tasks::ListTasksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tasks::ListTasksInput {
             state: self.state,
             max_results: self.max_results,

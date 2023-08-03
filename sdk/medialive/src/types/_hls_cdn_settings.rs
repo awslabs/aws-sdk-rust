@@ -26,15 +26,11 @@ impl HlsCdnSettings {
         self.hls_akamai_settings.as_ref()
     }
     /// Hls Basic Put Settings
-    pub fn hls_basic_put_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsBasicPutSettings> {
+    pub fn hls_basic_put_settings(&self) -> ::std::option::Option<&crate::types::HlsBasicPutSettings> {
         self.hls_basic_put_settings.as_ref()
     }
     /// Hls Media Store Settings
-    pub fn hls_media_store_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HlsMediaStoreSettings> {
+    pub fn hls_media_store_settings(&self) -> ::std::option::Option<&crate::types::HlsMediaStoreSettings> {
         self.hls_media_store_settings.as_ref()
     }
     /// Hls S3 Settings
@@ -55,9 +51,7 @@ impl HlsCdnSettings {
 
 /// A builder for [`HlsCdnSettings`](crate::types::HlsCdnSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsCdnSettingsBuilder {
     pub(crate) hls_akamai_settings: ::std::option::Option<crate::types::HlsAkamaiSettings>,
     pub(crate) hls_basic_put_settings: ::std::option::Option<crate::types::HlsBasicPutSettings>,
@@ -72,17 +66,12 @@ impl HlsCdnSettingsBuilder {
         self
     }
     /// Hls Akamai Settings
-    pub fn set_hls_akamai_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsAkamaiSettings>,
-    ) -> Self {
+    pub fn set_hls_akamai_settings(mut self, input: ::std::option::Option<crate::types::HlsAkamaiSettings>) -> Self {
         self.hls_akamai_settings = input;
         self
     }
     /// Hls Akamai Settings
-    pub fn get_hls_akamai_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsAkamaiSettings> {
+    pub fn get_hls_akamai_settings(&self) -> &::std::option::Option<crate::types::HlsAkamaiSettings> {
         &self.hls_akamai_settings
     }
     /// Hls Basic Put Settings
@@ -91,17 +80,12 @@ impl HlsCdnSettingsBuilder {
         self
     }
     /// Hls Basic Put Settings
-    pub fn set_hls_basic_put_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsBasicPutSettings>,
-    ) -> Self {
+    pub fn set_hls_basic_put_settings(mut self, input: ::std::option::Option<crate::types::HlsBasicPutSettings>) -> Self {
         self.hls_basic_put_settings = input;
         self
     }
     /// Hls Basic Put Settings
-    pub fn get_hls_basic_put_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsBasicPutSettings> {
+    pub fn get_hls_basic_put_settings(&self) -> &::std::option::Option<crate::types::HlsBasicPutSettings> {
         &self.hls_basic_put_settings
     }
     /// Hls Media Store Settings
@@ -110,17 +94,12 @@ impl HlsCdnSettingsBuilder {
         self
     }
     /// Hls Media Store Settings
-    pub fn set_hls_media_store_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsMediaStoreSettings>,
-    ) -> Self {
+    pub fn set_hls_media_store_settings(mut self, input: ::std::option::Option<crate::types::HlsMediaStoreSettings>) -> Self {
         self.hls_media_store_settings = input;
         self
     }
     /// Hls Media Store Settings
-    pub fn get_hls_media_store_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsMediaStoreSettings> {
+    pub fn get_hls_media_store_settings(&self) -> &::std::option::Option<crate::types::HlsMediaStoreSettings> {
         &self.hls_media_store_settings
     }
     /// Hls S3 Settings
@@ -129,10 +108,7 @@ impl HlsCdnSettingsBuilder {
         self
     }
     /// Hls S3 Settings
-    pub fn set_hls_s3_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsS3Settings>,
-    ) -> Self {
+    pub fn set_hls_s3_settings(mut self, input: ::std::option::Option<crate::types::HlsS3Settings>) -> Self {
         self.hls_s3_settings = input;
         self
     }
@@ -146,17 +122,12 @@ impl HlsCdnSettingsBuilder {
         self
     }
     /// Hls Webdav Settings
-    pub fn set_hls_webdav_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsWebdavSettings>,
-    ) -> Self {
+    pub fn set_hls_webdav_settings(mut self, input: ::std::option::Option<crate::types::HlsWebdavSettings>) -> Self {
         self.hls_webdav_settings = input;
         self
     }
     /// Hls Webdav Settings
-    pub fn get_hls_webdav_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::HlsWebdavSettings> {
+    pub fn get_hls_webdav_settings(&self) -> &::std::option::Option<crate::types::HlsWebdavSettings> {
         &self.hls_webdav_settings
     }
     /// Consumes the builder and constructs a [`HlsCdnSettings`](crate::types::HlsCdnSettings).

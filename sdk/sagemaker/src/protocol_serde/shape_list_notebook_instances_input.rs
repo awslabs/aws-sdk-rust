@@ -45,19 +45,13 @@ pub fn ser_list_notebook_instances_input(
         object.key("StatusEquals").string(var_10.as_str());
     }
     if let Some(var_11) = &input.notebook_instance_lifecycle_config_name_contains {
-        object
-            .key("NotebookInstanceLifecycleConfigNameContains")
-            .string(var_11.as_str());
+        object.key("NotebookInstanceLifecycleConfigNameContains").string(var_11.as_str());
     }
     if let Some(var_12) = &input.default_code_repository_contains {
-        object
-            .key("DefaultCodeRepositoryContains")
-            .string(var_12.as_str());
+        object.key("DefaultCodeRepositoryContains").string(var_12.as_str());
     }
     if let Some(var_13) = &input.additional_code_repository_equals {
-        object
-            .key("AdditionalCodeRepositoryEquals")
-            .string(var_13.as_str());
+        object.key("AdditionalCodeRepositoryEquals").string(var_13.as_str());
     }
     Ok(())
 }

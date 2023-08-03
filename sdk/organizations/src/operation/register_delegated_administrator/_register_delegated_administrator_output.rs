@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RegisterDelegatedAdministratorOutput 
 }
 impl RegisterDelegatedAdministratorOutput {
     /// Creates a new builder-style object to manufacture [`RegisterDelegatedAdministratorOutput`](crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorOutput).
-    pub fn builder() -> crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorOutputBuilder{
+    pub fn builder() -> crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorOutputBuilder {
         crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterDelegatedAdministratorOutput`](crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterDelegatedAdministratorOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl RegisterDelegatedAdministratorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterDelegatedAdministratorOutput`](crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorOutput
-    {
+    pub fn build(self) -> crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorOutput {
         crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorOutput {
             _request_id: self._request_id,
         }

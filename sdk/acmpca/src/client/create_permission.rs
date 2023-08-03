@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`actions(Vec<ActionType>)`](crate::operation::create_permission::builders::CreatePermissionFluentBuilder::actions) / [`set_actions(Option<Vec<ActionType>>)`](crate::operation::create_permission::builders::CreatePermissionFluentBuilder::set_actions): <p>The actions that the specified Amazon Web Services service principal can use. These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.</p>
     /// - On success, responds with [`CreatePermissionOutput`](crate::operation::create_permission::CreatePermissionOutput)
     /// - On failure, responds with [`SdkError<CreatePermissionError>`](crate::operation::create_permission::CreatePermissionError)
-    pub fn create_permission(
-        &self,
-    ) -> crate::operation::create_permission::builders::CreatePermissionFluentBuilder {
-        crate::operation::create_permission::builders::CreatePermissionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_permission(&self) -> crate::operation::create_permission::builders::CreatePermissionFluentBuilder {
+        crate::operation::create_permission::builders::CreatePermissionFluentBuilder::new(self.handle.clone())
     }
 }

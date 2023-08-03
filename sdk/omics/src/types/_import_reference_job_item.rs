@@ -58,9 +58,7 @@ impl ImportReferenceJobItem {
 
 /// A builder for [`ImportReferenceJobItem`](crate::types::ImportReferenceJobItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportReferenceJobItemBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference_store_id: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl ImportReferenceJobItemBuilder {
         &self.id
     }
     /// <p>The job's reference store ID.</p>
-    pub fn reference_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's reference store ID.</p>
-    pub fn set_reference_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_store_id = input;
         self
     }
@@ -124,10 +116,7 @@ impl ImportReferenceJobItemBuilder {
         self
     }
     /// <p>The job's status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReferenceImportJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReferenceImportJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -141,10 +130,7 @@ impl ImportReferenceJobItemBuilder {
         self
     }
     /// <p>When the job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -158,10 +144,7 @@ impl ImportReferenceJobItemBuilder {
         self
     }
     /// <p>When the job completed.</p>
-    pub fn set_completion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completion_time = input;
         self
     }

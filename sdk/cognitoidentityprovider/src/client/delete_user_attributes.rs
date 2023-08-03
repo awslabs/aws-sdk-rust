@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`access_token(impl ::std::convert::Into<String>)`](crate::operation::delete_user_attributes::builders::DeleteUserAttributesFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::delete_user_attributes::builders::DeleteUserAttributesFluentBuilder::set_access_token): <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
     /// - On success, responds with [`DeleteUserAttributesOutput`](crate::operation::delete_user_attributes::DeleteUserAttributesOutput)
     /// - On failure, responds with [`SdkError<DeleteUserAttributesError>`](crate::operation::delete_user_attributes::DeleteUserAttributesError)
-    pub fn delete_user_attributes(
-        &self,
-    ) -> crate::operation::delete_user_attributes::builders::DeleteUserAttributesFluentBuilder {
-        crate::operation::delete_user_attributes::builders::DeleteUserAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_user_attributes(&self) -> crate::operation::delete_user_attributes::builders::DeleteUserAttributesFluentBuilder {
+        crate::operation::delete_user_attributes::builders::DeleteUserAttributesFluentBuilder::new(self.handle.clone())
     }
 }

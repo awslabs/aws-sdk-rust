@@ -7,14 +7,11 @@
 pub struct FilledMapFieldWells {
     /// <p>The aggregated field well of the filled map.</p>
     #[doc(hidden)]
-    pub filled_map_aggregated_field_wells:
-        ::std::option::Option<crate::types::FilledMapAggregatedFieldWells>,
+    pub filled_map_aggregated_field_wells: ::std::option::Option<crate::types::FilledMapAggregatedFieldWells>,
 }
 impl FilledMapFieldWells {
     /// <p>The aggregated field well of the filled map.</p>
-    pub fn filled_map_aggregated_field_wells(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FilledMapAggregatedFieldWells> {
+    pub fn filled_map_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::FilledMapAggregatedFieldWells> {
         self.filled_map_aggregated_field_wells.as_ref()
     }
 }
@@ -27,34 +24,23 @@ impl FilledMapFieldWells {
 
 /// A builder for [`FilledMapFieldWells`](crate::types::FilledMapFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilledMapFieldWellsBuilder {
-    pub(crate) filled_map_aggregated_field_wells:
-        ::std::option::Option<crate::types::FilledMapAggregatedFieldWells>,
+    pub(crate) filled_map_aggregated_field_wells: ::std::option::Option<crate::types::FilledMapAggregatedFieldWells>,
 }
 impl FilledMapFieldWellsBuilder {
     /// <p>The aggregated field well of the filled map.</p>
-    pub fn filled_map_aggregated_field_wells(
-        mut self,
-        input: crate::types::FilledMapAggregatedFieldWells,
-    ) -> Self {
+    pub fn filled_map_aggregated_field_wells(mut self, input: crate::types::FilledMapAggregatedFieldWells) -> Self {
         self.filled_map_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregated field well of the filled map.</p>
-    pub fn set_filled_map_aggregated_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::FilledMapAggregatedFieldWells>,
-    ) -> Self {
+    pub fn set_filled_map_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::FilledMapAggregatedFieldWells>) -> Self {
         self.filled_map_aggregated_field_wells = input;
         self
     }
     /// <p>The aggregated field well of the filled map.</p>
-    pub fn get_filled_map_aggregated_field_wells(
-        &self,
-    ) -> &::std::option::Option<crate::types::FilledMapAggregatedFieldWells> {
+    pub fn get_filled_map_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::FilledMapAggregatedFieldWells> {
         &self.filled_map_aggregated_field_wells
     }
     /// Consumes the builder and constructs a [`FilledMapFieldWells`](crate::types::FilledMapFieldWells).

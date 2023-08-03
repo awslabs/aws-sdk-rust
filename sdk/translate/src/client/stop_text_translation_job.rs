@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::stop_text_translation_job::StopTextTranslationJobOutput::job_id): <p>The job ID of the stopped batch translation job.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::stop_text_translation_job::StopTextTranslationJobOutput::job_status): <p>The status of the designated job. Upon successful completion, the job's status will be <code>STOPPED</code>.</p>
     /// - On failure, responds with [`SdkError<StopTextTranslationJobError>`](crate::operation::stop_text_translation_job::StopTextTranslationJobError)
-    pub fn stop_text_translation_job(
-        &self,
-    ) -> crate::operation::stop_text_translation_job::builders::StopTextTranslationJobFluentBuilder
-    {
+    pub fn stop_text_translation_job(&self) -> crate::operation::stop_text_translation_job::builders::StopTextTranslationJobFluentBuilder {
         crate::operation::stop_text_translation_job::builders::StopTextTranslationJobFluentBuilder::new(self.handle.clone())
     }
 }

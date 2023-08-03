@@ -6,10 +6,7 @@ pub fn ser_start_multicast_group_session_input(
     if let Some(var_1) = &input.lo_ra_wan {
         #[allow(unused_mut)]
         let mut object_2 = object.key("LoRaWAN").start_object();
-        crate::protocol_serde::shape_lo_ra_wan_multicast_session::ser_lo_ra_wan_multicast_session(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_lo_ra_wan_multicast_session::ser_lo_ra_wan_multicast_session(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

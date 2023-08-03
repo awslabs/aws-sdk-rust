@@ -18,9 +18,7 @@ impl SmsSandboxPhoneNumber {
         self.phone_number.as_deref()
     }
     /// <p>The destination phone number's verification status.</p>
-    pub fn status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SmsSandboxPhoneNumberVerificationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::SmsSandboxPhoneNumberVerificationStatus> {
         self.status.as_ref()
     }
 }
@@ -33,9 +31,7 @@ impl SmsSandboxPhoneNumber {
 
 /// A builder for [`SmsSandboxPhoneNumber`](crate::types::SmsSandboxPhoneNumber).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SmsSandboxPhoneNumberBuilder {
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::SmsSandboxPhoneNumberVerificationStatus>,
@@ -61,17 +57,12 @@ impl SmsSandboxPhoneNumberBuilder {
         self
     }
     /// <p>The destination phone number's verification status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsSandboxPhoneNumberVerificationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SmsSandboxPhoneNumberVerificationStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The destination phone number's verification status.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmsSandboxPhoneNumberVerificationStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SmsSandboxPhoneNumberVerificationStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`SmsSandboxPhoneNumber`](crate::types::SmsSandboxPhoneNumber).

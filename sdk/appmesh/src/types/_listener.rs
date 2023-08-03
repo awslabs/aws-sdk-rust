@@ -45,9 +45,7 @@ impl Listener {
         self.outlier_detection.as_ref()
     }
     /// <p>The connection pool information for the listener.</p>
-    pub fn connection_pool(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VirtualNodeConnectionPool> {
+    pub fn connection_pool(&self) -> ::std::option::Option<&crate::types::VirtualNodeConnectionPool> {
         self.connection_pool.as_ref()
     }
 }
@@ -60,9 +58,7 @@ impl Listener {
 
 /// A builder for [`Listener`](crate::types::Listener).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListenerBuilder {
     pub(crate) port_mapping: ::std::option::Option<crate::types::PortMapping>,
     pub(crate) tls: ::std::option::Option<crate::types::ListenerTls>,
@@ -78,10 +74,7 @@ impl ListenerBuilder {
         self
     }
     /// <p>The port mapping information for the listener.</p>
-    pub fn set_port_mapping(
-        mut self,
-        input: ::std::option::Option<crate::types::PortMapping>,
-    ) -> Self {
+    pub fn set_port_mapping(mut self, input: ::std::option::Option<crate::types::PortMapping>) -> Self {
         self.port_mapping = input;
         self
     }
@@ -109,10 +102,7 @@ impl ListenerBuilder {
         self
     }
     /// <p>The health check information for the listener.</p>
-    pub fn set_health_check(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckPolicy>,
-    ) -> Self {
+    pub fn set_health_check(mut self, input: ::std::option::Option<crate::types::HealthCheckPolicy>) -> Self {
         self.health_check = input;
         self
     }
@@ -126,10 +116,7 @@ impl ListenerBuilder {
         self
     }
     /// <p>An object that represents timeouts for different protocols.</p>
-    pub fn set_timeout(
-        mut self,
-        input: ::std::option::Option<crate::types::ListenerTimeout>,
-    ) -> Self {
+    pub fn set_timeout(mut self, input: ::std::option::Option<crate::types::ListenerTimeout>) -> Self {
         self.timeout = input;
         self
     }
@@ -143,10 +130,7 @@ impl ListenerBuilder {
         self
     }
     /// <p>The outlier detection information for the listener.</p>
-    pub fn set_outlier_detection(
-        mut self,
-        input: ::std::option::Option<crate::types::OutlierDetection>,
-    ) -> Self {
+    pub fn set_outlier_detection(mut self, input: ::std::option::Option<crate::types::OutlierDetection>) -> Self {
         self.outlier_detection = input;
         self
     }
@@ -160,17 +144,12 @@ impl ListenerBuilder {
         self
     }
     /// <p>The connection pool information for the listener.</p>
-    pub fn set_connection_pool(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualNodeConnectionPool>,
-    ) -> Self {
+    pub fn set_connection_pool(mut self, input: ::std::option::Option<crate::types::VirtualNodeConnectionPool>) -> Self {
         self.connection_pool = input;
         self
     }
     /// <p>The connection pool information for the listener.</p>
-    pub fn get_connection_pool(
-        &self,
-    ) -> &::std::option::Option<crate::types::VirtualNodeConnectionPool> {
+    pub fn get_connection_pool(&self) -> &::std::option::Option<crate::types::VirtualNodeConnectionPool> {
         &self.connection_pool
     }
     /// Consumes the builder and constructs a [`Listener`](crate::types::Listener).

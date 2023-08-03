@@ -26,8 +26,7 @@ impl ListTextTranslationJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTextTranslationJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsInputBuilder,
+    inner: crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsInputBuilder,
 }
 impl ListTextTranslationJobsFluentBuilder {
     /// Creates a new `ListTextTranslationJobs`.
@@ -38,10 +37,7 @@ impl ListTextTranslationJobsFluentBuilder {
         }
     }
     /// Access the ListTextTranslationJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListTextTranslationJobsFluentBuilder {
             crate::operation::list_text_translation_jobs::ListTextTranslationJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_text_translation_jobs::ListTextTranslationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_text_translation_jobs::ListTextTranslationJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListTextTranslationJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListTextTranslationJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_text_translation_jobs::ListTextTranslationJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_text_translation_jobs::ListTextTranslationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_text_translation_jobs::ListTextTranslationJobsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListTextTranslationJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_text_translation_jobs::ListTextTranslationJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_text_translation_jobs::ListTextTranslationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_text_translation_jobs::ListTextTranslationJobsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListTextTranslationJobsFluentBuilder {
             crate::operation::list_text_translation_jobs::ListTextTranslationJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_text_translation_jobs::ListTextTranslationJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_text_translation_jobs::ListTextTranslationJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_text_translation_jobs::paginator::ListTextTranslationJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_text_translation_jobs::paginator::ListTextTranslationJobsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_text_translation_jobs::paginator::ListTextTranslationJobsPaginator {
         crate::operation::list_text_translation_jobs::paginator::ListTextTranslationJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
@@ -139,10 +121,7 @@ impl ListTextTranslationJobsFluentBuilder {
         self
     }
     /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TextTranslationJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::TextTranslationJobFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

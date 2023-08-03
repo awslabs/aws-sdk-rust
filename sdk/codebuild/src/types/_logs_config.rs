@@ -30,9 +30,7 @@ impl LogsConfig {
 
 /// A builder for [`LogsConfig`](crate::types::LogsConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogsConfigBuilder {
     pub(crate) cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogsConfig>,
     pub(crate) s3_logs: ::std::option::Option<crate::types::S3LogsConfig>,
@@ -44,17 +42,12 @@ impl LogsConfigBuilder {
         self
     }
     /// <p> Information about CloudWatch Logs for a build project. CloudWatch Logs are enabled by default. </p>
-    pub fn set_cloud_watch_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogsConfig>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsConfig>) -> Self {
         self.cloud_watch_logs = input;
         self
     }
     /// <p> Information about CloudWatch Logs for a build project. CloudWatch Logs are enabled by default. </p>
-    pub fn get_cloud_watch_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLogsConfig> {
+    pub fn get_cloud_watch_logs(&self) -> &::std::option::Option<crate::types::CloudWatchLogsConfig> {
         &self.cloud_watch_logs
     }
     /// <p> Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. </p>

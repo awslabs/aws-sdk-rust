@@ -10,10 +10,7 @@ impl DeleteVpcEndpointsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_vpc_endpoints();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DeleteVpcEndpointsFluentBuilder {
         }
     }
     /// Access the DeleteVpcEndpoints as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_vpc_endpoints::builders::DeleteVpcEndpointsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_vpc_endpoints::builders::DeleteVpcEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DeleteVpcEndpointsFluentBuilder {
             crate::operation::delete_vpc_endpoints::DeleteVpcEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DeleteVpcEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DeleteVpcEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DeleteVpcEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl DeleteVpcEndpointsFluentBuilder {
             crate::operation::delete_vpc_endpoints::DeleteVpcEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsError>,
     > {
         self.customize_middleware().await
     }
@@ -144,25 +128,17 @@ impl DeleteVpcEndpointsFluentBuilder {
     /// To override the contents of this collection use [`set_vpc_endpoint_ids`](Self::set_vpc_endpoint_ids).
     ///
     /// <p>The IDs of the VPC endpoints.</p>
-    pub fn vpc_endpoint_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_endpoint_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_endpoint_ids(input.into());
         self
     }
     /// <p>The IDs of the VPC endpoints.</p>
-    pub fn set_vpc_endpoint_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_endpoint_ids(input);
         self
     }
     /// <p>The IDs of the VPC endpoints.</p>
-    pub fn get_vpc_endpoint_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_endpoint_ids()
     }
 }

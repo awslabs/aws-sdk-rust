@@ -22,8 +22,7 @@ pub struct Voice {
     /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
     #[doc(hidden)]
-    pub additional_language_codes:
-        ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
+    pub additional_language_codes: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
     /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
     #[doc(hidden)]
     pub supported_engines: ::std::option::Option<::std::vec::Vec<crate::types::Engine>>,
@@ -51,9 +50,7 @@ impl Voice {
     }
     /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
-    pub fn additional_language_codes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LanguageCode]> {
+    pub fn additional_language_codes(&self) -> ::std::option::Option<&[crate::types::LanguageCode]> {
         self.additional_language_codes.as_deref()
     }
     /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
@@ -70,17 +67,14 @@ impl Voice {
 
 /// A builder for [`Voice`](crate::types::Voice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VoiceBuilder {
     pub(crate) gender: ::std::option::Option<crate::types::Gender>,
     pub(crate) id: ::std::option::Option<crate::types::VoiceId>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
     pub(crate) language_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_language_codes:
-        ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
+    pub(crate) additional_language_codes: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
     pub(crate) supported_engines: ::std::option::Option<::std::vec::Vec<crate::types::Engine>>,
 }
 impl VoiceBuilder {
@@ -118,10 +112,7 @@ impl VoiceBuilder {
         self
     }
     /// <p>Language code of the voice.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -130,18 +121,12 @@ impl VoiceBuilder {
         &self.language_code
     }
     /// <p>Human readable name of the language in English.</p>
-    pub fn language_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Human readable name of the language in English.</p>
-    pub fn set_language_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_name = input;
         self
     }
@@ -177,18 +162,13 @@ impl VoiceBuilder {
     }
     /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
-    pub fn set_additional_language_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
-    ) -> Self {
+    pub fn set_additional_language_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>) -> Self {
         self.additional_language_codes = input;
         self
     }
     /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
-    pub fn get_additional_language_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>> {
+    pub fn get_additional_language_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>> {
         &self.additional_language_codes
     }
     /// Appends an item to `supported_engines`.
@@ -203,17 +183,12 @@ impl VoiceBuilder {
         self
     }
     /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
-    pub fn set_supported_engines(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Engine>>,
-    ) -> Self {
+    pub fn set_supported_engines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Engine>>) -> Self {
         self.supported_engines = input;
         self
     }
     /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
-    pub fn get_supported_engines(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Engine>> {
+    pub fn get_supported_engines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Engine>> {
         &self.supported_engines
     }
     /// Consumes the builder and constructs a [`Voice`](crate::types::Voice).

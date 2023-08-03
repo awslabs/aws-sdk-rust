@@ -10,10 +10,7 @@ impl GetLensInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_lens::GetLensOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lens::GetLensError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lens::GetLensError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_lens();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetLensFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_lens::GetLens,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_lens::GetLens, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_lens::GetLensError>,
     > {
         let handle = self.handle.clone();
@@ -59,20 +53,15 @@ impl GetLensFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_lens::GetLensOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_lens::GetLensError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_lens::GetLensOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_lens::GetLensError>>
+    {
         let op = self
             .inner
             .build()
@@ -92,10 +81,8 @@ impl GetLensFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_lens::GetLensOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_lens::GetLensError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_lens::GetLensOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_lens::GetLensError>>
+    {
         self.send_middleware().await
     }
 
@@ -104,10 +91,7 @@ impl GetLensFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_lens::GetLens,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_lens::GetLens, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_lens::GetLensError>,
     > {
         self.customize_middleware().await

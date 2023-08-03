@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`aggregation_authorizations(Option<Vec<AggregationAuthorization>>)`](crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsOutput::aggregation_authorizations): <p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<DescribeAggregationAuthorizationsError>`](crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsError)
-    pub fn describe_aggregation_authorizations(&self) -> crate::operation::describe_aggregation_authorizations::builders::DescribeAggregationAuthorizationsFluentBuilder{
+    pub fn describe_aggregation_authorizations(
+        &self,
+    ) -> crate::operation::describe_aggregation_authorizations::builders::DescribeAggregationAuthorizationsFluentBuilder {
         crate::operation::describe_aggregation_authorizations::builders::DescribeAggregationAuthorizationsFluentBuilder::new(self.handle.clone())
     }
 }

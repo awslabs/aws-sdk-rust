@@ -39,10 +39,7 @@ impl CreateStoreImageTaskFluentBuilder {
         }
     }
     /// Access the CreateStoreImageTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_store_image_task::builders::CreateStoreImageTaskInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_store_image_task::builders::CreateStoreImageTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl CreateStoreImageTaskFluentBuilder {
             crate::operation::create_store_image_task::CreateStoreImageTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_store_image_task::CreateStoreImageTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_store_image_task::CreateStoreImageTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl CreateStoreImageTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl CreateStoreImageTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_store_image_task::CreateStoreImageTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_store_image_task::CreateStoreImageTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_store_image_task::CreateStoreImageTaskError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl CreateStoreImageTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_store_image_task::CreateStoreImageTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_store_image_task::CreateStoreImageTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_store_image_task::CreateStoreImageTaskError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl CreateStoreImageTaskFluentBuilder {
             crate::operation::create_store_image_task::CreateStoreImageTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_store_image_task::CreateStoreImageTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_store_image_task::CreateStoreImageTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -163,17 +149,12 @@ impl CreateStoreImageTaskFluentBuilder {
         self
     }
     /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket. </p>
-    pub fn set_s3_object_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3ObjectTag>>,
-    ) -> Self {
+    pub fn set_s3_object_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3ObjectTag>>) -> Self {
         self.inner = self.inner.set_s3_object_tags(input);
         self
     }
     /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket. </p>
-    pub fn get_s3_object_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ObjectTag>> {
+    pub fn get_s3_object_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ObjectTag>> {
         self.inner.get_s3_object_tags()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

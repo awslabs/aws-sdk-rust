@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`ReplaceNetworkAclAssociationOutput`](crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationOutput) with field(s):
     ///   - [`new_association_id(Option<String>)`](crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationOutput::new_association_id): <p>The ID of the new association.</p>
     /// - On failure, responds with [`SdkError<ReplaceNetworkAclAssociationError>`](crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationError)
-    pub fn replace_network_acl_association(&self) -> crate::operation::replace_network_acl_association::builders::ReplaceNetworkAclAssociationFluentBuilder{
+    pub fn replace_network_acl_association(
+        &self,
+    ) -> crate::operation::replace_network_acl_association::builders::ReplaceNetworkAclAssociationFluentBuilder {
         crate::operation::replace_network_acl_association::builders::ReplaceNetworkAclAssociationFluentBuilder::new(self.handle.clone())
     }
 }

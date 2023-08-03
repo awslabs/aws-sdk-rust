@@ -4,63 +4,54 @@ pub fn de_deregister_targets_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::deregister_targets::DeregisterTargetsOutput,
-    crate::operation::deregister_targets::DeregisterTargetsError,
-> {
+) -> std::result::Result<crate::operation::deregister_targets::DeregisterTargetsOutput, crate::operation::deregister_targets::DeregisterTargetsError>
+{
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::deregister_targets::DeregisterTargetsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::deregister_targets::DeregisterTargetsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::deregister_targets::DeregisterTargetsError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::deregister_targets::DeregisterTargetsError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidTarget" => crate::operation::deregister_targets::DeregisterTargetsError::InvalidTargetException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidTargetExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_target_exception::de_invalid_target_exception_xml_err(_response_body, output).map_err(crate::operation::deregister_targets::DeregisterTargetsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidTargetExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_target_exception::de_invalid_target_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::deregister_targets::DeregisterTargetsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TargetGroupNotFound" => crate::operation::deregister_targets::DeregisterTargetsError::TargetGroupNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TargetGroupNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::deregister_targets::DeregisterTargetsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TargetGroupNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::deregister_targets::DeregisterTargetsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::deregister_targets::DeregisterTargetsError::generic(generic)
+        _ => crate::operation::deregister_targets::DeregisterTargetsError::generic(generic),
     })
 }
 
@@ -69,18 +60,12 @@ pub fn de_deregister_targets_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::deregister_targets::DeregisterTargetsOutput,
-    crate::operation::deregister_targets::DeregisterTargetsError,
-> {
+) -> std::result::Result<crate::operation::deregister_targets::DeregisterTargetsOutput, crate::operation::deregister_targets::DeregisterTargetsError>
+{
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::deregister_targets::builders::DeregisterTargetsOutputBuilder::default(
-            );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::deregister_targets::builders::DeregisterTargetsOutputBuilder::default();
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

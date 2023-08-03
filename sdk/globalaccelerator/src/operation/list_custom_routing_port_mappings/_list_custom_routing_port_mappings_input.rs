@@ -36,16 +36,14 @@ impl ListCustomRoutingPortMappingsInput {
 }
 impl ListCustomRoutingPortMappingsInput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsInput`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsInput).
-    pub fn builder() -> crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsInputBuilder{
+    pub fn builder() -> crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsInputBuilder {
         crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCustomRoutingPortMappingsInput`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomRoutingPortMappingsInputBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct ListCustomRoutingPortMappingsInputBuilder {
 }
 impl ListCustomRoutingPortMappingsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
-    pub fn accelerator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
-    pub fn set_accelerator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accelerator_arn = input;
         self
     }
@@ -74,18 +66,12 @@ impl ListCustomRoutingPortMappingsInputBuilder {
         &self.accelerator_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_group_arn = input;
         self
     }
@@ -128,17 +114,11 @@ impl ListCustomRoutingPortMappingsInputBuilder {
         crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsInput {
-                accelerator_arn: self.accelerator_arn
-                ,
-                endpoint_group_arn: self.endpoint_group_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsInput {
+            accelerator_arn: self.accelerator_arn,
+            endpoint_group_arn: self.endpoint_group_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

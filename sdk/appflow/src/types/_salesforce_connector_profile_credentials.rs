@@ -137,18 +137,12 @@ impl SalesforceConnectorProfileCredentialsBuilder {
         &self.access_token
     }
     /// <p> The credentials used to acquire new access tokens. </p>
-    pub fn refresh_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn refresh_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.refresh_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The credentials used to acquire new access tokens. </p>
-    pub fn set_refresh_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_refresh_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.refresh_token = input;
         self
     }
@@ -162,32 +156,21 @@ impl SalesforceConnectorProfileCredentialsBuilder {
         self
     }
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
-    pub fn set_o_auth_request(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorOAuthRequest>,
-    ) -> Self {
+    pub fn set_o_auth_request(mut self, input: ::std::option::Option<crate::types::ConnectorOAuthRequest>) -> Self {
         self.o_auth_request = input;
         self
     }
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
-    pub fn get_o_auth_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectorOAuthRequest> {
+    pub fn get_o_auth_request(&self) -> &::std::option::Option<crate::types::ConnectorOAuthRequest> {
         &self.o_auth_request
     }
     /// <p> The secret manager ARN, which contains the client ID and client secret of the connected app. </p>
-    pub fn client_credentials_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_credentials_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_credentials_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The secret manager ARN, which contains the client ID and client secret of the connected app. </p>
-    pub fn set_client_credentials_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_credentials_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_credentials_arn = input;
         self
     }
@@ -243,10 +226,7 @@ impl SalesforceConnectorProfileCredentialsBuilder {
     /// <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p>
     /// </dd>
     /// </dl>
-    pub fn set_o_auth2_grant_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OAuth2GrantType>,
-    ) -> Self {
+    pub fn set_o_auth2_grant_type(mut self, input: ::std::option::Option<crate::types::OAuth2GrantType>) -> Self {
         self.o_auth2_grant_type = input;
         self
     }

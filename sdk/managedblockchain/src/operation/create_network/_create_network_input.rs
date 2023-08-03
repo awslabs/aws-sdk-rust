@@ -31,9 +31,7 @@ pub struct CreateNetworkInput {
     /// <p> Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateNetworkInput {
     /// <p>This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI. </p>
@@ -57,9 +55,7 @@ impl CreateNetworkInput {
         self.framework_version.as_deref()
     }
     /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
-    pub fn framework_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkFrameworkConfiguration> {
+    pub fn framework_configuration(&self) -> ::std::option::Option<&crate::types::NetworkFrameworkConfiguration> {
         self.framework_configuration.as_ref()
     }
     /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
@@ -67,19 +63,13 @@ impl CreateNetworkInput {
         self.voting_policy.as_ref()
     }
     /// <p>Configuration properties for the first member within the network.</p>
-    pub fn member_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MemberConfiguration> {
+    pub fn member_configuration(&self) -> ::std::option::Option<&crate::types::MemberConfiguration> {
         self.member_configuration.as_ref()
     }
     /// <p>Tags to assign to the network.</p>
     /// <p> Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -92,37 +82,26 @@ impl CreateNetworkInput {
 
 /// A builder for [`CreateNetworkInput`](crate::operation::create_network::CreateNetworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNetworkInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) framework: ::std::option::Option<crate::types::Framework>,
     pub(crate) framework_version: ::std::option::Option<::std::string::String>,
-    pub(crate) framework_configuration:
-        ::std::option::Option<crate::types::NetworkFrameworkConfiguration>,
+    pub(crate) framework_configuration: ::std::option::Option<crate::types::NetworkFrameworkConfiguration>,
     pub(crate) voting_policy: ::std::option::Option<crate::types::VotingPolicy>,
     pub(crate) member_configuration: ::std::option::Option<crate::types::MemberConfiguration>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateNetworkInputBuilder {
     /// <p>This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -173,18 +152,12 @@ impl CreateNetworkInputBuilder {
         &self.framework
     }
     /// <p>The version of the blockchain framework that the network uses.</p>
-    pub fn framework_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn framework_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the blockchain framework that the network uses.</p>
-    pub fn set_framework_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_framework_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_version = input;
         self
     }
@@ -193,25 +166,17 @@ impl CreateNetworkInputBuilder {
         &self.framework_version
     }
     /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
-    pub fn framework_configuration(
-        mut self,
-        input: crate::types::NetworkFrameworkConfiguration,
-    ) -> Self {
+    pub fn framework_configuration(mut self, input: crate::types::NetworkFrameworkConfiguration) -> Self {
         self.framework_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
-    pub fn set_framework_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkFrameworkConfiguration>,
-    ) -> Self {
+    pub fn set_framework_configuration(mut self, input: ::std::option::Option<crate::types::NetworkFrameworkConfiguration>) -> Self {
         self.framework_configuration = input;
         self
     }
     /// <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
-    pub fn get_framework_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkFrameworkConfiguration> {
+    pub fn get_framework_configuration(&self) -> &::std::option::Option<crate::types::NetworkFrameworkConfiguration> {
         &self.framework_configuration
     }
     /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
@@ -220,10 +185,7 @@ impl CreateNetworkInputBuilder {
         self
     }
     /// <p> The voting rules used by the network to determine if a proposal is approved. </p>
-    pub fn set_voting_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::VotingPolicy>,
-    ) -> Self {
+    pub fn set_voting_policy(mut self, input: ::std::option::Option<crate::types::VotingPolicy>) -> Self {
         self.voting_policy = input;
         self
     }
@@ -237,17 +199,12 @@ impl CreateNetworkInputBuilder {
         self
     }
     /// <p>Configuration properties for the first member within the network.</p>
-    pub fn set_member_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberConfiguration>,
-    ) -> Self {
+    pub fn set_member_configuration(mut self, input: ::std::option::Option<crate::types::MemberConfiguration>) -> Self {
         self.member_configuration = input;
         self
     }
     /// <p>Configuration properties for the first member within the network.</p>
-    pub fn get_member_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::MemberConfiguration> {
+    pub fn get_member_configuration(&self) -> &::std::option::Option<crate::types::MemberConfiguration> {
         &self.member_configuration
     }
     /// Adds a key-value pair to `tags`.
@@ -257,11 +214,7 @@ impl CreateNetworkInputBuilder {
     /// <p>Tags to assign to the network.</p>
     /// <p> Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -270,32 +223,20 @@ impl CreateNetworkInputBuilder {
     /// <p>Tags to assign to the network.</p>
     /// <p> Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags to assign to the network.</p>
     /// <p> Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request with an overall maximum of 50 tags allowed per resource.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateNetworkInput`](crate::operation::create_network::CreateNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_network::CreateNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_network::CreateNetworkInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_network::CreateNetworkInput {
             client_request_token: self.client_request_token,
             name: self.name,

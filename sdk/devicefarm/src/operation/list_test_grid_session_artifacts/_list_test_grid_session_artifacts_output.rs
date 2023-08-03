@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTestGridSessionArtifactsOutput {
 }
 impl ListTestGridSessionArtifactsOutput {
     /// Creates a new builder-style object to manufacture [`ListTestGridSessionArtifactsOutput`](crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsOutput).
-    pub fn builder() -> crate::operation::list_test_grid_session_artifacts::builders::ListTestGridSessionArtifactsOutputBuilder{
+    pub fn builder() -> crate::operation::list_test_grid_session_artifacts::builders::ListTestGridSessionArtifactsOutputBuilder {
         crate::operation::list_test_grid_session_artifacts::builders::ListTestGridSessionArtifactsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTestGridSessionArtifactsOutput`](crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestGridSessionArtifactsOutputBuilder {
-    pub(crate) artifacts:
-        ::std::option::Option<::std::vec::Vec<crate::types::TestGridSessionArtifact>>,
+    pub(crate) artifacts: ::std::option::Option<::std::vec::Vec<crate::types::TestGridSessionArtifact>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListTestGridSessionArtifactsOutputBuilder {
         self
     }
     /// <p>A list of test grid session artifacts for a <code>TestGridSession</code>.</p>
-    pub fn set_artifacts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TestGridSessionArtifact>>,
-    ) -> Self {
+    pub fn set_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestGridSessionArtifact>>) -> Self {
         self.artifacts = input;
         self
     }
     /// <p>A list of test grid session artifacts for a <code>TestGridSession</code>.</p>
-    pub fn get_artifacts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestGridSessionArtifact>> {
+    pub fn get_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestGridSessionArtifact>> {
         &self.artifacts
     }
     /// <p>Pagination token.</p>
@@ -94,10 +86,7 @@ impl ListTestGridSessionArtifactsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTestGridSessionArtifactsOutput`](crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsOutput
-    {
+    pub fn build(self) -> crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsOutput {
         crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsOutput {
             artifacts: self.artifacts,
             next_token: self.next_token,

@@ -43,9 +43,7 @@ impl GetExportOutput {
 
 /// A builder for [`GetExportOutput`](crate::operation::get_export::GetExportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExportOutputBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) content_disposition: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl GetExportOutputBuilder {
         &self.content_type
     }
     /// <p>The content-disposition header value in the HTTP response.</p>
-    pub fn content_disposition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_disposition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_disposition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content-disposition header value in the HTTP response.</p>
-    pub fn set_content_disposition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_disposition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_disposition = input;
         self
     }

@@ -37,10 +37,7 @@ impl GetCoreNetworkPolicyFluentBuilder {
         }
     }
     /// Access the GetCoreNetworkPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetCoreNetworkPolicyFluentBuilder {
             crate::operation::get_core_network_policy::GetCoreNetworkPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_network_policy::GetCoreNetworkPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_network_policy::GetCoreNetworkPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetCoreNetworkPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetCoreNetworkPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_core_network_policy::GetCoreNetworkPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_network_policy::GetCoreNetworkPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_network_policy::GetCoreNetworkPolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetCoreNetworkPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_core_network_policy::GetCoreNetworkPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_network_policy::GetCoreNetworkPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_network_policy::GetCoreNetworkPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetCoreNetworkPolicyFluentBuilder {
             crate::operation::get_core_network_policy::GetCoreNetworkPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_core_network_policy::GetCoreNetworkPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_core_network_policy::GetCoreNetworkPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
     }
@@ -163,10 +143,7 @@ impl GetCoreNetworkPolicyFluentBuilder {
         self
     }
     /// <p>The alias of a core network policy </p>
-    pub fn set_alias(
-        mut self,
-        input: ::std::option::Option<crate::types::CoreNetworkPolicyAlias>,
-    ) -> Self {
+    pub fn set_alias(mut self, input: ::std::option::Option<crate::types::CoreNetworkPolicyAlias>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
     }

@@ -17,12 +17,7 @@ impl super::Client {
     ///   - [`metadata(Option<GetSolNetworkPackageMetadata>)`](crate::operation::get_sol_network_package::GetSolNetworkPackageOutput::metadata): <p>Metadata associated with a network package.</p>  <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_sol_network_package::GetSolNetworkPackageOutput::tags): <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     /// - On failure, responds with [`SdkError<GetSolNetworkPackageError>`](crate::operation::get_sol_network_package::GetSolNetworkPackageError)
-    pub fn get_sol_network_package(
-        &self,
-    ) -> crate::operation::get_sol_network_package::builders::GetSolNetworkPackageFluentBuilder
-    {
-        crate::operation::get_sol_network_package::builders::GetSolNetworkPackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_sol_network_package(&self) -> crate::operation::get_sol_network_package::builders::GetSolNetworkPackageFluentBuilder {
+        crate::operation::get_sol_network_package::builders::GetSolNetworkPackageFluentBuilder::new(self.handle.clone())
     }
 }

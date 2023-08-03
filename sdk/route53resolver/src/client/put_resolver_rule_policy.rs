@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutResolverRulePolicyOutput`](crate::operation::put_resolver_rule_policy::PutResolverRulePolicyOutput) with field(s):
     ///   - [`return_value(bool)`](crate::operation::put_resolver_rule_policy::PutResolverRulePolicyOutput::return_value): <p>Whether the <code>PutResolverRulePolicy</code> request was successful.</p>
     /// - On failure, responds with [`SdkError<PutResolverRulePolicyError>`](crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError)
-    pub fn put_resolver_rule_policy(
-        &self,
-    ) -> crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyFluentBuilder
-    {
+    pub fn put_resolver_rule_policy(&self) -> crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyFluentBuilder {
         crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyFluentBuilder::new(self.handle.clone())
     }
 }

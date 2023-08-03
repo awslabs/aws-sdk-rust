@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociateGatewayFromServerOutput`](crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway you disassociated.</p>
     /// - On failure, responds with [`SdkError<DisassociateGatewayFromServerError>`](crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerError)
-    pub fn disassociate_gateway_from_server(&self) -> crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerFluentBuilder{
+    pub fn disassociate_gateway_from_server(
+        &self,
+    ) -> crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerFluentBuilder {
         crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerFluentBuilder::new(self.handle.clone())
     }
 }

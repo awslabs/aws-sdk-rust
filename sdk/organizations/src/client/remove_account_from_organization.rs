@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationFluentBuilder::set_account_id): <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     /// - On success, responds with [`RemoveAccountFromOrganizationOutput`](crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationOutput)
     /// - On failure, responds with [`SdkError<RemoveAccountFromOrganizationError>`](crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationError)
-    pub fn remove_account_from_organization(&self) -> crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationFluentBuilder{
+    pub fn remove_account_from_organization(
+        &self,
+    ) -> crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationFluentBuilder {
         crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationFluentBuilder::new(self.handle.clone())
     }
 }

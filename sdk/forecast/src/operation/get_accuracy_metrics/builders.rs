@@ -10,10 +10,7 @@ impl GetAccuracyMetricsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_accuracy_metrics::GetAccuracyMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_accuracy_metrics::GetAccuracyMetricsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_accuracy_metrics::GetAccuracyMetricsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_accuracy_metrics();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl GetAccuracyMetricsFluentBuilder {
         }
     }
     /// Access the GetAccuracyMetrics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl GetAccuracyMetricsFluentBuilder {
             crate::operation::get_accuracy_metrics::GetAccuracyMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_accuracy_metrics::GetAccuracyMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_accuracy_metrics::GetAccuracyMetricsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl GetAccuracyMetricsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl GetAccuracyMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_accuracy_metrics::GetAccuracyMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_accuracy_metrics::GetAccuracyMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_accuracy_metrics::GetAccuracyMetricsError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl GetAccuracyMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_accuracy_metrics::GetAccuracyMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_accuracy_metrics::GetAccuracyMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_accuracy_metrics::GetAccuracyMetricsError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +106,17 @@ impl GetAccuracyMetricsFluentBuilder {
             crate::operation::get_accuracy_metrics::GetAccuracyMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_accuracy_metrics::GetAccuracyMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_accuracy_metrics::GetAccuracyMetricsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-    pub fn predictor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.predictor_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-    pub fn set_predictor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_predictor_arn(input);
         self
     }

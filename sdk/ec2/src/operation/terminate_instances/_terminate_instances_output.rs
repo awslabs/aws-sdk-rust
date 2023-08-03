@@ -5,15 +5,12 @@
 pub struct TerminateInstancesOutput {
     /// <p>Information about the terminated instances.</p>
     #[doc(hidden)]
-    pub terminating_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
+    pub terminating_instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
     _request_id: Option<String>,
 }
 impl TerminateInstancesOutput {
     /// <p>Information about the terminated instances.</p>
-    pub fn terminating_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceStateChange]> {
+    pub fn terminating_instances(&self) -> ::std::option::Option<&[crate::types::InstanceStateChange]> {
         self.terminating_instances.as_deref()
     }
 }
@@ -24,20 +21,16 @@ impl ::aws_http::request_id::RequestId for TerminateInstancesOutput {
 }
 impl TerminateInstancesOutput {
     /// Creates a new builder-style object to manufacture [`TerminateInstancesOutput`](crate::operation::terminate_instances::TerminateInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::terminate_instances::builders::TerminateInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::terminate_instances::builders::TerminateInstancesOutputBuilder {
         crate::operation::terminate_instances::builders::TerminateInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`TerminateInstancesOutput`](crate::operation::terminate_instances::TerminateInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateInstancesOutputBuilder {
-    pub(crate) terminating_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
+    pub(crate) terminating_instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
     _request_id: Option<String>,
 }
 impl TerminateInstancesOutputBuilder {
@@ -53,17 +46,12 @@ impl TerminateInstancesOutputBuilder {
         self
     }
     /// <p>Information about the terminated instances.</p>
-    pub fn set_terminating_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
-    ) -> Self {
+    pub fn set_terminating_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>) -> Self {
         self.terminating_instances = input;
         self
     }
     /// <p>Information about the terminated instances.</p>
-    pub fn get_terminating_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>> {
+    pub fn get_terminating_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>> {
         &self.terminating_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

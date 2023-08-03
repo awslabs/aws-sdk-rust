@@ -22,17 +22,14 @@ impl GetComputeAccessInput {
 }
 impl GetComputeAccessInput {
     /// Creates a new builder-style object to manufacture [`GetComputeAccessInput`](crate::operation::get_compute_access::GetComputeAccessInput).
-    pub fn builder() -> crate::operation::get_compute_access::builders::GetComputeAccessInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_compute_access::builders::GetComputeAccessInputBuilder {
         crate::operation::get_compute_access::builders::GetComputeAccessInputBuilder::default()
     }
 }
 
 /// A builder for [`GetComputeAccessInput`](crate::operation::get_compute_access::GetComputeAccessInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComputeAccessInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) compute_name: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl GetComputeAccessInputBuilder {
     /// Consumes the builder and constructs a [`GetComputeAccessInput`](crate::operation::get_compute_access::GetComputeAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_compute_access::GetComputeAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_compute_access::GetComputeAccessInput {
-                fleet_id: self.fleet_id,
-                compute_name: self.compute_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_compute_access::GetComputeAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_compute_access::GetComputeAccessInput {
+            fleet_id: self.fleet_id,
+            compute_name: self.compute_name,
+        })
     }
 }

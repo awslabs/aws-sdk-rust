@@ -37,9 +37,7 @@ impl GetResourceMetadataFluentBuilder {
         }
     }
     /// Access the GetResourceMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_resource_metadata::builders::GetResourceMetadataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_resource_metadata::builders::GetResourceMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetResourceMetadataFluentBuilder {
             crate::operation::get_resource_metadata::GetResourceMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_metadata::GetResourceMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_metadata::GetResourceMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetResourceMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetResourceMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_metadata::GetResourceMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_metadata::GetResourceMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_metadata::GetResourceMetadataError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetResourceMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_metadata::GetResourceMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_metadata::GetResourceMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_metadata::GetResourceMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetResourceMetadataFluentBuilder {
             crate::operation::get_resource_metadata::GetResourceMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_metadata::GetResourceMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_metadata::GetResourceMetadataError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl GetResourceMetadataFluentBuilder {
         self
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.inner = self.inner.set_service_type(input);
         self
     }

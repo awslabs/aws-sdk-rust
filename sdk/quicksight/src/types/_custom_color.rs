@@ -87,10 +87,7 @@ impl CustomColorBuilder {
         self
     }
     /// <p>The value of a special data value.</p>
-    pub fn set_special_value(
-        mut self,
-        input: ::std::option::Option<crate::types::SpecialValue>,
-    ) -> Self {
+    pub fn set_special_value(mut self, input: ::std::option::Option<crate::types::SpecialValue>) -> Self {
         self.special_value = input;
         self
     }

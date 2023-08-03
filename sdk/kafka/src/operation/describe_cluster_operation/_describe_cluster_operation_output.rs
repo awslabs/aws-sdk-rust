@@ -10,9 +10,7 @@ pub struct DescribeClusterOperationOutput {
 }
 impl DescribeClusterOperationOutput {
     /// <p>Cluster operation information</p>
-    pub fn cluster_operation_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClusterOperationInfo> {
+    pub fn cluster_operation_info(&self) -> ::std::option::Option<&crate::types::ClusterOperationInfo> {
         self.cluster_operation_info.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeClusterOperationOutput {
 }
 impl DescribeClusterOperationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterOperationOutput`](crate::operation::describe_cluster_operation::DescribeClusterOperationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_cluster_operation::builders::DescribeClusterOperationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_cluster_operation::builders::DescribeClusterOperationOutputBuilder {
         crate::operation::describe_cluster_operation::builders::DescribeClusterOperationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterOperationOutput`](crate::operation::describe_cluster_operation::DescribeClusterOperationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterOperationOutputBuilder {
     pub(crate) cluster_operation_info: ::std::option::Option<crate::types::ClusterOperationInfo>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl DescribeClusterOperationOutputBuilder {
         self
     }
     /// <p>Cluster operation information</p>
-    pub fn set_cluster_operation_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterOperationInfo>,
-    ) -> Self {
+    pub fn set_cluster_operation_info(mut self, input: ::std::option::Option<crate::types::ClusterOperationInfo>) -> Self {
         self.cluster_operation_info = input;
         self
     }
     /// <p>Cluster operation information</p>
-    pub fn get_cluster_operation_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClusterOperationInfo> {
+    pub fn get_cluster_operation_info(&self) -> &::std::option::Option<crate::types::ClusterOperationInfo> {
         &self.cluster_operation_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -69,9 +58,7 @@ impl DescribeClusterOperationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeClusterOperationOutput`](crate::operation::describe_cluster_operation::DescribeClusterOperationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_cluster_operation::DescribeClusterOperationOutput {
+    pub fn build(self) -> crate::operation::describe_cluster_operation::DescribeClusterOperationOutput {
         crate::operation::describe_cluster_operation::DescribeClusterOperationOutput {
             cluster_operation_info: self.cluster_operation_info,
             _request_id: self._request_id,

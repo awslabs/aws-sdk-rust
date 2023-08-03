@@ -24,9 +24,7 @@ pub struct ListEarthObservationJobOutputConfig {
     pub operation_type: ::std::option::Option<::std::string::String>,
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListEarthObservationJobOutputConfig {
     /// <p>The Amazon Resource Name (ARN) of the list of the Earth Observation jobs.</p>
@@ -54,11 +52,7 @@ impl ListEarthObservationJobOutputConfig {
         self.operation_type.as_deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -71,9 +65,7 @@ impl ListEarthObservationJobOutputConfig {
 
 /// A builder for [`ListEarthObservationJobOutputConfig`](crate::types::ListEarthObservationJobOutputConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEarthObservationJobOutputConfigBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -81,9 +73,7 @@ pub struct ListEarthObservationJobOutputConfigBuilder {
     pub(crate) duration_in_seconds: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::EarthObservationJobStatus>,
     pub(crate) operation_type: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListEarthObservationJobOutputConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the list of the Earth Observation jobs.</p>
@@ -120,10 +110,7 @@ impl ListEarthObservationJobOutputConfigBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -151,10 +138,7 @@ impl ListEarthObservationJobOutputConfigBuilder {
         self
     }
     /// <p>The status of the list of the Earth Observation jobs.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EarthObservationJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EarthObservationJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -163,18 +147,12 @@ impl ListEarthObservationJobOutputConfigBuilder {
         &self.status
     }
     /// <p>The operation type for an Earth Observation job.</p>
-    pub fn operation_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operation_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operation type for an Earth Observation job.</p>
-    pub fn set_operation_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_operation_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_type = input;
         self
     }
@@ -187,32 +165,19 @@ impl ListEarthObservationJobOutputConfigBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ListEarthObservationJobOutputConfig`](crate::types::ListEarthObservationJobOutputConfig).

@@ -10,10 +10,7 @@ impl EnableSnapshotCopyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::enable_snapshot_copy::EnableSnapshotCopyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_snapshot_copy::EnableSnapshotCopyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.enable_snapshot_copy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl EnableSnapshotCopyFluentBuilder {
         }
     }
     /// Access the EnableSnapshotCopy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_snapshot_copy::builders::EnableSnapshotCopyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::enable_snapshot_copy::builders::EnableSnapshotCopyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl EnableSnapshotCopyFluentBuilder {
             crate::operation::enable_snapshot_copy::EnableSnapshotCopy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_snapshot_copy::EnableSnapshotCopyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl EnableSnapshotCopyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl EnableSnapshotCopyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_snapshot_copy::EnableSnapshotCopyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_snapshot_copy::EnableSnapshotCopyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl EnableSnapshotCopyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_snapshot_copy::EnableSnapshotCopyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_snapshot_copy::EnableSnapshotCopyError>,
     > {
         self.send_middleware().await
     }
@@ -116,27 +102,19 @@ impl EnableSnapshotCopyFluentBuilder {
             crate::operation::enable_snapshot_copy::EnableSnapshotCopy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_snapshot_copy::EnableSnapshotCopyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_snapshot_copy::EnableSnapshotCopyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the source cluster to copy snapshots from.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that does not already have cross-region snapshot copy enabled.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The unique identifier of the source cluster to copy snapshots from.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that does not already have cross-region snapshot copy enabled.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -147,19 +125,13 @@ impl EnableSnapshotCopyFluentBuilder {
     }
     /// <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p>
     /// <p>Constraints: Must be the name of a valid Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the Amazon Web Services General Reference. </p>
-    pub fn destination_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_region(input.into());
         self
     }
     /// <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p>
     /// <p>Constraints: Must be the name of a valid Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the Amazon Web Services General Reference. </p>
-    pub fn set_destination_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_region(input);
         self
     }
@@ -189,18 +161,12 @@ impl EnableSnapshotCopyFluentBuilder {
         self.inner.get_retention_period()
     }
     /// <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web Services KMS-encrypted cluster are copied to the destination region.</p>
-    pub fn snapshot_copy_grant_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_copy_grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_copy_grant_name(input.into());
         self
     }
     /// <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web Services KMS-encrypted cluster are copied to the destination region.</p>
-    pub fn set_snapshot_copy_grant_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_copy_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_copy_grant_name(input);
         self
     }
@@ -216,10 +182,7 @@ impl EnableSnapshotCopyFluentBuilder {
     }
     /// <p>The number of days to retain newly copied snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    pub fn set_manual_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_manual_snapshot_retention_period(input);
         self
     }

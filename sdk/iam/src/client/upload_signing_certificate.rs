@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UploadSigningCertificateOutput`](crate::operation::upload_signing_certificate::UploadSigningCertificateOutput) with field(s):
     ///   - [`certificate(Option<SigningCertificate>)`](crate::operation::upload_signing_certificate::UploadSigningCertificateOutput::certificate): <p>Information about the certificate.</p>
     /// - On failure, responds with [`SdkError<UploadSigningCertificateError>`](crate::operation::upload_signing_certificate::UploadSigningCertificateError)
-    pub fn upload_signing_certificate(
-        &self,
-    ) -> crate::operation::upload_signing_certificate::builders::UploadSigningCertificateFluentBuilder
-    {
+    pub fn upload_signing_certificate(&self) -> crate::operation::upload_signing_certificate::builders::UploadSigningCertificateFluentBuilder {
         crate::operation::upload_signing_certificate::builders::UploadSigningCertificateFluentBuilder::new(self.handle.clone())
     }
 }

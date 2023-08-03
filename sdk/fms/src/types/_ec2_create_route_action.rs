@@ -65,9 +65,7 @@ impl Ec2CreateRouteAction {
 
 /// A builder for [`Ec2CreateRouteAction`](crate::types::Ec2CreateRouteAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2CreateRouteActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
@@ -93,18 +91,12 @@ impl Ec2CreateRouteActionBuilder {
         &self.description
     }
     /// <p>Information about the IPv4 CIDR address block used for the destination match.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the IPv4 CIDR address block used for the destination match.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_cidr_block = input;
         self
     }
@@ -113,18 +105,12 @@ impl Ec2CreateRouteActionBuilder {
         &self.destination_cidr_block
     }
     /// <p>Information about the ID of a prefix list used for the destination match.</p>
-    pub fn destination_prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the ID of a prefix list used for the destination match.</p>
-    pub fn set_destination_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_prefix_list_id = input;
         self
     }
@@ -133,18 +119,12 @@ impl Ec2CreateRouteActionBuilder {
         &self.destination_prefix_list_id
     }
     /// <p>Information about the IPv6 CIDR block destination.</p>
-    pub fn destination_ipv6_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the IPv6 CIDR block destination.</p>
-    pub fn set_destination_ipv6_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_ipv6_cidr_block = input;
         self
     }
@@ -158,10 +138,7 @@ impl Ec2CreateRouteActionBuilder {
         self
     }
     /// <p>Information about the ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
-    pub fn set_vpc_endpoint_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTarget>,
-    ) -> Self {
+    pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<crate::types::ActionTarget>) -> Self {
         self.vpc_endpoint_id = input;
         self
     }
@@ -175,10 +152,7 @@ impl Ec2CreateRouteActionBuilder {
         self
     }
     /// <p>Information about the ID of an internet gateway or virtual private gateway attached to your VPC.</p>
-    pub fn set_gateway_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTarget>,
-    ) -> Self {
+    pub fn set_gateway_id(mut self, input: ::std::option::Option<crate::types::ActionTarget>) -> Self {
         self.gateway_id = input;
         self
     }
@@ -192,10 +166,7 @@ impl Ec2CreateRouteActionBuilder {
         self
     }
     /// <p>Information about the ID of the route table for the route.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTarget>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<crate::types::ActionTarget>) -> Self {
         self.route_table_id = input;
         self
     }

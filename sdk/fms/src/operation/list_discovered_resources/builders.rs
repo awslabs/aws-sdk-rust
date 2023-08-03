@@ -26,8 +26,7 @@ impl ListDiscoveredResourcesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDiscoveredResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder,
+    inner: crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder,
 }
 impl ListDiscoveredResourcesFluentBuilder {
     /// Creates a new `ListDiscoveredResources`.
@@ -38,10 +37,7 @@ impl ListDiscoveredResourcesFluentBuilder {
         }
     }
     /// Access the ListDiscoveredResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListDiscoveredResourcesFluentBuilder {
             crate::operation::list_discovered_resources::ListDiscoveredResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discovered_resources::ListDiscoveredResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discovered_resources::ListDiscoveredResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListDiscoveredResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListDiscoveredResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discovered_resources::ListDiscoveredResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discovered_resources::ListDiscoveredResourcesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListDiscoveredResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discovered_resources::ListDiscoveredResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discovered_resources::ListDiscoveredResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl ListDiscoveredResourcesFluentBuilder {
             crate::operation::list_discovered_resources::ListDiscoveredResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_discovered_resources::ListDiscoveredResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_discovered_resources::ListDiscoveredResourcesError>,
     > {
         self.customize_middleware().await
     }
@@ -129,40 +114,26 @@ impl ListDiscoveredResourcesFluentBuilder {
     /// To override the contents of this collection use [`set_member_account_ids`](Self::set_member_account_ids).
     ///
     /// <p>The Amazon Web Services account IDs to discover resources in. Only one account is supported per request. The account must be a member of your organization.</p>
-    pub fn member_account_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_account_ids(input.into());
         self
     }
     /// <p>The Amazon Web Services account IDs to discover resources in. Only one account is supported per request. The account must be a member of your organization.</p>
-    pub fn set_member_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_member_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_member_account_ids(input);
         self
     }
     /// <p>The Amazon Web Services account IDs to discover resources in. Only one account is supported per request. The account must be a member of your organization.</p>
-    pub fn get_member_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_member_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_member_account_ids()
     }
     /// <p>The type of resources to discover.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>The type of resources to discover.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

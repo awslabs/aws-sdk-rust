@@ -14,9 +14,7 @@ impl super::Client {
     ///   - [`state(Option<RouteState>)`](crate::operation::delete_route::DeleteRouteOutput::state): <p>The current state of the route. </p>
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::delete_route::DeleteRouteOutput::last_updated_time): <p>A timestamp that indicates when the route was last updated. </p>
     /// - On failure, responds with [`SdkError<DeleteRouteError>`](crate::operation::delete_route::DeleteRouteError)
-    pub fn delete_route(
-        &self,
-    ) -> crate::operation::delete_route::builders::DeleteRouteFluentBuilder {
+    pub fn delete_route(&self) -> crate::operation::delete_route::builders::DeleteRouteFluentBuilder {
         crate::operation::delete_route::builders::DeleteRouteFluentBuilder::new(self.handle.clone())
     }
 }

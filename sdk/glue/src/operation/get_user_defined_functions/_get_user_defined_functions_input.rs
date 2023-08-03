@@ -43,18 +43,14 @@ impl GetUserDefinedFunctionsInput {
 }
 impl GetUserDefinedFunctionsInput {
     /// Creates a new builder-style object to manufacture [`GetUserDefinedFunctionsInput`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsInputBuilder {
         crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetUserDefinedFunctionsInput`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUserDefinedFunctionsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -78,18 +74,12 @@ impl GetUserDefinedFunctionsInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -146,14 +136,12 @@ impl GetUserDefinedFunctionsInputBuilder {
         crate::operation::get_user_defined_functions::GetUserDefinedFunctionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_user_defined_functions::GetUserDefinedFunctionsInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                pattern: self.pattern,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_user_defined_functions::GetUserDefinedFunctionsInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            pattern: self.pattern,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

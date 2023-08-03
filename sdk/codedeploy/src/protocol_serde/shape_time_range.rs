@@ -9,9 +9,7 @@ pub fn ser_time_range(
             .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_2) = &input.end {
-        object
-            .key("end")
-            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+        object.key("end").date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

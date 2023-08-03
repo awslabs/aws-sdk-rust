@@ -23,9 +23,7 @@ impl PortalResource {
 
 /// A builder for [`PortalResource`](crate::types::PortalResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PortalResourceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }

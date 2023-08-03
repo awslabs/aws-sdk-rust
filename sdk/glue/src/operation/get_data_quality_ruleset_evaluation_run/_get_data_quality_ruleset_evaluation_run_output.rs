@@ -20,8 +20,7 @@ pub struct GetDataQualityRulesetEvaluationRunOutput {
     pub timeout: ::std::option::Option<i32>,
     /// <p>Additional run options you can specify for an evaluation run.</p>
     #[doc(hidden)]
-    pub additional_run_options:
-        ::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
+    pub additional_run_options: ::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
     /// <p>The status for this run.</p>
     #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TaskStatusType>,
@@ -48,9 +47,7 @@ pub struct GetDataQualityRulesetEvaluationRunOutput {
     pub result_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
     #[doc(hidden)]
-    pub additional_data_sources: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
-    >,
+    pub additional_data_sources: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DataSource>>,
     _request_id: Option<String>,
 }
 impl GetDataQualityRulesetEvaluationRunOutput {
@@ -75,9 +72,7 @@ impl GetDataQualityRulesetEvaluationRunOutput {
         self.timeout
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
-    pub fn additional_run_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataQualityEvaluationRunAdditionalRunOptions> {
+    pub fn additional_run_options(&self) -> ::std::option::Option<&crate::types::DataQualityEvaluationRunAdditionalRunOptions> {
         self.additional_run_options.as_ref()
     }
     /// <p>The status for this run.</p>
@@ -113,11 +108,7 @@ impl GetDataQualityRulesetEvaluationRunOutput {
         self.result_ids.as_deref()
     }
     /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
-    pub fn additional_data_sources(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
-    > {
+    pub fn additional_data_sources(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::DataSource>> {
         self.additional_data_sources.as_ref()
     }
 }
@@ -128,24 +119,21 @@ impl ::aws_http::request_id::RequestId for GetDataQualityRulesetEvaluationRunOut
 }
 impl GetDataQualityRulesetEvaluationRunOutput {
     /// Creates a new builder-style object to manufacture [`GetDataQualityRulesetEvaluationRunOutput`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput).
-    pub fn builder() -> crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunOutputBuilder{
+    pub fn builder() -> crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunOutputBuilder {
         crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataQualityRulesetEvaluationRunOutput`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataQualityRulesetEvaluationRunOutputBuilder {
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_workers: ::std::option::Option<i32>,
     pub(crate) timeout: ::std::option::Option<i32>,
-    pub(crate) additional_run_options:
-        ::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
+    pub(crate) additional_run_options: ::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
     pub(crate) status: ::std::option::Option<crate::types::TaskStatusType>,
     pub(crate) error_string: ::std::option::Option<::std::string::String>,
     pub(crate) started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -154,9 +142,7 @@ pub struct GetDataQualityRulesetEvaluationRunOutputBuilder {
     pub(crate) execution_time: ::std::option::Option<i32>,
     pub(crate) ruleset_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) result_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) additional_data_sources: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
-    >,
+    pub(crate) additional_data_sources: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DataSource>>,
     _request_id: Option<String>,
 }
 impl GetDataQualityRulesetEvaluationRunOutputBuilder {
@@ -180,10 +166,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self
     }
     /// <p>The data source (an Glue table) associated with this evaluation run.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.data_source = input;
         self
     }
@@ -234,25 +217,17 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         &self.timeout
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
-    pub fn additional_run_options(
-        mut self,
-        input: crate::types::DataQualityEvaluationRunAdditionalRunOptions,
-    ) -> Self {
+    pub fn additional_run_options(mut self, input: crate::types::DataQualityEvaluationRunAdditionalRunOptions) -> Self {
         self.additional_run_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
-    pub fn set_additional_run_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
-    ) -> Self {
+    pub fn set_additional_run_options(mut self, input: ::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>) -> Self {
         self.additional_run_options = input;
         self
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
-    pub fn get_additional_run_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions> {
+    pub fn get_additional_run_options(&self) -> &::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions> {
         &self.additional_run_options
     }
     /// <p>The status for this run.</p>
@@ -261,10 +236,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self
     }
     /// <p>The status for this run.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -292,10 +264,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self
     }
     /// <p>The date and time when this run started.</p>
-    pub fn set_started_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_on = input;
         self
     }
@@ -309,10 +278,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self
     }
     /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_on = input;
         self
     }
@@ -326,10 +292,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self
     }
     /// <p>The date and time when this run was completed.</p>
-    pub fn set_completed_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_on = input;
         self
     }
@@ -356,27 +319,19 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     /// To override the contents of this collection use [`set_ruleset_names`](Self::set_ruleset_names).
     ///
     /// <p>A list of ruleset names for the run.</p>
-    pub fn ruleset_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ruleset_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ruleset_names.unwrap_or_default();
         v.push(input.into());
         self.ruleset_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of ruleset names for the run.</p>
-    pub fn set_ruleset_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ruleset_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ruleset_names = input;
         self
     }
     /// <p>A list of ruleset names for the run.</p>
-    pub fn get_ruleset_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ruleset_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ruleset_names
     }
     /// Appends an item to `result_ids`.
@@ -391,10 +346,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self
     }
     /// <p>A list of result IDs for the data quality results for the run.</p>
-    pub fn set_result_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_result_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.result_ids = input;
         self
     }
@@ -407,11 +359,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     /// To override the contents of this collection use [`set_additional_data_sources`](Self::set_additional_data_sources).
     ///
     /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
-    pub fn additional_data_sources(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::DataSource,
-    ) -> Self {
+    pub fn additional_data_sources(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::DataSource) -> Self {
         let mut hash_map = self.additional_data_sources.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.additional_data_sources = ::std::option::Option::Some(hash_map);
@@ -420,9 +368,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
     pub fn set_additional_data_sources(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DataSource>>,
     ) -> Self {
         self.additional_data_sources = input;
         self
@@ -430,9 +376,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
     pub fn get_additional_data_sources(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DataSource>> {
         &self.additional_data_sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -445,39 +389,23 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDataQualityRulesetEvaluationRunOutput`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput).
-    pub fn build(self) -> crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput{
+    pub fn build(self) -> crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput {
         crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput {
-            run_id: self.run_id
-            ,
-            data_source: self.data_source
-            ,
-            role: self.role
-            ,
-            number_of_workers: self.number_of_workers
-            ,
-            timeout: self.timeout
-            ,
-            additional_run_options: self.additional_run_options
-            ,
-            status: self.status
-            ,
-            error_string: self.error_string
-            ,
-            started_on: self.started_on
-            ,
-            last_modified_on: self.last_modified_on
-            ,
-            completed_on: self.completed_on
-            ,
-            execution_time: self.execution_time
-                .unwrap_or_default()
-            ,
-            ruleset_names: self.ruleset_names
-            ,
-            result_ids: self.result_ids
-            ,
-            additional_data_sources: self.additional_data_sources
-            ,
+            run_id: self.run_id,
+            data_source: self.data_source,
+            role: self.role,
+            number_of_workers: self.number_of_workers,
+            timeout: self.timeout,
+            additional_run_options: self.additional_run_options,
+            status: self.status,
+            error_string: self.error_string,
+            started_on: self.started_on,
+            last_modified_on: self.last_modified_on,
+            completed_on: self.completed_on,
+            execution_time: self.execution_time.unwrap_or_default(),
+            ruleset_names: self.ruleset_names,
+            result_ids: self.result_ids,
+            additional_data_sources: self.additional_data_sources,
             _request_id: self._request_id,
         }
     }

@@ -43,9 +43,7 @@ impl GetTableVersionInput {
 
 /// A builder for [`GetTableVersionInput`](crate::operation::get_table_version::GetTableVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTableVersionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
@@ -68,18 +66,12 @@ impl GetTableVersionInputBuilder {
         &self.catalog_id
     }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -118,10 +110,7 @@ impl GetTableVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetTableVersionInput`](crate::operation::get_table_version::GetTableVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_table_version::GetTableVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_table_version::GetTableVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_table_version::GetTableVersionInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

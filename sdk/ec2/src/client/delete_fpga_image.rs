@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteFpgaImageOutput`](crate::operation::delete_fpga_image::DeleteFpgaImageOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::delete_fpga_image::DeleteFpgaImageOutput::return): <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
     /// - On failure, responds with [`SdkError<DeleteFpgaImageError>`](crate::operation::delete_fpga_image::DeleteFpgaImageError)
-    pub fn delete_fpga_image(
-        &self,
-    ) -> crate::operation::delete_fpga_image::builders::DeleteFpgaImageFluentBuilder {
-        crate::operation::delete_fpga_image::builders::DeleteFpgaImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_fpga_image(&self) -> crate::operation::delete_fpga_image::builders::DeleteFpgaImageFluentBuilder {
+        crate::operation::delete_fpga_image::builders::DeleteFpgaImageFluentBuilder::new(self.handle.clone())
     }
 }

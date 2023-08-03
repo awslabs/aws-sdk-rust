@@ -29,17 +29,14 @@ impl ListRecommendersInput {
 }
 impl ListRecommendersInput {
     /// Creates a new builder-style object to manufacture [`ListRecommendersInput`](crate::operation::list_recommenders::ListRecommendersInput).
-    pub fn builder() -> crate::operation::list_recommenders::builders::ListRecommendersInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_recommenders::builders::ListRecommendersInputBuilder {
         crate::operation::list_recommenders::builders::ListRecommendersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecommendersInput`](crate::operation::list_recommenders::ListRecommendersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecommendersInputBuilder {
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct ListRecommendersInputBuilder {
 }
 impl ListRecommendersInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -97,10 +88,7 @@ impl ListRecommendersInputBuilder {
     /// Consumes the builder and constructs a [`ListRecommendersInput`](crate::operation::list_recommenders::ListRecommendersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_recommenders::ListRecommendersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_recommenders::ListRecommendersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_recommenders::ListRecommendersInput {
             dataset_group_arn: self.dataset_group_arn,
             next_token: self.next_token,

@@ -30,9 +30,7 @@ impl HandOffTime {
 
 /// A builder for [`HandOffTime`](crate::types::HandOffTime).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HandOffTimeBuilder {
     pub(crate) hour_of_day: ::std::option::Option<i32>,
     pub(crate) minute_of_hour: ::std::option::Option<i32>,

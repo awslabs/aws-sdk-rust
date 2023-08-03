@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HitReviewStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for HitReviewStatus {
             "NotReviewed" => HitReviewStatus::NotReviewed,
             "ReviewedAppropriate" => HitReviewStatus::ReviewedAppropriate,
             "ReviewedInappropriate" => HitReviewStatus::ReviewedInappropriate,
-            other => {
-                HitReviewStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => HitReviewStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl HitReviewStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "MarkedForReview",
-            "NotReviewed",
-            "ReviewedAppropriate",
-            "ReviewedInappropriate",
-        ]
+        &["MarkedForReview", "NotReviewed", "ReviewedAppropriate", "ReviewedInappropriate"]
     }
 }
 impl ::std::convert::AsRef<str> for HitReviewStatus {

@@ -22,9 +22,7 @@ impl StopCrawlerInput {
 
 /// A builder for [`StopCrawlerInput`](crate::operation::stop_crawler::StopCrawlerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopCrawlerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl StopCrawlerInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StopCrawlerInput`](crate::operation::stop_crawler::StopCrawlerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_crawler::StopCrawlerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_crawler::StopCrawlerInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_crawler::StopCrawlerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_crawler::StopCrawlerInput { name: self.name })
     }
 }

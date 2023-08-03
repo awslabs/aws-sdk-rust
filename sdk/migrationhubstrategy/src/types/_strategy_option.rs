@@ -44,9 +44,7 @@ impl StrategyOption {
 
 /// A builder for [`StrategyOption`](crate::types::StrategyOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StrategyOptionBuilder {
     pub(crate) strategy: ::std::option::Option<crate::types::Strategy>,
     pub(crate) tool_name: ::std::option::Option<crate::types::TransformationToolName>,
@@ -74,10 +72,7 @@ impl StrategyOptionBuilder {
         self
     }
     /// <p> The name of the tool that can be used to transform an application component using this strategy. </p>
-    pub fn set_tool_name(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformationToolName>,
-    ) -> Self {
+    pub fn set_tool_name(mut self, input: ::std::option::Option<crate::types::TransformationToolName>) -> Self {
         self.tool_name = input;
         self
     }
@@ -91,17 +86,12 @@ impl StrategyOptionBuilder {
         self
     }
     /// <p> Destination information about where the application component can migrate to. For example, <code>EC2</code>, <code>ECS</code>, and so on. </p>
-    pub fn set_target_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetDestination>,
-    ) -> Self {
+    pub fn set_target_destination(mut self, input: ::std::option::Option<crate::types::TargetDestination>) -> Self {
         self.target_destination = input;
         self
     }
     /// <p> Destination information about where the application component can migrate to. For example, <code>EC2</code>, <code>ECS</code>, and so on. </p>
-    pub fn get_target_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetDestination> {
+    pub fn get_target_destination(&self) -> &::std::option::Option<crate::types::TargetDestination> {
         &self.target_destination
     }
     /// <p> Indicates if a specific strategy is preferred for the application component. </p>

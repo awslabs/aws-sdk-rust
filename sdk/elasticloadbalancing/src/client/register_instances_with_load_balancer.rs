@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`RegisterInstancesWithLoadBalancerOutput`](crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerOutput) with field(s):
     ///   - [`instances(Option<Vec<Instance>>)`](crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerOutput::instances): <p>The updated list of instances for the load balancer.</p>
     /// - On failure, responds with [`SdkError<RegisterInstancesWithLoadBalancerError>`](crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerError)
-    pub fn register_instances_with_load_balancer(&self) -> crate::operation::register_instances_with_load_balancer::builders::RegisterInstancesWithLoadBalancerFluentBuilder{
+    pub fn register_instances_with_load_balancer(
+        &self,
+    ) -> crate::operation::register_instances_with_load_balancer::builders::RegisterInstancesWithLoadBalancerFluentBuilder {
         crate::operation::register_instances_with_load_balancer::builders::RegisterInstancesWithLoadBalancerFluentBuilder::new(self.handle.clone())
     }
 }

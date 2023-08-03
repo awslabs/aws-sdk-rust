@@ -36,9 +36,7 @@ impl ListGatewaysInput {
 
 /// A builder for [`ListGatewaysInput`](crate::operation::list_gateways::ListGatewaysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGatewaysInputBuilder {
     pub(crate) gateway_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListGatewaysInputBuilder {
 }
 impl ListGatewaysInputBuilder {
     /// <p>The gateway group ARN for which to list gateways.</p>
-    pub fn gateway_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The gateway group ARN for which to list gateways.</p>
-    pub fn set_gateway_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_group_arn = input;
         self
     }
@@ -94,12 +86,7 @@ impl ListGatewaysInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListGatewaysInput`](crate::operation::list_gateways::ListGatewaysInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_gateways::ListGatewaysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_gateways::ListGatewaysInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_gateways::ListGatewaysInput {
             gateway_group_arn: self.gateway_group_arn,
             next_token: self.next_token,

@@ -43,16 +43,14 @@ impl PutRepositoryPermissionsPolicyInput {
 }
 impl PutRepositoryPermissionsPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutRepositoryPermissionsPolicyInput`](crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyInput).
-    pub fn builder() -> crate::operation::put_repository_permissions_policy::builders::PutRepositoryPermissionsPolicyInputBuilder{
+    pub fn builder() -> crate::operation::put_repository_permissions_policy::builders::PutRepositoryPermissionsPolicyInputBuilder {
         crate::operation::put_repository_permissions_policy::builders::PutRepositoryPermissionsPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutRepositoryPermissionsPolicyInput`](crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRepositoryPermissionsPolicyInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,
@@ -104,18 +102,12 @@ impl PutRepositoryPermissionsPolicyInputBuilder {
         &self.repository
     }
     /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
-    pub fn policy_revision(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_revision = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
-    pub fn set_policy_revision(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_revision = input;
         self
     }
@@ -124,18 +116,12 @@ impl PutRepositoryPermissionsPolicyInputBuilder {
         &self.policy_revision
     }
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -150,19 +136,12 @@ impl PutRepositoryPermissionsPolicyInputBuilder {
         crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyInput {
-                domain: self.domain
-                ,
-                domain_owner: self.domain_owner
-                ,
-                repository: self.repository
-                ,
-                policy_revision: self.policy_revision
-                ,
-                policy_document: self.policy_document
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyInput {
+            domain: self.domain,
+            domain_owner: self.domain_owner,
+            repository: self.repository,
+            policy_revision: self.policy_revision,
+            policy_document: self.policy_document,
+        })
     }
 }

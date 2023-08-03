@@ -28,9 +28,7 @@ impl InviteUsersOutput {
 
 /// A builder for [`InviteUsersOutput`](crate::operation::invite_users::InviteUsersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InviteUsersOutputBuilder {
     pub(crate) invites: ::std::option::Option<::std::vec::Vec<crate::types::Invite>>,
     _request_id: Option<String>,
@@ -48,10 +46,7 @@ impl InviteUsersOutputBuilder {
         self
     }
     /// <p>The email invitation details.</p>
-    pub fn set_invites(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Invite>>,
-    ) -> Self {
+    pub fn set_invites(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Invite>>) -> Self {
         self.invites = input;
         self
     }

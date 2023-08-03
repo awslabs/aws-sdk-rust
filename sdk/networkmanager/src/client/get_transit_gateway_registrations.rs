@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`transit_gateway_registrations(Option<Vec<TransitGatewayRegistration>>)`](crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsOutput::transit_gateway_registrations): <p>The transit gateway registrations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetTransitGatewayRegistrationsError>`](crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsError)
-    pub fn get_transit_gateway_registrations(&self) -> crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder{
+    pub fn get_transit_gateway_registrations(
+        &self,
+    ) -> crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder {
         crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder::new(self.handle.clone())
     }
 }

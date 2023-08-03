@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`master(Option<Master>)`](crate::operation::get_master_account::GetMasterAccountOutput::master): <p>The administrator account details.</p>
     /// - On failure, responds with [`SdkError<GetMasterAccountError>`](crate::operation::get_master_account::GetMasterAccountError)
     #[deprecated(note = "This operation is deprecated, use GetAdministratorAccount instead")]
-    pub fn get_master_account(
-        &self,
-    ) -> crate::operation::get_master_account::builders::GetMasterAccountFluentBuilder {
-        crate::operation::get_master_account::builders::GetMasterAccountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_master_account(&self) -> crate::operation::get_master_account::builders::GetMasterAccountFluentBuilder {
+        crate::operation::get_master_account::builders::GetMasterAccountFluentBuilder::new(self.handle.clone())
     }
 }

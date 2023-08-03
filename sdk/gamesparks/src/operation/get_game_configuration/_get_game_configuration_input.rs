@@ -22,17 +22,14 @@ impl GetGameConfigurationInput {
 }
 impl GetGameConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetGameConfigurationInput`](crate::operation::get_game_configuration::GetGameConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_game_configuration::builders::GetGameConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::get_game_configuration::builders::GetGameConfigurationInputBuilder {
         crate::operation::get_game_configuration::builders::GetGameConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetGameConfigurationInput`](crate::operation::get_game_configuration::GetGameConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGameConfigurationInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
     pub(crate) sections: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +61,7 @@ impl GetGameConfigurationInputBuilder {
         self
     }
     /// <p>The list of sections to return.</p>
-    pub fn set_sections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sections(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sections = input;
         self
     }
@@ -78,15 +72,11 @@ impl GetGameConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetGameConfigurationInput`](crate::operation::get_game_configuration::GetGameConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_game_configuration::GetGameConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_game_configuration::GetGameConfigurationInput {
-                game_name: self.game_name,
-                sections: self.sections,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_game_configuration::GetGameConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_game_configuration::GetGameConfigurationInput {
+            game_name: self.game_name,
+            sections: self.sections,
+        })
     }
 }

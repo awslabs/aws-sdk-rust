@@ -36,17 +36,14 @@ impl UpdateParallelDataInput {
 }
 impl UpdateParallelDataInput {
     /// Creates a new builder-style object to manufacture [`UpdateParallelDataInput`](crate::operation::update_parallel_data::UpdateParallelDataInput).
-    pub fn builder(
-    ) -> crate::operation::update_parallel_data::builders::UpdateParallelDataInputBuilder {
+    pub fn builder() -> crate::operation::update_parallel_data::builders::UpdateParallelDataInputBuilder {
         crate::operation::update_parallel_data::builders::UpdateParallelDataInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateParallelDataInput`](crate::operation::update_parallel_data::UpdateParallelDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateParallelDataInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -88,17 +85,12 @@ impl UpdateParallelDataInputBuilder {
         self
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    pub fn set_parallel_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ParallelDataConfig>,
-    ) -> Self {
+    pub fn set_parallel_data_config(mut self, input: ::std::option::Option<crate::types::ParallelDataConfig>) -> Self {
         self.parallel_data_config = input;
         self
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    pub fn get_parallel_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParallelDataConfig> {
+    pub fn get_parallel_data_config(&self) -> &::std::option::Option<crate::types::ParallelDataConfig> {
         &self.parallel_data_config
     }
     /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
@@ -118,17 +110,12 @@ impl UpdateParallelDataInputBuilder {
     /// Consumes the builder and constructs a [`UpdateParallelDataInput`](crate::operation::update_parallel_data::UpdateParallelDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_parallel_data::UpdateParallelDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_parallel_data::UpdateParallelDataInput {
-                name: self.name,
-                description: self.description,
-                parallel_data_config: self.parallel_data_config,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_parallel_data::UpdateParallelDataInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_parallel_data::UpdateParallelDataInput {
+            name: self.name,
+            description: self.description,
+            parallel_data_config: self.parallel_data_config,
+            client_token: self.client_token,
+        })
     }
 }

@@ -64,9 +64,7 @@ impl ScheduledInstancesEbs {
 
 /// A builder for [`ScheduledInstancesEbs`](crate::types::ScheduledInstancesEbs).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduledInstancesEbsBuilder {
     pub(crate) delete_on_termination: ::std::option::Option<bool>,
     pub(crate) encrypted: ::std::option::Option<bool>,

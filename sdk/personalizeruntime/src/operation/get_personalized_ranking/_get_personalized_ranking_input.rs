@@ -14,9 +14,7 @@ pub struct GetPersonalizedRankingInput {
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>
     #[doc(hidden)]
-    pub context: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of a filter you created to include items or exclude items from recommendations for a given user. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
     #[doc(hidden)]
     pub filter_arn: ::std::option::Option<::std::string::String>,
@@ -24,9 +22,7 @@ pub struct GetPersonalizedRankingInput {
     /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
     #[doc(hidden)]
-    pub filter_values: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub filter_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetPersonalizedRankingInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.</p>
@@ -42,11 +38,7 @@ impl GetPersonalizedRankingInput {
         self.user_id.as_deref()
     }
     /// <p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>
-    pub fn context(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.context.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a filter you created to include items or exclude items from recommendations for a given user. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
@@ -56,39 +48,27 @@ impl GetPersonalizedRankingInput {
     /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>
     /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
-    pub fn filter_values(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn filter_values(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.filter_values.as_ref()
     }
 }
 impl GetPersonalizedRankingInput {
     /// Creates a new builder-style object to manufacture [`GetPersonalizedRankingInput`](crate::operation::get_personalized_ranking::GetPersonalizedRankingInput).
-    pub fn builder(
-    ) -> crate::operation::get_personalized_ranking::builders::GetPersonalizedRankingInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_personalized_ranking::builders::GetPersonalizedRankingInputBuilder {
         crate::operation::get_personalized_ranking::builders::GetPersonalizedRankingInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPersonalizedRankingInput`](crate::operation::get_personalized_ranking::GetPersonalizedRankingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPersonalizedRankingInputBuilder {
     pub(crate) campaign_arn: ::std::option::Option<::std::string::String>,
     pub(crate) input_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) context: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) filter_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) filter_values: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) filter_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetPersonalizedRankingInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.</p>
@@ -117,10 +97,7 @@ impl GetPersonalizedRankingInputBuilder {
         self
     }
     /// <p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500.</p>
-    pub fn set_input_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_input_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.input_list = input;
         self
     }
@@ -147,32 +124,19 @@ impl GetPersonalizedRankingInputBuilder {
     /// To override the contents of this collection use [`set_context`](Self::set_context).
     ///
     /// <p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>
-    pub fn context(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.context.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.context = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>
-    pub fn set_context(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.context = input;
         self
     }
     /// <p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>
-    pub fn get_context(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.context
     }
     /// <p>The Amazon Resource Name (ARN) of a filter you created to include items or exclude items from recommendations for a given user. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
@@ -196,11 +160,7 @@ impl GetPersonalizedRankingInputBuilder {
     /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>
     /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
-    pub fn filter_values(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_values(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.filter_values.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.filter_values = ::std::option::Option::Some(hash_map);
@@ -211,9 +171,7 @@ impl GetPersonalizedRankingInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
     pub fn set_filter_values(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.filter_values = input;
         self
@@ -221,29 +179,21 @@ impl GetPersonalizedRankingInputBuilder {
     /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>
     /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
-    pub fn get_filter_values(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_filter_values(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.filter_values
     }
     /// Consumes the builder and constructs a [`GetPersonalizedRankingInput`](crate::operation::get_personalized_ranking::GetPersonalizedRankingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_personalized_ranking::GetPersonalizedRankingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_personalized_ranking::GetPersonalizedRankingInput {
-                campaign_arn: self.campaign_arn,
-                input_list: self.input_list,
-                user_id: self.user_id,
-                context: self.context,
-                filter_arn: self.filter_arn,
-                filter_values: self.filter_values,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_personalized_ranking::GetPersonalizedRankingInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_personalized_ranking::GetPersonalizedRankingInput {
+            campaign_arn: self.campaign_arn,
+            input_list: self.input_list,
+            user_id: self.user_id,
+            context: self.context,
+            filter_arn: self.filter_arn,
+            filter_values: self.filter_values,
+        })
     }
 }

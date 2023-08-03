@@ -30,17 +30,14 @@ impl BatchDeleteImageInput {
 }
 impl BatchDeleteImageInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteImageInput`](crate::operation::batch_delete_image::BatchDeleteImageInput).
-    pub fn builder() -> crate::operation::batch_delete_image::builders::BatchDeleteImageInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_delete_image::builders::BatchDeleteImageInputBuilder {
         crate::operation::batch_delete_image::builders::BatchDeleteImageInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteImageInput`](crate::operation::batch_delete_image::BatchDeleteImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteImageInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -62,18 +59,12 @@ impl BatchDeleteImageInputBuilder {
         &self.registry_id
     }
     /// <p>The repository that contains the image to delete.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository that contains the image to delete.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -93,32 +84,22 @@ impl BatchDeleteImageInputBuilder {
         self
     }
     /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
-    ) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>) -> Self {
         self.image_ids = input;
         self
     }
     /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    pub fn get_image_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
         &self.image_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteImageInput`](crate::operation::batch_delete_image::BatchDeleteImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_image::BatchDeleteImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_delete_image::BatchDeleteImageInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                image_ids: self.image_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_delete_image::BatchDeleteImageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_delete_image::BatchDeleteImageInput {
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+            image_ids: self.image_ids,
+        })
     }
 }

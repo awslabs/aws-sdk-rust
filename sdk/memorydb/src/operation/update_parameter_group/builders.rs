@@ -37,9 +37,7 @@ impl UpdateParameterGroupFluentBuilder {
         }
     }
     /// Access the UpdateParameterGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_parameter_group::builders::UpdateParameterGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_parameter_group::builders::UpdateParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateParameterGroupFluentBuilder {
             crate::operation::update_parameter_group::UpdateParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_parameter_group::UpdateParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_parameter_group::UpdateParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_parameter_group::UpdateParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_parameter_group::UpdateParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_parameter_group::UpdateParameterGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_parameter_group::UpdateParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_parameter_group::UpdateParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_parameter_group::UpdateParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateParameterGroupFluentBuilder {
             crate::operation::update_parameter_group::UpdateParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_parameter_group::UpdateParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_parameter_group::UpdateParameterGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the parameter group to update.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_name(input.into());
         self
     }
     /// <p>The name of the parameter group to update.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }
@@ -152,17 +133,12 @@ impl UpdateParameterGroupFluentBuilder {
         self
     }
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be updated per request.</p>
-    pub fn set_parameter_name_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
-    ) -> Self {
+    pub fn set_parameter_name_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>) -> Self {
         self.inner = self.inner.set_parameter_name_values(input);
         self
     }
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be updated per request.</p>
-    pub fn get_parameter_name_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>> {
+    pub fn get_parameter_name_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>> {
         self.inner.get_parameter_name_values()
     }
 }

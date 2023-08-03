@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSkillAuthorizationOutput {
 }
 impl DeleteSkillAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSkillAuthorizationOutput`](crate::operation::delete_skill_authorization::DeleteSkillAuthorizationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationOutputBuilder {
         crate::operation::delete_skill_authorization::builders::DeleteSkillAuthorizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSkillAuthorizationOutput`](crate::operation::delete_skill_authorization::DeleteSkillAuthorizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSkillAuthorizationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteSkillAuthorizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteSkillAuthorizationOutput`](crate::operation::delete_skill_authorization::DeleteSkillAuthorizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_skill_authorization::DeleteSkillAuthorizationOutput {
+    pub fn build(self) -> crate::operation::delete_skill_authorization::DeleteSkillAuthorizationOutput {
         crate::operation::delete_skill_authorization::DeleteSkillAuthorizationOutput {
             _request_id: self._request_id,
         }

@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateConnectionAliasOutput`](crate::operation::create_connection_alias::CreateConnectionAliasOutput) with field(s):
     ///   - [`alias_id(Option<String>)`](crate::operation::create_connection_alias::CreateConnectionAliasOutput::alias_id): <p>The identifier of the connection alias.</p>
     /// - On failure, responds with [`SdkError<CreateConnectionAliasError>`](crate::operation::create_connection_alias::CreateConnectionAliasError)
-    pub fn create_connection_alias(
-        &self,
-    ) -> crate::operation::create_connection_alias::builders::CreateConnectionAliasFluentBuilder
-    {
-        crate::operation::create_connection_alias::builders::CreateConnectionAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_connection_alias(&self) -> crate::operation::create_connection_alias::builders::CreateConnectionAliasFluentBuilder {
+        crate::operation::create_connection_alias::builders::CreateConnectionAliasFluentBuilder::new(self.handle.clone())
     }
 }

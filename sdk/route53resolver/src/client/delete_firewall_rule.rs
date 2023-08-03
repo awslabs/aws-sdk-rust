@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteFirewallRuleOutput`](crate::operation::delete_firewall_rule::DeleteFirewallRuleOutput) with field(s):
     ///   - [`firewall_rule(Option<FirewallRule>)`](crate::operation::delete_firewall_rule::DeleteFirewallRuleOutput::firewall_rule): <p>The specification for the firewall rule that you just deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteFirewallRuleError>`](crate::operation::delete_firewall_rule::DeleteFirewallRuleError)
-    pub fn delete_firewall_rule(
-        &self,
-    ) -> crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleFluentBuilder {
-        crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_firewall_rule(&self) -> crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleFluentBuilder {
+        crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleFluentBuilder::new(self.handle.clone())
     }
 }

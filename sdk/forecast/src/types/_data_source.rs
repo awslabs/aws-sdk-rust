@@ -23,9 +23,7 @@ impl DataSource {
 
 /// A builder for [`DataSource`](crate::types::DataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSourceBuilder {
     pub(crate) s3_config: ::std::option::Option<crate::types::S3Config>,
 }
@@ -46,8 +44,6 @@ impl DataSourceBuilder {
     }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
-        crate::types::DataSource {
-            s3_config: self.s3_config,
-        }
+        crate::types::DataSource { s3_config: self.s3_config }
     }
 }

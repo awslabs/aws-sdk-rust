@@ -28,9 +28,7 @@ impl GetNamedQueryOutput {
 
 /// A builder for [`GetNamedQueryOutput`](crate::operation::get_named_query::GetNamedQueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNamedQueryOutputBuilder {
     pub(crate) named_query: ::std::option::Option<crate::types::NamedQuery>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetNamedQueryOutputBuilder {
         self
     }
     /// <p>Information about the query.</p>
-    pub fn set_named_query(
-        mut self,
-        input: ::std::option::Option<crate::types::NamedQuery>,
-    ) -> Self {
+    pub fn set_named_query(mut self, input: ::std::option::Option<crate::types::NamedQuery>) -> Self {
         self.named_query = input;
         self
     }

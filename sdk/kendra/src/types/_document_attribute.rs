@@ -30,9 +30,7 @@ impl DocumentAttribute {
 
 /// A builder for [`DocumentAttribute`](crate::types::DocumentAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentAttributeBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<crate::types::DocumentAttributeValue>,
@@ -58,10 +56,7 @@ impl DocumentAttributeBuilder {
         self
     }
     /// <p>The value of the attribute.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentAttributeValue>,
-    ) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::DocumentAttributeValue>) -> Self {
         self.value = input;
         self
     }

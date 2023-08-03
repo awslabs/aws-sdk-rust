@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`ids(Option<Vec<String>>)`](crate::operation::import_api_keys::ImportApiKeysOutput::ids): <p>A list of all the ApiKey identifiers.</p>
     ///   - [`warnings(Option<Vec<String>>)`](crate::operation::import_api_keys::ImportApiKeysOutput::warnings): <p>A list of warning messages.</p>
     /// - On failure, responds with [`SdkError<ImportApiKeysError>`](crate::operation::import_api_keys::ImportApiKeysError)
-    pub fn import_api_keys(
-        &self,
-    ) -> crate::operation::import_api_keys::builders::ImportApiKeysFluentBuilder {
-        crate::operation::import_api_keys::builders::ImportApiKeysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn import_api_keys(&self) -> crate::operation::import_api_keys::builders::ImportApiKeysFluentBuilder {
+        crate::operation::import_api_keys::builders::ImportApiKeysFluentBuilder::new(self.handle.clone())
     }
 }

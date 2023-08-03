@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteRelationalDatabaseOutput`](crate::operation::delete_relational_database::DeleteRelationalDatabaseOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_relational_database::DeleteRelationalDatabaseOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteRelationalDatabaseError>`](crate::operation::delete_relational_database::DeleteRelationalDatabaseError)
-    pub fn delete_relational_database(
-        &self,
-    ) -> crate::operation::delete_relational_database::builders::DeleteRelationalDatabaseFluentBuilder
-    {
+    pub fn delete_relational_database(&self) -> crate::operation::delete_relational_database::builders::DeleteRelationalDatabaseFluentBuilder {
         crate::operation::delete_relational_database::builders::DeleteRelationalDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

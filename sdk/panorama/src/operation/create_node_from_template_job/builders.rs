@@ -26,7 +26,7 @@ impl CreateNodeFromTemplateJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateNodeFromTemplateJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobInputBuilder,
+    inner: crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobInputBuilder,
 }
 impl CreateNodeFromTemplateJobFluentBuilder {
     /// Creates a new `CreateNodeFromTemplateJob`.
@@ -37,7 +37,7 @@ impl CreateNodeFromTemplateJobFluentBuilder {
         }
     }
     /// Access the CreateNodeFromTemplateJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateNodeFromTemplateJobFluentBuilder {
             crate::operation::create_node_from_template_job::CreateNodeFromTemplateJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateNodeFromTemplateJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateNodeFromTemplateJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateNodeFromTemplateJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateNodeFromTemplateJobFluentBuilder {
             crate::operation::create_node_from_template_job::CreateNodeFromTemplateJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl CreateNodeFromTemplateJobFluentBuilder {
         self
     }
     /// <p>The type of node.</p>
-    pub fn set_template_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateType>,
-    ) -> Self {
+    pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
         self.inner = self.inner.set_template_type(input);
         self
     }
@@ -138,18 +124,12 @@ impl CreateNodeFromTemplateJobFluentBuilder {
         self.inner.get_template_type()
     }
     /// <p>An output package name for the node.</p>
-    pub fn output_package_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_package_name(input.into());
         self
     }
     /// <p>An output package name for the node.</p>
-    pub fn set_output_package_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_package_name(input);
         self
     }
@@ -158,18 +138,12 @@ impl CreateNodeFromTemplateJobFluentBuilder {
         self.inner.get_output_package_name()
     }
     /// <p>An output package version for the node.</p>
-    pub fn output_package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_package_version(input.into());
         self
     }
     /// <p>An output package version for the node.</p>
-    pub fn set_output_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_package_version(input);
         self
     }
@@ -192,18 +166,12 @@ impl CreateNodeFromTemplateJobFluentBuilder {
         self.inner.get_node_name()
     }
     /// <p>A description for the node.</p>
-    pub fn node_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn node_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_description(input.into());
         self
     }
     /// <p>A description for the node.</p>
-    pub fn set_node_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_node_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_description(input);
         self
     }
@@ -227,19 +195,13 @@ impl CreateNodeFromTemplateJobFluentBuilder {
     /// <p>Template parameters for the node.</p>
     pub fn set_template_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_template_parameters(input);
         self
     }
     /// <p>Template parameters for the node.</p>
-    pub fn get_template_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_template_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_template_parameters()
     }
     /// Appends an item to `JobTags`.
@@ -252,17 +214,12 @@ impl CreateNodeFromTemplateJobFluentBuilder {
         self
     }
     /// <p>Tags for the job.</p>
-    pub fn set_job_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>,
-    ) -> Self {
+    pub fn set_job_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>) -> Self {
         self.inner = self.inner.set_job_tags(input);
         self
     }
     /// <p>Tags for the job.</p>
-    pub fn get_job_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>> {
+    pub fn get_job_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>> {
         self.inner.get_job_tags()
     }
 }

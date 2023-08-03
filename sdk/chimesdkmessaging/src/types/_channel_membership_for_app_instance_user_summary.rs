@@ -9,8 +9,7 @@ pub struct ChannelMembershipForAppInstanceUserSummary {
     pub channel_summary: ::std::option::Option<crate::types::ChannelSummary>,
     /// <p>Returns the channel membership data for an <code>AppInstance</code>.</p>
     #[doc(hidden)]
-    pub app_instance_user_membership_summary:
-        ::std::option::Option<crate::types::AppInstanceUserMembershipSummary>,
+    pub app_instance_user_membership_summary: ::std::option::Option<crate::types::AppInstanceUserMembershipSummary>,
 }
 impl ChannelMembershipForAppInstanceUserSummary {
     /// <p>Returns the channel data for an <code>AppInstance</code>.</p>
@@ -18,9 +17,7 @@ impl ChannelMembershipForAppInstanceUserSummary {
         self.channel_summary.as_ref()
     }
     /// <p>Returns the channel membership data for an <code>AppInstance</code>.</p>
-    pub fn app_instance_user_membership_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AppInstanceUserMembershipSummary> {
+    pub fn app_instance_user_membership_summary(&self) -> ::std::option::Option<&crate::types::AppInstanceUserMembershipSummary> {
         self.app_instance_user_membership_summary.as_ref()
     }
 }
@@ -33,13 +30,10 @@ impl ChannelMembershipForAppInstanceUserSummary {
 
 /// A builder for [`ChannelMembershipForAppInstanceUserSummary`](crate::types::ChannelMembershipForAppInstanceUserSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelMembershipForAppInstanceUserSummaryBuilder {
     pub(crate) channel_summary: ::std::option::Option<crate::types::ChannelSummary>,
-    pub(crate) app_instance_user_membership_summary:
-        ::std::option::Option<crate::types::AppInstanceUserMembershipSummary>,
+    pub(crate) app_instance_user_membership_summary: ::std::option::Option<crate::types::AppInstanceUserMembershipSummary>,
 }
 impl ChannelMembershipForAppInstanceUserSummaryBuilder {
     /// <p>Returns the channel data for an <code>AppInstance</code>.</p>
@@ -48,10 +42,7 @@ impl ChannelMembershipForAppInstanceUserSummaryBuilder {
         self
     }
     /// <p>Returns the channel data for an <code>AppInstance</code>.</p>
-    pub fn set_channel_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelSummary>,
-    ) -> Self {
+    pub fn set_channel_summary(mut self, input: ::std::option::Option<crate::types::ChannelSummary>) -> Self {
         self.channel_summary = input;
         self
     }
@@ -60,25 +51,17 @@ impl ChannelMembershipForAppInstanceUserSummaryBuilder {
         &self.channel_summary
     }
     /// <p>Returns the channel membership data for an <code>AppInstance</code>.</p>
-    pub fn app_instance_user_membership_summary(
-        mut self,
-        input: crate::types::AppInstanceUserMembershipSummary,
-    ) -> Self {
+    pub fn app_instance_user_membership_summary(mut self, input: crate::types::AppInstanceUserMembershipSummary) -> Self {
         self.app_instance_user_membership_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns the channel membership data for an <code>AppInstance</code>.</p>
-    pub fn set_app_instance_user_membership_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::AppInstanceUserMembershipSummary>,
-    ) -> Self {
+    pub fn set_app_instance_user_membership_summary(mut self, input: ::std::option::Option<crate::types::AppInstanceUserMembershipSummary>) -> Self {
         self.app_instance_user_membership_summary = input;
         self
     }
     /// <p>Returns the channel membership data for an <code>AppInstance</code>.</p>
-    pub fn get_app_instance_user_membership_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppInstanceUserMembershipSummary> {
+    pub fn get_app_instance_user_membership_summary(&self) -> &::std::option::Option<crate::types::AppInstanceUserMembershipSummary> {
         &self.app_instance_user_membership_summary
     }
     /// Consumes the builder and constructs a [`ChannelMembershipForAppInstanceUserSummary`](crate::types::ChannelMembershipForAppInstanceUserSummary).

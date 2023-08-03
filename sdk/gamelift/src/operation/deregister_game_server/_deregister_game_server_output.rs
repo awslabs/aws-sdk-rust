@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterGameServerOutput {
 }
 impl DeregisterGameServerOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterGameServerOutput`](crate::operation::deregister_game_server::DeregisterGameServerOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_game_server::builders::DeregisterGameServerOutputBuilder {
+    pub fn builder() -> crate::operation::deregister_game_server::builders::DeregisterGameServerOutputBuilder {
         crate::operation::deregister_game_server::builders::DeregisterGameServerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterGameServerOutput`](crate::operation::deregister_game_server::DeregisterGameServerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterGameServerOutputBuilder {
     _request_id: Option<String>,
 }

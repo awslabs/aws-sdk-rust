@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`filter_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::filter_arn) / [`set_filter_arn(Option<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::set_filter_arn): <p>The ARN of the filter to delete.</p>
     /// - On success, responds with [`DeleteFilterOutput`](crate::operation::delete_filter::DeleteFilterOutput)
     /// - On failure, responds with [`SdkError<DeleteFilterError>`](crate::operation::delete_filter::DeleteFilterError)
-    pub fn delete_filter(
-        &self,
-    ) -> crate::operation::delete_filter::builders::DeleteFilterFluentBuilder {
-        crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_filter(&self) -> crate::operation::delete_filter::builders::DeleteFilterFluentBuilder {
+        crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::new(self.handle.clone())
     }
 }

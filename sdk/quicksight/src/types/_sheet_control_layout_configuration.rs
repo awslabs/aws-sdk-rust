@@ -23,9 +23,7 @@ impl SheetControlLayoutConfiguration {
 
 /// A builder for [`SheetControlLayoutConfiguration`](crate::types::SheetControlLayoutConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SheetControlLayoutConfigurationBuilder {
     pub(crate) grid_layout: ::std::option::Option<crate::types::GridLayoutConfiguration>,
 }
@@ -36,10 +34,7 @@ impl SheetControlLayoutConfigurationBuilder {
         self
     }
     /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
-    pub fn set_grid_layout(
-        mut self,
-        input: ::std::option::Option<crate::types::GridLayoutConfiguration>,
-    ) -> Self {
+    pub fn set_grid_layout(mut self, input: ::std::option::Option<crate::types::GridLayoutConfiguration>) -> Self {
         self.grid_layout = input;
         self
     }

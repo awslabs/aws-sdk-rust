@@ -71,18 +71,14 @@ impl BatchExecuteStatementInput {
 }
 impl BatchExecuteStatementInput {
     /// Creates a new builder-style object to manufacture [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
-    pub fn builder(
-    ) -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder {
         crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchExecuteStatementInputBuilder {
     pub(crate) sqls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -107,10 +103,7 @@ impl BatchExecuteStatementInputBuilder {
         self
     }
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
-    pub fn set_sqls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sqls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sqls = input;
         self
     }
@@ -119,18 +112,12 @@ impl BatchExecuteStatementInputBuilder {
         &self.sqls
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -195,18 +182,12 @@ impl BatchExecuteStatementInputBuilder {
         &self.with_event
     }
     /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
-    pub fn statement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
-    pub fn set_statement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement_name = input;
         self
     }
@@ -215,18 +196,12 @@ impl BatchExecuteStatementInputBuilder {
         &self.statement_name
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workgroup_name = input;
         self
     }
@@ -251,22 +226,18 @@ impl BatchExecuteStatementInputBuilder {
     /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_execute_statement::BatchExecuteStatementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_execute_statement::BatchExecuteStatementInput {
-                sqls: self.sqls,
-                cluster_identifier: self.cluster_identifier,
-                secret_arn: self.secret_arn,
-                db_user: self.db_user,
-                database: self.database,
-                with_event: self.with_event,
-                statement_name: self.statement_name,
-                workgroup_name: self.workgroup_name,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_execute_statement::BatchExecuteStatementInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_execute_statement::BatchExecuteStatementInput {
+            sqls: self.sqls,
+            cluster_identifier: self.cluster_identifier,
+            secret_arn: self.secret_arn,
+            db_user: self.db_user,
+            database: self.database,
+            with_event: self.with_event,
+            statement_name: self.statement_name,
+            workgroup_name: self.workgroup_name,
+            client_token: self.client_token,
+        })
     }
 }

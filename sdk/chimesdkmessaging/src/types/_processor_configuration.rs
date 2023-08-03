@@ -23,9 +23,7 @@ impl ProcessorConfiguration {
 
 /// A builder for [`ProcessorConfiguration`](crate::types::ProcessorConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessorConfigurationBuilder {
     pub(crate) lambda: ::std::option::Option<crate::types::LambdaConfiguration>,
 }
@@ -36,10 +34,7 @@ impl ProcessorConfigurationBuilder {
         self
     }
     /// <p>Indicates that the processor is of type Lambda.</p>
-    pub fn set_lambda(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaConfiguration>,
-    ) -> Self {
+    pub fn set_lambda(mut self, input: ::std::option::Option<crate::types::LambdaConfiguration>) -> Self {
         self.lambda = input;
         self
     }
@@ -49,8 +44,6 @@ impl ProcessorConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`ProcessorConfiguration`](crate::types::ProcessorConfiguration).
     pub fn build(self) -> crate::types::ProcessorConfiguration {
-        crate::types::ProcessorConfiguration {
-            lambda: self.lambda,
-        }
+        crate::types::ProcessorConfiguration { lambda: self.lambda }
     }
 }

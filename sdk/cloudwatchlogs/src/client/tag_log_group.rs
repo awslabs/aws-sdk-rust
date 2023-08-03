@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`TagLogGroupOutput`](crate::operation::tag_log_group::TagLogGroupOutput)
     /// - On failure, responds with [`SdkError<TagLogGroupError>`](crate::operation::tag_log_group::TagLogGroupError)
     #[deprecated(note = "Please use the generic tagging API TagResource")]
-    pub fn tag_log_group(
-        &self,
-    ) -> crate::operation::tag_log_group::builders::TagLogGroupFluentBuilder {
-        crate::operation::tag_log_group::builders::TagLogGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn tag_log_group(&self) -> crate::operation::tag_log_group::builders::TagLogGroupFluentBuilder {
+        crate::operation::tag_log_group::builders::TagLogGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl ListEntitlementsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_entitlements::ListEntitlementsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entitlements::ListEntitlementsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entitlements::ListEntitlementsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_entitlements();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListEntitlementsFluentBuilder {
         }
     }
     /// Access the ListEntitlements as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_entitlements::builders::ListEntitlementsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_entitlements::builders::ListEntitlementsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListEntitlementsFluentBuilder {
             crate::operation::list_entitlements::ListEntitlements,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entitlements::ListEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entitlements::ListEntitlementsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListEntitlementsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListEntitlementsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_entitlements::ListEntitlementsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entitlements::ListEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entitlements::ListEntitlementsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListEntitlementsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_entitlements::ListEntitlementsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entitlements::ListEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entitlements::ListEntitlementsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListEntitlementsFluentBuilder {
             crate::operation::list_entitlements::ListEntitlements,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entitlements::ListEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entitlements::ListEntitlementsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_entitlements::paginator::ListEntitlementsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_entitlements::paginator::ListEntitlementsPaginator {
-        crate::operation::list_entitlements::paginator::ListEntitlementsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_entitlements::paginator::ListEntitlementsPaginator {
+        crate::operation::list_entitlements::paginator::ListEntitlementsPaginator::new(self.handle, self.inner)
     }
     /// The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.
     pub fn max_results(mut self, input: i32) -> Self {

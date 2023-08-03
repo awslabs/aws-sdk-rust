@@ -35,9 +35,7 @@ impl ListOtaUpdatesOutput {
 
 /// A builder for [`ListOtaUpdatesOutput`](crate::operation::list_ota_updates::ListOtaUpdatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOtaUpdatesOutputBuilder {
     pub(crate) ota_updates: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListOtaUpdatesOutputBuilder {
         self
     }
     /// <p>A list of OTA update jobs.</p>
-    pub fn set_ota_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateSummary>>,
-    ) -> Self {
+    pub fn set_ota_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateSummary>>) -> Self {
         self.ota_updates = input;
         self
     }
     /// <p>A list of OTA update jobs.</p>
-    pub fn get_ota_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateSummary>> {
+    pub fn get_ota_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateSummary>> {
         &self.ota_updates
     }
     /// <p>A token to use to get the next set of results.</p>

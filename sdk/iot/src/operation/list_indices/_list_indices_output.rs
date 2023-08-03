@@ -35,9 +35,7 @@ impl ListIndicesOutput {
 
 /// A builder for [`ListIndicesOutput`](crate::operation::list_indices::ListIndicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIndicesOutputBuilder {
     pub(crate) index_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListIndicesOutputBuilder {
         self
     }
     /// <p>The index names.</p>
-    pub fn set_index_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_index_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.index_names = input;
         self
     }
     /// <p>The index names.</p>
-    pub fn get_index_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_index_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.index_names
     }
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>

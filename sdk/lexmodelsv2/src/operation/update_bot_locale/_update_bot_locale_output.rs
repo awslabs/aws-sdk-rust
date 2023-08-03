@@ -98,17 +98,14 @@ impl ::aws_http::request_id::RequestId for UpdateBotLocaleOutput {
 }
 impl UpdateBotLocaleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBotLocaleOutput`](crate::operation::update_bot_locale::UpdateBotLocaleOutput).
-    pub fn builder() -> crate::operation::update_bot_locale::builders::UpdateBotLocaleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_bot_locale::builders::UpdateBotLocaleOutputBuilder {
         crate::operation::update_bot_locale::builders::UpdateBotLocaleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBotLocaleOutput`](crate::operation::update_bot_locale::UpdateBotLocaleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBotLocaleOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -201,10 +198,7 @@ impl UpdateBotLocaleOutputBuilder {
         self
     }
     /// <p>The updated confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
-    pub fn set_nlu_intent_confidence_threshold(
-        mut self,
-        input: ::std::option::Option<f64>,
-    ) -> Self {
+    pub fn set_nlu_intent_confidence_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.nlu_intent_confidence_threshold = input;
         self
     }
@@ -218,10 +212,7 @@ impl UpdateBotLocaleOutputBuilder {
         self
     }
     /// <p>The updated Amazon Polly voice to use for voice interaction with the user.</p>
-    pub fn set_voice_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceSettings>,
-    ) -> Self {
+    pub fn set_voice_settings(mut self, input: ::std::option::Option<crate::types::VoiceSettings>) -> Self {
         self.voice_settings = input;
         self
     }
@@ -235,10 +226,7 @@ impl UpdateBotLocaleOutputBuilder {
         self
     }
     /// <p>The current status of the locale. When the bot status is <code>Built</code> the locale is ready for use.</p>
-    pub fn set_bot_locale_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BotLocaleStatus>,
-    ) -> Self {
+    pub fn set_bot_locale_status(mut self, input: ::std::option::Option<crate::types::BotLocaleStatus>) -> Self {
         self.bot_locale_status = input;
         self
     }
@@ -251,27 +239,19 @@ impl UpdateBotLocaleOutputBuilder {
     /// To override the contents of this collection use [`set_failure_reasons`](Self::set_failure_reasons).
     ///
     /// <p>If the <code>botLocaleStatus</code> is <code>Failed</code>, the <code>failureReasons</code> field lists the errors that occurred while building the bot.</p>
-    pub fn failure_reasons(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
         v.push(input.into());
         self.failure_reasons = ::std::option::Option::Some(v);
         self
     }
     /// <p>If the <code>botLocaleStatus</code> is <code>Failed</code>, the <code>failureReasons</code> field lists the errors that occurred while building the bot.</p>
-    pub fn set_failure_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failure_reasons = input;
         self
     }
     /// <p>If the <code>botLocaleStatus</code> is <code>Failed</code>, the <code>failureReasons</code> field lists the errors that occurred while building the bot.</p>
-    pub fn get_failure_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_reasons
     }
     /// <p>A timestamp of the date and time that the locale was created.</p>
@@ -280,10 +260,7 @@ impl UpdateBotLocaleOutputBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the locale was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -297,17 +274,12 @@ impl UpdateBotLocaleOutputBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the locale was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>A timestamp of the date and time that the locale was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// Appends an item to `recommended_actions`.
@@ -315,27 +287,19 @@ impl UpdateBotLocaleOutputBuilder {
     /// To override the contents of this collection use [`set_recommended_actions`](Self::set_recommended_actions).
     ///
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-    pub fn recommended_actions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommended_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recommended_actions.unwrap_or_default();
         v.push(input.into());
         self.recommended_actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-    pub fn set_recommended_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_recommended_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.recommended_actions = input;
         self
     }
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-    pub fn get_recommended_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recommended_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.recommended_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

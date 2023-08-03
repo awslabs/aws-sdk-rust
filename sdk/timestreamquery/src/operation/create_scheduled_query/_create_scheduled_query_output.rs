@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateScheduledQueryOutput {
 }
 impl CreateScheduledQueryOutput {
     /// Creates a new builder-style object to manufacture [`CreateScheduledQueryOutput`](crate::operation::create_scheduled_query::CreateScheduledQueryOutput).
-    pub fn builder(
-    ) -> crate::operation::create_scheduled_query::builders::CreateScheduledQueryOutputBuilder {
+    pub fn builder() -> crate::operation::create_scheduled_query::builders::CreateScheduledQueryOutputBuilder {
         crate::operation::create_scheduled_query::builders::CreateScheduledQueryOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateScheduledQueryOutput`](crate::operation::create_scheduled_query::CreateScheduledQueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateScheduledQueryOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

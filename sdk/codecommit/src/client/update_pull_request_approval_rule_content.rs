@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`UpdatePullRequestApprovalRuleContentOutput`](crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput) with field(s):
     ///   - [`approval_rule(Option<ApprovalRule>)`](crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput::approval_rule): <p>Information about the updated approval rule.</p>
     /// - On failure, responds with [`SdkError<UpdatePullRequestApprovalRuleContentError>`](crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError)
-    pub fn update_pull_request_approval_rule_content(&self) -> crate::operation::update_pull_request_approval_rule_content::builders::UpdatePullRequestApprovalRuleContentFluentBuilder{
-        crate::operation::update_pull_request_approval_rule_content::builders::UpdatePullRequestApprovalRuleContentFluentBuilder::new(self.handle.clone())
+    pub fn update_pull_request_approval_rule_content(
+        &self,
+    ) -> crate::operation::update_pull_request_approval_rule_content::builders::UpdatePullRequestApprovalRuleContentFluentBuilder {
+        crate::operation::update_pull_request_approval_rule_content::builders::UpdatePullRequestApprovalRuleContentFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

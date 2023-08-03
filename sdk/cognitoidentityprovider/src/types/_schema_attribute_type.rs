@@ -25,12 +25,10 @@ pub struct SchemaAttributeType {
     pub required: ::std::option::Option<bool>,
     /// <p>Specifies the constraints for an attribute of the number type.</p>
     #[doc(hidden)]
-    pub number_attribute_constraints:
-        ::std::option::Option<crate::types::NumberAttributeConstraintsType>,
+    pub number_attribute_constraints: ::std::option::Option<crate::types::NumberAttributeConstraintsType>,
     /// <p>Specifies the constraints for an attribute of the string type.</p>
     #[doc(hidden)]
-    pub string_attribute_constraints:
-        ::std::option::Option<crate::types::StringAttributeConstraintsType>,
+    pub string_attribute_constraints: ::std::option::Option<crate::types::StringAttributeConstraintsType>,
 }
 impl SchemaAttributeType {
     /// <p>A schema attribute of the name type.</p>
@@ -58,15 +56,11 @@ impl SchemaAttributeType {
         self.required
     }
     /// <p>Specifies the constraints for an attribute of the number type.</p>
-    pub fn number_attribute_constraints(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NumberAttributeConstraintsType> {
+    pub fn number_attribute_constraints(&self) -> ::std::option::Option<&crate::types::NumberAttributeConstraintsType> {
         self.number_attribute_constraints.as_ref()
     }
     /// <p>Specifies the constraints for an attribute of the string type.</p>
-    pub fn string_attribute_constraints(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StringAttributeConstraintsType> {
+    pub fn string_attribute_constraints(&self) -> ::std::option::Option<&crate::types::StringAttributeConstraintsType> {
         self.string_attribute_constraints.as_ref()
     }
 }
@@ -79,19 +73,15 @@ impl SchemaAttributeType {
 
 /// A builder for [`SchemaAttributeType`](crate::types::SchemaAttributeType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaAttributeTypeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_data_type: ::std::option::Option<crate::types::AttributeDataType>,
     pub(crate) developer_only_attribute: ::std::option::Option<bool>,
     pub(crate) mutable: ::std::option::Option<bool>,
     pub(crate) required: ::std::option::Option<bool>,
-    pub(crate) number_attribute_constraints:
-        ::std::option::Option<crate::types::NumberAttributeConstraintsType>,
-    pub(crate) string_attribute_constraints:
-        ::std::option::Option<crate::types::StringAttributeConstraintsType>,
+    pub(crate) number_attribute_constraints: ::std::option::Option<crate::types::NumberAttributeConstraintsType>,
+    pub(crate) string_attribute_constraints: ::std::option::Option<crate::types::StringAttributeConstraintsType>,
 }
 impl SchemaAttributeTypeBuilder {
     /// <p>A schema attribute of the name type.</p>
@@ -114,17 +104,12 @@ impl SchemaAttributeTypeBuilder {
         self
     }
     /// <p>The attribute data type.</p>
-    pub fn set_attribute_data_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeDataType>,
-    ) -> Self {
+    pub fn set_attribute_data_type(mut self, input: ::std::option::Option<crate::types::AttributeDataType>) -> Self {
         self.attribute_data_type = input;
         self
     }
     /// <p>The attribute data type.</p>
-    pub fn get_attribute_data_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeDataType> {
+    pub fn get_attribute_data_type(&self) -> &::std::option::Option<crate::types::AttributeDataType> {
         &self.attribute_data_type
     }
     /// <note>
@@ -182,47 +167,31 @@ impl SchemaAttributeTypeBuilder {
         &self.required
     }
     /// <p>Specifies the constraints for an attribute of the number type.</p>
-    pub fn number_attribute_constraints(
-        mut self,
-        input: crate::types::NumberAttributeConstraintsType,
-    ) -> Self {
+    pub fn number_attribute_constraints(mut self, input: crate::types::NumberAttributeConstraintsType) -> Self {
         self.number_attribute_constraints = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the constraints for an attribute of the number type.</p>
-    pub fn set_number_attribute_constraints(
-        mut self,
-        input: ::std::option::Option<crate::types::NumberAttributeConstraintsType>,
-    ) -> Self {
+    pub fn set_number_attribute_constraints(mut self, input: ::std::option::Option<crate::types::NumberAttributeConstraintsType>) -> Self {
         self.number_attribute_constraints = input;
         self
     }
     /// <p>Specifies the constraints for an attribute of the number type.</p>
-    pub fn get_number_attribute_constraints(
-        &self,
-    ) -> &::std::option::Option<crate::types::NumberAttributeConstraintsType> {
+    pub fn get_number_attribute_constraints(&self) -> &::std::option::Option<crate::types::NumberAttributeConstraintsType> {
         &self.number_attribute_constraints
     }
     /// <p>Specifies the constraints for an attribute of the string type.</p>
-    pub fn string_attribute_constraints(
-        mut self,
-        input: crate::types::StringAttributeConstraintsType,
-    ) -> Self {
+    pub fn string_attribute_constraints(mut self, input: crate::types::StringAttributeConstraintsType) -> Self {
         self.string_attribute_constraints = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the constraints for an attribute of the string type.</p>
-    pub fn set_string_attribute_constraints(
-        mut self,
-        input: ::std::option::Option<crate::types::StringAttributeConstraintsType>,
-    ) -> Self {
+    pub fn set_string_attribute_constraints(mut self, input: ::std::option::Option<crate::types::StringAttributeConstraintsType>) -> Self {
         self.string_attribute_constraints = input;
         self
     }
     /// <p>Specifies the constraints for an attribute of the string type.</p>
-    pub fn get_string_attribute_constraints(
-        &self,
-    ) -> &::std::option::Option<crate::types::StringAttributeConstraintsType> {
+    pub fn get_string_attribute_constraints(&self) -> &::std::option::Option<crate::types::StringAttributeConstraintsType> {
         &self.string_attribute_constraints
     }
     /// Consumes the builder and constructs a [`SchemaAttributeType`](crate::types::SchemaAttributeType).

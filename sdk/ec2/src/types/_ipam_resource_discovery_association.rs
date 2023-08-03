@@ -34,8 +34,7 @@ pub struct IpamResourceDiscoveryAssociation {
     /// <li> <p> <code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub resource_discovery_status:
-        ::std::option::Option<crate::types::IpamAssociatedResourceDiscoveryStatus>,
+    pub resource_discovery_status: ::std::option::Option<crate::types::IpamAssociatedResourceDiscoveryStatus>,
     /// <p>The lifecycle state of the association when you associate or disassociate a resource discovery.</p>
     /// <ul>
     /// <li> <p> <code>associate-in-progress</code> - Resource discovery is being associated.</p> </li>
@@ -92,9 +91,7 @@ impl IpamResourceDiscoveryAssociation {
     /// <li> <p> <code>active</code> - Connection or permissions required to read the results of the resource discovery are intact.</p> </li>
     /// <li> <p> <code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p> </li>
     /// </ul>
-    pub fn resource_discovery_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IpamAssociatedResourceDiscoveryStatus> {
+    pub fn resource_discovery_status(&self) -> ::std::option::Option<&crate::types::IpamAssociatedResourceDiscoveryStatus> {
         self.resource_discovery_status.as_ref()
     }
     /// <p>The lifecycle state of the association when you associate or disassociate a resource discovery.</p>
@@ -109,9 +106,7 @@ impl IpamResourceDiscoveryAssociation {
     /// <li> <p> <code>isolate-complete</code> - Resource discovery isolation is complete..</p> </li>
     /// <li> <p> <code>restore-in-progress</code> - Resource discovery is being restored.</p> </li>
     /// </ul>
-    pub fn state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IpamResourceDiscoveryAssociationState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::IpamResourceDiscoveryAssociationState> {
         self.state.as_ref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
@@ -128,21 +123,17 @@ impl IpamResourceDiscoveryAssociation {
 
 /// A builder for [`IpamResourceDiscoveryAssociation`](crate::types::IpamResourceDiscoveryAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpamResourceDiscoveryAssociationBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_resource_discovery_association_id: ::std::option::Option<::std::string::String>,
-    pub(crate) ipam_resource_discovery_association_arn:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) ipam_resource_discovery_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_id: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_region: ::std::option::Option<::std::string::String>,
     pub(crate) is_default: ::std::option::Option<bool>,
-    pub(crate) resource_discovery_status:
-        ::std::option::Option<crate::types::IpamAssociatedResourceDiscoveryStatus>,
+    pub(crate) resource_discovery_status: ::std::option::Option<crate::types::IpamAssociatedResourceDiscoveryStatus>,
     pub(crate) state: ::std::option::Option<crate::types::IpamResourceDiscoveryAssociationState>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -162,62 +153,40 @@ impl IpamResourceDiscoveryAssociationBuilder {
         &self.owner_id
     }
     /// <p>The resource discovery association ID.</p>
-    pub fn ipam_resource_discovery_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_resource_discovery_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_resource_discovery_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource discovery association ID.</p>
-    pub fn set_ipam_resource_discovery_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_resource_discovery_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_resource_discovery_association_id = input;
         self
     }
     /// <p>The resource discovery association ID.</p>
-    pub fn get_ipam_resource_discovery_association_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_ipam_resource_discovery_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipam_resource_discovery_association_id
     }
     /// <p>The resource discovery association Amazon Resource Name (ARN).</p>
-    pub fn ipam_resource_discovery_association_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_resource_discovery_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_resource_discovery_association_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource discovery association Amazon Resource Name (ARN).</p>
-    pub fn set_ipam_resource_discovery_association_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_resource_discovery_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_resource_discovery_association_arn = input;
         self
     }
     /// <p>The resource discovery association Amazon Resource Name (ARN).</p>
-    pub fn get_ipam_resource_discovery_association_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_ipam_resource_discovery_association_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipam_resource_discovery_association_arn
     }
     /// <p>The resource discovery ID.</p>
-    pub fn ipam_resource_discovery_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_resource_discovery_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_resource_discovery_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource discovery ID.</p>
-    pub fn set_ipam_resource_discovery_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_resource_discovery_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_resource_discovery_id = input;
         self
     }
@@ -286,10 +255,7 @@ impl IpamResourceDiscoveryAssociationBuilder {
     /// <li> <p> <code>active</code> - Connection or permissions required to read the results of the resource discovery are intact.</p> </li>
     /// <li> <p> <code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p> </li>
     /// </ul>
-    pub fn resource_discovery_status(
-        mut self,
-        input: crate::types::IpamAssociatedResourceDiscoveryStatus,
-    ) -> Self {
+    pub fn resource_discovery_status(mut self, input: crate::types::IpamAssociatedResourceDiscoveryStatus) -> Self {
         self.resource_discovery_status = ::std::option::Option::Some(input);
         self
     }
@@ -298,10 +264,7 @@ impl IpamResourceDiscoveryAssociationBuilder {
     /// <li> <p> <code>active</code> - Connection or permissions required to read the results of the resource discovery are intact.</p> </li>
     /// <li> <p> <code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p> </li>
     /// </ul>
-    pub fn set_resource_discovery_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamAssociatedResourceDiscoveryStatus>,
-    ) -> Self {
+    pub fn set_resource_discovery_status(mut self, input: ::std::option::Option<crate::types::IpamAssociatedResourceDiscoveryStatus>) -> Self {
         self.resource_discovery_status = input;
         self
     }
@@ -310,9 +273,7 @@ impl IpamResourceDiscoveryAssociationBuilder {
     /// <li> <p> <code>active</code> - Connection or permissions required to read the results of the resource discovery are intact.</p> </li>
     /// <li> <p> <code>not-found</code> - Connection or permissions required to read the results of the resource discovery are broken. This may happen if the owner of the resource discovery stopped sharing it or deleted the resource discovery. Verify the resource discovery still exists and the Amazon Web Services RAM resource share is still intact.</p> </li>
     /// </ul>
-    pub fn get_resource_discovery_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpamAssociatedResourceDiscoveryStatus> {
+    pub fn get_resource_discovery_status(&self) -> &::std::option::Option<crate::types::IpamAssociatedResourceDiscoveryStatus> {
         &self.resource_discovery_status
     }
     /// <p>The lifecycle state of the association when you associate or disassociate a resource discovery.</p>
@@ -343,10 +304,7 @@ impl IpamResourceDiscoveryAssociationBuilder {
     /// <li> <p> <code>isolate-complete</code> - Resource discovery isolation is complete..</p> </li>
     /// <li> <p> <code>restore-in-progress</code> - Resource discovery is being restored.</p> </li>
     /// </ul>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamResourceDiscoveryAssociationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::IpamResourceDiscoveryAssociationState>) -> Self {
         self.state = input;
         self
     }
@@ -362,9 +320,7 @@ impl IpamResourceDiscoveryAssociationBuilder {
     /// <li> <p> <code>isolate-complete</code> - Resource discovery isolation is complete..</p> </li>
     /// <li> <p> <code>restore-in-progress</code> - Resource discovery is being restored.</p> </li>
     /// </ul>
-    pub fn get_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::IpamResourceDiscoveryAssociationState> {
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::IpamResourceDiscoveryAssociationState> {
         &self.state
     }
     /// Appends an item to `tags`.
@@ -379,10 +335,7 @@ impl IpamResourceDiscoveryAssociationBuilder {
         self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

@@ -17,12 +17,7 @@ impl super::Client {
     ///   - [`not_impersonation_role_ids(Vec<String>)`](crate::operation::put_access_control_rule::builders::PutAccessControlRuleFluentBuilder::not_impersonation_role_ids) / [`set_not_impersonation_role_ids(Option<Vec<String>>)`](crate::operation::put_access_control_rule::builders::PutAccessControlRuleFluentBuilder::set_not_impersonation_role_ids): <p>Impersonation role IDs to exclude from the rule.</p>
     /// - On success, responds with [`PutAccessControlRuleOutput`](crate::operation::put_access_control_rule::PutAccessControlRuleOutput)
     /// - On failure, responds with [`SdkError<PutAccessControlRuleError>`](crate::operation::put_access_control_rule::PutAccessControlRuleError)
-    pub fn put_access_control_rule(
-        &self,
-    ) -> crate::operation::put_access_control_rule::builders::PutAccessControlRuleFluentBuilder
-    {
-        crate::operation::put_access_control_rule::builders::PutAccessControlRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_access_control_rule(&self) -> crate::operation::put_access_control_rule::builders::PutAccessControlRuleFluentBuilder {
+        crate::operation::put_access_control_rule::builders::PutAccessControlRuleFluentBuilder::new(self.handle.clone())
     }
 }

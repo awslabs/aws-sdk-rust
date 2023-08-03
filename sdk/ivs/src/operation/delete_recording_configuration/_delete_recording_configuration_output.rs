@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRecordingConfigurationOutput {
 }
 impl DeleteRecordingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRecordingConfigurationOutput`](crate::operation::delete_recording_configuration::DeleteRecordingConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_recording_configuration::builders::DeleteRecordingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_recording_configuration::builders::DeleteRecordingConfigurationOutputBuilder {
         crate::operation::delete_recording_configuration::builders::DeleteRecordingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRecordingConfigurationOutput`](crate::operation::delete_recording_configuration::DeleteRecordingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRecordingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteRecordingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteRecordingConfigurationOutput`](crate::operation::delete_recording_configuration::DeleteRecordingConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_recording_configuration::DeleteRecordingConfigurationOutput {
+    pub fn build(self) -> crate::operation::delete_recording_configuration::DeleteRecordingConfigurationOutput {
         crate::operation::delete_recording_configuration::DeleteRecordingConfigurationOutput {
             _request_id: self._request_id,
         }

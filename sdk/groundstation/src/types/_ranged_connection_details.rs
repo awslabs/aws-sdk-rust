@@ -30,9 +30,7 @@ impl RangedConnectionDetails {
 
 /// A builder for [`RangedConnectionDetails`](crate::types::RangedConnectionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RangedConnectionDetailsBuilder {
     pub(crate) socket_address: ::std::option::Option<crate::types::RangedSocketAddress>,
     pub(crate) mtu: ::std::option::Option<i32>,
@@ -44,10 +42,7 @@ impl RangedConnectionDetailsBuilder {
         self
     }
     /// <p>A ranged socket address.</p>
-    pub fn set_socket_address(
-        mut self,
-        input: ::std::option::Option<crate::types::RangedSocketAddress>,
-    ) -> Self {
+    pub fn set_socket_address(mut self, input: ::std::option::Option<crate::types::RangedSocketAddress>) -> Self {
         self.socket_address = input;
         self
     }

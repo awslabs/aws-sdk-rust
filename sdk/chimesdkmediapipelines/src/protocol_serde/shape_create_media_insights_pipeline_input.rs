@@ -8,24 +8,21 @@ pub fn ser_create_media_insights_pipeline_input(
     }
     if let Some(var_2) = &input.kinesis_video_stream_recording_source_runtime_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object
-            .key("KinesisVideoStreamRecordingSourceRuntimeConfiguration")
-            .start_object();
+        let mut object_3 = object.key("KinesisVideoStreamRecordingSourceRuntimeConfiguration").start_object();
         crate::protocol_serde::shape_kinesis_video_stream_recording_source_runtime_configuration::ser_kinesis_video_stream_recording_source_runtime_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.kinesis_video_stream_source_runtime_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object
-            .key("KinesisVideoStreamSourceRuntimeConfiguration")
-            .start_object();
-        crate::protocol_serde::shape_kinesis_video_stream_source_runtime_configuration::ser_kinesis_video_stream_source_runtime_configuration(&mut object_5, var_4)?;
+        let mut object_5 = object.key("KinesisVideoStreamSourceRuntimeConfiguration").start_object();
+        crate::protocol_serde::shape_kinesis_video_stream_source_runtime_configuration::ser_kinesis_video_stream_source_runtime_configuration(
+            &mut object_5,
+            var_4,
+        )?;
         object_5.finish();
     }
     if let Some(var_6) = &input.media_insights_pipeline_configuration_arn {
-        object
-            .key("MediaInsightsPipelineConfigurationArn")
-            .string(var_6.as_str());
+        object.key("MediaInsightsPipelineConfigurationArn").string(var_6.as_str());
     }
     if let Some(var_7) = &input.media_insights_runtime_metadata {
         #[allow(unused_mut)]
@@ -39,9 +36,7 @@ pub fn ser_create_media_insights_pipeline_input(
     }
     if let Some(var_11) = &input.s3_recording_sink_runtime_configuration {
         #[allow(unused_mut)]
-        let mut object_12 = object
-            .key("S3RecordingSinkRuntimeConfiguration")
-            .start_object();
+        let mut object_12 = object.key("S3RecordingSinkRuntimeConfiguration").start_object();
         crate::protocol_serde::shape_s3_recording_sink_runtime_configuration::ser_s3_recording_sink_runtime_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }

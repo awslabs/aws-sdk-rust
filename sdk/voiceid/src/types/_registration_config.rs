@@ -6,8 +6,7 @@
 pub struct RegistrationConfig {
     /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
     #[doc(hidden)]
-    pub duplicate_registration_action:
-        ::std::option::Option<crate::types::DuplicateRegistrationAction>,
+    pub duplicate_registration_action: ::std::option::Option<crate::types::DuplicateRegistrationAction>,
     /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
     #[doc(hidden)]
     pub fraudster_similarity_threshold: ::std::option::Option<i32>,
@@ -17,9 +16,7 @@ pub struct RegistrationConfig {
 }
 impl RegistrationConfig {
     /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
-    pub fn duplicate_registration_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DuplicateRegistrationAction> {
+    pub fn duplicate_registration_action(&self) -> ::std::option::Option<&crate::types::DuplicateRegistrationAction> {
         self.duplicate_registration_action.as_ref()
     }
     /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
@@ -40,36 +37,25 @@ impl RegistrationConfig {
 
 /// A builder for [`RegistrationConfig`](crate::types::RegistrationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegistrationConfigBuilder {
-    pub(crate) duplicate_registration_action:
-        ::std::option::Option<crate::types::DuplicateRegistrationAction>,
+    pub(crate) duplicate_registration_action: ::std::option::Option<crate::types::DuplicateRegistrationAction>,
     pub(crate) fraudster_similarity_threshold: ::std::option::Option<i32>,
     pub(crate) watchlist_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RegistrationConfigBuilder {
     /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
-    pub fn duplicate_registration_action(
-        mut self,
-        input: crate::types::DuplicateRegistrationAction,
-    ) -> Self {
+    pub fn duplicate_registration_action(mut self, input: crate::types::DuplicateRegistrationAction) -> Self {
         self.duplicate_registration_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
-    pub fn set_duplicate_registration_action(
-        mut self,
-        input: ::std::option::Option<crate::types::DuplicateRegistrationAction>,
-    ) -> Self {
+    pub fn set_duplicate_registration_action(mut self, input: ::std::option::Option<crate::types::DuplicateRegistrationAction>) -> Self {
         self.duplicate_registration_action = input;
         self
     }
     /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
-    pub fn get_duplicate_registration_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::DuplicateRegistrationAction> {
+    pub fn get_duplicate_registration_action(&self) -> &::std::option::Option<crate::types::DuplicateRegistrationAction> {
         &self.duplicate_registration_action
     }
     /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
@@ -91,27 +77,19 @@ impl RegistrationConfigBuilder {
     /// To override the contents of this collection use [`set_watchlist_ids`](Self::set_watchlist_ids).
     ///
     /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist. </p>
-    pub fn watchlist_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn watchlist_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.watchlist_ids.unwrap_or_default();
         v.push(input.into());
         self.watchlist_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist. </p>
-    pub fn set_watchlist_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_watchlist_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.watchlist_ids = input;
         self
     }
     /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist. </p>
-    pub fn get_watchlist_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_watchlist_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.watchlist_ids
     }
     /// Consumes the builder and constructs a [`RegistrationConfig`](crate::types::RegistrationConfig).

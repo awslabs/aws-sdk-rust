@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListRoleAliasesOutput {
 }
 impl ListRoleAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListRoleAliasesOutput`](crate::operation::list_role_aliases::ListRoleAliasesOutput).
-    pub fn builder() -> crate::operation::list_role_aliases::builders::ListRoleAliasesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_role_aliases::builders::ListRoleAliasesOutputBuilder {
         crate::operation::list_role_aliases::builders::ListRoleAliasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRoleAliasesOutput`](crate::operation::list_role_aliases::ListRoleAliasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoleAliasesOutputBuilder {
     pub(crate) role_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListRoleAliasesOutputBuilder {
         self
     }
     /// <p>The role aliases.</p>
-    pub fn set_role_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_role_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.role_aliases = input;
         self
     }
     /// <p>The role aliases.</p>
-    pub fn get_role_aliases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_role_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.role_aliases
     }
     /// <p>A marker used to get the next set of results.</p>

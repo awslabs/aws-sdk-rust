@@ -37,9 +37,7 @@ impl ConnectionLogOptions {
 
 /// A builder for [`ConnectionLogOptions`](crate::types::ConnectionLogOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectionLogOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) cloudwatch_log_group: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl ConnectionLogOptionsBuilder {
         &self.enabled
     }
     /// <p>The name of the CloudWatch Logs log group. Required if connection logging is enabled.</p>
-    pub fn cloudwatch_log_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloudwatch_log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloudwatch_log_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the CloudWatch Logs log group. Required if connection logging is enabled.</p>
-    pub fn set_cloudwatch_log_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloudwatch_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloudwatch_log_group = input;
         self
     }
@@ -81,18 +73,12 @@ impl ConnectionLogOptionsBuilder {
         &self.cloudwatch_log_group
     }
     /// <p>The name of the CloudWatch Logs log stream to which the connection data is published.</p>
-    pub fn cloudwatch_log_stream(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloudwatch_log_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloudwatch_log_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the CloudWatch Logs log stream to which the connection data is published.</p>
-    pub fn set_cloudwatch_log_stream(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloudwatch_log_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloudwatch_log_stream = input;
         self
     }

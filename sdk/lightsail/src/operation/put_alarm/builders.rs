@@ -10,10 +10,7 @@ impl PutAlarmInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_alarm::PutAlarmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_alarm::PutAlarmError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_alarm::PutAlarmError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_alarm();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl PutAlarmFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_alarm::PutAlarm,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_alarm::PutAlarm, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_alarm::PutAlarmError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl PutAlarmFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +98,7 @@ impl PutAlarmFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_alarm::PutAlarm,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_alarm::PutAlarm, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_alarm::PutAlarmError>,
     > {
         self.customize_middleware().await
@@ -151,10 +139,7 @@ impl PutAlarmFluentBuilder {
     /// <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p> </li>
     /// </ul>
     /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
-    pub fn set_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricName>,
-    ) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::MetricName>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
@@ -172,19 +157,13 @@ impl PutAlarmFluentBuilder {
     }
     /// <p>The name of the Lightsail resource that will be monitored.</p>
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
-    pub fn monitored_resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitored_resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitored_resource_name(input.into());
         self
     }
     /// <p>The name of the Lightsail resource that will be monitored.</p>
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
-    pub fn set_monitored_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitored_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitored_resource_name(input);
         self
     }
@@ -199,17 +178,12 @@ impl PutAlarmFluentBuilder {
         self
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold. The specified statistic value is used as the first operand.</p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparisonOperator>,
-    ) -> Self {
+    pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.inner = self.inner.set_comparison_operator(input);
         self
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold. The specified statistic value is used as the first operand.</p>
-    pub fn get_comparison_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+    pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
         self.inner.get_comparison_operator()
     }
     /// <p>The value against which the specified statistic is compared.</p>
@@ -285,10 +259,7 @@ impl PutAlarmFluentBuilder {
     /// <li> <p> <code>missing</code> - Missing data is treated as missing.</p> </li>
     /// </ul>
     /// <p>If <code>treatMissingData</code> is not specified, the default behavior of <code>missing</code> is used.</p>
-    pub fn set_treat_missing_data(
-        mut self,
-        input: ::std::option::Option<crate::types::TreatMissingData>,
-    ) -> Self {
+    pub fn set_treat_missing_data(mut self, input: ::std::option::Option<crate::types::TreatMissingData>) -> Self {
         self.inner = self.inner.set_treat_missing_data(input);
         self
     }
@@ -320,10 +291,7 @@ impl PutAlarmFluentBuilder {
     /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
     /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
     /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
-    pub fn set_contact_protocols(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>,
-    ) -> Self {
+    pub fn set_contact_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>) -> Self {
         self.inner = self.inner.set_contact_protocols(input);
         self
     }
@@ -331,9 +299,7 @@ impl PutAlarmFluentBuilder {
     /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
     /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
     /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
-    pub fn get_contact_protocols(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>> {
+    pub fn get_contact_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>> {
         self.inner.get_contact_protocols()
     }
     /// Appends an item to `notificationTriggers`.
@@ -370,10 +336,7 @@ impl PutAlarmFluentBuilder {
     /// <li> <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p> </li>
     /// </ul>
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
-    pub fn set_notification_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>,
-    ) -> Self {
+    pub fn set_notification_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>) -> Self {
         self.inner = self.inner.set_notification_triggers(input);
         self
     }
@@ -390,9 +353,7 @@ impl PutAlarmFluentBuilder {
     /// <li> <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p> </li>
     /// </ul>
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
-    pub fn get_notification_triggers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmState>> {
+    pub fn get_notification_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmState>> {
         self.inner.get_notification_triggers()
     }
     /// <p>Indicates whether the alarm is enabled.</p>

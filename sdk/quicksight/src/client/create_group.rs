@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::create_group::CreateGroupOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::create_group::CreateGroupOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::operation::create_group::CreateGroupError)
-    pub fn create_group(
-        &self,
-    ) -> crate::operation::create_group::builders::CreateGroupFluentBuilder {
+    pub fn create_group(&self) -> crate::operation::create_group::builders::CreateGroupFluentBuilder {
         crate::operation::create_group::builders::CreateGroupFluentBuilder::new(self.handle.clone())
     }
 }

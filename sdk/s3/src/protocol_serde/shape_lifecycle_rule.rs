@@ -134,10 +134,7 @@ pub fn ser_lifecycle_rule(
     let mut scope = writer.finish();
     if let Some(var_12) = &input.expiration {
         let inner_writer = scope.start_el("Expiration");
-        crate::protocol_serde::shape_lifecycle_expiration::ser_lifecycle_expiration(
-            var_12,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_lifecycle_expiration::ser_lifecycle_expiration(var_12, inner_writer)?
     }
     if let Some(var_13) = &input.id {
         let mut inner_writer = scope.start_el("ID").finish();
@@ -149,10 +146,7 @@ pub fn ser_lifecycle_rule(
     }
     if let Some(var_15) = &input.filter {
         let inner_writer = scope.start_el("Filter");
-        crate::protocol_serde::shape_lifecycle_rule_filter::ser_lifecycle_rule_filter(
-            var_15,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_lifecycle_rule_filter::ser_lifecycle_rule_filter(var_15, inner_writer)?
     }
     if let Some(var_16) = &input.status {
         let mut inner_writer = scope.start_el("Status").finish();

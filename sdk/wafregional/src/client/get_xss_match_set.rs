@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetXssMatchSetOutput`](crate::operation::get_xss_match_set::GetXssMatchSetOutput) with field(s):
     ///   - [`xss_match_set(Option<XssMatchSet>)`](crate::operation::get_xss_match_set::GetXssMatchSetOutput::xss_match_set): <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p>  <ul>   <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li>   <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>   <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetXssMatchSetError>`](crate::operation::get_xss_match_set::GetXssMatchSetError)
-    pub fn get_xss_match_set(
-        &self,
-    ) -> crate::operation::get_xss_match_set::builders::GetXssMatchSetFluentBuilder {
-        crate::operation::get_xss_match_set::builders::GetXssMatchSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_xss_match_set(&self) -> crate::operation::get_xss_match_set::builders::GetXssMatchSetFluentBuilder {
+        crate::operation::get_xss_match_set::builders::GetXssMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

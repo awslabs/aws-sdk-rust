@@ -37,9 +37,7 @@ impl QuotaSettings {
 
 /// A builder for [`QuotaSettings`](crate::types::QuotaSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QuotaSettingsBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) offset: ::std::option::Option<i32>,
@@ -80,10 +78,7 @@ impl QuotaSettingsBuilder {
         self
     }
     /// <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".</p>
-    pub fn set_period(
-        mut self,
-        input: ::std::option::Option<crate::types::QuotaPeriodType>,
-    ) -> Self {
+    pub fn set_period(mut self, input: ::std::option::Option<crate::types::QuotaPeriodType>) -> Self {
         self.period = input;
         self
     }

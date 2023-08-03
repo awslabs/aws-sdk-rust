@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeInboundDmarcSettingsOutput`](crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsOutput) with field(s):
     ///   - [`enforced(bool)`](crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsOutput::enforced): <p>Lists the enforcement setting of the applied policy.</p>
     /// - On failure, responds with [`SdkError<DescribeInboundDmarcSettingsError>`](crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError)
-    pub fn describe_inbound_dmarc_settings(&self) -> crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsFluentBuilder{
+    pub fn describe_inbound_dmarc_settings(
+        &self,
+    ) -> crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsFluentBuilder {
         crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsFluentBuilder::new(self.handle.clone())
     }
 }

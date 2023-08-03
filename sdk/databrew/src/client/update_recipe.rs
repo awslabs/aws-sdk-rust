@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRecipeOutput`](crate::operation::update_recipe::UpdateRecipeOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::update_recipe::UpdateRecipeOutput::name): <p>The name of the recipe that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateRecipeError>`](crate::operation::update_recipe::UpdateRecipeError)
-    pub fn update_recipe(
-        &self,
-    ) -> crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder {
-        crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_recipe(&self) -> crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder {
+        crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::new(self.handle.clone())
     }
 }

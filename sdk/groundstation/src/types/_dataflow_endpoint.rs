@@ -44,9 +44,7 @@ impl DataflowEndpoint {
 
 /// A builder for [`DataflowEndpoint`](crate::types::DataflowEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataflowEndpointBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) address: ::std::option::Option<crate::types::SocketAddress>,
@@ -74,10 +72,7 @@ impl DataflowEndpointBuilder {
         self
     }
     /// <p>Socket address of a dataflow endpoint.</p>
-    pub fn set_address(
-        mut self,
-        input: ::std::option::Option<crate::types::SocketAddress>,
-    ) -> Self {
+    pub fn set_address(mut self, input: ::std::option::Option<crate::types::SocketAddress>) -> Self {
         self.address = input;
         self
     }
@@ -91,10 +86,7 @@ impl DataflowEndpointBuilder {
         self
     }
     /// <p>Status of a dataflow endpoint.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EndpointStatus>) -> Self {
         self.status = input;
         self
     }

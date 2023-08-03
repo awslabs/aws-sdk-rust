@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`MoveByoipCidrToIpamOutput`](crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamOutput) with field(s):
     ///   - [`byoip_cidr(Option<ByoipCidr>)`](crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamOutput::byoip_cidr): <p>The BYOIP CIDR.</p>
     /// - On failure, responds with [`SdkError<MoveByoipCidrToIpamError>`](crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError)
-    pub fn move_byoip_cidr_to_ipam(
-        &self,
-    ) -> crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamFluentBuilder {
-        crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn move_byoip_cidr_to_ipam(&self) -> crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamFluentBuilder {
+        crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamFluentBuilder::new(self.handle.clone())
     }
 }

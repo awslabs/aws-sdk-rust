@@ -22,16 +22,14 @@ impl RegisterPatchBaselineForPatchGroupInput {
 }
 impl RegisterPatchBaselineForPatchGroupInput {
     /// Creates a new builder-style object to manufacture [`RegisterPatchBaselineForPatchGroupInput`](crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupInput).
-    pub fn builder() -> crate::operation::register_patch_baseline_for_patch_group::builders::RegisterPatchBaselineForPatchGroupInputBuilder{
+    pub fn builder() -> crate::operation::register_patch_baseline_for_patch_group::builders::RegisterPatchBaselineForPatchGroupInputBuilder {
         crate::operation::register_patch_baseline_for_patch_group::builders::RegisterPatchBaselineForPatchGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterPatchBaselineForPatchGroupInput`](crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterPatchBaselineForPatchGroupInputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
     pub(crate) patch_group: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl RegisterPatchBaselineForPatchGroupInputBuilder {
         &self.patch_group
     }
     /// Consumes the builder and constructs a [`RegisterPatchBaselineForPatchGroupInput`](crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupInput {
-                baseline_id: self.baseline_id
-                ,
-                patch_group: self.patch_group
-                ,
-            }
+                baseline_id: self.baseline_id,
+                patch_group: self.patch_group,
+            },
         )
     }
 }

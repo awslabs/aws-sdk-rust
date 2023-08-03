@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CompleteMultipartReadSetUploadOutput`](crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput) with field(s):
     ///   - [`read_set_id(Option<String>)`](crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput::read_set_id): <p> The read set ID created for an uploaded read set. </p>
     /// - On failure, responds with [`SdkError<CompleteMultipartReadSetUploadError>`](crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError)
-    pub fn complete_multipart_read_set_upload(&self) -> crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadFluentBuilder{
+    pub fn complete_multipart_read_set_upload(
+        &self,
+    ) -> crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadFluentBuilder {
         crate::operation::complete_multipart_read_set_upload::builders::CompleteMultipartReadSetUploadFluentBuilder::new(self.handle.clone())
     }
 }

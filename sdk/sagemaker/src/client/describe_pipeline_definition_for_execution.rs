@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`pipeline_definition(Option<String>)`](crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionOutput::pipeline_definition): <p>The JSON pipeline definition.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionOutput::creation_time): <p>The time when the pipeline was created.</p>
     /// - On failure, responds with [`SdkError<DescribePipelineDefinitionForExecutionError>`](crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionError)
-    pub fn describe_pipeline_definition_for_execution(&self) -> crate::operation::describe_pipeline_definition_for_execution::builders::DescribePipelineDefinitionForExecutionFluentBuilder{
-        crate::operation::describe_pipeline_definition_for_execution::builders::DescribePipelineDefinitionForExecutionFluentBuilder::new(self.handle.clone())
+    pub fn describe_pipeline_definition_for_execution(
+        &self,
+    ) -> crate::operation::describe_pipeline_definition_for_execution::builders::DescribePipelineDefinitionForExecutionFluentBuilder {
+        crate::operation::describe_pipeline_definition_for_execution::builders::DescribePipelineDefinitionForExecutionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

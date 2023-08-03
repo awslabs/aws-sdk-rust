@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateSafetyRuleOutput {
 }
 impl UpdateSafetyRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSafetyRuleOutput`](crate::operation::update_safety_rule::UpdateSafetyRuleOutput).
-    pub fn builder() -> crate::operation::update_safety_rule::builders::UpdateSafetyRuleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_safety_rule::builders::UpdateSafetyRuleOutputBuilder {
         crate::operation::update_safety_rule::builders::UpdateSafetyRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSafetyRuleOutput`](crate::operation::update_safety_rule::UpdateSafetyRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSafetyRuleOutputBuilder {
     pub(crate) assertion_rule: ::std::option::Option<crate::types::AssertionRule>,
     pub(crate) gating_rule: ::std::option::Option<crate::types::GatingRule>,
@@ -51,10 +48,7 @@ impl UpdateSafetyRuleOutputBuilder {
         self
     }
     /// <p>The assertion rule updated.</p>
-    pub fn set_assertion_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::AssertionRule>,
-    ) -> Self {
+    pub fn set_assertion_rule(mut self, input: ::std::option::Option<crate::types::AssertionRule>) -> Self {
         self.assertion_rule = input;
         self
     }
@@ -68,10 +62,7 @@ impl UpdateSafetyRuleOutputBuilder {
         self
     }
     /// <p>The gating rule updated.</p>
-    pub fn set_gating_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::GatingRule>,
-    ) -> Self {
+    pub fn set_gating_rule(mut self, input: ::std::option::Option<crate::types::GatingRule>) -> Self {
         self.gating_rule = input;
         self
     }

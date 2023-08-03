@@ -28,9 +28,7 @@ impl CreateListenerOutput {
 
 /// A builder for [`CreateListenerOutput`](crate::operation::create_listener::CreateListenerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateListenerOutputBuilder {
     pub(crate) listener: ::std::option::Option<crate::types::Listener>,
     _request_id: Option<String>,

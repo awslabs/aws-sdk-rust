@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`metric_name(Option<DistributionMetricName>)`](crate::operation::get_distribution_metric_data::GetDistributionMetricDataOutput::metric_name): <p>The name of the metric returned.</p>
     ///   - [`metric_data(Option<Vec<MetricDatapoint>>)`](crate::operation::get_distribution_metric_data::GetDistributionMetricDataOutput::metric_data): <p>An array of objects that describe the metric data returned.</p>
     /// - On failure, responds with [`SdkError<GetDistributionMetricDataError>`](crate::operation::get_distribution_metric_data::GetDistributionMetricDataError)
-    pub fn get_distribution_metric_data(&self) -> crate::operation::get_distribution_metric_data::builders::GetDistributionMetricDataFluentBuilder{
+    pub fn get_distribution_metric_data(&self) -> crate::operation::get_distribution_metric_data::builders::GetDistributionMetricDataFluentBuilder {
         crate::operation::get_distribution_metric_data::builders::GetDistributionMetricDataFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteBackupSelectionOutput {
 }
 impl DeleteBackupSelectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBackupSelectionOutput`](crate::operation::delete_backup_selection::DeleteBackupSelectionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_backup_selection::builders::DeleteBackupSelectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_backup_selection::builders::DeleteBackupSelectionOutputBuilder {
         crate::operation::delete_backup_selection::builders::DeleteBackupSelectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBackupSelectionOutput`](crate::operation::delete_backup_selection::DeleteBackupSelectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBackupSelectionOutputBuilder {
     _request_id: Option<String>,
 }

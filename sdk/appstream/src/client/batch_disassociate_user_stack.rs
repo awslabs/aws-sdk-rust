@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`BatchDisassociateUserStackOutput`](crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackOutput) with field(s):
     ///   - [`errors(Option<Vec<UserStackAssociationError>>)`](crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackOutput::errors): <p>The list of UserStackAssociationError objects.</p>
     /// - On failure, responds with [`SdkError<BatchDisassociateUserStackError>`](crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackError)
-    pub fn batch_disassociate_user_stack(&self) -> crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackFluentBuilder{
+    pub fn batch_disassociate_user_stack(
+        &self,
+    ) -> crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackFluentBuilder {
         crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackFluentBuilder::new(self.handle.clone())
     }
 }

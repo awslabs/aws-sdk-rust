@@ -36,9 +36,7 @@ impl ImportApiKeysOutput {
 
 /// A builder for [`ImportApiKeysOutput`](crate::operation::import_api_keys::ImportApiKeysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportApiKeysOutputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,10 +55,7 @@ impl ImportApiKeysOutputBuilder {
         self
     }
     /// <p>A list of all the ApiKey identifiers.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }
@@ -80,10 +75,7 @@ impl ImportApiKeysOutputBuilder {
         self
     }
     /// <p>A list of warning messages.</p>
-    pub fn set_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.warnings = input;
         self
     }

@@ -70,17 +70,14 @@ impl ::aws_http::request_id::RequestId for GetPersonTrackingOutput {
 }
 impl GetPersonTrackingOutput {
     /// Creates a new builder-style object to manufacture [`GetPersonTrackingOutput`](crate::operation::get_person_tracking::GetPersonTrackingOutput).
-    pub fn builder(
-    ) -> crate::operation::get_person_tracking::builders::GetPersonTrackingOutputBuilder {
+    pub fn builder() -> crate::operation::get_person_tracking::builders::GetPersonTrackingOutputBuilder {
         crate::operation::get_person_tracking::builders::GetPersonTrackingOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPersonTrackingOutput`](crate::operation::get_person_tracking::GetPersonTrackingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPersonTrackingOutputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
@@ -99,10 +96,7 @@ impl GetPersonTrackingOutputBuilder {
         self
     }
     /// <p>The current status of the person tracking job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoJobStatus>,
-    ) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::VideoJobStatus>) -> Self {
         self.job_status = input;
         self
     }
@@ -111,18 +105,12 @@ impl GetPersonTrackingOutputBuilder {
         &self.job_status
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -136,10 +124,7 @@ impl GetPersonTrackingOutputBuilder {
         self
     }
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
-    pub fn set_video_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoMetadata>,
-    ) -> Self {
+    pub fn set_video_metadata(mut self, input: ::std::option::Option<crate::types::VideoMetadata>) -> Self {
         self.video_metadata = input;
         self
     }
@@ -173,17 +158,12 @@ impl GetPersonTrackingOutputBuilder {
         self
     }
     /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked. </p>
-    pub fn set_persons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PersonDetection>>,
-    ) -> Self {
+    pub fn set_persons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PersonDetection>>) -> Self {
         self.persons = input;
         self
     }
     /// <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked. </p>
-    pub fn get_persons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PersonDetection>> {
+    pub fn get_persons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PersonDetection>> {
         &self.persons
     }
     /// <p>Job identifier for the person tracking operation for which you want to obtain results. The job identifer is returned by an initial call to StartPersonTracking.</p>

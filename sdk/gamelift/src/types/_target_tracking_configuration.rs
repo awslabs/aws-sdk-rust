@@ -24,9 +24,7 @@ impl TargetTrackingConfiguration {
 
 /// A builder for [`TargetTrackingConfiguration`](crate::types::TargetTrackingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TargetTrackingConfigurationBuilder {
     pub(crate) target_value: ::std::option::Option<f64>,
 }

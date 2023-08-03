@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`with_federation(bool)`](crate::operation::register_resource::builders::RegisterResourceFluentBuilder::with_federation) / [`set_with_federation(Option<bool>)`](crate::operation::register_resource::builders::RegisterResourceFluentBuilder::set_with_federation): <p>Whether or not the resource is a federated resource.</p>
     /// - On success, responds with [`RegisterResourceOutput`](crate::operation::register_resource::RegisterResourceOutput)
     /// - On failure, responds with [`SdkError<RegisterResourceError>`](crate::operation::register_resource::RegisterResourceError)
-    pub fn register_resource(
-        &self,
-    ) -> crate::operation::register_resource::builders::RegisterResourceFluentBuilder {
-        crate::operation::register_resource::builders::RegisterResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_resource(&self) -> crate::operation::register_resource::builders::RegisterResourceFluentBuilder {
+        crate::operation::register_resource::builders::RegisterResourceFluentBuilder::new(self.handle.clone())
     }
 }

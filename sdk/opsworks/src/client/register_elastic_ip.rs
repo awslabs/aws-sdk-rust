@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterElasticIpOutput`](crate::operation::register_elastic_ip::RegisterElasticIpOutput) with field(s):
     ///   - [`elastic_ip(Option<String>)`](crate::operation::register_elastic_ip::RegisterElasticIpOutput::elastic_ip): <p>The Elastic IP address.</p>
     /// - On failure, responds with [`SdkError<RegisterElasticIpError>`](crate::operation::register_elastic_ip::RegisterElasticIpError)
-    pub fn register_elastic_ip(
-        &self,
-    ) -> crate::operation::register_elastic_ip::builders::RegisterElasticIpFluentBuilder {
-        crate::operation::register_elastic_ip::builders::RegisterElasticIpFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_elastic_ip(&self) -> crate::operation::register_elastic_ip::builders::RegisterElasticIpFluentBuilder {
+        crate::operation::register_elastic_ip::builders::RegisterElasticIpFluentBuilder::new(self.handle.clone())
     }
 }

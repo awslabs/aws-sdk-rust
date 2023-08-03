@@ -10,9 +10,7 @@ pub struct CaptchaConfig {
 }
 impl CaptchaConfig {
     /// <p>Determines how long a <code>CAPTCHA</code> timestamp in the token remains valid after the client successfully solves a <code>CAPTCHA</code> puzzle. </p>
-    pub fn immunity_time_property(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImmunityTimeProperty> {
+    pub fn immunity_time_property(&self) -> ::std::option::Option<&crate::types::ImmunityTimeProperty> {
         self.immunity_time_property.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl CaptchaConfig {
 
 /// A builder for [`CaptchaConfig`](crate::types::CaptchaConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CaptchaConfigBuilder {
     pub(crate) immunity_time_property: ::std::option::Option<crate::types::ImmunityTimeProperty>,
 }
@@ -38,17 +34,12 @@ impl CaptchaConfigBuilder {
         self
     }
     /// <p>Determines how long a <code>CAPTCHA</code> timestamp in the token remains valid after the client successfully solves a <code>CAPTCHA</code> puzzle. </p>
-    pub fn set_immunity_time_property(
-        mut self,
-        input: ::std::option::Option<crate::types::ImmunityTimeProperty>,
-    ) -> Self {
+    pub fn set_immunity_time_property(mut self, input: ::std::option::Option<crate::types::ImmunityTimeProperty>) -> Self {
         self.immunity_time_property = input;
         self
     }
     /// <p>Determines how long a <code>CAPTCHA</code> timestamp in the token remains valid after the client successfully solves a <code>CAPTCHA</code> puzzle. </p>
-    pub fn get_immunity_time_property(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImmunityTimeProperty> {
+    pub fn get_immunity_time_property(&self) -> &::std::option::Option<crate::types::ImmunityTimeProperty> {
         &self.immunity_time_property
     }
     /// Consumes the builder and constructs a [`CaptchaConfig`](crate::types::CaptchaConfig).

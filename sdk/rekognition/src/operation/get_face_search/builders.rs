@@ -10,10 +10,7 @@ impl GetFaceSearchInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_face_search::GetFaceSearchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_face_search::GetFaceSearchError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_face_search::GetFaceSearchError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_face_search();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl GetFaceSearchFluentBuilder {
         }
     }
     /// Access the GetFaceSearch as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_face_search::builders::GetFaceSearchInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_face_search::builders::GetFaceSearchInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -67,10 +62,7 @@ impl GetFaceSearchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -123,13 +115,8 @@ impl GetFaceSearchFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_face_search::paginator::GetFaceSearchPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_face_search::paginator::GetFaceSearchPaginator {
-        crate::operation::get_face_search::paginator::GetFaceSearchPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_face_search::paginator::GetFaceSearchPaginator {
+        crate::operation::get_face_search::paginator::GetFaceSearchPaginator::new(self.handle, self.inner)
     }
     /// <p>The job identifer for the search request. You get the job identifier from an initial call to <code>StartFaceSearch</code>.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -179,10 +166,7 @@ impl GetFaceSearchFluentBuilder {
         self
     }
     /// <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::FaceSearchSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::FaceSearchSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

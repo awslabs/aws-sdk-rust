@@ -71,16 +71,15 @@ impl DescribeVpcEndpointServiceConfigurationsInput {
 }
 impl DescribeVpcEndpointServiceConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointServiceConfigurationsInput`](crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsInput).
-    pub fn builder() -> crate::operation::describe_vpc_endpoint_service_configurations::builders::DescribeVpcEndpointServiceConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_endpoint_service_configurations::builders::DescribeVpcEndpointServiceConfigurationsInputBuilder
+    {
         crate::operation::describe_vpc_endpoint_service_configurations::builders::DescribeVpcEndpointServiceConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcEndpointServiceConfigurationsInput`](crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointServiceConfigurationsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -115,17 +114,12 @@ impl DescribeVpcEndpointServiceConfigurationsInputBuilder {
         self
     }
     /// <p>The IDs of the endpoint services.</p>
-    pub fn set_service_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_service_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.service_ids = input;
         self
     }
     /// <p>The IDs of the endpoint services.</p>
-    pub fn get_service_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.service_ids
     }
     /// Appends an item to `filters`.
@@ -168,10 +162,7 @@ impl DescribeVpcEndpointServiceConfigurationsInputBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -222,20 +213,20 @@ impl DescribeVpcEndpointServiceConfigurationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointServiceConfigurationsInput`](crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsInput {
-                dry_run: self.dry_run
-                ,
-                service_ids: self.service_ids
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                dry_run: self.dry_run,
+                service_ids: self.service_ids,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

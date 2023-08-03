@@ -26,7 +26,7 @@ impl ListTypedLinkFacetNamesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTypedLinkFacetNamesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesInputBuilder,
+    inner: crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesInputBuilder,
 }
 impl ListTypedLinkFacetNamesFluentBuilder {
     /// Creates a new `ListTypedLinkFacetNames`.
@@ -37,10 +37,7 @@ impl ListTypedLinkFacetNamesFluentBuilder {
         }
     }
     /// Access the ListTypedLinkFacetNames as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListTypedLinkFacetNamesFluentBuilder {
             crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNames,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListTypedLinkFacetNamesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListTypedLinkFacetNamesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListTypedLinkFacetNamesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl ListTypedLinkFacetNamesFluentBuilder {
             crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNames,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_typed_link_facet_names::paginator::ListTypedLinkFacetNamesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_typed_link_facet_names::paginator::ListTypedLinkFacetNamesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_typed_link_facet_names::paginator::ListTypedLinkFacetNamesPaginator {
         crate::operation::list_typed_link_facet_names::paginator::ListTypedLinkFacetNamesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>

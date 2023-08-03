@@ -30,9 +30,7 @@ impl MetricDimensionGroups {
 
 /// A builder for [`MetricDimensionGroups`](crate::types::MetricDimensionGroups).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricDimensionGroupsBuilder {
     pub(crate) metric: ::std::option::Option<::std::string::String>,
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::DimensionGroupDetail>>,
@@ -64,17 +62,12 @@ impl MetricDimensionGroupsBuilder {
         self
     }
     /// <p>The available dimension groups for a metric type.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionGroupDetail>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionGroupDetail>>) -> Self {
         self.groups = input;
         self
     }
     /// <p>The available dimension groups for a metric type.</p>
-    pub fn get_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionGroupDetail>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionGroupDetail>> {
         &self.groups
     }
     /// Consumes the builder and constructs a [`MetricDimensionGroups`](crate::types::MetricDimensionGroups).

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`run_properties(HashMap<String, String>)`](crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesFluentBuilder::run_properties) / [`set_run_properties(Option<HashMap<String, String>>)`](crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesFluentBuilder::set_run_properties): <p>The properties to put for the specified run.</p>
     /// - On success, responds with [`PutWorkflowRunPropertiesOutput`](crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesOutput)
     /// - On failure, responds with [`SdkError<PutWorkflowRunPropertiesError>`](crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError)
-    pub fn put_workflow_run_properties(&self) -> crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesFluentBuilder{
+    pub fn put_workflow_run_properties(&self) -> crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesFluentBuilder {
         crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesFluentBuilder::new(self.handle.clone())
     }
 }

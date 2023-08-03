@@ -37,9 +37,7 @@ impl GetObjectInformationFluentBuilder {
         }
     }
     /// Access the GetObjectInformation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_object_information::builders::GetObjectInformationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_object_information::builders::GetObjectInformationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetObjectInformationFluentBuilder {
             crate::operation::get_object_information::GetObjectInformation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_object_information::GetObjectInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_object_information::GetObjectInformationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetObjectInformationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetObjectInformationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_object_information::GetObjectInformationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_object_information::GetObjectInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_object_information::GetObjectInformationError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetObjectInformationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_object_information::GetObjectInformationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_object_information::GetObjectInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_object_information::GetObjectInformationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetObjectInformationFluentBuilder {
             crate::operation::get_object_information::GetObjectInformation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_object_information::GetObjectInformationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_object_information::GetObjectInformationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the directory being retrieved.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The ARN of the directory being retrieved.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -148,10 +129,7 @@ impl GetObjectInformationFluentBuilder {
         self
     }
     /// <p>A reference to the object.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
     }
@@ -165,10 +143,7 @@ impl GetObjectInformationFluentBuilder {
         self
     }
     /// <p>The consistency level at which to retrieve the object information.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
+    pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
     }

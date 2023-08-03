@@ -10,10 +10,7 @@ impl ListRoleTagsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_role_tags::ListRoleTagsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_role_tags::ListRoleTagsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_role_tags::ListRoleTagsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_role_tags();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListRoleTagsFluentBuilder {
         }
     }
     /// Access the ListRoleTags as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_role_tags::builders::ListRoleTagsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_role_tags::builders::ListRoleTagsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListRoleTagsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListRoleTagsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_role_tags::paginator::ListRoleTagsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_role_tags::paginator::ListRoleTagsPaginator {
-        crate::operation::list_role_tags::paginator::ListRoleTagsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_role_tags::paginator::ListRoleTagsPaginator {
+        crate::operation::list_role_tags::paginator::ListRoleTagsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the IAM role for which you want to see the list of tags.</p>
     /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>

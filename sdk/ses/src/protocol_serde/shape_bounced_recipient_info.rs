@@ -22,9 +22,7 @@ pub fn ser_bounced_recipient_info(
     #[allow(unused_mut)]
     let mut scope_7 = writer.prefix("RecipientDsnFields");
     if let Some(var_8) = &input.recipient_dsn_fields {
-        crate::protocol_serde::shape_recipient_dsn_fields::ser_recipient_dsn_fields(
-            scope_7, var_8,
-        )?;
+        crate::protocol_serde::shape_recipient_dsn_fields::ser_recipient_dsn_fields(scope_7, var_8)?;
     }
     Ok(())
 }

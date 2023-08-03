@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`finding_types(Vec<String>)`](crate::operation::create_sample_findings::builders::CreateSampleFindingsFluentBuilder::finding_types) / [`set_finding_types(Option<Vec<String>>)`](crate::operation::create_sample_findings::builders::CreateSampleFindingsFluentBuilder::set_finding_types): <p>The types of sample findings to generate.</p>
     /// - On success, responds with [`CreateSampleFindingsOutput`](crate::operation::create_sample_findings::CreateSampleFindingsOutput)
     /// - On failure, responds with [`SdkError<CreateSampleFindingsError>`](crate::operation::create_sample_findings::CreateSampleFindingsError)
-    pub fn create_sample_findings(
-        &self,
-    ) -> crate::operation::create_sample_findings::builders::CreateSampleFindingsFluentBuilder {
-        crate::operation::create_sample_findings::builders::CreateSampleFindingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_sample_findings(&self) -> crate::operation::create_sample_findings::builders::CreateSampleFindingsFluentBuilder {
+        crate::operation::create_sample_findings::builders::CreateSampleFindingsFluentBuilder::new(self.handle.clone())
     }
 }

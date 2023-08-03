@@ -61,9 +61,7 @@ impl AnalyticsIntentMetricResult {
 
 /// A builder for [`AnalyticsIntentMetricResult`](crate::types::AnalyticsIntentMetricResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsIntentMetricResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsIntentMetricName>,
     pub(crate) statistic: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
@@ -90,10 +88,7 @@ impl AnalyticsIntentMetricResultBuilder {
     /// <li> <p> <code>Switched</code> – The number of times there was a switch to a different intent.</p> </li>
     /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent.</p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsIntentMetricName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsIntentMetricName>) -> Self {
         self.name = input;
         self
     }
@@ -124,10 +119,7 @@ impl AnalyticsIntentMetricResultBuilder {
     /// <li> <p> <code>Average</code> – The total count divided by the number of intents in the category you provide in <code>name</code>.</p> </li>
     /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
-    pub fn set_statistic(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
-    ) -> Self {
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>) -> Self {
         self.statistic = input;
         self
     }

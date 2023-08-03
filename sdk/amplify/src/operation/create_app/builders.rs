@@ -10,10 +10,7 @@ impl CreateAppInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_app::CreateAppOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app::CreateAppError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_app();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateAppFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_app::CreateApp,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_app::CreateApp, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateAppFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl CreateAppFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_app::CreateApp,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_app::CreateApp, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
     > {
         self.customize_middleware().await
@@ -169,18 +157,12 @@ impl CreateAppFluentBuilder {
         self.inner.get_platform()
     }
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
-    pub fn iam_service_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iam_service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_service_role_arn(input.into());
         self
     }
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
-    pub fn set_iam_service_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iam_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_service_role_arn(input);
         self
     }
@@ -250,19 +232,13 @@ impl CreateAppFluentBuilder {
     /// <p> The environment variables map for an Amplify app. </p>
     pub fn set_environment_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_environment_variables(input);
         self
     }
     /// <p> The environment variables map for an Amplify app. </p>
-    pub fn get_environment_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_environment_variables()
     }
     /// <p> Enables the auto building of branches for an Amplify app. </p>
@@ -308,18 +284,12 @@ impl CreateAppFluentBuilder {
         self.inner.get_enable_basic_auth()
     }
     /// <p> The credentials for basic authorization for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn basic_auth_credentials(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn basic_auth_credentials(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.basic_auth_credentials(input.into());
         self
     }
     /// <p> The credentials for basic authorization for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn set_basic_auth_credentials(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_basic_auth_credentials(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_basic_auth_credentials(input);
         self
     }
@@ -337,17 +307,12 @@ impl CreateAppFluentBuilder {
         self
     }
     /// <p> The custom rewrite and redirect rules for an Amplify app. </p>
-    pub fn set_custom_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRule>>,
-    ) -> Self {
+    pub fn set_custom_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRule>>) -> Self {
         self.inner = self.inner.set_custom_rules(input);
         self
     }
     /// <p> The custom rewrite and redirect rules for an Amplify app. </p>
-    pub fn get_custom_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRule>> {
+    pub fn get_custom_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRule>> {
         self.inner.get_custom_rules()
     }
     /// Adds a key-value pair to `tags`.
@@ -355,30 +320,17 @@ impl CreateAppFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tag for an Amplify app. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> The tag for an Amplify app. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> The tag for an Amplify app. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p> The build specification (build spec) for an Amplify app. </p>
@@ -396,18 +348,12 @@ impl CreateAppFluentBuilder {
         self.inner.get_build_spec()
     }
     /// <p>The custom HTTP headers for an Amplify app.</p>
-    pub fn custom_headers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_headers(input.into());
         self
     }
     /// <p>The custom HTTP headers for an Amplify app.</p>
-    pub fn set_custom_headers(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_headers(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_headers(input);
         self
     }
@@ -434,47 +380,31 @@ impl CreateAppFluentBuilder {
     /// To override the contents of this collection use [`set_auto_branch_creation_patterns`](Self::set_auto_branch_creation_patterns).
     ///
     /// <p> The automated branch creation glob patterns for an Amplify app. </p>
-    pub fn auto_branch_creation_patterns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_branch_creation_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_branch_creation_patterns(input.into());
         self
     }
     /// <p> The automated branch creation glob patterns for an Amplify app. </p>
-    pub fn set_auto_branch_creation_patterns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_auto_branch_creation_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_auto_branch_creation_patterns(input);
         self
     }
     /// <p> The automated branch creation glob patterns for an Amplify app. </p>
-    pub fn get_auto_branch_creation_patterns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_auto_branch_creation_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_auto_branch_creation_patterns()
     }
     /// <p> The automated branch creation configuration for an Amplify app. </p>
-    pub fn auto_branch_creation_config(
-        mut self,
-        input: crate::types::AutoBranchCreationConfig,
-    ) -> Self {
+    pub fn auto_branch_creation_config(mut self, input: crate::types::AutoBranchCreationConfig) -> Self {
         self.inner = self.inner.auto_branch_creation_config(input);
         self
     }
     /// <p> The automated branch creation configuration for an Amplify app. </p>
-    pub fn set_auto_branch_creation_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoBranchCreationConfig>,
-    ) -> Self {
+    pub fn set_auto_branch_creation_config(mut self, input: ::std::option::Option<crate::types::AutoBranchCreationConfig>) -> Self {
         self.inner = self.inner.set_auto_branch_creation_config(input);
         self
     }
     /// <p> The automated branch creation configuration for an Amplify app. </p>
-    pub fn get_auto_branch_creation_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoBranchCreationConfig> {
+    pub fn get_auto_branch_creation_config(&self) -> &::std::option::Option<crate::types::AutoBranchCreationConfig> {
         self.inner.get_auto_branch_creation_config()
     }
 }

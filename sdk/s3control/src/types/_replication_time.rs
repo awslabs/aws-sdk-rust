@@ -32,9 +32,7 @@ impl ReplicationTime {
 
 /// A builder for [`ReplicationTime`](crate::types::ReplicationTime).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationTimeBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ReplicationTimeStatus>,
     pub(crate) time: ::std::option::Option<crate::types::ReplicationTimeValue>,
@@ -46,10 +44,7 @@ impl ReplicationTimeBuilder {
         self
     }
     /// <p>Specifies whether S3 Replication Time Control (S3 RTC) is enabled. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationTimeStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReplicationTimeStatus>) -> Self {
         self.status = input;
         self
     }
@@ -63,10 +58,7 @@ impl ReplicationTimeBuilder {
         self
     }
     /// <p>A container that specifies the time by which replication should be complete for all objects and operations on objects. </p>
-    pub fn set_time(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationTimeValue>,
-    ) -> Self {
+    pub fn set_time(mut self, input: ::std::option::Option<crate::types::ReplicationTimeValue>) -> Self {
         self.time = input;
         self
     }

@@ -11,9 +11,7 @@ pub struct RenewOfferingOutput {
 }
 impl RenewOfferingOutput {
     /// <p>Represents the status of the offering transaction for the renewal.</p>
-    pub fn offering_transaction(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OfferingTransaction> {
+    pub fn offering_transaction(&self) -> ::std::option::Option<&crate::types::OfferingTransaction> {
         self.offering_transaction.as_ref()
     }
 }
@@ -31,9 +29,7 @@ impl RenewOfferingOutput {
 
 /// A builder for [`RenewOfferingOutput`](crate::operation::renew_offering::RenewOfferingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RenewOfferingOutputBuilder {
     pub(crate) offering_transaction: ::std::option::Option<crate::types::OfferingTransaction>,
     _request_id: Option<String>,
@@ -45,17 +41,12 @@ impl RenewOfferingOutputBuilder {
         self
     }
     /// <p>Represents the status of the offering transaction for the renewal.</p>
-    pub fn set_offering_transaction(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingTransaction>,
-    ) -> Self {
+    pub fn set_offering_transaction(mut self, input: ::std::option::Option<crate::types::OfferingTransaction>) -> Self {
         self.offering_transaction = input;
         self
     }
     /// <p>Represents the status of the offering transaction for the renewal.</p>
-    pub fn get_offering_transaction(
-        &self,
-    ) -> &::std::option::Option<crate::types::OfferingTransaction> {
+    pub fn get_offering_transaction(&self) -> &::std::option::Option<crate::types::OfferingTransaction> {
         &self.offering_transaction
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

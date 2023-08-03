@@ -22,16 +22,14 @@ impl UpdateEc2DeepInspectionConfigurationInput {
 }
 impl UpdateEc2DeepInspectionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateEc2DeepInspectionConfigurationInput`](crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationInput).
-    pub fn builder() -> crate::operation::update_ec2_deep_inspection_configuration::builders::UpdateEc2DeepInspectionConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_ec2_deep_inspection_configuration::builders::UpdateEc2DeepInspectionConfigurationInputBuilder {
         crate::operation::update_ec2_deep_inspection_configuration::builders::UpdateEc2DeepInspectionConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEc2DeepInspectionConfigurationInput`](crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEc2DeepInspectionConfigurationInputBuilder {
     pub(crate) activate_deep_inspection: ::std::option::Option<bool>,
     pub(crate) package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -56,38 +54,33 @@ impl UpdateEc2DeepInspectionConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_package_paths`](Self::set_package_paths).
     ///
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your account.</p>
-    pub fn package_paths(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.package_paths.unwrap_or_default();
         v.push(input.into());
         self.package_paths = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your account.</p>
-    pub fn set_package_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_package_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.package_paths = input;
         self
     }
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your account.</p>
-    pub fn get_package_paths(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_package_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.package_paths
     }
     /// Consumes the builder and constructs a [`UpdateEc2DeepInspectionConfigurationInput`](crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationInput {
-                activate_deep_inspection: self.activate_deep_inspection
-                ,
-                package_paths: self.package_paths
-                ,
-            }
+                activate_deep_inspection: self.activate_deep_inspection,
+                package_paths: self.package_paths,
+            },
         )
     }
 }

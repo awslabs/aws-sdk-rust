@@ -5,16 +5,16 @@ pub use crate::operation::associate_website_certificate_authority::_associate_we
 
 impl AssociateWebsiteCertificateAuthorityInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.associate_website_certificate_authority();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -23,13 +23,11 @@ impl AssociateWebsiteCertificateAuthorityInputBuilder {
 /// Fluent builder constructing a request to `AssociateWebsiteCertificateAuthority`.
 ///
 /// <p>Imports the root certificate of a certificate authority (CA) used to obtain TLS certificates used by associated websites within the company network.</p>
-#[deprecated(
-    note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-)]
+#[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateWebsiteCertificateAuthorityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityInputBuilder,
+    inner: crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityInputBuilder,
 }
 impl AssociateWebsiteCertificateAuthorityFluentBuilder {
     /// Creates a new `AssociateWebsiteCertificateAuthority`.
@@ -40,15 +38,20 @@ impl AssociateWebsiteCertificateAuthorityFluentBuilder {
         }
     }
     /// Access the AssociateWebsiteCertificateAuthority as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthority, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthority,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +60,17 @@ impl AssociateWebsiteCertificateAuthorityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,17 +88,26 @@ impl AssociateWebsiteCertificateAuthorityFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthority, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthority,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the fleet.</p>

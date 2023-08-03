@@ -24,8 +24,7 @@ pub struct DatasetMetadata {
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::TopicColumn>>,
     /// <p>The list of calculated field definitions.</p>
     #[doc(hidden)]
-    pub calculated_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::TopicCalculatedField>>,
+    pub calculated_fields: ::std::option::Option<::std::vec::Vec<crate::types::TopicCalculatedField>>,
     /// <p>The list of named entities definitions.</p>
     #[doc(hidden)]
     pub named_entities: ::std::option::Option<::std::vec::Vec<crate::types::TopicNamedEntity>>,
@@ -56,9 +55,7 @@ impl DatasetMetadata {
         self.columns.as_deref()
     }
     /// <p>The list of calculated field definitions.</p>
-    pub fn calculated_fields(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TopicCalculatedField]> {
+    pub fn calculated_fields(&self) -> ::std::option::Option<&[crate::types::TopicCalculatedField]> {
         self.calculated_fields.as_deref()
     }
     /// <p>The list of named entities definitions.</p>
@@ -75,9 +72,7 @@ impl DatasetMetadata {
 
 /// A builder for [`DatasetMetadata`](crate::types::DatasetMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetMetadataBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
@@ -85,10 +80,8 @@ pub struct DatasetMetadataBuilder {
     pub(crate) data_aggregation: ::std::option::Option<crate::types::DataAggregation>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::TopicFilter>>,
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::TopicColumn>>,
-    pub(crate) calculated_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::TopicCalculatedField>>,
-    pub(crate) named_entities:
-        ::std::option::Option<::std::vec::Vec<crate::types::TopicNamedEntity>>,
+    pub(crate) calculated_fields: ::std::option::Option<::std::vec::Vec<crate::types::TopicCalculatedField>>,
+    pub(crate) named_entities: ::std::option::Option<::std::vec::Vec<crate::types::TopicNamedEntity>>,
 }
 impl DatasetMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
@@ -120,18 +113,12 @@ impl DatasetMetadataBuilder {
         &self.dataset_name
     }
     /// <p>The description of the dataset.</p>
-    pub fn dataset_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the dataset.</p>
-    pub fn set_dataset_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_description = input;
         self
     }
@@ -145,10 +132,7 @@ impl DatasetMetadataBuilder {
         self
     }
     /// <p>The definition of a data aggregation.</p>
-    pub fn set_data_aggregation(
-        mut self,
-        input: ::std::option::Option<crate::types::DataAggregation>,
-    ) -> Self {
+    pub fn set_data_aggregation(mut self, input: ::std::option::Option<crate::types::DataAggregation>) -> Self {
         self.data_aggregation = input;
         self
     }
@@ -168,17 +152,12 @@ impl DatasetMetadataBuilder {
         self
     }
     /// <p>The list of filter definitions.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The list of filter definitions.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicFilter>> {
         &self.filters
     }
     /// Appends an item to `columns`.
@@ -193,17 +172,12 @@ impl DatasetMetadataBuilder {
         self
     }
     /// <p>The list of column definitions.</p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicColumn>>,
-    ) -> Self {
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicColumn>>) -> Self {
         self.columns = input;
         self
     }
     /// <p>The list of column definitions.</p>
-    pub fn get_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicColumn>> {
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicColumn>> {
         &self.columns
     }
     /// Appends an item to `calculated_fields`.
@@ -218,17 +192,12 @@ impl DatasetMetadataBuilder {
         self
     }
     /// <p>The list of calculated field definitions.</p>
-    pub fn set_calculated_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicCalculatedField>>,
-    ) -> Self {
+    pub fn set_calculated_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicCalculatedField>>) -> Self {
         self.calculated_fields = input;
         self
     }
     /// <p>The list of calculated field definitions.</p>
-    pub fn get_calculated_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicCalculatedField>> {
+    pub fn get_calculated_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicCalculatedField>> {
         &self.calculated_fields
     }
     /// Appends an item to `named_entities`.
@@ -243,17 +212,12 @@ impl DatasetMetadataBuilder {
         self
     }
     /// <p>The list of named entities definitions.</p>
-    pub fn set_named_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicNamedEntity>>,
-    ) -> Self {
+    pub fn set_named_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicNamedEntity>>) -> Self {
         self.named_entities = input;
         self
     }
     /// <p>The list of named entities definitions.</p>
-    pub fn get_named_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicNamedEntity>> {
+    pub fn get_named_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicNamedEntity>> {
         &self.named_entities
     }
     /// Consumes the builder and constructs a [`DatasetMetadata`](crate::types::DatasetMetadata).

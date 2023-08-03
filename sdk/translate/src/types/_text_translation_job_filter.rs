@@ -44,9 +44,7 @@ impl TextTranslationJobFilter {
 
 /// A builder for [`TextTranslationJobFilter`](crate::types::TextTranslationJobFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TextTranslationJobFilterBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
@@ -88,17 +86,12 @@ impl TextTranslationJobFilterBuilder {
         self
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
-    pub fn set_submitted_before_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submitted_before_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.submitted_before_time = input;
         self
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
-    pub fn get_submitted_before_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_submitted_before_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.submitted_before_time
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
@@ -107,10 +100,7 @@ impl TextTranslationJobFilterBuilder {
         self
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
-    pub fn set_submitted_after_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submitted_after_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.submitted_after_time = input;
         self
     }

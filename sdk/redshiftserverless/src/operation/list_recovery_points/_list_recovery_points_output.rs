@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListRecoveryPointsOutput {
 }
 impl ListRecoveryPointsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecoveryPointsOutput`](crate::operation::list_recovery_points::ListRecoveryPointsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_recovery_points::builders::ListRecoveryPointsOutputBuilder {
+    pub fn builder() -> crate::operation::list_recovery_points::builders::ListRecoveryPointsOutputBuilder {
         crate::operation::list_recovery_points::builders::ListRecoveryPointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecoveryPointsOutput`](crate::operation::list_recovery_points::ListRecoveryPointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecoveryPointsOutputBuilder {
     pub(crate) recovery_points: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListRecoveryPointsOutputBuilder {
         self
     }
     /// <p>The returned recovery point objects.</p>
-    pub fn set_recovery_points(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPoint>>,
-    ) -> Self {
+    pub fn set_recovery_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPoint>>) -> Self {
         self.recovery_points = input;
         self
     }
     /// <p>The returned recovery point objects.</p>
-    pub fn get_recovery_points(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryPoint>> {
+    pub fn get_recovery_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryPoint>> {
         &self.recovery_points
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>

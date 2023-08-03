@@ -5,16 +5,16 @@ pub use crate::operation::modify_network_interface_attribute::_modify_network_in
 
 impl ModifyNetworkInterfaceAttributeInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.modify_network_interface_attribute();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyNetworkInterfaceAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeInputBuilder,
+    inner: crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeInputBuilder,
 }
 impl ModifyNetworkInterfaceAttributeFluentBuilder {
     /// Creates a new `ModifyNetworkInterfaceAttribute`.
@@ -37,15 +37,20 @@ impl ModifyNetworkInterfaceAttributeFluentBuilder {
         }
     }
     /// Access the ModifyNetworkInterfaceAttribute as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttribute, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttribute,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ModifyNetworkInterfaceAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl ModifyNetworkInterfaceAttributeFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttribute, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttribute,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you must specify the ID of the interface attachment.</p>
@@ -100,17 +115,12 @@ impl ModifyNetworkInterfaceAttributeFluentBuilder {
         self
     }
     /// <p>Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you must specify the ID of the interface attachment.</p>
-    pub fn set_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInterfaceAttachmentChanges>,
-    ) -> Self {
+    pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceAttachmentChanges>) -> Self {
         self.inner = self.inner.set_attachment(input);
         self
     }
     /// <p>Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you must specify the ID of the interface attachment.</p>
-    pub fn get_attachment(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkInterfaceAttachmentChanges> {
+    pub fn get_attachment(&self) -> &::std::option::Option<crate::types::NetworkInterfaceAttachmentChanges> {
         self.inner.get_attachment()
     }
     /// <p>A description for the network interface.</p>
@@ -119,10 +129,7 @@ impl ModifyNetworkInterfaceAttributeFluentBuilder {
         self
     }
     /// <p>A description for the network interface.</p>
-    pub fn set_description(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeValue>,
-    ) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -154,10 +161,7 @@ impl ModifyNetworkInterfaceAttributeFluentBuilder {
         self
     }
     /// <p>Changes the security groups for the network interface. The new set of groups you specify replaces the current set. You must specify at least one group, even if it's just the default security group in the VPC. You must specify the ID of the security group, not the name.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_groups(input);
         self
     }
@@ -166,18 +170,12 @@ impl ModifyNetworkInterfaceAttributeFluentBuilder {
         self.inner.get_groups()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_interface_id(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
@@ -191,17 +189,12 @@ impl ModifyNetworkInterfaceAttributeFluentBuilder {
         self
     }
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
-    pub fn set_source_dest_check(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
-    ) -> Self {
+    pub fn set_source_dest_check(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.inner = self.inner.set_source_dest_check(input);
         self
     }
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
-    pub fn get_source_dest_check(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+    pub fn get_source_dest_check(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         self.inner.get_source_dest_check()
     }
     /// <p>Updates the ENA Express configuration for the network interface that’s attached to the instance.</p>
@@ -210,17 +203,12 @@ impl ModifyNetworkInterfaceAttributeFluentBuilder {
         self
     }
     /// <p>Updates the ENA Express configuration for the network interface that’s attached to the instance.</p>
-    pub fn set_ena_srd_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::EnaSrdSpecification>,
-    ) -> Self {
+    pub fn set_ena_srd_specification(mut self, input: ::std::option::Option<crate::types::EnaSrdSpecification>) -> Self {
         self.inner = self.inner.set_ena_srd_specification(input);
         self
     }
     /// <p>Updates the ENA Express configuration for the network interface that’s attached to the instance.</p>
-    pub fn get_ena_srd_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnaSrdSpecification> {
+    pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::EnaSrdSpecification> {
         self.inner.get_ena_srd_specification()
     }
 }

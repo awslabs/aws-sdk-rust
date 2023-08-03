@@ -35,9 +35,7 @@ impl ListTestSetsOutput {
 
 /// A builder for [`ListTestSetsOutput`](crate::operation::list_test_sets::ListTestSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestSetsOutputBuilder {
     pub(crate) test_sets: ::std::option::Option<::std::vec::Vec<crate::types::TestSetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListTestSetsOutputBuilder {
         self
     }
     /// <p>The selected test sets in a list of test sets.</p>
-    pub fn set_test_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TestSetSummary>>,
-    ) -> Self {
+    pub fn set_test_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestSetSummary>>) -> Self {
         self.test_sets = input;
         self
     }
     /// <p>The selected test sets in a list of test sets.</p>
-    pub fn get_test_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestSetSummary>> {
+    pub fn get_test_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestSetSummary>> {
         &self.test_sets
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListTestSets operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestSets operation request to get the next page of results.</p>

@@ -37,13 +37,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FleetCapacityReservationUsageStrategy {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,12 +48,8 @@ pub enum FleetCapacityReservationUsageStrategy {
 impl ::std::convert::From<&str> for FleetCapacityReservationUsageStrategy {
     fn from(s: &str) -> Self {
         match s {
-            "use-capacity-reservations-first" => {
-                FleetCapacityReservationUsageStrategy::UseCapacityReservationsFirst
-            }
-            other => FleetCapacityReservationUsageStrategy::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "use-capacity-reservations-first" => FleetCapacityReservationUsageStrategy::UseCapacityReservationsFirst,
+            other => FleetCapacityReservationUsageStrategy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -74,9 +64,7 @@ impl FleetCapacityReservationUsageStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            FleetCapacityReservationUsageStrategy::UseCapacityReservationsFirst => {
-                "use-capacity-reservations-first"
-            }
+            FleetCapacityReservationUsageStrategy::UseCapacityReservationsFirst => "use-capacity-reservations-first",
             FleetCapacityReservationUsageStrategy::Unknown(value) => value.as_str(),
         }
     }

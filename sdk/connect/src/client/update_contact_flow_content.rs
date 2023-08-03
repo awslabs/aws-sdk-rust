@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`content(impl ::std::convert::Into<String>)`](crate::operation::update_contact_flow_content::builders::UpdateContactFlowContentFluentBuilder::content) / [`set_content(Option<String>)`](crate::operation::update_contact_flow_content::builders::UpdateContactFlowContentFluentBuilder::set_content): <p>The JSON string that represents flow's content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a>. </p>
     /// - On success, responds with [`UpdateContactFlowContentOutput`](crate::operation::update_contact_flow_content::UpdateContactFlowContentOutput)
     /// - On failure, responds with [`SdkError<UpdateContactFlowContentError>`](crate::operation::update_contact_flow_content::UpdateContactFlowContentError)
-    pub fn update_contact_flow_content(&self) -> crate::operation::update_contact_flow_content::builders::UpdateContactFlowContentFluentBuilder{
+    pub fn update_contact_flow_content(&self) -> crate::operation::update_contact_flow_content::builders::UpdateContactFlowContentFluentBuilder {
         crate::operation::update_contact_flow_content::builders::UpdateContactFlowContentFluentBuilder::new(self.handle.clone())
     }
 }

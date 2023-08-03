@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`quick_connect_arn(Option<String>)`](crate::operation::create_quick_connect::CreateQuickConnectOutput::quick_connect_arn): <p>The Amazon Resource Name (ARN) for the quick connect. </p>
     ///   - [`quick_connect_id(Option<String>)`](crate::operation::create_quick_connect::CreateQuickConnectOutput::quick_connect_id): <p>The identifier for the quick connect. </p>
     /// - On failure, responds with [`SdkError<CreateQuickConnectError>`](crate::operation::create_quick_connect::CreateQuickConnectError)
-    pub fn create_quick_connect(
-        &self,
-    ) -> crate::operation::create_quick_connect::builders::CreateQuickConnectFluentBuilder {
-        crate::operation::create_quick_connect::builders::CreateQuickConnectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_quick_connect(&self) -> crate::operation::create_quick_connect::builders::CreateQuickConnectFluentBuilder {
+        crate::operation::create_quick_connect::builders::CreateQuickConnectFluentBuilder::new(self.handle.clone())
     }
 }

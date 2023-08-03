@@ -7,10 +7,7 @@ pub fn ser_policy_definition(
         crate::types::PolicyDefinition::Static(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_4.key("static").start_object();
-            crate::protocol_serde::shape_static_policy_definition::ser_static_policy_definition(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_static_policy_definition::ser_static_policy_definition(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::PolicyDefinition::TemplateLinked(inner) => {
@@ -20,11 +17,9 @@ pub fn ser_policy_definition(
             object_2.finish();
         }
         crate::types::PolicyDefinition::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "PolicyDefinition",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "PolicyDefinition",
+            ))
         }
     }
     Ok(())

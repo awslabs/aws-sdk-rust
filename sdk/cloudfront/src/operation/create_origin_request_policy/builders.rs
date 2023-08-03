@@ -34,7 +34,7 @@ impl CreateOriginRequestPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateOriginRequestPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_origin_request_policy::builders::CreateOriginRequestPolicyInputBuilder,
+    inner: crate::operation::create_origin_request_policy::builders::CreateOriginRequestPolicyInputBuilder,
 }
 impl CreateOriginRequestPolicyFluentBuilder {
     /// Creates a new `CreateOriginRequestPolicy`.
@@ -45,7 +45,7 @@ impl CreateOriginRequestPolicyFluentBuilder {
         }
     }
     /// Access the CreateOriginRequestPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_origin_request_policy::builders::CreateOriginRequestPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_origin_request_policy::builders::CreateOriginRequestPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl CreateOriginRequestPolicyFluentBuilder {
             crate::operation::create_origin_request_policy::CreateOriginRequestPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl CreateOriginRequestPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl CreateOriginRequestPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl CreateOriginRequestPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -122,32 +113,22 @@ impl CreateOriginRequestPolicyFluentBuilder {
             crate::operation::create_origin_request_policy::CreateOriginRequestPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An origin request policy configuration.</p>
-    pub fn origin_request_policy_config(
-        mut self,
-        input: crate::types::OriginRequestPolicyConfig,
-    ) -> Self {
+    pub fn origin_request_policy_config(mut self, input: crate::types::OriginRequestPolicyConfig) -> Self {
         self.inner = self.inner.origin_request_policy_config(input);
         self
     }
     /// <p>An origin request policy configuration.</p>
-    pub fn set_origin_request_policy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
-    ) -> Self {
+    pub fn set_origin_request_policy_config(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyConfig>) -> Self {
         self.inner = self.inner.set_origin_request_policy_config(input);
         self
     }
     /// <p>An origin request policy configuration.</p>
-    pub fn get_origin_request_policy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginRequestPolicyConfig> {
+    pub fn get_origin_request_policy_config(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyConfig> {
         self.inner.get_origin_request_policy_config()
     }
 }

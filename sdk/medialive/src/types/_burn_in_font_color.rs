@@ -42,13 +42,7 @@
 /// Burn In Font Color
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BurnInFontColor {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for BurnInFontColor {
             "RED" => BurnInFontColor::Red,
             "WHITE" => BurnInFontColor::White,
             "YELLOW" => BurnInFontColor::Yellow,
-            other => {
-                BurnInFontColor::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => BurnInFontColor::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

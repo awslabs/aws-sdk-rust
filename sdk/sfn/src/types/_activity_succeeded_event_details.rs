@@ -17,9 +17,7 @@ impl ActivitySucceededEventDetails {
         self.output.as_deref()
     }
     /// <p>Contains details about the output of an execution history event.</p>
-    pub fn output_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    pub fn output_details(&self) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
         self.output_details.as_ref()
     }
 }
@@ -43,8 +41,7 @@ impl ActivitySucceededEventDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ActivitySucceededEventDetailsBuilder {
     pub(crate) output: ::std::option::Option<::std::string::String>,
-    pub(crate) output_details:
-        ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+    pub(crate) output_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
 }
 impl ActivitySucceededEventDetailsBuilder {
     /// <p>The JSON data output by the activity task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
@@ -67,17 +64,12 @@ impl ActivitySucceededEventDetailsBuilder {
         self
     }
     /// <p>Contains details about the output of an execution history event.</p>
-    pub fn set_output_details(
-        mut self,
-        input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
-    ) -> Self {
+    pub fn set_output_details(mut self, input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>) -> Self {
         self.output_details = input;
         self
     }
     /// <p>Contains details about the output of an execution history event.</p>
-    pub fn get_output_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
+    pub fn get_output_details(&self) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
         &self.output_details
     }
     /// Consumes the builder and constructs a [`ActivitySucceededEventDetails`](crate::types::ActivitySucceededEventDetails).

@@ -29,9 +29,7 @@ impl UntagMeetingInput {
 
 /// A builder for [`UntagMeetingInput`](crate::operation::untag_meeting::UntagMeetingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagMeetingInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,10 +61,7 @@ impl UntagMeetingInputBuilder {
         self
     }
     /// <p>The tag keys.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -75,12 +70,7 @@ impl UntagMeetingInputBuilder {
         &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagMeetingInput`](crate::operation::untag_meeting::UntagMeetingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::untag_meeting::UntagMeetingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_meeting::UntagMeetingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_meeting::UntagMeetingInput {
             meeting_id: self.meeting_id,
             tag_keys: self.tag_keys,

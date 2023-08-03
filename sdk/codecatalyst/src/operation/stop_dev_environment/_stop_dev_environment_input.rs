@@ -29,17 +29,14 @@ impl StopDevEnvironmentInput {
 }
 impl StopDevEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`StopDevEnvironmentInput`](crate::operation::stop_dev_environment::StopDevEnvironmentInput).
-    pub fn builder(
-    ) -> crate::operation::stop_dev_environment::builders::StopDevEnvironmentInputBuilder {
+    pub fn builder() -> crate::operation::stop_dev_environment::builders::StopDevEnvironmentInputBuilder {
         crate::operation::stop_dev_environment::builders::StopDevEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`StopDevEnvironmentInput`](crate::operation::stop_dev_environment::StopDevEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDevEnvironmentInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl StopDevEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`StopDevEnvironmentInput`](crate::operation::stop_dev_environment::StopDevEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_dev_environment::StopDevEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_dev_environment::StopDevEnvironmentInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                id: self.id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_dev_environment::StopDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_dev_environment::StopDevEnvironmentInput {
+            space_name: self.space_name,
+            project_name: self.project_name,
+            id: self.id,
+        })
     }
 }

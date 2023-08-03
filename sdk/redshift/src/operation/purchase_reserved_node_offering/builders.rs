@@ -27,7 +27,7 @@ impl PurchaseReservedNodeOfferingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PurchaseReservedNodeOfferingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingInputBuilder,
+    inner: crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingInputBuilder,
 }
 impl PurchaseReservedNodeOfferingFluentBuilder {
     /// Creates a new `PurchaseReservedNodeOffering`.
@@ -38,7 +38,7 @@ impl PurchaseReservedNodeOfferingFluentBuilder {
         }
     }
     /// Access the PurchaseReservedNodeOffering as a reference.
-    pub fn as_input(&self) -> &crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl PurchaseReservedNodeOfferingFluentBuilder {
             crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOffering,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl PurchaseReservedNodeOfferingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl PurchaseReservedNodeOfferingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl PurchaseReservedNodeOfferingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl PurchaseReservedNodeOfferingFluentBuilder {
             crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOffering,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the reserved node offering you want to purchase.</p>
-    pub fn reserved_node_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_node_offering_id(input.into());
         self
     }
     /// <p>The unique identifier of the reserved node offering you want to purchase.</p>
-    pub fn set_reserved_node_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_node_offering_id(input);
         self
     }

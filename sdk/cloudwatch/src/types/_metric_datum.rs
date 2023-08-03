@@ -89,9 +89,7 @@ impl MetricDatum {
 
 /// A builder for [`MetricDatum`](crate::types::MetricDatum).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricDatumBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
@@ -130,17 +128,12 @@ impl MetricDatumBuilder {
         self
     }
     /// <p>The dimensions associated with the metric. </p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The dimensions associated with the metric. </p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
         &self.dimensions
     }
     /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
@@ -149,10 +142,7 @@ impl MetricDatumBuilder {
         self
     }
     /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -183,10 +173,7 @@ impl MetricDatumBuilder {
         self
     }
     /// <p>The statistical values for the metric.</p>
-    pub fn set_statistic_values(
-        mut self,
-        input: ::std::option::Option<crate::types::StatisticSet>,
-    ) -> Self {
+    pub fn set_statistic_values(mut self, input: ::std::option::Option<crate::types::StatisticSet>) -> Self {
         self.statistic_values = input;
         self
     }

@@ -37,9 +37,7 @@ impl ProposedSegmentChange {
 
 /// A builder for [`ProposedSegmentChange`](crate::types::ProposedSegmentChange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProposedSegmentChangeBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) attachment_policy_rule_number: ::std::option::Option<i32>,
@@ -58,10 +56,7 @@ impl ProposedSegmentChangeBuilder {
         self
     }
     /// <p>The list of key-value tags that changed for the segment.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

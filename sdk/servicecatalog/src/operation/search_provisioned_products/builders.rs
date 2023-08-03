@@ -26,7 +26,7 @@ impl SearchProvisionedProductsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchProvisionedProductsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::search_provisioned_products::builders::SearchProvisionedProductsInputBuilder,
+    inner: crate::operation::search_provisioned_products::builders::SearchProvisionedProductsInputBuilder,
 }
 impl SearchProvisionedProductsFluentBuilder {
     /// Creates a new `SearchProvisionedProducts`.
@@ -37,7 +37,7 @@ impl SearchProvisionedProductsFluentBuilder {
         }
     }
     /// Access the SearchProvisionedProducts as a reference.
-    pub fn as_input(&self) -> &crate::operation::search_provisioned_products::builders::SearchProvisionedProductsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::search_provisioned_products::builders::SearchProvisionedProductsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl SearchProvisionedProductsFluentBuilder {
             crate::operation::search_provisioned_products::SearchProvisionedProducts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_provisioned_products::SearchProvisionedProductsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_provisioned_products::SearchProvisionedProductsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl SearchProvisionedProductsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl SearchProvisionedProductsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_provisioned_products::SearchProvisionedProductsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_provisioned_products::SearchProvisionedProductsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_provisioned_products::SearchProvisionedProductsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl SearchProvisionedProductsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_provisioned_products::SearchProvisionedProductsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_provisioned_products::SearchProvisionedProductsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_provisioned_products::SearchProvisionedProductsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl SearchProvisionedProductsFluentBuilder {
             crate::operation::search_provisioned_products::SearchProvisionedProducts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_provisioned_products::SearchProvisionedProductsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_provisioned_products::SearchProvisionedProductsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator {
         crate::operation::search_provisioned_products::paginator::SearchProvisionedProductsPaginator::new(self.handle, self.inner)
     }
     /// <p>The language code.</p>
@@ -134,10 +120,7 @@ impl SearchProvisionedProductsFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -146,10 +129,7 @@ impl SearchProvisionedProductsFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -167,17 +147,12 @@ impl SearchProvisionedProductsFluentBuilder {
         self
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    pub fn set_access_level_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessLevelFilter>,
-    ) -> Self {
+    pub fn set_access_level_filter(mut self, input: ::std::option::Option<crate::types::AccessLevelFilter>) -> Self {
         self.inner = self.inner.set_access_level_filter(input);
         self
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    pub fn get_access_level_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessLevelFilter> {
+    pub fn get_access_level_filter(&self) -> &::std::option::Option<crate::types::AccessLevelFilter> {
         self.inner.get_access_level_filter()
     }
     /// Adds a key-value pair to `Filters`.
@@ -187,11 +162,7 @@ impl SearchProvisionedProductsFluentBuilder {
     /// <p>The search filters.</p>
     /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
     /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
-    pub fn filters(
-        mut self,
-        k: crate::types::ProvisionedProductViewFilterBy,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: crate::types::ProvisionedProductViewFilterBy, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.filters(k, v);
         self
     }
@@ -201,10 +172,7 @@ impl SearchProvisionedProductsFluentBuilder {
     pub fn set_filters(
         mut self,
         input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::ProvisionedProductViewFilterBy,
-                ::std::vec::Vec<::std::string::String>,
-            >,
+            ::std::collections::HashMap<crate::types::ProvisionedProductViewFilterBy, ::std::vec::Vec<::std::string::String>>,
         >,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -215,12 +183,8 @@ impl SearchProvisionedProductsFluentBuilder {
     /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
     pub fn get_filters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::ProvisionedProductViewFilterBy,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ProvisionedProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>
+    {
         self.inner.get_filters()
     }
     /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>

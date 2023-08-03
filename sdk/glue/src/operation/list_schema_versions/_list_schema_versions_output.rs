@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSchemaVersionsOutput {
 }
 impl ListSchemaVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSchemaVersionsOutput`](crate::operation::list_schema_versions::ListSchemaVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_schema_versions::builders::ListSchemaVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_schema_versions::builders::ListSchemaVersionsOutputBuilder {
         crate::operation::list_schema_versions::builders::ListSchemaVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSchemaVersionsOutput`](crate::operation::list_schema_versions::ListSchemaVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchemaVersionsOutputBuilder {
     pub(crate) schemas: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListSchemaVersionsOutputBuilder {
         self
     }
     /// <p>An array of <code>SchemaVersionList</code> objects containing details of each schema version.</p>
-    pub fn set_schemas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionListItem>>,
-    ) -> Self {
+    pub fn set_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionListItem>>) -> Self {
         self.schemas = input;
         self
     }
     /// <p>An array of <code>SchemaVersionList</code> objects containing details of each schema version.</p>
-    pub fn get_schemas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionListItem>> {
+    pub fn get_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionListItem>> {
         &self.schemas
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>

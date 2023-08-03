@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`application_instance_id(impl ::std::convert::Into<String>)`](crate::operation::remove_application_instance::builders::RemoveApplicationInstanceFluentBuilder::application_instance_id) / [`set_application_instance_id(Option<String>)`](crate::operation::remove_application_instance::builders::RemoveApplicationInstanceFluentBuilder::set_application_instance_id): <p>An application instance ID.</p>
     /// - On success, responds with [`RemoveApplicationInstanceOutput`](crate::operation::remove_application_instance::RemoveApplicationInstanceOutput)
     /// - On failure, responds with [`SdkError<RemoveApplicationInstanceError>`](crate::operation::remove_application_instance::RemoveApplicationInstanceError)
-    pub fn remove_application_instance(&self) -> crate::operation::remove_application_instance::builders::RemoveApplicationInstanceFluentBuilder{
+    pub fn remove_application_instance(&self) -> crate::operation::remove_application_instance::builders::RemoveApplicationInstanceFluentBuilder {
         crate::operation::remove_application_instance::builders::RemoveApplicationInstanceFluentBuilder::new(self.handle.clone())
     }
 }

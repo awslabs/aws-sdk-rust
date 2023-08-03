@@ -41,10 +41,7 @@ impl DeleteAppInstanceUserFluentBuilder {
         }
     }
     /// Access the DeleteAppInstanceUser as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +53,7 @@ impl DeleteAppInstanceUserFluentBuilder {
             crate::operation::delete_app_instance_user::DeleteAppInstanceUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_user::DeleteAppInstanceUserError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +63,7 @@ impl DeleteAppInstanceUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +72,7 @@ impl DeleteAppInstanceUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_instance_user::DeleteAppInstanceUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_user::DeleteAppInstanceUserError>,
     > {
         let op = self
             .inner
@@ -105,9 +95,7 @@ impl DeleteAppInstanceUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_instance_user::DeleteAppInstanceUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_user::DeleteAppInstanceUserError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +109,17 @@ impl DeleteAppInstanceUserFluentBuilder {
             crate::operation::delete_app_instance_user::DeleteAppInstanceUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_user::DeleteAppInstanceUserError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the user request being deleted.</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_user_arn(input.into());
         self
     }
     /// <p>The ARN of the user request being deleted.</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_user_arn(input);
         self
     }

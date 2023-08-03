@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<DocumentationPart>>)`](crate::operation::get_documentation_parts::GetDocumentationPartsOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_documentation_parts::GetDocumentationPartsOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetDocumentationPartsError>`](crate::operation::get_documentation_parts::GetDocumentationPartsError)
-    pub fn get_documentation_parts(
-        &self,
-    ) -> crate::operation::get_documentation_parts::builders::GetDocumentationPartsFluentBuilder
-    {
-        crate::operation::get_documentation_parts::builders::GetDocumentationPartsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_documentation_parts(&self) -> crate::operation::get_documentation_parts::builders::GetDocumentationPartsFluentBuilder {
+        crate::operation::get_documentation_parts::builders::GetDocumentationPartsFluentBuilder::new(self.handle.clone())
     }
 }

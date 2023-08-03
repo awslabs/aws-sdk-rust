@@ -26,7 +26,7 @@ impl PromoteReadReplicaDbClusterInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PromoteReadReplicaDBClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterInputBuilder,
+    inner: crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterInputBuilder,
 }
 impl PromoteReadReplicaDBClusterFluentBuilder {
     /// Creates a new `PromoteReadReplicaDBCluster`.
@@ -37,7 +37,7 @@ impl PromoteReadReplicaDBClusterFluentBuilder {
         }
     }
     /// Access the PromoteReadReplicaDBCluster as a reference.
-    pub fn as_input(&self) -> &crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl PromoteReadReplicaDBClusterFluentBuilder {
             crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDBClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl PromoteReadReplicaDBClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl PromoteReadReplicaDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDBClusterError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl PromoteReadReplicaDBClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDBClusterError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl PromoteReadReplicaDBClusterFluentBuilder {
             crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDBCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDBClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDBClusterError>,
     > {
         self.customize_middleware().await
     }
@@ -126,10 +115,7 @@ impl PromoteReadReplicaDBClusterFluentBuilder {
     /// <li> <p>Must match the identifier of an existing DB cluster read replica.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-replica1</code> </p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
@@ -139,10 +125,7 @@ impl PromoteReadReplicaDBClusterFluentBuilder {
     /// <li> <p>Must match the identifier of an existing DB cluster read replica.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-replica1</code> </p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }

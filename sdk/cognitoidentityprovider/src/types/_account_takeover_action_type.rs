@@ -29,9 +29,7 @@ impl AccountTakeoverActionType {
     /// <li> <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p> </li>
     /// <li> <p> <code>NO_ACTION</code> Allow the user to sign in.</p> </li>
     /// </ul>
-    pub fn event_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AccountTakeoverEventActionType> {
+    pub fn event_action(&self) -> ::std::option::Option<&crate::types::AccountTakeoverEventActionType> {
         self.event_action.as_ref()
     }
 }
@@ -44,9 +42,7 @@ impl AccountTakeoverActionType {
 
 /// A builder for [`AccountTakeoverActionType`](crate::types::AccountTakeoverActionType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountTakeoverActionTypeBuilder {
     pub(crate) notify: ::std::option::Option<bool>,
     pub(crate) event_action: ::std::option::Option<crate::types::AccountTakeoverEventActionType>,
@@ -84,10 +80,7 @@ impl AccountTakeoverActionTypeBuilder {
     /// <li> <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p> </li>
     /// <li> <p> <code>NO_ACTION</code> Allow the user to sign in.</p> </li>
     /// </ul>
-    pub fn set_event_action(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountTakeoverEventActionType>,
-    ) -> Self {
+    pub fn set_event_action(mut self, input: ::std::option::Option<crate::types::AccountTakeoverEventActionType>) -> Self {
         self.event_action = input;
         self
     }
@@ -98,9 +91,7 @@ impl AccountTakeoverActionTypeBuilder {
     /// <li> <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured it, else block the request.</p> </li>
     /// <li> <p> <code>NO_ACTION</code> Allow the user to sign in.</p> </li>
     /// </ul>
-    pub fn get_event_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountTakeoverEventActionType> {
+    pub fn get_event_action(&self) -> &::std::option::Option<crate::types::AccountTakeoverEventActionType> {
         &self.event_action
     }
     /// Consumes the builder and constructs a [`AccountTakeoverActionType`](crate::types::AccountTakeoverActionType).

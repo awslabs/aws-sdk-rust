@@ -7,8 +7,7 @@ pub fn ser_noncurrent_version_transition(
     let mut scope = writer.finish();
     if input.noncurrent_days != 0 {
         let mut inner_writer = scope.start_el("NoncurrentDays").finish();
-        inner_writer
-            .data(::aws_smithy_types::primitive::Encoder::from(input.noncurrent_days).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.noncurrent_days).encode());
     }
     if let Some(var_1) = &input.storage_class {
         let mut inner_writer = scope.start_el("StorageClass").finish();

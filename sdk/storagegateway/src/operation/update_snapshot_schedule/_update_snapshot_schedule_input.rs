@@ -54,18 +54,14 @@ impl UpdateSnapshotScheduleInput {
 }
 impl UpdateSnapshotScheduleInput {
     /// Creates a new builder-style object to manufacture [`UpdateSnapshotScheduleInput`](crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::update_snapshot_schedule::builders::UpdateSnapshotScheduleInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_snapshot_schedule::builders::UpdateSnapshotScheduleInputBuilder {
         crate::operation::update_snapshot_schedule::builders::UpdateSnapshotScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSnapshotScheduleInput`](crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSnapshotScheduleInputBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_at: ::std::option::Option<i32>,
@@ -146,10 +142,7 @@ impl UpdateSnapshotScheduleInputBuilder {
     /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -162,18 +155,14 @@ impl UpdateSnapshotScheduleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSnapshotScheduleInput`](crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleInput {
-                volume_arn: self.volume_arn,
-                start_at: self.start_at,
-                recurrence_in_hours: self.recurrence_in_hours,
-                description: self.description,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleInput {
+            volume_arn: self.volume_arn,
+            start_at: self.start_at,
+            recurrence_in_hours: self.recurrence_in_hours,
+            description: self.description,
+            tags: self.tags,
+        })
     }
 }

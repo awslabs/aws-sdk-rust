@@ -72,9 +72,7 @@ impl CreateLedgerOutput {
 
 /// A builder for [`CreateLedgerOutput`](crate::operation::create_ledger::CreateLedgerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLedgerOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -134,10 +132,7 @@ impl CreateLedgerOutputBuilder {
         self
     }
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -151,10 +146,7 @@ impl CreateLedgerOutputBuilder {
         self
     }
     /// <p>The permissions mode of the ledger that you created.</p>
-    pub fn set_permissions_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionsMode>,
-    ) -> Self {
+    pub fn set_permissions_mode(mut self, input: ::std::option::Option<crate::types::PermissionsMode>) -> Self {
         self.permissions_mode = input;
         self
     }

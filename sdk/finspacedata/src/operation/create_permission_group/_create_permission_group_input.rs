@@ -22,8 +22,7 @@ pub struct CreatePermissionGroupInput {
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub application_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
+    pub application_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -49,9 +48,7 @@ impl CreatePermissionGroupInput {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    pub fn application_permissions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationPermission]> {
+    pub fn application_permissions(&self) -> ::std::option::Option<&[crate::types::ApplicationPermission]> {
         self.application_permissions.as_deref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -71,9 +68,7 @@ impl ::std::fmt::Debug for CreatePermissionGroupInput {
 }
 impl CreatePermissionGroupInput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionGroupInput`](crate::operation::create_permission_group::CreatePermissionGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_permission_group::builders::CreatePermissionGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_permission_group::builders::CreatePermissionGroupInputBuilder {
         crate::operation::create_permission_group::builders::CreatePermissionGroupInputBuilder::default()
     }
 }
@@ -84,8 +79,7 @@ impl CreatePermissionGroupInput {
 pub struct CreatePermissionGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) application_permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
+    pub(crate) application_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreatePermissionGroupInputBuilder {
@@ -151,10 +145,7 @@ impl CreatePermissionGroupInputBuilder {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    pub fn set_application_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
-    ) -> Self {
+    pub fn set_application_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>) -> Self {
         self.application_permissions = input;
         self
     }
@@ -170,9 +161,7 @@ impl CreatePermissionGroupInputBuilder {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    pub fn get_application_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>> {
+    pub fn get_application_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>> {
         &self.application_permissions
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -192,18 +181,14 @@ impl CreatePermissionGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreatePermissionGroupInput`](crate::operation::create_permission_group::CreatePermissionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_permission_group::CreatePermissionGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_permission_group::CreatePermissionGroupInput {
-                name: self.name,
-                description: self.description,
-                application_permissions: self.application_permissions,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_permission_group::CreatePermissionGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_permission_group::CreatePermissionGroupInput {
+            name: self.name,
+            description: self.description,
+            application_permissions: self.application_permissions,
+            client_token: self.client_token,
+        })
     }
 }
 impl ::std::fmt::Debug for CreatePermissionGroupInputBuilder {

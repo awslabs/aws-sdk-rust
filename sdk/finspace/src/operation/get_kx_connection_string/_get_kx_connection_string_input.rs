@@ -29,18 +29,14 @@ impl GetKxConnectionStringInput {
 }
 impl GetKxConnectionStringInput {
     /// Creates a new builder-style object to manufacture [`GetKxConnectionStringInput`](crate::operation::get_kx_connection_string::GetKxConnectionStringInput).
-    pub fn builder(
-    ) -> crate::operation::get_kx_connection_string::builders::GetKxConnectionStringInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_kx_connection_string::builders::GetKxConnectionStringInputBuilder {
         crate::operation::get_kx_connection_string::builders::GetKxConnectionStringInputBuilder::default()
     }
 }
 
 /// A builder for [`GetKxConnectionStringInput`](crate::operation::get_kx_connection_string::GetKxConnectionStringInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKxConnectionStringInputBuilder {
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl GetKxConnectionStringInputBuilder {
         &self.user_arn
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -98,16 +88,12 @@ impl GetKxConnectionStringInputBuilder {
     /// Consumes the builder and constructs a [`GetKxConnectionStringInput`](crate::operation::get_kx_connection_string::GetKxConnectionStringInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_kx_connection_string::GetKxConnectionStringInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_kx_connection_string::GetKxConnectionStringInput {
-                user_arn: self.user_arn,
-                environment_id: self.environment_id,
-                cluster_name: self.cluster_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_kx_connection_string::GetKxConnectionStringInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_kx_connection_string::GetKxConnectionStringInput {
+            user_arn: self.user_arn,
+            environment_id: self.environment_id,
+            cluster_name: self.cluster_name,
+        })
     }
 }

@@ -27,34 +27,27 @@ impl ::std::fmt::Display for NumberOfNodesPerClusterLimitExceededFault {
     }
 }
 impl ::std::error::Error for NumberOfNodesPerClusterLimitExceededFault {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::NumberOfNodesPerClusterLimitExceededFault
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::NumberOfNodesPerClusterLimitExceededFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for NumberOfNodesPerClusterLimitExceededFault
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for NumberOfNodesPerClusterLimitExceededFault {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl NumberOfNodesPerClusterLimitExceededFault {
     /// Creates a new builder-style object to manufacture [`NumberOfNodesPerClusterLimitExceededFault`](crate::types::error::NumberOfNodesPerClusterLimitExceededFault).
-    pub fn builder(
-    ) -> crate::types::error::builders::NumberOfNodesPerClusterLimitExceededFaultBuilder {
+    pub fn builder() -> crate::types::error::builders::NumberOfNodesPerClusterLimitExceededFaultBuilder {
         crate::types::error::builders::NumberOfNodesPerClusterLimitExceededFaultBuilder::default()
     }
 }
 
 /// A builder for [`NumberOfNodesPerClusterLimitExceededFault`](crate::types::error::NumberOfNodesPerClusterLimitExceededFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NumberOfNodesPerClusterLimitExceededFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl NumberOfNodesPerClusterLimitExceededFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

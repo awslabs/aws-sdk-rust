@@ -29,18 +29,14 @@ impl ListCoverageStatisticsInput {
 }
 impl ListCoverageStatisticsInput {
     /// Creates a new builder-style object to manufacture [`ListCoverageStatisticsInput`](crate::operation::list_coverage_statistics::ListCoverageStatisticsInput).
-    pub fn builder(
-    ) -> crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsInputBuilder {
         crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCoverageStatisticsInput`](crate::operation::list_coverage_statistics::ListCoverageStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCoverageStatisticsInputBuilder {
     pub(crate) filter_criteria: ::std::option::Option<crate::types::CoverageFilterCriteria>,
     pub(crate) group_by: ::std::option::Option<crate::types::GroupKey>,
@@ -53,17 +49,12 @@ impl ListCoverageStatisticsInputBuilder {
         self
     }
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::CoverageFilterCriteria>) -> Self {
         self.filter_criteria = input;
         self
     }
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
-    pub fn get_filter_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
         &self.filter_criteria
     }
     /// <p>The value to group the results by.</p>
@@ -97,16 +88,12 @@ impl ListCoverageStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`ListCoverageStatisticsInput`](crate::operation::list_coverage_statistics::ListCoverageStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_coverage_statistics::ListCoverageStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_coverage_statistics::ListCoverageStatisticsInput {
-                filter_criteria: self.filter_criteria,
-                group_by: self.group_by,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_coverage_statistics::ListCoverageStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_coverage_statistics::ListCoverageStatisticsInput {
+            filter_criteria: self.filter_criteria,
+            group_by: self.group_by,
+            next_token: self.next_token,
+        })
     }
 }

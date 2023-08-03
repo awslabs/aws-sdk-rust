@@ -16,9 +16,7 @@ pub fn ser_update_index_input(
         object.key("Description").string(var_4.as_str());
     }
     if let Some(var_5) = &input.document_metadata_configuration_updates {
-        let mut array_6 = object
-            .key("DocumentMetadataConfigurationUpdates")
-            .start_array();
+        let mut array_6 = object.key("DocumentMetadataConfigurationUpdates").start_array();
         for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
@@ -52,9 +50,7 @@ pub fn ser_update_index_input(
     }
     if let Some(var_16) = &input.user_group_resolution_configuration {
         #[allow(unused_mut)]
-        let mut object_17 = object
-            .key("UserGroupResolutionConfiguration")
-            .start_object();
+        let mut object_17 = object.key("UserGroupResolutionConfiguration").start_object();
         crate::protocol_serde::shape_user_group_resolution_configuration::ser_user_group_resolution_configuration(&mut object_17, var_16)?;
         object_17.finish();
     }

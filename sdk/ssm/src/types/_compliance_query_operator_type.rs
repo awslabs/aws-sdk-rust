@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ComplianceQueryOperatorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ComplianceQueryOperatorType {
             "GREATER_THAN" => ComplianceQueryOperatorType::GreaterThan,
             "LESS_THAN" => ComplianceQueryOperatorType::LessThan,
             "NOT_EQUAL" => ComplianceQueryOperatorType::NotEqual,
-            other => ComplianceQueryOperatorType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ComplianceQueryOperatorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ComplianceQueryOperatorType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BEGIN_WITH",
-            "EQUAL",
-            "GREATER_THAN",
-            "LESS_THAN",
-            "NOT_EQUAL",
-        ]
+        &["BEGIN_WITH", "EQUAL", "GREATER_THAN", "LESS_THAN", "NOT_EQUAL"]
     }
 }
 impl ::std::convert::AsRef<str> for ComplianceQueryOperatorType {

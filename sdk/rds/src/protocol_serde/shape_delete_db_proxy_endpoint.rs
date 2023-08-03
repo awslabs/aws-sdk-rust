@@ -9,59 +9,56 @@ pub fn de_delete_db_proxy_endpoint_http_error(
     crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    let error_code =
-        match generic.code() {
-            Some(code) => code,
-            None => return Err(
-                crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError::unhandled(
-                    generic,
-                ),
-            ),
-        };
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError::unhandled(generic)),
+    };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DBProxyEndpointNotFoundFault" => crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError::DbProxyEndpointNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbProxyEndpointNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_proxy_endpoint_not_found_fault::de_db_proxy_endpoint_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbProxyEndpointNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_proxy_endpoint_not_found_fault::de_db_proxy_endpoint_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "InvalidDBProxyEndpointStateFault" => crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError::InvalidDbProxyEndpointStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidDBProxyEndpointStateFault" => {
+            crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError::InvalidDbProxyEndpointStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidDbProxyEndpointStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_db_proxy_endpoint_state_fault::de_invalid_db_proxy_endpoint_state_fault_xml_err(_response_body, output).map_err(crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_proxy_endpoint_state_fault::de_invalid_db_proxy_endpoint_state_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError::generic(generic),
     })
 }
 
@@ -77,17 +74,9 @@ pub fn de_delete_db_proxy_endpoint_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointOutputBuilder::default();
-        output =
-            crate::protocol_serde::shape_delete_db_proxy_endpoint::de_delete_db_proxy_endpoint(
-                _response_body,
-                output,
-            )
-            .map_err(
-                crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError::unhandled,
-            )?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_delete_db_proxy_endpoint::de_delete_db_proxy_endpoint(_response_body, output)
+            .map_err(crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -96,10 +85,7 @@ pub fn de_delete_db_proxy_endpoint_http_response_with_props(
 pub fn de_delete_db_proxy_endpoint(
     inp: &[u8],
     mut builder: crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointOutputBuilder,
-) -> Result<
-    crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

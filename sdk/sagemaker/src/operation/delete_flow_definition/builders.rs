@@ -37,9 +37,7 @@ impl DeleteFlowDefinitionFluentBuilder {
         }
     }
     /// Access the DeleteFlowDefinition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_flow_definition::builders::DeleteFlowDefinitionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_flow_definition::builders::DeleteFlowDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteFlowDefinitionFluentBuilder {
             crate::operation::delete_flow_definition::DeleteFlowDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_flow_definition::DeleteFlowDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_flow_definition::DeleteFlowDefinitionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteFlowDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteFlowDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_flow_definition::DeleteFlowDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_flow_definition::DeleteFlowDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_flow_definition::DeleteFlowDefinitionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteFlowDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_flow_definition::DeleteFlowDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_flow_definition::DeleteFlowDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_flow_definition::DeleteFlowDefinitionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteFlowDefinitionFluentBuilder {
             crate::operation::delete_flow_definition::DeleteFlowDefinition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_flow_definition::DeleteFlowDefinitionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_flow_definition::DeleteFlowDefinitionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the flow definition you are deleting.</p>
-    pub fn flow_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_definition_name(input.into());
         self
     }
     /// <p>The name of the flow definition you are deleting.</p>
-    pub fn set_flow_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_definition_name(input);
         self
     }

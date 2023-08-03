@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`external_models(Option<Vec<ExternalModel>>)`](crate::operation::get_external_models::GetExternalModelsOutput::external_models): <p>Gets the Amazon SageMaker models.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_external_models::GetExternalModelsOutput::next_token): <p>The next page token to be used in subsequent requests.</p>
     /// - On failure, responds with [`SdkError<GetExternalModelsError>`](crate::operation::get_external_models::GetExternalModelsError)
-    pub fn get_external_models(
-        &self,
-    ) -> crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder {
-        crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_external_models(&self) -> crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder {
+        crate::operation::get_external_models::builders::GetExternalModelsFluentBuilder::new(self.handle.clone())
     }
 }

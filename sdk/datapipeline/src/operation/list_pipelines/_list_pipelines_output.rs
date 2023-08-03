@@ -43,12 +43,9 @@ impl ListPipelinesOutput {
 
 /// A builder for [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelinesOutputBuilder {
-    pub(crate) pipeline_id_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PipelineIdName>>,
+    pub(crate) pipeline_id_list: ::std::option::Option<::std::vec::Vec<crate::types::PipelineIdName>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) has_more_results: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -66,17 +63,12 @@ impl ListPipelinesOutputBuilder {
         self
     }
     /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
-    pub fn set_pipeline_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineIdName>>,
-    ) -> Self {
+    pub fn set_pipeline_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineIdName>>) -> Self {
         self.pipeline_id_list = input;
         self
     }
     /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
-    pub fn get_pipeline_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineIdName>> {
+    pub fn get_pipeline_id_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineIdName>> {
         &self.pipeline_id_list
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>

@@ -16,10 +16,7 @@ impl super::Client {
     /// - On success, responds with [`SubmitTaskStateChangeOutput`](crate::operation::submit_task_state_change::SubmitTaskStateChangeOutput) with field(s):
     ///   - [`acknowledgment(Option<String>)`](crate::operation::submit_task_state_change::SubmitTaskStateChangeOutput::acknowledgment): <p>Acknowledgement of the state change.</p>
     /// - On failure, responds with [`SdkError<SubmitTaskStateChangeError>`](crate::operation::submit_task_state_change::SubmitTaskStateChangeError)
-    pub fn submit_task_state_change(
-        &self,
-    ) -> crate::operation::submit_task_state_change::builders::SubmitTaskStateChangeFluentBuilder
-    {
+    pub fn submit_task_state_change(&self) -> crate::operation::submit_task_state_change::builders::SubmitTaskStateChangeFluentBuilder {
         crate::operation::submit_task_state_change::builders::SubmitTaskStateChangeFluentBuilder::new(self.handle.clone())
     }
 }

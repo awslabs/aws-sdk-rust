@@ -34,16 +34,14 @@ impl ResetClusterParameterGroupInput {
 }
 impl ResetClusterParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`ResetClusterParameterGroupInput`](crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupInput).
-    pub fn builder() -> crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupInputBuilder{
+    pub fn builder() -> crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupInputBuilder {
         crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetClusterParameterGroupInput`](crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetClusterParameterGroupInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) reset_all_parameters: ::std::option::Option<bool>,
@@ -51,18 +49,12 @@ pub struct ResetClusterParameterGroupInputBuilder {
 }
 impl ResetClusterParameterGroupInputBuilder {
     /// <p>The name of the cluster parameter group to be reset.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster parameter group to be reset.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_name = input;
         self
     }
@@ -101,18 +93,13 @@ impl ResetClusterParameterGroupInputBuilder {
     }
     /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p>
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p>
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ResetClusterParameterGroupInput`](crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupInput).
@@ -122,12 +109,10 @@ impl ResetClusterParameterGroupInputBuilder {
         crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupInput {
-                parameter_group_name: self.parameter_group_name,
-                reset_all_parameters: self.reset_all_parameters.unwrap_or_default(),
-                parameters: self.parameters,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupInput {
+            parameter_group_name: self.parameter_group_name,
+            reset_all_parameters: self.reset_all_parameters.unwrap_or_default(),
+            parameters: self.parameters,
+        })
     }
 }

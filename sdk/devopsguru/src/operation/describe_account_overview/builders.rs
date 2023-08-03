@@ -26,8 +26,7 @@ impl DescribeAccountOverviewInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountOverviewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_account_overview::builders::DescribeAccountOverviewInputBuilder,
+    inner: crate::operation::describe_account_overview::builders::DescribeAccountOverviewInputBuilder,
 }
 impl DescribeAccountOverviewFluentBuilder {
     /// Creates a new `DescribeAccountOverview`.
@@ -38,10 +37,7 @@ impl DescribeAccountOverviewFluentBuilder {
         }
     }
     /// Access the DescribeAccountOverview as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_account_overview::builders::DescribeAccountOverviewInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_account_overview::builders::DescribeAccountOverviewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeAccountOverviewFluentBuilder {
             crate::operation::describe_account_overview::DescribeAccountOverview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_overview::DescribeAccountOverviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_overview::DescribeAccountOverviewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeAccountOverviewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeAccountOverviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_overview::DescribeAccountOverviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_overview::DescribeAccountOverviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_overview::DescribeAccountOverviewError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeAccountOverviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_overview::DescribeAccountOverviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_overview::DescribeAccountOverviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_overview::DescribeAccountOverviewError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DescribeAccountOverviewFluentBuilder {
             crate::operation::describe_account_overview::DescribeAccountOverview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_account_overview::DescribeAccountOverviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_account_overview::DescribeAccountOverviewError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +115,7 @@ impl DescribeAccountOverviewFluentBuilder {
         self
     }
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
-    pub fn set_from_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_from_time(input);
         self
     }
@@ -147,10 +129,7 @@ impl DescribeAccountOverviewFluentBuilder {
         self
     }
     /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
-    pub fn set_to_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_to_time(input);
         self
     }

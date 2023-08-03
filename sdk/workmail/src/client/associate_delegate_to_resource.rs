@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`entity_id(impl ::std::convert::Into<String>)`](crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceFluentBuilder::entity_id) / [`set_entity_id(Option<String>)`](crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceFluentBuilder::set_entity_id): <p>The member (user or group) to associate to the resource.</p>
     /// - On success, responds with [`AssociateDelegateToResourceOutput`](crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceOutput)
     /// - On failure, responds with [`SdkError<AssociateDelegateToResourceError>`](crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceError)
-    pub fn associate_delegate_to_resource(&self) -> crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceFluentBuilder{
+    pub fn associate_delegate_to_resource(
+        &self,
+    ) -> crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceFluentBuilder {
         crate::operation::associate_delegate_to_resource::builders::AssociateDelegateToResourceFluentBuilder::new(self.handle.clone())
     }
 }

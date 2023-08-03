@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`token_name_list(Option<Vec<String>>)`](crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput::token_name_list): <p>A list of names of connections to GitHub accounts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next set of names in the list. </p>
     /// - On failure, responds with [`SdkError<ListGitHubAccountTokenNamesError>`](crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesError)
-    pub fn list_git_hub_account_token_names(&self) -> crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesFluentBuilder{
+    pub fn list_git_hub_account_token_names(
+        &self,
+    ) -> crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesFluentBuilder {
         crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesFluentBuilder::new(self.handle.clone())
     }
 }

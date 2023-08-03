@@ -15,16 +15,14 @@ impl DisassociateNetworkSettingsInput {
 }
 impl DisassociateNetworkSettingsInput {
     /// Creates a new builder-style object to manufacture [`DisassociateNetworkSettingsInput`](crate::operation::disassociate_network_settings::DisassociateNetworkSettingsInput).
-    pub fn builder() -> crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsInputBuilder {
         crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateNetworkSettingsInput`](crate::operation::disassociate_network_settings::DisassociateNetworkSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateNetworkSettingsInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DisassociateNetworkSettingsInputBuilder {
         crate::operation::disassociate_network_settings::DisassociateNetworkSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_network_settings::DisassociateNetworkSettingsInput {
-                portal_arn: self.portal_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_network_settings::DisassociateNetworkSettingsInput { portal_arn: self.portal_arn })
     }
 }

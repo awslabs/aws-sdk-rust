@@ -23,26 +23,18 @@ impl PrivateDnsDetails {
 
 /// A builder for [`PrivateDnsDetails`](crate::types::PrivateDnsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrivateDnsDetailsBuilder {
     pub(crate) private_dns_name: ::std::option::Option<::std::string::String>,
 }
 impl PrivateDnsDetailsBuilder {
     /// <p>The private DNS name assigned to the VPC endpoint service.</p>
-    pub fn private_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private DNS name assigned to the VPC endpoint service.</p>
-    pub fn set_private_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_dns_name = input;
         self
     }

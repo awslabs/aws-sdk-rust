@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`distribution(Option<Distribution>)`](crate::operation::get_distribution::GetDistributionOutput::distribution): <p>The distribution's information.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_distribution::GetDistributionOutput::e_tag): <p>The current version of the distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On failure, responds with [`SdkError<GetDistributionError>`](crate::operation::get_distribution::GetDistributionError)
-    pub fn get_distribution(
-        &self,
-    ) -> crate::operation::get_distribution::builders::GetDistributionFluentBuilder {
-        crate::operation::get_distribution::builders::GetDistributionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_distribution(&self) -> crate::operation::get_distribution::builders::GetDistributionFluentBuilder {
+        crate::operation::get_distribution::builders::GetDistributionFluentBuilder::new(self.handle.clone())
     }
 }

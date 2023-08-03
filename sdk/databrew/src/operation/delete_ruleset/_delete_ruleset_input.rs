@@ -22,9 +22,7 @@ impl DeleteRulesetInput {
 
 /// A builder for [`DeleteRulesetInput`](crate::operation::delete_ruleset::DeleteRulesetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRulesetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteRulesetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRulesetInput`](crate::operation::delete_ruleset::DeleteRulesetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_ruleset::DeleteRulesetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_ruleset::DeleteRulesetInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_ruleset::DeleteRulesetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_ruleset::DeleteRulesetInput { name: self.name })
     }
 }

@@ -30,9 +30,7 @@ impl AddResourcePermissionsInput {
         self.principals.as_deref()
     }
     /// <p>The notification options.</p>
-    pub fn notification_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationOptions> {
+    pub fn notification_options(&self) -> ::std::option::Option<&crate::types::NotificationOptions> {
         self.notification_options.as_ref()
     }
 }
@@ -48,9 +46,7 @@ impl ::std::fmt::Debug for AddResourcePermissionsInput {
 }
 impl AddResourcePermissionsInput {
     /// Creates a new builder-style object to manufacture [`AddResourcePermissionsInput`](crate::operation::add_resource_permissions::AddResourcePermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::add_resource_permissions::builders::AddResourcePermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::add_resource_permissions::builders::AddResourcePermissionsInputBuilder {
         crate::operation::add_resource_permissions::builders::AddResourcePermissionsInputBuilder::default()
     }
 }
@@ -66,18 +62,12 @@ pub struct AddResourcePermissionsInputBuilder {
 }
 impl AddResourcePermissionsInputBuilder {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -111,17 +101,12 @@ impl AddResourcePermissionsInputBuilder {
         self
     }
     /// <p>The users, groups, or organization being granted permission.</p>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>>) -> Self {
         self.principals = input;
         self
     }
     /// <p>The users, groups, or organization being granted permission.</p>
-    pub fn get_principals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>> {
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>> {
         &self.principals
     }
     /// <p>The notification options.</p>
@@ -130,34 +115,25 @@ impl AddResourcePermissionsInputBuilder {
         self
     }
     /// <p>The notification options.</p>
-    pub fn set_notification_options(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationOptions>,
-    ) -> Self {
+    pub fn set_notification_options(mut self, input: ::std::option::Option<crate::types::NotificationOptions>) -> Self {
         self.notification_options = input;
         self
     }
     /// <p>The notification options.</p>
-    pub fn get_notification_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationOptions> {
+    pub fn get_notification_options(&self) -> &::std::option::Option<crate::types::NotificationOptions> {
         &self.notification_options
     }
     /// Consumes the builder and constructs a [`AddResourcePermissionsInput`](crate::operation::add_resource_permissions::AddResourcePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::add_resource_permissions::AddResourcePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::add_resource_permissions::AddResourcePermissionsInput {
-                authentication_token: self.authentication_token,
-                resource_id: self.resource_id,
-                principals: self.principals,
-                notification_options: self.notification_options,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::add_resource_permissions::AddResourcePermissionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::add_resource_permissions::AddResourcePermissionsInput {
+            authentication_token: self.authentication_token,
+            resource_id: self.resource_id,
+            principals: self.principals,
+            notification_options: self.notification_options,
+        })
     }
 }
 impl ::std::fmt::Debug for AddResourcePermissionsInputBuilder {

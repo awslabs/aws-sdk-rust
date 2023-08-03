@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdatePricingPlanOutput {
 }
 impl UpdatePricingPlanOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePricingPlanOutput`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput).
-    pub fn builder(
-    ) -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanOutputBuilder {
+    pub fn builder() -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanOutputBuilder {
         crate::operation::update_pricing_plan::builders::UpdatePricingPlanOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePricingPlanOutput`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePricingPlanOutputBuilder {
     pub(crate) current_pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     pub(crate) pending_pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
@@ -51,10 +48,7 @@ impl UpdatePricingPlanOutputBuilder {
         self
     }
     /// <p>Update the current pricing plan.</p>
-    pub fn set_current_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    pub fn set_current_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.current_pricing_plan = input;
         self
     }
@@ -68,10 +62,7 @@ impl UpdatePricingPlanOutputBuilder {
         self
     }
     /// <p>Update the pending pricing plan.</p>
-    pub fn set_pending_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    pub fn set_pending_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.pending_pricing_plan = input;
         self
     }

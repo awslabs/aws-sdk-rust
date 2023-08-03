@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`pii_entities_detection_job_properties_list(Option<Vec<PiiEntitiesDetectionJobProperties>>)`](crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsOutput::pii_entities_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListPiiEntitiesDetectionJobsError>`](crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsError)
-    pub fn list_pii_entities_detection_jobs(&self) -> crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsFluentBuilder{
+    pub fn list_pii_entities_detection_jobs(
+        &self,
+    ) -> crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsFluentBuilder {
         crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsFluentBuilder::new(self.handle.clone())
     }
 }

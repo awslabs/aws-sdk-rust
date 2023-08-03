@@ -43,9 +43,7 @@ impl CachePolicy {
 
 /// A builder for [`CachePolicy`](crate::types::CachePolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CachePolicyBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -72,10 +70,7 @@ impl CachePolicyBuilder {
         self
     }
     /// <p>The date and time when the cache policy was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -89,17 +84,12 @@ impl CachePolicyBuilder {
         self
     }
     /// <p>The cache policy configuration.</p>
-    pub fn set_cache_policy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CachePolicyConfig>,
-    ) -> Self {
+    pub fn set_cache_policy_config(mut self, input: ::std::option::Option<crate::types::CachePolicyConfig>) -> Self {
         self.cache_policy_config = input;
         self
     }
     /// <p>The cache policy configuration.</p>
-    pub fn get_cache_policy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CachePolicyConfig> {
+    pub fn get_cache_policy_config(&self) -> &::std::option::Option<crate::types::CachePolicyConfig> {
         &self.cache_policy_config
     }
     /// Consumes the builder and constructs a [`CachePolicy`](crate::types::CachePolicy).

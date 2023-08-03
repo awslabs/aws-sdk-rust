@@ -13,15 +13,11 @@ pub struct ForecastScenario {
 }
 impl ForecastScenario {
     /// <p>The what-if analysis forecast setup with the target date.</p>
-    pub fn what_if_point_scenario(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WhatIfPointScenario> {
+    pub fn what_if_point_scenario(&self) -> ::std::option::Option<&crate::types::WhatIfPointScenario> {
         self.what_if_point_scenario.as_ref()
     }
     /// <p>The what-if analysis forecast setup with the date range.</p>
-    pub fn what_if_range_scenario(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WhatIfRangeScenario> {
+    pub fn what_if_range_scenario(&self) -> ::std::option::Option<&crate::types::WhatIfRangeScenario> {
         self.what_if_range_scenario.as_ref()
     }
 }
@@ -34,9 +30,7 @@ impl ForecastScenario {
 
 /// A builder for [`ForecastScenario`](crate::types::ForecastScenario).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ForecastScenarioBuilder {
     pub(crate) what_if_point_scenario: ::std::option::Option<crate::types::WhatIfPointScenario>,
     pub(crate) what_if_range_scenario: ::std::option::Option<crate::types::WhatIfRangeScenario>,
@@ -48,17 +42,12 @@ impl ForecastScenarioBuilder {
         self
     }
     /// <p>The what-if analysis forecast setup with the target date.</p>
-    pub fn set_what_if_point_scenario(
-        mut self,
-        input: ::std::option::Option<crate::types::WhatIfPointScenario>,
-    ) -> Self {
+    pub fn set_what_if_point_scenario(mut self, input: ::std::option::Option<crate::types::WhatIfPointScenario>) -> Self {
         self.what_if_point_scenario = input;
         self
     }
     /// <p>The what-if analysis forecast setup with the target date.</p>
-    pub fn get_what_if_point_scenario(
-        &self,
-    ) -> &::std::option::Option<crate::types::WhatIfPointScenario> {
+    pub fn get_what_if_point_scenario(&self) -> &::std::option::Option<crate::types::WhatIfPointScenario> {
         &self.what_if_point_scenario
     }
     /// <p>The what-if analysis forecast setup with the date range.</p>
@@ -67,17 +56,12 @@ impl ForecastScenarioBuilder {
         self
     }
     /// <p>The what-if analysis forecast setup with the date range.</p>
-    pub fn set_what_if_range_scenario(
-        mut self,
-        input: ::std::option::Option<crate::types::WhatIfRangeScenario>,
-    ) -> Self {
+    pub fn set_what_if_range_scenario(mut self, input: ::std::option::Option<crate::types::WhatIfRangeScenario>) -> Self {
         self.what_if_range_scenario = input;
         self
     }
     /// <p>The what-if analysis forecast setup with the date range.</p>
-    pub fn get_what_if_range_scenario(
-        &self,
-    ) -> &::std::option::Option<crate::types::WhatIfRangeScenario> {
+    pub fn get_what_if_range_scenario(&self) -> &::std::option::Option<crate::types::WhatIfRangeScenario> {
         &self.what_if_range_scenario
     }
     /// Consumes the builder and constructs a [`ForecastScenario`](crate::types::ForecastScenario).

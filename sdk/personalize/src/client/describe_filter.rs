@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeFilterOutput`](crate::operation::describe_filter::DescribeFilterOutput) with field(s):
     ///   - [`filter(Option<Filter>)`](crate::operation::describe_filter::DescribeFilterOutput::filter): <p>The filter's details.</p>
     /// - On failure, responds with [`SdkError<DescribeFilterError>`](crate::operation::describe_filter::DescribeFilterError)
-    pub fn describe_filter(
-        &self,
-    ) -> crate::operation::describe_filter::builders::DescribeFilterFluentBuilder {
-        crate::operation::describe_filter::builders::DescribeFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_filter(&self) -> crate::operation::describe_filter::builders::DescribeFilterFluentBuilder {
+        crate::operation::describe_filter::builders::DescribeFilterFluentBuilder::new(self.handle.clone())
     }
 }

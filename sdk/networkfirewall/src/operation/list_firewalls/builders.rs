@@ -10,10 +10,7 @@ impl ListFirewallsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_firewalls::ListFirewallsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_firewalls::ListFirewallsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_firewalls::ListFirewallsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_firewalls();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListFirewallsFluentBuilder {
         }
     }
     /// Access the ListFirewalls as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_firewalls::builders::ListFirewallsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_firewalls::builders::ListFirewallsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl ListFirewallsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl ListFirewallsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_firewalls::paginator::ListFirewallsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_firewalls::paginator::ListFirewallsPaginator {
-        crate::operation::list_firewalls::paginator::ListFirewallsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_firewalls::paginator::ListFirewallsPaginator {
+        crate::operation::list_firewalls::paginator::ListFirewallsPaginator::new(self.handle, self.inner)
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,10 +137,7 @@ impl ListFirewallsFluentBuilder {
         self
     }
     /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls for. Leave this blank to retrieve all firewalls that you have defined.</p>
-    pub fn set_vpc_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_ids(input);
         self
     }

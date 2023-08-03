@@ -10,10 +10,7 @@ impl StartExportTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_export_task::StartExportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_export_task::StartExportTaskError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_export_task::StartExportTaskError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_export_task();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl StartExportTaskFluentBuilder {
         }
     }
     /// Access the StartExportTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_export_task::builders::StartExportTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_export_task::builders::StartExportTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl StartExportTaskFluentBuilder {
             crate::operation::start_export_task::StartExportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_export_task::StartExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_export_task::StartExportTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl StartExportTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl StartExportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_export_task::StartExportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_export_task::StartExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_export_task::StartExportTaskError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl StartExportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_export_task::StartExportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_export_task::StartExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_export_task::StartExportTaskError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl StartExportTaskFluentBuilder {
             crate::operation::start_export_task::StartExportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_export_task::StartExportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_export_task::StartExportTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -137,17 +121,12 @@ impl StartExportTaskFluentBuilder {
         self
     }
     /// <p>The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> </p>
-    pub fn set_export_data_format(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportDataFormat>>,
-    ) -> Self {
+    pub fn set_export_data_format(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportDataFormat>>) -> Self {
         self.inner = self.inner.set_export_data_format(input);
         self
     }
     /// <p>The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> </p>
-    pub fn get_export_data_format(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportDataFormat>> {
+    pub fn get_export_data_format(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportDataFormat>> {
         self.inner.get_export_data_format()
     }
     /// Appends an item to `filters`.
@@ -160,17 +139,12 @@ impl StartExportTaskFluentBuilder {
         self
     }
     /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Amazon Web Services Application Discovery Service Agentless Collector collectors data and summary data from Application Discovery Agent agents. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Amazon Web Services Application Discovery Service Agentless Collector collectors data and summary data from Application Discovery Agent agents. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportFilter>> {
         self.inner.get_filters()
     }
     /// <p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>
@@ -179,10 +153,7 @@ impl StartExportTaskFluentBuilder {
         self
     }
     /// <p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -196,10 +167,7 @@ impl StartExportTaskFluentBuilder {
         self
     }
     /// <p>The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -213,10 +181,7 @@ impl StartExportTaskFluentBuilder {
         self
     }
     /// <p> Indicates the type of data that needs to be exported. Only one <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html">ExportPreferences</a> can be enabled at any time. </p>
-    pub fn set_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportPreferences>,
-    ) -> Self {
+    pub fn set_preferences(mut self, input: ::std::option::Option<crate::types::ExportPreferences>) -> Self {
         self.inner = self.inner.set_preferences(input);
         self
     }

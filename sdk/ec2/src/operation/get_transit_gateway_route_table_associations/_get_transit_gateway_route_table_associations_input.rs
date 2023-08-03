@@ -53,16 +53,15 @@ impl GetTransitGatewayRouteTableAssociationsInput {
 }
 impl GetTransitGatewayRouteTableAssociationsInput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayRouteTableAssociationsInput`](crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsInput).
-    pub fn builder() -> crate::operation::get_transit_gateway_route_table_associations::builders::GetTransitGatewayRouteTableAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::get_transit_gateway_route_table_associations::builders::GetTransitGatewayRouteTableAssociationsInputBuilder
+    {
         crate::operation::get_transit_gateway_route_table_associations::builders::GetTransitGatewayRouteTableAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTransitGatewayRouteTableAssociationsInput`](crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTransitGatewayRouteTableAssociationsInputBuilder {
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -72,25 +71,17 @@ pub struct GetTransitGatewayRouteTableAssociationsInputBuilder {
 }
 impl GetTransitGatewayRouteTableAssociationsInputBuilder {
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn set_transit_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = input;
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn get_transit_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_route_table_id
     }
     /// Appends an item to `filters`.
@@ -115,10 +106,7 @@ impl GetTransitGatewayRouteTableAssociationsInputBuilder {
     /// <li> <p> <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.</p> </li>
     /// <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -174,20 +162,20 @@ impl GetTransitGatewayRouteTableAssociationsInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayRouteTableAssociationsInput`](crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsInput {
-                transit_gateway_route_table_id: self.transit_gateway_route_table_id
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_route_table_id: self.transit_gateway_route_table_id,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

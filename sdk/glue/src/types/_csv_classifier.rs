@@ -100,9 +100,7 @@ impl CsvClassifier {
 
 /// A builder for [`CsvClassifier`](crate::types::CsvClassifier).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CsvClassifierBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -138,10 +136,7 @@ impl CsvClassifierBuilder {
         self
     }
     /// <p>The time that this classifier was registered.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -155,10 +150,7 @@ impl CsvClassifierBuilder {
         self
     }
     /// <p>The time that this classifier was last updated.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }
@@ -214,10 +206,7 @@ impl CsvClassifierBuilder {
         self
     }
     /// <p>Indicates whether the CSV file contains a header.</p>
-    pub fn set_contains_header(
-        mut self,
-        input: ::std::option::Option<crate::types::CsvHeaderOption>,
-    ) -> Self {
+    pub fn set_contains_header(mut self, input: ::std::option::Option<crate::types::CsvHeaderOption>) -> Self {
         self.contains_header = input;
         self
     }
@@ -237,10 +226,7 @@ impl CsvClassifierBuilder {
         self
     }
     /// <p>A list of strings representing column names.</p>
-    pub fn set_header(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_header(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.header = input;
         self
     }
@@ -295,27 +281,19 @@ impl CsvClassifierBuilder {
     /// To override the contents of this collection use [`set_custom_datatypes`](Self::set_custom_datatypes).
     ///
     /// <p>A list of custom datatypes including "BINARY", "BOOLEAN", "DATE", "DECIMAL", "DOUBLE", "FLOAT", "INT", "LONG", "SHORT", "STRING", "TIMESTAMP".</p>
-    pub fn custom_datatypes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_datatypes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.custom_datatypes.unwrap_or_default();
         v.push(input.into());
         self.custom_datatypes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of custom datatypes including "BINARY", "BOOLEAN", "DATE", "DECIMAL", "DOUBLE", "FLOAT", "INT", "LONG", "SHORT", "STRING", "TIMESTAMP".</p>
-    pub fn set_custom_datatypes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_custom_datatypes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.custom_datatypes = input;
         self
     }
     /// <p>A list of custom datatypes including "BINARY", "BOOLEAN", "DATE", "DECIMAL", "DOUBLE", "FLOAT", "INT", "LONG", "SHORT", "STRING", "TIMESTAMP".</p>
-    pub fn get_custom_datatypes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_custom_datatypes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.custom_datatypes
     }
     /// Consumes the builder and constructs a [`CsvClassifier`](crate::types::CsvClassifier).

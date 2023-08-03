@@ -36,9 +36,7 @@ impl DescribeCasesOutput {
 
 /// A builder for [`DescribeCasesOutput`](crate::operation::describe_cases::DescribeCasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCasesOutputBuilder {
     pub(crate) cases: ::std::option::Option<::std::vec::Vec<crate::types::CaseDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl DescribeCasesOutputBuilder {
         self
     }
     /// <p>The details for the cases that match the request.</p>
-    pub fn set_cases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CaseDetails>>,
-    ) -> Self {
+    pub fn set_cases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaseDetails>>) -> Self {
         self.cases = input;
         self
     }

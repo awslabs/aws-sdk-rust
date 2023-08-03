@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLocationFsxOntapOutput`](crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapOutput::location_arn): <p>Specifies the ARN of the FSx for ONTAP file system location that you create.</p>
     /// - On failure, responds with [`SdkError<CreateLocationFsxOntapError>`](crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapError)
-    pub fn create_location_fsx_ontap(
-        &self,
-    ) -> crate::operation::create_location_fsx_ontap::builders::CreateLocationFsxOntapFluentBuilder
-    {
+    pub fn create_location_fsx_ontap(&self) -> crate::operation::create_location_fsx_ontap::builders::CreateLocationFsxOntapFluentBuilder {
         crate::operation::create_location_fsx_ontap::builders::CreateLocationFsxOntapFluentBuilder::new(self.handle.clone())
     }
 }

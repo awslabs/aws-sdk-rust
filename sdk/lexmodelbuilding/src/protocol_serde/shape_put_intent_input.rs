@@ -33,19 +33,13 @@ pub fn ser_put_intent_input(
     if let Some(var_10) = &input.follow_up_prompt {
         #[allow(unused_mut)]
         let mut object_11 = object.key("followUpPrompt").start_object();
-        crate::protocol_serde::shape_follow_up_prompt::ser_follow_up_prompt(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_follow_up_prompt::ser_follow_up_prompt(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.fulfillment_activity {
         #[allow(unused_mut)]
         let mut object_13 = object.key("fulfillmentActivity").start_object();
-        crate::protocol_serde::shape_fulfillment_activity::ser_fulfillment_activity(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_fulfillment_activity::ser_fulfillment_activity(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.input_contexts {
@@ -54,10 +48,7 @@ pub fn ser_put_intent_input(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_input_context::ser_input_context(
-                    &mut object_17,
-                    item_16,
-                )?;
+                crate::protocol_serde::shape_input_context::ser_input_context(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }
@@ -66,10 +57,7 @@ pub fn ser_put_intent_input(
     if let Some(var_18) = &input.kendra_configuration {
         #[allow(unused_mut)]
         let mut object_19 = object.key("kendraConfiguration").start_object();
-        crate::protocol_serde::shape_kendra_configuration::ser_kendra_configuration(
-            &mut object_19,
-            var_18,
-        )?;
+        crate::protocol_serde::shape_kendra_configuration::ser_kendra_configuration(&mut object_19, var_18)?;
         object_19.finish();
     }
     if let Some(var_20) = &input.output_contexts {
@@ -78,10 +66,7 @@ pub fn ser_put_intent_input(
             {
                 #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_output_context::ser_output_context(
-                    &mut object_23,
-                    item_22,
-                )?;
+                crate::protocol_serde::shape_output_context::ser_output_context(&mut object_23, item_22)?;
                 object_23.finish();
             }
         }

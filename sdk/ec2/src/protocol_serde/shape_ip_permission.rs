@@ -65,9 +65,7 @@ pub fn ser_ip_permission(
         for item_24 in var_23 {
             #[allow(unused_mut)]
             let mut entry_26 = list_25.entry();
-            crate::protocol_serde::shape_user_id_group_pair::ser_user_id_group_pair(
-                entry_26, item_24,
-            )?;
+            crate::protocol_serde::shape_user_id_group_pair::ser_user_id_group_pair(entry_26, item_24)?;
         }
         list_25.finish();
     }

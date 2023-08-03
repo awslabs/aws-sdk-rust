@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeRoutingProfileOutput`](crate::operation::describe_routing_profile::DescribeRoutingProfileOutput) with field(s):
     ///   - [`routing_profile(Option<RoutingProfile>)`](crate::operation::describe_routing_profile::DescribeRoutingProfileOutput::routing_profile): <p>The routing profile.</p>
     /// - On failure, responds with [`SdkError<DescribeRoutingProfileError>`](crate::operation::describe_routing_profile::DescribeRoutingProfileError)
-    pub fn describe_routing_profile(
-        &self,
-    ) -> crate::operation::describe_routing_profile::builders::DescribeRoutingProfileFluentBuilder
-    {
+    pub fn describe_routing_profile(&self) -> crate::operation::describe_routing_profile::builders::DescribeRoutingProfileFluentBuilder {
         crate::operation::describe_routing_profile::builders::DescribeRoutingProfileFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,17 +22,14 @@ impl RemoveFlowSourceInput {
 }
 impl RemoveFlowSourceInput {
     /// Creates a new builder-style object to manufacture [`RemoveFlowSourceInput`](crate::operation::remove_flow_source::RemoveFlowSourceInput).
-    pub fn builder() -> crate::operation::remove_flow_source::builders::RemoveFlowSourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_flow_source::builders::RemoveFlowSourceInputBuilder {
         crate::operation::remove_flow_source::builders::RemoveFlowSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveFlowSourceInput`](crate::operation::remove_flow_source::RemoveFlowSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveFlowSourceInputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl RemoveFlowSourceInputBuilder {
     /// Consumes the builder and constructs a [`RemoveFlowSourceInput`](crate::operation::remove_flow_source::RemoveFlowSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_flow_source::RemoveFlowSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_flow_source::RemoveFlowSourceInput {
-                flow_arn: self.flow_arn,
-                source_arn: self.source_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::remove_flow_source::RemoveFlowSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::remove_flow_source::RemoveFlowSourceInput {
+            flow_arn: self.flow_arn,
+            source_arn: self.source_arn,
+        })
     }
 }

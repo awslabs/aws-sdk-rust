@@ -44,9 +44,7 @@ impl PackageSummary {
 
 /// A builder for [`PackageSummary`](crate::types::PackageSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PackageSummaryBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) default_version_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl PackageSummaryBuilder {
         &self.package_name
     }
     /// <p>The name of the default package version.</p>
-    pub fn default_version_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_version_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the default package version.</p>
-    pub fn set_default_version_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_version_name = input;
         self
     }
@@ -94,10 +86,7 @@ impl PackageSummaryBuilder {
         self
     }
     /// <p>The date that the package was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -111,10 +100,7 @@ impl PackageSummaryBuilder {
         self
     }
     /// <p>The date that the package was last updated.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }

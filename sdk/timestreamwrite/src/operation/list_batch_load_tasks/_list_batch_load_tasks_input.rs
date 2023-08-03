@@ -29,17 +29,14 @@ impl ListBatchLoadTasksInput {
 }
 impl ListBatchLoadTasksInput {
     /// Creates a new builder-style object to manufacture [`ListBatchLoadTasksInput`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksInput).
-    pub fn builder(
-    ) -> crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksInputBuilder {
+    pub fn builder() -> crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksInputBuilder {
         crate::operation::list_batch_load_tasks::builders::ListBatchLoadTasksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBatchLoadTasksInput`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBatchLoadTasksInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -80,10 +77,7 @@ impl ListBatchLoadTasksInputBuilder {
         self
     }
     /// <p>Status of the batch load task.</p>
-    pub fn set_task_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchLoadStatus>,
-    ) -> Self {
+    pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::BatchLoadStatus>) -> Self {
         self.task_status = input;
         self
     }
@@ -94,16 +88,12 @@ impl ListBatchLoadTasksInputBuilder {
     /// Consumes the builder and constructs a [`ListBatchLoadTasksInput`](crate::operation::list_batch_load_tasks::ListBatchLoadTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_batch_load_tasks::ListBatchLoadTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_batch_load_tasks::ListBatchLoadTasksInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                task_status: self.task_status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_batch_load_tasks::ListBatchLoadTasksInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_batch_load_tasks::ListBatchLoadTasksInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            task_status: self.task_status,
+        })
     }
 }

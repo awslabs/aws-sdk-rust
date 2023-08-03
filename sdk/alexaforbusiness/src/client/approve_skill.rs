@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ApproveSkillOutput`](crate::operation::approve_skill::ApproveSkillOutput)
     /// - On failure, responds with [`SdkError<ApproveSkillError>`](crate::operation::approve_skill::ApproveSkillError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn approve_skill(
-        &self,
-    ) -> crate::operation::approve_skill::builders::ApproveSkillFluentBuilder {
-        crate::operation::approve_skill::builders::ApproveSkillFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn approve_skill(&self) -> crate::operation::approve_skill::builders::ApproveSkillFluentBuilder {
+        crate::operation::approve_skill::builders::ApproveSkillFluentBuilder::new(self.handle.clone())
     }
 }

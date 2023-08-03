@@ -29,9 +29,7 @@ impl PushDomainInput {
 
 /// A builder for [`PushDomainInput`](crate::operation::push_domain::PushDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PushDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl PushDomainInputBuilder {
         &self.target
     }
     /// Consumes the builder and constructs a [`PushDomainInput`](crate::operation::push_domain::PushDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::push_domain::PushDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::push_domain::PushDomainInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::push_domain::PushDomainInput {
             domain_name: self.domain_name,
             target: self.target,

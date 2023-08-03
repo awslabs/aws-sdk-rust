@@ -18,7 +18,9 @@ impl super::Client {
     ///   - [`attendees(Option<Vec<Attendee>>)`](crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesOutput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
     ///   - [`errors(Option<Vec<CreateAttendeeError>>)`](crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesOutput::errors): <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
     /// - On failure, responds with [`SdkError<CreateMeetingWithAttendeesError>`](crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesError)
-    pub fn create_meeting_with_attendees(&self) -> crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesFluentBuilder{
+    pub fn create_meeting_with_attendees(
+        &self,
+    ) -> crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesFluentBuilder {
         crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAutomationRuleOutput`](crate::operation::create_automation_rule::CreateAutomationRuleOutput) with field(s):
     ///   - [`rule_arn(Option<String>)`](crate::operation::create_automation_rule::CreateAutomationRuleOutput::rule_arn): <p> The Amazon Resource Name (ARN) of the automation rule that you created. </p>
     /// - On failure, responds with [`SdkError<CreateAutomationRuleError>`](crate::operation::create_automation_rule::CreateAutomationRuleError)
-    pub fn create_automation_rule(
-        &self,
-    ) -> crate::operation::create_automation_rule::builders::CreateAutomationRuleFluentBuilder {
-        crate::operation::create_automation_rule::builders::CreateAutomationRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_automation_rule(&self) -> crate::operation::create_automation_rule::builders::CreateAutomationRuleFluentBuilder {
+        crate::operation::create_automation_rule::builders::CreateAutomationRuleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl GetUsageStatisticsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_usage_statistics::GetUsageStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_statistics::GetUsageStatisticsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_statistics::GetUsageStatisticsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_usage_statistics();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetUsageStatisticsFluentBuilder {
         }
     }
     /// Access the GetUsageStatistics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetUsageStatisticsFluentBuilder {
             crate::operation::get_usage_statistics::GetUsageStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_statistics::GetUsageStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_statistics::GetUsageStatisticsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetUsageStatisticsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetUsageStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_usage_statistics::GetUsageStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_statistics::GetUsageStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_statistics::GetUsageStatisticsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetUsageStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_usage_statistics::GetUsageStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_statistics::GetUsageStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_statistics::GetUsageStatisticsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetUsageStatisticsFluentBuilder {
             crate::operation::get_usage_statistics::GetUsageStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_statistics::GetUsageStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_statistics::GetUsageStatisticsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator {
-        crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator {
+        crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,17 +132,12 @@ impl GetUsageStatisticsFluentBuilder {
         self
     }
     /// <p>The type of usage statistics to retrieve.</p>
-    pub fn set_usage_statistic_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageStatisticType>,
-    ) -> Self {
+    pub fn set_usage_statistic_type(mut self, input: ::std::option::Option<crate::types::UsageStatisticType>) -> Self {
         self.inner = self.inner.set_usage_statistic_type(input);
         self
     }
     /// <p>The type of usage statistics to retrieve.</p>
-    pub fn get_usage_statistic_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::UsageStatisticType> {
+    pub fn get_usage_statistic_type(&self) -> &::std::option::Option<crate::types::UsageStatisticType> {
         self.inner.get_usage_statistic_type()
     }
     /// <p>Represents the criteria used for querying usage.</p>
@@ -172,10 +146,7 @@ impl GetUsageStatisticsFluentBuilder {
         self
     }
     /// <p>Represents the criteria used for querying usage.</p>
-    pub fn set_usage_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageCriteria>,
-    ) -> Self {
+    pub fn set_usage_criteria(mut self, input: ::std::option::Option<crate::types::UsageCriteria>) -> Self {
         self.inner = self.inner.set_usage_criteria(input);
         self
     }

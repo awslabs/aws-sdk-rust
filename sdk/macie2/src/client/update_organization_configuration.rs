@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`auto_enable(bool)`](crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder::auto_enable) / [`set_auto_enable(Option<bool>)`](crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder::set_auto_enable): <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
     /// - On success, responds with [`UpdateOrganizationConfigurationOutput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateOrganizationConfigurationError>`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError)
-    pub fn update_organization_configuration(&self) -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder{
+    pub fn update_organization_configuration(
+        &self,
+    ) -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder {
         crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

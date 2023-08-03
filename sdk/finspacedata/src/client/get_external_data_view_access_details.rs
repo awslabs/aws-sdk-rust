@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`credentials(Option<AwsCredentials>)`](crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsOutput::credentials): <p>The credentials required to access the external Dataview from the S3 location.</p>
     ///   - [`s3_location(Option<S3Location>)`](crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsOutput::s3_location): <p>The location where the external Dataview is stored.</p>
     /// - On failure, responds with [`SdkError<GetExternalDataViewAccessDetailsError>`](crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsError)
-    pub fn get_external_data_view_access_details(&self) -> crate::operation::get_external_data_view_access_details::builders::GetExternalDataViewAccessDetailsFluentBuilder{
+    pub fn get_external_data_view_access_details(
+        &self,
+    ) -> crate::operation::get_external_data_view_access_details::builders::GetExternalDataViewAccessDetailsFluentBuilder {
         crate::operation::get_external_data_view_access_details::builders::GetExternalDataViewAccessDetailsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl ClarifyExplainerConfig {
 
 /// A builder for [`ClarifyExplainerConfig`](crate::types::ClarifyExplainerConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClarifyExplainerConfigBuilder {
     pub(crate) enable_explanations: ::std::option::Option<::std::string::String>,
     pub(crate) inference_config: ::std::option::Option<crate::types::ClarifyInferenceConfig>,
@@ -47,18 +45,12 @@ pub struct ClarifyExplainerConfigBuilder {
 }
 impl ClarifyExplainerConfigBuilder {
     /// <p>A JMESPath boolean expression used to filter which records to explain. Explanations are activated by default. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"> <code>EnableExplanations</code> </a>for additional information.</p>
-    pub fn enable_explanations(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn enable_explanations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.enable_explanations = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JMESPath boolean expression used to filter which records to explain. Explanations are activated by default. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"> <code>EnableExplanations</code> </a>for additional information.</p>
-    pub fn set_enable_explanations(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_enable_explanations(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.enable_explanations = input;
         self
     }
@@ -72,17 +64,12 @@ impl ClarifyExplainerConfigBuilder {
         self
     }
     /// <p>The inference configuration parameter for the model container.</p>
-    pub fn set_inference_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ClarifyInferenceConfig>,
-    ) -> Self {
+    pub fn set_inference_config(mut self, input: ::std::option::Option<crate::types::ClarifyInferenceConfig>) -> Self {
         self.inference_config = input;
         self
     }
     /// <p>The inference configuration parameter for the model container.</p>
-    pub fn get_inference_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClarifyInferenceConfig> {
+    pub fn get_inference_config(&self) -> &::std::option::Option<crate::types::ClarifyInferenceConfig> {
         &self.inference_config
     }
     /// <p>The configuration for SHAP analysis.</p>
@@ -91,10 +78,7 @@ impl ClarifyExplainerConfigBuilder {
         self
     }
     /// <p>The configuration for SHAP analysis.</p>
-    pub fn set_shap_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ClarifyShapConfig>,
-    ) -> Self {
+    pub fn set_shap_config(mut self, input: ::std::option::Option<crate::types::ClarifyShapConfig>) -> Self {
         self.shap_config = input;
         self
     }

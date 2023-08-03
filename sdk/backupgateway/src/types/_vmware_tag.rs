@@ -38,9 +38,7 @@ impl VmwareTag {
 
 /// A builder for [`VmwareTag`](crate::types::VmwareTag).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VmwareTagBuilder {
     pub(crate) vmware_category: ::std::option::Option<::std::string::String>,
     pub(crate) vmware_tag_name: ::std::option::Option<::std::string::String>,
@@ -48,18 +46,12 @@ pub struct VmwareTagBuilder {
 }
 impl VmwareTagBuilder {
     /// <p>The is the category of VMware.</p>
-    pub fn vmware_category(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vmware_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vmware_category = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The is the category of VMware.</p>
-    pub fn set_vmware_category(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vmware_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vmware_category = input;
         self
     }
@@ -68,18 +60,12 @@ impl VmwareTagBuilder {
         &self.vmware_category
     }
     /// <p>This is the user-defined name of a VMware tag.</p>
-    pub fn vmware_tag_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vmware_tag_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vmware_tag_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is the user-defined name of a VMware tag.</p>
-    pub fn set_vmware_tag_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vmware_tag_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vmware_tag_name = input;
         self
     }
@@ -88,18 +74,12 @@ impl VmwareTagBuilder {
         &self.vmware_tag_name
     }
     /// <p>This is a user-defined description of a VMware tag.</p>
-    pub fn vmware_tag_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vmware_tag_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vmware_tag_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is a user-defined description of a VMware tag.</p>
-    pub fn set_vmware_tag_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vmware_tag_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vmware_tag_description = input;
         self
     }

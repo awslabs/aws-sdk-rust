@@ -35,7 +35,7 @@ impl DeleteStateMachineVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteStateMachineVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_state_machine_version::builders::DeleteStateMachineVersionInputBuilder,
+    inner: crate::operation::delete_state_machine_version::builders::DeleteStateMachineVersionInputBuilder,
 }
 impl DeleteStateMachineVersionFluentBuilder {
     /// Creates a new `DeleteStateMachineVersion`.
@@ -46,7 +46,7 @@ impl DeleteStateMachineVersionFluentBuilder {
         }
     }
     /// Access the DeleteStateMachineVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_state_machine_version::builders::DeleteStateMachineVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_state_machine_version::builders::DeleteStateMachineVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +58,7 @@ impl DeleteStateMachineVersionFluentBuilder {
             crate::operation::delete_state_machine_version::DeleteStateMachineVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_state_machine_version::DeleteStateMachineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_state_machine_version::DeleteStateMachineVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +68,7 @@ impl DeleteStateMachineVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +77,7 @@ impl DeleteStateMachineVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_state_machine_version::DeleteStateMachineVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_state_machine_version::DeleteStateMachineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_state_machine_version::DeleteStateMachineVersionError>,
     > {
         let op = self
             .inner
@@ -107,9 +100,7 @@ impl DeleteStateMachineVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_state_machine_version::DeleteStateMachineVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_state_machine_version::DeleteStateMachineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_state_machine_version::DeleteStateMachineVersionError>,
     > {
         self.send_middleware().await
     }
@@ -123,25 +114,17 @@ impl DeleteStateMachineVersionFluentBuilder {
             crate::operation::delete_state_machine_version::DeleteStateMachineVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_state_machine_version::DeleteStateMachineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_state_machine_version::DeleteStateMachineVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine version to delete.</p>
-    pub fn state_machine_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.state_machine_version_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine version to delete.</p>
-    pub fn set_state_machine_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_state_machine_version_arn(input);
         self
     }

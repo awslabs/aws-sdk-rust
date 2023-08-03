@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListResourceDefinitionsOutput {
 }
 impl ListResourceDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceDefinitionsOutput`](crate::operation::list_resource_definitions::ListResourceDefinitionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_definitions::builders::ListResourceDefinitionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resource_definitions::builders::ListResourceDefinitionsOutputBuilder {
         crate::operation::list_resource_definitions::builders::ListResourceDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceDefinitionsOutput`](crate::operation::list_resource_definitions::ListResourceDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceDefinitionsOutputBuilder {
-    pub(crate) definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>,
+    pub(crate) definitions: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListResourceDefinitionsOutputBuilder {
         self
     }
     /// Information about a definition.
-    pub fn set_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>,
-    ) -> Self {
+    pub fn set_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>>) -> Self {
         self.definitions = input;
         self
     }
     /// Information about a definition.
-    pub fn get_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>> {
+    pub fn get_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DefinitionInformation>> {
         &self.definitions
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -96,9 +86,7 @@ impl ListResourceDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResourceDefinitionsOutput`](crate::operation::list_resource_definitions::ListResourceDefinitionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_resource_definitions::ListResourceDefinitionsOutput {
+    pub fn build(self) -> crate::operation::list_resource_definitions::ListResourceDefinitionsOutput {
         crate::operation::list_resource_definitions::ListResourceDefinitionsOutput {
             definitions: self.definitions,
             next_token: self.next_token,

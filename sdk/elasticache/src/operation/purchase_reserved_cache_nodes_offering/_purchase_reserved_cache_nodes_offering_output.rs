@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for PurchaseReservedCacheNodesOfferingOut
 }
 impl PurchaseReservedCacheNodesOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedCacheNodesOfferingOutput`](crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingOutput).
-    pub fn builder() -> crate::operation::purchase_reserved_cache_nodes_offering::builders::PurchaseReservedCacheNodesOfferingOutputBuilder{
+    pub fn builder() -> crate::operation::purchase_reserved_cache_nodes_offering::builders::PurchaseReservedCacheNodesOfferingOutputBuilder {
         crate::operation::purchase_reserved_cache_nodes_offering::builders::PurchaseReservedCacheNodesOfferingOutputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseReservedCacheNodesOfferingOutput`](crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseReservedCacheNodesOfferingOutputBuilder {
     pub(crate) reserved_cache_node: ::std::option::Option<crate::types::ReservedCacheNode>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl PurchaseReservedCacheNodesOfferingOutputBuilder {
         self
     }
     /// <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
-    pub fn set_reserved_cache_node(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservedCacheNode>,
-    ) -> Self {
+    pub fn set_reserved_cache_node(mut self, input: ::std::option::Option<crate::types::ReservedCacheNode>) -> Self {
         self.reserved_cache_node = input;
         self
     }
     /// <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
-    pub fn get_reserved_cache_node(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservedCacheNode> {
+    pub fn get_reserved_cache_node(&self) -> &::std::option::Option<crate::types::ReservedCacheNode> {
         &self.reserved_cache_node
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,10 +58,9 @@ impl PurchaseReservedCacheNodesOfferingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PurchaseReservedCacheNodesOfferingOutput`](crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingOutput).
-    pub fn build(self) -> crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingOutput{
+    pub fn build(self) -> crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingOutput {
         crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingOutput {
-            reserved_cache_node: self.reserved_cache_node
-            ,
+            reserved_cache_node: self.reserved_cache_node,
             _request_id: self._request_id,
         }
     }

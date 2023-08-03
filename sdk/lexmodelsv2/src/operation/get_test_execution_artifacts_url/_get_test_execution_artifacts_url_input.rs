@@ -15,33 +15,25 @@ impl GetTestExecutionArtifactsUrlInput {
 }
 impl GetTestExecutionArtifactsUrlInput {
     /// Creates a new builder-style object to manufacture [`GetTestExecutionArtifactsUrlInput`](crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlInput).
-    pub fn builder() -> crate::operation::get_test_execution_artifacts_url::builders::GetTestExecutionArtifactsUrlInputBuilder{
+    pub fn builder() -> crate::operation::get_test_execution_artifacts_url::builders::GetTestExecutionArtifactsUrlInputBuilder {
         crate::operation::get_test_execution_artifacts_url::builders::GetTestExecutionArtifactsUrlInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTestExecutionArtifactsUrlInput`](crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTestExecutionArtifactsUrlInputBuilder {
     pub(crate) test_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetTestExecutionArtifactsUrlInputBuilder {
     /// <p>The unique identifier of the completed test execution.</p>
-    pub fn test_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the completed test execution.</p>
-    pub fn set_test_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_execution_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl GetTestExecutionArtifactsUrlInputBuilder {
         crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlInput {
-                test_execution_id: self.test_execution_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlInput {
+            test_execution_id: self.test_execution_id,
+        })
     }
 }

@@ -43,16 +43,14 @@ impl ModifyPrivateDnsNameOptionsInput {
 }
 impl ModifyPrivateDnsNameOptionsInput {
     /// Creates a new builder-style object to manufacture [`ModifyPrivateDnsNameOptionsInput`](crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsInput).
-    pub fn builder() -> crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsInputBuilder{
+    pub fn builder() -> crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsInputBuilder {
         crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyPrivateDnsNameOptionsInput`](crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyPrivateDnsNameOptionsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -95,17 +93,12 @@ impl ModifyPrivateDnsNameOptionsInputBuilder {
         self
     }
     /// <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an instance DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID.</p>
-    pub fn set_private_dns_hostname_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HostnameType>,
-    ) -> Self {
+    pub fn set_private_dns_hostname_type(mut self, input: ::std::option::Option<crate::types::HostnameType>) -> Self {
         self.private_dns_hostname_type = input;
         self
     }
     /// <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an instance DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID.</p>
-    pub fn get_private_dns_hostname_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::HostnameType> {
+    pub fn get_private_dns_hostname_type(&self) -> &::std::option::Option<crate::types::HostnameType> {
         &self.private_dns_hostname_type
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
@@ -114,10 +107,7 @@ impl ModifyPrivateDnsNameOptionsInputBuilder {
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
-    pub fn set_enable_resource_name_dns_a_record(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_resource_name_dns_a_record(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_resource_name_dns_a_record = input;
         self
     }
@@ -131,10 +121,7 @@ impl ModifyPrivateDnsNameOptionsInputBuilder {
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
-    pub fn set_enable_resource_name_dns_aaaa_record(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_resource_name_dns_aaaa_record(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_resource_name_dns_aaaa_record = input;
         self
     }
@@ -149,14 +136,12 @@ impl ModifyPrivateDnsNameOptionsInputBuilder {
         crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsInput {
-                dry_run: self.dry_run,
-                instance_id: self.instance_id,
-                private_dns_hostname_type: self.private_dns_hostname_type,
-                enable_resource_name_dns_a_record: self.enable_resource_name_dns_a_record,
-                enable_resource_name_dns_aaaa_record: self.enable_resource_name_dns_aaaa_record,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsInput {
+            dry_run: self.dry_run,
+            instance_id: self.instance_id,
+            private_dns_hostname_type: self.private_dns_hostname_type,
+            enable_resource_name_dns_a_record: self.enable_resource_name_dns_a_record,
+            enable_resource_name_dns_aaaa_record: self.enable_resource_name_dns_aaaa_record,
+        })
     }
 }

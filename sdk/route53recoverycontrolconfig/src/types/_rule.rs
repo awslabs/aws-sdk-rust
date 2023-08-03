@@ -32,9 +32,7 @@ impl Rule {
 
 /// A builder for [`Rule`](crate::types::Rule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleBuilder {
     pub(crate) assertion: ::std::option::Option<crate::types::AssertionRule>,
     pub(crate) gating: ::std::option::Option<crate::types::GatingRule>,
@@ -46,10 +44,7 @@ impl RuleBuilder {
         self
     }
     /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the criteria might be that at least one routing control state is On after the transaction so that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.</p>
-    pub fn set_assertion(
-        mut self,
-        input: ::std::option::Option<crate::types::AssertionRule>,
-    ) -> Self {
+    pub fn set_assertion(mut self, input: ::std::option::Option<crate::types::AssertionRule>) -> Self {
         self.assertion = input;
         self
     }

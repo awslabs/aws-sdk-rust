@@ -34,9 +34,7 @@ impl ProvisioningHook {
 
 /// A builder for [`ProvisioningHook`](crate::types::ProvisioningHook).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisioningHookBuilder {
     pub(crate) payload_version: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
@@ -44,19 +42,13 @@ pub struct ProvisioningHookBuilder {
 impl ProvisioningHookBuilder {
     /// <p>The payload that was sent to the target function.</p>
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
-    pub fn payload_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn payload_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The payload that was sent to the target function.</p>
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
-    pub fn set_payload_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_payload_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payload_version = input;
         self
     }

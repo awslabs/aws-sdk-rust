@@ -44,9 +44,7 @@ impl AtigData {
 
 /// A builder for [`AtigData`](crate::types::AtigData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AtigDataBuilder {
     pub(crate) first_seen: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_seen: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -60,10 +58,7 @@ impl AtigDataBuilder {
         self
     }
     /// <p>The date and time this vulnerability was first observed.</p>
-    pub fn set_first_seen(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_first_seen(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.first_seen = input;
         self
     }
@@ -77,10 +72,7 @@ impl AtigDataBuilder {
         self
     }
     /// <p>The date and time this vulnerability was last observed.</p>
-    pub fn set_last_seen(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_seen(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_seen = input;
         self
     }
@@ -100,10 +92,7 @@ impl AtigDataBuilder {
         self
     }
     /// <p>The commercial sectors this vulnerability targets.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.targets = input;
         self
     }
@@ -123,10 +112,7 @@ impl AtigDataBuilder {
         self
     }
     /// <p>The <a href="https://attack.mitre.org/">MITRE ATT&amp;CK</a> tactics, techniques, and procedures (TTPs) associated with vulnerability.</p>
-    pub fn set_ttps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ttps(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ttps = input;
         self
     }

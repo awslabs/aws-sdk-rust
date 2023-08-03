@@ -44,9 +44,7 @@ impl LaunchTemplateBlockDeviceMapping {
 
 /// A builder for [`LaunchTemplateBlockDeviceMapping`](crate::types::LaunchTemplateBlockDeviceMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateBlockDeviceMappingBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_name: ::std::option::Option<::std::string::String>,
@@ -88,10 +86,7 @@ impl LaunchTemplateBlockDeviceMappingBuilder {
         self
     }
     /// <p>Information about the block device for an EBS volume.</p>
-    pub fn set_ebs(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateEbsBlockDevice>,
-    ) -> Self {
+    pub fn set_ebs(mut self, input: ::std::option::Option<crate::types::LaunchTemplateEbsBlockDevice>) -> Self {
         self.ebs = input;
         self
     }

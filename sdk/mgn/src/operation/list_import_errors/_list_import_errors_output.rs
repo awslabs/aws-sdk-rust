@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for ListImportErrorsOutput {
 }
 impl ListImportErrorsOutput {
     /// Creates a new builder-style object to manufacture [`ListImportErrorsOutput`](crate::operation::list_import_errors::ListImportErrorsOutput).
-    pub fn builder() -> crate::operation::list_import_errors::builders::ListImportErrorsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_import_errors::builders::ListImportErrorsOutputBuilder {
         crate::operation::list_import_errors::builders::ListImportErrorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListImportErrorsOutput`](crate::operation::list_import_errors::ListImportErrorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImportErrorsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ImportTaskError>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +55,12 @@ impl ListImportErrorsOutputBuilder {
         self
     }
     /// <p>List imports errors response items.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportTaskError>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportTaskError>>) -> Self {
         self.items = input;
         self
     }
     /// <p>List imports errors response items.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportTaskError>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportTaskError>> {
         &self.items
     }
     /// <p>List imports errors response next token.</p>

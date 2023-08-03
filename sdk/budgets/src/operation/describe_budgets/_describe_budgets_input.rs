@@ -37,9 +37,7 @@ impl DescribeBudgetsInput {
 
 /// A builder for [`DescribeBudgetsInput`](crate::operation::describe_budgets::DescribeBudgetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBudgetsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,10 +89,7 @@ impl DescribeBudgetsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBudgetsInput`](crate::operation::describe_budgets::DescribeBudgetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_budgets::DescribeBudgetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_budgets::DescribeBudgetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_budgets::DescribeBudgetsInput {
             account_id: self.account_id,
             max_results: self.max_results,

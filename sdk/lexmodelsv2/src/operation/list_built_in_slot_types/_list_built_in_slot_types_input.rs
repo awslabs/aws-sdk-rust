@@ -36,18 +36,14 @@ impl ListBuiltInSlotTypesInput {
 }
 impl ListBuiltInSlotTypesInput {
     /// Creates a new builder-style object to manufacture [`ListBuiltInSlotTypesInput`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput).
-    pub fn builder(
-    ) -> crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesInputBuilder {
         crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBuiltInSlotTypesInput`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBuiltInSlotTypesInputBuilder {
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::BuiltInSlotTypeSortBy>,
@@ -75,10 +71,7 @@ impl ListBuiltInSlotTypesInputBuilder {
         self
     }
     /// <p>Determines the sort order for the response from the <code>ListBuiltInSlotTypes</code> operation. You can choose to sort by the slot type signature in either ascending or descending order.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::BuiltInSlotTypeSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::BuiltInSlotTypeSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -117,17 +110,13 @@ impl ListBuiltInSlotTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListBuiltInSlotTypesInput`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput {
-                locale_id: self.locale_id,
-                sort_by: self.sort_by,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput {
+            locale_id: self.locale_id,
+            sort_by: self.sort_by,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

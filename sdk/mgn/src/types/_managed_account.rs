@@ -23,9 +23,7 @@ impl ManagedAccount {
 
 /// A builder for [`ManagedAccount`](crate::types::ManagedAccount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedAccountBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ManagedAccountBuilder {
     }
     /// Consumes the builder and constructs a [`ManagedAccount`](crate::types::ManagedAccount).
     pub fn build(self) -> crate::types::ManagedAccount {
-        crate::types::ManagedAccount {
-            account_id: self.account_id,
-        }
+        crate::types::ManagedAccount { account_id: self.account_id }
     }
 }

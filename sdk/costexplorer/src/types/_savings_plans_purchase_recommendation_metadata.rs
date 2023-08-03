@@ -37,9 +37,7 @@ impl SavingsPlansPurchaseRecommendationMetadata {
 
 /// A builder for [`SavingsPlansPurchaseRecommendationMetadata`](crate::types::SavingsPlansPurchaseRecommendationMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SavingsPlansPurchaseRecommendationMetadataBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) generation_timestamp: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct SavingsPlansPurchaseRecommendationMetadataBuilder {
 }
 impl SavingsPlansPurchaseRecommendationMetadataBuilder {
     /// <p>The unique identifier for the recommendation set.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the recommendation set.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_id = input;
         self
     }
@@ -67,18 +59,12 @@ impl SavingsPlansPurchaseRecommendationMetadataBuilder {
         &self.recommendation_id
     }
     /// <p>The timestamp that shows when the recommendations were generated.</p>
-    pub fn generation_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generation_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp that shows when the recommendations were generated.</p>
-    pub fn set_generation_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generation_timestamp = input;
         self
     }
@@ -87,18 +73,12 @@ impl SavingsPlansPurchaseRecommendationMetadataBuilder {
         &self.generation_timestamp
     }
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
-    pub fn additional_metadata(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_metadata = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
-    pub fn set_additional_metadata(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.additional_metadata = input;
         self
     }

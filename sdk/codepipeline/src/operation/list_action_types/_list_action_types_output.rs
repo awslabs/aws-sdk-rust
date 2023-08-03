@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for ListActionTypesOutput {
 }
 impl ListActionTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListActionTypesOutput`](crate::operation::list_action_types::ListActionTypesOutput).
-    pub fn builder() -> crate::operation::list_action_types::builders::ListActionTypesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_action_types::builders::ListActionTypesOutputBuilder {
         crate::operation::list_action_types::builders::ListActionTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListActionTypesOutput`](crate::operation::list_action_types::ListActionTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActionTypesOutputBuilder {
     pub(crate) action_types: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +55,12 @@ impl ListActionTypesOutputBuilder {
         self
     }
     /// <p>Provides details of the action types.</p>
-    pub fn set_action_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>,
-    ) -> Self {
+    pub fn set_action_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>) -> Self {
         self.action_types = input;
         self
     }
     /// <p>Provides details of the action types.</p>
-    pub fn get_action_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionType>> {
+    pub fn get_action_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionType>> {
         &self.action_types
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>

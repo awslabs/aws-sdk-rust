@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`channel(Option<Channel>)`](crate::operation::create_channel::CreateChannelOutput::channel): <p></p>
     ///   - [`stream_key(Option<StreamKey>)`](crate::operation::create_channel::CreateChannelOutput::stream_key): <p></p>
     /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::operation::create_channel::CreateChannelError)
-    pub fn create_channel(
-        &self,
-    ) -> crate::operation::create_channel::builders::CreateChannelFluentBuilder {
-        crate::operation::create_channel::builders::CreateChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_channel(&self) -> crate::operation::create_channel::builders::CreateChannelFluentBuilder {
+        crate::operation::create_channel::builders::CreateChannelFluentBuilder::new(self.handle.clone())
     }
 }

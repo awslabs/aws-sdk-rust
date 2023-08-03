@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyAddressAttributeOutput {
 }
 impl ModifyAddressAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyAddressAttributeOutput`](crate::operation::modify_address_attribute::ModifyAddressAttributeOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_address_attribute::builders::ModifyAddressAttributeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_address_attribute::builders::ModifyAddressAttributeOutputBuilder {
         crate::operation::modify_address_attribute::builders::ModifyAddressAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyAddressAttributeOutput`](crate::operation::modify_address_attribute::ModifyAddressAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyAddressAttributeOutputBuilder {
     pub(crate) address: ::std::option::Option<crate::types::AddressAttribute>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl ModifyAddressAttributeOutputBuilder {
         self
     }
     /// <p>Information about the Elastic IP address.</p>
-    pub fn set_address(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressAttribute>,
-    ) -> Self {
+    pub fn set_address(mut self, input: ::std::option::Option<crate::types::AddressAttribute>) -> Self {
         self.address = input;
         self
     }

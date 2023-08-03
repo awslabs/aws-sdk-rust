@@ -29,16 +29,14 @@ impl DeleteInstanceEventWindowInput {
 }
 impl DeleteInstanceEventWindowInput {
     /// Creates a new builder-style object to manufacture [`DeleteInstanceEventWindowInput`](crate::operation::delete_instance_event_window::DeleteInstanceEventWindowInput).
-    pub fn builder() -> crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowInputBuilder{
+    pub fn builder() -> crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowInputBuilder {
         crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInstanceEventWindowInput`](crate::operation::delete_instance_event_window::DeleteInstanceEventWindowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInstanceEventWindowInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) force_delete: ::std::option::Option<bool>,
@@ -74,18 +72,12 @@ impl DeleteInstanceEventWindowInputBuilder {
         &self.force_delete
     }
     /// <p>The ID of the event window.</p>
-    pub fn instance_event_window_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_event_window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_event_window_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the event window.</p>
-    pub fn set_instance_event_window_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_event_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_event_window_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl DeleteInstanceEventWindowInputBuilder {
         crate::operation::delete_instance_event_window::DeleteInstanceEventWindowInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_instance_event_window::DeleteInstanceEventWindowInput {
-                dry_run: self.dry_run,
-                force_delete: self.force_delete,
-                instance_event_window_id: self.instance_event_window_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_instance_event_window::DeleteInstanceEventWindowInput {
+            dry_run: self.dry_run,
+            force_delete: self.force_delete,
+            instance_event_window_id: self.instance_event_window_id,
+        })
     }
 }

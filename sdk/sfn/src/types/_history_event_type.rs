@@ -95,13 +95,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HistoryEventType {
     #[allow(missing_docs)] // documentation missing in model
@@ -287,9 +281,7 @@ impl ::std::convert::From<&str> for HistoryEventType {
             "WaitStateAborted" => HistoryEventType::WaitStateAborted,
             "WaitStateEntered" => HistoryEventType::WaitStateEntered,
             "WaitStateExited" => HistoryEventType::WaitStateExited,
-            other => {
-                HistoryEventType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => HistoryEventType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

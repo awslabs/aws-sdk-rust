@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ConnectAppAuthorizationOutput`](crate::operation::connect_app_authorization::ConnectAppAuthorizationOutput) with field(s):
     ///   - [`app_authorization_summary(Option<AppAuthorizationSummary>)`](crate::operation::connect_app_authorization::ConnectAppAuthorizationOutput::app_authorization_summary): <p>Contains a summary of the app authorization.</p>
     /// - On failure, responds with [`SdkError<ConnectAppAuthorizationError>`](crate::operation::connect_app_authorization::ConnectAppAuthorizationError)
-    pub fn connect_app_authorization(
-        &self,
-    ) -> crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationFluentBuilder
-    {
+    pub fn connect_app_authorization(&self) -> crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationFluentBuilder {
         crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationFluentBuilder::new(self.handle.clone())
     }
 }

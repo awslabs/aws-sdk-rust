@@ -37,25 +37,20 @@ impl GetContentModerationInput {
         self.sort_by.as_ref()
     }
     /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
-    pub fn aggregate_by(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContentModerationAggregateBy> {
+    pub fn aggregate_by(&self) -> ::std::option::Option<&crate::types::ContentModerationAggregateBy> {
         self.aggregate_by.as_ref()
     }
 }
 impl GetContentModerationInput {
     /// Creates a new builder-style object to manufacture [`GetContentModerationInput`](crate::operation::get_content_moderation::GetContentModerationInput).
-    pub fn builder(
-    ) -> crate::operation::get_content_moderation::builders::GetContentModerationInputBuilder {
+    pub fn builder() -> crate::operation::get_content_moderation::builders::GetContentModerationInputBuilder {
         crate::operation::get_content_moderation::builders::GetContentModerationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetContentModerationInput`](crate::operation::get_content_moderation::GetContentModerationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContentModerationInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -112,10 +107,7 @@ impl GetContentModerationInputBuilder {
         self
     }
     /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentModerationSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ContentModerationSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -129,34 +121,25 @@ impl GetContentModerationInputBuilder {
         self
     }
     /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
-    pub fn set_aggregate_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ContentModerationAggregateBy>,
-    ) -> Self {
+    pub fn set_aggregate_by(mut self, input: ::std::option::Option<crate::types::ContentModerationAggregateBy>) -> Self {
         self.aggregate_by = input;
         self
     }
     /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
-    pub fn get_aggregate_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContentModerationAggregateBy> {
+    pub fn get_aggregate_by(&self) -> &::std::option::Option<crate::types::ContentModerationAggregateBy> {
         &self.aggregate_by
     }
     /// Consumes the builder and constructs a [`GetContentModerationInput`](crate::operation::get_content_moderation::GetContentModerationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_content_moderation::GetContentModerationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_content_moderation::GetContentModerationInput {
-                job_id: self.job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                sort_by: self.sort_by,
-                aggregate_by: self.aggregate_by,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_content_moderation::GetContentModerationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_content_moderation::GetContentModerationInput {
+            job_id: self.job_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            sort_by: self.sort_by,
+            aggregate_by: self.aggregate_by,
+        })
     }
 }

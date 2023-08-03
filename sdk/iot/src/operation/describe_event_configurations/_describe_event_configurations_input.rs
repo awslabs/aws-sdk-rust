@@ -5,16 +5,14 @@
 pub struct DescribeEventConfigurationsInput {}
 impl DescribeEventConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventConfigurationsInput`](crate::operation::describe_event_configurations::DescribeEventConfigurationsInput).
-    pub fn builder() -> crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsInputBuilder {
         crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventConfigurationsInput`](crate::operation::describe_event_configurations::DescribeEventConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventConfigurationsInputBuilder {}
 impl DescribeEventConfigurationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventConfigurationsInput`](crate::operation::describe_event_configurations::DescribeEventConfigurationsInput).
@@ -24,8 +22,6 @@ impl DescribeEventConfigurationsInputBuilder {
         crate::operation::describe_event_configurations::DescribeEventConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_event_configurations::DescribeEventConfigurationsInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::describe_event_configurations::DescribeEventConfigurationsInput {})
     }
 }

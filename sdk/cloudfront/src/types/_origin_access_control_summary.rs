@@ -26,8 +26,7 @@ pub struct OriginAccessControlSummary {
     pub signing_behavior: ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
     /// <p>The type of origin that this origin access control is for.</p>
     #[doc(hidden)]
-    pub origin_access_control_origin_type:
-        ::std::option::Option<crate::types::OriginAccessControlOriginTypes>,
+    pub origin_access_control_origin_type: ::std::option::Option<crate::types::OriginAccessControlOriginTypes>,
 }
 impl OriginAccessControlSummary {
     /// <p>The unique identifier of the origin access control.</p>
@@ -43,9 +42,7 @@ impl OriginAccessControlSummary {
         self.name.as_deref()
     }
     /// <p>The signing protocol of the origin access control. The signing protocol determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
-    pub fn signing_protocol(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginAccessControlSigningProtocols> {
+    pub fn signing_protocol(&self) -> ::std::option::Option<&crate::types::OriginAccessControlSigningProtocols> {
         self.signing_protocol.as_ref()
     }
     /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
@@ -54,15 +51,11 @@ impl OriginAccessControlSummary {
     /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p> </li>
     /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
     /// </ul>
-    pub fn signing_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginAccessControlSigningBehaviors> {
+    pub fn signing_behavior(&self) -> ::std::option::Option<&crate::types::OriginAccessControlSigningBehaviors> {
         self.signing_behavior.as_ref()
     }
     /// <p>The type of origin that this origin access control is for.</p>
-    pub fn origin_access_control_origin_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginAccessControlOriginTypes> {
+    pub fn origin_access_control_origin_type(&self) -> ::std::option::Option<&crate::types::OriginAccessControlOriginTypes> {
         self.origin_access_control_origin_type.as_ref()
     }
 }
@@ -75,19 +68,14 @@ impl OriginAccessControlSummary {
 
 /// A builder for [`OriginAccessControlSummary`](crate::types::OriginAccessControlSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginAccessControlSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) signing_protocol:
-        ::std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
-    pub(crate) signing_behavior:
-        ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
-    pub(crate) origin_access_control_origin_type:
-        ::std::option::Option<crate::types::OriginAccessControlOriginTypes>,
+    pub(crate) signing_protocol: ::std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
+    pub(crate) signing_behavior: ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
+    pub(crate) origin_access_control_origin_type: ::std::option::Option<crate::types::OriginAccessControlOriginTypes>,
 }
 impl OriginAccessControlSummaryBuilder {
     /// <p>The unique identifier of the origin access control.</p>
@@ -133,25 +121,17 @@ impl OriginAccessControlSummaryBuilder {
         &self.name
     }
     /// <p>The signing protocol of the origin access control. The signing protocol determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
-    pub fn signing_protocol(
-        mut self,
-        input: crate::types::OriginAccessControlSigningProtocols,
-    ) -> Self {
+    pub fn signing_protocol(mut self, input: crate::types::OriginAccessControlSigningProtocols) -> Self {
         self.signing_protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The signing protocol of the origin access control. The signing protocol determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
-    pub fn set_signing_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
-    ) -> Self {
+    pub fn set_signing_protocol(mut self, input: ::std::option::Option<crate::types::OriginAccessControlSigningProtocols>) -> Self {
         self.signing_protocol = input;
         self
     }
     /// <p>The signing protocol of the origin access control. The signing protocol determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
-    pub fn get_signing_protocol(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginAccessControlSigningProtocols> {
+    pub fn get_signing_protocol(&self) -> &::std::option::Option<crate::types::OriginAccessControlSigningProtocols> {
         &self.signing_protocol
     }
     /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
@@ -160,10 +140,7 @@ impl OriginAccessControlSummaryBuilder {
     /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p> </li>
     /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
     /// </ul>
-    pub fn signing_behavior(
-        mut self,
-        input: crate::types::OriginAccessControlSigningBehaviors,
-    ) -> Self {
+    pub fn signing_behavior(mut self, input: crate::types::OriginAccessControlSigningBehaviors) -> Self {
         self.signing_behavior = ::std::option::Option::Some(input);
         self
     }
@@ -173,10 +150,7 @@ impl OriginAccessControlSummaryBuilder {
     /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p> </li>
     /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
     /// </ul>
-    pub fn set_signing_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
-    ) -> Self {
+    pub fn set_signing_behavior(mut self, input: ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>) -> Self {
         self.signing_behavior = input;
         self
     }
@@ -186,31 +160,21 @@ impl OriginAccessControlSummaryBuilder {
     /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p> </li>
     /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
     /// </ul>
-    pub fn get_signing_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginAccessControlSigningBehaviors> {
+    pub fn get_signing_behavior(&self) -> &::std::option::Option<crate::types::OriginAccessControlSigningBehaviors> {
         &self.signing_behavior
     }
     /// <p>The type of origin that this origin access control is for.</p>
-    pub fn origin_access_control_origin_type(
-        mut self,
-        input: crate::types::OriginAccessControlOriginTypes,
-    ) -> Self {
+    pub fn origin_access_control_origin_type(mut self, input: crate::types::OriginAccessControlOriginTypes) -> Self {
         self.origin_access_control_origin_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of origin that this origin access control is for.</p>
-    pub fn set_origin_access_control_origin_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginAccessControlOriginTypes>,
-    ) -> Self {
+    pub fn set_origin_access_control_origin_type(mut self, input: ::std::option::Option<crate::types::OriginAccessControlOriginTypes>) -> Self {
         self.origin_access_control_origin_type = input;
         self
     }
     /// <p>The type of origin that this origin access control is for.</p>
-    pub fn get_origin_access_control_origin_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginAccessControlOriginTypes> {
+    pub fn get_origin_access_control_origin_type(&self) -> &::std::option::Option<crate::types::OriginAccessControlOriginTypes> {
         &self.origin_access_control_origin_type
     }
     /// Consumes the builder and constructs a [`OriginAccessControlSummary`](crate::types::OriginAccessControlSummary).

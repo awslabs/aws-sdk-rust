@@ -22,9 +22,7 @@ impl DescribeCacheInput {
 
 /// A builder for [`DescribeCacheInput`](crate::operation::describe_cache::DescribeCacheInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCacheInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DescribeCacheInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCacheInput`](crate::operation::describe_cache::DescribeCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cache::DescribeCacheInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_cache::DescribeCacheInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_cache::DescribeCacheInput {
             gateway_arn: self.gateway_arn,
         })

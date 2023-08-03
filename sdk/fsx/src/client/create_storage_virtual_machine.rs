@@ -13,7 +13,9 @@ impl super::Client {
     /// - On success, responds with [`CreateStorageVirtualMachineOutput`](crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput) with field(s):
     ///   - [`storage_virtual_machine(Option<StorageVirtualMachine>)`](crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput::storage_virtual_machine): <p>Returned after a successful <code>CreateStorageVirtualMachine</code> operation; describes the SVM just created.</p>
     /// - On failure, responds with [`SdkError<CreateStorageVirtualMachineError>`](crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineError)
-    pub fn create_storage_virtual_machine(&self) -> crate::operation::create_storage_virtual_machine::builders::CreateStorageVirtualMachineFluentBuilder{
+    pub fn create_storage_virtual_machine(
+        &self,
+    ) -> crate::operation::create_storage_virtual_machine::builders::CreateStorageVirtualMachineFluentBuilder {
         crate::operation::create_storage_virtual_machine::builders::CreateStorageVirtualMachineFluentBuilder::new(self.handle.clone())
     }
 }

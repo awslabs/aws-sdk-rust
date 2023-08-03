@@ -36,18 +36,14 @@ impl ListCasesForContactInput {
 }
 impl ListCasesForContactInput {
     /// Creates a new builder-style object to manufacture [`ListCasesForContactInput`](crate::operation::list_cases_for_contact::ListCasesForContactInput).
-    pub fn builder(
-    ) -> crate::operation::list_cases_for_contact::builders::ListCasesForContactInputBuilder {
-        crate::operation::list_cases_for_contact::builders::ListCasesForContactInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_cases_for_contact::builders::ListCasesForContactInputBuilder {
+        crate::operation::list_cases_for_contact::builders::ListCasesForContactInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCasesForContactInput`](crate::operation::list_cases_for_contact::ListCasesForContactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCasesForContactInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
@@ -114,17 +110,13 @@ impl ListCasesForContactInputBuilder {
     /// Consumes the builder and constructs a [`ListCasesForContactInput`](crate::operation::list_cases_for_contact::ListCasesForContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_cases_for_contact::ListCasesForContactInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_cases_for_contact::ListCasesForContactInput {
-                domain_id: self.domain_id,
-                contact_arn: self.contact_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_cases_for_contact::ListCasesForContactInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_cases_for_contact::ListCasesForContactInput {
+            domain_id: self.domain_id,
+            contact_arn: self.contact_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

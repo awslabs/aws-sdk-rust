@@ -37,9 +37,7 @@ impl FilterGroup {
     }
     /// <p>The configuration that specifies what scope to apply to a <code>FilterGroup</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    pub fn scope_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FilterScopeConfiguration> {
+    pub fn scope_configuration(&self) -> ::std::option::Option<&crate::types::FilterScopeConfiguration> {
         self.scope_configuration.as_ref()
     }
     /// <p>The status of the <code>FilterGroup</code>.</p>
@@ -64,9 +62,7 @@ impl FilterGroup {
 
 /// A builder for [`FilterGroup`](crate::types::FilterGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterGroupBuilder {
     pub(crate) filter_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -76,18 +72,12 @@ pub struct FilterGroupBuilder {
 }
 impl FilterGroupBuilder {
     /// <p>The value that uniquely identifies a <code>FilterGroup</code> within a dashboard, template, or analysis.</p>
-    pub fn filter_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that uniquely identifies a <code>FilterGroup</code> within a dashboard, template, or analysis.</p>
-    pub fn set_filter_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_group_id = input;
         self
     }
@@ -107,10 +97,7 @@ impl FilterGroupBuilder {
         self
     }
     /// <p>The list of filters that are present in a <code>FilterGroup</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -126,18 +113,13 @@ impl FilterGroupBuilder {
     }
     /// <p>The configuration that specifies what scope to apply to a <code>FilterGroup</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    pub fn set_scope_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterScopeConfiguration>,
-    ) -> Self {
+    pub fn set_scope_configuration(mut self, input: ::std::option::Option<crate::types::FilterScopeConfiguration>) -> Self {
         self.scope_configuration = input;
         self
     }
     /// <p>The configuration that specifies what scope to apply to a <code>FilterGroup</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    pub fn get_scope_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FilterScopeConfiguration> {
+    pub fn get_scope_configuration(&self) -> &::std::option::Option<crate::types::FilterScopeConfiguration> {
         &self.scope_configuration
     }
     /// <p>The status of the <code>FilterGroup</code>.</p>
@@ -168,10 +150,7 @@ impl FilterGroupBuilder {
     /// <li> <p> <code>ALL_DATASETS</code> </p> </li>
     /// <li> <p> <code>SINGLE_DATASET</code> </p> </li>
     /// </ul>
-    pub fn set_cross_dataset(
-        mut self,
-        input: ::std::option::Option<crate::types::CrossDatasetTypes>,
-    ) -> Self {
+    pub fn set_cross_dataset(mut self, input: ::std::option::Option<crate::types::CrossDatasetTypes>) -> Self {
         self.cross_dataset = input;
         self
     }

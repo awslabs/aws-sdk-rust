@@ -42,9 +42,7 @@ impl DryRunResults {
 
 /// A builder for [`DryRunResults`](crate::types::DryRunResults).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DryRunResultsBuilder {
     pub(crate) deployment_type: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl DryRunResultsBuilder {
     /// <li> <p> <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try again after the update is complete.</p> </li>
     /// <li> <p> <b>None</b> - The request doesn't include any configuration changes.</p> </li>
     /// </ul>
-    pub fn deployment_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -71,10 +66,7 @@ impl DryRunResultsBuilder {
     /// <li> <p> <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try again after the update is complete.</p> </li>
     /// <li> <p> <b>None</b> - The request doesn't include any configuration changes.</p> </li>
     /// </ul>
-    pub fn set_deployment_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_type = input;
         self
     }

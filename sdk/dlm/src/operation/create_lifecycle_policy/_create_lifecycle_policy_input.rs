@@ -17,9 +17,7 @@ pub struct CreateLifecyclePolicyInput {
     pub policy_details: ::std::option::Option<crate::types::PolicyDetails>,
     /// <p>The tags to apply to the lifecycle policy during creation.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateLifecyclePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
@@ -39,51 +37,35 @@ impl CreateLifecyclePolicyInput {
         self.policy_details.as_ref()
     }
     /// <p>The tags to apply to the lifecycle policy during creation.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateLifecyclePolicyInput {
     /// Creates a new builder-style object to manufacture [`CreateLifecyclePolicyInput`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::create_lifecycle_policy::builders::CreateLifecyclePolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_lifecycle_policy::builders::CreateLifecyclePolicyInputBuilder {
         crate::operation::create_lifecycle_policy::builders::CreateLifecyclePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLifecyclePolicyInput`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLifecyclePolicyInputBuilder {
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::SettablePolicyStateValues>,
     pub(crate) policy_details: ::std::option::Option<crate::types::PolicyDetails>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateLifecyclePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -111,10 +93,7 @@ impl CreateLifecyclePolicyInputBuilder {
         self
     }
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::SettablePolicyStateValues>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::SettablePolicyStateValues>) -> Self {
         self.state = input;
         self
     }
@@ -128,10 +107,7 @@ impl CreateLifecyclePolicyInputBuilder {
         self
     }
     /// <p>The configuration details of the lifecycle policy.</p>
-    pub fn set_policy_details(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyDetails>,
-    ) -> Self {
+    pub fn set_policy_details(mut self, input: ::std::option::Option<crate::types::PolicyDetails>) -> Self {
         self.policy_details = input;
         self
     }
@@ -144,49 +120,32 @@ impl CreateLifecyclePolicyInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to apply to the lifecycle policy during creation.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to apply to the lifecycle policy during creation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to apply to the lifecycle policy during creation.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLifecyclePolicyInput`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput {
-                execution_role_arn: self.execution_role_arn,
-                description: self.description,
-                state: self.state,
-                policy_details: self.policy_details,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput {
+            execution_role_arn: self.execution_role_arn,
+            description: self.description,
+            state: self.state,
+            policy_details: self.policy_details,
+            tags: self.tags,
+        })
     }
 }

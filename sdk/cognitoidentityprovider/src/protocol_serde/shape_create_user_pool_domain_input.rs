@@ -12,10 +12,7 @@ pub fn ser_create_user_pool_domain_input(
     if let Some(var_3) = &input.custom_domain_config {
         #[allow(unused_mut)]
         let mut object_4 = object.key("CustomDomainConfig").start_object();
-        crate::protocol_serde::shape_custom_domain_config_type::ser_custom_domain_config_type(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_custom_domain_config_type::ser_custom_domain_config_type(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

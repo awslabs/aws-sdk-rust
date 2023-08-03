@@ -26,7 +26,7 @@ impl DeleteAnomalySubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAnomalySubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_anomaly_subscription::builders::DeleteAnomalySubscriptionInputBuilder,
+    inner: crate::operation::delete_anomaly_subscription::builders::DeleteAnomalySubscriptionInputBuilder,
 }
 impl DeleteAnomalySubscriptionFluentBuilder {
     /// Creates a new `DeleteAnomalySubscription`.
@@ -37,7 +37,7 @@ impl DeleteAnomalySubscriptionFluentBuilder {
         }
     }
     /// Access the DeleteAnomalySubscription as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_anomaly_subscription::builders::DeleteAnomalySubscriptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_anomaly_subscription::builders::DeleteAnomalySubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteAnomalySubscriptionFluentBuilder {
             crate::operation::delete_anomaly_subscription::DeleteAnomalySubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteAnomalySubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteAnomalySubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteAnomalySubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeleteAnomalySubscriptionFluentBuilder {
             crate::operation::delete_anomaly_subscription::DeleteAnomalySubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
-    pub fn subscription_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_arn(input.into());
         self
     }
     /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
-    pub fn set_subscription_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_arn(input);
         self
     }

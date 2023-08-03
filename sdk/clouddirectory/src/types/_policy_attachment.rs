@@ -37,9 +37,7 @@ impl PolicyAttachment {
 
 /// A builder for [`PolicyAttachment`](crate::types::PolicyAttachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyAttachmentBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) object_identifier: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl PolicyAttachmentBuilder {
         &self.policy_id
     }
     /// <p>The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.</p>
-    pub fn object_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.</p>
-    pub fn set_object_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_identifier = input;
         self
     }

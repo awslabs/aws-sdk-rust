@@ -29,11 +29,7 @@ impl super::Client {
     ///   - [`encoding_type(Option<EncodingType>)`](crate::operation::list_object_versions::ListObjectVersionsOutput::encoding_type): <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p>  <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>  <p> <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::list_object_versions::ListObjectVersionsOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     /// - On failure, responds with [`SdkError<ListObjectVersionsError>`](crate::operation::list_object_versions::ListObjectVersionsError)
-    pub fn list_object_versions(
-        &self,
-    ) -> crate::operation::list_object_versions::builders::ListObjectVersionsFluentBuilder {
-        crate::operation::list_object_versions::builders::ListObjectVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_object_versions(&self) -> crate::operation::list_object_versions::builders::ListObjectVersionsFluentBuilder {
+        crate::operation::list_object_versions::builders::ListObjectVersionsFluentBuilder::new(self.handle.clone())
     }
 }

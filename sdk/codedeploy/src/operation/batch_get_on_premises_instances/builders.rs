@@ -26,7 +26,7 @@ impl BatchGetOnPremisesInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetOnPremisesInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_on_premises_instances::builders::BatchGetOnPremisesInstancesInputBuilder,
+    inner: crate::operation::batch_get_on_premises_instances::builders::BatchGetOnPremisesInstancesInputBuilder,
 }
 impl BatchGetOnPremisesInstancesFluentBuilder {
     /// Creates a new `BatchGetOnPremisesInstances`.
@@ -37,7 +37,7 @@ impl BatchGetOnPremisesInstancesFluentBuilder {
         }
     }
     /// Access the BatchGetOnPremisesInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_on_premises_instances::builders::BatchGetOnPremisesInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_get_on_premises_instances::builders::BatchGetOnPremisesInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchGetOnPremisesInstancesFluentBuilder {
             crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchGetOnPremisesInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchGetOnPremisesInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchGetOnPremisesInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchGetOnPremisesInstancesFluentBuilder {
             crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -125,25 +114,17 @@ impl BatchGetOnPremisesInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
     ///
     /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
-    pub fn instance_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_names(input.into());
         self
     }
     /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
-    pub fn set_instance_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_names(input);
         self
     }
     /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
-    pub fn get_instance_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_names()
     }
 }

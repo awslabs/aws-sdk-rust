@@ -15,33 +15,25 @@ impl DeleteVoiceConnectorGroupInput {
 }
 impl DeleteVoiceConnectorGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceConnectorGroupInput`](crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupInput).
-    pub fn builder() -> crate::operation::delete_voice_connector_group::builders::DeleteVoiceConnectorGroupInputBuilder{
+    pub fn builder() -> crate::operation::delete_voice_connector_group::builders::DeleteVoiceConnectorGroupInputBuilder {
         crate::operation::delete_voice_connector_group::builders::DeleteVoiceConnectorGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVoiceConnectorGroupInput`](crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorGroupInputBuilder {
     pub(crate) voice_connector_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVoiceConnectorGroupInputBuilder {
     /// <p>The Voice Connector Group ID.</p>
-    pub fn voice_connector_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Voice Connector Group ID.</p>
-    pub fn set_voice_connector_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_group_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl DeleteVoiceConnectorGroupInputBuilder {
         crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupInput {
-                voice_connector_group_id: self.voice_connector_group_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupInput {
+            voice_connector_group_id: self.voice_connector_group_id,
+        })
     }
 }

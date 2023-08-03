@@ -118,9 +118,7 @@ impl Interconnect {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> ::std::option::Option<&crate::types::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the interconnect.</p>
@@ -141,9 +139,7 @@ impl Interconnect {
 
 /// A builder for [`Interconnect`](crate::types::Interconnect).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InterconnectBuilder {
     pub(crate) interconnect_id: ::std::option::Option<::std::string::String>,
     pub(crate) interconnect_name: ::std::option::Option<::std::string::String>,
@@ -163,18 +159,12 @@ pub struct InterconnectBuilder {
 }
 impl InterconnectBuilder {
     /// <p>The ID of the interconnect.</p>
-    pub fn interconnect_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn interconnect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interconnect_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the interconnect.</p>
-    pub fn set_interconnect_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_interconnect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interconnect_id = input;
         self
     }
@@ -183,18 +173,12 @@ impl InterconnectBuilder {
         &self.interconnect_id
     }
     /// <p>The name of the interconnect.</p>
-    pub fn interconnect_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn interconnect_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interconnect_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the interconnect.</p>
-    pub fn set_interconnect_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_interconnect_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interconnect_name = input;
         self
     }
@@ -226,10 +210,7 @@ impl InterconnectBuilder {
     /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
-    pub fn set_interconnect_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InterconnectState>,
-    ) -> Self {
+    pub fn set_interconnect_state(mut self, input: ::std::option::Option<crate::types::InterconnectState>) -> Self {
         self.interconnect_state = input;
         self
     }
@@ -243,9 +224,7 @@ impl InterconnectBuilder {
     /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
-    pub fn get_interconnect_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::InterconnectState> {
+    pub fn get_interconnect_state(&self) -> &::std::option::Option<crate::types::InterconnectState> {
         &self.interconnect_state
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
@@ -296,10 +275,7 @@ impl InterconnectBuilder {
         self
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn set_loa_issue_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_loa_issue_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.loa_issue_time = input;
         self
     }
@@ -350,18 +326,12 @@ impl InterconnectBuilder {
         &self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_device_v2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_device_v2 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn set_aws_device_v2(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_device_v2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_device_v2 = input;
         self
     }
@@ -370,18 +340,12 @@ impl InterconnectBuilder {
         &self.aws_device_v2
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_logical_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_logical_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn set_aws_logical_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_logical_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_logical_device_id = input;
         self
     }
@@ -395,17 +359,12 @@ impl InterconnectBuilder {
         self
     }
     /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
-    pub fn set_has_logical_redundancy(
-        mut self,
-        input: ::std::option::Option<crate::types::HasLogicalRedundancy>,
-    ) -> Self {
+    pub fn set_has_logical_redundancy(mut self, input: ::std::option::Option<crate::types::HasLogicalRedundancy>) -> Self {
         self.has_logical_redundancy = input;
         self
     }
     /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
-    pub fn get_has_logical_redundancy(
-        &self,
-    ) -> &::std::option::Option<crate::types::HasLogicalRedundancy> {
+    pub fn get_has_logical_redundancy(&self) -> &::std::option::Option<crate::types::HasLogicalRedundancy> {
         &self.has_logical_redundancy
     }
     /// Appends an item to `tags`.
@@ -420,10 +379,7 @@ impl InterconnectBuilder {
         self
     }
     /// <p>The tags associated with the interconnect.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -432,18 +388,12 @@ impl InterconnectBuilder {
         &self.tags
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_name = input;
         self
     }

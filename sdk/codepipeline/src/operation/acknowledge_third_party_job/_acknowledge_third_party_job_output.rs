@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for AcknowledgeThirdPartyJobOutput {
 }
 impl AcknowledgeThirdPartyJobOutput {
     /// Creates a new builder-style object to manufacture [`AcknowledgeThirdPartyJobOutput`](crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput).
-    pub fn builder() -> crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobOutputBuilder{
+    pub fn builder() -> crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobOutputBuilder {
         crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcknowledgeThirdPartyJobOutput`](crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcknowledgeThirdPartyJobOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
     _request_id: Option<String>,
@@ -61,9 +59,7 @@ impl AcknowledgeThirdPartyJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AcknowledgeThirdPartyJobOutput`](crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput {
+    pub fn build(self) -> crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput {
         crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput {
             status: self.status,
             _request_id: self._request_id,

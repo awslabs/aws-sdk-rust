@@ -26,7 +26,7 @@ impl StopEventDataStoreIngestionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopEventDataStoreIngestionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionInputBuilder,
+    inner: crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionInputBuilder,
 }
 impl StopEventDataStoreIngestionFluentBuilder {
     /// Creates a new `StopEventDataStoreIngestion`.
@@ -37,7 +37,7 @@ impl StopEventDataStoreIngestionFluentBuilder {
         }
     }
     /// Access the StopEventDataStoreIngestion as a reference.
-    pub fn as_input(&self) -> &crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StopEventDataStoreIngestionFluentBuilder {
             crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StopEventDataStoreIngestionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StopEventDataStoreIngestionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StopEventDataStoreIngestionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl StopEventDataStoreIngestionFluentBuilder {
             crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to stop ingestion.</p>
-    pub fn event_data_store(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_data_store(input.into());
         self
     }
     /// <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to stop ingestion.</p>
-    pub fn set_event_data_store(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_data_store(input);
         self
     }

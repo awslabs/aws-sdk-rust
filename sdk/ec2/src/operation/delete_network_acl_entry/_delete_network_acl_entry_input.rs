@@ -36,18 +36,14 @@ impl DeleteNetworkAclEntryInput {
 }
 impl DeleteNetworkAclEntryInput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkAclEntryInput`](crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput).
-    pub fn builder(
-    ) -> crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryInputBuilder {
         crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNetworkAclEntryInput`](crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkAclEntryInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) egress: ::std::option::Option<bool>,
@@ -84,18 +80,12 @@ impl DeleteNetworkAclEntryInputBuilder {
         &self.egress
     }
     /// <p>The ID of the network ACL.</p>
-    pub fn network_acl_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_acl_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network ACL.</p>
-    pub fn set_network_acl_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_acl_id = input;
         self
     }
@@ -120,17 +110,13 @@ impl DeleteNetworkAclEntryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNetworkAclEntryInput`](crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput {
-                dry_run: self.dry_run,
-                egress: self.egress,
-                network_acl_id: self.network_acl_id,
-                rule_number: self.rule_number,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput {
+            dry_run: self.dry_run,
+            egress: self.egress,
+            network_acl_id: self.network_acl_id,
+            rule_number: self.rule_number,
+        })
     }
 }

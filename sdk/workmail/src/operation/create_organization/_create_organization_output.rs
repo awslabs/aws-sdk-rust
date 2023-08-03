@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateOrganizationOutput {
 }
 impl CreateOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`CreateOrganizationOutput`](crate::operation::create_organization::CreateOrganizationOutput).
-    pub fn builder(
-    ) -> crate::operation::create_organization::builders::CreateOrganizationOutputBuilder {
+    pub fn builder() -> crate::operation::create_organization::builders::CreateOrganizationOutputBuilder {
         crate::operation::create_organization::builders::CreateOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOrganizationOutput`](crate::operation::create_organization::CreateOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOrganizationOutputBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateOrganizationOutputBuilder {
     /// <p>The organization ID.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The organization ID.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }

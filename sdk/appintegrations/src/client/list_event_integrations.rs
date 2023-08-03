@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`event_integrations(Option<Vec<EventIntegration>>)`](crate::operation::list_event_integrations::ListEventIntegrationsOutput::event_integrations): <p>The event integrations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_integrations::ListEventIntegrationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListEventIntegrationsError>`](crate::operation::list_event_integrations::ListEventIntegrationsError)
-    pub fn list_event_integrations(
-        &self,
-    ) -> crate::operation::list_event_integrations::builders::ListEventIntegrationsFluentBuilder
-    {
-        crate::operation::list_event_integrations::builders::ListEventIntegrationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_event_integrations(&self) -> crate::operation::list_event_integrations::builders::ListEventIntegrationsFluentBuilder {
+        crate::operation::list_event_integrations::builders::ListEventIntegrationsFluentBuilder::new(self.handle.clone())
     }
 }

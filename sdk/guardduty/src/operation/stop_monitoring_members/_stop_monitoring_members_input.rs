@@ -22,18 +22,14 @@ impl StopMonitoringMembersInput {
 }
 impl StopMonitoringMembersInput {
     /// Creates a new builder-style object to manufacture [`StopMonitoringMembersInput`](crate::operation::stop_monitoring_members::StopMonitoringMembersInput).
-    pub fn builder(
-    ) -> crate::operation::stop_monitoring_members::builders::StopMonitoringMembersInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_monitoring_members::builders::StopMonitoringMembersInputBuilder {
         crate::operation::stop_monitoring_members::builders::StopMonitoringMembersInputBuilder::default()
     }
 }
 
 /// A builder for [`StopMonitoringMembersInput`](crate::operation::stop_monitoring_members::StopMonitoringMembersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopMonitoringMembersInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -65,31 +61,22 @@ impl StopMonitoringMembersInputBuilder {
         self
     }
     /// <p>A list of account IDs for the member accounts to stop monitoring.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>A list of account IDs for the member accounts to stop monitoring.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`StopMonitoringMembersInput`](crate::operation::stop_monitoring_members::StopMonitoringMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_monitoring_members::StopMonitoringMembersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_monitoring_members::StopMonitoringMembersInput {
-                detector_id: self.detector_id,
-                account_ids: self.account_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::stop_monitoring_members::StopMonitoringMembersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::stop_monitoring_members::StopMonitoringMembersInput {
+            detector_id: self.detector_id,
+            account_ids: self.account_ids,
+        })
     }
 }

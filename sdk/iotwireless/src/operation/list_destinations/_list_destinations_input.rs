@@ -22,17 +22,14 @@ impl ListDestinationsInput {
 }
 impl ListDestinationsInput {
     /// Creates a new builder-style object to manufacture [`ListDestinationsInput`](crate::operation::list_destinations::ListDestinationsInput).
-    pub fn builder() -> crate::operation::list_destinations::builders::ListDestinationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_destinations::builders::ListDestinationsInputBuilder {
         crate::operation::list_destinations::builders::ListDestinationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDestinationsInput`](crate::operation::list_destinations::ListDestinationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDestinationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,10 +66,7 @@ impl ListDestinationsInputBuilder {
     /// Consumes the builder and constructs a [`ListDestinationsInput`](crate::operation::list_destinations::ListDestinationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_destinations::ListDestinationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_destinations::ListDestinationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_destinations::ListDestinationsInput {
             max_results: self.max_results,
             next_token: self.next_token,

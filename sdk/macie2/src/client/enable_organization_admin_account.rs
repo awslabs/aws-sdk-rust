@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     /// - On success, responds with [`EnableOrganizationAdminAccountOutput`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountOutput)
     /// - On failure, responds with [`SdkError<EnableOrganizationAdminAccountError>`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountError)
-    pub fn enable_organization_admin_account(&self) -> crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder{
+    pub fn enable_organization_admin_account(
+        &self,
+    ) -> crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder {
         crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder::new(self.handle.clone())
     }
 }

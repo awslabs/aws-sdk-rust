@@ -10,10 +10,7 @@ impl DescribeChangeSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_change_set::DescribeChangeSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_change_set::DescribeChangeSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_change_set::DescribeChangeSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_change_set();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeChangeSetFluentBuilder {
         }
     }
     /// Access the DescribeChangeSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_change_set::builders::DescribeChangeSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_change_set::builders::DescribeChangeSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeChangeSetFluentBuilder {
             crate::operation::describe_change_set::DescribeChangeSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_change_set::DescribeChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_change_set::DescribeChangeSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeChangeSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeChangeSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_change_set::DescribeChangeSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_change_set::DescribeChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_change_set::DescribeChangeSetError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeChangeSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_change_set::DescribeChangeSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_change_set::DescribeChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_change_set::DescribeChangeSetError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeChangeSetFluentBuilder {
             crate::operation::describe_change_set::DescribeChangeSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_change_set::DescribeChangeSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_change_set::DescribeChangeSetError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DescribeChangeSetFluentBuilder {
         self.inner.get_catalog()
     }
     /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
-    pub fn change_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_set_id(input.into());
         self
     }
     /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
-    pub fn set_change_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_set_id(input);
         self
     }

@@ -6,17 +6,14 @@
 pub struct CandidateProperties {
     /// <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
     #[doc(hidden)]
-    pub candidate_artifact_locations:
-        ::std::option::Option<crate::types::CandidateArtifactLocations>,
+    pub candidate_artifact_locations: ::std::option::Option<crate::types::CandidateArtifactLocations>,
     /// <p>Information about the candidate metrics for an AutoML job.</p>
     #[doc(hidden)]
     pub candidate_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
 }
 impl CandidateProperties {
     /// <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
-    pub fn candidate_artifact_locations(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CandidateArtifactLocations> {
+    pub fn candidate_artifact_locations(&self) -> ::std::option::Option<&crate::types::CandidateArtifactLocations> {
         self.candidate_artifact_locations.as_ref()
     }
     /// <p>Information about the candidate metrics for an AutoML job.</p>
@@ -33,35 +30,24 @@ impl CandidateProperties {
 
 /// A builder for [`CandidateProperties`](crate::types::CandidateProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CandidatePropertiesBuilder {
-    pub(crate) candidate_artifact_locations:
-        ::std::option::Option<crate::types::CandidateArtifactLocations>,
+    pub(crate) candidate_artifact_locations: ::std::option::Option<crate::types::CandidateArtifactLocations>,
     pub(crate) candidate_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
 }
 impl CandidatePropertiesBuilder {
     /// <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
-    pub fn candidate_artifact_locations(
-        mut self,
-        input: crate::types::CandidateArtifactLocations,
-    ) -> Self {
+    pub fn candidate_artifact_locations(mut self, input: crate::types::CandidateArtifactLocations) -> Self {
         self.candidate_artifact_locations = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
-    pub fn set_candidate_artifact_locations(
-        mut self,
-        input: ::std::option::Option<crate::types::CandidateArtifactLocations>,
-    ) -> Self {
+    pub fn set_candidate_artifact_locations(mut self, input: ::std::option::Option<crate::types::CandidateArtifactLocations>) -> Self {
         self.candidate_artifact_locations = input;
         self
     }
     /// <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
-    pub fn get_candidate_artifact_locations(
-        &self,
-    ) -> &::std::option::Option<crate::types::CandidateArtifactLocations> {
+    pub fn get_candidate_artifact_locations(&self) -> &::std::option::Option<crate::types::CandidateArtifactLocations> {
         &self.candidate_artifact_locations
     }
     /// Appends an item to `candidate_metrics`.
@@ -76,17 +62,12 @@ impl CandidatePropertiesBuilder {
         self
     }
     /// <p>Information about the candidate metrics for an AutoML job.</p>
-    pub fn set_candidate_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
-    ) -> Self {
+    pub fn set_candidate_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>) -> Self {
         self.candidate_metrics = input;
         self
     }
     /// <p>Information about the candidate metrics for an AutoML job.</p>
-    pub fn get_candidate_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
+    pub fn get_candidate_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
         &self.candidate_metrics
     }
     /// Consumes the builder and constructs a [`CandidateProperties`](crate::types::CandidateProperties).

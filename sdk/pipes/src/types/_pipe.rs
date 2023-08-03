@@ -86,9 +86,7 @@ impl Pipe {
 
 /// A builder for [`Pipe`](crate::types::Pipe).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -136,10 +134,7 @@ impl PipeBuilder {
         self
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestedPipeState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::RequestedPipeState>) -> Self {
         self.desired_state = input;
         self
     }
@@ -153,10 +148,7 @@ impl PipeBuilder {
         self
     }
     /// <p>The state the pipe is in.</p>
-    pub fn set_current_state(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeState>,
-    ) -> Self {
+    pub fn set_current_state(mut self, input: ::std::option::Option<crate::types::PipeState>) -> Self {
         self.current_state = input;
         self
     }
@@ -184,10 +176,7 @@ impl PipeBuilder {
         self
     }
     /// <p>The time the pipe was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -201,10 +190,7 @@ impl PipeBuilder {
         self
     }
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

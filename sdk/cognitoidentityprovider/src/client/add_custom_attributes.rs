@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`custom_attributes(Vec<SchemaAttributeType>)`](crate::operation::add_custom_attributes::builders::AddCustomAttributesFluentBuilder::custom_attributes) / [`set_custom_attributes(Option<Vec<SchemaAttributeType>>)`](crate::operation::add_custom_attributes::builders::AddCustomAttributesFluentBuilder::set_custom_attributes): <p>An array of custom attributes, such as Mutable and Name.</p>
     /// - On success, responds with [`AddCustomAttributesOutput`](crate::operation::add_custom_attributes::AddCustomAttributesOutput)
     /// - On failure, responds with [`SdkError<AddCustomAttributesError>`](crate::operation::add_custom_attributes::AddCustomAttributesError)
-    pub fn add_custom_attributes(
-        &self,
-    ) -> crate::operation::add_custom_attributes::builders::AddCustomAttributesFluentBuilder {
-        crate::operation::add_custom_attributes::builders::AddCustomAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_custom_attributes(&self) -> crate::operation::add_custom_attributes::builders::AddCustomAttributesFluentBuilder {
+        crate::operation::add_custom_attributes::builders::AddCustomAttributesFluentBuilder::new(self.handle.clone())
     }
 }

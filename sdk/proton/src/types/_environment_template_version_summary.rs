@@ -117,18 +117,12 @@ pub struct EnvironmentTemplateVersionSummaryBuilder {
 }
 impl EnvironmentTemplateVersionSummaryBuilder {
     /// <p>The name of the environment template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -137,18 +131,12 @@ impl EnvironmentTemplateVersionSummaryBuilder {
         &self.template_name
     }
     /// <p>The latest major version that's associated with the version of an environment template.</p>
-    pub fn major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The latest major version that's associated with the version of an environment template.</p>
-    pub fn set_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.major_version = input;
         self
     }
@@ -157,18 +145,12 @@ impl EnvironmentTemplateVersionSummaryBuilder {
         &self.major_version
     }
     /// <p>The version of an environment template.</p>
-    pub fn minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minor_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of an environment template.</p>
-    pub fn set_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minor_version = input;
         self
     }
@@ -177,18 +159,12 @@ impl EnvironmentTemplateVersionSummaryBuilder {
         &self.minor_version
     }
     /// <p>The recommended minor version of the environment template.</p>
-    pub fn recommended_minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommended_minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommended_minor_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommended minor version of the environment template.</p>
-    pub fn set_recommended_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommended_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommended_minor_version = input;
         self
     }
@@ -202,10 +178,7 @@ impl EnvironmentTemplateVersionSummaryBuilder {
         self
     }
     /// <p>The status of the version of an environment template.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TemplateVersionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -214,18 +187,12 @@ impl EnvironmentTemplateVersionSummaryBuilder {
         &self.status
     }
     /// <p>The status message of the version of an environment template.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message of the version of an environment template.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -267,10 +234,7 @@ impl EnvironmentTemplateVersionSummaryBuilder {
         self
     }
     /// <p>The time when the version of an environment template was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -284,10 +248,7 @@ impl EnvironmentTemplateVersionSummaryBuilder {
         self
     }
     /// <p>The time when the version of an environment template was last modified.</p>
-    pub fn set_last_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_at = input;
         self
     }

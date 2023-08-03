@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribePipelineOutput`](crate::operation::describe_pipeline::DescribePipelineOutput) with field(s):
     ///   - [`pipeline(Option<Pipeline>)`](crate::operation::describe_pipeline::DescribePipelineOutput::pipeline): <p>A <code>Pipeline</code> object that contains information about the pipeline.</p>
     /// - On failure, responds with [`SdkError<DescribePipelineError>`](crate::operation::describe_pipeline::DescribePipelineError)
-    pub fn describe_pipeline(
-        &self,
-    ) -> crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder {
-        crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_pipeline(&self) -> crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder {
+        crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder::new(self.handle.clone())
     }
 }

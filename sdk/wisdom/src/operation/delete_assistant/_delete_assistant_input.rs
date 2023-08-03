@@ -22,9 +22,7 @@ impl DeleteAssistantInput {
 
 /// A builder for [`DeleteAssistantInput`](crate::operation::delete_assistant::DeleteAssistantInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAssistantInputBuilder {
     pub(crate) assistant_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl DeleteAssistantInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAssistantInput`](crate::operation::delete_assistant::DeleteAssistantInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_assistant::DeleteAssistantInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_assistant::DeleteAssistantInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_assistant::DeleteAssistantInput {
             assistant_id: self.assistant_id,
         })

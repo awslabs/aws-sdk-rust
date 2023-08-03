@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for PutAccountSettingOutput {
 }
 impl PutAccountSettingOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountSettingOutput`](crate::operation::put_account_setting::PutAccountSettingOutput).
-    pub fn builder(
-    ) -> crate::operation::put_account_setting::builders::PutAccountSettingOutputBuilder {
+    pub fn builder() -> crate::operation::put_account_setting::builders::PutAccountSettingOutputBuilder {
         crate::operation::put_account_setting::builders::PutAccountSettingOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutAccountSettingOutput`](crate::operation::put_account_setting::PutAccountSettingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccountSettingOutputBuilder {
     pub(crate) setting: ::std::option::Option<crate::types::Setting>,
     _request_id: Option<String>,

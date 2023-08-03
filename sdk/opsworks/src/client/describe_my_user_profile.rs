@@ -6,10 +6,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeMyUserProfileOutput`](crate::operation::describe_my_user_profile::DescribeMyUserProfileOutput) with field(s):
     ///   - [`user_profile(Option<SelfUserProfile>)`](crate::operation::describe_my_user_profile::DescribeMyUserProfileOutput::user_profile): <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
     /// - On failure, responds with [`SdkError<DescribeMyUserProfileError>`](crate::operation::describe_my_user_profile::DescribeMyUserProfileError)
-    pub fn describe_my_user_profile(
-        &self,
-    ) -> crate::operation::describe_my_user_profile::builders::DescribeMyUserProfileFluentBuilder
-    {
+    pub fn describe_my_user_profile(&self) -> crate::operation::describe_my_user_profile::builders::DescribeMyUserProfileFluentBuilder {
         crate::operation::describe_my_user_profile::builders::DescribeMyUserProfileFluentBuilder::new(self.handle.clone())
     }
 }

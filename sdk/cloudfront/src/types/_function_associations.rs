@@ -30,9 +30,7 @@ impl FunctionAssociations {
 
 /// A builder for [`FunctionAssociations`](crate::types::FunctionAssociations).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunctionAssociationsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>>,
@@ -64,17 +62,12 @@ impl FunctionAssociationsBuilder {
         self
     }
     /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`FunctionAssociations`](crate::types::FunctionAssociations).

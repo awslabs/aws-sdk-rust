@@ -29,17 +29,14 @@ impl DescribeBotLocaleInput {
 }
 impl DescribeBotLocaleInput {
     /// Creates a new builder-style object to manufacture [`DescribeBotLocaleInput`](crate::operation::describe_bot_locale::DescribeBotLocaleInput).
-    pub fn builder(
-    ) -> crate::operation::describe_bot_locale::builders::DescribeBotLocaleInputBuilder {
+    pub fn builder() -> crate::operation::describe_bot_locale::builders::DescribeBotLocaleInputBuilder {
         crate::operation::describe_bot_locale::builders::DescribeBotLocaleInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBotLocaleInput`](crate::operation::describe_bot_locale::DescribeBotLocaleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBotLocaleInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl DescribeBotLocaleInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBotLocaleInput`](crate::operation::describe_bot_locale::DescribeBotLocaleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_bot_locale::DescribeBotLocaleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_bot_locale::DescribeBotLocaleInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_bot_locale::DescribeBotLocaleInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_bot_locale::DescribeBotLocaleInput {
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+        })
     }
 }

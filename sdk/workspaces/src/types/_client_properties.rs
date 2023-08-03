@@ -30,9 +30,7 @@ impl ClientProperties {
 
 /// A builder for [`ClientProperties`](crate::types::ClientProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientPropertiesBuilder {
     pub(crate) reconnect_enabled: ::std::option::Option<crate::types::ReconnectEnum>,
     pub(crate) log_upload_enabled: ::std::option::Option<crate::types::LogUploadEnum>,
@@ -44,10 +42,7 @@ impl ClientPropertiesBuilder {
         self
     }
     /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
-    pub fn set_reconnect_enabled(
-        mut self,
-        input: ::std::option::Option<crate::types::ReconnectEnum>,
-    ) -> Self {
+    pub fn set_reconnect_enabled(mut self, input: ::std::option::Option<crate::types::ReconnectEnum>) -> Self {
         self.reconnect_enabled = input;
         self
     }
@@ -61,10 +56,7 @@ impl ClientPropertiesBuilder {
         self
     }
     /// <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces automatically and will be applied to all users in the specified directory.</p>
-    pub fn set_log_upload_enabled(
-        mut self,
-        input: ::std::option::Option<crate::types::LogUploadEnum>,
-    ) -> Self {
+    pub fn set_log_upload_enabled(mut self, input: ::std::option::Option<crate::types::LogUploadEnum>) -> Self {
         self.log_upload_enabled = input;
         self
     }

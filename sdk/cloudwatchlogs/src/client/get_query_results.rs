@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`status(Option<QueryStatus>)`](crate::operation::get_query_results::GetQueryResultsOutput::status): <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and <code>Unknown</code>.</p>  <p>Queries time out after 60 minutes of runtime. To avoid having your queries time out, reduce the time range being searched or partition your query into a number of queries.</p>
     ///   - [`encryption_key(Option<String>)`](crate::operation::get_query_results::GetQueryResultsOutput::encryption_key): <p>If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field displays the ARN of the key that's used to encrypt the query results when <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> stores them.</p>
     /// - On failure, responds with [`SdkError<GetQueryResultsError>`](crate::operation::get_query_results::GetQueryResultsError)
-    pub fn get_query_results(
-        &self,
-    ) -> crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder {
-        crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_query_results(&self) -> crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder {
+        crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::new(self.handle.clone())
     }
 }

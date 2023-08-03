@@ -45,9 +45,7 @@ impl SectionBasedLayoutPaperCanvasSizeOptions {
 
 /// A builder for [`SectionBasedLayoutPaperCanvasSizeOptions`](crate::types::SectionBasedLayoutPaperCanvasSizeOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SectionBasedLayoutPaperCanvasSizeOptionsBuilder {
     pub(crate) paper_size: ::std::option::Option<crate::types::PaperSize>,
     pub(crate) paper_orientation: ::std::option::Option<crate::types::PaperOrientation>,
@@ -82,10 +80,7 @@ impl SectionBasedLayoutPaperCanvasSizeOptionsBuilder {
     /// <li> <p>PORTRAIT</p> </li>
     /// <li> <p>LANDSCAPE</p> </li>
     /// </ul>
-    pub fn set_paper_orientation(
-        mut self,
-        input: ::std::option::Option<crate::types::PaperOrientation>,
-    ) -> Self {
+    pub fn set_paper_orientation(mut self, input: ::std::option::Option<crate::types::PaperOrientation>) -> Self {
         self.paper_orientation = input;
         self
     }

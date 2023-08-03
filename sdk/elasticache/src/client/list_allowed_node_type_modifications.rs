@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`scale_up_modifications(Option<Vec<String>>)`](crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsOutput::scale_up_modifications): <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p>  <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.</p>
     ///   - [`scale_down_modifications(Option<Vec<String>>)`](crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsOutput::scale_down_modifications): <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group. When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
     /// - On failure, responds with [`SdkError<ListAllowedNodeTypeModificationsError>`](crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError)
-    pub fn list_allowed_node_type_modifications(&self) -> crate::operation::list_allowed_node_type_modifications::builders::ListAllowedNodeTypeModificationsFluentBuilder{
+    pub fn list_allowed_node_type_modifications(
+        &self,
+    ) -> crate::operation::list_allowed_node_type_modifications::builders::ListAllowedNodeTypeModificationsFluentBuilder {
         crate::operation::list_allowed_node_type_modifications::builders::ListAllowedNodeTypeModificationsFluentBuilder::new(self.handle.clone())
     }
 }

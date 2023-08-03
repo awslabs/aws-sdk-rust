@@ -30,18 +30,14 @@ impl RemoveTagsFromVaultInput {
 }
 impl RemoveTagsFromVaultInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromVaultInput`](crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput).
-    pub fn builder(
-    ) -> crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultInputBuilder {
-        crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultInputBuilder {
+        crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveTagsFromVaultInput`](crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsFromVaultInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -88,10 +84,7 @@ impl RemoveTagsFromVaultInputBuilder {
         self
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -102,16 +95,12 @@ impl RemoveTagsFromVaultInputBuilder {
     /// Consumes the builder and constructs a [`RemoveTagsFromVaultInput`](crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput {
-                account_id: self.account_id,
-                vault_name: self.vault_name,
-                tag_keys: self.tag_keys,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput {
+            account_id: self.account_id,
+            vault_name: self.vault_name,
+            tag_keys: self.tag_keys,
+        })
     }
 }

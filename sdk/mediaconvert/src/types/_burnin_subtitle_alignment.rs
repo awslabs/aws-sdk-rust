@@ -39,13 +39,7 @@
 /// Specify the alignment of your captions. If no explicit x_position is provided, setting alignment to centered will placethe captions at the bottom center of the output. Similarly, setting a left alignment willalign captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BurninSubtitleAlignment {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for BurninSubtitleAlignment {
             "AUTO" => BurninSubtitleAlignment::Auto,
             "CENTERED" => BurninSubtitleAlignment::Centered,
             "LEFT" => BurninSubtitleAlignment::Left,
-            other => BurninSubtitleAlignment::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BurninSubtitleAlignment::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

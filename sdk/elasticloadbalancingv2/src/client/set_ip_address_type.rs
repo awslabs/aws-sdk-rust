@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`SetIpAddressTypeOutput`](crate::operation::set_ip_address_type::SetIpAddressTypeOutput) with field(s):
     ///   - [`ip_address_type(Option<IpAddressType>)`](crate::operation::set_ip_address_type::SetIpAddressTypeOutput::ip_address_type): <p>The IP address type.</p>
     /// - On failure, responds with [`SdkError<SetIpAddressTypeError>`](crate::operation::set_ip_address_type::SetIpAddressTypeError)
-    pub fn set_ip_address_type(
-        &self,
-    ) -> crate::operation::set_ip_address_type::builders::SetIpAddressTypeFluentBuilder {
-        crate::operation::set_ip_address_type::builders::SetIpAddressTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_ip_address_type(&self) -> crate::operation::set_ip_address_type::builders::SetIpAddressTypeFluentBuilder {
+        crate::operation::set_ip_address_type::builders::SetIpAddressTypeFluentBuilder::new(self.handle.clone())
     }
 }

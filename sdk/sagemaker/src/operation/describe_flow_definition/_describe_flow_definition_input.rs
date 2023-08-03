@@ -15,35 +15,25 @@ impl DescribeFlowDefinitionInput {
 }
 impl DescribeFlowDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeFlowDefinitionInput`](crate::operation::describe_flow_definition::DescribeFlowDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionInputBuilder {
         crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFlowDefinitionInput`](crate::operation::describe_flow_definition::DescribeFlowDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFlowDefinitionInputBuilder {
     pub(crate) flow_definition_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFlowDefinitionInputBuilder {
     /// <p>The name of the flow definition.</p>
-    pub fn flow_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the flow definition.</p>
-    pub fn set_flow_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_definition_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DescribeFlowDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFlowDefinitionInput`](crate::operation::describe_flow_definition::DescribeFlowDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_flow_definition::DescribeFlowDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_flow_definition::DescribeFlowDefinitionInput {
-                flow_definition_name: self.flow_definition_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_flow_definition::DescribeFlowDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_flow_definition::DescribeFlowDefinitionInput {
+            flow_definition_name: self.flow_definition_name,
+        })
     }
 }

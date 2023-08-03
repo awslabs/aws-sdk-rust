@@ -26,7 +26,7 @@ impl ListDeploymentStrategiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDeploymentStrategiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesInputBuilder,
+    inner: crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesInputBuilder,
 }
 impl ListDeploymentStrategiesFluentBuilder {
     /// Creates a new `ListDeploymentStrategies`.
@@ -37,10 +37,7 @@ impl ListDeploymentStrategiesFluentBuilder {
         }
     }
     /// Access the ListDeploymentStrategies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListDeploymentStrategiesFluentBuilder {
             crate::operation::list_deployment_strategies::ListDeploymentStrategies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_strategies::ListDeploymentStrategiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_strategies::ListDeploymentStrategiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListDeploymentStrategiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListDeploymentStrategiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_strategies::ListDeploymentStrategiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_strategies::ListDeploymentStrategiesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListDeploymentStrategiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_strategies::ListDeploymentStrategiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_strategies::ListDeploymentStrategiesError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl ListDeploymentStrategiesFluentBuilder {
             crate::operation::list_deployment_strategies::ListDeploymentStrategies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_strategies::ListDeploymentStrategiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_strategies::ListDeploymentStrategiesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_deployment_strategies::paginator::ListDeploymentStrategiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_deployment_strategies::paginator::ListDeploymentStrategiesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_deployment_strategies::paginator::ListDeploymentStrategiesPaginator {
         crate::operation::list_deployment_strategies::paginator::ListDeploymentStrategiesPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>

@@ -36,18 +36,14 @@ impl ImportSignalCatalogInput {
 }
 impl ImportSignalCatalogInput {
     /// Creates a new builder-style object to manufacture [`ImportSignalCatalogInput`](crate::operation::import_signal_catalog::ImportSignalCatalogInput).
-    pub fn builder(
-    ) -> crate::operation::import_signal_catalog::builders::ImportSignalCatalogInputBuilder {
-        crate::operation::import_signal_catalog::builders::ImportSignalCatalogInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::import_signal_catalog::builders::ImportSignalCatalogInputBuilder {
+        crate::operation::import_signal_catalog::builders::ImportSignalCatalogInputBuilder::default()
     }
 }
 
 /// A builder for [`ImportSignalCatalogInput`](crate::operation::import_signal_catalog::ImportSignalCatalogInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportSignalCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -109,10 +105,7 @@ impl ImportSignalCatalogInputBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the signal catalog.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -123,17 +116,13 @@ impl ImportSignalCatalogInputBuilder {
     /// Consumes the builder and constructs a [`ImportSignalCatalogInput`](crate::operation::import_signal_catalog::ImportSignalCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::import_signal_catalog::ImportSignalCatalogInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::import_signal_catalog::ImportSignalCatalogInput {
-                name: self.name,
-                description: self.description,
-                vss: self.vss,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::import_signal_catalog::ImportSignalCatalogInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::import_signal_catalog::ImportSignalCatalogInput {
+            name: self.name,
+            description: self.description,
+            vss: self.vss,
+            tags: self.tags,
+        })
     }
 }

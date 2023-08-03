@@ -72,9 +72,7 @@ impl VulnerablePackage {
 
 /// A builder for [`VulnerablePackage`](crate::types::VulnerablePackage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VulnerablePackageBuilder {
     pub(crate) arch: ::std::option::Option<::std::string::String>,
     pub(crate) epoch: ::std::option::Option<i32>,
@@ -143,18 +141,12 @@ impl VulnerablePackageBuilder {
         &self.name
     }
     /// <p>The package manager of the vulnerable package.</p>
-    pub fn package_manager(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_manager(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_manager = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The package manager of the vulnerable package.</p>
-    pub fn set_package_manager(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_manager(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_manager = input;
         self
     }
@@ -177,18 +169,12 @@ impl VulnerablePackageBuilder {
         &self.release
     }
     /// <p>The source layer hash of the vulnerable package.</p>
-    pub fn source_layer_hash(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_layer_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_layer_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source layer hash of the vulnerable package.</p>
-    pub fn set_source_layer_hash(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_layer_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_layer_hash = input;
         self
     }

@@ -9,10 +9,7 @@ pub fn ser_start_job_run_input(
     if let Some(var_2) = &input.configuration_overrides {
         #[allow(unused_mut)]
         let mut object_3 = object.key("configurationOverrides").start_object();
-        crate::protocol_serde::shape_configuration_overrides::ser_configuration_overrides(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_configuration_overrides::ser_configuration_overrides(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.execution_role_arn {
@@ -46,10 +43,7 @@ pub fn ser_start_job_run_input(
     if let Some(var_14) = &input.retry_policy_configuration {
         #[allow(unused_mut)]
         let mut object_15 = object.key("retryPolicyConfiguration").start_object();
-        crate::protocol_serde::shape_retry_policy_configuration::ser_retry_policy_configuration(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_retry_policy_configuration::ser_retry_policy_configuration(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.tags {

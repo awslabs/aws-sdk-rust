@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`deployment_wait_type(DeploymentWaitType)`](crate::operation::continue_deployment::builders::ContinueDeploymentFluentBuilder::deployment_wait_type) / [`set_deployment_wait_type(Option<DeploymentWaitType>)`](crate::operation::continue_deployment::builders::ContinueDeploymentFluentBuilder::set_deployment_wait_type): <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
     /// - On success, responds with [`ContinueDeploymentOutput`](crate::operation::continue_deployment::ContinueDeploymentOutput)
     /// - On failure, responds with [`SdkError<ContinueDeploymentError>`](crate::operation::continue_deployment::ContinueDeploymentError)
-    pub fn continue_deployment(
-        &self,
-    ) -> crate::operation::continue_deployment::builders::ContinueDeploymentFluentBuilder {
-        crate::operation::continue_deployment::builders::ContinueDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn continue_deployment(&self) -> crate::operation::continue_deployment::builders::ContinueDeploymentFluentBuilder {
+        crate::operation::continue_deployment::builders::ContinueDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

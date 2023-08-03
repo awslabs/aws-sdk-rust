@@ -73,15 +73,11 @@ impl Deployment {
         self.target_arn.as_deref()
     }
     /// <p>The date and time the depoyment target was created.</p>
-    pub fn target_resource_created_at(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn target_resource_created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.target_resource_created_at.as_ref()
     }
     /// <p>The resource type of the deployment target. It can be an environment, service, service instance, or component.</p>
-    pub fn target_resource_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeploymentTargetResourceType> {
+    pub fn target_resource_type(&self) -> ::std::option::Option<&crate::types::DeploymentTargetResourceType> {
         self.target_resource_type.as_ref()
     }
     /// <p>The name of the environment associated with this deployment.</p>
@@ -143,31 +139,19 @@ impl ::std::fmt::Debug for Deployment {
         formatter.field("id", &self.id);
         formatter.field("arn", &self.arn);
         formatter.field("target_arn", &self.target_arn);
-        formatter.field(
-            "target_resource_created_at",
-            &self.target_resource_created_at,
-        );
+        formatter.field("target_resource_created_at", &self.target_resource_created_at);
         formatter.field("target_resource_type", &self.target_resource_type);
         formatter.field("environment_name", &self.environment_name);
         formatter.field("service_name", &self.service_name);
         formatter.field("service_instance_name", &self.service_instance_name);
         formatter.field("component_name", &self.component_name);
         formatter.field("deployment_status", &self.deployment_status);
-        formatter.field(
-            "deployment_status_message",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("last_modified_at", &self.last_modified_at);
         formatter.field("completed_at", &self.completed_at);
-        formatter.field(
-            "last_attempted_deployment_id",
-            &self.last_attempted_deployment_id,
-        );
-        formatter.field(
-            "last_succeeded_deployment_id",
-            &self.last_succeeded_deployment_id,
-        );
+        formatter.field("last_attempted_deployment_id", &self.last_attempted_deployment_id);
+        formatter.field("last_succeeded_deployment_id", &self.last_succeeded_deployment_id);
         formatter.field("initial_state", &self.initial_state);
         formatter.field("target_state", &self.target_state);
         formatter.finish()
@@ -188,8 +172,7 @@ pub struct DeploymentBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_resource_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) target_resource_type:
-        ::std::option::Option<crate::types::DeploymentTargetResourceType>,
+    pub(crate) target_resource_type: ::std::option::Option<crate::types::DeploymentTargetResourceType>,
     pub(crate) environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_instance_name: ::std::option::Option<::std::string::String>,
@@ -253,54 +236,35 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The date and time the depoyment target was created.</p>
-    pub fn set_target_resource_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_target_resource_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.target_resource_created_at = input;
         self
     }
     /// <p>The date and time the depoyment target was created.</p>
-    pub fn get_target_resource_created_at(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_target_resource_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.target_resource_created_at
     }
     /// <p>The resource type of the deployment target. It can be an environment, service, service instance, or component.</p>
-    pub fn target_resource_type(
-        mut self,
-        input: crate::types::DeploymentTargetResourceType,
-    ) -> Self {
+    pub fn target_resource_type(mut self, input: crate::types::DeploymentTargetResourceType) -> Self {
         self.target_resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource type of the deployment target. It can be an environment, service, service instance, or component.</p>
-    pub fn set_target_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentTargetResourceType>,
-    ) -> Self {
+    pub fn set_target_resource_type(mut self, input: ::std::option::Option<crate::types::DeploymentTargetResourceType>) -> Self {
         self.target_resource_type = input;
         self
     }
     /// <p>The resource type of the deployment target. It can be an environment, service, service instance, or component.</p>
-    pub fn get_target_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentTargetResourceType> {
+    pub fn get_target_resource_type(&self) -> &::std::option::Option<crate::types::DeploymentTargetResourceType> {
         &self.target_resource_type
     }
     /// <p>The name of the environment associated with this deployment.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment associated with this deployment.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -323,18 +287,12 @@ impl DeploymentBuilder {
         &self.service_name
     }
     /// <p>The name of the deployment's service instance.</p>
-    pub fn service_instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the deployment's service instance.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_instance_name = input;
         self
     }
@@ -343,18 +301,12 @@ impl DeploymentBuilder {
         &self.service_instance_name
     }
     /// <p>The name of the component associated with this deployment.</p>
-    pub fn component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component associated with this deployment.</p>
-    pub fn set_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_name = input;
         self
     }
@@ -368,10 +320,7 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The status of the deployment.</p>
-    pub fn set_deployment_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentStatus>,
-    ) -> Self {
+    pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
         self.deployment_status = input;
         self
     }
@@ -380,18 +329,12 @@ impl DeploymentBuilder {
         &self.deployment_status
     }
     /// <p>The deployment status message.</p>
-    pub fn deployment_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment status message.</p>
-    pub fn set_deployment_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_status_message = input;
         self
     }
@@ -405,10 +348,7 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The date and time the deployment was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -422,10 +362,7 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The date and time the deployment was last modified.</p>
-    pub fn set_last_modified_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_at = input;
         self
     }
@@ -439,10 +376,7 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The date and time the deployment was completed.</p>
-    pub fn set_completed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_at = input;
         self
     }
@@ -451,47 +385,31 @@ impl DeploymentBuilder {
         &self.completed_at
     }
     /// <p>The ID of the last attempted deployment.</p>
-    pub fn last_attempted_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_attempted_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_attempted_deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the last attempted deployment.</p>
-    pub fn set_last_attempted_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_attempted_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_attempted_deployment_id = input;
         self
     }
     /// <p>The ID of the last attempted deployment.</p>
-    pub fn get_last_attempted_deployment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_last_attempted_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_attempted_deployment_id
     }
     /// <p>The ID of the last successful deployment.</p>
-    pub fn last_succeeded_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_succeeded_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_succeeded_deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the last successful deployment.</p>
-    pub fn set_last_succeeded_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_succeeded_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_succeeded_deployment_id = input;
         self
     }
     /// <p>The ID of the last successful deployment.</p>
-    pub fn get_last_succeeded_deployment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_last_succeeded_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_succeeded_deployment_id
     }
     /// <p>The initial state of the target resource at the time of the deployment.</p>
@@ -500,10 +418,7 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The initial state of the target resource at the time of the deployment.</p>
-    pub fn set_initial_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentState>,
-    ) -> Self {
+    pub fn set_initial_state(mut self, input: ::std::option::Option<crate::types::DeploymentState>) -> Self {
         self.initial_state = input;
         self
     }
@@ -517,10 +432,7 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The target state of the target resource at the time of the deployment.</p>
-    pub fn set_target_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentState>,
-    ) -> Self {
+    pub fn set_target_state(mut self, input: ::std::option::Option<crate::types::DeploymentState>) -> Self {
         self.target_state = input;
         self
     }
@@ -558,31 +470,19 @@ impl ::std::fmt::Debug for DeploymentBuilder {
         formatter.field("id", &self.id);
         formatter.field("arn", &self.arn);
         formatter.field("target_arn", &self.target_arn);
-        formatter.field(
-            "target_resource_created_at",
-            &self.target_resource_created_at,
-        );
+        formatter.field("target_resource_created_at", &self.target_resource_created_at);
         formatter.field("target_resource_type", &self.target_resource_type);
         formatter.field("environment_name", &self.environment_name);
         formatter.field("service_name", &self.service_name);
         formatter.field("service_instance_name", &self.service_instance_name);
         formatter.field("component_name", &self.component_name);
         formatter.field("deployment_status", &self.deployment_status);
-        formatter.field(
-            "deployment_status_message",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("last_modified_at", &self.last_modified_at);
         formatter.field("completed_at", &self.completed_at);
-        formatter.field(
-            "last_attempted_deployment_id",
-            &self.last_attempted_deployment_id,
-        );
-        formatter.field(
-            "last_succeeded_deployment_id",
-            &self.last_succeeded_deployment_id,
-        );
+        formatter.field("last_attempted_deployment_id", &self.last_attempted_deployment_id);
+        formatter.field("last_succeeded_deployment_id", &self.last_succeeded_deployment_id);
         formatter.field("initial_state", &self.initial_state);
         formatter.field("target_state", &self.target_state);
         formatter.finish()

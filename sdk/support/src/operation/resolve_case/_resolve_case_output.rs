@@ -36,9 +36,7 @@ impl ResolveCaseOutput {
 
 /// A builder for [`ResolveCaseOutput`](crate::operation::resolve_case::ResolveCaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolveCaseOutputBuilder {
     pub(crate) initial_case_status: ::std::option::Option<::std::string::String>,
     pub(crate) final_case_status: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ResolveCaseOutputBuilder {
 }
 impl ResolveCaseOutputBuilder {
     /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
-    pub fn initial_case_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initial_case_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initial_case_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
-    pub fn set_initial_case_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initial_case_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initial_case_status = input;
         self
     }
@@ -66,18 +58,12 @@ impl ResolveCaseOutputBuilder {
         &self.initial_case_status
     }
     /// <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
-    pub fn final_case_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn final_case_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.final_case_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
-    pub fn set_final_case_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_final_case_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.final_case_status = input;
         self
     }

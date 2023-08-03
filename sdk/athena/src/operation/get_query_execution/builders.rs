@@ -10,10 +10,7 @@ impl GetQueryExecutionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_query_execution::GetQueryExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_query_execution::GetQueryExecutionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_query_execution::GetQueryExecutionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_query_execution();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetQueryExecutionFluentBuilder {
         }
     }
     /// Access the GetQueryExecution as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_query_execution::builders::GetQueryExecutionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_query_execution::builders::GetQueryExecutionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetQueryExecutionFluentBuilder {
             crate::operation::get_query_execution::GetQueryExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_query_execution::GetQueryExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_query_execution::GetQueryExecutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetQueryExecutionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetQueryExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_query_execution::GetQueryExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_query_execution::GetQueryExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_query_execution::GetQueryExecutionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetQueryExecutionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_query_execution::GetQueryExecutionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_query_execution::GetQueryExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_query_execution::GetQueryExecutionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetQueryExecutionFluentBuilder {
             crate::operation::get_query_execution::GetQueryExecution,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_query_execution::GetQueryExecutionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_query_execution::GetQueryExecutionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique ID of the query execution.</p>
-    pub fn query_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_execution_id(input.into());
         self
     }
     /// <p>The unique ID of the query execution.</p>
-    pub fn set_query_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_query_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_execution_id(input);
         self
     }

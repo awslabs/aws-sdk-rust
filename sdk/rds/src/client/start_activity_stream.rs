@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`apply_immediately(bool)`](crate::operation::start_activity_stream::StartActivityStreamOutput::apply_immediately): <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
     ///   - [`engine_native_audit_fields_included(Option<bool>)`](crate::operation::start_activity_stream::StartActivityStreamOutput::engine_native_audit_fields_included): <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
     /// - On failure, responds with [`SdkError<StartActivityStreamError>`](crate::operation::start_activity_stream::StartActivityStreamError)
-    pub fn start_activity_stream(
-        &self,
-    ) -> crate::operation::start_activity_stream::builders::StartActivityStreamFluentBuilder {
-        crate::operation::start_activity_stream::builders::StartActivityStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_activity_stream(&self) -> crate::operation::start_activity_stream::builders::StartActivityStreamFluentBuilder {
+        crate::operation::start_activity_stream::builders::StartActivityStreamFluentBuilder::new(self.handle.clone())
     }
 }

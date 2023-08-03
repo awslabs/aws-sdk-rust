@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteInAppTemplateOutput`](crate::operation::delete_in_app_template::DeleteInAppTemplateOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::operation::delete_in_app_template::DeleteInAppTemplateOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<DeleteInAppTemplateError>`](crate::operation::delete_in_app_template::DeleteInAppTemplateError)
-    pub fn delete_in_app_template(
-        &self,
-    ) -> crate::operation::delete_in_app_template::builders::DeleteInAppTemplateFluentBuilder {
-        crate::operation::delete_in_app_template::builders::DeleteInAppTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_in_app_template(&self) -> crate::operation::delete_in_app_template::builders::DeleteInAppTemplateFluentBuilder {
+        crate::operation::delete_in_app_template::builders::DeleteInAppTemplateFluentBuilder::new(self.handle.clone())
     }
 }

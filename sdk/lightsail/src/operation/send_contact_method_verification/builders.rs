@@ -30,7 +30,7 @@ impl SendContactMethodVerificationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendContactMethodVerificationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::send_contact_method_verification::builders::SendContactMethodVerificationInputBuilder,
+    inner: crate::operation::send_contact_method_verification::builders::SendContactMethodVerificationInputBuilder,
 }
 impl SendContactMethodVerificationFluentBuilder {
     /// Creates a new `SendContactMethodVerification`.
@@ -41,7 +41,7 @@ impl SendContactMethodVerificationFluentBuilder {
         }
     }
     /// Access the SendContactMethodVerification as a reference.
-    pub fn as_input(&self) -> &crate::operation::send_contact_method_verification::builders::SendContactMethodVerificationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::send_contact_method_verification::builders::SendContactMethodVerificationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl SendContactMethodVerificationFluentBuilder {
             crate::operation::send_contact_method_verification::SendContactMethodVerification,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_contact_method_verification::SendContactMethodVerificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_contact_method_verification::SendContactMethodVerificationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl SendContactMethodVerificationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl SendContactMethodVerificationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_contact_method_verification::SendContactMethodVerificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_contact_method_verification::SendContactMethodVerificationError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl SendContactMethodVerificationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_contact_method_verification::SendContactMethodVerificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_contact_method_verification::SendContactMethodVerificationError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +109,7 @@ impl SendContactMethodVerificationFluentBuilder {
             crate::operation::send_contact_method_verification::SendContactMethodVerification,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_contact_method_verification::SendContactMethodVerificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_contact_method_verification::SendContactMethodVerificationError>,
     > {
         self.customize_middleware().await
     }
@@ -130,17 +119,12 @@ impl SendContactMethodVerificationFluentBuilder {
         self
     }
     /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactMethodVerificationProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ContactMethodVerificationProtocol>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
     }
     /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
-    pub fn get_protocol(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContactMethodVerificationProtocol> {
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ContactMethodVerificationProtocol> {
         self.inner.get_protocol()
     }
 }

@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DestinationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for DestinationStatus {
             "DISABLING" => DestinationStatus::Disabling,
             "ENABLE_FAILED" => DestinationStatus::EnableFailed,
             "ENABLING" => DestinationStatus::Enabling,
-            other => {
-                DestinationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DestinationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl DestinationStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "DISABLED",
-            "DISABLING",
-            "ENABLE_FAILED",
-            "ENABLING",
-        ]
+        &["ACTIVE", "DISABLED", "DISABLING", "ENABLE_FAILED", "ENABLING"]
     }
 }
 impl ::std::convert::AsRef<str> for DestinationStatus {

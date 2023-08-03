@@ -25,10 +25,7 @@ impl super::Client {
     ///   - [`transcode_profile_name(Option<String>)`](crate::operation::get_playback_configuration::GetPlaybackConfigurationOutput::transcode_profile_name): <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
     ///   - [`video_content_source_url(Option<String>)`](crate::operation::get_playback_configuration::GetPlaybackConfigurationOutput::video_content_source_url): <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
     /// - On failure, responds with [`SdkError<GetPlaybackConfigurationError>`](crate::operation::get_playback_configuration::GetPlaybackConfigurationError)
-    pub fn get_playback_configuration(
-        &self,
-    ) -> crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationFluentBuilder
-    {
+    pub fn get_playback_configuration(&self) -> crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationFluentBuilder {
         crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

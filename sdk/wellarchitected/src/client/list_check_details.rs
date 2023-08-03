@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`check_details(Option<Vec<CheckDetail>>)`](crate::operation::list_check_details::ListCheckDetailsOutput::check_details): <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_check_details::ListCheckDetailsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListCheckDetailsError>`](crate::operation::list_check_details::ListCheckDetailsError)
-    pub fn list_check_details(
-        &self,
-    ) -> crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder {
-        crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_check_details(&self) -> crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder {
+        crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::new(self.handle.clone())
     }
 }

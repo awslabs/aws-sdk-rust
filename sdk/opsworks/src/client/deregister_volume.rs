@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`volume_id(impl ::std::convert::Into<String>)`](crate::operation::deregister_volume::builders::DeregisterVolumeFluentBuilder::volume_id) / [`set_volume_id(Option<String>)`](crate::operation::deregister_volume::builders::DeregisterVolumeFluentBuilder::set_volume_id): <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
     /// - On success, responds with [`DeregisterVolumeOutput`](crate::operation::deregister_volume::DeregisterVolumeOutput)
     /// - On failure, responds with [`SdkError<DeregisterVolumeError>`](crate::operation::deregister_volume::DeregisterVolumeError)
-    pub fn deregister_volume(
-        &self,
-    ) -> crate::operation::deregister_volume::builders::DeregisterVolumeFluentBuilder {
-        crate::operation::deregister_volume::builders::DeregisterVolumeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deregister_volume(&self) -> crate::operation::deregister_volume::builders::DeregisterVolumeFluentBuilder {
+        crate::operation::deregister_volume::builders::DeregisterVolumeFluentBuilder::new(self.handle.clone())
     }
 }

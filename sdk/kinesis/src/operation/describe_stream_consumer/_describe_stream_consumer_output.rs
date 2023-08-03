@@ -10,9 +10,7 @@ pub struct DescribeStreamConsumerOutput {
 }
 impl DescribeStreamConsumerOutput {
     /// <p>An object that represents the details of the consumer.</p>
-    pub fn consumer_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConsumerDescription> {
+    pub fn consumer_description(&self) -> ::std::option::Option<&crate::types::ConsumerDescription> {
         self.consumer_description.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeStreamConsumerOutput {
 }
 impl DescribeStreamConsumerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStreamConsumerOutput`](crate::operation::describe_stream_consumer::DescribeStreamConsumerOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_stream_consumer::builders::DescribeStreamConsumerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_stream_consumer::builders::DescribeStreamConsumerOutputBuilder {
         crate::operation::describe_stream_consumer::builders::DescribeStreamConsumerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStreamConsumerOutput`](crate::operation::describe_stream_consumer::DescribeStreamConsumerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStreamConsumerOutputBuilder {
     pub(crate) consumer_description: ::std::option::Option<crate::types::ConsumerDescription>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl DescribeStreamConsumerOutputBuilder {
         self
     }
     /// <p>An object that represents the details of the consumer.</p>
-    pub fn set_consumer_description(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsumerDescription>,
-    ) -> Self {
+    pub fn set_consumer_description(mut self, input: ::std::option::Option<crate::types::ConsumerDescription>) -> Self {
         self.consumer_description = input;
         self
     }
     /// <p>An object that represents the details of the consumer.</p>
-    pub fn get_consumer_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConsumerDescription> {
+    pub fn get_consumer_description(&self) -> &::std::option::Option<crate::types::ConsumerDescription> {
         &self.consumer_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

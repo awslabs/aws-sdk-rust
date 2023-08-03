@@ -10,10 +10,7 @@ impl ListFeatureGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_feature_groups::ListFeatureGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_feature_groups::ListFeatureGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_feature_groups::ListFeatureGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_feature_groups();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListFeatureGroupsFluentBuilder {
         }
     }
     /// Access the ListFeatureGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_feature_groups::builders::ListFeatureGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_feature_groups::builders::ListFeatureGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListFeatureGroupsFluentBuilder {
             crate::operation::list_feature_groups::ListFeatureGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_feature_groups::ListFeatureGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_feature_groups::ListFeatureGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListFeatureGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListFeatureGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_feature_groups::ListFeatureGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_feature_groups::ListFeatureGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_feature_groups::ListFeatureGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListFeatureGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_feature_groups::ListFeatureGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_feature_groups::ListFeatureGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_feature_groups::ListFeatureGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl ListFeatureGroupsFluentBuilder {
             crate::operation::list_feature_groups::ListFeatureGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_feature_groups::ListFeatureGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_feature_groups::ListFeatureGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -148,39 +126,26 @@ impl ListFeatureGroupsFluentBuilder {
         self
     }
     /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
-    pub fn set_feature_group_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::FeatureGroupStatus>,
-    ) -> Self {
+    pub fn set_feature_group_status_equals(mut self, input: ::std::option::Option<crate::types::FeatureGroupStatus>) -> Self {
         self.inner = self.inner.set_feature_group_status_equals(input);
         self
     }
     /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
-    pub fn get_feature_group_status_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::FeatureGroupStatus> {
+    pub fn get_feature_group_status_equals(&self) -> &::std::option::Option<crate::types::FeatureGroupStatus> {
         self.inner.get_feature_group_status_equals()
     }
     /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
-    pub fn offline_store_status_equals(
-        mut self,
-        input: crate::types::OfflineStoreStatusValue,
-    ) -> Self {
+    pub fn offline_store_status_equals(mut self, input: crate::types::OfflineStoreStatusValue) -> Self {
         self.inner = self.inner.offline_store_status_equals(input);
         self
     }
     /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
-    pub fn set_offline_store_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::OfflineStoreStatusValue>,
-    ) -> Self {
+    pub fn set_offline_store_status_equals(mut self, input: ::std::option::Option<crate::types::OfflineStoreStatusValue>) -> Self {
         self.inner = self.inner.set_offline_store_status_equals(input);
         self
     }
     /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
-    pub fn get_offline_store_status_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::OfflineStoreStatusValue> {
+    pub fn get_offline_store_status_equals(&self) -> &::std::option::Option<crate::types::OfflineStoreStatusValue> {
         self.inner.get_offline_store_status_equals()
     }
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific date and time.</p>
@@ -189,10 +154,7 @@ impl ListFeatureGroupsFluentBuilder {
         self
     }
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific date and time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -206,10 +168,7 @@ impl ListFeatureGroupsFluentBuilder {
         self
     }
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific date and time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -223,10 +182,7 @@ impl ListFeatureGroupsFluentBuilder {
         self
     }
     /// <p>The order in which feature groups are listed.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::FeatureGroupSortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::FeatureGroupSortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
@@ -240,10 +196,7 @@ impl ListFeatureGroupsFluentBuilder {
         self
     }
     /// <p>The value on which the feature group list is sorted.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::FeatureGroupSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::FeatureGroupSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

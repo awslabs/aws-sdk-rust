@@ -22,16 +22,14 @@ impl UpdateWirelessDeviceImportTaskInput {
 }
 impl UpdateWirelessDeviceImportTaskInput {
     /// Creates a new builder-style object to manufacture [`UpdateWirelessDeviceImportTaskInput`](crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskInput).
-    pub fn builder() -> crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskInputBuilder{
+    pub fn builder() -> crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskInputBuilder {
         crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWirelessDeviceImportTaskInput`](crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWirelessDeviceImportTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkUpdateImportInfo>,
@@ -57,10 +55,7 @@ impl UpdateWirelessDeviceImportTaskInputBuilder {
         self
     }
     /// <p>The Sidewalk-related parameters of the import task to be updated.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: ::std::option::Option<crate::types::SidewalkUpdateImportInfo>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkUpdateImportInfo>) -> Self {
         self.sidewalk = input;
         self
     }
@@ -77,11 +72,9 @@ impl UpdateWirelessDeviceImportTaskInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskInput {
-                id: self.id
-                ,
-                sidewalk: self.sidewalk
-                ,
-            }
+                id: self.id,
+                sidewalk: self.sidewalk,
+            },
         )
     }
 }

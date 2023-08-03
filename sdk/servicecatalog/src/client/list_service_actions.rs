@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`service_action_summaries(Option<Vec<ServiceActionSummary>>)`](crate::operation::list_service_actions::ListServiceActionsOutput::service_action_summaries): <p>An object containing information about the service actions associated with the provisioning artifact.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_service_actions::ListServiceActionsOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListServiceActionsError>`](crate::operation::list_service_actions::ListServiceActionsError)
-    pub fn list_service_actions(
-        &self,
-    ) -> crate::operation::list_service_actions::builders::ListServiceActionsFluentBuilder {
-        crate::operation::list_service_actions::builders::ListServiceActionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_service_actions(&self) -> crate::operation::list_service_actions::builders::ListServiceActionsFluentBuilder {
+        crate::operation::list_service_actions::builders::ListServiceActionsFluentBuilder::new(self.handle.clone())
     }
 }

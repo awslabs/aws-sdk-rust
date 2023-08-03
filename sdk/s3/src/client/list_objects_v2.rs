@@ -30,11 +30,7 @@ impl super::Client {
     ///   - [`start_after(Option<String>)`](crate::operation::list_objects_v2::ListObjectsV2Output::start_after): <p>If StartAfter was sent with the request, it is included in the response.</p>
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::list_objects_v2::ListObjectsV2Output::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     /// - On failure, responds with [`SdkError<ListObjectsV2Error>`](crate::operation::list_objects_v2::ListObjectsV2Error)
-    pub fn list_objects_v2(
-        &self,
-    ) -> crate::operation::list_objects_v2::builders::ListObjectsV2FluentBuilder {
-        crate::operation::list_objects_v2::builders::ListObjectsV2FluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_objects_v2(&self) -> crate::operation::list_objects_v2::builders::ListObjectsV2FluentBuilder {
+        crate::operation::list_objects_v2::builders::ListObjectsV2FluentBuilder::new(self.handle.clone())
     }
 }

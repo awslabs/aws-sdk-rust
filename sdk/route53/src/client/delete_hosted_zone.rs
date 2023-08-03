@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteHostedZoneOutput`](crate::operation::delete_hosted_zone::DeleteHostedZoneOutput) with field(s):
     ///   - [`change_info(Option<ChangeInfo>)`](crate::operation::delete_hosted_zone::DeleteHostedZoneOutput::change_info): <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
     /// - On failure, responds with [`SdkError<DeleteHostedZoneError>`](crate::operation::delete_hosted_zone::DeleteHostedZoneError)
-    pub fn delete_hosted_zone(
-        &self,
-    ) -> crate::operation::delete_hosted_zone::builders::DeleteHostedZoneFluentBuilder {
-        crate::operation::delete_hosted_zone::builders::DeleteHostedZoneFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_hosted_zone(&self) -> crate::operation::delete_hosted_zone::builders::DeleteHostedZoneFluentBuilder {
+        crate::operation::delete_hosted_zone::builders::DeleteHostedZoneFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,18 +22,14 @@ impl DeleteInternetGatewayInput {
 }
 impl DeleteInternetGatewayInput {
     /// Creates a new builder-style object to manufacture [`DeleteInternetGatewayInput`](crate::operation::delete_internet_gateway::DeleteInternetGatewayInput).
-    pub fn builder(
-    ) -> crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayInputBuilder {
         crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteInternetGatewayInput`](crate::operation::delete_internet_gateway::DeleteInternetGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteInternetGatewayInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) internet_gateway_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DeleteInternetGatewayInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the internet gateway.</p>
-    pub fn internet_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn internet_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.internet_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the internet gateway.</p>
-    pub fn set_internet_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_internet_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.internet_gateway_id = input;
         self
     }
@@ -76,15 +66,11 @@ impl DeleteInternetGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInternetGatewayInput`](crate::operation::delete_internet_gateway::DeleteInternetGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_internet_gateway::DeleteInternetGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_internet_gateway::DeleteInternetGatewayInput {
-                dry_run: self.dry_run,
-                internet_gateway_id: self.internet_gateway_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_internet_gateway::DeleteInternetGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_internet_gateway::DeleteInternetGatewayInput {
+            dry_run: self.dry_run,
+            internet_gateway_id: self.internet_gateway_id,
+        })
     }
 }

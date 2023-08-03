@@ -38,13 +38,7 @@
 /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AuthenticationStrategy {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for AuthenticationStrategy {
         match s {
             "LDAP" => AuthenticationStrategy::Ldap,
             "SIMPLE" => AuthenticationStrategy::Simple,
-            other => AuthenticationStrategy::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AuthenticationStrategy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

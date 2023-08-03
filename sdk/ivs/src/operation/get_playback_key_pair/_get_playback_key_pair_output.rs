@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetPlaybackKeyPairOutput {
 }
 impl GetPlaybackKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`GetPlaybackKeyPairOutput`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairOutput).
-    pub fn builder(
-    ) -> crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairOutputBuilder {
-        crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairOutputBuilder {
+        crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPlaybackKeyPairOutput`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPlaybackKeyPairOutputBuilder {
     pub(crate) key_pair: ::std::option::Option<crate::types::PlaybackKeyPair>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetPlaybackKeyPairOutputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_key_pair(
-        mut self,
-        input: ::std::option::Option<crate::types::PlaybackKeyPair>,
-    ) -> Self {
+    pub fn set_key_pair(mut self, input: ::std::option::Option<crate::types::PlaybackKeyPair>) -> Self {
         self.key_pair = input;
         self
     }

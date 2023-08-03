@@ -5,8 +5,7 @@
 pub struct ListDatasetExportJobsOutput {
     /// <p>The list of dataset export jobs.</p>
     #[doc(hidden)]
-    pub dataset_export_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatasetExportJobSummary>>,
+    pub dataset_export_jobs: ::std::option::Option<::std::vec::Vec<crate::types::DatasetExportJobSummary>>,
     /// <p>A token for getting the next set of dataset export jobs (if they exist).</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDatasetExportJobsOutput {
 }
 impl ListDatasetExportJobsOutput {
     /// <p>The list of dataset export jobs.</p>
-    pub fn dataset_export_jobs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DatasetExportJobSummary]> {
+    pub fn dataset_export_jobs(&self) -> ::std::option::Option<&[crate::types::DatasetExportJobSummary]> {
         self.dataset_export_jobs.as_deref()
     }
     /// <p>A token for getting the next set of dataset export jobs (if they exist).</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDatasetExportJobsOutput {
 }
 impl ListDatasetExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListDatasetExportJobsOutput`](crate::operation::list_dataset_export_jobs::ListDatasetExportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsOutputBuilder {
         crate::operation::list_dataset_export_jobs::builders::ListDatasetExportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDatasetExportJobsOutput`](crate::operation::list_dataset_export_jobs::ListDatasetExportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetExportJobsOutputBuilder {
-    pub(crate) dataset_export_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatasetExportJobSummary>>,
+    pub(crate) dataset_export_jobs: ::std::option::Option<::std::vec::Vec<crate::types::DatasetExportJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListDatasetExportJobsOutputBuilder {
         self
     }
     /// <p>The list of dataset export jobs.</p>
-    pub fn set_dataset_export_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetExportJobSummary>>,
-    ) -> Self {
+    pub fn set_dataset_export_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetExportJobSummary>>) -> Self {
         self.dataset_export_jobs = input;
         self
     }
     /// <p>The list of dataset export jobs.</p>
-    pub fn get_dataset_export_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetExportJobSummary>> {
+    pub fn get_dataset_export_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetExportJobSummary>> {
         &self.dataset_export_jobs
     }
     /// <p>A token for getting the next set of dataset export jobs (if they exist).</p>

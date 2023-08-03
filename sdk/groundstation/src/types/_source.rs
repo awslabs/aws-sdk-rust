@@ -44,9 +44,7 @@ impl Source {
 
 /// A builder for [`Source`](crate::types::Source).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceBuilder {
     pub(crate) config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
     pub(crate) config_id: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl SourceBuilder {
         self
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn set_config_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigCapabilityType>,
-    ) -> Self {
+    pub fn set_config_type(mut self, input: ::std::option::Option<crate::types::ConfigCapabilityType>) -> Self {
         self.config_type = input;
         self
     }
@@ -91,10 +86,7 @@ impl SourceBuilder {
         self
     }
     /// <p>Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code> </p>
-    pub fn set_config_details(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigDetails>,
-    ) -> Self {
+    pub fn set_config_details(mut self, input: ::std::option::Option<crate::types::ConfigDetails>) -> Self {
         self.config_details = input;
         self
     }
@@ -103,18 +95,12 @@ impl SourceBuilder {
         &self.config_details
     }
     /// <p>Region of a dataflow source.</p>
-    pub fn dataflow_source_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataflow_source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataflow_source_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Region of a dataflow source.</p>
-    pub fn set_dataflow_source_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataflow_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataflow_source_region = input;
         self
     }

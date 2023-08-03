@@ -5,8 +5,7 @@
 pub struct ListContactReferencesOutput {
     /// <p>Information about the flows.</p>
     #[doc(hidden)]
-    pub reference_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReferenceSummary>>,
+    pub reference_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
@@ -16,9 +15,7 @@ pub struct ListContactReferencesOutput {
 }
 impl ListContactReferencesOutput {
     /// <p>Information about the flows.</p>
-    pub fn reference_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReferenceSummary]> {
+    pub fn reference_summary_list(&self) -> ::std::option::Option<&[crate::types::ReferenceSummary]> {
         self.reference_summary_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
@@ -35,21 +32,16 @@ impl ::aws_http::request_id::RequestId for ListContactReferencesOutput {
 }
 impl ListContactReferencesOutput {
     /// Creates a new builder-style object to manufacture [`ListContactReferencesOutput`](crate::operation::list_contact_references::ListContactReferencesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_contact_references::builders::ListContactReferencesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_contact_references::builders::ListContactReferencesOutputBuilder {
         crate::operation::list_contact_references::builders::ListContactReferencesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListContactReferencesOutput`](crate::operation::list_contact_references::ListContactReferencesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactReferencesOutputBuilder {
-    pub(crate) reference_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReferenceSummary>>,
+    pub(crate) reference_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -66,17 +58,12 @@ impl ListContactReferencesOutputBuilder {
         self
     }
     /// <p>Information about the flows.</p>
-    pub fn set_reference_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceSummary>>,
-    ) -> Self {
+    pub fn set_reference_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceSummary>>) -> Self {
         self.reference_summary_list = input;
         self
     }
     /// <p>Information about the flows.</p>
-    pub fn get_reference_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceSummary>> {
+    pub fn get_reference_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceSummary>> {
         &self.reference_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>

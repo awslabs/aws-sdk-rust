@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`OpenInstancePublicPortsOutput`](crate::operation::open_instance_public_ports::OpenInstancePublicPortsOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::open_instance_public_ports::OpenInstancePublicPortsOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<OpenInstancePublicPortsError>`](crate::operation::open_instance_public_ports::OpenInstancePublicPortsError)
-    pub fn open_instance_public_ports(
-        &self,
-    ) -> crate::operation::open_instance_public_ports::builders::OpenInstancePublicPortsFluentBuilder
-    {
+    pub fn open_instance_public_ports(&self) -> crate::operation::open_instance_public_ports::builders::OpenInstancePublicPortsFluentBuilder {
         crate::operation::open_instance_public_ports::builders::OpenInstancePublicPortsFluentBuilder::new(self.handle.clone())
     }
 }

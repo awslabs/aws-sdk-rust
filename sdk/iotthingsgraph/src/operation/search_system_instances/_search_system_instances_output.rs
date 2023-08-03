@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for SearchSystemInstancesOutput {
 }
 impl SearchSystemInstancesOutput {
     /// Creates a new builder-style object to manufacture [`SearchSystemInstancesOutput`](crate::operation::search_system_instances::SearchSystemInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::search_system_instances::builders::SearchSystemInstancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::search_system_instances::builders::SearchSystemInstancesOutputBuilder {
         crate::operation::search_system_instances::builders::SearchSystemInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchSystemInstancesOutput`](crate::operation::search_system_instances::SearchSystemInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchSystemInstancesOutputBuilder {
-    pub(crate) summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceSummary>>,
+    pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl SearchSystemInstancesOutputBuilder {
         self
     }
     /// <p>An array of objects that contain summary data abour the system instances in the result set.</p>
-    pub fn set_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceSummary>>,
-    ) -> Self {
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceSummary>>) -> Self {
         self.summaries = input;
         self
     }
     /// <p>An array of objects that contain summary data abour the system instances in the result set.</p>
-    pub fn get_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemInstanceSummary>> {
         &self.summaries
     }
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>

@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`resource_details(Option<ResourceDetails>)`](crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput::resource_details): <p>The information collected about your storage system's resources. A response can also include Amazon Web Services storage service recommendations.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-findings.html">storage resource information</a> collected by and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">recommendations</a> provided by DataSync Discovery.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput::next_token): <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     /// - On failure, responds with [`SdkError<DescribeStorageSystemResourcesError>`](crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError)
-    pub fn describe_storage_system_resources(&self) -> crate::operation::describe_storage_system_resources::builders::DescribeStorageSystemResourcesFluentBuilder{
+    pub fn describe_storage_system_resources(
+        &self,
+    ) -> crate::operation::describe_storage_system_resources::builders::DescribeStorageSystemResourcesFluentBuilder {
         crate::operation::describe_storage_system_resources::builders::DescribeStorageSystemResourcesFluentBuilder::new(self.handle.clone())
     }
 }

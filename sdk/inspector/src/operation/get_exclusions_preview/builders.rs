@@ -37,9 +37,7 @@ impl GetExclusionsPreviewFluentBuilder {
         }
     }
     /// Access the GetExclusionsPreview as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetExclusionsPreviewFluentBuilder {
             crate::operation::get_exclusions_preview::GetExclusionsPreview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_exclusions_preview::GetExclusionsPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_exclusions_preview::GetExclusionsPreviewError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetExclusionsPreviewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetExclusionsPreviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_exclusions_preview::GetExclusionsPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_exclusions_preview::GetExclusionsPreviewError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetExclusionsPreviewFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_exclusions_preview::GetExclusionsPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_exclusions_preview::GetExclusionsPreviewError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl GetExclusionsPreviewFluentBuilder {
             crate::operation::get_exclusions_preview::GetExclusionsPreview,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_exclusions_preview::GetExclusionsPreviewError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_exclusions_preview::GetExclusionsPreviewError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_exclusions_preview::paginator::GetExclusionsPreviewPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_exclusions_preview::paginator::GetExclusionsPreviewPaginator {
-        crate::operation::get_exclusions_preview::paginator::GetExclusionsPreviewPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_exclusions_preview::paginator::GetExclusionsPreviewPaginator {
+        crate::operation::get_exclusions_preview::paginator::GetExclusionsPreviewPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
-    pub fn assessment_template_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_template_arn(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
-    pub fn set_assessment_template_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_template_arn(input);
         self
     }
@@ -154,18 +130,12 @@ impl GetExclusionsPreviewFluentBuilder {
         self.inner.get_assessment_template_arn()
     }
     /// <p>The unique identifier associated of the exclusions preview.</p>
-    pub fn preview_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preview_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preview_token(input.into());
         self
     }
     /// <p>The unique identifier associated of the exclusions preview.</p>
-    pub fn set_preview_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preview_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preview_token(input);
         self
     }

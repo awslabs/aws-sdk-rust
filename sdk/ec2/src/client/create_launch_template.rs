@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`launch_template(Option<LaunchTemplate>)`](crate::operation::create_launch_template::CreateLaunchTemplateOutput::launch_template): <p>Information about the launch template.</p>
     ///   - [`warning(Option<ValidationWarning>)`](crate::operation::create_launch_template::CreateLaunchTemplateOutput::warning): <p>If the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
     /// - On failure, responds with [`SdkError<CreateLaunchTemplateError>`](crate::operation::create_launch_template::CreateLaunchTemplateError)
-    pub fn create_launch_template(
-        &self,
-    ) -> crate::operation::create_launch_template::builders::CreateLaunchTemplateFluentBuilder {
-        crate::operation::create_launch_template::builders::CreateLaunchTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_launch_template(&self) -> crate::operation::create_launch_template::builders::CreateLaunchTemplateFluentBuilder {
+        crate::operation::create_launch_template::builders::CreateLaunchTemplateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -4,9 +4,7 @@ pub fn ser_describe_query_definitions_input(
     input: &crate::operation::describe_query_definitions::DescribeQueryDefinitionsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.query_definition_name_prefix {
-        object
-            .key("queryDefinitionNamePrefix")
-            .string(var_1.as_str());
+        object.key("queryDefinitionNamePrefix").string(var_1.as_str());
     }
     if let Some(var_2) = &input.max_results {
         object.key("maxResults").number(

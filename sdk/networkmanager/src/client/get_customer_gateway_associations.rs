@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`customer_gateway_associations(Option<Vec<CustomerGatewayAssociation>>)`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput::customer_gateway_associations): <p>The customer gateway associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetCustomerGatewayAssociationsError>`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsError)
-    pub fn get_customer_gateway_associations(&self) -> crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder{
+    pub fn get_customer_gateway_associations(
+        &self,
+    ) -> crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder {
         crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

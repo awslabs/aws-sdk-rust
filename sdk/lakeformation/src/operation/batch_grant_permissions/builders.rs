@@ -37,10 +37,7 @@ impl BatchGrantPermissionsFluentBuilder {
         }
     }
     /// Access the BatchGrantPermissions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl BatchGrantPermissionsFluentBuilder {
             crate::operation::batch_grant_permissions::BatchGrantPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_grant_permissions::BatchGrantPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_grant_permissions::BatchGrantPermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl BatchGrantPermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl BatchGrantPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_grant_permissions::BatchGrantPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_grant_permissions::BatchGrantPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_grant_permissions::BatchGrantPermissionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl BatchGrantPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_grant_permissions::BatchGrantPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_grant_permissions::BatchGrantPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_grant_permissions::BatchGrantPermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl BatchGrantPermissionsFluentBuilder {
             crate::operation::batch_grant_permissions::BatchGrantPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_grant_permissions::BatchGrantPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_grant_permissions::BatchGrantPermissionsError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +133,12 @@ impl BatchGrantPermissionsFluentBuilder {
         self
     }
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>> {
         self.inner.get_entries()
     }
 }

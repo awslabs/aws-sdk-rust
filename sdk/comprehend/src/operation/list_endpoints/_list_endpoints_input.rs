@@ -36,9 +36,7 @@ impl ListEndpointsInput {
 
 /// A builder for [`ListEndpointsInput`](crate::operation::list_endpoints::ListEndpointsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEndpointsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::EndpointFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,10 +49,7 @@ impl ListEndpointsInputBuilder {
         self
     }
     /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EndpointFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -93,10 +88,7 @@ impl ListEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`ListEndpointsInput`](crate::operation::list_endpoints::ListEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_endpoints::ListEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_endpoints::ListEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_endpoints::ListEndpointsInput {
             filter: self.filter,
             next_token: self.next_token,

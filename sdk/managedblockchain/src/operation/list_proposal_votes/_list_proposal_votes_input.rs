@@ -36,17 +36,14 @@ impl ListProposalVotesInput {
 }
 impl ListProposalVotesInput {
     /// Creates a new builder-style object to manufacture [`ListProposalVotesInput`](crate::operation::list_proposal_votes::ListProposalVotesInput).
-    pub fn builder(
-    ) -> crate::operation::list_proposal_votes::builders::ListProposalVotesInputBuilder {
+    pub fn builder() -> crate::operation::list_proposal_votes::builders::ListProposalVotesInputBuilder {
         crate::operation::list_proposal_votes::builders::ListProposalVotesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProposalVotesInput`](crate::operation::list_proposal_votes::ListProposalVotesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProposalVotesInputBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) proposal_id: ::std::option::Option<::std::string::String>,
@@ -113,17 +110,12 @@ impl ListProposalVotesInputBuilder {
     /// Consumes the builder and constructs a [`ListProposalVotesInput`](crate::operation::list_proposal_votes::ListProposalVotesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_proposal_votes::ListProposalVotesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_proposal_votes::ListProposalVotesInput {
-                network_id: self.network_id,
-                proposal_id: self.proposal_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_proposal_votes::ListProposalVotesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_proposal_votes::ListProposalVotesInput {
+            network_id: self.network_id,
+            proposal_id: self.proposal_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

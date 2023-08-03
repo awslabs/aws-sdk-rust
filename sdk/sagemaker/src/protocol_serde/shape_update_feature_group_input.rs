@@ -12,10 +12,7 @@ pub fn ser_update_feature_group_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_feature_definition::ser_feature_definition(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_feature_definition::ser_feature_definition(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -24,10 +21,7 @@ pub fn ser_update_feature_group_input(
     if let Some(var_6) = &input.online_store_config {
         #[allow(unused_mut)]
         let mut object_7 = object.key("OnlineStoreConfig").start_object();
-        crate::protocol_serde::shape_online_store_config_update::ser_online_store_config_update(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_online_store_config_update::ser_online_store_config_update(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())

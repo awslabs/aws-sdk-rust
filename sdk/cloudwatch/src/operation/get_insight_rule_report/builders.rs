@@ -47,10 +47,7 @@ impl GetInsightRuleReportFluentBuilder {
         }
     }
     /// Access the GetInsightRuleReport as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_insight_rule_report::builders::GetInsightRuleReportInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_insight_rule_report::builders::GetInsightRuleReportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +59,7 @@ impl GetInsightRuleReportFluentBuilder {
             crate::operation::get_insight_rule_report::GetInsightRuleReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_rule_report::GetInsightRuleReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_rule_report::GetInsightRuleReportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +69,7 @@ impl GetInsightRuleReportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +78,7 @@ impl GetInsightRuleReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_insight_rule_report::GetInsightRuleReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_rule_report::GetInsightRuleReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_rule_report::GetInsightRuleReportError>,
     > {
         let op = self
             .inner
@@ -111,9 +101,7 @@ impl GetInsightRuleReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_insight_rule_report::GetInsightRuleReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_rule_report::GetInsightRuleReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_rule_report::GetInsightRuleReportError>,
     > {
         self.send_middleware().await
     }
@@ -127,9 +115,7 @@ impl GetInsightRuleReportFluentBuilder {
             crate::operation::get_insight_rule_report::GetInsightRuleReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_insight_rule_report::GetInsightRuleReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_insight_rule_report::GetInsightRuleReportError>,
     > {
         self.customize_middleware().await
     }
@@ -153,10 +139,7 @@ impl GetInsightRuleReportFluentBuilder {
         self
     }
     /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -170,10 +153,7 @@ impl GetInsightRuleReportFluentBuilder {
         self
     }
     /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -237,10 +217,7 @@ impl GetInsightRuleReportFluentBuilder {
     /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
     /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
     /// </ul>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_metrics(input);
         self
     }

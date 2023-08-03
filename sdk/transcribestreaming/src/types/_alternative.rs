@@ -37,9 +37,7 @@ impl Alternative {
 
 /// A builder for [`Alternative`](crate::types::Alternative).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlternativeBuilder {
     pub(crate) transcript: ::std::option::Option<::std::string::String>,
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,
@@ -72,10 +70,7 @@ impl AlternativeBuilder {
         self
     }
     /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Item>>) -> Self {
         self.items = input;
         self
     }
@@ -95,10 +90,7 @@ impl AlternativeBuilder {
         self
     }
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>) -> Self {
         self.entities = input;
         self
     }

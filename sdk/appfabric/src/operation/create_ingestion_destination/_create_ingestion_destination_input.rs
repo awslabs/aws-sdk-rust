@@ -34,15 +34,11 @@ impl CreateIngestionDestinationInput {
         self.ingestion_identifier.as_deref()
     }
     /// <p>Contains information about how ingested data is processed.</p>
-    pub fn processing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>Contains information about the destination of ingested data.</p>
-    pub fn destination_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
+    pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
@@ -58,40 +54,30 @@ impl CreateIngestionDestinationInput {
 }
 impl CreateIngestionDestinationInput {
     /// Creates a new builder-style object to manufacture [`CreateIngestionDestinationInput`](crate::operation::create_ingestion_destination::CreateIngestionDestinationInput).
-    pub fn builder() -> crate::operation::create_ingestion_destination::builders::CreateIngestionDestinationInputBuilder{
+    pub fn builder() -> crate::operation::create_ingestion_destination::builders::CreateIngestionDestinationInputBuilder {
         crate::operation::create_ingestion_destination::builders::CreateIngestionDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateIngestionDestinationInput`](crate::operation::create_ingestion_destination::CreateIngestionDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIngestionDestinationInputBuilder {
     pub(crate) app_bundle_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) processing_configuration:
-        ::std::option::Option<crate::types::ProcessingConfiguration>,
-    pub(crate) destination_configuration:
-        ::std::option::Option<crate::types::DestinationConfiguration>,
+    pub(crate) processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
+    pub(crate) destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateIngestionDestinationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_bundle_identifier = input;
         self
     }
@@ -100,18 +86,12 @@ impl CreateIngestionDestinationInputBuilder {
         &self.app_bundle_identifier
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    pub fn ingestion_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingestion_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    pub fn set_ingestion_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingestion_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ingestion_identifier = input;
         self
     }
@@ -120,47 +100,31 @@ impl CreateIngestionDestinationInputBuilder {
         &self.ingestion_identifier
     }
     /// <p>Contains information about how ingested data is processed.</p>
-    pub fn processing_configuration(
-        mut self,
-        input: crate::types::ProcessingConfiguration,
-    ) -> Self {
+    pub fn processing_configuration(mut self, input: crate::types::ProcessingConfiguration) -> Self {
         self.processing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about how ingested data is processed.</p>
-    pub fn set_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingConfiguration>,
-    ) -> Self {
+    pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
         self.processing_configuration = input;
         self
     }
     /// <p>Contains information about how ingested data is processed.</p>
-    pub fn get_processing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+    pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
         &self.processing_configuration
     }
     /// <p>Contains information about the destination of ingested data.</p>
-    pub fn destination_configuration(
-        mut self,
-        input: crate::types::DestinationConfiguration,
-    ) -> Self {
+    pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the destination of ingested data.</p>
-    pub fn set_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
         self.destination_configuration = input;
         self
     }
     /// <p>Contains information about the destination of ingested data.</p>
-    pub fn get_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfiguration> {
+    pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
         &self.destination_configuration
     }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
@@ -195,10 +159,7 @@ impl CreateIngestionDestinationInputBuilder {
         self
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -213,15 +174,13 @@ impl CreateIngestionDestinationInputBuilder {
         crate::operation::create_ingestion_destination::CreateIngestionDestinationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_ingestion_destination::CreateIngestionDestinationInput {
-                app_bundle_identifier: self.app_bundle_identifier,
-                ingestion_identifier: self.ingestion_identifier,
-                processing_configuration: self.processing_configuration,
-                destination_configuration: self.destination_configuration,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_ingestion_destination::CreateIngestionDestinationInput {
+            app_bundle_identifier: self.app_bundle_identifier,
+            ingestion_identifier: self.ingestion_identifier,
+            processing_configuration: self.processing_configuration,
+            destination_configuration: self.destination_configuration,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }

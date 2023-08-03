@@ -37,16 +37,14 @@ impl CreateEnvironmentMembershipInput {
 }
 impl CreateEnvironmentMembershipInput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentMembershipInput`](crate::operation::create_environment_membership::CreateEnvironmentMembershipInput).
-    pub fn builder() -> crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipInputBuilder{
+    pub fn builder() -> crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipInputBuilder {
         crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEnvironmentMembershipInput`](crate::operation::create_environment_membership::CreateEnvironmentMembershipInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEnvironmentMembershipInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct CreateEnvironmentMembershipInputBuilder {
 }
 impl CreateEnvironmentMembershipInputBuilder {
     /// <p>The ID of the environment that contains the environment member you want to add.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the environment that contains the environment member you want to add.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -101,10 +93,7 @@ impl CreateEnvironmentMembershipInputBuilder {
     /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<crate::types::MemberPermissions>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::MemberPermissions>) -> Self {
         self.permissions = input;
         self
     }
@@ -123,12 +112,10 @@ impl CreateEnvironmentMembershipInputBuilder {
         crate::operation::create_environment_membership::CreateEnvironmentMembershipInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_environment_membership::CreateEnvironmentMembershipInput {
-                environment_id: self.environment_id,
-                user_arn: self.user_arn,
-                permissions: self.permissions,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_environment_membership::CreateEnvironmentMembershipInput {
+            environment_id: self.environment_id,
+            user_arn: self.user_arn,
+            permissions: self.permissions,
+        })
     }
 }

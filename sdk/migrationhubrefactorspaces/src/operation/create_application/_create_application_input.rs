@@ -20,9 +20,7 @@ pub struct CreateApplicationInput {
     pub api_gateway_proxy: ::std::option::Option<crate::types::ApiGatewayProxyInput>,
     /// <p>The tags to assign to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -49,11 +47,7 @@ impl CreateApplicationInput {
         self.api_gateway_proxy.as_ref()
     }
     /// <p>The tags to assign to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -76,8 +70,7 @@ impl ::std::fmt::Debug for CreateApplicationInput {
 }
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn builder() -> crate::operation::create_application::builders::CreateApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_application::builders::CreateApplicationInputBuilder {
         crate::operation::create_application::builders::CreateApplicationInputBuilder::default()
     }
 }
@@ -91,9 +84,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) proxy_type: ::std::option::Option<crate::types::ProxyType>,
     pub(crate) api_gateway_proxy: ::std::option::Option<crate::types::ApiGatewayProxyInput>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateApplicationInputBuilder {
@@ -112,18 +103,12 @@ impl CreateApplicationInputBuilder {
         &self.name
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn environment_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn set_environment_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_identifier = input;
         self
     }
@@ -165,17 +150,12 @@ impl CreateApplicationInputBuilder {
         self
     }
     /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
-    pub fn set_api_gateway_proxy(
-        mut self,
-        input: ::std::option::Option<crate::types::ApiGatewayProxyInput>,
-    ) -> Self {
+    pub fn set_api_gateway_proxy(mut self, input: ::std::option::Option<crate::types::ApiGatewayProxyInput>) -> Self {
         self.api_gateway_proxy = input;
         self
     }
     /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
-    pub fn get_api_gateway_proxy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApiGatewayProxyInput> {
+    pub fn get_api_gateway_proxy(&self) -> &::std::option::Option<crate::types::ApiGatewayProxyInput> {
         &self.api_gateway_proxy
     }
     /// Adds a key-value pair to `tags`.
@@ -183,32 +163,19 @@ impl CreateApplicationInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to assign to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to assign to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to assign to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -228,21 +195,16 @@ impl CreateApplicationInputBuilder {
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_application::CreateApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_application::CreateApplicationInput {
-                name: self.name,
-                environment_identifier: self.environment_identifier,
-                vpc_id: self.vpc_id,
-                proxy_type: self.proxy_type,
-                api_gateway_proxy: self.api_gateway_proxy,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
+            name: self.name,
+            environment_identifier: self.environment_identifier,
+            vpc_id: self.vpc_id,
+            proxy_type: self.proxy_type,
+            api_gateway_proxy: self.api_gateway_proxy,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateApplicationInputBuilder {

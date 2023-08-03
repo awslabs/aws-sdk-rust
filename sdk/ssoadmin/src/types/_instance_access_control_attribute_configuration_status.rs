@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InstanceAccessControlAttributeConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -61,13 +55,9 @@ impl ::std::convert::From<&str> for InstanceAccessControlAttributeConfigurationS
     fn from(s: &str) -> Self {
         match s {
             "CREATION_FAILED" => InstanceAccessControlAttributeConfigurationStatus::CreationFailed,
-            "CREATION_IN_PROGRESS" => {
-                InstanceAccessControlAttributeConfigurationStatus::CreationInProgress
-            }
+            "CREATION_IN_PROGRESS" => InstanceAccessControlAttributeConfigurationStatus::CreationInProgress,
             "ENABLED" => InstanceAccessControlAttributeConfigurationStatus::Enabled,
-            other => InstanceAccessControlAttributeConfigurationStatus::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => InstanceAccessControlAttributeConfigurationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -83,9 +73,7 @@ impl InstanceAccessControlAttributeConfigurationStatus {
     pub fn as_str(&self) -> &str {
         match self {
             InstanceAccessControlAttributeConfigurationStatus::CreationFailed => "CREATION_FAILED",
-            InstanceAccessControlAttributeConfigurationStatus::CreationInProgress => {
-                "CREATION_IN_PROGRESS"
-            }
+            InstanceAccessControlAttributeConfigurationStatus::CreationInProgress => "CREATION_IN_PROGRESS",
             InstanceAccessControlAttributeConfigurationStatus::Enabled => "ENABLED",
             InstanceAccessControlAttributeConfigurationStatus::Unknown(value) => value.as_str(),
         }

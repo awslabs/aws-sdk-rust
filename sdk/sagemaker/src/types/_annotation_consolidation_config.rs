@@ -691,9 +691,7 @@ impl AnnotationConsolidationConfig {
 
 /// A builder for [`AnnotationConsolidationConfig`](crate::types::AnnotationConsolidationConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnnotationConsolidationConfigBuilder {
     pub(crate) annotation_consolidation_lambda_arn: ::std::option::Option<::std::string::String>,
 }
@@ -1033,10 +1031,7 @@ impl AnnotationConsolidationConfigBuilder {
     /// <li> <p> <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// <li> <p> <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
-    pub fn annotation_consolidation_lambda_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn annotation_consolidation_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.annotation_consolidation_lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -1375,10 +1370,7 @@ impl AnnotationConsolidationConfigBuilder {
     /// <li> <p> <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// <li> <p> <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
-    pub fn set_annotation_consolidation_lambda_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_annotation_consolidation_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.annotation_consolidation_lambda_arn = input;
         self
     }
@@ -1717,9 +1709,7 @@ impl AnnotationConsolidationConfigBuilder {
     /// <li> <p> <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// <li> <p> <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
-    pub fn get_annotation_consolidation_lambda_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_annotation_consolidation_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.annotation_consolidation_lambda_arn
     }
     /// Consumes the builder and constructs a [`AnnotationConsolidationConfig`](crate::types::AnnotationConsolidationConfig).

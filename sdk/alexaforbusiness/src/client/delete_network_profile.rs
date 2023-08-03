@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteNetworkProfileOutput`](crate::operation::delete_network_profile::DeleteNetworkProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteNetworkProfileError>`](crate::operation::delete_network_profile::DeleteNetworkProfileError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn delete_network_profile(
-        &self,
-    ) -> crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder {
-        crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_network_profile(&self) -> crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder {
+        crate::operation::delete_network_profile::builders::DeleteNetworkProfileFluentBuilder::new(self.handle.clone())
     }
 }

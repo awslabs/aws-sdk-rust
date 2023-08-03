@@ -23,11 +23,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateHealthCheckOutput`](crate::operation::update_health_check::UpdateHealthCheckOutput) with field(s):
     ///   - [`health_check(Option<HealthCheck>)`](crate::operation::update_health_check::UpdateHealthCheckOutput::health_check): <p>A complex type that contains the response to an <code>UpdateHealthCheck</code> request.</p>
     /// - On failure, responds with [`SdkError<UpdateHealthCheckError>`](crate::operation::update_health_check::UpdateHealthCheckError)
-    pub fn update_health_check(
-        &self,
-    ) -> crate::operation::update_health_check::builders::UpdateHealthCheckFluentBuilder {
-        crate::operation::update_health_check::builders::UpdateHealthCheckFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_health_check(&self) -> crate::operation::update_health_check::builders::UpdateHealthCheckFluentBuilder {
+        crate::operation::update_health_check::builders::UpdateHealthCheckFluentBuilder::new(self.handle.clone())
     }
 }

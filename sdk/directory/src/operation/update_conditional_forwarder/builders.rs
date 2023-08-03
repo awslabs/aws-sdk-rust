@@ -26,7 +26,7 @@ impl UpdateConditionalForwarderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConditionalForwarderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderInputBuilder,
+    inner: crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderInputBuilder,
 }
 impl UpdateConditionalForwarderFluentBuilder {
     /// Creates a new `UpdateConditionalForwarder`.
@@ -37,7 +37,7 @@ impl UpdateConditionalForwarderFluentBuilder {
         }
     }
     /// Access the UpdateConditionalForwarder as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_conditional_forwarder::builders::UpdateConditionalForwarderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateConditionalForwarderFluentBuilder {
             crate::operation::update_conditional_forwarder::UpdateConditionalForwarder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_conditional_forwarder::UpdateConditionalForwarderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_conditional_forwarder::UpdateConditionalForwarderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateConditionalForwarderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateConditionalForwarderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_conditional_forwarder::UpdateConditionalForwarderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_conditional_forwarder::UpdateConditionalForwarderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_conditional_forwarder::UpdateConditionalForwarderError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateConditionalForwarderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_conditional_forwarder::UpdateConditionalForwarderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_conditional_forwarder::UpdateConditionalForwarderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_conditional_forwarder::UpdateConditionalForwarderError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateConditionalForwarderFluentBuilder {
             crate::operation::update_conditional_forwarder::UpdateConditionalForwarder,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_conditional_forwarder::UpdateConditionalForwarderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_conditional_forwarder::UpdateConditionalForwarderError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl UpdateConditionalForwarderFluentBuilder {
         self.inner.get_directory_id()
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
-    pub fn remote_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remote_domain_name(input.into());
         self
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
-    pub fn set_remote_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_remote_domain_name(input);
         self
     }
@@ -164,17 +147,12 @@ impl UpdateConditionalForwarderFluentBuilder {
         self
     }
     /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
-    pub fn set_dns_ip_addrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_ip_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_dns_ip_addrs(input);
         self
     }
     /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
-    pub fn get_dns_ip_addrs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_dns_ip_addrs()
     }
 }

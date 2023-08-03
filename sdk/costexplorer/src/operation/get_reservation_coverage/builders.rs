@@ -52,10 +52,7 @@ impl GetReservationCoverageFluentBuilder {
         }
     }
     /// Access the GetReservationCoverage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_reservation_coverage::builders::GetReservationCoverageInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_reservation_coverage::builders::GetReservationCoverageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -67,9 +64,7 @@ impl GetReservationCoverageFluentBuilder {
             crate::operation::get_reservation_coverage::GetReservationCoverage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reservation_coverage::GetReservationCoverageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reservation_coverage::GetReservationCoverageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -79,10 +74,7 @@ impl GetReservationCoverageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -91,9 +83,7 @@ impl GetReservationCoverageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reservation_coverage::GetReservationCoverageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reservation_coverage::GetReservationCoverageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reservation_coverage::GetReservationCoverageError>,
     > {
         let op = self
             .inner
@@ -116,9 +106,7 @@ impl GetReservationCoverageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reservation_coverage::GetReservationCoverageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reservation_coverage::GetReservationCoverageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reservation_coverage::GetReservationCoverageError>,
     > {
         self.send_middleware().await
     }
@@ -132,9 +120,7 @@ impl GetReservationCoverageFluentBuilder {
             crate::operation::get_reservation_coverage::GetReservationCoverage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_reservation_coverage::GetReservationCoverageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_reservation_coverage::GetReservationCoverageError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +130,7 @@ impl GetReservationCoverageFluentBuilder {
         self
     }
     /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
     }
@@ -191,10 +174,7 @@ impl GetReservationCoverageFluentBuilder {
     /// <li> <p>REGION</p> </li>
     /// <li> <p>TENANCY</p> </li>
     /// </ul>
-    pub fn set_group_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
-    ) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
     }
@@ -212,9 +192,7 @@ impl GetReservationCoverageFluentBuilder {
     /// <li> <p>REGION</p> </li>
     /// <li> <p>TENANCY</p> </li>
     /// </ul>
-    pub fn get_group_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
+    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
         self.inner.get_group_by()
     }
     /// <p>The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
@@ -227,10 +205,7 @@ impl GetReservationCoverageFluentBuilder {
     /// <p>The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
     /// <p>The <code>GetReservationCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn set_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::Granularity>,
-    ) -> Self {
+    pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
         self.inner = self.inner.set_granularity(input);
         self
     }
@@ -317,10 +292,7 @@ impl GetReservationCoverageFluentBuilder {
     }
     /// <p>The measurement that you want your reservation coverage reported in.</p>
     /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_metrics(input);
         self
     }
@@ -330,18 +302,12 @@ impl GetReservationCoverageFluentBuilder {
         self.inner.get_metrics()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }
@@ -383,10 +349,7 @@ impl GetReservationCoverageFluentBuilder {
     /// <li> <p> <code>Time</code> </p> </li>
     /// </ul>
     /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortDefinition>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

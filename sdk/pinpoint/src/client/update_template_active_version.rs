@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateTemplateActiveVersionOutput`](crate::operation::update_template_active_version::UpdateTemplateActiveVersionOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::operation::update_template_active_version::UpdateTemplateActiveVersionOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdateTemplateActiveVersionError>`](crate::operation::update_template_active_version::UpdateTemplateActiveVersionError)
-    pub fn update_template_active_version(&self) -> crate::operation::update_template_active_version::builders::UpdateTemplateActiveVersionFluentBuilder{
+    pub fn update_template_active_version(
+        &self,
+    ) -> crate::operation::update_template_active_version::builders::UpdateTemplateActiveVersionFluentBuilder {
         crate::operation::update_template_active_version::builders::UpdateTemplateActiveVersionFluentBuilder::new(self.handle.clone())
     }
 }

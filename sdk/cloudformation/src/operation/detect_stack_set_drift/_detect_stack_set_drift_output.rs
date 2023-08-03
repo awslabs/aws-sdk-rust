@@ -23,17 +23,14 @@ impl ::aws_http::request_id::RequestId for DetectStackSetDriftOutput {
 }
 impl DetectStackSetDriftOutput {
     /// Creates a new builder-style object to manufacture [`DetectStackSetDriftOutput`](crate::operation::detect_stack_set_drift::DetectStackSetDriftOutput).
-    pub fn builder(
-    ) -> crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftOutputBuilder {
+    pub fn builder() -> crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftOutputBuilder {
         crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetectStackSetDriftOutput`](crate::operation::detect_stack_set_drift::DetectStackSetDriftOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectStackSetDriftOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

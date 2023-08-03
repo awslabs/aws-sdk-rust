@@ -35,9 +35,7 @@ impl UpdateProductOutput {
 
 /// A builder for [`UpdateProductOutput`](crate::operation::update_product::UpdateProductOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProductOutputBuilder {
     pub(crate) product_view_detail: ::std::option::Option<crate::types::ProductViewDetail>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -50,17 +48,12 @@ impl UpdateProductOutputBuilder {
         self
     }
     /// <p>Information about the product view.</p>
-    pub fn set_product_view_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductViewDetail>,
-    ) -> Self {
+    pub fn set_product_view_detail(mut self, input: ::std::option::Option<crate::types::ProductViewDetail>) -> Self {
         self.product_view_detail = input;
         self
     }
     /// <p>Information about the product view.</p>
-    pub fn get_product_view_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProductViewDetail> {
+    pub fn get_product_view_detail(&self) -> &::std::option::Option<crate::types::ProductViewDetail> {
         &self.product_view_detail
     }
     /// Appends an item to `tags`.
@@ -75,10 +68,7 @@ impl UpdateProductOutputBuilder {
         self
     }
     /// <p>Information about the tags associated with the product.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

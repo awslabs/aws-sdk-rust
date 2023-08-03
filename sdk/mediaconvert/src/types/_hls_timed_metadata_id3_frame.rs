@@ -39,13 +39,7 @@
 /// Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps: Specify PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to None.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HlsTimedMetadataId3Frame {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for HlsTimedMetadataId3Frame {
             "NONE" => HlsTimedMetadataId3Frame::None,
             "PRIV" => HlsTimedMetadataId3Frame::Priv,
             "TDRL" => HlsTimedMetadataId3Frame::Tdrl,
-            other => HlsTimedMetadataId3Frame::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => HlsTimedMetadataId3Frame::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -8,9 +8,7 @@ pub struct BatchDeleteConnectionOutput {
     pub succeeded: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
     #[doc(hidden)]
-    pub errors: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ErrorDetail>,
-    >,
+    pub errors: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ErrorDetail>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteConnectionOutput {
@@ -19,11 +17,7 @@ impl BatchDeleteConnectionOutput {
         self.succeeded.as_deref()
     }
     /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
-    pub fn errors(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ErrorDetail>,
-    > {
+    pub fn errors(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ErrorDetail>> {
         self.errors.as_ref()
     }
 }
@@ -34,23 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchDeleteConnectionOutput {
 }
 impl BatchDeleteConnectionOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteConnectionOutput`](crate::operation::batch_delete_connection::BatchDeleteConnectionOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_connection::builders::BatchDeleteConnectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_delete_connection::builders::BatchDeleteConnectionOutputBuilder {
         crate::operation::batch_delete_connection::builders::BatchDeleteConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteConnectionOutput`](crate::operation::batch_delete_connection::BatchDeleteConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteConnectionOutputBuilder {
     pub(crate) succeeded: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) errors: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ErrorDetail>,
-    >,
+    pub(crate) errors: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ErrorDetail>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteConnectionOutputBuilder {
@@ -66,10 +54,7 @@ impl BatchDeleteConnectionOutputBuilder {
         self
     }
     /// <p>A list of names of the connection definitions that were successfully deleted.</p>
-    pub fn set_succeeded(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_succeeded(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.succeeded = input;
         self
     }
@@ -82,32 +67,19 @@ impl BatchDeleteConnectionOutputBuilder {
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
     /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
-    pub fn errors(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ErrorDetail,
-    ) -> Self {
+    pub fn errors(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ErrorDetail) -> Self {
         let mut hash_map = self.errors.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.errors = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ErrorDetail>,
-        >,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ErrorDetail>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ErrorDetail>,
-    > {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ErrorDetail>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

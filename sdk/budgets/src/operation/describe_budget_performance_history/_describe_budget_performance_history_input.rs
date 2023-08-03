@@ -43,16 +43,14 @@ impl DescribeBudgetPerformanceHistoryInput {
 }
 impl DescribeBudgetPerformanceHistoryInput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetPerformanceHistoryInput`](crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryInput).
-    pub fn builder() -> crate::operation::describe_budget_performance_history::builders::DescribeBudgetPerformanceHistoryInputBuilder{
+    pub fn builder() -> crate::operation::describe_budget_performance_history::builders::DescribeBudgetPerformanceHistoryInputBuilder {
         crate::operation::describe_budget_performance_history::builders::DescribeBudgetPerformanceHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBudgetPerformanceHistoryInput`](crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBudgetPerformanceHistoryInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
@@ -95,10 +93,7 @@ impl DescribeBudgetPerformanceHistoryInputBuilder {
         self
     }
     /// <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::TimePeriod>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::TimePeriod>) -> Self {
         self.time_period = input;
         self
     }
@@ -135,20 +130,20 @@ impl DescribeBudgetPerformanceHistoryInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeBudgetPerformanceHistoryInput`](crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryInput {
-                account_id: self.account_id
-                ,
-                budget_name: self.budget_name
-                ,
-                time_period: self.time_period
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                account_id: self.account_id,
+                budget_name: self.budget_name,
+                time_period: self.time_period,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

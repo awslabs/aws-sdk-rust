@@ -15,11 +15,7 @@ impl super::Client {
     /// - On success, responds with [`PutObjectRetentionOutput`](crate::operation::put_object_retention::PutObjectRetentionOutput) with field(s):
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::put_object_retention::PutObjectRetentionOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     /// - On failure, responds with [`SdkError<PutObjectRetentionError>`](crate::operation::put_object_retention::PutObjectRetentionError)
-    pub fn put_object_retention(
-        &self,
-    ) -> crate::operation::put_object_retention::builders::PutObjectRetentionFluentBuilder {
-        crate::operation::put_object_retention::builders::PutObjectRetentionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_object_retention(&self) -> crate::operation::put_object_retention::builders::PutObjectRetentionFluentBuilder {
+        crate::operation::put_object_retention::builders::PutObjectRetentionFluentBuilder::new(self.handle.clone())
     }
 }

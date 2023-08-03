@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`PauseClusterOutput`](crate::operation::pause_cluster::PauseClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::pause_cluster::PauseClusterOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<PauseClusterError>`](crate::operation::pause_cluster::PauseClusterError)
-    pub fn pause_cluster(
-        &self,
-    ) -> crate::operation::pause_cluster::builders::PauseClusterFluentBuilder {
-        crate::operation::pause_cluster::builders::PauseClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn pause_cluster(&self) -> crate::operation::pause_cluster::builders::PauseClusterFluentBuilder {
+        crate::operation::pause_cluster::builders::PauseClusterFluentBuilder::new(self.handle.clone())
     }
 }

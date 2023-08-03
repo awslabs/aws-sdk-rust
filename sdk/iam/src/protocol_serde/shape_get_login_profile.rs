@@ -4,64 +4,49 @@ pub fn de_get_login_profile_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_login_profile::GetLoginProfileOutput,
-    crate::operation::get_login_profile::GetLoginProfileError,
-> {
+) -> std::result::Result<crate::operation::get_login_profile::GetLoginProfileOutput, crate::operation::get_login_profile::GetLoginProfileError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_login_profile::GetLoginProfileError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_login_profile::GetLoginProfileError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::get_login_profile::GetLoginProfileError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::get_login_profile::GetLoginProfileError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => {
-            crate::operation::get_login_profile::GetLoginProfileError::NoSuchEntityException({
+        "NoSuchEntity" => crate::operation::get_login_profile::GetLoginProfileError::NoSuchEntityException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(_response_body, output).map_err(crate::operation::get_login_profile::GetLoginProfileError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceFailure" => {
-            crate::operation::get_login_profile::GetLoginProfileError::ServiceFailureException({
+                let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_login_profile::GetLoginProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFailure" => crate::operation::get_login_profile::GetLoginProfileError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ServiceFailureExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(_response_body, output).map_err(crate::operation::get_login_profile::GetLoginProfileError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::get_login_profile::GetLoginProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::get_login_profile::GetLoginProfileError::generic(generic),
     })
 }
@@ -71,22 +56,13 @@ pub fn de_get_login_profile_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_login_profile::GetLoginProfileOutput,
-    crate::operation::get_login_profile::GetLoginProfileError,
-> {
+) -> std::result::Result<crate::operation::get_login_profile::GetLoginProfileOutput, crate::operation::get_login_profile::GetLoginProfileError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::get_login_profile::builders::GetLoginProfileOutputBuilder::default();
-        output = crate::protocol_serde::shape_get_login_profile::de_get_login_profile(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::get_login_profile::GetLoginProfileError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::get_login_profile::builders::GetLoginProfileOutputBuilder::default();
+        output = crate::protocol_serde::shape_get_login_profile::de_get_login_profile(_response_body, output)
+            .map_err(crate::operation::get_login_profile::GetLoginProfileError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -95,10 +71,7 @@ pub fn de_get_login_profile_http_response_with_props(
 pub fn de_get_login_profile(
     inp: &[u8],
     mut builder: crate::operation::get_login_profile::builders::GetLoginProfileOutputBuilder,
-) -> Result<
-    crate::operation::get_login_profile::builders::GetLoginProfileOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::get_login_profile::builders::GetLoginProfileOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -135,9 +108,7 @@ pub fn de_get_login_profile(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected GetLoginProfileResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected GetLoginProfileResult tag"));
     };
     Ok(builder)
 }

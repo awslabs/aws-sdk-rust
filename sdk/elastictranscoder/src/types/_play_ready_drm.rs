@@ -66,9 +66,7 @@ impl PlayReadyDrm {
 
 /// A builder for [`PlayReadyDrm`](crate::types::PlayReadyDrm).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlayReadyDrmBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -144,18 +142,12 @@ impl PlayReadyDrmBuilder {
         &self.key_id
     }
     /// <p>The series of random bits created by a random bit generator, unique for every encryption operation, that you want Elastic Transcoder to use to encrypt your files. The initialization vector must be base64-encoded, and it must be exactly 8 bytes long before being base64-encoded. If no initialization vector is provided, Elastic Transcoder generates one for you.</p>
-    pub fn initialization_vector(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initialization_vector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initialization_vector = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The series of random bits created by a random bit generator, unique for every encryption operation, that you want Elastic Transcoder to use to encrypt your files. The initialization vector must be base64-encoded, and it must be exactly 8 bytes long before being base64-encoded. If no initialization vector is provided, Elastic Transcoder generates one for you.</p>
-    pub fn set_initialization_vector(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initialization_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initialization_vector = input;
         self
     }
@@ -164,18 +156,12 @@ impl PlayReadyDrmBuilder {
         &self.initialization_vector
     }
     /// <p>The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code> </p>
-    pub fn license_acquisition_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_acquisition_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_acquisition_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code> </p>
-    pub fn set_license_acquisition_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_acquisition_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_acquisition_url = input;
         self
     }

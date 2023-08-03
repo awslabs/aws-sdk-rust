@@ -9,8 +9,7 @@ pub struct DescribeDbClusterParameterGroupsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of cluster parameter groups.</p>
     #[doc(hidden)]
-    pub db_cluster_parameter_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterParameterGroup>>,
+    pub db_cluster_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterParameterGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterParameterGroupsOutput {
@@ -19,9 +18,7 @@ impl DescribeDbClusterParameterGroupsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of cluster parameter groups.</p>
-    pub fn db_cluster_parameter_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DbClusterParameterGroup]> {
+    pub fn db_cluster_parameter_groups(&self) -> ::std::option::Option<&[crate::types::DbClusterParameterGroup]> {
         self.db_cluster_parameter_groups.as_deref()
     }
 }
@@ -32,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeDbClusterParameterGroupsOutpu
 }
 impl DescribeDbClusterParameterGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterParameterGroupsOutput`](crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsOutput).
-    pub fn builder() -> crate::operation::describe_db_cluster_parameter_groups::builders::DescribeDbClusterParameterGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_db_cluster_parameter_groups::builders::DescribeDbClusterParameterGroupsOutputBuilder {
         crate::operation::describe_db_cluster_parameter_groups::builders::DescribeDbClusterParameterGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbClusterParameterGroupsOutput`](crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClusterParameterGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) db_cluster_parameter_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterParameterGroup>>,
+    pub(crate) db_cluster_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterParameterGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterParameterGroupsOutputBuilder {
@@ -68,27 +62,19 @@ impl DescribeDbClusterParameterGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_db_cluster_parameter_groups`](Self::set_db_cluster_parameter_groups).
     ///
     /// <p>A list of cluster parameter groups.</p>
-    pub fn db_cluster_parameter_groups(
-        mut self,
-        input: crate::types::DbClusterParameterGroup,
-    ) -> Self {
+    pub fn db_cluster_parameter_groups(mut self, input: crate::types::DbClusterParameterGroup) -> Self {
         let mut v = self.db_cluster_parameter_groups.unwrap_or_default();
         v.push(input);
         self.db_cluster_parameter_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of cluster parameter groups.</p>
-    pub fn set_db_cluster_parameter_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterParameterGroup>>,
-    ) -> Self {
+    pub fn set_db_cluster_parameter_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterParameterGroup>>) -> Self {
         self.db_cluster_parameter_groups = input;
         self
     }
     /// <p>A list of cluster parameter groups.</p>
-    pub fn get_db_cluster_parameter_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterParameterGroup>> {
+    pub fn get_db_cluster_parameter_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterParameterGroup>> {
         &self.db_cluster_parameter_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -101,12 +87,10 @@ impl DescribeDbClusterParameterGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDbClusterParameterGroupsOutput`](crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsOutput).
-    pub fn build(self) -> crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsOutput{
+    pub fn build(self) -> crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsOutput {
         crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsOutput {
-            marker: self.marker
-            ,
-            db_cluster_parameter_groups: self.db_cluster_parameter_groups
-            ,
+            marker: self.marker,
+            db_cluster_parameter_groups: self.db_cluster_parameter_groups,
             _request_id: self._request_id,
         }
     }

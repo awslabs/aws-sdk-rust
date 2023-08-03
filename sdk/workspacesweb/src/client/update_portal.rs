@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdatePortalOutput`](crate::operation::update_portal::UpdatePortalOutput) with field(s):
     ///   - [`portal(Option<Portal>)`](crate::operation::update_portal::UpdatePortalOutput::portal): <p>The web portal.</p>
     /// - On failure, responds with [`SdkError<UpdatePortalError>`](crate::operation::update_portal::UpdatePortalError)
-    pub fn update_portal(
-        &self,
-    ) -> crate::operation::update_portal::builders::UpdatePortalFluentBuilder {
-        crate::operation::update_portal::builders::UpdatePortalFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_portal(&self) -> crate::operation::update_portal::builders::UpdatePortalFluentBuilder {
+        crate::operation::update_portal::builders::UpdatePortalFluentBuilder::new(self.handle.clone())
     }
 }

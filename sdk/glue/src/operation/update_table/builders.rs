@@ -10,10 +10,7 @@ impl UpdateTableInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_table::UpdateTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_table::UpdateTableError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table::UpdateTableError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_table();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateTableFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_table::UpdateTable,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_table::UpdateTable, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_table::UpdateTableError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateTableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateTableFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_table::UpdateTable,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_table::UpdateTable, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_table::UpdateTableError>,
     > {
         self.customize_middleware().await
@@ -127,18 +115,12 @@ impl UpdateTableFluentBuilder {
         self.inner.get_catalog_id()
     }
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
@@ -152,10 +134,7 @@ impl UpdateTableFluentBuilder {
         self
     }
     /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
-    pub fn set_table_input(
-        mut self,
-        input: ::std::option::Option<crate::types::TableInput>,
-    ) -> Self {
+    pub fn set_table_input(mut self, input: ::std::option::Option<crate::types::TableInput>) -> Self {
         self.inner = self.inner.set_table_input(input);
         self
     }
@@ -178,18 +157,12 @@ impl UpdateTableFluentBuilder {
         self.inner.get_skip_archive()
     }
     /// <p>The transaction ID at which to update the table contents. </p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
     /// <p>The transaction ID at which to update the table contents. </p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }

@@ -37,9 +37,7 @@ impl ComputeResponse {
 
 /// A builder for [`ComputeResponse`](crate::types::ComputeResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComputeResponseBuilder {
     pub(crate) simulation_unit_limit: ::std::option::Option<i32>,
     pub(crate) compute_type: ::std::option::Option<crate::types::ComputeType>,
@@ -66,10 +64,7 @@ impl ComputeResponseBuilder {
         self
     }
     /// <p>Compute type response information for the simulation job.</p>
-    pub fn set_compute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ComputeType>,
-    ) -> Self {
+    pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.compute_type = input;
         self
     }

@@ -5,8 +5,7 @@
 pub struct ListTypedLinkFacetAttributesOutput {
     /// <p>An ordered set of attributes associate with the typed link.</p>
     #[doc(hidden)]
-    pub attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListTypedLinkFacetAttributesOutput {
 }
 impl ListTypedLinkFacetAttributesOutput {
     /// <p>An ordered set of attributes associate with the typed link.</p>
-    pub fn attributes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TypedLinkAttributeDefinition]> {
+    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::TypedLinkAttributeDefinition]> {
         self.attributes.as_deref()
     }
     /// <p>The pagination token.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTypedLinkFacetAttributesOutput {
 }
 impl ListTypedLinkFacetAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ListTypedLinkFacetAttributesOutput`](crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput).
-    pub fn builder() -> crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesOutputBuilder {
         crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTypedLinkFacetAttributesOutput`](crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTypedLinkFacetAttributesOutputBuilder {
-    pub(crate) attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListTypedLinkFacetAttributesOutputBuilder {
         self
     }
     /// <p>An ordered set of attributes associate with the typed link.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>An ordered set of attributes associate with the typed link.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>> {
         &self.attributes
     }
     /// <p>The pagination token.</p>
@@ -97,10 +86,7 @@ impl ListTypedLinkFacetAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTypedLinkFacetAttributesOutput`](crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput
-    {
+    pub fn build(self) -> crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput {
         crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput {
             attributes: self.attributes,
             next_token: self.next_token,

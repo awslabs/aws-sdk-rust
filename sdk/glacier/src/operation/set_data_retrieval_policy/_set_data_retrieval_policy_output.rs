@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for SetDataRetrievalPolicyOutput {
 }
 impl SetDataRetrievalPolicyOutput {
     /// Creates a new builder-style object to manufacture [`SetDataRetrievalPolicyOutput`](crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::set_data_retrieval_policy::builders::SetDataRetrievalPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_data_retrieval_policy::builders::SetDataRetrievalPolicyOutputBuilder {
         crate::operation::set_data_retrieval_policy::builders::SetDataRetrievalPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetDataRetrievalPolicyOutput`](crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetDataRetrievalPolicyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl SetDataRetrievalPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetDataRetrievalPolicyOutput`](crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyOutput {
+    pub fn build(self) -> crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyOutput {
         crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyOutput {
             _request_id: self._request_id,
         }

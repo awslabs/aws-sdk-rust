@@ -10,10 +10,7 @@ impl ExecuteSqlInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::execute_sql::ExecuteSqlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_sql::ExecuteSqlError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_sql::ExecuteSqlError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.execute_sql();
         fluent_builder.inner = self;
@@ -25,10 +22,7 @@ impl ExecuteSqlInputBuilder {
 /// <p>Runs one or more SQL statements.</p> <note>
 /// <p>This operation is deprecated. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation.</p>
 /// </note>
-#[deprecated(
-    note = "The ExecuteSql API is deprecated, please use the ExecuteStatement API.",
-    since = "2019-03-21"
-)]
+#[deprecated(note = "The ExecuteSql API is deprecated, please use the ExecuteStatement API.", since = "2019-03-21")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExecuteSqlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -51,10 +45,7 @@ impl ExecuteSqlFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::execute_sql::ExecuteSql,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::execute_sql::ExecuteSql, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::execute_sql::ExecuteSqlError>,
     > {
         let handle = self.handle.clone();
@@ -65,10 +56,7 @@ impl ExecuteSqlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -110,27 +98,18 @@ impl ExecuteSqlFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::execute_sql::ExecuteSql,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::execute_sql::ExecuteSql, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::execute_sql::ExecuteSqlError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the Aurora Serverless DB cluster.</p>
-    pub fn db_cluster_or_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_or_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_or_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the Aurora Serverless DB cluster.</p>
-    pub fn set_db_cluster_or_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_or_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_or_instance_arn(input);
         self
     }
@@ -140,19 +119,13 @@ impl ExecuteSqlFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    pub fn aws_secret_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_secret_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_secret_store_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    pub fn set_aws_secret_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_secret_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_secret_store_arn(input);
         self
     }
@@ -163,19 +136,13 @@ impl ExecuteSqlFluentBuilder {
     }
     /// <p>One or more SQL statements to run on the DB cluster.</p>
     /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
-    pub fn sql_statements(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sql_statements(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sql_statements(input.into());
         self
     }
     /// <p>One or more SQL statements to run on the DB cluster.</p>
     /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
-    pub fn set_sql_statements(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sql_statements(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sql_statements(input);
         self
     }

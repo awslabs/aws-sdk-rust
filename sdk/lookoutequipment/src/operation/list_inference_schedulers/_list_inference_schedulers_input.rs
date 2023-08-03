@@ -43,18 +43,14 @@ impl ListInferenceSchedulersInput {
 }
 impl ListInferenceSchedulersInput {
     /// Creates a new builder-style object to manufacture [`ListInferenceSchedulersInput`](crate::operation::list_inference_schedulers::ListInferenceSchedulersInput).
-    pub fn builder(
-    ) -> crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersInputBuilder {
         crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInferenceSchedulersInput`](crate::operation::list_inference_schedulers::ListInferenceSchedulersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInferenceSchedulersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -92,25 +88,17 @@ impl ListInferenceSchedulersInputBuilder {
         &self.max_results
     }
     /// <p>The beginning of the name of the inference schedulers to be listed. </p>
-    pub fn inference_scheduler_name_begins_with(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name_begins_with = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The beginning of the name of the inference schedulers to be listed. </p>
-    pub fn set_inference_scheduler_name_begins_with(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_name_begins_with = input;
         self
     }
     /// <p>The beginning of the name of the inference schedulers to be listed. </p>
-    pub fn get_inference_scheduler_name_begins_with(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_inference_scheduler_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_scheduler_name_begins_with
     }
     /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
@@ -133,10 +121,7 @@ impl ListInferenceSchedulersInputBuilder {
         self
     }
     /// <p>Specifies the current status of the inference schedulers to list.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::InferenceSchedulerStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::InferenceSchedulerStatus>) -> Self {
         self.status = input;
         self
     }
@@ -151,14 +136,12 @@ impl ListInferenceSchedulersInputBuilder {
         crate::operation::list_inference_schedulers::ListInferenceSchedulersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_inference_schedulers::ListInferenceSchedulersInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                inference_scheduler_name_begins_with: self.inference_scheduler_name_begins_with,
-                model_name: self.model_name,
-                status: self.status,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_inference_schedulers::ListInferenceSchedulersInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            inference_scheduler_name_begins_with: self.inference_scheduler_name_begins_with,
+            model_name: self.model_name,
+            status: self.status,
+        })
     }
 }

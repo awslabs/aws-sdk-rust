@@ -23,9 +23,7 @@ impl Phase2EncryptionAlgorithmsRequestListValue {
 
 /// A builder for [`Phase2EncryptionAlgorithmsRequestListValue`](crate::types::Phase2EncryptionAlgorithmsRequestListValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Phase2EncryptionAlgorithmsRequestListValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }

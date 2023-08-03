@@ -56,16 +56,14 @@ impl ::aws_http::request_id::RequestId for GenerateBackendApiModelsOutput {
 }
 impl GenerateBackendApiModelsOutput {
     /// Creates a new builder-style object to manufacture [`GenerateBackendApiModelsOutput`](crate::operation::generate_backend_api_models::GenerateBackendApiModelsOutput).
-    pub fn builder() -> crate::operation::generate_backend_api_models::builders::GenerateBackendApiModelsOutputBuilder{
+    pub fn builder() -> crate::operation::generate_backend_api_models::builders::GenerateBackendApiModelsOutputBuilder {
         crate::operation::generate_backend_api_models::builders::GenerateBackendApiModelsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GenerateBackendApiModelsOutput`](crate::operation::generate_backend_api_models::GenerateBackendApiModelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GenerateBackendApiModelsOutputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,
@@ -91,18 +89,12 @@ impl GenerateBackendApiModelsOutputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backend_environment_name = input;
         self
     }
@@ -176,9 +168,7 @@ impl GenerateBackendApiModelsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GenerateBackendApiModelsOutput`](crate::operation::generate_backend_api_models::GenerateBackendApiModelsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::generate_backend_api_models::GenerateBackendApiModelsOutput {
+    pub fn build(self) -> crate::operation::generate_backend_api_models::GenerateBackendApiModelsOutput {
         crate::operation::generate_backend_api_models::GenerateBackendApiModelsOutput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

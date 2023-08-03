@@ -35,9 +35,7 @@ impl BatchGetImageOutput {
 
 /// A builder for [`BatchGetImageOutput`](crate::operation::batch_get_image::BatchGetImageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetImageOutputBuilder {
     pub(crate) images: ::std::option::Option<::std::vec::Vec<crate::types::Image>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::ImageFailure>>,
@@ -56,10 +54,7 @@ impl BatchGetImageOutputBuilder {
         self
     }
     /// <p>A list of image objects corresponding to the image references in the request.</p>
-    pub fn set_images(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Image>>,
-    ) -> Self {
+    pub fn set_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Image>>) -> Self {
         self.images = input;
         self
     }
@@ -79,17 +74,12 @@ impl BatchGetImageOutputBuilder {
         self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageFailure>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageFailure>>) -> Self {
         self.failures = input;
         self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn get_failures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageFailure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageFailure>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

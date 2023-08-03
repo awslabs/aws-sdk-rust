@@ -12,10 +12,7 @@ pub fn ser_update_related_items_input(
     if let Some(var_3) = &input.related_items_update {
         #[allow(unused_mut)]
         let mut object_4 = object.key("relatedItemsUpdate").start_object();
-        crate::protocol_serde::shape_related_items_update::ser_related_items_update(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_related_items_update::ser_related_items_update(&mut object_4, var_3)?;
         object_4.finish();
     }
     Ok(())

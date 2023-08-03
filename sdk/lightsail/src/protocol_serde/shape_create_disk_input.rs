@@ -33,10 +33,7 @@ pub fn ser_create_disk_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_add_on_request::ser_add_on_request(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_add_on_request::ser_add_on_request(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }

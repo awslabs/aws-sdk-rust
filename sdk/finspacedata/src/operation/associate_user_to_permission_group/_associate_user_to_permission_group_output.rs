@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for AssociateUserToPermissionGroupOutput 
 }
 impl AssociateUserToPermissionGroupOutput {
     /// Creates a new builder-style object to manufacture [`AssociateUserToPermissionGroupOutput`](crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput).
-    pub fn builder() -> crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupOutputBuilder{
+    pub fn builder() -> crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupOutputBuilder {
         crate::operation::associate_user_to_permission_group::builders::AssociateUserToPermissionGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateUserToPermissionGroupOutput`](crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateUserToPermissionGroupOutputBuilder {
     pub(crate) status_code: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -60,10 +58,7 @@ impl AssociateUserToPermissionGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateUserToPermissionGroupOutput`](crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput
-    {
+    pub fn build(self) -> crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput {
         crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput {
             status_code: self.status_code.unwrap_or_default(),
             _request_id: self._request_id,

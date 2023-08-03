@@ -27,8 +27,7 @@ impl ListUserHierarchyGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListUserHierarchyGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsInputBuilder,
+    inner: crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsInputBuilder,
 }
 impl ListUserHierarchyGroupsFluentBuilder {
     /// Creates a new `ListUserHierarchyGroups`.
@@ -39,10 +38,7 @@ impl ListUserHierarchyGroupsFluentBuilder {
         }
     }
     /// Access the ListUserHierarchyGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl ListUserHierarchyGroupsFluentBuilder {
             crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl ListUserHierarchyGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl ListUserHierarchyGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl ListUserHierarchyGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -119,19 +106,14 @@ impl ListUserHierarchyGroupsFluentBuilder {
             crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_user_hierarchy_groups::paginator::ListUserHierarchyGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_user_hierarchy_groups::paginator::ListUserHierarchyGroupsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_user_hierarchy_groups::paginator::ListUserHierarchyGroupsPaginator {
         crate::operation::list_user_hierarchy_groups::paginator::ListUserHierarchyGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>

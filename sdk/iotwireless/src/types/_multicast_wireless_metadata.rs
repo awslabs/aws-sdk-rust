@@ -23,9 +23,7 @@ impl MulticastWirelessMetadata {
 
 /// A builder for [`MulticastWirelessMetadata`](crate::types::MulticastWirelessMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MulticastWirelessMetadataBuilder {
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanMulticastMetadata>,
 }
@@ -36,10 +34,7 @@ impl MulticastWirelessMetadataBuilder {
         self
     }
     /// <p>The metadata information of the LoRaWAN multicast group.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanMulticastMetadata>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanMulticastMetadata>) -> Self {
         self.lo_ra_wan = input;
         self
     }
@@ -49,8 +44,6 @@ impl MulticastWirelessMetadataBuilder {
     }
     /// Consumes the builder and constructs a [`MulticastWirelessMetadata`](crate::types::MulticastWirelessMetadata).
     pub fn build(self) -> crate::types::MulticastWirelessMetadata {
-        crate::types::MulticastWirelessMetadata {
-            lo_ra_wan: self.lo_ra_wan,
-        }
+        crate::types::MulticastWirelessMetadata { lo_ra_wan: self.lo_ra_wan }
     }
 }

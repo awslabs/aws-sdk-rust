@@ -21,15 +21,13 @@ pub struct ServerDetail {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p> A list of anti-pattern severity summaries. </p>
     #[doc(hidden)]
-    pub list_antipattern_severity_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
+    pub list_antipattern_severity_summary: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
     /// <p> System information about the server. </p>
     #[doc(hidden)]
     pub system_info: ::std::option::Option<crate::types::SystemInfo>,
     /// <p> A list of strategy summaries. </p>
     #[doc(hidden)]
-    pub application_component_strategy_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
+    pub application_component_strategy_summary: ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
     /// <p> The S3 bucket name and Amazon S3 key name for anti-pattern report. </p>
     #[doc(hidden)]
     pub antipattern_report_s3_object: ::std::option::Option<crate::types::S3Object>,
@@ -63,9 +61,7 @@ impl ServerDetail {
         self.recommendation_set.as_ref()
     }
     /// <p> The status of assessment for the server. </p>
-    pub fn data_collection_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RunTimeAssessmentStatus> {
+    pub fn data_collection_status(&self) -> ::std::option::Option<&crate::types::RunTimeAssessmentStatus> {
         self.data_collection_status.as_ref()
     }
     /// <p> A message about the status of data collection, which contains detailed descriptions of any error messages. </p>
@@ -73,9 +69,7 @@ impl ServerDetail {
         self.status_message.as_deref()
     }
     /// <p> A list of anti-pattern severity summaries. </p>
-    pub fn list_antipattern_severity_summary(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AntipatternSeveritySummary]> {
+    pub fn list_antipattern_severity_summary(&self) -> ::std::option::Option<&[crate::types::AntipatternSeveritySummary]> {
         self.list_antipattern_severity_summary.as_deref()
     }
     /// <p> System information about the server. </p>
@@ -83,9 +77,7 @@ impl ServerDetail {
         self.system_info.as_ref()
     }
     /// <p> A list of strategy summaries. </p>
-    pub fn application_component_strategy_summary(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StrategySummary]> {
+    pub fn application_component_strategy_summary(&self) -> ::std::option::Option<&[crate::types::StrategySummary]> {
         self.application_component_strategy_summary.as_deref()
     }
     /// <p> The S3 bucket name and Amazon S3 key name for anti-pattern report. </p>
@@ -93,9 +85,7 @@ impl ServerDetail {
         self.antipattern_report_s3_object.as_ref()
     }
     /// <p> The status of the anti-pattern report generation. </p>
-    pub fn antipattern_report_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AntipatternReportStatus> {
+    pub fn antipattern_report_status(&self) -> ::std::option::Option<&crate::types::AntipatternReportStatus> {
         self.antipattern_report_status.as_ref()
     }
     /// <p> A message about the status of the anti-pattern report generation. </p>
@@ -124,23 +114,18 @@ impl ServerDetail {
 
 /// A builder for [`ServerDetail`](crate::types::ServerDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServerDetailBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_set: ::std::option::Option<crate::types::RecommendationSet>,
     pub(crate) data_collection_status: ::std::option::Option<crate::types::RunTimeAssessmentStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
-    pub(crate) list_antipattern_severity_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
+    pub(crate) list_antipattern_severity_summary: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
     pub(crate) system_info: ::std::option::Option<crate::types::SystemInfo>,
-    pub(crate) application_component_strategy_summary:
-        ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
+    pub(crate) application_component_strategy_summary: ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
     pub(crate) antipattern_report_s3_object: ::std::option::Option<crate::types::S3Object>,
-    pub(crate) antipattern_report_status:
-        ::std::option::Option<crate::types::AntipatternReportStatus>,
+    pub(crate) antipattern_report_status: ::std::option::Option<crate::types::AntipatternReportStatus>,
     pub(crate) antipattern_report_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) server_type: ::std::option::Option<::std::string::String>,
     pub(crate) last_analyzed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -181,17 +166,12 @@ impl ServerDetailBuilder {
         self
     }
     /// <p> A set of recommendations. </p>
-    pub fn set_recommendation_set(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationSet>,
-    ) -> Self {
+    pub fn set_recommendation_set(mut self, input: ::std::option::Option<crate::types::RecommendationSet>) -> Self {
         self.recommendation_set = input;
         self
     }
     /// <p> A set of recommendations. </p>
-    pub fn get_recommendation_set(
-        &self,
-    ) -> &::std::option::Option<crate::types::RecommendationSet> {
+    pub fn get_recommendation_set(&self) -> &::std::option::Option<crate::types::RecommendationSet> {
         &self.recommendation_set
     }
     /// <p> The status of assessment for the server. </p>
@@ -200,32 +180,21 @@ impl ServerDetailBuilder {
         self
     }
     /// <p> The status of assessment for the server. </p>
-    pub fn set_data_collection_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RunTimeAssessmentStatus>,
-    ) -> Self {
+    pub fn set_data_collection_status(mut self, input: ::std::option::Option<crate::types::RunTimeAssessmentStatus>) -> Self {
         self.data_collection_status = input;
         self
     }
     /// <p> The status of assessment for the server. </p>
-    pub fn get_data_collection_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::RunTimeAssessmentStatus> {
+    pub fn get_data_collection_status(&self) -> &::std::option::Option<crate::types::RunTimeAssessmentStatus> {
         &self.data_collection_status
     }
     /// <p> A message about the status of data collection, which contains detailed descriptions of any error messages. </p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A message about the status of data collection, which contains detailed descriptions of any error messages. </p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -238,10 +207,7 @@ impl ServerDetailBuilder {
     /// To override the contents of this collection use [`set_list_antipattern_severity_summary`](Self::set_list_antipattern_severity_summary).
     ///
     /// <p> A list of anti-pattern severity summaries. </p>
-    pub fn list_antipattern_severity_summary(
-        mut self,
-        input: crate::types::AntipatternSeveritySummary,
-    ) -> Self {
+    pub fn list_antipattern_severity_summary(mut self, input: crate::types::AntipatternSeveritySummary) -> Self {
         let mut v = self.list_antipattern_severity_summary.unwrap_or_default();
         v.push(input);
         self.list_antipattern_severity_summary = ::std::option::Option::Some(v);
@@ -256,9 +222,7 @@ impl ServerDetailBuilder {
         self
     }
     /// <p> A list of anti-pattern severity summaries. </p>
-    pub fn get_list_antipattern_severity_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>> {
+    pub fn get_list_antipattern_severity_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>> {
         &self.list_antipattern_severity_summary
     }
     /// <p> System information about the server. </p>
@@ -267,10 +231,7 @@ impl ServerDetailBuilder {
         self
     }
     /// <p> System information about the server. </p>
-    pub fn set_system_info(
-        mut self,
-        input: ::std::option::Option<crate::types::SystemInfo>,
-    ) -> Self {
+    pub fn set_system_info(mut self, input: ::std::option::Option<crate::types::SystemInfo>) -> Self {
         self.system_info = input;
         self
     }
@@ -283,13 +244,8 @@ impl ServerDetailBuilder {
     /// To override the contents of this collection use [`set_application_component_strategy_summary`](Self::set_application_component_strategy_summary).
     ///
     /// <p> A list of strategy summaries. </p>
-    pub fn application_component_strategy_summary(
-        mut self,
-        input: crate::types::StrategySummary,
-    ) -> Self {
-        let mut v = self
-            .application_component_strategy_summary
-            .unwrap_or_default();
+    pub fn application_component_strategy_summary(mut self, input: crate::types::StrategySummary) -> Self {
+        let mut v = self.application_component_strategy_summary.unwrap_or_default();
         v.push(input);
         self.application_component_strategy_summary = ::std::option::Option::Some(v);
         self
@@ -303,9 +259,7 @@ impl ServerDetailBuilder {
         self
     }
     /// <p> A list of strategy summaries. </p>
-    pub fn get_application_component_strategy_summary(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>> {
+    pub fn get_application_component_strategy_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>> {
         &self.application_component_strategy_summary
     }
     /// <p> The S3 bucket name and Amazon S3 key name for anti-pattern report. </p>
@@ -314,61 +268,40 @@ impl ServerDetailBuilder {
         self
     }
     /// <p> The S3 bucket name and Amazon S3 key name for anti-pattern report. </p>
-    pub fn set_antipattern_report_s3_object(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Object>,
-    ) -> Self {
+    pub fn set_antipattern_report_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.antipattern_report_s3_object = input;
         self
     }
     /// <p> The S3 bucket name and Amazon S3 key name for anti-pattern report. </p>
-    pub fn get_antipattern_report_s3_object(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3Object> {
+    pub fn get_antipattern_report_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
         &self.antipattern_report_s3_object
     }
     /// <p> The status of the anti-pattern report generation. </p>
-    pub fn antipattern_report_status(
-        mut self,
-        input: crate::types::AntipatternReportStatus,
-    ) -> Self {
+    pub fn antipattern_report_status(mut self, input: crate::types::AntipatternReportStatus) -> Self {
         self.antipattern_report_status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of the anti-pattern report generation. </p>
-    pub fn set_antipattern_report_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AntipatternReportStatus>,
-    ) -> Self {
+    pub fn set_antipattern_report_status(mut self, input: ::std::option::Option<crate::types::AntipatternReportStatus>) -> Self {
         self.antipattern_report_status = input;
         self
     }
     /// <p> The status of the anti-pattern report generation. </p>
-    pub fn get_antipattern_report_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AntipatternReportStatus> {
+    pub fn get_antipattern_report_status(&self) -> &::std::option::Option<crate::types::AntipatternReportStatus> {
         &self.antipattern_report_status
     }
     /// <p> A message about the status of the anti-pattern report generation. </p>
-    pub fn antipattern_report_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn antipattern_report_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.antipattern_report_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A message about the status of the anti-pattern report generation. </p>
-    pub fn set_antipattern_report_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_antipattern_report_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.antipattern_report_status_message = input;
         self
     }
     /// <p> A message about the status of the anti-pattern report generation. </p>
-    pub fn get_antipattern_report_status_message(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_antipattern_report_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.antipattern_report_status_message
     }
     /// <p> The type of server. </p>
@@ -391,17 +324,12 @@ impl ServerDetailBuilder {
         self
     }
     /// <p> The timestamp of when the server was assessed. </p>
-    pub fn set_last_analyzed_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_analyzed_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_analyzed_timestamp = input;
         self
     }
     /// <p> The timestamp of when the server was assessed. </p>
-    pub fn get_last_analyzed_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_analyzed_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_analyzed_timestamp
     }
     /// <p>The error in server analysis.</p>
@@ -410,10 +338,7 @@ impl ServerDetailBuilder {
         self
     }
     /// <p>The error in server analysis.</p>
-    pub fn set_server_error(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerError>,
-    ) -> Self {
+    pub fn set_server_error(mut self, input: ::std::option::Option<crate::types::ServerError>) -> Self {
         self.server_error = input;
         self
     }

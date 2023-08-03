@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`policy_name(impl ::std::convert::Into<String>)`](crate::operation::delete_identity_policy::builders::DeleteIdentityPolicyFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::delete_identity_policy::builders::DeleteIdentityPolicyFluentBuilder::set_policy_name): <p>The name of the policy to be deleted.</p>
     /// - On success, responds with [`DeleteIdentityPolicyOutput`](crate::operation::delete_identity_policy::DeleteIdentityPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteIdentityPolicyError>`](crate::operation::delete_identity_policy::DeleteIdentityPolicyError)
-    pub fn delete_identity_policy(
-        &self,
-    ) -> crate::operation::delete_identity_policy::builders::DeleteIdentityPolicyFluentBuilder {
-        crate::operation::delete_identity_policy::builders::DeleteIdentityPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_identity_policy(&self) -> crate::operation::delete_identity_policy::builders::DeleteIdentityPolicyFluentBuilder {
+        crate::operation::delete_identity_policy::builders::DeleteIdentityPolicyFluentBuilder::new(self.handle.clone())
     }
 }

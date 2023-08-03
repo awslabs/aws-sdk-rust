@@ -5,8 +5,7 @@
 pub struct DescribeVerifiedAccessGroupsOutput {
     /// <p>The ID of the Verified Access group.</p>
     #[doc(hidden)]
-    pub verified_access_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessGroup>>,
+    pub verified_access_groups: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessGroup>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeVerifiedAccessGroupsOutput {
 }
 impl DescribeVerifiedAccessGroupsOutput {
     /// <p>The ID of the Verified Access group.</p>
-    pub fn verified_access_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VerifiedAccessGroup]> {
+    pub fn verified_access_groups(&self) -> ::std::option::Option<&[crate::types::VerifiedAccessGroup]> {
         self.verified_access_groups.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeVerifiedAccessGroupsOutput {
 }
 impl DescribeVerifiedAccessGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVerifiedAccessGroupsOutput`](crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput).
-    pub fn builder() -> crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsOutputBuilder {
         crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVerifiedAccessGroupsOutput`](crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVerifiedAccessGroupsOutputBuilder {
-    pub(crate) verified_access_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessGroup>>,
+    pub(crate) verified_access_groups: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeVerifiedAccessGroupsOutputBuilder {
         self
     }
     /// <p>The ID of the Verified Access group.</p>
-    pub fn set_verified_access_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessGroup>>,
-    ) -> Self {
+    pub fn set_verified_access_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessGroup>>) -> Self {
         self.verified_access_groups = input;
         self
     }
     /// <p>The ID of the Verified Access group.</p>
-    pub fn get_verified_access_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessGroup>> {
+    pub fn get_verified_access_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAccessGroup>> {
         &self.verified_access_groups
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -97,9 +86,7 @@ impl DescribeVerifiedAccessGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVerifiedAccessGroupsOutput`](crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput {
+    pub fn build(self) -> crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput {
         crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput {
             verified_access_groups: self.verified_access_groups,
             next_token: self.next_token,

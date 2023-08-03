@@ -131,13 +131,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OpenSearchPartitionInstanceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -431,9 +425,7 @@ impl ::std::convert::From<&str> for OpenSearchPartitionInstanceType {
             "ultrawarm1.large.search" => OpenSearchPartitionInstanceType::Ultrawarm1LargeSearch,
             "ultrawarm1.medium.search" => OpenSearchPartitionInstanceType::Ultrawarm1MediumSearch,
             "ultrawarm1.xlarge.search" => OpenSearchPartitionInstanceType::Ultrawarm1XlargeSearch,
-            other => OpenSearchPartitionInstanceType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => OpenSearchPartitionInstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

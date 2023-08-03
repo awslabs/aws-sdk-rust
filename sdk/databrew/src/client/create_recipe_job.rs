@@ -21,11 +21,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRecipeJobOutput`](crate::operation::create_recipe_job::CreateRecipeJobOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::create_recipe_job::CreateRecipeJobOutput::name): <p>The name of the job that you created.</p>
     /// - On failure, responds with [`SdkError<CreateRecipeJobError>`](crate::operation::create_recipe_job::CreateRecipeJobError)
-    pub fn create_recipe_job(
-        &self,
-    ) -> crate::operation::create_recipe_job::builders::CreateRecipeJobFluentBuilder {
-        crate::operation::create_recipe_job::builders::CreateRecipeJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_recipe_job(&self) -> crate::operation::create_recipe_job::builders::CreateRecipeJobFluentBuilder {
+        crate::operation::create_recipe_job::builders::CreateRecipeJobFluentBuilder::new(self.handle.clone())
     }
 }

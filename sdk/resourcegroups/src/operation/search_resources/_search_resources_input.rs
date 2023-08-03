@@ -36,9 +36,7 @@ impl SearchResourcesInput {
 
 /// A builder for [`SearchResourcesInput`](crate::operation::search_resources::SearchResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchResourcesInputBuilder {
     pub(crate) resource_query: ::std::option::Option<crate::types::ResourceQuery>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -51,10 +49,7 @@ impl SearchResourcesInputBuilder {
         self
     }
     /// <p>The search query, using the same formats that are supported for resource group definition. For more information, see <code>CreateGroup</code>.</p>
-    pub fn set_resource_query(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceQuery>,
-    ) -> Self {
+    pub fn set_resource_query(mut self, input: ::std::option::Option<crate::types::ResourceQuery>) -> Self {
         self.resource_query = input;
         self
     }
@@ -93,10 +88,7 @@ impl SearchResourcesInputBuilder {
     /// Consumes the builder and constructs a [`SearchResourcesInput`](crate::operation::search_resources::SearchResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_resources::SearchResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::search_resources::SearchResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_resources::SearchResourcesInput {
             resource_query: self.resource_query,
             max_results: self.max_results,

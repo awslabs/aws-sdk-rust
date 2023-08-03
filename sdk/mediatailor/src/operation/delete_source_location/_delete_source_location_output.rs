@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSourceLocationOutput {
 }
 impl DeleteSourceLocationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSourceLocationOutput`](crate::operation::delete_source_location::DeleteSourceLocationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_source_location::builders::DeleteSourceLocationOutputBuilder {
+    pub fn builder() -> crate::operation::delete_source_location::builders::DeleteSourceLocationOutputBuilder {
         crate::operation::delete_source_location::builders::DeleteSourceLocationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSourceLocationOutput`](crate::operation::delete_source_location::DeleteSourceLocationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSourceLocationOutputBuilder {
     _request_id: Option<String>,
 }

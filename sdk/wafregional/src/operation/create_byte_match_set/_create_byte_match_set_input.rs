@@ -22,17 +22,14 @@ impl CreateByteMatchSetInput {
 }
 impl CreateByteMatchSetInput {
     /// Creates a new builder-style object to manufacture [`CreateByteMatchSetInput`](crate::operation::create_byte_match_set::CreateByteMatchSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_byte_match_set::builders::CreateByteMatchSetInputBuilder {
+    pub fn builder() -> crate::operation::create_byte_match_set::builders::CreateByteMatchSetInputBuilder {
         crate::operation::create_byte_match_set::builders::CreateByteMatchSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateByteMatchSetInput`](crate::operation::create_byte_match_set::CreateByteMatchSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateByteMatchSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl CreateByteMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateByteMatchSetInput`](crate::operation::create_byte_match_set::CreateByteMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_byte_match_set::CreateByteMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_byte_match_set::CreateByteMatchSetInput {
-                name: self.name,
-                change_token: self.change_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_byte_match_set::CreateByteMatchSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_byte_match_set::CreateByteMatchSetInput {
+            name: self.name,
+            change_token: self.change_token,
+        })
     }
 }

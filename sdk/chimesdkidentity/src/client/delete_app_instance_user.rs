@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`app_instance_user_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserFluentBuilder::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserFluentBuilder::set_app_instance_user_arn): <p>The ARN of the user request being deleted.</p>
     /// - On success, responds with [`DeleteAppInstanceUserOutput`](crate::operation::delete_app_instance_user::DeleteAppInstanceUserOutput)
     /// - On failure, responds with [`SdkError<DeleteAppInstanceUserError>`](crate::operation::delete_app_instance_user::DeleteAppInstanceUserError)
-    pub fn delete_app_instance_user(
-        &self,
-    ) -> crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserFluentBuilder
-    {
+    pub fn delete_app_instance_user(&self) -> crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserFluentBuilder {
         crate::operation::delete_app_instance_user::builders::DeleteAppInstanceUserFluentBuilder::new(self.handle.clone())
     }
 }

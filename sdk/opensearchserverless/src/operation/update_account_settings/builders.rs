@@ -37,10 +37,7 @@ impl UpdateAccountSettingsFluentBuilder {
         }
     }
     /// Access the UpdateAccountSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateAccountSettingsFluentBuilder {
             crate::operation::update_account_settings::UpdateAccountSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_settings::UpdateAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_settings::UpdateAccountSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateAccountSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateAccountSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_account_settings::UpdateAccountSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_settings::UpdateAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_settings::UpdateAccountSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateAccountSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_account_settings::UpdateAccountSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_settings::UpdateAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_settings::UpdateAccountSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateAccountSettingsFluentBuilder {
             crate::operation::update_account_settings::UpdateAccountSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_settings::UpdateAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_settings::UpdateAccountSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +115,7 @@ impl UpdateAccountSettingsFluentBuilder {
         self
     }
     /// <p>The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html">Managing capacity limits for Amazon OpenSearch Serverless</a>.</p>
-    pub fn set_capacity_limits(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityLimits>,
-    ) -> Self {
+    pub fn set_capacity_limits(mut self, input: ::std::option::Option<crate::types::CapacityLimits>) -> Self {
         self.inner = self.inner.set_capacity_limits(input);
         self
     }

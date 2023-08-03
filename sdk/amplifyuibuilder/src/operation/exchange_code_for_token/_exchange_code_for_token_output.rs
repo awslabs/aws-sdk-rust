@@ -45,9 +45,7 @@ impl ::aws_http::request_id::RequestId for ExchangeCodeForTokenOutput {
 }
 impl ExchangeCodeForTokenOutput {
     /// Creates a new builder-style object to manufacture [`ExchangeCodeForTokenOutput`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenOutputBuilder
-    {
+    pub fn builder() -> crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenOutputBuilder {
         crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenOutputBuilder::default()
     }
 }
@@ -91,18 +89,12 @@ impl ExchangeCodeForTokenOutputBuilder {
         &self.expires_in
     }
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
-    pub fn refresh_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn refresh_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.refresh_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
-    pub fn set_refresh_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_refresh_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.refresh_token = input;
         self
     }

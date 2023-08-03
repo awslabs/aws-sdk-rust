@@ -58,9 +58,7 @@ impl RedshiftDataParameters {
 
 /// A builder for [`RedshiftDataParameters`](crate::types::RedshiftDataParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedshiftDataParametersBuilder {
     pub(crate) secret_manager_arn: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct RedshiftDataParametersBuilder {
 }
 impl RedshiftDataParametersBuilder {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
-    pub fn secret_manager_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_manager_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_manager_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
-    pub fn set_secret_manager_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_manager_arn = input;
         self
     }
@@ -133,18 +125,12 @@ impl RedshiftDataParametersBuilder {
         &self.sql
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
-    pub fn statement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
-    pub fn set_statement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_statement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement_name = input;
         self
     }

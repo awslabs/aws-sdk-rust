@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateClusterSubnetGroupOutput {
 }
 impl CreateClusterSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateClusterSubnetGroupOutput`](crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupOutput).
-    pub fn builder() -> crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupOutputBuilder{
+    pub fn builder() -> crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupOutputBuilder {
         crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateClusterSubnetGroupOutput`](crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClusterSubnetGroupOutputBuilder {
     pub(crate) cluster_subnet_group: ::std::option::Option<crate::types::ClusterSubnetGroup>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl CreateClusterSubnetGroupOutputBuilder {
         self
     }
     /// <p>Describes a subnet group.</p>
-    pub fn set_cluster_subnet_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ClusterSubnetGroup>,
-    ) -> Self {
+    pub fn set_cluster_subnet_group(mut self, input: ::std::option::Option<crate::types::ClusterSubnetGroup>) -> Self {
         self.cluster_subnet_group = input;
         self
     }
     /// <p>Describes a subnet group.</p>
-    pub fn get_cluster_subnet_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClusterSubnetGroup> {
+    pub fn get_cluster_subnet_group(&self) -> &::std::option::Option<crate::types::ClusterSubnetGroup> {
         &self.cluster_subnet_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl CreateClusterSubnetGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateClusterSubnetGroupOutput`](crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupOutput {
+    pub fn build(self) -> crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupOutput {
         crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupOutput {
             cluster_subnet_group: self.cluster_subnet_group,
             _request_id: self._request_id,

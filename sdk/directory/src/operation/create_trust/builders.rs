@@ -10,10 +10,7 @@ impl CreateTrustInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_trust::CreateTrustOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_trust::CreateTrustError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trust::CreateTrustError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_trust();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl CreateTrustFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_trust::CreateTrust,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_trust::CreateTrust, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_trust::CreateTrustError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl CreateTrustFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl CreateTrustFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_trust::CreateTrust,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_trust::CreateTrust, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_trust::CreateTrustError>,
     > {
         self.customize_middleware().await
@@ -128,18 +116,12 @@ impl CreateTrustFluentBuilder {
         self.inner.get_directory_id()
     }
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
-    pub fn remote_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remote_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remote_domain_name(input.into());
         self
     }
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
-    pub fn set_remote_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_remote_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_remote_domain_name(input);
         self
     }
@@ -148,18 +130,12 @@ impl CreateTrustFluentBuilder {
         self.inner.get_remote_domain_name()
     }
     /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
-    pub fn trust_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_password(input.into());
         self
     }
     /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
-    pub fn set_trust_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_password(input);
         self
     }
@@ -173,10 +149,7 @@ impl CreateTrustFluentBuilder {
         self
     }
     /// <p>The direction of the trust relationship.</p>
-    pub fn set_trust_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustDirection>,
-    ) -> Self {
+    pub fn set_trust_direction(mut self, input: ::std::option::Option<crate::types::TrustDirection>) -> Self {
         self.inner = self.inner.set_trust_direction(input);
         self
     }
@@ -203,25 +176,17 @@ impl CreateTrustFluentBuilder {
     /// To override the contents of this collection use [`set_conditional_forwarder_ip_addrs`](Self::set_conditional_forwarder_ip_addrs).
     ///
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    pub fn conditional_forwarder_ip_addrs(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conditional_forwarder_ip_addrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conditional_forwarder_ip_addrs(input.into());
         self
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    pub fn set_conditional_forwarder_ip_addrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_conditional_forwarder_ip_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_conditional_forwarder_ip_addrs(input);
         self
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    pub fn get_conditional_forwarder_ip_addrs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_conditional_forwarder_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_conditional_forwarder_ip_addrs()
     }
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
@@ -230,10 +195,7 @@ impl CreateTrustFluentBuilder {
         self
     }
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
-    pub fn set_selective_auth(
-        mut self,
-        input: ::std::option::Option<crate::types::SelectiveAuth>,
-    ) -> Self {
+    pub fn set_selective_auth(mut self, input: ::std::option::Option<crate::types::SelectiveAuth>) -> Self {
         self.inner = self.inner.set_selective_auth(input);
         self
     }

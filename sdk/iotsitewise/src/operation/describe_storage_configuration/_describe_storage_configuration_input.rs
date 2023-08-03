@@ -5,16 +5,14 @@
 pub struct DescribeStorageConfigurationInput {}
 impl DescribeStorageConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageConfigurationInput`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationInput).
-    pub fn builder() -> crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationInputBuilder {
         crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStorageConfigurationInput`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStorageConfigurationInputBuilder {}
 impl DescribeStorageConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStorageConfigurationInput`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationInput).
@@ -24,8 +22,6 @@ impl DescribeStorageConfigurationInputBuilder {
         crate::operation::describe_storage_configuration::DescribeStorageConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_storage_configuration::DescribeStorageConfigurationInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::describe_storage_configuration::DescribeStorageConfigurationInput {})
     }
 }

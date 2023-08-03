@@ -10,10 +10,7 @@ impl SendBonusInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_bonus::SendBonusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_bonus::SendBonusError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_bonus::SendBonusError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_bonus();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl SendBonusFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::send_bonus::SendBonus,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::send_bonus::SendBonus, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::send_bonus::SendBonusError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl SendBonusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl SendBonusFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::send_bonus::SendBonus,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::send_bonus::SendBonus, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::send_bonus::SendBonusError>,
     > {
         self.customize_middleware().await
@@ -141,18 +129,12 @@ impl SendBonusFluentBuilder {
         self.inner.get_bonus_amount()
     }
     /// <p>The ID of the assignment for which this bonus is paid.</p>
-    pub fn assignment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assignment_id(input.into());
         self
     }
     /// <p>The ID of the assignment for which this bonus is paid.</p>
-    pub fn set_assignment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assignment_id(input);
         self
     }
@@ -175,18 +157,12 @@ impl SendBonusFluentBuilder {
         self.inner.get_reason()
     }
     /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
-    pub fn unique_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn unique_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.unique_request_token(input.into());
         self
     }
     /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
-    pub fn set_unique_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_unique_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_unique_request_token(input);
         self
     }

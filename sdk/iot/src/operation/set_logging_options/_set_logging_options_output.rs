@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for SetLoggingOptionsOutput {
 }
 impl SetLoggingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`SetLoggingOptionsOutput`](crate::operation::set_logging_options::SetLoggingOptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::set_logging_options::builders::SetLoggingOptionsOutputBuilder {
+    pub fn builder() -> crate::operation::set_logging_options::builders::SetLoggingOptionsOutputBuilder {
         crate::operation::set_logging_options::builders::SetLoggingOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetLoggingOptionsOutput`](crate::operation::set_logging_options::SetLoggingOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetLoggingOptionsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -29,16 +29,14 @@ impl DescribeBudgetActionsForAccountInput {
 }
 impl DescribeBudgetActionsForAccountInput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForAccountInput`](crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountInput).
-    pub fn builder() -> crate::operation::describe_budget_actions_for_account::builders::DescribeBudgetActionsForAccountInputBuilder{
+    pub fn builder() -> crate::operation::describe_budget_actions_for_account::builders::DescribeBudgetActionsForAccountInputBuilder {
         crate::operation::describe_budget_actions_for_account::builders::DescribeBudgetActionsForAccountInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeBudgetActionsForAccountInput`](crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBudgetActionsForAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -96,13 +94,10 @@ impl DescribeBudgetActionsForAccountInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountInput {
-                account_id: self.account_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                account_id: self.account_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

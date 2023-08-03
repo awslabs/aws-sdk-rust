@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteVpcEndpointOutput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput) with field(s):
     ///   - [`delete_vpc_endpoint_detail(Option<DeleteVpcEndpointDetail>)`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput::delete_vpc_endpoint_detail): <p>Details about the deleted endpoint.</p>
     /// - On failure, responds with [`SdkError<DeleteVpcEndpointError>`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointError)
-    pub fn delete_vpc_endpoint(
-        &self,
-    ) -> crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder {
-        crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_vpc_endpoint(&self) -> crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder {
+        crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::new(self.handle.clone())
     }
 }

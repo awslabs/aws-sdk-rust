@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`phone_numbers(Option<Vec<String>>)`](crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutOutput::phone_numbers): <p>A list of phone numbers that are opted out of receiving SMS messages. The list is paginated, and each page can contain up to 100 phone numbers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutOutput::next_token): <p>A <code>NextToken</code> string is returned when you call the <code>ListPhoneNumbersOptedOut</code> action if additional records are available after the first page of results.</p>
     /// - On failure, responds with [`SdkError<ListPhoneNumbersOptedOutError>`](crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError)
-    pub fn list_phone_numbers_opted_out(&self) -> crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutFluentBuilder{
+    pub fn list_phone_numbers_opted_out(&self) -> crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutFluentBuilder {
         crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutFluentBuilder::new(self.handle.clone())
     }
 }

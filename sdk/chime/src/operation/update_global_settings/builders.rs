@@ -37,9 +37,7 @@ impl UpdateGlobalSettingsFluentBuilder {
         }
     }
     /// Access the UpdateGlobalSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateGlobalSettingsFluentBuilder {
             crate::operation::update_global_settings::UpdateGlobalSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_settings::UpdateGlobalSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_settings::UpdateGlobalSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateGlobalSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateGlobalSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_global_settings::UpdateGlobalSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_settings::UpdateGlobalSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_settings::UpdateGlobalSettingsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateGlobalSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_global_settings::UpdateGlobalSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_settings::UpdateGlobalSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_settings::UpdateGlobalSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateGlobalSettingsFluentBuilder {
             crate::operation::update_global_settings::UpdateGlobalSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_global_settings::UpdateGlobalSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_global_settings::UpdateGlobalSettingsError>,
     > {
         self.customize_middleware().await
     }
@@ -128,17 +115,12 @@ impl UpdateGlobalSettingsFluentBuilder {
         self
     }
     /// <p>The Amazon Chime Business Calling settings.</p>
-    pub fn set_business_calling(
-        mut self,
-        input: ::std::option::Option<crate::types::BusinessCallingSettings>,
-    ) -> Self {
+    pub fn set_business_calling(mut self, input: ::std::option::Option<crate::types::BusinessCallingSettings>) -> Self {
         self.inner = self.inner.set_business_calling(input);
         self
     }
     /// <p>The Amazon Chime Business Calling settings.</p>
-    pub fn get_business_calling(
-        &self,
-    ) -> &::std::option::Option<crate::types::BusinessCallingSettings> {
+    pub fn get_business_calling(&self) -> &::std::option::Option<crate::types::BusinessCallingSettings> {
         self.inner.get_business_calling()
     }
     /// <p>The Amazon Chime Voice Connector settings.</p>
@@ -147,17 +129,12 @@ impl UpdateGlobalSettingsFluentBuilder {
         self
     }
     /// <p>The Amazon Chime Voice Connector settings.</p>
-    pub fn set_voice_connector(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceConnectorSettings>,
-    ) -> Self {
+    pub fn set_voice_connector(mut self, input: ::std::option::Option<crate::types::VoiceConnectorSettings>) -> Self {
         self.inner = self.inner.set_voice_connector(input);
         self
     }
     /// <p>The Amazon Chime Voice Connector settings.</p>
-    pub fn get_voice_connector(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceConnectorSettings> {
+    pub fn get_voice_connector(&self) -> &::std::option::Option<crate::types::VoiceConnectorSettings> {
         self.inner.get_voice_connector()
     }
 }

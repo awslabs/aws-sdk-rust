@@ -9,76 +9,66 @@ pub fn de_describe_target_health_http_error(
     crate::operation::describe_target_health::DescribeTargetHealthError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::describe_target_health::DescribeTargetHealthError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "HealthUnavailable" => crate::operation::describe_target_health::DescribeTargetHealthError::HealthUnavailableException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::HealthUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_health_unavailable_exception::de_health_unavailable_exception_xml_err(_response_body, output).map_err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::HealthUnavailableExceptionBuilder::default();
+                output = crate::protocol_serde::shape_health_unavailable_exception::de_health_unavailable_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidTarget" => crate::operation::describe_target_health::DescribeTargetHealthError::InvalidTargetException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidTargetExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_target_exception::de_invalid_target_exception_xml_err(_response_body, output).map_err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidTargetExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_target_exception::de_invalid_target_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TargetGroupNotFound" => crate::operation::describe_target_health::DescribeTargetHealthError::TargetGroupNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TargetGroupNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(_response_body, output).map_err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TargetGroupNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::describe_target_health::DescribeTargetHealthError::generic(generic)
+        _ => crate::operation::describe_target_health::DescribeTargetHealthError::generic(generic),
     })
 }
 
@@ -94,14 +84,9 @@ pub fn de_describe_target_health_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_target_health::builders::DescribeTargetHealthOutputBuilder::default();
-        output = crate::protocol_serde::shape_describe_target_health::de_describe_target_health(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_describe_target_health::de_describe_target_health(_response_body, output)
+            .map_err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -110,10 +95,7 @@ pub fn de_describe_target_health_http_response_with_props(
 pub fn de_describe_target_health(
     inp: &[u8],
     mut builder: crate::operation::describe_target_health::builders::DescribeTargetHealthOutputBuilder,
-) -> Result<
-    crate::operation::describe_target_health::builders::DescribeTargetHealthOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::describe_target_health::builders::DescribeTargetHealthOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

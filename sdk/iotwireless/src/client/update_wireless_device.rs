@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`positioning(PositioningConfigStatus)`](crate::operation::update_wireless_device::builders::UpdateWirelessDeviceFluentBuilder::positioning) / [`set_positioning(Option<PositioningConfigStatus>)`](crate::operation::update_wireless_device::builders::UpdateWirelessDeviceFluentBuilder::set_positioning): <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     /// - On success, responds with [`UpdateWirelessDeviceOutput`](crate::operation::update_wireless_device::UpdateWirelessDeviceOutput)
     /// - On failure, responds with [`SdkError<UpdateWirelessDeviceError>`](crate::operation::update_wireless_device::UpdateWirelessDeviceError)
-    pub fn update_wireless_device(
-        &self,
-    ) -> crate::operation::update_wireless_device::builders::UpdateWirelessDeviceFluentBuilder {
-        crate::operation::update_wireless_device::builders::UpdateWirelessDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_wireless_device(&self) -> crate::operation::update_wireless_device::builders::UpdateWirelessDeviceFluentBuilder {
+        crate::operation::update_wireless_device::builders::UpdateWirelessDeviceFluentBuilder::new(self.handle.clone())
     }
 }

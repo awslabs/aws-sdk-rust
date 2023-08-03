@@ -10,10 +10,7 @@ impl CreateLayoutInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_layout::CreateLayoutOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_layout::CreateLayoutError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_layout::CreateLayoutError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_layout();
         fluent_builder.inner = self;
@@ -51,10 +48,7 @@ impl CreateLayoutFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_layout::CreateLayout,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_layout::CreateLayout, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_layout::CreateLayoutError>,
     > {
         let handle = self.handle.clone();
@@ -65,10 +59,7 @@ impl CreateLayoutFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -110,10 +101,7 @@ impl CreateLayoutFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_layout::CreateLayout,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_layout::CreateLayout, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_layout::CreateLayoutError>,
     > {
         self.customize_middleware().await
@@ -152,10 +140,7 @@ impl CreateLayoutFluentBuilder {
         self
     }
     /// <p>Information about which fields will be present in the layout, and information about the order of the fields.</p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<crate::types::LayoutContent>,
-    ) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::LayoutContent>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }

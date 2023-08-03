@@ -22,17 +22,14 @@ impl ListAssociatedStacksInput {
 }
 impl ListAssociatedStacksInput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedStacksInput`](crate::operation::list_associated_stacks::ListAssociatedStacksInput).
-    pub fn builder(
-    ) -> crate::operation::list_associated_stacks::builders::ListAssociatedStacksInputBuilder {
+    pub fn builder() -> crate::operation::list_associated_stacks::builders::ListAssociatedStacksInputBuilder {
         crate::operation::list_associated_stacks::builders::ListAssociatedStacksInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociatedStacksInput`](crate::operation::list_associated_stacks::ListAssociatedStacksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociatedStacksInputBuilder {
     pub(crate) fleet_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl ListAssociatedStacksInputBuilder {
     /// Consumes the builder and constructs a [`ListAssociatedStacksInput`](crate::operation::list_associated_stacks::ListAssociatedStacksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_associated_stacks::ListAssociatedStacksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_associated_stacks::ListAssociatedStacksInput {
-                fleet_name: self.fleet_name,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_associated_stacks::ListAssociatedStacksInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_associated_stacks::ListAssociatedStacksInput {
+            fleet_name: self.fleet_name,
+            next_token: self.next_token,
+        })
     }
 }

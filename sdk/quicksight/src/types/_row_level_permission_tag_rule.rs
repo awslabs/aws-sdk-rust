@@ -91,18 +91,12 @@ impl RowLevelPermissionTagRuleBuilder {
         &self.column_name
     }
     /// <p>A string that you want to use to delimit the values when you pass the values at run time. For example, you can delimit the values with a comma.</p>
-    pub fn tag_multi_value_delimiter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tag_multi_value_delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_multi_value_delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that you want to use to delimit the values when you pass the values at run time. For example, you can delimit the values with a comma.</p>
-    pub fn set_tag_multi_value_delimiter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tag_multi_value_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_multi_value_delimiter = input;
         self
     }
@@ -111,18 +105,12 @@ impl RowLevelPermissionTagRuleBuilder {
         &self.tag_multi_value_delimiter
     }
     /// <p>A string that you want to use to filter by all the values in a column in the dataset and don’t want to list the values one by one. For example, you can use an asterisk as your match all value.</p>
-    pub fn match_all_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn match_all_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.match_all_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that you want to use to filter by all the values in a column in the dataset and don’t want to list the values one by one. For example, you can use an asterisk as your match all value.</p>
-    pub fn set_match_all_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_match_all_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.match_all_value = input;
         self
     }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`incident_record_arn(Option<String>)`](crate::operation::create_timeline_event::CreateTimelineEventOutput::incident_record_arn): <p>The ARN of the incident record that you added the event to.</p>
     ///   - [`event_id(Option<String>)`](crate::operation::create_timeline_event::CreateTimelineEventOutput::event_id): <p>The ID of the event for easy reference later. </p>
     /// - On failure, responds with [`SdkError<CreateTimelineEventError>`](crate::operation::create_timeline_event::CreateTimelineEventError)
-    pub fn create_timeline_event(
-        &self,
-    ) -> crate::operation::create_timeline_event::builders::CreateTimelineEventFluentBuilder {
-        crate::operation::create_timeline_event::builders::CreateTimelineEventFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_timeline_event(&self) -> crate::operation::create_timeline_event::builders::CreateTimelineEventFluentBuilder {
+        crate::operation::create_timeline_event::builders::CreateTimelineEventFluentBuilder::new(self.handle.clone())
     }
 }

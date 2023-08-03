@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for PutDedicatedIpPoolScalingAttributesOu
 }
 impl PutDedicatedIpPoolScalingAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutDedicatedIpPoolScalingAttributesOutput`](crate::operation::put_dedicated_ip_pool_scaling_attributes::PutDedicatedIpPoolScalingAttributesOutput).
-    pub fn builder() -> crate::operation::put_dedicated_ip_pool_scaling_attributes::builders::PutDedicatedIpPoolScalingAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::put_dedicated_ip_pool_scaling_attributes::builders::PutDedicatedIpPoolScalingAttributesOutputBuilder {
         crate::operation::put_dedicated_ip_pool_scaling_attributes::builders::PutDedicatedIpPoolScalingAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutDedicatedIpPoolScalingAttributesOutput`](crate::operation::put_dedicated_ip_pool_scaling_attributes::PutDedicatedIpPoolScalingAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDedicatedIpPoolScalingAttributesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +35,7 @@ impl PutDedicatedIpPoolScalingAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutDedicatedIpPoolScalingAttributesOutput`](crate::operation::put_dedicated_ip_pool_scaling_attributes::PutDedicatedIpPoolScalingAttributesOutput).
-    pub fn build(self) -> crate::operation::put_dedicated_ip_pool_scaling_attributes::PutDedicatedIpPoolScalingAttributesOutput{
+    pub fn build(self) -> crate::operation::put_dedicated_ip_pool_scaling_attributes::PutDedicatedIpPoolScalingAttributesOutput {
         crate::operation::put_dedicated_ip_pool_scaling_attributes::PutDedicatedIpPoolScalingAttributesOutput {
             _request_id: self._request_id,
         }

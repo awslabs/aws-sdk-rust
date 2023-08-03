@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for RecordHandlerProgressOutput {
 }
 impl RecordHandlerProgressOutput {
     /// Creates a new builder-style object to manufacture [`RecordHandlerProgressOutput`](crate::operation::record_handler_progress::RecordHandlerProgressOutput).
-    pub fn builder(
-    ) -> crate::operation::record_handler_progress::builders::RecordHandlerProgressOutputBuilder
-    {
+    pub fn builder() -> crate::operation::record_handler_progress::builders::RecordHandlerProgressOutputBuilder {
         crate::operation::record_handler_progress::builders::RecordHandlerProgressOutputBuilder::default()
     }
 }
 
 /// A builder for [`RecordHandlerProgressOutput`](crate::operation::record_handler_progress::RecordHandlerProgressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordHandlerProgressOutputBuilder {
     _request_id: Option<String>,
 }

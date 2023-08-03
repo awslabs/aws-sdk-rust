@@ -29,17 +29,14 @@ impl UpdateDomainMetadataInput {
 }
 impl UpdateDomainMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainMetadataInput`](crate::operation::update_domain_metadata::UpdateDomainMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::update_domain_metadata::builders::UpdateDomainMetadataInputBuilder {
+    pub fn builder() -> crate::operation::update_domain_metadata::builders::UpdateDomainMetadataInputBuilder {
         crate::operation::update_domain_metadata::builders::UpdateDomainMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDomainMetadataInput`](crate::operation::update_domain_metadata::UpdateDomainMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDomainMetadataInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,12 @@ impl UpdateDomainMetadataInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDomainMetadataInput`](crate::operation::update_domain_metadata::UpdateDomainMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_domain_metadata::UpdateDomainMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_domain_metadata::UpdateDomainMetadataInput {
-                fleet_arn: self.fleet_arn,
-                domain_name: self.domain_name,
-                display_name: self.display_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_domain_metadata::UpdateDomainMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_domain_metadata::UpdateDomainMetadataInput {
+            fleet_arn: self.fleet_arn,
+            domain_name: self.domain_name,
+            display_name: self.display_name,
+        })
     }
 }

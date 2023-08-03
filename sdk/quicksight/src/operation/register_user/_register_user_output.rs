@@ -49,9 +49,7 @@ impl RegisterUserOutput {
 
 /// A builder for [`RegisterUserOutput`](crate::operation::register_user::RegisterUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterUserOutputBuilder {
     pub(crate) user: ::std::option::Option<crate::types::User>,
     pub(crate) user_invitation_url: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl RegisterUserOutputBuilder {
         &self.user
     }
     /// <p>The URL the user visits to complete registration and provide a password. This is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
-    pub fn user_invitation_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_invitation_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_invitation_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL the user visits to complete registration and provide a password. This is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
-    pub fn set_user_invitation_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_invitation_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_invitation_url = input;
         self
     }

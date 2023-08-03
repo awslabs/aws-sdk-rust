@@ -31,17 +31,14 @@ impl ::aws_http::request_id::RequestId for ListDeploymentJobsOutput {
 }
 impl ListDeploymentJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentJobsOutput`](crate::operation::list_deployment_jobs::ListDeploymentJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_deployment_jobs::builders::ListDeploymentJobsOutputBuilder {
+    pub fn builder() -> crate::operation::list_deployment_jobs::builders::ListDeploymentJobsOutputBuilder {
         crate::operation::list_deployment_jobs::builders::ListDeploymentJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeploymentJobsOutput`](crate::operation::list_deployment_jobs::ListDeploymentJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentJobsOutputBuilder {
     pub(crate) deployment_jobs: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -60,17 +57,12 @@ impl ListDeploymentJobsOutputBuilder {
         self
     }
     /// <p>A list of deployment jobs that meet the criteria of the request.</p>
-    pub fn set_deployment_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentJob>>,
-    ) -> Self {
+    pub fn set_deployment_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentJob>>) -> Self {
         self.deployment_jobs = input;
         self
     }
     /// <p>A list of deployment jobs that meet the criteria of the request.</p>
-    pub fn get_deployment_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentJob>> {
+    pub fn get_deployment_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentJob>> {
         &self.deployment_jobs
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>

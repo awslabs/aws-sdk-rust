@@ -22,16 +22,14 @@ impl GetSolFunctionPackageContentInput {
 }
 impl GetSolFunctionPackageContentInput {
     /// Creates a new builder-style object to manufacture [`GetSolFunctionPackageContentInput`](crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentInput).
-    pub fn builder() -> crate::operation::get_sol_function_package_content::builders::GetSolFunctionPackageContentInputBuilder{
+    pub fn builder() -> crate::operation::get_sol_function_package_content::builders::GetSolFunctionPackageContentInputBuilder {
         crate::operation::get_sol_function_package_content::builders::GetSolFunctionPackageContentInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSolFunctionPackageContentInput`](crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolFunctionPackageContentInputBuilder {
     pub(crate) vnf_pkg_id: ::std::option::Option<::std::string::String>,
     pub(crate) accept: ::std::option::Option<crate::types::PackageContentType>,
@@ -57,10 +55,7 @@ impl GetSolFunctionPackageContentInputBuilder {
         self
     }
     /// <p>The format of the package that you want to download from the function packages.</p>
-    pub fn set_accept(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageContentType>,
-    ) -> Self {
+    pub fn set_accept(mut self, input: ::std::option::Option<crate::types::PackageContentType>) -> Self {
         self.accept = input;
         self
     }
@@ -75,11 +70,9 @@ impl GetSolFunctionPackageContentInputBuilder {
         crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentInput {
-                vnf_pkg_id: self.vnf_pkg_id,
-                accept: self.accept,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentInput {
+            vnf_pkg_id: self.vnf_pkg_id,
+            accept: self.accept,
+        })
     }
 }

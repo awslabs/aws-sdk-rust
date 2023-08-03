@@ -30,9 +30,7 @@ impl RobotSoftwareSuite {
 
 /// A builder for [`RobotSoftwareSuite`](crate::types::RobotSoftwareSuite).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RobotSoftwareSuiteBuilder {
     pub(crate) name: ::std::option::Option<crate::types::RobotSoftwareSuiteType>,
     pub(crate) version: ::std::option::Option<crate::types::RobotSoftwareSuiteVersionType>,
@@ -44,10 +42,7 @@ impl RobotSoftwareSuiteBuilder {
         self
     }
     /// <p>The name of the robot software suite (ROS distribution).</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::RobotSoftwareSuiteType>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuiteType>) -> Self {
         self.name = input;
         self
     }
@@ -61,17 +56,12 @@ impl RobotSoftwareSuiteBuilder {
         self
     }
     /// <p>The version of the robot software suite (ROS distribution).</p>
-    pub fn set_version(
-        mut self,
-        input: ::std::option::Option<crate::types::RobotSoftwareSuiteVersionType>,
-    ) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuiteVersionType>) -> Self {
         self.version = input;
         self
     }
     /// <p>The version of the robot software suite (ROS distribution).</p>
-    pub fn get_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::RobotSoftwareSuiteVersionType> {
+    pub fn get_version(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuiteVersionType> {
         &self.version
     }
     /// Consumes the builder and constructs a [`RobotSoftwareSuite`](crate::types::RobotSoftwareSuite).

@@ -12,9 +12,7 @@ pub struct ActiveContext {
     pub time_to_live: ::std::option::Option<crate::types::ActiveContextTimeToLive>,
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ActiveContext {
     /// <p>The name of the context.</p>
@@ -26,11 +24,7 @@ impl ActiveContext {
         self.time_to_live.as_ref()
     }
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -43,15 +37,11 @@ impl ActiveContext {
 
 /// A builder for [`ActiveContext`](crate::types::ActiveContext).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActiveContextBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) time_to_live: ::std::option::Option<crate::types::ActiveContextTimeToLive>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ActiveContextBuilder {
     /// <p>The name of the context.</p>
@@ -74,17 +64,12 @@ impl ActiveContextBuilder {
         self
     }
     /// <p>The length of time or number of turns that a context remains active.</p>
-    pub fn set_time_to_live(
-        mut self,
-        input: ::std::option::Option<crate::types::ActiveContextTimeToLive>,
-    ) -> Self {
+    pub fn set_time_to_live(mut self, input: ::std::option::Option<crate::types::ActiveContextTimeToLive>) -> Self {
         self.time_to_live = input;
         self
     }
     /// <p>The length of time or number of turns that a context remains active.</p>
-    pub fn get_time_to_live(
-        &self,
-    ) -> &::std::option::Option<crate::types::ActiveContextTimeToLive> {
+    pub fn get_time_to_live(&self) -> &::std::option::Option<crate::types::ActiveContextTimeToLive> {
         &self.time_to_live
     }
     /// Adds a key-value pair to `parameters`.
@@ -92,32 +77,19 @@ impl ActiveContextBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ActiveContext`](crate::types::ActiveContext).

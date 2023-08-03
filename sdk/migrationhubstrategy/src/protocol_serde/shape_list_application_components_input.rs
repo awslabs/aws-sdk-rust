@@ -4,9 +4,7 @@ pub fn ser_list_application_components_input(
     input: &crate::operation::list_application_components::ListApplicationComponentsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.application_component_criteria {
-        object
-            .key("applicationComponentCriteria")
-            .string(var_1.as_str());
+        object.key("applicationComponentCriteria").string(var_1.as_str());
     }
     if let Some(var_2) = &input.filter_value {
         object.key("filterValue").string(var_2.as_str());

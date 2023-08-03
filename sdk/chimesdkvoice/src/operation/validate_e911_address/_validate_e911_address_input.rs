@@ -70,10 +70,8 @@ impl ::std::fmt::Debug for ValidateE911AddressInput {
 }
 impl ValidateE911AddressInput {
     /// Creates a new builder-style object to manufacture [`ValidateE911AddressInput`](crate::operation::validate_e911_address::ValidateE911AddressInput).
-    pub fn builder(
-    ) -> crate::operation::validate_e911_address::builders::ValidateE911AddressInputBuilder {
-        crate::operation::validate_e911_address::builders::ValidateE911AddressInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::validate_e911_address::builders::ValidateE911AddressInputBuilder {
+        crate::operation::validate_e911_address::builders::ValidateE911AddressInputBuilder::default()
     }
 }
 
@@ -91,18 +89,12 @@ pub struct ValidateE911AddressInputBuilder {
 }
 impl ValidateE911AddressInputBuilder {
     /// <p>The AWS account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -111,18 +103,12 @@ impl ValidateE911AddressInputBuilder {
         &self.aws_account_id
     }
     /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
-    pub fn street_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn street_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.street_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
-    pub fn set_street_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_street_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.street_number = input;
         self
     }
@@ -203,21 +189,17 @@ impl ValidateE911AddressInputBuilder {
     /// Consumes the builder and constructs a [`ValidateE911AddressInput`](crate::operation::validate_e911_address::ValidateE911AddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::validate_e911_address::ValidateE911AddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::validate_e911_address::ValidateE911AddressInput {
-                aws_account_id: self.aws_account_id,
-                street_number: self.street_number,
-                street_info: self.street_info,
-                city: self.city,
-                state: self.state,
-                country: self.country,
-                postal_code: self.postal_code,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::validate_e911_address::ValidateE911AddressInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::validate_e911_address::ValidateE911AddressInput {
+            aws_account_id: self.aws_account_id,
+            street_number: self.street_number,
+            street_info: self.street_info,
+            city: self.city,
+            state: self.state,
+            country: self.country,
+            postal_code: self.postal_code,
+        })
     }
 }
 impl ::std::fmt::Debug for ValidateE911AddressInputBuilder {

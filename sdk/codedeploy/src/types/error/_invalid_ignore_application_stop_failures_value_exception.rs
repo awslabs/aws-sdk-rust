@@ -27,35 +27,27 @@ impl ::std::fmt::Display for InvalidIgnoreApplicationStopFailuresValueException 
     }
 }
 impl ::std::error::Error for InvalidIgnoreApplicationStopFailuresValueException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::InvalidIgnoreApplicationStopFailuresValueException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidIgnoreApplicationStopFailuresValueException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidIgnoreApplicationStopFailuresValueException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidIgnoreApplicationStopFailuresValueException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl InvalidIgnoreApplicationStopFailuresValueException {
     /// Creates a new builder-style object to manufacture [`InvalidIgnoreApplicationStopFailuresValueException`](crate::types::error::InvalidIgnoreApplicationStopFailuresValueException).
-    pub fn builder(
-    ) -> crate::types::error::builders::InvalidIgnoreApplicationStopFailuresValueExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::InvalidIgnoreApplicationStopFailuresValueExceptionBuilder {
         crate::types::error::builders::InvalidIgnoreApplicationStopFailuresValueExceptionBuilder::default()
     }
 }
 
 /// A builder for [`InvalidIgnoreApplicationStopFailuresValueException`](crate::types::error::InvalidIgnoreApplicationStopFailuresValueException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidIgnoreApplicationStopFailuresValueExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -82,10 +74,7 @@ impl InvalidIgnoreApplicationStopFailuresValueExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

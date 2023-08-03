@@ -6,7 +6,11 @@ impl super::Client {
     ///   - [`environment_name(impl ::std::convert::Into<String>)`](crate::operation::disassociate_environment_operations_role::builders::DisassociateEnvironmentOperationsRoleFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::disassociate_environment_operations_role::builders::DisassociateEnvironmentOperationsRoleFluentBuilder::set_environment_name): <p>The name of the environment from which to disassociate the operations role.</p>
     /// - On success, responds with [`DisassociateEnvironmentOperationsRoleOutput`](crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleOutput)
     /// - On failure, responds with [`SdkError<DisassociateEnvironmentOperationsRoleError>`](crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleError)
-    pub fn disassociate_environment_operations_role(&self) -> crate::operation::disassociate_environment_operations_role::builders::DisassociateEnvironmentOperationsRoleFluentBuilder{
-        crate::operation::disassociate_environment_operations_role::builders::DisassociateEnvironmentOperationsRoleFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_environment_operations_role(
+        &self,
+    ) -> crate::operation::disassociate_environment_operations_role::builders::DisassociateEnvironmentOperationsRoleFluentBuilder {
+        crate::operation::disassociate_environment_operations_role::builders::DisassociateEnvironmentOperationsRoleFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

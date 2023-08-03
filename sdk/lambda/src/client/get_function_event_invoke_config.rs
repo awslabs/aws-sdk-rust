@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`maximum_event_age_in_seconds(Option<i32>)`](crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput::maximum_event_age_in_seconds): <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     ///   - [`destination_config(Option<DestinationConfig>)`](crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput::destination_config): <p>A destination for events after they have been sent to a function for processing.</p>  <p class="title"> <b>Destinations</b> </p>  <ul>   <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>   <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li>   <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>   <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetFunctionEventInvokeConfigError>`](crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError)
-    pub fn get_function_event_invoke_config(&self) -> crate::operation::get_function_event_invoke_config::builders::GetFunctionEventInvokeConfigFluentBuilder{
+    pub fn get_function_event_invoke_config(
+        &self,
+    ) -> crate::operation::get_function_event_invoke_config::builders::GetFunctionEventInvokeConfigFluentBuilder {
         crate::operation::get_function_event_invoke_config::builders::GetFunctionEventInvokeConfigFluentBuilder::new(self.handle.clone())
     }
 }

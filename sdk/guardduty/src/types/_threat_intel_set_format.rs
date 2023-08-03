@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ThreatIntelSetFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for ThreatIntelSetFormat {
             "PROOF_POINT" => ThreatIntelSetFormat::ProofPoint,
             "STIX" => ThreatIntelSetFormat::Stix,
             "TXT" => ThreatIntelSetFormat::Txt,
-            other => ThreatIntelSetFormat::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ThreatIntelSetFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl ThreatIntelSetFormat {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ALIEN_VAULT",
-            "FIRE_EYE",
-            "OTX_CSV",
-            "PROOF_POINT",
-            "STIX",
-            "TXT",
-        ]
+        &["ALIEN_VAULT", "FIRE_EYE", "OTX_CSV", "PROOF_POINT", "STIX", "TXT"]
     }
 }
 impl ::std::convert::AsRef<str> for ThreatIntelSetFormat {

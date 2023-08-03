@@ -37,9 +37,7 @@ impl TransformationTool {
 
 /// A builder for [`TransformationTool`](crate::types::TransformationTool).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransformationToolBuilder {
     pub(crate) name: ::std::option::Option<crate::types::TransformationToolName>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl TransformationToolBuilder {
         self
     }
     /// <p> Name of the tool. </p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformationToolName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::TransformationToolName>) -> Self {
         self.name = input;
         self
     }
@@ -78,25 +73,17 @@ impl TransformationToolBuilder {
         &self.description
     }
     /// <p> URL for installing the tool. </p>
-    pub fn tranformation_tool_installation_link(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tranformation_tool_installation_link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tranformation_tool_installation_link = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> URL for installing the tool. </p>
-    pub fn set_tranformation_tool_installation_link(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_tranformation_tool_installation_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tranformation_tool_installation_link = input;
         self
     }
     /// <p> URL for installing the tool. </p>
-    pub fn get_tranformation_tool_installation_link(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_tranformation_tool_installation_link(&self) -> &::std::option::Option<::std::string::String> {
         &self.tranformation_tool_installation_link
     }
     /// Consumes the builder and constructs a [`TransformationTool`](crate::types::TransformationTool).

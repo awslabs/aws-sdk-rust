@@ -10,10 +10,7 @@ impl ListFhirDatastoresInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_fhir_datastores::ListFhirDatastoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fhir_datastores::ListFHIRDatastoresError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fhir_datastores::ListFHIRDatastoresError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_fhir_datastores();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListFHIRDatastoresFluentBuilder {
         }
     }
     /// Access the ListFHIRDatastores as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_fhir_datastores::builders::ListFhirDatastoresInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_fhir_datastores::builders::ListFhirDatastoresInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListFHIRDatastoresFluentBuilder {
             crate::operation::list_fhir_datastores::ListFHIRDatastores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fhir_datastores::ListFHIRDatastoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fhir_datastores::ListFHIRDatastoresError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListFHIRDatastoresFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListFHIRDatastoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_fhir_datastores::ListFhirDatastoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fhir_datastores::ListFHIRDatastoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fhir_datastores::ListFHIRDatastoresError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListFHIRDatastoresFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_fhir_datastores::ListFhirDatastoresOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fhir_datastores::ListFHIRDatastoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fhir_datastores::ListFHIRDatastoresError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListFHIRDatastoresFluentBuilder {
             crate::operation::list_fhir_datastores::ListFHIRDatastores,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fhir_datastores::ListFHIRDatastoresError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fhir_datastores::ListFHIRDatastoresError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_fhir_datastores::paginator::ListFhirDatastoresPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_fhir_datastores::paginator::ListFhirDatastoresPaginator {
-        crate::operation::list_fhir_datastores::paginator::ListFhirDatastoresPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_fhir_datastores::paginator::ListFhirDatastoresPaginator {
+        crate::operation::list_fhir_datastores::paginator::ListFhirDatastoresPaginator::new(self.handle, self.inner)
     }
     /// <p>Lists all filters associated with a FHIR data store request.</p>
     pub fn filter(mut self, input: crate::types::DatastoreFilter) -> Self {
@@ -139,10 +118,7 @@ impl ListFHIRDatastoresFluentBuilder {
         self
     }
     /// <p>Lists all filters associated with a FHIR data store request.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::DatastoreFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DatastoreFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

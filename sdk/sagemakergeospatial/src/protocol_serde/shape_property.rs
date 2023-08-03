@@ -7,37 +7,25 @@ pub fn ser_property(
         crate::types::Property::EoCloudCover(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_2.key("EoCloudCover").start_object();
-            crate::protocol_serde::shape_eo_cloud_cover_input::ser_eo_cloud_cover_input(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_eo_cloud_cover_input::ser_eo_cloud_cover_input(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::Property::ViewOffNadir(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_2.key("ViewOffNadir").start_object();
-            crate::protocol_serde::shape_view_off_nadir_input::ser_view_off_nadir_input(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_view_off_nadir_input::ser_view_off_nadir_input(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::Property::ViewSunAzimuth(inner) => {
             #[allow(unused_mut)]
             let mut object_3 = object_2.key("ViewSunAzimuth").start_object();
-            crate::protocol_serde::shape_view_sun_azimuth_input::ser_view_sun_azimuth_input(
-                &mut object_3,
-                inner,
-            )?;
+            crate::protocol_serde::shape_view_sun_azimuth_input::ser_view_sun_azimuth_input(&mut object_3, inner)?;
             object_3.finish();
         }
         crate::types::Property::ViewSunElevation(inner) => {
             #[allow(unused_mut)]
             let mut object_4 = object_2.key("ViewSunElevation").start_object();
-            crate::protocol_serde::shape_view_sun_elevation_input::ser_view_sun_elevation_input(
-                &mut object_4,
-                inner,
-            )?;
+            crate::protocol_serde::shape_view_sun_elevation_input::ser_view_sun_elevation_input(&mut object_4, inner)?;
             object_4.finish();
         }
         crate::types::Property::Platform(inner) => {
@@ -52,13 +40,7 @@ pub fn ser_property(
             crate::protocol_serde::shape_landsat_cloud_cover_land_input::ser_landsat_cloud_cover_land_input(&mut object_6, inner)?;
             object_6.finish();
         }
-        crate::types::Property::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "Property",
-                ),
-            )
-        }
+        crate::types::Property::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Property")),
     }
     Ok(())
 }
@@ -67,12 +49,7 @@ pub(crate) fn de_property<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::Property>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -82,71 +59,63 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "EoCloudCover" => {
-                                Some(crate::types::Property::EoCloudCover(
-                                    crate::protocol_serde::shape_eo_cloud_cover_input::de_eo_cloud_cover_input(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EoCloudCover' cannot be null"))?
-                                ))
-                            }
-                            "ViewOffNadir" => {
-                                Some(crate::types::Property::ViewOffNadir(
-                                    crate::protocol_serde::shape_view_off_nadir_input::de_view_off_nadir_input(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ViewOffNadir' cannot be null"))?
-                                ))
-                            }
-                            "ViewSunAzimuth" => {
-                                Some(crate::types::Property::ViewSunAzimuth(
-                                    crate::protocol_serde::shape_view_sun_azimuth_input::de_view_sun_azimuth_input(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ViewSunAzimuth' cannot be null"))?
-                                ))
-                            }
-                            "ViewSunElevation" => {
-                                Some(crate::types::Property::ViewSunElevation(
-                                    crate::protocol_serde::shape_view_sun_elevation_input::de_view_sun_elevation_input(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ViewSunElevation' cannot be null"))?
-                                ))
-                            }
-                            "Platform" => {
-                                Some(crate::types::Property::Platform(
-                                    crate::protocol_serde::shape_platform_input::de_platform_input(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Platform' cannot be null"))?
-                                ))
-                            }
-                            "LandsatCloudCoverLand" => {
-                                Some(crate::types::Property::LandsatCloudCoverLand(
-                                    crate::protocol_serde::shape_landsat_cloud_cover_land_input::de_landsat_cloud_cover_land_input(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'LandsatCloudCoverLand' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::Property::Unknown)
-                                                                    }
-                        };
+                        "EoCloudCover" => Some(crate::types::Property::EoCloudCover(
+                            crate::protocol_serde::shape_eo_cloud_cover_input::de_eo_cloud_cover_input(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EoCloudCover' cannot be null")
+                            })?,
+                        )),
+                        "ViewOffNadir" => Some(crate::types::Property::ViewOffNadir(
+                            crate::protocol_serde::shape_view_off_nadir_input::de_view_off_nadir_input(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ViewOffNadir' cannot be null")
+                            })?,
+                        )),
+                        "ViewSunAzimuth" => Some(crate::types::Property::ViewSunAzimuth(
+                            crate::protocol_serde::shape_view_sun_azimuth_input::de_view_sun_azimuth_input(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ViewSunAzimuth' cannot be null")
+                            })?,
+                        )),
+                        "ViewSunElevation" => Some(crate::types::Property::ViewSunElevation(
+                            crate::protocol_serde::shape_view_sun_elevation_input::de_view_sun_elevation_input(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ViewSunElevation' cannot be null")
+                            })?,
+                        )),
+                        "Platform" => Some(crate::types::Property::Platform(
+                            crate::protocol_serde::shape_platform_input::de_platform_input(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Platform' cannot be null")
+                            })?,
+                        )),
+                        "LandsatCloudCoverLand" => Some(crate::types::Property::LandsatCloudCoverLand(
+                            crate::protocol_serde::shape_landsat_cloud_cover_land_input::de_landsat_cloud_cover_land_input(tokens)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'LandsatCloudCoverLand' cannot be null",
+                                    )
+                                },
+                            )?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::Property::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

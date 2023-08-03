@@ -31,16 +31,14 @@ impl ListDecoderManifestSignalsInput {
 }
 impl ListDecoderManifestSignalsInput {
     /// Creates a new builder-style object to manufacture [`ListDecoderManifestSignalsInput`](crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsInput).
-    pub fn builder() -> crate::operation::list_decoder_manifest_signals::builders::ListDecoderManifestSignalsInputBuilder{
+    pub fn builder() -> crate::operation::list_decoder_manifest_signals::builders::ListDecoderManifestSignalsInputBuilder {
         crate::operation::list_decoder_manifest_signals::builders::ListDecoderManifestSignalsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDecoderManifestSignalsInput`](crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDecoderManifestSignalsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -99,12 +97,10 @@ impl ListDecoderManifestSignalsInputBuilder {
         crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsInput {
-                name: self.name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsInput {
+            name: self.name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -9,10 +9,7 @@ pub fn ser_task_override(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_container_override::ser_container_override(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_container_override::ser_container_override(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -45,10 +42,7 @@ pub fn ser_task_override(
     if let Some(var_13) = &input.ephemeral_storage {
         #[allow(unused_mut)]
         let mut object_14 = object.key("ephemeralStorage").start_object();
-        crate::protocol_serde::shape_ephemeral_storage::ser_ephemeral_storage(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_ephemeral_storage::ser_ephemeral_storage(&mut object_14, var_13)?;
         object_14.finish();
     }
     Ok(())
@@ -56,17 +50,9 @@ pub fn ser_task_override(
 
 pub(crate) fn de_task_override<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::TaskOverride>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::TaskOverride>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -76,77 +62,61 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "containerOverrides" => {
-                                builder = builder.set_container_overrides(
-                                    crate::protocol_serde::shape_container_overrides::de_container_overrides(tokens)?
-                                );
-                            }
-                            "cpu" => {
-                                builder = builder.set_cpu(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "inferenceAcceleratorOverrides" => {
-                                builder = builder.set_inference_accelerator_overrides(
-                                    crate::protocol_serde::shape_inference_accelerator_overrides::de_inference_accelerator_overrides(tokens)?
-                                );
-                            }
-                            "executionRoleArn" => {
-                                builder = builder.set_execution_role_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "memory" => {
-                                builder = builder.set_memory(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "taskRoleArn" => {
-                                builder = builder.set_task_role_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "ephemeralStorage" => {
-                                builder = builder.set_ephemeral_storage(
-                                    crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "containerOverrides" => {
+                            builder =
+                                builder.set_container_overrides(crate::protocol_serde::shape_container_overrides::de_container_overrides(tokens)?);
                         }
-                    }
+                        "cpu" => {
+                            builder = builder.set_cpu(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "inferenceAcceleratorOverrides" => {
+                            builder = builder.set_inference_accelerator_overrides(
+                                crate::protocol_serde::shape_inference_accelerator_overrides::de_inference_accelerator_overrides(tokens)?,
+                            );
+                        }
+                        "executionRoleArn" => {
+                            builder = builder.set_execution_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "memory" => {
+                            builder = builder.set_memory(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "taskRoleArn" => {
+                            builder = builder.set_task_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ephemeralStorage" => {
+                            builder = builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -44,17 +44,14 @@ impl PutApprovalResultInput {
 }
 impl PutApprovalResultInput {
     /// Creates a new builder-style object to manufacture [`PutApprovalResultInput`](crate::operation::put_approval_result::PutApprovalResultInput).
-    pub fn builder(
-    ) -> crate::operation::put_approval_result::builders::PutApprovalResultInputBuilder {
+    pub fn builder() -> crate::operation::put_approval_result::builders::PutApprovalResultInputBuilder {
         crate::operation::put_approval_result::builders::PutApprovalResultInputBuilder::default()
     }
 }
 
 /// A builder for [`PutApprovalResultInput`](crate::operation::put_approval_result::PutApprovalResultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutApprovalResultInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
@@ -64,18 +61,12 @@ pub struct PutApprovalResultInputBuilder {
 }
 impl PutApprovalResultInputBuilder {
     /// <p>The name of the pipeline that contains the action. </p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline that contains the action. </p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -117,10 +108,7 @@ impl PutApprovalResultInputBuilder {
         self
     }
     /// <p>Represents information about the result of the approval request.</p>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<crate::types::ApprovalResult>,
-    ) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<crate::types::ApprovalResult>) -> Self {
         self.result = input;
         self
     }
@@ -145,18 +133,13 @@ impl PutApprovalResultInputBuilder {
     /// Consumes the builder and constructs a [`PutApprovalResultInput`](crate::operation::put_approval_result::PutApprovalResultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_approval_result::PutApprovalResultInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_approval_result::PutApprovalResultInput {
-                pipeline_name: self.pipeline_name,
-                stage_name: self.stage_name,
-                action_name: self.action_name,
-                result: self.result,
-                token: self.token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_approval_result::PutApprovalResultInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_approval_result::PutApprovalResultInput {
+            pipeline_name: self.pipeline_name,
+            stage_name: self.stage_name,
+            action_name: self.action_name,
+            result: self.result,
+            token: self.token,
+        })
     }
 }

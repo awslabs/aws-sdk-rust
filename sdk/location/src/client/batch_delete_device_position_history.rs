@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`BatchDeleteDevicePositionHistoryOutput`](crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput) with field(s):
     ///   - [`errors(Option<Vec<BatchDeleteDevicePositionHistoryError>>)`](crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput::errors): <p>Contains error details for each device history that failed to delete.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteDevicePositionHistoryError>`](crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryError)
-    pub fn batch_delete_device_position_history(&self) -> crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryFluentBuilder{
+    pub fn batch_delete_device_position_history(
+        &self,
+    ) -> crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryFluentBuilder {
         crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryFluentBuilder::new(self.handle.clone())
     }
 }

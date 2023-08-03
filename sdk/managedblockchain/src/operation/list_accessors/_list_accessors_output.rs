@@ -35,9 +35,7 @@ impl ListAccessorsOutput {
 
 /// A builder for [`ListAccessorsOutput`](crate::operation::list_accessors::ListAccessorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessorsOutputBuilder {
     pub(crate) accessors: ::std::option::Option<::std::vec::Vec<crate::types::AccessorSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListAccessorsOutputBuilder {
         self
     }
     /// <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
-    pub fn set_accessors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessorSummary>>,
-    ) -> Self {
+    pub fn set_accessors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessorSummary>>) -> Self {
         self.accessors = input;
         self
     }
     /// <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
-    pub fn get_accessors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessorSummary>> {
+    pub fn get_accessors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessorSummary>> {
         &self.accessors
     }
     /// <p> The pagination token that indicates the next set of results to retrieve. </p>

@@ -43,9 +43,7 @@ impl ListQueuesInput {
 
 /// A builder for [`ListQueuesInput`](crate::operation::list_queues::ListQueuesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueuesInputBuilder {
     pub(crate) list_by: ::std::option::Option<crate::types::QueueListBy>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -110,12 +108,7 @@ impl ListQueuesInputBuilder {
         &self.order
     }
     /// Consumes the builder and constructs a [`ListQueuesInput`](crate::operation::list_queues::ListQueuesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_queues::ListQueuesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_queues::ListQueuesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_queues::ListQueuesInput {
             list_by: self.list_by,
             max_results: self.max_results,

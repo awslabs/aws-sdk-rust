@@ -26,7 +26,7 @@ impl AssociateApplicationFleetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateApplicationFleetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_application_fleet::builders::AssociateApplicationFleetInputBuilder,
+    inner: crate::operation::associate_application_fleet::builders::AssociateApplicationFleetInputBuilder,
 }
 impl AssociateApplicationFleetFluentBuilder {
     /// Creates a new `AssociateApplicationFleet`.
@@ -37,7 +37,7 @@ impl AssociateApplicationFleetFluentBuilder {
         }
     }
     /// Access the AssociateApplicationFleet as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_application_fleet::builders::AssociateApplicationFleetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_application_fleet::builders::AssociateApplicationFleetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociateApplicationFleetFluentBuilder {
             crate::operation::associate_application_fleet::AssociateApplicationFleet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_application_fleet::AssociateApplicationFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_application_fleet::AssociateApplicationFleetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociateApplicationFleetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociateApplicationFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_application_fleet::AssociateApplicationFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_application_fleet::AssociateApplicationFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_application_fleet::AssociateApplicationFleetError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociateApplicationFleetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_application_fleet::AssociateApplicationFleetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_application_fleet::AssociateApplicationFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_application_fleet::AssociateApplicationFleetError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AssociateApplicationFleetFluentBuilder {
             crate::operation::associate_application_fleet::AssociateApplicationFleet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_application_fleet::AssociateApplicationFleetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_application_fleet::AssociateApplicationFleetError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl AssociateApplicationFleetFluentBuilder {
         self.inner.get_fleet_name()
     }
     /// <p>The ARN of the application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_arn(input.into());
         self
     }
     /// <p>The ARN of the application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_arn(input);
         self
     }

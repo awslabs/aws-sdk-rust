@@ -9,9 +9,7 @@ pub struct AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails {
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p> Parameters used to automatically set up Amazon EBS volumes when the instance is launched. </p>
     #[doc(hidden)]
-    pub ebs: ::std::option::Option<
-        crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails,
-    >,
+    pub ebs: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails>,
     /// <p> Omits the device from the block device mapping when an empty string is specified. </p>
     #[doc(hidden)]
     pub no_device: ::std::option::Option<::std::string::String>,
@@ -25,10 +23,7 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails {
         self.device_name.as_deref()
     }
     /// <p> Parameters used to automatically set up Amazon EBS volumes when the instance is launched. </p>
-    pub fn ebs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails>
-    {
+    pub fn ebs(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails> {
         self.ebs.as_ref()
     }
     /// <p> Omits the device from the block device mapping when an empty string is specified. </p>
@@ -42,23 +37,17 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails {
 }
 impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails`](crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetailsBuilder {
-        crate::types::builders::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetailsBuilder::default(
-        )
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetailsBuilder {
+        crate::types::builders::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails`](crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetailsBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
-    pub(crate) ebs: ::std::option::Option<
-        crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails,
-    >,
+    pub(crate) ebs: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails>,
     pub(crate) no_device: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_name: ::std::option::Option<::std::string::String>,
 }
@@ -78,28 +67,17 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetailsBuilder {
         &self.device_name
     }
     /// <p> Parameters used to automatically set up Amazon EBS volumes when the instance is launched. </p>
-    pub fn ebs(
-        mut self,
-        input: crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails,
-    ) -> Self {
+    pub fn ebs(mut self, input: crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails) -> Self {
         self.ebs = ::std::option::Option::Some(input);
         self
     }
     /// <p> Parameters used to automatically set up Amazon EBS volumes when the instance is launched. </p>
-    pub fn set_ebs(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails,
-        >,
-    ) -> Self {
+    pub fn set_ebs(mut self, input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails>) -> Self {
         self.ebs = input;
         self
     }
     /// <p> Parameters used to automatically set up Amazon EBS volumes when the instance is launched. </p>
-    pub fn get_ebs(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails>
-    {
+    pub fn get_ebs(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails> {
         &self.ebs
     }
     /// <p> Omits the device from the block device mapping when an empty string is specified. </p>

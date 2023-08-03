@@ -22,9 +22,7 @@ impl DescribeScriptInput {
 
 /// A builder for [`DescribeScriptInput`](crate::operation::describe_script::DescribeScriptInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScriptInputBuilder {
     pub(crate) script_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribeScriptInputBuilder {
     /// Consumes the builder and constructs a [`DescribeScriptInput`](crate::operation::describe_script::DescribeScriptInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_script::DescribeScriptInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_script::DescribeScriptInput {
-            script_id: self.script_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_script::DescribeScriptInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_script::DescribeScriptInput { script_id: self.script_id })
     }
 }

@@ -5,32 +5,26 @@
 pub struct DescribeTrustedAdvisorCheckSummariesInput {
     /// <p>The IDs of the Trusted Advisor checks.</p>
     #[doc(hidden)]
-    pub check_ids:
-        ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
+    pub check_ids: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
 }
 impl DescribeTrustedAdvisorCheckSummariesInput {
     /// <p>The IDs of the Trusted Advisor checks.</p>
-    pub fn check_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::option::Option<::std::string::String>]> {
+    pub fn check_ids(&self) -> ::std::option::Option<&[::std::option::Option<::std::string::String>]> {
         self.check_ids.as_deref()
     }
 }
 impl DescribeTrustedAdvisorCheckSummariesInput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckSummariesInput`](crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput).
-    pub fn builder() -> crate::operation::describe_trusted_advisor_check_summaries::builders::DescribeTrustedAdvisorCheckSummariesInputBuilder{
+    pub fn builder() -> crate::operation::describe_trusted_advisor_check_summaries::builders::DescribeTrustedAdvisorCheckSummariesInputBuilder {
         crate::operation::describe_trusted_advisor_check_summaries::builders::DescribeTrustedAdvisorCheckSummariesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTrustedAdvisorCheckSummariesInput`](crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckSummariesInputBuilder {
-    pub(crate) check_ids:
-        ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
+    pub(crate) check_ids: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
 }
 impl DescribeTrustedAdvisorCheckSummariesInputBuilder {
     /// Appends an item to `check_ids`.
@@ -45,26 +39,23 @@ impl DescribeTrustedAdvisorCheckSummariesInputBuilder {
         self
     }
     /// <p>The IDs of the Trusted Advisor checks.</p>
-    pub fn set_check_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_check_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>) -> Self {
         self.check_ids = input;
         self
     }
     /// <p>The IDs of the Trusted Advisor checks.</p>
-    pub fn get_check_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>> {
+    pub fn get_check_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>> {
         &self.check_ids
     }
     /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckSummariesInput`](crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput {
-                check_ids: self.check_ids
-                ,
-            }
+            crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput { check_ids: self.check_ids },
         )
     }
 }

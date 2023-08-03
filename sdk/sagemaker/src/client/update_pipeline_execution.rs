@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdatePipelineExecutionOutput`](crate::operation::update_pipeline_execution::UpdatePipelineExecutionOutput) with field(s):
     ///   - [`pipeline_execution_arn(Option<String>)`](crate::operation::update_pipeline_execution::UpdatePipelineExecutionOutput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the updated pipeline execution.</p>
     /// - On failure, responds with [`SdkError<UpdatePipelineExecutionError>`](crate::operation::update_pipeline_execution::UpdatePipelineExecutionError)
-    pub fn update_pipeline_execution(
-        &self,
-    ) -> crate::operation::update_pipeline_execution::builders::UpdatePipelineExecutionFluentBuilder
-    {
+    pub fn update_pipeline_execution(&self) -> crate::operation::update_pipeline_execution::builders::UpdatePipelineExecutionFluentBuilder {
         crate::operation::update_pipeline_execution::builders::UpdatePipelineExecutionFluentBuilder::new(self.handle.clone())
     }
 }

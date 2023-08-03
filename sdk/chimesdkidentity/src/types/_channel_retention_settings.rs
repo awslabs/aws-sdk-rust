@@ -23,9 +23,7 @@ impl ChannelRetentionSettings {
 
 /// A builder for [`ChannelRetentionSettings`](crate::types::ChannelRetentionSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelRetentionSettingsBuilder {
     pub(crate) retention_days: ::std::option::Option<i32>,
 }

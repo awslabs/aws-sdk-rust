@@ -13,9 +13,7 @@ pub fn ser_describe_delivery_stream_input(
         );
     }
     if let Some(var_3) = &input.exclusive_start_destination_id {
-        object
-            .key("ExclusiveStartDestinationId")
-            .string(var_3.as_str());
+        object.key("ExclusiveStartDestinationId").string(var_3.as_str());
     }
     Ok(())
 }

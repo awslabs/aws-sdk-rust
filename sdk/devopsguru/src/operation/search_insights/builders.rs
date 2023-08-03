@@ -10,10 +10,7 @@ impl SearchInsightsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_insights::SearchInsightsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_insights::SearchInsightsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_insights::SearchInsightsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_insights();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl SearchInsightsFluentBuilder {
         }
     }
     /// Access the SearchInsights as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_insights::builders::SearchInsightsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_insights::builders::SearchInsightsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl SearchInsightsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl SearchInsightsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_insights::paginator::SearchInsightsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_insights::paginator::SearchInsightsPaginator {
-        crate::operation::search_insights::paginator::SearchInsightsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_insights::paginator::SearchInsightsPaginator {
+        crate::operation::search_insights::paginator::SearchInsightsPaginator::new(self.handle, self.inner)
     }
     /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
     pub fn start_time_range(mut self, input: crate::types::StartTimeRange) -> Self {
@@ -132,10 +119,7 @@ impl SearchInsightsFluentBuilder {
         self
     }
     /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
-    pub fn set_start_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::StartTimeRange>,
-    ) -> Self {
+    pub fn set_start_time_range(mut self, input: ::std::option::Option<crate::types::StartTimeRange>) -> Self {
         self.inner = self.inner.set_start_time_range(input);
         self
     }
@@ -149,10 +133,7 @@ impl SearchInsightsFluentBuilder {
         self
     }
     /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchInsightsFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::SearchInsightsFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

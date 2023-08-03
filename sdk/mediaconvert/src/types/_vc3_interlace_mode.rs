@@ -38,13 +38,7 @@
 /// Optional. Choose the scan line type for this output. If you don't specify a value, MediaConvert will create a progressive output.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Vc3InterlaceMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Vc3InterlaceMode {
         match s {
             "INTERLACED" => Vc3InterlaceMode::Interlaced,
             "PROGRESSIVE" => Vc3InterlaceMode::Progressive,
-            other => {
-                Vc3InterlaceMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Vc3InterlaceMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

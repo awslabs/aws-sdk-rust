@@ -36,17 +36,14 @@ impl CreateConnectionInput {
 }
 impl CreateConnectionInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
-    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionInputBuilder {
         crate::operation::create_connection::builders::CreateConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectionInputBuilder {
     pub(crate) provider_type: ::std::option::Option<crate::types::ProviderType>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
@@ -60,10 +57,7 @@ impl CreateConnectionInputBuilder {
         self
     }
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
-    pub fn set_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProviderType>,
-    ) -> Self {
+    pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
         self.provider_type = input;
         self
     }
@@ -72,18 +66,12 @@ impl CreateConnectionInputBuilder {
         &self.provider_type
     }
     /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_name = input;
         self
     }
@@ -103,10 +91,7 @@ impl CreateConnectionInputBuilder {
         self
     }
     /// <p>The key-value pair to use when tagging the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -131,10 +116,7 @@ impl CreateConnectionInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_connection::CreateConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_connection::CreateConnectionInput {
             provider_type: self.provider_type,
             connection_name: self.connection_name,

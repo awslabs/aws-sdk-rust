@@ -8,8 +8,7 @@ pub struct DescribePortfolioSharesOutput {
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>Summaries about each of the portfolio shares.</p>
     #[doc(hidden)]
-    pub portfolio_share_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::PortfolioShareDetail>>,
+    pub portfolio_share_details: ::std::option::Option<::std::vec::Vec<crate::types::PortfolioShareDetail>>,
     _request_id: Option<String>,
 }
 impl DescribePortfolioSharesOutput {
@@ -18,9 +17,7 @@ impl DescribePortfolioSharesOutput {
         self.next_page_token.as_deref()
     }
     /// <p>Summaries about each of the portfolio shares.</p>
-    pub fn portfolio_share_details(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PortfolioShareDetail]> {
+    pub fn portfolio_share_details(&self) -> ::std::option::Option<&[crate::types::PortfolioShareDetail]> {
         self.portfolio_share_details.as_deref()
     }
 }
@@ -31,38 +28,27 @@ impl ::aws_http::request_id::RequestId for DescribePortfolioSharesOutput {
 }
 impl DescribePortfolioSharesOutput {
     /// Creates a new builder-style object to manufacture [`DescribePortfolioSharesOutput`](crate::operation::describe_portfolio_shares::DescribePortfolioSharesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesOutputBuilder {
         crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePortfolioSharesOutput`](crate::operation::describe_portfolio_shares::DescribePortfolioSharesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePortfolioSharesOutputBuilder {
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
-    pub(crate) portfolio_share_details:
-        ::std::option::Option<::std::vec::Vec<crate::types::PortfolioShareDetail>>,
+    pub(crate) portfolio_share_details: ::std::option::Option<::std::vec::Vec<crate::types::PortfolioShareDetail>>,
     _request_id: Option<String>,
 }
 impl DescribePortfolioSharesOutputBuilder {
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -82,17 +68,12 @@ impl DescribePortfolioSharesOutputBuilder {
         self
     }
     /// <p>Summaries about each of the portfolio shares.</p>
-    pub fn set_portfolio_share_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortfolioShareDetail>>,
-    ) -> Self {
+    pub fn set_portfolio_share_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortfolioShareDetail>>) -> Self {
         self.portfolio_share_details = input;
         self
     }
     /// <p>Summaries about each of the portfolio shares.</p>
-    pub fn get_portfolio_share_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortfolioShareDetail>> {
+    pub fn get_portfolio_share_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortfolioShareDetail>> {
         &self.portfolio_share_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -105,9 +86,7 @@ impl DescribePortfolioSharesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePortfolioSharesOutput`](crate::operation::describe_portfolio_shares::DescribePortfolioSharesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_portfolio_shares::DescribePortfolioSharesOutput {
+    pub fn build(self) -> crate::operation::describe_portfolio_shares::DescribePortfolioSharesOutput {
         crate::operation::describe_portfolio_shares::DescribePortfolioSharesOutput {
             next_page_token: self.next_page_token,
             portfolio_share_details: self.portfolio_share_details,

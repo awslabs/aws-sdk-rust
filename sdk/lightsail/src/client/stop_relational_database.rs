@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`StopRelationalDatabaseOutput`](crate::operation::stop_relational_database::StopRelationalDatabaseOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::stop_relational_database::StopRelationalDatabaseOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<StopRelationalDatabaseError>`](crate::operation::stop_relational_database::StopRelationalDatabaseError)
-    pub fn stop_relational_database(
-        &self,
-    ) -> crate::operation::stop_relational_database::builders::StopRelationalDatabaseFluentBuilder
-    {
+    pub fn stop_relational_database(&self) -> crate::operation::stop_relational_database::builders::StopRelationalDatabaseFluentBuilder {
         crate::operation::stop_relational_database::builders::StopRelationalDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

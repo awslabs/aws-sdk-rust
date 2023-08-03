@@ -37,9 +37,7 @@ impl PackageAggregation {
 
 /// A builder for [`PackageAggregation`](crate::types::PackageAggregation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PackageAggregationBuilder {
     pub(crate) package_names: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
@@ -58,17 +56,12 @@ impl PackageAggregationBuilder {
         self
     }
     /// <p>The names of packages to aggregate findings on.</p>
-    pub fn set_package_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_package_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.package_names = input;
         self
     }
     /// <p>The names of packages to aggregate findings on.</p>
-    pub fn get_package_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_package_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.package_names
     }
     /// <p>The order to sort results by.</p>
@@ -91,10 +84,7 @@ impl PackageAggregationBuilder {
         self
     }
     /// <p>The value to sort results by.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::PackageSortBy>) -> Self {
         self.sort_by = input;
         self
     }

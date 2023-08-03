@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RegisterOnPremisesInstanceOutput {
 }
 impl RegisterOnPremisesInstanceOutput {
     /// Creates a new builder-style object to manufacture [`RegisterOnPremisesInstanceOutput`](crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceOutput).
-    pub fn builder() -> crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceOutputBuilder{
+    pub fn builder() -> crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceOutputBuilder {
         crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterOnPremisesInstanceOutput`](crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterOnPremisesInstanceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl RegisterOnPremisesInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterOnPremisesInstanceOutput`](crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceOutput {
+    pub fn build(self) -> crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceOutput {
         crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceOutput {
             _request_id: self._request_id,
         }

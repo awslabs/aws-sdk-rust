@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAccessPreviewFindingsOutput {
 }
 impl ListAccessPreviewFindingsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessPreviewFindingsOutput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput).
-    pub fn builder() -> crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsOutputBuilder{
+    pub fn builder() -> crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsOutputBuilder {
         crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAccessPreviewFindingsOutput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessPreviewFindingsOutputBuilder {
     pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListAccessPreviewFindingsOutputBuilder {
         self
     }
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
-    pub fn set_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>>,
-    ) -> Self {
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>>) -> Self {
         self.findings = input;
         self
     }
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
-    pub fn get_findings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>> {
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>> {
         &self.findings
     }
     /// <p>A token used for pagination of results returned.</p>
@@ -93,9 +86,7 @@ impl ListAccessPreviewFindingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccessPreviewFindingsOutput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput {
+    pub fn build(self) -> crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput {
         crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput {
             findings: self.findings,
             next_token: self.next_token,

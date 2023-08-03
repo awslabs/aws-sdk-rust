@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`insight_events(Option<Vec<InsightEvent>>)`](crate::operation::get_insight_events::GetInsightEventsOutput::insight_events): <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_insight_events::GetInsightEventsOutput::next_token): <p>Use this token to retrieve the next page of insight events.</p>
     /// - On failure, responds with [`SdkError<GetInsightEventsError>`](crate::operation::get_insight_events::GetInsightEventsError)
-    pub fn get_insight_events(
-        &self,
-    ) -> crate::operation::get_insight_events::builders::GetInsightEventsFluentBuilder {
-        crate::operation::get_insight_events::builders::GetInsightEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_insight_events(&self) -> crate::operation::get_insight_events::builders::GetInsightEventsFluentBuilder {
+        crate::operation::get_insight_events::builders::GetInsightEventsFluentBuilder::new(self.handle.clone())
     }
 }

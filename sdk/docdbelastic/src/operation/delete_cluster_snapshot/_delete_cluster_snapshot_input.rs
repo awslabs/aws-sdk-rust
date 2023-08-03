@@ -15,18 +15,14 @@ impl DeleteClusterSnapshotInput {
 }
 impl DeleteClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`DeleteClusterSnapshotInput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder {
         crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteClusterSnapshotInput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteClusterSnapshotInputBuilder {
     pub(crate) snapshot_arn: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl DeleteClusterSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`DeleteClusterSnapshotInput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput {
-                snapshot_arn: self.snapshot_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput {
+            snapshot_arn: self.snapshot_arn,
+        })
     }
 }

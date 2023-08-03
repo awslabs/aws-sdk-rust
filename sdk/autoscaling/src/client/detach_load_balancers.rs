@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`load_balancer_names(Vec<String>)`](crate::operation::detach_load_balancers::builders::DetachLoadBalancersFluentBuilder::load_balancer_names) / [`set_load_balancer_names(Option<Vec<String>>)`](crate::operation::detach_load_balancers::builders::DetachLoadBalancersFluentBuilder::set_load_balancer_names): <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
     /// - On success, responds with [`DetachLoadBalancersOutput`](crate::operation::detach_load_balancers::DetachLoadBalancersOutput)
     /// - On failure, responds with [`SdkError<DetachLoadBalancersError>`](crate::operation::detach_load_balancers::DetachLoadBalancersError)
-    pub fn detach_load_balancers(
-        &self,
-    ) -> crate::operation::detach_load_balancers::builders::DetachLoadBalancersFluentBuilder {
-        crate::operation::detach_load_balancers::builders::DetachLoadBalancersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detach_load_balancers(&self) -> crate::operation::detach_load_balancers::builders::DetachLoadBalancersFluentBuilder {
+        crate::operation::detach_load_balancers::builders::DetachLoadBalancersFluentBuilder::new(self.handle.clone())
     }
 }

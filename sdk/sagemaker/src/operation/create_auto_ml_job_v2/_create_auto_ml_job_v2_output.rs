@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateAutoMlJobV2Output {
 }
 impl CreateAutoMlJobV2Output {
     /// Creates a new builder-style object to manufacture [`CreateAutoMlJobV2Output`](crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output).
-    pub fn builder(
-    ) -> crate::operation::create_auto_ml_job_v2::builders::CreateAutoMlJobV2OutputBuilder {
+    pub fn builder() -> crate::operation::create_auto_ml_job_v2::builders::CreateAutoMlJobV2OutputBuilder {
         crate::operation::create_auto_ml_job_v2::builders::CreateAutoMlJobV2OutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAutoMlJobV2Output`](crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAutoMlJobV2OutputBuilder {
     pub(crate) auto_ml_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateAutoMlJobV2OutputBuilder {
     /// <p>The unique ARN assigned to the AutoMLJob when it is created.</p>
-    pub fn auto_ml_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_ml_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_ml_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ARN assigned to the AutoMLJob when it is created.</p>
-    pub fn set_auto_ml_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_ml_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_ml_job_arn = input;
         self
     }

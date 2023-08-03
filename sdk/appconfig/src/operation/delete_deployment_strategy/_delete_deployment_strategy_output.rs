@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDeploymentStrategyOutput {
 }
 impl DeleteDeploymentStrategyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentStrategyOutput`](crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_deployment_strategy::builders::DeleteDeploymentStrategyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_deployment_strategy::builders::DeleteDeploymentStrategyOutputBuilder {
         crate::operation::delete_deployment_strategy::builders::DeleteDeploymentStrategyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDeploymentStrategyOutput`](crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDeploymentStrategyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteDeploymentStrategyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDeploymentStrategyOutput`](crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyOutput {
+    pub fn build(self) -> crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyOutput {
         crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyOutput {
             _request_id: self._request_id,
         }

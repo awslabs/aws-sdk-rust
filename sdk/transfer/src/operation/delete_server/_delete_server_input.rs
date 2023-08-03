@@ -22,9 +22,7 @@ impl DeleteServerInput {
 
 /// A builder for [`DeleteServerInput`](crate::operation::delete_server::DeleteServerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServerInputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteServerInputBuilder {
         &self.server_id
     }
     /// Consumes the builder and constructs a [`DeleteServerInput`](crate::operation::delete_server::DeleteServerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_server::DeleteServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_server::DeleteServerInput {
-            server_id: self.server_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_server::DeleteServerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_server::DeleteServerInput { server_id: self.server_id })
     }
 }

@@ -49,23 +49,18 @@ impl ::aws_http::request_id::RequestId for UpdateThemePermissionsOutput {
 }
 impl UpdateThemePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateThemePermissionsOutput`](crate::operation::update_theme_permissions::UpdateThemePermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_theme_permissions::builders::UpdateThemePermissionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_theme_permissions::builders::UpdateThemePermissionsOutputBuilder {
         crate::operation::update_theme_permissions::builders::UpdateThemePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateThemePermissionsOutput`](crate::operation::update_theme_permissions::UpdateThemePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThemePermissionsOutputBuilder {
     pub(crate) theme_id: ::std::option::Option<::std::string::String>,
     pub(crate) theme_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -111,17 +106,12 @@ impl UpdateThemePermissionsOutputBuilder {
         self
     }
     /// <p>The resulting list of resource permissions for the theme.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>The resulting list of resource permissions for the theme.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.permissions
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>

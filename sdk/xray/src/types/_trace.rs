@@ -44,9 +44,7 @@ impl Trace {
 
 /// A builder for [`Trace`](crate::types::Trace).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TraceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) duration: ::std::option::Option<f64>,
@@ -108,10 +106,7 @@ impl TraceBuilder {
         self
     }
     /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
-    pub fn set_segments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Segment>>,
-    ) -> Self {
+    pub fn set_segments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Segment>>) -> Self {
         self.segments = input;
         self
     }

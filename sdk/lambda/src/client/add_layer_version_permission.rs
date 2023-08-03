@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`statement(Option<String>)`](crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput::statement): <p>The permission statement.</p>
     ///   - [`revision_id(Option<String>)`](crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput::revision_id): <p>A unique identifier for the current revision of the policy.</p>
     /// - On failure, responds with [`SdkError<AddLayerVersionPermissionError>`](crate::operation::add_layer_version_permission::AddLayerVersionPermissionError)
-    pub fn add_layer_version_permission(&self) -> crate::operation::add_layer_version_permission::builders::AddLayerVersionPermissionFluentBuilder{
+    pub fn add_layer_version_permission(&self) -> crate::operation::add_layer_version_permission::builders::AddLayerVersionPermissionFluentBuilder {
         crate::operation::add_layer_version_permission::builders::AddLayerVersionPermissionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`replace_permission_associations_work(Option<ReplacePermissionAssociationsWork>)`](crate::operation::replace_permission_associations::ReplacePermissionAssociationsOutput::replace_permission_associations_work): <p>Specifies a data structure that you can use to track the asynchronous tasks that RAM performs to complete this operation. You can use the <code>ListReplacePermissionAssociationsWork</code> operation and pass the <code>id</code> value returned in this structure.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::replace_permission_associations::ReplacePermissionAssociationsOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     /// - On failure, responds with [`SdkError<ReplacePermissionAssociationsError>`](crate::operation::replace_permission_associations::ReplacePermissionAssociationsError)
-    pub fn replace_permission_associations(&self) -> crate::operation::replace_permission_associations::builders::ReplacePermissionAssociationsFluentBuilder{
+    pub fn replace_permission_associations(
+        &self,
+    ) -> crate::operation::replace_permission_associations::builders::ReplacePermissionAssociationsFluentBuilder {
         crate::operation::replace_permission_associations::builders::ReplacePermissionAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

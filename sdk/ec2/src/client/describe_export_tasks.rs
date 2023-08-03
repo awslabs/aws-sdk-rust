@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeExportTasksOutput`](crate::operation::describe_export_tasks::DescribeExportTasksOutput) with field(s):
     ///   - [`export_tasks(Option<Vec<ExportTask>>)`](crate::operation::describe_export_tasks::DescribeExportTasksOutput::export_tasks): <p>Information about the export tasks.</p>
     /// - On failure, responds with [`SdkError<DescribeExportTasksError>`](crate::operation::describe_export_tasks::DescribeExportTasksError)
-    pub fn describe_export_tasks(
-        &self,
-    ) -> crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder {
-        crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_export_tasks(&self) -> crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder {
+        crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder::new(self.handle.clone())
     }
 }

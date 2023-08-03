@@ -22,34 +22,26 @@ impl PutVoiceConnectorTerminationInput {
 }
 impl PutVoiceConnectorTerminationInput {
     /// Creates a new builder-style object to manufacture [`PutVoiceConnectorTerminationInput`](crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationInput).
-    pub fn builder() -> crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationInputBuilder{
+    pub fn builder() -> crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationInputBuilder {
         crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutVoiceConnectorTerminationInput`](crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) termination: ::std::option::Option<crate::types::Termination>,
 }
 impl PutVoiceConnectorTerminationInputBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_connector_id = input;
         self
     }
@@ -63,10 +55,7 @@ impl PutVoiceConnectorTerminationInputBuilder {
         self
     }
     /// <p>The termination setting details to add.</p>
-    pub fn set_termination(
-        mut self,
-        input: ::std::option::Option<crate::types::Termination>,
-    ) -> Self {
+    pub fn set_termination(mut self, input: ::std::option::Option<crate::types::Termination>) -> Self {
         self.termination = input;
         self
     }
@@ -81,11 +70,9 @@ impl PutVoiceConnectorTerminationInputBuilder {
         crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationInput {
-                voice_connector_id: self.voice_connector_id,
-                termination: self.termination,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationInput {
+            voice_connector_id: self.voice_connector_id,
+            termination: self.termination,
+        })
     }
 }

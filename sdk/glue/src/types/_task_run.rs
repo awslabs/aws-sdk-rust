@@ -86,9 +86,7 @@ impl TaskRun {
 
 /// A builder for [`TaskRun`](crate::types::TaskRun).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskRunBuilder {
     pub(crate) transform_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_run_id: ::std::option::Option<::std::string::String>,
@@ -136,10 +134,7 @@ impl TaskRunBuilder {
         self
     }
     /// <p>The current status of the requested task run.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -148,18 +143,12 @@ impl TaskRunBuilder {
         &self.status
     }
     /// <p>The names of the log group for secure logging, associated with this task run.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The names of the log group for secure logging, associated with this task run.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
@@ -173,10 +162,7 @@ impl TaskRunBuilder {
         self
     }
     /// <p>Specifies configuration properties associated with this task run.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskRunProperties>,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<crate::types::TaskRunProperties>) -> Self {
         self.properties = input;
         self
     }
@@ -204,10 +190,7 @@ impl TaskRunBuilder {
         self
     }
     /// <p>The date and time that this task run started.</p>
-    pub fn set_started_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_on = input;
         self
     }
@@ -221,10 +204,7 @@ impl TaskRunBuilder {
         self
     }
     /// <p>The last point in time that the requested task run was updated.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_on = input;
         self
     }
@@ -238,10 +218,7 @@ impl TaskRunBuilder {
         self
     }
     /// <p>The last point in time that the requested task run was completed.</p>
-    pub fn set_completed_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completed_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completed_on = input;
         self
     }

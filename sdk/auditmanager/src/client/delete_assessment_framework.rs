@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`framework_id(impl ::std::convert::Into<String>)`](crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkFluentBuilder::framework_id) / [`set_framework_id(Option<String>)`](crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkFluentBuilder::set_framework_id): <p> The identifier for the custom framework. </p>
     /// - On success, responds with [`DeleteAssessmentFrameworkOutput`](crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput)
     /// - On failure, responds with [`SdkError<DeleteAssessmentFrameworkError>`](crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError)
-    pub fn delete_assessment_framework(&self) -> crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkFluentBuilder{
+    pub fn delete_assessment_framework(&self) -> crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkFluentBuilder {
         crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkFluentBuilder::new(self.handle.clone())
     }
 }

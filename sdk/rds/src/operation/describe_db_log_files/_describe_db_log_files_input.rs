@@ -66,17 +66,14 @@ impl DescribeDbLogFilesInput {
 }
 impl DescribeDbLogFilesInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbLogFilesInput`](crate::operation::describe_db_log_files::DescribeDbLogFilesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_log_files::builders::DescribeDbLogFilesInputBuilder {
+    pub fn builder() -> crate::operation::describe_db_log_files::builders::DescribeDbLogFilesInputBuilder {
         crate::operation::describe_db_log_files::builders::DescribeDbLogFilesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDbLogFilesInput`](crate::operation::describe_db_log_files::DescribeDbLogFilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbLogFilesInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) filename_contains: ::std::option::Option<::std::string::String>,
@@ -92,10 +89,7 @@ impl DescribeDbLogFilesInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -104,10 +98,7 @@ impl DescribeDbLogFilesInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
@@ -120,18 +111,12 @@ impl DescribeDbLogFilesInputBuilder {
         &self.db_instance_identifier
     }
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
-    pub fn filename_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filename_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filename_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
-    pub fn set_filename_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filename_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filename_contains = input;
         self
     }
@@ -179,10 +164,7 @@ impl DescribeDbLogFilesInputBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -221,20 +203,16 @@ impl DescribeDbLogFilesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDbLogFilesInput`](crate::operation::describe_db_log_files::DescribeDbLogFilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_log_files::DescribeDbLogFilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_db_log_files::DescribeDbLogFilesInput {
-                db_instance_identifier: self.db_instance_identifier,
-                filename_contains: self.filename_contains,
-                file_last_written: self.file_last_written.unwrap_or_default(),
-                file_size: self.file_size.unwrap_or_default(),
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_db_log_files::DescribeDbLogFilesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_db_log_files::DescribeDbLogFilesInput {
+            db_instance_identifier: self.db_instance_identifier,
+            filename_contains: self.filename_contains,
+            file_last_written: self.file_last_written.unwrap_or_default(),
+            file_size: self.file_size.unwrap_or_default(),
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

@@ -90,9 +90,7 @@ impl ClassificationResultStatus {
 
 /// A builder for [`ClassificationResultStatus`](crate::types::ClassificationResultStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClassificationResultStatusBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,

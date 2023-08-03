@@ -30,9 +30,7 @@ impl NoncurrentVersionTransition {
 
 /// A builder for [`NoncurrentVersionTransition`](crate::types::NoncurrentVersionTransition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NoncurrentVersionTransitionBuilder {
     pub(crate) noncurrent_days: ::std::option::Option<i32>,
     pub(crate) storage_class: ::std::option::Option<crate::types::TransitionStorageClass>,
@@ -58,17 +56,12 @@ impl NoncurrentVersionTransitionBuilder {
         self
     }
     /// <p>The class of storage used to store the object.</p>
-    pub fn set_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitionStorageClass>,
-    ) -> Self {
+    pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::TransitionStorageClass>) -> Self {
         self.storage_class = input;
         self
     }
     /// <p>The class of storage used to store the object.</p>
-    pub fn get_storage_class(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitionStorageClass> {
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::TransitionStorageClass> {
         &self.storage_class
     }
     /// Consumes the builder and constructs a [`NoncurrentVersionTransition`](crate::types::NoncurrentVersionTransition).

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`license_conversion_tasks(Option<Vec<LicenseConversionTask>>)`](crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput::license_conversion_tasks): <p>Information about the license configuration tasks for your account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLicenseConversionTasksError>`](crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksError)
-    pub fn list_license_conversion_tasks(&self) -> crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksFluentBuilder{
+    pub fn list_license_conversion_tasks(
+        &self,
+    ) -> crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksFluentBuilder {
         crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksFluentBuilder::new(self.handle.clone())
     }
 }

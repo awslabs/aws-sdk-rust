@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CampaignStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for CampaignStatus {
             "RUNNING" => CampaignStatus::Running,
             "SUSPENDED" => CampaignStatus::Suspended,
             "WAITING_FOR_APPROVAL" => CampaignStatus::WaitingForApproval,
-            other => {
-                CampaignStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => CampaignStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

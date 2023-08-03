@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::update_vpc_connection::UpdateVpcConnectionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::update_vpc_connection::UpdateVpcConnectionOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<UpdateVPCConnectionError>`](crate::operation::update_vpc_connection::UpdateVPCConnectionError)
-    pub fn update_vpc_connection(
-        &self,
-    ) -> crate::operation::update_vpc_connection::builders::UpdateVPCConnectionFluentBuilder {
-        crate::operation::update_vpc_connection::builders::UpdateVPCConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_vpc_connection(&self) -> crate::operation::update_vpc_connection::builders::UpdateVPCConnectionFluentBuilder {
+        crate::operation::update_vpc_connection::builders::UpdateVPCConnectionFluentBuilder::new(self.handle.clone())
     }
 }

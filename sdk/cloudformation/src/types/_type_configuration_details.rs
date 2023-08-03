@@ -72,9 +72,7 @@ impl TypeConfigurationDetails {
 
 /// A builder for [`TypeConfigurationDetails`](crate::types::TypeConfigurationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TypeConfigurationDetailsBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
@@ -115,19 +113,13 @@ impl TypeConfigurationDetailsBuilder {
     }
     /// <p>A JSON string specifying the configuration data for the extension, in this account and Region.</p>
     /// <p>If a configuration hasn't been set for a specified extension, CloudFormation returns <code>{}</code>.</p>
-    pub fn configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON string specifying the configuration data for the extension, in this account and Region.</p>
     /// <p>If a configuration hasn't been set for a specified extension, CloudFormation returns <code>{}</code>.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration = input;
         self
     }
@@ -144,10 +136,7 @@ impl TypeConfigurationDetailsBuilder {
     }
     /// <p>When the configuration data was last updated for this extension.</p>
     /// <p>If a configuration hasn't been set for a specified extension, CloudFormation returns <code>null</code>.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }

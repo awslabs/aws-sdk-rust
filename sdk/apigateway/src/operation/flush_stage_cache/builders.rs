@@ -10,10 +10,7 @@ impl FlushStageCacheInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::flush_stage_cache::FlushStageCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::flush_stage_cache::FlushStageCacheError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::flush_stage_cache::FlushStageCacheError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.flush_stage_cache();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl FlushStageCacheFluentBuilder {
         }
     }
     /// Access the FlushStageCache as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::flush_stage_cache::builders::FlushStageCacheInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::flush_stage_cache::builders::FlushStageCacheInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl FlushStageCacheFluentBuilder {
             crate::operation::flush_stage_cache::FlushStageCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::flush_stage_cache::FlushStageCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::flush_stage_cache::FlushStageCacheError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl FlushStageCacheFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl FlushStageCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::flush_stage_cache::FlushStageCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::flush_stage_cache::FlushStageCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::flush_stage_cache::FlushStageCacheError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl FlushStageCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::flush_stage_cache::FlushStageCacheOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::flush_stage_cache::FlushStageCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::flush_stage_cache::FlushStageCacheError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl FlushStageCacheFluentBuilder {
             crate::operation::flush_stage_cache::FlushStageCache,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::flush_stage_cache::FlushStageCacheError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::flush_stage_cache::FlushStageCacheError>,
     > {
         self.customize_middleware().await
     }

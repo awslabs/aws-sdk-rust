@@ -10,10 +10,7 @@ impl CreateCustomPluginInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_custom_plugin::CreateCustomPluginOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_plugin::CreateCustomPluginError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_plugin::CreateCustomPluginError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_custom_plugin();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateCustomPluginFluentBuilder {
         }
     }
     /// Access the CreateCustomPlugin as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_custom_plugin::builders::CreateCustomPluginInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_custom_plugin::builders::CreateCustomPluginInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateCustomPluginFluentBuilder {
             crate::operation::create_custom_plugin::CreateCustomPlugin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_plugin::CreateCustomPluginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_plugin::CreateCustomPluginError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateCustomPluginFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateCustomPluginFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_plugin::CreateCustomPluginOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_plugin::CreateCustomPluginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_plugin::CreateCustomPluginError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateCustomPluginFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_plugin::CreateCustomPluginOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_plugin::CreateCustomPluginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_plugin::CreateCustomPluginError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateCustomPluginFluentBuilder {
             crate::operation::create_custom_plugin::CreateCustomPlugin,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_plugin::CreateCustomPluginError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_plugin::CreateCustomPluginError>,
     > {
         self.customize_middleware().await
     }
@@ -128,17 +112,12 @@ impl CreateCustomPluginFluentBuilder {
         self
     }
     /// <p>The type of the plugin file.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomPluginContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::CustomPluginContentType>) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
     }
     /// <p>The type of the plugin file.</p>
-    pub fn get_content_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomPluginContentType> {
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::CustomPluginContentType> {
         self.inner.get_content_type()
     }
     /// <p>A summary description of the custom plugin.</p>
@@ -161,10 +140,7 @@ impl CreateCustomPluginFluentBuilder {
         self
     }
     /// <p>Information about the location of a custom plugin.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomPluginLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::CustomPluginLocation>) -> Self {
         self.inner = self.inner.set_location(input);
         self
     }

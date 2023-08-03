@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for PutFirewallRuleGroupPolicyOutput {
 }
 impl PutFirewallRuleGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutFirewallRuleGroupPolicyOutput`](crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput).
-    pub fn builder() -> crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyOutputBuilder {
         crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutFirewallRuleGroupPolicyOutput`](crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutFirewallRuleGroupPolicyOutputBuilder {
     pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl PutFirewallRuleGroupPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutFirewallRuleGroupPolicyOutput`](crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput {
+    pub fn build(self) -> crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput {
         crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput {
             return_value: self.return_value.unwrap_or_default(),
             _request_id: self._request_id,

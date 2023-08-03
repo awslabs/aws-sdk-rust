@@ -38,31 +38,22 @@ impl GetTemplateOutput {
 
 /// A builder for [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTemplateOutputBuilder {
     pub(crate) template_body: ::std::option::Option<::std::string::String>,
-    pub(crate) stages_available:
-        ::std::option::Option<::std::vec::Vec<crate::types::TemplateStage>>,
+    pub(crate) stages_available: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStage>>,
     _request_id: Option<String>,
 }
 impl GetTemplateOutputBuilder {
     /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
     /// <p>CloudFormation returns the same template that was used when the stack was created.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
     /// <p>CloudFormation returns the same template that was used when the stack was created.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_body = input;
         self
     }
@@ -83,17 +74,12 @@ impl GetTemplateOutputBuilder {
         self
     }
     /// <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>
-    pub fn set_stages_available(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStage>>,
-    ) -> Self {
+    pub fn set_stages_available(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStage>>) -> Self {
         self.stages_available = input;
         self
     }
     /// <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>
-    pub fn get_stages_available(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateStage>> {
+    pub fn get_stages_available(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateStage>> {
         &self.stages_available
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

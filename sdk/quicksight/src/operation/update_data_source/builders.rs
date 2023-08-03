@@ -10,10 +10,7 @@ impl UpdateDataSourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_data_source::UpdateDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_source::UpdateDataSourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_source::UpdateDataSourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_data_source();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDataSourceFluentBuilder {
         }
     }
     /// Access the UpdateDataSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateDataSourceFluentBuilder {
             crate::operation::update_data_source::UpdateDataSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_source::UpdateDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_source::UpdateDataSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateDataSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateDataSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_source::UpdateDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_source::UpdateDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_source::UpdateDataSourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateDataSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_source::UpdateDataSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_source::UpdateDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_source::UpdateDataSourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateDataSourceFluentBuilder {
             crate::operation::update_data_source::UpdateDataSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_source::UpdateDataSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_source::UpdateDataSourceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -143,18 +121,12 @@ impl UpdateDataSourceFluentBuilder {
         self.inner.get_aws_account_id()
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
@@ -182,17 +154,12 @@ impl UpdateDataSourceFluentBuilder {
         self
     }
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
-    pub fn set_data_source_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceParameters>,
-    ) -> Self {
+    pub fn set_data_source_parameters(mut self, input: ::std::option::Option<crate::types::DataSourceParameters>) -> Self {
         self.inner = self.inner.set_data_source_parameters(input);
         self
     }
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
-    pub fn get_data_source_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceParameters> {
+    pub fn get_data_source_parameters(&self) -> &::std::option::Option<crate::types::DataSourceParameters> {
         self.inner.get_data_source_parameters()
     }
     /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
@@ -201,10 +168,7 @@ impl UpdateDataSourceFluentBuilder {
         self
     }
     /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceCredentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::DataSourceCredentials>) -> Self {
         self.inner = self.inner.set_credentials(input);
         self
     }
@@ -213,25 +177,17 @@ impl UpdateDataSourceFluentBuilder {
         self.inner.get_credentials()
     }
     /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
-    pub fn vpc_connection_properties(
-        mut self,
-        input: crate::types::VpcConnectionProperties,
-    ) -> Self {
+    pub fn vpc_connection_properties(mut self, input: crate::types::VpcConnectionProperties) -> Self {
         self.inner = self.inner.vpc_connection_properties(input);
         self
     }
     /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
-    pub fn set_vpc_connection_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConnectionProperties>,
-    ) -> Self {
+    pub fn set_vpc_connection_properties(mut self, input: ::std::option::Option<crate::types::VpcConnectionProperties>) -> Self {
         self.inner = self.inner.set_vpc_connection_properties(input);
         self
     }
     /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
-    pub fn get_vpc_connection_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcConnectionProperties> {
+    pub fn get_vpc_connection_properties(&self) -> &::std::option::Option<crate::types::VpcConnectionProperties> {
         self.inner.get_vpc_connection_properties()
     }
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
@@ -240,10 +196,7 @@ impl UpdateDataSourceFluentBuilder {
         self
     }
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
-    pub fn set_ssl_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::SslProperties>,
-    ) -> Self {
+    pub fn set_ssl_properties(mut self, input: ::std::option::Option<crate::types::SslProperties>) -> Self {
         self.inner = self.inner.set_ssl_properties(input);
         self
     }

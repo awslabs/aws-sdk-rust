@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateExperienceOutput {
 }
 impl UpdateExperienceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateExperienceOutput`](crate::operation::update_experience::UpdateExperienceOutput).
-    pub fn builder() -> crate::operation::update_experience::builders::UpdateExperienceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_experience::builders::UpdateExperienceOutputBuilder {
         crate::operation::update_experience::builders::UpdateExperienceOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateExperienceOutput`](crate::operation::update_experience::UpdateExperienceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateExperienceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -38,10 +38,7 @@ impl GetSigningCertificateFluentBuilder {
         }
     }
     /// Access the GetSigningCertificate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_signing_certificate::builders::GetSigningCertificateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_signing_certificate::builders::GetSigningCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl GetSigningCertificateFluentBuilder {
             crate::operation::get_signing_certificate::GetSigningCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signing_certificate::GetSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signing_certificate::GetSigningCertificateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl GetSigningCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl GetSigningCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_signing_certificate::GetSigningCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signing_certificate::GetSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signing_certificate::GetSigningCertificateError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl GetSigningCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_signing_certificate::GetSigningCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signing_certificate::GetSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signing_certificate::GetSigningCertificateError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl GetSigningCertificateFluentBuilder {
             crate::operation::get_signing_certificate::GetSigningCertificate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_signing_certificate::GetSigningCertificateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_signing_certificate::GetSigningCertificateError>,
     > {
         self.customize_middleware().await
     }

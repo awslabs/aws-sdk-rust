@@ -96,9 +96,7 @@ pub struct ScheduleRunTest {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ScheduleRunTest {
     /// <p>The test's type.</p>
@@ -196,11 +194,7 @@ impl ScheduleRunTest {
     /// <li> <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -213,17 +207,13 @@ impl ScheduleRunTest {
 
 /// A builder for [`ScheduleRunTest`](crate::types::ScheduleRunTest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScheduleRunTestBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TestType>,
     pub(crate) test_package_arn: ::std::option::Option<::std::string::String>,
     pub(crate) test_spec_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ScheduleRunTestBuilder {
     /// <p>The test's type.</p>
@@ -304,18 +294,12 @@ impl ScheduleRunTestBuilder {
         &self.r#type
     }
     /// <p>The ARN of the uploaded test to be run.</p>
-    pub fn test_package_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_package_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the uploaded test to be run.</p>
-    pub fn set_test_package_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_package_arn = input;
         self
     }
@@ -324,18 +308,12 @@ impl ScheduleRunTestBuilder {
         &self.test_package_arn
     }
     /// <p>The ARN of the YAML-formatted test specification.</p>
-    pub fn test_spec_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_spec_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_spec_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the YAML-formatted test specification.</p>
-    pub fn set_test_spec_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_spec_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_spec_arn = input;
         self
     }
@@ -419,11 +397,7 @@ impl ScheduleRunTestBuilder {
     /// <li> <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
@@ -487,12 +461,7 @@ impl ScheduleRunTestBuilder {
     /// <li> <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
@@ -554,11 +523,7 @@ impl ScheduleRunTestBuilder {
     /// <li> <p>Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ScheduleRunTest`](crate::types::ScheduleRunTest).

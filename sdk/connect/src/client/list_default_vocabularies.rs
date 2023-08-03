@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`default_vocabulary_list(Option<Vec<DefaultVocabulary>>)`](crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput::default_vocabulary_list): <p>A list of default vocabularies.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListDefaultVocabulariesError>`](crate::operation::list_default_vocabularies::ListDefaultVocabulariesError)
-    pub fn list_default_vocabularies(
-        &self,
-    ) -> crate::operation::list_default_vocabularies::builders::ListDefaultVocabulariesFluentBuilder
-    {
+    pub fn list_default_vocabularies(&self) -> crate::operation::list_default_vocabularies::builders::ListDefaultVocabulariesFluentBuilder {
         crate::operation::list_default_vocabularies::builders::ListDefaultVocabulariesFluentBuilder::new(self.handle.clone())
     }
 }

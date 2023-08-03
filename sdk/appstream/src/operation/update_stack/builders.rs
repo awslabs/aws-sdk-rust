@@ -10,10 +10,7 @@ impl UpdateStackInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_stack::UpdateStackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_stack::UpdateStackError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_stack::UpdateStackError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_stack();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateStackFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_stack::UpdateStack,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_stack::UpdateStack, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_stack::UpdateStackError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateStackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateStackFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_stack::UpdateStack,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_stack::UpdateStack, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_stack::UpdateStackError>,
     > {
         self.customize_middleware().await
@@ -164,17 +152,12 @@ impl UpdateStackFluentBuilder {
         self
     }
     /// <p>The storage connectors to enable.</p>
-    pub fn set_storage_connectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>,
-    ) -> Self {
+    pub fn set_storage_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>) -> Self {
         self.inner = self.inner.set_storage_connectors(input);
         self
     }
     /// <p>The storage connectors to enable.</p>
-    pub fn get_storage_connectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>> {
+    pub fn get_storage_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>> {
         self.inner.get_storage_connectors()
     }
     /// <p>Deletes the storage connectors currently enabled for the stack.</p>
@@ -232,17 +215,12 @@ impl UpdateStackFluentBuilder {
         self
     }
     /// <p>The stack attributes to delete.</p>
-    pub fn set_attributes_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackAttribute>>,
-    ) -> Self {
+    pub fn set_attributes_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackAttribute>>) -> Self {
         self.inner = self.inner.set_attributes_to_delete(input);
         self
     }
     /// <p>The stack attributes to delete.</p>
-    pub fn get_attributes_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackAttribute>> {
+    pub fn get_attributes_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackAttribute>> {
         self.inner.get_attributes_to_delete()
     }
     /// Appends an item to `UserSettings`.
@@ -255,17 +233,12 @@ impl UpdateStackFluentBuilder {
         self
     }
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
-    pub fn set_user_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>,
-    ) -> Self {
+    pub fn set_user_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>) -> Self {
         self.inner = self.inner.set_user_settings(input);
         self
     }
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
-    pub fn get_user_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSetting>> {
+    pub fn get_user_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSetting>> {
         self.inner.get_user_settings()
     }
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
@@ -274,17 +247,12 @@ impl UpdateStackFluentBuilder {
         self
     }
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
-    pub fn set_application_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationSettings>,
-    ) -> Self {
+    pub fn set_application_settings(mut self, input: ::std::option::Option<crate::types::ApplicationSettings>) -> Self {
         self.inner = self.inner.set_application_settings(input);
         self
     }
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
-    pub fn get_application_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationSettings> {
+    pub fn get_application_settings(&self) -> &::std::option::Option<crate::types::ApplicationSettings> {
         self.inner.get_application_settings()
     }
     /// Appends an item to `AccessEndpoints`.
@@ -297,17 +265,12 @@ impl UpdateStackFluentBuilder {
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-    pub fn set_access_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
-    ) -> Self {
+    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>) -> Self {
         self.inner = self.inner.set_access_endpoints(input);
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-    pub fn get_access_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         self.inner.get_access_endpoints()
     }
     /// Appends an item to `EmbedHostDomains`.
@@ -315,47 +278,31 @@ impl UpdateStackFluentBuilder {
     /// To override the contents of this collection use [`set_embed_host_domains`](Self::set_embed_host_domains).
     ///
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
-    pub fn embed_host_domains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn embed_host_domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.embed_host_domains(input.into());
         self
     }
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
-    pub fn set_embed_host_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_embed_host_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_embed_host_domains(input);
         self
     }
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
-    pub fn get_embed_host_domains(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_embed_host_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_embed_host_domains()
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
-    pub fn streaming_experience_settings(
-        mut self,
-        input: crate::types::StreamingExperienceSettings,
-    ) -> Self {
+    pub fn streaming_experience_settings(mut self, input: crate::types::StreamingExperienceSettings) -> Self {
         self.inner = self.inner.streaming_experience_settings(input);
         self
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
-    pub fn set_streaming_experience_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingExperienceSettings>,
-    ) -> Self {
+    pub fn set_streaming_experience_settings(mut self, input: ::std::option::Option<crate::types::StreamingExperienceSettings>) -> Self {
         self.inner = self.inner.set_streaming_experience_settings(input);
         self
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
-    pub fn get_streaming_experience_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::StreamingExperienceSettings> {
+    pub fn get_streaming_experience_settings(&self) -> &::std::option::Option<crate::types::StreamingExperienceSettings> {
         self.inner.get_streaming_experience_settings()
     }
 }

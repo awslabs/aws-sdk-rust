@@ -27,10 +27,7 @@ pub fn ser_distribution_config(
     }
     if let Some(var_6) = &input.default_cache_behavior {
         let inner_writer = scope.start_el("DefaultCacheBehavior");
-        crate::protocol_serde::shape_default_cache_behavior::ser_default_cache_behavior(
-            var_6,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_default_cache_behavior::ser_default_cache_behavior(var_6, inner_writer)?
     }
     if let Some(var_7) = &input.cache_behaviors {
         let inner_writer = scope.start_el("CacheBehaviors");
@@ -38,10 +35,7 @@ pub fn ser_distribution_config(
     }
     if let Some(var_8) = &input.custom_error_responses {
         let inner_writer = scope.start_el("CustomErrorResponses");
-        crate::protocol_serde::shape_custom_error_responses::ser_custom_error_responses(
-            var_8,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_custom_error_responses::ser_custom_error_responses(var_8, inner_writer)?
     }
     if let Some(var_9) = &input.comment {
         let mut inner_writer = scope.start_el("Comment").finish();
@@ -61,10 +55,7 @@ pub fn ser_distribution_config(
     }
     if let Some(var_13) = &input.viewer_certificate {
         let inner_writer = scope.start_el("ViewerCertificate");
-        crate::protocol_serde::shape_viewer_certificate::ser_viewer_certificate(
-            var_13,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_viewer_certificate::ser_viewer_certificate(var_13, inner_writer)?
     }
     if let Some(var_14) = &input.restrictions {
         let inner_writer = scope.start_el("Restrictions");

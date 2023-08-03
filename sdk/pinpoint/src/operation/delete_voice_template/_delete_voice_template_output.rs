@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteVoiceTemplateOutput {
 }
 impl DeleteVoiceTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceTemplateOutput`](crate::operation::delete_voice_template::DeleteVoiceTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_voice_template::builders::DeleteVoiceTemplateOutputBuilder {
-        crate::operation::delete_voice_template::builders::DeleteVoiceTemplateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_voice_template::builders::DeleteVoiceTemplateOutputBuilder {
+        crate::operation::delete_voice_template::builders::DeleteVoiceTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVoiceTemplateOutput`](crate::operation::delete_voice_template::DeleteVoiceTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceTemplateOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteVoiceTemplateOutputBuilder {
         self
     }
     /// <p>Provides information about an API request or response.</p>
-    pub fn set_message_body(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageBody>,
-    ) -> Self {
+    pub fn set_message_body(mut self, input: ::std::option::Option<crate::types::MessageBody>) -> Self {
         self.message_body = input;
         self
     }

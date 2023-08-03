@@ -15,18 +15,14 @@ impl DeleteServiceLinkedRoleInput {
 }
 impl DeleteServiceLinkedRoleInput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceLinkedRoleInput`](crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleInputBuilder {
         crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceLinkedRoleInput`](crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceLinkedRoleInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl DeleteServiceLinkedRoleInputBuilder {
         crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput {
-                role_name: self.role_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleInput { role_name: self.role_name })
     }
 }

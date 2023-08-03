@@ -22,37 +22,26 @@ impl DisassociateS3ResourcesInput {
 }
 impl DisassociateS3ResourcesInput {
     /// Creates a new builder-style object to manufacture [`DisassociateS3ResourcesInput`](crate::operation::disassociate_s3_resources::DisassociateS3ResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesInputBuilder {
         crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateS3ResourcesInput`](crate::operation::disassociate_s3_resources::DisassociateS3ResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateS3ResourcesInputBuilder {
     pub(crate) member_account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) associated_s3_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::S3Resource>>,
+    pub(crate) associated_s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::S3Resource>>,
 }
 impl DisassociateS3ResourcesInputBuilder {
     /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic.</p>
-    pub fn member_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic.</p>
-    pub fn set_member_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_account_id = input;
         self
     }
@@ -72,17 +61,12 @@ impl DisassociateS3ResourcesInputBuilder {
         self
     }
     /// <p>(Discontinued) The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic.</p>
-    pub fn set_associated_s3_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3Resource>>,
-    ) -> Self {
+    pub fn set_associated_s3_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Resource>>) -> Self {
         self.associated_s3_resources = input;
         self
     }
     /// <p>(Discontinued) The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic.</p>
-    pub fn get_associated_s3_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Resource>> {
+    pub fn get_associated_s3_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Resource>> {
         &self.associated_s3_resources
     }
     /// Consumes the builder and constructs a [`DisassociateS3ResourcesInput`](crate::operation::disassociate_s3_resources::DisassociateS3ResourcesInput).
@@ -92,11 +76,9 @@ impl DisassociateS3ResourcesInputBuilder {
         crate::operation::disassociate_s3_resources::DisassociateS3ResourcesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesInput {
-                member_account_id: self.member_account_id,
-                associated_s3_resources: self.associated_s3_resources,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::disassociate_s3_resources::DisassociateS3ResourcesInput {
+            member_account_id: self.member_account_id,
+            associated_s3_resources: self.associated_s3_resources,
+        })
     }
 }

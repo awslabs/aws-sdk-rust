@@ -30,9 +30,7 @@ impl WriteRequest {
 
 /// A builder for [`WriteRequest`](crate::types::WriteRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WriteRequestBuilder {
     pub(crate) put_request: ::std::option::Option<crate::types::PutRequest>,
     pub(crate) delete_request: ::std::option::Option<crate::types::DeleteRequest>,
@@ -44,10 +42,7 @@ impl WriteRequestBuilder {
         self
     }
     /// <p>A request to perform a <code>PutItem</code> operation.</p>
-    pub fn set_put_request(
-        mut self,
-        input: ::std::option::Option<crate::types::PutRequest>,
-    ) -> Self {
+    pub fn set_put_request(mut self, input: ::std::option::Option<crate::types::PutRequest>) -> Self {
         self.put_request = input;
         self
     }
@@ -61,10 +56,7 @@ impl WriteRequestBuilder {
         self
     }
     /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
-    pub fn set_delete_request(
-        mut self,
-        input: ::std::option::Option<crate::types::DeleteRequest>,
-    ) -> Self {
+    pub fn set_delete_request(mut self, input: ::std::option::Option<crate::types::DeleteRequest>) -> Self {
         self.delete_request = input;
         self
     }

@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`ip_set_ids(Option<Vec<String>>)`](crate::operation::list_ip_sets::ListIpSetsOutput::ip_set_ids): <p>The IDs of the IPSet resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ip_sets::ListIpSetsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     /// - On failure, responds with [`SdkError<ListIPSetsError>`](crate::operation::list_ip_sets::ListIPSetsError)
-    pub fn list_ip_sets(
-        &self,
-    ) -> crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder {
+    pub fn list_ip_sets(&self) -> crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder {
         crate::operation::list_ip_sets::builders::ListIPSetsFluentBuilder::new(self.handle.clone())
     }
 }

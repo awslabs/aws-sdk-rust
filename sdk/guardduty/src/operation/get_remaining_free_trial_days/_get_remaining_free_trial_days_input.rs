@@ -22,16 +22,14 @@ impl GetRemainingFreeTrialDaysInput {
 }
 impl GetRemainingFreeTrialDaysInput {
     /// Creates a new builder-style object to manufacture [`GetRemainingFreeTrialDaysInput`](crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput).
-    pub fn builder() -> crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysInputBuilder{
+    pub fn builder() -> crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysInputBuilder {
         crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRemainingFreeTrialDaysInput`](crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRemainingFreeTrialDaysInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -63,17 +61,12 @@ impl GetRemainingFreeTrialDaysInputBuilder {
         self
     }
     /// <p>A list of account identifiers of the GuardDuty member account.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>A list of account identifiers of the GuardDuty member account.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`GetRemainingFreeTrialDaysInput`](crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput).
@@ -83,11 +76,9 @@ impl GetRemainingFreeTrialDaysInputBuilder {
         crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput {
-                detector_id: self.detector_id,
-                account_ids: self.account_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput {
+            detector_id: self.detector_id,
+            account_ids: self.account_ids,
+        })
     }
 }

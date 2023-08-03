@@ -31,9 +31,7 @@ impl ListSolNetworkInstanceMetadata {
 
 /// A builder for [`ListSolNetworkInstanceMetadata`](crate::types::ListSolNetworkInstanceMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolNetworkInstanceMetadataBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -45,10 +43,7 @@ impl ListSolNetworkInstanceMetadataBuilder {
         self
     }
     /// <p>The date that the resource was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -62,10 +57,7 @@ impl ListSolNetworkInstanceMetadataBuilder {
         self
     }
     /// <p>The date that the resource was last modified.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }

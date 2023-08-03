@@ -72,9 +72,7 @@ impl CreateGovCloudAccountInput {
     }
     /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide.</i> </p>
     /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
-    pub fn iam_user_access_to_billing(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IamUserAccessToBilling> {
+    pub fn iam_user_access_to_billing(&self) -> ::std::option::Option<&crate::types::IamUserAccessToBilling> {
         self.iam_user_access_to_billing.as_ref()
     }
     /// <p>A list of tags that you want to attach to the newly created account. These tags are attached to the commercial account associated with the GovCloud account, and not to the GovCloud account itself. To add tags to the actual GovCloud account, call the <code>TagResource</code> operation in the GovCloud region after the new GovCloud account exists.</p>
@@ -91,19 +89,14 @@ impl ::std::fmt::Debug for CreateGovCloudAccountInput {
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("account_name", &"*** Sensitive Data Redacted ***");
         formatter.field("role_name", &self.role_name);
-        formatter.field(
-            "iam_user_access_to_billing",
-            &self.iam_user_access_to_billing,
-        );
+        formatter.field("iam_user_access_to_billing", &self.iam_user_access_to_billing);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
 impl CreateGovCloudAccountInput {
     /// Creates a new builder-style object to manufacture [`CreateGovCloudAccountInput`](crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput).
-    pub fn builder(
-    ) -> crate::operation::create_gov_cloud_account::builders::CreateGovCloudAccountInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_gov_cloud_account::builders::CreateGovCloudAccountInputBuilder {
         crate::operation::create_gov_cloud_account::builders::CreateGovCloudAccountInputBuilder::default()
     }
 }
@@ -115,8 +108,7 @@ pub struct CreateGovCloudAccountInputBuilder {
     pub(crate) email: ::std::option::Option<::std::string::String>,
     pub(crate) account_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
-    pub(crate) iam_user_access_to_billing:
-        ::std::option::Option<crate::types::IamUserAccessToBilling>,
+    pub(crate) iam_user_access_to_billing: ::std::option::Option<crate::types::IamUserAccessToBilling>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateGovCloudAccountInputBuilder {
@@ -215,27 +207,19 @@ impl CreateGovCloudAccountInputBuilder {
     }
     /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide.</i> </p>
     /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
-    pub fn iam_user_access_to_billing(
-        mut self,
-        input: crate::types::IamUserAccessToBilling,
-    ) -> Self {
+    pub fn iam_user_access_to_billing(mut self, input: crate::types::IamUserAccessToBilling) -> Self {
         self.iam_user_access_to_billing = ::std::option::Option::Some(input);
         self
     }
     /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide.</i> </p>
     /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
-    pub fn set_iam_user_access_to_billing(
-        mut self,
-        input: ::std::option::Option<crate::types::IamUserAccessToBilling>,
-    ) -> Self {
+    pub fn set_iam_user_access_to_billing(mut self, input: ::std::option::Option<crate::types::IamUserAccessToBilling>) -> Self {
         self.iam_user_access_to_billing = input;
         self
     }
     /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating Access to the Billing and Cost Management Console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide.</i> </p>
     /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
-    pub fn get_iam_user_access_to_billing(
-        &self,
-    ) -> &::std::option::Option<crate::types::IamUserAccessToBilling> {
+    pub fn get_iam_user_access_to_billing(&self) -> &::std::option::Option<crate::types::IamUserAccessToBilling> {
         &self.iam_user_access_to_billing
     }
     /// Appends an item to `tags`.
@@ -256,10 +240,7 @@ impl CreateGovCloudAccountInputBuilder {
     /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <note>
     /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -273,19 +254,15 @@ impl CreateGovCloudAccountInputBuilder {
     /// Consumes the builder and constructs a [`CreateGovCloudAccountInput`](crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput {
-                email: self.email,
-                account_name: self.account_name,
-                role_name: self.role_name,
-                iam_user_access_to_billing: self.iam_user_access_to_billing,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput {
+            email: self.email,
+            account_name: self.account_name,
+            role_name: self.role_name,
+            iam_user_access_to_billing: self.iam_user_access_to_billing,
+            tags: self.tags,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateGovCloudAccountInputBuilder {
@@ -294,10 +271,7 @@ impl ::std::fmt::Debug for CreateGovCloudAccountInputBuilder {
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("account_name", &"*** Sensitive Data Redacted ***");
         formatter.field("role_name", &self.role_name);
-        formatter.field(
-            "iam_user_access_to_billing",
-            &self.iam_user_access_to_billing,
-        );
+        formatter.field("iam_user_access_to_billing", &self.iam_user_access_to_billing);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

@@ -37,10 +37,7 @@ impl DescribeFargateProfileFluentBuilder {
         }
     }
     /// Access the DescribeFargateProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_fargate_profile::builders::DescribeFargateProfileInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_fargate_profile::builders::DescribeFargateProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeFargateProfileFluentBuilder {
             crate::operation::describe_fargate_profile::DescribeFargateProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fargate_profile::DescribeFargateProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fargate_profile::DescribeFargateProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeFargateProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeFargateProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fargate_profile::DescribeFargateProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fargate_profile::DescribeFargateProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fargate_profile::DescribeFargateProfileError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeFargateProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fargate_profile::DescribeFargateProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fargate_profile::DescribeFargateProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fargate_profile::DescribeFargateProfileError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeFargateProfileFluentBuilder {
             crate::operation::describe_fargate_profile::DescribeFargateProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fargate_profile::DescribeFargateProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fargate_profile::DescribeFargateProfileError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DescribeFargateProfileFluentBuilder {
         self.inner.get_cluster_name()
     }
     /// <p>The name of the Fargate profile to describe.</p>
-    pub fn fargate_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fargate_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fargate_profile_name(input.into());
         self
     }
     /// <p>The name of the Fargate profile to describe.</p>
-    pub fn set_fargate_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fargate_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fargate_profile_name(input);
         self
     }

@@ -29,9 +29,7 @@ impl DescribeQueueInput {
 
 /// A builder for [`DescribeQueueInput`](crate::operation::describe_queue::DescribeQueueInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeQueueInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DescribeQueueInputBuilder {
     /// Consumes the builder and constructs a [`DescribeQueueInput`](crate::operation::describe_queue::DescribeQueueInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_queue::DescribeQueueInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_queue::DescribeQueueInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_queue::DescribeQueueInput {
             instance_id: self.instance_id,
             queue_id: self.queue_id,

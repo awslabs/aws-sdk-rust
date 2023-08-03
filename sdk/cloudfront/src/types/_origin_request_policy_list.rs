@@ -44,15 +44,12 @@ impl OriginRequestPolicyList {
 
 /// A builder for [`OriginRequestPolicyList`](crate::types::OriginRequestPolicyList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginRequestPolicyListBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::OriginRequestPolicySummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::OriginRequestPolicySummary>>,
 }
 impl OriginRequestPolicyListBuilder {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing origin request policies where you left off.</p>
@@ -109,17 +106,12 @@ impl OriginRequestPolicyListBuilder {
         self
     }
     /// <p>Contains the origin request policies in the list.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OriginRequestPolicySummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OriginRequestPolicySummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Contains the origin request policies in the list.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginRequestPolicySummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginRequestPolicySummary>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`OriginRequestPolicyList`](crate::types::OriginRequestPolicyList).

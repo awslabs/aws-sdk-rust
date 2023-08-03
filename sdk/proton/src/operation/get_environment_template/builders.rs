@@ -37,10 +37,7 @@ impl GetEnvironmentTemplateFluentBuilder {
         }
     }
     /// Access the GetEnvironmentTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_environment_template::builders::GetEnvironmentTemplateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_environment_template::builders::GetEnvironmentTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetEnvironmentTemplateFluentBuilder {
             crate::operation::get_environment_template::GetEnvironmentTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_environment_template::GetEnvironmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_environment_template::GetEnvironmentTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetEnvironmentTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetEnvironmentTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_environment_template::GetEnvironmentTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_environment_template::GetEnvironmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_environment_template::GetEnvironmentTemplateError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetEnvironmentTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_environment_template::GetEnvironmentTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_environment_template::GetEnvironmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_environment_template::GetEnvironmentTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetEnvironmentTemplateFluentBuilder {
             crate::operation::get_environment_template::GetEnvironmentTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_environment_template::GetEnvironmentTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_environment_template::GetEnvironmentTemplateError>,
     > {
         self.customize_middleware().await
     }

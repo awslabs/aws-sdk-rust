@@ -10,9 +10,7 @@ pub struct GetExtensionVersionOutput {
 }
 impl GetExtensionVersionOutput {
     /// <p>The version of the extension.</p>
-    pub fn extension_version(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExtensionVersionDetails> {
+    pub fn extension_version(&self) -> ::std::option::Option<&crate::types::ExtensionVersionDetails> {
         self.extension_version.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetExtensionVersionOutput {
 }
 impl GetExtensionVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetExtensionVersionOutput`](crate::operation::get_extension_version::GetExtensionVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_extension_version::builders::GetExtensionVersionOutputBuilder {
-        crate::operation::get_extension_version::builders::GetExtensionVersionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_extension_version::builders::GetExtensionVersionOutputBuilder {
+        crate::operation::get_extension_version::builders::GetExtensionVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetExtensionVersionOutput`](crate::operation::get_extension_version::GetExtensionVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExtensionVersionOutputBuilder {
     pub(crate) extension_version: ::std::option::Option<crate::types::ExtensionVersionDetails>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl GetExtensionVersionOutputBuilder {
         self
     }
     /// <p>The version of the extension.</p>
-    pub fn set_extension_version(
-        mut self,
-        input: ::std::option::Option<crate::types::ExtensionVersionDetails>,
-    ) -> Self {
+    pub fn set_extension_version(mut self, input: ::std::option::Option<crate::types::ExtensionVersionDetails>) -> Self {
         self.extension_version = input;
         self
     }
     /// <p>The version of the extension.</p>
-    pub fn get_extension_version(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExtensionVersionDetails> {
+    pub fn get_extension_version(&self) -> &::std::option::Option<crate::types::ExtensionVersionDetails> {
         &self.extension_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

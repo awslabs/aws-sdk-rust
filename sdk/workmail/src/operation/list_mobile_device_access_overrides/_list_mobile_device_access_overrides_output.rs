@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListMobileDeviceAccessOverridesOutput
 }
 impl ListMobileDeviceAccessOverridesOutput {
     /// Creates a new builder-style object to manufacture [`ListMobileDeviceAccessOverridesOutput`](crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesOutput).
-    pub fn builder() -> crate::operation::list_mobile_device_access_overrides::builders::ListMobileDeviceAccessOverridesOutputBuilder{
+    pub fn builder() -> crate::operation::list_mobile_device_access_overrides::builders::ListMobileDeviceAccessOverridesOutputBuilder {
         crate::operation::list_mobile_device_access_overrides::builders::ListMobileDeviceAccessOverridesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMobileDeviceAccessOverridesOutput`](crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMobileDeviceAccessOverridesOutputBuilder {
-    pub(crate) overrides:
-        ::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessOverride>>,
+    pub(crate) overrides: ::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessOverride>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListMobileDeviceAccessOverridesOutputBuilder {
         self
     }
     /// <p>The list of mobile device access overrides that exist for the specified WorkMail organization and user.</p>
-    pub fn set_overrides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessOverride>>,
-    ) -> Self {
+    pub fn set_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessOverride>>) -> Self {
         self.overrides = input;
         self
     }
     /// <p>The list of mobile device access overrides that exist for the specified WorkMail organization and user.</p>
-    pub fn get_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessOverride>> {
+    pub fn get_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessOverride>> {
         &self.overrides
     }
     /// <p>The token to use to retrieve the next page of results. The value is “null” when there are no more results to return.</p>
@@ -94,15 +86,10 @@ impl ListMobileDeviceAccessOverridesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMobileDeviceAccessOverridesOutput`](crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesOutput
-    {
+    pub fn build(self) -> crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesOutput {
         crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesOutput {
-            overrides: self.overrides
-            ,
-            next_token: self.next_token
-            ,
+            overrides: self.overrides,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

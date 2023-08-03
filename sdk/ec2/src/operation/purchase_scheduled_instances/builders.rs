@@ -31,7 +31,7 @@ impl PurchaseScheduledInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PurchaseScheduledInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesInputBuilder,
+    inner: crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesInputBuilder,
 }
 impl PurchaseScheduledInstancesFluentBuilder {
     /// Creates a new `PurchaseScheduledInstances`.
@@ -42,7 +42,7 @@ impl PurchaseScheduledInstancesFluentBuilder {
         }
     }
     /// Access the PurchaseScheduledInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl PurchaseScheduledInstancesFluentBuilder {
             crate::operation::purchase_scheduled_instances::PurchaseScheduledInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl PurchaseScheduledInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl PurchaseScheduledInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl PurchaseScheduledInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +110,7 @@ impl PurchaseScheduledInstancesFluentBuilder {
             crate::operation::purchase_scheduled_instances::PurchaseScheduledInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -163,17 +152,12 @@ impl PurchaseScheduledInstancesFluentBuilder {
         self
     }
     /// <p>The purchase requests.</p>
-    pub fn set_purchase_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseRequest>>,
-    ) -> Self {
+    pub fn set_purchase_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseRequest>>) -> Self {
         self.inner = self.inner.set_purchase_requests(input);
         self
     }
     /// <p>The purchase requests.</p>
-    pub fn get_purchase_requests(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PurchaseRequest>> {
+    pub fn get_purchase_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PurchaseRequest>> {
         self.inner.get_purchase_requests()
     }
 }

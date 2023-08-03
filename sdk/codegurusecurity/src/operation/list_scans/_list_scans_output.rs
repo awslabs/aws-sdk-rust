@@ -35,9 +35,7 @@ impl ListScansOutput {
 
 /// A builder for [`ListScansOutput`](crate::operation::list_scans::ListScansOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScansOutputBuilder {
     pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::ScanSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListScansOutputBuilder {
         self
     }
     /// <p>A list of <code>ScanSummary</code> objects with information about all scans in an account.</p>
-    pub fn set_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScanSummary>>,
-    ) -> Self {
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanSummary>>) -> Self {
         self.summaries = input;
         self
     }
     /// <p>A list of <code>ScanSummary</code> objects with information about all scans in an account.</p>
-    pub fn get_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanSummary>> {
         &self.summaries
     }
     /// <p>A pagination token. You can use this in future calls to <code>ListScans</code> to continue listing results after the current page.</p>

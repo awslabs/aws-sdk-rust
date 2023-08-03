@@ -28,8 +28,7 @@ impl DescribeEventAggregatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEventAggregatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesInputBuilder,
+    inner: crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesInputBuilder,
 }
 impl DescribeEventAggregatesFluentBuilder {
     /// Creates a new `DescribeEventAggregates`.
@@ -40,10 +39,7 @@ impl DescribeEventAggregatesFluentBuilder {
         }
     }
     /// Access the DescribeEventAggregates as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl DescribeEventAggregatesFluentBuilder {
             crate::operation::describe_event_aggregates::DescribeEventAggregates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_aggregates::DescribeEventAggregatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_aggregates::DescribeEventAggregatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl DescribeEventAggregatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl DescribeEventAggregatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_aggregates::DescribeEventAggregatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_aggregates::DescribeEventAggregatesError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl DescribeEventAggregatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_aggregates::DescribeEventAggregatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_aggregates::DescribeEventAggregatesError>,
     > {
         self.send_middleware().await
     }
@@ -120,19 +107,14 @@ impl DescribeEventAggregatesFluentBuilder {
             crate::operation::describe_event_aggregates::DescribeEventAggregates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_event_aggregates::DescribeEventAggregatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_event_aggregates::DescribeEventAggregatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_event_aggregates::paginator::DescribeEventAggregatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_event_aggregates::paginator::DescribeEventAggregatesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_event_aggregates::paginator::DescribeEventAggregatesPaginator {
         crate::operation::describe_event_aggregates::paginator::DescribeEventAggregatesPaginator::new(self.handle, self.inner)
     }
     /// <p>Values to narrow the results returned.</p>
@@ -155,10 +137,7 @@ impl DescribeEventAggregatesFluentBuilder {
         self
     }
     /// <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
-    pub fn set_aggregate_field(
-        mut self,
-        input: ::std::option::Option<crate::types::EventAggregateField>,
-    ) -> Self {
+    pub fn set_aggregate_field(mut self, input: ::std::option::Option<crate::types::EventAggregateField>) -> Self {
         self.inner = self.inner.set_aggregate_field(input);
         self
     }

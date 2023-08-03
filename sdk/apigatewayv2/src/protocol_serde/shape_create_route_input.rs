@@ -22,9 +22,7 @@ pub fn ser_create_route_input(
         object.key("authorizerId").string(var_6.as_str());
     }
     if let Some(var_7) = &input.model_selection_expression {
-        object
-            .key("modelSelectionExpression")
-            .string(var_7.as_str());
+        object.key("modelSelectionExpression").string(var_7.as_str());
     }
     if let Some(var_8) = &input.operation_name {
         object.key("operationName").string(var_8.as_str());
@@ -46,10 +44,7 @@ pub fn ser_create_route_input(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = object_14.key(key_15.as_str()).start_object();
-                crate::protocol_serde::shape_parameter_constraints::ser_parameter_constraints(
-                    &mut object_17,
-                    value_16,
-                )?;
+                crate::protocol_serde::shape_parameter_constraints::ser_parameter_constraints(&mut object_17, value_16)?;
                 object_17.finish();
             }
         }
@@ -59,9 +54,7 @@ pub fn ser_create_route_input(
         object.key("routeKey").string(var_18.as_str());
     }
     if let Some(var_19) = &input.route_response_selection_expression {
-        object
-            .key("routeResponseSelectionExpression")
-            .string(var_19.as_str());
+        object.key("routeResponseSelectionExpression").string(var_19.as_str());
     }
     if let Some(var_20) = &input.target {
         object.key("target").string(var_20.as_str());

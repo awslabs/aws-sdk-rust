@@ -30,9 +30,7 @@ impl MemberAccountEc2DeepInspectionStatus {
 
 /// A builder for [`MemberAccountEc2DeepInspectionStatus`](crate::types::MemberAccountEc2DeepInspectionStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberAccountEc2DeepInspectionStatusBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) activate_deep_inspection: ::std::option::Option<bool>,

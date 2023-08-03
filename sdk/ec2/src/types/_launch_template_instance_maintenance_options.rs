@@ -10,9 +10,7 @@ pub struct LaunchTemplateInstanceMaintenanceOptions {
 }
 impl LaunchTemplateInstanceMaintenanceOptions {
     /// <p>Disables the automatic recovery behavior of your instance or sets it to default.</p>
-    pub fn auto_recovery(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LaunchTemplateAutoRecoveryState> {
+    pub fn auto_recovery(&self) -> ::std::option::Option<&crate::types::LaunchTemplateAutoRecoveryState> {
         self.auto_recovery.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl LaunchTemplateInstanceMaintenanceOptions {
 
 /// A builder for [`LaunchTemplateInstanceMaintenanceOptions`](crate::types::LaunchTemplateInstanceMaintenanceOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateInstanceMaintenanceOptionsBuilder {
     pub(crate) auto_recovery: ::std::option::Option<crate::types::LaunchTemplateAutoRecoveryState>,
 }
@@ -38,17 +34,12 @@ impl LaunchTemplateInstanceMaintenanceOptionsBuilder {
         self
     }
     /// <p>Disables the automatic recovery behavior of your instance or sets it to default.</p>
-    pub fn set_auto_recovery(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateAutoRecoveryState>,
-    ) -> Self {
+    pub fn set_auto_recovery(mut self, input: ::std::option::Option<crate::types::LaunchTemplateAutoRecoveryState>) -> Self {
         self.auto_recovery = input;
         self
     }
     /// <p>Disables the automatic recovery behavior of your instance or sets it to default.</p>
-    pub fn get_auto_recovery(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchTemplateAutoRecoveryState> {
+    pub fn get_auto_recovery(&self) -> &::std::option::Option<crate::types::LaunchTemplateAutoRecoveryState> {
         &self.auto_recovery
     }
     /// Consumes the builder and constructs a [`LaunchTemplateInstanceMaintenanceOptions`](crate::types::LaunchTemplateInstanceMaintenanceOptions).

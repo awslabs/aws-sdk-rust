@@ -29,20 +29,17 @@ impl BatchUpdateAttendeeCapabilitiesExceptInput {
 }
 impl BatchUpdateAttendeeCapabilitiesExceptInput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateAttendeeCapabilitiesExceptInput`](crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptInput).
-    pub fn builder() -> crate::operation::batch_update_attendee_capabilities_except::builders::BatchUpdateAttendeeCapabilitiesExceptInputBuilder{
+    pub fn builder() -> crate::operation::batch_update_attendee_capabilities_except::builders::BatchUpdateAttendeeCapabilitiesExceptInputBuilder {
         crate::operation::batch_update_attendee_capabilities_except::builders::BatchUpdateAttendeeCapabilitiesExceptInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchUpdateAttendeeCapabilitiesExceptInput`](crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateAttendeeCapabilitiesExceptInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
-    pub(crate) excluded_attendee_ids:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttendeeIdItem>>,
+    pub(crate) excluded_attendee_ids: ::std::option::Option<::std::vec::Vec<crate::types::AttendeeIdItem>>,
     pub(crate) capabilities: ::std::option::Option<crate::types::AttendeeCapabilities>,
 }
 impl BatchUpdateAttendeeCapabilitiesExceptInputBuilder {
@@ -72,17 +69,12 @@ impl BatchUpdateAttendeeCapabilitiesExceptInputBuilder {
         self
     }
     /// <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
-    pub fn set_excluded_attendee_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttendeeIdItem>>,
-    ) -> Self {
+    pub fn set_excluded_attendee_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttendeeIdItem>>) -> Self {
         self.excluded_attendee_ids = input;
         self
     }
     /// <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
-    pub fn get_excluded_attendee_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttendeeIdItem>> {
+    pub fn get_excluded_attendee_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttendeeIdItem>> {
         &self.excluded_attendee_ids
     }
     /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
@@ -91,10 +83,7 @@ impl BatchUpdateAttendeeCapabilitiesExceptInputBuilder {
         self
     }
     /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
-    pub fn set_capabilities(
-        mut self,
-        input: ::std::option::Option<crate::types::AttendeeCapabilities>,
-    ) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<crate::types::AttendeeCapabilities>) -> Self {
         self.capabilities = input;
         self
     }
@@ -103,16 +92,18 @@ impl BatchUpdateAttendeeCapabilitiesExceptInputBuilder {
         &self.capabilities
     }
     /// Consumes the builder and constructs a [`BatchUpdateAttendeeCapabilitiesExceptInput`](crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptInput {
-                meeting_id: self.meeting_id
-                ,
-                excluded_attendee_ids: self.excluded_attendee_ids
-                ,
-                capabilities: self.capabilities
-                ,
-            }
+                meeting_id: self.meeting_id,
+                excluded_attendee_ids: self.excluded_attendee_ids,
+                capabilities: self.capabilities,
+            },
         )
     }
 }

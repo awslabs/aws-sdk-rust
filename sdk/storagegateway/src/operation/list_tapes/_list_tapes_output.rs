@@ -40,9 +40,7 @@ impl ListTapesOutput {
 
 /// A builder for [`ListTapesOutput`](crate::operation::list_tapes::ListTapesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTapesOutputBuilder {
     pub(crate) tape_infos: ::std::option::Option<::std::vec::Vec<crate::types::TapeInfo>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -61,17 +59,12 @@ impl ListTapesOutputBuilder {
         self
     }
     /// <p>An array of <code>TapeInfo</code> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array.</p>
-    pub fn set_tape_infos(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TapeInfo>>,
-    ) -> Self {
+    pub fn set_tape_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TapeInfo>>) -> Self {
         self.tape_infos = input;
         self
     }
     /// <p>An array of <code>TapeInfo</code> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array.</p>
-    pub fn get_tape_infos(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TapeInfo>> {
+    pub fn get_tape_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TapeInfo>> {
         &self.tape_infos
     }
     /// <p>A string that indicates the position at which to begin returning the next list of tapes. Use the marker in your next request to continue pagination of tapes. If there are no more tapes to list, this element does not appear in the response body.</p>

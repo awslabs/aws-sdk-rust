@@ -51,9 +51,7 @@ impl ResourceCountsSummary {
 
 /// A builder for [`ResourceCountsSummary`](crate::types::ResourceCountsSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceCountsSummaryBuilder {
     pub(crate) total: ::std::option::Option<i32>,
     pub(crate) failed: ::std::option::Option<i32>,

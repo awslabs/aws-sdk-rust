@@ -21,14 +21,10 @@ pub struct TestInvokeAuthorizerOutput {
     pub policy: ::std::option::Option<::std::string::String>,
     /// <p>The authorization response.</p>
     #[doc(hidden)]
-    pub authorization: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub authorization: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The open identity claims, with any supported custom attributes, returned from the Cognito Your User Pool configured for the API.</p>
     #[doc(hidden)]
-    pub claims: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub claims: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl TestInvokeAuthorizerOutput {
@@ -55,17 +51,11 @@ impl TestInvokeAuthorizerOutput {
     /// <p>The authorization response.</p>
     pub fn authorization(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.authorization.as_ref()
     }
     /// <p>The open identity claims, with any supported custom attributes, returned from the Cognito Your User Pool configured for the API.</p>
-    pub fn claims(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn claims(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.claims.as_ref()
     }
 }
@@ -76,29 +66,22 @@ impl ::aws_http::request_id::RequestId for TestInvokeAuthorizerOutput {
 }
 impl TestInvokeAuthorizerOutput {
     /// Creates a new builder-style object to manufacture [`TestInvokeAuthorizerOutput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput).
-    pub fn builder(
-    ) -> crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerOutputBuilder {
+    pub fn builder() -> crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerOutputBuilder {
         crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerOutputBuilder::default()
     }
 }
 
 /// A builder for [`TestInvokeAuthorizerOutput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestInvokeAuthorizerOutputBuilder {
     pub(crate) client_status: ::std::option::Option<i32>,
     pub(crate) log: ::std::option::Option<::std::string::String>,
     pub(crate) latency: ::std::option::Option<i64>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
-    pub(crate) authorization: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
-    pub(crate) claims: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) authorization: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) claims: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl TestInvokeAuthorizerOutputBuilder {
@@ -177,11 +160,7 @@ impl TestInvokeAuthorizerOutputBuilder {
     /// To override the contents of this collection use [`set_authorization`](Self::set_authorization).
     ///
     /// <p>The authorization response.</p>
-    pub fn authorization(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn authorization(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.authorization.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.authorization = ::std::option::Option::Some(hash_map);
@@ -190,12 +169,7 @@ impl TestInvokeAuthorizerOutputBuilder {
     /// <p>The authorization response.</p>
     pub fn set_authorization(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.authorization = input;
         self
@@ -203,9 +177,7 @@ impl TestInvokeAuthorizerOutputBuilder {
     /// <p>The authorization response.</p>
     pub fn get_authorization(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.authorization
     }
     /// Adds a key-value pair to `claims`.
@@ -213,32 +185,19 @@ impl TestInvokeAuthorizerOutputBuilder {
     /// To override the contents of this collection use [`set_claims`](Self::set_claims).
     ///
     /// <p>The open identity claims, with any supported custom attributes, returned from the Cognito Your User Pool configured for the API.</p>
-    pub fn claims(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn claims(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.claims.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.claims = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The open identity claims, with any supported custom attributes, returned from the Cognito Your User Pool configured for the API.</p>
-    pub fn set_claims(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_claims(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.claims = input;
         self
     }
     /// <p>The open identity claims, with any supported custom attributes, returned from the Cognito Your User Pool configured for the API.</p>
-    pub fn get_claims(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_claims(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.claims
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`max_results(Option<i32>)`](crate::operation::list_configurations::ListConfigurationsOutput::max_results): <p>The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_configurations::ListConfigurationsOutput::next_token): <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     /// - On failure, responds with [`SdkError<ListConfigurationsError>`](crate::operation::list_configurations::ListConfigurationsError)
-    pub fn list_configurations(
-        &self,
-    ) -> crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder {
-        crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_configurations(&self) -> crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder {
+        crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -145,9 +145,7 @@ impl Place {
 
 /// A builder for [`Place`](crate::types::Place).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlaceBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) geometry: ::std::option::Option<crate::types::PlaceGeometry>,
@@ -164,8 +162,7 @@ pub struct PlaceBuilder {
     pub(crate) unit_type: ::std::option::Option<::std::string::String>,
     pub(crate) unit_number: ::std::option::Option<::std::string::String>,
     pub(crate) categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) supplemental_categories:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supplemental_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PlaceBuilder {
     /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
@@ -188,10 +185,7 @@ impl PlaceBuilder {
         self
     }
     /// <p>Places uses a point geometry to specify a location or a Place.</p>
-    pub fn set_geometry(
-        mut self,
-        input: ::std::option::Option<crate::types::PlaceGeometry>,
-    ) -> Self {
+    pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::PlaceGeometry>) -> Self {
         self.geometry = input;
         self
     }
@@ -200,18 +194,12 @@ impl PlaceBuilder {
         &self.geometry
     }
     /// <p>The numerical portion of an address, such as a building number. </p>
-    pub fn address_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The numerical portion of an address, such as a building number. </p>
-    pub fn set_address_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_number = input;
         self
     }
@@ -408,10 +396,7 @@ impl PlaceBuilder {
     }
     /// <p>The Amazon Location categories that describe this Place.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn set_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.categories = input;
         self
     }
@@ -425,27 +410,19 @@ impl PlaceBuilder {
     /// To override the contents of this collection use [`set_supplemental_categories`](Self::set_supplemental_categories).
     ///
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    pub fn supplemental_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn supplemental_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supplemental_categories.unwrap_or_default();
         v.push(input.into());
         self.supplemental_categories = ::std::option::Option::Some(v);
         self
     }
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    pub fn set_supplemental_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_supplemental_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supplemental_categories = input;
         self
     }
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    pub fn get_supplemental_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supplemental_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supplemental_categories
     }
     /// Consumes the builder and constructs a [`Place`](crate::types::Place).

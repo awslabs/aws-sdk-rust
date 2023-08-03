@@ -30,9 +30,7 @@ impl GetBranchInput {
 
 /// A builder for [`GetBranchInput`](crate::operation::get_branch::GetBranchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBranchInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,
@@ -67,12 +65,7 @@ impl GetBranchInputBuilder {
         &self.branch_name
     }
     /// Consumes the builder and constructs a [`GetBranchInput`](crate::operation::get_branch::GetBranchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_branch::GetBranchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_branch::GetBranchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_branch::GetBranchInput {
             app_id: self.app_id,
             branch_name: self.branch_name,

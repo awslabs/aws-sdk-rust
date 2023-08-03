@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SegmentTemplateFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for SegmentTemplateFormat {
             "NUMBER_WITH_DURATION" => SegmentTemplateFormat::NumberWithDuration,
             "NUMBER_WITH_TIMELINE" => SegmentTemplateFormat::NumberWithTimeline,
             "TIME_WITH_TIMELINE" => SegmentTemplateFormat::TimeWithTimeline,
-            other => SegmentTemplateFormat::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SegmentTemplateFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl SegmentTemplateFormat {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "NUMBER_WITH_DURATION",
-            "NUMBER_WITH_TIMELINE",
-            "TIME_WITH_TIMELINE",
-        ]
+        &["NUMBER_WITH_DURATION", "NUMBER_WITH_TIMELINE", "TIME_WITH_TIMELINE"]
     }
 }
 impl ::std::convert::AsRef<str> for SegmentTemplateFormat {

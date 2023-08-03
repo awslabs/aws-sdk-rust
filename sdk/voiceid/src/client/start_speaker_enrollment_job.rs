@@ -13,7 +13,7 @@ impl super::Client {
     /// - On success, responds with [`StartSpeakerEnrollmentJobOutput`](crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobOutput) with field(s):
     ///   - [`job(Option<SpeakerEnrollmentJob>)`](crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobOutput::job): <p>Details about the started speaker enrollment job.</p>
     /// - On failure, responds with [`SdkError<StartSpeakerEnrollmentJobError>`](crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobError)
-    pub fn start_speaker_enrollment_job(&self) -> crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobFluentBuilder{
+    pub fn start_speaker_enrollment_job(&self) -> crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobFluentBuilder {
         crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobFluentBuilder::new(self.handle.clone())
     }
 }

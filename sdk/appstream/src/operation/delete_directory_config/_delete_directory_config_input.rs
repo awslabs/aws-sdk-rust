@@ -15,35 +15,25 @@ impl DeleteDirectoryConfigInput {
 }
 impl DeleteDirectoryConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectoryConfigInput`](crate::operation::delete_directory_config::DeleteDirectoryConfigInput).
-    pub fn builder(
-    ) -> crate::operation::delete_directory_config::builders::DeleteDirectoryConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_directory_config::builders::DeleteDirectoryConfigInputBuilder {
         crate::operation::delete_directory_config::builders::DeleteDirectoryConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDirectoryConfigInput`](crate::operation::delete_directory_config::DeleteDirectoryConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDirectoryConfigInputBuilder {
     pub(crate) directory_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDirectoryConfigInputBuilder {
     /// <p>The name of the directory configuration.</p>
-    pub fn directory_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the directory configuration.</p>
-    pub fn set_directory_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteDirectoryConfigInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDirectoryConfigInput`](crate::operation::delete_directory_config::DeleteDirectoryConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_directory_config::DeleteDirectoryConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_directory_config::DeleteDirectoryConfigInput {
-                directory_name: self.directory_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_directory_config::DeleteDirectoryConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_directory_config::DeleteDirectoryConfigInput {
+            directory_name: self.directory_name,
+        })
     }
 }

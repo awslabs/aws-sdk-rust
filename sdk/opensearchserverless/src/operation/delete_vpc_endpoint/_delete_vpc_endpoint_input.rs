@@ -22,17 +22,14 @@ impl DeleteVpcEndpointInput {
 }
 impl DeleteVpcEndpointInput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointInput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointInputBuilder {
+    pub fn builder() -> crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointInputBuilder {
         crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpcEndpointInput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpcEndpointInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl DeleteVpcEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVpcEndpointInput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput {
-                id: self.id,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput {
+            id: self.id,
+            client_token: self.client_token,
+        })
     }
 }

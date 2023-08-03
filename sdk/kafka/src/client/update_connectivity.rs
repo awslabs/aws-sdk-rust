@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`cluster_arn(Option<String>)`](crate::operation::update_connectivity::UpdateConnectivityOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::operation::update_connectivity::UpdateConnectivityOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     /// - On failure, responds with [`SdkError<UpdateConnectivityError>`](crate::operation::update_connectivity::UpdateConnectivityError)
-    pub fn update_connectivity(
-        &self,
-    ) -> crate::operation::update_connectivity::builders::UpdateConnectivityFluentBuilder {
-        crate::operation::update_connectivity::builders::UpdateConnectivityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_connectivity(&self) -> crate::operation::update_connectivity::builders::UpdateConnectivityFluentBuilder {
+        crate::operation::update_connectivity::builders::UpdateConnectivityFluentBuilder::new(self.handle.clone())
     }
 }

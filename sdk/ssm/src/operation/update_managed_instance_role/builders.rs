@@ -26,7 +26,7 @@ impl UpdateManagedInstanceRoleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateManagedInstanceRoleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_managed_instance_role::builders::UpdateManagedInstanceRoleInputBuilder,
+    inner: crate::operation::update_managed_instance_role::builders::UpdateManagedInstanceRoleInputBuilder,
 }
 impl UpdateManagedInstanceRoleFluentBuilder {
     /// Creates a new `UpdateManagedInstanceRole`.
@@ -37,7 +37,7 @@ impl UpdateManagedInstanceRoleFluentBuilder {
         }
     }
     /// Access the UpdateManagedInstanceRole as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_managed_instance_role::builders::UpdateManagedInstanceRoleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_managed_instance_role::builders::UpdateManagedInstanceRoleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateManagedInstanceRoleFluentBuilder {
             crate::operation::update_managed_instance_role::UpdateManagedInstanceRole,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateManagedInstanceRoleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateManagedInstanceRoleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateManagedInstanceRoleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateManagedInstanceRoleFluentBuilder {
             crate::operation::update_managed_instance_role::UpdateManagedInstanceRole,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleError>,
     > {
         self.customize_middleware().await
     }

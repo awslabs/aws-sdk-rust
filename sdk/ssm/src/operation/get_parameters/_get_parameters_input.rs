@@ -31,9 +31,7 @@ impl GetParametersInput {
 
 /// A builder for [`GetParametersInput`](crate::operation::get_parameters::GetParametersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetParametersInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) with_decryption: ::std::option::Option<bool>,
@@ -53,10 +51,7 @@ impl GetParametersInputBuilder {
     }
     /// <p>Names of the parameters for which you want to query information.</p>
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -82,10 +77,7 @@ impl GetParametersInputBuilder {
     /// Consumes the builder and constructs a [`GetParametersInput`](crate::operation::get_parameters::GetParametersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_parameters::GetParametersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_parameters::GetParametersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_parameters::GetParametersInput {
             names: self.names,
             with_decryption: self.with_decryption,

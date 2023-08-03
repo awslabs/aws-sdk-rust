@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`resource_policies(Option<Vec<ResourcePolicy>>)`](crate::operation::get_resource_policies::GetResourcePoliciesOutput::resource_policies): <p>Details about the resource policy attached to the response plan.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_resource_policies::GetResourcePoliciesOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetResourcePoliciesError>`](crate::operation::get_resource_policies::GetResourcePoliciesError)
-    pub fn get_resource_policies(
-        &self,
-    ) -> crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder {
-        crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resource_policies(&self) -> crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder {
+        crate::operation::get_resource_policies::builders::GetResourcePoliciesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`repository_name(Option<String>)`](crate::operation::delete_repository_policy::DeleteRepositoryPolicyOutput::repository_name): <p>The repository name that's associated with the request.</p>
     ///   - [`policy_text(Option<String>)`](crate::operation::delete_repository_policy::DeleteRepositoryPolicyOutput::policy_text): <p>The JSON repository policy that was deleted from the repository.</p>
     /// - On failure, responds with [`SdkError<DeleteRepositoryPolicyError>`](crate::operation::delete_repository_policy::DeleteRepositoryPolicyError)
-    pub fn delete_repository_policy(
-        &self,
-    ) -> crate::operation::delete_repository_policy::builders::DeleteRepositoryPolicyFluentBuilder
-    {
+    pub fn delete_repository_policy(&self) -> crate::operation::delete_repository_policy::builders::DeleteRepositoryPolicyFluentBuilder {
         crate::operation::delete_repository_policy::builders::DeleteRepositoryPolicyFluentBuilder::new(self.handle.clone())
     }
 }

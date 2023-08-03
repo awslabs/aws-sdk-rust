@@ -38,13 +38,10 @@ impl CustomDeliveryConfiguration {
 
 /// A builder for [`CustomDeliveryConfiguration`](crate::types::CustomDeliveryConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomDeliveryConfigurationBuilder {
     pub(crate) delivery_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) endpoint_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>>,
+    pub(crate) endpoint_types: ::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>>,
 }
 impl CustomDeliveryConfigurationBuilder {
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
@@ -85,17 +82,12 @@ impl CustomDeliveryConfigurationBuilder {
         self
     }
     /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
-    pub fn set_endpoint_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>>,
-    ) -> Self {
+    pub fn set_endpoint_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>>) -> Self {
         self.endpoint_types = input;
         self
     }
     /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
-    pub fn get_endpoint_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>> {
+    pub fn get_endpoint_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>> {
         &self.endpoint_types
     }
     /// Consumes the builder and constructs a [`CustomDeliveryConfiguration`](crate::types::CustomDeliveryConfiguration).

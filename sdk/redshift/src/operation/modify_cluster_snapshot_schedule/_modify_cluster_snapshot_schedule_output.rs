@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifyClusterSnapshotScheduleOutput {
 }
 impl ModifyClusterSnapshotScheduleOutput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterSnapshotScheduleOutput`](crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleOutput).
-    pub fn builder() -> crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleOutputBuilder{
+    pub fn builder() -> crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleOutputBuilder {
         crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyClusterSnapshotScheduleOutput`](crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyClusterSnapshotScheduleOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl ModifyClusterSnapshotScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyClusterSnapshotScheduleOutput`](crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleOutput
-    {
+    pub fn build(self) -> crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleOutput {
         crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleOutput {
             _request_id: self._request_id,
         }

@@ -60,13 +60,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -130,40 +124,24 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
             "INVALID_ARN" => ValidationExceptionReason::InvalidArn,
             "INVALID_FILTER_VALUES" => ValidationExceptionReason::InvalidFilterValues,
-            "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY" => {
-                ValidationExceptionReason::InvalidIdentityForDestinationCountry
-            }
+            "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY" => ValidationExceptionReason::InvalidIdentityForDestinationCountry,
             "INVALID_NEXT_TOKEN" => ValidationExceptionReason::InvalidNextToken,
             "INVALID_PARAMETER" => ValidationExceptionReason::InvalidParameter,
             "MISSING_PARAMETER" => ValidationExceptionReason::MissingParameter,
             "OTHER" => ValidationExceptionReason::Other,
-            "PARAMETERS_CANNOT_BE_USED_TOGETHER" => {
-                ValidationExceptionReason::ParametersCannotBeUsedTogether
-            }
-            "PHONE_NUMBER_CANNOT_BE_OPTED_IN" => {
-                ValidationExceptionReason::PhoneNumberCannotBeOptedIn
-            }
-            "PHONE_NUMBER_CANNOT_BE_RELEASED" => {
-                ValidationExceptionReason::PhoneNumberCannotBeReleased
-            }
+            "PARAMETERS_CANNOT_BE_USED_TOGETHER" => ValidationExceptionReason::ParametersCannotBeUsedTogether,
+            "PHONE_NUMBER_CANNOT_BE_OPTED_IN" => ValidationExceptionReason::PhoneNumberCannotBeOptedIn,
+            "PHONE_NUMBER_CANNOT_BE_RELEASED" => ValidationExceptionReason::PhoneNumberCannotBeReleased,
             "PRICE_OVER_THRESHOLD" => ValidationExceptionReason::PriceOverThreshold,
-            "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT" => {
-                ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit
-            }
+            "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT" => ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit,
             "SENDER_ID_NOT_REGISTERED" => ValidationExceptionReason::SenderIdNotRegistered,
             "SENDER_ID_NOT_SUPPORTED" => ValidationExceptionReason::SenderIdNotSupported,
             "TWO_WAY_NOT_ENABLED" => ValidationExceptionReason::TwoWayNotEnabled,
-            "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY" => {
-                ValidationExceptionReason::TwoWayNotSupportedInCountry
-            }
-            "TWO_WAY_NOT_SUPPORTED_IN_REGION" => {
-                ValidationExceptionReason::TwoWayNotSupportedInRegion
-            }
+            "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY" => ValidationExceptionReason::TwoWayNotSupportedInCountry,
+            "TWO_WAY_NOT_SUPPORTED_IN_REGION" => ValidationExceptionReason::TwoWayNotSupportedInRegion,
             "TWO_WAY_TOPIC_NOT_PRESENT" => ValidationExceptionReason::TwoWayTopicNotPresent,
             "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -185,35 +163,21 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
             ValidationExceptionReason::InvalidArn => "INVALID_ARN",
             ValidationExceptionReason::InvalidFilterValues => "INVALID_FILTER_VALUES",
-            ValidationExceptionReason::InvalidIdentityForDestinationCountry => {
-                "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY"
-            }
+            ValidationExceptionReason::InvalidIdentityForDestinationCountry => "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY",
             ValidationExceptionReason::InvalidNextToken => "INVALID_NEXT_TOKEN",
             ValidationExceptionReason::InvalidParameter => "INVALID_PARAMETER",
             ValidationExceptionReason::MissingParameter => "MISSING_PARAMETER",
             ValidationExceptionReason::Other => "OTHER",
-            ValidationExceptionReason::ParametersCannotBeUsedTogether => {
-                "PARAMETERS_CANNOT_BE_USED_TOGETHER"
-            }
-            ValidationExceptionReason::PhoneNumberCannotBeOptedIn => {
-                "PHONE_NUMBER_CANNOT_BE_OPTED_IN"
-            }
-            ValidationExceptionReason::PhoneNumberCannotBeReleased => {
-                "PHONE_NUMBER_CANNOT_BE_RELEASED"
-            }
+            ValidationExceptionReason::ParametersCannotBeUsedTogether => "PARAMETERS_CANNOT_BE_USED_TOGETHER",
+            ValidationExceptionReason::PhoneNumberCannotBeOptedIn => "PHONE_NUMBER_CANNOT_BE_OPTED_IN",
+            ValidationExceptionReason::PhoneNumberCannotBeReleased => "PHONE_NUMBER_CANNOT_BE_RELEASED",
             ValidationExceptionReason::PriceOverThreshold => "PRICE_OVER_THRESHOLD",
-            ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit => {
-                "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT"
-            }
+            ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit => "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT",
             ValidationExceptionReason::SenderIdNotRegistered => "SENDER_ID_NOT_REGISTERED",
             ValidationExceptionReason::SenderIdNotSupported => "SENDER_ID_NOT_SUPPORTED",
             ValidationExceptionReason::TwoWayNotEnabled => "TWO_WAY_NOT_ENABLED",
-            ValidationExceptionReason::TwoWayNotSupportedInCountry => {
-                "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY"
-            }
-            ValidationExceptionReason::TwoWayNotSupportedInRegion => {
-                "TWO_WAY_NOT_SUPPORTED_IN_REGION"
-            }
+            ValidationExceptionReason::TwoWayNotSupportedInCountry => "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY",
+            ValidationExceptionReason::TwoWayNotSupportedInRegion => "TWO_WAY_NOT_SUPPORTED_IN_REGION",
             ValidationExceptionReason::TwoWayTopicNotPresent => "TWO_WAY_TOPIC_NOT_PRESENT",
             ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
             ValidationExceptionReason::Unknown(value) => value.as_str(),

@@ -38,13 +38,7 @@
 /// Ac3 Drc Profile
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Ac3DrcProfile {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Ac3DrcProfile {
         match s {
             "FILM_STANDARD" => Ac3DrcProfile::FilmStandard,
             "NONE" => Ac3DrcProfile::None,
-            other => {
-                Ac3DrcProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Ac3DrcProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

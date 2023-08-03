@@ -74,16 +74,14 @@ impl GetSavingsPlansUtilizationInput {
 }
 impl GetSavingsPlansUtilizationInput {
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationInput`](crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationInput).
-    pub fn builder() -> crate::operation::get_savings_plans_utilization::builders::GetSavingsPlansUtilizationInputBuilder{
+    pub fn builder() -> crate::operation::get_savings_plans_utilization::builders::GetSavingsPlansUtilizationInputBuilder {
         crate::operation::get_savings_plans_utilization::builders::GetSavingsPlansUtilizationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSavingsPlansUtilizationInput`](crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) granularity: ::std::option::Option<crate::types::Granularity>,
@@ -97,10 +95,7 @@ impl GetSavingsPlansUtilizationInputBuilder {
         self
     }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.time_period = input;
         self
     }
@@ -116,10 +111,7 @@ impl GetSavingsPlansUtilizationInputBuilder {
     }
     /// <p>The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
     /// <p>The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn set_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::Granularity>,
-    ) -> Self {
+    pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
         self.granularity = input;
         self
     }
@@ -193,10 +185,7 @@ impl GetSavingsPlansUtilizationInputBuilder {
     /// <li> <p> <code>NetSavings</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortDefinition>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
         self.sort_by = input;
         self
     }
@@ -220,13 +209,11 @@ impl GetSavingsPlansUtilizationInputBuilder {
         crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationInput {
-                time_period: self.time_period,
-                granularity: self.granularity,
-                filter: self.filter,
-                sort_by: self.sort_by,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationInput {
+            time_period: self.time_period,
+            granularity: self.granularity,
+            filter: self.filter,
+            sort_by: self.sort_by,
+        })
     }
 }

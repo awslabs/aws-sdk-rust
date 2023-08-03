@@ -5,8 +5,7 @@
 pub struct ListCalculatedAttributeDefinitionsOutput {
     /// <p>The list of calculated attribute definitions.</p>
     #[doc(hidden)]
-    pub items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeDefinitionItem>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeDefinitionItem>>,
     /// <p>The pagination token from the previous call to ListCalculatedAttributeDefinitions.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListCalculatedAttributeDefinitionsOutput {
 }
 impl ListCalculatedAttributeDefinitionsOutput {
     /// <p>The list of calculated attribute definitions.</p>
-    pub fn items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListCalculatedAttributeDefinitionItem]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::ListCalculatedAttributeDefinitionItem]> {
         self.items.as_deref()
     }
     /// <p>The pagination token from the previous call to ListCalculatedAttributeDefinitions.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListCalculatedAttributeDefinitionsOut
 }
 impl ListCalculatedAttributeDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListCalculatedAttributeDefinitionsOutput`](crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsOutput).
-    pub fn builder() -> crate::operation::list_calculated_attribute_definitions::builders::ListCalculatedAttributeDefinitionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_calculated_attribute_definitions::builders::ListCalculatedAttributeDefinitionsOutputBuilder {
         crate::operation::list_calculated_attribute_definitions::builders::ListCalculatedAttributeDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCalculatedAttributeDefinitionsOutput`](crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCalculatedAttributeDefinitionsOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeDefinitionItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeDefinitionItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,20 +54,12 @@ impl ListCalculatedAttributeDefinitionsOutputBuilder {
         self
     }
     /// <p>The list of calculated attribute definitions.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ListCalculatedAttributeDefinitionItem>,
-        >,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeDefinitionItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The list of calculated attribute definitions.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeDefinitionItem>>
-    {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeDefinitionItem>> {
         &self.items
     }
     /// <p>The pagination token from the previous call to ListCalculatedAttributeDefinitions.</p>
@@ -100,12 +86,10 @@ impl ListCalculatedAttributeDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCalculatedAttributeDefinitionsOutput`](crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsOutput).
-    pub fn build(self) -> crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsOutput{
+    pub fn build(self) -> crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsOutput {
         crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsOutput {
-            items: self.items
-            ,
-            next_token: self.next_token
-            ,
+            items: self.items,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

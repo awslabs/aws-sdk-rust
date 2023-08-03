@@ -19,9 +19,7 @@ impl RemoveEndpointsOutput {
 
 /// A builder for [`RemoveEndpointsOutput`](crate::operation::remove_endpoints::RemoveEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveEndpointsOutputBuilder {
     _request_id: Option<String>,
 }

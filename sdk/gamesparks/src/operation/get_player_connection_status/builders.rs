@@ -27,7 +27,7 @@ impl GetPlayerConnectionStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPlayerConnectionStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusInputBuilder,
+    inner: crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusInputBuilder,
 }
 impl GetPlayerConnectionStatusFluentBuilder {
     /// Creates a new `GetPlayerConnectionStatus`.
@@ -38,7 +38,7 @@ impl GetPlayerConnectionStatusFluentBuilder {
         }
     }
     /// Access the GetPlayerConnectionStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetPlayerConnectionStatusFluentBuilder {
             crate::operation::get_player_connection_status::GetPlayerConnectionStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_player_connection_status::GetPlayerConnectionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_player_connection_status::GetPlayerConnectionStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetPlayerConnectionStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetPlayerConnectionStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_player_connection_status::GetPlayerConnectionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_player_connection_status::GetPlayerConnectionStatusError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetPlayerConnectionStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_player_connection_status::GetPlayerConnectionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_player_connection_status::GetPlayerConnectionStatusError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetPlayerConnectionStatusFluentBuilder {
             crate::operation::get_player_connection_status::GetPlayerConnectionStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_player_connection_status::GetPlayerConnectionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_player_connection_status::GetPlayerConnectionStatusError>,
     > {
         self.customize_middleware().await
     }

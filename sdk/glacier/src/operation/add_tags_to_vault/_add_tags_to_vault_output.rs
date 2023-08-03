@@ -19,9 +19,7 @@ impl AddTagsToVaultOutput {
 
 /// A builder for [`AddTagsToVaultOutput`](crate::operation::add_tags_to_vault::AddTagsToVaultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddTagsToVaultOutputBuilder {
     _request_id: Option<String>,
 }

@@ -10,10 +10,7 @@ impl UpdateTypeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_type::UpdateTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_type::UpdateTypeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_type::UpdateTypeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_type();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateTypeFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_type::UpdateType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_type::UpdateType, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_type::UpdateTypeError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateTypeFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_type::UpdateType,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_type::UpdateType, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_type::UpdateTypeError>,
     > {
         self.customize_middleware().await
@@ -160,10 +148,7 @@ impl UpdateTypeFluentBuilder {
         self
     }
     /// <p>The new type format: SDL or JSON.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::TypeDefinitionFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::TypeDefinitionFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }

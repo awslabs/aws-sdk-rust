@@ -26,7 +26,7 @@ impl GetTestExecutionArtifactsUrlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTestExecutionArtifactsUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_test_execution_artifacts_url::builders::GetTestExecutionArtifactsUrlInputBuilder,
+    inner: crate::operation::get_test_execution_artifacts_url::builders::GetTestExecutionArtifactsUrlInputBuilder,
 }
 impl GetTestExecutionArtifactsUrlFluentBuilder {
     /// Creates a new `GetTestExecutionArtifactsUrl`.
@@ -37,7 +37,7 @@ impl GetTestExecutionArtifactsUrlFluentBuilder {
         }
     }
     /// Access the GetTestExecutionArtifactsUrl as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_test_execution_artifacts_url::builders::GetTestExecutionArtifactsUrlInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_test_execution_artifacts_url::builders::GetTestExecutionArtifactsUrlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetTestExecutionArtifactsUrlFluentBuilder {
             crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetTestExecutionArtifactsUrlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetTestExecutionArtifactsUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetTestExecutionArtifactsUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl GetTestExecutionArtifactsUrlFluentBuilder {
             crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the completed test execution.</p>
-    pub fn test_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.test_execution_id(input.into());
         self
     }
     /// <p>The unique identifier of the completed test execution.</p>
-    pub fn set_test_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_test_execution_id(input);
         self
     }

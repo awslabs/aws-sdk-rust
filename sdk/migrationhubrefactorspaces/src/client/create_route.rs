@@ -25,9 +25,7 @@ impl super::Client {
     ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::create_route::CreateRouteOutput::last_updated_time): <p>A timestamp that indicates when the route was last updated. </p>
     ///   - [`created_time(Option<DateTime>)`](crate::operation::create_route::CreateRouteOutput::created_time): <p>A timestamp that indicates when the route is created.</p>
     /// - On failure, responds with [`SdkError<CreateRouteError>`](crate::operation::create_route::CreateRouteError)
-    pub fn create_route(
-        &self,
-    ) -> crate::operation::create_route::builders::CreateRouteFluentBuilder {
+    pub fn create_route(&self) -> crate::operation::create_route::builders::CreateRouteFluentBuilder {
         crate::operation::create_route::builders::CreateRouteFluentBuilder::new(self.handle.clone())
     }
 }

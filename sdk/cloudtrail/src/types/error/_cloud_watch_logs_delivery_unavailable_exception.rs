@@ -27,34 +27,27 @@ impl ::std::fmt::Display for CloudWatchLogsDeliveryUnavailableException {
     }
 }
 impl ::std::error::Error for CloudWatchLogsDeliveryUnavailableException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::CloudWatchLogsDeliveryUnavailableException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::CloudWatchLogsDeliveryUnavailableException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for CloudWatchLogsDeliveryUnavailableException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CloudWatchLogsDeliveryUnavailableException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl CloudWatchLogsDeliveryUnavailableException {
     /// Creates a new builder-style object to manufacture [`CloudWatchLogsDeliveryUnavailableException`](crate::types::error::CloudWatchLogsDeliveryUnavailableException).
-    pub fn builder(
-    ) -> crate::types::error::builders::CloudWatchLogsDeliveryUnavailableExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::CloudWatchLogsDeliveryUnavailableExceptionBuilder {
         crate::types::error::builders::CloudWatchLogsDeliveryUnavailableExceptionBuilder::default()
     }
 }
 
 /// A builder for [`CloudWatchLogsDeliveryUnavailableException`](crate::types::error::CloudWatchLogsDeliveryUnavailableException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudWatchLogsDeliveryUnavailableExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl CloudWatchLogsDeliveryUnavailableExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

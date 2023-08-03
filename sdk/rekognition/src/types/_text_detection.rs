@@ -61,9 +61,7 @@ impl TextDetection {
 
 /// A builder for [`TextDetection`](crate::types::TextDetection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TextDetectionBuilder {
     pub(crate) detected_text: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::TextTypes>,
@@ -74,18 +72,12 @@ pub struct TextDetectionBuilder {
 }
 impl TextDetectionBuilder {
     /// <p>The word or line of text recognized by Amazon Rekognition. </p>
-    pub fn detected_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detected_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detected_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The word or line of text recognized by Amazon Rekognition. </p>
-    pub fn set_detected_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detected_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detected_text = input;
         self
     }

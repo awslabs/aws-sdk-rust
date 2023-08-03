@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteIpAccessSettingsOutput {
 }
 impl DeleteIpAccessSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIpAccessSettingsOutput`](crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsOutputBuilder {
         crate::operation::delete_ip_access_settings::builders::DeleteIpAccessSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIpAccessSettingsOutput`](crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIpAccessSettingsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteIpAccessSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteIpAccessSettingsOutput`](crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsOutput {
+    pub fn build(self) -> crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsOutput {
         crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsOutput {
             _request_id: self._request_id,
         }

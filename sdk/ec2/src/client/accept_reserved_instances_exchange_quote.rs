@@ -9,7 +9,11 @@ impl super::Client {
     /// - On success, responds with [`AcceptReservedInstancesExchangeQuoteOutput`](crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteOutput) with field(s):
     ///   - [`exchange_id(Option<String>)`](crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteOutput::exchange_id): <p>The ID of the successful exchange.</p>
     /// - On failure, responds with [`SdkError<AcceptReservedInstancesExchangeQuoteError>`](crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteError)
-    pub fn accept_reserved_instances_exchange_quote(&self) -> crate::operation::accept_reserved_instances_exchange_quote::builders::AcceptReservedInstancesExchangeQuoteFluentBuilder{
-        crate::operation::accept_reserved_instances_exchange_quote::builders::AcceptReservedInstancesExchangeQuoteFluentBuilder::new(self.handle.clone())
+    pub fn accept_reserved_instances_exchange_quote(
+        &self,
+    ) -> crate::operation::accept_reserved_instances_exchange_quote::builders::AcceptReservedInstancesExchangeQuoteFluentBuilder {
+        crate::operation::accept_reserved_instances_exchange_quote::builders::AcceptReservedInstancesExchangeQuoteFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

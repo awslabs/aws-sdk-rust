@@ -15,18 +15,14 @@ impl DeletePatchBaselineInput {
 }
 impl DeletePatchBaselineInput {
     /// Creates a new builder-style object to manufacture [`DeletePatchBaselineInput`](crate::operation::delete_patch_baseline::DeletePatchBaselineInput).
-    pub fn builder(
-    ) -> crate::operation::delete_patch_baseline::builders::DeletePatchBaselineInputBuilder {
-        crate::operation::delete_patch_baseline::builders::DeletePatchBaselineInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_patch_baseline::builders::DeletePatchBaselineInputBuilder {
+        crate::operation::delete_patch_baseline::builders::DeletePatchBaselineInputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePatchBaselineInput`](crate::operation::delete_patch_baseline::DeletePatchBaselineInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePatchBaselineInputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl DeletePatchBaselineInputBuilder {
     /// Consumes the builder and constructs a [`DeletePatchBaselineInput`](crate::operation::delete_patch_baseline::DeletePatchBaselineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_patch_baseline::DeletePatchBaselineInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_patch_baseline::DeletePatchBaselineInput {
-                baseline_id: self.baseline_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_patch_baseline::DeletePatchBaselineInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_patch_baseline::DeletePatchBaselineInput {
+            baseline_id: self.baseline_id,
+        })
     }
 }

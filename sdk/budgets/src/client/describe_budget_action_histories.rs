@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`action_histories(Option<Vec<ActionHistory>>)`](crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput::action_histories): <p> The historical record of the budget action resource. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput::next_token): <p> A generic string.</p>
     /// - On failure, responds with [`SdkError<DescribeBudgetActionHistoriesError>`](crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesError)
-    pub fn describe_budget_action_histories(&self) -> crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesFluentBuilder{
+    pub fn describe_budget_action_histories(
+        &self,
+    ) -> crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesFluentBuilder {
         crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesFluentBuilder::new(self.handle.clone())
     }
 }

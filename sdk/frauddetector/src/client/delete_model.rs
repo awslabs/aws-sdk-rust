@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`model_type(ModelTypeEnum)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::model_type) / [`set_model_type(Option<ModelTypeEnum>)`](crate::operation::delete_model::builders::DeleteModelFluentBuilder::set_model_type): <p>The model type of the model to delete.</p>
     /// - On success, responds with [`DeleteModelOutput`](crate::operation::delete_model::DeleteModelOutput)
     /// - On failure, responds with [`SdkError<DeleteModelError>`](crate::operation::delete_model::DeleteModelError)
-    pub fn delete_model(
-        &self,
-    ) -> crate::operation::delete_model::builders::DeleteModelFluentBuilder {
+    pub fn delete_model(&self) -> crate::operation::delete_model::builders::DeleteModelFluentBuilder {
         crate::operation::delete_model::builders::DeleteModelFluentBuilder::new(self.handle.clone())
     }
 }

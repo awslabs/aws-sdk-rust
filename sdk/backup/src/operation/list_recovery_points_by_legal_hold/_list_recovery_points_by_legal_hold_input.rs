@@ -29,16 +29,14 @@ impl ListRecoveryPointsByLegalHoldInput {
 }
 impl ListRecoveryPointsByLegalHoldInput {
     /// Creates a new builder-style object to manufacture [`ListRecoveryPointsByLegalHoldInput`](crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldInput).
-    pub fn builder() -> crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldInputBuilder{
+    pub fn builder() -> crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldInputBuilder {
         crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecoveryPointsByLegalHoldInput`](crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecoveryPointsByLegalHoldInputBuilder {
     pub(crate) legal_hold_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListRecoveryPointsByLegalHoldInputBuilder {
 }
 impl ListRecoveryPointsByLegalHoldInputBuilder {
     /// <p>This is the ID of the legal hold.</p>
-    pub fn legal_hold_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn legal_hold_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.legal_hold_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is the ID of the legal hold.</p>
-    pub fn set_legal_hold_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_legal_hold_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.legal_hold_id = input;
         self
     }
@@ -100,15 +92,10 @@ impl ListRecoveryPointsByLegalHoldInputBuilder {
         crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldInput {
-                legal_hold_id: self.legal_hold_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldInput {
+            legal_hold_id: self.legal_hold_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

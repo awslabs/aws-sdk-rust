@@ -17,9 +17,7 @@ impl EndPoint {
         self.stream_type.as_deref()
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn kinesis_stream_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KinesisStreamConfig> {
+    pub fn kinesis_stream_config(&self) -> ::std::option::Option<&crate::types::KinesisStreamConfig> {
         self.kinesis_stream_config.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl EndPoint {
 
 /// A builder for [`EndPoint`](crate::types::EndPoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndPointBuilder {
     pub(crate) stream_type: ::std::option::Option<::std::string::String>,
     pub(crate) kinesis_stream_config: ::std::option::Option<crate::types::KinesisStreamConfig>,
@@ -60,17 +56,12 @@ impl EndPointBuilder {
         self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn set_kinesis_stream_config(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisStreamConfig>,
-    ) -> Self {
+    pub fn set_kinesis_stream_config(mut self, input: ::std::option::Option<crate::types::KinesisStreamConfig>) -> Self {
         self.kinesis_stream_config = input;
         self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn get_kinesis_stream_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisStreamConfig> {
+    pub fn get_kinesis_stream_config(&self) -> &::std::option::Option<crate::types::KinesisStreamConfig> {
         &self.kinesis_stream_config
     }
     /// Consumes the builder and constructs a [`EndPoint`](crate::types::EndPoint).

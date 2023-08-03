@@ -17,17 +17,14 @@ impl DetectDocumentTextInput {
 }
 impl DetectDocumentTextInput {
     /// Creates a new builder-style object to manufacture [`DetectDocumentTextInput`](crate::operation::detect_document_text::DetectDocumentTextInput).
-    pub fn builder(
-    ) -> crate::operation::detect_document_text::builders::DetectDocumentTextInputBuilder {
+    pub fn builder() -> crate::operation::detect_document_text::builders::DetectDocumentTextInputBuilder {
         crate::operation::detect_document_text::builders::DetectDocumentTextInputBuilder::default()
     }
 }
 
 /// A builder for [`DetectDocumentTextInput`](crate::operation::detect_document_text::DetectDocumentTextInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectDocumentTextInputBuilder {
     pub(crate) document: ::std::option::Option<crate::types::Document>,
 }
@@ -52,14 +49,7 @@ impl DetectDocumentTextInputBuilder {
     /// Consumes the builder and constructs a [`DetectDocumentTextInput`](crate::operation::detect_document_text::DetectDocumentTextInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_document_text::DetectDocumentTextInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::detect_document_text::DetectDocumentTextInput {
-                document: self.document,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::detect_document_text::DetectDocumentTextInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::detect_document_text::DetectDocumentTextInput { document: self.document })
     }
 }

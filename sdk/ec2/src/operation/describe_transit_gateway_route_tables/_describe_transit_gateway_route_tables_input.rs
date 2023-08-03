@@ -5,8 +5,7 @@
 pub struct DescribeTransitGatewayRouteTablesInput {
     /// <p>The IDs of the transit gateway route tables.</p>
     #[doc(hidden)]
-    pub transit_gateway_route_table_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub transit_gateway_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
     /// <li> <p> <code>default-association-route-table</code> - Indicates whether this is the default association route table for the transit gateway (<code>true</code> | <code>false</code>).</p> </li>
@@ -29,9 +28,7 @@ pub struct DescribeTransitGatewayRouteTablesInput {
 }
 impl DescribeTransitGatewayRouteTablesInput {
     /// <p>The IDs of the transit gateway route tables.</p>
-    pub fn transit_gateway_route_table_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn transit_gateway_route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.transit_gateway_route_table_ids.as_deref()
     }
     /// <p>One or more filters. The possible values are:</p>
@@ -60,19 +57,16 @@ impl DescribeTransitGatewayRouteTablesInput {
 }
 impl DescribeTransitGatewayRouteTablesInput {
     /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayRouteTablesInput`](crate::operation::describe_transit_gateway_route_tables::DescribeTransitGatewayRouteTablesInput).
-    pub fn builder() -> crate::operation::describe_transit_gateway_route_tables::builders::DescribeTransitGatewayRouteTablesInputBuilder{
+    pub fn builder() -> crate::operation::describe_transit_gateway_route_tables::builders::DescribeTransitGatewayRouteTablesInputBuilder {
         crate::operation::describe_transit_gateway_route_tables::builders::DescribeTransitGatewayRouteTablesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTransitGatewayRouteTablesInput`](crate::operation::describe_transit_gateway_route_tables::DescribeTransitGatewayRouteTablesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTransitGatewayRouteTablesInputBuilder {
-    pub(crate) transit_gateway_route_table_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) transit_gateway_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -84,27 +78,19 @@ impl DescribeTransitGatewayRouteTablesInputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_route_table_ids`](Self::set_transit_gateway_route_table_ids).
     ///
     /// <p>The IDs of the transit gateway route tables.</p>
-    pub fn transit_gateway_route_table_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.transit_gateway_route_table_ids.unwrap_or_default();
         v.push(input.into());
         self.transit_gateway_route_table_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the transit gateway route tables.</p>
-    pub fn set_transit_gateway_route_table_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_transit_gateway_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.transit_gateway_route_table_ids = input;
         self
     }
     /// <p>The IDs of the transit gateway route tables.</p>
-    pub fn get_transit_gateway_route_table_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_transit_gateway_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.transit_gateway_route_table_ids
     }
     /// Appends an item to `filters`.
@@ -133,10 +119,7 @@ impl DescribeTransitGatewayRouteTablesInputBuilder {
     /// <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li>
     /// <li> <p> <code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -194,20 +177,20 @@ impl DescribeTransitGatewayRouteTablesInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeTransitGatewayRouteTablesInput`](crate::operation::describe_transit_gateway_route_tables::DescribeTransitGatewayRouteTablesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_transit_gateway_route_tables::DescribeTransitGatewayRouteTablesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_transit_gateway_route_tables::DescribeTransitGatewayRouteTablesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_transit_gateway_route_tables::DescribeTransitGatewayRouteTablesInput {
-                transit_gateway_route_table_ids: self.transit_gateway_route_table_ids
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_route_table_ids: self.transit_gateway_route_table_ids,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

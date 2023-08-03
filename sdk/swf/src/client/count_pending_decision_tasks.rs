@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`count(i32)`](crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput::count): <p>The number of tasks in the task list.</p>
     ///   - [`truncated(bool)`](crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput::truncated): <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     /// - On failure, responds with [`SdkError<CountPendingDecisionTasksError>`](crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError)
-    pub fn count_pending_decision_tasks(&self) -> crate::operation::count_pending_decision_tasks::builders::CountPendingDecisionTasksFluentBuilder{
+    pub fn count_pending_decision_tasks(&self) -> crate::operation::count_pending_decision_tasks::builders::CountPendingDecisionTasksFluentBuilder {
         crate::operation::count_pending_decision_tasks::builders::CountPendingDecisionTasksFluentBuilder::new(self.handle.clone())
     }
 }

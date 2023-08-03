@@ -26,7 +26,7 @@ impl DescribeFileSystemAliasesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFileSystemAliasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_file_system_aliases::builders::DescribeFileSystemAliasesInputBuilder,
+    inner: crate::operation::describe_file_system_aliases::builders::DescribeFileSystemAliasesInputBuilder,
 }
 impl DescribeFileSystemAliasesFluentBuilder {
     /// Creates a new `DescribeFileSystemAliases`.
@@ -37,7 +37,7 @@ impl DescribeFileSystemAliasesFluentBuilder {
         }
     }
     /// Access the DescribeFileSystemAliases as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_file_system_aliases::builders::DescribeFileSystemAliasesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_file_system_aliases::builders::DescribeFileSystemAliasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeFileSystemAliasesFluentBuilder {
             crate::operation::describe_file_system_aliases::DescribeFileSystemAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeFileSystemAliasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeFileSystemAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeFileSystemAliasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeFileSystemAliasesFluentBuilder {
             crate::operation::describe_file_system_aliases::DescribeFileSystemAliases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -141,18 +124,12 @@ impl DescribeFileSystemAliasesFluentBuilder {
         self.inner.get_client_request_token()
     }
     /// <p>The ID of the file system to return the associated DNS aliases for (String).</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>The ID of the file system to return the associated DNS aliases for (String).</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }

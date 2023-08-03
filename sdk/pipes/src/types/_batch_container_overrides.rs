@@ -19,8 +19,7 @@ pub struct BatchContainerOverrides {
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     #[doc(hidden)]
-    pub resource_requirements:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchResourceRequirement>>,
+    pub resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::BatchResourceRequirement>>,
 }
 impl BatchContainerOverrides {
     /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition.</p>
@@ -40,9 +39,7 @@ impl BatchContainerOverrides {
         self.instance_type.as_deref()
     }
     /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub fn resource_requirements(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchResourceRequirement]> {
+    pub fn resource_requirements(&self) -> ::std::option::Option<&[crate::types::BatchResourceRequirement]> {
         self.resource_requirements.as_deref()
     }
 }
@@ -55,16 +52,12 @@ impl BatchContainerOverrides {
 
 /// A builder for [`BatchContainerOverrides`](crate::types::BatchContainerOverrides).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchContainerOverridesBuilder {
     pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) environment:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchEnvironmentVariable>>,
+    pub(crate) environment: ::std::option::Option<::std::vec::Vec<crate::types::BatchEnvironmentVariable>>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_requirements:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchResourceRequirement>>,
+    pub(crate) resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::BatchResourceRequirement>>,
 }
 impl BatchContainerOverridesBuilder {
     /// Appends an item to `command`.
@@ -79,10 +72,7 @@ impl BatchContainerOverridesBuilder {
         self
     }
     /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition.</p>
-    pub fn set_command(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.command = input;
         self
     }
@@ -106,38 +96,27 @@ impl BatchContainerOverridesBuilder {
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>Batch</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchEnvironmentVariable>>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchEnvironmentVariable>>) -> Self {
         self.environment = input;
         self
     }
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>Batch</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    pub fn get_environment(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchEnvironmentVariable>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchEnvironmentVariable>> {
         &self.environment
     }
     /// <p>The instance type to use for a multi-node parallel job.</p> <note>
     /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
     /// </note>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type to use for a multi-node parallel job.</p> <note>
     /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
     /// </note>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -159,17 +138,12 @@ impl BatchContainerOverridesBuilder {
         self
     }
     /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub fn set_resource_requirements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchResourceRequirement>>,
-    ) -> Self {
+    pub fn set_resource_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchResourceRequirement>>) -> Self {
         self.resource_requirements = input;
         self
     }
     /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub fn get_resource_requirements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchResourceRequirement>> {
+    pub fn get_resource_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchResourceRequirement>> {
         &self.resource_requirements
     }
     /// Consumes the builder and constructs a [`BatchContainerOverrides`](crate::types::BatchContainerOverrides).

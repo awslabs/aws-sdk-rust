@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`virtual_services(Option<Vec<VirtualServiceRef>>)`](crate::operation::list_virtual_services::ListVirtualServicesOutput::virtual_services): <p>The list of existing virtual services for the specified service mesh.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_virtual_services::ListVirtualServicesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListVirtualServicesError>`](crate::operation::list_virtual_services::ListVirtualServicesError)
-    pub fn list_virtual_services(
-        &self,
-    ) -> crate::operation::list_virtual_services::builders::ListVirtualServicesFluentBuilder {
-        crate::operation::list_virtual_services::builders::ListVirtualServicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_virtual_services(&self) -> crate::operation::list_virtual_services::builders::ListVirtualServicesFluentBuilder {
+        crate::operation::list_virtual_services::builders::ListVirtualServicesFluentBuilder::new(self.handle.clone())
     }
 }

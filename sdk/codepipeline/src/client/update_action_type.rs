@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`action_type(ActionTypeDeclaration)`](crate::operation::update_action_type::builders::UpdateActionTypeFluentBuilder::action_type) / [`set_action_type(Option<ActionTypeDeclaration>)`](crate::operation::update_action_type::builders::UpdateActionTypeFluentBuilder::set_action_type): <p>The action type definition for the action type to be updated.</p>
     /// - On success, responds with [`UpdateActionTypeOutput`](crate::operation::update_action_type::UpdateActionTypeOutput)
     /// - On failure, responds with [`SdkError<UpdateActionTypeError>`](crate::operation::update_action_type::UpdateActionTypeError)
-    pub fn update_action_type(
-        &self,
-    ) -> crate::operation::update_action_type::builders::UpdateActionTypeFluentBuilder {
-        crate::operation::update_action_type::builders::UpdateActionTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_action_type(&self) -> crate::operation::update_action_type::builders::UpdateActionTypeFluentBuilder {
+        crate::operation::update_action_type::builders::UpdateActionTypeFluentBuilder::new(self.handle.clone())
     }
 }

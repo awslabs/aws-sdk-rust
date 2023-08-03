@@ -42,9 +42,7 @@ impl PutFileOutput {
 
 /// A builder for [`PutFileOutput`](crate::operation::put_file::PutFileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutFileOutputBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) blob_id: ::std::option::Option<::std::string::String>,

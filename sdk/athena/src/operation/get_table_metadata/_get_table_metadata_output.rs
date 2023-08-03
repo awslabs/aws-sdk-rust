@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetTableMetadataOutput {
 }
 impl GetTableMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetTableMetadataOutput`](crate::operation::get_table_metadata::GetTableMetadataOutput).
-    pub fn builder() -> crate::operation::get_table_metadata::builders::GetTableMetadataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_table_metadata::builders::GetTableMetadataOutputBuilder {
         crate::operation::get_table_metadata::builders::GetTableMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetTableMetadataOutput`](crate::operation::get_table_metadata::GetTableMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTableMetadataOutputBuilder {
     pub(crate) table_metadata: ::std::option::Option<crate::types::TableMetadata>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetTableMetadataOutputBuilder {
         self
     }
     /// <p>An object that contains table metadata.</p>
-    pub fn set_table_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::TableMetadata>,
-    ) -> Self {
+    pub fn set_table_metadata(mut self, input: ::std::option::Option<crate::types::TableMetadata>) -> Self {
         self.table_metadata = input;
         self
     }

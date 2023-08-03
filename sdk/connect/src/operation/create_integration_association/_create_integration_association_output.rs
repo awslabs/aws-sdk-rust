@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateIntegrationAssociationOutput {
 }
 impl CreateIntegrationAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateIntegrationAssociationOutput`](crate::operation::create_integration_association::CreateIntegrationAssociationOutput).
-    pub fn builder() -> crate::operation::create_integration_association::builders::CreateIntegrationAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::create_integration_association::builders::CreateIntegrationAssociationOutputBuilder {
         crate::operation::create_integration_association::builders::CreateIntegrationAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateIntegrationAssociationOutput`](crate::operation::create_integration_association::CreateIntegrationAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIntegrationAssociationOutputBuilder {
     pub(crate) integration_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_association_arn: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct CreateIntegrationAssociationOutputBuilder {
 }
 impl CreateIntegrationAssociationOutputBuilder {
     /// <p>The identifier for the integration association.</p>
-    pub fn integration_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn set_integration_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_association_id = input;
         self
     }
@@ -65,18 +57,12 @@ impl CreateIntegrationAssociationOutputBuilder {
         &self.integration_association_id
     }
     /// <p>The Amazon Resource Name (ARN) for the association.</p>
-    pub fn integration_association_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_association_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the association.</p>
-    pub fn set_integration_association_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_association_arn = input;
         self
     }
@@ -94,9 +80,7 @@ impl CreateIntegrationAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateIntegrationAssociationOutput`](crate::operation::create_integration_association::CreateIntegrationAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_integration_association::CreateIntegrationAssociationOutput {
+    pub fn build(self) -> crate::operation::create_integration_association::CreateIntegrationAssociationOutput {
         crate::operation::create_integration_association::CreateIntegrationAssociationOutput {
             integration_association_id: self.integration_association_id,
             integration_association_arn: self.integration_association_arn,

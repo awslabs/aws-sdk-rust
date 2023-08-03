@@ -10,10 +10,7 @@ impl DescribeAddressesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_addresses::DescribeAddressesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addresses::DescribeAddressesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addresses::DescribeAddressesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_addresses();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeAddressesFluentBuilder {
         }
     }
     /// Access the DescribeAddresses as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeAddressesFluentBuilder {
             crate::operation::describe_addresses::DescribeAddresses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addresses::DescribeAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addresses::DescribeAddressesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeAddressesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeAddressesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_addresses::DescribeAddressesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addresses::DescribeAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addresses::DescribeAddressesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeAddressesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_addresses::DescribeAddressesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addresses::DescribeAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addresses::DescribeAddressesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeAddressesFluentBuilder {
             crate::operation::describe_addresses::DescribeAddresses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addresses::DescribeAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addresses::DescribeAddressesError>,
     > {
         self.customize_middleware().await
     }
@@ -168,10 +152,7 @@ impl DescribeAddressesFluentBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -209,10 +190,7 @@ impl DescribeAddressesFluentBuilder {
     }
     /// <p>One or more Elastic IP addresses.</p>
     /// <p>Default: Describes all your Elastic IP addresses.</p>
-    pub fn set_public_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_public_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_public_ips(input);
         self
     }
@@ -226,25 +204,17 @@ impl DescribeAddressesFluentBuilder {
     /// To override the contents of this collection use [`set_allocation_ids`](Self::set_allocation_ids).
     ///
     /// <p>Information about the allocation IDs.</p>
-    pub fn allocation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allocation_ids(input.into());
         self
     }
     /// <p>Information about the allocation IDs.</p>
-    pub fn set_allocation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_allocation_ids(input);
         self
     }
     /// <p>Information about the allocation IDs.</p>
-    pub fn get_allocation_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allocation_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>

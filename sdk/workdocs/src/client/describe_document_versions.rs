@@ -14,10 +14,7 @@ impl super::Client {
     ///   - [`document_versions(Option<Vec<DocumentVersionMetadata>>)`](crate::operation::describe_document_versions::DescribeDocumentVersionsOutput::document_versions): <p>The document versions.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_document_versions::DescribeDocumentVersionsOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     /// - On failure, responds with [`SdkError<DescribeDocumentVersionsError>`](crate::operation::describe_document_versions::DescribeDocumentVersionsError)
-    pub fn describe_document_versions(
-        &self,
-    ) -> crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder
-    {
+    pub fn describe_document_versions(&self) -> crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder {
         crate::operation::describe_document_versions::builders::DescribeDocumentVersionsFluentBuilder::new(self.handle.clone())
     }
 }

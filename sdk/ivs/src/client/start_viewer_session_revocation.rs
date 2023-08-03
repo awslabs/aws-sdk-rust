@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`viewer_session_versions_less_than_or_equal_to(i32)`](crate::operation::start_viewer_session_revocation::builders::StartViewerSessionRevocationFluentBuilder::viewer_session_versions_less_than_or_equal_to) / [`set_viewer_session_versions_less_than_or_equal_to(i32)`](crate::operation::start_viewer_session_revocation::builders::StartViewerSessionRevocationFluentBuilder::set_viewer_session_versions_less_than_or_equal_to): <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
     /// - On success, responds with [`StartViewerSessionRevocationOutput`](crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationOutput)
     /// - On failure, responds with [`SdkError<StartViewerSessionRevocationError>`](crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError)
-    pub fn start_viewer_session_revocation(&self) -> crate::operation::start_viewer_session_revocation::builders::StartViewerSessionRevocationFluentBuilder{
+    pub fn start_viewer_session_revocation(
+        &self,
+    ) -> crate::operation::start_viewer_session_revocation::builders::StartViewerSessionRevocationFluentBuilder {
         crate::operation::start_viewer_session_revocation::builders::StartViewerSessionRevocationFluentBuilder::new(self.handle.clone())
     }
 }

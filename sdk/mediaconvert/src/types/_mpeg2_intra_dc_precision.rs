@@ -41,13 +41,7 @@
 /// Use Intra DC precision to set quantization precision for intra-block DC coefficients. If you choose the value auto, the service will automatically select the precision based on the per-frame compression ratio.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Mpeg2IntraDcPrecision {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for Mpeg2IntraDcPrecision {
             "INTRA_DC_PRECISION_11" => Mpeg2IntraDcPrecision::IntraDcPrecision11,
             "INTRA_DC_PRECISION_8" => Mpeg2IntraDcPrecision::IntraDcPrecision8,
             "INTRA_DC_PRECISION_9" => Mpeg2IntraDcPrecision::IntraDcPrecision9,
-            other => Mpeg2IntraDcPrecision::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Mpeg2IntraDcPrecision::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

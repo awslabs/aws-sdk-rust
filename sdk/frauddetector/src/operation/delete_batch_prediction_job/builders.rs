@@ -26,7 +26,7 @@ impl DeleteBatchPredictionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBatchPredictionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobInputBuilder,
+    inner: crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobInputBuilder,
 }
 impl DeleteBatchPredictionJobFluentBuilder {
     /// Creates a new `DeleteBatchPredictionJob`.
@@ -37,7 +37,7 @@ impl DeleteBatchPredictionJobFluentBuilder {
         }
     }
     /// Access the DeleteBatchPredictionJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_batch_prediction_job::builders::DeleteBatchPredictionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteBatchPredictionJobFluentBuilder {
             crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteBatchPredictionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteBatchPredictionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteBatchPredictionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteBatchPredictionJobFluentBuilder {
             crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobError>,
     > {
         self.customize_middleware().await
     }

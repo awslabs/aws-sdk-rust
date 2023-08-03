@@ -5,15 +5,12 @@
 pub struct DisassociateTransitGatewayConnectPeerOutput {
     /// <p>The transit gateway Connect peer association.</p>
     #[doc(hidden)]
-    pub transit_gateway_connect_peer_association:
-        ::std::option::Option<crate::types::TransitGatewayConnectPeerAssociation>,
+    pub transit_gateway_connect_peer_association: ::std::option::Option<crate::types::TransitGatewayConnectPeerAssociation>,
     _request_id: Option<String>,
 }
 impl DisassociateTransitGatewayConnectPeerOutput {
     /// <p>The transit gateway Connect peer association.</p>
-    pub fn transit_gateway_connect_peer_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayConnectPeerAssociation> {
+    pub fn transit_gateway_connect_peer_association(&self) -> ::std::option::Option<&crate::types::TransitGatewayConnectPeerAssociation> {
         self.transit_gateway_connect_peer_association.as_ref()
     }
 }
@@ -24,27 +21,21 @@ impl ::aws_http::request_id::RequestId for DisassociateTransitGatewayConnectPeer
 }
 impl DisassociateTransitGatewayConnectPeerOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateTransitGatewayConnectPeerOutput`](crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput).
-    pub fn builder() -> crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerOutputBuilder {
         crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateTransitGatewayConnectPeerOutput`](crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateTransitGatewayConnectPeerOutputBuilder {
-    pub(crate) transit_gateway_connect_peer_association:
-        ::std::option::Option<crate::types::TransitGatewayConnectPeerAssociation>,
+    pub(crate) transit_gateway_connect_peer_association: ::std::option::Option<crate::types::TransitGatewayConnectPeerAssociation>,
     _request_id: Option<String>,
 }
 impl DisassociateTransitGatewayConnectPeerOutputBuilder {
     /// <p>The transit gateway Connect peer association.</p>
-    pub fn transit_gateway_connect_peer_association(
-        mut self,
-        input: crate::types::TransitGatewayConnectPeerAssociation,
-    ) -> Self {
+    pub fn transit_gateway_connect_peer_association(mut self, input: crate::types::TransitGatewayConnectPeerAssociation) -> Self {
         self.transit_gateway_connect_peer_association = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +48,7 @@ impl DisassociateTransitGatewayConnectPeerOutputBuilder {
         self
     }
     /// <p>The transit gateway Connect peer association.</p>
-    pub fn get_transit_gateway_connect_peer_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayConnectPeerAssociation> {
+    pub fn get_transit_gateway_connect_peer_association(&self) -> &::std::option::Option<crate::types::TransitGatewayConnectPeerAssociation> {
         &self.transit_gateway_connect_peer_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +61,9 @@ impl DisassociateTransitGatewayConnectPeerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateTransitGatewayConnectPeerOutput`](crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput).
-    pub fn build(self) -> crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput{
+    pub fn build(self) -> crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput {
         crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput {
-            transit_gateway_connect_peer_association: self.transit_gateway_connect_peer_association
-            ,
+            transit_gateway_connect_peer_association: self.transit_gateway_connect_peer_association,
             _request_id: self._request_id,
         }
     }

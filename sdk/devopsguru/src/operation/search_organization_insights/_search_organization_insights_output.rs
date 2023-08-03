@@ -5,12 +5,10 @@
 pub struct SearchOrganizationInsightsOutput {
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub proactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
+    pub proactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub reactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
+    pub reactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -18,15 +16,11 @@ pub struct SearchOrganizationInsightsOutput {
 }
 impl SearchOrganizationInsightsOutput {
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
-    pub fn proactive_insights(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProactiveInsightSummary]> {
+    pub fn proactive_insights(&self) -> ::std::option::Option<&[crate::types::ProactiveInsightSummary]> {
         self.proactive_insights.as_deref()
     }
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
-    pub fn reactive_insights(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReactiveInsightSummary]> {
+    pub fn reactive_insights(&self) -> ::std::option::Option<&[crate::types::ReactiveInsightSummary]> {
         self.reactive_insights.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -41,21 +35,17 @@ impl ::aws_http::request_id::RequestId for SearchOrganizationInsightsOutput {
 }
 impl SearchOrganizationInsightsOutput {
     /// Creates a new builder-style object to manufacture [`SearchOrganizationInsightsOutput`](crate::operation::search_organization_insights::SearchOrganizationInsightsOutput).
-    pub fn builder() -> crate::operation::search_organization_insights::builders::SearchOrganizationInsightsOutputBuilder{
+    pub fn builder() -> crate::operation::search_organization_insights::builders::SearchOrganizationInsightsOutputBuilder {
         crate::operation::search_organization_insights::builders::SearchOrganizationInsightsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchOrganizationInsightsOutput`](crate::operation::search_organization_insights::SearchOrganizationInsightsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchOrganizationInsightsOutputBuilder {
-    pub(crate) proactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
-    pub(crate) reactive_insights:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
+    pub(crate) proactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
+    pub(crate) reactive_insights: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -72,17 +62,12 @@ impl SearchOrganizationInsightsOutputBuilder {
         self
     }
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
-    pub fn set_proactive_insights(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>,
-    ) -> Self {
+    pub fn set_proactive_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>>) -> Self {
         self.proactive_insights = input;
         self
     }
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
-    pub fn get_proactive_insights(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>> {
+    pub fn get_proactive_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>> {
         &self.proactive_insights
     }
     /// Appends an item to `reactive_insights`.
@@ -97,17 +82,12 @@ impl SearchOrganizationInsightsOutputBuilder {
         self
     }
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
-    pub fn set_reactive_insights(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>,
-    ) -> Self {
+    pub fn set_reactive_insights(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>>) -> Self {
         self.reactive_insights = input;
         self
     }
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
-    pub fn get_reactive_insights(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>> {
+    pub fn get_reactive_insights(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>> {
         &self.reactive_insights
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -134,9 +114,7 @@ impl SearchOrganizationInsightsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchOrganizationInsightsOutput`](crate::operation::search_organization_insights::SearchOrganizationInsightsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::search_organization_insights::SearchOrganizationInsightsOutput {
+    pub fn build(self) -> crate::operation::search_organization_insights::SearchOrganizationInsightsOutput {
         crate::operation::search_organization_insights::SearchOrganizationInsightsOutput {
             proactive_insights: self.proactive_insights,
             reactive_insights: self.reactive_insights,

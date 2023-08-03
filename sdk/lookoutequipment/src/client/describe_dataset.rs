@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`data_start_time(Option<DateTime>)`](crate::operation::describe_dataset::DescribeDatasetOutput::data_start_time): <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
     ///   - [`data_end_time(Option<DateTime>)`](crate::operation::describe_dataset::DescribeDatasetOutput::data_end_time): <p> Indicates the latest timestamp corresponding to data that was successfully ingested during the most recent ingestion of this particular dataset. </p>
     /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::operation::describe_dataset::DescribeDatasetError)
-    pub fn describe_dataset(
-        &self,
-    ) -> crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder {
-        crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_dataset(&self) -> crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder {
+        crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::new(self.handle.clone())
     }
 }

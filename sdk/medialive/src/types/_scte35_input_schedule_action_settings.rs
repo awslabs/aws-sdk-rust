@@ -30,34 +30,24 @@ impl Scte35InputScheduleActionSettings {
 
 /// A builder for [`Scte35InputScheduleActionSettings`](crate::types::Scte35InputScheduleActionSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Scte35InputScheduleActionSettingsBuilder {
     pub(crate) input_attachment_name_reference: ::std::option::Option<::std::string::String>,
     pub(crate) mode: ::std::option::Option<crate::types::Scte35InputMode>,
 }
 impl Scte35InputScheduleActionSettingsBuilder {
     /// In fixed mode, enter the name of the input attachment that you want to use as a SCTE-35 input. (Don't enter the ID of the input.)"
-    pub fn input_attachment_name_reference(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_attachment_name_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_attachment_name_reference = ::std::option::Option::Some(input.into());
         self
     }
     /// In fixed mode, enter the name of the input attachment that you want to use as a SCTE-35 input. (Don't enter the ID of the input.)"
-    pub fn set_input_attachment_name_reference(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_attachment_name_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_attachment_name_reference = input;
         self
     }
     /// In fixed mode, enter the name of the input attachment that you want to use as a SCTE-35 input. (Don't enter the ID of the input.)"
-    pub fn get_input_attachment_name_reference(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_input_attachment_name_reference(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_attachment_name_reference
     }
     /// Whether the SCTE-35 input should be the active input or a fixed input.

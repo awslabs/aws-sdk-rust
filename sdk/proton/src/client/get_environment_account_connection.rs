@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetEnvironmentAccountConnectionOutput`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionOutput) with field(s):
     ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionOutput::environment_account_connection): <p>The detailed data of the requested environment account connection.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentAccountConnectionError>`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionError)
-    pub fn get_environment_account_connection(&self) -> crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionFluentBuilder{
+    pub fn get_environment_account_connection(
+        &self,
+    ) -> crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionFluentBuilder {
         crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionFluentBuilder::new(self.handle.clone())
     }
 }

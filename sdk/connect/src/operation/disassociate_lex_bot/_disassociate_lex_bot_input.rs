@@ -29,17 +29,14 @@ impl DisassociateLexBotInput {
 }
 impl DisassociateLexBotInput {
     /// Creates a new builder-style object to manufacture [`DisassociateLexBotInput`](crate::operation::disassociate_lex_bot::DisassociateLexBotInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_lex_bot::builders::DisassociateLexBotInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_lex_bot::builders::DisassociateLexBotInputBuilder {
         crate::operation::disassociate_lex_bot::builders::DisassociateLexBotInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateLexBotInput`](crate::operation::disassociate_lex_bot::DisassociateLexBotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateLexBotInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl DisassociateLexBotInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateLexBotInput`](crate::operation::disassociate_lex_bot::DisassociateLexBotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_lex_bot::DisassociateLexBotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_lex_bot::DisassociateLexBotInput {
-                instance_id: self.instance_id,
-                bot_name: self.bot_name,
-                lex_region: self.lex_region,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_lex_bot::DisassociateLexBotInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::disassociate_lex_bot::DisassociateLexBotInput {
+            instance_id: self.instance_id,
+            bot_name: self.bot_name,
+            lex_region: self.lex_region,
+        })
     }
 }

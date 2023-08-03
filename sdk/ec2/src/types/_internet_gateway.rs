@@ -6,8 +6,7 @@
 pub struct InternetGateway {
     /// <p>Any VPCs attached to the internet gateway.</p>
     #[doc(hidden)]
-    pub attachments:
-        ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>,
+    pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>,
     /// <p>The ID of the internet gateway.</p>
     #[doc(hidden)]
     pub internet_gateway_id: ::std::option::Option<::std::string::String>,
@@ -45,12 +44,9 @@ impl InternetGateway {
 
 /// A builder for [`InternetGateway`](crate::types::InternetGateway).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InternetGatewayBuilder {
-    pub(crate) attachments:
-        ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>,
+    pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>,
     pub(crate) internet_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -68,32 +64,21 @@ impl InternetGatewayBuilder {
         self
     }
     /// <p>Any VPCs attached to the internet gateway.</p>
-    pub fn set_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>,
-    ) -> Self {
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>) -> Self {
         self.attachments = input;
         self
     }
     /// <p>Any VPCs attached to the internet gateway.</p>
-    pub fn get_attachments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>> {
         &self.attachments
     }
     /// <p>The ID of the internet gateway.</p>
-    pub fn internet_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn internet_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.internet_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the internet gateway.</p>
-    pub fn set_internet_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_internet_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.internet_gateway_id = input;
         self
     }
@@ -127,10 +112,7 @@ impl InternetGatewayBuilder {
         self
     }
     /// <p>Any tags assigned to the internet gateway.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

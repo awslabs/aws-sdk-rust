@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for BatchCheckLayerAvailabilityOutput {
 }
 impl BatchCheckLayerAvailabilityOutput {
     /// Creates a new builder-style object to manufacture [`BatchCheckLayerAvailabilityOutput`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput).
-    pub fn builder() -> crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityOutputBuilder{
+    pub fn builder() -> crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityOutputBuilder {
         crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchCheckLayerAvailabilityOutput`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCheckLayerAvailabilityOutputBuilder {
     pub(crate) layers: ::std::option::Option<::std::vec::Vec<crate::types::Layer>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::LayerFailure>>,
@@ -56,10 +54,7 @@ impl BatchCheckLayerAvailabilityOutputBuilder {
         self
     }
     /// <p>A list of image layer objects corresponding to the image layer references in the request.</p>
-    pub fn set_layers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Layer>>,
-    ) -> Self {
+    pub fn set_layers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Layer>>) -> Self {
         self.layers = input;
         self
     }
@@ -79,17 +74,12 @@ impl BatchCheckLayerAvailabilityOutputBuilder {
         self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LayerFailure>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LayerFailure>>) -> Self {
         self.failures = input;
         self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn get_failures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LayerFailure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LayerFailure>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -102,9 +92,7 @@ impl BatchCheckLayerAvailabilityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchCheckLayerAvailabilityOutput`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput {
+    pub fn build(self) -> crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput {
         crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput {
             layers: self.layers,
             failures: self.failures,

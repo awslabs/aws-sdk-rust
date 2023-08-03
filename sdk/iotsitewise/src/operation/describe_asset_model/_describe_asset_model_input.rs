@@ -22,35 +22,26 @@ impl DescribeAssetModelInput {
 }
 impl DescribeAssetModelInput {
     /// Creates a new builder-style object to manufacture [`DescribeAssetModelInput`](crate::operation::describe_asset_model::DescribeAssetModelInput).
-    pub fn builder(
-    ) -> crate::operation::describe_asset_model::builders::DescribeAssetModelInputBuilder {
+    pub fn builder() -> crate::operation::describe_asset_model::builders::DescribeAssetModelInputBuilder {
         crate::operation::describe_asset_model::builders::DescribeAssetModelInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAssetModelInput`](crate::operation::describe_asset_model::DescribeAssetModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssetModelInputBuilder {
     pub(crate) asset_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) exclude_properties: ::std::option::Option<bool>,
 }
 impl DescribeAssetModelInputBuilder {
     /// <p>The ID of the asset model.</p>
-    pub fn asset_model_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the asset model.</p>
-    pub fn set_asset_model_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_id = input;
         self
     }
@@ -75,15 +66,10 @@ impl DescribeAssetModelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAssetModelInput`](crate::operation::describe_asset_model::DescribeAssetModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_asset_model::DescribeAssetModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_asset_model::DescribeAssetModelInput {
-                asset_model_id: self.asset_model_id,
-                exclude_properties: self.exclude_properties,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_asset_model::DescribeAssetModelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_asset_model::DescribeAssetModelInput {
+            asset_model_id: self.asset_model_id,
+            exclude_properties: self.exclude_properties,
+        })
     }
 }

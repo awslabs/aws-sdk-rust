@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput::id): <p>The system-generated unique ID of the Dev Environment.</p>
     ///   - [`session_id(Option<String>)`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput::session_id): <p>The system-generated unique ID of the Dev Environment session.</p>
     /// - On failure, responds with [`SdkError<StopDevEnvironmentSessionError>`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionError)
-    pub fn stop_dev_environment_session(&self) -> crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionFluentBuilder{
+    pub fn stop_dev_environment_session(&self) -> crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionFluentBuilder {
         crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionFluentBuilder::new(self.handle.clone())
     }
 }

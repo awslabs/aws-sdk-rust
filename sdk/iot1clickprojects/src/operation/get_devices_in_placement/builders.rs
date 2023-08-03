@@ -37,10 +37,7 @@ impl GetDevicesInPlacementFluentBuilder {
         }
     }
     /// Access the GetDevicesInPlacement as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetDevicesInPlacementFluentBuilder {
             crate::operation::get_devices_in_placement::GetDevicesInPlacement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_devices_in_placement::GetDevicesInPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_devices_in_placement::GetDevicesInPlacementError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetDevicesInPlacementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetDevicesInPlacementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_devices_in_placement::GetDevicesInPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_devices_in_placement::GetDevicesInPlacementError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetDevicesInPlacementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_devices_in_placement::GetDevicesInPlacementOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_devices_in_placement::GetDevicesInPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_devices_in_placement::GetDevicesInPlacementError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetDevicesInPlacementFluentBuilder {
             crate::operation::get_devices_in_placement::GetDevicesInPlacement,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_devices_in_placement::GetDevicesInPlacementError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_devices_in_placement::GetDevicesInPlacementError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl GetDevicesInPlacementFluentBuilder {
         self.inner.get_project_name()
     }
     /// <p>The name of the placement to get the devices from.</p>
-    pub fn placement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn placement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.placement_name(input.into());
         self
     }
     /// <p>The name of the placement to get the devices from.</p>
-    pub fn set_placement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_placement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_placement_name(input);
         self
     }

@@ -51,9 +51,7 @@ impl RelationalTable {
 
 /// A builder for [`RelationalTable`](crate::types::RelationalTable).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelationalTableBuilder {
     pub(crate) data_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct RelationalTableBuilder {
 }
 impl RelationalTableBuilder {
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
-    pub fn data_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
-    pub fn set_data_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source_arn = input;
         self
     }
@@ -136,17 +128,12 @@ impl RelationalTableBuilder {
         self
     }
     /// <p>The column schema of the table.</p>
-    pub fn set_input_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>,
-    ) -> Self {
+    pub fn set_input_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>) -> Self {
         self.input_columns = input;
         self
     }
     /// <p>The column schema of the table.</p>
-    pub fn get_input_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputColumn>> {
+    pub fn get_input_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputColumn>> {
         &self.input_columns
     }
     /// Consumes the builder and constructs a [`RelationalTable`](crate::types::RelationalTable).

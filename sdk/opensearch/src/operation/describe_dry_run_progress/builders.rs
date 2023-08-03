@@ -26,8 +26,7 @@ impl DescribeDryRunProgressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDryRunProgressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_dry_run_progress::builders::DescribeDryRunProgressInputBuilder,
+    inner: crate::operation::describe_dry_run_progress::builders::DescribeDryRunProgressInputBuilder,
 }
 impl DescribeDryRunProgressFluentBuilder {
     /// Creates a new `DescribeDryRunProgress`.
@@ -38,10 +37,7 @@ impl DescribeDryRunProgressFluentBuilder {
         }
     }
     /// Access the DescribeDryRunProgress as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_dry_run_progress::builders::DescribeDryRunProgressInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_dry_run_progress::builders::DescribeDryRunProgressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeDryRunProgressFluentBuilder {
             crate::operation::describe_dry_run_progress::DescribeDryRunProgress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dry_run_progress::DescribeDryRunProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dry_run_progress::DescribeDryRunProgressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeDryRunProgressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeDryRunProgressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_dry_run_progress::DescribeDryRunProgressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dry_run_progress::DescribeDryRunProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dry_run_progress::DescribeDryRunProgressError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeDryRunProgressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_dry_run_progress::DescribeDryRunProgressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dry_run_progress::DescribeDryRunProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dry_run_progress::DescribeDryRunProgressError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DescribeDryRunProgressFluentBuilder {
             crate::operation::describe_dry_run_progress::DescribeDryRunProgress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dry_run_progress::DescribeDryRunProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dry_run_progress::DescribeDryRunProgressError>,
     > {
         self.customize_middleware().await
     }

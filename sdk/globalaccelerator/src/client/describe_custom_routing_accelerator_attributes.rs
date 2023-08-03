@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`DescribeCustomRoutingAcceleratorAttributesOutput`](crate::operation::describe_custom_routing_accelerator_attributes::DescribeCustomRoutingAcceleratorAttributesOutput) with field(s):
     ///   - [`accelerator_attributes(Option<CustomRoutingAcceleratorAttributes>)`](crate::operation::describe_custom_routing_accelerator_attributes::DescribeCustomRoutingAcceleratorAttributesOutput::accelerator_attributes): <p>The attributes of the custom routing accelerator.</p>
     /// - On failure, responds with [`SdkError<DescribeCustomRoutingAcceleratorAttributesError>`](crate::operation::describe_custom_routing_accelerator_attributes::DescribeCustomRoutingAcceleratorAttributesError)
-    pub fn describe_custom_routing_accelerator_attributes(&self) -> crate::operation::describe_custom_routing_accelerator_attributes::builders::DescribeCustomRoutingAcceleratorAttributesFluentBuilder{
-        crate::operation::describe_custom_routing_accelerator_attributes::builders::DescribeCustomRoutingAcceleratorAttributesFluentBuilder::new(self.handle.clone())
+    pub fn describe_custom_routing_accelerator_attributes(
+        &self,
+    ) -> crate::operation::describe_custom_routing_accelerator_attributes::builders::DescribeCustomRoutingAcceleratorAttributesFluentBuilder {
+        crate::operation::describe_custom_routing_accelerator_attributes::builders::DescribeCustomRoutingAcceleratorAttributesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -120,9 +120,7 @@ impl ResolverRule {
 
 /// A builder for [`ResolverRule`](crate::types::ResolverRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResolverRuleBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
@@ -155,18 +153,12 @@ impl ResolverRuleBuilder {
         &self.id
     }
     /// <p>A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies the request and allows failed requests to be retried without the risk of running the operation twice. </p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies the request and allows failed requests to be retried without the risk of running the operation twice. </p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
@@ -208,10 +200,7 @@ impl ResolverRuleBuilder {
         self
     }
     /// <p>A code that specifies the current status of the Resolver rule.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverRuleStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResolverRuleStatus>) -> Self {
         self.status = input;
         self
     }
@@ -220,18 +209,12 @@ impl ResolverRuleBuilder {
         &self.status
     }
     /// <p>A detailed description of the status of a Resolver rule.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed description of the status of a Resolver rule.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -251,10 +234,7 @@ impl ResolverRuleBuilder {
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
-    pub fn set_rule_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleTypeOption>,
-    ) -> Self {
+    pub fn set_rule_type(mut self, input: ::std::option::Option<crate::types::RuleTypeOption>) -> Self {
         self.rule_type = input;
         self
     }
@@ -291,32 +271,21 @@ impl ResolverRuleBuilder {
         self
     }
     /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. </p>
-    pub fn set_target_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,
-    ) -> Self {
+    pub fn set_target_ips(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>) -> Self {
         self.target_ips = input;
         self
     }
     /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network. </p>
-    pub fn get_target_ips(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>> {
+    pub fn get_target_ips(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>> {
         &self.target_ips
     }
     /// <p>The ID of the endpoint that the rule is associated with.</p>
-    pub fn resolver_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the endpoint that the rule is associated with.</p>
-    pub fn set_resolver_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolver_endpoint_id = input;
         self
     }
@@ -344,10 +313,7 @@ impl ResolverRuleBuilder {
         self
     }
     /// <p>Whether the rule is shared and, if so, whether the current account is sharing the rule with another account, or another account is sharing the rule with the current account.</p>
-    pub fn set_share_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareStatus>,
-    ) -> Self {
+    pub fn set_share_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
         self.share_status = input;
         self
     }
@@ -356,18 +322,12 @@ impl ResolverRuleBuilder {
         &self.share_status
     }
     /// <p>The date and time that the Resolver rule was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn creation_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that the Resolver rule was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_time = input;
         self
     }
@@ -376,18 +336,12 @@ impl ResolverRuleBuilder {
         &self.creation_time
     }
     /// <p>The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn modification_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn modification_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.modification_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn set_modification_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_modification_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.modification_time = input;
         self
     }

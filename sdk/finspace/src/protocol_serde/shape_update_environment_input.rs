@@ -12,10 +12,7 @@ pub fn ser_update_environment_input(
     if let Some(var_3) = &input.federation_parameters {
         #[allow(unused_mut)]
         let mut object_4 = object.key("federationParameters").start_object();
-        crate::protocol_serde::shape_federation_parameters::ser_federation_parameters(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_federation_parameters::ser_federation_parameters(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.name {

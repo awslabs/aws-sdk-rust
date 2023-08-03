@@ -6,16 +6,11 @@
 pub struct RecommendationRelatedAnomalySourceDetail {
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
     #[doc(hidden)]
-    pub cloud_watch_metrics: ::std::option::Option<
-        ::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>,
-    >,
+    pub cloud_watch_metrics: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>>,
 }
 impl RecommendationRelatedAnomalySourceDetail {
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
-    pub fn cloud_watch_metrics(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail]>
-    {
+    pub fn cloud_watch_metrics(&self) -> ::std::option::Option<&[crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail]> {
         self.cloud_watch_metrics.as_deref()
     }
 }
@@ -28,13 +23,9 @@ impl RecommendationRelatedAnomalySourceDetail {
 
 /// A builder for [`RecommendationRelatedAnomalySourceDetail`](crate::types::RecommendationRelatedAnomalySourceDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationRelatedAnomalySourceDetailBuilder {
-    pub(crate) cloud_watch_metrics: ::std::option::Option<
-        ::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>,
-    >,
+    pub(crate) cloud_watch_metrics: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>>,
 }
 impl RecommendationRelatedAnomalySourceDetailBuilder {
     /// Appends an item to `cloud_watch_metrics`.
@@ -42,10 +33,7 @@ impl RecommendationRelatedAnomalySourceDetailBuilder {
     /// To override the contents of this collection use [`set_cloud_watch_metrics`](Self::set_cloud_watch_metrics).
     ///
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
-    pub fn cloud_watch_metrics(
-        mut self,
-        input: crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail,
-    ) -> Self {
+    pub fn cloud_watch_metrics(mut self, input: crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail) -> Self {
         let mut v = self.cloud_watch_metrics.unwrap_or_default();
         v.push(input);
         self.cloud_watch_metrics = ::std::option::Option::Some(v);
@@ -54,9 +42,7 @@ impl RecommendationRelatedAnomalySourceDetailBuilder {
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
     pub fn set_cloud_watch_metrics(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>>,
     ) -> Self {
         self.cloud_watch_metrics = input;
         self
@@ -64,9 +50,7 @@ impl RecommendationRelatedAnomalySourceDetailBuilder {
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
     pub fn get_cloud_watch_metrics(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>> {
         &self.cloud_watch_metrics
     }
     /// Consumes the builder and constructs a [`RecommendationRelatedAnomalySourceDetail`](crate::types::RecommendationRelatedAnomalySourceDetail).

@@ -55,9 +55,7 @@ pub struct ConfigurationItem {
     pub resource_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A mapping of key value tags associated with the resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of CloudTrail event IDs.</p>
     /// <p>A populated field indicates that the current configuration was initiated by the events recorded in the CloudTrail log. For more information about CloudTrail, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is CloudTrail</a>.</p>
     /// <p>An empty field indicates that the current configuration was not initiated by any event. As of Version 1.3, the relatedEvents field is empty. You can access the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the resource.</p>
@@ -71,9 +69,7 @@ pub struct ConfigurationItem {
     pub configuration: ::std::option::Option<::std::string::String>,
     /// <p>Configuration attributes that Config returns for certain resource types to supplement the information returned for the <code>configuration</code> parameter.</p>
     #[doc(hidden)]
-    pub supplementary_configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub supplementary_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ConfigurationItem {
     /// <p>The version number of the resource configuration.</p>
@@ -85,9 +81,7 @@ impl ConfigurationItem {
         self.account_id.as_deref()
     }
     /// <p>The time when the configuration recording was initiated.</p>
-    pub fn configuration_item_capture_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn configuration_item_capture_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.configuration_item_capture_time.as_ref()
     }
     /// <p>The configuration item status. The valid values are:</p>
@@ -100,9 +94,7 @@ impl ConfigurationItem {
     /// </ul> <note>
     /// <p>The CIs do not incur any cost.</p>
     /// </note>
-    pub fn configuration_item_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfigurationItemStatus> {
+    pub fn configuration_item_status(&self) -> ::std::option::Option<&crate::types::ConfigurationItemStatus> {
         self.configuration_item_status.as_ref()
     }
     /// <p>An identifier that indicates the ordering of the configuration items of a resource.</p>
@@ -143,11 +135,7 @@ impl ConfigurationItem {
         self.resource_creation_time.as_ref()
     }
     /// <p>A mapping of key value tags associated with the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A list of CloudTrail event IDs.</p>
@@ -165,11 +153,7 @@ impl ConfigurationItem {
         self.configuration.as_deref()
     }
     /// <p>Configuration attributes that Config returns for certain resource types to supplement the information returned for the <code>configuration</code> parameter.</p>
-    pub fn supplementary_configuration(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn supplementary_configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.supplementary_configuration.as_ref()
     }
 }
@@ -182,15 +166,12 @@ impl ConfigurationItem {
 
 /// A builder for [`ConfigurationItem`](crate::types::ConfigurationItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationItemBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_item_capture_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) configuration_item_status:
-        ::std::option::Option<crate::types::ConfigurationItemStatus>,
+    pub(crate) configuration_item_status: ::std::option::Option<crate::types::ConfigurationItemStatus>,
     pub(crate) configuration_state_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_item_md5_hash: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -200,15 +181,11 @@ pub struct ConfigurationItemBuilder {
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) resource_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) related_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) relationships: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
-    pub(crate) supplementary_configuration: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) supplementary_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ConfigurationItemBuilder {
     /// <p>The version number of the resource configuration.</p>
@@ -245,17 +222,12 @@ impl ConfigurationItemBuilder {
         self
     }
     /// <p>The time when the configuration recording was initiated.</p>
-    pub fn set_configuration_item_capture_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_configuration_item_capture_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.configuration_item_capture_time = input;
         self
     }
     /// <p>The time when the configuration recording was initiated.</p>
-    pub fn get_configuration_item_capture_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_configuration_item_capture_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.configuration_item_capture_time
     }
     /// <p>The configuration item status. The valid values are:</p>
@@ -268,10 +240,7 @@ impl ConfigurationItemBuilder {
     /// </ul> <note>
     /// <p>The CIs do not incur any cost.</p>
     /// </note>
-    pub fn configuration_item_status(
-        mut self,
-        input: crate::types::ConfigurationItemStatus,
-    ) -> Self {
+    pub fn configuration_item_status(mut self, input: crate::types::ConfigurationItemStatus) -> Self {
         self.configuration_item_status = ::std::option::Option::Some(input);
         self
     }
@@ -285,10 +254,7 @@ impl ConfigurationItemBuilder {
     /// </ul> <note>
     /// <p>The CIs do not incur any cost.</p>
     /// </note>
-    pub fn set_configuration_item_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationItemStatus>,
-    ) -> Self {
+    pub fn set_configuration_item_status(mut self, input: ::std::option::Option<crate::types::ConfigurationItemStatus>) -> Self {
         self.configuration_item_status = input;
         self
     }
@@ -302,24 +268,16 @@ impl ConfigurationItemBuilder {
     /// </ul> <note>
     /// <p>The CIs do not incur any cost.</p>
     /// </note>
-    pub fn get_configuration_item_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationItemStatus> {
+    pub fn get_configuration_item_status(&self) -> &::std::option::Option<crate::types::ConfigurationItemStatus> {
         &self.configuration_item_status
     }
     /// <p>An identifier that indicates the ordering of the configuration items of a resource.</p>
-    pub fn configuration_state_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_state_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_state_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier that indicates the ordering of the configuration items of a resource.</p>
-    pub fn set_configuration_state_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_state_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_state_id = input;
         self
     }
@@ -329,19 +287,13 @@ impl ConfigurationItemBuilder {
     }
     /// <p>Unique MD5 hash that represents the configuration item's state.</p>
     /// <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>
-    pub fn configuration_item_md5_hash(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_item_md5_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_item_md5_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique MD5 hash that represents the configuration item's state.</p>
     /// <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>
-    pub fn set_configuration_item_md5_hash(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_item_md5_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_item_md5_hash = input;
         self
     }
@@ -370,10 +322,7 @@ impl ConfigurationItemBuilder {
         self
     }
     /// <p>The type of Amazon Web Services resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -396,18 +345,12 @@ impl ConfigurationItemBuilder {
         &self.resource_id
     }
     /// <p>The custom name of the resource, if available.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom name of the resource, if available.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_name = input;
         self
     }
@@ -430,18 +373,12 @@ impl ConfigurationItemBuilder {
         &self.aws_region
     }
     /// <p>The Availability Zone associated with the resource.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone associated with the resource.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -455,17 +392,12 @@ impl ConfigurationItemBuilder {
         self
     }
     /// <p>The time stamp when the resource was created.</p>
-    pub fn set_resource_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_resource_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.resource_creation_time = input;
         self
     }
     /// <p>The time stamp when the resource was created.</p>
-    pub fn get_resource_creation_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_resource_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.resource_creation_time
     }
     /// Adds a key-value pair to `tags`.
@@ -473,32 +405,19 @@ impl ConfigurationItemBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A mapping of key value tags associated with the resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A mapping of key value tags associated with the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A mapping of key value tags associated with the resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `related_events`.
@@ -508,10 +427,7 @@ impl ConfigurationItemBuilder {
     /// <p>A list of CloudTrail event IDs.</p>
     /// <p>A populated field indicates that the current configuration was initiated by the events recorded in the CloudTrail log. For more information about CloudTrail, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is CloudTrail</a>.</p>
     /// <p>An empty field indicates that the current configuration was not initiated by any event. As of Version 1.3, the relatedEvents field is empty. You can access the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the resource.</p>
-    pub fn related_events(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn related_events(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.related_events.unwrap_or_default();
         v.push(input.into());
         self.related_events = ::std::option::Option::Some(v);
@@ -520,19 +436,14 @@ impl ConfigurationItemBuilder {
     /// <p>A list of CloudTrail event IDs.</p>
     /// <p>A populated field indicates that the current configuration was initiated by the events recorded in the CloudTrail log. For more information about CloudTrail, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is CloudTrail</a>.</p>
     /// <p>An empty field indicates that the current configuration was not initiated by any event. As of Version 1.3, the relatedEvents field is empty. You can access the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the resource.</p>
-    pub fn set_related_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_related_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.related_events = input;
         self
     }
     /// <p>A list of CloudTrail event IDs.</p>
     /// <p>A populated field indicates that the current configuration was initiated by the events recorded in the CloudTrail log. For more information about CloudTrail, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is CloudTrail</a>.</p>
     /// <p>An empty field indicates that the current configuration was not initiated by any event. As of Version 1.3, the relatedEvents field is empty. You can access the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the resource.</p>
-    pub fn get_related_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_related_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.related_events
     }
     /// Appends an item to `relationships`.
@@ -547,32 +458,21 @@ impl ConfigurationItemBuilder {
         self
     }
     /// <p>A list of related Amazon Web Services resources.</p>
-    pub fn set_relationships(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
-    ) -> Self {
+    pub fn set_relationships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>) -> Self {
         self.relationships = input;
         self
     }
     /// <p>A list of related Amazon Web Services resources.</p>
-    pub fn get_relationships(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Relationship>> {
+    pub fn get_relationships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Relationship>> {
         &self.relationships
     }
     /// <p>The description of the resource configuration.</p>
-    pub fn configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the resource configuration.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration = input;
         self
     }
@@ -598,9 +498,7 @@ impl ConfigurationItemBuilder {
     /// <p>Configuration attributes that Config returns for certain resource types to supplement the information returned for the <code>configuration</code> parameter.</p>
     pub fn set_supplementary_configuration(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.supplementary_configuration = input;
         self
@@ -608,9 +506,7 @@ impl ConfigurationItemBuilder {
     /// <p>Configuration attributes that Config returns for certain resource types to supplement the information returned for the <code>configuration</code> parameter.</p>
     pub fn get_supplementary_configuration(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.supplementary_configuration
     }
     /// Consumes the builder and constructs a [`ConfigurationItem`](crate::types::ConfigurationItem).

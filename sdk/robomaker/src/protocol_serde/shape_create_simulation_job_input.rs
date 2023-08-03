@@ -18,10 +18,7 @@ pub fn ser_create_simulation_job_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_data_source_config::ser_data_source_config(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_data_source_config::ser_data_source_config(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }

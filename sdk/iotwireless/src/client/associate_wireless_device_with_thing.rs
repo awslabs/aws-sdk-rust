@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`thing_arn(impl ::std::convert::Into<String>)`](crate::operation::associate_wireless_device_with_thing::builders::AssociateWirelessDeviceWithThingFluentBuilder::thing_arn) / [`set_thing_arn(Option<String>)`](crate::operation::associate_wireless_device_with_thing::builders::AssociateWirelessDeviceWithThingFluentBuilder::set_thing_arn): <p>The ARN of the thing to associate with the wireless device.</p>
     /// - On success, responds with [`AssociateWirelessDeviceWithThingOutput`](crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingOutput)
     /// - On failure, responds with [`SdkError<AssociateWirelessDeviceWithThingError>`](crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingError)
-    pub fn associate_wireless_device_with_thing(&self) -> crate::operation::associate_wireless_device_with_thing::builders::AssociateWirelessDeviceWithThingFluentBuilder{
+    pub fn associate_wireless_device_with_thing(
+        &self,
+    ) -> crate::operation::associate_wireless_device_with_thing::builders::AssociateWirelessDeviceWithThingFluentBuilder {
         crate::operation::associate_wireless_device_with_thing::builders::AssociateWirelessDeviceWithThingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`result_list(Option<Vec<BatchDetectDominantLanguageItemResult>>)`](crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageOutput::result_list): <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
     ///   - [`error_list(Option<Vec<BatchItemError>>)`](crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageOutput::error_list): <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
     /// - On failure, responds with [`SdkError<BatchDetectDominantLanguageError>`](crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageError)
-    pub fn batch_detect_dominant_language(&self) -> crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageFluentBuilder{
+    pub fn batch_detect_dominant_language(
+        &self,
+    ) -> crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageFluentBuilder {
         crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageFluentBuilder::new(self.handle.clone())
     }
 }

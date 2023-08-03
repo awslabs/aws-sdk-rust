@@ -5,7 +5,11 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::deregister_data_lake_delegated_administrator::builders::DeregisterDataLakeDelegatedAdministratorFluentBuilder::send) it.
     /// - On success, responds with [`DeregisterDataLakeDelegatedAdministratorOutput`](crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorOutput)
     /// - On failure, responds with [`SdkError<DeregisterDataLakeDelegatedAdministratorError>`](crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorError)
-    pub fn deregister_data_lake_delegated_administrator(&self) -> crate::operation::deregister_data_lake_delegated_administrator::builders::DeregisterDataLakeDelegatedAdministratorFluentBuilder{
-        crate::operation::deregister_data_lake_delegated_administrator::builders::DeregisterDataLakeDelegatedAdministratorFluentBuilder::new(self.handle.clone())
+    pub fn deregister_data_lake_delegated_administrator(
+        &self,
+    ) -> crate::operation::deregister_data_lake_delegated_administrator::builders::DeregisterDataLakeDelegatedAdministratorFluentBuilder {
+        crate::operation::deregister_data_lake_delegated_administrator::builders::DeregisterDataLakeDelegatedAdministratorFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

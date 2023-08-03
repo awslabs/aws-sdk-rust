@@ -6,17 +6,14 @@ pub fn ser_topic_rule_payload_http_payload(
         Some(t) => t,
         None => return Ok(crate::protocol_serde::rest_json_unsetpayload()),
     };
-    Ok(
-        crate::protocol_serde::shape_replace_topic_rule_input::ser_topic_rule_payload_payload(
-            payload,
-        )?,
-    )
+    Ok(crate::protocol_serde::shape_replace_topic_rule_input::ser_topic_rule_payload_payload(
+        payload,
+    )?)
 }
 
 pub fn ser_topic_rule_payload_payload(
     input: &crate::types::TopicRulePayload,
-) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_topic_rule_payload::ser_topic_rule_payload(&mut object, input)?;

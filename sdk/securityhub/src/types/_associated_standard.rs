@@ -23,9 +23,7 @@ impl AssociatedStandard {
 
 /// A builder for [`AssociatedStandard`](crate::types::AssociatedStandard).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociatedStandardBuilder {
     pub(crate) standards_id: ::std::option::Option<::std::string::String>,
 }

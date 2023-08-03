@@ -8,11 +8,9 @@ pub fn ser_schema_definition(
             object_3.key("cedarJson").string(inner.as_str());
         }
         crate::types::SchemaDefinition::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "SchemaDefinition",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "SchemaDefinition",
+            ))
         }
     }
     Ok(())

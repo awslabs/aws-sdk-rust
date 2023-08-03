@@ -37,10 +37,7 @@ impl UpdateCrawlerScheduleFluentBuilder {
         }
     }
     /// Access the UpdateCrawlerSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_crawler_schedule::builders::UpdateCrawlerScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateCrawlerScheduleFluentBuilder {
             crate::operation::update_crawler_schedule::UpdateCrawlerSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_crawler_schedule::UpdateCrawlerScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_crawler_schedule::UpdateCrawlerScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateCrawlerScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateCrawlerScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_crawler_schedule::UpdateCrawlerScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_crawler_schedule::UpdateCrawlerScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_crawler_schedule::UpdateCrawlerScheduleError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateCrawlerScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_crawler_schedule::UpdateCrawlerScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_crawler_schedule::UpdateCrawlerScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_crawler_schedule::UpdateCrawlerScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateCrawlerScheduleFluentBuilder {
             crate::operation::update_crawler_schedule::UpdateCrawlerSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_crawler_schedule::UpdateCrawlerScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_crawler_schedule::UpdateCrawlerScheduleError>,
     > {
         self.customize_middleware().await
     }

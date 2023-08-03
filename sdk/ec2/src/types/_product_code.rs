@@ -30,27 +30,19 @@ impl ProductCode {
 
 /// A builder for [`ProductCode`](crate::types::ProductCode).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProductCodeBuilder {
     pub(crate) product_code_id: ::std::option::Option<::std::string::String>,
     pub(crate) product_code_type: ::std::option::Option<crate::types::ProductCodeValues>,
 }
 impl ProductCodeBuilder {
     /// <p>The product code.</p>
-    pub fn product_code_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_code_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_code_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product code.</p>
-    pub fn set_product_code_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_product_code_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_code_id = input;
         self
     }
@@ -64,10 +56,7 @@ impl ProductCodeBuilder {
         self
     }
     /// <p>The type of product code.</p>
-    pub fn set_product_code_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProductCodeValues>,
-    ) -> Self {
+    pub fn set_product_code_type(mut self, input: ::std::option::Option<crate::types::ProductCodeValues>) -> Self {
         self.product_code_type = input;
         self
     }

@@ -16,7 +16,11 @@ impl super::Client {
     ///   - [`savings_plans_purchase_recommendation(Option<SavingsPlansPurchaseRecommendation>)`](crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput::savings_plans_purchase_recommendation): <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput::next_page_token): <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     /// - On failure, responds with [`SdkError<GetSavingsPlansPurchaseRecommendationError>`](crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationError)
-    pub fn get_savings_plans_purchase_recommendation(&self) -> crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationFluentBuilder{
-        crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationFluentBuilder::new(self.handle.clone())
+    pub fn get_savings_plans_purchase_recommendation(
+        &self,
+    ) -> crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationFluentBuilder {
+        crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

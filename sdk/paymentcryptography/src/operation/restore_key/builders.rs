@@ -10,10 +10,7 @@ impl RestoreKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::restore_key::RestoreKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_key::RestoreKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_key::RestoreKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.restore_key();
         fluent_builder.inner = self;
@@ -53,10 +50,7 @@ impl RestoreKeyFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::restore_key::RestoreKey,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::restore_key::RestoreKey, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::restore_key::RestoreKeyError>,
     > {
         let handle = self.handle.clone();
@@ -67,10 +61,7 @@ impl RestoreKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -112,27 +103,18 @@ impl RestoreKeyFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::restore_key::RestoreKey,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::restore_key::RestoreKey, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::restore_key::RestoreKeyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>KeyARN</code> of the key to be restored within Amazon Web Services Payment Cryptography.</p>
-    pub fn key_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_identifier(input.into());
         self
     }
     /// <p>The <code>KeyARN</code> of the key to be restored within Amazon Web Services Payment Cryptography.</p>
-    pub fn set_key_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_identifier(input);
         self
     }

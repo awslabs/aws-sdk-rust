@@ -5,8 +5,7 @@
 pub struct ListBatchJobDefinitionsOutput {
     /// <p>The list of batch job definitions.</p>
     #[doc(hidden)]
-    pub batch_job_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchJobDefinition>>,
+    pub batch_job_definitions: ::std::option::Option<::std::vec::Vec<crate::types::BatchJobDefinition>>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListBatchJobDefinitionsOutput {
 }
 impl ListBatchJobDefinitionsOutput {
     /// <p>The list of batch job definitions.</p>
-    pub fn batch_job_definitions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchJobDefinition]> {
+    pub fn batch_job_definitions(&self) -> ::std::option::Option<&[crate::types::BatchJobDefinition]> {
         self.batch_job_definitions.as_deref()
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListBatchJobDefinitionsOutput {
 }
 impl ListBatchJobDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListBatchJobDefinitionsOutput`](crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsOutputBuilder {
         crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListBatchJobDefinitionsOutput`](crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBatchJobDefinitionsOutputBuilder {
-    pub(crate) batch_job_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchJobDefinition>>,
+    pub(crate) batch_job_definitions: ::std::option::Option<::std::vec::Vec<crate::types::BatchJobDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListBatchJobDefinitionsOutputBuilder {
         self
     }
     /// <p>The list of batch job definitions.</p>
-    pub fn set_batch_job_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchJobDefinition>>,
-    ) -> Self {
+    pub fn set_batch_job_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchJobDefinition>>) -> Self {
         self.batch_job_definitions = input;
         self
     }
     /// <p>The list of batch job definitions.</p>
-    pub fn get_batch_job_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchJobDefinition>> {
+    pub fn get_batch_job_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchJobDefinition>> {
         &self.batch_job_definitions
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
@@ -99,9 +86,7 @@ impl ListBatchJobDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListBatchJobDefinitionsOutput`](crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsOutput {
+    pub fn build(self) -> crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsOutput {
         crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsOutput {
             batch_job_definitions: self.batch_job_definitions,
             next_token: self.next_token,

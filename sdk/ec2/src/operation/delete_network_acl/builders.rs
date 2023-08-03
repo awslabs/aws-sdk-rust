@@ -10,10 +10,7 @@ impl DeleteNetworkAclInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_network_acl::DeleteNetworkAclOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_acl::DeleteNetworkAclError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_acl::DeleteNetworkAclError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_network_acl();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteNetworkAclFluentBuilder {
         }
     }
     /// Access the DeleteNetworkAcl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_network_acl::builders::DeleteNetworkAclInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_network_acl::builders::DeleteNetworkAclInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteNetworkAclFluentBuilder {
             crate::operation::delete_network_acl::DeleteNetworkAcl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_acl::DeleteNetworkAclError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_acl::DeleteNetworkAclError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteNetworkAclFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteNetworkAclFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_acl::DeleteNetworkAclOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_acl::DeleteNetworkAclError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_acl::DeleteNetworkAclError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteNetworkAclFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_acl::DeleteNetworkAclOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_acl::DeleteNetworkAclError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_acl::DeleteNetworkAclError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteNetworkAclFluentBuilder {
             crate::operation::delete_network_acl::DeleteNetworkAcl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_network_acl::DeleteNetworkAclError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_network_acl::DeleteNetworkAclError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl DeleteNetworkAclFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The ID of the network ACL.</p>
-    pub fn network_acl_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_acl_id(input.into());
         self
     }
     /// <p>The ID of the network ACL.</p>
-    pub fn set_network_acl_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_acl_id(input);
         self
     }

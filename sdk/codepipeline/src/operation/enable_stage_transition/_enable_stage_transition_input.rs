@@ -30,18 +30,14 @@ impl EnableStageTransitionInput {
 }
 impl EnableStageTransitionInput {
     /// Creates a new builder-style object to manufacture [`EnableStageTransitionInput`](crate::operation::enable_stage_transition::EnableStageTransitionInput).
-    pub fn builder(
-    ) -> crate::operation::enable_stage_transition::builders::EnableStageTransitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_stage_transition::builders::EnableStageTransitionInputBuilder {
         crate::operation::enable_stage_transition::builders::EnableStageTransitionInputBuilder::default()
     }
 }
 
 /// A builder for [`EnableStageTransitionInput`](crate::operation::enable_stage_transition::EnableStageTransitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableStageTransitionInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
@@ -49,18 +45,12 @@ pub struct EnableStageTransitionInputBuilder {
 }
 impl EnableStageTransitionInputBuilder {
     /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -88,10 +78,7 @@ impl EnableStageTransitionInputBuilder {
         self
     }
     /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
-    pub fn set_transition_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StageTransitionType>,
-    ) -> Self {
+    pub fn set_transition_type(mut self, input: ::std::option::Option<crate::types::StageTransitionType>) -> Self {
         self.transition_type = input;
         self
     }
@@ -102,16 +89,12 @@ impl EnableStageTransitionInputBuilder {
     /// Consumes the builder and constructs a [`EnableStageTransitionInput`](crate::operation::enable_stage_transition::EnableStageTransitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_stage_transition::EnableStageTransitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::enable_stage_transition::EnableStageTransitionInput {
-                pipeline_name: self.pipeline_name,
-                stage_name: self.stage_name,
-                transition_type: self.transition_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::enable_stage_transition::EnableStageTransitionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::enable_stage_transition::EnableStageTransitionInput {
+            pipeline_name: self.pipeline_name,
+            stage_name: self.stage_name,
+            transition_type: self.transition_type,
+        })
     }
 }

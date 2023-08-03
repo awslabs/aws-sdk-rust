@@ -6,14 +6,10 @@
 pub struct AwsEcsTaskDefinitionVolumesDetails {
     /// <p>Information about a Docker volume.</p>
     #[doc(hidden)]
-    pub docker_volume_configuration: ::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails,
-    >,
+    pub docker_volume_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails>,
     /// <p>Information about the Amazon Elastic File System file system that is used for task storage.</p>
     #[doc(hidden)]
-    pub efs_volume_configuration: ::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails,
-    >,
+    pub efs_volume_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails>,
     /// <p>Information about a bind mount host volume.</p>
     #[doc(hidden)]
     pub host: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesHostDetails>,
@@ -23,25 +19,15 @@ pub struct AwsEcsTaskDefinitionVolumesDetails {
 }
 impl AwsEcsTaskDefinitionVolumesDetails {
     /// <p>Information about a Docker volume.</p>
-    pub fn docker_volume_configuration(
-        &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails,
-    > {
+    pub fn docker_volume_configuration(&self) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails> {
         self.docker_volume_configuration.as_ref()
     }
     /// <p>Information about the Amazon Elastic File System file system that is used for task storage.</p>
-    pub fn efs_volume_configuration(
-        &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails,
-    > {
+    pub fn efs_volume_configuration(&self) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails> {
         self.efs_volume_configuration.as_ref()
     }
     /// <p>Information about a bind mount host volume.</p>
-    pub fn host(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionVolumesHostDetails> {
+    pub fn host(&self) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionVolumesHostDetails> {
         self.host.as_ref()
     }
     /// <p>The name of the data volume.</p>
@@ -58,34 +44,23 @@ impl AwsEcsTaskDefinitionVolumesDetails {
 
 /// A builder for [`AwsEcsTaskDefinitionVolumesDetails`](crate::types::AwsEcsTaskDefinitionVolumesDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionVolumesDetailsBuilder {
-    pub(crate) docker_volume_configuration: ::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails,
-    >,
-    pub(crate) efs_volume_configuration: ::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails,
-    >,
+    pub(crate) docker_volume_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails>,
+    pub(crate) efs_volume_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails>,
     pub(crate) host: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesHostDetails>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionVolumesDetailsBuilder {
     /// <p>Information about a Docker volume.</p>
-    pub fn docker_volume_configuration(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails,
-    ) -> Self {
+    pub fn docker_volume_configuration(mut self, input: crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails) -> Self {
         self.docker_volume_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about a Docker volume.</p>
     pub fn set_docker_volume_configuration(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails>,
     ) -> Self {
         self.docker_volume_configuration = input;
         self
@@ -93,35 +68,24 @@ impl AwsEcsTaskDefinitionVolumesDetailsBuilder {
     /// <p>Information about a Docker volume.</p>
     pub fn get_docker_volume_configuration(
         &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails,
-    > {
+    ) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails> {
         &self.docker_volume_configuration
     }
     /// <p>Information about the Amazon Elastic File System file system that is used for task storage.</p>
-    pub fn efs_volume_configuration(
-        mut self,
-        input: crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails,
-    ) -> Self {
+    pub fn efs_volume_configuration(mut self, input: crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails) -> Self {
         self.efs_volume_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the Amazon Elastic File System file system that is used for task storage.</p>
     pub fn set_efs_volume_configuration(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails>,
     ) -> Self {
         self.efs_volume_configuration = input;
         self
     }
     /// <p>Information about the Amazon Elastic File System file system that is used for task storage.</p>
-    pub fn get_efs_volume_configuration(
-        &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails,
-    > {
+    pub fn get_efs_volume_configuration(&self) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails> {
         &self.efs_volume_configuration
     }
     /// <p>Information about a bind mount host volume.</p>
@@ -130,17 +94,12 @@ impl AwsEcsTaskDefinitionVolumesDetailsBuilder {
         self
     }
     /// <p>Information about a bind mount host volume.</p>
-    pub fn set_host(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesHostDetails>,
-    ) -> Self {
+    pub fn set_host(mut self, input: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesHostDetails>) -> Self {
         self.host = input;
         self
     }
     /// <p>Information about a bind mount host volume.</p>
-    pub fn get_host(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesHostDetails> {
+    pub fn get_host(&self) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesHostDetails> {
         &self.host
     }
     /// <p>The name of the data volume.</p>

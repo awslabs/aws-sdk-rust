@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`constraint_parameters(Option<String>)`](crate::operation::update_constraint::UpdateConstraintOutput::constraint_parameters): <p>The constraint parameters.</p>
     ///   - [`status(Option<Status>)`](crate::operation::update_constraint::UpdateConstraintOutput::status): <p>The status of the current request.</p>
     /// - On failure, responds with [`SdkError<UpdateConstraintError>`](crate::operation::update_constraint::UpdateConstraintError)
-    pub fn update_constraint(
-        &self,
-    ) -> crate::operation::update_constraint::builders::UpdateConstraintFluentBuilder {
-        crate::operation::update_constraint::builders::UpdateConstraintFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_constraint(&self) -> crate::operation::update_constraint::builders::UpdateConstraintFluentBuilder {
+        crate::operation::update_constraint::builders::UpdateConstraintFluentBuilder::new(self.handle.clone())
     }
 }

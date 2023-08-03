@@ -19,9 +19,7 @@ impl AssociateAssetsOutput {
 
 /// A builder for [`AssociateAssetsOutput`](crate::operation::associate_assets::AssociateAssetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateAssetsOutputBuilder {
     _request_id: Option<String>,
 }

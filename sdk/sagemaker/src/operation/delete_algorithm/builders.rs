@@ -10,10 +10,7 @@ impl DeleteAlgorithmInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_algorithm::DeleteAlgorithmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_algorithm::DeleteAlgorithmError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_algorithm::DeleteAlgorithmError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_algorithm();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteAlgorithmFluentBuilder {
         }
     }
     /// Access the DeleteAlgorithm as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_algorithm::builders::DeleteAlgorithmInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_algorithm::builders::DeleteAlgorithmInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteAlgorithmFluentBuilder {
             crate::operation::delete_algorithm::DeleteAlgorithm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_algorithm::DeleteAlgorithmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_algorithm::DeleteAlgorithmError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteAlgorithmFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteAlgorithmFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_algorithm::DeleteAlgorithmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_algorithm::DeleteAlgorithmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_algorithm::DeleteAlgorithmError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteAlgorithmFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_algorithm::DeleteAlgorithmOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_algorithm::DeleteAlgorithmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_algorithm::DeleteAlgorithmError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteAlgorithmFluentBuilder {
             crate::operation::delete_algorithm::DeleteAlgorithm,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_algorithm::DeleteAlgorithmError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_algorithm::DeleteAlgorithmError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the algorithm to delete.</p>
-    pub fn algorithm_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn algorithm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.algorithm_name(input.into());
         self
     }
     /// <p>The name of the algorithm to delete.</p>
-    pub fn set_algorithm_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_algorithm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_algorithm_name(input);
         self
     }

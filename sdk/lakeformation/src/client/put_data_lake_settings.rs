@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`data_lake_settings(DataLakeSettings)`](crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsFluentBuilder::data_lake_settings) / [`set_data_lake_settings(Option<DataLakeSettings>)`](crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsFluentBuilder::set_data_lake_settings): <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
     /// - On success, responds with [`PutDataLakeSettingsOutput`](crate::operation::put_data_lake_settings::PutDataLakeSettingsOutput)
     /// - On failure, responds with [`SdkError<PutDataLakeSettingsError>`](crate::operation::put_data_lake_settings::PutDataLakeSettingsError)
-    pub fn put_data_lake_settings(
-        &self,
-    ) -> crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsFluentBuilder {
-        crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_data_lake_settings(&self) -> crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsFluentBuilder {
+        crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsFluentBuilder::new(self.handle.clone())
     }
 }

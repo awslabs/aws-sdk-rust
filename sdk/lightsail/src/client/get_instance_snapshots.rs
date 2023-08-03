@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`instance_snapshots(Option<Vec<InstanceSnapshot>>)`](crate::operation::get_instance_snapshots::GetInstanceSnapshotsOutput::instance_snapshots): <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_instance_snapshots::GetInstanceSnapshotsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetInstanceSnapshotsError>`](crate::operation::get_instance_snapshots::GetInstanceSnapshotsError)
-    pub fn get_instance_snapshots(
-        &self,
-    ) -> crate::operation::get_instance_snapshots::builders::GetInstanceSnapshotsFluentBuilder {
-        crate::operation::get_instance_snapshots::builders::GetInstanceSnapshotsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_instance_snapshots(&self) -> crate::operation::get_instance_snapshots::builders::GetInstanceSnapshotsFluentBuilder {
+        crate::operation::get_instance_snapshots::builders::GetInstanceSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

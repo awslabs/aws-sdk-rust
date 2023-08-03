@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum QuantumTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for QuantumTaskStatus {
             "FAILED" => QuantumTaskStatus::Failed,
             "QUEUED" => QuantumTaskStatus::Queued,
             "RUNNING" => QuantumTaskStatus::Running,
-            other => {
-                QuantumTaskStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => QuantumTaskStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl QuantumTaskStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED",
-            "CANCELLING",
-            "COMPLETED",
-            "CREATED",
-            "FAILED",
-            "QUEUED",
-            "RUNNING",
-        ]
+        &["CANCELLED", "CANCELLING", "COMPLETED", "CREATED", "FAILED", "QUEUED", "RUNNING"]
     }
 }
 impl ::std::convert::AsRef<str> for QuantumTaskStatus {

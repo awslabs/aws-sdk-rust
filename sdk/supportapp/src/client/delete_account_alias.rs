@@ -5,11 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::delete_account_alias::builders::DeleteAccountAliasFluentBuilder::send) it.
     /// - On success, responds with [`DeleteAccountAliasOutput`](crate::operation::delete_account_alias::DeleteAccountAliasOutput)
     /// - On failure, responds with [`SdkError<DeleteAccountAliasError>`](crate::operation::delete_account_alias::DeleteAccountAliasError)
-    pub fn delete_account_alias(
-        &self,
-    ) -> crate::operation::delete_account_alias::builders::DeleteAccountAliasFluentBuilder {
-        crate::operation::delete_account_alias::builders::DeleteAccountAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_account_alias(&self) -> crate::operation::delete_account_alias::builders::DeleteAccountAliasFluentBuilder {
+        crate::operation::delete_account_alias::builders::DeleteAccountAliasFluentBuilder::new(self.handle.clone())
     }
 }

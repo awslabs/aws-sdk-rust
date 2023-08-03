@@ -37,10 +37,7 @@ impl UpdateDataCellsFilterFluentBuilder {
         }
     }
     /// Access the UpdateDataCellsFilter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateDataCellsFilterFluentBuilder {
             crate::operation::update_data_cells_filter::UpdateDataCellsFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_cells_filter::UpdateDataCellsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_cells_filter::UpdateDataCellsFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateDataCellsFilterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateDataCellsFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_cells_filter::UpdateDataCellsFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_cells_filter::UpdateDataCellsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_cells_filter::UpdateDataCellsFilterError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateDataCellsFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_data_cells_filter::UpdateDataCellsFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_cells_filter::UpdateDataCellsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_cells_filter::UpdateDataCellsFilterError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateDataCellsFilterFluentBuilder {
             crate::operation::update_data_cells_filter::UpdateDataCellsFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_data_cells_filter::UpdateDataCellsFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_data_cells_filter::UpdateDataCellsFilterError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +115,7 @@ impl UpdateDataCellsFilterFluentBuilder {
         self
     }
     /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
-    pub fn set_table_data(
-        mut self,
-        input: ::std::option::Option<crate::types::DataCellsFilter>,
-    ) -> Self {
+    pub fn set_table_data(mut self, input: ::std::option::Option<crate::types::DataCellsFilter>) -> Self {
         self.inner = self.inner.set_table_data(input);
         self
     }

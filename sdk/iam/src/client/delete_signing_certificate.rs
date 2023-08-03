@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`certificate_id(impl ::std::convert::Into<String>)`](crate::operation::delete_signing_certificate::builders::DeleteSigningCertificateFluentBuilder::certificate_id) / [`set_certificate_id(Option<String>)`](crate::operation::delete_signing_certificate::builders::DeleteSigningCertificateFluentBuilder::set_certificate_id): <p>The ID of the signing certificate to delete.</p>  <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of characters that can be upper- or lower-cased letters or digits.</p>
     /// - On success, responds with [`DeleteSigningCertificateOutput`](crate::operation::delete_signing_certificate::DeleteSigningCertificateOutput)
     /// - On failure, responds with [`SdkError<DeleteSigningCertificateError>`](crate::operation::delete_signing_certificate::DeleteSigningCertificateError)
-    pub fn delete_signing_certificate(
-        &self,
-    ) -> crate::operation::delete_signing_certificate::builders::DeleteSigningCertificateFluentBuilder
-    {
+    pub fn delete_signing_certificate(&self) -> crate::operation::delete_signing_certificate::builders::DeleteSigningCertificateFluentBuilder {
         crate::operation::delete_signing_certificate::builders::DeleteSigningCertificateFluentBuilder::new(self.handle.clone())
     }
 }

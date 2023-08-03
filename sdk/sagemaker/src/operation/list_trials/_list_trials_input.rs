@@ -71,9 +71,7 @@ impl ListTrialsInput {
 
 /// A builder for [`ListTrialsInput`](crate::operation::list_trials::ListTrialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrialsInputBuilder {
     pub(crate) experiment_name: ::std::option::Option<::std::string::String>,
     pub(crate) trial_component_name: ::std::option::Option<::std::string::String>,
@@ -86,18 +84,12 @@ pub struct ListTrialsInputBuilder {
 }
 impl ListTrialsInputBuilder {
     /// <p>A filter that returns only trials that are part of the specified experiment.</p>
-    pub fn experiment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter that returns only trials that are part of the specified experiment.</p>
-    pub fn set_experiment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment_name = input;
         self
     }
@@ -106,18 +98,12 @@ impl ListTrialsInputBuilder {
         &self.experiment_name
     }
     /// <p>A filter that returns only trials that are associated with the specified trial component.</p>
-    pub fn trial_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter that returns only trials that are associated with the specified trial component.</p>
-    pub fn set_trial_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trial_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trial_component_name = input;
         self
     }
@@ -131,10 +117,7 @@ impl ListTrialsInputBuilder {
         self
     }
     /// <p>A filter that returns only trials created after the specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -148,10 +131,7 @@ impl ListTrialsInputBuilder {
         self
     }
     /// <p>A filter that returns only trials created before the specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -216,12 +196,7 @@ impl ListTrialsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTrialsInput`](crate::operation::list_trials::ListTrialsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_trials::ListTrialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_trials::ListTrialsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_trials::ListTrialsInput {
             experiment_name: self.experiment_name,
             trial_component_name: self.trial_component_name,

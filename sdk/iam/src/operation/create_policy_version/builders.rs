@@ -39,9 +39,7 @@ impl CreatePolicyVersionFluentBuilder {
         }
     }
     /// Access the CreatePolicyVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_policy_version::builders::CreatePolicyVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_policy_version::builders::CreatePolicyVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl CreatePolicyVersionFluentBuilder {
             crate::operation::create_policy_version::CreatePolicyVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_policy_version::CreatePolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_policy_version::CreatePolicyVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl CreatePolicyVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl CreatePolicyVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_policy_version::CreatePolicyVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_policy_version::CreatePolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_policy_version::CreatePolicyVersionError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl CreatePolicyVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_policy_version::CreatePolicyVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_policy_version::CreatePolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_policy_version::CreatePolicyVersionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl CreatePolicyVersionFluentBuilder {
             crate::operation::create_policy_version::CreatePolicyVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_policy_version::CreatePolicyVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_policy_version::CreatePolicyVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -150,10 +137,7 @@ impl CreatePolicyVersionFluentBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_document(input.into());
         self
     }
@@ -166,10 +150,7 @@ impl CreatePolicyVersionFluentBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
     }

@@ -5,16 +5,16 @@ pub use crate::operation::disassociate_wireless_gateway_from_certificate::_disas
 
 impl DisassociateWirelessGatewayFromCertificateInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.disassociate_wireless_gateway_from_certificate();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DisassociateWirelessGatewayFromCertificateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateWirelessGatewayFromCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_wireless_gateway_from_certificate::builders::DisassociateWirelessGatewayFromCertificateInputBuilder,
+    inner: crate::operation::disassociate_wireless_gateway_from_certificate::builders::DisassociateWirelessGatewayFromCertificateInputBuilder,
 }
 impl DisassociateWirelessGatewayFromCertificateFluentBuilder {
     /// Creates a new `DisassociateWirelessGatewayFromCertificate`.
@@ -37,15 +37,24 @@ impl DisassociateWirelessGatewayFromCertificateFluentBuilder {
         }
     }
     /// Access the DisassociateWirelessGatewayFromCertificate as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_wireless_gateway_from_certificate::builders::DisassociateWirelessGatewayFromCertificateInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_wireless_gateway_from_certificate::builders::DisassociateWirelessGatewayFromCertificateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificate, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificate,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl DisassociateWirelessGatewayFromCertificateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl DisassociateWirelessGatewayFromCertificateFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificate, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificate,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the resource to update.</p>

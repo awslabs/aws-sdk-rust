@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for ListManagedAccountsOutput {
 }
 impl ListManagedAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedAccountsOutput`](crate::operation::list_managed_accounts::ListManagedAccountsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_managed_accounts::builders::ListManagedAccountsOutputBuilder {
-        crate::operation::list_managed_accounts::builders::ListManagedAccountsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_managed_accounts::builders::ListManagedAccountsOutputBuilder {
+        crate::operation::list_managed_accounts::builders::ListManagedAccountsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListManagedAccountsOutput`](crate::operation::list_managed_accounts::ListManagedAccountsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedAccountsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAccount>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl ListManagedAccountsOutputBuilder {
         self
     }
     /// <p>List managed accounts response items.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAccount>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAccount>>) -> Self {
         self.items = input;
         self
     }
     /// <p>List managed accounts response items.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedAccount>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedAccount>> {
         &self.items
     }
     /// <p>List managed accounts response next token.</p>

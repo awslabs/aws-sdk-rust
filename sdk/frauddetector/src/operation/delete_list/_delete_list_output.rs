@@ -19,9 +19,7 @@ impl DeleteListOutput {
 
 /// A builder for [`DeleteListOutput`](crate::operation::delete_list::DeleteListOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteListOutputBuilder {
     _request_id: Option<String>,
 }

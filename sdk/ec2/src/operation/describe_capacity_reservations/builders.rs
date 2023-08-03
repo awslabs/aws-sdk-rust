@@ -26,7 +26,7 @@ impl DescribeCapacityReservationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCapacityReservationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_capacity_reservations::builders::DescribeCapacityReservationsInputBuilder,
+    inner: crate::operation::describe_capacity_reservations::builders::DescribeCapacityReservationsInputBuilder,
 }
 impl DescribeCapacityReservationsFluentBuilder {
     /// Creates a new `DescribeCapacityReservations`.
@@ -37,7 +37,7 @@ impl DescribeCapacityReservationsFluentBuilder {
         }
     }
     /// Access the DescribeCapacityReservations as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_capacity_reservations::builders::DescribeCapacityReservationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_capacity_reservations::builders::DescribeCapacityReservationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeCapacityReservationsFluentBuilder {
             crate::operation::describe_capacity_reservations::DescribeCapacityReservations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_capacity_reservations::DescribeCapacityReservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_capacity_reservations::DescribeCapacityReservationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeCapacityReservationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeCapacityReservationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_capacity_reservations::DescribeCapacityReservationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_capacity_reservations::DescribeCapacityReservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_capacity_reservations::DescribeCapacityReservationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeCapacityReservationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_capacity_reservations::DescribeCapacityReservationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_capacity_reservations::DescribeCapacityReservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_capacity_reservations::DescribeCapacityReservationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeCapacityReservationsFluentBuilder {
             crate::operation::describe_capacity_reservations::DescribeCapacityReservations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_capacity_reservations::DescribeCapacityReservationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_capacity_reservations::DescribeCapacityReservationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_capacity_reservations::paginator::DescribeCapacityReservationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_capacity_reservations::paginator::DescribeCapacityReservationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_capacity_reservations::paginator::DescribeCapacityReservationsPaginator {
         crate::operation::describe_capacity_reservations::paginator::DescribeCapacityReservationsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `CapacityReservationIds`.
@@ -131,25 +120,17 @@ impl DescribeCapacityReservationsFluentBuilder {
     /// To override the contents of this collection use [`set_capacity_reservation_ids`](Self::set_capacity_reservation_ids).
     ///
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn capacity_reservation_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.capacity_reservation_ids(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn set_capacity_reservation_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_capacity_reservation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_capacity_reservation_ids(input);
         self
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn get_capacity_reservation_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capacity_reservation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_capacity_reservation_ids()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
@@ -256,10 +237,7 @@ impl DescribeCapacityReservationsFluentBuilder {
     /// </ul> </li>
     /// <li> <p> <code>placement-group-arn</code> - The ARN of the cluster placement group in which the Capacity Reservation was created.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

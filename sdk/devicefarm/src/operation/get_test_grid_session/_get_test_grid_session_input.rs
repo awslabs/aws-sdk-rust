@@ -29,17 +29,14 @@ impl GetTestGridSessionInput {
 }
 impl GetTestGridSessionInput {
     /// Creates a new builder-style object to manufacture [`GetTestGridSessionInput`](crate::operation::get_test_grid_session::GetTestGridSessionInput).
-    pub fn builder(
-    ) -> crate::operation::get_test_grid_session::builders::GetTestGridSessionInputBuilder {
+    pub fn builder() -> crate::operation::get_test_grid_session::builders::GetTestGridSessionInputBuilder {
         crate::operation::get_test_grid_session::builders::GetTestGridSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTestGridSessionInput`](crate::operation::get_test_grid_session::GetTestGridSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTestGridSessionInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,12 @@ impl GetTestGridSessionInputBuilder {
     /// Consumes the builder and constructs a [`GetTestGridSessionInput`](crate::operation::get_test_grid_session::GetTestGridSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_test_grid_session::GetTestGridSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_test_grid_session::GetTestGridSessionInput {
-                project_arn: self.project_arn,
-                session_id: self.session_id,
-                session_arn: self.session_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_test_grid_session::GetTestGridSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_test_grid_session::GetTestGridSessionInput {
+            project_arn: self.project_arn,
+            session_id: self.session_id,
+            session_arn: self.session_arn,
+        })
     }
 }

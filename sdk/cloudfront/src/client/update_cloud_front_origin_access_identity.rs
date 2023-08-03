@@ -10,7 +10,11 @@ impl super::Client {
     ///   - [`cloud_front_origin_access_identity(Option<CloudFrontOriginAccessIdentity>)`](crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityOutput::cloud_front_origin_access_identity): <p>The origin access identity's information.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateCloudFrontOriginAccessIdentityError>`](crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError)
-    pub fn update_cloud_front_origin_access_identity(&self) -> crate::operation::update_cloud_front_origin_access_identity::builders::UpdateCloudFrontOriginAccessIdentityFluentBuilder{
-        crate::operation::update_cloud_front_origin_access_identity::builders::UpdateCloudFrontOriginAccessIdentityFluentBuilder::new(self.handle.clone())
+    pub fn update_cloud_front_origin_access_identity(
+        &self,
+    ) -> crate::operation::update_cloud_front_origin_access_identity::builders::UpdateCloudFrontOriginAccessIdentityFluentBuilder {
+        crate::operation::update_cloud_front_origin_access_identity::builders::UpdateCloudFrontOriginAccessIdentityFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -26,7 +26,7 @@ impl DescribeSpeakerEnrollmentJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSpeakerEnrollmentJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_speaker_enrollment_job::builders::DescribeSpeakerEnrollmentJobInputBuilder,
+    inner: crate::operation::describe_speaker_enrollment_job::builders::DescribeSpeakerEnrollmentJobInputBuilder,
 }
 impl DescribeSpeakerEnrollmentJobFluentBuilder {
     /// Creates a new `DescribeSpeakerEnrollmentJob`.
@@ -37,7 +37,7 @@ impl DescribeSpeakerEnrollmentJobFluentBuilder {
         }
     }
     /// Access the DescribeSpeakerEnrollmentJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_speaker_enrollment_job::builders::DescribeSpeakerEnrollmentJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_speaker_enrollment_job::builders::DescribeSpeakerEnrollmentJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeSpeakerEnrollmentJobFluentBuilder {
             crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeSpeakerEnrollmentJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeSpeakerEnrollmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeSpeakerEnrollmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeSpeakerEnrollmentJobFluentBuilder {
             crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobError>,
     > {
         self.customize_middleware().await
     }

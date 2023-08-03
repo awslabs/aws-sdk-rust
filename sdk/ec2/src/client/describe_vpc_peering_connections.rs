@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`vpc_peering_connections(Option<Vec<VpcPeeringConnection>>)`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput::vpc_peering_connections): <p>Information about the VPC peering connections.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcPeeringConnectionsError>`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError)
-    pub fn describe_vpc_peering_connections(&self) -> crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsFluentBuilder{
+    pub fn describe_vpc_peering_connections(
+        &self,
+    ) -> crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsFluentBuilder {
         crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

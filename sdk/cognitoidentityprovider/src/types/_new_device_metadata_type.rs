@@ -30,9 +30,7 @@ impl NewDeviceMetadataType {
 
 /// A builder for [`NewDeviceMetadataType`](crate::types::NewDeviceMetadataType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NewDeviceMetadataTypeBuilder {
     pub(crate) device_key: ::std::option::Option<::std::string::String>,
     pub(crate) device_group_key: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl NewDeviceMetadataTypeBuilder {
         &self.device_key
     }
     /// <p>The device group key.</p>
-    pub fn device_group_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_group_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_group_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device group key.</p>
-    pub fn set_device_group_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_group_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_group_key = input;
         self
     }

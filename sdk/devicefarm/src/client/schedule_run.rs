@@ -14,9 +14,7 @@ impl super::Client {
     /// - On success, responds with [`ScheduleRunOutput`](crate::operation::schedule_run::ScheduleRunOutput) with field(s):
     ///   - [`run(Option<Run>)`](crate::operation::schedule_run::ScheduleRunOutput::run): <p>Information about the scheduled run.</p>
     /// - On failure, responds with [`SdkError<ScheduleRunError>`](crate::operation::schedule_run::ScheduleRunError)
-    pub fn schedule_run(
-        &self,
-    ) -> crate::operation::schedule_run::builders::ScheduleRunFluentBuilder {
+    pub fn schedule_run(&self) -> crate::operation::schedule_run::builders::ScheduleRunFluentBuilder {
         crate::operation::schedule_run::builders::ScheduleRunFluentBuilder::new(self.handle.clone())
     }
 }

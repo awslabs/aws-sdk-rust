@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`registry_id(Option<String>)`](crate::operation::put_registry_policy::PutRegistryPolicyOutput::registry_id): <p>The registry ID.</p>
     ///   - [`policy_text(Option<String>)`](crate::operation::put_registry_policy::PutRegistryPolicyOutput::policy_text): <p>The JSON policy text for your registry.</p>
     /// - On failure, responds with [`SdkError<PutRegistryPolicyError>`](crate::operation::put_registry_policy::PutRegistryPolicyError)
-    pub fn put_registry_policy(
-        &self,
-    ) -> crate::operation::put_registry_policy::builders::PutRegistryPolicyFluentBuilder {
-        crate::operation::put_registry_policy::builders::PutRegistryPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_registry_policy(&self) -> crate::operation::put_registry_policy::builders::PutRegistryPolicyFluentBuilder {
+        crate::operation::put_registry_policy::builders::PutRegistryPolicyFluentBuilder::new(self.handle.clone())
     }
 }

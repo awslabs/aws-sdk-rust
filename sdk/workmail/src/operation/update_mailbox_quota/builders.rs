@@ -10,10 +10,7 @@ impl UpdateMailboxQuotaInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_mailbox_quota::UpdateMailboxQuotaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_mailbox_quota::UpdateMailboxQuotaError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_mailbox_quota::UpdateMailboxQuotaError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_mailbox_quota();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateMailboxQuotaFluentBuilder {
         }
     }
     /// Access the UpdateMailboxQuota as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_mailbox_quota::builders::UpdateMailboxQuotaInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateMailboxQuotaFluentBuilder {
             crate::operation::update_mailbox_quota::UpdateMailboxQuota,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_mailbox_quota::UpdateMailboxQuotaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_mailbox_quota::UpdateMailboxQuotaError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateMailboxQuotaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateMailboxQuotaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_mailbox_quota::UpdateMailboxQuotaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_mailbox_quota::UpdateMailboxQuotaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_mailbox_quota::UpdateMailboxQuotaError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateMailboxQuotaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_mailbox_quota::UpdateMailboxQuotaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_mailbox_quota::UpdateMailboxQuotaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_mailbox_quota::UpdateMailboxQuotaError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateMailboxQuotaFluentBuilder {
             crate::operation::update_mailbox_quota::UpdateMailboxQuota,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_mailbox_quota::UpdateMailboxQuotaError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_mailbox_quota::UpdateMailboxQuotaError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

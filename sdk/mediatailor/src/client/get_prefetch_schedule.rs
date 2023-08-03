@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`retrieval(Option<PrefetchRetrieval>)`](crate::operation::get_prefetch_schedule::GetPrefetchScheduleOutput::retrieval): <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
     ///   - [`stream_id(Option<String>)`](crate::operation::get_prefetch_schedule::GetPrefetchScheduleOutput::stream_id): <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
     /// - On failure, responds with [`SdkError<GetPrefetchScheduleError>`](crate::operation::get_prefetch_schedule::GetPrefetchScheduleError)
-    pub fn get_prefetch_schedule(
-        &self,
-    ) -> crate::operation::get_prefetch_schedule::builders::GetPrefetchScheduleFluentBuilder {
-        crate::operation::get_prefetch_schedule::builders::GetPrefetchScheduleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_prefetch_schedule(&self) -> crate::operation::get_prefetch_schedule::builders::GetPrefetchScheduleFluentBuilder {
+        crate::operation::get_prefetch_schedule::builders::GetPrefetchScheduleFluentBuilder::new(self.handle.clone())
     }
 }

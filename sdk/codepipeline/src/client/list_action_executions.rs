@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`action_execution_details(Option<Vec<ActionExecutionDetail>>)`](crate::operation::list_action_executions::ListActionExecutionsOutput::action_execution_details): <p>The details for a list of recent executions, such as action execution ID.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_action_executions::ListActionExecutionsOutput::next_token): <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
     /// - On failure, responds with [`SdkError<ListActionExecutionsError>`](crate::operation::list_action_executions::ListActionExecutionsError)
-    pub fn list_action_executions(
-        &self,
-    ) -> crate::operation::list_action_executions::builders::ListActionExecutionsFluentBuilder {
-        crate::operation::list_action_executions::builders::ListActionExecutionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_action_executions(&self) -> crate::operation::list_action_executions::builders::ListActionExecutionsFluentBuilder {
+        crate::operation::list_action_executions::builders::ListActionExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

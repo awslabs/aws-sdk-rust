@@ -22,34 +22,26 @@ impl DescribeTemplatePermissionsInput {
 }
 impl DescribeTemplatePermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeTemplatePermissionsInput`](crate::operation::describe_template_permissions::DescribeTemplatePermissionsInput).
-    pub fn builder() -> crate::operation::describe_template_permissions::builders::DescribeTemplatePermissionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_template_permissions::builders::DescribeTemplatePermissionsInputBuilder {
         crate::operation::describe_template_permissions::builders::DescribeTemplatePermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTemplatePermissionsInput`](crate::operation::describe_template_permissions::DescribeTemplatePermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTemplatePermissionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTemplatePermissionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl DescribeTemplatePermissionsInputBuilder {
         crate::operation::describe_template_permissions::DescribeTemplatePermissionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_template_permissions::DescribeTemplatePermissionsInput {
-                aws_account_id: self.aws_account_id,
-                template_id: self.template_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_template_permissions::DescribeTemplatePermissionsInput {
+            aws_account_id: self.aws_account_id,
+            template_id: self.template_id,
+        })
     }
 }

@@ -443,17 +443,14 @@ impl GetMetricDataInput {
 
 /// A builder for [`GetMetricDataInput`](crate::operation::get_metric_data::GetMetricDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMetricDataInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) filters: ::std::option::Option<crate::types::Filters>,
     pub(crate) groupings: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>,
-    pub(crate) historical_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>>,
+    pub(crate) historical_metrics: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -480,10 +477,7 @@ impl GetMetricDataInputBuilder {
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
     /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -500,10 +494,7 @@ impl GetMetricDataInputBuilder {
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -546,10 +537,7 @@ impl GetMetricDataInputBuilder {
     }
     /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
-    pub fn set_groupings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>,
-    ) -> Self {
+    pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>) -> Self {
         self.groupings = input;
         self
     }
@@ -932,10 +920,7 @@ impl GetMetricDataInputBuilder {
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// </dl>
-    pub fn set_historical_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>>,
-    ) -> Self {
+    pub fn set_historical_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>>) -> Self {
         self.historical_metrics = input;
         self
     }
@@ -1121,9 +1106,7 @@ impl GetMetricDataInputBuilder {
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// </dl>
-    pub fn get_historical_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>> {
+    pub fn get_historical_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>> {
         &self.historical_metrics
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -1157,10 +1140,7 @@ impl GetMetricDataInputBuilder {
     /// Consumes the builder and constructs a [`GetMetricDataInput`](crate::operation::get_metric_data::GetMetricDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_metric_data::GetMetricDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_metric_data::GetMetricDataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_metric_data::GetMetricDataInput {
             instance_id: self.instance_id,
             start_time: self.start_time,

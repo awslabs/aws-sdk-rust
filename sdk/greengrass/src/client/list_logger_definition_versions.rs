@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsOutput::versions): Information about a version.
     /// - On failure, responds with [`SdkError<ListLoggerDefinitionVersionsError>`](crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsError)
-    pub fn list_logger_definition_versions(&self) -> crate::operation::list_logger_definition_versions::builders::ListLoggerDefinitionVersionsFluentBuilder{
+    pub fn list_logger_definition_versions(
+        &self,
+    ) -> crate::operation::list_logger_definition_versions::builders::ListLoggerDefinitionVersionsFluentBuilder {
         crate::operation::list_logger_definition_versions::builders::ListLoggerDefinitionVersionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl ListPiiEntitiesDetectionJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPiiEntitiesDetectionJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsInputBuilder,
+    inner: crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsInputBuilder,
 }
 impl ListPiiEntitiesDetectionJobsFluentBuilder {
     /// Creates a new `ListPiiEntitiesDetectionJobs`.
@@ -37,7 +37,7 @@ impl ListPiiEntitiesDetectionJobsFluentBuilder {
         }
     }
     /// Access the ListPiiEntitiesDetectionJobs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListPiiEntitiesDetectionJobsFluentBuilder {
             crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListPiiEntitiesDetectionJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListPiiEntitiesDetectionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListPiiEntitiesDetectionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListPiiEntitiesDetectionJobsFluentBuilder {
             crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_pii_entities_detection_jobs::paginator::ListPiiEntitiesDetectionJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_pii_entities_detection_jobs::paginator::ListPiiEntitiesDetectionJobsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_pii_entities_detection_jobs::paginator::ListPiiEntitiesDetectionJobsPaginator {
         crate::operation::list_pii_entities_detection_jobs::paginator::ListPiiEntitiesDetectionJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
@@ -132,17 +121,12 @@ impl ListPiiEntitiesDetectionJobsFluentBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::PiiEntitiesDetectionJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::PiiEntitiesDetectionJobFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::PiiEntitiesDetectionJobFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::PiiEntitiesDetectionJobFilter> {
         self.inner.get_filter()
     }
     /// <p>Identifies the next page of results to return.</p>

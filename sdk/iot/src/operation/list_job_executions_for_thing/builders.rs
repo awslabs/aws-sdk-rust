@@ -27,7 +27,7 @@ impl ListJobExecutionsForThingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListJobExecutionsForThingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingInputBuilder,
+    inner: crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingInputBuilder,
 }
 impl ListJobExecutionsForThingFluentBuilder {
     /// Creates a new `ListJobExecutionsForThing`.
@@ -38,7 +38,7 @@ impl ListJobExecutionsForThingFluentBuilder {
         }
     }
     /// Access the ListJobExecutionsForThing as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListJobExecutionsForThingFluentBuilder {
             crate::operation::list_job_executions_for_thing::ListJobExecutionsForThing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListJobExecutionsForThingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListJobExecutionsForThingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListJobExecutionsForThingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingError>,
     > {
         self.send_middleware().await
     }
@@ -115,16 +106,14 @@ impl ListJobExecutionsForThingFluentBuilder {
             crate::operation::list_job_executions_for_thing::ListJobExecutionsForThing,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_job_executions_for_thing::ListJobExecutionsForThingError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_job_executions_for_thing::paginator::ListJobExecutionsForThingPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_job_executions_for_thing::paginator::ListJobExecutionsForThingPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_job_executions_for_thing::paginator::ListJobExecutionsForThingPaginator {
         crate::operation::list_job_executions_for_thing::paginator::ListJobExecutionsForThingPaginator::new(self.handle, self.inner)
     }
     /// <p>The thing name.</p>
@@ -147,10 +136,7 @@ impl ListJobExecutionsForThingFluentBuilder {
         self
     }
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobExecutionStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

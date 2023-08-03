@@ -5,8 +5,7 @@
 pub struct DescribeInstanceAssociationsStatusOutput {
     /// <p>Status information about the association.</p>
     #[doc(hidden)]
-    pub instance_association_status_infos:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceAssociationStatusInfo>>,
+    pub instance_association_status_infos: ::std::option::Option<::std::vec::Vec<crate::types::InstanceAssociationStatusInfo>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeInstanceAssociationsStatusOutput {
 }
 impl DescribeInstanceAssociationsStatusOutput {
     /// <p>Status information about the association.</p>
-    pub fn instance_association_status_infos(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceAssociationStatusInfo]> {
+    pub fn instance_association_status_infos(&self) -> ::std::option::Option<&[crate::types::InstanceAssociationStatusInfo]> {
         self.instance_association_status_infos.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeInstanceAssociationsStatusOut
 }
 impl DescribeInstanceAssociationsStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceAssociationsStatusOutput`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusOutput).
-    pub fn builder() -> crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusOutputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusOutputBuilder {
         crate::operation::describe_instance_associations_status::builders::DescribeInstanceAssociationsStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceAssociationsStatusOutput`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceAssociationsStatusOutputBuilder {
-    pub(crate) instance_association_status_infos:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceAssociationStatusInfo>>,
+    pub(crate) instance_association_status_infos: ::std::option::Option<::std::vec::Vec<crate::types::InstanceAssociationStatusInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeInstanceAssociationsStatusOutputBuilder {
     /// To override the contents of this collection use [`set_instance_association_status_infos`](Self::set_instance_association_status_infos).
     ///
     /// <p>Status information about the association.</p>
-    pub fn instance_association_status_infos(
-        mut self,
-        input: crate::types::InstanceAssociationStatusInfo,
-    ) -> Self {
+    pub fn instance_association_status_infos(mut self, input: crate::types::InstanceAssociationStatusInfo) -> Self {
         let mut v = self.instance_association_status_infos.unwrap_or_default();
         v.push(input);
         self.instance_association_status_infos = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeInstanceAssociationsStatusOutputBuilder {
         self
     }
     /// <p>Status information about the association.</p>
-    pub fn get_instance_association_status_infos(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceAssociationStatusInfo>> {
+    pub fn get_instance_association_status_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceAssociationStatusInfo>> {
         &self.instance_association_status_infos
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -100,12 +89,10 @@ impl DescribeInstanceAssociationsStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeInstanceAssociationsStatusOutput`](crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusOutput).
-    pub fn build(self) -> crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusOutput{
+    pub fn build(self) -> crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusOutput {
         crate::operation::describe_instance_associations_status::DescribeInstanceAssociationsStatusOutput {
-            instance_association_status_infos: self.instance_association_status_infos
-            ,
-            next_token: self.next_token
-            ,
+            instance_association_status_infos: self.instance_association_status_infos,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

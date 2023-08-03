@@ -10,10 +10,7 @@ impl GetEntitlementsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_entitlements::GetEntitlementsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_entitlements::GetEntitlementsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_entitlements::GetEntitlementsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_entitlements();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetEntitlementsFluentBuilder {
         }
     }
     /// Access the GetEntitlements as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_entitlements::builders::GetEntitlementsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_entitlements::builders::GetEntitlementsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetEntitlementsFluentBuilder {
             crate::operation::get_entitlements::GetEntitlements,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_entitlements::GetEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_entitlements::GetEntitlementsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetEntitlementsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetEntitlementsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_entitlements::GetEntitlementsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_entitlements::GetEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_entitlements::GetEntitlementsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetEntitlementsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_entitlements::GetEntitlementsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_entitlements::GetEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_entitlements::GetEntitlementsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetEntitlementsFluentBuilder {
             crate::operation::get_entitlements::GetEntitlements,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_entitlements::GetEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_entitlements::GetEntitlementsError>,
     > {
         self.customize_middleware().await
     }
@@ -141,23 +125,14 @@ impl GetEntitlementsFluentBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
-    pub fn filter(
-        mut self,
-        k: crate::types::GetEntitlementFilterName,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filter(mut self, k: crate::types::GetEntitlementFilterName, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.filter(k, v);
         self
     }
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
     pub fn set_filter(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                crate::types::GetEntitlementFilterName,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_filter(input);
         self
@@ -165,12 +140,7 @@ impl GetEntitlementsFluentBuilder {
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
     pub fn get_filter(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            crate::types::GetEntitlementFilterName,
-            ::std::vec::Vec<::std::string::String>,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_filter()
     }
     /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>

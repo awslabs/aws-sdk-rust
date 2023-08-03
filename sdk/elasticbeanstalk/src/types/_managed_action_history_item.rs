@@ -72,9 +72,7 @@ impl ManagedActionHistoryItem {
 
 /// A builder for [`ManagedActionHistoryItem`](crate::types::ManagedActionHistoryItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedActionHistoryItemBuilder {
     pub(crate) action_id: ::std::option::Option<::std::string::String>,
     pub(crate) action_type: ::std::option::Option<crate::types::ActionType>,
@@ -106,10 +104,7 @@ impl ManagedActionHistoryItemBuilder {
         self
     }
     /// <p>The type of the managed action.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
         self.action_type = input;
         self
     }
@@ -118,18 +113,12 @@ impl ManagedActionHistoryItemBuilder {
         &self.action_type
     }
     /// <p>A description of the managed action.</p>
-    pub fn action_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn action_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the managed action.</p>
-    pub fn set_action_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_action_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_description = input;
         self
     }
@@ -143,10 +132,7 @@ impl ManagedActionHistoryItemBuilder {
         self
     }
     /// <p>If the action failed, the type of failure.</p>
-    pub fn set_failure_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureType>,
-    ) -> Self {
+    pub fn set_failure_type(mut self, input: ::std::option::Option<crate::types::FailureType>) -> Self {
         self.failure_type = input;
         self
     }
@@ -160,10 +146,7 @@ impl ManagedActionHistoryItemBuilder {
         self
     }
     /// <p>The status of the action.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionHistoryStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionHistoryStatus>) -> Self {
         self.status = input;
         self
     }
@@ -172,18 +155,12 @@ impl ManagedActionHistoryItemBuilder {
         &self.status
     }
     /// <p>If the action failed, a description of the failure.</p>
-    pub fn failure_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the action failed, a description of the failure.</p>
-    pub fn set_failure_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_description = input;
         self
     }
@@ -197,10 +174,7 @@ impl ManagedActionHistoryItemBuilder {
         self
     }
     /// <p>The date and time that the action started executing.</p>
-    pub fn set_executed_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_executed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.executed_time = input;
         self
     }
@@ -214,10 +188,7 @@ impl ManagedActionHistoryItemBuilder {
         self
     }
     /// <p>The date and time that the action finished executing.</p>
-    pub fn set_finished_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_finished_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.finished_time = input;
         self
     }

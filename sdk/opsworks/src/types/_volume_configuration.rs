@@ -79,9 +79,7 @@ impl VolumeConfiguration {
 
 /// A builder for [`VolumeConfiguration`](crate::types::VolumeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeConfigurationBuilder {
     pub(crate) mount_point: ::std::option::Option<::std::string::String>,
     pub(crate) raid_level: ::std::option::Option<i32>,

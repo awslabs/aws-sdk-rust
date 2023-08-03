@@ -28,8 +28,7 @@ impl DescribeScalingPoliciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeScalingPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesInputBuilder,
+    inner: crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesInputBuilder,
 }
 impl DescribeScalingPoliciesFluentBuilder {
     /// Creates a new `DescribeScalingPolicies`.
@@ -40,10 +39,7 @@ impl DescribeScalingPoliciesFluentBuilder {
         }
     }
     /// Access the DescribeScalingPolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl DescribeScalingPoliciesFluentBuilder {
             crate::operation::describe_scaling_policies::DescribeScalingPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_policies::DescribeScalingPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl DescribeScalingPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl DescribeScalingPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_policies::DescribeScalingPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_policies::DescribeScalingPoliciesError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl DescribeScalingPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_policies::DescribeScalingPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_policies::DescribeScalingPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -120,19 +107,14 @@ impl DescribeScalingPoliciesFluentBuilder {
             crate::operation::describe_scaling_policies::DescribeScalingPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_scaling_policies::DescribeScalingPoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_scaling_policies::paginator::DescribeScalingPoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_scaling_policies::paginator::DescribeScalingPoliciesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_scaling_policies::paginator::DescribeScalingPoliciesPaginator {
         crate::operation::describe_scaling_policies::paginator::DescribeScalingPoliciesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `PolicyNames`.
@@ -145,17 +127,12 @@ impl DescribeScalingPoliciesFluentBuilder {
         self
     }
     /// <p>The names of the scaling policies to describe.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_policy_names(input);
         self
     }
     /// <p>The names of the scaling policies to describe.</p>
-    pub fn get_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_policy_names()
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
@@ -164,10 +141,7 @@ impl DescribeScalingPoliciesFluentBuilder {
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn set_service_namespace(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceNamespace>,
-    ) -> Self {
+    pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
         self.inner = self.inner.set_service_namespace(input);
         self
     }
@@ -298,10 +272,7 @@ impl DescribeScalingPoliciesFluentBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn set_scalable_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalableDimension>,
-    ) -> Self {
+    pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.inner = self.inner.set_scalable_dimension(input);
         self
     }
@@ -329,9 +300,7 @@ impl DescribeScalingPoliciesFluentBuilder {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn get_scalable_dimension(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+    pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         self.inner.get_scalable_dimension()
     }
     /// <p>The maximum number of scalable targets. This value can be between 1 and 10. The default value is 10.</p>

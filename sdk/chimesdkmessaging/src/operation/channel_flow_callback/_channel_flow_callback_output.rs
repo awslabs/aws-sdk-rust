@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ChannelFlowCallbackOutput {
 }
 impl ChannelFlowCallbackOutput {
     /// Creates a new builder-style object to manufacture [`ChannelFlowCallbackOutput`](crate::operation::channel_flow_callback::ChannelFlowCallbackOutput).
-    pub fn builder(
-    ) -> crate::operation::channel_flow_callback::builders::ChannelFlowCallbackOutputBuilder {
-        crate::operation::channel_flow_callback::builders::ChannelFlowCallbackOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::channel_flow_callback::builders::ChannelFlowCallbackOutputBuilder {
+        crate::operation::channel_flow_callback::builders::ChannelFlowCallbackOutputBuilder::default()
     }
 }
 
 /// A builder for [`ChannelFlowCallbackOutput`](crate::operation::channel_flow_callback::ChannelFlowCallbackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChannelFlowCallbackOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) callback_id: ::std::option::Option<::std::string::String>,

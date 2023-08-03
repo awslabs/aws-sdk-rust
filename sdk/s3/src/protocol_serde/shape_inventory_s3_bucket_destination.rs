@@ -99,10 +99,7 @@ pub fn ser_inventory_s3_bucket_destination(
     }
     if let Some(var_10) = &input.encryption {
         let inner_writer = scope.start_el("Encryption");
-        crate::protocol_serde::shape_inventory_encryption::ser_inventory_encryption(
-            var_10,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_inventory_encryption::ser_inventory_encryption(var_10, inner_writer)?
     }
     scope.finish();
     Ok(())

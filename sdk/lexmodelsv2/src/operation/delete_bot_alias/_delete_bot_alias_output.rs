@@ -42,9 +42,7 @@ impl DeleteBotAliasOutput {
 
 /// A builder for [`DeleteBotAliasOutput`](crate::operation::delete_bot_alias::DeleteBotAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBotAliasOutputBuilder {
     pub(crate) bot_alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl DeleteBotAliasOutputBuilder {
         self
     }
     /// <p>The current status of the alias. The status is <code>Deleting</code> while the alias is in the process of being deleted. Once the alias is deleted, it will no longer appear in the list of aliases returned by the <code>ListBotAliases</code> operation.</p>
-    pub fn set_bot_alias_status(
-        mut self,
-        input: ::std::option::Option<crate::types::BotAliasStatus>,
-    ) -> Self {
+    pub fn set_bot_alias_status(mut self, input: ::std::option::Option<crate::types::BotAliasStatus>) -> Self {
         self.bot_alias_status = input;
         self
     }

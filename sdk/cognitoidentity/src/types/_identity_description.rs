@@ -44,9 +44,7 @@ impl IdentityDescription {
 
 /// A builder for [`IdentityDescription`](crate::types::IdentityDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IdentityDescriptionBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
     pub(crate) logins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -80,10 +78,7 @@ impl IdentityDescriptionBuilder {
         self
     }
     /// <p>The provider names.</p>
-    pub fn set_logins(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_logins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.logins = input;
         self
     }
@@ -97,10 +92,7 @@ impl IdentityDescriptionBuilder {
         self
     }
     /// <p>Date on which the identity was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -114,10 +106,7 @@ impl IdentityDescriptionBuilder {
         self
     }
     /// <p>Date on which the identity was last modified.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_date = input;
         self
     }

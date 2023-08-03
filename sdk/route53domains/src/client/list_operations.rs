@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`operations(Option<Vec<OperationSummary>>)`](crate::operation::list_operations::ListOperationsOutput::operations): <p>Lists summaries of the operations.</p>
     ///   - [`next_page_marker(Option<String>)`](crate::operation::list_operations::ListOperationsOutput::next_page_marker): <p>If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     /// - On failure, responds with [`SdkError<ListOperationsError>`](crate::operation::list_operations::ListOperationsError)
-    pub fn list_operations(
-        &self,
-    ) -> crate::operation::list_operations::builders::ListOperationsFluentBuilder {
-        crate::operation::list_operations::builders::ListOperationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_operations(&self) -> crate::operation::list_operations::builders::ListOperationsFluentBuilder {
+        crate::operation::list_operations::builders::ListOperationsFluentBuilder::new(self.handle.clone())
     }
 }

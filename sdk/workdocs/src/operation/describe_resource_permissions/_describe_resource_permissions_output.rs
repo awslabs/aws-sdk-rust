@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeResourcePermissionsOutput {
 }
 impl DescribeResourcePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourcePermissionsOutput`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput).
-    pub fn builder() -> crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsOutputBuilder {
         crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeResourcePermissionsOutput`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeResourcePermissionsOutputBuilder {
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeResourcePermissionsOutputBuilder {
         self
     }
     /// <p>The principals.</p>
-    pub fn set_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
-    ) -> Self {
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>) -> Self {
         self.principals = input;
         self
     }
     /// <p>The principals.</p>
-    pub fn get_principals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
         &self.principals
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
@@ -93,9 +86,7 @@ impl DescribeResourcePermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeResourcePermissionsOutput`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput {
+    pub fn build(self) -> crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput {
         crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput {
             principals: self.principals,
             marker: self.marker,

@@ -30,8 +30,7 @@ impl EnableAwsServiceAccessInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableAWSServiceAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessInputBuilder,
+    inner: crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessInputBuilder,
 }
 impl EnableAWSServiceAccessFluentBuilder {
     /// Creates a new `EnableAWSServiceAccess`.
@@ -42,10 +41,7 @@ impl EnableAWSServiceAccessFluentBuilder {
         }
     }
     /// Access the EnableAWSServiceAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl EnableAWSServiceAccessFluentBuilder {
             crate::operation::enable_aws_service_access::EnableAWSServiceAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_aws_service_access::EnableAWSServiceAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_aws_service_access::EnableAWSServiceAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl EnableAWSServiceAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl EnableAWSServiceAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_aws_service_access::EnableAwsServiceAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_aws_service_access::EnableAWSServiceAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_aws_service_access::EnableAWSServiceAccessError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl EnableAWSServiceAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_aws_service_access::EnableAwsServiceAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_aws_service_access::EnableAWSServiceAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_aws_service_access::EnableAWSServiceAccessError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +109,17 @@ impl EnableAWSServiceAccessFluentBuilder {
             crate::operation::enable_aws_service_access::EnableAWSServiceAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_aws_service_access::EnableAWSServiceAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_aws_service_access::EnableAWSServiceAccessError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The service principal name of the Amazon Web Services service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-    pub fn service_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_principal(input.into());
         self
     }
     /// <p>The service principal name of the Amazon Web Services service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-    pub fn set_service_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_principal(input);
         self
     }

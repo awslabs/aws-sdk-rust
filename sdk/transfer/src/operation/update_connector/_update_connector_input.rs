@@ -59,9 +59,7 @@ impl UpdateConnectorInput {
 
 /// A builder for [`UpdateConnectorInput`](crate::operation::update_connector::UpdateConnectorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConnectorInputBuilder {
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
@@ -105,10 +103,7 @@ impl UpdateConnectorInputBuilder {
         self
     }
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
-    pub fn set_as2_config(
-        mut self,
-        input: ::std::option::Option<crate::types::As2ConnectorConfig>,
-    ) -> Self {
+    pub fn set_as2_config(mut self, input: ::std::option::Option<crate::types::As2ConnectorConfig>) -> Self {
         self.as2_config = input;
         self
     }
@@ -153,10 +148,7 @@ impl UpdateConnectorInputBuilder {
         self
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
-    pub fn set_sftp_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SftpConnectorConfig>,
-    ) -> Self {
+    pub fn set_sftp_config(mut self, input: ::std::option::Option<crate::types::SftpConnectorConfig>) -> Self {
         self.sftp_config = input;
         self
     }
@@ -167,10 +159,7 @@ impl UpdateConnectorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectorInput`](crate::operation::update_connector::UpdateConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_connector::UpdateConnectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_connector::UpdateConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_connector::UpdateConnectorInput {
             connector_id: self.connector_id,
             url: self.url,

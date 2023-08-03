@@ -17,10 +17,7 @@ pub fn ser_update_audit_suppression_input(
     if let Some(var_4) = &input.resource_identifier {
         #[allow(unused_mut)]
         let mut object_5 = object.key("resourceIdentifier").start_object();
-        crate::protocol_serde::shape_resource_identifier::ser_resource_identifier(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_resource_identifier::ser_resource_identifier(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.suppress_indefinitely {

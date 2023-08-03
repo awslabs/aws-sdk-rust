@@ -30,9 +30,7 @@ impl AwsElbv2LoadBalancerAttribute {
 
 /// A builder for [`AwsElbv2LoadBalancerAttribute`](crate::types::AwsElbv2LoadBalancerAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElbv2LoadBalancerAttributeBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,

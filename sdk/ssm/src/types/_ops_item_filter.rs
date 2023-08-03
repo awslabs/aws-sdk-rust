@@ -37,9 +37,7 @@ impl OpsItemFilter {
 
 /// A builder for [`OpsItemFilter`](crate::types::OpsItemFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsItemFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::OpsItemFilterKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,10 +70,7 @@ impl OpsItemFilterBuilder {
         self
     }
     /// <p>The filter value.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -89,10 +84,7 @@ impl OpsItemFilterBuilder {
         self
     }
     /// <p>The operator used by the filter call.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::OpsItemFilterOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OpsItemFilterOperator>) -> Self {
         self.operator = input;
         self
     }

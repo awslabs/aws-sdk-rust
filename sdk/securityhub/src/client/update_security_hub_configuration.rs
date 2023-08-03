@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`control_finding_generator(ControlFindingGenerator)`](crate::operation::update_security_hub_configuration::builders::UpdateSecurityHubConfigurationFluentBuilder::control_finding_generator) / [`set_control_finding_generator(Option<ControlFindingGenerator>)`](crate::operation::update_security_hub_configuration::builders::UpdateSecurityHubConfigurationFluentBuilder::set_control_finding_generator): <p>Updates whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>  <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>  <p>For accounts that are part of an organization, this value can only be updated in the administrator account.</p>
     /// - On success, responds with [`UpdateSecurityHubConfigurationOutput`](crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateSecurityHubConfigurationError>`](crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationError)
-    pub fn update_security_hub_configuration(&self) -> crate::operation::update_security_hub_configuration::builders::UpdateSecurityHubConfigurationFluentBuilder{
+    pub fn update_security_hub_configuration(
+        &self,
+    ) -> crate::operation::update_security_hub_configuration::builders::UpdateSecurityHubConfigurationFluentBuilder {
         crate::operation::update_security_hub_configuration::builders::UpdateSecurityHubConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

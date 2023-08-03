@@ -10,10 +10,7 @@ impl EnableVolumeIoInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::enable_volume_io::EnableVolumeIoOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_volume_io::EnableVolumeIOError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_volume_io::EnableVolumeIOError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.enable_volume_io();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl EnableVolumeIOFluentBuilder {
         }
     }
     /// Access the EnableVolumeIO as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_volume_io::builders::EnableVolumeIoInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::enable_volume_io::builders::EnableVolumeIoInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl EnableVolumeIOFluentBuilder {
             crate::operation::enable_volume_io::EnableVolumeIO,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_volume_io::EnableVolumeIOError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_volume_io::EnableVolumeIOError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl EnableVolumeIOFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl EnableVolumeIOFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_volume_io::EnableVolumeIoOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_volume_io::EnableVolumeIOError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_volume_io::EnableVolumeIOError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl EnableVolumeIOFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_volume_io::EnableVolumeIoOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_volume_io::EnableVolumeIOError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_volume_io::EnableVolumeIOError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl EnableVolumeIOFluentBuilder {
             crate::operation::enable_volume_io::EnableVolumeIO,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_volume_io::EnableVolumeIOError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_volume_io::EnableVolumeIOError>,
     > {
         self.customize_middleware().await
     }

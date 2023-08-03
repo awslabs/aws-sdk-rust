@@ -37,9 +37,7 @@ impl Task {
 
 /// A builder for [`Task`](crate::types::Task).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) status_detail: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl TaskBuilder {
         &self.status
     }
     /// <p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>
-    pub fn status_detail(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_detail = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>
-    pub fn set_status_detail(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_detail = input;
         self
     }

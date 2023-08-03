@@ -15,18 +15,14 @@ impl GetCatalogImportStatusInput {
 }
 impl GetCatalogImportStatusInput {
     /// Creates a new builder-style object to manufacture [`GetCatalogImportStatusInput`](crate::operation::get_catalog_import_status::GetCatalogImportStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusInputBuilder {
         crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetCatalogImportStatusInput`](crate::operation::get_catalog_import_status::GetCatalogImportStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCatalogImportStatusInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl GetCatalogImportStatusInputBuilder {
         crate::operation::get_catalog_import_status::GetCatalogImportStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_catalog_import_status::GetCatalogImportStatusInput {
-                catalog_id: self.catalog_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_catalog_import_status::GetCatalogImportStatusInput { catalog_id: self.catalog_id })
     }
 }

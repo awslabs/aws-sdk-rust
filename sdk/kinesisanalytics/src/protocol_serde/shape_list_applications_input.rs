@@ -10,9 +10,7 @@ pub fn ser_list_applications_input(
         );
     }
     if let Some(var_2) = &input.exclusive_start_application_name {
-        object
-            .key("ExclusiveStartApplicationName")
-            .string(var_2.as_str());
+        object.key("ExclusiveStartApplicationName").string(var_2.as_str());
     }
     Ok(())
 }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`routing_profile_id(impl ::std::convert::Into<String>)`](crate::operation::delete_routing_profile::builders::DeleteRoutingProfileFluentBuilder::routing_profile_id) / [`set_routing_profile_id(Option<String>)`](crate::operation::delete_routing_profile::builders::DeleteRoutingProfileFluentBuilder::set_routing_profile_id): <p>The identifier of the routing profile.</p>
     /// - On success, responds with [`DeleteRoutingProfileOutput`](crate::operation::delete_routing_profile::DeleteRoutingProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteRoutingProfileError>`](crate::operation::delete_routing_profile::DeleteRoutingProfileError)
-    pub fn delete_routing_profile(
-        &self,
-    ) -> crate::operation::delete_routing_profile::builders::DeleteRoutingProfileFluentBuilder {
-        crate::operation::delete_routing_profile::builders::DeleteRoutingProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_routing_profile(&self) -> crate::operation::delete_routing_profile::builders::DeleteRoutingProfileFluentBuilder {
+        crate::operation::delete_routing_profile::builders::DeleteRoutingProfileFluentBuilder::new(self.handle.clone())
     }
 }

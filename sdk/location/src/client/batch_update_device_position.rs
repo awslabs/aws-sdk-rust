@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`BatchUpdateDevicePositionOutput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput) with field(s):
     ///   - [`errors(Option<Vec<BatchUpdateDevicePositionError>>)`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput::errors): <p>Contains error details for each device that failed to update its position.</p>
     /// - On failure, responds with [`SdkError<BatchUpdateDevicePositionError>`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionError)
-    pub fn batch_update_device_position(&self) -> crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionFluentBuilder{
+    pub fn batch_update_device_position(&self) -> crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionFluentBuilder {
         crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionFluentBuilder::new(self.handle.clone())
     }
 }

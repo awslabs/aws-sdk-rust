@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for PutImageRecipePolicyOutput {
 }
 impl PutImageRecipePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutImageRecipePolicyOutput`](crate::operation::put_image_recipe_policy::PutImageRecipePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_image_recipe_policy::builders::PutImageRecipePolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_image_recipe_policy::builders::PutImageRecipePolicyOutputBuilder {
         crate::operation::put_image_recipe_policy::builders::PutImageRecipePolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutImageRecipePolicyOutput`](crate::operation::put_image_recipe_policy::PutImageRecipePolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutImageRecipePolicyOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_recipe_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +57,12 @@ impl PutImageRecipePolicyOutputBuilder {
         &self.request_id
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy was applied to.</p>
-    pub fn image_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy was applied to.</p>
-    pub fn set_image_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_recipe_arn = input;
         self
     }

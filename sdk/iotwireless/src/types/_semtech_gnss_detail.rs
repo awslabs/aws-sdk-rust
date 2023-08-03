@@ -44,9 +44,7 @@ impl SemtechGnssDetail {
 
 /// A builder for [`SemtechGnssDetail`](crate::types::SemtechGnssDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SemtechGnssDetailBuilder {
     pub(crate) provider: ::std::option::Option<crate::types::PositionSolverProvider>,
     pub(crate) r#type: ::std::option::Option<crate::types::PositionSolverType>,
@@ -60,10 +58,7 @@ impl SemtechGnssDetailBuilder {
         self
     }
     /// <p>The vendor of the solver object.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionSolverProvider>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::PositionSolverProvider>) -> Self {
         self.provider = input;
         self
     }
@@ -77,10 +72,7 @@ impl SemtechGnssDetailBuilder {
         self
     }
     /// <p>The type of positioning solver used.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionSolverType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::PositionSolverType>) -> Self {
         self.r#type = input;
         self
     }
@@ -94,10 +86,7 @@ impl SemtechGnssDetailBuilder {
         self
     }
     /// <p>The status indicating whether the solver is enabled.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionConfigurationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PositionConfigurationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -111,10 +100,7 @@ impl SemtechGnssDetailBuilder {
         self
     }
     /// <p>Whether forward error correction is enabled.</p>
-    pub fn set_fec(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionConfigurationFec>,
-    ) -> Self {
+    pub fn set_fec(mut self, input: ::std::option::Option<crate::types::PositionConfigurationFec>) -> Self {
         self.fec = input;
         self
     }

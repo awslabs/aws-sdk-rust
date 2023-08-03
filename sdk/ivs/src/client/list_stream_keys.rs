@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`stream_keys(Option<Vec<StreamKeySummary>>)`](crate::operation::list_stream_keys::ListStreamKeysOutput::stream_keys): <p>List of stream keys.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stream_keys::ListStreamKeysOutput::next_token): <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     /// - On failure, responds with [`SdkError<ListStreamKeysError>`](crate::operation::list_stream_keys::ListStreamKeysError)
-    pub fn list_stream_keys(
-        &self,
-    ) -> crate::operation::list_stream_keys::builders::ListStreamKeysFluentBuilder {
-        crate::operation::list_stream_keys::builders::ListStreamKeysFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_stream_keys(&self) -> crate::operation::list_stream_keys::builders::ListStreamKeysFluentBuilder {
+        crate::operation::list_stream_keys::builders::ListStreamKeysFluentBuilder::new(self.handle.clone())
     }
 }

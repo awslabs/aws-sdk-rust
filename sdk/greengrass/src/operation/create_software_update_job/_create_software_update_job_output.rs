@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateSoftwareUpdateJobOutput {
 }
 impl CreateSoftwareUpdateJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateSoftwareUpdateJobOutput`](crate::operation::create_software_update_job::CreateSoftwareUpdateJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_software_update_job::builders::CreateSoftwareUpdateJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_software_update_job::builders::CreateSoftwareUpdateJobOutputBuilder {
         crate::operation::create_software_update_job::builders::CreateSoftwareUpdateJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSoftwareUpdateJobOutput`](crate::operation::create_software_update_job::CreateSoftwareUpdateJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSoftwareUpdateJobOutputBuilder {
     pub(crate) iot_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) iot_job_id: ::std::option::Option<::std::string::String>,
@@ -83,18 +79,12 @@ impl CreateSoftwareUpdateJobOutputBuilder {
         &self.iot_job_id
     }
     /// The software version installed on the device or devices after the update.
-    pub fn platform_software_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_software_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_software_version = ::std::option::Option::Some(input.into());
         self
     }
     /// The software version installed on the device or devices after the update.
-    pub fn set_platform_software_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_software_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_software_version = input;
         self
     }
@@ -112,9 +102,7 @@ impl CreateSoftwareUpdateJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateSoftwareUpdateJobOutput`](crate::operation::create_software_update_job::CreateSoftwareUpdateJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_software_update_job::CreateSoftwareUpdateJobOutput {
+    pub fn build(self) -> crate::operation::create_software_update_job::CreateSoftwareUpdateJobOutput {
         crate::operation::create_software_update_job::CreateSoftwareUpdateJobOutput {
             iot_job_arn: self.iot_job_arn,
             iot_job_id: self.iot_job_id,

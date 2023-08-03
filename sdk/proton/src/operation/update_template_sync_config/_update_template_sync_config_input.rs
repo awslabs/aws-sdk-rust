@@ -50,18 +50,14 @@ impl UpdateTemplateSyncConfigInput {
 }
 impl UpdateTemplateSyncConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateTemplateSyncConfigInput`](crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput).
-    pub fn builder(
-    ) -> crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigInputBuilder {
         crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTemplateSyncConfigInput`](crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTemplateSyncConfigInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_type: ::std::option::Option<crate::types::TemplateType>,
@@ -72,18 +68,12 @@ pub struct UpdateTemplateSyncConfigInputBuilder {
 }
 impl UpdateTemplateSyncConfigInputBuilder {
     /// <p>The synced template name.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The synced template name.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -97,10 +87,7 @@ impl UpdateTemplateSyncConfigInputBuilder {
         self
     }
     /// <p>The synced template type.</p>
-    pub fn set_template_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateType>,
-    ) -> Self {
+    pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
         self.template_type = input;
         self
     }
@@ -114,32 +101,21 @@ impl UpdateTemplateSyncConfigInputBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_repository_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_repository_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.repository_provider = input;
         self
     }
     /// <p>The repository provider.</p>
-    pub fn get_repository_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+    pub fn get_repository_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
         &self.repository_provider
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -182,15 +158,13 @@ impl UpdateTemplateSyncConfigInputBuilder {
         crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput {
-                template_name: self.template_name,
-                template_type: self.template_type,
-                repository_provider: self.repository_provider,
-                repository_name: self.repository_name,
-                branch: self.branch,
-                subdirectory: self.subdirectory,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput {
+            template_name: self.template_name,
+            template_type: self.template_type,
+            repository_provider: self.repository_provider,
+            repository_name: self.repository_name,
+            branch: self.branch,
+            subdirectory: self.subdirectory,
+        })
     }
 }

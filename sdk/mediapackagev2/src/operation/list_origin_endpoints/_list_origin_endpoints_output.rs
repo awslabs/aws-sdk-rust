@@ -5,8 +5,7 @@
 pub struct ListOriginEndpointsOutput {
     /// <p>The objects being returned.</p>
     #[doc(hidden)]
-    pub items:
-        ::std::option::Option<::std::vec::Vec<crate::types::OriginEndpointListConfiguration>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::OriginEndpointListConfiguration>>,
     /// <p>The pagination token from the GET list request. Use the token to fetch the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListOriginEndpointsOutput {
 }
 impl ListOriginEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListOriginEndpointsOutput`](crate::operation::list_origin_endpoints::ListOriginEndpointsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_origin_endpoints::builders::ListOriginEndpointsOutputBuilder {
-        crate::operation::list_origin_endpoints::builders::ListOriginEndpointsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_origin_endpoints::builders::ListOriginEndpointsOutputBuilder {
+        crate::operation::list_origin_endpoints::builders::ListOriginEndpointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListOriginEndpointsOutput`](crate::operation::list_origin_endpoints::ListOriginEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOriginEndpointsOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::OriginEndpointListConfiguration>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::OriginEndpointListConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,20 +54,12 @@ impl ListOriginEndpointsOutputBuilder {
         self
     }
     /// <p>The objects being returned.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::OriginEndpointListConfiguration>,
-        >,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OriginEndpointListConfiguration>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The objects being returned.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginEndpointListConfiguration>>
-    {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginEndpointListConfiguration>> {
         &self.items
     }
     /// <p>The pagination token from the GET list request. Use the token to fetch the next page of results.</p>

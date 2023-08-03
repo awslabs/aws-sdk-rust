@@ -5,8 +5,7 @@
 pub struct ListLicenseConversionTasksOutput {
     /// <p>Information about the license configuration tasks for your account.</p>
     #[doc(hidden)]
-    pub license_conversion_tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseConversionTask>>,
+    pub license_conversion_tasks: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConversionTask>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListLicenseConversionTasksOutput {
 }
 impl ListLicenseConversionTasksOutput {
     /// <p>Information about the license configuration tasks for your account.</p>
-    pub fn license_conversion_tasks(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LicenseConversionTask]> {
+    pub fn license_conversion_tasks(&self) -> ::std::option::Option<&[crate::types::LicenseConversionTask]> {
         self.license_conversion_tasks.as_deref()
     }
     /// <p>Token for the next set of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListLicenseConversionTasksOutput {
 }
 impl ListLicenseConversionTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListLicenseConversionTasksOutput`](crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput).
-    pub fn builder() -> crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksOutputBuilder{
+    pub fn builder() -> crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksOutputBuilder {
         crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLicenseConversionTasksOutput`](crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLicenseConversionTasksOutputBuilder {
-    pub(crate) license_conversion_tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::LicenseConversionTask>>,
+    pub(crate) license_conversion_tasks: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConversionTask>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListLicenseConversionTasksOutputBuilder {
         self
     }
     /// <p>Information about the license configuration tasks for your account.</p>
-    pub fn set_license_conversion_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConversionTask>>,
-    ) -> Self {
+    pub fn set_license_conversion_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConversionTask>>) -> Self {
         self.license_conversion_tasks = input;
         self
     }
     /// <p>Information about the license configuration tasks for your account.</p>
-    pub fn get_license_conversion_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseConversionTask>> {
+    pub fn get_license_conversion_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseConversionTask>> {
         &self.license_conversion_tasks
     }
     /// <p>Token for the next set of results.</p>
@@ -97,9 +86,7 @@ impl ListLicenseConversionTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListLicenseConversionTasksOutput`](crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput {
+    pub fn build(self) -> crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput {
         crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput {
             license_conversion_tasks: self.license_conversion_tasks,
             next_token: self.next_token,

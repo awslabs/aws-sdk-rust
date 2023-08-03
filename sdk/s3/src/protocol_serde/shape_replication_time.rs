@@ -11,10 +11,7 @@ pub fn ser_replication_time(
     }
     if let Some(var_2) = &input.time {
         let inner_writer = scope.start_el("Time");
-        crate::protocol_serde::shape_replication_time_value::ser_replication_time_value(
-            var_2,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_replication_time_value::ser_replication_time_value(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())

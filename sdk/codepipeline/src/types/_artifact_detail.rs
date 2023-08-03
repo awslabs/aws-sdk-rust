@@ -30,9 +30,7 @@ impl ArtifactDetail {
 
 /// A builder for [`ArtifactDetail`](crate::types::ArtifactDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ArtifactDetailBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) s3location: ::std::option::Option<crate::types::S3Location>,
@@ -58,10 +56,7 @@ impl ArtifactDetailBuilder {
         self
     }
     /// <p>The Amazon S3 artifact location for the action execution.</p>
-    pub fn set_s3location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_s3location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.s3location = input;
         self
     }

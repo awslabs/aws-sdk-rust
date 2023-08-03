@@ -64,32 +64,23 @@ impl AgentDetails {
 
 /// A builder for [`AgentDetails`](crate::types::AgentDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentDetailsBuilder {
     pub(crate) agent_version: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_cpu_cores: ::std::option::Option<::std::vec::Vec<i32>>,
     pub(crate) agent_cpu_cores: ::std::option::Option<::std::vec::Vec<i32>>,
-    pub(crate) component_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>>,
+    pub(crate) component_versions: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>>,
 }
 impl AgentDetailsBuilder {
     /// <p>Current agent version.</p>
-    pub fn agent_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Current agent version.</p>
-    pub fn set_agent_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_version = input;
         self
     }
@@ -112,18 +103,12 @@ impl AgentDetailsBuilder {
         &self.instance_id
     }
     /// <p>Type of EC2 instance agent is running on.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Type of EC2 instance agent is running on.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
@@ -149,10 +134,7 @@ impl AgentDetailsBuilder {
     /// <p>This field should not be used. Use agentCpuCores instead.</p>
     /// </note>
     /// <p>List of CPU cores reserved for processes other than the agent running on the EC2 instance.</p>
-    pub fn set_reserved_cpu_cores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_reserved_cpu_cores(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.reserved_cpu_cores = input;
         self
     }
@@ -175,10 +157,7 @@ impl AgentDetailsBuilder {
         self
     }
     /// <p>List of CPU cores reserved for the agent.</p>
-    pub fn set_agent_cpu_cores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_agent_cpu_cores(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.agent_cpu_cores = input;
         self
     }
@@ -198,17 +177,12 @@ impl AgentDetailsBuilder {
         self
     }
     /// <p>List of versions being used by agent components.</p>
-    pub fn set_component_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>>,
-    ) -> Self {
+    pub fn set_component_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>>) -> Self {
         self.component_versions = input;
         self
     }
     /// <p>List of versions being used by agent components.</p>
-    pub fn get_component_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>> {
+    pub fn get_component_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>> {
         &self.component_versions
     }
     /// Consumes the builder and constructs a [`AgentDetails`](crate::types::AgentDetails).

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ChannelGroupListConfiguration>>)`](crate::operation::list_channel_groups::ListChannelGroupsOutput::items): <p>The objects being returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channel_groups::ListChannelGroupsOutput::next_token): <p>The pagination token from the GET list request. Use the token to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListChannelGroupsError>`](crate::operation::list_channel_groups::ListChannelGroupsError)
-    pub fn list_channel_groups(
-        &self,
-    ) -> crate::operation::list_channel_groups::builders::ListChannelGroupsFluentBuilder {
-        crate::operation::list_channel_groups::builders::ListChannelGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_channel_groups(&self) -> crate::operation::list_channel_groups::builders::ListChannelGroupsFluentBuilder {
+        crate::operation::list_channel_groups::builders::ListChannelGroupsFluentBuilder::new(self.handle.clone())
     }
 }

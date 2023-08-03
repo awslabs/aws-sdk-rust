@@ -22,41 +22,31 @@ impl DisassociateResolverQueryLogConfigInput {
 }
 impl DisassociateResolverQueryLogConfigInput {
     /// Creates a new builder-style object to manufacture [`DisassociateResolverQueryLogConfigInput`](crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigInput).
-    pub fn builder() -> crate::operation::disassociate_resolver_query_log_config::builders::DisassociateResolverQueryLogConfigInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_resolver_query_log_config::builders::DisassociateResolverQueryLogConfigInputBuilder {
         crate::operation::disassociate_resolver_query_log_config::builders::DisassociateResolverQueryLogConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateResolverQueryLogConfigInput`](crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateResolverQueryLogConfigInputBuilder {
     pub(crate) resolver_query_log_config_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateResolverQueryLogConfigInputBuilder {
     /// <p>The ID of the query logging configuration that you want to disassociate a specified VPC from.</p>
-    pub fn resolver_query_log_config_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_query_log_config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_query_log_config_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the query logging configuration that you want to disassociate a specified VPC from.</p>
-    pub fn set_resolver_query_log_config_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_query_log_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolver_query_log_config_id = input;
         self
     }
     /// <p>The ID of the query logging configuration that you want to disassociate a specified VPC from.</p>
-    pub fn get_resolver_query_log_config_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_resolver_query_log_config_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resolver_query_log_config_id
     }
     /// <p>The ID of the Amazon VPC that you want to disassociate from a specified query logging configuration.</p>
@@ -74,14 +64,17 @@ impl DisassociateResolverQueryLogConfigInputBuilder {
         &self.resource_id
     }
     /// Consumes the builder and constructs a [`DisassociateResolverQueryLogConfigInput`](crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_resolver_query_log_config::DisassociateResolverQueryLogConfigInput {
-                resolver_query_log_config_id: self.resolver_query_log_config_id
-                ,
-                resource_id: self.resource_id
-                ,
-            }
+                resolver_query_log_config_id: self.resolver_query_log_config_id,
+                resource_id: self.resource_id,
+            },
         )
     }
 }

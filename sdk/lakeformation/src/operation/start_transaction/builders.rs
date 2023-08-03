@@ -10,10 +10,7 @@ impl StartTransactionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_transaction::StartTransactionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_transaction::StartTransactionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_transaction::StartTransactionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_transaction();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartTransactionFluentBuilder {
         }
     }
     /// Access the StartTransaction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_transaction::builders::StartTransactionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_transaction::builders::StartTransactionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartTransactionFluentBuilder {
             crate::operation::start_transaction::StartTransaction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_transaction::StartTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_transaction::StartTransactionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartTransactionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartTransactionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_transaction::StartTransactionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_transaction::StartTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_transaction::StartTransactionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartTransactionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_transaction::StartTransactionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_transaction::StartTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_transaction::StartTransactionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl StartTransactionFluentBuilder {
             crate::operation::start_transaction::StartTransaction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_transaction::StartTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_transaction::StartTransactionError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl StartTransactionFluentBuilder {
         self
     }
     /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed. </p>
-    pub fn set_transaction_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TransactionType>,
-    ) -> Self {
+    pub fn set_transaction_type(mut self, input: ::std::option::Option<crate::types::TransactionType>) -> Self {
         self.inner = self.inner.set_transaction_type(input);
         self
     }

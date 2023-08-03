@@ -37,9 +37,7 @@ impl EngineVersionInfo {
 
 /// A builder for [`EngineVersionInfo`](crate::types::EngineVersionInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EngineVersionInfoBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) engine_patch_version: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct EngineVersionInfoBuilder {
 }
 impl EngineVersionInfoBuilder {
     /// <p>The engine version</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The engine version</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
@@ -67,18 +59,12 @@ impl EngineVersionInfoBuilder {
         &self.engine_version
     }
     /// <p>The patched engine version</p>
-    pub fn engine_patch_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_patch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The patched engine version</p>
-    pub fn set_engine_patch_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_patch_version = input;
         self
     }
@@ -87,18 +73,12 @@ impl EngineVersionInfoBuilder {
         &self.engine_patch_version
     }
     /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
-    pub fn parameter_group_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
-    pub fn set_parameter_group_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_group_family = input;
         self
     }

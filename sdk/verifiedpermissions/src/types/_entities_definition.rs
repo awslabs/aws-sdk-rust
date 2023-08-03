@@ -21,9 +21,7 @@ impl EntitiesDefinition {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`EntityList`](crate::types::EntitiesDefinition::EntityList), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_entity_list(
-        &self,
-    ) -> ::std::result::Result<&::std::vec::Vec<crate::types::EntityItem>, &Self> {
+    pub fn as_entity_list(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::EntityItem>, &Self> {
         if let EntitiesDefinition::EntityList(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

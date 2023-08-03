@@ -16,40 +16,30 @@ impl GetInfrastructureConfigurationInput {
 }
 impl GetInfrastructureConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetInfrastructureConfigurationInput`](crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput).
-    pub fn builder() -> crate::operation::get_infrastructure_configuration::builders::GetInfrastructureConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_infrastructure_configuration::builders::GetInfrastructureConfigurationInputBuilder {
         crate::operation::get_infrastructure_configuration::builders::GetInfrastructureConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInfrastructureConfigurationInput`](crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInfrastructureConfigurationInputBuilder {
     pub(crate) infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetInfrastructureConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
-    pub fn infrastructure_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn infrastructure_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
-    pub fn set_infrastructure_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_infrastructure_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
-    pub fn get_infrastructure_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_infrastructure_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.infrastructure_configuration_arn
     }
     /// Consumes the builder and constructs a [`GetInfrastructureConfigurationInput`](crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput).
@@ -59,11 +49,8 @@ impl GetInfrastructureConfigurationInputBuilder {
         crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput {
-                infrastructure_configuration_arn: self.infrastructure_configuration_arn
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput {
+            infrastructure_configuration_arn: self.infrastructure_configuration_arn,
+        })
     }
 }

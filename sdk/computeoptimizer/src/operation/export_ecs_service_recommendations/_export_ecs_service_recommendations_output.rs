@@ -30,16 +30,14 @@ impl ::aws_http::request_id::RequestId for ExportEcsServiceRecommendationsOutput
 }
 impl ExportEcsServiceRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ExportEcsServiceRecommendationsOutput`](crate::operation::export_ecs_service_recommendations::ExportEcsServiceRecommendationsOutput).
-    pub fn builder() -> crate::operation::export_ecs_service_recommendations::builders::ExportEcsServiceRecommendationsOutputBuilder{
+    pub fn builder() -> crate::operation::export_ecs_service_recommendations::builders::ExportEcsServiceRecommendationsOutputBuilder {
         crate::operation::export_ecs_service_recommendations::builders::ExportEcsServiceRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExportEcsServiceRecommendationsOutput`](crate::operation::export_ecs_service_recommendations::ExportEcsServiceRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportEcsServiceRecommendationsOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_destination: ::std::option::Option<crate::types::S3Destination>,
@@ -69,10 +67,7 @@ impl ExportEcsServiceRecommendationsOutputBuilder {
         self
     }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
         self.s3_destination = input;
         self
     }
@@ -90,15 +85,10 @@ impl ExportEcsServiceRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExportEcsServiceRecommendationsOutput`](crate::operation::export_ecs_service_recommendations::ExportEcsServiceRecommendationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::export_ecs_service_recommendations::ExportEcsServiceRecommendationsOutput
-    {
+    pub fn build(self) -> crate::operation::export_ecs_service_recommendations::ExportEcsServiceRecommendationsOutput {
         crate::operation::export_ecs_service_recommendations::ExportEcsServiceRecommendationsOutput {
-            job_id: self.job_id
-            ,
-            s3_destination: self.s3_destination
-            ,
+            job_id: self.job_id,
+            s3_destination: self.s3_destination,
             _request_id: self._request_id,
         }
     }

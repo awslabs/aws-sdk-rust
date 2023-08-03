@@ -23,9 +23,7 @@ impl TraceConfiguration {
 
 /// A builder for [`TraceConfiguration`](crate::types::TraceConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TraceConfigurationBuilder {
     pub(crate) vendor: ::std::option::Option<crate::types::TracingVendor>,
 }
@@ -46,8 +44,6 @@ impl TraceConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`TraceConfiguration`](crate::types::TraceConfiguration).
     pub fn build(self) -> crate::types::TraceConfiguration {
-        crate::types::TraceConfiguration {
-            vendor: self.vendor,
-        }
+        crate::types::TraceConfiguration { vendor: self.vendor }
     }
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeGlobalNetworksOutput {
 }
 impl DescribeGlobalNetworksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalNetworksOutput`](crate::operation::describe_global_networks::DescribeGlobalNetworksOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_global_networks::builders::DescribeGlobalNetworksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_global_networks::builders::DescribeGlobalNetworksOutputBuilder {
         crate::operation::describe_global_networks::builders::DescribeGlobalNetworksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGlobalNetworksOutput`](crate::operation::describe_global_networks::DescribeGlobalNetworksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGlobalNetworksOutputBuilder {
     pub(crate) global_networks: ::std::option::Option<::std::vec::Vec<crate::types::GlobalNetwork>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeGlobalNetworksOutputBuilder {
         self
     }
     /// <p>Information about the global networks.</p>
-    pub fn set_global_networks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalNetwork>>,
-    ) -> Self {
+    pub fn set_global_networks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalNetwork>>) -> Self {
         self.global_networks = input;
         self
     }
     /// <p>Information about the global networks.</p>
-    pub fn get_global_networks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalNetwork>> {
+    pub fn get_global_networks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalNetwork>> {
         &self.global_networks
     }
     /// <p>The token for the next page of results.</p>

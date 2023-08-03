@@ -26,7 +26,7 @@ impl ListNodeFromTemplateJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListNodeFromTemplateJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsInputBuilder,
+    inner: crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsInputBuilder,
 }
 impl ListNodeFromTemplateJobsFluentBuilder {
     /// Creates a new `ListNodeFromTemplateJobs`.
@@ -37,7 +37,7 @@ impl ListNodeFromTemplateJobsFluentBuilder {
         }
     }
     /// Access the ListNodeFromTemplateJobs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListNodeFromTemplateJobsFluentBuilder {
             crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListNodeFromTemplateJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListNodeFromTemplateJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListNodeFromTemplateJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListNodeFromTemplateJobsFluentBuilder {
             crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_node_from_template_jobs::paginator::ListNodeFromTemplateJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_node_from_template_jobs::paginator::ListNodeFromTemplateJobsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_node_from_template_jobs::paginator::ListNodeFromTemplateJobsPaginator {
         crate::operation::list_node_from_template_jobs::paginator::ListNodeFromTemplateJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>

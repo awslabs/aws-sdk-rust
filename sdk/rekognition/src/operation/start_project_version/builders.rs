@@ -42,9 +42,7 @@ impl StartProjectVersionFluentBuilder {
         }
     }
     /// Access the StartProjectVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_project_version::builders::StartProjectVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_project_version::builders::StartProjectVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl StartProjectVersionFluentBuilder {
             crate::operation::start_project_version::StartProjectVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_project_version::StartProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_project_version::StartProjectVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl StartProjectVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl StartProjectVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_project_version::StartProjectVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_project_version::StartProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_project_version::StartProjectVersionError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl StartProjectVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_project_version::StartProjectVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_project_version::StartProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_project_version::StartProjectVersionError>,
     > {
         self.send_middleware().await
     }
@@ -121,25 +110,17 @@ impl StartProjectVersionFluentBuilder {
             crate::operation::start_project_version::StartProjectVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_project_version::StartProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_project_version::StartProjectVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
-    pub fn project_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_version_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
-    pub fn set_project_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_version_arn(input);
         self
     }

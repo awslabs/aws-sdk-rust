@@ -22,11 +22,7 @@ impl super::Client {
     ///   - [`vendor_properties(Option<VendorProperties>)`](crate::operation::update_worker::UpdateWorkerOutput::vendor_properties): Properties of the worker that are provided by the vendor FMS.
     ///   - [`position(Option<PositionCoordinates>)`](crate::operation::update_worker::UpdateWorkerOutput::position): Supported coordinates for worker position.
     /// - On failure, responds with [`SdkError<UpdateWorkerError>`](crate::operation::update_worker::UpdateWorkerError)
-    pub fn update_worker(
-        &self,
-    ) -> crate::operation::update_worker::builders::UpdateWorkerFluentBuilder {
-        crate::operation::update_worker::builders::UpdateWorkerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_worker(&self) -> crate::operation::update_worker::builders::UpdateWorkerFluentBuilder {
+        crate::operation::update_worker::builders::UpdateWorkerFluentBuilder::new(self.handle.clone())
     }
 }

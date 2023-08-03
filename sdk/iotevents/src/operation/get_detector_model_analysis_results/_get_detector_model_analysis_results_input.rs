@@ -29,16 +29,14 @@ impl GetDetectorModelAnalysisResultsInput {
 }
 impl GetDetectorModelAnalysisResultsInput {
     /// Creates a new builder-style object to manufacture [`GetDetectorModelAnalysisResultsInput`](crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsInput).
-    pub fn builder() -> crate::operation::get_detector_model_analysis_results::builders::GetDetectorModelAnalysisResultsInputBuilder{
+    pub fn builder() -> crate::operation::get_detector_model_analysis_results::builders::GetDetectorModelAnalysisResultsInputBuilder {
         crate::operation::get_detector_model_analysis_results::builders::GetDetectorModelAnalysisResultsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDetectorModelAnalysisResultsInput`](crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDetectorModelAnalysisResultsInputBuilder {
     pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -96,13 +94,10 @@ impl GetDetectorModelAnalysisResultsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsInput {
-                analysis_id: self.analysis_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                analysis_id: self.analysis_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

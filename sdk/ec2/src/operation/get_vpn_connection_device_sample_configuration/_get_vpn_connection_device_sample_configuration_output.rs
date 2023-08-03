@@ -17,10 +17,7 @@ impl GetVpnConnectionDeviceSampleConfigurationOutput {
 impl ::std::fmt::Debug for GetVpnConnectionDeviceSampleConfigurationOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetVpnConnectionDeviceSampleConfigurationOutput");
-        formatter.field(
-            "vpn_connection_device_sample_configuration",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("vpn_connection_device_sample_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -32,7 +29,8 @@ impl ::aws_http::request_id::RequestId for GetVpnConnectionDeviceSampleConfigura
 }
 impl GetVpnConnectionDeviceSampleConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetVpnConnectionDeviceSampleConfigurationOutput`](crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput).
-    pub fn builder() -> crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationOutputBuilder {
         crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationOutputBuilder::default()
     }
 }
@@ -41,31 +39,22 @@ impl GetVpnConnectionDeviceSampleConfigurationOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GetVpnConnectionDeviceSampleConfigurationOutputBuilder {
-    pub(crate) vpn_connection_device_sample_configuration:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) vpn_connection_device_sample_configuration: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetVpnConnectionDeviceSampleConfigurationOutputBuilder {
     /// <p>Sample configuration file for the specified customer gateway device.</p>
-    pub fn vpn_connection_device_sample_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpn_connection_device_sample_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_device_sample_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sample configuration file for the specified customer gateway device.</p>
-    pub fn set_vpn_connection_device_sample_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpn_connection_device_sample_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpn_connection_device_sample_configuration = input;
         self
     }
     /// <p>Sample configuration file for the specified customer gateway device.</p>
-    pub fn get_vpn_connection_device_sample_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_vpn_connection_device_sample_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpn_connection_device_sample_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -78,22 +67,17 @@ impl GetVpnConnectionDeviceSampleConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetVpnConnectionDeviceSampleConfigurationOutput`](crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput{
+    pub fn build(self) -> crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput {
         crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput {
-            vpn_connection_device_sample_configuration: self.vpn_connection_device_sample_configuration
-            ,
+            vpn_connection_device_sample_configuration: self.vpn_connection_device_sample_configuration,
             _request_id: self._request_id,
         }
     }
 }
 impl ::std::fmt::Debug for GetVpnConnectionDeviceSampleConfigurationOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("GetVpnConnectionDeviceSampleConfigurationOutputBuilder");
-        formatter.field(
-            "vpn_connection_device_sample_configuration",
-            &"*** Sensitive Data Redacted ***",
-        );
+        let mut formatter = f.debug_struct("GetVpnConnectionDeviceSampleConfigurationOutputBuilder");
+        formatter.field("vpn_connection_device_sample_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

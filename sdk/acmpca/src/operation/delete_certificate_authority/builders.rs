@@ -31,7 +31,7 @@ impl DeleteCertificateAuthorityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCertificateAuthorityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_certificate_authority::builders::DeleteCertificateAuthorityInputBuilder,
+    inner: crate::operation::delete_certificate_authority::builders::DeleteCertificateAuthorityInputBuilder,
 }
 impl DeleteCertificateAuthorityFluentBuilder {
     /// Creates a new `DeleteCertificateAuthority`.
@@ -42,7 +42,7 @@ impl DeleteCertificateAuthorityFluentBuilder {
         }
     }
     /// Access the DeleteCertificateAuthority as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_certificate_authority::builders::DeleteCertificateAuthorityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_certificate_authority::builders::DeleteCertificateAuthorityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl DeleteCertificateAuthorityFluentBuilder {
             crate::operation::delete_certificate_authority::DeleteCertificateAuthority,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl DeleteCertificateAuthorityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl DeleteCertificateAuthorityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_certificate_authority::DeleteCertificateAuthorityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl DeleteCertificateAuthorityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_certificate_authority::DeleteCertificateAuthorityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError>,
     > {
         self.send_middleware().await
     }
@@ -119,27 +110,19 @@ impl DeleteCertificateAuthorityFluentBuilder {
             crate::operation::delete_certificate_authority::DeleteCertificateAuthority,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_authority_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
     }
@@ -154,10 +137,7 @@ impl DeleteCertificateAuthorityFluentBuilder {
         self
     }
     /// <p>The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.</p>
-    pub fn set_permanent_deletion_time_in_days(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_permanent_deletion_time_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_permanent_deletion_time_in_days(input);
         self
     }

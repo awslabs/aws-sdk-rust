@@ -8,8 +8,7 @@ pub struct ListSourceRepositoryBranchesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the source branches.</p>
     #[doc(hidden)]
-    pub items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoryBranchesItem>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoryBranchesItem>>,
     _request_id: Option<String>,
 }
 impl ListSourceRepositoryBranchesOutput {
@@ -18,9 +17,7 @@ impl ListSourceRepositoryBranchesOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the source branches.</p>
-    pub fn items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListSourceRepositoryBranchesItem]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::ListSourceRepositoryBranchesItem]> {
         self.items.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListSourceRepositoryBranchesOutput {
 }
 impl ListSourceRepositoryBranchesOutput {
     /// Creates a new builder-style object to manufacture [`ListSourceRepositoryBranchesOutput`](crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput).
-    pub fn builder() -> crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesOutputBuilder{
+    pub fn builder() -> crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesOutputBuilder {
         crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSourceRepositoryBranchesOutput`](crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSourceRepositoryBranchesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoryBranchesItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoryBranchesItem>>,
     _request_id: Option<String>,
 }
 impl ListSourceRepositoryBranchesOutputBuilder {
@@ -74,20 +68,12 @@ impl ListSourceRepositoryBranchesOutputBuilder {
         self
     }
     /// <p>Information about the source branches.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ListSourceRepositoryBranchesItem>,
-        >,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoryBranchesItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Information about the source branches.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoryBranchesItem>>
-    {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoryBranchesItem>> {
         &self.items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -100,9 +86,7 @@ impl ListSourceRepositoryBranchesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSourceRepositoryBranchesOutput`](crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput {
+    pub fn build(self) -> crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput {
         crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput {
             next_token: self.next_token,
             items: self.items,

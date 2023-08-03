@@ -10,10 +10,7 @@ impl StartReportJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_report_job::StartReportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_report_job::StartReportJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_report_job::StartReportJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_report_job();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartReportJobFluentBuilder {
         }
     }
     /// Access the StartReportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_report_job::builders::StartReportJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_report_job::builders::StartReportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartReportJobFluentBuilder {
             crate::operation::start_report_job::StartReportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_report_job::StartReportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_report_job::StartReportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartReportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartReportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_report_job::StartReportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_report_job::StartReportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_report_job::StartReportJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartReportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_report_job::StartReportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_report_job::StartReportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_report_job::StartReportJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StartReportJobFluentBuilder {
             crate::operation::start_report_job::StartReportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_report_job::StartReportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_report_job::StartReportJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique name of a report plan.</p>
-    pub fn report_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_plan_name(input.into());
         self
     }
     /// <p>The unique name of a report plan.</p>
-    pub fn set_report_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_report_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_report_plan_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl StartReportJobFluentBuilder {
         self.inner.get_report_plan_name()
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartReportJobInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartReportJobInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }

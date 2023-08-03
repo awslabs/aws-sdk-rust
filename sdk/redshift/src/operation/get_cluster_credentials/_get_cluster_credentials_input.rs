@@ -112,18 +112,14 @@ impl GetClusterCredentialsInput {
 }
 impl GetClusterCredentialsInput {
     /// Creates a new builder-style object to manufacture [`GetClusterCredentialsInput`](crate::operation::get_cluster_credentials::GetClusterCredentialsInput).
-    pub fn builder(
-    ) -> crate::operation::get_cluster_credentials::builders::GetClusterCredentialsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_cluster_credentials::builders::GetClusterCredentialsInputBuilder {
         crate::operation::get_cluster_credentials::builders::GetClusterCredentialsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetClusterCredentialsInput`](crate::operation::get_cluster_credentials::GetClusterCredentialsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClusterCredentialsInputBuilder {
     pub(crate) db_user: ::std::option::Option<::std::string::String>,
     pub(crate) db_name: ::std::option::Option<::std::string::String>,
@@ -214,18 +210,12 @@ impl GetClusterCredentialsInputBuilder {
         &self.db_name
     }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -295,10 +285,7 @@ impl GetClusterCredentialsInputBuilder {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
-    pub fn set_db_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_db_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.db_groups = input;
         self
     }
@@ -315,18 +302,12 @@ impl GetClusterCredentialsInputBuilder {
         &self.db_groups
     }
     /// <p>The custom domain name for the cluster credentials.</p>
-    pub fn custom_domain_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom domain name for the cluster credentials.</p>
-    pub fn set_custom_domain_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_domain_name = input;
         self
     }
@@ -337,20 +318,16 @@ impl GetClusterCredentialsInputBuilder {
     /// Consumes the builder and constructs a [`GetClusterCredentialsInput`](crate::operation::get_cluster_credentials::GetClusterCredentialsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_cluster_credentials::GetClusterCredentialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_cluster_credentials::GetClusterCredentialsInput {
-                db_user: self.db_user,
-                db_name: self.db_name,
-                cluster_identifier: self.cluster_identifier,
-                duration_seconds: self.duration_seconds,
-                auto_create: self.auto_create,
-                db_groups: self.db_groups,
-                custom_domain_name: self.custom_domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_cluster_credentials::GetClusterCredentialsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_cluster_credentials::GetClusterCredentialsInput {
+            db_user: self.db_user,
+            db_name: self.db_name,
+            cluster_identifier: self.cluster_identifier,
+            duration_seconds: self.duration_seconds,
+            auto_create: self.auto_create,
+            db_groups: self.db_groups,
+            custom_domain_name: self.custom_domain_name,
+        })
     }
 }

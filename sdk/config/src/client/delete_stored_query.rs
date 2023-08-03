@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`query_name(impl ::std::convert::Into<String>)`](crate::operation::delete_stored_query::builders::DeleteStoredQueryFluentBuilder::query_name) / [`set_query_name(Option<String>)`](crate::operation::delete_stored_query::builders::DeleteStoredQueryFluentBuilder::set_query_name): <p>The name of the query that you want to delete.</p>
     /// - On success, responds with [`DeleteStoredQueryOutput`](crate::operation::delete_stored_query::DeleteStoredQueryOutput)
     /// - On failure, responds with [`SdkError<DeleteStoredQueryError>`](crate::operation::delete_stored_query::DeleteStoredQueryError)
-    pub fn delete_stored_query(
-        &self,
-    ) -> crate::operation::delete_stored_query::builders::DeleteStoredQueryFluentBuilder {
-        crate::operation::delete_stored_query::builders::DeleteStoredQueryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_stored_query(&self) -> crate::operation::delete_stored_query::builders::DeleteStoredQueryFluentBuilder {
+        crate::operation::delete_stored_query::builders::DeleteStoredQueryFluentBuilder::new(self.handle.clone())
     }
 }

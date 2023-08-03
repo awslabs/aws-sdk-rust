@@ -29,16 +29,14 @@ impl DescribeEdgeDeploymentPlanInput {
 }
 impl DescribeEdgeDeploymentPlanInput {
     /// Creates a new builder-style object to manufacture [`DescribeEdgeDeploymentPlanInput`](crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanInput).
-    pub fn builder() -> crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanInputBuilder{
+    pub fn builder() -> crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanInputBuilder {
         crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEdgeDeploymentPlanInput`](crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEdgeDeploymentPlanInputBuilder {
     pub(crate) edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct DescribeEdgeDeploymentPlanInputBuilder {
 }
 impl DescribeEdgeDeploymentPlanInputBuilder {
     /// <p>The name of the deployment plan to describe.</p>
-    pub fn edge_deployment_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the deployment plan to describe.</p>
-    pub fn set_edge_deployment_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_deployment_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = input;
         self
     }
@@ -100,12 +92,10 @@ impl DescribeEdgeDeploymentPlanInputBuilder {
         crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanInput {
-                edge_deployment_plan_name: self.edge_deployment_plan_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanInput {
+            edge_deployment_plan_name: self.edge_deployment_plan_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

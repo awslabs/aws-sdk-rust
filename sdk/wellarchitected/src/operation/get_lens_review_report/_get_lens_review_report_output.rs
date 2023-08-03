@@ -38,17 +38,14 @@ impl ::aws_http::request_id::RequestId for GetLensReviewReportOutput {
 }
 impl GetLensReviewReportOutput {
     /// Creates a new builder-style object to manufacture [`GetLensReviewReportOutput`](crate::operation::get_lens_review_report::GetLensReviewReportOutput).
-    pub fn builder(
-    ) -> crate::operation::get_lens_review_report::builders::GetLensReviewReportOutputBuilder {
+    pub fn builder() -> crate::operation::get_lens_review_report::builders::GetLensReviewReportOutputBuilder {
         crate::operation::get_lens_review_report::builders::GetLensReviewReportOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetLensReviewReportOutput`](crate::operation::get_lens_review_report::GetLensReviewReportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLensReviewReportOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) milestone_number: ::std::option::Option<i32>,
@@ -93,10 +90,7 @@ impl GetLensReviewReportOutputBuilder {
         self
     }
     /// <p>A report of a lens review.</p>
-    pub fn set_lens_review_report(
-        mut self,
-        input: ::std::option::Option<crate::types::LensReviewReport>,
-    ) -> Self {
+    pub fn set_lens_review_report(mut self, input: ::std::option::Option<crate::types::LensReviewReport>) -> Self {
         self.lens_review_report = input;
         self
     }

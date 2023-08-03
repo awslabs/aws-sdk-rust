@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for ListResolverRulesOutput {
 }
 impl ListResolverRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverRulesOutput`](crate::operation::list_resolver_rules::ListResolverRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_resolver_rules::builders::ListResolverRulesOutputBuilder {
+    pub fn builder() -> crate::operation::list_resolver_rules::builders::ListResolverRulesOutputBuilder {
         crate::operation::list_resolver_rules::builders::ListResolverRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolverRulesOutput`](crate::operation::list_resolver_rules::ListResolverRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolverRulesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -93,17 +90,12 @@ impl ListResolverRulesOutputBuilder {
         self
     }
     /// <p>The Resolver rules that were created using the current Amazon Web Services account and that match the specified filters, if any.</p>
-    pub fn set_resolver_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverRule>>,
-    ) -> Self {
+    pub fn set_resolver_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverRule>>) -> Self {
         self.resolver_rules = input;
         self
     }
     /// <p>The Resolver rules that were created using the current Amazon Web Services account and that match the specified filters, if any.</p>
-    pub fn get_resolver_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverRule>> {
+    pub fn get_resolver_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverRule>> {
         &self.resolver_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

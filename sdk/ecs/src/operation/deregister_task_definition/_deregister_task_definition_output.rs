@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeregisterTaskDefinitionOutput {
 }
 impl DeregisterTaskDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterTaskDefinitionOutput`](crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_task_definition::builders::DeregisterTaskDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_task_definition::builders::DeregisterTaskDefinitionOutputBuilder {
         crate::operation::deregister_task_definition::builders::DeregisterTaskDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterTaskDefinitionOutput`](crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterTaskDefinitionOutputBuilder {
     pub(crate) task_definition: ::std::option::Option<crate::types::TaskDefinition>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeregisterTaskDefinitionOutputBuilder {
         self
     }
     /// <p>The full description of the deregistered task.</p>
-    pub fn set_task_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskDefinition>,
-    ) -> Self {
+    pub fn set_task_definition(mut self, input: ::std::option::Option<crate::types::TaskDefinition>) -> Self {
         self.task_definition = input;
         self
     }
@@ -65,9 +58,7 @@ impl DeregisterTaskDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterTaskDefinitionOutput`](crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput {
+    pub fn build(self) -> crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput {
         crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput {
             task_definition: self.task_definition,
             _request_id: self._request_id,

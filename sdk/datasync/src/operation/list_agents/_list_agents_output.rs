@@ -36,9 +36,7 @@ impl ListAgentsOutput {
 
 /// A builder for [`ListAgentsOutput`](crate::operation::list_agents::ListAgentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAgentsOutputBuilder {
     pub(crate) agents: ::std::option::Option<::std::vec::Vec<crate::types::AgentListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListAgentsOutputBuilder {
         self
     }
     /// <p>A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified in the request. The list is ordered by the agents' Amazon Resource Names (ARNs).</p>
-    pub fn set_agents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentListEntry>>,
-    ) -> Self {
+    pub fn set_agents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentListEntry>>) -> Self {
         self.agents = input;
         self
     }
     /// <p>A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified in the request. The list is ordered by the agents' Amazon Resource Names (ARNs).</p>
-    pub fn get_agents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentListEntry>> {
+    pub fn get_agents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentListEntry>> {
         &self.agents
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>

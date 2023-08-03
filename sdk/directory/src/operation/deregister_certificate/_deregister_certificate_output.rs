@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterCertificateOutput {
 }
 impl DeregisterCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterCertificateOutput`](crate::operation::deregister_certificate::DeregisterCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_certificate::builders::DeregisterCertificateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_certificate::builders::DeregisterCertificateOutputBuilder {
         crate::operation::deregister_certificate::builders::DeregisterCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterCertificateOutput`](crate::operation::deregister_certificate::DeregisterCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterCertificateOutputBuilder {
     _request_id: Option<String>,
 }

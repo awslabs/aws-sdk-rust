@@ -28,9 +28,7 @@ impl StartObjectOutput {
 
 /// A builder for [`StartObjectOutput`](crate::operation::start_object::StartObjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartObjectOutputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

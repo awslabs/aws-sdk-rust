@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteLaunchProfileOutput {
 }
 impl DeleteLaunchProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchProfileOutput`](crate::operation::delete_launch_profile::DeleteLaunchProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_launch_profile::builders::DeleteLaunchProfileOutputBuilder {
-        crate::operation::delete_launch_profile::builders::DeleteLaunchProfileOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_launch_profile::builders::DeleteLaunchProfileOutputBuilder {
+        crate::operation::delete_launch_profile::builders::DeleteLaunchProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLaunchProfileOutput`](crate::operation::delete_launch_profile::DeleteLaunchProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLaunchProfileOutputBuilder {
     pub(crate) launch_profile: ::std::option::Option<crate::types::LaunchProfile>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteLaunchProfileOutputBuilder {
         self
     }
     /// <p>The launch profile.</p>
-    pub fn set_launch_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchProfile>,
-    ) -> Self {
+    pub fn set_launch_profile(mut self, input: ::std::option::Option<crate::types::LaunchProfile>) -> Self {
         self.launch_profile = input;
         self
     }

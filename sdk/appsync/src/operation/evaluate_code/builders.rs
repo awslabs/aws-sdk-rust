@@ -10,10 +10,7 @@ impl EvaluateCodeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::evaluate_code::EvaluateCodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::evaluate_code::EvaluateCodeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::evaluate_code::EvaluateCodeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.evaluate_code();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl EvaluateCodeFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::evaluate_code::EvaluateCode,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::evaluate_code::EvaluateCode, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::evaluate_code::EvaluateCodeError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl EvaluateCodeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl EvaluateCodeFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::evaluate_code::EvaluateCode,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::evaluate_code::EvaluateCode, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::evaluate_code::EvaluateCodeError>,
     > {
         self.customize_middleware().await
@@ -118,10 +106,7 @@ impl EvaluateCodeFluentBuilder {
         self
     }
     /// <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
-    pub fn set_runtime(
-        mut self,
-        input: ::std::option::Option<crate::types::AppSyncRuntime>,
-    ) -> Self {
+    pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::AppSyncRuntime>) -> Self {
         self.inner = self.inner.set_runtime(input);
         self
     }

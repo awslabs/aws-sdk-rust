@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`actions_suppressor_extension_period(i32)`](crate::operation::put_composite_alarm::builders::PutCompositeAlarmFluentBuilder::actions_suppressor_extension_period) / [`set_actions_suppressor_extension_period(Option<i32>)`](crate::operation::put_composite_alarm::builders::PutCompositeAlarmFluentBuilder::set_actions_suppressor_extension_period): <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>   <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>  </important>
     /// - On success, responds with [`PutCompositeAlarmOutput`](crate::operation::put_composite_alarm::PutCompositeAlarmOutput)
     /// - On failure, responds with [`SdkError<PutCompositeAlarmError>`](crate::operation::put_composite_alarm::PutCompositeAlarmError)
-    pub fn put_composite_alarm(
-        &self,
-    ) -> crate::operation::put_composite_alarm::builders::PutCompositeAlarmFluentBuilder {
-        crate::operation::put_composite_alarm::builders::PutCompositeAlarmFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_composite_alarm(&self) -> crate::operation::put_composite_alarm::builders::PutCompositeAlarmFluentBuilder {
+        crate::operation::put_composite_alarm::builders::PutCompositeAlarmFluentBuilder::new(self.handle.clone())
     }
 }

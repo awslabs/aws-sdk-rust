@@ -95,9 +95,7 @@ impl StreamingDistributionSummary {
 
 /// A builder for [`StreamingDistributionSummary`](crate::types::StreamingDistributionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamingDistributionSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -160,10 +158,7 @@ impl StreamingDistributionSummaryBuilder {
         self
     }
     /// <p>The date and time the distribution was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -221,10 +216,7 @@ impl StreamingDistributionSummaryBuilder {
     }
     /// <p>A complex type that specifies the Amazon Web Services accounts, if any, that you want to allow to create signed URLs for private content. If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_trusted_signers(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustedSigners>,
-    ) -> Self {
+    pub fn set_trusted_signers(mut self, input: ::std::option::Option<crate::types::TrustedSigners>) -> Self {
         self.trusted_signers = input;
         self
     }
@@ -253,10 +245,7 @@ impl StreamingDistributionSummaryBuilder {
         self
     }
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
-    pub fn set_price_class(
-        mut self,
-        input: ::std::option::Option<crate::types::PriceClass>,
-    ) -> Self {
+    pub fn set_price_class(mut self, input: ::std::option::Option<crate::types::PriceClass>) -> Self {
         self.price_class = input;
         self
     }

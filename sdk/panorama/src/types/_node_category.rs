@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NodeCategory {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for NodeCategory {
             "MEDIA_SINK" => NodeCategory::MediaSink,
             "MEDIA_SOURCE" => NodeCategory::MediaSource,
             "ML_MODEL" => NodeCategory::MlModel,
-            other => {
-                NodeCategory::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => NodeCategory::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

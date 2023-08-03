@@ -10,10 +10,7 @@ impl UpdateSmsTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_sms_template::UpdateSmsTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sms_template::UpdateSmsTemplateError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sms_template::UpdateSmsTemplateError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_sms_template();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateSmsTemplateFluentBuilder {
         }
     }
     /// Access the UpdateSmsTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_sms_template::builders::UpdateSmsTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_sms_template::builders::UpdateSmsTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateSmsTemplateFluentBuilder {
             crate::operation::update_sms_template::UpdateSmsTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sms_template::UpdateSmsTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sms_template::UpdateSmsTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateSmsTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateSmsTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sms_template::UpdateSmsTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sms_template::UpdateSmsTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sms_template::UpdateSmsTemplateError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateSmsTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sms_template::UpdateSmsTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sms_template::UpdateSmsTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sms_template::UpdateSmsTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateSmsTemplateFluentBuilder {
             crate::operation::update_sms_template::UpdateSmsTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_sms_template::UpdateSmsTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_sms_template::UpdateSmsTemplateError>,
     > {
         self.customize_middleware().await
     }
@@ -145,32 +129,21 @@ impl UpdateSmsTemplateFluentBuilder {
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    pub fn set_sms_template_request(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsTemplateRequest>,
-    ) -> Self {
+    pub fn set_sms_template_request(mut self, input: ::std::option::Option<crate::types::SmsTemplateRequest>) -> Self {
         self.inner = self.inner.set_sms_template_request(input);
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    pub fn get_sms_template_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmsTemplateRequest> {
+    pub fn get_sms_template_request(&self) -> &::std::option::Option<crate::types::SmsTemplateRequest> {
         self.inner.get_sms_template_request()
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }

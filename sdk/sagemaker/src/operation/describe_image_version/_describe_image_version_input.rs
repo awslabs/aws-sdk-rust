@@ -29,17 +29,14 @@ impl DescribeImageVersionInput {
 }
 impl DescribeImageVersionInput {
     /// Creates a new builder-style object to manufacture [`DescribeImageVersionInput`](crate::operation::describe_image_version::DescribeImageVersionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_image_version::builders::DescribeImageVersionInputBuilder {
+    pub fn builder() -> crate::operation::describe_image_version::builders::DescribeImageVersionInputBuilder {
         crate::operation::describe_image_version::builders::DescribeImageVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImageVersionInput`](crate::operation::describe_image_version::DescribeImageVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImageVersionInputBuilder {
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i32>,
@@ -91,16 +88,12 @@ impl DescribeImageVersionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImageVersionInput`](crate::operation::describe_image_version::DescribeImageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_image_version::DescribeImageVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_image_version::DescribeImageVersionInput {
-                image_name: self.image_name,
-                version: self.version,
-                alias: self.alias,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_image_version::DescribeImageVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_image_version::DescribeImageVersionInput {
+            image_name: self.image_name,
+            version: self.version,
+            alias: self.alias,
+        })
     }
 }

@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`calling_name(Option<String>)`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput::calling_name): <p>The default outbound calling name for the account.</p>
     ///   - [`calling_name_updated_timestamp(Option<DateTime>)`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsOutput::calling_name_updated_timestamp): <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<GetPhoneNumberSettingsError>`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsError)
-    pub fn get_phone_number_settings(
-        &self,
-    ) -> crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsFluentBuilder
-    {
+    pub fn get_phone_number_settings(&self) -> crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsFluentBuilder {
         crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsFluentBuilder::new(self.handle.clone())
     }
 }

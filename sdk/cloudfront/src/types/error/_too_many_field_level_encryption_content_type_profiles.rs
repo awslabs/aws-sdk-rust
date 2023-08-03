@@ -27,34 +27,27 @@ impl ::std::fmt::Display for TooManyFieldLevelEncryptionContentTypeProfiles {
     }
 }
 impl ::std::error::Error for TooManyFieldLevelEncryptionContentTypeProfiles {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::TooManyFieldLevelEncryptionContentTypeProfiles
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::TooManyFieldLevelEncryptionContentTypeProfiles {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyFieldLevelEncryptionContentTypeProfiles
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyFieldLevelEncryptionContentTypeProfiles {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl TooManyFieldLevelEncryptionContentTypeProfiles {
     /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionContentTypeProfiles`](crate::types::error::TooManyFieldLevelEncryptionContentTypeProfiles).
-    pub fn builder(
-    ) -> crate::types::error::builders::TooManyFieldLevelEncryptionContentTypeProfilesBuilder {
+    pub fn builder() -> crate::types::error::builders::TooManyFieldLevelEncryptionContentTypeProfilesBuilder {
         crate::types::error::builders::TooManyFieldLevelEncryptionContentTypeProfilesBuilder::default()
     }
 }
 
 /// A builder for [`TooManyFieldLevelEncryptionContentTypeProfiles`](crate::types::error::TooManyFieldLevelEncryptionContentTypeProfiles).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TooManyFieldLevelEncryptionContentTypeProfilesBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl TooManyFieldLevelEncryptionContentTypeProfilesBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

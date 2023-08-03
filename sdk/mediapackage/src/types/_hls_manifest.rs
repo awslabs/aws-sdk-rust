@@ -33,8 +33,7 @@ pub struct HlsManifest {
     pub ad_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>>,
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
     #[doc(hidden)]
-    pub ads_on_delivery_restrictions:
-        ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>,
+    pub ads_on_delivery_restrictions: ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>,
 }
 impl HlsManifest {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
@@ -74,9 +73,7 @@ impl HlsManifest {
         self.ad_triggers.as_deref()
     }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
-    pub fn ads_on_delivery_restrictions(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AdsOnDeliveryRestrictions> {
+    pub fn ads_on_delivery_restrictions(&self) -> ::std::option::Option<&crate::types::AdsOnDeliveryRestrictions> {
         self.ads_on_delivery_restrictions.as_ref()
     }
 }
@@ -89,9 +86,7 @@ impl HlsManifest {
 
 /// A builder for [`HlsManifest`](crate::types::HlsManifest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HlsManifestBuilder {
     pub(crate) ad_markers: ::std::option::Option<crate::types::AdMarkers>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -102,8 +97,7 @@ pub struct HlsManifestBuilder {
     pub(crate) program_date_time_interval_seconds: ::std::option::Option<i32>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) ad_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>>,
-    pub(crate) ads_on_delivery_restrictions:
-        ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>,
+    pub(crate) ads_on_delivery_restrictions: ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>,
 }
 impl HlsManifestBuilder {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
@@ -149,18 +143,12 @@ impl HlsManifestBuilder {
         &self.include_iframe_only_stream
     }
     /// An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.
-    pub fn manifest_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn manifest_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_name = ::std::option::Option::Some(input.into());
         self
     }
     /// An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.
-    pub fn set_manifest_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_manifest_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manifest_name = input;
         self
     }
@@ -174,10 +162,7 @@ impl HlsManifestBuilder {
         self
     }
     /// The HTTP Live Streaming (HLS) playlist type. When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE entry will be included in the media playlist.
-    pub fn set_playlist_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PlaylistType>,
-    ) -> Self {
+    pub fn set_playlist_type(mut self, input: ::std::option::Option<crate::types::PlaylistType>) -> Self {
         self.playlist_type = input;
         self
     }
@@ -205,10 +190,7 @@ impl HlsManifestBuilder {
         self
     }
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
-    pub fn set_program_date_time_interval_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_program_date_time_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.program_date_time_interval_seconds = input;
         self
     }
@@ -242,39 +224,26 @@ impl HlsManifestBuilder {
         self
     }
     /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
-    pub fn set_ad_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>>,
-    ) -> Self {
+    pub fn set_ad_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>>) -> Self {
         self.ad_triggers = input;
         self
     }
     /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
-    pub fn get_ad_triggers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>> {
+    pub fn get_ad_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>> {
         &self.ad_triggers
     }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
-    pub fn ads_on_delivery_restrictions(
-        mut self,
-        input: crate::types::AdsOnDeliveryRestrictions,
-    ) -> Self {
+    pub fn ads_on_delivery_restrictions(mut self, input: crate::types::AdsOnDeliveryRestrictions) -> Self {
         self.ads_on_delivery_restrictions = ::std::option::Option::Some(input);
         self
     }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
-    pub fn set_ads_on_delivery_restrictions(
-        mut self,
-        input: ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>,
-    ) -> Self {
+    pub fn set_ads_on_delivery_restrictions(mut self, input: ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>) -> Self {
         self.ads_on_delivery_restrictions = input;
         self
     }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
-    pub fn get_ads_on_delivery_restrictions(
-        &self,
-    ) -> &::std::option::Option<crate::types::AdsOnDeliveryRestrictions> {
+    pub fn get_ads_on_delivery_restrictions(&self) -> &::std::option::Option<crate::types::AdsOnDeliveryRestrictions> {
         &self.ads_on_delivery_restrictions
     }
     /// Consumes the builder and constructs a [`HlsManifest`](crate::types::HlsManifest).

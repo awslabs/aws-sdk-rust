@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`password_data(Option<String>)`](crate::operation::get_password_data::GetPasswordDataOutput::password_data): <p>The password of the instance. Returns an empty string if the password is not available.</p>
     ///   - [`timestamp(Option<DateTime>)`](crate::operation::get_password_data::GetPasswordDataOutput::timestamp): <p>The time the data was last updated.</p>
     /// - On failure, responds with [`SdkError<GetPasswordDataError>`](crate::operation::get_password_data::GetPasswordDataError)
-    pub fn get_password_data(
-        &self,
-    ) -> crate::operation::get_password_data::builders::GetPasswordDataFluentBuilder {
-        crate::operation::get_password_data::builders::GetPasswordDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_password_data(&self) -> crate::operation::get_password_data::builders::GetPasswordDataFluentBuilder {
+        crate::operation::get_password_data::builders::GetPasswordDataFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`rule_group(Option<RuleGroup>)`](crate::operation::create_rule_group::CreateRuleGroupOutput::rule_group): <p>An empty <code>RuleGroup</code>.</p>
     ///   - [`change_token(Option<String>)`](crate::operation::create_rule_group::CreateRuleGroupOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<CreateRuleGroupError>`](crate::operation::create_rule_group::CreateRuleGroupError)
-    pub fn create_rule_group(
-        &self,
-    ) -> crate::operation::create_rule_group::builders::CreateRuleGroupFluentBuilder {
-        crate::operation::create_rule_group::builders::CreateRuleGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_rule_group(&self) -> crate::operation::create_rule_group::builders::CreateRuleGroupFluentBuilder {
+        crate::operation::create_rule_group::builders::CreateRuleGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FolderFilterAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -74,16 +68,12 @@ impl ::std::convert::From<&str> for FolderFilterAttribute {
         match s {
             "DIRECT_QUICKSIGHT_OWNER" => FolderFilterAttribute::DirectQuicksightOwner,
             "DIRECT_QUICKSIGHT_SOLE_OWNER" => FolderFilterAttribute::DirectQuicksightSoleOwner,
-            "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" => {
-                FolderFilterAttribute::DirectQuicksightViewerOrOwner
-            }
+            "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" => FolderFilterAttribute::DirectQuicksightViewerOrOwner,
             "FOLDER_NAME" => FolderFilterAttribute::FolderName,
             "PARENT_FOLDER_ARN" => FolderFilterAttribute::ParentFolderArn,
             "QUICKSIGHT_OWNER" => FolderFilterAttribute::QuicksightOwner,
             "QUICKSIGHT_VIEWER_OR_OWNER" => FolderFilterAttribute::QuicksightViewerOrOwner,
-            other => FolderFilterAttribute::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => FolderFilterAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -100,9 +90,7 @@ impl FolderFilterAttribute {
         match self {
             FolderFilterAttribute::DirectQuicksightOwner => "DIRECT_QUICKSIGHT_OWNER",
             FolderFilterAttribute::DirectQuicksightSoleOwner => "DIRECT_QUICKSIGHT_SOLE_OWNER",
-            FolderFilterAttribute::DirectQuicksightViewerOrOwner => {
-                "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"
-            }
+            FolderFilterAttribute::DirectQuicksightViewerOrOwner => "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER",
             FolderFilterAttribute::FolderName => "FOLDER_NAME",
             FolderFilterAttribute::ParentFolderArn => "PARENT_FOLDER_ARN",
             FolderFilterAttribute::QuicksightOwner => "QUICKSIGHT_OWNER",

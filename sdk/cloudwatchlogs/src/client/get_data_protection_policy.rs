@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`policy_document(Option<String>)`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyOutput::policy_document): <p>The data protection policy document for this log group.</p>
     ///   - [`last_updated_time(Option<i64>)`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyOutput::last_updated_time): <p>The date and time that this policy was most recently updated.</p>
     /// - On failure, responds with [`SdkError<GetDataProtectionPolicyError>`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyError)
-    pub fn get_data_protection_policy(
-        &self,
-    ) -> crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyFluentBuilder
-    {
+    pub fn get_data_protection_policy(&self) -> crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyFluentBuilder {
         crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyFluentBuilder::new(self.handle.clone())
     }
 }

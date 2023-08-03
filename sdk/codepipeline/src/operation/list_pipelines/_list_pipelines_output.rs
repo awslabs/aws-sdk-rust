@@ -36,9 +36,7 @@ impl ListPipelinesOutput {
 
 /// A builder for [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelinesOutputBuilder {
     pub(crate) pipelines: ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +55,12 @@ impl ListPipelinesOutputBuilder {
         self
     }
     /// <p>The list of pipelines.</p>
-    pub fn set_pipelines(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>>,
-    ) -> Self {
+    pub fn set_pipelines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>>) -> Self {
         self.pipelines = input;
         self
     }
     /// <p>The list of pipelines.</p>
-    pub fn get_pipelines(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>> {
+    pub fn get_pipelines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>> {
         &self.pipelines
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>

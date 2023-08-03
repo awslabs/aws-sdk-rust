@@ -6,15 +6,11 @@
 pub struct IntentLevelSlotResolutionTestResults {
     /// <p>Indicates the items for the slot level resolution for the intents.</p>
     #[doc(hidden)]
-    pub items: ::std::option::Option<
-        ::std::vec::Vec<crate::types::IntentLevelSlotResolutionTestResultItem>,
-    >,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::IntentLevelSlotResolutionTestResultItem>>,
 }
 impl IntentLevelSlotResolutionTestResults {
     /// <p>Indicates the items for the slot level resolution for the intents.</p>
-    pub fn items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IntentLevelSlotResolutionTestResultItem]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::IntentLevelSlotResolutionTestResultItem]> {
         self.items.as_deref()
     }
 }
@@ -27,13 +23,9 @@ impl IntentLevelSlotResolutionTestResults {
 
 /// A builder for [`IntentLevelSlotResolutionTestResults`](crate::types::IntentLevelSlotResolutionTestResults).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentLevelSlotResolutionTestResultsBuilder {
-    pub(crate) items: ::std::option::Option<
-        ::std::vec::Vec<crate::types::IntentLevelSlotResolutionTestResultItem>,
-    >,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::IntentLevelSlotResolutionTestResultItem>>,
 }
 impl IntentLevelSlotResolutionTestResultsBuilder {
     /// Appends an item to `items`.
@@ -48,21 +40,12 @@ impl IntentLevelSlotResolutionTestResultsBuilder {
         self
     }
     /// <p>Indicates the items for the slot level resolution for the intents.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::IntentLevelSlotResolutionTestResultItem>,
-        >,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntentLevelSlotResolutionTestResultItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Indicates the items for the slot level resolution for the intents.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::IntentLevelSlotResolutionTestResultItem>,
-    > {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntentLevelSlotResolutionTestResultItem>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`IntentLevelSlotResolutionTestResults`](crate::types::IntentLevelSlotResolutionTestResults).

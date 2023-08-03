@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateConfigurationSetSendingEnabledO
 }
 impl UpdateConfigurationSetSendingEnabledOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetSendingEnabledOutput`](crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledOutput).
-    pub fn builder() -> crate::operation::update_configuration_set_sending_enabled::builders::UpdateConfigurationSetSendingEnabledOutputBuilder{
+    pub fn builder() -> crate::operation::update_configuration_set_sending_enabled::builders::UpdateConfigurationSetSendingEnabledOutputBuilder {
         crate::operation::update_configuration_set_sending_enabled::builders::UpdateConfigurationSetSendingEnabledOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConfigurationSetSendingEnabledOutput`](crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfigurationSetSendingEnabledOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl UpdateConfigurationSetSendingEnabledOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationSetSendingEnabledOutput`](crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledOutput).
-    pub fn build(self) -> crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledOutput{
+    pub fn build(self) -> crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledOutput {
         crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledOutput {
             _request_id: self._request_id,
         }

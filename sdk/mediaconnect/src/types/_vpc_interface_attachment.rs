@@ -23,26 +23,18 @@ impl VpcInterfaceAttachment {
 
 /// A builder for [`VpcInterfaceAttachment`](crate::types::VpcInterfaceAttachment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcInterfaceAttachmentBuilder {
     pub(crate) vpc_interface_name: ::std::option::Option<::std::string::String>,
 }
 impl VpcInterfaceAttachmentBuilder {
     /// The name of the VPC interface to use for this resource.
-    pub fn vpc_interface_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_interface_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the VPC interface to use for this resource.
-    pub fn set_vpc_interface_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_interface_name = input;
         self
     }

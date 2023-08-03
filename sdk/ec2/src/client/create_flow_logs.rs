@@ -22,11 +22,7 @@ impl super::Client {
     ///   - [`flow_log_ids(Option<Vec<String>>)`](crate::operation::create_flow_logs::CreateFlowLogsOutput::flow_log_ids): <p>The IDs of the flow logs.</p>
     ///   - [`unsuccessful(Option<Vec<UnsuccessfulItem>>)`](crate::operation::create_flow_logs::CreateFlowLogsOutput::unsuccessful): <p>Information about the flow logs that could not be created successfully.</p>
     /// - On failure, responds with [`SdkError<CreateFlowLogsError>`](crate::operation::create_flow_logs::CreateFlowLogsError)
-    pub fn create_flow_logs(
-        &self,
-    ) -> crate::operation::create_flow_logs::builders::CreateFlowLogsFluentBuilder {
-        crate::operation::create_flow_logs::builders::CreateFlowLogsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_flow_logs(&self) -> crate::operation::create_flow_logs::builders::CreateFlowLogsFluentBuilder {
+        crate::operation::create_flow_logs::builders::CreateFlowLogsFluentBuilder::new(self.handle.clone())
     }
 }

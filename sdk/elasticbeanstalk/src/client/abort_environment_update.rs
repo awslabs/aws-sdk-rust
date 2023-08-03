@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`environment_name(impl ::std::convert::Into<String>)`](crate::operation::abort_environment_update::builders::AbortEnvironmentUpdateFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::abort_environment_update::builders::AbortEnvironmentUpdateFluentBuilder::set_environment_name): <p>This specifies the name of the environment with the in-progress update that you want to cancel.</p>
     /// - On success, responds with [`AbortEnvironmentUpdateOutput`](crate::operation::abort_environment_update::AbortEnvironmentUpdateOutput)
     /// - On failure, responds with [`SdkError<AbortEnvironmentUpdateError>`](crate::operation::abort_environment_update::AbortEnvironmentUpdateError)
-    pub fn abort_environment_update(
-        &self,
-    ) -> crate::operation::abort_environment_update::builders::AbortEnvironmentUpdateFluentBuilder
-    {
+    pub fn abort_environment_update(&self) -> crate::operation::abort_environment_update::builders::AbortEnvironmentUpdateFluentBuilder {
         crate::operation::abort_environment_update::builders::AbortEnvironmentUpdateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -42,18 +42,14 @@ impl ListAssetRelationshipsInput {
 }
 impl ListAssetRelationshipsInput {
     /// Creates a new builder-style object to manufacture [`ListAssetRelationshipsInput`](crate::operation::list_asset_relationships::ListAssetRelationshipsInput).
-    pub fn builder(
-    ) -> crate::operation::list_asset_relationships::builders::ListAssetRelationshipsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_asset_relationships::builders::ListAssetRelationshipsInputBuilder {
         crate::operation::list_asset_relationships::builders::ListAssetRelationshipsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssetRelationshipsInput`](crate::operation::list_asset_relationships::ListAssetRelationshipsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssetRelationshipsInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) traversal_type: ::std::option::Option<crate::types::TraversalType>,
@@ -87,10 +83,7 @@ impl ListAssetRelationshipsInputBuilder {
     /// <ul>
     /// <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>
     /// </ul>
-    pub fn set_traversal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TraversalType>,
-    ) -> Self {
+    pub fn set_traversal_type(mut self, input: ::std::option::Option<crate::types::TraversalType>) -> Self {
         self.traversal_type = input;
         self
     }
@@ -132,17 +125,13 @@ impl ListAssetRelationshipsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssetRelationshipsInput`](crate::operation::list_asset_relationships::ListAssetRelationshipsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_asset_relationships::ListAssetRelationshipsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_asset_relationships::ListAssetRelationshipsInput {
-                asset_id: self.asset_id,
-                traversal_type: self.traversal_type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_asset_relationships::ListAssetRelationshipsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_asset_relationships::ListAssetRelationshipsInput {
+            asset_id: self.asset_id,
+            traversal_type: self.traversal_type,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

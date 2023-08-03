@@ -11,9 +11,7 @@ pub fn ser_input_update(
     }
     if let Some(var_3) = &input.input_processing_configuration_update {
         #[allow(unused_mut)]
-        let mut object_4 = object
-            .key("InputProcessingConfigurationUpdate")
-            .start_object();
+        let mut object_4 = object.key("InputProcessingConfigurationUpdate").start_object();
         crate::protocol_serde::shape_input_processing_configuration_update::ser_input_processing_configuration_update(&mut object_4, var_3)?;
         object_4.finish();
     }
@@ -32,19 +30,13 @@ pub fn ser_input_update(
     if let Some(var_9) = &input.input_schema_update {
         #[allow(unused_mut)]
         let mut object_10 = object.key("InputSchemaUpdate").start_object();
-        crate::protocol_serde::shape_input_schema_update::ser_input_schema_update(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_input_schema_update::ser_input_schema_update(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.input_parallelism_update {
         #[allow(unused_mut)]
         let mut object_12 = object.key("InputParallelismUpdate").start_object();
-        crate::protocol_serde::shape_input_parallelism_update::ser_input_parallelism_update(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_input_parallelism_update::ser_input_parallelism_update(&mut object_12, var_11)?;
         object_12.finish();
     }
     Ok(())

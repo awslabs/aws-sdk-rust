@@ -35,9 +35,7 @@ impl CreateAccessOutput {
 
 /// A builder for [`CreateAccessOutput`](crate::operation::create_access::CreateAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccessOutputBuilder {
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,

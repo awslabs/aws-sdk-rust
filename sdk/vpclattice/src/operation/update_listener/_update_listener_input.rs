@@ -36,9 +36,7 @@ impl UpdateListenerInput {
 
 /// A builder for [`UpdateListenerInput`](crate::operation::update_listener::UpdateListenerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateListenerInputBuilder {
     pub(crate) service_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) listener_identifier: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct UpdateListenerInputBuilder {
 }
 impl UpdateListenerInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_identifier = input;
         self
     }
@@ -66,18 +58,12 @@ impl UpdateListenerInputBuilder {
         &self.service_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn set_listener_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_listener_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.listener_identifier = input;
         self
     }
@@ -91,10 +77,7 @@ impl UpdateListenerInputBuilder {
         self
     }
     /// <p>The action for the default rule.</p>
-    pub fn set_default_action(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleAction>,
-    ) -> Self {
+    pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.default_action = input;
         self
     }
@@ -105,10 +88,7 @@ impl UpdateListenerInputBuilder {
     /// Consumes the builder and constructs a [`UpdateListenerInput`](crate::operation::update_listener::UpdateListenerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_listener::UpdateListenerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_listener::UpdateListenerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_listener::UpdateListenerInput {
             service_identifier: self.service_identifier,
             listener_identifier: self.listener_identifier,

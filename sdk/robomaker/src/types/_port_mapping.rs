@@ -37,9 +37,7 @@ impl PortMapping {
 
 /// A builder for [`PortMapping`](crate::types::PortMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PortMappingBuilder {
     pub(crate) job_port: ::std::option::Option<i32>,
     pub(crate) application_port: ::std::option::Option<i32>,

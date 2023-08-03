@@ -26,7 +26,7 @@ impl RemoveSourceServerActionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveSourceServerActionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_source_server_action::builders::RemoveSourceServerActionInputBuilder,
+    inner: crate::operation::remove_source_server_action::builders::RemoveSourceServerActionInputBuilder,
 }
 impl RemoveSourceServerActionFluentBuilder {
     /// Creates a new `RemoveSourceServerAction`.
@@ -37,7 +37,7 @@ impl RemoveSourceServerActionFluentBuilder {
         }
     }
     /// Access the RemoveSourceServerAction as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_source_server_action::builders::RemoveSourceServerActionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_source_server_action::builders::RemoveSourceServerActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RemoveSourceServerActionFluentBuilder {
             crate::operation::remove_source_server_action::RemoveSourceServerAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_source_server_action::RemoveSourceServerActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_source_server_action::RemoveSourceServerActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RemoveSourceServerActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RemoveSourceServerActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_source_server_action::RemoveSourceServerActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_source_server_action::RemoveSourceServerActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_source_server_action::RemoveSourceServerActionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RemoveSourceServerActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_source_server_action::RemoveSourceServerActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_source_server_action::RemoveSourceServerActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_source_server_action::RemoveSourceServerActionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl RemoveSourceServerActionFluentBuilder {
             crate::operation::remove_source_server_action::RemoveSourceServerAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_source_server_action::RemoveSourceServerActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_source_server_action::RemoveSourceServerActionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Source server ID of the post migration custom action to remove.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>Source server ID of the post migration custom action to remove.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
     }

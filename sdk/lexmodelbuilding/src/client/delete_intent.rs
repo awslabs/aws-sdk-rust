@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_intent::builders::DeleteIntentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_intent::builders::DeleteIntentFluentBuilder::set_name): <p>The name of the intent. The name is case sensitive. </p>
     /// - On success, responds with [`DeleteIntentOutput`](crate::operation::delete_intent::DeleteIntentOutput)
     /// - On failure, responds with [`SdkError<DeleteIntentError>`](crate::operation::delete_intent::DeleteIntentError)
-    pub fn delete_intent(
-        &self,
-    ) -> crate::operation::delete_intent::builders::DeleteIntentFluentBuilder {
-        crate::operation::delete_intent::builders::DeleteIntentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_intent(&self) -> crate::operation::delete_intent::builders::DeleteIntentFluentBuilder {
+        crate::operation::delete_intent::builders::DeleteIntentFluentBuilder::new(self.handle.clone())
     }
 }

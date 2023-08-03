@@ -36,9 +36,7 @@ impl CreateApiKeyInput {
 
 /// A builder for [`CreateApiKeyInput`](crate::operation::create_api_key::CreateApiKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApiKeyInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl CreateApiKeyInputBuilder {
     /// Consumes the builder and constructs a [`CreateApiKeyInput`](crate::operation::create_api_key::CreateApiKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_api_key::CreateApiKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_api_key::CreateApiKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_api_key::CreateApiKeyInput {
             api_id: self.api_id,
             description: self.description,

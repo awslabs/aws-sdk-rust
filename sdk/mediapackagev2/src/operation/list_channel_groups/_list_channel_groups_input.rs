@@ -22,17 +22,14 @@ impl ListChannelGroupsInput {
 }
 impl ListChannelGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListChannelGroupsInput`](crate::operation::list_channel_groups::ListChannelGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_channel_groups::builders::ListChannelGroupsInputBuilder {
+    pub fn builder() -> crate::operation::list_channel_groups::builders::ListChannelGroupsInputBuilder {
         crate::operation::list_channel_groups::builders::ListChannelGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListChannelGroupsInput`](crate::operation::list_channel_groups::ListChannelGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChannelGroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl ListChannelGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelGroupsInput`](crate::operation::list_channel_groups::ListChannelGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_channel_groups::ListChannelGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_channel_groups::ListChannelGroupsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_channel_groups::ListChannelGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_channel_groups::ListChannelGroupsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

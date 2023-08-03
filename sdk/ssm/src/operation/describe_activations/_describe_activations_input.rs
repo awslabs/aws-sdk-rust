@@ -29,20 +29,16 @@ impl DescribeActivationsInput {
 }
 impl DescribeActivationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeActivationsInput`](crate::operation::describe_activations::DescribeActivationsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_activations::builders::DescribeActivationsInputBuilder {
+    pub fn builder() -> crate::operation::describe_activations::builders::DescribeActivationsInputBuilder {
         crate::operation::describe_activations::builders::DescribeActivationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeActivationsInput`](crate::operation::describe_activations::DescribeActivationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeActivationsInputBuilder {
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::DescribeActivationsFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DescribeActivationsFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -59,17 +55,12 @@ impl DescribeActivationsInputBuilder {
         self
     }
     /// <p>A filter to view information about your activations.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeActivationsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeActivationsFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>A filter to view information about your activations.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeActivationsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeActivationsFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -103,16 +94,12 @@ impl DescribeActivationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeActivationsInput`](crate::operation::describe_activations::DescribeActivationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_activations::DescribeActivationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_activations::DescribeActivationsInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_activations::DescribeActivationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_activations::DescribeActivationsInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

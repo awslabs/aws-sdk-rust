@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`role_name(impl ::std::convert::Into<String>)`](crate::operation::add_role_to_instance_profile::builders::AddRoleToInstanceProfileFluentBuilder::role_name) / [`set_role_name(Option<String>)`](crate::operation::add_role_to_instance_profile::builders::AddRoleToInstanceProfileFluentBuilder::set_role_name): <p>The name of the role to add.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     /// - On success, responds with [`AddRoleToInstanceProfileOutput`](crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput)
     /// - On failure, responds with [`SdkError<AddRoleToInstanceProfileError>`](crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileError)
-    pub fn add_role_to_instance_profile(&self) -> crate::operation::add_role_to_instance_profile::builders::AddRoleToInstanceProfileFluentBuilder{
+    pub fn add_role_to_instance_profile(&self) -> crate::operation::add_role_to_instance_profile::builders::AddRoleToInstanceProfileFluentBuilder {
         crate::operation::add_role_to_instance_profile::builders::AddRoleToInstanceProfileFluentBuilder::new(self.handle.clone())
     }
 }

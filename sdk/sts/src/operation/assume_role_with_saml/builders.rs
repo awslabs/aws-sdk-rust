@@ -10,10 +10,7 @@ impl AssumeRoleWithSamlInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::assume_role_with_saml::AssumeRoleWithSamlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.assume_role_with_saml();
         fluent_builder.inner = self;
@@ -65,9 +62,7 @@ impl AssumeRoleWithSAMLFluentBuilder {
         }
     }
     /// Access the AssumeRoleWithSAML as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::assume_role_with_saml::builders::AssumeRoleWithSamlInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::assume_role_with_saml::builders::AssumeRoleWithSamlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl AssumeRoleWithSAMLFluentBuilder {
             crate::operation::assume_role_with_saml::AssumeRoleWithSAML,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -91,10 +84,7 @@ impl AssumeRoleWithSAMLFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -103,9 +93,7 @@ impl AssumeRoleWithSAMLFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assume_role_with_saml::AssumeRoleWithSamlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError>,
     > {
         let op = self
             .inner
@@ -128,9 +116,7 @@ impl AssumeRoleWithSAMLFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assume_role_with_saml::AssumeRoleWithSamlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError>,
     > {
         self.send_middleware().await
     }
@@ -144,9 +130,7 @@ impl AssumeRoleWithSAMLFluentBuilder {
             crate::operation::assume_role_with_saml::AssumeRoleWithSAML,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError>,
     > {
         self.customize_middleware().await
     }
@@ -165,18 +149,12 @@ impl AssumeRoleWithSAMLFluentBuilder {
         self.inner.get_role_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_arn(input);
         self
     }
@@ -186,19 +164,13 @@ impl AssumeRoleWithSAMLFluentBuilder {
     }
     /// <p>The base64 encoded SAML authentication response provided by the IdP.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying Party and Adding Claims</a> in the <i>IAM User Guide</i>. </p>
-    pub fn saml_assertion(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn saml_assertion(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.saml_assertion(input.into());
         self
     }
     /// <p>The base64 encoded SAML authentication response provided by the IdP.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying Party and Adding Claims</a> in the <i>IAM User Guide</i>. </p>
-    pub fn set_saml_assertion(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_saml_assertion(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_saml_assertion(input);
         self
     }
@@ -225,10 +197,7 @@ impl AssumeRoleWithSAMLFluentBuilder {
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
     /// <p>Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_policy_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>>,
-    ) -> Self {
+    pub fn set_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>>) -> Self {
         self.inner = self.inner.set_policy_arns(input);
         self
     }
@@ -237,9 +206,7 @@ impl AssumeRoleWithSAMLFluentBuilder {
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
     /// <p>Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn get_policy_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>> {
+    pub fn get_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>> {
         self.inner.get_policy_arns()
     }
     /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>

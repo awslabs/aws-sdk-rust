@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for PutMetricStreamOutput {
 }
 impl PutMetricStreamOutput {
     /// Creates a new builder-style object to manufacture [`PutMetricStreamOutput`](crate::operation::put_metric_stream::PutMetricStreamOutput).
-    pub fn builder() -> crate::operation::put_metric_stream::builders::PutMetricStreamOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_metric_stream::builders::PutMetricStreamOutputBuilder {
         crate::operation::put_metric_stream::builders::PutMetricStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutMetricStreamOutput`](crate::operation::put_metric_stream::PutMetricStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMetricStreamOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

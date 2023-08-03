@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeManagedEndpointOutput {
 }
 impl DescribeManagedEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DescribeManagedEndpointOutput`](crate::operation::describe_managed_endpoint::DescribeManagedEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_managed_endpoint::builders::DescribeManagedEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_managed_endpoint::builders::DescribeManagedEndpointOutputBuilder {
         crate::operation::describe_managed_endpoint::builders::DescribeManagedEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeManagedEndpointOutput`](crate::operation::describe_managed_endpoint::DescribeManagedEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeManagedEndpointOutputBuilder {
     pub(crate) endpoint: ::std::option::Option<crate::types::Endpoint>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl DescribeManagedEndpointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeManagedEndpointOutput`](crate::operation::describe_managed_endpoint::DescribeManagedEndpointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_managed_endpoint::DescribeManagedEndpointOutput {
+    pub fn build(self) -> crate::operation::describe_managed_endpoint::DescribeManagedEndpointOutput {
         crate::operation::describe_managed_endpoint::DescribeManagedEndpointOutput {
             endpoint: self.endpoint,
             _request_id: self._request_id,

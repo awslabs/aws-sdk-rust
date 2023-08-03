@@ -77,9 +77,7 @@ impl ResourceSet {
 
 /// A builder for [`ResourceSet`](crate::types::ResourceSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceSetBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -157,27 +155,19 @@ impl ResourceSetBuilder {
     /// To override the contents of this collection use [`set_resource_type_list`](Self::set_resource_type_list).
     ///
     /// <p>Determines the resources that can be associated to the resource set. Depending on your setting for max results and the number of resource sets, a single call might not return the full list.</p>
-    pub fn resource_type_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_type_list.unwrap_or_default();
         v.push(input.into());
         self.resource_type_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Determines the resources that can be associated to the resource set. Depending on your setting for max results and the number of resource sets, a single call might not return the full list.</p>
-    pub fn set_resource_type_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_type_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_type_list = input;
         self
     }
     /// <p>Determines the resources that can be associated to the resource set. Depending on your setting for max results and the number of resource sets, a single call might not return the full list.</p>
-    pub fn get_resource_type_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_type_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_type_list
     }
     /// <p>The last time that the resource set was changed.</p>
@@ -186,10 +176,7 @@ impl ResourceSetBuilder {
         self
     }
     /// <p>The last time that the resource set was changed.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }
@@ -211,10 +198,7 @@ impl ResourceSetBuilder {
     /// <li> <p> <code>ACTIVE</code> - The administrator can manage and delete the resource set.</p> </li>
     /// <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p> </li>
     /// </ul>
-    pub fn set_resource_set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSetStatus>,
-    ) -> Self {
+    pub fn set_resource_set_status(mut self, input: ::std::option::Option<crate::types::ResourceSetStatus>) -> Self {
         self.resource_set_status = input;
         self
     }
@@ -223,9 +207,7 @@ impl ResourceSetBuilder {
     /// <li> <p> <code>ACTIVE</code> - The administrator can manage and delete the resource set.</p> </li>
     /// <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p> </li>
     /// </ul>
-    pub fn get_resource_set_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceSetStatus> {
+    pub fn get_resource_set_status(&self) -> &::std::option::Option<crate::types::ResourceSetStatus> {
         &self.resource_set_status
     }
     /// Consumes the builder and constructs a [`ResourceSet`](crate::types::ResourceSet).

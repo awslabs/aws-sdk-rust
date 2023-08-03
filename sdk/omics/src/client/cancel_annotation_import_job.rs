@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobFluentBuilder::set_job_id): <p>The job's ID.</p>
     /// - On success, responds with [`CancelAnnotationImportJobOutput`](crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobOutput)
     /// - On failure, responds with [`SdkError<CancelAnnotationImportJobError>`](crate::operation::cancel_annotation_import_job::CancelAnnotationImportJobError)
-    pub fn cancel_annotation_import_job(&self) -> crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobFluentBuilder{
+    pub fn cancel_annotation_import_job(&self) -> crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobFluentBuilder {
         crate::operation::cancel_annotation_import_job::builders::CancelAnnotationImportJobFluentBuilder::new(self.handle.clone())
     }
 }

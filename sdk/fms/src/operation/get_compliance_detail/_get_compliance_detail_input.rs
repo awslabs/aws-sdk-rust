@@ -22,18 +22,14 @@ impl GetComplianceDetailInput {
 }
 impl GetComplianceDetailInput {
     /// Creates a new builder-style object to manufacture [`GetComplianceDetailInput`](crate::operation::get_compliance_detail::GetComplianceDetailInput).
-    pub fn builder(
-    ) -> crate::operation::get_compliance_detail::builders::GetComplianceDetailInputBuilder {
-        crate::operation::get_compliance_detail::builders::GetComplianceDetailInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_compliance_detail::builders::GetComplianceDetailInputBuilder {
+        crate::operation::get_compliance_detail::builders::GetComplianceDetailInputBuilder::default()
     }
 }
 
 /// A builder for [`GetComplianceDetailInput`](crate::operation::get_compliance_detail::GetComplianceDetailInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComplianceDetailInputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_account: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl GetComplianceDetailInputBuilder {
         &self.policy_id
     }
     /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
-    pub fn member_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn member_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
-    pub fn set_member_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_member_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_account = input;
         self
     }
@@ -76,15 +66,11 @@ impl GetComplianceDetailInputBuilder {
     /// Consumes the builder and constructs a [`GetComplianceDetailInput`](crate::operation::get_compliance_detail::GetComplianceDetailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_compliance_detail::GetComplianceDetailInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_compliance_detail::GetComplianceDetailInput {
-                policy_id: self.policy_id,
-                member_account: self.member_account,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_compliance_detail::GetComplianceDetailInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_compliance_detail::GetComplianceDetailInput {
+            policy_id: self.policy_id,
+            member_account: self.member_account,
+        })
     }
 }

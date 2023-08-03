@@ -9,8 +9,7 @@ pub struct AwsEc2InstanceViolation {
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>Violation detail for network interfaces associated with the EC2 instance.</p>
     #[doc(hidden)]
-    pub aws_ec2_network_interface_violations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceViolation>>,
+    pub aws_ec2_network_interface_violations: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceViolation>>,
 }
 impl AwsEc2InstanceViolation {
     /// <p>The resource ID of the EC2 instance.</p>
@@ -18,9 +17,7 @@ impl AwsEc2InstanceViolation {
         self.violation_target.as_deref()
     }
     /// <p>Violation detail for network interfaces associated with the EC2 instance.</p>
-    pub fn aws_ec2_network_interface_violations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEc2NetworkInterfaceViolation]> {
+    pub fn aws_ec2_network_interface_violations(&self) -> ::std::option::Option<&[crate::types::AwsEc2NetworkInterfaceViolation]> {
         self.aws_ec2_network_interface_violations.as_deref()
     }
 }
@@ -33,28 +30,19 @@ impl AwsEc2InstanceViolation {
 
 /// A builder for [`AwsEc2InstanceViolation`](crate::types::AwsEc2InstanceViolation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2InstanceViolationBuilder {
     pub(crate) violation_target: ::std::option::Option<::std::string::String>,
-    pub(crate) aws_ec2_network_interface_violations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceViolation>>,
+    pub(crate) aws_ec2_network_interface_violations: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceViolation>>,
 }
 impl AwsEc2InstanceViolationBuilder {
     /// <p>The resource ID of the EC2 instance.</p>
-    pub fn violation_target(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn violation_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.violation_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource ID of the EC2 instance.</p>
-    pub fn set_violation_target(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_violation_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.violation_target = input;
         self
     }
@@ -67,13 +55,8 @@ impl AwsEc2InstanceViolationBuilder {
     /// To override the contents of this collection use [`set_aws_ec2_network_interface_violations`](Self::set_aws_ec2_network_interface_violations).
     ///
     /// <p>Violation detail for network interfaces associated with the EC2 instance.</p>
-    pub fn aws_ec2_network_interface_violations(
-        mut self,
-        input: crate::types::AwsEc2NetworkInterfaceViolation,
-    ) -> Self {
-        let mut v = self
-            .aws_ec2_network_interface_violations
-            .unwrap_or_default();
+    pub fn aws_ec2_network_interface_violations(mut self, input: crate::types::AwsEc2NetworkInterfaceViolation) -> Self {
+        let mut v = self.aws_ec2_network_interface_violations.unwrap_or_default();
         v.push(input);
         self.aws_ec2_network_interface_violations = ::std::option::Option::Some(v);
         self
@@ -81,18 +64,13 @@ impl AwsEc2InstanceViolationBuilder {
     /// <p>Violation detail for network interfaces associated with the EC2 instance.</p>
     pub fn set_aws_ec2_network_interface_violations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceViolation>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceViolation>>,
     ) -> Self {
         self.aws_ec2_network_interface_violations = input;
         self
     }
     /// <p>Violation detail for network interfaces associated with the EC2 instance.</p>
-    pub fn get_aws_ec2_network_interface_violations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceViolation>>
-    {
+    pub fn get_aws_ec2_network_interface_violations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceViolation>> {
         &self.aws_ec2_network_interface_violations
     }
     /// Consumes the builder and constructs a [`AwsEc2InstanceViolation`](crate::types::AwsEc2InstanceViolation).

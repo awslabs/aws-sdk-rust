@@ -23,9 +23,7 @@ impl RandomSplitActivity {
 
 /// A builder for [`RandomSplitActivity`](crate::types::RandomSplitActivity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RandomSplitActivityBuilder {
     pub(crate) branches: ::std::option::Option<::std::vec::Vec<crate::types::RandomSplitEntry>>,
 }
@@ -42,23 +40,16 @@ impl RandomSplitActivityBuilder {
         self
     }
     /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
-    pub fn set_branches(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RandomSplitEntry>>,
-    ) -> Self {
+    pub fn set_branches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RandomSplitEntry>>) -> Self {
         self.branches = input;
         self
     }
     /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
-    pub fn get_branches(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RandomSplitEntry>> {
+    pub fn get_branches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RandomSplitEntry>> {
         &self.branches
     }
     /// Consumes the builder and constructs a [`RandomSplitActivity`](crate::types::RandomSplitActivity).
     pub fn build(self) -> crate::types::RandomSplitActivity {
-        crate::types::RandomSplitActivity {
-            branches: self.branches,
-        }
+        crate::types::RandomSplitActivity { branches: self.branches }
     }
 }

@@ -42,9 +42,7 @@ impl InputCaptions {
 
 /// A builder for [`InputCaptions`](crate::types::InputCaptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputCaptionsBuilder {
     pub(crate) merge_policy: ::std::option::Option<::std::string::String>,
     pub(crate) caption_sources: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>>,
@@ -94,17 +92,12 @@ impl InputCaptionsBuilder {
         self
     }
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
-    pub fn set_caption_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>>,
-    ) -> Self {
+    pub fn set_caption_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>>) -> Self {
         self.caption_sources = input;
         self
     }
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
-    pub fn get_caption_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>> {
+    pub fn get_caption_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>> {
         &self.caption_sources
     }
     /// Consumes the builder and constructs a [`InputCaptions`](crate::types::InputCaptions).

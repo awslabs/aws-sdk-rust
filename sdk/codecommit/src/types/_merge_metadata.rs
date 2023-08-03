@@ -44,9 +44,7 @@ impl MergeMetadata {
 
 /// A builder for [`MergeMetadata`](crate::types::MergeMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MergeMetadataBuilder {
     pub(crate) is_merged: ::std::option::Option<bool>,
     pub(crate) merged_by: ::std::option::Option<::std::string::String>,
@@ -83,18 +81,12 @@ impl MergeMetadataBuilder {
         &self.merged_by
     }
     /// <p>The commit ID for the merge commit, if any.</p>
-    pub fn merge_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn merge_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.merge_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The commit ID for the merge commit, if any.</p>
-    pub fn set_merge_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_merge_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.merge_commit_id = input;
         self
     }
@@ -108,10 +100,7 @@ impl MergeMetadataBuilder {
         self
     }
     /// <p>The merge strategy used in the merge.</p>
-    pub fn set_merge_option(
-        mut self,
-        input: ::std::option::Option<crate::types::MergeOptionTypeEnum>,
-    ) -> Self {
+    pub fn set_merge_option(mut self, input: ::std::option::Option<crate::types::MergeOptionTypeEnum>) -> Self {
         self.merge_option = input;
         self
     }

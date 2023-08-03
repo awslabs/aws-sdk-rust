@@ -5,16 +5,16 @@ pub use crate::operation::describe_config_rule_evaluation_status::_describe_conf
 
 impl DescribeConfigRuleEvaluationStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_config_rule_evaluation_status();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeConfigRuleEvaluationStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConfigRuleEvaluationStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusInputBuilder,
+    inner: crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusInputBuilder,
 }
 impl DescribeConfigRuleEvaluationStatusFluentBuilder {
     /// Creates a new `DescribeConfigRuleEvaluationStatus`.
@@ -37,15 +37,20 @@ impl DescribeConfigRuleEvaluationStatusFluentBuilder {
         }
     }
     /// Access the DescribeConfigRuleEvaluationStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeConfigRuleEvaluationStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl DescribeConfigRuleEvaluationStatusFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_config_rule_evaluation_status::paginator::DescribeConfigRuleEvaluationStatusPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_config_rule_evaluation_status::paginator::DescribeConfigRuleEvaluationStatusPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_config_rule_evaluation_status::paginator::DescribeConfigRuleEvaluationStatusPaginator {
         crate::operation::describe_config_rule_evaluation_status::paginator::DescribeConfigRuleEvaluationStatusPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `ConfigRuleNames`.
@@ -105,25 +120,17 @@ impl DescribeConfigRuleEvaluationStatusFluentBuilder {
     /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
     ///
     /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
-    pub fn config_rule_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_rule_names(input.into());
         self
     }
     /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
-    pub fn set_config_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_config_rule_names(input);
         self
     }
     /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
-    pub fn get_config_rule_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_config_rule_names()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartDeploymentOutput`](crate::operation::start_deployment::StartDeploymentOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::start_deployment::StartDeploymentOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     /// - On failure, responds with [`SdkError<StartDeploymentError>`](crate::operation::start_deployment::StartDeploymentError)
-    pub fn start_deployment(
-        &self,
-    ) -> crate::operation::start_deployment::builders::StartDeploymentFluentBuilder {
-        crate::operation::start_deployment::builders::StartDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_deployment(&self) -> crate::operation::start_deployment::builders::StartDeploymentFluentBuilder {
+        crate::operation::start_deployment::builders::StartDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

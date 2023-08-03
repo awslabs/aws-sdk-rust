@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetDiscoveredSchemaOutput {
 }
 impl GetDiscoveredSchemaOutput {
     /// Creates a new builder-style object to manufacture [`GetDiscoveredSchemaOutput`](crate::operation::get_discovered_schema::GetDiscoveredSchemaOutput).
-    pub fn builder(
-    ) -> crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaOutputBuilder {
-        crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaOutputBuilder {
+        crate::operation::get_discovered_schema::builders::GetDiscoveredSchemaOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDiscoveredSchemaOutput`](crate::operation::get_discovered_schema::GetDiscoveredSchemaOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDiscoveredSchemaOutputBuilder {
     pub(crate) content: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

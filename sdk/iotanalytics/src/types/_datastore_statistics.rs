@@ -23,9 +23,7 @@ impl DatastoreStatistics {
 
 /// A builder for [`DatastoreStatistics`](crate::types::DatastoreStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatastoreStatisticsBuilder {
     pub(crate) size: ::std::option::Option<crate::types::EstimatedResourceSize>,
 }
@@ -36,10 +34,7 @@ impl DatastoreStatisticsBuilder {
         self
     }
     /// <p>The estimated size of the data store.</p>
-    pub fn set_size(
-        mut self,
-        input: ::std::option::Option<crate::types::EstimatedResourceSize>,
-    ) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<crate::types::EstimatedResourceSize>) -> Self {
         self.size = input;
         self
     }

@@ -26,7 +26,7 @@ impl GetResourceShareAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourceShareAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_resource_share_associations::builders::GetResourceShareAssociationsInputBuilder,
+    inner: crate::operation::get_resource_share_associations::builders::GetResourceShareAssociationsInputBuilder,
 }
 impl GetResourceShareAssociationsFluentBuilder {
     /// Creates a new `GetResourceShareAssociations`.
@@ -37,7 +37,7 @@ impl GetResourceShareAssociationsFluentBuilder {
         }
     }
     /// Access the GetResourceShareAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_resource_share_associations::builders::GetResourceShareAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_resource_share_associations::builders::GetResourceShareAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetResourceShareAssociationsFluentBuilder {
             crate::operation::get_resource_share_associations::GetResourceShareAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_share_associations::GetResourceShareAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_share_associations::GetResourceShareAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetResourceShareAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetResourceShareAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_share_associations::GetResourceShareAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_share_associations::GetResourceShareAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_share_associations::GetResourceShareAssociationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetResourceShareAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_share_associations::GetResourceShareAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_share_associations::GetResourceShareAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_share_associations::GetResourceShareAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl GetResourceShareAssociationsFluentBuilder {
             crate::operation::get_resource_share_associations::GetResourceShareAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_share_associations::GetResourceShareAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_share_associations::GetResourceShareAssociationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_resource_share_associations::paginator::GetResourceShareAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_resource_share_associations::paginator::GetResourceShareAssociationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_resource_share_associations::paginator::GetResourceShareAssociationsPaginator {
         crate::operation::get_resource_share_associations::paginator::GetResourceShareAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies whether you want to retrieve the associations that involve a specified resource or principal.</p>
@@ -140,10 +129,7 @@ impl GetResourceShareAssociationsFluentBuilder {
     /// <li> <p> <code>PRINCIPAL</code> – list the principals whose associations you want to see.</p> </li>
     /// <li> <p> <code>RESOURCE</code> – list the resources whose associations you want to see.</p> </li>
     /// </ul>
-    pub fn set_association_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceShareAssociationType>,
-    ) -> Self {
+    pub fn set_association_type(mut self, input: ::std::option::Option<crate::types::ResourceShareAssociationType>) -> Self {
         self.inner = self.inner.set_association_type(input);
         self
     }
@@ -152,9 +138,7 @@ impl GetResourceShareAssociationsFluentBuilder {
     /// <li> <p> <code>PRINCIPAL</code> – list the principals whose associations you want to see.</p> </li>
     /// <li> <p> <code>RESOURCE</code> – list the resources whose associations you want to see.</p> </li>
     /// </ul>
-    pub fn get_association_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceShareAssociationType> {
+    pub fn get_association_type(&self) -> &::std::option::Option<crate::types::ResourceShareAssociationType> {
         self.inner.get_association_type()
     }
     /// Appends an item to `resourceShareArns`.
@@ -162,25 +146,17 @@ impl GetResourceShareAssociationsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
     ///
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
-    pub fn resource_share_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_share_arns(input.into());
         self
     }
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
-    pub fn set_resource_share_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_share_arns(input);
         self
     }
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
-    pub fn get_resource_share_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_share_arns()
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource whose resource shares you want to retrieve.</p>
@@ -218,25 +194,17 @@ impl GetResourceShareAssociationsFluentBuilder {
         self.inner.get_principal()
     }
     /// <p>Specifies that you want to retrieve only associations that have this status.</p>
-    pub fn association_status(
-        mut self,
-        input: crate::types::ResourceShareAssociationStatus,
-    ) -> Self {
+    pub fn association_status(mut self, input: crate::types::ResourceShareAssociationStatus) -> Self {
         self.inner = self.inner.association_status(input);
         self
     }
     /// <p>Specifies that you want to retrieve only associations that have this status.</p>
-    pub fn set_association_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceShareAssociationStatus>,
-    ) -> Self {
+    pub fn set_association_status(mut self, input: ::std::option::Option<crate::types::ResourceShareAssociationStatus>) -> Self {
         self.inner = self.inner.set_association_status(input);
         self
     }
     /// <p>Specifies that you want to retrieve only associations that have this status.</p>
-    pub fn get_association_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceShareAssociationStatus> {
+    pub fn get_association_status(&self) -> &::std::option::Option<crate::types::ResourceShareAssociationStatus> {
         self.inner.get_association_status()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>

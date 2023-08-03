@@ -39,9 +39,7 @@ impl SendChannelMessageInput {
         self.r#type.as_ref()
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-    pub fn persistence(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChannelMessagePersistenceType> {
+    pub fn persistence(&self) -> ::std::option::Option<&crate::types::ChannelMessagePersistenceType> {
         self.persistence.as_ref()
     }
     /// <p>The optional metadata for each message.</p>
@@ -72,8 +70,7 @@ impl ::std::fmt::Debug for SendChannelMessageInput {
 }
 impl SendChannelMessageInput {
     /// Creates a new builder-style object to manufacture [`SendChannelMessageInput`](crate::operation::send_channel_message::SendChannelMessageInput).
-    pub fn builder(
-    ) -> crate::operation::send_channel_message::builders::SendChannelMessageInputBuilder {
+    pub fn builder() -> crate::operation::send_channel_message::builders::SendChannelMessageInputBuilder {
         crate::operation::send_channel_message::builders::SendChannelMessageInputBuilder::default()
     }
 }
@@ -125,10 +122,7 @@ impl SendChannelMessageInputBuilder {
         self
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessageType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMessageType>) -> Self {
         self.r#type = input;
         self
     }
@@ -142,17 +136,12 @@ impl SendChannelMessageInputBuilder {
         self
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-    pub fn set_persistence(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelMessagePersistenceType>,
-    ) -> Self {
+    pub fn set_persistence(mut self, input: ::std::option::Option<crate::types::ChannelMessagePersistenceType>) -> Self {
         self.persistence = input;
         self
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-    pub fn get_persistence(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChannelMessagePersistenceType> {
+    pub fn get_persistence(&self) -> &::std::option::Option<crate::types::ChannelMessagePersistenceType> {
         &self.persistence
     }
     /// <p>The optional metadata for each message.</p>
@@ -170,18 +159,12 @@ impl SendChannelMessageInputBuilder {
         &self.metadata
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -206,21 +189,16 @@ impl SendChannelMessageInputBuilder {
     /// Consumes the builder and constructs a [`SendChannelMessageInput`](crate::operation::send_channel_message::SendChannelMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::send_channel_message::SendChannelMessageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::send_channel_message::SendChannelMessageInput {
-                channel_arn: self.channel_arn,
-                content: self.content,
-                r#type: self.r#type,
-                persistence: self.persistence,
-                metadata: self.metadata,
-                client_request_token: self.client_request_token,
-                chime_bearer: self.chime_bearer,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::send_channel_message::SendChannelMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::send_channel_message::SendChannelMessageInput {
+            channel_arn: self.channel_arn,
+            content: self.content,
+            r#type: self.r#type,
+            persistence: self.persistence,
+            metadata: self.metadata,
+            client_request_token: self.client_request_token,
+            chime_bearer: self.chime_bearer,
+        })
     }
 }
 impl ::std::fmt::Debug for SendChannelMessageInputBuilder {

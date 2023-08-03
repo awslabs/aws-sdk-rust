@@ -10,10 +10,7 @@ impl UpdateEphemerisInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_ephemeris::UpdateEphemerisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ephemeris::UpdateEphemerisError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ephemeris::UpdateEphemerisError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_ephemeris();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateEphemerisFluentBuilder {
         }
     }
     /// Access the UpdateEphemeris as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_ephemeris::builders::UpdateEphemerisInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_ephemeris::builders::UpdateEphemerisInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateEphemerisFluentBuilder {
             crate::operation::update_ephemeris::UpdateEphemeris,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ephemeris::UpdateEphemerisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ephemeris::UpdateEphemerisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateEphemerisFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateEphemerisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ephemeris::UpdateEphemerisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ephemeris::UpdateEphemerisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ephemeris::UpdateEphemerisError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateEphemerisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ephemeris::UpdateEphemerisOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ephemeris::UpdateEphemerisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ephemeris::UpdateEphemerisError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateEphemerisFluentBuilder {
             crate::operation::update_ephemeris::UpdateEphemeris,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_ephemeris::UpdateEphemerisError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ephemeris::UpdateEphemerisError>,
     > {
         self.customize_middleware().await
     }

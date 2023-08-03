@@ -12,9 +12,7 @@ pub struct ReplaceIamInstanceProfileAssociationInput {
 }
 impl ReplaceIamInstanceProfileAssociationInput {
     /// <p>The IAM instance profile.</p>
-    pub fn iam_instance_profile(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IamInstanceProfileSpecification> {
+    pub fn iam_instance_profile(&self) -> ::std::option::Option<&crate::types::IamInstanceProfileSpecification> {
         self.iam_instance_profile.as_ref()
     }
     /// <p>The ID of the existing IAM instance profile association.</p>
@@ -24,57 +22,40 @@ impl ReplaceIamInstanceProfileAssociationInput {
 }
 impl ReplaceIamInstanceProfileAssociationInput {
     /// Creates a new builder-style object to manufacture [`ReplaceIamInstanceProfileAssociationInput`](crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationInput).
-    pub fn builder() -> crate::operation::replace_iam_instance_profile_association::builders::ReplaceIamInstanceProfileAssociationInputBuilder{
+    pub fn builder() -> crate::operation::replace_iam_instance_profile_association::builders::ReplaceIamInstanceProfileAssociationInputBuilder {
         crate::operation::replace_iam_instance_profile_association::builders::ReplaceIamInstanceProfileAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`ReplaceIamInstanceProfileAssociationInput`](crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplaceIamInstanceProfileAssociationInputBuilder {
-    pub(crate) iam_instance_profile:
-        ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
+    pub(crate) iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
 }
 impl ReplaceIamInstanceProfileAssociationInputBuilder {
     /// <p>The IAM instance profile.</p>
-    pub fn iam_instance_profile(
-        mut self,
-        input: crate::types::IamInstanceProfileSpecification,
-    ) -> Self {
+    pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfileSpecification) -> Self {
         self.iam_instance_profile = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IAM instance profile.</p>
-    pub fn set_iam_instance_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
-    ) -> Self {
+    pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<crate::types::IamInstanceProfileSpecification>) -> Self {
         self.iam_instance_profile = input;
         self
     }
     /// <p>The IAM instance profile.</p>
-    pub fn get_iam_instance_profile(
-        &self,
-    ) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
+    pub fn get_iam_instance_profile(&self) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
         &self.iam_instance_profile
     }
     /// <p>The ID of the existing IAM instance profile association.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the existing IAM instance profile association.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -83,14 +64,17 @@ impl ReplaceIamInstanceProfileAssociationInputBuilder {
         &self.association_id
     }
     /// Consumes the builder and constructs a [`ReplaceIamInstanceProfileAssociationInput`](crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationInput {
-                iam_instance_profile: self.iam_instance_profile
-                ,
-                association_id: self.association_id
-                ,
-            }
+                iam_instance_profile: self.iam_instance_profile,
+                association_id: self.association_id,
+            },
         )
     }
 }

@@ -10,10 +10,7 @@ impl ModifyUsageLimitInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_usage_limit::ModifyUsageLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_usage_limit::ModifyUsageLimitError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_usage_limit::ModifyUsageLimitError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_usage_limit();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ModifyUsageLimitFluentBuilder {
         }
     }
     /// Access the ModifyUsageLimit as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_usage_limit::builders::ModifyUsageLimitInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_usage_limit::builders::ModifyUsageLimitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ModifyUsageLimitFluentBuilder {
             crate::operation::modify_usage_limit::ModifyUsageLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_usage_limit::ModifyUsageLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_usage_limit::ModifyUsageLimitError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ModifyUsageLimitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ModifyUsageLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_usage_limit::ModifyUsageLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_usage_limit::ModifyUsageLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_usage_limit::ModifyUsageLimitError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ModifyUsageLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_usage_limit::ModifyUsageLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_usage_limit::ModifyUsageLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_usage_limit::ModifyUsageLimitError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl ModifyUsageLimitFluentBuilder {
             crate::operation::modify_usage_limit::ModifyUsageLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_usage_limit::ModifyUsageLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_usage_limit::ModifyUsageLimitError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the usage limit to modify.</p>
-    pub fn usage_limit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.usage_limit_id(input.into());
         self
     }
     /// <p>The identifier of the usage limit to modify.</p>
-    pub fn set_usage_limit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_usage_limit_id(input);
         self
     }
@@ -162,17 +140,12 @@ impl ModifyUsageLimitFluentBuilder {
         self
     }
     /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>. </p>
-    pub fn set_breach_action(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageLimitBreachAction>,
-    ) -> Self {
+    pub fn set_breach_action(mut self, input: ::std::option::Option<crate::types::UsageLimitBreachAction>) -> Self {
         self.inner = self.inner.set_breach_action(input);
         self
     }
     /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>. </p>
-    pub fn get_breach_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
+    pub fn get_breach_action(&self) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
         self.inner.get_breach_action()
     }
 }

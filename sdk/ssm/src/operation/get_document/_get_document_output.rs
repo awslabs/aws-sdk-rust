@@ -38,8 +38,7 @@ pub struct GetDocumentOutput {
     pub requires: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,
     /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
     #[doc(hidden)]
-    pub attachments_content:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttachmentContent>>,
+    pub attachments_content: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentContent>>,
     /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
     /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
@@ -117,9 +116,7 @@ impl GetDocumentOutput {
 
 /// A builder for [`GetDocumentOutput`](crate::operation::get_document::GetDocumentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDocumentOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -132,8 +129,7 @@ pub struct GetDocumentOutputBuilder {
     pub(crate) document_type: ::std::option::Option<crate::types::DocumentType>,
     pub(crate) document_format: ::std::option::Option<crate::types::DocumentFormat>,
     pub(crate) requires: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,
-    pub(crate) attachments_content:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttachmentContent>>,
+    pub(crate) attachments_content: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentContent>>,
     pub(crate) review_status: ::std::option::Option<crate::types::ReviewStatus>,
     _request_id: Option<String>,
 }
@@ -158,10 +154,7 @@ impl GetDocumentOutputBuilder {
         self
     }
     /// <p>The date the SSM document was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -198,18 +191,12 @@ impl GetDocumentOutputBuilder {
         &self.version_name
     }
     /// <p>The document version.</p>
-    pub fn document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The document version.</p>
-    pub fn set_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
@@ -223,10 +210,7 @@ impl GetDocumentOutputBuilder {
         self
     }
     /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DocumentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -235,18 +219,12 @@ impl GetDocumentOutputBuilder {
         &self.status
     }
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
-    pub fn status_information(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_information(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_information = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
-    pub fn set_status_information(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_information = input;
         self
     }
@@ -274,10 +252,7 @@ impl GetDocumentOutputBuilder {
         self
     }
     /// <p>The document type.</p>
-    pub fn set_document_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentType>,
-    ) -> Self {
+    pub fn set_document_type(mut self, input: ::std::option::Option<crate::types::DocumentType>) -> Self {
         self.document_type = input;
         self
     }
@@ -291,10 +266,7 @@ impl GetDocumentOutputBuilder {
         self
     }
     /// <p>The document format, either JSON or YAML.</p>
-    pub fn set_document_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentFormat>,
-    ) -> Self {
+    pub fn set_document_format(mut self, input: ::std::option::Option<crate::types::DocumentFormat>) -> Self {
         self.document_format = input;
         self
     }
@@ -314,17 +286,12 @@ impl GetDocumentOutputBuilder {
         self
     }
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-    pub fn set_requires(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,
-    ) -> Self {
+    pub fn set_requires(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>) -> Self {
         self.requires = input;
         self
     }
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-    pub fn get_requires(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>> {
+    pub fn get_requires(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>> {
         &self.requires
     }
     /// Appends an item to `attachments_content`.
@@ -339,17 +306,12 @@ impl GetDocumentOutputBuilder {
         self
     }
     /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
-    pub fn set_attachments_content(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentContent>>,
-    ) -> Self {
+    pub fn set_attachments_content(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentContent>>) -> Self {
         self.attachments_content = input;
         self
     }
     /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
-    pub fn get_attachments_content(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentContent>> {
+    pub fn get_attachments_content(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentContent>> {
         &self.attachments_content
     }
     /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
@@ -362,10 +324,7 @@ impl GetDocumentOutputBuilder {
     /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
     /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
-    pub fn set_review_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReviewStatus>,
-    ) -> Self {
+    pub fn set_review_status(mut self, input: ::std::option::Option<crate::types::ReviewStatus>) -> Self {
         self.review_status = input;
         self
     }

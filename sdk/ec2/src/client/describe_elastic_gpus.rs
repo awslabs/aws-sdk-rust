@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`max_results(Option<i32>)`](crate::operation::describe_elastic_gpus::DescribeElasticGpusOutput::max_results): <p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a Next-Token will be provided in the output that you can use to resume pagination.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_elastic_gpus::DescribeElasticGpusOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeElasticGpusError>`](crate::operation::describe_elastic_gpus::DescribeElasticGpusError)
-    pub fn describe_elastic_gpus(
-        &self,
-    ) -> crate::operation::describe_elastic_gpus::builders::DescribeElasticGpusFluentBuilder {
-        crate::operation::describe_elastic_gpus::builders::DescribeElasticGpusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_elastic_gpus(&self) -> crate::operation::describe_elastic_gpus::builders::DescribeElasticGpusFluentBuilder {
+        crate::operation::describe_elastic_gpus::builders::DescribeElasticGpusFluentBuilder::new(self.handle.clone())
     }
 }

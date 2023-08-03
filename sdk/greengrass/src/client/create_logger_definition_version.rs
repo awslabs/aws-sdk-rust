@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionOutput::id): The ID of the parent definition that the version is associated with.
     ///   - [`version(Option<String>)`](crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionOutput::version): The ID of the version.
     /// - On failure, responds with [`SdkError<CreateLoggerDefinitionVersionError>`](crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionError)
-    pub fn create_logger_definition_version(&self) -> crate::operation::create_logger_definition_version::builders::CreateLoggerDefinitionVersionFluentBuilder{
+    pub fn create_logger_definition_version(
+        &self,
+    ) -> crate::operation::create_logger_definition_version::builders::CreateLoggerDefinitionVersionFluentBuilder {
         crate::operation::create_logger_definition_version::builders::CreateLoggerDefinitionVersionFluentBuilder::new(self.handle.clone())
     }
 }

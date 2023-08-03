@@ -8,8 +8,7 @@ pub struct ListThesauriOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of summary information for a thesaurus or multiple thesauri.</p>
     #[doc(hidden)]
-    pub thesaurus_summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ThesaurusSummary>>,
+    pub thesaurus_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ThesaurusSummary>>,
     _request_id: Option<String>,
 }
 impl ListThesauriOutput {
@@ -18,9 +17,7 @@ impl ListThesauriOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of summary information for a thesaurus or multiple thesauri.</p>
-    pub fn thesaurus_summary_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ThesaurusSummary]> {
+    pub fn thesaurus_summary_items(&self) -> ::std::option::Option<&[crate::types::ThesaurusSummary]> {
         self.thesaurus_summary_items.as_deref()
     }
 }
@@ -38,13 +35,10 @@ impl ListThesauriOutput {
 
 /// A builder for [`ListThesauriOutput`](crate::operation::list_thesauri::ListThesauriOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThesauriOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) thesaurus_summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ThesaurusSummary>>,
+    pub(crate) thesaurus_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ThesaurusSummary>>,
     _request_id: Option<String>,
 }
 impl ListThesauriOutputBuilder {
@@ -74,17 +68,12 @@ impl ListThesauriOutputBuilder {
         self
     }
     /// <p>An array of summary information for a thesaurus or multiple thesauri.</p>
-    pub fn set_thesaurus_summary_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ThesaurusSummary>>,
-    ) -> Self {
+    pub fn set_thesaurus_summary_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThesaurusSummary>>) -> Self {
         self.thesaurus_summary_items = input;
         self
     }
     /// <p>An array of summary information for a thesaurus or multiple thesauri.</p>
-    pub fn get_thesaurus_summary_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThesaurusSummary>> {
+    pub fn get_thesaurus_summary_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThesaurusSummary>> {
         &self.thesaurus_summary_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

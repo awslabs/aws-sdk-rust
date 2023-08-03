@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteByteMatchSetOutput {
 }
 impl DeleteByteMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteByteMatchSetOutput`](crate::operation::delete_byte_match_set::DeleteByteMatchSetOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetOutputBuilder {
-        crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetOutputBuilder {
+        crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteByteMatchSetOutput`](crate::operation::delete_byte_match_set::DeleteByteMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteByteMatchSetOutputBuilder {
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

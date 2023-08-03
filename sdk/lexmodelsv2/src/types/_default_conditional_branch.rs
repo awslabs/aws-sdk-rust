@@ -30,9 +30,7 @@ impl DefaultConditionalBranch {
 
 /// A builder for [`DefaultConditionalBranch`](crate::types::DefaultConditionalBranch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultConditionalBranchBuilder {
     pub(crate) next_step: ::std::option::Option<crate::types::DialogState>,
     pub(crate) response: ::std::option::Option<crate::types::ResponseSpecification>,
@@ -44,10 +42,7 @@ impl DefaultConditionalBranchBuilder {
         self
     }
     /// <p>The next step in the conversation.</p>
-    pub fn set_next_step(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogState>,
-    ) -> Self {
+    pub fn set_next_step(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
         self.next_step = input;
         self
     }
@@ -61,10 +56,7 @@ impl DefaultConditionalBranchBuilder {
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn set_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseSpecification>,
-    ) -> Self {
+    pub fn set_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
         self.response = input;
         self
     }

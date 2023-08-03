@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`pipeline_name(Option<String>)`](crate::operation::create_pipeline::CreatePipelineOutput::pipeline_name): <p>The name of the pipeline.</p>
     ///   - [`pipeline_arn(Option<String>)`](crate::operation::create_pipeline::CreatePipelineOutput::pipeline_arn): <p>The ARN of the pipeline.</p>
     /// - On failure, responds with [`SdkError<CreatePipelineError>`](crate::operation::create_pipeline::CreatePipelineError)
-    pub fn create_pipeline(
-        &self,
-    ) -> crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder {
-        crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_pipeline(&self) -> crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder {
+        crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::new(self.handle.clone())
     }
 }

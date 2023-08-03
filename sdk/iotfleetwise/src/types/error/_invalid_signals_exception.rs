@@ -56,9 +56,7 @@ impl InvalidSignalsException {
 
 /// A builder for [`InvalidSignalsException`](crate::types::error::InvalidSignalsException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidSignalsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) invalid_signals: ::std::option::Option<::std::vec::Vec<crate::types::InvalidSignal>>,
@@ -91,17 +89,12 @@ impl InvalidSignalsExceptionBuilder {
         self
     }
     /// <p>The signals which caused the exception.</p>
-    pub fn set_invalid_signals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InvalidSignal>>,
-    ) -> Self {
+    pub fn set_invalid_signals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InvalidSignal>>) -> Self {
         self.invalid_signals = input;
         self
     }
     /// <p>The signals which caused the exception.</p>
-    pub fn get_invalid_signals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InvalidSignal>> {
+    pub fn get_invalid_signals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InvalidSignal>> {
         &self.invalid_signals
     }
     /// Sets error metadata
@@ -111,10 +104,7 @@ impl InvalidSignalsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

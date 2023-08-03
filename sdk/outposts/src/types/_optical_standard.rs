@@ -49,13 +49,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OpticalStandard {
     #[allow(missing_docs)] // documentation missing in model
@@ -103,9 +97,7 @@ impl ::std::convert::From<&str> for OpticalStandard {
             "OPTIC_40GBASE_IR4_LR4L" => OpticalStandard::Optic40GbaseIr4Lr4L,
             "OPTIC_40GBASE_LR4" => OpticalStandard::Optic40GbaseLr4,
             "OPTIC_40GBASE_SR" => OpticalStandard::Optic40GbaseSr,
-            other => {
-                OpticalStandard::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => OpticalStandard::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

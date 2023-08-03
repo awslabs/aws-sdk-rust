@@ -23,9 +23,7 @@ impl ProgressiveDialerConfig {
 
 /// A builder for [`ProgressiveDialerConfig`](crate::types::ProgressiveDialerConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProgressiveDialerConfigBuilder {
     pub(crate) bandwidth_allocation: ::std::option::Option<f64>,
 }

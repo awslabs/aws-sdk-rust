@@ -35,9 +35,7 @@ impl GetUserOutput {
 
 /// A builder for [`GetUserOutput`](crate::operation::get_user::GetUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUserOutputBuilder {
     pub(crate) user: ::std::option::Option<crate::types::User>,
     _request_id: Option<String>,

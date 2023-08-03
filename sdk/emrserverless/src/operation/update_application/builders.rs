@@ -10,10 +10,7 @@ impl UpdateApplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_application();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateApplicationFluentBuilder {
         }
     }
     /// Access the UpdateApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateApplicationFluentBuilder {
             crate::operation::update_application::UpdateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateApplicationFluentBuilder {
             crate::operation::update_application::UpdateApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the application to update.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The ID of the application to update.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -161,20 +139,14 @@ impl UpdateApplicationFluentBuilder {
     /// To override the contents of this collection use [`set_initial_capacity`](Self::set_initial_capacity).
     ///
     /// <p>The capacity to initialize when the application is updated.</p>
-    pub fn initial_capacity(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::InitialCapacityConfig,
-    ) -> Self {
+    pub fn initial_capacity(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::InitialCapacityConfig) -> Self {
         self.inner = self.inner.initial_capacity(k.into(), v);
         self
     }
     /// <p>The capacity to initialize when the application is updated.</p>
     pub fn set_initial_capacity(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>>,
     ) -> Self {
         self.inner = self.inner.set_initial_capacity(input);
         self
@@ -182,9 +154,7 @@ impl UpdateApplicationFluentBuilder {
     /// <p>The capacity to initialize when the application is updated.</p>
     pub fn get_initial_capacity(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>> {
         self.inner.get_initial_capacity()
     }
     /// <p>The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.</p>
@@ -193,17 +163,12 @@ impl UpdateApplicationFluentBuilder {
         self
     }
     /// <p>The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.</p>
-    pub fn set_maximum_capacity(
-        mut self,
-        input: ::std::option::Option<crate::types::MaximumAllowedResources>,
-    ) -> Self {
+    pub fn set_maximum_capacity(mut self, input: ::std::option::Option<crate::types::MaximumAllowedResources>) -> Self {
         self.inner = self.inner.set_maximum_capacity(input);
         self
     }
     /// <p>The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.</p>
-    pub fn get_maximum_capacity(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaximumAllowedResources> {
+    pub fn get_maximum_capacity(&self) -> &::std::option::Option<crate::types::MaximumAllowedResources> {
         self.inner.get_maximum_capacity()
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
@@ -212,17 +177,12 @@ impl UpdateApplicationFluentBuilder {
         self
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
-    pub fn set_auto_start_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoStartConfig>,
-    ) -> Self {
+    pub fn set_auto_start_configuration(mut self, input: ::std::option::Option<crate::types::AutoStartConfig>) -> Self {
         self.inner = self.inner.set_auto_start_configuration(input);
         self
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
-    pub fn get_auto_start_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoStartConfig> {
+    pub fn get_auto_start_configuration(&self) -> &::std::option::Option<crate::types::AutoStartConfig> {
         self.inner.get_auto_start_configuration()
     }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
@@ -231,17 +191,12 @@ impl UpdateApplicationFluentBuilder {
         self
     }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
-    pub fn set_auto_stop_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoStopConfig>,
-    ) -> Self {
+    pub fn set_auto_stop_configuration(mut self, input: ::std::option::Option<crate::types::AutoStopConfig>) -> Self {
         self.inner = self.inner.set_auto_stop_configuration(input);
         self
     }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
-    pub fn get_auto_stop_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoStopConfig> {
+    pub fn get_auto_stop_configuration(&self) -> &::std::option::Option<crate::types::AutoStopConfig> {
         self.inner.get_auto_stop_configuration()
     }
     /// <p>The network configuration for customer VPC connectivity.</p>
@@ -250,17 +205,12 @@ impl UpdateApplicationFluentBuilder {
         self
     }
     /// <p>The network configuration for customer VPC connectivity.</p>
-    pub fn set_network_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkConfiguration>,
-    ) -> Self {
+    pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
         self.inner = self.inner.set_network_configuration(input);
         self
     }
     /// <p>The network configuration for customer VPC connectivity.</p>
-    pub fn get_network_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+    pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         self.inner.get_network_configuration()
     }
     /// <p>The CPU architecture of an application.</p>
@@ -269,10 +219,7 @@ impl UpdateApplicationFluentBuilder {
         self
     }
     /// <p>The CPU architecture of an application.</p>
-    pub fn set_architecture(
-        mut self,
-        input: ::std::option::Option<crate::types::Architecture>,
-    ) -> Self {
+    pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
         self.inner = self.inner.set_architecture(input);
         self
     }
@@ -286,17 +233,12 @@ impl UpdateApplicationFluentBuilder {
         self
     }
     /// <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
-    pub fn set_image_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageConfigurationInput>,
-    ) -> Self {
+    pub fn set_image_configuration(mut self, input: ::std::option::Option<crate::types::ImageConfigurationInput>) -> Self {
         self.inner = self.inner.set_image_configuration(input);
         self
     }
     /// <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
-    pub fn get_image_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageConfigurationInput> {
+    pub fn get_image_configuration(&self) -> &::std::option::Option<crate::types::ImageConfigurationInput> {
         self.inner.get_image_configuration()
     }
     /// Adds a key-value pair to `workerTypeSpecifications`.
@@ -315,12 +257,7 @@ impl UpdateApplicationFluentBuilder {
     /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
     pub fn set_worker_type_specifications(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::WorkerTypeSpecificationInput,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>>,
     ) -> Self {
         self.inner = self.inner.set_worker_type_specifications(input);
         self
@@ -328,27 +265,16 @@ impl UpdateApplicationFluentBuilder {
     /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
     pub fn get_worker_type_specifications(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::WorkerTypeSpecificationInput,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>> {
         self.inner.get_worker_type_specifications()
     }
     /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
-    pub fn release_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.release_label(input.into());
         self
     }
     /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
-    pub fn set_release_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_release_label(input);
         self
     }

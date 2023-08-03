@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListThingRegistrationTasksOutput {
 }
 impl ListThingRegistrationTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListThingRegistrationTasksOutput`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksOutput).
-    pub fn builder() -> crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksOutputBuilder{
+    pub fn builder() -> crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksOutputBuilder {
         crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListThingRegistrationTasksOutput`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingRegistrationTasksOutputBuilder {
     pub(crate) task_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListThingRegistrationTasksOutputBuilder {
         self
     }
     /// <p>A list of bulk thing provisioning task IDs.</p>
-    pub fn set_task_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_task_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.task_ids = input;
         self
     }
@@ -91,9 +86,7 @@ impl ListThingRegistrationTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListThingRegistrationTasksOutput`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksOutput {
+    pub fn build(self) -> crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksOutput {
         crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksOutput {
             task_ids: self.task_ids,
             next_token: self.next_token,

@@ -31,10 +31,7 @@ impl ListCustomLineItemsPaginator {
     ///
     /// This paginator automatically flattens results using `custom_line_items`. Queries to the underlying service
     /// are dispatched lazily.
-    pub fn items(
-        self,
-    ) -> crate::operation::list_custom_line_items::paginator::ListCustomLineItemsPaginatorItems
-    {
+    pub fn items(self) -> crate::operation::list_custom_line_items::paginator::ListCustomLineItemsPaginatorItems {
         crate::operation::list_custom_line_items::paginator::ListCustomLineItemsPaginatorItems(self)
     }
 
@@ -58,9 +55,7 @@ impl ListCustomLineItemsPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::list_custom_line_items::ListCustomLineItemsOutput,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_custom_line_items::ListCustomLineItemsError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_custom_line_items::ListCustomLineItemsError>,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
@@ -70,10 +65,7 @@ impl ListCustomLineItemsPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -98,13 +90,9 @@ impl ListCustomLineItemsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_list_custom_line_items_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_custom_line_items_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.next_token.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.next_token = new_token.cloned();
@@ -142,9 +130,7 @@ impl ListCustomLineItemsPaginatorItems {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::types::CustomLineItemListElement,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_custom_line_items::ListCustomLineItemsError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_custom_line_items::ListCustomLineItemsError>,
         >,
     > + ::std::marker::Unpin {
         ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {

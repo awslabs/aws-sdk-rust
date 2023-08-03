@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ListEdgePackagingJobsSortBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for ListEdgePackagingJobsSortBy {
             "MODEL_NAME" => ListEdgePackagingJobsSortBy::ModelName,
             "NAME" => ListEdgePackagingJobsSortBy::Name,
             "STATUS" => ListEdgePackagingJobsSortBy::EdgePackagingJobStatus,
-            other => ListEdgePackagingJobsSortBy::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ListEdgePackagingJobsSortBy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl ListEdgePackagingJobsSortBy {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATION_TIME",
-            "LAST_MODIFIED_TIME",
-            "MODEL_NAME",
-            "NAME",
-            "STATUS",
-        ]
+        &["CREATION_TIME", "LAST_MODIFIED_TIME", "MODEL_NAME", "NAME", "STATUS"]
     }
 }
 impl ::std::convert::AsRef<str> for ListEdgePackagingJobsSortBy {

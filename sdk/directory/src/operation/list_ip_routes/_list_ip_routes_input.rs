@@ -36,9 +36,7 @@ impl ListIpRoutesInput {
 
 /// A builder for [`ListIpRoutesInput`](crate::operation::list_ip_routes::ListIpRoutesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIpRoutesInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl ListIpRoutesInputBuilder {
     /// Consumes the builder and constructs a [`ListIpRoutesInput`](crate::operation::list_ip_routes::ListIpRoutesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_ip_routes::ListIpRoutesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_ip_routes::ListIpRoutesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ip_routes::ListIpRoutesInput {
             directory_id: self.directory_id,
             next_token: self.next_token,

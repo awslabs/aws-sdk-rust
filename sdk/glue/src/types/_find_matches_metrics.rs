@@ -68,17 +68,14 @@ impl FindMatchesMetrics {
 
 /// A builder for [`FindMatchesMetrics`](crate::types::FindMatchesMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindMatchesMetricsBuilder {
     pub(crate) area_under_pr_curve: ::std::option::Option<f64>,
     pub(crate) precision: ::std::option::Option<f64>,
     pub(crate) recall: ::std::option::Option<f64>,
     pub(crate) f1: ::std::option::Option<f64>,
     pub(crate) confusion_matrix: ::std::option::Option<crate::types::ConfusionMatrix>,
-    pub(crate) column_importances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ColumnImportance>>,
+    pub(crate) column_importances: ::std::option::Option<::std::vec::Vec<crate::types::ColumnImportance>>,
 }
 impl FindMatchesMetricsBuilder {
     /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
@@ -157,10 +154,7 @@ impl FindMatchesMetricsBuilder {
     }
     /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p>
-    pub fn set_confusion_matrix(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfusionMatrix>,
-    ) -> Self {
+    pub fn set_confusion_matrix(mut self, input: ::std::option::Option<crate::types::ConfusionMatrix>) -> Self {
         self.confusion_matrix = input;
         self
     }
@@ -181,17 +175,12 @@ impl FindMatchesMetricsBuilder {
         self
     }
     /// <p>A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of descending importance.</p>
-    pub fn set_column_importances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnImportance>>,
-    ) -> Self {
+    pub fn set_column_importances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnImportance>>) -> Self {
         self.column_importances = input;
         self
     }
     /// <p>A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of descending importance.</p>
-    pub fn get_column_importances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnImportance>> {
+    pub fn get_column_importances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnImportance>> {
         &self.column_importances
     }
     /// Consumes the builder and constructs a [`FindMatchesMetrics`](crate::types::FindMatchesMetrics).

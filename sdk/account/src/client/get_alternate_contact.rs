@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetAlternateContactOutput`](crate::operation::get_alternate_contact::GetAlternateContactOutput) with field(s):
     ///   - [`alternate_contact(Option<AlternateContact>)`](crate::operation::get_alternate_contact::GetAlternateContactOutput::alternate_contact): <p>A structure that contains the details for the specified alternate contact.</p>
     /// - On failure, responds with [`SdkError<GetAlternateContactError>`](crate::operation::get_alternate_contact::GetAlternateContactError)
-    pub fn get_alternate_contact(
-        &self,
-    ) -> crate::operation::get_alternate_contact::builders::GetAlternateContactFluentBuilder {
-        crate::operation::get_alternate_contact::builders::GetAlternateContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_alternate_contact(&self) -> crate::operation::get_alternate_contact::builders::GetAlternateContactFluentBuilder {
+        crate::operation::get_alternate_contact::builders::GetAlternateContactFluentBuilder::new(self.handle.clone())
     }
 }

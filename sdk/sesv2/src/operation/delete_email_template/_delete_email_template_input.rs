@@ -16,35 +16,25 @@ impl DeleteEmailTemplateInput {
 }
 impl DeleteEmailTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteEmailTemplateInput`](crate::operation::delete_email_template::DeleteEmailTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_email_template::builders::DeleteEmailTemplateInputBuilder {
-        crate::operation::delete_email_template::builders::DeleteEmailTemplateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_email_template::builders::DeleteEmailTemplateInputBuilder {
+        crate::operation::delete_email_template::builders::DeleteEmailTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEmailTemplateInput`](crate::operation::delete_email_template::DeleteEmailTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEmailTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEmailTemplateInputBuilder {
     /// <p>The name of the template to be deleted.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the template to be deleted.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -55,14 +45,10 @@ impl DeleteEmailTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEmailTemplateInput`](crate::operation::delete_email_template::DeleteEmailTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_email_template::DeleteEmailTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_email_template::DeleteEmailTemplateInput {
-                template_name: self.template_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_email_template::DeleteEmailTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_email_template::DeleteEmailTemplateInput {
+            template_name: self.template_name,
+        })
     }
 }

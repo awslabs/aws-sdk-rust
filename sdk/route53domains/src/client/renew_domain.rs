@@ -9,9 +9,7 @@ impl super::Client {
     /// - On success, responds with [`RenewDomainOutput`](crate::operation::renew_domain::RenewDomainOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::renew_domain::RenewDomainOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     /// - On failure, responds with [`SdkError<RenewDomainError>`](crate::operation::renew_domain::RenewDomainError)
-    pub fn renew_domain(
-        &self,
-    ) -> crate::operation::renew_domain::builders::RenewDomainFluentBuilder {
+    pub fn renew_domain(&self) -> crate::operation::renew_domain::builders::RenewDomainFluentBuilder {
         crate::operation::renew_domain::builders::RenewDomainFluentBuilder::new(self.handle.clone())
     }
 }

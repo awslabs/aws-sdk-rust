@@ -37,10 +37,7 @@ impl CreateAnomalyDetectorFluentBuilder {
         }
     }
     /// Access the CreateAnomalyDetector as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_anomaly_detector::builders::CreateAnomalyDetectorInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_anomaly_detector::builders::CreateAnomalyDetectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateAnomalyDetectorFluentBuilder {
             crate::operation::create_anomaly_detector::CreateAnomalyDetector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_anomaly_detector::CreateAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_anomaly_detector::CreateAnomalyDetectorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateAnomalyDetectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateAnomalyDetectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_anomaly_detector::CreateAnomalyDetectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_anomaly_detector::CreateAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_anomaly_detector::CreateAnomalyDetectorError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateAnomalyDetectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_anomaly_detector::CreateAnomalyDetectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_anomaly_detector::CreateAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_anomaly_detector::CreateAnomalyDetectorError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateAnomalyDetectorFluentBuilder {
             crate::operation::create_anomaly_detector::CreateAnomalyDetector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_anomaly_detector::CreateAnomalyDetectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_anomaly_detector::CreateAnomalyDetectorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the detector.</p>
-    pub fn anomaly_detector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_detector_name(input.into());
         self
     }
     /// <p>The name of the detector.</p>
-    pub fn set_anomaly_detector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_detector_name(input);
         self
     }
@@ -144,25 +124,17 @@ impl CreateAnomalyDetectorFluentBuilder {
         self.inner.get_anomaly_detector_name()
     }
     /// <p>A description of the detector.</p>
-    pub fn anomaly_detector_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_detector_description(input.into());
         self
     }
     /// <p>A description of the detector.</p>
-    pub fn set_anomaly_detector_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_detector_description(input);
         self
     }
     /// <p>A description of the detector.</p>
-    pub fn get_anomaly_detector_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_anomaly_detector_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_anomaly_detector_description()
     }
     /// <p>Contains information about the configuration of the anomaly detector.</p>
@@ -171,17 +143,12 @@ impl CreateAnomalyDetectorFluentBuilder {
         self
     }
     /// <p>Contains information about the configuration of the anomaly detector.</p>
-    pub fn set_anomaly_detector_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalyDetectorConfig>,
-    ) -> Self {
+    pub fn set_anomaly_detector_config(mut self, input: ::std::option::Option<crate::types::AnomalyDetectorConfig>) -> Self {
         self.inner = self.inner.set_anomaly_detector_config(input);
         self
     }
     /// <p>Contains information about the configuration of the anomaly detector.</p>
-    pub fn get_anomaly_detector_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalyDetectorConfig> {
+    pub fn get_anomaly_detector_config(&self) -> &::std::option::Option<crate::types::AnomalyDetectorConfig> {
         self.inner.get_anomaly_detector_config()
     }
     /// <p>The ARN of the KMS key to use to encrypt your data.</p>
@@ -203,30 +170,17 @@ impl CreateAnomalyDetectorFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the anomaly detector.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

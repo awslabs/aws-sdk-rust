@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`product_subscriptions(Option<Vec<String>>)`](crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput::product_subscriptions): <p>The list of ARNs for the resources that represent your subscriptions to products. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListEnabledProductsForImportError>`](crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError)
-    pub fn list_enabled_products_for_import(&self) -> crate::operation::list_enabled_products_for_import::builders::ListEnabledProductsForImportFluentBuilder{
+    pub fn list_enabled_products_for_import(
+        &self,
+    ) -> crate::operation::list_enabled_products_for_import::builders::ListEnabledProductsForImportFluentBuilder {
         crate::operation::list_enabled_products_for_import::builders::ListEnabledProductsForImportFluentBuilder::new(self.handle.clone())
     }
 }

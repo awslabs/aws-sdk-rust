@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`success_redirection_url(Option<String>)`](crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateOutput::success_redirection_url): <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
     ///   - [`failure_redirection_url(Option<String>)`](crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateOutput::failure_redirection_url): <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     /// - On failure, responds with [`SdkError<GetCustomVerificationEmailTemplateError>`](crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateError)
-    pub fn get_custom_verification_email_template(&self) -> crate::operation::get_custom_verification_email_template::builders::GetCustomVerificationEmailTemplateFluentBuilder{
+    pub fn get_custom_verification_email_template(
+        &self,
+    ) -> crate::operation::get_custom_verification_email_template::builders::GetCustomVerificationEmailTemplateFluentBuilder {
         crate::operation::get_custom_verification_email_template::builders::GetCustomVerificationEmailTemplateFluentBuilder::new(self.handle.clone())
     }
 }

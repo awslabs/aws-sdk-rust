@@ -43,12 +43,9 @@ impl DescribeObjectsOutput {
 
 /// A builder for [`DescribeObjectsOutput`](crate::operation::describe_objects::DescribeObjectsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeObjectsOutputBuilder {
-    pub(crate) pipeline_objects:
-        ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
+    pub(crate) pipeline_objects: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) has_more_results: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -66,17 +63,12 @@ impl DescribeObjectsOutputBuilder {
         self
     }
     /// <p>An array of object definitions.</p>
-    pub fn set_pipeline_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
-    ) -> Self {
+    pub fn set_pipeline_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>) -> Self {
         self.pipeline_objects = input;
         self
     }
     /// <p>An array of object definitions.</p>
-    pub fn get_pipeline_objects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
+    pub fn get_pipeline_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
         &self.pipeline_objects
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>

@@ -29,18 +29,14 @@ impl UpdateDeletionProtectionInput {
 }
 impl UpdateDeletionProtectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateDeletionProtectionInput`](crate::operation::update_deletion_protection::UpdateDeletionProtectionInput).
-    pub fn builder(
-    ) -> crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionInputBuilder {
         crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDeletionProtectionInput`](crate::operation::update_deletion_protection::UpdateDeletionProtectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDeletionProtectionInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protected: ::std::option::Option<bool>,
@@ -96,12 +92,10 @@ impl UpdateDeletionProtectionInputBuilder {
         crate::operation::update_deletion_protection::UpdateDeletionProtectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_deletion_protection::UpdateDeletionProtectionInput {
-                arn: self.arn,
-                deletion_protected: self.deletion_protected,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_deletion_protection::UpdateDeletionProtectionInput {
+            arn: self.arn,
+            deletion_protected: self.deletion_protected,
+            client_token: self.client_token,
+        })
     }
 }

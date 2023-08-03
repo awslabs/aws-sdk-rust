@@ -7,10 +7,7 @@ pub fn ser_s3_set_object_legal_hold_operation(
     let mut scope = writer.finish();
     if let Some(var_1) = &input.legal_hold {
         let inner_writer = scope.start_el("LegalHold");
-        crate::protocol_serde::shape_s3_object_lock_legal_hold::ser_s3_object_lock_legal_hold(
-            var_1,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_s3_object_lock_legal_hold::ser_s3_object_lock_legal_hold(var_1, inner_writer)?
     }
     scope.finish();
     Ok(())

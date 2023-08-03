@@ -30,14 +30,11 @@ pub struct GetEventPredictionInput {
     /// <p> <b>For imported SageMaker models:</b> </p>
     /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
     #[doc(hidden)]
-    pub event_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub event_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
     #[doc(hidden)]
-    pub external_model_endpoint_data_blobs: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ModelEndpointDataBlob>,
-    >,
+    pub external_model_endpoint_data_blobs:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ModelEndpointDataBlob>>,
 }
 impl GetEventPredictionInput {
     /// <p>The detector ID.</p>
@@ -72,19 +69,13 @@ impl GetEventPredictionInput {
     /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
     /// <p> <b>For imported SageMaker models:</b> </p>
     /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
-    pub fn event_variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn event_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.event_variables.as_ref()
     }
     /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
     pub fn external_model_endpoint_data_blobs(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ModelEndpointDataBlob>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ModelEndpointDataBlob>> {
         self.external_model_endpoint_data_blobs.as_ref()
     }
 }
@@ -98,17 +89,13 @@ impl ::std::fmt::Debug for GetEventPredictionInput {
         formatter.field("entities", &self.entities);
         formatter.field("event_timestamp", &self.event_timestamp);
         formatter.field("event_variables", &self.event_variables);
-        formatter.field(
-            "external_model_endpoint_data_blobs",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("external_model_endpoint_data_blobs", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 impl GetEventPredictionInput {
     /// Creates a new builder-style object to manufacture [`GetEventPredictionInput`](crate::operation::get_event_prediction::GetEventPredictionInput).
-    pub fn builder(
-    ) -> crate::operation::get_event_prediction::builders::GetEventPredictionInputBuilder {
+    pub fn builder() -> crate::operation::get_event_prediction::builders::GetEventPredictionInputBuilder {
         crate::operation::get_event_prediction::builders::GetEventPredictionInputBuilder::default()
     }
 }
@@ -123,12 +110,9 @@ pub struct GetEventPredictionInputBuilder {
     pub(crate) event_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
     pub(crate) event_timestamp: ::std::option::Option<::std::string::String>,
-    pub(crate) event_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) external_model_endpoint_data_blobs: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ModelEndpointDataBlob>,
-    >,
+    pub(crate) event_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) external_model_endpoint_data_blobs:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ModelEndpointDataBlob>>,
 }
 impl GetEventPredictionInputBuilder {
     /// <p>The detector ID.</p>
@@ -146,18 +130,12 @@ impl GetEventPredictionInputBuilder {
         &self.detector_id
     }
     /// <p>The detector version ID.</p>
-    pub fn detector_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The detector version ID.</p>
-    pub fn set_detector_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_version_id = input;
         self
     }
@@ -180,18 +158,12 @@ impl GetEventPredictionInputBuilder {
         &self.event_id
     }
     /// <p>The event type associated with the detector specified for the prediction.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event type associated with the detector specified for the prediction.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type_name = input;
         self
     }
@@ -211,10 +183,7 @@ impl GetEventPredictionInputBuilder {
         self
     }
     /// <p>The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>) -> Self {
         self.entities = input;
         self
     }
@@ -223,18 +192,12 @@ impl GetEventPredictionInputBuilder {
         &self.entities
     }
     /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    pub fn event_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    pub fn set_event_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_timestamp = input;
         self
     }
@@ -274,9 +237,7 @@ impl GetEventPredictionInputBuilder {
     /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
     pub fn set_event_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.event_variables = input;
         self
@@ -289,11 +250,7 @@ impl GetEventPredictionInputBuilder {
     /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
     /// <p> <b>For imported SageMaker models:</b> </p>
     /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
-    pub fn get_event_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_event_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.event_variables
     }
     /// Adds a key-value pair to `external_model_endpoint_data_blobs`.
@@ -314,9 +271,7 @@ impl GetEventPredictionInputBuilder {
     /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
     pub fn set_external_model_endpoint_data_blobs(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ModelEndpointDataBlob>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ModelEndpointDataBlob>>,
     ) -> Self {
         self.external_model_endpoint_data_blobs = input;
         self
@@ -324,30 +279,23 @@ impl GetEventPredictionInputBuilder {
     /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
     pub fn get_external_model_endpoint_data_blobs(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ModelEndpointDataBlob>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ModelEndpointDataBlob>> {
         &self.external_model_endpoint_data_blobs
     }
     /// Consumes the builder and constructs a [`GetEventPredictionInput`](crate::operation::get_event_prediction::GetEventPredictionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_event_prediction::GetEventPredictionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_event_prediction::GetEventPredictionInput {
-                detector_id: self.detector_id,
-                detector_version_id: self.detector_version_id,
-                event_id: self.event_id,
-                event_type_name: self.event_type_name,
-                entities: self.entities,
-                event_timestamp: self.event_timestamp,
-                event_variables: self.event_variables,
-                external_model_endpoint_data_blobs: self.external_model_endpoint_data_blobs,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_event_prediction::GetEventPredictionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_event_prediction::GetEventPredictionInput {
+            detector_id: self.detector_id,
+            detector_version_id: self.detector_version_id,
+            event_id: self.event_id,
+            event_type_name: self.event_type_name,
+            entities: self.entities,
+            event_timestamp: self.event_timestamp,
+            event_variables: self.event_variables,
+            external_model_endpoint_data_blobs: self.external_model_endpoint_data_blobs,
+        })
     }
 }
 impl ::std::fmt::Debug for GetEventPredictionInputBuilder {
@@ -360,10 +308,7 @@ impl ::std::fmt::Debug for GetEventPredictionInputBuilder {
         formatter.field("entities", &self.entities);
         formatter.field("event_timestamp", &self.event_timestamp);
         formatter.field("event_variables", &self.event_variables);
-        formatter.field(
-            "external_model_endpoint_data_blobs",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("external_model_endpoint_data_blobs", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

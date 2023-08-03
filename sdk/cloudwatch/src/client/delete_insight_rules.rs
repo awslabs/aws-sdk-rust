@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteInsightRulesOutput`](crate::operation::delete_insight_rules::DeleteInsightRulesOutput) with field(s):
     ///   - [`failures(Option<Vec<PartialFailure>>)`](crate::operation::delete_insight_rules::DeleteInsightRulesOutput::failures): <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
     /// - On failure, responds with [`SdkError<DeleteInsightRulesError>`](crate::operation::delete_insight_rules::DeleteInsightRulesError)
-    pub fn delete_insight_rules(
-        &self,
-    ) -> crate::operation::delete_insight_rules::builders::DeleteInsightRulesFluentBuilder {
-        crate::operation::delete_insight_rules::builders::DeleteInsightRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_insight_rules(&self) -> crate::operation::delete_insight_rules::builders::DeleteInsightRulesFluentBuilder {
+        crate::operation::delete_insight_rules::builders::DeleteInsightRulesFluentBuilder::new(self.handle.clone())
     }
 }

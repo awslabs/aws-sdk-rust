@@ -9,10 +9,7 @@ pub fn ser_lambda_linux_process_params(
     if let Some(var_2) = &input.container_params {
         #[allow(unused_mut)]
         let mut object_3 = object.key("containerParams").start_object();
-        crate::protocol_serde::shape_lambda_container_params::ser_lambda_container_params(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_lambda_container_params::ser_lambda_container_params(&mut object_3, var_2)?;
         object_3.finish();
     }
     Ok(())

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`certificate(Option<CertificateSummary>)`](crate::operation::create_certificate::CreateCertificateOutput::certificate): <p>An object that describes the certificate created.</p>
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::create_certificate::CreateCertificateOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<CreateCertificateError>`](crate::operation::create_certificate::CreateCertificateError)
-    pub fn create_certificate(
-        &self,
-    ) -> crate::operation::create_certificate::builders::CreateCertificateFluentBuilder {
-        crate::operation::create_certificate::builders::CreateCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_certificate(&self) -> crate::operation::create_certificate::builders::CreateCertificateFluentBuilder {
+        crate::operation::create_certificate::builders::CreateCertificateFluentBuilder::new(self.handle.clone())
     }
 }

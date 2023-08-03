@@ -38,13 +38,7 @@
 /// M2ts Segmentation Style
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M2tsSegmentationStyle {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for M2tsSegmentationStyle {
         match s {
             "MAINTAIN_CADENCE" => M2tsSegmentationStyle::MaintainCadence,
             "RESET_CADENCE" => M2tsSegmentationStyle::ResetCadence,
-            other => M2tsSegmentationStyle::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => M2tsSegmentationStyle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

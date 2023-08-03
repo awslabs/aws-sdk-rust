@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteBlueGreenDeploymentOutput`](crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentOutput) with field(s):
     ///   - [`blue_green_deployment(Option<BlueGreenDeployment>)`](crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentOutput::blue_green_deployment): <p>Details about a blue/green deployment.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<DeleteBlueGreenDeploymentError>`](crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentError)
-    pub fn delete_blue_green_deployment(&self) -> crate::operation::delete_blue_green_deployment::builders::DeleteBlueGreenDeploymentFluentBuilder{
+    pub fn delete_blue_green_deployment(&self) -> crate::operation::delete_blue_green_deployment::builders::DeleteBlueGreenDeploymentFluentBuilder {
         crate::operation::delete_blue_green_deployment::builders::DeleteBlueGreenDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

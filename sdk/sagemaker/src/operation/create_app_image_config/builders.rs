@@ -37,10 +37,7 @@ impl CreateAppImageConfigFluentBuilder {
         }
     }
     /// Access the CreateAppImageConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_app_image_config::builders::CreateAppImageConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_app_image_config::builders::CreateAppImageConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateAppImageConfigFluentBuilder {
             crate::operation::create_app_image_config::CreateAppImageConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_image_config::CreateAppImageConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_image_config::CreateAppImageConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateAppImageConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateAppImageConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_image_config::CreateAppImageConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_image_config::CreateAppImageConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_image_config::CreateAppImageConfigError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateAppImageConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_image_config::CreateAppImageConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_image_config::CreateAppImageConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_image_config::CreateAppImageConfigError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl CreateAppImageConfigFluentBuilder {
             crate::operation::create_app_image_config::CreateAppImageConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_app_image_config::CreateAppImageConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app_image_config::CreateAppImageConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
-    pub fn app_image_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_image_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_image_config_name(input.into());
         self
     }
     /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
-    pub fn set_app_image_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_image_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_image_config_name(input);
         self
     }
@@ -153,10 +133,7 @@ impl CreateAppImageConfigFluentBuilder {
         self
     }
     /// <p>A list of tags to apply to the AppImageConfig.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -165,25 +142,17 @@ impl CreateAppImageConfigFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
-    pub fn kernel_gateway_image_config(
-        mut self,
-        input: crate::types::KernelGatewayImageConfig,
-    ) -> Self {
+    pub fn kernel_gateway_image_config(mut self, input: crate::types::KernelGatewayImageConfig) -> Self {
         self.inner = self.inner.kernel_gateway_image_config(input);
         self
     }
     /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
-    pub fn set_kernel_gateway_image_config(
-        mut self,
-        input: ::std::option::Option<crate::types::KernelGatewayImageConfig>,
-    ) -> Self {
+    pub fn set_kernel_gateway_image_config(mut self, input: ::std::option::Option<crate::types::KernelGatewayImageConfig>) -> Self {
         self.inner = self.inner.set_kernel_gateway_image_config(input);
         self
     }
     /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
-    pub fn get_kernel_gateway_image_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::KernelGatewayImageConfig> {
+    pub fn get_kernel_gateway_image_config(&self) -> &::std::option::Option<crate::types::KernelGatewayImageConfig> {
         self.inner.get_kernel_gateway_image_config()
     }
 }

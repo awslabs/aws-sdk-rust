@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InvalidCrossAccountRoleErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,15 +51,9 @@ pub enum InvalidCrossAccountRoleErrorCode {
 impl ::std::convert::From<&str> for InvalidCrossAccountRoleErrorCode {
     fn from(s: &str) -> Self {
         match s {
-            "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP" => {
-                InvalidCrossAccountRoleErrorCode::RoleDoesNotExistOrInvalidTrustRelationship
-            }
-            "ROLE_DOES_NOT_HAVE_CORRECT_POLICY" => {
-                InvalidCrossAccountRoleErrorCode::RoleDoesNotHaveCorrectPolicy
-            }
-            other => InvalidCrossAccountRoleErrorCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP" => InvalidCrossAccountRoleErrorCode::RoleDoesNotExistOrInvalidTrustRelationship,
+            "ROLE_DOES_NOT_HAVE_CORRECT_POLICY" => InvalidCrossAccountRoleErrorCode::RoleDoesNotHaveCorrectPolicy,
+            other => InvalidCrossAccountRoleErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -80,21 +68,14 @@ impl InvalidCrossAccountRoleErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            InvalidCrossAccountRoleErrorCode::RoleDoesNotExistOrInvalidTrustRelationship => {
-                "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP"
-            }
-            InvalidCrossAccountRoleErrorCode::RoleDoesNotHaveCorrectPolicy => {
-                "ROLE_DOES_NOT_HAVE_CORRECT_POLICY"
-            }
+            InvalidCrossAccountRoleErrorCode::RoleDoesNotExistOrInvalidTrustRelationship => "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP",
+            InvalidCrossAccountRoleErrorCode::RoleDoesNotHaveCorrectPolicy => "ROLE_DOES_NOT_HAVE_CORRECT_POLICY",
             InvalidCrossAccountRoleErrorCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP",
-            "ROLE_DOES_NOT_HAVE_CORRECT_POLICY",
-        ]
+        &["ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP", "ROLE_DOES_NOT_HAVE_CORRECT_POLICY"]
     }
 }
 impl ::std::convert::AsRef<str> for InvalidCrossAccountRoleErrorCode {

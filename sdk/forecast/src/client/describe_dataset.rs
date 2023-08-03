@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_dataset::DescribeDatasetOutput::creation_time): <p>When the dataset was created.</p>
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::describe_dataset::DescribeDatasetOutput::last_modification_time): <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::operation::describe_dataset::DescribeDatasetError)
-    pub fn describe_dataset(
-        &self,
-    ) -> crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder {
-        crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_dataset(&self) -> crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder {
+        crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::new(self.handle.clone())
     }
 }

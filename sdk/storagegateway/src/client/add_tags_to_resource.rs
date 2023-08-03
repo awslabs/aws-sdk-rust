@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`AddTagsToResourceOutput`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput) with field(s):
     ///   - [`resource_arn(Option<String>)`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
     /// - On failure, responds with [`SdkError<AddTagsToResourceError>`](crate::operation::add_tags_to_resource::AddTagsToResourceError)
-    pub fn add_tags_to_resource(
-        &self,
-    ) -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder {
-        crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_tags_to_resource(&self) -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder {
+        crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::new(self.handle.clone())
     }
 }

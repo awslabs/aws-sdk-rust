@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`environment_name(impl ::std::convert::Into<String>)`](crate::operation::restart_app_server::builders::RestartAppServerFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::restart_app_server::builders::RestartAppServerFluentBuilder::set_environment_name): <p>The name of the environment to restart the server for.</p>  <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     /// - On success, responds with [`RestartAppServerOutput`](crate::operation::restart_app_server::RestartAppServerOutput)
     /// - On failure, responds with [`SdkError<RestartAppServerError>`](crate::operation::restart_app_server::RestartAppServerError)
-    pub fn restart_app_server(
-        &self,
-    ) -> crate::operation::restart_app_server::builders::RestartAppServerFluentBuilder {
-        crate::operation::restart_app_server::builders::RestartAppServerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn restart_app_server(&self) -> crate::operation::restart_app_server::builders::RestartAppServerFluentBuilder {
+        crate::operation::restart_app_server::builders::RestartAppServerFluentBuilder::new(self.handle.clone())
     }
 }

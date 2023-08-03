@@ -5,31 +5,25 @@
 pub struct DescribeRegionSettingsOutput {
     /// <p>Returns a list of all services along with the opt-in preferences in the Region.</p>
     #[doc(hidden)]
-    pub resource_type_opt_in_preference:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    pub resource_type_opt_in_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
     /// <p>Returns whether Backup fully manages the backups for a resource type.</p>
     /// <p>For the benefits of full Backup management, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management"> Full Backup management</a>.</p>
     /// <p>For a list of resource types and whether each supports full Backup management, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table.</p>
     /// <p>If <code>"DynamoDB":false</code>, you can enable full Backup management for DynamoDB backup by enabling <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> Backup's advanced DynamoDB backup features</a>.</p>
     #[doc(hidden)]
-    pub resource_type_management_preference:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    pub resource_type_management_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
     _request_id: Option<String>,
 }
 impl DescribeRegionSettingsOutput {
     /// <p>Returns a list of all services along with the opt-in preferences in the Region.</p>
-    pub fn resource_type_opt_in_preference(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn resource_type_opt_in_preference(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
         self.resource_type_opt_in_preference.as_ref()
     }
     /// <p>Returns whether Backup fully manages the backups for a resource type.</p>
     /// <p>For the benefits of full Backup management, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management"> Full Backup management</a>.</p>
     /// <p>For a list of resource types and whether each supports full Backup management, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table.</p>
     /// <p>If <code>"DynamoDB":false</code>, you can enable full Backup management for DynamoDB backup by enabling <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> Backup's advanced DynamoDB backup features</a>.</p>
-    pub fn resource_type_management_preference(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn resource_type_management_preference(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
         self.resource_type_management_preference.as_ref()
     }
 }
@@ -40,23 +34,17 @@ impl ::aws_http::request_id::RequestId for DescribeRegionSettingsOutput {
 }
 impl DescribeRegionSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRegionSettingsOutput`](crate::operation::describe_region_settings::DescribeRegionSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_region_settings::builders::DescribeRegionSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_region_settings::builders::DescribeRegionSettingsOutputBuilder {
         crate::operation::describe_region_settings::builders::DescribeRegionSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRegionSettingsOutput`](crate::operation::describe_region_settings::DescribeRegionSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRegionSettingsOutputBuilder {
-    pub(crate) resource_type_opt_in_preference:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
-    pub(crate) resource_type_management_preference:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    pub(crate) resource_type_opt_in_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    pub(crate) resource_type_management_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
     _request_id: Option<String>,
 }
 impl DescribeRegionSettingsOutputBuilder {
@@ -65,11 +53,7 @@ impl DescribeRegionSettingsOutputBuilder {
     /// To override the contents of this collection use [`set_resource_type_opt_in_preference`](Self::set_resource_type_opt_in_preference).
     ///
     /// <p>Returns a list of all services along with the opt-in preferences in the Region.</p>
-    pub fn resource_type_opt_in_preference(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: bool,
-    ) -> Self {
+    pub fn resource_type_opt_in_preference(mut self, k: impl ::std::convert::Into<::std::string::String>, v: bool) -> Self {
         let mut hash_map = self.resource_type_opt_in_preference.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.resource_type_opt_in_preference = ::std::option::Option::Some(hash_map);
@@ -84,9 +68,7 @@ impl DescribeRegionSettingsOutputBuilder {
         self
     }
     /// <p>Returns a list of all services along with the opt-in preferences in the Region.</p>
-    pub fn get_resource_type_opt_in_preference(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn get_resource_type_opt_in_preference(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
         &self.resource_type_opt_in_preference
     }
     /// Adds a key-value pair to `resource_type_management_preference`.
@@ -97,11 +79,7 @@ impl DescribeRegionSettingsOutputBuilder {
     /// <p>For the benefits of full Backup management, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management"> Full Backup management</a>.</p>
     /// <p>For a list of resource types and whether each supports full Backup management, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table.</p>
     /// <p>If <code>"DynamoDB":false</code>, you can enable full Backup management for DynamoDB backup by enabling <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> Backup's advanced DynamoDB backup features</a>.</p>
-    pub fn resource_type_management_preference(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: bool,
-    ) -> Self {
+    pub fn resource_type_management_preference(mut self, k: impl ::std::convert::Into<::std::string::String>, v: bool) -> Self {
         let mut hash_map = self.resource_type_management_preference.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.resource_type_management_preference = ::std::option::Option::Some(hash_map);
@@ -122,9 +100,7 @@ impl DescribeRegionSettingsOutputBuilder {
     /// <p>For the benefits of full Backup management, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#full-management"> Full Backup management</a>.</p>
     /// <p>For a list of resource types and whether each supports full Backup management, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table.</p>
     /// <p>If <code>"DynamoDB":false</code>, you can enable full Backup management for DynamoDB backup by enabling <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> Backup's advanced DynamoDB backup features</a>.</p>
-    pub fn get_resource_type_management_preference(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+    pub fn get_resource_type_management_preference(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
         &self.resource_type_management_preference
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -28,9 +28,7 @@ impl GetFindingsOutput {
 
 /// A builder for [`GetFindingsOutput`](crate::operation::get_findings::GetFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingsOutputBuilder {
     pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>,
     _request_id: Option<String>,
@@ -48,10 +46,7 @@ impl GetFindingsOutputBuilder {
         self
     }
     /// <p>An array of objects, one for each finding that matches the criteria specified in the request.</p>
-    pub fn set_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>,
-    ) -> Self {
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>) -> Self {
         self.findings = input;
         self
     }

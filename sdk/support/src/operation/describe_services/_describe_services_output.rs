@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeServicesOutput {
 }
 impl DescribeServicesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServicesOutput`](crate::operation::describe_services::DescribeServicesOutput).
-    pub fn builder() -> crate::operation::describe_services::builders::DescribeServicesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_services::builders::DescribeServicesOutputBuilder {
         crate::operation::describe_services::builders::DescribeServicesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeServicesOutput`](crate::operation::describe_services::DescribeServicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeServicesOutputBuilder {
     pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
     _request_id: Option<String>,
@@ -50,10 +47,7 @@ impl DescribeServicesOutputBuilder {
         self
     }
     /// <p>A JSON-formatted list of Amazon Web Services services.</p>
-    pub fn set_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
-    ) -> Self {
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Service>>) -> Self {
         self.services = input;
         self
     }

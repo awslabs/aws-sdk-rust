@@ -51,13 +51,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DocumentType {
     #[allow(missing_docs)] // documentation missing in model
@@ -111,9 +105,7 @@ impl ::std::convert::From<&str> for DocumentType {
             "ProblemAnalysisTemplate" => DocumentType::ProblemAnalysisTemplate,
             "QuickSetup" => DocumentType::QuickSetup,
             "Session" => DocumentType::Session,
-            other => {
-                DocumentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => DocumentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

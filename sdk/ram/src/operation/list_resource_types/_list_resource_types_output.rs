@@ -5,8 +5,7 @@
 pub struct ListResourceTypesOutput {
     /// <p>An array of objects that contain information about the resource types that can be shared using RAM.</p>
     #[doc(hidden)]
-    pub resource_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceNameAndResourceType>>,
+    pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ServiceNameAndResourceType>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListResourceTypesOutput {
 }
 impl ListResourceTypesOutput {
     /// <p>An array of objects that contain information about the resource types that can be shared using RAM.</p>
-    pub fn resource_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServiceNameAndResourceType]> {
+    pub fn resource_types(&self) -> ::std::option::Option<&[crate::types::ServiceNameAndResourceType]> {
         self.resource_types.as_deref()
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListResourceTypesOutput {
 }
 impl ListResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceTypesOutput`](crate::operation::list_resource_types::ListResourceTypesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_types::builders::ListResourceTypesOutputBuilder {
+    pub fn builder() -> crate::operation::list_resource_types::builders::ListResourceTypesOutputBuilder {
         crate::operation::list_resource_types::builders::ListResourceTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceTypesOutput`](crate::operation::list_resource_types::ListResourceTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceTypesOutputBuilder {
-    pub(crate) resource_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServiceNameAndResourceType>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ServiceNameAndResourceType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListResourceTypesOutputBuilder {
         self
     }
     /// <p>An array of objects that contain information about the resource types that can be shared using RAM.</p>
-    pub fn set_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceNameAndResourceType>>,
-    ) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceNameAndResourceType>>) -> Self {
         self.resource_types = input;
         self
     }
     /// <p>An array of objects that contain information about the resource types that can be shared using RAM.</p>
-    pub fn get_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceNameAndResourceType>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceNameAndResourceType>> {
         &self.resource_types
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>

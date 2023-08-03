@@ -59,17 +59,14 @@ impl ::aws_http::request_id::RequestId for DescribeLocationS3Output {
 }
 impl DescribeLocationS3Output {
     /// Creates a new builder-style object to manufacture [`DescribeLocationS3Output`](crate::operation::describe_location_s3::DescribeLocationS3Output).
-    pub fn builder(
-    ) -> crate::operation::describe_location_s3::builders::DescribeLocationS3OutputBuilder {
+    pub fn builder() -> crate::operation::describe_location_s3::builders::DescribeLocationS3OutputBuilder {
         crate::operation::describe_location_s3::builders::DescribeLocationS3OutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocationS3Output`](crate::operation::describe_location_s3::DescribeLocationS3Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocationS3OutputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,
@@ -114,10 +111,7 @@ impl DescribeLocationS3OutputBuilder {
         self
     }
     /// <p>The Amazon S3 storage class that you chose to store your files in when this location is used as a task destination. For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
-    pub fn set_s3_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::S3StorageClass>,
-    ) -> Self {
+    pub fn set_s3_storage_class(mut self, input: ::std::option::Option<crate::types::S3StorageClass>) -> Self {
         self.s3_storage_class = input;
         self
     }
@@ -154,10 +148,7 @@ impl DescribeLocationS3OutputBuilder {
         self
     }
     /// <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
@@ -171,10 +162,7 @@ impl DescribeLocationS3OutputBuilder {
         self
     }
     /// <p>The time that the Amazon S3 bucket location was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }

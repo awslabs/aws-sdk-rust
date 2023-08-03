@@ -36,16 +36,11 @@ pub fn ser_request_certificate_input(
     if let Some(var_11) = &input.options {
         #[allow(unused_mut)]
         let mut object_12 = object.key("Options").start_object();
-        crate::protocol_serde::shape_certificate_options::ser_certificate_options(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_certificate_options::ser_certificate_options(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.certificate_authority_arn {
-        object
-            .key("CertificateAuthorityArn")
-            .string(var_13.as_str());
+        object.key("CertificateAuthorityArn").string(var_13.as_str());
     }
     if let Some(var_14) = &input.tags {
         let mut array_15 = object.key("Tags").start_array();

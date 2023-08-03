@@ -9,8 +9,7 @@ pub struct ModelPackageValidationSpecification {
     pub validation_role: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that SageMaker runs to validate your model package.</p>
     #[doc(hidden)]
-    pub validation_profiles:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageValidationProfile>>,
+    pub validation_profiles: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageValidationProfile>>,
 }
 impl ModelPackageValidationSpecification {
     /// <p>The IAM roles to be used for the validation of the model package.</p>
@@ -18,9 +17,7 @@ impl ModelPackageValidationSpecification {
         self.validation_role.as_deref()
     }
     /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that SageMaker runs to validate your model package.</p>
-    pub fn validation_profiles(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ModelPackageValidationProfile]> {
+    pub fn validation_profiles(&self) -> ::std::option::Option<&[crate::types::ModelPackageValidationProfile]> {
         self.validation_profiles.as_deref()
     }
 }
@@ -33,28 +30,19 @@ impl ModelPackageValidationSpecification {
 
 /// A builder for [`ModelPackageValidationSpecification`](crate::types::ModelPackageValidationSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelPackageValidationSpecificationBuilder {
     pub(crate) validation_role: ::std::option::Option<::std::string::String>,
-    pub(crate) validation_profiles:
-        ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageValidationProfile>>,
+    pub(crate) validation_profiles: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageValidationProfile>>,
 }
 impl ModelPackageValidationSpecificationBuilder {
     /// <p>The IAM roles to be used for the validation of the model package.</p>
-    pub fn validation_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM roles to be used for the validation of the model package.</p>
-    pub fn set_validation_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_role = input;
         self
     }
@@ -67,27 +55,19 @@ impl ModelPackageValidationSpecificationBuilder {
     /// To override the contents of this collection use [`set_validation_profiles`](Self::set_validation_profiles).
     ///
     /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that SageMaker runs to validate your model package.</p>
-    pub fn validation_profiles(
-        mut self,
-        input: crate::types::ModelPackageValidationProfile,
-    ) -> Self {
+    pub fn validation_profiles(mut self, input: crate::types::ModelPackageValidationProfile) -> Self {
         let mut v = self.validation_profiles.unwrap_or_default();
         v.push(input);
         self.validation_profiles = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that SageMaker runs to validate your model package.</p>
-    pub fn set_validation_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageValidationProfile>>,
-    ) -> Self {
+    pub fn set_validation_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageValidationProfile>>) -> Self {
         self.validation_profiles = input;
         self
     }
     /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that SageMaker runs to validate your model package.</p>
-    pub fn get_validation_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelPackageValidationProfile>> {
+    pub fn get_validation_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelPackageValidationProfile>> {
         &self.validation_profiles
     }
     /// Consumes the builder and constructs a [`ModelPackageValidationSpecification`](crate::types::ModelPackageValidationSpecification).

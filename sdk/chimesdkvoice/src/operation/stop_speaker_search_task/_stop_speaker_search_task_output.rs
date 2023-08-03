@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StopSpeakerSearchTaskOutput {
 }
 impl StopSpeakerSearchTaskOutput {
     /// Creates a new builder-style object to manufacture [`StopSpeakerSearchTaskOutput`](crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_speaker_search_task::builders::StopSpeakerSearchTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_speaker_search_task::builders::StopSpeakerSearchTaskOutputBuilder {
         crate::operation::stop_speaker_search_task::builders::StopSpeakerSearchTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopSpeakerSearchTaskOutput`](crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopSpeakerSearchTaskOutputBuilder {
     _request_id: Option<String>,
 }

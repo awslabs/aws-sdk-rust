@@ -12,8 +12,7 @@ pub struct UpdatePipeSourceSelfManagedKafkaParameters {
     pub maximum_batching_window_in_seconds: ::std::option::Option<i32>,
     /// <p>The credentials needed to access the resource.</p>
     #[doc(hidden)]
-    pub credentials:
-        ::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>,
+    pub credentials: ::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>,
     /// <p>The ARN of the Secrets Manager secret used for certification.</p>
     #[doc(hidden)]
     pub server_root_ca_certificate: ::std::option::Option<::std::string::String>,
@@ -31,9 +30,7 @@ impl UpdatePipeSourceSelfManagedKafkaParameters {
         self.maximum_batching_window_in_seconds
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SelfManagedKafkaAccessConfigurationCredentials> {
+    pub fn credentials(&self) -> ::std::option::Option<&crate::types::SelfManagedKafkaAccessConfigurationCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The ARN of the Secrets Manager secret used for certification.</p>
@@ -41,9 +38,7 @@ impl UpdatePipeSourceSelfManagedKafkaParameters {
         self.server_root_ca_certificate.as_deref()
     }
     /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
-    pub fn vpc(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SelfManagedKafkaAccessConfigurationVpc> {
+    pub fn vpc(&self) -> ::std::option::Option<&crate::types::SelfManagedKafkaAccessConfigurationVpc> {
         self.vpc.as_ref()
     }
 }
@@ -56,14 +51,11 @@ impl UpdatePipeSourceSelfManagedKafkaParameters {
 
 /// A builder for [`UpdatePipeSourceSelfManagedKafkaParameters`](crate::types::UpdatePipeSourceSelfManagedKafkaParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePipeSourceSelfManagedKafkaParametersBuilder {
     pub(crate) batch_size: ::std::option::Option<i32>,
     pub(crate) maximum_batching_window_in_seconds: ::std::option::Option<i32>,
-    pub(crate) credentials:
-        ::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>,
+    pub(crate) credentials: ::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>,
     pub(crate) server_root_ca_certificate: ::std::option::Option<::std::string::String>,
     pub(crate) vpc: ::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationVpc>,
 }
@@ -88,10 +80,7 @@ impl UpdatePipeSourceSelfManagedKafkaParametersBuilder {
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
-    pub fn set_maximum_batching_window_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_maximum_batching_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_batching_window_in_seconds = input;
         self
     }
@@ -100,40 +89,26 @@ impl UpdatePipeSourceSelfManagedKafkaParametersBuilder {
         &self.maximum_batching_window_in_seconds
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(
-        mut self,
-        input: crate::types::SelfManagedKafkaAccessConfigurationCredentials,
-    ) -> Self {
+    pub fn credentials(mut self, input: crate::types::SelfManagedKafkaAccessConfigurationCredentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>) -> Self {
         self.credentials = input;
         self
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn get_credentials(
-        &self,
-    ) -> &::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials> {
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials> {
         &self.credentials
     }
     /// <p>The ARN of the Secrets Manager secret used for certification.</p>
-    pub fn server_root_ca_certificate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_root_ca_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_root_ca_certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Secrets Manager secret used for certification.</p>
-    pub fn set_server_root_ca_certificate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_root_ca_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_root_ca_certificate = input;
         self
     }
@@ -147,17 +122,12 @@ impl UpdatePipeSourceSelfManagedKafkaParametersBuilder {
         self
     }
     /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
-    pub fn set_vpc(
-        mut self,
-        input: ::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationVpc>,
-    ) -> Self {
+    pub fn set_vpc(mut self, input: ::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationVpc>) -> Self {
         self.vpc = input;
         self
     }
     /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
-    pub fn get_vpc(
-        &self,
-    ) -> &::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationVpc> {
+    pub fn get_vpc(&self) -> &::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationVpc> {
         &self.vpc
     }
     /// Consumes the builder and constructs a [`UpdatePipeSourceSelfManagedKafkaParameters`](crate::types::UpdatePipeSourceSelfManagedKafkaParameters).

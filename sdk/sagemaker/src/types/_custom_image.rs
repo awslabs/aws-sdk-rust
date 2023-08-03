@@ -37,9 +37,7 @@ impl CustomImage {
 
 /// A builder for [`CustomImage`](crate::types::CustomImage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomImageBuilder {
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
     pub(crate) image_version_number: ::std::option::Option<i32>,
@@ -75,18 +73,12 @@ impl CustomImageBuilder {
         &self.image_version_number
     }
     /// <p>The name of the AppImageConfig.</p>
-    pub fn app_image_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_image_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_image_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the AppImageConfig.</p>
-    pub fn set_app_image_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_image_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_image_config_name = input;
         self
     }

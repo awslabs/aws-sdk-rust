@@ -10,10 +10,7 @@ impl UpdateBudgetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_budget::UpdateBudgetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_budget::UpdateBudgetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_budget::UpdateBudgetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_budget();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl UpdateBudgetFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_budget::UpdateBudget,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_budget::UpdateBudget, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_budget::UpdateBudgetError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl UpdateBudgetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl UpdateBudgetFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_budget::UpdateBudget,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_budget::UpdateBudget, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_budget::UpdateBudgetError>,
     > {
         self.customize_middleware().await

@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_topic_rule_destination::builders::DeleteTopicRuleDestinationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_topic_rule_destination::builders::DeleteTopicRuleDestinationFluentBuilder::set_arn): <p>The ARN of the topic rule destination to delete.</p>
     /// - On success, responds with [`DeleteTopicRuleDestinationOutput`](crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationOutput)
     /// - On failure, responds with [`SdkError<DeleteTopicRuleDestinationError>`](crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError)
-    pub fn delete_topic_rule_destination(&self) -> crate::operation::delete_topic_rule_destination::builders::DeleteTopicRuleDestinationFluentBuilder{
+    pub fn delete_topic_rule_destination(
+        &self,
+    ) -> crate::operation::delete_topic_rule_destination::builders::DeleteTopicRuleDestinationFluentBuilder {
         crate::operation::delete_topic_rule_destination::builders::DeleteTopicRuleDestinationFluentBuilder::new(self.handle.clone())
     }
 }

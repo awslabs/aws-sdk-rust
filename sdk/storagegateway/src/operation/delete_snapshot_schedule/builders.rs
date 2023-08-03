@@ -40,10 +40,7 @@ impl DeleteSnapshotScheduleFluentBuilder {
         }
     }
     /// Access the DeleteSnapshotSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl DeleteSnapshotScheduleFluentBuilder {
             crate::operation::delete_snapshot_schedule::DeleteSnapshotSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl DeleteSnapshotScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl DeleteSnapshotScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl DeleteSnapshotScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl DeleteSnapshotScheduleFluentBuilder {
             crate::operation::delete_snapshot_schedule::DeleteSnapshotSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError>,
     > {
         self.customize_middleware().await
     }

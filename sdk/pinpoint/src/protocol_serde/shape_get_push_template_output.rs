@@ -5,7 +5,10 @@ pub(crate) fn de_push_notification_template_response_payload(
     ::std::option::Option<crate::types::PushNotificationTemplateResponse>,
     crate::operation::get_push_template::GetPushTemplateError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_push_notification_template_response::de_push_notification_template_response_payload(body).map_err(crate::operation::get_push_template::GetPushTemplateError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_push_notification_template_response::de_push_notification_template_response_payload(body)
+                .map_err(crate::operation::get_push_template::GetPushTemplateError::unhandled)
+        })
+        .transpose()
 }

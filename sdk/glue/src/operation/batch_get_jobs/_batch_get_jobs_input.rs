@@ -22,9 +22,7 @@ impl BatchGetJobsInput {
 
 /// A builder for [`BatchGetJobsInput`](crate::operation::batch_get_jobs::BatchGetJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetJobsInputBuilder {
     pub(crate) job_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,10 +39,7 @@ impl BatchGetJobsInputBuilder {
         self
     }
     /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
-    pub fn set_job_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.job_names = input;
         self
     }
@@ -55,12 +50,7 @@ impl BatchGetJobsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetJobsInput`](crate::operation::batch_get_jobs::BatchGetJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_jobs::BatchGetJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_jobs::BatchGetJobsInput {
-            job_names: self.job_names,
-        })
+    ) -> ::std::result::Result<crate::operation::batch_get_jobs::BatchGetJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_get_jobs::BatchGetJobsInput { job_names: self.job_names })
     }
 }

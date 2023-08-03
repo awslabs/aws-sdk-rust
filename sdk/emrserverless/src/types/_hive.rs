@@ -68,18 +68,12 @@ impl HiveBuilder {
         &self.query
     }
     /// <p>The query file for the Hive job run.</p>
-    pub fn init_query_file(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn init_query_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.init_query_file = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query file for the Hive job run.</p>
-    pub fn set_init_query_file(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_init_query_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.init_query_file = input;
         self
     }

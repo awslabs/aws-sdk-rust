@@ -37,9 +37,7 @@ impl CreateBatchLoadTaskFluentBuilder {
         }
     }
     /// Access the CreateBatchLoadTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_batch_load_task::builders::CreateBatchLoadTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_batch_load_task::builders::CreateBatchLoadTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateBatchLoadTaskFluentBuilder {
             crate::operation::create_batch_load_task::CreateBatchLoadTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_load_task::CreateBatchLoadTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_load_task::CreateBatchLoadTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateBatchLoadTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateBatchLoadTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_load_task::CreateBatchLoadTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_load_task::CreateBatchLoadTaskError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateBatchLoadTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_load_task::CreateBatchLoadTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_load_task::CreateBatchLoadTaskError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateBatchLoadTaskFluentBuilder {
             crate::operation::create_batch_load_task::CreateBatchLoadTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_batch_load_task::CreateBatchLoadTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_batch_load_task::CreateBatchLoadTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -142,39 +129,26 @@ impl CreateBatchLoadTaskFluentBuilder {
         self
     }
     /// <p></p>
-    pub fn set_data_model_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataModelConfiguration>,
-    ) -> Self {
+    pub fn set_data_model_configuration(mut self, input: ::std::option::Option<crate::types::DataModelConfiguration>) -> Self {
         self.inner = self.inner.set_data_model_configuration(input);
         self
     }
     /// <p></p>
-    pub fn get_data_model_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataModelConfiguration> {
+    pub fn get_data_model_configuration(&self) -> &::std::option::Option<crate::types::DataModelConfiguration> {
         self.inner.get_data_model_configuration()
     }
     /// <p>Defines configuration details about the data source for a batch load task.</p>
-    pub fn data_source_configuration(
-        mut self,
-        input: crate::types::DataSourceConfiguration,
-    ) -> Self {
+    pub fn data_source_configuration(mut self, input: crate::types::DataSourceConfiguration) -> Self {
         self.inner = self.inner.data_source_configuration(input);
         self
     }
     /// <p>Defines configuration details about the data source for a batch load task.</p>
-    pub fn set_data_source_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceConfiguration>,
-    ) -> Self {
+    pub fn set_data_source_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
         self.inner = self.inner.set_data_source_configuration(input);
         self
     }
     /// <p>Defines configuration details about the data source for a batch load task.</p>
-    pub fn get_data_source_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
+    pub fn get_data_source_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
         self.inner.get_data_source_configuration()
     }
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
@@ -183,32 +157,21 @@ impl CreateBatchLoadTaskFluentBuilder {
         self
     }
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
-    pub fn set_report_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportConfiguration>,
-    ) -> Self {
+    pub fn set_report_configuration(mut self, input: ::std::option::Option<crate::types::ReportConfiguration>) -> Self {
         self.inner = self.inner.set_report_configuration(input);
         self
     }
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
-    pub fn get_report_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReportConfiguration> {
+    pub fn get_report_configuration(&self) -> &::std::option::Option<crate::types::ReportConfiguration> {
         self.inner.get_report_configuration()
     }
     /// <p>Target Timestream database for a batch load task.</p>
-    pub fn target_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_database_name(input.into());
         self
     }
     /// <p>Target Timestream database for a batch load task.</p>
-    pub fn set_target_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_database_name(input);
         self
     }
@@ -217,18 +180,12 @@ impl CreateBatchLoadTaskFluentBuilder {
         self.inner.get_target_database_name()
     }
     /// <p>Target Timestream table for a batch load task.</p>
-    pub fn target_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_table_name(input.into());
         self
     }
     /// <p>Target Timestream table for a batch load task.</p>
-    pub fn set_target_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_table_name(input);
         self
     }

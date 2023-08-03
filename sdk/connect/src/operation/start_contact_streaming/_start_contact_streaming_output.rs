@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for StartContactStreamingOutput {
 }
 impl StartContactStreamingOutput {
     /// Creates a new builder-style object to manufacture [`StartContactStreamingOutput`](crate::operation::start_contact_streaming::StartContactStreamingOutput).
-    pub fn builder(
-    ) -> crate::operation::start_contact_streaming::builders::StartContactStreamingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_contact_streaming::builders::StartContactStreamingOutputBuilder {
         crate::operation::start_contact_streaming::builders::StartContactStreamingOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartContactStreamingOutput`](crate::operation::start_contact_streaming::StartContactStreamingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartContactStreamingOutputBuilder {
     pub(crate) streaming_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

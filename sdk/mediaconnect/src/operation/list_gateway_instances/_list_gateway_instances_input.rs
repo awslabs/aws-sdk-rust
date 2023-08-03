@@ -29,17 +29,14 @@ impl ListGatewayInstancesInput {
 }
 impl ListGatewayInstancesInput {
     /// Creates a new builder-style object to manufacture [`ListGatewayInstancesInput`](crate::operation::list_gateway_instances::ListGatewayInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::list_gateway_instances::builders::ListGatewayInstancesInputBuilder {
+    pub fn builder() -> crate::operation::list_gateway_instances::builders::ListGatewayInstancesInputBuilder {
         crate::operation::list_gateway_instances::builders::ListGatewayInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGatewayInstancesInput`](crate::operation::list_gateway_instances::ListGatewayInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGatewayInstancesInputBuilder {
     pub(crate) filter_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,16 +88,12 @@ impl ListGatewayInstancesInputBuilder {
     /// Consumes the builder and constructs a [`ListGatewayInstancesInput`](crate::operation::list_gateway_instances::ListGatewayInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_gateway_instances::ListGatewayInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_gateway_instances::ListGatewayInstancesInput {
-                filter_arn: self.filter_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_gateway_instances::ListGatewayInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_gateway_instances::ListGatewayInstancesInput {
+            filter_arn: self.filter_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

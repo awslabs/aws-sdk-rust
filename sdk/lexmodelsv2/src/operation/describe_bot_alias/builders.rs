@@ -10,10 +10,7 @@ impl DescribeBotAliasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_bot_alias::DescribeBotAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bot_alias::DescribeBotAliasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bot_alias::DescribeBotAliasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_bot_alias();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeBotAliasFluentBuilder {
         }
     }
     /// Access the DescribeBotAlias as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_bot_alias::builders::DescribeBotAliasInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_bot_alias::builders::DescribeBotAliasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeBotAliasFluentBuilder {
             crate::operation::describe_bot_alias::DescribeBotAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bot_alias::DescribeBotAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bot_alias::DescribeBotAliasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeBotAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeBotAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_bot_alias::DescribeBotAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bot_alias::DescribeBotAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bot_alias::DescribeBotAliasError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeBotAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_bot_alias::DescribeBotAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bot_alias::DescribeBotAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bot_alias::DescribeBotAliasError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeBotAliasFluentBuilder {
             crate::operation::describe_bot_alias::DescribeBotAlias,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_bot_alias::DescribeBotAliasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_bot_alias::DescribeBotAliasError>,
     > {
         self.customize_middleware().await
     }

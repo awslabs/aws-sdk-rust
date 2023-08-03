@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StopPipelineOutput`](crate::operation::stop_pipeline::StopPipelineOutput) with field(s):
     ///   - [`pipeline(Option<Pipeline>)`](crate::operation::stop_pipeline::StopPipelineOutput::pipeline): <p>Information about an existing OpenSearch Ingestion pipeline.</p>
     /// - On failure, responds with [`SdkError<StopPipelineError>`](crate::operation::stop_pipeline::StopPipelineError)
-    pub fn stop_pipeline(
-        &self,
-    ) -> crate::operation::stop_pipeline::builders::StopPipelineFluentBuilder {
-        crate::operation::stop_pipeline::builders::StopPipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_pipeline(&self) -> crate::operation::stop_pipeline::builders::StopPipelineFluentBuilder {
+        crate::operation::stop_pipeline::builders::StopPipelineFluentBuilder::new(self.handle.clone())
     }
 }

@@ -51,9 +51,7 @@ impl PatchBaselineIdentity {
 
 /// A builder for [`PatchBaselineIdentity`](crate::types::PatchBaselineIdentity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PatchBaselineIdentityBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
     pub(crate) baseline_name: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl PatchBaselineIdentityBuilder {
         &self.baseline_id
     }
     /// <p>The name of the patch baseline.</p>
-    pub fn baseline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn baseline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.baseline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the patch baseline.</p>
-    pub fn set_baseline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_baseline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.baseline_name = input;
         self
     }
@@ -102,10 +94,7 @@ impl PatchBaselineIdentityBuilder {
         self
     }
     /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>. </p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
@@ -114,18 +103,12 @@ impl PatchBaselineIdentityBuilder {
         &self.operating_system
     }
     /// <p>The description of the patch baseline.</p>
-    pub fn baseline_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn baseline_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.baseline_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the patch baseline.</p>
-    pub fn set_baseline_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_baseline_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.baseline_description = input;
         self
     }

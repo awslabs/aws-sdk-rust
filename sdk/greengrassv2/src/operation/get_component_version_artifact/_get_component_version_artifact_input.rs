@@ -24,16 +24,14 @@ impl GetComponentVersionArtifactInput {
 }
 impl GetComponentVersionArtifactInput {
     /// Creates a new builder-style object to manufacture [`GetComponentVersionArtifactInput`](crate::operation::get_component_version_artifact::GetComponentVersionArtifactInput).
-    pub fn builder() -> crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactInputBuilder{
+    pub fn builder() -> crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactInputBuilder {
         crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactInputBuilder::default()
     }
 }
 
 /// A builder for [`GetComponentVersionArtifactInput`](crate::operation::get_component_version_artifact::GetComponentVersionArtifactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComponentVersionArtifactInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_name: ::std::option::Option<::std::string::String>,
@@ -55,19 +53,13 @@ impl GetComponentVersionArtifactInputBuilder {
     }
     /// <p>The name of the artifact.</p>
     /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
-    pub fn artifact_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the artifact.</p>
     /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
-    pub fn set_artifact_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_name = input;
         self
     }
@@ -83,11 +75,9 @@ impl GetComponentVersionArtifactInputBuilder {
         crate::operation::get_component_version_artifact::GetComponentVersionArtifactInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_component_version_artifact::GetComponentVersionArtifactInput {
-                arn: self.arn,
-                artifact_name: self.artifact_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_component_version_artifact::GetComponentVersionArtifactInput {
+            arn: self.arn,
+            artifact_name: self.artifact_name,
+        })
     }
 }

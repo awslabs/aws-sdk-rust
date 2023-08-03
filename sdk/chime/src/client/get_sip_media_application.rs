@@ -7,13 +7,8 @@ impl super::Client {
     /// - On success, responds with [`GetSipMediaApplicationOutput`](crate::operation::get_sip_media_application::GetSipMediaApplicationOutput) with field(s):
     ///   - [`sip_media_application(Option<SipMediaApplication>)`](crate::operation::get_sip_media_application::GetSipMediaApplicationOutput::sip_media_application): <p>The SIP media application details.</p>
     /// - On failure, responds with [`SdkError<GetSipMediaApplicationError>`](crate::operation::get_sip_media_application::GetSipMediaApplicationError)
-    #[deprecated(
-        note = "Replaced by GetSipMediaApplication in the Amazon Chime SDK Voice Namespace"
-    )]
-    pub fn get_sip_media_application(
-        &self,
-    ) -> crate::operation::get_sip_media_application::builders::GetSipMediaApplicationFluentBuilder
-    {
+    #[deprecated(note = "Replaced by GetSipMediaApplication in the Amazon Chime SDK Voice Namespace")]
+    pub fn get_sip_media_application(&self) -> crate::operation::get_sip_media_application::builders::GetSipMediaApplicationFluentBuilder {
         crate::operation::get_sip_media_application::builders::GetSipMediaApplicationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`PutRoomSkillParameterOutput`](crate::operation::put_room_skill_parameter::PutRoomSkillParameterOutput)
     /// - On failure, responds with [`SdkError<PutRoomSkillParameterError>`](crate::operation::put_room_skill_parameter::PutRoomSkillParameterError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn put_room_skill_parameter(
-        &self,
-    ) -> crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterFluentBuilder
-    {
+    pub fn put_room_skill_parameter(&self) -> crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterFluentBuilder {
         crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterFluentBuilder::new(self.handle.clone())
     }
 }

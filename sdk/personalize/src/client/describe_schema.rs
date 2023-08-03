@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeSchemaOutput`](crate::operation::describe_schema::DescribeSchemaOutput) with field(s):
     ///   - [`schema(Option<DatasetSchema>)`](crate::operation::describe_schema::DescribeSchemaOutput::schema): <p>The requested schema.</p>
     /// - On failure, responds with [`SdkError<DescribeSchemaError>`](crate::operation::describe_schema::DescribeSchemaError)
-    pub fn describe_schema(
-        &self,
-    ) -> crate::operation::describe_schema::builders::DescribeSchemaFluentBuilder {
-        crate::operation::describe_schema::builders::DescribeSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_schema(&self) -> crate::operation::describe_schema::builders::DescribeSchemaFluentBuilder {
+        crate::operation::describe_schema::builders::DescribeSchemaFluentBuilder::new(self.handle.clone())
     }
 }

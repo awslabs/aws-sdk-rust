@@ -15,34 +15,25 @@ impl DescribeWorkteamInput {
 }
 impl DescribeWorkteamInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkteamInput`](crate::operation::describe_workteam::DescribeWorkteamInput).
-    pub fn builder() -> crate::operation::describe_workteam::builders::DescribeWorkteamInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_workteam::builders::DescribeWorkteamInputBuilder {
         crate::operation::describe_workteam::builders::DescribeWorkteamInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkteamInput`](crate::operation::describe_workteam::DescribeWorkteamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkteamInputBuilder {
     pub(crate) workteam_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkteamInputBuilder {
     /// <p>The name of the work team to return a description of.</p>
-    pub fn workteam_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workteam_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the work team to return a description of.</p>
-    pub fn set_workteam_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workteam_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workteam_name = input;
         self
     }
@@ -53,10 +44,7 @@ impl DescribeWorkteamInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorkteamInput`](crate::operation::describe_workteam::DescribeWorkteamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_workteam::DescribeWorkteamInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_workteam::DescribeWorkteamInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_workteam::DescribeWorkteamInput {
             workteam_name: self.workteam_name,
         })

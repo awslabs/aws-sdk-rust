@@ -30,10 +30,7 @@ pub fn ser_create_deployment_input(
     if let Some(var_9) = &input.command {
         #[allow(unused_mut)]
         let mut object_10 = object.key("Command").start_object();
-        crate::protocol_serde::shape_deployment_command::ser_deployment_command(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_deployment_command::ser_deployment_command(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.comment {

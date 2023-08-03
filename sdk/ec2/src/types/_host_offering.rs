@@ -65,9 +65,7 @@ impl HostOffering {
 
 /// A builder for [`HostOffering`](crate::types::HostOffering).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HostOfferingBuilder {
     pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
     pub(crate) duration: ::std::option::Option<i32>,
@@ -84,10 +82,7 @@ impl HostOfferingBuilder {
         self
     }
     /// <p>The currency of the offering.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<crate::types::CurrencyCodeValues>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCodeValues>) -> Self {
         self.currency_code = input;
         self
     }
@@ -124,18 +119,12 @@ impl HostOfferingBuilder {
         &self.hourly_price
     }
     /// <p>The instance family of the offering.</p>
-    pub fn instance_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance family of the offering.</p>
-    pub fn set_instance_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_family = input;
         self
     }
@@ -163,10 +152,7 @@ impl HostOfferingBuilder {
         self
     }
     /// <p>The available payment option.</p>
-    pub fn set_payment_option(
-        mut self,
-        input: ::std::option::Option<crate::types::PaymentOption>,
-    ) -> Self {
+    pub fn set_payment_option(mut self, input: ::std::option::Option<crate::types::PaymentOption>) -> Self {
         self.payment_option = input;
         self
     }
@@ -175,18 +161,12 @@ impl HostOfferingBuilder {
         &self.payment_option
     }
     /// <p>The upfront price of the offering. Does not apply to No Upfront offerings.</p>
-    pub fn upfront_price(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn upfront_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upfront_price = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upfront price of the offering. Does not apply to No Upfront offerings.</p>
-    pub fn set_upfront_price(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_upfront_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upfront_price = input;
         self
     }

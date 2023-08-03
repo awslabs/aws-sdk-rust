@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateVehicleFleetOutput {
 }
 impl AssociateVehicleFleetOutput {
     /// Creates a new builder-style object to manufacture [`AssociateVehicleFleetOutput`](crate::operation::associate_vehicle_fleet::AssociateVehicleFleetOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetOutputBuilder {
         crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateVehicleFleetOutput`](crate::operation::associate_vehicle_fleet::AssociateVehicleFleetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateVehicleFleetOutputBuilder {
     _request_id: Option<String>,
 }

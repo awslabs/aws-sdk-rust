@@ -29,17 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeCertificatesOutput {
 }
 impl DescribeCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificatesOutput`](crate::operation::describe_certificates::DescribeCertificatesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_certificates::builders::DescribeCertificatesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_certificates::builders::DescribeCertificatesOutputBuilder {
         crate::operation::describe_certificates::builders::DescribeCertificatesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCertificatesOutput`](crate::operation::describe_certificates::DescribeCertificatesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCertificatesOutputBuilder {
     pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -58,17 +55,12 @@ impl DescribeCertificatesOutputBuilder {
         self
     }
     /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
-    pub fn set_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
-    ) -> Self {
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
         self.certificates = input;
         self
     }
     /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
-    pub fn get_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
         &self.certificates
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>

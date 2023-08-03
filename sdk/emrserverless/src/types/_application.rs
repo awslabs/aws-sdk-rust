@@ -27,9 +27,7 @@ pub struct Application {
     pub state_details: ::std::option::Option<::std::string::String>,
     /// <p>The initial capacity of the application.</p>
     #[doc(hidden)]
-    pub initial_capacity: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>,
-    >,
+    pub initial_capacity: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>>,
     /// <p>The maximum capacity of the application. This is cumulative across all workers at any given point in time during the lifespan of the application is created. No new resources will be created once any one of the defined limits is hit.</p>
     #[doc(hidden)]
     pub maximum_capacity: ::std::option::Option<crate::types::MaximumAllowedResources>,
@@ -41,9 +39,7 @@ pub struct Application {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags assigned to the application.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for an application to automatically start on job submission.</p>
     #[doc(hidden)]
     pub auto_start_configuration: ::std::option::Option<crate::types::AutoStartConfig>,
@@ -61,9 +57,7 @@ pub struct Application {
     pub image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
     /// <p>The specification applied to each worker type.</p>
     #[doc(hidden)]
-    pub worker_type_specifications: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>,
-    >,
+    pub worker_type_specifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>>,
 }
 impl Application {
     /// <p>The ID of the application.</p>
@@ -97,15 +91,11 @@ impl Application {
     /// <p>The initial capacity of the application.</p>
     pub fn initial_capacity(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>> {
         self.initial_capacity.as_ref()
     }
     /// <p>The maximum capacity of the application. This is cumulative across all workers at any given point in time during the lifespan of the application is created. No new resources will be created once any one of the defined limits is hit.</p>
-    pub fn maximum_capacity(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MaximumAllowedResources> {
+    pub fn maximum_capacity(&self) -> ::std::option::Option<&crate::types::MaximumAllowedResources> {
         self.maximum_capacity.as_ref()
     }
     /// <p>The date and time when the application run was created.</p>
@@ -117,17 +107,11 @@ impl Application {
         self.updated_at.as_ref()
     }
     /// <p>The tags assigned to the application.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
-    pub fn auto_start_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoStartConfig> {
+    pub fn auto_start_configuration(&self) -> ::std::option::Option<&crate::types::AutoStartConfig> {
         self.auto_start_configuration.as_ref()
     }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
@@ -135,9 +119,7 @@ impl Application {
         self.auto_stop_configuration.as_ref()
     }
     /// <p>The network configuration for customer VPC connectivity for the application.</p>
-    pub fn network_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <p>The CPU architecture of an application.</p>
@@ -151,9 +133,7 @@ impl Application {
     /// <p>The specification applied to each worker type.</p>
     pub fn worker_type_specifications(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>> {
         self.worker_type_specifications.as_ref()
     }
 }
@@ -166,9 +146,7 @@ impl Application {
 
 /// A builder for [`Application`](crate::types::Application).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -177,38 +155,27 @@ pub struct ApplicationBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ApplicationState>,
     pub(crate) state_details: ::std::option::Option<::std::string::String>,
-    pub(crate) initial_capacity: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>,
-    >,
+    pub(crate) initial_capacity: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>>,
     pub(crate) maximum_capacity: ::std::option::Option<crate::types::MaximumAllowedResources>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) auto_start_configuration: ::std::option::Option<crate::types::AutoStartConfig>,
     pub(crate) auto_stop_configuration: ::std::option::Option<crate::types::AutoStopConfig>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) architecture: ::std::option::Option<crate::types::Architecture>,
     pub(crate) image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
-    pub(crate) worker_type_specifications: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>,
-    >,
+    pub(crate) worker_type_specifications:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>>,
 }
 impl ApplicationBuilder {
     /// <p>The ID of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -245,18 +212,12 @@ impl ApplicationBuilder {
         &self.arn
     }
     /// <p>The Amazon EMR release associated with the application.</p>
-    pub fn release_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EMR release associated with the application.</p>
-    pub fn set_release_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_label = input;
         self
     }
@@ -284,10 +245,7 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The state of the application.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ApplicationState>) -> Self {
         self.state = input;
         self
     }
@@ -296,18 +254,12 @@ impl ApplicationBuilder {
         &self.state
     }
     /// <p>The state details of the application.</p>
-    pub fn state_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state details of the application.</p>
-    pub fn set_state_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_details = input;
         self
     }
@@ -320,11 +272,7 @@ impl ApplicationBuilder {
     /// To override the contents of this collection use [`set_initial_capacity`](Self::set_initial_capacity).
     ///
     /// <p>The initial capacity of the application.</p>
-    pub fn initial_capacity(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::InitialCapacityConfig,
-    ) -> Self {
+    pub fn initial_capacity(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::InitialCapacityConfig) -> Self {
         let mut hash_map = self.initial_capacity.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.initial_capacity = ::std::option::Option::Some(hash_map);
@@ -333,9 +281,7 @@ impl ApplicationBuilder {
     /// <p>The initial capacity of the application.</p>
     pub fn set_initial_capacity(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>>,
     ) -> Self {
         self.initial_capacity = input;
         self
@@ -343,9 +289,7 @@ impl ApplicationBuilder {
     /// <p>The initial capacity of the application.</p>
     pub fn get_initial_capacity(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>> {
         &self.initial_capacity
     }
     /// <p>The maximum capacity of the application. This is cumulative across all workers at any given point in time during the lifespan of the application is created. No new resources will be created once any one of the defined limits is hit.</p>
@@ -354,17 +298,12 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The maximum capacity of the application. This is cumulative across all workers at any given point in time during the lifespan of the application is created. No new resources will be created once any one of the defined limits is hit.</p>
-    pub fn set_maximum_capacity(
-        mut self,
-        input: ::std::option::Option<crate::types::MaximumAllowedResources>,
-    ) -> Self {
+    pub fn set_maximum_capacity(mut self, input: ::std::option::Option<crate::types::MaximumAllowedResources>) -> Self {
         self.maximum_capacity = input;
         self
     }
     /// <p>The maximum capacity of the application. This is cumulative across all workers at any given point in time during the lifespan of the application is created. No new resources will be created once any one of the defined limits is hit.</p>
-    pub fn get_maximum_capacity(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaximumAllowedResources> {
+    pub fn get_maximum_capacity(&self) -> &::std::option::Option<crate::types::MaximumAllowedResources> {
         &self.maximum_capacity
     }
     /// <p>The date and time when the application run was created.</p>
@@ -373,10 +312,7 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The date and time when the application run was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -390,10 +326,7 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The date and time when the application run was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -406,32 +339,19 @@ impl ApplicationBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the application.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the application.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags assigned to the application.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
@@ -440,17 +360,12 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
-    pub fn set_auto_start_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoStartConfig>,
-    ) -> Self {
+    pub fn set_auto_start_configuration(mut self, input: ::std::option::Option<crate::types::AutoStartConfig>) -> Self {
         self.auto_start_configuration = input;
         self
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
-    pub fn get_auto_start_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoStartConfig> {
+    pub fn get_auto_start_configuration(&self) -> &::std::option::Option<crate::types::AutoStartConfig> {
         &self.auto_start_configuration
     }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
@@ -459,17 +374,12 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
-    pub fn set_auto_stop_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoStopConfig>,
-    ) -> Self {
+    pub fn set_auto_stop_configuration(mut self, input: ::std::option::Option<crate::types::AutoStopConfig>) -> Self {
         self.auto_stop_configuration = input;
         self
     }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
-    pub fn get_auto_stop_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoStopConfig> {
+    pub fn get_auto_stop_configuration(&self) -> &::std::option::Option<crate::types::AutoStopConfig> {
         &self.auto_stop_configuration
     }
     /// <p>The network configuration for customer VPC connectivity for the application.</p>
@@ -478,17 +388,12 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The network configuration for customer VPC connectivity for the application.</p>
-    pub fn set_network_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkConfiguration>,
-    ) -> Self {
+    pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
         self.network_configuration = input;
         self
     }
     /// <p>The network configuration for customer VPC connectivity for the application.</p>
-    pub fn get_network_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+    pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
     }
     /// <p>The CPU architecture of an application.</p>
@@ -497,10 +402,7 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The CPU architecture of an application.</p>
-    pub fn set_architecture(
-        mut self,
-        input: ::std::option::Option<crate::types::Architecture>,
-    ) -> Self {
+    pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
         self.architecture = input;
         self
     }
@@ -514,17 +416,12 @@ impl ApplicationBuilder {
         self
     }
     /// <p>The image configuration applied to all worker types.</p>
-    pub fn set_image_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageConfiguration>,
-    ) -> Self {
+    pub fn set_image_configuration(mut self, input: ::std::option::Option<crate::types::ImageConfiguration>) -> Self {
         self.image_configuration = input;
         self
     }
     /// <p>The image configuration applied to all worker types.</p>
-    pub fn get_image_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageConfiguration> {
+    pub fn get_image_configuration(&self) -> &::std::option::Option<crate::types::ImageConfiguration> {
         &self.image_configuration
     }
     /// Adds a key-value pair to `worker_type_specifications`.
@@ -545,12 +442,7 @@ impl ApplicationBuilder {
     /// <p>The specification applied to each worker type.</p>
     pub fn set_worker_type_specifications(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::WorkerTypeSpecification,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>>,
     ) -> Self {
         self.worker_type_specifications = input;
         self
@@ -558,9 +450,7 @@ impl ApplicationBuilder {
     /// <p>The specification applied to each worker type.</p>
     pub fn get_worker_type_specifications(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>> {
         &self.worker_type_specifications
     }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).

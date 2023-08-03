@@ -26,7 +26,7 @@ impl CreateTransitGatewayPeeringInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayPeeringFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_transit_gateway_peering::builders::CreateTransitGatewayPeeringInputBuilder,
+    inner: crate::operation::create_transit_gateway_peering::builders::CreateTransitGatewayPeeringInputBuilder,
 }
 impl CreateTransitGatewayPeeringFluentBuilder {
     /// Creates a new `CreateTransitGatewayPeering`.
@@ -37,7 +37,7 @@ impl CreateTransitGatewayPeeringFluentBuilder {
         }
     }
     /// Access the CreateTransitGatewayPeering as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_transit_gateway_peering::builders::CreateTransitGatewayPeeringInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_transit_gateway_peering::builders::CreateTransitGatewayPeeringInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateTransitGatewayPeeringFluentBuilder {
             crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeering,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateTransitGatewayPeeringFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateTransitGatewayPeeringFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateTransitGatewayPeeringFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateTransitGatewayPeeringFluentBuilder {
             crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeering,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_core_network_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl CreateTransitGatewayPeeringFluentBuilder {
         self.inner.get_core_network_id()
     }
     /// <p>The ARN of the transit gateway for the peering request.</p>
-    pub fn transit_gateway_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_arn(input.into());
         self
     }
     /// <p>The ARN of the transit gateway for the peering request.</p>
-    pub fn set_transit_gateway_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_arn(input);
         self
     }
@@ -170,10 +147,7 @@ impl CreateTransitGatewayPeeringFluentBuilder {
         self
     }
     /// <p>The list of key-value tags associated with the request.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

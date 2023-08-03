@@ -37,9 +37,7 @@ impl DeleteMissionProfileFluentBuilder {
         }
     }
     /// Access the DeleteMissionProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_mission_profile::builders::DeleteMissionProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_mission_profile::builders::DeleteMissionProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteMissionProfileFluentBuilder {
             crate::operation::delete_mission_profile::DeleteMissionProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_mission_profile::DeleteMissionProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_mission_profile::DeleteMissionProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteMissionProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteMissionProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_mission_profile::DeleteMissionProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_mission_profile::DeleteMissionProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_mission_profile::DeleteMissionProfileError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteMissionProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_mission_profile::DeleteMissionProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_mission_profile::DeleteMissionProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_mission_profile::DeleteMissionProfileError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteMissionProfileFluentBuilder {
             crate::operation::delete_mission_profile::DeleteMissionProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_mission_profile::DeleteMissionProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_mission_profile::DeleteMissionProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mission_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mission_profile_id(input.into());
         self
     }
     /// <p>UUID of a mission profile.</p>
-    pub fn set_mission_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mission_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mission_profile_id(input);
         self
     }

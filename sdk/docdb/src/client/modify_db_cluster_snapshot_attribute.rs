@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`ModifyDbClusterSnapshotAttributeOutput`](crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput) with field(s):
     ///   - [`db_cluster_snapshot_attributes_result(Option<DbClusterSnapshotAttributesResult>)`](crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput::db_cluster_snapshot_attributes_result): <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
     /// - On failure, responds with [`SdkError<ModifyDBClusterSnapshotAttributeError>`](crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttributeError)
-    pub fn modify_db_cluster_snapshot_attribute(&self) -> crate::operation::modify_db_cluster_snapshot_attribute::builders::ModifyDBClusterSnapshotAttributeFluentBuilder{
+    pub fn modify_db_cluster_snapshot_attribute(
+        &self,
+    ) -> crate::operation::modify_db_cluster_snapshot_attribute::builders::ModifyDBClusterSnapshotAttributeFluentBuilder {
         crate::operation::modify_db_cluster_snapshot_attribute::builders::ModifyDBClusterSnapshotAttributeFluentBuilder::new(self.handle.clone())
     }
 }

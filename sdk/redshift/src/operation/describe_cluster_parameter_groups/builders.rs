@@ -5,16 +5,16 @@ pub use crate::operation::describe_cluster_parameter_groups::_describe_cluster_p
 
 impl DescribeClusterParameterGroupsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_cluster_parameter_groups();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl DescribeClusterParameterGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClusterParameterGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_cluster_parameter_groups::builders::DescribeClusterParameterGroupsInputBuilder,
+    inner: crate::operation::describe_cluster_parameter_groups::builders::DescribeClusterParameterGroupsInputBuilder,
 }
 impl DescribeClusterParameterGroupsFluentBuilder {
     /// Creates a new `DescribeClusterParameterGroups`.
@@ -40,15 +40,20 @@ impl DescribeClusterParameterGroupsFluentBuilder {
         }
     }
     /// Access the DescribeClusterParameterGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_cluster_parameter_groups::builders::DescribeClusterParameterGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_cluster_parameter_groups::builders::DescribeClusterParameterGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroups,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl DescribeClusterParameterGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,38 +90,41 @@ impl DescribeClusterParameterGroupsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroups, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroups,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_parameter_groups::paginator::DescribeClusterParameterGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_cluster_parameter_groups::paginator::DescribeClusterParameterGroupsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_cluster_parameter_groups::paginator::DescribeClusterParameterGroupsPaginator {
         crate::operation::describe_cluster_parameter_groups::paginator::DescribeClusterParameterGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of a specific parameter group for which to return details. By default, details about all parameter groups and the default parameter group are returned.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_name(input.into());
         self
     }
     /// <p>The name of a specific parameter group for which to return details. By default, details about all parameter groups and the default parameter group are returned.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }
@@ -167,10 +176,7 @@ impl DescribeClusterParameterGroupsFluentBuilder {
         self
     }
     /// <p>A tag key or keys for which you want to return all matching cluster parameter groups that are associated with the specified key or keys. For example, suppose that you have parameter groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the parameter groups that have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
@@ -188,10 +194,7 @@ impl DescribeClusterParameterGroupsFluentBuilder {
         self
     }
     /// <p>A tag value or values for which you want to return all matching cluster parameter groups that are associated with the specified tag value or values. For example, suppose that you have parameter groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the parameter groups that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_values(input);
         self
     }

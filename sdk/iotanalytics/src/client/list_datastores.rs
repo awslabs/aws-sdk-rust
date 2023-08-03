@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`datastore_summaries(Option<Vec<DatastoreSummary>>)`](crate::operation::list_datastores::ListDatastoresOutput::datastore_summaries): <p>A list of <code>DatastoreSummary</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_datastores::ListDatastoresOutput::next_token): <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListDatastoresError>`](crate::operation::list_datastores::ListDatastoresError)
-    pub fn list_datastores(
-        &self,
-    ) -> crate::operation::list_datastores::builders::ListDatastoresFluentBuilder {
-        crate::operation::list_datastores::builders::ListDatastoresFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_datastores(&self) -> crate::operation::list_datastores::builders::ListDatastoresFluentBuilder {
+        crate::operation::list_datastores::builders::ListDatastoresFluentBuilder::new(self.handle.clone())
     }
 }

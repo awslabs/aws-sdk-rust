@@ -57,9 +57,7 @@ impl ListServersInput {
 
 /// A builder for [`ListServersInput`](crate::operation::list_servers::ListServersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServersInputBuilder {
     pub(crate) server_criteria: ::std::option::Option<crate::types::ServerCriteria>,
     pub(crate) filter_value: ::std::option::Option<::std::string::String>,
@@ -75,10 +73,7 @@ impl ListServersInputBuilder {
         self
     }
     /// <p> Criteria for filtering servers. </p>
-    pub fn set_server_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::ServerCriteria>,
-    ) -> Self {
+    pub fn set_server_criteria(mut self, input: ::std::option::Option<crate::types::ServerCriteria>) -> Self {
         self.server_criteria = input;
         self
     }
@@ -126,17 +121,12 @@ impl ListServersInputBuilder {
         self
     }
     /// <p> Specifies the group ID to filter on. </p>
-    pub fn set_group_id_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
-    ) -> Self {
+    pub fn set_group_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
         self.group_id_filter = input;
         self
     }
     /// <p> Specifies the group ID to filter on. </p>
-    pub fn get_group_id_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+    pub fn get_group_id_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
         &self.group_id_filter
     }
     /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
@@ -168,12 +158,7 @@ impl ListServersInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListServersInput`](crate::operation::list_servers::ListServersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_servers::ListServersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_servers::ListServersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_servers::ListServersInput {
             server_criteria: self.server_criteria,
             filter_value: self.filter_value,

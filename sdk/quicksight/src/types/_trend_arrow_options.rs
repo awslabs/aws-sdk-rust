@@ -23,9 +23,7 @@ impl TrendArrowOptions {
 
 /// A builder for [`TrendArrowOptions`](crate::types::TrendArrowOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrendArrowOptionsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }
@@ -36,10 +34,7 @@ impl TrendArrowOptionsBuilder {
         self
     }
     /// <p>The visibility of the trend arrows.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
         self
     }
@@ -49,8 +44,6 @@ impl TrendArrowOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`TrendArrowOptions`](crate::types::TrendArrowOptions).
     pub fn build(self) -> crate::types::TrendArrowOptions {
-        crate::types::TrendArrowOptions {
-            visibility: self.visibility,
-        }
+        crate::types::TrendArrowOptions { visibility: self.visibility }
     }
 }

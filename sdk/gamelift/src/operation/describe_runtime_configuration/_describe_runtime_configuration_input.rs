@@ -15,16 +15,14 @@ impl DescribeRuntimeConfigurationInput {
 }
 impl DescribeRuntimeConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeRuntimeConfigurationInput`](crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationInput).
-    pub fn builder() -> crate::operation::describe_runtime_configuration::builders::DescribeRuntimeConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_runtime_configuration::builders::DescribeRuntimeConfigurationInputBuilder {
         crate::operation::describe_runtime_configuration::builders::DescribeRuntimeConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRuntimeConfigurationInput`](crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRuntimeConfigurationInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DescribeRuntimeConfigurationInputBuilder {
         crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationInput {
-                fleet_id: self.fleet_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationInput { fleet_id: self.fleet_id })
     }
 }

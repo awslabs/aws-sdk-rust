@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`last_rule_modification(Option<DateTime>)`](crate::operation::get_sampling_targets::GetSamplingTargetsOutput::last_rule_modification): <p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
     ///   - [`unprocessed_statistics(Option<Vec<UnprocessedStatistics>>)`](crate::operation::get_sampling_targets::GetSamplingTargetsOutput::unprocessed_statistics): <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not process.</p>
     /// - On failure, responds with [`SdkError<GetSamplingTargetsError>`](crate::operation::get_sampling_targets::GetSamplingTargetsError)
-    pub fn get_sampling_targets(
-        &self,
-    ) -> crate::operation::get_sampling_targets::builders::GetSamplingTargetsFluentBuilder {
-        crate::operation::get_sampling_targets::builders::GetSamplingTargetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_sampling_targets(&self) -> crate::operation::get_sampling_targets::builders::GetSamplingTargetsFluentBuilder {
+        crate::operation::get_sampling_targets::builders::GetSamplingTargetsFluentBuilder::new(self.handle.clone())
     }
 }

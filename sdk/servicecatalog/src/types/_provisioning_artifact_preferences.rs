@@ -35,9 +35,7 @@ impl ProvisioningArtifactPreferences {
 
 /// A builder for [`ProvisioningArtifactPreferences`](crate::types::ProvisioningArtifactPreferences).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProvisioningArtifactPreferencesBuilder {
     pub(crate) stack_set_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) stack_set_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -49,10 +47,7 @@ impl ProvisioningArtifactPreferencesBuilder {
     ///
     /// <p>One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    pub fn stack_set_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stack_set_accounts.unwrap_or_default();
         v.push(input.into());
         self.stack_set_accounts = ::std::option::Option::Some(v);
@@ -60,18 +55,13 @@ impl ProvisioningArtifactPreferencesBuilder {
     }
     /// <p>One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    pub fn set_stack_set_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_stack_set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.stack_set_accounts = input;
         self
     }
     /// <p>One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    pub fn get_stack_set_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_stack_set_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.stack_set_accounts
     }
     /// Appends an item to `stack_set_regions`.
@@ -80,10 +70,7 @@ impl ProvisioningArtifactPreferencesBuilder {
     ///
     /// <p>One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    pub fn stack_set_regions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stack_set_regions.unwrap_or_default();
         v.push(input.into());
         self.stack_set_regions = ::std::option::Option::Some(v);
@@ -91,18 +78,13 @@ impl ProvisioningArtifactPreferencesBuilder {
     }
     /// <p>One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    pub fn set_stack_set_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_stack_set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.stack_set_regions = input;
         self
     }
     /// <p>One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    pub fn get_stack_set_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_stack_set_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.stack_set_regions
     }
     /// Consumes the builder and constructs a [`ProvisioningArtifactPreferences`](crate::types::ProvisioningArtifactPreferences).

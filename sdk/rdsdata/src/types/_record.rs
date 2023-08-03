@@ -25,9 +25,7 @@ impl Record {
 
 /// A builder for [`Record`](crate::types::Record).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecordBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::Value>>,
 }
@@ -44,10 +42,7 @@ impl RecordBuilder {
         self
     }
     /// <p>The values returned in the record.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Value>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Value>>) -> Self {
         self.values = input;
         self
     }
@@ -57,8 +52,6 @@ impl RecordBuilder {
     }
     /// Consumes the builder and constructs a [`Record`](crate::types::Record).
     pub fn build(self) -> crate::types::Record {
-        crate::types::Record {
-            values: self.values,
-        }
+        crate::types::Record { values: self.values }
     }
 }

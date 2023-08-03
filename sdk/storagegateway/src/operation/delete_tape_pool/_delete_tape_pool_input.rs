@@ -22,9 +22,7 @@ impl DeleteTapePoolInput {
 
 /// A builder for [`DeleteTapePoolInput`](crate::operation::delete_tape_pool::DeleteTapePoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTapePoolInputBuilder {
     pub(crate) pool_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DeleteTapePoolInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTapePoolInput`](crate::operation::delete_tape_pool::DeleteTapePoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_tape_pool::DeleteTapePoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_tape_pool::DeleteTapePoolInput {
-            pool_arn: self.pool_arn,
-        })
+    ) -> ::std::result::Result<crate::operation::delete_tape_pool::DeleteTapePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_tape_pool::DeleteTapePoolInput { pool_arn: self.pool_arn })
     }
 }

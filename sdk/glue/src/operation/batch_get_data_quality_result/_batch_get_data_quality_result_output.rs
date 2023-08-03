@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for BatchGetDataQualityResultOutput {
 }
 impl BatchGetDataQualityResultOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDataQualityResultOutput`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput).
-    pub fn builder() -> crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultOutputBuilder{
+    pub fn builder() -> crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultOutputBuilder {
         crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetDataQualityResultOutput`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDataQualityResultOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityResult>>,
     pub(crate) results_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -56,17 +54,12 @@ impl BatchGetDataQualityResultOutputBuilder {
         self
     }
     /// <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityResult>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityResult>>) -> Self {
         self.results = input;
         self
     }
     /// <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityResult>> {
         &self.results
     }
     /// Appends an item to `results_not_found`.
@@ -74,27 +67,19 @@ impl BatchGetDataQualityResultOutputBuilder {
     /// To override the contents of this collection use [`set_results_not_found`](Self::set_results_not_found).
     ///
     /// <p>A list of result IDs for which results were not found.</p>
-    pub fn results_not_found(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn results_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.results_not_found.unwrap_or_default();
         v.push(input.into());
         self.results_not_found = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of result IDs for which results were not found.</p>
-    pub fn set_results_not_found(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_results_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.results_not_found = input;
         self
     }
     /// <p>A list of result IDs for which results were not found.</p>
-    pub fn get_results_not_found(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_results_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.results_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -107,9 +92,7 @@ impl BatchGetDataQualityResultOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetDataQualityResultOutput`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput {
+    pub fn build(self) -> crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput {
         crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput {
             results: self.results,
             results_not_found: self.results_not_found,

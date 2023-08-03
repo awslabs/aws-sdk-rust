@@ -33,8 +33,7 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     pub ipv6_address_count: ::std::option::Option<i32>,
     /// <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you're specifying a number of IPv6 addresses.</p>
     #[doc(hidden)]
-    pub ipv6_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6AddressRequest>>,
+    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6AddressRequest>>,
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
@@ -43,8 +42,7 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>One or more private IPv4 addresses.</p>
     #[doc(hidden)]
-    pub private_ip_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
+    pub private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
     /// <p>The number of secondary private IPv4 addresses to assign to a network interface.</p>
     #[doc(hidden)]
     pub secondary_private_ip_address_count: ::std::option::Option<i32>,
@@ -56,15 +54,13 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     pub network_card_index: ::std::option::Option<i32>,
     /// <p>One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
     #[doc(hidden)]
-    pub ipv4_prefixes:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
+    pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
     /// <p>The number of IPv4 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
     #[doc(hidden)]
     pub ipv4_prefix_count: ::std::option::Option<i32>,
     /// <p>One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
     #[doc(hidden)]
-    pub ipv6_prefixes:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
+    pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
     /// <p>The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
     #[doc(hidden)]
     pub ipv6_prefix_count: ::std::option::Option<i32>,
@@ -106,9 +102,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
         self.ipv6_address_count
     }
     /// <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you're specifying a number of IPv6 addresses.</p>
-    pub fn ipv6_addresses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceIpv6AddressRequest]> {
+    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[crate::types::InstanceIpv6AddressRequest]> {
         self.ipv6_addresses.as_deref()
     }
     /// <p>The ID of the network interface.</p>
@@ -120,9 +114,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
         self.private_ip_address.as_deref()
     }
     /// <p>One or more private IPv4 addresses.</p>
-    pub fn private_ip_addresses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PrivateIpAddressSpecification]> {
+    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[crate::types::PrivateIpAddressSpecification]> {
         self.private_ip_addresses.as_deref()
     }
     /// <p>The number of secondary private IPv4 addresses to assign to a network interface.</p>
@@ -138,9 +130,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
         self.network_card_index
     }
     /// <p>One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn ipv4_prefixes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::Ipv4PrefixSpecificationRequest]> {
+    pub fn ipv4_prefixes(&self) -> ::std::option::Option<&[crate::types::Ipv4PrefixSpecificationRequest]> {
         self.ipv4_prefixes.as_deref()
     }
     /// <p>The number of IPv4 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
@@ -148,9 +138,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
         self.ipv4_prefix_count
     }
     /// <p>One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
-    pub fn ipv6_prefixes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::Ipv6PrefixSpecificationRequest]> {
+    pub fn ipv6_prefixes(&self) -> ::std::option::Option<&[crate::types::Ipv6PrefixSpecificationRequest]> {
         self.ipv6_prefixes.as_deref()
     }
     /// <p>The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
@@ -160,18 +148,14 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
 }
 impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateInstanceNetworkInterfaceSpecificationRequest`](crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest).
-    pub fn builder(
-    ) -> crate::types::builders::LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder
-    {
+    pub fn builder() -> crate::types::builders::LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
         crate::types::builders::LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder::default()
     }
 }
 
 /// A builder for [`LaunchTemplateInstanceNetworkInterfaceSpecificationRequest`](crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
     pub(crate) associate_carrier_ip_address: ::std::option::Option<bool>,
     pub(crate) associate_public_ip_address: ::std::option::Option<bool>,
@@ -181,20 +165,16 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) interface_type: ::std::option::Option<::std::string::String>,
     pub(crate) ipv6_address_count: ::std::option::Option<i32>,
-    pub(crate) ipv6_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6AddressRequest>>,
+    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6AddressRequest>>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
-    pub(crate) private_ip_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
+    pub(crate) private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
     pub(crate) secondary_private_ip_address_count: ::std::option::Option<i32>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_card_index: ::std::option::Option<i32>,
-    pub(crate) ipv4_prefixes:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
+    pub(crate) ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
     pub(crate) ipv4_prefix_count: ::std::option::Option<i32>,
-    pub(crate) ipv6_prefixes:
-        ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
+    pub(crate) ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
     pub(crate) ipv6_prefix_count: ::std::option::Option<i32>,
 }
 impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
@@ -283,10 +263,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
         self
     }
     /// <p>The IDs of one or more security groups.</p>
-    pub fn set_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.groups = input;
         self
     }
@@ -297,20 +274,14 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
     /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code> </p>
-    pub fn interface_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn interface_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interface_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code> </p>
-    pub fn set_interface_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_interface_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interface_type = input;
         self
     }
@@ -346,32 +317,21 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
         self
     }
     /// <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you're specifying a number of IPv6 addresses.</p>
-    pub fn set_ipv6_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6AddressRequest>>,
-    ) -> Self {
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6AddressRequest>>) -> Self {
         self.ipv6_addresses = input;
         self
     }
     /// <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you're specifying a number of IPv6 addresses.</p>
-    pub fn get_ipv6_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6AddressRequest>> {
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6AddressRequest>> {
         &self.ipv6_addresses
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -380,18 +340,12 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
         &self.network_interface_id
     }
     /// <p>The primary private IPv4 address of the network interface.</p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The primary private IPv4 address of the network interface.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_ip_address = input;
         self
     }
@@ -404,27 +358,19 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
     ///
     /// <p>One or more private IPv4 addresses.</p>
-    pub fn private_ip_addresses(
-        mut self,
-        input: crate::types::PrivateIpAddressSpecification,
-    ) -> Self {
+    pub fn private_ip_addresses(mut self, input: crate::types::PrivateIpAddressSpecification) -> Self {
         let mut v = self.private_ip_addresses.unwrap_or_default();
         v.push(input);
         self.private_ip_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more private IPv4 addresses.</p>
-    pub fn set_private_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
-    ) -> Self {
+    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>) -> Self {
         self.private_ip_addresses = input;
         self
     }
     /// <p>One or more private IPv4 addresses.</p>
-    pub fn get_private_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>> {
+    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>> {
         &self.private_ip_addresses
     }
     /// <p>The number of secondary private IPv4 addresses to assign to a network interface.</p>
@@ -433,10 +379,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
         self
     }
     /// <p>The number of secondary private IPv4 addresses to assign to a network interface.</p>
-    pub fn set_secondary_private_ip_address_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_secondary_private_ip_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.secondary_private_ip_address_count = input;
         self
     }
@@ -484,17 +427,12 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
         self
     }
     /// <p>One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn set_ipv4_prefixes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
-    ) -> Self {
+    pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>) -> Self {
         self.ipv4_prefixes = input;
         self
     }
     /// <p>One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn get_ipv4_prefixes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>> {
+    pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>> {
         &self.ipv4_prefixes
     }
     /// <p>The number of IPv4 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
@@ -523,17 +461,12 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
         self
     }
     /// <p>One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
-    pub fn set_ipv6_prefixes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
-    ) -> Self {
+    pub fn set_ipv6_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>) -> Self {
         self.ipv6_prefixes = input;
         self
     }
     /// <p>One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
-    pub fn get_ipv6_prefixes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>> {
+    pub fn get_ipv6_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>> {
         &self.ipv6_prefixes
     }
     /// <p>The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>

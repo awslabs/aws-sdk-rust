@@ -30,9 +30,7 @@ impl MaintenanceCreateSettings {
 
 /// A builder for [`MaintenanceCreateSettings`](crate::types::MaintenanceCreateSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MaintenanceCreateSettingsBuilder {
     pub(crate) maintenance_day: ::std::option::Option<crate::types::MaintenanceDay>,
     pub(crate) maintenance_start_time: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl MaintenanceCreateSettingsBuilder {
         self
     }
     /// Choose one day of the week for maintenance. The chosen day is used for all future maintenance windows.
-    pub fn set_maintenance_day(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceDay>,
-    ) -> Self {
+    pub fn set_maintenance_day(mut self, input: ::std::option::Option<crate::types::MaintenanceDay>) -> Self {
         self.maintenance_day = input;
         self
     }
@@ -56,18 +51,12 @@ impl MaintenanceCreateSettingsBuilder {
         &self.maintenance_day
     }
     /// Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows.
-    pub fn maintenance_start_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maintenance_start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows.
-    pub fn set_maintenance_start_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maintenance_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_start_time = input;
         self
     }

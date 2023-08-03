@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteUserEndpointsOutput {
 }
 impl DeleteUserEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserEndpointsOutput`](crate::operation::delete_user_endpoints::DeleteUserEndpointsOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_user_endpoints::builders::DeleteUserEndpointsOutputBuilder {
-        crate::operation::delete_user_endpoints::builders::DeleteUserEndpointsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_user_endpoints::builders::DeleteUserEndpointsOutputBuilder {
+        crate::operation::delete_user_endpoints::builders::DeleteUserEndpointsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUserEndpointsOutput`](crate::operation::delete_user_endpoints::DeleteUserEndpointsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUserEndpointsOutputBuilder {
     pub(crate) endpoints_response: ::std::option::Option<crate::types::EndpointsResponse>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl DeleteUserEndpointsOutputBuilder {
         self
     }
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
-    pub fn set_endpoints_response(
-        mut self,
-        input: ::std::option::Option<crate::types::EndpointsResponse>,
-    ) -> Self {
+    pub fn set_endpoints_response(mut self, input: ::std::option::Option<crate::types::EndpointsResponse>) -> Self {
         self.endpoints_response = input;
         self
     }
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
-    pub fn get_endpoints_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::EndpointsResponse> {
+    pub fn get_endpoints_response(&self) -> &::std::option::Option<crate::types::EndpointsResponse> {
         &self.endpoints_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PeriodUnit {
     #[allow(missing_docs)] // documentation missing in model
@@ -106,15 +100,7 @@ impl PeriodUnit {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DAY",
-            "HOUR",
-            "MICROSECOND",
-            "MILLISECOND",
-            "MINUTE",
-            "SECOND",
-            "WEEK",
-        ]
+        &["DAY", "HOUR", "MICROSECOND", "MILLISECOND", "MINUTE", "SECOND", "WEEK"]
     }
 }
 impl ::std::convert::AsRef<str> for PeriodUnit {

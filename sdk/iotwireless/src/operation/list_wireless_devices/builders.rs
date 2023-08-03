@@ -37,9 +37,7 @@ impl ListWirelessDevicesFluentBuilder {
         }
     }
     /// Access the ListWirelessDevices as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_wireless_devices::builders::ListWirelessDevicesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_wireless_devices::builders::ListWirelessDevicesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListWirelessDevicesFluentBuilder {
             crate::operation::list_wireless_devices::ListWirelessDevices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_wireless_devices::ListWirelessDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_wireless_devices::ListWirelessDevicesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListWirelessDevicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListWirelessDevicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_wireless_devices::ListWirelessDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_wireless_devices::ListWirelessDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_wireless_devices::ListWirelessDevicesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListWirelessDevicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_wireless_devices::ListWirelessDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_wireless_devices::ListWirelessDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_wireless_devices::ListWirelessDevicesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListWirelessDevicesFluentBuilder {
             crate::operation::list_wireless_devices::ListWirelessDevices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_wireless_devices::ListWirelessDevicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_wireless_devices::ListWirelessDevicesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_wireless_devices::paginator::ListWirelessDevicesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_wireless_devices::paginator::ListWirelessDevicesPaginator {
-        crate::operation::list_wireless_devices::paginator::ListWirelessDevicesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_wireless_devices::paginator::ListWirelessDevicesPaginator {
+        crate::operation::list_wireless_devices::paginator::ListWirelessDevicesPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -162,18 +144,12 @@ impl ListWirelessDevicesFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>A filter to list only the wireless devices that use this destination.</p>
-    pub fn destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_name(input.into());
         self
     }
     /// <p>A filter to list only the wireless devices that use this destination.</p>
-    pub fn set_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_name(input);
         self
     }
@@ -182,18 +158,12 @@ impl ListWirelessDevicesFluentBuilder {
         self.inner.get_destination_name()
     }
     /// <p>A filter to list only the wireless devices that use this device profile.</p>
-    pub fn device_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_profile_id(input.into());
         self
     }
     /// <p>A filter to list only the wireless devices that use this device profile.</p>
-    pub fn set_device_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_profile_id(input);
         self
     }
@@ -202,18 +172,12 @@ impl ListWirelessDevicesFluentBuilder {
         self.inner.get_device_profile_id()
     }
     /// <p>A filter to list only the wireless devices that use this service profile.</p>
-    pub fn service_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_profile_id(input.into());
         self
     }
     /// <p>A filter to list only the wireless devices that use this service profile.</p>
-    pub fn set_service_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_profile_id(input);
         self
     }
@@ -227,32 +191,21 @@ impl ListWirelessDevicesFluentBuilder {
         self
     }
     /// <p>A filter to list only the wireless devices that use this wireless device type.</p>
-    pub fn set_wireless_device_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessDeviceType>,
-    ) -> Self {
+    pub fn set_wireless_device_type(mut self, input: ::std::option::Option<crate::types::WirelessDeviceType>) -> Self {
         self.inner = self.inner.set_wireless_device_type(input);
         self
     }
     /// <p>A filter to list only the wireless devices that use this wireless device type.</p>
-    pub fn get_wireless_device_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+    pub fn get_wireless_device_type(&self) -> &::std::option::Option<crate::types::WirelessDeviceType> {
         self.inner.get_wireless_device_type()
     }
     /// <p>The ID of a FUOTA task.</p>
-    pub fn fuota_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn fuota_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fuota_task_id(input.into());
         self
     }
     /// <p>The ID of a FUOTA task.</p>
-    pub fn set_fuota_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_fuota_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fuota_task_id(input);
         self
     }
@@ -261,18 +214,12 @@ impl ListWirelessDevicesFluentBuilder {
         self.inner.get_fuota_task_id()
     }
     /// <p>The ID of the multicast group.</p>
-    pub fn multicast_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn multicast_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.multicast_group_id(input.into());
         self
     }
     /// <p>The ID of the multicast group.</p>
-    pub fn set_multicast_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_multicast_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_multicast_group_id(input);
         self
     }

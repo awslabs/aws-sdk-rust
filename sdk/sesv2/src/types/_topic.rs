@@ -31,9 +31,7 @@ impl Topic {
         self.description.as_deref()
     }
     /// <p>The default subscription status to be applied to a contact if the contact has not noted their preference for subscribing to a topic.</p>
-    pub fn default_subscription_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SubscriptionStatus> {
+    pub fn default_subscription_status(&self) -> ::std::option::Option<&crate::types::SubscriptionStatus> {
         self.default_subscription_status.as_ref()
     }
 }
@@ -46,9 +44,7 @@ impl Topic {
 
 /// A builder for [`Topic`](crate::types::Topic).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TopicBuilder {
     pub(crate) topic_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
@@ -104,17 +100,12 @@ impl TopicBuilder {
         self
     }
     /// <p>The default subscription status to be applied to a contact if the contact has not noted their preference for subscribing to a topic.</p>
-    pub fn set_default_subscription_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SubscriptionStatus>,
-    ) -> Self {
+    pub fn set_default_subscription_status(mut self, input: ::std::option::Option<crate::types::SubscriptionStatus>) -> Self {
         self.default_subscription_status = input;
         self
     }
     /// <p>The default subscription status to be applied to a contact if the contact has not noted their preference for subscribing to a topic.</p>
-    pub fn get_default_subscription_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SubscriptionStatus> {
+    pub fn get_default_subscription_status(&self) -> &::std::option::Option<crate::types::SubscriptionStatus> {
         &self.default_subscription_status
     }
     /// Consumes the builder and constructs a [`Topic`](crate::types::Topic).

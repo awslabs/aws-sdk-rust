@@ -10,10 +10,7 @@ impl DeleteNamespaceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_namespace::DeleteNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_namespace::DeleteNamespaceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_namespace::DeleteNamespaceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_namespace();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteNamespaceFluentBuilder {
         }
     }
     /// Access the DeleteNamespace as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_namespace::builders::DeleteNamespaceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_namespace::builders::DeleteNamespaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteNamespaceFluentBuilder {
             crate::operation::delete_namespace::DeleteNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_namespace::DeleteNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_namespace::DeleteNamespaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteNamespaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_namespace::DeleteNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_namespace::DeleteNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_namespace::DeleteNamespaceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_namespace::DeleteNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_namespace::DeleteNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_namespace::DeleteNamespaceError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteNamespaceFluentBuilder {
             crate::operation::delete_namespace::DeleteNamespace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_namespace::DeleteNamespaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_namespace::DeleteNamespaceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the namespace to delete.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace_name(input.into());
         self
     }
     /// <p>The name of the namespace to delete.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl DeleteNamespaceFluentBuilder {
         self.inner.get_namespace_name()
     }
     /// <p>The name of the snapshot to be created before the namespace is deleted.</p>
-    pub fn final_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn final_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.final_snapshot_name(input.into());
         self
     }
     /// <p>The name of the snapshot to be created before the namespace is deleted.</p>
-    pub fn set_final_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_final_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_final_snapshot_name(input);
         self
     }
@@ -168,10 +140,7 @@ impl DeleteNamespaceFluentBuilder {
         self
     }
     /// <p>How long to retain the final snapshot.</p>
-    pub fn set_final_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_final_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_final_snapshot_retention_period(input);
         self
     }

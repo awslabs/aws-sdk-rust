@@ -29,17 +29,14 @@ impl ListMatchingJobsInput {
 }
 impl ListMatchingJobsInput {
     /// Creates a new builder-style object to manufacture [`ListMatchingJobsInput`](crate::operation::list_matching_jobs::ListMatchingJobsInput).
-    pub fn builder() -> crate::operation::list_matching_jobs::builders::ListMatchingJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_matching_jobs::builders::ListMatchingJobsInputBuilder {
         crate::operation::list_matching_jobs::builders::ListMatchingJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMatchingJobsInput`](crate::operation::list_matching_jobs::ListMatchingJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMatchingJobsInputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct ListMatchingJobsInputBuilder {
 }
 impl ListMatchingJobsInputBuilder {
     /// <p>The name of the workflow to be retrieved.</p>
-    pub fn workflow_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workflow to be retrieved.</p>
-    pub fn set_workflow_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_name = input;
         self
     }
@@ -97,16 +88,11 @@ impl ListMatchingJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListMatchingJobsInput`](crate::operation::list_matching_jobs::ListMatchingJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_matching_jobs::ListMatchingJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_matching_jobs::ListMatchingJobsInput {
-                workflow_name: self.workflow_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_matching_jobs::ListMatchingJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_matching_jobs::ListMatchingJobsInput {
+            workflow_name: self.workflow_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

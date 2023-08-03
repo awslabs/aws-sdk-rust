@@ -45,10 +45,7 @@ pub fn ser_create_task_input(
             {
                 #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(
-                    &mut object_16,
-                    item_15,
-                )?;
+                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(&mut object_16, item_15)?;
                 object_16.finish();
             }
         }

@@ -26,8 +26,7 @@ impl DescribeFeatureMetadataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFeatureMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataInputBuilder,
+    inner: crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataInputBuilder,
 }
 impl DescribeFeatureMetadataFluentBuilder {
     /// Creates a new `DescribeFeatureMetadata`.
@@ -38,10 +37,7 @@ impl DescribeFeatureMetadataFluentBuilder {
         }
     }
     /// Access the DescribeFeatureMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeFeatureMetadataFluentBuilder {
             crate::operation::describe_feature_metadata::DescribeFeatureMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_feature_metadata::DescribeFeatureMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_feature_metadata::DescribeFeatureMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeFeatureMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeFeatureMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_feature_metadata::DescribeFeatureMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_feature_metadata::DescribeFeatureMetadataError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeFeatureMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_feature_metadata::DescribeFeatureMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_feature_metadata::DescribeFeatureMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DescribeFeatureMetadataFluentBuilder {
             crate::operation::describe_feature_metadata::DescribeFeatureMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_feature_metadata::DescribeFeatureMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_feature_metadata::DescribeFeatureMetadataError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature.</p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feature_group_name(input);
         self
     }

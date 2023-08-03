@@ -15,20 +15,16 @@ impl DeleteAwsLogSourceInput {
 }
 impl DeleteAwsLogSourceInput {
     /// Creates a new builder-style object to manufacture [`DeleteAwsLogSourceInput`](crate::operation::delete_aws_log_source::DeleteAwsLogSourceInput).
-    pub fn builder(
-    ) -> crate::operation::delete_aws_log_source::builders::DeleteAwsLogSourceInputBuilder {
+    pub fn builder() -> crate::operation::delete_aws_log_source::builders::DeleteAwsLogSourceInputBuilder {
         crate::operation::delete_aws_log_source::builders::DeleteAwsLogSourceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAwsLogSourceInput`](crate::operation::delete_aws_log_source::DeleteAwsLogSourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAwsLogSourceInputBuilder {
-    pub(crate) sources:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
 }
 impl DeleteAwsLogSourceInputBuilder {
     /// Appends an item to `sources`.
@@ -43,30 +39,19 @@ impl DeleteAwsLogSourceInputBuilder {
         self
     }
     /// <p>Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`DeleteAwsLogSourceInput`](crate::operation::delete_aws_log_source::DeleteAwsLogSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_aws_log_source::DeleteAwsLogSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_aws_log_source::DeleteAwsLogSourceInput {
-                sources: self.sources,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_aws_log_source::DeleteAwsLogSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_aws_log_source::DeleteAwsLogSourceInput { sources: self.sources })
     }
 }

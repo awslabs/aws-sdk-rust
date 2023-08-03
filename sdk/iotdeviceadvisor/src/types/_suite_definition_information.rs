@@ -65,14 +65,11 @@ impl SuiteDefinitionInformation {
 
 /// A builder for [`SuiteDefinitionInformation`](crate::types::SuiteDefinitionInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuiteDefinitionInformationBuilder {
     pub(crate) suite_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) suite_definition_name: ::std::option::Option<::std::string::String>,
-    pub(crate) default_devices:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>,
+    pub(crate) default_devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>,
     pub(crate) intended_for_qualification: ::std::option::Option<bool>,
     pub(crate) is_long_duration_test: ::std::option::Option<bool>,
     pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,
@@ -80,18 +77,12 @@ pub struct SuiteDefinitionInformationBuilder {
 }
 impl SuiteDefinitionInformationBuilder {
     /// <p>Suite definition ID of the test suite.</p>
-    pub fn suite_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Suite definition ID of the test suite.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_id = input;
         self
     }
@@ -100,18 +91,12 @@ impl SuiteDefinitionInformationBuilder {
         &self.suite_definition_id
     }
     /// <p>Suite name of the test suite.</p>
-    pub fn suite_definition_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suite_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Suite name of the test suite.</p>
-    pub fn set_suite_definition_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suite_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_definition_name = input;
         self
     }
@@ -131,17 +116,12 @@ impl SuiteDefinitionInformationBuilder {
         self
     }
     /// <p>Specifies the devices that are under test for the test suite.</p>
-    pub fn set_default_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>,
-    ) -> Self {
+    pub fn set_default_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>) -> Self {
         self.default_devices = input;
         self
     }
     /// <p>Specifies the devices that are under test for the test suite.</p>
-    pub fn get_default_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>> {
+    pub fn get_default_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>> {
         &self.default_devices
     }
     /// <p>Specifies if the test suite is intended for qualification.</p>
@@ -192,10 +172,7 @@ impl SuiteDefinitionInformationBuilder {
         self
     }
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

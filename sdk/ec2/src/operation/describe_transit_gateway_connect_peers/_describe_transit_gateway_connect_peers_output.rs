@@ -5,8 +5,7 @@
 pub struct DescribeTransitGatewayConnectPeersOutput {
     /// <p>Information about the Connect peers.</p>
     #[doc(hidden)]
-    pub transit_gateway_connect_peers:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnectPeer>>,
+    pub transit_gateway_connect_peers: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnectPeer>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeTransitGatewayConnectPeersOutput {
 }
 impl DescribeTransitGatewayConnectPeersOutput {
     /// <p>Information about the Connect peers.</p>
-    pub fn transit_gateway_connect_peers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransitGatewayConnectPeer]> {
+    pub fn transit_gateway_connect_peers(&self) -> ::std::option::Option<&[crate::types::TransitGatewayConnectPeer]> {
         self.transit_gateway_connect_peers.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeTransitGatewayConnectPeersOut
 }
 impl DescribeTransitGatewayConnectPeersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayConnectPeersOutput`](crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersOutput).
-    pub fn builder() -> crate::operation::describe_transit_gateway_connect_peers::builders::DescribeTransitGatewayConnectPeersOutputBuilder{
+    pub fn builder() -> crate::operation::describe_transit_gateway_connect_peers::builders::DescribeTransitGatewayConnectPeersOutputBuilder {
         crate::operation::describe_transit_gateway_connect_peers::builders::DescribeTransitGatewayConnectPeersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTransitGatewayConnectPeersOutput`](crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTransitGatewayConnectPeersOutputBuilder {
-    pub(crate) transit_gateway_connect_peers:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnectPeer>>,
+    pub(crate) transit_gateway_connect_peers: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnectPeer>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeTransitGatewayConnectPeersOutputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_connect_peers`](Self::set_transit_gateway_connect_peers).
     ///
     /// <p>Information about the Connect peers.</p>
-    pub fn transit_gateway_connect_peers(
-        mut self,
-        input: crate::types::TransitGatewayConnectPeer,
-    ) -> Self {
+    pub fn transit_gateway_connect_peers(mut self, input: crate::types::TransitGatewayConnectPeer) -> Self {
         let mut v = self.transit_gateway_connect_peers.unwrap_or_default();
         v.push(input);
         self.transit_gateway_connect_peers = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeTransitGatewayConnectPeersOutputBuilder {
         self
     }
     /// <p>Information about the Connect peers.</p>
-    pub fn get_transit_gateway_connect_peers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnectPeer>> {
+    pub fn get_transit_gateway_connect_peers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnectPeer>> {
         &self.transit_gateway_connect_peers
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -100,12 +89,10 @@ impl DescribeTransitGatewayConnectPeersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTransitGatewayConnectPeersOutput`](crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersOutput).
-    pub fn build(self) -> crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersOutput{
+    pub fn build(self) -> crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersOutput {
         crate::operation::describe_transit_gateway_connect_peers::DescribeTransitGatewayConnectPeersOutput {
-            transit_gateway_connect_peers: self.transit_gateway_connect_peers
-            ,
-            next_token: self.next_token
-            ,
+            transit_gateway_connect_peers: self.transit_gateway_connect_peers,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

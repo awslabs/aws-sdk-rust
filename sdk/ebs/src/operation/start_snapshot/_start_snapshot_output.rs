@@ -185,10 +185,7 @@ impl StartSnapshotOutputBuilder {
         self
     }
     /// <p>The timestamp when the snapshot was created.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -236,10 +233,7 @@ impl StartSnapshotOutputBuilder {
         self
     }
     /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -248,18 +242,12 @@ impl StartSnapshotOutputBuilder {
         &self.tags
     }
     /// <p>The ID of the parent snapshot.</p>
-    pub fn parent_snapshot_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the parent snapshot.</p>
-    pub fn set_parent_snapshot_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_snapshot_id = input;
         self
     }

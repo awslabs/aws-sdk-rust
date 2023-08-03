@@ -50,9 +50,7 @@ impl ListRuleGroupsInput {
 
 /// A builder for [`ListRuleGroupsInput`](crate::operation::list_rule_groups::ListRuleGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRuleGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -95,10 +93,7 @@ impl ListRuleGroupsInputBuilder {
         self
     }
     /// <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule groups.</p>
-    pub fn set_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceManagedStatus>,
-    ) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::ResourceManagedStatus>) -> Self {
         self.scope = input;
         self
     }
@@ -112,10 +107,7 @@ impl ListRuleGroupsInputBuilder {
         self
     }
     /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
-    pub fn set_managed_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceManagedType>,
-    ) -> Self {
+    pub fn set_managed_type(mut self, input: ::std::option::Option<crate::types::ResourceManagedType>) -> Self {
         self.managed_type = input;
         self
     }
@@ -140,10 +132,7 @@ impl ListRuleGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListRuleGroupsInput`](crate::operation::list_rule_groups::ListRuleGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_rule_groups::ListRuleGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_rule_groups::ListRuleGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rule_groups::ListRuleGroupsInput {
             next_token: self.next_token,
             max_results: self.max_results,

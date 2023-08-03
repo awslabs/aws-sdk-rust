@@ -40,10 +40,7 @@ impl CreateMeetingDialOutFluentBuilder {
         }
     }
     /// Access the CreateMeetingDialOut as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_meeting_dial_out::builders::CreateMeetingDialOutInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_meeting_dial_out::builders::CreateMeetingDialOutInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl CreateMeetingDialOutFluentBuilder {
             crate::operation::create_meeting_dial_out::CreateMeetingDialOut,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_meeting_dial_out::CreateMeetingDialOutError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_meeting_dial_out::CreateMeetingDialOutError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl CreateMeetingDialOutFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl CreateMeetingDialOutFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_meeting_dial_out::CreateMeetingDialOutOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_meeting_dial_out::CreateMeetingDialOutError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_meeting_dial_out::CreateMeetingDialOutError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl CreateMeetingDialOutFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_meeting_dial_out::CreateMeetingDialOutOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_meeting_dial_out::CreateMeetingDialOutError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_meeting_dial_out::CreateMeetingDialOutError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl CreateMeetingDialOutFluentBuilder {
             crate::operation::create_meeting_dial_out::CreateMeetingDialOut,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_meeting_dial_out::CreateMeetingDialOutError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_meeting_dial_out::CreateMeetingDialOutError>,
     > {
         self.customize_middleware().await
     }
@@ -141,18 +127,12 @@ impl CreateMeetingDialOutFluentBuilder {
         self.inner.get_meeting_id()
     }
     /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
-    pub fn from_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn from_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.from_phone_number(input.into());
         self
     }
     /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
-    pub fn set_from_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_from_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_from_phone_number(input);
         self
     }
@@ -161,18 +141,12 @@ impl CreateMeetingDialOutFluentBuilder {
         self.inner.get_from_phone_number()
     }
     /// <p>Phone number called when inviting someone to a meeting.</p>
-    pub fn to_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn to_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.to_phone_number(input.into());
         self
     }
     /// <p>Phone number called when inviting someone to a meeting.</p>
-    pub fn set_to_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_to_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_to_phone_number(input);
         self
     }

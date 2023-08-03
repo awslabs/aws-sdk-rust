@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListReadSetImportJobsOutput {
 }
 impl ListReadSetImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListReadSetImportJobsOutput`](crate::operation::list_read_set_import_jobs::ListReadSetImportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_read_set_import_jobs::builders::ListReadSetImportJobsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_read_set_import_jobs::builders::ListReadSetImportJobsOutputBuilder {
         crate::operation::list_read_set_import_jobs::builders::ListReadSetImportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReadSetImportJobsOutput`](crate::operation::list_read_set_import_jobs::ListReadSetImportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReadSetImportJobsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) import_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImportReadSetJobItem>>,
+    pub(crate) import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ImportReadSetJobItem>>,
     _request_id: Option<String>,
 }
 impl ListReadSetImportJobsOutputBuilder {
@@ -73,17 +68,12 @@ impl ListReadSetImportJobsOutputBuilder {
         self
     }
     /// <p>A list of jobs.</p>
-    pub fn set_import_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportReadSetJobItem>>,
-    ) -> Self {
+    pub fn set_import_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportReadSetJobItem>>) -> Self {
         self.import_jobs = input;
         self
     }
     /// <p>A list of jobs.</p>
-    pub fn get_import_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportReadSetJobItem>> {
+    pub fn get_import_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportReadSetJobItem>> {
         &self.import_jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

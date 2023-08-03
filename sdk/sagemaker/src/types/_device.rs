@@ -37,9 +37,7 @@ impl Device {
 
 /// A builder for [`Device`](crate::types::Device).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceBuilder {
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl DeviceBuilder {
         &self.description
     }
     /// <p>Amazon Web Services Internet of Things (IoT) object name.</p>
-    pub fn iot_thing_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iot_thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iot_thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Web Services Internet of Things (IoT) object name.</p>
-    pub fn set_iot_thing_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iot_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iot_thing_name = input;
         self
     }

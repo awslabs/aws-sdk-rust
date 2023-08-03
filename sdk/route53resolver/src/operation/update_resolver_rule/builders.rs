@@ -10,10 +10,7 @@ impl UpdateResolverRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_resolver_rule::UpdateResolverRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_rule::UpdateResolverRuleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_rule::UpdateResolverRuleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_resolver_rule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateResolverRuleFluentBuilder {
         }
     }
     /// Access the UpdateResolverRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_resolver_rule::builders::UpdateResolverRuleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_resolver_rule::builders::UpdateResolverRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateResolverRuleFluentBuilder {
             crate::operation::update_resolver_rule::UpdateResolverRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_rule::UpdateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_rule::UpdateResolverRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateResolverRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateResolverRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resolver_rule::UpdateResolverRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_rule::UpdateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_rule::UpdateResolverRuleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateResolverRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_resolver_rule::UpdateResolverRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_rule::UpdateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_rule::UpdateResolverRuleError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateResolverRuleFluentBuilder {
             crate::operation::update_resolver_rule::UpdateResolverRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_resolver_rule::UpdateResolverRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver_rule::UpdateResolverRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Resolver rule that you want to update.</p>
-    pub fn resolver_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_rule_id(input.into());
         self
     }
     /// <p>The ID of the Resolver rule that you want to update.</p>
-    pub fn set_resolver_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolver_rule_id(input);
         self
     }
@@ -148,10 +126,7 @@ impl UpdateResolverRuleFluentBuilder {
         self
     }
     /// <p>The new settings for the Resolver rule.</p>
-    pub fn set_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverRuleConfig>,
-    ) -> Self {
+    pub fn set_config(mut self, input: ::std::option::Option<crate::types::ResolverRuleConfig>) -> Self {
         self.inner = self.inner.set_config(input);
         self
     }

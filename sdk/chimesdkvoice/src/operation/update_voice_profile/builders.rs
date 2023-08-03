@@ -10,10 +10,7 @@ impl UpdateVoiceProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_voice_profile::UpdateVoiceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_profile::UpdateVoiceProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_profile::UpdateVoiceProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_voice_profile();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl UpdateVoiceProfileFluentBuilder {
         }
     }
     /// Access the UpdateVoiceProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_voice_profile::builders::UpdateVoiceProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_voice_profile::builders::UpdateVoiceProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl UpdateVoiceProfileFluentBuilder {
             crate::operation::update_voice_profile::UpdateVoiceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_profile::UpdateVoiceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_profile::UpdateVoiceProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl UpdateVoiceProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl UpdateVoiceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_voice_profile::UpdateVoiceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_profile::UpdateVoiceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_profile::UpdateVoiceProfileError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl UpdateVoiceProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_voice_profile::UpdateVoiceProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_profile::UpdateVoiceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_profile::UpdateVoiceProfileError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +105,17 @@ impl UpdateVoiceProfileFluentBuilder {
             crate::operation::update_voice_profile::UpdateVoiceProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_profile::UpdateVoiceProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_profile::UpdateVoiceProfileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The profile ID.</p>
-    pub fn voice_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_profile_id(input.into());
         self
     }
     /// <p>The profile ID.</p>
-    pub fn set_voice_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_profile_id(input);
         self
     }
@@ -146,18 +124,12 @@ impl UpdateVoiceProfileFluentBuilder {
         self.inner.get_voice_profile_id()
     }
     /// <p>The ID of the speaker search task.</p>
-    pub fn speaker_search_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn speaker_search_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.speaker_search_task_id(input.into());
         self
     }
     /// <p>The ID of the speaker search task.</p>
-    pub fn set_speaker_search_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_speaker_search_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_speaker_search_task_id(input);
         self
     }

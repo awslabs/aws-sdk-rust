@@ -35,16 +35,14 @@ impl GetRelationalDatabaseEventsInput {
 }
 impl GetRelationalDatabaseEventsInput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseEventsInput`](crate::operation::get_relational_database_events::GetRelationalDatabaseEventsInput).
-    pub fn builder() -> crate::operation::get_relational_database_events::builders::GetRelationalDatabaseEventsInputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_events::builders::GetRelationalDatabaseEventsInputBuilder {
         crate::operation::get_relational_database_events::builders::GetRelationalDatabaseEventsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseEventsInput`](crate::operation::get_relational_database_events::GetRelationalDatabaseEventsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseEventsInputBuilder {
     pub(crate) relational_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) duration_in_minutes: ::std::option::Option<i32>,
@@ -52,18 +50,12 @@ pub struct GetRelationalDatabaseEventsInputBuilder {
 }
 impl GetRelationalDatabaseEventsInputBuilder {
     /// <p>The name of the database from which to get events.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database from which to get events.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_name = input;
         self
     }
@@ -115,12 +107,10 @@ impl GetRelationalDatabaseEventsInputBuilder {
         crate::operation::get_relational_database_events::GetRelationalDatabaseEventsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_relational_database_events::GetRelationalDatabaseEventsInput {
-                relational_database_name: self.relational_database_name,
-                duration_in_minutes: self.duration_in_minutes,
-                page_token: self.page_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_relational_database_events::GetRelationalDatabaseEventsInput {
+            relational_database_name: self.relational_database_name,
+            duration_in_minutes: self.duration_in_minutes,
+            page_token: self.page_token,
+        })
     }
 }

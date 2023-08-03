@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateFirewallRuleGroupAssociationOutput`](crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationOutput) with field(s):
     ///   - [`firewall_rule_group_association(Option<FirewallRuleGroupAssociation>)`](crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationOutput::firewall_rule_group_association): <p>The association that you just updated. </p>
     /// - On failure, responds with [`SdkError<UpdateFirewallRuleGroupAssociationError>`](crate::operation::update_firewall_rule_group_association::UpdateFirewallRuleGroupAssociationError)
-    pub fn update_firewall_rule_group_association(&self) -> crate::operation::update_firewall_rule_group_association::builders::UpdateFirewallRuleGroupAssociationFluentBuilder{
+    pub fn update_firewall_rule_group_association(
+        &self,
+    ) -> crate::operation::update_firewall_rule_group_association::builders::UpdateFirewallRuleGroupAssociationFluentBuilder {
         crate::operation::update_firewall_rule_group_association::builders::UpdateFirewallRuleGroupAssociationFluentBuilder::new(self.handle.clone())
     }
 }

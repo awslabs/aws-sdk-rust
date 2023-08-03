@@ -10,10 +10,7 @@ impl DetectSentimentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detect_sentiment::DetectSentimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_sentiment::DetectSentimentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_sentiment::DetectSentimentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.detect_sentiment();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DetectSentimentFluentBuilder {
         }
     }
     /// Access the DetectSentiment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::detect_sentiment::builders::DetectSentimentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::detect_sentiment::builders::DetectSentimentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DetectSentimentFluentBuilder {
             crate::operation::detect_sentiment::DetectSentiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_sentiment::DetectSentimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_sentiment::DetectSentimentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DetectSentimentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DetectSentimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_sentiment::DetectSentimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_sentiment::DetectSentimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_sentiment::DetectSentimentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DetectSentimentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_sentiment::DetectSentimentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_sentiment::DetectSentimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_sentiment::DetectSentimentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DetectSentimentFluentBuilder {
             crate::operation::detect_sentiment::DetectSentiment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::detect_sentiment::DetectSentimentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_sentiment::DetectSentimentError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl DetectSentimentFluentBuilder {
         self
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }

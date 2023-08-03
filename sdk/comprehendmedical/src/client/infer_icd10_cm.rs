@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`pagination_token(Option<String>)`](crate::operation::infer_icd10_cm::InferIcd10CmOutput::pagination_token): <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
     ///   - [`model_version(Option<String>)`](crate::operation::infer_icd10_cm::InferIcd10CmOutput::model_version): <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
     /// - On failure, responds with [`SdkError<InferICD10CMError>`](crate::operation::infer_icd10_cm::InferICD10CMError)
-    pub fn infer_icd10_cm(
-        &self,
-    ) -> crate::operation::infer_icd10_cm::builders::InferICD10CMFluentBuilder {
-        crate::operation::infer_icd10_cm::builders::InferICD10CMFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn infer_icd10_cm(&self) -> crate::operation::infer_icd10_cm::builders::InferICD10CMFluentBuilder {
+        crate::operation::infer_icd10_cm::builders::InferICD10CMFluentBuilder::new(self.handle.clone())
     }
 }

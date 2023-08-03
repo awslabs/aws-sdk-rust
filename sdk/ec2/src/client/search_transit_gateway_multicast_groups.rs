@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`multicast_groups(Option<Vec<TransitGatewayMulticastGroup>>)`](crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsOutput::multicast_groups): <p>Information about the transit gateway multicast group.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<SearchTransitGatewayMulticastGroupsError>`](crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsError)
-    pub fn search_transit_gateway_multicast_groups(&self) -> crate::operation::search_transit_gateway_multicast_groups::builders::SearchTransitGatewayMulticastGroupsFluentBuilder{
-        crate::operation::search_transit_gateway_multicast_groups::builders::SearchTransitGatewayMulticastGroupsFluentBuilder::new(self.handle.clone())
+    pub fn search_transit_gateway_multicast_groups(
+        &self,
+    ) -> crate::operation::search_transit_gateway_multicast_groups::builders::SearchTransitGatewayMulticastGroupsFluentBuilder {
+        crate::operation::search_transit_gateway_multicast_groups::builders::SearchTransitGatewayMulticastGroupsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

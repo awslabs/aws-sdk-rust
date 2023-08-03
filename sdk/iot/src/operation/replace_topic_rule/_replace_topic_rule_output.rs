@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for ReplaceTopicRuleOutput {
 }
 impl ReplaceTopicRuleOutput {
     /// Creates a new builder-style object to manufacture [`ReplaceTopicRuleOutput`](crate::operation::replace_topic_rule::ReplaceTopicRuleOutput).
-    pub fn builder() -> crate::operation::replace_topic_rule::builders::ReplaceTopicRuleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::replace_topic_rule::builders::ReplaceTopicRuleOutputBuilder {
         crate::operation::replace_topic_rule::builders::ReplaceTopicRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReplaceTopicRuleOutput`](crate::operation::replace_topic_rule::ReplaceTopicRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplaceTopicRuleOutputBuilder {
     _request_id: Option<String>,
 }

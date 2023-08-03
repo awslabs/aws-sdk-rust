@@ -10,10 +10,7 @@ impl PutBucketTaggingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_tagging::PutBucketTaggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_tagging::PutBucketTaggingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_tagging::PutBucketTaggingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_bucket_tagging();
         fluent_builder.inner = self;
@@ -69,9 +66,7 @@ impl PutBucketTaggingFluentBuilder {
         }
     }
     /// Access the PutBucketTagging as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_bucket_tagging::builders::PutBucketTaggingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_bucket_tagging::builders::PutBucketTaggingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +78,7 @@ impl PutBucketTaggingFluentBuilder {
             crate::operation::put_bucket_tagging::PutBucketTagging,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_tagging::PutBucketTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_tagging::PutBucketTaggingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -95,10 +88,7 @@ impl PutBucketTaggingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,9 +97,7 @@ impl PutBucketTaggingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_tagging::PutBucketTaggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_tagging::PutBucketTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_tagging::PutBucketTaggingError>,
     > {
         let op = self
             .inner
@@ -132,9 +120,7 @@ impl PutBucketTaggingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_tagging::PutBucketTaggingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_tagging::PutBucketTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_tagging::PutBucketTaggingError>,
     > {
         self.send_middleware().await
     }
@@ -148,9 +134,7 @@ impl PutBucketTaggingFluentBuilder {
             crate::operation::put_bucket_tagging::PutBucketTagging,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bucket_tagging::PutBucketTaggingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_tagging::PutBucketTaggingError>,
     > {
         self.customize_middleware().await
     }

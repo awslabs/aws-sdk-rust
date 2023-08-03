@@ -75,10 +75,7 @@ impl MessageBuilder {
         self
     }
     /// <p>Indicates the type of response.</p>
-    pub fn set_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageContentType>,
-    ) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::MessageContentType>) -> Self {
         self.content_type = input;
         self
     }
@@ -94,18 +91,13 @@ impl MessageBuilder {
     }
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
-    pub fn set_image_response_card(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageResponseCard>,
-    ) -> Self {
+    pub fn set_image_response_card(mut self, input: ::std::option::Option<crate::types::ImageResponseCard>) -> Self {
         self.image_response_card = input;
         self
     }
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
-    pub fn get_image_response_card(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageResponseCard> {
+    pub fn get_image_response_card(&self) -> &::std::option::Option<crate::types::ImageResponseCard> {
         &self.image_response_card
     }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).

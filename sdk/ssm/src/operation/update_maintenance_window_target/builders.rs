@@ -36,7 +36,7 @@ impl UpdateMaintenanceWindowTargetInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMaintenanceWindowTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetInputBuilder,
+    inner: crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetInputBuilder,
 }
 impl UpdateMaintenanceWindowTargetFluentBuilder {
     /// Creates a new `UpdateMaintenanceWindowTarget`.
@@ -47,7 +47,7 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
         }
     }
     /// Access the UpdateMaintenanceWindowTarget as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -59,9 +59,7 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
             crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -71,10 +69,7 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -83,9 +78,7 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetError>,
     > {
         let op = self
             .inner
@@ -108,9 +101,7 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetError>,
     > {
         self.send_middleware().await
     }
@@ -124,9 +115,7 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
             crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTarget,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetError>,
     > {
         self.customize_middleware().await
     }
@@ -145,18 +134,12 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
         self.inner.get_window_id()
     }
     /// <p>The target ID to modify.</p>
-    pub fn window_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.window_target_id(input.into());
         self
     }
     /// <p>The target ID to modify.</p>
-    pub fn set_window_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_window_target_id(input);
         self
     }
@@ -174,10 +157,7 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
         self
     }
     /// <p>The targets to add or replace.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
@@ -186,18 +166,12 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
         self.inner.get_targets()
     }
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
-    pub fn owner_information(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_information(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner_information(input.into());
         self
     }
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
-    pub fn set_owner_information(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner_information(input);
         self
     }

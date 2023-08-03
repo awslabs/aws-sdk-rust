@@ -43,16 +43,14 @@ impl ExportEarthObservationJobInput {
 }
 impl ExportEarthObservationJobInput {
     /// Creates a new builder-style object to manufacture [`ExportEarthObservationJobInput`](crate::operation::export_earth_observation_job::ExportEarthObservationJobInput).
-    pub fn builder() -> crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobInputBuilder{
+    pub fn builder() -> crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobInputBuilder {
         crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobInputBuilder::default()
     }
 }
 
 /// A builder for [`ExportEarthObservationJobInput`](crate::operation::export_earth_observation_job::ExportEarthObservationJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportEarthObservationJobInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -90,18 +88,12 @@ impl ExportEarthObservationJobInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -115,10 +107,7 @@ impl ExportEarthObservationJobInputBuilder {
         self
     }
     /// <p>An object containing information about the output file.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputConfigInput>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfigInput>) -> Self {
         self.output_config = input;
         self
     }
@@ -147,14 +136,12 @@ impl ExportEarthObservationJobInputBuilder {
         crate::operation::export_earth_observation_job::ExportEarthObservationJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::export_earth_observation_job::ExportEarthObservationJobInput {
-                arn: self.arn,
-                client_token: self.client_token,
-                execution_role_arn: self.execution_role_arn,
-                output_config: self.output_config,
-                export_source_images: self.export_source_images,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::export_earth_observation_job::ExportEarthObservationJobInput {
+            arn: self.arn,
+            client_token: self.client_token,
+            execution_role_arn: self.execution_role_arn,
+            output_config: self.output_config,
+            export_source_images: self.export_source_images,
+        })
     }
 }

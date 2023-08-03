@@ -29,21 +29,18 @@ impl AssociatePersonasToEntitiesInput {
 }
 impl AssociatePersonasToEntitiesInput {
     /// Creates a new builder-style object to manufacture [`AssociatePersonasToEntitiesInput`](crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesInput).
-    pub fn builder() -> crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesInputBuilder{
+    pub fn builder() -> crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesInputBuilder {
         crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociatePersonasToEntitiesInput`](crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociatePersonasToEntitiesInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
-    pub(crate) personas:
-        ::std::option::Option<::std::vec::Vec<crate::types::EntityPersonaConfiguration>>,
+    pub(crate) personas: ::std::option::Option<::std::vec::Vec<crate::types::EntityPersonaConfiguration>>,
 }
 impl AssociatePersonasToEntitiesInputBuilder {
     /// <p>The identifier of your Amazon Kendra experience.</p>
@@ -86,17 +83,12 @@ impl AssociatePersonasToEntitiesInputBuilder {
         self
     }
     /// <p>The personas that define the specific permissions of users or groups in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
-    pub fn set_personas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityPersonaConfiguration>>,
-    ) -> Self {
+    pub fn set_personas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityPersonaConfiguration>>) -> Self {
         self.personas = input;
         self
     }
     /// <p>The personas that define the specific permissions of users or groups in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
-    pub fn get_personas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityPersonaConfiguration>> {
+    pub fn get_personas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityPersonaConfiguration>> {
         &self.personas
     }
     /// Consumes the builder and constructs a [`AssociatePersonasToEntitiesInput`](crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesInput).
@@ -106,12 +98,10 @@ impl AssociatePersonasToEntitiesInputBuilder {
         crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesInput {
-                id: self.id,
-                index_id: self.index_id,
-                personas: self.personas,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesInput {
+            id: self.id,
+            index_id: self.index_id,
+            personas: self.personas,
+        })
     }
 }

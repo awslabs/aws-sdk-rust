@@ -13,9 +13,7 @@ impl UpsolverMetadata {
 
 /// A builder for [`UpsolverMetadata`](crate::types::UpsolverMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpsolverMetadataBuilder {}
 impl UpsolverMetadataBuilder {
     /// Consumes the builder and constructs a [`UpsolverMetadata`](crate::types::UpsolverMetadata).

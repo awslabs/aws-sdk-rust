@@ -39,9 +39,7 @@ impl CheckCapacityInput {
 
 /// A builder for [`CheckCapacityInput`](crate::operation::check_capacity::CheckCapacityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckCapacityInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
@@ -88,10 +86,7 @@ impl CheckCapacityInputBuilder {
         self
     }
     /// <p>An array of <code>Rule</code> that you're configuring to use in a rule group or web ACL. </p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }
@@ -102,10 +97,7 @@ impl CheckCapacityInputBuilder {
     /// Consumes the builder and constructs a [`CheckCapacityInput`](crate::operation::check_capacity::CheckCapacityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::check_capacity::CheckCapacityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::check_capacity::CheckCapacityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::check_capacity::CheckCapacityInput {
             scope: self.scope,
             rules: self.rules,

@@ -44,9 +44,7 @@ impl ExecutionEngineConfig {
 
 /// A builder for [`ExecutionEngineConfig`](crate::types::ExecutionEngineConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecutionEngineConfigBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ExecutionEngineType>,
@@ -74,10 +72,7 @@ impl ExecutionEngineConfigBuilder {
         self
     }
     /// <p>The type of execution engine. A value of <code>EMR</code> specifies an Amazon EMR cluster.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionEngineType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ExecutionEngineType>) -> Self {
         self.r#type = input;
         self
     }
@@ -86,40 +81,26 @@ impl ExecutionEngineConfigBuilder {
         &self.r#type
     }
     /// <p>An optional unique ID of an Amazon EC2 security group to associate with the master instance of the Amazon EMR cluster for this notebook execution. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
-    pub fn master_instance_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_instance_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_instance_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional unique ID of an Amazon EC2 security group to associate with the master instance of the Amazon EMR cluster for this notebook execution. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
-    pub fn set_master_instance_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_instance_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_instance_security_group_id = input;
         self
     }
     /// <p>An optional unique ID of an Amazon EC2 security group to associate with the master instance of the Amazon EMR cluster for this notebook execution. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
-    pub fn get_master_instance_security_group_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_master_instance_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_instance_security_group_id
     }
     /// <p>The execution role ARN required for the notebook execution.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The execution role ARN required for the notebook execution.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }

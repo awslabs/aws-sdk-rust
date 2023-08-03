@@ -26,7 +26,7 @@ impl GetAutoTerminationPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAutoTerminationPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_auto_termination_policy::builders::GetAutoTerminationPolicyInputBuilder,
+    inner: crate::operation::get_auto_termination_policy::builders::GetAutoTerminationPolicyInputBuilder,
 }
 impl GetAutoTerminationPolicyFluentBuilder {
     /// Creates a new `GetAutoTerminationPolicy`.
@@ -37,7 +37,7 @@ impl GetAutoTerminationPolicyFluentBuilder {
         }
     }
     /// Access the GetAutoTerminationPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_auto_termination_policy::builders::GetAutoTerminationPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_auto_termination_policy::builders::GetAutoTerminationPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetAutoTerminationPolicyFluentBuilder {
             crate::operation::get_auto_termination_policy::GetAutoTerminationPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetAutoTerminationPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetAutoTerminationPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetAutoTerminationPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetAutoTerminationPolicyFluentBuilder {
             crate::operation::get_auto_termination_policy::GetAutoTerminationPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyError>,
     > {
         self.customize_middleware().await
     }

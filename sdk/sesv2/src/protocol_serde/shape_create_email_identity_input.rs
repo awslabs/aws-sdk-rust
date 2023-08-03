@@ -9,10 +9,7 @@ pub fn ser_create_email_identity_input(
     if let Some(var_2) = &input.dkim_signing_attributes {
         #[allow(unused_mut)]
         let mut object_3 = object.key("DkimSigningAttributes").start_object();
-        crate::protocol_serde::shape_dkim_signing_attributes::ser_dkim_signing_attributes(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_dkim_signing_attributes::ser_dkim_signing_attributes(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.email_identity {

@@ -22,18 +22,14 @@ impl DescribeAssetPropertyInput {
 }
 impl DescribeAssetPropertyInput {
     /// Creates a new builder-style object to manufacture [`DescribeAssetPropertyInput`](crate::operation::describe_asset_property::DescribeAssetPropertyInput).
-    pub fn builder(
-    ) -> crate::operation::describe_asset_property::builders::DescribeAssetPropertyInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_asset_property::builders::DescribeAssetPropertyInputBuilder {
         crate::operation::describe_asset_property::builders::DescribeAssetPropertyInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAssetPropertyInput`](crate::operation::describe_asset_property::DescribeAssetPropertyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssetPropertyInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_id: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl DescribeAssetPropertyInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAssetPropertyInput`](crate::operation::describe_asset_property::DescribeAssetPropertyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_asset_property::DescribeAssetPropertyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_asset_property::DescribeAssetPropertyInput {
-                asset_id: self.asset_id,
-                property_id: self.property_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_asset_property::DescribeAssetPropertyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_asset_property::DescribeAssetPropertyInput {
+            asset_id: self.asset_id,
+            property_id: self.property_id,
+        })
     }
 }

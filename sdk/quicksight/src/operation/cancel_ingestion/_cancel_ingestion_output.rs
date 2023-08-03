@@ -49,9 +49,7 @@ impl CancelIngestionOutput {
 
 /// A builder for [`CancelIngestionOutput`](crate::operation::cancel_ingestion::CancelIngestionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelIngestionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_id: ::std::option::Option<::std::string::String>,

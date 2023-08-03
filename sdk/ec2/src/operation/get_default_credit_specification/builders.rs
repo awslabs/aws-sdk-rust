@@ -27,7 +27,7 @@ impl GetDefaultCreditSpecificationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDefaultCreditSpecificationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_default_credit_specification::builders::GetDefaultCreditSpecificationInputBuilder,
+    inner: crate::operation::get_default_credit_specification::builders::GetDefaultCreditSpecificationInputBuilder,
 }
 impl GetDefaultCreditSpecificationFluentBuilder {
     /// Creates a new `GetDefaultCreditSpecification`.
@@ -38,7 +38,7 @@ impl GetDefaultCreditSpecificationFluentBuilder {
         }
     }
     /// Access the GetDefaultCreditSpecification as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_default_credit_specification::builders::GetDefaultCreditSpecificationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_default_credit_specification::builders::GetDefaultCreditSpecificationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetDefaultCreditSpecificationFluentBuilder {
             crate::operation::get_default_credit_specification::GetDefaultCreditSpecification,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetDefaultCreditSpecificationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetDefaultCreditSpecificationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetDefaultCreditSpecificationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetDefaultCreditSpecificationFluentBuilder {
             crate::operation::get_default_credit_specification::GetDefaultCreditSpecification,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationError>,
     > {
         self.customize_middleware().await
     }
@@ -136,25 +125,17 @@ impl GetDefaultCreditSpecificationFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The instance family.</p>
-    pub fn instance_family(
-        mut self,
-        input: crate::types::UnlimitedSupportedInstanceFamily,
-    ) -> Self {
+    pub fn instance_family(mut self, input: crate::types::UnlimitedSupportedInstanceFamily) -> Self {
         self.inner = self.inner.instance_family(input);
         self
     }
     /// <p>The instance family.</p>
-    pub fn set_instance_family(
-        mut self,
-        input: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
-    ) -> Self {
+    pub fn set_instance_family(mut self, input: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>) -> Self {
         self.inner = self.inner.set_instance_family(input);
         self
     }
     /// <p>The instance family.</p>
-    pub fn get_instance_family(
-        &self,
-    ) -> &::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily> {
+    pub fn get_instance_family(&self) -> &::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily> {
         self.inner.get_instance_family()
     }
 }

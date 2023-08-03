@@ -30,18 +30,14 @@ impl DescribeIndexFieldsInput {
 }
 impl DescribeIndexFieldsInput {
     /// Creates a new builder-style object to manufacture [`DescribeIndexFieldsInput`](crate::operation::describe_index_fields::DescribeIndexFieldsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_index_fields::builders::DescribeIndexFieldsInputBuilder {
-        crate::operation::describe_index_fields::builders::DescribeIndexFieldsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_index_fields::builders::DescribeIndexFieldsInputBuilder {
+        crate::operation::describe_index_fields::builders::DescribeIndexFieldsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIndexFieldsInput`](crate::operation::describe_index_fields::DescribeIndexFieldsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIndexFieldsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -74,17 +70,12 @@ impl DescribeIndexFieldsInputBuilder {
         self
     }
     /// <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
-    pub fn set_field_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_field_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.field_names = input;
         self
     }
     /// <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
-    pub fn get_field_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_field_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.field_names
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -104,16 +95,12 @@ impl DescribeIndexFieldsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIndexFieldsInput`](crate::operation::describe_index_fields::DescribeIndexFieldsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_index_fields::DescribeIndexFieldsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_index_fields::DescribeIndexFieldsInput {
-                domain_name: self.domain_name,
-                field_names: self.field_names,
-                deployed: self.deployed,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_index_fields::DescribeIndexFieldsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_index_fields::DescribeIndexFieldsInput {
+            domain_name: self.domain_name,
+            field_names: self.field_names,
+            deployed: self.deployed,
+        })
     }
 }

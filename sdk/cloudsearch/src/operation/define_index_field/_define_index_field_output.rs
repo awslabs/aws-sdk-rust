@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for DefineIndexFieldOutput {
 }
 impl DefineIndexFieldOutput {
     /// Creates a new builder-style object to manufacture [`DefineIndexFieldOutput`](crate::operation::define_index_field::DefineIndexFieldOutput).
-    pub fn builder() -> crate::operation::define_index_field::builders::DefineIndexFieldOutputBuilder
-    {
+    pub fn builder() -> crate::operation::define_index_field::builders::DefineIndexFieldOutputBuilder {
         crate::operation::define_index_field::builders::DefineIndexFieldOutputBuilder::default()
     }
 }
 
 /// A builder for [`DefineIndexFieldOutput`](crate::operation::define_index_field::DefineIndexFieldOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefineIndexFieldOutputBuilder {
     pub(crate) index_field: ::std::option::Option<crate::types::IndexFieldStatus>,
     _request_id: Option<String>,
@@ -44,10 +41,7 @@ impl DefineIndexFieldOutputBuilder {
         self
     }
     /// <p>The value of an <code>IndexField</code> and its current status.</p>
-    pub fn set_index_field(
-        mut self,
-        input: ::std::option::Option<crate::types::IndexFieldStatus>,
-    ) -> Self {
+    pub fn set_index_field(mut self, input: ::std::option::Option<crate::types::IndexFieldStatus>) -> Self {
         self.index_field = input;
         self
     }

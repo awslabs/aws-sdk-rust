@@ -8,8 +8,7 @@ pub struct ListAppMonitorsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that contain information about the returned app monitors.</p>
     #[doc(hidden)]
-    pub app_monitor_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppMonitorSummary>>,
+    pub app_monitor_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AppMonitorSummary>>,
     _request_id: Option<String>,
 }
 impl ListAppMonitorsOutput {
@@ -18,9 +17,7 @@ impl ListAppMonitorsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of structures that contain information about the returned app monitors.</p>
-    pub fn app_monitor_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AppMonitorSummary]> {
+    pub fn app_monitor_summaries(&self) -> ::std::option::Option<&[crate::types::AppMonitorSummary]> {
         self.app_monitor_summaries.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListAppMonitorsOutput {
 }
 impl ListAppMonitorsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppMonitorsOutput`](crate::operation::list_app_monitors::ListAppMonitorsOutput).
-    pub fn builder() -> crate::operation::list_app_monitors::builders::ListAppMonitorsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_app_monitors::builders::ListAppMonitorsOutputBuilder {
         crate::operation::list_app_monitors::builders::ListAppMonitorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppMonitorsOutput`](crate::operation::list_app_monitors::ListAppMonitorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppMonitorsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) app_monitor_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppMonitorSummary>>,
+    pub(crate) app_monitor_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AppMonitorSummary>>,
     _request_id: Option<String>,
 }
 impl ListAppMonitorsOutputBuilder {
@@ -75,17 +68,12 @@ impl ListAppMonitorsOutputBuilder {
         self
     }
     /// <p>An array of structures that contain information about the returned app monitors.</p>
-    pub fn set_app_monitor_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppMonitorSummary>>,
-    ) -> Self {
+    pub fn set_app_monitor_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppMonitorSummary>>) -> Self {
         self.app_monitor_summaries = input;
         self
     }
     /// <p>An array of structures that contain information about the returned app monitors.</p>
-    pub fn get_app_monitor_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppMonitorSummary>> {
+    pub fn get_app_monitor_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppMonitorSummary>> {
         &self.app_monitor_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -28,11 +28,7 @@ impl super::Client {
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::describe_intent::DescribeIntentOutput::last_updated_date_time): <p>A timestamp of the date and time that the intent was last updated.</p>
     ///   - [`initial_response_setting(Option<InitialResponseSetting>)`](crate::operation::describe_intent::DescribeIntentOutput::initial_response_setting): <p>Configuration setting for a response sent to the user before Amazon Lex starts eliciting slots.</p>
     /// - On failure, responds with [`SdkError<DescribeIntentError>`](crate::operation::describe_intent::DescribeIntentError)
-    pub fn describe_intent(
-        &self,
-    ) -> crate::operation::describe_intent::builders::DescribeIntentFluentBuilder {
-        crate::operation::describe_intent::builders::DescribeIntentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_intent(&self) -> crate::operation::describe_intent::builders::DescribeIntentFluentBuilder {
+        crate::operation::describe_intent::builders::DescribeIntentFluentBuilder::new(self.handle.clone())
     }
 }

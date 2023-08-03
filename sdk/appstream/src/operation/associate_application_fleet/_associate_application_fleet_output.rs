@@ -5,15 +5,12 @@
 pub struct AssociateApplicationFleetOutput {
     /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
     #[doc(hidden)]
-    pub application_fleet_association:
-        ::std::option::Option<crate::types::ApplicationFleetAssociation>,
+    pub application_fleet_association: ::std::option::Option<crate::types::ApplicationFleetAssociation>,
     _request_id: Option<String>,
 }
 impl AssociateApplicationFleetOutput {
     /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
-    pub fn application_fleet_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationFleetAssociation> {
+    pub fn application_fleet_association(&self) -> ::std::option::Option<&crate::types::ApplicationFleetAssociation> {
         self.application_fleet_association.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for AssociateApplicationFleetOutput {
 }
 impl AssociateApplicationFleetOutput {
     /// Creates a new builder-style object to manufacture [`AssociateApplicationFleetOutput`](crate::operation::associate_application_fleet::AssociateApplicationFleetOutput).
-    pub fn builder() -> crate::operation::associate_application_fleet::builders::AssociateApplicationFleetOutputBuilder{
+    pub fn builder() -> crate::operation::associate_application_fleet::builders::AssociateApplicationFleetOutputBuilder {
         crate::operation::associate_application_fleet::builders::AssociateApplicationFleetOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateApplicationFleetOutput`](crate::operation::associate_application_fleet::AssociateApplicationFleetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateApplicationFleetOutputBuilder {
-    pub(crate) application_fleet_association:
-        ::std::option::Option<crate::types::ApplicationFleetAssociation>,
+    pub(crate) application_fleet_association: ::std::option::Option<crate::types::ApplicationFleetAssociation>,
     _request_id: Option<String>,
 }
 impl AssociateApplicationFleetOutputBuilder {
     /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
-    pub fn application_fleet_association(
-        mut self,
-        input: crate::types::ApplicationFleetAssociation,
-    ) -> Self {
+    pub fn application_fleet_association(mut self, input: crate::types::ApplicationFleetAssociation) -> Self {
         self.application_fleet_association = ::std::option::Option::Some(input);
         self
     }
     /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
-    pub fn set_application_fleet_association(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationFleetAssociation>,
-    ) -> Self {
+    pub fn set_application_fleet_association(mut self, input: ::std::option::Option<crate::types::ApplicationFleetAssociation>) -> Self {
         self.application_fleet_association = input;
         self
     }
     /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
-    pub fn get_application_fleet_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationFleetAssociation> {
+    pub fn get_application_fleet_association(&self) -> &::std::option::Option<crate::types::ApplicationFleetAssociation> {
         &self.application_fleet_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +58,7 @@ impl AssociateApplicationFleetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateApplicationFleetOutput`](crate::operation::associate_application_fleet::AssociateApplicationFleetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_application_fleet::AssociateApplicationFleetOutput {
+    pub fn build(self) -> crate::operation::associate_application_fleet::AssociateApplicationFleetOutput {
         crate::operation::associate_application_fleet::AssociateApplicationFleetOutput {
             application_fleet_association: self.application_fleet_association,
             _request_id: self._request_id,

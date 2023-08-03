@@ -15,10 +15,7 @@ pub fn ser_create_contact_channel_input(
     if let Some(var_4) = &input.delivery_address {
         #[allow(unused_mut)]
         let mut object_5 = object.key("DeliveryAddress").start_object();
-        crate::protocol_serde::shape_contact_channel_address::ser_contact_channel_address(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_contact_channel_address::ser_contact_channel_address(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.defer_activation {

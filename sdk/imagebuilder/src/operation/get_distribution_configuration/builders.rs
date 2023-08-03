@@ -26,7 +26,7 @@ impl GetDistributionConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDistributionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationInputBuilder,
+    inner: crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationInputBuilder,
 }
 impl GetDistributionConfigurationFluentBuilder {
     /// Creates a new `GetDistributionConfiguration`.
@@ -37,7 +37,7 @@ impl GetDistributionConfigurationFluentBuilder {
         }
     }
     /// Access the GetDistributionConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetDistributionConfigurationFluentBuilder {
             crate::operation::get_distribution_configuration::GetDistributionConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_distribution_configuration::GetDistributionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_configuration::GetDistributionConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetDistributionConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetDistributionConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_distribution_configuration::GetDistributionConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_distribution_configuration::GetDistributionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_configuration::GetDistributionConfigurationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetDistributionConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_distribution_configuration::GetDistributionConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_distribution_configuration::GetDistributionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_configuration::GetDistributionConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl GetDistributionConfigurationFluentBuilder {
             crate::operation::get_distribution_configuration::GetDistributionConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_distribution_configuration::GetDistributionConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_configuration::GetDistributionConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
-    pub fn distribution_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_configuration_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
-    pub fn set_distribution_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_configuration_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
-    pub fn get_distribution_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_distribution_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_distribution_configuration_arn()
     }
 }

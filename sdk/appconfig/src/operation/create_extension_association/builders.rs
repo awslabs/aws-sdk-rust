@@ -26,7 +26,7 @@ impl CreateExtensionAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateExtensionAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_extension_association::builders::CreateExtensionAssociationInputBuilder,
+    inner: crate::operation::create_extension_association::builders::CreateExtensionAssociationInputBuilder,
 }
 impl CreateExtensionAssociationFluentBuilder {
     /// Creates a new `CreateExtensionAssociation`.
@@ -37,7 +37,7 @@ impl CreateExtensionAssociationFluentBuilder {
         }
     }
     /// Access the CreateExtensionAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_extension_association::builders::CreateExtensionAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_extension_association::builders::CreateExtensionAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateExtensionAssociationFluentBuilder {
             crate::operation::create_extension_association::CreateExtensionAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_extension_association::CreateExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_extension_association::CreateExtensionAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateExtensionAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateExtensionAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_extension_association::CreateExtensionAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_extension_association::CreateExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_extension_association::CreateExtensionAssociationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateExtensionAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_extension_association::CreateExtensionAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_extension_association::CreateExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_extension_association::CreateExtensionAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateExtensionAssociationFluentBuilder {
             crate::operation::create_extension_association::CreateExtensionAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_extension_association::CreateExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_extension_association::CreateExtensionAssociationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn extension_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extension_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.extension_identifier(input.into());
         self
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn set_extension_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extension_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_extension_identifier(input);
         self
     }
@@ -155,18 +138,12 @@ impl CreateExtensionAssociationFluentBuilder {
         self.inner.get_extension_version_number()
     }
     /// <p>The ARN of an application, configuration profile, or environment.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
     /// <p>The ARN of an application, configuration profile, or environment.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
@@ -179,30 +156,17 @@ impl CreateExtensionAssociationFluentBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The parameter names and values defined in the extensions. Extension parameters marked <code>Required</code> must be entered for this field.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameters(k.into(), v.into());
         self
     }
     /// <p>The parameter names and values defined in the extensions. Extension parameters marked <code>Required</code> must be entered for this field.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>The parameter names and values defined in the extensions. Extension parameters marked <code>Required</code> must be entered for this field.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_parameters()
     }
     /// Adds a key-value pair to `Tags`.
@@ -210,30 +174,17 @@ impl CreateExtensionAssociationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Adds one or more tags for the specified extension association. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Adds one or more tags for the specified extension association. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Adds one or more tags for the specified extension association. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

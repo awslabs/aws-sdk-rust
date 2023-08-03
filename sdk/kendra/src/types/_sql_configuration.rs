@@ -9,17 +9,14 @@ pub struct SqlConfiguration {
     /// <p>PostgreSQL internally converts uppercase characters to lower case characters in identifiers unless they are quoted. Choosing this option encloses identifiers in quotes so that PostgreSQL does not convert the character's case.</p>
     /// <p>For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to <code>DOUBLE_QUOTES</code>.</p>
     #[doc(hidden)]
-    pub query_identifiers_enclosing_option:
-        ::std::option::Option<crate::types::QueryIdentifiersEnclosingOption>,
+    pub query_identifiers_enclosing_option: ::std::option::Option<crate::types::QueryIdentifiersEnclosingOption>,
 }
 impl SqlConfiguration {
     /// <p>Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes (") when making a database query.</p>
     /// <p>By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source configuration. It does not change the case of identifiers or enclose them in quotes.</p>
     /// <p>PostgreSQL internally converts uppercase characters to lower case characters in identifiers unless they are quoted. Choosing this option encloses identifiers in quotes so that PostgreSQL does not convert the character's case.</p>
     /// <p>For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to <code>DOUBLE_QUOTES</code>.</p>
-    pub fn query_identifiers_enclosing_option(
-        &self,
-    ) -> ::std::option::Option<&crate::types::QueryIdentifiersEnclosingOption> {
+    pub fn query_identifiers_enclosing_option(&self) -> ::std::option::Option<&crate::types::QueryIdentifiersEnclosingOption> {
         self.query_identifiers_enclosing_option.as_ref()
     }
 }
@@ -32,22 +29,16 @@ impl SqlConfiguration {
 
 /// A builder for [`SqlConfiguration`](crate::types::SqlConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SqlConfigurationBuilder {
-    pub(crate) query_identifiers_enclosing_option:
-        ::std::option::Option<crate::types::QueryIdentifiersEnclosingOption>,
+    pub(crate) query_identifiers_enclosing_option: ::std::option::Option<crate::types::QueryIdentifiersEnclosingOption>,
 }
 impl SqlConfigurationBuilder {
     /// <p>Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes (") when making a database query.</p>
     /// <p>By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source configuration. It does not change the case of identifiers or enclose them in quotes.</p>
     /// <p>PostgreSQL internally converts uppercase characters to lower case characters in identifiers unless they are quoted. Choosing this option encloses identifiers in quotes so that PostgreSQL does not convert the character's case.</p>
     /// <p>For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to <code>DOUBLE_QUOTES</code>.</p>
-    pub fn query_identifiers_enclosing_option(
-        mut self,
-        input: crate::types::QueryIdentifiersEnclosingOption,
-    ) -> Self {
+    pub fn query_identifiers_enclosing_option(mut self, input: crate::types::QueryIdentifiersEnclosingOption) -> Self {
         self.query_identifiers_enclosing_option = ::std::option::Option::Some(input);
         self
     }
@@ -55,10 +46,7 @@ impl SqlConfigurationBuilder {
     /// <p>By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source configuration. It does not change the case of identifiers or enclose them in quotes.</p>
     /// <p>PostgreSQL internally converts uppercase characters to lower case characters in identifiers unless they are quoted. Choosing this option encloses identifiers in quotes so that PostgreSQL does not convert the character's case.</p>
     /// <p>For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to <code>DOUBLE_QUOTES</code>.</p>
-    pub fn set_query_identifiers_enclosing_option(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryIdentifiersEnclosingOption>,
-    ) -> Self {
+    pub fn set_query_identifiers_enclosing_option(mut self, input: ::std::option::Option<crate::types::QueryIdentifiersEnclosingOption>) -> Self {
         self.query_identifiers_enclosing_option = input;
         self
     }
@@ -66,9 +54,7 @@ impl SqlConfigurationBuilder {
     /// <p>By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source configuration. It does not change the case of identifiers or enclose them in quotes.</p>
     /// <p>PostgreSQL internally converts uppercase characters to lower case characters in identifiers unless they are quoted. Choosing this option encloses identifiers in quotes so that PostgreSQL does not convert the character's case.</p>
     /// <p>For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to <code>DOUBLE_QUOTES</code>.</p>
-    pub fn get_query_identifiers_enclosing_option(
-        &self,
-    ) -> &::std::option::Option<crate::types::QueryIdentifiersEnclosingOption> {
+    pub fn get_query_identifiers_enclosing_option(&self) -> &::std::option::Option<crate::types::QueryIdentifiersEnclosingOption> {
         &self.query_identifiers_enclosing_option
     }
     /// Consumes the builder and constructs a [`SqlConfiguration`](crate::types::SqlConfiguration).

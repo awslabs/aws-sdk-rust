@@ -23,9 +23,7 @@ impl ServiceNowSourceProperties {
 
 /// A builder for [`ServiceNowSourceProperties`](crate::types::ServiceNowSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceNowSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl ServiceNowSourcePropertiesBuilder {
     }
     /// Consumes the builder and constructs a [`ServiceNowSourceProperties`](crate::types::ServiceNowSourceProperties).
     pub fn build(self) -> crate::types::ServiceNowSourceProperties {
-        crate::types::ServiceNowSourceProperties {
-            object: self.object,
-        }
+        crate::types::ServiceNowSourceProperties { object: self.object }
     }
 }

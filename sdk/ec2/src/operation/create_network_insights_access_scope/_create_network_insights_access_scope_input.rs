@@ -43,24 +43,19 @@ impl CreateNetworkInsightsAccessScopeInput {
 }
 impl CreateNetworkInsightsAccessScopeInput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkInsightsAccessScopeInput`](crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeInput).
-    pub fn builder() -> crate::operation::create_network_insights_access_scope::builders::CreateNetworkInsightsAccessScopeInputBuilder{
+    pub fn builder() -> crate::operation::create_network_insights_access_scope::builders::CreateNetworkInsightsAccessScopeInputBuilder {
         crate::operation::create_network_insights_access_scope::builders::CreateNetworkInsightsAccessScopeInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNetworkInsightsAccessScopeInput`](crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNetworkInsightsAccessScopeInputBuilder {
-    pub(crate) match_paths:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>>,
-    pub(crate) exclude_paths:
-        ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>>,
+    pub(crate) match_paths: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>>,
+    pub(crate) exclude_paths: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateNetworkInsightsAccessScopeInputBuilder {
@@ -76,17 +71,12 @@ impl CreateNetworkInsightsAccessScopeInputBuilder {
         self
     }
     /// <p>The paths to match.</p>
-    pub fn set_match_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>>,
-    ) -> Self {
+    pub fn set_match_paths(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>>) -> Self {
         self.match_paths = input;
         self
     }
     /// <p>The paths to match.</p>
-    pub fn get_match_paths(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>> {
+    pub fn get_match_paths(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>> {
         &self.match_paths
     }
     /// Appends an item to `exclude_paths`.
@@ -101,17 +91,12 @@ impl CreateNetworkInsightsAccessScopeInputBuilder {
         self
     }
     /// <p>The paths to exclude.</p>
-    pub fn set_exclude_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>>,
-    ) -> Self {
+    pub fn set_exclude_paths(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>>) -> Self {
         self.exclude_paths = input;
         self
     }
     /// <p>The paths to exclude.</p>
-    pub fn get_exclude_paths(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>> {
+    pub fn get_exclude_paths(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessScopePathRequest>> {
         &self.exclude_paths
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
@@ -140,17 +125,12 @@ impl CreateNetworkInsightsAccessScopeInputBuilder {
         self
     }
     /// <p>The tags to apply.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -168,20 +148,20 @@ impl CreateNetworkInsightsAccessScopeInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateNetworkInsightsAccessScopeInput`](crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeInput {
-                match_paths: self.match_paths
-                ,
-                exclude_paths: self.exclude_paths
-                ,
-                client_token: self.client_token
-                ,
-                tag_specifications: self.tag_specifications
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                match_paths: self.match_paths,
+                exclude_paths: self.exclude_paths,
+                client_token: self.client_token,
+                tag_specifications: self.tag_specifications,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

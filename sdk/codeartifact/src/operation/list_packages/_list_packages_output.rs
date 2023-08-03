@@ -35,9 +35,7 @@ impl ListPackagesOutput {
 
 /// A builder for [`ListPackagesOutput`](crate::operation::list_packages::ListPackagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackagesOutputBuilder {
     pub(crate) packages: ::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListPackagesOutputBuilder {
         self
     }
     /// <p> The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects. </p>
-    pub fn set_packages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>>,
-    ) -> Self {
+    pub fn set_packages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>>) -> Self {
         self.packages = input;
         self
     }
     /// <p> The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects. </p>
-    pub fn get_packages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>> {
+    pub fn get_packages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageSummary>> {
         &self.packages
     }
     /// <p> If there are additional results, this is the token for the next set of results. </p>

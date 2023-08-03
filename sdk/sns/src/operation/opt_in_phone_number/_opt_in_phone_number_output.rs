@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for OptInPhoneNumberOutput {
 }
 impl OptInPhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`OptInPhoneNumberOutput`](crate::operation::opt_in_phone_number::OptInPhoneNumberOutput).
-    pub fn builder(
-    ) -> crate::operation::opt_in_phone_number::builders::OptInPhoneNumberOutputBuilder {
+    pub fn builder() -> crate::operation::opt_in_phone_number::builders::OptInPhoneNumberOutputBuilder {
         crate::operation::opt_in_phone_number::builders::OptInPhoneNumberOutputBuilder::default()
     }
 }
 
 /// A builder for [`OptInPhoneNumberOutput`](crate::operation::opt_in_phone_number::OptInPhoneNumberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OptInPhoneNumberOutputBuilder {
     _request_id: Option<String>,
 }

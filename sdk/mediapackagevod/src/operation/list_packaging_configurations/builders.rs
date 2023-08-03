@@ -26,7 +26,7 @@ impl ListPackagingConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPackagingConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsInputBuilder,
+    inner: crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsInputBuilder,
 }
 impl ListPackagingConfigurationsFluentBuilder {
     /// Creates a new `ListPackagingConfigurations`.
@@ -37,7 +37,7 @@ impl ListPackagingConfigurationsFluentBuilder {
         }
     }
     /// Access the ListPackagingConfigurations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListPackagingConfigurationsFluentBuilder {
             crate::operation::list_packaging_configurations::ListPackagingConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_packaging_configurations::ListPackagingConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_packaging_configurations::ListPackagingConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListPackagingConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListPackagingConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_packaging_configurations::ListPackagingConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_packaging_configurations::ListPackagingConfigurationsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListPackagingConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_packaging_configurations::ListPackagingConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_packaging_configurations::ListPackagingConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListPackagingConfigurationsFluentBuilder {
             crate::operation::list_packaging_configurations::ListPackagingConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_packaging_configurations::ListPackagingConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_packaging_configurations::ListPackagingConfigurationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_packaging_configurations::paginator::ListPackagingConfigurationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_packaging_configurations::paginator::ListPackagingConfigurationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_packaging_configurations::paginator::ListPackagingConfigurationsPaginator {
         crate::operation::list_packaging_configurations::paginator::ListPackagingConfigurationsPaginator::new(self.handle, self.inner)
     }
     /// Upper bound on number of records to return.
@@ -155,18 +144,12 @@ impl ListPackagingConfigurationsFluentBuilder {
         self.inner.get_next_token()
     }
     /// Returns MediaPackage VOD PackagingConfigurations associated with the specified PackagingGroup.
-    pub fn packaging_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn packaging_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.packaging_group_id(input.into());
         self
     }
     /// Returns MediaPackage VOD PackagingConfigurations associated with the specified PackagingGroup.
-    pub fn set_packaging_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_packaging_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_packaging_group_id(input);
         self
     }

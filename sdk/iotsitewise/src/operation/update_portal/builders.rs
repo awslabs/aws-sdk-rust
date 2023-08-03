@@ -10,10 +10,7 @@ impl UpdatePortalInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_portal::UpdatePortalOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_portal::UpdatePortalError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_portal::UpdatePortalError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_portal();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdatePortalFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_portal::UpdatePortal,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_portal::UpdatePortal, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_portal::UpdatePortalError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdatePortalFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdatePortalFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_portal::UpdatePortal,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_portal::UpdatePortal, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_portal::UpdatePortalError>,
     > {
         self.customize_middleware().await
@@ -141,18 +129,12 @@ impl UpdatePortalFluentBuilder {
         self.inner.get_portal_name()
     }
     /// <p>A new description for the portal.</p>
-    pub fn portal_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn portal_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.portal_description(input.into());
         self
     }
     /// <p>A new description for the portal.</p>
-    pub fn set_portal_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_portal_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_portal_description(input);
         self
     }
@@ -161,18 +143,12 @@ impl UpdatePortalFluentBuilder {
         self.inner.get_portal_description()
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    pub fn portal_contact_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn portal_contact_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.portal_contact_email(input.into());
         self
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    pub fn set_portal_contact_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_portal_contact_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_portal_contact_email(input);
         self
     }
@@ -194,10 +170,7 @@ impl UpdatePortalFluentBuilder {
     /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
     /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
     /// </ul>
-    pub fn set_portal_logo_image(
-        mut self,
-        input: ::std::option::Option<crate::types::Image>,
-    ) -> Self {
+    pub fn set_portal_logo_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
         self.inner = self.inner.set_portal_logo_image(input);
         self
     }
@@ -238,18 +211,12 @@ impl UpdatePortalFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The email address that sends alarm notifications.</p>
-    pub fn notification_sender_email(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn notification_sender_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_sender_email(input.into());
         self
     }
     /// <p>The email address that sends alarm notifications.</p>
-    pub fn set_notification_sender_email(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_notification_sender_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notification_sender_email(input);
         self
     }

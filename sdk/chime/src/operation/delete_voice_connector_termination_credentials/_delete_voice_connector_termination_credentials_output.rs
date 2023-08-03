@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for DeleteVoiceConnectorTerminationCreden
 }
 impl DeleteVoiceConnectorTerminationCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceConnectorTerminationCredentialsOutput`](crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsOutput).
-    pub fn builder() -> crate::operation::delete_voice_connector_termination_credentials::builders::DeleteVoiceConnectorTerminationCredentialsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::delete_voice_connector_termination_credentials::builders::DeleteVoiceConnectorTerminationCredentialsOutputBuilder {
         crate::operation::delete_voice_connector_termination_credentials::builders::DeleteVoiceConnectorTerminationCredentialsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVoiceConnectorTerminationCredentialsOutput`](crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorTerminationCredentialsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl DeleteVoiceConnectorTerminationCredentialsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorTerminationCredentialsOutput`](crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsOutput).
-    pub fn build(self) -> crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsOutput{
+    pub fn build(self) -> crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsOutput {
         crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsOutput {
             _request_id: self._request_id,
         }

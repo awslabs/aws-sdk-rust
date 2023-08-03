@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteIntegrationResponseOutput {
 }
 impl DeleteIntegrationResponseOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIntegrationResponseOutput`](crate::operation::delete_integration_response::DeleteIntegrationResponseOutput).
-    pub fn builder() -> crate::operation::delete_integration_response::builders::DeleteIntegrationResponseOutputBuilder{
+    pub fn builder() -> crate::operation::delete_integration_response::builders::DeleteIntegrationResponseOutputBuilder {
         crate::operation::delete_integration_response::builders::DeleteIntegrationResponseOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIntegrationResponseOutput`](crate::operation::delete_integration_response::DeleteIntegrationResponseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIntegrationResponseOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteIntegrationResponseOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteIntegrationResponseOutput`](crate::operation::delete_integration_response::DeleteIntegrationResponseOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_integration_response::DeleteIntegrationResponseOutput {
+    pub fn build(self) -> crate::operation::delete_integration_response::DeleteIntegrationResponseOutput {
         crate::operation::delete_integration_response::DeleteIntegrationResponseOutput {
             _request_id: self._request_id,
         }

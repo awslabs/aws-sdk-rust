@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetManagedScalingPolicyOutput`](crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyOutput) with field(s):
     ///   - [`managed_scaling_policy(Option<ManagedScalingPolicy>)`](crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyOutput::managed_scaling_policy): <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster. </p>
     /// - On failure, responds with [`SdkError<GetManagedScalingPolicyError>`](crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyError)
-    pub fn get_managed_scaling_policy(
-        &self,
-    ) -> crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyFluentBuilder
-    {
+    pub fn get_managed_scaling_policy(&self) -> crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyFluentBuilder {
         crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyFluentBuilder::new(self.handle.clone())
     }
 }

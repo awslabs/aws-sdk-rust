@@ -29,7 +29,7 @@ impl DescribeLoadBasedAutoScalingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLoadBasedAutoScalingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingInputBuilder,
+    inner: crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingInputBuilder,
 }
 impl DescribeLoadBasedAutoScalingFluentBuilder {
     /// Creates a new `DescribeLoadBasedAutoScaling`.
@@ -40,7 +40,7 @@ impl DescribeLoadBasedAutoScalingFluentBuilder {
         }
     }
     /// Access the DescribeLoadBasedAutoScaling as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_load_based_auto_scaling::builders::DescribeLoadBasedAutoScalingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl DescribeLoadBasedAutoScalingFluentBuilder {
             crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScaling,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl DescribeLoadBasedAutoScalingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl DescribeLoadBasedAutoScalingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl DescribeLoadBasedAutoScalingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl DescribeLoadBasedAutoScalingFluentBuilder {
             crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScaling,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +122,7 @@ impl DescribeLoadBasedAutoScalingFluentBuilder {
         self
     }
     /// <p>An array of layer IDs.</p>
-    pub fn set_layer_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_layer_ids(input);
         self
     }

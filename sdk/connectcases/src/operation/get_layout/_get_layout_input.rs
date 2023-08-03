@@ -29,9 +29,7 @@ impl GetLayoutInput {
 
 /// A builder for [`GetLayoutInput`](crate::operation::get_layout::GetLayoutInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLayoutInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) layout_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetLayoutInputBuilder {
         &self.layout_id
     }
     /// Consumes the builder and constructs a [`GetLayoutInput`](crate::operation::get_layout::GetLayoutInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_layout::GetLayoutInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_layout::GetLayoutInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_layout::GetLayoutInput {
             domain_id: self.domain_id,
             layout_id: self.layout_id,

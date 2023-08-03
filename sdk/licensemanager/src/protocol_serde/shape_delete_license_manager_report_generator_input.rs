@@ -4,9 +4,7 @@ pub fn ser_delete_license_manager_report_generator_input(
     input: &crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.license_manager_report_generator_arn {
-        object
-            .key("LicenseManagerReportGeneratorArn")
-            .string(var_1.as_str());
+        object.key("LicenseManagerReportGeneratorArn").string(var_1.as_str());
     }
     Ok(())
 }

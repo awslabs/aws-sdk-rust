@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeprecateFlowTemplateOutput`](crate::operation::deprecate_flow_template::DeprecateFlowTemplateOutput)
     /// - On failure, responds with [`SdkError<DeprecateFlowTemplateError>`](crate::operation::deprecate_flow_template::DeprecateFlowTemplateError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn deprecate_flow_template(
-        &self,
-    ) -> crate::operation::deprecate_flow_template::builders::DeprecateFlowTemplateFluentBuilder
-    {
-        crate::operation::deprecate_flow_template::builders::DeprecateFlowTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deprecate_flow_template(&self) -> crate::operation::deprecate_flow_template::builders::DeprecateFlowTemplateFluentBuilder {
+        crate::operation::deprecate_flow_template::builders::DeprecateFlowTemplateFluentBuilder::new(self.handle.clone())
     }
 }

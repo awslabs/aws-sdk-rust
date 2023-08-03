@@ -22,16 +22,15 @@ impl ::aws_http::request_id::RequestId for CancelDomainTransferToAnotherAwsAccou
 }
 impl CancelDomainTransferToAnotherAwsAccountOutput {
     /// Creates a new builder-style object to manufacture [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountOutput).
-    pub fn builder() -> crate::operation::cancel_domain_transfer_to_another_aws_account::builders::CancelDomainTransferToAnotherAwsAccountOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_domain_transfer_to_another_aws_account::builders::CancelDomainTransferToAnotherAwsAccountOutputBuilder
+    {
         crate::operation::cancel_domain_transfer_to_another_aws_account::builders::CancelDomainTransferToAnotherAwsAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelDomainTransferToAnotherAwsAccountOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -61,10 +60,9 @@ impl CancelDomainTransferToAnotherAwsAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountOutput).
-    pub fn build(self) -> crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountOutput{
+    pub fn build(self) -> crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountOutput {
         crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountOutput {
-            operation_id: self.operation_id
-            ,
+            operation_id: self.operation_id,
             _request_id: self._request_id,
         }
     }

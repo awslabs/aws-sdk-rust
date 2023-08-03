@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`records(Option<Vec<UsageRecord>>)`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput::records): <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
     ///   - [`time_range(Option<TimeRange>)`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput::time_range): <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
     /// - On failure, responds with [`SdkError<GetUsageStatisticsError>`](crate::operation::get_usage_statistics::GetUsageStatisticsError)
-    pub fn get_usage_statistics(
-        &self,
-    ) -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder {
-        crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_usage_statistics(&self) -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder {
+        crate::operation::get_usage_statistics::builders::GetUsageStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

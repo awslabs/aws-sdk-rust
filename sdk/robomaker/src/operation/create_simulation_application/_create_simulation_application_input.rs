@@ -20,9 +20,7 @@ pub struct CreateSimulationApplicationInput {
     pub rendering_engine: ::std::option::Option<crate::types::RenderingEngine>,
     /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
     #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::Environment>,
@@ -37,9 +35,7 @@ impl CreateSimulationApplicationInput {
         self.sources.as_deref()
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn simulation_software_suite(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SimulationSoftwareSuite> {
+    pub fn simulation_software_suite(&self) -> ::std::option::Option<&crate::types::SimulationSoftwareSuite> {
         self.simulation_software_suite.as_ref()
     }
     /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
@@ -51,11 +47,7 @@ impl CreateSimulationApplicationInput {
         self.rendering_engine.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
@@ -65,26 +57,21 @@ impl CreateSimulationApplicationInput {
 }
 impl CreateSimulationApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateSimulationApplicationInput`](crate::operation::create_simulation_application::CreateSimulationApplicationInput).
-    pub fn builder() -> crate::operation::create_simulation_application::builders::CreateSimulationApplicationInputBuilder{
+    pub fn builder() -> crate::operation::create_simulation_application::builders::CreateSimulationApplicationInputBuilder {
         crate::operation::create_simulation_application::builders::CreateSimulationApplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSimulationApplicationInput`](crate::operation::create_simulation_application::CreateSimulationApplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSimulationApplicationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>,
-    pub(crate) simulation_software_suite:
-        ::std::option::Option<crate::types::SimulationSoftwareSuite>,
+    pub(crate) simulation_software_suite: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
     pub(crate) robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     pub(crate) rendering_engine: ::std::option::Option<crate::types::RenderingEngine>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) environment: ::std::option::Option<crate::types::Environment>,
 }
 impl CreateSimulationApplicationInputBuilder {
@@ -114,39 +101,26 @@ impl CreateSimulationApplicationInputBuilder {
         self
     }
     /// <p>The sources of the simulation application.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>The sources of the simulation application.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
         &self.sources
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn simulation_software_suite(
-        mut self,
-        input: crate::types::SimulationSoftwareSuite,
-    ) -> Self {
+    pub fn simulation_software_suite(mut self, input: crate::types::SimulationSoftwareSuite) -> Self {
         self.simulation_software_suite = ::std::option::Option::Some(input);
         self
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn set_simulation_software_suite(
-        mut self,
-        input: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
-    ) -> Self {
+    pub fn set_simulation_software_suite(mut self, input: ::std::option::Option<crate::types::SimulationSoftwareSuite>) -> Self {
         self.simulation_software_suite = input;
         self
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn get_simulation_software_suite(
-        &self,
-    ) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
+    pub fn get_simulation_software_suite(&self) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
         &self.simulation_software_suite
     }
     /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
@@ -155,17 +129,12 @@ impl CreateSimulationApplicationInputBuilder {
         self
     }
     /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
-    pub fn set_robot_software_suite(
-        mut self,
-        input: ::std::option::Option<crate::types::RobotSoftwareSuite>,
-    ) -> Self {
+    pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
         self.robot_software_suite = input;
         self
     }
     /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
-    pub fn get_robot_software_suite(
-        &self,
-    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+    pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
         &self.robot_software_suite
     }
     /// <p>The rendering engine for the simulation application.</p>
@@ -174,10 +143,7 @@ impl CreateSimulationApplicationInputBuilder {
         self
     }
     /// <p>The rendering engine for the simulation application.</p>
-    pub fn set_rendering_engine(
-        mut self,
-        input: ::std::option::Option<crate::types::RenderingEngine>,
-    ) -> Self {
+    pub fn set_rendering_engine(mut self, input: ::std::option::Option<crate::types::RenderingEngine>) -> Self {
         self.rendering_engine = input;
         self
     }
@@ -190,32 +156,19 @@ impl CreateSimulationApplicationInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
@@ -224,10 +177,7 @@ impl CreateSimulationApplicationInputBuilder {
         self
     }
     /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
         self.environment = input;
         self
     }
@@ -242,16 +192,14 @@ impl CreateSimulationApplicationInputBuilder {
         crate::operation::create_simulation_application::CreateSimulationApplicationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_simulation_application::CreateSimulationApplicationInput {
-                name: self.name,
-                sources: self.sources,
-                simulation_software_suite: self.simulation_software_suite,
-                robot_software_suite: self.robot_software_suite,
-                rendering_engine: self.rendering_engine,
-                tags: self.tags,
-                environment: self.environment,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_simulation_application::CreateSimulationApplicationInput {
+            name: self.name,
+            sources: self.sources,
+            simulation_software_suite: self.simulation_software_suite,
+            robot_software_suite: self.robot_software_suite,
+            rendering_engine: self.rendering_engine,
+            tags: self.tags,
+            environment: self.environment,
+        })
     }
 }

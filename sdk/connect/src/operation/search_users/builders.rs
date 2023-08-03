@@ -10,10 +10,7 @@ impl SearchUsersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_users::SearchUsersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_users::SearchUsersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_users::SearchUsersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_users();
         fluent_builder.inner = self;
@@ -47,10 +44,7 @@ impl SearchUsersFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_users::SearchUsers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::search_users::SearchUsers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::search_users::SearchUsersError>,
     > {
         let handle = self.handle.clone();
@@ -61,10 +55,7 @@ impl SearchUsersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -106,10 +97,7 @@ impl SearchUsersFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_users::SearchUsers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::search_users::SearchUsers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::search_users::SearchUsersError>,
     > {
         self.customize_middleware().await
@@ -118,10 +106,7 @@ impl SearchUsersFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_users::paginator::SearchUsersPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::search_users::paginator::SearchUsersPaginator {
-        crate::operation::search_users::paginator::SearchUsersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::search_users::paginator::SearchUsersPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,10 +156,7 @@ impl SearchUsersFluentBuilder {
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn set_search_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::UserSearchFilter>,
-    ) -> Self {
+    pub fn set_search_filter(mut self, input: ::std::option::Option<crate::types::UserSearchFilter>) -> Self {
         self.inner = self.inner.set_search_filter(input);
         self
     }
@@ -192,10 +174,7 @@ impl SearchUsersFluentBuilder {
     /// <p>The search criteria to be used to return users.</p> <note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
     /// </note>
-    pub fn set_search_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::UserSearchCriteria>,
-    ) -> Self {
+    pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::UserSearchCriteria>) -> Self {
         self.inner = self.inner.set_search_criteria(input);
         self
     }

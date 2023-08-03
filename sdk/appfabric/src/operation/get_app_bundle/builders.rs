@@ -10,10 +10,7 @@ impl GetAppBundleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_app_bundle::GetAppBundleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_app_bundle::GetAppBundleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_app_bundle::GetAppBundleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_app_bundle();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetAppBundleFluentBuilder {
         }
     }
     /// Access the GetAppBundle as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_app_bundle::builders::GetAppBundleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_app_bundle::builders::GetAppBundleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetAppBundleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl GetAppBundleFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_bundle_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }

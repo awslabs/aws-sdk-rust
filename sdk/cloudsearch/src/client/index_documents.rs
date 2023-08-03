@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`IndexDocumentsOutput`](crate::operation::index_documents::IndexDocumentsOutput) with field(s):
     ///   - [`field_names(Option<Vec<String>>)`](crate::operation::index_documents::IndexDocumentsOutput::field_names): <p>The names of the fields that are currently being indexed.</p>
     /// - On failure, responds with [`SdkError<IndexDocumentsError>`](crate::operation::index_documents::IndexDocumentsError)
-    pub fn index_documents(
-        &self,
-    ) -> crate::operation::index_documents::builders::IndexDocumentsFluentBuilder {
-        crate::operation::index_documents::builders::IndexDocumentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn index_documents(&self) -> crate::operation::index_documents::builders::IndexDocumentsFluentBuilder {
+        crate::operation::index_documents::builders::IndexDocumentsFluentBuilder::new(self.handle.clone())
     }
 }

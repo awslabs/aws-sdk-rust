@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`addon_version(Option<String>)`](crate::operation::describe_addon_configuration::DescribeAddonConfigurationOutput::addon_version): <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     ///   - [`configuration_schema(Option<String>)`](crate::operation::describe_addon_configuration::DescribeAddonConfigurationOutput::configuration_schema): <p>A JSON schema that's used to validate the configuration values that you provide when an addon is created or updated.</p>
     /// - On failure, responds with [`SdkError<DescribeAddonConfigurationError>`](crate::operation::describe_addon_configuration::DescribeAddonConfigurationError)
-    pub fn describe_addon_configuration(&self) -> crate::operation::describe_addon_configuration::builders::DescribeAddonConfigurationFluentBuilder{
+    pub fn describe_addon_configuration(&self) -> crate::operation::describe_addon_configuration::builders::DescribeAddonConfigurationFluentBuilder {
         crate::operation::describe_addon_configuration::builders::DescribeAddonConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

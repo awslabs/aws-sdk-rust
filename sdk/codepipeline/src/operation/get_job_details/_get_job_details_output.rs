@@ -33,9 +33,7 @@ impl GetJobDetailsOutput {
 
 /// A builder for [`GetJobDetailsOutput`](crate::operation::get_job_details::GetJobDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobDetailsOutputBuilder {
     pub(crate) job_details: ::std::option::Option<crate::types::JobDetails>,
     _request_id: Option<String>,
@@ -51,10 +49,7 @@ impl GetJobDetailsOutputBuilder {
     /// <p>The details of the job.</p> <note>
     /// <p>If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new credentials.</p>
     /// </note>
-    pub fn set_job_details(
-        mut self,
-        input: ::std::option::Option<crate::types::JobDetails>,
-    ) -> Self {
+    pub fn set_job_details(mut self, input: ::std::option::Option<crate::types::JobDetails>) -> Self {
         self.job_details = input;
         self
     }

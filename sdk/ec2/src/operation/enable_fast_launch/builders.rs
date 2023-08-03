@@ -10,10 +10,7 @@ impl EnableFastLaunchInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::enable_fast_launch::EnableFastLaunchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_fast_launch::EnableFastLaunchError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_fast_launch::EnableFastLaunchError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.enable_fast_launch();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl EnableFastLaunchFluentBuilder {
         }
     }
     /// Access the EnableFastLaunch as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::enable_fast_launch::builders::EnableFastLaunchInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::enable_fast_launch::builders::EnableFastLaunchInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl EnableFastLaunchFluentBuilder {
             crate::operation::enable_fast_launch::EnableFastLaunch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_fast_launch::EnableFastLaunchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_fast_launch::EnableFastLaunchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl EnableFastLaunchFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl EnableFastLaunchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_fast_launch::EnableFastLaunchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_fast_launch::EnableFastLaunchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_fast_launch::EnableFastLaunchError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl EnableFastLaunchFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_fast_launch::EnableFastLaunchOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_fast_launch::EnableFastLaunchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_fast_launch::EnableFastLaunchError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl EnableFastLaunchFluentBuilder {
             crate::operation::enable_fast_launch::EnableFastLaunch,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::enable_fast_launch::EnableFastLaunchError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_fast_launch::EnableFastLaunchError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +123,12 @@ impl EnableFastLaunchFluentBuilder {
         self.inner.get_image_id()
     }
     /// <p>The type of resource to use for pre-provisioning the Windows AMI for faster launching. Supported values include: <code>snapshot</code>, which is the default value.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>The type of resource to use for pre-provisioning the Windows AMI for faster launching. Supported values include: <code>snapshot</code>, which is the default value.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -159,47 +137,31 @@ impl EnableFastLaunchFluentBuilder {
         self.inner.get_resource_type()
     }
     /// <p>Configuration settings for creating and managing the snapshots that are used for pre-provisioning the Windows AMI for faster launching. The associated <code>ResourceType</code> must be <code>snapshot</code>.</p>
-    pub fn snapshot_configuration(
-        mut self,
-        input: crate::types::FastLaunchSnapshotConfigurationRequest,
-    ) -> Self {
+    pub fn snapshot_configuration(mut self, input: crate::types::FastLaunchSnapshotConfigurationRequest) -> Self {
         self.inner = self.inner.snapshot_configuration(input);
         self
     }
     /// <p>Configuration settings for creating and managing the snapshots that are used for pre-provisioning the Windows AMI for faster launching. The associated <code>ResourceType</code> must be <code>snapshot</code>.</p>
-    pub fn set_snapshot_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::FastLaunchSnapshotConfigurationRequest>,
-    ) -> Self {
+    pub fn set_snapshot_configuration(mut self, input: ::std::option::Option<crate::types::FastLaunchSnapshotConfigurationRequest>) -> Self {
         self.inner = self.inner.set_snapshot_configuration(input);
         self
     }
     /// <p>Configuration settings for creating and managing the snapshots that are used for pre-provisioning the Windows AMI for faster launching. The associated <code>ResourceType</code> must be <code>snapshot</code>.</p>
-    pub fn get_snapshot_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::FastLaunchSnapshotConfigurationRequest> {
+    pub fn get_snapshot_configuration(&self) -> &::std::option::Option<crate::types::FastLaunchSnapshotConfigurationRequest> {
         self.inner.get_snapshot_configuration()
     }
     /// <p>The launch template to use when launching Windows instances from pre-provisioned snapshots. Launch template parameters can include either the name or ID of the launch template, but not both.</p>
-    pub fn launch_template(
-        mut self,
-        input: crate::types::FastLaunchLaunchTemplateSpecificationRequest,
-    ) -> Self {
+    pub fn launch_template(mut self, input: crate::types::FastLaunchLaunchTemplateSpecificationRequest) -> Self {
         self.inner = self.inner.launch_template(input);
         self
     }
     /// <p>The launch template to use when launching Windows instances from pre-provisioned snapshots. Launch template parameters can include either the name or ID of the launch template, but not both.</p>
-    pub fn set_launch_template(
-        mut self,
-        input: ::std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationRequest>,
-    ) -> Self {
+    pub fn set_launch_template(mut self, input: ::std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationRequest>) -> Self {
         self.inner = self.inner.set_launch_template(input);
         self
     }
     /// <p>The launch template to use when launching Windows instances from pre-provisioned snapshots. Launch template parameters can include either the name or ID of the launch template, but not both.</p>
-    pub fn get_launch_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationRequest> {
+    pub fn get_launch_template(&self) -> &::std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationRequest> {
         self.inner.get_launch_template()
     }
     /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching. Value must be <code>6</code> or greater.</p>

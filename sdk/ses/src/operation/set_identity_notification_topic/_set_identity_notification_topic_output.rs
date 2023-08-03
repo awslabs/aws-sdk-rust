@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for SetIdentityNotificationTopicOutput {
 }
 impl SetIdentityNotificationTopicOutput {
     /// Creates a new builder-style object to manufacture [`SetIdentityNotificationTopicOutput`](crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput).
-    pub fn builder() -> crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicOutputBuilder{
+    pub fn builder() -> crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicOutputBuilder {
         crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetIdentityNotificationTopicOutput`](crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetIdentityNotificationTopicOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,9 +35,7 @@ impl SetIdentityNotificationTopicOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetIdentityNotificationTopicOutput`](crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput {
+    pub fn build(self) -> crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput {
         crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput {
             _request_id: self._request_id,
         }

@@ -15,25 +15,17 @@ pub fn ser_update_domain_input(
     if let Some(var_4) = &input.domain_settings_for_update {
         #[allow(unused_mut)]
         let mut object_5 = object.key("DomainSettingsForUpdate").start_object();
-        crate::protocol_serde::shape_domain_settings_for_update::ser_domain_settings_for_update(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_domain_settings_for_update::ser_domain_settings_for_update(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.default_space_settings {
         #[allow(unused_mut)]
         let mut object_7 = object.key("DefaultSpaceSettings").start_object();
-        crate::protocol_serde::shape_default_space_settings::ser_default_space_settings(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_default_space_settings::ser_default_space_settings(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.app_security_group_management {
-        object
-            .key("AppSecurityGroupManagement")
-            .string(var_8.as_str());
+        object.key("AppSecurityGroupManagement").string(var_8.as_str());
     }
     Ok(())
 }

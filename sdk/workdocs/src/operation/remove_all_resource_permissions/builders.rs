@@ -26,7 +26,7 @@ impl RemoveAllResourcePermissionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveAllResourcePermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_all_resource_permissions::builders::RemoveAllResourcePermissionsInputBuilder,
+    inner: crate::operation::remove_all_resource_permissions::builders::RemoveAllResourcePermissionsInputBuilder,
 }
 impl RemoveAllResourcePermissionsFluentBuilder {
     /// Creates a new `RemoveAllResourcePermissions`.
@@ -37,7 +37,7 @@ impl RemoveAllResourcePermissionsFluentBuilder {
         }
     }
     /// Access the RemoveAllResourcePermissions as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_all_resource_permissions::builders::RemoveAllResourcePermissionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_all_resource_permissions::builders::RemoveAllResourcePermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RemoveAllResourcePermissionsFluentBuilder {
             crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RemoveAllResourcePermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RemoveAllResourcePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RemoveAllResourcePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl RemoveAllResourcePermissionsFluentBuilder {
             crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }

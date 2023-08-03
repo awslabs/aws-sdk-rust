@@ -15,33 +15,25 @@ impl StopSourceNetworkReplicationInput {
 }
 impl StopSourceNetworkReplicationInput {
     /// Creates a new builder-style object to manufacture [`StopSourceNetworkReplicationInput`](crate::operation::stop_source_network_replication::StopSourceNetworkReplicationInput).
-    pub fn builder() -> crate::operation::stop_source_network_replication::builders::StopSourceNetworkReplicationInputBuilder{
+    pub fn builder() -> crate::operation::stop_source_network_replication::builders::StopSourceNetworkReplicationInputBuilder {
         crate::operation::stop_source_network_replication::builders::StopSourceNetworkReplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`StopSourceNetworkReplicationInput`](crate::operation::stop_source_network_replication::StopSourceNetworkReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopSourceNetworkReplicationInputBuilder {
     pub(crate) source_network_id: ::std::option::Option<::std::string::String>,
 }
 impl StopSourceNetworkReplicationInputBuilder {
     /// <p>ID of the Source Network to stop replication.</p>
-    pub fn source_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the Source Network to stop replication.</p>
-    pub fn set_source_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_network_id = input;
         self
     }
@@ -56,10 +48,8 @@ impl StopSourceNetworkReplicationInputBuilder {
         crate::operation::stop_source_network_replication::StopSourceNetworkReplicationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_source_network_replication::StopSourceNetworkReplicationInput {
-                source_network_id: self.source_network_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_source_network_replication::StopSourceNetworkReplicationInput {
+            source_network_id: self.source_network_id,
+        })
     }
 }

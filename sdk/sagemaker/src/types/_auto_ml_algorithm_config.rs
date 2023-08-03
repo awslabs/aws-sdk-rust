@@ -65,12 +65,9 @@ impl AutoMlAlgorithmConfig {
 
 /// A builder for [`AutoMlAlgorithmConfig`](crate::types::AutoMlAlgorithmConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoMlAlgorithmConfigBuilder {
-    pub(crate) auto_ml_algorithms:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithm>>,
+    pub(crate) auto_ml_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithm>>,
 }
 impl AutoMlAlgorithmConfigBuilder {
     /// Appends an item to `auto_ml_algorithms`.
@@ -127,10 +124,7 @@ impl AutoMlAlgorithmConfigBuilder {
     /// <li> <p>"xgboost"</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_auto_ml_algorithms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithm>>,
-    ) -> Self {
+    pub fn set_auto_ml_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithm>>) -> Self {
         self.auto_ml_algorithms = input;
         self
     }
@@ -156,9 +150,7 @@ impl AutoMlAlgorithmConfigBuilder {
     /// <li> <p>"xgboost"</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn get_auto_ml_algorithms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithm>> {
+    pub fn get_auto_ml_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithm>> {
         &self.auto_ml_algorithms
     }
     /// Consumes the builder and constructs a [`AutoMlAlgorithmConfig`](crate::types::AutoMlAlgorithmConfig).

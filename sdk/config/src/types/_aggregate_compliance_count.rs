@@ -30,9 +30,7 @@ impl AggregateComplianceCount {
 
 /// A builder for [`AggregateComplianceCount`](crate::types::AggregateComplianceCount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregateComplianceCountBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) compliance_summary: ::std::option::Option<crate::types::ComplianceSummary>,
@@ -58,17 +56,12 @@ impl AggregateComplianceCountBuilder {
         self
     }
     /// <p>The number of compliant and noncompliant Config rules.</p>
-    pub fn set_compliance_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceSummary>,
-    ) -> Self {
+    pub fn set_compliance_summary(mut self, input: ::std::option::Option<crate::types::ComplianceSummary>) -> Self {
         self.compliance_summary = input;
         self
     }
     /// <p>The number of compliant and noncompliant Config rules.</p>
-    pub fn get_compliance_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComplianceSummary> {
+    pub fn get_compliance_summary(&self) -> &::std::option::Option<crate::types::ComplianceSummary> {
         &self.compliance_summary
     }
     /// Consumes the builder and constructs a [`AggregateComplianceCount`](crate::types::AggregateComplianceCount).

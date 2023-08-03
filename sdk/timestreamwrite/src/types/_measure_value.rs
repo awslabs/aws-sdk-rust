@@ -40,9 +40,7 @@ impl MeasureValue {
 
 /// A builder for [`MeasureValue`](crate::types::MeasureValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MeasureValueBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl MeasureValueBuilder {
         self
     }
     /// <p>Contains the data type of the MeasureValue for the time-series data point.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MeasureValueType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::MeasureValueType>) -> Self {
         self.r#type = input;
         self
     }

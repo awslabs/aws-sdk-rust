@@ -35,9 +35,7 @@ impl ListPackagesOutput {
 
 /// A builder for [`ListPackagesOutput`](crate::operation::list_packages::ListPackagesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackagesOutputBuilder {
     pub(crate) packages: ::std::option::Option<::std::vec::Vec<crate::types::PackageListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListPackagesOutputBuilder {
         self
     }
     /// <p>A list of packages.</p>
-    pub fn set_packages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PackageListItem>>,
-    ) -> Self {
+    pub fn set_packages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackageListItem>>) -> Self {
         self.packages = input;
         self
     }
     /// <p>A list of packages.</p>
-    pub fn get_packages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageListItem>> {
+    pub fn get_packages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageListItem>> {
         &self.packages
     }
     /// <p>A pagination token that's included if more results are available.</p>

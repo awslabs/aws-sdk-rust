@@ -29,18 +29,14 @@ impl StartGeneratedCodeJobInput {
 }
 impl StartGeneratedCodeJobInput {
     /// Creates a new builder-style object to manufacture [`StartGeneratedCodeJobInput`](crate::operation::start_generated_code_job::StartGeneratedCodeJobInput).
-    pub fn builder(
-    ) -> crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobInputBuilder {
         crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartGeneratedCodeJobInput`](crate::operation::start_generated_code_job::StartGeneratedCodeJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartGeneratedCodeJobInputBuilder {
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl StartGeneratedCodeJobInputBuilder {
     /// Consumes the builder and constructs a [`StartGeneratedCodeJobInput`](crate::operation::start_generated_code_job::StartGeneratedCodeJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_generated_code_job::StartGeneratedCodeJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_generated_code_job::StartGeneratedCodeJobInput {
-                game_name: self.game_name,
-                snapshot_id: self.snapshot_id,
-                generator: self.generator,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_generated_code_job::StartGeneratedCodeJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_generated_code_job::StartGeneratedCodeJobInput {
+            game_name: self.game_name,
+            snapshot_id: self.snapshot_id,
+            generator: self.generator,
+        })
     }
 }

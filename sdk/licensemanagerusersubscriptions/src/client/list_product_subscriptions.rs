@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`product_user_summaries(Option<Vec<ProductUserSummary>>)`](crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput::product_user_summaries): <p>Metadata that describes the list product subscriptions operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListProductSubscriptionsError>`](crate::operation::list_product_subscriptions::ListProductSubscriptionsError)
-    pub fn list_product_subscriptions(
-        &self,
-    ) -> crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder
-    {
+    pub fn list_product_subscriptions(&self) -> crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder {
         crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsFluentBuilder::new(self.handle.clone())
     }
 }

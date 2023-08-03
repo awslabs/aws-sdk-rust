@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for CheckDomainTransferabilityOutput {
 }
 impl CheckDomainTransferabilityOutput {
     /// Creates a new builder-style object to manufacture [`CheckDomainTransferabilityOutput`](crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput).
-    pub fn builder() -> crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityOutputBuilder{
+    pub fn builder() -> crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityOutputBuilder {
         crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityOutputBuilder::default()
     }
 }
 
 /// A builder for [`CheckDomainTransferabilityOutput`](crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckDomainTransferabilityOutputBuilder {
     pub(crate) transferability: ::std::option::Option<crate::types::DomainTransferability>,
     _request_id: Option<String>,
@@ -43,17 +41,12 @@ impl CheckDomainTransferabilityOutputBuilder {
         self
     }
     /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
-    pub fn set_transferability(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainTransferability>,
-    ) -> Self {
+    pub fn set_transferability(mut self, input: ::std::option::Option<crate::types::DomainTransferability>) -> Self {
         self.transferability = input;
         self
     }
     /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
-    pub fn get_transferability(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainTransferability> {
+    pub fn get_transferability(&self) -> &::std::option::Option<crate::types::DomainTransferability> {
         &self.transferability
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -66,9 +59,7 @@ impl CheckDomainTransferabilityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CheckDomainTransferabilityOutput`](crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput {
+    pub fn build(self) -> crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput {
         crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput {
             transferability: self.transferability,
             _request_id: self._request_id,

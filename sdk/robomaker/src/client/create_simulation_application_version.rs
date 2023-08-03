@@ -19,7 +19,9 @@ impl super::Client {
     ///   - [`revision_id(Option<String>)`](crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionOutput::revision_id): <p>The revision ID of the simulation application.</p>
     ///   - [`environment(Option<Environment>)`](crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionOutput::environment): <p>The object that contains the Docker image URI used to create the simulation application.</p>
     /// - On failure, responds with [`SdkError<CreateSimulationApplicationVersionError>`](crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionError)
-    pub fn create_simulation_application_version(&self) -> crate::operation::create_simulation_application_version::builders::CreateSimulationApplicationVersionFluentBuilder{
+    pub fn create_simulation_application_version(
+        &self,
+    ) -> crate::operation::create_simulation_application_version::builders::CreateSimulationApplicationVersionFluentBuilder {
         crate::operation::create_simulation_application_version::builders::CreateSimulationApplicationVersionFluentBuilder::new(self.handle.clone())
     }
 }

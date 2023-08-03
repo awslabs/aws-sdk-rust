@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`deployment_groups_info(Option<Vec<DeploymentGroupInfo>>)`](crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsOutput::deployment_groups_info): <p>Information about the deployment groups.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsOutput::error_message): <p>Information about errors that might have occurred during the API call.</p>
     /// - On failure, responds with [`SdkError<BatchGetDeploymentGroupsError>`](crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsError)
-    pub fn batch_get_deployment_groups(&self) -> crate::operation::batch_get_deployment_groups::builders::BatchGetDeploymentGroupsFluentBuilder{
+    pub fn batch_get_deployment_groups(&self) -> crate::operation::batch_get_deployment_groups::builders::BatchGetDeploymentGroupsFluentBuilder {
         crate::operation::batch_get_deployment_groups::builders::BatchGetDeploymentGroupsFluentBuilder::new(self.handle.clone())
     }
 }

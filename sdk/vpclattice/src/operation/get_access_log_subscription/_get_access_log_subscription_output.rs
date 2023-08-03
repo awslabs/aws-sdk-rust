@@ -63,16 +63,14 @@ impl ::aws_http::request_id::RequestId for GetAccessLogSubscriptionOutput {
 }
 impl GetAccessLogSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessLogSubscriptionOutput`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput).
-    pub fn builder() -> crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionOutputBuilder {
         crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccessLogSubscriptionOutput`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessLogSubscriptionOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -141,18 +139,12 @@ impl GetAccessLogSubscriptionOutputBuilder {
         &self.resource_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -166,10 +158,7 @@ impl GetAccessLogSubscriptionOutputBuilder {
         self
     }
     /// <p>The date and time that the access log subscription was created, specified in ISO-8601 format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -183,10 +172,7 @@ impl GetAccessLogSubscriptionOutputBuilder {
         self
     }
     /// <p>The date and time that the access log subscription was last updated, specified in ISO-8601 format.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
@@ -204,9 +190,7 @@ impl GetAccessLogSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAccessLogSubscriptionOutput`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput {
+    pub fn build(self) -> crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput {
         crate::operation::get_access_log_subscription::GetAccessLogSubscriptionOutput {
             id: self.id,
             arn: self.arn,

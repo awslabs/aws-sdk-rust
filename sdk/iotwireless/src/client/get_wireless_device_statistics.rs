@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`lo_ra_wan(Option<LoRaWanDeviceMetadata>)`](crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsOutput::lo_ra_wan): <p>Information about the wireless device's operations.</p>
     ///   - [`sidewalk(Option<SidewalkDeviceMetadata>)`](crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsOutput::sidewalk): <p>MetaData for Sidewalk device.</p>
     /// - On failure, responds with [`SdkError<GetWirelessDeviceStatisticsError>`](crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsError)
-    pub fn get_wireless_device_statistics(&self) -> crate::operation::get_wireless_device_statistics::builders::GetWirelessDeviceStatisticsFluentBuilder{
+    pub fn get_wireless_device_statistics(
+        &self,
+    ) -> crate::operation::get_wireless_device_statistics::builders::GetWirelessDeviceStatisticsFluentBuilder {
         crate::operation::get_wireless_device_statistics::builders::GetWirelessDeviceStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

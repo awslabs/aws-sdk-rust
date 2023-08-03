@@ -47,16 +47,16 @@ impl GetEcsServiceRecommendationProjectedMetricsInput {
 }
 impl GetEcsServiceRecommendationProjectedMetricsInput {
     /// Creates a new builder-style object to manufacture [`GetEcsServiceRecommendationProjectedMetricsInput`](crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsInput).
-    pub fn builder() -> crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetEcsServiceRecommendationProjectedMetricsInputBuilder{
-        crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetEcsServiceRecommendationProjectedMetricsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetEcsServiceRecommendationProjectedMetricsInputBuilder {
+        crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetEcsServiceRecommendationProjectedMetricsInputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`GetEcsServiceRecommendationProjectedMetricsInput`](crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEcsServiceRecommendationProjectedMetricsInputBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stat: ::std::option::Option<crate::types::MetricStatistic>,
@@ -119,10 +119,7 @@ impl GetEcsServiceRecommendationProjectedMetricsInputBuilder {
         self
     }
     /// <p> The timestamp of the first projected metrics data point to return. </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -136,10 +133,7 @@ impl GetEcsServiceRecommendationProjectedMetricsInputBuilder {
         self
     }
     /// <p> The timestamp of the last projected metrics data point to return. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -148,20 +142,20 @@ impl GetEcsServiceRecommendationProjectedMetricsInputBuilder {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`GetEcsServiceRecommendationProjectedMetricsInput`](crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_ecs_service_recommendation_projected_metrics::GetEcsServiceRecommendationProjectedMetricsInput {
-                service_arn: self.service_arn
-                ,
-                stat: self.stat
-                ,
-                period: self.period
-                ,
-                start_time: self.start_time
-                ,
-                end_time: self.end_time
-                ,
-            }
+                service_arn: self.service_arn,
+                stat: self.stat,
+                period: self.period,
+                start_time: self.start_time,
+                end_time: self.end_time,
+            },
         )
     }
 }

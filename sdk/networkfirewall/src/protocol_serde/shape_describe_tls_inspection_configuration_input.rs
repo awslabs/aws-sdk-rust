@@ -4,14 +4,10 @@ pub fn ser_describe_tls_inspection_configuration_input(
     input: &crate::operation::describe_tls_inspection_configuration::DescribeTlsInspectionConfigurationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.tls_inspection_configuration_arn {
-        object
-            .key("TLSInspectionConfigurationArn")
-            .string(var_1.as_str());
+        object.key("TLSInspectionConfigurationArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.tls_inspection_configuration_name {
-        object
-            .key("TLSInspectionConfigurationName")
-            .string(var_2.as_str());
+        object.key("TLSInspectionConfigurationName").string(var_2.as_str());
     }
     Ok(())
 }

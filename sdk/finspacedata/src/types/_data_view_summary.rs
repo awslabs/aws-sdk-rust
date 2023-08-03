@@ -40,8 +40,7 @@ pub struct DataViewSummary {
     pub error_info: ::std::option::Option<crate::types::DataViewErrorInfo>,
     /// <p>Information about the Dataview destination.</p>
     #[doc(hidden)]
-    pub destination_type_properties:
-        ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
+    pub destination_type_properties: ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
     /// <p>The flag to indicate Dataview should be updated automatically.</p>
     #[doc(hidden)]
     pub auto_update: bool,
@@ -96,9 +95,7 @@ impl DataViewSummary {
         self.error_info.as_ref()
     }
     /// <p>Information about the Dataview destination.</p>
-    pub fn destination_type_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataViewDestinationTypeParams> {
+    pub fn destination_type_properties(&self) -> ::std::option::Option<&crate::types::DataViewDestinationTypeParams> {
         self.destination_type_properties.as_ref()
     }
     /// <p>The flag to indicate Dataview should be updated automatically.</p>
@@ -123,9 +120,7 @@ impl DataViewSummary {
 
 /// A builder for [`DataViewSummary`](crate::types::DataViewSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataViewSummaryBuilder {
     pub(crate) data_view_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_view_arn: ::std::option::Option<::std::string::String>,
@@ -135,8 +130,7 @@ pub struct DataViewSummaryBuilder {
     pub(crate) sort_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::DataViewStatus>,
     pub(crate) error_info: ::std::option::Option<crate::types::DataViewErrorInfo>,
-    pub(crate) destination_type_properties:
-        ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
+    pub(crate) destination_type_properties: ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
     pub(crate) auto_update: ::std::option::Option<bool>,
     pub(crate) create_time: ::std::option::Option<i64>,
     pub(crate) last_modified_time: ::std::option::Option<i64>,
@@ -157,18 +151,12 @@ impl DataViewSummaryBuilder {
         &self.data_view_id
     }
     /// <p>The ARN identifier of the Dataview.</p>
-    pub fn data_view_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_view_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_view_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN identifier of the Dataview.</p>
-    pub fn set_data_view_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_view_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_view_arn = input;
         self
     }
@@ -209,27 +197,19 @@ impl DataViewSummaryBuilder {
     /// To override the contents of this collection use [`set_partition_columns`](Self::set_partition_columns).
     ///
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn partition_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_columns.unwrap_or_default();
         v.push(input.into());
         self.partition_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn set_partition_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_partition_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.partition_columns = input;
         self
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn get_partition_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.partition_columns
     }
     /// Appends an item to `sort_columns`.
@@ -244,17 +224,12 @@ impl DataViewSummaryBuilder {
         self
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn set_sort_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_sort_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.sort_columns = input;
         self
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn get_sort_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_sort_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sort_columns
     }
     /// <p>The status of a Dataview creation.</p>
@@ -283,10 +258,7 @@ impl DataViewSummaryBuilder {
     /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li>
     /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DataViewStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataViewStatus>) -> Self {
         self.status = input;
         self
     }
@@ -310,10 +282,7 @@ impl DataViewSummaryBuilder {
         self
     }
     /// <p>The structure with error messages.</p>
-    pub fn set_error_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DataViewErrorInfo>,
-    ) -> Self {
+    pub fn set_error_info(mut self, input: ::std::option::Option<crate::types::DataViewErrorInfo>) -> Self {
         self.error_info = input;
         self
     }
@@ -322,25 +291,17 @@ impl DataViewSummaryBuilder {
         &self.error_info
     }
     /// <p>Information about the Dataview destination.</p>
-    pub fn destination_type_properties(
-        mut self,
-        input: crate::types::DataViewDestinationTypeParams,
-    ) -> Self {
+    pub fn destination_type_properties(mut self, input: crate::types::DataViewDestinationTypeParams) -> Self {
         self.destination_type_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the Dataview destination.</p>
-    pub fn set_destination_type_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
-    ) -> Self {
+    pub fn set_destination_type_properties(mut self, input: ::std::option::Option<crate::types::DataViewDestinationTypeParams>) -> Self {
         self.destination_type_properties = input;
         self
     }
     /// <p>Information about the Dataview destination.</p>
-    pub fn get_destination_type_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataViewDestinationTypeParams> {
+    pub fn get_destination_type_properties(&self) -> &::std::option::Option<crate::types::DataViewDestinationTypeParams> {
         &self.destination_type_properties
     }
     /// <p>The flag to indicate Dataview should be updated automatically.</p>

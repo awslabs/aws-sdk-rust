@@ -27,9 +27,7 @@ impl IndexDocument {
 
 /// A builder for [`IndexDocument`](crate::types::IndexDocument).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IndexDocumentBuilder {
     pub(crate) suffix: ::std::option::Option<::std::string::String>,
 }
@@ -56,8 +54,6 @@ impl IndexDocumentBuilder {
     }
     /// Consumes the builder and constructs a [`IndexDocument`](crate::types::IndexDocument).
     pub fn build(self) -> crate::types::IndexDocument {
-        crate::types::IndexDocument {
-            suffix: self.suffix,
-        }
+        crate::types::IndexDocument { suffix: self.suffix }
     }
 }

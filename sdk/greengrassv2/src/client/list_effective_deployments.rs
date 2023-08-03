@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`effective_deployments(Option<Vec<EffectiveDeployment>>)`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput::effective_deployments): <p>A list that summarizes each deployment on the core device.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListEffectiveDeploymentsError>`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsError)
-    pub fn list_effective_deployments(
-        &self,
-    ) -> crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsFluentBuilder
-    {
+    pub fn list_effective_deployments(&self) -> crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsFluentBuilder {
         crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl UpdateUsagePlanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_usage_plan::UpdateUsagePlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_usage_plan::UpdateUsagePlanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_usage_plan::UpdateUsagePlanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_usage_plan();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateUsagePlanFluentBuilder {
         }
     }
     /// Access the UpdateUsagePlan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_usage_plan::builders::UpdateUsagePlanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_usage_plan::builders::UpdateUsagePlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateUsagePlanFluentBuilder {
             crate::operation::update_usage_plan::UpdateUsagePlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_usage_plan::UpdateUsagePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_usage_plan::UpdateUsagePlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateUsagePlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateUsagePlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_usage_plan::UpdateUsagePlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_usage_plan::UpdateUsagePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_usage_plan::UpdateUsagePlanError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateUsagePlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_usage_plan::UpdateUsagePlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_usage_plan::UpdateUsagePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_usage_plan::UpdateUsagePlanError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateUsagePlanFluentBuilder {
             crate::operation::update_usage_plan::UpdateUsagePlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_usage_plan::UpdateUsagePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_usage_plan::UpdateUsagePlanError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Id of the to-be-updated usage plan.</p>
-    pub fn usage_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.usage_plan_id(input.into());
         self
     }
     /// <p>The Id of the to-be-updated usage plan.</p>
-    pub fn set_usage_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_usage_plan_id(input);
         self
     }
@@ -152,17 +130,12 @@ impl UpdateUsagePlanFluentBuilder {
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
         self.inner.get_patch_operations()
     }
 }

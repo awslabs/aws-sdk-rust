@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteStreamingImageOutput`](crate::operation::delete_streaming_image::DeleteStreamingImageOutput) with field(s):
     ///   - [`streaming_image(Option<StreamingImage>)`](crate::operation::delete_streaming_image::DeleteStreamingImageOutput::streaming_image): <p>The streaming image.</p>
     /// - On failure, responds with [`SdkError<DeleteStreamingImageError>`](crate::operation::delete_streaming_image::DeleteStreamingImageError)
-    pub fn delete_streaming_image(
-        &self,
-    ) -> crate::operation::delete_streaming_image::builders::DeleteStreamingImageFluentBuilder {
-        crate::operation::delete_streaming_image::builders::DeleteStreamingImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_streaming_image(&self) -> crate::operation::delete_streaming_image::builders::DeleteStreamingImageFluentBuilder {
+        crate::operation::delete_streaming_image::builders::DeleteStreamingImageFluentBuilder::new(self.handle.clone())
     }
 }

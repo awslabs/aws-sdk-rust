@@ -8,14 +8,11 @@
 pub struct TimeSignalMessage {
     /// <p>The configurations for the SCTE-35 <code>segmentation_descriptor</code> message(s) sent with the <code>time_signal</code> message.</p>
     #[doc(hidden)]
-    pub segmentation_descriptors:
-        ::std::option::Option<::std::vec::Vec<crate::types::SegmentationDescriptor>>,
+    pub segmentation_descriptors: ::std::option::Option<::std::vec::Vec<crate::types::SegmentationDescriptor>>,
 }
 impl TimeSignalMessage {
     /// <p>The configurations for the SCTE-35 <code>segmentation_descriptor</code> message(s) sent with the <code>time_signal</code> message.</p>
-    pub fn segmentation_descriptors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SegmentationDescriptor]> {
+    pub fn segmentation_descriptors(&self) -> ::std::option::Option<&[crate::types::SegmentationDescriptor]> {
         self.segmentation_descriptors.as_deref()
     }
 }
@@ -28,12 +25,9 @@ impl TimeSignalMessage {
 
 /// A builder for [`TimeSignalMessage`](crate::types::TimeSignalMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeSignalMessageBuilder {
-    pub(crate) segmentation_descriptors:
-        ::std::option::Option<::std::vec::Vec<crate::types::SegmentationDescriptor>>,
+    pub(crate) segmentation_descriptors: ::std::option::Option<::std::vec::Vec<crate::types::SegmentationDescriptor>>,
 }
 impl TimeSignalMessageBuilder {
     /// Appends an item to `segmentation_descriptors`.
@@ -48,17 +42,12 @@ impl TimeSignalMessageBuilder {
         self
     }
     /// <p>The configurations for the SCTE-35 <code>segmentation_descriptor</code> message(s) sent with the <code>time_signal</code> message.</p>
-    pub fn set_segmentation_descriptors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentationDescriptor>>,
-    ) -> Self {
+    pub fn set_segmentation_descriptors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentationDescriptor>>) -> Self {
         self.segmentation_descriptors = input;
         self
     }
     /// <p>The configurations for the SCTE-35 <code>segmentation_descriptor</code> message(s) sent with the <code>time_signal</code> message.</p>
-    pub fn get_segmentation_descriptors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentationDescriptor>> {
+    pub fn get_segmentation_descriptors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentationDescriptor>> {
         &self.segmentation_descriptors
     }
     /// Consumes the builder and constructs a [`TimeSignalMessage`](crate::types::TimeSignalMessage).

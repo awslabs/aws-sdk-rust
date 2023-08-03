@@ -51,9 +51,7 @@ impl SyncResourceSummary {
 
 /// A builder for [`SyncResourceSummary`](crate::types::SyncResourceSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SyncResourceSummaryBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::SyncResourceType>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl SyncResourceSummaryBuilder {
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SyncResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::SyncResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -113,10 +108,7 @@ impl SyncResourceSummaryBuilder {
         self
     }
     /// <p>The sync resource summary status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SyncResourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SyncResourceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -130,10 +122,7 @@ impl SyncResourceSummaryBuilder {
         self
     }
     /// <p>The update date and time.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_date_time = input;
         self
     }

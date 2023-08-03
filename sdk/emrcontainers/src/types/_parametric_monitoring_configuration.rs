@@ -9,12 +9,10 @@ pub struct ParametricMonitoringConfiguration {
     pub persistent_app_ui: ::std::option::Option<::std::string::String>,
     /// <p> Monitoring configurations for CloudWatch.</p>
     #[doc(hidden)]
-    pub cloud_watch_monitoring_configuration:
-        ::std::option::Option<crate::types::ParametricCloudWatchMonitoringConfiguration>,
+    pub cloud_watch_monitoring_configuration: ::std::option::Option<crate::types::ParametricCloudWatchMonitoringConfiguration>,
     /// <p> Amazon S3 configuration for monitoring log publishing.</p>
     #[doc(hidden)]
-    pub s3_monitoring_configuration:
-        ::std::option::Option<crate::types::ParametricS3MonitoringConfiguration>,
+    pub s3_monitoring_configuration: ::std::option::Option<crate::types::ParametricS3MonitoringConfiguration>,
 }
 impl ParametricMonitoringConfiguration {
     /// <p> Monitoring configurations for the persistent application UI.</p>
@@ -22,15 +20,11 @@ impl ParametricMonitoringConfiguration {
         self.persistent_app_ui.as_deref()
     }
     /// <p> Monitoring configurations for CloudWatch.</p>
-    pub fn cloud_watch_monitoring_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ParametricCloudWatchMonitoringConfiguration> {
+    pub fn cloud_watch_monitoring_configuration(&self) -> ::std::option::Option<&crate::types::ParametricCloudWatchMonitoringConfiguration> {
         self.cloud_watch_monitoring_configuration.as_ref()
     }
     /// <p> Amazon S3 configuration for monitoring log publishing.</p>
-    pub fn s3_monitoring_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ParametricS3MonitoringConfiguration> {
+    pub fn s3_monitoring_configuration(&self) -> ::std::option::Option<&crate::types::ParametricS3MonitoringConfiguration> {
         self.s3_monitoring_configuration.as_ref()
     }
 }
@@ -43,30 +37,20 @@ impl ParametricMonitoringConfiguration {
 
 /// A builder for [`ParametricMonitoringConfiguration`](crate::types::ParametricMonitoringConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParametricMonitoringConfigurationBuilder {
     pub(crate) persistent_app_ui: ::std::option::Option<::std::string::String>,
-    pub(crate) cloud_watch_monitoring_configuration:
-        ::std::option::Option<crate::types::ParametricCloudWatchMonitoringConfiguration>,
-    pub(crate) s3_monitoring_configuration:
-        ::std::option::Option<crate::types::ParametricS3MonitoringConfiguration>,
+    pub(crate) cloud_watch_monitoring_configuration: ::std::option::Option<crate::types::ParametricCloudWatchMonitoringConfiguration>,
+    pub(crate) s3_monitoring_configuration: ::std::option::Option<crate::types::ParametricS3MonitoringConfiguration>,
 }
 impl ParametricMonitoringConfigurationBuilder {
     /// <p> Monitoring configurations for the persistent application UI.</p>
-    pub fn persistent_app_ui(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn persistent_app_ui(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.persistent_app_ui = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Monitoring configurations for the persistent application UI.</p>
-    pub fn set_persistent_app_ui(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_persistent_app_ui(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.persistent_app_ui = input;
         self
     }
@@ -75,10 +59,7 @@ impl ParametricMonitoringConfigurationBuilder {
         &self.persistent_app_ui
     }
     /// <p> Monitoring configurations for CloudWatch.</p>
-    pub fn cloud_watch_monitoring_configuration(
-        mut self,
-        input: crate::types::ParametricCloudWatchMonitoringConfiguration,
-    ) -> Self {
+    pub fn cloud_watch_monitoring_configuration(mut self, input: crate::types::ParametricCloudWatchMonitoringConfiguration) -> Self {
         self.cloud_watch_monitoring_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -91,31 +72,21 @@ impl ParametricMonitoringConfigurationBuilder {
         self
     }
     /// <p> Monitoring configurations for CloudWatch.</p>
-    pub fn get_cloud_watch_monitoring_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParametricCloudWatchMonitoringConfiguration> {
+    pub fn get_cloud_watch_monitoring_configuration(&self) -> &::std::option::Option<crate::types::ParametricCloudWatchMonitoringConfiguration> {
         &self.cloud_watch_monitoring_configuration
     }
     /// <p> Amazon S3 configuration for monitoring log publishing.</p>
-    pub fn s3_monitoring_configuration(
-        mut self,
-        input: crate::types::ParametricS3MonitoringConfiguration,
-    ) -> Self {
+    pub fn s3_monitoring_configuration(mut self, input: crate::types::ParametricS3MonitoringConfiguration) -> Self {
         self.s3_monitoring_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> Amazon S3 configuration for monitoring log publishing.</p>
-    pub fn set_s3_monitoring_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ParametricS3MonitoringConfiguration>,
-    ) -> Self {
+    pub fn set_s3_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::ParametricS3MonitoringConfiguration>) -> Self {
         self.s3_monitoring_configuration = input;
         self
     }
     /// <p> Amazon S3 configuration for monitoring log publishing.</p>
-    pub fn get_s3_monitoring_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ParametricS3MonitoringConfiguration> {
+    pub fn get_s3_monitoring_configuration(&self) -> &::std::option::Option<crate::types::ParametricS3MonitoringConfiguration> {
         &self.s3_monitoring_configuration
     }
     /// Consumes the builder and constructs a [`ParametricMonitoringConfiguration`](crate::types::ParametricMonitoringConfiguration).

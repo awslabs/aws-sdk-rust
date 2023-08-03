@@ -23,9 +23,7 @@ impl DataDestination {
 
 /// A builder for [`DataDestination`](crate::types::DataDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataDestinationBuilder {
     pub(crate) s3_config: ::std::option::Option<crate::types::S3Config>,
 }
@@ -46,8 +44,6 @@ impl DataDestinationBuilder {
     }
     /// Consumes the builder and constructs a [`DataDestination`](crate::types::DataDestination).
     pub fn build(self) -> crate::types::DataDestination {
-        crate::types::DataDestination {
-            s3_config: self.s3_config,
-        }
+        crate::types::DataDestination { s3_config: self.s3_config }
     }
 }

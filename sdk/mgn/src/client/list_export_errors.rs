@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ExportTaskError>>)`](crate::operation::list_export_errors::ListExportErrorsOutput::items): <p>List export errors response items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_export_errors::ListExportErrorsOutput::next_token): <p>List export errors response next token.</p>
     /// - On failure, responds with [`SdkError<ListExportErrorsError>`](crate::operation::list_export_errors::ListExportErrorsError)
-    pub fn list_export_errors(
-        &self,
-    ) -> crate::operation::list_export_errors::builders::ListExportErrorsFluentBuilder {
-        crate::operation::list_export_errors::builders::ListExportErrorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_export_errors(&self) -> crate::operation::list_export_errors::builders::ListExportErrorsFluentBuilder {
+        crate::operation::list_export_errors::builders::ListExportErrorsFluentBuilder::new(self.handle.clone())
     }
 }

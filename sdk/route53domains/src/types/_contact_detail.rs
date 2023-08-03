@@ -210,10 +210,7 @@ impl ContactDetailBuilder {
     /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li>
     /// <li> <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p> </li>
     /// </ul>
-    pub fn set_contact_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactType>,
-    ) -> Self {
+    pub fn set_contact_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
         self.contact_type = input;
         self
     }
@@ -227,18 +224,12 @@ impl ContactDetailBuilder {
         &self.contact_type
     }
     /// <p>Name of the organization for contact types other than <code>PERSON</code>.</p>
-    pub fn organization_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the organization for contact types other than <code>PERSON</code>.</p>
-    pub fn set_organization_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_name = input;
         self
     }
@@ -247,18 +238,12 @@ impl ContactDetailBuilder {
         &self.organization_name
     }
     /// <p>First line of the contact's address.</p>
-    pub fn address_line1(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_line1(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_line1 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>First line of the contact's address.</p>
-    pub fn set_address_line1(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_line1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_line1 = input;
         self
     }
@@ -267,18 +252,12 @@ impl ContactDetailBuilder {
         &self.address_line1
     }
     /// <p>Second line of contact's address, if any.</p>
-    pub fn address_line2(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_line2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_line2 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Second line of contact's address, if any.</p>
-    pub fn set_address_line2(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_line2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_line2 = input;
         self
     }
@@ -320,10 +299,7 @@ impl ContactDetailBuilder {
         self
     }
     /// <p>Code for the country of the contact's address.</p>
-    pub fn set_country_code(
-        mut self,
-        input: ::std::option::Option<crate::types::CountryCode>,
-    ) -> Self {
+    pub fn set_country_code(mut self, input: ::std::option::Option<crate::types::CountryCode>) -> Self {
         self.country_code = input;
         self
     }
@@ -405,17 +381,12 @@ impl ContactDetailBuilder {
         self
     }
     /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
-    pub fn set_extra_params(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExtraParam>>,
-    ) -> Self {
+    pub fn set_extra_params(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExtraParam>>) -> Self {
         self.extra_params = input;
         self
     }
     /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
-    pub fn get_extra_params(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtraParam>> {
+    pub fn get_extra_params(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtraParam>> {
         &self.extra_params
     }
     /// Consumes the builder and constructs a [`ContactDetail`](crate::types::ContactDetail).

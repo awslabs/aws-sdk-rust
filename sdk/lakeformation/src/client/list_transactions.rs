@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`transactions(Option<Vec<TransactionDescription>>)`](crate::operation::list_transactions::ListTransactionsOutput::transactions): <p>A list of transactions. The record for each transaction is a <code>TransactionDescription</code> object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_transactions::ListTransactionsOutput::next_token): <p>A continuation token indicating whether additional data is available.</p>
     /// - On failure, responds with [`SdkError<ListTransactionsError>`](crate::operation::list_transactions::ListTransactionsError)
-    pub fn list_transactions(
-        &self,
-    ) -> crate::operation::list_transactions::builders::ListTransactionsFluentBuilder {
-        crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_transactions(&self) -> crate::operation::list_transactions::builders::ListTransactionsFluentBuilder {
+        crate::operation::list_transactions::builders::ListTransactionsFluentBuilder::new(self.handle.clone())
     }
 }

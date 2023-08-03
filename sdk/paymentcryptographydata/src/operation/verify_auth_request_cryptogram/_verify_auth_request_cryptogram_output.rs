@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for VerifyAuthRequestCryptogramOutput {
 }
 impl VerifyAuthRequestCryptogramOutput {
     /// Creates a new builder-style object to manufacture [`VerifyAuthRequestCryptogramOutput`](crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramOutput).
-    pub fn builder() -> crate::operation::verify_auth_request_cryptogram::builders::VerifyAuthRequestCryptogramOutputBuilder{
+    pub fn builder() -> crate::operation::verify_auth_request_cryptogram::builders::VerifyAuthRequestCryptogramOutputBuilder {
         crate::operation::verify_auth_request_cryptogram::builders::VerifyAuthRequestCryptogramOutputBuilder::default()
     }
 }
 
 /// A builder for [`VerifyAuthRequestCryptogramOutput`](crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyAuthRequestCryptogramOutputBuilder {
     pub(crate) key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key_check_value: ::std::option::Option<::std::string::String>,
@@ -67,18 +65,12 @@ impl VerifyAuthRequestCryptogramOutputBuilder {
         &self.key_arn
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn key_check_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_check_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn set_key_check_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_check_value = input;
         self
     }
@@ -87,18 +79,12 @@ impl VerifyAuthRequestCryptogramOutputBuilder {
         &self.key_check_value
     }
     /// <p>The result for ARQC verification or ARPC generation within Amazon Web Services Payment Cryptography.</p>
-    pub fn auth_response_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auth_response_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_response_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The result for ARQC verification or ARPC generation within Amazon Web Services Payment Cryptography.</p>
-    pub fn set_auth_response_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auth_response_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_response_value = input;
         self
     }
@@ -116,9 +102,7 @@ impl VerifyAuthRequestCryptogramOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`VerifyAuthRequestCryptogramOutput`](crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramOutput {
+    pub fn build(self) -> crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramOutput {
         crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramOutput {
             key_arn: self.key_arn,
             key_check_value: self.key_check_value,

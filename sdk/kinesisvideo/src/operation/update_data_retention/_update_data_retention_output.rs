@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDataRetentionOutput {
 }
 impl UpdateDataRetentionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataRetentionOutput`](crate::operation::update_data_retention::UpdateDataRetentionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_data_retention::builders::UpdateDataRetentionOutputBuilder {
-        crate::operation::update_data_retention::builders::UpdateDataRetentionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_data_retention::builders::UpdateDataRetentionOutputBuilder {
+        crate::operation::update_data_retention::builders::UpdateDataRetentionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDataRetentionOutput`](crate::operation::update_data_retention::UpdateDataRetentionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDataRetentionOutputBuilder {
     _request_id: Option<String>,
 }

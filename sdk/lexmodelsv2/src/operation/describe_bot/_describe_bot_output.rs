@@ -105,9 +105,7 @@ impl DescribeBotOutput {
 
 /// A builder for [`DescribeBotOutput`](crate::operation::describe_bot::DescribeBotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBotOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
@@ -186,10 +184,7 @@ impl DescribeBotOutputBuilder {
         self
     }
     /// <p>Settings for managing data privacy of the bot and its conversations with users.</p>
-    pub fn set_data_privacy(
-        mut self,
-        input: ::std::option::Option<crate::types::DataPrivacy>,
-    ) -> Self {
+    pub fn set_data_privacy(mut self, input: ::std::option::Option<crate::types::DataPrivacy>) -> Self {
         self.data_privacy = input;
         self
     }
@@ -231,10 +226,7 @@ impl DescribeBotOutputBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the bot was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -248,17 +240,12 @@ impl DescribeBotOutputBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the bot was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>A timestamp of the date and time that the bot was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// <p>The type of the bot that was described.</p>
@@ -287,17 +274,12 @@ impl DescribeBotOutputBuilder {
         self
     }
     /// <p>The list of bots in the network that was described.</p>
-    pub fn set_bot_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
-    ) -> Self {
+    pub fn set_bot_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>) -> Self {
         self.bot_members = input;
         self
     }
     /// <p>The list of bots in the network that was described.</p>
-    pub fn get_bot_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
+    pub fn get_bot_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
         &self.bot_members
     }
     /// Appends an item to `failure_reasons`.
@@ -305,27 +287,19 @@ impl DescribeBotOutputBuilder {
     /// To override the contents of this collection use [`set_failure_reasons`](Self::set_failure_reasons).
     ///
     /// <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot couldn't be built.</p>
-    pub fn failure_reasons(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
         v.push(input.into());
         self.failure_reasons = ::std::option::Option::Some(v);
         self
     }
     /// <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot couldn't be built.</p>
-    pub fn set_failure_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failure_reasons = input;
         self
     }
     /// <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot couldn't be built.</p>
-    pub fn get_failure_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_reasons
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

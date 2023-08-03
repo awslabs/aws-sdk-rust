@@ -15,17 +15,14 @@ impl DeleteTerminologyInput {
 }
 impl DeleteTerminologyInput {
     /// Creates a new builder-style object to manufacture [`DeleteTerminologyInput`](crate::operation::delete_terminology::DeleteTerminologyInput).
-    pub fn builder() -> crate::operation::delete_terminology::builders::DeleteTerminologyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_terminology::builders::DeleteTerminologyInputBuilder {
         crate::operation::delete_terminology::builders::DeleteTerminologyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTerminologyInput`](crate::operation::delete_terminology::DeleteTerminologyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTerminologyInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DeleteTerminologyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTerminologyInput`](crate::operation::delete_terminology::DeleteTerminologyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_terminology::DeleteTerminologyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_terminology::DeleteTerminologyInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_terminology::DeleteTerminologyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_terminology::DeleteTerminologyInput { name: self.name })
     }
 }

@@ -10,10 +10,7 @@ impl SendUsersMessagesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::send_users_messages::SendUsersMessagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_users_messages::SendUsersMessagesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_users_messages::SendUsersMessagesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.send_users_messages();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SendUsersMessagesFluentBuilder {
         }
     }
     /// Access the SendUsersMessages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::send_users_messages::builders::SendUsersMessagesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::send_users_messages::builders::SendUsersMessagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SendUsersMessagesFluentBuilder {
             crate::operation::send_users_messages::SendUsersMessages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_users_messages::SendUsersMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_users_messages::SendUsersMessagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SendUsersMessagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SendUsersMessagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_users_messages::SendUsersMessagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_users_messages::SendUsersMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_users_messages::SendUsersMessagesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SendUsersMessagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_users_messages::SendUsersMessagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_users_messages::SendUsersMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_users_messages::SendUsersMessagesError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl SendUsersMessagesFluentBuilder {
             crate::operation::send_users_messages::SendUsersMessages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::send_users_messages::SendUsersMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_users_messages::SendUsersMessagesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -143,25 +121,17 @@ impl SendUsersMessagesFluentBuilder {
         self.inner.get_application_id()
     }
     /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
-    pub fn send_users_message_request(
-        mut self,
-        input: crate::types::SendUsersMessageRequest,
-    ) -> Self {
+    pub fn send_users_message_request(mut self, input: crate::types::SendUsersMessageRequest) -> Self {
         self.inner = self.inner.send_users_message_request(input);
         self
     }
     /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
-    pub fn set_send_users_message_request(
-        mut self,
-        input: ::std::option::Option<crate::types::SendUsersMessageRequest>,
-    ) -> Self {
+    pub fn set_send_users_message_request(mut self, input: ::std::option::Option<crate::types::SendUsersMessageRequest>) -> Self {
         self.inner = self.inner.set_send_users_message_request(input);
         self
     }
     /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
-    pub fn get_send_users_message_request(
-        &self,
-    ) -> &::std::option::Option<crate::types::SendUsersMessageRequest> {
+    pub fn get_send_users_message_request(&self) -> &::std::option::Option<crate::types::SendUsersMessageRequest> {
         self.inner.get_send_users_message_request()
     }
 }

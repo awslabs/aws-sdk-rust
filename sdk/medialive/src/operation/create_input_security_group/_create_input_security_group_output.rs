@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for CreateInputSecurityGroupOutput {
 }
 impl CreateInputSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateInputSecurityGroupOutput`](crate::operation::create_input_security_group::CreateInputSecurityGroupOutput).
-    pub fn builder() -> crate::operation::create_input_security_group::builders::CreateInputSecurityGroupOutputBuilder{
+    pub fn builder() -> crate::operation::create_input_security_group::builders::CreateInputSecurityGroupOutputBuilder {
         crate::operation::create_input_security_group::builders::CreateInputSecurityGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInputSecurityGroupOutput`](crate::operation::create_input_security_group::CreateInputSecurityGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInputSecurityGroupOutputBuilder {
     pub(crate) security_group: ::std::option::Option<crate::types::InputSecurityGroup>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl CreateInputSecurityGroupOutputBuilder {
         self
     }
     /// An Input Security Group
-    pub fn set_security_group(
-        mut self,
-        input: ::std::option::Option<crate::types::InputSecurityGroup>,
-    ) -> Self {
+    pub fn set_security_group(mut self, input: ::std::option::Option<crate::types::InputSecurityGroup>) -> Self {
         self.security_group = input;
         self
     }
@@ -64,9 +59,7 @@ impl CreateInputSecurityGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateInputSecurityGroupOutput`](crate::operation::create_input_security_group::CreateInputSecurityGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_input_security_group::CreateInputSecurityGroupOutput {
+    pub fn build(self) -> crate::operation::create_input_security_group::CreateInputSecurityGroupOutput {
         crate::operation::create_input_security_group::CreateInputSecurityGroupOutput {
             security_group: self.security_group,
             _request_id: self._request_id,

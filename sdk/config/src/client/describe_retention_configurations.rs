@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`retention_configurations(Option<Vec<RetentionConfiguration>>)`](crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsOutput::retention_configurations): <p>Returns a retention configuration object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     /// - On failure, responds with [`SdkError<DescribeRetentionConfigurationsError>`](crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsError)
-    pub fn describe_retention_configurations(&self) -> crate::operation::describe_retention_configurations::builders::DescribeRetentionConfigurationsFluentBuilder{
+    pub fn describe_retention_configurations(
+        &self,
+    ) -> crate::operation::describe_retention_configurations::builders::DescribeRetentionConfigurationsFluentBuilder {
         crate::operation::describe_retention_configurations::builders::DescribeRetentionConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

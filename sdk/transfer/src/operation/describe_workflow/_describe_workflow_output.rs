@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeWorkflowOutput {
 }
 impl DescribeWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkflowOutput`](crate::operation::describe_workflow::DescribeWorkflowOutput).
-    pub fn builder() -> crate::operation::describe_workflow::builders::DescribeWorkflowOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_workflow::builders::DescribeWorkflowOutputBuilder {
         crate::operation::describe_workflow::builders::DescribeWorkflowOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkflowOutput`](crate::operation::describe_workflow::DescribeWorkflowOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkflowOutputBuilder {
     pub(crate) workflow: ::std::option::Option<crate::types::DescribedWorkflow>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeWorkflowOutputBuilder {
         self
     }
     /// <p>The structure that contains the details of the workflow.</p>
-    pub fn set_workflow(
-        mut self,
-        input: ::std::option::Option<crate::types::DescribedWorkflow>,
-    ) -> Self {
+    pub fn set_workflow(mut self, input: ::std::option::Option<crate::types::DescribedWorkflow>) -> Self {
         self.workflow = input;
         self
     }

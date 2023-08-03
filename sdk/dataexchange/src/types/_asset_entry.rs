@@ -86,9 +86,7 @@ impl AssetEntry {
 
 /// A builder for [`AssetEntry`](crate::types::AssetEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetEntryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) asset_details: ::std::option::Option<crate::types::AssetDetails>,
@@ -122,10 +120,7 @@ impl AssetEntryBuilder {
         self
     }
     /// <p>Details about the asset.</p>
-    pub fn set_asset_details(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetDetails>,
-    ) -> Self {
+    pub fn set_asset_details(mut self, input: ::std::option::Option<crate::types::AssetDetails>) -> Self {
         self.asset_details = input;
         self
     }
@@ -153,10 +148,7 @@ impl AssetEntryBuilder {
         self
     }
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -240,10 +232,7 @@ impl AssetEntryBuilder {
         self
     }
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

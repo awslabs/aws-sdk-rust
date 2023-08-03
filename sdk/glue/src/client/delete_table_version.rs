@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`version_id(impl ::std::convert::Into<String>)`](crate::operation::delete_table_version::builders::DeleteTableVersionFluentBuilder::version_id) / [`set_version_id(Option<String>)`](crate::operation::delete_table_version::builders::DeleteTableVersionFluentBuilder::set_version_id): <p>The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
     /// - On success, responds with [`DeleteTableVersionOutput`](crate::operation::delete_table_version::DeleteTableVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteTableVersionError>`](crate::operation::delete_table_version::DeleteTableVersionError)
-    pub fn delete_table_version(
-        &self,
-    ) -> crate::operation::delete_table_version::builders::DeleteTableVersionFluentBuilder {
-        crate::operation::delete_table_version::builders::DeleteTableVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_table_version(&self) -> crate::operation::delete_table_version::builders::DeleteTableVersionFluentBuilder {
+        crate::operation::delete_table_version::builders::DeleteTableVersionFluentBuilder::new(self.handle.clone())
     }
 }

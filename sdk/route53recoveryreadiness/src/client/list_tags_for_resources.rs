@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ListTagsForResourcesOutput`](crate::operation::list_tags_for_resources::ListTagsForResourcesOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::list_tags_for_resources::ListTagsForResourcesOutput::tags): <p></p>
     /// - On failure, responds with [`SdkError<ListTagsForResourcesError>`](crate::operation::list_tags_for_resources::ListTagsForResourcesError)
-    pub fn list_tags_for_resources(
-        &self,
-    ) -> crate::operation::list_tags_for_resources::builders::ListTagsForResourcesFluentBuilder
-    {
-        crate::operation::list_tags_for_resources::builders::ListTagsForResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_tags_for_resources(&self) -> crate::operation::list_tags_for_resources::builders::ListTagsForResourcesFluentBuilder {
+        crate::operation::list_tags_for_resources::builders::ListTagsForResourcesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InstanceGroupStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for InstanceGroupStateChangeReasonCode {
             "INSTANCE_FAILURE" => InstanceGroupStateChangeReasonCode::InstanceFailure,
             "INTERNAL_ERROR" => InstanceGroupStateChangeReasonCode::InternalError,
             "VALIDATION_ERROR" => InstanceGroupStateChangeReasonCode::ValidationError,
-            other => InstanceGroupStateChangeReasonCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => InstanceGroupStateChangeReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl InstanceGroupStateChangeReasonCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLUSTER_TERMINATED",
-            "INSTANCE_FAILURE",
-            "INTERNAL_ERROR",
-            "VALIDATION_ERROR",
-        ]
+        &["CLUSTER_TERMINATED", "INSTANCE_FAILURE", "INTERNAL_ERROR", "VALIDATION_ERROR"]
     }
 }
 impl ::std::convert::AsRef<str> for InstanceGroupStateChangeReasonCode {

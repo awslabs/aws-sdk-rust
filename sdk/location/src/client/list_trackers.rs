@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`entries(Option<Vec<ListTrackersResponseEntry>>)`](crate::operation::list_trackers::ListTrackersOutput::entries): <p>Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_trackers::ListTrackersOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     /// - On failure, responds with [`SdkError<ListTrackersError>`](crate::operation::list_trackers::ListTrackersError)
-    pub fn list_trackers(
-        &self,
-    ) -> crate::operation::list_trackers::builders::ListTrackersFluentBuilder {
-        crate::operation::list_trackers::builders::ListTrackersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_trackers(&self) -> crate::operation::list_trackers::builders::ListTrackersFluentBuilder {
+        crate::operation::list_trackers::builders::ListTrackersFluentBuilder::new(self.handle.clone())
     }
 }

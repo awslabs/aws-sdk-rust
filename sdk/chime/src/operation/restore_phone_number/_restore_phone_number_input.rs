@@ -15,34 +15,25 @@ impl RestorePhoneNumberInput {
 }
 impl RestorePhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`RestorePhoneNumberInput`](crate::operation::restore_phone_number::RestorePhoneNumberInput).
-    pub fn builder(
-    ) -> crate::operation::restore_phone_number::builders::RestorePhoneNumberInputBuilder {
+    pub fn builder() -> crate::operation::restore_phone_number::builders::RestorePhoneNumberInputBuilder {
         crate::operation::restore_phone_number::builders::RestorePhoneNumberInputBuilder::default()
     }
 }
 
 /// A builder for [`RestorePhoneNumberInput`](crate::operation::restore_phone_number::RestorePhoneNumberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestorePhoneNumberInputBuilder {
     pub(crate) phone_number_id: ::std::option::Option<::std::string::String>,
 }
 impl RestorePhoneNumberInputBuilder {
     /// <p>The phone number.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_id = input;
         self
     }
@@ -53,14 +44,9 @@ impl RestorePhoneNumberInputBuilder {
     /// Consumes the builder and constructs a [`RestorePhoneNumberInput`](crate::operation::restore_phone_number::RestorePhoneNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_phone_number::RestorePhoneNumberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::restore_phone_number::RestorePhoneNumberInput {
-                phone_number_id: self.phone_number_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::restore_phone_number::RestorePhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::restore_phone_number::RestorePhoneNumberInput {
+            phone_number_id: self.phone_number_id,
+        })
     }
 }

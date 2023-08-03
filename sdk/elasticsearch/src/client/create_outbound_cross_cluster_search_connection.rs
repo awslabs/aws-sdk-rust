@@ -13,7 +13,11 @@ impl super::Client {
     ///   - [`connection_status(Option<OutboundCrossClusterSearchConnectionStatus>)`](crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionOutput::connection_status): <p>Specifies the <code><code>OutboundCrossClusterSearchConnectionStatus</code></code> for the newly created connection.</p>
     ///   - [`cross_cluster_search_connection_id(Option<String>)`](crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionOutput::cross_cluster_search_connection_id): <p>Unique id for the created outbound connection, which is used for subsequent operations on connection.</p>
     /// - On failure, responds with [`SdkError<CreateOutboundCrossClusterSearchConnectionError>`](crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError)
-    pub fn create_outbound_cross_cluster_search_connection(&self) -> crate::operation::create_outbound_cross_cluster_search_connection::builders::CreateOutboundCrossClusterSearchConnectionFluentBuilder{
-        crate::operation::create_outbound_cross_cluster_search_connection::builders::CreateOutboundCrossClusterSearchConnectionFluentBuilder::new(self.handle.clone())
+    pub fn create_outbound_cross_cluster_search_connection(
+        &self,
+    ) -> crate::operation::create_outbound_cross_cluster_search_connection::builders::CreateOutboundCrossClusterSearchConnectionFluentBuilder {
+        crate::operation::create_outbound_cross_cluster_search_connection::builders::CreateOutboundCrossClusterSearchConnectionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

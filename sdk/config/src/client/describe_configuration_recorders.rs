@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeConfigurationRecordersOutput`](crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersOutput) with field(s):
     ///   - [`configuration_recorders(Option<Vec<ConfigurationRecorder>>)`](crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersOutput::configuration_recorders): <p>A list that contains the descriptions of the specified configuration recorders.</p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationRecordersError>`](crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError)
-    pub fn describe_configuration_recorders(&self) -> crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersFluentBuilder{
+    pub fn describe_configuration_recorders(
+        &self,
+    ) -> crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersFluentBuilder {
         crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersFluentBuilder::new(self.handle.clone())
     }
 }

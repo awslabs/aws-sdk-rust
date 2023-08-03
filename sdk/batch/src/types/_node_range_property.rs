@@ -30,9 +30,7 @@ impl NodeRangeProperty {
 
 /// A builder for [`NodeRangeProperty`](crate::types::NodeRangeProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeRangePropertyBuilder {
     pub(crate) target_nodes: ::std::option::Option<::std::string::String>,
     pub(crate) container: ::std::option::Option<crate::types::ContainerProperties>,
@@ -58,10 +56,7 @@ impl NodeRangePropertyBuilder {
         self
     }
     /// <p>The container details for the node range.</p>
-    pub fn set_container(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerProperties>,
-    ) -> Self {
+    pub fn set_container(mut self, input: ::std::option::Option<crate::types::ContainerProperties>) -> Self {
         self.container = input;
         self
     }

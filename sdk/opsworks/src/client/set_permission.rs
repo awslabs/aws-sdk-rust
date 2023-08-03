@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`level(impl ::std::convert::Into<String>)`](crate::operation::set_permission::builders::SetPermissionFluentBuilder::level) / [`set_level(Option<String>)`](crate::operation::set_permission::builders::SetPermissionFluentBuilder::set_level): <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>  <ul>   <li> <p> <code>deny</code> </p> </li>   <li> <p> <code>show</code> </p> </li>   <li> <p> <code>deploy</code> </p> </li>   <li> <p> <code>manage</code> </p> </li>   <li> <p> <code>iam_only</code> </p> </li>  </ul>  <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     /// - On success, responds with [`SetPermissionOutput`](crate::operation::set_permission::SetPermissionOutput)
     /// - On failure, responds with [`SdkError<SetPermissionError>`](crate::operation::set_permission::SetPermissionError)
-    pub fn set_permission(
-        &self,
-    ) -> crate::operation::set_permission::builders::SetPermissionFluentBuilder {
-        crate::operation::set_permission::builders::SetPermissionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_permission(&self) -> crate::operation::set_permission::builders::SetPermissionFluentBuilder {
+        crate::operation::set_permission::builders::SetPermissionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -31,17 +31,14 @@ impl DescribeClustersInput {
 }
 impl DescribeClustersInput {
     /// Creates a new builder-style object to manufacture [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
-    pub fn builder() -> crate::operation::describe_clusters::builders::DescribeClustersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_clusters::builders::DescribeClustersInputBuilder {
         crate::operation::describe_clusters::builders::DescribeClustersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClustersInputBuilder {
     pub(crate) cluster_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -53,27 +50,19 @@ impl DescribeClustersInputBuilder {
     /// To override the contents of this collection use [`set_cluster_names`](Self::set_cluster_names).
     ///
     /// <p>The names of the DAX clusters being described.</p>
-    pub fn cluster_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cluster_names.unwrap_or_default();
         v.push(input.into());
         self.cluster_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the DAX clusters being described.</p>
-    pub fn set_cluster_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cluster_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cluster_names = input;
         self
     }
     /// <p>The names of the DAX clusters being described.</p>
-    pub fn get_cluster_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cluster_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cluster_names
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -110,10 +99,7 @@ impl DescribeClustersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_clusters::DescribeClustersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_clusters::DescribeClustersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_clusters::DescribeClustersInput {
             cluster_names: self.cluster_names,
             max_results: self.max_results,

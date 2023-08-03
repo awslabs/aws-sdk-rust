@@ -10,10 +10,7 @@ impl GetMetricDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_metric_data::GetMetricDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_metric_data::GetMetricDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_metric_data::GetMetricDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_metric_data();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl GetMetricDataFluentBuilder {
         }
     }
     /// Access the GetMetricData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_metric_data::builders::GetMetricDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_metric_data::builders::GetMetricDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl GetMetricDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,13 +110,8 @@ impl GetMetricDataFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_metric_data::paginator::GetMetricDataPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_metric_data::paginator::GetMetricDataPaginator {
-        crate::operation::get_metric_data::paginator::GetMetricDataPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_metric_data::paginator::GetMetricDataPaginator {
+        crate::operation::get_metric_data::paginator::GetMetricDataPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,10 +135,7 @@ impl GetMetricDataFluentBuilder {
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
     /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -168,10 +152,7 @@ impl GetMetricDataFluentBuilder {
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -212,10 +193,7 @@ impl GetMetricDataFluentBuilder {
     }
     /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
-    pub fn set_groupings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>,
-    ) -> Self {
+    pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>) -> Self {
         self.inner = self.inner.set_groupings(input);
         self
     }
@@ -596,10 +574,7 @@ impl GetMetricDataFluentBuilder {
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// </dl>
-    pub fn set_historical_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>>,
-    ) -> Self {
+    pub fn set_historical_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>>) -> Self {
         self.inner = self.inner.set_historical_metrics(input);
         self
     }
@@ -785,9 +760,7 @@ impl GetMetricDataFluentBuilder {
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// </dl>
-    pub fn get_historical_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>> {
+    pub fn get_historical_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>> {
         self.inner.get_historical_metrics()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>

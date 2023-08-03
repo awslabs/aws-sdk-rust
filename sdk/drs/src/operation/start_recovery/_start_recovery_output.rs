@@ -28,9 +28,7 @@ impl StartRecoveryOutput {
 
 /// A builder for [`StartRecoveryOutput`](crate::operation::start_recovery::StartRecoveryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRecoveryOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,

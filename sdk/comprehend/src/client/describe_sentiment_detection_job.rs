@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeSentimentDetectionJobOutput`](crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobOutput) with field(s):
     ///   - [`sentiment_detection_job_properties(Option<SentimentDetectionJobProperties>)`](crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobOutput::sentiment_detection_job_properties): <p>An object that contains the properties associated with a sentiment detection job.</p>
     /// - On failure, responds with [`SdkError<DescribeSentimentDetectionJobError>`](crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobError)
-    pub fn describe_sentiment_detection_job(&self) -> crate::operation::describe_sentiment_detection_job::builders::DescribeSentimentDetectionJobFluentBuilder{
+    pub fn describe_sentiment_detection_job(
+        &self,
+    ) -> crate::operation::describe_sentiment_detection_job::builders::DescribeSentimentDetectionJobFluentBuilder {
         crate::operation::describe_sentiment_detection_job::builders::DescribeSentimentDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

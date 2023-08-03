@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`event_filter(Option<EventFilter>)`](crate::operation::get_event_integration::GetEventIntegrationOutput::event_filter): <p>The event filter.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_event_integration::GetEventIntegrationOutput::tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     /// - On failure, responds with [`SdkError<GetEventIntegrationError>`](crate::operation::get_event_integration::GetEventIntegrationError)
-    pub fn get_event_integration(
-        &self,
-    ) -> crate::operation::get_event_integration::builders::GetEventIntegrationFluentBuilder {
-        crate::operation::get_event_integration::builders::GetEventIntegrationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_event_integration(&self) -> crate::operation::get_event_integration::builders::GetEventIntegrationFluentBuilder {
+        crate::operation::get_event_integration::builders::GetEventIntegrationFluentBuilder::new(self.handle.clone())
     }
 }

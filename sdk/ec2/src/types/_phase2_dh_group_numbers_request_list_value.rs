@@ -23,9 +23,7 @@ impl Phase2DhGroupNumbersRequestListValue {
 
 /// A builder for [`Phase2DhGroupNumbersRequestListValue`](crate::types::Phase2DhGroupNumbersRequestListValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Phase2DhGroupNumbersRequestListValueBuilder {
     pub(crate) value: ::std::option::Option<i32>,
 }

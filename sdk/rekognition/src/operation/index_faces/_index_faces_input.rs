@@ -69,32 +69,23 @@ impl IndexFacesInput {
 
 /// A builder for [`IndexFacesInput`](crate::operation::index_faces::IndexFacesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IndexFacesInputBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<crate::types::Image>,
     pub(crate) external_image_id: ::std::option::Option<::std::string::String>,
-    pub(crate) detection_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) detection_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     pub(crate) max_faces: ::std::option::Option<i32>,
     pub(crate) quality_filter: ::std::option::Option<crate::types::QualityFilter>,
 }
 impl IndexFacesInputBuilder {
     /// <p>The ID of an existing collection to which you want to add the faces that are detected in the input images.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an existing collection to which you want to add the faces that are detected in the input images.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_id = input;
         self
     }
@@ -120,18 +111,12 @@ impl IndexFacesInputBuilder {
         &self.image
     }
     /// <p>The ID you want to assign to all the faces detected in the image.</p>
-    pub fn external_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn external_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID you want to assign to all the faces detected in the image.</p>
-    pub fn set_external_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_external_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_image_id = input;
         self
     }
@@ -153,18 +138,13 @@ impl IndexFacesInputBuilder {
     }
     /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using <code>["DEFAULT", "FACE_OCCLUDED"]</code> or just <code>["FACE_OCCLUDED"]</code>. You can request for all facial attributes by using <code>["ALL"]</code>. Requesting more attributes may increase response time.</p>
     /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
-    pub fn set_detection_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_detection_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.detection_attributes = input;
         self
     }
     /// <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using <code>["DEFAULT", "FACE_OCCLUDED"]</code> or just <code>["FACE_OCCLUDED"]</code>. You can request for all facial attributes by using <code>["ALL"]</code>. Requesting more attributes may increase response time.</p>
     /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
-    pub fn get_detection_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_detection_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
         &self.detection_attributes
     }
     /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an image, even if you specify a larger value for <code>MaxFaces</code>.</p>
@@ -198,10 +178,7 @@ impl IndexFacesInputBuilder {
     }
     /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
-    pub fn set_quality_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::QualityFilter>,
-    ) -> Self {
+    pub fn set_quality_filter(mut self, input: ::std::option::Option<crate::types::QualityFilter>) -> Self {
         self.quality_filter = input;
         self
     }
@@ -211,12 +188,7 @@ impl IndexFacesInputBuilder {
         &self.quality_filter
     }
     /// Consumes the builder and constructs a [`IndexFacesInput`](crate::operation::index_faces::IndexFacesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::index_faces::IndexFacesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::index_faces::IndexFacesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::index_faces::IndexFacesInput {
             collection_id: self.collection_id,
             image: self.image,

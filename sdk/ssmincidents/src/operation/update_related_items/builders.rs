@@ -10,10 +10,7 @@ impl UpdateRelatedItemsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_related_items::UpdateRelatedItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_related_items::UpdateRelatedItemsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_related_items::UpdateRelatedItemsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_related_items();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateRelatedItemsFluentBuilder {
         }
     }
     /// Access the UpdateRelatedItems as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_related_items::builders::UpdateRelatedItemsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_related_items::builders::UpdateRelatedItemsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateRelatedItemsFluentBuilder {
             crate::operation::update_related_items::UpdateRelatedItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_related_items::UpdateRelatedItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_related_items::UpdateRelatedItemsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateRelatedItemsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateRelatedItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_related_items::UpdateRelatedItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_related_items::UpdateRelatedItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_related_items::UpdateRelatedItemsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateRelatedItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_related_items::UpdateRelatedItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_related_items::UpdateRelatedItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_related_items::UpdateRelatedItemsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateRelatedItemsFluentBuilder {
             crate::operation::update_related_items::UpdateRelatedItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_related_items::UpdateRelatedItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_related_items::UpdateRelatedItemsError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl UpdateRelatedItemsFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
-    pub fn incident_record_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.incident_record_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
-    pub fn set_incident_record_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_incident_record_arn(input);
         self
     }
@@ -162,17 +140,12 @@ impl UpdateRelatedItemsFluentBuilder {
         self
     }
     /// <p>Details about the item that you are add to, or delete from, an incident.</p>
-    pub fn set_related_items_update(
-        mut self,
-        input: ::std::option::Option<crate::types::RelatedItemsUpdate>,
-    ) -> Self {
+    pub fn set_related_items_update(mut self, input: ::std::option::Option<crate::types::RelatedItemsUpdate>) -> Self {
         self.inner = self.inner.set_related_items_update(input);
         self
     }
     /// <p>Details about the item that you are add to, or delete from, an incident.</p>
-    pub fn get_related_items_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::RelatedItemsUpdate> {
+    pub fn get_related_items_update(&self) -> &::std::option::Option<crate::types::RelatedItemsUpdate> {
         self.inner.get_related_items_update()
     }
 }

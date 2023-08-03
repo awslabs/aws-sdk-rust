@@ -37,10 +37,7 @@ impl GrantFlowEntitlementsFluentBuilder {
         }
     }
     /// Access the GrantFlowEntitlements as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GrantFlowEntitlementsFluentBuilder {
             crate::operation::grant_flow_entitlements::GrantFlowEntitlements,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GrantFlowEntitlementsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GrantFlowEntitlementsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GrantFlowEntitlementsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GrantFlowEntitlementsFluentBuilder {
             crate::operation::grant_flow_entitlements::GrantFlowEntitlements,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError>,
     > {
         self.customize_middleware().await
     }
@@ -133,17 +119,12 @@ impl GrantFlowEntitlementsFluentBuilder {
         self
     }
     /// The list of entitlements that you want to grant.
-    pub fn set_entitlements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>>,
-    ) -> Self {
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>>) -> Self {
         self.inner = self.inner.set_entitlements(input);
         self
     }
     /// The list of entitlements that you want to grant.
-    pub fn get_entitlements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>> {
         self.inner.get_entitlements()
     }
     /// The flow that you want to grant entitlements on.

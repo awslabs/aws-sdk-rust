@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListLinuxSubscriptionsOutput {
 }
 impl ListLinuxSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListLinuxSubscriptionsOutput`](crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsOutputBuilder {
         crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLinuxSubscriptionsOutput`](crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLinuxSubscriptionsOutputBuilder {
     pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListLinuxSubscriptionsOutputBuilder {
         self
     }
     /// <p>An array that contains subscription objects.</p>
-    pub fn set_subscriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
-    ) -> Self {
+    pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>) -> Self {
         self.subscriptions = input;
         self
     }
     /// <p>An array that contains subscription objects.</p>
-    pub fn get_subscriptions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
+    pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
         &self.subscriptions
     }
     /// <p>Token for the next set of results.</p>

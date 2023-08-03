@@ -22,9 +22,7 @@ impl GetOutpostInput {
 
 /// A builder for [`GetOutpostInput`](crate::operation::get_outpost::GetOutpostInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOutpostInputBuilder {
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetOutpostInputBuilder {
         &self.outpost_id
     }
     /// Consumes the builder and constructs a [`GetOutpostInput`](crate::operation::get_outpost::GetOutpostInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_outpost::GetOutpostInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_outpost::GetOutpostInput {
-            outpost_id: self.outpost_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_outpost::GetOutpostInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_outpost::GetOutpostInput { outpost_id: self.outpost_id })
     }
 }

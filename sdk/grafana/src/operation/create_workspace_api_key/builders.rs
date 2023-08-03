@@ -37,10 +37,7 @@ impl CreateWorkspaceApiKeyFluentBuilder {
         }
     }
     /// Access the CreateWorkspaceApiKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateWorkspaceApiKeyFluentBuilder {
             crate::operation::create_workspace_api_key::CreateWorkspaceApiKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateWorkspaceApiKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateWorkspaceApiKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateWorkspaceApiKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateWorkspaceApiKeyFluentBuilder {
             crate::operation::create_workspace_api_key::CreateWorkspaceApiKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyError>,
     > {
         self.customize_middleware().await
     }

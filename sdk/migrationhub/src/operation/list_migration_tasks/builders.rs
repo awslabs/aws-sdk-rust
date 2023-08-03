@@ -10,10 +10,7 @@ impl ListMigrationTasksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_migration_tasks::ListMigrationTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_migration_tasks::ListMigrationTasksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_migration_tasks::ListMigrationTasksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_migration_tasks();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl ListMigrationTasksFluentBuilder {
         }
     }
     /// Access the ListMigrationTasks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_migration_tasks::builders::ListMigrationTasksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_migration_tasks::builders::ListMigrationTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl ListMigrationTasksFluentBuilder {
             crate::operation::list_migration_tasks::ListMigrationTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_migration_tasks::ListMigrationTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_migration_tasks::ListMigrationTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl ListMigrationTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl ListMigrationTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_migration_tasks::ListMigrationTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_migration_tasks::ListMigrationTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_migration_tasks::ListMigrationTasksError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl ListMigrationTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_migration_tasks::ListMigrationTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_migration_tasks::ListMigrationTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_migration_tasks::ListMigrationTasksError>,
     > {
         self.send_middleware().await
     }
@@ -121,22 +107,15 @@ impl ListMigrationTasksFluentBuilder {
             crate::operation::list_migration_tasks::ListMigrationTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_migration_tasks::ListMigrationTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_migration_tasks::ListMigrationTasksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_migration_tasks::paginator::ListMigrationTasksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_migration_tasks::paginator::ListMigrationTasksPaginator {
-        crate::operation::list_migration_tasks::paginator::ListMigrationTasksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_migration_tasks::paginator::ListMigrationTasksPaginator {
+        crate::operation::list_migration_tasks::paginator::ListMigrationTasksPaginator::new(self.handle, self.inner)
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,18 +146,12 @@ impl ListMigrationTasksFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>Filter migration tasks by discovered resource name.</p>
-    pub fn resource_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>Filter migration tasks by discovered resource name.</p>
-    pub fn set_resource_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }

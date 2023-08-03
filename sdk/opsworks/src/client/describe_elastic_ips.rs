@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeElasticIpsOutput`](crate::operation::describe_elastic_ips::DescribeElasticIpsOutput) with field(s):
     ///   - [`elastic_ips(Option<Vec<ElasticIp>>)`](crate::operation::describe_elastic_ips::DescribeElasticIpsOutput::elastic_ips): <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
     /// - On failure, responds with [`SdkError<DescribeElasticIpsError>`](crate::operation::describe_elastic_ips::DescribeElasticIpsError)
-    pub fn describe_elastic_ips(
-        &self,
-    ) -> crate::operation::describe_elastic_ips::builders::DescribeElasticIpsFluentBuilder {
-        crate::operation::describe_elastic_ips::builders::DescribeElasticIpsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_elastic_ips(&self) -> crate::operation::describe_elastic_ips::builders::DescribeElasticIpsFluentBuilder {
+        crate::operation::describe_elastic_ips::builders::DescribeElasticIpsFluentBuilder::new(self.handle.clone())
     }
 }

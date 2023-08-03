@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InstanceRefreshStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,9 +81,7 @@ impl ::std::convert::From<&str> for InstanceRefreshStatus {
             "RollbackInProgress" => InstanceRefreshStatus::RollbackInProgress,
             "RollbackSuccessful" => InstanceRefreshStatus::RollbackSuccessful,
             "Successful" => InstanceRefreshStatus::Successful,
-            other => InstanceRefreshStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InstanceRefreshStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -5,8 +5,7 @@
 pub struct ListMonitoringAlertsOutput {
     /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
     #[doc(hidden)]
-    pub monitoring_alert_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertSummary>>,
+    pub monitoring_alert_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListMonitoringAlertsOutput {
 }
 impl ListMonitoringAlertsOutput {
     /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
-    pub fn monitoring_alert_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MonitoringAlertSummary]> {
+    pub fn monitoring_alert_summaries(&self) -> ::std::option::Option<&[crate::types::MonitoringAlertSummary]> {
         self.monitoring_alert_summaries.as_deref()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListMonitoringAlertsOutput {
 }
 impl ListMonitoringAlertsOutput {
     /// Creates a new builder-style object to manufacture [`ListMonitoringAlertsOutput`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsOutputBuilder {
+    pub fn builder() -> crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsOutputBuilder {
         crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMonitoringAlertsOutput`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitoringAlertsOutputBuilder {
-    pub(crate) monitoring_alert_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertSummary>>,
+    pub(crate) monitoring_alert_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,27 +47,19 @@ impl ListMonitoringAlertsOutputBuilder {
     /// To override the contents of this collection use [`set_monitoring_alert_summaries`](Self::set_monitoring_alert_summaries).
     ///
     /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
-    pub fn monitoring_alert_summaries(
-        mut self,
-        input: crate::types::MonitoringAlertSummary,
-    ) -> Self {
+    pub fn monitoring_alert_summaries(mut self, input: crate::types::MonitoringAlertSummary) -> Self {
         let mut v = self.monitoring_alert_summaries.unwrap_or_default();
         v.push(input);
         self.monitoring_alert_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
-    pub fn set_monitoring_alert_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertSummary>>,
-    ) -> Self {
+    pub fn set_monitoring_alert_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertSummary>>) -> Self {
         self.monitoring_alert_summaries = input;
         self
     }
     /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
-    pub fn get_monitoring_alert_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertSummary>> {
+    pub fn get_monitoring_alert_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertSummary>> {
         &self.monitoring_alert_summaries
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of alerts, use it in the subsequent request.</p>

@@ -24,9 +24,7 @@ impl IdentityProviderSummary {
         self.identity_provider_name.as_deref()
     }
     /// <p>The identity provider type.</p>
-    pub fn identity_provider_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IdentityProviderType> {
+    pub fn identity_provider_type(&self) -> ::std::option::Option<&crate::types::IdentityProviderType> {
         self.identity_provider_type.as_ref()
     }
 }
@@ -56,18 +54,12 @@ pub struct IdentityProviderSummaryBuilder {
 }
 impl IdentityProviderSummaryBuilder {
     /// <p>The ARN of the identity provider.</p>
-    pub fn identity_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the identity provider.</p>
-    pub fn set_identity_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_provider_arn = input;
         self
     }
@@ -76,18 +68,12 @@ impl IdentityProviderSummaryBuilder {
         &self.identity_provider_arn
     }
     /// <p>The identity provider name.</p>
-    pub fn identity_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identity provider name.</p>
-    pub fn set_identity_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_provider_name = input;
         self
     }
@@ -101,17 +87,12 @@ impl IdentityProviderSummaryBuilder {
         self
     }
     /// <p>The identity provider type.</p>
-    pub fn set_identity_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProviderType>,
-    ) -> Self {
+    pub fn set_identity_provider_type(mut self, input: ::std::option::Option<crate::types::IdentityProviderType>) -> Self {
         self.identity_provider_type = input;
         self
     }
     /// <p>The identity provider type.</p>
-    pub fn get_identity_provider_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::IdentityProviderType> {
+    pub fn get_identity_provider_type(&self) -> &::std::option::Option<crate::types::IdentityProviderType> {
         &self.identity_provider_type
     }
     /// Consumes the builder and constructs a [`IdentityProviderSummary`](crate::types::IdentityProviderSummary).

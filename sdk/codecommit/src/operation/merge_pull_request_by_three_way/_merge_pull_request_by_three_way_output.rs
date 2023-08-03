@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for MergePullRequestByThreeWayOutput {
 }
 impl MergePullRequestByThreeWayOutput {
     /// Creates a new builder-style object to manufacture [`MergePullRequestByThreeWayOutput`](crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput).
-    pub fn builder() -> crate::operation::merge_pull_request_by_three_way::builders::MergePullRequestByThreeWayOutputBuilder{
+    pub fn builder() -> crate::operation::merge_pull_request_by_three_way::builders::MergePullRequestByThreeWayOutputBuilder {
         crate::operation::merge_pull_request_by_three_way::builders::MergePullRequestByThreeWayOutputBuilder::default()
     }
 }
 
 /// A builder for [`MergePullRequestByThreeWayOutput`](crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MergePullRequestByThreeWayOutputBuilder {
     pub(crate) pull_request: ::std::option::Option<crate::types::PullRequest>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl MergePullRequestByThreeWayOutputBuilder {
         self
     }
     /// <p>Returns information about a pull request.</p>
-    pub fn set_pull_request(
-        mut self,
-        input: ::std::option::Option<crate::types::PullRequest>,
-    ) -> Self {
+    pub fn set_pull_request(mut self, input: ::std::option::Option<crate::types::PullRequest>) -> Self {
         self.pull_request = input;
         self
     }
@@ -63,9 +58,7 @@ impl MergePullRequestByThreeWayOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`MergePullRequestByThreeWayOutput`](crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput {
+    pub fn build(self) -> crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput {
         crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput {
             pull_request: self.pull_request,
             _request_id: self._request_id,

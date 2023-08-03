@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`reactions_for_comment(Option<Vec<ReactionForComment>>)`](crate::operation::get_comment_reactions::GetCommentReactionsOutput::reactions_for_comment): <p>An array of reactions to the specified comment.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_comment_reactions::GetCommentReactionsOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     /// - On failure, responds with [`SdkError<GetCommentReactionsError>`](crate::operation::get_comment_reactions::GetCommentReactionsError)
-    pub fn get_comment_reactions(
-        &self,
-    ) -> crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder {
-        crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_comment_reactions(&self) -> crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder {
+        crate::operation::get_comment_reactions::builders::GetCommentReactionsFluentBuilder::new(self.handle.clone())
     }
 }

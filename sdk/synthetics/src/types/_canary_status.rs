@@ -37,9 +37,7 @@ impl CanaryStatus {
 
 /// A builder for [`CanaryStatus`](crate::types::CanaryStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CanaryStatusBuilder {
     pub(crate) state: ::std::option::Option<crate::types::CanaryState>,
     pub(crate) state_reason: ::std::option::Option<::std::string::String>,
@@ -80,17 +78,12 @@ impl CanaryStatusBuilder {
         self
     }
     /// <p>If the canary cannot run or has failed, this field displays the reason.</p>
-    pub fn set_state_reason_code(
-        mut self,
-        input: ::std::option::Option<crate::types::CanaryStateReasonCode>,
-    ) -> Self {
+    pub fn set_state_reason_code(mut self, input: ::std::option::Option<crate::types::CanaryStateReasonCode>) -> Self {
         self.state_reason_code = input;
         self
     }
     /// <p>If the canary cannot run or has failed, this field displays the reason.</p>
-    pub fn get_state_reason_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::CanaryStateReasonCode> {
+    pub fn get_state_reason_code(&self) -> &::std::option::Option<crate::types::CanaryStateReasonCode> {
         &self.state_reason_code
     }
     /// Consumes the builder and constructs a [`CanaryStatus`](crate::types::CanaryStatus).

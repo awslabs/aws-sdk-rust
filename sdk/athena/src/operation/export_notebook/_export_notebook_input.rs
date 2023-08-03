@@ -22,9 +22,7 @@ impl ExportNotebookInput {
 
 /// A builder for [`ExportNotebookInput`](crate::operation::export_notebook::ExportNotebookInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportNotebookInputBuilder {
     pub(crate) notebook_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl ExportNotebookInputBuilder {
     /// Consumes the builder and constructs a [`ExportNotebookInput`](crate::operation::export_notebook::ExportNotebookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::export_notebook::ExportNotebookInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::export_notebook::ExportNotebookInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_notebook::ExportNotebookInput {
             notebook_id: self.notebook_id,
         })

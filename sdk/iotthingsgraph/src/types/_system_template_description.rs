@@ -37,9 +37,7 @@ impl SystemTemplateDescription {
 
 /// A builder for [`SystemTemplateDescription`](crate::types::SystemTemplateDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SystemTemplateDescriptionBuilder {
     pub(crate) summary: ::std::option::Option<crate::types::SystemTemplateSummary>,
     pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,
@@ -52,10 +50,7 @@ impl SystemTemplateDescriptionBuilder {
         self
     }
     /// <p>An object that contains summary information about a system.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::SystemTemplateSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::SystemTemplateSummary>) -> Self {
         self.summary = input;
         self
     }
@@ -69,10 +64,7 @@ impl SystemTemplateDescriptionBuilder {
         self
     }
     /// <p>The definition document of a system.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::DefinitionDocument>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
         self.definition = input;
         self
     }

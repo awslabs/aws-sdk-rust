@@ -5,16 +5,16 @@ pub use crate::operation::get_cloud_front_origin_access_identity::_get_cloud_fro
 
 impl GetCloudFrontOriginAccessIdentityInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_cloud_front_origin_access_identity();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetCloudFrontOriginAccessIdentityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCloudFrontOriginAccessIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_cloud_front_origin_access_identity::builders::GetCloudFrontOriginAccessIdentityInputBuilder,
+    inner: crate::operation::get_cloud_front_origin_access_identity::builders::GetCloudFrontOriginAccessIdentityInputBuilder,
 }
 impl GetCloudFrontOriginAccessIdentityFluentBuilder {
     /// Creates a new `GetCloudFrontOriginAccessIdentity`.
@@ -37,15 +37,20 @@ impl GetCloudFrontOriginAccessIdentityFluentBuilder {
         }
     }
     /// Access the GetCloudFrontOriginAccessIdentity as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_cloud_front_origin_access_identity::builders::GetCloudFrontOriginAccessIdentityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_cloud_front_origin_access_identity::builders::GetCloudFrontOriginAccessIdentityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentity, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentity,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl GetCloudFrontOriginAccessIdentityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl GetCloudFrontOriginAccessIdentityFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentity, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentity,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The identity's ID.</p>

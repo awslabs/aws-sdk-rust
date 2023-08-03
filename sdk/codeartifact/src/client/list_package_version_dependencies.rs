@@ -20,7 +20,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesOutput::next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     ///   - [`dependencies(Option<Vec<PackageDependency>>)`](crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesOutput::dependencies): <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects. </p>
     /// - On failure, responds with [`SdkError<ListPackageVersionDependenciesError>`](crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesError)
-    pub fn list_package_version_dependencies(&self) -> crate::operation::list_package_version_dependencies::builders::ListPackageVersionDependenciesFluentBuilder{
+    pub fn list_package_version_dependencies(
+        &self,
+    ) -> crate::operation::list_package_version_dependencies::builders::ListPackageVersionDependenciesFluentBuilder {
         crate::operation::list_package_version_dependencies::builders::ListPackageVersionDependenciesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -54,13 +54,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RecoveryInstanceDataReplicationInitiationStepName {
     #[allow(missing_docs)] // documentation missing in model
@@ -105,26 +99,32 @@ pub enum RecoveryInstanceDataReplicationInitiationStepName {
 impl ::std::convert::From<&str> for RecoveryInstanceDataReplicationInitiationStepName {
     fn from(s: &str) -> Self {
         match s {
-                        "ATTACH_STAGING_DISKS" => RecoveryInstanceDataReplicationInitiationStepName::AttachStagingDisks,
-"AUTHENTICATE_WITH_SERVICE" => RecoveryInstanceDataReplicationInitiationStepName::AuthenticateWithService,
-"BOOT_REPLICATION_SERVER" => RecoveryInstanceDataReplicationInitiationStepName::BootReplicationServer,
-"COMPLETE_VOLUME_MAPPING" => RecoveryInstanceDataReplicationInitiationStepName::CompleteVolumeMapping,
-"CONFIGURE_REPLICATION_SOFTWARE" => RecoveryInstanceDataReplicationInitiationStepName::ConfigureReplicationSoftware,
-"CONNECT_AGENT_TO_REPLICATION_SERVER" => RecoveryInstanceDataReplicationInitiationStepName::ConnectAgentToReplicationServer,
-"CREATE_SECURITY_GROUP" => RecoveryInstanceDataReplicationInitiationStepName::CreateSecurityGroup,
-"CREATE_STAGING_DISKS" => RecoveryInstanceDataReplicationInitiationStepName::CreateStagingDisks,
-"DOWNLOAD_REPLICATION_SOFTWARE" => RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftware,
-"DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT" => RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftwareToFailbackClient,
-"ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION" => RecoveryInstanceDataReplicationInitiationStepName::EstablishAgentReplicatorSoftwareCommunication,
-"ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION" => RecoveryInstanceDataReplicationInitiationStepName::EstablishRecoveryInstanceCommunication,
-"LAUNCH_REPLICATION_SERVER" => RecoveryInstanceDataReplicationInitiationStepName::LaunchReplicationServer,
-"LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE" => RecoveryInstanceDataReplicationInitiationStepName::LinkFailbackClientWithRecoveryInstance,
-"PAIR_AGENT_WITH_REPLICATION_SOFTWARE" => RecoveryInstanceDataReplicationInitiationStepName::PairAgentWithReplicationSoftware,
-"PAIR_REPLICATION_SERVER_WITH_AGENT" => RecoveryInstanceDataReplicationInitiationStepName::PairReplicationServerWithAgent,
-"START_DATA_TRANSFER" => RecoveryInstanceDataReplicationInitiationStepName::StartDataTransfer,
-"WAIT" => RecoveryInstanceDataReplicationInitiationStepName::Wait,
-other => RecoveryInstanceDataReplicationInitiationStepName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
+            "ATTACH_STAGING_DISKS" => RecoveryInstanceDataReplicationInitiationStepName::AttachStagingDisks,
+            "AUTHENTICATE_WITH_SERVICE" => RecoveryInstanceDataReplicationInitiationStepName::AuthenticateWithService,
+            "BOOT_REPLICATION_SERVER" => RecoveryInstanceDataReplicationInitiationStepName::BootReplicationServer,
+            "COMPLETE_VOLUME_MAPPING" => RecoveryInstanceDataReplicationInitiationStepName::CompleteVolumeMapping,
+            "CONFIGURE_REPLICATION_SOFTWARE" => RecoveryInstanceDataReplicationInitiationStepName::ConfigureReplicationSoftware,
+            "CONNECT_AGENT_TO_REPLICATION_SERVER" => RecoveryInstanceDataReplicationInitiationStepName::ConnectAgentToReplicationServer,
+            "CREATE_SECURITY_GROUP" => RecoveryInstanceDataReplicationInitiationStepName::CreateSecurityGroup,
+            "CREATE_STAGING_DISKS" => RecoveryInstanceDataReplicationInitiationStepName::CreateStagingDisks,
+            "DOWNLOAD_REPLICATION_SOFTWARE" => RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftware,
+            "DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT" => {
+                RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftwareToFailbackClient
+            }
+            "ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION" => {
+                RecoveryInstanceDataReplicationInitiationStepName::EstablishAgentReplicatorSoftwareCommunication
+            }
+            "ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION" => RecoveryInstanceDataReplicationInitiationStepName::EstablishRecoveryInstanceCommunication,
+            "LAUNCH_REPLICATION_SERVER" => RecoveryInstanceDataReplicationInitiationStepName::LaunchReplicationServer,
+            "LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE" => {
+                RecoveryInstanceDataReplicationInitiationStepName::LinkFailbackClientWithRecoveryInstance
+            }
+            "PAIR_AGENT_WITH_REPLICATION_SOFTWARE" => RecoveryInstanceDataReplicationInitiationStepName::PairAgentWithReplicationSoftware,
+            "PAIR_REPLICATION_SERVER_WITH_AGENT" => RecoveryInstanceDataReplicationInitiationStepName::PairReplicationServerWithAgent,
+            "START_DATA_TRANSFER" => RecoveryInstanceDataReplicationInitiationStepName::StartDataTransfer,
+            "WAIT" => RecoveryInstanceDataReplicationInitiationStepName::Wait,
+            other => RecoveryInstanceDataReplicationInitiationStepName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
     }
 }
 impl ::std::str::FromStr for RecoveryInstanceDataReplicationInitiationStepName {
@@ -138,26 +138,32 @@ impl RecoveryInstanceDataReplicationInitiationStepName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-    RecoveryInstanceDataReplicationInitiationStepName::AttachStagingDisks => "ATTACH_STAGING_DISKS",
-    RecoveryInstanceDataReplicationInitiationStepName::AuthenticateWithService => "AUTHENTICATE_WITH_SERVICE",
-    RecoveryInstanceDataReplicationInitiationStepName::BootReplicationServer => "BOOT_REPLICATION_SERVER",
-    RecoveryInstanceDataReplicationInitiationStepName::CompleteVolumeMapping => "COMPLETE_VOLUME_MAPPING",
-    RecoveryInstanceDataReplicationInitiationStepName::ConfigureReplicationSoftware => "CONFIGURE_REPLICATION_SOFTWARE",
-    RecoveryInstanceDataReplicationInitiationStepName::ConnectAgentToReplicationServer => "CONNECT_AGENT_TO_REPLICATION_SERVER",
-    RecoveryInstanceDataReplicationInitiationStepName::CreateSecurityGroup => "CREATE_SECURITY_GROUP",
-    RecoveryInstanceDataReplicationInitiationStepName::CreateStagingDisks => "CREATE_STAGING_DISKS",
-    RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftware => "DOWNLOAD_REPLICATION_SOFTWARE",
-    RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftwareToFailbackClient => "DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT",
-    RecoveryInstanceDataReplicationInitiationStepName::EstablishAgentReplicatorSoftwareCommunication => "ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION",
-    RecoveryInstanceDataReplicationInitiationStepName::EstablishRecoveryInstanceCommunication => "ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION",
-    RecoveryInstanceDataReplicationInitiationStepName::LaunchReplicationServer => "LAUNCH_REPLICATION_SERVER",
-    RecoveryInstanceDataReplicationInitiationStepName::LinkFailbackClientWithRecoveryInstance => "LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE",
-    RecoveryInstanceDataReplicationInitiationStepName::PairAgentWithReplicationSoftware => "PAIR_AGENT_WITH_REPLICATION_SOFTWARE",
-    RecoveryInstanceDataReplicationInitiationStepName::PairReplicationServerWithAgent => "PAIR_REPLICATION_SERVER_WITH_AGENT",
-    RecoveryInstanceDataReplicationInitiationStepName::StartDataTransfer => "START_DATA_TRANSFER",
-    RecoveryInstanceDataReplicationInitiationStepName::Wait => "WAIT",
-    RecoveryInstanceDataReplicationInitiationStepName::Unknown(value) => value.as_str()
-}
+            RecoveryInstanceDataReplicationInitiationStepName::AttachStagingDisks => "ATTACH_STAGING_DISKS",
+            RecoveryInstanceDataReplicationInitiationStepName::AuthenticateWithService => "AUTHENTICATE_WITH_SERVICE",
+            RecoveryInstanceDataReplicationInitiationStepName::BootReplicationServer => "BOOT_REPLICATION_SERVER",
+            RecoveryInstanceDataReplicationInitiationStepName::CompleteVolumeMapping => "COMPLETE_VOLUME_MAPPING",
+            RecoveryInstanceDataReplicationInitiationStepName::ConfigureReplicationSoftware => "CONFIGURE_REPLICATION_SOFTWARE",
+            RecoveryInstanceDataReplicationInitiationStepName::ConnectAgentToReplicationServer => "CONNECT_AGENT_TO_REPLICATION_SERVER",
+            RecoveryInstanceDataReplicationInitiationStepName::CreateSecurityGroup => "CREATE_SECURITY_GROUP",
+            RecoveryInstanceDataReplicationInitiationStepName::CreateStagingDisks => "CREATE_STAGING_DISKS",
+            RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftware => "DOWNLOAD_REPLICATION_SOFTWARE",
+            RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftwareToFailbackClient => {
+                "DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT"
+            }
+            RecoveryInstanceDataReplicationInitiationStepName::EstablishAgentReplicatorSoftwareCommunication => {
+                "ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION"
+            }
+            RecoveryInstanceDataReplicationInitiationStepName::EstablishRecoveryInstanceCommunication => "ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION",
+            RecoveryInstanceDataReplicationInitiationStepName::LaunchReplicationServer => "LAUNCH_REPLICATION_SERVER",
+            RecoveryInstanceDataReplicationInitiationStepName::LinkFailbackClientWithRecoveryInstance => {
+                "LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE"
+            }
+            RecoveryInstanceDataReplicationInitiationStepName::PairAgentWithReplicationSoftware => "PAIR_AGENT_WITH_REPLICATION_SOFTWARE",
+            RecoveryInstanceDataReplicationInitiationStepName::PairReplicationServerWithAgent => "PAIR_REPLICATION_SERVER_WITH_AGENT",
+            RecoveryInstanceDataReplicationInitiationStepName::StartDataTransfer => "START_DATA_TRANSFER",
+            RecoveryInstanceDataReplicationInitiationStepName::Wait => "WAIT",
+            RecoveryInstanceDataReplicationInitiationStepName::Unknown(value) => value.as_str(),
+        }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {

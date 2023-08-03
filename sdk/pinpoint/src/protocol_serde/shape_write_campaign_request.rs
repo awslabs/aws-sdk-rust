@@ -48,10 +48,7 @@ pub fn ser_write_campaign_request(
     if let Some(var_14) = &input.message_configuration {
         #[allow(unused_mut)]
         let mut object_15 = object.key("MessageConfiguration").start_object();
-        crate::protocol_serde::shape_message_configuration::ser_message_configuration(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_message_configuration::ser_message_configuration(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.name {
@@ -85,10 +82,7 @@ pub fn ser_write_campaign_request(
     if let Some(var_25) = &input.template_configuration {
         #[allow(unused_mut)]
         let mut object_26 = object.key("TemplateConfiguration").start_object();
-        crate::protocol_serde::shape_template_configuration::ser_template_configuration(
-            &mut object_26,
-            var_25,
-        )?;
+        crate::protocol_serde::shape_template_configuration::ser_template_configuration(&mut object_26, var_25)?;
         object_26.finish();
     }
     if let Some(var_27) = &input.treatment_description {

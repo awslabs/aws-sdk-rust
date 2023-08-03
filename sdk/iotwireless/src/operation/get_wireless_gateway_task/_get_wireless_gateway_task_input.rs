@@ -15,18 +15,14 @@ impl GetWirelessGatewayTaskInput {
 }
 impl GetWirelessGatewayTaskInput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskInput`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskInput).
-    pub fn builder(
-    ) -> crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskInputBuilder {
         crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`GetWirelessGatewayTaskInput`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayTaskInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl GetWirelessGatewayTaskInputBuilder {
         crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskInput {
-                id: self.id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskInput { id: self.id })
     }
 }

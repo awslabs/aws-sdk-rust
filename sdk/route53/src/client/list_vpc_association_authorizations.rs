@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput::next_token): <p>When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request, and include the value of the <code>NextToken</code> element from the response in the <code>nexttoken</code> request parameter.</p>
     ///   - [`vp_cs(Option<Vec<Vpc>>)`](crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput::vp_cs): <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
     /// - On failure, responds with [`SdkError<ListVPCAssociationAuthorizationsError>`](crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError)
-    pub fn list_vpc_association_authorizations(&self) -> crate::operation::list_vpc_association_authorizations::builders::ListVPCAssociationAuthorizationsFluentBuilder{
+    pub fn list_vpc_association_authorizations(
+        &self,
+    ) -> crate::operation::list_vpc_association_authorizations::builders::ListVPCAssociationAuthorizationsFluentBuilder {
         crate::operation::list_vpc_association_authorizations::builders::ListVPCAssociationAuthorizationsFluentBuilder::new(self.handle.clone())
     }
 }

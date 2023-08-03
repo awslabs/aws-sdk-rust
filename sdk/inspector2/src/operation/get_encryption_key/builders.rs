@@ -10,10 +10,7 @@ impl GetEncryptionKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_encryption_key::GetEncryptionKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_encryption_key::GetEncryptionKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_encryption_key::GetEncryptionKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_encryption_key();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetEncryptionKeyFluentBuilder {
         }
     }
     /// Access the GetEncryptionKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_encryption_key::builders::GetEncryptionKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_encryption_key::builders::GetEncryptionKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetEncryptionKeyFluentBuilder {
             crate::operation::get_encryption_key::GetEncryptionKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_encryption_key::GetEncryptionKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_encryption_key::GetEncryptionKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetEncryptionKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetEncryptionKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_encryption_key::GetEncryptionKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_encryption_key::GetEncryptionKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_encryption_key::GetEncryptionKeyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetEncryptionKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_encryption_key::GetEncryptionKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_encryption_key::GetEncryptionKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_encryption_key::GetEncryptionKeyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetEncryptionKeyFluentBuilder {
             crate::operation::get_encryption_key::GetEncryptionKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_encryption_key::GetEncryptionKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_encryption_key::GetEncryptionKeyError>,
     > {
         self.customize_middleware().await
     }
@@ -142,10 +126,7 @@ impl GetEncryptionKeyFluentBuilder {
         self
     }
     /// <p>The resource type the key encrypts.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

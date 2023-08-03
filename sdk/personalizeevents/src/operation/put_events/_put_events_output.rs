@@ -19,9 +19,7 @@ impl PutEventsOutput {
 
 /// A builder for [`PutEventsOutput`](crate::operation::put_events::PutEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEventsOutputBuilder {
     _request_id: Option<String>,
 }

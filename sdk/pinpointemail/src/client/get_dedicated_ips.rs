@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`dedicated_ips(Option<Vec<DedicatedIp>>)`](crate::operation::get_dedicated_ips::GetDedicatedIpsOutput::dedicated_ips): <p>A list of dedicated IP addresses that are reserved for use by your Amazon Pinpoint account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_dedicated_ips::GetDedicatedIpsOutput::next_token): <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
     /// - On failure, responds with [`SdkError<GetDedicatedIpsError>`](crate::operation::get_dedicated_ips::GetDedicatedIpsError)
-    pub fn get_dedicated_ips(
-        &self,
-    ) -> crate::operation::get_dedicated_ips::builders::GetDedicatedIpsFluentBuilder {
-        crate::operation::get_dedicated_ips::builders::GetDedicatedIpsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_dedicated_ips(&self) -> crate::operation::get_dedicated_ips::builders::GetDedicatedIpsFluentBuilder {
+        crate::operation::get_dedicated_ips::builders::GetDedicatedIpsFluentBuilder::new(self.handle.clone())
     }
 }

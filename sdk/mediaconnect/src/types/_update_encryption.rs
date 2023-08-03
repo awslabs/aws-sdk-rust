@@ -79,9 +79,7 @@ impl UpdateEncryption {
 
 /// A builder for [`UpdateEncryption`](crate::types::UpdateEncryption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEncryptionBuilder {
     pub(crate) algorithm: ::std::option::Option<crate::types::Algorithm>,
     pub(crate) constant_initialization_vector: ::std::option::Option<::std::string::String>,
@@ -109,25 +107,17 @@ impl UpdateEncryptionBuilder {
         &self.algorithm
     }
     /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
-    pub fn constant_initialization_vector(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn constant_initialization_vector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.constant_initialization_vector = ::std::option::Option::Some(input.into());
         self
     }
     /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
-    pub fn set_constant_initialization_vector(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_constant_initialization_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.constant_initialization_vector = input;
         self
     }
     /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
-    pub fn get_constant_initialization_vector(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_constant_initialization_vector(&self) -> &::std::option::Option<::std::string::String> {
         &self.constant_initialization_vector
     }
     /// The value of one of the devices that you configured with your digital rights management (DRM) platform key provider. This parameter is required for SPEKE encryption and is not valid for static key encryption.

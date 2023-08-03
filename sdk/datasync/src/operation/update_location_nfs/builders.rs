@@ -10,10 +10,7 @@ impl UpdateLocationNfsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_location_nfs::UpdateLocationNfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_nfs::UpdateLocationNfsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_nfs::UpdateLocationNfsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_location_nfs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateLocationNfsFluentBuilder {
         }
     }
     /// Access the UpdateLocationNfs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_location_nfs::builders::UpdateLocationNfsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_location_nfs::builders::UpdateLocationNfsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateLocationNfsFluentBuilder {
             crate::operation::update_location_nfs::UpdateLocationNfs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_nfs::UpdateLocationNfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_nfs::UpdateLocationNfsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateLocationNfsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateLocationNfsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_location_nfs::UpdateLocationNfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_nfs::UpdateLocationNfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_nfs::UpdateLocationNfsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateLocationNfsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_location_nfs::UpdateLocationNfsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_nfs::UpdateLocationNfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_nfs::UpdateLocationNfsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateLocationNfsFluentBuilder {
             crate::operation::update_location_nfs::UpdateLocationNfs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_location_nfs::UpdateLocationNfsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_location_nfs::UpdateLocationNfsError>,
     > {
         self.customize_middleware().await
     }
@@ -165,10 +149,7 @@ impl UpdateLocationNfsFluentBuilder {
         self
     }
     /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
-    pub fn set_on_prem_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OnPremConfig>,
-    ) -> Self {
+    pub fn set_on_prem_config(mut self, input: ::std::option::Option<crate::types::OnPremConfig>) -> Self {
         self.inner = self.inner.set_on_prem_config(input);
         self
     }
@@ -182,10 +163,7 @@ impl UpdateLocationNfsFluentBuilder {
         self
     }
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
-    pub fn set_mount_options(
-        mut self,
-        input: ::std::option::Option<crate::types::NfsMountOptions>,
-    ) -> Self {
+    pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::NfsMountOptions>) -> Self {
         self.inner = self.inner.set_mount_options(input);
         self
     }

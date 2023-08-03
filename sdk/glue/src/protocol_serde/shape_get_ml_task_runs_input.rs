@@ -18,19 +18,13 @@ pub fn ser_get_ml_task_runs_input(
     if let Some(var_4) = &input.filter {
         #[allow(unused_mut)]
         let mut object_5 = object.key("Filter").start_object();
-        crate::protocol_serde::shape_task_run_filter_criteria::ser_task_run_filter_criteria(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_task_run_filter_criteria::ser_task_run_filter_criteria(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.sort {
         #[allow(unused_mut)]
         let mut object_7 = object.key("Sort").start_object();
-        crate::protocol_serde::shape_task_run_sort_criteria::ser_task_run_sort_criteria(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_task_run_sort_criteria::ser_task_run_sort_criteria(&mut object_7, var_6)?;
         object_7.finish();
     }
     Ok(())

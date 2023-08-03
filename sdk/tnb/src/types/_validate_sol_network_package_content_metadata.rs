@@ -26,9 +26,7 @@ impl ValidateSolNetworkPackageContentMetadata {
 
 /// A builder for [`ValidateSolNetworkPackageContentMetadata`](crate::types::ValidateSolNetworkPackageContentMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateSolNetworkPackageContentMetadataBuilder {
     pub(crate) nsd: ::std::option::Option<crate::types::NetworkArtifactMeta>,
 }
@@ -41,10 +39,7 @@ impl ValidateSolNetworkPackageContentMetadataBuilder {
     }
     /// <p>Metadata for network package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
-    pub fn set_nsd(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkArtifactMeta>,
-    ) -> Self {
+    pub fn set_nsd(mut self, input: ::std::option::Option<crate::types::NetworkArtifactMeta>) -> Self {
         self.nsd = input;
         self
     }

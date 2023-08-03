@@ -19,9 +19,7 @@ impl DeleteAgentOutput {
 
 /// A builder for [`DeleteAgentOutput`](crate::operation::delete_agent::DeleteAgentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAgentOutputBuilder {
     _request_id: Option<String>,
 }

@@ -9,12 +9,8 @@ pub fn de_run_scheduled_instances_http_error(
     crate::operation::run_scheduled_instances::RunScheduledInstancesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::run_scheduled_instances::RunScheduledInstancesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::run_scheduled_instances::RunScheduledInstancesError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::run_scheduled_instances::RunScheduledInstancesError::generic(generic))
@@ -32,16 +28,9 @@ pub fn de_run_scheduled_instances_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::run_scheduled_instances::builders::RunScheduledInstancesOutputBuilder::default();
-        output = crate::protocol_serde::shape_run_scheduled_instances::de_run_scheduled_instances(
-            _response_body,
-            output,
-        )
-        .map_err(
-            crate::operation::run_scheduled_instances::RunScheduledInstancesError::unhandled,
-        )?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_run_scheduled_instances::de_run_scheduled_instances(_response_body, output)
+            .map_err(crate::operation::run_scheduled_instances::RunScheduledInstancesError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -50,10 +39,7 @@ pub fn de_run_scheduled_instances_http_response_with_props(
 pub fn de_run_scheduled_instances(
     inp: &[u8],
     mut builder: crate::operation::run_scheduled_instances::builders::RunScheduledInstancesOutputBuilder,
-) -> Result<
-    crate::operation::run_scheduled_instances::builders::RunScheduledInstancesOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::run_scheduled_instances::builders::RunScheduledInstancesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -37,9 +37,7 @@ impl NfsDataRepositoryConfiguration {
 
 /// A builder for [`NfsDataRepositoryConfiguration`](crate::types::NfsDataRepositoryConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NfsDataRepositoryConfigurationBuilder {
     pub(crate) version: ::std::option::Option<crate::types::NfsVersion>,
     pub(crate) dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,10 +70,7 @@ impl NfsDataRepositoryConfigurationBuilder {
         self
     }
     /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
-    pub fn set_dns_ips(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_ips = input;
         self
     }
@@ -89,10 +84,7 @@ impl NfsDataRepositoryConfigurationBuilder {
         self
     }
     /// <p>This parameter is not supported for Amazon File Cache.</p>
-    pub fn set_auto_export_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoExportPolicy>,
-    ) -> Self {
+    pub fn set_auto_export_policy(mut self, input: ::std::option::Option<crate::types::AutoExportPolicy>) -> Self {
         self.auto_export_policy = input;
         self
     }

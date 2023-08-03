@@ -13,12 +13,7 @@ impl super::Client {
     /// - On success, responds with [`BatchExecuteStatementOutput`](crate::operation::batch_execute_statement::BatchExecuteStatementOutput) with field(s):
     ///   - [`update_results(Option<Vec<UpdateResult>>)`](crate::operation::batch_execute_statement::BatchExecuteStatementOutput::update_results): <p>The execution results of each batch entry.</p>
     /// - On failure, responds with [`SdkError<BatchExecuteStatementError>`](crate::operation::batch_execute_statement::BatchExecuteStatementError)
-    pub fn batch_execute_statement(
-        &self,
-    ) -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementFluentBuilder
-    {
-        crate::operation::batch_execute_statement::builders::BatchExecuteStatementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_execute_statement(&self) -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementFluentBuilder {
+        crate::operation::batch_execute_statement::builders::BatchExecuteStatementFluentBuilder::new(self.handle.clone())
     }
 }

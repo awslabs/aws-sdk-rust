@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateObjectAttributesOutput {
 }
 impl UpdateObjectAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateObjectAttributesOutput`](crate::operation::update_object_attributes::UpdateObjectAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::update_object_attributes::builders::UpdateObjectAttributesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_object_attributes::builders::UpdateObjectAttributesOutputBuilder {
         crate::operation::update_object_attributes::builders::UpdateObjectAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateObjectAttributesOutput`](crate::operation::update_object_attributes::UpdateObjectAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateObjectAttributesOutputBuilder {
     pub(crate) object_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateObjectAttributesOutputBuilder {
     /// <p>The <code>ObjectIdentifier</code> of the updated object.</p>
-    pub fn object_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ObjectIdentifier</code> of the updated object.</p>
-    pub fn set_object_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_identifier = input;
         self
     }

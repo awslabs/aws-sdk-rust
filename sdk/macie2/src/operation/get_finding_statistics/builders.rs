@@ -37,9 +37,7 @@ impl GetFindingStatisticsFluentBuilder {
         }
     }
     /// Access the GetFindingStatistics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_finding_statistics::builders::GetFindingStatisticsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_finding_statistics::builders::GetFindingStatisticsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetFindingStatisticsFluentBuilder {
             crate::operation::get_finding_statistics::GetFindingStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_finding_statistics::GetFindingStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_finding_statistics::GetFindingStatisticsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetFindingStatisticsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetFindingStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_finding_statistics::GetFindingStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_finding_statistics::GetFindingStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_finding_statistics::GetFindingStatisticsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetFindingStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_finding_statistics::GetFindingStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_finding_statistics::GetFindingStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_finding_statistics::GetFindingStatisticsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetFindingStatisticsFluentBuilder {
             crate::operation::get_finding_statistics::GetFindingStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_finding_statistics::GetFindingStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_finding_statistics::GetFindingStatisticsError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +115,7 @@ impl GetFindingStatisticsFluentBuilder {
         self
     }
     /// <p>The criteria to use to filter the query results.</p>
-    pub fn set_finding_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingCriteria>,
-    ) -> Self {
+    pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
         self.inner = self.inner.set_finding_criteria(input);
         self
     }
@@ -191,17 +175,12 @@ impl GetFindingStatisticsFluentBuilder {
         self
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FindingStatisticsSortCriteria>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::FindingStatisticsSortCriteria>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn get_sort_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::FindingStatisticsSortCriteria> {
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::FindingStatisticsSortCriteria> {
         self.inner.get_sort_criteria()
     }
 }

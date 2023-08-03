@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateStudioSessionMappingOutput {
 }
 impl CreateStudioSessionMappingOutput {
     /// Creates a new builder-style object to manufacture [`CreateStudioSessionMappingOutput`](crate::operation::create_studio_session_mapping::CreateStudioSessionMappingOutput).
-    pub fn builder() -> crate::operation::create_studio_session_mapping::builders::CreateStudioSessionMappingOutputBuilder{
+    pub fn builder() -> crate::operation::create_studio_session_mapping::builders::CreateStudioSessionMappingOutputBuilder {
         crate::operation::create_studio_session_mapping::builders::CreateStudioSessionMappingOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStudioSessionMappingOutput`](crate::operation::create_studio_session_mapping::CreateStudioSessionMappingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStudioSessionMappingOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CreateStudioSessionMappingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateStudioSessionMappingOutput`](crate::operation::create_studio_session_mapping::CreateStudioSessionMappingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_studio_session_mapping::CreateStudioSessionMappingOutput {
+    pub fn build(self) -> crate::operation::create_studio_session_mapping::CreateStudioSessionMappingOutput {
         crate::operation::create_studio_session_mapping::CreateStudioSessionMappingOutput {
             _request_id: self._request_id,
         }

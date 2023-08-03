@@ -10,10 +10,7 @@ impl DescribeContainerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_container::DescribeContainerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_container::DescribeContainerError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_container::DescribeContainerError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_container();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeContainerFluentBuilder {
         }
     }
     /// Access the DescribeContainer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_container::builders::DescribeContainerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_container::builders::DescribeContainerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeContainerFluentBuilder {
             crate::operation::describe_container::DescribeContainer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_container::DescribeContainerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_container::DescribeContainerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeContainerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeContainerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_container::DescribeContainerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_container::DescribeContainerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_container::DescribeContainerError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeContainerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_container::DescribeContainerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_container::DescribeContainerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_container::DescribeContainerError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DescribeContainerFluentBuilder {
             crate::operation::describe_container::DescribeContainer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_container::DescribeContainerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_container::DescribeContainerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the container to query.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_name(input.into());
         self
     }
     /// <p>The name of the container to query.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_name(input);
         self
     }

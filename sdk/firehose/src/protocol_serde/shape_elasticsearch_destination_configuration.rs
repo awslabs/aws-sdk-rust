@@ -30,10 +30,7 @@ pub fn ser_elasticsearch_destination_configuration(
     if let Some(var_9) = &input.retry_options {
         #[allow(unused_mut)]
         let mut object_10 = object.key("RetryOptions").start_object();
-        crate::protocol_serde::shape_elasticsearch_retry_options::ser_elasticsearch_retry_options(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_elasticsearch_retry_options::ser_elasticsearch_retry_options(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.s3_backup_mode {
@@ -48,28 +45,19 @@ pub fn ser_elasticsearch_destination_configuration(
     if let Some(var_14) = &input.processing_configuration {
         #[allow(unused_mut)]
         let mut object_15 = object.key("ProcessingConfiguration").start_object();
-        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.cloud_watch_logging_options {
         #[allow(unused_mut)]
         let mut object_17 = object.key("CloudWatchLoggingOptions").start_object();
-        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.vpc_configuration {
         #[allow(unused_mut)]
         let mut object_19 = object.key("VpcConfiguration").start_object();
-        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(
-            &mut object_19,
-            var_18,
-        )?;
+        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_19, var_18)?;
         object_19.finish();
     }
     Ok(())

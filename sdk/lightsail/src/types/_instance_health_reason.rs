@@ -47,13 +47,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum InstanceHealthReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -84,9 +78,7 @@ pub enum InstanceHealthReason {
 impl ::std::convert::From<&str> for InstanceHealthReason {
     fn from(s: &str) -> Self {
         match s {
-            "Instance.DeregistrationInProgress" => {
-                InstanceHealthReason::InstanceDeregistrationInProgress
-            }
+            "Instance.DeregistrationInProgress" => InstanceHealthReason::InstanceDeregistrationInProgress,
             "Instance.FailedHealthChecks" => InstanceHealthReason::InstanceFailedHealthChecks,
             "Instance.InvalidState" => InstanceHealthReason::InstanceInvalidState,
             "Instance.IpUnusable" => InstanceHealthReason::InstanceIpUnusable,
@@ -97,9 +89,7 @@ impl ::std::convert::From<&str> for InstanceHealthReason {
             "Lb.InitialHealthChecking" => InstanceHealthReason::LbInitialHealthChecking,
             "Lb.InternalError" => InstanceHealthReason::LbInternalError,
             "Lb.RegistrationInProgress" => InstanceHealthReason::LbRegistrationInProgress,
-            other => InstanceHealthReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InstanceHealthReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -114,9 +104,7 @@ impl InstanceHealthReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            InstanceHealthReason::InstanceDeregistrationInProgress => {
-                "Instance.DeregistrationInProgress"
-            }
+            InstanceHealthReason::InstanceDeregistrationInProgress => "Instance.DeregistrationInProgress",
             InstanceHealthReason::InstanceFailedHealthChecks => "Instance.FailedHealthChecks",
             InstanceHealthReason::InstanceInvalidState => "Instance.InvalidState",
             InstanceHealthReason::InstanceIpUnusable => "Instance.IpUnusable",

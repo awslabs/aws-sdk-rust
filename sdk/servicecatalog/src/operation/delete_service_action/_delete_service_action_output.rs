@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteServiceActionOutput {
 }
 impl DeleteServiceActionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceActionOutput`](crate::operation::delete_service_action::DeleteServiceActionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_service_action::builders::DeleteServiceActionOutputBuilder {
-        crate::operation::delete_service_action::builders::DeleteServiceActionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_service_action::builders::DeleteServiceActionOutputBuilder {
+        crate::operation::delete_service_action::builders::DeleteServiceActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceActionOutput`](crate::operation::delete_service_action::DeleteServiceActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceActionOutputBuilder {
     _request_id: Option<String>,
 }

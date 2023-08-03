@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeletePatchBaselineOutput`](crate::operation::delete_patch_baseline::DeletePatchBaselineOutput) with field(s):
     ///   - [`baseline_id(Option<String>)`](crate::operation::delete_patch_baseline::DeletePatchBaselineOutput::baseline_id): <p>The ID of the deleted patch baseline.</p>
     /// - On failure, responds with [`SdkError<DeletePatchBaselineError>`](crate::operation::delete_patch_baseline::DeletePatchBaselineError)
-    pub fn delete_patch_baseline(
-        &self,
-    ) -> crate::operation::delete_patch_baseline::builders::DeletePatchBaselineFluentBuilder {
-        crate::operation::delete_patch_baseline::builders::DeletePatchBaselineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_patch_baseline(&self) -> crate::operation::delete_patch_baseline::builders::DeletePatchBaselineFluentBuilder {
+        crate::operation::delete_patch_baseline::builders::DeletePatchBaselineFluentBuilder::new(self.handle.clone())
     }
 }

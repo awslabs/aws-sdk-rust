@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeConnectionsOutput`](crate::operation::describe_connections::DescribeConnectionsOutput) with field(s):
     ///   - [`connections(Option<Vec<Connection>>)`](crate::operation::describe_connections::DescribeConnectionsOutput::connections): <p>The connections.</p>
     /// - On failure, responds with [`SdkError<DescribeConnectionsError>`](crate::operation::describe_connections::DescribeConnectionsError)
-    pub fn describe_connections(
-        &self,
-    ) -> crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder {
-        crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_connections(&self) -> crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder {
+        crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder::new(self.handle.clone())
     }
 }

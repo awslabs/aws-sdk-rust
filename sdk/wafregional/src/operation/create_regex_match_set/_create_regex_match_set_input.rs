@@ -22,18 +22,14 @@ impl CreateRegexMatchSetInput {
 }
 impl CreateRegexMatchSetInput {
     /// Creates a new builder-style object to manufacture [`CreateRegexMatchSetInput`](crate::operation::create_regex_match_set::CreateRegexMatchSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_regex_match_set::builders::CreateRegexMatchSetInputBuilder {
-        crate::operation::create_regex_match_set::builders::CreateRegexMatchSetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_regex_match_set::builders::CreateRegexMatchSetInputBuilder {
+        crate::operation::create_regex_match_set::builders::CreateRegexMatchSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRegexMatchSetInput`](crate::operation::create_regex_match_set::CreateRegexMatchSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRegexMatchSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl CreateRegexMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateRegexMatchSetInput`](crate::operation::create_regex_match_set::CreateRegexMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_regex_match_set::CreateRegexMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_regex_match_set::CreateRegexMatchSetInput {
-                name: self.name,
-                change_token: self.change_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_regex_match_set::CreateRegexMatchSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_regex_match_set::CreateRegexMatchSetInput {
+            name: self.name,
+            change_token: self.change_token,
+        })
     }
 }

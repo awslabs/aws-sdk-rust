@@ -38,10 +38,7 @@ impl CreatePlatformEndpointFluentBuilder {
         }
     }
     /// Access the CreatePlatformEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl CreatePlatformEndpointFluentBuilder {
             crate::operation::create_platform_endpoint::CreatePlatformEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_platform_endpoint::CreatePlatformEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_platform_endpoint::CreatePlatformEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl CreatePlatformEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl CreatePlatformEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_platform_endpoint::CreatePlatformEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_platform_endpoint::CreatePlatformEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_platform_endpoint::CreatePlatformEndpointError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl CreatePlatformEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_platform_endpoint::CreatePlatformEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_platform_endpoint::CreatePlatformEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_platform_endpoint::CreatePlatformEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl CreatePlatformEndpointFluentBuilder {
             crate::operation::create_platform_endpoint::CreatePlatformEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_platform_endpoint::CreatePlatformEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_platform_endpoint::CreatePlatformEndpointError>,
     > {
         self.customize_middleware().await
     }
     /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
-    pub fn platform_application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_application_arn(input.into());
         self
     }
     /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
-    pub fn set_platform_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_application_arn(input);
         self
     }
@@ -159,18 +139,12 @@ impl CreatePlatformEndpointFluentBuilder {
         self.inner.get_token()
     }
     /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p>
-    pub fn custom_user_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_user_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_user_data(input.into());
         self
     }
     /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p>
-    pub fn set_custom_user_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_user_data(input);
         self
     }
@@ -183,30 +157,17 @@ impl CreatePlatformEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
 }

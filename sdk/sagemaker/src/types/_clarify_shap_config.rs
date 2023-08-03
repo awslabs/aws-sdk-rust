@@ -24,9 +24,7 @@ pub struct ClarifyShapConfig {
 }
 impl ClarifyShapConfig {
     /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
-    pub fn shap_baseline_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClarifyShapBaselineConfig> {
+    pub fn shap_baseline_config(&self) -> ::std::option::Option<&crate::types::ClarifyShapBaselineConfig> {
         self.shap_baseline_config.as_ref()
     }
     /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note>
@@ -57,9 +55,7 @@ impl ClarifyShapConfig {
 
 /// A builder for [`ClarifyShapConfig`](crate::types::ClarifyShapConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClarifyShapConfigBuilder {
     pub(crate) shap_baseline_config: ::std::option::Option<crate::types::ClarifyShapBaselineConfig>,
     pub(crate) number_of_samples: ::std::option::Option<i32>,
@@ -74,17 +70,12 @@ impl ClarifyShapConfigBuilder {
         self
     }
     /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
-    pub fn set_shap_baseline_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ClarifyShapBaselineConfig>,
-    ) -> Self {
+    pub fn set_shap_baseline_config(mut self, input: ::std::option::Option<crate::types::ClarifyShapBaselineConfig>) -> Self {
         self.shap_baseline_config = input;
         self
     }
     /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
-    pub fn get_shap_baseline_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClarifyShapBaselineConfig> {
+    pub fn get_shap_baseline_config(&self) -> &::std::option::Option<crate::types::ClarifyShapBaselineConfig> {
         &self.shap_baseline_config
     }
     /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note>
@@ -141,10 +132,7 @@ impl ClarifyShapConfigBuilder {
         self
     }
     /// <p>A parameter that indicates if text features are treated as text and explanations are provided for individual units of text. Required for natural language processing (NLP) explainability only.</p>
-    pub fn set_text_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ClarifyTextConfig>,
-    ) -> Self {
+    pub fn set_text_config(mut self, input: ::std::option::Option<crate::types::ClarifyTextConfig>) -> Self {
         self.text_config = input;
         self
     }

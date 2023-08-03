@@ -46,9 +46,7 @@ impl LaunchPermission {
 
 /// A builder for [`LaunchPermission`](crate::types::LaunchPermission).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchPermissionBuilder {
     pub(crate) group: ::std::option::Option<crate::types::PermissionGroup>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -62,10 +60,7 @@ impl LaunchPermissionBuilder {
         self
     }
     /// <p>The name of the group.</p>
-    pub fn set_group(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionGroup>,
-    ) -> Self {
+    pub fn set_group(mut self, input: ::std::option::Option<crate::types::PermissionGroup>) -> Self {
         self.group = input;
         self
     }
@@ -91,18 +86,12 @@ impl LaunchPermissionBuilder {
         &self.user_id
     }
     /// <p>The Amazon Resource Name (ARN) of an organization.</p>
-    pub fn organization_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an organization.</p>
-    pub fn set_organization_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_arn = input;
         self
     }
@@ -111,18 +100,12 @@ impl LaunchPermissionBuilder {
         &self.organization_arn
     }
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
-    pub fn organizational_unit_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organizational_unit_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an organizational unit (OU).</p>
-    pub fn set_organizational_unit_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organizational_unit_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organizational_unit_arn = input;
         self
     }

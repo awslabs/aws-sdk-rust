@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteDistributionConfigurationOutput
 }
 impl DeleteDistributionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDistributionConfigurationOutput`](crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_distribution_configuration::builders::DeleteDistributionConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_distribution_configuration::builders::DeleteDistributionConfigurationOutputBuilder {
         crate::operation::delete_distribution_configuration::builders::DeleteDistributionConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDistributionConfigurationOutput`](crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDistributionConfigurationOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) distribution_configuration_arn: ::std::option::Option<::std::string::String>,
@@ -59,25 +57,17 @@ impl DeleteDistributionConfigurationOutputBuilder {
         &self.request_id
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was deleted.</p>
-    pub fn distribution_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was deleted.</p>
-    pub fn set_distribution_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_configuration_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was deleted.</p>
-    pub fn get_distribution_configuration_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_distribution_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.distribution_configuration_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -90,10 +80,7 @@ impl DeleteDistributionConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDistributionConfigurationOutput`](crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationOutput {
         crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationOutput {
             request_id: self.request_id,
             distribution_configuration_arn: self.distribution_configuration_arn,

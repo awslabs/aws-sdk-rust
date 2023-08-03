@@ -30,17 +30,14 @@ impl ::aws_http::request_id::RequestId for ListFirewallRulesOutput {
 }
 impl ListFirewallRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallRulesOutput`](crate::operation::list_firewall_rules::ListFirewallRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_firewall_rules::builders::ListFirewallRulesOutputBuilder {
+    pub fn builder() -> crate::operation::list_firewall_rules::builders::ListFirewallRulesOutputBuilder {
         crate::operation::list_firewall_rules::builders::ListFirewallRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFirewallRulesOutput`](crate::operation::list_firewall_rules::ListFirewallRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallRulesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_rules: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRule>>,
@@ -75,18 +72,13 @@ impl ListFirewallRulesOutputBuilder {
     }
     /// <p>A list of the rules that you have defined. </p>
     /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
-    pub fn set_firewall_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRule>>,
-    ) -> Self {
+    pub fn set_firewall_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallRule>>) -> Self {
         self.firewall_rules = input;
         self
     }
     /// <p>A list of the rules that you have defined. </p>
     /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
-    pub fn get_firewall_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallRule>> {
+    pub fn get_firewall_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallRule>> {
         &self.firewall_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

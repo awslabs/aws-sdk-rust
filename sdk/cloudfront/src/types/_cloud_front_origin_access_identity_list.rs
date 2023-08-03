@@ -21,8 +21,7 @@ pub struct CloudFrontOriginAccessIdentityList {
     pub quantity: ::std::option::Option<i32>,
     /// <p>A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin access identity that was created by the current Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub items:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudFrontOriginAccessIdentitySummary>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::CloudFrontOriginAccessIdentitySummary>>,
 }
 impl CloudFrontOriginAccessIdentityList {
     /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
@@ -46,9 +45,7 @@ impl CloudFrontOriginAccessIdentityList {
         self.quantity
     }
     /// <p>A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin access identity that was created by the current Amazon Web Services account.</p>
-    pub fn items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CloudFrontOriginAccessIdentitySummary]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::CloudFrontOriginAccessIdentitySummary]> {
         self.items.as_deref()
     }
 }
@@ -61,17 +58,14 @@ impl CloudFrontOriginAccessIdentityList {
 
 /// A builder for [`CloudFrontOriginAccessIdentityList`](crate::types::CloudFrontOriginAccessIdentityList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentityListBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::CloudFrontOriginAccessIdentitySummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::CloudFrontOriginAccessIdentitySummary>>,
 }
 impl CloudFrontOriginAccessIdentityListBuilder {
     /// <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
@@ -156,20 +150,12 @@ impl CloudFrontOriginAccessIdentityListBuilder {
         self
     }
     /// <p>A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin access identity that was created by the current Amazon Web Services account.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::CloudFrontOriginAccessIdentitySummary>,
-        >,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudFrontOriginAccessIdentitySummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin access identity that was created by the current Amazon Web Services account.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudFrontOriginAccessIdentitySummary>>
-    {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudFrontOriginAccessIdentitySummary>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`CloudFrontOriginAccessIdentityList`](crate::types::CloudFrontOriginAccessIdentityList).

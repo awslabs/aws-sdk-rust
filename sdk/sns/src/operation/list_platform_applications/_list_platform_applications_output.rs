@@ -6,8 +6,7 @@
 pub struct ListPlatformApplicationsOutput {
     /// <p>Platform applications returned when calling ListPlatformApplications action.</p>
     #[doc(hidden)]
-    pub platform_applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlatformApplication>>,
+    pub platform_applications: ::std::option::Option<::std::vec::Vec<crate::types::PlatformApplication>>,
     /// <p>NextToken string is returned when calling ListPlatformApplications action if additional records are available after the first page results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct ListPlatformApplicationsOutput {
 }
 impl ListPlatformApplicationsOutput {
     /// <p>Platform applications returned when calling ListPlatformApplications action.</p>
-    pub fn platform_applications(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PlatformApplication]> {
+    pub fn platform_applications(&self) -> ::std::option::Option<&[crate::types::PlatformApplication]> {
         self.platform_applications.as_deref()
     }
     /// <p>NextToken string is returned when calling ListPlatformApplications action if additional records are available after the first page results.</p>
@@ -32,21 +29,16 @@ impl ::aws_http::request_id::RequestId for ListPlatformApplicationsOutput {
 }
 impl ListPlatformApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListPlatformApplicationsOutput`](crate::operation::list_platform_applications::ListPlatformApplicationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_platform_applications::builders::ListPlatformApplicationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_platform_applications::builders::ListPlatformApplicationsOutputBuilder {
         crate::operation::list_platform_applications::builders::ListPlatformApplicationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPlatformApplicationsOutput`](crate::operation::list_platform_applications::ListPlatformApplicationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPlatformApplicationsOutputBuilder {
-    pub(crate) platform_applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::PlatformApplication>>,
+    pub(crate) platform_applications: ::std::option::Option<::std::vec::Vec<crate::types::PlatformApplication>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,17 +55,12 @@ impl ListPlatformApplicationsOutputBuilder {
         self
     }
     /// <p>Platform applications returned when calling ListPlatformApplications action.</p>
-    pub fn set_platform_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformApplication>>,
-    ) -> Self {
+    pub fn set_platform_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformApplication>>) -> Self {
         self.platform_applications = input;
         self
     }
     /// <p>Platform applications returned when calling ListPlatformApplications action.</p>
-    pub fn get_platform_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformApplication>> {
+    pub fn get_platform_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformApplication>> {
         &self.platform_applications
     }
     /// <p>NextToken string is returned when calling ListPlatformApplications action if additional records are available after the first page results.</p>
@@ -100,9 +87,7 @@ impl ListPlatformApplicationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPlatformApplicationsOutput`](crate::operation::list_platform_applications::ListPlatformApplicationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_platform_applications::ListPlatformApplicationsOutput {
+    pub fn build(self) -> crate::operation::list_platform_applications::ListPlatformApplicationsOutput {
         crate::operation::list_platform_applications::ListPlatformApplicationsOutput {
             platform_applications: self.platform_applications,
             next_token: self.next_token,

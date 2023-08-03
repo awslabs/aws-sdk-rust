@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateConnectorProfileOutput`](crate::operation::create_connector_profile::CreateConnectorProfileOutput) with field(s):
     ///   - [`connector_profile_arn(Option<String>)`](crate::operation::create_connector_profile::CreateConnectorProfileOutput::connector_profile_arn): <p> The Amazon Resource Name (ARN) of the connector profile. </p>
     /// - On failure, responds with [`SdkError<CreateConnectorProfileError>`](crate::operation::create_connector_profile::CreateConnectorProfileError)
-    pub fn create_connector_profile(
-        &self,
-    ) -> crate::operation::create_connector_profile::builders::CreateConnectorProfileFluentBuilder
-    {
+    pub fn create_connector_profile(&self) -> crate::operation::create_connector_profile::builders::CreateConnectorProfileFluentBuilder {
         crate::operation::create_connector_profile::builders::CreateConnectorProfileFluentBuilder::new(self.handle.clone())
     }
 }

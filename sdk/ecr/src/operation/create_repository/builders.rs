@@ -10,10 +10,7 @@ impl CreateRepositoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_repository::CreateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_repository();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateRepositoryFluentBuilder {
         }
     }
     /// Access the CreateRepository as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateRepositoryFluentBuilder {
             crate::operation::create_repository::CreateRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateRepositoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_repository::CreateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateRepositoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_repository::CreateRepositoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateRepositoryFluentBuilder {
             crate::operation::create_repository::CreateRepository,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_repository::CreateRepositoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_repository::CreateRepositoryError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl CreateRepositoryFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -166,10 +144,7 @@ impl CreateRepositoryFluentBuilder {
         self
     }
     /// <p>The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -183,61 +158,40 @@ impl CreateRepositoryFluentBuilder {
         self
     }
     /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
-    pub fn set_image_tag_mutability(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageTagMutability>,
-    ) -> Self {
+    pub fn set_image_tag_mutability(mut self, input: ::std::option::Option<crate::types::ImageTagMutability>) -> Self {
         self.inner = self.inner.set_image_tag_mutability(input);
         self
     }
     /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
-    pub fn get_image_tag_mutability(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageTagMutability> {
+    pub fn get_image_tag_mutability(&self) -> &::std::option::Option<crate::types::ImageTagMutability> {
         self.inner.get_image_tag_mutability()
     }
     /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    pub fn image_scanning_configuration(
-        mut self,
-        input: crate::types::ImageScanningConfiguration,
-    ) -> Self {
+    pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.inner = self.inner.image_scanning_configuration(input);
         self
     }
     /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    pub fn set_image_scanning_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageScanningConfiguration>,
-    ) -> Self {
+    pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.inner = self.inner.set_image_scanning_configuration(input);
         self
     }
     /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    pub fn get_image_scanning_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
+    pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         self.inner.get_image_scanning_configuration()
     }
     /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.inner = self.inner.encryption_configuration(input);
         self
     }
     /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.inner = self.inner.set_encryption_configuration(input);
         self
     }
     /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
-    pub fn get_encryption_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         self.inner.get_encryption_configuration()
     }
 }

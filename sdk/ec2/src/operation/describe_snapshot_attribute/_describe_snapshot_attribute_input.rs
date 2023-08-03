@@ -29,16 +29,14 @@ impl DescribeSnapshotAttributeInput {
 }
 impl DescribeSnapshotAttributeInput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotAttributeInput`](crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeInput).
-    pub fn builder() -> crate::operation::describe_snapshot_attribute::builders::DescribeSnapshotAttributeInputBuilder{
+    pub fn builder() -> crate::operation::describe_snapshot_attribute::builders::DescribeSnapshotAttributeInputBuilder {
         crate::operation::describe_snapshot_attribute::builders::DescribeSnapshotAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSnapshotAttributeInput`](crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::SnapshotAttributeName>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
@@ -51,10 +49,7 @@ impl DescribeSnapshotAttributeInputBuilder {
         self
     }
     /// <p>The snapshot attribute you would like to view.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::SnapshotAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::SnapshotAttributeName>) -> Self {
         self.attribute = input;
         self
     }
@@ -97,12 +92,10 @@ impl DescribeSnapshotAttributeInputBuilder {
         crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeInput {
-                attribute: self.attribute,
-                snapshot_id: self.snapshot_id,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeInput {
+            attribute: self.attribute,
+            snapshot_id: self.snapshot_id,
+            dry_run: self.dry_run,
+        })
     }
 }

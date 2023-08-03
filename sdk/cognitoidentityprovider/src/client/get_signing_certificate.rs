@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetSigningCertificateOutput`](crate::operation::get_signing_certificate::GetSigningCertificateOutput) with field(s):
     ///   - [`certificate(Option<String>)`](crate::operation::get_signing_certificate::GetSigningCertificateOutput::certificate): <p>The signing certificate.</p>
     /// - On failure, responds with [`SdkError<GetSigningCertificateError>`](crate::operation::get_signing_certificate::GetSigningCertificateError)
-    pub fn get_signing_certificate(
-        &self,
-    ) -> crate::operation::get_signing_certificate::builders::GetSigningCertificateFluentBuilder
-    {
-        crate::operation::get_signing_certificate::builders::GetSigningCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_signing_certificate(&self) -> crate::operation::get_signing_certificate::builders::GetSigningCertificateFluentBuilder {
+        crate::operation::get_signing_certificate::builders::GetSigningCertificateFluentBuilder::new(self.handle.clone())
     }
 }

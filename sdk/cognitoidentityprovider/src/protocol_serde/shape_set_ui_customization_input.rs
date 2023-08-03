@@ -13,9 +13,7 @@ pub fn ser_set_ui_customization_input(
         object.key("CSS").string(var_3.as_str());
     }
     if let Some(var_4) = &input.image_file {
-        object
-            .key("ImageFile")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_4));
+        object.key("ImageFile").string_unchecked(&::aws_smithy_types::base64::encode(var_4));
     }
     Ok(())
 }

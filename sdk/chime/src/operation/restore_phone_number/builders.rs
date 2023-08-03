@@ -10,10 +10,7 @@ impl RestorePhoneNumberInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::restore_phone_number::RestorePhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_phone_number::RestorePhoneNumberError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_phone_number::RestorePhoneNumberError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.restore_phone_number();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RestorePhoneNumberFluentBuilder {
         }
     }
     /// Access the RestorePhoneNumber as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::restore_phone_number::builders::RestorePhoneNumberInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::restore_phone_number::builders::RestorePhoneNumberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl RestorePhoneNumberFluentBuilder {
             crate::operation::restore_phone_number::RestorePhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_phone_number::RestorePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_phone_number::RestorePhoneNumberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl RestorePhoneNumberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl RestorePhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_phone_number::RestorePhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_phone_number::RestorePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_phone_number::RestorePhoneNumberError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl RestorePhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_phone_number::RestorePhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_phone_number::RestorePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_phone_number::RestorePhoneNumberError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl RestorePhoneNumberFluentBuilder {
             crate::operation::restore_phone_number::RestorePhoneNumber,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_phone_number::RestorePhoneNumberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_phone_number::RestorePhoneNumberError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The phone number.</p>
-    pub fn phone_number_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.phone_number_id(input.into());
         self
     }
     /// <p>The phone number.</p>
-    pub fn set_phone_number_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number_id(input);
         self
     }

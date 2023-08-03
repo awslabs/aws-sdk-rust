@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`dataset_content_summaries(Option<Vec<DatasetContentSummary>>)`](crate::operation::list_dataset_contents::ListDatasetContentsOutput::dataset_content_summaries): <p>Summary information about dataset contents that have been created.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataset_contents::ListDatasetContentsOutput::next_token): <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListDatasetContentsError>`](crate::operation::list_dataset_contents::ListDatasetContentsError)
-    pub fn list_dataset_contents(
-        &self,
-    ) -> crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder {
-        crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_dataset_contents(&self) -> crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder {
+        crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder::new(self.handle.clone())
     }
 }

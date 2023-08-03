@@ -58,25 +58,20 @@ impl CreateLocationEfsInput {
     }
     /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p>
     /// <p>If you specify an access point using <code>AccessPointArn</code> or an IAM role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.</p>
-    pub fn in_transit_encryption(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EfsInTransitEncryption> {
+    pub fn in_transit_encryption(&self) -> ::std::option::Option<&crate::types::EfsInTransitEncryption> {
         self.in_transit_encryption.as_ref()
     }
 }
 impl CreateLocationEfsInput {
     /// Creates a new builder-style object to manufacture [`CreateLocationEfsInput`](crate::operation::create_location_efs::CreateLocationEfsInput).
-    pub fn builder(
-    ) -> crate::operation::create_location_efs::builders::CreateLocationEfsInputBuilder {
+    pub fn builder() -> crate::operation::create_location_efs::builders::CreateLocationEfsInputBuilder {
         crate::operation::create_location_efs::builders::CreateLocationEfsInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLocationEfsInput`](crate::operation::create_location_efs::CreateLocationEfsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLocationEfsInputBuilder {
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
     pub(crate) efs_filesystem_arn: ::std::option::Option<::std::string::String>,
@@ -108,18 +103,12 @@ impl CreateLocationEfsInputBuilder {
         &self.subdirectory
     }
     /// <p>Specifies the ARN for the Amazon EFS file system.</p>
-    pub fn efs_filesystem_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn efs_filesystem_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.efs_filesystem_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ARN for the Amazon EFS file system.</p>
-    pub fn set_efs_filesystem_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_efs_filesystem_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.efs_filesystem_arn = input;
         self
     }
@@ -153,10 +142,7 @@ impl CreateLocationEfsInputBuilder {
         self
     }
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
         self.tags = input;
         self
     }
@@ -165,18 +151,12 @@ impl CreateLocationEfsInputBuilder {
         &self.tags
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.</p>
-    pub fn access_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.</p>
-    pub fn set_access_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_point_arn = input;
         self
     }
@@ -185,18 +165,12 @@ impl CreateLocationEfsInputBuilder {
         &self.access_point_arn
     }
     /// <p>Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-    pub fn file_system_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-    pub fn set_file_system_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_access_role_arn = input;
         self
     }
@@ -212,37 +186,27 @@ impl CreateLocationEfsInputBuilder {
     }
     /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p>
     /// <p>If you specify an access point using <code>AccessPointArn</code> or an IAM role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.</p>
-    pub fn set_in_transit_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::EfsInTransitEncryption>,
-    ) -> Self {
+    pub fn set_in_transit_encryption(mut self, input: ::std::option::Option<crate::types::EfsInTransitEncryption>) -> Self {
         self.in_transit_encryption = input;
         self
     }
     /// <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p>
     /// <p>If you specify an access point using <code>AccessPointArn</code> or an IAM role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.</p>
-    pub fn get_in_transit_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::EfsInTransitEncryption> {
+    pub fn get_in_transit_encryption(&self) -> &::std::option::Option<crate::types::EfsInTransitEncryption> {
         &self.in_transit_encryption
     }
     /// Consumes the builder and constructs a [`CreateLocationEfsInput`](crate::operation::create_location_efs::CreateLocationEfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_location_efs::CreateLocationEfsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_location_efs::CreateLocationEfsInput {
-                subdirectory: self.subdirectory,
-                efs_filesystem_arn: self.efs_filesystem_arn,
-                ec2_config: self.ec2_config,
-                tags: self.tags,
-                access_point_arn: self.access_point_arn,
-                file_system_access_role_arn: self.file_system_access_role_arn,
-                in_transit_encryption: self.in_transit_encryption,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_location_efs::CreateLocationEfsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_location_efs::CreateLocationEfsInput {
+            subdirectory: self.subdirectory,
+            efs_filesystem_arn: self.efs_filesystem_arn,
+            ec2_config: self.ec2_config,
+            tags: self.tags,
+            access_point_arn: self.access_point_arn,
+            file_system_access_role_arn: self.file_system_access_role_arn,
+            in_transit_encryption: self.in_transit_encryption,
+        })
     }
 }

@@ -44,9 +44,7 @@ impl Session {
 
 /// A builder for [`Session`](crate::types::Session).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SessionBuilder {
     pub(crate) duration: ::std::option::Option<i32>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -83,18 +81,12 @@ impl SessionBuilder {
         &self.id
     }
     /// <p>The date and time when the session began.</p>
-    pub fn start_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time when the session began.</p>
-    pub fn set_start_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_timestamp = input;
         self
     }
@@ -103,18 +95,12 @@ impl SessionBuilder {
         &self.start_timestamp
     }
     /// <p>The date and time when the session ended.</p>
-    pub fn stop_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stop_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stop_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time when the session ended.</p>
-    pub fn set_stop_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stop_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stop_timestamp = input;
         self
     }

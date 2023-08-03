@@ -35,9 +35,7 @@ impl ListTrailsOutput {
 
 /// A builder for [`ListTrailsOutput`](crate::operation::list_trails::ListTrailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrailsOutputBuilder {
     pub(crate) trails: ::std::option::Option<::std::vec::Vec<crate::types::TrailInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListTrailsOutputBuilder {
         self
     }
     /// <p>Returns the name, ARN, and home Region of trails in the current account.</p>
-    pub fn set_trails(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TrailInfo>>,
-    ) -> Self {
+    pub fn set_trails(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrailInfo>>) -> Self {
         self.trails = input;
         self
     }

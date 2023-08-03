@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`families(Option<Vec<String>>)`](crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput::families): <p>The list of task definition family names that match the <code>ListTaskDefinitionFamilies</code> request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitionFamilies</code> request. When the results of a <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListTaskDefinitionFamiliesError>`](crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesError)
-    pub fn list_task_definition_families(&self) -> crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesFluentBuilder{
+    pub fn list_task_definition_families(
+        &self,
+    ) -> crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesFluentBuilder {
         crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesFluentBuilder::new(self.handle.clone())
     }
 }

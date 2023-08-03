@@ -83,9 +83,7 @@ impl AutomationRulesMetadata {
 
 /// A builder for [`AutomationRulesMetadata`](crate::types::AutomationRulesMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutomationRulesMetadataBuilder {
     pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) rule_status: ::std::option::Option<crate::types::RuleStatus>,
@@ -118,10 +116,7 @@ impl AutomationRulesMetadataBuilder {
         self
     }
     /// <p> Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html"> <code>BatchUpdateAutomationRules</code> </a>. </p>
-    pub fn set_rule_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleStatus>,
-    ) -> Self {
+    pub fn set_rule_status(mut self, input: ::std::option::Option<crate::types::RuleStatus>) -> Self {
         self.rule_status = input;
         self
     }
@@ -193,10 +188,7 @@ impl AutomationRulesMetadataBuilder {
     }
     /// <p> A timestamp that indicates when the rule was created. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -213,10 +205,7 @@ impl AutomationRulesMetadataBuilder {
     }
     /// <p> A timestamp that indicates when the rule was most recently updated. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

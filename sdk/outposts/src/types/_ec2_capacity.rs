@@ -37,9 +37,7 @@ impl Ec2Capacity {
 
 /// A builder for [`Ec2Capacity`](crate::types::Ec2Capacity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2CapacityBuilder {
     pub(crate) family: ::std::option::Option<::std::string::String>,
     pub(crate) max_size: ::std::option::Option<::std::string::String>,

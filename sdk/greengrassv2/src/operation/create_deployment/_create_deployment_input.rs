@@ -11,12 +11,7 @@ pub struct CreateDeploymentInput {
     pub deployment_name: ::std::option::Option<::std::string::String>,
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     #[doc(hidden)]
-    pub components: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentDeploymentSpecification,
-        >,
-    >,
+    pub components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>>,
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
     #[doc(hidden)]
     pub iot_job_configuration: ::std::option::Option<crate::types::DeploymentIoTJobConfiguration>,
@@ -28,9 +23,7 @@ pub struct CreateDeploymentInput {
     pub parent_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -47,18 +40,11 @@ impl CreateDeploymentInput {
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     pub fn components(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentDeploymentSpecification,
-        >,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>> {
         self.components.as_ref()
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    pub fn iot_job_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DeploymentIoTJobConfiguration> {
+    pub fn iot_job_configuration(&self) -> ::std::option::Option<&crate::types::DeploymentIoTJobConfiguration> {
         self.iot_job_configuration.as_ref()
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
@@ -70,11 +56,7 @@ impl CreateDeploymentInput {
         self.parent_target_arn.as_deref()
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
@@ -84,33 +66,22 @@ impl CreateDeploymentInput {
 }
 impl CreateDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
-    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
         crate::operation::create_deployment::builders::CreateDeploymentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDeploymentInputBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_name: ::std::option::Option<::std::string::String>,
-    pub(crate) components: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentDeploymentSpecification,
-        >,
-    >,
-    pub(crate) iot_job_configuration:
-        ::std::option::Option<crate::types::DeploymentIoTJobConfiguration>,
+    pub(crate) components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>>,
+    pub(crate) iot_job_configuration: ::std::option::Option<crate::types::DeploymentIoTJobConfiguration>,
     pub(crate) deployment_policies: ::std::option::Option<crate::types::DeploymentPolicies>,
     pub(crate) parent_target_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateDeploymentInputBuilder {
@@ -129,18 +100,12 @@ impl CreateDeploymentInputBuilder {
         &self.target_arn
     }
     /// <p>The name of the deployment.</p>
-    pub fn deployment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the deployment.</p>
-    pub fn set_deployment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_name = input;
         self
     }
@@ -153,11 +118,7 @@ impl CreateDeploymentInputBuilder {
     /// To override the contents of this collection use [`set_components`](Self::set_components).
     ///
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
-    pub fn components(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ComponentDeploymentSpecification,
-    ) -> Self {
+    pub fn components(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentDeploymentSpecification) -> Self {
         let mut hash_map = self.components.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.components = ::std::option::Option::Some(hash_map);
@@ -166,12 +127,7 @@ impl CreateDeploymentInputBuilder {
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     pub fn set_components(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::ComponentDeploymentSpecification,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>>,
     ) -> Self {
         self.components = input;
         self
@@ -179,34 +135,21 @@ impl CreateDeploymentInputBuilder {
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     pub fn get_components(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::ComponentDeploymentSpecification,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>> {
         &self.components
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    pub fn iot_job_configuration(
-        mut self,
-        input: crate::types::DeploymentIoTJobConfiguration,
-    ) -> Self {
+    pub fn iot_job_configuration(mut self, input: crate::types::DeploymentIoTJobConfiguration) -> Self {
         self.iot_job_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    pub fn set_iot_job_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentIoTJobConfiguration>,
-    ) -> Self {
+    pub fn set_iot_job_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentIoTJobConfiguration>) -> Self {
         self.iot_job_configuration = input;
         self
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    pub fn get_iot_job_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentIoTJobConfiguration> {
+    pub fn get_iot_job_configuration(&self) -> &::std::option::Option<crate::types::DeploymentIoTJobConfiguration> {
         &self.iot_job_configuration
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
@@ -215,32 +158,21 @@ impl CreateDeploymentInputBuilder {
         self
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
-    pub fn set_deployment_policies(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentPolicies>,
-    ) -> Self {
+    pub fn set_deployment_policies(mut self, input: ::std::option::Option<crate::types::DeploymentPolicies>) -> Self {
         self.deployment_policies = input;
         self
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
-    pub fn get_deployment_policies(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeploymentPolicies> {
+    pub fn get_deployment_policies(&self) -> &::std::option::Option<crate::types::DeploymentPolicies> {
         &self.deployment_policies
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    pub fn parent_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    pub fn set_parent_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_target_arn = input;
         self
     }
@@ -253,32 +185,19 @@ impl CreateDeploymentInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
@@ -298,10 +217,7 @@ impl CreateDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_deployment::CreateDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentInput {
             target_arn: self.target_arn,
             deployment_name: self.deployment_name,

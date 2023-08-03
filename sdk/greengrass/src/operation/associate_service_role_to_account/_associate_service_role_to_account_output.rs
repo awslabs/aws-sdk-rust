@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for AssociateServiceRoleToAccountOutput {
 }
 impl AssociateServiceRoleToAccountOutput {
     /// Creates a new builder-style object to manufacture [`AssociateServiceRoleToAccountOutput`](crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountOutput).
-    pub fn builder() -> crate::operation::associate_service_role_to_account::builders::AssociateServiceRoleToAccountOutputBuilder{
+    pub fn builder() -> crate::operation::associate_service_role_to_account::builders::AssociateServiceRoleToAccountOutputBuilder {
         crate::operation::associate_service_role_to_account::builders::AssociateServiceRoleToAccountOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateServiceRoleToAccountOutput`](crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateServiceRoleToAccountOutputBuilder {
     pub(crate) associated_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociateServiceRoleToAccountOutputBuilder {
     /// The time when the service role was associated with the account.
-    pub fn associated_at(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_at = ::std::option::Option::Some(input.into());
         self
     }
     /// The time when the service role was associated with the account.
-    pub fn set_associated_at(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_associated_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_at = input;
         self
     }
@@ -66,10 +58,7 @@ impl AssociateServiceRoleToAccountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateServiceRoleToAccountOutput`](crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountOutput
-    {
+    pub fn build(self) -> crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountOutput {
         crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountOutput {
             associated_at: self.associated_at,
             _request_id: self._request_id,

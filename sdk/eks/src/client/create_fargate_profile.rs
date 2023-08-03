@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateFargateProfileOutput`](crate::operation::create_fargate_profile::CreateFargateProfileOutput) with field(s):
     ///   - [`fargate_profile(Option<FargateProfile>)`](crate::operation::create_fargate_profile::CreateFargateProfileOutput::fargate_profile): <p>The full description of your new Fargate profile.</p>
     /// - On failure, responds with [`SdkError<CreateFargateProfileError>`](crate::operation::create_fargate_profile::CreateFargateProfileError)
-    pub fn create_fargate_profile(
-        &self,
-    ) -> crate::operation::create_fargate_profile::builders::CreateFargateProfileFluentBuilder {
-        crate::operation::create_fargate_profile::builders::CreateFargateProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_fargate_profile(&self) -> crate::operation::create_fargate_profile::builders::CreateFargateProfileFluentBuilder {
+        crate::operation::create_fargate_profile::builders::CreateFargateProfileFluentBuilder::new(self.handle.clone())
     }
 }

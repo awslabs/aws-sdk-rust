@@ -43,9 +43,7 @@ impl AssociateUserInput {
 
 /// A builder for [`AssociateUserInput`](crate::operation::associate_user::AssociateUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateUserInputBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -87,10 +85,7 @@ impl AssociateUserInputBuilder {
         self
     }
     /// <p>The identity provider of the user.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.identity_provider = input;
         self
     }
@@ -115,10 +110,7 @@ impl AssociateUserInputBuilder {
     /// Consumes the builder and constructs a [`AssociateUserInput`](crate::operation::associate_user::AssociateUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_user::AssociateUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::associate_user::AssociateUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_user::AssociateUserInput {
             username: self.username,
             instance_id: self.instance_id,

@@ -51,9 +51,7 @@ impl LambdaFunctionUtilizationMetric {
 
 /// A builder for [`LambdaFunctionUtilizationMetric`](crate::types::LambdaFunctionUtilizationMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaFunctionUtilizationMetricBuilder {
     pub(crate) name: ::std::option::Option<crate::types::LambdaFunctionMetricName>,
     pub(crate) statistic: ::std::option::Option<crate::types::LambdaFunctionMetricStatistic>,
@@ -76,10 +74,7 @@ impl LambdaFunctionUtilizationMetricBuilder {
     /// <li> <p> <code>Duration</code> - The amount of time that your function code spends processing an event.</p> </li>
     /// <li> <p> <code>Memory</code> - The amount of memory used per invocation.</p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaFunctionMetricName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::LambdaFunctionMetricName>) -> Self {
         self.name = input;
         self
     }
@@ -102,19 +97,14 @@ impl LambdaFunctionUtilizationMetricBuilder {
     /// <p>The statistic of the utilization metric.</p>
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
-    pub fn set_statistic(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaFunctionMetricStatistic>,
-    ) -> Self {
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::LambdaFunctionMetricStatistic>) -> Self {
         self.statistic = input;
         self
     }
     /// <p>The statistic of the utilization metric.</p>
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
-    pub fn get_statistic(
-        &self,
-    ) -> &::std::option::Option<crate::types::LambdaFunctionMetricStatistic> {
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::LambdaFunctionMetricStatistic> {
         &self.statistic
     }
     /// <p>The value of the utilization metric.</p>

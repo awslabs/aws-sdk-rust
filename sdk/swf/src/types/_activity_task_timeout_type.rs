@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ActivityTaskTimeoutType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ActivityTaskTimeoutType {
             "SCHEDULE_TO_CLOSE" => ActivityTaskTimeoutType::ScheduleToClose,
             "SCHEDULE_TO_START" => ActivityTaskTimeoutType::ScheduleToStart,
             "START_TO_CLOSE" => ActivityTaskTimeoutType::StartToClose,
-            other => ActivityTaskTimeoutType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ActivityTaskTimeoutType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ActivityTaskTimeoutType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "HEARTBEAT",
-            "SCHEDULE_TO_CLOSE",
-            "SCHEDULE_TO_START",
-            "START_TO_CLOSE",
-        ]
+        &["HEARTBEAT", "SCHEDULE_TO_CLOSE", "SCHEDULE_TO_START", "START_TO_CLOSE"]
     }
 }
 impl ::std::convert::AsRef<str> for ActivityTaskTimeoutType {

@@ -37,9 +37,7 @@ impl GetMethodInput {
 
 /// A builder for [`GetMethodInput`](crate::operation::get_method::GetMethodInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMethodInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
@@ -89,12 +87,7 @@ impl GetMethodInputBuilder {
         &self.http_method
     }
     /// Consumes the builder and constructs a [`GetMethodInput`](crate::operation::get_method::GetMethodInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_method::GetMethodInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_method::GetMethodInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_method::GetMethodInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

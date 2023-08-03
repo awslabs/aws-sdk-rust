@@ -23,9 +23,7 @@ impl PardotSourceProperties {
 
 /// A builder for [`PardotSourceProperties`](crate::types::PardotSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PardotSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl PardotSourcePropertiesBuilder {
     }
     /// Consumes the builder and constructs a [`PardotSourceProperties`](crate::types::PardotSourceProperties).
     pub fn build(self) -> crate::types::PardotSourceProperties {
-        crate::types::PardotSourceProperties {
-            object: self.object,
-        }
+        crate::types::PardotSourceProperties { object: self.object }
     }
 }

@@ -10,10 +10,7 @@ impl AuthorizeIpRulesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::authorize_ip_rules::AuthorizeIpRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_ip_rules::AuthorizeIpRulesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_ip_rules::AuthorizeIpRulesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.authorize_ip_rules();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl AuthorizeIpRulesFluentBuilder {
         }
     }
     /// Access the AuthorizeIpRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl AuthorizeIpRulesFluentBuilder {
             crate::operation::authorize_ip_rules::AuthorizeIpRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_ip_rules::AuthorizeIpRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_ip_rules::AuthorizeIpRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl AuthorizeIpRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl AuthorizeIpRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_ip_rules::AuthorizeIpRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_ip_rules::AuthorizeIpRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_ip_rules::AuthorizeIpRulesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl AuthorizeIpRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_ip_rules::AuthorizeIpRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_ip_rules::AuthorizeIpRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_ip_rules::AuthorizeIpRulesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl AuthorizeIpRulesFluentBuilder {
             crate::operation::authorize_ip_rules::AuthorizeIpRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::authorize_ip_rules::AuthorizeIpRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::authorize_ip_rules::AuthorizeIpRulesError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +131,12 @@ impl AuthorizeIpRulesFluentBuilder {
         self
     }
     /// <p>The rules to add to the group.</p>
-    pub fn set_user_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>,
-    ) -> Self {
+    pub fn set_user_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>) -> Self {
         self.inner = self.inner.set_user_rules(input);
         self
     }
     /// <p>The rules to add to the group.</p>
-    pub fn get_user_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
+    pub fn get_user_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
         self.inner.get_user_rules()
     }
 }

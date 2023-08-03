@@ -38,13 +38,7 @@
 /// COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MsSmoothAudioDeduplication {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for MsSmoothAudioDeduplication {
         match s {
             "COMBINE_DUPLICATE_STREAMS" => MsSmoothAudioDeduplication::CombineDuplicateStreams,
             "NONE" => MsSmoothAudioDeduplication::None,
-            other => MsSmoothAudioDeduplication::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MsSmoothAudioDeduplication::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

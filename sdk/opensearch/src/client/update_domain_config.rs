@@ -26,11 +26,7 @@ impl super::Client {
     ///   - [`dry_run_results(Option<DryRunResults>)`](crate::operation::update_domain_config::UpdateDomainConfigOutput::dry_run_results): <p>Results of the dry run performed in the update domain request.</p>
     ///   - [`dry_run_progress_status(Option<DryRunProgressStatus>)`](crate::operation::update_domain_config::UpdateDomainConfigOutput::dry_run_progress_status): <p>The status of the dry run being performed on the domain, if any.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainConfigError>`](crate::operation::update_domain_config::UpdateDomainConfigError)
-    pub fn update_domain_config(
-        &self,
-    ) -> crate::operation::update_domain_config::builders::UpdateDomainConfigFluentBuilder {
-        crate::operation::update_domain_config::builders::UpdateDomainConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_domain_config(&self) -> crate::operation::update_domain_config::builders::UpdateDomainConfigFluentBuilder {
+        crate::operation::update_domain_config::builders::UpdateDomainConfigFluentBuilder::new(self.handle.clone())
     }
 }

@@ -42,9 +42,7 @@ impl CreateFlowLogsOutput {
 
 /// A builder for [`CreateFlowLogsOutput`](crate::operation::create_flow_logs::CreateFlowLogsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFlowLogsOutputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) flow_log_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -78,17 +76,12 @@ impl CreateFlowLogsOutputBuilder {
         self
     }
     /// <p>The IDs of the flow logs.</p>
-    pub fn set_flow_log_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_flow_log_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.flow_log_ids = input;
         self
     }
     /// <p>The IDs of the flow logs.</p>
-    pub fn get_flow_log_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_flow_log_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.flow_log_ids
     }
     /// Appends an item to `unsuccessful`.
@@ -103,17 +96,12 @@ impl CreateFlowLogsOutputBuilder {
         self
     }
     /// <p>Information about the flow logs that could not be created successfully.</p>
-    pub fn set_unsuccessful(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
-    ) -> Self {
+    pub fn set_unsuccessful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>) -> Self {
         self.unsuccessful = input;
         self
     }
     /// <p>Information about the flow logs that could not be created successfully.</p>
-    pub fn get_unsuccessful(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>> {
+    pub fn get_unsuccessful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>> {
         &self.unsuccessful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

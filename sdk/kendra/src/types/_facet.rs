@@ -43,9 +43,7 @@ impl Facet {
 
 /// A builder for [`Facet`](crate::types::Facet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FacetBuilder {
     pub(crate) document_attribute_key: ::std::option::Option<::std::string::String>,
     pub(crate) facets: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>,
@@ -53,18 +51,12 @@ pub struct FacetBuilder {
 }
 impl FacetBuilder {
     /// <p>The unique key for the document attribute.</p>
-    pub fn document_attribute_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_attribute_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_attribute_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique key for the document attribute.</p>
-    pub fn set_document_attribute_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_attribute_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_attribute_key = input;
         self
     }
@@ -88,10 +80,7 @@ impl FacetBuilder {
     /// <p>An array of document attributes that are nested facets within a facet.</p>
     /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. This helps your users further narrow their search.</p>
     /// <p>You can only have one nested facet within a facet. If you want to increase this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
-    pub fn set_facets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>,
-    ) -> Self {
+    pub fn set_facets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>) -> Self {
         self.facets = input;
         self
     }

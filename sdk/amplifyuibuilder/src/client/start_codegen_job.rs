@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StartCodegenJobOutput`](crate::operation::start_codegen_job::StartCodegenJobOutput) with field(s):
     ///   - [`entity(Option<CodegenJob>)`](crate::operation::start_codegen_job::StartCodegenJobOutput::entity): <p>The code generation job for a UI component that is associated with an Amplify app.</p>
     /// - On failure, responds with [`SdkError<StartCodegenJobError>`](crate::operation::start_codegen_job::StartCodegenJobError)
-    pub fn start_codegen_job(
-        &self,
-    ) -> crate::operation::start_codegen_job::builders::StartCodegenJobFluentBuilder {
-        crate::operation::start_codegen_job::builders::StartCodegenJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_codegen_job(&self) -> crate::operation::start_codegen_job::builders::StartCodegenJobFluentBuilder {
+        crate::operation::start_codegen_job::builders::StartCodegenJobFluentBuilder::new(self.handle.clone())
     }
 }

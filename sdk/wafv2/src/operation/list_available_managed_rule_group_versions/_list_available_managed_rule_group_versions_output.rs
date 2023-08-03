@@ -35,20 +35,17 @@ impl ::aws_http::request_id::RequestId for ListAvailableManagedRuleGroupVersions
 }
 impl ListAvailableManagedRuleGroupVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailableManagedRuleGroupVersionsOutput`](crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput).
-    pub fn builder() -> crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsOutputBuilder {
         crate::operation::list_available_managed_rule_group_versions::builders::ListAvailableManagedRuleGroupVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAvailableManagedRuleGroupVersionsOutput`](crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupVersionsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupVersion>>,
+    pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupVersion>>,
     pub(crate) current_default_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -79,32 +76,21 @@ impl ListAvailableManagedRuleGroupVersionsOutputBuilder {
         self
     }
     /// <p>The versions that are currently available for the specified managed rule group. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupVersion>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupVersion>>) -> Self {
         self.versions = input;
         self
     }
     /// <p>The versions that are currently available for the specified managed rule group. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn get_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupVersion>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupVersion>> {
         &self.versions
     }
     /// <p>The name of the version that's currently set as the default. </p>
-    pub fn current_default_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_default_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_default_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the version that's currently set as the default. </p>
-    pub fn set_current_default_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_default_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_default_version = input;
         self
     }
@@ -122,14 +108,11 @@ impl ListAvailableManagedRuleGroupVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAvailableManagedRuleGroupVersionsOutput`](crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput).
-    pub fn build(self) -> crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput{
+    pub fn build(self) -> crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput {
         crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsOutput {
-            next_marker: self.next_marker
-            ,
-            versions: self.versions
-            ,
-            current_default_version: self.current_default_version
-            ,
+            next_marker: self.next_marker,
+            versions: self.versions,
+            current_default_version: self.current_default_version,
             _request_id: self._request_id,
         }
     }

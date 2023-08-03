@@ -19,9 +19,7 @@ impl RevokeTokenOutput {
 
 /// A builder for [`RevokeTokenOutput`](crate::operation::revoke_token::RevokeTokenOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeTokenOutputBuilder {
     _request_id: Option<String>,
 }

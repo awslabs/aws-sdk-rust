@@ -29,18 +29,14 @@ impl GetExtensionVersionInput {
 }
 impl GetExtensionVersionInput {
     /// Creates a new builder-style object to manufacture [`GetExtensionVersionInput`](crate::operation::get_extension_version::GetExtensionVersionInput).
-    pub fn builder(
-    ) -> crate::operation::get_extension_version::builders::GetExtensionVersionInputBuilder {
-        crate::operation::get_extension_version::builders::GetExtensionVersionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_extension_version::builders::GetExtensionVersionInputBuilder {
+        crate::operation::get_extension_version::builders::GetExtensionVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetExtensionVersionInput`](crate::operation::get_extension_version::GetExtensionVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExtensionVersionInputBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -76,18 +72,12 @@ impl GetExtensionVersionInputBuilder {
         &self.name
     }
     /// <p>The version of the extension.</p>
-    pub fn extension_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extension_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extension_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the extension.</p>
-    pub fn set_extension_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extension_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extension_version = input;
         self
     }
@@ -98,16 +88,12 @@ impl GetExtensionVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetExtensionVersionInput`](crate::operation::get_extension_version::GetExtensionVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_extension_version::GetExtensionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_extension_version::GetExtensionVersionInput {
-                namespace: self.namespace,
-                name: self.name,
-                extension_version: self.extension_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_extension_version::GetExtensionVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_extension_version::GetExtensionVersionInput {
+            namespace: self.namespace,
+            name: self.name,
+            extension_version: self.extension_version,
+        })
     }
 }

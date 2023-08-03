@@ -29,16 +29,14 @@ impl AssociateEnclaveCertificateIamRoleInput {
 }
 impl AssociateEnclaveCertificateIamRoleInput {
     /// Creates a new builder-style object to manufacture [`AssociateEnclaveCertificateIamRoleInput`](crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleInput).
-    pub fn builder() -> crate::operation::associate_enclave_certificate_iam_role::builders::AssociateEnclaveCertificateIamRoleInputBuilder{
+    pub fn builder() -> crate::operation::associate_enclave_certificate_iam_role::builders::AssociateEnclaveCertificateIamRoleInputBuilder {
         crate::operation::associate_enclave_certificate_iam_role::builders::AssociateEnclaveCertificateIamRoleInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateEnclaveCertificateIamRoleInput`](crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateEnclaveCertificateIamRoleInputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct AssociateEnclaveCertificateIamRoleInputBuilder {
 }
 impl AssociateEnclaveCertificateIamRoleInputBuilder {
     /// <p>The ARN of the ACM certificate with which to associate the IAM role.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the ACM certificate with which to associate the IAM role.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -94,16 +86,18 @@ impl AssociateEnclaveCertificateIamRoleInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`AssociateEnclaveCertificateIamRoleInput`](crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleInput {
-                certificate_arn: self.certificate_arn
-                ,
-                role_arn: self.role_arn
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                certificate_arn: self.certificate_arn,
+                role_arn: self.role_arn,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

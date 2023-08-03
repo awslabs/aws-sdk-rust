@@ -51,9 +51,7 @@ impl VirtualRouterData {
 
 /// A builder for [`VirtualRouterData`](crate::types::VirtualRouterData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualRouterDataBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) virtual_router_name: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl VirtualRouterDataBuilder {
         &self.mesh_name
     }
     /// <p>The name of the virtual router.</p>
-    pub fn virtual_router_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual router.</p>
-    pub fn set_virtual_router_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_router_name = input;
         self
     }
@@ -102,10 +94,7 @@ impl VirtualRouterDataBuilder {
         self
     }
     /// <p>The specifications of the virtual router.</p>
-    pub fn set_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualRouterSpec>,
-    ) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::VirtualRouterSpec>) -> Self {
         self.spec = input;
         self
     }
@@ -119,10 +108,7 @@ impl VirtualRouterDataBuilder {
         self
     }
     /// <p>The associated metadata for the virtual router.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ResourceMetadata>) -> Self {
         self.metadata = input;
         self
     }
@@ -136,10 +122,7 @@ impl VirtualRouterDataBuilder {
         self
     }
     /// <p>The current status of the virtual router.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualRouterStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VirtualRouterStatus>) -> Self {
         self.status = input;
         self
     }

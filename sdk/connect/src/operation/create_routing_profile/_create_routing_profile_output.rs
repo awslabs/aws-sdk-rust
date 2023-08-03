@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateRoutingProfileOutput {
 }
 impl CreateRoutingProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateRoutingProfileOutput`](crate::operation::create_routing_profile::CreateRoutingProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::create_routing_profile::builders::CreateRoutingProfileOutputBuilder {
+    pub fn builder() -> crate::operation::create_routing_profile::builders::CreateRoutingProfileOutputBuilder {
         crate::operation::create_routing_profile::builders::CreateRoutingProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRoutingProfileOutput`](crate::operation::create_routing_profile::CreateRoutingProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRoutingProfileOutputBuilder {
     pub(crate) routing_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +43,12 @@ pub struct CreateRoutingProfileOutputBuilder {
 }
 impl CreateRoutingProfileOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-    pub fn routing_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-    pub fn set_routing_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_profile_arn = input;
         self
     }
@@ -66,18 +57,12 @@ impl CreateRoutingProfileOutputBuilder {
         &self.routing_profile_arn
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_profile_id = input;
         self
     }

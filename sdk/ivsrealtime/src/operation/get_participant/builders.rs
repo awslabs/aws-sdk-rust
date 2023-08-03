@@ -10,10 +10,7 @@ impl GetParticipantInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_participant::GetParticipantOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_participant::GetParticipantError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_participant::GetParticipantError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_participant();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetParticipantFluentBuilder {
         }
     }
     /// Access the GetParticipant as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_participant::builders::GetParticipantInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_participant::builders::GetParticipantInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetParticipantFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -143,18 +135,12 @@ impl GetParticipantFluentBuilder {
         self.inner.get_session_id()
     }
     /// <p>Unique identifier for the participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
-    pub fn participant_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.participant_id(input.into());
         self
     }
     /// <p>Unique identifier for the participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
-    pub fn set_participant_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_participant_id(input);
         self
     }

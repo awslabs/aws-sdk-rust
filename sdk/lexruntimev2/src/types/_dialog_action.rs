@@ -68,9 +68,7 @@ impl DialogAction {
 
 /// A builder for [`DialogAction`](crate::types::DialogAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DialogActionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DialogActionType>,
     pub(crate) slot_to_elicit: ::std::option::Option<::std::string::String>,
@@ -98,10 +96,7 @@ impl DialogActionBuilder {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogActionType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DialogActionType>) -> Self {
         self.r#type = input;
         self
     }
@@ -117,18 +112,12 @@ impl DialogActionBuilder {
         &self.r#type
     }
     /// <p>The name of the slot that should be elicited from the user.</p>
-    pub fn slot_to_elicit(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn slot_to_elicit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_to_elicit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the slot that should be elicited from the user.</p>
-    pub fn set_slot_to_elicit(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_slot_to_elicit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_to_elicit = input;
         self
     }
@@ -152,10 +141,7 @@ impl DialogActionBuilder {
     /// <li> <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
-    pub fn set_slot_elicitation_style(
-        mut self,
-        input: ::std::option::Option<crate::types::StyleType>,
-    ) -> Self {
+    pub fn set_slot_elicitation_style(mut self, input: ::std::option::Option<crate::types::StyleType>) -> Self {
         self.slot_elicitation_style = input;
         self
     }
@@ -174,10 +160,7 @@ impl DialogActionBuilder {
         self
     }
     /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
-    pub fn set_sub_slot_to_elicit(
-        mut self,
-        input: ::std::option::Option<crate::types::ElicitSubSlot>,
-    ) -> Self {
+    pub fn set_sub_slot_to_elicit(mut self, input: ::std::option::Option<crate::types::ElicitSubSlot>) -> Self {
         self.sub_slot_to_elicit = input;
         self
     }

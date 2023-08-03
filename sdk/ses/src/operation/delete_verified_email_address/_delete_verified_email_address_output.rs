@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVerifiedEmailAddressOutput {
 }
 impl DeleteVerifiedEmailAddressOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVerifiedEmailAddressOutput`](crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput).
-    pub fn builder() -> crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressOutputBuilder{
+    pub fn builder() -> crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressOutputBuilder {
         crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVerifiedEmailAddressOutput`](crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVerifiedEmailAddressOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteVerifiedEmailAddressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVerifiedEmailAddressOutput`](crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput {
+    pub fn build(self) -> crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput {
         crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput {
             _request_id: self._request_id,
         }

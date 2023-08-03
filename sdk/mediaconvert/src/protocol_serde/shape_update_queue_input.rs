@@ -9,10 +9,7 @@ pub fn ser_update_queue_input(
     if let Some(var_2) = &input.reservation_plan_settings {
         #[allow(unused_mut)]
         let mut object_3 = object.key("reservationPlanSettings").start_object();
-        crate::protocol_serde::shape_reservation_plan_settings::ser_reservation_plan_settings(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_reservation_plan_settings::ser_reservation_plan_settings(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.status {

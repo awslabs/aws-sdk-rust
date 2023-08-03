@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`workforce_name(impl ::std::convert::Into<String>)`](crate::operation::delete_workforce::builders::DeleteWorkforceFluentBuilder::workforce_name) / [`set_workforce_name(Option<String>)`](crate::operation::delete_workforce::builders::DeleteWorkforceFluentBuilder::set_workforce_name): <p>The name of the workforce.</p>
     /// - On success, responds with [`DeleteWorkforceOutput`](crate::operation::delete_workforce::DeleteWorkforceOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkforceError>`](crate::operation::delete_workforce::DeleteWorkforceError)
-    pub fn delete_workforce(
-        &self,
-    ) -> crate::operation::delete_workforce::builders::DeleteWorkforceFluentBuilder {
-        crate::operation::delete_workforce::builders::DeleteWorkforceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_workforce(&self) -> crate::operation::delete_workforce::builders::DeleteWorkforceFluentBuilder {
+        crate::operation::delete_workforce::builders::DeleteWorkforceFluentBuilder::new(self.handle.clone())
     }
 }

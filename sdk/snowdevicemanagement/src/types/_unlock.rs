@@ -13,9 +13,7 @@ impl Unlock {
 
 /// A builder for [`Unlock`](crate::types::Unlock).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnlockBuilder {}
 impl UnlockBuilder {
     /// Consumes the builder and constructs a [`Unlock`](crate::types::Unlock).

@@ -15,7 +15,9 @@ impl super::Client {
     ///   - [`metadata(Option<DocumentMetadata>)`](crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput::metadata): <p>The document metadata.</p>
     ///   - [`upload_metadata(Option<UploadMetadata>)`](crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput::upload_metadata): <p>The upload metadata.</p>
     /// - On failure, responds with [`SdkError<InitiateDocumentVersionUploadError>`](crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError)
-    pub fn initiate_document_version_upload(&self) -> crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadFluentBuilder{
+    pub fn initiate_document_version_upload(
+        &self,
+    ) -> crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadFluentBuilder {
         crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadFluentBuilder::new(self.handle.clone())
     }
 }

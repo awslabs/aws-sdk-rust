@@ -31,16 +31,14 @@ impl DescribeStandardsControlsInput {
 }
 impl DescribeStandardsControlsInput {
     /// Creates a new builder-style object to manufacture [`DescribeStandardsControlsInput`](crate::operation::describe_standards_controls::DescribeStandardsControlsInput).
-    pub fn builder() -> crate::operation::describe_standards_controls::builders::DescribeStandardsControlsInputBuilder{
+    pub fn builder() -> crate::operation::describe_standards_controls::builders::DescribeStandardsControlsInputBuilder {
         crate::operation::describe_standards_controls::builders::DescribeStandardsControlsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStandardsControlsInput`](crate::operation::describe_standards_controls::DescribeStandardsControlsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStandardsControlsInputBuilder {
     pub(crate) standards_subscription_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -48,18 +46,12 @@ pub struct DescribeStandardsControlsInputBuilder {
 }
 impl DescribeStandardsControlsInputBuilder {
     /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
-    pub fn standards_subscription_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standards_subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_subscription_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
-    pub fn set_standards_subscription_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standards_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standards_subscription_arn = input;
         self
     }
@@ -105,12 +97,10 @@ impl DescribeStandardsControlsInputBuilder {
         crate::operation::describe_standards_controls::DescribeStandardsControlsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_standards_controls::DescribeStandardsControlsInput {
-                standards_subscription_arn: self.standards_subscription_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_standards_controls::DescribeStandardsControlsInput {
+            standards_subscription_arn: self.standards_subscription_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl CreateObjectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_object::CreateObjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_object::CreateObjectError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_object::CreateObjectError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_object();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl CreateObjectFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_object::CreateObject,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_object::CreateObject, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_object::CreateObjectError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl CreateObjectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl CreateObjectFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_object::CreateObject,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_object::CreateObject, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_object::CreateObjectError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -142,17 +124,12 @@ impl CreateObjectFluentBuilder {
         self
     }
     /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
-    pub fn set_schema_facets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
-    ) -> Self {
+    pub fn set_schema_facets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>) -> Self {
         self.inner = self.inner.set_schema_facets(input);
         self
     }
     /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
-    pub fn get_schema_facets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>> {
+    pub fn get_schema_facets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>> {
         self.inner.get_schema_facets()
     }
     /// Appends an item to `ObjectAttributeList`.
@@ -165,17 +142,12 @@ impl CreateObjectFluentBuilder {
         self
     }
     /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
-    pub fn set_object_attribute_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
-    ) -> Self {
+    pub fn set_object_attribute_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
         self.inner = self.inner.set_object_attribute_list(input);
         self
     }
     /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
-    pub fn get_object_attribute_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+    pub fn get_object_attribute_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
         self.inner.get_object_attribute_list()
     }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
@@ -184,10 +156,7 @@ impl CreateObjectFluentBuilder {
         self
     }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
-    pub fn set_parent_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_parent_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_parent_reference(input);
         self
     }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDefaultMailDomainOutput {
 }
 impl UpdateDefaultMailDomainOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDefaultMailDomainOutput`](crate::operation::update_default_mail_domain::UpdateDefaultMailDomainOutput).
-    pub fn builder(
-    ) -> crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainOutputBuilder {
         crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDefaultMailDomainOutput`](crate::operation::update_default_mail_domain::UpdateDefaultMailDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDefaultMailDomainOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateDefaultMailDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateDefaultMailDomainOutput`](crate::operation::update_default_mail_domain::UpdateDefaultMailDomainOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_default_mail_domain::UpdateDefaultMailDomainOutput {
+    pub fn build(self) -> crate::operation::update_default_mail_domain::UpdateDefaultMailDomainOutput {
         crate::operation::update_default_mail_domain::UpdateDefaultMailDomainOutput {
             _request_id: self._request_id,
         }

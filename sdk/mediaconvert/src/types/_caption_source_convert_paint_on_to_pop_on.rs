@@ -38,13 +38,7 @@
 /// Choose the presentation style of your input SCC captions. To use the same presentation style as your input: Keep the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend that you choose Enabled if you notice additional repeated lines in your output captions.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CaptionSourceConvertPaintOnToPopOn {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for CaptionSourceConvertPaintOnToPopOn {
         match s {
             "DISABLED" => CaptionSourceConvertPaintOnToPopOn::Disabled,
             "ENABLED" => CaptionSourceConvertPaintOnToPopOn::Enabled,
-            other => CaptionSourceConvertPaintOnToPopOn::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => CaptionSourceConvertPaintOnToPopOn::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

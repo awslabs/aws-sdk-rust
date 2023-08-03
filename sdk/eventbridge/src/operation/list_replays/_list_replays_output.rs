@@ -35,9 +35,7 @@ impl ListReplaysOutput {
 
 /// A builder for [`ListReplaysOutput`](crate::operation::list_replays::ListReplaysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReplaysOutputBuilder {
     pub(crate) replays: ::std::option::Option<::std::vec::Vec<crate::types::Replay>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListReplaysOutputBuilder {
         self
     }
     /// <p>An array of <code>Replay</code> objects that contain information about the replay.</p>
-    pub fn set_replays(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Replay>>,
-    ) -> Self {
+    pub fn set_replays(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Replay>>) -> Self {
         self.replays = input;
         self
     }

@@ -10,10 +10,7 @@ impl DeleteIngestionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_ingestion::DeleteIngestionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ingestion::DeleteIngestionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ingestion::DeleteIngestionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_ingestion();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteIngestionFluentBuilder {
         }
     }
     /// Access the DeleteIngestion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_ingestion::builders::DeleteIngestionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_ingestion::builders::DeleteIngestionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteIngestionFluentBuilder {
             crate::operation::delete_ingestion::DeleteIngestion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ingestion::DeleteIngestionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ingestion::DeleteIngestionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteIngestionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteIngestionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_ingestion::DeleteIngestionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ingestion::DeleteIngestionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ingestion::DeleteIngestionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteIngestionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_ingestion::DeleteIngestionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ingestion::DeleteIngestionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ingestion::DeleteIngestionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteIngestionFluentBuilder {
             crate::operation::delete_ingestion::DeleteIngestion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_ingestion::DeleteIngestionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_ingestion::DeleteIngestionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_bundle_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn set_app_bundle_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }
@@ -143,18 +121,12 @@ impl DeleteIngestionFluentBuilder {
         self.inner.get_app_bundle_identifier()
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    pub fn ingestion_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ingestion_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ingestion_identifier(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    pub fn set_ingestion_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ingestion_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ingestion_identifier(input);
         self
     }

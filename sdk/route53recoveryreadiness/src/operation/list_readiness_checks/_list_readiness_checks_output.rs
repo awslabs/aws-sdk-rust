@@ -8,8 +8,7 @@ pub struct ListReadinessChecksOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of readiness checks associated with the account.</p>
     #[doc(hidden)]
-    pub readiness_checks:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckOutput>>,
+    pub readiness_checks: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckOutput>>,
     _request_id: Option<String>,
 }
 impl ListReadinessChecksOutput {
@@ -29,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListReadinessChecksOutput {
 }
 impl ListReadinessChecksOutput {
     /// Creates a new builder-style object to manufacture [`ListReadinessChecksOutput`](crate::operation::list_readiness_checks::ListReadinessChecksOutput).
-    pub fn builder(
-    ) -> crate::operation::list_readiness_checks::builders::ListReadinessChecksOutputBuilder {
-        crate::operation::list_readiness_checks::builders::ListReadinessChecksOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_readiness_checks::builders::ListReadinessChecksOutputBuilder {
+        crate::operation::list_readiness_checks::builders::ListReadinessChecksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReadinessChecksOutput`](crate::operation::list_readiness_checks::ListReadinessChecksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReadinessChecksOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) readiness_checks:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckOutput>>,
+    pub(crate) readiness_checks: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckOutput>>,
     _request_id: Option<String>,
 }
 impl ListReadinessChecksOutputBuilder {
@@ -74,17 +68,12 @@ impl ListReadinessChecksOutputBuilder {
         self
     }
     /// <p>A list of readiness checks associated with the account.</p>
-    pub fn set_readiness_checks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckOutput>>,
-    ) -> Self {
+    pub fn set_readiness_checks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckOutput>>) -> Self {
         self.readiness_checks = input;
         self
     }
     /// <p>A list of readiness checks associated with the account.</p>
-    pub fn get_readiness_checks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckOutput>> {
+    pub fn get_readiness_checks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckOutput>> {
         &self.readiness_checks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

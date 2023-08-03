@@ -22,36 +22,26 @@ impl GetLaunchConfigurationInput {
 }
 impl GetLaunchConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetLaunchConfigurationInput`](crate::operation::get_launch_configuration::GetLaunchConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_launch_configuration::builders::GetLaunchConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_launch_configuration::builders::GetLaunchConfigurationInputBuilder {
         crate::operation::get_launch_configuration::builders::GetLaunchConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLaunchConfigurationInput`](crate::operation::get_launch_configuration::GetLaunchConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLaunchConfigurationInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLaunchConfigurationInputBuilder {
     /// <p>Request to get Launch Configuration information by Source Server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Request to get Launch Configuration information by Source Server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -76,15 +66,11 @@ impl GetLaunchConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetLaunchConfigurationInput`](crate::operation::get_launch_configuration::GetLaunchConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_launch_configuration::GetLaunchConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_launch_configuration::GetLaunchConfigurationInput {
-                source_server_id: self.source_server_id,
-                account_id: self.account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_launch_configuration::GetLaunchConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_launch_configuration::GetLaunchConfigurationInput {
+            source_server_id: self.source_server_id,
+            account_id: self.account_id,
+        })
     }
 }

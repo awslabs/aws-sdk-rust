@@ -31,27 +31,19 @@ impl SecurityGroupRuleDescription {
 
 /// A builder for [`SecurityGroupRuleDescription`](crate::types::SecurityGroupRuleDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityGroupRuleDescriptionBuilder {
     pub(crate) security_group_rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupRuleDescriptionBuilder {
     /// <p>The ID of the security group rule.</p>
-    pub fn security_group_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_group_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the security group rule.</p>
-    pub fn set_security_group_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_group_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_group_rule_id = input;
         self
     }

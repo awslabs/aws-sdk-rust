@@ -37,9 +37,7 @@ impl DestinationOptionsResponse {
 
 /// A builder for [`DestinationOptionsResponse`](crate::types::DestinationOptionsResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DestinationOptionsResponseBuilder {
     pub(crate) file_format: ::std::option::Option<crate::types::DestinationFileFormat>,
     pub(crate) hive_compatible_partitions: ::std::option::Option<bool>,
@@ -52,10 +50,7 @@ impl DestinationOptionsResponseBuilder {
         self
     }
     /// <p>The format for the flow log.</p>
-    pub fn set_file_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationFileFormat>,
-    ) -> Self {
+    pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::DestinationFileFormat>) -> Self {
         self.file_format = input;
         self
     }

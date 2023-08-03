@@ -102,10 +102,7 @@ impl FsxProtocolSmbBuilder {
         self
     }
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
-    pub fn set_mount_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SmbMountOptions>,
-    ) -> Self {
+    pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::SmbMountOptions>) -> Self {
         self.mount_options = input;
         self
     }

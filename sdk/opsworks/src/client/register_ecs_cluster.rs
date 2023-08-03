@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterEcsClusterOutput`](crate::operation::register_ecs_cluster::RegisterEcsClusterOutput) with field(s):
     ///   - [`ecs_cluster_arn(Option<String>)`](crate::operation::register_ecs_cluster::RegisterEcsClusterOutput::ecs_cluster_arn): <p>The cluster's ARN.</p>
     /// - On failure, responds with [`SdkError<RegisterEcsClusterError>`](crate::operation::register_ecs_cluster::RegisterEcsClusterError)
-    pub fn register_ecs_cluster(
-        &self,
-    ) -> crate::operation::register_ecs_cluster::builders::RegisterEcsClusterFluentBuilder {
-        crate::operation::register_ecs_cluster::builders::RegisterEcsClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_ecs_cluster(&self) -> crate::operation::register_ecs_cluster::builders::RegisterEcsClusterFluentBuilder {
+        crate::operation::register_ecs_cluster::builders::RegisterEcsClusterFluentBuilder::new(self.handle.clone())
     }
 }

@@ -52,9 +52,7 @@ impl ListNetworksInput {
 
 /// A builder for [`ListNetworksInput`](crate::operation::list_networks::ListNetworksInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNetworksInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) framework: ::std::option::Option<crate::types::Framework>,
@@ -137,12 +135,7 @@ impl ListNetworksInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListNetworksInput`](crate::operation::list_networks::ListNetworksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_networks::ListNetworksInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_networks::ListNetworksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_networks::ListNetworksInput {
             name: self.name,
             framework: self.framework,

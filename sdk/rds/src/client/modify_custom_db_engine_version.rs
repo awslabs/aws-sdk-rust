@@ -40,7 +40,9 @@ impl super::Client {
     ///   - [`supports_certificate_rotation_without_restart(Option<bool>)`](crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionOutput::supports_certificate_rotation_without_restart): <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     ///   - [`supported_ca_certificate_identifiers(Option<Vec<String>>)`](crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionOutput::supported_ca_certificate_identifiers): <p>A list of the supported CA certificate identifiers.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<ModifyCustomDBEngineVersionError>`](crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngineVersionError)
-    pub fn modify_custom_db_engine_version(&self) -> crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDBEngineVersionFluentBuilder{
+    pub fn modify_custom_db_engine_version(
+        &self,
+    ) -> crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDBEngineVersionFluentBuilder {
         crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDBEngineVersionFluentBuilder::new(self.handle.clone())
     }
 }

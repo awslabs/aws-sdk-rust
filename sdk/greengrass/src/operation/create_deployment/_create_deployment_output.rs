@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateDeploymentOutput {
 }
 impl CreateDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentOutput`](crate::operation::create_deployment::CreateDeploymentOutput).
-    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder {
         crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDeploymentOutput`](crate::operation::create_deployment::CreateDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDeploymentOutputBuilder {
     pub(crate) deployment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +43,12 @@ pub struct CreateDeploymentOutputBuilder {
 }
 impl CreateDeploymentOutputBuilder {
     /// The ARN of the deployment.
-    pub fn deployment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the deployment.
-    pub fn set_deployment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_arn = input;
         self
     }
@@ -66,18 +57,12 @@ impl CreateDeploymentOutputBuilder {
         &self.deployment_arn
     }
     /// The ID of the deployment.
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the deployment.
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }

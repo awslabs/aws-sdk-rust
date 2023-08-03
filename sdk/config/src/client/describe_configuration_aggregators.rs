@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`configuration_aggregators(Option<Vec<ConfigurationAggregator>>)`](crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsOutput::configuration_aggregators): <p>Returns a ConfigurationAggregators object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationAggregatorsError>`](crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsError)
-    pub fn describe_configuration_aggregators(&self) -> crate::operation::describe_configuration_aggregators::builders::DescribeConfigurationAggregatorsFluentBuilder{
+    pub fn describe_configuration_aggregators(
+        &self,
+    ) -> crate::operation::describe_configuration_aggregators::builders::DescribeConfigurationAggregatorsFluentBuilder {
         crate::operation::describe_configuration_aggregators::builders::DescribeConfigurationAggregatorsFluentBuilder::new(self.handle.clone())
     }
 }

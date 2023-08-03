@@ -26,7 +26,7 @@ impl ListDevEnvironmentSessionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDevEnvironmentSessionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsInputBuilder,
+    inner: crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsInputBuilder,
 }
 impl ListDevEnvironmentSessionsFluentBuilder {
     /// Creates a new `ListDevEnvironmentSessions`.
@@ -37,7 +37,7 @@ impl ListDevEnvironmentSessionsFluentBuilder {
         }
     }
     /// Access the ListDevEnvironmentSessions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListDevEnvironmentSessionsFluentBuilder {
             crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListDevEnvironmentSessionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListDevEnvironmentSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListDevEnvironmentSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListDevEnvironmentSessionsFluentBuilder {
             crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_dev_environment_sessions::paginator::ListDevEnvironmentSessionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_dev_environment_sessions::paginator::ListDevEnvironmentSessionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_dev_environment_sessions::paginator::ListDevEnvironmentSessionsPaginator {
         crate::operation::list_dev_environment_sessions::paginator::ListDevEnvironmentSessionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the space.</p>
@@ -155,18 +144,12 @@ impl ListDevEnvironmentSessionsFluentBuilder {
         self.inner.get_project_name()
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
-    pub fn dev_environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dev_environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dev_environment_id(input.into());
         self
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
-    pub fn set_dev_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dev_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dev_environment_id(input);
         self
     }

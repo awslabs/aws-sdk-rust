@@ -30,27 +30,19 @@ impl ThingTypeProperties {
 
 /// A builder for [`ThingTypeProperties`](crate::types::ThingTypeProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ThingTypePropertiesBuilder {
     pub(crate) thing_type_description: ::std::option::Option<::std::string::String>,
     pub(crate) searchable_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ThingTypePropertiesBuilder {
     /// <p>The description of the thing type.</p>
-    pub fn thing_type_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_type_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the thing type.</p>
-    pub fn set_thing_type_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_type_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_type_description = input;
         self
     }
@@ -63,27 +55,19 @@ impl ThingTypePropertiesBuilder {
     /// To override the contents of this collection use [`set_searchable_attributes`](Self::set_searchable_attributes).
     ///
     /// <p>A list of searchable thing attribute names.</p>
-    pub fn searchable_attributes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn searchable_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.searchable_attributes.unwrap_or_default();
         v.push(input.into());
         self.searchable_attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of searchable thing attribute names.</p>
-    pub fn set_searchable_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_searchable_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.searchable_attributes = input;
         self
     }
     /// <p>A list of searchable thing attribute names.</p>
-    pub fn get_searchable_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_searchable_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.searchable_attributes
     }
     /// Consumes the builder and constructs a [`ThingTypeProperties`](crate::types::ThingTypeProperties).

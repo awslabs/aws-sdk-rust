@@ -37,10 +37,7 @@ impl PutResolverRulePolicyFluentBuilder {
         }
     }
     /// Access the PutResolverRulePolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl PutResolverRulePolicyFluentBuilder {
             crate::operation::put_resolver_rule_policy::PutResolverRulePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl PutResolverRulePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl PutResolverRulePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_resolver_rule_policy::PutResolverRulePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl PutResolverRulePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_resolver_rule_policy::PutResolverRulePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl PutResolverRulePolicyFluentBuilder {
             crate::operation::put_resolver_rule_policy::PutResolverRulePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -146,10 +132,7 @@ impl PutResolverRulePolicyFluentBuilder {
     /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li>
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
-    pub fn resolver_rule_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_rule_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_rule_policy(input.into());
         self
     }
@@ -162,10 +145,7 @@ impl PutResolverRulePolicyFluentBuilder {
     /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li>
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
-    pub fn set_resolver_rule_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_rule_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolver_rule_policy(input);
         self
     }

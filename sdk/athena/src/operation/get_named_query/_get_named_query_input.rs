@@ -22,26 +22,18 @@ impl GetNamedQueryInput {
 
 /// A builder for [`GetNamedQueryInput`](crate::operation::get_named_query::GetNamedQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNamedQueryInputBuilder {
     pub(crate) named_query_id: ::std::option::Option<::std::string::String>,
 }
 impl GetNamedQueryInputBuilder {
     /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
-    pub fn named_query_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn named_query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.named_query_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
-    pub fn set_named_query_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_named_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.named_query_id = input;
         self
     }
@@ -52,10 +44,7 @@ impl GetNamedQueryInputBuilder {
     /// Consumes the builder and constructs a [`GetNamedQueryInput`](crate::operation::get_named_query::GetNamedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_named_query::GetNamedQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_named_query::GetNamedQueryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_named_query::GetNamedQueryInput {
             named_query_id: self.named_query_id,
         })

@@ -15,35 +15,25 @@ impl DeleteDeploymentStrategyInput {
 }
 impl DeleteDeploymentStrategyInput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentStrategyInput`](crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_deployment_strategy::builders::DeleteDeploymentStrategyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_deployment_strategy::builders::DeleteDeploymentStrategyInputBuilder {
         crate::operation::delete_deployment_strategy::builders::DeleteDeploymentStrategyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDeploymentStrategyInput`](crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDeploymentStrategyInputBuilder {
     pub(crate) deployment_strategy_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeploymentStrategyInputBuilder {
     /// <p>The ID of the deployment strategy you want to delete.</p>
-    pub fn deployment_strategy_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_strategy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_strategy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deployment strategy you want to delete.</p>
-    pub fn set_deployment_strategy_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_strategy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_strategy_id = input;
         self
     }
@@ -58,10 +48,8 @@ impl DeleteDeploymentStrategyInputBuilder {
         crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput {
-                deployment_strategy_id: self.deployment_strategy_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput {
+            deployment_strategy_id: self.deployment_strategy_id,
+        })
     }
 }

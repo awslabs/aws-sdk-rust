@@ -35,9 +35,7 @@ impl ListBlueprintsOutput {
 
 /// A builder for [`ListBlueprintsOutput`](crate::operation::list_blueprints::ListBlueprintsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBlueprintsOutputBuilder {
     pub(crate) blueprints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListBlueprintsOutputBuilder {
         self
     }
     /// <p>List of names of blueprints in the account.</p>
-    pub fn set_blueprints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_blueprints(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.blueprints = input;
         self
     }

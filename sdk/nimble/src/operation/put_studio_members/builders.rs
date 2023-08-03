@@ -10,10 +10,7 @@ impl PutStudioMembersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_studio_members::PutStudioMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_studio_members::PutStudioMembersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_studio_members::PutStudioMembersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_studio_members();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutStudioMembersFluentBuilder {
         }
     }
     /// Access the PutStudioMembers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_studio_members::builders::PutStudioMembersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_studio_members::builders::PutStudioMembersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutStudioMembersFluentBuilder {
             crate::operation::put_studio_members::PutStudioMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_studio_members::PutStudioMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_studio_members::PutStudioMembersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutStudioMembersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutStudioMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_studio_members::PutStudioMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_studio_members::PutStudioMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_studio_members::PutStudioMembersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutStudioMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_studio_members::PutStudioMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_studio_members::PutStudioMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_studio_members::PutStudioMembersError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PutStudioMembersFluentBuilder {
             crate::operation::put_studio_members::PutStudioMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_studio_members::PutStudioMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_studio_members::PutStudioMembersError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl PutStudioMembersFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The ID of the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
     /// <p>The ID of the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
@@ -166,17 +144,12 @@ impl PutStudioMembersFluentBuilder {
         self
     }
     /// <p>A list of members.</p>
-    pub fn set_members(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NewStudioMember>>,
-    ) -> Self {
+    pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NewStudioMember>>) -> Self {
         self.inner = self.inner.set_members(input);
         self
     }
     /// <p>A list of members.</p>
-    pub fn get_members(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NewStudioMember>> {
+    pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NewStudioMember>> {
         self.inner.get_members()
     }
     /// <p>The studio ID. </p>

@@ -27,8 +27,7 @@ pub struct DevEnvironmentSummary {
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Information about the repositories that will be cloned into the Dev Environment. If no rvalue is specified, no repository is cloned.</p>
     #[doc(hidden)]
-    pub repositories:
-        ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>>,
+    pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>>,
     /// <p>The user-specified alias for the Dev Environment.</p>
     #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
@@ -75,9 +74,7 @@ impl DevEnvironmentSummary {
         self.status_reason.as_deref()
     }
     /// <p>Information about the repositories that will be cloned into the Dev Environment. If no rvalue is specified, no repository is cloned.</p>
-    pub fn repositories(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DevEnvironmentRepositorySummary]> {
+    pub fn repositories(&self) -> ::std::option::Option<&[crate::types::DevEnvironmentRepositorySummary]> {
         self.repositories.as_deref()
     }
     /// <p>The user-specified alias for the Dev Environment.</p>
@@ -110,9 +107,7 @@ impl DevEnvironmentSummary {
 
 /// A builder for [`DevEnvironmentSummary`](crate::types::DevEnvironmentSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DevEnvironmentSummaryBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -121,8 +116,7 @@ pub struct DevEnvironmentSummaryBuilder {
     pub(crate) creator_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DevEnvironmentStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) repositories:
-        ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>>,
+    pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) ides: ::std::option::Option<::std::vec::Vec<crate::types::Ide>>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
@@ -178,10 +172,7 @@ impl DevEnvironmentSummaryBuilder {
         self
     }
     /// <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -209,10 +200,7 @@ impl DevEnvironmentSummaryBuilder {
         self
     }
     /// <p>The status of the Dev Environment. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DevEnvironmentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DevEnvironmentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -221,18 +209,12 @@ impl DevEnvironmentSummaryBuilder {
         &self.status
     }
     /// <p>The reason for the status.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the status.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -252,20 +234,12 @@ impl DevEnvironmentSummaryBuilder {
         self
     }
     /// <p>Information about the repositories that will be cloned into the Dev Environment. If no rvalue is specified, no repository is cloned.</p>
-    pub fn set_repositories(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>,
-        >,
-    ) -> Self {
+    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>>) -> Self {
         self.repositories = input;
         self
     }
     /// <p>Information about the repositories that will be cloned into the Dev Environment. If no rvalue is specified, no repository is cloned.</p>
-    pub fn get_repositories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>>
-    {
+    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>> {
         &self.repositories
     }
     /// <p>The user-specified alias for the Dev Environment.</p>
@@ -294,10 +268,7 @@ impl DevEnvironmentSummaryBuilder {
         self
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
-    pub fn set_ides(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ide>>,
-    ) -> Self {
+    pub fn set_ides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ide>>) -> Self {
         self.ides = input;
         self
     }
@@ -311,10 +282,7 @@ impl DevEnvironmentSummaryBuilder {
         self
     }
     /// <p>The Amazon EC2 instace type used for the Dev Environment. </p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
         self
     }
@@ -342,17 +310,12 @@ impl DevEnvironmentSummaryBuilder {
         self
     }
     /// <p>Information about the configuration of persistent storage for the Dev Environment.</p>
-    pub fn set_persistent_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::PersistentStorage>,
-    ) -> Self {
+    pub fn set_persistent_storage(mut self, input: ::std::option::Option<crate::types::PersistentStorage>) -> Self {
         self.persistent_storage = input;
         self
     }
     /// <p>Information about the configuration of persistent storage for the Dev Environment.</p>
-    pub fn get_persistent_storage(
-        &self,
-    ) -> &::std::option::Option<crate::types::PersistentStorage> {
+    pub fn get_persistent_storage(&self) -> &::std::option::Option<crate::types::PersistentStorage> {
         &self.persistent_storage
     }
     /// Consumes the builder and constructs a [`DevEnvironmentSummary`](crate::types::DevEnvironmentSummary).

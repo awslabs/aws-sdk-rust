@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetVoiceTemplateOutput`](crate::operation::get_voice_template::GetVoiceTemplateOutput) with field(s):
     ///   - [`voice_template_response(Option<VoiceTemplateResponse>)`](crate::operation::get_voice_template::GetVoiceTemplateOutput::voice_template_response): <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
     /// - On failure, responds with [`SdkError<GetVoiceTemplateError>`](crate::operation::get_voice_template::GetVoiceTemplateError)
-    pub fn get_voice_template(
-        &self,
-    ) -> crate::operation::get_voice_template::builders::GetVoiceTemplateFluentBuilder {
-        crate::operation::get_voice_template::builders::GetVoiceTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_voice_template(&self) -> crate::operation::get_voice_template::builders::GetVoiceTemplateFluentBuilder {
+        crate::operation::get_voice_template::builders::GetVoiceTemplateFluentBuilder::new(self.handle.clone())
     }
 }

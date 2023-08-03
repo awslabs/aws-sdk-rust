@@ -38,9 +38,7 @@ impl ListPlatformVersionsFluentBuilder {
         }
     }
     /// Access the ListPlatformVersions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_platform_versions::builders::ListPlatformVersionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_platform_versions::builders::ListPlatformVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListPlatformVersionsFluentBuilder {
             crate::operation::list_platform_versions::ListPlatformVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_platform_versions::ListPlatformVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_platform_versions::ListPlatformVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListPlatformVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListPlatformVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_platform_versions::ListPlatformVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_platform_versions::ListPlatformVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_platform_versions::ListPlatformVersionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListPlatformVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_platform_versions::ListPlatformVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_platform_versions::ListPlatformVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_platform_versions::ListPlatformVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl ListPlatformVersionsFluentBuilder {
             crate::operation::list_platform_versions::ListPlatformVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_platform_versions::ListPlatformVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_platform_versions::ListPlatformVersionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_platform_versions::paginator::ListPlatformVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_platform_versions::paginator::ListPlatformVersionsPaginator {
-        crate::operation::list_platform_versions::paginator::ListPlatformVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_platform_versions::paginator::ListPlatformVersionsPaginator {
+        crate::operation::list_platform_versions::paginator::ListPlatformVersionsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -144,17 +126,12 @@ impl ListPlatformVersionsFluentBuilder {
         self
     }
     /// <p>Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of platform version values returned in one call.</p>

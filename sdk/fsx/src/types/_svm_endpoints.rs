@@ -44,9 +44,7 @@ impl SvmEndpoints {
 
 /// A builder for [`SvmEndpoints`](crate::types::SvmEndpoints).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SvmEndpointsBuilder {
     pub(crate) iscsi: ::std::option::Option<crate::types::SvmEndpoint>,
     pub(crate) management: ::std::option::Option<crate::types::SvmEndpoint>,
@@ -74,10 +72,7 @@ impl SvmEndpointsBuilder {
         self
     }
     /// <p>An endpoint for managing SVMs using the NetApp ONTAP CLI, NetApp ONTAP API, or NetApp CloudManager.</p>
-    pub fn set_management(
-        mut self,
-        input: ::std::option::Option<crate::types::SvmEndpoint>,
-    ) -> Self {
+    pub fn set_management(mut self, input: ::std::option::Option<crate::types::SvmEndpoint>) -> Self {
         self.management = input;
         self
     }

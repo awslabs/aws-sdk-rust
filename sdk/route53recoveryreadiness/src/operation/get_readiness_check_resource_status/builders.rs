@@ -5,16 +5,16 @@ pub use crate::operation::get_readiness_check_resource_status::_get_readiness_ch
 
 impl GetReadinessCheckResourceStatusInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_readiness_check_resource_status();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl GetReadinessCheckResourceStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReadinessCheckResourceStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusInputBuilder,
+    inner: crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusInputBuilder,
 }
 impl GetReadinessCheckResourceStatusFluentBuilder {
     /// Creates a new `GetReadinessCheckResourceStatus`.
@@ -37,15 +37,20 @@ impl GetReadinessCheckResourceStatusFluentBuilder {
         }
     }
     /// Access the GetReadinessCheckResourceStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl GetReadinessCheckResourceStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl GetReadinessCheckResourceStatusFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatus,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_readiness_check_resource_status::paginator::GetReadinessCheckResourceStatusPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_readiness_check_resource_status::paginator::GetReadinessCheckResourceStatusPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_readiness_check_resource_status::paginator::GetReadinessCheckResourceStatusPaginator {
         crate::operation::get_readiness_check_resource_status::paginator::GetReadinessCheckResourceStatusPaginator::new(self.handle, self.inner)
     }
     /// <p>The number of objects that you want to return with this call.</p>
@@ -129,18 +144,12 @@ impl GetReadinessCheckResourceStatusFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.readiness_check_name(input.into());
         self
     }
     /// <p>Name of a readiness check.</p>
-    pub fn set_readiness_check_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_readiness_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_readiness_check_name(input);
         self
     }
@@ -149,18 +158,12 @@ impl GetReadinessCheckResourceStatusFluentBuilder {
         self.inner.get_readiness_check_name()
     }
     /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
     /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteStudioComponentOutput {
 }
 impl DeleteStudioComponentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStudioComponentOutput`](crate::operation::delete_studio_component::DeleteStudioComponentOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_studio_component::builders::DeleteStudioComponentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_studio_component::builders::DeleteStudioComponentOutputBuilder {
         crate::operation::delete_studio_component::builders::DeleteStudioComponentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStudioComponentOutput`](crate::operation::delete_studio_component::DeleteStudioComponentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStudioComponentOutputBuilder {
     pub(crate) studio_component: ::std::option::Option<crate::types::StudioComponent>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteStudioComponentOutputBuilder {
         self
     }
     /// <p>Information about the studio component.</p>
-    pub fn set_studio_component(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioComponent>,
-    ) -> Self {
+    pub fn set_studio_component(mut self, input: ::std::option::Option<crate::types::StudioComponent>) -> Self {
         self.studio_component = input;
         self
     }

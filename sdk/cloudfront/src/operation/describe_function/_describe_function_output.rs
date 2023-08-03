@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeFunctionOutput {
 }
 impl DescribeFunctionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFunctionOutput`](crate::operation::describe_function::DescribeFunctionOutput).
-    pub fn builder() -> crate::operation::describe_function::builders::DescribeFunctionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_function::builders::DescribeFunctionOutputBuilder {
         crate::operation::describe_function::builders::DescribeFunctionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFunctionOutput`](crate::operation::describe_function::DescribeFunctionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFunctionOutputBuilder {
     pub(crate) function_summary: ::std::option::Option<crate::types::FunctionSummary>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -51,10 +48,7 @@ impl DescribeFunctionOutputBuilder {
         self
     }
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
-    pub fn set_function_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionSummary>,
-    ) -> Self {
+    pub fn set_function_summary(mut self, input: ::std::option::Option<crate::types::FunctionSummary>) -> Self {
         self.function_summary = input;
         self
     }

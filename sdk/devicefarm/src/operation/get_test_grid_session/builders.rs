@@ -10,10 +10,7 @@ impl GetTestGridSessionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_test_grid_session::GetTestGridSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_test_grid_session::GetTestGridSessionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_test_grid_session::GetTestGridSessionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_test_grid_session();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl GetTestGridSessionFluentBuilder {
         }
     }
     /// Access the GetTestGridSession as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_test_grid_session::builders::GetTestGridSessionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_test_grid_session::builders::GetTestGridSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl GetTestGridSessionFluentBuilder {
             crate::operation::get_test_grid_session::GetTestGridSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_test_grid_session::GetTestGridSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_test_grid_session::GetTestGridSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl GetTestGridSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl GetTestGridSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_test_grid_session::GetTestGridSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_test_grid_session::GetTestGridSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_test_grid_session::GetTestGridSessionError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl GetTestGridSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_test_grid_session::GetTestGridSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_test_grid_session::GetTestGridSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_test_grid_session::GetTestGridSessionError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl GetTestGridSessionFluentBuilder {
             crate::operation::get_test_grid_session::GetTestGridSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_test_grid_session::GetTestGridSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_test_grid_session::GetTestGridSessionError>,
     > {
         self.customize_middleware().await
     }

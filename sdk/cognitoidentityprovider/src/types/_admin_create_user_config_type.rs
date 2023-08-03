@@ -30,9 +30,7 @@ impl AdminCreateUserConfigType {
     }
     /// <p>The message template to be used for the welcome message to new users.</p>
     /// <p>See also <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing User Invitation Messages</a>.</p>
-    pub fn invite_message_template(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MessageTemplateType> {
+    pub fn invite_message_template(&self) -> ::std::option::Option<&crate::types::MessageTemplateType> {
         self.invite_message_template.as_ref()
     }
 }
@@ -45,9 +43,7 @@ impl AdminCreateUserConfigType {
 
 /// A builder for [`AdminCreateUserConfigType`](crate::types::AdminCreateUserConfigType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdminCreateUserConfigTypeBuilder {
     pub(crate) allow_admin_create_user_only: ::std::option::Option<bool>,
     pub(crate) unused_account_validity_days: ::std::option::Option<i32>,
@@ -96,18 +92,13 @@ impl AdminCreateUserConfigTypeBuilder {
     }
     /// <p>The message template to be used for the welcome message to new users.</p>
     /// <p>See also <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing User Invitation Messages</a>.</p>
-    pub fn set_invite_message_template(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageTemplateType>,
-    ) -> Self {
+    pub fn set_invite_message_template(mut self, input: ::std::option::Option<crate::types::MessageTemplateType>) -> Self {
         self.invite_message_template = input;
         self
     }
     /// <p>The message template to be used for the welcome message to new users.</p>
     /// <p>See also <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing User Invitation Messages</a>.</p>
-    pub fn get_invite_message_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::MessageTemplateType> {
+    pub fn get_invite_message_template(&self) -> &::std::option::Option<crate::types::MessageTemplateType> {
         &self.invite_message_template
     }
     /// Consumes the builder and constructs a [`AdminCreateUserConfigType`](crate::types::AdminCreateUserConfigType).

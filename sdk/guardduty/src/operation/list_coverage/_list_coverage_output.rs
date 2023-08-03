@@ -35,9 +35,7 @@ impl ListCoverageOutput {
 
 /// A builder for [`ListCoverageOutput`](crate::operation::list_coverage::ListCoverageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCoverageOutputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::CoverageResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListCoverageOutputBuilder {
         self
     }
     /// <p>A list of resources and their attributes providing cluster details.</p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageResource>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageResource>>) -> Self {
         self.resources = input;
         self
     }
     /// <p>A list of resources and their attributes providing cluster details.</p>
-    pub fn get_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageResource>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageResource>> {
         &self.resources
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>

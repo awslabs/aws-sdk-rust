@@ -26,7 +26,7 @@ impl DescribeFleetAdvisorDatabasesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorDatabasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesInputBuilder,
+    inner: crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesInputBuilder,
 }
 impl DescribeFleetAdvisorDatabasesFluentBuilder {
     /// Creates a new `DescribeFleetAdvisorDatabases`.
@@ -37,7 +37,7 @@ impl DescribeFleetAdvisorDatabasesFluentBuilder {
         }
     }
     /// Access the DescribeFleetAdvisorDatabases as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_advisor_databases::builders::DescribeFleetAdvisorDatabasesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeFleetAdvisorDatabasesFluentBuilder {
             crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeFleetAdvisorDatabasesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeFleetAdvisorDatabasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeFleetAdvisorDatabasesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeFleetAdvisorDatabasesFluentBuilder {
             crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabases,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_advisor_databases::paginator::DescribeFleetAdvisorDatabasesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_fleet_advisor_databases::paginator::DescribeFleetAdvisorDatabasesPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_fleet_advisor_databases::paginator::DescribeFleetAdvisorDatabasesPaginator {
         crate::operation::describe_fleet_advisor_databases::paginator::DescribeFleetAdvisorDatabasesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -154,10 +143,7 @@ impl DescribeFleetAdvisorDatabasesFluentBuilder {
     /// <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

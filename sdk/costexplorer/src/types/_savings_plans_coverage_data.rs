@@ -44,9 +44,7 @@ impl SavingsPlansCoverageData {
 
 /// A builder for [`SavingsPlansCoverageData`](crate::types::SavingsPlansCoverageData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SavingsPlansCoverageDataBuilder {
     pub(crate) spend_covered_by_savings_plans: ::std::option::Option<::std::string::String>,
     pub(crate) on_demand_cost: ::std::option::Option<::std::string::String>,
@@ -55,40 +53,26 @@ pub struct SavingsPlansCoverageDataBuilder {
 }
 impl SavingsPlansCoverageDataBuilder {
     /// <p>The amount of your Amazon Web Services usage that's covered by a Savings Plans.</p>
-    pub fn spend_covered_by_savings_plans(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spend_covered_by_savings_plans(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spend_covered_by_savings_plans = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The amount of your Amazon Web Services usage that's covered by a Savings Plans.</p>
-    pub fn set_spend_covered_by_savings_plans(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spend_covered_by_savings_plans(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spend_covered_by_savings_plans = input;
         self
     }
     /// <p>The amount of your Amazon Web Services usage that's covered by a Savings Plans.</p>
-    pub fn get_spend_covered_by_savings_plans(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_spend_covered_by_savings_plans(&self) -> &::std::option::Option<::std::string::String> {
         &self.spend_covered_by_savings_plans
     }
     /// <p>The cost of your Amazon Web Services usage at the public On-Demand rate.</p>
-    pub fn on_demand_cost(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn on_demand_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.on_demand_cost = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cost of your Amazon Web Services usage at the public On-Demand rate.</p>
-    pub fn set_on_demand_cost(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_on_demand_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.on_demand_cost = input;
         self
     }
@@ -111,18 +95,12 @@ impl SavingsPlansCoverageDataBuilder {
         &self.total_cost
     }
     /// <p>The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage in an account (or set of accounts).</p>
-    pub fn coverage_percentage(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn coverage_percentage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.coverage_percentage = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage in an account (or set of accounts).</p>
-    pub fn set_coverage_percentage(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_coverage_percentage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.coverage_percentage = input;
         self
     }

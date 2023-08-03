@@ -9,8 +9,7 @@ pub struct StreamChannelDefinition {
     pub number_of_channels: ::std::option::Option<i32>,
     /// <p>The definitions of the channels in a streaming channel.</p>
     #[doc(hidden)]
-    pub channel_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
+    pub channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
 }
 impl StreamChannelDefinition {
     /// <p>The number of channels in a streaming channel.</p>
@@ -31,13 +30,10 @@ impl StreamChannelDefinition {
 
 /// A builder for [`StreamChannelDefinition`](crate::types::StreamChannelDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamChannelDefinitionBuilder {
     pub(crate) number_of_channels: ::std::option::Option<i32>,
-    pub(crate) channel_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
+    pub(crate) channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
 }
 impl StreamChannelDefinitionBuilder {
     /// <p>The number of channels in a streaming channel.</p>
@@ -66,17 +62,12 @@ impl StreamChannelDefinitionBuilder {
         self
     }
     /// <p>The definitions of the channels in a streaming channel.</p>
-    pub fn set_channel_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
-    ) -> Self {
+    pub fn set_channel_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>) -> Self {
         self.channel_definitions = input;
         self
     }
     /// <p>The definitions of the channels in a streaming channel.</p>
-    pub fn get_channel_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
+    pub fn get_channel_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
         &self.channel_definitions
     }
     /// Consumes the builder and constructs a [`StreamChannelDefinition`](crate::types::StreamChannelDefinition).

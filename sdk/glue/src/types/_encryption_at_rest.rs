@@ -13,9 +13,7 @@ pub struct EncryptionAtRest {
 }
 impl EncryptionAtRest {
     /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
-    pub fn catalog_encryption_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CatalogEncryptionMode> {
+    pub fn catalog_encryption_mode(&self) -> ::std::option::Option<&crate::types::CatalogEncryptionMode> {
         self.catalog_encryption_mode.as_ref()
     }
     /// <p>The ID of the KMS key to use for encryption at rest.</p>
@@ -32,9 +30,7 @@ impl EncryptionAtRest {
 
 /// A builder for [`EncryptionAtRest`](crate::types::EncryptionAtRest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionAtRestBuilder {
     pub(crate) catalog_encryption_mode: ::std::option::Option<crate::types::CatalogEncryptionMode>,
     pub(crate) sse_aws_kms_key_id: ::std::option::Option<::std::string::String>,
@@ -46,32 +42,21 @@ impl EncryptionAtRestBuilder {
         self
     }
     /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
-    pub fn set_catalog_encryption_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::CatalogEncryptionMode>,
-    ) -> Self {
+    pub fn set_catalog_encryption_mode(mut self, input: ::std::option::Option<crate::types::CatalogEncryptionMode>) -> Self {
         self.catalog_encryption_mode = input;
         self
     }
     /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
-    pub fn get_catalog_encryption_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::CatalogEncryptionMode> {
+    pub fn get_catalog_encryption_mode(&self) -> &::std::option::Option<crate::types::CatalogEncryptionMode> {
         &self.catalog_encryption_mode
     }
     /// <p>The ID of the KMS key to use for encryption at rest.</p>
-    pub fn sse_aws_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sse_aws_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sse_aws_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the KMS key to use for encryption at rest.</p>
-    pub fn set_sse_aws_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sse_aws_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sse_aws_kms_key_id = input;
         self
     }

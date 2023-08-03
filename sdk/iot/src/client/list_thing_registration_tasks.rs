@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`task_ids(Option<Vec<String>>)`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksOutput::task_ids): <p>A list of bulk thing provisioning task IDs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListThingRegistrationTasksError>`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksError)
-    pub fn list_thing_registration_tasks(&self) -> crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksFluentBuilder{
+    pub fn list_thing_registration_tasks(
+        &self,
+    ) -> crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksFluentBuilder {
         crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksFluentBuilder::new(self.handle.clone())
     }
 }

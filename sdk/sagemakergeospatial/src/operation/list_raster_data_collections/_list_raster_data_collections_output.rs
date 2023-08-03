@@ -5,8 +5,7 @@
 pub struct ListRasterDataCollectionsOutput {
     /// <p>Contains summary information about the raster data collection.</p>
     #[doc(hidden)]
-    pub raster_data_collection_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::RasterDataCollectionMetadata>>,
+    pub raster_data_collection_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RasterDataCollectionMetadata>>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListRasterDataCollectionsOutput {
 }
 impl ListRasterDataCollectionsOutput {
     /// <p>Contains summary information about the raster data collection.</p>
-    pub fn raster_data_collection_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RasterDataCollectionMetadata]> {
+    pub fn raster_data_collection_summaries(&self) -> ::std::option::Option<&[crate::types::RasterDataCollectionMetadata]> {
         self.raster_data_collection_summaries.as_deref()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
@@ -27,10 +24,7 @@ impl ListRasterDataCollectionsOutput {
 impl ::std::fmt::Debug for ListRasterDataCollectionsOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListRasterDataCollectionsOutput");
-        formatter.field(
-            "raster_data_collection_summaries",
-            &self.raster_data_collection_summaries,
-        );
+        formatter.field("raster_data_collection_summaries", &self.raster_data_collection_summaries);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -43,7 +37,7 @@ impl ::aws_http::request_id::RequestId for ListRasterDataCollectionsOutput {
 }
 impl ListRasterDataCollectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListRasterDataCollectionsOutput`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput).
-    pub fn builder() -> crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsOutputBuilder {
         crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsOutputBuilder::default()
     }
 }
@@ -52,8 +46,7 @@ impl ListRasterDataCollectionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListRasterDataCollectionsOutputBuilder {
-    pub(crate) raster_data_collection_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::RasterDataCollectionMetadata>>,
+    pub(crate) raster_data_collection_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RasterDataCollectionMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,10 +56,7 @@ impl ListRasterDataCollectionsOutputBuilder {
     /// To override the contents of this collection use [`set_raster_data_collection_summaries`](Self::set_raster_data_collection_summaries).
     ///
     /// <p>Contains summary information about the raster data collection.</p>
-    pub fn raster_data_collection_summaries(
-        mut self,
-        input: crate::types::RasterDataCollectionMetadata,
-    ) -> Self {
+    pub fn raster_data_collection_summaries(mut self, input: crate::types::RasterDataCollectionMetadata) -> Self {
         let mut v = self.raster_data_collection_summaries.unwrap_or_default();
         v.push(input);
         self.raster_data_collection_summaries = ::std::option::Option::Some(v);
@@ -81,9 +71,7 @@ impl ListRasterDataCollectionsOutputBuilder {
         self
     }
     /// <p>Contains summary information about the raster data collection.</p>
-    pub fn get_raster_data_collection_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RasterDataCollectionMetadata>> {
+    pub fn get_raster_data_collection_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RasterDataCollectionMetadata>> {
         &self.raster_data_collection_summaries
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
@@ -110,9 +98,7 @@ impl ListRasterDataCollectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRasterDataCollectionsOutput`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput {
+    pub fn build(self) -> crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput {
         crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput {
             raster_data_collection_summaries: self.raster_data_collection_summaries,
             next_token: self.next_token,
@@ -123,10 +109,7 @@ impl ListRasterDataCollectionsOutputBuilder {
 impl ::std::fmt::Debug for ListRasterDataCollectionsOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListRasterDataCollectionsOutputBuilder");
-        formatter.field(
-            "raster_data_collection_summaries",
-            &self.raster_data_collection_summaries,
-        );
+        formatter.field("raster_data_collection_summaries", &self.raster_data_collection_summaries);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`device_type_linux(Option<DefaultClientBrandingAttributes>)`](crate::operation::describe_client_branding::DescribeClientBrandingOutput::device_type_linux): <p>The branding information for Linux devices.</p>
     ///   - [`device_type_web(Option<DefaultClientBrandingAttributes>)`](crate::operation::describe_client_branding::DescribeClientBrandingOutput::device_type_web): <p>The branding information for Web access.</p>
     /// - On failure, responds with [`SdkError<DescribeClientBrandingError>`](crate::operation::describe_client_branding::DescribeClientBrandingError)
-    pub fn describe_client_branding(
-        &self,
-    ) -> crate::operation::describe_client_branding::builders::DescribeClientBrandingFluentBuilder
-    {
+    pub fn describe_client_branding(&self) -> crate::operation::describe_client_branding::builders::DescribeClientBrandingFluentBuilder {
         crate::operation::describe_client_branding::builders::DescribeClientBrandingFluentBuilder::new(self.handle.clone())
     }
 }

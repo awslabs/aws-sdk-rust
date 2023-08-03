@@ -37,10 +37,7 @@ impl DeleteOutpostResolverFluentBuilder {
         }
     }
     /// Access the DeleteOutpostResolver as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteOutpostResolverFluentBuilder {
             crate::operation::delete_outpost_resolver::DeleteOutpostResolver,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_outpost_resolver::DeleteOutpostResolverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_outpost_resolver::DeleteOutpostResolverError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteOutpostResolverFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteOutpostResolverFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_outpost_resolver::DeleteOutpostResolverOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_outpost_resolver::DeleteOutpostResolverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_outpost_resolver::DeleteOutpostResolverError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteOutpostResolverFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_outpost_resolver::DeleteOutpostResolverOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_outpost_resolver::DeleteOutpostResolverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_outpost_resolver::DeleteOutpostResolverError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteOutpostResolverFluentBuilder {
             crate::operation::delete_outpost_resolver::DeleteOutpostResolver,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_outpost_resolver::DeleteOutpostResolverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_outpost_resolver::DeleteOutpostResolverError>,
     > {
         self.customize_middleware().await
     }

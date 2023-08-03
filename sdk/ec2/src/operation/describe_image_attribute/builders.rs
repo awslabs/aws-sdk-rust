@@ -37,10 +37,7 @@ impl DescribeImageAttributeFluentBuilder {
         }
     }
     /// Access the DescribeImageAttribute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_image_attribute::builders::DescribeImageAttributeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_image_attribute::builders::DescribeImageAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeImageAttributeFluentBuilder {
             crate::operation::describe_image_attribute::DescribeImageAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_attribute::DescribeImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_attribute::DescribeImageAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeImageAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeImageAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_attribute::DescribeImageAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_attribute::DescribeImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_attribute::DescribeImageAttributeError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeImageAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_attribute::DescribeImageAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_attribute::DescribeImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_attribute::DescribeImageAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeImageAttributeFluentBuilder {
             crate::operation::describe_image_attribute::DescribeImageAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_attribute::DescribeImageAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_attribute::DescribeImageAttributeError>,
     > {
         self.customize_middleware().await
     }
@@ -131,10 +117,7 @@ impl DescribeImageAttributeFluentBuilder {
     }
     /// <p>The AMI attribute.</p>
     /// <p> <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::ImageAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }

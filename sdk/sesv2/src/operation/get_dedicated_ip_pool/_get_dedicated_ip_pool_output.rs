@@ -22,18 +22,14 @@ impl ::aws_http::request_id::RequestId for GetDedicatedIpPoolOutput {
 }
 impl GetDedicatedIpPoolOutput {
     /// Creates a new builder-style object to manufacture [`GetDedicatedIpPoolOutput`](crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolOutput).
-    pub fn builder(
-    ) -> crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolOutputBuilder {
-        crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolOutputBuilder {
+        crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDedicatedIpPoolOutput`](crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDedicatedIpPoolOutputBuilder {
     pub(crate) dedicated_ip_pool: ::std::option::Option<crate::types::DedicatedIpPool>,
     _request_id: Option<String>,
@@ -45,10 +41,7 @@ impl GetDedicatedIpPoolOutputBuilder {
         self
     }
     /// <p>An object that contains information about a dedicated IP pool.</p>
-    pub fn set_dedicated_ip_pool(
-        mut self,
-        input: ::std::option::Option<crate::types::DedicatedIpPool>,
-    ) -> Self {
+    pub fn set_dedicated_ip_pool(mut self, input: ::std::option::Option<crate::types::DedicatedIpPool>) -> Self {
         self.dedicated_ip_pool = input;
         self
     }

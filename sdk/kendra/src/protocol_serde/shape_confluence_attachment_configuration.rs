@@ -4,9 +4,7 @@ pub fn ser_confluence_attachment_configuration(
     input: &crate::types::ConfluenceAttachmentConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if input.crawl_attachments {
-        object
-            .key("CrawlAttachments")
-            .boolean(input.crawl_attachments);
+        object.key("CrawlAttachments").boolean(input.crawl_attachments);
     }
     if let Some(var_1) = &input.attachment_field_mappings {
         let mut array_2 = object.key("AttachmentFieldMappings").start_array();
@@ -14,7 +12,10 @@ pub fn ser_confluence_attachment_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_confluence_attachment_to_index_field_mapping::ser_confluence_attachment_to_index_field_mapping(&mut object_4, item_3)?;
+                crate::protocol_serde::shape_confluence_attachment_to_index_field_mapping::ser_confluence_attachment_to_index_field_mapping(
+                    &mut object_4,
+                    item_3,
+                )?;
                 object_4.finish();
             }
         }
@@ -25,35 +26,22 @@ pub fn ser_confluence_attachment_configuration(
 
 pub(crate) fn de_confluence_attachment_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ConfluenceAttachmentConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ConfluenceAttachmentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::ConfluenceAttachmentConfigurationBuilder::default();
+            let mut builder = crate::types::builders::ConfluenceAttachmentConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
                             "CrawlAttachments" => {
-                                builder = builder.set_crawl_attachments(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
+                                builder = builder.set_crawl_attachments(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                             }
                             "AttachmentFieldMappings" => {
                                 builder = builder.set_attachment_field_mappings(
@@ -64,20 +52,17 @@ where
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

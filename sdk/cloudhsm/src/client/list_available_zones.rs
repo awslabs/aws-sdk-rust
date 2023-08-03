@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`ListAvailableZonesOutput`](crate::operation::list_available_zones::ListAvailableZonesOutput) with field(s):
     ///   - [`az_list(Option<Vec<String>>)`](crate::operation::list_available_zones::ListAvailableZonesOutput::az_list): <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
     /// - On failure, responds with [`SdkError<ListAvailableZonesError>`](crate::operation::list_available_zones::ListAvailableZonesError)
-    pub fn list_available_zones(
-        &self,
-    ) -> crate::operation::list_available_zones::builders::ListAvailableZonesFluentBuilder {
-        crate::operation::list_available_zones::builders::ListAvailableZonesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_available_zones(&self) -> crate::operation::list_available_zones::builders::ListAvailableZonesFluentBuilder {
+        crate::operation::list_available_zones::builders::ListAvailableZonesFluentBuilder::new(self.handle.clone())
     }
 }

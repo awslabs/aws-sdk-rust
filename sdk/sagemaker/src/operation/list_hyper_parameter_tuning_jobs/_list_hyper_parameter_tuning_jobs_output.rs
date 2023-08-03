@@ -5,8 +5,7 @@
 pub struct ListHyperParameterTuningJobsOutput {
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request returned.</p>
     #[doc(hidden)]
-    pub hyper_parameter_tuning_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobSummary>>,
+    pub hyper_parameter_tuning_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobSummary>>,
     /// <p>If the result of this <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListHyperParameterTuningJobsOutput {
 }
 impl ListHyperParameterTuningJobsOutput {
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request returned.</p>
-    pub fn hyper_parameter_tuning_job_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HyperParameterTuningJobSummary]> {
+    pub fn hyper_parameter_tuning_job_summaries(&self) -> ::std::option::Option<&[crate::types::HyperParameterTuningJobSummary]> {
         self.hyper_parameter_tuning_job_summaries.as_deref()
     }
     /// <p>If the result of this <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListHyperParameterTuningJobsOutput {
 }
 impl ListHyperParameterTuningJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListHyperParameterTuningJobsOutput`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput).
-    pub fn builder() -> crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsOutputBuilder {
         crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListHyperParameterTuningJobsOutput`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHyperParameterTuningJobsOutputBuilder {
-    pub(crate) hyper_parameter_tuning_job_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobSummary>>,
+    pub(crate) hyper_parameter_tuning_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +47,8 @@ impl ListHyperParameterTuningJobsOutputBuilder {
     /// To override the contents of this collection use [`set_hyper_parameter_tuning_job_summaries`](Self::set_hyper_parameter_tuning_job_summaries).
     ///
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request returned.</p>
-    pub fn hyper_parameter_tuning_job_summaries(
-        mut self,
-        input: crate::types::HyperParameterTuningJobSummary,
-    ) -> Self {
-        let mut v = self
-            .hyper_parameter_tuning_job_summaries
-            .unwrap_or_default();
+    pub fn hyper_parameter_tuning_job_summaries(mut self, input: crate::types::HyperParameterTuningJobSummary) -> Self {
+        let mut v = self.hyper_parameter_tuning_job_summaries.unwrap_or_default();
         v.push(input);
         self.hyper_parameter_tuning_job_summaries = ::std::option::Option::Some(v);
         self
@@ -73,9 +62,7 @@ impl ListHyperParameterTuningJobsOutputBuilder {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request returned.</p>
-    pub fn get_hyper_parameter_tuning_job_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobSummary>> {
+    pub fn get_hyper_parameter_tuning_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningJobSummary>> {
         &self.hyper_parameter_tuning_job_summaries
     }
     /// <p>If the result of this <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
@@ -102,10 +89,7 @@ impl ListHyperParameterTuningJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListHyperParameterTuningJobsOutput`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput
-    {
+    pub fn build(self) -> crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput {
         crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput {
             hyper_parameter_tuning_job_summaries: self.hyper_parameter_tuning_job_summaries,
             next_token: self.next_token,

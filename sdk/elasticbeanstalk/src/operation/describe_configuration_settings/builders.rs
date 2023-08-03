@@ -31,7 +31,7 @@ impl DescribeConfigurationSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConfigurationSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsInputBuilder,
+    inner: crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsInputBuilder,
 }
 impl DescribeConfigurationSettingsFluentBuilder {
     /// Creates a new `DescribeConfigurationSettings`.
@@ -42,7 +42,7 @@ impl DescribeConfigurationSettingsFluentBuilder {
         }
     }
     /// Access the DescribeConfigurationSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl DescribeConfigurationSettingsFluentBuilder {
             crate::operation::describe_configuration_settings::DescribeConfigurationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl DescribeConfigurationSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl DescribeConfigurationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl DescribeConfigurationSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +110,17 @@ impl DescribeConfigurationSettingsFluentBuilder {
             crate::operation::describe_configuration_settings::DescribeConfigurationSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The application for the environment or configuration template.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The application for the environment or configuration template.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -147,19 +130,13 @@ impl DescribeConfigurationSettingsFluentBuilder {
     }
     /// <p>The name of the configuration template to describe.</p>
     /// <p> Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error. </p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the configuration template to describe.</p>
     /// <p> Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -170,19 +147,13 @@ impl DescribeConfigurationSettingsFluentBuilder {
     }
     /// <p>The name of the environment to describe.</p>
     /// <p> Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the environment to describe.</p>
     /// <p> Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }

@@ -30,27 +30,19 @@ impl Language {
 
 /// A builder for [`Language`](crate::types::Language).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LanguageBuilder {
     pub(crate) language_name: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
 }
 impl LanguageBuilder {
     /// <p>Language name of the supported language.</p>
-    pub fn language_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Language name of the supported language.</p>
-    pub fn set_language_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl LanguageBuilder {
         &self.language_name
     }
     /// <p>Language code for the supported language.</p>
-    pub fn language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Language code for the supported language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_code = input;
         self
     }

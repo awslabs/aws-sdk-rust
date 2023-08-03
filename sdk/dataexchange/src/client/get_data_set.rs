@@ -17,9 +17,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_data_set::GetDataSetOutput::tags): <p>The tags for the data set.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_data_set::GetDataSetOutput::updated_at): <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     /// - On failure, responds with [`SdkError<GetDataSetError>`](crate::operation::get_data_set::GetDataSetError)
-    pub fn get_data_set(
-        &self,
-    ) -> crate::operation::get_data_set::builders::GetDataSetFluentBuilder {
+    pub fn get_data_set(&self) -> crate::operation::get_data_set::builders::GetDataSetFluentBuilder {
         crate::operation::get_data_set::builders::GetDataSetFluentBuilder::new(self.handle.clone())
     }
 }

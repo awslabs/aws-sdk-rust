@@ -22,16 +22,14 @@ impl AssociateUserAccessLoggingSettingsInput {
 }
 impl AssociateUserAccessLoggingSettingsInput {
     /// Creates a new builder-style object to manufacture [`AssociateUserAccessLoggingSettingsInput`](crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsInput).
-    pub fn builder() -> crate::operation::associate_user_access_logging_settings::builders::AssociateUserAccessLoggingSettingsInputBuilder{
+    pub fn builder() -> crate::operation::associate_user_access_logging_settings::builders::AssociateUserAccessLoggingSettingsInputBuilder {
         crate::operation::associate_user_access_logging_settings::builders::AssociateUserAccessLoggingSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateUserAccessLoggingSettingsInput`](crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateUserAccessLoggingSettingsInputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
@@ -52,36 +50,31 @@ impl AssociateUserAccessLoggingSettingsInputBuilder {
         &self.portal_arn
     }
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn user_access_logging_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_access_logging_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_access_logging_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn set_user_access_logging_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_access_logging_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_access_logging_settings_arn = input;
         self
     }
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn get_user_access_logging_settings_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_user_access_logging_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_access_logging_settings_arn
     }
     /// Consumes the builder and constructs a [`AssociateUserAccessLoggingSettingsInput`](crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsInput {
-                portal_arn: self.portal_arn
-                ,
-                user_access_logging_settings_arn: self.user_access_logging_settings_arn
-                ,
-            }
+                portal_arn: self.portal_arn,
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn,
+            },
         )
     }
 }

@@ -29,16 +29,14 @@ impl GetServiceLinkedRoleDeletionStatusInput {
 }
 impl GetServiceLinkedRoleDeletionStatusInput {
     /// Creates a new builder-style object to manufacture [`GetServiceLinkedRoleDeletionStatusInput`](crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusInput).
-    pub fn builder() -> crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusInputBuilder{
+    pub fn builder() -> crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusInputBuilder {
         crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceLinkedRoleDeletionStatusInput`](crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceLinkedRoleDeletionStatusInputBuilder {
     pub(crate) deletion_task_id: ::std::option::Option<::std::string::String>,
 }
@@ -51,10 +49,7 @@ impl GetServiceLinkedRoleDeletionStatusInputBuilder {
     /// <task-uuid></task-uuid>
     /// </role-name>
     /// </service-principal-name></code>.</p>
-    pub fn deletion_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deletion_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deletion_task_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -66,10 +61,7 @@ impl GetServiceLinkedRoleDeletionStatusInputBuilder {
     /// <task-uuid></task-uuid>
     /// </role-name>
     /// </service-principal-name></code>.</p>
-    pub fn set_deletion_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deletion_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deletion_task_id = input;
         self
     }
@@ -85,12 +77,16 @@ impl GetServiceLinkedRoleDeletionStatusInputBuilder {
         &self.deletion_task_id
     }
     /// Consumes the builder and constructs a [`GetServiceLinkedRoleDeletionStatusInput`](crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusInput {
-                deletion_task_id: self.deletion_task_id
-                ,
-            }
+                deletion_task_id: self.deletion_task_id,
+            },
         )
     }
 }

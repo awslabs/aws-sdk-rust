@@ -8,9 +8,7 @@ pub struct CreateOpsMetadataInput {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Metadata for a new Application Manager application. </p>
     #[doc(hidden)]
-    pub metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-    >,
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
     /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
@@ -25,11 +23,7 @@ impl CreateOpsMetadataInput {
         self.resource_id.as_deref()
     }
     /// <p>Metadata for a new Application Manager application. </p>
-    pub fn metadata(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-    > {
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
         self.metadata.as_ref()
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
@@ -43,22 +37,17 @@ impl CreateOpsMetadataInput {
 }
 impl CreateOpsMetadataInput {
     /// Creates a new builder-style object to manufacture [`CreateOpsMetadataInput`](crate::operation::create_ops_metadata::CreateOpsMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::create_ops_metadata::builders::CreateOpsMetadataInputBuilder {
+    pub fn builder() -> crate::operation::create_ops_metadata::builders::CreateOpsMetadataInputBuilder {
         crate::operation::create_ops_metadata::builders::CreateOpsMetadataInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOpsMetadataInput`](crate::operation::create_ops_metadata::CreateOpsMetadataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOpsMetadataInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-    >,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOpsMetadataInputBuilder {
@@ -81,11 +70,7 @@ impl CreateOpsMetadataInputBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>Metadata for a new Application Manager application. </p>
-    pub fn metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::MetadataValue,
-    ) -> Self {
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetadataValue) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.metadata = ::std::option::Option::Some(hash_map);
@@ -94,19 +79,13 @@ impl CreateOpsMetadataInputBuilder {
     /// <p>Metadata for a new Application Manager application. </p>
     pub fn set_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     ) -> Self {
         self.metadata = input;
         self
     }
     /// <p>Metadata for a new Application Manager application. </p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
-    > {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
         &self.metadata
     }
     /// Appends an item to `tags`.
@@ -129,10 +108,7 @@ impl CreateOpsMetadataInputBuilder {
     /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
     /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -147,16 +123,11 @@ impl CreateOpsMetadataInputBuilder {
     /// Consumes the builder and constructs a [`CreateOpsMetadataInput`](crate::operation::create_ops_metadata::CreateOpsMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_ops_metadata::CreateOpsMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_ops_metadata::CreateOpsMetadataInput {
-                resource_id: self.resource_id,
-                metadata: self.metadata,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_ops_metadata::CreateOpsMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_ops_metadata::CreateOpsMetadataInput {
+            resource_id: self.resource_id,
+            metadata: self.metadata,
+            tags: self.tags,
+        })
     }
 }

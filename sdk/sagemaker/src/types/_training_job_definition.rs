@@ -18,9 +18,7 @@ pub struct TrainingJobDefinition {
     pub training_input_mode: ::std::option::Option<crate::types::TrainingInputMode>,
     /// <p>The hyperparameters used for the training job.</p>
     #[doc(hidden)]
-    pub hyper_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An array of <code>Channel</code> objects, each of which specifies an input source.</p>
     #[doc(hidden)]
     pub input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
@@ -50,11 +48,7 @@ impl TrainingJobDefinition {
         self.training_input_mode.as_ref()
     }
     /// <p>The hyperparameters used for the training job.</p>
-    pub fn hyper_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn hyper_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.hyper_parameters.as_ref()
     }
     /// <p>An array of <code>Channel</code> objects, each of which specifies an input source.</p>
@@ -84,14 +78,10 @@ impl TrainingJobDefinition {
 
 /// A builder for [`TrainingJobDefinition`](crate::types::TrainingJobDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrainingJobDefinitionBuilder {
     pub(crate) training_input_mode: ::std::option::Option<crate::types::TrainingInputMode>,
-    pub(crate) hyper_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     pub(crate) resource_config: ::std::option::Option<crate::types::ResourceConfig>,
@@ -122,10 +112,7 @@ impl TrainingJobDefinitionBuilder {
     /// <p> <b>FastFile mode</b> </p>
     /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
     /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
-    pub fn set_training_input_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingInputMode>,
-    ) -> Self {
+    pub fn set_training_input_mode(mut self, input: ::std::option::Option<crate::types::TrainingInputMode>) -> Self {
         self.training_input_mode = input;
         self
     }
@@ -139,9 +126,7 @@ impl TrainingJobDefinitionBuilder {
     /// <p> <b>FastFile mode</b> </p>
     /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
     /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
-    pub fn get_training_input_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrainingInputMode> {
+    pub fn get_training_input_mode(&self) -> &::std::option::Option<crate::types::TrainingInputMode> {
         &self.training_input_mode
     }
     /// Adds a key-value pair to `hyper_parameters`.
@@ -162,19 +147,13 @@ impl TrainingJobDefinitionBuilder {
     /// <p>The hyperparameters used for the training job.</p>
     pub fn set_hyper_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.hyper_parameters = input;
         self
     }
     /// <p>The hyperparameters used for the training job.</p>
-    pub fn get_hyper_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_hyper_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.hyper_parameters
     }
     /// Appends an item to `input_data_config`.
@@ -189,17 +168,12 @@ impl TrainingJobDefinitionBuilder {
         self
     }
     /// <p>An array of <code>Channel</code> objects, each of which specifies an input source.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>) -> Self {
         self.input_data_config = input;
         self
     }
     /// <p>An array of <code>Channel</code> objects, each of which specifies an input source.</p>
-    pub fn get_input_data_config(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
+    pub fn get_input_data_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
         &self.input_data_config
     }
     /// <p>the path to the S3 bucket where you want to store model artifacts. SageMaker creates subfolders for the artifacts.</p>
@@ -208,10 +182,7 @@ impl TrainingJobDefinitionBuilder {
         self
     }
     /// <p>the path to the S3 bucket where you want to store model artifacts. SageMaker creates subfolders for the artifacts.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
@@ -225,10 +196,7 @@ impl TrainingJobDefinitionBuilder {
         self
     }
     /// <p>The resources, including the ML compute instances and ML storage volumes, to use for model training.</p>
-    pub fn set_resource_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceConfig>,
-    ) -> Self {
+    pub fn set_resource_config(mut self, input: ::std::option::Option<crate::types::ResourceConfig>) -> Self {
         self.resource_config = input;
         self
     }
@@ -244,18 +212,13 @@ impl TrainingJobDefinitionBuilder {
     }
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     /// <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts.</p>
-    pub fn set_stopping_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::StoppingCondition>,
-    ) -> Self {
+    pub fn set_stopping_condition(mut self, input: ::std::option::Option<crate::types::StoppingCondition>) -> Self {
         self.stopping_condition = input;
         self
     }
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     /// <p>To stop a job, SageMaker sends the algorithm the SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts.</p>
-    pub fn get_stopping_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::StoppingCondition> {
+    pub fn get_stopping_condition(&self) -> &::std::option::Option<crate::types::StoppingCondition> {
         &self.stopping_condition
     }
     /// Consumes the builder and constructs a [`TrainingJobDefinition`](crate::types::TrainingJobDefinition).

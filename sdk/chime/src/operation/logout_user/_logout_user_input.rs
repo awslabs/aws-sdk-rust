@@ -29,9 +29,7 @@ impl LogoutUserInput {
 
 /// A builder for [`LogoutUserInput`](crate::operation::logout_user::LogoutUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogoutUserInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl LogoutUserInputBuilder {
         &self.user_id
     }
     /// Consumes the builder and constructs a [`LogoutUserInput`](crate::operation::logout_user::LogoutUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::logout_user::LogoutUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::logout_user::LogoutUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::logout_user::LogoutUserInput {
             account_id: self.account_id,
             user_id: self.user_id,

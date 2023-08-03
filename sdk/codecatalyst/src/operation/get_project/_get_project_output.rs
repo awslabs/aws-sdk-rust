@@ -49,9 +49,7 @@ impl GetProjectOutput {
 
 /// A builder for [`GetProjectOutput`](crate::operation::get_project::GetProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProjectOutputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -28,9 +28,7 @@ impl GetStudioOutput {
 
 /// A builder for [`GetStudioOutput`](crate::operation::get_studio::GetStudioOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStudioOutputBuilder {
     pub(crate) studio: ::std::option::Option<crate::types::Studio>,
     _request_id: Option<String>,

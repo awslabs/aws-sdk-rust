@@ -37,9 +37,7 @@ impl DatasetAction {
 
 /// A builder for [`DatasetAction`](crate::types::DatasetAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetActionBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) query_action: ::std::option::Option<crate::types::SqlQueryDatasetAction>,
@@ -66,10 +64,7 @@ impl DatasetActionBuilder {
         self
     }
     /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically create dataset contents.</p>
-    pub fn set_query_action(
-        mut self,
-        input: ::std::option::Option<crate::types::SqlQueryDatasetAction>,
-    ) -> Self {
+    pub fn set_query_action(mut self, input: ::std::option::Option<crate::types::SqlQueryDatasetAction>) -> Self {
         self.query_action = input;
         self
     }
@@ -83,17 +78,12 @@ impl DatasetActionBuilder {
         self
     }
     /// <p>Information that allows the system to run a containerized application to create the dataset contents. The application must be in a Docker container along with any required support libraries.</p>
-    pub fn set_container_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerDatasetAction>,
-    ) -> Self {
+    pub fn set_container_action(mut self, input: ::std::option::Option<crate::types::ContainerDatasetAction>) -> Self {
         self.container_action = input;
         self
     }
     /// <p>Information that allows the system to run a containerized application to create the dataset contents. The application must be in a Docker container along with any required support libraries.</p>
-    pub fn get_container_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContainerDatasetAction> {
+    pub fn get_container_action(&self) -> &::std::option::Option<crate::types::ContainerDatasetAction> {
         &self.container_action
     }
     /// Consumes the builder and constructs a [`DatasetAction`](crate::types::DatasetAction).

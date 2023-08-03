@@ -22,9 +22,7 @@ impl DescribeBotInput {
 
 /// A builder for [`DescribeBotInput`](crate::operation::describe_bot::DescribeBotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBotInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DescribeBotInputBuilder {
         &self.bot_id
     }
     /// Consumes the builder and constructs a [`DescribeBotInput`](crate::operation::describe_bot::DescribeBotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_bot::DescribeBotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_bot::DescribeBotInput {
-            bot_id: self.bot_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_bot::DescribeBotInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_bot::DescribeBotInput { bot_id: self.bot_id })
     }
 }

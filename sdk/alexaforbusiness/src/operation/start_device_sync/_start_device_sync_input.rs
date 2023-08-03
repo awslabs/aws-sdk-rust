@@ -36,9 +36,7 @@ impl StartDeviceSyncInput {
 
 /// A builder for [`StartDeviceSyncInput`](crate::operation::start_device_sync::StartDeviceSyncInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDeviceSyncInputBuilder {
     pub(crate) room_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
@@ -85,10 +83,7 @@ impl StartDeviceSyncInputBuilder {
         self
     }
     /// <p>Request structure to start the device sync. Required.</p>
-    pub fn set_features(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Feature>>,
-    ) -> Self {
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Feature>>) -> Self {
         self.features = input;
         self
     }
@@ -99,10 +94,7 @@ impl StartDeviceSyncInputBuilder {
     /// Consumes the builder and constructs a [`StartDeviceSyncInput`](crate::operation::start_device_sync::StartDeviceSyncInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_device_sync::StartDeviceSyncInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::start_device_sync::StartDeviceSyncInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_device_sync::StartDeviceSyncInput {
             room_arn: self.room_arn,
             device_arn: self.device_arn,

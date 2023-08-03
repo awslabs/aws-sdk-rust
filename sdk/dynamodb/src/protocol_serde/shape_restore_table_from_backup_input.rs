@@ -18,10 +18,7 @@ pub fn ser_restore_table_from_backup_input(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_global_secondary_index::ser_global_secondary_index(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_global_secondary_index::ser_global_secondary_index(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -33,10 +30,7 @@ pub fn ser_restore_table_from_backup_input(
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_local_secondary_index::ser_local_secondary_index(
-                    &mut object_11,
-                    item_10,
-                )?;
+                crate::protocol_serde::shape_local_secondary_index::ser_local_secondary_index(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }
@@ -45,19 +39,13 @@ pub fn ser_restore_table_from_backup_input(
     if let Some(var_12) = &input.provisioned_throughput_override {
         #[allow(unused_mut)]
         let mut object_13 = object.key("ProvisionedThroughputOverride").start_object();
-        crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.sse_specification_override {
         #[allow(unused_mut)]
         let mut object_15 = object.key("SSESpecificationOverride").start_object();
-        crate::protocol_serde::shape_sse_specification::ser_sse_specification(
-            &mut object_15,
-            var_14,
-        )?;
+        crate::protocol_serde::shape_sse_specification::ser_sse_specification(&mut object_15, var_14)?;
         object_15.finish();
     }
     Ok(())

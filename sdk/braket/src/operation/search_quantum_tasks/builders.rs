@@ -10,10 +10,7 @@ impl SearchQuantumTasksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_quantum_tasks::SearchQuantumTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_quantum_tasks::SearchQuantumTasksError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_quantum_tasks::SearchQuantumTasksError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_quantum_tasks();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SearchQuantumTasksFluentBuilder {
         }
     }
     /// Access the SearchQuantumTasks as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_quantum_tasks::builders::SearchQuantumTasksInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_quantum_tasks::builders::SearchQuantumTasksInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl SearchQuantumTasksFluentBuilder {
             crate::operation::search_quantum_tasks::SearchQuantumTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_quantum_tasks::SearchQuantumTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_quantum_tasks::SearchQuantumTasksError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl SearchQuantumTasksFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl SearchQuantumTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_quantum_tasks::SearchQuantumTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_quantum_tasks::SearchQuantumTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_quantum_tasks::SearchQuantumTasksError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl SearchQuantumTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_quantum_tasks::SearchQuantumTasksOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_quantum_tasks::SearchQuantumTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_quantum_tasks::SearchQuantumTasksError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl SearchQuantumTasksFluentBuilder {
             crate::operation::search_quantum_tasks::SearchQuantumTasks,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_quantum_tasks::SearchQuantumTasksError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_quantum_tasks::SearchQuantumTasksError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_quantum_tasks::paginator::SearchQuantumTasksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_quantum_tasks::paginator::SearchQuantumTasksPaginator {
-        crate::operation::search_quantum_tasks::paginator::SearchQuantumTasksPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_quantum_tasks::paginator::SearchQuantumTasksPaginator {
+        crate::operation::search_quantum_tasks::paginator::SearchQuantumTasksPaginator::new(self.handle, self.inner)
     }
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,17 +150,12 @@ impl SearchQuantumTasksFluentBuilder {
         self
     }
     /// <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchQuantumTasksFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchQuantumTasksFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchQuantumTasksFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchQuantumTasksFilter>> {
         self.inner.get_filters()
     }
 }

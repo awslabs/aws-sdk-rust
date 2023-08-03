@@ -10,10 +10,7 @@ impl ListOrganizationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_organizations::ListOrganizationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_organizations::ListOrganizationsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organizations::ListOrganizationsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_organizations();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListOrganizationsFluentBuilder {
         }
     }
     /// Access the ListOrganizations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_organizations::builders::ListOrganizationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_organizations::builders::ListOrganizationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListOrganizationsFluentBuilder {
             crate::operation::list_organizations::ListOrganizations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_organizations::ListOrganizationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organizations::ListOrganizationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListOrganizationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListOrganizationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_organizations::ListOrganizationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_organizations::ListOrganizationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organizations::ListOrganizationsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListOrganizationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_organizations::ListOrganizationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_organizations::ListOrganizationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organizations::ListOrganizationsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListOrganizationsFluentBuilder {
             crate::operation::list_organizations::ListOrganizations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_organizations::ListOrganizationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organizations::ListOrganizationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_organizations::paginator::ListOrganizationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_organizations::paginator::ListOrganizationsPaginator {
-        crate::operation::list_organizations::paginator::ListOrganizationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_organizations::paginator::ListOrganizationsPaginator {
+        crate::operation::list_organizations::paginator::ListOrganizationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

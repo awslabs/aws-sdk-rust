@@ -56,13 +56,10 @@ impl UnprocessableEntityException {
 
 /// A builder for [`UnprocessableEntityException`](crate::types::error::UnprocessableEntityException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnprocessableEntityExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) validation_errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
+    pub(crate) validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl UnprocessableEntityExceptionBuilder {
@@ -92,17 +89,12 @@ impl UnprocessableEntityExceptionBuilder {
         self
     }
     /// A collection of validation error responses.
-    pub fn set_validation_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
-    ) -> Self {
+    pub fn set_validation_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>) -> Self {
         self.validation_errors = input;
         self
     }
     /// A collection of validation error responses.
-    pub fn get_validation_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationError>> {
+    pub fn get_validation_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationError>> {
         &self.validation_errors
     }
     /// Sets error metadata
@@ -112,10 +104,7 @@ impl UnprocessableEntityExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

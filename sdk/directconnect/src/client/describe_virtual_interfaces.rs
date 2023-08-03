@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeVirtualInterfacesOutput`](crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesOutput) with field(s):
     ///   - [`virtual_interfaces(Option<Vec<VirtualInterface>>)`](crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesOutput::virtual_interfaces): <p>The virtual interfaces</p>
     /// - On failure, responds with [`SdkError<DescribeVirtualInterfacesError>`](crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesError)
-    pub fn describe_virtual_interfaces(&self) -> crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesFluentBuilder{
+    pub fn describe_virtual_interfaces(&self) -> crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesFluentBuilder {
         crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesFluentBuilder::new(self.handle.clone())
     }
 }

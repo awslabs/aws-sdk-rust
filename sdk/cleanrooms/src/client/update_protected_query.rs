@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateProtectedQueryOutput`](crate::operation::update_protected_query::UpdateProtectedQueryOutput) with field(s):
     ///   - [`protected_query(Option<ProtectedQuery>)`](crate::operation::update_protected_query::UpdateProtectedQueryOutput::protected_query): <p>The protected query output.</p>
     /// - On failure, responds with [`SdkError<UpdateProtectedQueryError>`](crate::operation::update_protected_query::UpdateProtectedQueryError)
-    pub fn update_protected_query(
-        &self,
-    ) -> crate::operation::update_protected_query::builders::UpdateProtectedQueryFluentBuilder {
-        crate::operation::update_protected_query::builders::UpdateProtectedQueryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_protected_query(&self) -> crate::operation::update_protected_query::builders::UpdateProtectedQueryFluentBuilder {
+        crate::operation::update_protected_query::builders::UpdateProtectedQueryFluentBuilder::new(self.handle.clone())
     }
 }

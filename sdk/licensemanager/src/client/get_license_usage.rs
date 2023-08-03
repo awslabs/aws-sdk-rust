@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetLicenseUsageOutput`](crate::operation::get_license_usage::GetLicenseUsageOutput) with field(s):
     ///   - [`license_usage(Option<LicenseUsage>)`](crate::operation::get_license_usage::GetLicenseUsageOutput::license_usage): <p>License usage details.</p>
     /// - On failure, responds with [`SdkError<GetLicenseUsageError>`](crate::operation::get_license_usage::GetLicenseUsageError)
-    pub fn get_license_usage(
-        &self,
-    ) -> crate::operation::get_license_usage::builders::GetLicenseUsageFluentBuilder {
-        crate::operation::get_license_usage::builders::GetLicenseUsageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_license_usage(&self) -> crate::operation::get_license_usage::builders::GetLicenseUsageFluentBuilder {
+        crate::operation::get_license_usage::builders::GetLicenseUsageFluentBuilder::new(self.handle.clone())
     }
 }

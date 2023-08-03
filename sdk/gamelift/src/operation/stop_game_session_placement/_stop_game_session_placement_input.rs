@@ -15,18 +15,14 @@ impl StopGameSessionPlacementInput {
 }
 impl StopGameSessionPlacementInput {
     /// Creates a new builder-style object to manufacture [`StopGameSessionPlacementInput`](crate::operation::stop_game_session_placement::StopGameSessionPlacementInput).
-    pub fn builder(
-    ) -> crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementInputBuilder {
         crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementInputBuilder::default()
     }
 }
 
 /// A builder for [`StopGameSessionPlacementInput`](crate::operation::stop_game_session_placement::StopGameSessionPlacementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopGameSessionPlacementInputBuilder {
     pub(crate) placement_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,8 @@ impl StopGameSessionPlacementInputBuilder {
         crate::operation::stop_game_session_placement::StopGameSessionPlacementInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_game_session_placement::StopGameSessionPlacementInput {
-                placement_id: self.placement_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_game_session_placement::StopGameSessionPlacementInput {
+            placement_id: self.placement_id,
+        })
     }
 }

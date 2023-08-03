@@ -38,8 +38,7 @@ pub struct CreateCrawlerInput {
     pub lineage_configuration: ::std::option::Option<crate::types::LineageConfiguration>,
     /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
     #[doc(hidden)]
-    pub lake_formation_configuration:
-        ::std::option::Option<crate::types::LakeFormationConfiguration>,
+    pub lake_formation_configuration: ::std::option::Option<crate::types::LakeFormationConfiguration>,
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
     #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::string::String>,
@@ -48,9 +47,7 @@ pub struct CreateCrawlerInput {
     pub crawler_security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCrawlerInput {
     /// <p>Name of the new crawler.</p>
@@ -94,15 +91,11 @@ impl CreateCrawlerInput {
         self.recrawl_policy.as_ref()
     }
     /// <p>Specifies data lineage configuration settings for the crawler.</p>
-    pub fn lineage_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LineageConfiguration> {
+    pub fn lineage_configuration(&self) -> ::std::option::Option<&crate::types::LineageConfiguration> {
         self.lineage_configuration.as_ref()
     }
     /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
-    pub fn lake_formation_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LakeFormationConfiguration> {
+    pub fn lake_formation_configuration(&self) -> ::std::option::Option<&crate::types::LakeFormationConfiguration> {
         self.lake_formation_configuration.as_ref()
     }
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
@@ -114,11 +107,7 @@ impl CreateCrawlerInput {
         self.crawler_security_configuration.as_deref()
     }
     /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -131,9 +120,7 @@ impl CreateCrawlerInput {
 
 /// A builder for [`CreateCrawlerInput`](crate::operation::create_crawler::CreateCrawlerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCrawlerInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
@@ -146,13 +133,10 @@ pub struct CreateCrawlerInputBuilder {
     pub(crate) schema_change_policy: ::std::option::Option<crate::types::SchemaChangePolicy>,
     pub(crate) recrawl_policy: ::std::option::Option<crate::types::RecrawlPolicy>,
     pub(crate) lineage_configuration: ::std::option::Option<crate::types::LineageConfiguration>,
-    pub(crate) lake_formation_configuration:
-        ::std::option::Option<crate::types::LakeFormationConfiguration>,
+    pub(crate) lake_formation_configuration: ::std::option::Option<crate::types::LakeFormationConfiguration>,
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
     pub(crate) crawler_security_configuration: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCrawlerInputBuilder {
     /// <p>Name of the new crawler.</p>
@@ -184,18 +168,12 @@ impl CreateCrawlerInputBuilder {
         &self.role
     }
     /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -223,10 +201,7 @@ impl CreateCrawlerInputBuilder {
         self
     }
     /// <p>A list of collection of targets to crawl.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<crate::types::CrawlerTargets>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<crate::types::CrawlerTargets>) -> Self {
         self.targets = input;
         self
     }
@@ -260,17 +235,12 @@ impl CreateCrawlerInputBuilder {
         self
     }
     /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
-    pub fn set_classifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_classifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.classifiers = input;
         self
     }
     /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
-    pub fn get_classifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_classifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.classifiers
     }
     /// <p>The table prefix used for catalog tables that are created.</p>
@@ -293,17 +263,12 @@ impl CreateCrawlerInputBuilder {
         self
     }
     /// <p>The policy for the crawler's update and deletion behavior.</p>
-    pub fn set_schema_change_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaChangePolicy>,
-    ) -> Self {
+    pub fn set_schema_change_policy(mut self, input: ::std::option::Option<crate::types::SchemaChangePolicy>) -> Self {
         self.schema_change_policy = input;
         self
     }
     /// <p>The policy for the crawler's update and deletion behavior.</p>
-    pub fn get_schema_change_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::SchemaChangePolicy> {
+    pub fn get_schema_change_policy(&self) -> &::std::option::Option<crate::types::SchemaChangePolicy> {
         &self.schema_change_policy
     }
     /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
@@ -312,10 +277,7 @@ impl CreateCrawlerInputBuilder {
         self
     }
     /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
-    pub fn set_recrawl_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::RecrawlPolicy>,
-    ) -> Self {
+    pub fn set_recrawl_policy(mut self, input: ::std::option::Option<crate::types::RecrawlPolicy>) -> Self {
         self.recrawl_policy = input;
         self
     }
@@ -329,54 +291,35 @@ impl CreateCrawlerInputBuilder {
         self
     }
     /// <p>Specifies data lineage configuration settings for the crawler.</p>
-    pub fn set_lineage_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LineageConfiguration>,
-    ) -> Self {
+    pub fn set_lineage_configuration(mut self, input: ::std::option::Option<crate::types::LineageConfiguration>) -> Self {
         self.lineage_configuration = input;
         self
     }
     /// <p>Specifies data lineage configuration settings for the crawler.</p>
-    pub fn get_lineage_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LineageConfiguration> {
+    pub fn get_lineage_configuration(&self) -> &::std::option::Option<crate::types::LineageConfiguration> {
         &self.lineage_configuration
     }
     /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
-    pub fn lake_formation_configuration(
-        mut self,
-        input: crate::types::LakeFormationConfiguration,
-    ) -> Self {
+    pub fn lake_formation_configuration(mut self, input: crate::types::LakeFormationConfiguration) -> Self {
         self.lake_formation_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
-    pub fn set_lake_formation_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LakeFormationConfiguration>,
-    ) -> Self {
+    pub fn set_lake_formation_configuration(mut self, input: ::std::option::Option<crate::types::LakeFormationConfiguration>) -> Self {
         self.lake_formation_configuration = input;
         self
     }
     /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
-    pub fn get_lake_formation_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LakeFormationConfiguration> {
+    pub fn get_lake_formation_configuration(&self) -> &::std::option::Option<crate::types::LakeFormationConfiguration> {
         &self.lake_formation_configuration
     }
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
-    pub fn configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration = input;
         self
     }
@@ -385,25 +328,17 @@ impl CreateCrawlerInputBuilder {
         &self.configuration
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
-    pub fn crawler_security_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn crawler_security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.crawler_security_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
-    pub fn set_crawler_security_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_crawler_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.crawler_security_configuration = input;
         self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
-    pub fn get_crawler_security_configuration(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_crawler_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.crawler_security_configuration
     }
     /// Adds a key-value pair to `tags`.
@@ -411,41 +346,25 @@ impl CreateCrawlerInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCrawlerInput`](crate::operation::create_crawler::CreateCrawlerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_crawler::CreateCrawlerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_crawler::CreateCrawlerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_crawler::CreateCrawlerInput {
             name: self.name,
             role: self.role,

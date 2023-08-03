@@ -5,8 +5,7 @@
 pub struct ListAggregateDiscoveredResourcesOutput {
     /// <p>Returns a list of <code>ResourceIdentifiers</code> objects.</p>
     #[doc(hidden)]
-    pub resource_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
+    pub resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAggregateDiscoveredResourcesOutput {
 }
 impl ListAggregateDiscoveredResourcesOutput {
     /// <p>Returns a list of <code>ResourceIdentifiers</code> objects.</p>
-    pub fn resource_identifiers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AggregateResourceIdentifier]> {
+    pub fn resource_identifiers(&self) -> ::std::option::Option<&[crate::types::AggregateResourceIdentifier]> {
         self.resource_identifiers.as_deref()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAggregateDiscoveredResourcesOutpu
 }
 impl ListAggregateDiscoveredResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListAggregateDiscoveredResourcesOutput`](crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput).
-    pub fn builder() -> crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesOutputBuilder{
+    pub fn builder() -> crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesOutputBuilder {
         crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAggregateDiscoveredResourcesOutput`](crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAggregateDiscoveredResourcesOutputBuilder {
-    pub(crate) resource_identifiers:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
+    pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,27 +47,19 @@ impl ListAggregateDiscoveredResourcesOutputBuilder {
     /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
     ///
     /// <p>Returns a list of <code>ResourceIdentifiers</code> objects.</p>
-    pub fn resource_identifiers(
-        mut self,
-        input: crate::types::AggregateResourceIdentifier,
-    ) -> Self {
+    pub fn resource_identifiers(mut self, input: crate::types::AggregateResourceIdentifier) -> Self {
         let mut v = self.resource_identifiers.unwrap_or_default();
         v.push(input);
         self.resource_identifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns a list of <code>ResourceIdentifiers</code> objects.</p>
-    pub fn set_resource_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
-    ) -> Self {
+    pub fn set_resource_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>) -> Self {
         self.resource_identifiers = input;
         self
     }
     /// <p>Returns a list of <code>ResourceIdentifiers</code> objects.</p>
-    pub fn get_resource_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>> {
+    pub fn get_resource_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>> {
         &self.resource_identifiers
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -100,15 +86,10 @@ impl ListAggregateDiscoveredResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAggregateDiscoveredResourcesOutput`](crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput
-    {
+    pub fn build(self) -> crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput {
         crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput {
-            resource_identifiers: self.resource_identifiers
-            ,
-            next_token: self.next_token
-            ,
+            resource_identifiers: self.resource_identifiers,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

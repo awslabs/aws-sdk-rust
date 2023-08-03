@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for AssociateNetworkSettingsOutput {
 }
 impl AssociateNetworkSettingsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateNetworkSettingsOutput`](crate::operation::associate_network_settings::AssociateNetworkSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_network_settings::builders::AssociateNetworkSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_network_settings::builders::AssociateNetworkSettingsOutputBuilder {
         crate::operation::associate_network_settings::builders::AssociateNetworkSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateNetworkSettingsOutput`](crate::operation::associate_network_settings::AssociateNetworkSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateNetworkSettingsOutputBuilder {
     pub(crate) portal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_settings_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +57,12 @@ impl AssociateNetworkSettingsOutputBuilder {
         &self.portal_arn
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn set_network_settings_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_settings_arn = input;
         self
     }
@@ -90,9 +80,7 @@ impl AssociateNetworkSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateNetworkSettingsOutput`](crate::operation::associate_network_settings::AssociateNetworkSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_network_settings::AssociateNetworkSettingsOutput {
+    pub fn build(self) -> crate::operation::associate_network_settings::AssociateNetworkSettingsOutput {
         crate::operation::associate_network_settings::AssociateNetworkSettingsOutput {
             portal_arn: self.portal_arn,
             network_settings_arn: self.network_settings_arn,

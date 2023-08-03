@@ -21,9 +21,7 @@ pub enum ListenerTlsValidationContextTrust {
 impl ListenerTlsValidationContextTrust {
     /// Tries to convert the enum instance into [`File`](crate::types::ListenerTlsValidationContextTrust::File), extracting the inner [`TlsValidationContextFileTrust`](crate::types::TlsValidationContextFileTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(
-        &self,
-    ) -> ::std::result::Result<&crate::types::TlsValidationContextFileTrust, &Self> {
+    pub fn as_file(&self) -> ::std::result::Result<&crate::types::TlsValidationContextFileTrust, &Self> {
         if let ListenerTlsValidationContextTrust::File(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -36,9 +34,7 @@ impl ListenerTlsValidationContextTrust {
     }
     /// Tries to convert the enum instance into [`Sds`](crate::types::ListenerTlsValidationContextTrust::Sds), extracting the inner [`TlsValidationContextSdsTrust`](crate::types::TlsValidationContextSdsTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sds(
-        &self,
-    ) -> ::std::result::Result<&crate::types::TlsValidationContextSdsTrust, &Self> {
+    pub fn as_sds(&self) -> ::std::result::Result<&crate::types::TlsValidationContextSdsTrust, &Self> {
         if let ListenerTlsValidationContextTrust::Sds(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

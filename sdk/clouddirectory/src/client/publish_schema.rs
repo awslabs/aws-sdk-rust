@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`PublishSchemaOutput`](crate::operation::publish_schema::PublishSchemaOutput) with field(s):
     ///   - [`published_schema_arn(Option<String>)`](crate::operation::publish_schema::PublishSchemaOutput::published_schema_arn): <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
     /// - On failure, responds with [`SdkError<PublishSchemaError>`](crate::operation::publish_schema::PublishSchemaError)
-    pub fn publish_schema(
-        &self,
-    ) -> crate::operation::publish_schema::builders::PublishSchemaFluentBuilder {
-        crate::operation::publish_schema::builders::PublishSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn publish_schema(&self) -> crate::operation::publish_schema::builders::PublishSchemaFluentBuilder {
+        crate::operation::publish_schema::builders::PublishSchemaFluentBuilder::new(self.handle.clone())
     }
 }

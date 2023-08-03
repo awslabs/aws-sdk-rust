@@ -10,10 +10,7 @@ impl ListFraudstersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_fraudsters::ListFraudstersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fraudsters::ListFraudstersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fraudsters::ListFraudstersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_fraudsters();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListFraudstersFluentBuilder {
         }
     }
     /// Access the ListFraudsters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_fraudsters::builders::ListFraudstersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_fraudsters::builders::ListFraudstersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListFraudstersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListFraudstersFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_fraudsters::paginator::ListFraudstersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_fraudsters::paginator::ListFraudstersPaginator {
-        crate::operation::list_fraudsters::paginator::ListFraudstersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_fraudsters::paginator::ListFraudstersPaginator {
+        crate::operation::list_fraudsters::paginator::ListFraudstersPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the domain. </p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

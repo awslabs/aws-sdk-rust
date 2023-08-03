@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum IpamResourceDiscoveryAssociationState {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,15 +77,11 @@ impl ::std::convert::From<&str> for IpamResourceDiscoveryAssociationState {
             "associate-in-progress" => IpamResourceDiscoveryAssociationState::AssociateInProgress,
             "disassociate-complete" => IpamResourceDiscoveryAssociationState::DisassociateComplete,
             "disassociate-failed" => IpamResourceDiscoveryAssociationState::DisassociateFailed,
-            "disassociate-in-progress" => {
-                IpamResourceDiscoveryAssociationState::DisassociateInProgress
-            }
+            "disassociate-in-progress" => IpamResourceDiscoveryAssociationState::DisassociateInProgress,
             "isolate-complete" => IpamResourceDiscoveryAssociationState::IsolateComplete,
             "isolate-in-progress" => IpamResourceDiscoveryAssociationState::IsolateInProgress,
             "restore-in-progress" => IpamResourceDiscoveryAssociationState::RestoreInProgress,
-            other => IpamResourceDiscoveryAssociationState::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => IpamResourceDiscoveryAssociationState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -111,9 +101,7 @@ impl IpamResourceDiscoveryAssociationState {
             IpamResourceDiscoveryAssociationState::AssociateInProgress => "associate-in-progress",
             IpamResourceDiscoveryAssociationState::DisassociateComplete => "disassociate-complete",
             IpamResourceDiscoveryAssociationState::DisassociateFailed => "disassociate-failed",
-            IpamResourceDiscoveryAssociationState::DisassociateInProgress => {
-                "disassociate-in-progress"
-            }
+            IpamResourceDiscoveryAssociationState::DisassociateInProgress => "disassociate-in-progress",
             IpamResourceDiscoveryAssociationState::IsolateComplete => "isolate-complete",
             IpamResourceDiscoveryAssociationState::IsolateInProgress => "isolate-in-progress",
             IpamResourceDiscoveryAssociationState::RestoreInProgress => "restore-in-progress",

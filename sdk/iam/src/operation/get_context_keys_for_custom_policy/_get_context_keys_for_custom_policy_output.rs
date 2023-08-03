@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for GetContextKeysForCustomPolicyOutput {
 }
 impl GetContextKeysForCustomPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetContextKeysForCustomPolicyOutput`](crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput).
-    pub fn builder() -> crate::operation::get_context_keys_for_custom_policy::builders::GetContextKeysForCustomPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::get_context_keys_for_custom_policy::builders::GetContextKeysForCustomPolicyOutputBuilder {
         crate::operation::get_context_keys_for_custom_policy::builders::GetContextKeysForCustomPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetContextKeysForCustomPolicyOutput`](crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContextKeysForCustomPolicyOutputBuilder {
     pub(crate) context_key_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -42,27 +40,19 @@ impl GetContextKeysForCustomPolicyOutputBuilder {
     /// To override the contents of this collection use [`set_context_key_names`](Self::set_context_key_names).
     ///
     /// <p>The list of context keys that are referenced in the input policies.</p>
-    pub fn context_key_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn context_key_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.context_key_names.unwrap_or_default();
         v.push(input.into());
         self.context_key_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of context keys that are referenced in the input policies.</p>
-    pub fn set_context_key_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_context_key_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.context_key_names = input;
         self
     }
     /// <p>The list of context keys that are referenced in the input policies.</p>
-    pub fn get_context_key_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_context_key_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.context_key_names
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -75,10 +65,7 @@ impl GetContextKeysForCustomPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetContextKeysForCustomPolicyOutput`](crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput
-    {
+    pub fn build(self) -> crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput {
         crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput {
             context_key_names: self.context_key_names,
             _request_id: self._request_id,

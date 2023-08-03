@@ -49,9 +49,7 @@ impl ListTopicsOutput {
 
 /// A builder for [`ListTopicsOutput`](crate::operation::list_topics::ListTopicsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTopicsOutputBuilder {
     pub(crate) topics_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TopicSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,17 +70,12 @@ impl ListTopicsOutputBuilder {
         self
     }
     /// <p>A list of topic summaries.</p>
-    pub fn set_topics_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicSummary>>,
-    ) -> Self {
+    pub fn set_topics_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicSummary>>) -> Self {
         self.topics_summaries = input;
         self
     }
     /// <p>A list of topic summaries.</p>
-    pub fn get_topics_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicSummary>> {
+    pub fn get_topics_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicSummary>> {
         &self.topics_summaries
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

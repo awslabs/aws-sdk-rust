@@ -20,10 +20,7 @@ pub fn ser_update_key_input(
     if let Some(var_5) = &input.restrictions {
         #[allow(unused_mut)]
         let mut object_6 = object.key("Restrictions").start_object();
-        crate::protocol_serde::shape_api_key_restrictions::ser_api_key_restrictions(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_api_key_restrictions::ser_api_key_restrictions(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

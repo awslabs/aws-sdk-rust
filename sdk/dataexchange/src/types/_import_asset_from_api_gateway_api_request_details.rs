@@ -79,9 +79,7 @@ impl ImportAssetFromApiGatewayApiRequestDetails {
 
 /// A builder for [`ImportAssetFromApiGatewayApiRequestDetails`](crate::types::ImportAssetFromApiGatewayApiRequestDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     pub(crate) api_description: ::std::option::Option<::std::string::String>,
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
@@ -95,18 +93,12 @@ pub struct ImportAssetFromApiGatewayApiRequestDetailsBuilder {
 }
 impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     /// <p>The API description. Markdown supported.</p>
-    pub fn api_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API description. Markdown supported.</p>
-    pub fn set_api_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_description = input;
         self
     }
@@ -157,18 +149,12 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
         &self.api_name
     }
     /// <p>The Base64-encoded MD5 hash of the OpenAPI 3.0 JSON API specification file. It is used to ensure the integrity of the file.</p>
-    pub fn api_specification_md5_hash(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_specification_md5_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_specification_md5_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Base64-encoded MD5 hash of the OpenAPI 3.0 JSON API specification file. It is used to ensure the integrity of the file.</p>
-    pub fn set_api_specification_md5_hash(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_specification_md5_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_specification_md5_hash = input;
         self
     }
@@ -196,10 +182,7 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
         self
     }
     /// <p>The protocol type.</p>
-    pub fn set_protocol_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtocolType>,
-    ) -> Self {
+    pub fn set_protocol_type(mut self, input: ::std::option::Option<crate::types::ProtocolType>) -> Self {
         self.protocol_type = input;
         self
     }

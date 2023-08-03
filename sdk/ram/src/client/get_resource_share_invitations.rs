@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`resource_share_invitations(Option<Vec<ResourceShareInvitation>>)`](crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput::resource_share_invitations): <p>An array of objects that contain the details about the invitations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     /// - On failure, responds with [`SdkError<GetResourceShareInvitationsError>`](crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError)
-    pub fn get_resource_share_invitations(&self) -> crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsFluentBuilder{
+    pub fn get_resource_share_invitations(
+        &self,
+    ) -> crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsFluentBuilder {
         crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,36 +7,19 @@ pub fn ser_integration(
         crate::types::Integration::PagerDutyConfiguration(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_17.key("pagerDutyConfiguration").start_object();
-            crate::protocol_serde::shape_pager_duty_configuration::ser_pager_duty_configuration(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_pager_duty_configuration::ser_pager_duty_configuration(&mut object_1, inner)?;
             object_1.finish();
         }
-        crate::types::Integration::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "Integration",
-                ),
-            )
-        }
+        crate::types::Integration::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Integration")),
     }
     Ok(())
 }
 
 pub(crate) fn de_integration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::Integration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::Integration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -46,41 +29,34 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "pagerDutyConfiguration" => {
-                                Some(crate::types::Integration::PagerDutyConfiguration(
-                                    crate::protocol_serde::shape_pager_duty_configuration::de_pager_duty_configuration(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'pagerDutyConfiguration' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::Integration::Unknown)
-                                                                    }
-                        };
+                        "pagerDutyConfiguration" => Some(crate::types::Integration::PagerDutyConfiguration(
+                            crate::protocol_serde::shape_pager_duty_configuration::de_pager_duty_configuration(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'pagerDutyConfiguration' cannot be null")
+                            })?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::Integration::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

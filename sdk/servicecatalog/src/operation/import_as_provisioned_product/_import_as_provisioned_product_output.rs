@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ImportAsProvisionedProductOutput {
 }
 impl ImportAsProvisionedProductOutput {
     /// Creates a new builder-style object to manufacture [`ImportAsProvisionedProductOutput`](crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput).
-    pub fn builder() -> crate::operation::import_as_provisioned_product::builders::ImportAsProvisionedProductOutputBuilder{
+    pub fn builder() -> crate::operation::import_as_provisioned_product::builders::ImportAsProvisionedProductOutputBuilder {
         crate::operation::import_as_provisioned_product::builders::ImportAsProvisionedProductOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportAsProvisionedProductOutput`](crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportAsProvisionedProductOutputBuilder {
     pub(crate) record_detail: ::std::option::Option<crate::types::RecordDetail>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl ImportAsProvisionedProductOutputBuilder {
         self
     }
     /// <p>Information about a request operation.</p>
-    pub fn set_record_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordDetail>,
-    ) -> Self {
+    pub fn set_record_detail(mut self, input: ::std::option::Option<crate::types::RecordDetail>) -> Self {
         self.record_detail = input;
         self
     }
@@ -63,9 +58,7 @@ impl ImportAsProvisionedProductOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ImportAsProvisionedProductOutput`](crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput {
+    pub fn build(self) -> crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput {
         crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput {
             record_detail: self.record_detail,
             _request_id: self._request_id,

@@ -53,9 +53,7 @@ impl DescribeRegionsInput {
 
 /// A builder for [`DescribeRegionsInput`](crate::operation::describe_regions::DescribeRegionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRegionsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) region_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -85,10 +83,7 @@ impl DescribeRegionsInputBuilder {
     /// <li> <p> <code>opt-in-status</code> - The opt-in status of the Region (<code>opt-in-not-required</code> | <code>opted-in</code> | <code>not-opted-in</code>).</p> </li>
     /// <li> <p> <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -113,17 +108,12 @@ impl DescribeRegionsInputBuilder {
         self
     }
     /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
-    pub fn set_region_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_region_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.region_names = input;
         self
     }
     /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
-    pub fn get_region_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_region_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.region_names
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -157,10 +147,7 @@ impl DescribeRegionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRegionsInput`](crate::operation::describe_regions::DescribeRegionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_regions::DescribeRegionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_regions::DescribeRegionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_regions::DescribeRegionsInput {
             filters: self.filters,
             region_names: self.region_names,

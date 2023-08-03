@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetClusterSessionCredentialsOutput {
 }
 impl GetClusterSessionCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`GetClusterSessionCredentialsOutput`](crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsOutput).
-    pub fn builder() -> crate::operation::get_cluster_session_credentials::builders::GetClusterSessionCredentialsOutputBuilder{
+    pub fn builder() -> crate::operation::get_cluster_session_credentials::builders::GetClusterSessionCredentialsOutputBuilder {
         crate::operation::get_cluster_session_credentials::builders::GetClusterSessionCredentialsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetClusterSessionCredentialsOutput`](crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClusterSessionCredentialsOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
     pub(crate) expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -50,10 +48,7 @@ impl GetClusterSessionCredentialsOutputBuilder {
         self
     }
     /// <p>The credentials that you can use to connect to cluster endpoints that support username and password authentication.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<crate::types::Credentials>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
         self.credentials = input;
         self
     }
@@ -67,10 +62,7 @@ impl GetClusterSessionCredentialsOutputBuilder {
         self
     }
     /// <p>The time when the credentials that are returned by the <code>GetClusterSessionCredentials</code> API expire.</p>
-    pub fn set_expires_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires_at = input;
         self
     }
@@ -88,9 +80,7 @@ impl GetClusterSessionCredentialsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetClusterSessionCredentialsOutput`](crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsOutput {
+    pub fn build(self) -> crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsOutput {
         crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsOutput {
             credentials: self.credentials,
             expires_at: self.expires_at,

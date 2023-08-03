@@ -22,9 +22,7 @@ impl GetUploadStatusInput {
 
 /// A builder for [`GetUploadStatusInput`](crate::operation::get_upload_status::GetUploadStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUploadStatusInputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl GetUploadStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetUploadStatusInput`](crate::operation::get_upload_status::GetUploadStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_upload_status::GetUploadStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_upload_status::GetUploadStatusInput {
-            upload_id: self.upload_id,
-        })
+    ) -> ::std::result::Result<crate::operation::get_upload_status::GetUploadStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_upload_status::GetUploadStatusInput { upload_id: self.upload_id })
     }
 }

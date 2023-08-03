@@ -26,7 +26,7 @@ impl StartDevEnvironmentSessionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDevEnvironmentSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionInputBuilder,
+    inner: crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionInputBuilder,
 }
 impl StartDevEnvironmentSessionFluentBuilder {
     /// Creates a new `StartDevEnvironmentSession`.
@@ -37,7 +37,7 @@ impl StartDevEnvironmentSessionFluentBuilder {
         }
     }
     /// Access the StartDevEnvironmentSession as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartDevEnvironmentSessionFluentBuilder {
             crate::operation::start_dev_environment_session::StartDevEnvironmentSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_dev_environment_session::StartDevEnvironmentSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_dev_environment_session::StartDevEnvironmentSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartDevEnvironmentSessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartDevEnvironmentSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_dev_environment_session::StartDevEnvironmentSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_dev_environment_session::StartDevEnvironmentSessionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartDevEnvironmentSessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_dev_environment_session::StartDevEnvironmentSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_dev_environment_session::StartDevEnvironmentSessionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StartDevEnvironmentSessionFluentBuilder {
             crate::operation::start_dev_environment_session::StartDevEnvironmentSession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_dev_environment_session::StartDevEnvironmentSessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_dev_environment_session::StartDevEnvironmentSessionError>,
     > {
         self.customize_middleware().await
     }
@@ -163,25 +152,17 @@ impl StartDevEnvironmentSessionFluentBuilder {
         self.inner.get_id()
     }
     /// <p>Information about the configuration of a Dev Environment session.</p>
-    pub fn session_configuration(
-        mut self,
-        input: crate::types::DevEnvironmentSessionConfiguration,
-    ) -> Self {
+    pub fn session_configuration(mut self, input: crate::types::DevEnvironmentSessionConfiguration) -> Self {
         self.inner = self.inner.session_configuration(input);
         self
     }
     /// <p>Information about the configuration of a Dev Environment session.</p>
-    pub fn set_session_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DevEnvironmentSessionConfiguration>,
-    ) -> Self {
+    pub fn set_session_configuration(mut self, input: ::std::option::Option<crate::types::DevEnvironmentSessionConfiguration>) -> Self {
         self.inner = self.inner.set_session_configuration(input);
         self
     }
     /// <p>Information about the configuration of a Dev Environment session.</p>
-    pub fn get_session_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DevEnvironmentSessionConfiguration> {
+    pub fn get_session_configuration(&self) -> &::std::option::Option<crate::types::DevEnvironmentSessionConfiguration> {
         self.inner.get_session_configuration()
     }
 }

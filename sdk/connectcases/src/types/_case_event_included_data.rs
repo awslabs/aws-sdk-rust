@@ -23,9 +23,7 @@ impl CaseEventIncludedData {
 
 /// A builder for [`CaseEventIncludedData`](crate::types::CaseEventIncludedData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CaseEventIncludedDataBuilder {
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
 }
@@ -42,23 +40,16 @@ impl CaseEventIncludedDataBuilder {
         self
     }
     /// <p>List of field identifiers.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>) -> Self {
         self.fields = input;
         self
     }
     /// <p>List of field identifiers.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
         &self.fields
     }
     /// Consumes the builder and constructs a [`CaseEventIncludedData`](crate::types::CaseEventIncludedData).
     pub fn build(self) -> crate::types::CaseEventIncludedData {
-        crate::types::CaseEventIncludedData {
-            fields: self.fields,
-        }
+        crate::types::CaseEventIncludedData { fields: self.fields }
     }
 }

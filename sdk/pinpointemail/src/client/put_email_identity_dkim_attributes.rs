@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`signing_enabled(bool)`](crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesFluentBuilder::signing_enabled) / [`set_signing_enabled(bool)`](crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesFluentBuilder::set_signing_enabled): <p>Sets the DKIM signing configuration for the identity.</p>  <p>When you set this value <code>true</code>, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. When you set this value to <code>false</code>, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
     /// - On success, responds with [`PutEmailIdentityDkimAttributesOutput`](crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesOutput)
     /// - On failure, responds with [`SdkError<PutEmailIdentityDkimAttributesError>`](crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesError)
-    pub fn put_email_identity_dkim_attributes(&self) -> crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesFluentBuilder{
+    pub fn put_email_identity_dkim_attributes(
+        &self,
+    ) -> crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesFluentBuilder {
         crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl SnowflakeTarget {
 
 /// A builder for [`SnowflakeTarget`](crate::types::SnowflakeTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnowflakeTargetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<crate::types::SnowflakeNodeData>,
@@ -66,10 +64,7 @@ impl SnowflakeTargetBuilder {
         self
     }
     /// <p>Specifies the data of the Snowflake target node.</p>
-    pub fn set_data(
-        mut self,
-        input: ::std::option::Option<crate::types::SnowflakeNodeData>,
-    ) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<crate::types::SnowflakeNodeData>) -> Self {
         self.data = input;
         self
     }
@@ -89,10 +84,7 @@ impl SnowflakeTargetBuilder {
         self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }

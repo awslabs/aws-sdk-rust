@@ -5,15 +5,12 @@
 pub struct DeleteTransitGatewayRouteTableAnnouncementOutput {
     /// <p>Provides details about a deleted transit gateway route table.</p>
     #[doc(hidden)]
-    pub transit_gateway_route_table_announcement:
-        ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement>,
+    pub transit_gateway_route_table_announcement: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement>,
     _request_id: Option<String>,
 }
 impl DeleteTransitGatewayRouteTableAnnouncementOutput {
     /// <p>Provides details about a deleted transit gateway route table.</p>
-    pub fn transit_gateway_route_table_announcement(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayRouteTableAnnouncement> {
+    pub fn transit_gateway_route_table_announcement(&self) -> ::std::option::Option<&crate::types::TransitGatewayRouteTableAnnouncement> {
         self.transit_gateway_route_table_announcement.as_ref()
     }
 }
@@ -24,27 +21,23 @@ impl ::aws_http::request_id::RequestId for DeleteTransitGatewayRouteTableAnnounc
 }
 impl DeleteTransitGatewayRouteTableAnnouncementOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayRouteTableAnnouncementOutput`](crate::operation::delete_transit_gateway_route_table_announcement::DeleteTransitGatewayRouteTableAnnouncementOutput).
-    pub fn builder() -> crate::operation::delete_transit_gateway_route_table_announcement::builders::DeleteTransitGatewayRouteTableAnnouncementOutputBuilder{
-        crate::operation::delete_transit_gateway_route_table_announcement::builders::DeleteTransitGatewayRouteTableAnnouncementOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_transit_gateway_route_table_announcement::builders::DeleteTransitGatewayRouteTableAnnouncementOutputBuilder {
+        crate::operation::delete_transit_gateway_route_table_announcement::builders::DeleteTransitGatewayRouteTableAnnouncementOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`DeleteTransitGatewayRouteTableAnnouncementOutput`](crate::operation::delete_transit_gateway_route_table_announcement::DeleteTransitGatewayRouteTableAnnouncementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayRouteTableAnnouncementOutputBuilder {
-    pub(crate) transit_gateway_route_table_announcement:
-        ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement>,
+    pub(crate) transit_gateway_route_table_announcement: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement>,
     _request_id: Option<String>,
 }
 impl DeleteTransitGatewayRouteTableAnnouncementOutputBuilder {
     /// <p>Provides details about a deleted transit gateway route table.</p>
-    pub fn transit_gateway_route_table_announcement(
-        mut self,
-        input: crate::types::TransitGatewayRouteTableAnnouncement,
-    ) -> Self {
+    pub fn transit_gateway_route_table_announcement(mut self, input: crate::types::TransitGatewayRouteTableAnnouncement) -> Self {
         self.transit_gateway_route_table_announcement = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +50,7 @@ impl DeleteTransitGatewayRouteTableAnnouncementOutputBuilder {
         self
     }
     /// <p>Provides details about a deleted transit gateway route table.</p>
-    pub fn get_transit_gateway_route_table_announcement(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement> {
+    pub fn get_transit_gateway_route_table_announcement(&self) -> &::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement> {
         &self.transit_gateway_route_table_announcement
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +63,9 @@ impl DeleteTransitGatewayRouteTableAnnouncementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteTransitGatewayRouteTableAnnouncementOutput`](crate::operation::delete_transit_gateway_route_table_announcement::DeleteTransitGatewayRouteTableAnnouncementOutput).
-    pub fn build(self) -> crate::operation::delete_transit_gateway_route_table_announcement::DeleteTransitGatewayRouteTableAnnouncementOutput{
+    pub fn build(self) -> crate::operation::delete_transit_gateway_route_table_announcement::DeleteTransitGatewayRouteTableAnnouncementOutput {
         crate::operation::delete_transit_gateway_route_table_announcement::DeleteTransitGatewayRouteTableAnnouncementOutput {
-            transit_gateway_route_table_announcement: self.transit_gateway_route_table_announcement
-            ,
+            transit_gateway_route_table_announcement: self.transit_gateway_route_table_announcement,
             _request_id: self._request_id,
         }
     }

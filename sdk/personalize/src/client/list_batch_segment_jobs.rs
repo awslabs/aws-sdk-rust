@@ -11,12 +11,7 @@ impl super::Client {
     ///   - [`batch_segment_jobs(Option<Vec<BatchSegmentJobSummary>>)`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsOutput::batch_segment_jobs): <p>A list containing information on each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListBatchSegmentJobsError>`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsError)
-    pub fn list_batch_segment_jobs(
-        &self,
-    ) -> crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsFluentBuilder
-    {
-        crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_batch_segment_jobs(&self) -> crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsFluentBuilder {
+        crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsFluentBuilder::new(self.handle.clone())
     }
 }

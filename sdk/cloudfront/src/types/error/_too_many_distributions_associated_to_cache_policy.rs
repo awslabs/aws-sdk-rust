@@ -27,34 +27,27 @@ impl ::std::fmt::Display for TooManyDistributionsAssociatedToCachePolicy {
     }
 }
 impl ::std::error::Error for TooManyDistributionsAssociatedToCachePolicy {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::TooManyDistributionsAssociatedToCachePolicy
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::TooManyDistributionsAssociatedToCachePolicy {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyDistributionsAssociatedToCachePolicy
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyDistributionsAssociatedToCachePolicy {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl TooManyDistributionsAssociatedToCachePolicy {
     /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToCachePolicy`](crate::types::error::TooManyDistributionsAssociatedToCachePolicy).
-    pub fn builder(
-    ) -> crate::types::error::builders::TooManyDistributionsAssociatedToCachePolicyBuilder {
+    pub fn builder() -> crate::types::error::builders::TooManyDistributionsAssociatedToCachePolicyBuilder {
         crate::types::error::builders::TooManyDistributionsAssociatedToCachePolicyBuilder::default()
     }
 }
 
 /// A builder for [`TooManyDistributionsAssociatedToCachePolicy`](crate::types::error::TooManyDistributionsAssociatedToCachePolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TooManyDistributionsAssociatedToCachePolicyBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl TooManyDistributionsAssociatedToCachePolicyBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

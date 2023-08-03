@@ -128,9 +128,7 @@ impl Finding {
 
 /// A builder for [`Finding`](crate::types::Finding).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -156,10 +154,7 @@ impl FindingBuilder {
         self
     }
     /// <p>The time when the finding was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -215,10 +210,7 @@ impl FindingBuilder {
         self
     }
     /// <p>The time when the finding was last updated. Findings are updated when you remediate them or when the finding code location changes. </p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -274,10 +266,7 @@ impl FindingBuilder {
         self
     }
     /// <p>An object that describes the detected security vulnerability.</p>
-    pub fn set_vulnerability(
-        mut self,
-        input: ::std::option::Option<crate::types::Vulnerability>,
-    ) -> Self {
+    pub fn set_vulnerability(mut self, input: ::std::option::Option<crate::types::Vulnerability>) -> Self {
         self.vulnerability = input;
         self
     }
@@ -305,10 +294,7 @@ impl FindingBuilder {
         self
     }
     /// <p>An object that contains the details about how to remediate a finding.</p>
-    pub fn set_remediation(
-        mut self,
-        input: ::std::option::Option<crate::types::Remediation>,
-    ) -> Self {
+    pub fn set_remediation(mut self, input: ::std::option::Option<crate::types::Remediation>) -> Self {
         self.remediation = input;
         self
     }
@@ -335,27 +321,19 @@ impl FindingBuilder {
     /// To override the contents of this collection use [`set_detector_tags`](Self::set_detector_tags).
     ///
     /// <p>One or more tags or categorizations that are associated with a detector. These tags are defined by type, programming language, or other classification such as maintainability or consistency.</p>
-    pub fn detector_tags(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.detector_tags.unwrap_or_default();
         v.push(input.into());
         self.detector_tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more tags or categorizations that are associated with a detector. These tags are defined by type, programming language, or other classification such as maintainability or consistency.</p>
-    pub fn set_detector_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_detector_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.detector_tags = input;
         self
     }
     /// <p>One or more tags or categorizations that are associated with a detector. These tags are defined by type, programming language, or other classification such as maintainability or consistency.</p>
-    pub fn get_detector_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_detector_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.detector_tags
     }
     /// <p>The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices. </p>
@@ -373,18 +351,12 @@ impl FindingBuilder {
         &self.detector_id
     }
     /// <p>The name of the detector that identified the security vulnerability in your code. </p>
-    pub fn detector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the detector that identified the security vulnerability in your code. </p>
-    pub fn set_detector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_name = input;
         self
     }

@@ -38,9 +38,7 @@ impl RestoreSnapshotTierFluentBuilder {
         }
     }
     /// Access the RestoreSnapshotTier as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl RestoreSnapshotTierFluentBuilder {
             crate::operation::restore_snapshot_tier::RestoreSnapshotTier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_snapshot_tier::RestoreSnapshotTierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_snapshot_tier::RestoreSnapshotTierError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl RestoreSnapshotTierFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl RestoreSnapshotTierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_snapshot_tier::RestoreSnapshotTierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_snapshot_tier::RestoreSnapshotTierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_snapshot_tier::RestoreSnapshotTierError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl RestoreSnapshotTierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_snapshot_tier::RestoreSnapshotTierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_snapshot_tier::RestoreSnapshotTierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_snapshot_tier::RestoreSnapshotTierError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl RestoreSnapshotTierFluentBuilder {
             crate::operation::restore_snapshot_tier::RestoreSnapshotTier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_snapshot_tier::RestoreSnapshotTierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_snapshot_tier::RestoreSnapshotTierError>,
     > {
         self.customize_middleware().await
     }

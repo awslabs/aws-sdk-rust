@@ -20,9 +20,7 @@ impl CreateRealtimeEndpointOutput {
         self.ml_model_id.as_deref()
     }
     /// <p>The endpoint information of the <code>MLModel</code> </p>
-    pub fn realtime_endpoint_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RealtimeEndpointInfo> {
+    pub fn realtime_endpoint_info(&self) -> ::std::option::Option<&crate::types::RealtimeEndpointInfo> {
         self.realtime_endpoint_info.as_ref()
     }
 }
@@ -33,18 +31,14 @@ impl ::aws_http::request_id::RequestId for CreateRealtimeEndpointOutput {
 }
 impl CreateRealtimeEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateRealtimeEndpointOutput`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointOutputBuilder {
         crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRealtimeEndpointOutput`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRealtimeEndpointOutputBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) realtime_endpoint_info: ::std::option::Option<crate::types::RealtimeEndpointInfo>,
@@ -71,17 +65,12 @@ impl CreateRealtimeEndpointOutputBuilder {
         self
     }
     /// <p>The endpoint information of the <code>MLModel</code> </p>
-    pub fn set_realtime_endpoint_info(
-        mut self,
-        input: ::std::option::Option<crate::types::RealtimeEndpointInfo>,
-    ) -> Self {
+    pub fn set_realtime_endpoint_info(mut self, input: ::std::option::Option<crate::types::RealtimeEndpointInfo>) -> Self {
         self.realtime_endpoint_info = input;
         self
     }
     /// <p>The endpoint information of the <code>MLModel</code> </p>
-    pub fn get_realtime_endpoint_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::RealtimeEndpointInfo> {
+    pub fn get_realtime_endpoint_info(&self) -> &::std::option::Option<crate::types::RealtimeEndpointInfo> {
         &self.realtime_endpoint_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

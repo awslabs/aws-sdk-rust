@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`status(CertificateAuthorityStatus)`](crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityFluentBuilder::status) / [`set_status(Option<CertificateAuthorityStatus>)`](crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityFluentBuilder::set_status): <p>Status of your private CA.</p>
     /// - On success, responds with [`UpdateCertificateAuthorityOutput`](crate::operation::update_certificate_authority::UpdateCertificateAuthorityOutput)
     /// - On failure, responds with [`SdkError<UpdateCertificateAuthorityError>`](crate::operation::update_certificate_authority::UpdateCertificateAuthorityError)
-    pub fn update_certificate_authority(&self) -> crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityFluentBuilder{
+    pub fn update_certificate_authority(&self) -> crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityFluentBuilder {
         crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl FailedScheduledUpdateGroupActionRequest {
 
 /// A builder for [`FailedScheduledUpdateGroupActionRequest`](crate::types::FailedScheduledUpdateGroupActionRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedScheduledUpdateGroupActionRequestBuilder {
     pub(crate) scheduled_action_name: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct FailedScheduledUpdateGroupActionRequestBuilder {
 }
 impl FailedScheduledUpdateGroupActionRequestBuilder {
     /// <p>The name of the scheduled action.</p>
-    pub fn scheduled_action_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scheduled action.</p>
-    pub fn set_scheduled_action_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_action_name = input;
         self
     }
@@ -81,18 +73,12 @@ impl FailedScheduledUpdateGroupActionRequestBuilder {
         &self.error_code
     }
     /// <p>The error message accompanying the error code.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message accompanying the error code.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

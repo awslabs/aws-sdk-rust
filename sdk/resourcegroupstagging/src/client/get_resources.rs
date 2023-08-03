@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`pagination_token(Option<String>)`](crate::operation::get_resources::GetResourcesOutput::pagination_token): <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     ///   - [`resource_tag_mapping_list(Option<Vec<ResourceTagMapping>>)`](crate::operation::get_resources::GetResourcesOutput::resource_tag_mapping_list): <p>A list of resource ARNs and the tags (keys and values) associated with each.</p>
     /// - On failure, responds with [`SdkError<GetResourcesError>`](crate::operation::get_resources::GetResourcesError)
-    pub fn get_resources(
-        &self,
-    ) -> crate::operation::get_resources::builders::GetResourcesFluentBuilder {
-        crate::operation::get_resources::builders::GetResourcesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resources(&self) -> crate::operation::get_resources::builders::GetResourcesFluentBuilder {
+        crate::operation::get_resources::builders::GetResourcesFluentBuilder::new(self.handle.clone())
     }
 }

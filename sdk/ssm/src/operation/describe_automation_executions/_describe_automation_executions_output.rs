@@ -5,8 +5,7 @@
 pub struct DescribeAutomationExecutionsOutput {
     /// <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
     #[doc(hidden)]
-    pub automation_execution_metadata_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionMetadata>>,
+    pub automation_execution_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionMetadata>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeAutomationExecutionsOutput {
 }
 impl DescribeAutomationExecutionsOutput {
     /// <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
-    pub fn automation_execution_metadata_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AutomationExecutionMetadata]> {
+    pub fn automation_execution_metadata_list(&self) -> ::std::option::Option<&[crate::types::AutomationExecutionMetadata]> {
         self.automation_execution_metadata_list.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeAutomationExecutionsOutput {
 }
 impl DescribeAutomationExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAutomationExecutionsOutput`](crate::operation::describe_automation_executions::DescribeAutomationExecutionsOutput).
-    pub fn builder() -> crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsOutputBuilder {
         crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAutomationExecutionsOutput`](crate::operation::describe_automation_executions::DescribeAutomationExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutomationExecutionsOutputBuilder {
-    pub(crate) automation_execution_metadata_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionMetadata>>,
+    pub(crate) automation_execution_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeAutomationExecutionsOutputBuilder {
     /// To override the contents of this collection use [`set_automation_execution_metadata_list`](Self::set_automation_execution_metadata_list).
     ///
     /// <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
-    pub fn automation_execution_metadata_list(
-        mut self,
-        input: crate::types::AutomationExecutionMetadata,
-    ) -> Self {
+    pub fn automation_execution_metadata_list(mut self, input: crate::types::AutomationExecutionMetadata) -> Self {
         let mut v = self.automation_execution_metadata_list.unwrap_or_default();
         v.push(input);
         self.automation_execution_metadata_list = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeAutomationExecutionsOutputBuilder {
         self
     }
     /// <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
-    pub fn get_automation_execution_metadata_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionMetadata>> {
+    pub fn get_automation_execution_metadata_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationExecutionMetadata>> {
         &self.automation_execution_metadata_list
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -100,9 +89,7 @@ impl DescribeAutomationExecutionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAutomationExecutionsOutput`](crate::operation::describe_automation_executions::DescribeAutomationExecutionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_automation_executions::DescribeAutomationExecutionsOutput {
+    pub fn build(self) -> crate::operation::describe_automation_executions::DescribeAutomationExecutionsOutput {
         crate::operation::describe_automation_executions::DescribeAutomationExecutionsOutput {
             automation_execution_metadata_list: self.automation_execution_metadata_list,
             next_token: self.next_token,

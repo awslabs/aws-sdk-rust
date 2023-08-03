@@ -12,8 +12,7 @@ pub struct AwsWafv2CustomResponseDetails {
     pub response_code: i32,
     /// <p> The HTTP headers to use in the response. </p>
     #[doc(hidden)]
-    pub response_headers:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>,
+    pub response_headers: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>,
 }
 impl AwsWafv2CustomResponseDetails {
     /// <p> References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. </p>
@@ -25,9 +24,7 @@ impl AwsWafv2CustomResponseDetails {
         self.response_code
     }
     /// <p> The HTTP headers to use in the response. </p>
-    pub fn response_headers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsWafv2CustomHttpHeader]> {
+    pub fn response_headers(&self) -> ::std::option::Option<&[crate::types::AwsWafv2CustomHttpHeader]> {
         self.response_headers.as_deref()
     }
 }
@@ -40,29 +37,20 @@ impl AwsWafv2CustomResponseDetails {
 
 /// A builder for [`AwsWafv2CustomResponseDetails`](crate::types::AwsWafv2CustomResponseDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsWafv2CustomResponseDetailsBuilder {
     pub(crate) custom_response_body_key: ::std::option::Option<::std::string::String>,
     pub(crate) response_code: ::std::option::Option<i32>,
-    pub(crate) response_headers:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>,
+    pub(crate) response_headers: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>,
 }
 impl AwsWafv2CustomResponseDetailsBuilder {
     /// <p> References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. </p>
-    pub fn custom_response_body_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_response_body_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_response_body_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. </p>
-    pub fn set_custom_response_body_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_response_body_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_response_body_key = input;
         self
     }
@@ -96,17 +84,12 @@ impl AwsWafv2CustomResponseDetailsBuilder {
         self
     }
     /// <p> The HTTP headers to use in the response. </p>
-    pub fn set_response_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>,
-    ) -> Self {
+    pub fn set_response_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>) -> Self {
         self.response_headers = input;
         self
     }
     /// <p> The HTTP headers to use in the response. </p>
-    pub fn get_response_headers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>> {
+    pub fn get_response_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>> {
         &self.response_headers
     }
     /// Consumes the builder and constructs a [`AwsWafv2CustomResponseDetails`](crate::types::AwsWafv2CustomResponseDetails).

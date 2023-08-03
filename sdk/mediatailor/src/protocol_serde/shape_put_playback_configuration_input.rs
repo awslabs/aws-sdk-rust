@@ -9,10 +9,7 @@ pub fn ser_put_playback_configuration_input(
     if let Some(var_2) = &input.avail_suppression {
         #[allow(unused_mut)]
         let mut object_3 = object.key("AvailSuppression").start_object();
-        crate::protocol_serde::shape_avail_suppression::ser_avail_suppression(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_avail_suppression::ser_avail_suppression(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.bumper {
@@ -24,10 +21,7 @@ pub fn ser_put_playback_configuration_input(
     if let Some(var_6) = &input.cdn_configuration {
         #[allow(unused_mut)]
         let mut object_7 = object.key("CdnConfiguration").start_object();
-        crate::protocol_serde::shape_cdn_configuration::ser_cdn_configuration(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_cdn_configuration::ser_cdn_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.configuration_aliases {
@@ -50,28 +44,19 @@ pub fn ser_put_playback_configuration_input(
     if let Some(var_15) = &input.dash_configuration {
         #[allow(unused_mut)]
         let mut object_16 = object.key("DashConfiguration").start_object();
-        crate::protocol_serde::shape_dash_configuration_for_put::ser_dash_configuration_for_put(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_dash_configuration_for_put::ser_dash_configuration_for_put(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.live_pre_roll_configuration {
         #[allow(unused_mut)]
         let mut object_18 = object.key("LivePreRollConfiguration").start_object();
-        crate::protocol_serde::shape_live_pre_roll_configuration::ser_live_pre_roll_configuration(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_live_pre_roll_configuration::ser_live_pre_roll_configuration(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.manifest_processing_rules {
         #[allow(unused_mut)]
         let mut object_20 = object.key("ManifestProcessingRules").start_object();
-        crate::protocol_serde::shape_manifest_processing_rules::ser_manifest_processing_rules(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_manifest_processing_rules::ser_manifest_processing_rules(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.name {

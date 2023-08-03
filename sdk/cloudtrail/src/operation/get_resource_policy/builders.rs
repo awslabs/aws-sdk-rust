@@ -10,10 +10,7 @@ impl GetResourcePolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_resource_policy::GetResourcePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_policy::GetResourcePolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_resource_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetResourcePolicyFluentBuilder {
         }
     }
     /// Access the GetResourcePolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_resource_policy::builders::GetResourcePolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_resource_policy::builders::GetResourcePolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetResourcePolicyFluentBuilder {
             crate::operation::get_resource_policy::GetResourcePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_policy::GetResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetResourcePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetResourcePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_policy::GetResourcePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_policy::GetResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetResourcePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_policy::GetResourcePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_policy::GetResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetResourcePolicyFluentBuilder {
             crate::operation::get_resource_policy::GetResourcePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_policy::GetResourcePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError>,
     > {
         self.customize_middleware().await
     }

@@ -47,9 +47,7 @@ impl PriorityConfiguration {
 
 /// A builder for [`PriorityConfiguration`](crate::types::PriorityConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PriorityConfigurationBuilder {
     pub(crate) priority_order: ::std::option::Option<::std::vec::Vec<crate::types::PriorityType>>,
     pub(crate) location_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -79,10 +77,7 @@ impl PriorityConfigurationBuilder {
     /// <li> <p> <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p> </li>
     /// <li> <p> <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>. </p> </li>
     /// </ul>
-    pub fn set_priority_order(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PriorityType>>,
-    ) -> Self {
+    pub fn set_priority_order(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PriorityType>>) -> Self {
         self.priority_order = input;
         self
     }
@@ -93,9 +88,7 @@ impl PriorityConfigurationBuilder {
     /// <li> <p> <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p> </li>
     /// <li> <p> <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>. </p> </li>
     /// </ul>
-    pub fn get_priority_order(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PriorityType>> {
+    pub fn get_priority_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PriorityType>> {
         &self.priority_order
     }
     /// Appends an item to `location_order`.
@@ -103,27 +96,19 @@ impl PriorityConfigurationBuilder {
     /// To override the contents of this collection use [`set_location_order`](Self::set_location_order).
     ///
     /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
-    pub fn location_order(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn location_order(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.location_order.unwrap_or_default();
         v.push(input.into());
         self.location_order = ::std::option::Option::Some(v);
         self
     }
     /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
-    pub fn set_location_order(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_location_order(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.location_order = input;
         self
     }
     /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
-    pub fn get_location_order(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_location_order(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.location_order
     }
     /// Consumes the builder and constructs a [`PriorityConfiguration`](crate::types::PriorityConfiguration).

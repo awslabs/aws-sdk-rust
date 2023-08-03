@@ -26,7 +26,7 @@ impl BatchDescribeMergeConflictsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDescribeMergeConflictsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_describe_merge_conflicts::builders::BatchDescribeMergeConflictsInputBuilder,
+    inner: crate::operation::batch_describe_merge_conflicts::builders::BatchDescribeMergeConflictsInputBuilder,
 }
 impl BatchDescribeMergeConflictsFluentBuilder {
     /// Creates a new `BatchDescribeMergeConflicts`.
@@ -37,7 +37,7 @@ impl BatchDescribeMergeConflictsFluentBuilder {
         }
     }
     /// Access the BatchDescribeMergeConflicts as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_describe_merge_conflicts::builders::BatchDescribeMergeConflictsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_describe_merge_conflicts::builders::BatchDescribeMergeConflictsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchDescribeMergeConflictsFluentBuilder {
             crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflicts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchDescribeMergeConflictsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchDescribeMergeConflictsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchDescribeMergeConflictsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl BatchDescribeMergeConflictsFluentBuilder {
             crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflicts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the repository that contains the merge conflicts you want to review.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository that contains the merge conflicts you want to review.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -141,40 +124,26 @@ impl BatchDescribeMergeConflictsFluentBuilder {
         self.inner.get_repository_name()
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn destination_commit_specifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_commit_specifier(input.into());
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn set_destination_commit_specifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_commit_specifier(input);
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn get_destination_commit_specifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_destination_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_commit_specifier()
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn source_commit_specifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_commit_specifier(input.into());
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn set_source_commit_specifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_commit_specifier(input);
         self
     }
@@ -188,10 +157,7 @@ impl BatchDescribeMergeConflictsFluentBuilder {
         self
     }
     /// <p>The merge option or strategy you want to use to merge the code.</p>
-    pub fn set_merge_option(
-        mut self,
-        input: ::std::option::Option<crate::types::MergeOptionTypeEnum>,
-    ) -> Self {
+    pub fn set_merge_option(mut self, input: ::std::option::Option<crate::types::MergeOptionTypeEnum>) -> Self {
         self.inner = self.inner.set_merge_option(input);
         self
     }
@@ -237,10 +203,7 @@ impl BatchDescribeMergeConflictsFluentBuilder {
         self
     }
     /// <p>The path of the target files used to describe the conflicts. If not specified, the default is all conflict files.</p>
-    pub fn set_file_paths(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_file_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_file_paths(input);
         self
     }
@@ -249,47 +212,31 @@ impl BatchDescribeMergeConflictsFluentBuilder {
         self.inner.get_file_paths()
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn conflict_detail_level(
-        mut self,
-        input: crate::types::ConflictDetailLevelTypeEnum,
-    ) -> Self {
+    pub fn conflict_detail_level(mut self, input: crate::types::ConflictDetailLevelTypeEnum) -> Self {
         self.inner = self.inner.conflict_detail_level(input);
         self
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn set_conflict_detail_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
-    ) -> Self {
+    pub fn set_conflict_detail_level(mut self, input: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>) -> Self {
         self.inner = self.inner.set_conflict_detail_level(input);
         self
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn get_conflict_detail_level(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConflictDetailLevelTypeEnum> {
+    pub fn get_conflict_detail_level(&self) -> &::std::option::Option<crate::types::ConflictDetailLevelTypeEnum> {
         self.inner.get_conflict_detail_level()
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn conflict_resolution_strategy(
-        mut self,
-        input: crate::types::ConflictResolutionStrategyTypeEnum,
-    ) -> Self {
+    pub fn conflict_resolution_strategy(mut self, input: crate::types::ConflictResolutionStrategyTypeEnum) -> Self {
         self.inner = self.inner.conflict_resolution_strategy(input);
         self
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn set_conflict_resolution_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
-    ) -> Self {
+    pub fn set_conflict_resolution_strategy(mut self, input: ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>) -> Self {
         self.inner = self.inner.set_conflict_resolution_strategy(input);
         self
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn get_conflict_resolution_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum> {
+    pub fn get_conflict_resolution_strategy(&self) -> &::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum> {
         self.inner.get_conflict_resolution_strategy()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>

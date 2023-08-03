@@ -18,8 +18,7 @@ pub struct RepositoryScanningConfiguration {
     pub scan_frequency: ::std::option::Option<crate::types::ScanFrequency>,
     /// <p>The scan filters applied to the repository.</p>
     #[doc(hidden)]
-    pub applied_scan_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
+    pub applied_scan_filters: ::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
 }
 impl RepositoryScanningConfiguration {
     /// <p>The ARN of the repository.</p>
@@ -39,9 +38,7 @@ impl RepositoryScanningConfiguration {
         self.scan_frequency.as_ref()
     }
     /// <p>The scan filters applied to the repository.</p>
-    pub fn applied_scan_filters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ScanningRepositoryFilter]> {
+    pub fn applied_scan_filters(&self) -> ::std::option::Option<&[crate::types::ScanningRepositoryFilter]> {
         self.applied_scan_filters.as_deref()
     }
 }
@@ -54,31 +51,22 @@ impl RepositoryScanningConfiguration {
 
 /// A builder for [`RepositoryScanningConfiguration`](crate::types::RepositoryScanningConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryScanningConfigurationBuilder {
     pub(crate) repository_arn: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) scan_on_push: ::std::option::Option<bool>,
     pub(crate) scan_frequency: ::std::option::Option<crate::types::ScanFrequency>,
-    pub(crate) applied_scan_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
+    pub(crate) applied_scan_filters: ::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
 }
 impl RepositoryScanningConfigurationBuilder {
     /// <p>The ARN of the repository.</p>
-    pub fn repository_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the repository.</p>
-    pub fn set_repository_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_arn = input;
         self
     }
@@ -87,18 +75,12 @@ impl RepositoryScanningConfigurationBuilder {
         &self.repository_arn
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -126,10 +108,7 @@ impl RepositoryScanningConfigurationBuilder {
         self
     }
     /// <p>The scan frequency for the repository.</p>
-    pub fn set_scan_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::ScanFrequency>,
-    ) -> Self {
+    pub fn set_scan_frequency(mut self, input: ::std::option::Option<crate::types::ScanFrequency>) -> Self {
         self.scan_frequency = input;
         self
     }
@@ -149,17 +128,12 @@ impl RepositoryScanningConfigurationBuilder {
         self
     }
     /// <p>The scan filters applied to the repository.</p>
-    pub fn set_applied_scan_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
-    ) -> Self {
+    pub fn set_applied_scan_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>>) -> Self {
         self.applied_scan_filters = input;
         self
     }
     /// <p>The scan filters applied to the repository.</p>
-    pub fn get_applied_scan_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>> {
+    pub fn get_applied_scan_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>> {
         &self.applied_scan_filters
     }
     /// Consumes the builder and constructs a [`RepositoryScanningConfiguration`](crate::types::RepositoryScanningConfiguration).

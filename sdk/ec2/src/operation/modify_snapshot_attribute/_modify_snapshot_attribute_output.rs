@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifySnapshotAttributeOutput {
 }
 impl ModifySnapshotAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifySnapshotAttributeOutput`](crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeOutputBuilder {
         crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifySnapshotAttributeOutput`](crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifySnapshotAttributeOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl ModifySnapshotAttributeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifySnapshotAttributeOutput`](crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeOutput {
+    pub fn build(self) -> crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeOutput {
         crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeOutput {
             _request_id: self._request_id,
         }

@@ -158,9 +158,7 @@ impl AssociateConnectionWithLagOutput {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> ::std::option::Option<&crate::types::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the connection.</p>
@@ -197,16 +195,14 @@ impl ::aws_http::request_id::RequestId for AssociateConnectionWithLagOutput {
 }
 impl AssociateConnectionWithLagOutput {
     /// Creates a new builder-style object to manufacture [`AssociateConnectionWithLagOutput`](crate::operation::associate_connection_with_lag::AssociateConnectionWithLagOutput).
-    pub fn builder() -> crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagOutputBuilder{
+    pub fn builder() -> crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagOutputBuilder {
         crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateConnectionWithLagOutput`](crate::operation::associate_connection_with_lag::AssociateConnectionWithLagOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateConnectionWithLagOutputBuilder {
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
@@ -234,18 +230,12 @@ pub struct AssociateConnectionWithLagOutputBuilder {
 }
 impl AssociateConnectionWithLagOutputBuilder {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -254,18 +244,12 @@ impl AssociateConnectionWithLagOutputBuilder {
         &self.owner_account
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -274,18 +258,12 @@ impl AssociateConnectionWithLagOutputBuilder {
         &self.connection_id
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_name = input;
         self
     }
@@ -321,10 +299,7 @@ impl AssociateConnectionWithLagOutputBuilder {
     /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
-    pub fn set_connection_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionState>,
-    ) -> Self {
+    pub fn set_connection_state(mut self, input: ::std::option::Option<crate::types::ConnectionState>) -> Self {
         self.connection_state = input;
         self
     }
@@ -419,10 +394,7 @@ impl AssociateConnectionWithLagOutputBuilder {
         self
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn set_loa_issue_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_loa_issue_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.loa_issue_time = input;
         self
     }
@@ -473,18 +445,12 @@ impl AssociateConnectionWithLagOutputBuilder {
         &self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_device_v2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_device_v2 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn set_aws_device_v2(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_device_v2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_device_v2 = input;
         self
     }
@@ -493,18 +459,12 @@ impl AssociateConnectionWithLagOutputBuilder {
         &self.aws_device_v2
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_logical_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_logical_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn set_aws_logical_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_logical_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_logical_device_id = input;
         self
     }
@@ -518,17 +478,12 @@ impl AssociateConnectionWithLagOutputBuilder {
         self
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn set_has_logical_redundancy(
-        mut self,
-        input: ::std::option::Option<crate::types::HasLogicalRedundancy>,
-    ) -> Self {
+    pub fn set_has_logical_redundancy(mut self, input: ::std::option::Option<crate::types::HasLogicalRedundancy>) -> Self {
         self.has_logical_redundancy = input;
         self
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn get_has_logical_redundancy(
-        &self,
-    ) -> &::std::option::Option<crate::types::HasLogicalRedundancy> {
+    pub fn get_has_logical_redundancy(&self) -> &::std::option::Option<crate::types::HasLogicalRedundancy> {
         &self.has_logical_redundancy
     }
     /// Appends an item to `tags`.
@@ -543,10 +498,7 @@ impl AssociateConnectionWithLagOutputBuilder {
         self
     }
     /// <p>The tags associated with the connection.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -555,18 +507,12 @@ impl AssociateConnectionWithLagOutputBuilder {
         &self.tags
     }
     /// <p>The name of the service provider associated with the connection.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service provider associated with the connection.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_name = input;
         self
     }
@@ -590,19 +536,13 @@ impl AssociateConnectionWithLagOutputBuilder {
     }
     /// <p>The MAC Security (MACsec) port link status of the connection.</p>
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-    pub fn port_encryption_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn port_encryption_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.port_encryption_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The MAC Security (MACsec) port link status of the connection.</p>
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-    pub fn set_port_encryption_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_port_encryption_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.port_encryption_status = input;
         self
     }
@@ -613,19 +553,13 @@ impl AssociateConnectionWithLagOutputBuilder {
     }
     /// <p>The MAC Security (MACsec) connection encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_mode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The MAC Security (MACsec) connection encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn set_encryption_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_mode = input;
         self
     }
@@ -646,17 +580,12 @@ impl AssociateConnectionWithLagOutputBuilder {
         self
     }
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-    pub fn set_mac_sec_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
-    ) -> Self {
+    pub fn set_mac_sec_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>) -> Self {
         self.mac_sec_keys = input;
         self
     }
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-    pub fn get_mac_sec_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
+    pub fn get_mac_sec_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
         &self.mac_sec_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -669,9 +598,7 @@ impl AssociateConnectionWithLagOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateConnectionWithLagOutput`](crate::operation::associate_connection_with_lag::AssociateConnectionWithLagOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_connection_with_lag::AssociateConnectionWithLagOutput {
+    pub fn build(self) -> crate::operation::associate_connection_with_lag::AssociateConnectionWithLagOutput {
         crate::operation::associate_connection_with_lag::AssociateConnectionWithLagOutput {
             owner_account: self.owner_account,
             connection_id: self.connection_id,

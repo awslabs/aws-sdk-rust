@@ -10,10 +10,7 @@ impl DescribeClustersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_clusters::DescribeClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_clusters::DescribeClustersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_clusters::DescribeClustersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_clusters();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeClustersFluentBuilder {
         }
     }
     /// Access the DescribeClusters as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_clusters::builders::DescribeClustersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_clusters::builders::DescribeClustersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeClustersFluentBuilder {
             crate::operation::describe_clusters::DescribeClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_clusters::DescribeClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_clusters::DescribeClustersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeClustersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_clusters::DescribeClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_clusters::DescribeClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_clusters::DescribeClustersError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeClustersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_clusters::DescribeClustersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_clusters::DescribeClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_clusters::DescribeClustersError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl DescribeClustersFluentBuilder {
             crate::operation::describe_clusters::DescribeClusters,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_clusters::DescribeClustersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_clusters::DescribeClustersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_clusters::paginator::DescribeClustersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_clusters::paginator::DescribeClustersPaginator {
-        crate::operation::describe_clusters::paginator::DescribeClustersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_clusters::paginator::DescribeClustersPaginator {
+        crate::operation::describe_clusters::paginator::DescribeClustersPaginator::new(self.handle, self.inner)
     }
     /// Adds a key-value pair to `Filters`.
     ///
@@ -142,11 +121,7 @@ impl DescribeClustersFluentBuilder {
     /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
     /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
     /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
-    pub fn filters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.filters(k.into(), v);
         self
     }
@@ -156,12 +131,7 @@ impl DescribeClustersFluentBuilder {
     /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
     pub fn set_filters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -170,11 +140,7 @@ impl DescribeClustersFluentBuilder {
     /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
     /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
     /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_filters()
     }
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>

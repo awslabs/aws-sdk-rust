@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`uploads(Option<Vec<Upload>>)`](crate::operation::list_uploads::ListUploadsOutput::uploads): <p>Information about the uploads.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_uploads::ListUploadsOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListUploadsError>`](crate::operation::list_uploads::ListUploadsError)
-    pub fn list_uploads(
-        &self,
-    ) -> crate::operation::list_uploads::builders::ListUploadsFluentBuilder {
+    pub fn list_uploads(&self) -> crate::operation::list_uploads::builders::ListUploadsFluentBuilder {
         crate::operation::list_uploads::builders::ListUploadsFluentBuilder::new(self.handle.clone())
     }
 }

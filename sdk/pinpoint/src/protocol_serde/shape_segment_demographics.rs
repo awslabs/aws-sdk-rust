@@ -44,17 +44,9 @@ pub fn ser_segment_demographics(
 
 pub(crate) fn de_segment_demographics<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::SegmentDemographics>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::SegmentDemographics>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -64,68 +56,39 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "AppVersion" => {
-                                builder = builder.set_app_version(
-                                    crate::protocol_serde::shape_set_dimension::de_set_dimension(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "Channel" => {
-                                builder = builder.set_channel(
-                                    crate::protocol_serde::shape_set_dimension::de_set_dimension(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "DeviceType" => {
-                                builder = builder.set_device_type(
-                                    crate::protocol_serde::shape_set_dimension::de_set_dimension(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "Make" => {
-                                builder = builder.set_make(
-                                    crate::protocol_serde::shape_set_dimension::de_set_dimension(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "Model" => {
-                                builder = builder.set_model(
-                                    crate::protocol_serde::shape_set_dimension::de_set_dimension(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "Platform" => {
-                                builder = builder.set_platform(
-                                    crate::protocol_serde::shape_set_dimension::de_set_dimension(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "AppVersion" => {
+                            builder = builder.set_app_version(crate::protocol_serde::shape_set_dimension::de_set_dimension(tokens)?);
                         }
-                    }
+                        "Channel" => {
+                            builder = builder.set_channel(crate::protocol_serde::shape_set_dimension::de_set_dimension(tokens)?);
+                        }
+                        "DeviceType" => {
+                            builder = builder.set_device_type(crate::protocol_serde::shape_set_dimension::de_set_dimension(tokens)?);
+                        }
+                        "Make" => {
+                            builder = builder.set_make(crate::protocol_serde::shape_set_dimension::de_set_dimension(tokens)?);
+                        }
+                        "Model" => {
+                            builder = builder.set_model(crate::protocol_serde::shape_set_dimension::de_set_dimension(tokens)?);
+                        }
+                        "Platform" => {
+                            builder = builder.set_platform(crate::protocol_serde::shape_set_dimension::de_set_dimension(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

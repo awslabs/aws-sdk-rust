@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`GetFlowLogsIntegrationTemplateOutput`](crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateOutput) with field(s):
     ///   - [`result(Option<String>)`](crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateOutput::result): <p>The generated CloudFormation template.</p>
     /// - On failure, responds with [`SdkError<GetFlowLogsIntegrationTemplateError>`](crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateError)
-    pub fn get_flow_logs_integration_template(&self) -> crate::operation::get_flow_logs_integration_template::builders::GetFlowLogsIntegrationTemplateFluentBuilder{
+    pub fn get_flow_logs_integration_template(
+        &self,
+    ) -> crate::operation::get_flow_logs_integration_template::builders::GetFlowLogsIntegrationTemplateFluentBuilder {
         crate::operation::get_flow_logs_integration_template::builders::GetFlowLogsIntegrationTemplateFluentBuilder::new(self.handle.clone())
     }
 }

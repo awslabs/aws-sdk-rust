@@ -13,12 +13,7 @@ impl super::Client {
     ///   - [`calculator_arn(Option<String>)`](crate::operation::create_route_calculator::CreateRouteCalculatorOutput::calculator_arn): <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all Amazon Web Services.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>  </ul>
     ///   - [`create_time(Option<DateTime>)`](crate::operation::create_route_calculator::CreateRouteCalculatorOutput::create_time): <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>  <ul>   <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<CreateRouteCalculatorError>`](crate::operation::create_route_calculator::CreateRouteCalculatorError)
-    pub fn create_route_calculator(
-        &self,
-    ) -> crate::operation::create_route_calculator::builders::CreateRouteCalculatorFluentBuilder
-    {
-        crate::operation::create_route_calculator::builders::CreateRouteCalculatorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_route_calculator(&self) -> crate::operation::create_route_calculator::builders::CreateRouteCalculatorFluentBuilder {
+        crate::operation::create_route_calculator::builders::CreateRouteCalculatorFluentBuilder::new(self.handle.clone())
     }
 }

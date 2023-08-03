@@ -82,9 +82,7 @@ impl StackSetSummary {
         self.drift_status.as_ref()
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
-    pub fn last_drift_check_timestamp(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_drift_check_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
@@ -101,9 +99,7 @@ impl StackSetSummary {
 
 /// A builder for [`StackSetSummary`](crate::types::StackSetSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackSetSummaryBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_set_id: ::std::option::Option<::std::string::String>,
@@ -117,18 +113,12 @@ pub struct StackSetSummaryBuilder {
 }
 impl StackSetSummaryBuilder {
     /// <p>The name of the stack set.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the stack set.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
@@ -170,10 +160,7 @@ impl StackSetSummaryBuilder {
         self
     }
     /// <p>The status of the stack set.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StackSetStatus>) -> Self {
         self.status = input;
         self
     }
@@ -187,10 +174,7 @@ impl StackSetSummaryBuilder {
         self
     }
     /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organizational unit (OU).</p>
-    pub fn set_auto_deployment(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoDeployment>,
-    ) -> Self {
+    pub fn set_auto_deployment(mut self, input: ::std::option::Option<crate::types::AutoDeployment>) -> Self {
         self.auto_deployment = input;
         self
     }
@@ -212,10 +196,7 @@ impl StackSetSummaryBuilder {
     /// <li> <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p> </li>
     /// <li> <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p> </li>
     /// </ul>
-    pub fn set_permission_model(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionModels>,
-    ) -> Self {
+    pub fn set_permission_model(mut self, input: ::std::option::Option<crate::types::PermissionModels>) -> Self {
         self.permission_model = input;
         self
     }
@@ -245,10 +226,7 @@ impl StackSetSummaryBuilder {
     /// <li> <p> <code>IN_SYNC</code>: All the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
     /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
-    pub fn set_drift_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackDriftStatus>,
-    ) -> Self {
+    pub fn set_drift_status(mut self, input: ::std::option::Option<crate::types::StackDriftStatus>) -> Self {
         self.drift_status = input;
         self
     }
@@ -268,17 +246,12 @@ impl StackSetSummaryBuilder {
         self
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
-    pub fn set_last_drift_check_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_drift_check_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_drift_check_timestamp = input;
         self
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
-    pub fn get_last_drift_check_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_drift_check_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_drift_check_timestamp
     }
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
@@ -287,10 +260,7 @@ impl StackSetSummaryBuilder {
         self
     }
     /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
-    pub fn set_managed_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedExecution>,
-    ) -> Self {
+    pub fn set_managed_execution(mut self, input: ::std::option::Option<crate::types::ManagedExecution>) -> Self {
         self.managed_execution = input;
         self
     }

@@ -26,7 +26,7 @@ impl DescribePartnerEventSourceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePartnerEventSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceInputBuilder,
+    inner: crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceInputBuilder,
 }
 impl DescribePartnerEventSourceFluentBuilder {
     /// Creates a new `DescribePartnerEventSource`.
@@ -37,7 +37,7 @@ impl DescribePartnerEventSourceFluentBuilder {
         }
     }
     /// Access the DescribePartnerEventSource as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribePartnerEventSourceFluentBuilder {
             crate::operation::describe_partner_event_source::DescribePartnerEventSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_partner_event_source::DescribePartnerEventSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_partner_event_source::DescribePartnerEventSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribePartnerEventSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribePartnerEventSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_partner_event_source::DescribePartnerEventSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_partner_event_source::DescribePartnerEventSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_partner_event_source::DescribePartnerEventSourceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribePartnerEventSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_partner_event_source::DescribePartnerEventSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_partner_event_source::DescribePartnerEventSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_partner_event_source::DescribePartnerEventSourceError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribePartnerEventSourceFluentBuilder {
             crate::operation::describe_partner_event_source::DescribePartnerEventSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_partner_event_source::DescribePartnerEventSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_partner_event_source::DescribePartnerEventSourceError>,
     > {
         self.customize_middleware().await
     }

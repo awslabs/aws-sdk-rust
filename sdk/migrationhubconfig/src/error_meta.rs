@@ -31,32 +31,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_home_region_control::CreateHomeRegionControlError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_home_region_control::CreateHomeRegionControlError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::create_home_region_control::CreateHomeRegionControlError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_home_region_control::CreateHomeRegionControlError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -64,94 +48,76 @@ where
     }
 }
 impl From<crate::operation::create_home_region_control::CreateHomeRegionControlError> for Error {
-    fn from(
-        err: crate::operation::create_home_region_control::CreateHomeRegionControlError,
-    ) -> Self {
+    fn from(err: crate::operation::create_home_region_control::CreateHomeRegionControlError) -> Self {
         match err {
-            crate::operation::create_home_region_control::CreateHomeRegionControlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::create_home_region_control::CreateHomeRegionControlError::DryRunOperation(inner) => Error::DryRunOperation(inner),
-            crate::operation::create_home_region_control::CreateHomeRegionControlError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::operation::create_home_region_control::CreateHomeRegionControlError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::operation::create_home_region_control::CreateHomeRegionControlError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::create_home_region_control::CreateHomeRegionControlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::create_home_region_control::CreateHomeRegionControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError>
-    for Error
-{
-    fn from(
-        err: crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError,
-    ) -> Self {
+impl From<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError> for Error {
+    fn from(err: crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError) -> Self {
         match err {
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_home_region::GetHomeRegionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_home_region::GetHomeRegionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_home_region::GetHomeRegionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_home_region::GetHomeRegionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -161,24 +127,12 @@ where
 impl From<crate::operation::get_home_region::GetHomeRegionError> for Error {
     fn from(err: crate::operation::get_home_region::GetHomeRegionError) -> Self {
         match err {
-            crate::operation::get_home_region::GetHomeRegionError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_home_region::GetHomeRegionError::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::operation::get_home_region::GetHomeRegionError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::operation::get_home_region::GetHomeRegionError::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::operation::get_home_region::GetHomeRegionError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::get_home_region::GetHomeRegionError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_home_region::GetHomeRegionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_home_region::GetHomeRegionError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_home_region::GetHomeRegionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_home_region::GetHomeRegionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_home_region::GetHomeRegionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_home_region::GetHomeRegionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

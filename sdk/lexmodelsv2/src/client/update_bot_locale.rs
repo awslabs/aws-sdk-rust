@@ -23,11 +23,7 @@ impl super::Client {
     ///   - [`last_updated_date_time(Option<DateTime>)`](crate::operation::update_bot_locale::UpdateBotLocaleOutput::last_updated_date_time): <p>A timestamp of the date and time that the locale was last updated.</p>
     ///   - [`recommended_actions(Option<Vec<String>>)`](crate::operation::update_bot_locale::UpdateBotLocaleOutput::recommended_actions): <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
     /// - On failure, responds with [`SdkError<UpdateBotLocaleError>`](crate::operation::update_bot_locale::UpdateBotLocaleError)
-    pub fn update_bot_locale(
-        &self,
-    ) -> crate::operation::update_bot_locale::builders::UpdateBotLocaleFluentBuilder {
-        crate::operation::update_bot_locale::builders::UpdateBotLocaleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_bot_locale(&self) -> crate::operation::update_bot_locale::builders::UpdateBotLocaleFluentBuilder {
+        crate::operation::update_bot_locale::builders::UpdateBotLocaleFluentBuilder::new(self.handle.clone())
     }
 }

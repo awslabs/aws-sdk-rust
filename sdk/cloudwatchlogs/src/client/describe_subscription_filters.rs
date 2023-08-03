@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`subscription_filters(Option<Vec<SubscriptionFilter>>)`](crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersOutput::subscription_filters): <p>The subscription filters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     /// - On failure, responds with [`SdkError<DescribeSubscriptionFiltersError>`](crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError)
-    pub fn describe_subscription_filters(&self) -> crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder{
+    pub fn describe_subscription_filters(
+        &self,
+    ) -> crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder {
         crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersFluentBuilder::new(self.handle.clone())
     }
 }

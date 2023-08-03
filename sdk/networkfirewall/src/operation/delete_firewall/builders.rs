@@ -10,10 +10,7 @@ impl DeleteFirewallInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_firewall::DeleteFirewallOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_firewall::DeleteFirewallError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall::DeleteFirewallError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_firewall();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteFirewallFluentBuilder {
         }
     }
     /// Access the DeleteFirewall as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_firewall::builders::DeleteFirewallInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_firewall::builders::DeleteFirewallInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl DeleteFirewallFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -118,19 +110,13 @@ impl DeleteFirewallFluentBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_name(input);
         self
     }

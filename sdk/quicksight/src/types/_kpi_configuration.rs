@@ -37,9 +37,7 @@ impl KpiConfiguration {
 
 /// A builder for [`KpiConfiguration`](crate::types::KpiConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KpiConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::KpiFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::KpiSortConfiguration>,
@@ -52,10 +50,7 @@ impl KpiConfigurationBuilder {
         self
     }
     /// <p>The field well configuration of a KPI visual.</p>
-    pub fn set_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::KpiFieldWells>,
-    ) -> Self {
+    pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::KpiFieldWells>) -> Self {
         self.field_wells = input;
         self
     }
@@ -69,17 +64,12 @@ impl KpiConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of a KPI visual.</p>
-    pub fn set_sort_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::KpiSortConfiguration>,
-    ) -> Self {
+    pub fn set_sort_configuration(mut self, input: ::std::option::Option<crate::types::KpiSortConfiguration>) -> Self {
         self.sort_configuration = input;
         self
     }
     /// <p>The sort configuration of a KPI visual.</p>
-    pub fn get_sort_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::KpiSortConfiguration> {
+    pub fn get_sort_configuration(&self) -> &::std::option::Option<crate::types::KpiSortConfiguration> {
         &self.sort_configuration
     }
     /// <p>The options that determine the presentation of a KPI visual.</p>
@@ -88,10 +78,7 @@ impl KpiConfigurationBuilder {
         self
     }
     /// <p>The options that determine the presentation of a KPI visual.</p>
-    pub fn set_kpi_options(
-        mut self,
-        input: ::std::option::Option<crate::types::KpiOptions>,
-    ) -> Self {
+    pub fn set_kpi_options(mut self, input: ::std::option::Option<crate::types::KpiOptions>) -> Self {
         self.kpi_options = input;
         self
     }

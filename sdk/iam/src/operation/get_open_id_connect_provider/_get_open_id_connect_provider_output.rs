@@ -50,16 +50,14 @@ impl ::aws_http::request_id::RequestId for GetOpenIdConnectProviderOutput {
 }
 impl GetOpenIdConnectProviderOutput {
     /// Creates a new builder-style object to manufacture [`GetOpenIdConnectProviderOutput`](crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderOutput).
-    pub fn builder() -> crate::operation::get_open_id_connect_provider::builders::GetOpenIdConnectProviderOutputBuilder{
+    pub fn builder() -> crate::operation::get_open_id_connect_provider::builders::GetOpenIdConnectProviderOutputBuilder {
         crate::operation::get_open_id_connect_provider::builders::GetOpenIdConnectProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetOpenIdConnectProviderOutput`](crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOpenIdConnectProviderOutputBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) client_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -88,27 +86,19 @@ impl GetOpenIdConnectProviderOutputBuilder {
     /// To override the contents of this collection use [`set_client_id_list`](Self::set_client_id_list).
     ///
     /// <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
-    pub fn client_id_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.client_id_list.unwrap_or_default();
         v.push(input.into());
         self.client_id_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
-    pub fn set_client_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_client_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.client_id_list = input;
         self
     }
     /// <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
-    pub fn get_client_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_client_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.client_id_list
     }
     /// Appends an item to `thumbprint_list`.
@@ -116,27 +106,19 @@ impl GetOpenIdConnectProviderOutputBuilder {
     /// To override the contents of this collection use [`set_thumbprint_list`](Self::set_thumbprint_list).
     ///
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
-    pub fn thumbprint_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thumbprint_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.thumbprint_list.unwrap_or_default();
         v.push(input.into());
         self.thumbprint_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
-    pub fn set_thumbprint_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_thumbprint_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.thumbprint_list = input;
         self
     }
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
-    pub fn get_thumbprint_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_thumbprint_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.thumbprint_list
     }
     /// <p>The date and time when the IAM OIDC provider resource object was created in the Amazon Web Services account.</p>
@@ -145,10 +127,7 @@ impl GetOpenIdConnectProviderOutputBuilder {
         self
     }
     /// <p>The date and time when the IAM OIDC provider resource object was created in the Amazon Web Services account.</p>
-    pub fn set_create_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_date = input;
         self
     }
@@ -168,10 +147,7 @@ impl GetOpenIdConnectProviderOutputBuilder {
         self
     }
     /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -189,9 +165,7 @@ impl GetOpenIdConnectProviderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetOpenIdConnectProviderOutput`](crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderOutput {
+    pub fn build(self) -> crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderOutput {
         crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderOutput {
             url: self.url,
             client_id_list: self.client_id_list,

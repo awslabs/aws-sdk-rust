@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`ExportSnapshotOutput`](crate::operation::export_snapshot::ExportSnapshotOutput) with field(s):
     ///   - [`s3_url(Option<String>)`](crate::operation::export_snapshot::ExportSnapshotOutput::s3_url): <p>The presigned URL for the snapshot data.</p>  <p> This URL will be available for 10 minutes, and can be used to download the snapshot content. If the URL expires, a new one can be requested using the same operation. </p>
     /// - On failure, responds with [`SdkError<ExportSnapshotError>`](crate::operation::export_snapshot::ExportSnapshotError)
-    pub fn export_snapshot(
-        &self,
-    ) -> crate::operation::export_snapshot::builders::ExportSnapshotFluentBuilder {
-        crate::operation::export_snapshot::builders::ExportSnapshotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn export_snapshot(&self) -> crate::operation::export_snapshot::builders::ExportSnapshotFluentBuilder {
+        crate::operation::export_snapshot::builders::ExportSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

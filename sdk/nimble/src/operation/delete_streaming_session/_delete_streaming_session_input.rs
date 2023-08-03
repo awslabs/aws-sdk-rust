@@ -29,18 +29,14 @@ impl DeleteStreamingSessionInput {
 }
 impl DeleteStreamingSessionInput {
     /// Creates a new builder-style object to manufacture [`DeleteStreamingSessionInput`](crate::operation::delete_streaming_session::DeleteStreamingSessionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_streaming_session::builders::DeleteStreamingSessionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_streaming_session::builders::DeleteStreamingSessionInputBuilder {
         crate::operation::delete_streaming_session::builders::DeleteStreamingSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStreamingSessionInput`](crate::operation::delete_streaming_session::DeleteStreamingSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStreamingSessionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl DeleteStreamingSessionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStreamingSessionInput`](crate::operation::delete_streaming_session::DeleteStreamingSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_streaming_session::DeleteStreamingSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_streaming_session::DeleteStreamingSessionInput {
-                client_token: self.client_token,
-                session_id: self.session_id,
-                studio_id: self.studio_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_streaming_session::DeleteStreamingSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_streaming_session::DeleteStreamingSessionInput {
+            client_token: self.client_token,
+            session_id: self.session_id,
+            studio_id: self.studio_id,
+        })
     }
 }

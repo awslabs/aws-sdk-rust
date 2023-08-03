@@ -10,10 +10,7 @@ impl ListAssetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_assets::ListAssetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assets::ListAssetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assets::ListAssetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_assets();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ListAssetsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_assets::ListAssets,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_assets::ListAssets, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_assets::ListAssetsError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ListAssetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ListAssetsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_assets::ListAssets,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_assets::ListAssets, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_assets::ListAssetsError>,
     > {
         self.customize_middleware().await
@@ -120,18 +108,12 @@ impl ListAssetsFluentBuilder {
         crate::operation::list_assets::paginator::ListAssetsPaginator::new(self.handle, self.inner)
     }
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-    pub fn outpost_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn outpost_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.outpost_identifier(input.into());
         self
     }
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-    pub fn set_outpost_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_outpost_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_outpost_identifier(input);
         self
     }
@@ -144,25 +126,17 @@ impl ListAssetsFluentBuilder {
     /// To override the contents of this collection use [`set_host_id_filter`](Self::set_host_id_filter).
     ///
     /// <p>Filters the results by the host ID of a Dedicated Host.</p>
-    pub fn host_id_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_id_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host_id_filter(input.into());
         self
     }
     /// <p>Filters the results by the host ID of a Dedicated Host.</p>
-    pub fn set_host_id_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_host_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_host_id_filter(input);
         self
     }
     /// <p>Filters the results by the host ID of a Dedicated Host.</p>
-    pub fn get_host_id_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_host_id_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_host_id_filter()
     }
     /// <p>The maximum page size.</p>
@@ -203,17 +177,12 @@ impl ListAssetsFluentBuilder {
         self
     }
     /// <p>Filters the results by state.</p>
-    pub fn set_status_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetState>>,
-    ) -> Self {
+    pub fn set_status_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetState>>) -> Self {
         self.inner = self.inner.set_status_filter(input);
         self
     }
     /// <p>Filters the results by state.</p>
-    pub fn get_status_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetState>> {
+    pub fn get_status_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetState>> {
         self.inner.get_status_filter()
     }
 }

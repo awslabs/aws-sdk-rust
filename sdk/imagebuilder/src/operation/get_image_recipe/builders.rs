@@ -10,10 +10,7 @@ impl GetImageRecipeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_image_recipe::GetImageRecipeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_recipe::GetImageRecipeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_image_recipe::GetImageRecipeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_image_recipe();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetImageRecipeFluentBuilder {
         }
     }
     /// Access the GetImageRecipe as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_image_recipe::builders::GetImageRecipeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_image_recipe::builders::GetImageRecipeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetImageRecipeFluentBuilder {
             crate::operation::get_image_recipe::GetImageRecipe,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_recipe::GetImageRecipeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_image_recipe::GetImageRecipeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetImageRecipeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetImageRecipeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_image_recipe::GetImageRecipeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_recipe::GetImageRecipeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_image_recipe::GetImageRecipeError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetImageRecipeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_image_recipe::GetImageRecipeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_recipe::GetImageRecipeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_image_recipe::GetImageRecipeError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetImageRecipeFluentBuilder {
             crate::operation::get_image_recipe::GetImageRecipe,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_image_recipe::GetImageRecipeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_image_recipe::GetImageRecipeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
-    pub fn image_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_recipe_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
-    pub fn set_image_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_recipe_arn(input);
         self
     }

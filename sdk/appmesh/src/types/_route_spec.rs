@@ -51,9 +51,7 @@ impl RouteSpec {
 
 /// A builder for [`RouteSpec`](crate::types::RouteSpec).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouteSpecBuilder {
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) http_route: ::std::option::Option<crate::types::HttpRoute>,
@@ -110,10 +108,7 @@ impl RouteSpecBuilder {
         self
     }
     /// <p>An object that represents the specification of an HTTP/2 route.</p>
-    pub fn set_http2_route(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpRoute>,
-    ) -> Self {
+    pub fn set_http2_route(mut self, input: ::std::option::Option<crate::types::HttpRoute>) -> Self {
         self.http2_route = input;
         self
     }

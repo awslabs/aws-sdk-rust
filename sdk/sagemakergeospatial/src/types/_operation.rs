@@ -37,9 +37,7 @@ impl Operation {
 
 /// A builder for [`Operation`](crate::types::Operation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OperationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) equation: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl OperationBuilder {
         self
     }
     /// <p>The type of the operation.</p>
-    pub fn set_output_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputType>,
-    ) -> Self {
+    pub fn set_output_type(mut self, input: ::std::option::Option<crate::types::OutputType>) -> Self {
         self.output_type = input;
         self
     }

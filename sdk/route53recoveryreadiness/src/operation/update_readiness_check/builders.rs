@@ -37,9 +37,7 @@ impl UpdateReadinessCheckFluentBuilder {
         }
     }
     /// Access the UpdateReadinessCheck as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_readiness_check::builders::UpdateReadinessCheckInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_readiness_check::builders::UpdateReadinessCheckInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateReadinessCheckFluentBuilder {
             crate::operation::update_readiness_check::UpdateReadinessCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_readiness_check::UpdateReadinessCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_readiness_check::UpdateReadinessCheckError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateReadinessCheckFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateReadinessCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_readiness_check::UpdateReadinessCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_readiness_check::UpdateReadinessCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_readiness_check::UpdateReadinessCheckError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateReadinessCheckFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_readiness_check::UpdateReadinessCheckOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_readiness_check::UpdateReadinessCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_readiness_check::UpdateReadinessCheckError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl UpdateReadinessCheckFluentBuilder {
             crate::operation::update_readiness_check::UpdateReadinessCheck,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_readiness_check::UpdateReadinessCheckError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_readiness_check::UpdateReadinessCheckError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.readiness_check_name(input.into());
         self
     }
     /// <p>Name of a readiness check.</p>
-    pub fn set_readiness_check_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_readiness_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_readiness_check_name(input);
         self
     }
@@ -143,18 +124,12 @@ impl UpdateReadinessCheckFluentBuilder {
         self.inner.get_readiness_check_name()
     }
     /// <p>The name of the resource set to be checked.</p>
-    pub fn resource_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_set_name(input.into());
         self
     }
     /// <p>The name of the resource set to be checked.</p>
-    pub fn set_resource_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_set_name(input);
         self
     }

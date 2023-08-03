@@ -37,16 +37,14 @@ impl DeleteProvisioningArtifactInput {
 }
 impl DeleteProvisioningArtifactInput {
     /// Creates a new builder-style object to manufacture [`DeleteProvisioningArtifactInput`](crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactInput).
-    pub fn builder() -> crate::operation::delete_provisioning_artifact::builders::DeleteProvisioningArtifactInputBuilder{
+    pub fn builder() -> crate::operation::delete_provisioning_artifact::builders::DeleteProvisioningArtifactInputBuilder {
         crate::operation::delete_provisioning_artifact::builders::DeleteProvisioningArtifactInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProvisioningArtifactInput`](crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProvisioningArtifactInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
@@ -58,10 +56,7 @@ impl DeleteProvisioningArtifactInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -70,10 +65,7 @@ impl DeleteProvisioningArtifactInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -100,18 +92,12 @@ impl DeleteProvisioningArtifactInputBuilder {
         &self.product_id
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provisioning_artifact_id = input;
         self
     }
@@ -126,12 +112,10 @@ impl DeleteProvisioningArtifactInputBuilder {
         crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactInput {
-                accept_language: self.accept_language,
-                product_id: self.product_id,
-                provisioning_artifact_id: self.provisioning_artifact_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactInput {
+            accept_language: self.accept_language,
+            product_id: self.product_id,
+            provisioning_artifact_id: self.provisioning_artifact_id,
+        })
     }
 }

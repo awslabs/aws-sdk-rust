@@ -43,9 +43,7 @@ impl SpeakerSearchTask {
         self.call_details.as_ref()
     }
     /// <p>The details of a speaker search task.</p>
-    pub fn speaker_search_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SpeakerSearchDetails> {
+    pub fn speaker_search_details(&self) -> ::std::option::Option<&crate::types::SpeakerSearchDetails> {
         self.speaker_search_details.as_ref()
     }
     /// <p>The time at which a speaker search task was created.</p>
@@ -74,9 +72,7 @@ impl SpeakerSearchTask {
 
 /// A builder for [`SpeakerSearchTask`](crate::types::SpeakerSearchTask).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpeakerSearchTaskBuilder {
     pub(crate) speaker_search_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) speaker_search_task_status: ::std::option::Option<::std::string::String>,
@@ -89,18 +85,12 @@ pub struct SpeakerSearchTaskBuilder {
 }
 impl SpeakerSearchTaskBuilder {
     /// <p>The speaker search task ID.</p>
-    pub fn speaker_search_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn speaker_search_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.speaker_search_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The speaker search task ID.</p>
-    pub fn set_speaker_search_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_speaker_search_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.speaker_search_task_id = input;
         self
     }
@@ -109,18 +99,12 @@ impl SpeakerSearchTaskBuilder {
         &self.speaker_search_task_id
     }
     /// <p>The status of the speaker search task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
-    pub fn speaker_search_task_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn speaker_search_task_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.speaker_search_task_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the speaker search task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
-    pub fn set_speaker_search_task_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_speaker_search_task_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.speaker_search_task_status = input;
         self
     }
@@ -134,10 +118,7 @@ impl SpeakerSearchTaskBuilder {
         self
     }
     /// <p>The call details of a speaker search task.</p>
-    pub fn set_call_details(
-        mut self,
-        input: ::std::option::Option<crate::types::CallDetails>,
-    ) -> Self {
+    pub fn set_call_details(mut self, input: ::std::option::Option<crate::types::CallDetails>) -> Self {
         self.call_details = input;
         self
     }
@@ -151,17 +132,12 @@ impl SpeakerSearchTaskBuilder {
         self
     }
     /// <p>The details of a speaker search task.</p>
-    pub fn set_speaker_search_details(
-        mut self,
-        input: ::std::option::Option<crate::types::SpeakerSearchDetails>,
-    ) -> Self {
+    pub fn set_speaker_search_details(mut self, input: ::std::option::Option<crate::types::SpeakerSearchDetails>) -> Self {
         self.speaker_search_details = input;
         self
     }
     /// <p>The details of a speaker search task.</p>
-    pub fn get_speaker_search_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::SpeakerSearchDetails> {
+    pub fn get_speaker_search_details(&self) -> &::std::option::Option<crate::types::SpeakerSearchDetails> {
         &self.speaker_search_details
     }
     /// <p>The time at which a speaker search task was created.</p>
@@ -170,10 +146,7 @@ impl SpeakerSearchTaskBuilder {
         self
     }
     /// <p>The time at which a speaker search task was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -187,10 +160,7 @@ impl SpeakerSearchTaskBuilder {
         self
     }
     /// <p>The time at which a speaker search task was updated.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_timestamp = input;
         self
     }
@@ -204,10 +174,7 @@ impl SpeakerSearchTaskBuilder {
         self
     }
     /// <p>The time at which the speaker search task began.</p>
-    pub fn set_started_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_timestamp = input;
         self
     }
@@ -216,18 +183,12 @@ impl SpeakerSearchTaskBuilder {
         &self.started_timestamp
     }
     /// <p>A detailed message about the status of a speaker search.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed message about the status of a speaker search.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

@@ -30,16 +30,14 @@ impl DescribeCopyProductStatusInput {
 }
 impl DescribeCopyProductStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeCopyProductStatusInput`](crate::operation::describe_copy_product_status::DescribeCopyProductStatusInput).
-    pub fn builder() -> crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusInputBuilder {
         crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCopyProductStatusInput`](crate::operation::describe_copy_product_status::DescribeCopyProductStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCopyProductStatusInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) copy_product_token: ::std::option::Option<::std::string::String>,
@@ -50,10 +48,7 @@ impl DescribeCopyProductStatusInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -62,10 +57,7 @@ impl DescribeCopyProductStatusInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -78,18 +70,12 @@ impl DescribeCopyProductStatusInputBuilder {
         &self.accept_language
     }
     /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
-    pub fn copy_product_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn copy_product_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.copy_product_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
-    pub fn set_copy_product_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_copy_product_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.copy_product_token = input;
         self
     }
@@ -104,11 +90,9 @@ impl DescribeCopyProductStatusInputBuilder {
         crate::operation::describe_copy_product_status::DescribeCopyProductStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_copy_product_status::DescribeCopyProductStatusInput {
-                accept_language: self.accept_language,
-                copy_product_token: self.copy_product_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_copy_product_status::DescribeCopyProductStatusInput {
+            accept_language: self.accept_language,
+            copy_product_token: self.copy_product_token,
+        })
     }
 }

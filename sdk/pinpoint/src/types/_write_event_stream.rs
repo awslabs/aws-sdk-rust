@@ -58,9 +58,7 @@ impl WriteEventStream {
 
 /// A builder for [`WriteEventStream`](crate::types::WriteEventStream).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WriteEventStreamBuilder {
     pub(crate) destination_stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -81,10 +79,7 @@ impl WriteEventStreamBuilder {
     /// </replaceable>:deliverystream/<replaceable>
     /// stream_name
     /// </replaceable> </p>
-    pub fn destination_stream_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
@@ -103,10 +98,7 @@ impl WriteEventStreamBuilder {
     /// </replaceable>:deliverystream/<replaceable>
     /// stream_name
     /// </replaceable> </p>
-    pub fn set_destination_stream_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_stream_arn = input;
         self
     }

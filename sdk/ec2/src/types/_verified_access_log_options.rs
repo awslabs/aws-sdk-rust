@@ -9,12 +9,10 @@ pub struct VerifiedAccessLogOptions {
     pub s3: ::std::option::Option<crate::types::VerifiedAccessLogS3DestinationOptions>,
     /// <p>Sends Verified Access logs to CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs:
-        ::std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions>,
+    pub cloud_watch_logs: ::std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions>,
     /// <p>Sends Verified Access logs to Kinesis.</p>
     #[doc(hidden)]
-    pub kinesis_data_firehose:
-        ::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions>,
+    pub kinesis_data_firehose: ::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions>,
     /// <p> The logging version to use. </p>
     /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code> </p>
     #[doc(hidden)]
@@ -25,23 +23,15 @@ pub struct VerifiedAccessLogOptions {
 }
 impl VerifiedAccessLogOptions {
     /// <p>Sends Verified Access logs to Amazon S3.</p>
-    pub fn s3(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VerifiedAccessLogS3DestinationOptions> {
+    pub fn s3(&self) -> ::std::option::Option<&crate::types::VerifiedAccessLogS3DestinationOptions> {
         self.s3.as_ref()
     }
     /// <p>Sends Verified Access logs to CloudWatch Logs.</p>
-    pub fn cloud_watch_logs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions>
-    {
+    pub fn cloud_watch_logs(&self) -> ::std::option::Option<&crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions> {
         self.cloud_watch_logs.as_ref()
     }
     /// <p>Sends Verified Access logs to Kinesis.</p>
-    pub fn kinesis_data_firehose(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions>
-    {
+    pub fn kinesis_data_firehose(&self) -> ::std::option::Option<&crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions> {
         self.kinesis_data_firehose.as_ref()
     }
     /// <p> The logging version to use. </p>
@@ -63,15 +53,11 @@ impl VerifiedAccessLogOptions {
 
 /// A builder for [`VerifiedAccessLogOptions`](crate::types::VerifiedAccessLogOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogOptionsBuilder {
     pub(crate) s3: ::std::option::Option<crate::types::VerifiedAccessLogS3DestinationOptions>,
-    pub(crate) cloud_watch_logs:
-        ::std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions>,
-    pub(crate) kinesis_data_firehose:
-        ::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions>,
+    pub(crate) cloud_watch_logs: ::std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions>,
+    pub(crate) kinesis_data_firehose: ::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions>,
     pub(crate) log_version: ::std::option::Option<::std::string::String>,
     pub(crate) include_trust_context: ::std::option::Option<bool>,
 }
@@ -82,67 +68,43 @@ impl VerifiedAccessLogOptionsBuilder {
         self
     }
     /// <p>Sends Verified Access logs to Amazon S3.</p>
-    pub fn set_s3(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessLogS3DestinationOptions>,
-    ) -> Self {
+    pub fn set_s3(mut self, input: ::std::option::Option<crate::types::VerifiedAccessLogS3DestinationOptions>) -> Self {
         self.s3 = input;
         self
     }
     /// <p>Sends Verified Access logs to Amazon S3.</p>
-    pub fn get_s3(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessLogS3DestinationOptions> {
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::VerifiedAccessLogS3DestinationOptions> {
         &self.s3
     }
     /// <p>Sends Verified Access logs to CloudWatch Logs.</p>
-    pub fn cloud_watch_logs(
-        mut self,
-        input: crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions,
-    ) -> Self {
+    pub fn cloud_watch_logs(mut self, input: crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions) -> Self {
         self.cloud_watch_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sends Verified Access logs to CloudWatch Logs.</p>
-    pub fn set_cloud_watch_logs(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions,
-        >,
-    ) -> Self {
+    pub fn set_cloud_watch_logs(mut self, input: ::std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions>) -> Self {
         self.cloud_watch_logs = input;
         self
     }
     /// <p>Sends Verified Access logs to CloudWatch Logs.</p>
-    pub fn get_cloud_watch_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions>
-    {
+    pub fn get_cloud_watch_logs(&self) -> &::std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions> {
         &self.cloud_watch_logs
     }
     /// <p>Sends Verified Access logs to Kinesis.</p>
-    pub fn kinesis_data_firehose(
-        mut self,
-        input: crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions,
-    ) -> Self {
+    pub fn kinesis_data_firehose(mut self, input: crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions) -> Self {
         self.kinesis_data_firehose = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sends Verified Access logs to Kinesis.</p>
     pub fn set_kinesis_data_firehose(
         mut self,
-        input: ::std::option::Option<
-            crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions,
-        >,
+        input: ::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions>,
     ) -> Self {
         self.kinesis_data_firehose = input;
         self
     }
     /// <p>Sends Verified Access logs to Kinesis.</p>
-    pub fn get_kinesis_data_firehose(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions>
-    {
+    pub fn get_kinesis_data_firehose(&self) -> &::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions> {
         &self.kinesis_data_firehose
     }
     /// <p> The logging version to use. </p>

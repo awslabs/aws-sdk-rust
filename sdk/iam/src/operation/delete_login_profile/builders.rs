@@ -10,10 +10,7 @@ impl DeleteLoginProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_login_profile::DeleteLoginProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_login_profile::DeleteLoginProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_login_profile::DeleteLoginProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_login_profile();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl DeleteLoginProfileFluentBuilder {
         }
     }
     /// Access the DeleteLoginProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_login_profile::builders::DeleteLoginProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_login_profile::builders::DeleteLoginProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl DeleteLoginProfileFluentBuilder {
             crate::operation::delete_login_profile::DeleteLoginProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_login_profile::DeleteLoginProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_login_profile::DeleteLoginProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl DeleteLoginProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl DeleteLoginProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_login_profile::DeleteLoginProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_login_profile::DeleteLoginProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_login_profile::DeleteLoginProfileError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl DeleteLoginProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_login_profile::DeleteLoginProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_login_profile::DeleteLoginProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_login_profile::DeleteLoginProfileError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl DeleteLoginProfileFluentBuilder {
             crate::operation::delete_login_profile::DeleteLoginProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_login_profile::DeleteLoginProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_login_profile::DeleteLoginProfileError>,
     > {
         self.customize_middleware().await
     }

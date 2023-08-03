@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_configurations::ListEventConfigurationsOutput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     ///   - [`event_configurations_list(Option<Vec<EventConfigurationItem>>)`](crate::operation::list_event_configurations::ListEventConfigurationsOutput::event_configurations_list): <p>Event configurations of all events for a single resource.</p>
     /// - On failure, responds with [`SdkError<ListEventConfigurationsError>`](crate::operation::list_event_configurations::ListEventConfigurationsError)
-    pub fn list_event_configurations(
-        &self,
-    ) -> crate::operation::list_event_configurations::builders::ListEventConfigurationsFluentBuilder
-    {
+    pub fn list_event_configurations(&self) -> crate::operation::list_event_configurations::builders::ListEventConfigurationsFluentBuilder {
         crate::operation::list_event_configurations::builders::ListEventConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteUtterancesOutput {
 }
 impl DeleteUtterancesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUtterancesOutput`](crate::operation::delete_utterances::DeleteUtterancesOutput).
-    pub fn builder() -> crate::operation::delete_utterances::builders::DeleteUtterancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_utterances::builders::DeleteUtterancesOutputBuilder {
         crate::operation::delete_utterances::builders::DeleteUtterancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteUtterancesOutput`](crate::operation::delete_utterances::DeleteUtterancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUtterancesOutputBuilder {
     _request_id: Option<String>,
 }

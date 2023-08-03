@@ -8,8 +8,7 @@ pub struct ListSolNetworkOperationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Lists network operation occurrences. Lifecycle management operations are deploy, update, or delete operations.</p>
     #[doc(hidden)]
-    pub network_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkOperationsInfo>>,
+    pub network_operations: ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkOperationsInfo>>,
     _request_id: Option<String>,
 }
 impl ListSolNetworkOperationsOutput {
@@ -18,9 +17,7 @@ impl ListSolNetworkOperationsOutput {
         self.next_token.as_deref()
     }
     /// <p>Lists network operation occurrences. Lifecycle management operations are deploy, update, or delete operations.</p>
-    pub fn network_operations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ListSolNetworkOperationsInfo]> {
+    pub fn network_operations(&self) -> ::std::option::Option<&[crate::types::ListSolNetworkOperationsInfo]> {
         self.network_operations.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListSolNetworkOperationsOutput {
 }
 impl ListSolNetworkOperationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSolNetworkOperationsOutput`](crate::operation::list_sol_network_operations::ListSolNetworkOperationsOutput).
-    pub fn builder() -> crate::operation::list_sol_network_operations::builders::ListSolNetworkOperationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_sol_network_operations::builders::ListSolNetworkOperationsOutputBuilder {
         crate::operation::list_sol_network_operations::builders::ListSolNetworkOperationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSolNetworkOperationsOutput`](crate::operation::list_sol_network_operations::ListSolNetworkOperationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolNetworkOperationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) network_operations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkOperationsInfo>>,
+    pub(crate) network_operations: ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkOperationsInfo>>,
     _request_id: Option<String>,
 }
 impl ListSolNetworkOperationsOutputBuilder {
@@ -74,17 +68,12 @@ impl ListSolNetworkOperationsOutputBuilder {
         self
     }
     /// <p>Lists network operation occurrences. Lifecycle management operations are deploy, update, or delete operations.</p>
-    pub fn set_network_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkOperationsInfo>>,
-    ) -> Self {
+    pub fn set_network_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkOperationsInfo>>) -> Self {
         self.network_operations = input;
         self
     }
     /// <p>Lists network operation occurrences. Lifecycle management operations are deploy, update, or delete operations.</p>
-    pub fn get_network_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkOperationsInfo>> {
+    pub fn get_network_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkOperationsInfo>> {
         &self.network_operations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl ListSolNetworkOperationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSolNetworkOperationsOutput`](crate::operation::list_sol_network_operations::ListSolNetworkOperationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_sol_network_operations::ListSolNetworkOperationsOutput {
+    pub fn build(self) -> crate::operation::list_sol_network_operations::ListSolNetworkOperationsOutput {
         crate::operation::list_sol_network_operations::ListSolNetworkOperationsOutput {
             next_token: self.next_token,
             network_operations: self.network_operations,

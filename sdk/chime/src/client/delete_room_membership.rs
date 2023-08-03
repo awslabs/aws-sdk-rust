@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`member_id(impl ::std::convert::Into<String>)`](crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::member_id) / [`set_member_id(Option<String>)`](crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::set_member_id): <p>The member ID (user ID or bot ID).</p>
     /// - On success, responds with [`DeleteRoomMembershipOutput`](crate::operation::delete_room_membership::DeleteRoomMembershipOutput)
     /// - On failure, responds with [`SdkError<DeleteRoomMembershipError>`](crate::operation::delete_room_membership::DeleteRoomMembershipError)
-    pub fn delete_room_membership(
-        &self,
-    ) -> crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder {
-        crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_room_membership(&self) -> crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder {
+        crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::new(self.handle.clone())
     }
 }

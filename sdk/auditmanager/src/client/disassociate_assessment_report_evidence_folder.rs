@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`evidence_folder_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_assessment_report_evidence_folder::builders::DisassociateAssessmentReportEvidenceFolderFluentBuilder::evidence_folder_id) / [`set_evidence_folder_id(Option<String>)`](crate::operation::disassociate_assessment_report_evidence_folder::builders::DisassociateAssessmentReportEvidenceFolderFluentBuilder::set_evidence_folder_id): <p> The unique identifier for the folder that the evidence is stored in. </p>
     /// - On success, responds with [`DisassociateAssessmentReportEvidenceFolderOutput`](crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderOutput)
     /// - On failure, responds with [`SdkError<DisassociateAssessmentReportEvidenceFolderError>`](crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderError)
-    pub fn disassociate_assessment_report_evidence_folder(&self) -> crate::operation::disassociate_assessment_report_evidence_folder::builders::DisassociateAssessmentReportEvidenceFolderFluentBuilder{
-        crate::operation::disassociate_assessment_report_evidence_folder::builders::DisassociateAssessmentReportEvidenceFolderFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_assessment_report_evidence_folder(
+        &self,
+    ) -> crate::operation::disassociate_assessment_report_evidence_folder::builders::DisassociateAssessmentReportEvidenceFolderFluentBuilder {
+        crate::operation::disassociate_assessment_report_evidence_folder::builders::DisassociateAssessmentReportEvidenceFolderFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -30,9 +30,7 @@ impl FacetAttributeUpdate {
 
 /// A builder for [`FacetAttributeUpdate`](crate::types::FacetAttributeUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FacetAttributeUpdateBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::FacetAttribute>,
     pub(crate) action: ::std::option::Option<crate::types::UpdateActionType>,
@@ -44,10 +42,7 @@ impl FacetAttributeUpdateBuilder {
         self
     }
     /// <p>The attribute to update.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::FacetAttribute>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::FacetAttribute>) -> Self {
         self.attribute = input;
         self
     }
@@ -61,10 +56,7 @@ impl FacetAttributeUpdateBuilder {
         self
     }
     /// <p>The action to perform when updating the attribute.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateActionType>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::UpdateActionType>) -> Self {
         self.action = input;
         self
     }

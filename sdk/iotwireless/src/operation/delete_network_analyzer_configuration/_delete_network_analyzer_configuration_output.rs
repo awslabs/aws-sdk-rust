@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteNetworkAnalyzerConfigurationOut
 }
 impl DeleteNetworkAnalyzerConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkAnalyzerConfigurationOutput`](crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationOutputBuilder {
         crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNetworkAnalyzerConfigurationOutput`](crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNetworkAnalyzerConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteNetworkAnalyzerConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteNetworkAnalyzerConfigurationOutput`](crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationOutput{
+    pub fn build(self) -> crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationOutput {
         crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationOutput {
             _request_id: self._request_id,
         }

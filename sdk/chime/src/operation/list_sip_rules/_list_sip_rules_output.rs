@@ -35,9 +35,7 @@ impl ListSipRulesOutput {
 
 /// A builder for [`ListSipRulesOutput`](crate::operation::list_sip_rules::ListSipRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSipRulesOutputBuilder {
     pub(crate) sip_rules: ::std::option::Option<::std::vec::Vec<crate::types::SipRule>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListSipRulesOutputBuilder {
         self
     }
     /// <p>List of SIP rules and rule details.</p>
-    pub fn set_sip_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SipRule>>,
-    ) -> Self {
+    pub fn set_sip_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipRule>>) -> Self {
         self.sip_rules = input;
         self
     }

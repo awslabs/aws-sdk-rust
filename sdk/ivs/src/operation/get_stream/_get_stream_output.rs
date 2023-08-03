@@ -28,9 +28,7 @@ impl GetStreamOutput {
 
 /// A builder for [`GetStreamOutput`](crate::operation::get_stream::GetStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetStreamOutputBuilder {
     pub(crate) stream: ::std::option::Option<crate::types::Stream>,
     _request_id: Option<String>,

@@ -27,7 +27,7 @@ impl ListTopicRuleDestinationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTopicRuleDestinationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsInputBuilder,
+    inner: crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsInputBuilder,
 }
 impl ListTopicRuleDestinationsFluentBuilder {
     /// Creates a new `ListTopicRuleDestinations`.
@@ -38,7 +38,7 @@ impl ListTopicRuleDestinationsFluentBuilder {
         }
     }
     /// Access the ListTopicRuleDestinations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListTopicRuleDestinationsFluentBuilder {
             crate::operation::list_topic_rule_destinations::ListTopicRuleDestinations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListTopicRuleDestinationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListTopicRuleDestinationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListTopicRuleDestinationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsError>,
     > {
         self.send_middleware().await
     }
@@ -115,19 +106,14 @@ impl ListTopicRuleDestinationsFluentBuilder {
             crate::operation::list_topic_rule_destinations::ListTopicRuleDestinations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_topic_rule_destinations::paginator::ListTopicRuleDestinationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_topic_rule_destinations::paginator::ListTopicRuleDestinationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_topic_rule_destinations::paginator::ListTopicRuleDestinationsPaginator {
         crate::operation::list_topic_rule_destinations::paginator::ListTopicRuleDestinationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to return at one time.</p>

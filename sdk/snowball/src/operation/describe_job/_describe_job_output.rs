@@ -35,9 +35,7 @@ impl DescribeJobOutput {
 
 /// A builder for [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobOutputBuilder {
     pub(crate) job_metadata: ::std::option::Option<crate::types::JobMetadata>,
     pub(crate) sub_job_metadata: ::std::option::Option<::std::vec::Vec<crate::types::JobMetadata>>,
@@ -50,10 +48,7 @@ impl DescribeJobOutputBuilder {
         self
     }
     /// <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
-    pub fn set_job_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::JobMetadata>,
-    ) -> Self {
+    pub fn set_job_metadata(mut self, input: ::std::option::Option<crate::types::JobMetadata>) -> Self {
         self.job_metadata = input;
         self
     }
@@ -73,17 +68,12 @@ impl DescribeJobOutputBuilder {
         self
     }
     /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
-    pub fn set_sub_job_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobMetadata>>,
-    ) -> Self {
+    pub fn set_sub_job_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobMetadata>>) -> Self {
         self.sub_job_metadata = input;
         self
     }
     /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
-    pub fn get_sub_job_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobMetadata>> {
+    pub fn get_sub_job_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobMetadata>> {
         &self.sub_job_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

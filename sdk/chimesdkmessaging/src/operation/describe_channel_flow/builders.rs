@@ -37,9 +37,7 @@ impl DescribeChannelFlowFluentBuilder {
         }
     }
     /// Access the DescribeChannelFlow as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_channel_flow::builders::DescribeChannelFlowInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_channel_flow::builders::DescribeChannelFlowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeChannelFlowFluentBuilder {
             crate::operation::describe_channel_flow::DescribeChannelFlow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_flow::DescribeChannelFlowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_flow::DescribeChannelFlowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeChannelFlowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeChannelFlowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_channel_flow::DescribeChannelFlowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_flow::DescribeChannelFlowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_flow::DescribeChannelFlowError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeChannelFlowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_channel_flow::DescribeChannelFlowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_flow::DescribeChannelFlowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_flow::DescribeChannelFlowError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeChannelFlowFluentBuilder {
             crate::operation::describe_channel_flow::DescribeChannelFlow,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_flow::DescribeChannelFlowError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_flow::DescribeChannelFlowError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_flow_arn(input.into());
         self
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn set_channel_flow_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_flow_arn(input);
         self
     }

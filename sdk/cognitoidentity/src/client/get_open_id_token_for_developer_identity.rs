@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`identity_id(Option<String>)`](crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput::identity_id): <p>A unique identifier in the format REGION:GUID.</p>
     ///   - [`token(Option<String>)`](crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput::token): <p>An OpenID token.</p>
     /// - On failure, responds with [`SdkError<GetOpenIdTokenForDeveloperIdentityError>`](crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError)
-    pub fn get_open_id_token_for_developer_identity(&self) -> crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityFluentBuilder{
-        crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityFluentBuilder::new(self.handle.clone())
+    pub fn get_open_id_token_for_developer_identity(
+        &self,
+    ) -> crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityFluentBuilder {
+        crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -73,10 +73,7 @@ impl LiveConnectorRtmpConfigurationBuilder {
         self
     }
     /// <p>The audio channels set for the RTMP configuration</p>
-    pub fn set_audio_channels(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioChannelsOption>,
-    ) -> Self {
+    pub fn set_audio_channels(mut self, input: ::std::option::Option<crate::types::AudioChannelsOption>) -> Self {
         self.audio_channels = input;
         self
     }
@@ -85,18 +82,12 @@ impl LiveConnectorRtmpConfigurationBuilder {
         &self.audio_channels
     }
     /// <p>The audio sample rate set for the RTMP configuration. Default: 48000.</p>
-    pub fn audio_sample_rate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn audio_sample_rate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audio_sample_rate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The audio sample rate set for the RTMP configuration. Default: 48000.</p>
-    pub fn set_audio_sample_rate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_audio_sample_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audio_sample_rate = input;
         self
     }

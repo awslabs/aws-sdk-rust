@@ -5,11 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::disable_security_hub::builders::DisableSecurityHubFluentBuilder::send) it.
     /// - On success, responds with [`DisableSecurityHubOutput`](crate::operation::disable_security_hub::DisableSecurityHubOutput)
     /// - On failure, responds with [`SdkError<DisableSecurityHubError>`](crate::operation::disable_security_hub::DisableSecurityHubError)
-    pub fn disable_security_hub(
-        &self,
-    ) -> crate::operation::disable_security_hub::builders::DisableSecurityHubFluentBuilder {
-        crate::operation::disable_security_hub::builders::DisableSecurityHubFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disable_security_hub(&self) -> crate::operation::disable_security_hub::builders::DisableSecurityHubFluentBuilder {
+        crate::operation::disable_security_hub::builders::DisableSecurityHubFluentBuilder::new(self.handle.clone())
     }
 }

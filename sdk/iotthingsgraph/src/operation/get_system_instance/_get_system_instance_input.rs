@@ -19,17 +19,14 @@ impl GetSystemInstanceInput {
 }
 impl GetSystemInstanceInput {
     /// Creates a new builder-style object to manufacture [`GetSystemInstanceInput`](crate::operation::get_system_instance::GetSystemInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::get_system_instance::builders::GetSystemInstanceInputBuilder {
+    pub fn builder() -> crate::operation::get_system_instance::builders::GetSystemInstanceInputBuilder {
         crate::operation::get_system_instance::builders::GetSystemInstanceInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSystemInstanceInput`](crate::operation::get_system_instance::GetSystemInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSystemInstanceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -57,12 +54,7 @@ impl GetSystemInstanceInputBuilder {
     /// Consumes the builder and constructs a [`GetSystemInstanceInput`](crate::operation::get_system_instance::GetSystemInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_system_instance::GetSystemInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_system_instance::GetSystemInstanceInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::get_system_instance::GetSystemInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_system_instance::GetSystemInstanceInput { id: self.id })
     }
 }

@@ -12,10 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRegexPatternSetOutput`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput) with field(s):
     ///   - [`next_lock_token(Option<String>)`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput::next_lock_token): <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
     /// - On failure, responds with [`SdkError<UpdateRegexPatternSetError>`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError)
-    pub fn update_regex_pattern_set(
-        &self,
-    ) -> crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetFluentBuilder
-    {
+    pub fn update_regex_pattern_set(&self) -> crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetFluentBuilder {
         crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetFluentBuilder::new(self.handle.clone())
     }
 }

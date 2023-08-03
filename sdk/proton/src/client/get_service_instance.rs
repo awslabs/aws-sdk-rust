@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetServiceInstanceOutput`](crate::operation::get_service_instance::GetServiceInstanceOutput) with field(s):
     ///   - [`service_instance(Option<ServiceInstance>)`](crate::operation::get_service_instance::GetServiceInstanceOutput::service_instance): <p>The detailed data of the requested service instance.</p>
     /// - On failure, responds with [`SdkError<GetServiceInstanceError>`](crate::operation::get_service_instance::GetServiceInstanceError)
-    pub fn get_service_instance(
-        &self,
-    ) -> crate::operation::get_service_instance::builders::GetServiceInstanceFluentBuilder {
-        crate::operation::get_service_instance::builders::GetServiceInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_service_instance(&self) -> crate::operation::get_service_instance::builders::GetServiceInstanceFluentBuilder {
+        crate::operation::get_service_instance::builders::GetServiceInstanceFluentBuilder::new(self.handle.clone())
     }
 }

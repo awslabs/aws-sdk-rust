@@ -17,9 +17,7 @@ impl RetentionPeriod {
         self.retention_period_value
     }
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
-    pub fn retention_period_unit(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RetentionPeriodUnit> {
+    pub fn retention_period_unit(&self) -> ::std::option::Option<&crate::types::RetentionPeriodUnit> {
         self.retention_period_unit.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl RetentionPeriod {
 
 /// A builder for [`RetentionPeriod`](crate::types::RetentionPeriod).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetentionPeriodBuilder {
     pub(crate) retention_period_value: ::std::option::Option<i32>,
     pub(crate) retention_period_unit: ::std::option::Option<crate::types::RetentionPeriodUnit>,
@@ -60,17 +56,12 @@ impl RetentionPeriodBuilder {
         self
     }
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
-    pub fn set_retention_period_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriodUnit>,
-    ) -> Self {
+    pub fn set_retention_period_unit(mut self, input: ::std::option::Option<crate::types::RetentionPeriodUnit>) -> Self {
         self.retention_period_unit = input;
         self
     }
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
-    pub fn get_retention_period_unit(
-        &self,
-    ) -> &::std::option::Option<crate::types::RetentionPeriodUnit> {
+    pub fn get_retention_period_unit(&self) -> &::std::option::Option<crate::types::RetentionPeriodUnit> {
         &self.retention_period_unit
     }
     /// Consumes the builder and constructs a [`RetentionPeriod`](crate::types::RetentionPeriod).

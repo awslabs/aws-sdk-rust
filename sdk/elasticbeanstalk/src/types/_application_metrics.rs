@@ -44,9 +44,7 @@ impl ApplicationMetrics {
 
 /// A builder for [`ApplicationMetrics`](crate::types::ApplicationMetrics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationMetricsBuilder {
     pub(crate) duration: ::std::option::Option<i32>,
     pub(crate) request_count: ::std::option::Option<i32>,
@@ -88,10 +86,7 @@ impl ApplicationMetricsBuilder {
         self
     }
     /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
-    pub fn set_status_codes(
-        mut self,
-        input: ::std::option::Option<crate::types::StatusCodes>,
-    ) -> Self {
+    pub fn set_status_codes(mut self, input: ::std::option::Option<crate::types::StatusCodes>) -> Self {
         self.status_codes = input;
         self
     }

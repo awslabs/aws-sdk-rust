@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListSharedReportGroupsOutput {
 }
 impl ListSharedReportGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListSharedReportGroupsOutput`](crate::operation::list_shared_report_groups::ListSharedReportGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_shared_report_groups::builders::ListSharedReportGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_shared_report_groups::builders::ListSharedReportGroupsOutputBuilder {
         crate::operation::list_shared_report_groups::builders::ListSharedReportGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSharedReportGroupsOutput`](crate::operation::list_shared_report_groups::ListSharedReportGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSharedReportGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) report_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -65,27 +61,19 @@ impl ListSharedReportGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_report_groups`](Self::set_report_groups).
     ///
     /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user. </p>
-    pub fn report_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn report_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.report_groups.unwrap_or_default();
         v.push(input.into());
         self.report_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user. </p>
-    pub fn set_report_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_report_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.report_groups = input;
         self
     }
     /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user. </p>
-    pub fn get_report_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_report_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.report_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -98,9 +86,7 @@ impl ListSharedReportGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSharedReportGroupsOutput`](crate::operation::list_shared_report_groups::ListSharedReportGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_shared_report_groups::ListSharedReportGroupsOutput {
+    pub fn build(self) -> crate::operation::list_shared_report_groups::ListSharedReportGroupsOutput {
         crate::operation::list_shared_report_groups::ListSharedReportGroupsOutput {
             next_token: self.next_token,
             report_groups: self.report_groups,

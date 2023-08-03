@@ -10,10 +10,7 @@ impl PutBotAliasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_bot_alias::PutBotAliasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_bot_alias::PutBotAliasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bot_alias::PutBotAliasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_bot_alias();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl PutBotAliasFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_bot_alias::PutBotAlias,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_bot_alias::PutBotAlias, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_bot_alias::PutBotAliasError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl PutBotAliasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl PutBotAliasFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_bot_alias::PutBotAlias,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_bot_alias::PutBotAlias, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_bot_alias::PutBotAliasError>,
     > {
         self.customize_middleware().await
@@ -195,17 +183,12 @@ impl PutBotAliasFluentBuilder {
         self
     }
     /// <p>Settings for conversation logs for the alias.</p>
-    pub fn set_conversation_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::ConversationLogsRequest>,
-    ) -> Self {
+    pub fn set_conversation_logs(mut self, input: ::std::option::Option<crate::types::ConversationLogsRequest>) -> Self {
         self.inner = self.inner.set_conversation_logs(input);
         self
     }
     /// <p>Settings for conversation logs for the alias.</p>
-    pub fn get_conversation_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConversationLogsRequest> {
+    pub fn get_conversation_logs(&self) -> &::std::option::Option<crate::types::ConversationLogsRequest> {
         self.inner.get_conversation_logs()
     }
     /// Appends an item to `tags`.
@@ -218,10 +201,7 @@ impl PutBotAliasFluentBuilder {
         self
     }
     /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>PutBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

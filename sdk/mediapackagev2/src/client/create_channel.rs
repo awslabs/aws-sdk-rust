@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`ingest_endpoints(Option<Vec<IngestEndpoint>>)`](crate::operation::create_channel::CreateChannelOutput::ingest_endpoints): <p>The list of ingest endpoints.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_channel::CreateChannelOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the channel.</p>
     /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::operation::create_channel::CreateChannelError)
-    pub fn create_channel(
-        &self,
-    ) -> crate::operation::create_channel::builders::CreateChannelFluentBuilder {
-        crate::operation::create_channel::builders::CreateChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_channel(&self) -> crate::operation::create_channel::builders::CreateChannelFluentBuilder {
+        crate::operation::create_channel::builders::CreateChannelFluentBuilder::new(self.handle.clone())
     }
 }

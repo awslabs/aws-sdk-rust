@@ -22,18 +22,14 @@ impl ListSolNetworkPackagesInput {
 }
 impl ListSolNetworkPackagesInput {
     /// Creates a new builder-style object to manufacture [`ListSolNetworkPackagesInput`](crate::operation::list_sol_network_packages::ListSolNetworkPackagesInput).
-    pub fn builder(
-    ) -> crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesInputBuilder {
         crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSolNetworkPackagesInput`](crate::operation::list_sol_network_packages::ListSolNetworkPackagesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSolNetworkPackagesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,11 +70,9 @@ impl ListSolNetworkPackagesInputBuilder {
         crate::operation::list_sol_network_packages::ListSolNetworkPackagesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_sol_network_packages::ListSolNetworkPackagesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_sol_network_packages::ListSolNetworkPackagesInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

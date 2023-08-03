@@ -30,9 +30,7 @@ impl Geometry {
 
 /// A builder for [`Geometry`](crate::types::Geometry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeometryBuilder {
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     pub(crate) polygon: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
@@ -44,10 +42,7 @@ impl GeometryBuilder {
         self
     }
     /// <p>An axis-aligned coarse representation of the detected item's location on the image.</p>
-    pub fn set_bounding_box(
-        mut self,
-        input: ::std::option::Option<crate::types::BoundingBox>,
-    ) -> Self {
+    pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
         self.bounding_box = input;
         self
     }
@@ -67,10 +62,7 @@ impl GeometryBuilder {
         self
     }
     /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
-    pub fn set_polygon(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
-    ) -> Self {
+    pub fn set_polygon(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Point>>) -> Self {
         self.polygon = input;
         self
     }

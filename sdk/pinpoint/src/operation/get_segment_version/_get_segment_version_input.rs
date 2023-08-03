@@ -29,17 +29,14 @@ impl GetSegmentVersionInput {
 }
 impl GetSegmentVersionInput {
     /// Creates a new builder-style object to manufacture [`GetSegmentVersionInput`](crate::operation::get_segment_version::GetSegmentVersionInput).
-    pub fn builder(
-    ) -> crate::operation::get_segment_version::builders::GetSegmentVersionInputBuilder {
+    pub fn builder() -> crate::operation::get_segment_version::builders::GetSegmentVersionInputBuilder {
         crate::operation::get_segment_version::builders::GetSegmentVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSegmentVersionInput`](crate::operation::get_segment_version::GetSegmentVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSegmentVersionInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) segment_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct GetSegmentVersionInputBuilder {
 }
 impl GetSegmentVersionInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -97,16 +88,11 @@ impl GetSegmentVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetSegmentVersionInput`](crate::operation::get_segment_version::GetSegmentVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_segment_version::GetSegmentVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_segment_version::GetSegmentVersionInput {
-                application_id: self.application_id,
-                segment_id: self.segment_id,
-                version: self.version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_segment_version::GetSegmentVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_segment_version::GetSegmentVersionInput {
+            application_id: self.application_id,
+            segment_id: self.segment_id,
+            version: self.version,
+        })
     }
 }

@@ -30,9 +30,7 @@ impl CapacityLimits {
 
 /// A builder for [`CapacityLimits`](crate::types::CapacityLimits).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityLimitsBuilder {
     pub(crate) max_indexing_capacity_in_ocu: ::std::option::Option<i32>,
     pub(crate) max_search_capacity_in_ocu: ::std::option::Option<i32>,

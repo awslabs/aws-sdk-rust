@@ -29,9 +29,7 @@ impl DescribeInsightInput {
 
 /// A builder for [`DescribeInsightInput`](crate::operation::describe_insight::DescribeInsightInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInsightInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DescribeInsightInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInsightInput`](crate::operation::describe_insight::DescribeInsightInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_insight::DescribeInsightInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_insight::DescribeInsightInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_insight::DescribeInsightInput {
             id: self.id,
             account_id: self.account_id,

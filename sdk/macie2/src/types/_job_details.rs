@@ -68,9 +68,7 @@ impl JobDetails {
 
 /// A builder for [`JobDetails`](crate::types::JobDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobDetailsBuilder {
     pub(crate) is_defined_in_job: ::std::option::Option<crate::types::IsDefinedInJob>,
     pub(crate) is_monitored_by_job: ::std::option::Option<crate::types::IsMonitoredByJob>,
@@ -94,10 +92,7 @@ impl JobDetailsBuilder {
     /// <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li>
     /// <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
-    pub fn set_is_defined_in_job(
-        mut self,
-        input: ::std::option::Option<crate::types::IsDefinedInJob>,
-    ) -> Self {
+    pub fn set_is_defined_in_job(mut self, input: ::std::option::Option<crate::types::IsDefinedInJob>) -> Self {
         self.is_defined_in_job = input;
         self
     }
@@ -126,10 +121,7 @@ impl JobDetailsBuilder {
     /// <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.</p></li>
     /// <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
-    pub fn set_is_monitored_by_job(
-        mut self,
-        input: ::std::option::Option<crate::types::IsMonitoredByJob>,
-    ) -> Self {
+    pub fn set_is_monitored_by_job(mut self, input: ::std::option::Option<crate::types::IsMonitoredByJob>) -> Self {
         self.is_monitored_by_job = input;
         self
     }
@@ -139,9 +131,7 @@ impl JobDetailsBuilder {
     /// <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.</p></li>
     /// <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
-    pub fn get_is_monitored_by_job(
-        &self,
-    ) -> &::std::option::Option<crate::types::IsMonitoredByJob> {
+    pub fn get_is_monitored_by_job(&self) -> &::std::option::Option<crate::types::IsMonitoredByJob> {
         &self.is_monitored_by_job
     }
     /// <p>The unique identifier for the job that ran most recently and is configured to analyze data in the bucket, either the latest run of a recurring job or the only run of a one-time job.</p>
@@ -169,10 +159,7 @@ impl JobDetailsBuilder {
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job (lastJobId) started. If the job is a recurring job, this value indicates when the most recent run started.</p>
     /// <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
-    pub fn set_last_job_run_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_job_run_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_job_run_time = input;
         self
     }

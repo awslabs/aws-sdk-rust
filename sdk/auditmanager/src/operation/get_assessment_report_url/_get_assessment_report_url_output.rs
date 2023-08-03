@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAssessmentReportUrlOutput {
 }
 impl GetAssessmentReportUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetAssessmentReportUrlOutput`](crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput).
-    pub fn builder(
-    ) -> crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlOutputBuilder {
         crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAssessmentReportUrlOutput`](crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssessmentReportUrlOutputBuilder {
     pub(crate) pre_signed_url: ::std::option::Option<crate::types::Url>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl GetAssessmentReportUrlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAssessmentReportUrlOutput`](crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput {
+    pub fn build(self) -> crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput {
         crate::operation::get_assessment_report_url::GetAssessmentReportUrlOutput {
             pre_signed_url: self.pre_signed_url,
             _request_id: self._request_id,

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`component_recommendations(Option<Vec<ComponentRecommendation>>)`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput::component_recommendations): <p>The recommendations for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, configuration recommendations, and recommendation statuses.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAppComponentRecommendationsError>`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsError)
-    pub fn list_app_component_recommendations(&self) -> crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsFluentBuilder{
+    pub fn list_app_component_recommendations(
+        &self,
+    ) -> crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsFluentBuilder {
         crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

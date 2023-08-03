@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`project_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_test_grid_project::builders::DeleteTestGridProjectFluentBuilder::project_arn) / [`set_project_arn(Option<String>)`](crate::operation::delete_test_grid_project::builders::DeleteTestGridProjectFluentBuilder::set_project_arn): <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
     /// - On success, responds with [`DeleteTestGridProjectOutput`](crate::operation::delete_test_grid_project::DeleteTestGridProjectOutput)
     /// - On failure, responds with [`SdkError<DeleteTestGridProjectError>`](crate::operation::delete_test_grid_project::DeleteTestGridProjectError)
-    pub fn delete_test_grid_project(
-        &self,
-    ) -> crate::operation::delete_test_grid_project::builders::DeleteTestGridProjectFluentBuilder
-    {
+    pub fn delete_test_grid_project(&self) -> crate::operation::delete_test_grid_project::builders::DeleteTestGridProjectFluentBuilder {
         crate::operation::delete_test_grid_project::builders::DeleteTestGridProjectFluentBuilder::new(self.handle.clone())
     }
 }

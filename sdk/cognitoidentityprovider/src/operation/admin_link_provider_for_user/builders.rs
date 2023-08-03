@@ -32,7 +32,7 @@ impl AdminLinkProviderForUserInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdminLinkProviderForUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::admin_link_provider_for_user::builders::AdminLinkProviderForUserInputBuilder,
+    inner: crate::operation::admin_link_provider_for_user::builders::AdminLinkProviderForUserInputBuilder,
 }
 impl AdminLinkProviderForUserFluentBuilder {
     /// Creates a new `AdminLinkProviderForUser`.
@@ -43,7 +43,7 @@ impl AdminLinkProviderForUserFluentBuilder {
         }
     }
     /// Access the AdminLinkProviderForUser as a reference.
-    pub fn as_input(&self) -> &crate::operation::admin_link_provider_for_user::builders::AdminLinkProviderForUserInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::admin_link_provider_for_user::builders::AdminLinkProviderForUserInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +55,7 @@ impl AdminLinkProviderForUserFluentBuilder {
             crate::operation::admin_link_provider_for_user::AdminLinkProviderForUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +65,7 @@ impl AdminLinkProviderForUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +74,7 @@ impl AdminLinkProviderForUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError>,
     > {
         let op = self
             .inner
@@ -104,9 +97,7 @@ impl AdminLinkProviderForUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +111,7 @@ impl AdminLinkProviderForUserFluentBuilder {
             crate::operation::admin_link_provider_for_user::AdminLinkProviderForUser,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError>,
     > {
         self.customize_middleware().await
     }
@@ -156,10 +145,7 @@ impl AdminLinkProviderForUserFluentBuilder {
     /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p> <important>
     /// <p>All attributes in the DestinationUser profile must be mutable. If you have assigned the user any immutable custom attributes, the operation won't succeed.</p>
     /// </important>
-    pub fn set_destination_user(
-        mut self,
-        input: ::std::option::Option<crate::types::ProviderUserIdentifierType>,
-    ) -> Self {
+    pub fn set_destination_user(mut self, input: ::std::option::Option<crate::types::ProviderUserIdentifierType>) -> Self {
         self.inner = self.inner.set_destination_user(input);
         self
     }
@@ -169,9 +155,7 @@ impl AdminLinkProviderForUserFluentBuilder {
     /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p> <important>
     /// <p>All attributes in the DestinationUser profile must be mutable. If you have assigned the user any immutable custom attributes, the operation won't succeed.</p>
     /// </important>
-    pub fn get_destination_user(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProviderUserIdentifierType> {
+    pub fn get_destination_user(&self) -> &::std::option::Option<crate::types::ProviderUserIdentifierType> {
         self.inner.get_destination_user()
     }
     /// <p>An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
@@ -186,10 +170,7 @@ impl AdminLinkProviderForUserFluentBuilder {
     /// <p>If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social IdPs, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social IdP token.</p>
     /// <p></p>
     /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML IdP and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
-    pub fn set_source_user(
-        mut self,
-        input: ::std::option::Option<crate::types::ProviderUserIdentifierType>,
-    ) -> Self {
+    pub fn set_source_user(mut self, input: ::std::option::Option<crate::types::ProviderUserIdentifierType>) -> Self {
         self.inner = self.inner.set_source_user(input);
         self
     }
@@ -197,9 +178,7 @@ impl AdminLinkProviderForUserFluentBuilder {
     /// <p>If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social IdPs, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social IdP token.</p>
     /// <p></p>
     /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you want to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML IdP and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
-    pub fn get_source_user(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProviderUserIdentifierType> {
+    pub fn get_source_user(&self) -> &::std::option::Option<crate::types::ProviderUserIdentifierType> {
         self.inner.get_source_user()
     }
 }

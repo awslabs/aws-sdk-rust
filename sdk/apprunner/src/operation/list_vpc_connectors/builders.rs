@@ -10,10 +10,7 @@ impl ListVpcConnectorsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_vpc_connectors::ListVpcConnectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpc_connectors::ListVpcConnectorsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_connectors::ListVpcConnectorsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_vpc_connectors();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListVpcConnectorsFluentBuilder {
         }
     }
     /// Access the ListVpcConnectors as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_vpc_connectors::builders::ListVpcConnectorsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_vpc_connectors::builders::ListVpcConnectorsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListVpcConnectorsFluentBuilder {
             crate::operation::list_vpc_connectors::ListVpcConnectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpc_connectors::ListVpcConnectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_connectors::ListVpcConnectorsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListVpcConnectorsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListVpcConnectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vpc_connectors::ListVpcConnectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpc_connectors::ListVpcConnectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_connectors::ListVpcConnectorsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListVpcConnectorsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vpc_connectors::ListVpcConnectorsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpc_connectors::ListVpcConnectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_connectors::ListVpcConnectorsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListVpcConnectorsFluentBuilder {
             crate::operation::list_vpc_connectors::ListVpcConnectors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpc_connectors::ListVpcConnectorsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_connectors::ListVpcConnectorsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_vpc_connectors::paginator::ListVpcConnectorsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_vpc_connectors::paginator::ListVpcConnectorsPaginator {
-        crate::operation::list_vpc_connectors::paginator::ListVpcConnectorsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_vpc_connectors::paginator::ListVpcConnectorsPaginator {
+        crate::operation::list_vpc_connectors::paginator::ListVpcConnectorsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>

@@ -9,9 +9,7 @@ pub struct CustomConnectorSourceProperties {
     pub entity_name: ::std::option::Option<::std::string::String>,
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
     #[doc(hidden)]
-    pub custom_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
     #[doc(hidden)]
     pub data_transfer_api: ::std::option::Option<crate::types::DataTransferApi>,
@@ -22,11 +20,7 @@ impl CustomConnectorSourceProperties {
         self.entity_name.as_deref()
     }
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
-    pub fn custom_properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn custom_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.custom_properties.as_ref()
     }
     /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
@@ -43,14 +37,10 @@ impl CustomConnectorSourceProperties {
 
 /// A builder for [`CustomConnectorSourceProperties`](crate::types::CustomConnectorSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomConnectorSourcePropertiesBuilder {
     pub(crate) entity_name: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) data_transfer_api: ::std::option::Option<crate::types::DataTransferApi>,
 }
 impl CustomConnectorSourcePropertiesBuilder {
@@ -86,19 +76,13 @@ impl CustomConnectorSourcePropertiesBuilder {
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
     pub fn set_custom_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.custom_properties = input;
         self
     }
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
-    pub fn get_custom_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_custom_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.custom_properties
     }
     /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
@@ -107,10 +91,7 @@ impl CustomConnectorSourcePropertiesBuilder {
         self
     }
     /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
-    pub fn set_data_transfer_api(
-        mut self,
-        input: ::std::option::Option<crate::types::DataTransferApi>,
-    ) -> Self {
+    pub fn set_data_transfer_api(mut self, input: ::std::option::Option<crate::types::DataTransferApi>) -> Self {
         self.data_transfer_api = input;
         self
     }

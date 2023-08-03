@@ -23,9 +23,7 @@ impl UpdateFleetMetadataInputBuilder {
 /// Fluent builder constructing a request to `UpdateFleetMetadata`.
 ///
 /// <p>Updates fleet metadata, such as DisplayName.</p>
-#[deprecated(
-    note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-)]
+#[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFleetMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -40,9 +38,7 @@ impl UpdateFleetMetadataFluentBuilder {
         }
     }
     /// Access the UpdateFleetMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl UpdateFleetMetadataFluentBuilder {
             crate::operation::update_fleet_metadata::UpdateFleetMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_metadata::UpdateFleetMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_metadata::UpdateFleetMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl UpdateFleetMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl UpdateFleetMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_fleet_metadata::UpdateFleetMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_metadata::UpdateFleetMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_metadata::UpdateFleetMetadataError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl UpdateFleetMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_fleet_metadata::UpdateFleetMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_metadata::UpdateFleetMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_metadata::UpdateFleetMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl UpdateFleetMetadataFluentBuilder {
             crate::operation::update_fleet_metadata::UpdateFleetMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_fleet_metadata::UpdateFleetMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet_metadata::UpdateFleetMetadataError>,
     > {
         self.customize_middleware().await
     }
@@ -159,10 +144,7 @@ impl UpdateFleetMetadataFluentBuilder {
         self
     }
     /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
-    pub fn set_optimize_for_end_user_location(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_optimize_for_end_user_location(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_optimize_for_end_user_location(input);
         self
     }

@@ -6,12 +6,8 @@ impl super::Client {
     ///   - [`fleet_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
     /// - On success, responds with [`DeleteFleetOutput`](crate::operation::delete_fleet::DeleteFleetOutput)
     /// - On failure, responds with [`SdkError<DeleteFleetError>`](crate::operation::delete_fleet::DeleteFleetError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn delete_fleet(
-        &self,
-    ) -> crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder {
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn delete_fleet(&self) -> crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder {
         crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::new(self.handle.clone())
     }
 }

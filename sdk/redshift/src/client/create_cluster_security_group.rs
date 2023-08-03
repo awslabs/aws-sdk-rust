@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CreateClusterSecurityGroupOutput`](crate::operation::create_cluster_security_group::CreateClusterSecurityGroupOutput) with field(s):
     ///   - [`cluster_security_group(Option<ClusterSecurityGroup>)`](crate::operation::create_cluster_security_group::CreateClusterSecurityGroupOutput::cluster_security_group): <p>Describes a security group.</p>
     /// - On failure, responds with [`SdkError<CreateClusterSecurityGroupError>`](crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError)
-    pub fn create_cluster_security_group(&self) -> crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupFluentBuilder{
+    pub fn create_cluster_security_group(
+        &self,
+    ) -> crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupFluentBuilder {
         crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupFluentBuilder::new(self.handle.clone())
     }
 }

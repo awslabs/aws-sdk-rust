@@ -71,17 +71,14 @@ impl UpdateTaskTemplateInput {
 }
 impl UpdateTaskTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateTaskTemplateInput`](crate::operation::update_task_template::UpdateTaskTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::update_task_template::builders::UpdateTaskTemplateInputBuilder {
+    pub fn builder() -> crate::operation::update_task_template::builders::UpdateTaskTemplateInputBuilder {
         crate::operation::update_task_template::builders::UpdateTaskTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTaskTemplateInput`](crate::operation::update_task_template::UpdateTaskTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTaskTemplateInputBuilder {
     pub(crate) task_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
@@ -95,18 +92,12 @@ pub struct UpdateTaskTemplateInputBuilder {
 }
 impl UpdateTaskTemplateInputBuilder {
     /// <p>A unique identifier for the task template.</p>
-    pub fn task_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn set_task_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_template_id = input;
         self
     }
@@ -157,18 +148,12 @@ impl UpdateTaskTemplateInputBuilder {
         &self.description
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
-    pub fn contact_flow_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
-    pub fn set_contact_flow_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_flow_id = input;
         self
     }
@@ -182,10 +167,7 @@ impl UpdateTaskTemplateInputBuilder {
         self
     }
     /// <p>Constraints that are applicable to the fields listed.</p>
-    pub fn set_constraints(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateConstraints>,
-    ) -> Self {
+    pub fn set_constraints(mut self, input: ::std::option::Option<crate::types::TaskTemplateConstraints>) -> Self {
         self.constraints = input;
         self
     }
@@ -199,10 +181,7 @@ impl UpdateTaskTemplateInputBuilder {
         self
     }
     /// <p>The default values for fields when a task is created by referencing this template.</p>
-    pub fn set_defaults(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateDefaults>,
-    ) -> Self {
+    pub fn set_defaults(mut self, input: ::std::option::Option<crate::types::TaskTemplateDefaults>) -> Self {
         self.defaults = input;
         self
     }
@@ -216,10 +195,7 @@ impl UpdateTaskTemplateInputBuilder {
         self
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TaskTemplateStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskTemplateStatus>) -> Self {
         self.status = input;
         self
     }
@@ -239,38 +215,28 @@ impl UpdateTaskTemplateInputBuilder {
         self
     }
     /// <p>Fields that are part of the template.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>>) -> Self {
         self.fields = input;
         self
     }
     /// <p>Fields that are part of the template.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>> {
         &self.fields
     }
     /// Consumes the builder and constructs a [`UpdateTaskTemplateInput`](crate::operation::update_task_template::UpdateTaskTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_task_template::UpdateTaskTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_task_template::UpdateTaskTemplateInput {
-                task_template_id: self.task_template_id,
-                instance_id: self.instance_id,
-                name: self.name,
-                description: self.description,
-                contact_flow_id: self.contact_flow_id,
-                constraints: self.constraints,
-                defaults: self.defaults,
-                status: self.status,
-                fields: self.fields,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_task_template::UpdateTaskTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_task_template::UpdateTaskTemplateInput {
+            task_template_id: self.task_template_id,
+            instance_id: self.instance_id,
+            name: self.name,
+            description: self.description,
+            contact_flow_id: self.contact_flow_id,
+            constraints: self.constraints,
+            defaults: self.defaults,
+            status: self.status,
+            fields: self.fields,
+        })
     }
 }

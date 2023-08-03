@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`recommendation_feedback_summaries(Option<Vec<RecommendationFeedbackSummary>>)`](crate::operation::list_recommendation_feedback::ListRecommendationFeedbackOutput::recommendation_feedback_summaries): <p>Recommendation feedback summaries corresponding to the code review ARN.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_recommendation_feedback::ListRecommendationFeedbackOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// - On failure, responds with [`SdkError<ListRecommendationFeedbackError>`](crate::operation::list_recommendation_feedback::ListRecommendationFeedbackError)
-    pub fn list_recommendation_feedback(&self) -> crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackFluentBuilder{
+    pub fn list_recommendation_feedback(&self) -> crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackFluentBuilder {
         crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackFluentBuilder::new(self.handle.clone())
     }
 }

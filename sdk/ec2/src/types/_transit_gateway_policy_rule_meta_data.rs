@@ -30,27 +30,19 @@ impl TransitGatewayPolicyRuleMetaData {
 
 /// A builder for [`TransitGatewayPolicyRuleMetaData`](crate::types::TransitGatewayPolicyRuleMetaData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayPolicyRuleMetaDataBuilder {
     pub(crate) meta_data_key: ::std::option::Option<::std::string::String>,
     pub(crate) meta_data_value: ::std::option::Option<::std::string::String>,
 }
 impl TransitGatewayPolicyRuleMetaDataBuilder {
     /// <p>The key name for the transit gateway policy rule meta data tag.</p>
-    pub fn meta_data_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn meta_data_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meta_data_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key name for the transit gateway policy rule meta data tag.</p>
-    pub fn set_meta_data_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_meta_data_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.meta_data_key = input;
         self
     }
@@ -59,18 +51,12 @@ impl TransitGatewayPolicyRuleMetaDataBuilder {
         &self.meta_data_key
     }
     /// <p>The value of the key for the transit gateway policy rule meta data tag.</p>
-    pub fn meta_data_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn meta_data_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meta_data_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the key for the transit gateway policy rule meta data tag.</p>
-    pub fn set_meta_data_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_meta_data_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.meta_data_value = input;
         self
     }

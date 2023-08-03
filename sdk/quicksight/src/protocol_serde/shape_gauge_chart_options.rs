@@ -9,37 +9,25 @@ pub fn ser_gauge_chart_options(
     if let Some(var_2) = &input.comparison {
         #[allow(unused_mut)]
         let mut object_3 = object.key("Comparison").start_object();
-        crate::protocol_serde::shape_comparison_configuration::ser_comparison_configuration(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_comparison_configuration::ser_comparison_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.arc_axis {
         #[allow(unused_mut)]
         let mut object_5 = object.key("ArcAxis").start_object();
-        crate::protocol_serde::shape_arc_axis_configuration::ser_arc_axis_configuration(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_arc_axis_configuration::ser_arc_axis_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.arc {
         #[allow(unused_mut)]
         let mut object_7 = object.key("Arc").start_object();
-        crate::protocol_serde::shape_arc_configuration::ser_arc_configuration(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_arc_configuration::ser_arc_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.primary_value_font_configuration {
         #[allow(unused_mut)]
         let mut object_9 = object.key("PrimaryValueFontConfiguration").start_object();
-        crate::protocol_serde::shape_font_configuration::ser_font_configuration(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_font_configuration::ser_font_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())
@@ -47,17 +35,9 @@ pub fn ser_gauge_chart_options(
 
 pub(crate) fn de_gauge_chart_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::GaugeChartOptions>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::GaugeChartOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -67,59 +47,44 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "PrimaryValueDisplayType" => {
-                                builder = builder.set_primary_value_display_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::PrimaryValueDisplayType::from(u.as_ref())
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "PrimaryValueDisplayType" => {
+                            builder = builder.set_primary_value_display_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PrimaryValueDisplayType::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "Comparison" => {
-                                builder = builder.set_comparison(
-                                    crate::protocol_serde::shape_comparison_configuration::de_comparison_configuration(tokens)?
-                                );
-                            }
-                            "ArcAxis" => {
-                                builder = builder.set_arc_axis(
-                                    crate::protocol_serde::shape_arc_axis_configuration::de_arc_axis_configuration(tokens)?
-                                );
-                            }
-                            "Arc" => {
-                                builder = builder.set_arc(
-                                    crate::protocol_serde::shape_arc_configuration::de_arc_configuration(tokens)?
-                                );
-                            }
-                            "PrimaryValueFontConfiguration" => {
-                                builder = builder.set_primary_value_font_configuration(
-                                    crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "Comparison" => {
+                            builder = builder.set_comparison(crate::protocol_serde::shape_comparison_configuration::de_comparison_configuration(
+                                tokens,
+                            )?);
+                        }
+                        "ArcAxis" => {
+                            builder = builder.set_arc_axis(crate::protocol_serde::shape_arc_axis_configuration::de_arc_axis_configuration(tokens)?);
+                        }
+                        "Arc" => {
+                            builder = builder.set_arc(crate::protocol_serde::shape_arc_configuration::de_arc_configuration(tokens)?);
+                        }
+                        "PrimaryValueFontConfiguration" => {
+                            builder = builder.set_primary_value_font_configuration(
+                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

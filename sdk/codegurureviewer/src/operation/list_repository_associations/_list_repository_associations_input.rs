@@ -82,20 +82,17 @@ impl ListRepositoryAssociationsInput {
 }
 impl ListRepositoryAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListRepositoryAssociationsInput`](crate::operation::list_repository_associations::ListRepositoryAssociationsInput).
-    pub fn builder() -> crate::operation::list_repository_associations::builders::ListRepositoryAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_repository_associations::builders::ListRepositoryAssociationsInputBuilder {
         crate::operation::list_repository_associations::builders::ListRepositoryAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRepositoryAssociationsInput`](crate::operation::list_repository_associations::ListRepositoryAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRepositoryAssociationsInputBuilder {
     pub(crate) provider_types: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>,
-    pub(crate) states:
-        ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>>,
+    pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>>,
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) owners: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -114,17 +111,12 @@ impl ListRepositoryAssociationsInputBuilder {
         self
     }
     /// <p>List of provider types to use as a filter.</p>
-    pub fn set_provider_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>,
-    ) -> Self {
+    pub fn set_provider_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProviderType>>) -> Self {
         self.provider_types = input;
         self
     }
     /// <p>List of provider types to use as a filter.</p>
-    pub fn get_provider_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderType>> {
+    pub fn get_provider_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderType>> {
         &self.provider_types
     }
     /// Appends an item to `states`.
@@ -167,10 +159,7 @@ impl ListRepositoryAssociationsInputBuilder {
     /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
     /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
     /// </ul>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>>) -> Self {
         self.states = input;
         self
     }
@@ -189,9 +178,7 @@ impl ListRepositoryAssociationsInputBuilder {
     /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
     /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
     /// </ul>
-    pub fn get_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryAssociationState>> {
         &self.states
     }
     /// Appends an item to `names`.
@@ -206,10 +193,7 @@ impl ListRepositoryAssociationsInputBuilder {
         self
     }
     /// <p>List of repository names to use as a filter.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -229,10 +213,7 @@ impl ListRepositoryAssociationsInputBuilder {
         self
     }
     /// <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository. </p>
-    pub fn set_owners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.owners = input;
         self
     }
@@ -281,15 +262,13 @@ impl ListRepositoryAssociationsInputBuilder {
         crate::operation::list_repository_associations::ListRepositoryAssociationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_repository_associations::ListRepositoryAssociationsInput {
-                provider_types: self.provider_types,
-                states: self.states,
-                names: self.names,
-                owners: self.owners,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_repository_associations::ListRepositoryAssociationsInput {
+            provider_types: self.provider_types,
+            states: self.states,
+            names: self.names,
+            owners: self.owners,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

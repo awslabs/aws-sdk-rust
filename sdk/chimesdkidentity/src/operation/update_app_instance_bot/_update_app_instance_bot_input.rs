@@ -46,8 +46,7 @@ impl ::std::fmt::Debug for UpdateAppInstanceBotInput {
 }
 impl UpdateAppInstanceBotInput {
     /// Creates a new builder-style object to manufacture [`UpdateAppInstanceBotInput`](crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput).
-    pub fn builder(
-    ) -> crate::operation::update_app_instance_bot::builders::UpdateAppInstanceBotInputBuilder {
+    pub fn builder() -> crate::operation::update_app_instance_bot::builders::UpdateAppInstanceBotInputBuilder {
         crate::operation::update_app_instance_bot::builders::UpdateAppInstanceBotInputBuilder::default()
     }
 }
@@ -63,18 +62,12 @@ pub struct UpdateAppInstanceBotInputBuilder {
 }
 impl UpdateAppInstanceBotInputBuilder {
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
-    pub fn app_instance_bot_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_bot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_bot_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
-    pub fn set_app_instance_bot_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_bot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_instance_bot_arn = input;
         self
     }
@@ -116,10 +109,7 @@ impl UpdateAppInstanceBotInputBuilder {
         self
     }
     /// <p>The configuration for the bot update.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::Configuration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::Configuration>) -> Self {
         self.configuration = input;
         self
     }
@@ -130,18 +120,14 @@ impl UpdateAppInstanceBotInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAppInstanceBotInput`](crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput {
-                app_instance_bot_arn: self.app_instance_bot_arn,
-                name: self.name,
-                metadata: self.metadata,
-                configuration: self.configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput {
+            app_instance_bot_arn: self.app_instance_bot_arn,
+            name: self.name,
+            metadata: self.metadata,
+            configuration: self.configuration,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateAppInstanceBotInputBuilder {

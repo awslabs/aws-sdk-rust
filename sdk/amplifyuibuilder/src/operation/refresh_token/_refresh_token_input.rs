@@ -16,9 +16,7 @@ impl RefreshTokenInput {
         self.provider.as_ref()
     }
     /// <p>Information about the refresh token request.</p>
-    pub fn refresh_token_body(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RefreshTokenRequestBody> {
+    pub fn refresh_token_body(&self) -> ::std::option::Option<&crate::types::RefreshTokenRequestBody> {
         self.refresh_token_body.as_ref()
     }
 }
@@ -31,9 +29,7 @@ impl RefreshTokenInput {
 
 /// A builder for [`RefreshTokenInput`](crate::operation::refresh_token::RefreshTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RefreshTokenInputBuilder {
     pub(crate) provider: ::std::option::Option<crate::types::TokenProviders>,
     pub(crate) refresh_token_body: ::std::option::Option<crate::types::RefreshTokenRequestBody>,
@@ -45,10 +41,7 @@ impl RefreshTokenInputBuilder {
         self
     }
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::TokenProviders>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::TokenProviders>) -> Self {
         self.provider = input;
         self
     }
@@ -62,26 +55,16 @@ impl RefreshTokenInputBuilder {
         self
     }
     /// <p>Information about the refresh token request.</p>
-    pub fn set_refresh_token_body(
-        mut self,
-        input: ::std::option::Option<crate::types::RefreshTokenRequestBody>,
-    ) -> Self {
+    pub fn set_refresh_token_body(mut self, input: ::std::option::Option<crate::types::RefreshTokenRequestBody>) -> Self {
         self.refresh_token_body = input;
         self
     }
     /// <p>Information about the refresh token request.</p>
-    pub fn get_refresh_token_body(
-        &self,
-    ) -> &::std::option::Option<crate::types::RefreshTokenRequestBody> {
+    pub fn get_refresh_token_body(&self) -> &::std::option::Option<crate::types::RefreshTokenRequestBody> {
         &self.refresh_token_body
     }
     /// Consumes the builder and constructs a [`RefreshTokenInput`](crate::operation::refresh_token::RefreshTokenInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::refresh_token::RefreshTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::refresh_token::RefreshTokenInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::refresh_token::RefreshTokenInput {
             provider: self.provider,
             refresh_token_body: self.refresh_token_body,

@@ -8,8 +8,7 @@ pub struct ListPoolOriginationIdentitiesInput {
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
     #[doc(hidden)]
-    pub filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::PoolOriginationIdentitiesFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::PoolOriginationIdentitiesFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -23,9 +22,7 @@ impl ListPoolOriginationIdentitiesInput {
         self.pool_id.as_deref()
     }
     /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PoolOriginationIdentitiesFilter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::PoolOriginationIdentitiesFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -39,20 +36,17 @@ impl ListPoolOriginationIdentitiesInput {
 }
 impl ListPoolOriginationIdentitiesInput {
     /// Creates a new builder-style object to manufacture [`ListPoolOriginationIdentitiesInput`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesInput).
-    pub fn builder() -> crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesInputBuilder{
+    pub fn builder() -> crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesInputBuilder {
         crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPoolOriginationIdentitiesInput`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPoolOriginationIdentitiesInputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::PoolOriginationIdentitiesFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PoolOriginationIdentitiesFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -83,20 +77,12 @@ impl ListPoolOriginationIdentitiesInputBuilder {
         self
     }
     /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::PoolOriginationIdentitiesFilter>,
-        >,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PoolOriginationIdentitiesFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PoolOriginationIdentitiesFilter>>
-    {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PoolOriginationIdentitiesFilter>> {
         &self.filters
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -134,17 +120,11 @@ impl ListPoolOriginationIdentitiesInputBuilder {
         crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesInput {
-                pool_id: self.pool_id
-                ,
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesInput {
+            pool_id: self.pool_id,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

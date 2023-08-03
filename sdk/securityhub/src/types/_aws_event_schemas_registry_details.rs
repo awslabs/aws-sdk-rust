@@ -37,9 +37,7 @@ impl AwsEventSchemasRegistryDetails {
 
 /// A builder for [`AwsEventSchemasRegistryDetails`](crate::types::AwsEventSchemasRegistryDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEventSchemasRegistryDetailsBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) registry_arn: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl AwsEventSchemasRegistryDetailsBuilder {
         &self.registry_arn
     }
     /// <p> The name of the schema registry. </p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the schema registry. </p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_name = input;
         self
     }

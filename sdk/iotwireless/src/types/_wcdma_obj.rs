@@ -72,9 +72,7 @@ impl WcdmaObj {
 
 /// A builder for [`WcdmaObj`](crate::types::WcdmaObj).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WcdmaObjBuilder {
     pub(crate) mcc: ::std::option::Option<i32>,
     pub(crate) mnc: ::std::option::Option<i32>,
@@ -148,10 +146,7 @@ impl WcdmaObjBuilder {
         self
     }
     /// <p>WCDMA local ID information.</p>
-    pub fn set_wcdma_local_id(
-        mut self,
-        input: ::std::option::Option<crate::types::WcdmaLocalId>,
-    ) -> Self {
+    pub fn set_wcdma_local_id(mut self, input: ::std::option::Option<crate::types::WcdmaLocalId>) -> Self {
         self.wcdma_local_id = input;
         self
     }
@@ -199,17 +194,12 @@ impl WcdmaObjBuilder {
         self
     }
     /// <p>WCDMA object for network measurement reports.</p>
-    pub fn set_wcdma_nmr(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WcdmaNmrObj>>,
-    ) -> Self {
+    pub fn set_wcdma_nmr(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WcdmaNmrObj>>) -> Self {
         self.wcdma_nmr = input;
         self
     }
     /// <p>WCDMA object for network measurement reports.</p>
-    pub fn get_wcdma_nmr(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WcdmaNmrObj>> {
+    pub fn get_wcdma_nmr(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WcdmaNmrObj>> {
         &self.wcdma_nmr
     }
     /// Consumes the builder and constructs a [`WcdmaObj`](crate::types::WcdmaObj).

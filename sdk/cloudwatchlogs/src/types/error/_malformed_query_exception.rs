@@ -57,9 +57,7 @@ impl MalformedQueryException {
 
 /// A builder for [`MalformedQueryException`](crate::types::error::MalformedQueryException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MalformedQueryExceptionBuilder {
     pub(crate) query_compile_error: ::std::option::Option<crate::types::QueryCompileError>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -72,17 +70,12 @@ impl MalformedQueryExceptionBuilder {
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_query_compile_error(
-        mut self,
-        input: ::std::option::Option<crate::types::QueryCompileError>,
-    ) -> Self {
+    pub fn set_query_compile_error(mut self, input: ::std::option::Option<crate::types::QueryCompileError>) -> Self {
         self.query_compile_error = input;
         self
     }
     /// <p>Reserved.</p>
-    pub fn get_query_compile_error(
-        &self,
-    ) -> &::std::option::Option<crate::types::QueryCompileError> {
+    pub fn get_query_compile_error(&self) -> &::std::option::Option<crate::types::QueryCompileError> {
         &self.query_compile_error
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -106,10 +99,7 @@ impl MalformedQueryExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

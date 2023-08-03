@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteWorkspaceOutput`](crate::operation::delete_workspace::DeleteWorkspaceOutput) with field(s):
     ///   - [`workspace(Option<WorkspaceDescription>)`](crate::operation::delete_workspace::DeleteWorkspaceOutput::workspace): <p>A structure containing information about the workspace that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteWorkspaceError>`](crate::operation::delete_workspace::DeleteWorkspaceError)
-    pub fn delete_workspace(
-        &self,
-    ) -> crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder {
-        crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_workspace(&self) -> crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder {
+        crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::new(self.handle.clone())
     }
 }

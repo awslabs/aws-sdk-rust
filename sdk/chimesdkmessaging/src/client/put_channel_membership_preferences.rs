@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`member(Option<Identity>)`](crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesOutput::member): <p>The details of a user.</p>
     ///   - [`preferences(Option<ChannelMembershipPreferences>)`](crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesOutput::preferences): <p>The ARN and metadata of the member being added.</p>
     /// - On failure, responds with [`SdkError<PutChannelMembershipPreferencesError>`](crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError)
-    pub fn put_channel_membership_preferences(&self) -> crate::operation::put_channel_membership_preferences::builders::PutChannelMembershipPreferencesFluentBuilder{
+    pub fn put_channel_membership_preferences(
+        &self,
+    ) -> crate::operation::put_channel_membership_preferences::builders::PutChannelMembershipPreferencesFluentBuilder {
         crate::operation::put_channel_membership_preferences::builders::PutChannelMembershipPreferencesFluentBuilder::new(self.handle.clone())
     }
 }

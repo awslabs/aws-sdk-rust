@@ -37,9 +37,7 @@ impl CompleteReadSetUploadPartListItem {
 
 /// A builder for [`CompleteReadSetUploadPartListItem`](crate::types::CompleteReadSetUploadPartListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteReadSetUploadPartListItemBuilder {
     pub(crate) part_number: ::std::option::Option<i32>,
     pub(crate) part_source: ::std::option::Option<crate::types::ReadSetPartSource>,
@@ -66,10 +64,7 @@ impl CompleteReadSetUploadPartListItemBuilder {
         self
     }
     /// <p> The source file of the part being uploaded. </p>
-    pub fn set_part_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ReadSetPartSource>,
-    ) -> Self {
+    pub fn set_part_source(mut self, input: ::std::option::Option<crate::types::ReadSetPartSource>) -> Self {
         self.part_source = input;
         self
     }

@@ -14,12 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::search_routing_profiles::SearchRoutingProfilesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`approximate_total_count(Option<i64>)`](crate::operation::search_routing_profiles::SearchRoutingProfilesOutput::approximate_total_count): <p>The total number of routing profiles which matched your search query.</p>
     /// - On failure, responds with [`SdkError<SearchRoutingProfilesError>`](crate::operation::search_routing_profiles::SearchRoutingProfilesError)
-    pub fn search_routing_profiles(
-        &self,
-    ) -> crate::operation::search_routing_profiles::builders::SearchRoutingProfilesFluentBuilder
-    {
-        crate::operation::search_routing_profiles::builders::SearchRoutingProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_routing_profiles(&self) -> crate::operation::search_routing_profiles::builders::SearchRoutingProfilesFluentBuilder {
+        crate::operation::search_routing_profiles::builders::SearchRoutingProfilesFluentBuilder::new(self.handle.clone())
     }
 }

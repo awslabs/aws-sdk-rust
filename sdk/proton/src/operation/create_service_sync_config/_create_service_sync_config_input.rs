@@ -43,18 +43,14 @@ impl CreateServiceSyncConfigInput {
 }
 impl CreateServiceSyncConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceSyncConfigInput`](crate::operation::create_service_sync_config::CreateServiceSyncConfigInput).
-    pub fn builder(
-    ) -> crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigInputBuilder {
         crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateServiceSyncConfigInput`](crate::operation::create_service_sync_config::CreateServiceSyncConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateServiceSyncConfigInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
@@ -83,32 +79,21 @@ impl CreateServiceSyncConfigInputBuilder {
         self
     }
     /// <p>The provider type for your repository.</p>
-    pub fn set_repository_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_repository_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.repository_provider = input;
         self
     }
     /// <p>The provider type for your repository.</p>
-    pub fn get_repository_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+    pub fn get_repository_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
         &self.repository_provider
     }
     /// <p>The repository name.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -151,14 +136,12 @@ impl CreateServiceSyncConfigInputBuilder {
         crate::operation::create_service_sync_config::CreateServiceSyncConfigInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_service_sync_config::CreateServiceSyncConfigInput {
-                service_name: self.service_name,
-                repository_provider: self.repository_provider,
-                repository_name: self.repository_name,
-                branch: self.branch,
-                file_path: self.file_path,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_service_sync_config::CreateServiceSyncConfigInput {
+            service_name: self.service_name,
+            repository_provider: self.repository_provider,
+            repository_name: self.repository_name,
+            branch: self.branch,
+            file_path: self.file_path,
+        })
     }
 }

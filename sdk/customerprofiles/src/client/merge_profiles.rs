@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`MergeProfilesOutput`](crate::operation::merge_profiles::MergeProfilesOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::operation::merge_profiles::MergeProfilesOutput::message): <p>A message that indicates the merge request is complete.</p>
     /// - On failure, responds with [`SdkError<MergeProfilesError>`](crate::operation::merge_profiles::MergeProfilesError)
-    pub fn merge_profiles(
-        &self,
-    ) -> crate::operation::merge_profiles::builders::MergeProfilesFluentBuilder {
-        crate::operation::merge_profiles::builders::MergeProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn merge_profiles(&self) -> crate::operation::merge_profiles::builders::MergeProfilesFluentBuilder {
+        crate::operation::merge_profiles::builders::MergeProfilesFluentBuilder::new(self.handle.clone())
     }
 }

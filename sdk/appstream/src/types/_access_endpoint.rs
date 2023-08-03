@@ -30,9 +30,7 @@ impl AccessEndpoint {
 
 /// A builder for [`AccessEndpoint`](crate::types::AccessEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessEndpointBuilder {
     pub(crate) endpoint_type: ::std::option::Option<crate::types::AccessEndpointType>,
     pub(crate) vpce_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl AccessEndpointBuilder {
         self
     }
     /// <p>The type of interface endpoint.</p>
-    pub fn set_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessEndpointType>,
-    ) -> Self {
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::AccessEndpointType>) -> Self {
         self.endpoint_type = input;
         self
     }

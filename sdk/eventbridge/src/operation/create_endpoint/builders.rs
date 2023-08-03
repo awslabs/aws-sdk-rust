@@ -10,10 +10,7 @@ impl CreateEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_endpoint::CreateEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint::CreateEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_endpoint::CreateEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_endpoint();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateEndpointFluentBuilder {
         }
     }
     /// Access the CreateEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_endpoint::builders::CreateEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_endpoint::builders::CreateEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -148,10 +140,7 @@ impl CreateEndpointFluentBuilder {
         self
     }
     /// <p>Configure the routing policy, including the health check and secondary Region..</p>
-    pub fn set_routing_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingConfig>,
-    ) -> Self {
+    pub fn set_routing_config(mut self, input: ::std::option::Option<crate::types::RoutingConfig>) -> Self {
         self.inner = self.inner.set_routing_config(input);
         self
     }
@@ -165,17 +154,12 @@ impl CreateEndpointFluentBuilder {
         self
     }
     /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
-    pub fn set_replication_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfig>,
-    ) -> Self {
+    pub fn set_replication_config(mut self, input: ::std::option::Option<crate::types::ReplicationConfig>) -> Self {
         self.inner = self.inner.set_replication_config(input);
         self
     }
     /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
-    pub fn get_replication_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfig> {
+    pub fn get_replication_config(&self) -> &::std::option::Option<crate::types::ReplicationConfig> {
         self.inner.get_replication_config()
     }
     /// Appends an item to `EventBuses`.
@@ -192,19 +176,14 @@ impl CreateEndpointFluentBuilder {
     /// <p>Define the event buses used. </p> <important>
     /// <p>The names of the event buses must be identical in each Region.</p>
     /// </important>
-    pub fn set_event_buses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>,
-    ) -> Self {
+    pub fn set_event_buses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>) -> Self {
         self.inner = self.inner.set_event_buses(input);
         self
     }
     /// <p>Define the event buses used. </p> <important>
     /// <p>The names of the event buses must be identical in each Region.</p>
     /// </important>
-    pub fn get_event_buses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
+    pub fn get_event_buses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
         self.inner.get_event_buses()
     }
     /// <p>The ARN of the role used for replication.</p>

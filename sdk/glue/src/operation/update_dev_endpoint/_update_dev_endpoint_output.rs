@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDevEndpointOutput {
 }
 impl UpdateDevEndpointOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDevEndpointOutput`](crate::operation::update_dev_endpoint::UpdateDevEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::update_dev_endpoint::builders::UpdateDevEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::update_dev_endpoint::builders::UpdateDevEndpointOutputBuilder {
         crate::operation::update_dev_endpoint::builders::UpdateDevEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDevEndpointOutput`](crate::operation::update_dev_endpoint::UpdateDevEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDevEndpointOutputBuilder {
     _request_id: Option<String>,
 }

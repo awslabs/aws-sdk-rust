@@ -7,9 +7,7 @@ pub fn ser_reject_resource_share_invitation_input(
         object.key("clientToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.resource_share_invitation_arn {
-        object
-            .key("resourceShareInvitationArn")
-            .string(var_2.as_str());
+        object.key("resourceShareInvitationArn").string(var_2.as_str());
     }
     Ok(())
 }

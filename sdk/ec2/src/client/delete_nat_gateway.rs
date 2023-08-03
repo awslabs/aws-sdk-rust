@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteNatGatewayOutput`](crate::operation::delete_nat_gateway::DeleteNatGatewayOutput) with field(s):
     ///   - [`nat_gateway_id(Option<String>)`](crate::operation::delete_nat_gateway::DeleteNatGatewayOutput::nat_gateway_id): <p>The ID of the NAT gateway.</p>
     /// - On failure, responds with [`SdkError<DeleteNatGatewayError>`](crate::operation::delete_nat_gateway::DeleteNatGatewayError)
-    pub fn delete_nat_gateway(
-        &self,
-    ) -> crate::operation::delete_nat_gateway::builders::DeleteNatGatewayFluentBuilder {
-        crate::operation::delete_nat_gateway::builders::DeleteNatGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_nat_gateway(&self) -> crate::operation::delete_nat_gateway::builders::DeleteNatGatewayFluentBuilder {
+        crate::operation::delete_nat_gateway::builders::DeleteNatGatewayFluentBuilder::new(self.handle.clone())
     }
 }

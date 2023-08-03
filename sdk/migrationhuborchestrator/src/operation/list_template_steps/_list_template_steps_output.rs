@@ -8,8 +8,7 @@ pub struct ListTemplateStepsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of summaries of steps in a template.</p>
     #[doc(hidden)]
-    pub template_step_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepSummary>>,
+    pub template_step_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepSummary>>,
     _request_id: Option<String>,
 }
 impl ListTemplateStepsOutput {
@@ -18,9 +17,7 @@ impl ListTemplateStepsOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of summaries of steps in a template.</p>
-    pub fn template_step_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TemplateStepSummary]> {
+    pub fn template_step_summary_list(&self) -> ::std::option::Option<&[crate::types::TemplateStepSummary]> {
         self.template_step_summary_list.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListTemplateStepsOutput {
 }
 impl ListTemplateStepsOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplateStepsOutput`](crate::operation::list_template_steps::ListTemplateStepsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_template_steps::builders::ListTemplateStepsOutputBuilder {
+    pub fn builder() -> crate::operation::list_template_steps::builders::ListTemplateStepsOutputBuilder {
         crate::operation::list_template_steps::builders::ListTemplateStepsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTemplateStepsOutput`](crate::operation::list_template_steps::ListTemplateStepsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplateStepsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) template_step_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepSummary>>,
+    pub(crate) template_step_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepSummary>>,
     _request_id: Option<String>,
 }
 impl ListTemplateStepsOutputBuilder {
@@ -75,17 +68,12 @@ impl ListTemplateStepsOutputBuilder {
         self
     }
     /// <p>The list of summaries of steps in a template.</p>
-    pub fn set_template_step_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepSummary>>,
-    ) -> Self {
+    pub fn set_template_step_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepSummary>>) -> Self {
         self.template_step_summary_list = input;
         self
     }
     /// <p>The list of summaries of steps in a template.</p>
-    pub fn get_template_step_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateStepSummary>> {
+    pub fn get_template_step_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateStepSummary>> {
         &self.template_step_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -5,15 +5,12 @@
 pub struct DescribeContinuousBackupsOutput {
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
     #[doc(hidden)]
-    pub continuous_backups_description:
-        ::std::option::Option<crate::types::ContinuousBackupsDescription>,
+    pub continuous_backups_description: ::std::option::Option<crate::types::ContinuousBackupsDescription>,
     _request_id: Option<String>,
 }
 impl DescribeContinuousBackupsOutput {
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
-    pub fn continuous_backups_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ContinuousBackupsDescription> {
+    pub fn continuous_backups_description(&self) -> ::std::option::Option<&crate::types::ContinuousBackupsDescription> {
         self.continuous_backups_description.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeContinuousBackupsOutput {
 }
 impl DescribeContinuousBackupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeContinuousBackupsOutput`](crate::operation::describe_continuous_backups::DescribeContinuousBackupsOutput).
-    pub fn builder() -> crate::operation::describe_continuous_backups::builders::DescribeContinuousBackupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_continuous_backups::builders::DescribeContinuousBackupsOutputBuilder {
         crate::operation::describe_continuous_backups::builders::DescribeContinuousBackupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeContinuousBackupsOutput`](crate::operation::describe_continuous_backups::DescribeContinuousBackupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeContinuousBackupsOutputBuilder {
-    pub(crate) continuous_backups_description:
-        ::std::option::Option<crate::types::ContinuousBackupsDescription>,
+    pub(crate) continuous_backups_description: ::std::option::Option<crate::types::ContinuousBackupsDescription>,
     _request_id: Option<String>,
 }
 impl DescribeContinuousBackupsOutputBuilder {
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
-    pub fn continuous_backups_description(
-        mut self,
-        input: crate::types::ContinuousBackupsDescription,
-    ) -> Self {
+    pub fn continuous_backups_description(mut self, input: crate::types::ContinuousBackupsDescription) -> Self {
         self.continuous_backups_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
-    pub fn set_continuous_backups_description(
-        mut self,
-        input: ::std::option::Option<crate::types::ContinuousBackupsDescription>,
-    ) -> Self {
+    pub fn set_continuous_backups_description(mut self, input: ::std::option::Option<crate::types::ContinuousBackupsDescription>) -> Self {
         self.continuous_backups_description = input;
         self
     }
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
-    pub fn get_continuous_backups_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::ContinuousBackupsDescription> {
+    pub fn get_continuous_backups_description(&self) -> &::std::option::Option<crate::types::ContinuousBackupsDescription> {
         &self.continuous_backups_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +58,7 @@ impl DescribeContinuousBackupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeContinuousBackupsOutput`](crate::operation::describe_continuous_backups::DescribeContinuousBackupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_continuous_backups::DescribeContinuousBackupsOutput {
+    pub fn build(self) -> crate::operation::describe_continuous_backups::DescribeContinuousBackupsOutput {
         crate::operation::describe_continuous_backups::DescribeContinuousBackupsOutput {
             continuous_backups_description: self.continuous_backups_description,
             _request_id: self._request_id,

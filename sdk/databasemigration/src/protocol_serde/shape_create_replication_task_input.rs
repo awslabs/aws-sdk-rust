@@ -4,9 +4,7 @@ pub fn ser_create_replication_task_input(
     input: &crate::operation::create_replication_task::CreateReplicationTaskInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.replication_task_identifier {
-        object
-            .key("ReplicationTaskIdentifier")
-            .string(var_1.as_str());
+        object.key("ReplicationTaskIdentifier").string(var_1.as_str());
     }
     if let Some(var_2) = &input.source_endpoint_arn {
         object.key("SourceEndpointArn").string(var_2.as_str());

@@ -5,16 +5,16 @@ pub use crate::operation::terminate_instance_in_auto_scaling_group::_terminate_i
 
 impl TerminateInstanceInAutoScalingGroupInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.terminate_instance_in_auto_scaling_group();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl TerminateInstanceInAutoScalingGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateInstanceInAutoScalingGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupInputBuilder,
+    inner: crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupInputBuilder,
 }
 impl TerminateInstanceInAutoScalingGroupFluentBuilder {
     /// Creates a new `TerminateInstanceInAutoScalingGroup`.
@@ -40,15 +40,20 @@ impl TerminateInstanceInAutoScalingGroupFluentBuilder {
         }
     }
     /// Access the TerminateInstanceInAutoScalingGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroup,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl TerminateInstanceInAutoScalingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,17 +90,26 @@ impl TerminateInstanceInAutoScalingGroupFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroup,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ID of the instance.</p>
@@ -117,10 +132,7 @@ impl TerminateInstanceInAutoScalingGroupFluentBuilder {
         self
     }
     /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling group.</p>
-    pub fn set_should_decrement_desired_capacity(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_should_decrement_desired_capacity(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_should_decrement_desired_capacity(input);
         self
     }

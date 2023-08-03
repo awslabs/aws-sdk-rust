@@ -44,9 +44,7 @@ impl RepositorySummary {
 
 /// A builder for [`RepositorySummary`](crate::types::RepositorySummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositorySummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) provider: ::std::option::Option<crate::types::RepositoryProvider>,
@@ -74,10 +72,7 @@ impl RepositorySummaryBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.provider = input;
         self
     }
@@ -100,18 +95,12 @@ impl RepositorySummaryBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.</p>
-    pub fn connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.</p>
-    pub fn set_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_arn = input;
         self
     }

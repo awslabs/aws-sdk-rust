@@ -44,9 +44,7 @@ impl CopyStepDetails {
     /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded in UTC.</p>
     /// </note> </li>
     /// </ul>
-    pub fn destination_file_location(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InputFileLocation> {
+    pub fn destination_file_location(&self) -> ::std::option::Option<&crate::types::InputFileLocation> {
         self.destination_file_location.as_ref()
     }
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
@@ -76,9 +74,7 @@ impl CopyStepDetails {
 
 /// A builder for [`CopyStepDetails`](crate::types::CopyStepDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyStepDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_file_location: ::std::option::Option<crate::types::InputFileLocation>,
@@ -118,10 +114,7 @@ impl CopyStepDetailsBuilder {
     /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded in UTC.</p>
     /// </note> </li>
     /// </ul>
-    pub fn set_destination_file_location(
-        mut self,
-        input: ::std::option::Option<crate::types::InputFileLocation>,
-    ) -> Self {
+    pub fn set_destination_file_location(mut self, input: ::std::option::Option<crate::types::InputFileLocation>) -> Self {
         self.destination_file_location = input;
         self
     }
@@ -132,9 +125,7 @@ impl CopyStepDetailsBuilder {
     /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded in UTC.</p>
     /// </note> </li>
     /// </ul>
-    pub fn get_destination_file_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputFileLocation> {
+    pub fn get_destination_file_location(&self) -> &::std::option::Option<crate::types::InputFileLocation> {
         &self.destination_file_location
     }
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
@@ -153,10 +144,7 @@ impl CopyStepDetailsBuilder {
     /// <li> <p>If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing file is replaced with the file being processed.</p> </li>
     /// <li> <p>If <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the workflow processing stops.</p> </li>
     /// </ul>
-    pub fn set_overwrite_existing(
-        mut self,
-        input: ::std::option::Option<crate::types::OverwriteExisting>,
-    ) -> Self {
+    pub fn set_overwrite_existing(mut self, input: ::std::option::Option<crate::types::OverwriteExisting>) -> Self {
         self.overwrite_existing = input;
         self
     }
@@ -166,9 +154,7 @@ impl CopyStepDetailsBuilder {
     /// <li> <p>If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing file is replaced with the file being processed.</p> </li>
     /// <li> <p>If <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the workflow processing stops.</p> </li>
     /// </ul>
-    pub fn get_overwrite_existing(
-        &self,
-    ) -> &::std::option::Option<crate::types::OverwriteExisting> {
+    pub fn get_overwrite_existing(&self) -> &::std::option::Option<crate::types::OverwriteExisting> {
         &self.overwrite_existing
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
@@ -176,10 +162,7 @@ impl CopyStepDetailsBuilder {
     /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
     /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
-    pub fn source_file_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_file_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_file_location = ::std::option::Option::Some(input.into());
         self
     }
@@ -188,10 +171,7 @@ impl CopyStepDetailsBuilder {
     /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
     /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
-    pub fn set_source_file_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_file_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_file_location = input;
         self
     }

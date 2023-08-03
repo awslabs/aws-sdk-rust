@@ -78,9 +78,7 @@ impl DescribeCasesInput {
 
 /// A builder for [`DescribeCasesInput`](crate::operation::describe_cases::DescribeCasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCasesInputBuilder {
     pub(crate) case_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) display_id: ::std::option::Option<::std::string::String>,
@@ -105,17 +103,12 @@ impl DescribeCasesInputBuilder {
         self
     }
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
-    pub fn set_case_id_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_case_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.case_id_list = input;
         self
     }
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
-    pub fn get_case_id_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_case_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.case_id_list
     }
     /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
@@ -233,10 +226,7 @@ impl DescribeCasesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCasesInput`](crate::operation::describe_cases::DescribeCasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cases::DescribeCasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_cases::DescribeCasesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_cases::DescribeCasesInput {
             case_id_list: self.case_id_list,
             display_id: self.display_id,

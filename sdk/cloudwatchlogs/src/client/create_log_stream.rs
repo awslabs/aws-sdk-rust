@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`log_stream_name(impl ::std::convert::Into<String>)`](crate::operation::create_log_stream::builders::CreateLogStreamFluentBuilder::log_stream_name) / [`set_log_stream_name(Option<String>)`](crate::operation::create_log_stream::builders::CreateLogStreamFluentBuilder::set_log_stream_name): <p>The name of the log stream.</p>
     /// - On success, responds with [`CreateLogStreamOutput`](crate::operation::create_log_stream::CreateLogStreamOutput)
     /// - On failure, responds with [`SdkError<CreateLogStreamError>`](crate::operation::create_log_stream::CreateLogStreamError)
-    pub fn create_log_stream(
-        &self,
-    ) -> crate::operation::create_log_stream::builders::CreateLogStreamFluentBuilder {
-        crate::operation::create_log_stream::builders::CreateLogStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_log_stream(&self) -> crate::operation::create_log_stream::builders::CreateLogStreamFluentBuilder {
+        crate::operation::create_log_stream::builders::CreateLogStreamFluentBuilder::new(self.handle.clone())
     }
 }

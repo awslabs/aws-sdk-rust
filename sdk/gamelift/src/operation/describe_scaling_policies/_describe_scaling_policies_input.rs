@@ -61,18 +61,14 @@ impl DescribeScalingPoliciesInput {
 }
 impl DescribeScalingPoliciesInput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingPoliciesInput`](crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesInputBuilder {
         crate::operation::describe_scaling_policies::builders::DescribeScalingPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScalingPoliciesInput`](crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalingPoliciesInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) status_filter: ::std::option::Option<crate::types::ScalingStatusType>,
@@ -119,10 +115,7 @@ impl DescribeScalingPoliciesInputBuilder {
     /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
     /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
     /// </ul>
-    pub fn set_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalingStatusType>,
-    ) -> Self {
+    pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::ScalingStatusType>) -> Self {
         self.status_filter = input;
         self
     }
@@ -188,14 +181,12 @@ impl DescribeScalingPoliciesInputBuilder {
         crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput {
-                fleet_id: self.fleet_id,
-                status_filter: self.status_filter,
-                limit: self.limit,
-                next_token: self.next_token,
-                location: self.location,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput {
+            fleet_id: self.fleet_id,
+            status_filter: self.status_filter,
+            limit: self.limit,
+            next_token: self.next_token,
+            location: self.location,
+        })
     }
 }

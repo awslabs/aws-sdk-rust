@@ -10,10 +10,7 @@ impl DeleteClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_cluster::DeleteClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_cluster::DeleteClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster::DeleteClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_cluster();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl DeleteClusterFluentBuilder {
         }
     }
     /// Access the DeleteCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_cluster::builders::DeleteClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_cluster::builders::DeleteClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl DeleteClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -124,10 +116,7 @@ impl DeleteClusterFluentBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
@@ -139,10 +128,7 @@ impl DeleteClusterFluentBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -187,10 +173,7 @@ impl DeleteClusterFluentBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn final_cluster_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn final_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.final_cluster_snapshot_identifier(input.into());
         self
     }
@@ -201,10 +184,7 @@ impl DeleteClusterFluentBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn set_final_cluster_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_final_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_final_cluster_snapshot_identifier(input);
         self
     }
@@ -215,9 +195,7 @@ impl DeleteClusterFluentBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn get_final_cluster_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_final_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_final_cluster_snapshot_identifier()
     }
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
@@ -230,13 +208,8 @@ impl DeleteClusterFluentBuilder {
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
-    pub fn set_final_cluster_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_final_cluster_snapshot_retention_period(input);
+    pub fn set_final_cluster_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_final_cluster_snapshot_retention_period(input);
         self
     }
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>

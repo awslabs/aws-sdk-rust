@@ -10,10 +10,7 @@ impl GetChangeLogsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_change_logs::GetChangeLogsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_change_logs::GetChangeLogsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_change_logs::GetChangeLogsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_change_logs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetChangeLogsFluentBuilder {
         }
     }
     /// Access the GetChangeLogs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_change_logs::builders::GetChangeLogsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_change_logs::builders::GetChangeLogsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetChangeLogsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,27 +109,16 @@ impl GetChangeLogsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_change_logs::paginator::GetChangeLogsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_change_logs::paginator::GetChangeLogsPaginator {
-        crate::operation::get_change_logs::paginator::GetChangeLogsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_change_logs::paginator::GetChangeLogsPaginator {
+        crate::operation::get_change_logs::paginator::GetChangeLogsPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
     /// <p>The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
@@ -146,18 +127,12 @@ impl GetChangeLogsFluentBuilder {
         self.inner.get_assessment_id()
     }
     /// <p> The unique identifier for the control set. </p>
-    pub fn control_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_set_id(input.into());
         self
     }
     /// <p> The unique identifier for the control set. </p>
-    pub fn set_control_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_set_id(input);
         self
     }

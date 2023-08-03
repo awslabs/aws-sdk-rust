@@ -17,11 +17,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateMlTransformOutput`](crate::operation::update_ml_transform::UpdateMlTransformOutput) with field(s):
     ///   - [`transform_id(Option<String>)`](crate::operation::update_ml_transform::UpdateMlTransformOutput::transform_id): <p>The unique identifier for the transform that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateMLTransformError>`](crate::operation::update_ml_transform::UpdateMLTransformError)
-    pub fn update_ml_transform(
-        &self,
-    ) -> crate::operation::update_ml_transform::builders::UpdateMLTransformFluentBuilder {
-        crate::operation::update_ml_transform::builders::UpdateMLTransformFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_ml_transform(&self) -> crate::operation::update_ml_transform::builders::UpdateMLTransformFluentBuilder {
+        crate::operation::update_ml_transform::builders::UpdateMLTransformFluentBuilder::new(self.handle.clone())
     }
 }

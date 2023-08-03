@@ -30,9 +30,7 @@ impl ConnectivityInfo {
 
 /// A builder for [`ConnectivityInfo`](crate::types::ConnectivityInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectivityInfoBuilder {
     pub(crate) public_access: ::std::option::Option<crate::types::PublicAccess>,
     pub(crate) vpc_connectivity: ::std::option::Option<crate::types::VpcConnectivity>,
@@ -44,10 +42,7 @@ impl ConnectivityInfoBuilder {
         self
     }
     /// <p>Public access control for brokers.</p>
-    pub fn set_public_access(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicAccess>,
-    ) -> Self {
+    pub fn set_public_access(mut self, input: ::std::option::Option<crate::types::PublicAccess>) -> Self {
         self.public_access = input;
         self
     }
@@ -61,10 +56,7 @@ impl ConnectivityInfoBuilder {
         self
     }
     /// <p>VPC connectivity access control for brokers.</p>
-    pub fn set_vpc_connectivity(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConnectivity>,
-    ) -> Self {
+    pub fn set_vpc_connectivity(mut self, input: ::std::option::Option<crate::types::VpcConnectivity>) -> Self {
         self.vpc_connectivity = input;
         self
     }

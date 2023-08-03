@@ -26,8 +26,7 @@ impl UpdateAssumeRolePolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAssumeRolePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_assume_role_policy::builders::UpdateAssumeRolePolicyInputBuilder,
+    inner: crate::operation::update_assume_role_policy::builders::UpdateAssumeRolePolicyInputBuilder,
 }
 impl UpdateAssumeRolePolicyFluentBuilder {
     /// Creates a new `UpdateAssumeRolePolicy`.
@@ -38,10 +37,7 @@ impl UpdateAssumeRolePolicyFluentBuilder {
         }
     }
     /// Access the UpdateAssumeRolePolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_assume_role_policy::builders::UpdateAssumeRolePolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_assume_role_policy::builders::UpdateAssumeRolePolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl UpdateAssumeRolePolicyFluentBuilder {
             crate::operation::update_assume_role_policy::UpdateAssumeRolePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl UpdateAssumeRolePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl UpdateAssumeRolePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl UpdateAssumeRolePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl UpdateAssumeRolePolicyFluentBuilder {
             crate::operation::update_assume_role_policy::UpdateAssumeRolePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -149,10 +134,7 @@ impl UpdateAssumeRolePolicyFluentBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_document(input.into());
         self
     }
@@ -164,10 +146,7 @@ impl UpdateAssumeRolePolicyFluentBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
     }

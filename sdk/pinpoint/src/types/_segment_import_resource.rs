@@ -6,8 +6,7 @@
 pub struct SegmentImportResource {
     /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
     #[doc(hidden)]
-    pub channel_counts:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub channel_counts: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
     #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
@@ -26,9 +25,7 @@ pub struct SegmentImportResource {
 }
 impl SegmentImportResource {
     /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
-    pub fn channel_counts(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn channel_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
         self.channel_counts.as_ref()
     }
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
@@ -61,12 +58,9 @@ impl SegmentImportResource {
 
 /// A builder for [`SegmentImportResource`](crate::types::SegmentImportResource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentImportResourceBuilder {
-    pub(crate) channel_counts:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub(crate) channel_counts: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::Format>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -79,28 +73,19 @@ impl SegmentImportResourceBuilder {
     /// To override the contents of this collection use [`set_channel_counts`](Self::set_channel_counts).
     ///
     /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
-    pub fn channel_counts(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: i32,
-    ) -> Self {
+    pub fn channel_counts(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i32) -> Self {
         let mut hash_map = self.channel_counts.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.channel_counts = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
-    pub fn set_channel_counts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
-    ) -> Self {
+    pub fn set_channel_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>) -> Self {
         self.channel_counts = input;
         self
     }
     /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
-    pub fn get_channel_counts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn get_channel_counts(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
         &self.channel_counts
     }
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>

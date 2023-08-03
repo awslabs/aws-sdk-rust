@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StopAppBlockBuilderOutput {
 }
 impl StopAppBlockBuilderOutput {
     /// Creates a new builder-style object to manufacture [`StopAppBlockBuilderOutput`](crate::operation::stop_app_block_builder::StopAppBlockBuilderOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderOutputBuilder {
+    pub fn builder() -> crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderOutputBuilder {
         crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopAppBlockBuilderOutput`](crate::operation::stop_app_block_builder::StopAppBlockBuilderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopAppBlockBuilderOutputBuilder {
     pub(crate) app_block_builder: ::std::option::Option<crate::types::AppBlockBuilder>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl StopAppBlockBuilderOutputBuilder {
         self
     }
     /// <p>Describes an app block builder.</p>
-    pub fn set_app_block_builder(
-        mut self,
-        input: ::std::option::Option<crate::types::AppBlockBuilder>,
-    ) -> Self {
+    pub fn set_app_block_builder(mut self, input: ::std::option::Option<crate::types::AppBlockBuilder>) -> Self {
         self.app_block_builder = input;
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`new_name(impl ::std::convert::Into<String>)`](crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder::new_name) / [`set_new_name(Option<String>)`](crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder::set_new_name): <p>The new name for the repository.</p>
     /// - On success, responds with [`UpdateRepositoryNameOutput`](crate::operation::update_repository_name::UpdateRepositoryNameOutput)
     /// - On failure, responds with [`SdkError<UpdateRepositoryNameError>`](crate::operation::update_repository_name::UpdateRepositoryNameError)
-    pub fn update_repository_name(
-        &self,
-    ) -> crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder {
-        crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_repository_name(&self) -> crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder {
+        crate::operation::update_repository_name::builders::UpdateRepositoryNameFluentBuilder::new(self.handle.clone())
     }
 }

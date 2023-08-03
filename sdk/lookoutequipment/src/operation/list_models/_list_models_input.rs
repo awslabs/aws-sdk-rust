@@ -50,9 +50,7 @@ impl ListModelsInput {
 
 /// A builder for [`ListModelsInput`](crate::operation::list_models::ListModelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListModelsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -104,18 +102,12 @@ impl ListModelsInputBuilder {
         &self.status
     }
     /// <p>The beginning of the name of the ML models being listed. </p>
-    pub fn model_name_begins_with(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name_begins_with = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The beginning of the name of the ML models being listed. </p>
-    pub fn set_model_name_begins_with(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name_begins_with = input;
         self
     }
@@ -124,18 +116,12 @@ impl ListModelsInputBuilder {
         &self.model_name_begins_with
     }
     /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
-    pub fn dataset_name_begins_with(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_name_begins_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name_begins_with = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
-    pub fn set_dataset_name_begins_with(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name_begins_with = input;
         self
     }
@@ -144,12 +130,7 @@ impl ListModelsInputBuilder {
         &self.dataset_name_begins_with
     }
     /// Consumes the builder and constructs a [`ListModelsInput`](crate::operation::list_models::ListModelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_models::ListModelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_models::ListModelsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_models::ListModelsInput {
             next_token: self.next_token,
             max_results: self.max_results,

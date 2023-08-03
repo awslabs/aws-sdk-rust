@@ -27,7 +27,7 @@ impl DescribeInstanceAttributeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstanceAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeInputBuilder,
+    inner: crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeInputBuilder,
 }
 impl DescribeInstanceAttributeFluentBuilder {
     /// Creates a new `DescribeInstanceAttribute`.
@@ -38,7 +38,7 @@ impl DescribeInstanceAttributeFluentBuilder {
         }
     }
     /// Access the DescribeInstanceAttribute as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_instance_attribute::builders::DescribeInstanceAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeInstanceAttributeFluentBuilder {
             crate::operation::describe_instance_attribute::DescribeInstanceAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_attribute::DescribeInstanceAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_attribute::DescribeInstanceAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeInstanceAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeInstanceAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_attribute::DescribeInstanceAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_attribute::DescribeInstanceAttributeError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeInstanceAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_attribute::DescribeInstanceAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_attribute::DescribeInstanceAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DescribeInstanceAttributeFluentBuilder {
             crate::operation::describe_instance_attribute::DescribeInstanceAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instance_attribute::DescribeInstanceAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_attribute::DescribeInstanceAttributeError>,
     > {
         self.customize_middleware().await
     }
@@ -141,17 +130,12 @@ impl DescribeInstanceAttributeFluentBuilder {
         self
     }
     /// <p>The type of attribute.</p>
-    pub fn set_attribute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceAttributeType>,
-    ) -> Self {
+    pub fn set_attribute_type(mut self, input: ::std::option::Option<crate::types::InstanceAttributeType>) -> Self {
         self.inner = self.inner.set_attribute_type(input);
         self
     }
     /// <p>The type of attribute.</p>
-    pub fn get_attribute_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceAttributeType> {
+    pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::InstanceAttributeType> {
         self.inner.get_attribute_type()
     }
 }

@@ -51,9 +51,7 @@ impl EnvironmentVariable {
 
 /// A builder for [`EnvironmentVariable`](crate::types::EnvironmentVariable).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentVariableBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl EnvironmentVariableBuilder {
     /// <li> <p> <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.</p> </li>
     /// <li> <p> <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. To learn how to specify a secrets manager environment variable, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EnvironmentVariableType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EnvironmentVariableType>) -> Self {
         self.r#type = input;
         self
     }

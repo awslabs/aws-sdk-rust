@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`results(Option<Vec<ProtectedResource>>)`](crate::operation::list_protected_resources::ListProtectedResourcesOutput::results): <p>An array of resources successfully backed up by Backup including the time the resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource type.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_protected_resources::ListProtectedResourcesOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     /// - On failure, responds with [`SdkError<ListProtectedResourcesError>`](crate::operation::list_protected_resources::ListProtectedResourcesError)
-    pub fn list_protected_resources(
-        &self,
-    ) -> crate::operation::list_protected_resources::builders::ListProtectedResourcesFluentBuilder
-    {
+    pub fn list_protected_resources(&self) -> crate::operation::list_protected_resources::builders::ListProtectedResourcesFluentBuilder {
         crate::operation::list_protected_resources::builders::ListProtectedResourcesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl DescribeUserPoolInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_user_pool::DescribeUserPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_pool::DescribeUserPoolError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_pool::DescribeUserPoolError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_user_pool();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeUserPoolFluentBuilder {
         }
     }
     /// Access the DescribeUserPool as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_user_pool::builders::DescribeUserPoolInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_user_pool::builders::DescribeUserPoolInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeUserPoolFluentBuilder {
             crate::operation::describe_user_pool::DescribeUserPool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_pool::DescribeUserPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_pool::DescribeUserPoolError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeUserPoolFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeUserPoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_user_pool::DescribeUserPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_pool::DescribeUserPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_pool::DescribeUserPoolError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeUserPoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_user_pool::DescribeUserPoolOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_pool::DescribeUserPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_pool::DescribeUserPoolError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeUserPoolFluentBuilder {
             crate::operation::describe_user_pool::DescribeUserPool,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_user_pool::DescribeUserPoolError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_user_pool::DescribeUserPoolError>,
     > {
         self.customize_middleware().await
     }

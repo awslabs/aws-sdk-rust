@@ -53,9 +53,7 @@ impl ListDeviceFleetsInput {
         self.last_modified_time_after.as_ref()
     }
     /// <p>Select fleets where the job was updated before X</p>
-    pub fn last_modified_time_before(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>Filter for fleets containing this name in their fleet device name.</p>
@@ -73,17 +71,14 @@ impl ListDeviceFleetsInput {
 }
 impl ListDeviceFleetsInput {
     /// Creates a new builder-style object to manufacture [`ListDeviceFleetsInput`](crate::operation::list_device_fleets::ListDeviceFleetsInput).
-    pub fn builder() -> crate::operation::list_device_fleets::builders::ListDeviceFleetsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_device_fleets::builders::ListDeviceFleetsInputBuilder {
         crate::operation::list_device_fleets::builders::ListDeviceFleetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceFleetsInput`](crate::operation::list_device_fleets::ListDeviceFleetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceFleetsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -130,10 +125,7 @@ impl ListDeviceFleetsInputBuilder {
         self
     }
     /// <p>Filter fleets where packaging job was created after specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_after = input;
         self
     }
@@ -147,10 +139,7 @@ impl ListDeviceFleetsInputBuilder {
         self
     }
     /// <p>Filter fleets where the edge packaging job was created before specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time_before = input;
         self
     }
@@ -164,17 +153,12 @@ impl ListDeviceFleetsInputBuilder {
         self
     }
     /// <p>Select fleets where the job was updated after X</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_after = input;
         self
     }
     /// <p>Select fleets where the job was updated after X</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_after
     }
     /// <p>Select fleets where the job was updated before X</p>
@@ -183,32 +167,21 @@ impl ListDeviceFleetsInputBuilder {
         self
     }
     /// <p>Select fleets where the job was updated before X</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time_before = input;
         self
     }
     /// <p>Select fleets where the job was updated before X</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time_before
     }
     /// <p>Filter for fleets containing this name in their fleet device name.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filter for fleets containing this name in their fleet device name.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -222,10 +195,7 @@ impl ListDeviceFleetsInputBuilder {
         self
     }
     /// <p>The column to sort by.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListDeviceFleetsSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListDeviceFleetsSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -250,22 +220,17 @@ impl ListDeviceFleetsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeviceFleetsInput`](crate::operation::list_device_fleets::ListDeviceFleetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_device_fleets::ListDeviceFleetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_device_fleets::ListDeviceFleetsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                last_modified_time_after: self.last_modified_time_after,
-                last_modified_time_before: self.last_modified_time_before,
-                name_contains: self.name_contains,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_device_fleets::ListDeviceFleetsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_device_fleets::ListDeviceFleetsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            creation_time_after: self.creation_time_after,
+            creation_time_before: self.creation_time_before,
+            last_modified_time_after: self.last_modified_time_after,
+            last_modified_time_before: self.last_modified_time_before,
+            name_contains: self.name_contains,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+        })
     }
 }

@@ -10,10 +10,7 @@ impl DeleteBackupPlanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_backup_plan::DeleteBackupPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backup_plan::DeleteBackupPlanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_plan::DeleteBackupPlanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_backup_plan();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteBackupPlanFluentBuilder {
         }
     }
     /// Access the DeleteBackupPlan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_backup_plan::builders::DeleteBackupPlanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_backup_plan::builders::DeleteBackupPlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteBackupPlanFluentBuilder {
             crate::operation::delete_backup_plan::DeleteBackupPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backup_plan::DeleteBackupPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_plan::DeleteBackupPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteBackupPlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteBackupPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_backup_plan::DeleteBackupPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backup_plan::DeleteBackupPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_plan::DeleteBackupPlanError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteBackupPlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_backup_plan::DeleteBackupPlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backup_plan::DeleteBackupPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_plan::DeleteBackupPlanError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DeleteBackupPlanFluentBuilder {
             crate::operation::delete_backup_plan::DeleteBackupPlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_backup_plan::DeleteBackupPlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_plan::DeleteBackupPlanError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_plan_id(input.into());
         self
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_plan_id(input);
         self
     }

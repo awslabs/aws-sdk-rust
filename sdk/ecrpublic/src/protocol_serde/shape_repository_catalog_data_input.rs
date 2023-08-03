@@ -25,9 +25,7 @@ pub fn ser_repository_catalog_data_input(
         array_6.finish();
     }
     if let Some(var_8) = &input.logo_image_blob {
-        object
-            .key("logoImageBlob")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_8));
+        object.key("logoImageBlob").string_unchecked(&::aws_smithy_types::base64::encode(var_8));
     }
     if let Some(var_9) = &input.about_text {
         object.key("aboutText").string(var_9.as_str());

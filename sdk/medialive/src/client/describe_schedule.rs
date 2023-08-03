@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_schedule::DescribeScheduleOutput::next_token): The next token; for use in pagination.
     ///   - [`schedule_actions(Option<Vec<ScheduleAction>>)`](crate::operation::describe_schedule::DescribeScheduleOutput::schedule_actions): The list of actions in the schedule.
     /// - On failure, responds with [`SdkError<DescribeScheduleError>`](crate::operation::describe_schedule::DescribeScheduleError)
-    pub fn describe_schedule(
-        &self,
-    ) -> crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder {
-        crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_schedule(&self) -> crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder {
+        crate::operation::describe_schedule::builders::DescribeScheduleFluentBuilder::new(self.handle.clone())
     }
 }

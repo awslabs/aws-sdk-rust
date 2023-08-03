@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for PutResourceAttributesOutput {
 }
 impl PutResourceAttributesOutput {
     /// Creates a new builder-style object to manufacture [`PutResourceAttributesOutput`](crate::operation::put_resource_attributes::PutResourceAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::put_resource_attributes::builders::PutResourceAttributesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_resource_attributes::builders::PutResourceAttributesOutputBuilder {
         crate::operation::put_resource_attributes::builders::PutResourceAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutResourceAttributesOutput`](crate::operation::put_resource_attributes::PutResourceAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutResourceAttributesOutputBuilder {
     _request_id: Option<String>,
 }

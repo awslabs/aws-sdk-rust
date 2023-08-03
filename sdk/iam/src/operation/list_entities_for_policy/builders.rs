@@ -39,10 +39,7 @@ impl ListEntitiesForPolicyFluentBuilder {
         }
     }
     /// Access the ListEntitiesForPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_entities_for_policy::builders::ListEntitiesForPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_entities_for_policy::builders::ListEntitiesForPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl ListEntitiesForPolicyFluentBuilder {
             crate::operation::list_entities_for_policy::ListEntitiesForPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entities_for_policy::ListEntitiesForPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entities_for_policy::ListEntitiesForPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl ListEntitiesForPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl ListEntitiesForPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_entities_for_policy::ListEntitiesForPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entities_for_policy::ListEntitiesForPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entities_for_policy::ListEntitiesForPolicyError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl ListEntitiesForPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_entities_for_policy::ListEntitiesForPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entities_for_policy::ListEntitiesForPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entities_for_policy::ListEntitiesForPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -119,22 +107,15 @@ impl ListEntitiesForPolicyFluentBuilder {
             crate::operation::list_entities_for_policy::ListEntitiesForPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_entities_for_policy::ListEntitiesForPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entities_for_policy::ListEntitiesForPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_entities_for_policy::paginator::ListEntitiesForPolicyPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_entities_for_policy::paginator::ListEntitiesForPolicyPaginator {
-        crate::operation::list_entities_for_policy::paginator::ListEntitiesForPolicyPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_entities_for_policy::paginator::ListEntitiesForPolicyPaginator {
+        crate::operation::list_entities_for_policy::paginator::ListEntitiesForPolicyPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -161,10 +142,7 @@ impl ListEntitiesForPolicyFluentBuilder {
     }
     /// <p>The entity type to use for filtering the results.</p>
     /// <p>For example, when <code>EntityFilter</code> is <code>Role</code>, only the roles that are attached to the specified policy are returned. This parameter is optional. If it is not included, all attached entities (users, groups, and roles) are returned. The argument for this parameter must be one of the valid values listed below.</p>
-    pub fn set_entity_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityType>,
-    ) -> Self {
+    pub fn set_entity_filter(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
         self.inner = self.inner.set_entity_filter(input);
         self
     }
@@ -200,10 +178,7 @@ impl ListEntitiesForPolicyFluentBuilder {
     /// <p>The policy usage method to use for filtering the results.</p>
     /// <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>
     /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
-    pub fn set_policy_usage_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyUsageType>,
-    ) -> Self {
+    pub fn set_policy_usage_filter(mut self, input: ::std::option::Option<crate::types::PolicyUsageType>) -> Self {
         self.inner = self.inner.set_policy_usage_filter(input);
         self
     }

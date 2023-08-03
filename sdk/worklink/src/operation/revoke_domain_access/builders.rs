@@ -10,10 +10,7 @@ impl RevokeDomainAccessInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::revoke_domain_access::RevokeDomainAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_domain_access::RevokeDomainAccessError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_domain_access::RevokeDomainAccessError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.revoke_domain_access();
         fluent_builder.inner = self;
@@ -23,9 +20,7 @@ impl RevokeDomainAccessInputBuilder {
 /// Fluent builder constructing a request to `RevokeDomainAccess`.
 ///
 /// <p>Moves a domain to INACTIVE status if it was in the ACTIVE status.</p>
-#[deprecated(
-    note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-)]
+#[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeDomainAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -40,9 +35,7 @@ impl RevokeDomainAccessFluentBuilder {
         }
     }
     /// Access the RevokeDomainAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::revoke_domain_access::builders::RevokeDomainAccessInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::revoke_domain_access::builders::RevokeDomainAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +47,7 @@ impl RevokeDomainAccessFluentBuilder {
             crate::operation::revoke_domain_access::RevokeDomainAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_domain_access::RevokeDomainAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_domain_access::RevokeDomainAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +57,7 @@ impl RevokeDomainAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +66,7 @@ impl RevokeDomainAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_domain_access::RevokeDomainAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_domain_access::RevokeDomainAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_domain_access::RevokeDomainAccessError>,
     > {
         let op = self
             .inner
@@ -103,9 +89,7 @@ impl RevokeDomainAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_domain_access::RevokeDomainAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_domain_access::RevokeDomainAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_domain_access::RevokeDomainAccessError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +103,7 @@ impl RevokeDomainAccessFluentBuilder {
             crate::operation::revoke_domain_access::RevokeDomainAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::revoke_domain_access::RevokeDomainAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::revoke_domain_access::RevokeDomainAccessError>,
     > {
         self.customize_middleware().await
     }

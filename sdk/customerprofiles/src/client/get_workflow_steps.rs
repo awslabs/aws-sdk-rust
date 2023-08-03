@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<WorkflowStepItem>>)`](crate::operation::get_workflow_steps::GetWorkflowStepsOutput::items): <p>List containing workflow step details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_workflow_steps::GetWorkflowStepsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowStepsError>`](crate::operation::get_workflow_steps::GetWorkflowStepsError)
-    pub fn get_workflow_steps(
-        &self,
-    ) -> crate::operation::get_workflow_steps::builders::GetWorkflowStepsFluentBuilder {
-        crate::operation::get_workflow_steps::builders::GetWorkflowStepsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_workflow_steps(&self) -> crate::operation::get_workflow_steps::builders::GetWorkflowStepsFluentBuilder {
+        crate::operation::get_workflow_steps::builders::GetWorkflowStepsFluentBuilder::new(self.handle.clone())
     }
 }

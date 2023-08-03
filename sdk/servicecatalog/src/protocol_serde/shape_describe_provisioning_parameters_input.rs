@@ -16,9 +16,7 @@ pub fn ser_describe_provisioning_parameters_input(
         object.key("ProvisioningArtifactId").string(var_4.as_str());
     }
     if let Some(var_5) = &input.provisioning_artifact_name {
-        object
-            .key("ProvisioningArtifactName")
-            .string(var_5.as_str());
+        object.key("ProvisioningArtifactName").string(var_5.as_str());
     }
     if let Some(var_6) = &input.path_id {
         object.key("PathId").string(var_6.as_str());

@@ -38,13 +38,7 @@
 /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AuthorizerType {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for AuthorizerType {
         match s {
             "JWT" => AuthorizerType::Jwt,
             "REQUEST" => AuthorizerType::Request,
-            other => {
-                AuthorizerType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AuthorizerType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

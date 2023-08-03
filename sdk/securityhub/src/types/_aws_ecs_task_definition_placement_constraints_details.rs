@@ -23,17 +23,14 @@ impl AwsEcsTaskDefinitionPlacementConstraintsDetails {
 }
 impl AwsEcsTaskDefinitionPlacementConstraintsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsTaskDefinitionPlacementConstraintsDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionPlacementConstraintsDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionPlacementConstraintsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionPlacementConstraintsDetailsBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,

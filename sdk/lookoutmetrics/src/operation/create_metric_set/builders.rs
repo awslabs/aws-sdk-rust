@@ -10,10 +10,7 @@ impl CreateMetricSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_metric_set::CreateMetricSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_metric_set::CreateMetricSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_metric_set::CreateMetricSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_metric_set();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateMetricSetFluentBuilder {
         }
     }
     /// Access the CreateMetricSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_metric_set::builders::CreateMetricSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_metric_set::builders::CreateMetricSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateMetricSetFluentBuilder {
             crate::operation::create_metric_set::CreateMetricSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_metric_set::CreateMetricSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_metric_set::CreateMetricSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateMetricSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateMetricSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_metric_set::CreateMetricSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_metric_set::CreateMetricSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_metric_set::CreateMetricSetError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateMetricSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_metric_set::CreateMetricSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_metric_set::CreateMetricSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_metric_set::CreateMetricSetError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateMetricSetFluentBuilder {
             crate::operation::create_metric_set::CreateMetricSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_metric_set::CreateMetricSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_metric_set::CreateMetricSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the anomaly detector that will use the dataset.</p>
-    pub fn anomaly_detector_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.anomaly_detector_arn(input.into());
         self
     }
     /// <p>The ARN of the anomaly detector that will use the dataset.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
     }
@@ -143,18 +121,12 @@ impl CreateMetricSetFluentBuilder {
         self.inner.get_anomaly_detector_arn()
     }
     /// <p>The name of the dataset.</p>
-    pub fn metric_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_set_name(input.into());
         self
     }
     /// <p>The name of the dataset.</p>
-    pub fn set_metric_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_set_name(input);
         self
     }
@@ -163,18 +135,12 @@ impl CreateMetricSetFluentBuilder {
         self.inner.get_metric_set_name()
     }
     /// <p>A description of the dataset you are creating.</p>
-    pub fn metric_set_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metric_set_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_set_description(input.into());
         self
     }
     /// <p>A description of the dataset you are creating.</p>
-    pub fn set_metric_set_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metric_set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_set_description(input);
         self
     }
@@ -192,10 +158,7 @@ impl CreateMetricSetFluentBuilder {
         self
     }
     /// <p>A list of metrics that the dataset will contain.</p>
-    pub fn set_metric_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
-    ) -> Self {
+    pub fn set_metric_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>) -> Self {
         self.inner = self.inner.set_metric_list(input);
         self
     }
@@ -223,10 +186,7 @@ impl CreateMetricSetFluentBuilder {
         self
     }
     /// <p>Contains information about the column used for tracking time in your source data.</p>
-    pub fn set_timestamp_column(
-        mut self,
-        input: ::std::option::Option<crate::types::TimestampColumn>,
-    ) -> Self {
+    pub fn set_timestamp_column(mut self, input: ::std::option::Option<crate::types::TimestampColumn>) -> Self {
         self.inner = self.inner.set_timestamp_column(input);
         self
     }
@@ -239,25 +199,17 @@ impl CreateMetricSetFluentBuilder {
     /// To override the contents of this collection use [`set_dimension_list`](Self::set_dimension_list).
     ///
     /// <p>A list of the fields you want to treat as dimensions.</p>
-    pub fn dimension_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dimension_list(input.into());
         self
     }
     /// <p>A list of the fields you want to treat as dimensions.</p>
-    pub fn set_dimension_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dimension_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_dimension_list(input);
         self
     }
     /// <p>A list of the fields you want to treat as dimensions.</p>
-    pub fn get_dimension_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dimension_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_dimension_list()
     }
     /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
@@ -266,10 +218,7 @@ impl CreateMetricSetFluentBuilder {
         self
     }
     /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
-    pub fn set_metric_set_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::Frequency>,
-    ) -> Self {
+    pub fn set_metric_set_frequency(mut self, input: ::std::option::Option<crate::types::Frequency>) -> Self {
         self.inner = self.inner.set_metric_set_frequency(input);
         self
     }
@@ -283,10 +232,7 @@ impl CreateMetricSetFluentBuilder {
         self
     }
     /// <p>Contains information about how the source data should be interpreted.</p>
-    pub fn set_metric_source(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricSource>,
-    ) -> Self {
+    pub fn set_metric_source(mut self, input: ::std::option::Option<crate::types::MetricSource>) -> Self {
         self.inner = self.inner.set_metric_source(input);
         self
     }
@@ -313,30 +259,17 @@ impl CreateMetricSetFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// Appends an item to `DimensionFilterList`.
@@ -349,17 +282,12 @@ impl CreateMetricSetFluentBuilder {
         self
     }
     /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
-    pub fn set_dimension_filter_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
-    ) -> Self {
+    pub fn set_dimension_filter_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>) -> Self {
         self.inner = self.inner.set_dimension_filter_list(input);
         self
     }
     /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
-    pub fn get_dimension_filter_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>> {
+    pub fn get_dimension_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>> {
         self.inner.get_dimension_filter_list()
     }
 }

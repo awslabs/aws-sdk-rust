@@ -43,8 +43,7 @@ pub struct StartMedicalStreamTranscriptionOutput {
     pub number_of_channels: ::std::option::Option<i32>,
     /// <p>Shows whether content identification was enabled for your transcription.</p>
     #[doc(hidden)]
-    pub content_identification_type:
-        ::std::option::Option<crate::types::MedicalContentIdentificationType>,
+    pub content_identification_type: ::std::option::Option<crate::types::MedicalContentIdentificationType>,
     _request_id: Option<String>,
 }
 impl StartMedicalStreamTranscriptionOutput {
@@ -102,9 +101,7 @@ impl StartMedicalStreamTranscriptionOutput {
         self.number_of_channels
     }
     /// <p>Shows whether content identification was enabled for your transcription.</p>
-    pub fn content_identification_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MedicalContentIdentificationType> {
+    pub fn content_identification_type(&self) -> ::std::option::Option<&crate::types::MedicalContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
 }
@@ -115,7 +112,7 @@ impl ::aws_http::request_id::RequestId for StartMedicalStreamTranscriptionOutput
 }
 impl StartMedicalStreamTranscriptionOutput {
     /// Creates a new builder-style object to manufacture [`StartMedicalStreamTranscriptionOutput`](crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput).
-    pub fn builder() -> crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionOutputBuilder {
         crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionOutputBuilder::default()
     }
 }
@@ -141,8 +138,7 @@ pub struct StartMedicalStreamTranscriptionOutputBuilder {
     >,
     pub(crate) enable_channel_identification: ::std::option::Option<bool>,
     pub(crate) number_of_channels: ::std::option::Option<i32>,
-    pub(crate) content_identification_type:
-        ::std::option::Option<crate::types::MedicalContentIdentificationType>,
+    pub(crate) content_identification_type: ::std::option::Option<crate::types::MedicalContentIdentificationType>,
     _request_id: Option<String>,
 }
 impl StartMedicalStreamTranscriptionOutputBuilder {
@@ -166,10 +162,7 @@ impl StartMedicalStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Provides the language code that you specified in your request. This must be <code>en-US</code>.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -197,10 +190,7 @@ impl StartMedicalStreamTranscriptionOutputBuilder {
         self
     }
     /// <p>Provides the media encoding you specified in your request.</p>
-    pub fn set_media_encoding(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaEncoding>,
-    ) -> Self {
+    pub fn set_media_encoding(mut self, input: ::std::option::Option<crate::types::MediaEncoding>) -> Self {
         self.media_encoding = input;
         self
     }
@@ -209,18 +199,12 @@ impl StartMedicalStreamTranscriptionOutputBuilder {
         &self.media_encoding
     }
     /// <p>Provides the name of the custom vocabulary that you specified in your request.</p>
-    pub fn vocabulary_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the name of the custom vocabulary that you specified in your request.</p>
-    pub fn set_vocabulary_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vocabulary_name = input;
         self
     }
@@ -348,25 +332,17 @@ impl StartMedicalStreamTranscriptionOutputBuilder {
         &self.number_of_channels
     }
     /// <p>Shows whether content identification was enabled for your transcription.</p>
-    pub fn content_identification_type(
-        mut self,
-        input: crate::types::MedicalContentIdentificationType,
-    ) -> Self {
+    pub fn content_identification_type(mut self, input: crate::types::MedicalContentIdentificationType) -> Self {
         self.content_identification_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Shows whether content identification was enabled for your transcription.</p>
-    pub fn set_content_identification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MedicalContentIdentificationType>,
-    ) -> Self {
+    pub fn set_content_identification_type(mut self, input: ::std::option::Option<crate::types::MedicalContentIdentificationType>) -> Self {
         self.content_identification_type = input;
         self
     }
     /// <p>Shows whether content identification was enabled for your transcription.</p>
-    pub fn get_content_identification_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::MedicalContentIdentificationType> {
+    pub fn get_content_identification_type(&self) -> &::std::option::Option<crate::types::MedicalContentIdentificationType> {
         &self.content_identification_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -387,39 +363,26 @@ impl StartMedicalStreamTranscriptionOutputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput {
-                request_id: self.request_id
-                ,
-                language_code: self.language_code
-                ,
-                media_sample_rate_hertz: self.media_sample_rate_hertz
-                ,
-                media_encoding: self.media_encoding
-                ,
-                vocabulary_name: self.vocabulary_name
-                ,
-                specialty: self.specialty
-                ,
-                r#type: self.r#type
-                ,
-                show_speaker_label: self.show_speaker_label
-                    .unwrap_or_default()
-                ,
-                session_id: self.session_id
-                ,
-                transcript_result_stream: self.transcript_result_stream
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("transcript_result_stream", "transcript_result_stream was not specified but it is required when building StartMedicalStreamTranscriptionOutput")
-                    )?
-                ,
-                enable_channel_identification: self.enable_channel_identification
-                    .unwrap_or_default()
-                ,
-                number_of_channels: self.number_of_channels
-                ,
-                content_identification_type: self.content_identification_type
-                ,
+                request_id: self.request_id,
+                language_code: self.language_code,
+                media_sample_rate_hertz: self.media_sample_rate_hertz,
+                media_encoding: self.media_encoding,
+                vocabulary_name: self.vocabulary_name,
+                specialty: self.specialty,
+                r#type: self.r#type,
+                show_speaker_label: self.show_speaker_label.unwrap_or_default(),
+                session_id: self.session_id,
+                transcript_result_stream: self.transcript_result_stream.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "transcript_result_stream",
+                        "transcript_result_stream was not specified but it is required when building StartMedicalStreamTranscriptionOutput",
+                    )
+                })?,
+                enable_channel_identification: self.enable_channel_identification.unwrap_or_default(),
+                number_of_channels: self.number_of_channels,
+                content_identification_type: self.content_identification_type,
                 _request_id: self._request_id,
-            }
+            },
         )
     }
 }

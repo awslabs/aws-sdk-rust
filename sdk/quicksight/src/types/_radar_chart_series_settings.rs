@@ -10,9 +10,7 @@ pub struct RadarChartSeriesSettings {
 }
 impl RadarChartSeriesSettings {
     /// <p>The area style settings of a radar chart.</p>
-    pub fn area_style_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RadarChartAreaStyleSettings> {
+    pub fn area_style_settings(&self) -> ::std::option::Option<&crate::types::RadarChartAreaStyleSettings> {
         self.area_style_settings.as_ref()
     }
 }
@@ -25,12 +23,9 @@ impl RadarChartSeriesSettings {
 
 /// A builder for [`RadarChartSeriesSettings`](crate::types::RadarChartSeriesSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RadarChartSeriesSettingsBuilder {
-    pub(crate) area_style_settings:
-        ::std::option::Option<crate::types::RadarChartAreaStyleSettings>,
+    pub(crate) area_style_settings: ::std::option::Option<crate::types::RadarChartAreaStyleSettings>,
 }
 impl RadarChartSeriesSettingsBuilder {
     /// <p>The area style settings of a radar chart.</p>
@@ -39,17 +34,12 @@ impl RadarChartSeriesSettingsBuilder {
         self
     }
     /// <p>The area style settings of a radar chart.</p>
-    pub fn set_area_style_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RadarChartAreaStyleSettings>,
-    ) -> Self {
+    pub fn set_area_style_settings(mut self, input: ::std::option::Option<crate::types::RadarChartAreaStyleSettings>) -> Self {
         self.area_style_settings = input;
         self
     }
     /// <p>The area style settings of a radar chart.</p>
-    pub fn get_area_style_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::RadarChartAreaStyleSettings> {
+    pub fn get_area_style_settings(&self) -> &::std::option::Option<crate::types::RadarChartAreaStyleSettings> {
         &self.area_style_settings
     }
     /// Consumes the builder and constructs a [`RadarChartSeriesSettings`](crate::types::RadarChartSeriesSettings).

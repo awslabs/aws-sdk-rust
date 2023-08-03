@@ -44,17 +44,14 @@ impl ListWorkloadSharesInput {
 }
 impl ListWorkloadSharesInput {
     /// Creates a new builder-style object to manufacture [`ListWorkloadSharesInput`](crate::operation::list_workload_shares::ListWorkloadSharesInput).
-    pub fn builder(
-    ) -> crate::operation::list_workload_shares::builders::ListWorkloadSharesInputBuilder {
+    pub fn builder() -> crate::operation::list_workload_shares::builders::ListWorkloadSharesInputBuilder {
         crate::operation::list_workload_shares::builders::ListWorkloadSharesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListWorkloadSharesInput`](crate::operation::list_workload_shares::ListWorkloadSharesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkloadSharesInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) shared_with_prefix: ::std::option::Option<::std::string::String>,
@@ -78,18 +75,12 @@ impl ListWorkloadSharesInputBuilder {
         &self.workload_id
     }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
-    pub fn shared_with_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_with_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_with_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
-    pub fn set_shared_with_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shared_with_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_with_prefix = input;
         self
     }
@@ -142,18 +133,13 @@ impl ListWorkloadSharesInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkloadSharesInput`](crate::operation::list_workload_shares::ListWorkloadSharesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_workload_shares::ListWorkloadSharesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_workload_shares::ListWorkloadSharesInput {
-                workload_id: self.workload_id,
-                shared_with_prefix: self.shared_with_prefix,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                status: self.status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_workload_shares::ListWorkloadSharesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_workload_shares::ListWorkloadSharesInput {
+            workload_id: self.workload_id,
+            shared_with_prefix: self.shared_with_prefix,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            status: self.status,
+        })
     }
 }

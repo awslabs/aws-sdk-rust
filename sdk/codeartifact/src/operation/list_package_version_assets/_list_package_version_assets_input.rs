@@ -83,18 +83,14 @@ impl ListPackageVersionAssetsInput {
 }
 impl ListPackageVersionAssetsInput {
     /// Creates a new builder-style object to manufacture [`ListPackageVersionAssetsInput`](crate::operation::list_package_version_assets::ListPackageVersionAssetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_package_version_assets::builders::ListPackageVersionAssetsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_package_version_assets::builders::ListPackageVersionAssetsInputBuilder {
         crate::operation::list_package_version_assets::builders::ListPackageVersionAssetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListPackageVersionAssetsInput`](crate::operation::list_package_version_assets::ListPackageVersionAssetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackageVersionAssetsInputBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) domain_owner: ::std::option::Option<::std::string::String>,
@@ -210,18 +206,12 @@ impl ListPackageVersionAssetsInputBuilder {
         &self.package
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    pub fn package_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    pub fn set_package_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_version = input;
         self
     }
@@ -264,18 +254,16 @@ impl ListPackageVersionAssetsInputBuilder {
         crate::operation::list_package_version_assets::ListPackageVersionAssetsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_package_version_assets::ListPackageVersionAssetsInput {
-                domain: self.domain,
-                domain_owner: self.domain_owner,
-                repository: self.repository,
-                format: self.format,
-                namespace: self.namespace,
-                package: self.package,
-                package_version: self.package_version,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_package_version_assets::ListPackageVersionAssetsInput {
+            domain: self.domain,
+            domain_owner: self.domain_owner,
+            repository: self.repository,
+            format: self.format,
+            namespace: self.namespace,
+            package: self.package,
+            package_version: self.package_version,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

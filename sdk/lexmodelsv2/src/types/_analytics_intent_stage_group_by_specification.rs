@@ -23,9 +23,7 @@ impl AnalyticsIntentStageGroupBySpecification {
 
 /// A builder for [`AnalyticsIntentStageGroupBySpecification`](crate::types::AnalyticsIntentStageGroupBySpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsIntentStageGroupBySpecificationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsIntentStageField>,
 }
@@ -36,10 +34,7 @@ impl AnalyticsIntentStageGroupBySpecificationBuilder {
         self
     }
     /// <p>Specifies whether to group the intent stages by their name or the intent to which the session was switched.</p>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsIntentStageField>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsIntentStageField>) -> Self {
         self.name = input;
         self
     }

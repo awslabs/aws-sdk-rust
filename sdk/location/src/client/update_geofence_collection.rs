@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`collection_arn(Option<String>)`](crate::operation::update_geofence_collection::UpdateGeofenceCollectionOutput::collection_arn): <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across Amazon Web Services.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>  </ul>
     ///   - [`update_time(Option<DateTime>)`](crate::operation::update_geofence_collection::UpdateGeofenceCollectionOutput::update_time): <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     /// - On failure, responds with [`SdkError<UpdateGeofenceCollectionError>`](crate::operation::update_geofence_collection::UpdateGeofenceCollectionError)
-    pub fn update_geofence_collection(
-        &self,
-    ) -> crate::operation::update_geofence_collection::builders::UpdateGeofenceCollectionFluentBuilder
-    {
+    pub fn update_geofence_collection(&self) -> crate::operation::update_geofence_collection::builders::UpdateGeofenceCollectionFluentBuilder {
         crate::operation::update_geofence_collection::builders::UpdateGeofenceCollectionFluentBuilder::new(self.handle.clone())
     }
 }

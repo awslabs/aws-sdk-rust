@@ -5,18 +5,14 @@
 pub struct GetRegisterAccountStatusInput {}
 impl GetRegisterAccountStatusInput {
     /// Creates a new builder-style object to manufacture [`GetRegisterAccountStatusInput`](crate::operation::get_register_account_status::GetRegisterAccountStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_register_account_status::builders::GetRegisterAccountStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_register_account_status::builders::GetRegisterAccountStatusInputBuilder {
         crate::operation::get_register_account_status::builders::GetRegisterAccountStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRegisterAccountStatusInput`](crate::operation::get_register_account_status::GetRegisterAccountStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRegisterAccountStatusInputBuilder {}
 impl GetRegisterAccountStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetRegisterAccountStatusInput`](crate::operation::get_register_account_status::GetRegisterAccountStatusInput).
@@ -26,8 +22,6 @@ impl GetRegisterAccountStatusInputBuilder {
         crate::operation::get_register_account_status::GetRegisterAccountStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_register_account_status::GetRegisterAccountStatusInput {},
-        )
+        ::std::result::Result::Ok(crate::operation::get_register_account_status::GetRegisterAccountStatusInput {})
     }
 }

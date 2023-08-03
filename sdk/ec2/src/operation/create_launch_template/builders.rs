@@ -39,9 +39,7 @@ impl CreateLaunchTemplateFluentBuilder {
         }
     }
     /// Access the CreateLaunchTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_launch_template::builders::CreateLaunchTemplateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_launch_template::builders::CreateLaunchTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl CreateLaunchTemplateFluentBuilder {
             crate::operation::create_launch_template::CreateLaunchTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_launch_template::CreateLaunchTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_launch_template::CreateLaunchTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl CreateLaunchTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl CreateLaunchTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_launch_template::CreateLaunchTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_launch_template::CreateLaunchTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_launch_template::CreateLaunchTemplateError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl CreateLaunchTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_launch_template::CreateLaunchTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_launch_template::CreateLaunchTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_launch_template::CreateLaunchTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl CreateLaunchTemplateFluentBuilder {
             crate::operation::create_launch_template::CreateLaunchTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_launch_template::CreateLaunchTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_launch_template::CreateLaunchTemplateError>,
     > {
         self.customize_middleware().await
     }
@@ -156,18 +143,12 @@ impl CreateLaunchTemplateFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>A name for the launch template.</p>
-    pub fn launch_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_template_name(input.into());
         self
     }
     /// <p>A name for the launch template.</p>
-    pub fn set_launch_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_template_name(input);
         self
     }
@@ -176,18 +157,12 @@ impl CreateLaunchTemplateFluentBuilder {
         self.inner.get_launch_template_name()
     }
     /// <p>A description for the first version of the launch template.</p>
-    pub fn version_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_description(input.into());
         self
     }
     /// <p>A description for the first version of the launch template.</p>
-    pub fn set_version_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_description(input);
         self
     }
@@ -201,17 +176,12 @@ impl CreateLaunchTemplateFluentBuilder {
         self
     }
     /// <p>The information for the launch template.</p>
-    pub fn set_launch_template_data(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestLaunchTemplateData>,
-    ) -> Self {
+    pub fn set_launch_template_data(mut self, input: ::std::option::Option<crate::types::RequestLaunchTemplateData>) -> Self {
         self.inner = self.inner.set_launch_template_data(input);
         self
     }
     /// <p>The information for the launch template.</p>
-    pub fn get_launch_template_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::RequestLaunchTemplateData> {
+    pub fn get_launch_template_data(&self) -> &::std::option::Option<crate::types::RequestLaunchTemplateData> {
         self.inner.get_launch_template_data()
     }
     /// Appends an item to `TagSpecifications`.
@@ -228,19 +198,14 @@ impl CreateLaunchTemplateFluentBuilder {
     /// <p>The tags to apply to the launch template on creation. To tag the launch template, the resource type must be <code>launch-template</code>.</p> <note>
     /// <p>To specify the tags for the resources that are created when an instance is launched, you must use the <code>TagSpecifications</code> parameter in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch template data</a> structure.</p>
     /// </note>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the launch template on creation. To tag the launch template, the resource type must be <code>launch-template</code>.</p> <note>
     /// <p>To specify the tags for the resources that are created when an instance is launched, you must use the <code>TagSpecifications</code> parameter in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch template data</a> structure.</p>
     /// </note>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }

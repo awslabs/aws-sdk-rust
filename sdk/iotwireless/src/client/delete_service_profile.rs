@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_service_profile::builders::DeleteServiceProfileFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_service_profile::builders::DeleteServiceProfileFluentBuilder::set_id): <p>The ID of the resource to delete.</p>
     /// - On success, responds with [`DeleteServiceProfileOutput`](crate::operation::delete_service_profile::DeleteServiceProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteServiceProfileError>`](crate::operation::delete_service_profile::DeleteServiceProfileError)
-    pub fn delete_service_profile(
-        &self,
-    ) -> crate::operation::delete_service_profile::builders::DeleteServiceProfileFluentBuilder {
-        crate::operation::delete_service_profile::builders::DeleteServiceProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_service_profile(&self) -> crate::operation::delete_service_profile::builders::DeleteServiceProfileFluentBuilder {
+        crate::operation::delete_service_profile::builders::DeleteServiceProfileFluentBuilder::new(self.handle.clone())
     }
 }

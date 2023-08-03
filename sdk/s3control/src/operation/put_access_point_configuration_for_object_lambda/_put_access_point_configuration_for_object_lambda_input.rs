@@ -29,16 +29,16 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
 }
 impl PutAccessPointConfigurationForObjectLambdaInput {
     /// Creates a new builder-style object to manufacture [`PutAccessPointConfigurationForObjectLambdaInput`](crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaInput).
-    pub fn builder() -> crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaInputBuilder{
-        crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaInputBuilder {
+        crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaInputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`PutAccessPointConfigurationForObjectLambdaInput`](crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAccessPointConfigurationForObjectLambdaInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -79,30 +79,27 @@ impl PutAccessPointConfigurationForObjectLambdaInputBuilder {
         self
     }
     /// <p>Object Lambda Access Point configuration document.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectLambdaConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ObjectLambdaConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p>Object Lambda Access Point configuration document.</p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ObjectLambdaConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ObjectLambdaConfiguration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`PutAccessPointConfigurationForObjectLambdaInput`](crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaInput {
-                account_id: self.account_id
-                ,
-                name: self.name
-                ,
-                configuration: self.configuration
-                ,
-            }
+                account_id: self.account_id,
+                name: self.name,
+                configuration: self.configuration,
+            },
         )
     }
 }

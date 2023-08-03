@@ -15,17 +15,14 @@ impl GetLifecyclePolicyInput {
 }
 impl GetLifecyclePolicyInput {
     /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyInput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyInputBuilder {
         crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLifecyclePolicyInput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLifecyclePolicyInputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl GetLifecyclePolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetLifecyclePolicyInput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput {
-                policy_id: self.policy_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput { policy_id: self.policy_id })
     }
 }

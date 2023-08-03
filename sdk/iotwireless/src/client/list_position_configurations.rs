@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_position_configurations::ListPositionConfigurationsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListPositionConfigurationsError>`](crate::operation::list_position_configurations::ListPositionConfigurationsError)
     #[deprecated(note = "This operation is no longer supported.")]
-    pub fn list_position_configurations(&self) -> crate::operation::list_position_configurations::builders::ListPositionConfigurationsFluentBuilder{
+    pub fn list_position_configurations(&self) -> crate::operation::list_position_configurations::builders::ListPositionConfigurationsFluentBuilder {
         crate::operation::list_position_configurations::builders::ListPositionConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,84 +9,62 @@ pub fn de_add_tags_to_resource_http_error(
     crate::operation::add_tags_to_resource::AddTagsToResourceError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => {
-            crate::operation::add_tags_to_resource::AddTagsToResourceError::DbClusterNotFoundFault(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
-                        output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "DBInstanceNotFound" => {
-            crate::operation::add_tags_to_resource::AddTagsToResourceError::DbInstanceNotFoundFault(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default(
-                            );
-                        output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "DBSnapshotNotFound" => {
-            crate::operation::add_tags_to_resource::AddTagsToResourceError::DbSnapshotNotFoundFault(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::types::error::builders::DbSnapshotNotFoundFaultBuilder::default(
-                            );
-                        output = crate::protocol_serde::shape_db_snapshot_not_found_fault::de_db_snapshot_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
+        "DBClusterNotFoundFault" => crate::operation::add_tags_to_resource::AddTagsToResourceError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DBInstanceNotFound" => crate::operation::add_tags_to_resource::AddTagsToResourceError::DbInstanceNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DBSnapshotNotFound" => crate::operation::add_tags_to_resource::AddTagsToResourceError::DbSnapshotNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbSnapshotNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_snapshot_not_found_fault::de_db_snapshot_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::add_tags_to_resource::AddTagsToResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::add_tags_to_resource::AddTagsToResourceError::generic(generic),
     })
 }
@@ -103,9 +81,7 @@ pub fn de_add_tags_to_resource_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::add_tags_to_resource::builders::AddTagsToResourceOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

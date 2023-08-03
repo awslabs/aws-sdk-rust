@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateCertificateOutput {
 }
 impl UpdateCertificateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCertificateOutput`](crate::operation::update_certificate::UpdateCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::update_certificate::builders::UpdateCertificateOutputBuilder {
+    pub fn builder() -> crate::operation::update_certificate::builders::UpdateCertificateOutputBuilder {
         crate::operation::update_certificate::builders::UpdateCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCertificateOutput`](crate::operation::update_certificate::UpdateCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCertificateOutputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateCertificateOutputBuilder {
     /// <p>Returns the identifier of the certificate object that you are updating.</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the identifier of the certificate object that you are updating.</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }

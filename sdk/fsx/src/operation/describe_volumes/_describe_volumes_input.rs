@@ -43,9 +43,7 @@ impl DescribeVolumesInput {
 
 /// A builder for [`DescribeVolumesInput`](crate::operation::describe_volumes::DescribeVolumesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVolumesInputBuilder {
     pub(crate) volume_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::VolumeFilter>>,
@@ -65,10 +63,7 @@ impl DescribeVolumesInputBuilder {
         self
     }
     /// <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
-    pub fn set_volume_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_volume_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.volume_ids = input;
         self
     }
@@ -88,17 +83,12 @@ impl DescribeVolumesInputBuilder {
         self
     }
     /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of volumes.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of volumes.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeFilter>> {
         &self.filters
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
@@ -132,10 +122,7 @@ impl DescribeVolumesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVolumesInput`](crate::operation::describe_volumes::DescribeVolumesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_volumes::DescribeVolumesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_volumes::DescribeVolumesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_volumes::DescribeVolumesInput {
             volume_ids: self.volume_ids,
             filters: self.filters,

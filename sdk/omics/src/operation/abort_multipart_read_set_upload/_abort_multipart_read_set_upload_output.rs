@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AbortMultipartReadSetUploadOutput {
 }
 impl AbortMultipartReadSetUploadOutput {
     /// Creates a new builder-style object to manufacture [`AbortMultipartReadSetUploadOutput`](crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadOutput).
-    pub fn builder() -> crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadOutputBuilder{
+    pub fn builder() -> crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadOutputBuilder {
         crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadOutputBuilder::default()
     }
 }
 
 /// A builder for [`AbortMultipartReadSetUploadOutput`](crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AbortMultipartReadSetUploadOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl AbortMultipartReadSetUploadOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AbortMultipartReadSetUploadOutput`](crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadOutput {
+    pub fn build(self) -> crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadOutput {
         crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadOutput {
             _request_id: self._request_id,
         }

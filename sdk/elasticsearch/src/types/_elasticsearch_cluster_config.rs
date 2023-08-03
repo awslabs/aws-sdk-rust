@@ -56,15 +56,11 @@ impl ElasticsearchClusterConfig {
         self.zone_awareness_enabled
     }
     /// <p>Specifies the zone awareness configuration for a domain when zone awareness is enabled.</p>
-    pub fn zone_awareness_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ZoneAwarenessConfig> {
+    pub fn zone_awareness_config(&self) -> ::std::option::Option<&crate::types::ZoneAwarenessConfig> {
         self.zone_awareness_config.as_ref()
     }
     /// <p>The instance type for a dedicated master node.</p>
-    pub fn dedicated_master_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EsPartitionInstanceType> {
+    pub fn dedicated_master_type(&self) -> ::std::option::Option<&crate::types::EsPartitionInstanceType> {
         self.dedicated_master_type.as_ref()
     }
     /// <p>Total number of dedicated master nodes, active and on standby, for the cluster.</p>
@@ -97,9 +93,7 @@ impl ElasticsearchClusterConfig {
 
 /// A builder for [`ElasticsearchClusterConfig`](crate::types::ElasticsearchClusterConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElasticsearchClusterConfigBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::EsPartitionInstanceType>,
     pub(crate) instance_count: ::std::option::Option<i32>,
@@ -120,17 +114,12 @@ impl ElasticsearchClusterConfigBuilder {
         self
     }
     /// <p>The instance type for an Elasticsearch cluster. UltraWarm instance types are not supported for data instances.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EsPartitionInstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::EsPartitionInstanceType>) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The instance type for an Elasticsearch cluster. UltraWarm instance types are not supported for data instances.</p>
-    pub fn get_instance_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::EsPartitionInstanceType> {
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::EsPartitionInstanceType> {
         &self.instance_type
     }
     /// <p>The number of instances in the specified domain cluster.</p>
@@ -181,17 +170,12 @@ impl ElasticsearchClusterConfigBuilder {
         self
     }
     /// <p>Specifies the zone awareness configuration for a domain when zone awareness is enabled.</p>
-    pub fn set_zone_awareness_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ZoneAwarenessConfig>,
-    ) -> Self {
+    pub fn set_zone_awareness_config(mut self, input: ::std::option::Option<crate::types::ZoneAwarenessConfig>) -> Self {
         self.zone_awareness_config = input;
         self
     }
     /// <p>Specifies the zone awareness configuration for a domain when zone awareness is enabled.</p>
-    pub fn get_zone_awareness_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ZoneAwarenessConfig> {
+    pub fn get_zone_awareness_config(&self) -> &::std::option::Option<crate::types::ZoneAwarenessConfig> {
         &self.zone_awareness_config
     }
     /// <p>The instance type for a dedicated master node.</p>
@@ -200,17 +184,12 @@ impl ElasticsearchClusterConfigBuilder {
         self
     }
     /// <p>The instance type for a dedicated master node.</p>
-    pub fn set_dedicated_master_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EsPartitionInstanceType>,
-    ) -> Self {
+    pub fn set_dedicated_master_type(mut self, input: ::std::option::Option<crate::types::EsPartitionInstanceType>) -> Self {
         self.dedicated_master_type = input;
         self
     }
     /// <p>The instance type for a dedicated master node.</p>
-    pub fn get_dedicated_master_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::EsPartitionInstanceType> {
+    pub fn get_dedicated_master_type(&self) -> &::std::option::Option<crate::types::EsPartitionInstanceType> {
         &self.dedicated_master_type
     }
     /// <p>Total number of dedicated master nodes, active and on standby, for the cluster.</p>
@@ -247,17 +226,12 @@ impl ElasticsearchClusterConfigBuilder {
         self
     }
     /// <p>The instance type for the Elasticsearch cluster's warm nodes.</p>
-    pub fn set_warm_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EsWarmPartitionInstanceType>,
-    ) -> Self {
+    pub fn set_warm_type(mut self, input: ::std::option::Option<crate::types::EsWarmPartitionInstanceType>) -> Self {
         self.warm_type = input;
         self
     }
     /// <p>The instance type for the Elasticsearch cluster's warm nodes.</p>
-    pub fn get_warm_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::EsWarmPartitionInstanceType> {
+    pub fn get_warm_type(&self) -> &::std::option::Option<crate::types::EsWarmPartitionInstanceType> {
         &self.warm_type
     }
     /// <p>The number of warm nodes in the cluster.</p>
@@ -280,17 +254,12 @@ impl ElasticsearchClusterConfigBuilder {
         self
     }
     /// <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch Domain</p>
-    pub fn set_cold_storage_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ColdStorageOptions>,
-    ) -> Self {
+    pub fn set_cold_storage_options(mut self, input: ::std::option::Option<crate::types::ColdStorageOptions>) -> Self {
         self.cold_storage_options = input;
         self
     }
     /// <p>Specifies the <code>ColdStorageOptions</code> config for Elasticsearch Domain</p>
-    pub fn get_cold_storage_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ColdStorageOptions> {
+    pub fn get_cold_storage_options(&self) -> &::std::option::Option<crate::types::ColdStorageOptions> {
         &self.cold_storage_options
     }
     /// Consumes the builder and constructs a [`ElasticsearchClusterConfig`](crate::types::ElasticsearchClusterConfig).

@@ -16,9 +16,7 @@ pub struct TextClassificationJobConfig {
 }
 impl TextClassificationJobConfig {
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    pub fn completion_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoMlJobCompletionCriteria> {
+    pub fn completion_criteria(&self) -> ::std::option::Option<&crate::types::AutoMlJobCompletionCriteria> {
         self.completion_criteria.as_ref()
     }
     /// <p>The name of the column used to provide the sentences to be classified. It should not be the same as the target column.</p>
@@ -39,12 +37,9 @@ impl TextClassificationJobConfig {
 
 /// A builder for [`TextClassificationJobConfig`](crate::types::TextClassificationJobConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TextClassificationJobConfigBuilder {
-    pub(crate) completion_criteria:
-        ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
+    pub(crate) completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     pub(crate) content_column: ::std::option::Option<::std::string::String>,
     pub(crate) target_label_column: ::std::option::Option<::std::string::String>,
 }
@@ -55,32 +50,21 @@ impl TextClassificationJobConfigBuilder {
         self
     }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    pub fn set_completion_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
-    ) -> Self {
+    pub fn set_completion_criteria(mut self, input: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>) -> Self {
         self.completion_criteria = input;
         self
     }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    pub fn get_completion_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlJobCompletionCriteria> {
+    pub fn get_completion_criteria(&self) -> &::std::option::Option<crate::types::AutoMlJobCompletionCriteria> {
         &self.completion_criteria
     }
     /// <p>The name of the column used to provide the sentences to be classified. It should not be the same as the target column.</p>
-    pub fn content_column(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn content_column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_column = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the column used to provide the sentences to be classified. It should not be the same as the target column.</p>
-    pub fn set_content_column(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_content_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_column = input;
         self
     }
@@ -89,18 +73,12 @@ impl TextClassificationJobConfigBuilder {
         &self.content_column
     }
     /// <p>The name of the column used to provide the class labels. It should not be same as the content column.</p>
-    pub fn target_label_column(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_label_column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_label_column = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the column used to provide the class labels. It should not be same as the content column.</p>
-    pub fn set_target_label_column(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_label_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_label_column = input;
         self
     }

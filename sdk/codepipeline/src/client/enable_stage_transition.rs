@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`transition_type(StageTransitionType)`](crate::operation::enable_stage_transition::builders::EnableStageTransitionFluentBuilder::transition_type) / [`set_transition_type(Option<StageTransitionType>)`](crate::operation::enable_stage_transition::builders::EnableStageTransitionFluentBuilder::set_transition_type): <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
     /// - On success, responds with [`EnableStageTransitionOutput`](crate::operation::enable_stage_transition::EnableStageTransitionOutput)
     /// - On failure, responds with [`SdkError<EnableStageTransitionError>`](crate::operation::enable_stage_transition::EnableStageTransitionError)
-    pub fn enable_stage_transition(
-        &self,
-    ) -> crate::operation::enable_stage_transition::builders::EnableStageTransitionFluentBuilder
-    {
-        crate::operation::enable_stage_transition::builders::EnableStageTransitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn enable_stage_transition(&self) -> crate::operation::enable_stage_transition::builders::EnableStageTransitionFluentBuilder {
+        crate::operation::enable_stage_transition::builders::EnableStageTransitionFluentBuilder::new(self.handle.clone())
     }
 }

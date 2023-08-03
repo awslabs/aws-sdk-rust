@@ -23,24 +23,20 @@ impl UpdateAccountCustomizationInput {
         self.namespace.as_deref()
     }
     /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
-    pub fn account_customization(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AccountCustomization> {
+    pub fn account_customization(&self) -> ::std::option::Option<&crate::types::AccountCustomization> {
         self.account_customization.as_ref()
     }
 }
 impl UpdateAccountCustomizationInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountCustomizationInput`](crate::operation::update_account_customization::UpdateAccountCustomizationInput).
-    pub fn builder() -> crate::operation::update_account_customization::builders::UpdateAccountCustomizationInputBuilder{
+    pub fn builder() -> crate::operation::update_account_customization::builders::UpdateAccountCustomizationInputBuilder {
         crate::operation::update_account_customization::builders::UpdateAccountCustomizationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccountCustomizationInput`](crate::operation::update_account_customization::UpdateAccountCustomizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccountCustomizationInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct UpdateAccountCustomizationInputBuilder {
 }
 impl UpdateAccountCustomizationInputBuilder {
     /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -87,17 +77,12 @@ impl UpdateAccountCustomizationInputBuilder {
         self
     }
     /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
-    pub fn set_account_customization(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountCustomization>,
-    ) -> Self {
+    pub fn set_account_customization(mut self, input: ::std::option::Option<crate::types::AccountCustomization>) -> Self {
         self.account_customization = input;
         self
     }
     /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
-    pub fn get_account_customization(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountCustomization> {
+    pub fn get_account_customization(&self) -> &::std::option::Option<crate::types::AccountCustomization> {
         &self.account_customization
     }
     /// Consumes the builder and constructs a [`UpdateAccountCustomizationInput`](crate::operation::update_account_customization::UpdateAccountCustomizationInput).
@@ -107,12 +92,10 @@ impl UpdateAccountCustomizationInputBuilder {
         crate::operation::update_account_customization::UpdateAccountCustomizationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_account_customization::UpdateAccountCustomizationInput {
-                aws_account_id: self.aws_account_id,
-                namespace: self.namespace,
-                account_customization: self.account_customization,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_account_customization::UpdateAccountCustomizationInput {
+            aws_account_id: self.aws_account_id,
+            namespace: self.namespace,
+            account_customization: self.account_customization,
+        })
     }
 }

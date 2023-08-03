@@ -37,10 +37,7 @@ impl DeleteTypedLinkFacetFluentBuilder {
         }
     }
     /// Access the DeleteTypedLinkFacet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteTypedLinkFacetFluentBuilder {
             crate::operation::delete_typed_link_facet::DeleteTypedLinkFacet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteTypedLinkFacetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteTypedLinkFacetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteTypedLinkFacetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteTypedLinkFacetFluentBuilder {
             crate::operation::delete_typed_link_facet::DeleteTypedLinkFacet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetError>,
     > {
         self.customize_middleware().await
     }

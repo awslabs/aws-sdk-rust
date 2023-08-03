@@ -23,9 +23,7 @@ impl InputDestinationRequest {
 
 /// A builder for [`InputDestinationRequest`](crate::types::InputDestinationRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InputDestinationRequestBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
 }

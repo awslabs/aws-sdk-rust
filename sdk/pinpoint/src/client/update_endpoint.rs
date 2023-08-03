@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateEndpointOutput`](crate::operation::update_endpoint::UpdateEndpointOutput) with field(s):
     ///   - [`message_body(Option<MessageBody>)`](crate::operation::update_endpoint::UpdateEndpointOutput::message_body): <p>Provides information about an API request or response.</p>
     /// - On failure, responds with [`SdkError<UpdateEndpointError>`](crate::operation::update_endpoint::UpdateEndpointError)
-    pub fn update_endpoint(
-        &self,
-    ) -> crate::operation::update_endpoint::builders::UpdateEndpointFluentBuilder {
-        crate::operation::update_endpoint::builders::UpdateEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_endpoint(&self) -> crate::operation::update_endpoint::builders::UpdateEndpointFluentBuilder {
+        crate::operation::update_endpoint::builders::UpdateEndpointFluentBuilder::new(self.handle.clone())
     }
 }

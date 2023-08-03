@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteVirtualServiceOutput`](crate::operation::delete_virtual_service::DeleteVirtualServiceOutput) with field(s):
     ///   - [`virtual_service(Option<VirtualServiceData>)`](crate::operation::delete_virtual_service::DeleteVirtualServiceOutput::virtual_service): <p>The virtual service that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteVirtualServiceError>`](crate::operation::delete_virtual_service::DeleteVirtualServiceError)
-    pub fn delete_virtual_service(
-        &self,
-    ) -> crate::operation::delete_virtual_service::builders::DeleteVirtualServiceFluentBuilder {
-        crate::operation::delete_virtual_service::builders::DeleteVirtualServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_virtual_service(&self) -> crate::operation::delete_virtual_service::builders::DeleteVirtualServiceFluentBuilder {
+        crate::operation::delete_virtual_service::builders::DeleteVirtualServiceFluentBuilder::new(self.handle.clone())
     }
 }

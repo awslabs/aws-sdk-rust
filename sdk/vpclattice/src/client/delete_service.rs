@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::delete_service::DeleteServiceOutput::name): <p>The name of the service.</p>
     ///   - [`status(Option<ServiceStatus>)`](crate::operation::delete_service::DeleteServiceOutput::status): <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, the status doesn't change.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceError>`](crate::operation::delete_service::DeleteServiceError)
-    pub fn delete_service(
-        &self,
-    ) -> crate::operation::delete_service::builders::DeleteServiceFluentBuilder {
-        crate::operation::delete_service::builders::DeleteServiceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_service(&self) -> crate::operation::delete_service::builders::DeleteServiceFluentBuilder {
+        crate::operation::delete_service::builders::DeleteServiceFluentBuilder::new(self.handle.clone())
     }
 }

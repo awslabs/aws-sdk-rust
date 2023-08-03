@@ -55,17 +55,14 @@ impl SearchUsersByImageInput {
 }
 impl SearchUsersByImageInput {
     /// Creates a new builder-style object to manufacture [`SearchUsersByImageInput`](crate::operation::search_users_by_image::SearchUsersByImageInput).
-    pub fn builder(
-    ) -> crate::operation::search_users_by_image::builders::SearchUsersByImageInputBuilder {
+    pub fn builder() -> crate::operation::search_users_by_image::builders::SearchUsersByImageInputBuilder {
         crate::operation::search_users_by_image::builders::SearchUsersByImageInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchUsersByImageInput`](crate::operation::search_users_by_image::SearchUsersByImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchUsersByImageInputBuilder {
     pub(crate) collection_id: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<crate::types::Image>,
@@ -75,18 +72,12 @@ pub struct SearchUsersByImageInputBuilder {
 }
 impl SearchUsersByImageInputBuilder {
     /// <p>The ID of an existing collection containing the UserID.</p>
-    pub fn collection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an existing collection containing the UserID.</p>
-    pub fn set_collection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collection_id = input;
         self
     }
@@ -160,10 +151,7 @@ impl SearchUsersByImageInputBuilder {
         self
     }
     /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. The default value is NONE.</p>
-    pub fn set_quality_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::QualityFilter>,
-    ) -> Self {
+    pub fn set_quality_filter(mut self, input: ::std::option::Option<crate::types::QualityFilter>) -> Self {
         self.quality_filter = input;
         self
     }
@@ -174,18 +162,14 @@ impl SearchUsersByImageInputBuilder {
     /// Consumes the builder and constructs a [`SearchUsersByImageInput`](crate::operation::search_users_by_image::SearchUsersByImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_users_by_image::SearchUsersByImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_users_by_image::SearchUsersByImageInput {
-                collection_id: self.collection_id,
-                image: self.image,
-                user_match_threshold: self.user_match_threshold,
-                max_users: self.max_users,
-                quality_filter: self.quality_filter,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_users_by_image::SearchUsersByImageInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::search_users_by_image::SearchUsersByImageInput {
+            collection_id: self.collection_id,
+            image: self.image,
+            user_match_threshold: self.user_match_threshold,
+            max_users: self.max_users,
+            quality_filter: self.quality_filter,
+        })
     }
 }

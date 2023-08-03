@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateInvitationsOutput`](crate::operation::create_invitations::CreateInvitationsOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::create_invitations::CreateInvitationsOutput::unprocessed_accounts): <p>An array of objects, one for each account whose invitation hasn't been processed. Each object identifies the account and explains why the invitation hasn't been processed for the account.</p>
     /// - On failure, responds with [`SdkError<CreateInvitationsError>`](crate::operation::create_invitations::CreateInvitationsError)
-    pub fn create_invitations(
-        &self,
-    ) -> crate::operation::create_invitations::builders::CreateInvitationsFluentBuilder {
-        crate::operation::create_invitations::builders::CreateInvitationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_invitations(&self) -> crate::operation::create_invitations::builders::CreateInvitationsFluentBuilder {
+        crate::operation::create_invitations::builders::CreateInvitationsFluentBuilder::new(self.handle.clone())
     }
 }

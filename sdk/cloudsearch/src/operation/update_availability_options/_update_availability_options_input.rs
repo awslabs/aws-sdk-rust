@@ -23,16 +23,14 @@ impl UpdateAvailabilityOptionsInput {
 }
 impl UpdateAvailabilityOptionsInput {
     /// Creates a new builder-style object to manufacture [`UpdateAvailabilityOptionsInput`](crate::operation::update_availability_options::UpdateAvailabilityOptionsInput).
-    pub fn builder() -> crate::operation::update_availability_options::builders::UpdateAvailabilityOptionsInputBuilder{
+    pub fn builder() -> crate::operation::update_availability_options::builders::UpdateAvailabilityOptionsInputBuilder {
         crate::operation::update_availability_options::builders::UpdateAvailabilityOptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAvailabilityOptionsInput`](crate::operation::update_availability_options::UpdateAvailabilityOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAvailabilityOptionsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) multi_az: ::std::option::Option<bool>,
@@ -73,11 +71,9 @@ impl UpdateAvailabilityOptionsInputBuilder {
         crate::operation::update_availability_options::UpdateAvailabilityOptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_availability_options::UpdateAvailabilityOptionsInput {
-                domain_name: self.domain_name,
-                multi_az: self.multi_az,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_availability_options::UpdateAvailabilityOptionsInput {
+            domain_name: self.domain_name,
+            multi_az: self.multi_az,
+        })
     }
 }

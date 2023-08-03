@@ -28,7 +28,7 @@ impl DescribeClusterSubnetGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClusterSubnetGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsInputBuilder,
+    inner: crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsInputBuilder,
 }
 impl DescribeClusterSubnetGroupsFluentBuilder {
     /// Creates a new `DescribeClusterSubnetGroups`.
@@ -39,7 +39,7 @@ impl DescribeClusterSubnetGroupsFluentBuilder {
         }
     }
     /// Access the DescribeClusterSubnetGroups as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeClusterSubnetGroupsFluentBuilder {
             crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeClusterSubnetGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeClusterSubnetGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeClusterSubnetGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,31 +107,23 @@ impl DescribeClusterSubnetGroupsFluentBuilder {
             crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_subnet_groups::paginator::DescribeClusterSubnetGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_cluster_subnet_groups::paginator::DescribeClusterSubnetGroupsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_cluster_subnet_groups::paginator::DescribeClusterSubnetGroupsPaginator {
         crate::operation::describe_cluster_subnet_groups::paginator::DescribeClusterSubnetGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the cluster subnet group for which information is requested.</p>
-    pub fn cluster_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_subnet_group_name(input.into());
         self
     }
     /// <p>The name of the cluster subnet group for which information is requested.</p>
-    pub fn set_cluster_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_subnet_group_name(input);
         self
     }
@@ -192,10 +175,7 @@ impl DescribeClusterSubnetGroupsFluentBuilder {
         self
     }
     /// <p>A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
@@ -213,10 +193,7 @@ impl DescribeClusterSubnetGroupsFluentBuilder {
         self
     }
     /// <p>A tag value or values for which you want to return all matching cluster subnet groups that are associated with the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_values(input);
         self
     }

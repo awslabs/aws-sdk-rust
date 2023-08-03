@@ -37,9 +37,7 @@ impl SetStatusInput {
 
 /// A builder for [`SetStatusInput`](crate::operation::set_status::SetStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetStatusInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) object_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,10 +70,7 @@ impl SetStatusInputBuilder {
         self
     }
     /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
-    pub fn set_object_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_object_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.object_ids = input;
         self
     }
@@ -98,12 +93,7 @@ impl SetStatusInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`SetStatusInput`](crate::operation::set_status::SetStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_status::SetStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_status::SetStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_status::SetStatusInput {
             pipeline_id: self.pipeline_id,
             object_ids: self.object_ids,

@@ -35,12 +35,9 @@ impl ListKxClustersOutput {
 
 /// A builder for [`ListKxClustersOutput`](crate::operation::list_kx_clusters::ListKxClustersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKxClustersOutputBuilder {
-    pub(crate) kx_cluster_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::KxCluster>>,
+    pub(crate) kx_cluster_summaries: ::std::option::Option<::std::vec::Vec<crate::types::KxCluster>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListKxClustersOutputBuilder {
         self
     }
     /// <p>Lists the cluster details.</p>
-    pub fn set_kx_cluster_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KxCluster>>,
-    ) -> Self {
+    pub fn set_kx_cluster_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxCluster>>) -> Self {
         self.kx_cluster_summaries = input;
         self
     }
     /// <p>Lists the cluster details.</p>
-    pub fn get_kx_cluster_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KxCluster>> {
+    pub fn get_kx_cluster_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxCluster>> {
         &self.kx_cluster_summaries
     }
     /// <p>A token that indicates where a results page should begin.</p>

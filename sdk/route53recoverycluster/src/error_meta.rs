@@ -8,9 +8,7 @@ pub enum Error {
     /// <p>There was a conflict with this request. Try again.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The cluster endpoint isn't available. Try another cluster endpoint.</p>
-    EndpointTemporarilyUnavailableException(
-        crate::types::error::EndpointTemporarilyUnavailableException,
-    ),
+    EndpointTemporarilyUnavailableException(crate::types::error::EndpointTemporarilyUnavailableException),
     /// <p>There was an unexpected error during processing of the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request references a routing control or control panel that was not found.</p>
@@ -39,32 +37,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_routing_control_state::GetRoutingControlStateError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_routing_control_state::GetRoutingControlStateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::get_routing_control_state::GetRoutingControlStateError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_routing_control_state::GetRoutingControlStateError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -74,42 +56,34 @@ where
 impl From<crate::operation::get_routing_control_state::GetRoutingControlStateError> for Error {
     fn from(err: crate::operation::get_routing_control_state::GetRoutingControlStateError) -> Self {
         match err {
-            crate::operation::get_routing_control_state::GetRoutingControlStateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_routing_control_state::GetRoutingControlStateError::EndpointTemporarilyUnavailableException(inner) => Error::EndpointTemporarilyUnavailableException(inner),
-            crate::operation::get_routing_control_state::GetRoutingControlStateError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_routing_control_state::GetRoutingControlStateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_routing_control_state::GetRoutingControlStateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_routing_control_state::GetRoutingControlStateError::EndpointTemporarilyUnavailableException(inner) => {
+                Error::EndpointTemporarilyUnavailableException(inner)
+            }
+            crate::operation::get_routing_control_state::GetRoutingControlStateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_routing_control_state::GetRoutingControlStateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_routing_control_state::GetRoutingControlStateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_routing_control_state::GetRoutingControlStateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_routing_control_state::GetRoutingControlStateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_routing_controls::ListRoutingControlsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_routing_controls::ListRoutingControlsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_routing_controls::ListRoutingControlsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_routing_controls::ListRoutingControlsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -120,112 +94,108 @@ impl From<crate::operation::list_routing_controls::ListRoutingControlsError> for
     fn from(err: crate::operation::list_routing_controls::ListRoutingControlsError) -> Self {
         match err {
             crate::operation::list_routing_controls::ListRoutingControlsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_routing_controls::ListRoutingControlsError::EndpointTemporarilyUnavailableException(inner) => Error::EndpointTemporarilyUnavailableException(inner),
-            crate::operation::list_routing_controls::ListRoutingControlsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_routing_controls::ListRoutingControlsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_routing_controls::ListRoutingControlsError::EndpointTemporarilyUnavailableException(inner) => {
+                Error::EndpointTemporarilyUnavailableException(inner)
+            }
+            crate::operation::list_routing_controls::ListRoutingControlsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_routing_controls::ListRoutingControlsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_routing_controls::ListRoutingControlsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_routing_controls::ListRoutingControlsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_routing_controls::ListRoutingControlsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_control_state::UpdateRoutingControlStateError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_routing_control_state::UpdateRoutingControlStateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_control_state::UpdateRoutingControlStateError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_routing_control_state::UpdateRoutingControlStateError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::update_routing_control_state::UpdateRoutingControlStateError>
-    for Error
-{
-    fn from(
-        err: crate::operation::update_routing_control_state::UpdateRoutingControlStateError,
-    ) -> Self {
+impl From<crate::operation::update_routing_control_state::UpdateRoutingControlStateError> for Error {
+    fn from(err: crate::operation::update_routing_control_state::UpdateRoutingControlStateError) -> Self {
         match err {
-            crate::operation::update_routing_control_state::UpdateRoutingControlStateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_routing_control_state::UpdateRoutingControlStateError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::update_routing_control_state::UpdateRoutingControlStateError::EndpointTemporarilyUnavailableException(inner) => Error::EndpointTemporarilyUnavailableException(inner),
-            crate::operation::update_routing_control_state::UpdateRoutingControlStateError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_routing_control_state::UpdateRoutingControlStateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_routing_control_state::UpdateRoutingControlStateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::update_routing_control_state::UpdateRoutingControlStateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_routing_control_state::UpdateRoutingControlStateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_routing_control_state::UpdateRoutingControlStateError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_routing_control_state::UpdateRoutingControlStateError::EndpointTemporarilyUnavailableException(inner) => {
+                Error::EndpointTemporarilyUnavailableException(inner)
+            }
+            crate::operation::update_routing_control_state::UpdateRoutingControlStateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_routing_control_state::UpdateRoutingControlStateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_routing_control_state::UpdateRoutingControlStateError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_routing_control_state::UpdateRoutingControlStateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::update_routing_control_state::UpdateRoutingControlStateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_routing_control_states::UpdateRoutingControlStatesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_routing_control_states::UpdateRoutingControlStatesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::update_routing_control_states::UpdateRoutingControlStatesError>
-    for Error
-{
-    fn from(
-        err: crate::operation::update_routing_control_states::UpdateRoutingControlStatesError,
-    ) -> Self {
+impl From<crate::operation::update_routing_control_states::UpdateRoutingControlStatesError> for Error {
+    fn from(err: crate::operation::update_routing_control_states::UpdateRoutingControlStatesError) -> Self {
         match err {
-            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::EndpointTemporarilyUnavailableException(inner) => Error::EndpointTemporarilyUnavailableException(inner),
-            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
-            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::EndpointTemporarilyUnavailableException(inner) => {
+                Error::EndpointTemporarilyUnavailableException(inner)
+            }
+            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::ServiceLimitExceededException(inner) => {
+                Error::ServiceLimitExceededException(inner)
+            }
+            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::update_routing_control_states::UpdateRoutingControlStatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

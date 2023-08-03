@@ -18,19 +18,13 @@ pub fn ser_pivot_table_total_options(
     if let Some(var_5) = &input.row_total_options {
         #[allow(unused_mut)]
         let mut object_6 = object.key("RowTotalOptions").start_object();
-        crate::protocol_serde::shape_pivot_total_options::ser_pivot_total_options(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_pivot_total_options::ser_pivot_total_options(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.column_total_options {
         #[allow(unused_mut)]
         let mut object_8 = object.key("ColumnTotalOptions").start_object();
-        crate::protocol_serde::shape_pivot_total_options::ser_pivot_total_options(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_pivot_total_options::ser_pivot_total_options(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())
@@ -38,17 +32,9 @@ pub fn ser_pivot_table_total_options(
 
 pub(crate) fn de_pivot_table_total_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::PivotTableTotalOptions>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::PivotTableTotalOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -58,46 +44,36 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "RowSubtotalOptions" => {
-                                builder = builder.set_row_subtotal_options(
-                                    crate::protocol_serde::shape_subtotal_options::de_subtotal_options(tokens)?
-                                );
-                            }
-                            "ColumnSubtotalOptions" => {
-                                builder = builder.set_column_subtotal_options(
-                                    crate::protocol_serde::shape_subtotal_options::de_subtotal_options(tokens)?
-                                );
-                            }
-                            "RowTotalOptions" => {
-                                builder = builder.set_row_total_options(
-                                    crate::protocol_serde::shape_pivot_total_options::de_pivot_total_options(tokens)?
-                                );
-                            }
-                            "ColumnTotalOptions" => {
-                                builder = builder.set_column_total_options(
-                                    crate::protocol_serde::shape_pivot_total_options::de_pivot_total_options(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "RowSubtotalOptions" => {
+                            builder = builder.set_row_subtotal_options(crate::protocol_serde::shape_subtotal_options::de_subtotal_options(tokens)?);
                         }
-                    }
+                        "ColumnSubtotalOptions" => {
+                            builder =
+                                builder.set_column_subtotal_options(crate::protocol_serde::shape_subtotal_options::de_subtotal_options(tokens)?);
+                        }
+                        "RowTotalOptions" => {
+                            builder =
+                                builder.set_row_total_options(crate::protocol_serde::shape_pivot_total_options::de_pivot_total_options(tokens)?);
+                        }
+                        "ColumnTotalOptions" => {
+                            builder =
+                                builder.set_column_total_options(crate::protocol_serde::shape_pivot_total_options::de_pivot_total_options(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

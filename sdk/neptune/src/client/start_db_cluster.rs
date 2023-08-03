@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`StartDbClusterOutput`](crate::operation::start_db_cluster::StartDbClusterOutput) with field(s):
     ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::start_db_cluster::StartDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
     /// - On failure, responds with [`SdkError<StartDBClusterError>`](crate::operation::start_db_cluster::StartDBClusterError)
-    pub fn start_db_cluster(
-        &self,
-    ) -> crate::operation::start_db_cluster::builders::StartDBClusterFluentBuilder {
-        crate::operation::start_db_cluster::builders::StartDBClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_db_cluster(&self) -> crate::operation::start_db_cluster::builders::StartDBClusterFluentBuilder {
+        crate::operation::start_db_cluster::builders::StartDBClusterFluentBuilder::new(self.handle.clone())
     }
 }

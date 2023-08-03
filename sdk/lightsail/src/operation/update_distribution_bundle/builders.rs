@@ -29,7 +29,7 @@ impl UpdateDistributionBundleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDistributionBundleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleInputBuilder,
+    inner: crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleInputBuilder,
 }
 impl UpdateDistributionBundleFluentBuilder {
     /// Creates a new `UpdateDistributionBundle`.
@@ -40,10 +40,7 @@ impl UpdateDistributionBundleFluentBuilder {
         }
     }
     /// Access the UpdateDistributionBundle as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl UpdateDistributionBundleFluentBuilder {
             crate::operation::update_distribution_bundle::UpdateDistributionBundle,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_distribution_bundle::UpdateDistributionBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_bundle::UpdateDistributionBundleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl UpdateDistributionBundleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl UpdateDistributionBundleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_distribution_bundle::UpdateDistributionBundleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_distribution_bundle::UpdateDistributionBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_bundle::UpdateDistributionBundleError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl UpdateDistributionBundleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_distribution_bundle::UpdateDistributionBundleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_distribution_bundle::UpdateDistributionBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_bundle::UpdateDistributionBundleError>,
     > {
         self.send_middleware().await
     }
@@ -120,27 +108,19 @@ impl UpdateDistributionBundleFluentBuilder {
             crate::operation::update_distribution_bundle::UpdateDistributionBundle,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_distribution_bundle::UpdateDistributionBundleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_bundle::UpdateDistributionBundleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the distribution for which to update the bundle.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn distribution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distribution_name(input.into());
         self
     }
     /// <p>The name of the distribution for which to update the bundle.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distribution_name(input);
         self
     }

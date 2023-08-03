@@ -36,18 +36,14 @@ impl GetInsightImpactGraphInput {
 }
 impl GetInsightImpactGraphInput {
     /// Creates a new builder-style object to manufacture [`GetInsightImpactGraphInput`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput).
-    pub fn builder(
-    ) -> crate::operation::get_insight_impact_graph::builders::GetInsightImpactGraphInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_insight_impact_graph::builders::GetInsightImpactGraphInputBuilder {
         crate::operation::get_insight_impact_graph::builders::GetInsightImpactGraphInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInsightImpactGraphInput`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightImpactGraphInputBuilder {
     pub(crate) insight_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -75,10 +71,7 @@ impl GetInsightImpactGraphInputBuilder {
         self
     }
     /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -92,10 +85,7 @@ impl GetInsightImpactGraphInputBuilder {
         self
     }
     /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -120,17 +110,13 @@ impl GetInsightImpactGraphInputBuilder {
     /// Consumes the builder and constructs a [`GetInsightImpactGraphInput`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput {
-                insight_id: self.insight_id,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput {
+            insight_id: self.insight_id,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            next_token: self.next_token,
+        })
     }
 }

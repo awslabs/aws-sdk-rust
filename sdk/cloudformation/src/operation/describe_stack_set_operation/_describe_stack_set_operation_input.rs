@@ -39,16 +39,14 @@ impl DescribeStackSetOperationInput {
 }
 impl DescribeStackSetOperationInput {
     /// Creates a new builder-style object to manufacture [`DescribeStackSetOperationInput`](crate::operation::describe_stack_set_operation::DescribeStackSetOperationInput).
-    pub fn builder() -> crate::operation::describe_stack_set_operation::builders::DescribeStackSetOperationInputBuilder{
+    pub fn builder() -> crate::operation::describe_stack_set_operation::builders::DescribeStackSetOperationInputBuilder {
         crate::operation::describe_stack_set_operation::builders::DescribeStackSetOperationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeStackSetOperationInput`](crate::operation::describe_stack_set_operation::DescribeStackSetOperationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeStackSetOperationInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
@@ -56,18 +54,12 @@ pub struct DescribeStackSetOperationInputBuilder {
 }
 impl DescribeStackSetOperationInputBuilder {
     /// <p>The name or the unique stack ID of the stack set for the stack operation.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or the unique stack ID of the stack set for the stack operation.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
@@ -125,12 +117,10 @@ impl DescribeStackSetOperationInputBuilder {
         crate::operation::describe_stack_set_operation::DescribeStackSetOperationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_stack_set_operation::DescribeStackSetOperationInput {
-                stack_set_name: self.stack_set_name,
-                operation_id: self.operation_id,
-                call_as: self.call_as,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_stack_set_operation::DescribeStackSetOperationInput {
+            stack_set_name: self.stack_set_name,
+            operation_id: self.operation_id,
+            call_as: self.call_as,
+        })
     }
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeNetworkAclsOutput {
 }
 impl DescribeNetworkAclsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkAclsOutput`](crate::operation::describe_network_acls::DescribeNetworkAclsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_network_acls::builders::DescribeNetworkAclsOutputBuilder {
-        crate::operation::describe_network_acls::builders::DescribeNetworkAclsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_network_acls::builders::DescribeNetworkAclsOutputBuilder {
+        crate::operation::describe_network_acls::builders::DescribeNetworkAclsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNetworkAclsOutput`](crate::operation::describe_network_acls::DescribeNetworkAclsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNetworkAclsOutputBuilder {
     pub(crate) network_acls: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAcl>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeNetworkAclsOutputBuilder {
         self
     }
     /// <p>Information about one or more network ACLs.</p>
-    pub fn set_network_acls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAcl>>,
-    ) -> Self {
+    pub fn set_network_acls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAcl>>) -> Self {
         self.network_acls = input;
         self
     }
     /// <p>Information about one or more network ACLs.</p>
-    pub fn get_network_acls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkAcl>> {
+    pub fn get_network_acls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkAcl>> {
         &self.network_acls
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>

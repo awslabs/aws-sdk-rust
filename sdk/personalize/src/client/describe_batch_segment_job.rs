@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeBatchSegmentJobOutput`](crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput) with field(s):
     ///   - [`batch_segment_job(Option<BatchSegmentJob>)`](crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput::batch_segment_job): <p>Information on the specified batch segment job.</p>
     /// - On failure, responds with [`SdkError<DescribeBatchSegmentJobError>`](crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobError)
-    pub fn describe_batch_segment_job(
-        &self,
-    ) -> crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobFluentBuilder
-    {
+    pub fn describe_batch_segment_job(&self) -> crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobFluentBuilder {
         crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobFluentBuilder::new(self.handle.clone())
     }
 }

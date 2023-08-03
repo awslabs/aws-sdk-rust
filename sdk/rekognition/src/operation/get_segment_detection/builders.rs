@@ -42,9 +42,7 @@ impl GetSegmentDetectionFluentBuilder {
         }
     }
     /// Access the GetSegmentDetection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_segment_detection::builders::GetSegmentDetectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_segment_detection::builders::GetSegmentDetectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +54,7 @@ impl GetSegmentDetectionFluentBuilder {
             crate::operation::get_segment_detection::GetSegmentDetection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_segment_detection::GetSegmentDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_segment_detection::GetSegmentDetectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +64,7 @@ impl GetSegmentDetectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +73,7 @@ impl GetSegmentDetectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_segment_detection::GetSegmentDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_segment_detection::GetSegmentDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_segment_detection::GetSegmentDetectionError>,
     > {
         let op = self
             .inner
@@ -105,9 +96,7 @@ impl GetSegmentDetectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_segment_detection::GetSegmentDetectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_segment_detection::GetSegmentDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_segment_detection::GetSegmentDetectionError>,
     > {
         self.send_middleware().await
     }
@@ -121,22 +110,15 @@ impl GetSegmentDetectionFluentBuilder {
             crate::operation::get_segment_detection::GetSegmentDetection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_segment_detection::GetSegmentDetectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_segment_detection::GetSegmentDetectionError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator {
-        crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator {
+        crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator::new(self.handle, self.inner)
     }
     /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

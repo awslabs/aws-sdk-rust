@@ -10,10 +10,7 @@ impl ListSyncResourcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_sync_resources::ListSyncResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sync_resources::ListSyncResourcesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sync_resources::ListSyncResourcesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_sync_resources();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListSyncResourcesFluentBuilder {
         }
     }
     /// Access the ListSyncResources as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_sync_resources::builders::ListSyncResourcesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_sync_resources::builders::ListSyncResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListSyncResourcesFluentBuilder {
             crate::operation::list_sync_resources::ListSyncResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sync_resources::ListSyncResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sync_resources::ListSyncResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListSyncResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListSyncResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sync_resources::ListSyncResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sync_resources::ListSyncResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sync_resources::ListSyncResourcesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListSyncResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sync_resources::ListSyncResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sync_resources::ListSyncResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sync_resources::ListSyncResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListSyncResourcesFluentBuilder {
             crate::operation::list_sync_resources::ListSyncResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_sync_resources::ListSyncResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_sync_resources::ListSyncResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_sync_resources::paginator::ListSyncResourcesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_sync_resources::paginator::ListSyncResourcesPaginator {
-        crate::operation::list_sync_resources::paginator::ListSyncResourcesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_sync_resources::paginator::ListSyncResourcesPaginator {
+        crate::operation::list_sync_resources::paginator::ListSyncResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the workspace that contains the sync job.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -189,10 +168,7 @@ impl ListSyncResourcesFluentBuilder {
     /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
     /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -203,9 +179,7 @@ impl ListSyncResourcesFluentBuilder {
     /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
     /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of results to return at one time. The default is 50.</p>

@@ -32,27 +32,19 @@ impl CommitTransactionRequest {
 
 /// A builder for [`CommitTransactionRequest`](crate::types::CommitTransactionRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommitTransactionRequestBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) commit_digest: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl CommitTransactionRequestBuilder {
     /// <p>Specifies the transaction ID of the transaction to commit.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the transaction ID of the transaction to commit.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_id = input;
         self
     }
@@ -68,10 +60,7 @@ impl CommitTransactionRequestBuilder {
     }
     /// <p>Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed on the client does not match the digest computed by QLDB.</p>
     /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only if the server has processed the exact set of statements sent by the client, in the same order that client sent them, and with no duplicates.</p>
-    pub fn set_commit_digest(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_commit_digest(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.commit_digest = input;
         self
     }

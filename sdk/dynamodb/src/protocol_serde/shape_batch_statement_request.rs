@@ -12,10 +12,7 @@ pub fn ser_batch_statement_request(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_attribute_value::ser_attribute_value(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }
@@ -25,9 +22,7 @@ pub fn ser_batch_statement_request(
         object.key("ConsistentRead").boolean(*var_6);
     }
     if let Some(var_7) = &input.return_values_on_condition_check_failure {
-        object
-            .key("ReturnValuesOnConditionCheckFailure")
-            .string(var_7.as_str());
+        object.key("ReturnValuesOnConditionCheckFailure").string(var_7.as_str());
     }
     Ok(())
 }

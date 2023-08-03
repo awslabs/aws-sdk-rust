@@ -10,10 +10,7 @@ impl ListDistributionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_distributions::ListDistributionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distributions::ListDistributionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributions::ListDistributionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_distributions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListDistributionsFluentBuilder {
         }
     }
     /// Access the ListDistributions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_distributions::builders::ListDistributionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_distributions::builders::ListDistributionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListDistributionsFluentBuilder {
             crate::operation::list_distributions::ListDistributions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distributions::ListDistributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributions::ListDistributionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListDistributionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListDistributionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_distributions::ListDistributionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distributions::ListDistributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributions::ListDistributionsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListDistributionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_distributions::ListDistributionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distributions::ListDistributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributions::ListDistributionsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListDistributionsFluentBuilder {
             crate::operation::list_distributions::ListDistributions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_distributions::ListDistributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_distributions::ListDistributionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_distributions::paginator::ListDistributionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_distributions::paginator::ListDistributionsPaginator {
-        crate::operation::list_distributions::paginator::ListDistributionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_distributions::paginator::ListDistributionsPaginator {
+        crate::operation::list_distributions::paginator::ListDistributionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

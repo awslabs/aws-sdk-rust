@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`alarm_model_version_summaries(Option<Vec<AlarmModelVersionSummary>>)`](crate::operation::list_alarm_model_versions::ListAlarmModelVersionsOutput::alarm_model_version_summaries): <p>A list that summarizes each alarm model version.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_alarm_model_versions::ListAlarmModelVersionsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListAlarmModelVersionsError>`](crate::operation::list_alarm_model_versions::ListAlarmModelVersionsError)
-    pub fn list_alarm_model_versions(
-        &self,
-    ) -> crate::operation::list_alarm_model_versions::builders::ListAlarmModelVersionsFluentBuilder
-    {
+    pub fn list_alarm_model_versions(&self) -> crate::operation::list_alarm_model_versions::builders::ListAlarmModelVersionsFluentBuilder {
         crate::operation::list_alarm_model_versions::builders::ListAlarmModelVersionsFluentBuilder::new(self.handle.clone())
     }
 }

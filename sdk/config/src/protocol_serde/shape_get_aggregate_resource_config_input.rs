@@ -4,9 +4,7 @@ pub fn ser_get_aggregate_resource_config_input(
     input: &crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.configuration_aggregator_name {
-        object
-            .key("ConfigurationAggregatorName")
-            .string(var_1.as_str());
+        object.key("ConfigurationAggregatorName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.resource_identifier {
         #[allow(unused_mut)]

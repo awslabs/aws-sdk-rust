@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`app_authorization_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_app_authorization::builders::DeleteAppAuthorizationFluentBuilder::app_authorization_identifier) / [`set_app_authorization_identifier(Option<String>)`](crate::operation::delete_app_authorization::builders::DeleteAppAuthorizationFluentBuilder::set_app_authorization_identifier): <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
     /// - On success, responds with [`DeleteAppAuthorizationOutput`](crate::operation::delete_app_authorization::DeleteAppAuthorizationOutput)
     /// - On failure, responds with [`SdkError<DeleteAppAuthorizationError>`](crate::operation::delete_app_authorization::DeleteAppAuthorizationError)
-    pub fn delete_app_authorization(
-        &self,
-    ) -> crate::operation::delete_app_authorization::builders::DeleteAppAuthorizationFluentBuilder
-    {
+    pub fn delete_app_authorization(&self) -> crate::operation::delete_app_authorization::builders::DeleteAppAuthorizationFluentBuilder {
         crate::operation::delete_app_authorization::builders::DeleteAppAuthorizationFluentBuilder::new(self.handle.clone())
     }
 }

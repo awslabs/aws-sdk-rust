@@ -26,7 +26,7 @@ impl CreateStudioSessionMappingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStudioSessionMappingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_studio_session_mapping::builders::CreateStudioSessionMappingInputBuilder,
+    inner: crate::operation::create_studio_session_mapping::builders::CreateStudioSessionMappingInputBuilder,
 }
 impl CreateStudioSessionMappingFluentBuilder {
     /// Creates a new `CreateStudioSessionMapping`.
@@ -37,7 +37,7 @@ impl CreateStudioSessionMappingFluentBuilder {
         }
     }
     /// Access the CreateStudioSessionMapping as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_studio_session_mapping::builders::CreateStudioSessionMappingInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_studio_session_mapping::builders::CreateStudioSessionMappingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateStudioSessionMappingFluentBuilder {
             crate::operation::create_studio_session_mapping::CreateStudioSessionMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_studio_session_mapping::CreateStudioSessionMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_studio_session_mapping::CreateStudioSessionMappingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateStudioSessionMappingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateStudioSessionMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_studio_session_mapping::CreateStudioSessionMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_studio_session_mapping::CreateStudioSessionMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_studio_session_mapping::CreateStudioSessionMappingError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateStudioSessionMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_studio_session_mapping::CreateStudioSessionMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_studio_session_mapping::CreateStudioSessionMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_studio_session_mapping::CreateStudioSessionMappingError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateStudioSessionMappingFluentBuilder {
             crate::operation::create_studio_session_mapping::CreateStudioSessionMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_studio_session_mapping::CreateStudioSessionMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_studio_session_mapping::CreateStudioSessionMappingError>,
     > {
         self.customize_middleware().await
     }
@@ -149,18 +138,12 @@ impl CreateStudioSessionMappingFluentBuilder {
         self.inner.get_identity_id()
     }
     /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
-    pub fn identity_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_name(input.into());
         self
     }
     /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
-    pub fn set_identity_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_name(input);
         self
     }
@@ -174,10 +157,7 @@ impl CreateStudioSessionMappingFluentBuilder {
         self
     }
     /// <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.inner = self.inner.set_identity_type(input);
         self
     }
@@ -186,18 +166,12 @@ impl CreateStudioSessionMappingFluentBuilder {
         self.inner.get_identity_type()
     }
     /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon EMR Studio User Role with Session Policies</a>.</p>
-    pub fn session_policy_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_policy_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon EMR Studio User Role with Session Policies</a>.</p>
-    pub fn set_session_policy_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_session_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_policy_arn(input);
         self
     }

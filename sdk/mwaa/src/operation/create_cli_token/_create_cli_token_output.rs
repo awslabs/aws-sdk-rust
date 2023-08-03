@@ -66,18 +66,12 @@ impl CreateCliTokenOutputBuilder {
         &self.cli_token
     }
     /// <p>The Airflow web server hostname for the environment.</p>
-    pub fn web_server_hostname(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn web_server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_server_hostname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Airflow web server hostname for the environment.</p>
-    pub fn set_web_server_hostname(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_web_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_server_hostname = input;
         self
     }

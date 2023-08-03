@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for RestoreManagedPrefixListVersionOutput
 }
 impl RestoreManagedPrefixListVersionOutput {
     /// Creates a new builder-style object to manufacture [`RestoreManagedPrefixListVersionOutput`](crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput).
-    pub fn builder() -> crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionOutputBuilder{
+    pub fn builder() -> crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionOutputBuilder {
         crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreManagedPrefixListVersionOutput`](crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreManagedPrefixListVersionOutputBuilder {
     pub(crate) prefix_list: ::std::option::Option<crate::types::ManagedPrefixList>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl RestoreManagedPrefixListVersionOutputBuilder {
         self
     }
     /// <p>Information about the prefix list.</p>
-    pub fn set_prefix_list(
-        mut self,
-        input: ::std::option::Option<crate::types::ManagedPrefixList>,
-    ) -> Self {
+    pub fn set_prefix_list(mut self, input: ::std::option::Option<crate::types::ManagedPrefixList>) -> Self {
         self.prefix_list = input;
         self
     }
@@ -63,13 +58,9 @@ impl RestoreManagedPrefixListVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreManagedPrefixListVersionOutput`](crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput
-    {
+    pub fn build(self) -> crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput {
         crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput {
-            prefix_list: self.prefix_list
-            ,
+            prefix_list: self.prefix_list,
             _request_id: self._request_id,
         }
     }

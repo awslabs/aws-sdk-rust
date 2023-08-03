@@ -36,9 +36,7 @@ impl AddRegionInput {
 
 /// A builder for [`AddRegionInput`](crate::operation::add_region::AddRegionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddRegionInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
@@ -79,10 +77,7 @@ impl AddRegionInputBuilder {
         self
     }
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
-    pub fn set_vpc_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::DirectoryVpcSettings>,
-    ) -> Self {
+    pub fn set_vpc_settings(mut self, input: ::std::option::Option<crate::types::DirectoryVpcSettings>) -> Self {
         self.vpc_settings = input;
         self
     }
@@ -91,12 +86,7 @@ impl AddRegionInputBuilder {
         &self.vpc_settings
     }
     /// Consumes the builder and constructs a [`AddRegionInput`](crate::operation::add_region::AddRegionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_region::AddRegionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_region::AddRegionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_region::AddRegionInput {
             directory_id: self.directory_id,
             region_name: self.region_name,

@@ -37,9 +37,7 @@ impl KpiFieldWells {
 
 /// A builder for [`KpiFieldWells`](crate::types::KpiFieldWells).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KpiFieldWellsBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     pub(crate) target_values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
@@ -58,17 +56,12 @@ impl KpiFieldWellsBuilder {
         self
     }
     /// <p>The value field wells of a KPI visual.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
         self.values = input;
         self
     }
     /// <p>The value field wells of a KPI visual.</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
         &self.values
     }
     /// Appends an item to `target_values`.
@@ -83,17 +76,12 @@ impl KpiFieldWellsBuilder {
         self
     }
     /// <p>The target value field wells of a KPI visual.</p>
-    pub fn set_target_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
+    pub fn set_target_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
         self.target_values = input;
         self
     }
     /// <p>The target value field wells of a KPI visual.</p>
-    pub fn get_target_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_target_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
         &self.target_values
     }
     /// Appends an item to `trend_groups`.
@@ -108,17 +96,12 @@ impl KpiFieldWellsBuilder {
         self
     }
     /// <p>The trend group field wells of a KPI visual.</p>
-    pub fn set_trend_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
+    pub fn set_trend_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
         self.trend_groups = input;
         self
     }
     /// <p>The trend group field wells of a KPI visual.</p>
-    pub fn get_trend_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+    pub fn get_trend_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
         &self.trend_groups
     }
     /// Consumes the builder and constructs a [`KpiFieldWells`](crate::types::KpiFieldWells).

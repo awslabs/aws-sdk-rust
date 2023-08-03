@@ -28,9 +28,7 @@ impl CreateQueueOutput {
 
 /// A builder for [`CreateQueueOutput`](crate::operation::create_queue::CreateQueueOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateQueueOutputBuilder {
     pub(crate) queue: ::std::option::Option<crate::types::Queue>,
     _request_id: Option<String>,

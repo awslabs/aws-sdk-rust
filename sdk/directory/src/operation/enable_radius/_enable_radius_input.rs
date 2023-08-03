@@ -30,9 +30,7 @@ impl EnableRadiusInput {
 
 /// A builder for [`EnableRadiusInput`](crate::operation::enable_radius::EnableRadiusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableRadiusInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) radius_settings: ::std::option::Option<crate::types::RadiusSettings>,
@@ -58,10 +56,7 @@ impl EnableRadiusInputBuilder {
         self
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
-    pub fn set_radius_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::RadiusSettings>,
-    ) -> Self {
+    pub fn set_radius_settings(mut self, input: ::std::option::Option<crate::types::RadiusSettings>) -> Self {
         self.radius_settings = input;
         self
     }
@@ -70,12 +65,7 @@ impl EnableRadiusInputBuilder {
         &self.radius_settings
     }
     /// Consumes the builder and constructs a [`EnableRadiusInput`](crate::operation::enable_radius::EnableRadiusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_radius::EnableRadiusInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_radius::EnableRadiusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_radius::EnableRadiusInput {
             directory_id: self.directory_id,
             radius_settings: self.radius_settings,

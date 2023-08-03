@@ -23,42 +23,31 @@ impl AwsOpenSearchServiceDomainLogPublishingOption {
 }
 impl AwsOpenSearchServiceDomainLogPublishingOption {
     /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::types::AwsOpenSearchServiceDomainLogPublishingOption).
-    pub fn builder() -> crate::types::builders::AwsOpenSearchServiceDomainLogPublishingOptionBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsOpenSearchServiceDomainLogPublishingOptionBuilder {
         crate::types::builders::AwsOpenSearchServiceDomainLogPublishingOptionBuilder::default()
     }
 }
 
 /// A builder for [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::types::AwsOpenSearchServiceDomainLogPublishingOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainLogPublishingOptionBuilder {
     pub(crate) cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl AwsOpenSearchServiceDomainLogPublishingOptionBuilder {
     /// <p>The ARN of the CloudWatch Logs group to publish the logs to.</p>
-    pub fn cloud_watch_logs_log_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_logs_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logs_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the CloudWatch Logs group to publish the logs to.</p>
-    pub fn set_cloud_watch_logs_log_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_logs_log_group_arn = input;
         self
     }
     /// <p>The ARN of the CloudWatch Logs group to publish the logs to.</p>
-    pub fn get_cloud_watch_logs_log_group_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_cloud_watch_logs_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_logs_log_group_arn
     }
     /// <p>Whether the log publishing is enabled.</p>

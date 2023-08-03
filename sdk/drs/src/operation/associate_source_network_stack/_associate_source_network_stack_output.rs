@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for AssociateSourceNetworkStackOutput {
 }
 impl AssociateSourceNetworkStackOutput {
     /// Creates a new builder-style object to manufacture [`AssociateSourceNetworkStackOutput`](crate::operation::associate_source_network_stack::AssociateSourceNetworkStackOutput).
-    pub fn builder() -> crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackOutputBuilder{
+    pub fn builder() -> crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackOutputBuilder {
         crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateSourceNetworkStackOutput`](crate::operation::associate_source_network_stack::AssociateSourceNetworkStackOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateSourceNetworkStackOutputBuilder {
     pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl AssociateSourceNetworkStackOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateSourceNetworkStackOutput`](crate::operation::associate_source_network_stack::AssociateSourceNetworkStackOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_source_network_stack::AssociateSourceNetworkStackOutput {
+    pub fn build(self) -> crate::operation::associate_source_network_stack::AssociateSourceNetworkStackOutput {
         crate::operation::associate_source_network_stack::AssociateSourceNetworkStackOutput {
             job: self.job,
             _request_id: self._request_id,

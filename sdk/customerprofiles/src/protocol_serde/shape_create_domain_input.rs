@@ -24,10 +24,7 @@ pub fn ser_create_domain_input(
     if let Some(var_6) = &input.rule_based_matching {
         #[allow(unused_mut)]
         let mut object_7 = object.key("RuleBasedMatching").start_object();
-        crate::protocol_serde::shape_rule_based_matching_request::ser_rule_based_matching_request(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_rule_based_matching_request::ser_rule_based_matching_request(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.tags {

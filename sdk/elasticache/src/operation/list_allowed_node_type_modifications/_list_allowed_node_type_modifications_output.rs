@@ -31,21 +31,17 @@ impl ::aws_http::request_id::RequestId for ListAllowedNodeTypeModificationsOutpu
 }
 impl ListAllowedNodeTypeModificationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAllowedNodeTypeModificationsOutput`](crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsOutput).
-    pub fn builder() -> crate::operation::list_allowed_node_type_modifications::builders::ListAllowedNodeTypeModificationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_allowed_node_type_modifications::builders::ListAllowedNodeTypeModificationsOutputBuilder {
         crate::operation::list_allowed_node_type_modifications::builders::ListAllowedNodeTypeModificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAllowedNodeTypeModificationsOutput`](crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAllowedNodeTypeModificationsOutputBuilder {
-    pub(crate) scale_up_modifications:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) scale_down_modifications:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) scale_up_modifications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) scale_down_modifications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListAllowedNodeTypeModificationsOutputBuilder {
@@ -55,10 +51,7 @@ impl ListAllowedNodeTypeModificationsOutputBuilder {
     ///
     /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p>
     /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.</p>
-    pub fn scale_up_modifications(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scale_up_modifications(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.scale_up_modifications.unwrap_or_default();
         v.push(input.into());
         self.scale_up_modifications = ::std::option::Option::Some(v);
@@ -66,18 +59,13 @@ impl ListAllowedNodeTypeModificationsOutputBuilder {
     }
     /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p>
     /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.</p>
-    pub fn set_scale_up_modifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_scale_up_modifications(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.scale_up_modifications = input;
         self
     }
     /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p>
     /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.</p>
-    pub fn get_scale_up_modifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_scale_up_modifications(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scale_up_modifications
     }
     /// Appends an item to `scale_down_modifications`.
@@ -85,27 +73,19 @@ impl ListAllowedNodeTypeModificationsOutputBuilder {
     /// To override the contents of this collection use [`set_scale_down_modifications`](Self::set_scale_down_modifications).
     ///
     /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group. When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
-    pub fn scale_down_modifications(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scale_down_modifications(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.scale_down_modifications.unwrap_or_default();
         v.push(input.into());
         self.scale_down_modifications = ::std::option::Option::Some(v);
         self
     }
     /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group. When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
-    pub fn set_scale_down_modifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_scale_down_modifications(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.scale_down_modifications = input;
         self
     }
     /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group. When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
-    pub fn get_scale_down_modifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_scale_down_modifications(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scale_down_modifications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -118,12 +98,10 @@ impl ListAllowedNodeTypeModificationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAllowedNodeTypeModificationsOutput`](crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsOutput).
-    pub fn build(self) -> crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsOutput{
+    pub fn build(self) -> crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsOutput {
         crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsOutput {
-            scale_up_modifications: self.scale_up_modifications
-            ,
-            scale_down_modifications: self.scale_down_modifications
-            ,
+            scale_up_modifications: self.scale_up_modifications,
+            scale_down_modifications: self.scale_down_modifications,
             _request_id: self._request_id,
         }
     }

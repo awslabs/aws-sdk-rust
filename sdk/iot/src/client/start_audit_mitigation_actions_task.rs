@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`StartAuditMitigationActionsTaskOutput`](crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput::task_id): <p>The unique identifier for the audit mitigation task. This matches the <code>taskId</code> that you specified in the request.</p>
     /// - On failure, responds with [`SdkError<StartAuditMitigationActionsTaskError>`](crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskError)
-    pub fn start_audit_mitigation_actions_task(&self) -> crate::operation::start_audit_mitigation_actions_task::builders::StartAuditMitigationActionsTaskFluentBuilder{
+    pub fn start_audit_mitigation_actions_task(
+        &self,
+    ) -> crate::operation::start_audit_mitigation_actions_task::builders::StartAuditMitigationActionsTaskFluentBuilder {
         crate::operation::start_audit_mitigation_actions_task::builders::StartAuditMitigationActionsTaskFluentBuilder::new(self.handle.clone())
     }
 }

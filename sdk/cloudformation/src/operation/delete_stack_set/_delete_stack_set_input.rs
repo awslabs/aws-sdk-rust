@@ -39,27 +39,19 @@ impl DeleteStackSetInput {
 
 /// A builder for [`DeleteStackSetInput`](crate::operation::delete_stack_set::DeleteStackSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStackSetInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl DeleteStackSetInputBuilder {
     /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this value by running <code>ListStackSets</code>.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this value by running <code>ListStackSets</code>.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
@@ -99,10 +91,7 @@ impl DeleteStackSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStackSetInput`](crate::operation::delete_stack_set::DeleteStackSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_stack_set::DeleteStackSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_stack_set::DeleteStackSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_stack_set::DeleteStackSetInput {
             stack_set_name: self.stack_set_name,
             call_as: self.call_as,

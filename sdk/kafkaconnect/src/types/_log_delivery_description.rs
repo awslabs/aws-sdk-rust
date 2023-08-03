@@ -10,9 +10,7 @@ pub struct LogDeliveryDescription {
 }
 impl LogDeliveryDescription {
     /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
-    pub fn worker_log_delivery(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WorkerLogDeliveryDescription> {
+    pub fn worker_log_delivery(&self) -> ::std::option::Option<&crate::types::WorkerLogDeliveryDescription> {
         self.worker_log_delivery.as_ref()
     }
 }
@@ -25,34 +23,23 @@ impl LogDeliveryDescription {
 
 /// A builder for [`LogDeliveryDescription`](crate::types::LogDeliveryDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogDeliveryDescriptionBuilder {
-    pub(crate) worker_log_delivery:
-        ::std::option::Option<crate::types::WorkerLogDeliveryDescription>,
+    pub(crate) worker_log_delivery: ::std::option::Option<crate::types::WorkerLogDeliveryDescription>,
 }
 impl LogDeliveryDescriptionBuilder {
     /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
-    pub fn worker_log_delivery(
-        mut self,
-        input: crate::types::WorkerLogDeliveryDescription,
-    ) -> Self {
+    pub fn worker_log_delivery(mut self, input: crate::types::WorkerLogDeliveryDescription) -> Self {
         self.worker_log_delivery = ::std::option::Option::Some(input);
         self
     }
     /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
-    pub fn set_worker_log_delivery(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkerLogDeliveryDescription>,
-    ) -> Self {
+    pub fn set_worker_log_delivery(mut self, input: ::std::option::Option<crate::types::WorkerLogDeliveryDescription>) -> Self {
         self.worker_log_delivery = input;
         self
     }
     /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
-    pub fn get_worker_log_delivery(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkerLogDeliveryDescription> {
+    pub fn get_worker_log_delivery(&self) -> &::std::option::Option<crate::types::WorkerLogDeliveryDescription> {
         &self.worker_log_delivery
     }
     /// Consumes the builder and constructs a [`LogDeliveryDescription`](crate::types::LogDeliveryDescription).

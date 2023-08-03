@@ -14,8 +14,7 @@ pub struct DescribeDomainConfigurationOutput {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A list containing summary information about the server certificate included in the domain configuration.</p>
     #[doc(hidden)]
-    pub server_certificates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateSummary>>,
+    pub server_certificates: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateSummary>>,
     /// <p>An object that specifies the authorization service for a domain.</p>
     #[doc(hidden)]
     pub authorizer_config: ::std::option::Option<crate::types::AuthorizerConfig>,
@@ -50,9 +49,7 @@ impl DescribeDomainConfigurationOutput {
         self.domain_name.as_deref()
     }
     /// <p>A list containing summary information about the server certificate included in the domain configuration.</p>
-    pub fn server_certificates(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ServerCertificateSummary]> {
+    pub fn server_certificates(&self) -> ::std::option::Option<&[crate::types::ServerCertificateSummary]> {
         self.server_certificates.as_deref()
     }
     /// <p>An object that specifies the authorization service for a domain.</p>
@@ -60,9 +57,7 @@ impl DescribeDomainConfigurationOutput {
         self.authorizer_config.as_ref()
     }
     /// <p>A Boolean value that specifies the current state of the domain configuration.</p>
-    pub fn domain_configuration_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DomainConfigurationStatus> {
+    pub fn domain_configuration_status(&self) -> ::std::option::Option<&crate::types::DomainConfigurationStatus> {
         self.domain_configuration_status.as_ref()
     }
     /// <p>The type of service delivered by the endpoint.</p>
@@ -89,25 +84,21 @@ impl ::aws_http::request_id::RequestId for DescribeDomainConfigurationOutput {
 }
 impl DescribeDomainConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainConfigurationOutput`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationOutputBuilder {
         crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDomainConfigurationOutput`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainConfigurationOutputBuilder {
     pub(crate) domain_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) server_certificates:
-        ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateSummary>>,
+    pub(crate) server_certificates: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateSummary>>,
     pub(crate) authorizer_config: ::std::option::Option<crate::types::AuthorizerConfig>,
-    pub(crate) domain_configuration_status:
-        ::std::option::Option<crate::types::DomainConfigurationStatus>,
+    pub(crate) domain_configuration_status: ::std::option::Option<crate::types::DomainConfigurationStatus>,
     pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) domain_type: ::std::option::Option<crate::types::DomainType>,
     pub(crate) last_status_change_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -116,18 +107,12 @@ pub struct DescribeDomainConfigurationOutputBuilder {
 }
 impl DescribeDomainConfigurationOutputBuilder {
     /// <p>The name of the domain configuration.</p>
-    pub fn domain_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the domain configuration.</p>
-    pub fn set_domain_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_configuration_name = input;
         self
     }
@@ -136,18 +121,12 @@ impl DescribeDomainConfigurationOutputBuilder {
         &self.domain_configuration_name
     }
     /// <p>The ARN of the domain configuration.</p>
-    pub fn domain_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the domain configuration.</p>
-    pub fn set_domain_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_configuration_arn = input;
         self
     }
@@ -181,17 +160,12 @@ impl DescribeDomainConfigurationOutputBuilder {
         self
     }
     /// <p>A list containing summary information about the server certificate included in the domain configuration.</p>
-    pub fn set_server_certificates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateSummary>>,
-    ) -> Self {
+    pub fn set_server_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateSummary>>) -> Self {
         self.server_certificates = input;
         self
     }
     /// <p>A list containing summary information about the server certificate included in the domain configuration.</p>
-    pub fn get_server_certificates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateSummary>> {
+    pub fn get_server_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateSummary>> {
         &self.server_certificates
     }
     /// <p>An object that specifies the authorization service for a domain.</p>
@@ -200,10 +174,7 @@ impl DescribeDomainConfigurationOutputBuilder {
         self
     }
     /// <p>An object that specifies the authorization service for a domain.</p>
-    pub fn set_authorizer_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthorizerConfig>,
-    ) -> Self {
+    pub fn set_authorizer_config(mut self, input: ::std::option::Option<crate::types::AuthorizerConfig>) -> Self {
         self.authorizer_config = input;
         self
     }
@@ -212,25 +183,17 @@ impl DescribeDomainConfigurationOutputBuilder {
         &self.authorizer_config
     }
     /// <p>A Boolean value that specifies the current state of the domain configuration.</p>
-    pub fn domain_configuration_status(
-        mut self,
-        input: crate::types::DomainConfigurationStatus,
-    ) -> Self {
+    pub fn domain_configuration_status(mut self, input: crate::types::DomainConfigurationStatus) -> Self {
         self.domain_configuration_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that specifies the current state of the domain configuration.</p>
-    pub fn set_domain_configuration_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainConfigurationStatus>,
-    ) -> Self {
+    pub fn set_domain_configuration_status(mut self, input: ::std::option::Option<crate::types::DomainConfigurationStatus>) -> Self {
         self.domain_configuration_status = input;
         self
     }
     /// <p>A Boolean value that specifies the current state of the domain configuration.</p>
-    pub fn get_domain_configuration_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainConfigurationStatus> {
+    pub fn get_domain_configuration_status(&self) -> &::std::option::Option<crate::types::DomainConfigurationStatus> {
         &self.domain_configuration_status
     }
     /// <p>The type of service delivered by the endpoint.</p>
@@ -239,10 +202,7 @@ impl DescribeDomainConfigurationOutputBuilder {
         self
     }
     /// <p>The type of service delivered by the endpoint.</p>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.service_type = input;
         self
     }
@@ -256,10 +216,7 @@ impl DescribeDomainConfigurationOutputBuilder {
         self
     }
     /// <p>The type of the domain.</p>
-    pub fn set_domain_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainType>,
-    ) -> Self {
+    pub fn set_domain_type(mut self, input: ::std::option::Option<crate::types::DomainType>) -> Self {
         self.domain_type = input;
         self
     }
@@ -273,17 +230,12 @@ impl DescribeDomainConfigurationOutputBuilder {
         self
     }
     /// <p>The date and time the domain configuration's status was last changed.</p>
-    pub fn set_last_status_change_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_status_change_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_status_change_date = input;
         self
     }
     /// <p>The date and time the domain configuration's status was last changed.</p>
-    pub fn get_last_status_change_date(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_status_change_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_status_change_date
     }
     /// <p>An object that specifies the TLS configuration for a domain.</p>
@@ -310,9 +262,7 @@ impl DescribeDomainConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDomainConfigurationOutput`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput {
+    pub fn build(self) -> crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput {
         crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput {
             domain_configuration_name: self.domain_configuration_name,
             domain_configuration_arn: self.domain_configuration_arn,

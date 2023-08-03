@@ -22,16 +22,14 @@ impl DissociateEntityFromThingInput {
 }
 impl DissociateEntityFromThingInput {
     /// Creates a new builder-style object to manufacture [`DissociateEntityFromThingInput`](crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingInput).
-    pub fn builder() -> crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingInputBuilder{
+    pub fn builder() -> crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingInputBuilder {
         crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingInputBuilder::default()
     }
 }
 
 /// A builder for [`DissociateEntityFromThingInput`](crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DissociateEntityFromThingInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) entity_type: ::std::option::Option<crate::types::EntityType>,
@@ -57,10 +55,7 @@ impl DissociateEntityFromThingInputBuilder {
         self
     }
     /// <p>The entity type from which to disassociate the thing.</p>
-    pub fn set_entity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityType>,
-    ) -> Self {
+    pub fn set_entity_type(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
         self.entity_type = input;
         self
     }
@@ -75,11 +70,9 @@ impl DissociateEntityFromThingInputBuilder {
         crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingInput {
-                thing_name: self.thing_name,
-                entity_type: self.entity_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingInput {
+            thing_name: self.thing_name,
+            entity_type: self.entity_type,
+        })
     }
 }

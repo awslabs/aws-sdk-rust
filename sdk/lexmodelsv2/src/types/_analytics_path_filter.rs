@@ -91,9 +91,7 @@ impl AnalyticsPathFilter {
 
 /// A builder for [`AnalyticsPathFilter`](crate::types::AnalyticsPathFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsPathFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsCommonFilterName>,
     pub(crate) operator: ::std::option::Option<crate::types::AnalyticsFilterOperator>,
@@ -120,10 +118,7 @@ impl AnalyticsPathFilterBuilder {
     /// <li> <p> <code>Modality</code> – The modality of the session with the bot (audio, DTMF, or text).</p> </li>
     /// <li> <p> <code>Channel</code> – The channel that the bot is integrated with.</p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsCommonFilterName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsCommonFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -172,10 +167,7 @@ impl AnalyticsPathFilterBuilder {
     /// <li> <p> <code>Modality</code> – <code>EQ</code>.</p> </li>
     /// <li> <p> <code>Channel</code> – <code>EQ</code>.</p> </li>
     /// </ul>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsFilterOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::AnalyticsFilterOperator>) -> Self {
         self.operator = input;
         self
     }
@@ -209,10 +201,7 @@ impl AnalyticsPathFilterBuilder {
         self
     }
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }

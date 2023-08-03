@@ -41,13 +41,7 @@
 /// Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you set Fallback font to best match, or leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BurninSubtitleFallbackFont {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for BurninSubtitleFallbackFont {
             "MONOSPACED_SERIF" => BurninSubtitleFallbackFont::MonospacedSerif,
             "PROPORTIONAL_SANSSERIF" => BurninSubtitleFallbackFont::ProportionalSansserif,
             "PROPORTIONAL_SERIF" => BurninSubtitleFallbackFont::ProportionalSerif,
-            other => BurninSubtitleFallbackFont::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BurninSubtitleFallbackFont::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

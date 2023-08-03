@@ -35,9 +35,7 @@ impl BackupPolicy {
 
 /// A builder for [`BackupPolicy`](crate::types::BackupPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackupPolicyBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
 }
@@ -76,8 +74,6 @@ impl BackupPolicyBuilder {
     }
     /// Consumes the builder and constructs a [`BackupPolicy`](crate::types::BackupPolicy).
     pub fn build(self) -> crate::types::BackupPolicy {
-        crate::types::BackupPolicy {
-            status: self.status,
-        }
+        crate::types::BackupPolicy { status: self.status }
     }
 }

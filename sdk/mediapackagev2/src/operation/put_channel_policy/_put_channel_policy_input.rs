@@ -29,17 +29,14 @@ impl PutChannelPolicyInput {
 }
 impl PutChannelPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutChannelPolicyInput`](crate::operation::put_channel_policy::PutChannelPolicyInput).
-    pub fn builder() -> crate::operation::put_channel_policy::builders::PutChannelPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_channel_policy::builders::PutChannelPolicyInputBuilder {
         crate::operation::put_channel_policy::builders::PutChannelPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutChannelPolicyInput`](crate::operation::put_channel_policy::PutChannelPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutChannelPolicyInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct PutChannelPolicyInputBuilder {
 }
 impl PutChannelPolicyInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn set_channel_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_group_name = input;
         self
     }
@@ -97,16 +88,11 @@ impl PutChannelPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutChannelPolicyInput`](crate::operation::put_channel_policy::PutChannelPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_channel_policy::PutChannelPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_channel_policy::PutChannelPolicyInput {
-                channel_group_name: self.channel_group_name,
-                channel_name: self.channel_name,
-                policy: self.policy,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_channel_policy::PutChannelPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_channel_policy::PutChannelPolicyInput {
+            channel_group_name: self.channel_group_name,
+            channel_name: self.channel_name,
+            policy: self.policy,
+        })
     }
 }

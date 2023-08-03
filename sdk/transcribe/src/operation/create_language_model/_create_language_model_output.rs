@@ -49,18 +49,14 @@ impl ::aws_http::request_id::RequestId for CreateLanguageModelOutput {
 }
 impl CreateLanguageModelOutput {
     /// Creates a new builder-style object to manufacture [`CreateLanguageModelOutput`](crate::operation::create_language_model::CreateLanguageModelOutput).
-    pub fn builder(
-    ) -> crate::operation::create_language_model::builders::CreateLanguageModelOutputBuilder {
-        crate::operation::create_language_model::builders::CreateLanguageModelOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_language_model::builders::CreateLanguageModelOutputBuilder {
+        crate::operation::create_language_model::builders::CreateLanguageModelOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLanguageModelOutput`](crate::operation::create_language_model::CreateLanguageModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLanguageModelOutputBuilder {
     pub(crate) language_code: ::std::option::Option<crate::types::ClmLanguageCode>,
     pub(crate) base_model_name: ::std::option::Option<crate::types::BaseModelName>,
@@ -76,10 +72,7 @@ impl CreateLanguageModelOutputBuilder {
         self
     }
     /// <p>The language code you selected for your custom language model.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ClmLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::ClmLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -93,10 +86,7 @@ impl CreateLanguageModelOutputBuilder {
         self
     }
     /// <p>The Amazon Transcribe standard language model, or base model, you specified when creating your custom language model.</p>
-    pub fn set_base_model_name(
-        mut self,
-        input: ::std::option::Option<crate::types::BaseModelName>,
-    ) -> Self {
+    pub fn set_base_model_name(mut self, input: ::std::option::Option<crate::types::BaseModelName>) -> Self {
         self.base_model_name = input;
         self
     }
@@ -124,10 +114,7 @@ impl CreateLanguageModelOutputBuilder {
         self
     }
     /// <p>Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations you provided for your training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>) data.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
@@ -141,10 +128,7 @@ impl CreateLanguageModelOutputBuilder {
         self
     }
     /// <p>The status of your custom language model. When the status displays as <code>COMPLETED</code>, your model is ready to use.</p>
-    pub fn set_model_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelStatus>,
-    ) -> Self {
+    pub fn set_model_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
         self.model_status = input;
         self
     }

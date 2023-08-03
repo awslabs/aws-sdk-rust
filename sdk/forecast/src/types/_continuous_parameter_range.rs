@@ -102,9 +102,7 @@ impl ContinuousParameterRange {
 
 /// A builder for [`ContinuousParameterRange`](crate::types::ContinuousParameterRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContinuousParameterRangeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) max_value: ::std::option::Option<f64>,
@@ -218,10 +216,7 @@ impl ContinuousParameterRangeBuilder {
     /// </dd>
     /// </dl>
     /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
-    pub fn set_scaling_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalingType>,
-    ) -> Self {
+    pub fn set_scaling_type(mut self, input: ::std::option::Option<crate::types::ScalingType>) -> Self {
         self.scaling_type = input;
         self
     }

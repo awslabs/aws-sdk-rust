@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StartCelebrityRecognitionOutput`](crate::operation::start_celebrity_recognition::StartCelebrityRecognitionOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::start_celebrity_recognition::StartCelebrityRecognitionOutput::job_id): <p>The identifier for the celebrity recognition analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetCelebrityRecognition</code>.</p>
     /// - On failure, responds with [`SdkError<StartCelebrityRecognitionError>`](crate::operation::start_celebrity_recognition::StartCelebrityRecognitionError)
-    pub fn start_celebrity_recognition(&self) -> crate::operation::start_celebrity_recognition::builders::StartCelebrityRecognitionFluentBuilder{
+    pub fn start_celebrity_recognition(&self) -> crate::operation::start_celebrity_recognition::builders::StartCelebrityRecognitionFluentBuilder {
         crate::operation::start_celebrity_recognition::builders::StartCelebrityRecognitionFluentBuilder::new(self.handle.clone())
     }
 }

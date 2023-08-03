@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteStudioSessionMappingOutput {
 }
 impl DeleteStudioSessionMappingOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStudioSessionMappingOutput`](crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingOutput).
-    pub fn builder() -> crate::operation::delete_studio_session_mapping::builders::DeleteStudioSessionMappingOutputBuilder{
+    pub fn builder() -> crate::operation::delete_studio_session_mapping::builders::DeleteStudioSessionMappingOutputBuilder {
         crate::operation::delete_studio_session_mapping::builders::DeleteStudioSessionMappingOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteStudioSessionMappingOutput`](crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteStudioSessionMappingOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteStudioSessionMappingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteStudioSessionMappingOutput`](crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingOutput {
+    pub fn build(self) -> crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingOutput {
         crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingOutput {
             _request_id: self._request_id,
         }

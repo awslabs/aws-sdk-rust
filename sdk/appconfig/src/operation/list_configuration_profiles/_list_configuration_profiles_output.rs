@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListConfigurationProfilesOutput {
 }
 impl ListConfigurationProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationProfilesOutput`](crate::operation::list_configuration_profiles::ListConfigurationProfilesOutput).
-    pub fn builder() -> crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesOutputBuilder{
+    pub fn builder() -> crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesOutputBuilder {
         crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListConfigurationProfilesOutput`](crate::operation::list_configuration_profiles::ListConfigurationProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfigurationProfilesOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationProfileSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationProfileSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListConfigurationProfilesOutputBuilder {
         self
     }
     /// <p>The elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationProfileSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationProfileSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The elements from this collection.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationProfileSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationProfileSummary>> {
         &self.items
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -94,9 +86,7 @@ impl ListConfigurationProfilesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListConfigurationProfilesOutput`](crate::operation::list_configuration_profiles::ListConfigurationProfilesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_configuration_profiles::ListConfigurationProfilesOutput {
+    pub fn build(self) -> crate::operation::list_configuration_profiles::ListConfigurationProfilesOutput {
         crate::operation::list_configuration_profiles::ListConfigurationProfilesOutput {
             items: self.items,
             next_token: self.next_token,

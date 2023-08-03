@@ -38,18 +38,14 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributes {
 }
 impl RequestCancelExternalWorkflowExecutionDecisionAttributes {
     /// Creates a new builder-style object to manufacture [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes).
-    pub fn builder(
-    ) -> crate::types::builders::RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder
-    {
+    pub fn builder() -> crate::types::builders::RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder {
         crate::types::builders::RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder::default()
     }
 }
 
 /// A builder for [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,

@@ -36,17 +36,14 @@ impl ListAnnotationStoresInput {
 }
 impl ListAnnotationStoresInput {
     /// Creates a new builder-style object to manufacture [`ListAnnotationStoresInput`](crate::operation::list_annotation_stores::ListAnnotationStoresInput).
-    pub fn builder(
-    ) -> crate::operation::list_annotation_stores::builders::ListAnnotationStoresInputBuilder {
+    pub fn builder() -> crate::operation::list_annotation_stores::builders::ListAnnotationStoresInputBuilder {
         crate::operation::list_annotation_stores::builders::ListAnnotationStoresInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAnnotationStoresInput`](crate::operation::list_annotation_stores::ListAnnotationStoresInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnnotationStoresInputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -66,10 +63,7 @@ impl ListAnnotationStoresInputBuilder {
         self
     }
     /// <p>IDs of stores to list.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }
@@ -111,10 +105,7 @@ impl ListAnnotationStoresInputBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListAnnotationStoresFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListAnnotationStoresFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -125,17 +116,13 @@ impl ListAnnotationStoresInputBuilder {
     /// Consumes the builder and constructs a [`ListAnnotationStoresInput`](crate::operation::list_annotation_stores::ListAnnotationStoresInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_annotation_stores::ListAnnotationStoresInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_annotation_stores::ListAnnotationStoresInput {
-                ids: self.ids,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filter: self.filter,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_annotation_stores::ListAnnotationStoresInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_annotation_stores::ListAnnotationStoresInput {
+            ids: self.ids,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            filter: self.filter,
+        })
     }
 }

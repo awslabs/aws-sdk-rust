@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteVirtualNodeOutput {
 }
 impl DeleteVirtualNodeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualNodeOutput`](crate::operation::delete_virtual_node::DeleteVirtualNodeOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_virtual_node::builders::DeleteVirtualNodeOutputBuilder {
+    pub fn builder() -> crate::operation::delete_virtual_node::builders::DeleteVirtualNodeOutputBuilder {
         crate::operation::delete_virtual_node::builders::DeleteVirtualNodeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVirtualNodeOutput`](crate::operation::delete_virtual_node::DeleteVirtualNodeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVirtualNodeOutputBuilder {
     pub(crate) virtual_node: ::std::option::Option<crate::types::VirtualNodeData>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteVirtualNodeOutputBuilder {
         self
     }
     /// <p>The virtual node that was deleted.</p>
-    pub fn set_virtual_node(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualNodeData>,
-    ) -> Self {
+    pub fn set_virtual_node(mut self, input: ::std::option::Option<crate::types::VirtualNodeData>) -> Self {
         self.virtual_node = input;
         self
     }

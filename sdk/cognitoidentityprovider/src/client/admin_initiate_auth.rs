@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`challenge_parameters(Option<HashMap<String, String>>)`](crate::operation::admin_initiate_auth::AdminInitiateAuthOutput::challenge_parameters): <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>  <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>  <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
     ///   - [`authentication_result(Option<AuthenticationResultType>)`](crate::operation::admin_initiate_auth::AdminInitiateAuthOutput::authentication_result): <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
     /// - On failure, responds with [`SdkError<AdminInitiateAuthError>`](crate::operation::admin_initiate_auth::AdminInitiateAuthError)
-    pub fn admin_initiate_auth(
-        &self,
-    ) -> crate::operation::admin_initiate_auth::builders::AdminInitiateAuthFluentBuilder {
-        crate::operation::admin_initiate_auth::builders::AdminInitiateAuthFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn admin_initiate_auth(&self) -> crate::operation::admin_initiate_auth::builders::AdminInitiateAuthFluentBuilder {
+        crate::operation::admin_initiate_auth::builders::AdminInitiateAuthFluentBuilder::new(self.handle.clone())
     }
 }

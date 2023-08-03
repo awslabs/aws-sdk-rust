@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::update_allow_list::UpdateAllowListOutput::arn): <p>The Amazon Resource Name (ARN) of the allow list.</p>
     ///   - [`id(Option<String>)`](crate::operation::update_allow_list::UpdateAllowListOutput::id): <p>The unique identifier for the allow list.</p>
     /// - On failure, responds with [`SdkError<UpdateAllowListError>`](crate::operation::update_allow_list::UpdateAllowListError)
-    pub fn update_allow_list(
-        &self,
-    ) -> crate::operation::update_allow_list::builders::UpdateAllowListFluentBuilder {
-        crate::operation::update_allow_list::builders::UpdateAllowListFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_allow_list(&self) -> crate::operation::update_allow_list::builders::UpdateAllowListFluentBuilder {
+        crate::operation::update_allow_list::builders::UpdateAllowListFluentBuilder::new(self.handle.clone())
     }
 }

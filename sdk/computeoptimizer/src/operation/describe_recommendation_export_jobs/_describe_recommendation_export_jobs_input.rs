@@ -42,16 +42,14 @@ impl DescribeRecommendationExportJobsInput {
 }
 impl DescribeRecommendationExportJobsInput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommendationExportJobsInput`](crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput).
-    pub fn builder() -> crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsInputBuilder{
+    pub fn builder() -> crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsInputBuilder {
         crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRecommendationExportJobsInput`](crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecommendationExportJobsInputBuilder {
     pub(crate) job_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::JobFilter>>,
@@ -75,10 +73,7 @@ impl DescribeRecommendationExportJobsInputBuilder {
     /// <p>The identification numbers of the export jobs to return.</p>
     /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p>
     /// <p>All export jobs created in the last seven days are returned if this parameter is omitted.</p>
-    pub fn set_job_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_job_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.job_ids = input;
         self
     }
@@ -100,10 +95,7 @@ impl DescribeRecommendationExportJobsInputBuilder {
         self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of export jobs.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -143,18 +135,19 @@ impl DescribeRecommendationExportJobsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeRecommendationExportJobsInput`](crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput {
-                job_ids: self.job_ids
-                ,
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                job_ids: self.job_ids,
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

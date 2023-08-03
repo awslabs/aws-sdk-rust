@@ -30,12 +30,9 @@ impl EksPodPropertiesOverride {
 
 /// A builder for [`EksPodPropertiesOverride`](crate::types::EksPodPropertiesOverride).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EksPodPropertiesOverrideBuilder {
-    pub(crate) containers:
-        ::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>>,
+    pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>>,
     pub(crate) metadata: ::std::option::Option<crate::types::EksMetadata>,
 }
 impl EksPodPropertiesOverrideBuilder {
@@ -51,17 +48,12 @@ impl EksPodPropertiesOverrideBuilder {
         self
     }
     /// <p>The overrides for the container that's used on the Amazon EKS pod.</p>
-    pub fn set_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>>,
-    ) -> Self {
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>>) -> Self {
         self.containers = input;
         self
     }
     /// <p>The overrides for the container that's used on the Amazon EKS pod.</p>
-    pub fn get_containers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>> {
         &self.containers
     }
     /// <p>Metadata about the overrides for the container that's used on the Amazon EKS pod.</p>

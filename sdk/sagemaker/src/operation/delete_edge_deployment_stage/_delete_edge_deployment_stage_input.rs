@@ -22,34 +22,26 @@ impl DeleteEdgeDeploymentStageInput {
 }
 impl DeleteEdgeDeploymentStageInput {
     /// Creates a new builder-style object to manufacture [`DeleteEdgeDeploymentStageInput`](crate::operation::delete_edge_deployment_stage::DeleteEdgeDeploymentStageInput).
-    pub fn builder() -> crate::operation::delete_edge_deployment_stage::builders::DeleteEdgeDeploymentStageInputBuilder{
+    pub fn builder() -> crate::operation::delete_edge_deployment_stage::builders::DeleteEdgeDeploymentStageInputBuilder {
         crate::operation::delete_edge_deployment_stage::builders::DeleteEdgeDeploymentStageInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEdgeDeploymentStageInput`](crate::operation::delete_edge_deployment_stage::DeleteEdgeDeploymentStageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEdgeDeploymentStageInputBuilder {
     pub(crate) edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEdgeDeploymentStageInputBuilder {
     /// <p>The name of the edge deployment plan from which the stage will be deleted.</p>
-    pub fn edge_deployment_plan_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the edge deployment plan from which the stage will be deleted.</p>
-    pub fn set_edge_deployment_plan_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_edge_deployment_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = input;
         self
     }
@@ -78,11 +70,9 @@ impl DeleteEdgeDeploymentStageInputBuilder {
         crate::operation::delete_edge_deployment_stage::DeleteEdgeDeploymentStageInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_edge_deployment_stage::DeleteEdgeDeploymentStageInput {
-                edge_deployment_plan_name: self.edge_deployment_plan_name,
-                stage_name: self.stage_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_edge_deployment_stage::DeleteEdgeDeploymentStageInput {
+            edge_deployment_plan_name: self.edge_deployment_plan_name,
+            stage_name: self.stage_name,
+        })
     }
 }

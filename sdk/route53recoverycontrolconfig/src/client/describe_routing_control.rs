@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeRoutingControlOutput`](crate::operation::describe_routing_control::DescribeRoutingControlOutput) with field(s):
     ///   - [`routing_control(Option<RoutingControl>)`](crate::operation::describe_routing_control::DescribeRoutingControlOutput::routing_control): <p>Information about the routing control.</p>
     /// - On failure, responds with [`SdkError<DescribeRoutingControlError>`](crate::operation::describe_routing_control::DescribeRoutingControlError)
-    pub fn describe_routing_control(
-        &self,
-    ) -> crate::operation::describe_routing_control::builders::DescribeRoutingControlFluentBuilder
-    {
+    pub fn describe_routing_control(&self) -> crate::operation::describe_routing_control::builders::DescribeRoutingControlFluentBuilder {
         crate::operation::describe_routing_control::builders::DescribeRoutingControlFluentBuilder::new(self.handle.clone())
     }
 }

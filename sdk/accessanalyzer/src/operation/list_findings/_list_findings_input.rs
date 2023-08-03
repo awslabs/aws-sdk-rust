@@ -9,9 +9,7 @@ pub struct ListFindingsInput {
     pub analyzer_arn: ::std::option::Option<::std::string::String>,
     /// <p>A filter to match for the findings to return.</p>
     #[doc(hidden)]
-    pub filter: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    >,
+    pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
     /// <p>The sort order for the findings returned.</p>
     #[doc(hidden)]
     pub sort: ::std::option::Option<crate::types::SortCriteria>,
@@ -28,11 +26,7 @@ impl ListFindingsInput {
         self.analyzer_arn.as_deref()
     }
     /// <p>A filter to match for the findings to return.</p>
-    pub fn filter(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    > {
+    pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
         self.filter.as_ref()
     }
     /// <p>The sort order for the findings returned.</p>
@@ -57,14 +51,10 @@ impl ListFindingsInput {
 
 /// A builder for [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsInputBuilder {
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) filter: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    >,
+    pub(crate) filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
     pub(crate) sort: ::std::option::Option<crate::types::SortCriteria>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -89,32 +79,19 @@ impl ListFindingsInputBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>A filter to match for the findings to return.</p>
-    pub fn filter(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Criterion,
-    ) -> Self {
+    pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Criterion) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.filter = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A filter to match for the findings to return.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-        >,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>) -> Self {
         self.filter = input;
         self
     }
     /// <p>A filter to match for the findings to return.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
-    > {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
         &self.filter
     }
     /// <p>The sort order for the findings returned.</p>
@@ -160,12 +137,7 @@ impl ListFindingsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_findings::ListFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_findings::ListFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsInput {
             analyzer_arn: self.analyzer_arn,
             filter: self.filter,

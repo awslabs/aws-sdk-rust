@@ -5,15 +5,12 @@
 pub struct GetSipMediaApplicationLoggingConfigurationOutput {
     /// <p>The actual logging configuration.</p>
     #[doc(hidden)]
-    pub sip_media_application_logging_configuration:
-        ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
+    pub sip_media_application_logging_configuration: ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
     _request_id: Option<String>,
 }
 impl GetSipMediaApplicationLoggingConfigurationOutput {
     /// <p>The actual logging configuration.</p>
-    pub fn sip_media_application_logging_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SipMediaApplicationLoggingConfiguration> {
+    pub fn sip_media_application_logging_configuration(&self) -> ::std::option::Option<&crate::types::SipMediaApplicationLoggingConfiguration> {
         self.sip_media_application_logging_configuration.as_ref()
     }
 }
@@ -24,27 +21,23 @@ impl ::aws_http::request_id::RequestId for GetSipMediaApplicationLoggingConfigur
 }
 impl GetSipMediaApplicationLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetSipMediaApplicationLoggingConfigurationOutput`](crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationOutput).
-    pub fn builder() -> crate::operation::get_sip_media_application_logging_configuration::builders::GetSipMediaApplicationLoggingConfigurationOutputBuilder{
-        crate::operation::get_sip_media_application_logging_configuration::builders::GetSipMediaApplicationLoggingConfigurationOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_sip_media_application_logging_configuration::builders::GetSipMediaApplicationLoggingConfigurationOutputBuilder {
+        crate::operation::get_sip_media_application_logging_configuration::builders::GetSipMediaApplicationLoggingConfigurationOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`GetSipMediaApplicationLoggingConfigurationOutput`](crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSipMediaApplicationLoggingConfigurationOutputBuilder {
-    pub(crate) sip_media_application_logging_configuration:
-        ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
+    pub(crate) sip_media_application_logging_configuration: ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
     _request_id: Option<String>,
 }
 impl GetSipMediaApplicationLoggingConfigurationOutputBuilder {
     /// <p>The actual logging configuration.</p>
-    pub fn sip_media_application_logging_configuration(
-        mut self,
-        input: crate::types::SipMediaApplicationLoggingConfiguration,
-    ) -> Self {
+    pub fn sip_media_application_logging_configuration(mut self, input: crate::types::SipMediaApplicationLoggingConfiguration) -> Self {
         self.sip_media_application_logging_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +50,7 @@ impl GetSipMediaApplicationLoggingConfigurationOutputBuilder {
         self
     }
     /// <p>The actual logging configuration.</p>
-    pub fn get_sip_media_application_logging_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration> {
+    pub fn get_sip_media_application_logging_configuration(&self) -> &::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration> {
         &self.sip_media_application_logging_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +63,9 @@ impl GetSipMediaApplicationLoggingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSipMediaApplicationLoggingConfigurationOutput`](crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationOutput{
+    pub fn build(self) -> crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationOutput {
         crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationOutput {
-            sip_media_application_logging_configuration: self.sip_media_application_logging_configuration
-            ,
+            sip_media_application_logging_configuration: self.sip_media_application_logging_configuration,
             _request_id: self._request_id,
         }
     }

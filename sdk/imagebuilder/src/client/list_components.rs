@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`component_version_list(Option<Vec<ComponentVersion>>)`](crate::operation::list_components::ListComponentsOutput::component_version_list): <p>The list of component semantic versions.</p> <note>   <p>The semantic version has four nodes: <major>    .    <minor>     .     <patch>      /      <build>       . You can assign values for the first three, and can filter on all of them.      </build>     </patch>    </minor>   </major></p>  </note>
     ///   - [`next_token(Option<String>)`](crate::operation::list_components::ListComponentsOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::operation::list_components::ListComponentsError)
-    pub fn list_components(
-        &self,
-    ) -> crate::operation::list_components::builders::ListComponentsFluentBuilder {
-        crate::operation::list_components::builders::ListComponentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_components(&self) -> crate::operation::list_components::builders::ListComponentsFluentBuilder {
+        crate::operation::list_components::builders::ListComponentsFluentBuilder::new(self.handle.clone())
     }
 }

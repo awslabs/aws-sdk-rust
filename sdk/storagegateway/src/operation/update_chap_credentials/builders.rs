@@ -39,10 +39,7 @@ impl UpdateChapCredentialsFluentBuilder {
         }
     }
     /// Access the UpdateChapCredentials as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_chap_credentials::builders::UpdateChapCredentialsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_chap_credentials::builders::UpdateChapCredentialsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl UpdateChapCredentialsFluentBuilder {
             crate::operation::update_chap_credentials::UpdateChapCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_chap_credentials::UpdateChapCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_chap_credentials::UpdateChapCredentialsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl UpdateChapCredentialsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl UpdateChapCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_chap_credentials::UpdateChapCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_chap_credentials::UpdateChapCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_chap_credentials::UpdateChapCredentialsError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl UpdateChapCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_chap_credentials::UpdateChapCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_chap_credentials::UpdateChapCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_chap_credentials::UpdateChapCredentialsError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl UpdateChapCredentialsFluentBuilder {
             crate::operation::update_chap_credentials::UpdateChapCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_chap_credentials::UpdateChapCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_chap_credentials::UpdateChapCredentialsError>,
     > {
         self.customize_middleware().await
     }
@@ -142,44 +128,30 @@ impl UpdateChapCredentialsFluentBuilder {
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    pub fn secret_to_authenticate_initiator(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_to_authenticate_initiator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.secret_to_authenticate_initiator(input.into());
         self
     }
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    pub fn set_secret_to_authenticate_initiator(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_to_authenticate_initiator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secret_to_authenticate_initiator(input);
         self
     }
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    pub fn get_secret_to_authenticate_initiator(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_secret_to_authenticate_initiator(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_secret_to_authenticate_initiator()
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn initiator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn initiator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.initiator_name(input.into());
         self
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn set_initiator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_initiator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_initiator_name(input);
         self
     }
@@ -191,10 +163,7 @@ impl UpdateChapCredentialsFluentBuilder {
     /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    pub fn secret_to_authenticate_target(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_to_authenticate_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.secret_to_authenticate_target(input.into());
         self
     }
@@ -202,10 +171,7 @@ impl UpdateChapCredentialsFluentBuilder {
     /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    pub fn set_secret_to_authenticate_target(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secret_to_authenticate_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secret_to_authenticate_target(input);
         self
     }
@@ -213,9 +179,7 @@ impl UpdateChapCredentialsFluentBuilder {
     /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    pub fn get_secret_to_authenticate_target(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_secret_to_authenticate_target(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_secret_to_authenticate_target()
     }
 }

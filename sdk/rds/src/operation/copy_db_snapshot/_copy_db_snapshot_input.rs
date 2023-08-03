@@ -149,9 +149,7 @@ impl CopyDbSnapshotInput {
 
 /// A builder for [`CopyDbSnapshotInput`](crate::operation::copy_db_snapshot::CopyDbSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyDbSnapshotInputBuilder {
     pub(crate) source_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
@@ -175,10 +173,7 @@ impl CopyDbSnapshotInputBuilder {
     /// </ul>
     /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code> </p>
     /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code> </p>
-    pub fn source_db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -193,10 +188,7 @@ impl CopyDbSnapshotInputBuilder {
     /// </ul>
     /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code> </p>
     /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code> </p>
-    pub fn set_source_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_db_snapshot_identifier = input;
         self
     }
@@ -211,9 +203,7 @@ impl CopyDbSnapshotInputBuilder {
     /// </ul>
     /// <p>Example: <code>rds:mydb-2012-04-02-00-01</code> </p>
     /// <p>Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code> </p>
-    pub fn get_source_db_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_db_snapshot_identifier
     }
     /// <p>The identifier for the copy of the snapshot.</p>
@@ -225,10 +215,7 @@ impl CopyDbSnapshotInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-db-snapshot</code> </p>
-    pub fn target_db_snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -241,10 +228,7 @@ impl CopyDbSnapshotInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-db-snapshot</code> </p>
-    pub fn set_target_db_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_db_snapshot_identifier = input;
         self
     }
@@ -257,9 +241,7 @@ impl CopyDbSnapshotInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-db-snapshot</code> </p>
-    pub fn get_target_db_snapshot_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_db_snapshot_identifier
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted DB snapshot. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -300,10 +282,7 @@ impl CopyDbSnapshotInputBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -337,10 +316,7 @@ impl CopyDbSnapshotInputBuilder {
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
     /// </note>
-    pub fn pre_signed_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pre_signed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_signed_url = ::std::option::Option::Some(input.into());
         self
     }
@@ -356,10 +332,7 @@ impl CopyDbSnapshotInputBuilder {
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
     /// </note>
-    pub fn set_pre_signed_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pre_signed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_signed_url = input;
         self
     }
@@ -380,19 +353,13 @@ impl CopyDbSnapshotInputBuilder {
     }
     /// <p>The name of an option group to associate with the copy of the snapshot.</p>
     /// <p>Specify this option if you are copying a snapshot from one Amazon Web Services Region to another, and your DB instance uses a nondefault option group. If your source DB instance uses Transparent Data Encryption for Oracle or Microsoft SQL Server, you must specify this option when copying across Amazon Web Services Regions. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option group considerations</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an option group to associate with the copy of the snapshot.</p>
     /// <p>Specify this option if you are copying a snapshot from one Amazon Web Services Region to another, and your DB instance uses a nondefault option group. If your source DB instance uses Transparent Data Encryption for Oracle or Microsoft SQL Server, you must specify this option when copying across Amazon Web Services Regions. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option group considerations</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_group_name = input;
         self
     }
@@ -403,27 +370,19 @@ impl CopyDbSnapshotInputBuilder {
     }
     /// <p>The external custom Availability Zone (CAZ) identifier for the target CAZ.</p>
     /// <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
-    pub fn target_custom_availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_custom_availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_custom_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external custom Availability Zone (CAZ) identifier for the target CAZ.</p>
     /// <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
-    pub fn set_target_custom_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_custom_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_custom_availability_zone = input;
         self
     }
     /// <p>The external custom Availability Zone (CAZ) identifier for the target CAZ.</p>
     /// <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
-    pub fn get_target_custom_availability_zone(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_custom_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_custom_availability_zone
     }
     /// <p>A value that indicates whether to copy the DB option group associated with the source DB snapshot to the target Amazon Web Services account and associate with the target DB snapshot. The associated option group can be copied only with cross-account snapshot copy calls.</p>
@@ -443,10 +402,7 @@ impl CopyDbSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CopyDbSnapshotInput`](crate::operation::copy_db_snapshot::CopyDbSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::copy_db_snapshot::CopyDbSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::copy_db_snapshot::CopyDbSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_db_snapshot::CopyDbSnapshotInput {
             source_db_snapshot_identifier: self.source_db_snapshot_identifier,
             target_db_snapshot_identifier: self.target_db_snapshot_identifier,

@@ -17,12 +17,7 @@ impl super::Client {
     ///   - [`previous(Option<Vec<String>>)`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput::previous): <p>The previous step group.</p>
     ///   - [`next(Option<Vec<String>>)`](crate::operation::get_template_step_group::GetTemplateStepGroupOutput::next): <p>The next step group.</p>
     /// - On failure, responds with [`SdkError<GetTemplateStepGroupError>`](crate::operation::get_template_step_group::GetTemplateStepGroupError)
-    pub fn get_template_step_group(
-        &self,
-    ) -> crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder
-    {
-        crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_template_step_group(&self) -> crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder {
+        crate::operation::get_template_step_group::builders::GetTemplateStepGroupFluentBuilder::new(self.handle.clone())
     }
 }

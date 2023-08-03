@@ -10,10 +10,7 @@ impl CreateLiveSourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_live_source::CreateLiveSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_live_source::CreateLiveSourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_live_source::CreateLiveSourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_live_source();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateLiveSourceFluentBuilder {
         }
     }
     /// Access the CreateLiveSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_live_source::builders::CreateLiveSourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_live_source::builders::CreateLiveSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateLiveSourceFluentBuilder {
             crate::operation::create_live_source::CreateLiveSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_live_source::CreateLiveSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_live_source::CreateLiveSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateLiveSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateLiveSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_live_source::CreateLiveSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_live_source::CreateLiveSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_live_source::CreateLiveSourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateLiveSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_live_source::CreateLiveSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_live_source::CreateLiveSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_live_source::CreateLiveSourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateLiveSourceFluentBuilder {
             crate::operation::create_live_source::CreateLiveSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_live_source::CreateLiveSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_live_source::CreateLiveSourceError>,
     > {
         self.customize_middleware().await
     }
@@ -127,40 +111,26 @@ impl CreateLiveSourceFluentBuilder {
     /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
     ///
     /// <p>A list of HTTP package configuration parameters for this live source.</p>
-    pub fn http_package_configurations(
-        mut self,
-        input: crate::types::HttpPackageConfiguration,
-    ) -> Self {
+    pub fn http_package_configurations(mut self, input: crate::types::HttpPackageConfiguration) -> Self {
         self.inner = self.inner.http_package_configurations(input);
         self
     }
     /// <p>A list of HTTP package configuration parameters for this live source.</p>
-    pub fn set_http_package_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
-    ) -> Self {
+    pub fn set_http_package_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>) -> Self {
         self.inner = self.inner.set_http_package_configurations(input);
         self
     }
     /// <p>A list of HTTP package configuration parameters for this live source.</p>
-    pub fn get_http_package_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>> {
+    pub fn get_http_package_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>> {
         self.inner.get_http_package_configurations()
     }
     /// <p>The name of the live source.</p>
-    pub fn live_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn live_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.live_source_name(input.into());
         self
     }
     /// <p>The name of the live source.</p>
-    pub fn set_live_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_live_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_live_source_name(input);
         self
     }
@@ -169,18 +139,12 @@ impl CreateLiveSourceFluentBuilder {
         self.inner.get_live_source_name()
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_location_name(input.into());
         self
     }
     /// <p>The name of the source location.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
     }
@@ -193,30 +157,17 @@ impl CreateLiveSourceFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to assign to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

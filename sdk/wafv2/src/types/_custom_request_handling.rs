@@ -26,12 +26,9 @@ impl CustomRequestHandling {
 
 /// A builder for [`CustomRequestHandling`](crate::types::CustomRequestHandling).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomRequestHandlingBuilder {
-    pub(crate) insert_headers:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>,
+    pub(crate) insert_headers: ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>,
 }
 impl CustomRequestHandlingBuilder {
     /// Appends an item to `insert_headers`.
@@ -48,18 +45,13 @@ impl CustomRequestHandlingBuilder {
     }
     /// <p>The HTTP headers to insert into the request. Duplicate header names are not allowed. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn set_insert_headers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>,
-    ) -> Self {
+    pub fn set_insert_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>) -> Self {
         self.insert_headers = input;
         self
     }
     /// <p>The HTTP headers to insert into the request. Duplicate header names are not allowed. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn get_insert_headers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>> {
+    pub fn get_insert_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>> {
         &self.insert_headers
     }
     /// Consumes the builder and constructs a [`CustomRequestHandling`](crate::types::CustomRequestHandling).

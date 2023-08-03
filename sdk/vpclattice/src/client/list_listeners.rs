@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ListenerSummary>>)`](crate::operation::list_listeners::ListListenersOutput::items): <p>Information about the listeners.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_listeners::ListListenersOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListListenersError>`](crate::operation::list_listeners::ListListenersError)
-    pub fn list_listeners(
-        &self,
-    ) -> crate::operation::list_listeners::builders::ListListenersFluentBuilder {
-        crate::operation::list_listeners::builders::ListListenersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_listeners(&self) -> crate::operation::list_listeners::builders::ListListenersFluentBuilder {
+        crate::operation::list_listeners::builders::ListListenersFluentBuilder::new(self.handle.clone())
     }
 }

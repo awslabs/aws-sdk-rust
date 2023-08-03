@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for PutHypervisorPropertyMappingsOutput {
 }
 impl PutHypervisorPropertyMappingsOutput {
     /// Creates a new builder-style object to manufacture [`PutHypervisorPropertyMappingsOutput`](crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsOutput).
-    pub fn builder() -> crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsOutputBuilder{
+    pub fn builder() -> crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsOutputBuilder {
         crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutHypervisorPropertyMappingsOutput`](crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutHypervisorPropertyMappingsOutputBuilder {
     pub(crate) hypervisor_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutHypervisorPropertyMappingsOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn set_hypervisor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hypervisor_arn = input;
         self
     }
@@ -66,10 +58,7 @@ impl PutHypervisorPropertyMappingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutHypervisorPropertyMappingsOutput`](crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsOutput
-    {
+    pub fn build(self) -> crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsOutput {
         crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsOutput {
             hypervisor_arn: self.hypervisor_arn,
             _request_id: self._request_id,

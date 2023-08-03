@@ -30,17 +30,14 @@ impl CreateVpcEndpointInput {
 }
 impl CreateVpcEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder {
+    pub fn builder() -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder {
         crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointInputBuilder {
     pub(crate) domain_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_options: ::std::option::Option<crate::types::VpcOptions>,
@@ -67,10 +64,7 @@ impl CreateVpcEndpointInputBuilder {
         self
     }
     /// <p>Options to specify the subnets and security groups for the endpoint.</p>
-    pub fn set_vpc_options(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcOptions>,
-    ) -> Self {
+    pub fn set_vpc_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
         self.vpc_options = input;
         self
     }
@@ -95,16 +89,11 @@ impl CreateVpcEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_vpc_endpoint::CreateVpcEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_vpc_endpoint::CreateVpcEndpointInput {
-                domain_arn: self.domain_arn,
-                vpc_options: self.vpc_options,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_vpc_endpoint::CreateVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_vpc_endpoint::CreateVpcEndpointInput {
+            domain_arn: self.domain_arn,
+            vpc_options: self.vpc_options,
+            client_token: self.client_token,
+        })
     }
 }

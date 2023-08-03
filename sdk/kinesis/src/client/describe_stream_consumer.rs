@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeStreamConsumerOutput`](crate::operation::describe_stream_consumer::DescribeStreamConsumerOutput) with field(s):
     ///   - [`consumer_description(Option<ConsumerDescription>)`](crate::operation::describe_stream_consumer::DescribeStreamConsumerOutput::consumer_description): <p>An object that represents the details of the consumer.</p>
     /// - On failure, responds with [`SdkError<DescribeStreamConsumerError>`](crate::operation::describe_stream_consumer::DescribeStreamConsumerError)
-    pub fn describe_stream_consumer(
-        &self,
-    ) -> crate::operation::describe_stream_consumer::builders::DescribeStreamConsumerFluentBuilder
-    {
+    pub fn describe_stream_consumer(&self) -> crate::operation::describe_stream_consumer::builders::DescribeStreamConsumerFluentBuilder {
         crate::operation::describe_stream_consumer::builders::DescribeStreamConsumerFluentBuilder::new(self.handle.clone())
     }
 }

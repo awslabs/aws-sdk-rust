@@ -5,16 +5,16 @@ pub use crate::operation::list_configured_table_associations::_list_configured_t
 
 impl ListConfiguredTableAssociationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_configured_table_associations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListConfiguredTableAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConfiguredTableAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsInputBuilder,
+    inner: crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsInputBuilder,
 }
 impl ListConfiguredTableAssociationsFluentBuilder {
     /// Creates a new `ListConfiguredTableAssociations`.
@@ -37,15 +37,20 @@ impl ListConfiguredTableAssociationsFluentBuilder {
         }
     }
     /// Access the ListConfiguredTableAssociations as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_configured_table_associations::ListConfiguredTableAssociations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_configured_table_associations::ListConfiguredTableAssociations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListConfiguredTableAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,38 +87,41 @@ impl ListConfiguredTableAssociationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_configured_table_associations::ListConfiguredTableAssociations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_configured_table_associations::ListConfiguredTableAssociations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_configured_table_associations::paginator::ListConfiguredTableAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_configured_table_associations::paginator::ListConfiguredTableAssociationsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_configured_table_associations::paginator::ListConfiguredTableAssociationsPaginator {
         crate::operation::list_configured_table_associations::paginator::ListConfiguredTableAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p>A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.</p>
-    pub fn membership_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.membership_identifier(input.into());
         self
     }
     /// <p>A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.</p>
-    pub fn set_membership_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }

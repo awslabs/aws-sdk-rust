@@ -37,10 +37,7 @@ impl CreateReplicationTaskFluentBuilder {
         }
     }
     /// Access the CreateReplicationTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_replication_task::builders::CreateReplicationTaskInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_replication_task::builders::CreateReplicationTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateReplicationTaskFluentBuilder {
             crate::operation::create_replication_task::CreateReplicationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_task::CreateReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_task::CreateReplicationTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateReplicationTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateReplicationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_task::CreateReplicationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_task::CreateReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_task::CreateReplicationTaskError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateReplicationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_task::CreateReplicationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_task::CreateReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_task::CreateReplicationTaskError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateReplicationTaskFluentBuilder {
             crate::operation::create_replication_task::CreateReplicationTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replication_task::CreateReplicationTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replication_task::CreateReplicationTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +116,7 @@ impl CreateReplicationTaskFluentBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn replication_task_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_task_identifier(input.into());
         self
     }
@@ -144,10 +127,7 @@ impl CreateReplicationTaskFluentBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn set_replication_task_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_task_identifier(input);
         self
     }
@@ -162,18 +142,12 @@ impl CreateReplicationTaskFluentBuilder {
         self.inner.get_replication_task_identifier()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.</p>
-    pub fn source_endpoint_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_endpoint_arn(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.</p>
-    pub fn set_source_endpoint_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_endpoint_arn(input);
         self
     }
@@ -182,18 +156,12 @@ impl CreateReplicationTaskFluentBuilder {
         self.inner.get_source_endpoint_arn()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.</p>
-    pub fn target_endpoint_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_endpoint_arn(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.</p>
-    pub fn set_target_endpoint_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_endpoint_arn(input);
         self
     }
@@ -202,18 +170,12 @@ impl CreateReplicationTaskFluentBuilder {
         self.inner.get_target_endpoint_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of a replication instance.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_instance_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a replication instance.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_instance_arn(input);
         self
     }
@@ -227,10 +189,7 @@ impl CreateReplicationTaskFluentBuilder {
         self
     }
     /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
-    pub fn set_migration_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationTypeValue>,
-    ) -> Self {
+    pub fn set_migration_type(mut self, input: ::std::option::Option<crate::types::MigrationTypeValue>) -> Self {
         self.inner = self.inner.set_migration_type(input);
         self
     }
@@ -239,18 +198,12 @@ impl CreateReplicationTaskFluentBuilder {
         self.inner.get_migration_type()
     }
     /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
-    pub fn table_mappings(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_mappings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_mappings(input.into());
         self
     }
     /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
-    pub fn set_table_mappings(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_table_mappings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_mappings(input);
         self
     }
@@ -259,18 +212,12 @@ impl CreateReplicationTaskFluentBuilder {
         self.inner.get_table_mappings()
     }
     /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i> </p>
-    pub fn replication_task_settings(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_task_settings(input.into());
         self
     }
     /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i> </p>
-    pub fn set_replication_task_settings(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_settings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_task_settings(input);
         self
     }
@@ -286,10 +233,7 @@ impl CreateReplicationTaskFluentBuilder {
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-    pub fn set_cdc_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_cdc_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_cdc_start_time(input);
         self
     }
@@ -305,10 +249,7 @@ impl CreateReplicationTaskFluentBuilder {
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
-    pub fn cdc_start_position(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cdc_start_position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cdc_start_position(input.into());
         self
     }
@@ -319,10 +260,7 @@ impl CreateReplicationTaskFluentBuilder {
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
-    pub fn set_cdc_start_position(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cdc_start_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cdc_start_position(input);
         self
     }
@@ -339,20 +277,14 @@ impl CreateReplicationTaskFluentBuilder {
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
-    pub fn cdc_stop_position(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cdc_stop_position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cdc_stop_position(input.into());
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
-    pub fn set_cdc_stop_position(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cdc_stop_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cdc_stop_position(input);
         self
     }
@@ -372,10 +304,7 @@ impl CreateReplicationTaskFluentBuilder {
         self
     }
     /// <p>One or more tags to be assigned to the replication task.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -398,18 +327,12 @@ impl CreateReplicationTaskFluentBuilder {
         self.inner.get_task_data()
     }
     /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
     /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`certificate_id(impl ::std::convert::Into<String>)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::certificate_id) / [`set_certificate_id(Option<String>)`](crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::set_certificate_id): <p>The identifier of the certificate object that you are deleting.</p>
     /// - On success, responds with [`DeleteCertificateOutput`](crate::operation::delete_certificate::DeleteCertificateOutput)
     /// - On failure, responds with [`SdkError<DeleteCertificateError>`](crate::operation::delete_certificate::DeleteCertificateError)
-    pub fn delete_certificate(
-        &self,
-    ) -> crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder {
-        crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_certificate(&self) -> crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder {
+        crate::operation::delete_certificate::builders::DeleteCertificateFluentBuilder::new(self.handle.clone())
     }
 }

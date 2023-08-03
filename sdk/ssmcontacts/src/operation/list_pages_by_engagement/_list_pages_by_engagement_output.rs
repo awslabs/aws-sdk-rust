@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPagesByEngagementOutput {
 }
 impl ListPagesByEngagementOutput {
     /// Creates a new builder-style object to manufacture [`ListPagesByEngagementOutput`](crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput).
-    pub fn builder(
-    ) -> crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementOutputBuilder {
         crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPagesByEngagementOutput`](crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPagesByEngagementOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) pages: ::std::option::Option<::std::vec::Vec<crate::types::Page>>,
@@ -72,10 +68,7 @@ impl ListPagesByEngagementOutputBuilder {
         self
     }
     /// <p>The list of engagements to contact channels.</p>
-    pub fn set_pages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Page>>,
-    ) -> Self {
+    pub fn set_pages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Page>>) -> Self {
         self.pages = input;
         self
     }

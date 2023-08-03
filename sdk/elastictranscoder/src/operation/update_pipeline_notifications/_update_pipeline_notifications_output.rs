@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdatePipelineNotificationsOutput {
 }
 impl UpdatePipelineNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePipelineNotificationsOutput`](crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsOutput).
-    pub fn builder() -> crate::operation::update_pipeline_notifications::builders::UpdatePipelineNotificationsOutputBuilder{
+    pub fn builder() -> crate::operation::update_pipeline_notifications::builders::UpdatePipelineNotificationsOutputBuilder {
         crate::operation::update_pipeline_notifications::builders::UpdatePipelineNotificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePipelineNotificationsOutput`](crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePipelineNotificationsOutputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::Pipeline>,
     _request_id: Option<String>,
@@ -61,9 +59,7 @@ impl UpdatePipelineNotificationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdatePipelineNotificationsOutput`](crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsOutput {
+    pub fn build(self) -> crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsOutput {
         crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsOutput {
             pipeline: self.pipeline,
             _request_id: self._request_id,

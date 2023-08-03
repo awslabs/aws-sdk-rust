@@ -15,33 +15,25 @@ impl GetMaintenanceWindowExecutionInput {
 }
 impl GetMaintenanceWindowExecutionInput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowExecutionInput`](crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput).
-    pub fn builder() -> crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionInputBuilder{
+    pub fn builder() -> crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionInputBuilder {
         crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetMaintenanceWindowExecutionInput`](crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMaintenanceWindowExecutionInputBuilder {
     pub(crate) window_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMaintenanceWindowExecutionInputBuilder {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    pub fn window_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    pub fn set_window_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_execution_id = input;
         self
     }
@@ -56,11 +48,8 @@ impl GetMaintenanceWindowExecutionInputBuilder {
         crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput {
-                window_execution_id: self.window_execution_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput {
+            window_execution_id: self.window_execution_id,
+        })
     }
 }

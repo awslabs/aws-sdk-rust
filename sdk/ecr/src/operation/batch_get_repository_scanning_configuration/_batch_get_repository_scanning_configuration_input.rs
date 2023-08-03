@@ -15,16 +15,14 @@ impl BatchGetRepositoryScanningConfigurationInput {
 }
 impl BatchGetRepositoryScanningConfigurationInput {
     /// Creates a new builder-style object to manufacture [`BatchGetRepositoryScanningConfigurationInput`](crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationInput).
-    pub fn builder() -> crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationInputBuilder {
         crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetRepositoryScanningConfigurationInput`](crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetRepositoryScanningConfigurationInputBuilder {
     pub(crate) repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -34,36 +32,32 @@ impl BatchGetRepositoryScanningConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
     ///
     /// <p>One or more repository names to get the scanning configuration for.</p>
-    pub fn repository_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.repository_names.unwrap_or_default();
         v.push(input.into());
         self.repository_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more repository names to get the scanning configuration for.</p>
-    pub fn set_repository_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.repository_names = input;
         self
     }
     /// <p>One or more repository names to get the scanning configuration for.</p>
-    pub fn get_repository_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.repository_names
     }
     /// Consumes the builder and constructs a [`BatchGetRepositoryScanningConfigurationInput`](crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationInput {
-                repository_names: self.repository_names
-                ,
-            }
+                repository_names: self.repository_names,
+            },
         )
     }
 }

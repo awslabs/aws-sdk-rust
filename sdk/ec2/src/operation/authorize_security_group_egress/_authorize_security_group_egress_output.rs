@@ -8,8 +8,7 @@ pub struct AuthorizeSecurityGroupEgressOutput {
     pub r#return: ::std::option::Option<bool>,
     /// <p>Information about the outbound (egress) security group rules that were added.</p>
     #[doc(hidden)]
-    pub security_group_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>,
+    pub security_group_rules: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>,
     _request_id: Option<String>,
 }
 impl AuthorizeSecurityGroupEgressOutput {
@@ -18,9 +17,7 @@ impl AuthorizeSecurityGroupEgressOutput {
         self.r#return
     }
     /// <p>Information about the outbound (egress) security group rules that were added.</p>
-    pub fn security_group_rules(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SecurityGroupRule]> {
+    pub fn security_group_rules(&self) -> ::std::option::Option<&[crate::types::SecurityGroupRule]> {
         self.security_group_rules.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for AuthorizeSecurityGroupEgressOutput {
 }
 impl AuthorizeSecurityGroupEgressOutput {
     /// Creates a new builder-style object to manufacture [`AuthorizeSecurityGroupEgressOutput`](crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput).
-    pub fn builder() -> crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressOutputBuilder{
+    pub fn builder() -> crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressOutputBuilder {
         crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressOutputBuilder::default()
     }
 }
 
 /// A builder for [`AuthorizeSecurityGroupEgressOutput`](crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizeSecurityGroupEgressOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
-    pub(crate) security_group_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>,
+    pub(crate) security_group_rules: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>,
     _request_id: Option<String>,
 }
 impl AuthorizeSecurityGroupEgressOutputBuilder {
@@ -74,17 +68,12 @@ impl AuthorizeSecurityGroupEgressOutputBuilder {
         self
     }
     /// <p>Information about the outbound (egress) security group rules that were added.</p>
-    pub fn set_security_group_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>,
-    ) -> Self {
+    pub fn set_security_group_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>>) -> Self {
         self.security_group_rules = input;
         self
     }
     /// <p>Information about the outbound (egress) security group rules that were added.</p>
-    pub fn get_security_group_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>> {
+    pub fn get_security_group_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRule>> {
         &self.security_group_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,9 +86,7 @@ impl AuthorizeSecurityGroupEgressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AuthorizeSecurityGroupEgressOutput`](crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput {
+    pub fn build(self) -> crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput {
         crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput {
             r#return: self.r#return,
             security_group_rules: self.security_group_rules,

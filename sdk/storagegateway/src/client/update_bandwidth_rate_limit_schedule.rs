@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateBandwidthRateLimitScheduleOutput`](crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<UpdateBandwidthRateLimitScheduleError>`](crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleError)
-    pub fn update_bandwidth_rate_limit_schedule(&self) -> crate::operation::update_bandwidth_rate_limit_schedule::builders::UpdateBandwidthRateLimitScheduleFluentBuilder{
+    pub fn update_bandwidth_rate_limit_schedule(
+        &self,
+    ) -> crate::operation::update_bandwidth_rate_limit_schedule::builders::UpdateBandwidthRateLimitScheduleFluentBuilder {
         crate::operation::update_bandwidth_rate_limit_schedule::builders::UpdateBandwidthRateLimitScheduleFluentBuilder::new(self.handle.clone())
     }
 }

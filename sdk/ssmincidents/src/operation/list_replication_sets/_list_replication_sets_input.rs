@@ -22,18 +22,14 @@ impl ListReplicationSetsInput {
 }
 impl ListReplicationSetsInput {
     /// Creates a new builder-style object to manufacture [`ListReplicationSetsInput`](crate::operation::list_replication_sets::ListReplicationSetsInput).
-    pub fn builder(
-    ) -> crate::operation::list_replication_sets::builders::ListReplicationSetsInputBuilder {
-        crate::operation::list_replication_sets::builders::ListReplicationSetsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_replication_sets::builders::ListReplicationSetsInputBuilder {
+        crate::operation::list_replication_sets::builders::ListReplicationSetsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReplicationSetsInput`](crate::operation::list_replication_sets::ListReplicationSetsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReplicationSetsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListReplicationSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListReplicationSetsInput`](crate::operation::list_replication_sets::ListReplicationSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_replication_sets::ListReplicationSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_replication_sets::ListReplicationSetsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_replication_sets::ListReplicationSetsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_replication_sets::ListReplicationSetsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

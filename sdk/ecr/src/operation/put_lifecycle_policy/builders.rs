@@ -10,10 +10,7 @@ impl PutLifecyclePolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_lifecycle_policy::PutLifecyclePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_lifecycle_policy::PutLifecyclePolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_lifecycle_policy::PutLifecyclePolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_lifecycle_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutLifecyclePolicyFluentBuilder {
         }
     }
     /// Access the PutLifecyclePolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutLifecyclePolicyFluentBuilder {
             crate::operation::put_lifecycle_policy::PutLifecyclePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_lifecycle_policy::PutLifecyclePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_lifecycle_policy::PutLifecyclePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutLifecyclePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutLifecyclePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_lifecycle_policy::PutLifecyclePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_lifecycle_policy::PutLifecyclePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_lifecycle_policy::PutLifecyclePolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutLifecyclePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_lifecycle_policy::PutLifecyclePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_lifecycle_policy::PutLifecyclePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_lifecycle_policy::PutLifecyclePolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PutLifecyclePolicyFluentBuilder {
             crate::operation::put_lifecycle_policy::PutLifecyclePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_lifecycle_policy::PutLifecyclePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_lifecycle_policy::PutLifecyclePolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl PutLifecyclePolicyFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name of the repository to receive the policy.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository to receive the policy.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -157,18 +135,12 @@ impl PutLifecyclePolicyFluentBuilder {
         self.inner.get_repository_name()
     }
     /// <p>The JSON repository policy text to apply to the repository.</p>
-    pub fn lifecycle_policy_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lifecycle_policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lifecycle_policy_text(input.into());
         self
     }
     /// <p>The JSON repository policy text to apply to the repository.</p>
-    pub fn set_lifecycle_policy_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lifecycle_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lifecycle_policy_text(input);
         self
     }

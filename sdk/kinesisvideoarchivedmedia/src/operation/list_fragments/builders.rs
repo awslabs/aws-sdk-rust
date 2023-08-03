@@ -10,10 +10,7 @@ impl ListFragmentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_fragments::ListFragmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fragments::ListFragmentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fragments::ListFragmentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_fragments();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl ListFragmentsFluentBuilder {
         }
     }
     /// Access the ListFragments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_fragments::builders::ListFragmentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_fragments::builders::ListFragmentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -72,10 +67,7 @@ impl ListFragmentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -187,10 +179,7 @@ impl ListFragmentsFluentBuilder {
         self
     }
     /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
-    pub fn set_fragment_selector(
-        mut self,
-        input: ::std::option::Option<crate::types::FragmentSelector>,
-    ) -> Self {
+    pub fn set_fragment_selector(mut self, input: ::std::option::Option<crate::types::FragmentSelector>) -> Self {
         self.inner = self.inner.set_fragment_selector(input);
         self
     }

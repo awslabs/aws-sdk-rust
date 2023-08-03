@@ -67,9 +67,7 @@ impl PatchComplianceData {
 
 /// A builder for [`PatchComplianceData`](crate::types::PatchComplianceData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PatchComplianceDataBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) kb_id: ::std::option::Option<::std::string::String>,
@@ -109,18 +107,12 @@ impl PatchComplianceDataBuilder {
         &self.kb_id
     }
     /// <p>The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and <code>CriticalUpdates</code>.</p>
-    pub fn classification(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn classification(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classification = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and <code>CriticalUpdates</code>.</p>
-    pub fn set_classification(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_classification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.classification = input;
         self
     }
@@ -150,10 +142,7 @@ impl PatchComplianceDataBuilder {
     }
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
     /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::PatchComplianceDataState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::PatchComplianceDataState>) -> Self {
         self.state = input;
         self
     }
@@ -168,10 +157,7 @@ impl PatchComplianceDataBuilder {
         self
     }
     /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide this level of information.</p>
-    pub fn set_installed_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_installed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.installed_time = input;
         self
     }

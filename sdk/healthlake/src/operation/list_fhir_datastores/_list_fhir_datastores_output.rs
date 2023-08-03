@@ -5,8 +5,7 @@
 pub struct ListFhirDatastoresOutput {
     /// <p>All properties associated with the listed data stores.</p>
     #[doc(hidden)]
-    pub datastore_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatastoreProperties>>,
+    pub datastore_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::DatastoreProperties>>,
     /// <p>Pagination token that can be used to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListFhirDatastoresOutput {
 }
 impl ListFhirDatastoresOutput {
     /// <p>All properties associated with the listed data stores.</p>
-    pub fn datastore_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DatastoreProperties]> {
+    pub fn datastore_properties_list(&self) -> ::std::option::Option<&[crate::types::DatastoreProperties]> {
         self.datastore_properties_list.as_deref()
     }
     /// <p>Pagination token that can be used to retrieve the next page of results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListFhirDatastoresOutput {
 }
 impl ListFhirDatastoresOutput {
     /// Creates a new builder-style object to manufacture [`ListFhirDatastoresOutput`](crate::operation::list_fhir_datastores::ListFhirDatastoresOutput).
-    pub fn builder(
-    ) -> crate::operation::list_fhir_datastores::builders::ListFhirDatastoresOutputBuilder {
+    pub fn builder() -> crate::operation::list_fhir_datastores::builders::ListFhirDatastoresOutputBuilder {
         crate::operation::list_fhir_datastores::builders::ListFhirDatastoresOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFhirDatastoresOutput`](crate::operation::list_fhir_datastores::ListFhirDatastoresOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFhirDatastoresOutputBuilder {
-    pub(crate) datastore_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatastoreProperties>>,
+    pub(crate) datastore_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::DatastoreProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListFhirDatastoresOutputBuilder {
         self
     }
     /// <p>All properties associated with the listed data stores.</p>
-    pub fn set_datastore_properties_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatastoreProperties>>,
-    ) -> Self {
+    pub fn set_datastore_properties_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatastoreProperties>>) -> Self {
         self.datastore_properties_list = input;
         self
     }
     /// <p>All properties associated with the listed data stores.</p>
-    pub fn get_datastore_properties_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatastoreProperties>> {
+    pub fn get_datastore_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatastoreProperties>> {
         &self.datastore_properties_list
     }
     /// <p>Pagination token that can be used to retrieve the next page of results.</p>

@@ -5,8 +5,7 @@
 pub struct ListStoredQueriesOutput {
     /// <p>A list of <code>StoredQueryMetadata</code> objects.</p>
     #[doc(hidden)]
-    pub stored_query_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::StoredQueryMetadata>>,
+    pub stored_query_metadata: ::std::option::Option<::std::vec::Vec<crate::types::StoredQueryMetadata>>,
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListStoredQueriesOutput {
 }
 impl ListStoredQueriesOutput {
     /// <p>A list of <code>StoredQueryMetadata</code> objects.</p>
-    pub fn stored_query_metadata(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StoredQueryMetadata]> {
+    pub fn stored_query_metadata(&self) -> ::std::option::Option<&[crate::types::StoredQueryMetadata]> {
         self.stored_query_metadata.as_deref()
     }
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListStoredQueriesOutput {
 }
 impl ListStoredQueriesOutput {
     /// Creates a new builder-style object to manufacture [`ListStoredQueriesOutput`](crate::operation::list_stored_queries::ListStoredQueriesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_stored_queries::builders::ListStoredQueriesOutputBuilder {
+    pub fn builder() -> crate::operation::list_stored_queries::builders::ListStoredQueriesOutputBuilder {
         crate::operation::list_stored_queries::builders::ListStoredQueriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStoredQueriesOutput`](crate::operation::list_stored_queries::ListStoredQueriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStoredQueriesOutputBuilder {
-    pub(crate) stored_query_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::StoredQueryMetadata>>,
+    pub(crate) stored_query_metadata: ::std::option::Option<::std::vec::Vec<crate::types::StoredQueryMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListStoredQueriesOutputBuilder {
         self
     }
     /// <p>A list of <code>StoredQueryMetadata</code> objects.</p>
-    pub fn set_stored_query_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StoredQueryMetadata>>,
-    ) -> Self {
+    pub fn set_stored_query_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StoredQueryMetadata>>) -> Self {
         self.stored_query_metadata = input;
         self
     }
     /// <p>A list of <code>StoredQueryMetadata</code> objects.</p>
-    pub fn get_stored_query_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StoredQueryMetadata>> {
+    pub fn get_stored_query_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StoredQueryMetadata>> {
         &self.stored_query_metadata
     }
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>

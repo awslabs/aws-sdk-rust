@@ -5,16 +5,16 @@ pub use crate::operation::update_managed_rule_set_version_expiry_date::_update_m
 
 impl UpdateManagedRuleSetVersionExpiryDateInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_managed_rule_set_version_expiry_date();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateManagedRuleSetVersionExpiryDateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_managed_rule_set_version_expiry_date::builders::UpdateManagedRuleSetVersionExpiryDateInputBuilder,
+    inner: crate::operation::update_managed_rule_set_version_expiry_date::builders::UpdateManagedRuleSetVersionExpiryDateInputBuilder,
 }
 impl UpdateManagedRuleSetVersionExpiryDateFluentBuilder {
     /// Creates a new `UpdateManagedRuleSetVersionExpiryDate`.
@@ -40,15 +40,24 @@ impl UpdateManagedRuleSetVersionExpiryDateFluentBuilder {
         }
     }
     /// Access the UpdateManagedRuleSetVersionExpiryDate as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_managed_rule_set_version_expiry_date::builders::UpdateManagedRuleSetVersionExpiryDateInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_managed_rule_set_version_expiry_date::builders::UpdateManagedRuleSetVersionExpiryDateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDate, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDate,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +66,19 @@ impl UpdateManagedRuleSetVersionExpiryDateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -84,17 +96,30 @@ impl UpdateManagedRuleSetVersionExpiryDateFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDate, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDate,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_managed_rule_set_version_expiry_date::UpdateManagedRuleSetVersionExpiryDateError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
@@ -172,18 +197,12 @@ impl UpdateManagedRuleSetVersionExpiryDateFluentBuilder {
         self.inner.get_lock_token()
     }
     /// <p>The version that you want to remove from your list of offerings for the named managed rule group. </p>
-    pub fn version_to_expire(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_to_expire(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_to_expire(input.into());
         self
     }
     /// <p>The version that you want to remove from your list of offerings for the named managed rule group. </p>
-    pub fn set_version_to_expire(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_to_expire(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_to_expire(input);
         self
     }
@@ -199,10 +218,7 @@ impl UpdateManagedRuleSetVersionExpiryDateFluentBuilder {
     }
     /// <p>The time that you want the version to expire.</p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub fn set_expiry_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiry_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_expiry_timestamp(input);
         self
     }

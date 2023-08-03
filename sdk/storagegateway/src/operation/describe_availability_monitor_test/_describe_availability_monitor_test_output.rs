@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeAvailabilityMonitorTestOutput
 }
 impl DescribeAvailabilityMonitorTestOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAvailabilityMonitorTestOutput`](crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestOutput).
-    pub fn builder() -> crate::operation::describe_availability_monitor_test::builders::DescribeAvailabilityMonitorTestOutputBuilder{
+    pub fn builder() -> crate::operation::describe_availability_monitor_test::builders::DescribeAvailabilityMonitorTestOutputBuilder {
         crate::operation::describe_availability_monitor_test::builders::DescribeAvailabilityMonitorTestOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAvailabilityMonitorTestOutput`](crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAvailabilityMonitorTestOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AvailabilityMonitorTestStatus>,
@@ -72,17 +70,12 @@ impl DescribeAvailabilityMonitorTestOutputBuilder {
         self
     }
     /// <p>The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is null.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AvailabilityMonitorTestStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AvailabilityMonitorTestStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is null.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AvailabilityMonitorTestStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AvailabilityMonitorTestStatus> {
         &self.status
     }
     /// <p>The time the high availability monitoring test was started. If a test hasn't been performed, the value of this field is null.</p>
@@ -91,10 +84,7 @@ impl DescribeAvailabilityMonitorTestOutputBuilder {
         self
     }
     /// <p>The time the high availability monitoring test was started. If a test hasn't been performed, the value of this field is null.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -112,17 +102,11 @@ impl DescribeAvailabilityMonitorTestOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAvailabilityMonitorTestOutput`](crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestOutput
-    {
+    pub fn build(self) -> crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestOutput {
         crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestOutput {
-            gateway_arn: self.gateway_arn
-            ,
-            status: self.status
-            ,
-            start_time: self.start_time
-            ,
+            gateway_arn: self.gateway_arn,
+            status: self.status,
+            start_time: self.start_time,
             _request_id: self._request_id,
         }
     }

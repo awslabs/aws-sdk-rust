@@ -61,9 +61,7 @@ impl RefreshSchedule {
 
 /// A builder for [`RefreshSchedule`](crate::types::RefreshSchedule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RefreshScheduleBuilder {
     pub(crate) schedule_id: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_frequency: ::std::option::Option<crate::types::RefreshFrequency>,
@@ -92,10 +90,7 @@ impl RefreshScheduleBuilder {
         self
     }
     /// <p>The frequency for the refresh schedule.</p>
-    pub fn set_schedule_frequency(
-        mut self,
-        input: ::std::option::Option<crate::types::RefreshFrequency>,
-    ) -> Self {
+    pub fn set_schedule_frequency(mut self, input: ::std::option::Option<crate::types::RefreshFrequency>) -> Self {
         self.schedule_frequency = input;
         self
     }
@@ -109,17 +104,12 @@ impl RefreshScheduleBuilder {
         self
     }
     /// <p>Time after which the refresh schedule can be started, expressed in <code>YYYY-MM-DDTHH:MM:SS</code> format.</p>
-    pub fn set_start_after_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_after_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_after_date_time = input;
         self
     }
     /// <p>Time after which the refresh schedule can be started, expressed in <code>YYYY-MM-DDTHH:MM:SS</code> format.</p>
-    pub fn get_start_after_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_start_after_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_after_date_time
     }
     /// <p>The type of refresh that a datset undergoes. Valid values are as follows:</p>
@@ -138,10 +128,7 @@ impl RefreshScheduleBuilder {
     /// <li> <p> <code>INCREMENTAL_REFRESH</code>: A partial refresh of some rows of a dataset, based on the time window specified.</p> </li>
     /// </ul>
     /// <p>For more information on full and incremental refreshes, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/refreshing-imported-data.html">Refreshing SPICE data</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn set_refresh_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionType>,
-    ) -> Self {
+    pub fn set_refresh_type(mut self, input: ::std::option::Option<crate::types::IngestionType>) -> Self {
         self.refresh_type = input;
         self
     }

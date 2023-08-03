@@ -37,13 +37,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AccessDeniedForDependencyExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,12 +48,8 @@ pub enum AccessDeniedForDependencyExceptionReason {
 impl ::std::convert::From<&str> for AccessDeniedForDependencyExceptionReason {
     fn from(s: &str) -> Self {
         match s {
-            "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE" => {
-                AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole
-            }
-            other => AccessDeniedForDependencyExceptionReason::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE" => AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole,
+            other => AccessDeniedForDependencyExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -74,9 +64,7 @@ impl AccessDeniedForDependencyExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole => {
-                "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE"
-            }
+            AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole => "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE",
             AccessDeniedForDependencyExceptionReason::Unknown(value) => value.as_str(),
         }
     }

@@ -8,8 +8,7 @@ pub struct ListAnomalousLogGroupsOutput {
     pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
     #[doc(hidden)]
-    pub anomalous_log_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>>,
+    pub anomalous_log_groups: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl ListAnomalousLogGroupsOutput {
         self.insight_id.as_deref()
     }
     /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
-    pub fn anomalous_log_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AnomalousLogGroup]> {
+    pub fn anomalous_log_groups(&self) -> ::std::option::Option<&[crate::types::AnomalousLogGroup]> {
         self.anomalous_log_groups.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -38,22 +35,17 @@ impl ::aws_http::request_id::RequestId for ListAnomalousLogGroupsOutput {
 }
 impl ListAnomalousLogGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListAnomalousLogGroupsOutput`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsOutputBuilder {
         crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAnomalousLogGroupsOutput`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnomalousLogGroupsOutputBuilder {
     pub(crate) insight_id: ::std::option::Option<::std::string::String>,
-    pub(crate) anomalous_log_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>>,
+    pub(crate) anomalous_log_groups: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -84,17 +76,12 @@ impl ListAnomalousLogGroupsOutputBuilder {
         self
     }
     /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
-    pub fn set_anomalous_log_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>>,
-    ) -> Self {
+    pub fn set_anomalous_log_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>>) -> Self {
         self.anomalous_log_groups = input;
         self
     }
     /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
-    pub fn get_anomalous_log_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>> {
+    pub fn get_anomalous_log_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>> {
         &self.anomalous_log_groups
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -121,9 +108,7 @@ impl ListAnomalousLogGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAnomalousLogGroupsOutput`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput {
+    pub fn build(self) -> crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput {
         crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput {
             insight_id: self.insight_id,
             anomalous_log_groups: self.anomalous_log_groups,

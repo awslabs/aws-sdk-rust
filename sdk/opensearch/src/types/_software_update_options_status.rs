@@ -30,9 +30,7 @@ impl SoftwareUpdateOptionsStatus {
 
 /// A builder for [`SoftwareUpdateOptionsStatus`](crate::types::SoftwareUpdateOptionsStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SoftwareUpdateOptionsStatusBuilder {
     pub(crate) options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
     pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
@@ -44,10 +42,7 @@ impl SoftwareUpdateOptionsStatusBuilder {
         self
     }
     /// <p>The service software update options for a domain.</p>
-    pub fn set_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::SoftwareUpdateOptions>) -> Self {
         self.options = input;
         self
     }

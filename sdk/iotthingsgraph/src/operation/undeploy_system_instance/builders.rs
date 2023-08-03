@@ -38,10 +38,7 @@ impl UndeploySystemInstanceFluentBuilder {
         }
     }
     /// Access the UndeploySystemInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::undeploy_system_instance::builders::UndeploySystemInstanceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::undeploy_system_instance::builders::UndeploySystemInstanceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl UndeploySystemInstanceFluentBuilder {
             crate::operation::undeploy_system_instance::UndeploySystemInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::undeploy_system_instance::UndeploySystemInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::undeploy_system_instance::UndeploySystemInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl UndeploySystemInstanceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl UndeploySystemInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::undeploy_system_instance::UndeploySystemInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::undeploy_system_instance::UndeploySystemInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::undeploy_system_instance::UndeploySystemInstanceError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl UndeploySystemInstanceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::undeploy_system_instance::UndeploySystemInstanceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::undeploy_system_instance::UndeploySystemInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::undeploy_system_instance::UndeploySystemInstanceError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl UndeploySystemInstanceFluentBuilder {
             crate::operation::undeploy_system_instance::UndeploySystemInstance,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::undeploy_system_instance::UndeploySystemInstanceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::undeploy_system_instance::UndeploySystemInstanceError>,
     > {
         self.customize_middleware().await
     }

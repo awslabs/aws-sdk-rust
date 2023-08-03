@@ -5,8 +5,7 @@
 pub struct ListVpceConfigurationsOutput {
     /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint configuration.</p>
     #[doc(hidden)]
-    pub vpce_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpceConfiguration>>,
+    pub vpce_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpceConfiguration>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListVpceConfigurationsOutput {
 }
 impl ListVpceConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListVpceConfigurationsOutput`](crate::operation::list_vpce_configurations::ListVpceConfigurationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_vpce_configurations::builders::ListVpceConfigurationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_vpce_configurations::builders::ListVpceConfigurationsOutputBuilder {
         crate::operation::list_vpce_configurations::builders::ListVpceConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVpceConfigurationsOutput`](crate::operation::list_vpce_configurations::ListVpceConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVpceConfigurationsOutputBuilder {
-    pub(crate) vpce_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::VpceConfiguration>>,
+    pub(crate) vpce_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpceConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListVpceConfigurationsOutputBuilder {
         self
     }
     /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint configuration.</p>
-    pub fn set_vpce_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpceConfiguration>>,
-    ) -> Self {
+    pub fn set_vpce_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpceConfiguration>>) -> Self {
         self.vpce_configurations = input;
         self
     }
     /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint configuration.</p>
-    pub fn get_vpce_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpceConfiguration>> {
+    pub fn get_vpce_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpceConfiguration>> {
         &self.vpce_configurations
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>

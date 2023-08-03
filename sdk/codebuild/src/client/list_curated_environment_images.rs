@@ -6,7 +6,9 @@ impl super::Client {
     /// - On success, responds with [`ListCuratedEnvironmentImagesOutput`](crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput) with field(s):
     ///   - [`platforms(Option<Vec<EnvironmentPlatform>>)`](crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput::platforms): <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
     /// - On failure, responds with [`SdkError<ListCuratedEnvironmentImagesError>`](crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesError)
-    pub fn list_curated_environment_images(&self) -> crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesFluentBuilder{
+    pub fn list_curated_environment_images(
+        &self,
+    ) -> crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesFluentBuilder {
         crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesFluentBuilder::new(self.handle.clone())
     }
 }

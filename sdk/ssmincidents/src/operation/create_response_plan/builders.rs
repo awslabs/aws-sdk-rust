@@ -10,10 +10,7 @@ impl CreateResponsePlanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_response_plan::CreateResponsePlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_response_plan::CreateResponsePlanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_response_plan::CreateResponsePlanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_response_plan();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateResponsePlanFluentBuilder {
         }
     }
     /// Access the CreateResponsePlan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_response_plan::builders::CreateResponsePlanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_response_plan::builders::CreateResponsePlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateResponsePlanFluentBuilder {
             crate::operation::create_response_plan::CreateResponsePlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_response_plan::CreateResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_response_plan::CreateResponsePlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateResponsePlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateResponsePlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_response_plan::CreateResponsePlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_response_plan::CreateResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_response_plan::CreateResponsePlanError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateResponsePlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_response_plan::CreateResponsePlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_response_plan::CreateResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_response_plan::CreateResponsePlanError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateResponsePlanFluentBuilder {
             crate::operation::create_response_plan::CreateResponsePlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_response_plan::CreateResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_response_plan::CreateResponsePlanError>,
     > {
         self.customize_middleware().await
     }
@@ -170,10 +154,7 @@ impl CreateResponsePlanFluentBuilder {
         self
     }
     /// <p>Details used to create an incident when using this response plan.</p>
-    pub fn set_incident_template(
-        mut self,
-        input: ::std::option::Option<crate::types::IncidentTemplate>,
-    ) -> Self {
+    pub fn set_incident_template(mut self, input: ::std::option::Option<crate::types::IncidentTemplate>) -> Self {
         self.inner = self.inner.set_incident_template(input);
         self
     }
@@ -187,10 +168,7 @@ impl CreateResponsePlanFluentBuilder {
         self
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
-    pub fn set_chat_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::ChatChannel>,
-    ) -> Self {
+    pub fn set_chat_channel(mut self, input: ::std::option::Option<crate::types::ChatChannel>) -> Self {
         self.inner = self.inner.set_chat_channel(input);
         self
     }
@@ -208,17 +186,12 @@ impl CreateResponsePlanFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn set_engagements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_engagements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_engagements(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn get_engagements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_engagements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_engagements()
     }
     /// Appends an item to `actions`.
@@ -231,10 +204,7 @@ impl CreateResponsePlanFluentBuilder {
         self
     }
     /// <p>The actions that the response plan starts at the beginning of an incident.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
@@ -247,30 +217,17 @@ impl CreateResponsePlanFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags that you are adding to the response plan.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of tags that you are adding to the response plan.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of tags that you are adding to the response plan.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// Appends an item to `integrations`.
@@ -283,17 +240,12 @@ impl CreateResponsePlanFluentBuilder {
         self
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
-    pub fn set_integrations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
-    ) -> Self {
+    pub fn set_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>) -> Self {
         self.inner = self.inner.set_integrations(input);
         self
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
-    pub fn get_integrations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
+    pub fn get_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
         self.inner.get_integrations()
     }
 }

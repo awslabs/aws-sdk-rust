@@ -100,9 +100,7 @@ impl ServiceQuota {
 
 /// A builder for [`ServiceQuota`](crate::types::ServiceQuota).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceQuotaBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
@@ -250,10 +248,7 @@ impl ServiceQuotaBuilder {
         self
     }
     /// <p>Information about the measurement.</p>
-    pub fn set_usage_metric(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricInfo>,
-    ) -> Self {
+    pub fn set_usage_metric(mut self, input: ::std::option::Option<crate::types::MetricInfo>) -> Self {
         self.usage_metric = input;
         self
     }
@@ -281,10 +276,7 @@ impl ServiceQuotaBuilder {
         self
     }
     /// <p>The error code and error reason.</p>
-    pub fn set_error_reason(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorReason>,
-    ) -> Self {
+    pub fn set_error_reason(mut self, input: ::std::option::Option<crate::types::ErrorReason>) -> Self {
         self.error_reason = input;
         self
     }

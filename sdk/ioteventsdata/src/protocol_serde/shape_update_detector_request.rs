@@ -15,10 +15,7 @@ pub fn ser_update_detector_request(
     if let Some(var_4) = &input.state {
         #[allow(unused_mut)]
         let mut object_5 = object.key("state").start_object();
-        crate::protocol_serde::shape_detector_state_definition::ser_detector_state_definition(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_detector_state_definition::ser_detector_state_definition(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

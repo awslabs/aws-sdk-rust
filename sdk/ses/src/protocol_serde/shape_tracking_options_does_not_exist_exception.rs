@@ -3,10 +3,7 @@
 pub fn de_tracking_options_does_not_exist_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TrackingOptionsDoesNotExistExceptionBuilder,
-) -> Result<
-    crate::types::error::builders::TrackingOptionsDoesNotExistExceptionBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::TrackingOptionsDoesNotExistExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

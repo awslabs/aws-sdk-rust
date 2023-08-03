@@ -39,10 +39,7 @@ impl AdminSetUserPasswordFluentBuilder {
         }
     }
     /// Access the AdminSetUserPassword as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::admin_set_user_password::builders::AdminSetUserPasswordInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::admin_set_user_password::builders::AdminSetUserPasswordInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl AdminSetUserPasswordFluentBuilder {
             crate::operation::admin_set_user_password::AdminSetUserPassword,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_set_user_password::AdminSetUserPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_set_user_password::AdminSetUserPasswordError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl AdminSetUserPasswordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl AdminSetUserPasswordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_set_user_password::AdminSetUserPasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_set_user_password::AdminSetUserPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_set_user_password::AdminSetUserPasswordError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl AdminSetUserPasswordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_set_user_password::AdminSetUserPasswordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_set_user_password::AdminSetUserPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_set_user_password::AdminSetUserPasswordError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl AdminSetUserPasswordFluentBuilder {
             crate::operation::admin_set_user_password::AdminSetUserPassword,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::admin_set_user_password::AdminSetUserPasswordError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::admin_set_user_password::AdminSetUserPasswordError>,
     > {
         self.customize_middleware().await
     }

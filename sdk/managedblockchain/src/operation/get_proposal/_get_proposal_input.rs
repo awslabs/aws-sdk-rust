@@ -29,9 +29,7 @@ impl GetProposalInput {
 
 /// A builder for [`GetProposalInput`](crate::operation::get_proposal::GetProposalInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetProposalInputBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) proposal_id: ::std::option::Option<::std::string::String>,
@@ -66,12 +64,7 @@ impl GetProposalInputBuilder {
         &self.proposal_id
     }
     /// Consumes the builder and constructs a [`GetProposalInput`](crate::operation::get_proposal::GetProposalInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_proposal::GetProposalInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_proposal::GetProposalInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_proposal::GetProposalInput {
             network_id: self.network_id,
             proposal_id: self.proposal_id,

@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`PutMaintenanceStartTimeOutput`](crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start time.</p>
     /// - On failure, responds with [`SdkError<PutMaintenanceStartTimeError>`](crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeError)
-    pub fn put_maintenance_start_time(
-        &self,
-    ) -> crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeFluentBuilder
-    {
+    pub fn put_maintenance_start_time(&self) -> crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeFluentBuilder {
         crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl PauseCampaignInput {
 
 /// A builder for [`PauseCampaignInput`](crate::operation::pause_campaign::PauseCampaignInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PauseCampaignInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl PauseCampaignInputBuilder {
     /// Consumes the builder and constructs a [`PauseCampaignInput`](crate::operation::pause_campaign::PauseCampaignInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::pause_campaign::PauseCampaignInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::pause_campaign::PauseCampaignInput {
-            id: self.id,
-        })
+    ) -> ::std::result::Result<crate::operation::pause_campaign::PauseCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::pause_campaign::PauseCampaignInput { id: self.id })
     }
 }

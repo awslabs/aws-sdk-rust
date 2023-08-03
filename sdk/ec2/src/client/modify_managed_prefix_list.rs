@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyManagedPrefixListOutput`](crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListOutput) with field(s):
     ///   - [`prefix_list(Option<ManagedPrefixList>)`](crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListOutput::prefix_list): <p>Information about the prefix list.</p>
     /// - On failure, responds with [`SdkError<ModifyManagedPrefixListError>`](crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListError)
-    pub fn modify_managed_prefix_list(
-        &self,
-    ) -> crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListFluentBuilder
-    {
+    pub fn modify_managed_prefix_list(&self) -> crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListFluentBuilder {
         crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListFluentBuilder::new(self.handle.clone())
     }
 }

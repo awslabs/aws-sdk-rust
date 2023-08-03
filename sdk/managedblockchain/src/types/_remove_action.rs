@@ -24,9 +24,7 @@ impl RemoveAction {
 
 /// A builder for [`RemoveAction`](crate::types::RemoveAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveActionBuilder {
     pub(crate) member_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,8 +45,6 @@ impl RemoveActionBuilder {
     }
     /// Consumes the builder and constructs a [`RemoveAction`](crate::types::RemoveAction).
     pub fn build(self) -> crate::types::RemoveAction {
-        crate::types::RemoveAction {
-            member_id: self.member_id,
-        }
+        crate::types::RemoveAction { member_id: self.member_id }
     }
 }

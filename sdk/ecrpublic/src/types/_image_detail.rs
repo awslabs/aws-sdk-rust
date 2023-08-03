@@ -78,9 +78,7 @@ impl ImageDetail {
 
 /// A builder for [`ImageDetail`](crate::types::ImageDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageDetailBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -107,18 +105,12 @@ impl ImageDetailBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository where this image belongs.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where this image belongs.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -152,10 +144,7 @@ impl ImageDetailBuilder {
         self
     }
     /// <p>The list of tags that's associated with this image.</p>
-    pub fn set_image_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.image_tags = input;
         self
     }
@@ -192,10 +181,7 @@ impl ImageDetailBuilder {
         self
     }
     /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at. </p>
-    pub fn set_image_pushed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_image_pushed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.image_pushed_at = input;
         self
     }
@@ -204,18 +190,12 @@ impl ImageDetailBuilder {
         &self.image_pushed_at
     }
     /// <p>The media type of the image manifest.</p>
-    pub fn image_manifest_media_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn image_manifest_media_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_manifest_media_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The media type of the image manifest.</p>
-    pub fn set_image_manifest_media_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_image_manifest_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_manifest_media_type = input;
         self
     }
@@ -224,18 +204,12 @@ impl ImageDetailBuilder {
         &self.image_manifest_media_type
     }
     /// <p>The artifact media type of the image.</p>
-    pub fn artifact_media_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_media_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_media_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The artifact media type of the image.</p>
-    pub fn set_artifact_media_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_media_type = input;
         self
     }

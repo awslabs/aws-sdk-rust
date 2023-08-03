@@ -71,17 +71,14 @@ impl ListDatasetEntriesInput {
 }
 impl ListDatasetEntriesInput {
     /// Creates a new builder-style object to manufacture [`ListDatasetEntriesInput`](crate::operation::list_dataset_entries::ListDatasetEntriesInput).
-    pub fn builder(
-    ) -> crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder {
+    pub fn builder() -> crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder {
         crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDatasetEntriesInput`](crate::operation::list_dataset_entries::ListDatasetEntriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetEntriesInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_type: ::std::option::Option<::std::string::String>,
@@ -137,18 +134,12 @@ impl ListDatasetEntriesInputBuilder {
         &self.labeled
     }
     /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
-    pub fn anomaly_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
-    pub fn set_anomaly_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_class = input;
         self
     }
@@ -162,10 +153,7 @@ impl ListDatasetEntriesInputBuilder {
         self
     }
     /// <p>Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-    pub fn set_before_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_before_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.before_creation_date = input;
         self
     }
@@ -179,10 +167,7 @@ impl ListDatasetEntriesInputBuilder {
         self
     }
     /// <p>Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-    pub fn set_after_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_after_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.after_creation_date = input;
         self
     }
@@ -219,18 +204,12 @@ impl ListDatasetEntriesInputBuilder {
         &self.max_results
     }
     /// <p>Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
-    pub fn source_ref_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_ref_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_ref_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
-    pub fn set_source_ref_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_ref_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_ref_contains = input;
         self
     }
@@ -241,22 +220,17 @@ impl ListDatasetEntriesInputBuilder {
     /// Consumes the builder and constructs a [`ListDatasetEntriesInput`](crate::operation::list_dataset_entries::ListDatasetEntriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_dataset_entries::ListDatasetEntriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_dataset_entries::ListDatasetEntriesInput {
-                project_name: self.project_name,
-                dataset_type: self.dataset_type,
-                labeled: self.labeled,
-                anomaly_class: self.anomaly_class,
-                before_creation_date: self.before_creation_date,
-                after_creation_date: self.after_creation_date,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                source_ref_contains: self.source_ref_contains,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_dataset_entries::ListDatasetEntriesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_dataset_entries::ListDatasetEntriesInput {
+            project_name: self.project_name,
+            dataset_type: self.dataset_type,
+            labeled: self.labeled,
+            anomaly_class: self.anomaly_class,
+            before_creation_date: self.before_creation_date,
+            after_creation_date: self.after_creation_date,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            source_ref_contains: self.source_ref_contains,
+        })
     }
 }

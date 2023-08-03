@@ -28,7 +28,7 @@ impl DescribePrincipalIdFormatInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePrincipalIdFormatFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatInputBuilder,
+    inner: crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatInputBuilder,
 }
 impl DescribePrincipalIdFormatFluentBuilder {
     /// Creates a new `DescribePrincipalIdFormat`.
@@ -39,7 +39,7 @@ impl DescribePrincipalIdFormatFluentBuilder {
         }
     }
     /// Access the DescribePrincipalIdFormat as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribePrincipalIdFormatFluentBuilder {
             crate::operation::describe_principal_id_format::DescribePrincipalIdFormat,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_principal_id_format::DescribePrincipalIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_principal_id_format::DescribePrincipalIdFormatError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribePrincipalIdFormatFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribePrincipalIdFormatFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_principal_id_format::DescribePrincipalIdFormatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_principal_id_format::DescribePrincipalIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_principal_id_format::DescribePrincipalIdFormatError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribePrincipalIdFormatFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_principal_id_format::DescribePrincipalIdFormatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_principal_id_format::DescribePrincipalIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_principal_id_format::DescribePrincipalIdFormatError>,
     > {
         self.send_middleware().await
     }
@@ -116,19 +107,14 @@ impl DescribePrincipalIdFormatFluentBuilder {
             crate::operation::describe_principal_id_format::DescribePrincipalIdFormat,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_principal_id_format::DescribePrincipalIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_principal_id_format::DescribePrincipalIdFormatError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_principal_id_format::paginator::DescribePrincipalIdFormatPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_principal_id_format::paginator::DescribePrincipalIdFormatPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_principal_id_format::paginator::DescribePrincipalIdFormatPaginator {
         crate::operation::describe_principal_id_format::paginator::DescribePrincipalIdFormatPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -155,10 +141,7 @@ impl DescribePrincipalIdFormatFluentBuilder {
         self
     }
     /// <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resources(input);
         self
     }

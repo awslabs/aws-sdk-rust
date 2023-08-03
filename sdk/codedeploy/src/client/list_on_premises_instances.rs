@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`instance_names(Option<Vec<String>>)`](crate::operation::list_on_premises_instances::ListOnPremisesInstancesOutput::instance_names): <p>The list of matching on-premises instance names.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_on_premises_instances::ListOnPremisesInstancesOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
     /// - On failure, responds with [`SdkError<ListOnPremisesInstancesError>`](crate::operation::list_on_premises_instances::ListOnPremisesInstancesError)
-    pub fn list_on_premises_instances(
-        &self,
-    ) -> crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesFluentBuilder
-    {
+    pub fn list_on_premises_instances(&self) -> crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesFluentBuilder {
         crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -20,7 +20,9 @@ impl super::Client {
     ///   - [`associated_transcripts(Option<Vec<AssociatedTranscript>>)`](crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput::associated_transcripts): <p>The object that contains the associated transcript that meet the criteria you specified.</p>
     ///   - [`total_results(Option<i32>)`](crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput::total_results): <p>The total number of transcripts returned by the search.</p>
     /// - On failure, responds with [`SdkError<SearchAssociatedTranscriptsError>`](crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsError)
-    pub fn search_associated_transcripts(&self) -> crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsFluentBuilder{
+    pub fn search_associated_transcripts(
+        &self,
+    ) -> crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsFluentBuilder {
         crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsFluentBuilder::new(self.handle.clone())
     }
 }

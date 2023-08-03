@@ -47,9 +47,7 @@ impl CreateProjectVersionFluentBuilder {
         }
     }
     /// Access the CreateProjectVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_project_version::builders::CreateProjectVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_project_version::builders::CreateProjectVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +59,7 @@ impl CreateProjectVersionFluentBuilder {
             crate::operation::create_project_version::CreateProjectVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_project_version::CreateProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_project_version::CreateProjectVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +69,7 @@ impl CreateProjectVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +78,7 @@ impl CreateProjectVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_project_version::CreateProjectVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_project_version::CreateProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_project_version::CreateProjectVersionError>,
     > {
         let op = self
             .inner
@@ -110,9 +101,7 @@ impl CreateProjectVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_project_version::CreateProjectVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_project_version::CreateProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_project_version::CreateProjectVersionError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +115,7 @@ impl CreateProjectVersionFluentBuilder {
             crate::operation::create_project_version::CreateProjectVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_project_version::CreateProjectVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_project_version::CreateProjectVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -166,10 +153,7 @@ impl CreateProjectVersionFluentBuilder {
         self
     }
     /// <p>The Amazon S3 bucket location to store the results of training. The S3 bucket can be in any AWS account as long as the caller has <code>s3:PutObject</code> permissions on the S3 bucket.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputConfig>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }
@@ -183,10 +167,7 @@ impl CreateProjectVersionFluentBuilder {
         self
     }
     /// <p>Specifies an external manifest that the services uses to train the model. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
-    pub fn set_training_data(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingData>,
-    ) -> Self {
+    pub fn set_training_data(mut self, input: ::std::option::Option<crate::types::TrainingData>) -> Self {
         self.inner = self.inner.set_training_data(input);
         self
     }
@@ -200,10 +181,7 @@ impl CreateProjectVersionFluentBuilder {
         self
     }
     /// <p>Specifies an external manifest that the service uses to test the model. If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>. The project must not have any associated datasets.</p>
-    pub fn set_testing_data(
-        mut self,
-        input: ::std::option::Option<crate::types::TestingData>,
-    ) -> Self {
+    pub fn set_testing_data(mut self, input: ::std::option::Option<crate::types::TestingData>) -> Self {
         self.inner = self.inner.set_testing_data(input);
         self
     }
@@ -216,30 +194,17 @@ impl CreateProjectVersionFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>

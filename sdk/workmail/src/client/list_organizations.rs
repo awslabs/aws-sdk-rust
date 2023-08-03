@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`organization_summaries(Option<Vec<OrganizationSummary>>)`](crate::operation::list_organizations::ListOrganizationsOutput::organization_summaries): <p>The overview of owned organizations presented as a list of organization summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_organizations::ListOrganizationsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListOrganizationsError>`](crate::operation::list_organizations::ListOrganizationsError)
-    pub fn list_organizations(
-        &self,
-    ) -> crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder {
-        crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_organizations(&self) -> crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder {
+        crate::operation::list_organizations::builders::ListOrganizationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -22,34 +22,26 @@ impl GetPrincipalTagAttributeMapInput {
 }
 impl GetPrincipalTagAttributeMapInput {
     /// Creates a new builder-style object to manufacture [`GetPrincipalTagAttributeMapInput`](crate::operation::get_principal_tag_attribute_map::GetPrincipalTagAttributeMapInput).
-    pub fn builder() -> crate::operation::get_principal_tag_attribute_map::builders::GetPrincipalTagAttributeMapInputBuilder{
+    pub fn builder() -> crate::operation::get_principal_tag_attribute_map::builders::GetPrincipalTagAttributeMapInputBuilder {
         crate::operation::get_principal_tag_attribute_map::builders::GetPrincipalTagAttributeMapInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPrincipalTagAttributeMapInput`](crate::operation::get_principal_tag_attribute_map::GetPrincipalTagAttributeMapInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPrincipalTagAttributeMapInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider_name: ::std::option::Option<::std::string::String>,
 }
 impl GetPrincipalTagAttributeMapInputBuilder {
     /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -58,18 +50,12 @@ impl GetPrincipalTagAttributeMapInputBuilder {
         &self.identity_pool_id
     }
     /// <p>You can use this operation to get the provider name.</p>
-    pub fn identity_provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>You can use this operation to get the provider name.</p>
-    pub fn set_identity_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_provider_name = input;
         self
     }
@@ -84,11 +70,9 @@ impl GetPrincipalTagAttributeMapInputBuilder {
         crate::operation::get_principal_tag_attribute_map::GetPrincipalTagAttributeMapInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_principal_tag_attribute_map::GetPrincipalTagAttributeMapInput {
-                identity_pool_id: self.identity_pool_id,
-                identity_provider_name: self.identity_provider_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_principal_tag_attribute_map::GetPrincipalTagAttributeMapInput {
+            identity_pool_id: self.identity_pool_id,
+            identity_provider_name: self.identity_provider_name,
+        })
     }
 }

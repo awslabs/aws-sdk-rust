@@ -37,17 +37,14 @@ impl PullRequestSourceReferenceUpdatedEventMetadata {
 }
 impl PullRequestSourceReferenceUpdatedEventMetadata {
     /// Creates a new builder-style object to manufacture [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::types::PullRequestSourceReferenceUpdatedEventMetadata).
-    pub fn builder() -> crate::types::builders::PullRequestSourceReferenceUpdatedEventMetadataBuilder
-    {
+    pub fn builder() -> crate::types::builders::PullRequestSourceReferenceUpdatedEventMetadataBuilder {
         crate::types::builders::PullRequestSourceReferenceUpdatedEventMetadataBuilder::default()
     }
 }
 
 /// A builder for [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::types::PullRequestSourceReferenceUpdatedEventMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PullRequestSourceReferenceUpdatedEventMetadataBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) before_commit_id: ::std::option::Option<::std::string::String>,
@@ -56,18 +53,12 @@ pub struct PullRequestSourceReferenceUpdatedEventMetadataBuilder {
 }
 impl PullRequestSourceReferenceUpdatedEventMetadataBuilder {
     /// <p>The name of the repository where the pull request was updated.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository where the pull request was updated.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -76,18 +67,12 @@ impl PullRequestSourceReferenceUpdatedEventMetadataBuilder {
         &self.repository_name
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was updated.</p>
-    pub fn before_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn before_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was updated.</p>
-    pub fn set_before_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_before_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_commit_id = input;
         self
     }
@@ -96,18 +81,12 @@ impl PullRequestSourceReferenceUpdatedEventMetadataBuilder {
         &self.before_commit_id
     }
     /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the pull request was updated.</p>
-    pub fn after_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the pull request was updated.</p>
-    pub fn set_after_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_commit_id = input;
         self
     }

@@ -27,7 +27,7 @@ impl CreateRelationalDatabaseInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRelationalDatabaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_relational_database::builders::CreateRelationalDatabaseInputBuilder,
+    inner: crate::operation::create_relational_database::builders::CreateRelationalDatabaseInputBuilder,
 }
 impl CreateRelationalDatabaseFluentBuilder {
     /// Creates a new `CreateRelationalDatabase`.
@@ -38,10 +38,7 @@ impl CreateRelationalDatabaseFluentBuilder {
         }
     }
     /// Access the CreateRelationalDatabase as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_relational_database::builders::CreateRelationalDatabaseInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_relational_database::builders::CreateRelationalDatabaseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl CreateRelationalDatabaseFluentBuilder {
             crate::operation::create_relational_database::CreateRelationalDatabase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_relational_database::CreateRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database::CreateRelationalDatabaseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl CreateRelationalDatabaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl CreateRelationalDatabaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_relational_database::CreateRelationalDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_relational_database::CreateRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database::CreateRelationalDatabaseError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl CreateRelationalDatabaseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_relational_database::CreateRelationalDatabaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_relational_database::CreateRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database::CreateRelationalDatabaseError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl CreateRelationalDatabaseFluentBuilder {
             crate::operation::create_relational_database::CreateRelationalDatabase,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_relational_database::CreateRelationalDatabaseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database::CreateRelationalDatabaseError>,
     > {
         self.customize_middleware().await
     }
@@ -130,10 +116,7 @@ impl CreateRelationalDatabaseFluentBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_name(input.into());
         self
     }
@@ -143,10 +126,7 @@ impl CreateRelationalDatabaseFluentBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
@@ -161,19 +141,13 @@ impl CreateRelationalDatabaseFluentBuilder {
     }
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
@@ -184,52 +158,36 @@ impl CreateRelationalDatabaseFluentBuilder {
     }
     /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of a database.</p>
     /// <p>You can get a list of database blueprints IDs by using the <code>get relational database blueprints</code> operation.</p>
-    pub fn relational_database_blueprint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_blueprint_id(input.into());
         self
     }
     /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of a database.</p>
     /// <p>You can get a list of database blueprints IDs by using the <code>get relational database blueprints</code> operation.</p>
-    pub fn set_relational_database_blueprint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_blueprint_id(input);
         self
     }
     /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of a database.</p>
     /// <p>You can get a list of database blueprints IDs by using the <code>get relational database blueprints</code> operation.</p>
-    pub fn get_relational_database_blueprint_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_relational_database_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_relational_database_blueprint_id()
     }
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
-    pub fn relational_database_bundle_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_bundle_id(input.into());
         self
     }
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
-    pub fn set_relational_database_bundle_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_bundle_id(input);
         self
     }
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
-    pub fn get_relational_database_bundle_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_relational_database_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_relational_database_bundle_id()
     }
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -249,10 +207,7 @@ impl CreateRelationalDatabaseFluentBuilder {
     /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0- 9).</p> </li>
     /// <li> <p>Can't be a word reserved by the specified database engine.</p> <p>For more information about reserved words in PostgreSQL, see the SQL Key Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
     /// </ul>
-    pub fn master_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_database_name(input.into());
         self
     }
@@ -273,10 +228,7 @@ impl CreateRelationalDatabaseFluentBuilder {
     /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0- 9).</p> </li>
     /// <li> <p>Can't be a word reserved by the specified database engine.</p> <p>For more information about reserved words in PostgreSQL, see the SQL Key Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
     /// </ul>
-    pub fn set_master_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_database_name(input);
         self
     }
@@ -317,10 +269,7 @@ impl CreateRelationalDatabaseFluentBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't be a reserved word for the chosen database engine.</p> <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
     /// </ul>
-    pub fn master_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_username(input.into());
         self
     }
@@ -341,10 +290,7 @@ impl CreateRelationalDatabaseFluentBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't be a reserved word for the chosen database engine.</p> <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
     /// </ul>
-    pub fn set_master_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_username(input);
         self
     }
@@ -373,10 +319,7 @@ impl CreateRelationalDatabaseFluentBuilder {
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-    pub fn master_user_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_user_password(input.into());
         self
     }
@@ -385,10 +328,7 @@ impl CreateRelationalDatabaseFluentBuilder {
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-    pub fn set_master_user_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_user_password(input);
         self
     }
@@ -409,10 +349,7 @@ impl CreateRelationalDatabaseFluentBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn preferred_backup_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_backup_window(input.into());
         self
     }
@@ -425,10 +362,7 @@ impl CreateRelationalDatabaseFluentBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn set_preferred_backup_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_backup_window(input);
         self
     }
@@ -454,10 +388,7 @@ impl CreateRelationalDatabaseFluentBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
     /// </ul>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
@@ -471,10 +402,7 @@ impl CreateRelationalDatabaseFluentBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
     /// </ul>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
@@ -488,9 +416,7 @@ impl CreateRelationalDatabaseFluentBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
     /// </ul>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_maintenance_window()
     }
     /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
@@ -519,10 +445,7 @@ impl CreateRelationalDatabaseFluentBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

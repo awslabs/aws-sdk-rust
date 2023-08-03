@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteAccountCustomizationOutput {
 }
 impl DeleteAccountCustomizationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountCustomizationOutput`](crate::operation::delete_account_customization::DeleteAccountCustomizationOutput).
-    pub fn builder() -> crate::operation::delete_account_customization::builders::DeleteAccountCustomizationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_account_customization::builders::DeleteAccountCustomizationOutputBuilder {
         crate::operation::delete_account_customization::builders::DeleteAccountCustomizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccountCustomizationOutput`](crate::operation::delete_account_customization::DeleteAccountCustomizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccountCustomizationOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -82,9 +80,7 @@ impl DeleteAccountCustomizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAccountCustomizationOutput`](crate::operation::delete_account_customization::DeleteAccountCustomizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_account_customization::DeleteAccountCustomizationOutput {
+    pub fn build(self) -> crate::operation::delete_account_customization::DeleteAccountCustomizationOutput {
         crate::operation::delete_account_customization::DeleteAccountCustomizationOutput {
             request_id: self.request_id,
             status: self.status.unwrap_or_default(),

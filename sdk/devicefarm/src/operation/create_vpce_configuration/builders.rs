@@ -26,8 +26,7 @@ impl CreateVpceConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateVPCEConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_vpce_configuration::builders::CreateVpceConfigurationInputBuilder,
+    inner: crate::operation::create_vpce_configuration::builders::CreateVpceConfigurationInputBuilder,
 }
 impl CreateVPCEConfigurationFluentBuilder {
     /// Creates a new `CreateVPCEConfiguration`.
@@ -38,10 +37,7 @@ impl CreateVPCEConfigurationFluentBuilder {
         }
     }
     /// Access the CreateVPCEConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_vpce_configuration::builders::CreateVpceConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_vpce_configuration::builders::CreateVpceConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateVPCEConfigurationFluentBuilder {
             crate::operation::create_vpce_configuration::CreateVPCEConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpce_configuration::CreateVPCEConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpce_configuration::CreateVPCEConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateVPCEConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateVPCEConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpce_configuration::CreateVpceConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpce_configuration::CreateVPCEConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpce_configuration::CreateVPCEConfigurationError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateVPCEConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpce_configuration::CreateVpceConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpce_configuration::CreateVPCEConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpce_configuration::CreateVPCEConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl CreateVPCEConfigurationFluentBuilder {
             crate::operation::create_vpce_configuration::CreateVPCEConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpce_configuration::CreateVPCEConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpce_configuration::CreateVPCEConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
-    pub fn vpce_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpce_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpce_configuration_name(input.into());
         self
     }
     /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
-    pub fn set_vpce_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpce_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpce_configuration_name(input);
         self
     }
@@ -145,18 +124,12 @@ impl CreateVPCEConfigurationFluentBuilder {
         self.inner.get_vpce_configuration_name()
     }
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
-    pub fn vpce_service_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpce_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpce_service_name(input.into());
         self
     }
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
-    pub fn set_vpce_service_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpce_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpce_service_name(input);
         self
     }
@@ -165,18 +138,12 @@ impl CreateVPCEConfigurationFluentBuilder {
         self.inner.get_vpce_service_name()
     }
     /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
-    pub fn service_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_dns_name(input.into());
         self
     }
     /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
-    pub fn set_service_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_dns_name(input);
         self
     }
@@ -185,25 +152,17 @@ impl CreateVPCEConfigurationFluentBuilder {
         self.inner.get_service_dns_name()
     }
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
-    pub fn vpce_configuration_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpce_configuration_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpce_configuration_description(input.into());
         self
     }
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
-    pub fn set_vpce_configuration_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpce_configuration_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpce_configuration_description(input);
         self
     }
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
-    pub fn get_vpce_configuration_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_vpce_configuration_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpce_configuration_description()
     }
 }

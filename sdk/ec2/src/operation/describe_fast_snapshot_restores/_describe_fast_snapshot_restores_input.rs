@@ -48,16 +48,14 @@ impl DescribeFastSnapshotRestoresInput {
 }
 impl DescribeFastSnapshotRestoresInput {
     /// Creates a new builder-style object to manufacture [`DescribeFastSnapshotRestoresInput`](crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresInput).
-    pub fn builder() -> crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresInputBuilder{
+    pub fn builder() -> crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresInputBuilder {
         crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFastSnapshotRestoresInput`](crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFastSnapshotRestoresInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -89,10 +87,7 @@ impl DescribeFastSnapshotRestoresInputBuilder {
     /// <li> <p> <code>snapshot-id</code>: The ID of the snapshot.</p> </li>
     /// <li> <p> <code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code> | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -155,13 +150,11 @@ impl DescribeFastSnapshotRestoresInputBuilder {
         crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_fast_snapshot_restores::DescribeFastSnapshotRestoresInput {
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            dry_run: self.dry_run,
+        })
     }
 }

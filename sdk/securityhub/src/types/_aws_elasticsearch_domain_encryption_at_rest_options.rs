@@ -23,17 +23,14 @@ impl AwsElasticsearchDomainEncryptionAtRestOptions {
 }
 impl AwsElasticsearchDomainEncryptionAtRestOptions {
     /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::types::AwsElasticsearchDomainEncryptionAtRestOptions).
-    pub fn builder() -> crate::types::builders::AwsElasticsearchDomainEncryptionAtRestOptionsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsElasticsearchDomainEncryptionAtRestOptionsBuilder {
         crate::types::builders::AwsElasticsearchDomainEncryptionAtRestOptionsBuilder::default()
     }
 }
 
 /// A builder for [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::types::AwsElasticsearchDomainEncryptionAtRestOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainEncryptionAtRestOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,

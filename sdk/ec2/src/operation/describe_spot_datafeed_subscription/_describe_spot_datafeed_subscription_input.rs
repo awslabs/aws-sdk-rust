@@ -16,16 +16,14 @@ impl DescribeSpotDatafeedSubscriptionInput {
 }
 impl DescribeSpotDatafeedSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`DescribeSpotDatafeedSubscriptionInput`](crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionInput).
-    pub fn builder() -> crate::operation::describe_spot_datafeed_subscription::builders::DescribeSpotDatafeedSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::describe_spot_datafeed_subscription::builders::DescribeSpotDatafeedSubscriptionInputBuilder {
         crate::operation::describe_spot_datafeed_subscription::builders::DescribeSpotDatafeedSubscriptionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSpotDatafeedSubscriptionInput`](crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpotDatafeedSubscriptionInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -45,12 +43,14 @@ impl DescribeSpotDatafeedSubscriptionInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeSpotDatafeedSubscriptionInput`](crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionInput {
-                dry_run: self.dry_run
-                ,
-            }
+            crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionInput { dry_run: self.dry_run },
         )
     }
 }

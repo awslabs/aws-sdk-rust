@@ -29,9 +29,7 @@ impl PutAppsListInput {
 
 /// A builder for [`PutAppsListInput`](crate::operation::put_apps_list::PutAppsListInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAppsListInputBuilder {
     pub(crate) apps_list: ::std::option::Option<crate::types::AppsListData>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -43,10 +41,7 @@ impl PutAppsListInputBuilder {
         self
     }
     /// <p>The details of the Firewall Manager applications list to be created.</p>
-    pub fn set_apps_list(
-        mut self,
-        input: ::std::option::Option<crate::types::AppsListData>,
-    ) -> Self {
+    pub fn set_apps_list(mut self, input: ::std::option::Option<crate::types::AppsListData>) -> Self {
         self.apps_list = input;
         self
     }
@@ -66,10 +61,7 @@ impl PutAppsListInputBuilder {
         self
     }
     /// <p>The tags associated with the resource.</p>
-    pub fn set_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_list = input;
         self
     }
@@ -78,12 +70,7 @@ impl PutAppsListInputBuilder {
         &self.tag_list
     }
     /// Consumes the builder and constructs a [`PutAppsListInput`](crate::operation::put_apps_list::PutAppsListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_apps_list::PutAppsListInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_apps_list::PutAppsListInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_apps_list::PutAppsListInput {
             apps_list: self.apps_list,
             tag_list: self.tag_list,

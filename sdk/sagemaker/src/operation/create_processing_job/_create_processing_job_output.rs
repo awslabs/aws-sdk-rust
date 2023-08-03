@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateProcessingJobOutput {
 }
 impl CreateProcessingJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateProcessingJobOutput`](crate::operation::create_processing_job::CreateProcessingJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_processing_job::builders::CreateProcessingJobOutputBuilder {
-        crate::operation::create_processing_job::builders::CreateProcessingJobOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_processing_job::builders::CreateProcessingJobOutputBuilder {
+        crate::operation::create_processing_job::builders::CreateProcessingJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProcessingJobOutput`](crate::operation::create_processing_job::CreateProcessingJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProcessingJobOutputBuilder {
     pub(crate) processing_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateProcessingJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the processing job.</p>
-    pub fn processing_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn processing_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.processing_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the processing job.</p>
-    pub fn set_processing_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_processing_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.processing_job_arn = input;
         self
     }

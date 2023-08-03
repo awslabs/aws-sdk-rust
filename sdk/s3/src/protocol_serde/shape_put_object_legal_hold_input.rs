@@ -11,18 +11,13 @@ pub fn ser_legal_hold_http_payload(
 
 pub fn ser_legal_hold_payload(
     input: &crate::types::ObjectLockLegalHold,
-) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
-        let mut root = writer
-            .start_el("LegalHold")
-            .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
-        crate::protocol_serde::shape_object_lock_legal_hold::ser_object_lock_legal_hold(
-            input, root,
-        )?
+        let mut root = writer.start_el("LegalHold").write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None);
+        crate::protocol_serde::shape_object_lock_legal_hold::ser_object_lock_legal_hold(input, root)?
     }
     Ok(out.into_bytes())
 }

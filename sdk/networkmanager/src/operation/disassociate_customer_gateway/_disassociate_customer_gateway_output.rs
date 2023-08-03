@@ -5,15 +5,12 @@
 pub struct DisassociateCustomerGatewayOutput {
     /// <p>Information about the customer gateway association.</p>
     #[doc(hidden)]
-    pub customer_gateway_association:
-        ::std::option::Option<crate::types::CustomerGatewayAssociation>,
+    pub customer_gateway_association: ::std::option::Option<crate::types::CustomerGatewayAssociation>,
     _request_id: Option<String>,
 }
 impl DisassociateCustomerGatewayOutput {
     /// <p>Information about the customer gateway association.</p>
-    pub fn customer_gateway_association(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomerGatewayAssociation> {
+    pub fn customer_gateway_association(&self) -> ::std::option::Option<&crate::types::CustomerGatewayAssociation> {
         self.customer_gateway_association.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DisassociateCustomerGatewayOutput {
 }
 impl DisassociateCustomerGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateCustomerGatewayOutput`](crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayOutput).
-    pub fn builder() -> crate::operation::disassociate_customer_gateway::builders::DisassociateCustomerGatewayOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_customer_gateway::builders::DisassociateCustomerGatewayOutputBuilder {
         crate::operation::disassociate_customer_gateway::builders::DisassociateCustomerGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateCustomerGatewayOutput`](crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateCustomerGatewayOutputBuilder {
-    pub(crate) customer_gateway_association:
-        ::std::option::Option<crate::types::CustomerGatewayAssociation>,
+    pub(crate) customer_gateway_association: ::std::option::Option<crate::types::CustomerGatewayAssociation>,
     _request_id: Option<String>,
 }
 impl DisassociateCustomerGatewayOutputBuilder {
     /// <p>Information about the customer gateway association.</p>
-    pub fn customer_gateway_association(
-        mut self,
-        input: crate::types::CustomerGatewayAssociation,
-    ) -> Self {
+    pub fn customer_gateway_association(mut self, input: crate::types::CustomerGatewayAssociation) -> Self {
         self.customer_gateway_association = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the customer gateway association.</p>
-    pub fn set_customer_gateway_association(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomerGatewayAssociation>,
-    ) -> Self {
+    pub fn set_customer_gateway_association(mut self, input: ::std::option::Option<crate::types::CustomerGatewayAssociation>) -> Self {
         self.customer_gateway_association = input;
         self
     }
     /// <p>Information about the customer gateway association.</p>
-    pub fn get_customer_gateway_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomerGatewayAssociation> {
+    pub fn get_customer_gateway_association(&self) -> &::std::option::Option<crate::types::CustomerGatewayAssociation> {
         &self.customer_gateway_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +58,7 @@ impl DisassociateCustomerGatewayOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateCustomerGatewayOutput`](crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayOutput {
+    pub fn build(self) -> crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayOutput {
         crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayOutput {
             customer_gateway_association: self.customer_gateway_association,
             _request_id: self._request_id,

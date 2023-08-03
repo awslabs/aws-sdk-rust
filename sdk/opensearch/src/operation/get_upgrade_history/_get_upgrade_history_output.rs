@@ -29,20 +29,16 @@ impl ::aws_http::request_id::RequestId for GetUpgradeHistoryOutput {
 }
 impl GetUpgradeHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetUpgradeHistoryOutput`](crate::operation::get_upgrade_history::GetUpgradeHistoryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_upgrade_history::builders::GetUpgradeHistoryOutputBuilder {
+    pub fn builder() -> crate::operation::get_upgrade_history::builders::GetUpgradeHistoryOutputBuilder {
         crate::operation::get_upgrade_history::builders::GetUpgradeHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUpgradeHistoryOutput`](crate::operation::get_upgrade_history::GetUpgradeHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUpgradeHistoryOutputBuilder {
-    pub(crate) upgrade_histories:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpgradeHistory>>,
+    pub(crate) upgrade_histories: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeHistory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +55,12 @@ impl GetUpgradeHistoryOutputBuilder {
         self
     }
     /// <p>A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.</p>
-    pub fn set_upgrade_histories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeHistory>>,
-    ) -> Self {
+    pub fn set_upgrade_histories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeHistory>>) -> Self {
         self.upgrade_histories = input;
         self
     }
     /// <p>A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.</p>
-    pub fn get_upgrade_histories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpgradeHistory>> {
+    pub fn get_upgrade_histories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpgradeHistory>> {
         &self.upgrade_histories
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>

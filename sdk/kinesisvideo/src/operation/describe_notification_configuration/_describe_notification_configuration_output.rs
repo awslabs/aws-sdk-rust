@@ -10,9 +10,7 @@ pub struct DescribeNotificationConfigurationOutput {
 }
 impl DescribeNotificationConfigurationOutput {
     /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    pub fn notification_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeNotificationConfigurationOutp
 }
 impl DescribeNotificationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNotificationConfigurationOutput`](crate::operation::describe_notification_configuration::DescribeNotificationConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_notification_configuration::builders::DescribeNotificationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_notification_configuration::builders::DescribeNotificationConfigurationOutputBuilder {
         crate::operation::describe_notification_configuration::builders::DescribeNotificationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeNotificationConfigurationOutput`](crate::operation::describe_notification_configuration::DescribeNotificationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNotificationConfigurationOutputBuilder {
-    pub(crate) notification_configuration:
-        ::std::option::Option<crate::types::NotificationConfiguration>,
+    pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeNotificationConfigurationOutputBuilder {
     /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    pub fn notification_configuration(
-        mut self,
-        input: crate::types::NotificationConfiguration,
-    ) -> Self {
+    pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.notification_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    pub fn set_notification_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationConfiguration>,
-    ) -> Self {
+    pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
         self.notification_configuration = input;
         self
     }
     /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    pub fn get_notification_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+    pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.notification_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,10 +58,9 @@ impl DescribeNotificationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeNotificationConfigurationOutput`](crate::operation::describe_notification_configuration::DescribeNotificationConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_notification_configuration::DescribeNotificationConfigurationOutput{
+    pub fn build(self) -> crate::operation::describe_notification_configuration::DescribeNotificationConfigurationOutput {
         crate::operation::describe_notification_configuration::DescribeNotificationConfigurationOutput {
-            notification_configuration: self.notification_configuration
-            ,
+            notification_configuration: self.notification_configuration,
             _request_id: self._request_id,
         }
     }

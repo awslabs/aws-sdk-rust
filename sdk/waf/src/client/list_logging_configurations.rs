@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`logging_configurations(Option<Vec<LoggingConfiguration>>)`](crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput::logging_configurations): <p>An array of <code>LoggingConfiguration</code> objects.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput::next_marker): <p>If you have more <code>LoggingConfigurations</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>LoggingConfigurations</code>, submit another <code>ListLoggingConfigurations</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     /// - On failure, responds with [`SdkError<ListLoggingConfigurationsError>`](crate::operation::list_logging_configurations::ListLoggingConfigurationsError)
-    pub fn list_logging_configurations(&self) -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsFluentBuilder{
+    pub fn list_logging_configurations(&self) -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsFluentBuilder {
         crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

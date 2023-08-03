@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeMatchmakingOutput`](crate::operation::describe_matchmaking::DescribeMatchmakingOutput) with field(s):
     ///   - [`ticket_list(Option<Vec<MatchmakingTicket>>)`](crate::operation::describe_matchmaking::DescribeMatchmakingOutput::ticket_list): <p>A collection of existing matchmaking ticket objects matching the request.</p>
     /// - On failure, responds with [`SdkError<DescribeMatchmakingError>`](crate::operation::describe_matchmaking::DescribeMatchmakingError)
-    pub fn describe_matchmaking(
-        &self,
-    ) -> crate::operation::describe_matchmaking::builders::DescribeMatchmakingFluentBuilder {
-        crate::operation::describe_matchmaking::builders::DescribeMatchmakingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_matchmaking(&self) -> crate::operation::describe_matchmaking::builders::DescribeMatchmakingFluentBuilder {
+        crate::operation::describe_matchmaking::builders::DescribeMatchmakingFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveAccountFromOrganizationOutput {
 }
 impl RemoveAccountFromOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`RemoveAccountFromOrganizationOutput`](crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationOutput).
-    pub fn builder() -> crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationOutputBuilder{
+    pub fn builder() -> crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationOutputBuilder {
         crate::operation::remove_account_from_organization::builders::RemoveAccountFromOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveAccountFromOrganizationOutput`](crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveAccountFromOrganizationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl RemoveAccountFromOrganizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveAccountFromOrganizationOutput`](crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationOutput
-    {
+    pub fn build(self) -> crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationOutput {
         crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationOutput {
             _request_id: self._request_id,
         }

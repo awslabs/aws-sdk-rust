@@ -43,18 +43,14 @@ impl CreateModelManifestInput {
 }
 impl CreateModelManifestInput {
     /// Creates a new builder-style object to manufacture [`CreateModelManifestInput`](crate::operation::create_model_manifest::CreateModelManifestInput).
-    pub fn builder(
-    ) -> crate::operation::create_model_manifest::builders::CreateModelManifestInputBuilder {
-        crate::operation::create_model_manifest::builders::CreateModelManifestInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_model_manifest::builders::CreateModelManifestInputBuilder {
+        crate::operation::create_model_manifest::builders::CreateModelManifestInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateModelManifestInput`](crate::operation::create_model_manifest::CreateModelManifestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateModelManifestInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -103,10 +99,7 @@ impl CreateModelManifestInputBuilder {
         self
     }
     /// <p> A list of nodes, which are a general abstraction of signals. </p>
-    pub fn set_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.nodes = input;
         self
     }
@@ -115,18 +108,12 @@ impl CreateModelManifestInputBuilder {
         &self.nodes
     }
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
-    pub fn signal_catalog_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signal_catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_catalog_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
-    pub fn set_signal_catalog_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signal_catalog_arn = input;
         self
     }
@@ -146,10 +133,7 @@ impl CreateModelManifestInputBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the vehicle model.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -160,18 +144,14 @@ impl CreateModelManifestInputBuilder {
     /// Consumes the builder and constructs a [`CreateModelManifestInput`](crate::operation::create_model_manifest::CreateModelManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_model_manifest::CreateModelManifestInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_model_manifest::CreateModelManifestInput {
-                name: self.name,
-                description: self.description,
-                nodes: self.nodes,
-                signal_catalog_arn: self.signal_catalog_arn,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_model_manifest::CreateModelManifestInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_model_manifest::CreateModelManifestInput {
+            name: self.name,
+            description: self.description,
+            nodes: self.nodes,
+            signal_catalog_arn: self.signal_catalog_arn,
+            tags: self.tags,
+        })
     }
 }

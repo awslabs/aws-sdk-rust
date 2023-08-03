@@ -42,20 +42,16 @@ impl ::aws_http::request_id::RequestId for GetMergeOptionsOutput {
 }
 impl GetMergeOptionsOutput {
     /// Creates a new builder-style object to manufacture [`GetMergeOptionsOutput`](crate::operation::get_merge_options::GetMergeOptionsOutput).
-    pub fn builder() -> crate::operation::get_merge_options::builders::GetMergeOptionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_merge_options::builders::GetMergeOptionsOutputBuilder {
         crate::operation::get_merge_options::builders::GetMergeOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMergeOptionsOutput`](crate::operation::get_merge_options::GetMergeOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMergeOptionsOutputBuilder {
-    pub(crate) merge_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::MergeOptionTypeEnum>>,
+    pub(crate) merge_options: ::std::option::Option<::std::vec::Vec<crate::types::MergeOptionTypeEnum>>,
     pub(crate) source_commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) base_commit_id: ::std::option::Option<::std::string::String>,
@@ -74,32 +70,21 @@ impl GetMergeOptionsOutputBuilder {
         self
     }
     /// <p>The merge option or strategy used to merge the code.</p>
-    pub fn set_merge_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MergeOptionTypeEnum>>,
-    ) -> Self {
+    pub fn set_merge_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MergeOptionTypeEnum>>) -> Self {
         self.merge_options = input;
         self
     }
     /// <p>The merge option or strategy used to merge the code.</p>
-    pub fn get_merge_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MergeOptionTypeEnum>> {
+    pub fn get_merge_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MergeOptionTypeEnum>> {
         &self.merge_options
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    pub fn source_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    pub fn set_source_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_commit_id = input;
         self
     }
@@ -108,18 +93,12 @@ impl GetMergeOptionsOutputBuilder {
         &self.source_commit_id
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    pub fn destination_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    pub fn set_destination_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_commit_id = input;
         self
     }
@@ -128,18 +107,12 @@ impl GetMergeOptionsOutputBuilder {
         &self.destination_commit_id
     }
     /// <p>The commit ID of the merge base.</p>
-    pub fn base_commit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn base_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The commit ID of the merge base.</p>
-    pub fn set_base_commit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_base_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_commit_id = input;
         self
     }

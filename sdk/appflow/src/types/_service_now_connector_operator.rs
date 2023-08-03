@@ -57,13 +57,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ServiceNowConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
@@ -135,9 +129,7 @@ impl ::std::convert::From<&str> for ServiceNowConnectorOperator {
             "VALIDATE_NON_NULL" => ServiceNowConnectorOperator::ValidateNonNull,
             "VALIDATE_NON_ZERO" => ServiceNowConnectorOperator::ValidateNonZero,
             "VALIDATE_NUMERIC" => ServiceNowConnectorOperator::ValidateNumeric,
-            other => ServiceNowConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ServiceNowConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

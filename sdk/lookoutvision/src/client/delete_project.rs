@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput) with field(s):
     ///   - [`project_arn(Option<String>)`](crate::operation::delete_project::DeleteProjectOutput::project_arn): <p>The Amazon Resource Name (ARN) of the project that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::operation::delete_project::DeleteProjectError)
-    pub fn delete_project(
-        &self,
-    ) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {
-        crate::operation::delete_project::builders::DeleteProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_project(&self) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {
+        crate::operation::delete_project::builders::DeleteProjectFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl AntennaDownlinkConfig {
 
 /// A builder for [`AntennaDownlinkConfig`](crate::types::AntennaDownlinkConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AntennaDownlinkConfigBuilder {
     pub(crate) spectrum_config: ::std::option::Option<crate::types::SpectrumConfig>,
 }
@@ -36,10 +34,7 @@ impl AntennaDownlinkConfigBuilder {
         self
     }
     /// <p>Object that describes a spectral <code>Config</code>.</p>
-    pub fn set_spectrum_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SpectrumConfig>,
-    ) -> Self {
+    pub fn set_spectrum_config(mut self, input: ::std::option::Option<crate::types::SpectrumConfig>) -> Self {
         self.spectrum_config = input;
         self
     }

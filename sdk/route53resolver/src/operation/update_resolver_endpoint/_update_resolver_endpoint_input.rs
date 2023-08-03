@@ -28,9 +28,7 @@ impl UpdateResolverEndpointInput {
     }
     /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
-    pub fn resolver_endpoint_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResolverEndpointType> {
+    pub fn resolver_endpoint_type(&self) -> ::std::option::Option<&crate::types::ResolverEndpointType> {
         self.resolver_endpoint_type.as_ref()
     }
     /// <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet. </p>
@@ -40,39 +38,28 @@ impl UpdateResolverEndpointInput {
 }
 impl UpdateResolverEndpointInput {
     /// Creates a new builder-style object to manufacture [`UpdateResolverEndpointInput`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointInputBuilder {
         crate::operation::update_resolver_endpoint::builders::UpdateResolverEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResolverEndpointInput`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResolverEndpointInputBuilder {
     pub(crate) resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
-    pub(crate) update_ip_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>,
+    pub(crate) update_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>,
 }
 impl UpdateResolverEndpointInputBuilder {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
-    pub fn resolver_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
-    pub fn set_resolver_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolver_endpoint_id = input;
         self
     }
@@ -102,18 +89,13 @@ impl UpdateResolverEndpointInputBuilder {
     }
     /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
-    pub fn set_resolver_endpoint_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverEndpointType>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_type(mut self, input: ::std::option::Option<crate::types::ResolverEndpointType>) -> Self {
         self.resolver_endpoint_type = input;
         self
     }
     /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
-    pub fn get_resolver_endpoint_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResolverEndpointType> {
+    pub fn get_resolver_endpoint_type(&self) -> &::std::option::Option<crate::types::ResolverEndpointType> {
         &self.resolver_endpoint_type
     }
     /// Appends an item to `update_ip_addresses`.
@@ -128,33 +110,24 @@ impl UpdateResolverEndpointInputBuilder {
         self
     }
     /// <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet. </p>
-    pub fn set_update_ip_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>,
-    ) -> Self {
+    pub fn set_update_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>) -> Self {
         self.update_ip_addresses = input;
         self
     }
     /// <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet. </p>
-    pub fn get_update_ip_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>> {
+    pub fn get_update_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>> {
         &self.update_ip_addresses
     }
     /// Consumes the builder and constructs a [`UpdateResolverEndpointInput`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput {
-                resolver_endpoint_id: self.resolver_endpoint_id,
-                name: self.name,
-                resolver_endpoint_type: self.resolver_endpoint_type,
-                update_ip_addresses: self.update_ip_addresses,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput {
+            resolver_endpoint_id: self.resolver_endpoint_id,
+            name: self.name,
+            resolver_endpoint_type: self.resolver_endpoint_type,
+            update_ip_addresses: self.update_ip_addresses,
+        })
     }
 }

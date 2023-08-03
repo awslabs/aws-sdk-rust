@@ -28,7 +28,7 @@ impl GetSavingsPlansUtilizationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_savings_plans_utilization::builders::GetSavingsPlansUtilizationInputBuilder,
+    inner: crate::operation::get_savings_plans_utilization::builders::GetSavingsPlansUtilizationInputBuilder,
 }
 impl GetSavingsPlansUtilizationFluentBuilder {
     /// Creates a new `GetSavingsPlansUtilization`.
@@ -39,7 +39,7 @@ impl GetSavingsPlansUtilizationFluentBuilder {
         }
     }
     /// Access the GetSavingsPlansUtilization as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_savings_plans_utilization::builders::GetSavingsPlansUtilizationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_savings_plans_utilization::builders::GetSavingsPlansUtilizationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl GetSavingsPlansUtilizationFluentBuilder {
             crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl GetSavingsPlansUtilizationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl GetSavingsPlansUtilizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl GetSavingsPlansUtilizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl GetSavingsPlansUtilizationFluentBuilder {
             crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilization,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +117,7 @@ impl GetSavingsPlansUtilizationFluentBuilder {
         self
     }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
     }
@@ -147,10 +133,7 @@ impl GetSavingsPlansUtilizationFluentBuilder {
     }
     /// <p>The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
     /// <p>The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn set_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::Granularity>,
-    ) -> Self {
+    pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
         self.inner = self.inner.set_granularity(input);
         self
     }
@@ -224,10 +207,7 @@ impl GetSavingsPlansUtilizationFluentBuilder {
     /// <li> <p> <code>NetSavings</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortDefinition>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

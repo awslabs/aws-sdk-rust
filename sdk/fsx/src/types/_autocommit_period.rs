@@ -45,9 +45,7 @@ impl AutocommitPeriod {
 
 /// A builder for [`AutocommitPeriod`](crate::types::AutocommitPeriod).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutocommitPeriodBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AutocommitPeriodType>,
     pub(crate) value: ::std::option::Option<i32>,
@@ -59,10 +57,7 @@ impl AutocommitPeriodBuilder {
         self
     }
     /// <p>Defines the type of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. Setting this value to <code>NONE</code> disables autocommit. The default value is <code>NONE</code>. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AutocommitPeriodType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AutocommitPeriodType>) -> Self {
         self.r#type = input;
         self
     }

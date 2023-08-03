@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`snapshot_s3_location(Option<S3Location>)`](crate::operation::describe_simulation::DescribeSimulationOutput::snapshot_s3_location): <p>A location in Amazon Simple Storage Service (Amazon S3) where SimSpace Weaver stores simulation data, such as your app .zip files and schema file. For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
     ///   - [`start_error(Option<String>)`](crate::operation::describe_simulation::DescribeSimulationOutput::start_error): <p>An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the <code>STARTING</code> state.</p>
     /// - On failure, responds with [`SdkError<DescribeSimulationError>`](crate::operation::describe_simulation::DescribeSimulationError)
-    pub fn describe_simulation(
-        &self,
-    ) -> crate::operation::describe_simulation::builders::DescribeSimulationFluentBuilder {
-        crate::operation::describe_simulation::builders::DescribeSimulationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_simulation(&self) -> crate::operation::describe_simulation::builders::DescribeSimulationFluentBuilder {
+        crate::operation::describe_simulation::builders::DescribeSimulationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`key_pairs(Option<Vec<PlaybackKeyPairSummary>>)`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput::key_pairs): <p>List of key pairs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput::next_token): <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     /// - On failure, responds with [`SdkError<ListPlaybackKeyPairsError>`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError)
-    pub fn list_playback_key_pairs(
-        &self,
-    ) -> crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder
-    {
-        crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_playback_key_pairs(&self) -> crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder {
+        crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::new(self.handle.clone())
     }
 }

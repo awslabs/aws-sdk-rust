@@ -30,9 +30,7 @@ impl ChallengeResponseType {
 
 /// A builder for [`ChallengeResponseType`](crate::types::ChallengeResponseType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChallengeResponseTypeBuilder {
     pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeName>,
     pub(crate) challenge_response: ::std::option::Option<crate::types::ChallengeResponse>,
@@ -44,10 +42,7 @@ impl ChallengeResponseTypeBuilder {
         self
     }
     /// <p>The challenge name.</p>
-    pub fn set_challenge_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ChallengeName>,
-    ) -> Self {
+    pub fn set_challenge_name(mut self, input: ::std::option::Option<crate::types::ChallengeName>) -> Self {
         self.challenge_name = input;
         self
     }
@@ -61,17 +56,12 @@ impl ChallengeResponseTypeBuilder {
         self
     }
     /// <p>The challenge response.</p>
-    pub fn set_challenge_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ChallengeResponse>,
-    ) -> Self {
+    pub fn set_challenge_response(mut self, input: ::std::option::Option<crate::types::ChallengeResponse>) -> Self {
         self.challenge_response = input;
         self
     }
     /// <p>The challenge response.</p>
-    pub fn get_challenge_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChallengeResponse> {
+    pub fn get_challenge_response(&self) -> &::std::option::Option<crate::types::ChallengeResponse> {
         &self.challenge_response
     }
     /// Consumes the builder and constructs a [`ChallengeResponseType`](crate::types::ChallengeResponseType).

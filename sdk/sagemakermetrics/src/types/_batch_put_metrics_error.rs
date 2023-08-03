@@ -42,9 +42,7 @@ impl BatchPutMetricsError {
 
 /// A builder for [`BatchPutMetricsError`](crate::types::BatchPutMetricsError).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutMetricsErrorBuilder {
     pub(crate) code: ::std::option::Option<crate::types::PutMetricsErrorCode>,
     pub(crate) metric_index: ::std::option::Option<i32>,
@@ -68,10 +66,7 @@ impl BatchPutMetricsErrorBuilder {
     /// <li> <p> <code>VALIDATION_ERROR</code>: The metric data failed validation.</p> </li>
     /// <li> <p> <code>CONFLICT_ERROR</code>: Multiple requests attempted to modify the same data simultaneously.</p> </li>
     /// </ul>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::PutMetricsErrorCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::PutMetricsErrorCode>) -> Self {
         self.code = input;
         self
     }

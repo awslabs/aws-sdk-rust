@@ -30,9 +30,7 @@ impl ExperimentState {
 
 /// A builder for [`ExperimentState`](crate::types::ExperimentState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ExperimentStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl ExperimentStateBuilder {
         self
     }
     /// <p>The state of the experiment.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExperimentStatus>) -> Self {
         self.status = input;
         self
     }

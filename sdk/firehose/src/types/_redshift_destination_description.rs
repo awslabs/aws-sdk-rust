@@ -57,15 +57,11 @@ impl RedshiftDestinationDescription {
         self.retry_options.as_ref()
     }
     /// <p>The Amazon S3 destination.</p>
-    pub fn s3_destination_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
+    pub fn s3_destination_description(&self) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
         self.s3_destination_description.as_ref()
     }
     /// <p>The data processing configuration.</p>
-    pub fn processing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>The Amazon S3 backup mode.</p>
@@ -73,15 +69,11 @@ impl RedshiftDestinationDescription {
         self.s3_backup_mode.as_ref()
     }
     /// <p>The configuration for backup in Amazon S3.</p>
-    pub fn s3_backup_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
+    pub fn s3_backup_description(&self) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
         self.s3_backup_description.as_ref()
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
 }
@@ -93,17 +85,11 @@ impl ::std::fmt::Debug for RedshiftDestinationDescription {
         formatter.field("copy_command", &self.copy_command);
         formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("retry_options", &self.retry_options);
-        formatter.field(
-            "s3_destination_description",
-            &self.s3_destination_description,
-        );
+        formatter.field("s3_destination_description", &self.s3_destination_description);
         formatter.field("processing_configuration", &self.processing_configuration);
         formatter.field("s3_backup_mode", &self.s3_backup_mode);
         formatter.field("s3_backup_description", &self.s3_backup_description);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
+        formatter.field("cloud_watch_logging_options", &self.cloud_watch_logging_options);
         formatter.finish()
     }
 }
@@ -123,14 +109,11 @@ pub struct RedshiftDestinationDescriptionBuilder {
     pub(crate) copy_command: ::std::option::Option<crate::types::CopyCommand>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) retry_options: ::std::option::Option<crate::types::RedshiftRetryOptions>,
-    pub(crate) s3_destination_description:
-        ::std::option::Option<crate::types::S3DestinationDescription>,
-    pub(crate) processing_configuration:
-        ::std::option::Option<crate::types::ProcessingConfiguration>,
+    pub(crate) s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
+    pub(crate) processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     pub(crate) s3_backup_mode: ::std::option::Option<crate::types::RedshiftS3BackupMode>,
     pub(crate) s3_backup_description: ::std::option::Option<crate::types::S3DestinationDescription>,
-    pub(crate) cloud_watch_logging_options:
-        ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    pub(crate) cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
 }
 impl RedshiftDestinationDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -148,18 +131,12 @@ impl RedshiftDestinationDescriptionBuilder {
         &self.role_arn
     }
     /// <p>The database connection string.</p>
-    pub fn cluster_jdbcurl(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_jdbcurl(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_jdbcurl = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database connection string.</p>
-    pub fn set_cluster_jdbcurl(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_jdbcurl(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_jdbcurl = input;
         self
     }
@@ -173,10 +150,7 @@ impl RedshiftDestinationDescriptionBuilder {
         self
     }
     /// <p>The <code>COPY</code> command.</p>
-    pub fn set_copy_command(
-        mut self,
-        input: ::std::option::Option<crate::types::CopyCommand>,
-    ) -> Self {
+    pub fn set_copy_command(mut self, input: ::std::option::Option<crate::types::CopyCommand>) -> Self {
         self.copy_command = input;
         self
     }
@@ -204,10 +178,7 @@ impl RedshiftDestinationDescriptionBuilder {
         self
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
-    pub fn set_retry_options(
-        mut self,
-        input: ::std::option::Option<crate::types::RedshiftRetryOptions>,
-    ) -> Self {
+    pub fn set_retry_options(mut self, input: ::std::option::Option<crate::types::RedshiftRetryOptions>) -> Self {
         self.retry_options = input;
         self
     }
@@ -216,47 +187,31 @@ impl RedshiftDestinationDescriptionBuilder {
         &self.retry_options
     }
     /// <p>The Amazon S3 destination.</p>
-    pub fn s3_destination_description(
-        mut self,
-        input: crate::types::S3DestinationDescription,
-    ) -> Self {
+    pub fn s3_destination_description(mut self, input: crate::types::S3DestinationDescription) -> Self {
         self.s3_destination_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 destination.</p>
-    pub fn set_s3_destination_description(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DestinationDescription>,
-    ) -> Self {
+    pub fn set_s3_destination_description(mut self, input: ::std::option::Option<crate::types::S3DestinationDescription>) -> Self {
         self.s3_destination_description = input;
         self
     }
     /// <p>The Amazon S3 destination.</p>
-    pub fn get_s3_destination_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DestinationDescription> {
+    pub fn get_s3_destination_description(&self) -> &::std::option::Option<crate::types::S3DestinationDescription> {
         &self.s3_destination_description
     }
     /// <p>The data processing configuration.</p>
-    pub fn processing_configuration(
-        mut self,
-        input: crate::types::ProcessingConfiguration,
-    ) -> Self {
+    pub fn processing_configuration(mut self, input: crate::types::ProcessingConfiguration) -> Self {
         self.processing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data processing configuration.</p>
-    pub fn set_processing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingConfiguration>,
-    ) -> Self {
+    pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
         self.processing_configuration = input;
         self
     }
     /// <p>The data processing configuration.</p>
-    pub fn get_processing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+    pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
         &self.processing_configuration
     }
     /// <p>The Amazon S3 backup mode.</p>
@@ -265,10 +220,7 @@ impl RedshiftDestinationDescriptionBuilder {
         self
     }
     /// <p>The Amazon S3 backup mode.</p>
-    pub fn set_s3_backup_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::RedshiftS3BackupMode>,
-    ) -> Self {
+    pub fn set_s3_backup_mode(mut self, input: ::std::option::Option<crate::types::RedshiftS3BackupMode>) -> Self {
         self.s3_backup_mode = input;
         self
     }
@@ -282,39 +234,26 @@ impl RedshiftDestinationDescriptionBuilder {
         self
     }
     /// <p>The configuration for backup in Amazon S3.</p>
-    pub fn set_s3_backup_description(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DestinationDescription>,
-    ) -> Self {
+    pub fn set_s3_backup_description(mut self, input: ::std::option::Option<crate::types::S3DestinationDescription>) -> Self {
         self.s3_backup_description = input;
         self
     }
     /// <p>The configuration for backup in Amazon S3.</p>
-    pub fn get_s3_backup_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DestinationDescription> {
+    pub fn get_s3_backup_description(&self) -> &::std::option::Option<crate::types::S3DestinationDescription> {
         &self.s3_backup_description
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(
-        mut self,
-        input: crate::types::CloudWatchLoggingOptions,
-    ) -> Self {
+    pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOptions) -> Self {
         self.cloud_watch_logging_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn set_cloud_watch_logging_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    ) -> Self {
+    pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
         self.cloud_watch_logging_options = input;
         self
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn get_cloud_watch_logging_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
+    pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
         &self.cloud_watch_logging_options
     }
     /// Consumes the builder and constructs a [`RedshiftDestinationDescription`](crate::types::RedshiftDestinationDescription).
@@ -341,17 +280,11 @@ impl ::std::fmt::Debug for RedshiftDestinationDescriptionBuilder {
         formatter.field("copy_command", &self.copy_command);
         formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("retry_options", &self.retry_options);
-        formatter.field(
-            "s3_destination_description",
-            &self.s3_destination_description,
-        );
+        formatter.field("s3_destination_description", &self.s3_destination_description);
         formatter.field("processing_configuration", &self.processing_configuration);
         formatter.field("s3_backup_mode", &self.s3_backup_mode);
         formatter.field("s3_backup_description", &self.s3_backup_description);
-        formatter.field(
-            "cloud_watch_logging_options",
-            &self.cloud_watch_logging_options,
-        );
+        formatter.field("cloud_watch_logging_options", &self.cloud_watch_logging_options);
         formatter.finish()
     }
 }

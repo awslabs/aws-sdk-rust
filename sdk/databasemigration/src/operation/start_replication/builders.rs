@@ -10,10 +10,7 @@ impl StartReplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_replication::StartReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_replication::StartReplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_replication::StartReplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_replication();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartReplicationFluentBuilder {
         }
     }
     /// Access the StartReplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_replication::builders::StartReplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_replication::builders::StartReplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartReplicationFluentBuilder {
             crate::operation::start_replication::StartReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_replication::StartReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_replication::StartReplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartReplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_replication::StartReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_replication::StartReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_replication::StartReplicationError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_replication::StartReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_replication::StartReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_replication::StartReplicationError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StartReplicationFluentBuilder {
             crate::operation::start_replication::StartReplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_replication::StartReplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_replication::StartReplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name of the replication for which to start replication.</p>
-    pub fn replication_config_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_config_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name of the replication for which to start replication.</p>
-    pub fn set_replication_config_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_config_arn(input);
         self
     }
@@ -143,18 +121,12 @@ impl StartReplicationFluentBuilder {
         self.inner.get_replication_config_arn()
     }
     /// <p>The replication type.</p>
-    pub fn start_replication_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn start_replication_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start_replication_type(input.into());
         self
     }
     /// <p>The replication type.</p>
-    pub fn set_start_replication_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_start_replication_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start_replication_type(input);
         self
     }
@@ -168,10 +140,7 @@ impl StartReplicationFluentBuilder {
         self
     }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    pub fn set_cdc_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_cdc_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_cdc_start_time(input);
         self
     }
@@ -181,19 +150,13 @@ impl StartReplicationFluentBuilder {
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
-    pub fn cdc_start_position(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cdc_start_position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cdc_start_position(input.into());
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
-    pub fn set_cdc_start_position(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cdc_start_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cdc_start_position(input);
         self
     }
@@ -203,18 +166,12 @@ impl StartReplicationFluentBuilder {
         self.inner.get_cdc_start_position()
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
-    pub fn cdc_stop_position(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cdc_stop_position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cdc_stop_position(input.into());
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
-    pub fn set_cdc_stop_position(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cdc_stop_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cdc_stop_position(input);
         self
     }

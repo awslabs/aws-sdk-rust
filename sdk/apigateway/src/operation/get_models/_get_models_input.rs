@@ -37,9 +37,7 @@ impl GetModelsInput {
 
 /// A builder for [`GetModelsInput`](crate::operation::get_models::GetModelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetModelsInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
@@ -89,12 +87,7 @@ impl GetModelsInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`GetModelsInput`](crate::operation::get_models::GetModelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_models::GetModelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_models::GetModelsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_models::GetModelsInput {
             rest_api_id: self.rest_api_id,
             position: self.position,

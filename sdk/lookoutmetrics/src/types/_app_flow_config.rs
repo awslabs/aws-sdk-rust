@@ -30,9 +30,7 @@ impl AppFlowConfig {
 
 /// A builder for [`AppFlowConfig`](crate::types::AppFlowConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppFlowConfigBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flow_name: ::std::option::Option<::std::string::String>,

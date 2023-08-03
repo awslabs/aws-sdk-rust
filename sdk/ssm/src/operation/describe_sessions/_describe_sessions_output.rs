@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeSessionsOutput {
 }
 impl DescribeSessionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSessionsOutput`](crate::operation::describe_sessions::DescribeSessionsOutput).
-    pub fn builder() -> crate::operation::describe_sessions::builders::DescribeSessionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_sessions::builders::DescribeSessionsOutputBuilder {
         crate::operation::describe_sessions::builders::DescribeSessionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSessionsOutput`](crate::operation::describe_sessions::DescribeSessionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSessionsOutputBuilder {
     pub(crate) sessions: ::std::option::Option<::std::vec::Vec<crate::types::Session>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl DescribeSessionsOutputBuilder {
         self
     }
     /// <p>A list of sessions meeting the request parameters.</p>
-    pub fn set_sessions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Session>>,
-    ) -> Self {
+    pub fn set_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Session>>) -> Self {
         self.sessions = input;
         self
     }

@@ -28,9 +28,7 @@ impl TestFailoverOutput {
 
 /// A builder for [`TestFailoverOutput`](crate::operation::test_failover::TestFailoverOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestFailoverOutputBuilder {
     pub(crate) replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl TestFailoverOutputBuilder {
         self
     }
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn set_replication_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationGroup>,
-    ) -> Self {
+    pub fn set_replication_group(mut self, input: ::std::option::Option<crate::types::ReplicationGroup>) -> Self {
         self.replication_group = input;
         self
     }

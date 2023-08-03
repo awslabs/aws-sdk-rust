@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`stack_events(Option<Vec<StackEvent>>)`](crate::operation::describe_stack_events::DescribeStackEventsOutput::stack_events): <p>A list of <code>StackEvents</code> structures.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_stack_events::DescribeStackEventsOutput::next_token): <p>If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional page exists, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeStackEventsError>`](crate::operation::describe_stack_events::DescribeStackEventsError)
-    pub fn describe_stack_events(
-        &self,
-    ) -> crate::operation::describe_stack_events::builders::DescribeStackEventsFluentBuilder {
-        crate::operation::describe_stack_events::builders::DescribeStackEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_stack_events(&self) -> crate::operation::describe_stack_events::builders::DescribeStackEventsFluentBuilder {
+        crate::operation::describe_stack_events::builders::DescribeStackEventsFluentBuilder::new(self.handle.clone())
     }
 }

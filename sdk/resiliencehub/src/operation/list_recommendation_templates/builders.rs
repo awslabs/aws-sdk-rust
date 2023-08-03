@@ -26,7 +26,7 @@ impl ListRecommendationTemplatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRecommendationTemplatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesInputBuilder,
+    inner: crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesInputBuilder,
 }
 impl ListRecommendationTemplatesFluentBuilder {
     /// Creates a new `ListRecommendationTemplates`.
@@ -37,7 +37,7 @@ impl ListRecommendationTemplatesFluentBuilder {
         }
     }
     /// Access the ListRecommendationTemplates as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListRecommendationTemplatesFluentBuilder {
             crate::operation::list_recommendation_templates::ListRecommendationTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommendation_templates::ListRecommendationTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommendation_templates::ListRecommendationTemplatesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListRecommendationTemplatesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListRecommendationTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommendation_templates::ListRecommendationTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommendation_templates::ListRecommendationTemplatesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListRecommendationTemplatesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommendation_templates::ListRecommendationTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommendation_templates::ListRecommendationTemplatesError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListRecommendationTemplatesFluentBuilder {
             crate::operation::list_recommendation_templates::ListRecommendationTemplates,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommendation_templates::ListRecommendationTemplatesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommendation_templates::ListRecommendationTemplatesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_recommendation_templates::paginator::ListRecommendationTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_recommendation_templates::paginator::ListRecommendationTemplatesPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_recommendation_templates::paginator::ListRecommendationTemplatesPaginator {
         crate::operation::list_recommendation_templates::paginator::ListRecommendationTemplatesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn assessment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn set_assessment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_arn(input);
         self
     }
@@ -170,32 +153,21 @@ impl ListRecommendationTemplatesFluentBuilder {
         self
     }
     /// <p>The status of the action.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplateStatus>>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplateStatus>>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
     /// <p>The status of the action.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplateStatus>> {
+    pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationTemplateStatus>> {
         self.inner.get_status()
     }
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    pub fn recommendation_template_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recommendation_template_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    pub fn set_recommendation_template_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recommendation_template_arn(input);
         self
     }

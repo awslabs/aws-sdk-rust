@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateProxySessionOutput {
 }
 impl CreateProxySessionOutput {
     /// Creates a new builder-style object to manufacture [`CreateProxySessionOutput`](crate::operation::create_proxy_session::CreateProxySessionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_proxy_session::builders::CreateProxySessionOutputBuilder {
+    pub fn builder() -> crate::operation::create_proxy_session::builders::CreateProxySessionOutputBuilder {
         crate::operation::create_proxy_session::builders::CreateProxySessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateProxySessionOutput`](crate::operation::create_proxy_session::CreateProxySessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProxySessionOutputBuilder {
     pub(crate) proxy_session: ::std::option::Option<crate::types::ProxySession>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateProxySessionOutputBuilder {
         self
     }
     /// <p>The proxy session details.</p>
-    pub fn set_proxy_session(
-        mut self,
-        input: ::std::option::Option<crate::types::ProxySession>,
-    ) -> Self {
+    pub fn set_proxy_session(mut self, input: ::std::option::Option<crate::types::ProxySession>) -> Self {
         self.proxy_session = input;
         self
     }

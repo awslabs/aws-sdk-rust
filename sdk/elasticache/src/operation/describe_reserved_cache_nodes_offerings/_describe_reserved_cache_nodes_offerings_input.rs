@@ -124,16 +124,14 @@ impl DescribeReservedCacheNodesOfferingsInput {
 }
 impl DescribeReservedCacheNodesOfferingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedCacheNodesOfferingsInput`](crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsInput).
-    pub fn builder() -> crate::operation::describe_reserved_cache_nodes_offerings::builders::DescribeReservedCacheNodesOfferingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_cache_nodes_offerings::builders::DescribeReservedCacheNodesOfferingsInputBuilder {
         crate::operation::describe_reserved_cache_nodes_offerings::builders::DescribeReservedCacheNodesOfferingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedCacheNodesOfferingsInput`](crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedCacheNodesOfferingsInputBuilder {
     pub(crate) reserved_cache_nodes_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) cache_node_type: ::std::option::Option<::std::string::String>,
@@ -146,27 +144,19 @@ pub struct DescribeReservedCacheNodesOfferingsInputBuilder {
 impl DescribeReservedCacheNodesOfferingsInputBuilder {
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
-    pub fn reserved_cache_nodes_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_cache_nodes_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_cache_nodes_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
-    pub fn set_reserved_cache_nodes_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_cache_nodes_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_cache_nodes_offering_id = input;
         self
     }
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
-    pub fn get_reserved_cache_nodes_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reserved_cache_nodes_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_cache_nodes_offering_id
     }
     /// <p>The cache node type filter value. Use this parameter to show only the available offerings matching the specified cache node type.</p>
@@ -198,10 +188,7 @@ impl DescribeReservedCacheNodesOfferingsInputBuilder {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    pub fn cache_node_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_node_type = ::std::option::Option::Some(input.into());
         self
     }
@@ -234,10 +221,7 @@ impl DescribeReservedCacheNodesOfferingsInputBuilder {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    pub fn set_cache_node_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_node_type = input;
         self
     }
@@ -291,18 +275,12 @@ impl DescribeReservedCacheNodesOfferingsInputBuilder {
         &self.duration
     }
     /// <p>The product description filter value. Use this parameter to show only the available offerings matching the specified product description.</p>
-    pub fn product_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn product_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product description filter value. Use this parameter to show only the available offerings matching the specified product description.</p>
-    pub fn set_product_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_product_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_description = input;
         self
     }
@@ -312,19 +290,13 @@ impl DescribeReservedCacheNodesOfferingsInputBuilder {
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
-    pub fn offering_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn offering_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_type = input;
         self
     }
@@ -368,24 +340,22 @@ impl DescribeReservedCacheNodesOfferingsInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeReservedCacheNodesOfferingsInput`](crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsInput {
-                reserved_cache_nodes_offering_id: self.reserved_cache_nodes_offering_id
-                ,
-                cache_node_type: self.cache_node_type
-                ,
-                duration: self.duration
-                ,
-                product_description: self.product_description
-                ,
-                offering_type: self.offering_type
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                reserved_cache_nodes_offering_id: self.reserved_cache_nodes_offering_id,
+                cache_node_type: self.cache_node_type,
+                duration: self.duration,
+                product_description: self.product_description,
+                offering_type: self.offering_type,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }

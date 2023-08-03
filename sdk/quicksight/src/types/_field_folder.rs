@@ -30,9 +30,7 @@ impl FieldFolder {
 
 /// A builder for [`FieldFolder`](crate::types::FieldFolder).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FieldFolderBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,10 +62,7 @@ impl FieldFolderBuilder {
         self
     }
     /// <p>A folder has a list of columns. A column can only be in one folder.</p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.columns = input;
         self
     }

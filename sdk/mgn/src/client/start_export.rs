@@ -9,9 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartExportOutput`](crate::operation::start_export::StartExportOutput) with field(s):
     ///   - [`export_task(Option<ExportTask>)`](crate::operation::start_export::StartExportOutput::export_task): <p>Start export response export task.</p>
     /// - On failure, responds with [`SdkError<StartExportError>`](crate::operation::start_export::StartExportError)
-    pub fn start_export(
-        &self,
-    ) -> crate::operation::start_export::builders::StartExportFluentBuilder {
+    pub fn start_export(&self) -> crate::operation::start_export::builders::StartExportFluentBuilder {
         crate::operation::start_export::builders::StartExportFluentBuilder::new(self.handle.clone())
     }
 }

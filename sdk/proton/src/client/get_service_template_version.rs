@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetServiceTemplateVersionOutput`](crate::operation::get_service_template_version::GetServiceTemplateVersionOutput) with field(s):
     ///   - [`service_template_version(Option<ServiceTemplateVersion>)`](crate::operation::get_service_template_version::GetServiceTemplateVersionOutput::service_template_version): <p>The detailed data of the requested service template version.</p>
     /// - On failure, responds with [`SdkError<GetServiceTemplateVersionError>`](crate::operation::get_service_template_version::GetServiceTemplateVersionError)
-    pub fn get_service_template_version(&self) -> crate::operation::get_service_template_version::builders::GetServiceTemplateVersionFluentBuilder{
+    pub fn get_service_template_version(&self) -> crate::operation::get_service_template_version::builders::GetServiceTemplateVersionFluentBuilder {
         crate::operation::get_service_template_version::builders::GetServiceTemplateVersionFluentBuilder::new(self.handle.clone())
     }
 }

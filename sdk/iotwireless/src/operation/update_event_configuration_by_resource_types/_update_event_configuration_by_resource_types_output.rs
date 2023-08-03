@@ -12,16 +12,15 @@ impl ::aws_http::request_id::RequestId for UpdateEventConfigurationByResourceTyp
 }
 impl UpdateEventConfigurationByResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEventConfigurationByResourceTypesOutput`](crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput).
-    pub fn builder() -> crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesOutputBuilder{
+    pub fn builder() -> crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesOutputBuilder
+    {
         crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEventConfigurationByResourceTypesOutput`](crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEventConfigurationByResourceTypesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +35,7 @@ impl UpdateEventConfigurationByResourceTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateEventConfigurationByResourceTypesOutput`](crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput).
-    pub fn build(self) -> crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput{
+    pub fn build(self) -> crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput {
         crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput {
             _request_id: self._request_id,
         }

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateTaskExecutionOutput {
 }
 impl UpdateTaskExecutionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTaskExecutionOutput`](crate::operation::update_task_execution::UpdateTaskExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_task_execution::builders::UpdateTaskExecutionOutputBuilder {
-        crate::operation::update_task_execution::builders::UpdateTaskExecutionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_task_execution::builders::UpdateTaskExecutionOutputBuilder {
+        crate::operation::update_task_execution::builders::UpdateTaskExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTaskExecutionOutput`](crate::operation::update_task_execution::UpdateTaskExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTaskExecutionOutputBuilder {
     _request_id: Option<String>,
 }

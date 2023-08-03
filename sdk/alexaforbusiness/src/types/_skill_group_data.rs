@@ -37,9 +37,7 @@ impl SkillGroupData {
 
 /// A builder for [`SkillGroupData`](crate::types::SkillGroupData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SkillGroupDataBuilder {
     pub(crate) skill_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) skill_group_name: ::std::option::Option<::std::string::String>,
@@ -47,18 +45,12 @@ pub struct SkillGroupDataBuilder {
 }
 impl SkillGroupDataBuilder {
     /// <p>The skill group ARN of a skill group.</p>
-    pub fn skill_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The skill group ARN of a skill group.</p>
-    pub fn set_skill_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_skill_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.skill_group_arn = input;
         self
     }
@@ -67,18 +59,12 @@ impl SkillGroupDataBuilder {
         &self.skill_group_arn
     }
     /// <p>The skill group name of a skill group.</p>
-    pub fn skill_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn skill_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The skill group name of a skill group.</p>
-    pub fn set_skill_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_skill_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.skill_group_name = input;
         self
     }

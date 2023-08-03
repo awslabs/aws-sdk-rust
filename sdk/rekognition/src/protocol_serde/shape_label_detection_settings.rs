@@ -6,10 +6,7 @@ pub fn ser_label_detection_settings(
     if let Some(var_1) = &input.general_labels {
         #[allow(unused_mut)]
         let mut object_2 = object.key("GeneralLabels").start_object();
-        crate::protocol_serde::shape_general_labels_settings::ser_general_labels_settings(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_general_labels_settings::ser_general_labels_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

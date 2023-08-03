@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteQualificationTypeOutput {
 }
 impl DeleteQualificationTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteQualificationTypeOutput`](crate::operation::delete_qualification_type::DeleteQualificationTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_qualification_type::builders::DeleteQualificationTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_qualification_type::builders::DeleteQualificationTypeOutputBuilder {
         crate::operation::delete_qualification_type::builders::DeleteQualificationTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteQualificationTypeOutput`](crate::operation::delete_qualification_type::DeleteQualificationTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQualificationTypeOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteQualificationTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteQualificationTypeOutput`](crate::operation::delete_qualification_type::DeleteQualificationTypeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_qualification_type::DeleteQualificationTypeOutput {
+    pub fn build(self) -> crate::operation::delete_qualification_type::DeleteQualificationTypeOutput {
         crate::operation::delete_qualification_type::DeleteQualificationTypeOutput {
             _request_id: self._request_id,
         }

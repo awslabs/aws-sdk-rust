@@ -5,8 +5,7 @@
 pub struct ListPermissionsOutput {
     /// <p>An array of objects with information about the permissions.</p>
     #[doc(hidden)]
-    pub permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListPermissionsOutput {
 }
 impl ListPermissionsOutput {
     /// <p>An array of objects with information about the permissions.</p>
-    pub fn permissions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ResourceSharePermissionSummary]> {
+    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::ResourceSharePermissionSummary]> {
         self.permissions.as_deref()
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
@@ -38,12 +35,9 @@ impl ListPermissionsOutput {
 
 /// A builder for [`ListPermissionsOutput`](crate::operation::list_permissions::ListPermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionsOutputBuilder {
-    pub(crate) permissions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListPermissionsOutputBuilder {
         self
     }
     /// <p>An array of objects with information about the permissions.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>An array of objects with information about the permissions.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceSharePermissionSummary>> {
         &self.permissions
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>

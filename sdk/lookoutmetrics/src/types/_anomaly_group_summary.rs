@@ -51,9 +51,7 @@ impl AnomalyGroupSummary {
 
 /// A builder for [`AnomalyGroupSummary`](crate::types::AnomalyGroupSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyGroupSummaryBuilder {
     pub(crate) start_time: ::std::option::Option<::std::string::String>,
     pub(crate) end_time: ::std::option::Option<::std::string::String>,
@@ -91,18 +89,12 @@ impl AnomalyGroupSummaryBuilder {
         &self.end_time
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn anomaly_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn set_anomaly_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_anomaly_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_group_id = input;
         self
     }
@@ -125,18 +117,12 @@ impl AnomalyGroupSummaryBuilder {
         &self.anomaly_group_score
     }
     /// <p>The name of the primary affected measure for the group.</p>
-    pub fn primary_metric_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn primary_metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the primary affected measure for the group.</p>
-    pub fn set_primary_metric_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_primary_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_metric_name = input;
         self
     }

@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for AddStorageSystemOutput {
 }
 impl AddStorageSystemOutput {
     /// Creates a new builder-style object to manufacture [`AddStorageSystemOutput`](crate::operation::add_storage_system::AddStorageSystemOutput).
-    pub fn builder() -> crate::operation::add_storage_system::builders::AddStorageSystemOutputBuilder
-    {
+    pub fn builder() -> crate::operation::add_storage_system::builders::AddStorageSystemOutputBuilder {
         crate::operation::add_storage_system::builders::AddStorageSystemOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddStorageSystemOutput`](crate::operation::add_storage_system::AddStorageSystemOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddStorageSystemOutputBuilder {
     pub(crate) storage_system_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AddStorageSystemOutputBuilder {
     /// <p>The ARN of the on-premises storage system that you can use with DataSync Discovery.</p>
-    pub fn storage_system_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_system_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the on-premises storage system that you can use with DataSync Discovery.</p>
-    pub fn set_storage_system_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_system_arn = input;
         self
     }

@@ -50,17 +50,14 @@ impl DescribeFleetHistoryInput {
 }
 impl DescribeFleetHistoryInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetHistoryInput`](crate::operation::describe_fleet_history::DescribeFleetHistoryInput).
-    pub fn builder(
-    ) -> crate::operation::describe_fleet_history::builders::DescribeFleetHistoryInputBuilder {
+    pub fn builder() -> crate::operation::describe_fleet_history::builders::DescribeFleetHistoryInputBuilder {
         crate::operation::describe_fleet_history::builders::DescribeFleetHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetHistoryInput`](crate::operation::describe_fleet_history::DescribeFleetHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetHistoryInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) event_type: ::std::option::Option<crate::types::FleetEventType>,
@@ -90,10 +87,7 @@ impl DescribeFleetHistoryInputBuilder {
         self
     }
     /// <p>The type of events to describe. By default, all events are described.</p>
-    pub fn set_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::FleetEventType>,
-    ) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::FleetEventType>) -> Self {
         self.event_type = input;
         self
     }
@@ -149,10 +143,7 @@ impl DescribeFleetHistoryInputBuilder {
         self
     }
     /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -163,19 +154,15 @@ impl DescribeFleetHistoryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFleetHistoryInput`](crate::operation::describe_fleet_history::DescribeFleetHistoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fleet_history::DescribeFleetHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fleet_history::DescribeFleetHistoryInput {
-                dry_run: self.dry_run,
-                event_type: self.event_type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                fleet_id: self.fleet_id,
-                start_time: self.start_time,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_fleet_history::DescribeFleetHistoryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_fleet_history::DescribeFleetHistoryInput {
+            dry_run: self.dry_run,
+            event_type: self.event_type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            fleet_id: self.fleet_id,
+            start_time: self.start_time,
+        })
     }
 }

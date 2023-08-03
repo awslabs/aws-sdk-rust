@@ -99,17 +99,14 @@ impl SearchGameSessionsInput {
 }
 impl SearchGameSessionsInput {
     /// Creates a new builder-style object to manufacture [`SearchGameSessionsInput`](crate::operation::search_game_sessions::SearchGameSessionsInput).
-    pub fn builder(
-    ) -> crate::operation::search_game_sessions::builders::SearchGameSessionsInputBuilder {
+    pub fn builder() -> crate::operation::search_game_sessions::builders::SearchGameSessionsInputBuilder {
         crate::operation::search_game_sessions::builders::SearchGameSessionsInputBuilder::default()
     }
 }
 
 /// A builder for [`SearchGameSessionsInput`](crate::operation::search_game_sessions::SearchGameSessionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchGameSessionsInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
@@ -179,10 +176,7 @@ impl SearchGameSessionsInputBuilder {
     /// <li> <p>OR</p> </li>
     /// </ol>
     /// <p>For example, this filter expression retrieves game sessions hosting at least ten players that have an open player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>. </p>
-    pub fn filter_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_expression = ::std::option::Option::Some(input.into());
         self
     }
@@ -203,10 +197,7 @@ impl SearchGameSessionsInputBuilder {
     /// <li> <p>OR</p> </li>
     /// </ol>
     /// <p>For example, this filter expression retrieves game sessions hosting at least ten players that have an open player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>. </p>
-    pub fn set_filter_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_expression = input;
         self
     }
@@ -236,10 +227,7 @@ impl SearchGameSessionsInputBuilder {
     /// <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</p> </li>
     /// </ul>
     /// <p>For example, this sort expression returns the oldest active sessions first: <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value for the sort operand are returned at the end of the list.</p>
-    pub fn sort_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sort_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sort_expression = ::std::option::Option::Some(input.into());
         self
     }
@@ -249,10 +237,7 @@ impl SearchGameSessionsInputBuilder {
     /// <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</p> </li>
     /// </ul>
     /// <p>For example, this sort expression returns the oldest active sessions first: <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value for the sort operand are returned at the end of the list.</p>
-    pub fn set_sort_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sort_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sort_expression = input;
         self
     }
@@ -296,20 +281,15 @@ impl SearchGameSessionsInputBuilder {
     /// Consumes the builder and constructs a [`SearchGameSessionsInput`](crate::operation::search_game_sessions::SearchGameSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::search_game_sessions::SearchGameSessionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::search_game_sessions::SearchGameSessionsInput {
-                fleet_id: self.fleet_id,
-                alias_id: self.alias_id,
-                location: self.location,
-                filter_expression: self.filter_expression,
-                sort_expression: self.sort_expression,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::search_game_sessions::SearchGameSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::search_game_sessions::SearchGameSessionsInput {
+            fleet_id: self.fleet_id,
+            alias_id: self.alias_id,
+            location: self.location,
+            filter_expression: self.filter_expression,
+            sort_expression: self.sort_expression,
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }

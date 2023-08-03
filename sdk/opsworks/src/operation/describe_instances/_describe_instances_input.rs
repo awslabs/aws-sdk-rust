@@ -29,17 +29,14 @@ impl DescribeInstancesInput {
 }
 impl DescribeInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancesInput`](crate::operation::describe_instances::DescribeInstancesInput).
-    pub fn builder() -> crate::operation::describe_instances::builders::DescribeInstancesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_instances::builders::DescribeInstancesInputBuilder {
         crate::operation::describe_instances::builders::DescribeInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstancesInput`](crate::operation::describe_instances::DescribeInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstancesInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) layer_id: ::std::option::Option<::std::string::String>,
@@ -86,32 +83,22 @@ impl DescribeInstancesInputBuilder {
         self
     }
     /// <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// Consumes the builder and constructs a [`DescribeInstancesInput`](crate::operation::describe_instances::DescribeInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_instances::DescribeInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_instances::DescribeInstancesInput {
-                stack_id: self.stack_id,
-                layer_id: self.layer_id,
-                instance_ids: self.instance_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_instances::DescribeInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_instances::DescribeInstancesInput {
+            stack_id: self.stack_id,
+            layer_id: self.layer_id,
+            instance_ids: self.instance_ids,
+        })
     }
 }

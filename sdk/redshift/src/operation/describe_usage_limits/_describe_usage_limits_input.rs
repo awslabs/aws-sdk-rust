@@ -61,18 +61,14 @@ impl DescribeUsageLimitsInput {
 }
 impl DescribeUsageLimitsInput {
     /// Creates a new builder-style object to manufacture [`DescribeUsageLimitsInput`](crate::operation::describe_usage_limits::DescribeUsageLimitsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_usage_limits::builders::DescribeUsageLimitsInputBuilder {
-        crate::operation::describe_usage_limits::builders::DescribeUsageLimitsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_usage_limits::builders::DescribeUsageLimitsInputBuilder {
+        crate::operation::describe_usage_limits::builders::DescribeUsageLimitsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeUsageLimitsInput`](crate::operation::describe_usage_limits::DescribeUsageLimitsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUsageLimitsInputBuilder {
     pub(crate) usage_limit_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -84,18 +80,12 @@ pub struct DescribeUsageLimitsInputBuilder {
 }
 impl DescribeUsageLimitsInputBuilder {
     /// <p>The identifier of the usage limit to describe.</p>
-    pub fn usage_limit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_limit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the usage limit to describe.</p>
-    pub fn set_usage_limit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.usage_limit_id = input;
         self
     }
@@ -104,18 +94,12 @@ impl DescribeUsageLimitsInputBuilder {
         &self.usage_limit_id
     }
     /// <p>The identifier of the cluster for which you want to describe usage limits.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster for which you want to describe usage limits.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -129,10 +113,7 @@ impl DescribeUsageLimitsInputBuilder {
         self
     }
     /// <p>The feature type for which you want to describe usage limits.</p>
-    pub fn set_feature_type(
-        mut self,
-        input: ::std::option::Option<crate::types::UsageLimitFeatureType>,
-    ) -> Self {
+    pub fn set_feature_type(mut self, input: ::std::option::Option<crate::types::UsageLimitFeatureType>) -> Self {
         self.feature_type = input;
         self
     }
@@ -186,10 +167,7 @@ impl DescribeUsageLimitsInputBuilder {
         self
     }
     /// <p>A tag key or keys for which you want to return all matching usage limit objects that are associated with the specified key or keys. For example, suppose that you have parameter groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the usage limit objects have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -209,10 +187,7 @@ impl DescribeUsageLimitsInputBuilder {
         self
     }
     /// <p>A tag value or values for which you want to return all matching usage limit objects that are associated with the specified tag value or values. For example, suppose that you have parameter groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the usage limit objects that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_values = input;
         self
     }
@@ -223,20 +198,16 @@ impl DescribeUsageLimitsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUsageLimitsInput`](crate::operation::describe_usage_limits::DescribeUsageLimitsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_usage_limits::DescribeUsageLimitsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_usage_limits::DescribeUsageLimitsInput {
-                usage_limit_id: self.usage_limit_id,
-                cluster_identifier: self.cluster_identifier,
-                feature_type: self.feature_type,
-                max_records: self.max_records,
-                marker: self.marker,
-                tag_keys: self.tag_keys,
-                tag_values: self.tag_values,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_usage_limits::DescribeUsageLimitsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_usage_limits::DescribeUsageLimitsInput {
+            usage_limit_id: self.usage_limit_id,
+            cluster_identifier: self.cluster_identifier,
+            feature_type: self.feature_type,
+            max_records: self.max_records,
+            marker: self.marker,
+            tag_keys: self.tag_keys,
+            tag_values: self.tag_values,
+        })
     }
 }

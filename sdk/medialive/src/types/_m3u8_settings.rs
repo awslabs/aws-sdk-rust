@@ -70,9 +70,7 @@ impl M3u8Settings {
         self.ecm_pid.as_deref()
     }
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
-    pub fn nielsen_id3_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::M3u8NielsenId3Behavior> {
+    pub fn nielsen_id3_behavior(&self) -> ::std::option::Option<&crate::types::M3u8NielsenId3Behavior> {
         self.nielsen_id3_behavior.as_ref()
     }
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
@@ -112,9 +110,7 @@ impl M3u8Settings {
         self.scte35_pid.as_deref()
     }
     /// When set to passthrough, timed metadata is passed through from input to output.
-    pub fn timed_metadata_behavior(
-        &self,
-    ) -> ::std::option::Option<&crate::types::M3u8TimedMetadataBehavior> {
+    pub fn timed_metadata_behavior(&self) -> ::std::option::Option<&crate::types::M3u8TimedMetadataBehavior> {
         self.timed_metadata_behavior.as_ref()
     }
     /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
@@ -139,9 +135,7 @@ impl M3u8Settings {
 
 /// A builder for [`M3u8Settings`](crate::types::M3u8Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct M3u8SettingsBuilder {
     pub(crate) audio_frames_per_pes: ::std::option::Option<i32>,
     pub(crate) audio_pids: ::std::option::Option<::std::string::String>,
@@ -156,8 +150,7 @@ pub struct M3u8SettingsBuilder {
     pub(crate) program_num: ::std::option::Option<i32>,
     pub(crate) scte35_behavior: ::std::option::Option<crate::types::M3u8Scte35Behavior>,
     pub(crate) scte35_pid: ::std::option::Option<::std::string::String>,
-    pub(crate) timed_metadata_behavior:
-        ::std::option::Option<crate::types::M3u8TimedMetadataBehavior>,
+    pub(crate) timed_metadata_behavior: ::std::option::Option<crate::types::M3u8TimedMetadataBehavior>,
     pub(crate) timed_metadata_pid: ::std::option::Option<::std::string::String>,
     pub(crate) transport_stream_id: ::std::option::Option<i32>,
     pub(crate) video_pid: ::std::option::Option<::std::string::String>,
@@ -211,17 +204,12 @@ impl M3u8SettingsBuilder {
         self
     }
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
-    pub fn set_nielsen_id3_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::M3u8NielsenId3Behavior>,
-    ) -> Self {
+    pub fn set_nielsen_id3_behavior(mut self, input: ::std::option::Option<crate::types::M3u8NielsenId3Behavior>) -> Self {
         self.nielsen_id3_behavior = input;
         self
     }
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
-    pub fn get_nielsen_id3_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::M3u8NielsenId3Behavior> {
+    pub fn get_nielsen_id3_behavior(&self) -> &::std::option::Option<crate::types::M3u8NielsenId3Behavior> {
         &self.nielsen_id3_behavior
     }
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
@@ -244,10 +232,7 @@ impl M3u8SettingsBuilder {
         self
     }
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
-    pub fn set_pcr_control(
-        mut self,
-        input: ::std::option::Option<crate::types::M3u8PcrControl>,
-    ) -> Self {
+    pub fn set_pcr_control(mut self, input: ::std::option::Option<crate::types::M3u8PcrControl>) -> Self {
         self.pcr_control = input;
         self
     }
@@ -331,10 +316,7 @@ impl M3u8SettingsBuilder {
         self
     }
     /// If set to passthrough, passes any SCTE-35 signals from the input source to this output.
-    pub fn set_scte35_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::M3u8Scte35Behavior>,
-    ) -> Self {
+    pub fn set_scte35_behavior(mut self, input: ::std::option::Option<crate::types::M3u8Scte35Behavior>) -> Self {
         self.scte35_behavior = input;
         self
     }
@@ -357,40 +339,26 @@ impl M3u8SettingsBuilder {
         &self.scte35_pid
     }
     /// When set to passthrough, timed metadata is passed through from input to output.
-    pub fn timed_metadata_behavior(
-        mut self,
-        input: crate::types::M3u8TimedMetadataBehavior,
-    ) -> Self {
+    pub fn timed_metadata_behavior(mut self, input: crate::types::M3u8TimedMetadataBehavior) -> Self {
         self.timed_metadata_behavior = ::std::option::Option::Some(input);
         self
     }
     /// When set to passthrough, timed metadata is passed through from input to output.
-    pub fn set_timed_metadata_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::M3u8TimedMetadataBehavior>,
-    ) -> Self {
+    pub fn set_timed_metadata_behavior(mut self, input: ::std::option::Option<crate::types::M3u8TimedMetadataBehavior>) -> Self {
         self.timed_metadata_behavior = input;
         self
     }
     /// When set to passthrough, timed metadata is passed through from input to output.
-    pub fn get_timed_metadata_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::M3u8TimedMetadataBehavior> {
+    pub fn get_timed_metadata_behavior(&self) -> &::std::option::Option<crate::types::M3u8TimedMetadataBehavior> {
         &self.timed_metadata_behavior
     }
     /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn timed_metadata_pid(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timed_metadata_pid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timed_metadata_pid = ::std::option::Option::Some(input.into());
         self
     }
     /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn set_timed_metadata_pid(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timed_metadata_pid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timed_metadata_pid = input;
         self
     }

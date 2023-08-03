@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeImportTasksOutput {
 }
 impl DescribeImportTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImportTasksOutput`](crate::operation::describe_import_tasks::DescribeImportTasksOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_import_tasks::builders::DescribeImportTasksOutputBuilder {
-        crate::operation::describe_import_tasks::builders::DescribeImportTasksOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_import_tasks::builders::DescribeImportTasksOutputBuilder {
+        crate::operation::describe_import_tasks::builders::DescribeImportTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImportTasksOutput`](crate::operation::describe_import_tasks::DescribeImportTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImportTasksOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::ImportTask>>,
@@ -72,10 +68,7 @@ impl DescribeImportTasksOutputBuilder {
         self
     }
     /// <p>A returned array of import tasks that match any applied filters, up to the specified number of maximum results.</p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportTask>>,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportTask>>) -> Self {
         self.tasks = input;
         self
     }

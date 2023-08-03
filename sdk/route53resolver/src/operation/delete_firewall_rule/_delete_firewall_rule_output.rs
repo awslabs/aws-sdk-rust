@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteFirewallRuleOutput {
 }
 impl DeleteFirewallRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleOutput`](crate::operation::delete_firewall_rule::DeleteFirewallRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleOutputBuilder {
+    pub fn builder() -> crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleOutputBuilder {
         crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFirewallRuleOutput`](crate::operation::delete_firewall_rule::DeleteFirewallRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFirewallRuleOutputBuilder {
     pub(crate) firewall_rule: ::std::option::Option<crate::types::FirewallRule>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteFirewallRuleOutputBuilder {
         self
     }
     /// <p>The specification for the firewall rule that you just deleted.</p>
-    pub fn set_firewall_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallRule>,
-    ) -> Self {
+    pub fn set_firewall_rule(mut self, input: ::std::option::Option<crate::types::FirewallRule>) -> Self {
         self.firewall_rule = input;
         self
     }

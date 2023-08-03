@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetCurrentUserOutput`](crate::operation::get_current_user::GetCurrentUserOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::operation::get_current_user::GetCurrentUserOutput::user): <p>Metadata of the user.</p>
     /// - On failure, responds with [`SdkError<GetCurrentUserError>`](crate::operation::get_current_user::GetCurrentUserError)
-    pub fn get_current_user(
-        &self,
-    ) -> crate::operation::get_current_user::builders::GetCurrentUserFluentBuilder {
-        crate::operation::get_current_user::builders::GetCurrentUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_current_user(&self) -> crate::operation::get_current_user::builders::GetCurrentUserFluentBuilder {
+        crate::operation::get_current_user::builders::GetCurrentUserFluentBuilder::new(self.handle.clone())
     }
 }

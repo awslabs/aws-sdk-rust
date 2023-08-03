@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`agent_arns(Vec<String>)`](crate::operation::update_location_hdfs::builders::UpdateLocationHdfsFluentBuilder::agent_arns) / [`set_agent_arns(Option<Vec<String>>)`](crate::operation::update_location_hdfs::builders::UpdateLocationHdfsFluentBuilder::set_agent_arns): <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
     /// - On success, responds with [`UpdateLocationHdfsOutput`](crate::operation::update_location_hdfs::UpdateLocationHdfsOutput)
     /// - On failure, responds with [`SdkError<UpdateLocationHdfsError>`](crate::operation::update_location_hdfs::UpdateLocationHdfsError)
-    pub fn update_location_hdfs(
-        &self,
-    ) -> crate::operation::update_location_hdfs::builders::UpdateLocationHdfsFluentBuilder {
-        crate::operation::update_location_hdfs::builders::UpdateLocationHdfsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_location_hdfs(&self) -> crate::operation::update_location_hdfs::builders::UpdateLocationHdfsFluentBuilder {
+        crate::operation::update_location_hdfs::builders::UpdateLocationHdfsFluentBuilder::new(self.handle.clone())
     }
 }

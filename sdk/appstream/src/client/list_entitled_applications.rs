@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`entitled_applications(Option<Vec<EntitledApplication>>)`](crate::operation::list_entitled_applications::ListEntitledApplicationsOutput::entitled_applications): <p>The entitled applications.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_entitled_applications::ListEntitledApplicationsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     /// - On failure, responds with [`SdkError<ListEntitledApplicationsError>`](crate::operation::list_entitled_applications::ListEntitledApplicationsError)
-    pub fn list_entitled_applications(
-        &self,
-    ) -> crate::operation::list_entitled_applications::builders::ListEntitledApplicationsFluentBuilder
-    {
+    pub fn list_entitled_applications(&self) -> crate::operation::list_entitled_applications::builders::ListEntitledApplicationsFluentBuilder {
         crate::operation::list_entitled_applications::builders::ListEntitledApplicationsFluentBuilder::new(self.handle.clone())
     }
 }

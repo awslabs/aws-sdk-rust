@@ -21,8 +21,7 @@ pub struct RetrieveResultItem {
     pub document_uri: ::std::option::Option<::std::string::String>,
     /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
     #[doc(hidden)]
-    pub document_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub document_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
 }
 impl RetrieveResultItem {
     /// <p>The identifier of the relevant passage result.</p>
@@ -59,17 +58,14 @@ impl RetrieveResultItem {
 
 /// A builder for [`RetrieveResultItem`](crate::types::RetrieveResultItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RetrieveResultItemBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) document_id: ::std::option::Option<::std::string::String>,
     pub(crate) document_title: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
     pub(crate) document_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) document_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub(crate) document_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
 }
 impl RetrieveResultItemBuilder {
     /// <p>The identifier of the relevant passage result.</p>
@@ -101,18 +97,12 @@ impl RetrieveResultItemBuilder {
         &self.document_id
     }
     /// <p>The title of the document.</p>
-    pub fn document_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the document.</p>
-    pub fn set_document_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_title = input;
         self
     }
@@ -160,17 +150,12 @@ impl RetrieveResultItemBuilder {
         self
     }
     /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
-    pub fn set_document_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
-    ) -> Self {
+    pub fn set_document_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>) -> Self {
         self.document_attributes = input;
         self
     }
     /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
-    pub fn get_document_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
+    pub fn get_document_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
         &self.document_attributes
     }
     /// Consumes the builder and constructs a [`RetrieveResultItem`](crate::types::RetrieveResultItem).

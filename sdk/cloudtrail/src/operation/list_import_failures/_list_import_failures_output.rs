@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListImportFailuresOutput {
 }
 impl ListImportFailuresOutput {
     /// Creates a new builder-style object to manufacture [`ListImportFailuresOutput`](crate::operation::list_import_failures::ListImportFailuresOutput).
-    pub fn builder(
-    ) -> crate::operation::list_import_failures::builders::ListImportFailuresOutputBuilder {
+    pub fn builder() -> crate::operation::list_import_failures::builders::ListImportFailuresOutputBuilder {
         crate::operation::list_import_failures::builders::ListImportFailuresOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListImportFailuresOutput`](crate::operation::list_import_failures::ListImportFailuresOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImportFailuresOutputBuilder {
-    pub(crate) failures:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImportFailureListItem>>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::ImportFailureListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListImportFailuresOutputBuilder {
         self
     }
     /// <p> Contains information about the import failures. </p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportFailureListItem>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportFailureListItem>>) -> Self {
         self.failures = input;
         self
     }
     /// <p> Contains information about the import failures. </p>
-    pub fn get_failures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportFailureListItem>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportFailureListItem>> {
         &self.failures
     }
     /// <p> A token you can use to get the next page of results. </p>

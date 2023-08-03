@@ -19,9 +19,7 @@ impl StartFuotaTaskOutput {
 
 /// A builder for [`StartFuotaTaskOutput`](crate::operation::start_fuota_task::StartFuotaTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFuotaTaskOutputBuilder {
     _request_id: Option<String>,
 }

@@ -37,9 +37,7 @@ impl StageDeclaration {
 
 /// A builder for [`StageDeclaration`](crate::types::StageDeclaration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StageDeclarationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) blockers: ::std::option::Option<::std::vec::Vec<crate::types::BlockerDeclaration>>,
@@ -72,17 +70,12 @@ impl StageDeclarationBuilder {
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_blockers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BlockerDeclaration>>,
-    ) -> Self {
+    pub fn set_blockers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockerDeclaration>>) -> Self {
         self.blockers = input;
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn get_blockers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockerDeclaration>> {
+    pub fn get_blockers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockerDeclaration>> {
         &self.blockers
     }
     /// Appends an item to `actions`.
@@ -97,17 +90,12 @@ impl StageDeclarationBuilder {
         self
     }
     /// <p>The actions included in a stage.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ActionDeclaration>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionDeclaration>>) -> Self {
         self.actions = input;
         self
     }
     /// <p>The actions included in a stage.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionDeclaration>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionDeclaration>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`StageDeclaration`](crate::types::StageDeclaration).

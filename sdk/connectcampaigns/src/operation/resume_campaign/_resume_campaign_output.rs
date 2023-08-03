@@ -19,9 +19,7 @@ impl ResumeCampaignOutput {
 
 /// A builder for [`ResumeCampaignOutput`](crate::operation::resume_campaign::ResumeCampaignOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResumeCampaignOutputBuilder {
     _request_id: Option<String>,
 }

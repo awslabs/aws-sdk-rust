@@ -17,17 +17,14 @@ impl DescribeHandshakeInput {
 }
 impl DescribeHandshakeInput {
     /// Creates a new builder-style object to manufacture [`DescribeHandshakeInput`](crate::operation::describe_handshake::DescribeHandshakeInput).
-    pub fn builder() -> crate::operation::describe_handshake::builders::DescribeHandshakeInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_handshake::builders::DescribeHandshakeInputBuilder {
         crate::operation::describe_handshake::builders::DescribeHandshakeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHandshakeInput`](crate::operation::describe_handshake::DescribeHandshakeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHandshakeInputBuilder {
     pub(crate) handshake_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,14 +49,9 @@ impl DescribeHandshakeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeHandshakeInput`](crate::operation::describe_handshake::DescribeHandshakeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_handshake::DescribeHandshakeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_handshake::DescribeHandshakeInput {
-                handshake_id: self.handshake_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_handshake::DescribeHandshakeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_handshake::DescribeHandshakeInput {
+            handshake_id: self.handshake_id,
+        })
     }
 }

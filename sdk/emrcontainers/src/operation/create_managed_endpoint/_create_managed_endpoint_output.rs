@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateManagedEndpointOutput {
 }
 impl CreateManagedEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateManagedEndpointOutput`](crate::operation::create_managed_endpoint::CreateManagedEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::create_managed_endpoint::builders::CreateManagedEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_managed_endpoint::builders::CreateManagedEndpointOutputBuilder {
         crate::operation::create_managed_endpoint::builders::CreateManagedEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateManagedEndpointOutput`](crate::operation::create_managed_endpoint::CreateManagedEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateManagedEndpointOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -105,18 +101,12 @@ impl CreateManagedEndpointOutputBuilder {
         &self.arn
     }
     /// <p>The output contains the ID of the virtual cluster.</p>
-    pub fn virtual_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The output contains the ID of the virtual cluster.</p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_cluster_id = input;
         self
     }

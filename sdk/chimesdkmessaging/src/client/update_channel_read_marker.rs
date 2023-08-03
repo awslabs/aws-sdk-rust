@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateChannelReadMarkerOutput`](crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput::channel_arn): <p>The ARN of the channel.</p>
     /// - On failure, responds with [`SdkError<UpdateChannelReadMarkerError>`](crate::operation::update_channel_read_marker::UpdateChannelReadMarkerError)
-    pub fn update_channel_read_marker(
-        &self,
-    ) -> crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerFluentBuilder
-    {
+    pub fn update_channel_read_marker(&self) -> crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerFluentBuilder {
         crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerFluentBuilder::new(self.handle.clone())
     }
 }

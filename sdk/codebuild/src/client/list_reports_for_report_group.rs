@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_reports_for_report_group::ListReportsForReportGroupOutput::next_token): <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     ///   - [`reports(Option<Vec<String>>)`](crate::operation::list_reports_for_report_group::ListReportsForReportGroupOutput::reports): <p> The list of report ARNs. </p>
     /// - On failure, responds with [`SdkError<ListReportsForReportGroupError>`](crate::operation::list_reports_for_report_group::ListReportsForReportGroupError)
-    pub fn list_reports_for_report_group(&self) -> crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupFluentBuilder{
+    pub fn list_reports_for_report_group(&self) -> crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupFluentBuilder {
         crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateBrowserSettingsOutput {
 }
 impl UpdateBrowserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBrowserSettingsOutput`](crate::operation::update_browser_settings::UpdateBrowserSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_browser_settings::builders::UpdateBrowserSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_browser_settings::builders::UpdateBrowserSettingsOutputBuilder {
         crate::operation::update_browser_settings::builders::UpdateBrowserSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateBrowserSettingsOutput`](crate::operation::update_browser_settings::UpdateBrowserSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBrowserSettingsOutputBuilder {
     pub(crate) browser_settings: ::std::option::Option<crate::types::BrowserSettings>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl UpdateBrowserSettingsOutputBuilder {
         self
     }
     /// <p>The browser settings.</p>
-    pub fn set_browser_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::BrowserSettings>,
-    ) -> Self {
+    pub fn set_browser_settings(mut self, input: ::std::option::Option<crate::types::BrowserSettings>) -> Self {
         self.browser_settings = input;
         self
     }

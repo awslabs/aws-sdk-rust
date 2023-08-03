@@ -30,27 +30,19 @@ impl UniqueAttribute {
 
 /// A builder for [`UniqueAttribute`](crate::types::UniqueAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UniqueAttributeBuilder {
     pub(crate) attribute_path: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_value: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl UniqueAttributeBuilder {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
-    pub fn attribute_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
-    pub fn set_attribute_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_path = input;
         self
     }
@@ -64,10 +56,7 @@ impl UniqueAttributeBuilder {
         self
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
-    pub fn set_attribute_value(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Document>,
-    ) -> Self {
+    pub fn set_attribute_value(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.attribute_value = input;
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`AssociateDefaultViewOutput`](crate::operation::associate_default_view::AssociateDefaultViewOutput) with field(s):
     ///   - [`view_arn(Option<String>)`](crate::operation::associate_default_view::AssociateDefaultViewOutput::view_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that the operation set as the default for queries made in the Amazon Web Services Region and Amazon Web Services account in which you called this operation.</p>
     /// - On failure, responds with [`SdkError<AssociateDefaultViewError>`](crate::operation::associate_default_view::AssociateDefaultViewError)
-    pub fn associate_default_view(
-        &self,
-    ) -> crate::operation::associate_default_view::builders::AssociateDefaultViewFluentBuilder {
-        crate::operation::associate_default_view::builders::AssociateDefaultViewFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_default_view(&self) -> crate::operation::associate_default_view::builders::AssociateDefaultViewFluentBuilder {
+        crate::operation::associate_default_view::builders::AssociateDefaultViewFluentBuilder::new(self.handle.clone())
     }
 }

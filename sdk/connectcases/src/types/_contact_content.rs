@@ -37,9 +37,7 @@ impl ContactContent {
 
 /// A builder for [`ContactContent`](crate::types::ContactContent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContactContentBuilder {
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel: ::std::option::Option<::std::string::String>,
@@ -80,17 +78,12 @@ impl ContactContentBuilder {
         self
     }
     /// <p>The difference between the <code>InitiationTimestamp</code> and the <code>DisconnectTimestamp</code> of the contact.</p>
-    pub fn set_connected_to_system_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_connected_to_system_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.connected_to_system_time = input;
         self
     }
     /// <p>The difference between the <code>InitiationTimestamp</code> and the <code>DisconnectTimestamp</code> of the contact.</p>
-    pub fn get_connected_to_system_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_connected_to_system_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.connected_to_system_time
     }
     /// Consumes the builder and constructs a [`ContactContent`](crate::types::ContactContent).

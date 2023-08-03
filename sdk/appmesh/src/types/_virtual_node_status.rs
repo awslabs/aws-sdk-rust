@@ -23,9 +23,7 @@ impl VirtualNodeStatus {
 
 /// A builder for [`VirtualNodeStatus`](crate::types::VirtualNodeStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VirtualNodeStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::VirtualNodeStatusCode>,
 }
@@ -36,10 +34,7 @@ impl VirtualNodeStatusBuilder {
         self
     }
     /// <p>The current status of the virtual node.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualNodeStatusCode>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VirtualNodeStatusCode>) -> Self {
         self.status = input;
         self
     }
@@ -49,8 +44,6 @@ impl VirtualNodeStatusBuilder {
     }
     /// Consumes the builder and constructs a [`VirtualNodeStatus`](crate::types::VirtualNodeStatus).
     pub fn build(self) -> crate::types::VirtualNodeStatus {
-        crate::types::VirtualNodeStatus {
-            status: self.status,
-        }
+        crate::types::VirtualNodeStatus { status: self.status }
     }
 }

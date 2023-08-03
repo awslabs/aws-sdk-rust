@@ -37,8 +37,7 @@ impl ::aws_http::request_id::RequestId for ListChannelFlowsOutput {
 }
 impl ListChannelFlowsOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelFlowsOutput`](crate::operation::list_channel_flows::ListChannelFlowsOutput).
-    pub fn builder() -> crate::operation::list_channel_flows::builders::ListChannelFlowsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_channel_flows::builders::ListChannelFlowsOutputBuilder {
         crate::operation::list_channel_flows::builders::ListChannelFlowsOutputBuilder::default()
     }
 }
@@ -47,8 +46,7 @@ impl ListChannelFlowsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListChannelFlowsOutputBuilder {
-    pub(crate) channel_flows:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelFlowSummary>>,
+    pub(crate) channel_flows: ::std::option::Option<::std::vec::Vec<crate::types::ChannelFlowSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -65,17 +63,12 @@ impl ListChannelFlowsOutputBuilder {
         self
     }
     /// <p>The information about each channel flow.</p>
-    pub fn set_channel_flows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelFlowSummary>>,
-    ) -> Self {
+    pub fn set_channel_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelFlowSummary>>) -> Self {
         self.channel_flows = input;
         self
     }
     /// <p>The information about each channel flow.</p>
-    pub fn get_channel_flows(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelFlowSummary>> {
+    pub fn get_channel_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelFlowSummary>> {
         &self.channel_flows
     }
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>

@@ -37,16 +37,14 @@ impl ListResponseHeadersPoliciesInput {
 }
 impl ListResponseHeadersPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListResponseHeadersPoliciesInput`](crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesInput).
-    pub fn builder() -> crate::operation::list_response_headers_policies::builders::ListResponseHeadersPoliciesInputBuilder{
+    pub fn builder() -> crate::operation::list_response_headers_policies::builders::ListResponseHeadersPoliciesInputBuilder {
         crate::operation::list_response_headers_policies::builders::ListResponseHeadersPoliciesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResponseHeadersPoliciesInput`](crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResponseHeadersPoliciesInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ResponseHeadersPolicyType>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -67,10 +65,7 @@ impl ListResponseHeadersPoliciesInputBuilder {
     /// <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li>
     /// <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseHeadersPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyType>) -> Self {
         self.r#type = input;
         self
     }
@@ -117,12 +112,10 @@ impl ListResponseHeadersPoliciesInputBuilder {
         crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesInput {
-                r#type: self.r#type,
-                marker: self.marker,
-                max_items: self.max_items,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesInput {
+            r#type: self.r#type,
+            marker: self.marker,
+            max_items: self.max_items,
+        })
     }
 }

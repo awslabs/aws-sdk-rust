@@ -10,10 +10,7 @@ impl SearchFoldersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_folders::SearchFoldersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_folders::SearchFoldersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_folders::SearchFoldersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_folders();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SearchFoldersFluentBuilder {
         }
     }
     /// Access the SearchFolders as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_folders::builders::SearchFoldersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_folders::builders::SearchFoldersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl SearchFoldersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl SearchFoldersFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -144,17 +130,12 @@ impl SearchFoldersFluentBuilder {
         self
     }
     /// <p>The filters to apply to the search. Currently, you can search only by the parent folder ARN. For example, <code>"Filters": [ { "Name": "PARENT_FOLDER_ARN", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:folder/folderId" } ]</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FolderSearchFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FolderSearchFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The filters to apply to the search. Currently, you can search only by the parent folder ARN. For example, <code>"Filters": [ { "Name": "PARENT_FOLDER_ARN", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:folder/folderId" } ]</code>.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderSearchFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderSearchFilter>> {
         self.inner.get_filters()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

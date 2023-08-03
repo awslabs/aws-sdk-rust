@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for TagDeliveryStreamOutput {
 }
 impl TagDeliveryStreamOutput {
     /// Creates a new builder-style object to manufacture [`TagDeliveryStreamOutput`](crate::operation::tag_delivery_stream::TagDeliveryStreamOutput).
-    pub fn builder(
-    ) -> crate::operation::tag_delivery_stream::builders::TagDeliveryStreamOutputBuilder {
+    pub fn builder() -> crate::operation::tag_delivery_stream::builders::TagDeliveryStreamOutputBuilder {
         crate::operation::tag_delivery_stream::builders::TagDeliveryStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`TagDeliveryStreamOutput`](crate::operation::tag_delivery_stream::TagDeliveryStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagDeliveryStreamOutputBuilder {
     _request_id: Option<String>,
 }

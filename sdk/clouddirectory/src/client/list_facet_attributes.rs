@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`attributes(Option<Vec<FacetAttribute>>)`](crate::operation::list_facet_attributes::ListFacetAttributesOutput::attributes): <p>The attributes attached to the facet.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_facet_attributes::ListFacetAttributesOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListFacetAttributesError>`](crate::operation::list_facet_attributes::ListFacetAttributesError)
-    pub fn list_facet_attributes(
-        &self,
-    ) -> crate::operation::list_facet_attributes::builders::ListFacetAttributesFluentBuilder {
-        crate::operation::list_facet_attributes::builders::ListFacetAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_facet_attributes(&self) -> crate::operation::list_facet_attributes::builders::ListFacetAttributesFluentBuilder {
+        crate::operation::list_facet_attributes::builders::ListFacetAttributesFluentBuilder::new(self.handle.clone())
     }
 }

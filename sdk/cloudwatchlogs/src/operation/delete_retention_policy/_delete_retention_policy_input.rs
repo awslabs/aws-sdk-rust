@@ -15,35 +15,25 @@ impl DeleteRetentionPolicyInput {
 }
 impl DeleteRetentionPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteRetentionPolicyInput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyInputBuilder {
         crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRetentionPolicyInput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRetentionPolicyInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRetentionPolicyInputBuilder {
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DeleteRetentionPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRetentionPolicyInput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_retention_policy::DeleteRetentionPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_retention_policy::DeleteRetentionPolicyInput {
-                log_group_name: self.log_group_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_retention_policy::DeleteRetentionPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_retention_policy::DeleteRetentionPolicyInput {
+            log_group_name: self.log_group_name,
+        })
     }
 }

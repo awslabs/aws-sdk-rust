@@ -79,17 +79,14 @@ impl ListReservationsInput {
 }
 impl ListReservationsInput {
     /// Creates a new builder-style object to manufacture [`ListReservationsInput`](crate::operation::list_reservations::ListReservationsInput).
-    pub fn builder() -> crate::operation::list_reservations::builders::ListReservationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_reservations::builders::ListReservationsInputBuilder {
         crate::operation::list_reservations::builders::ListReservationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReservationsInput`](crate::operation::list_reservations::ListReservationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReservationsInputBuilder {
     pub(crate) channel_class: ::std::option::Option<::std::string::String>,
     pub(crate) codec: ::std::option::Option<::std::string::String>,
@@ -104,18 +101,12 @@ pub struct ListReservationsInputBuilder {
 }
 impl ListReservationsInputBuilder {
     /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-    pub fn channel_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_class = ::std::option::Option::Some(input.into());
         self
     }
     /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-    pub fn set_channel_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_class = input;
         self
     }
@@ -152,18 +143,12 @@ impl ListReservationsInputBuilder {
         &self.max_results
     }
     /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-    pub fn maximum_bitrate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maximum_bitrate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maximum_bitrate = ::std::option::Option::Some(input.into());
         self
     }
     /// Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-    pub fn set_maximum_bitrate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maximum_bitrate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maximum_bitrate = input;
         self
     }
@@ -172,18 +157,12 @@ impl ListReservationsInputBuilder {
         &self.maximum_bitrate
     }
     /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
-    pub fn maximum_framerate(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maximum_framerate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maximum_framerate = ::std::option::Option::Some(input.into());
         self
     }
     /// Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
-    pub fn set_maximum_framerate(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maximum_framerate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maximum_framerate = input;
         self
     }
@@ -220,18 +199,12 @@ impl ListReservationsInputBuilder {
         &self.resolution
     }
     /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -240,18 +213,12 @@ impl ListReservationsInputBuilder {
         &self.resource_type
     }
     /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-    pub fn special_feature(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn special_feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.special_feature = ::std::option::Option::Some(input.into());
         self
     }
     /// Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-    pub fn set_special_feature(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_special_feature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.special_feature = input;
         self
     }
@@ -260,18 +227,12 @@ impl ListReservationsInputBuilder {
         &self.special_feature
     }
     /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-    pub fn video_quality(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn video_quality(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.video_quality = ::std::option::Option::Some(input.into());
         self
     }
     /// Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-    pub fn set_video_quality(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_video_quality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.video_quality = input;
         self
     }
@@ -282,10 +243,7 @@ impl ListReservationsInputBuilder {
     /// Consumes the builder and constructs a [`ListReservationsInput`](crate::operation::list_reservations::ListReservationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_reservations::ListReservationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_reservations::ListReservationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_reservations::ListReservationsInput {
             channel_class: self.channel_class,
             codec: self.codec,

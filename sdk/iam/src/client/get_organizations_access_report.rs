@@ -18,7 +18,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     ///   - [`error_details(Option<ErrorDetails>)`](crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput::error_details): <p>Contains information about the reason that the operation failed.</p>  <p>This data type is used as a response element in the <code>GetOrganizationsAccessReport</code>, <code>GetServiceLastAccessedDetails</code>, and <code>GetServiceLastAccessedDetailsWithEntities</code> operations.</p>
     /// - On failure, responds with [`SdkError<GetOrganizationsAccessReportError>`](crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError)
-    pub fn get_organizations_access_report(&self) -> crate::operation::get_organizations_access_report::builders::GetOrganizationsAccessReportFluentBuilder{
+    pub fn get_organizations_access_report(
+        &self,
+    ) -> crate::operation::get_organizations_access_report::builders::GetOrganizationsAccessReportFluentBuilder {
         crate::operation::get_organizations_access_report::builders::GetOrganizationsAccessReportFluentBuilder::new(self.handle.clone())
     }
 }

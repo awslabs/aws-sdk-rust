@@ -41,9 +41,7 @@ impl GetResourcesSummaryFluentBuilder {
         }
     }
     /// Access the GetResourcesSummary as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_resources_summary::builders::GetResourcesSummaryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_resources_summary::builders::GetResourcesSummaryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl GetResourcesSummaryFluentBuilder {
             crate::operation::get_resources_summary::GetResourcesSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resources_summary::GetResourcesSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resources_summary::GetResourcesSummaryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl GetResourcesSummaryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl GetResourcesSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resources_summary::GetResourcesSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resources_summary::GetResourcesSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resources_summary::GetResourcesSummaryError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl GetResourcesSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resources_summary::GetResourcesSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resources_summary::GetResourcesSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resources_summary::GetResourcesSummaryError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +109,7 @@ impl GetResourcesSummaryFluentBuilder {
             crate::operation::get_resources_summary::GetResourcesSummary,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resources_summary::GetResourcesSummaryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resources_summary::GetResourcesSummaryError>,
     > {
         self.customize_middleware().await
     }

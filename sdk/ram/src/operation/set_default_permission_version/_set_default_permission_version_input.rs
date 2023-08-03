@@ -33,16 +33,14 @@ impl SetDefaultPermissionVersionInput {
 }
 impl SetDefaultPermissionVersionInput {
     /// Creates a new builder-style object to manufacture [`SetDefaultPermissionVersionInput`](crate::operation::set_default_permission_version::SetDefaultPermissionVersionInput).
-    pub fn builder() -> crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionInputBuilder{
+    pub fn builder() -> crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionInputBuilder {
         crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`SetDefaultPermissionVersionInput`](crate::operation::set_default_permission_version::SetDefaultPermissionVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetDefaultPermissionVersionInputBuilder {
     pub(crate) permission_arn: ::std::option::Option<::std::string::String>,
     pub(crate) permission_version: ::std::option::Option<i32>,
@@ -50,18 +48,12 @@ pub struct SetDefaultPermissionVersionInputBuilder {
 }
 impl SetDefaultPermissionVersionInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission whose default version you want to change.</p>
-    pub fn permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission whose default version you want to change.</p>
-    pub fn set_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_arn = input;
         self
     }
@@ -110,12 +102,10 @@ impl SetDefaultPermissionVersionInputBuilder {
         crate::operation::set_default_permission_version::SetDefaultPermissionVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::set_default_permission_version::SetDefaultPermissionVersionInput {
-                permission_arn: self.permission_arn,
-                permission_version: self.permission_version,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::set_default_permission_version::SetDefaultPermissionVersionInput {
+            permission_arn: self.permission_arn,
+            permission_version: self.permission_version,
+            client_token: self.client_token,
+        })
     }
 }

@@ -37,9 +37,7 @@ impl ListSnapshotsOutput {
 
 /// A builder for [`ListSnapshotsOutput`](crate::operation::list_snapshots::ListSnapshotsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSnapshotsOutputBuilder {
     pub(crate) snapshots: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +56,12 @@ impl ListSnapshotsOutputBuilder {
         self
     }
     /// <p> A list of snapshot summaries. You can use the returned snapshot IDs in the <code>UpdateSnapshot</code> and <code>GetSnapshot</code> operations. </p>
-    pub fn set_snapshots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSummary>>,
-    ) -> Self {
+    pub fn set_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSummary>>) -> Self {
         self.snapshots = input;
         self
     }
     /// <p> A list of snapshot summaries. You can use the returned snapshot IDs in the <code>UpdateSnapshot</code> and <code>GetSnapshot</code> operations. </p>
-    pub fn get_snapshots(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotSummary>> {
+    pub fn get_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotSummary>> {
         &self.snapshots
     }
     /// <p>The token that indicates the start of the next sequential page of results.</p>

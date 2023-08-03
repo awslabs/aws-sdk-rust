@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetPermissionGroupOutput {
 }
 impl GetPermissionGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetPermissionGroupOutput`](crate::operation::get_permission_group::GetPermissionGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::get_permission_group::builders::GetPermissionGroupOutputBuilder {
+    pub fn builder() -> crate::operation::get_permission_group::builders::GetPermissionGroupOutputBuilder {
         crate::operation::get_permission_group::builders::GetPermissionGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPermissionGroupOutput`](crate::operation::get_permission_group::GetPermissionGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPermissionGroupOutputBuilder {
     pub(crate) permission_group: ::std::option::Option<crate::types::PermissionGroup>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetPermissionGroupOutputBuilder {
         self
     }
     /// <p>The structure for a permission group.</p>
-    pub fn set_permission_group(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionGroup>,
-    ) -> Self {
+    pub fn set_permission_group(mut self, input: ::std::option::Option<crate::types::PermissionGroup>) -> Self {
         self.permission_group = input;
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeletePackageOutput`](crate::operation::delete_package::DeletePackageOutput) with field(s):
     ///   - [`package_details(Option<PackageDetails>)`](crate::operation::delete_package::DeletePackageOutput::package_details): <p><code>PackageDetails</code></p>
     /// - On failure, responds with [`SdkError<DeletePackageError>`](crate::operation::delete_package::DeletePackageError)
-    pub fn delete_package(
-        &self,
-    ) -> crate::operation::delete_package::builders::DeletePackageFluentBuilder {
-        crate::operation::delete_package::builders::DeletePackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_package(&self) -> crate::operation::delete_package::builders::DeletePackageFluentBuilder {
+        crate::operation::delete_package::builders::DeletePackageFluentBuilder::new(self.handle.clone())
     }
 }

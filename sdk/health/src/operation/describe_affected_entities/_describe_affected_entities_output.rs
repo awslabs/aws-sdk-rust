@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeAffectedEntitiesOutput {
 }
 impl DescribeAffectedEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAffectedEntitiesOutput`](crate::operation::describe_affected_entities::DescribeAffectedEntitiesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesOutputBuilder {
         crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAffectedEntitiesOutput`](crate::operation::describe_affected_entities::DescribeAffectedEntitiesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAffectedEntitiesOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::AffectedEntity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeAffectedEntitiesOutputBuilder {
         self
     }
     /// <p>The entities that match the filter criteria.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AffectedEntity>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AffectedEntity>>) -> Self {
         self.entities = input;
         self
     }
     /// <p>The entities that match the filter criteria.</p>
-    pub fn get_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AffectedEntity>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AffectedEntity>> {
         &self.entities
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
@@ -95,9 +86,7 @@ impl DescribeAffectedEntitiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAffectedEntitiesOutput`](crate::operation::describe_affected_entities::DescribeAffectedEntitiesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_affected_entities::DescribeAffectedEntitiesOutput {
+    pub fn build(self) -> crate::operation::describe_affected_entities::DescribeAffectedEntitiesOutput {
         crate::operation::describe_affected_entities::DescribeAffectedEntitiesOutput {
             entities: self.entities,
             next_token: self.next_token,

@@ -51,16 +51,14 @@ impl DescribeVpcEndpointServicePermissionsInput {
 }
 impl DescribeVpcEndpointServicePermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointServicePermissionsInput`](crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsInput).
-    pub fn builder() -> crate::operation::describe_vpc_endpoint_service_permissions::builders::DescribeVpcEndpointServicePermissionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_endpoint_service_permissions::builders::DescribeVpcEndpointServicePermissionsInputBuilder {
         crate::operation::describe_vpc_endpoint_service_permissions::builders::DescribeVpcEndpointServicePermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcEndpointServicePermissionsInput`](crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointServicePermissionsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
@@ -117,10 +115,7 @@ impl DescribeVpcEndpointServicePermissionsInputBuilder {
     /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li>
     /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -161,20 +156,20 @@ impl DescribeVpcEndpointServicePermissionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointServicePermissionsInput`](crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsInput {
-                dry_run: self.dry_run
-                ,
-                service_id: self.service_id
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                dry_run: self.dry_run,
+                service_id: self.service_id,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

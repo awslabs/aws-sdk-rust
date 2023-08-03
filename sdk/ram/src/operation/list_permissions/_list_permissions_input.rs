@@ -57,9 +57,7 @@ impl ListPermissionsInput {
 
 /// A builder for [`ListPermissionsInput`](crate::operation::list_permissions::ListPermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionsInputBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,19 +67,13 @@ pub struct ListPermissionsInputBuilder {
 impl ListPermissionsInputBuilder {
     /// <p>Specifies that you want to list only those permissions that apply to the specified resource type. This parameter is not case sensitive.</p>
     /// <p>For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies that you want to list only those permissions that apply to the specified resource type. This parameter is not case sensitive.</p>
     /// <p>For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -136,10 +128,7 @@ impl ListPermissionsInputBuilder {
     /// <li> <p> <code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.</p> </li>
     /// </ul>
     /// <p>If you don't specify this parameter, the default is <code>All</code>.</p>
-    pub fn set_permission_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionTypeFilter>,
-    ) -> Self {
+    pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::PermissionTypeFilter>) -> Self {
         self.permission_type = input;
         self
     }
@@ -150,18 +139,13 @@ impl ListPermissionsInputBuilder {
     /// <li> <p> <code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.</p> </li>
     /// </ul>
     /// <p>If you don't specify this parameter, the default is <code>All</code>.</p>
-    pub fn get_permission_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::PermissionTypeFilter> {
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionTypeFilter> {
         &self.permission_type
     }
     /// Consumes the builder and constructs a [`ListPermissionsInput`](crate::operation::list_permissions::ListPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_permissions::ListPermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_permissions::ListPermissionsInput {
             resource_type: self.resource_type,
             next_token: self.next_token,

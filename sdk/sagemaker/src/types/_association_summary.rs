@@ -79,9 +79,7 @@ impl AssociationSummary {
 
 /// A builder for [`AssociationSummary`](crate::types::AssociationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociationSummaryBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
@@ -109,18 +107,12 @@ impl AssociationSummaryBuilder {
         &self.source_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -143,18 +135,12 @@ impl AssociationSummaryBuilder {
         &self.source_type
     }
     /// <p>The destination type.</p>
-    pub fn destination_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination type.</p>
-    pub fn set_destination_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_type = input;
         self
     }
@@ -168,17 +154,12 @@ impl AssociationSummaryBuilder {
         self
     }
     /// <p>The type of the association.</p>
-    pub fn set_association_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationEdgeType>,
-    ) -> Self {
+    pub fn set_association_type(mut self, input: ::std::option::Option<crate::types::AssociationEdgeType>) -> Self {
         self.association_type = input;
         self
     }
     /// <p>The type of the association.</p>
-    pub fn get_association_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssociationEdgeType> {
+    pub fn get_association_type(&self) -> &::std::option::Option<crate::types::AssociationEdgeType> {
         &self.association_type
     }
     /// <p>The name of the source.</p>
@@ -196,18 +177,12 @@ impl AssociationSummaryBuilder {
         &self.source_name
     }
     /// <p>The name of the destination.</p>
-    pub fn destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the destination.</p>
-    pub fn set_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_name = input;
         self
     }
@@ -221,10 +196,7 @@ impl AssociationSummaryBuilder {
         self
     }
     /// <p>When the association was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -238,10 +210,7 @@ impl AssociationSummaryBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_created_by(
-        mut self,
-        input: ::std::option::Option<crate::types::UserContext>,
-    ) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.created_by = input;
         self
     }

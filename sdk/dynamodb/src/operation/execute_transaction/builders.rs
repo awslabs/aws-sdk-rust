@@ -10,10 +10,7 @@ impl ExecuteTransactionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::execute_transaction::ExecuteTransactionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_transaction::ExecuteTransactionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_transaction::ExecuteTransactionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.execute_transaction();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl ExecuteTransactionFluentBuilder {
         }
     }
     /// Access the ExecuteTransaction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::execute_transaction::builders::ExecuteTransactionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::execute_transaction::builders::ExecuteTransactionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl ExecuteTransactionFluentBuilder {
             crate::operation::execute_transaction::ExecuteTransaction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_transaction::ExecuteTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_transaction::ExecuteTransactionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl ExecuteTransactionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl ExecuteTransactionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_transaction::ExecuteTransactionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_transaction::ExecuteTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_transaction::ExecuteTransactionError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl ExecuteTransactionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_transaction::ExecuteTransactionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_transaction::ExecuteTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_transaction::ExecuteTransactionError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl ExecuteTransactionFluentBuilder {
             crate::operation::execute_transaction::ExecuteTransaction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::execute_transaction::ExecuteTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_transaction::ExecuteTransactionError>,
     > {
         self.customize_middleware().await
     }
@@ -134,32 +118,21 @@ impl ExecuteTransactionFluentBuilder {
         self
     }
     /// <p>The list of PartiQL statements representing the transaction to run.</p>
-    pub fn set_transact_statements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterizedStatement>>,
-    ) -> Self {
+    pub fn set_transact_statements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterizedStatement>>) -> Self {
         self.inner = self.inner.set_transact_statements(input);
         self
     }
     /// <p>The list of PartiQL statements representing the transaction to run.</p>
-    pub fn get_transact_statements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterizedStatement>> {
+    pub fn get_transact_statements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterizedStatement>> {
         self.inner.get_transact_statements()
     }
     /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -173,17 +146,12 @@ impl ExecuteTransactionFluentBuilder {
         self
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
-    pub fn set_return_consumed_capacity(
-        mut self,
-        input: ::std::option::Option<crate::types::ReturnConsumedCapacity>,
-    ) -> Self {
+    pub fn set_return_consumed_capacity(mut self, input: ::std::option::Option<crate::types::ReturnConsumedCapacity>) -> Self {
         self.inner = self.inner.set_return_consumed_capacity(input);
         self
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
-    pub fn get_return_consumed_capacity(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReturnConsumedCapacity> {
+    pub fn get_return_consumed_capacity(&self) -> &::std::option::Option<crate::types::ReturnConsumedCapacity> {
         self.inner.get_return_consumed_capacity()
     }
 }

@@ -72,9 +72,7 @@ impl ApnsVoipSandboxChannelRequest {
 
 /// A builder for [`ApnsVoipSandboxChannelRequest`](crate::types::ApnsVoipSandboxChannelRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApnsVoipSandboxChannelRequestBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
@@ -115,25 +113,17 @@ impl ApnsVoipSandboxChannelRequestBuilder {
         &self.certificate
     }
     /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox environment for this channel, key or certificate.</p>
-    pub fn default_authentication_method(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_authentication_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_authentication_method = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox environment for this channel, key or certificate.</p>
-    pub fn set_default_authentication_method(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_authentication_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_authentication_method = input;
         self
     }
     /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox environment for this channel, key or certificate.</p>
-    pub fn get_default_authentication_method(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_default_authentication_method(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_authentication_method
     }
     /// <p>Specifies whether the APNs VoIP sandbox channel is enabled for the application.</p>

@@ -43,24 +43,19 @@ impl ListOrganizationInsightsInput {
 }
 impl ListOrganizationInsightsInput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationInsightsInput`](crate::operation::list_organization_insights::ListOrganizationInsightsInput).
-    pub fn builder(
-    ) -> crate::operation::list_organization_insights::builders::ListOrganizationInsightsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_organization_insights::builders::ListOrganizationInsightsInputBuilder {
         crate::operation::list_organization_insights::builders::ListOrganizationInsightsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListOrganizationInsightsInput`](crate::operation::list_organization_insights::ListOrganizationInsightsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOrganizationInsightsInputBuilder {
     pub(crate) status_filter: ::std::option::Option<crate::types::ListInsightsStatusFilter>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) organizational_unit_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListOrganizationInsightsInputBuilder {
@@ -70,17 +65,12 @@ impl ListOrganizationInsightsInputBuilder {
         self
     }
     /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
-    pub fn set_status_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListInsightsStatusFilter>,
-    ) -> Self {
+    pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::ListInsightsStatusFilter>) -> Self {
         self.status_filter = input;
         self
     }
     /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
-    pub fn get_status_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListInsightsStatusFilter> {
+    pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::ListInsightsStatusFilter> {
         &self.status_filter
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -109,17 +99,12 @@ impl ListOrganizationInsightsInputBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services account. </p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account. </p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
     /// Appends an item to `organizational_unit_ids`.
@@ -127,27 +112,19 @@ impl ListOrganizationInsightsInputBuilder {
     /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
     ///
     /// <p>The ID of the organizational unit.</p>
-    pub fn organizational_unit_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organizational_unit_ids.unwrap_or_default();
         v.push(input.into());
         self.organizational_unit_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn set_organizational_unit_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.organizational_unit_ids = input;
         self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn get_organizational_unit_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.organizational_unit_ids
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -171,14 +148,12 @@ impl ListOrganizationInsightsInputBuilder {
         crate::operation::list_organization_insights::ListOrganizationInsightsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_organization_insights::ListOrganizationInsightsInput {
-                status_filter: self.status_filter,
-                max_results: self.max_results,
-                account_ids: self.account_ids,
-                organizational_unit_ids: self.organizational_unit_ids,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_organization_insights::ListOrganizationInsightsInput {
+            status_filter: self.status_filter,
+            max_results: self.max_results,
+            account_ids: self.account_ids,
+            organizational_unit_ids: self.organizational_unit_ids,
+            next_token: self.next_token,
+        })
     }
 }

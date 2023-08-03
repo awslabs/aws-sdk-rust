@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_model::builders::CreateModelFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_model::builders::CreateModelFluentBuilder::set_tags): <p>A collection of key and value pairs.</p>
     /// - On success, responds with [`CreateModelOutput`](crate::operation::create_model::CreateModelOutput)
     /// - On failure, responds with [`SdkError<CreateModelError>`](crate::operation::create_model::CreateModelError)
-    pub fn create_model(
-        &self,
-    ) -> crate::operation::create_model::builders::CreateModelFluentBuilder {
+    pub fn create_model(&self) -> crate::operation::create_model::builders::CreateModelFluentBuilder {
         crate::operation::create_model::builders::CreateModelFluentBuilder::new(self.handle.clone())
     }
 }

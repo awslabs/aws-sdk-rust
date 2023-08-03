@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`managed_rules(Option<Vec<ManagedRuleDescription>>)`](crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput::managed_rules): <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput::next_token): <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     /// - On failure, responds with [`SdkError<ListManagedInsightRulesError>`](crate::operation::list_managed_insight_rules::ListManagedInsightRulesError)
-    pub fn list_managed_insight_rules(
-        &self,
-    ) -> crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesFluentBuilder
-    {
+    pub fn list_managed_insight_rules(&self) -> crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesFluentBuilder {
         crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesFluentBuilder::new(self.handle.clone())
     }
 }

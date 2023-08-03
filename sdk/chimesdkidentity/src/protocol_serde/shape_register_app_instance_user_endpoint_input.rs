@@ -12,10 +12,7 @@ pub fn ser_register_app_instance_user_endpoint_input(
     if let Some(var_3) = &input.endpoint_attributes {
         #[allow(unused_mut)]
         let mut object_4 = object.key("EndpointAttributes").start_object();
-        crate::protocol_serde::shape_endpoint_attributes::ser_endpoint_attributes(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_endpoint_attributes::ser_endpoint_attributes(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.name {

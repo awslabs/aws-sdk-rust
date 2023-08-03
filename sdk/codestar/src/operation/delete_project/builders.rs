@@ -10,10 +10,7 @@ impl DeleteProjectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_project::DeleteProjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_project::DeleteProjectError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_project::DeleteProjectError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_project();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteProjectFluentBuilder {
         }
     }
     /// Access the DeleteProject as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_project::builders::DeleteProjectInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_project::builders::DeleteProjectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DeleteProjectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl DeleteProjectFluentBuilder {
         self.inner.get_id()
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

@@ -4,9 +4,7 @@ pub fn ser_assessment_target_filter(
     input: &crate::types::AssessmentTargetFilter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.assessment_target_name_pattern {
-        object
-            .key("assessmentTargetNamePattern")
-            .string(var_1.as_str());
+        object.key("assessmentTargetNamePattern").string(var_1.as_str());
     }
     Ok(())
 }

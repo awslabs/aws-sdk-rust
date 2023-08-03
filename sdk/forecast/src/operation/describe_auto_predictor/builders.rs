@@ -37,10 +37,7 @@ impl DescribeAutoPredictorFluentBuilder {
         }
     }
     /// Access the DescribeAutoPredictor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeAutoPredictorFluentBuilder {
             crate::operation::describe_auto_predictor::DescribeAutoPredictor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_predictor::DescribeAutoPredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_predictor::DescribeAutoPredictorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeAutoPredictorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeAutoPredictorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_auto_predictor::DescribeAutoPredictorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_predictor::DescribeAutoPredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_predictor::DescribeAutoPredictorError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeAutoPredictorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_auto_predictor::DescribeAutoPredictorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_predictor::DescribeAutoPredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_predictor::DescribeAutoPredictorError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DescribeAutoPredictorFluentBuilder {
             crate::operation::describe_auto_predictor::DescribeAutoPredictor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_auto_predictor::DescribeAutoPredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_predictor::DescribeAutoPredictorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
-    pub fn predictor_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.predictor_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
-    pub fn set_predictor_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_predictor_arn(input);
         self
     }

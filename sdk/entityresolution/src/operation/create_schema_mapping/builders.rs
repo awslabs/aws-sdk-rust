@@ -37,9 +37,7 @@ impl CreateSchemaMappingFluentBuilder {
         }
     }
     /// Access the CreateSchemaMapping as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_schema_mapping::builders::CreateSchemaMappingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_schema_mapping::builders::CreateSchemaMappingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateSchemaMappingFluentBuilder {
             crate::operation::create_schema_mapping::CreateSchemaMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_schema_mapping::CreateSchemaMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_schema_mapping::CreateSchemaMappingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateSchemaMappingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateSchemaMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_schema_mapping::CreateSchemaMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_schema_mapping::CreateSchemaMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_schema_mapping::CreateSchemaMappingError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateSchemaMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_schema_mapping::CreateSchemaMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_schema_mapping::CreateSchemaMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_schema_mapping::CreateSchemaMappingError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl CreateSchemaMappingFluentBuilder {
             crate::operation::create_schema_mapping::CreateSchemaMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_schema_mapping::CreateSchemaMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_schema_mapping::CreateSchemaMappingError>,
     > {
         self.customize_middleware().await
     }
@@ -160,17 +147,12 @@ impl CreateSchemaMappingFluentBuilder {
         self
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
-    pub fn set_mapped_input_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
-    ) -> Self {
+    pub fn set_mapped_input_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>) -> Self {
         self.inner = self.inner.set_mapped_input_fields(input);
         self
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
-    pub fn get_mapped_input_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>> {
+    pub fn get_mapped_input_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>> {
         self.inner.get_mapped_input_fields()
     }
     /// Adds a key-value pair to `tags`.
@@ -178,30 +160,17 @@ impl CreateSchemaMappingFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

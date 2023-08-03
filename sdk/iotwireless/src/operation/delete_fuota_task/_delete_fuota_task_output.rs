@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteFuotaTaskOutput {
 }
 impl DeleteFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFuotaTaskOutput`](crate::operation::delete_fuota_task::DeleteFuotaTaskOutput).
-    pub fn builder() -> crate::operation::delete_fuota_task::builders::DeleteFuotaTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_fuota_task::builders::DeleteFuotaTaskOutputBuilder {
         crate::operation::delete_fuota_task::builders::DeleteFuotaTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFuotaTaskOutput`](crate::operation::delete_fuota_task::DeleteFuotaTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFuotaTaskOutputBuilder {
     _request_id: Option<String>,
 }

@@ -5,8 +5,7 @@
 pub struct DescribeTransitGatewayPolicyTablesOutput {
     /// <p>Describes the transit gateway policy tables.</p>
     #[doc(hidden)]
-    pub transit_gateway_policy_tables:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTable>>,
+    pub transit_gateway_policy_tables: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTable>>,
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeTransitGatewayPolicyTablesOutput {
 }
 impl DescribeTransitGatewayPolicyTablesOutput {
     /// <p>Describes the transit gateway policy tables.</p>
-    pub fn transit_gateway_policy_tables(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TransitGatewayPolicyTable]> {
+    pub fn transit_gateway_policy_tables(&self) -> ::std::option::Option<&[crate::types::TransitGatewayPolicyTable]> {
         self.transit_gateway_policy_tables.as_deref()
     }
     /// <p>The token for the next page of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeTransitGatewayPolicyTablesOut
 }
 impl DescribeTransitGatewayPolicyTablesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayPolicyTablesOutput`](crate::operation::describe_transit_gateway_policy_tables::DescribeTransitGatewayPolicyTablesOutput).
-    pub fn builder() -> crate::operation::describe_transit_gateway_policy_tables::builders::DescribeTransitGatewayPolicyTablesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_transit_gateway_policy_tables::builders::DescribeTransitGatewayPolicyTablesOutputBuilder {
         crate::operation::describe_transit_gateway_policy_tables::builders::DescribeTransitGatewayPolicyTablesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTransitGatewayPolicyTablesOutput`](crate::operation::describe_transit_gateway_policy_tables::DescribeTransitGatewayPolicyTablesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTransitGatewayPolicyTablesOutputBuilder {
-    pub(crate) transit_gateway_policy_tables:
-        ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTable>>,
+    pub(crate) transit_gateway_policy_tables: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTable>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl DescribeTransitGatewayPolicyTablesOutputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_policy_tables`](Self::set_transit_gateway_policy_tables).
     ///
     /// <p>Describes the transit gateway policy tables.</p>
-    pub fn transit_gateway_policy_tables(
-        mut self,
-        input: crate::types::TransitGatewayPolicyTable,
-    ) -> Self {
+    pub fn transit_gateway_policy_tables(mut self, input: crate::types::TransitGatewayPolicyTable) -> Self {
         let mut v = self.transit_gateway_policy_tables.unwrap_or_default();
         v.push(input);
         self.transit_gateway_policy_tables = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl DescribeTransitGatewayPolicyTablesOutputBuilder {
         self
     }
     /// <p>Describes the transit gateway policy tables.</p>
-    pub fn get_transit_gateway_policy_tables(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTable>> {
+    pub fn get_transit_gateway_policy_tables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTable>> {
         &self.transit_gateway_policy_tables
     }
     /// <p>The token for the next page of results.</p>
@@ -100,12 +89,10 @@ impl DescribeTransitGatewayPolicyTablesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTransitGatewayPolicyTablesOutput`](crate::operation::describe_transit_gateway_policy_tables::DescribeTransitGatewayPolicyTablesOutput).
-    pub fn build(self) -> crate::operation::describe_transit_gateway_policy_tables::DescribeTransitGatewayPolicyTablesOutput{
+    pub fn build(self) -> crate::operation::describe_transit_gateway_policy_tables::DescribeTransitGatewayPolicyTablesOutput {
         crate::operation::describe_transit_gateway_policy_tables::DescribeTransitGatewayPolicyTablesOutput {
-            transit_gateway_policy_tables: self.transit_gateway_policy_tables
-            ,
-            next_token: self.next_token
-            ,
+            transit_gateway_policy_tables: self.transit_gateway_policy_tables,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for GetIpamResourceCidrsOutput {
 }
 impl GetIpamResourceCidrsOutput {
     /// Creates a new builder-style object to manufacture [`GetIpamResourceCidrsOutput`](crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsOutputBuilder {
         crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIpamResourceCidrsOutput`](crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpamResourceCidrsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) ipam_resource_cidrs:
-        ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceCidr>>,
+    pub(crate) ipam_resource_cidrs: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceCidr>>,
     _request_id: Option<String>,
 }
 impl GetIpamResourceCidrsOutputBuilder {
@@ -73,17 +68,12 @@ impl GetIpamResourceCidrsOutputBuilder {
         self
     }
     /// <p>The resource CIDRs.</p>
-    pub fn set_ipam_resource_cidrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceCidr>>,
-    ) -> Self {
+    pub fn set_ipam_resource_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceCidr>>) -> Self {
         self.ipam_resource_cidrs = input;
         self
     }
     /// <p>The resource CIDRs.</p>
-    pub fn get_ipam_resource_cidrs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamResourceCidr>> {
+    pub fn get_ipam_resource_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamResourceCidr>> {
         &self.ipam_resource_cidrs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

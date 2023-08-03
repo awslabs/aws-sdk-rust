@@ -36,17 +36,14 @@ impl CreateSubnetGroupInput {
 }
 impl CreateSubnetGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateSubnetGroupInput`](crate::operation::create_subnet_group::CreateSubnetGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_subnet_group::builders::CreateSubnetGroupInputBuilder {
+    pub fn builder() -> crate::operation::create_subnet_group::builders::CreateSubnetGroupInputBuilder {
         crate::operation::create_subnet_group::builders::CreateSubnetGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSubnetGroupInput`](crate::operation::create_subnet_group::CreateSubnetGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSubnetGroupInputBuilder {
     pub(crate) subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -55,18 +52,12 @@ pub struct CreateSubnetGroupInputBuilder {
 }
 impl CreateSubnetGroupInputBuilder {
     /// <p>The name of the subnet group.</p>
-    pub fn subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the subnet group.</p>
-    pub fn set_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_group_name = input;
         self
     }
@@ -100,10 +91,7 @@ impl CreateSubnetGroupInputBuilder {
         self
     }
     /// <p>A list of VPC subnet IDs for the subnet group.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -123,10 +111,7 @@ impl CreateSubnetGroupInputBuilder {
         self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -137,17 +122,12 @@ impl CreateSubnetGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateSubnetGroupInput`](crate::operation::create_subnet_group::CreateSubnetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_subnet_group::CreateSubnetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_subnet_group::CreateSubnetGroupInput {
-                subnet_group_name: self.subnet_group_name,
-                description: self.description,
-                subnet_ids: self.subnet_ids,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_subnet_group::CreateSubnetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_subnet_group::CreateSubnetGroupInput {
+            subnet_group_name: self.subnet_group_name,
+            description: self.description,
+            subnet_ids: self.subnet_ids,
+            tags: self.tags,
+        })
     }
 }

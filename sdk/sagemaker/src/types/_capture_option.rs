@@ -23,9 +23,7 @@ impl CaptureOption {
 
 /// A builder for [`CaptureOption`](crate::types::CaptureOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CaptureOptionBuilder {
     pub(crate) capture_mode: ::std::option::Option<crate::types::CaptureMode>,
 }
@@ -36,10 +34,7 @@ impl CaptureOptionBuilder {
         self
     }
     /// <p>Specify the boundary of data to capture.</p>
-    pub fn set_capture_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptureMode>,
-    ) -> Self {
+    pub fn set_capture_mode(mut self, input: ::std::option::Option<crate::types::CaptureMode>) -> Self {
         self.capture_mode = input;
         self
     }

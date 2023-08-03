@@ -54,7 +54,7 @@ impl ::std::fmt::Debug for DescribeResourcePermissionsInput {
 }
 impl DescribeResourcePermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeResourcePermissionsInput`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsInput).
-    pub fn builder() -> crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsInputBuilder {
         crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsInputBuilder::default()
     }
 }
@@ -71,18 +71,12 @@ pub struct DescribeResourcePermissionsInputBuilder {
 }
 impl DescribeResourcePermissionsInputBuilder {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_token = input;
         self
     }
@@ -153,15 +147,13 @@ impl DescribeResourcePermissionsInputBuilder {
         crate::operation::describe_resource_permissions::DescribeResourcePermissionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_resource_permissions::DescribeResourcePermissionsInput {
-                authentication_token: self.authentication_token,
-                resource_id: self.resource_id,
-                principal_id: self.principal_id,
-                limit: self.limit,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_resource_permissions::DescribeResourcePermissionsInput {
+            authentication_token: self.authentication_token,
+            resource_id: self.resource_id,
+            principal_id: self.principal_id,
+            limit: self.limit,
+            marker: self.marker,
+        })
     }
 }
 impl ::std::fmt::Debug for DescribeResourcePermissionsInputBuilder {

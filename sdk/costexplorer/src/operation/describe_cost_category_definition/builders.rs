@@ -5,16 +5,16 @@ pub use crate::operation::describe_cost_category_definition::_describe_cost_cate
 
 impl DescribeCostCategoryDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_cost_category_definition();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl DescribeCostCategoryDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCostCategoryDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionInputBuilder,
+    inner: crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionInputBuilder,
 }
 impl DescribeCostCategoryDefinitionFluentBuilder {
     /// Creates a new `DescribeCostCategoryDefinition`.
@@ -38,15 +38,20 @@ impl DescribeCostCategoryDefinitionFluentBuilder {
         }
     }
     /// Access the DescribeCostCategoryDefinition as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinition, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinition,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl DescribeCostCategoryDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,32 +88,35 @@ impl DescribeCostCategoryDefinitionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinition, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinition,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn cost_category_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cost_category_arn(input.into());
         self
     }
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn set_cost_category_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cost_category_arn(input);
         self
     }

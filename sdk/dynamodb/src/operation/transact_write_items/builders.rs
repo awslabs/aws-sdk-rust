@@ -10,10 +10,7 @@ impl TransactWriteItemsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::transact_write_items::TransactWriteItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transact_write_items::TransactWriteItemsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transact_write_items::TransactWriteItemsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.transact_write_items();
         fluent_builder.inner = self;
@@ -53,9 +50,7 @@ impl TransactWriteItemsFluentBuilder {
         }
     }
     /// Access the TransactWriteItems as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::transact_write_items::builders::TransactWriteItemsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::transact_write_items::builders::TransactWriteItemsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -67,9 +62,7 @@ impl TransactWriteItemsFluentBuilder {
             crate::operation::transact_write_items::TransactWriteItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transact_write_items::TransactWriteItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transact_write_items::TransactWriteItemsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -79,10 +72,7 @@ impl TransactWriteItemsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -91,9 +81,7 @@ impl TransactWriteItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::transact_write_items::TransactWriteItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transact_write_items::TransactWriteItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transact_write_items::TransactWriteItemsError>,
     > {
         let op = self
             .inner
@@ -116,9 +104,7 @@ impl TransactWriteItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::transact_write_items::TransactWriteItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transact_write_items::TransactWriteItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transact_write_items::TransactWriteItemsError>,
     > {
         self.send_middleware().await
     }
@@ -132,9 +118,7 @@ impl TransactWriteItemsFluentBuilder {
             crate::operation::transact_write_items::TransactWriteItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::transact_write_items::TransactWriteItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::transact_write_items::TransactWriteItemsError>,
     > {
         self.customize_middleware().await
     }
@@ -148,17 +132,12 @@ impl TransactWriteItemsFluentBuilder {
         self
     }
     /// <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
-    pub fn set_transact_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransactWriteItem>>,
-    ) -> Self {
+    pub fn set_transact_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransactWriteItem>>) -> Self {
         self.inner = self.inner.set_transact_items(input);
         self
     }
     /// <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
-    pub fn get_transact_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransactWriteItem>> {
+    pub fn get_transact_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransactWriteItem>> {
         self.inner.get_transact_items()
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
@@ -177,10 +156,7 @@ impl TransactWriteItemsFluentBuilder {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
-    pub fn set_return_consumed_capacity(
-        mut self,
-        input: ::std::option::Option<crate::types::ReturnConsumedCapacity>,
-    ) -> Self {
+    pub fn set_return_consumed_capacity(mut self, input: ::std::option::Option<crate::types::ReturnConsumedCapacity>) -> Self {
         self.inner = self.inner.set_return_consumed_capacity(input);
         self
     }
@@ -190,41 +166,28 @@ impl TransactWriteItemsFluentBuilder {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
-    pub fn get_return_consumed_capacity(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReturnConsumedCapacity> {
+    pub fn get_return_consumed_capacity(&self) -> &::std::option::Option<crate::types::ReturnConsumedCapacity> {
         self.inner.get_return_consumed_capacity()
     }
     /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections (if any), that were modified during the operation and are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned. </p>
-    pub fn return_item_collection_metrics(
-        mut self,
-        input: crate::types::ReturnItemCollectionMetrics,
-    ) -> Self {
+    pub fn return_item_collection_metrics(mut self, input: crate::types::ReturnItemCollectionMetrics) -> Self {
         self.inner = self.inner.return_item_collection_metrics(input);
         self
     }
     /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections (if any), that were modified during the operation and are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned. </p>
-    pub fn set_return_item_collection_metrics(
-        mut self,
-        input: ::std::option::Option<crate::types::ReturnItemCollectionMetrics>,
-    ) -> Self {
+    pub fn set_return_item_collection_metrics(mut self, input: ::std::option::Option<crate::types::ReturnItemCollectionMetrics>) -> Self {
         self.inner = self.inner.set_return_item_collection_metrics(input);
         self
     }
     /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections (if any), that were modified during the operation and are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned. </p>
-    pub fn get_return_item_collection_metrics(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReturnItemCollectionMetrics> {
+    pub fn get_return_item_collection_metrics(&self) -> &::std::option::Option<crate::types::ReturnItemCollectionMetrics> {
         self.inner.get_return_item_collection_metrics()
     }
     /// <p>Providing a <code>ClientRequestToken</code> makes the call to <code>TransactWriteItems</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
     /// <p>Although multiple identical calls using the same client request token produce the same result on the server (no side effects), the responses to the calls might not be the same. If the <code>ReturnConsumedCapacity</code> parameter is set, then the initial <code>TransactWriteItems</code> call returns the amount of write capacity units consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with the same client token return the number of read capacity units consumed in reading the item.</p>
     /// <p>A client request token is valid for 10 minutes after the first request that uses it is completed. After 10 minutes, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 10 minutes, or the result might not be idempotent.</p>
     /// <p>If you submit a request with the same client token but a change in other parameters within the 10-minute idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
@@ -232,10 +195,7 @@ impl TransactWriteItemsFluentBuilder {
     /// <p>Although multiple identical calls using the same client request token produce the same result on the server (no side effects), the responses to the calls might not be the same. If the <code>ReturnConsumedCapacity</code> parameter is set, then the initial <code>TransactWriteItems</code> call returns the amount of write capacity units consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with the same client token return the number of read capacity units consumed in reading the item.</p>
     /// <p>A client request token is valid for 10 minutes after the first request that uses it is completed. After 10 minutes, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 10 minutes, or the result might not be idempotent.</p>
     /// <p>If you submit a request with the same client token but a change in other parameters within the 10-minute idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

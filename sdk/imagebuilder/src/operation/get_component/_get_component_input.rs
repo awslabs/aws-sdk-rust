@@ -22,26 +22,18 @@ impl GetComponentInput {
 
 /// A builder for [`GetComponentInput`](crate::operation::get_component::GetComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComponentInputBuilder {
     pub(crate) component_build_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetComponentInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
-    pub fn component_build_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
-    pub fn set_component_build_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_build_version_arn = input;
         self
     }
@@ -50,12 +42,7 @@ impl GetComponentInputBuilder {
         &self.component_build_version_arn
     }
     /// Consumes the builder and constructs a [`GetComponentInput`](crate::operation::get_component::GetComponentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_component::GetComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_component::GetComponentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_component::GetComponentInput {
             component_build_version_arn: self.component_build_version_arn,
         })

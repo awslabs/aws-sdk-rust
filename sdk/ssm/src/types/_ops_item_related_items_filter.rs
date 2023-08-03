@@ -24,9 +24,7 @@ impl OpsItemRelatedItemsFilter {
         self.values.as_deref()
     }
     /// <p>The operator used by the filter call. The only supported operator is <code>EQUAL</code>.</p>
-    pub fn operator(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OpsItemRelatedItemsFilterOperator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::OpsItemRelatedItemsFilterOperator> {
         self.operator.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl OpsItemRelatedItemsFilter {
 
 /// A builder for [`OpsItemRelatedItemsFilter`](crate::types::OpsItemRelatedItemsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsItemRelatedItemsFilterBuilder {
     pub(crate) key: ::std::option::Option<crate::types::OpsItemRelatedItemsFilterKey>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -54,10 +50,7 @@ impl OpsItemRelatedItemsFilterBuilder {
         self
     }
     /// <p>The name of the filter key. Supported values include <code>ResourceUri</code>, <code>ResourceType</code>, or <code>AssociationId</code>.</p>
-    pub fn set_key(
-        mut self,
-        input: ::std::option::Option<crate::types::OpsItemRelatedItemsFilterKey>,
-    ) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::OpsItemRelatedItemsFilterKey>) -> Self {
         self.key = input;
         self
     }
@@ -77,10 +70,7 @@ impl OpsItemRelatedItemsFilterBuilder {
         self
     }
     /// <p>The values for the filter.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -94,17 +84,12 @@ impl OpsItemRelatedItemsFilterBuilder {
         self
     }
     /// <p>The operator used by the filter call. The only supported operator is <code>EQUAL</code>.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::OpsItemRelatedItemsFilterOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OpsItemRelatedItemsFilterOperator>) -> Self {
         self.operator = input;
         self
     }
     /// <p>The operator used by the filter call. The only supported operator is <code>EQUAL</code>.</p>
-    pub fn get_operator(
-        &self,
-    ) -> &::std::option::Option<crate::types::OpsItemRelatedItemsFilterOperator> {
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OpsItemRelatedItemsFilterOperator> {
         &self.operator
     }
     /// Consumes the builder and constructs a [`OpsItemRelatedItemsFilter`](crate::types::OpsItemRelatedItemsFilter).

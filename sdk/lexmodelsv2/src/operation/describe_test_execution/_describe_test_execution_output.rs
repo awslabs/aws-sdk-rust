@@ -49,9 +49,7 @@ impl DescribeTestExecutionOutput {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The test execution status for the test execution.</p>
-    pub fn test_execution_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TestExecutionStatus> {
+    pub fn test_execution_status(&self) -> ::std::option::Option<&crate::types::TestExecutionStatus> {
         self.test_execution_status.as_ref()
     }
     /// <p>The test set Id for the test set execution.</p>
@@ -71,9 +69,7 @@ impl DescribeTestExecutionOutput {
         self.api_mode.as_ref()
     }
     /// <p>Indicates whether test set is audio or text.</p>
-    pub fn test_execution_modality(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TestExecutionModality> {
+    pub fn test_execution_modality(&self) -> ::std::option::Option<&crate::types::TestExecutionModality> {
         self.test_execution_modality.as_ref()
     }
     /// <p>Reasons for the failure of the test set execution.</p>
@@ -88,18 +84,14 @@ impl ::aws_http::request_id::RequestId for DescribeTestExecutionOutput {
 }
 impl DescribeTestExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTestExecutionOutput`](crate::operation::describe_test_execution::DescribeTestExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_test_execution::builders::DescribeTestExecutionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_test_execution::builders::DescribeTestExecutionOutputBuilder {
         crate::operation::describe_test_execution::builders::DescribeTestExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTestExecutionOutput`](crate::operation::describe_test_execution::DescribeTestExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTestExecutionOutputBuilder {
     pub(crate) test_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -115,18 +107,12 @@ pub struct DescribeTestExecutionOutputBuilder {
 }
 impl DescribeTestExecutionOutputBuilder {
     /// <p>The execution Id for the test set execution.</p>
-    pub fn test_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The execution Id for the test set execution.</p>
-    pub fn set_test_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_execution_id = input;
         self
     }
@@ -140,10 +126,7 @@ impl DescribeTestExecutionOutputBuilder {
         self
     }
     /// <p>The execution creation date and time for the test set execution.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -157,17 +140,12 @@ impl DescribeTestExecutionOutputBuilder {
         self
     }
     /// <p>The date and time of the last update for the execution.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time of the last update for the execution.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// <p>The test execution status for the test execution.</p>
@@ -176,17 +154,12 @@ impl DescribeTestExecutionOutputBuilder {
         self
     }
     /// <p>The test execution status for the test execution.</p>
-    pub fn set_test_execution_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionStatus>,
-    ) -> Self {
+    pub fn set_test_execution_status(mut self, input: ::std::option::Option<crate::types::TestExecutionStatus>) -> Self {
         self.test_execution_status = input;
         self
     }
     /// <p>The test execution status for the test execution.</p>
-    pub fn get_test_execution_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestExecutionStatus> {
+    pub fn get_test_execution_status(&self) -> &::std::option::Option<crate::types::TestExecutionStatus> {
         &self.test_execution_status
     }
     /// <p>The test set Id for the test set execution.</p>
@@ -204,18 +177,12 @@ impl DescribeTestExecutionOutputBuilder {
         &self.test_set_id
     }
     /// <p>The test set name of the test set execution.</p>
-    pub fn test_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn test_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The test set name of the test set execution.</p>
-    pub fn set_test_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_test_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_set_name = input;
         self
     }
@@ -229,10 +196,7 @@ impl DescribeTestExecutionOutputBuilder {
         self
     }
     /// <p>The target bot for the test set execution details.</p>
-    pub fn set_target(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionTarget>,
-    ) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::TestExecutionTarget>) -> Self {
         self.target = input;
         self
     }
@@ -246,10 +210,7 @@ impl DescribeTestExecutionOutputBuilder {
         self
     }
     /// <p>Indicates whether we use streaming or non-streaming APIs are used for the test set execution. For streaming, <code>StartConversation</code> Amazon Lex Runtime API is used. Whereas for non-streaming, <code>RecognizeUtterance</code> and <code>RecognizeText</code> Amazon Lex Runtime API is used.</p>
-    pub fn set_api_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionApiMode>,
-    ) -> Self {
+    pub fn set_api_mode(mut self, input: ::std::option::Option<crate::types::TestExecutionApiMode>) -> Self {
         self.api_mode = input;
         self
     }
@@ -263,17 +224,12 @@ impl DescribeTestExecutionOutputBuilder {
         self
     }
     /// <p>Indicates whether test set is audio or text.</p>
-    pub fn set_test_execution_modality(
-        mut self,
-        input: ::std::option::Option<crate::types::TestExecutionModality>,
-    ) -> Self {
+    pub fn set_test_execution_modality(mut self, input: ::std::option::Option<crate::types::TestExecutionModality>) -> Self {
         self.test_execution_modality = input;
         self
     }
     /// <p>Indicates whether test set is audio or text.</p>
-    pub fn get_test_execution_modality(
-        &self,
-    ) -> &::std::option::Option<crate::types::TestExecutionModality> {
+    pub fn get_test_execution_modality(&self) -> &::std::option::Option<crate::types::TestExecutionModality> {
         &self.test_execution_modality
     }
     /// Appends an item to `failure_reasons`.
@@ -281,27 +237,19 @@ impl DescribeTestExecutionOutputBuilder {
     /// To override the contents of this collection use [`set_failure_reasons`](Self::set_failure_reasons).
     ///
     /// <p>Reasons for the failure of the test set execution.</p>
-    pub fn failure_reasons(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
         v.push(input.into());
         self.failure_reasons = ::std::option::Option::Some(v);
         self
     }
     /// <p>Reasons for the failure of the test set execution.</p>
-    pub fn set_failure_reasons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failure_reasons = input;
         self
     }
     /// <p>Reasons for the failure of the test set execution.</p>
-    pub fn get_failure_reasons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_reasons
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

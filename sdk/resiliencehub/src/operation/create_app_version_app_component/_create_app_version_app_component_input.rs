@@ -17,9 +17,7 @@ pub struct CreateAppVersionAppComponentInput {
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Currently, there is no supported additional information for Application Components.</p>
     #[doc(hidden)]
-    pub additional_info: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -44,9 +42,7 @@ impl CreateAppVersionAppComponentInput {
     /// <p>Currently, there is no supported additional information for Application Components.</p>
     pub fn additional_info(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.additional_info.as_ref()
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
@@ -56,24 +52,20 @@ impl CreateAppVersionAppComponentInput {
 }
 impl CreateAppVersionAppComponentInput {
     /// Creates a new builder-style object to manufacture [`CreateAppVersionAppComponentInput`](crate::operation::create_app_version_app_component::CreateAppVersionAppComponentInput).
-    pub fn builder() -> crate::operation::create_app_version_app_component::builders::CreateAppVersionAppComponentInputBuilder{
+    pub fn builder() -> crate::operation::create_app_version_app_component::builders::CreateAppVersionAppComponentInputBuilder {
         crate::operation::create_app_version_app_component::builders::CreateAppVersionAppComponentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAppVersionAppComponentInput`](crate::operation::create_app_version_app_component::CreateAppVersionAppComponentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppVersionAppComponentInputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_info: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateAppVersionAppComponentInputBuilder {
@@ -138,11 +130,7 @@ impl CreateAppVersionAppComponentInputBuilder {
     /// To override the contents of this collection use [`set_additional_info`](Self::set_additional_info).
     ///
     /// <p>Currently, there is no supported additional information for Application Components.</p>
-    pub fn additional_info(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.additional_info.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.additional_info = ::std::option::Option::Some(hash_map);
@@ -151,12 +139,7 @@ impl CreateAppVersionAppComponentInputBuilder {
     /// <p>Currently, there is no supported additional information for Application Components.</p>
     pub fn set_additional_info(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.additional_info = input;
         self
@@ -164,9 +147,7 @@ impl CreateAppVersionAppComponentInputBuilder {
     /// <p>Currently, there is no supported additional information for Application Components.</p>
     pub fn get_additional_info(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.additional_info
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
@@ -190,15 +171,13 @@ impl CreateAppVersionAppComponentInputBuilder {
         crate::operation::create_app_version_app_component::CreateAppVersionAppComponentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_app_version_app_component::CreateAppVersionAppComponentInput {
-                app_arn: self.app_arn,
-                id: self.id,
-                name: self.name,
-                r#type: self.r#type,
-                additional_info: self.additional_info,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_app_version_app_component::CreateAppVersionAppComponentInput {
+            app_arn: self.app_arn,
+            id: self.id,
+            name: self.name,
+            r#type: self.r#type,
+            additional_info: self.additional_info,
+            client_token: self.client_token,
+        })
     }
 }

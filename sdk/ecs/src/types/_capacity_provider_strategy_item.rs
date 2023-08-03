@@ -45,9 +45,7 @@ impl CapacityProviderStrategyItem {
 
 /// A builder for [`CapacityProviderStrategyItem`](crate::types::CapacityProviderStrategyItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityProviderStrategyItemBuilder {
     pub(crate) capacity_provider: ::std::option::Option<::std::string::String>,
     pub(crate) weight: ::std::option::Option<i32>,
@@ -55,18 +53,12 @@ pub struct CapacityProviderStrategyItemBuilder {
 }
 impl CapacityProviderStrategyItemBuilder {
     /// <p>The short name of the capacity provider.</p>
-    pub fn capacity_provider(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_provider = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The short name of the capacity provider.</p>
-    pub fn set_capacity_provider(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_provider = input;
         self
     }

@@ -56,17 +56,14 @@ impl ::aws_http::request_id::RequestId for DescribeExecutionOutput {
 }
 impl DescribeExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder {
         crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExecutionOutputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
@@ -106,18 +103,12 @@ impl DescribeExecutionOutputBuilder {
         &self.execution_id
     }
     /// <p>The ID of the managed device that the task is being executed on.</p>
-    pub fn managed_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn managed_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the managed device that the task is being executed on.</p>
-    pub fn set_managed_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_managed_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.managed_device_id = input;
         self
     }
@@ -145,10 +136,7 @@ impl DescribeExecutionOutputBuilder {
         self
     }
     /// <p>When the execution began.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -162,10 +150,7 @@ impl DescribeExecutionOutputBuilder {
         self
     }
     /// <p>When the status of the execution was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }

@@ -22,36 +22,26 @@ impl DetachSecurityProfileInput {
 }
 impl DetachSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`DetachSecurityProfileInput`](crate::operation::detach_security_profile::DetachSecurityProfileInput).
-    pub fn builder(
-    ) -> crate::operation::detach_security_profile::builders::DetachSecurityProfileInputBuilder
-    {
+    pub fn builder() -> crate::operation::detach_security_profile::builders::DetachSecurityProfileInputBuilder {
         crate::operation::detach_security_profile::builders::DetachSecurityProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`DetachSecurityProfileInput`](crate::operation::detach_security_profile::DetachSecurityProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachSecurityProfileInputBuilder {
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) security_profile_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl DetachSecurityProfileInputBuilder {
     /// <p>The security profile that is detached.</p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The security profile that is detached.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_profile_name = input;
         self
     }
@@ -60,18 +50,12 @@ impl DetachSecurityProfileInputBuilder {
         &self.security_profile_name
     }
     /// <p>The ARN of the thing group from which the security profile is detached.</p>
-    pub fn security_profile_target_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the thing group from which the security profile is detached.</p>
-    pub fn set_security_profile_target_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_profile_target_arn = input;
         self
     }
@@ -82,15 +66,11 @@ impl DetachSecurityProfileInputBuilder {
     /// Consumes the builder and constructs a [`DetachSecurityProfileInput`](crate::operation::detach_security_profile::DetachSecurityProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_security_profile::DetachSecurityProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::detach_security_profile::DetachSecurityProfileInput {
-                security_profile_name: self.security_profile_name,
-                security_profile_target_arn: self.security_profile_target_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::detach_security_profile::DetachSecurityProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::detach_security_profile::DetachSecurityProfileInput {
+            security_profile_name: self.security_profile_name,
+            security_profile_target_arn: self.security_profile_target_arn,
+        })
     }
 }

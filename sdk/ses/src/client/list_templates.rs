@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`templates_metadata(Option<Vec<TemplateMetadata>>)`](crate::operation::list_templates::ListTemplatesOutput::templates_metadata): <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_templates::ListTemplatesOutput::next_token): <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.</p>
     /// - On failure, responds with [`SdkError<ListTemplatesError>`](crate::operation::list_templates::ListTemplatesError)
-    pub fn list_templates(
-        &self,
-    ) -> crate::operation::list_templates::builders::ListTemplatesFluentBuilder {
-        crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_templates(&self) -> crate::operation::list_templates::builders::ListTemplatesFluentBuilder {
+        crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(self.handle.clone())
     }
 }

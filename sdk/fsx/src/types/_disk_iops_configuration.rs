@@ -30,9 +30,7 @@ impl DiskIopsConfiguration {
 
 /// A builder for [`DiskIopsConfiguration`](crate::types::DiskIopsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiskIopsConfigurationBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::DiskIopsConfigurationMode>,
     pub(crate) iops: ::std::option::Option<i64>,
@@ -44,10 +42,7 @@ impl DiskIopsConfigurationBuilder {
         self
     }
     /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DiskIopsConfigurationMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::DiskIopsConfigurationMode>) -> Self {
         self.mode = input;
         self
     }

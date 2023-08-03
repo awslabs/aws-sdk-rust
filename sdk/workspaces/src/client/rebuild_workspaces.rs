@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`RebuildWorkspacesOutput`](crate::operation::rebuild_workspaces::RebuildWorkspacesOutput) with field(s):
     ///   - [`failed_requests(Option<Vec<FailedWorkspaceChangeRequest>>)`](crate::operation::rebuild_workspaces::RebuildWorkspacesOutput::failed_requests): <p>Information about the WorkSpace that could not be rebuilt.</p>
     /// - On failure, responds with [`SdkError<RebuildWorkspacesError>`](crate::operation::rebuild_workspaces::RebuildWorkspacesError)
-    pub fn rebuild_workspaces(
-        &self,
-    ) -> crate::operation::rebuild_workspaces::builders::RebuildWorkspacesFluentBuilder {
-        crate::operation::rebuild_workspaces::builders::RebuildWorkspacesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn rebuild_workspaces(&self) -> crate::operation::rebuild_workspaces::builders::RebuildWorkspacesFluentBuilder {
+        crate::operation::rebuild_workspaces::builders::RebuildWorkspacesFluentBuilder::new(self.handle.clone())
     }
 }

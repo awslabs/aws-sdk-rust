@@ -44,9 +44,7 @@ impl AppsListDataSummary {
 
 /// A builder for [`AppsListDataSummary`](crate::types::AppsListDataSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppsListDataSummaryBuilder {
     pub(crate) list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) list_id: ::std::option::Option<::std::string::String>,
@@ -108,10 +106,7 @@ impl AppsListDataSummaryBuilder {
         self
     }
     /// <p>An array of <code>App</code> objects in the Firewall Manager applications list.</p>
-    pub fn set_apps_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::App>>,
-    ) -> Self {
+    pub fn set_apps_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::App>>) -> Self {
         self.apps_list = input;
         self
     }

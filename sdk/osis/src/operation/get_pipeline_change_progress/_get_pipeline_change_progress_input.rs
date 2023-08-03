@@ -15,33 +15,25 @@ impl GetPipelineChangeProgressInput {
 }
 impl GetPipelineChangeProgressInput {
     /// Creates a new builder-style object to manufacture [`GetPipelineChangeProgressInput`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressInput).
-    pub fn builder() -> crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressInputBuilder{
+    pub fn builder() -> crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressInputBuilder {
         crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPipelineChangeProgressInput`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPipelineChangeProgressInputBuilder {
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
 }
 impl GetPipelineChangeProgressInputBuilder {
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline.</p>
-    pub fn set_pipeline_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_name = input;
         self
     }
@@ -56,10 +48,8 @@ impl GetPipelineChangeProgressInputBuilder {
         crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressInput {
-                pipeline_name: self.pipeline_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressInput {
+            pipeline_name: self.pipeline_name,
+        })
     }
 }

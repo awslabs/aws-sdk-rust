@@ -9,8 +9,7 @@ pub struct BatchAddFacetToObject {
     pub schema_facet: ::std::option::Option<crate::types::SchemaFacet>,
     /// <p>The attributes to set on the object.</p>
     #[doc(hidden)]
-    pub object_attribute_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub object_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     /// <p>A reference to the object being mutated.</p>
     #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -21,9 +20,7 @@ impl BatchAddFacetToObject {
         self.schema_facet.as_ref()
     }
     /// <p>The attributes to set on the object.</p>
-    pub fn object_attribute_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AttributeKeyAndValue]> {
+    pub fn object_attribute_list(&self) -> ::std::option::Option<&[crate::types::AttributeKeyAndValue]> {
         self.object_attribute_list.as_deref()
     }
     /// <p>A reference to the object being mutated.</p>
@@ -40,13 +37,10 @@ impl BatchAddFacetToObject {
 
 /// A builder for [`BatchAddFacetToObject`](crate::types::BatchAddFacetToObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAddFacetToObjectBuilder {
     pub(crate) schema_facet: ::std::option::Option<crate::types::SchemaFacet>,
-    pub(crate) object_attribute_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) object_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchAddFacetToObjectBuilder {
@@ -56,10 +50,7 @@ impl BatchAddFacetToObjectBuilder {
         self
     }
     /// <p>Represents the facet being added to the object.</p>
-    pub fn set_schema_facet(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaFacet>,
-    ) -> Self {
+    pub fn set_schema_facet(mut self, input: ::std::option::Option<crate::types::SchemaFacet>) -> Self {
         self.schema_facet = input;
         self
     }
@@ -79,17 +70,12 @@ impl BatchAddFacetToObjectBuilder {
         self
     }
     /// <p>The attributes to set on the object.</p>
-    pub fn set_object_attribute_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
-    ) -> Self {
+    pub fn set_object_attribute_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
         self.object_attribute_list = input;
         self
     }
     /// <p>The attributes to set on the object.</p>
-    pub fn get_object_attribute_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+    pub fn get_object_attribute_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
         &self.object_attribute_list
     }
     /// <p>A reference to the object being mutated.</p>
@@ -98,10 +84,7 @@ impl BatchAddFacetToObjectBuilder {
         self
     }
     /// <p>A reference to the object being mutated.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.object_reference = input;
         self
     }

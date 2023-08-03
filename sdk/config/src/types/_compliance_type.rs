@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ComplianceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ComplianceType {
             "INSUFFICIENT_DATA" => ComplianceType::InsufficientData,
             "NON_COMPLIANT" => ComplianceType::NonCompliant,
             "NOT_APPLICABLE" => ComplianceType::NotApplicable,
-            other => {
-                ComplianceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ComplianceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ComplianceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLIANT",
-            "INSUFFICIENT_DATA",
-            "NON_COMPLIANT",
-            "NOT_APPLICABLE",
-        ]
+        &["COMPLIANT", "INSUFFICIENT_DATA", "NON_COMPLIANT", "NOT_APPLICABLE"]
     }
 }
 impl ::std::convert::AsRef<str> for ComplianceType {

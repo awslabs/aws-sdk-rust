@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeWorkspaceOutput {
 }
 impl DescribeWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceOutput`](crate::operation::describe_workspace::DescribeWorkspaceOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_workspace::builders::DescribeWorkspaceOutputBuilder {
+    pub fn builder() -> crate::operation::describe_workspace::builders::DescribeWorkspaceOutputBuilder {
         crate::operation::describe_workspace::builders::DescribeWorkspaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkspaceOutput`](crate::operation::describe_workspace::DescribeWorkspaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceOutputBuilder {
     pub(crate) workspace: ::std::option::Option<crate::types::WorkspaceDescription>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DescribeWorkspaceOutputBuilder {
         self
     }
     /// <p>A structure containing information about the workspace.</p>
-    pub fn set_workspace(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceDescription>,
-    ) -> Self {
+    pub fn set_workspace(mut self, input: ::std::option::Option<crate::types::WorkspaceDescription>) -> Self {
         self.workspace = input;
         self
     }

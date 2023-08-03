@@ -26,7 +26,7 @@ impl UpdateCustomRoutingListenerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCustomRoutingListenerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerInputBuilder,
+    inner: crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerInputBuilder,
 }
 impl UpdateCustomRoutingListenerFluentBuilder {
     /// Creates a new `UpdateCustomRoutingListener`.
@@ -37,7 +37,7 @@ impl UpdateCustomRoutingListenerFluentBuilder {
         }
     }
     /// Access the UpdateCustomRoutingListener as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateCustomRoutingListenerFluentBuilder {
             crate::operation::update_custom_routing_listener::UpdateCustomRoutingListener,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateCustomRoutingListenerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateCustomRoutingListenerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateCustomRoutingListenerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateCustomRoutingListenerFluentBuilder {
             crate::operation::update_custom_routing_listener::UpdateCustomRoutingListener,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_custom_routing_listener::UpdateCustomRoutingListenerError>,
     > {
         self.customize_middleware().await
     }
@@ -146,18 +135,13 @@ impl UpdateCustomRoutingListenerFluentBuilder {
     }
     /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
-    pub fn set_port_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    ) -> Self {
+    pub fn set_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
         self.inner = self.inner.set_port_ranges(input);
         self
     }
     /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
-    pub fn get_port_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
         self.inner.get_port_ranges()
     }
 }

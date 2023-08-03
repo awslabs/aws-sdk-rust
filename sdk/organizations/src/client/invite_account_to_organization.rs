@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`InviteAccountToOrganizationOutput`](crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput) with field(s):
     ///   - [`handshake(Option<Handshake>)`](crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput::handshake): <p>A structure that contains details about the handshake that is created to support this invitation request.</p>
     /// - On failure, responds with [`SdkError<InviteAccountToOrganizationError>`](crate::operation::invite_account_to_organization::InviteAccountToOrganizationError)
-    pub fn invite_account_to_organization(&self) -> crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationFluentBuilder{
+    pub fn invite_account_to_organization(
+        &self,
+    ) -> crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationFluentBuilder {
         crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationFluentBuilder::new(self.handle.clone())
     }
 }

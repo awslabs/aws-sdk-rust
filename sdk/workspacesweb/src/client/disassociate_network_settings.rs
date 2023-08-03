@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`portal_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
     /// - On success, responds with [`DisassociateNetworkSettingsOutput`](crate::operation::disassociate_network_settings::DisassociateNetworkSettingsOutput)
     /// - On failure, responds with [`SdkError<DisassociateNetworkSettingsError>`](crate::operation::disassociate_network_settings::DisassociateNetworkSettingsError)
-    pub fn disassociate_network_settings(&self) -> crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsFluentBuilder{
+    pub fn disassociate_network_settings(
+        &self,
+    ) -> crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsFluentBuilder {
         crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsFluentBuilder::new(self.handle.clone())
     }
 }

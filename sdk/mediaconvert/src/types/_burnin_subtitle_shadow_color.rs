@@ -40,13 +40,7 @@
 /// Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough to enabled to use the shadow color data from your input captions, if present.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BurninSubtitleShadowColor {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for BurninSubtitleShadowColor {
             "BLACK" => BurninSubtitleShadowColor::Black,
             "NONE" => BurninSubtitleShadowColor::None,
             "WHITE" => BurninSubtitleShadowColor::White,
-            other => BurninSubtitleShadowColor::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BurninSubtitleShadowColor::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

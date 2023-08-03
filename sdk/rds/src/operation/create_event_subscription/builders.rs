@@ -30,8 +30,7 @@ impl CreateEventSubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEventSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_event_subscription::builders::CreateEventSubscriptionInputBuilder,
+    inner: crate::operation::create_event_subscription::builders::CreateEventSubscriptionInputBuilder,
 }
 impl CreateEventSubscriptionFluentBuilder {
     /// Creates a new `CreateEventSubscription`.
@@ -42,10 +41,7 @@ impl CreateEventSubscriptionFluentBuilder {
         }
     }
     /// Access the CreateEventSubscription as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_event_subscription::builders::CreateEventSubscriptionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_event_subscription::builders::CreateEventSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl CreateEventSubscriptionFluentBuilder {
             crate::operation::create_event_subscription::CreateEventSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_subscription::CreateEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_subscription::CreateEventSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl CreateEventSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl CreateEventSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_subscription::CreateEventSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_subscription::CreateEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_subscription::CreateEventSubscriptionError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl CreateEventSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_subscription::CreateEventSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_subscription::CreateEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_subscription::CreateEventSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -122,27 +109,19 @@ impl CreateEventSubscriptionFluentBuilder {
             crate::operation::create_event_subscription::CreateEventSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_subscription::CreateEventSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_subscription::CreateEventSubscriptionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the subscription.</p>
     /// <p>Constraints: The name must be less than 255 characters.</p>
-    pub fn subscription_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_name(input.into());
         self
     }
     /// <p>The name of the subscription.</p>
     /// <p>Constraints: The name must be less than 255 characters.</p>
-    pub fn set_subscription_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_name(input);
         self
     }
@@ -152,18 +131,12 @@ impl CreateEventSubscriptionFluentBuilder {
         self.inner.get_subscription_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
@@ -193,25 +166,17 @@ impl CreateEventSubscriptionFluentBuilder {
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
     ///
     /// <p>A list of event categories for a particular source type (<code>SourceType</code>) that you want to subscribe to. You can see a list of the categories for a given source type in the "Amazon RDS event categories and event messages" section of the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html"> <i>Amazon RDS User Guide</i> </a> or the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html"> <i>Amazon Aurora User Guide</i> </a>. You can also see this list by using the <code>DescribeEventCategories</code> operation.</p>
-    pub fn event_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_categories(input.into());
         self
     }
     /// <p>A list of event categories for a particular source type (<code>SourceType</code>) that you want to subscribe to. You can see a list of the categories for a given source type in the "Amazon RDS event categories and event messages" section of the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html"> <i>Amazon RDS User Guide</i> </a> or the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html"> <i>Amazon Aurora User Guide</i> </a>. You can also see this list by using the <code>DescribeEventCategories</code> operation.</p>
-    pub fn set_event_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_event_categories(input);
         self
     }
     /// <p>A list of event categories for a particular source type (<code>SourceType</code>) that you want to subscribe to. You can see a list of the categories for a given source type in the "Amazon RDS event categories and event messages" section of the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html"> <i>Amazon RDS User Guide</i> </a> or the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html"> <i>Amazon Aurora User Guide</i> </a>. You can also see this list by using the <code>DescribeEventCategories</code> operation.</p>
-    pub fn get_event_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_event_categories()
     }
     /// Appends an item to `SourceIds`.
@@ -246,10 +211,7 @@ impl CreateEventSubscriptionFluentBuilder {
     /// <li> <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p> </li>
     /// <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p> </li>
     /// </ul>
-    pub fn set_source_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_source_ids(input);
         self
     }
@@ -292,10 +254,7 @@ impl CreateEventSubscriptionFluentBuilder {
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

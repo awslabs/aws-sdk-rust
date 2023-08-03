@@ -11,9 +11,7 @@ pub struct UpdateTrafficPolicyInstanceOutput {
 }
 impl UpdateTrafficPolicyInstanceOutput {
     /// <p>A complex type that contains settings for the updated traffic policy instance.</p>
-    pub fn traffic_policy_instance(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrafficPolicyInstance> {
+    pub fn traffic_policy_instance(&self) -> ::std::option::Option<&crate::types::TrafficPolicyInstance> {
         self.traffic_policy_instance.as_ref()
     }
 }
@@ -24,16 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateTrafficPolicyInstanceOutput {
 }
 impl UpdateTrafficPolicyInstanceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyInstanceOutput`](crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceOutput).
-    pub fn builder() -> crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceOutputBuilder{
+    pub fn builder() -> crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceOutputBuilder {
         crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTrafficPolicyInstanceOutput`](crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTrafficPolicyInstanceOutputBuilder {
     pub(crate) traffic_policy_instance: ::std::option::Option<crate::types::TrafficPolicyInstance>,
     _request_id: Option<String>,
@@ -45,17 +41,12 @@ impl UpdateTrafficPolicyInstanceOutputBuilder {
         self
     }
     /// <p>A complex type that contains settings for the updated traffic policy instance.</p>
-    pub fn set_traffic_policy_instance(
-        mut self,
-        input: ::std::option::Option<crate::types::TrafficPolicyInstance>,
-    ) -> Self {
+    pub fn set_traffic_policy_instance(mut self, input: ::std::option::Option<crate::types::TrafficPolicyInstance>) -> Self {
         self.traffic_policy_instance = input;
         self
     }
     /// <p>A complex type that contains settings for the updated traffic policy instance.</p>
-    pub fn get_traffic_policy_instance(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrafficPolicyInstance> {
+    pub fn get_traffic_policy_instance(&self) -> &::std::option::Option<crate::types::TrafficPolicyInstance> {
         &self.traffic_policy_instance
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,9 +59,7 @@ impl UpdateTrafficPolicyInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateTrafficPolicyInstanceOutput`](crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceOutput {
+    pub fn build(self) -> crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceOutput {
         crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceOutput {
             traffic_policy_instance: self.traffic_policy_instance,
             _request_id: self._request_id,

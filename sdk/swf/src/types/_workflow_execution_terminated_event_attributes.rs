@@ -56,9 +56,7 @@ impl WorkflowExecutionTerminatedEventAttributes {
 
 /// A builder for [`WorkflowExecutionTerminatedEventAttributes`](crate::types::WorkflowExecutionTerminatedEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowExecutionTerminatedEventAttributesBuilder {
     pub(crate) reason: ::std::option::Option<::std::string::String>,
     pub(crate) details: ::std::option::Option<::std::string::String>,
@@ -112,10 +110,7 @@ impl WorkflowExecutionTerminatedEventAttributesBuilder {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    pub fn set_child_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ChildPolicy>,
-    ) -> Self {
+    pub fn set_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
         self.child_policy = input;
         self
     }
@@ -135,17 +130,12 @@ impl WorkflowExecutionTerminatedEventAttributesBuilder {
         self
     }
     /// <p>If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.</p>
-    pub fn set_cause(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecutionTerminatedCause>,
-    ) -> Self {
+    pub fn set_cause(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionTerminatedCause>) -> Self {
         self.cause = input;
         self
     }
     /// <p>If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.</p>
-    pub fn get_cause(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowExecutionTerminatedCause> {
+    pub fn get_cause(&self) -> &::std::option::Option<crate::types::WorkflowExecutionTerminatedCause> {
         &self.cause
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionTerminatedEventAttributes`](crate::types::WorkflowExecutionTerminatedEventAttributes).

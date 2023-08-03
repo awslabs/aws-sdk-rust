@@ -40,35 +40,26 @@ impl TestEventPatternInput {
 }
 impl TestEventPatternInput {
     /// Creates a new builder-style object to manufacture [`TestEventPatternInput`](crate::operation::test_event_pattern::TestEventPatternInput).
-    pub fn builder() -> crate::operation::test_event_pattern::builders::TestEventPatternInputBuilder
-    {
+    pub fn builder() -> crate::operation::test_event_pattern::builders::TestEventPatternInputBuilder {
         crate::operation::test_event_pattern::builders::TestEventPatternInputBuilder::default()
     }
 }
 
 /// A builder for [`TestEventPatternInput`](crate::operation::test_event_pattern::TestEventPatternInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestEventPatternInputBuilder {
     pub(crate) event_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) event: ::std::option::Option<::std::string::String>,
 }
 impl TestEventPatternInputBuilder {
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    pub fn event_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    pub fn set_event_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_pattern = input;
         self
     }
@@ -120,15 +111,10 @@ impl TestEventPatternInputBuilder {
     /// Consumes the builder and constructs a [`TestEventPatternInput`](crate::operation::test_event_pattern::TestEventPatternInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::test_event_pattern::TestEventPatternInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::test_event_pattern::TestEventPatternInput {
-                event_pattern: self.event_pattern,
-                event: self.event,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::test_event_pattern::TestEventPatternInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::test_event_pattern::TestEventPatternInput {
+            event_pattern: self.event_pattern,
+            event: self.event,
+        })
     }
 }

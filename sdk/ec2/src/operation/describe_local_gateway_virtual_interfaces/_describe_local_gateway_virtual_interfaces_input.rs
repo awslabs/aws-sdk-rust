@@ -5,8 +5,7 @@
 pub struct DescribeLocalGatewayVirtualInterfacesInput {
     /// <p>The IDs of the virtual interfaces.</p>
     #[doc(hidden)]
-    pub local_gateway_virtual_interface_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub local_gateway_virtual_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li> <p> <code>local-address</code> - The local address.</p> </li>
@@ -32,9 +31,7 @@ pub struct DescribeLocalGatewayVirtualInterfacesInput {
 }
 impl DescribeLocalGatewayVirtualInterfacesInput {
     /// <p>The IDs of the virtual interfaces.</p>
-    pub fn local_gateway_virtual_interface_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn local_gateway_virtual_interface_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.local_gateway_virtual_interface_ids.as_deref()
     }
     /// <p>One or more filters.</p>
@@ -66,19 +63,16 @@ impl DescribeLocalGatewayVirtualInterfacesInput {
 }
 impl DescribeLocalGatewayVirtualInterfacesInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocalGatewayVirtualInterfacesInput`](crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesInput).
-    pub fn builder() -> crate::operation::describe_local_gateway_virtual_interfaces::builders::DescribeLocalGatewayVirtualInterfacesInputBuilder{
+    pub fn builder() -> crate::operation::describe_local_gateway_virtual_interfaces::builders::DescribeLocalGatewayVirtualInterfacesInputBuilder {
         crate::operation::describe_local_gateway_virtual_interfaces::builders::DescribeLocalGatewayVirtualInterfacesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeLocalGatewayVirtualInterfacesInput`](crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLocalGatewayVirtualInterfacesInputBuilder {
-    pub(crate) local_gateway_virtual_interface_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) local_gateway_virtual_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -90,27 +84,19 @@ impl DescribeLocalGatewayVirtualInterfacesInputBuilder {
     /// To override the contents of this collection use [`set_local_gateway_virtual_interface_ids`](Self::set_local_gateway_virtual_interface_ids).
     ///
     /// <p>The IDs of the virtual interfaces.</p>
-    pub fn local_gateway_virtual_interface_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_virtual_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.local_gateway_virtual_interface_ids.unwrap_or_default();
         v.push(input.into());
         self.local_gateway_virtual_interface_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the virtual interfaces.</p>
-    pub fn set_local_gateway_virtual_interface_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_local_gateway_virtual_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.local_gateway_virtual_interface_ids = input;
         self
     }
     /// <p>The IDs of the virtual interfaces.</p>
-    pub fn get_local_gateway_virtual_interface_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_local_gateway_virtual_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.local_gateway_virtual_interface_ids
     }
     /// Appends an item to `filters`.
@@ -145,10 +131,7 @@ impl DescribeLocalGatewayVirtualInterfacesInputBuilder {
     /// <li> <p> <code>peer-bgp-asn</code> - The peer BGP ASN.</p> </li>
     /// <li> <p> <code>vlan</code> - The ID of the VLAN.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -209,20 +192,20 @@ impl DescribeLocalGatewayVirtualInterfacesInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeLocalGatewayVirtualInterfacesInput`](crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesInput {
-                local_gateway_virtual_interface_ids: self.local_gateway_virtual_interface_ids
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                local_gateway_virtual_interface_ids: self.local_gateway_virtual_interface_ids,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

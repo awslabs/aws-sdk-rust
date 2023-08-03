@@ -18,8 +18,7 @@ pub struct AwsEc2NetworkAclDetails {
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Associations between the network ACL and subnets.</p>
     #[doc(hidden)]
-    pub associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclAssociation>>,
+    pub associations: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclAssociation>>,
     /// <p>The set of rules in the network ACL.</p>
     #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclEntry>>,
@@ -42,9 +41,7 @@ impl AwsEc2NetworkAclDetails {
         self.vpc_id.as_deref()
     }
     /// <p>Associations between the network ACL and subnets.</p>
-    pub fn associations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEc2NetworkAclAssociation]> {
+    pub fn associations(&self) -> ::std::option::Option<&[crate::types::AwsEc2NetworkAclAssociation]> {
         self.associations.as_deref()
     }
     /// <p>The set of rules in the network ACL.</p>
@@ -61,16 +58,13 @@ impl AwsEc2NetworkAclDetails {
 
 /// A builder for [`AwsEc2NetworkAclDetails`](crate::types::AwsEc2NetworkAclDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkAclDetailsBuilder {
     pub(crate) is_default: ::std::option::Option<bool>,
     pub(crate) network_acl_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) associations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclAssociation>>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclAssociation>>,
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclEntry>>,
 }
 impl AwsEc2NetworkAclDetailsBuilder {
@@ -89,18 +83,12 @@ impl AwsEc2NetworkAclDetailsBuilder {
         &self.is_default
     }
     /// <p>The identifier of the network ACL.</p>
-    pub fn network_acl_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_acl_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the network ACL.</p>
-    pub fn set_network_acl_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_acl_id = input;
         self
     }
@@ -148,17 +136,12 @@ impl AwsEc2NetworkAclDetailsBuilder {
         self
     }
     /// <p>Associations between the network ACL and subnets.</p>
-    pub fn set_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclAssociation>>,
-    ) -> Self {
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclAssociation>>) -> Self {
         self.associations = input;
         self
     }
     /// <p>Associations between the network ACL and subnets.</p>
-    pub fn get_associations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclAssociation>> {
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclAssociation>> {
         &self.associations
     }
     /// Appends an item to `entries`.
@@ -173,17 +156,12 @@ impl AwsEc2NetworkAclDetailsBuilder {
         self
     }
     /// <p>The set of rules in the network ACL.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>The set of rules in the network ACL.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclEntry>> {
         &self.entries
     }
     /// Consumes the builder and constructs a [`AwsEc2NetworkAclDetails`](crate::types::AwsEc2NetworkAclDetails).

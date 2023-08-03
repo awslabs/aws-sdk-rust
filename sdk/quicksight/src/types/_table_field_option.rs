@@ -51,9 +51,7 @@ impl TableFieldOption {
 
 /// A builder for [`TableFieldOption`](crate::types::TableFieldOption).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableFieldOptionBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) width: ::std::option::Option<::std::string::String>,
@@ -110,10 +108,7 @@ impl TableFieldOptionBuilder {
         self
     }
     /// <p>The visibility of a table field.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
         self
     }
@@ -127,17 +122,12 @@ impl TableFieldOptionBuilder {
         self
     }
     /// <p>The URL configuration for a table field.</p>
-    pub fn set_url_styling(
-        mut self,
-        input: ::std::option::Option<crate::types::TableFieldUrlConfiguration>,
-    ) -> Self {
+    pub fn set_url_styling(mut self, input: ::std::option::Option<crate::types::TableFieldUrlConfiguration>) -> Self {
         self.url_styling = input;
         self
     }
     /// <p>The URL configuration for a table field.</p>
-    pub fn get_url_styling(
-        &self,
-    ) -> &::std::option::Option<crate::types::TableFieldUrlConfiguration> {
+    pub fn get_url_styling(&self) -> &::std::option::Option<crate::types::TableFieldUrlConfiguration> {
         &self.url_styling
     }
     /// Consumes the builder and constructs a [`TableFieldOption`](crate::types::TableFieldOption).

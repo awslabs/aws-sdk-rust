@@ -37,9 +37,7 @@ impl DescribeLineageGroupFluentBuilder {
         }
     }
     /// Access the DescribeLineageGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_lineage_group::builders::DescribeLineageGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_lineage_group::builders::DescribeLineageGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeLineageGroupFluentBuilder {
             crate::operation::describe_lineage_group::DescribeLineageGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lineage_group::DescribeLineageGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lineage_group::DescribeLineageGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeLineageGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeLineageGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_lineage_group::DescribeLineageGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lineage_group::DescribeLineageGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lineage_group::DescribeLineageGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeLineageGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_lineage_group::DescribeLineageGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lineage_group::DescribeLineageGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lineage_group::DescribeLineageGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DescribeLineageGroupFluentBuilder {
             crate::operation::describe_lineage_group::DescribeLineageGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_lineage_group::DescribeLineageGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_lineage_group::DescribeLineageGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the lineage group.</p>
-    pub fn lineage_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lineage_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lineage_group_name(input.into());
         self
     }
     /// <p>The name of the lineage group.</p>
-    pub fn set_lineage_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lineage_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lineage_group_name(input);
         self
     }

@@ -31,10 +31,7 @@ pub fn ser_table_input(
     if let Some(var_6) = &input.storage_descriptor {
         #[allow(unused_mut)]
         let mut object_7 = object.key("StorageDescriptor").start_object();
-        crate::protocol_serde::shape_storage_descriptor::ser_storage_descriptor(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_storage_descriptor::ser_storage_descriptor(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.partition_keys {
@@ -71,10 +68,7 @@ pub fn ser_table_input(
     if let Some(var_19) = &input.target_table {
         #[allow(unused_mut)]
         let mut object_20 = object.key("TargetTable").start_object();
-        crate::protocol_serde::shape_table_identifier::ser_table_identifier(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_table_identifier::ser_table_identifier(&mut object_20, var_19)?;
         object_20.finish();
     }
     Ok(())

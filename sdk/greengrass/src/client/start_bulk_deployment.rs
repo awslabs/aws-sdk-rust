@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`bulk_deployment_arn(Option<String>)`](crate::operation::start_bulk_deployment::StartBulkDeploymentOutput::bulk_deployment_arn): The ARN of the bulk deployment.
     ///   - [`bulk_deployment_id(Option<String>)`](crate::operation::start_bulk_deployment::StartBulkDeploymentOutput::bulk_deployment_id): The ID of the bulk deployment.
     /// - On failure, responds with [`SdkError<StartBulkDeploymentError>`](crate::operation::start_bulk_deployment::StartBulkDeploymentError)
-    pub fn start_bulk_deployment(
-        &self,
-    ) -> crate::operation::start_bulk_deployment::builders::StartBulkDeploymentFluentBuilder {
-        crate::operation::start_bulk_deployment::builders::StartBulkDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_bulk_deployment(&self) -> crate::operation::start_bulk_deployment::builders::StartBulkDeploymentFluentBuilder {
+        crate::operation::start_bulk_deployment::builders::StartBulkDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

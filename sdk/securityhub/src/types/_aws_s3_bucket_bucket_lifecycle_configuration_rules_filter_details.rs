@@ -6,70 +6,47 @@
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
     /// <p>The configuration for the filter.</p>
     #[doc(hidden)]
-    pub predicate: ::std::option::Option<
-        crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails,
-    >,
+    pub predicate: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails>,
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
     /// <p>The configuration for the filter.</p>
-    pub fn predicate(
-        &self,
-    ) -> ::std::option::Option<
-        &crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails,
-    > {
+    pub fn predicate(&self) -> ::std::option::Option<&crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails> {
         self.predicate.as_ref()
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
     /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetailsBuilder {
         crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterDetailsBuilder {
-    pub(crate) predicate: ::std::option::Option<
-        crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails,
-    >,
+    pub(crate) predicate: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails>,
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterDetailsBuilder {
     /// <p>The configuration for the filter.</p>
-    pub fn predicate(
-        mut self,
-        input: crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails,
-    ) -> Self {
+    pub fn predicate(mut self, input: crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails) -> Self {
         self.predicate = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the filter.</p>
     pub fn set_predicate(
         mut self,
-        input: ::std::option::Option<
-            crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails,
-        >,
+        input: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails>,
     ) -> Self {
         self.predicate = input;
         self
     }
     /// <p>The configuration for the filter.</p>
-    pub fn get_predicate(
-        &self,
-    ) -> &::std::option::Option<
-        crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails,
-    > {
+    pub fn get_predicate(&self) -> &::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails> {
         &self.predicate
     }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails).
     pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
-        crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
-            predicate: self.predicate,
-        }
+        crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails { predicate: self.predicate }
     }
 }

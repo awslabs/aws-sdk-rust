@@ -44,9 +44,7 @@ impl UpdateDetectorRequest {
 
 /// A builder for [`UpdateDetectorRequest`](crate::types::UpdateDetectorRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDetectorRequestBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_model_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +67,12 @@ impl UpdateDetectorRequestBuilder {
         &self.message_id
     }
     /// <p>The name of the detector model that created the detectors (instances).</p>
-    pub fn detector_model_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the detector model that created the detectors (instances).</p>
-    pub fn set_detector_model_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_model_name = input;
         self
     }
@@ -108,10 +100,7 @@ impl UpdateDetectorRequestBuilder {
         self
     }
     /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectorStateDefinition>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::DetectorStateDefinition>) -> Self {
         self.state = input;
         self
     }

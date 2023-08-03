@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartCutoverOutput`](crate::operation::start_cutover::StartCutoverOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::operation::start_cutover::StartCutoverOutput::job): <p>Start Cutover Job response.</p>
     /// - On failure, responds with [`SdkError<StartCutoverError>`](crate::operation::start_cutover::StartCutoverError)
-    pub fn start_cutover(
-        &self,
-    ) -> crate::operation::start_cutover::builders::StartCutoverFluentBuilder {
-        crate::operation::start_cutover::builders::StartCutoverFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_cutover(&self) -> crate::operation::start_cutover::builders::StartCutoverFluentBuilder {
+        crate::operation::start_cutover::builders::StartCutoverFluentBuilder::new(self.handle.clone())
     }
 }

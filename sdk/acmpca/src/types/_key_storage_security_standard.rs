@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum KeyStorageSecurityStandard {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for KeyStorageSecurityStandard {
         match s {
             "FIPS_140_2_LEVEL_2_OR_HIGHER" => KeyStorageSecurityStandard::Fips1402Level2OrHigher,
             "FIPS_140_2_LEVEL_3_OR_HIGHER" => KeyStorageSecurityStandard::Fips1402Level3OrHigher,
-            other => KeyStorageSecurityStandard::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => KeyStorageSecurityStandard::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -83,10 +75,7 @@ impl KeyStorageSecurityStandard {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FIPS_140_2_LEVEL_2_OR_HIGHER",
-            "FIPS_140_2_LEVEL_3_OR_HIGHER",
-        ]
+        &["FIPS_140_2_LEVEL_2_OR_HIGHER", "FIPS_140_2_LEVEL_3_OR_HIGHER"]
     }
 }
 impl ::std::convert::AsRef<str> for KeyStorageSecurityStandard {

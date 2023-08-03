@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyListenerOutput`](crate::operation::modify_listener::ModifyListenerOutput) with field(s):
     ///   - [`listeners(Option<Vec<Listener>>)`](crate::operation::modify_listener::ModifyListenerOutput::listeners): <p>Information about the modified listener.</p>
     /// - On failure, responds with [`SdkError<ModifyListenerError>`](crate::operation::modify_listener::ModifyListenerError)
-    pub fn modify_listener(
-        &self,
-    ) -> crate::operation::modify_listener::builders::ModifyListenerFluentBuilder {
-        crate::operation::modify_listener::builders::ModifyListenerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_listener(&self) -> crate::operation::modify_listener::builders::ModifyListenerFluentBuilder {
+        crate::operation::modify_listener::builders::ModifyListenerFluentBuilder::new(self.handle.clone())
     }
 }

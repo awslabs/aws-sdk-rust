@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`compilation_job_name(impl ::std::convert::Into<String>)`](crate::operation::stop_compilation_job::builders::StopCompilationJobFluentBuilder::compilation_job_name) / [`set_compilation_job_name(Option<String>)`](crate::operation::stop_compilation_job::builders::StopCompilationJobFluentBuilder::set_compilation_job_name): <p>The name of the model compilation job to stop.</p>
     /// - On success, responds with [`StopCompilationJobOutput`](crate::operation::stop_compilation_job::StopCompilationJobOutput)
     /// - On failure, responds with [`SdkError<StopCompilationJobError>`](crate::operation::stop_compilation_job::StopCompilationJobError)
-    pub fn stop_compilation_job(
-        &self,
-    ) -> crate::operation::stop_compilation_job::builders::StopCompilationJobFluentBuilder {
-        crate::operation::stop_compilation_job::builders::StopCompilationJobFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_compilation_job(&self) -> crate::operation::stop_compilation_job::builders::StopCompilationJobFluentBuilder {
+        crate::operation::stop_compilation_job::builders::StopCompilationJobFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl GetClusterSessionCredentialsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetClusterSessionCredentialsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_cluster_session_credentials::builders::GetClusterSessionCredentialsInputBuilder,
+    inner: crate::operation::get_cluster_session_credentials::builders::GetClusterSessionCredentialsInputBuilder,
 }
 impl GetClusterSessionCredentialsFluentBuilder {
     /// Creates a new `GetClusterSessionCredentials`.
@@ -37,7 +37,7 @@ impl GetClusterSessionCredentialsFluentBuilder {
         }
     }
     /// Access the GetClusterSessionCredentials as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_cluster_session_credentials::builders::GetClusterSessionCredentialsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_cluster_session_credentials::builders::GetClusterSessionCredentialsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetClusterSessionCredentialsFluentBuilder {
             crate::operation::get_cluster_session_credentials::GetClusterSessionCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetClusterSessionCredentialsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetClusterSessionCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetClusterSessionCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetClusterSessionCredentialsFluentBuilder {
             crate::operation::get_cluster_session_credentials::GetClusterSessionCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl GetClusterSessionCredentialsFluentBuilder {
         self.inner.get_cluster_id()
     }
     /// <p>The Amazon Resource Name (ARN) of the runtime role for interactive workload submission on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the runtime role for interactive workload submission on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }

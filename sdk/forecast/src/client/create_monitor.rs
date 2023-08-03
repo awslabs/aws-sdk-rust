@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMonitorOutput`](crate::operation::create_monitor::CreateMonitorOutput) with field(s):
     ///   - [`monitor_arn(Option<String>)`](crate::operation::create_monitor::CreateMonitorOutput::monitor_arn): <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
     /// - On failure, responds with [`SdkError<CreateMonitorError>`](crate::operation::create_monitor::CreateMonitorError)
-    pub fn create_monitor(
-        &self,
-    ) -> crate::operation::create_monitor::builders::CreateMonitorFluentBuilder {
-        crate::operation::create_monitor::builders::CreateMonitorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_monitor(&self) -> crate::operation::create_monitor::builders::CreateMonitorFluentBuilder {
+        crate::operation::create_monitor::builders::CreateMonitorFluentBuilder::new(self.handle.clone())
     }
 }

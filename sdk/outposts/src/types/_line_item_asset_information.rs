@@ -30,9 +30,7 @@ impl LineItemAssetInformation {
 
 /// A builder for [`LineItemAssetInformation`](crate::types::LineItemAssetInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LineItemAssetInformationBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) mac_address_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,27 +55,19 @@ impl LineItemAssetInformationBuilder {
     /// To override the contents of this collection use [`set_mac_address_list`](Self::set_mac_address_list).
     ///
     /// <p> The MAC addresses of the asset. </p>
-    pub fn mac_address_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mac_address_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.mac_address_list.unwrap_or_default();
         v.push(input.into());
         self.mac_address_list = ::std::option::Option::Some(v);
         self
     }
     /// <p> The MAC addresses of the asset. </p>
-    pub fn set_mac_address_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_mac_address_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.mac_address_list = input;
         self
     }
     /// <p> The MAC addresses of the asset. </p>
-    pub fn get_mac_address_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_mac_address_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.mac_address_list
     }
     /// Consumes the builder and constructs a [`LineItemAssetInformation`](crate::types::LineItemAssetInformation).

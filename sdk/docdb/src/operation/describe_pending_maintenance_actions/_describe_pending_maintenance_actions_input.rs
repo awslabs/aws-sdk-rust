@@ -51,16 +51,14 @@ impl DescribePendingMaintenanceActionsInput {
 }
 impl DescribePendingMaintenanceActionsInput {
     /// Creates a new builder-style object to manufacture [`DescribePendingMaintenanceActionsInput`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput).
-    pub fn builder() -> crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsInputBuilder {
         crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePendingMaintenanceActionsInput`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePendingMaintenanceActionsInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -69,18 +67,12 @@ pub struct DescribePendingMaintenanceActionsInputBuilder {
 }
 impl DescribePendingMaintenanceActionsInputBuilder {
     /// <p>The ARN of a resource to return pending maintenance actions for.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a resource to return pending maintenance actions for.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -110,10 +102,7 @@ impl DescribePendingMaintenanceActionsInputBuilder {
     /// <li> <p> <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list includes only pending maintenance actions for the clusters identified by these ARNs.</p> </li>
     /// <li> <p> <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes only pending maintenance actions for the DB instances identified by these ARNs.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -161,18 +150,19 @@ impl DescribePendingMaintenanceActionsInputBuilder {
         &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribePendingMaintenanceActionsInput`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput {
-                resource_identifier: self.resource_identifier
-                ,
-                filters: self.filters
-                ,
-                marker: self.marker
-                ,
-                max_records: self.max_records
-                ,
-            }
+                resource_identifier: self.resource_identifier,
+                filters: self.filters,
+                marker: self.marker,
+                max_records: self.max_records,
+            },
         )
     }
 }

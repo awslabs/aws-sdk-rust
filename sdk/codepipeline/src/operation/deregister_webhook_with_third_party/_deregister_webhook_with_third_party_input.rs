@@ -15,16 +15,14 @@ impl DeregisterWebhookWithThirdPartyInput {
 }
 impl DeregisterWebhookWithThirdPartyInput {
     /// Creates a new builder-style object to manufacture [`DeregisterWebhookWithThirdPartyInput`](crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyInput).
-    pub fn builder() -> crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyInputBuilder{
+    pub fn builder() -> crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyInputBuilder {
         crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyInputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterWebhookWithThirdPartyInput`](crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterWebhookWithThirdPartyInputBuilder {
     pub(crate) webhook_name: ::std::option::Option<::std::string::String>,
 }
@@ -52,9 +50,8 @@ impl DeregisterWebhookWithThirdPartyInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyInput {
-                webhook_name: self.webhook_name
-                ,
-            }
+                webhook_name: self.webhook_name,
+            },
         )
     }
 }

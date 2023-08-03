@@ -26,8 +26,7 @@ impl DescribeRecommendationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_recommendations::builders::DescribeRecommendationsInputBuilder,
+    inner: crate::operation::describe_recommendations::builders::DescribeRecommendationsInputBuilder,
 }
 impl DescribeRecommendationsFluentBuilder {
     /// Creates a new `DescribeRecommendations`.
@@ -38,10 +37,7 @@ impl DescribeRecommendationsFluentBuilder {
         }
     }
     /// Access the DescribeRecommendations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_recommendations::builders::DescribeRecommendationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_recommendations::builders::DescribeRecommendationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeRecommendationsFluentBuilder {
             crate::operation::describe_recommendations::DescribeRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recommendations::DescribeRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recommendations::DescribeRecommendationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeRecommendationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_recommendations::DescribeRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recommendations::DescribeRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recommendations::DescribeRecommendationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeRecommendationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_recommendations::DescribeRecommendationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recommendations::DescribeRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recommendations::DescribeRecommendationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,23 +105,15 @@ impl DescribeRecommendationsFluentBuilder {
             crate::operation::describe_recommendations::DescribeRecommendations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_recommendations::DescribeRecommendationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_recommendations::DescribeRecommendationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_recommendations::paginator::DescribeRecommendationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_recommendations::paginator::DescribeRecommendationsPaginator
-    {
-        crate::operation::describe_recommendations::paginator::DescribeRecommendationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_recommendations::paginator::DescribeRecommendationsPaginator {
+        crate::operation::describe_recommendations::paginator::DescribeRecommendationsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
     ///
@@ -146,10 +125,7 @@ impl DescribeRecommendationsFluentBuilder {
         self
     }
     /// <p>Filters applied to the target engine recommendations described in the form of key-value pairs.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

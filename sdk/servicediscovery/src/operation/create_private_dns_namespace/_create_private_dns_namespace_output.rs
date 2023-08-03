@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreatePrivateDnsNamespaceOutput {
 }
 impl CreatePrivateDnsNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`CreatePrivateDnsNamespaceOutput`](crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceOutput).
-    pub fn builder() -> crate::operation::create_private_dns_namespace::builders::CreatePrivateDnsNamespaceOutputBuilder{
+    pub fn builder() -> crate::operation::create_private_dns_namespace::builders::CreatePrivateDnsNamespaceOutputBuilder {
         crate::operation::create_private_dns_namespace::builders::CreatePrivateDnsNamespaceOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePrivateDnsNamespaceOutput`](crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePrivateDnsNamespaceOutputBuilder {
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl CreatePrivateDnsNamespaceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreatePrivateDnsNamespaceOutput`](crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceOutput {
+    pub fn build(self) -> crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceOutput {
         crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceOutput {
             operation_id: self.operation_id,
             _request_id: self._request_id,

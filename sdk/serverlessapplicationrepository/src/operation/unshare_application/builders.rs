@@ -10,10 +10,7 @@ impl UnshareApplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::unshare_application::UnshareApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unshare_application::UnshareApplicationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unshare_application::UnshareApplicationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.unshare_application();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UnshareApplicationFluentBuilder {
         }
     }
     /// Access the UnshareApplication as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::unshare_application::builders::UnshareApplicationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::unshare_application::builders::UnshareApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UnshareApplicationFluentBuilder {
             crate::operation::unshare_application::UnshareApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unshare_application::UnshareApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unshare_application::UnshareApplicationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UnshareApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UnshareApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unshare_application::UnshareApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unshare_application::UnshareApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unshare_application::UnshareApplicationError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UnshareApplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unshare_application::UnshareApplicationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unshare_application::UnshareApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unshare_application::UnshareApplicationError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl UnshareApplicationFluentBuilder {
             crate::operation::unshare_application::UnshareApplication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::unshare_application::UnshareApplicationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::unshare_application::UnshareApplicationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -144,18 +122,12 @@ impl UnshareApplicationFluentBuilder {
         self.inner.get_application_id()
     }
     /// <p>The AWS Organization ID to unshare the application from.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The AWS Organization ID to unshare the application from.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

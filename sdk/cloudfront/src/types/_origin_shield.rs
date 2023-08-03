@@ -37,9 +37,7 @@ impl OriginShield {
 
 /// A builder for [`OriginShield`](crate::types::OriginShield).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginShieldBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) origin_shield_region: ::std::option::Option<::std::string::String>,
@@ -65,20 +63,14 @@ impl OriginShieldBuilder {
     /// <p>The Amazon Web Services Region for Origin Shield.</p>
     /// <p>Specify the Amazon Web Services Region that has the lowest latency to your origin. To specify a region, use the region code, not the region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.</p>
     /// <p>When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin Shield. For the list of Amazon Web Services Regions that you can specify, and for help choosing the best Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Amazon Web Services Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_shield_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_shield_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_shield_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region for Origin Shield.</p>
     /// <p>Specify the Amazon Web Services Region that has the lowest latency to your origin. To specify a region, use the region code, not the region name. For example, specify the US East (Ohio) region as <code>us-east-2</code>.</p>
     /// <p>When you enable CloudFront Origin Shield, you must specify the Amazon Web Services Region for Origin Shield. For the list of Amazon Web Services Regions that you can specify, and for help choosing the best Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Amazon Web Services Region for Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_origin_shield_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_shield_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_shield_region = input;
         self
     }

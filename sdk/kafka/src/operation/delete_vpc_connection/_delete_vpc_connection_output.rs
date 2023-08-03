@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteVpcConnectionOutput {
 }
 impl DeleteVpcConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcConnectionOutput`](crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionOutputBuilder {
-        crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionOutputBuilder {
+        crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpcConnectionOutput`](crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpcConnectionOutputBuilder {
     pub(crate) vpc_connection_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::VpcConnectionState>,
@@ -47,18 +43,12 @@ pub struct DeleteVpcConnectionOutputBuilder {
 }
 impl DeleteVpcConnectionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p>
-    pub fn vpc_connection_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p>
-    pub fn set_vpc_connection_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_connection_arn = input;
         self
     }
@@ -72,10 +62,7 @@ impl DeleteVpcConnectionOutputBuilder {
         self
     }
     /// <p>The state of the VPC connection.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConnectionState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::VpcConnectionState>) -> Self {
         self.state = input;
         self
     }

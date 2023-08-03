@@ -37,9 +37,7 @@ impl ReactionForComment {
 
 /// A builder for [`ReactionForComment`](crate::types::ReactionForComment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReactionForCommentBuilder {
     pub(crate) reaction: ::std::option::Option<crate::types::ReactionValueFormats>,
     pub(crate) reaction_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -52,10 +50,7 @@ impl ReactionForCommentBuilder {
         self
     }
     /// <p>The reaction for a specified comment.</p>
-    pub fn set_reaction(
-        mut self,
-        input: ::std::option::Option<crate::types::ReactionValueFormats>,
-    ) -> Self {
+    pub fn set_reaction(mut self, input: ::std::option::Option<crate::types::ReactionValueFormats>) -> Self {
         self.reaction = input;
         self
     }
@@ -68,27 +63,19 @@ impl ReactionForCommentBuilder {
     /// To override the contents of this collection use [`set_reaction_users`](Self::set_reaction_users).
     ///
     /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
-    pub fn reaction_users(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reaction_users(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reaction_users.unwrap_or_default();
         v.push(input.into());
         self.reaction_users = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
-    pub fn set_reaction_users(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_reaction_users(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.reaction_users = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
-    pub fn get_reaction_users(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reaction_users(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.reaction_users
     }
     /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
@@ -97,10 +84,7 @@ impl ReactionForCommentBuilder {
         self
     }
     /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
-    pub fn set_reactions_from_deleted_users_count(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_reactions_from_deleted_users_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.reactions_from_deleted_users_count = input;
         self
     }

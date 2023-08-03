@@ -26,7 +26,7 @@ impl CreateAnomalySubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAnomalySubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_anomaly_subscription::builders::CreateAnomalySubscriptionInputBuilder,
+    inner: crate::operation::create_anomaly_subscription::builders::CreateAnomalySubscriptionInputBuilder,
 }
 impl CreateAnomalySubscriptionFluentBuilder {
     /// Creates a new `CreateAnomalySubscription`.
@@ -37,7 +37,7 @@ impl CreateAnomalySubscriptionFluentBuilder {
         }
     }
     /// Access the CreateAnomalySubscription as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_anomaly_subscription::builders::CreateAnomalySubscriptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_anomaly_subscription::builders::CreateAnomalySubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateAnomalySubscriptionFluentBuilder {
             crate::operation::create_anomaly_subscription::CreateAnomalySubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateAnomalySubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateAnomalySubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateAnomalySubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateAnomalySubscriptionFluentBuilder {
             crate::operation::create_anomaly_subscription::CreateAnomalySubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError>,
     > {
         self.customize_middleware().await
     }
@@ -126,17 +115,12 @@ impl CreateAnomalySubscriptionFluentBuilder {
         self
     }
     /// <p>The cost anomaly subscription object that you want to create. </p>
-    pub fn set_anomaly_subscription(
-        mut self,
-        input: ::std::option::Option<crate::types::AnomalySubscription>,
-    ) -> Self {
+    pub fn set_anomaly_subscription(mut self, input: ::std::option::Option<crate::types::AnomalySubscription>) -> Self {
         self.inner = self.inner.set_anomaly_subscription(input);
         self
     }
     /// <p>The cost anomaly subscription object that you want to create. </p>
-    pub fn get_anomaly_subscription(
-        &self,
-    ) -> &::std::option::Option<crate::types::AnomalySubscription> {
+    pub fn get_anomaly_subscription(&self) -> &::std::option::Option<crate::types::AnomalySubscription> {
         self.inner.get_anomaly_subscription()
     }
     /// Appends an item to `ResourceTags`.
@@ -169,10 +153,7 @@ impl CreateAnomalySubscriptionFluentBuilder {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
-    pub fn set_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
-    ) -> Self {
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.inner = self.inner.set_resource_tags(input);
         self
     }
@@ -187,9 +168,7 @@ impl CreateAnomalySubscriptionFluentBuilder {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
-    pub fn get_resource_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
         self.inner.get_resource_tags()
     }
 }

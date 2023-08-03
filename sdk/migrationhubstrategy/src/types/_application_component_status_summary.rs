@@ -6,17 +6,14 @@
 pub struct ApplicationComponentStatusSummary {
     /// <p>The status of database analysis.</p>
     #[doc(hidden)]
-    pub src_code_or_db_analysis_status:
-        ::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus>,
+    pub src_code_or_db_analysis_status: ::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus>,
     /// <p>The number of application components successfully analyzed, partially successful or failed analysis.</p>
     #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
 }
 impl ApplicationComponentStatusSummary {
     /// <p>The status of database analysis.</p>
-    pub fn src_code_or_db_analysis_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SrcCodeOrDbAnalysisStatus> {
+    pub fn src_code_or_db_analysis_status(&self) -> ::std::option::Option<&crate::types::SrcCodeOrDbAnalysisStatus> {
         self.src_code_or_db_analysis_status.as_ref()
     }
     /// <p>The number of application components successfully analyzed, partially successful or failed analysis.</p>
@@ -33,35 +30,24 @@ impl ApplicationComponentStatusSummary {
 
 /// A builder for [`ApplicationComponentStatusSummary`](crate::types::ApplicationComponentStatusSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationComponentStatusSummaryBuilder {
-    pub(crate) src_code_or_db_analysis_status:
-        ::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus>,
+    pub(crate) src_code_or_db_analysis_status: ::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus>,
     pub(crate) count: ::std::option::Option<i32>,
 }
 impl ApplicationComponentStatusSummaryBuilder {
     /// <p>The status of database analysis.</p>
-    pub fn src_code_or_db_analysis_status(
-        mut self,
-        input: crate::types::SrcCodeOrDbAnalysisStatus,
-    ) -> Self {
+    pub fn src_code_or_db_analysis_status(mut self, input: crate::types::SrcCodeOrDbAnalysisStatus) -> Self {
         self.src_code_or_db_analysis_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of database analysis.</p>
-    pub fn set_src_code_or_db_analysis_status(
-        mut self,
-        input: ::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus>,
-    ) -> Self {
+    pub fn set_src_code_or_db_analysis_status(mut self, input: ::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus>) -> Self {
         self.src_code_or_db_analysis_status = input;
         self
     }
     /// <p>The status of database analysis.</p>
-    pub fn get_src_code_or_db_analysis_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus> {
+    pub fn get_src_code_or_db_analysis_status(&self) -> &::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus> {
         &self.src_code_or_db_analysis_status
     }
     /// <p>The number of application components successfully analyzed, partially successful or failed analysis.</p>

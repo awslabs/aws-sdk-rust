@@ -10,10 +10,7 @@ impl PredictInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::predict::PredictOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::predict::PredictError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::predict::PredictError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.predict();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl PredictFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::predict::Predict,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::predict::Predict, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::predict::PredictError>,
     > {
         let handle = self.handle.clone();
@@ -60,20 +54,15 @@ impl PredictFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::predict::PredictOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::predict::PredictError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::predict::PredictOutput, ::aws_smithy_http::result::SdkError<crate::operation::predict::PredictError>>
+    {
         let op = self
             .inner
             .build()
@@ -93,10 +82,8 @@ impl PredictFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::predict::PredictOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::predict::PredictError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::predict::PredictOutput, ::aws_smithy_http::result::SdkError<crate::operation::predict::PredictError>>
+    {
         self.send_middleware().await
     }
 
@@ -105,10 +92,7 @@ impl PredictFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::predict::Predict,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::predict::Predict, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::predict::PredictError>,
     > {
         self.customize_middleware().await
@@ -132,45 +116,26 @@ impl PredictFluentBuilder {
     /// To override the contents of this collection use [`set_record`](Self::set_record).
     ///
     /// <p>A map of variable name-value pairs that represent an observation.</p>
-    pub fn record(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.record(k.into(), v.into());
         self
     }
     /// <p>A map of variable name-value pairs that represent an observation.</p>
-    pub fn set_record(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_record(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_record(input);
         self
     }
     /// <p>A map of variable name-value pairs that represent an observation.</p>
-    pub fn get_record(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_record(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_record()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn predict_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predict_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.predict_endpoint(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_predict_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predict_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_predict_endpoint(input);
         self
     }

@@ -142,10 +142,7 @@ impl GetMapSpritesInputBuilder {
     /// Consumes the builder and constructs a [`GetMapSpritesInput`](crate::operation::get_map_sprites::GetMapSpritesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_map_sprites::GetMapSpritesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_map_sprites::GetMapSpritesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_map_sprites::GetMapSpritesInput {
             map_name: self.map_name,
             file_name: self.file_name,

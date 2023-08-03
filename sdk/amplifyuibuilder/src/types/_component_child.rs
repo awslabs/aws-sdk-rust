@@ -12,17 +12,13 @@ pub struct ComponentChild {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the properties of the child component. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
     #[doc(hidden)]
-    pub properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
-    >,
+    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
     /// <p>The list of <code>ComponentChild</code> instances for this component.</p>
     #[doc(hidden)]
     pub children: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>,
     /// <p>Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
     #[doc(hidden)]
-    pub events: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
-    >,
+    pub events: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>>,
     /// <p>The unique ID of the child component in its original source system, such as Figma.</p>
     #[doc(hidden)]
     pub source_id: ::std::option::Option<::std::string::String>,
@@ -37,11 +33,7 @@ impl ComponentChild {
         self.name.as_deref()
     }
     /// <p>Describes the properties of the child component. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
-    > {
+    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>> {
         self.properties.as_ref()
     }
     /// <p>The list of <code>ComponentChild</code> instances for this component.</p>
@@ -49,11 +41,7 @@ impl ComponentChild {
         self.children.as_deref()
     }
     /// <p>Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-    pub fn events(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
-    > {
+    pub fn events(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>> {
         self.events.as_ref()
     }
     /// <p>The unique ID of the child component in its original source system, such as Figma.</p>
@@ -70,35 +58,23 @@ impl ComponentChild {
 
 /// A builder for [`ComponentChild`](crate::types::ComponentChild).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentChildBuilder {
     pub(crate) component_type: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
-    >,
+    pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
     pub(crate) children: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>,
-    pub(crate) events: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
-    >,
+    pub(crate) events: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>>,
     pub(crate) source_id: ::std::option::Option<::std::string::String>,
 }
 impl ComponentChildBuilder {
     /// <p>The type of the child component. </p>
-    pub fn component_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the child component. </p>
-    pub fn set_component_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_type = input;
         self
     }
@@ -125,11 +101,7 @@ impl ComponentChildBuilder {
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>Describes the properties of the child component. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
-    pub fn properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ComponentProperty,
-    ) -> Self {
+    pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentProperty) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.properties = ::std::option::Option::Some(hash_map);
@@ -138,19 +110,13 @@ impl ComponentChildBuilder {
     /// <p>Describes the properties of the child component. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
     pub fn set_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
     ) -> Self {
         self.properties = input;
         self
     }
     /// <p>Describes the properties of the child component. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
-    > {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>> {
         &self.properties
     }
     /// Appends an item to `children`.
@@ -165,17 +131,12 @@ impl ComponentChildBuilder {
         self
     }
     /// <p>The list of <code>ComponentChild</code> instances for this component.</p>
-    pub fn set_children(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>,
-    ) -> Self {
+    pub fn set_children(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>) -> Self {
         self.children = input;
         self
     }
     /// <p>The list of <code>ComponentChild</code> instances for this component.</p>
-    pub fn get_children(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>> {
+    pub fn get_children(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>> {
         &self.children
     }
     /// Adds a key-value pair to `events`.
@@ -183,11 +144,7 @@ impl ComponentChildBuilder {
     /// To override the contents of this collection use [`set_events`](Self::set_events).
     ///
     /// <p>Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-    pub fn events(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ComponentEvent,
-    ) -> Self {
+    pub fn events(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentEvent) -> Self {
         let mut hash_map = self.events.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.events = ::std::option::Option::Some(hash_map);
@@ -196,19 +153,13 @@ impl ComponentChildBuilder {
     /// <p>Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
     pub fn set_events(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>>,
     ) -> Self {
         self.events = input;
         self
     }
     /// <p>Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-    pub fn get_events(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
-    > {
+    pub fn get_events(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>> {
         &self.events
     }
     /// <p>The unique ID of the child component in its original source system, such as Figma.</p>

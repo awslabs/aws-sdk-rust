@@ -29,17 +29,14 @@ impl ListVoiceProfilesInput {
 }
 impl ListVoiceProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListVoiceProfilesInput`](crate::operation::list_voice_profiles::ListVoiceProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::list_voice_profiles::builders::ListVoiceProfilesInputBuilder {
+    pub fn builder() -> crate::operation::list_voice_profiles::builders::ListVoiceProfilesInputBuilder {
         crate::operation::list_voice_profiles::builders::ListVoiceProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListVoiceProfilesInput`](crate::operation::list_voice_profiles::ListVoiceProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVoiceProfilesInputBuilder {
     pub(crate) voice_profile_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct ListVoiceProfilesInputBuilder {
 }
 impl ListVoiceProfilesInputBuilder {
     /// <p>The ID of the voice profile domain.</p>
-    pub fn voice_profile_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the voice profile domain.</p>
-    pub fn set_voice_profile_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_profile_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_profile_domain_id = input;
         self
     }
@@ -97,16 +88,11 @@ impl ListVoiceProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListVoiceProfilesInput`](crate::operation::list_voice_profiles::ListVoiceProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_voice_profiles::ListVoiceProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_voice_profiles::ListVoiceProfilesInput {
-                voice_profile_domain_id: self.voice_profile_domain_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_voice_profiles::ListVoiceProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_voice_profiles::ListVoiceProfilesInput {
+            voice_profile_domain_id: self.voice_profile_domain_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`vocabulary_id(Option<String>)`](crate::operation::delete_vocabulary::DeleteVocabularyOutput::vocabulary_id): <p>The identifier of the custom vocabulary.</p>
     ///   - [`state(Option<VocabularyState>)`](crate::operation::delete_vocabulary::DeleteVocabularyOutput::state): <p>The current state of the custom vocabulary.</p>
     /// - On failure, responds with [`SdkError<DeleteVocabularyError>`](crate::operation::delete_vocabulary::DeleteVocabularyError)
-    pub fn delete_vocabulary(
-        &self,
-    ) -> crate::operation::delete_vocabulary::builders::DeleteVocabularyFluentBuilder {
-        crate::operation::delete_vocabulary::builders::DeleteVocabularyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_vocabulary(&self) -> crate::operation::delete_vocabulary::builders::DeleteVocabularyFluentBuilder {
+        crate::operation::delete_vocabulary::builders::DeleteVocabularyFluentBuilder::new(self.handle.clone())
     }
 }

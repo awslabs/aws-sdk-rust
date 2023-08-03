@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`language_code(LanguageCodeString)`](crate::operation::create_sms_sandbox_phone_number::builders::CreateSMSSandboxPhoneNumberFluentBuilder::language_code) / [`set_language_code(Option<LanguageCodeString>)`](crate::operation::create_sms_sandbox_phone_number::builders::CreateSMSSandboxPhoneNumberFluentBuilder::set_language_code): <p>The language to use for sending the OTP. The default value is <code>en-US</code>.</p>
     /// - On success, responds with [`CreateSmsSandboxPhoneNumberOutput`](crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberOutput)
     /// - On failure, responds with [`SdkError<CreateSMSSandboxPhoneNumberError>`](crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError)
-    pub fn create_sms_sandbox_phone_number(&self) -> crate::operation::create_sms_sandbox_phone_number::builders::CreateSMSSandboxPhoneNumberFluentBuilder{
+    pub fn create_sms_sandbox_phone_number(
+        &self,
+    ) -> crate::operation::create_sms_sandbox_phone_number::builders::CreateSMSSandboxPhoneNumberFluentBuilder {
         crate::operation::create_sms_sandbox_phone_number::builders::CreateSMSSandboxPhoneNumberFluentBuilder::new(self.handle.clone())
     }
 }

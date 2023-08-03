@@ -10,10 +10,7 @@ impl AnalyzeIdInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::analyze_id::AnalyzeIdOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::analyze_id::AnalyzeIDError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::analyze_id::AnalyzeIDError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.analyze_id();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl AnalyzeIDFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::analyze_id::AnalyzeID,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::analyze_id::AnalyzeID, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::analyze_id::AnalyzeIDError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl AnalyzeIDFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl AnalyzeIDFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::analyze_id::AnalyzeID,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::analyze_id::AnalyzeID, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::analyze_id::AnalyzeIDError>,
     > {
         self.customize_middleware().await
@@ -122,17 +110,12 @@ impl AnalyzeIDFluentBuilder {
         self
     }
     /// <p>The document being passed to AnalyzeID.</p>
-    pub fn set_document_pages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
-    ) -> Self {
+    pub fn set_document_pages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>) -> Self {
         self.inner = self.inner.set_document_pages(input);
         self
     }
     /// <p>The document being passed to AnalyzeID.</p>
-    pub fn get_document_pages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Document>> {
+    pub fn get_document_pages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Document>> {
         self.inner.get_document_pages()
     }
 }

@@ -5,8 +5,7 @@
 pub struct ListAssetRelationshipsOutput {
     /// <p>A list that summarizes each asset relationship.</p>
     #[doc(hidden)]
-    pub asset_relationship_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetRelationshipSummary>>,
+    pub asset_relationship_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetRelationshipSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListAssetRelationshipsOutput {
 }
 impl ListAssetRelationshipsOutput {
     /// <p>A list that summarizes each asset relationship.</p>
-    pub fn asset_relationship_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AssetRelationshipSummary]> {
+    pub fn asset_relationship_summaries(&self) -> ::std::option::Option<&[crate::types::AssetRelationshipSummary]> {
         self.asset_relationship_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListAssetRelationshipsOutput {
 }
 impl ListAssetRelationshipsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssetRelationshipsOutput`](crate::operation::list_asset_relationships::ListAssetRelationshipsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_asset_relationships::builders::ListAssetRelationshipsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_asset_relationships::builders::ListAssetRelationshipsOutputBuilder {
         crate::operation::list_asset_relationships::builders::ListAssetRelationshipsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssetRelationshipsOutput`](crate::operation::list_asset_relationships::ListAssetRelationshipsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssetRelationshipsOutputBuilder {
-    pub(crate) asset_relationship_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AssetRelationshipSummary>>,
+    pub(crate) asset_relationship_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetRelationshipSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,27 +47,19 @@ impl ListAssetRelationshipsOutputBuilder {
     /// To override the contents of this collection use [`set_asset_relationship_summaries`](Self::set_asset_relationship_summaries).
     ///
     /// <p>A list that summarizes each asset relationship.</p>
-    pub fn asset_relationship_summaries(
-        mut self,
-        input: crate::types::AssetRelationshipSummary,
-    ) -> Self {
+    pub fn asset_relationship_summaries(mut self, input: crate::types::AssetRelationshipSummary) -> Self {
         let mut v = self.asset_relationship_summaries.unwrap_or_default();
         v.push(input);
         self.asset_relationship_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that summarizes each asset relationship.</p>
-    pub fn set_asset_relationship_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetRelationshipSummary>>,
-    ) -> Self {
+    pub fn set_asset_relationship_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetRelationshipSummary>>) -> Self {
         self.asset_relationship_summaries = input;
         self
     }
     /// <p>A list that summarizes each asset relationship.</p>
-    pub fn get_asset_relationship_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetRelationshipSummary>> {
+    pub fn get_asset_relationship_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetRelationshipSummary>> {
         &self.asset_relationship_summaries
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>

@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`application_arn(Option<String>)`](crate::operation::disassociate_attribute_group::DisassociateAttributeGroupOutput::application_arn): <p>The Amazon resource name (ARN) that specifies the application.</p>
     ///   - [`attribute_group_arn(Option<String>)`](crate::operation::disassociate_attribute_group::DisassociateAttributeGroupOutput::attribute_group_arn): <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
     /// - On failure, responds with [`SdkError<DisassociateAttributeGroupError>`](crate::operation::disassociate_attribute_group::DisassociateAttributeGroupError)
-    pub fn disassociate_attribute_group(&self) -> crate::operation::disassociate_attribute_group::builders::DisassociateAttributeGroupFluentBuilder{
+    pub fn disassociate_attribute_group(&self) -> crate::operation::disassociate_attribute_group::builders::DisassociateAttributeGroupFluentBuilder {
         crate::operation::disassociate_attribute_group::builders::DisassociateAttributeGroupFluentBuilder::new(self.handle.clone())
     }
 }

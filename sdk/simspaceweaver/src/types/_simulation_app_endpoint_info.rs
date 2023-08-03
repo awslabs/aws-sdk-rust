@@ -9,8 +9,7 @@ pub struct SimulationAppEndpointInfo {
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The inbound TCP/UDP port numbers of the app. The combination of an IP address and a port number form a network endpoint.</p>
     #[doc(hidden)]
-    pub ingress_port_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::SimulationAppPortMapping>>,
+    pub ingress_port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SimulationAppPortMapping>>,
 }
 impl SimulationAppEndpointInfo {
     /// <p>The IP address of the app. SimSpace Weaver dynamically assigns this IP address when the app starts.</p>
@@ -18,9 +17,7 @@ impl SimulationAppEndpointInfo {
         self.address.as_deref()
     }
     /// <p>The inbound TCP/UDP port numbers of the app. The combination of an IP address and a port number form a network endpoint.</p>
-    pub fn ingress_port_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SimulationAppPortMapping]> {
+    pub fn ingress_port_mappings(&self) -> ::std::option::Option<&[crate::types::SimulationAppPortMapping]> {
         self.ingress_port_mappings.as_deref()
     }
 }
@@ -33,13 +30,10 @@ impl SimulationAppEndpointInfo {
 
 /// A builder for [`SimulationAppEndpointInfo`](crate::types::SimulationAppEndpointInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SimulationAppEndpointInfoBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
-    pub(crate) ingress_port_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::SimulationAppPortMapping>>,
+    pub(crate) ingress_port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SimulationAppPortMapping>>,
 }
 impl SimulationAppEndpointInfoBuilder {
     /// <p>The IP address of the app. SimSpace Weaver dynamically assigns this IP address when the app starts.</p>
@@ -68,17 +62,12 @@ impl SimulationAppEndpointInfoBuilder {
         self
     }
     /// <p>The inbound TCP/UDP port numbers of the app. The combination of an IP address and a port number form a network endpoint.</p>
-    pub fn set_ingress_port_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationAppPortMapping>>,
-    ) -> Self {
+    pub fn set_ingress_port_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationAppPortMapping>>) -> Self {
         self.ingress_port_mappings = input;
         self
     }
     /// <p>The inbound TCP/UDP port numbers of the app. The combination of an IP address and a port number form a network endpoint.</p>
-    pub fn get_ingress_port_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationAppPortMapping>> {
+    pub fn get_ingress_port_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationAppPortMapping>> {
         &self.ingress_port_mappings
     }
     /// Consumes the builder and constructs a [`SimulationAppEndpointInfo`](crate::types::SimulationAppEndpointInfo).

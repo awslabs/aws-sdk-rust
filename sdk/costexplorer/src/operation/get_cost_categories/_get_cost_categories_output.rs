@@ -51,17 +51,14 @@ impl ::aws_http::request_id::RequestId for GetCostCategoriesOutput {
 }
 impl GetCostCategoriesOutput {
     /// Creates a new builder-style object to manufacture [`GetCostCategoriesOutput`](crate::operation::get_cost_categories::GetCostCategoriesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_cost_categories::builders::GetCostCategoriesOutputBuilder {
+    pub fn builder() -> crate::operation::get_cost_categories::builders::GetCostCategoriesOutputBuilder {
         crate::operation::get_cost_categories::builders::GetCostCategoriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCostCategoriesOutput`](crate::operation::get_cost_categories::GetCostCategoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCostCategoriesOutputBuilder {
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     pub(crate) cost_category_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,18 +69,12 @@ pub struct GetCostCategoriesOutputBuilder {
 }
 impl GetCostCategoriesOutputBuilder {
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -96,27 +87,19 @@ impl GetCostCategoriesOutputBuilder {
     /// To override the contents of this collection use [`set_cost_category_names`](Self::set_cost_category_names).
     ///
     /// <p>The names of the Cost Categories.</p>
-    pub fn cost_category_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cost_category_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cost_category_names.unwrap_or_default();
         v.push(input.into());
         self.cost_category_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the Cost Categories.</p>
-    pub fn set_cost_category_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cost_category_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cost_category_names = input;
         self
     }
     /// <p>The names of the Cost Categories.</p>
-    pub fn get_cost_category_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cost_category_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cost_category_names
     }
     /// Appends an item to `cost_category_values`.
@@ -125,10 +108,7 @@ impl GetCostCategoriesOutputBuilder {
     ///
     /// <p>The Cost Category values.</p>
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
-    pub fn cost_category_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cost_category_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cost_category_values.unwrap_or_default();
         v.push(input.into());
         self.cost_category_values = ::std::option::Option::Some(v);
@@ -136,18 +116,13 @@ impl GetCostCategoriesOutputBuilder {
     }
     /// <p>The Cost Category values.</p>
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
-    pub fn set_cost_category_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cost_category_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cost_category_values = input;
         self
     }
     /// <p>The Cost Category values.</p>
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
-    pub fn get_cost_category_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cost_category_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cost_category_values
     }
     /// <p>The number of objects that are returned.</p>

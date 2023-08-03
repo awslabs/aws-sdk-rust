@@ -10,10 +10,7 @@ impl UpdateMonitorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_monitor::UpdateMonitorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_monitor::UpdateMonitorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitor::UpdateMonitorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_monitor();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateMonitorFluentBuilder {
         }
     }
     /// Access the UpdateMonitor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_monitor::builders::UpdateMonitorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_monitor::builders::UpdateMonitorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl UpdateMonitorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -137,10 +129,7 @@ impl UpdateMonitorFluentBuilder {
     /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
     /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub fn resources_to_add(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resources_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resources_to_add(input.into());
         self
     }
@@ -148,10 +137,7 @@ impl UpdateMonitorFluentBuilder {
     /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
     /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub fn set_resources_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resources_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resources_to_add(input);
         self
     }
@@ -159,9 +145,7 @@ impl UpdateMonitorFluentBuilder {
     /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
     /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub fn get_resources_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resources_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resources_to_add()
     }
     /// Appends an item to `ResourcesToRemove`.
@@ -169,25 +153,17 @@ impl UpdateMonitorFluentBuilder {
     /// To override the contents of this collection use [`set_resources_to_remove`](Self::set_resources_to_remove).
     ///
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    pub fn resources_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resources_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resources_to_remove(input.into());
         self
     }
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    pub fn set_resources_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resources_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resources_to_remove(input);
         self
     }
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    pub fn get_resources_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resources_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resources_to_remove()
     }
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
@@ -196,10 +172,7 @@ impl UpdateMonitorFluentBuilder {
         self
     }
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitorConfigState>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MonitorConfigState>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -236,25 +209,17 @@ impl UpdateMonitorFluentBuilder {
         self.inner.get_max_city_networks_to_monitor()
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    pub fn internet_measurements_log_delivery(
-        mut self,
-        input: crate::types::InternetMeasurementsLogDelivery,
-    ) -> Self {
+    pub fn internet_measurements_log_delivery(mut self, input: crate::types::InternetMeasurementsLogDelivery) -> Self {
         self.inner = self.inner.internet_measurements_log_delivery(input);
         self
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    pub fn set_internet_measurements_log_delivery(
-        mut self,
-        input: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
-    ) -> Self {
+    pub fn set_internet_measurements_log_delivery(mut self, input: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>) -> Self {
         self.inner = self.inner.set_internet_measurements_log_delivery(input);
         self
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    pub fn get_internet_measurements_log_delivery(
-        &self,
-    ) -> &::std::option::Option<crate::types::InternetMeasurementsLogDelivery> {
+    pub fn get_internet_measurements_log_delivery(&self) -> &::std::option::Option<crate::types::InternetMeasurementsLogDelivery> {
         self.inner.get_internet_measurements_log_delivery()
     }
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
@@ -277,17 +242,12 @@ impl UpdateMonitorFluentBuilder {
         self
     }
     /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
-    pub fn set_health_events_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthEventsConfig>,
-    ) -> Self {
+    pub fn set_health_events_config(mut self, input: ::std::option::Option<crate::types::HealthEventsConfig>) -> Self {
         self.inner = self.inner.set_health_events_config(input);
         self
     }
     /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
-    pub fn get_health_events_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthEventsConfig> {
+    pub fn get_health_events_config(&self) -> &::std::option::Option<crate::types::HealthEventsConfig> {
         self.inner.get_health_events_config()
     }
 }

@@ -86,17 +86,14 @@ impl CreateOptionGroupInput {
 }
 impl CreateOptionGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateOptionGroupInput`](crate::operation::create_option_group::CreateOptionGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_option_group::builders::CreateOptionGroupInputBuilder {
+    pub fn builder() -> crate::operation::create_option_group::builders::CreateOptionGroupInputBuilder {
         crate::operation::create_option_group::builders::CreateOptionGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateOptionGroupInput`](crate::operation::create_option_group::CreateOptionGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOptionGroupInputBuilder {
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) engine_name: ::std::option::Option<::std::string::String>,
@@ -113,10 +110,7 @@ impl CreateOptionGroupInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>myoptiongroup</code> </p>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -128,10 +122,7 @@ impl CreateOptionGroupInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>myoptiongroup</code> </p>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_group_name = input;
         self
     }
@@ -203,18 +194,12 @@ impl CreateOptionGroupInputBuilder {
         &self.engine_name
     }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
-    pub fn major_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
-    pub fn set_major_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.major_engine_version = input;
         self
     }
@@ -223,18 +208,12 @@ impl CreateOptionGroupInputBuilder {
         &self.major_engine_version
     }
     /// <p>The description of the option group.</p>
-    pub fn option_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the option group.</p>
-    pub fn set_option_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_group_description = input;
         self
     }
@@ -254,10 +233,7 @@ impl CreateOptionGroupInputBuilder {
         self
     }
     /// <p>Tags to assign to the option group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -268,18 +244,13 @@ impl CreateOptionGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateOptionGroupInput`](crate::operation::create_option_group::CreateOptionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_option_group::CreateOptionGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_option_group::CreateOptionGroupInput {
-                option_group_name: self.option_group_name,
-                engine_name: self.engine_name,
-                major_engine_version: self.major_engine_version,
-                option_group_description: self.option_group_description,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_option_group::CreateOptionGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_option_group::CreateOptionGroupInput {
+            option_group_name: self.option_group_name,
+            engine_name: self.engine_name,
+            major_engine_version: self.major_engine_version,
+            option_group_description: self.option_group_description,
+            tags: self.tags,
+        })
     }
 }

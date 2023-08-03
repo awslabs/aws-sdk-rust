@@ -57,9 +57,7 @@ impl UpdateRouteInput {
 
 /// A builder for [`UpdateRouteInput`](crate::operation::update_route::UpdateRouteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRouteInputBuilder {
     pub(crate) route_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -98,18 +96,12 @@ impl UpdateRouteInputBuilder {
         &self.mesh_name
     }
     /// <p>The name of the virtual router that the route is associated with.</p>
-    pub fn virtual_router_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual router that the route is associated with.</p>
-    pub fn set_virtual_router_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_router_name = input;
         self
     }
@@ -160,12 +152,7 @@ impl UpdateRouteInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`UpdateRouteInput`](crate::operation::update_route::UpdateRouteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_route::UpdateRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_route::UpdateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_route::UpdateRouteInput {
             route_name: self.route_name,
             mesh_name: self.mesh_name,

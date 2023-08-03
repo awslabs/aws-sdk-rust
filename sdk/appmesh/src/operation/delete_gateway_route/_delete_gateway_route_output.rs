@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteGatewayRouteOutput {
 }
 impl DeleteGatewayRouteOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGatewayRouteOutput`](crate::operation::delete_gateway_route::DeleteGatewayRouteOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_gateway_route::builders::DeleteGatewayRouteOutputBuilder {
+    pub fn builder() -> crate::operation::delete_gateway_route::builders::DeleteGatewayRouteOutputBuilder {
         crate::operation::delete_gateway_route::builders::DeleteGatewayRouteOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGatewayRouteOutput`](crate::operation::delete_gateway_route::DeleteGatewayRouteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGatewayRouteOutputBuilder {
     pub(crate) gateway_route: ::std::option::Option<crate::types::GatewayRouteData>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteGatewayRouteOutputBuilder {
         self
     }
     /// <p>The gateway route that was deleted.</p>
-    pub fn set_gateway_route(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayRouteData>,
-    ) -> Self {
+    pub fn set_gateway_route(mut self, input: ::std::option::Option<crate::types::GatewayRouteData>) -> Self {
         self.gateway_route = input;
         self
     }

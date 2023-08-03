@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateStateMachineAliasOutput`](crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput) with field(s):
     ///   - [`update_date(Option<DateTime>)`](crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput::update_date): <p>The date and time the state machine alias was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateStateMachineAliasError>`](crate::operation::update_state_machine_alias::UpdateStateMachineAliasError)
-    pub fn update_state_machine_alias(
-        &self,
-    ) -> crate::operation::update_state_machine_alias::builders::UpdateStateMachineAliasFluentBuilder
-    {
+    pub fn update_state_machine_alias(&self) -> crate::operation::update_state_machine_alias::builders::UpdateStateMachineAliasFluentBuilder {
         crate::operation::update_state_machine_alias::builders::UpdateStateMachineAliasFluentBuilder::new(self.handle.clone())
     }
 }

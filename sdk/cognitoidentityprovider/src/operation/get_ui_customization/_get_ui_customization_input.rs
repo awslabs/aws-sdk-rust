@@ -30,8 +30,7 @@ impl ::std::fmt::Debug for GetUiCustomizationInput {
 }
 impl GetUiCustomizationInput {
     /// Creates a new builder-style object to manufacture [`GetUiCustomizationInput`](crate::operation::get_ui_customization::GetUiCustomizationInput).
-    pub fn builder(
-    ) -> crate::operation::get_ui_customization::builders::GetUiCustomizationInputBuilder {
+    pub fn builder() -> crate::operation::get_ui_customization::builders::GetUiCustomizationInputBuilder {
         crate::operation::get_ui_customization::builders::GetUiCustomizationInputBuilder::default()
     }
 }
@@ -75,16 +74,11 @@ impl GetUiCustomizationInputBuilder {
     /// Consumes the builder and constructs a [`GetUiCustomizationInput`](crate::operation::get_ui_customization::GetUiCustomizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ui_customization::GetUiCustomizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_ui_customization::GetUiCustomizationInput {
-                user_pool_id: self.user_pool_id,
-                client_id: self.client_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_ui_customization::GetUiCustomizationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_ui_customization::GetUiCustomizationInput {
+            user_pool_id: self.user_pool_id,
+            client_id: self.client_id,
+        })
     }
 }
 impl ::std::fmt::Debug for GetUiCustomizationInputBuilder {

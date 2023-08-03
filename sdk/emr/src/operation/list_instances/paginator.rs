@@ -47,9 +47,7 @@ impl ListInstancesPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::list_instances::ListInstancesOutput,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_instances::ListInstancesError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_instances::ListInstancesError>,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
@@ -59,10 +57,7 @@ impl ListInstancesPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -89,10 +84,7 @@ impl ListInstancesPaginator {
                         ::std::result::Result::Ok(ref resp) => {
                             let new_token = crate::lens::reflens_list_instances_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.marker.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.marker = new_token.cloned();
@@ -130,15 +122,10 @@ impl ListInstancesPaginatorItems {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::types::Instance,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_instances::ListInstancesError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_instances::ListInstancesError>,
         >,
     > + ::std::marker::Unpin {
-        ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_list_instances_output_instances(page)
-                .unwrap_or_default()
-                .into_iter()
-        })
+        ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send())
+            .flat_map(|page| crate::lens::lens_list_instances_output_instances(page).unwrap_or_default().into_iter())
     }
 }

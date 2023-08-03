@@ -62,9 +62,7 @@ impl StateMachineListItem {
 
 /// A builder for [`StateMachineListItem`](crate::types::StateMachineListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StateMachineListItemBuilder {
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -73,18 +71,12 @@ pub struct StateMachineListItemBuilder {
 }
 impl StateMachineListItemBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_arn = input;
         self
     }
@@ -139,10 +131,7 @@ impl StateMachineListItemBuilder {
         self
     }
     /// <p></p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StateMachineType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::StateMachineType>) -> Self {
         self.r#type = input;
         self
     }
@@ -156,10 +145,7 @@ impl StateMachineListItemBuilder {
         self
     }
     /// <p>The date the state machine is created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }

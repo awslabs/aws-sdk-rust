@@ -175,17 +175,14 @@ impl CreateConstraintInput {
 }
 impl CreateConstraintInput {
     /// Creates a new builder-style object to manufacture [`CreateConstraintInput`](crate::operation::create_constraint::CreateConstraintInput).
-    pub fn builder() -> crate::operation::create_constraint::builders::CreateConstraintInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_constraint::builders::CreateConstraintInputBuilder {
         crate::operation::create_constraint::builders::CreateConstraintInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConstraintInput`](crate::operation::create_constraint::CreateConstraintInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConstraintInputBuilder {
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
     pub(crate) portfolio_id: ::std::option::Option<::std::string::String>,
@@ -201,10 +198,7 @@ impl CreateConstraintInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
         self
     }
@@ -213,10 +207,7 @@ impl CreateConstraintInputBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
         self
     }
@@ -464,18 +455,12 @@ impl CreateConstraintInputBuilder {
         &self.description
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
@@ -486,10 +471,7 @@ impl CreateConstraintInputBuilder {
     /// Consumes the builder and constructs a [`CreateConstraintInput`](crate::operation::create_constraint::CreateConstraintInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_constraint::CreateConstraintInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_constraint::CreateConstraintInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_constraint::CreateConstraintInput {
             accept_language: self.accept_language,
             portfolio_id: self.portfolio_id,

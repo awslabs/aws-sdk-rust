@@ -66,10 +66,7 @@ impl GetFunctionOutputBuilder {
         self
     }
     /// <p>The function code of a CloudFront function.</p>
-    pub fn set_function_code(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_function_code(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.function_code = input;
         self
     }

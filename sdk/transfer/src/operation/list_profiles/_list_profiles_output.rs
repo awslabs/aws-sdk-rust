@@ -35,9 +35,7 @@ impl ListProfilesOutput {
 
 /// A builder for [`ListProfilesOutput`](crate::operation::list_profiles::ListProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfilesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::ListedProfile>>,
@@ -70,17 +68,12 @@ impl ListProfilesOutputBuilder {
         self
     }
     /// <p>Returns an array, where each item contains the details of a profile.</p>
-    pub fn set_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListedProfile>>,
-    ) -> Self {
+    pub fn set_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedProfile>>) -> Self {
         self.profiles = input;
         self
     }
     /// <p>Returns an array, where each item contains the details of a profile.</p>
-    pub fn get_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedProfile>> {
+    pub fn get_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedProfile>> {
         &self.profiles
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -5,29 +5,21 @@
 pub struct DescribeRegionSettingsInput {}
 impl DescribeRegionSettingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeRegionSettingsInput`](crate::operation::describe_region_settings::DescribeRegionSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_region_settings::builders::DescribeRegionSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_region_settings::builders::DescribeRegionSettingsInputBuilder {
         crate::operation::describe_region_settings::builders::DescribeRegionSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRegionSettingsInput`](crate::operation::describe_region_settings::DescribeRegionSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRegionSettingsInputBuilder {}
 impl DescribeRegionSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRegionSettingsInput`](crate::operation::describe_region_settings::DescribeRegionSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_region_settings::DescribeRegionSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_region_settings::DescribeRegionSettingsInput {},
-        )
+    ) -> ::std::result::Result<crate::operation::describe_region_settings::DescribeRegionSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_region_settings::DescribeRegionSettingsInput {})
     }
 }

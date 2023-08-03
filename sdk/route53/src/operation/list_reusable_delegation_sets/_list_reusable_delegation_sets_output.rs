@@ -50,16 +50,14 @@ impl ::aws_http::request_id::RequestId for ListReusableDelegationSetsOutput {
 }
 impl ListReusableDelegationSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListReusableDelegationSetsOutput`](crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput).
-    pub fn builder() -> crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsOutputBuilder{
+    pub fn builder() -> crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsOutputBuilder {
         crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListReusableDelegationSetsOutput`](crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReusableDelegationSetsOutputBuilder {
     pub(crate) delegation_sets: ::std::option::Option<::std::vec::Vec<crate::types::DelegationSet>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -81,17 +79,12 @@ impl ListReusableDelegationSetsOutputBuilder {
         self
     }
     /// <p>A complex type that contains one <code>DelegationSet</code> element for each reusable delegation set that was created by the current Amazon Web Services account.</p>
-    pub fn set_delegation_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DelegationSet>>,
-    ) -> Self {
+    pub fn set_delegation_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DelegationSet>>) -> Self {
         self.delegation_sets = input;
         self
     }
     /// <p>A complex type that contains one <code>DelegationSet</code> element for each reusable delegation set that was created by the current Amazon Web Services account.</p>
-    pub fn get_delegation_sets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DelegationSet>> {
+    pub fn get_delegation_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DelegationSet>> {
         &self.delegation_sets
     }
     /// <p>For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
@@ -160,9 +153,7 @@ impl ListReusableDelegationSetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListReusableDelegationSetsOutput`](crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput {
+    pub fn build(self) -> crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput {
         crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput {
             delegation_sets: self.delegation_sets,
             marker: self.marker,

@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateInAppTemplateOutput`](crate::operation::create_in_app_template::CreateInAppTemplateOutput) with field(s):
     ///   - [`template_create_message_body(Option<TemplateCreateMessageBody>)`](crate::operation::create_in_app_template::CreateInAppTemplateOutput::template_create_message_body): <p>Provides information about a request to create a message template.</p>
     /// - On failure, responds with [`SdkError<CreateInAppTemplateError>`](crate::operation::create_in_app_template::CreateInAppTemplateError)
-    pub fn create_in_app_template(
-        &self,
-    ) -> crate::operation::create_in_app_template::builders::CreateInAppTemplateFluentBuilder {
-        crate::operation::create_in_app_template::builders::CreateInAppTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_in_app_template(&self) -> crate::operation::create_in_app_template::builders::CreateInAppTemplateFluentBuilder {
+        crate::operation::create_in_app_template::builders::CreateInAppTemplateFluentBuilder::new(self.handle.clone())
     }
 }

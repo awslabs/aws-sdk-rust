@@ -10,9 +10,7 @@ pub struct DefaultFreeFormLayoutConfiguration {
 }
 impl DefaultFreeFormLayoutConfiguration {
     /// <p>Determines the screen canvas size options for a free-form layout.</p>
-    pub fn canvas_size_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FreeFormLayoutCanvasSizeOptions> {
+    pub fn canvas_size_options(&self) -> ::std::option::Option<&crate::types::FreeFormLayoutCanvasSizeOptions> {
         self.canvas_size_options.as_ref()
     }
 }
@@ -25,34 +23,23 @@ impl DefaultFreeFormLayoutConfiguration {
 
 /// A builder for [`DefaultFreeFormLayoutConfiguration`](crate::types::DefaultFreeFormLayoutConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultFreeFormLayoutConfigurationBuilder {
-    pub(crate) canvas_size_options:
-        ::std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions>,
+    pub(crate) canvas_size_options: ::std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions>,
 }
 impl DefaultFreeFormLayoutConfigurationBuilder {
     /// <p>Determines the screen canvas size options for a free-form layout.</p>
-    pub fn canvas_size_options(
-        mut self,
-        input: crate::types::FreeFormLayoutCanvasSizeOptions,
-    ) -> Self {
+    pub fn canvas_size_options(mut self, input: crate::types::FreeFormLayoutCanvasSizeOptions) -> Self {
         self.canvas_size_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the screen canvas size options for a free-form layout.</p>
-    pub fn set_canvas_size_options(
-        mut self,
-        input: ::std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions>,
-    ) -> Self {
+    pub fn set_canvas_size_options(mut self, input: ::std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions>) -> Self {
         self.canvas_size_options = input;
         self
     }
     /// <p>Determines the screen canvas size options for a free-form layout.</p>
-    pub fn get_canvas_size_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions> {
+    pub fn get_canvas_size_options(&self) -> &::std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions> {
         &self.canvas_size_options
     }
     /// Consumes the builder and constructs a [`DefaultFreeFormLayoutConfiguration`](crate::types::DefaultFreeFormLayoutConfiguration).

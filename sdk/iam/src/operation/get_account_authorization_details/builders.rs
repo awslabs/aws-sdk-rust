@@ -5,16 +5,16 @@ pub use crate::operation::get_account_authorization_details::_get_account_author
 
 impl GetAccountAuthorizationDetailsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_account_authorization_details();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl GetAccountAuthorizationDetailsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccountAuthorizationDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_account_authorization_details::builders::GetAccountAuthorizationDetailsInputBuilder,
+    inner: crate::operation::get_account_authorization_details::builders::GetAccountAuthorizationDetailsInputBuilder,
 }
 impl GetAccountAuthorizationDetailsFluentBuilder {
     /// Creates a new `GetAccountAuthorizationDetails`.
@@ -40,15 +40,20 @@ impl GetAccountAuthorizationDetailsFluentBuilder {
         }
     }
     /// Access the GetAccountAuthorizationDetails as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_account_authorization_details::builders::GetAccountAuthorizationDetailsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_account_authorization_details::builders::GetAccountAuthorizationDetailsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_account_authorization_details::GetAccountAuthorizationDetails, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_account_authorization_details::GetAccountAuthorizationDetails,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl GetAccountAuthorizationDetailsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,23 +90,32 @@ impl GetAccountAuthorizationDetailsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_account_authorization_details::GetAccountAuthorizationDetails, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_account_authorization_details::GetAccountAuthorizationDetails,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_account_authorization_details::paginator::GetAccountAuthorizationDetailsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_account_authorization_details::paginator::GetAccountAuthorizationDetailsPaginator{
+    pub fn into_paginator(self) -> crate::operation::get_account_authorization_details::paginator::GetAccountAuthorizationDetailsPaginator {
         crate::operation::get_account_authorization_details::paginator::GetAccountAuthorizationDetailsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filter`.
@@ -115,10 +130,7 @@ impl GetAccountAuthorizationDetailsFluentBuilder {
     }
     /// <p>A list of entity types used to filter the results. Only the entities that match the types you specify are included in the output. Use the value <code>LocalManagedPolicy</code> to include customer managed policies.</p>
     /// <p>The format for this parameter is a comma-separated (if more than one) list of strings. Each string value in the list must be one of the valid values listed below.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

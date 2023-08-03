@@ -5,16 +5,16 @@ pub use crate::operation::update_launch_configuration_template::_update_launch_c
 
 impl UpdateLaunchConfigurationTemplateInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.update_launch_configuration_template();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLaunchConfigurationTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_launch_configuration_template::builders::UpdateLaunchConfigurationTemplateInputBuilder,
+    inner: crate::operation::update_launch_configuration_template::builders::UpdateLaunchConfigurationTemplateInputBuilder,
 }
 impl UpdateLaunchConfigurationTemplateFluentBuilder {
     /// Creates a new `UpdateLaunchConfigurationTemplate`.
@@ -37,15 +37,20 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
         }
     }
     /// Access the UpdateLaunchConfigurationTemplate as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_launch_configuration_template::builders::UpdateLaunchConfigurationTemplateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_launch_configuration_template::builders::UpdateLaunchConfigurationTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplate, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplate,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,39 +87,40 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplate, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplate,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Launch Configuration Template ID.</p>
-    pub fn launch_configuration_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_configuration_template_id(input.into());
         self
     }
     /// <p>Launch Configuration Template ID.</p>
-    pub fn set_launch_configuration_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_configuration_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_configuration_template_id(input);
         self
     }
     /// <p>Launch Configuration Template ID.</p>
-    pub fn get_launch_configuration_template_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_launch_configuration_template_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_launch_configuration_template_id()
     }
     /// <p>Launch disposition.</p>
@@ -122,24 +129,16 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
         self
     }
     /// <p>Launch disposition.</p>
-    pub fn set_launch_disposition(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchDisposition>,
-    ) -> Self {
+    pub fn set_launch_disposition(mut self, input: ::std::option::Option<crate::types::LaunchDisposition>) -> Self {
         self.inner = self.inner.set_launch_disposition(input);
         self
     }
     /// <p>Launch disposition.</p>
-    pub fn get_launch_disposition(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchDisposition> {
+    pub fn get_launch_disposition(&self) -> &::std::option::Option<crate::types::LaunchDisposition> {
         self.inner.get_launch_disposition()
     }
     /// <p>Target instance type right-sizing method.</p>
-    pub fn target_instance_type_right_sizing_method(
-        mut self,
-        input: crate::types::TargetInstanceTypeRightSizingMethod,
-    ) -> Self {
+    pub fn target_instance_type_right_sizing_method(mut self, input: crate::types::TargetInstanceTypeRightSizingMethod) -> Self {
         self.inner = self.inner.target_instance_type_right_sizing_method(input);
         self
     }
@@ -148,15 +147,11 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_target_instance_type_right_sizing_method(input);
+        self.inner = self.inner.set_target_instance_type_right_sizing_method(input);
         self
     }
     /// <p>Target instance type right-sizing method.</p>
-    pub fn get_target_instance_type_right_sizing_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
+    pub fn get_target_instance_type_right_sizing_method(&self) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
         self.inner.get_target_instance_type_right_sizing_method()
     }
     /// <p>Copy private IP.</p>
@@ -202,18 +197,12 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
         self.inner.get_licensing()
     }
     /// <p>S3 bucket ARN to export Source Network templates.</p>
-    pub fn export_bucket_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.export_bucket_arn(input.into());
         self
     }
     /// <p>S3 bucket ARN to export Source Network templates.</p>
-    pub fn set_export_bucket_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_export_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_export_bucket_arn(input);
         self
     }

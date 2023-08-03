@@ -23,26 +23,18 @@ impl Recommendation {
 
 /// A builder for [`Recommendation`](crate::types::Recommendation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationBuilder {
     pub(crate) recommendation_text: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationBuilder {
     /// <p>Text of the recommendations that are provided to make an application more recovery resilient.</p>
-    pub fn recommendation_text(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Text of the recommendations that are provided to make an application more recovery resilient.</p>
-    pub fn set_recommendation_text(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_text = input;
         self
     }

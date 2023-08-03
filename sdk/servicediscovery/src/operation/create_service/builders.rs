@@ -10,10 +10,7 @@ impl CreateServiceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_service::CreateServiceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_service::CreateServiceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_service();
         fluent_builder.inner = self;
@@ -50,9 +47,7 @@ impl CreateServiceFluentBuilder {
         }
     }
     /// Access the CreateService as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_service::builders::CreateServiceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_service::builders::CreateServiceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -74,10 +69,7 @@ impl CreateServiceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -189,18 +181,12 @@ impl CreateServiceFluentBuilder {
         self.inner.get_namespace_id()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
@@ -248,10 +234,7 @@ impl CreateServiceFluentBuilder {
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
-    pub fn set_health_check_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckConfig>,
-    ) -> Self {
+    pub fn set_health_check_config(mut self, input: ::std::option::Option<crate::types::HealthCheckConfig>) -> Self {
         self.inner = self.inner.set_health_check_config(input);
         self
     }
@@ -259,19 +242,14 @@ impl CreateServiceFluentBuilder {
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
-    pub fn get_health_check_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthCheckConfig> {
+    pub fn get_health_check_config(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
         self.inner.get_health_check_config()
     }
     /// <p>A complex type that contains information about an optional custom health check.</p> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
-    pub fn health_check_custom_config(
-        mut self,
-        input: crate::types::HealthCheckCustomConfig,
-    ) -> Self {
+    pub fn health_check_custom_config(mut self, input: crate::types::HealthCheckCustomConfig) -> Self {
         self.inner = self.inner.health_check_custom_config(input);
         self
     }
@@ -279,10 +257,7 @@ impl CreateServiceFluentBuilder {
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
-    pub fn set_health_check_custom_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthCheckCustomConfig>,
-    ) -> Self {
+    pub fn set_health_check_custom_config(mut self, input: ::std::option::Option<crate::types::HealthCheckCustomConfig>) -> Self {
         self.inner = self.inner.set_health_check_custom_config(input);
         self
     }
@@ -290,9 +265,7 @@ impl CreateServiceFluentBuilder {
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
-    pub fn get_health_check_custom_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthCheckCustomConfig> {
+    pub fn get_health_check_custom_config(&self) -> &::std::option::Option<crate::types::HealthCheckCustomConfig> {
         self.inner.get_health_check_custom_config()
     }
     /// Appends an item to `Tags`.
@@ -305,10 +278,7 @@ impl CreateServiceFluentBuilder {
         self
     }
     /// <p>The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -322,10 +292,7 @@ impl CreateServiceFluentBuilder {
         self
     }
     /// <p>If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code> API operation. No DNS records is registered for the service instances. The only valid value is <code>HTTP</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceTypeOption>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ServiceTypeOption>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

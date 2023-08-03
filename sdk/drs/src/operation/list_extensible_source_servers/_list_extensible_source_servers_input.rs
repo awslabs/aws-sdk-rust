@@ -29,16 +29,14 @@ impl ListExtensibleSourceServersInput {
 }
 impl ListExtensibleSourceServersInput {
     /// Creates a new builder-style object to manufacture [`ListExtensibleSourceServersInput`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput).
-    pub fn builder() -> crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersInputBuilder{
+    pub fn builder() -> crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersInputBuilder {
         crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListExtensibleSourceServersInput`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExtensibleSourceServersInputBuilder {
     pub(crate) staging_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -46,18 +44,12 @@ pub struct ListExtensibleSourceServersInputBuilder {
 }
 impl ListExtensibleSourceServersInputBuilder {
     /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
-    pub fn staging_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn staging_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.staging_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
-    pub fn set_staging_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_staging_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.staging_account_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListExtensibleSourceServersInputBuilder {
         crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput {
-                staging_account_id: self.staging_account_id,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput {
+            staging_account_id: self.staging_account_id,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }

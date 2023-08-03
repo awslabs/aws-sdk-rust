@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`volume_id(impl ::std::convert::Into<String>)`](crate::operation::enable_volume_io::builders::EnableVolumeIOFluentBuilder::volume_id) / [`set_volume_id(Option<String>)`](crate::operation::enable_volume_io::builders::EnableVolumeIOFluentBuilder::set_volume_id): <p>The ID of the volume.</p>
     /// - On success, responds with [`EnableVolumeIoOutput`](crate::operation::enable_volume_io::EnableVolumeIoOutput)
     /// - On failure, responds with [`SdkError<EnableVolumeIOError>`](crate::operation::enable_volume_io::EnableVolumeIOError)
-    pub fn enable_volume_io(
-        &self,
-    ) -> crate::operation::enable_volume_io::builders::EnableVolumeIOFluentBuilder {
-        crate::operation::enable_volume_io::builders::EnableVolumeIOFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn enable_volume_io(&self) -> crate::operation::enable_volume_io::builders::EnableVolumeIOFluentBuilder {
+        crate::operation::enable_volume_io::builders::EnableVolumeIOFluentBuilder::new(self.handle.clone())
     }
 }

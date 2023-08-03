@@ -35,9 +35,7 @@ impl ListTapePoolsOutput {
 
 /// A builder for [`ListTapePoolsOutput`](crate::operation::list_tape_pools::ListTapePoolsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTapePoolsOutputBuilder {
     pub(crate) pool_infos: ::std::option::Option<::std::vec::Vec<crate::types::PoolInfo>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListTapePoolsOutputBuilder {
         self
     }
     /// <p>An array of <code>PoolInfo</code> objects, where each object describes a single custom tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty array. </p>
-    pub fn set_pool_infos(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PoolInfo>>,
-    ) -> Self {
+    pub fn set_pool_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PoolInfo>>) -> Self {
         self.pool_infos = input;
         self
     }
     /// <p>An array of <code>PoolInfo</code> objects, where each object describes a single custom tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty array. </p>
-    pub fn get_pool_infos(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PoolInfo>> {
+    pub fn get_pool_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PoolInfo>> {
         &self.pool_infos
     }
     /// <p>A string that indicates the position at which to begin the returned list of tape pools. Use the marker in your next request to continue pagination of tape pools. If there are no more tape pools to list, this element does not appear in the response body. </p>

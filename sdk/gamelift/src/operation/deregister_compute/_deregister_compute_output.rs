@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterComputeOutput {
 }
 impl DeregisterComputeOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterComputeOutput`](crate::operation::deregister_compute::DeregisterComputeOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_compute::builders::DeregisterComputeOutputBuilder {
+    pub fn builder() -> crate::operation::deregister_compute::builders::DeregisterComputeOutputBuilder {
         crate::operation::deregister_compute::builders::DeregisterComputeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterComputeOutput`](crate::operation::deregister_compute::DeregisterComputeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterComputeOutputBuilder {
     _request_id: Option<String>,
 }

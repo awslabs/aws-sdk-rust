@@ -36,59 +36,42 @@ impl UpdateConfiguredTableAssociationInput {
 }
 impl UpdateConfiguredTableAssociationInput {
     /// Creates a new builder-style object to manufacture [`UpdateConfiguredTableAssociationInput`](crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput).
-    pub fn builder() -> crate::operation::update_configured_table_association::builders::UpdateConfiguredTableAssociationInputBuilder{
+    pub fn builder() -> crate::operation::update_configured_table_association::builders::UpdateConfiguredTableAssociationInputBuilder {
         crate::operation::update_configured_table_association::builders::UpdateConfiguredTableAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateConfiguredTableAssociationInput`](crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateConfiguredTableAssociationInputBuilder {
-    pub(crate) configured_table_association_identifier:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) configured_table_association_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConfiguredTableAssociationInputBuilder {
     /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
-    pub fn configured_table_association_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configured_table_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_association_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
-    pub fn set_configured_table_association_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configured_table_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configured_table_association_identifier = input;
         self
     }
     /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
-    pub fn get_configured_table_association_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_configured_table_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.configured_table_association_identifier
     }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-    pub fn membership_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-    pub fn set_membership_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.membership_identifier = input;
         self
     }
@@ -125,18 +108,19 @@ impl UpdateConfiguredTableAssociationInputBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateConfiguredTableAssociationInput`](crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput {
-                configured_table_association_identifier: self.configured_table_association_identifier
-                ,
-                membership_identifier: self.membership_identifier
-                ,
-                description: self.description
-                ,
-                role_arn: self.role_arn
-                ,
-            }
+                configured_table_association_identifier: self.configured_table_association_identifier,
+                membership_identifier: self.membership_identifier,
+                description: self.description,
+                role_arn: self.role_arn,
+            },
         )
     }
 }

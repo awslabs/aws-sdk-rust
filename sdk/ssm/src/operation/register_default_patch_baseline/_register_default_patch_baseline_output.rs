@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for RegisterDefaultPatchBaselineOutput {
 }
 impl RegisterDefaultPatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`RegisterDefaultPatchBaselineOutput`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput).
-    pub fn builder() -> crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineOutputBuilder{
+    pub fn builder() -> crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineOutputBuilder {
         crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterDefaultPatchBaselineOutput`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterDefaultPatchBaselineOutputBuilder {
     pub(crate) baseline_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl RegisterDefaultPatchBaselineOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterDefaultPatchBaselineOutput`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput {
+    pub fn build(self) -> crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput {
         crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput {
             baseline_id: self.baseline_id,
             _request_id: self._request_id,

@@ -46,10 +46,7 @@ impl GetChangeTokenStatusFluentBuilder {
         }
     }
     /// Access the GetChangeTokenStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_change_token_status::builders::GetChangeTokenStatusInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_change_token_status::builders::GetChangeTokenStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +58,7 @@ impl GetChangeTokenStatusFluentBuilder {
             crate::operation::get_change_token_status::GetChangeTokenStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_change_token_status::GetChangeTokenStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_change_token_status::GetChangeTokenStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +68,7 @@ impl GetChangeTokenStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +77,7 @@ impl GetChangeTokenStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_change_token_status::GetChangeTokenStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_change_token_status::GetChangeTokenStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_change_token_status::GetChangeTokenStatusError>,
     > {
         let op = self
             .inner
@@ -110,9 +100,7 @@ impl GetChangeTokenStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_change_token_status::GetChangeTokenStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_change_token_status::GetChangeTokenStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_change_token_status::GetChangeTokenStatusError>,
     > {
         self.send_middleware().await
     }
@@ -126,9 +114,7 @@ impl GetChangeTokenStatusFluentBuilder {
             crate::operation::get_change_token_status::GetChangeTokenStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_change_token_status::GetChangeTokenStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_change_token_status::GetChangeTokenStatusError>,
     > {
         self.customize_middleware().await
     }

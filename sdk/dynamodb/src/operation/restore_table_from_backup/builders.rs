@@ -36,8 +36,7 @@ impl RestoreTableFromBackupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreTableFromBackupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupInputBuilder,
+    inner: crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupInputBuilder,
 }
 impl RestoreTableFromBackupFluentBuilder {
     /// Creates a new `RestoreTableFromBackup`.
@@ -48,10 +47,7 @@ impl RestoreTableFromBackupFluentBuilder {
         }
     }
     /// Access the RestoreTableFromBackup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,9 +59,7 @@ impl RestoreTableFromBackupFluentBuilder {
             crate::operation::restore_table_from_backup::RestoreTableFromBackup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_table_from_backup::RestoreTableFromBackupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_backup::RestoreTableFromBackupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -75,10 +69,7 @@ impl RestoreTableFromBackupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -87,9 +78,7 @@ impl RestoreTableFromBackupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_table_from_backup::RestoreTableFromBackupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_table_from_backup::RestoreTableFromBackupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_backup::RestoreTableFromBackupError>,
     > {
         let op = self
             .inner
@@ -112,9 +101,7 @@ impl RestoreTableFromBackupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_table_from_backup::RestoreTableFromBackupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_table_from_backup::RestoreTableFromBackupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_backup::RestoreTableFromBackupError>,
     > {
         self.send_middleware().await
     }
@@ -128,25 +115,17 @@ impl RestoreTableFromBackupFluentBuilder {
             crate::operation::restore_table_from_backup::RestoreTableFromBackup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_table_from_backup::RestoreTableFromBackupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_backup::RestoreTableFromBackupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the new table to which the backup must be restored.</p>
-    pub fn target_table_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_table_name(input.into());
         self
     }
     /// <p>The name of the new table to which the backup must be restored.</p>
-    pub fn set_target_table_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_table_name(input);
         self
     }
@@ -174,10 +153,7 @@ impl RestoreTableFromBackupFluentBuilder {
         self
     }
     /// <p>The billing mode of the restored table.</p>
-    pub fn set_billing_mode_override(
-        mut self,
-        input: ::std::option::Option<crate::types::BillingMode>,
-    ) -> Self {
+    pub fn set_billing_mode_override(mut self, input: ::std::option::Option<crate::types::BillingMode>) -> Self {
         self.inner = self.inner.set_billing_mode_override(input);
         self
     }
@@ -190,25 +166,17 @@ impl RestoreTableFromBackupFluentBuilder {
     /// To override the contents of this collection use [`set_global_secondary_index_override`](Self::set_global_secondary_index_override).
     ///
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn global_secondary_index_override(
-        mut self,
-        input: crate::types::GlobalSecondaryIndex,
-    ) -> Self {
+    pub fn global_secondary_index_override(mut self, input: crate::types::GlobalSecondaryIndex) -> Self {
         self.inner = self.inner.global_secondary_index_override(input);
         self
     }
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn set_global_secondary_index_override(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
-    ) -> Self {
+    pub fn set_global_secondary_index_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>) -> Self {
         self.inner = self.inner.set_global_secondary_index_override(input);
         self
     }
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn get_global_secondary_index_override(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>> {
+    pub fn get_global_secondary_index_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>> {
         self.inner.get_global_secondary_index_override()
     }
     /// Appends an item to `LocalSecondaryIndexOverride`.
@@ -216,47 +184,31 @@ impl RestoreTableFromBackupFluentBuilder {
     /// To override the contents of this collection use [`set_local_secondary_index_override`](Self::set_local_secondary_index_override).
     ///
     /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn local_secondary_index_override(
-        mut self,
-        input: crate::types::LocalSecondaryIndex,
-    ) -> Self {
+    pub fn local_secondary_index_override(mut self, input: crate::types::LocalSecondaryIndex) -> Self {
         self.inner = self.inner.local_secondary_index_override(input);
         self
     }
     /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn set_local_secondary_index_override(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>>,
-    ) -> Self {
+    pub fn set_local_secondary_index_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>>) -> Self {
         self.inner = self.inner.set_local_secondary_index_override(input);
         self
     }
     /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn get_local_secondary_index_override(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>> {
+    pub fn get_local_secondary_index_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>> {
         self.inner.get_local_secondary_index_override()
     }
     /// <p>Provisioned throughput settings for the restored table.</p>
-    pub fn provisioned_throughput_override(
-        mut self,
-        input: crate::types::ProvisionedThroughput,
-    ) -> Self {
+    pub fn provisioned_throughput_override(mut self, input: crate::types::ProvisionedThroughput) -> Self {
         self.inner = self.inner.provisioned_throughput_override(input);
         self
     }
     /// <p>Provisioned throughput settings for the restored table.</p>
-    pub fn set_provisioned_throughput_override(
-        mut self,
-        input: ::std::option::Option<crate::types::ProvisionedThroughput>,
-    ) -> Self {
+    pub fn set_provisioned_throughput_override(mut self, input: ::std::option::Option<crate::types::ProvisionedThroughput>) -> Self {
         self.inner = self.inner.set_provisioned_throughput_override(input);
         self
     }
     /// <p>Provisioned throughput settings for the restored table.</p>
-    pub fn get_provisioned_throughput_override(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
+    pub fn get_provisioned_throughput_override(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
         self.inner.get_provisioned_throughput_override()
     }
     /// <p>The new server-side encryption settings for the restored table.</p>
@@ -265,17 +217,12 @@ impl RestoreTableFromBackupFluentBuilder {
         self
     }
     /// <p>The new server-side encryption settings for the restored table.</p>
-    pub fn set_sse_specification_override(
-        mut self,
-        input: ::std::option::Option<crate::types::SseSpecification>,
-    ) -> Self {
+    pub fn set_sse_specification_override(mut self, input: ::std::option::Option<crate::types::SseSpecification>) -> Self {
         self.inner = self.inner.set_sse_specification_override(input);
         self
     }
     /// <p>The new server-side encryption settings for the restored table.</p>
-    pub fn get_sse_specification_override(
-        &self,
-    ) -> &::std::option::Option<crate::types::SseSpecification> {
+    pub fn get_sse_specification_override(&self) -> &::std::option::Option<crate::types::SseSpecification> {
         self.inner.get_sse_specification_override()
     }
 }

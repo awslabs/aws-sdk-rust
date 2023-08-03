@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetAssistantOutput`](crate::operation::get_assistant::GetAssistantOutput) with field(s):
     ///   - [`assistant(Option<AssistantData>)`](crate::operation::get_assistant::GetAssistantOutput::assistant): <p>Information about the assistant.</p>
     /// - On failure, responds with [`SdkError<GetAssistantError>`](crate::operation::get_assistant::GetAssistantError)
-    pub fn get_assistant(
-        &self,
-    ) -> crate::operation::get_assistant::builders::GetAssistantFluentBuilder {
-        crate::operation::get_assistant::builders::GetAssistantFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_assistant(&self) -> crate::operation::get_assistant::builders::GetAssistantFluentBuilder {
+        crate::operation::get_assistant::builders::GetAssistantFluentBuilder::new(self.handle.clone())
     }
 }

@@ -35,7 +35,11 @@ impl super::Client {
     ///   - [`use_fips_endpoint(Option<bool>)`](crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput::use_fips_endpoint): <p>Replication Configuration template use Fips Endpoint.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput::tags): <p>Replication Configuration template Tags.</p>
     /// - On failure, responds with [`SdkError<CreateReplicationConfigurationTemplateError>`](crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError)
-    pub fn create_replication_configuration_template(&self) -> crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateFluentBuilder{
-        crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateFluentBuilder::new(self.handle.clone())
+    pub fn create_replication_configuration_template(
+        &self,
+    ) -> crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateFluentBuilder {
+        crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

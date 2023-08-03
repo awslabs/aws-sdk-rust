@@ -9,7 +9,11 @@ impl super::Client {
     /// - On success, responds with [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsOutput) with field(s):
     ///   - [`limits_by_role(Option<HashMap<String, Limits>>)`](crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsOutput::limits_by_role): <p> Map of Role of the Instance and Limits that are applicable. Role performed by given Instance in Elasticsearch can be one of the following: </p> <ul>   <li>data: If the given InstanceType is used as data node</li>   <li>master: If the given InstanceType is used as master node</li>   <li>ultra_warm: If the given InstanceType is used as warm node</li>  </ul>  <p></p>
     /// - On failure, responds with [`SdkError<DescribeElasticsearchInstanceTypeLimitsError>`](crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsError)
-    pub fn describe_elasticsearch_instance_type_limits(&self) -> crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsFluentBuilder{
-        crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsFluentBuilder::new(self.handle.clone())
+    pub fn describe_elasticsearch_instance_type_limits(
+        &self,
+    ) -> crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsFluentBuilder {
+        crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

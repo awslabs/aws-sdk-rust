@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`reason(impl ::std::convert::Into<String>)`](crate::operation::disassociate_qualification_from_worker::builders::DisassociateQualificationFromWorkerFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::disassociate_qualification_from_worker::builders::DisassociateQualificationFromWorkerFluentBuilder::set_reason): <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
     /// - On success, responds with [`DisassociateQualificationFromWorkerOutput`](crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerOutput)
     /// - On failure, responds with [`SdkError<DisassociateQualificationFromWorkerError>`](crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerError)
-    pub fn disassociate_qualification_from_worker(&self) -> crate::operation::disassociate_qualification_from_worker::builders::DisassociateQualificationFromWorkerFluentBuilder{
+    pub fn disassociate_qualification_from_worker(
+        &self,
+    ) -> crate::operation::disassociate_qualification_from_worker::builders::DisassociateQualificationFromWorkerFluentBuilder {
         crate::operation::disassociate_qualification_from_worker::builders::DisassociateQualificationFromWorkerFluentBuilder::new(self.handle.clone())
     }
 }

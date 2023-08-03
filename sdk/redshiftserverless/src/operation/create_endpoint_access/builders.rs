@@ -37,9 +37,7 @@ impl CreateEndpointAccessFluentBuilder {
         }
     }
     /// Access the CreateEndpointAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_endpoint_access::builders::CreateEndpointAccessInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_endpoint_access::builders::CreateEndpointAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl CreateEndpointAccessFluentBuilder {
             crate::operation::create_endpoint_access::CreateEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint_access::CreateEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_endpoint_access::CreateEndpointAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl CreateEndpointAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl CreateEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_endpoint_access::CreateEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint_access::CreateEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_endpoint_access::CreateEndpointAccessError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl CreateEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_endpoint_access::CreateEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint_access::CreateEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_endpoint_access::CreateEndpointAccessError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl CreateEndpointAccessFluentBuilder {
             crate::operation::create_endpoint_access::CreateEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_endpoint_access::CreateEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_endpoint_access::CreateEndpointAccessError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the VPC endpoint. An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
         self
     }
     /// <p>The name of the VPC endpoint. An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
@@ -152,10 +133,7 @@ impl CreateEndpointAccessFluentBuilder {
         self
     }
     /// <p>The unique identifers of subnets from which Amazon Redshift Serverless chooses one to deploy a VPC endpoint.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -164,18 +142,12 @@ impl CreateEndpointAccessFluentBuilder {
         self.inner.get_subnet_ids()
     }
     /// <p>The name of the workgroup to associate with the VPC endpoint.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workgroup_name(input.into());
         self
     }
     /// <p>The name of the workgroup to associate with the VPC endpoint.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
     }
@@ -188,25 +160,17 @@ impl CreateEndpointAccessFluentBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>The unique identifiers of the security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_security_group_ids(input.into());
         self
     }
     /// <p>The unique identifiers of the security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
     /// <p>The unique identifiers of the security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
 }

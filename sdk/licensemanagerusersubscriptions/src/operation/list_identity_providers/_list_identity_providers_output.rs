@@ -5,8 +5,7 @@
 pub struct ListIdentityProvidersOutput {
     /// <p>Metadata that describes the list identity providers operation.</p>
     #[doc(hidden)]
-    pub identity_provider_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>,
+    pub identity_provider_summaries: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListIdentityProvidersOutput {
 }
 impl ListIdentityProvidersOutput {
     /// <p>Metadata that describes the list identity providers operation.</p>
-    pub fn identity_provider_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IdentityProviderSummary]> {
+    pub fn identity_provider_summaries(&self) -> ::std::option::Option<&[crate::types::IdentityProviderSummary]> {
         self.identity_provider_summaries.as_deref()
     }
     /// <p>Token for the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListIdentityProvidersOutput {
 }
 impl ListIdentityProvidersOutput {
     /// Creates a new builder-style object to manufacture [`ListIdentityProvidersOutput`](crate::operation::list_identity_providers::ListIdentityProvidersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder {
         crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentityProvidersOutput`](crate::operation::list_identity_providers::ListIdentityProvidersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityProvidersOutputBuilder {
-    pub(crate) identity_provider_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>,
+    pub(crate) identity_provider_summaries: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,27 +47,19 @@ impl ListIdentityProvidersOutputBuilder {
     /// To override the contents of this collection use [`set_identity_provider_summaries`](Self::set_identity_provider_summaries).
     ///
     /// <p>Metadata that describes the list identity providers operation.</p>
-    pub fn identity_provider_summaries(
-        mut self,
-        input: crate::types::IdentityProviderSummary,
-    ) -> Self {
+    pub fn identity_provider_summaries(mut self, input: crate::types::IdentityProviderSummary) -> Self {
         let mut v = self.identity_provider_summaries.unwrap_or_default();
         v.push(input);
         self.identity_provider_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>Metadata that describes the list identity providers operation.</p>
-    pub fn set_identity_provider_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>,
-    ) -> Self {
+    pub fn set_identity_provider_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>) -> Self {
         self.identity_provider_summaries = input;
         self
     }
     /// <p>Metadata that describes the list identity providers operation.</p>
-    pub fn get_identity_provider_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>> {
+    pub fn get_identity_provider_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>> {
         &self.identity_provider_summaries
     }
     /// <p>Token for the next set of results.</p>

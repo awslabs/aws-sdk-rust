@@ -26,7 +26,7 @@ impl DeleteEventsByEventTypeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEventsByEventTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeInputBuilder,
+    inner: crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeInputBuilder,
 }
 impl DeleteEventsByEventTypeFluentBuilder {
     /// Creates a new `DeleteEventsByEventType`.
@@ -37,10 +37,7 @@ impl DeleteEventsByEventTypeFluentBuilder {
         }
     }
     /// Access the DeleteEventsByEventType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteEventsByEventTypeFluentBuilder {
             crate::operation::delete_events_by_event_type::DeleteEventsByEventType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteEventsByEventTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteEventsByEventTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteEventsByEventTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl DeleteEventsByEventTypeFluentBuilder {
             crate::operation::delete_events_by_event_type::DeleteEventsByEventType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_type_name(input.into());
         self
     }
     /// <p>The name of the event type.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_type_name(input);
         self
     }

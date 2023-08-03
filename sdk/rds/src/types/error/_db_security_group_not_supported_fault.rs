@@ -17,10 +17,7 @@ impl DbSecurityGroupNotSupportedFault {
 }
 impl ::std::fmt::Display for DbSecurityGroupNotSupportedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "DbSecurityGroupNotSupportedFault [DBSecurityGroupNotSupportedFault]"
-        )?;
+        ::std::write!(f, "DbSecurityGroupNotSupportedFault [DBSecurityGroupNotSupportedFault]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -36,9 +33,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::DbSecurityGroupN
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for DbSecurityGroupNotSupportedFault
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DbSecurityGroupNotSupportedFault {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -52,9 +47,7 @@ impl DbSecurityGroupNotSupportedFault {
 
 /// A builder for [`DbSecurityGroupNotSupportedFault`](crate::types::error::DbSecurityGroupNotSupportedFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbSecurityGroupNotSupportedFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl DbSecurityGroupNotSupportedFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

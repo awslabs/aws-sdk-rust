@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`policy(Option<String>)`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput::policy): <p>The container recipe policy object that is returned.</p>
     /// - On failure, responds with [`SdkError<GetContainerRecipePolicyError>`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError)
-    pub fn get_container_recipe_policy(&self) -> crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyFluentBuilder{
+    pub fn get_container_recipe_policy(&self) -> crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyFluentBuilder {
         crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyFluentBuilder::new(self.handle.clone())
     }
 }

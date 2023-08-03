@@ -14,9 +14,7 @@ pub struct ResourceNotFoundException {
 }
 impl ResourceNotFoundException {
     /// <p>The specified resource type wasn't found.</p>
-    pub fn resource_type_not_found(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceTypeNotFound> {
+    pub fn resource_type_not_found(&self) -> ::std::option::Option<&crate::types::ResourceTypeNotFound> {
         self.resource_type_not_found.as_ref()
     }
 }
@@ -58,9 +56,7 @@ impl ResourceNotFoundException {
 
 /// A builder for [`ResourceNotFoundException`](crate::types::error::ResourceNotFoundException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceNotFoundExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type_not_found: ::std::option::Option<crate::types::ResourceTypeNotFound>,
@@ -87,17 +83,12 @@ impl ResourceNotFoundExceptionBuilder {
         self
     }
     /// <p>The specified resource type wasn't found.</p>
-    pub fn set_resource_type_not_found(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceTypeNotFound>,
-    ) -> Self {
+    pub fn set_resource_type_not_found(mut self, input: ::std::option::Option<crate::types::ResourceTypeNotFound>) -> Self {
         self.resource_type_not_found = input;
         self
     }
     /// <p>The specified resource type wasn't found.</p>
-    pub fn get_resource_type_not_found(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceTypeNotFound> {
+    pub fn get_resource_type_not_found(&self) -> &::std::option::Option<crate::types::ResourceTypeNotFound> {
         &self.resource_type_not_found
     }
     /// Sets error metadata
@@ -107,10 +98,7 @@ impl ResourceNotFoundExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`enable_dns_support(Option<AttributeBooleanValue>)`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeOutput::enable_dns_support): <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
     ///   - [`enable_network_address_usage_metrics(Option<AttributeBooleanValue>)`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeOutput::enable_network_address_usage_metrics): <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcAttributeError>`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeError)
-    pub fn describe_vpc_attribute(
-        &self,
-    ) -> crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeFluentBuilder {
-        crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_vpc_attribute(&self) -> crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeFluentBuilder {
+        crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeFluentBuilder::new(self.handle.clone())
     }
 }

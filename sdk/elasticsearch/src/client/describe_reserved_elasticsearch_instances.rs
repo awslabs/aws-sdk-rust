@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`reserved_elasticsearch_instances(Option<Vec<ReservedElasticsearchInstance>>)`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesOutput::reserved_elasticsearch_instances): <p>List of reserved Elasticsearch instances.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedElasticsearchInstancesError>`](crate::operation::describe_reserved_elasticsearch_instances::DescribeReservedElasticsearchInstancesError)
-    pub fn describe_reserved_elasticsearch_instances(&self) -> crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder{
-        crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder::new(self.handle.clone())
+    pub fn describe_reserved_elasticsearch_instances(
+        &self,
+    ) -> crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder {
+        crate::operation::describe_reserved_elasticsearch_instances::builders::DescribeReservedElasticsearchInstancesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

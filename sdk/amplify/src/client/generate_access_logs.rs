@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GenerateAccessLogsOutput`](crate::operation::generate_access_logs::GenerateAccessLogsOutput) with field(s):
     ///   - [`log_url(Option<String>)`](crate::operation::generate_access_logs::GenerateAccessLogsOutput::log_url): <p> The pre-signed URL for the requested access logs. </p>
     /// - On failure, responds with [`SdkError<GenerateAccessLogsError>`](crate::operation::generate_access_logs::GenerateAccessLogsError)
-    pub fn generate_access_logs(
-        &self,
-    ) -> crate::operation::generate_access_logs::builders::GenerateAccessLogsFluentBuilder {
-        crate::operation::generate_access_logs::builders::GenerateAccessLogsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn generate_access_logs(&self) -> crate::operation::generate_access_logs::builders::GenerateAccessLogsFluentBuilder {
+        crate::operation::generate_access_logs::builders::GenerateAccessLogsFluentBuilder::new(self.handle.clone())
     }
 }

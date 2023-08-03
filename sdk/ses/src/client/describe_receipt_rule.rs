@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeReceiptRuleOutput`](crate::operation::describe_receipt_rule::DescribeReceiptRuleOutput) with field(s):
     ///   - [`rule(Option<ReceiptRule>)`](crate::operation::describe_receipt_rule::DescribeReceiptRuleOutput::rule): <p>A data structure that contains the specified receipt rule's name, actions, recipients, domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
     /// - On failure, responds with [`SdkError<DescribeReceiptRuleError>`](crate::operation::describe_receipt_rule::DescribeReceiptRuleError)
-    pub fn describe_receipt_rule(
-        &self,
-    ) -> crate::operation::describe_receipt_rule::builders::DescribeReceiptRuleFluentBuilder {
-        crate::operation::describe_receipt_rule::builders::DescribeReceiptRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_receipt_rule(&self) -> crate::operation::describe_receipt_rule::builders::DescribeReceiptRuleFluentBuilder {
+        crate::operation::describe_receipt_rule::builders::DescribeReceiptRuleFluentBuilder::new(self.handle.clone())
     }
 }

@@ -33,9 +33,7 @@ impl ExportEarthObservationJobOutput {
         self.creation_time.as_ref()
     }
     /// <p>The status of the results of the Earth Observation job being exported.</p>
-    pub fn export_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EarthObservationJobExportStatus> {
+    pub fn export_status(&self) -> ::std::option::Option<&crate::types::EarthObservationJobExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
@@ -58,16 +56,14 @@ impl ::aws_http::request_id::RequestId for ExportEarthObservationJobOutput {
 }
 impl ExportEarthObservationJobOutput {
     /// Creates a new builder-style object to manufacture [`ExportEarthObservationJobOutput`](crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput).
-    pub fn builder() -> crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobOutputBuilder{
+    pub fn builder() -> crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobOutputBuilder {
         crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExportEarthObservationJobOutput`](crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportEarthObservationJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -98,10 +94,7 @@ impl ExportEarthObservationJobOutputBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -115,32 +108,21 @@ impl ExportEarthObservationJobOutputBuilder {
         self
     }
     /// <p>The status of the results of the Earth Observation job being exported.</p>
-    pub fn set_export_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EarthObservationJobExportStatus>,
-    ) -> Self {
+    pub fn set_export_status(mut self, input: ::std::option::Option<crate::types::EarthObservationJobExportStatus>) -> Self {
         self.export_status = input;
         self
     }
     /// <p>The status of the results of the Earth Observation job being exported.</p>
-    pub fn get_export_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::EarthObservationJobExportStatus> {
+    pub fn get_export_status(&self) -> &::std::option::Option<crate::types::EarthObservationJobExportStatus> {
         &self.export_status
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -154,10 +136,7 @@ impl ExportEarthObservationJobOutputBuilder {
         self
     }
     /// <p>An object containing information about the output file.</p>
-    pub fn set_output_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputConfigInput>,
-    ) -> Self {
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfigInput>) -> Self {
         self.output_config = input;
         self
     }
@@ -189,9 +168,7 @@ impl ExportEarthObservationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExportEarthObservationJobOutput`](crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput {
+    pub fn build(self) -> crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput {
         crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput {
             arn: self.arn,
             creation_time: self.creation_time,

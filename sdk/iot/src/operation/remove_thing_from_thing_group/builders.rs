@@ -28,7 +28,7 @@ impl RemoveThingFromThingGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveThingFromThingGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupInputBuilder,
+    inner: crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupInputBuilder,
 }
 impl RemoveThingFromThingGroupFluentBuilder {
     /// Creates a new `RemoveThingFromThingGroup`.
@@ -39,7 +39,7 @@ impl RemoveThingFromThingGroupFluentBuilder {
         }
     }
     /// Access the RemoveThingFromThingGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl RemoveThingFromThingGroupFluentBuilder {
             crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl RemoveThingFromThingGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl RemoveThingFromThingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl RemoveThingFromThingGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +107,17 @@ impl RemoveThingFromThingGroupFluentBuilder {
             crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The group name.</p>
-    pub fn thing_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_group_name(input.into());
         self
     }
     /// <p>The group name.</p>
-    pub fn set_thing_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_group_name(input);
         self
     }
@@ -143,18 +126,12 @@ impl RemoveThingFromThingGroupFluentBuilder {
         self.inner.get_thing_group_name()
     }
     /// <p>The group ARN.</p>
-    pub fn thing_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_group_arn(input.into());
         self
     }
     /// <p>The group ARN.</p>
-    pub fn set_thing_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_group_arn(input);
         self
     }

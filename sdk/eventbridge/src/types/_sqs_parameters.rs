@@ -23,26 +23,18 @@ impl SqsParameters {
 
 /// A builder for [`SqsParameters`](crate::types::SqsParameters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SqsParametersBuilder {
     pub(crate) message_group_id: ::std::option::Option<::std::string::String>,
 }
 impl SqsParametersBuilder {
     /// <p>The FIFO message group ID to use as the target.</p>
-    pub fn message_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn message_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The FIFO message group ID to use as the target.</p>
-    pub fn set_message_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_message_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_group_id = input;
         self
     }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`geo_match_set(Option<GeoMatchSet>)`](crate::operation::create_geo_match_set::CreateGeoMatchSetOutput::geo_match_set): <p>The <code>GeoMatchSet</code> returned in the <code>CreateGeoMatchSet</code> response. The <code>GeoMatchSet</code> contains no <code>GeoMatchConstraints</code>.</p>
     ///   - [`change_token(Option<String>)`](crate::operation::create_geo_match_set::CreateGeoMatchSetOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>CreateGeoMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<CreateGeoMatchSetError>`](crate::operation::create_geo_match_set::CreateGeoMatchSetError)
-    pub fn create_geo_match_set(
-        &self,
-    ) -> crate::operation::create_geo_match_set::builders::CreateGeoMatchSetFluentBuilder {
-        crate::operation::create_geo_match_set::builders::CreateGeoMatchSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_geo_match_set(&self) -> crate::operation::create_geo_match_set::builders::CreateGeoMatchSetFluentBuilder {
+        crate::operation::create_geo_match_set::builders::CreateGeoMatchSetFluentBuilder::new(self.handle.clone())
     }
 }

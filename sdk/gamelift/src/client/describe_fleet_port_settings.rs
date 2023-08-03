@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`update_status(Option<LocationUpdateStatus>)`](crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput::update_status): <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
     ///   - [`location(Option<String>)`](crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput::location): <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     /// - On failure, responds with [`SdkError<DescribeFleetPortSettingsError>`](crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError)
-    pub fn describe_fleet_port_settings(&self) -> crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsFluentBuilder{
+    pub fn describe_fleet_port_settings(&self) -> crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsFluentBuilder {
         crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsFluentBuilder::new(self.handle.clone())
     }
 }

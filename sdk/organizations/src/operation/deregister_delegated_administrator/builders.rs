@@ -5,16 +5,16 @@ pub use crate::operation::deregister_delegated_administrator::_deregister_delega
 
 impl DeregisterDelegatedAdministratorInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.deregister_delegated_administrator();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -30,7 +30,7 @@ impl DeregisterDelegatedAdministratorInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterDelegatedAdministratorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deregister_delegated_administrator::builders::DeregisterDelegatedAdministratorInputBuilder,
+    inner: crate::operation::deregister_delegated_administrator::builders::DeregisterDelegatedAdministratorInputBuilder,
 }
 impl DeregisterDelegatedAdministratorFluentBuilder {
     /// Creates a new `DeregisterDelegatedAdministrator`.
@@ -41,15 +41,20 @@ impl DeregisterDelegatedAdministratorFluentBuilder {
         }
     }
     /// Access the DeregisterDelegatedAdministrator as a reference.
-    pub fn as_input(&self) -> &crate::operation::deregister_delegated_administrator::builders::DeregisterDelegatedAdministratorInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::deregister_delegated_administrator::builders::DeregisterDelegatedAdministratorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministrator, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministrator,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -58,16 +63,17 @@ impl DeregisterDelegatedAdministratorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorError>,
+    > {
         let op = self
             .inner
             .build()
@@ -85,17 +91,26 @@ impl DeregisterDelegatedAdministratorFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministrator, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministrator,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The account ID number of the member account in the organization that you want to deregister as a delegated administrator.</p>
@@ -114,19 +129,13 @@ impl DeregisterDelegatedAdministratorFluentBuilder {
     }
     /// <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>
     /// <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
-    pub fn service_principal(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_principal(input.into());
         self
     }
     /// <p>The service principal name of an Amazon Web Services service for which the account is a delegated administrator.</p>
     /// <p>Delegated administrator privileges are revoked for only the specified Amazon Web Services service from the member account. If the specified service is the only service for which the member account is a delegated administrator, the operation also revokes Organizations read action permissions.</p>
-    pub fn set_service_principal(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_principal(input);
         self
     }

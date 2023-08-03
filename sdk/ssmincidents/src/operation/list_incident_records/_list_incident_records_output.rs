@@ -5,8 +5,7 @@
 pub struct ListIncidentRecordsOutput {
     /// <p>The details of each listed incident record.</p>
     #[doc(hidden)]
-    pub incident_record_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::IncidentRecordSummary>>,
+    pub incident_record_summaries: ::std::option::Option<::std::vec::Vec<crate::types::IncidentRecordSummary>>,
     /// <p>The pagination token to continue to the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListIncidentRecordsOutput {
 }
 impl ListIncidentRecordsOutput {
     /// <p>The details of each listed incident record.</p>
-    pub fn incident_record_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IncidentRecordSummary]> {
+    pub fn incident_record_summaries(&self) -> ::std::option::Option<&[crate::types::IncidentRecordSummary]> {
         self.incident_record_summaries.as_deref()
     }
     /// <p>The pagination token to continue to the next page of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListIncidentRecordsOutput {
 }
 impl ListIncidentRecordsOutput {
     /// Creates a new builder-style object to manufacture [`ListIncidentRecordsOutput`](crate::operation::list_incident_records::ListIncidentRecordsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_incident_records::builders::ListIncidentRecordsOutputBuilder {
-        crate::operation::list_incident_records::builders::ListIncidentRecordsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_incident_records::builders::ListIncidentRecordsOutputBuilder {
+        crate::operation::list_incident_records::builders::ListIncidentRecordsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIncidentRecordsOutput`](crate::operation::list_incident_records::ListIncidentRecordsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIncidentRecordsOutputBuilder {
-    pub(crate) incident_record_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::IncidentRecordSummary>>,
+    pub(crate) incident_record_summaries: ::std::option::Option<::std::vec::Vec<crate::types::IncidentRecordSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListIncidentRecordsOutputBuilder {
         self
     }
     /// <p>The details of each listed incident record.</p>
-    pub fn set_incident_record_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IncidentRecordSummary>>,
-    ) -> Self {
+    pub fn set_incident_record_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IncidentRecordSummary>>) -> Self {
         self.incident_record_summaries = input;
         self
     }
     /// <p>The details of each listed incident record.</p>
-    pub fn get_incident_record_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IncidentRecordSummary>> {
+    pub fn get_incident_record_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IncidentRecordSummary>> {
         &self.incident_record_summaries
     }
     /// <p>The pagination token to continue to the next page of results.</p>

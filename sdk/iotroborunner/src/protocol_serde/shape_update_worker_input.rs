@@ -4,14 +4,10 @@ pub fn ser_update_worker_input(
     input: &crate::operation::update_worker::UpdateWorkerInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.additional_fixed_properties {
-        object
-            .key("additionalFixedProperties")
-            .string(var_1.as_str());
+        object.key("additionalFixedProperties").string(var_1.as_str());
     }
     if let Some(var_2) = &input.additional_transient_properties {
-        object
-            .key("additionalTransientProperties")
-            .string(var_2.as_str());
+        object.key("additionalTransientProperties").string(var_2.as_str());
     }
     if let Some(var_3) = &input.id {
         object.key("id").string(var_3.as_str());
@@ -28,19 +24,13 @@ pub fn ser_update_worker_input(
     if let Some(var_7) = &input.position {
         #[allow(unused_mut)]
         let mut object_8 = object.key("position").start_object();
-        crate::protocol_serde::shape_position_coordinates::ser_position_coordinates(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_position_coordinates::ser_position_coordinates(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.vendor_properties {
         #[allow(unused_mut)]
         let mut object_10 = object.key("vendorProperties").start_object();
-        crate::protocol_serde::shape_vendor_properties::ser_vendor_properties(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_vendor_properties::ser_vendor_properties(&mut object_10, var_9)?;
         object_10.finish();
     }
     Ok(())

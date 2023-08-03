@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`recommendation_template_arn(Option<String>)`](crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput::recommendation_template_arn): <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
     ///   - [`status(Option<RecommendationTemplateStatus>)`](crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput::status): <p>The status of the action.</p>
     /// - On failure, responds with [`SdkError<DeleteRecommendationTemplateError>`](crate::operation::delete_recommendation_template::DeleteRecommendationTemplateError)
-    pub fn delete_recommendation_template(&self) -> crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateFluentBuilder{
+    pub fn delete_recommendation_template(
+        &self,
+    ) -> crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateFluentBuilder {
         crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CancelBatchErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -65,13 +59,9 @@ impl ::std::convert::From<&str> for CancelBatchErrorCode {
         match s {
             "fleetRequestIdDoesNotExist" => CancelBatchErrorCode::FleetRequestIdDoesNotExist,
             "fleetRequestIdMalformed" => CancelBatchErrorCode::FleetRequestIdMalformed,
-            "fleetRequestNotInCancellableState" => {
-                CancelBatchErrorCode::FleetRequestNotInCancellableState
-            }
+            "fleetRequestNotInCancellableState" => CancelBatchErrorCode::FleetRequestNotInCancellableState,
             "unexpectedError" => CancelBatchErrorCode::UnexpectedError,
-            other => CancelBatchErrorCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CancelBatchErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,9 +78,7 @@ impl CancelBatchErrorCode {
         match self {
             CancelBatchErrorCode::FleetRequestIdDoesNotExist => "fleetRequestIdDoesNotExist",
             CancelBatchErrorCode::FleetRequestIdMalformed => "fleetRequestIdMalformed",
-            CancelBatchErrorCode::FleetRequestNotInCancellableState => {
-                "fleetRequestNotInCancellableState"
-            }
+            CancelBatchErrorCode::FleetRequestNotInCancellableState => "fleetRequestNotInCancellableState",
             CancelBatchErrorCode::UnexpectedError => "unexpectedError",
             CancelBatchErrorCode::Unknown(value) => value.as_str(),
         }

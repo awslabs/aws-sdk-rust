@@ -37,10 +37,7 @@ impl GetDocumentationPartsFluentBuilder {
         }
     }
     /// Access the GetDocumentationParts as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_documentation_parts::builders::GetDocumentationPartsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_documentation_parts::builders::GetDocumentationPartsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetDocumentationPartsFluentBuilder {
             crate::operation::get_documentation_parts::GetDocumentationParts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_documentation_parts::GetDocumentationPartsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_documentation_parts::GetDocumentationPartsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetDocumentationPartsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetDocumentationPartsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_documentation_parts::GetDocumentationPartsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_documentation_parts::GetDocumentationPartsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_documentation_parts::GetDocumentationPartsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetDocumentationPartsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_documentation_parts::GetDocumentationPartsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_documentation_parts::GetDocumentationPartsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_documentation_parts::GetDocumentationPartsError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetDocumentationPartsFluentBuilder {
             crate::operation::get_documentation_parts::GetDocumentationParts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_documentation_parts::GetDocumentationPartsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_documentation_parts::GetDocumentationPartsError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +129,7 @@ impl GetDocumentationPartsFluentBuilder {
         self
     }
     /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentationPartType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DocumentationPartType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -216,10 +199,7 @@ impl GetDocumentationPartsFluentBuilder {
         self
     }
     /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
-    pub fn set_location_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LocationStatusType>,
-    ) -> Self {
+    pub fn set_location_status(mut self, input: ::std::option::Option<crate::types::LocationStatusType>) -> Self {
         self.inner = self.inner.set_location_status(input);
         self
     }

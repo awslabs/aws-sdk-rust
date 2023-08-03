@@ -9,10 +9,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterContainerImageOutput`](crate::operation::register_container_image::RegisterContainerImageOutput) with field(s):
     ///   - [`container_image(Option<ContainerImage>)`](crate::operation::register_container_image::RegisterContainerImageOutput::container_image): <p>An object that describes a container image that is registered to a Lightsail container service</p>
     /// - On failure, responds with [`SdkError<RegisterContainerImageError>`](crate::operation::register_container_image::RegisterContainerImageError)
-    pub fn register_container_image(
-        &self,
-    ) -> crate::operation::register_container_image::builders::RegisterContainerImageFluentBuilder
-    {
+    pub fn register_container_image(&self) -> crate::operation::register_container_image::builders::RegisterContainerImageFluentBuilder {
         crate::operation::register_container_image::builders::RegisterContainerImageFluentBuilder::new(self.handle.clone())
     }
 }

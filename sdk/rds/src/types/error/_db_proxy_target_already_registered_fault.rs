@@ -17,10 +17,7 @@ impl DbProxyTargetAlreadyRegisteredFault {
 }
 impl ::std::fmt::Display for DbProxyTargetAlreadyRegisteredFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "DbProxyTargetAlreadyRegisteredFault [DBProxyTargetAlreadyRegisteredFault]"
-        )?;
+        ::std::write!(f, "DbProxyTargetAlreadyRegisteredFault [DBProxyTargetAlreadyRegisteredFault]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -30,17 +27,13 @@ impl ::std::fmt::Display for DbProxyTargetAlreadyRegisteredFault {
     }
 }
 impl ::std::error::Error for DbProxyTargetAlreadyRegisteredFault {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::DbProxyTargetAlreadyRegisteredFault
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::DbProxyTargetAlreadyRegisteredFault {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for DbProxyTargetAlreadyRegisteredFault
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DbProxyTargetAlreadyRegisteredFault {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -54,9 +47,7 @@ impl DbProxyTargetAlreadyRegisteredFault {
 
 /// A builder for [`DbProxyTargetAlreadyRegisteredFault`](crate::types::error::DbProxyTargetAlreadyRegisteredFault).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DbProxyTargetAlreadyRegisteredFaultBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -83,10 +74,7 @@ impl DbProxyTargetAlreadyRegisteredFaultBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

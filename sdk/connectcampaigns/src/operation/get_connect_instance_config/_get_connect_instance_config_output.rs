@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for GetConnectInstanceConfigOutput {
 }
 impl GetConnectInstanceConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectInstanceConfigOutput`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput).
-    pub fn builder() -> crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigOutputBuilder{
+    pub fn builder() -> crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigOutputBuilder {
         crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetConnectInstanceConfigOutput`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectInstanceConfigOutputBuilder {
     pub(crate) connect_instance_config: ::std::option::Option<crate::types::InstanceConfig>,
     _request_id: Option<String>,
@@ -43,17 +41,12 @@ impl GetConnectInstanceConfigOutputBuilder {
         self
     }
     /// Instance config object
-    pub fn set_connect_instance_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceConfig>,
-    ) -> Self {
+    pub fn set_connect_instance_config(mut self, input: ::std::option::Option<crate::types::InstanceConfig>) -> Self {
         self.connect_instance_config = input;
         self
     }
     /// Instance config object
-    pub fn get_connect_instance_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceConfig> {
+    pub fn get_connect_instance_config(&self) -> &::std::option::Option<crate::types::InstanceConfig> {
         &self.connect_instance_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -66,9 +59,7 @@ impl GetConnectInstanceConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetConnectInstanceConfigOutput`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput {
+    pub fn build(self) -> crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput {
         crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput {
             connect_instance_config: self.connect_instance_config,
             _request_id: self._request_id,

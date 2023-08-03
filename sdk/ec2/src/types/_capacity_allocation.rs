@@ -30,9 +30,7 @@ impl CapacityAllocation {
 
 /// A builder for [`CapacityAllocation`](crate::types::CapacityAllocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityAllocationBuilder {
     pub(crate) allocation_type: ::std::option::Option<crate::types::AllocationType>,
     pub(crate) count: ::std::option::Option<i32>,
@@ -44,10 +42,7 @@ impl CapacityAllocationBuilder {
         self
     }
     /// <p>The usage type. <code>used</code> indicates that the instance capacity is in use by instances that are running in the Capacity Reservation.</p>
-    pub fn set_allocation_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AllocationType>,
-    ) -> Self {
+    pub fn set_allocation_type(mut self, input: ::std::option::Option<crate::types::AllocationType>) -> Self {
         self.allocation_type = input;
         self
     }

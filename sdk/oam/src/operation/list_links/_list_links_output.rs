@@ -35,9 +35,7 @@ impl ListLinksOutput {
 
 /// A builder for [`ListLinksOutput`](crate::operation::list_links::ListLinksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLinksOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListLinksItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListLinksOutputBuilder {
         self
     }
     /// <p>An array of structures that contain the information about the returned links.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListLinksItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListLinksItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>An array of structures that contain the information about the returned links.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListLinksItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListLinksItem>> {
         &self.items
     }
     /// <p>The token to use when requesting the next set of links.</p>

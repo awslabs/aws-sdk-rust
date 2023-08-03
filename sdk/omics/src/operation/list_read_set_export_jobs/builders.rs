@@ -37,10 +37,7 @@ impl ListReadSetExportJobsFluentBuilder {
         }
     }
     /// Access the ListReadSetExportJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_read_set_export_jobs::builders::ListReadSetExportJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListReadSetExportJobsFluentBuilder {
             crate::operation::list_read_set_export_jobs::ListReadSetExportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_read_set_export_jobs::ListReadSetExportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_read_set_export_jobs::ListReadSetExportJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListReadSetExportJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListReadSetExportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_read_set_export_jobs::ListReadSetExportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_read_set_export_jobs::ListReadSetExportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_read_set_export_jobs::ListReadSetExportJobsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListReadSetExportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_read_set_export_jobs::ListReadSetExportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_read_set_export_jobs::ListReadSetExportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_read_set_export_jobs::ListReadSetExportJobsError>,
     > {
         self.send_middleware().await
     }
@@ -117,37 +105,23 @@ impl ListReadSetExportJobsFluentBuilder {
             crate::operation::list_read_set_export_jobs::ListReadSetExportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_read_set_export_jobs::ListReadSetExportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_read_set_export_jobs::ListReadSetExportJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_read_set_export_jobs::paginator::ListReadSetExportJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_read_set_export_jobs::paginator::ListReadSetExportJobsPaginator
-    {
-        crate::operation::list_read_set_export_jobs::paginator::ListReadSetExportJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_read_set_export_jobs::paginator::ListReadSetExportJobsPaginator {
+        crate::operation::list_read_set_export_jobs::paginator::ListReadSetExportJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The jobs' sequence store ID.</p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p>The jobs' sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
@@ -189,10 +163,7 @@ impl ListReadSetExportJobsFluentBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportReadSetFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ExportReadSetFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

@@ -32,18 +32,14 @@ impl DescribeImageAttributeInput {
 }
 impl DescribeImageAttributeInput {
     /// Creates a new builder-style object to manufacture [`DescribeImageAttributeInput`](crate::operation::describe_image_attribute::DescribeImageAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::describe_image_attribute::builders::DescribeImageAttributeInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_image_attribute::builders::DescribeImageAttributeInputBuilder {
         crate::operation::describe_image_attribute::builders::DescribeImageAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImageAttributeInput`](crate::operation::describe_image_attribute::DescribeImageAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImageAttributeInputBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::ImageAttributeName>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
@@ -58,10 +54,7 @@ impl DescribeImageAttributeInputBuilder {
     }
     /// <p>The AMI attribute.</p>
     /// <p> <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::ImageAttributeName>) -> Self {
         self.attribute = input;
         self
     }
@@ -101,16 +94,12 @@ impl DescribeImageAttributeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImageAttributeInput`](crate::operation::describe_image_attribute::DescribeImageAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_image_attribute::DescribeImageAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_image_attribute::DescribeImageAttributeInput {
-                attribute: self.attribute,
-                image_id: self.image_id,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_image_attribute::DescribeImageAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_image_attribute::DescribeImageAttributeInput {
+            attribute: self.attribute,
+            image_id: self.image_id,
+            dry_run: self.dry_run,
+        })
     }
 }

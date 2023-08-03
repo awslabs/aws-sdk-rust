@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateWorkspaceBundleOutput {
 }
 impl UpdateWorkspaceBundleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceBundleOutput`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleOutput).
-    pub fn builder(
-    ) -> crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleOutputBuilder {
         crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkspaceBundleOutput`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceBundleOutputBuilder {
     _request_id: Option<String>,
 }

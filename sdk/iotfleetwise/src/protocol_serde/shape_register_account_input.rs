@@ -6,10 +6,7 @@ pub fn ser_register_account_input(
     if let Some(var_1) = &input.timestream_resources {
         #[allow(unused_mut)]
         let mut object_2 = object.key("timestreamResources").start_object();
-        crate::protocol_serde::shape_timestream_resources::ser_timestream_resources(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_timestream_resources::ser_timestream_resources(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.iam_resources {

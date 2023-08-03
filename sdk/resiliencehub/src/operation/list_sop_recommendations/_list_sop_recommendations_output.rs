@@ -8,8 +8,7 @@ pub struct ListSopRecommendationsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>
     #[doc(hidden)]
-    pub sop_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SopRecommendation>>,
+    pub sop_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::SopRecommendation>>,
     _request_id: Option<String>,
 }
 impl ListSopRecommendationsOutput {
@@ -29,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListSopRecommendationsOutput {
 }
 impl ListSopRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSopRecommendationsOutput`](crate::operation::list_sop_recommendations::ListSopRecommendationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_sop_recommendations::builders::ListSopRecommendationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_sop_recommendations::builders::ListSopRecommendationsOutputBuilder {
         crate::operation::list_sop_recommendations::builders::ListSopRecommendationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSopRecommendationsOutput`](crate::operation::list_sop_recommendations::ListSopRecommendationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSopRecommendationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) sop_recommendations:
-        ::std::option::Option<::std::vec::Vec<crate::types::SopRecommendation>>,
+    pub(crate) sop_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::SopRecommendation>>,
     _request_id: Option<String>,
 }
 impl ListSopRecommendationsOutputBuilder {
@@ -74,17 +68,12 @@ impl ListSopRecommendationsOutputBuilder {
         self
     }
     /// <p>The standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>
-    pub fn set_sop_recommendations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SopRecommendation>>,
-    ) -> Self {
+    pub fn set_sop_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SopRecommendation>>) -> Self {
         self.sop_recommendations = input;
         self
     }
     /// <p>The standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>
-    pub fn get_sop_recommendations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SopRecommendation>> {
+    pub fn get_sop_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SopRecommendation>> {
         &self.sop_recommendations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

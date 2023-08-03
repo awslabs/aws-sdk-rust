@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`domain_info(Option<DomainInfo>)`](crate::operation::describe_domain::DescribeDomainOutput::domain_info): <p>The basic information about a domain, such as its name, status, and description.</p>
     ///   - [`configuration(Option<DomainConfiguration>)`](crate::operation::describe_domain::DescribeDomainOutput::configuration): <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::operation::describe_domain::DescribeDomainError)
-    pub fn describe_domain(
-        &self,
-    ) -> crate::operation::describe_domain::builders::DescribeDomainFluentBuilder {
-        crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_domain(&self) -> crate::operation::describe_domain::builders::DescribeDomainFluentBuilder {
+        crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::new(self.handle.clone())
     }
 }

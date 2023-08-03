@@ -10,10 +10,7 @@ impl ListPricingRulesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_pricing_rules::ListPricingRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pricing_rules::ListPricingRulesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pricing_rules::ListPricingRulesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_pricing_rules();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListPricingRulesFluentBuilder {
         }
     }
     /// Access the ListPricingRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_pricing_rules::builders::ListPricingRulesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_pricing_rules::builders::ListPricingRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListPricingRulesFluentBuilder {
             crate::operation::list_pricing_rules::ListPricingRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pricing_rules::ListPricingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pricing_rules::ListPricingRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListPricingRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListPricingRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pricing_rules::ListPricingRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pricing_rules::ListPricingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pricing_rules::ListPricingRulesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListPricingRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pricing_rules::ListPricingRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pricing_rules::ListPricingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pricing_rules::ListPricingRulesError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListPricingRulesFluentBuilder {
             crate::operation::list_pricing_rules::ListPricingRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_pricing_rules::ListPricingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pricing_rules::ListPricingRulesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_pricing_rules::paginator::ListPricingRulesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_pricing_rules::paginator::ListPricingRulesPaginator {
-        crate::operation::list_pricing_rules::paginator::ListPricingRulesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_pricing_rules::paginator::ListPricingRulesPaginator {
+        crate::operation::list_pricing_rules::paginator::ListPricingRulesPaginator::new(self.handle, self.inner)
     }
     /// <p> The preferred billing period to get the pricing plan. </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_period(input.into());
         self
     }
     /// <p> The preferred billing period to get the pricing plan. </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_period(input);
         self
     }
@@ -159,10 +132,7 @@ impl ListPricingRulesFluentBuilder {
         self
     }
     /// <p> A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListPricingRulesFilter>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListPricingRulesFilter>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

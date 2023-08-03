@@ -10,10 +10,7 @@ impl UploadReadSetPartInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::upload_read_set_part::UploadReadSetPartOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_read_set_part::UploadReadSetPartError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_read_set_part::UploadReadSetPartError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.upload_read_set_part();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UploadReadSetPartFluentBuilder {
         }
     }
     /// Access the UploadReadSetPart as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::upload_read_set_part::builders::UploadReadSetPartInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::upload_read_set_part::builders::UploadReadSetPartInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UploadReadSetPartFluentBuilder {
             crate::operation::upload_read_set_part::UploadReadSetPart,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_read_set_part::UploadReadSetPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_read_set_part::UploadReadSetPartError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UploadReadSetPartFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UploadReadSetPartFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_read_set_part::UploadReadSetPartOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_read_set_part::UploadReadSetPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_read_set_part::UploadReadSetPartError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UploadReadSetPartFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_read_set_part::UploadReadSetPartOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_read_set_part::UploadReadSetPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_read_set_part::UploadReadSetPartError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UploadReadSetPartFluentBuilder {
             crate::operation::upload_read_set_part::UploadReadSetPart,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_read_set_part::UploadReadSetPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_read_set_part::UploadReadSetPartError>,
     > {
         self.customize_middleware().await
     }
     /// <p> The Sequence Store ID used for the multipart upload. </p>
-    pub fn sequence_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p> The Sequence Store ID used for the multipart upload. </p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
@@ -162,10 +140,7 @@ impl UploadReadSetPartFluentBuilder {
         self
     }
     /// <p> The source file for an upload part. </p>
-    pub fn set_part_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ReadSetPartSource>,
-    ) -> Self {
+    pub fn set_part_source(mut self, input: ::std::option::Option<crate::types::ReadSetPartSource>) -> Self {
         self.inner = self.inner.set_part_source(input);
         self
     }
@@ -193,17 +168,12 @@ impl UploadReadSetPartFluentBuilder {
         self
     }
     /// <p> The read set data to upload for a part. </p>
-    pub fn set_payload(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_payload(input);
         self
     }
     /// <p> The read set data to upload for a part. </p>
-    pub fn get_payload(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         self.inner.get_payload()
     }
 }

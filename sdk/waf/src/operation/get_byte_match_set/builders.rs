@@ -10,10 +10,7 @@ impl GetByteMatchSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_byte_match_set::GetByteMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_byte_match_set::GetByteMatchSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_byte_match_set::GetByteMatchSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_byte_match_set();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl GetByteMatchSetFluentBuilder {
         }
     }
     /// Access the GetByteMatchSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_byte_match_set::builders::GetByteMatchSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_byte_match_set::builders::GetByteMatchSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl GetByteMatchSetFluentBuilder {
             crate::operation::get_byte_match_set::GetByteMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_byte_match_set::GetByteMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_byte_match_set::GetByteMatchSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl GetByteMatchSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl GetByteMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_byte_match_set::GetByteMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_byte_match_set::GetByteMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_byte_match_set::GetByteMatchSetError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl GetByteMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_byte_match_set::GetByteMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_byte_match_set::GetByteMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_byte_match_set::GetByteMatchSetError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +106,17 @@ impl GetByteMatchSetFluentBuilder {
             crate::operation::get_byte_match_set::GetByteMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_byte_match_set::GetByteMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_byte_match_set::GetByteMatchSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn byte_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn byte_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.byte_match_set_id(input.into());
         self
     }
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn set_byte_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_byte_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_byte_match_set_id(input);
         self
     }

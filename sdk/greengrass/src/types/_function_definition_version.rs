@@ -30,9 +30,7 @@ impl FunctionDefinitionVersion {
 
 /// A builder for [`FunctionDefinitionVersion`](crate::types::FunctionDefinitionVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunctionDefinitionVersionBuilder {
     pub(crate) default_config: ::std::option::Option<crate::types::FunctionDefaultConfig>,
     pub(crate) functions: ::std::option::Option<::std::vec::Vec<crate::types::Function>>,
@@ -44,17 +42,12 @@ impl FunctionDefinitionVersionBuilder {
         self
     }
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
-    pub fn set_default_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionDefaultConfig>,
-    ) -> Self {
+    pub fn set_default_config(mut self, input: ::std::option::Option<crate::types::FunctionDefaultConfig>) -> Self {
         self.default_config = input;
         self
     }
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
-    pub fn get_default_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::FunctionDefaultConfig> {
+    pub fn get_default_config(&self) -> &::std::option::Option<crate::types::FunctionDefaultConfig> {
         &self.default_config
     }
     /// Appends an item to `functions`.
@@ -69,10 +62,7 @@ impl FunctionDefinitionVersionBuilder {
         self
     }
     /// A list of Lambda functions in this function definition version.
-    pub fn set_functions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Function>>,
-    ) -> Self {
+    pub fn set_functions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Function>>) -> Self {
         self.functions = input;
         self
     }

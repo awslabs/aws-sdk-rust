@@ -6,28 +6,19 @@ pub fn ser_flink_application_configuration(
     if let Some(var_1) = &input.checkpoint_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CheckpointConfiguration").start_object();
-        crate::protocol_serde::shape_checkpoint_configuration::ser_checkpoint_configuration(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_checkpoint_configuration::ser_checkpoint_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.monitoring_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("MonitoringConfiguration").start_object();
-        crate::protocol_serde::shape_monitoring_configuration::ser_monitoring_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_monitoring_configuration::ser_monitoring_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.parallelism_configuration {
         #[allow(unused_mut)]
         let mut object_6 = object.key("ParallelismConfiguration").start_object();
-        crate::protocol_serde::shape_parallelism_configuration::ser_parallelism_configuration(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_parallelism_configuration::ser_parallelism_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

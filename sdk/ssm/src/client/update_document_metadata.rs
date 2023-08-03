@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`document_reviews(DocumentReviews)`](crate::operation::update_document_metadata::builders::UpdateDocumentMetadataFluentBuilder::document_reviews) / [`set_document_reviews(Option<DocumentReviews>)`](crate::operation::update_document_metadata::builders::UpdateDocumentMetadataFluentBuilder::set_document_reviews): <p>The change template review details to update.</p>
     /// - On success, responds with [`UpdateDocumentMetadataOutput`](crate::operation::update_document_metadata::UpdateDocumentMetadataOutput)
     /// - On failure, responds with [`SdkError<UpdateDocumentMetadataError>`](crate::operation::update_document_metadata::UpdateDocumentMetadataError)
-    pub fn update_document_metadata(
-        &self,
-    ) -> crate::operation::update_document_metadata::builders::UpdateDocumentMetadataFluentBuilder
-    {
+    pub fn update_document_metadata(&self) -> crate::operation::update_document_metadata::builders::UpdateDocumentMetadataFluentBuilder {
         crate::operation::update_document_metadata::builders::UpdateDocumentMetadataFluentBuilder::new(self.handle.clone())
     }
 }

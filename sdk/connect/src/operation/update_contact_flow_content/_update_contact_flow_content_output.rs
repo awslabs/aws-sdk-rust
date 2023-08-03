@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateContactFlowContentOutput {
 }
 impl UpdateContactFlowContentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContactFlowContentOutput`](crate::operation::update_contact_flow_content::UpdateContactFlowContentOutput).
-    pub fn builder() -> crate::operation::update_contact_flow_content::builders::UpdateContactFlowContentOutputBuilder{
+    pub fn builder() -> crate::operation::update_contact_flow_content::builders::UpdateContactFlowContentOutputBuilder {
         crate::operation::update_contact_flow_content::builders::UpdateContactFlowContentOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContactFlowContentOutput`](crate::operation::update_contact_flow_content::UpdateContactFlowContentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContactFlowContentOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateContactFlowContentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateContactFlowContentOutput`](crate::operation::update_contact_flow_content::UpdateContactFlowContentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_contact_flow_content::UpdateContactFlowContentOutput {
+    pub fn build(self) -> crate::operation::update_contact_flow_content::UpdateContactFlowContentOutput {
         crate::operation::update_contact_flow_content::UpdateContactFlowContentOutput {
             _request_id: self._request_id,
         }

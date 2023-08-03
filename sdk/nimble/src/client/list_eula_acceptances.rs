@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`eula_acceptances(Option<Vec<EulaAcceptance>>)`](crate::operation::list_eula_acceptances::ListEulaAcceptancesOutput::eula_acceptances): <p>A collection of EULA acceptances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_eula_acceptances::ListEulaAcceptancesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListEulaAcceptancesError>`](crate::operation::list_eula_acceptances::ListEulaAcceptancesError)
-    pub fn list_eula_acceptances(
-        &self,
-    ) -> crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesFluentBuilder {
-        crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_eula_acceptances(&self) -> crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesFluentBuilder {
+        crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesFluentBuilder::new(self.handle.clone())
     }
 }

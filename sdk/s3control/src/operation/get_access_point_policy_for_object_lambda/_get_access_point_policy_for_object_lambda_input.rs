@@ -22,16 +22,14 @@ impl GetAccessPointPolicyForObjectLambdaInput {
 }
 impl GetAccessPointPolicyForObjectLambdaInput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyForObjectLambdaInput`](crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaInput).
-    pub fn builder() -> crate::operation::get_access_point_policy_for_object_lambda::builders::GetAccessPointPolicyForObjectLambdaInputBuilder{
+    pub fn builder() -> crate::operation::get_access_point_policy_for_object_lambda::builders::GetAccessPointPolicyForObjectLambdaInputBuilder {
         crate::operation::get_access_point_policy_for_object_lambda::builders::GetAccessPointPolicyForObjectLambdaInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccessPointPolicyForObjectLambdaInput`](crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccessPointPolicyForObjectLambdaInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl GetAccessPointPolicyForObjectLambdaInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetAccessPointPolicyForObjectLambdaInput`](crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaInput {
-                account_id: self.account_id
-                ,
-                name: self.name
-                ,
-            }
+                account_id: self.account_id,
+                name: self.name,
+            },
         )
     }
 }

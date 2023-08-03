@@ -3,10 +3,7 @@
 pub fn de_conflicting_types_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::ConflictingTypesBuilder,
-) -> Result<
-    crate::types::error::builders::ConflictingTypesBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::ConflictingTypesBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

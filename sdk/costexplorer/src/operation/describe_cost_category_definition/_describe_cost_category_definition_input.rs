@@ -22,34 +22,26 @@ impl DescribeCostCategoryDefinitionInput {
 }
 impl DescribeCostCategoryDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeCostCategoryDefinitionInput`](crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionInput).
-    pub fn builder() -> crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionInputBuilder {
         crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCostCategoryDefinitionInput`](crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCostCategoryDefinitionInputBuilder {
     pub(crate) cost_category_arn: ::std::option::Option<::std::string::String>,
     pub(crate) effective_on: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCostCategoryDefinitionInputBuilder {
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn cost_category_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost_category_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn set_cost_category_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cost_category_arn = input;
         self
     }
@@ -78,13 +70,9 @@ impl DescribeCostCategoryDefinitionInputBuilder {
         crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionInput {
-                cost_category_arn: self.cost_category_arn
-                ,
-                effective_on: self.effective_on
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionInput {
+            cost_category_arn: self.cost_category_arn,
+            effective_on: self.effective_on,
+        })
     }
 }

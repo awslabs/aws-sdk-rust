@@ -2,8 +2,7 @@
 /// Paginator for [`ListExperienceEntities`](crate::operation::list_experience_entities::ListExperienceEntities)
 pub struct ListExperienceEntitiesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
-    builder:
-        crate::operation::list_experience_entities::builders::ListExperienceEntitiesInputBuilder,
+    builder: crate::operation::list_experience_entities::builders::ListExperienceEntitiesInputBuilder,
     stop_on_duplicate_token: bool,
 }
 
@@ -40,9 +39,7 @@ impl ListExperienceEntitiesPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::list_experience_entities::ListExperienceEntitiesOutput,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_experience_entities::ListExperienceEntitiesError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_experience_entities::ListExperienceEntitiesError>,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
@@ -52,10 +49,7 @@ impl ListExperienceEntitiesPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -80,15 +74,9 @@ impl ListExperienceEntitiesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_list_experience_entities_output_next_token(
-                                    resp,
-                                );
+                            let new_token = crate::lens::reflens_list_experience_entities_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.next_token.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.next_token.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.next_token = new_token.cloned();

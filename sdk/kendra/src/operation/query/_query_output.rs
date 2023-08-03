@@ -21,12 +21,10 @@ pub struct QueryOutput {
     pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
     /// <p>A list of information related to suggested spell corrections for a query.</p>
     #[doc(hidden)]
-    pub spell_corrected_queries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpellCorrectedQuery>>,
+    pub spell_corrected_queries: ::std::option::Option<::std::vec::Vec<crate::types::SpellCorrectedQuery>>,
     /// <p>The list of featured result items. Featured results are displayed at the top of the search results page, placed above all other results for certain queries. If there's an exact match of a query, then certain documents are featured in the search results.</p>
     #[doc(hidden)]
-    pub featured_results_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsItem>>,
+    pub featured_results_items: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsItem>>,
     _request_id: Option<String>,
 }
 impl QueryOutput {
@@ -52,15 +50,11 @@ impl QueryOutput {
         self.warnings.as_deref()
     }
     /// <p>A list of information related to suggested spell corrections for a query.</p>
-    pub fn spell_corrected_queries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SpellCorrectedQuery]> {
+    pub fn spell_corrected_queries(&self) -> ::std::option::Option<&[crate::types::SpellCorrectedQuery]> {
         self.spell_corrected_queries.as_deref()
     }
     /// <p>The list of featured result items. Featured results are displayed at the top of the search results page, placed above all other results for certain queries. If there's an exact match of a query, then certain documents are featured in the search results.</p>
-    pub fn featured_results_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::FeaturedResultsItem]> {
+    pub fn featured_results_items(&self) -> ::std::option::Option<&[crate::types::FeaturedResultsItem]> {
         self.featured_results_items.as_deref()
     }
 }
@@ -78,19 +72,15 @@ impl QueryOutput {
 
 /// A builder for [`QueryOutput`](crate::operation::query::QueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryOutputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) result_items: ::std::option::Option<::std::vec::Vec<crate::types::QueryResultItem>>,
     pub(crate) facet_results: ::std::option::Option<::std::vec::Vec<crate::types::FacetResult>>,
     pub(crate) total_number_of_results: ::std::option::Option<i32>,
     pub(crate) warnings: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
-    pub(crate) spell_corrected_queries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SpellCorrectedQuery>>,
-    pub(crate) featured_results_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsItem>>,
+    pub(crate) spell_corrected_queries: ::std::option::Option<::std::vec::Vec<crate::types::SpellCorrectedQuery>>,
+    pub(crate) featured_results_items: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsItem>>,
     _request_id: Option<String>,
 }
 impl QueryOutputBuilder {
@@ -120,17 +110,12 @@ impl QueryOutputBuilder {
         self
     }
     /// <p>The results of the search.</p>
-    pub fn set_result_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QueryResultItem>>,
-    ) -> Self {
+    pub fn set_result_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryResultItem>>) -> Self {
         self.result_items = input;
         self
     }
     /// <p>The results of the search.</p>
-    pub fn get_result_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryResultItem>> {
+    pub fn get_result_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryResultItem>> {
         &self.result_items
     }
     /// Appends an item to `facet_results`.
@@ -145,17 +130,12 @@ impl QueryOutputBuilder {
         self
     }
     /// <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was specified in the <code>Facets</code> input parameter.</p>
-    pub fn set_facet_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FacetResult>>,
-    ) -> Self {
+    pub fn set_facet_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FacetResult>>) -> Self {
         self.facet_results = input;
         self
     }
     /// <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was specified in the <code>Facets</code> input parameter.</p>
-    pub fn get_facet_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetResult>> {
+    pub fn get_facet_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetResult>> {
         &self.facet_results
     }
     /// <p>The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
@@ -186,10 +166,7 @@ impl QueryOutputBuilder {
     }
     /// <p>A list of warning codes and their messages on problems with your query.</p>
     /// <p>Amazon Kendra currently only supports one type of warning, which is a warning on invalid syntax used in the query. For examples of invalid query syntax, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a>.</p>
-    pub fn set_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
-    ) -> Self {
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>) -> Self {
         self.warnings = input;
         self
     }
@@ -210,17 +187,12 @@ impl QueryOutputBuilder {
         self
     }
     /// <p>A list of information related to suggested spell corrections for a query.</p>
-    pub fn set_spell_corrected_queries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpellCorrectedQuery>>,
-    ) -> Self {
+    pub fn set_spell_corrected_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpellCorrectedQuery>>) -> Self {
         self.spell_corrected_queries = input;
         self
     }
     /// <p>A list of information related to suggested spell corrections for a query.</p>
-    pub fn get_spell_corrected_queries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpellCorrectedQuery>> {
+    pub fn get_spell_corrected_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpellCorrectedQuery>> {
         &self.spell_corrected_queries
     }
     /// Appends an item to `featured_results_items`.
@@ -235,17 +207,12 @@ impl QueryOutputBuilder {
         self
     }
     /// <p>The list of featured result items. Featured results are displayed at the top of the search results page, placed above all other results for certain queries. If there's an exact match of a query, then certain documents are featured in the search results.</p>
-    pub fn set_featured_results_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsItem>>,
-    ) -> Self {
+    pub fn set_featured_results_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsItem>>) -> Self {
         self.featured_results_items = input;
         self
     }
     /// <p>The list of featured result items. Featured results are displayed at the top of the search results page, placed above all other results for certain queries. If there's an exact match of a query, then certain documents are featured in the search results.</p>
-    pub fn get_featured_results_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsItem>> {
+    pub fn get_featured_results_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsItem>> {
         &self.featured_results_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`session_token(Option<String>)`](crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsOutput::session_token): <p>The session token for the temporary credentials.</p>
     ///   - [`expiration(Option<DateTime>)`](crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsOutput::expiration): <p>The date and time when the temporary credentials expire.</p>
     /// - On failure, responds with [`SdkError<GetTemporaryGlueTableCredentialsError>`](crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsError)
-    pub fn get_temporary_glue_table_credentials(&self) -> crate::operation::get_temporary_glue_table_credentials::builders::GetTemporaryGlueTableCredentialsFluentBuilder{
+    pub fn get_temporary_glue_table_credentials(
+        &self,
+    ) -> crate::operation::get_temporary_glue_table_credentials::builders::GetTemporaryGlueTableCredentialsFluentBuilder {
         crate::operation::get_temporary_glue_table_credentials::builders::GetTemporaryGlueTableCredentialsFluentBuilder::new(self.handle.clone())
     }
 }

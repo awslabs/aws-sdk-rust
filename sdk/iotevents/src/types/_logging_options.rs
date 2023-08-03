@@ -15,8 +15,7 @@ pub struct LoggingOptions {
     pub enabled: bool,
     /// <p>Information that identifies those detector models and their detectors (instances) for which the logging level is given.</p>
     #[doc(hidden)]
-    pub detector_debug_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectorDebugOption>>,
+    pub detector_debug_options: ::std::option::Option<::std::vec::Vec<crate::types::DetectorDebugOption>>,
 }
 impl LoggingOptions {
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform logging.</p>
@@ -32,9 +31,7 @@ impl LoggingOptions {
         self.enabled
     }
     /// <p>Information that identifies those detector models and their detectors (instances) for which the logging level is given.</p>
-    pub fn detector_debug_options(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DetectorDebugOption]> {
+    pub fn detector_debug_options(&self) -> ::std::option::Option<&[crate::types::DetectorDebugOption]> {
         self.detector_debug_options.as_deref()
     }
 }
@@ -47,15 +44,12 @@ impl LoggingOptions {
 
 /// A builder for [`LoggingOptions`](crate::types::LoggingOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggingOptionsBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) level: ::std::option::Option<crate::types::LoggingLevel>,
     pub(crate) enabled: ::std::option::Option<bool>,
-    pub(crate) detector_debug_options:
-        ::std::option::Option<::std::vec::Vec<crate::types::DetectorDebugOption>>,
+    pub(crate) detector_debug_options: ::std::option::Option<::std::vec::Vec<crate::types::DetectorDebugOption>>,
 }
 impl LoggingOptionsBuilder {
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform logging.</p>
@@ -112,17 +106,12 @@ impl LoggingOptionsBuilder {
         self
     }
     /// <p>Information that identifies those detector models and their detectors (instances) for which the logging level is given.</p>
-    pub fn set_detector_debug_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DetectorDebugOption>>,
-    ) -> Self {
+    pub fn set_detector_debug_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DetectorDebugOption>>) -> Self {
         self.detector_debug_options = input;
         self
     }
     /// <p>Information that identifies those detector models and their detectors (instances) for which the logging level is given.</p>
-    pub fn get_detector_debug_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorDebugOption>> {
+    pub fn get_detector_debug_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorDebugOption>> {
         &self.detector_debug_options
     }
     /// Consumes the builder and constructs a [`LoggingOptions`](crate::types::LoggingOptions).

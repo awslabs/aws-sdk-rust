@@ -23,9 +23,7 @@ impl Typography {
 
 /// A builder for [`Typography`](crate::types::Typography).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TypographyBuilder {
     pub(crate) font_families: ::std::option::Option<::std::vec::Vec<crate::types::Font>>,
 }
@@ -42,10 +40,7 @@ impl TypographyBuilder {
         self
     }
     /// <p>Determines the list of font families.</p>
-    pub fn set_font_families(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Font>>,
-    ) -> Self {
+    pub fn set_font_families(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Font>>) -> Self {
         self.font_families = input;
         self
     }

@@ -10,10 +10,7 @@ impl ModifyIdFormatInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_id_format::ModifyIdFormatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_id_format::ModifyIdFormatError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_id_format::ModifyIdFormatError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_id_format();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl ModifyIdFormatFluentBuilder {
         }
     }
     /// Access the ModifyIdFormat as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_id_format::builders::ModifyIdFormatInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_id_format::builders::ModifyIdFormatInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl ModifyIdFormatFluentBuilder {
             crate::operation::modify_id_format::ModifyIdFormat,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_id_format::ModifyIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_id_format::ModifyIdFormatError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl ModifyIdFormatFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl ModifyIdFormatFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_id_format::ModifyIdFormatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_id_format::ModifyIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_id_format::ModifyIdFormatError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl ModifyIdFormatFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_id_format::ModifyIdFormatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_id_format::ModifyIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_id_format::ModifyIdFormatError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl ModifyIdFormatFluentBuilder {
             crate::operation::modify_id_format::ModifyIdFormat,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_id_format::ModifyIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_id_format::ModifyIdFormatError>,
     > {
         self.customize_middleware().await
     }

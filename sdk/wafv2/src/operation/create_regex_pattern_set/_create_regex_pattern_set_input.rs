@@ -53,18 +53,14 @@ impl CreateRegexPatternSetInput {
 }
 impl CreateRegexPatternSetInput {
     /// Creates a new builder-style object to manufacture [`CreateRegexPatternSetInput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetInputBuilder {
         crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRegexPatternSetInput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRegexPatternSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
@@ -142,17 +138,12 @@ impl CreateRegexPatternSetInputBuilder {
         self
     }
     /// <p>Array of regular expression strings. </p>
-    pub fn set_regular_expression_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>,
-    ) -> Self {
+    pub fn set_regular_expression_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>) -> Self {
         self.regular_expression_list = input;
         self
     }
     /// <p>Array of regular expression strings. </p>
-    pub fn get_regular_expression_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Regex>> {
+    pub fn get_regular_expression_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Regex>> {
         &self.regular_expression_list
     }
     /// Appends an item to `tags`.
@@ -167,10 +158,7 @@ impl CreateRegexPatternSetInputBuilder {
         self
     }
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -181,18 +169,14 @@ impl CreateRegexPatternSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateRegexPatternSetInput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput {
-                name: self.name,
-                scope: self.scope,
-                description: self.description,
-                regular_expression_list: self.regular_expression_list,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput {
+            name: self.name,
+            scope: self.scope,
+            description: self.description,
+            regular_expression_list: self.regular_expression_list,
+            tags: self.tags,
+        })
     }
 }

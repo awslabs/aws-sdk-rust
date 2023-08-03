@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`after(impl ::std::convert::Into<String>)`](crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionFluentBuilder::after) / [`set_after(Option<String>)`](crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionFluentBuilder::set_after): <p>The name of the receipt rule after which to place the specified receipt rule.</p>
     /// - On success, responds with [`SetReceiptRulePositionOutput`](crate::operation::set_receipt_rule_position::SetReceiptRulePositionOutput)
     /// - On failure, responds with [`SdkError<SetReceiptRulePositionError>`](crate::operation::set_receipt_rule_position::SetReceiptRulePositionError)
-    pub fn set_receipt_rule_position(
-        &self,
-    ) -> crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionFluentBuilder
-    {
+    pub fn set_receipt_rule_position(&self) -> crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionFluentBuilder {
         crate::operation::set_receipt_rule_position::builders::SetReceiptRulePositionFluentBuilder::new(self.handle.clone())
     }
 }

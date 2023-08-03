@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeContactOutput`](crate::operation::describe_contact::DescribeContactOutput) with field(s):
     ///   - [`contact(Option<Contact>)`](crate::operation::describe_contact::DescribeContactOutput::contact): <p>Information about the contact.</p>
     /// - On failure, responds with [`SdkError<DescribeContactError>`](crate::operation::describe_contact::DescribeContactError)
-    pub fn describe_contact(
-        &self,
-    ) -> crate::operation::describe_contact::builders::DescribeContactFluentBuilder {
-        crate::operation::describe_contact::builders::DescribeContactFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_contact(&self) -> crate::operation::describe_contact::builders::DescribeContactFluentBuilder {
+        crate::operation::describe_contact::builders::DescribeContactFluentBuilder::new(self.handle.clone())
     }
 }

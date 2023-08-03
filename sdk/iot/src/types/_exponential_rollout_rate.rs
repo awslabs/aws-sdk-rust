@@ -26,9 +26,7 @@ impl ExponentialRolloutRate {
         self.increment_factor
     }
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-    pub fn rate_increase_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RateIncreaseCriteria> {
+    pub fn rate_increase_criteria(&self) -> ::std::option::Option<&crate::types::RateIncreaseCriteria> {
         self.rate_increase_criteria.as_ref()
     }
 }
@@ -41,9 +39,7 @@ impl ExponentialRolloutRate {
 
 /// A builder for [`ExponentialRolloutRate`](crate::types::ExponentialRolloutRate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExponentialRolloutRateBuilder {
     pub(crate) base_rate_per_minute: ::std::option::Option<i32>,
     pub(crate) increment_factor: ::std::option::Option<f64>,
@@ -87,17 +83,12 @@ impl ExponentialRolloutRateBuilder {
         self
     }
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-    pub fn set_rate_increase_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::RateIncreaseCriteria>,
-    ) -> Self {
+    pub fn set_rate_increase_criteria(mut self, input: ::std::option::Option<crate::types::RateIncreaseCriteria>) -> Self {
         self.rate_increase_criteria = input;
         self
     }
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-    pub fn get_rate_increase_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::RateIncreaseCriteria> {
+    pub fn get_rate_increase_criteria(&self) -> &::std::option::Option<crate::types::RateIncreaseCriteria> {
         &self.rate_increase_criteria
     }
     /// Consumes the builder and constructs a [`ExponentialRolloutRate`](crate::types::ExponentialRolloutRate).

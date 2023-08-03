@@ -17,11 +17,7 @@ impl super::Client {
     /// - On success, responds with [`SendTemplatedEmailOutput`](crate::operation::send_templated_email::SendTemplatedEmailOutput) with field(s):
     ///   - [`message_id(Option<String>)`](crate::operation::send_templated_email::SendTemplatedEmailOutput::message_id): <p>The unique message identifier returned from the <code>SendTemplatedEmail</code> action. </p>
     /// - On failure, responds with [`SdkError<SendTemplatedEmailError>`](crate::operation::send_templated_email::SendTemplatedEmailError)
-    pub fn send_templated_email(
-        &self,
-    ) -> crate::operation::send_templated_email::builders::SendTemplatedEmailFluentBuilder {
-        crate::operation::send_templated_email::builders::SendTemplatedEmailFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_templated_email(&self) -> crate::operation::send_templated_email::builders::SendTemplatedEmailFluentBuilder {
+        crate::operation::send_templated_email::builders::SendTemplatedEmailFluentBuilder::new(self.handle.clone())
     }
 }

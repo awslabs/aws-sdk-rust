@@ -24,28 +24,20 @@ impl GetSamlProviderInput {
 
 /// A builder for [`GetSamlProviderInput`](crate::operation::get_saml_provider::GetSamlProviderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSamlProviderInputBuilder {
     pub(crate) saml_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetSamlProviderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider resource object in IAM to get information about.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn saml_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn saml_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.saml_provider_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider resource object in IAM to get information about.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_saml_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_saml_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.saml_provider_arn = input;
         self
     }
@@ -57,10 +49,7 @@ impl GetSamlProviderInputBuilder {
     /// Consumes the builder and constructs a [`GetSamlProviderInput`](crate::operation::get_saml_provider::GetSamlProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_saml_provider::GetSamlProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_saml_provider::GetSamlProviderInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_saml_provider::GetSamlProviderInput {
             saml_provider_arn: self.saml_provider_arn,
         })

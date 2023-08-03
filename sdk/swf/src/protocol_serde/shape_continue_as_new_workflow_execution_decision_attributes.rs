@@ -7,9 +7,7 @@ pub fn ser_continue_as_new_workflow_execution_decision_attributes(
         object.key("input").string(var_1.as_str());
     }
     if let Some(var_2) = &input.execution_start_to_close_timeout {
-        object
-            .key("executionStartToCloseTimeout")
-            .string(var_2.as_str());
+        object.key("executionStartToCloseTimeout").string(var_2.as_str());
     }
     if let Some(var_3) = &input.task_list {
         #[allow(unused_mut)]

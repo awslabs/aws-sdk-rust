@@ -23,18 +23,14 @@ impl GetPipelineDefinitionInput {
 }
 impl GetPipelineDefinitionInput {
     /// Creates a new builder-style object to manufacture [`GetPipelineDefinitionInput`](crate::operation::get_pipeline_definition::GetPipelineDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::get_pipeline_definition::builders::GetPipelineDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_pipeline_definition::builders::GetPipelineDefinitionInputBuilder {
         crate::operation::get_pipeline_definition::builders::GetPipelineDefinitionInputBuilder::default()
     }
 }
 
 /// A builder for [`GetPipelineDefinitionInput`](crate::operation::get_pipeline_definition::GetPipelineDefinitionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPipelineDefinitionInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
@@ -71,15 +67,11 @@ impl GetPipelineDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`GetPipelineDefinitionInput`](crate::operation::get_pipeline_definition::GetPipelineDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_pipeline_definition::GetPipelineDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_pipeline_definition::GetPipelineDefinitionInput {
-                pipeline_id: self.pipeline_id,
-                version: self.version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_pipeline_definition::GetPipelineDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_pipeline_definition::GetPipelineDefinitionInput {
+            pipeline_id: self.pipeline_id,
+            version: self.version,
+        })
     }
 }

@@ -15,33 +15,25 @@ impl GetBackupVaultNotificationsInput {
 }
 impl GetBackupVaultNotificationsInput {
     /// Creates a new builder-style object to manufacture [`GetBackupVaultNotificationsInput`](crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsInput).
-    pub fn builder() -> crate::operation::get_backup_vault_notifications::builders::GetBackupVaultNotificationsInputBuilder{
+    pub fn builder() -> crate::operation::get_backup_vault_notifications::builders::GetBackupVaultNotificationsInputBuilder {
         crate::operation::get_backup_vault_notifications::builders::GetBackupVaultNotificationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBackupVaultNotificationsInput`](crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBackupVaultNotificationsInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
 }
 impl GetBackupVaultNotificationsInputBuilder {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_vault_name = input;
         self
     }
@@ -56,10 +48,8 @@ impl GetBackupVaultNotificationsInputBuilder {
         crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsInput {
-                backup_vault_name: self.backup_vault_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsInput {
+            backup_vault_name: self.backup_vault_name,
+        })
     }
 }

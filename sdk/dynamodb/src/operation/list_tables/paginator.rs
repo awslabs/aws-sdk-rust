@@ -65,10 +65,7 @@ impl ListTablesPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -93,15 +90,9 @@ impl ListTablesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_list_tables_output_last_evaluated_table_name(
-                                    resp,
-                                );
+                            let new_token = crate::lens::reflens_list_tables_output_last_evaluated_table_name(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.exclusive_start_table_name.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.exclusive_start_table_name.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.exclusive_start_table_name = new_token.cloned();
@@ -137,15 +128,9 @@ impl ListTablesPaginatorItems {
     pub fn send(
         self,
     ) -> impl ::tokio_stream::Stream<
-        Item = ::std::result::Result<
-            ::std::string::String,
-            ::aws_smithy_http::result::SdkError<crate::operation::list_tables::ListTablesError>,
-        >,
+        Item = ::std::result::Result<::std::string::String, ::aws_smithy_http::result::SdkError<crate::operation::list_tables::ListTablesError>>,
     > + ::std::marker::Unpin {
-        ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_list_tables_output_table_names(page)
-                .unwrap_or_default()
-                .into_iter()
-        })
+        ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send())
+            .flat_map(|page| crate::lens::lens_list_tables_output_table_names(page).unwrap_or_default().into_iter())
     }
 }

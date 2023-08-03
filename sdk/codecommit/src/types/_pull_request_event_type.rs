@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PullRequestEventType {
     #[allow(missing_docs)] // documentation missing in model
@@ -78,32 +72,16 @@ pub enum PullRequestEventType {
 impl ::std::convert::From<&str> for PullRequestEventType {
     fn from(s: &str) -> Self {
         match s {
-            "PULL_REQUEST_APPROVAL_RULE_CREATED" => {
-                PullRequestEventType::PullRequestApprovalRuleCreated
-            }
-            "PULL_REQUEST_APPROVAL_RULE_DELETED" => {
-                PullRequestEventType::PullRequestApprovalRuleDeleted
-            }
-            "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN" => {
-                PullRequestEventType::PullRequestApprovalRuleOverridden
-            }
-            "PULL_REQUEST_APPROVAL_RULE_UPDATED" => {
-                PullRequestEventType::PullRequestApprovalRuleUpdated
-            }
-            "PULL_REQUEST_APPROVAL_STATE_CHANGED" => {
-                PullRequestEventType::PullRequestApprovalStateChanged
-            }
+            "PULL_REQUEST_APPROVAL_RULE_CREATED" => PullRequestEventType::PullRequestApprovalRuleCreated,
+            "PULL_REQUEST_APPROVAL_RULE_DELETED" => PullRequestEventType::PullRequestApprovalRuleDeleted,
+            "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN" => PullRequestEventType::PullRequestApprovalRuleOverridden,
+            "PULL_REQUEST_APPROVAL_RULE_UPDATED" => PullRequestEventType::PullRequestApprovalRuleUpdated,
+            "PULL_REQUEST_APPROVAL_STATE_CHANGED" => PullRequestEventType::PullRequestApprovalStateChanged,
             "PULL_REQUEST_CREATED" => PullRequestEventType::PullRequestCreated,
-            "PULL_REQUEST_MERGE_STATE_CHANGED" => {
-                PullRequestEventType::PullRequestMergeStateChanged
-            }
-            "PULL_REQUEST_SOURCE_REFERENCE_UPDATED" => {
-                PullRequestEventType::PullRequestSourceReferenceUpdated
-            }
+            "PULL_REQUEST_MERGE_STATE_CHANGED" => PullRequestEventType::PullRequestMergeStateChanged,
+            "PULL_REQUEST_SOURCE_REFERENCE_UPDATED" => PullRequestEventType::PullRequestSourceReferenceUpdated,
             "PULL_REQUEST_STATUS_CHANGED" => PullRequestEventType::PullRequestStatusChanged,
-            other => PullRequestEventType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PullRequestEventType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -118,28 +96,14 @@ impl PullRequestEventType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            PullRequestEventType::PullRequestApprovalRuleCreated => {
-                "PULL_REQUEST_APPROVAL_RULE_CREATED"
-            }
-            PullRequestEventType::PullRequestApprovalRuleDeleted => {
-                "PULL_REQUEST_APPROVAL_RULE_DELETED"
-            }
-            PullRequestEventType::PullRequestApprovalRuleOverridden => {
-                "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN"
-            }
-            PullRequestEventType::PullRequestApprovalRuleUpdated => {
-                "PULL_REQUEST_APPROVAL_RULE_UPDATED"
-            }
-            PullRequestEventType::PullRequestApprovalStateChanged => {
-                "PULL_REQUEST_APPROVAL_STATE_CHANGED"
-            }
+            PullRequestEventType::PullRequestApprovalRuleCreated => "PULL_REQUEST_APPROVAL_RULE_CREATED",
+            PullRequestEventType::PullRequestApprovalRuleDeleted => "PULL_REQUEST_APPROVAL_RULE_DELETED",
+            PullRequestEventType::PullRequestApprovalRuleOverridden => "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN",
+            PullRequestEventType::PullRequestApprovalRuleUpdated => "PULL_REQUEST_APPROVAL_RULE_UPDATED",
+            PullRequestEventType::PullRequestApprovalStateChanged => "PULL_REQUEST_APPROVAL_STATE_CHANGED",
             PullRequestEventType::PullRequestCreated => "PULL_REQUEST_CREATED",
-            PullRequestEventType::PullRequestMergeStateChanged => {
-                "PULL_REQUEST_MERGE_STATE_CHANGED"
-            }
-            PullRequestEventType::PullRequestSourceReferenceUpdated => {
-                "PULL_REQUEST_SOURCE_REFERENCE_UPDATED"
-            }
+            PullRequestEventType::PullRequestMergeStateChanged => "PULL_REQUEST_MERGE_STATE_CHANGED",
+            PullRequestEventType::PullRequestSourceReferenceUpdated => "PULL_REQUEST_SOURCE_REFERENCE_UPDATED",
             PullRequestEventType::PullRequestStatusChanged => "PULL_REQUEST_STATUS_CHANGED",
             PullRequestEventType::Unknown(value) => value.as_str(),
         }

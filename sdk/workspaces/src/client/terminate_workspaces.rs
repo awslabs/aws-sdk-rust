@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`TerminateWorkspacesOutput`](crate::operation::terminate_workspaces::TerminateWorkspacesOutput) with field(s):
     ///   - [`failed_requests(Option<Vec<FailedWorkspaceChangeRequest>>)`](crate::operation::terminate_workspaces::TerminateWorkspacesOutput::failed_requests): <p>Information about the WorkSpaces that could not be terminated.</p>
     /// - On failure, responds with [`SdkError<TerminateWorkspacesError>`](crate::operation::terminate_workspaces::TerminateWorkspacesError)
-    pub fn terminate_workspaces(
-        &self,
-    ) -> crate::operation::terminate_workspaces::builders::TerminateWorkspacesFluentBuilder {
-        crate::operation::terminate_workspaces::builders::TerminateWorkspacesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn terminate_workspaces(&self) -> crate::operation::terminate_workspaces::builders::TerminateWorkspacesFluentBuilder {
+        crate::operation::terminate_workspaces::builders::TerminateWorkspacesFluentBuilder::new(self.handle.clone())
     }
 }

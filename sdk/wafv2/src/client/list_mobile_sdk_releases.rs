@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`release_summaries(Option<Vec<ReleaseSummary>>)`](crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesOutput::release_summaries): <p>The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     /// - On failure, responds with [`SdkError<ListMobileSdkReleasesError>`](crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesError)
-    pub fn list_mobile_sdk_releases(
-        &self,
-    ) -> crate::operation::list_mobile_sdk_releases::builders::ListMobileSdkReleasesFluentBuilder
-    {
+    pub fn list_mobile_sdk_releases(&self) -> crate::operation::list_mobile_sdk_releases::builders::ListMobileSdkReleasesFluentBuilder {
         crate::operation::list_mobile_sdk_releases::builders::ListMobileSdkReleasesFluentBuilder::new(self.handle.clone())
     }
 }

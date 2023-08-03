@@ -31,11 +31,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateProfileOutput`](crate::operation::update_profile::UpdateProfileOutput) with field(s):
     ///   - [`profile_id(Option<String>)`](crate::operation::update_profile::UpdateProfileOutput::profile_id): <p>The unique identifier of a customer profile.</p>
     /// - On failure, responds with [`SdkError<UpdateProfileError>`](crate::operation::update_profile::UpdateProfileError)
-    pub fn update_profile(
-        &self,
-    ) -> crate::operation::update_profile::builders::UpdateProfileFluentBuilder {
-        crate::operation::update_profile::builders::UpdateProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_profile(&self) -> crate::operation::update_profile::builders::UpdateProfileFluentBuilder {
+        crate::operation::update_profile::builders::UpdateProfileFluentBuilder::new(self.handle.clone())
     }
 }

@@ -58,9 +58,7 @@ impl DashIsoImageBasedTrickPlaySettings {
 
 /// A builder for [`DashIsoImageBasedTrickPlaySettings`](crate::types::DashIsoImageBasedTrickPlaySettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DashIsoImageBasedTrickPlaySettingsBuilder {
     pub(crate) interval_cadence: ::std::option::Option<crate::types::DashIsoIntervalCadence>,
     pub(crate) thumbnail_height: ::std::option::Option<i32>,
@@ -76,17 +74,12 @@ impl DashIsoImageBasedTrickPlaySettingsBuilder {
         self
     }
     /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
-    pub fn set_interval_cadence(
-        mut self,
-        input: ::std::option::Option<crate::types::DashIsoIntervalCadence>,
-    ) -> Self {
+    pub fn set_interval_cadence(mut self, input: ::std::option::Option<crate::types::DashIsoIntervalCadence>) -> Self {
         self.interval_cadence = input;
         self
     }
     /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
-    pub fn get_interval_cadence(
-        &self,
-    ) -> &::std::option::Option<crate::types::DashIsoIntervalCadence> {
+    pub fn get_interval_cadence(&self) -> &::std::option::Option<crate::types::DashIsoIntervalCadence> {
         &self.interval_cadence
     }
     /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.

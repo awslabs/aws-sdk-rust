@@ -44,9 +44,7 @@ impl ExecutionSummary {
 
 /// A builder for [`ExecutionSummary`](crate::types::ExecutionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecutionSummaryBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) execution_id: ::std::option::Option<::std::string::String>,
@@ -83,18 +81,12 @@ impl ExecutionSummaryBuilder {
         &self.execution_id
     }
     /// <p>The ID of the managed device that the task is being executed on.</p>
-    pub fn managed_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn managed_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the managed device that the task is being executed on.</p>
-    pub fn set_managed_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_managed_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.managed_device_id = input;
         self
     }

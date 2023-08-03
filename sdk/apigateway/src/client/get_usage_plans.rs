@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<UsagePlan>>)`](crate::operation::get_usage_plans::GetUsagePlansOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_usage_plans::GetUsagePlansOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<GetUsagePlansError>`](crate::operation::get_usage_plans::GetUsagePlansError)
-    pub fn get_usage_plans(
-        &self,
-    ) -> crate::operation::get_usage_plans::builders::GetUsagePlansFluentBuilder {
-        crate::operation::get_usage_plans::builders::GetUsagePlansFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_usage_plans(&self) -> crate::operation::get_usage_plans::builders::GetUsagePlansFluentBuilder {
+        crate::operation::get_usage_plans::builders::GetUsagePlansFluentBuilder::new(self.handle.clone())
     }
 }

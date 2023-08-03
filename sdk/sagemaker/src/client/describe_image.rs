@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_image::DescribeImageOutput::last_modified_time): <p>When the image was last modified.</p>
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_image::DescribeImageOutput::role_arn): <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     /// - On failure, responds with [`SdkError<DescribeImageError>`](crate::operation::describe_image::DescribeImageError)
-    pub fn describe_image(
-        &self,
-    ) -> crate::operation::describe_image::builders::DescribeImageFluentBuilder {
-        crate::operation::describe_image::builders::DescribeImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_image(&self) -> crate::operation::describe_image::builders::DescribeImageFluentBuilder {
+        crate::operation::describe_image::builders::DescribeImageFluentBuilder::new(self.handle.clone())
     }
 }

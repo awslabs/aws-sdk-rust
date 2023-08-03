@@ -26,7 +26,7 @@ impl DeletePullRequestApprovalRuleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePullRequestApprovalRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleInputBuilder,
+    inner: crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleInputBuilder,
 }
 impl DeletePullRequestApprovalRuleFluentBuilder {
     /// Creates a new `DeletePullRequestApprovalRule`.
@@ -37,7 +37,7 @@ impl DeletePullRequestApprovalRuleFluentBuilder {
         }
     }
     /// Access the DeletePullRequestApprovalRule as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeletePullRequestApprovalRuleFluentBuilder {
             crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeletePullRequestApprovalRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeletePullRequestApprovalRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeletePullRequestApprovalRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DeletePullRequestApprovalRuleFluentBuilder {
             crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pull_request_id(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl DeletePullRequestApprovalRuleFluentBuilder {
         self.inner.get_pull_request_id()
     }
     /// <p>The name of the approval rule you want to delete.</p>
-    pub fn approval_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.approval_rule_name(input.into());
         self
     }
     /// <p>The name of the approval rule you want to delete.</p>
-    pub fn set_approval_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_approval_rule_name(input);
         self
     }

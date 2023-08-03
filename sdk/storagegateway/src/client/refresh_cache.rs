@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`file_share_arn(Option<String>)`](crate::operation::refresh_cache::RefreshCacheOutput::file_share_arn): <p>The Amazon Resource Name (ARN) of the file share.</p>
     ///   - [`notification_id(Option<String>)`](crate::operation::refresh_cache::RefreshCacheOutput::notification_id): <p>The randomly generated ID of the notification that was sent. This ID is in UUID format.</p>
     /// - On failure, responds with [`SdkError<RefreshCacheError>`](crate::operation::refresh_cache::RefreshCacheError)
-    pub fn refresh_cache(
-        &self,
-    ) -> crate::operation::refresh_cache::builders::RefreshCacheFluentBuilder {
-        crate::operation::refresh_cache::builders::RefreshCacheFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn refresh_cache(&self) -> crate::operation::refresh_cache::builders::RefreshCacheFluentBuilder {
+        crate::operation::refresh_cache::builders::RefreshCacheFluentBuilder::new(self.handle.clone())
     }
 }

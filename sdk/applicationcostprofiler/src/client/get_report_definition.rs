@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_report_definition::GetReportDefinitionOutput::created_at): <p>Timestamp (milliseconds) when this report definition was created.</p>
     ///   - [`last_updated(Option<DateTime>)`](crate::operation::get_report_definition::GetReportDefinitionOutput::last_updated): <p>Timestamp (milliseconds) when this report definition was last updated.</p>
     /// - On failure, responds with [`SdkError<GetReportDefinitionError>`](crate::operation::get_report_definition::GetReportDefinitionError)
-    pub fn get_report_definition(
-        &self,
-    ) -> crate::operation::get_report_definition::builders::GetReportDefinitionFluentBuilder {
-        crate::operation::get_report_definition::builders::GetReportDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_report_definition(&self) -> crate::operation::get_report_definition::builders::GetReportDefinitionFluentBuilder {
+        crate::operation::get_report_definition::builders::GetReportDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

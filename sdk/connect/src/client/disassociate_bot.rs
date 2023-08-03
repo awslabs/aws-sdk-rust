@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`lex_v2_bot(LexV2Bot)`](crate::operation::disassociate_bot::builders::DisassociateBotFluentBuilder::lex_v2_bot) / [`set_lex_v2_bot(Option<LexV2Bot>)`](crate::operation::disassociate_bot::builders::DisassociateBotFluentBuilder::set_lex_v2_bot): <p>The Amazon Lex V2 bot to disassociate from the instance.</p>
     /// - On success, responds with [`DisassociateBotOutput`](crate::operation::disassociate_bot::DisassociateBotOutput)
     /// - On failure, responds with [`SdkError<DisassociateBotError>`](crate::operation::disassociate_bot::DisassociateBotError)
-    pub fn disassociate_bot(
-        &self,
-    ) -> crate::operation::disassociate_bot::builders::DisassociateBotFluentBuilder {
-        crate::operation::disassociate_bot::builders::DisassociateBotFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_bot(&self) -> crate::operation::disassociate_bot::builders::DisassociateBotFluentBuilder {
+        crate::operation::disassociate_bot::builders::DisassociateBotFluentBuilder::new(self.handle.clone())
     }
 }

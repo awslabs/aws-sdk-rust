@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateSmsSandboxPhoneNumberOutput {
 }
 impl CreateSmsSandboxPhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`CreateSmsSandboxPhoneNumberOutput`](crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberOutput).
-    pub fn builder() -> crate::operation::create_sms_sandbox_phone_number::builders::CreateSmsSandboxPhoneNumberOutputBuilder{
+    pub fn builder() -> crate::operation::create_sms_sandbox_phone_number::builders::CreateSmsSandboxPhoneNumberOutputBuilder {
         crate::operation::create_sms_sandbox_phone_number::builders::CreateSmsSandboxPhoneNumberOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSmsSandboxPhoneNumberOutput`](crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSmsSandboxPhoneNumberOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CreateSmsSandboxPhoneNumberOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateSmsSandboxPhoneNumberOutput`](crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberOutput {
+    pub fn build(self) -> crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberOutput {
         crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberOutput {
             _request_id: self._request_id,
         }

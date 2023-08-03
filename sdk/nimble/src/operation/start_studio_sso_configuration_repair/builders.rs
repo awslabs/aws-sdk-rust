@@ -5,16 +5,16 @@ pub use crate::operation::start_studio_sso_configuration_repair::_start_studio_s
 
 impl StartStudioSsoConfigurationRepairInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.start_studio_sso_configuration_repair();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl StartStudioSsoConfigurationRepairInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartStudioSSOConfigurationRepairFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairInputBuilder,
+    inner: crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairInputBuilder,
 }
 impl StartStudioSSOConfigurationRepairFluentBuilder {
     /// Creates a new `StartStudioSSOConfigurationRepair`.
@@ -40,15 +40,20 @@ impl StartStudioSSOConfigurationRepairFluentBuilder {
         }
     }
     /// Access the StartStudioSSOConfigurationRepair as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepair, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepair,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl StartStudioSSOConfigurationRepairFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,17 +90,26 @@ impl StartStudioSSOConfigurationRepairFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepair, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepair,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>

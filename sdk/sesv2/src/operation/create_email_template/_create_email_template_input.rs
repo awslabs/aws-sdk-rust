@@ -23,36 +23,26 @@ impl CreateEmailTemplateInput {
 }
 impl CreateEmailTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateEmailTemplateInput`](crate::operation::create_email_template::CreateEmailTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::create_email_template::builders::CreateEmailTemplateInputBuilder {
-        crate::operation::create_email_template::builders::CreateEmailTemplateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_email_template::builders::CreateEmailTemplateInputBuilder {
+        crate::operation::create_email_template::builders::CreateEmailTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEmailTemplateInput`](crate::operation::create_email_template::CreateEmailTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEmailTemplateInputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_content: ::std::option::Option<crate::types::EmailTemplateContent>,
 }
 impl CreateEmailTemplateInputBuilder {
     /// <p>The name of the template.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the template.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -66,31 +56,22 @@ impl CreateEmailTemplateInputBuilder {
         self
     }
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
-    pub fn set_template_content(
-        mut self,
-        input: ::std::option::Option<crate::types::EmailTemplateContent>,
-    ) -> Self {
+    pub fn set_template_content(mut self, input: ::std::option::Option<crate::types::EmailTemplateContent>) -> Self {
         self.template_content = input;
         self
     }
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
-    pub fn get_template_content(
-        &self,
-    ) -> &::std::option::Option<crate::types::EmailTemplateContent> {
+    pub fn get_template_content(&self) -> &::std::option::Option<crate::types::EmailTemplateContent> {
         &self.template_content
     }
     /// Consumes the builder and constructs a [`CreateEmailTemplateInput`](crate::operation::create_email_template::CreateEmailTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_email_template::CreateEmailTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_email_template::CreateEmailTemplateInput {
-                template_name: self.template_name,
-                template_content: self.template_content,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_email_template::CreateEmailTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_email_template::CreateEmailTemplateInput {
+            template_name: self.template_name,
+            template_content: self.template_content,
+        })
     }
 }

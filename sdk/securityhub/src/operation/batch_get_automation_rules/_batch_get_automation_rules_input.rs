@@ -15,18 +15,14 @@ impl BatchGetAutomationRulesInput {
 }
 impl BatchGetAutomationRulesInput {
     /// Creates a new builder-style object to manufacture [`BatchGetAutomationRulesInput`](crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_automation_rules::builders::BatchGetAutomationRulesInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_automation_rules::builders::BatchGetAutomationRulesInputBuilder {
         crate::operation::batch_get_automation_rules::builders::BatchGetAutomationRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetAutomationRulesInput`](crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetAutomationRulesInputBuilder {
     pub(crate) automation_rules_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -36,27 +32,19 @@ impl BatchGetAutomationRulesInputBuilder {
     /// To override the contents of this collection use [`set_automation_rules_arns`](Self::set_automation_rules_arns).
     ///
     /// <p> A list of rule ARNs to get details for. </p>
-    pub fn automation_rules_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn automation_rules_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.automation_rules_arns.unwrap_or_default();
         v.push(input.into());
         self.automation_rules_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of rule ARNs to get details for. </p>
-    pub fn set_automation_rules_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_automation_rules_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.automation_rules_arns = input;
         self
     }
     /// <p> A list of rule ARNs to get details for. </p>
-    pub fn get_automation_rules_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_automation_rules_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.automation_rules_arns
     }
     /// Consumes the builder and constructs a [`BatchGetAutomationRulesInput`](crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput).
@@ -66,10 +54,8 @@ impl BatchGetAutomationRulesInputBuilder {
         crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput {
-                automation_rules_arns: self.automation_rules_arns,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput {
+            automation_rules_arns: self.automation_rules_arns,
+        })
     }
 }

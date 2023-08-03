@@ -38,18 +38,14 @@ impl GetLensReviewReportInput {
 }
 impl GetLensReviewReportInput {
     /// Creates a new builder-style object to manufacture [`GetLensReviewReportInput`](crate::operation::get_lens_review_report::GetLensReviewReportInput).
-    pub fn builder(
-    ) -> crate::operation::get_lens_review_report::builders::GetLensReviewReportInputBuilder {
-        crate::operation::get_lens_review_report::builders::GetLensReviewReportInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_lens_review_report::builders::GetLensReviewReportInputBuilder {
+        crate::operation::get_lens_review_report::builders::GetLensReviewReportInputBuilder::default()
     }
 }
 
 /// A builder for [`GetLensReviewReportInput`](crate::operation::get_lens_review_report::GetLensReviewReportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLensReviewReportInputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
@@ -113,16 +109,12 @@ impl GetLensReviewReportInputBuilder {
     /// Consumes the builder and constructs a [`GetLensReviewReportInput`](crate::operation::get_lens_review_report::GetLensReviewReportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_lens_review_report::GetLensReviewReportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_lens_review_report::GetLensReviewReportInput {
-                workload_id: self.workload_id,
-                lens_alias: self.lens_alias,
-                milestone_number: self.milestone_number,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_lens_review_report::GetLensReviewReportInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_lens_review_report::GetLensReviewReportInput {
+            workload_id: self.workload_id,
+            lens_alias: self.lens_alias,
+            milestone_number: self.milestone_number,
+        })
     }
 }

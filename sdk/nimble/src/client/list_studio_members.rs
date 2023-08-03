@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`members(Option<Vec<StudioMembership>>)`](crate::operation::list_studio_members::ListStudioMembersOutput::members): <p>A list of admin members.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_studio_members::ListStudioMembersOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On failure, responds with [`SdkError<ListStudioMembersError>`](crate::operation::list_studio_members::ListStudioMembersError)
-    pub fn list_studio_members(
-        &self,
-    ) -> crate::operation::list_studio_members::builders::ListStudioMembersFluentBuilder {
-        crate::operation::list_studio_members::builders::ListStudioMembersFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_studio_members(&self) -> crate::operation::list_studio_members::builders::ListStudioMembersFluentBuilder {
+        crate::operation::list_studio_members::builders::ListStudioMembersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,8 +9,7 @@ pub struct BatchStartOutput {
     pub failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>>,
     /// List of successful operations
     #[doc(hidden)]
-    pub successful:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,
+    pub successful: ::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,
     _request_id: Option<String>,
 }
 impl BatchStartOutput {
@@ -37,13 +36,10 @@ impl BatchStartOutput {
 
 /// A builder for [`BatchStartOutput`](crate::operation::batch_start::BatchStartOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStartOutputBuilder {
     pub(crate) failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>>,
-    pub(crate) successful:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,
+    pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,
     _request_id: Option<String>,
 }
 impl BatchStartOutputBuilder {
@@ -59,17 +55,12 @@ impl BatchStartOutputBuilder {
         self
     }
     /// List of failed operations
-    pub fn set_failed(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>>,
-    ) -> Self {
+    pub fn set_failed(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>>) -> Self {
         self.failed = input;
         self
     }
     /// List of failed operations
-    pub fn get_failed(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>> {
+    pub fn get_failed(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>> {
         &self.failed
     }
     /// Appends an item to `successful`.
@@ -84,17 +75,12 @@ impl BatchStartOutputBuilder {
         self
     }
     /// List of successful operations
-    pub fn set_successful(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,
-    ) -> Self {
+    pub fn set_successful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>>) -> Self {
         self.successful = input;
         self
     }
     /// List of successful operations
-    pub fn get_successful(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>> {
+    pub fn get_successful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>> {
         &self.successful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

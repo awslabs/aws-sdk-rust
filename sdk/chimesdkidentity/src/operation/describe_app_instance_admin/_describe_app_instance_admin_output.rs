@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeAppInstanceAdminOutput {
 }
 impl DescribeAppInstanceAdminOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceAdminOutput`](crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminOutput).
-    pub fn builder() -> crate::operation::describe_app_instance_admin::builders::DescribeAppInstanceAdminOutputBuilder{
+    pub fn builder() -> crate::operation::describe_app_instance_admin::builders::DescribeAppInstanceAdminOutputBuilder {
         crate::operation::describe_app_instance_admin::builders::DescribeAppInstanceAdminOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppInstanceAdminOutput`](crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppInstanceAdminOutputBuilder {
     pub(crate) app_instance_admin: ::std::option::Option<crate::types::AppInstanceAdmin>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl DescribeAppInstanceAdminOutputBuilder {
         self
     }
     /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
-    pub fn set_app_instance_admin(
-        mut self,
-        input: ::std::option::Option<crate::types::AppInstanceAdmin>,
-    ) -> Self {
+    pub fn set_app_instance_admin(mut self, input: ::std::option::Option<crate::types::AppInstanceAdmin>) -> Self {
         self.app_instance_admin = input;
         self
     }
@@ -63,9 +58,7 @@ impl DescribeAppInstanceAdminOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAppInstanceAdminOutput`](crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminOutput {
+    pub fn build(self) -> crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminOutput {
         crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminOutput {
             app_instance_admin: self.app_instance_admin,
             _request_id: self._request_id,

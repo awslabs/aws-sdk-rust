@@ -44,9 +44,7 @@ impl BatchListObjectAttributes {
 
 /// A builder for [`BatchListObjectAttributes`](crate::types::BatchListObjectAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchListObjectAttributesBuilder {
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -60,10 +58,7 @@ impl BatchListObjectAttributesBuilder {
         self
     }
     /// <p>Reference of the object whose attributes need to be listed.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.object_reference = input;
         self
     }
@@ -105,10 +100,7 @@ impl BatchListObjectAttributesBuilder {
         self
     }
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
-    pub fn set_facet_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaFacet>,
-    ) -> Self {
+    pub fn set_facet_filter(mut self, input: ::std::option::Option<crate::types::SchemaFacet>) -> Self {
         self.facet_filter = input;
         self
     }

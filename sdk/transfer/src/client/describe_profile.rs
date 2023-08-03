@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeProfileOutput`](crate::operation::describe_profile::DescribeProfileOutput) with field(s):
     ///   - [`profile(Option<DescribedProfile>)`](crate::operation::describe_profile::DescribeProfileOutput::profile): <p>The details of the specified profile, returned as an object.</p>
     /// - On failure, responds with [`SdkError<DescribeProfileError>`](crate::operation::describe_profile::DescribeProfileError)
-    pub fn describe_profile(
-        &self,
-    ) -> crate::operation::describe_profile::builders::DescribeProfileFluentBuilder {
-        crate::operation::describe_profile::builders::DescribeProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_profile(&self) -> crate::operation::describe_profile::builders::DescribeProfileFluentBuilder {
+        crate::operation::describe_profile::builders::DescribeProfileFluentBuilder::new(self.handle.clone())
     }
 }

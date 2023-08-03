@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetNotebookMetadataOutput {
 }
 impl GetNotebookMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetNotebookMetadataOutput`](crate::operation::get_notebook_metadata::GetNotebookMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_notebook_metadata::builders::GetNotebookMetadataOutputBuilder {
-        crate::operation::get_notebook_metadata::builders::GetNotebookMetadataOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_notebook_metadata::builders::GetNotebookMetadataOutputBuilder {
+        crate::operation::get_notebook_metadata::builders::GetNotebookMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetNotebookMetadataOutput`](crate::operation::get_notebook_metadata::GetNotebookMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNotebookMetadataOutputBuilder {
     pub(crate) notebook_metadata: ::std::option::Option<crate::types::NotebookMetadata>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetNotebookMetadataOutputBuilder {
         self
     }
     /// <p>The metadata that is returned for the specified notebook ID.</p>
-    pub fn set_notebook_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::NotebookMetadata>,
-    ) -> Self {
+    pub fn set_notebook_metadata(mut self, input: ::std::option::Option<crate::types::NotebookMetadata>) -> Self {
         self.notebook_metadata = input;
         self
     }

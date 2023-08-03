@@ -38,13 +38,7 @@
 /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AncillaryTerminateCaptions {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for AncillaryTerminateCaptions {
         match s {
             "DISABLED" => AncillaryTerminateCaptions::Disabled,
             "END_OF_INPUT" => AncillaryTerminateCaptions::EndOfInput,
-            other => AncillaryTerminateCaptions::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AncillaryTerminateCaptions::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

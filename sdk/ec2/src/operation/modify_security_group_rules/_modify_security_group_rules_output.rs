@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifySecurityGroupRulesOutput {
 }
 impl ModifySecurityGroupRulesOutput {
     /// Creates a new builder-style object to manufacture [`ModifySecurityGroupRulesOutput`](crate::operation::modify_security_group_rules::ModifySecurityGroupRulesOutput).
-    pub fn builder() -> crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesOutputBuilder{
+    pub fn builder() -> crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesOutputBuilder {
         crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifySecurityGroupRulesOutput`](crate::operation::modify_security_group_rules::ModifySecurityGroupRulesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifySecurityGroupRulesOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl ModifySecurityGroupRulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifySecurityGroupRulesOutput`](crate::operation::modify_security_group_rules::ModifySecurityGroupRulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_security_group_rules::ModifySecurityGroupRulesOutput {
+    pub fn build(self) -> crate::operation::modify_security_group_rules::ModifySecurityGroupRulesOutput {
         crate::operation::modify_security_group_rules::ModifySecurityGroupRulesOutput {
             r#return: self.r#return,
             _request_id: self._request_id,

@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateResourceGroupOutput {
 }
 impl CreateResourceGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateResourceGroupOutput`](crate::operation::create_resource_group::CreateResourceGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_resource_group::builders::CreateResourceGroupOutputBuilder {
-        crate::operation::create_resource_group::builders::CreateResourceGroupOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_resource_group::builders::CreateResourceGroupOutputBuilder {
+        crate::operation::create_resource_group::builders::CreateResourceGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateResourceGroupOutput`](crate::operation::create_resource_group::CreateResourceGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateResourceGroupOutputBuilder {
     pub(crate) resource_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateResourceGroupOutputBuilder {
     /// <p>The ARN that specifies the resource group that is created.</p>
-    pub fn resource_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN that specifies the resource group that is created.</p>
-    pub fn set_resource_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_arn = input;
         self
     }

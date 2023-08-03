@@ -25,10 +25,7 @@ pub fn ser_put_managed_rule_set_versions_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = object_7.key(key_8.as_str()).start_object();
-                crate::protocol_serde::shape_version_to_publish::ser_version_to_publish(
-                    &mut object_10,
-                    value_9,
-                )?;
+                crate::protocol_serde::shape_version_to_publish::ser_version_to_publish(&mut object_10, value_9)?;
                 object_10.finish();
             }
         }

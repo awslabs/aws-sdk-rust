@@ -30,9 +30,7 @@ impl ExecutionTimeFilter {
 
 /// A builder for [`ExecutionTimeFilter`](crate::types::ExecutionTimeFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecutionTimeFilterBuilder {
     pub(crate) oldest_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) latest_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -44,10 +42,7 @@ impl ExecutionTimeFilterBuilder {
         self
     }
     /// <p>Specifies the oldest start or close date and time to return.</p>
-    pub fn set_oldest_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_oldest_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.oldest_date = input;
         self
     }
@@ -61,10 +56,7 @@ impl ExecutionTimeFilterBuilder {
         self
     }
     /// <p>Specifies the latest start or close date and time to return.</p>
-    pub fn set_latest_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.latest_date = input;
         self
     }

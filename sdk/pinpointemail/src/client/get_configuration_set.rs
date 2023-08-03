@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`sending_options(Option<SendingOptions>)`](crate::operation::get_configuration_set::GetConfigurationSetOutput::sending_options): <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::get_configuration_set::GetConfigurationSetOutput::tags): <p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>
     /// - On failure, responds with [`SdkError<GetConfigurationSetError>`](crate::operation::get_configuration_set::GetConfigurationSetError)
-    pub fn get_configuration_set(
-        &self,
-    ) -> crate::operation::get_configuration_set::builders::GetConfigurationSetFluentBuilder {
-        crate::operation::get_configuration_set::builders::GetConfigurationSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_configuration_set(&self) -> crate::operation::get_configuration_set::builders::GetConfigurationSetFluentBuilder {
+        crate::operation::get_configuration_set::builders::GetConfigurationSetFluentBuilder::new(self.handle.clone())
     }
 }

@@ -27,8 +27,7 @@ impl DeleteFileSystemPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFileSystemPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_file_system_policy::builders::DeleteFileSystemPolicyInputBuilder,
+    inner: crate::operation::delete_file_system_policy::builders::DeleteFileSystemPolicyInputBuilder,
 }
 impl DeleteFileSystemPolicyFluentBuilder {
     /// Creates a new `DeleteFileSystemPolicy`.
@@ -39,10 +38,7 @@ impl DeleteFileSystemPolicyFluentBuilder {
         }
     }
     /// Access the DeleteFileSystemPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_file_system_policy::builders::DeleteFileSystemPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_file_system_policy::builders::DeleteFileSystemPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DeleteFileSystemPolicyFluentBuilder {
             crate::operation::delete_file_system_policy::DeleteFileSystemPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DeleteFileSystemPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DeleteFileSystemPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DeleteFileSystemPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +106,17 @@ impl DeleteFileSystemPolicyFluentBuilder {
             crate::operation::delete_file_system_policy::DeleteFileSystemPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }

@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAccessPolicyOutput`](crate::operation::create_access_policy::CreateAccessPolicyOutput) with field(s):
     ///   - [`access_policy_detail(Option<AccessPolicyDetail>)`](crate::operation::create_access_policy::CreateAccessPolicyOutput::access_policy_detail): <p>Details about the created access policy.</p>
     /// - On failure, responds with [`SdkError<CreateAccessPolicyError>`](crate::operation::create_access_policy::CreateAccessPolicyError)
-    pub fn create_access_policy(
-        &self,
-    ) -> crate::operation::create_access_policy::builders::CreateAccessPolicyFluentBuilder {
-        crate::operation::create_access_policy::builders::CreateAccessPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_access_policy(&self) -> crate::operation::create_access_policy::builders::CreateAccessPolicyFluentBuilder {
+        crate::operation::create_access_policy::builders::CreateAccessPolicyFluentBuilder::new(self.handle.clone())
     }
 }

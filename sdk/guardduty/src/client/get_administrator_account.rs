@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetAdministratorAccountOutput`](crate::operation::get_administrator_account::GetAdministratorAccountOutput) with field(s):
     ///   - [`administrator(Option<Administrator>)`](crate::operation::get_administrator_account::GetAdministratorAccountOutput::administrator): <p>The administrator account details.</p>
     /// - On failure, responds with [`SdkError<GetAdministratorAccountError>`](crate::operation::get_administrator_account::GetAdministratorAccountError)
-    pub fn get_administrator_account(
-        &self,
-    ) -> crate::operation::get_administrator_account::builders::GetAdministratorAccountFluentBuilder
-    {
+    pub fn get_administrator_account(&self) -> crate::operation::get_administrator_account::builders::GetAdministratorAccountFluentBuilder {
         crate::operation::get_administrator_account::builders::GetAdministratorAccountFluentBuilder::new(self.handle.clone())
     }
 }

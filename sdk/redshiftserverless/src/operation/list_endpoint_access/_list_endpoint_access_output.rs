@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListEndpointAccessOutput {
 }
 impl ListEndpointAccessOutput {
     /// Creates a new builder-style object to manufacture [`ListEndpointAccessOutput`](crate::operation::list_endpoint_access::ListEndpointAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::list_endpoint_access::builders::ListEndpointAccessOutputBuilder {
+    pub fn builder() -> crate::operation::list_endpoint_access::builders::ListEndpointAccessOutputBuilder {
         crate::operation::list_endpoint_access::builders::ListEndpointAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEndpointAccessOutput`](crate::operation::list_endpoint_access::ListEndpointAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEndpointAccessOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::EndpointAccess>>,
@@ -71,17 +68,12 @@ impl ListEndpointAccessOutputBuilder {
         self
     }
     /// <p>The returned VPC endpoints.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointAccess>>,
-    ) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointAccess>>) -> Self {
         self.endpoints = input;
         self
     }
     /// <p>The returned VPC endpoints.</p>
-    pub fn get_endpoints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointAccess>> {
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointAccess>> {
         &self.endpoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

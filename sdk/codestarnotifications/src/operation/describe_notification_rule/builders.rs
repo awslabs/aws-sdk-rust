@@ -26,7 +26,7 @@ impl DescribeNotificationRuleInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeNotificationRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_notification_rule::builders::DescribeNotificationRuleInputBuilder,
+    inner: crate::operation::describe_notification_rule::builders::DescribeNotificationRuleInputBuilder,
 }
 impl DescribeNotificationRuleFluentBuilder {
     /// Creates a new `DescribeNotificationRule`.
@@ -37,10 +37,7 @@ impl DescribeNotificationRuleFluentBuilder {
         }
     }
     /// Access the DescribeNotificationRule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_notification_rule::builders::DescribeNotificationRuleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_notification_rule::builders::DescribeNotificationRuleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeNotificationRuleFluentBuilder {
             crate::operation::describe_notification_rule::DescribeNotificationRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_notification_rule::DescribeNotificationRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_notification_rule::DescribeNotificationRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeNotificationRuleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeNotificationRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_notification_rule::DescribeNotificationRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_notification_rule::DescribeNotificationRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_notification_rule::DescribeNotificationRuleError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeNotificationRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_notification_rule::DescribeNotificationRuleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_notification_rule::DescribeNotificationRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_notification_rule::DescribeNotificationRuleError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeNotificationRuleFluentBuilder {
             crate::operation::describe_notification_rule::DescribeNotificationRule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_notification_rule::DescribeNotificationRuleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_notification_rule::DescribeNotificationRuleError>,
     > {
         self.customize_middleware().await
     }

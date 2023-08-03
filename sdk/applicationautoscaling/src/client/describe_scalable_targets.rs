@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`scalable_targets(Option<Vec<ScalableTarget>>)`](crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput::scalable_targets): <p>The scalable targets that match the request parameters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput::next_token): <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeScalableTargetsError>`](crate::operation::describe_scalable_targets::DescribeScalableTargetsError)
-    pub fn describe_scalable_targets(
-        &self,
-    ) -> crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsFluentBuilder
-    {
+    pub fn describe_scalable_targets(&self) -> crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsFluentBuilder {
         crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsFluentBuilder::new(self.handle.clone())
     }
 }

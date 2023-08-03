@@ -35,9 +35,7 @@ impl ListIpRoutesOutput {
 
 /// A builder for [`ListIpRoutesOutput`](crate::operation::list_ip_routes::ListIpRoutesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIpRoutesOutputBuilder {
     pub(crate) ip_routes_info: ::std::option::Option<::std::vec::Vec<crate::types::IpRouteInfo>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListIpRoutesOutputBuilder {
         self
     }
     /// <p>A list of <code>IpRoute</code>s.</p>
-    pub fn set_ip_routes_info(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRouteInfo>>,
-    ) -> Self {
+    pub fn set_ip_routes_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpRouteInfo>>) -> Self {
         self.ip_routes_info = input;
         self
     }
     /// <p>A list of <code>IpRoute</code>s.</p>
-    pub fn get_ip_routes_info(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRouteInfo>> {
+    pub fn get_ip_routes_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRouteInfo>> {
         &self.ip_routes_info
     }
     /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>ListIpRoutes</code> to retrieve the next set of items.</p>

@@ -27,7 +27,7 @@ impl DescribeVpcEndpointServicesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointServicesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesInputBuilder,
+    inner: crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesInputBuilder,
 }
 impl DescribeVpcEndpointServicesFluentBuilder {
     /// Creates a new `DescribeVpcEndpointServices`.
@@ -38,7 +38,7 @@ impl DescribeVpcEndpointServicesFluentBuilder {
         }
     }
     /// Access the DescribeVpcEndpointServices as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeVpcEndpointServicesFluentBuilder {
             crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeVpcEndpointServicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeVpcEndpointServicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeVpcEndpointServicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DescribeVpcEndpointServicesFluentBuilder {
             crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesError>,
     > {
         self.customize_middleware().await
     }
@@ -140,25 +129,17 @@ impl DescribeVpcEndpointServicesFluentBuilder {
     /// To override the contents of this collection use [`set_service_names`](Self::set_service_names).
     ///
     /// <p>The service names.</p>
-    pub fn service_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_names(input.into());
         self
     }
     /// <p>The service names.</p>
-    pub fn set_service_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_service_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_service_names(input);
         self
     }
     /// <p>The service names.</p>
-    pub fn get_service_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_service_names()
     }
     /// Appends an item to `Filters`.
@@ -199,10 +180,7 @@ impl DescribeVpcEndpointServicesFluentBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

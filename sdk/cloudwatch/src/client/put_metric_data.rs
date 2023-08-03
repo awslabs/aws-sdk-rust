@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`metric_data(Vec<MetricDatum>)`](crate::operation::put_metric_data::builders::PutMetricDataFluentBuilder::metric_data) / [`set_metric_data(Option<Vec<MetricDatum>>)`](crate::operation::put_metric_data::builders::PutMetricDataFluentBuilder::set_metric_data): <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
     /// - On success, responds with [`PutMetricDataOutput`](crate::operation::put_metric_data::PutMetricDataOutput)
     /// - On failure, responds with [`SdkError<PutMetricDataError>`](crate::operation::put_metric_data::PutMetricDataError)
-    pub fn put_metric_data(
-        &self,
-    ) -> crate::operation::put_metric_data::builders::PutMetricDataFluentBuilder {
-        crate::operation::put_metric_data::builders::PutMetricDataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_metric_data(&self) -> crate::operation::put_metric_data::builders::PutMetricDataFluentBuilder {
+        crate::operation::put_metric_data::builders::PutMetricDataFluentBuilder::new(self.handle.clone())
     }
 }

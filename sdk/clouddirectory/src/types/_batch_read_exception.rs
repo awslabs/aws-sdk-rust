@@ -30,9 +30,7 @@ impl BatchReadException {
 
 /// A builder for [`BatchReadException`](crate::types::BatchReadException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchReadExceptionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::BatchReadExceptionType>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl BatchReadExceptionBuilder {
         self
     }
     /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchReadExceptionType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::BatchReadExceptionType>) -> Self {
         self.r#type = input;
         self
     }

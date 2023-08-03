@@ -8,8 +8,7 @@ pub struct UpdateWorkspaceAuthenticationInput {
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
     #[doc(hidden)]
-    pub authentication_providers:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
+    pub authentication_providers: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
     /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
     #[doc(hidden)]
     pub saml_configuration: ::std::option::Option<crate::types::SamlConfiguration>,
@@ -20,9 +19,7 @@ impl UpdateWorkspaceAuthenticationInput {
         self.workspace_id.as_deref()
     }
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    pub fn authentication_providers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AuthenticationProviderTypes]> {
+    pub fn authentication_providers(&self) -> ::std::option::Option<&[crate::types::AuthenticationProviderTypes]> {
         self.authentication_providers.as_deref()
     }
     /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
@@ -32,20 +29,17 @@ impl UpdateWorkspaceAuthenticationInput {
 }
 impl UpdateWorkspaceAuthenticationInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkspaceAuthenticationInput`](crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationInput).
-    pub fn builder() -> crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationInputBuilder{
+    pub fn builder() -> crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationInputBuilder {
         crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkspaceAuthenticationInput`](crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceAuthenticationInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
-    pub(crate) authentication_providers:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
+    pub(crate) authentication_providers: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
     pub(crate) saml_configuration: ::std::option::Option<crate::types::SamlConfiguration>,
 }
 impl UpdateWorkspaceAuthenticationInputBuilder {
@@ -68,27 +62,19 @@ impl UpdateWorkspaceAuthenticationInputBuilder {
     /// To override the contents of this collection use [`set_authentication_providers`](Self::set_authentication_providers).
     ///
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    pub fn authentication_providers(
-        mut self,
-        input: crate::types::AuthenticationProviderTypes,
-    ) -> Self {
+    pub fn authentication_providers(mut self, input: crate::types::AuthenticationProviderTypes) -> Self {
         let mut v = self.authentication_providers.unwrap_or_default();
         v.push(input);
         self.authentication_providers = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    pub fn set_authentication_providers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
-    ) -> Self {
+    pub fn set_authentication_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>) -> Self {
         self.authentication_providers = input;
         self
     }
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    pub fn get_authentication_providers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>> {
+    pub fn get_authentication_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>> {
         &self.authentication_providers
     }
     /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
@@ -97,17 +83,12 @@ impl UpdateWorkspaceAuthenticationInputBuilder {
         self
     }
     /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
-    pub fn set_saml_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SamlConfiguration>,
-    ) -> Self {
+    pub fn set_saml_configuration(mut self, input: ::std::option::Option<crate::types::SamlConfiguration>) -> Self {
         self.saml_configuration = input;
         self
     }
     /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
-    pub fn get_saml_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SamlConfiguration> {
+    pub fn get_saml_configuration(&self) -> &::std::option::Option<crate::types::SamlConfiguration> {
         &self.saml_configuration
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceAuthenticationInput`](crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationInput).
@@ -117,12 +98,10 @@ impl UpdateWorkspaceAuthenticationInputBuilder {
         crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationInput {
-                workspace_id: self.workspace_id,
-                authentication_providers: self.authentication_providers,
-                saml_configuration: self.saml_configuration,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationInput {
+            workspace_id: self.workspace_id,
+            authentication_providers: self.authentication_providers,
+            saml_configuration: self.saml_configuration,
+        })
     }
 }

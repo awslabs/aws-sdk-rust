@@ -24,9 +24,7 @@ impl CompositedVideoArtifactsConfiguration {
         self.resolution.as_ref()
     }
     /// <p>The <code>GridView</code> configuration setting.</p>
-    pub fn grid_view_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GridViewConfiguration> {
+    pub fn grid_view_configuration(&self) -> ::std::option::Option<&crate::types::GridViewConfiguration> {
         self.grid_view_configuration.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl CompositedVideoArtifactsConfiguration {
 
 /// A builder for [`CompositedVideoArtifactsConfiguration`](crate::types::CompositedVideoArtifactsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompositedVideoArtifactsConfigurationBuilder {
     pub(crate) layout: ::std::option::Option<crate::types::LayoutOption>,
     pub(crate) resolution: ::std::option::Option<crate::types::ResolutionOption>,
@@ -68,10 +64,7 @@ impl CompositedVideoArtifactsConfigurationBuilder {
         self
     }
     /// <p>The video resolution setting in the configuration object. Default: HD at 1280 x 720. FHD resolution: 1920 x 1080.</p>
-    pub fn set_resolution(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolutionOption>,
-    ) -> Self {
+    pub fn set_resolution(mut self, input: ::std::option::Option<crate::types::ResolutionOption>) -> Self {
         self.resolution = input;
         self
     }
@@ -85,17 +78,12 @@ impl CompositedVideoArtifactsConfigurationBuilder {
         self
     }
     /// <p>The <code>GridView</code> configuration setting.</p>
-    pub fn set_grid_view_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::GridViewConfiguration>,
-    ) -> Self {
+    pub fn set_grid_view_configuration(mut self, input: ::std::option::Option<crate::types::GridViewConfiguration>) -> Self {
         self.grid_view_configuration = input;
         self
     }
     /// <p>The <code>GridView</code> configuration setting.</p>
-    pub fn get_grid_view_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::GridViewConfiguration> {
+    pub fn get_grid_view_configuration(&self) -> &::std::option::Option<crate::types::GridViewConfiguration> {
         &self.grid_view_configuration
     }
     /// Consumes the builder and constructs a [`CompositedVideoArtifactsConfiguration`](crate::types::CompositedVideoArtifactsConfiguration).

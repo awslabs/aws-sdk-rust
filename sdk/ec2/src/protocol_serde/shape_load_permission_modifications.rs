@@ -11,9 +11,7 @@ pub fn ser_load_permission_modifications(
         for item_3 in var_2 {
             #[allow(unused_mut)]
             let mut entry_5 = list_4.entry();
-            crate::protocol_serde::shape_load_permission_request::ser_load_permission_request(
-                entry_5, item_3,
-            )?;
+            crate::protocol_serde::shape_load_permission_request::ser_load_permission_request(entry_5, item_3)?;
         }
         list_4.finish();
     }
@@ -24,9 +22,7 @@ pub fn ser_load_permission_modifications(
         for item_8 in var_7 {
             #[allow(unused_mut)]
             let mut entry_10 = list_9.entry();
-            crate::protocol_serde::shape_load_permission_request::ser_load_permission_request(
-                entry_10, item_8,
-            )?;
+            crate::protocol_serde::shape_load_permission_request::ser_load_permission_request(entry_10, item_8)?;
         }
         list_9.finish();
     }

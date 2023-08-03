@@ -18,10 +18,7 @@ pub fn ser_listener(
     if let Some(var_5) = &input.health_check {
         #[allow(unused_mut)]
         let mut object_6 = object.key("healthCheck").start_object();
-        crate::protocol_serde::shape_health_check_policy::ser_health_check_policy(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_health_check_policy::ser_health_check_policy(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.timeout {
@@ -33,10 +30,7 @@ pub fn ser_listener(
     if let Some(var_9) = &input.outlier_detection {
         #[allow(unused_mut)]
         let mut object_10 = object.key("outlierDetection").start_object();
-        crate::protocol_serde::shape_outlier_detection::ser_outlier_detection(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_outlier_detection::ser_outlier_detection(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.connection_pool {
@@ -52,12 +46,7 @@ pub(crate) fn de_listener<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<Option<crate::types::Listener>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -67,59 +56,41 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "portMapping" => {
-                            builder = builder.set_port_mapping(
-                                crate::protocol_serde::shape_port_mapping::de_port_mapping(tokens)?,
-                            );
+                            builder = builder.set_port_mapping(crate::protocol_serde::shape_port_mapping::de_port_mapping(tokens)?);
                         }
                         "tls" => {
-                            builder = builder.set_tls(
-                                crate::protocol_serde::shape_listener_tls::de_listener_tls(tokens)?,
-                            );
+                            builder = builder.set_tls(crate::protocol_serde::shape_listener_tls::de_listener_tls(tokens)?);
                         }
                         "healthCheck" => {
-                            builder = builder.set_health_check(
-                                    crate::protocol_serde::shape_health_check_policy::de_health_check_policy(tokens)?
-                                );
+                            builder = builder.set_health_check(crate::protocol_serde::shape_health_check_policy::de_health_check_policy(tokens)?);
                         }
                         "timeout" => {
-                            builder = builder.set_timeout(
-                                crate::protocol_serde::shape_listener_timeout::de_listener_timeout(
-                                    tokens,
-                                )?,
-                            );
+                            builder = builder.set_timeout(crate::protocol_serde::shape_listener_timeout::de_listener_timeout(tokens)?);
                         }
                         "outlierDetection" => {
-                            builder = builder.set_outlier_detection(
-                                    crate::protocol_serde::shape_outlier_detection::de_outlier_detection(tokens)?
-                                );
+                            builder = builder.set_outlier_detection(crate::protocol_serde::shape_outlier_detection::de_outlier_detection(tokens)?);
                         }
                         "connectionPool" => {
                             builder = builder.set_connection_pool(
-                                    crate::protocol_serde::shape_virtual_node_connection_pool::de_virtual_node_connection_pool(tokens)?
-                                );
+                                crate::protocol_serde::shape_virtual_node_connection_pool::de_virtual_node_connection_pool(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

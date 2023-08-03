@@ -36,9 +36,7 @@ impl GetFolderInput {
 
 /// A builder for [`GetFolderInput`](crate::operation::get_folder::GetFolderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFolderInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) commit_specifier: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct GetFolderInputBuilder {
 }
 impl GetFolderInputBuilder {
     /// <p>The name of the repository.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -66,18 +58,12 @@ impl GetFolderInputBuilder {
         &self.repository_name
     }
     /// <p>A fully qualified reference used to identify a commit that contains the version of the folder's content to return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no specifier is provided, the folder content is returned as it exists in the HEAD commit.</p>
-    pub fn commit_specifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_specifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A fully qualified reference used to identify a commit that contains the version of the folder's content to return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no specifier is provided, the folder content is returned as it exists in the HEAD commit.</p>
-    pub fn set_commit_specifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_specifier = input;
         self
     }
@@ -100,12 +86,7 @@ impl GetFolderInputBuilder {
         &self.folder_path
     }
     /// Consumes the builder and constructs a [`GetFolderInput`](crate::operation::get_folder::GetFolderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_folder::GetFolderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_folder::GetFolderInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_folder::GetFolderInput {
             repository_name: self.repository_name,
             commit_specifier: self.commit_specifier,

@@ -15,16 +15,14 @@ impl DescribeKeyPhrasesDetectionJobInput {
 }
 impl DescribeKeyPhrasesDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeKeyPhrasesDetectionJobInput`](crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobInput).
-    pub fn builder() -> crate::operation::describe_key_phrases_detection_job::builders::DescribeKeyPhrasesDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_key_phrases_detection_job::builders::DescribeKeyPhrasesDetectionJobInputBuilder {
         crate::operation::describe_key_phrases_detection_job::builders::DescribeKeyPhrasesDetectionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeKeyPhrasesDetectionJobInput`](crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeKeyPhrasesDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,6 @@ impl DescribeKeyPhrasesDetectionJobInputBuilder {
         crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobInput {
-                job_id: self.job_id
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobInput { job_id: self.job_id })
     }
 }

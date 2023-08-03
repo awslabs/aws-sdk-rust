@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateGatewayInformationOutput`](crate::operation::update_gateway_information::UpdateGatewayInformationOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::update_gateway_information::UpdateGatewayInformationOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
     /// - On failure, responds with [`SdkError<UpdateGatewayInformationError>`](crate::operation::update_gateway_information::UpdateGatewayInformationError)
-    pub fn update_gateway_information(
-        &self,
-    ) -> crate::operation::update_gateway_information::builders::UpdateGatewayInformationFluentBuilder
-    {
+    pub fn update_gateway_information(&self) -> crate::operation::update_gateway_information::builders::UpdateGatewayInformationFluentBuilder {
         crate::operation::update_gateway_information::builders::UpdateGatewayInformationFluentBuilder::new(self.handle.clone())
     }
 }

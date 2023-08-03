@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for SendAlexaOfferToMasterOutput {
 }
 impl SendAlexaOfferToMasterOutput {
     /// Creates a new builder-style object to manufacture [`SendAlexaOfferToMasterOutput`](crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterOutput).
-    pub fn builder(
-    ) -> crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterOutputBuilder {
         crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendAlexaOfferToMasterOutput`](crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendAlexaOfferToMasterOutputBuilder {
     pub(crate) answer: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl SendAlexaOfferToMasterOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SendAlexaOfferToMasterOutput`](crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterOutput {
+    pub fn build(self) -> crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterOutput {
         crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterOutput {
             answer: self.answer,
             _request_id: self._request_id,

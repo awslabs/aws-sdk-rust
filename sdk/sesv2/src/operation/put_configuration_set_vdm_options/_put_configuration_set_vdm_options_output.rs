@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for PutConfigurationSetVdmOptionsOutput {
 }
 impl PutConfigurationSetVdmOptionsOutput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetVdmOptionsOutput`](crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsOutput).
-    pub fn builder() -> crate::operation::put_configuration_set_vdm_options::builders::PutConfigurationSetVdmOptionsOutputBuilder{
+    pub fn builder() -> crate::operation::put_configuration_set_vdm_options::builders::PutConfigurationSetVdmOptionsOutputBuilder {
         crate::operation::put_configuration_set_vdm_options::builders::PutConfigurationSetVdmOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutConfigurationSetVdmOptionsOutput`](crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutConfigurationSetVdmOptionsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,10 +35,7 @@ impl PutConfigurationSetVdmOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetVdmOptionsOutput`](crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsOutput
-    {
+    pub fn build(self) -> crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsOutput {
         crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsOutput {
             _request_id: self._request_id,
         }

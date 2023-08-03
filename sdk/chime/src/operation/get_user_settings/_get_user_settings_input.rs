@@ -29,9 +29,7 @@ impl GetUserSettingsInput {
 
 /// A builder for [`GetUserSettingsInput`](crate::operation::get_user_settings::GetUserSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUserSettingsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl GetUserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetUserSettingsInput`](crate::operation::get_user_settings::GetUserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_user_settings::GetUserSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_user_settings::GetUserSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_user_settings::GetUserSettingsInput {
             account_id: self.account_id,
             user_id: self.user_id,

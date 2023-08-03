@@ -13,9 +13,7 @@ impl ResourceConfig {
 
 /// A builder for [`ResourceConfig`](crate::types::ResourceConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceConfigBuilder {}
 impl ResourceConfigBuilder {
     /// Consumes the builder and constructs a [`ResourceConfig`](crate::types::ResourceConfig).

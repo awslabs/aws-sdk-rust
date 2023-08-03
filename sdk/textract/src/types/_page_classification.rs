@@ -30,9 +30,7 @@ impl PageClassification {
 
 /// A builder for [`PageClassification`](crate::types::PageClassification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PageClassificationBuilder {
     pub(crate) page_type: ::std::option::Option<::std::vec::Vec<crate::types::Prediction>>,
     pub(crate) page_number: ::std::option::Option<::std::vec::Vec<crate::types::Prediction>>,
@@ -50,17 +48,12 @@ impl PageClassificationBuilder {
         self
     }
     /// <p>The class, or document type, assigned to a detected Page object. The class, or document type, assigned to a detected Page object.</p>
-    pub fn set_page_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Prediction>>,
-    ) -> Self {
+    pub fn set_page_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Prediction>>) -> Self {
         self.page_type = input;
         self
     }
     /// <p>The class, or document type, assigned to a detected Page object. The class, or document type, assigned to a detected Page object.</p>
-    pub fn get_page_type(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Prediction>> {
+    pub fn get_page_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Prediction>> {
         &self.page_type
     }
     /// Appends an item to `page_number`.
@@ -75,17 +68,12 @@ impl PageClassificationBuilder {
         self
     }
     /// <p> The page number the value was detected on, relative to Amazon Textract's starting position.</p>
-    pub fn set_page_number(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Prediction>>,
-    ) -> Self {
+    pub fn set_page_number(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Prediction>>) -> Self {
         self.page_number = input;
         self
     }
     /// <p> The page number the value was detected on, relative to Amazon Textract's starting position.</p>
-    pub fn get_page_number(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Prediction>> {
+    pub fn get_page_number(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Prediction>> {
         &self.page_number
     }
     /// Consumes the builder and constructs a [`PageClassification`](crate::types::PageClassification).

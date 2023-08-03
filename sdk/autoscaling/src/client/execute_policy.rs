@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`breach_threshold(f64)`](crate::operation::execute_policy::builders::ExecutePolicyFluentBuilder::breach_threshold) / [`set_breach_threshold(Option<f64>)`](crate::operation::execute_policy::builders::ExecutePolicyFluentBuilder::set_breach_threshold): <p>The breach threshold for the alarm.</p>  <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
     /// - On success, responds with [`ExecutePolicyOutput`](crate::operation::execute_policy::ExecutePolicyOutput)
     /// - On failure, responds with [`SdkError<ExecutePolicyError>`](crate::operation::execute_policy::ExecutePolicyError)
-    pub fn execute_policy(
-        &self,
-    ) -> crate::operation::execute_policy::builders::ExecutePolicyFluentBuilder {
-        crate::operation::execute_policy::builders::ExecutePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn execute_policy(&self) -> crate::operation::execute_policy::builders::ExecutePolicyFluentBuilder {
+        crate::operation::execute_policy::builders::ExecutePolicyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`pipeline_execution_summaries(Option<Vec<PipelineExecutionSummary>>)`](crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput::pipeline_execution_summaries): <p>A list of executions in the history of a pipeline.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput::next_token): <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>
     /// - On failure, responds with [`SdkError<ListPipelineExecutionsError>`](crate::operation::list_pipeline_executions::ListPipelineExecutionsError)
-    pub fn list_pipeline_executions(
-        &self,
-    ) -> crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder
-    {
+    pub fn list_pipeline_executions(&self) -> crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder {
         crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

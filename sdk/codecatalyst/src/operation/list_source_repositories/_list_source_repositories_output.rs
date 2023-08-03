@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSourceRepositoriesOutput {
 }
 impl ListSourceRepositoriesOutput {
     /// Creates a new builder-style object to manufacture [`ListSourceRepositoriesOutput`](crate::operation::list_source_repositories::ListSourceRepositoriesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_source_repositories::builders::ListSourceRepositoriesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_source_repositories::builders::ListSourceRepositoriesOutputBuilder {
         crate::operation::list_source_repositories::builders::ListSourceRepositoriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSourceRepositoriesOutput`](crate::operation::list_source_repositories::ListSourceRepositoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSourceRepositoriesOutputBuilder {
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoriesItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoriesItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListSourceRepositoriesOutputBuilder {
         self
     }
     /// <p>Information about the source repositories.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoriesItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoriesItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Information about the source repositories.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoriesItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoriesItem>> {
         &self.items
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>

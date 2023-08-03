@@ -79,9 +79,7 @@ impl ManagedRuleSetSummary {
 
 /// A builder for [`ManagedRuleSetSummary`](crate::types::ManagedRuleSetSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ManagedRuleSetSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -173,10 +171,7 @@ impl ManagedRuleSetSummaryBuilder {
     /// </vendor></code>:</p> </li>
     /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
-    pub fn label_namespace(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn label_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_namespace = ::std::option::Option::Some(input.into());
         self
     }
@@ -189,10 +184,7 @@ impl ManagedRuleSetSummaryBuilder {
     /// </vendor></code>:</p> </li>
     /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
-    pub fn set_label_namespace(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_label_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_namespace = input;
         self
     }

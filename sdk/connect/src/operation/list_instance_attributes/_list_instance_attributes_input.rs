@@ -29,18 +29,14 @@ impl ListInstanceAttributesInput {
 }
 impl ListInstanceAttributesInput {
     /// Creates a new builder-style object to manufacture [`ListInstanceAttributesInput`](crate::operation::list_instance_attributes::ListInstanceAttributesInput).
-    pub fn builder(
-    ) -> crate::operation::list_instance_attributes::builders::ListInstanceAttributesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_instance_attributes::builders::ListInstanceAttributesInputBuilder {
         crate::operation::list_instance_attributes::builders::ListInstanceAttributesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInstanceAttributesInput`](crate::operation::list_instance_attributes::ListInstanceAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceAttributesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -92,16 +88,12 @@ impl ListInstanceAttributesInputBuilder {
     /// Consumes the builder and constructs a [`ListInstanceAttributesInput`](crate::operation::list_instance_attributes::ListInstanceAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_instance_attributes::ListInstanceAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_instance_attributes::ListInstanceAttributesInput {
-                instance_id: self.instance_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_instance_attributes::ListInstanceAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_instance_attributes::ListInstanceAttributesInput {
+            instance_id: self.instance_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

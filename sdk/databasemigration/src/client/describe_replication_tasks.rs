@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_replication_tasks::DescribeReplicationTasksOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     ///   - [`replication_tasks(Option<Vec<ReplicationTask>>)`](crate::operation::describe_replication_tasks::DescribeReplicationTasksOutput::replication_tasks): <p>A description of the replication tasks.</p>
     /// - On failure, responds with [`SdkError<DescribeReplicationTasksError>`](crate::operation::describe_replication_tasks::DescribeReplicationTasksError)
-    pub fn describe_replication_tasks(
-        &self,
-    ) -> crate::operation::describe_replication_tasks::builders::DescribeReplicationTasksFluentBuilder
-    {
+    pub fn describe_replication_tasks(&self) -> crate::operation::describe_replication_tasks::builders::DescribeReplicationTasksFluentBuilder {
         crate::operation::describe_replication_tasks::builders::DescribeReplicationTasksFluentBuilder::new(self.handle.clone())
     }
 }

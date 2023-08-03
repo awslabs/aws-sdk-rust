@@ -30,9 +30,7 @@ impl ApprovalRuleOverriddenEventMetadata {
 
 /// A builder for [`ApprovalRuleOverriddenEventMetadata`](crate::types::ApprovalRuleOverriddenEventMetadata).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApprovalRuleOverriddenEventMetadataBuilder {
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) override_status: ::std::option::Option<crate::types::OverrideStatus>,
@@ -58,10 +56,7 @@ impl ApprovalRuleOverriddenEventMetadataBuilder {
         self
     }
     /// <p>The status of the override event.</p>
-    pub fn set_override_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OverrideStatus>,
-    ) -> Self {
+    pub fn set_override_status(mut self, input: ::std::option::Option<crate::types::OverrideStatus>) -> Self {
         self.override_status = input;
         self
     }

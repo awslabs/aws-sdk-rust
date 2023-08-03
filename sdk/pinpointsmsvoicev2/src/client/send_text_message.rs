@@ -17,11 +17,7 @@ impl super::Client {
     /// - On success, responds with [`SendTextMessageOutput`](crate::operation::send_text_message::SendTextMessageOutput) with field(s):
     ///   - [`message_id(Option<String>)`](crate::operation::send_text_message::SendTextMessageOutput::message_id): <p>The unique identifier for the message.</p>
     /// - On failure, responds with [`SdkError<SendTextMessageError>`](crate::operation::send_text_message::SendTextMessageError)
-    pub fn send_text_message(
-        &self,
-    ) -> crate::operation::send_text_message::builders::SendTextMessageFluentBuilder {
-        crate::operation::send_text_message::builders::SendTextMessageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn send_text_message(&self) -> crate::operation::send_text_message::builders::SendTextMessageFluentBuilder {
+        crate::operation::send_text_message::builders::SendTextMessageFluentBuilder::new(self.handle.clone())
     }
 }

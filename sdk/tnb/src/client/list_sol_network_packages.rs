@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`network_packages(Option<Vec<ListSolNetworkPackageInfo>>)`](crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput::network_packages): <p>Network packages. A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
     /// - On failure, responds with [`SdkError<ListSolNetworkPackagesError>`](crate::operation::list_sol_network_packages::ListSolNetworkPackagesError)
-    pub fn list_sol_network_packages(
-        &self,
-    ) -> crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesFluentBuilder
-    {
+    pub fn list_sol_network_packages(&self) -> crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesFluentBuilder {
         crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -18,10 +18,7 @@ pub fn ser_update_monitoring_input(
     if let Some(var_5) = &input.open_monitoring {
         #[allow(unused_mut)]
         let mut object_6 = object.key("openMonitoring").start_object();
-        crate::protocol_serde::shape_open_monitoring_info::ser_open_monitoring_info(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_open_monitoring_info::ser_open_monitoring_info(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())

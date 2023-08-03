@@ -33,9 +33,7 @@ impl AwsCloudFrontDistributionCacheBehavior {
 
 /// A builder for [`AwsCloudFrontDistributionCacheBehavior`](crate::types::AwsCloudFrontDistributionCacheBehavior).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionCacheBehaviorBuilder {
     pub(crate) viewer_protocol_policy: ::std::option::Option<::std::string::String>,
 }
@@ -46,10 +44,7 @@ impl AwsCloudFrontDistributionCacheBehaviorBuilder {
     /// <li> <p> <code>redirect-to-https</code> - CloudFront responds to HTTP requests with an HTTP status code of 301 (Moved Permanently) and the HTTPS URL. The viewer then uses the new URL to resubmit.</p> </li>
     /// <li> <p> <code>https-only</code> - CloudFront responds to HTTP request with an HTTP status code of 403 (Forbidden).</p> </li>
     /// </ul>
-    pub fn viewer_protocol_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn viewer_protocol_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.viewer_protocol_policy = ::std::option::Option::Some(input.into());
         self
     }
@@ -59,10 +54,7 @@ impl AwsCloudFrontDistributionCacheBehaviorBuilder {
     /// <li> <p> <code>redirect-to-https</code> - CloudFront responds to HTTP requests with an HTTP status code of 301 (Moved Permanently) and the HTTPS URL. The viewer then uses the new URL to resubmit.</p> </li>
     /// <li> <p> <code>https-only</code> - CloudFront responds to HTTP request with an HTTP status code of 403 (Forbidden).</p> </li>
     /// </ul>
-    pub fn set_viewer_protocol_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_viewer_protocol_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.viewer_protocol_policy = input;
         self
     }

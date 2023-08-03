@@ -38,9 +38,7 @@ impl UpdatePipelineStatusFluentBuilder {
         }
     }
     /// Access the UpdatePipelineStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_pipeline_status::builders::UpdatePipelineStatusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_pipeline_status::builders::UpdatePipelineStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl UpdatePipelineStatusFluentBuilder {
             crate::operation::update_pipeline_status::UpdatePipelineStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pipeline_status::UpdatePipelineStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline_status::UpdatePipelineStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl UpdatePipelineStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl UpdatePipelineStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pipeline_status::UpdatePipelineStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pipeline_status::UpdatePipelineStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline_status::UpdatePipelineStatusError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl UpdatePipelineStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pipeline_status::UpdatePipelineStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pipeline_status::UpdatePipelineStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline_status::UpdatePipelineStatusError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl UpdatePipelineStatusFluentBuilder {
             crate::operation::update_pipeline_status::UpdatePipelineStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_pipeline_status::UpdatePipelineStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline_status::UpdatePipelineStatusError>,
     > {
         self.customize_middleware().await
     }

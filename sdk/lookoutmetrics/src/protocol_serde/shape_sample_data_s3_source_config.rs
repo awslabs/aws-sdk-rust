@@ -27,10 +27,7 @@ pub fn ser_sample_data_s3_source_config(
     if let Some(var_8) = &input.file_format_descriptor {
         #[allow(unused_mut)]
         let mut object_9 = object.key("FileFormatDescriptor").start_object();
-        crate::protocol_serde::shape_file_format_descriptor::ser_file_format_descriptor(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_file_format_descriptor::ser_file_format_descriptor(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())

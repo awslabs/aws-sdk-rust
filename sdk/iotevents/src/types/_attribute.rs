@@ -37,9 +37,7 @@ impl Attribute {
 
 /// A builder for [`Attribute`](crate::types::Attribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributeBuilder {
     pub(crate) json_path: ::std::option::Option<::std::string::String>,
 }
@@ -81,8 +79,6 @@ impl AttributeBuilder {
     }
     /// Consumes the builder and constructs a [`Attribute`](crate::types::Attribute).
     pub fn build(self) -> crate::types::Attribute {
-        crate::types::Attribute {
-            json_path: self.json_path,
-        }
+        crate::types::Attribute { json_path: self.json_path }
     }
 }

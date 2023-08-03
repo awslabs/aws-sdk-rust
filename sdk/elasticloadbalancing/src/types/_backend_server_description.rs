@@ -30,9 +30,7 @@ impl BackendServerDescription {
 
 /// A builder for [`BackendServerDescription`](crate::types::BackendServerDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackendServerDescriptionBuilder {
     pub(crate) instance_port: ::std::option::Option<i32>,
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,17 +62,12 @@ impl BackendServerDescriptionBuilder {
         self
     }
     /// <p>The names of the policies enabled for the EC2 instance.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policy_names = input;
         self
     }
     /// <p>The names of the policies enabled for the EC2 instance.</p>
-    pub fn get_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.policy_names
     }
     /// Consumes the builder and constructs a [`BackendServerDescription`](crate::types::BackendServerDescription).

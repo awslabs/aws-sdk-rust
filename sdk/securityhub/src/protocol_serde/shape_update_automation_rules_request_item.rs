@@ -36,10 +36,7 @@ pub fn ser_update_automation_rules_request_item(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_automation_rules_action::ser_automation_rules_action(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_automation_rules_action::ser_automation_rules_action(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

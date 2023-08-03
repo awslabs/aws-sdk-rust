@@ -6,20 +6,17 @@
 pub struct AwsDynamoDbTableDetails {
     /// <p>A list of attribute definitions for the table.</p>
     #[doc(hidden)]
-    pub attribute_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableAttributeDefinition>>,
+    pub attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableAttributeDefinition>>,
     /// <p>Information about the billing for read/write capacity on the table.</p>
     #[doc(hidden)]
-    pub billing_mode_summary:
-        ::std::option::Option<crate::types::AwsDynamoDbTableBillingModeSummary>,
+    pub billing_mode_summary: ::std::option::Option<crate::types::AwsDynamoDbTableBillingModeSummary>,
     /// <p>Indicates when the table was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::std::string::String>,
     /// <p>List of global secondary indexes for the table.</p>
     #[doc(hidden)]
-    pub global_secondary_indexes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableGlobalSecondaryIndex>>,
+    pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableGlobalSecondaryIndex>>,
     /// <p>The version of global tables being used.</p>
     #[doc(hidden)]
     pub global_table_version: ::std::option::Option<::std::string::String>,
@@ -37,12 +34,10 @@ pub struct AwsDynamoDbTableDetails {
     pub latest_stream_label: ::std::option::Option<::std::string::String>,
     /// <p>The list of local secondary indexes for the table.</p>
     #[doc(hidden)]
-    pub local_secondary_indexes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableLocalSecondaryIndex>>,
+    pub local_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableLocalSecondaryIndex>>,
     /// <p>Information about the provisioned throughput for the table.</p>
     #[doc(hidden)]
-    pub provisioned_throughput:
-        ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
+    pub provisioned_throughput: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
     /// <p>The list of replicas of this table.</p>
     #[doc(hidden)]
     pub replicas: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableReplica>>,
@@ -54,8 +49,7 @@ pub struct AwsDynamoDbTableDetails {
     pub sse_description: ::std::option::Option<crate::types::AwsDynamoDbTableSseDescription>,
     /// <p>The current DynamoDB Streams configuration for the table.</p>
     #[doc(hidden)]
-    pub stream_specification:
-        ::std::option::Option<crate::types::AwsDynamoDbTableStreamSpecification>,
+    pub stream_specification: ::std::option::Option<crate::types::AwsDynamoDbTableStreamSpecification>,
     /// <p>The identifier of the table.</p>
     #[doc(hidden)]
     pub table_id: ::std::option::Option<::std::string::String>,
@@ -80,15 +74,11 @@ pub struct AwsDynamoDbTableDetails {
 }
 impl AwsDynamoDbTableDetails {
     /// <p>A list of attribute definitions for the table.</p>
-    pub fn attribute_definitions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsDynamoDbTableAttributeDefinition]> {
+    pub fn attribute_definitions(&self) -> ::std::option::Option<&[crate::types::AwsDynamoDbTableAttributeDefinition]> {
         self.attribute_definitions.as_deref()
     }
     /// <p>Information about the billing for read/write capacity on the table.</p>
-    pub fn billing_mode_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsDynamoDbTableBillingModeSummary> {
+    pub fn billing_mode_summary(&self) -> ::std::option::Option<&crate::types::AwsDynamoDbTableBillingModeSummary> {
         self.billing_mode_summary.as_ref()
     }
     /// <p>Indicates when the table was created.</p>
@@ -97,9 +87,7 @@ impl AwsDynamoDbTableDetails {
         self.creation_date_time.as_deref()
     }
     /// <p>List of global secondary indexes for the table.</p>
-    pub fn global_secondary_indexes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsDynamoDbTableGlobalSecondaryIndex]> {
+    pub fn global_secondary_indexes(&self) -> ::std::option::Option<&[crate::types::AwsDynamoDbTableGlobalSecondaryIndex]> {
         self.global_secondary_indexes.as_deref()
     }
     /// <p>The version of global tables being used.</p>
@@ -123,15 +111,11 @@ impl AwsDynamoDbTableDetails {
         self.latest_stream_label.as_deref()
     }
     /// <p>The list of local secondary indexes for the table.</p>
-    pub fn local_secondary_indexes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsDynamoDbTableLocalSecondaryIndex]> {
+    pub fn local_secondary_indexes(&self) -> ::std::option::Option<&[crate::types::AwsDynamoDbTableLocalSecondaryIndex]> {
         self.local_secondary_indexes.as_deref()
     }
     /// <p>Information about the provisioned throughput for the table.</p>
-    pub fn provisioned_throughput(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsDynamoDbTableProvisionedThroughput> {
+    pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::AwsDynamoDbTableProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
     /// <p>The list of replicas of this table.</p>
@@ -139,21 +123,15 @@ impl AwsDynamoDbTableDetails {
         self.replicas.as_deref()
     }
     /// <p>Information about the restore for the table.</p>
-    pub fn restore_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsDynamoDbTableRestoreSummary> {
+    pub fn restore_summary(&self) -> ::std::option::Option<&crate::types::AwsDynamoDbTableRestoreSummary> {
         self.restore_summary.as_ref()
     }
     /// <p>Information about the server-side encryption for the table.</p>
-    pub fn sse_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsDynamoDbTableSseDescription> {
+    pub fn sse_description(&self) -> ::std::option::Option<&crate::types::AwsDynamoDbTableSseDescription> {
         self.sse_description.as_ref()
     }
     /// <p>The current DynamoDB Streams configuration for the table.</p>
-    pub fn stream_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsDynamoDbTableStreamSpecification> {
+    pub fn stream_specification(&self) -> ::std::option::Option<&crate::types::AwsDynamoDbTableStreamSpecification> {
         self.stream_specification.as_ref()
     }
     /// <p>The identifier of the table.</p>
@@ -191,33 +169,23 @@ impl AwsDynamoDbTableDetails {
 
 /// A builder for [`AwsDynamoDbTableDetails`](crate::types::AwsDynamoDbTableDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableDetailsBuilder {
-    pub(crate) attribute_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableAttributeDefinition>>,
-    pub(crate) billing_mode_summary:
-        ::std::option::Option<crate::types::AwsDynamoDbTableBillingModeSummary>,
+    pub(crate) attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableAttributeDefinition>>,
+    pub(crate) billing_mode_summary: ::std::option::Option<crate::types::AwsDynamoDbTableBillingModeSummary>,
     pub(crate) creation_date_time: ::std::option::Option<::std::string::String>,
-    pub(crate) global_secondary_indexes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableGlobalSecondaryIndex>>,
+    pub(crate) global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableGlobalSecondaryIndex>>,
     pub(crate) global_table_version: ::std::option::Option<::std::string::String>,
     pub(crate) item_count: ::std::option::Option<i32>,
-    pub(crate) key_schema:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
+    pub(crate) key_schema: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
     pub(crate) latest_stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) latest_stream_label: ::std::option::Option<::std::string::String>,
-    pub(crate) local_secondary_indexes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableLocalSecondaryIndex>>,
-    pub(crate) provisioned_throughput:
-        ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
-    pub(crate) replicas:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableReplica>>,
+    pub(crate) local_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableLocalSecondaryIndex>>,
+    pub(crate) provisioned_throughput: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
+    pub(crate) replicas: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableReplica>>,
     pub(crate) restore_summary: ::std::option::Option<crate::types::AwsDynamoDbTableRestoreSummary>,
     pub(crate) sse_description: ::std::option::Option<crate::types::AwsDynamoDbTableSseDescription>,
-    pub(crate) stream_specification:
-        ::std::option::Option<crate::types::AwsDynamoDbTableStreamSpecification>,
+    pub(crate) stream_specification: ::std::option::Option<crate::types::AwsDynamoDbTableStreamSpecification>,
     pub(crate) table_id: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_size_bytes: ::std::option::Option<i64>,
@@ -229,10 +197,7 @@ impl AwsDynamoDbTableDetailsBuilder {
     /// To override the contents of this collection use [`set_attribute_definitions`](Self::set_attribute_definitions).
     ///
     /// <p>A list of attribute definitions for the table.</p>
-    pub fn attribute_definitions(
-        mut self,
-        input: crate::types::AwsDynamoDbTableAttributeDefinition,
-    ) -> Self {
+    pub fn attribute_definitions(mut self, input: crate::types::AwsDynamoDbTableAttributeDefinition) -> Self {
         let mut v = self.attribute_definitions.unwrap_or_default();
         v.push(input);
         self.attribute_definitions = ::std::option::Option::Some(v);
@@ -241,57 +206,38 @@ impl AwsDynamoDbTableDetailsBuilder {
     /// <p>A list of attribute definitions for the table.</p>
     pub fn set_attribute_definitions(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsDynamoDbTableAttributeDefinition>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableAttributeDefinition>>,
     ) -> Self {
         self.attribute_definitions = input;
         self
     }
     /// <p>A list of attribute definitions for the table.</p>
-    pub fn get_attribute_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableAttributeDefinition>>
-    {
+    pub fn get_attribute_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableAttributeDefinition>> {
         &self.attribute_definitions
     }
     /// <p>Information about the billing for read/write capacity on the table.</p>
-    pub fn billing_mode_summary(
-        mut self,
-        input: crate::types::AwsDynamoDbTableBillingModeSummary,
-    ) -> Self {
+    pub fn billing_mode_summary(mut self, input: crate::types::AwsDynamoDbTableBillingModeSummary) -> Self {
         self.billing_mode_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the billing for read/write capacity on the table.</p>
-    pub fn set_billing_mode_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsDynamoDbTableBillingModeSummary>,
-    ) -> Self {
+    pub fn set_billing_mode_summary(mut self, input: ::std::option::Option<crate::types::AwsDynamoDbTableBillingModeSummary>) -> Self {
         self.billing_mode_summary = input;
         self
     }
     /// <p>Information about the billing for read/write capacity on the table.</p>
-    pub fn get_billing_mode_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsDynamoDbTableBillingModeSummary> {
+    pub fn get_billing_mode_summary(&self) -> &::std::option::Option<crate::types::AwsDynamoDbTableBillingModeSummary> {
         &self.billing_mode_summary
     }
     /// <p>Indicates when the table was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn creation_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the table was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -305,10 +251,7 @@ impl AwsDynamoDbTableDetailsBuilder {
     /// To override the contents of this collection use [`set_global_secondary_indexes`](Self::set_global_secondary_indexes).
     ///
     /// <p>List of global secondary indexes for the table.</p>
-    pub fn global_secondary_indexes(
-        mut self,
-        input: crate::types::AwsDynamoDbTableGlobalSecondaryIndex,
-    ) -> Self {
+    pub fn global_secondary_indexes(mut self, input: crate::types::AwsDynamoDbTableGlobalSecondaryIndex) -> Self {
         let mut v = self.global_secondary_indexes.unwrap_or_default();
         v.push(input);
         self.global_secondary_indexes = ::std::option::Option::Some(v);
@@ -317,33 +260,22 @@ impl AwsDynamoDbTableDetailsBuilder {
     /// <p>List of global secondary indexes for the table.</p>
     pub fn set_global_secondary_indexes(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsDynamoDbTableGlobalSecondaryIndex>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableGlobalSecondaryIndex>>,
     ) -> Self {
         self.global_secondary_indexes = input;
         self
     }
     /// <p>List of global secondary indexes for the table.</p>
-    pub fn get_global_secondary_indexes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableGlobalSecondaryIndex>>
-    {
+    pub fn get_global_secondary_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableGlobalSecondaryIndex>> {
         &self.global_secondary_indexes
     }
     /// <p>The version of global tables being used.</p>
-    pub fn global_table_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_table_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_table_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of global tables being used.</p>
-    pub fn set_global_table_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_table_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_table_version = input;
         self
     }
@@ -377,32 +309,21 @@ impl AwsDynamoDbTableDetailsBuilder {
         self
     }
     /// <p>The primary key structure for the table.</p>
-    pub fn set_key_schema(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
-    ) -> Self {
+    pub fn set_key_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>) -> Self {
         self.key_schema = input;
         self
     }
     /// <p>The primary key structure for the table.</p>
-    pub fn get_key_schema(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>> {
+    pub fn get_key_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>> {
         &self.key_schema
     }
     /// <p>The ARN of the latest stream for the table.</p>
-    pub fn latest_stream_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the latest stream for the table.</p>
-    pub fn set_latest_stream_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_stream_arn = input;
         self
     }
@@ -411,18 +332,12 @@ impl AwsDynamoDbTableDetailsBuilder {
         &self.latest_stream_arn
     }
     /// <p>The label of the latest stream. The label is not a unique identifier.</p>
-    pub fn latest_stream_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn latest_stream_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_stream_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The label of the latest stream. The label is not a unique identifier.</p>
-    pub fn set_latest_stream_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_latest_stream_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_stream_label = input;
         self
     }
@@ -435,10 +350,7 @@ impl AwsDynamoDbTableDetailsBuilder {
     /// To override the contents of this collection use [`set_local_secondary_indexes`](Self::set_local_secondary_indexes).
     ///
     /// <p>The list of local secondary indexes for the table.</p>
-    pub fn local_secondary_indexes(
-        mut self,
-        input: crate::types::AwsDynamoDbTableLocalSecondaryIndex,
-    ) -> Self {
+    pub fn local_secondary_indexes(mut self, input: crate::types::AwsDynamoDbTableLocalSecondaryIndex) -> Self {
         let mut v = self.local_secondary_indexes.unwrap_or_default();
         v.push(input);
         self.local_secondary_indexes = ::std::option::Option::Some(v);
@@ -447,40 +359,27 @@ impl AwsDynamoDbTableDetailsBuilder {
     /// <p>The list of local secondary indexes for the table.</p>
     pub fn set_local_secondary_indexes(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsDynamoDbTableLocalSecondaryIndex>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableLocalSecondaryIndex>>,
     ) -> Self {
         self.local_secondary_indexes = input;
         self
     }
     /// <p>The list of local secondary indexes for the table.</p>
-    pub fn get_local_secondary_indexes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableLocalSecondaryIndex>>
-    {
+    pub fn get_local_secondary_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableLocalSecondaryIndex>> {
         &self.local_secondary_indexes
     }
     /// <p>Information about the provisioned throughput for the table.</p>
-    pub fn provisioned_throughput(
-        mut self,
-        input: crate::types::AwsDynamoDbTableProvisionedThroughput,
-    ) -> Self {
+    pub fn provisioned_throughput(mut self, input: crate::types::AwsDynamoDbTableProvisionedThroughput) -> Self {
         self.provisioned_throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the provisioned throughput for the table.</p>
-    pub fn set_provisioned_throughput(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
-    ) -> Self {
+    pub fn set_provisioned_throughput(mut self, input: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>) -> Self {
         self.provisioned_throughput = input;
         self
     }
     /// <p>Information about the provisioned throughput for the table.</p>
-    pub fn get_provisioned_throughput(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput> {
+    pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput> {
         &self.provisioned_throughput
     }
     /// Appends an item to `replicas`.
@@ -495,17 +394,12 @@ impl AwsDynamoDbTableDetailsBuilder {
         self
     }
     /// <p>The list of replicas of this table.</p>
-    pub fn set_replicas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableReplica>>,
-    ) -> Self {
+    pub fn set_replicas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableReplica>>) -> Self {
         self.replicas = input;
         self
     }
     /// <p>The list of replicas of this table.</p>
-    pub fn get_replicas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableReplica>> {
+    pub fn get_replicas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableReplica>> {
         &self.replicas
     }
     /// <p>Information about the restore for the table.</p>
@@ -514,17 +408,12 @@ impl AwsDynamoDbTableDetailsBuilder {
         self
     }
     /// <p>Information about the restore for the table.</p>
-    pub fn set_restore_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsDynamoDbTableRestoreSummary>,
-    ) -> Self {
+    pub fn set_restore_summary(mut self, input: ::std::option::Option<crate::types::AwsDynamoDbTableRestoreSummary>) -> Self {
         self.restore_summary = input;
         self
     }
     /// <p>Information about the restore for the table.</p>
-    pub fn get_restore_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsDynamoDbTableRestoreSummary> {
+    pub fn get_restore_summary(&self) -> &::std::option::Option<crate::types::AwsDynamoDbTableRestoreSummary> {
         &self.restore_summary
     }
     /// <p>Information about the server-side encryption for the table.</p>
@@ -533,39 +422,26 @@ impl AwsDynamoDbTableDetailsBuilder {
         self
     }
     /// <p>Information about the server-side encryption for the table.</p>
-    pub fn set_sse_description(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsDynamoDbTableSseDescription>,
-    ) -> Self {
+    pub fn set_sse_description(mut self, input: ::std::option::Option<crate::types::AwsDynamoDbTableSseDescription>) -> Self {
         self.sse_description = input;
         self
     }
     /// <p>Information about the server-side encryption for the table.</p>
-    pub fn get_sse_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsDynamoDbTableSseDescription> {
+    pub fn get_sse_description(&self) -> &::std::option::Option<crate::types::AwsDynamoDbTableSseDescription> {
         &self.sse_description
     }
     /// <p>The current DynamoDB Streams configuration for the table.</p>
-    pub fn stream_specification(
-        mut self,
-        input: crate::types::AwsDynamoDbTableStreamSpecification,
-    ) -> Self {
+    pub fn stream_specification(mut self, input: crate::types::AwsDynamoDbTableStreamSpecification) -> Self {
         self.stream_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current DynamoDB Streams configuration for the table.</p>
-    pub fn set_stream_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsDynamoDbTableStreamSpecification>,
-    ) -> Self {
+    pub fn set_stream_specification(mut self, input: ::std::option::Option<crate::types::AwsDynamoDbTableStreamSpecification>) -> Self {
         self.stream_specification = input;
         self
     }
     /// <p>The current DynamoDB Streams configuration for the table.</p>
-    pub fn get_stream_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsDynamoDbTableStreamSpecification> {
+    pub fn get_stream_specification(&self) -> &::std::option::Option<crate::types::AwsDynamoDbTableStreamSpecification> {
         &self.stream_specification
     }
     /// <p>The identifier of the table.</p>

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`rotation_shifts(Option<Vec<RotationShift>>)`](crate::operation::list_rotation_shifts::ListRotationShiftsOutput::rotation_shifts): <p>Information about shifts that meet the filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rotation_shifts::ListRotationShiftsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListRotationShiftsError>`](crate::operation::list_rotation_shifts::ListRotationShiftsError)
-    pub fn list_rotation_shifts(
-        &self,
-    ) -> crate::operation::list_rotation_shifts::builders::ListRotationShiftsFluentBuilder {
-        crate::operation::list_rotation_shifts::builders::ListRotationShiftsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_rotation_shifts(&self) -> crate::operation::list_rotation_shifts::builders::ListRotationShiftsFluentBuilder {
+        crate::operation::list_rotation_shifts::builders::ListRotationShiftsFluentBuilder::new(self.handle.clone())
     }
 }

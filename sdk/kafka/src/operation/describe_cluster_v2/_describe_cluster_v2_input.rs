@@ -15,17 +15,14 @@ impl DescribeClusterV2Input {
 }
 impl DescribeClusterV2Input {
     /// Creates a new builder-style object to manufacture [`DescribeClusterV2Input`](crate::operation::describe_cluster_v2::DescribeClusterV2Input).
-    pub fn builder(
-    ) -> crate::operation::describe_cluster_v2::builders::DescribeClusterV2InputBuilder {
+    pub fn builder() -> crate::operation::describe_cluster_v2::builders::DescribeClusterV2InputBuilder {
         crate::operation::describe_cluster_v2::builders::DescribeClusterV2InputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterV2Input`](crate::operation::describe_cluster_v2::DescribeClusterV2Input).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterV2InputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl DescribeClusterV2InputBuilder {
     /// Consumes the builder and constructs a [`DescribeClusterV2Input`](crate::operation::describe_cluster_v2::DescribeClusterV2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cluster_v2::DescribeClusterV2Input,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cluster_v2::DescribeClusterV2Input {
-                cluster_arn: self.cluster_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_cluster_v2::DescribeClusterV2Input, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_cluster_v2::DescribeClusterV2Input {
+            cluster_arn: self.cluster_arn,
+        })
     }
 }

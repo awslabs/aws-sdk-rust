@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetUserSettingsOutput {
 }
 impl GetUserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetUserSettingsOutput`](crate::operation::get_user_settings::GetUserSettingsOutput).
-    pub fn builder() -> crate::operation::get_user_settings::builders::GetUserSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_user_settings::builders::GetUserSettingsOutputBuilder {
         crate::operation::get_user_settings::builders::GetUserSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetUserSettingsOutput`](crate::operation::get_user_settings::GetUserSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUserSettingsOutputBuilder {
     pub(crate) user_settings: ::std::option::Option<crate::types::UserSettings>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetUserSettingsOutputBuilder {
         self
     }
     /// <p>The user settings.</p>
-    pub fn set_user_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::UserSettings>,
-    ) -> Self {
+    pub fn set_user_settings(mut self, input: ::std::option::Option<crate::types::UserSettings>) -> Self {
         self.user_settings = input;
         self
     }

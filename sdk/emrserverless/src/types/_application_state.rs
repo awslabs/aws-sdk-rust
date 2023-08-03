@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ApplicationState {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for ApplicationState {
             "STOPPED" => ApplicationState::Stopped,
             "STOPPING" => ApplicationState::Stopping,
             "TERMINATED" => ApplicationState::Terminated,
-            other => {
-                ApplicationState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ApplicationState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl ApplicationState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED",
-            "CREATING",
-            "STARTED",
-            "STARTING",
-            "STOPPED",
-            "STOPPING",
-            "TERMINATED",
-        ]
+        &["CREATED", "CREATING", "STARTED", "STARTING", "STOPPED", "STOPPING", "TERMINATED"]
     }
 }
 impl ::std::convert::AsRef<str> for ApplicationState {

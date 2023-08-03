@@ -85,16 +85,14 @@ impl RevokeSecurityGroupIngressInput {
 }
 impl RevokeSecurityGroupIngressInput {
     /// Creates a new builder-style object to manufacture [`RevokeSecurityGroupIngressInput`](crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressInput).
-    pub fn builder() -> crate::operation::revoke_security_group_ingress::builders::RevokeSecurityGroupIngressInputBuilder{
+    pub fn builder() -> crate::operation::revoke_security_group_ingress::builders::RevokeSecurityGroupIngressInputBuilder {
         crate::operation::revoke_security_group_ingress::builders::RevokeSecurityGroupIngressInputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeSecurityGroupIngressInput`](crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeSecurityGroupIngressInputBuilder {
     pub(crate) cidr_ip: ::std::option::Option<::std::string::String>,
     pub(crate) from_port: ::std::option::Option<i32>,
@@ -106,8 +104,7 @@ pub struct RevokeSecurityGroupIngressInputBuilder {
     pub(crate) source_security_group_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) to_port: ::std::option::Option<i32>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) security_group_rule_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_rule_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RevokeSecurityGroupIngressInputBuilder {
     /// <p>The CIDR IP address range. You can't specify this parameter when specifying a source security group.</p>
@@ -178,17 +175,12 @@ impl RevokeSecurityGroupIngressInputBuilder {
         self
     }
     /// <p>The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the same set of permissions.</p>
-    pub fn set_ip_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
-    ) -> Self {
+    pub fn set_ip_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.ip_permissions = input;
         self
     }
     /// <p>The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the same set of permissions.</p>
-    pub fn get_ip_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+    pub fn get_ip_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         &self.ip_permissions
     }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). Use <code>-1</code> to specify all.</p>
@@ -206,18 +198,12 @@ impl RevokeSecurityGroupIngressInputBuilder {
         &self.ip_protocol
     }
     /// <p>[Default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. The source security group must be in the same VPC. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.</p>
-    pub fn source_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[Default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. The source security group must be in the same VPC. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.</p>
-    pub fn set_source_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_security_group_name = input;
         self
     }
@@ -226,25 +212,17 @@ impl RevokeSecurityGroupIngressInputBuilder {
         &self.source_security_group_name
     }
     /// <p>Not supported.</p>
-    pub fn source_security_group_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Not supported.</p>
-    pub fn set_source_security_group_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_security_group_owner_id = input;
         self
     }
     /// <p>Not supported.</p>
-    pub fn get_source_security_group_owner_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_security_group_owner_id
     }
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
@@ -280,27 +258,19 @@ impl RevokeSecurityGroupIngressInputBuilder {
     /// To override the contents of this collection use [`set_security_group_rule_ids`](Self::set_security_group_rule_ids).
     ///
     /// <p>The IDs of the security group rules.</p>
-    pub fn security_group_rule_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_rule_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_rule_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_rule_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security group rules.</p>
-    pub fn set_security_group_rule_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_rule_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_rule_ids = input;
         self
     }
     /// <p>The IDs of the security group rules.</p>
-    pub fn get_security_group_rule_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_rule_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_rule_ids
     }
     /// Consumes the builder and constructs a [`RevokeSecurityGroupIngressInput`](crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressInput).
@@ -310,20 +280,18 @@ impl RevokeSecurityGroupIngressInputBuilder {
         crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressInput {
-                cidr_ip: self.cidr_ip,
-                from_port: self.from_port,
-                group_id: self.group_id,
-                group_name: self.group_name,
-                ip_permissions: self.ip_permissions,
-                ip_protocol: self.ip_protocol,
-                source_security_group_name: self.source_security_group_name,
-                source_security_group_owner_id: self.source_security_group_owner_id,
-                to_port: self.to_port,
-                dry_run: self.dry_run,
-                security_group_rule_ids: self.security_group_rule_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressInput {
+            cidr_ip: self.cidr_ip,
+            from_port: self.from_port,
+            group_id: self.group_id,
+            group_name: self.group_name,
+            ip_permissions: self.ip_permissions,
+            ip_protocol: self.ip_protocol,
+            source_security_group_name: self.source_security_group_name,
+            source_security_group_owner_id: self.source_security_group_owner_id,
+            to_port: self.to_port,
+            dry_run: self.dry_run,
+            security_group_rule_ids: self.security_group_rule_ids,
+        })
     }
 }

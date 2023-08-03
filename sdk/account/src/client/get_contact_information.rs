@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetContactInformationOutput`](crate::operation::get_contact_information::GetContactInformationOutput) with field(s):
     ///   - [`contact_information(Option<ContactInformation>)`](crate::operation::get_contact_information::GetContactInformationOutput::contact_information): <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<GetContactInformationError>`](crate::operation::get_contact_information::GetContactInformationError)
-    pub fn get_contact_information(
-        &self,
-    ) -> crate::operation::get_contact_information::builders::GetContactInformationFluentBuilder
-    {
-        crate::operation::get_contact_information::builders::GetContactInformationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_contact_information(&self) -> crate::operation::get_contact_information::builders::GetContactInformationFluentBuilder {
+        crate::operation::get_contact_information::builders::GetContactInformationFluentBuilder::new(self.handle.clone())
     }
 }

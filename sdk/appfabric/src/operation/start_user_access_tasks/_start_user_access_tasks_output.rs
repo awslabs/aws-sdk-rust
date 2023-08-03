@@ -5,15 +5,12 @@
 pub struct StartUserAccessTasksOutput {
     /// <p>Contains a list of user access task information.</p>
     #[doc(hidden)]
-    pub user_access_tasks_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserAccessTaskItem>>,
+    pub user_access_tasks_list: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessTaskItem>>,
     _request_id: Option<String>,
 }
 impl StartUserAccessTasksOutput {
     /// <p>Contains a list of user access task information.</p>
-    pub fn user_access_tasks_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UserAccessTaskItem]> {
+    pub fn user_access_tasks_list(&self) -> ::std::option::Option<&[crate::types::UserAccessTaskItem]> {
         self.user_access_tasks_list.as_deref()
     }
 }
@@ -24,21 +21,16 @@ impl ::aws_http::request_id::RequestId for StartUserAccessTasksOutput {
 }
 impl StartUserAccessTasksOutput {
     /// Creates a new builder-style object to manufacture [`StartUserAccessTasksOutput`](crate::operation::start_user_access_tasks::StartUserAccessTasksOutput).
-    pub fn builder(
-    ) -> crate::operation::start_user_access_tasks::builders::StartUserAccessTasksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_user_access_tasks::builders::StartUserAccessTasksOutputBuilder {
         crate::operation::start_user_access_tasks::builders::StartUserAccessTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartUserAccessTasksOutput`](crate::operation::start_user_access_tasks::StartUserAccessTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartUserAccessTasksOutputBuilder {
-    pub(crate) user_access_tasks_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserAccessTaskItem>>,
+    pub(crate) user_access_tasks_list: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessTaskItem>>,
     _request_id: Option<String>,
 }
 impl StartUserAccessTasksOutputBuilder {
@@ -54,17 +46,12 @@ impl StartUserAccessTasksOutputBuilder {
         self
     }
     /// <p>Contains a list of user access task information.</p>
-    pub fn set_user_access_tasks_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessTaskItem>>,
-    ) -> Self {
+    pub fn set_user_access_tasks_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessTaskItem>>) -> Self {
         self.user_access_tasks_list = input;
         self
     }
     /// <p>Contains a list of user access task information.</p>
-    pub fn get_user_access_tasks_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAccessTaskItem>> {
+    pub fn get_user_access_tasks_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAccessTaskItem>> {
         &self.user_access_tasks_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

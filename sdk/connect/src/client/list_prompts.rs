@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`prompt_summary_list(Option<Vec<PromptSummary>>)`](crate::operation::list_prompts::ListPromptsOutput::prompt_summary_list): <p>Information about the prompts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_prompts::ListPromptsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListPromptsError>`](crate::operation::list_prompts::ListPromptsError)
-    pub fn list_prompts(
-        &self,
-    ) -> crate::operation::list_prompts::builders::ListPromptsFluentBuilder {
+    pub fn list_prompts(&self) -> crate::operation::list_prompts::builders::ListPromptsFluentBuilder {
         crate::operation::list_prompts::builders::ListPromptsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl DeleteAccessKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_access_key::DeleteAccessKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_key::DeleteAccessKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_key::DeleteAccessKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_access_key();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DeleteAccessKeyFluentBuilder {
         }
     }
     /// Access the DeleteAccessKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_access_key::builders::DeleteAccessKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_access_key::builders::DeleteAccessKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DeleteAccessKeyFluentBuilder {
             crate::operation::delete_access_key::DeleteAccessKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_key::DeleteAccessKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_key::DeleteAccessKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DeleteAccessKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DeleteAccessKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_key::DeleteAccessKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_key::DeleteAccessKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_key::DeleteAccessKeyError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DeleteAccessKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_key::DeleteAccessKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_key::DeleteAccessKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_key::DeleteAccessKeyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl DeleteAccessKeyFluentBuilder {
             crate::operation::delete_access_key::DeleteAccessKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_access_key::DeleteAccessKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_access_key::DeleteAccessKeyError>,
     > {
         self.customize_middleware().await
     }
@@ -142,19 +126,13 @@ impl DeleteAccessKeyFluentBuilder {
     }
     /// <p>The access key ID for the access key ID and secret access key you want to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn access_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_key_id(input.into());
         self
     }
     /// <p>The access key ID for the access key ID and secret access key you want to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn set_access_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_key_id(input);
         self
     }

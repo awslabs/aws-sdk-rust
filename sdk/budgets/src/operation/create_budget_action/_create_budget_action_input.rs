@@ -71,17 +71,14 @@ impl CreateBudgetActionInput {
 }
 impl CreateBudgetActionInput {
     /// Creates a new builder-style object to manufacture [`CreateBudgetActionInput`](crate::operation::create_budget_action::CreateBudgetActionInput).
-    pub fn builder(
-    ) -> crate::operation::create_budget_action::builders::CreateBudgetActionInputBuilder {
+    pub fn builder() -> crate::operation::create_budget_action::builders::CreateBudgetActionInputBuilder {
         crate::operation::create_budget_action::builders::CreateBudgetActionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBudgetActionInput`](crate::operation::create_budget_action::CreateBudgetActionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBudgetActionInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
@@ -128,10 +125,7 @@ impl CreateBudgetActionInputBuilder {
         self
     }
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-    pub fn set_notification_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NotificationType>,
-    ) -> Self {
+    pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
         self.notification_type = input;
         self
     }
@@ -145,10 +139,7 @@ impl CreateBudgetActionInputBuilder {
         self
     }
     /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
         self.action_type = input;
         self
     }
@@ -162,10 +153,7 @@ impl CreateBudgetActionInputBuilder {
         self
     }
     /// <p>The trigger threshold of the action. </p>
-    pub fn set_action_threshold(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionThreshold>,
-    ) -> Self {
+    pub fn set_action_threshold(mut self, input: ::std::option::Option<crate::types::ActionThreshold>) -> Self {
         self.action_threshold = input;
         self
     }
@@ -179,10 +167,7 @@ impl CreateBudgetActionInputBuilder {
         self
     }
     /// <p>Specifies all of the type-specific parameters. </p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::Definition>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::Definition>) -> Self {
         self.definition = input;
         self
     }
@@ -191,18 +176,12 @@ impl CreateBudgetActionInputBuilder {
         &self.definition
     }
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-    pub fn execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
@@ -216,10 +195,7 @@ impl CreateBudgetActionInputBuilder {
         self
     }
     /// <p> This specifies if the action needs manual or automatic approval. </p>
-    pub fn set_approval_model(
-        mut self,
-        input: ::std::option::Option<crate::types::ApprovalModel>,
-    ) -> Self {
+    pub fn set_approval_model(mut self, input: ::std::option::Option<crate::types::ApprovalModel>) -> Self {
         self.approval_model = input;
         self
     }
@@ -239,38 +215,28 @@ impl CreateBudgetActionInputBuilder {
         self
     }
     /// <p> A list of subscribers.</p>
-    pub fn set_subscribers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
-    ) -> Self {
+    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>) -> Self {
         self.subscribers = input;
         self
     }
     /// <p> A list of subscribers.</p>
-    pub fn get_subscribers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
         &self.subscribers
     }
     /// Consumes the builder and constructs a [`CreateBudgetActionInput`](crate::operation::create_budget_action::CreateBudgetActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_budget_action::CreateBudgetActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_budget_action::CreateBudgetActionInput {
-                account_id: self.account_id,
-                budget_name: self.budget_name,
-                notification_type: self.notification_type,
-                action_type: self.action_type,
-                action_threshold: self.action_threshold,
-                definition: self.definition,
-                execution_role_arn: self.execution_role_arn,
-                approval_model: self.approval_model,
-                subscribers: self.subscribers,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_budget_action::CreateBudgetActionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_budget_action::CreateBudgetActionInput {
+            account_id: self.account_id,
+            budget_name: self.budget_name,
+            notification_type: self.notification_type,
+            action_type: self.action_type,
+            action_threshold: self.action_threshold,
+            definition: self.definition,
+            execution_role_arn: self.execution_role_arn,
+            approval_model: self.approval_model,
+            subscribers: self.subscribers,
+        })
     }
 }

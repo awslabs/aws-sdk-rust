@@ -5,8 +5,7 @@
 pub struct ListRescoreExecutionPlansOutput {
     /// <p>An array of summary information for one or more rescore execution plans.</p>
     #[doc(hidden)]
-    pub summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::RescoreExecutionPlanSummary>>,
+    pub summary_items: ::std::option::Option<::std::vec::Vec<crate::types::RescoreExecutionPlanSummary>>,
     /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListRescoreExecutionPlansOutput {
 }
 impl ListRescoreExecutionPlansOutput {
     /// <p>An array of summary information for one or more rescore execution plans.</p>
-    pub fn summary_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RescoreExecutionPlanSummary]> {
+    pub fn summary_items(&self) -> ::std::option::Option<&[crate::types::RescoreExecutionPlanSummary]> {
         self.summary_items.as_deref()
     }
     /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListRescoreExecutionPlansOutput {
 }
 impl ListRescoreExecutionPlansOutput {
     /// Creates a new builder-style object to manufacture [`ListRescoreExecutionPlansOutput`](crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansOutput).
-    pub fn builder() -> crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansOutputBuilder{
+    pub fn builder() -> crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansOutputBuilder {
         crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRescoreExecutionPlansOutput`](crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRescoreExecutionPlansOutputBuilder {
-    pub(crate) summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::RescoreExecutionPlanSummary>>,
+    pub(crate) summary_items: ::std::option::Option<::std::vec::Vec<crate::types::RescoreExecutionPlanSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListRescoreExecutionPlansOutputBuilder {
         self
     }
     /// <p>An array of summary information for one or more rescore execution plans.</p>
-    pub fn set_summary_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RescoreExecutionPlanSummary>>,
-    ) -> Self {
+    pub fn set_summary_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RescoreExecutionPlanSummary>>) -> Self {
         self.summary_items = input;
         self
     }
     /// <p>An array of summary information for one or more rescore execution plans.</p>
-    pub fn get_summary_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RescoreExecutionPlanSummary>> {
+    pub fn get_summary_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RescoreExecutionPlanSummary>> {
         &self.summary_items
     }
     /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response.</p>
@@ -97,9 +86,7 @@ impl ListRescoreExecutionPlansOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRescoreExecutionPlansOutput`](crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansOutput {
+    pub fn build(self) -> crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansOutput {
         crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansOutput {
             summary_items: self.summary_items,
             next_token: self.next_token,

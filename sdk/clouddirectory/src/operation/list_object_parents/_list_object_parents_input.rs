@@ -50,17 +50,14 @@ impl ListObjectParentsInput {
 }
 impl ListObjectParentsInput {
     /// Creates a new builder-style object to manufacture [`ListObjectParentsInput`](crate::operation::list_object_parents::ListObjectParentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_object_parents::builders::ListObjectParentsInputBuilder {
+    pub fn builder() -> crate::operation::list_object_parents::builders::ListObjectParentsInputBuilder {
         crate::operation::list_object_parents::builders::ListObjectParentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListObjectParentsInput`](crate::operation::list_object_parents::ListObjectParentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListObjectParentsInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
@@ -71,18 +68,12 @@ pub struct ListObjectParentsInputBuilder {
 }
 impl ListObjectParentsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_arn = input;
         self
     }
@@ -96,10 +87,7 @@ impl ListObjectParentsInputBuilder {
         self
     }
     /// <p>The reference that identifies the object for which parent objects are being listed.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.object_reference = input;
         self
     }
@@ -141,10 +129,7 @@ impl ListObjectParentsInputBuilder {
         self
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
+    pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
         self.consistency_level = input;
         self
     }
@@ -158,10 +143,7 @@ impl ListObjectParentsInputBuilder {
         self
     }
     /// <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
-    pub fn set_include_all_links_to_each_parent(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_include_all_links_to_each_parent(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_all_links_to_each_parent = input;
         self
     }
@@ -172,19 +154,14 @@ impl ListObjectParentsInputBuilder {
     /// Consumes the builder and constructs a [`ListObjectParentsInput`](crate::operation::list_object_parents::ListObjectParentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_object_parents::ListObjectParentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_object_parents::ListObjectParentsInput {
-                directory_arn: self.directory_arn,
-                object_reference: self.object_reference,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                consistency_level: self.consistency_level,
-                include_all_links_to_each_parent: self.include_all_links_to_each_parent,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_object_parents::ListObjectParentsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_object_parents::ListObjectParentsInput {
+            directory_arn: self.directory_arn,
+            object_reference: self.object_reference,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            consistency_level: self.consistency_level,
+            include_all_links_to_each_parent: self.include_all_links_to_each_parent,
+        })
     }
 }

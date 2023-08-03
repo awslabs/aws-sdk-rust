@@ -48,9 +48,7 @@ impl VolumeRecoveryPointInfo {
 
 /// A builder for [`VolumeRecoveryPointInfo`](crate::types::VolumeRecoveryPointInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeRecoveryPointInfoBuilder {
     pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     pub(crate) volume_size_in_bytes: ::std::option::Option<i64>,
@@ -107,18 +105,12 @@ impl VolumeRecoveryPointInfoBuilder {
         &self.volume_usage_in_bytes
     }
     /// <p>The time the recovery point was taken.</p>
-    pub fn volume_recovery_point_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_recovery_point_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_recovery_point_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time the recovery point was taken.</p>
-    pub fn set_volume_recovery_point_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_recovery_point_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_recovery_point_time = input;
         self
     }

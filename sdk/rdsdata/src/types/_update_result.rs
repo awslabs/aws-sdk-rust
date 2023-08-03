@@ -23,9 +23,7 @@ impl UpdateResult {
 
 /// A builder for [`UpdateResult`](crate::types::UpdateResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResultBuilder {
     pub(crate) generated_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
 }
@@ -42,17 +40,12 @@ impl UpdateResultBuilder {
         self
     }
     /// <p>Values for fields generated during the request.</p>
-    pub fn set_generated_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
-    ) -> Self {
+    pub fn set_generated_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>) -> Self {
         self.generated_fields = input;
         self
     }
     /// <p>Values for fields generated during the request.</p>
-    pub fn get_generated_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+    pub fn get_generated_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
         &self.generated_fields
     }
     /// Consumes the builder and constructs a [`UpdateResult`](crate::types::UpdateResult).

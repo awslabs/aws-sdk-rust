@@ -37,9 +37,7 @@ impl DeleteOriginEndpointFluentBuilder {
         }
     }
     /// Access the DeleteOriginEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteOriginEndpointFluentBuilder {
             crate::operation::delete_origin_endpoint::DeleteOriginEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_endpoint::DeleteOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_endpoint::DeleteOriginEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteOriginEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteOriginEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_origin_endpoint::DeleteOriginEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_endpoint::DeleteOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_endpoint::DeleteOriginEndpointError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteOriginEndpointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_origin_endpoint::DeleteOriginEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_endpoint::DeleteOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_endpoint::DeleteOriginEndpointError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteOriginEndpointFluentBuilder {
             crate::operation::delete_origin_endpoint::DeleteOriginEndpoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_origin_endpoint::DeleteOriginEndpointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_origin_endpoint::DeleteOriginEndpointError>,
     > {
         self.customize_middleware().await
     }

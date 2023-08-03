@@ -10,10 +10,7 @@ impl GetSessionEmbedUrlInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_session_embed_url::GetSessionEmbedUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_session_embed_url::GetSessionEmbedUrlError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_session_embed_url::GetSessionEmbedUrlError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_session_embed_url();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl GetSessionEmbedUrlFluentBuilder {
         }
     }
     /// Access the GetSessionEmbedUrl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl GetSessionEmbedUrlFluentBuilder {
             crate::operation::get_session_embed_url::GetSessionEmbedUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_session_embed_url::GetSessionEmbedUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_session_embed_url::GetSessionEmbedUrlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl GetSessionEmbedUrlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl GetSessionEmbedUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_session_embed_url::GetSessionEmbedUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_session_embed_url::GetSessionEmbedUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_session_embed_url::GetSessionEmbedUrlError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl GetSessionEmbedUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_session_embed_url::GetSessionEmbedUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_session_embed_url::GetSessionEmbedUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_session_embed_url::GetSessionEmbedUrlError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +106,17 @@ impl GetSessionEmbedUrlFluentBuilder {
             crate::operation::get_session_embed_url::GetSessionEmbedUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_session_embed_url::GetSessionEmbedUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_session_embed_url::GetSessionEmbedUrlError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

@@ -37,10 +37,7 @@ impl UpdateAccountSettingsFluentBuilder {
         }
     }
     /// Access the UpdateAccountSettings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateAccountSettingsFluentBuilder {
             crate::operation::update_account_settings::UpdateAccountSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_settings::UpdateAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_settings::UpdateAccountSettingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateAccountSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateAccountSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_account_settings::UpdateAccountSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_settings::UpdateAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_settings::UpdateAccountSettingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateAccountSettingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_account_settings::UpdateAccountSettingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_settings::UpdateAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_settings::UpdateAccountSettingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,27 +105,19 @@ impl UpdateAccountSettingsFluentBuilder {
             crate::operation::update_account_settings::UpdateAccountSettings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_account_settings::UpdateAccountSettingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_account_settings::UpdateAccountSettingsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
     /// <p>To remove a previously configured ARN, specify an empty string.</p>
-    pub fn pipeline_service_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_service_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
     /// <p>To remove a previously configured ARN, specify an empty string.</p>
-    pub fn set_pipeline_service_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_service_role_arn(input);
         self
     }
@@ -148,27 +128,19 @@ impl UpdateAccountSettingsFluentBuilder {
     }
     /// <p>A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     /// <p>To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.</p>
-    pub fn pipeline_provisioning_repository(
-        mut self,
-        input: crate::types::RepositoryBranchInput,
-    ) -> Self {
+    pub fn pipeline_provisioning_repository(mut self, input: crate::types::RepositoryBranchInput) -> Self {
         self.inner = self.inner.pipeline_provisioning_repository(input);
         self
     }
     /// <p>A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     /// <p>To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.</p>
-    pub fn set_pipeline_provisioning_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryBranchInput>,
-    ) -> Self {
+    pub fn set_pipeline_provisioning_repository(mut self, input: ::std::option::Option<crate::types::RepositoryBranchInput>) -> Self {
         self.inner = self.inner.set_pipeline_provisioning_repository(input);
         self
     }
     /// <p>A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     /// <p>To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.</p>
-    pub fn get_pipeline_provisioning_repository(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryBranchInput> {
+    pub fn get_pipeline_provisioning_repository(&self) -> &::std::option::Option<crate::types::RepositoryBranchInput> {
         self.inner.get_pipeline_provisioning_repository()
     }
     /// <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
@@ -177,13 +149,8 @@ impl UpdateAccountSettingsFluentBuilder {
         self
     }
     /// <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
-    pub fn set_delete_pipeline_provisioning_repository(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_delete_pipeline_provisioning_repository(input);
+    pub fn set_delete_pipeline_provisioning_repository(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_delete_pipeline_provisioning_repository(input);
         self
     }
     /// <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
@@ -191,18 +158,12 @@ impl UpdateAccountSettingsFluentBuilder {
         self.inner.get_delete_pipeline_provisioning_repository()
     }
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
-    pub fn pipeline_codebuild_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pipeline_codebuild_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_codebuild_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
-    pub fn set_pipeline_codebuild_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pipeline_codebuild_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_codebuild_role_arn(input);
         self
     }

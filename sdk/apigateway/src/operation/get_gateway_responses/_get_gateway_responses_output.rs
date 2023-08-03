@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for GetGatewayResponsesOutput {
 }
 impl GetGatewayResponsesOutput {
     /// Creates a new builder-style object to manufacture [`GetGatewayResponsesOutput`](crate::operation::get_gateway_responses::GetGatewayResponsesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_gateway_responses::builders::GetGatewayResponsesOutputBuilder {
-        crate::operation::get_gateway_responses::builders::GetGatewayResponsesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_gateway_responses::builders::GetGatewayResponsesOutputBuilder {
+        crate::operation::get_gateway_responses::builders::GetGatewayResponsesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetGatewayResponsesOutput`](crate::operation::get_gateway_responses::GetGatewayResponsesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGatewayResponsesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::GatewayResponse>>,
     pub(crate) position: ::std::option::Option<::std::string::String>,
@@ -59,17 +55,12 @@ impl GetGatewayResponsesOutputBuilder {
         self
     }
     /// <p>Returns the entire collection, because of no pagination support.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayResponse>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayResponse>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Returns the entire collection, because of no pagination support.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayResponse>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayResponse>> {
         &self.items
     }
     /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>

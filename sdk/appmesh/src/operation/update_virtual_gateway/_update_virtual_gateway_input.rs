@@ -43,17 +43,14 @@ impl UpdateVirtualGatewayInput {
 }
 impl UpdateVirtualGatewayInput {
     /// Creates a new builder-style object to manufacture [`UpdateVirtualGatewayInput`](crate::operation::update_virtual_gateway::UpdateVirtualGatewayInput).
-    pub fn builder(
-    ) -> crate::operation::update_virtual_gateway::builders::UpdateVirtualGatewayInputBuilder {
+    pub fn builder() -> crate::operation::update_virtual_gateway::builders::UpdateVirtualGatewayInputBuilder {
         crate::operation::update_virtual_gateway::builders::UpdateVirtualGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVirtualGatewayInput`](crate::operation::update_virtual_gateway::UpdateVirtualGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVirtualGatewayInputBuilder {
     pub(crate) virtual_gateway_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -63,18 +60,12 @@ pub struct UpdateVirtualGatewayInputBuilder {
 }
 impl UpdateVirtualGatewayInputBuilder {
     /// <p>The name of the virtual gateway to update.</p>
-    pub fn virtual_gateway_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual gateway to update.</p>
-    pub fn set_virtual_gateway_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_gateway_name = input;
         self
     }
@@ -102,10 +93,7 @@ impl UpdateVirtualGatewayInputBuilder {
         self
     }
     /// <p>The new virtual gateway specification to apply. This overwrites the existing data.</p>
-    pub fn set_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualGatewaySpec>,
-    ) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::VirtualGatewaySpec>) -> Self {
         self.spec = input;
         self
     }
@@ -144,18 +132,14 @@ impl UpdateVirtualGatewayInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVirtualGatewayInput`](crate::operation::update_virtual_gateway::UpdateVirtualGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_virtual_gateway::UpdateVirtualGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_virtual_gateway::UpdateVirtualGatewayInput {
-                virtual_gateway_name: self.virtual_gateway_name,
-                mesh_name: self.mesh_name,
-                spec: self.spec,
-                client_token: self.client_token,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_virtual_gateway::UpdateVirtualGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_virtual_gateway::UpdateVirtualGatewayInput {
+            virtual_gateway_name: self.virtual_gateway_name,
+            mesh_name: self.mesh_name,
+            spec: self.spec,
+            client_token: self.client_token,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

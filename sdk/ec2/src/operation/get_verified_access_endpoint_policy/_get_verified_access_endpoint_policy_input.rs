@@ -22,34 +22,26 @@ impl GetVerifiedAccessEndpointPolicyInput {
 }
 impl GetVerifiedAccessEndpointPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetVerifiedAccessEndpointPolicyInput`](crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyInput).
-    pub fn builder() -> crate::operation::get_verified_access_endpoint_policy::builders::GetVerifiedAccessEndpointPolicyInputBuilder{
+    pub fn builder() -> crate::operation::get_verified_access_endpoint_policy::builders::GetVerifiedAccessEndpointPolicyInputBuilder {
         crate::operation::get_verified_access_endpoint_policy::builders::GetVerifiedAccessEndpointPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetVerifiedAccessEndpointPolicyInput`](crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVerifiedAccessEndpointPolicyInputBuilder {
     pub(crate) verified_access_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl GetVerifiedAccessEndpointPolicyInputBuilder {
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn verified_access_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verified_access_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn set_verified_access_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verified_access_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verified_access_endpoint_id = input;
         self
     }
@@ -80,11 +72,9 @@ impl GetVerifiedAccessEndpointPolicyInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_verified_access_endpoint_policy::GetVerifiedAccessEndpointPolicyInput {
-                verified_access_endpoint_id: self.verified_access_endpoint_id
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                verified_access_endpoint_id: self.verified_access_endpoint_id,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

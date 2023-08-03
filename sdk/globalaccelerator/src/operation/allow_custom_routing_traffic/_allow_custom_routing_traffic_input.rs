@@ -51,16 +51,14 @@ impl AllowCustomRoutingTrafficInput {
 }
 impl AllowCustomRoutingTrafficInput {
     /// Creates a new builder-style object to manufacture [`AllowCustomRoutingTrafficInput`](crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficInput).
-    pub fn builder() -> crate::operation::allow_custom_routing_traffic::builders::AllowCustomRoutingTrafficInputBuilder{
+    pub fn builder() -> crate::operation::allow_custom_routing_traffic::builders::AllowCustomRoutingTrafficInputBuilder {
         crate::operation::allow_custom_routing_traffic::builders::AllowCustomRoutingTrafficInputBuilder::default()
     }
 }
 
 /// A builder for [`AllowCustomRoutingTrafficInput`](crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllowCustomRoutingTrafficInputBuilder {
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
@@ -70,18 +68,12 @@ pub struct AllowCustomRoutingTrafficInputBuilder {
 }
 impl AllowCustomRoutingTrafficInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_group_arn = input;
         self
     }
@@ -109,10 +101,7 @@ impl AllowCustomRoutingTrafficInputBuilder {
     ///
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
     /// <p> <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
-    pub fn destination_addresses(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destination_addresses.unwrap_or_default();
         v.push(input.into());
         self.destination_addresses = ::std::option::Option::Some(v);
@@ -120,18 +109,13 @@ impl AllowCustomRoutingTrafficInputBuilder {
     }
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
     /// <p> <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
-    pub fn set_destination_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_destination_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.destination_addresses = input;
         self
     }
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
     /// <p> <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
-    pub fn get_destination_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destination_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.destination_addresses
     }
     /// Appends an item to `destination_ports`.
@@ -146,10 +130,7 @@ impl AllowCustomRoutingTrafficInputBuilder {
         self
     }
     /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
-    pub fn set_destination_ports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_destination_ports(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.destination_ports = input;
         self
     }
@@ -187,14 +168,12 @@ impl AllowCustomRoutingTrafficInputBuilder {
         crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficInput {
-                endpoint_group_arn: self.endpoint_group_arn,
-                endpoint_id: self.endpoint_id,
-                destination_addresses: self.destination_addresses,
-                destination_ports: self.destination_ports,
-                allow_all_traffic_to_endpoint: self.allow_all_traffic_to_endpoint,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficInput {
+            endpoint_group_arn: self.endpoint_group_arn,
+            endpoint_id: self.endpoint_id,
+            destination_addresses: self.destination_addresses,
+            destination_ports: self.destination_ports,
+            allow_all_traffic_to_endpoint: self.allow_all_traffic_to_endpoint,
+        })
     }
 }

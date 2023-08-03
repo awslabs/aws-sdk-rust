@@ -26,7 +26,7 @@ impl CreateFleetAdvisorCollectorInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFleetAdvisorCollectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_fleet_advisor_collector::builders::CreateFleetAdvisorCollectorInputBuilder,
+    inner: crate::operation::create_fleet_advisor_collector::builders::CreateFleetAdvisorCollectorInputBuilder,
 }
 impl CreateFleetAdvisorCollectorFluentBuilder {
     /// Creates a new `CreateFleetAdvisorCollector`.
@@ -37,7 +37,7 @@ impl CreateFleetAdvisorCollectorFluentBuilder {
         }
     }
     /// Access the CreateFleetAdvisorCollector as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_fleet_advisor_collector::builders::CreateFleetAdvisorCollectorInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_fleet_advisor_collector::builders::CreateFleetAdvisorCollectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateFleetAdvisorCollectorFluentBuilder {
             crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateFleetAdvisorCollectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateFleetAdvisorCollectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateFleetAdvisorCollectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl CreateFleetAdvisorCollectorFluentBuilder {
             crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
-    pub fn collector_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.collector_name(input.into());
         self
     }
     /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
-    pub fn set_collector_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_collector_name(input);
         self
     }
@@ -155,18 +138,12 @@ impl CreateFleetAdvisorCollectorFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
-    pub fn service_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_access_role_arn(input.into());
         self
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
-    pub fn set_service_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_access_role_arn(input);
         self
     }
@@ -175,18 +152,12 @@ impl CreateFleetAdvisorCollectorFluentBuilder {
         self.inner.get_service_access_role_arn()
     }
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket_name(input.into());
         self
     }
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
     }

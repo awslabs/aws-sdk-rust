@@ -28,27 +28,19 @@ impl CopyProductOutput {
 
 /// A builder for [`CopyProductOutput`](crate::operation::copy_product::CopyProductOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyProductOutputBuilder {
     pub(crate) copy_product_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CopyProductOutputBuilder {
     /// <p>The token to use to track the progress of the operation.</p>
-    pub fn copy_product_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn copy_product_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.copy_product_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to use to track the progress of the operation.</p>
-    pub fn set_copy_product_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_copy_product_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.copy_product_token = input;
         self
     }

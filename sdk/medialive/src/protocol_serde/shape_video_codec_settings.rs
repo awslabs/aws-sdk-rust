@@ -6,10 +6,7 @@ pub fn ser_video_codec_settings(
     if let Some(var_1) = &input.frame_capture_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("frameCaptureSettings").start_object();
-        crate::protocol_serde::shape_frame_capture_settings::ser_frame_capture_settings(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_frame_capture_settings::ser_frame_capture_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.h264_settings {
@@ -35,17 +32,9 @@ pub fn ser_video_codec_settings(
 
 pub(crate) fn de_video_codec_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::VideoCodecSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::VideoCodecSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -55,52 +44,34 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "frameCaptureSettings" => {
-                                builder = builder.set_frame_capture_settings(
-                                    crate::protocol_serde::shape_frame_capture_settings::de_frame_capture_settings(tokens)?
-                                );
-                            }
-                            "h264Settings" => {
-                                builder = builder.set_h264_settings(
-                                    crate::protocol_serde::shape_h264_settings::de_h264_settings(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "h265Settings" => {
-                                builder = builder.set_h265_settings(
-                                    crate::protocol_serde::shape_h265_settings::de_h265_settings(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "mpeg2Settings" => {
-                                builder = builder.set_mpeg2_settings(
-                                    crate::protocol_serde::shape_mpeg2_settings::de_mpeg2_settings(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "frameCaptureSettings" => {
+                            builder = builder
+                                .set_frame_capture_settings(crate::protocol_serde::shape_frame_capture_settings::de_frame_capture_settings(tokens)?);
                         }
-                    }
+                        "h264Settings" => {
+                            builder = builder.set_h264_settings(crate::protocol_serde::shape_h264_settings::de_h264_settings(tokens)?);
+                        }
+                        "h265Settings" => {
+                            builder = builder.set_h265_settings(crate::protocol_serde::shape_h265_settings::de_h265_settings(tokens)?);
+                        }
+                        "mpeg2Settings" => {
+                            builder = builder.set_mpeg2_settings(crate::protocol_serde::shape_mpeg2_settings::de_mpeg2_settings(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

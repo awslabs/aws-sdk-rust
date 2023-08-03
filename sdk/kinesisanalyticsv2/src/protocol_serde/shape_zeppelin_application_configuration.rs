@@ -12,17 +12,12 @@ pub fn ser_zeppelin_application_configuration(
     if let Some(var_3) = &input.catalog_configuration {
         #[allow(unused_mut)]
         let mut object_4 = object.key("CatalogConfiguration").start_object();
-        crate::protocol_serde::shape_catalog_configuration::ser_catalog_configuration(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_catalog_configuration::ser_catalog_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.deploy_as_application_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object
-            .key("DeployAsApplicationConfiguration")
-            .start_object();
+        let mut object_6 = object.key("DeployAsApplicationConfiguration").start_object();
         crate::protocol_serde::shape_deploy_as_application_configuration::ser_deploy_as_application_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }

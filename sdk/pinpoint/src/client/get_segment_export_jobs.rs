@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetSegmentExportJobsOutput`](crate::operation::get_segment_export_jobs::GetSegmentExportJobsOutput) with field(s):
     ///   - [`export_jobs_response(Option<ExportJobsResponse>)`](crate::operation::get_segment_export_jobs::GetSegmentExportJobsOutput::export_jobs_response): <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
     /// - On failure, responds with [`SdkError<GetSegmentExportJobsError>`](crate::operation::get_segment_export_jobs::GetSegmentExportJobsError)
-    pub fn get_segment_export_jobs(
-        &self,
-    ) -> crate::operation::get_segment_export_jobs::builders::GetSegmentExportJobsFluentBuilder
-    {
-        crate::operation::get_segment_export_jobs::builders::GetSegmentExportJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_segment_export_jobs(&self) -> crate::operation::get_segment_export_jobs::builders::GetSegmentExportJobsFluentBuilder {
+        crate::operation::get_segment_export_jobs::builders::GetSegmentExportJobsFluentBuilder::new(self.handle.clone())
     }
 }

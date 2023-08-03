@@ -35,9 +35,7 @@ impl DynamoDBv2Action {
 
 /// A builder for [`DynamoDBv2Action`](crate::types::DynamoDBv2Action).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DynamoDBv2ActionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) put_item: ::std::option::Option<crate::types::PutItemInput>,
@@ -67,10 +65,7 @@ impl DynamoDBv2ActionBuilder {
     /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
     /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
     /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
-    pub fn set_put_item(
-        mut self,
-        input: ::std::option::Option<crate::types::PutItemInput>,
-    ) -> Self {
+    pub fn set_put_item(mut self, input: ::std::option::Option<crate::types::PutItemInput>) -> Self {
         self.put_item = input;
         self
     }

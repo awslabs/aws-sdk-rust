@@ -22,17 +22,14 @@ impl DeleteFleetMetricInput {
 }
 impl DeleteFleetMetricInput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetMetricInput`](crate::operation::delete_fleet_metric::DeleteFleetMetricInput).
-    pub fn builder(
-    ) -> crate::operation::delete_fleet_metric::builders::DeleteFleetMetricInputBuilder {
+    pub fn builder() -> crate::operation::delete_fleet_metric::builders::DeleteFleetMetricInputBuilder {
         crate::operation::delete_fleet_metric::builders::DeleteFleetMetricInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFleetMetricInput`](crate::operation::delete_fleet_metric::DeleteFleetMetricInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFleetMetricInputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) expected_version: ::std::option::Option<i64>,
@@ -69,15 +66,10 @@ impl DeleteFleetMetricInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFleetMetricInput`](crate::operation::delete_fleet_metric::DeleteFleetMetricInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_fleet_metric::DeleteFleetMetricInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_fleet_metric::DeleteFleetMetricInput {
-                metric_name: self.metric_name,
-                expected_version: self.expected_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_fleet_metric::DeleteFleetMetricInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_fleet_metric::DeleteFleetMetricInput {
+            metric_name: self.metric_name,
+            expected_version: self.expected_version,
+        })
     }
 }

@@ -29,9 +29,7 @@ pub struct DescribeChannelOutput {
     pub playback_mode: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The channel's tier.</p>
     #[doc(hidden)]
     pub tier: ::std::option::Option<::std::string::String>,
@@ -74,11 +72,7 @@ impl DescribeChannelOutput {
         self.playback_mode.as_deref()
     }
     /// <p>The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The channel's tier.</p>
@@ -86,9 +80,7 @@ impl DescribeChannelOutput {
         self.tier.as_deref()
     }
     /// <p>The log configuration for the channel.</p>
-    pub fn log_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LogConfigurationForChannel> {
+    pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::LogConfigurationForChannel> {
         self.log_configuration.as_ref()
     }
 }
@@ -106,9 +98,7 @@ impl DescribeChannelOutput {
 
 /// A builder for [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeChannelOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
@@ -118,9 +108,7 @@ pub struct DescribeChannelOutputBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>>,
     pub(crate) playback_mode: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tier: ::std::option::Option<::std::string::String>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LogConfigurationForChannel>,
     _request_id: Option<String>,
@@ -160,10 +148,7 @@ impl DescribeChannelOutputBuilder {
         self
     }
     /// <p>Indicates whether the channel is in a running state or not.</p>
-    pub fn set_channel_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelState>,
-    ) -> Self {
+    pub fn set_channel_state(mut self, input: ::std::option::Option<crate::types::ChannelState>) -> Self {
         self.channel_state = input;
         self
     }
@@ -177,10 +162,7 @@ impl DescribeChannelOutputBuilder {
         self
     }
     /// <p>The timestamp of when the channel was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -194,10 +176,7 @@ impl DescribeChannelOutputBuilder {
         self
     }
     /// <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
-    pub fn set_filler_slate(
-        mut self,
-        input: ::std::option::Option<crate::types::SlateSource>,
-    ) -> Self {
+    pub fn set_filler_slate(mut self, input: ::std::option::Option<crate::types::SlateSource>) -> Self {
         self.filler_slate = input;
         self
     }
@@ -211,10 +190,7 @@ impl DescribeChannelOutputBuilder {
         self
     }
     /// <p>The timestamp of when the channel was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -234,32 +210,21 @@ impl DescribeChannelOutputBuilder {
         self
     }
     /// <p>The channel's output properties.</p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>>) -> Self {
         self.outputs = input;
         self
     }
     /// <p>The channel's output properties.</p>
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseOutputItem>> {
         &self.outputs
     }
     /// <p>The channel's playback mode.</p>
-    pub fn playback_mode(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn playback_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_mode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The channel's playback mode.</p>
-    pub fn set_playback_mode(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_playback_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.playback_mode = input;
         self
     }
@@ -272,32 +237,19 @@ impl DescribeChannelOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags assigned to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The channel's tier.</p>
@@ -320,17 +272,12 @@ impl DescribeChannelOutputBuilder {
         self
     }
     /// <p>The log configuration for the channel.</p>
-    pub fn set_log_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LogConfigurationForChannel>,
-    ) -> Self {
+    pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::LogConfigurationForChannel>) -> Self {
         self.log_configuration = input;
         self
     }
     /// <p>The log configuration for the channel.</p>
-    pub fn get_log_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::LogConfigurationForChannel> {
+    pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::LogConfigurationForChannel> {
         &self.log_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

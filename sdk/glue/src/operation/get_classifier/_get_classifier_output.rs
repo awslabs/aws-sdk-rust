@@ -28,9 +28,7 @@ impl GetClassifierOutput {
 
 /// A builder for [`GetClassifierOutput`](crate::operation::get_classifier::GetClassifierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetClassifierOutputBuilder {
     pub(crate) classifier: ::std::option::Option<crate::types::Classifier>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetClassifierOutputBuilder {
         self
     }
     /// <p>The requested classifier.</p>
-    pub fn set_classifier(
-        mut self,
-        input: ::std::option::Option<crate::types::Classifier>,
-    ) -> Self {
+    pub fn set_classifier(mut self, input: ::std::option::Option<crate::types::Classifier>) -> Self {
         self.classifier = input;
         self
     }

@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSipMediaApplicationOutput`](crate::operation::update_sip_media_application::UpdateSipMediaApplicationOutput) with field(s):
     ///   - [`sip_media_application(Option<SipMediaApplication>)`](crate::operation::update_sip_media_application::UpdateSipMediaApplicationOutput::sip_media_application): <p>The updated SIP media application’s details.</p>
     /// - On failure, responds with [`SdkError<UpdateSipMediaApplicationError>`](crate::operation::update_sip_media_application::UpdateSipMediaApplicationError)
-    pub fn update_sip_media_application(&self) -> crate::operation::update_sip_media_application::builders::UpdateSipMediaApplicationFluentBuilder{
+    pub fn update_sip_media_application(&self) -> crate::operation::update_sip_media_application::builders::UpdateSipMediaApplicationFluentBuilder {
         crate::operation::update_sip_media_application::builders::UpdateSipMediaApplicationFluentBuilder::new(self.handle.clone())
     }
 }

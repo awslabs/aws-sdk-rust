@@ -27,7 +27,7 @@ impl RotateChannelCredentialsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RotateChannelCredentialsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsInputBuilder,
+    inner: crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsInputBuilder,
 }
 impl RotateChannelCredentialsFluentBuilder {
     /// Creates a new `RotateChannelCredentials`.
@@ -38,10 +38,7 @@ impl RotateChannelCredentialsFluentBuilder {
         }
     }
     /// Access the RotateChannelCredentials as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl RotateChannelCredentialsFluentBuilder {
             crate::operation::rotate_channel_credentials::RotateChannelCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rotate_channel_credentials::RotateChannelCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rotate_channel_credentials::RotateChannelCredentialsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl RotateChannelCredentialsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl RotateChannelCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rotate_channel_credentials::RotateChannelCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rotate_channel_credentials::RotateChannelCredentialsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl RotateChannelCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rotate_channel_credentials::RotateChannelCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rotate_channel_credentials::RotateChannelCredentialsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl RotateChannelCredentialsFluentBuilder {
             crate::operation::rotate_channel_credentials::RotateChannelCredentials,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::rotate_channel_credentials::RotateChannelCredentialsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::rotate_channel_credentials::RotateChannelCredentialsError>,
     > {
         self.customize_middleware().await
     }

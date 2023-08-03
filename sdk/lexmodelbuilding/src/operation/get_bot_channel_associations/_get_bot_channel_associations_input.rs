@@ -43,16 +43,14 @@ impl GetBotChannelAssociationsInput {
 }
 impl GetBotChannelAssociationsInput {
     /// Creates a new builder-style object to manufacture [`GetBotChannelAssociationsInput`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsInput).
-    pub fn builder() -> crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsInputBuilder {
         crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBotChannelAssociationsInput`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBotChannelAssociationsInputBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias: ::std::option::Option<::std::string::String>,
@@ -118,18 +116,12 @@ impl GetBotChannelAssociationsInputBuilder {
         &self.max_results
     }
     /// <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -144,14 +136,12 @@ impl GetBotChannelAssociationsInputBuilder {
         crate::operation::get_bot_channel_associations::GetBotChannelAssociationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_bot_channel_associations::GetBotChannelAssociationsInput {
-                bot_name: self.bot_name,
-                bot_alias: self.bot_alias,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                name_contains: self.name_contains,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_bot_channel_associations::GetBotChannelAssociationsInput {
+            bot_name: self.bot_name,
+            bot_alias: self.bot_alias,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            name_contains: self.name_contains,
+        })
     }
 }

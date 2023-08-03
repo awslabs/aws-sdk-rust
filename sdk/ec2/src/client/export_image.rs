@@ -23,9 +23,7 @@ impl super::Client {
     ///   - [`status_message(Option<String>)`](crate::operation::export_image::ExportImageOutput::status_message): <p>The status message for the export image task.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::export_image::ExportImageOutput::tags): <p>Any tags assigned to the export image task.</p>
     /// - On failure, responds with [`SdkError<ExportImageError>`](crate::operation::export_image::ExportImageError)
-    pub fn export_image(
-        &self,
-    ) -> crate::operation::export_image::builders::ExportImageFluentBuilder {
+    pub fn export_image(&self) -> crate::operation::export_image::builders::ExportImageFluentBuilder {
         crate::operation::export_image::builders::ExportImageFluentBuilder::new(self.handle.clone())
     }
 }

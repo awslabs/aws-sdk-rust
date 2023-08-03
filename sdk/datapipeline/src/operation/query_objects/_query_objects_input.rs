@@ -51,9 +51,7 @@ impl QueryObjectsInput {
 
 /// A builder for [`QueryObjectsInput`](crate::operation::query_objects::QueryObjectsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryObjectsInputBuilder {
     pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
     pub(crate) query: ::std::option::Option<crate::types::Query>,
@@ -133,12 +131,7 @@ impl QueryObjectsInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`QueryObjectsInput`](crate::operation::query_objects::QueryObjectsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::query_objects::QueryObjectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::query_objects::QueryObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::query_objects::QueryObjectsInput {
             pipeline_id: self.pipeline_id,
             query: self.query,

@@ -39,10 +39,7 @@ impl CreateTapeWithBarcodeFluentBuilder {
         }
     }
     /// Access the CreateTapeWithBarcode as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_tape_with_barcode::builders::CreateTapeWithBarcodeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_tape_with_barcode::builders::CreateTapeWithBarcodeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl CreateTapeWithBarcodeFluentBuilder {
             crate::operation::create_tape_with_barcode::CreateTapeWithBarcode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl CreateTapeWithBarcodeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl CreateTapeWithBarcodeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl CreateTapeWithBarcodeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl CreateTapeWithBarcodeFluentBuilder {
             crate::operation::create_tape_with_barcode::CreateTapeWithBarcode,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeError>,
     > {
         self.customize_middleware().await
     }
@@ -252,10 +238,7 @@ impl CreateTapeWithBarcodeFluentBuilder {
     /// <p>A list of up to 50 tags that can be assigned to a virtual tape that has a barcode. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

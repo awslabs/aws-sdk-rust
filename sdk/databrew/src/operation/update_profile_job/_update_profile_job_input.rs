@@ -33,8 +33,7 @@ pub struct UpdateProfileJobInput {
     pub output_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>List of validation configurations that are applied to the profile job.</p>
     #[doc(hidden)]
-    pub validation_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
+    pub validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -83,9 +82,7 @@ impl UpdateProfileJobInput {
         self.output_location.as_ref()
     }
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    pub fn validation_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ValidationConfiguration]> {
+    pub fn validation_configurations(&self) -> ::std::option::Option<&[crate::types::ValidationConfiguration]> {
         self.validation_configurations.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
@@ -103,17 +100,14 @@ impl UpdateProfileJobInput {
 }
 impl UpdateProfileJobInput {
     /// Creates a new builder-style object to manufacture [`UpdateProfileJobInput`](crate::operation::update_profile_job::UpdateProfileJobInput).
-    pub fn builder() -> crate::operation::update_profile_job::builders::UpdateProfileJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_profile_job::builders::UpdateProfileJobInputBuilder {
         crate::operation::update_profile_job::builders::UpdateProfileJobInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateProfileJobInput`](crate::operation::update_profile_job::UpdateProfileJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProfileJobInputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::ProfileConfiguration>,
     pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
@@ -123,8 +117,7 @@ pub struct UpdateProfileJobInputBuilder {
     pub(crate) max_capacity: ::std::option::Option<i32>,
     pub(crate) max_retries: ::std::option::Option<i32>,
     pub(crate) output_location: ::std::option::Option<crate::types::S3Location>,
-    pub(crate) validation_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
+    pub(crate) validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) timeout: ::std::option::Option<i32>,
     pub(crate) job_sample: ::std::option::Option<crate::types::JobSample>,
@@ -136,10 +129,7 @@ impl UpdateProfileJobInputBuilder {
         self
     }
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ProfileConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ProfileConfiguration>) -> Self {
         self.configuration = input;
         self
     }
@@ -148,18 +138,12 @@ impl UpdateProfileJobInputBuilder {
         &self.configuration
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn encryption_key_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn set_encryption_key_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_arn = input;
         self
     }
@@ -181,10 +165,7 @@ impl UpdateProfileJobInputBuilder {
     /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
     /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
-    pub fn set_encryption_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionMode>,
-    ) -> Self {
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
         self.encryption_mode = input;
         self
     }
@@ -216,10 +197,7 @@ impl UpdateProfileJobInputBuilder {
         self
     }
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
-    pub fn set_log_subscription(
-        mut self,
-        input: ::std::option::Option<crate::types::LogSubscription>,
-    ) -> Self {
+    pub fn set_log_subscription(mut self, input: ::std::option::Option<crate::types::LogSubscription>) -> Self {
         self.log_subscription = input;
         self
     }
@@ -261,10 +239,7 @@ impl UpdateProfileJobInputBuilder {
         self
     }
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
-    pub fn set_output_location(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_output_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.output_location = input;
         self
     }
@@ -277,27 +252,19 @@ impl UpdateProfileJobInputBuilder {
     /// To override the contents of this collection use [`set_validation_configurations`](Self::set_validation_configurations).
     ///
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    pub fn validation_configurations(
-        mut self,
-        input: crate::types::ValidationConfiguration,
-    ) -> Self {
+    pub fn validation_configurations(mut self, input: crate::types::ValidationConfiguration) -> Self {
         let mut v = self.validation_configurations.unwrap_or_default();
         v.push(input);
         self.validation_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    pub fn set_validation_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
-    ) -> Self {
+    pub fn set_validation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>) -> Self {
         self.validation_configurations = input;
         self
     }
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    pub fn get_validation_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>> {
+    pub fn get_validation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>> {
         &self.validation_configurations
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
@@ -345,25 +312,20 @@ impl UpdateProfileJobInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProfileJobInput`](crate::operation::update_profile_job::UpdateProfileJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_profile_job::UpdateProfileJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_profile_job::UpdateProfileJobInput {
-                configuration: self.configuration,
-                encryption_key_arn: self.encryption_key_arn,
-                encryption_mode: self.encryption_mode,
-                name: self.name,
-                log_subscription: self.log_subscription,
-                max_capacity: self.max_capacity.unwrap_or_default(),
-                max_retries: self.max_retries.unwrap_or_default(),
-                output_location: self.output_location,
-                validation_configurations: self.validation_configurations,
-                role_arn: self.role_arn,
-                timeout: self.timeout.unwrap_or_default(),
-                job_sample: self.job_sample,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_profile_job::UpdateProfileJobInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_profile_job::UpdateProfileJobInput {
+            configuration: self.configuration,
+            encryption_key_arn: self.encryption_key_arn,
+            encryption_mode: self.encryption_mode,
+            name: self.name,
+            log_subscription: self.log_subscription,
+            max_capacity: self.max_capacity.unwrap_or_default(),
+            max_retries: self.max_retries.unwrap_or_default(),
+            output_location: self.output_location,
+            validation_configurations: self.validation_configurations,
+            role_arn: self.role_arn,
+            timeout: self.timeout.unwrap_or_default(),
+            job_sample: self.job_sample,
+        })
     }
 }

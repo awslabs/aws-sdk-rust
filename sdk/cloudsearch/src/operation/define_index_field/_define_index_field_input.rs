@@ -23,17 +23,14 @@ impl DefineIndexFieldInput {
 }
 impl DefineIndexFieldInput {
     /// Creates a new builder-style object to manufacture [`DefineIndexFieldInput`](crate::operation::define_index_field::DefineIndexFieldInput).
-    pub fn builder() -> crate::operation::define_index_field::builders::DefineIndexFieldInputBuilder
-    {
+    pub fn builder() -> crate::operation::define_index_field::builders::DefineIndexFieldInputBuilder {
         crate::operation::define_index_field::builders::DefineIndexFieldInputBuilder::default()
     }
 }
 
 /// A builder for [`DefineIndexFieldInput`](crate::operation::define_index_field::DefineIndexFieldInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefineIndexFieldInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) index_field: ::std::option::Option<crate::types::IndexField>,
@@ -59,10 +56,7 @@ impl DefineIndexFieldInputBuilder {
         self
     }
     /// <p>The index field and field options you want to configure. </p>
-    pub fn set_index_field(
-        mut self,
-        input: ::std::option::Option<crate::types::IndexField>,
-    ) -> Self {
+    pub fn set_index_field(mut self, input: ::std::option::Option<crate::types::IndexField>) -> Self {
         self.index_field = input;
         self
     }
@@ -73,15 +67,10 @@ impl DefineIndexFieldInputBuilder {
     /// Consumes the builder and constructs a [`DefineIndexFieldInput`](crate::operation::define_index_field::DefineIndexFieldInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::define_index_field::DefineIndexFieldInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::define_index_field::DefineIndexFieldInput {
-                domain_name: self.domain_name,
-                index_field: self.index_field,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::define_index_field::DefineIndexFieldInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::define_index_field::DefineIndexFieldInput {
+            domain_name: self.domain_name,
+            index_field: self.index_field,
+        })
     }
 }

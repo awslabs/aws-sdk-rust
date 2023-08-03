@@ -34,8 +34,7 @@ pub struct ListAggregatedUtterancesOutput {
     pub aggregation_last_refreshed_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Summaries of the aggregated utterance data. Each response contains information about the number of times that the utterance was seen during the time period, whether it was detected or missed, and when it was seen during the time period.</p>
     #[doc(hidden)]
-    pub aggregated_utterances_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesSummary>>,
+    pub aggregated_utterances_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListAggregatedUtterances</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListAggregatedUtterances</code> operation request to get the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -59,21 +58,15 @@ impl ListAggregatedUtterancesOutput {
         self.locale_id.as_deref()
     }
     /// <p>The time period used to aggregate the utterance data.</p>
-    pub fn aggregation_duration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UtteranceAggregationDuration> {
+    pub fn aggregation_duration(&self) -> ::std::option::Option<&crate::types::UtteranceAggregationDuration> {
         self.aggregation_duration.as_ref()
     }
     /// <p>The date and time that the aggregation window begins. Only data collected after this time is returned in the results.</p>
-    pub fn aggregation_window_start_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn aggregation_window_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.aggregation_window_start_time.as_ref()
     }
     /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
-    pub fn aggregation_window_end_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn aggregation_window_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.aggregation_window_end_time.as_ref()
     }
     /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p>
@@ -82,15 +75,11 @@ impl ListAggregatedUtterancesOutput {
     /// <li> <p> <b>Days</b> - every 6 hours</p> </li>
     /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li>
     /// </ul>
-    pub fn aggregation_last_refreshed_date_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn aggregation_last_refreshed_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.aggregation_last_refreshed_date_time.as_ref()
     }
     /// <p>Summaries of the aggregated utterance data. Each response contains information about the number of times that the utterance was seen during the time period, whether it was detected or missed, and when it was seen during the time period.</p>
-    pub fn aggregated_utterances_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AggregatedUtterancesSummary]> {
+    pub fn aggregated_utterances_summaries(&self) -> ::std::option::Option<&[crate::types::AggregatedUtterancesSummary]> {
         self.aggregated_utterances_summaries.as_deref()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListAggregatedUtterances</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListAggregatedUtterances</code> operation request to get the next page of results.</p>
@@ -105,31 +94,24 @@ impl ::aws_http::request_id::RequestId for ListAggregatedUtterancesOutput {
 }
 impl ListAggregatedUtterancesOutput {
     /// Creates a new builder-style object to manufacture [`ListAggregatedUtterancesOutput`](crate::operation::list_aggregated_utterances::ListAggregatedUtterancesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesOutputBuilder {
         crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAggregatedUtterancesOutput`](crate::operation::list_aggregated_utterances::ListAggregatedUtterancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAggregatedUtterancesOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
-    pub(crate) aggregation_duration:
-        ::std::option::Option<crate::types::UtteranceAggregationDuration>,
+    pub(crate) aggregation_duration: ::std::option::Option<crate::types::UtteranceAggregationDuration>,
     pub(crate) aggregation_window_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) aggregation_window_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) aggregation_last_refreshed_date_time:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) aggregated_utterances_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesSummary>>,
+    pub(crate) aggregation_last_refreshed_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) aggregated_utterances_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -191,25 +173,17 @@ impl ListAggregatedUtterancesOutputBuilder {
         &self.locale_id
     }
     /// <p>The time period used to aggregate the utterance data.</p>
-    pub fn aggregation_duration(
-        mut self,
-        input: crate::types::UtteranceAggregationDuration,
-    ) -> Self {
+    pub fn aggregation_duration(mut self, input: crate::types::UtteranceAggregationDuration) -> Self {
         self.aggregation_duration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time period used to aggregate the utterance data.</p>
-    pub fn set_aggregation_duration(
-        mut self,
-        input: ::std::option::Option<crate::types::UtteranceAggregationDuration>,
-    ) -> Self {
+    pub fn set_aggregation_duration(mut self, input: ::std::option::Option<crate::types::UtteranceAggregationDuration>) -> Self {
         self.aggregation_duration = input;
         self
     }
     /// <p>The time period used to aggregate the utterance data.</p>
-    pub fn get_aggregation_duration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UtteranceAggregationDuration> {
+    pub fn get_aggregation_duration(&self) -> &::std::option::Option<crate::types::UtteranceAggregationDuration> {
         &self.aggregation_duration
     }
     /// <p>The date and time that the aggregation window begins. Only data collected after this time is returned in the results.</p>
@@ -218,17 +192,12 @@ impl ListAggregatedUtterancesOutputBuilder {
         self
     }
     /// <p>The date and time that the aggregation window begins. Only data collected after this time is returned in the results.</p>
-    pub fn set_aggregation_window_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_aggregation_window_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.aggregation_window_start_time = input;
         self
     }
     /// <p>The date and time that the aggregation window begins. Only data collected after this time is returned in the results.</p>
-    pub fn get_aggregation_window_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_aggregation_window_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.aggregation_window_start_time
     }
     /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
@@ -237,17 +206,12 @@ impl ListAggregatedUtterancesOutputBuilder {
         self
     }
     /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
-    pub fn set_aggregation_window_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_aggregation_window_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.aggregation_window_end_time = input;
         self
     }
     /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
-    pub fn get_aggregation_window_end_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_aggregation_window_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.aggregation_window_end_time
     }
     /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p>
@@ -256,10 +220,7 @@ impl ListAggregatedUtterancesOutputBuilder {
     /// <li> <p> <b>Days</b> - every 6 hours</p> </li>
     /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li>
     /// </ul>
-    pub fn aggregation_last_refreshed_date_time(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn aggregation_last_refreshed_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.aggregation_last_refreshed_date_time = ::std::option::Option::Some(input);
         self
     }
@@ -269,10 +230,7 @@ impl ListAggregatedUtterancesOutputBuilder {
     /// <li> <p> <b>Days</b> - every 6 hours</p> </li>
     /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li>
     /// </ul>
-    pub fn set_aggregation_last_refreshed_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_aggregation_last_refreshed_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.aggregation_last_refreshed_date_time = input;
         self
     }
@@ -282,9 +240,7 @@ impl ListAggregatedUtterancesOutputBuilder {
     /// <li> <p> <b>Days</b> - every 6 hours</p> </li>
     /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li>
     /// </ul>
-    pub fn get_aggregation_last_refreshed_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_aggregation_last_refreshed_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.aggregation_last_refreshed_date_time
     }
     /// Appends an item to `aggregated_utterances_summaries`.
@@ -292,10 +248,7 @@ impl ListAggregatedUtterancesOutputBuilder {
     /// To override the contents of this collection use [`set_aggregated_utterances_summaries`](Self::set_aggregated_utterances_summaries).
     ///
     /// <p>Summaries of the aggregated utterance data. Each response contains information about the number of times that the utterance was seen during the time period, whether it was detected or missed, and when it was seen during the time period.</p>
-    pub fn aggregated_utterances_summaries(
-        mut self,
-        input: crate::types::AggregatedUtterancesSummary,
-    ) -> Self {
+    pub fn aggregated_utterances_summaries(mut self, input: crate::types::AggregatedUtterancesSummary) -> Self {
         let mut v = self.aggregated_utterances_summaries.unwrap_or_default();
         v.push(input);
         self.aggregated_utterances_summaries = ::std::option::Option::Some(v);
@@ -310,9 +263,7 @@ impl ListAggregatedUtterancesOutputBuilder {
         self
     }
     /// <p>Summaries of the aggregated utterance data. Each response contains information about the number of times that the utterance was seen during the time period, whether it was detected or missed, and when it was seen during the time period.</p>
-    pub fn get_aggregated_utterances_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesSummary>> {
+    pub fn get_aggregated_utterances_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesSummary>> {
         &self.aggregated_utterances_summaries
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListAggregatedUtterances</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListAggregatedUtterances</code> operation request to get the next page of results.</p>
@@ -339,9 +290,7 @@ impl ListAggregatedUtterancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAggregatedUtterancesOutput`](crate::operation::list_aggregated_utterances::ListAggregatedUtterancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_aggregated_utterances::ListAggregatedUtterancesOutput {
+    pub fn build(self) -> crate::operation::list_aggregated_utterances::ListAggregatedUtterancesOutput {
         crate::operation::list_aggregated_utterances::ListAggregatedUtterancesOutput {
             bot_id: self.bot_id,
             bot_alias_id: self.bot_alias_id,

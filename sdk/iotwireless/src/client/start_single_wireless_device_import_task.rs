@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput::id): <p>The import task ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput::arn): <p>The ARN (Amazon Resource Name) of the import task.</p>
     /// - On failure, responds with [`SdkError<StartSingleWirelessDeviceImportTaskError>`](crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskError)
-    pub fn start_single_wireless_device_import_task(&self) -> crate::operation::start_single_wireless_device_import_task::builders::StartSingleWirelessDeviceImportTaskFluentBuilder{
-        crate::operation::start_single_wireless_device_import_task::builders::StartSingleWirelessDeviceImportTaskFluentBuilder::new(self.handle.clone())
+    pub fn start_single_wireless_device_import_task(
+        &self,
+    ) -> crate::operation::start_single_wireless_device_import_task::builders::StartSingleWirelessDeviceImportTaskFluentBuilder {
+        crate::operation::start_single_wireless_device_import_task::builders::StartSingleWirelessDeviceImportTaskFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

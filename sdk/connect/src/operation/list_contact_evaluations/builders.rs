@@ -37,10 +37,7 @@ impl ListContactEvaluationsFluentBuilder {
         }
     }
     /// Access the ListContactEvaluations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_contact_evaluations::builders::ListContactEvaluationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_contact_evaluations::builders::ListContactEvaluationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListContactEvaluationsFluentBuilder {
             crate::operation::list_contact_evaluations::ListContactEvaluations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_evaluations::ListContactEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_evaluations::ListContactEvaluationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListContactEvaluationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListContactEvaluationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_contact_evaluations::ListContactEvaluationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_evaluations::ListContactEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_evaluations::ListContactEvaluationsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListContactEvaluationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_contact_evaluations::ListContactEvaluationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_evaluations::ListContactEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_evaluations::ListContactEvaluationsError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListContactEvaluationsFluentBuilder {
             crate::operation::list_contact_evaluations::ListContactEvaluations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_contact_evaluations::ListContactEvaluationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contact_evaluations::ListContactEvaluationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_contact_evaluations::paginator::ListContactEvaluationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_contact_evaluations::paginator::ListContactEvaluationsPaginator
-    {
-        crate::operation::list_contact_evaluations::paginator::ListContactEvaluationsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_contact_evaluations::paginator::ListContactEvaluationsPaginator {
+        crate::operation::list_contact_evaluations::paginator::ListContactEvaluationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

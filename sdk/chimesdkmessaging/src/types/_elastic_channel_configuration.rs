@@ -37,9 +37,7 @@ impl ElasticChannelConfiguration {
 
 /// A builder for [`ElasticChannelConfiguration`](crate::types::ElasticChannelConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElasticChannelConfigurationBuilder {
     pub(crate) maximum_sub_channels: ::std::option::Option<i32>,
     pub(crate) target_memberships_per_sub_channel: ::std::option::Option<i32>,
@@ -66,10 +64,7 @@ impl ElasticChannelConfigurationBuilder {
         self
     }
     /// <p>The maximum number of members allowed in a SubChannel.</p>
-    pub fn set_target_memberships_per_sub_channel(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_target_memberships_per_sub_channel(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_memberships_per_sub_channel = input;
         self
     }

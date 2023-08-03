@@ -5,8 +5,7 @@
 pub struct GetRelationalDatabaseBlueprintsOutput {
     /// <p>An object describing the result of your get relational database blueprints request.</p>
     #[doc(hidden)]
-    pub blueprints:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBlueprint>>,
+    pub blueprints: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBlueprint>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
@@ -16,9 +15,7 @@ pub struct GetRelationalDatabaseBlueprintsOutput {
 }
 impl GetRelationalDatabaseBlueprintsOutput {
     /// <p>An object describing the result of your get relational database blueprints request.</p>
-    pub fn blueprints(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RelationalDatabaseBlueprint]> {
+    pub fn blueprints(&self) -> ::std::option::Option<&[crate::types::RelationalDatabaseBlueprint]> {
         self.blueprints.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -35,19 +32,16 @@ impl ::aws_http::request_id::RequestId for GetRelationalDatabaseBlueprintsOutput
 }
 impl GetRelationalDatabaseBlueprintsOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseBlueprintsOutput`](crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsOutput).
-    pub fn builder() -> crate::operation::get_relational_database_blueprints::builders::GetRelationalDatabaseBlueprintsOutputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_blueprints::builders::GetRelationalDatabaseBlueprintsOutputBuilder {
         crate::operation::get_relational_database_blueprints::builders::GetRelationalDatabaseBlueprintsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseBlueprintsOutput`](crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseBlueprintsOutputBuilder {
-    pub(crate) blueprints:
-        ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBlueprint>>,
+    pub(crate) blueprints: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBlueprint>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -64,36 +58,25 @@ impl GetRelationalDatabaseBlueprintsOutputBuilder {
         self
     }
     /// <p>An object describing the result of your get relational database blueprints request.</p>
-    pub fn set_blueprints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBlueprint>>,
-    ) -> Self {
+    pub fn set_blueprints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBlueprint>>) -> Self {
         self.blueprints = input;
         self
     }
     /// <p>An object describing the result of your get relational database blueprints request.</p>
-    pub fn get_blueprints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBlueprint>> {
+    pub fn get_blueprints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseBlueprint>> {
         &self.blueprints
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -113,15 +96,10 @@ impl GetRelationalDatabaseBlueprintsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseBlueprintsOutput`](crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsOutput
-    {
+    pub fn build(self) -> crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsOutput {
         crate::operation::get_relational_database_blueprints::GetRelationalDatabaseBlueprintsOutput {
-            blueprints: self.blueprints
-            ,
-            next_page_token: self.next_page_token
-            ,
+            blueprints: self.blueprints,
+            next_page_token: self.next_page_token,
             _request_id: self._request_id,
         }
     }

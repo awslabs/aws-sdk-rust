@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`SetUiCustomizationOutput`](crate::operation::set_ui_customization::SetUiCustomizationOutput) with field(s):
     ///   - [`ui_customization(Option<UiCustomizationType>)`](crate::operation::set_ui_customization::SetUiCustomizationOutput::ui_customization): <p>The UI customization information.</p>
     /// - On failure, responds with [`SdkError<SetUICustomizationError>`](crate::operation::set_ui_customization::SetUICustomizationError)
-    pub fn set_ui_customization(
-        &self,
-    ) -> crate::operation::set_ui_customization::builders::SetUICustomizationFluentBuilder {
-        crate::operation::set_ui_customization::builders::SetUICustomizationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_ui_customization(&self) -> crate::operation::set_ui_customization::builders::SetUICustomizationFluentBuilder {
+        crate::operation::set_ui_customization::builders::SetUICustomizationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,9 +44,7 @@ impl DeviceSelectionConfig {
 
 /// A builder for [`DeviceSelectionConfig`](crate::types::DeviceSelectionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceSelectionConfigBuilder {
     pub(crate) device_subset_type: ::std::option::Option<crate::types::DeviceSubsetType>,
     pub(crate) percentage: ::std::option::Option<i32>,
@@ -60,10 +58,7 @@ impl DeviceSelectionConfigBuilder {
         self
     }
     /// <p>Type of device subsets to deploy to the current stage.</p>
-    pub fn set_device_subset_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceSubsetType>,
-    ) -> Self {
+    pub fn set_device_subset_type(mut self, input: ::std::option::Option<crate::types::DeviceSubsetType>) -> Self {
         self.device_subset_type = input;
         self
     }
@@ -97,32 +92,21 @@ impl DeviceSelectionConfigBuilder {
         self
     }
     /// <p>List of devices chosen to deploy.</p>
-    pub fn set_device_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_device_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.device_names = input;
         self
     }
     /// <p>List of devices chosen to deploy.</p>
-    pub fn get_device_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_device_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.device_names
     }
     /// <p>A filter to select devices with names containing this name.</p>
-    pub fn device_name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter to select devices with names containing this name.</p>
-    pub fn set_device_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name_contains = input;
         self
     }

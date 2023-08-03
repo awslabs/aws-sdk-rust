@@ -30,9 +30,7 @@ impl OutPutS3Location {
 
 /// A builder for [`OutPutS3Location`](crate::types::OutPutS3Location).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutPutS3LocationBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) object_key: ::std::option::Option<::std::string::String>,

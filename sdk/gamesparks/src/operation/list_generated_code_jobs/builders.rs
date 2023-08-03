@@ -37,10 +37,7 @@ impl ListGeneratedCodeJobsFluentBuilder {
         }
     }
     /// Access the ListGeneratedCodeJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_generated_code_jobs::builders::ListGeneratedCodeJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_generated_code_jobs::builders::ListGeneratedCodeJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListGeneratedCodeJobsFluentBuilder {
             crate::operation::list_generated_code_jobs::ListGeneratedCodeJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListGeneratedCodeJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListGeneratedCodeJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListGeneratedCodeJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListGeneratedCodeJobsFluentBuilder {
             crate::operation::list_generated_code_jobs::ListGeneratedCodeJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_generated_code_jobs::ListGeneratedCodeJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_generated_code_jobs::paginator::ListGeneratedCodeJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_generated_code_jobs::paginator::ListGeneratedCodeJobsPaginator {
-        crate::operation::list_generated_code_jobs::paginator::ListGeneratedCodeJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_generated_code_jobs::paginator::ListGeneratedCodeJobsPaginator {
+        crate::operation::list_generated_code_jobs::paginator::ListGeneratedCodeJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the game.</p>
     pub fn game_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

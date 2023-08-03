@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateJobTemplateOutput {
 }
 impl CreateJobTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateJobTemplateOutput`](crate::operation::create_job_template::CreateJobTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::create_job_template::builders::CreateJobTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::create_job_template::builders::CreateJobTemplateOutputBuilder {
         crate::operation::create_job_template::builders::CreateJobTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateJobTemplateOutput`](crate::operation::create_job_template::CreateJobTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateJobTemplateOutputBuilder {
     pub(crate) job_template: ::std::option::Option<crate::types::JobTemplate>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CreateJobTemplateOutputBuilder {
         self
     }
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
-    pub fn set_job_template(
-        mut self,
-        input: ::std::option::Option<crate::types::JobTemplate>,
-    ) -> Self {
+    pub fn set_job_template(mut self, input: ::std::option::Option<crate::types::JobTemplate>) -> Self {
         self.job_template = input;
         self
     }

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`topic_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_notification_configuration::builders::DeleteNotificationConfigurationFluentBuilder::topic_arn) / [`set_topic_arn(Option<String>)`](crate::operation::delete_notification_configuration::builders::DeleteNotificationConfigurationFluentBuilder::set_topic_arn): <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     /// - On success, responds with [`DeleteNotificationConfigurationOutput`](crate::operation::delete_notification_configuration::DeleteNotificationConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteNotificationConfigurationError>`](crate::operation::delete_notification_configuration::DeleteNotificationConfigurationError)
-    pub fn delete_notification_configuration(&self) -> crate::operation::delete_notification_configuration::builders::DeleteNotificationConfigurationFluentBuilder{
+    pub fn delete_notification_configuration(
+        &self,
+    ) -> crate::operation::delete_notification_configuration::builders::DeleteNotificationConfigurationFluentBuilder {
         crate::operation::delete_notification_configuration::builders::DeleteNotificationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

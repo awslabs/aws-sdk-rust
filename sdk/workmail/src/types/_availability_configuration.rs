@@ -33,15 +33,11 @@ impl AvailabilityConfiguration {
         self.provider_type.as_ref()
     }
     /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
-    pub fn ews_provider(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RedactedEwsAvailabilityProvider> {
+    pub fn ews_provider(&self) -> ::std::option::Option<&crate::types::RedactedEwsAvailabilityProvider> {
         self.ews_provider.as_ref()
     }
     /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
-    pub fn lambda_provider(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LambdaAvailabilityProvider> {
+    pub fn lambda_provider(&self) -> ::std::option::Option<&crate::types::LambdaAvailabilityProvider> {
         self.lambda_provider.as_ref()
     }
     /// <p>The date and time at which the availability configuration was created.</p>
@@ -62,9 +58,7 @@ impl AvailabilityConfiguration {
 
 /// A builder for [`AvailabilityConfiguration`](crate::types::AvailabilityConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AvailabilityConfigurationBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) provider_type: ::std::option::Option<crate::types::AvailabilityProviderType>,
@@ -94,17 +88,12 @@ impl AvailabilityConfigurationBuilder {
         self
     }
     /// <p>Displays the provider type that applies to this domain.</p>
-    pub fn set_provider_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AvailabilityProviderType>,
-    ) -> Self {
+    pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::AvailabilityProviderType>) -> Self {
         self.provider_type = input;
         self
     }
     /// <p>Displays the provider type that applies to this domain.</p>
-    pub fn get_provider_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AvailabilityProviderType> {
+    pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::AvailabilityProviderType> {
         &self.provider_type
     }
     /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
@@ -113,17 +102,12 @@ impl AvailabilityConfigurationBuilder {
         self
     }
     /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
-    pub fn set_ews_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RedactedEwsAvailabilityProvider>,
-    ) -> Self {
+    pub fn set_ews_provider(mut self, input: ::std::option::Option<crate::types::RedactedEwsAvailabilityProvider>) -> Self {
         self.ews_provider = input;
         self
     }
     /// <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
-    pub fn get_ews_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::RedactedEwsAvailabilityProvider> {
+    pub fn get_ews_provider(&self) -> &::std::option::Option<crate::types::RedactedEwsAvailabilityProvider> {
         &self.ews_provider
     }
     /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
@@ -132,17 +116,12 @@ impl AvailabilityConfigurationBuilder {
         self
     }
     /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
-    pub fn set_lambda_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::LambdaAvailabilityProvider>,
-    ) -> Self {
+    pub fn set_lambda_provider(mut self, input: ::std::option::Option<crate::types::LambdaAvailabilityProvider>) -> Self {
         self.lambda_provider = input;
         self
     }
     /// <p>If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>. Otherwise, it is not required.</p>
-    pub fn get_lambda_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::LambdaAvailabilityProvider> {
+    pub fn get_lambda_provider(&self) -> &::std::option::Option<crate::types::LambdaAvailabilityProvider> {
         &self.lambda_provider
     }
     /// <p>The date and time at which the availability configuration was created.</p>
@@ -151,10 +130,7 @@ impl AvailabilityConfigurationBuilder {
         self
     }
     /// <p>The date and time at which the availability configuration was created.</p>
-    pub fn set_date_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_created = input;
         self
     }
@@ -168,10 +144,7 @@ impl AvailabilityConfigurationBuilder {
         self
     }
     /// <p>The date and time at which the availability configuration was last modified.</p>
-    pub fn set_date_modified(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_date_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date_modified = input;
         self
     }

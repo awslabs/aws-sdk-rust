@@ -5,16 +5,16 @@ pub use crate::operation::put_block_public_access_configuration::_put_block_publ
 
 impl PutBlockPublicAccessConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_block_public_access_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl PutBlockPublicAccessConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBlockPublicAccessConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_block_public_access_configuration::builders::PutBlockPublicAccessConfigurationInputBuilder,
+    inner: crate::operation::put_block_public_access_configuration::builders::PutBlockPublicAccessConfigurationInputBuilder,
 }
 impl PutBlockPublicAccessConfigurationFluentBuilder {
     /// Creates a new `PutBlockPublicAccessConfiguration`.
@@ -37,15 +37,20 @@ impl PutBlockPublicAccessConfigurationFluentBuilder {
         }
     }
     /// Access the PutBlockPublicAccessConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_block_public_access_configuration::builders::PutBlockPublicAccessConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_block_public_access_configuration::builders::PutBlockPublicAccessConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl PutBlockPublicAccessConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,45 +87,46 @@ impl PutBlockPublicAccessConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
-    pub fn block_public_access_configuration(
-        mut self,
-        input: crate::types::BlockPublicAccessConfiguration,
-    ) -> Self {
+    pub fn block_public_access_configuration(mut self, input: crate::types::BlockPublicAccessConfiguration) -> Self {
         self.inner = self.inner.block_public_access_configuration(input);
         self
     }
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
-    pub fn set_block_public_access_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::BlockPublicAccessConfiguration>,
-    ) -> Self {
+    pub fn set_block_public_access_configuration(mut self, input: ::std::option::Option<crate::types::BlockPublicAccessConfiguration>) -> Self {
         self.inner = self.inner.set_block_public_access_configuration(input);
         self
     }
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
-    pub fn get_block_public_access_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlockPublicAccessConfiguration> {
+    pub fn get_block_public_access_configuration(&self) -> &::std::option::Option<crate::types::BlockPublicAccessConfiguration> {
         self.inner.get_block_public_access_configuration()
     }
 }

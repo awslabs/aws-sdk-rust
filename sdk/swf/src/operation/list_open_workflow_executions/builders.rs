@@ -41,7 +41,7 @@ impl ListOpenWorkflowExecutionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOpenWorkflowExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_open_workflow_executions::builders::ListOpenWorkflowExecutionsInputBuilder,
+    inner: crate::operation::list_open_workflow_executions::builders::ListOpenWorkflowExecutionsInputBuilder,
 }
 impl ListOpenWorkflowExecutionsFluentBuilder {
     /// Creates a new `ListOpenWorkflowExecutions`.
@@ -52,7 +52,7 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
         }
     }
     /// Access the ListOpenWorkflowExecutions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_open_workflow_executions::builders::ListOpenWorkflowExecutionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_open_workflow_executions::builders::ListOpenWorkflowExecutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -64,9 +64,7 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
             crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -76,10 +74,7 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -88,9 +83,7 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsError>,
     > {
         let op = self
             .inner
@@ -113,9 +106,7 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsError>,
     > {
         self.send_middleware().await
     }
@@ -129,16 +120,14 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
             crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_open_workflow_executions::paginator::ListOpenWorkflowExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_open_workflow_executions::paginator::ListOpenWorkflowExecutionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_open_workflow_executions::paginator::ListOpenWorkflowExecutionsPaginator {
         crate::operation::list_open_workflow_executions::paginator::ListOpenWorkflowExecutionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the domain that contains the workflow executions to list.</p>
@@ -161,17 +150,12 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
         self
     }
     /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
-    pub fn set_start_time_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionTimeFilter>,
-    ) -> Self {
+    pub fn set_start_time_filter(mut self, input: ::std::option::Option<crate::types::ExecutionTimeFilter>) -> Self {
         self.inner = self.inner.set_start_time_filter(input);
         self
     }
     /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
-    pub fn get_start_time_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
+    pub fn get_start_time_filter(&self) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
         self.inner.get_start_time_filter()
     }
     /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
@@ -184,10 +168,7 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
     /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_type_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowTypeFilter>,
-    ) -> Self {
+    pub fn set_type_filter(mut self, input: ::std::option::Option<crate::types::WorkflowTypeFilter>) -> Self {
         self.inner = self.inner.set_type_filter(input);
         self
     }
@@ -219,19 +200,13 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }
@@ -278,19 +253,14 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_execution_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecutionFilter>,
-    ) -> Self {
+    pub fn set_execution_filter(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionFilter>) -> Self {
         self.inner = self.inner.set_execution_filter(input);
         self
     }
     /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn get_execution_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
+    pub fn get_execution_filter(&self) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
         self.inner.get_execution_filter()
     }
 }

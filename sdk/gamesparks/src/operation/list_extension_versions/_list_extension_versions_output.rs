@@ -5,8 +5,7 @@
 pub struct ListExtensionVersionsOutput {
     /// <p>The list of extension versions.</p>
     #[doc(hidden)]
-    pub extension_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExtensionVersionDetails>>,
+    pub extension_versions: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionVersionDetails>>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
     #[doc(hidden)]
@@ -15,9 +14,7 @@ pub struct ListExtensionVersionsOutput {
 }
 impl ListExtensionVersionsOutput {
     /// <p>The list of extension versions.</p>
-    pub fn extension_versions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ExtensionVersionDetails]> {
+    pub fn extension_versions(&self) -> ::std::option::Option<&[crate::types::ExtensionVersionDetails]> {
         self.extension_versions.as_deref()
     }
     /// <p>The token that indicates the start of the next sequential page of results.</p>
@@ -33,21 +30,16 @@ impl ::aws_http::request_id::RequestId for ListExtensionVersionsOutput {
 }
 impl ListExtensionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListExtensionVersionsOutput`](crate::operation::list_extension_versions::ListExtensionVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_extension_versions::builders::ListExtensionVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_extension_versions::builders::ListExtensionVersionsOutputBuilder {
         crate::operation::list_extension_versions::builders::ListExtensionVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListExtensionVersionsOutput`](crate::operation::list_extension_versions::ListExtensionVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExtensionVersionsOutputBuilder {
-    pub(crate) extension_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExtensionVersionDetails>>,
+    pub(crate) extension_versions: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionVersionDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -64,17 +56,12 @@ impl ListExtensionVersionsOutputBuilder {
         self
     }
     /// <p>The list of extension versions.</p>
-    pub fn set_extension_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionVersionDetails>>,
-    ) -> Self {
+    pub fn set_extension_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionVersionDetails>>) -> Self {
         self.extension_versions = input;
         self
     }
     /// <p>The list of extension versions.</p>
-    pub fn get_extension_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtensionVersionDetails>> {
+    pub fn get_extension_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtensionVersionDetails>> {
         &self.extension_versions
     }
     /// <p>The token that indicates the start of the next sequential page of results.</p>

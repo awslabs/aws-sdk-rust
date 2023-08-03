@@ -5,16 +5,16 @@ pub use crate::operation::put_app_instance_user_expiration_settings::_put_app_in
 
 impl PutAppInstanceUserExpirationSettingsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_app_instance_user_expiration_settings();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl PutAppInstanceUserExpirationSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAppInstanceUserExpirationSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_app_instance_user_expiration_settings::builders::PutAppInstanceUserExpirationSettingsInputBuilder,
+    inner: crate::operation::put_app_instance_user_expiration_settings::builders::PutAppInstanceUserExpirationSettingsInputBuilder,
 }
 impl PutAppInstanceUserExpirationSettingsFluentBuilder {
     /// Creates a new `PutAppInstanceUserExpirationSettings`.
@@ -40,15 +40,22 @@ impl PutAppInstanceUserExpirationSettingsFluentBuilder {
         }
     }
     /// Access the PutAppInstanceUserExpirationSettings as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_app_instance_user_expiration_settings::builders::PutAppInstanceUserExpirationSettingsInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_app_instance_user_expiration_settings::builders::PutAppInstanceUserExpirationSettingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettings, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettings,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +64,17 @@ impl PutAppInstanceUserExpirationSettingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,32 +92,35 @@ impl PutAppInstanceUserExpirationSettingsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettings, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettings,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_instance_user_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_instance_user_arn(input);
         self
     }
@@ -123,17 +134,12 @@ impl PutAppInstanceUserExpirationSettingsFluentBuilder {
         self
     }
     /// <p>Settings that control the interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
-    pub fn set_expiration_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpirationSettings>,
-    ) -> Self {
+    pub fn set_expiration_settings(mut self, input: ::std::option::Option<crate::types::ExpirationSettings>) -> Self {
         self.inner = self.inner.set_expiration_settings(input);
         self
     }
     /// <p>Settings that control the interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
-    pub fn get_expiration_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExpirationSettings> {
+    pub fn get_expiration_settings(&self) -> &::std::option::Option<crate::types::ExpirationSettings> {
         self.inner.get_expiration_settings()
     }
 }

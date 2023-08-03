@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`model_package_summaries(Option<HashMap<String, BatchDescribeModelPackageSummary>>)`](crate::operation::batch_describe_model_package::BatchDescribeModelPackageOutput::model_package_summaries): <p>The summaries for the model package versions</p>
     ///   - [`batch_describe_model_package_error_map(Option<HashMap<String, BatchDescribeModelPackageError>>)`](crate::operation::batch_describe_model_package::BatchDescribeModelPackageOutput::batch_describe_model_package_error_map): <p>A map of the resource and BatchDescribeModelPackageError objects reporting the error associated with describing the model package.</p>
     /// - On failure, responds with [`SdkError<BatchDescribeModelPackageError>`](crate::operation::batch_describe_model_package::BatchDescribeModelPackageError)
-    pub fn batch_describe_model_package(&self) -> crate::operation::batch_describe_model_package::builders::BatchDescribeModelPackageFluentBuilder{
+    pub fn batch_describe_model_package(&self) -> crate::operation::batch_describe_model_package::builders::BatchDescribeModelPackageFluentBuilder {
         crate::operation::batch_describe_model_package::builders::BatchDescribeModelPackageFluentBuilder::new(self.handle.clone())
     }
 }

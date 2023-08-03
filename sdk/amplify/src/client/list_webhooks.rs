@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`webhooks(Option<Vec<Webhook>>)`](crate::operation::list_webhooks::ListWebhooksOutput::webhooks): <p> A list of webhooks. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_webhooks::ListWebhooksOutput::next_token): <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     /// - On failure, responds with [`SdkError<ListWebhooksError>`](crate::operation::list_webhooks::ListWebhooksError)
-    pub fn list_webhooks(
-        &self,
-    ) -> crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder {
-        crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_webhooks(&self) -> crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder {
+        crate::operation::list_webhooks::builders::ListWebhooksFluentBuilder::new(self.handle.clone())
     }
 }

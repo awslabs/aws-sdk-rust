@@ -17,9 +17,7 @@ pub struct CreateFilterInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags for the filter.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The reason for creating the filter.</p>
     #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
@@ -42,11 +40,7 @@ impl CreateFilterInput {
         self.name.as_deref()
     }
     /// <p>A list of tags for the filter.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The reason for creating the filter.</p>
@@ -63,17 +57,13 @@ impl CreateFilterInput {
 
 /// A builder for [`CreateFilterInput`](crate::operation::create_filter::CreateFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFilterInputBuilder {
     pub(crate) action: ::std::option::Option<crate::types::FilterAction>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl CreateFilterInputBuilder {
@@ -111,10 +101,7 @@ impl CreateFilterInputBuilder {
         self
     }
     /// <p>Defines the criteria to be used in the filter for querying findings.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::FilterCriteria>) -> Self {
         self.filter_criteria = input;
         self
     }
@@ -141,32 +128,19 @@ impl CreateFilterInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags for the filter.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of tags for the filter.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of tags for the filter.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The reason for creating the filter.</p>
@@ -184,12 +158,7 @@ impl CreateFilterInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`CreateFilterInput`](crate::operation::create_filter::CreateFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_filter::CreateFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_filter::CreateFilterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_filter::CreateFilterInput {
             action: self.action,
             description: self.description,

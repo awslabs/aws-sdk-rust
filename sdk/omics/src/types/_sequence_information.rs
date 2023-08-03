@@ -44,9 +44,7 @@ impl SequenceInformation {
 
 /// A builder for [`SequenceInformation`](crate::types::SequenceInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SequenceInformationBuilder {
     pub(crate) total_read_count: ::std::option::Option<i64>,
     pub(crate) total_base_count: ::std::option::Option<i64>,
@@ -83,18 +81,12 @@ impl SequenceInformationBuilder {
         &self.total_base_count
     }
     /// <p>Where the sequence originated.</p>
-    pub fn generated_from(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn generated_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generated_from = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Where the sequence originated.</p>
-    pub fn set_generated_from(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_generated_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generated_from = input;
         self
     }

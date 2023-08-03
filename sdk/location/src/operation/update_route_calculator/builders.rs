@@ -37,10 +37,7 @@ impl UpdateRouteCalculatorFluentBuilder {
         }
     }
     /// Access the UpdateRouteCalculator as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_route_calculator::builders::UpdateRouteCalculatorInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_route_calculator::builders::UpdateRouteCalculatorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateRouteCalculatorFluentBuilder {
             crate::operation::update_route_calculator::UpdateRouteCalculator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_route_calculator::UpdateRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_route_calculator::UpdateRouteCalculatorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateRouteCalculatorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateRouteCalculatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_route_calculator::UpdateRouteCalculatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_route_calculator::UpdateRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_route_calculator::UpdateRouteCalculatorError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateRouteCalculatorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_route_calculator::UpdateRouteCalculatorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_route_calculator::UpdateRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_route_calculator::UpdateRouteCalculatorError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateRouteCalculatorFluentBuilder {
             crate::operation::update_route_calculator::UpdateRouteCalculator,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_route_calculator::UpdateRouteCalculatorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_route_calculator::UpdateRouteCalculatorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the route calculator resource to update.</p>
-    pub fn calculator_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.calculator_name(input.into());
         self
     }
     /// <p>The name of the route calculator resource to update.</p>
-    pub fn set_calculator_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_calculator_name(input);
         self
     }
@@ -144,31 +124,19 @@ impl UpdateRouteCalculatorFluentBuilder {
         self.inner.get_calculator_name()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.inner = self.inner.pricing_plan(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn set_pricing_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
+    pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.inner = self.inner.set_pricing_plan(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
         self.inner.get_pricing_plan()
     }

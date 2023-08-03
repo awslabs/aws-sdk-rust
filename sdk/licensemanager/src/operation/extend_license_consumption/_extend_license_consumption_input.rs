@@ -22,36 +22,26 @@ impl ExtendLicenseConsumptionInput {
 }
 impl ExtendLicenseConsumptionInput {
     /// Creates a new builder-style object to manufacture [`ExtendLicenseConsumptionInput`](crate::operation::extend_license_consumption::ExtendLicenseConsumptionInput).
-    pub fn builder(
-    ) -> crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionInputBuilder
-    {
+    pub fn builder() -> crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionInputBuilder {
         crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionInputBuilder::default()
     }
 }
 
 /// A builder for [`ExtendLicenseConsumptionInput`](crate::operation::extend_license_consumption::ExtendLicenseConsumptionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExtendLicenseConsumptionInputBuilder {
     pub(crate) license_consumption_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl ExtendLicenseConsumptionInputBuilder {
     /// <p>License consumption token.</p>
-    pub fn license_consumption_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_consumption_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_consumption_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>License consumption token.</p>
-    pub fn set_license_consumption_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_consumption_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_consumption_token = input;
         self
     }
@@ -80,11 +70,9 @@ impl ExtendLicenseConsumptionInputBuilder {
         crate::operation::extend_license_consumption::ExtendLicenseConsumptionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::extend_license_consumption::ExtendLicenseConsumptionInput {
-                license_consumption_token: self.license_consumption_token,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::extend_license_consumption::ExtendLicenseConsumptionInput {
+            license_consumption_token: self.license_consumption_token,
+            dry_run: self.dry_run,
+        })
     }
 }

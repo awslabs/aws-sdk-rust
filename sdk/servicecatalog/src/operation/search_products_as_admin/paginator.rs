@@ -2,8 +2,7 @@
 /// Paginator for [`SearchProductsAsAdmin`](crate::operation::search_products_as_admin::SearchProductsAsAdmin)
 pub struct SearchProductsAsAdminPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
-    builder:
-        crate::operation::search_products_as_admin::builders::SearchProductsAsAdminInputBuilder,
+    builder: crate::operation::search_products_as_admin::builders::SearchProductsAsAdminInputBuilder,
     stop_on_duplicate_token: bool,
 }
 
@@ -48,9 +47,7 @@ impl SearchProductsAsAdminPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::search_products_as_admin::SearchProductsAsAdminOutput,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::search_products_as_admin::SearchProductsAsAdminError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::search_products_as_admin::SearchProductsAsAdminError>,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
@@ -60,10 +57,7 @@ impl SearchProductsAsAdminPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -90,10 +84,7 @@ impl SearchProductsAsAdminPaginator {
                         ::std::result::Result::Ok(ref resp) => {
                             let new_token = crate::lens::reflens_search_products_as_admin_output_next_page_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.page_token.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.page_token.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.page_token = new_token.cloned();

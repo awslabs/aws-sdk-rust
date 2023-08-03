@@ -15,16 +15,14 @@ impl DescribeCustomRoutingListenerInput {
 }
 impl DescribeCustomRoutingListenerInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingListenerInput`](crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerInput).
-    pub fn builder() -> crate::operation::describe_custom_routing_listener::builders::DescribeCustomRoutingListenerInputBuilder{
+    pub fn builder() -> crate::operation::describe_custom_routing_listener::builders::DescribeCustomRoutingListenerInputBuilder {
         crate::operation::describe_custom_routing_listener::builders::DescribeCustomRoutingListenerInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCustomRoutingListenerInput`](crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCustomRoutingListenerInputBuilder {
     pub(crate) listener_arn: ::std::option::Option<::std::string::String>,
 }
@@ -50,11 +48,8 @@ impl DescribeCustomRoutingListenerInputBuilder {
         crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerInput {
-                listener_arn: self.listener_arn
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerInput {
+            listener_arn: self.listener_arn,
+        })
     }
 }

@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DetectDocumentTextOutput {
 }
 impl DetectDocumentTextOutput {
     /// Creates a new builder-style object to manufacture [`DetectDocumentTextOutput`](crate::operation::detect_document_text::DetectDocumentTextOutput).
-    pub fn builder(
-    ) -> crate::operation::detect_document_text::builders::DetectDocumentTextOutputBuilder {
+    pub fn builder() -> crate::operation::detect_document_text::builders::DetectDocumentTextOutputBuilder {
         crate::operation::detect_document_text::builders::DetectDocumentTextOutputBuilder::default()
     }
 }
 
 /// A builder for [`DetectDocumentTextOutput`](crate::operation::detect_document_text::DetectDocumentTextOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectDocumentTextOutputBuilder {
     pub(crate) document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
@@ -59,10 +56,7 @@ impl DetectDocumentTextOutputBuilder {
         self
     }
     /// <p>Metadata about the document. It contains the number of pages that are detected in the document.</p>
-    pub fn set_document_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentMetadata>,
-    ) -> Self {
+    pub fn set_document_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
         self.document_metadata = input;
         self
     }
@@ -82,10 +76,7 @@ impl DetectDocumentTextOutputBuilder {
         self
     }
     /// <p>An array of <code>Block</code> objects that contain the text that's detected in the document.</p>
-    pub fn set_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
-    ) -> Self {
+    pub fn set_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Block>>) -> Self {
         self.blocks = input;
         self
     }
@@ -94,25 +85,17 @@ impl DetectDocumentTextOutputBuilder {
         &self.blocks
     }
     /// <p></p>
-    pub fn detect_document_text_model_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detect_document_text_model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detect_document_text_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_detect_document_text_model_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detect_document_text_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detect_document_text_model_version = input;
         self
     }
     /// <p></p>
-    pub fn get_detect_document_text_model_version(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_detect_document_text_model_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.detect_document_text_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

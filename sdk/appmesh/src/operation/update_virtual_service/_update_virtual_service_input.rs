@@ -43,17 +43,14 @@ impl UpdateVirtualServiceInput {
 }
 impl UpdateVirtualServiceInput {
     /// Creates a new builder-style object to manufacture [`UpdateVirtualServiceInput`](crate::operation::update_virtual_service::UpdateVirtualServiceInput).
-    pub fn builder(
-    ) -> crate::operation::update_virtual_service::builders::UpdateVirtualServiceInputBuilder {
+    pub fn builder() -> crate::operation::update_virtual_service::builders::UpdateVirtualServiceInputBuilder {
         crate::operation::update_virtual_service::builders::UpdateVirtualServiceInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateVirtualServiceInput`](crate::operation::update_virtual_service::UpdateVirtualServiceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateVirtualServiceInputBuilder {
     pub(crate) virtual_service_name: ::std::option::Option<::std::string::String>,
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
@@ -63,18 +60,12 @@ pub struct UpdateVirtualServiceInputBuilder {
 }
 impl UpdateVirtualServiceInputBuilder {
     /// <p>The name of the virtual service to update.</p>
-    pub fn virtual_service_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual service to update.</p>
-    pub fn set_virtual_service_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_service_name = input;
         self
     }
@@ -102,10 +93,7 @@ impl UpdateVirtualServiceInputBuilder {
         self
     }
     /// <p>The new virtual service specification to apply. This overwrites the existing data.</p>
-    pub fn set_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::VirtualServiceSpec>,
-    ) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::VirtualServiceSpec>) -> Self {
         self.spec = input;
         self
     }
@@ -144,18 +132,14 @@ impl UpdateVirtualServiceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVirtualServiceInput`](crate::operation::update_virtual_service::UpdateVirtualServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_virtual_service::UpdateVirtualServiceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_virtual_service::UpdateVirtualServiceInput {
-                virtual_service_name: self.virtual_service_name,
-                mesh_name: self.mesh_name,
-                spec: self.spec,
-                client_token: self.client_token,
-                mesh_owner: self.mesh_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_virtual_service::UpdateVirtualServiceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_virtual_service::UpdateVirtualServiceInput {
+            virtual_service_name: self.virtual_service_name,
+            mesh_name: self.mesh_name,
+            spec: self.spec,
+            client_token: self.client_token,
+            mesh_owner: self.mesh_owner,
+        })
     }
 }

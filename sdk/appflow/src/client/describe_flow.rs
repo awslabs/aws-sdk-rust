@@ -25,11 +25,7 @@ impl super::Client {
     ///   - [`last_run_metadata_catalog_details(Option<Vec<MetadataCatalogDetail>>)`](crate::operation::describe_flow::DescribeFlowOutput::last_run_metadata_catalog_details): <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
     ///   - [`schema_version(Option<i64>)`](crate::operation::describe_flow::DescribeFlowOutput::schema_version): <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>  <ul>   <li> <p>Source-to-destination field mappings</p> </li>   <li> <p>Field data types</p> </li>   <li> <p>Partition keys</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DescribeFlowError>`](crate::operation::describe_flow::DescribeFlowError)
-    pub fn describe_flow(
-        &self,
-    ) -> crate::operation::describe_flow::builders::DescribeFlowFluentBuilder {
-        crate::operation::describe_flow::builders::DescribeFlowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_flow(&self) -> crate::operation::describe_flow::builders::DescribeFlowFluentBuilder {
+        crate::operation::describe_flow::builders::DescribeFlowFluentBuilder::new(self.handle.clone())
     }
 }

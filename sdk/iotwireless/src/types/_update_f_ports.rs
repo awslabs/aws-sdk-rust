@@ -30,13 +30,10 @@ impl UpdateFPorts {
 
 /// A builder for [`UpdateFPorts`](crate::types::UpdateFPorts).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFPortsBuilder {
     pub(crate) positioning: ::std::option::Option<crate::types::Positioning>,
-    pub(crate) applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
+    pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
 }
 impl UpdateFPortsBuilder {
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
@@ -45,10 +42,7 @@ impl UpdateFPortsBuilder {
         self
     }
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
-    pub fn set_positioning(
-        mut self,
-        input: ::std::option::Option<crate::types::Positioning>,
-    ) -> Self {
+    pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::Positioning>) -> Self {
         self.positioning = input;
         self
     }
@@ -68,17 +62,12 @@ impl UpdateFPortsBuilder {
         self
     }
     /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
-    ) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>) -> Self {
         self.applications = input;
         self
     }
     /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
-    pub fn get_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>> {
         &self.applications
     }
     /// Consumes the builder and constructs a [`UpdateFPorts`](crate::types::UpdateFPorts).

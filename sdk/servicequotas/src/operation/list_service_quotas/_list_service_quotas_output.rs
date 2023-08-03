@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListServiceQuotasOutput {
 }
 impl ListServiceQuotasOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceQuotasOutput`](crate::operation::list_service_quotas::ListServiceQuotasOutput).
-    pub fn builder(
-    ) -> crate::operation::list_service_quotas::builders::ListServiceQuotasOutputBuilder {
+    pub fn builder() -> crate::operation::list_service_quotas::builders::ListServiceQuotasOutputBuilder {
         crate::operation::list_service_quotas::builders::ListServiceQuotasOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceQuotasOutput`](crate::operation::list_service_quotas::ListServiceQuotasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceQuotasOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) quotas: ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>>,
@@ -71,17 +68,12 @@ impl ListServiceQuotasOutputBuilder {
         self
     }
     /// <p>Information about the quotas.</p>
-    pub fn set_quotas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>>,
-    ) -> Self {
+    pub fn set_quotas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>>) -> Self {
         self.quotas = input;
         self
     }
     /// <p>Information about the quotas.</p>
-    pub fn get_quotas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>> {
+    pub fn get_quotas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>> {
         &self.quotas
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

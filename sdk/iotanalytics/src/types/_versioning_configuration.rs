@@ -30,9 +30,7 @@ impl VersioningConfiguration {
 
 /// A builder for [`VersioningConfiguration`](crate::types::VersioningConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VersioningConfigurationBuilder {
     pub(crate) unlimited: ::std::option::Option<bool>,
     pub(crate) max_versions: ::std::option::Option<i32>,

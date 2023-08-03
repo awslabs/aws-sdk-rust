@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`certificate_arn(Option<String>)`](crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput::certificate_arn): <p>The Amazon Resource Name (ARN) of the registered certificate.</p>
     ///   - [`certificate_id(Option<String>)`](crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput::certificate_id): <p>The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.</p>
     /// - On failure, responds with [`SdkError<RegisterCertificateWithoutCAError>`](crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCAError)
-    pub fn register_certificate_without_ca(&self) -> crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCAFluentBuilder{
+    pub fn register_certificate_without_ca(
+        &self,
+    ) -> crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCAFluentBuilder {
         crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCAFluentBuilder::new(self.handle.clone())
     }
 }

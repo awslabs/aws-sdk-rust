@@ -37,9 +37,7 @@ impl TransactionOutputItem {
 
 /// A builder for [`TransactionOutputItem`](crate::types::TransactionOutputItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransactionOutputItemBuilder {
     pub(crate) transaction_hash: ::std::option::Option<::std::string::String>,
     pub(crate) network: ::std::option::Option<crate::types::QueryNetwork>,
@@ -47,18 +45,12 @@ pub struct TransactionOutputItemBuilder {
 }
 impl TransactionOutputItemBuilder {
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn transaction_hash(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn set_transaction_hash(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_hash = input;
         self
     }
@@ -86,17 +78,12 @@ impl TransactionOutputItemBuilder {
         self
     }
     /// <p>The time when the transaction occurred.</p>
-    pub fn set_transaction_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_transaction_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.transaction_timestamp = input;
         self
     }
     /// <p>The time when the transaction occurred.</p>
-    pub fn get_transaction_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_transaction_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.transaction_timestamp
     }
     /// Consumes the builder and constructs a [`TransactionOutputItem`](crate::types::TransactionOutputItem).

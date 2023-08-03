@@ -18,10 +18,7 @@ pub fn ser_entity_detector_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_allowed_statistics::ser_allowed_statistics(
-                    &mut object_7,
-                    item_6,
-                )?;
+                crate::protocol_serde::shape_allowed_statistics::ser_allowed_statistics(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
@@ -32,17 +29,9 @@ pub fn ser_entity_detector_configuration(
 
 pub(crate) fn de_entity_detector_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::EntityDetectorConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::EntityDetectorConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -52,36 +41,28 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "EntityTypes" => {
-                                builder = builder.set_entity_types(
-                                    crate::protocol_serde::shape_entity_type_list::de_entity_type_list(tokens)?
-                                );
-                            }
-                            "AllowedStatistics" => {
-                                builder = builder.set_allowed_statistics(
-                                    crate::protocol_serde::shape_allowed_statistic_list::de_allowed_statistic_list(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "EntityTypes" => {
+                            builder = builder.set_entity_types(crate::protocol_serde::shape_entity_type_list::de_entity_type_list(tokens)?);
                         }
-                    }
+                        "AllowedStatistics" => {
+                            builder = builder
+                                .set_allowed_statistics(crate::protocol_serde::shape_allowed_statistic_list::de_allowed_statistic_list(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

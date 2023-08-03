@@ -26,7 +26,7 @@ impl DeleteQueuedReservedInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteQueuedReservedInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_queued_reserved_instances::builders::DeleteQueuedReservedInstancesInputBuilder,
+    inner: crate::operation::delete_queued_reserved_instances::builders::DeleteQueuedReservedInstancesInputBuilder,
 }
 impl DeleteQueuedReservedInstancesFluentBuilder {
     /// Creates a new `DeleteQueuedReservedInstances`.
@@ -37,7 +37,7 @@ impl DeleteQueuedReservedInstancesFluentBuilder {
         }
     }
     /// Access the DeleteQueuedReservedInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_queued_reserved_instances::builders::DeleteQueuedReservedInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_queued_reserved_instances::builders::DeleteQueuedReservedInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteQueuedReservedInstancesFluentBuilder {
             crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteQueuedReservedInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteQueuedReservedInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteQueuedReservedInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DeleteQueuedReservedInstancesFluentBuilder {
             crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -139,25 +128,17 @@ impl DeleteQueuedReservedInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_reserved_instances_ids`](Self::set_reserved_instances_ids).
     ///
     /// <p>The IDs of the Reserved Instances.</p>
-    pub fn reserved_instances_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instances_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_instances_ids(input.into());
         self
     }
     /// <p>The IDs of the Reserved Instances.</p>
-    pub fn set_reserved_instances_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_reserved_instances_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_reserved_instances_ids(input);
         self
     }
     /// <p>The IDs of the Reserved Instances.</p>
-    pub fn get_reserved_instances_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reserved_instances_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_reserved_instances_ids()
     }
 }

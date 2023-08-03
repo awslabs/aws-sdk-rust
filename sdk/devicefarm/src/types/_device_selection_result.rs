@@ -37,9 +37,7 @@ impl DeviceSelectionResult {
 
 /// A builder for [`DeviceSelectionResult`](crate::types::DeviceSelectionResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceSelectionResultBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
     pub(crate) matched_devices_count: ::std::option::Option<i32>,
@@ -58,17 +56,12 @@ impl DeviceSelectionResultBuilder {
         self
     }
     /// <p>The filters in a device selection result.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>The filters in a device selection result.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>> {
         &self.filters
     }
     /// <p>The number of devices that matched the device filter selection criteria.</p>

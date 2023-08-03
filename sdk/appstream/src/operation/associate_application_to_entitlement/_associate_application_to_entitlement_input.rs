@@ -29,16 +29,14 @@ impl AssociateApplicationToEntitlementInput {
 }
 impl AssociateApplicationToEntitlementInput {
     /// Creates a new builder-style object to manufacture [`AssociateApplicationToEntitlementInput`](crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput).
-    pub fn builder() -> crate::operation::associate_application_to_entitlement::builders::AssociateApplicationToEntitlementInputBuilder{
+    pub fn builder() -> crate::operation::associate_application_to_entitlement::builders::AssociateApplicationToEntitlementInputBuilder {
         crate::operation::associate_application_to_entitlement::builders::AssociateApplicationToEntitlementInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateApplicationToEntitlementInput`](crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateApplicationToEntitlementInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) entitlement_name: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl AssociateApplicationToEntitlementInputBuilder {
         &self.stack_name
     }
     /// <p>The name of the entitlement.</p>
-    pub fn entitlement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entitlement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entitlement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the entitlement.</p>
-    pub fn set_entitlement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entitlement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entitlement_name = input;
         self
     }
@@ -80,18 +72,12 @@ impl AssociateApplicationToEntitlementInputBuilder {
         &self.entitlement_name
     }
     /// <p>The identifier of the application.</p>
-    pub fn application_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the application.</p>
-    pub fn set_application_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_identifier = input;
         self
     }
@@ -100,16 +86,18 @@ impl AssociateApplicationToEntitlementInputBuilder {
         &self.application_identifier
     }
     /// Consumes the builder and constructs a [`AssociateApplicationToEntitlementInput`](crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput {
-                stack_name: self.stack_name
-                ,
-                entitlement_name: self.entitlement_name
-                ,
-                application_identifier: self.application_identifier
-                ,
-            }
+                stack_name: self.stack_name,
+                entitlement_name: self.entitlement_name,
+                application_identifier: self.application_identifier,
+            },
         )
     }
 }

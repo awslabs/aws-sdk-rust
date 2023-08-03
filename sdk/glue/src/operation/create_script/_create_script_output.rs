@@ -35,9 +35,7 @@ impl CreateScriptOutput {
 
 /// A builder for [`CreateScriptOutput`](crate::operation::create_script::CreateScriptOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateScriptOutputBuilder {
     pub(crate) python_script: ::std::option::Option<::std::string::String>,
     pub(crate) scala_code: ::std::option::Option<::std::string::String>,
@@ -45,18 +43,12 @@ pub struct CreateScriptOutputBuilder {
 }
 impl CreateScriptOutputBuilder {
     /// <p>The Python script generated from the DAG.</p>
-    pub fn python_script(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn python_script(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.python_script = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Python script generated from the DAG.</p>
-    pub fn set_python_script(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_python_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.python_script = input;
         self
     }

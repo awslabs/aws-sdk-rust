@@ -10,7 +10,12 @@ impl super::Client {
     ///   - [`successfully_disassociated_resources(Option<Vec<DisassociateResourceResponseElement>>)`](crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemOutput::successfully_disassociated_resources): <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
     ///   - [`failed_disassociated_resources(Option<Vec<DisassociateResourceResponseElement>>)`](crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemOutput::failed_disassociated_resources): <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
     /// - On failure, responds with [`SdkError<BatchDisassociateResourcesFromCustomLineItemError>`](crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemError)
-    pub fn batch_disassociate_resources_from_custom_line_item(&self) -> crate::operation::batch_disassociate_resources_from_custom_line_item::builders::BatchDisassociateResourcesFromCustomLineItemFluentBuilder{
-        crate::operation::batch_disassociate_resources_from_custom_line_item::builders::BatchDisassociateResourcesFromCustomLineItemFluentBuilder::new(self.handle.clone())
+    pub fn batch_disassociate_resources_from_custom_line_item(
+        &self,
+    ) -> crate::operation::batch_disassociate_resources_from_custom_line_item::builders::BatchDisassociateResourcesFromCustomLineItemFluentBuilder
+    {
+        crate::operation::batch_disassociate_resources_from_custom_line_item::builders::BatchDisassociateResourcesFromCustomLineItemFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

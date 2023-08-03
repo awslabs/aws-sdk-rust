@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetStaticIpOutput`](crate::operation::get_static_ip::GetStaticIpOutput) with field(s):
     ///   - [`static_ip(Option<StaticIp>)`](crate::operation::get_static_ip::GetStaticIpOutput::static_ip): <p>An array of key-value pairs containing information about the requested static IP.</p>
     /// - On failure, responds with [`SdkError<GetStaticIpError>`](crate::operation::get_static_ip::GetStaticIpError)
-    pub fn get_static_ip(
-        &self,
-    ) -> crate::operation::get_static_ip::builders::GetStaticIpFluentBuilder {
-        crate::operation::get_static_ip::builders::GetStaticIpFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_static_ip(&self) -> crate::operation::get_static_ip::builders::GetStaticIpFluentBuilder {
+        crate::operation::get_static_ip::builders::GetStaticIpFluentBuilder::new(self.handle.clone())
     }
 }

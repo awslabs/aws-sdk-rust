@@ -5,15 +5,12 @@
 pub struct DescribeEntityRecognizerOutput {
     /// <p>Describes information associated with an entity recognizer.</p>
     #[doc(hidden)]
-    pub entity_recognizer_properties:
-        ::std::option::Option<crate::types::EntityRecognizerProperties>,
+    pub entity_recognizer_properties: ::std::option::Option<crate::types::EntityRecognizerProperties>,
     _request_id: Option<String>,
 }
 impl DescribeEntityRecognizerOutput {
     /// <p>Describes information associated with an entity recognizer.</p>
-    pub fn entity_recognizer_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EntityRecognizerProperties> {
+    pub fn entity_recognizer_properties(&self) -> ::std::option::Option<&crate::types::EntityRecognizerProperties> {
         self.entity_recognizer_properties.as_ref()
     }
 }
@@ -24,44 +21,31 @@ impl ::aws_http::request_id::RequestId for DescribeEntityRecognizerOutput {
 }
 impl DescribeEntityRecognizerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEntityRecognizerOutput`](crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerOutputBuilder {
         crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEntityRecognizerOutput`](crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEntityRecognizerOutputBuilder {
-    pub(crate) entity_recognizer_properties:
-        ::std::option::Option<crate::types::EntityRecognizerProperties>,
+    pub(crate) entity_recognizer_properties: ::std::option::Option<crate::types::EntityRecognizerProperties>,
     _request_id: Option<String>,
 }
 impl DescribeEntityRecognizerOutputBuilder {
     /// <p>Describes information associated with an entity recognizer.</p>
-    pub fn entity_recognizer_properties(
-        mut self,
-        input: crate::types::EntityRecognizerProperties,
-    ) -> Self {
+    pub fn entity_recognizer_properties(mut self, input: crate::types::EntityRecognizerProperties) -> Self {
         self.entity_recognizer_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes information associated with an entity recognizer.</p>
-    pub fn set_entity_recognizer_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityRecognizerProperties>,
-    ) -> Self {
+    pub fn set_entity_recognizer_properties(mut self, input: ::std::option::Option<crate::types::EntityRecognizerProperties>) -> Self {
         self.entity_recognizer_properties = input;
         self
     }
     /// <p>Describes information associated with an entity recognizer.</p>
-    pub fn get_entity_recognizer_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::EntityRecognizerProperties> {
+    pub fn get_entity_recognizer_properties(&self) -> &::std::option::Option<crate::types::EntityRecognizerProperties> {
         &self.entity_recognizer_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -74,9 +58,7 @@ impl DescribeEntityRecognizerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEntityRecognizerOutput`](crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput {
+    pub fn build(self) -> crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput {
         crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput {
             entity_recognizer_properties: self.entity_recognizer_properties,
             _request_id: self._request_id,

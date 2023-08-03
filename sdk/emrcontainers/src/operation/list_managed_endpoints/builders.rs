@@ -37,9 +37,7 @@ impl ListManagedEndpointsFluentBuilder {
         }
     }
     /// Access the ListManagedEndpoints as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_managed_endpoints::builders::ListManagedEndpointsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_managed_endpoints::builders::ListManagedEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListManagedEndpointsFluentBuilder {
             crate::operation::list_managed_endpoints::ListManagedEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_endpoints::ListManagedEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_endpoints::ListManagedEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListManagedEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListManagedEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_managed_endpoints::ListManagedEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_endpoints::ListManagedEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_endpoints::ListManagedEndpointsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListManagedEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_managed_endpoints::ListManagedEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_endpoints::ListManagedEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_endpoints::ListManagedEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl ListManagedEndpointsFluentBuilder {
             crate::operation::list_managed_endpoints::ListManagedEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_managed_endpoints::ListManagedEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_managed_endpoints::ListManagedEndpointsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator {
-        crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator {
+        crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the virtual cluster.</p>
-    pub fn virtual_cluster_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_cluster_id(input.into());
         self
     }
     /// <p>The ID of the virtual cluster.</p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_cluster_id(input);
         self
     }
@@ -159,10 +135,7 @@ impl ListManagedEndpointsFluentBuilder {
         self
     }
     /// <p>The date and time before which the endpoints are created.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
     }
@@ -176,10 +149,7 @@ impl ListManagedEndpointsFluentBuilder {
         self
     }
     /// <p> The date and time after which the endpoints are created.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
@@ -197,10 +167,7 @@ impl ListManagedEndpointsFluentBuilder {
         self
     }
     /// <p>The types of the managed endpoints.</p>
-    pub fn set_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_types(input);
         self
     }
@@ -218,17 +185,12 @@ impl ListManagedEndpointsFluentBuilder {
         self
     }
     /// <p>The states of the managed endpoints.</p>
-    pub fn set_states(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointState>>) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
     /// <p>The states of the managed endpoints.</p>
-    pub fn get_states(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointState>> {
         self.inner.get_states()
     }
     /// <p>The maximum number of managed endpoints that can be listed.</p>

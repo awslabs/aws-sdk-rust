@@ -29,16 +29,16 @@ impl DeleteApplicationInputProcessingConfigurationInput {
 }
 impl DeleteApplicationInputProcessingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationInputProcessingConfigurationInput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput).
-    pub fn builder() -> crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationInputBuilder
+    {
         crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteApplicationInputProcessingConfigurationInput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteApplicationInputProcessingConfigurationInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_application_version_id: ::std::option::Option<i64>,
@@ -46,18 +46,12 @@ pub struct DeleteApplicationInputProcessingConfigurationInputBuilder {
 }
 impl DeleteApplicationInputProcessingConfigurationInputBuilder {
     /// <p>The Kinesis Analytics application name.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Kinesis Analytics application name.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -94,16 +88,18 @@ impl DeleteApplicationInputProcessingConfigurationInputBuilder {
         &self.input_id
     }
     /// Consumes the builder and constructs a [`DeleteApplicationInputProcessingConfigurationInput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput {
-                application_name: self.application_name
-                ,
-                current_application_version_id: self.current_application_version_id
-                ,
-                input_id: self.input_id
-                ,
-            }
+                application_name: self.application_name,
+                current_application_version_id: self.current_application_version_id,
+                input_id: self.input_id,
+            },
         )
     }
 }

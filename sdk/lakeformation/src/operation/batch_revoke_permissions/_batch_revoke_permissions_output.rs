@@ -5,8 +5,7 @@
 pub struct BatchRevokePermissionsOutput {
     /// <p>A list of failures to revoke permissions to the resources.</p>
     #[doc(hidden)]
-    pub failures:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsFailureEntry>>,
+    pub failures: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsFailureEntry>>,
     _request_id: Option<String>,
 }
 impl BatchRevokePermissionsOutput {
@@ -22,21 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchRevokePermissionsOutput {
 }
 impl BatchRevokePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`BatchRevokePermissionsOutput`](crate::operation::batch_revoke_permissions::BatchRevokePermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_revoke_permissions::builders::BatchRevokePermissionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_revoke_permissions::builders::BatchRevokePermissionsOutputBuilder {
         crate::operation::batch_revoke_permissions::builders::BatchRevokePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchRevokePermissionsOutput`](crate::operation::batch_revoke_permissions::BatchRevokePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchRevokePermissionsOutputBuilder {
-    pub(crate) failures:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsFailureEntry>>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsFailureEntry>>,
     _request_id: Option<String>,
 }
 impl BatchRevokePermissionsOutputBuilder {
@@ -52,17 +46,12 @@ impl BatchRevokePermissionsOutputBuilder {
         self
     }
     /// <p>A list of failures to revoke permissions to the resources.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsFailureEntry>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsFailureEntry>>) -> Self {
         self.failures = input;
         self
     }
     /// <p>A list of failures to revoke permissions to the resources.</p>
-    pub fn get_failures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsFailureEntry>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsFailureEntry>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

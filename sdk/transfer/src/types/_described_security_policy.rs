@@ -58,9 +58,7 @@ impl DescribedSecurityPolicy {
 
 /// A builder for [`DescribedSecurityPolicy`](crate::types::DescribedSecurityPolicy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribedSecurityPolicyBuilder {
     pub(crate) fips: ::std::option::Option<bool>,
     pub(crate) security_policy_name: ::std::option::Option<::std::string::String>,
@@ -85,18 +83,12 @@ impl DescribedSecurityPolicyBuilder {
         &self.fips
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    pub fn security_policy_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    pub fn set_security_policy_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_policy_name = input;
         self
     }
@@ -116,17 +108,12 @@ impl DescribedSecurityPolicyBuilder {
         self
     }
     /// <p>Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn set_ssh_ciphers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ssh_ciphers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ssh_ciphers = input;
         self
     }
     /// <p>Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn get_ssh_ciphers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ssh_ciphers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ssh_ciphers
     }
     /// Appends an item to `ssh_kexs`.
@@ -141,10 +128,7 @@ impl DescribedSecurityPolicyBuilder {
         self
     }
     /// <p>Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn set_ssh_kexs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ssh_kexs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ssh_kexs = input;
         self
     }
@@ -164,10 +148,7 @@ impl DescribedSecurityPolicyBuilder {
         self
     }
     /// <p>Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn set_ssh_macs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ssh_macs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ssh_macs = input;
         self
     }
@@ -187,17 +168,12 @@ impl DescribedSecurityPolicyBuilder {
         self
     }
     /// <p>Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn set_tls_ciphers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tls_ciphers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tls_ciphers = input;
         self
     }
     /// <p>Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn get_tls_ciphers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tls_ciphers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tls_ciphers
     }
     /// Consumes the builder and constructs a [`DescribedSecurityPolicy`](crate::types::DescribedSecurityPolicy).

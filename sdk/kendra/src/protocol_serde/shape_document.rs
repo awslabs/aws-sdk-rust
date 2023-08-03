@@ -10,9 +10,7 @@ pub fn ser_document(
         object.key("Title").string(var_2.as_str());
     }
     if let Some(var_3) = &input.blob {
-        object
-            .key("Blob")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_3));
+        object.key("Blob").string_unchecked(&::aws_smithy_types::base64::encode(var_3));
     }
     if let Some(var_4) = &input.s3_path {
         #[allow(unused_mut)]
@@ -26,10 +24,7 @@ pub fn ser_document(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_document_attribute::ser_document_attribute(
-                    &mut object_9,
-                    item_8,
-                )?;
+                crate::protocol_serde::shape_document_attribute::ser_document_attribute(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }
@@ -53,10 +48,7 @@ pub fn ser_document(
             {
                 #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_hierarchical_principal::ser_hierarchical_principal(
-                    &mut object_17,
-                    item_16,
-                )?;
+                crate::protocol_serde::shape_hierarchical_principal::ser_hierarchical_principal(&mut object_17, item_16)?;
                 object_17.finish();
             }
         }
@@ -66,9 +58,7 @@ pub fn ser_document(
         object.key("ContentType").string(var_18.as_str());
     }
     if let Some(var_19) = &input.access_control_configuration_id {
-        object
-            .key("AccessControlConfigurationId")
-            .string(var_19.as_str());
+        object.key("AccessControlConfigurationId").string(var_19.as_str());
     }
     Ok(())
 }

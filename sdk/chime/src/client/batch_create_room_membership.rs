@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`BatchCreateRoomMembershipOutput`](crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput) with field(s):
     ///   - [`errors(Option<Vec<MemberError>>)`](crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput::errors): <p>If the action fails for one or more of the member IDs in the request, a list of the member IDs is returned, along with error codes and error messages.</p>
     /// - On failure, responds with [`SdkError<BatchCreateRoomMembershipError>`](crate::operation::batch_create_room_membership::BatchCreateRoomMembershipError)
-    pub fn batch_create_room_membership(&self) -> crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipFluentBuilder{
+    pub fn batch_create_room_membership(&self) -> crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipFluentBuilder {
         crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipFluentBuilder::new(self.handle.clone())
     }
 }

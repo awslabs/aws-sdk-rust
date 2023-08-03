@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`current_version(Option<String>)`](crate::operation::get_cluster_policy::GetClusterPolicyOutput::current_version): <p>The version of cluster policy.</p>
     ///   - [`policy(Option<String>)`](crate::operation::get_cluster_policy::GetClusterPolicyOutput::policy): <p>The cluster policy.</p>
     /// - On failure, responds with [`SdkError<GetClusterPolicyError>`](crate::operation::get_cluster_policy::GetClusterPolicyError)
-    pub fn get_cluster_policy(
-        &self,
-    ) -> crate::operation::get_cluster_policy::builders::GetClusterPolicyFluentBuilder {
-        crate::operation::get_cluster_policy::builders::GetClusterPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_cluster_policy(&self) -> crate::operation::get_cluster_policy::builders::GetClusterPolicyFluentBuilder {
+        crate::operation::get_cluster_policy::builders::GetClusterPolicyFluentBuilder::new(self.handle.clone())
     }
 }

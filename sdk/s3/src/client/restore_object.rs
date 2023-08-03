@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::restore_object::RestoreObjectOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     ///   - [`restore_output_path(Option<String>)`](crate::operation::restore_object::RestoreObjectOutput::restore_output_path): <p>Indicates the path in the provided S3 output location where Select results will be restored to.</p>
     /// - On failure, responds with [`SdkError<RestoreObjectError>`](crate::operation::restore_object::RestoreObjectError)
-    pub fn restore_object(
-        &self,
-    ) -> crate::operation::restore_object::builders::RestoreObjectFluentBuilder {
-        crate::operation::restore_object::builders::RestoreObjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn restore_object(&self) -> crate::operation::restore_object::builders::RestoreObjectFluentBuilder {
+        crate::operation::restore_object::builders::RestoreObjectFluentBuilder::new(self.handle.clone())
     }
 }

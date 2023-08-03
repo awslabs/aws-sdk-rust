@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_ephemerides::ListEphemeridesOutput::next_token): <p>Pagination token.</p>
     ///   - [`ephemerides(Option<Vec<EphemerisItem>>)`](crate::operation::list_ephemerides::ListEphemeridesOutput::ephemerides): <p>List of ephemerides.</p>
     /// - On failure, responds with [`SdkError<ListEphemeridesError>`](crate::operation::list_ephemerides::ListEphemeridesError)
-    pub fn list_ephemerides(
-        &self,
-    ) -> crate::operation::list_ephemerides::builders::ListEphemeridesFluentBuilder {
-        crate::operation::list_ephemerides::builders::ListEphemeridesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_ephemerides(&self) -> crate::operation::list_ephemerides::builders::ListEphemeridesFluentBuilder {
+        crate::operation::list_ephemerides::builders::ListEphemeridesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for BatchGetTriggersOutput {
 }
 impl BatchGetTriggersOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetTriggersOutput`](crate::operation::batch_get_triggers::BatchGetTriggersOutput).
-    pub fn builder() -> crate::operation::batch_get_triggers::builders::BatchGetTriggersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_triggers::builders::BatchGetTriggersOutputBuilder {
         crate::operation::batch_get_triggers::builders::BatchGetTriggersOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetTriggersOutput`](crate::operation::batch_get_triggers::BatchGetTriggersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetTriggersOutputBuilder {
     pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
     pub(crate) triggers_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,10 +54,7 @@ impl BatchGetTriggersOutputBuilder {
         self
     }
     /// <p>A list of trigger definitions.</p>
-    pub fn set_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
-    ) -> Self {
+    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>) -> Self {
         self.triggers = input;
         self
     }
@@ -73,27 +67,19 @@ impl BatchGetTriggersOutputBuilder {
     /// To override the contents of this collection use [`set_triggers_not_found`](Self::set_triggers_not_found).
     ///
     /// <p>A list of names of triggers not found.</p>
-    pub fn triggers_not_found(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn triggers_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.triggers_not_found.unwrap_or_default();
         v.push(input.into());
         self.triggers_not_found = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of names of triggers not found.</p>
-    pub fn set_triggers_not_found(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_triggers_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.triggers_not_found = input;
         self
     }
     /// <p>A list of names of triggers not found.</p>
-    pub fn get_triggers_not_found(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_triggers_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.triggers_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

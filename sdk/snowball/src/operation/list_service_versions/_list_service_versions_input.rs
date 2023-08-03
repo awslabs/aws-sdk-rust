@@ -36,22 +36,17 @@ impl ListServiceVersionsInput {
 }
 impl ListServiceVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListServiceVersionsInput`](crate::operation::list_service_versions::ListServiceVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_service_versions::builders::ListServiceVersionsInputBuilder {
-        crate::operation::list_service_versions::builders::ListServiceVersionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_service_versions::builders::ListServiceVersionsInputBuilder {
+        crate::operation::list_service_versions::builders::ListServiceVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListServiceVersionsInput`](crate::operation::list_service_versions::ListServiceVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceVersionsInputBuilder {
     pub(crate) service_name: ::std::option::Option<crate::types::ServiceName>,
-    pub(crate) dependent_services:
-        ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>,
+    pub(crate) dependent_services: ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -62,10 +57,7 @@ impl ListServiceVersionsInputBuilder {
         self
     }
     /// <p>The name of the service for which you're requesting supported versions.</p>
-    pub fn set_service_name(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceName>,
-    ) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<crate::types::ServiceName>) -> Self {
         self.service_name = input;
         self
     }
@@ -85,17 +77,12 @@ impl ListServiceVersionsInputBuilder {
         self
     }
     /// <p>A list of names and versions of dependant services of the requested service.</p>
-    pub fn set_dependent_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>,
-    ) -> Self {
+    pub fn set_dependent_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>) -> Self {
         self.dependent_services = input;
         self
     }
     /// <p>A list of names and versions of dependant services of the requested service.</p>
-    pub fn get_dependent_services(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DependentService>> {
+    pub fn get_dependent_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DependentService>> {
         &self.dependent_services
     }
     /// <p>The maximum number of <code>ListServiceVersions</code> objects to return.</p>
@@ -129,17 +116,13 @@ impl ListServiceVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListServiceVersionsInput`](crate::operation::list_service_versions::ListServiceVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_service_versions::ListServiceVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_service_versions::ListServiceVersionsInput {
-                service_name: self.service_name,
-                dependent_services: self.dependent_services,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_service_versions::ListServiceVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_service_versions::ListServiceVersionsInput {
+            service_name: self.service_name,
+            dependent_services: self.dependent_services,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

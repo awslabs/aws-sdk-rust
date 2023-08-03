@@ -29,16 +29,14 @@ impl UpdateUserSecurityProfilesInput {
 }
 impl UpdateUserSecurityProfilesInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserSecurityProfilesInput`](crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesInput).
-    pub fn builder() -> crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesInputBuilder{
+    pub fn builder() -> crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesInputBuilder {
         crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserSecurityProfilesInput`](crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserSecurityProfilesInputBuilder {
     pub(crate) security_profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -50,27 +48,19 @@ impl UpdateUserSecurityProfilesInputBuilder {
     /// To override the contents of this collection use [`set_security_profile_ids`](Self::set_security_profile_ids).
     ///
     /// <p>The identifiers of the security profiles for the user.</p>
-    pub fn security_profile_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_profile_ids.unwrap_or_default();
         v.push(input.into());
         self.security_profile_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifiers of the security profiles for the user.</p>
-    pub fn set_security_profile_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_profile_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_profile_ids = input;
         self
     }
     /// <p>The identifiers of the security profiles for the user.</p>
-    pub fn get_security_profile_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_profile_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_profile_ids
     }
     /// <p>The identifier of the user account.</p>
@@ -108,12 +98,10 @@ impl UpdateUserSecurityProfilesInputBuilder {
         crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesInput {
-                security_profile_ids: self.security_profile_ids,
-                user_id: self.user_id,
-                instance_id: self.instance_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesInput {
+            security_profile_ids: self.security_profile_ids,
+            user_id: self.user_id,
+            instance_id: self.instance_id,
+        })
     }
 }

@@ -110,9 +110,7 @@ impl ExecutionListItem {
 
 /// A builder for [`ExecutionListItem`](crate::types::ExecutionListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecutionListItemBuilder {
     pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,
@@ -127,18 +125,12 @@ pub struct ExecutionListItemBuilder {
 }
 impl ExecutionListItemBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub fn execution_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub fn set_execution_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_arn = input;
         self
     }
@@ -147,18 +139,12 @@ impl ExecutionListItemBuilder {
         &self.execution_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
-    pub fn state_machine_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_arn = input;
         self
     }
@@ -213,10 +199,7 @@ impl ExecutionListItemBuilder {
         self
     }
     /// <p>The current status of the execution.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -230,10 +213,7 @@ impl ExecutionListItemBuilder {
         self
     }
     /// <p>The date the execution started.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
@@ -247,10 +227,7 @@ impl ExecutionListItemBuilder {
         self
     }
     /// <p>If the execution already ended, the date the execution stopped.</p>
-    pub fn set_stop_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stop_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stop_date = input;
         self
     }
@@ -289,20 +266,14 @@ impl ExecutionListItemBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
     /// <p>If the state machine execution was started with an unqualified ARN, it returns null.</p>
     /// <p>If the execution was started using a <code>stateMachineAliasArn</code>, both the <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective values.</p>
-    pub fn state_machine_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
     /// <p>If the state machine execution was started with an unqualified ARN, it returns null.</p>
     /// <p>If the execution was started using a <code>stateMachineAliasArn</code>, both the <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective values.</p>
-    pub fn set_state_machine_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_version_arn = input;
         self
     }
@@ -314,19 +285,13 @@ impl ExecutionListItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
     /// <p>If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.</p>
-    pub fn state_machine_alias_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_machine_alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_alias_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
     /// <p>If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.</p>
-    pub fn set_state_machine_alias_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_machine_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_machine_alias_arn = input;
         self
     }

@@ -93,16 +93,14 @@ impl StartEntitiesDetectionJobInput {
 }
 impl StartEntitiesDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionJobInput`](crate::operation::start_entities_detection_job::StartEntitiesDetectionJobInput).
-    pub fn builder() -> crate::operation::start_entities_detection_job::builders::StartEntitiesDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::start_entities_detection_job::builders::StartEntitiesDetectionJobInputBuilder {
         crate::operation::start_entities_detection_job::builders::StartEntitiesDetectionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StartEntitiesDetectionJobInput`](crate::operation::start_entities_detection_job::StartEntitiesDetectionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartEntitiesDetectionJobInputBuilder {
     pub(crate) input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
@@ -123,10 +121,7 @@ impl StartEntitiesDetectionJobInputBuilder {
         self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
@@ -140,10 +135,7 @@ impl StartEntitiesDetectionJobInputBuilder {
         self
     }
     /// <p>Specifies where to send the output files.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
@@ -152,18 +144,12 @@ impl StartEntitiesDetectionJobInputBuilder {
         &self.output_data_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based permissions</a>.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based permissions</a>.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -186,18 +172,12 @@ impl StartEntitiesDetectionJobInputBuilder {
         &self.job_name
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity recognition job.</p>
-    pub fn entity_recognizer_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_recognizer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_recognizer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity recognition job.</p>
-    pub fn set_entity_recognizer_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entity_recognizer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_recognizer_arn = input;
         self
     }
@@ -211,10 +191,7 @@ impl StartEntitiesDetectionJobInputBuilder {
         self
     }
     /// <p>The language of the input documents. All documents must be in the same language. You can specify any of the languages supported by Amazon Comprehend. If custom entities recognition is used, this parameter is ignored and the language used for training the model is used instead.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -223,18 +200,12 @@ impl StartEntitiesDetectionJobInputBuilder {
         &self.language_code
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -247,10 +218,7 @@ impl StartEntitiesDetectionJobInputBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn volume_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn volume_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -259,10 +227,7 @@ impl StartEntitiesDetectionJobInputBuilder {
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    pub fn set_volume_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_kms_key_id = input;
         self
     }
@@ -300,10 +265,7 @@ impl StartEntitiesDetectionJobInputBuilder {
         self
     }
     /// <p>Tags to associate with the entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -332,20 +294,18 @@ impl StartEntitiesDetectionJobInputBuilder {
         crate::operation::start_entities_detection_job::StartEntitiesDetectionJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_entities_detection_job::StartEntitiesDetectionJobInput {
-                input_data_config: self.input_data_config,
-                output_data_config: self.output_data_config,
-                data_access_role_arn: self.data_access_role_arn,
-                job_name: self.job_name,
-                entity_recognizer_arn: self.entity_recognizer_arn,
-                language_code: self.language_code,
-                client_request_token: self.client_request_token,
-                volume_kms_key_id: self.volume_kms_key_id,
-                vpc_config: self.vpc_config,
-                tags: self.tags,
-                flywheel_arn: self.flywheel_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_entities_detection_job::StartEntitiesDetectionJobInput {
+            input_data_config: self.input_data_config,
+            output_data_config: self.output_data_config,
+            data_access_role_arn: self.data_access_role_arn,
+            job_name: self.job_name,
+            entity_recognizer_arn: self.entity_recognizer_arn,
+            language_code: self.language_code,
+            client_request_token: self.client_request_token,
+            volume_kms_key_id: self.volume_kms_key_id,
+            vpc_config: self.vpc_config,
+            tags: self.tags,
+            flywheel_arn: self.flywheel_arn,
+        })
     }
 }

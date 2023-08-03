@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`fault_codes(Vec<String>)`](crate::operation::update_label_group::builders::UpdateLabelGroupFluentBuilder::fault_codes) / [`set_fault_codes(Option<Vec<String>>)`](crate::operation::update_label_group::builders::UpdateLabelGroupFluentBuilder::set_fault_codes): <p> Updates the code indicating the type of anomaly associated with the label. </p>  <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     /// - On success, responds with [`UpdateLabelGroupOutput`](crate::operation::update_label_group::UpdateLabelGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateLabelGroupError>`](crate::operation::update_label_group::UpdateLabelGroupError)
-    pub fn update_label_group(
-        &self,
-    ) -> crate::operation::update_label_group::builders::UpdateLabelGroupFluentBuilder {
-        crate::operation::update_label_group::builders::UpdateLabelGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_label_group(&self) -> crate::operation::update_label_group::builders::UpdateLabelGroupFluentBuilder {
+        crate::operation::update_label_group::builders::UpdateLabelGroupFluentBuilder::new(self.handle.clone())
     }
 }

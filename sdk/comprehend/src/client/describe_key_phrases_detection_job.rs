@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeKeyPhrasesDetectionJobOutput`](crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput) with field(s):
     ///   - [`key_phrases_detection_job_properties(Option<KeyPhrasesDetectionJobProperties>)`](crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobOutput::key_phrases_detection_job_properties): <p>An object that contains the properties associated with a key phrases detection job. </p>
     /// - On failure, responds with [`SdkError<DescribeKeyPhrasesDetectionJobError>`](crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobError)
-    pub fn describe_key_phrases_detection_job(&self) -> crate::operation::describe_key_phrases_detection_job::builders::DescribeKeyPhrasesDetectionJobFluentBuilder{
+    pub fn describe_key_phrases_detection_job(
+        &self,
+    ) -> crate::operation::describe_key_phrases_detection_job::builders::DescribeKeyPhrasesDetectionJobFluentBuilder {
         crate::operation::describe_key_phrases_detection_job::builders::DescribeKeyPhrasesDetectionJobFluentBuilder::new(self.handle.clone())
     }
 }

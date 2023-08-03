@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`related_items(Option<Vec<RelatedItem>>)`](crate::operation::list_related_items::ListRelatedItemsOutput::related_items): <p>Details about each related item.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_related_items::ListRelatedItemsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListRelatedItemsError>`](crate::operation::list_related_items::ListRelatedItemsError)
-    pub fn list_related_items(
-        &self,
-    ) -> crate::operation::list_related_items::builders::ListRelatedItemsFluentBuilder {
-        crate::operation::list_related_items::builders::ListRelatedItemsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_related_items(&self) -> crate::operation::list_related_items::builders::ListRelatedItemsFluentBuilder {
+        crate::operation::list_related_items::builders::ListRelatedItemsFluentBuilder::new(self.handle.clone())
     }
 }

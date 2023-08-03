@@ -87,9 +87,7 @@ impl Membership {
         self.member_abilities.as_deref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn query_log_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MembershipQueryLogStatus> {
+    pub fn query_log_status(&self) -> ::std::option::Option<&crate::types::MembershipQueryLogStatus> {
         self.query_log_status.as_ref()
     }
 }
@@ -102,9 +100,7 @@ impl Membership {
 
 /// A builder for [`Membership`](crate::types::Membership).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MembershipBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -116,8 +112,7 @@ pub struct MembershipBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::MembershipStatus>,
-    pub(crate) member_abilities:
-        ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
     pub(crate) query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
 }
 impl MembershipBuilder {
@@ -150,18 +145,12 @@ impl MembershipBuilder {
         &self.arn
     }
     /// <p>The unique ARN for the membership's associated collaboration.</p>
-    pub fn collaboration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ARN for the membership's associated collaboration.</p>
-    pub fn set_collaboration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_arn = input;
         self
     }
@@ -170,18 +159,12 @@ impl MembershipBuilder {
         &self.collaboration_arn
     }
     /// <p>The unique ID for the membership's collaboration.</p>
-    pub fn collaboration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the membership's collaboration.</p>
-    pub fn set_collaboration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_id = input;
         self
     }
@@ -190,62 +173,40 @@ impl MembershipBuilder {
         &self.collaboration_id
     }
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    pub fn collaboration_creator_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_creator_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_creator_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    pub fn set_collaboration_creator_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_creator_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_creator_account_id = input;
         self
     }
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    pub fn get_collaboration_creator_account_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_collaboration_creator_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.collaboration_creator_account_id
     }
     /// <p>The display name of the collaboration creator.</p>
-    pub fn collaboration_creator_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_creator_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_creator_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the collaboration creator.</p>
-    pub fn set_collaboration_creator_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_creator_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_creator_display_name = input;
         self
     }
     /// <p>The display name of the collaboration creator.</p>
-    pub fn get_collaboration_creator_display_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_collaboration_creator_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.collaboration_creator_display_name
     }
     /// <p>The name of the membership's collaboration.</p>
-    pub fn collaboration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn collaboration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the membership's collaboration.</p>
-    pub fn set_collaboration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_collaboration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collaboration_name = input;
         self
     }
@@ -259,10 +220,7 @@ impl MembershipBuilder {
         self
     }
     /// <p>The time when the membership was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -276,10 +234,7 @@ impl MembershipBuilder {
         self
     }
     /// <p>The time the membership metadata was last updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -293,10 +248,7 @@ impl MembershipBuilder {
         self
     }
     /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MembershipStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MembershipStatus>) -> Self {
         self.status = input;
         self
     }
@@ -316,17 +268,12 @@ impl MembershipBuilder {
         self
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn set_member_abilities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
-    ) -> Self {
+    pub fn set_member_abilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>) -> Self {
         self.member_abilities = input;
         self
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn get_member_abilities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
+    pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         &self.member_abilities
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
@@ -335,17 +282,12 @@ impl MembershipBuilder {
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn set_query_log_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
-    ) -> Self {
+    pub fn set_query_log_status(mut self, input: ::std::option::Option<crate::types::MembershipQueryLogStatus>) -> Self {
         self.query_log_status = input;
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn get_query_log_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
+    pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
         &self.query_log_status
     }
     /// Consumes the builder and constructs a [`Membership`](crate::types::Membership).

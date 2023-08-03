@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CopyOptionGroupOutput {
 }
 impl CopyOptionGroupOutput {
     /// Creates a new builder-style object to manufacture [`CopyOptionGroupOutput`](crate::operation::copy_option_group::CopyOptionGroupOutput).
-    pub fn builder() -> crate::operation::copy_option_group::builders::CopyOptionGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::copy_option_group::builders::CopyOptionGroupOutputBuilder {
         crate::operation::copy_option_group::builders::CopyOptionGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CopyOptionGroupOutput`](crate::operation::copy_option_group::CopyOptionGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CopyOptionGroupOutputBuilder {
     pub(crate) option_group: ::std::option::Option<crate::types::OptionGroup>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl CopyOptionGroupOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_option_group(
-        mut self,
-        input: ::std::option::Option<crate::types::OptionGroup>,
-    ) -> Self {
+    pub fn set_option_group(mut self, input: ::std::option::Option<crate::types::OptionGroup>) -> Self {
         self.option_group = input;
         self
     }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`builds(Option<Vec<Build>>)`](crate::operation::batch_get_builds::BatchGetBuildsOutput::builds): <p>Information about the requested builds.</p>
     ///   - [`builds_not_found(Option<Vec<String>>)`](crate::operation::batch_get_builds::BatchGetBuildsOutput::builds_not_found): <p>The IDs of builds for which information could not be found.</p>
     /// - On failure, responds with [`SdkError<BatchGetBuildsError>`](crate::operation::batch_get_builds::BatchGetBuildsError)
-    pub fn batch_get_builds(
-        &self,
-    ) -> crate::operation::batch_get_builds::builders::BatchGetBuildsFluentBuilder {
-        crate::operation::batch_get_builds::builders::BatchGetBuildsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_builds(&self) -> crate::operation::batch_get_builds::builders::BatchGetBuildsFluentBuilder {
+        crate::operation::batch_get_builds::builders::BatchGetBuildsFluentBuilder::new(self.handle.clone())
     }
 }

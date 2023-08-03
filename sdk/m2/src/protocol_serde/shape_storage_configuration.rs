@@ -7,27 +7,19 @@ pub fn ser_storage_configuration(
         crate::types::StorageConfiguration::Efs(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_17.key("efs").start_object();
-            crate::protocol_serde::shape_efs_storage_configuration::ser_efs_storage_configuration(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_efs_storage_configuration::ser_efs_storage_configuration(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::StorageConfiguration::Fsx(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_17.key("fsx").start_object();
-            crate::protocol_serde::shape_fsx_storage_configuration::ser_fsx_storage_configuration(
-                &mut object_2,
-                inner,
-            )?;
+            crate::protocol_serde::shape_fsx_storage_configuration::ser_fsx_storage_configuration(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::StorageConfiguration::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "StorageConfiguration",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "StorageConfiguration",
+            ))
         }
     }
     Ok(())
@@ -35,17 +27,9 @@ pub fn ser_storage_configuration(
 
 pub(crate) fn de_storage_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::StorageConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::StorageConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -55,47 +39,37 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "efs" => {
-                                Some(crate::types::StorageConfiguration::Efs(
-                                    crate::protocol_serde::shape_efs_storage_configuration::de_efs_storage_configuration(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'efs' cannot be null"))?
-                                ))
-                            }
-                            "fsx" => {
-                                Some(crate::types::StorageConfiguration::Fsx(
-                                    crate::protocol_serde::shape_fsx_storage_configuration::de_fsx_storage_configuration(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fsx' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::StorageConfiguration::Unknown)
-                                                                    }
-                        };
+                        "efs" => Some(crate::types::StorageConfiguration::Efs(
+                            crate::protocol_serde::shape_efs_storage_configuration::de_efs_storage_configuration(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'efs' cannot be null"))?,
+                        )),
+                        "fsx" => Some(crate::types::StorageConfiguration::Fsx(
+                            crate::protocol_serde::shape_fsx_storage_configuration::de_fsx_storage_configuration(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fsx' cannot be null"))?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::StorageConfiguration::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

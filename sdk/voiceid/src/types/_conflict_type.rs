@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ConflictType {
     #[allow(missing_docs)] // documentation missing in model
@@ -82,24 +76,16 @@ impl ::std::convert::From<&str> for ConflictType {
     fn from(s: &str) -> Self {
         match s {
             "ANOTHER_ACTIVE_STREAM" => ConflictType::AnotherActiveStream,
-            "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT" => {
-                ConflictType::CannotChangeSpeakerAfterEnrollment
-            }
+            "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT" => ConflictType::CannotChangeSpeakerAfterEnrollment,
             "CANNOT_DELETE_NON_EMPTY_WATCHLIST" => ConflictType::CannotDeleteNonEmptyWatchlist,
             "CONCURRENT_CHANGES" => ConflictType::ConcurrentChanges,
-            "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES" => {
-                ConflictType::DomainLockedFromEncryptionUpdates
-            }
+            "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES" => ConflictType::DomainLockedFromEncryptionUpdates,
             "DOMAIN_NOT_ACTIVE" => ConflictType::DomainNotActive,
             "ENROLLMENT_ALREADY_EXISTS" => ConflictType::EnrollmentAlreadyExists,
-            "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST" => {
-                ConflictType::FraudsterMustBelongToAtLeastOneWatchlist
-            }
+            "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST" => ConflictType::FraudsterMustBelongToAtLeastOneWatchlist,
             "SPEAKER_NOT_SET" => ConflictType::SpeakerNotSet,
             "SPEAKER_OPTED_OUT" => ConflictType::SpeakerOptedOut,
-            other => {
-                ConflictType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ConflictType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -115,19 +101,13 @@ impl ConflictType {
     pub fn as_str(&self) -> &str {
         match self {
             ConflictType::AnotherActiveStream => "ANOTHER_ACTIVE_STREAM",
-            ConflictType::CannotChangeSpeakerAfterEnrollment => {
-                "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT"
-            }
+            ConflictType::CannotChangeSpeakerAfterEnrollment => "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT",
             ConflictType::CannotDeleteNonEmptyWatchlist => "CANNOT_DELETE_NON_EMPTY_WATCHLIST",
             ConflictType::ConcurrentChanges => "CONCURRENT_CHANGES",
-            ConflictType::DomainLockedFromEncryptionUpdates => {
-                "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES"
-            }
+            ConflictType::DomainLockedFromEncryptionUpdates => "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES",
             ConflictType::DomainNotActive => "DOMAIN_NOT_ACTIVE",
             ConflictType::EnrollmentAlreadyExists => "ENROLLMENT_ALREADY_EXISTS",
-            ConflictType::FraudsterMustBelongToAtLeastOneWatchlist => {
-                "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST"
-            }
+            ConflictType::FraudsterMustBelongToAtLeastOneWatchlist => "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST",
             ConflictType::SpeakerNotSet => "SPEAKER_NOT_SET",
             ConflictType::SpeakerOptedOut => "SPEAKER_OPTED_OUT",
             ConflictType::Unknown(value) => value.as_str(),

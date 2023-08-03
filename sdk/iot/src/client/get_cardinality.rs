@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetCardinalityOutput`](crate::operation::get_cardinality::GetCardinalityOutput) with field(s):
     ///   - [`cardinality(i32)`](crate::operation::get_cardinality::GetCardinalityOutput::cardinality): <p>The approximate count of unique values that match the query.</p>
     /// - On failure, responds with [`SdkError<GetCardinalityError>`](crate::operation::get_cardinality::GetCardinalityError)
-    pub fn get_cardinality(
-        &self,
-    ) -> crate::operation::get_cardinality::builders::GetCardinalityFluentBuilder {
-        crate::operation::get_cardinality::builders::GetCardinalityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_cardinality(&self) -> crate::operation::get_cardinality::builders::GetCardinalityFluentBuilder {
+        crate::operation::get_cardinality::builders::GetCardinalityFluentBuilder::new(self.handle.clone())
     }
 }

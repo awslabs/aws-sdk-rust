@@ -38,10 +38,7 @@ impl ModifyClusterSnapshotFluentBuilder {
         }
     }
     /// Access the ModifyClusterSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl ModifyClusterSnapshotFluentBuilder {
             crate::operation::modify_cluster_snapshot::ModifyClusterSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl ModifyClusterSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl ModifyClusterSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl ModifyClusterSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +106,17 @@ impl ModifyClusterSnapshotFluentBuilder {
             crate::operation::modify_cluster_snapshot::ModifyClusterSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the snapshot whose setting you want to modify.</p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_identifier(input.into());
         self
     }
     /// <p>The identifier of the snapshot whose setting you want to modify.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
@@ -154,10 +134,7 @@ impl ModifyClusterSnapshotFluentBuilder {
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
     /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    pub fn set_manual_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_manual_snapshot_retention_period(input);
         self
     }

@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`excluded_members(Option<Vec<String>>)`](crate::operation::delete_db_cluster_endpoint::DeleteDbClusterEndpointOutput::excluded_members): <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
     ///   - [`db_cluster_endpoint_arn(Option<String>)`](crate::operation::delete_db_cluster_endpoint::DeleteDbClusterEndpointOutput::db_cluster_endpoint_arn): <p>The Amazon Resource Name (ARN) for the endpoint.</p>
     /// - On failure, responds with [`SdkError<DeleteDBClusterEndpointError>`](crate::operation::delete_db_cluster_endpoint::DeleteDBClusterEndpointError)
-    pub fn delete_db_cluster_endpoint(
-        &self,
-    ) -> crate::operation::delete_db_cluster_endpoint::builders::DeleteDBClusterEndpointFluentBuilder
-    {
+    pub fn delete_db_cluster_endpoint(&self) -> crate::operation::delete_db_cluster_endpoint::builders::DeleteDBClusterEndpointFluentBuilder {
         crate::operation::delete_db_cluster_endpoint::builders::DeleteDBClusterEndpointFluentBuilder::new(self.handle.clone())
     }
 }

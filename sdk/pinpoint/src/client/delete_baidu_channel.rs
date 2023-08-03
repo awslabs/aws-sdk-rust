@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteBaiduChannelOutput`](crate::operation::delete_baidu_channel::DeleteBaiduChannelOutput) with field(s):
     ///   - [`baidu_channel_response(Option<BaiduChannelResponse>)`](crate::operation::delete_baidu_channel::DeleteBaiduChannelOutput::baidu_channel_response): <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteBaiduChannelError>`](crate::operation::delete_baidu_channel::DeleteBaiduChannelError)
-    pub fn delete_baidu_channel(
-        &self,
-    ) -> crate::operation::delete_baidu_channel::builders::DeleteBaiduChannelFluentBuilder {
-        crate::operation::delete_baidu_channel::builders::DeleteBaiduChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_baidu_channel(&self) -> crate::operation::delete_baidu_channel::builders::DeleteBaiduChannelFluentBuilder {
+        crate::operation::delete_baidu_channel::builders::DeleteBaiduChannelFluentBuilder::new(self.handle.clone())
     }
 }

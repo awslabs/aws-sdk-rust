@@ -16,18 +16,14 @@ impl DeleteReceiptFilterInput {
 }
 impl DeleteReceiptFilterInput {
     /// Creates a new builder-style object to manufacture [`DeleteReceiptFilterInput`](crate::operation::delete_receipt_filter::DeleteReceiptFilterInput).
-    pub fn builder(
-    ) -> crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterInputBuilder {
-        crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterInputBuilder {
+        crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteReceiptFilterInput`](crate::operation::delete_receipt_filter::DeleteReceiptFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReceiptFilterInputBuilder {
     pub(crate) filter_name: ::std::option::Option<::std::string::String>,
 }
@@ -49,14 +45,10 @@ impl DeleteReceiptFilterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReceiptFilterInput`](crate::operation::delete_receipt_filter::DeleteReceiptFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_receipt_filter::DeleteReceiptFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_receipt_filter::DeleteReceiptFilterInput {
-                filter_name: self.filter_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_receipt_filter::DeleteReceiptFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_receipt_filter::DeleteReceiptFilterInput {
+            filter_name: self.filter_name,
+        })
     }
 }

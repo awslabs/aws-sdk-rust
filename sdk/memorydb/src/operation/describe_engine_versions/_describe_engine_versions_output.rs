@@ -28,22 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeEngineVersionsOutput {
 }
 impl DescribeEngineVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEngineVersionsOutput`](crate::operation::describe_engine_versions::DescribeEngineVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_engine_versions::builders::DescribeEngineVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_engine_versions::builders::DescribeEngineVersionsOutputBuilder {
         crate::operation::describe_engine_versions::builders::DescribeEngineVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEngineVersionsOutput`](crate::operation::describe_engine_versions::DescribeEngineVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEngineVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) engine_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::EngineVersionInfo>>,
+    pub(crate) engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersionInfo>>,
     _request_id: Option<String>,
 }
 impl DescribeEngineVersionsOutputBuilder {
@@ -73,17 +68,12 @@ impl DescribeEngineVersionsOutputBuilder {
         self
     }
     /// <p>A list of engine version details. Each element in the list contains detailed information about one engine version.</p>
-    pub fn set_engine_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersionInfo>>,
-    ) -> Self {
+    pub fn set_engine_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersionInfo>>) -> Self {
         self.engine_versions = input;
         self
     }
     /// <p>A list of engine version details. Each element in the list contains detailed information about one engine version.</p>
-    pub fn get_engine_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineVersionInfo>> {
+    pub fn get_engine_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineVersionInfo>> {
         &self.engine_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

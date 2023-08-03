@@ -17,16 +17,14 @@ impl GetRelationalDatabaseSnapshotsInput {
 }
 impl GetRelationalDatabaseSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseSnapshotsInput`](crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsInput).
-    pub fn builder() -> crate::operation::get_relational_database_snapshots::builders::GetRelationalDatabaseSnapshotsInputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_snapshots::builders::GetRelationalDatabaseSnapshotsInputBuilder {
         crate::operation::get_relational_database_snapshots::builders::GetRelationalDatabaseSnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetRelationalDatabaseSnapshotsInput`](crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseSnapshotsInputBuilder {
     pub(crate) page_token: ::std::option::Option<::std::string::String>,
 }
@@ -55,11 +53,8 @@ impl GetRelationalDatabaseSnapshotsInputBuilder {
         crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsInput {
-                page_token: self.page_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsInput {
+            page_token: self.page_token,
+        })
     }
 }

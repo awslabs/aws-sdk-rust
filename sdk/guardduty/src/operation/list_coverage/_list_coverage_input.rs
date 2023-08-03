@@ -50,9 +50,7 @@ impl ListCoverageInput {
 
 /// A builder for [`ListCoverageInput`](crate::operation::list_coverage::ListCoverageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCoverageInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -109,17 +107,12 @@ impl ListCoverageInputBuilder {
         self
     }
     /// <p>Represents the criteria used to filter the coverage details.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageFilterCriteria>,
-    ) -> Self {
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::CoverageFilterCriteria>) -> Self {
         self.filter_criteria = input;
         self
     }
     /// <p>Represents the criteria used to filter the coverage details.</p>
-    pub fn get_filter_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
         &self.filter_criteria
     }
     /// <p>Represents the criteria used to sort the coverage details.</p>
@@ -128,10 +121,7 @@ impl ListCoverageInputBuilder {
         self
     }
     /// <p>Represents the criteria used to sort the coverage details.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::CoverageSortCriteria>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::CoverageSortCriteria>) -> Self {
         self.sort_criteria = input;
         self
     }
@@ -140,12 +130,7 @@ impl ListCoverageInputBuilder {
         &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`ListCoverageInput`](crate::operation::list_coverage::ListCoverageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_coverage::ListCoverageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_coverage::ListCoverageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_coverage::ListCoverageInput {
             detector_id: self.detector_id,
             next_token: self.next_token,

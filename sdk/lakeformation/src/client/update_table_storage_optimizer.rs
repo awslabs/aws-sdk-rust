@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateTableStorageOptimizerOutput`](crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput) with field(s):
     ///   - [`result(Option<String>)`](crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput::result): <p>A response indicating the success of failure of the operation.</p>
     /// - On failure, responds with [`SdkError<UpdateTableStorageOptimizerError>`](crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerError)
-    pub fn update_table_storage_optimizer(&self) -> crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerFluentBuilder{
+    pub fn update_table_storage_optimizer(
+        &self,
+    ) -> crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerFluentBuilder {
         crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerFluentBuilder::new(self.handle.clone())
     }
 }

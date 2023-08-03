@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`DeletePackageOutput`](crate::operation::delete_package::DeletePackageOutput) with field(s):
     ///   - [`deleted_package(Option<PackageSummary>)`](crate::operation::delete_package::DeletePackageOutput::deleted_package): <p> Details about a package, including its format, namespace, and name. </p>
     /// - On failure, responds with [`SdkError<DeletePackageError>`](crate::operation::delete_package::DeletePackageError)
-    pub fn delete_package(
-        &self,
-    ) -> crate::operation::delete_package::builders::DeletePackageFluentBuilder {
-        crate::operation::delete_package::builders::DeletePackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_package(&self) -> crate::operation::delete_package::builders::DeletePackageFluentBuilder {
+        crate::operation::delete_package::builders::DeletePackageFluentBuilder::new(self.handle.clone())
     }
 }

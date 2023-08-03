@@ -19,8 +19,7 @@ pub struct CreateSecretOutput {
     /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub replication_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
+    pub replication_status: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
     _request_id: Option<String>,
 }
 impl CreateSecretOutput {
@@ -42,9 +41,7 @@ impl CreateSecretOutput {
     /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
     /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
     /// </ul>
-    pub fn replication_status(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReplicationStatusType]> {
+    pub fn replication_status(&self) -> ::std::option::Option<&[crate::types::ReplicationStatusType]> {
         self.replication_status.as_deref()
     }
 }
@@ -62,15 +59,12 @@ impl CreateSecretOutput {
 
 /// A builder for [`CreateSecretOutput`](crate::operation::create_secret::CreateSecretOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSecretOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_status:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
+    pub(crate) replication_status: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
     _request_id: Option<String>,
 }
 impl CreateSecretOutputBuilder {
@@ -138,10 +132,7 @@ impl CreateSecretOutputBuilder {
     /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
     /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
     /// </ul>
-    pub fn set_replication_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
-    ) -> Self {
+    pub fn set_replication_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>) -> Self {
         self.replication_status = input;
         self
     }
@@ -151,9 +142,7 @@ impl CreateSecretOutputBuilder {
     /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
     /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
     /// </ul>
-    pub fn get_replication_status(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>> {
+    pub fn get_replication_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>> {
         &self.replication_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -26,7 +26,7 @@ impl DescribeDocumentPermissionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDocumentPermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_document_permission::builders::DescribeDocumentPermissionInputBuilder,
+    inner: crate::operation::describe_document_permission::builders::DescribeDocumentPermissionInputBuilder,
 }
 impl DescribeDocumentPermissionFluentBuilder {
     /// Creates a new `DescribeDocumentPermission`.
@@ -37,7 +37,7 @@ impl DescribeDocumentPermissionFluentBuilder {
         }
     }
     /// Access the DescribeDocumentPermission as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_document_permission::builders::DescribeDocumentPermissionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_document_permission::builders::DescribeDocumentPermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDocumentPermissionFluentBuilder {
             crate::operation::describe_document_permission::DescribeDocumentPermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document_permission::DescribeDocumentPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document_permission::DescribeDocumentPermissionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDocumentPermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDocumentPermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_document_permission::DescribeDocumentPermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document_permission::DescribeDocumentPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document_permission::DescribeDocumentPermissionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDocumentPermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_document_permission::DescribeDocumentPermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document_permission::DescribeDocumentPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document_permission::DescribeDocumentPermissionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeDocumentPermissionFluentBuilder {
             crate::operation::describe_document_permission::DescribeDocumentPermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document_permission::DescribeDocumentPermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document_permission::DescribeDocumentPermissionError>,
     > {
         self.customize_middleware().await
     }
@@ -140,17 +129,12 @@ impl DescribeDocumentPermissionFluentBuilder {
         self
     }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
-    pub fn set_permission_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentPermissionType>,
-    ) -> Self {
+    pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::DocumentPermissionType>) -> Self {
         self.inner = self.inner.set_permission_type(input);
         self
     }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
-    pub fn get_permission_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentPermissionType> {
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::DocumentPermissionType> {
         self.inner.get_permission_type()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>

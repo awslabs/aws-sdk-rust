@@ -44,9 +44,7 @@ impl TrialComponentSourceDetail {
 
 /// A builder for [`TrialComponentSourceDetail`](crate::types::TrialComponentSourceDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrialComponentSourceDetailBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) training_job: ::std::option::Option<crate::types::TrainingJob>,
@@ -74,10 +72,7 @@ impl TrialComponentSourceDetailBuilder {
         self
     }
     /// <p>Information about a training job that's the source of a trial component.</p>
-    pub fn set_training_job(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingJob>,
-    ) -> Self {
+    pub fn set_training_job(mut self, input: ::std::option::Option<crate::types::TrainingJob>) -> Self {
         self.training_job = input;
         self
     }
@@ -91,10 +86,7 @@ impl TrialComponentSourceDetailBuilder {
         self
     }
     /// <p>Information about a processing job that's the source of a trial component.</p>
-    pub fn set_processing_job(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingJob>,
-    ) -> Self {
+    pub fn set_processing_job(mut self, input: ::std::option::Option<crate::types::ProcessingJob>) -> Self {
         self.processing_job = input;
         self
     }
@@ -108,10 +100,7 @@ impl TrialComponentSourceDetailBuilder {
         self
     }
     /// <p>Information about a transform job that's the source of a trial component.</p>
-    pub fn set_transform_job(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformJob>,
-    ) -> Self {
+    pub fn set_transform_job(mut self, input: ::std::option::Option<crate::types::TransformJob>) -> Self {
         self.transform_job = input;
         self
     }

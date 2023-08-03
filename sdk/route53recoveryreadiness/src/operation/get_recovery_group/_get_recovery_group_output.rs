@@ -14,9 +14,7 @@ pub struct GetRecoveryGroupOutput {
     pub recovery_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the recovery group.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetRecoveryGroupOutput {
@@ -33,11 +31,7 @@ impl GetRecoveryGroupOutput {
         self.recovery_group_name.as_deref()
     }
     /// <p>The tags associated with the recovery group.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -48,24 +42,19 @@ impl ::aws_http::request_id::RequestId for GetRecoveryGroupOutput {
 }
 impl GetRecoveryGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetRecoveryGroupOutput`](crate::operation::get_recovery_group::GetRecoveryGroupOutput).
-    pub fn builder() -> crate::operation::get_recovery_group::builders::GetRecoveryGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_recovery_group::builders::GetRecoveryGroupOutputBuilder {
         crate::operation::get_recovery_group::builders::GetRecoveryGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRecoveryGroupOutput`](crate::operation::get_recovery_group::GetRecoveryGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecoveryGroupOutputBuilder {
     pub(crate) cells: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) recovery_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetRecoveryGroupOutputBuilder {
@@ -81,10 +70,7 @@ impl GetRecoveryGroupOutputBuilder {
         self
     }
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-    pub fn set_cells(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cells = input;
         self
     }
@@ -93,18 +79,12 @@ impl GetRecoveryGroupOutputBuilder {
         &self.cells
     }
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
-    pub fn recovery_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
-    pub fn set_recovery_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_group_arn = input;
         self
     }
@@ -113,18 +93,12 @@ impl GetRecoveryGroupOutputBuilder {
         &self.recovery_group_arn
     }
     /// <p>The name of the recovery group.</p>
-    pub fn recovery_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the recovery group.</p>
-    pub fn set_recovery_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_group_name = input;
         self
     }
@@ -137,32 +111,19 @@ impl GetRecoveryGroupOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags associated with the recovery group.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags associated with the recovery group.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags associated with the recovery group.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

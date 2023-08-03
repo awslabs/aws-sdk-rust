@@ -62,15 +62,12 @@ impl UpdateBucketInput {
 
 /// A builder for [`UpdateBucketInput`](crate::operation::update_bucket::UpdateBucketInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBucketInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) access_rules: ::std::option::Option<crate::types::AccessRules>,
     pub(crate) versioning: ::std::option::Option<::std::string::String>,
-    pub(crate) readonly_access_accounts:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) readonly_access_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) access_log_config: ::std::option::Option<crate::types::BucketAccessLogConfig>,
 }
 impl UpdateBucketInputBuilder {
@@ -94,10 +91,7 @@ impl UpdateBucketInputBuilder {
         self
     }
     /// <p>An object that sets the public accessibility of objects in the specified bucket.</p>
-    pub fn set_access_rules(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessRules>,
-    ) -> Self {
+    pub fn set_access_rules(mut self, input: ::std::option::Option<crate::types::AccessRules>) -> Self {
         self.access_rules = input;
         self
     }
@@ -140,10 +134,7 @@ impl UpdateBucketInputBuilder {
     ///
     /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
     /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
-    pub fn readonly_access_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn readonly_access_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.readonly_access_accounts.unwrap_or_default();
         v.push(input.into());
         self.readonly_access_accounts = ::std::option::Option::Some(v);
@@ -151,18 +142,13 @@ impl UpdateBucketInputBuilder {
     }
     /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
     /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
-    pub fn set_readonly_access_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_readonly_access_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.readonly_access_accounts = input;
         self
     }
     /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
     /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
-    pub fn get_readonly_access_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_readonly_access_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.readonly_access_accounts
     }
     /// <p>An object that describes the access log configuration for the bucket.</p>
@@ -171,26 +157,16 @@ impl UpdateBucketInputBuilder {
         self
     }
     /// <p>An object that describes the access log configuration for the bucket.</p>
-    pub fn set_access_log_config(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketAccessLogConfig>,
-    ) -> Self {
+    pub fn set_access_log_config(mut self, input: ::std::option::Option<crate::types::BucketAccessLogConfig>) -> Self {
         self.access_log_config = input;
         self
     }
     /// <p>An object that describes the access log configuration for the bucket.</p>
-    pub fn get_access_log_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::BucketAccessLogConfig> {
+    pub fn get_access_log_config(&self) -> &::std::option::Option<crate::types::BucketAccessLogConfig> {
         &self.access_log_config
     }
     /// Consumes the builder and constructs a [`UpdateBucketInput`](crate::operation::update_bucket::UpdateBucketInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_bucket::UpdateBucketInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_bucket::UpdateBucketInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_bucket::UpdateBucketInput {
             bucket_name: self.bucket_name,
             access_rules: self.access_rules,

@@ -22,17 +22,14 @@ impl AssociateSecurityKeyInput {
 }
 impl AssociateSecurityKeyInput {
     /// Creates a new builder-style object to manufacture [`AssociateSecurityKeyInput`](crate::operation::associate_security_key::AssociateSecurityKeyInput).
-    pub fn builder(
-    ) -> crate::operation::associate_security_key::builders::AssociateSecurityKeyInputBuilder {
+    pub fn builder() -> crate::operation::associate_security_key::builders::AssociateSecurityKeyInputBuilder {
         crate::operation::associate_security_key::builders::AssociateSecurityKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateSecurityKeyInput`](crate::operation::associate_security_key::AssociateSecurityKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateSecurityKeyInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,11 @@ impl AssociateSecurityKeyInputBuilder {
     /// Consumes the builder and constructs a [`AssociateSecurityKeyInput`](crate::operation::associate_security_key::AssociateSecurityKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_security_key::AssociateSecurityKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_security_key::AssociateSecurityKeyInput {
-                instance_id: self.instance_id,
-                key: self.key,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::associate_security_key::AssociateSecurityKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_security_key::AssociateSecurityKeyInput {
+            instance_id: self.instance_id,
+            key: self.key,
+        })
     }
 }

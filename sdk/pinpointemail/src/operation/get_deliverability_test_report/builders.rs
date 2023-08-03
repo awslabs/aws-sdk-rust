@@ -26,7 +26,7 @@ impl GetDeliverabilityTestReportInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDeliverabilityTestReportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_deliverability_test_report::builders::GetDeliverabilityTestReportInputBuilder,
+    inner: crate::operation::get_deliverability_test_report::builders::GetDeliverabilityTestReportInputBuilder,
 }
 impl GetDeliverabilityTestReportFluentBuilder {
     /// Creates a new `GetDeliverabilityTestReport`.
@@ -37,7 +37,7 @@ impl GetDeliverabilityTestReportFluentBuilder {
         }
     }
     /// Access the GetDeliverabilityTestReport as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_deliverability_test_report::builders::GetDeliverabilityTestReportInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_deliverability_test_report::builders::GetDeliverabilityTestReportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetDeliverabilityTestReportFluentBuilder {
             crate::operation::get_deliverability_test_report::GetDeliverabilityTestReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetDeliverabilityTestReportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetDeliverabilityTestReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetDeliverabilityTestReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetDeliverabilityTestReportFluentBuilder {
             crate::operation::get_deliverability_test_report::GetDeliverabilityTestReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportError>,
     > {
         self.customize_middleware().await
     }

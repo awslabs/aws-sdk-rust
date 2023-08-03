@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`opened_by(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::opened_by): <p>The identifier (user name) of the user that opened the project for use. </p>
     ///   - [`open_date(Option<DateTime>)`](crate::operation::describe_project::DescribeProjectOutput::open_date): <p>The date and time when the project was opened. </p>
     /// - On failure, responds with [`SdkError<DescribeProjectError>`](crate::operation::describe_project::DescribeProjectError)
-    pub fn describe_project(
-        &self,
-    ) -> crate::operation::describe_project::builders::DescribeProjectFluentBuilder {
-        crate::operation::describe_project::builders::DescribeProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_project(&self) -> crate::operation::describe_project::builders::DescribeProjectFluentBuilder {
+        crate::operation::describe_project::builders::DescribeProjectFluentBuilder::new(self.handle.clone())
     }
 }

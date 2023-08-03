@@ -16,8 +16,7 @@ pub struct JdbcTarget {
     /// <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments associated with a column or table in the database.</p>
     /// <p>If you do not need additional metadata, keep the field empty.</p>
     #[doc(hidden)]
-    pub enable_additional_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::JdbcMetadataEntry>>,
+    pub enable_additional_metadata: ::std::option::Option<::std::vec::Vec<crate::types::JdbcMetadataEntry>>,
 }
 impl JdbcTarget {
     /// <p>The name of the connection to use to connect to the JDBC target.</p>
@@ -34,9 +33,7 @@ impl JdbcTarget {
     }
     /// <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments associated with a column or table in the database.</p>
     /// <p>If you do not need additional metadata, keep the field empty.</p>
-    pub fn enable_additional_metadata(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::JdbcMetadataEntry]> {
+    pub fn enable_additional_metadata(&self) -> ::std::option::Option<&[crate::types::JdbcMetadataEntry]> {
         self.enable_additional_metadata.as_deref()
     }
 }
@@ -49,30 +46,21 @@ impl JdbcTarget {
 
 /// A builder for [`JdbcTarget`](crate::types::JdbcTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JdbcTargetBuilder {
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) exclusions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) enable_additional_metadata:
-        ::std::option::Option<::std::vec::Vec<crate::types::JdbcMetadataEntry>>,
+    pub(crate) enable_additional_metadata: ::std::option::Option<::std::vec::Vec<crate::types::JdbcMetadataEntry>>,
 }
 impl JdbcTargetBuilder {
     /// <p>The name of the connection to use to connect to the JDBC target.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection to use to connect to the JDBC target.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_name = input;
         self
     }
@@ -106,10 +94,7 @@ impl JdbcTargetBuilder {
         self
     }
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    pub fn set_exclusions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_exclusions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.exclusions = input;
         self
     }
@@ -131,18 +116,13 @@ impl JdbcTargetBuilder {
     }
     /// <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments associated with a column or table in the database.</p>
     /// <p>If you do not need additional metadata, keep the field empty.</p>
-    pub fn set_enable_additional_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JdbcMetadataEntry>>,
-    ) -> Self {
+    pub fn set_enable_additional_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JdbcMetadataEntry>>) -> Self {
         self.enable_additional_metadata = input;
         self
     }
     /// <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments associated with a column or table in the database.</p>
     /// <p>If you do not need additional metadata, keep the field empty.</p>
-    pub fn get_enable_additional_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JdbcMetadataEntry>> {
+    pub fn get_enable_additional_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JdbcMetadataEntry>> {
         &self.enable_additional_metadata
     }
     /// Consumes the builder and constructs a [`JdbcTarget`](crate::types::JdbcTarget).

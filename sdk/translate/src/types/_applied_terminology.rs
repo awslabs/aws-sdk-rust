@@ -30,9 +30,7 @@ impl AppliedTerminology {
 
 /// A builder for [`AppliedTerminology`](crate::types::AppliedTerminology).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppliedTerminologyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) terms: ::std::option::Option<::std::vec::Vec<crate::types::Term>>,
@@ -64,10 +62,7 @@ impl AppliedTerminologyBuilder {
         self
     }
     /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
-    pub fn set_terms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Term>>,
-    ) -> Self {
+    pub fn set_terms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Term>>) -> Self {
         self.terms = input;
         self
     }

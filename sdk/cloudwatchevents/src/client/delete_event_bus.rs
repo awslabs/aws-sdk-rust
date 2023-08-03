@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_event_bus::builders::DeleteEventBusFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_event_bus::builders::DeleteEventBusFluentBuilder::set_name): <p>The name of the event bus to delete.</p>
     /// - On success, responds with [`DeleteEventBusOutput`](crate::operation::delete_event_bus::DeleteEventBusOutput)
     /// - On failure, responds with [`SdkError<DeleteEventBusError>`](crate::operation::delete_event_bus::DeleteEventBusError)
-    pub fn delete_event_bus(
-        &self,
-    ) -> crate::operation::delete_event_bus::builders::DeleteEventBusFluentBuilder {
-        crate::operation::delete_event_bus::builders::DeleteEventBusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_event_bus(&self) -> crate::operation::delete_event_bus::builders::DeleteEventBusFluentBuilder {
+        crate::operation::delete_event_bus::builders::DeleteEventBusFluentBuilder::new(self.handle.clone())
     }
 }

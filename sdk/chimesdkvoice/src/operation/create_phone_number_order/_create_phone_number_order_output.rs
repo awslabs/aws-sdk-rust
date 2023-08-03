@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreatePhoneNumberOrderOutput {
 }
 impl CreatePhoneNumberOrderOutput {
     /// Creates a new builder-style object to manufacture [`CreatePhoneNumberOrderOutput`](crate::operation::create_phone_number_order::CreatePhoneNumberOrderOutput).
-    pub fn builder(
-    ) -> crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderOutputBuilder {
         crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePhoneNumberOrderOutput`](crate::operation::create_phone_number_order::CreatePhoneNumberOrderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePhoneNumberOrderOutputBuilder {
     pub(crate) phone_number_order: ::std::option::Option<crate::types::PhoneNumberOrder>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreatePhoneNumberOrderOutputBuilder {
         self
     }
     /// <p>The phone number order details.</p>
-    pub fn set_phone_number_order(
-        mut self,
-        input: ::std::option::Option<crate::types::PhoneNumberOrder>,
-    ) -> Self {
+    pub fn set_phone_number_order(mut self, input: ::std::option::Option<crate::types::PhoneNumberOrder>) -> Self {
         self.phone_number_order = input;
         self
     }
@@ -65,9 +58,7 @@ impl CreatePhoneNumberOrderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreatePhoneNumberOrderOutput`](crate::operation::create_phone_number_order::CreatePhoneNumberOrderOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_phone_number_order::CreatePhoneNumberOrderOutput {
+    pub fn build(self) -> crate::operation::create_phone_number_order::CreatePhoneNumberOrderOutput {
         crate::operation::create_phone_number_order::CreatePhoneNumberOrderOutput {
             phone_number_order: self.phone_number_order,
             _request_id: self._request_id,

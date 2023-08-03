@@ -10,10 +10,7 @@ impl CreateKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_key::CreateKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_key::CreateKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_key::CreateKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_key();
         fluent_builder.inner = self;
@@ -55,10 +52,7 @@ impl CreateKeyFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_key::CreateKey,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_key::CreateKey, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_key::CreateKeyError>,
     > {
         let handle = self.handle.clone();
@@ -69,10 +63,7 @@ impl CreateKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -114,10 +105,7 @@ impl CreateKeyFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_key::CreateKey,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::create_key::CreateKey, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::create_key::CreateKeyError>,
     > {
         self.customize_middleware().await
@@ -128,10 +116,7 @@ impl CreateKeyFluentBuilder {
         self
     }
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
-    pub fn set_key_attributes(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyAttributes>,
-    ) -> Self {
+    pub fn set_key_attributes(mut self, input: ::std::option::Option<crate::types::KeyAttributes>) -> Self {
         self.inner = self.inner.set_key_attributes(input);
         self
     }
@@ -141,27 +126,19 @@ impl CreateKeyFluentBuilder {
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV) for DES and AES keys.</p>
     /// <p>For DES key, the KCV is computed by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES key, the KCV is computed by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn key_check_value_algorithm(
-        mut self,
-        input: crate::types::KeyCheckValueAlgorithm,
-    ) -> Self {
+    pub fn key_check_value_algorithm(mut self, input: crate::types::KeyCheckValueAlgorithm) -> Self {
         self.inner = self.inner.key_check_value_algorithm(input);
         self
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV) for DES and AES keys.</p>
     /// <p>For DES key, the KCV is computed by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES key, the KCV is computed by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn set_key_check_value_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,
-    ) -> Self {
+    pub fn set_key_check_value_algorithm(mut self, input: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>) -> Self {
         self.inner = self.inner.set_key_check_value_algorithm(input);
         self
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV) for DES and AES keys.</p>
     /// <p>For DES key, the KCV is computed by encrypting 8 bytes, each with value '00', with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES key, the KCV is computed by encrypting 8 bytes, each with value '01', with the key to be checked and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn get_key_check_value_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::KeyCheckValueAlgorithm> {
+    pub fn get_key_check_value_algorithm(&self) -> &::std::option::Option<crate::types::KeyCheckValueAlgorithm> {
         self.inner.get_key_check_value_algorithm()
     }
     /// <p>Specifies whether the key is exportable from the service.</p>
@@ -212,10 +189,7 @@ impl CreateKeyFluentBuilder {
     /// </important> <note>
     /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

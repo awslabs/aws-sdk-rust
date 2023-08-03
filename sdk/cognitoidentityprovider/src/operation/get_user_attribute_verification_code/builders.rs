@@ -5,16 +5,16 @@ pub use crate::operation::get_user_attribute_verification_code::_get_user_attrib
 
 impl GetUserAttributeVerificationCodeInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.get_user_attribute_verification_code();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -29,7 +29,7 @@ impl GetUserAttributeVerificationCodeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetUserAttributeVerificationCodeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_user_attribute_verification_code::builders::GetUserAttributeVerificationCodeInputBuilder,
+    inner: crate::operation::get_user_attribute_verification_code::builders::GetUserAttributeVerificationCodeInputBuilder,
 }
 impl GetUserAttributeVerificationCodeFluentBuilder {
     /// Creates a new `GetUserAttributeVerificationCode`.
@@ -40,15 +40,20 @@ impl GetUserAttributeVerificationCodeFluentBuilder {
         }
     }
     /// Access the GetUserAttributeVerificationCode as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_user_attribute_verification_code::builders::GetUserAttributeVerificationCodeInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_user_attribute_verification_code::builders::GetUserAttributeVerificationCodeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCode, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCode,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -57,16 +62,17 @@ impl GetUserAttributeVerificationCodeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError>,
+    > {
         let op = self
             .inner
             .build()
@@ -84,17 +90,26 @@ impl GetUserAttributeVerificationCodeFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCode, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCode,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>A non-expired access token for the user whose attribute verification code you want to generate.</p>
@@ -112,18 +127,12 @@ impl GetUserAttributeVerificationCodeFluentBuilder {
         self.inner.get_access_token()
     }
     /// <p>The attribute name returned by the server response to get the user attribute verification code.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_name(input.into());
         self
     }
     /// <p>The attribute name returned by the server response to get the user attribute verification code.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_name(input);
         self
     }
@@ -165,9 +174,7 @@ impl GetUserAttributeVerificationCodeFluentBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_client_metadata(input);
         self
@@ -182,11 +189,7 @@ impl GetUserAttributeVerificationCodeFluentBuilder {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_client_metadata()
     }
 }

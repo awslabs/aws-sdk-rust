@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`checksum(Option<String>)`](crate::operation::put_snapshot_block::PutSnapshotBlockOutput::checksum): <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
     ///   - [`checksum_algorithm(Option<ChecksumAlgorithm>)`](crate::operation::put_snapshot_block::PutSnapshotBlockOutput::checksum_algorithm): <p>The algorithm used by Amazon EBS to generate the checksum.</p>
     /// - On failure, responds with [`SdkError<PutSnapshotBlockError>`](crate::operation::put_snapshot_block::PutSnapshotBlockError)
-    pub fn put_snapshot_block(
-        &self,
-    ) -> crate::operation::put_snapshot_block::builders::PutSnapshotBlockFluentBuilder {
-        crate::operation::put_snapshot_block::builders::PutSnapshotBlockFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_snapshot_block(&self) -> crate::operation::put_snapshot_block::builders::PutSnapshotBlockFluentBuilder {
+        crate::operation::put_snapshot_block::builders::PutSnapshotBlockFluentBuilder::new(self.handle.clone())
     }
 }

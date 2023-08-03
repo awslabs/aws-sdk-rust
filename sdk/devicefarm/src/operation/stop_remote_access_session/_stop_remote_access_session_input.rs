@@ -16,18 +16,14 @@ impl StopRemoteAccessSessionInput {
 }
 impl StopRemoteAccessSessionInput {
     /// Creates a new builder-style object to manufacture [`StopRemoteAccessSessionInput`](crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionInputBuilder {
         crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`StopRemoteAccessSessionInput`](crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopRemoteAccessSessionInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -53,10 +49,6 @@ impl StopRemoteAccessSessionInputBuilder {
         crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput {
-                arn: self.arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput { arn: self.arn })
     }
 }

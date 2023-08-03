@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeregisterAppInstanceUserEndpointOutp
 }
 impl DeregisterAppInstanceUserEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterAppInstanceUserEndpointOutput`](crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointOutput).
-    pub fn builder() -> crate::operation::deregister_app_instance_user_endpoint::builders::DeregisterAppInstanceUserEndpointOutputBuilder{
+    pub fn builder() -> crate::operation::deregister_app_instance_user_endpoint::builders::DeregisterAppInstanceUserEndpointOutputBuilder {
         crate::operation::deregister_app_instance_user_endpoint::builders::DeregisterAppInstanceUserEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeregisterAppInstanceUserEndpointOutput`](crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterAppInstanceUserEndpointOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeregisterAppInstanceUserEndpointOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeregisterAppInstanceUserEndpointOutput`](crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointOutput).
-    pub fn build(self) -> crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointOutput{
+    pub fn build(self) -> crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointOutput {
         crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointOutput {
             _request_id: self._request_id,
         }

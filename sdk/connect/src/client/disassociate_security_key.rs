@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`association_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyFluentBuilder::association_id) / [`set_association_id(Option<String>)`](crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyFluentBuilder::set_association_id): <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     /// - On success, responds with [`DisassociateSecurityKeyOutput`](crate::operation::disassociate_security_key::DisassociateSecurityKeyOutput)
     /// - On failure, responds with [`SdkError<DisassociateSecurityKeyError>`](crate::operation::disassociate_security_key::DisassociateSecurityKeyError)
-    pub fn disassociate_security_key(
-        &self,
-    ) -> crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyFluentBuilder
-    {
+    pub fn disassociate_security_key(&self) -> crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyFluentBuilder {
         crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyFluentBuilder::new(self.handle.clone())
     }
 }

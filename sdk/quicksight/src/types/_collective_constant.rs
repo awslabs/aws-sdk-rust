@@ -23,9 +23,7 @@ impl CollectiveConstant {
 
 /// A builder for [`CollectiveConstant`](crate::types::CollectiveConstant).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CollectiveConstantBuilder {
     pub(crate) value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl CollectiveConstantBuilder {
         self
     }
     /// <p>A list of values for the collective constant.</p>
-    pub fn set_value_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.value_list = input;
         self
     }
@@ -55,8 +50,6 @@ impl CollectiveConstantBuilder {
     }
     /// Consumes the builder and constructs a [`CollectiveConstant`](crate::types::CollectiveConstant).
     pub fn build(self) -> crate::types::CollectiveConstant {
-        crate::types::CollectiveConstant {
-            value_list: self.value_list,
-        }
+        crate::types::CollectiveConstant { value_list: self.value_list }
     }
 }

@@ -5,16 +5,16 @@ pub use crate::operation::export_ebs_volume_recommendations::_export_ebs_volume_
 
 impl ExportEbsVolumeRecommendationsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.export_ebs_volume_recommendations();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -28,7 +28,7 @@ impl ExportEbsVolumeRecommendationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportEBSVolumeRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::export_ebs_volume_recommendations::builders::ExportEbsVolumeRecommendationsInputBuilder,
+    inner: crate::operation::export_ebs_volume_recommendations::builders::ExportEbsVolumeRecommendationsInputBuilder,
 }
 impl ExportEBSVolumeRecommendationsFluentBuilder {
     /// Creates a new `ExportEBSVolumeRecommendations`.
@@ -39,15 +39,20 @@ impl ExportEBSVolumeRecommendationsFluentBuilder {
         }
     }
     /// Access the ExportEBSVolumeRecommendations as a reference.
-    pub fn as_input(&self) -> &crate::operation::export_ebs_volume_recommendations::builders::ExportEbsVolumeRecommendationsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::export_ebs_volume_recommendations::builders::ExportEbsVolumeRecommendationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -56,16 +61,17 @@ impl ExportEBSVolumeRecommendationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -83,17 +89,26 @@ impl ExportEBSVolumeRecommendationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendations,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError>,
+    > {
         self.customize_middleware().await
     }
     /// Appends an item to `accountIds`.
@@ -114,10 +129,7 @@ impl ExportEBSVolumeRecommendationsFluentBuilder {
     /// <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>
     /// <p>You can specify multiple account IDs per request.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
@@ -126,9 +138,7 @@ impl ExportEBSVolumeRecommendationsFluentBuilder {
     /// <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>
     /// <p>You can specify multiple account IDs per request.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// Appends an item to `filters`.
@@ -141,10 +151,7 @@ impl ExportEBSVolumeRecommendationsFluentBuilder {
         self
     }
     /// <p>An array of objects to specify a filter that exports a more specific set of Amazon EBS volume recommendations.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EbsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EbsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -162,17 +169,12 @@ impl ExportEBSVolumeRecommendationsFluentBuilder {
         self
     }
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn set_fields_to_export(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportableVolumeField>>,
-    ) -> Self {
+    pub fn set_fields_to_export(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportableVolumeField>>) -> Self {
         self.inner = self.inner.set_fields_to_export(input);
         self
     }
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn get_fields_to_export(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportableVolumeField>> {
+    pub fn get_fields_to_export(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportableVolumeField>> {
         self.inner.get_fields_to_export()
     }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
@@ -183,18 +185,13 @@ impl ExportEBSVolumeRecommendationsFluentBuilder {
     }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
     /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn set_s3_destination_config(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DestinationConfig>,
-    ) -> Self {
+    pub fn set_s3_destination_config(mut self, input: ::std::option::Option<crate::types::S3DestinationConfig>) -> Self {
         self.inner = self.inner.set_s3_destination_config(input);
         self
     }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
     /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn get_s3_destination_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DestinationConfig> {
+    pub fn get_s3_destination_config(&self) -> &::std::option::Option<crate::types::S3DestinationConfig> {
         self.inner.get_s3_destination_config()
     }
     /// <p>The format of the export file.</p>
@@ -205,10 +202,7 @@ impl ExportEBSVolumeRecommendationsFluentBuilder {
     }
     /// <p>The format of the export file.</p>
     /// <p>The only export file format currently supported is <code>Csv</code>.</p>
-    pub fn set_file_format(
-        mut self,
-        input: ::std::option::Option<crate::types::FileFormat>,
-    ) -> Self {
+    pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FileFormat>) -> Self {
         self.inner = self.inner.set_file_format(input);
         self
     }

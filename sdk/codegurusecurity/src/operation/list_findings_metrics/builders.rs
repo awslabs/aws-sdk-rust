@@ -37,9 +37,7 @@ impl ListFindingsMetricsFluentBuilder {
         }
     }
     /// Access the ListFindingsMetrics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_findings_metrics::builders::ListFindingsMetricsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_findings_metrics::builders::ListFindingsMetricsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListFindingsMetricsFluentBuilder {
             crate::operation::list_findings_metrics::ListFindingsMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_findings_metrics::ListFindingsMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_findings_metrics::ListFindingsMetricsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListFindingsMetricsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListFindingsMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_findings_metrics::ListFindingsMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_findings_metrics::ListFindingsMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_findings_metrics::ListFindingsMetricsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListFindingsMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_findings_metrics::ListFindingsMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_findings_metrics::ListFindingsMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_findings_metrics::ListFindingsMetricsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListFindingsMetricsFluentBuilder {
             crate::operation::list_findings_metrics::ListFindingsMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_findings_metrics::ListFindingsMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_findings_metrics::ListFindingsMetricsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_findings_metrics::paginator::ListFindingsMetricsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_findings_metrics::paginator::ListFindingsMetricsPaginator {
-        crate::operation::list_findings_metrics::paginator::ListFindingsMetricsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_findings_metrics::paginator::ListFindingsMetricsPaginator {
+        crate::operation::list_findings_metrics::paginator::ListFindingsMetricsPaginator::new(self.handle, self.inner)
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,10 +149,7 @@ impl ListFindingsMetricsFluentBuilder {
         self
     }
     /// <p>The start date of the interval which you want to retrieve metrics from.</p>
-    pub fn set_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_date(input);
         self
     }
@@ -184,10 +163,7 @@ impl ListFindingsMetricsFluentBuilder {
         self
     }
     /// <p>The end date of the interval which you want to retrieve metrics from.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
     }

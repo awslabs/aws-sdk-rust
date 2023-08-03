@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`long_term_pricing_entries(Option<Vec<LongTermPricingListEntry>>)`](crate::operation::list_long_term_pricing::ListLongTermPricingOutput::long_term_pricing_entries): <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_long_term_pricing::ListLongTermPricingOutput::next_token): <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
     /// - On failure, responds with [`SdkError<ListLongTermPricingError>`](crate::operation::list_long_term_pricing::ListLongTermPricingError)
-    pub fn list_long_term_pricing(
-        &self,
-    ) -> crate::operation::list_long_term_pricing::builders::ListLongTermPricingFluentBuilder {
-        crate::operation::list_long_term_pricing::builders::ListLongTermPricingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_long_term_pricing(&self) -> crate::operation::list_long_term_pricing::builders::ListLongTermPricingFluentBuilder {
+        crate::operation::list_long_term_pricing::builders::ListLongTermPricingFluentBuilder::new(self.handle.clone())
     }
 }

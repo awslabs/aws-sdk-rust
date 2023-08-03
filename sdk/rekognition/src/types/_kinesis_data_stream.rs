@@ -23,9 +23,7 @@ impl KinesisDataStream {
 
 /// A builder for [`KinesisDataStream`](crate::types::KinesisDataStream).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KinesisDataStreamBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }

@@ -5,23 +5,23 @@
 pub struct GetEventConfigurationByResourceTypesInput {}
 impl GetEventConfigurationByResourceTypesInput {
     /// Creates a new builder-style object to manufacture [`GetEventConfigurationByResourceTypesInput`](crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesInput).
-    pub fn builder() -> crate::operation::get_event_configuration_by_resource_types::builders::GetEventConfigurationByResourceTypesInputBuilder{
+    pub fn builder() -> crate::operation::get_event_configuration_by_resource_types::builders::GetEventConfigurationByResourceTypesInputBuilder {
         crate::operation::get_event_configuration_by_resource_types::builders::GetEventConfigurationByResourceTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEventConfigurationByResourceTypesInput`](crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEventConfigurationByResourceTypesInputBuilder {}
 impl GetEventConfigurationByResourceTypesInputBuilder {
     /// Consumes the builder and constructs a [`GetEventConfigurationByResourceTypesInput`](crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesInput, ::aws_smithy_http::operation::error::BuildError>{
-        ::std::result::Result::Ok(
-            crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_event_configuration_by_resource_types::GetEventConfigurationByResourceTypesInput {})
     }
 }

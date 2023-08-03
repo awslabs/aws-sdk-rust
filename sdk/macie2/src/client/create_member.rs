@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateMemberOutput`](crate::operation::create_member::CreateMemberOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_member::CreateMemberOutput::arn): <p>The Amazon Resource Name (ARN) of the account that was associated with the administrator account.</p>
     /// - On failure, responds with [`SdkError<CreateMemberError>`](crate::operation::create_member::CreateMemberError)
-    pub fn create_member(
-        &self,
-    ) -> crate::operation::create_member::builders::CreateMemberFluentBuilder {
-        crate::operation::create_member::builders::CreateMemberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_member(&self) -> crate::operation::create_member::builders::CreateMemberFluentBuilder {
+        crate::operation::create_member::builders::CreateMemberFluentBuilder::new(self.handle.clone())
     }
 }

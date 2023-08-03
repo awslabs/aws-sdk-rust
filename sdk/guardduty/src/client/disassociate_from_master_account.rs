@@ -6,10 +6,10 @@ impl super::Client {
     ///   - [`detector_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_from_master_account::builders::DisassociateFromMasterAccountFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::disassociate_from_master_account::builders::DisassociateFromMasterAccountFluentBuilder::set_detector_id): <p>The unique ID of the detector of the GuardDuty member account.</p>
     /// - On success, responds with [`DisassociateFromMasterAccountOutput`](crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountOutput)
     /// - On failure, responds with [`SdkError<DisassociateFromMasterAccountError>`](crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountError)
-    #[deprecated(
-        note = "This operation is deprecated, use DisassociateFromAdministratorAccount instead"
-    )]
-    pub fn disassociate_from_master_account(&self) -> crate::operation::disassociate_from_master_account::builders::DisassociateFromMasterAccountFluentBuilder{
+    #[deprecated(note = "This operation is deprecated, use DisassociateFromAdministratorAccount instead")]
+    pub fn disassociate_from_master_account(
+        &self,
+    ) -> crate::operation::disassociate_from_master_account::builders::DisassociateFromMasterAccountFluentBuilder {
         crate::operation::disassociate_from_master_account::builders::DisassociateFromMasterAccountFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl RemoveAutoTerminationPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveAutoTerminationPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyInputBuilder,
+    inner: crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyInputBuilder,
 }
 impl RemoveAutoTerminationPolicyFluentBuilder {
     /// Creates a new `RemoveAutoTerminationPolicy`.
@@ -37,7 +37,7 @@ impl RemoveAutoTerminationPolicyFluentBuilder {
         }
     }
     /// Access the RemoveAutoTerminationPolicy as a reference.
-    pub fn as_input(&self) -> &crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RemoveAutoTerminationPolicyFluentBuilder {
             crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RemoveAutoTerminationPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RemoveAutoTerminationPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RemoveAutoTerminationPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl RemoveAutoTerminationPolicyFluentBuilder {
             crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyError>,
     > {
         self.customize_middleware().await
     }

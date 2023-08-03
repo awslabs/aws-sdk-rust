@@ -37,10 +37,7 @@ impl GetLayerVersionByArnFluentBuilder {
         }
     }
     /// Access the GetLayerVersionByArn as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_layer_version_by_arn::builders::GetLayerVersionByArnInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_layer_version_by_arn::builders::GetLayerVersionByArnInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetLayerVersionByArnFluentBuilder {
             crate::operation::get_layer_version_by_arn::GetLayerVersionByArn,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetLayerVersionByArnFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetLayerVersionByArnFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_layer_version_by_arn::GetLayerVersionByArnOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetLayerVersionByArnFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_layer_version_by_arn::GetLayerVersionByArnOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetLayerVersionByArnFluentBuilder {
             crate::operation::get_layer_version_by_arn::GetLayerVersionByArn,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_layer_version_by_arn::GetLayerVersionByArnError>,
     > {
         self.customize_middleware().await
     }

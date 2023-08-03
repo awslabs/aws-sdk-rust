@@ -29,16 +29,14 @@ impl IncreaseReplicationFactorInput {
 }
 impl IncreaseReplicationFactorInput {
     /// Creates a new builder-style object to manufacture [`IncreaseReplicationFactorInput`](crate::operation::increase_replication_factor::IncreaseReplicationFactorInput).
-    pub fn builder() -> crate::operation::increase_replication_factor::builders::IncreaseReplicationFactorInputBuilder{
+    pub fn builder() -> crate::operation::increase_replication_factor::builders::IncreaseReplicationFactorInputBuilder {
         crate::operation::increase_replication_factor::builders::IncreaseReplicationFactorInputBuilder::default()
     }
 }
 
 /// A builder for [`IncreaseReplicationFactorInput`](crate::operation::increase_replication_factor::IncreaseReplicationFactorInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IncreaseReplicationFactorInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_replication_factor: ::std::option::Option<i32>,
@@ -78,27 +76,19 @@ impl IncreaseReplicationFactorInputBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
-    pub fn availability_zones(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
         self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
-    pub fn get_availability_zones(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
     /// Consumes the builder and constructs a [`IncreaseReplicationFactorInput`](crate::operation::increase_replication_factor::IncreaseReplicationFactorInput).
@@ -108,12 +98,10 @@ impl IncreaseReplicationFactorInputBuilder {
         crate::operation::increase_replication_factor::IncreaseReplicationFactorInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::increase_replication_factor::IncreaseReplicationFactorInput {
-                cluster_name: self.cluster_name,
-                new_replication_factor: self.new_replication_factor.unwrap_or_default(),
-                availability_zones: self.availability_zones,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::increase_replication_factor::IncreaseReplicationFactorInput {
+            cluster_name: self.cluster_name,
+            new_replication_factor: self.new_replication_factor.unwrap_or_default(),
+            availability_zones: self.availability_zones,
+        })
     }
 }

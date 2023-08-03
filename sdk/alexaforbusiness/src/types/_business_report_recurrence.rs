@@ -23,9 +23,7 @@ impl BusinessReportRecurrence {
 
 /// A builder for [`BusinessReportRecurrence`](crate::types::BusinessReportRecurrence).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BusinessReportRecurrenceBuilder {
     pub(crate) start_date: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl BusinessReportRecurrenceBuilder {
     }
     /// Consumes the builder and constructs a [`BusinessReportRecurrence`](crate::types::BusinessReportRecurrence).
     pub fn build(self) -> crate::types::BusinessReportRecurrence {
-        crate::types::BusinessReportRecurrence {
-            start_date: self.start_date,
-        }
+        crate::types::BusinessReportRecurrence { start_date: self.start_date }
     }
 }

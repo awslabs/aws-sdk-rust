@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`item_collection_metrics(Option<HashMap<String, Vec<ItemCollectionMetrics>>>)`](crate::operation::batch_write_item::BatchWriteItemOutput::item_collection_metrics): <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about any item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code> operations.</p>  <p>Each entry consists of the following subelements:</p>  <ul>   <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item.</p> </li>   <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>  </ul>
     ///   - [`consumed_capacity(Option<Vec<ConsumedCapacity>>)`](crate::operation::batch_write_item::BatchWriteItemOutput::consumed_capacity): <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>  <p>Each element consists of:</p>  <ul>   <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li>   <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<BatchWriteItemError>`](crate::operation::batch_write_item::BatchWriteItemError)
-    pub fn batch_write_item(
-        &self,
-    ) -> crate::operation::batch_write_item::builders::BatchWriteItemFluentBuilder {
-        crate::operation::batch_write_item::builders::BatchWriteItemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_write_item(&self) -> crate::operation::batch_write_item::builders::BatchWriteItemFluentBuilder {
+        crate::operation::batch_write_item::builders::BatchWriteItemFluentBuilder::new(self.handle.clone())
     }
 }

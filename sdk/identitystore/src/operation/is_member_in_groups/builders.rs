@@ -10,10 +10,7 @@ impl IsMemberInGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::is_member_in_groups::IsMemberInGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::is_member_in_groups::IsMemberInGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::is_member_in_groups::IsMemberInGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.is_member_in_groups();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl IsMemberInGroupsFluentBuilder {
         }
     }
     /// Access the IsMemberInGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::is_member_in_groups::builders::IsMemberInGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::is_member_in_groups::builders::IsMemberInGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl IsMemberInGroupsFluentBuilder {
             crate::operation::is_member_in_groups::IsMemberInGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::is_member_in_groups::IsMemberInGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::is_member_in_groups::IsMemberInGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl IsMemberInGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl IsMemberInGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::is_member_in_groups::IsMemberInGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::is_member_in_groups::IsMemberInGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::is_member_in_groups::IsMemberInGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl IsMemberInGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::is_member_in_groups::IsMemberInGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::is_member_in_groups::IsMemberInGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::is_member_in_groups::IsMemberInGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl IsMemberInGroupsFluentBuilder {
             crate::operation::is_member_in_groups::IsMemberInGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::is_member_in_groups::IsMemberInGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::is_member_in_groups::IsMemberInGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
@@ -166,10 +144,7 @@ impl IsMemberInGroupsFluentBuilder {
         self
     }
     /// <p>A list of identifiers for groups in the identity store.</p>
-    pub fn set_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_group_ids(input);
         self
     }

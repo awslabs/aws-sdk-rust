@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`user_rules(Vec<String>)`](crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder::user_rules) / [`set_user_rules(Option<Vec<String>>)`](crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder::set_user_rules): <p>The rules to remove from the group.</p>
     /// - On success, responds with [`RevokeIpRulesOutput`](crate::operation::revoke_ip_rules::RevokeIpRulesOutput)
     /// - On failure, responds with [`SdkError<RevokeIpRulesError>`](crate::operation::revoke_ip_rules::RevokeIpRulesError)
-    pub fn revoke_ip_rules(
-        &self,
-    ) -> crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder {
-        crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn revoke_ip_rules(&self) -> crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder {
+        crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder::new(self.handle.clone())
     }
 }

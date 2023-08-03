@@ -7,9 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetSettingsOutput`](crate::operation::get_settings::GetSettingsOutput) with field(s):
     ///   - [`settings(Option<Settings>)`](crate::operation::get_settings::GetSettingsOutput::settings): <p> The settings object that holds all supported Audit Manager settings. </p>
     /// - On failure, responds with [`SdkError<GetSettingsError>`](crate::operation::get_settings::GetSettingsError)
-    pub fn get_settings(
-        &self,
-    ) -> crate::operation::get_settings::builders::GetSettingsFluentBuilder {
+    pub fn get_settings(&self) -> crate::operation::get_settings::builders::GetSettingsFluentBuilder {
         crate::operation::get_settings::builders::GetSettingsFluentBuilder::new(self.handle.clone())
     }
 }

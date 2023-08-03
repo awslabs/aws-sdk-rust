@@ -13,16 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteConfigurationSetEventDestinatio
 }
 impl DeleteConfigurationSetEventDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationOutput`](crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationOutput).
-    pub fn builder() -> crate::operation::delete_configuration_set_event_destination::builders::DeleteConfigurationSetEventDestinationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_configuration_set_event_destination::builders::DeleteConfigurationSetEventDestinationOutputBuilder {
         crate::operation::delete_configuration_set_event_destination::builders::DeleteConfigurationSetEventDestinationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConfigurationSetEventDestinationOutput`](crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConfigurationSetEventDestinationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -37,7 +35,7 @@ impl DeleteConfigurationSetEventDestinationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationSetEventDestinationOutput`](crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationOutput).
-    pub fn build(self) -> crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationOutput{
+    pub fn build(self) -> crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationOutput {
         crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationOutput {
             _request_id: self._request_id,
         }

@@ -30,27 +30,19 @@ impl ReleaseSummary {
 
 /// A builder for [`ReleaseSummary`](crate::types::ReleaseSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReleaseSummaryBuilder {
     pub(crate) release_version: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReleaseSummaryBuilder {
     /// <p>The release version. </p>
-    pub fn release_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The release version. </p>
-    pub fn set_release_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_version = input;
         self
     }
@@ -64,10 +56,7 @@ impl ReleaseSummaryBuilder {
         self
     }
     /// <p>The timestamp of the release. </p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }

@@ -10,18 +10,13 @@ pub fn ser_entity_reference(
         crate::types::EntityReference::Identifier(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_2.key("identifier").start_object();
-            crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_entity_identifier::ser_entity_identifier(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::EntityReference::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "EntityReference",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "EntityReference",
+            ))
         }
     }
     Ok(())

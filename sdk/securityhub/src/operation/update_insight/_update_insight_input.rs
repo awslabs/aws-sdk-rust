@@ -43,9 +43,7 @@ impl UpdateInsightInput {
 
 /// A builder for [`UpdateInsightInput`](crate::operation::update_insight::UpdateInsightInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateInsightInputBuilder {
     pub(crate) insight_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -87,10 +85,7 @@ impl UpdateInsightInputBuilder {
         self
     }
     /// <p>The updated filters that define this insight.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>) -> Self {
         self.filters = input;
         self
     }
@@ -99,18 +94,12 @@ impl UpdateInsightInputBuilder {
         &self.filters
     }
     /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
-    pub fn group_by_attribute(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_by_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_by_attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
-    pub fn set_group_by_attribute(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_by_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_by_attribute = input;
         self
     }
@@ -121,10 +110,7 @@ impl UpdateInsightInputBuilder {
     /// Consumes the builder and constructs a [`UpdateInsightInput`](crate::operation::update_insight::UpdateInsightInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_insight::UpdateInsightInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_insight::UpdateInsightInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_insight::UpdateInsightInput {
             insight_arn: self.insight_arn,
             name: self.name,

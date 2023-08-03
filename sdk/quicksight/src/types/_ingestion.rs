@@ -93,9 +93,7 @@ impl Ingestion {
 
 /// A builder for [`Ingestion`](crate::types::Ingestion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IngestionBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_id: ::std::option::Option<::std::string::String>,
@@ -144,10 +142,7 @@ impl IngestionBuilder {
         self
     }
     /// <p>Ingestion status.</p>
-    pub fn set_ingestion_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionStatus>,
-    ) -> Self {
+    pub fn set_ingestion_status(mut self, input: ::std::option::Option<crate::types::IngestionStatus>) -> Self {
         self.ingestion_status = input;
         self
     }
@@ -203,10 +198,7 @@ impl IngestionBuilder {
         self
     }
     /// <p>The time that this ingestion started.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -248,17 +240,12 @@ impl IngestionBuilder {
         self
     }
     /// <p>Event source for this ingestion.</p>
-    pub fn set_request_source(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionRequestSource>,
-    ) -> Self {
+    pub fn set_request_source(mut self, input: ::std::option::Option<crate::types::IngestionRequestSource>) -> Self {
         self.request_source = input;
         self
     }
     /// <p>Event source for this ingestion.</p>
-    pub fn get_request_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngestionRequestSource> {
+    pub fn get_request_source(&self) -> &::std::option::Option<crate::types::IngestionRequestSource> {
         &self.request_source
     }
     /// <p>Type of this ingestion.</p>
@@ -267,10 +254,7 @@ impl IngestionBuilder {
         self
     }
     /// <p>Type of this ingestion.</p>
-    pub fn set_request_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestionRequestType>,
-    ) -> Self {
+    pub fn set_request_type(mut self, input: ::std::option::Option<crate::types::IngestionRequestType>) -> Self {
         self.request_type = input;
         self
     }

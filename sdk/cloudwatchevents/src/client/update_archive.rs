@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`state_reason(Option<String>)`](crate::operation::update_archive::UpdateArchiveOutput::state_reason): <p>The reason that the archive is in the current state.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::update_archive::UpdateArchiveOutput::creation_time): <p>The time at which the archive was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateArchiveError>`](crate::operation::update_archive::UpdateArchiveError)
-    pub fn update_archive(
-        &self,
-    ) -> crate::operation::update_archive::builders::UpdateArchiveFluentBuilder {
-        crate::operation::update_archive::builders::UpdateArchiveFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_archive(&self) -> crate::operation::update_archive::builders::UpdateArchiveFluentBuilder {
+        crate::operation::update_archive::builders::UpdateArchiveFluentBuilder::new(self.handle.clone())
     }
 }

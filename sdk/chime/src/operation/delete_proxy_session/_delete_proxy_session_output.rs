@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteProxySessionOutput {
 }
 impl DeleteProxySessionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProxySessionOutput`](crate::operation::delete_proxy_session::DeleteProxySessionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_proxy_session::builders::DeleteProxySessionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_proxy_session::builders::DeleteProxySessionOutputBuilder {
         crate::operation::delete_proxy_session::builders::DeleteProxySessionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteProxySessionOutput`](crate::operation::delete_proxy_session::DeleteProxySessionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProxySessionOutputBuilder {
     _request_id: Option<String>,
 }

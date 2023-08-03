@@ -10,10 +10,7 @@ impl UpdateViewInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_view::UpdateViewOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_view::UpdateViewError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_view::UpdateViewError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_view();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateViewFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_view::UpdateView,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_view::UpdateView, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_view::UpdateViewError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateViewFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl UpdateViewFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_view::UpdateView,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_view::UpdateView, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_view::UpdateViewError>,
     > {
         self.customize_middleware().await
@@ -138,18 +126,13 @@ impl UpdateViewFluentBuilder {
     }
     /// <p>Specifies optional fields that you want included in search results from this view. It is a list of objects that each describe a field to include.</p>
     /// <p>The default is an empty list, with no optional fields included in the results.</p>
-    pub fn set_included_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>,
-    ) -> Self {
+    pub fn set_included_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>) -> Self {
         self.inner = self.inner.set_included_properties(input);
         self
     }
     /// <p>Specifies optional fields that you want included in search results from this view. It is a list of objects that each describe a field to include.</p>
     /// <p>The default is an empty list, with no optional fields included in the results.</p>
-    pub fn get_included_properties(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>> {
+    pub fn get_included_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>> {
         self.inner.get_included_properties()
     }
     /// <p>An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a <code>Search</code> operation, the filter string is combined with the search's <code>QueryString</code> parameter using a logical <code>AND</code> operator.</p>

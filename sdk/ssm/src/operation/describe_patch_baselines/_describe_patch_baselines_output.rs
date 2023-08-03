@@ -5,8 +5,7 @@
 pub struct DescribePatchBaselinesOutput {
     /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
     #[doc(hidden)]
-    pub baseline_identities:
-        ::std::option::Option<::std::vec::Vec<crate::types::PatchBaselineIdentity>>,
+    pub baseline_identities: ::std::option::Option<::std::vec::Vec<crate::types::PatchBaselineIdentity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribePatchBaselinesOutput {
 }
 impl DescribePatchBaselinesOutput {
     /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
-    pub fn baseline_identities(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PatchBaselineIdentity]> {
+    pub fn baseline_identities(&self) -> ::std::option::Option<&[crate::types::PatchBaselineIdentity]> {
         self.baseline_identities.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribePatchBaselinesOutput {
 }
 impl DescribePatchBaselinesOutput {
     /// Creates a new builder-style object to manufacture [`DescribePatchBaselinesOutput`](crate::operation::describe_patch_baselines::DescribePatchBaselinesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesOutputBuilder {
         crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePatchBaselinesOutput`](crate::operation::describe_patch_baselines::DescribePatchBaselinesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePatchBaselinesOutputBuilder {
-    pub(crate) baseline_identities:
-        ::std::option::Option<::std::vec::Vec<crate::types::PatchBaselineIdentity>>,
+    pub(crate) baseline_identities: ::std::option::Option<::std::vec::Vec<crate::types::PatchBaselineIdentity>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl DescribePatchBaselinesOutputBuilder {
         self
     }
     /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
-    pub fn set_baseline_identities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchBaselineIdentity>>,
-    ) -> Self {
+    pub fn set_baseline_identities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchBaselineIdentity>>) -> Self {
         self.baseline_identities = input;
         self
     }
     /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
-    pub fn get_baseline_identities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchBaselineIdentity>> {
+    pub fn get_baseline_identities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchBaselineIdentity>> {
         &self.baseline_identities
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>

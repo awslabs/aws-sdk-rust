@@ -5,8 +5,7 @@
 pub struct ListComplianceSummariesOutput {
     /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
     #[doc(hidden)]
-    pub compliance_summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComplianceSummaryItem>>,
+    pub compliance_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceSummaryItem>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListComplianceSummariesOutput {
 }
 impl ListComplianceSummariesOutput {
     /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
-    pub fn compliance_summary_items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ComplianceSummaryItem]> {
+    pub fn compliance_summary_items(&self) -> ::std::option::Option<&[crate::types::ComplianceSummaryItem]> {
         self.compliance_summary_items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListComplianceSummariesOutput {
 }
 impl ListComplianceSummariesOutput {
     /// Creates a new builder-style object to manufacture [`ListComplianceSummariesOutput`](crate::operation::list_compliance_summaries::ListComplianceSummariesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_compliance_summaries::builders::ListComplianceSummariesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_compliance_summaries::builders::ListComplianceSummariesOutputBuilder {
         crate::operation::list_compliance_summaries::builders::ListComplianceSummariesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListComplianceSummariesOutput`](crate::operation::list_compliance_summaries::ListComplianceSummariesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComplianceSummariesOutputBuilder {
-    pub(crate) compliance_summary_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComplianceSummaryItem>>,
+    pub(crate) compliance_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceSummaryItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListComplianceSummariesOutputBuilder {
         self
     }
     /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
-    pub fn set_compliance_summary_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceSummaryItem>>,
-    ) -> Self {
+    pub fn set_compliance_summary_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceSummaryItem>>) -> Self {
         self.compliance_summary_items = input;
         self
     }
     /// <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
-    pub fn get_compliance_summary_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceSummaryItem>> {
+    pub fn get_compliance_summary_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceSummaryItem>> {
         &self.compliance_summary_items
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -99,9 +86,7 @@ impl ListComplianceSummariesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListComplianceSummariesOutput`](crate::operation::list_compliance_summaries::ListComplianceSummariesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_compliance_summaries::ListComplianceSummariesOutput {
+    pub fn build(self) -> crate::operation::list_compliance_summaries::ListComplianceSummariesOutput {
         crate::operation::list_compliance_summaries::ListComplianceSummariesOutput {
             compliance_summary_items: self.compliance_summary_items,
             next_token: self.next_token,

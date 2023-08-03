@@ -17,9 +17,7 @@ impl Suggester {
         self.suggester_name.as_deref()
     }
     /// <p>Options for a search suggester.</p>
-    pub fn document_suggester_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentSuggesterOptions> {
+    pub fn document_suggester_options(&self) -> ::std::option::Option<&crate::types::DocumentSuggesterOptions> {
         self.document_suggester_options.as_ref()
     }
 }
@@ -32,28 +30,19 @@ impl Suggester {
 
 /// A builder for [`Suggester`](crate::types::Suggester).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuggesterBuilder {
     pub(crate) suggester_name: ::std::option::Option<::std::string::String>,
-    pub(crate) document_suggester_options:
-        ::std::option::Option<crate::types::DocumentSuggesterOptions>,
+    pub(crate) document_suggester_options: ::std::option::Option<crate::types::DocumentSuggesterOptions>,
 }
 impl SuggesterBuilder {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    pub fn suggester_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn suggester_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suggester_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    pub fn set_suggester_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_suggester_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suggester_name = input;
         self
     }
@@ -62,25 +51,17 @@ impl SuggesterBuilder {
         &self.suggester_name
     }
     /// <p>Options for a search suggester.</p>
-    pub fn document_suggester_options(
-        mut self,
-        input: crate::types::DocumentSuggesterOptions,
-    ) -> Self {
+    pub fn document_suggester_options(mut self, input: crate::types::DocumentSuggesterOptions) -> Self {
         self.document_suggester_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options for a search suggester.</p>
-    pub fn set_document_suggester_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentSuggesterOptions>,
-    ) -> Self {
+    pub fn set_document_suggester_options(mut self, input: ::std::option::Option<crate::types::DocumentSuggesterOptions>) -> Self {
         self.document_suggester_options = input;
         self
     }
     /// <p>Options for a search suggester.</p>
-    pub fn get_document_suggester_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentSuggesterOptions> {
+    pub fn get_document_suggester_options(&self) -> &::std::option::Option<crate::types::DocumentSuggesterOptions> {
         &self.document_suggester_options
     }
     /// Consumes the builder and constructs a [`Suggester`](crate::types::Suggester).

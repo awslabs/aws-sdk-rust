@@ -16,17 +16,14 @@ impl BatchGetApplicationsInput {
 }
 impl BatchGetApplicationsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetApplicationsInput`](crate::operation::batch_get_applications::BatchGetApplicationsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_applications::builders::BatchGetApplicationsInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_applications::builders::BatchGetApplicationsInputBuilder {
         crate::operation::batch_get_applications::builders::BatchGetApplicationsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetApplicationsInput`](crate::operation::batch_get_applications::BatchGetApplicationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetApplicationsInputBuilder {
     pub(crate) application_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -36,40 +33,28 @@ impl BatchGetApplicationsInputBuilder {
     /// To override the contents of this collection use [`set_application_names`](Self::set_application_names).
     ///
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
-    pub fn application_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_names.unwrap_or_default();
         v.push(input.into());
         self.application_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
-    pub fn set_application_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_application_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.application_names = input;
         self
     }
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
-    pub fn get_application_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_application_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.application_names
     }
     /// Consumes the builder and constructs a [`BatchGetApplicationsInput`](crate::operation::batch_get_applications::BatchGetApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_applications::BatchGetApplicationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_applications::BatchGetApplicationsInput {
-                application_names: self.application_names,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_applications::BatchGetApplicationsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_get_applications::BatchGetApplicationsInput {
+            application_names: self.application_names,
+        })
     }
 }

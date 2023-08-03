@@ -44,9 +44,7 @@ impl DeviceFleetSummary {
 
 /// A builder for [`DeviceFleetSummary`](crate::types::DeviceFleetSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceFleetSummaryBuilder {
     pub(crate) device_fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct DeviceFleetSummaryBuilder {
 }
 impl DeviceFleetSummaryBuilder {
     /// <p>Amazon Resource Name (ARN) of the device fleet.</p>
-    pub fn device_fleet_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the device fleet.</p>
-    pub fn set_device_fleet_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_arn = input;
         self
     }
@@ -75,18 +67,12 @@ impl DeviceFleetSummaryBuilder {
         &self.device_fleet_arn
     }
     /// <p>Name of the device fleet.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the device fleet.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -100,10 +86,7 @@ impl DeviceFleetSummaryBuilder {
         self
     }
     /// <p>Timestamp of when the device fleet was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -117,10 +100,7 @@ impl DeviceFleetSummaryBuilder {
         self
     }
     /// <p>Timestamp of when the device fleet was last updated.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }

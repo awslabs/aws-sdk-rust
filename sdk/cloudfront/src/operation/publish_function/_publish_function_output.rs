@@ -28,9 +28,7 @@ impl PublishFunctionOutput {
 
 /// A builder for [`PublishFunctionOutput`](crate::operation::publish_function::PublishFunctionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishFunctionOutputBuilder {
     pub(crate) function_summary: ::std::option::Option<crate::types::FunctionSummary>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl PublishFunctionOutputBuilder {
         self
     }
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
-    pub fn set_function_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionSummary>,
-    ) -> Self {
+    pub fn set_function_summary(mut self, input: ::std::option::Option<crate::types::FunctionSummary>) -> Self {
         self.function_summary = input;
         self
     }

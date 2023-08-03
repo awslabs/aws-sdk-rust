@@ -8,8 +8,7 @@ pub struct ListInferenceEventsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
     #[doc(hidden)]
-    pub inference_event_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>>,
+    pub inference_event_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>>,
     _request_id: Option<String>,
 }
 impl ListInferenceEventsOutput {
@@ -18,9 +17,7 @@ impl ListInferenceEventsOutput {
         self.next_token.as_deref()
     }
     /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
-    pub fn inference_event_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InferenceEventSummary]> {
+    pub fn inference_event_summaries(&self) -> ::std::option::Option<&[crate::types::InferenceEventSummary]> {
         self.inference_event_summaries.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListInferenceEventsOutput {
 }
 impl ListInferenceEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListInferenceEventsOutput`](crate::operation::list_inference_events::ListInferenceEventsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_inference_events::builders::ListInferenceEventsOutputBuilder {
-        crate::operation::list_inference_events::builders::ListInferenceEventsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_inference_events::builders::ListInferenceEventsOutputBuilder {
+        crate::operation::list_inference_events::builders::ListInferenceEventsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListInferenceEventsOutput`](crate::operation::list_inference_events::ListInferenceEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInferenceEventsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) inference_event_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>>,
+    pub(crate) inference_event_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>>,
     _request_id: Option<String>,
 }
 impl ListInferenceEventsOutputBuilder {
@@ -76,17 +68,12 @@ impl ListInferenceEventsOutputBuilder {
         self
     }
     /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
-    pub fn set_inference_event_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>>,
-    ) -> Self {
+    pub fn set_inference_event_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>>) -> Self {
         self.inference_event_summaries = input;
         self
     }
     /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
-    pub fn get_inference_event_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>> {
+    pub fn get_inference_event_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>> {
         &self.inference_event_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

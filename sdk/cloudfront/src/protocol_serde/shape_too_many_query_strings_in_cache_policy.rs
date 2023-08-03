@@ -3,10 +3,7 @@
 pub fn de_too_many_query_strings_in_cache_policy_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TooManyQueryStringsInCachePolicyBuilder,
-) -> Result<
-    crate::types::error::builders::TooManyQueryStringsInCachePolicyBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::TooManyQueryStringsInCachePolicyBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

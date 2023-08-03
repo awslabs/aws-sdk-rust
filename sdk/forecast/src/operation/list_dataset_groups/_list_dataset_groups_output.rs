@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDatasetGroupsOutput {
 }
 impl ListDatasetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListDatasetGroupsOutput`](crate::operation::list_dataset_groups::ListDatasetGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_dataset_groups::builders::ListDatasetGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_dataset_groups::builders::ListDatasetGroupsOutputBuilder {
         crate::operation::list_dataset_groups::builders::ListDatasetGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDatasetGroupsOutput`](crate::operation::list_dataset_groups::ListDatasetGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetGroupsOutputBuilder {
-    pub(crate) dataset_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::DatasetGroupSummary>>,
+    pub(crate) dataset_groups: ::std::option::Option<::std::vec::Vec<crate::types::DatasetGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListDatasetGroupsOutputBuilder {
         self
     }
     /// <p>An array of objects that summarize each dataset group's properties.</p>
-    pub fn set_dataset_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetGroupSummary>>,
-    ) -> Self {
+    pub fn set_dataset_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetGroupSummary>>) -> Self {
         self.dataset_groups = input;
         self
     }
     /// <p>An array of objects that summarize each dataset group's properties.</p>
-    pub fn get_dataset_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetGroupSummary>> {
+    pub fn get_dataset_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetGroupSummary>> {
         &self.dataset_groups
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>

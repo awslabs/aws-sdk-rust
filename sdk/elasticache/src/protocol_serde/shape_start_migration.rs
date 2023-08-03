@@ -4,93 +4,90 @@ pub fn de_start_migration_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::start_migration::StartMigrationOutput,
-    crate::operation::start_migration::StartMigrationError,
-> {
+) -> std::result::Result<crate::operation::start_migration::StartMigrationOutput, crate::operation::start_migration::StartMigrationError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::start_migration::StartMigrationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::start_migration::StartMigrationError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::start_migration::StartMigrationError::unhandled(generic))
-        }
+        None => return Err(crate::operation::start_migration::StartMigrationError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValue" => crate::operation::start_migration::StartMigrationError::InvalidParameterValueException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(_response_body, output).map_err(crate::operation::start_migration::StartMigrationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::start_migration::StartMigrationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidReplicationGroupState" => crate::operation::start_migration::StartMigrationError::InvalidReplicationGroupStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidReplicationGroupStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(_response_body, output).map_err(crate::operation::start_migration::StartMigrationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidReplicationGroupStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::start_migration::StartMigrationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "ReplicationGroupAlreadyUnderMigrationFault" => crate::operation::start_migration::StartMigrationError::ReplicationGroupAlreadyUnderMigrationFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ReplicationGroupAlreadyUnderMigrationFault" => {
+            crate::operation::start_migration::StartMigrationError::ReplicationGroupAlreadyUnderMigrationFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ReplicationGroupAlreadyUnderMigrationFaultBuilder::default();
                     output = crate::protocol_serde::shape_replication_group_already_under_migration_fault::de_replication_group_already_under_migration_fault_xml_err(_response_body, output).map_err(crate::operation::start_migration::StartMigrationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "ReplicationGroupNotFoundFault" => crate::operation::start_migration::StartMigrationError::ReplicationGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ReplicationGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::start_migration::StartMigrationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ReplicationGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::start_migration::StartMigrationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::start_migration::StartMigrationError::generic(generic)
+        _ => crate::operation::start_migration::StartMigrationError::generic(generic),
     })
 }
 
@@ -99,22 +96,13 @@ pub fn de_start_migration_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::start_migration::StartMigrationOutput,
-    crate::operation::start_migration::StartMigrationError,
-> {
+) -> std::result::Result<crate::operation::start_migration::StartMigrationOutput, crate::operation::start_migration::StartMigrationError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::start_migration::builders::StartMigrationOutputBuilder::default();
-        output = crate::protocol_serde::shape_start_migration::de_start_migration(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::start_migration::StartMigrationError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::start_migration::builders::StartMigrationOutputBuilder::default();
+        output = crate::protocol_serde::shape_start_migration::de_start_migration(_response_body, output)
+            .map_err(crate::operation::start_migration::StartMigrationError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -123,10 +111,7 @@ pub fn de_start_migration_http_response_with_props(
 pub fn de_start_migration(
     inp: &[u8],
     mut builder: crate::operation::start_migration::builders::StartMigrationOutputBuilder,
-) -> Result<
-    crate::operation::start_migration::builders::StartMigrationOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::start_migration::builders::StartMigrationOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -163,9 +148,7 @@ pub fn de_start_migration(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected StartMigrationResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected StartMigrationResult tag"));
     };
     Ok(builder)
 }

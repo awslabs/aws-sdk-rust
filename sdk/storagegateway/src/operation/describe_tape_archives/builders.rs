@@ -38,9 +38,7 @@ impl DescribeTapeArchivesFluentBuilder {
         }
     }
     /// Access the DescribeTapeArchives as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_tape_archives::builders::DescribeTapeArchivesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_tape_archives::builders::DescribeTapeArchivesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DescribeTapeArchivesFluentBuilder {
             crate::operation::describe_tape_archives::DescribeTapeArchives,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tape_archives::DescribeTapeArchivesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_tape_archives::DescribeTapeArchivesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DescribeTapeArchivesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DescribeTapeArchivesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_tape_archives::DescribeTapeArchivesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tape_archives::DescribeTapeArchivesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_tape_archives::DescribeTapeArchivesError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DescribeTapeArchivesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_tape_archives::DescribeTapeArchivesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tape_archives::DescribeTapeArchivesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_tape_archives::DescribeTapeArchivesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl DescribeTapeArchivesFluentBuilder {
             crate::operation::describe_tape_archives::DescribeTapeArchives,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_tape_archives::DescribeTapeArchivesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_tape_archives::DescribeTapeArchivesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator {
-        crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator {
+        crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `TapeARNs`.
     ///
@@ -144,10 +126,7 @@ impl DescribeTapeArchivesFluentBuilder {
         self
     }
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
-    pub fn set_tape_ar_ns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tape_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tape_ar_ns(input);
         self
     }

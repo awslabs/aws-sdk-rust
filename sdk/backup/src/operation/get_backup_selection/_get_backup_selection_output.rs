@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for GetBackupSelectionOutput {
 }
 impl GetBackupSelectionOutput {
     /// Creates a new builder-style object to manufacture [`GetBackupSelectionOutput`](crate::operation::get_backup_selection::GetBackupSelectionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_backup_selection::builders::GetBackupSelectionOutputBuilder {
+    pub fn builder() -> crate::operation::get_backup_selection::builders::GetBackupSelectionOutputBuilder {
         crate::operation::get_backup_selection::builders::GetBackupSelectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBackupSelectionOutput`](crate::operation::get_backup_selection::GetBackupSelectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBackupSelectionOutputBuilder {
     pub(crate) backup_selection: ::std::option::Option<crate::types::BackupSelection>,
     pub(crate) selection_id: ::std::option::Option<::std::string::String>,
@@ -75,10 +72,7 @@ impl GetBackupSelectionOutputBuilder {
         self
     }
     /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
-    pub fn set_backup_selection(
-        mut self,
-        input: ::std::option::Option<crate::types::BackupSelection>,
-    ) -> Self {
+    pub fn set_backup_selection(mut self, input: ::std::option::Option<crate::types::BackupSelection>) -> Self {
         self.backup_selection = input;
         self
     }
@@ -101,18 +95,12 @@ impl GetBackupSelectionOutputBuilder {
         &self.selection_id
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn set_backup_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_plan_id = input;
         self
     }
@@ -126,10 +114,7 @@ impl GetBackupSelectionOutputBuilder {
         self
     }
     /// <p>The date and time a backup selection is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -138,18 +123,12 @@ impl GetBackupSelectionOutputBuilder {
         &self.creation_date
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }

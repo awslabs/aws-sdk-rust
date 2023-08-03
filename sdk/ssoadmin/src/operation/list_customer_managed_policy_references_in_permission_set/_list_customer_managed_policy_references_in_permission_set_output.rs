@@ -5,8 +5,7 @@
 pub struct ListCustomerManagedPolicyReferencesInPermissionSetOutput {
     /// <p>Specifies the names and paths of the customer managed policies that you have attached to your permission set.</p>
     #[doc(hidden)]
-    pub customer_managed_policy_references:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomerManagedPolicyReference>>,
+    pub customer_managed_policy_references: ::std::option::Option<::std::vec::Vec<crate::types::CustomerManagedPolicyReference>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListCustomerManagedPolicyReferencesInPermissionSetOutput {
 }
 impl ListCustomerManagedPolicyReferencesInPermissionSetOutput {
     /// <p>Specifies the names and paths of the customer managed policies that you have attached to your permission set.</p>
-    pub fn customer_managed_policy_references(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CustomerManagedPolicyReference]> {
+    pub fn customer_managed_policy_references(&self) -> ::std::option::Option<&[crate::types::CustomerManagedPolicyReference]> {
         self.customer_managed_policy_references.as_deref()
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -24,9 +21,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetOutput {
         self.next_token.as_deref()
     }
 }
-impl ::aws_http::request_id::RequestId
-    for ListCustomerManagedPolicyReferencesInPermissionSetOutput
-{
+impl ::aws_http::request_id::RequestId for ListCustomerManagedPolicyReferencesInPermissionSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,12 +35,9 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetOutput {
 
 /// A builder for [`ListCustomerManagedPolicyReferencesInPermissionSetOutput`](crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomerManagedPolicyReferencesInPermissionSetOutputBuilder {
-    pub(crate) customer_managed_policy_references:
-        ::std::option::Option<::std::vec::Vec<crate::types::CustomerManagedPolicyReference>>,
+    pub(crate) customer_managed_policy_references: ::std::option::Option<::std::vec::Vec<crate::types::CustomerManagedPolicyReference>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,10 +47,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetOutputBuilder {
     /// To override the contents of this collection use [`set_customer_managed_policy_references`](Self::set_customer_managed_policy_references).
     ///
     /// <p>Specifies the names and paths of the customer managed policies that you have attached to your permission set.</p>
-    pub fn customer_managed_policy_references(
-        mut self,
-        input: crate::types::CustomerManagedPolicyReference,
-    ) -> Self {
+    pub fn customer_managed_policy_references(mut self, input: crate::types::CustomerManagedPolicyReference) -> Self {
         let mut v = self.customer_managed_policy_references.unwrap_or_default();
         v.push(input);
         self.customer_managed_policy_references = ::std::option::Option::Some(v);
@@ -73,9 +62,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetOutputBuilder {
         self
     }
     /// <p>Specifies the names and paths of the customer managed policies that you have attached to your permission set.</p>
-    pub fn get_customer_managed_policy_references(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerManagedPolicyReference>> {
+    pub fn get_customer_managed_policy_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerManagedPolicyReference>> {
         &self.customer_managed_policy_references
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -102,12 +89,12 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCustomerManagedPolicyReferencesInPermissionSetOutput`](crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetOutput).
-    pub fn build(self) -> crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetOutput {
         crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetOutput {
-            customer_managed_policy_references: self.customer_managed_policy_references
-            ,
-            next_token: self.next_token
-            ,
+            customer_managed_policy_references: self.customer_managed_policy_references,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

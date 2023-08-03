@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`filters(Option<Vec<Filter>>)`](crate::operation::list_filters::ListFiltersOutput::filters): <p>Contains details on the filters associated with your account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_filters::ListFiltersOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     /// - On failure, responds with [`SdkError<ListFiltersError>`](crate::operation::list_filters::ListFiltersError)
-    pub fn list_filters(
-        &self,
-    ) -> crate::operation::list_filters::builders::ListFiltersFluentBuilder {
+    pub fn list_filters(&self) -> crate::operation::list_filters::builders::ListFiltersFluentBuilder {
         crate::operation::list_filters::builders::ListFiltersFluentBuilder::new(self.handle.clone())
     }
 }

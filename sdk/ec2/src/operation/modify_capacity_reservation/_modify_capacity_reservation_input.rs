@@ -69,16 +69,14 @@ impl ModifyCapacityReservationInput {
 }
 impl ModifyCapacityReservationInput {
     /// Creates a new builder-style object to manufacture [`ModifyCapacityReservationInput`](crate::operation::modify_capacity_reservation::ModifyCapacityReservationInput).
-    pub fn builder() -> crate::operation::modify_capacity_reservation::builders::ModifyCapacityReservationInputBuilder{
+    pub fn builder() -> crate::operation::modify_capacity_reservation::builders::ModifyCapacityReservationInputBuilder {
         crate::operation::modify_capacity_reservation::builders::ModifyCapacityReservationInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyCapacityReservationInput`](crate::operation::modify_capacity_reservation::ModifyCapacityReservationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyCapacityReservationInputBuilder {
     pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_count: ::std::option::Option<i32>,
@@ -90,18 +88,12 @@ pub struct ModifyCapacityReservationInputBuilder {
 }
 impl ModifyCapacityReservationInputBuilder {
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn capacity_reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn set_capacity_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_capacity_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_reservation_id = input;
         self
     }
@@ -133,10 +125,7 @@ impl ModifyCapacityReservationInputBuilder {
     /// <p>The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity Reservation's state changes to <code>expired</code> when it reaches its end date and time.</p>
     /// <p>The Capacity Reservation is cancelled within an hour from the specified time. For example, if you specify 5/31/2019, 13:30:55, the Capacity Reservation is guaranteed to end between 13:30:55 and 14:30:55 on 5/31/2019.</p>
     /// <p>You must provide an <code>EndDate</code> value if <code>EndDateType</code> is <code>limited</code>. Omit <code>EndDate</code> if <code>EndDateType</code> is <code>unlimited</code>.</p>
-    pub fn set_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_date = input;
         self
     }
@@ -160,10 +149,7 @@ impl ModifyCapacityReservationInputBuilder {
     /// <li> <p> <code>unlimited</code> - The Capacity Reservation remains active until you explicitly cancel it. Do not provide an <code>EndDate</code> value if <code>EndDateType</code> is <code>unlimited</code>.</p> </li>
     /// <li> <p> <code>limited</code> - The Capacity Reservation expires automatically at a specified date and time. You must provide an <code>EndDate</code> value if <code>EndDateType</code> is <code>limited</code>.</p> </li>
     /// </ul>
-    pub fn set_end_date_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EndDateType>,
-    ) -> Self {
+    pub fn set_end_date_type(mut self, input: ::std::option::Option<crate::types::EndDateType>) -> Self {
         self.end_date_type = input;
         self
     }
@@ -204,18 +190,12 @@ impl ModifyCapacityReservationInputBuilder {
         &self.dry_run
     }
     /// <p>Reserved for future use.</p>
-    pub fn additional_info(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.additional_info = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_additional_info(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.additional_info = input;
         self
     }
@@ -230,16 +210,14 @@ impl ModifyCapacityReservationInputBuilder {
         crate::operation::modify_capacity_reservation::ModifyCapacityReservationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_capacity_reservation::ModifyCapacityReservationInput {
-                capacity_reservation_id: self.capacity_reservation_id,
-                instance_count: self.instance_count,
-                end_date: self.end_date,
-                end_date_type: self.end_date_type,
-                accept: self.accept,
-                dry_run: self.dry_run,
-                additional_info: self.additional_info,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_capacity_reservation::ModifyCapacityReservationInput {
+            capacity_reservation_id: self.capacity_reservation_id,
+            instance_count: self.instance_count,
+            end_date: self.end_date,
+            end_date_type: self.end_date_type,
+            accept: self.accept,
+            dry_run: self.dry_run,
+            additional_info: self.additional_info,
+        })
     }
 }

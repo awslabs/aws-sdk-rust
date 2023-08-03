@@ -28,9 +28,7 @@ impl DeleteBlueprintOutput {
 
 /// A builder for [`DeleteBlueprintOutput`](crate::operation::delete_blueprint::DeleteBlueprintOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBlueprintOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

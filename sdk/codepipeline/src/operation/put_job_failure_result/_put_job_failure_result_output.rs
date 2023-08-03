@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutJobFailureResultOutput {
 }
 impl PutJobFailureResultOutput {
     /// Creates a new builder-style object to manufacture [`PutJobFailureResultOutput`](crate::operation::put_job_failure_result::PutJobFailureResultOutput).
-    pub fn builder(
-    ) -> crate::operation::put_job_failure_result::builders::PutJobFailureResultOutputBuilder {
+    pub fn builder() -> crate::operation::put_job_failure_result::builders::PutJobFailureResultOutputBuilder {
         crate::operation::put_job_failure_result::builders::PutJobFailureResultOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutJobFailureResultOutput`](crate::operation::put_job_failure_result::PutJobFailureResultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutJobFailureResultOutputBuilder {
     _request_id: Option<String>,
 }

@@ -23,9 +23,7 @@ impl SearchResourcesCriteriaBlock {
 
 /// A builder for [`SearchResourcesCriteriaBlock`](crate::types::SearchResourcesCriteriaBlock).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchResourcesCriteriaBlockBuilder {
     pub(crate) and: ::std::option::Option<::std::vec::Vec<crate::types::SearchResourcesCriteria>>,
 }
@@ -42,17 +40,12 @@ impl SearchResourcesCriteriaBlockBuilder {
         self
     }
     /// <p>An array of objects, one for each property- or tag-based condition that includes or excludes resources from the query results. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-    pub fn set_and(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchResourcesCriteria>>,
-    ) -> Self {
+    pub fn set_and(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchResourcesCriteria>>) -> Self {
         self.and = input;
         self
     }
     /// <p>An array of objects, one for each property- or tag-based condition that includes or excludes resources from the query results. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-    pub fn get_and(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchResourcesCriteria>> {
+    pub fn get_and(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchResourcesCriteria>> {
         &self.and
     }
     /// Consumes the builder and constructs a [`SearchResourcesCriteriaBlock`](crate::types::SearchResourcesCriteriaBlock).

@@ -10,10 +10,7 @@ impl ListDevicesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_devices::ListDevicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_devices::ListDevicesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_devices();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListDevicesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_devices::ListDevices,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_devices::ListDevices, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListDevicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListDevicesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_devices::ListDevices,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_devices::ListDevices, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_devices::ListDevicesError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl ListDevicesFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_devices::paginator::ListDevicesPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::list_devices::paginator::ListDevicesPaginator {
-        crate::operation::list_devices::paginator::ListDevicesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::list_devices::paginator::ListDevicesPaginator::new(self.handle, self.inner)
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,17 +140,12 @@ impl ListDevicesFluentBuilder {
         self
     }
     /// <p>Select fleets where the job was updated after X</p>
-    pub fn set_latest_heartbeat_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_latest_heartbeat_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_latest_heartbeat_after(input);
         self
     }
     /// <p>Select fleets where the job was updated after X</p>
-    pub fn get_latest_heartbeat_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_latest_heartbeat_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_latest_heartbeat_after()
     }
     /// <p>A filter that searches devices that contains this name in any of their models.</p>
@@ -183,18 +163,12 @@ impl ListDevicesFluentBuilder {
         self.inner.get_model_name()
     }
     /// <p>Filter for fleets containing this name in their device fleet name.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_fleet_name(input.into());
         self
     }
     /// <p>Filter for fleets containing this name in their device fleet name.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_fleet_name(input);
         self
     }

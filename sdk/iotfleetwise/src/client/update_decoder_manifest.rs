@@ -16,12 +16,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::update_decoder_manifest::UpdateDecoderManifestOutput::name): <p> The name of the updated decoder manifest. </p>
     ///   - [`arn(Option<String>)`](crate::operation::update_decoder_manifest::UpdateDecoderManifestOutput::arn): <p> The Amazon Resource Name (ARN) of the updated decoder manifest. </p>
     /// - On failure, responds with [`SdkError<UpdateDecoderManifestError>`](crate::operation::update_decoder_manifest::UpdateDecoderManifestError)
-    pub fn update_decoder_manifest(
-        &self,
-    ) -> crate::operation::update_decoder_manifest::builders::UpdateDecoderManifestFluentBuilder
-    {
-        crate::operation::update_decoder_manifest::builders::UpdateDecoderManifestFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_decoder_manifest(&self) -> crate::operation::update_decoder_manifest::builders::UpdateDecoderManifestFluentBuilder {
+        crate::operation::update_decoder_manifest::builders::UpdateDecoderManifestFluentBuilder::new(self.handle.clone())
     }
 }

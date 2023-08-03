@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for ActivateEventSourceOutput {
 }
 impl ActivateEventSourceOutput {
     /// Creates a new builder-style object to manufacture [`ActivateEventSourceOutput`](crate::operation::activate_event_source::ActivateEventSourceOutput).
-    pub fn builder(
-    ) -> crate::operation::activate_event_source::builders::ActivateEventSourceOutputBuilder {
-        crate::operation::activate_event_source::builders::ActivateEventSourceOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::activate_event_source::builders::ActivateEventSourceOutputBuilder {
+        crate::operation::activate_event_source::builders::ActivateEventSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`ActivateEventSourceOutput`](crate::operation::activate_event_source::ActivateEventSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivateEventSourceOutputBuilder {
     _request_id: Option<String>,
 }

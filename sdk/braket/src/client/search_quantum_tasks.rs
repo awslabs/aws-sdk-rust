@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`quantum_tasks(Option<Vec<QuantumTaskSummary>>)`](crate::operation::search_quantum_tasks::SearchQuantumTasksOutput::quantum_tasks): <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_quantum_tasks::SearchQuantumTasksOutput::next_token): <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     /// - On failure, responds with [`SdkError<SearchQuantumTasksError>`](crate::operation::search_quantum_tasks::SearchQuantumTasksError)
-    pub fn search_quantum_tasks(
-        &self,
-    ) -> crate::operation::search_quantum_tasks::builders::SearchQuantumTasksFluentBuilder {
-        crate::operation::search_quantum_tasks::builders::SearchQuantumTasksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn search_quantum_tasks(&self) -> crate::operation::search_quantum_tasks::builders::SearchQuantumTasksFluentBuilder {
+        crate::operation::search_quantum_tasks::builders::SearchQuantumTasksFluentBuilder::new(self.handle.clone())
     }
 }

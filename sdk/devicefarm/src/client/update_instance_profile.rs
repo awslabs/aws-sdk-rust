@@ -12,12 +12,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateInstanceProfileOutput`](crate::operation::update_instance_profile::UpdateInstanceProfileOutput) with field(s):
     ///   - [`instance_profile(Option<InstanceProfile>)`](crate::operation::update_instance_profile::UpdateInstanceProfileOutput::instance_profile): <p>An object that contains information about your instance profile.</p>
     /// - On failure, responds with [`SdkError<UpdateInstanceProfileError>`](crate::operation::update_instance_profile::UpdateInstanceProfileError)
-    pub fn update_instance_profile(
-        &self,
-    ) -> crate::operation::update_instance_profile::builders::UpdateInstanceProfileFluentBuilder
-    {
-        crate::operation::update_instance_profile::builders::UpdateInstanceProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_instance_profile(&self) -> crate::operation::update_instance_profile::builders::UpdateInstanceProfileFluentBuilder {
+        crate::operation::update_instance_profile::builders::UpdateInstanceProfileFluentBuilder::new(self.handle.clone())
     }
 }

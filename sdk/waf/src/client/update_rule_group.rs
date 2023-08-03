@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRuleGroupOutput`](crate::operation::update_rule_group::UpdateRuleGroupOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::update_rule_group::UpdateRuleGroupOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRuleGroup</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateRuleGroupError>`](crate::operation::update_rule_group::UpdateRuleGroupError)
-    pub fn update_rule_group(
-        &self,
-    ) -> crate::operation::update_rule_group::builders::UpdateRuleGroupFluentBuilder {
-        crate::operation::update_rule_group::builders::UpdateRuleGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_rule_group(&self) -> crate::operation::update_rule_group::builders::UpdateRuleGroupFluentBuilder {
+        crate::operation::update_rule_group::builders::UpdateRuleGroupFluentBuilder::new(self.handle.clone())
     }
 }

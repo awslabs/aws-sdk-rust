@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsOutput::next_token): <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     ///   - [`firewall_rule_group_associations(Option<Vec<FirewallRuleGroupAssociation>>)`](crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsOutput::firewall_rule_group_associations): <p>A list of your firewall rule group associations.</p>  <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
     /// - On failure, responds with [`SdkError<ListFirewallRuleGroupAssociationsError>`](crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsError)
-    pub fn list_firewall_rule_group_associations(&self) -> crate::operation::list_firewall_rule_group_associations::builders::ListFirewallRuleGroupAssociationsFluentBuilder{
+    pub fn list_firewall_rule_group_associations(
+        &self,
+    ) -> crate::operation::list_firewall_rule_group_associations::builders::ListFirewallRuleGroupAssociationsFluentBuilder {
         crate::operation::list_firewall_rule_group_associations::builders::ListFirewallRuleGroupAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

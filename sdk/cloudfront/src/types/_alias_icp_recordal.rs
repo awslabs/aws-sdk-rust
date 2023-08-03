@@ -43,9 +43,7 @@ impl AliasIcpRecordal {
 
 /// A builder for [`AliasIcpRecordal`](crate::types::AliasIcpRecordal).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AliasIcpRecordalBuilder {
     pub(crate) cname: ::std::option::Option<::std::string::String>,
     pub(crate) icp_recordal_status: ::std::option::Option<crate::types::IcpRecordalStatus>,
@@ -83,10 +81,7 @@ impl AliasIcpRecordalBuilder {
     /// <li> <p> <b>SUSPENDED</b> indicates that the associated CNAME does not have a valid ICP recordal number.</p> </li>
     /// <li> <p> <b>PENDING</b> indicates that CloudFront can't determine the ICP recordal status of the CNAME associated with the distribution because there was an error in trying to determine the status. You can try again to see if the error is resolved in which case CloudFront returns an APPROVED or SUSPENDED status.</p> </li>
     /// </ul>
-    pub fn set_icp_recordal_status(
-        mut self,
-        input: ::std::option::Option<crate::types::IcpRecordalStatus>,
-    ) -> Self {
+    pub fn set_icp_recordal_status(mut self, input: ::std::option::Option<crate::types::IcpRecordalStatus>) -> Self {
         self.icp_recordal_status = input;
         self
     }
@@ -97,9 +92,7 @@ impl AliasIcpRecordalBuilder {
     /// <li> <p> <b>SUSPENDED</b> indicates that the associated CNAME does not have a valid ICP recordal number.</p> </li>
     /// <li> <p> <b>PENDING</b> indicates that CloudFront can't determine the ICP recordal status of the CNAME associated with the distribution because there was an error in trying to determine the status. You can try again to see if the error is resolved in which case CloudFront returns an APPROVED or SUSPENDED status.</p> </li>
     /// </ul>
-    pub fn get_icp_recordal_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::IcpRecordalStatus> {
+    pub fn get_icp_recordal_status(&self) -> &::std::option::Option<crate::types::IcpRecordalStatus> {
         &self.icp_recordal_status
     }
     /// Consumes the builder and constructs a [`AliasIcpRecordal`](crate::types::AliasIcpRecordal).

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_versions::ListVersionsOutput::next_token): <p>The token to use in a subsequent <code>ListVersions</code> operation to return the next set of results.</p>
     ///   - [`grafana_versions(Option<Vec<String>>)`](crate::operation::list_versions::ListVersionsOutput::grafana_versions): <p>The Grafana versions available to create. If a workspace ID is included in the request, the Grafana versions to which this workspace can be upgraded.</p>
     /// - On failure, responds with [`SdkError<ListVersionsError>`](crate::operation::list_versions::ListVersionsError)
-    pub fn list_versions(
-        &self,
-    ) -> crate::operation::list_versions::builders::ListVersionsFluentBuilder {
-        crate::operation::list_versions::builders::ListVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_versions(&self) -> crate::operation::list_versions::builders::ListVersionsFluentBuilder {
+        crate::operation::list_versions::builders::ListVersionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -16,9 +16,7 @@ impl CreateGlobalReplicationGroupOutput {
     /// <ul>
     /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
-    pub fn global_replication_group(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GlobalReplicationGroup> {
+    pub fn global_replication_group(&self) -> ::std::option::Option<&crate::types::GlobalReplicationGroup> {
         self.global_replication_group.as_ref()
     }
 }
@@ -29,19 +27,16 @@ impl ::aws_http::request_id::RequestId for CreateGlobalReplicationGroupOutput {
 }
 impl CreateGlobalReplicationGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateGlobalReplicationGroupOutput`](crate::operation::create_global_replication_group::CreateGlobalReplicationGroupOutput).
-    pub fn builder() -> crate::operation::create_global_replication_group::builders::CreateGlobalReplicationGroupOutputBuilder{
+    pub fn builder() -> crate::operation::create_global_replication_group::builders::CreateGlobalReplicationGroupOutputBuilder {
         crate::operation::create_global_replication_group::builders::CreateGlobalReplicationGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGlobalReplicationGroupOutput`](crate::operation::create_global_replication_group::CreateGlobalReplicationGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGlobalReplicationGroupOutputBuilder {
-    pub(crate) global_replication_group:
-        ::std::option::Option<crate::types::GlobalReplicationGroup>,
+    pub(crate) global_replication_group: ::std::option::Option<crate::types::GlobalReplicationGroup>,
     _request_id: Option<String>,
 }
 impl CreateGlobalReplicationGroupOutputBuilder {
@@ -57,10 +52,7 @@ impl CreateGlobalReplicationGroupOutputBuilder {
     /// <ul>
     /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
-    pub fn set_global_replication_group(
-        mut self,
-        input: ::std::option::Option<crate::types::GlobalReplicationGroup>,
-    ) -> Self {
+    pub fn set_global_replication_group(mut self, input: ::std::option::Option<crate::types::GlobalReplicationGroup>) -> Self {
         self.global_replication_group = input;
         self
     }
@@ -68,9 +60,7 @@ impl CreateGlobalReplicationGroupOutputBuilder {
     /// <ul>
     /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
-    pub fn get_global_replication_group(
-        &self,
-    ) -> &::std::option::Option<crate::types::GlobalReplicationGroup> {
+    pub fn get_global_replication_group(&self) -> &::std::option::Option<crate::types::GlobalReplicationGroup> {
         &self.global_replication_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -83,9 +73,7 @@ impl CreateGlobalReplicationGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateGlobalReplicationGroupOutput`](crate::operation::create_global_replication_group::CreateGlobalReplicationGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_global_replication_group::CreateGlobalReplicationGroupOutput {
+    pub fn build(self) -> crate::operation::create_global_replication_group::CreateGlobalReplicationGroupOutput {
         crate::operation::create_global_replication_group::CreateGlobalReplicationGroupOutput {
             global_replication_group: self.global_replication_group,
             _request_id: self._request_id,

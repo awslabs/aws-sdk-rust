@@ -37,9 +37,7 @@ impl LogSource {
 
 /// A builder for [`LogSource`](crate::types::LogSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogSourceBuilder {
     pub(crate) account: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
@@ -86,17 +84,12 @@ impl LogSourceBuilder {
         self
     }
     /// <p>Specify the sources from which you want to collect logs.</p>
-    pub fn set_sources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>) -> Self {
         self.sources = input;
         self
     }
     /// <p>Specify the sources from which you want to collect logs.</p>
-    pub fn get_sources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`LogSource`](crate::types::LogSource).

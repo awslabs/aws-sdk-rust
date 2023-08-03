@@ -22,16 +22,14 @@ impl CancelJournalKinesisStreamInput {
 }
 impl CancelJournalKinesisStreamInput {
     /// Creates a new builder-style object to manufacture [`CancelJournalKinesisStreamInput`](crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamInput).
-    pub fn builder() -> crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamInputBuilder{
+    pub fn builder() -> crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamInputBuilder {
         crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelJournalKinesisStreamInput`](crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelJournalKinesisStreamInputBuilder {
     pub(crate) ledger_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl CancelJournalKinesisStreamInputBuilder {
         crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamInput {
-                ledger_name: self.ledger_name,
-                stream_id: self.stream_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamInput {
+            ledger_name: self.ledger_name,
+            stream_id: self.stream_id,
+        })
     }
 }

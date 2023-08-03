@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for SearchAddressBooksOutput {
 }
 impl SearchAddressBooksOutput {
     /// Creates a new builder-style object to manufacture [`SearchAddressBooksOutput`](crate::operation::search_address_books::SearchAddressBooksOutput).
-    pub fn builder(
-    ) -> crate::operation::search_address_books::builders::SearchAddressBooksOutputBuilder {
+    pub fn builder() -> crate::operation::search_address_books::builders::SearchAddressBooksOutputBuilder {
         crate::operation::search_address_books::builders::SearchAddressBooksOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchAddressBooksOutput`](crate::operation::search_address_books::SearchAddressBooksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchAddressBooksOutputBuilder {
     pub(crate) address_books: ::std::option::Option<::std::vec::Vec<crate::types::AddressBookData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -65,17 +62,12 @@ impl SearchAddressBooksOutputBuilder {
         self
     }
     /// <p>The address books that meet the specified set of filter criteria, in sort order.</p>
-    pub fn set_address_books(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddressBookData>>,
-    ) -> Self {
+    pub fn set_address_books(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddressBookData>>) -> Self {
         self.address_books = input;
         self
     }
     /// <p>The address books that meet the specified set of filter criteria, in sort order.</p>
-    pub fn get_address_books(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddressBookData>> {
+    pub fn get_address_books(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddressBookData>> {
         &self.address_books
     }
     /// <p>The token returned to indicate that there is more data available.</p>

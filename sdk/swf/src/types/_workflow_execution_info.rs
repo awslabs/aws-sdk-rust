@@ -95,9 +95,7 @@ impl WorkflowExecutionInfo {
 
 /// A builder for [`WorkflowExecutionInfo`](crate::types::WorkflowExecutionInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowExecutionInfoBuilder {
     pub(crate) execution: ::std::option::Option<crate::types::WorkflowExecution>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
@@ -116,10 +114,7 @@ impl WorkflowExecutionInfoBuilder {
         self
     }
     /// <p>The workflow execution this information is about.</p>
-    pub fn set_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecution>,
-    ) -> Self {
+    pub fn set_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
         self.execution = input;
         self
     }
@@ -133,10 +128,7 @@ impl WorkflowExecutionInfoBuilder {
         self
     }
     /// <p>The type of the workflow execution.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
@@ -150,10 +142,7 @@ impl WorkflowExecutionInfoBuilder {
         self
     }
     /// <p>The time when the execution was started.</p>
-    pub fn set_start_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_timestamp = input;
         self
     }
@@ -167,10 +156,7 @@ impl WorkflowExecutionInfoBuilder {
         self
     }
     /// <p>The time when the workflow execution was closed. Set only if the execution status is CLOSED.</p>
-    pub fn set_close_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_close_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.close_timestamp = input;
         self
     }
@@ -184,10 +170,7 @@ impl WorkflowExecutionInfoBuilder {
         self
     }
     /// <p>The current status of the execution.</p>
-    pub fn set_execution_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionStatus>,
-    ) -> Self {
+    pub fn set_execution_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.execution_status = input;
         self
     }
@@ -217,10 +200,7 @@ impl WorkflowExecutionInfoBuilder {
     /// <li> <p> <code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p> </li>
     /// <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p> </li>
     /// </ul>
-    pub fn set_close_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CloseStatus>,
-    ) -> Self {
+    pub fn set_close_status(mut self, input: ::std::option::Option<crate::types::CloseStatus>) -> Self {
         self.close_status = input;
         self
     }
@@ -242,10 +222,7 @@ impl WorkflowExecutionInfoBuilder {
         self
     }
     /// <p>If this workflow execution is a child of another execution then contains the workflow execution that started this execution.</p>
-    pub fn set_parent(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowExecution>,
-    ) -> Self {
+    pub fn set_parent(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
         self.parent = input;
         self
     }
@@ -265,10 +242,7 @@ impl WorkflowExecutionInfoBuilder {
         self
     }
     /// <p>The list of tags associated with the workflow execution. Tags can be used to identify and list workflow executions of interest through the visibility APIs. A workflow execution can have a maximum of 5 tags.</p>
-    pub fn set_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_list = input;
         self
     }

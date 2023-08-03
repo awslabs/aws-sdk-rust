@@ -5,15 +5,12 @@
 pub struct CreateTransitGatewayRouteTableAnnouncementOutput {
     /// <p>Provides details about the transit gateway route table announcement.</p>
     #[doc(hidden)]
-    pub transit_gateway_route_table_announcement:
-        ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement>,
+    pub transit_gateway_route_table_announcement: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement>,
     _request_id: Option<String>,
 }
 impl CreateTransitGatewayRouteTableAnnouncementOutput {
     /// <p>Provides details about the transit gateway route table announcement.</p>
-    pub fn transit_gateway_route_table_announcement(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayRouteTableAnnouncement> {
+    pub fn transit_gateway_route_table_announcement(&self) -> ::std::option::Option<&crate::types::TransitGatewayRouteTableAnnouncement> {
         self.transit_gateway_route_table_announcement.as_ref()
     }
 }
@@ -24,27 +21,23 @@ impl ::aws_http::request_id::RequestId for CreateTransitGatewayRouteTableAnnounc
 }
 impl CreateTransitGatewayRouteTableAnnouncementOutput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayRouteTableAnnouncementOutput`](crate::operation::create_transit_gateway_route_table_announcement::CreateTransitGatewayRouteTableAnnouncementOutput).
-    pub fn builder() -> crate::operation::create_transit_gateway_route_table_announcement::builders::CreateTransitGatewayRouteTableAnnouncementOutputBuilder{
-        crate::operation::create_transit_gateway_route_table_announcement::builders::CreateTransitGatewayRouteTableAnnouncementOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_transit_gateway_route_table_announcement::builders::CreateTransitGatewayRouteTableAnnouncementOutputBuilder {
+        crate::operation::create_transit_gateway_route_table_announcement::builders::CreateTransitGatewayRouteTableAnnouncementOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`CreateTransitGatewayRouteTableAnnouncementOutput`](crate::operation::create_transit_gateway_route_table_announcement::CreateTransitGatewayRouteTableAnnouncementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayRouteTableAnnouncementOutputBuilder {
-    pub(crate) transit_gateway_route_table_announcement:
-        ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement>,
+    pub(crate) transit_gateway_route_table_announcement: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement>,
     _request_id: Option<String>,
 }
 impl CreateTransitGatewayRouteTableAnnouncementOutputBuilder {
     /// <p>Provides details about the transit gateway route table announcement.</p>
-    pub fn transit_gateway_route_table_announcement(
-        mut self,
-        input: crate::types::TransitGatewayRouteTableAnnouncement,
-    ) -> Self {
+    pub fn transit_gateway_route_table_announcement(mut self, input: crate::types::TransitGatewayRouteTableAnnouncement) -> Self {
         self.transit_gateway_route_table_announcement = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +50,7 @@ impl CreateTransitGatewayRouteTableAnnouncementOutputBuilder {
         self
     }
     /// <p>Provides details about the transit gateway route table announcement.</p>
-    pub fn get_transit_gateway_route_table_announcement(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement> {
+    pub fn get_transit_gateway_route_table_announcement(&self) -> &::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement> {
         &self.transit_gateway_route_table_announcement
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +63,9 @@ impl CreateTransitGatewayRouteTableAnnouncementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayRouteTableAnnouncementOutput`](crate::operation::create_transit_gateway_route_table_announcement::CreateTransitGatewayRouteTableAnnouncementOutput).
-    pub fn build(self) -> crate::operation::create_transit_gateway_route_table_announcement::CreateTransitGatewayRouteTableAnnouncementOutput{
+    pub fn build(self) -> crate::operation::create_transit_gateway_route_table_announcement::CreateTransitGatewayRouteTableAnnouncementOutput {
         crate::operation::create_transit_gateway_route_table_announcement::CreateTransitGatewayRouteTableAnnouncementOutput {
-            transit_gateway_route_table_announcement: self.transit_gateway_route_table_announcement
-            ,
+            transit_gateway_route_table_announcement: self.transit_gateway_route_table_announcement,
             _request_id: self._request_id,
         }
     }

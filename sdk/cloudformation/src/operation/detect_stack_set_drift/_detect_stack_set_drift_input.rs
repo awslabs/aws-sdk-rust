@@ -29,9 +29,7 @@ impl DetectStackSetDriftInput {
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn operation_preferences(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackSetOperationPreferences> {
+    pub fn operation_preferences(&self) -> ::std::option::Option<&crate::types::StackSetOperationPreferences> {
         self.operation_preferences.as_ref()
     }
     /// <p> <i>The ID of the stack set operation.</i> </p>
@@ -50,39 +48,28 @@ impl DetectStackSetDriftInput {
 }
 impl DetectStackSetDriftInput {
     /// Creates a new builder-style object to manufacture [`DetectStackSetDriftInput`](crate::operation::detect_stack_set_drift::DetectStackSetDriftInput).
-    pub fn builder(
-    ) -> crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInputBuilder {
-        crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInputBuilder {
+        crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInputBuilder::default()
     }
 }
 
 /// A builder for [`DetectStackSetDriftInput`](crate::operation::detect_stack_set_drift::DetectStackSetDriftInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectStackSetDriftInputBuilder {
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
-    pub(crate) operation_preferences:
-        ::std::option::Option<crate::types::StackSetOperationPreferences>,
+    pub(crate) operation_preferences: ::std::option::Option<crate::types::StackSetOperationPreferences>,
     pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl DetectStackSetDriftInputBuilder {
     /// <p>The name of the stack set on which to perform the drift detection operation.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the stack set on which to perform the drift detection operation.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_set_name = input;
         self
     }
@@ -92,27 +79,19 @@ impl DetectStackSetDriftInputBuilder {
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn operation_preferences(
-        mut self,
-        input: crate::types::StackSetOperationPreferences,
-    ) -> Self {
+    pub fn operation_preferences(mut self, input: crate::types::StackSetOperationPreferences) -> Self {
         self.operation_preferences = ::std::option::Option::Some(input);
         self
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn set_operation_preferences(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetOperationPreferences>,
-    ) -> Self {
+    pub fn set_operation_preferences(mut self, input: ::std::option::Option<crate::types::StackSetOperationPreferences>) -> Self {
         self.operation_preferences = input;
         self
     }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn get_operation_preferences(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
+    pub fn get_operation_preferences(&self) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
         &self.operation_preferences
     }
     /// <p> <i>The ID of the stack set operation.</i> </p>
@@ -161,17 +140,13 @@ impl DetectStackSetDriftInputBuilder {
     /// Consumes the builder and constructs a [`DetectStackSetDriftInput`](crate::operation::detect_stack_set_drift::DetectStackSetDriftInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_stack_set_drift::DetectStackSetDriftInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::detect_stack_set_drift::DetectStackSetDriftInput {
-                stack_set_name: self.stack_set_name,
-                operation_preferences: self.operation_preferences,
-                operation_id: self.operation_id,
-                call_as: self.call_as,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::detect_stack_set_drift::DetectStackSetDriftInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::detect_stack_set_drift::DetectStackSetDriftInput {
+            stack_set_name: self.stack_set_name,
+            operation_preferences: self.operation_preferences,
+            operation_id: self.operation_id,
+            call_as: self.call_as,
+        })
     }
 }

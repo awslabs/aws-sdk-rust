@@ -39,9 +39,7 @@ impl ListQueuesInput {
 
 /// A builder for [`ListQueuesInput`](crate::operation::list_queues::ListQueuesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueuesInputBuilder {
     pub(crate) queue_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,19 +48,13 @@ pub struct ListQueuesInputBuilder {
 impl ListQueuesInputBuilder {
     /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_name_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn queue_name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn set_queue_name_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_queue_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_name_prefix = input;
         self
     }
@@ -100,12 +92,7 @@ impl ListQueuesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListQueuesInput`](crate::operation::list_queues::ListQueuesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_queues::ListQueuesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_queues::ListQueuesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_queues::ListQueuesInput {
             queue_name_prefix: self.queue_name_prefix,
             next_token: self.next_token,

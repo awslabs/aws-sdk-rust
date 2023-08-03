@@ -4,9 +4,7 @@ pub fn ser_aws_auto_scaling_launch_configuration_details(
     input: &crate::types::AwsAutoScalingLaunchConfigurationDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if input.associate_public_ip_address {
-        object
-            .key("AssociatePublicIpAddress")
-            .boolean(input.associate_public_ip_address);
+        object.key("AssociatePublicIpAddress").boolean(input.associate_public_ip_address);
     }
     if let Some(var_1) = &input.block_device_mappings {
         let mut array_2 = object.key("BlockDeviceMappings").start_array();
@@ -60,9 +58,7 @@ pub fn ser_aws_auto_scaling_launch_configuration_details(
         object.key("KeyName").string(var_16.as_str());
     }
     if let Some(var_17) = &input.launch_configuration_name {
-        object
-            .key("LaunchConfigurationName")
-            .string(var_17.as_str());
+        object.key("LaunchConfigurationName").string(var_17.as_str());
     }
     if let Some(var_18) = &input.placement_tenancy {
         object.key("PlacementTenancy").string(var_18.as_str());
@@ -96,194 +92,148 @@ pub fn ser_aws_auto_scaling_launch_configuration_details(
 
 pub(crate) fn de_aws_auto_scaling_launch_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsAutoScalingLaunchConfigurationDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsAutoScalingLaunchConfigurationDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::AwsAutoScalingLaunchConfigurationDetailsBuilder::default();
+            let mut builder = crate::types::builders::AwsAutoScalingLaunchConfigurationDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "AssociatePublicIpAddress" => {
-                                builder = builder.set_associate_public_ip_address(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "BlockDeviceMappings" => {
-                                builder = builder.set_block_device_mappings(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "AssociatePublicIpAddress" => {
+                            builder =
+                                builder.set_associate_public_ip_address(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "BlockDeviceMappings" => {
+                            builder = builder.set_block_device_mappings(
                                     crate::protocol_serde::shape_aws_auto_scaling_launch_configuration_block_device_mappings_list::de_aws_auto_scaling_launch_configuration_block_device_mappings_list(tokens)?
                                 );
-                            }
-                            "ClassicLinkVpcId" => {
-                                builder = builder.set_classic_link_vpc_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "ClassicLinkVpcId" => {
+                            builder = builder.set_classic_link_vpc_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "ClassicLinkVpcSecurityGroups" => {
-                                builder = builder.set_classic_link_vpc_security_groups(
-                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?
-                                );
-                            }
-                            "CreatedTime" => {
-                                builder = builder.set_created_time(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "ClassicLinkVpcSecurityGroups" => {
+                            builder = builder.set_classic_link_vpc_security_groups(
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?,
+                            );
+                        }
+                        "CreatedTime" => {
+                            builder = builder.set_created_time(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "EbsOptimized" => {
-                                builder = builder.set_ebs_optimized(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "IamInstanceProfile" => {
-                                builder = builder.set_iam_instance_profile(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "EbsOptimized" => {
+                            builder = builder.set_ebs_optimized(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "IamInstanceProfile" => {
+                            builder = builder.set_iam_instance_profile(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "ImageId" => {
-                                builder = builder.set_image_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "ImageId" => {
+                            builder = builder.set_image_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "InstanceMonitoring" => {
-                                builder = builder.set_instance_monitoring(
+                            );
+                        }
+                        "InstanceMonitoring" => {
+                            builder = builder.set_instance_monitoring(
                                     crate::protocol_serde::shape_aws_auto_scaling_launch_configuration_instance_monitoring_details::de_aws_auto_scaling_launch_configuration_instance_monitoring_details(tokens)?
                                 );
-                            }
-                            "InstanceType" => {
-                                builder = builder.set_instance_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "InstanceType" => {
+                            builder = builder.set_instance_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "KernelId" => {
-                                builder = builder.set_kernel_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "KernelId" => {
+                            builder = builder.set_kernel_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "KeyName" => {
-                                builder = builder.set_key_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "KeyName" => {
+                            builder = builder.set_key_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "LaunchConfigurationName" => {
-                                builder = builder.set_launch_configuration_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "LaunchConfigurationName" => {
+                            builder = builder.set_launch_configuration_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "PlacementTenancy" => {
-                                builder = builder.set_placement_tenancy(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "PlacementTenancy" => {
+                            builder = builder.set_placement_tenancy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "RamdiskId" => {
-                                builder = builder.set_ramdisk_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "RamdiskId" => {
+                            builder = builder.set_ramdisk_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "SecurityGroups" => {
-                                builder = builder.set_security_groups(
-                                    crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?
-                                );
-                            }
-                            "SpotPrice" => {
-                                builder = builder.set_spot_price(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "SecurityGroups" => {
+                            builder =
+                                builder.set_security_groups(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                        }
+                        "SpotPrice" => {
+                            builder = builder.set_spot_price(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "UserData" => {
-                                builder = builder.set_user_data(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "UserData" => {
+                            builder = builder.set_user_data(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "MetadataOptions" => {
-                                builder = builder.set_metadata_options(
+                            );
+                        }
+                        "MetadataOptions" => {
+                            builder = builder.set_metadata_options(
                                     crate::protocol_serde::shape_aws_auto_scaling_launch_configuration_metadata_options::de_aws_auto_scaling_launch_configuration_metadata_options(tokens)?
                                 );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

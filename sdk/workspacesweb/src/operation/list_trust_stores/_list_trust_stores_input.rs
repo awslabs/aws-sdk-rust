@@ -29,9 +29,7 @@ impl ListTrustStoresInput {
 
 /// A builder for [`ListTrustStoresInput`](crate::operation::list_trust_stores::ListTrustStoresInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrustStoresInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -68,10 +66,7 @@ impl ListTrustStoresInputBuilder {
     /// Consumes the builder and constructs a [`ListTrustStoresInput`](crate::operation::list_trust_stores::ListTrustStoresInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_trust_stores::ListTrustStoresInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_trust_stores::ListTrustStoresInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_trust_stores::ListTrustStoresInput {
             next_token: self.next_token,
             max_results: self.max_results,

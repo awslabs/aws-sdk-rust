@@ -12,7 +12,9 @@ impl super::Client {
     /// - On success, responds with [`CreateConfiguredTableAssociationOutput`](crate::operation::create_configured_table_association::CreateConfiguredTableAssociationOutput) with field(s):
     ///   - [`configured_table_association(Option<ConfiguredTableAssociation>)`](crate::operation::create_configured_table_association::CreateConfiguredTableAssociationOutput::configured_table_association): <p>The entire configured table association object.</p>
     /// - On failure, responds with [`SdkError<CreateConfiguredTableAssociationError>`](crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError)
-    pub fn create_configured_table_association(&self) -> crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationFluentBuilder{
+    pub fn create_configured_table_association(
+        &self,
+    ) -> crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationFluentBuilder {
         crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationFluentBuilder::new(self.handle.clone())
     }
 }

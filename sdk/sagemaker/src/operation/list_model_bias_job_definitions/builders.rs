@@ -26,7 +26,7 @@ impl ListModelBiasJobDefinitionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListModelBiasJobDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsInputBuilder,
+    inner: crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsInputBuilder,
 }
 impl ListModelBiasJobDefinitionsFluentBuilder {
     /// Creates a new `ListModelBiasJobDefinitions`.
@@ -37,7 +37,7 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
         }
     }
     /// Access the ListModelBiasJobDefinitions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
             crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
             crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_model_bias_job_definitions::paginator::ListModelBiasJobDefinitionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_model_bias_job_definitions::paginator::ListModelBiasJobDefinitionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_model_bias_job_definitions::paginator::ListModelBiasJobDefinitionsPaginator {
         crate::operation::list_model_bias_job_definitions::paginator::ListModelBiasJobDefinitionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Name of the endpoint to monitor for model bias.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
         self
     }
     /// <p>Name of the endpoint to monitor for model bias.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
@@ -152,17 +135,12 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
         self
     }
     /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::MonitoringJobDefinitionSortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::MonitoringJobDefinitionSortKey>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
     /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::MonitoringJobDefinitionSortKey> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::MonitoringJobDefinitionSortKey> {
         self.inner.get_sort_by()
     }
     /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
@@ -208,18 +186,12 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>Filter for model bias jobs whose name contains a specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>Filter for model bias jobs whose name contains a specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -233,10 +205,7 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only model bias jobs created before a specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -250,10 +219,7 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only model bias jobs created after a specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }

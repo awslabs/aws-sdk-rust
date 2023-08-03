@@ -10,10 +10,7 @@ impl DescribeServicesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_services::DescribeServicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_services::DescribeServicesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_services::DescribeServicesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_services();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeServicesFluentBuilder {
         }
     }
     /// Access the DescribeServices as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_services::builders::DescribeServicesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_services::builders::DescribeServicesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeServicesFluentBuilder {
             crate::operation::describe_services::DescribeServices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_services::DescribeServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_services::DescribeServicesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeServicesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeServicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_services::DescribeServicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_services::DescribeServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_services::DescribeServicesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeServicesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_services::DescribeServicesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_services::DescribeServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_services::DescribeServicesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeServicesFluentBuilder {
             crate::operation::describe_services::DescribeServices,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_services::DescribeServicesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_services::DescribeServicesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_services::paginator::DescribeServicesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_services::paginator::DescribeServicesPaginator {
-        crate::operation::describe_services::paginator::DescribeServicesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_services::paginator::DescribeServicesPaginator {
+        crate::operation::describe_services::paginator::DescribeServicesPaginator::new(self.handle, self.inner)
     }
     /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,19 +128,13 @@ impl DescribeServicesFluentBuilder {
     }
     /// <p>The format version that you want the response to be in.</p>
     /// <p>Valid values are: <code>aws_v1</code> </p>
-    pub fn format_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn format_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.format_version(input.into());
         self
     }
     /// <p>The format version that you want the response to be in.</p>
     /// <p>Valid values are: <code>aws_v1</code> </p>
-    pub fn set_format_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_format_version(input);
         self
     }

@@ -31,7 +31,7 @@ impl UpdateQuerySuggestionsConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateQuerySuggestionsConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_query_suggestions_config::builders::UpdateQuerySuggestionsConfigInputBuilder,
+    inner: crate::operation::update_query_suggestions_config::builders::UpdateQuerySuggestionsConfigInputBuilder,
 }
 impl UpdateQuerySuggestionsConfigFluentBuilder {
     /// Creates a new `UpdateQuerySuggestionsConfig`.
@@ -42,7 +42,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
         }
     }
     /// Access the UpdateQuerySuggestionsConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_query_suggestions_config::builders::UpdateQuerySuggestionsConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_query_suggestions_config::builders::UpdateQuerySuggestionsConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
             crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +110,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
             crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -169,10 +158,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
     /// <p>How recent your queries are in your query log time window.</p>
     /// <p>The time window is the number of days from current day to past days.</p>
     /// <p>By default, Amazon Kendra sets this to 180.</p>
-    pub fn set_query_log_look_back_window_in_days(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_query_log_look_back_window_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_query_log_look_back_window_in_days(input);
         self
     }
@@ -194,13 +180,8 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
     /// <p>If you pass user information to Amazon Kendra along with the queries, you can set this flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user information.</p>
     /// <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code> unique users for suggestions.</p>
     /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns from all queries.</p>
-    pub fn set_include_queries_without_user_information(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_include_queries_without_user_information(input);
+    pub fn set_include_queries_without_user_information(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_queries_without_user_information(input);
         self
     }
     /// <p> <code>TRUE</code> to include queries without user information (i.e. all queries, irrespective of the user), otherwise <code>FALSE</code> to only include queries with user information.</p>
@@ -220,10 +201,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
     /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
     /// <p>Increasing this number might decrease the number of suggestions. However, this ensures a query is searched by many users and is truly popular to suggest to users.</p>
     /// <p>How you tune this setting depends on your specific needs.</p>
-    pub fn set_minimum_number_of_querying_users(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_minimum_number_of_querying_users(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_minimum_number_of_querying_users(input);
         self
     }
@@ -254,25 +232,17 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
         self.inner.get_minimum_query_count()
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
-    pub fn attribute_suggestions_config(
-        mut self,
-        input: crate::types::AttributeSuggestionsUpdateConfig,
-    ) -> Self {
+    pub fn attribute_suggestions_config(mut self, input: crate::types::AttributeSuggestionsUpdateConfig) -> Self {
         self.inner = self.inner.attribute_suggestions_config(input);
         self
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
-    pub fn set_attribute_suggestions_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeSuggestionsUpdateConfig>,
-    ) -> Self {
+    pub fn set_attribute_suggestions_config(mut self, input: ::std::option::Option<crate::types::AttributeSuggestionsUpdateConfig>) -> Self {
         self.inner = self.inner.set_attribute_suggestions_config(input);
         self
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
-    pub fn get_attribute_suggestions_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeSuggestionsUpdateConfig> {
+    pub fn get_attribute_suggestions_config(&self) -> &::std::option::Option<crate::types::AttributeSuggestionsUpdateConfig> {
         self.inner.get_attribute_suggestions_config()
     }
 }

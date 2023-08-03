@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVectorEnrichmentJobOutput {
 }
 impl DeleteVectorEnrichmentJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVectorEnrichmentJobOutput`](crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobOutput).
-    pub fn builder() -> crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobOutputBuilder{
+    pub fn builder() -> crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobOutputBuilder {
         crate::operation::delete_vector_enrichment_job::builders::DeleteVectorEnrichmentJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVectorEnrichmentJobOutput`](crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVectorEnrichmentJobOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeleteVectorEnrichmentJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVectorEnrichmentJobOutput`](crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobOutput {
+    pub fn build(self) -> crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobOutput {
         crate::operation::delete_vector_enrichment_job::DeleteVectorEnrichmentJobOutput {
             _request_id: self._request_id,
         }

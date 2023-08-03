@@ -23,9 +23,7 @@ impl StatefulEngineOptions {
 
 /// A builder for [`StatefulEngineOptions`](crate::types::StatefulEngineOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatefulEngineOptionsBuilder {
     pub(crate) rule_order: ::std::option::Option<crate::types::RuleOrder>,
 }
@@ -46,8 +44,6 @@ impl StatefulEngineOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`StatefulEngineOptions`](crate::types::StatefulEngineOptions).
     pub fn build(self) -> crate::types::StatefulEngineOptions {
-        crate::types::StatefulEngineOptions {
-            rule_order: self.rule_order,
-        }
+        crate::types::StatefulEngineOptions { rule_order: self.rule_order }
     }
 }

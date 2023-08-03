@@ -30,9 +30,7 @@ impl SipMediaApplicationAlexaSkillConfiguration {
 
 /// A builder for [`SipMediaApplicationAlexaSkillConfiguration`](crate::types::SipMediaApplicationAlexaSkillConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SipMediaApplicationAlexaSkillConfigurationBuilder {
     pub(crate) alexa_skill_status: ::std::option::Option<crate::types::AlexaSkillStatus>,
     pub(crate) alexa_skill_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl SipMediaApplicationAlexaSkillConfigurationBuilder {
         self
     }
     /// <p>The status of the Alexa Skill configuration.</p>
-    pub fn set_alexa_skill_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AlexaSkillStatus>,
-    ) -> Self {
+    pub fn set_alexa_skill_status(mut self, input: ::std::option::Option<crate::types::AlexaSkillStatus>) -> Self {
         self.alexa_skill_status = input;
         self
     }
@@ -60,27 +55,19 @@ impl SipMediaApplicationAlexaSkillConfigurationBuilder {
     /// To override the contents of this collection use [`set_alexa_skill_ids`](Self::set_alexa_skill_ids).
     ///
     /// <p>The ID of the Alexa Skill configuration.</p>
-    pub fn alexa_skill_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn alexa_skill_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alexa_skill_ids.unwrap_or_default();
         v.push(input.into());
         self.alexa_skill_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of the Alexa Skill configuration.</p>
-    pub fn set_alexa_skill_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_alexa_skill_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.alexa_skill_ids = input;
         self
     }
     /// <p>The ID of the Alexa Skill configuration.</p>
-    pub fn get_alexa_skill_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alexa_skill_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.alexa_skill_ids
     }
     /// Consumes the builder and constructs a [`SipMediaApplicationAlexaSkillConfiguration`](crate::types::SipMediaApplicationAlexaSkillConfiguration).

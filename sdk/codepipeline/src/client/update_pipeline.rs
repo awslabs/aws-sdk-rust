@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`UpdatePipelineOutput`](crate::operation::update_pipeline::UpdatePipelineOutput) with field(s):
     ///   - [`pipeline(Option<PipelineDeclaration>)`](crate::operation::update_pipeline::UpdatePipelineOutput::pipeline): <p>The structure of the updated pipeline.</p>
     /// - On failure, responds with [`SdkError<UpdatePipelineError>`](crate::operation::update_pipeline::UpdatePipelineError)
-    pub fn update_pipeline(
-        &self,
-    ) -> crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder {
-        crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_pipeline(&self) -> crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder {
+        crate::operation::update_pipeline::builders::UpdatePipelineFluentBuilder::new(self.handle.clone())
     }
 }

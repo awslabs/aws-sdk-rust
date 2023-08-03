@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`StartNetworkResourceUpdateOutput`](crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput) with field(s):
     ///   - [`network_resource(Option<NetworkResource>)`](crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput::network_resource): <p>The network resource.</p>
     /// - On failure, responds with [`SdkError<StartNetworkResourceUpdateError>`](crate::operation::start_network_resource_update::StartNetworkResourceUpdateError)
-    pub fn start_network_resource_update(&self) -> crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateFluentBuilder{
+    pub fn start_network_resource_update(
+        &self,
+    ) -> crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateFluentBuilder {
         crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateFluentBuilder::new(self.handle.clone())
     }
 }

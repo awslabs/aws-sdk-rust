@@ -18,10 +18,7 @@ pub fn ser_project_source(
     if let Some(var_4) = &input.git_submodules_config {
         #[allow(unused_mut)]
         let mut object_5 = object.key("gitSubmodulesConfig").start_object();
-        crate::protocol_serde::shape_git_submodules_config::ser_git_submodules_config(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_git_submodules_config::ser_git_submodules_config(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.buildspec {
@@ -39,10 +36,7 @@ pub fn ser_project_source(
     if let Some(var_10) = &input.build_status_config {
         #[allow(unused_mut)]
         let mut object_11 = object.key("buildStatusConfig").start_object();
-        crate::protocol_serde::shape_build_status_config::ser_build_status_config(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_build_status_config::ser_build_status_config(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.insecure_ssl {
@@ -56,17 +50,9 @@ pub fn ser_project_source(
 
 pub(crate) fn de_project_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::ProjectSource>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::ProjectSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -76,104 +62,73 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key
-                        .to_unescaped()?
-                        .as_ref()
-                    {
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "type" => {
                             builder = builder.set_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| {
-                                    s.to_unescaped()
-                                        .map(|u| crate::types::SourceType::from(u.as_ref()))
-                                })
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SourceType::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "location" => {
                             builder = builder.set_location(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "gitCloneDepth" => {
                             builder = builder.set_git_clone_depth(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(i32::try_from)
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "gitSubmodulesConfig" => {
-                            builder = builder.set_git_submodules_config(
-                                    crate::protocol_serde::shape_git_submodules_config::de_git_submodules_config(tokens)?
-                                );
+                            builder = builder
+                                .set_git_submodules_config(crate::protocol_serde::shape_git_submodules_config::de_git_submodules_config(tokens)?);
                         }
                         "buildspec" => {
                             builder = builder.set_buildspec(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         "auth" => {
-                            builder = builder.set_auth(
-                                crate::protocol_serde::shape_source_auth::de_source_auth(tokens)?,
-                            );
+                            builder = builder.set_auth(crate::protocol_serde::shape_source_auth::de_source_auth(tokens)?);
                         }
                         "reportBuildStatus" => {
-                            builder = builder.set_report_build_status(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_report_build_status(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "buildStatusConfig" => {
-                            builder = builder.set_build_status_config(
-                                    crate::protocol_serde::shape_build_status_config::de_build_status_config(tokens)?
-                                );
+                            builder =
+                                builder.set_build_status_config(crate::protocol_serde::shape_build_status_config::de_build_status_config(tokens)?);
                         }
                         "insecureSsl" => {
-                            builder = builder.set_insecure_ssl(
-                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                    tokens.next(),
-                                )?,
-                            );
+                            builder = builder.set_insecure_ssl(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "sourceIdentifier" => {
                             builder = builder.set_source_identifier(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                    tokens.next(),
-                                )?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

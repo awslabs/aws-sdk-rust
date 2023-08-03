@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateThingGroupOutput {
 }
 impl UpdateThingGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateThingGroupOutput`](crate::operation::update_thing_group::UpdateThingGroupOutput).
-    pub fn builder() -> crate::operation::update_thing_group::builders::UpdateThingGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_thing_group::builders::UpdateThingGroupOutputBuilder {
         crate::operation::update_thing_group::builders::UpdateThingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateThingGroupOutput`](crate::operation::update_thing_group::UpdateThingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThingGroupOutputBuilder {
     pub(crate) version: ::std::option::Option<i64>,
     _request_id: Option<String>,

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`content_summaries(Option<Vec<ContentSummary>>)`](crate::operation::list_contents::ListContentsOutput::content_summaries): <p>Information about the content.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_contents::ListContentsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListContentsError>`](crate::operation::list_contents::ListContentsError)
-    pub fn list_contents(
-        &self,
-    ) -> crate::operation::list_contents::builders::ListContentsFluentBuilder {
-        crate::operation::list_contents::builders::ListContentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_contents(&self) -> crate::operation::list_contents::builders::ListContentsFluentBuilder {
+        crate::operation::list_contents::builders::ListContentsFluentBuilder::new(self.handle.clone())
     }
 }

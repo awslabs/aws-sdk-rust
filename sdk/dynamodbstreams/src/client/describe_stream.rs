@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeStreamOutput`](crate::operation::describe_stream::DescribeStreamOutput) with field(s):
     ///   - [`stream_description(Option<StreamDescription>)`](crate::operation::describe_stream::DescribeStreamOutput::stream_description): <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
     /// - On failure, responds with [`SdkError<DescribeStreamError>`](crate::operation::describe_stream::DescribeStreamError)
-    pub fn describe_stream(
-        &self,
-    ) -> crate::operation::describe_stream::builders::DescribeStreamFluentBuilder {
-        crate::operation::describe_stream::builders::DescribeStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_stream(&self) -> crate::operation::describe_stream::builders::DescribeStreamFluentBuilder {
+        crate::operation::describe_stream::builders::DescribeStreamFluentBuilder::new(self.handle.clone())
     }
 }

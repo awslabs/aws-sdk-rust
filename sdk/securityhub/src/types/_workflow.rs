@@ -45,9 +45,7 @@ impl Workflow {
 
 /// A builder for [`Workflow`](crate::types::Workflow).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowBuilder {
     pub(crate) status: ::std::option::Option<crate::types::WorkflowStatus>,
 }
@@ -80,10 +78,7 @@ impl WorkflowBuilder {
     /// <li> <p> <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p> </li>
     /// <li> <p> <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved. </p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowStatus>) -> Self {
         self.status = input;
         self
     }
@@ -104,8 +99,6 @@ impl WorkflowBuilder {
     }
     /// Consumes the builder and constructs a [`Workflow`](crate::types::Workflow).
     pub fn build(self) -> crate::types::Workflow {
-        crate::types::Workflow {
-            status: self.status,
-        }
+        crate::types::Workflow { status: self.status }
     }
 }

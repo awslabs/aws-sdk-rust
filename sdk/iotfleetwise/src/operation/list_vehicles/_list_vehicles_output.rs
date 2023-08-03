@@ -35,12 +35,9 @@ impl ListVehiclesOutput {
 
 /// A builder for [`ListVehiclesOutput`](crate::operation::list_vehicles::ListVehiclesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVehiclesOutputBuilder {
-    pub(crate) vehicle_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::VehicleSummary>>,
+    pub(crate) vehicle_summaries: ::std::option::Option<::std::vec::Vec<crate::types::VehicleSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListVehiclesOutputBuilder {
         self
     }
     /// <p> A list of vehicles and information about them. </p>
-    pub fn set_vehicle_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VehicleSummary>>,
-    ) -> Self {
+    pub fn set_vehicle_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VehicleSummary>>) -> Self {
         self.vehicle_summaries = input;
         self
     }
     /// <p> A list of vehicles and information about them. </p>
-    pub fn get_vehicle_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VehicleSummary>> {
+    pub fn get_vehicle_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VehicleSummary>> {
         &self.vehicle_summaries
     }
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>

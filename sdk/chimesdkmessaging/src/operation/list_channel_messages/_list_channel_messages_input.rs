@@ -82,10 +82,8 @@ impl ::std::fmt::Debug for ListChannelMessagesInput {
 }
 impl ListChannelMessagesInput {
     /// Creates a new builder-style object to manufacture [`ListChannelMessagesInput`](crate::operation::list_channel_messages::ListChannelMessagesInput).
-    pub fn builder(
-    ) -> crate::operation::list_channel_messages::builders::ListChannelMessagesInputBuilder {
-        crate::operation::list_channel_messages::builders::ListChannelMessagesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_channel_messages::builders::ListChannelMessagesInputBuilder {
+        crate::operation::list_channel_messages::builders::ListChannelMessagesInputBuilder::default()
     }
 }
 
@@ -137,10 +135,7 @@ impl ListChannelMessagesInputBuilder {
         self
     }
     /// <p>The initial or starting time stamp for your requested messages.</p>
-    pub fn set_not_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.not_before = input;
         self
     }
@@ -154,10 +149,7 @@ impl ListChannelMessagesInputBuilder {
         self
     }
     /// <p>The final or ending time stamp for your requested messages.</p>
-    pub fn set_not_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_not_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.not_after = input;
         self
     }
@@ -210,20 +202,14 @@ impl ListChannelMessagesInputBuilder {
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when listing the messages in a SubChannel that the user belongs to.</p>
     /// </note>
-    pub fn sub_channel_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when listing the messages in a SubChannel that the user belongs to.</p>
     /// </note>
-    pub fn set_sub_channel_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_channel_id = input;
         self
     }
@@ -236,22 +222,18 @@ impl ListChannelMessagesInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelMessagesInput`](crate::operation::list_channel_messages::ListChannelMessagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_channel_messages::ListChannelMessagesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_channel_messages::ListChannelMessagesInput {
-                channel_arn: self.channel_arn,
-                sort_order: self.sort_order,
-                not_before: self.not_before,
-                not_after: self.not_after,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                chime_bearer: self.chime_bearer,
-                sub_channel_id: self.sub_channel_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_channel_messages::ListChannelMessagesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_channel_messages::ListChannelMessagesInput {
+            channel_arn: self.channel_arn,
+            sort_order: self.sort_order,
+            not_before: self.not_before,
+            not_after: self.not_after,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            chime_bearer: self.chime_bearer,
+            sub_channel_id: self.sub_channel_id,
+        })
     }
 }
 impl ::std::fmt::Debug for ListChannelMessagesInputBuilder {

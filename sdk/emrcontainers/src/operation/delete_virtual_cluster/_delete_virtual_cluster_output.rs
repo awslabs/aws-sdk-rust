@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteVirtualClusterOutput {
 }
 impl DeleteVirtualClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualClusterOutput`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterOutputBuilder {
+    pub fn builder() -> crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterOutputBuilder {
         crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVirtualClusterOutput`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVirtualClusterOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

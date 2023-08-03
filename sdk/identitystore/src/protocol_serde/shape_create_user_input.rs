@@ -54,10 +54,7 @@ pub fn ser_create_user_input(
             {
                 #[allow(unused_mut)]
                 let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_phone_number::ser_phone_number(
-                    &mut object_19,
-                    item_18,
-                )?;
+                crate::protocol_serde::shape_phone_number::ser_phone_number(&mut object_19, item_18)?;
                 object_19.finish();
             }
         }

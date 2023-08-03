@@ -19,9 +19,7 @@ impl UpdateThesaurusOutput {
 
 /// A builder for [`UpdateThesaurusOutput`](crate::operation::update_thesaurus::UpdateThesaurusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThesaurusOutputBuilder {
     _request_id: Option<String>,
 }

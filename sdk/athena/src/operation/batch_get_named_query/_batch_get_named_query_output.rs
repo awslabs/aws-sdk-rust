@@ -8,8 +8,7 @@ pub struct BatchGetNamedQueryOutput {
     pub named_queries: ::std::option::Option<::std::vec::Vec<crate::types::NamedQuery>>,
     /// <p>Information about provided query IDs.</p>
     #[doc(hidden)]
-    pub unprocessed_named_query_ids:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedNamedQueryId>>,
+    pub unprocessed_named_query_ids: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedNamedQueryId>>,
     _request_id: Option<String>,
 }
 impl BatchGetNamedQueryOutput {
@@ -18,9 +17,7 @@ impl BatchGetNamedQueryOutput {
         self.named_queries.as_deref()
     }
     /// <p>Information about provided query IDs.</p>
-    pub fn unprocessed_named_query_ids(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UnprocessedNamedQueryId]> {
+    pub fn unprocessed_named_query_ids(&self) -> ::std::option::Option<&[crate::types::UnprocessedNamedQueryId]> {
         self.unprocessed_named_query_ids.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for BatchGetNamedQueryOutput {
 }
 impl BatchGetNamedQueryOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetNamedQueryOutput`](crate::operation::batch_get_named_query::BatchGetNamedQueryOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_named_query::builders::BatchGetNamedQueryOutputBuilder {
-        crate::operation::batch_get_named_query::builders::BatchGetNamedQueryOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_get_named_query::builders::BatchGetNamedQueryOutputBuilder {
+        crate::operation::batch_get_named_query::builders::BatchGetNamedQueryOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetNamedQueryOutput`](crate::operation::batch_get_named_query::BatchGetNamedQueryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetNamedQueryOutputBuilder {
     pub(crate) named_queries: ::std::option::Option<::std::vec::Vec<crate::types::NamedQuery>>,
-    pub(crate) unprocessed_named_query_ids:
-        ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedNamedQueryId>>,
+    pub(crate) unprocessed_named_query_ids: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedNamedQueryId>>,
     _request_id: Option<String>,
 }
 impl BatchGetNamedQueryOutputBuilder {
@@ -62,17 +54,12 @@ impl BatchGetNamedQueryOutputBuilder {
         self
     }
     /// <p>Information about the named query IDs submitted.</p>
-    pub fn set_named_queries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NamedQuery>>,
-    ) -> Self {
+    pub fn set_named_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NamedQuery>>) -> Self {
         self.named_queries = input;
         self
     }
     /// <p>Information about the named query IDs submitted.</p>
-    pub fn get_named_queries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NamedQuery>> {
+    pub fn get_named_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NamedQuery>> {
         &self.named_queries
     }
     /// Appends an item to `unprocessed_named_query_ids`.
@@ -80,27 +67,19 @@ impl BatchGetNamedQueryOutputBuilder {
     /// To override the contents of this collection use [`set_unprocessed_named_query_ids`](Self::set_unprocessed_named_query_ids).
     ///
     /// <p>Information about provided query IDs.</p>
-    pub fn unprocessed_named_query_ids(
-        mut self,
-        input: crate::types::UnprocessedNamedQueryId,
-    ) -> Self {
+    pub fn unprocessed_named_query_ids(mut self, input: crate::types::UnprocessedNamedQueryId) -> Self {
         let mut v = self.unprocessed_named_query_ids.unwrap_or_default();
         v.push(input);
         self.unprocessed_named_query_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about provided query IDs.</p>
-    pub fn set_unprocessed_named_query_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedNamedQueryId>>,
-    ) -> Self {
+    pub fn set_unprocessed_named_query_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedNamedQueryId>>) -> Self {
         self.unprocessed_named_query_ids = input;
         self
     }
     /// <p>Information about provided query IDs.</p>
-    pub fn get_unprocessed_named_query_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedNamedQueryId>> {
+    pub fn get_unprocessed_named_query_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedNamedQueryId>> {
         &self.unprocessed_named_query_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

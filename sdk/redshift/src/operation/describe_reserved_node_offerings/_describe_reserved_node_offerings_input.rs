@@ -34,16 +34,14 @@ impl DescribeReservedNodeOfferingsInput {
 }
 impl DescribeReservedNodeOfferingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedNodeOfferingsInput`](crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsInput).
-    pub fn builder() -> crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsInputBuilder {
         crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedNodeOfferingsInput`](crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedNodeOfferingsInputBuilder {
     pub(crate) reserved_node_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
@@ -51,18 +49,12 @@ pub struct DescribeReservedNodeOfferingsInputBuilder {
 }
 impl DescribeReservedNodeOfferingsInputBuilder {
     /// <p>The unique identifier for the offering.</p>
-    pub fn reserved_node_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the offering.</p>
-    pub fn set_reserved_node_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_node_offering_id = input;
         self
     }
@@ -111,15 +103,10 @@ impl DescribeReservedNodeOfferingsInputBuilder {
         crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsInput {
-                reserved_node_offering_id: self.reserved_node_offering_id
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsInput {
+            reserved_node_offering_id: self.reserved_node_offering_id,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

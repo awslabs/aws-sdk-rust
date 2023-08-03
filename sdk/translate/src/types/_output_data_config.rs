@@ -30,9 +30,7 @@ impl OutputDataConfig {
 
 /// A builder for [`OutputDataConfig`](crate::types::OutputDataConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputDataConfigBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
@@ -58,10 +56,7 @@ impl OutputDataConfigBuilder {
         self
     }
     /// <p>The encryption key used to encrypt this object.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionKey>,
-    ) -> Self {
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<crate::types::EncryptionKey>) -> Self {
         self.encryption_key = input;
         self
     }

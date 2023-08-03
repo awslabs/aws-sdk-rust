@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::deregister_managed_instance::builders::DeregisterManagedInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::deregister_managed_instance::builders::DeregisterManagedInstanceFluentBuilder::set_instance_id): <p>The ID assigned to the managed node when you registered it using the activation process. </p>
     /// - On success, responds with [`DeregisterManagedInstanceOutput`](crate::operation::deregister_managed_instance::DeregisterManagedInstanceOutput)
     /// - On failure, responds with [`SdkError<DeregisterManagedInstanceError>`](crate::operation::deregister_managed_instance::DeregisterManagedInstanceError)
-    pub fn deregister_managed_instance(&self) -> crate::operation::deregister_managed_instance::builders::DeregisterManagedInstanceFluentBuilder{
+    pub fn deregister_managed_instance(&self) -> crate::operation::deregister_managed_instance::builders::DeregisterManagedInstanceFluentBuilder {
         crate::operation::deregister_managed_instance::builders::DeregisterManagedInstanceFluentBuilder::new(self.handle.clone())
     }
 }

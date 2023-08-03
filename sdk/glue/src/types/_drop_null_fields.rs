@@ -46,9 +46,7 @@ impl DropNullFields {
 
 /// A builder for [`DropNullFields`](crate::types::DropNullFields).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DropNullFieldsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -82,10 +80,7 @@ impl DropNullFieldsBuilder {
         self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inputs = input;
         self
     }
@@ -99,17 +94,12 @@ impl DropNullFieldsBuilder {
         self
     }
     /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
-    pub fn set_null_check_box_list(
-        mut self,
-        input: ::std::option::Option<crate::types::NullCheckBoxList>,
-    ) -> Self {
+    pub fn set_null_check_box_list(mut self, input: ::std::option::Option<crate::types::NullCheckBoxList>) -> Self {
         self.null_check_box_list = input;
         self
     }
     /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
-    pub fn get_null_check_box_list(
-        &self,
-    ) -> &::std::option::Option<crate::types::NullCheckBoxList> {
+    pub fn get_null_check_box_list(&self) -> &::std::option::Option<crate::types::NullCheckBoxList> {
         &self.null_check_box_list
     }
     /// Appends an item to `null_text_list`.
@@ -126,18 +116,13 @@ impl DropNullFieldsBuilder {
     }
     /// <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p>
     /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
-    pub fn set_null_text_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NullValueField>>,
-    ) -> Self {
+    pub fn set_null_text_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NullValueField>>) -> Self {
         self.null_text_list = input;
         self
     }
     /// <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p>
     /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
-    pub fn get_null_text_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NullValueField>> {
+    pub fn get_null_text_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NullValueField>> {
         &self.null_text_list
     }
     /// Consumes the builder and constructs a [`DropNullFields`](crate::types::DropNullFields).

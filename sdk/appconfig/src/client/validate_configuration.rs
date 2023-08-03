@@ -8,12 +8,7 @@ impl super::Client {
     ///   - [`configuration_version(impl ::std::convert::Into<String>)`](crate::operation::validate_configuration::builders::ValidateConfigurationFluentBuilder::configuration_version) / [`set_configuration_version(Option<String>)`](crate::operation::validate_configuration::builders::ValidateConfigurationFluentBuilder::set_configuration_version): <p>The version of the configuration to validate.</p>
     /// - On success, responds with [`ValidateConfigurationOutput`](crate::operation::validate_configuration::ValidateConfigurationOutput)
     /// - On failure, responds with [`SdkError<ValidateConfigurationError>`](crate::operation::validate_configuration::ValidateConfigurationError)
-    pub fn validate_configuration(
-        &self,
-    ) -> crate::operation::validate_configuration::builders::ValidateConfigurationFluentBuilder
-    {
-        crate::operation::validate_configuration::builders::ValidateConfigurationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn validate_configuration(&self) -> crate::operation::validate_configuration::builders::ValidateConfigurationFluentBuilder {
+        crate::operation::validate_configuration::builders::ValidateConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

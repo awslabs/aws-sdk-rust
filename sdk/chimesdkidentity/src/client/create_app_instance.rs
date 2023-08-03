@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAppInstanceOutput`](crate::operation::create_app_instance::CreateAppInstanceOutput) with field(s):
     ///   - [`app_instance_arn(Option<String>)`](crate::operation::create_app_instance::CreateAppInstanceOutput::app_instance_arn): <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
     /// - On failure, responds with [`SdkError<CreateAppInstanceError>`](crate::operation::create_app_instance::CreateAppInstanceError)
-    pub fn create_app_instance(
-        &self,
-    ) -> crate::operation::create_app_instance::builders::CreateAppInstanceFluentBuilder {
-        crate::operation::create_app_instance::builders::CreateAppInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_app_instance(&self) -> crate::operation::create_app_instance::builders::CreateAppInstanceFluentBuilder {
+        crate::operation::create_app_instance::builders::CreateAppInstanceFluentBuilder::new(self.handle.clone())
     }
 }

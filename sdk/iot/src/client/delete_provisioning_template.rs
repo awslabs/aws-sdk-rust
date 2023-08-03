@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`template_name(impl ::std::convert::Into<String>)`](crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateFluentBuilder::set_template_name): <p>The name of the fleet provision template to delete.</p>
     /// - On success, responds with [`DeleteProvisioningTemplateOutput`](crate::operation::delete_provisioning_template::DeleteProvisioningTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteProvisioningTemplateError>`](crate::operation::delete_provisioning_template::DeleteProvisioningTemplateError)
-    pub fn delete_provisioning_template(&self) -> crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateFluentBuilder{
+    pub fn delete_provisioning_template(&self) -> crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateFluentBuilder {
         crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateFluentBuilder::new(self.handle.clone())
     }
 }

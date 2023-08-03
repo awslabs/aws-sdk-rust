@@ -49,9 +49,7 @@ impl AdminAccountSummary {
 
 /// A builder for [`AdminAccountSummary`](crate::types::AdminAccountSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdminAccountSummaryBuilder {
     pub(crate) admin_account: ::std::option::Option<::std::string::String>,
     pub(crate) default_admin: ::std::option::Option<bool>,
@@ -59,18 +57,12 @@ pub struct AdminAccountSummaryBuilder {
 }
 impl AdminAccountSummaryBuilder {
     /// <p>The Amazon Web Services account ID of the Firewall Manager administrator's account.</p>
-    pub fn admin_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the Firewall Manager administrator's account.</p>
-    pub fn set_admin_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_account = input;
         self
     }
@@ -110,10 +102,7 @@ impl AdminAccountSummaryBuilder {
     /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>
     /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OrganizationStatus>) -> Self {
         self.status = input;
         self
     }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartExperimentOutput`](crate::operation::start_experiment::StartExperimentOutput) with field(s):
     ///   - [`started_time(Option<DateTime>)`](crate::operation::start_experiment::StartExperimentOutput::started_time): <p>A timestamp that indicates when the experiment started.</p>
     /// - On failure, responds with [`SdkError<StartExperimentError>`](crate::operation::start_experiment::StartExperimentError)
-    pub fn start_experiment(
-        &self,
-    ) -> crate::operation::start_experiment::builders::StartExperimentFluentBuilder {
-        crate::operation::start_experiment::builders::StartExperimentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_experiment(&self) -> crate::operation::start_experiment::builders::StartExperimentFluentBuilder {
+        crate::operation::start_experiment::builders::StartExperimentFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl DescribeTemplatePermissionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTemplatePermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_template_permissions::builders::DescribeTemplatePermissionsInputBuilder,
+    inner: crate::operation::describe_template_permissions::builders::DescribeTemplatePermissionsInputBuilder,
 }
 impl DescribeTemplatePermissionsFluentBuilder {
     /// Creates a new `DescribeTemplatePermissions`.
@@ -37,7 +37,7 @@ impl DescribeTemplatePermissionsFluentBuilder {
         }
     }
     /// Access the DescribeTemplatePermissions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_template_permissions::builders::DescribeTemplatePermissionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_template_permissions::builders::DescribeTemplatePermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeTemplatePermissionsFluentBuilder {
             crate::operation::describe_template_permissions::DescribeTemplatePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_template_permissions::DescribeTemplatePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_template_permissions::DescribeTemplatePermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeTemplatePermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeTemplatePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_template_permissions::DescribeTemplatePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_template_permissions::DescribeTemplatePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_template_permissions::DescribeTemplatePermissionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeTemplatePermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_template_permissions::DescribeTemplatePermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_template_permissions::DescribeTemplatePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_template_permissions::DescribeTemplatePermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeTemplatePermissionsFluentBuilder {
             crate::operation::describe_template_permissions::DescribeTemplatePermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_template_permissions::DescribeTemplatePermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_template_permissions::DescribeTemplatePermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

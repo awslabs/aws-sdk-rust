@@ -41,17 +41,14 @@ impl ::aws_http::request_id::RequestId for ListResourceTagsOutput {
 }
 impl ListResourceTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceTagsOutput`](crate::operation::list_resource_tags::ListResourceTagsOutput).
-    pub fn builder() -> crate::operation::list_resource_tags::builders::ListResourceTagsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resource_tags::builders::ListResourceTagsOutputBuilder {
         crate::operation::list_resource_tags::builders::ListResourceTagsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceTagsOutput`](crate::operation::list_resource_tags::ListResourceTagsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceTagsOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -75,10 +72,7 @@ impl ListResourceTagsOutputBuilder {
     /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

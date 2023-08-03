@@ -37,9 +37,7 @@ impl UpdateWirelessGatewayTaskEntry {
 
 /// A builder for [`UpdateWirelessGatewayTaskEntry`](crate::types::UpdateWirelessGatewayTaskEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWirelessGatewayTaskEntryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanUpdateGatewayTaskEntry>,
@@ -66,17 +64,12 @@ impl UpdateWirelessGatewayTaskEntryBuilder {
         self
     }
     /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanUpdateGatewayTaskEntry>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanUpdateGatewayTaskEntry>) -> Self {
         self.lo_ra_wan = input;
         self
     }
     /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
-    pub fn get_lo_ra_wan(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoRaWanUpdateGatewayTaskEntry> {
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanUpdateGatewayTaskEntry> {
         &self.lo_ra_wan
     }
     /// <p>The Amazon Resource Name of the resource.</p>

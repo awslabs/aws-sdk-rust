@@ -30,7 +30,7 @@ impl StopDeliveryStreamEncryptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopDeliveryStreamEncryptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionInputBuilder,
+    inner: crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionInputBuilder,
 }
 impl StopDeliveryStreamEncryptionFluentBuilder {
     /// Creates a new `StopDeliveryStreamEncryption`.
@@ -41,7 +41,7 @@ impl StopDeliveryStreamEncryptionFluentBuilder {
         }
     }
     /// Access the StopDeliveryStreamEncryption as a reference.
-    pub fn as_input(&self) -> &crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl StopDeliveryStreamEncryptionFluentBuilder {
             crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryption,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl StopDeliveryStreamEncryptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl StopDeliveryStreamEncryptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl StopDeliveryStreamEncryptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +109,17 @@ impl StopDeliveryStreamEncryptionFluentBuilder {
             crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryption,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
-    pub fn delivery_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_stream_name(input.into());
         self
     }
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }

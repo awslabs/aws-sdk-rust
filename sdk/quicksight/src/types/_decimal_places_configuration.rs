@@ -23,9 +23,7 @@ impl DecimalPlacesConfiguration {
 
 /// A builder for [`DecimalPlacesConfiguration`](crate::types::DecimalPlacesConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecimalPlacesConfigurationBuilder {
     pub(crate) decimal_places: ::std::option::Option<i64>,
 }

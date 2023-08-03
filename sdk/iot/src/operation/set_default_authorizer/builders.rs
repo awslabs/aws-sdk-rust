@@ -38,9 +38,7 @@ impl SetDefaultAuthorizerFluentBuilder {
         }
     }
     /// Access the SetDefaultAuthorizer as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_default_authorizer::builders::SetDefaultAuthorizerInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_default_authorizer::builders::SetDefaultAuthorizerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl SetDefaultAuthorizerFluentBuilder {
             crate::operation::set_default_authorizer::SetDefaultAuthorizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_authorizer::SetDefaultAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_authorizer::SetDefaultAuthorizerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl SetDefaultAuthorizerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl SetDefaultAuthorizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_default_authorizer::SetDefaultAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_authorizer::SetDefaultAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_authorizer::SetDefaultAuthorizerError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl SetDefaultAuthorizerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_default_authorizer::SetDefaultAuthorizerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_authorizer::SetDefaultAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_authorizer::SetDefaultAuthorizerError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl SetDefaultAuthorizerFluentBuilder {
             crate::operation::set_default_authorizer::SetDefaultAuthorizer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_default_authorizer::SetDefaultAuthorizerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_default_authorizer::SetDefaultAuthorizerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The authorizer name.</p>
-    pub fn authorizer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorizer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authorizer_name(input.into());
         self
     }
     /// <p>The authorizer name.</p>
-    pub fn set_authorizer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorizer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authorizer_name(input);
         self
     }

@@ -36,9 +36,7 @@ impl CreateChangesetOutput {
 
 /// A builder for [`CreateChangesetOutput`](crate::operation::create_changeset::CreateChangesetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateChangesetOutputBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,

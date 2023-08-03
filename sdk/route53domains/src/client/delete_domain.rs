@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDomainOutput`](crate::operation::delete_domain::DeleteDomainOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::delete_domain::DeleteDomainOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::operation::delete_domain::DeleteDomainError)
-    pub fn delete_domain(
-        &self,
-    ) -> crate::operation::delete_domain::builders::DeleteDomainFluentBuilder {
-        crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_domain(&self) -> crate::operation::delete_domain::builders::DeleteDomainFluentBuilder {
+        crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::new(self.handle.clone())
     }
 }

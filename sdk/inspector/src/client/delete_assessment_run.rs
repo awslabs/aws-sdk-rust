@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`assessment_run_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_assessment_run::builders::DeleteAssessmentRunFluentBuilder::assessment_run_arn) / [`set_assessment_run_arn(Option<String>)`](crate::operation::delete_assessment_run::builders::DeleteAssessmentRunFluentBuilder::set_assessment_run_arn): <p>The ARN that specifies the assessment run that you want to delete.</p>
     /// - On success, responds with [`DeleteAssessmentRunOutput`](crate::operation::delete_assessment_run::DeleteAssessmentRunOutput)
     /// - On failure, responds with [`SdkError<DeleteAssessmentRunError>`](crate::operation::delete_assessment_run::DeleteAssessmentRunError)
-    pub fn delete_assessment_run(
-        &self,
-    ) -> crate::operation::delete_assessment_run::builders::DeleteAssessmentRunFluentBuilder {
-        crate::operation::delete_assessment_run::builders::DeleteAssessmentRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_assessment_run(&self) -> crate::operation::delete_assessment_run::builders::DeleteAssessmentRunFluentBuilder {
+        crate::operation::delete_assessment_run::builders::DeleteAssessmentRunFluentBuilder::new(self.handle.clone())
     }
 }

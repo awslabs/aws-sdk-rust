@@ -13,15 +13,11 @@ pub struct BucketPermissionConfiguration {
 }
 impl BucketPermissionConfiguration {
     /// <p>The account-level permissions settings that apply to the bucket.</p>
-    pub fn account_level_permissions(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AccountLevelPermissions> {
+    pub fn account_level_permissions(&self) -> ::std::option::Option<&crate::types::AccountLevelPermissions> {
         self.account_level_permissions.as_ref()
     }
     /// <p>The bucket-level permissions settings for the bucket.</p>
-    pub fn bucket_level_permissions(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BucketLevelPermissions> {
+    pub fn bucket_level_permissions(&self) -> ::std::option::Option<&crate::types::BucketLevelPermissions> {
         self.bucket_level_permissions.as_ref()
     }
 }
@@ -34,36 +30,24 @@ impl BucketPermissionConfiguration {
 
 /// A builder for [`BucketPermissionConfiguration`](crate::types::BucketPermissionConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketPermissionConfigurationBuilder {
-    pub(crate) account_level_permissions:
-        ::std::option::Option<crate::types::AccountLevelPermissions>,
-    pub(crate) bucket_level_permissions:
-        ::std::option::Option<crate::types::BucketLevelPermissions>,
+    pub(crate) account_level_permissions: ::std::option::Option<crate::types::AccountLevelPermissions>,
+    pub(crate) bucket_level_permissions: ::std::option::Option<crate::types::BucketLevelPermissions>,
 }
 impl BucketPermissionConfigurationBuilder {
     /// <p>The account-level permissions settings that apply to the bucket.</p>
-    pub fn account_level_permissions(
-        mut self,
-        input: crate::types::AccountLevelPermissions,
-    ) -> Self {
+    pub fn account_level_permissions(mut self, input: crate::types::AccountLevelPermissions) -> Self {
         self.account_level_permissions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The account-level permissions settings that apply to the bucket.</p>
-    pub fn set_account_level_permissions(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountLevelPermissions>,
-    ) -> Self {
+    pub fn set_account_level_permissions(mut self, input: ::std::option::Option<crate::types::AccountLevelPermissions>) -> Self {
         self.account_level_permissions = input;
         self
     }
     /// <p>The account-level permissions settings that apply to the bucket.</p>
-    pub fn get_account_level_permissions(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountLevelPermissions> {
+    pub fn get_account_level_permissions(&self) -> &::std::option::Option<crate::types::AccountLevelPermissions> {
         &self.account_level_permissions
     }
     /// <p>The bucket-level permissions settings for the bucket.</p>
@@ -72,17 +56,12 @@ impl BucketPermissionConfigurationBuilder {
         self
     }
     /// <p>The bucket-level permissions settings for the bucket.</p>
-    pub fn set_bucket_level_permissions(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketLevelPermissions>,
-    ) -> Self {
+    pub fn set_bucket_level_permissions(mut self, input: ::std::option::Option<crate::types::BucketLevelPermissions>) -> Self {
         self.bucket_level_permissions = input;
         self
     }
     /// <p>The bucket-level permissions settings for the bucket.</p>
-    pub fn get_bucket_level_permissions(
-        &self,
-    ) -> &::std::option::Option<crate::types::BucketLevelPermissions> {
+    pub fn get_bucket_level_permissions(&self) -> &::std::option::Option<crate::types::BucketLevelPermissions> {
         &self.bucket_level_permissions
     }
     /// Consumes the builder and constructs a [`BucketPermissionConfiguration`](crate::types::BucketPermissionConfiguration).

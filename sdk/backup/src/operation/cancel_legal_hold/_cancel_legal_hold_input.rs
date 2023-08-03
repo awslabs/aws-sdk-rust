@@ -36,9 +36,7 @@ impl CancelLegalHoldInput {
 
 /// A builder for [`CancelLegalHoldInput`](crate::operation::cancel_legal_hold::CancelLegalHoldInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelLegalHoldInputBuilder {
     pub(crate) legal_hold_id: ::std::option::Option<::std::string::String>,
     pub(crate) cancel_description: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct CancelLegalHoldInputBuilder {
 }
 impl CancelLegalHoldInputBuilder {
     /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
-    pub fn legal_hold_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn legal_hold_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.legal_hold_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
-    pub fn set_legal_hold_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_legal_hold_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.legal_hold_id = input;
         self
     }
@@ -66,18 +58,12 @@ impl CancelLegalHoldInputBuilder {
         &self.legal_hold_id
     }
     /// <p>String describing the reason for removing the legal hold.</p>
-    pub fn cancel_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cancel_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cancel_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>String describing the reason for removing the legal hold.</p>
-    pub fn set_cancel_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cancel_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cancel_description = input;
         self
     }
@@ -102,10 +88,7 @@ impl CancelLegalHoldInputBuilder {
     /// Consumes the builder and constructs a [`CancelLegalHoldInput`](crate::operation::cancel_legal_hold::CancelLegalHoldInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_legal_hold::CancelLegalHoldInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::cancel_legal_hold::CancelLegalHoldInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_legal_hold::CancelLegalHoldInput {
             legal_hold_id: self.legal_hold_id,
             cancel_description: self.cancel_description,

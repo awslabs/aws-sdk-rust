@@ -46,9 +46,7 @@ impl RelativeAggregationDuration {
 
 /// A builder for [`RelativeAggregationDuration`](crate::types::RelativeAggregationDuration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelativeAggregationDurationBuilder {
     pub(crate) time_dimension: ::std::option::Option<crate::types::TimeDimension>,
     pub(crate) time_value: ::std::option::Option<i32>,
@@ -60,10 +58,7 @@ impl RelativeAggregationDurationBuilder {
         self
     }
     /// <p>The type of time period that the <code>timeValue</code> field represents. </p>
-    pub fn set_time_dimension(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeDimension>,
-    ) -> Self {
+    pub fn set_time_dimension(mut self, input: ::std::option::Option<crate::types::TimeDimension>) -> Self {
         self.time_dimension = input;
         self
     }

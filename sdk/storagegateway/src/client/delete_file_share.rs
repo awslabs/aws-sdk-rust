@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteFileShareOutput`](crate::operation::delete_file_share::DeleteFileShareOutput) with field(s):
     ///   - [`file_share_arn(Option<String>)`](crate::operation::delete_file_share::DeleteFileShareOutput::file_share_arn): <p>The Amazon Resource Name (ARN) of the deleted file share.</p>
     /// - On failure, responds with [`SdkError<DeleteFileShareError>`](crate::operation::delete_file_share::DeleteFileShareError)
-    pub fn delete_file_share(
-        &self,
-    ) -> crate::operation::delete_file_share::builders::DeleteFileShareFluentBuilder {
-        crate::operation::delete_file_share::builders::DeleteFileShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_file_share(&self) -> crate::operation::delete_file_share::builders::DeleteFileShareFluentBuilder {
+        crate::operation::delete_file_share::builders::DeleteFileShareFluentBuilder::new(self.handle.clone())
     }
 }

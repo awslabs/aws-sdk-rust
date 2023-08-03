@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateEnvironmentAccountConnectionOutput`](crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionOutput) with field(s):
     ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment account connection detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentAccountConnectionError>`](crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionError)
-    pub fn update_environment_account_connection(&self) -> crate::operation::update_environment_account_connection::builders::UpdateEnvironmentAccountConnectionFluentBuilder{
+    pub fn update_environment_account_connection(
+        &self,
+    ) -> crate::operation::update_environment_account_connection::builders::UpdateEnvironmentAccountConnectionFluentBuilder {
         crate::operation::update_environment_account_connection::builders::UpdateEnvironmentAccountConnectionFluentBuilder::new(self.handle.clone())
     }
 }

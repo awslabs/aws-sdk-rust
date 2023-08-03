@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`AttachClassicLinkVpcOutput`](crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcOutput) with field(s):
     ///   - [`r#return(Option<bool>)`](crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcOutput::return): <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     /// - On failure, responds with [`SdkError<AttachClassicLinkVpcError>`](crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcError)
-    pub fn attach_classic_link_vpc(
-        &self,
-    ) -> crate::operation::attach_classic_link_vpc::builders::AttachClassicLinkVpcFluentBuilder
-    {
-        crate::operation::attach_classic_link_vpc::builders::AttachClassicLinkVpcFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn attach_classic_link_vpc(&self) -> crate::operation::attach_classic_link_vpc::builders::AttachClassicLinkVpcFluentBuilder {
+        crate::operation::attach_classic_link_vpc::builders::AttachClassicLinkVpcFluentBuilder::new(self.handle.clone())
     }
 }

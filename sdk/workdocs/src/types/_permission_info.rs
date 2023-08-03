@@ -30,9 +30,7 @@ impl PermissionInfo {
 
 /// A builder for [`PermissionInfo`](crate::types::PermissionInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PermissionInfoBuilder {
     pub(crate) role: ::std::option::Option<crate::types::RoleType>,
     pub(crate) r#type: ::std::option::Option<crate::types::RolePermissionType>,
@@ -58,10 +56,7 @@ impl PermissionInfoBuilder {
         self
     }
     /// <p>The type of permissions.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RolePermissionType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RolePermissionType>) -> Self {
         self.r#type = input;
         self
     }

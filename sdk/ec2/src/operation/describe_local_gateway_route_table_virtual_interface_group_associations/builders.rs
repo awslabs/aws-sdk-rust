@@ -15,8 +15,7 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInputBuilder
                             ::aws_smithy_http::operation::Response
                         >
     >{
-        let mut fluent_builder =
-            client.describe_local_gateway_route_table_virtual_interface_group_associations();
+        let mut fluent_builder = client.describe_local_gateway_route_table_virtual_interface_group_associations();
         fluent_builder.inner = self;
         fluent_builder.send().await
     }
@@ -55,10 +54,7 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsFluentBuilde
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -110,9 +106,7 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsFluentBuilde
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .local_gateway_route_table_virtual_interface_group_association_ids(input.into());
+        self.inner = self.inner.local_gateway_route_table_virtual_interface_group_association_ids(input.into());
         self
     }
     /// <p>The IDs of the associations.</p>
@@ -120,17 +114,14 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsFluentBuilde
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_local_gateway_route_table_virtual_interface_group_association_ids(input);
+        self.inner = self.inner.set_local_gateway_route_table_virtual_interface_group_association_ids(input);
         self
     }
     /// <p>The IDs of the associations.</p>
     pub fn get_local_gateway_route_table_virtual_interface_group_association_ids(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner
-            .get_local_gateway_route_table_virtual_interface_group_association_ids()
+        self.inner.get_local_gateway_route_table_virtual_interface_group_association_ids()
     }
     /// Appends an item to `Filters`.
     ///
@@ -160,10 +151,7 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsFluentBuilde
     /// <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local gateway virtual interface group association.</p> </li>
     /// <li> <p> <code>state</code> - The state of the association.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

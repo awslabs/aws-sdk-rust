@@ -29,17 +29,14 @@ impl UpdateCachePolicyInput {
 }
 impl UpdateCachePolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateCachePolicyInput`](crate::operation::update_cache_policy::UpdateCachePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::update_cache_policy::builders::UpdateCachePolicyInputBuilder {
+    pub fn builder() -> crate::operation::update_cache_policy::builders::UpdateCachePolicyInputBuilder {
         crate::operation::update_cache_policy::builders::UpdateCachePolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateCachePolicyInput`](crate::operation::update_cache_policy::UpdateCachePolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCachePolicyInputBuilder {
     pub(crate) cache_policy_config: ::std::option::Option<crate::types::CachePolicyConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -52,17 +49,12 @@ impl UpdateCachePolicyInputBuilder {
         self
     }
     /// <p>A cache policy configuration.</p>
-    pub fn set_cache_policy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CachePolicyConfig>,
-    ) -> Self {
+    pub fn set_cache_policy_config(mut self, input: ::std::option::Option<crate::types::CachePolicyConfig>) -> Self {
         self.cache_policy_config = input;
         self
     }
     /// <p>A cache policy configuration.</p>
-    pub fn get_cache_policy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CachePolicyConfig> {
+    pub fn get_cache_policy_config(&self) -> &::std::option::Option<crate::types::CachePolicyConfig> {
         &self.cache_policy_config
     }
     /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
@@ -96,16 +88,11 @@ impl UpdateCachePolicyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCachePolicyInput`](crate::operation::update_cache_policy::UpdateCachePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_cache_policy::UpdateCachePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_cache_policy::UpdateCachePolicyInput {
-                cache_policy_config: self.cache_policy_config,
-                id: self.id,
-                if_match: self.if_match,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_cache_policy::UpdateCachePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_cache_policy::UpdateCachePolicyInput {
+            cache_policy_config: self.cache_policy_config,
+            id: self.id,
+            if_match: self.if_match,
+        })
     }
 }

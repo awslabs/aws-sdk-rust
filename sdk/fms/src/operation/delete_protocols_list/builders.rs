@@ -37,9 +37,7 @@ impl DeleteProtocolsListFluentBuilder {
         }
     }
     /// Access the DeleteProtocolsList as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_protocols_list::builders::DeleteProtocolsListInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_protocols_list::builders::DeleteProtocolsListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteProtocolsListFluentBuilder {
             crate::operation::delete_protocols_list::DeleteProtocolsList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_protocols_list::DeleteProtocolsListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_protocols_list::DeleteProtocolsListError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteProtocolsListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteProtocolsListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_protocols_list::DeleteProtocolsListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_protocols_list::DeleteProtocolsListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_protocols_list::DeleteProtocolsListError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteProtocolsListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_protocols_list::DeleteProtocolsListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_protocols_list::DeleteProtocolsListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_protocols_list::DeleteProtocolsListError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DeleteProtocolsListFluentBuilder {
             crate::operation::delete_protocols_list::DeleteProtocolsList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_protocols_list::DeleteProtocolsListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_protocols_list::DeleteProtocolsListError>,
     > {
         self.customize_middleware().await
     }

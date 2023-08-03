@@ -29,20 +29,16 @@ impl ::aws_http::request_id::RequestId for DescribeOptionGroupsOutput {
 }
 impl DescribeOptionGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOptionGroupsOutput`](crate::operation::describe_option_groups::DescribeOptionGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_option_groups::builders::DescribeOptionGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_option_groups::builders::DescribeOptionGroupsOutputBuilder {
         crate::operation::describe_option_groups::builders::DescribeOptionGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOptionGroupsOutput`](crate::operation::describe_option_groups::DescribeOptionGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOptionGroupsOutputBuilder {
-    pub(crate) option_groups_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::OptionGroup>>,
+    pub(crate) option_groups_list: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroup>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +55,12 @@ impl DescribeOptionGroupsOutputBuilder {
         self
     }
     /// <p>List of option groups.</p>
-    pub fn set_option_groups_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroup>>,
-    ) -> Self {
+    pub fn set_option_groups_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroup>>) -> Self {
         self.option_groups_list = input;
         self
     }
     /// <p>List of option groups.</p>
-    pub fn get_option_groups_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionGroup>> {
+    pub fn get_option_groups_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionGroup>> {
         &self.option_groups_list
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>

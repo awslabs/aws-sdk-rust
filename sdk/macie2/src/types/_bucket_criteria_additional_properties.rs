@@ -65,9 +65,7 @@ impl BucketCriteriaAdditionalProperties {
 
 /// A builder for [`BucketCriteriaAdditionalProperties`](crate::types::BucketCriteriaAdditionalProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketCriteriaAdditionalPropertiesBuilder {
     pub(crate) eq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) gt: ::std::option::Option<i64>,
@@ -90,10 +88,7 @@ impl BucketCriteriaAdditionalPropertiesBuilder {
         self
     }
     /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
-    pub fn set_eq(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_eq(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.eq = input;
         self
     }
@@ -169,10 +164,7 @@ impl BucketCriteriaAdditionalPropertiesBuilder {
         self
     }
     /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
-    pub fn set_neq(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_neq(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.neq = input;
         self
     }

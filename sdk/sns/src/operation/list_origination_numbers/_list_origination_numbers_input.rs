@@ -22,18 +22,14 @@ impl ListOriginationNumbersInput {
 }
 impl ListOriginationNumbersInput {
     /// Creates a new builder-style object to manufacture [`ListOriginationNumbersInput`](crate::operation::list_origination_numbers::ListOriginationNumbersInput).
-    pub fn builder(
-    ) -> crate::operation::list_origination_numbers::builders::ListOriginationNumbersInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_origination_numbers::builders::ListOriginationNumbersInputBuilder {
         crate::operation::list_origination_numbers::builders::ListOriginationNumbersInputBuilder::default()
     }
 }
 
 /// A builder for [`ListOriginationNumbersInput`](crate::operation::list_origination_numbers::ListOriginationNumbersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOriginationNumbersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -70,15 +66,11 @@ impl ListOriginationNumbersInputBuilder {
     /// Consumes the builder and constructs a [`ListOriginationNumbersInput`](crate::operation::list_origination_numbers::ListOriginationNumbersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_origination_numbers::ListOriginationNumbersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_origination_numbers::ListOriginationNumbersInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_origination_numbers::ListOriginationNumbersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_origination_numbers::ListOriginationNumbersInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

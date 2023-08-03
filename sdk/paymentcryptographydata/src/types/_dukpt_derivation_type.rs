@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DukptDerivationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for DukptDerivationType {
             "AES_256" => DukptDerivationType::Aes256,
             "TDES_2KEY" => DukptDerivationType::Tdes2Key,
             "TDES_3KEY" => DukptDerivationType::Tdes3Key,
-            other => DukptDerivationType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DukptDerivationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteRepositoryOutput`](crate::operation::delete_repository::DeleteRepositoryOutput) with field(s):
     ///   - [`repository(Option<RepositoryDescription>)`](crate::operation::delete_repository::DeleteRepositoryOutput::repository): <p> Information about the deleted repository after processing the request. </p>
     /// - On failure, responds with [`SdkError<DeleteRepositoryError>`](crate::operation::delete_repository::DeleteRepositoryError)
-    pub fn delete_repository(
-        &self,
-    ) -> crate::operation::delete_repository::builders::DeleteRepositoryFluentBuilder {
-        crate::operation::delete_repository::builders::DeleteRepositoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_repository(&self) -> crate::operation::delete_repository::builders::DeleteRepositoryFluentBuilder {
+        crate::operation::delete_repository::builders::DeleteRepositoryFluentBuilder::new(self.handle.clone())
     }
 }

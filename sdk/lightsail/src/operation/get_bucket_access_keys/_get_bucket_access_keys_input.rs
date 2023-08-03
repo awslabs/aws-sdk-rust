@@ -15,18 +15,14 @@ impl GetBucketAccessKeysInput {
 }
 impl GetBucketAccessKeysInput {
     /// Creates a new builder-style object to manufacture [`GetBucketAccessKeysInput`](crate::operation::get_bucket_access_keys::GetBucketAccessKeysInput).
-    pub fn builder(
-    ) -> crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysInputBuilder {
-        crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysInputBuilder {
+        crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketAccessKeysInput`](crate::operation::get_bucket_access_keys::GetBucketAccessKeysInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketAccessKeysInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl GetBucketAccessKeysInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketAccessKeysInput`](crate::operation::get_bucket_access_keys::GetBucketAccessKeysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bucket_access_keys::GetBucketAccessKeysInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_bucket_access_keys::GetBucketAccessKeysInput {
-                bucket_name: self.bucket_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_bucket_access_keys::GetBucketAccessKeysInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_bucket_access_keys::GetBucketAccessKeysInput {
+            bucket_name: self.bucket_name,
+        })
     }
 }

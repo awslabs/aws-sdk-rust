@@ -15,9 +15,7 @@ pub struct VoiceMessage {
     pub origination_number: ::std::option::Option<::std::string::String>,
     /// <p>The default message variables to use in the voice message. You can override the default variables with individual address variables.</p>
     #[doc(hidden)]
-    pub substitutions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The name of the voice to use when delivering the message. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     #[doc(hidden)]
     pub voice_id: ::std::option::Option<::std::string::String>,
@@ -38,9 +36,7 @@ impl VoiceMessage {
     /// <p>The default message variables to use in the voice message. You can override the default variables with individual address variables.</p>
     pub fn substitutions(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.substitutions.as_ref()
     }
     /// <p>The name of the voice to use when delivering the message. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
@@ -57,16 +53,12 @@ impl VoiceMessage {
 
 /// A builder for [`VoiceMessage`](crate::types::VoiceMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VoiceMessageBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
     pub(crate) origination_number: ::std::option::Option<::std::string::String>,
-    pub(crate) substitutions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) voice_id: ::std::option::Option<::std::string::String>,
 }
 impl VoiceMessageBuilder {
@@ -85,18 +77,12 @@ impl VoiceMessageBuilder {
         &self.body
     }
     /// <p>The code for the language to use when synthesizing the text of the message script. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
-    pub fn language_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code for the language to use when synthesizing the text of the message script. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language_code = input;
         self
     }
@@ -105,18 +91,12 @@ impl VoiceMessageBuilder {
         &self.language_code
     }
     /// <p>The long code to send the voice message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code in E.164 format, for example +12065550100, to ensure prompt and accurate delivery of the message.</p>
-    pub fn origination_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The long code to send the voice message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code in E.164 format, for example +12065550100, to ensure prompt and accurate delivery of the message.</p>
-    pub fn set_origination_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_number = input;
         self
     }
@@ -129,11 +109,7 @@ impl VoiceMessageBuilder {
     /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
     ///
     /// <p>The default message variables to use in the voice message. You can override the default variables with individual address variables.</p>
-    pub fn substitutions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn substitutions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.substitutions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.substitutions = ::std::option::Option::Some(hash_map);
@@ -142,12 +118,7 @@ impl VoiceMessageBuilder {
     /// <p>The default message variables to use in the voice message. You can override the default variables with individual address variables.</p>
     pub fn set_substitutions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.substitutions = input;
         self
@@ -155,9 +126,7 @@ impl VoiceMessageBuilder {
     /// <p>The default message variables to use in the voice message. You can override the default variables with individual address variables.</p>
     pub fn get_substitutions(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.substitutions
     }
     /// <p>The name of the voice to use when delivering the message. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>

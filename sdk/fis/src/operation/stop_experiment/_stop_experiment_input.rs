@@ -22,9 +22,7 @@ impl StopExperimentInput {
 
 /// A builder for [`StopExperimentInput`](crate::operation::stop_experiment::StopExperimentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopExperimentInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl StopExperimentInputBuilder {
     /// Consumes the builder and constructs a [`StopExperimentInput`](crate::operation::stop_experiment::StopExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_experiment::StopExperimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_experiment::StopExperimentInput {
-            id: self.id,
-        })
+    ) -> ::std::result::Result<crate::operation::stop_experiment::StopExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_experiment::StopExperimentInput { id: self.id })
     }
 }

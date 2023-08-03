@@ -23,9 +23,7 @@ impl LifecycleConfiguration {
 
 /// A builder for [`LifecycleConfiguration`](crate::types::LifecycleConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifecycleConfigurationBuilder {
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
 }
@@ -42,17 +40,12 @@ impl LifecycleConfigurationBuilder {
         self
     }
     /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
-    pub fn set_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>) -> Self {
         self.rules = input;
         self
     }
     /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
-    pub fn get_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`LifecycleConfiguration`](crate::types::LifecycleConfiguration).

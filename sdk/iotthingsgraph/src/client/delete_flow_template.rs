@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteFlowTemplateOutput`](crate::operation::delete_flow_template::DeleteFlowTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteFlowTemplateError>`](crate::operation::delete_flow_template::DeleteFlowTemplateError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn delete_flow_template(
-        &self,
-    ) -> crate::operation::delete_flow_template::builders::DeleteFlowTemplateFluentBuilder {
-        crate::operation::delete_flow_template::builders::DeleteFlowTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_flow_template(&self) -> crate::operation::delete_flow_template::builders::DeleteFlowTemplateFluentBuilder {
+        crate::operation::delete_flow_template::builders::DeleteFlowTemplateFluentBuilder::new(self.handle.clone())
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`index_name(impl ::std::convert::Into<String>)`](crate::operation::delete_partition_index::builders::DeletePartitionIndexFluentBuilder::index_name) / [`set_index_name(Option<String>)`](crate::operation::delete_partition_index::builders::DeletePartitionIndexFluentBuilder::set_index_name): <p>The name of the partition index to be deleted.</p>
     /// - On success, responds with [`DeletePartitionIndexOutput`](crate::operation::delete_partition_index::DeletePartitionIndexOutput)
     /// - On failure, responds with [`SdkError<DeletePartitionIndexError>`](crate::operation::delete_partition_index::DeletePartitionIndexError)
-    pub fn delete_partition_index(
-        &self,
-    ) -> crate::operation::delete_partition_index::builders::DeletePartitionIndexFluentBuilder {
-        crate::operation::delete_partition_index::builders::DeletePartitionIndexFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_partition_index(&self) -> crate::operation::delete_partition_index::builders::DeletePartitionIndexFluentBuilder {
+        crate::operation::delete_partition_index::builders::DeletePartitionIndexFluentBuilder::new(self.handle.clone())
     }
 }

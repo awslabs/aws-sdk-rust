@@ -37,9 +37,7 @@ impl CustomerManagedChannelS3StorageSummary {
 
 /// A builder for [`CustomerManagedChannelS3StorageSummary`](crate::types::CustomerManagedChannelS3StorageSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomerManagedChannelS3StorageSummaryBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key_prefix: ::std::option::Option<::std::string::String>,

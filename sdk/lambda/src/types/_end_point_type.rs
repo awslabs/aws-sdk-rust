@@ -37,13 +37,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EndPointType {
     #[allow(missing_docs)] // documentation missing in model
@@ -55,9 +49,7 @@ impl ::std::convert::From<&str> for EndPointType {
     fn from(s: &str) -> Self {
         match s {
             "KAFKA_BOOTSTRAP_SERVERS" => EndPointType::KafkaBootstrapServers,
-            other => {
-                EndPointType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => EndPointType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

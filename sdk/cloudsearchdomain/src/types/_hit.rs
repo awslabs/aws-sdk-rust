@@ -9,19 +9,13 @@ pub struct Hit {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The fields returned from a document that matches the search request.</p>
     #[doc(hidden)]
-    pub fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The expressions returned from a document that matches the search request.</p>
     #[doc(hidden)]
-    pub exprs: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub exprs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The highlights returned from a document that matches the search request.</p>
     #[doc(hidden)]
-    pub highlights: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub highlights: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Hit {
     /// <p>The document ID of a document that matches the search request.</p>
@@ -29,27 +23,15 @@ impl Hit {
         self.id.as_deref()
     }
     /// <p>The fields returned from a document that matches the search request.</p>
-    pub fn fields(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.fields.as_ref()
     }
     /// <p>The expressions returned from a document that matches the search request.</p>
-    pub fn exprs(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn exprs(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.exprs.as_ref()
     }
     /// <p>The highlights returned from a document that matches the search request.</p>
-    pub fn highlights(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn highlights(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.highlights.as_ref()
     }
 }
@@ -62,20 +44,12 @@ impl Hit {
 
 /// A builder for [`Hit`](crate::types::Hit).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HitBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
-    pub(crate) exprs: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) highlights: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) exprs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) highlights: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl HitBuilder {
     /// <p>The document ID of a document that matches the search request.</p>
@@ -97,11 +71,7 @@ impl HitBuilder {
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
     /// <p>The fields returned from a document that matches the search request.</p>
-    pub fn fields(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn fields(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.fields.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.fields = ::std::option::Option::Some(hash_map);
@@ -110,22 +80,13 @@ impl HitBuilder {
     /// <p>The fields returned from a document that matches the search request.</p>
     pub fn set_fields(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.fields = input;
         self
     }
     /// <p>The fields returned from a document that matches the search request.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.fields
     }
     /// Adds a key-value pair to `exprs`.
@@ -133,32 +94,19 @@ impl HitBuilder {
     /// To override the contents of this collection use [`set_exprs`](Self::set_exprs).
     ///
     /// <p>The expressions returned from a document that matches the search request.</p>
-    pub fn exprs(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exprs(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.exprs.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.exprs = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The expressions returned from a document that matches the search request.</p>
-    pub fn set_exprs(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_exprs(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.exprs = input;
         self
     }
     /// <p>The expressions returned from a document that matches the search request.</p>
-    pub fn get_exprs(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_exprs(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.exprs
     }
     /// Adds a key-value pair to `highlights`.
@@ -166,32 +114,19 @@ impl HitBuilder {
     /// To override the contents of this collection use [`set_highlights`](Self::set_highlights).
     ///
     /// <p>The highlights returned from a document that matches the search request.</p>
-    pub fn highlights(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn highlights(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.highlights.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.highlights = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The highlights returned from a document that matches the search request.</p>
-    pub fn set_highlights(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_highlights(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.highlights = input;
         self
     }
     /// <p>The highlights returned from a document that matches the search request.</p>
-    pub fn get_highlights(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_highlights(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.highlights
     }
     /// Consumes the builder and constructs a [`Hit`](crate::types::Hit).

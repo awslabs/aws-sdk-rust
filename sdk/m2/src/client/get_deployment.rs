@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_deployment::GetDeploymentOutput::creation_time): <p>The timestamp when the deployment was created.</p>
     ///   - [`status_reason(Option<String>)`](crate::operation::get_deployment::GetDeploymentOutput::status_reason): <p>The reason for the reported status.</p>
     /// - On failure, responds with [`SdkError<GetDeploymentError>`](crate::operation::get_deployment::GetDeploymentError)
-    pub fn get_deployment(
-        &self,
-    ) -> crate::operation::get_deployment::builders::GetDeploymentFluentBuilder {
-        crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_deployment(&self) -> crate::operation::get_deployment::builders::GetDeploymentFluentBuilder {
+        crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::new(self.handle.clone())
     }
 }

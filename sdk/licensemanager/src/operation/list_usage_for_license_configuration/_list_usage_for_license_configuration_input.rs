@@ -46,16 +46,14 @@ impl ListUsageForLicenseConfigurationInput {
 }
 impl ListUsageForLicenseConfigurationInput {
     /// Creates a new builder-style object to manufacture [`ListUsageForLicenseConfigurationInput`](crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationInput).
-    pub fn builder() -> crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationInputBuilder {
         crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`ListUsageForLicenseConfigurationInput`](crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUsageForLicenseConfigurationInputBuilder {
     pub(crate) license_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -64,18 +62,12 @@ pub struct ListUsageForLicenseConfigurationInputBuilder {
 }
 impl ListUsageForLicenseConfigurationInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn set_license_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_configuration_arn = input;
         self
     }
@@ -133,10 +125,7 @@ impl ListUsageForLicenseConfigurationInputBuilder {
     /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -150,18 +139,19 @@ impl ListUsageForLicenseConfigurationInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListUsageForLicenseConfigurationInput`](crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationInput {
-                license_configuration_arn: self.license_configuration_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                filters: self.filters
-                ,
-            }
+                license_configuration_arn: self.license_configuration_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                filters: self.filters,
+            },
         )
     }
 }

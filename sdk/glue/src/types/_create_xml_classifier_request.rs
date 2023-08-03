@@ -41,9 +41,7 @@ impl CreateXmlClassifierRequest {
 
 /// A builder for [`CreateXmlClassifierRequest`](crate::types::CreateXmlClassifierRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateXmlClassifierRequestBuilder {
     pub(crate) classification: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -51,18 +49,12 @@ pub struct CreateXmlClassifierRequestBuilder {
 }
 impl CreateXmlClassifierRequestBuilder {
     /// <p>An identifier of the data format that the classifier matches.</p>
-    pub fn classification(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn classification(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classification = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier of the data format that the classifier matches.</p>
-    pub fn set_classification(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_classification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.classification = input;
         self
     }

@@ -12,10 +12,7 @@ pub fn ser_create_standby_workspaces_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_standby_workspace::ser_standby_workspace(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_standby_workspace::ser_standby_workspace(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

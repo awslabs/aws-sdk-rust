@@ -9,10 +9,12 @@ impl super::Client {
     ///   - [`service_provider_saml_metadata(Option<String>)`](crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationOutput::service_provider_saml_metadata): <p>The SAML metadata document uploaded to the user’s identity provider.</p>
     ///   - [`identity_provider_saml_metadata(Option<String>)`](crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationOutput::identity_provider_saml_metadata): <p>The SAML metadata document provided by the user’s identity provider.</p>
     /// - On failure, responds with [`SdkError<DescribeIdentityProviderConfigurationError>`](crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_identity_provider_configuration(&self) -> crate::operation::describe_identity_provider_configuration::builders::DescribeIdentityProviderConfigurationFluentBuilder{
-        crate::operation::describe_identity_provider_configuration::builders::DescribeIdentityProviderConfigurationFluentBuilder::new(self.handle.clone())
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn describe_identity_provider_configuration(
+        &self,
+    ) -> crate::operation::describe_identity_provider_configuration::builders::DescribeIdentityProviderConfigurationFluentBuilder {
+        crate::operation::describe_identity_provider_configuration::builders::DescribeIdentityProviderConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

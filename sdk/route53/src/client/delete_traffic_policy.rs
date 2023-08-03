@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`version(i32)`](crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyFluentBuilder::version) / [`set_version(Option<i32>)`](crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyFluentBuilder::set_version): <p>The version number of the traffic policy that you want to delete.</p>
     /// - On success, responds with [`DeleteTrafficPolicyOutput`](crate::operation::delete_traffic_policy::DeleteTrafficPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteTrafficPolicyError>`](crate::operation::delete_traffic_policy::DeleteTrafficPolicyError)
-    pub fn delete_traffic_policy(
-        &self,
-    ) -> crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyFluentBuilder {
-        crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_traffic_policy(&self) -> crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyFluentBuilder {
+        crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyFluentBuilder::new(self.handle.clone())
     }
 }

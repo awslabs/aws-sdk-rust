@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for ModifyNetworkInterfaceAttributeOutput
 }
 impl ModifyNetworkInterfaceAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyNetworkInterfaceAttributeOutput`](crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeOutput).
-    pub fn builder() -> crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeOutputBuilder{
+    pub fn builder() -> crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeOutputBuilder {
         crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyNetworkInterfaceAttributeOutput`](crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyNetworkInterfaceAttributeOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl ModifyNetworkInterfaceAttributeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyNetworkInterfaceAttributeOutput`](crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeOutput
-    {
+    pub fn build(self) -> crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeOutput {
         crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeOutput {
             _request_id: self._request_id,
         }

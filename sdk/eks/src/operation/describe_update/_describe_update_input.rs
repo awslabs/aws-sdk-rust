@@ -43,9 +43,7 @@ impl DescribeUpdateInput {
 
 /// A builder for [`DescribeUpdateInput`](crate::operation::describe_update::DescribeUpdateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUpdateInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) update_id: ::std::option::Option<::std::string::String>,
@@ -82,18 +80,12 @@ impl DescribeUpdateInputBuilder {
         &self.update_id
     }
     /// <p>The name of the Amazon EKS node group associated with the update. This parameter is required if the update is a node group update.</p>
-    pub fn nodegroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nodegroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nodegroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon EKS node group associated with the update. This parameter is required if the update is a node group update.</p>
-    pub fn set_nodegroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nodegroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nodegroup_name = input;
         self
     }
@@ -118,10 +110,7 @@ impl DescribeUpdateInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUpdateInput`](crate::operation::describe_update::DescribeUpdateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_update::DescribeUpdateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_update::DescribeUpdateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_update::DescribeUpdateInput {
             name: self.name,
             update_id: self.update_id,

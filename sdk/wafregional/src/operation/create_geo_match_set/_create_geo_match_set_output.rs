@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateGeoMatchSetOutput {
 }
 impl CreateGeoMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateGeoMatchSetOutput`](crate::operation::create_geo_match_set::CreateGeoMatchSetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_geo_match_set::builders::CreateGeoMatchSetOutputBuilder {
+    pub fn builder() -> crate::operation::create_geo_match_set::builders::CreateGeoMatchSetOutputBuilder {
         crate::operation::create_geo_match_set::builders::CreateGeoMatchSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGeoMatchSetOutput`](crate::operation::create_geo_match_set::CreateGeoMatchSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGeoMatchSetOutputBuilder {
     pub(crate) geo_match_set: ::std::option::Option<crate::types::GeoMatchSet>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
@@ -51,10 +48,7 @@ impl CreateGeoMatchSetOutputBuilder {
         self
     }
     /// <p>The <code>GeoMatchSet</code> returned in the <code>CreateGeoMatchSet</code> response. The <code>GeoMatchSet</code> contains no <code>GeoMatchConstraints</code>.</p>
-    pub fn set_geo_match_set(
-        mut self,
-        input: ::std::option::Option<crate::types::GeoMatchSet>,
-    ) -> Self {
+    pub fn set_geo_match_set(mut self, input: ::std::option::Option<crate::types::GeoMatchSet>) -> Self {
         self.geo_match_set = input;
         self
     }

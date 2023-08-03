@@ -10,10 +10,7 @@ impl PutInventoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_inventory::PutInventoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_inventory::PutInventoryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_inventory::PutInventoryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_inventory();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl PutInventoryFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_inventory::PutInventory,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_inventory::PutInventory, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_inventory::PutInventoryError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl PutInventoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl PutInventoryFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_inventory::PutInventory,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_inventory::PutInventory, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_inventory::PutInventoryError>,
     > {
         self.customize_middleware().await
@@ -136,17 +124,12 @@ impl PutInventoryFluentBuilder {
         self
     }
     /// <p>The inventory items that you want to add or update on managed nodes.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItem>>) -> Self {
         self.inner = self.inner.set_items(input);
         self
     }
     /// <p>The inventory items that you want to add or update on managed nodes.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryItem>> {
         self.inner.get_items()
     }
 }

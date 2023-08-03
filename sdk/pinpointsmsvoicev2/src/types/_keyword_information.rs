@@ -37,9 +37,7 @@ impl KeywordInformation {
 
 /// A builder for [`KeywordInformation`](crate::types::KeywordInformation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeywordInformationBuilder {
     pub(crate) keyword: ::std::option::Option<::std::string::String>,
     pub(crate) keyword_message: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl KeywordInformationBuilder {
         &self.keyword
     }
     /// <p>A custom message that can be used with the keyword.</p>
-    pub fn keyword_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn keyword_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyword_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A custom message that can be used with the keyword.</p>
-    pub fn set_keyword_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_keyword_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keyword_message = input;
         self
     }
@@ -86,10 +78,7 @@ impl KeywordInformationBuilder {
         self
     }
     /// <p>The action to perform for the keyword.</p>
-    pub fn set_keyword_action(
-        mut self,
-        input: ::std::option::Option<crate::types::KeywordAction>,
-    ) -> Self {
+    pub fn set_keyword_action(mut self, input: ::std::option::Option<crate::types::KeywordAction>) -> Self {
         self.keyword_action = input;
         self
     }

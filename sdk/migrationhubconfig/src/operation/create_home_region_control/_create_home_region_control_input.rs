@@ -29,18 +29,14 @@ impl CreateHomeRegionControlInput {
 }
 impl CreateHomeRegionControlInput {
     /// Creates a new builder-style object to manufacture [`CreateHomeRegionControlInput`](crate::operation::create_home_region_control::CreateHomeRegionControlInput).
-    pub fn builder(
-    ) -> crate::operation::create_home_region_control::builders::CreateHomeRegionControlInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_home_region_control::builders::CreateHomeRegionControlInputBuilder {
         crate::operation::create_home_region_control::builders::CreateHomeRegionControlInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateHomeRegionControlInput`](crate::operation::create_home_region_control::CreateHomeRegionControlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHomeRegionControlInputBuilder {
     pub(crate) home_region: ::std::option::Option<::std::string::String>,
     pub(crate) target: ::std::option::Option<crate::types::Target>,
@@ -96,12 +92,10 @@ impl CreateHomeRegionControlInputBuilder {
         crate::operation::create_home_region_control::CreateHomeRegionControlInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_home_region_control::CreateHomeRegionControlInput {
-                home_region: self.home_region,
-                target: self.target,
-                dry_run: self.dry_run.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_home_region_control::CreateHomeRegionControlInput {
+            home_region: self.home_region,
+            target: self.target,
+            dry_run: self.dry_run.unwrap_or_default(),
+        })
     }
 }

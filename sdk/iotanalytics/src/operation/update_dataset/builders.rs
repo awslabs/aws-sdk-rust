@@ -10,10 +10,7 @@ impl UpdateDatasetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_dataset::UpdateDatasetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dataset::UpdateDatasetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dataset::UpdateDatasetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_dataset();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDatasetFluentBuilder {
         }
     }
     /// Access the UpdateDataset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_dataset::builders::UpdateDatasetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_dataset::builders::UpdateDatasetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateDatasetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -138,17 +130,12 @@ impl UpdateDatasetFluentBuilder {
         self
     }
     /// <p>A list of <code>DatasetAction</code> objects.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetAction>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
     /// <p>A list of <code>DatasetAction</code> objects.</p>
-    pub fn get_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetAction>> {
         self.inner.get_actions()
     }
     /// Appends an item to `triggers`.
@@ -161,17 +148,12 @@ impl UpdateDatasetFluentBuilder {
         self
     }
     /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to five <code>DatasetTrigger</code> objects.</p>
-    pub fn set_triggers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>>,
-    ) -> Self {
+    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>>) -> Self {
         self.inner = self.inner.set_triggers(input);
         self
     }
     /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to five <code>DatasetTrigger</code> objects.</p>
-    pub fn get_triggers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>> {
+    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>> {
         self.inner.get_triggers()
     }
     /// Appends an item to `contentDeliveryRules`.
@@ -179,25 +161,17 @@ impl UpdateDatasetFluentBuilder {
     /// To override the contents of this collection use [`set_content_delivery_rules`](Self::set_content_delivery_rules).
     ///
     /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
-    pub fn content_delivery_rules(
-        mut self,
-        input: crate::types::DatasetContentDeliveryRule,
-    ) -> Self {
+    pub fn content_delivery_rules(mut self, input: crate::types::DatasetContentDeliveryRule) -> Self {
         self.inner = self.inner.content_delivery_rules(input);
         self
     }
     /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
-    pub fn set_content_delivery_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetContentDeliveryRule>>,
-    ) -> Self {
+    pub fn set_content_delivery_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetContentDeliveryRule>>) -> Self {
         self.inner = self.inner.set_content_delivery_rules(input);
         self
     }
     /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
-    pub fn get_content_delivery_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetContentDeliveryRule>> {
+    pub fn get_content_delivery_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetContentDeliveryRule>> {
         self.inner.get_content_delivery_rules()
     }
     /// <p>How long, in days, dataset contents are kept for the dataset.</p>
@@ -206,10 +180,7 @@ impl UpdateDatasetFluentBuilder {
         self
     }
     /// <p>How long, in days, dataset contents are kept for the dataset.</p>
-    pub fn set_retention_period(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.inner = self.inner.set_retention_period(input);
         self
     }
@@ -218,25 +189,17 @@ impl UpdateDatasetFluentBuilder {
         self.inner.get_retention_period()
     }
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
-    pub fn versioning_configuration(
-        mut self,
-        input: crate::types::VersioningConfiguration,
-    ) -> Self {
+    pub fn versioning_configuration(mut self, input: crate::types::VersioningConfiguration) -> Self {
         self.inner = self.inner.versioning_configuration(input);
         self
     }
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
-    pub fn set_versioning_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VersioningConfiguration>,
-    ) -> Self {
+    pub fn set_versioning_configuration(mut self, input: ::std::option::Option<crate::types::VersioningConfiguration>) -> Self {
         self.inner = self.inner.set_versioning_configuration(input);
         self
     }
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
-    pub fn get_versioning_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::VersioningConfiguration> {
+    pub fn get_versioning_configuration(&self) -> &::std::option::Option<crate::types::VersioningConfiguration> {
         self.inner.get_versioning_configuration()
     }
     /// Appends an item to `lateDataRules`.
@@ -249,17 +212,12 @@ impl UpdateDatasetFluentBuilder {
         self
     }
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-    pub fn set_late_data_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LateDataRule>>,
-    ) -> Self {
+    pub fn set_late_data_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LateDataRule>>) -> Self {
         self.inner = self.inner.set_late_data_rules(input);
         self
     }
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-    pub fn get_late_data_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LateDataRule>> {
+    pub fn get_late_data_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LateDataRule>> {
         self.inner.get_late_data_rules()
     }
 }

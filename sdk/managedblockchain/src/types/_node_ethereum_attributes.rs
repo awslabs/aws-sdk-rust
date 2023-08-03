@@ -30,27 +30,19 @@ impl NodeEthereumAttributes {
 
 /// A builder for [`NodeEthereumAttributes`](crate::types::NodeEthereumAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeEthereumAttributesBuilder {
     pub(crate) http_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) web_socket_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl NodeEthereumAttributesBuilder {
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum API methods over HTTP connections from a client. Use this endpoint in client code for smart contracts when using an HTTP connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
-    pub fn http_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn http_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum API methods over HTTP connections from a client. Use this endpoint in client code for smart contracts when using an HTTP connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
-    pub fn set_http_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_http_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_endpoint = input;
         self
     }
@@ -59,18 +51,12 @@ impl NodeEthereumAttributesBuilder {
         &self.http_endpoint
     }
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket connections from a client. Use this endpoint in client code for smart contracts when using a WebSocket connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
-    pub fn web_socket_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn web_socket_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_socket_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket connections from a client. Use this endpoint in client code for smart contracts when using a WebSocket connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
-    pub fn set_web_socket_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_web_socket_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_socket_endpoint = input;
         self
     }

@@ -93,18 +93,12 @@ impl InvokeOutputBuilder {
         &self.status_code
     }
     /// <p>If present, indicates that an error occurred during function execution. Details about the error are included in the response payload.</p>
-    pub fn function_error(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If present, indicates that an error occurred during function execution. Details about the error are included in the response payload.</p>
-    pub fn set_function_error(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_error = input;
         self
     }
@@ -141,18 +135,12 @@ impl InvokeOutputBuilder {
         &self.payload
     }
     /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which version the alias resolved to.</p>
-    pub fn executed_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn executed_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.executed_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which version the alias resolved to.</p>
-    pub fn set_executed_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_executed_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.executed_version = input;
         self
     }

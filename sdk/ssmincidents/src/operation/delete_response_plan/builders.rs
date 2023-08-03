@@ -10,10 +10,7 @@ impl DeleteResponsePlanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_response_plan::DeleteResponsePlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_response_plan::DeleteResponsePlanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_response_plan::DeleteResponsePlanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_response_plan();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteResponsePlanFluentBuilder {
         }
     }
     /// Access the DeleteResponsePlan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_response_plan::builders::DeleteResponsePlanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_response_plan::builders::DeleteResponsePlanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteResponsePlanFluentBuilder {
             crate::operation::delete_response_plan::DeleteResponsePlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_response_plan::DeleteResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_response_plan::DeleteResponsePlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteResponsePlanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteResponsePlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_response_plan::DeleteResponsePlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_response_plan::DeleteResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_response_plan::DeleteResponsePlanError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteResponsePlanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_response_plan::DeleteResponsePlanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_response_plan::DeleteResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_response_plan::DeleteResponsePlanError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteResponsePlanFluentBuilder {
             crate::operation::delete_response_plan::DeleteResponsePlan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_response_plan::DeleteResponsePlanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_response_plan::DeleteResponsePlanError>,
     > {
         self.customize_middleware().await
     }

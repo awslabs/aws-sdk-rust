@@ -58,9 +58,7 @@ impl Mp4Settings {
 
 /// A builder for [`Mp4Settings`](crate::types::Mp4Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Mp4SettingsBuilder {
     pub(crate) audio_duration: ::std::option::Option<crate::types::CmfcAudioDuration>,
     pub(crate) cslg_atom: ::std::option::Option<crate::types::Mp4CslgAtom>,
@@ -76,10 +74,7 @@ impl Mp4SettingsBuilder {
         self
     }
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
-    pub fn set_audio_duration(
-        mut self,
-        input: ::std::option::Option<crate::types::CmfcAudioDuration>,
-    ) -> Self {
+    pub fn set_audio_duration(mut self, input: ::std::option::Option<crate::types::CmfcAudioDuration>) -> Self {
         self.audio_duration = input;
         self
     }
@@ -93,10 +88,7 @@ impl Mp4SettingsBuilder {
         self
     }
     /// When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
-    pub fn set_cslg_atom(
-        mut self,
-        input: ::std::option::Option<crate::types::Mp4CslgAtom>,
-    ) -> Self {
+    pub fn set_cslg_atom(mut self, input: ::std::option::Option<crate::types::Mp4CslgAtom>) -> Self {
         self.cslg_atom = input;
         self
     }
@@ -124,10 +116,7 @@ impl Mp4SettingsBuilder {
         self
     }
     /// Inserts a free-space box immediately after the moov box.
-    pub fn set_free_space_box(
-        mut self,
-        input: ::std::option::Option<crate::types::Mp4FreeSpaceBox>,
-    ) -> Self {
+    pub fn set_free_space_box(mut self, input: ::std::option::Option<crate::types::Mp4FreeSpaceBox>) -> Self {
         self.free_space_box = input;
         self
     }
@@ -141,10 +130,7 @@ impl Mp4SettingsBuilder {
         self
     }
     /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
-    pub fn set_moov_placement(
-        mut self,
-        input: ::std::option::Option<crate::types::Mp4MoovPlacement>,
-    ) -> Self {
+    pub fn set_moov_placement(mut self, input: ::std::option::Option<crate::types::Mp4MoovPlacement>) -> Self {
         self.moov_placement = input;
         self
     }
@@ -153,18 +139,12 @@ impl Mp4SettingsBuilder {
         &self.moov_placement
     }
     /// Overrides the "Major Brand" field in the output file. Usually not necessary to specify.
-    pub fn mp4_major_brand(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mp4_major_brand(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mp4_major_brand = ::std::option::Option::Some(input.into());
         self
     }
     /// Overrides the "Major Brand" field in the output file. Usually not necessary to specify.
-    pub fn set_mp4_major_brand(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mp4_major_brand(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mp4_major_brand = input;
         self
     }

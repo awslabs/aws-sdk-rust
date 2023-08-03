@@ -10,10 +10,7 @@ impl GetChannelScheduleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_channel_schedule::GetChannelScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_schedule::GetChannelScheduleError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_channel_schedule::GetChannelScheduleError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_channel_schedule();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetChannelScheduleFluentBuilder {
         }
     }
     /// Access the GetChannelSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_channel_schedule::builders::GetChannelScheduleInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_channel_schedule::builders::GetChannelScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetChannelScheduleFluentBuilder {
             crate::operation::get_channel_schedule::GetChannelSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_schedule::GetChannelScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_channel_schedule::GetChannelScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetChannelScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetChannelScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_channel_schedule::GetChannelScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_schedule::GetChannelScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_channel_schedule::GetChannelScheduleError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetChannelScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_channel_schedule::GetChannelScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_schedule::GetChannelScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_channel_schedule::GetChannelScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetChannelScheduleFluentBuilder {
             crate::operation::get_channel_schedule::GetChannelSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_channel_schedule::GetChannelScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_channel_schedule::GetChannelScheduleError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_channel_schedule::paginator::GetChannelSchedulePaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_channel_schedule::paginator::GetChannelSchedulePaginator {
-        crate::operation::get_channel_schedule::paginator::GetChannelSchedulePaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_channel_schedule::paginator::GetChannelSchedulePaginator {
+        crate::operation::get_channel_schedule::paginator::GetChannelSchedulePaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the channel associated with this Channel Schedule.</p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +127,12 @@ impl GetChannelScheduleFluentBuilder {
         self.inner.get_channel_name()
     }
     /// <p>The duration in minutes of the channel schedule.</p>
-    pub fn duration_minutes(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn duration_minutes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.duration_minutes(input.into());
         self
     }
     /// <p>The duration in minutes of the channel schedule.</p>
-    pub fn set_duration_minutes(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_duration_minutes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_duration_minutes(input);
         self
     }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateRepositoryOutput {
 }
 impl CreateRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`CreateRepositoryOutput`](crate::operation::create_repository::CreateRepositoryOutput).
-    pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryOutputBuilder {
         crate::operation::create_repository::builders::CreateRepositoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRepositoryOutput`](crate::operation::create_repository::CreateRepositoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRepositoryOutputBuilder {
     pub(crate) repository: ::std::option::Option<crate::types::Repository>,
     pub(crate) catalog_data: ::std::option::Option<crate::types::RepositoryCatalogData>,
@@ -51,10 +48,7 @@ impl CreateRepositoryOutputBuilder {
         self
     }
     /// <p>The repository that was created.</p>
-    pub fn set_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::Repository>,
-    ) -> Self {
+    pub fn set_repository(mut self, input: ::std::option::Option<crate::types::Repository>) -> Self {
         self.repository = input;
         self
     }
@@ -68,10 +62,7 @@ impl CreateRepositoryOutputBuilder {
         self
     }
     /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
-    pub fn set_catalog_data(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryCatalogData>,
-    ) -> Self {
+    pub fn set_catalog_data(mut self, input: ::std::option::Option<crate::types::RepositoryCatalogData>) -> Self {
         self.catalog_data = input;
         self
     }

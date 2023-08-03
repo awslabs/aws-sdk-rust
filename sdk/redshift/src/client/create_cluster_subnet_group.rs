@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateClusterSubnetGroupOutput`](crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupOutput) with field(s):
     ///   - [`cluster_subnet_group(Option<ClusterSubnetGroup>)`](crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupOutput::cluster_subnet_group): <p>Describes a subnet group.</p>
     /// - On failure, responds with [`SdkError<CreateClusterSubnetGroupError>`](crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError)
-    pub fn create_cluster_subnet_group(&self) -> crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupFluentBuilder{
+    pub fn create_cluster_subnet_group(&self) -> crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupFluentBuilder {
         crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,16 +29,14 @@ impl ListSkillsStoreSkillsByCategoryInput {
 }
 impl ListSkillsStoreSkillsByCategoryInput {
     /// Creates a new builder-style object to manufacture [`ListSkillsStoreSkillsByCategoryInput`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryInput).
-    pub fn builder() -> crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryInputBuilder{
+    pub fn builder() -> crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryInputBuilder {
         crate::operation::list_skills_store_skills_by_category::builders::ListSkillsStoreSkillsByCategoryInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSkillsStoreSkillsByCategoryInput`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSkillsStoreSkillsByCategoryInputBuilder {
     pub(crate) category_id: ::std::option::Option<i64>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -88,16 +86,18 @@ impl ListSkillsStoreSkillsByCategoryInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSkillsStoreSkillsByCategoryInput`](crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryInput {
-                category_id: self.category_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                category_id: self.category_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

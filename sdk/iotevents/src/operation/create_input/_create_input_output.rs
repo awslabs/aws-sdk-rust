@@ -28,9 +28,7 @@ impl CreateInputOutput {
 
 /// A builder for [`CreateInputOutput`](crate::operation::create_input::CreateInputOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInputOutputBuilder {
     pub(crate) input_configuration: ::std::option::Option<crate::types::InputConfiguration>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl CreateInputOutputBuilder {
         self
     }
     /// <p>Information about the configuration of the input.</p>
-    pub fn set_input_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InputConfiguration>,
-    ) -> Self {
+    pub fn set_input_configuration(mut self, input: ::std::option::Option<crate::types::InputConfiguration>) -> Self {
         self.input_configuration = input;
         self
     }
     /// <p>Information about the configuration of the input.</p>
-    pub fn get_input_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InputConfiguration> {
+    pub fn get_input_configuration(&self) -> &::std::option::Option<crate::types::InputConfiguration> {
         &self.input_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

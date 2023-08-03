@@ -15,17 +15,14 @@ impl DeleteFindingsFilterInput {
 }
 impl DeleteFindingsFilterInput {
     /// Creates a new builder-style object to manufacture [`DeleteFindingsFilterInput`](crate::operation::delete_findings_filter::DeleteFindingsFilterInput).
-    pub fn builder(
-    ) -> crate::operation::delete_findings_filter::builders::DeleteFindingsFilterInputBuilder {
+    pub fn builder() -> crate::operation::delete_findings_filter::builders::DeleteFindingsFilterInputBuilder {
         crate::operation::delete_findings_filter::builders::DeleteFindingsFilterInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteFindingsFilterInput`](crate::operation::delete_findings_filter::DeleteFindingsFilterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFindingsFilterInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,8 @@ impl DeleteFindingsFilterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFindingsFilterInput`](crate::operation::delete_findings_filter::DeleteFindingsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_findings_filter::DeleteFindingsFilterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_findings_filter::DeleteFindingsFilterInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_findings_filter::DeleteFindingsFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_findings_filter::DeleteFindingsFilterInput { id: self.id })
     }
 }

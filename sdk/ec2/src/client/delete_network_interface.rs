@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`network_interface_id(impl ::std::convert::Into<String>)`](crate::operation::delete_network_interface::builders::DeleteNetworkInterfaceFluentBuilder::network_interface_id) / [`set_network_interface_id(Option<String>)`](crate::operation::delete_network_interface::builders::DeleteNetworkInterfaceFluentBuilder::set_network_interface_id): <p>The ID of the network interface.</p>
     /// - On success, responds with [`DeleteNetworkInterfaceOutput`](crate::operation::delete_network_interface::DeleteNetworkInterfaceOutput)
     /// - On failure, responds with [`SdkError<DeleteNetworkInterfaceError>`](crate::operation::delete_network_interface::DeleteNetworkInterfaceError)
-    pub fn delete_network_interface(
-        &self,
-    ) -> crate::operation::delete_network_interface::builders::DeleteNetworkInterfaceFluentBuilder
-    {
+    pub fn delete_network_interface(&self) -> crate::operation::delete_network_interface::builders::DeleteNetworkInterfaceFluentBuilder {
         crate::operation::delete_network_interface::builders::DeleteNetworkInterfaceFluentBuilder::new(self.handle.clone())
     }
 }

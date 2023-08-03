@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetSlotTypeVersionsOutput {
 }
 impl GetSlotTypeVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetSlotTypeVersionsOutput`](crate::operation::get_slot_type_versions::GetSlotTypeVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsOutputBuilder {
         crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSlotTypeVersionsOutput`](crate::operation::get_slot_type_versions::GetSlotTypeVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSlotTypeVersionsOutputBuilder {
     pub(crate) slot_types: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetSlotTypeVersionsOutputBuilder {
         self
     }
     /// <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of the slot type plus one for the <code>$LATEST</code> version.</p>
-    pub fn set_slot_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>>,
-    ) -> Self {
+    pub fn set_slot_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>>) -> Self {
         self.slot_types = input;
         self
     }
     /// <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of the slot type plus one for the <code>$LATEST</code> version.</p>
-    pub fn get_slot_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>> {
+    pub fn get_slot_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>> {
         &self.slot_types
     }
     /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>

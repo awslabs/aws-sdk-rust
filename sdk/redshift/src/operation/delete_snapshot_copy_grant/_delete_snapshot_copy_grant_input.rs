@@ -16,35 +16,25 @@ impl DeleteSnapshotCopyGrantInput {
 }
 impl DeleteSnapshotCopyGrantInput {
     /// Creates a new builder-style object to manufacture [`DeleteSnapshotCopyGrantInput`](crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput).
-    pub fn builder(
-    ) -> crate::operation::delete_snapshot_copy_grant::builders::DeleteSnapshotCopyGrantInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_snapshot_copy_grant::builders::DeleteSnapshotCopyGrantInputBuilder {
         crate::operation::delete_snapshot_copy_grant::builders::DeleteSnapshotCopyGrantInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSnapshotCopyGrantInput`](crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSnapshotCopyGrantInputBuilder {
     pub(crate) snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSnapshotCopyGrantInputBuilder {
     /// <p>The name of the snapshot copy grant to delete.</p>
-    pub fn snapshot_copy_grant_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_copy_grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_copy_grant_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the snapshot copy grant to delete.</p>
-    pub fn set_snapshot_copy_grant_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_copy_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_copy_grant_name = input;
         self
     }
@@ -59,10 +49,8 @@ impl DeleteSnapshotCopyGrantInputBuilder {
         crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput {
-                snapshot_copy_grant_name: self.snapshot_copy_grant_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput {
+            snapshot_copy_grant_name: self.snapshot_copy_grant_name,
+        })
     }
 }

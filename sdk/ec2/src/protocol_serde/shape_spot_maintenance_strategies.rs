@@ -7,9 +7,7 @@ pub fn ser_spot_maintenance_strategies(
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CapacityRebalance");
     if let Some(var_2) = &input.capacity_rebalance {
-        crate::protocol_serde::shape_spot_capacity_rebalance::ser_spot_capacity_rebalance(
-            scope_1, var_2,
-        )?;
+        crate::protocol_serde::shape_spot_capacity_rebalance::ser_spot_capacity_rebalance(scope_1, var_2)?;
     }
     Ok(())
 }

@@ -29,8 +29,7 @@ impl ::aws_http::request_id::RequestId for GetRandomPasswordOutput {
 }
 impl GetRandomPasswordOutput {
     /// Creates a new builder-style object to manufacture [`GetRandomPasswordOutput`](crate::operation::get_random_password::GetRandomPasswordOutput).
-    pub fn builder(
-    ) -> crate::operation::get_random_password::builders::GetRandomPasswordOutputBuilder {
+    pub fn builder() -> crate::operation::get_random_password::builders::GetRandomPasswordOutputBuilder {
         crate::operation::get_random_password::builders::GetRandomPasswordOutputBuilder::default()
     }
 }
@@ -44,18 +43,12 @@ pub struct GetRandomPasswordOutputBuilder {
 }
 impl GetRandomPasswordOutputBuilder {
     /// <p>A string with the password.</p>
-    pub fn random_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn random_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.random_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string with the password.</p>
-    pub fn set_random_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_random_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.random_password = input;
         self
     }

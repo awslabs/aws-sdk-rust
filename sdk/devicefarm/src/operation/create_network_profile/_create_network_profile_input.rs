@@ -92,17 +92,14 @@ impl CreateNetworkProfileInput {
 }
 impl CreateNetworkProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkProfileInput`](crate::operation::create_network_profile::CreateNetworkProfileInput).
-    pub fn builder(
-    ) -> crate::operation::create_network_profile::builders::CreateNetworkProfileInputBuilder {
+    pub fn builder() -> crate::operation::create_network_profile::builders::CreateNetworkProfileInputBuilder {
         crate::operation::create_network_profile::builders::CreateNetworkProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateNetworkProfileInput`](crate::operation::create_network_profile::CreateNetworkProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNetworkProfileInputBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -166,10 +163,7 @@ impl CreateNetworkProfileInputBuilder {
         self
     }
     /// <p>The type of network profile to create. Valid values are listed here.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkProfileType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NetworkProfileType>) -> Self {
         self.r#type = input;
         self
     }
@@ -292,25 +286,21 @@ impl CreateNetworkProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateNetworkProfileInput`](crate::operation::create_network_profile::CreateNetworkProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_network_profile::CreateNetworkProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_network_profile::CreateNetworkProfileInput {
-                project_arn: self.project_arn,
-                name: self.name,
-                description: self.description,
-                r#type: self.r#type,
-                uplink_bandwidth_bits: self.uplink_bandwidth_bits,
-                downlink_bandwidth_bits: self.downlink_bandwidth_bits,
-                uplink_delay_ms: self.uplink_delay_ms,
-                downlink_delay_ms: self.downlink_delay_ms,
-                uplink_jitter_ms: self.uplink_jitter_ms,
-                downlink_jitter_ms: self.downlink_jitter_ms,
-                uplink_loss_percent: self.uplink_loss_percent.unwrap_or_default(),
-                downlink_loss_percent: self.downlink_loss_percent.unwrap_or_default(),
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_network_profile::CreateNetworkProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_network_profile::CreateNetworkProfileInput {
+            project_arn: self.project_arn,
+            name: self.name,
+            description: self.description,
+            r#type: self.r#type,
+            uplink_bandwidth_bits: self.uplink_bandwidth_bits,
+            downlink_bandwidth_bits: self.downlink_bandwidth_bits,
+            uplink_delay_ms: self.uplink_delay_ms,
+            downlink_delay_ms: self.downlink_delay_ms,
+            uplink_jitter_ms: self.uplink_jitter_ms,
+            downlink_jitter_ms: self.downlink_jitter_ms,
+            uplink_loss_percent: self.uplink_loss_percent.unwrap_or_default(),
+            downlink_loss_percent: self.downlink_loss_percent.unwrap_or_default(),
+        })
     }
 }

@@ -29,17 +29,14 @@ impl ListReleaseLabelsInput {
 }
 impl ListReleaseLabelsInput {
     /// Creates a new builder-style object to manufacture [`ListReleaseLabelsInput`](crate::operation::list_release_labels::ListReleaseLabelsInput).
-    pub fn builder(
-    ) -> crate::operation::list_release_labels::builders::ListReleaseLabelsInputBuilder {
+    pub fn builder() -> crate::operation::list_release_labels::builders::ListReleaseLabelsInputBuilder {
         crate::operation::list_release_labels::builders::ListReleaseLabelsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReleaseLabelsInput`](crate::operation::list_release_labels::ListReleaseLabelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReleaseLabelsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ReleaseLabelFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -52,10 +49,7 @@ impl ListReleaseLabelsInputBuilder {
         self
     }
     /// <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ReleaseLabelFilter>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ReleaseLabelFilter>) -> Self {
         self.filters = input;
         self
     }
@@ -94,16 +88,11 @@ impl ListReleaseLabelsInputBuilder {
     /// Consumes the builder and constructs a [`ListReleaseLabelsInput`](crate::operation::list_release_labels::ListReleaseLabelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_release_labels::ListReleaseLabelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_release_labels::ListReleaseLabelsInput {
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_release_labels::ListReleaseLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_release_labels::ListReleaseLabelsInput {
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

@@ -23,9 +23,7 @@ impl ListPricingRulesFilter {
 
 /// A builder for [`ListPricingRulesFilter`](crate::types::ListPricingRulesFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPricingRulesFilterBuilder {
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl ListPricingRulesFilterBuilder {
         self
     }
     /// <p>A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response.</p>
-    pub fn set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.arns = input;
         self
     }

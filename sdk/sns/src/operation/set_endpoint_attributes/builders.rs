@@ -37,10 +37,7 @@ impl SetEndpointAttributesFluentBuilder {
         }
     }
     /// Access the SetEndpointAttributes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_endpoint_attributes::builders::SetEndpointAttributesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::set_endpoint_attributes::builders::SetEndpointAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl SetEndpointAttributesFluentBuilder {
             crate::operation::set_endpoint_attributes::SetEndpointAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_endpoint_attributes::SetEndpointAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_endpoint_attributes::SetEndpointAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl SetEndpointAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl SetEndpointAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_endpoint_attributes::SetEndpointAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_endpoint_attributes::SetEndpointAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_endpoint_attributes::SetEndpointAttributesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl SetEndpointAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_endpoint_attributes::SetEndpointAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_endpoint_attributes::SetEndpointAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_endpoint_attributes::SetEndpointAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl SetEndpointAttributesFluentBuilder {
             crate::operation::set_endpoint_attributes::SetEndpointAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_endpoint_attributes::SetEndpointAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_endpoint_attributes::SetEndpointAttributesError>,
     > {
         self.customize_middleware().await
     }
@@ -147,11 +133,7 @@ impl SetEndpointAttributesFluentBuilder {
     /// <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li>
     /// <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> </li>
     /// </ul>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
@@ -161,12 +143,7 @@ impl SetEndpointAttributesFluentBuilder {
     /// <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li>
     /// <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> </li>
     /// </ul>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
@@ -176,11 +153,7 @@ impl SetEndpointAttributesFluentBuilder {
     /// <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li>
     /// <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> </li>
     /// </ul>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
 }

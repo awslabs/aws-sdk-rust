@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveTagsFromOnPremisesInstancesOutp
 }
 impl RemoveTagsFromOnPremisesInstancesOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromOnPremisesInstancesOutput`](crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput).
-    pub fn builder() -> crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesOutputBuilder {
         crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveTagsFromOnPremisesInstancesOutput`](crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsFromOnPremisesInstancesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl RemoveTagsFromOnPremisesInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromOnPremisesInstancesOutput`](crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput).
-    pub fn build(self) -> crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput{
+    pub fn build(self) -> crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput {
         crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput {
             _request_id: self._request_id,
         }

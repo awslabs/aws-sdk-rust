@@ -35,9 +35,7 @@ impl SearchResourcesOutput {
 
 /// A builder for [`SearchResourcesOutput`](crate::operation::search_resources::SearchResourcesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchResourcesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseItem>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl SearchResourcesOutputBuilder {
         self
     }
     /// <p>List of Documents, Folders, Comments, and Document Versions matching the query.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseItem>>) -> Self {
         self.items = input;
         self
     }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for MergeBranchesBySquashOutput {
 }
 impl MergeBranchesBySquashOutput {
     /// Creates a new builder-style object to manufacture [`MergeBranchesBySquashOutput`](crate::operation::merge_branches_by_squash::MergeBranchesBySquashOutput).
-    pub fn builder(
-    ) -> crate::operation::merge_branches_by_squash::builders::MergeBranchesBySquashOutputBuilder
-    {
+    pub fn builder() -> crate::operation::merge_branches_by_squash::builders::MergeBranchesBySquashOutputBuilder {
         crate::operation::merge_branches_by_squash::builders::MergeBranchesBySquashOutputBuilder::default()
     }
 }
 
 /// A builder for [`MergeBranchesBySquashOutput`](crate::operation::merge_branches_by_squash::MergeBranchesBySquashOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MergeBranchesBySquashOutputBuilder {
     pub(crate) commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) tree_id: ::std::option::Option<::std::string::String>,

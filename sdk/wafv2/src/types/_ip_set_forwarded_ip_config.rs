@@ -70,9 +70,7 @@ impl IpSetForwardedIpConfig {
 
 /// A builder for [`IpSetForwardedIpConfig`](crate::types::IpSetForwardedIpConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpSetForwardedIpConfigBuilder {
     pub(crate) header_name: ::std::option::Option<::std::string::String>,
     pub(crate) fallback_behavior: ::std::option::Option<crate::types::FallbackBehavior>,
@@ -119,10 +117,7 @@ impl IpSetForwardedIpConfigBuilder {
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
-    pub fn set_fallback_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::FallbackBehavior>,
-    ) -> Self {
+    pub fn set_fallback_behavior(mut self, input: ::std::option::Option<crate::types::FallbackBehavior>) -> Self {
         self.fallback_behavior = input;
         self
     }
@@ -155,10 +150,7 @@ impl IpSetForwardedIpConfigBuilder {
     /// <li> <p>LAST - Inspect the last IP address in the list of IP addresses in the header.</p> </li>
     /// <li> <p>ANY - Inspect all IP addresses in the header for a match. If the header contains more than 10 IP addresses, WAF inspects the last 10.</p> </li>
     /// </ul>
-    pub fn set_position(
-        mut self,
-        input: ::std::option::Option<crate::types::ForwardedIpPosition>,
-    ) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<crate::types::ForwardedIpPosition>) -> Self {
         self.position = input;
         self
     }

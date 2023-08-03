@@ -10,10 +10,7 @@ impl ListIndexInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_index::ListIndexOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_index::ListIndexError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_index::ListIndexError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_index();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl ListIndexFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_index::ListIndex,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_index::ListIndex, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_index::ListIndexError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl ListIndexFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl ListIndexFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_index::ListIndex,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_index::ListIndex, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_index::ListIndexError>,
     > {
         self.customize_middleware().await
@@ -119,18 +107,12 @@ impl ListIndexFluentBuilder {
         crate::operation::list_index::paginator::ListIndexPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the directory that the index exists in.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The ARN of the directory that the index exists in.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -148,17 +130,12 @@ impl ListIndexFluentBuilder {
         self
     }
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
-    pub fn set_ranges_on_indexed_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>>,
-    ) -> Self {
+    pub fn set_ranges_on_indexed_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>>) -> Self {
         self.inner = self.inner.set_ranges_on_indexed_values(input);
         self
     }
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
-    pub fn get_ranges_on_indexed_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>> {
+    pub fn get_ranges_on_indexed_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>> {
         self.inner.get_ranges_on_indexed_values()
     }
     /// <p>The reference to the index to list.</p>
@@ -167,10 +144,7 @@ impl ListIndexFluentBuilder {
         self
     }
     /// <p>The reference to the index to list.</p>
-    pub fn set_index_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_index_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_index_reference(input);
         self
     }
@@ -212,10 +186,7 @@ impl ListIndexFluentBuilder {
         self
     }
     /// <p>The consistency level to execute the request at.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
+    pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
     }

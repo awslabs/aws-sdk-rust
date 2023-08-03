@@ -29,16 +29,14 @@ impl ListHiTsForQualificationTypeInput {
 }
 impl ListHiTsForQualificationTypeInput {
     /// Creates a new builder-style object to manufacture [`ListHiTsForQualificationTypeInput`](crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeInput).
-    pub fn builder() -> crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeInputBuilder{
+    pub fn builder() -> crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeInputBuilder {
         crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`ListHiTsForQualificationTypeInput`](crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHiTsForQualificationTypeInputBuilder {
     pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListHiTsForQualificationTypeInputBuilder {
 }
 impl ListHiTsForQualificationTypeInputBuilder {
     /// <p> The ID of the Qualification type to use when querying HITs. </p>
-    pub fn qualification_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the Qualification type to use when querying HITs. </p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualification_type_id = input;
         self
     }
@@ -100,15 +92,10 @@ impl ListHiTsForQualificationTypeInputBuilder {
         crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeInput {
-                qualification_type_id: self.qualification_type_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeInput {
+            qualification_type_id: self.qualification_type_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

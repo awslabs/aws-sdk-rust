@@ -25,9 +25,7 @@ impl GitConfigForUpdate {
 
 /// A builder for [`GitConfigForUpdate`](crate::types::GitConfigForUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GitConfigForUpdateBuilder {
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
 }
@@ -51,8 +49,6 @@ impl GitConfigForUpdateBuilder {
     }
     /// Consumes the builder and constructs a [`GitConfigForUpdate`](crate::types::GitConfigForUpdate).
     pub fn build(self) -> crate::types::GitConfigForUpdate {
-        crate::types::GitConfigForUpdate {
-            secret_arn: self.secret_arn,
-        }
+        crate::types::GitConfigForUpdate { secret_arn: self.secret_arn }
     }
 }

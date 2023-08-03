@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteHoursOfOperationOutput {
 }
 impl DeleteHoursOfOperationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHoursOfOperationOutput`](crate::operation::delete_hours_of_operation::DeleteHoursOfOperationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationOutputBuilder {
         crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteHoursOfOperationOutput`](crate::operation::delete_hours_of_operation::DeleteHoursOfOperationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteHoursOfOperationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteHoursOfOperationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteHoursOfOperationOutput`](crate::operation::delete_hours_of_operation::DeleteHoursOfOperationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_hours_of_operation::DeleteHoursOfOperationOutput {
+    pub fn build(self) -> crate::operation::delete_hours_of_operation::DeleteHoursOfOperationOutput {
         crate::operation::delete_hours_of_operation::DeleteHoursOfOperationOutput {
             _request_id: self._request_id,
         }

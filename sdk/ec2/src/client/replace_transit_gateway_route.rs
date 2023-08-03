@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`ReplaceTransitGatewayRouteOutput`](crate::operation::replace_transit_gateway_route::ReplaceTransitGatewayRouteOutput) with field(s):
     ///   - [`route(Option<TransitGatewayRoute>)`](crate::operation::replace_transit_gateway_route::ReplaceTransitGatewayRouteOutput::route): <p>Information about the modified route.</p>
     /// - On failure, responds with [`SdkError<ReplaceTransitGatewayRouteError>`](crate::operation::replace_transit_gateway_route::ReplaceTransitGatewayRouteError)
-    pub fn replace_transit_gateway_route(&self) -> crate::operation::replace_transit_gateway_route::builders::ReplaceTransitGatewayRouteFluentBuilder{
+    pub fn replace_transit_gateway_route(
+        &self,
+    ) -> crate::operation::replace_transit_gateway_route::builders::ReplaceTransitGatewayRouteFluentBuilder {
         crate::operation::replace_transit_gateway_route::builders::ReplaceTransitGatewayRouteFluentBuilder::new(self.handle.clone())
     }
 }

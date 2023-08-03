@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`rule_number(i32)`](crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryFluentBuilder::rule_number) / [`set_rule_number(Option<i32>)`](crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryFluentBuilder::set_rule_number): <p>The rule number of the entry to delete.</p>
     /// - On success, responds with [`DeleteNetworkAclEntryOutput`](crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryOutput)
     /// - On failure, responds with [`SdkError<DeleteNetworkAclEntryError>`](crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryError)
-    pub fn delete_network_acl_entry(
-        &self,
-    ) -> crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryFluentBuilder
-    {
+    pub fn delete_network_acl_entry(&self) -> crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryFluentBuilder {
         crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryFluentBuilder::new(self.handle.clone())
     }
 }

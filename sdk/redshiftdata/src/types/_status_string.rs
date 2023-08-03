@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StatusString {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for StatusString {
             "PICKED" => StatusString::Picked,
             "STARTED" => StatusString::Started,
             "SUBMITTED" => StatusString::Submitted,
-            other => {
-                StatusString::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => StatusString::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -108,15 +100,7 @@ impl StatusString {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ABORTED",
-            "ALL",
-            "FAILED",
-            "FINISHED",
-            "PICKED",
-            "STARTED",
-            "SUBMITTED",
-        ]
+        &["ABORTED", "ALL", "FAILED", "FINISHED", "PICKED", "STARTED", "SUBMITTED"]
     }
 }
 impl ::std::convert::AsRef<str> for StatusString {

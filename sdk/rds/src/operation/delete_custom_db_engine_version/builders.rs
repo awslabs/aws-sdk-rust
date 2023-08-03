@@ -34,7 +34,7 @@ impl DeleteCustomDbEngineVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCustomDBEngineVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDbEngineVersionInputBuilder,
+    inner: crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDbEngineVersionInputBuilder,
 }
 impl DeleteCustomDBEngineVersionFluentBuilder {
     /// Creates a new `DeleteCustomDBEngineVersion`.
@@ -45,7 +45,7 @@ impl DeleteCustomDBEngineVersionFluentBuilder {
         }
     }
     /// Access the DeleteCustomDBEngineVersion as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDbEngineVersionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDbEngineVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +57,7 @@ impl DeleteCustomDBEngineVersionFluentBuilder {
             crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +67,7 @@ impl DeleteCustomDBEngineVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +76,7 @@ impl DeleteCustomDBEngineVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_db_engine_version::DeleteCustomDbEngineVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError>,
     > {
         let op = self
             .inner
@@ -106,9 +99,7 @@ impl DeleteCustomDBEngineVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_db_engine_version::DeleteCustomDbEngineVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +113,7 @@ impl DeleteCustomDBEngineVersionFluentBuilder {
             crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -143,18 +132,12 @@ impl DeleteCustomDBEngineVersionFluentBuilder {
         self.inner.get_engine()
     }
     /// <p>The custom engine version (CEV) for your DB instance. This option is required for RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The custom engine version (CEV) for your DB instance. This option is required for RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }

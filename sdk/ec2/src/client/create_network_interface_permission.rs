@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`CreateNetworkInterfacePermissionOutput`](crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionOutput) with field(s):
     ///   - [`interface_permission(Option<NetworkInterfacePermission>)`](crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionOutput::interface_permission): <p>Information about the permission for the network interface.</p>
     /// - On failure, responds with [`SdkError<CreateNetworkInterfacePermissionError>`](crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionError)
-    pub fn create_network_interface_permission(&self) -> crate::operation::create_network_interface_permission::builders::CreateNetworkInterfacePermissionFluentBuilder{
+    pub fn create_network_interface_permission(
+        &self,
+    ) -> crate::operation::create_network_interface_permission::builders::CreateNetworkInterfacePermissionFluentBuilder {
         crate::operation::create_network_interface_permission::builders::CreateNetworkInterfacePermissionFluentBuilder::new(self.handle.clone())
     }
 }

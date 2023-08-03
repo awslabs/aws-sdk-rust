@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`apps_list(Option<AppsListData>)`](crate::operation::get_apps_list::GetAppsListOutput::apps_list): <p>Information about the specified Firewall Manager applications list.</p>
     ///   - [`apps_list_arn(Option<String>)`](crate::operation::get_apps_list::GetAppsListOutput::apps_list_arn): <p>The Amazon Resource Name (ARN) of the applications list.</p>
     /// - On failure, responds with [`SdkError<GetAppsListError>`](crate::operation::get_apps_list::GetAppsListError)
-    pub fn get_apps_list(
-        &self,
-    ) -> crate::operation::get_apps_list::builders::GetAppsListFluentBuilder {
-        crate::operation::get_apps_list::builders::GetAppsListFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_apps_list(&self) -> crate::operation::get_apps_list::builders::GetAppsListFluentBuilder {
+        crate::operation::get_apps_list::builders::GetAppsListFluentBuilder::new(self.handle.clone())
     }
 }

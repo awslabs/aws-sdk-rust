@@ -29,16 +29,14 @@ impl DescribeGameSessionQueuesInput {
 }
 impl DescribeGameSessionQueuesInput {
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionQueuesInput`](crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput).
-    pub fn builder() -> crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesInputBuilder{
+    pub fn builder() -> crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesInputBuilder {
         crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeGameSessionQueuesInput`](crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGameSessionQueuesInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -57,10 +55,7 @@ impl DescribeGameSessionQueuesInputBuilder {
         self
     }
     /// <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty. </p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -103,12 +98,10 @@ impl DescribeGameSessionQueuesInputBuilder {
         crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput {
-                names: self.names,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput {
+            names: self.names,
+            limit: self.limit,
+            next_token: self.next_token,
+        })
     }
 }

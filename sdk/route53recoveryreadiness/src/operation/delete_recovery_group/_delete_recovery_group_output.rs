@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteRecoveryGroupOutput {
 }
 impl DeleteRecoveryGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRecoveryGroupOutput`](crate::operation::delete_recovery_group::DeleteRecoveryGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupOutputBuilder {
-        crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupOutputBuilder {
+        crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRecoveryGroupOutput`](crate::operation::delete_recovery_group::DeleteRecoveryGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRecoveryGroupOutputBuilder {
     _request_id: Option<String>,
 }

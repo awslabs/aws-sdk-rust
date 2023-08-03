@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteDbInstanceOutput`](crate::operation::delete_db_instance::DeleteDbInstanceOutput) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::operation::delete_db_instance::DeleteDbInstanceOutput::db_instance): <p>Detailed information about an instance. </p>
     /// - On failure, responds with [`SdkError<DeleteDBInstanceError>`](crate::operation::delete_db_instance::DeleteDBInstanceError)
-    pub fn delete_db_instance(
-        &self,
-    ) -> crate::operation::delete_db_instance::builders::DeleteDBInstanceFluentBuilder {
-        crate::operation::delete_db_instance::builders::DeleteDBInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_db_instance(&self) -> crate::operation::delete_db_instance::builders::DeleteDBInstanceFluentBuilder {
+        crate::operation::delete_db_instance::builders::DeleteDBInstanceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -104,9 +104,7 @@ impl WorkflowStep {
 
 /// A builder for [`WorkflowStep`](crate::types::WorkflowStep).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowStepBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::WorkflowStepType>,
     pub(crate) copy_step_details: ::std::option::Option<crate::types::CopyStepDetails>,
@@ -136,10 +134,7 @@ impl WorkflowStepBuilder {
     /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
     /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowStepType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::WorkflowStepType>) -> Self {
         self.r#type = input;
         self
     }
@@ -172,10 +167,7 @@ impl WorkflowStepBuilder {
     /// <li> <p>An Amazon S3 location for the destination of the file copy.</p> </li>
     /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
     /// </ul>
-    pub fn set_copy_step_details(
-        mut self,
-        input: ::std::option::Option<crate::types::CopyStepDetails>,
-    ) -> Self {
+    pub fn set_copy_step_details(mut self, input: ::std::option::Option<crate::types::CopyStepDetails>) -> Self {
         self.copy_step_details = input;
         self
     }
@@ -197,18 +189,13 @@ impl WorkflowStepBuilder {
     }
     /// <p>Details for a step that invokes an Lambda function.</p>
     /// <p>Consists of the Lambda function's name, target, and timeout (in seconds). </p>
-    pub fn set_custom_step_details(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomStepDetails>,
-    ) -> Self {
+    pub fn set_custom_step_details(mut self, input: ::std::option::Option<crate::types::CustomStepDetails>) -> Self {
         self.custom_step_details = input;
         self
     }
     /// <p>Details for a step that invokes an Lambda function.</p>
     /// <p>Consists of the Lambda function's name, target, and timeout (in seconds). </p>
-    pub fn get_custom_step_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomStepDetails> {
+    pub fn get_custom_step_details(&self) -> &::std::option::Option<crate::types::CustomStepDetails> {
         &self.custom_step_details
     }
     /// <p>Details for a step that deletes the file.</p>
@@ -217,17 +204,12 @@ impl WorkflowStepBuilder {
         self
     }
     /// <p>Details for a step that deletes the file.</p>
-    pub fn set_delete_step_details(
-        mut self,
-        input: ::std::option::Option<crate::types::DeleteStepDetails>,
-    ) -> Self {
+    pub fn set_delete_step_details(mut self, input: ::std::option::Option<crate::types::DeleteStepDetails>) -> Self {
         self.delete_step_details = input;
         self
     }
     /// <p>Details for a step that deletes the file.</p>
-    pub fn get_delete_step_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeleteStepDetails> {
+    pub fn get_delete_step_details(&self) -> &::std::option::Option<crate::types::DeleteStepDetails> {
         &self.delete_step_details
     }
     /// <p>Details for a step that creates one or more tags.</p>
@@ -238,10 +220,7 @@ impl WorkflowStepBuilder {
     }
     /// <p>Details for a step that creates one or more tags.</p>
     /// <p>You specify one or more tags. Each tag contains a key-value pair.</p>
-    pub fn set_tag_step_details(
-        mut self,
-        input: ::std::option::Option<crate::types::TagStepDetails>,
-    ) -> Self {
+    pub fn set_tag_step_details(mut self, input: ::std::option::Option<crate::types::TagStepDetails>) -> Self {
         self.tag_step_details = input;
         self
     }
@@ -272,10 +251,7 @@ impl WorkflowStepBuilder {
     /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
     /// <li> <p>The type of encryption that's used. Currently, only PGP encryption is supported.</p> </li>
     /// </ul>
-    pub fn set_decrypt_step_details(
-        mut self,
-        input: ::std::option::Option<crate::types::DecryptStepDetails>,
-    ) -> Self {
+    pub fn set_decrypt_step_details(mut self, input: ::std::option::Option<crate::types::DecryptStepDetails>) -> Self {
         self.decrypt_step_details = input;
         self
     }
@@ -288,9 +264,7 @@ impl WorkflowStepBuilder {
     /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
     /// <li> <p>The type of encryption that's used. Currently, only PGP encryption is supported.</p> </li>
     /// </ul>
-    pub fn get_decrypt_step_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::DecryptStepDetails> {
+    pub fn get_decrypt_step_details(&self) -> &::std::option::Option<crate::types::DecryptStepDetails> {
         &self.decrypt_step_details
     }
     /// Consumes the builder and constructs a [`WorkflowStep`](crate::types::WorkflowStep).

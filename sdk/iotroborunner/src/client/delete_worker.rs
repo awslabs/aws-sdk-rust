@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::set_id): Full ARN of the worker.
     /// - On success, responds with [`DeleteWorkerOutput`](crate::operation::delete_worker::DeleteWorkerOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkerError>`](crate::operation::delete_worker::DeleteWorkerError)
-    pub fn delete_worker(
-        &self,
-    ) -> crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder {
-        crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_worker(&self) -> crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder {
+        crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl CreateAccessPointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_access_point::CreateAccessPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_point::CreateAccessPointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_point::CreateAccessPointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_access_point();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl CreateAccessPointFluentBuilder {
         }
     }
     /// Access the CreateAccessPoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_access_point::builders::CreateAccessPointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_access_point::builders::CreateAccessPointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl CreateAccessPointFluentBuilder {
             crate::operation::create_access_point::CreateAccessPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_point::CreateAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_point::CreateAccessPointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl CreateAccessPointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl CreateAccessPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_access_point::CreateAccessPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_point::CreateAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_point::CreateAccessPointError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl CreateAccessPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_access_point::CreateAccessPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_point::CreateAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_point::CreateAccessPointError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +106,7 @@ impl CreateAccessPointFluentBuilder {
             crate::operation::create_access_point::CreateAccessPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_access_point::CreateAccessPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_access_point::CreateAccessPointError>,
     > {
         self.customize_middleware().await
     }
@@ -150,10 +134,7 @@ impl CreateAccessPointFluentBuilder {
         self
     }
     /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -162,18 +143,12 @@ impl CreateAccessPointFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The ID of the EFS file system that the access point provides access to.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>The ID of the EFS file system that the access point provides access to.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
@@ -203,10 +178,7 @@ impl CreateAccessPointFluentBuilder {
     }
     /// <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you must provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>
     /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
-    pub fn set_root_directory(
-        mut self,
-        input: ::std::option::Option<crate::types::RootDirectory>,
-    ) -> Self {
+    pub fn set_root_directory(mut self, input: ::std::option::Option<crate::types::RootDirectory>) -> Self {
         self.inner = self.inner.set_root_directory(input);
         self
     }

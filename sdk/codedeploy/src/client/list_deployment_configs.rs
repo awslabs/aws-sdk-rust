@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`deployment_configs_list(Option<Vec<String>>)`](crate::operation::list_deployment_configs::ListDeploymentConfigsOutput::deployment_configs_list): <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_deployment_configs::ListDeploymentConfigsOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
     /// - On failure, responds with [`SdkError<ListDeploymentConfigsError>`](crate::operation::list_deployment_configs::ListDeploymentConfigsError)
-    pub fn list_deployment_configs(
-        &self,
-    ) -> crate::operation::list_deployment_configs::builders::ListDeploymentConfigsFluentBuilder
-    {
-        crate::operation::list_deployment_configs::builders::ListDeploymentConfigsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_deployment_configs(&self) -> crate::operation::list_deployment_configs::builders::ListDeploymentConfigsFluentBuilder {
+        crate::operation::list_deployment_configs::builders::ListDeploymentConfigsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl DescribeDashboardPermissionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDashboardPermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_dashboard_permissions::builders::DescribeDashboardPermissionsInputBuilder,
+    inner: crate::operation::describe_dashboard_permissions::builders::DescribeDashboardPermissionsInputBuilder,
 }
 impl DescribeDashboardPermissionsFluentBuilder {
     /// Creates a new `DescribeDashboardPermissions`.
@@ -37,7 +37,7 @@ impl DescribeDashboardPermissionsFluentBuilder {
         }
     }
     /// Access the DescribeDashboardPermissions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_dashboard_permissions::builders::DescribeDashboardPermissionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_dashboard_permissions::builders::DescribeDashboardPermissionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDashboardPermissionsFluentBuilder {
             crate::operation::describe_dashboard_permissions::DescribeDashboardPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDashboardPermissionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDashboardPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDashboardPermissionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeDashboardPermissionsFluentBuilder {
             crate::operation::describe_dashboard_permissions::DescribeDashboardPermissions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`unprocessed_type_configurations(Option<Vec<TypeConfigurationIdentifier>>)`](crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput::unprocessed_type_configurations): <p>A list of any of the specified extension configurations that CloudFormation could not process for any reason.</p>
     ///   - [`type_configurations(Option<Vec<TypeConfigurationDetails>>)`](crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput::type_configurations): <p>A list of any of the specified extension configurations from the CloudFormation registry.</p>
     /// - On failure, responds with [`SdkError<BatchDescribeTypeConfigurationsError>`](crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError)
-    pub fn batch_describe_type_configurations(&self) -> crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsFluentBuilder{
+    pub fn batch_describe_type_configurations(
+        &self,
+    ) -> crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsFluentBuilder {
         crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

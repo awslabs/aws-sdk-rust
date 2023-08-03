@@ -48,9 +48,7 @@ impl MaintenanceWindowTarget {
         self.window_target_id.as_deref()
     }
     /// <p>The type of target that is being registered with the maintenance window.</p>
-    pub fn resource_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MaintenanceWindowResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The targets, either managed nodes or tags.</p>
@@ -130,18 +128,12 @@ impl MaintenanceWindowTargetBuilder {
         &self.window_id
     }
     /// <p>The ID of the target.</p>
-    pub fn window_target_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn window_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_target_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the target.</p>
-    pub fn set_window_target_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_window_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_target_id = input;
         self
     }
@@ -155,17 +147,12 @@ impl MaintenanceWindowTargetBuilder {
         self
     }
     /// <p>The type of target that is being registered with the maintenance window.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceWindowResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The type of target that is being registered with the maintenance window.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceWindowResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::MaintenanceWindowResourceType> {
         &self.resource_type
     }
     /// Appends an item to `targets`.
@@ -204,10 +191,7 @@ impl MaintenanceWindowTargetBuilder {
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
@@ -228,18 +212,12 @@ impl MaintenanceWindowTargetBuilder {
         &self.targets
     }
     /// <p>A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running tasks for these targets in this maintenance window.</p>
-    pub fn owner_information(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_information(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_information = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running tasks for these targets in this maintenance window.</p>
-    pub fn set_owner_information(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_information = input;
         self
     }

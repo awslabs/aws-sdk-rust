@@ -10,10 +10,7 @@ impl ModifyClusterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster::ModifyClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_cluster::ModifyClusterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_cluster::ModifyClusterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.modify_cluster();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ModifyClusterFluentBuilder {
         }
     }
     /// Access the ModifyCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_cluster::builders::ModifyClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::modify_cluster::builders::ModifyClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ModifyClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

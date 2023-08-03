@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateGlobalSettingsOutput {
 }
 impl UpdateGlobalSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGlobalSettingsOutput`](crate::operation::update_global_settings::UpdateGlobalSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_global_settings::builders::UpdateGlobalSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::update_global_settings::builders::UpdateGlobalSettingsOutputBuilder {
         crate::operation::update_global_settings::builders::UpdateGlobalSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGlobalSettingsOutput`](crate::operation::update_global_settings::UpdateGlobalSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGlobalSettingsOutputBuilder {
     _request_id: Option<String>,
 }

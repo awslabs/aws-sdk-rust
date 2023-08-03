@@ -10,10 +10,7 @@ impl CreatePullRequestInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_pull_request::CreatePullRequestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pull_request::CreatePullRequestError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pull_request::CreatePullRequestError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_pull_request();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreatePullRequestFluentBuilder {
         }
     }
     /// Access the CreatePullRequest as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_pull_request::builders::CreatePullRequestInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_pull_request::builders::CreatePullRequestInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreatePullRequestFluentBuilder {
             crate::operation::create_pull_request::CreatePullRequest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pull_request::CreatePullRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pull_request::CreatePullRequestError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreatePullRequestFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreatePullRequestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_pull_request::CreatePullRequestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pull_request::CreatePullRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pull_request::CreatePullRequestError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreatePullRequestFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_pull_request::CreatePullRequestOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pull_request::CreatePullRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pull_request::CreatePullRequestError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreatePullRequestFluentBuilder {
             crate::operation::create_pull_request::CreatePullRequest,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_pull_request::CreatePullRequestError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pull_request::CreatePullRequestError>,
     > {
         self.customize_middleware().await
     }
@@ -160,10 +144,7 @@ impl CreatePullRequestFluentBuilder {
         self
     }
     /// <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
@@ -174,20 +155,14 @@ impl CreatePullRequestFluentBuilder {
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
     /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
     /// </note>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
     /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
     /// </note>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

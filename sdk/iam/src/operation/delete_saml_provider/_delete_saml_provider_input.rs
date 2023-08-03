@@ -15,34 +15,25 @@ impl DeleteSamlProviderInput {
 }
 impl DeleteSamlProviderInput {
     /// Creates a new builder-style object to manufacture [`DeleteSamlProviderInput`](crate::operation::delete_saml_provider::DeleteSamlProviderInput).
-    pub fn builder(
-    ) -> crate::operation::delete_saml_provider::builders::DeleteSamlProviderInputBuilder {
+    pub fn builder() -> crate::operation::delete_saml_provider::builders::DeleteSamlProviderInputBuilder {
         crate::operation::delete_saml_provider::builders::DeleteSamlProviderInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSamlProviderInput`](crate::operation::delete_saml_provider::DeleteSamlProviderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSamlProviderInputBuilder {
     pub(crate) saml_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSamlProviderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-    pub fn saml_provider_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn saml_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.saml_provider_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-    pub fn set_saml_provider_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_saml_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.saml_provider_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl DeleteSamlProviderInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSamlProviderInput`](crate::operation::delete_saml_provider::DeleteSamlProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_saml_provider::DeleteSamlProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_saml_provider::DeleteSamlProviderInput {
-                saml_provider_arn: self.saml_provider_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_saml_provider::DeleteSamlProviderInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_saml_provider::DeleteSamlProviderInput {
+            saml_provider_arn: self.saml_provider_arn,
+        })
     }
 }

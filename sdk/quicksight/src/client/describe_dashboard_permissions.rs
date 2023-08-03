@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`link_sharing_configuration(Option<LinkSharingConfiguration>)`](crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput::link_sharing_configuration): <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
     /// - On failure, responds with [`SdkError<DescribeDashboardPermissionsError>`](crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsError)
-    pub fn describe_dashboard_permissions(&self) -> crate::operation::describe_dashboard_permissions::builders::DescribeDashboardPermissionsFluentBuilder{
+    pub fn describe_dashboard_permissions(
+        &self,
+    ) -> crate::operation::describe_dashboard_permissions::builders::DescribeDashboardPermissionsFluentBuilder {
         crate::operation::describe_dashboard_permissions::builders::DescribeDashboardPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteSmsChannelOutput {
 }
 impl DeleteSmsChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSmsChannelOutput`](crate::operation::delete_sms_channel::DeleteSmsChannelOutput).
-    pub fn builder() -> crate::operation::delete_sms_channel::builders::DeleteSmsChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_sms_channel::builders::DeleteSmsChannelOutputBuilder {
         crate::operation::delete_sms_channel::builders::DeleteSmsChannelOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSmsChannelOutput`](crate::operation::delete_sms_channel::DeleteSmsChannelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSmsChannelOutputBuilder {
     pub(crate) sms_channel_response: ::std::option::Option<crate::types::SmsChannelResponse>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl DeleteSmsChannelOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
-    pub fn set_sms_channel_response(
-        mut self,
-        input: ::std::option::Option<crate::types::SmsChannelResponse>,
-    ) -> Self {
+    pub fn set_sms_channel_response(mut self, input: ::std::option::Option<crate::types::SmsChannelResponse>) -> Self {
         self.sms_channel_response = input;
         self
     }
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
-    pub fn get_sms_channel_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::SmsChannelResponse> {
+    pub fn get_sms_channel_response(&self) -> &::std::option::Option<crate::types::SmsChannelResponse> {
         &self.sms_channel_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

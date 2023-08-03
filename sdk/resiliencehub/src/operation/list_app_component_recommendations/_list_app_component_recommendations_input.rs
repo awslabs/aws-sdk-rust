@@ -29,16 +29,14 @@ impl ListAppComponentRecommendationsInput {
 }
 impl ListAppComponentRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`ListAppComponentRecommendationsInput`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsInput).
-    pub fn builder() -> crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsInputBuilder{
+    pub fn builder() -> crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsInputBuilder {
         crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppComponentRecommendationsInput`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppComponentRecommendationsInputBuilder {
     pub(crate) assessment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListAppComponentRecommendationsInputBuilder {
 }
 impl ListAppComponentRecommendationsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn assessment_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn set_assessment_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_arn = input;
         self
     }
@@ -102,13 +94,10 @@ impl ListAppComponentRecommendationsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsInput {
-                assessment_arn: self.assessment_arn
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                assessment_arn: self.assessment_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

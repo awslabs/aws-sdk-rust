@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateRulesetOutput`](crate::operation::create_ruleset::CreateRulesetOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::create_ruleset::CreateRulesetOutput::name): <p>The unique name of the created ruleset.</p>
     /// - On failure, responds with [`SdkError<CreateRulesetError>`](crate::operation::create_ruleset::CreateRulesetError)
-    pub fn create_ruleset(
-        &self,
-    ) -> crate::operation::create_ruleset::builders::CreateRulesetFluentBuilder {
-        crate::operation::create_ruleset::builders::CreateRulesetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_ruleset(&self) -> crate::operation::create_ruleset::builders::CreateRulesetFluentBuilder {
+        crate::operation::create_ruleset::builders::CreateRulesetFluentBuilder::new(self.handle.clone())
     }
 }

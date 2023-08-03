@@ -38,9 +38,7 @@ impl AssignTapePoolInput {
 
 /// A builder for [`AssignTapePoolInput`](crate::operation::assign_tape_pool::AssignTapePoolInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssignTapePoolInputBuilder {
     pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
@@ -95,10 +93,7 @@ impl AssignTapePoolInputBuilder {
     /// Consumes the builder and constructs a [`AssignTapePoolInput`](crate::operation::assign_tape_pool::AssignTapePoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::assign_tape_pool::AssignTapePoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::assign_tape_pool::AssignTapePoolInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::assign_tape_pool::AssignTapePoolInput {
             tape_arn: self.tape_arn,
             pool_id: self.pool_id,

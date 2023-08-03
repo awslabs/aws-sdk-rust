@@ -10,10 +10,7 @@ impl UpdateVodSourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_vod_source::UpdateVodSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vod_source::UpdateVodSourceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vod_source::UpdateVodSourceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_vod_source();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateVodSourceFluentBuilder {
         }
     }
     /// Access the UpdateVodSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_vod_source::builders::UpdateVodSourceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_vod_source::builders::UpdateVodSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateVodSourceFluentBuilder {
             crate::operation::update_vod_source::UpdateVodSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vod_source::UpdateVodSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vod_source::UpdateVodSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateVodSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateVodSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_vod_source::UpdateVodSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vod_source::UpdateVodSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vod_source::UpdateVodSourceError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateVodSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_vod_source::UpdateVodSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vod_source::UpdateVodSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vod_source::UpdateVodSourceError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateVodSourceFluentBuilder {
             crate::operation::update_vod_source::UpdateVodSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_vod_source::UpdateVodSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_vod_source::UpdateVodSourceError>,
     > {
         self.customize_middleware().await
     }
@@ -127,40 +111,26 @@ impl UpdateVodSourceFluentBuilder {
     /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
     ///
     /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
-    pub fn http_package_configurations(
-        mut self,
-        input: crate::types::HttpPackageConfiguration,
-    ) -> Self {
+    pub fn http_package_configurations(mut self, input: crate::types::HttpPackageConfiguration) -> Self {
         self.inner = self.inner.http_package_configurations(input);
         self
     }
     /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
-    pub fn set_http_package_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
-    ) -> Self {
+    pub fn set_http_package_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>) -> Self {
         self.inner = self.inner.set_http_package_configurations(input);
         self
     }
     /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
-    pub fn get_http_package_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>> {
+    pub fn get_http_package_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>> {
         self.inner.get_http_package_configurations()
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn source_location_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_location_name(input.into());
         self
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
     }
@@ -169,18 +139,12 @@ impl UpdateVodSourceFluentBuilder {
         self.inner.get_source_location_name()
     }
     /// <p>The name of the VOD source.</p>
-    pub fn vod_source_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vod_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vod_source_name(input.into());
         self
     }
     /// <p>The name of the VOD source.</p>
-    pub fn set_vod_source_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vod_source_name(input);
         self
     }

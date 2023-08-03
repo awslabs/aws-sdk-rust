@@ -10,10 +10,7 @@ impl DisassociateSubnetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_subnets::DisassociateSubnetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_subnets::DisassociateSubnetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_subnets::DisassociateSubnetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disassociate_subnets();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DisassociateSubnetsFluentBuilder {
         }
     }
     /// Access the DisassociateSubnets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_subnets::builders::DisassociateSubnetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disassociate_subnets::builders::DisassociateSubnetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DisassociateSubnetsFluentBuilder {
             crate::operation::disassociate_subnets::DisassociateSubnets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_subnets::DisassociateSubnetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_subnets::DisassociateSubnetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DisassociateSubnetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DisassociateSubnetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_subnets::DisassociateSubnetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_subnets::DisassociateSubnetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_subnets::DisassociateSubnetsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DisassociateSubnetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_subnets::DisassociateSubnetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_subnets::DisassociateSubnetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_subnets::DisassociateSubnetsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DisassociateSubnetsFluentBuilder {
             crate::operation::disassociate_subnets::DisassociateSubnets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_subnets::DisassociateSubnetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_subnets::DisassociateSubnetsError>,
     > {
         self.customize_middleware().await
     }
@@ -161,19 +145,13 @@ impl DisassociateSubnetsFluentBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_name(input);
         self
     }
@@ -192,10 +170,7 @@ impl DisassociateSubnetsFluentBuilder {
         self
     }
     /// <p>The unique identifiers for the subnets that you want to disassociate. </p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }

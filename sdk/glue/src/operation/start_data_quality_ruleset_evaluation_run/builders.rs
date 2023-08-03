@@ -5,16 +5,16 @@ pub use crate::operation::start_data_quality_ruleset_evaluation_run::_start_data
 
 impl StartDataQualityRulesetEvaluationRunInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.start_data_quality_ruleset_evaluation_run();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDataQualityRulesetEvaluationRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunInputBuilder,
+    inner: crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunInputBuilder,
 }
 impl StartDataQualityRulesetEvaluationRunFluentBuilder {
     /// Creates a new `StartDataQualityRulesetEvaluationRun`.
@@ -37,15 +37,22 @@ impl StartDataQualityRulesetEvaluationRunFluentBuilder {
         }
     }
     /// Access the StartDataQualityRulesetEvaluationRun as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_data_quality_ruleset_evaluation_run::builders::StartDataQualityRulesetEvaluationRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRun, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRun,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +61,17 @@ impl StartDataQualityRulesetEvaluationRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +89,26 @@ impl StartDataQualityRulesetEvaluationRunFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRun, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRun,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The data source (Glue table) associated with this run.</p>
@@ -100,10 +117,7 @@ impl StartDataQualityRulesetEvaluationRunFluentBuilder {
         self
     }
     /// <p>The data source (Glue table) associated with this run.</p>
-    pub fn set_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSource>,
-    ) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
         self.inner = self.inner.set_data_source(input);
         self
     }
@@ -168,25 +182,17 @@ impl StartDataQualityRulesetEvaluationRunFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
-    pub fn additional_run_options(
-        mut self,
-        input: crate::types::DataQualityEvaluationRunAdditionalRunOptions,
-    ) -> Self {
+    pub fn additional_run_options(mut self, input: crate::types::DataQualityEvaluationRunAdditionalRunOptions) -> Self {
         self.inner = self.inner.additional_run_options(input);
         self
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
-    pub fn set_additional_run_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
-    ) -> Self {
+    pub fn set_additional_run_options(mut self, input: ::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>) -> Self {
         self.inner = self.inner.set_additional_run_options(input);
         self
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
-    pub fn get_additional_run_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions> {
+    pub fn get_additional_run_options(&self) -> &::std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions> {
         self.inner.get_additional_run_options()
     }
     /// Appends an item to `RulesetNames`.
@@ -194,25 +200,17 @@ impl StartDataQualityRulesetEvaluationRunFluentBuilder {
     /// To override the contents of this collection use [`set_ruleset_names`](Self::set_ruleset_names).
     ///
     /// <p>A list of ruleset names.</p>
-    pub fn ruleset_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ruleset_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ruleset_names(input.into());
         self
     }
     /// <p>A list of ruleset names.</p>
-    pub fn set_ruleset_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ruleset_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ruleset_names(input);
         self
     }
     /// <p>A list of ruleset names.</p>
-    pub fn get_ruleset_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ruleset_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ruleset_names()
     }
     /// Adds a key-value pair to `AdditionalDataSources`.
@@ -220,20 +218,14 @@ impl StartDataQualityRulesetEvaluationRunFluentBuilder {
     /// To override the contents of this collection use [`set_additional_data_sources`](Self::set_additional_data_sources).
     ///
     /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
-    pub fn additional_data_sources(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::DataSource,
-    ) -> Self {
+    pub fn additional_data_sources(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::DataSource) -> Self {
         self.inner = self.inner.additional_data_sources(k.into(), v);
         self
     }
     /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
     pub fn set_additional_data_sources(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DataSource>>,
     ) -> Self {
         self.inner = self.inner.set_additional_data_sources(input);
         self
@@ -241,9 +233,7 @@ impl StartDataQualityRulesetEvaluationRunFluentBuilder {
     /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
     pub fn get_additional_data_sources(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::DataSource>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DataSource>> {
         self.inner.get_additional_data_sources()
     }
 }

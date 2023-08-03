@@ -29,9 +29,7 @@ impl DescribeDatasetOutput {
 
 /// A builder for [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatasetOutputBuilder {
     pub(crate) dataset: ::std::option::Option<crate::types::Dataset>,
     _request_id: Option<String>,

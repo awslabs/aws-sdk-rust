@@ -41,13 +41,7 @@
 /// Choose how the service meters the loudness of your audio.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Eac3AtmosMeteringMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for Eac3AtmosMeteringMode {
             "ITU_BS_1770_3" => Eac3AtmosMeteringMode::ItuBs17703,
             "ITU_BS_1770_4" => Eac3AtmosMeteringMode::ItuBs17704,
             "LEQ_A" => Eac3AtmosMeteringMode::LeqA,
-            other => Eac3AtmosMeteringMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Eac3AtmosMeteringMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl Eac3AtmosMeteringMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ITU_BS_1770_1",
-            "ITU_BS_1770_2",
-            "ITU_BS_1770_3",
-            "ITU_BS_1770_4",
-            "LEQ_A",
-        ]
+        &["ITU_BS_1770_1", "ITU_BS_1770_2", "ITU_BS_1770_3", "ITU_BS_1770_4", "LEQ_A"]
     }
 }
 impl ::std::convert::AsRef<str> for Eac3AtmosMeteringMode {

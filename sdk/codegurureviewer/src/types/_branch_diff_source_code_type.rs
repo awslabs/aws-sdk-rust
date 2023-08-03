@@ -30,27 +30,19 @@ impl BranchDiffSourceCodeType {
 
 /// A builder for [`BranchDiffSourceCodeType`](crate::types::BranchDiffSourceCodeType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BranchDiffSourceCodeTypeBuilder {
     pub(crate) source_branch_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_branch_name: ::std::option::Option<::std::string::String>,
 }
 impl BranchDiffSourceCodeTypeBuilder {
     /// <p>The source branch for a diff in an associated repository.</p>
-    pub fn source_branch_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_branch_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source branch for a diff in an associated repository.</p>
-    pub fn set_source_branch_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_branch_name = input;
         self
     }
@@ -59,18 +51,12 @@ impl BranchDiffSourceCodeTypeBuilder {
         &self.source_branch_name
     }
     /// <p>The destination branch for a diff in an associated repository.</p>
-    pub fn destination_branch_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_branch_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination branch for a diff in an associated repository.</p>
-    pub fn set_destination_branch_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_branch_name = input;
         self
     }

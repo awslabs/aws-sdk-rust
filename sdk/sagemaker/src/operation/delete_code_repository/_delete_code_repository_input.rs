@@ -15,34 +15,25 @@ impl DeleteCodeRepositoryInput {
 }
 impl DeleteCodeRepositoryInput {
     /// Creates a new builder-style object to manufacture [`DeleteCodeRepositoryInput`](crate::operation::delete_code_repository::DeleteCodeRepositoryInput).
-    pub fn builder(
-    ) -> crate::operation::delete_code_repository::builders::DeleteCodeRepositoryInputBuilder {
+    pub fn builder() -> crate::operation::delete_code_repository::builders::DeleteCodeRepositoryInputBuilder {
         crate::operation::delete_code_repository::builders::DeleteCodeRepositoryInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCodeRepositoryInput`](crate::operation::delete_code_repository::DeleteCodeRepositoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCodeRepositoryInputBuilder {
     pub(crate) code_repository_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCodeRepositoryInputBuilder {
     /// <p>The name of the Git repository to delete.</p>
-    pub fn code_repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn code_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Git repository to delete.</p>
-    pub fn set_code_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_code_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_repository_name = input;
         self
     }
@@ -53,14 +44,10 @@ impl DeleteCodeRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCodeRepositoryInput`](crate::operation::delete_code_repository::DeleteCodeRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_code_repository::DeleteCodeRepositoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_code_repository::DeleteCodeRepositoryInput {
-                code_repository_name: self.code_repository_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_code_repository::DeleteCodeRepositoryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_code_repository::DeleteCodeRepositoryInput {
+            code_repository_name: self.code_repository_name,
+        })
     }
 }

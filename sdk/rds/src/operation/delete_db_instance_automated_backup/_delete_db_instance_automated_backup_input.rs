@@ -25,34 +25,26 @@ impl DeleteDbInstanceAutomatedBackupInput {
 }
 impl DeleteDbInstanceAutomatedBackupInput {
     /// Creates a new builder-style object to manufacture [`DeleteDbInstanceAutomatedBackupInput`](crate::operation::delete_db_instance_automated_backup::DeleteDbInstanceAutomatedBackupInput).
-    pub fn builder() -> crate::operation::delete_db_instance_automated_backup::builders::DeleteDbInstanceAutomatedBackupInputBuilder{
+    pub fn builder() -> crate::operation::delete_db_instance_automated_backup::builders::DeleteDbInstanceAutomatedBackupInputBuilder {
         crate::operation::delete_db_instance_automated_backup::builders::DeleteDbInstanceAutomatedBackupInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDbInstanceAutomatedBackupInput`](crate::operation::delete_db_instance_automated_backup::DeleteDbInstanceAutomatedBackupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDbInstanceAutomatedBackupInputBuilder {
     pub(crate) dbi_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_automated_backups_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbInstanceAutomatedBackupInputBuilder {
     /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
-    pub fn dbi_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dbi_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dbi_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
-    pub fn set_dbi_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dbi_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dbi_resource_id = input;
         self
     }
@@ -62,27 +54,19 @@ impl DeleteDbInstanceAutomatedBackupInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the automated backups to delete, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn db_instance_automated_backups_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_instance_automated_backups_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_automated_backups_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the automated backups to delete, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn set_db_instance_automated_backups_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_instance_automated_backups_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_automated_backups_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the automated backups to delete, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn get_db_instance_automated_backups_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_instance_automated_backups_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_automated_backups_arn
     }
     /// Consumes the builder and constructs a [`DeleteDbInstanceAutomatedBackupInput`](crate::operation::delete_db_instance_automated_backup::DeleteDbInstanceAutomatedBackupInput).
@@ -94,11 +78,9 @@ impl DeleteDbInstanceAutomatedBackupInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_db_instance_automated_backup::DeleteDbInstanceAutomatedBackupInput {
-                dbi_resource_id: self.dbi_resource_id
-                ,
-                db_instance_automated_backups_arn: self.db_instance_automated_backups_arn
-                ,
-            }
+                dbi_resource_id: self.dbi_resource_id,
+                db_instance_automated_backups_arn: self.db_instance_automated_backups_arn,
+            },
         )
     }
 }

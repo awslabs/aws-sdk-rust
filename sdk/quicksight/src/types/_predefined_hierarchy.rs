@@ -37,14 +37,11 @@ impl PredefinedHierarchy {
 
 /// A builder for [`PredefinedHierarchy`](crate::types::PredefinedHierarchy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredefinedHierarchyBuilder {
     pub(crate) hierarchy_id: ::std::option::Option<::std::string::String>,
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,
-    pub(crate) drill_down_filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>>,
+    pub(crate) drill_down_filters: ::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>>,
 }
 impl PredefinedHierarchyBuilder {
     /// <p>The hierarchy ID of the predefined hierarchy.</p>
@@ -73,17 +70,12 @@ impl PredefinedHierarchyBuilder {
         self
     }
     /// <p>The list of columns that define the predefined hierarchy.</p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,
-    ) -> Self {
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>) -> Self {
         self.columns = input;
         self
     }
     /// <p>The list of columns that define the predefined hierarchy.</p>
-    pub fn get_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>> {
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>> {
         &self.columns
     }
     /// Appends an item to `drill_down_filters`.
@@ -98,17 +90,12 @@ impl PredefinedHierarchyBuilder {
         self
     }
     /// <p>The option that determines the drill down filters for the predefined hierarchy.</p>
-    pub fn set_drill_down_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>>,
-    ) -> Self {
+    pub fn set_drill_down_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>>) -> Self {
         self.drill_down_filters = input;
         self
     }
     /// <p>The option that determines the drill down filters for the predefined hierarchy.</p>
-    pub fn get_drill_down_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>> {
+    pub fn get_drill_down_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>> {
         &self.drill_down_filters
     }
     /// Consumes the builder and constructs a [`PredefinedHierarchy`](crate::types::PredefinedHierarchy).

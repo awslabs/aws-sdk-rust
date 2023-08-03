@@ -5,16 +5,16 @@ pub use crate::operation::create_outbound_cross_cluster_search_connection::_crea
 
 impl CreateOutboundCrossClusterSearchConnectionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_outbound_cross_cluster_search_connection();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl CreateOutboundCrossClusterSearchConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateOutboundCrossClusterSearchConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_outbound_cross_cluster_search_connection::builders::CreateOutboundCrossClusterSearchConnectionInputBuilder,
+    inner: crate::operation::create_outbound_cross_cluster_search_connection::builders::CreateOutboundCrossClusterSearchConnectionInputBuilder,
 }
 impl CreateOutboundCrossClusterSearchConnectionFluentBuilder {
     /// Creates a new `CreateOutboundCrossClusterSearchConnection`.
@@ -37,15 +37,24 @@ impl CreateOutboundCrossClusterSearchConnectionFluentBuilder {
         }
     }
     /// Access the CreateOutboundCrossClusterSearchConnection as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_outbound_cross_cluster_search_connection::builders::CreateOutboundCrossClusterSearchConnectionInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_outbound_cross_cluster_search_connection::builders::CreateOutboundCrossClusterSearchConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnection, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnection,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl CreateOutboundCrossClusterSearchConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +93,30 @@ impl CreateOutboundCrossClusterSearchConnectionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnection, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnection,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
@@ -100,17 +125,12 @@ impl CreateOutboundCrossClusterSearchConnectionFluentBuilder {
         self
     }
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
-    pub fn set_source_domain_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainInformation>,
-    ) -> Self {
+    pub fn set_source_domain_info(mut self, input: ::std::option::Option<crate::types::DomainInformation>) -> Self {
         self.inner = self.inner.set_source_domain_info(input);
         self
     }
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
-    pub fn get_source_domain_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainInformation> {
+    pub fn get_source_domain_info(&self) -> &::std::option::Option<crate::types::DomainInformation> {
         self.inner.get_source_domain_info()
     }
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
@@ -119,32 +139,21 @@ impl CreateOutboundCrossClusterSearchConnectionFluentBuilder {
         self
     }
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
-    pub fn set_destination_domain_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DomainInformation>,
-    ) -> Self {
+    pub fn set_destination_domain_info(mut self, input: ::std::option::Option<crate::types::DomainInformation>) -> Self {
         self.inner = self.inner.set_destination_domain_info(input);
         self
     }
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
-    pub fn get_destination_domain_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::DomainInformation> {
+    pub fn get_destination_domain_info(&self) -> &::std::option::Option<crate::types::DomainInformation> {
         self.inner.get_destination_domain_info()
     }
     /// <p>Specifies the connection alias that will be used by the customer for this connection.</p>
-    pub fn connection_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_alias(input.into());
         self
     }
     /// <p>Specifies the connection alias that will be used by the customer for this connection.</p>
-    pub fn set_connection_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_alias(input);
         self
     }

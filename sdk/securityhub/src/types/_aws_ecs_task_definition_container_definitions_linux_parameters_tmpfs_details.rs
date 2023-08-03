@@ -32,16 +32,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsBuilder {
     pub(crate) container_path: ::std::option::Option<::std::string::String>,
     pub(crate) mount_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -49,18 +47,12 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsBu
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsBuilder {
     /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
-    pub fn container_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
-    pub fn set_container_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_path = input;
         self
     }
@@ -74,10 +66,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsBuilder 
     ///
     /// <p>The list of tmpfs volume mount options.</p>
     /// <p>Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> | <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> | <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> | <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> | <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> | <code>"mpol"</code> </p>
-    pub fn mount_options(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mount_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.mount_options.unwrap_or_default();
         v.push(input.into());
         self.mount_options = ::std::option::Option::Some(v);
@@ -85,18 +74,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsBuilder 
     }
     /// <p>The list of tmpfs volume mount options.</p>
     /// <p>Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> | <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> | <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> | <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> | <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> | <code>"mpol"</code> </p>
-    pub fn set_mount_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_mount_options(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.mount_options = input;
         self
     }
     /// <p>The list of tmpfs volume mount options.</p>
     /// <p>Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> | <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> | <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> | <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> | <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> | <code>"mpol"</code> </p>
-    pub fn get_mount_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_mount_options(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.mount_options
     }
     /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
@@ -114,9 +98,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsBuilder 
         &self.size
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
+    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
             container_path: self.container_path,
             mount_options: self.mount_options,

@@ -51,9 +51,7 @@ impl ActionState {
 
 /// A builder for [`ActionState`](crate::types::ActionState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionStateBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_revision: ::std::option::Option<crate::types::ActionRevision>,
@@ -82,10 +80,7 @@ impl ActionStateBuilder {
         self
     }
     /// <p>Represents information about the version (or revision) of an action.</p>
-    pub fn set_current_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionRevision>,
-    ) -> Self {
+    pub fn set_current_revision(mut self, input: ::std::option::Option<crate::types::ActionRevision>) -> Self {
         self.current_revision = input;
         self
     }
@@ -99,10 +94,7 @@ impl ActionStateBuilder {
         self
     }
     /// <p>Represents information about the run of an action.</p>
-    pub fn set_latest_execution(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionExecution>,
-    ) -> Self {
+    pub fn set_latest_execution(mut self, input: ::std::option::Option<crate::types::ActionExecution>) -> Self {
         self.latest_execution = input;
         self
     }

@@ -10,10 +10,7 @@ impl UpdateCaseInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_case::UpdateCaseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_case::UpdateCaseError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_case::UpdateCaseError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_case();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl UpdateCaseFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_case::UpdateCase,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_case::UpdateCase, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_case::UpdateCaseError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl UpdateCaseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl UpdateCaseFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_case::UpdateCase,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_case::UpdateCase, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_case::UpdateCaseError>,
     > {
         self.customize_middleware().await
@@ -151,10 +139,7 @@ impl UpdateCaseFluentBuilder {
         self
     }
     /// <p>An array of objects with <code>fieldId</code> (matching ListFields/DescribeField) and value union data, structured identical to <code>CreateCase</code>.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
-    ) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>) -> Self {
         self.inner = self.inner.set_fields(input);
         self
     }

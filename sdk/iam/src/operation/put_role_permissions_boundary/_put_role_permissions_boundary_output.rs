@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutRolePermissionsBoundaryOutput {
 }
 impl PutRolePermissionsBoundaryOutput {
     /// Creates a new builder-style object to manufacture [`PutRolePermissionsBoundaryOutput`](crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput).
-    pub fn builder() -> crate::operation::put_role_permissions_boundary::builders::PutRolePermissionsBoundaryOutputBuilder{
+    pub fn builder() -> crate::operation::put_role_permissions_boundary::builders::PutRolePermissionsBoundaryOutputBuilder {
         crate::operation::put_role_permissions_boundary::builders::PutRolePermissionsBoundaryOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutRolePermissionsBoundaryOutput`](crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRolePermissionsBoundaryOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl PutRolePermissionsBoundaryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutRolePermissionsBoundaryOutput`](crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput {
+    pub fn build(self) -> crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput {
         crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput {
             _request_id: self._request_id,
         }

@@ -90,9 +90,7 @@ impl AwsRdsEventSubscriptionDetails {
 
 /// A builder for [`AwsRdsEventSubscriptionDetails`](crate::types::AwsRdsEventSubscriptionDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRdsEventSubscriptionDetailsBuilder {
     pub(crate) cust_subscription_id: ::std::option::Option<::std::string::String>,
     pub(crate) customer_aws_id: ::std::option::Option<::std::string::String>,
@@ -107,18 +105,12 @@ pub struct AwsRdsEventSubscriptionDetailsBuilder {
 }
 impl AwsRdsEventSubscriptionDetailsBuilder {
     /// <p>The identifier of the account that is associated with the event notification subscription.</p>
-    pub fn cust_subscription_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cust_subscription_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cust_subscription_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the account that is associated with the event notification subscription.</p>
-    pub fn set_cust_subscription_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cust_subscription_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cust_subscription_id = input;
         self
     }
@@ -127,18 +119,12 @@ impl AwsRdsEventSubscriptionDetailsBuilder {
         &self.cust_subscription_id
     }
     /// <p>The identifier of the event notification subscription.</p>
-    pub fn customer_aws_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_aws_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_aws_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the event notification subscription.</p>
-    pub fn set_customer_aws_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_aws_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_aws_id = input;
         self
     }
@@ -165,42 +151,28 @@ impl AwsRdsEventSubscriptionDetailsBuilder {
     /// To override the contents of this collection use [`set_event_categories_list`](Self::set_event_categories_list).
     ///
     /// <p>The list of event categories for the event notification subscription.</p>
-    pub fn event_categories_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_categories_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_categories_list.unwrap_or_default();
         v.push(input.into());
         self.event_categories_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of event categories for the event notification subscription.</p>
-    pub fn set_event_categories_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_categories_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_categories_list = input;
         self
     }
     /// <p>The list of event categories for the event notification subscription.</p>
-    pub fn get_event_categories_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_categories_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_categories_list
     }
     /// <p>The ARN of the event notification subscription.</p>
-    pub fn event_subscription_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_subscription_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the event notification subscription.</p>
-    pub fn set_event_subscription_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_subscription_arn = input;
         self
     }
@@ -209,18 +181,12 @@ impl AwsRdsEventSubscriptionDetailsBuilder {
         &self.event_subscription_arn
     }
     /// <p>The ARN of the SNS topic to post the event notifications to.</p>
-    pub fn sns_topic_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the SNS topic to post the event notifications to.</p>
-    pub fn set_sns_topic_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -233,27 +199,19 @@ impl AwsRdsEventSubscriptionDetailsBuilder {
     /// To override the contents of this collection use [`set_source_ids_list`](Self::set_source_ids_list).
     ///
     /// <p>A list of source identifiers for the event notification subscription.</p>
-    pub fn source_ids_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_ids_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_ids_list.unwrap_or_default();
         v.push(input.into());
         self.source_ids_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of source identifiers for the event notification subscription.</p>
-    pub fn set_source_ids_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_ids_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_ids_list = input;
         self
     }
     /// <p>A list of source identifiers for the event notification subscription.</p>
-    pub fn get_source_ids_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_ids_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_ids_list
     }
     /// <p>The source type for the event notification subscription.</p>
@@ -289,19 +247,13 @@ impl AwsRdsEventSubscriptionDetailsBuilder {
     }
     /// <p>The datetime when the event notification subscription was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn subscription_creation_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The datetime when the event notification subscription was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_subscription_creation_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_creation_time = input;
         self
     }

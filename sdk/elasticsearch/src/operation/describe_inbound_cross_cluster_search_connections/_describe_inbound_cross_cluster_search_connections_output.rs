@@ -6,8 +6,7 @@
 pub struct DescribeInboundCrossClusterSearchConnectionsOutput {
     /// <p>Consists of list of <code><code>InboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
     #[doc(hidden)]
-    pub cross_cluster_search_connections:
-        ::std::option::Option<::std::vec::Vec<crate::types::InboundCrossClusterSearchConnection>>,
+    pub cross_cluster_search_connections: ::std::option::Option<::std::vec::Vec<crate::types::InboundCrossClusterSearchConnection>>,
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,9 +14,7 @@ pub struct DescribeInboundCrossClusterSearchConnectionsOutput {
 }
 impl DescribeInboundCrossClusterSearchConnectionsOutput {
     /// <p>Consists of list of <code><code>InboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
-    pub fn cross_cluster_search_connections(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InboundCrossClusterSearchConnection]> {
+    pub fn cross_cluster_search_connections(&self) -> ::std::option::Option<&[crate::types::InboundCrossClusterSearchConnection]> {
         self.cross_cluster_search_connections.as_deref()
     }
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
@@ -32,19 +29,18 @@ impl ::aws_http::request_id::RequestId for DescribeInboundCrossClusterSearchConn
 }
 impl DescribeInboundCrossClusterSearchConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsOutput).
-    pub fn builder() -> crate::operation::describe_inbound_cross_cluster_search_connections::builders::DescribeInboundCrossClusterSearchConnectionsOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_inbound_cross_cluster_search_connections::builders::DescribeInboundCrossClusterSearchConnectionsOutputBuilder
+    {
         crate::operation::describe_inbound_cross_cluster_search_connections::builders::DescribeInboundCrossClusterSearchConnectionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInboundCrossClusterSearchConnectionsOutputBuilder {
-    pub(crate) cross_cluster_search_connections:
-        ::std::option::Option<::std::vec::Vec<crate::types::InboundCrossClusterSearchConnection>>,
+    pub(crate) cross_cluster_search_connections: ::std::option::Option<::std::vec::Vec<crate::types::InboundCrossClusterSearchConnection>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,10 +50,7 @@ impl DescribeInboundCrossClusterSearchConnectionsOutputBuilder {
     /// To override the contents of this collection use [`set_cross_cluster_search_connections`](Self::set_cross_cluster_search_connections).
     ///
     /// <p>Consists of list of <code><code>InboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
-    pub fn cross_cluster_search_connections(
-        mut self,
-        input: crate::types::InboundCrossClusterSearchConnection,
-    ) -> Self {
+    pub fn cross_cluster_search_connections(mut self, input: crate::types::InboundCrossClusterSearchConnection) -> Self {
         let mut v = self.cross_cluster_search_connections.unwrap_or_default();
         v.push(input);
         self.cross_cluster_search_connections = ::std::option::Option::Some(v);
@@ -66,18 +59,13 @@ impl DescribeInboundCrossClusterSearchConnectionsOutputBuilder {
     /// <p>Consists of list of <code><code>InboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
     pub fn set_cross_cluster_search_connections(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::InboundCrossClusterSearchConnection>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InboundCrossClusterSearchConnection>>,
     ) -> Self {
         self.cross_cluster_search_connections = input;
         self
     }
     /// <p>Consists of list of <code><code>InboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
-    pub fn get_cross_cluster_search_connections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InboundCrossClusterSearchConnection>>
-    {
+    pub fn get_cross_cluster_search_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InboundCrossClusterSearchConnection>> {
         &self.cross_cluster_search_connections
     }
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
@@ -104,12 +92,10 @@ impl DescribeInboundCrossClusterSearchConnectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsOutput).
-    pub fn build(self) -> crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsOutput{
+    pub fn build(self) -> crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsOutput {
         crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsOutput {
-            cross_cluster_search_connections: self.cross_cluster_search_connections
-            ,
-            next_token: self.next_token
-            ,
+            cross_cluster_search_connections: self.cross_cluster_search_connections,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

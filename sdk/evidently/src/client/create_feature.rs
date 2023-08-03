@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateFeatureOutput`](crate::operation::create_feature::CreateFeatureOutput) with field(s):
     ///   - [`feature(Option<Feature>)`](crate::operation::create_feature::CreateFeatureOutput::feature): <p>A structure that contains information about the new feature.</p>
     /// - On failure, responds with [`SdkError<CreateFeatureError>`](crate::operation::create_feature::CreateFeatureError)
-    pub fn create_feature(
-        &self,
-    ) -> crate::operation::create_feature::builders::CreateFeatureFluentBuilder {
-        crate::operation::create_feature::builders::CreateFeatureFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_feature(&self) -> crate::operation::create_feature::builders::CreateFeatureFluentBuilder {
+        crate::operation::create_feature::builders::CreateFeatureFluentBuilder::new(self.handle.clone())
     }
 }

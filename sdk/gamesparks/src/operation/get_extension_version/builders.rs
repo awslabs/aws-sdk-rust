@@ -37,9 +37,7 @@ impl GetExtensionVersionFluentBuilder {
         }
     }
     /// Access the GetExtensionVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_extension_version::builders::GetExtensionVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_extension_version::builders::GetExtensionVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetExtensionVersionFluentBuilder {
             crate::operation::get_extension_version::GetExtensionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_extension_version::GetExtensionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_extension_version::GetExtensionVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetExtensionVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetExtensionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_extension_version::GetExtensionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_extension_version::GetExtensionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_extension_version::GetExtensionVersionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetExtensionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_extension_version::GetExtensionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_extension_version::GetExtensionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_extension_version::GetExtensionVersionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetExtensionVersionFluentBuilder {
             crate::operation::get_extension_version::GetExtensionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_extension_version::GetExtensionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_extension_version::GetExtensionVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -151,18 +138,12 @@ impl GetExtensionVersionFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The version of the extension.</p>
-    pub fn extension_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extension_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.extension_version(input.into());
         self
     }
     /// <p>The version of the extension.</p>
-    pub fn set_extension_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extension_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_extension_version(input);
         self
     }

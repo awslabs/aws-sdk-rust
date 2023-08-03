@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateWorkforceOutput`](crate::operation::create_workforce::CreateWorkforceOutput) with field(s):
     ///   - [`workforce_arn(Option<String>)`](crate::operation::create_workforce::CreateWorkforceOutput::workforce_arn): <p>The Amazon Resource Name (ARN) of the workforce.</p>
     /// - On failure, responds with [`SdkError<CreateWorkforceError>`](crate::operation::create_workforce::CreateWorkforceError)
-    pub fn create_workforce(
-        &self,
-    ) -> crate::operation::create_workforce::builders::CreateWorkforceFluentBuilder {
-        crate::operation::create_workforce::builders::CreateWorkforceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_workforce(&self) -> crate::operation::create_workforce::builders::CreateWorkforceFluentBuilder {
+        crate::operation::create_workforce::builders::CreateWorkforceFluentBuilder::new(self.handle.clone())
     }
 }

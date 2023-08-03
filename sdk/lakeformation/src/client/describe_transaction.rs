@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeTransactionOutput`](crate::operation::describe_transaction::DescribeTransactionOutput) with field(s):
     ///   - [`transaction_description(Option<TransactionDescription>)`](crate::operation::describe_transaction::DescribeTransactionOutput::transaction_description): <p>Returns a <code>TransactionDescription</code> object containing information about the transaction.</p>
     /// - On failure, responds with [`SdkError<DescribeTransactionError>`](crate::operation::describe_transaction::DescribeTransactionError)
-    pub fn describe_transaction(
-        &self,
-    ) -> crate::operation::describe_transaction::builders::DescribeTransactionFluentBuilder {
-        crate::operation::describe_transaction::builders::DescribeTransactionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_transaction(&self) -> crate::operation::describe_transaction::builders::DescribeTransactionFluentBuilder {
+        crate::operation::describe_transaction::builders::DescribeTransactionFluentBuilder::new(self.handle.clone())
     }
 }

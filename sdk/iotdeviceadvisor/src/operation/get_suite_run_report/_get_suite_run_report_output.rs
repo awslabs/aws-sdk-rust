@@ -21,42 +21,31 @@ impl ::aws_http::request_id::RequestId for GetSuiteRunReportOutput {
 }
 impl GetSuiteRunReportOutput {
     /// Creates a new builder-style object to manufacture [`GetSuiteRunReportOutput`](crate::operation::get_suite_run_report::GetSuiteRunReportOutput).
-    pub fn builder(
-    ) -> crate::operation::get_suite_run_report::builders::GetSuiteRunReportOutputBuilder {
+    pub fn builder() -> crate::operation::get_suite_run_report::builders::GetSuiteRunReportOutputBuilder {
         crate::operation::get_suite_run_report::builders::GetSuiteRunReportOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSuiteRunReportOutput`](crate::operation::get_suite_run_report::GetSuiteRunReportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSuiteRunReportOutputBuilder {
     pub(crate) qualification_report_download_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetSuiteRunReportOutputBuilder {
     /// <p>Download URL of the qualification report.</p>
-    pub fn qualification_report_download_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_report_download_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_report_download_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Download URL of the qualification report.</p>
-    pub fn set_qualification_report_download_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_report_download_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualification_report_download_url = input;
         self
     }
     /// <p>Download URL of the qualification report.</p>
-    pub fn get_qualification_report_download_url(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_qualification_report_download_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.qualification_report_download_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

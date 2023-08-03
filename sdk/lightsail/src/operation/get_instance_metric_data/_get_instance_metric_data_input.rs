@@ -99,18 +99,14 @@ impl GetInstanceMetricDataInput {
 }
 impl GetInstanceMetricDataInput {
     /// Creates a new builder-style object to manufacture [`GetInstanceMetricDataInput`](crate::operation::get_instance_metric_data::GetInstanceMetricDataInput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_metric_data::builders::GetInstanceMetricDataInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_instance_metric_data::builders::GetInstanceMetricDataInputBuilder {
         crate::operation::get_instance_metric_data::builders::GetInstanceMetricDataInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInstanceMetricDataInput`](crate::operation::get_instance_metric_data::GetInstanceMetricDataInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceMetricDataInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<crate::types::InstanceMetricName>,
@@ -122,18 +118,12 @@ pub struct GetInstanceMetricDataInputBuilder {
 }
 impl GetInstanceMetricDataInputBuilder {
     /// <p>The name of the instance for which you want to get metrics data.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the instance for which you want to get metrics data.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -171,10 +161,7 @@ impl GetInstanceMetricDataInputBuilder {
     /// <li> <p> <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
     /// <li> <p> <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
     /// </ul>
-    pub fn set_metric_name(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceMetricName>,
-    ) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::InstanceMetricName>) -> Self {
         self.metric_name = input;
         self
     }
@@ -217,10 +204,7 @@ impl GetInstanceMetricDataInputBuilder {
         self
     }
     /// <p>The start time of the time period.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -234,10 +218,7 @@ impl GetInstanceMetricDataInputBuilder {
         self
     }
     /// <p>The end time of the time period.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -287,10 +268,7 @@ impl GetInstanceMetricDataInputBuilder {
     /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn set_statistics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
-    ) -> Self {
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>) -> Self {
         self.statistics = input;
         self
     }
@@ -303,28 +281,22 @@ impl GetInstanceMetricDataInputBuilder {
     /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn get_statistics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
         &self.statistics
     }
     /// Consumes the builder and constructs a [`GetInstanceMetricDataInput`](crate::operation::get_instance_metric_data::GetInstanceMetricDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_instance_metric_data::GetInstanceMetricDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_instance_metric_data::GetInstanceMetricDataInput {
-                instance_name: self.instance_name,
-                metric_name: self.metric_name,
-                period: self.period,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                unit: self.unit,
-                statistics: self.statistics,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_instance_metric_data::GetInstanceMetricDataInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_instance_metric_data::GetInstanceMetricDataInput {
+            instance_name: self.instance_name,
+            metric_name: self.metric_name,
+            period: self.period,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            unit: self.unit,
+            statistics: self.statistics,
+        })
     }
 }

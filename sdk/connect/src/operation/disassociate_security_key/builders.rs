@@ -27,8 +27,7 @@ impl DisassociateSecurityKeyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateSecurityKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyInputBuilder,
+    inner: crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyInputBuilder,
 }
 impl DisassociateSecurityKeyFluentBuilder {
     /// Creates a new `DisassociateSecurityKey`.
@@ -39,10 +38,7 @@ impl DisassociateSecurityKeyFluentBuilder {
         }
     }
     /// Access the DisassociateSecurityKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DisassociateSecurityKeyFluentBuilder {
             crate::operation::disassociate_security_key::DisassociateSecurityKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_security_key::DisassociateSecurityKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_security_key::DisassociateSecurityKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DisassociateSecurityKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DisassociateSecurityKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_security_key::DisassociateSecurityKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_security_key::DisassociateSecurityKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_security_key::DisassociateSecurityKeyError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DisassociateSecurityKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_security_key::DisassociateSecurityKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_security_key::DisassociateSecurityKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_security_key::DisassociateSecurityKeyError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl DisassociateSecurityKeyFluentBuilder {
             crate::operation::disassociate_security_key::DisassociateSecurityKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_security_key::DisassociateSecurityKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_security_key::DisassociateSecurityKeyError>,
     > {
         self.customize_middleware().await
     }
@@ -140,18 +125,12 @@ impl DisassociateSecurityKeyFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
         self
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
     }

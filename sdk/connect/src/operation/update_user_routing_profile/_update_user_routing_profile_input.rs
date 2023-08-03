@@ -29,18 +29,14 @@ impl UpdateUserRoutingProfileInput {
 }
 impl UpdateUserRoutingProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserRoutingProfileInput`](crate::operation::update_user_routing_profile::UpdateUserRoutingProfileInput).
-    pub fn builder(
-    ) -> crate::operation::update_user_routing_profile::builders::UpdateUserRoutingProfileInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_user_routing_profile::builders::UpdateUserRoutingProfileInputBuilder {
         crate::operation::update_user_routing_profile::builders::UpdateUserRoutingProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateUserRoutingProfileInput`](crate::operation::update_user_routing_profile::UpdateUserRoutingProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserRoutingProfileInputBuilder {
     pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct UpdateUserRoutingProfileInputBuilder {
 }
 impl UpdateUserRoutingProfileInputBuilder {
     /// <p>The identifier of the routing profile for the user.</p>
-    pub fn routing_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the routing profile for the user.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.routing_profile_id = input;
         self
     }
@@ -102,12 +92,10 @@ impl UpdateUserRoutingProfileInputBuilder {
         crate::operation::update_user_routing_profile::UpdateUserRoutingProfileInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_user_routing_profile::UpdateUserRoutingProfileInput {
-                routing_profile_id: self.routing_profile_id,
-                user_id: self.user_id,
-                instance_id: self.instance_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_user_routing_profile::UpdateUserRoutingProfileInput {
+            routing_profile_id: self.routing_profile_id,
+            user_id: self.user_id,
+            instance_id: self.instance_id,
+        })
     }
 }

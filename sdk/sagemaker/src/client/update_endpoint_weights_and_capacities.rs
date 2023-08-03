@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateEndpointWeightsAndCapacitiesOutput`](crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesOutput) with field(s):
     ///   - [`endpoint_arn(Option<String>)`](crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesOutput::endpoint_arn): <p>The Amazon Resource Name (ARN) of the updated endpoint.</p>
     /// - On failure, responds with [`SdkError<UpdateEndpointWeightsAndCapacitiesError>`](crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesError)
-    pub fn update_endpoint_weights_and_capacities(&self) -> crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesFluentBuilder{
+    pub fn update_endpoint_weights_and_capacities(
+        &self,
+    ) -> crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesFluentBuilder {
         crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesFluentBuilder::new(self.handle.clone())
     }
 }

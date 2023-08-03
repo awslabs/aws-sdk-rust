@@ -28,7 +28,7 @@ impl DescribeConformancePackStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConformancePackStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusInputBuilder,
+    inner: crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusInputBuilder,
 }
 impl DescribeConformancePackStatusFluentBuilder {
     /// Creates a new `DescribeConformancePackStatus`.
@@ -39,7 +39,7 @@ impl DescribeConformancePackStatusFluentBuilder {
         }
     }
     /// Access the DescribeConformancePackStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeConformancePackStatusFluentBuilder {
             crate::operation::describe_conformance_pack_status::DescribeConformancePackStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeConformancePackStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeConformancePackStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeConformancePackStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError>,
     > {
         self.send_middleware().await
     }
@@ -116,16 +107,14 @@ impl DescribeConformancePackStatusFluentBuilder {
             crate::operation::describe_conformance_pack_status::DescribeConformancePackStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_conformance_pack_status::paginator::DescribeConformancePackStatusPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_conformance_pack_status::paginator::DescribeConformancePackStatusPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_conformance_pack_status::paginator::DescribeConformancePackStatusPaginator {
         crate::operation::describe_conformance_pack_status::paginator::DescribeConformancePackStatusPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `ConformancePackNames`.
@@ -133,25 +122,17 @@ impl DescribeConformancePackStatusFluentBuilder {
     /// To override the contents of this collection use [`set_conformance_pack_names`](Self::set_conformance_pack_names).
     ///
     /// <p>Comma-separated list of conformance pack names.</p>
-    pub fn conformance_pack_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn conformance_pack_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conformance_pack_names(input.into());
         self
     }
     /// <p>Comma-separated list of conformance pack names.</p>
-    pub fn set_conformance_pack_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_conformance_pack_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_conformance_pack_names(input);
         self
     }
     /// <p>Comma-separated list of conformance pack names.</p>
-    pub fn get_conformance_pack_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_conformance_pack_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_conformance_pack_names()
     }
     /// <p>The maximum number of conformance packs status returned on each page.</p>

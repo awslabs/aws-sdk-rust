@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_connector_definition_version::GetConnectorDefinitionVersionOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     ///   - [`version(Option<String>)`](crate::operation::get_connector_definition_version::GetConnectorDefinitionVersionOutput::version): The version of the connector definition version.
     /// - On failure, responds with [`SdkError<GetConnectorDefinitionVersionError>`](crate::operation::get_connector_definition_version::GetConnectorDefinitionVersionError)
-    pub fn get_connector_definition_version(&self) -> crate::operation::get_connector_definition_version::builders::GetConnectorDefinitionVersionFluentBuilder{
+    pub fn get_connector_definition_version(
+        &self,
+    ) -> crate::operation::get_connector_definition_version::builders::GetConnectorDefinitionVersionFluentBuilder {
         crate::operation::get_connector_definition_version::builders::GetConnectorDefinitionVersionFluentBuilder::new(self.handle.clone())
     }
 }

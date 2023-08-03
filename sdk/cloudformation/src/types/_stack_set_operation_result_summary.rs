@@ -72,9 +72,7 @@ impl StackSetOperationResultSummary {
 
 /// A builder for [`StackSetOperationResultSummary`](crate::types::StackSetOperationResultSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackSetOperationResultSummaryBuilder {
     pub(crate) account: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
@@ -132,10 +130,7 @@ impl StackSetOperationResultSummaryBuilder {
     /// <li> <p> <code>PENDING</code>: The operation in the specified account and Region has yet to start.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackSetOperationResultStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StackSetOperationResultStatus>) -> Self {
         self.status = input;
         self
     }
@@ -147,24 +142,16 @@ impl StackSetOperationResultSummaryBuilder {
     /// <li> <p> <code>PENDING</code>: The operation in the specified account and Region has yet to start.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
     /// </ul>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackSetOperationResultStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StackSetOperationResultStatus> {
         &self.status
     }
     /// <p>The reason for the assigned result status.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the assigned result status.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
@@ -178,32 +165,21 @@ impl StackSetOperationResultSummaryBuilder {
         self
     }
     /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with stack set operations in an account.</p>
-    pub fn set_account_gate_result(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountGateResult>,
-    ) -> Self {
+    pub fn set_account_gate_result(mut self, input: ::std::option::Option<crate::types::AccountGateResult>) -> Self {
         self.account_gate_result = input;
         self
     }
     /// <p>The results of the account gate function CloudFormation invokes, if present, before proceeding with stack set operations in an account.</p>
-    pub fn get_account_gate_result(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccountGateResult> {
+    pub fn get_account_gate_result(&self) -> &::std::option::Option<crate::types::AccountGateResult> {
         &self.account_gate_result
     }
     /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
-    pub fn organizational_unit_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organizational_unit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
-    pub fn set_organizational_unit_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organizational_unit_id = input;
         self
     }

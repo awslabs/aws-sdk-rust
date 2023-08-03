@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`path(Option<String>)`](crate::operation::create_resource::CreateResourceOutput::path): <p>The full path for this resource.</p>
     ///   - [`resource_methods(Option<HashMap<String, Method>>)`](crate::operation::create_resource::CreateResourceOutput::resource_methods): <p>Gets an API resource's method of a given HTTP verb.</p>
     /// - On failure, responds with [`SdkError<CreateResourceError>`](crate::operation::create_resource::CreateResourceError)
-    pub fn create_resource(
-        &self,
-    ) -> crate::operation::create_resource::builders::CreateResourceFluentBuilder {
-        crate::operation::create_resource::builders::CreateResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_resource(&self) -> crate::operation::create_resource::builders::CreateResourceFluentBuilder {
+        crate::operation::create_resource::builders::CreateResourceFluentBuilder::new(self.handle.clone())
     }
 }

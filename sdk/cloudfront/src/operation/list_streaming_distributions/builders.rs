@@ -26,7 +26,7 @@ impl ListStreamingDistributionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStreamingDistributionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsInputBuilder,
+    inner: crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsInputBuilder,
 }
 impl ListStreamingDistributionsFluentBuilder {
     /// Creates a new `ListStreamingDistributions`.
@@ -37,7 +37,7 @@ impl ListStreamingDistributionsFluentBuilder {
         }
     }
     /// Access the ListStreamingDistributions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListStreamingDistributionsFluentBuilder {
             crate::operation::list_streaming_distributions::ListStreamingDistributions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_streaming_distributions::ListStreamingDistributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_streaming_distributions::ListStreamingDistributionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListStreamingDistributionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListStreamingDistributionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_streaming_distributions::ListStreamingDistributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_streaming_distributions::ListStreamingDistributionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListStreamingDistributionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_streaming_distributions::ListStreamingDistributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_streaming_distributions::ListStreamingDistributionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListStreamingDistributionsFluentBuilder {
             crate::operation::list_streaming_distributions::ListStreamingDistributions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_streaming_distributions::ListStreamingDistributionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_streaming_distributions::ListStreamingDistributionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_streaming_distributions::paginator::ListStreamingDistributionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_streaming_distributions::paginator::ListStreamingDistributionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_streaming_distributions::paginator::ListStreamingDistributionsPaginator {
         crate::operation::list_streaming_distributions::paginator::ListStreamingDistributionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>

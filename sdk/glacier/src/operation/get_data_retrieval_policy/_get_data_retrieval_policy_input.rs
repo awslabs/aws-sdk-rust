@@ -16,18 +16,14 @@ impl GetDataRetrievalPolicyInput {
 }
 impl GetDataRetrievalPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetDataRetrievalPolicyInput`](crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyInputBuilder {
         crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDataRetrievalPolicyInput`](crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataRetrievalPolicyInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -53,10 +49,6 @@ impl GetDataRetrievalPolicyInputBuilder {
         crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput {
-                account_id: self.account_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput { account_id: self.account_id })
     }
 }

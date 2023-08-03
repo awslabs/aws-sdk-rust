@@ -48,17 +48,14 @@ impl CreateLensVersionInput {
 }
 impl CreateLensVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateLensVersionInput`](crate::operation::create_lens_version::CreateLensVersionInput).
-    pub fn builder(
-    ) -> crate::operation::create_lens_version::builders::CreateLensVersionInputBuilder {
+    pub fn builder() -> crate::operation::create_lens_version::builders::CreateLensVersionInputBuilder {
         crate::operation::create_lens_version::builders::CreateLensVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateLensVersionInput`](crate::operation::create_lens_version::CreateLensVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLensVersionInputBuilder {
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_version: ::std::option::Option<::std::string::String>,
@@ -121,10 +118,7 @@ impl CreateLensVersionInputBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
@@ -132,10 +126,7 @@ impl CreateLensVersionInputBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -149,17 +140,12 @@ impl CreateLensVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateLensVersionInput`](crate::operation::create_lens_version::CreateLensVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_lens_version::CreateLensVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_lens_version::CreateLensVersionInput {
-                lens_alias: self.lens_alias,
-                lens_version: self.lens_version,
-                is_major_version: self.is_major_version,
-                client_request_token: self.client_request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_lens_version::CreateLensVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_lens_version::CreateLensVersionInput {
+            lens_alias: self.lens_alias,
+            lens_version: self.lens_version,
+            is_major_version: self.is_major_version,
+            client_request_token: self.client_request_token,
+        })
     }
 }

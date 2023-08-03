@@ -37,9 +37,7 @@ impl ListServiceInstancesFluentBuilder {
         }
     }
     /// Access the ListServiceInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_service_instances::builders::ListServiceInstancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_service_instances::builders::ListServiceInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListServiceInstancesFluentBuilder {
             crate::operation::list_service_instances::ListServiceInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_instances::ListServiceInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_instances::ListServiceInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListServiceInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListServiceInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_instances::ListServiceInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_instances::ListServiceInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_instances::ListServiceInstancesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListServiceInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_instances::ListServiceInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_instances::ListServiceInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_instances::ListServiceInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListServiceInstancesFluentBuilder {
             crate::operation::list_service_instances::ListServiceInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_service_instances::ListServiceInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_service_instances::ListServiceInstancesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_service_instances::paginator::ListServiceInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_service_instances::paginator::ListServiceInstancesPaginator {
-        crate::operation::list_service_instances::paginator::ListServiceInstancesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_service_instances::paginator::ListServiceInstancesPaginator {
+        crate::operation::list_service_instances::paginator::ListServiceInstancesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the service that the service instance belongs to.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,17 +167,12 @@ impl ListServiceInstancesFluentBuilder {
         self
     }
     /// <p>An array of filtering criteria that scope down the result list. By default, all service instances in the Amazon Web Services account are returned.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListServiceInstancesFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListServiceInstancesFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>An array of filtering criteria that scope down the result list. By default, all service instances in the Amazon Web Services account are returned.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListServiceInstancesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListServiceInstancesFilter>> {
         self.inner.get_filters()
     }
     /// <p>The field that the result list is sorted by.</p>
@@ -208,10 +185,7 @@ impl ListServiceInstancesFluentBuilder {
     /// <p>The field that the result list is sorted by.</p>
     /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
     /// <p>Default: <code>serviceName</code> </p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListServiceInstancesSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListServiceInstancesSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

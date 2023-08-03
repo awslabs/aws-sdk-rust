@@ -10,10 +10,7 @@ impl CreateContactListInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_contact_list::CreateContactListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_contact_list::CreateContactListError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact_list::CreateContactListError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_contact_list();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateContactListFluentBuilder {
         }
     }
     /// Access the CreateContactList as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_contact_list::builders::CreateContactListInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_contact_list::builders::CreateContactListInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateContactListFluentBuilder {
             crate::operation::create_contact_list::CreateContactList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_contact_list::CreateContactListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact_list::CreateContactListError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateContactListFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateContactListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_contact_list::CreateContactListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_contact_list::CreateContactListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact_list::CreateContactListError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateContactListFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_contact_list::CreateContactListOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_contact_list::CreateContactListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact_list::CreateContactListError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateContactListFluentBuilder {
             crate::operation::create_contact_list::CreateContactList,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_contact_list::CreateContactListError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact_list::CreateContactListError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_list_name(input.into());
         self
     }
     /// <p>The name of the contact list.</p>
-    pub fn set_contact_list_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_list_name(input);
         self
     }
@@ -152,10 +130,7 @@ impl CreateContactListFluentBuilder {
         self
     }
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-    pub fn set_topics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>,
-    ) -> Self {
+    pub fn set_topics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>) -> Self {
         self.inner = self.inner.set_topics(input);
         self
     }
@@ -187,10 +162,7 @@ impl CreateContactListFluentBuilder {
         self
     }
     /// <p>The tags associated with a contact list.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

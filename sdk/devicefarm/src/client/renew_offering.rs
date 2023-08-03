@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RenewOfferingOutput`](crate::operation::renew_offering::RenewOfferingOutput) with field(s):
     ///   - [`offering_transaction(Option<OfferingTransaction>)`](crate::operation::renew_offering::RenewOfferingOutput::offering_transaction): <p>Represents the status of the offering transaction for the renewal.</p>
     /// - On failure, responds with [`SdkError<RenewOfferingError>`](crate::operation::renew_offering::RenewOfferingError)
-    pub fn renew_offering(
-        &self,
-    ) -> crate::operation::renew_offering::builders::RenewOfferingFluentBuilder {
-        crate::operation::renew_offering::builders::RenewOfferingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn renew_offering(&self) -> crate::operation::renew_offering::builders::RenewOfferingFluentBuilder {
+        crate::operation::renew_offering::builders::RenewOfferingFluentBuilder::new(self.handle.clone())
     }
 }

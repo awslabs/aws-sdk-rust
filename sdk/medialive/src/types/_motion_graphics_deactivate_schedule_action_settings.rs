@@ -6,17 +6,14 @@
 pub struct MotionGraphicsDeactivateScheduleActionSettings {}
 impl MotionGraphicsDeactivateScheduleActionSettings {
     /// Creates a new builder-style object to manufacture [`MotionGraphicsDeactivateScheduleActionSettings`](crate::types::MotionGraphicsDeactivateScheduleActionSettings).
-    pub fn builder() -> crate::types::builders::MotionGraphicsDeactivateScheduleActionSettingsBuilder
-    {
+    pub fn builder() -> crate::types::builders::MotionGraphicsDeactivateScheduleActionSettingsBuilder {
         crate::types::builders::MotionGraphicsDeactivateScheduleActionSettingsBuilder::default()
     }
 }
 
 /// A builder for [`MotionGraphicsDeactivateScheduleActionSettings`](crate::types::MotionGraphicsDeactivateScheduleActionSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MotionGraphicsDeactivateScheduleActionSettingsBuilder {}
 impl MotionGraphicsDeactivateScheduleActionSettingsBuilder {
     /// Consumes the builder and constructs a [`MotionGraphicsDeactivateScheduleActionSettings`](crate::types::MotionGraphicsDeactivateScheduleActionSettings).

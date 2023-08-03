@@ -23,34 +23,26 @@ impl DeleteLoadBalancerListenersInput {
 }
 impl DeleteLoadBalancerListenersInput {
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerListenersInput`](crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersInput).
-    pub fn builder() -> crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersInputBuilder{
+    pub fn builder() -> crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersInputBuilder {
         crate::operation::delete_load_balancer_listeners::builders::DeleteLoadBalancerListenersInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteLoadBalancerListenersInput`](crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLoadBalancerListenersInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) load_balancer_ports: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl DeleteLoadBalancerListenersInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -70,10 +62,7 @@ impl DeleteLoadBalancerListenersInputBuilder {
         self
     }
     /// <p>The client port numbers of the listeners.</p>
-    pub fn set_load_balancer_ports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_load_balancer_ports(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.load_balancer_ports = input;
         self
     }
@@ -88,11 +77,9 @@ impl DeleteLoadBalancerListenersInputBuilder {
         crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersInput {
-                load_balancer_name: self.load_balancer_name,
-                load_balancer_ports: self.load_balancer_ports,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersInput {
+            load_balancer_name: self.load_balancer_name,
+            load_balancer_ports: self.load_balancer_ports,
+        })
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTargetGroupsOutput {
 }
 impl ListTargetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListTargetGroupsOutput`](crate::operation::list_target_groups::ListTargetGroupsOutput).
-    pub fn builder() -> crate::operation::list_target_groups::builders::ListTargetGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_target_groups::builders::ListTargetGroupsOutputBuilder {
         crate::operation::list_target_groups::builders::ListTargetGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTargetGroupsOutput`](crate::operation::list_target_groups::ListTargetGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetGroupsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListTargetGroupsOutputBuilder {
         self
     }
     /// <p>Information about the target groups.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupSummary>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupSummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>Information about the target groups.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupSummary>> {
         &self.items
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>

@@ -41,9 +41,7 @@ impl UpdateVoiceConnectorFluentBuilder {
         }
     }
     /// Access the UpdateVoiceConnector as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_voice_connector::builders::UpdateVoiceConnectorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_voice_connector::builders::UpdateVoiceConnectorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl UpdateVoiceConnectorFluentBuilder {
             crate::operation::update_voice_connector::UpdateVoiceConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_connector::UpdateVoiceConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_connector::UpdateVoiceConnectorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl UpdateVoiceConnectorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl UpdateVoiceConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_voice_connector::UpdateVoiceConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_connector::UpdateVoiceConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_connector::UpdateVoiceConnectorError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl UpdateVoiceConnectorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_voice_connector::UpdateVoiceConnectorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_connector::UpdateVoiceConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_connector::UpdateVoiceConnectorError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +109,17 @@ impl UpdateVoiceConnectorFluentBuilder {
             crate::operation::update_voice_connector::UpdateVoiceConnector,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_voice_connector::UpdateVoiceConnectorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_voice_connector::UpdateVoiceConnectorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }

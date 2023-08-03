@@ -13,9 +13,7 @@ pub struct ExtendedDataServices {
 }
 impl ExtendedDataServices {
     /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
-    pub fn copy_protection_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CopyProtectionAction> {
+    pub fn copy_protection_action(&self) -> ::std::option::Option<&crate::types::CopyProtectionAction> {
         self.copy_protection_action.as_ref()
     }
     /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
@@ -32,9 +30,7 @@ impl ExtendedDataServices {
 
 /// A builder for [`ExtendedDataServices`](crate::types::ExtendedDataServices).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExtendedDataServicesBuilder {
     pub(crate) copy_protection_action: ::std::option::Option<crate::types::CopyProtectionAction>,
     pub(crate) vchip_action: ::std::option::Option<crate::types::VchipAction>,
@@ -46,17 +42,12 @@ impl ExtendedDataServicesBuilder {
         self
     }
     /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
-    pub fn set_copy_protection_action(
-        mut self,
-        input: ::std::option::Option<crate::types::CopyProtectionAction>,
-    ) -> Self {
+    pub fn set_copy_protection_action(mut self, input: ::std::option::Option<crate::types::CopyProtectionAction>) -> Self {
         self.copy_protection_action = input;
         self
     }
     /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
-    pub fn get_copy_protection_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::CopyProtectionAction> {
+    pub fn get_copy_protection_action(&self) -> &::std::option::Option<crate::types::CopyProtectionAction> {
         &self.copy_protection_action
     }
     /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
@@ -65,10 +56,7 @@ impl ExtendedDataServicesBuilder {
         self
     }
     /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
-    pub fn set_vchip_action(
-        mut self,
-        input: ::std::option::Option<crate::types::VchipAction>,
-    ) -> Self {
+    pub fn set_vchip_action(mut self, input: ::std::option::Option<crate::types::VchipAction>) -> Self {
         self.vchip_action = input;
         self
     }

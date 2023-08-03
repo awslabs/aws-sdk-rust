@@ -23,9 +23,7 @@ impl ProcessingResources {
 
 /// A builder for [`ProcessingResources`](crate::types::ProcessingResources).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessingResourcesBuilder {
     pub(crate) cluster_config: ::std::option::Option<crate::types::ProcessingClusterConfig>,
 }
@@ -36,17 +34,12 @@ impl ProcessingResourcesBuilder {
         self
     }
     /// <p>The configuration for the resources in a cluster used to run the processing job.</p>
-    pub fn set_cluster_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessingClusterConfig>,
-    ) -> Self {
+    pub fn set_cluster_config(mut self, input: ::std::option::Option<crate::types::ProcessingClusterConfig>) -> Self {
         self.cluster_config = input;
         self
     }
     /// <p>The configuration for the resources in a cluster used to run the processing job.</p>
-    pub fn get_cluster_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ProcessingClusterConfig> {
+    pub fn get_cluster_config(&self) -> &::std::option::Option<crate::types::ProcessingClusterConfig> {
         &self.cluster_config
     }
     /// Consumes the builder and constructs a [`ProcessingResources`](crate::types::ProcessingResources).

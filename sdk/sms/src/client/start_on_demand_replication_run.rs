@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`StartOnDemandReplicationRunOutput`](crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput) with field(s):
     ///   - [`replication_run_id(Option<String>)`](crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput::replication_run_id): <p>The ID of the replication run.</p>
     /// - On failure, responds with [`SdkError<StartOnDemandReplicationRunError>`](crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError)
-    pub fn start_on_demand_replication_run(&self) -> crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunFluentBuilder{
+    pub fn start_on_demand_replication_run(
+        &self,
+    ) -> crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunFluentBuilder {
         crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunFluentBuilder::new(self.handle.clone())
     }
 }

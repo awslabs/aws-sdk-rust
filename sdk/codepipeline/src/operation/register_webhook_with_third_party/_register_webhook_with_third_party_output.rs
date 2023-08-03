@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RegisterWebhookWithThirdPartyOutput {
 }
 impl RegisterWebhookWithThirdPartyOutput {
     /// Creates a new builder-style object to manufacture [`RegisterWebhookWithThirdPartyOutput`](crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyOutput).
-    pub fn builder() -> crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyOutputBuilder{
+    pub fn builder() -> crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyOutputBuilder {
         crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterWebhookWithThirdPartyOutput`](crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterWebhookWithThirdPartyOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl RegisterWebhookWithThirdPartyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterWebhookWithThirdPartyOutput`](crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyOutput
-    {
+    pub fn build(self) -> crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyOutput {
         crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyOutput {
             _request_id: self._request_id,
         }

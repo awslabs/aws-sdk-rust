@@ -27,8 +27,7 @@ impl CreateCustomEntityTypeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCustomEntityTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_custom_entity_type::builders::CreateCustomEntityTypeInputBuilder,
+    inner: crate::operation::create_custom_entity_type::builders::CreateCustomEntityTypeInputBuilder,
 }
 impl CreateCustomEntityTypeFluentBuilder {
     /// Creates a new `CreateCustomEntityType`.
@@ -39,10 +38,7 @@ impl CreateCustomEntityTypeFluentBuilder {
         }
     }
     /// Access the CreateCustomEntityType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_custom_entity_type::builders::CreateCustomEntityTypeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_custom_entity_type::builders::CreateCustomEntityTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl CreateCustomEntityTypeFluentBuilder {
             crate::operation::create_custom_entity_type::CreateCustomEntityType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_entity_type::CreateCustomEntityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_entity_type::CreateCustomEntityTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl CreateCustomEntityTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl CreateCustomEntityTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_entity_type::CreateCustomEntityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_entity_type::CreateCustomEntityTypeError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl CreateCustomEntityTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_entity_type::CreateCustomEntityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_entity_type::CreateCustomEntityTypeError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl CreateCustomEntityTypeFluentBuilder {
             crate::operation::create_custom_entity_type::CreateCustomEntityType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_custom_entity_type::CreateCustomEntityTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_custom_entity_type::CreateCustomEntityTypeError>,
     > {
         self.customize_middleware().await
     }
@@ -159,27 +144,19 @@ impl CreateCustomEntityTypeFluentBuilder {
     ///
     /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
     /// <p>If no context words are passed only a regular expression is checked.</p>
-    pub fn context_words(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn context_words(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.context_words(input.into());
         self
     }
     /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
     /// <p>If no context words are passed only a regular expression is checked.</p>
-    pub fn set_context_words(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_context_words(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_context_words(input);
         self
     }
     /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
     /// <p>If no context words are passed only a regular expression is checked.</p>
-    pub fn get_context_words(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_context_words(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_context_words()
     }
     /// Adds a key-value pair to `Tags`.
@@ -187,30 +164,17 @@ impl CreateCustomEntityTypeFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags applied to the custom entity type.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of tags applied to the custom entity type.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of tags applied to the custom entity type.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
 }

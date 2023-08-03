@@ -10,10 +10,7 @@ impl StartIncidentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_incident::StartIncidentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_incident::StartIncidentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_incident::StartIncidentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_incident();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartIncidentFluentBuilder {
         }
     }
     /// Access the StartIncident as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_incident::builders::StartIncidentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_incident::builders::StartIncidentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl StartIncidentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl StartIncidentFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
-    pub fn response_plan_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.response_plan_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
-    pub fn set_response_plan_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_response_plan_arn(input);
         self
     }
@@ -206,10 +192,7 @@ impl StartIncidentFluentBuilder {
         self
     }
     /// <p>Details of what created the incident record in Incident Manager.</p>
-    pub fn set_trigger_details(
-        mut self,
-        input: ::std::option::Option<crate::types::TriggerDetails>,
-    ) -> Self {
+    pub fn set_trigger_details(mut self, input: ::std::option::Option<crate::types::TriggerDetails>) -> Self {
         self.inner = self.inner.set_trigger_details(input);
         self
     }
@@ -227,17 +210,12 @@ impl StartIncidentFluentBuilder {
         self
     }
     /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
-    pub fn set_related_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>>,
-    ) -> Self {
+    pub fn set_related_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>>) -> Self {
         self.inner = self.inner.set_related_items(input);
         self
     }
     /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
-    pub fn get_related_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>> {
+    pub fn get_related_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>> {
         self.inner.get_related_items()
     }
 }

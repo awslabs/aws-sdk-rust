@@ -27,7 +27,7 @@ impl GetExportSnapshotRecordsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetExportSnapshotRecordsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsInputBuilder,
+    inner: crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsInputBuilder,
 }
 impl GetExportSnapshotRecordsFluentBuilder {
     /// Creates a new `GetExportSnapshotRecords`.
@@ -38,7 +38,7 @@ impl GetExportSnapshotRecordsFluentBuilder {
         }
     }
     /// Access the GetExportSnapshotRecords as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetExportSnapshotRecordsFluentBuilder {
             crate::operation::get_export_snapshot_records::GetExportSnapshotRecords,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetExportSnapshotRecordsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetExportSnapshotRecordsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetExportSnapshotRecordsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetExportSnapshotRecordsFluentBuilder {
             crate::operation::get_export_snapshot_records::GetExportSnapshotRecords,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsError>,
     > {
         self.customize_middleware().await
     }

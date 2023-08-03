@@ -23,9 +23,7 @@ impl MeshStatus {
 
 /// A builder for [`MeshStatus`](crate::types::MeshStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MeshStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::MeshStatusCode>,
 }
@@ -36,10 +34,7 @@ impl MeshStatusBuilder {
         self
     }
     /// <p>The current mesh status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MeshStatusCode>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MeshStatusCode>) -> Self {
         self.status = input;
         self
     }
@@ -49,8 +44,6 @@ impl MeshStatusBuilder {
     }
     /// Consumes the builder and constructs a [`MeshStatus`](crate::types::MeshStatus).
     pub fn build(self) -> crate::types::MeshStatus {
-        crate::types::MeshStatus {
-            status: self.status,
-        }
+        crate::types::MeshStatus { status: self.status }
     }
 }

@@ -101,18 +101,14 @@ impl DescribeRouteTablesInput {
 }
 impl DescribeRouteTablesInput {
     /// Creates a new builder-style object to manufacture [`DescribeRouteTablesInput`](crate::operation::describe_route_tables::DescribeRouteTablesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_route_tables::builders::DescribeRouteTablesInputBuilder {
-        crate::operation::describe_route_tables::builders::DescribeRouteTablesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_route_tables::builders::DescribeRouteTablesInputBuilder {
+        crate::operation::describe_route_tables::builders::DescribeRouteTablesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRouteTablesInput`](crate::operation::describe_route_tables::DescribeRouteTablesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRouteTablesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -189,10 +185,7 @@ impl DescribeRouteTablesInputBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC for the route table.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -248,10 +241,7 @@ impl DescribeRouteTablesInputBuilder {
     ///
     /// <p>The IDs of the route tables.</p>
     /// <p>Default: Describes all your route tables.</p>
-    pub fn route_table_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.route_table_ids.unwrap_or_default();
         v.push(input.into());
         self.route_table_ids = ::std::option::Option::Some(v);
@@ -259,18 +249,13 @@ impl DescribeRouteTablesInputBuilder {
     }
     /// <p>The IDs of the route tables.</p>
     /// <p>Default: Describes all your route tables.</p>
-    pub fn set_route_table_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.route_table_ids = input;
         self
     }
     /// <p>The IDs of the route tables.</p>
     /// <p>Default: Describes all your route tables.</p>
-    pub fn get_route_table_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.route_table_ids
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
@@ -304,18 +289,14 @@ impl DescribeRouteTablesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRouteTablesInput`](crate::operation::describe_route_tables::DescribeRouteTablesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_route_tables::DescribeRouteTablesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_route_tables::DescribeRouteTablesInput {
-                filters: self.filters,
-                dry_run: self.dry_run,
-                route_table_ids: self.route_table_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_route_tables::DescribeRouteTablesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_route_tables::DescribeRouteTablesInput {
+            filters: self.filters,
+            dry_run: self.dry_run,
+            route_table_ids: self.route_table_ids,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

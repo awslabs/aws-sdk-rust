@@ -17,9 +17,7 @@ impl CrossRegionCopyRetainRule {
         self.interval
     }
     /// <p>The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
-    pub fn interval_unit(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RetentionIntervalUnitValues> {
+    pub fn interval_unit(&self) -> ::std::option::Option<&crate::types::RetentionIntervalUnitValues> {
         self.interval_unit.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl CrossRegionCopyRetainRule {
 
 /// A builder for [`CrossRegionCopyRetainRule`](crate::types::CrossRegionCopyRetainRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CrossRegionCopyRetainRuleBuilder {
     pub(crate) interval: ::std::option::Option<i32>,
     pub(crate) interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
@@ -60,17 +56,12 @@ impl CrossRegionCopyRetainRuleBuilder {
         self
     }
     /// <p>The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
-    pub fn set_interval_unit(
-        mut self,
-        input: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
-    ) -> Self {
+    pub fn set_interval_unit(mut self, input: ::std::option::Option<crate::types::RetentionIntervalUnitValues>) -> Self {
         self.interval_unit = input;
         self
     }
     /// <p>The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
-    pub fn get_interval_unit(
-        &self,
-    ) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
+    pub fn get_interval_unit(&self) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
         &self.interval_unit
     }
     /// Consumes the builder and constructs a [`CrossRegionCopyRetainRule`](crate::types::CrossRegionCopyRetainRule).

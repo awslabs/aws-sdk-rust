@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSolNetworkPackageOutput`](crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput) with field(s):
     ///   - [`nsd_operational_state(Option<NsdOperationalState>)`](crate::operation::update_sol_network_package::UpdateSolNetworkPackageOutput::nsd_operational_state): <p>Operational state of the network service descriptor in the network package.</p>
     /// - On failure, responds with [`SdkError<UpdateSolNetworkPackageError>`](crate::operation::update_sol_network_package::UpdateSolNetworkPackageError)
-    pub fn update_sol_network_package(
-        &self,
-    ) -> crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageFluentBuilder
-    {
+    pub fn update_sol_network_package(&self) -> crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageFluentBuilder {
         crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageFluentBuilder::new(self.handle.clone())
     }
 }

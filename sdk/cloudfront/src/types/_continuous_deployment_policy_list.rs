@@ -15,8 +15,7 @@ pub struct ContinuousDeploymentPolicyList {
     pub quantity: ::std::option::Option<i32>,
     /// <p>A list of continuous deployment policy items.</p>
     #[doc(hidden)]
-    pub items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>>,
 }
 impl ContinuousDeploymentPolicyList {
     /// <p>Indicates the next page of continuous deployment policies. To get the next page of the list, use this value in the <code>Marker</code> field of your request.</p>
@@ -32,9 +31,7 @@ impl ContinuousDeploymentPolicyList {
         self.quantity
     }
     /// <p>A list of continuous deployment policy items.</p>
-    pub fn items(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ContinuousDeploymentPolicySummary]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::ContinuousDeploymentPolicySummary]> {
         self.items.as_deref()
     }
 }
@@ -47,15 +44,12 @@ impl ContinuousDeploymentPolicyList {
 
 /// A builder for [`ContinuousDeploymentPolicyList`](crate::types::ContinuousDeploymentPolicyList).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContinuousDeploymentPolicyListBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>>,
 }
 impl ContinuousDeploymentPolicyListBuilder {
     /// <p>Indicates the next page of continuous deployment policies. To get the next page of the list, use this value in the <code>Marker</code> field of your request.</p>
@@ -112,20 +106,12 @@ impl ContinuousDeploymentPolicyListBuilder {
         self
     }
     /// <p>A list of continuous deployment policy items.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>,
-        >,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>>) -> Self {
         self.items = input;
         self
     }
     /// <p>A list of continuous deployment policy items.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>>
-    {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`ContinuousDeploymentPolicyList`](crate::types::ContinuousDeploymentPolicyList).

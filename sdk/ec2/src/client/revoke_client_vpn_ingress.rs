@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`RevokeClientVpnIngressOutput`](crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput) with field(s):
     ///   - [`status(Option<ClientVpnAuthorizationRuleStatus>)`](crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput::status): <p>The current state of the authorization rule.</p>
     /// - On failure, responds with [`SdkError<RevokeClientVpnIngressError>`](crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError)
-    pub fn revoke_client_vpn_ingress(
-        &self,
-    ) -> crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressFluentBuilder
-    {
+    pub fn revoke_client_vpn_ingress(&self) -> crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressFluentBuilder {
         crate::operation::revoke_client_vpn_ingress::builders::RevokeClientVpnIngressFluentBuilder::new(self.handle.clone())
     }
 }

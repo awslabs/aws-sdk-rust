@@ -28,9 +28,7 @@ impl GetOpsItemOutput {
 
 /// A builder for [`GetOpsItemOutput`](crate::operation::get_ops_item::GetOpsItemOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOpsItemOutputBuilder {
     pub(crate) ops_item: ::std::option::Option<crate::types::OpsItem>,
     _request_id: Option<String>,

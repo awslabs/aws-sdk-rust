@@ -22,34 +22,26 @@ impl AssociateConnectionWithLagInput {
 }
 impl AssociateConnectionWithLagInput {
     /// Creates a new builder-style object to manufacture [`AssociateConnectionWithLagInput`](crate::operation::associate_connection_with_lag::AssociateConnectionWithLagInput).
-    pub fn builder() -> crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagInputBuilder{
+    pub fn builder() -> crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagInputBuilder {
         crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagInputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateConnectionWithLagInput`](crate::operation::associate_connection_with_lag::AssociateConnectionWithLagInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateConnectionWithLagInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) lag_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateConnectionWithLagInputBuilder {
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl AssociateConnectionWithLagInputBuilder {
         crate::operation::associate_connection_with_lag::AssociateConnectionWithLagInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::associate_connection_with_lag::AssociateConnectionWithLagInput {
-                connection_id: self.connection_id,
-                lag_id: self.lag_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::associate_connection_with_lag::AssociateConnectionWithLagInput {
+            connection_id: self.connection_id,
+            lag_id: self.lag_id,
+        })
     }
 }

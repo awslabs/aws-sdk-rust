@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput) with field(s):
     ///   - [`application(Option<ApplicationSummary>)`](crate::operation::delete_application::DeleteApplicationOutput::application): <p>Information about the deleted application.</p>
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::operation::delete_application::DeleteApplicationError)
-    pub fn delete_application(
-        &self,
-    ) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {
-        crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_application(&self) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {
+        crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::new(self.handle.clone())
     }
 }

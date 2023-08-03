@@ -28,7 +28,7 @@ impl UpdateServerEngineAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServerEngineAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_server_engine_attributes::builders::UpdateServerEngineAttributesInputBuilder,
+    inner: crate::operation::update_server_engine_attributes::builders::UpdateServerEngineAttributesInputBuilder,
 }
 impl UpdateServerEngineAttributesFluentBuilder {
     /// Creates a new `UpdateServerEngineAttributes`.
@@ -39,7 +39,7 @@ impl UpdateServerEngineAttributesFluentBuilder {
         }
     }
     /// Access the UpdateServerEngineAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_server_engine_attributes::builders::UpdateServerEngineAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_server_engine_attributes::builders::UpdateServerEngineAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl UpdateServerEngineAttributesFluentBuilder {
             crate::operation::update_server_engine_attributes::UpdateServerEngineAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl UpdateServerEngineAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl UpdateServerEngineAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl UpdateServerEngineAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl UpdateServerEngineAttributesFluentBuilder {
             crate::operation::update_server_engine_attributes::UpdateServerEngineAttributes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +126,12 @@ impl UpdateServerEngineAttributesFluentBuilder {
         self.inner.get_server_name()
     }
     /// <p>The name of the engine attribute to update. </p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_name(input.into());
         self
     }
     /// <p>The name of the engine attribute to update. </p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_name(input);
         self
     }
@@ -157,18 +140,12 @@ impl UpdateServerEngineAttributesFluentBuilder {
         self.inner.get_attribute_name()
     }
     /// <p>The value to set for the attribute. </p>
-    pub fn attribute_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_value(input.into());
         self
     }
     /// <p>The value to set for the attribute. </p>
-    pub fn set_attribute_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_value(input);
         self
     }

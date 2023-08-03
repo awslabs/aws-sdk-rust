@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for PutExternalModelOutput {
 }
 impl PutExternalModelOutput {
     /// Creates a new builder-style object to manufacture [`PutExternalModelOutput`](crate::operation::put_external_model::PutExternalModelOutput).
-    pub fn builder() -> crate::operation::put_external_model::builders::PutExternalModelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_external_model::builders::PutExternalModelOutputBuilder {
         crate::operation::put_external_model::builders::PutExternalModelOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutExternalModelOutput`](crate::operation::put_external_model::PutExternalModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutExternalModelOutputBuilder {
     _request_id: Option<String>,
 }

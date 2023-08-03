@@ -36,7 +36,10 @@ pub fn ser_update_file_system_input(
     if let Some(var_10) = &input.open_zfs_configuration {
         #[allow(unused_mut)]
         let mut object_11 = object.key("OpenZFSConfiguration").start_object();
-        crate::protocol_serde::shape_update_file_system_open_zfs_configuration::ser_update_file_system_open_zfs_configuration(&mut object_11, var_10)?;
+        crate::protocol_serde::shape_update_file_system_open_zfs_configuration::ser_update_file_system_open_zfs_configuration(
+            &mut object_11,
+            var_10,
+        )?;
         object_11.finish();
     }
     Ok(())

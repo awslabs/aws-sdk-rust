@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CancelDetectMitigationActionsTaskOutp
 }
 impl CancelDetectMitigationActionsTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelDetectMitigationActionsTaskOutput`](crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskOutput).
-    pub fn builder() -> crate::operation::cancel_detect_mitigation_actions_task::builders::CancelDetectMitigationActionsTaskOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_detect_mitigation_actions_task::builders::CancelDetectMitigationActionsTaskOutputBuilder {
         crate::operation::cancel_detect_mitigation_actions_task::builders::CancelDetectMitigationActionsTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelDetectMitigationActionsTaskOutput`](crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelDetectMitigationActionsTaskOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl CancelDetectMitigationActionsTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelDetectMitigationActionsTaskOutput`](crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskOutput).
-    pub fn build(self) -> crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskOutput{
+    pub fn build(self) -> crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskOutput {
         crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskOutput {
             _request_id: self._request_id,
         }

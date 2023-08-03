@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::describe_ingestion::DescribeIngestionOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_ingestion::DescribeIngestionOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeIngestionError>`](crate::operation::describe_ingestion::DescribeIngestionError)
-    pub fn describe_ingestion(
-        &self,
-    ) -> crate::operation::describe_ingestion::builders::DescribeIngestionFluentBuilder {
-        crate::operation::describe_ingestion::builders::DescribeIngestionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_ingestion(&self) -> crate::operation::describe_ingestion::builders::DescribeIngestionFluentBuilder {
+        crate::operation::describe_ingestion::builders::DescribeIngestionFluentBuilder::new(self.handle.clone())
     }
 }

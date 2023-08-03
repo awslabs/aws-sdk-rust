@@ -34,32 +34,16 @@ impl ::std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_user::AssociateUserError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::associate_user::AssociateUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_user::AssociateUserError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::associate_user::AssociateUserError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -69,109 +53,71 @@ where
 impl From<crate::operation::associate_user::AssociateUserError> for Error {
     fn from(err: crate::operation::associate_user::AssociateUserError) -> Self {
         match err {
-            crate::operation::associate_user::AssociateUserError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::associate_user::AssociateUserError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::associate_user::AssociateUserError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::associate_user::AssociateUserError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::associate_user::AssociateUserError::ServiceQuotaExceededException(
-                inner,
-            ) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::associate_user::AssociateUserError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::associate_user::AssociateUserError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::associate_user::AssociateUserError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::associate_user::AssociateUserError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_user::AssociateUserError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_user::AssociateUserError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::associate_user::AssociateUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_user::AssociateUserError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::associate_user::AssociateUserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_user::AssociateUserError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_user::AssociateUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::deregister_identity_provider::DeregisterIdentityProviderError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::deregister_identity_provider::DeregisterIdentityProviderError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
         }
     }
 }
-impl From<crate::operation::deregister_identity_provider::DeregisterIdentityProviderError>
-    for Error
-{
-    fn from(
-        err: crate::operation::deregister_identity_provider::DeregisterIdentityProviderError,
-    ) -> Self {
+impl From<crate::operation::deregister_identity_provider::DeregisterIdentityProviderError> for Error {
+    fn from(err: crate::operation::deregister_identity_provider::DeregisterIdentityProviderError) -> Self {
         match err {
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_user::DisassociateUserError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::disassociate_user::DisassociateUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_user::DisassociateUserError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::disassociate_user::DisassociateUserError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -185,39 +131,25 @@ impl From<crate::operation::disassociate_user::DisassociateUserError> for Error 
             crate::operation::disassociate_user::DisassociateUserError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::disassociate_user::DisassociateUserError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::disassociate_user::DisassociateUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::disassociate_user::DisassociateUserError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::disassociate_user::DisassociateUserError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::disassociate_user::DisassociateUserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::disassociate_user::DisassociateUserError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::disassociate_user::DisassociateUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_providers::ListIdentityProvidersError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_identity_providers::ListIdentityProvidersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_providers::ListIdentityProvidersError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_identity_providers::ListIdentityProvidersError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -227,43 +159,35 @@ where
 impl From<crate::operation::list_identity_providers::ListIdentityProvidersError> for Error {
     fn from(err: crate::operation::list_identity_providers::ListIdentityProvidersError) -> Self {
         match err {
-            crate::operation::list_identity_providers::ListIdentityProvidersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_identity_providers::ListIdentityProvidersError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::list_identity_providers::ListIdentityProvidersError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::list_identity_providers::ListIdentityProvidersError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_identity_providers::ListIdentityProvidersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_identity_providers::ListIdentityProvidersError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_identity_providers::ListIdentityProvidersError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_identity_providers::ListIdentityProvidersError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_identity_providers::ListIdentityProvidersError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::list_identity_providers::ListIdentityProvidersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_identity_providers::ListIdentityProvidersError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_identity_providers::ListIdentityProvidersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instances::ListInstancesError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_instances::ListInstancesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instances::ListInstancesError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_instances::ListInstancesError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -273,59 +197,27 @@ where
 impl From<crate::operation::list_instances::ListInstancesError> for Error {
     fn from(err: crate::operation::list_instances::ListInstancesError) -> Self {
         match err {
-            crate::operation::list_instances::ListInstancesError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_instances::ListInstancesError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::list_instances::ListInstancesError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::list_instances::ListInstancesError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_instances::ListInstancesError::ServiceQuotaExceededException(
-                inner,
-            ) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::list_instances::ListInstancesError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::list_instances::ListInstancesError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::list_instances::ListInstancesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_instances::ListInstancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_instances::ListInstancesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_instances::ListInstancesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_instances::ListInstancesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_instances::ListInstancesError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_instances::ListInstancesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_instances::ListInstancesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_instances::ListInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_product_subscriptions::ListProductSubscriptionsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_product_subscriptions::ListProductSubscriptionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_product_subscriptions::ListProductSubscriptionsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_product_subscriptions::ListProductSubscriptionsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -333,47 +225,41 @@ where
     }
 }
 impl From<crate::operation::list_product_subscriptions::ListProductSubscriptionsError> for Error {
-    fn from(
-        err: crate::operation::list_product_subscriptions::ListProductSubscriptionsError,
-    ) -> Self {
+    fn from(err: crate::operation::list_product_subscriptions::ListProductSubscriptionsError) -> Self {
         match err {
-            crate::operation::list_product_subscriptions::ListProductSubscriptionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_product_subscriptions::ListProductSubscriptionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::list_product_subscriptions::ListProductSubscriptionsError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::list_product_subscriptions::ListProductSubscriptionsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_product_subscriptions::ListProductSubscriptionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_product_subscriptions::ListProductSubscriptionsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::list_product_subscriptions::ListProductSubscriptionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::list_product_subscriptions::ListProductSubscriptionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_product_subscriptions::ListProductSubscriptionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_product_subscriptions::ListProductSubscriptionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_product_subscriptions::ListProductSubscriptionsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_product_subscriptions::ListProductSubscriptionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_product_subscriptions::ListProductSubscriptionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::list_product_subscriptions::ListProductSubscriptionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_associations::ListUserAssociationsError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_user_associations::ListUserAssociationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::list_user_associations::ListUserAssociationsError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_user_associations::ListUserAssociationsError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -385,41 +271,31 @@ impl From<crate::operation::list_user_associations::ListUserAssociationsError> f
         match err {
             crate::operation::list_user_associations::ListUserAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_user_associations::ListUserAssociationsError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::list_user_associations::ListUserAssociationsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_user_associations::ListUserAssociationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_user_associations::ListUserAssociationsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_user_associations::ListUserAssociationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_user_associations::ListUserAssociationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_user_associations::ListUserAssociationsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::list_user_associations::ListUserAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_user_associations::ListUserAssociationsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_user_associations::ListUserAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_identity_provider::RegisterIdentityProviderError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::register_identity_provider::RegisterIdentityProviderError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::register_identity_provider::RegisterIdentityProviderError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::register_identity_provider::RegisterIdentityProviderError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -427,47 +303,41 @@ where
     }
 }
 impl From<crate::operation::register_identity_provider::RegisterIdentityProviderError> for Error {
-    fn from(
-        err: crate::operation::register_identity_provider::RegisterIdentityProviderError,
-    ) -> Self {
+    fn from(err: crate::operation::register_identity_provider::RegisterIdentityProviderError) -> Self {
         match err {
-            crate::operation::register_identity_provider::RegisterIdentityProviderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::register_identity_provider::RegisterIdentityProviderError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::register_identity_provider::RegisterIdentityProviderError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::register_identity_provider::RegisterIdentityProviderError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::register_identity_provider::RegisterIdentityProviderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::register_identity_provider::RegisterIdentityProviderError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::register_identity_provider::RegisterIdentityProviderError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::register_identity_provider::RegisterIdentityProviderError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::register_identity_provider::RegisterIdentityProviderError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::register_identity_provider::RegisterIdentityProviderError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::register_identity_provider::RegisterIdentityProviderError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::register_identity_provider::RegisterIdentityProviderError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::register_identity_provider::RegisterIdentityProviderError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::register_identity_provider::RegisterIdentityProviderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_product_subscription::StartProductSubscriptionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::start_product_subscription::StartProductSubscriptionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::start_product_subscription::StartProductSubscriptionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::start_product_subscription::StartProductSubscriptionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -475,47 +345,41 @@ where
     }
 }
 impl From<crate::operation::start_product_subscription::StartProductSubscriptionError> for Error {
-    fn from(
-        err: crate::operation::start_product_subscription::StartProductSubscriptionError,
-    ) -> Self {
+    fn from(err: crate::operation::start_product_subscription::StartProductSubscriptionError) -> Self {
         match err {
-            crate::operation::start_product_subscription::StartProductSubscriptionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_product_subscription::StartProductSubscriptionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::start_product_subscription::StartProductSubscriptionError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::start_product_subscription::StartProductSubscriptionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::start_product_subscription::StartProductSubscriptionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::start_product_subscription::StartProductSubscriptionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::start_product_subscription::StartProductSubscriptionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::start_product_subscription::StartProductSubscriptionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_product_subscription::StartProductSubscriptionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_product_subscription::StartProductSubscriptionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_product_subscription::StartProductSubscriptionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_product_subscription::StartProductSubscriptionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_product_subscription::StartProductSubscriptionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::start_product_subscription::StartProductSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_product_subscription::StopProductSubscriptionError,
-            R,
-        >,
-    > for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::stop_product_subscription::StopProductSubscriptionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(
-        err: ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_product_subscription::StopProductSubscriptionError,
-            R,
-        >,
-    ) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::stop_product_subscription::StopProductSubscriptionError, R>) -> Self {
         match err {
-            ::aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
                 ::aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err)
-                            .clone(),
-                    )
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
                     .source(err)
                     .build(),
             ),
@@ -523,45 +387,65 @@ where
     }
 }
 impl From<crate::operation::stop_product_subscription::StopProductSubscriptionError> for Error {
-    fn from(
-        err: crate::operation::stop_product_subscription::StopProductSubscriptionError,
-    ) -> Self {
+    fn from(err: crate::operation::stop_product_subscription::StopProductSubscriptionError) -> Self {
         match err {
-            crate::operation::stop_product_subscription::StopProductSubscriptionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_product_subscription::StopProductSubscriptionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::stop_product_subscription::StopProductSubscriptionError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::stop_product_subscription::StopProductSubscriptionError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::stop_product_subscription::StopProductSubscriptionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::stop_product_subscription::StopProductSubscriptionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::stop_product_subscription::StopProductSubscriptionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::stop_product_subscription::StopProductSubscriptionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_product_subscription::StopProductSubscriptionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::stop_product_subscription::StopProductSubscriptionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::stop_product_subscription::StopProductSubscriptionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::stop_product_subscription::StopProductSubscriptionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::stop_product_subscription::StopProductSubscriptionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::stop_product_subscription::StopProductSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError, R>) -> Self {
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError, R>,
+    ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                                            ::aws_smithy_types::error::Unhandled::builder()
-                                                .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError>
-    for Error
-{
-    fn from(
-        err: crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError,
-    ) -> Self {
+impl From<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError> for Error {
+    fn from(err: crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError) -> Self {
         match err {
-            crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

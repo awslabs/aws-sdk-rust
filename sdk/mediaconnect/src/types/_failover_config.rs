@@ -44,9 +44,7 @@ impl FailoverConfig {
 
 /// A builder for [`FailoverConfig`](crate::types::FailoverConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailoverConfigBuilder {
     pub(crate) failover_mode: ::std::option::Option<crate::types::FailoverMode>,
     pub(crate) recovery_window: ::std::option::Option<i32>,
@@ -60,10 +58,7 @@ impl FailoverConfigBuilder {
         self
     }
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
-    pub fn set_failover_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::FailoverMode>,
-    ) -> Self {
+    pub fn set_failover_mode(mut self, input: ::std::option::Option<crate::types::FailoverMode>) -> Self {
         self.failover_mode = input;
         self
     }
@@ -91,10 +86,7 @@ impl FailoverConfigBuilder {
         self
     }
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
-    pub fn set_source_priority(
-        mut self,
-        input: ::std::option::Option<crate::types::SourcePriority>,
-    ) -> Self {
+    pub fn set_source_priority(mut self, input: ::std::option::Option<crate::types::SourcePriority>) -> Self {
         self.source_priority = input;
         self
     }

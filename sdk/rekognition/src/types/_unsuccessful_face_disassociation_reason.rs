@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UnsuccessfulFaceDisassociationReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,13 +51,9 @@ pub enum UnsuccessfulFaceDisassociationReason {
 impl ::std::convert::From<&str> for UnsuccessfulFaceDisassociationReason {
     fn from(s: &str) -> Self {
         match s {
-            "ASSOCIATED_TO_A_DIFFERENT_USER" => {
-                UnsuccessfulFaceDisassociationReason::AssociatedToADifferentUser
-            }
+            "ASSOCIATED_TO_A_DIFFERENT_USER" => UnsuccessfulFaceDisassociationReason::AssociatedToADifferentUser,
             "FACE_NOT_FOUND" => UnsuccessfulFaceDisassociationReason::FaceNotFound,
-            other => UnsuccessfulFaceDisassociationReason::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => UnsuccessfulFaceDisassociationReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -78,9 +68,7 @@ impl UnsuccessfulFaceDisassociationReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            UnsuccessfulFaceDisassociationReason::AssociatedToADifferentUser => {
-                "ASSOCIATED_TO_A_DIFFERENT_USER"
-            }
+            UnsuccessfulFaceDisassociationReason::AssociatedToADifferentUser => "ASSOCIATED_TO_A_DIFFERENT_USER",
             UnsuccessfulFaceDisassociationReason::FaceNotFound => "FACE_NOT_FOUND",
             UnsuccessfulFaceDisassociationReason::Unknown(value) => value.as_str(),
         }

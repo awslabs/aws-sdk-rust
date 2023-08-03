@@ -37,9 +37,7 @@ impl SetRepositoryPolicyFluentBuilder {
         }
     }
     /// Access the SetRepositoryPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_repository_policy::builders::SetRepositoryPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_repository_policy::builders::SetRepositoryPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl SetRepositoryPolicyFluentBuilder {
             crate::operation::set_repository_policy::SetRepositoryPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_repository_policy::SetRepositoryPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_repository_policy::SetRepositoryPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl SetRepositoryPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl SetRepositoryPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_repository_policy::SetRepositoryPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_repository_policy::SetRepositoryPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_repository_policy::SetRepositoryPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl SetRepositoryPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_repository_policy::SetRepositoryPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_repository_policy::SetRepositoryPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_repository_policy::SetRepositoryPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl SetRepositoryPolicyFluentBuilder {
             crate::operation::set_repository_policy::SetRepositoryPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_repository_policy::SetRepositoryPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_repository_policy::SetRepositoryPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl SetRepositoryPolicyFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name of the repository to receive the policy.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository to receive the policy.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }

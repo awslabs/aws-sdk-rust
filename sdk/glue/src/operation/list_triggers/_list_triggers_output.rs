@@ -35,9 +35,7 @@ impl ListTriggersOutput {
 
 /// A builder for [`ListTriggersOutput`](crate::operation::list_triggers::ListTriggersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTriggersOutputBuilder {
     pub(crate) trigger_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -49,27 +47,19 @@ impl ListTriggersOutputBuilder {
     /// To override the contents of this collection use [`set_trigger_names`](Self::set_trigger_names).
     ///
     /// <p>The names of all triggers in the account, or the triggers with the specified tags.</p>
-    pub fn trigger_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trigger_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.trigger_names.unwrap_or_default();
         v.push(input.into());
         self.trigger_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of all triggers in the account, or the triggers with the specified tags.</p>
-    pub fn set_trigger_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_trigger_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.trigger_names = input;
         self
     }
     /// <p>The names of all triggers in the account, or the triggers with the specified tags.</p>
-    pub fn get_trigger_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_trigger_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.trigger_names
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>

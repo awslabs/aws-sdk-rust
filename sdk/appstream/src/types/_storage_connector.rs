@@ -37,9 +37,7 @@ impl StorageConnector {
 
 /// A builder for [`StorageConnector`](crate::types::StorageConnector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageConnectorBuilder {
     pub(crate) connector_type: ::std::option::Option<crate::types::StorageConnectorType>,
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl StorageConnectorBuilder {
         self
     }
     /// <p>The type of storage connector.</p>
-    pub fn set_connector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageConnectorType>,
-    ) -> Self {
+    pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::StorageConnectorType>) -> Self {
         self.connector_type = input;
         self
     }
@@ -64,18 +59,12 @@ impl StorageConnectorBuilder {
         &self.connector_type
     }
     /// <p>The ARN of the storage connector.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the storage connector.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -95,10 +84,7 @@ impl StorageConnectorBuilder {
         self
     }
     /// <p>The names of the domains for the account.</p>
-    pub fn set_domains(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.domains = input;
         self
     }

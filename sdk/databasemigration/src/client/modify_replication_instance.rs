@@ -18,7 +18,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyReplicationInstanceOutput`](crate::operation::modify_replication_instance::ModifyReplicationInstanceOutput) with field(s):
     ///   - [`replication_instance(Option<ReplicationInstance>)`](crate::operation::modify_replication_instance::ModifyReplicationInstanceOutput::replication_instance): <p>The modified replication instance.</p>
     /// - On failure, responds with [`SdkError<ModifyReplicationInstanceError>`](crate::operation::modify_replication_instance::ModifyReplicationInstanceError)
-    pub fn modify_replication_instance(&self) -> crate::operation::modify_replication_instance::builders::ModifyReplicationInstanceFluentBuilder{
+    pub fn modify_replication_instance(&self) -> crate::operation::modify_replication_instance::builders::ModifyReplicationInstanceFluentBuilder {
         crate::operation::modify_replication_instance::builders::ModifyReplicationInstanceFluentBuilder::new(self.handle.clone())
     }
 }

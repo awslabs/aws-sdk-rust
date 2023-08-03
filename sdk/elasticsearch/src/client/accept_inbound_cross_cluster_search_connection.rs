@@ -7,7 +7,11 @@ impl super::Client {
     /// - On success, responds with [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionOutput) with field(s):
     ///   - [`cross_cluster_search_connection(Option<InboundCrossClusterSearchConnection>)`](crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionOutput::cross_cluster_search_connection): <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of accepted inbound connection. </p>
     /// - On failure, responds with [`SdkError<AcceptInboundCrossClusterSearchConnectionError>`](crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionError)
-    pub fn accept_inbound_cross_cluster_search_connection(&self) -> crate::operation::accept_inbound_cross_cluster_search_connection::builders::AcceptInboundCrossClusterSearchConnectionFluentBuilder{
-        crate::operation::accept_inbound_cross_cluster_search_connection::builders::AcceptInboundCrossClusterSearchConnectionFluentBuilder::new(self.handle.clone())
+    pub fn accept_inbound_cross_cluster_search_connection(
+        &self,
+    ) -> crate::operation::accept_inbound_cross_cluster_search_connection::builders::AcceptInboundCrossClusterSearchConnectionFluentBuilder {
+        crate::operation::accept_inbound_cross_cluster_search_connection::builders::AcceptInboundCrossClusterSearchConnectionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

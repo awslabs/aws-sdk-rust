@@ -30,9 +30,7 @@ impl BatchUpdatePartitionFailureEntry {
 
 /// A builder for [`BatchUpdatePartitionFailureEntry`](crate::types::BatchUpdatePartitionFailureEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdatePartitionFailureEntryBuilder {
     pub(crate) partition_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) error_detail: ::std::option::Option<crate::types::ErrorDetail>,
@@ -43,27 +41,19 @@ impl BatchUpdatePartitionFailureEntryBuilder {
     /// To override the contents of this collection use [`set_partition_value_list`](Self::set_partition_value_list).
     ///
     /// <p>A list of values defining the partitions.</p>
-    pub fn partition_value_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_value_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_value_list.unwrap_or_default();
         v.push(input.into());
         self.partition_value_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of values defining the partitions.</p>
-    pub fn set_partition_value_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_partition_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.partition_value_list = input;
         self
     }
     /// <p>A list of values defining the partitions.</p>
-    pub fn get_partition_value_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_value_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.partition_value_list
     }
     /// <p>The details about the batch update partition error.</p>
@@ -72,10 +62,7 @@ impl BatchUpdatePartitionFailureEntryBuilder {
         self
     }
     /// <p>The details about the batch update partition error.</p>
-    pub fn set_error_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ErrorDetail>,
-    ) -> Self {
+    pub fn set_error_detail(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
         self.error_detail = input;
         self
     }

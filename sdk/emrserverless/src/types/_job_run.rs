@@ -45,9 +45,7 @@ pub struct JobRun {
     pub job_driver: ::std::option::Option<crate::types::JobDriver>,
     /// <p>The tags assigned to the job run.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The aggregate vCPU, memory, and storage resources used from the time the job starts to execute, until the time the job terminates, rounded up to the nearest second.</p>
     #[doc(hidden)]
     pub total_resource_utilization: ::std::option::Option<crate::types::TotalResourceUtilization>,
@@ -110,9 +108,7 @@ impl JobRun {
         self.release_label.as_deref()
     }
     /// <p>The configuration settings that are used to override default configuration.</p>
-    pub fn configuration_overrides(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConfigurationOverrides> {
+    pub fn configuration_overrides(&self) -> ::std::option::Option<&crate::types::ConfigurationOverrides> {
         self.configuration_overrides.as_ref()
     }
     /// <p>The job driver for the job run.</p>
@@ -120,23 +116,15 @@ impl JobRun {
         self.job_driver.as_ref()
     }
     /// <p>The tags assigned to the job run.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The aggregate vCPU, memory, and storage resources used from the time the job starts to execute, until the time the job terminates, rounded up to the nearest second.</p>
-    pub fn total_resource_utilization(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TotalResourceUtilization> {
+    pub fn total_resource_utilization(&self) -> ::std::option::Option<&crate::types::TotalResourceUtilization> {
         self.total_resource_utilization.as_ref()
     }
     /// <p>The network configuration for customer VPC connectivity.</p>
-    pub fn network_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <p>The job run total execution duration in seconds. This field is only available for job runs in a <code>COMPLETED</code>, <code>FAILED</code>, or <code>CANCELLED</code> state.</p>
@@ -148,9 +136,7 @@ impl JobRun {
         self.execution_timeout_minutes
     }
     /// <p>The aggregate vCPU, memory, and storage that Amazon Web Services has billed for the job run. The billed resources include a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed resources do not include usage for idle pre-initialized workers.</p>
-    pub fn billed_resource_utilization(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceUtilization> {
+    pub fn billed_resource_utilization(&self) -> ::std::option::Option<&crate::types::ResourceUtilization> {
         self.billed_resource_utilization.as_ref()
     }
 }
@@ -163,9 +149,7 @@ impl JobRun {
 
 /// A builder for [`JobRun`](crate::types::JobRun).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobRunBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_run_id: ::std::option::Option<::std::string::String>,
@@ -180,31 +164,21 @@ pub struct JobRunBuilder {
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_overrides: ::std::option::Option<crate::types::ConfigurationOverrides>,
     pub(crate) job_driver: ::std::option::Option<crate::types::JobDriver>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) total_resource_utilization:
-        ::std::option::Option<crate::types::TotalResourceUtilization>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) total_resource_utilization: ::std::option::Option<crate::types::TotalResourceUtilization>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) total_execution_duration_seconds: ::std::option::Option<i32>,
     pub(crate) execution_timeout_minutes: ::std::option::Option<i64>,
-    pub(crate) billed_resource_utilization:
-        ::std::option::Option<crate::types::ResourceUtilization>,
+    pub(crate) billed_resource_utilization: ::std::option::Option<crate::types::ResourceUtilization>,
 }
 impl JobRunBuilder {
     /// <p>The ID of the application the job is running on.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application the job is running on.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -274,10 +248,7 @@ impl JobRunBuilder {
         self
     }
     /// <p>The date and time when the job run was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -291,10 +262,7 @@ impl JobRunBuilder {
         self
     }
     /// <p>The date and time when the job run was updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
@@ -303,18 +271,12 @@ impl JobRunBuilder {
         &self.updated_at
     }
     /// <p>The execution role ARN of the job run.</p>
-    pub fn execution_role(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The execution role ARN of the job run.</p>
-    pub fn set_execution_role(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role = input;
         self
     }
@@ -337,18 +299,12 @@ impl JobRunBuilder {
         &self.state
     }
     /// <p>The state details of the job run.</p>
-    pub fn state_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn state_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state details of the job run.</p>
-    pub fn set_state_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_state_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_details = input;
         self
     }
@@ -357,18 +313,12 @@ impl JobRunBuilder {
         &self.state_details
     }
     /// <p>The Amazon EMR release associated with the application your job is running on.</p>
-    pub fn release_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EMR release associated with the application your job is running on.</p>
-    pub fn set_release_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_label = input;
         self
     }
@@ -382,17 +332,12 @@ impl JobRunBuilder {
         self
     }
     /// <p>The configuration settings that are used to override default configuration.</p>
-    pub fn set_configuration_overrides(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationOverrides>,
-    ) -> Self {
+    pub fn set_configuration_overrides(mut self, input: ::std::option::Option<crate::types::ConfigurationOverrides>) -> Self {
         self.configuration_overrides = input;
         self
     }
     /// <p>The configuration settings that are used to override default configuration.</p>
-    pub fn get_configuration_overrides(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
+    pub fn get_configuration_overrides(&self) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
         &self.configuration_overrides
     }
     /// <p>The job driver for the job run.</p>
@@ -414,54 +359,33 @@ impl JobRunBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the job run.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the job run.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags assigned to the job run.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The aggregate vCPU, memory, and storage resources used from the time the job starts to execute, until the time the job terminates, rounded up to the nearest second.</p>
-    pub fn total_resource_utilization(
-        mut self,
-        input: crate::types::TotalResourceUtilization,
-    ) -> Self {
+    pub fn total_resource_utilization(mut self, input: crate::types::TotalResourceUtilization) -> Self {
         self.total_resource_utilization = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregate vCPU, memory, and storage resources used from the time the job starts to execute, until the time the job terminates, rounded up to the nearest second.</p>
-    pub fn set_total_resource_utilization(
-        mut self,
-        input: ::std::option::Option<crate::types::TotalResourceUtilization>,
-    ) -> Self {
+    pub fn set_total_resource_utilization(mut self, input: ::std::option::Option<crate::types::TotalResourceUtilization>) -> Self {
         self.total_resource_utilization = input;
         self
     }
     /// <p>The aggregate vCPU, memory, and storage resources used from the time the job starts to execute, until the time the job terminates, rounded up to the nearest second.</p>
-    pub fn get_total_resource_utilization(
-        &self,
-    ) -> &::std::option::Option<crate::types::TotalResourceUtilization> {
+    pub fn get_total_resource_utilization(&self) -> &::std::option::Option<crate::types::TotalResourceUtilization> {
         &self.total_resource_utilization
     }
     /// <p>The network configuration for customer VPC connectivity.</p>
@@ -470,17 +394,12 @@ impl JobRunBuilder {
         self
     }
     /// <p>The network configuration for customer VPC connectivity.</p>
-    pub fn set_network_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkConfiguration>,
-    ) -> Self {
+    pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
         self.network_configuration = input;
         self
     }
     /// <p>The network configuration for customer VPC connectivity.</p>
-    pub fn get_network_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+    pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
     }
     /// <p>The job run total execution duration in seconds. This field is only available for job runs in a <code>COMPLETED</code>, <code>FAILED</code>, or <code>CANCELLED</code> state.</p>
@@ -489,10 +408,7 @@ impl JobRunBuilder {
         self
     }
     /// <p>The job run total execution duration in seconds. This field is only available for job runs in a <code>COMPLETED</code>, <code>FAILED</code>, or <code>CANCELLED</code> state.</p>
-    pub fn set_total_execution_duration_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_total_execution_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_execution_duration_seconds = input;
         self
     }
@@ -520,17 +436,12 @@ impl JobRunBuilder {
         self
     }
     /// <p>The aggregate vCPU, memory, and storage that Amazon Web Services has billed for the job run. The billed resources include a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed resources do not include usage for idle pre-initialized workers.</p>
-    pub fn set_billed_resource_utilization(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceUtilization>,
-    ) -> Self {
+    pub fn set_billed_resource_utilization(mut self, input: ::std::option::Option<crate::types::ResourceUtilization>) -> Self {
         self.billed_resource_utilization = input;
         self
     }
     /// <p>The aggregate vCPU, memory, and storage that Amazon Web Services has billed for the job run. The billed resources include a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed resources do not include usage for idle pre-initialized workers.</p>
-    pub fn get_billed_resource_utilization(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceUtilization> {
+    pub fn get_billed_resource_utilization(&self) -> &::std::option::Option<crate::types::ResourceUtilization> {
         &self.billed_resource_utilization
     }
     /// Consumes the builder and constructs a [`JobRun`](crate::types::JobRun).

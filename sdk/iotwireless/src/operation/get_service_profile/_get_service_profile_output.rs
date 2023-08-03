@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for GetServiceProfileOutput {
 }
 impl GetServiceProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceProfileOutput`](crate::operation::get_service_profile::GetServiceProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::get_service_profile::builders::GetServiceProfileOutputBuilder {
+    pub fn builder() -> crate::operation::get_service_profile::builders::GetServiceProfileOutputBuilder {
         crate::operation::get_service_profile::builders::GetServiceProfileOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetServiceProfileOutput`](crate::operation::get_service_profile::GetServiceProfileOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetServiceProfileOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -109,17 +106,12 @@ impl GetServiceProfileOutputBuilder {
         self
     }
     /// <p>Information about the service profile.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanGetServiceProfileInfo>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanGetServiceProfileInfo>) -> Self {
         self.lo_ra_wan = input;
         self
     }
     /// <p>Information about the service profile.</p>
-    pub fn get_lo_ra_wan(
-        &self,
-    ) -> &::std::option::Option<crate::types::LoRaWanGetServiceProfileInfo> {
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanGetServiceProfileInfo> {
         &self.lo_ra_wan
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

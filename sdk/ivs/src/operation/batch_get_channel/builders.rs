@@ -10,10 +10,7 @@ impl BatchGetChannelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_get_channel::BatchGetChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_channel::BatchGetChannelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_channel::BatchGetChannelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_get_channel();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchGetChannelFluentBuilder {
         }
     }
     /// Access the BatchGetChannel as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_get_channel::builders::BatchGetChannelInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_get_channel::builders::BatchGetChannelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchGetChannelFluentBuilder {
             crate::operation::batch_get_channel::BatchGetChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_channel::BatchGetChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_channel::BatchGetChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchGetChannelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchGetChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_channel::BatchGetChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_channel::BatchGetChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_channel::BatchGetChannelError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchGetChannelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_channel::BatchGetChannelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_channel::BatchGetChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_channel::BatchGetChannelError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchGetChannelFluentBuilder {
             crate::operation::batch_get_channel::BatchGetChannel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_channel::BatchGetChannelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_channel::BatchGetChannelError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl BatchGetChannelFluentBuilder {
         self
     }
     /// <p>Array of ARNs, one per channel.</p>
-    pub fn set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_arns(input);
         self
     }

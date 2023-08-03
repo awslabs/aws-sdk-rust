@@ -120,10 +120,7 @@ impl QueryAssistantInputBuilder {
     /// Consumes the builder and constructs a [`QueryAssistantInput`](crate::operation::query_assistant::QueryAssistantInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::query_assistant::QueryAssistantInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::query_assistant::QueryAssistantInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::query_assistant::QueryAssistantInput {
             assistant_id: self.assistant_id,
             query_text: self.query_text,

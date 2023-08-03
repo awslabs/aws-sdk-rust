@@ -10,10 +10,7 @@ impl DescribeTaskSetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_task_sets::DescribeTaskSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_task_sets::DescribeTaskSetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_task_sets::DescribeTaskSetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_task_sets();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeTaskSetsFluentBuilder {
         }
     }
     /// Access the DescribeTaskSets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_task_sets::builders::DescribeTaskSetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_task_sets::builders::DescribeTaskSetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeTaskSetsFluentBuilder {
             crate::operation::describe_task_sets::DescribeTaskSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_task_sets::DescribeTaskSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_task_sets::DescribeTaskSetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeTaskSetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeTaskSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_task_sets::DescribeTaskSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_task_sets::DescribeTaskSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_task_sets::DescribeTaskSetsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeTaskSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_task_sets::DescribeTaskSetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_task_sets::DescribeTaskSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_task_sets::DescribeTaskSetsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DescribeTaskSetsFluentBuilder {
             crate::operation::describe_task_sets::DescribeTaskSets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_task_sets::DescribeTaskSetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_task_sets::DescribeTaskSetsError>,
     > {
         self.customize_middleware().await
     }
@@ -160,10 +144,7 @@ impl DescribeTaskSetsFluentBuilder {
         self
     }
     /// <p>The ID or full Amazon Resource Name (ARN) of task sets to describe.</p>
-    pub fn set_task_sets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_task_sets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_task_sets(input);
         self
     }
@@ -181,17 +162,12 @@ impl DescribeTaskSetsFluentBuilder {
         self
     }
     /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn set_include(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskSetField>>,
-    ) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskSetField>>) -> Self {
         self.inner = self.inner.set_include(input);
         self
     }
     /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn get_include(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskSetField>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskSetField>> {
         self.inner.get_include()
     }
 }

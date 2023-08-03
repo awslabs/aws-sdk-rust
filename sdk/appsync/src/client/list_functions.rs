@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`functions(Option<Vec<FunctionConfiguration>>)`](crate::operation::list_functions::ListFunctionsOutput::functions): <p>A list of <code>Function</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_functions::ListFunctionsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     /// - On failure, responds with [`SdkError<ListFunctionsError>`](crate::operation::list_functions::ListFunctionsError)
-    pub fn list_functions(
-        &self,
-    ) -> crate::operation::list_functions::builders::ListFunctionsFluentBuilder {
-        crate::operation::list_functions::builders::ListFunctionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_functions(&self) -> crate::operation::list_functions::builders::ListFunctionsFluentBuilder {
+        crate::operation::list_functions::builders::ListFunctionsFluentBuilder::new(self.handle.clone())
     }
 }

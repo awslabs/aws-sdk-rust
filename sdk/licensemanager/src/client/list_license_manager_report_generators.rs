@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`report_generators(Option<Vec<ReportGenerator>>)`](crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput::report_generators): <p>A report generator that creates periodic reports about your license configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput::next_token): <p>Token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLicenseManagerReportGeneratorsError>`](crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError)
-    pub fn list_license_manager_report_generators(&self) -> crate::operation::list_license_manager_report_generators::builders::ListLicenseManagerReportGeneratorsFluentBuilder{
+    pub fn list_license_manager_report_generators(
+        &self,
+    ) -> crate::operation::list_license_manager_report_generators::builders::ListLicenseManagerReportGeneratorsFluentBuilder {
         crate::operation::list_license_manager_report_generators::builders::ListLicenseManagerReportGeneratorsFluentBuilder::new(self.handle.clone())
     }
 }

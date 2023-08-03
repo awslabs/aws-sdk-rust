@@ -28,7 +28,7 @@ impl ListAttachedUserPoliciesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAttachedUserPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_attached_user_policies::builders::ListAttachedUserPoliciesInputBuilder,
+    inner: crate::operation::list_attached_user_policies::builders::ListAttachedUserPoliciesInputBuilder,
 }
 impl ListAttachedUserPoliciesFluentBuilder {
     /// Creates a new `ListAttachedUserPolicies`.
@@ -39,7 +39,7 @@ impl ListAttachedUserPoliciesFluentBuilder {
         }
     }
     /// Access the ListAttachedUserPolicies as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_attached_user_policies::builders::ListAttachedUserPoliciesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_attached_user_policies::builders::ListAttachedUserPoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl ListAttachedUserPoliciesFluentBuilder {
             crate::operation::list_attached_user_policies::ListAttachedUserPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_user_policies::ListAttachedUserPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_user_policies::ListAttachedUserPoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl ListAttachedUserPoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl ListAttachedUserPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attached_user_policies::ListAttachedUserPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_user_policies::ListAttachedUserPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_user_policies::ListAttachedUserPoliciesError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl ListAttachedUserPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attached_user_policies::ListAttachedUserPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_user_policies::ListAttachedUserPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_user_policies::ListAttachedUserPoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -116,19 +107,14 @@ impl ListAttachedUserPoliciesFluentBuilder {
             crate::operation::list_attached_user_policies::ListAttachedUserPolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_attached_user_policies::ListAttachedUserPoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_attached_user_policies::ListAttachedUserPoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_attached_user_policies::paginator::ListAttachedUserPoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_attached_user_policies::paginator::ListAttachedUserPoliciesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_attached_user_policies::paginator::ListAttachedUserPoliciesPaginator {
         crate::operation::list_attached_user_policies::paginator::ListAttachedUserPoliciesPaginator::new(self.handle, self.inner)
     }
     /// <p>The name (friendly name, not ARN) of the user to list attached policies for.</p>

@@ -5,8 +5,7 @@
 pub struct ListPhoneNumbersOutput {
     /// <p>Information about the phone numbers.</p>
     #[doc(hidden)]
-    pub phone_number_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberSummary>>,
+    pub phone_number_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListPhoneNumbersOutput {
 }
 impl ListPhoneNumbersOutput {
     /// <p>Information about the phone numbers.</p>
-    pub fn phone_number_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PhoneNumberSummary]> {
+    pub fn phone_number_summary_list(&self) -> ::std::option::Option<&[crate::types::PhoneNumberSummary]> {
         self.phone_number_summary_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListPhoneNumbersOutput {
 }
 impl ListPhoneNumbersOutput {
     /// Creates a new builder-style object to manufacture [`ListPhoneNumbersOutput`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput).
-    pub fn builder() -> crate::operation::list_phone_numbers::builders::ListPhoneNumbersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_phone_numbers::builders::ListPhoneNumbersOutputBuilder {
         crate::operation::list_phone_numbers::builders::ListPhoneNumbersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPhoneNumbersOutput`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPhoneNumbersOutputBuilder {
-    pub(crate) phone_number_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberSummary>>,
+    pub(crate) phone_number_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListPhoneNumbersOutputBuilder {
         self
     }
     /// <p>Information about the phone numbers.</p>
-    pub fn set_phone_number_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberSummary>>,
-    ) -> Self {
+    pub fn set_phone_number_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberSummary>>) -> Self {
         self.phone_number_summary_list = input;
         self
     }
     /// <p>Information about the phone numbers.</p>
-    pub fn get_phone_number_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberSummary>> {
+    pub fn get_phone_number_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberSummary>> {
         &self.phone_number_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

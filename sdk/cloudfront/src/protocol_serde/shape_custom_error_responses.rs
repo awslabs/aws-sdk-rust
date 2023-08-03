@@ -14,10 +14,7 @@ pub fn ser_custom_error_responses(
         for list_item_3 in var_2 {
             {
                 let inner_writer = inner_writer.start_el("CustomErrorResponse");
-                crate::protocol_serde::shape_custom_error_response::ser_custom_error_response(
-                    list_item_3,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_custom_error_response::ser_custom_error_response(list_item_3, inner_writer)?
             }
         }
     }

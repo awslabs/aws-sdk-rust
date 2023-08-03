@@ -30,9 +30,7 @@ impl StatusReport {
 
 /// A builder for [`StatusReport`](crate::types::StatusReport).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatusReportBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) checked_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -58,10 +56,7 @@ impl StatusReportBuilder {
         self
     }
     /// <p>The date and time that the health checker performed the health check in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-    pub fn set_checked_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_checked_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.checked_time = input;
         self
     }

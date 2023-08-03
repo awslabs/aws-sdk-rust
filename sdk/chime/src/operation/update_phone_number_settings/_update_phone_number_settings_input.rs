@@ -22,7 +22,7 @@ impl ::std::fmt::Debug for UpdatePhoneNumberSettingsInput {
 }
 impl UpdatePhoneNumberSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberSettingsInput`](crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput).
-    pub fn builder() -> crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsInputBuilder{
+    pub fn builder() -> crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsInputBuilder {
         crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsInputBuilder::default()
     }
 }
@@ -55,11 +55,9 @@ impl UpdatePhoneNumberSettingsInputBuilder {
         crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput {
-                calling_name: self.calling_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput {
+            calling_name: self.calling_name,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdatePhoneNumberSettingsInputBuilder {

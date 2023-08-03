@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeEventCategoriesOutput`](crate::operation::describe_event_categories::DescribeEventCategoriesOutput) with field(s):
     ///   - [`event_categories_map_list(Option<Vec<EventCategoriesMap>>)`](crate::operation::describe_event_categories::DescribeEventCategoriesOutput::event_categories_map_list): <p>A list of <code>EventCategoriesMap</code> data types.</p>
     /// - On failure, responds with [`SdkError<DescribeEventCategoriesError>`](crate::operation::describe_event_categories::DescribeEventCategoriesError)
-    pub fn describe_event_categories(
-        &self,
-    ) -> crate::operation::describe_event_categories::builders::DescribeEventCategoriesFluentBuilder
-    {
+    pub fn describe_event_categories(&self) -> crate::operation::describe_event_categories::builders::DescribeEventCategoriesFluentBuilder {
         crate::operation::describe_event_categories::builders::DescribeEventCategoriesFluentBuilder::new(self.handle.clone())
     }
 }

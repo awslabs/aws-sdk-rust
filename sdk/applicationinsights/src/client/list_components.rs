@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`application_component_list(Option<Vec<ApplicationComponent>>)`](crate::operation::list_components::ListComponentsOutput::application_component_list): <p>The list of application components.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_components::ListComponentsOutput::next_token): <p>The token to request the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::operation::list_components::ListComponentsError)
-    pub fn list_components(
-        &self,
-    ) -> crate::operation::list_components::builders::ListComponentsFluentBuilder {
-        crate::operation::list_components::builders::ListComponentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_components(&self) -> crate::operation::list_components::builders::ListComponentsFluentBuilder {
+        crate::operation::list_components::builders::ListComponentsFluentBuilder::new(self.handle.clone())
     }
 }

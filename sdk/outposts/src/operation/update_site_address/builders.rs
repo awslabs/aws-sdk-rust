@@ -10,10 +10,7 @@ impl UpdateSiteAddressInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_site_address::UpdateSiteAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_site_address::UpdateSiteAddressError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_site_address::UpdateSiteAddressError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_site_address();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl UpdateSiteAddressFluentBuilder {
         }
     }
     /// Access the UpdateSiteAddress as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_site_address::builders::UpdateSiteAddressInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_site_address::builders::UpdateSiteAddressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl UpdateSiteAddressFluentBuilder {
             crate::operation::update_site_address::UpdateSiteAddress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_site_address::UpdateSiteAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_site_address::UpdateSiteAddressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl UpdateSiteAddressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl UpdateSiteAddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_site_address::UpdateSiteAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_site_address::UpdateSiteAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_site_address::UpdateSiteAddressError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl UpdateSiteAddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_site_address::UpdateSiteAddressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_site_address::UpdateSiteAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_site_address::UpdateSiteAddressError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl UpdateSiteAddressFluentBuilder {
             crate::operation::update_site_address::UpdateSiteAddress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_site_address::UpdateSiteAddressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_site_address::UpdateSiteAddressError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +128,7 @@ impl UpdateSiteAddressFluentBuilder {
         self
     }
     /// <p> The type of the address. </p>
-    pub fn set_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressType>,
-    ) -> Self {
+    pub fn set_address_type(mut self, input: ::std::option::Option<crate::types::AddressType>) -> Self {
         self.inner = self.inner.set_address_type(input);
         self
     }

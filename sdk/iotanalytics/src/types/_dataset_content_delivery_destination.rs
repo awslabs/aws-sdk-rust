@@ -6,24 +6,18 @@
 pub struct DatasetContentDeliveryDestination {
     /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
     #[doc(hidden)]
-    pub iot_events_destination_configuration:
-        ::std::option::Option<crate::types::IotEventsDestinationConfiguration>,
+    pub iot_events_destination_configuration: ::std::option::Option<crate::types::IotEventsDestinationConfiguration>,
     /// <p>Configuration information for delivery of dataset contents to Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_destination_configuration:
-        ::std::option::Option<crate::types::S3DestinationConfiguration>,
+    pub s3_destination_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
 }
 impl DatasetContentDeliveryDestination {
     /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
-    pub fn iot_events_destination_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IotEventsDestinationConfiguration> {
+    pub fn iot_events_destination_configuration(&self) -> ::std::option::Option<&crate::types::IotEventsDestinationConfiguration> {
         self.iot_events_destination_configuration.as_ref()
     }
     /// <p>Configuration information for delivery of dataset contents to Amazon S3.</p>
-    pub fn s3_destination_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::S3DestinationConfiguration> {
+    pub fn s3_destination_configuration(&self) -> ::std::option::Option<&crate::types::S3DestinationConfiguration> {
         self.s3_destination_configuration.as_ref()
     }
 }
@@ -36,58 +30,38 @@ impl DatasetContentDeliveryDestination {
 
 /// A builder for [`DatasetContentDeliveryDestination`](crate::types::DatasetContentDeliveryDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetContentDeliveryDestinationBuilder {
-    pub(crate) iot_events_destination_configuration:
-        ::std::option::Option<crate::types::IotEventsDestinationConfiguration>,
-    pub(crate) s3_destination_configuration:
-        ::std::option::Option<crate::types::S3DestinationConfiguration>,
+    pub(crate) iot_events_destination_configuration: ::std::option::Option<crate::types::IotEventsDestinationConfiguration>,
+    pub(crate) s3_destination_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
 }
 impl DatasetContentDeliveryDestinationBuilder {
     /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
-    pub fn iot_events_destination_configuration(
-        mut self,
-        input: crate::types::IotEventsDestinationConfiguration,
-    ) -> Self {
+    pub fn iot_events_destination_configuration(mut self, input: crate::types::IotEventsDestinationConfiguration) -> Self {
         self.iot_events_destination_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
-    pub fn set_iot_events_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::IotEventsDestinationConfiguration>,
-    ) -> Self {
+    pub fn set_iot_events_destination_configuration(mut self, input: ::std::option::Option<crate::types::IotEventsDestinationConfiguration>) -> Self {
         self.iot_events_destination_configuration = input;
         self
     }
     /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
-    pub fn get_iot_events_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::IotEventsDestinationConfiguration> {
+    pub fn get_iot_events_destination_configuration(&self) -> &::std::option::Option<crate::types::IotEventsDestinationConfiguration> {
         &self.iot_events_destination_configuration
     }
     /// <p>Configuration information for delivery of dataset contents to Amazon S3.</p>
-    pub fn s3_destination_configuration(
-        mut self,
-        input: crate::types::S3DestinationConfiguration,
-    ) -> Self {
+    pub fn s3_destination_configuration(mut self, input: crate::types::S3DestinationConfiguration) -> Self {
         self.s3_destination_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information for delivery of dataset contents to Amazon S3.</p>
-    pub fn set_s3_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_s3_destination_configuration(mut self, input: ::std::option::Option<crate::types::S3DestinationConfiguration>) -> Self {
         self.s3_destination_configuration = input;
         self
     }
     /// <p>Configuration information for delivery of dataset contents to Amazon S3.</p>
-    pub fn get_s3_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
+    pub fn get_s3_destination_configuration(&self) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
         &self.s3_destination_configuration
     }
     /// Consumes the builder and constructs a [`DatasetContentDeliveryDestination`](crate::types::DatasetContentDeliveryDestination).

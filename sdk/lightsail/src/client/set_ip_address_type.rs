@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`SetIpAddressTypeOutput`](crate::operation::set_ip_address_type::SetIpAddressTypeOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::set_ip_address_type::SetIpAddressTypeOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<SetIpAddressTypeError>`](crate::operation::set_ip_address_type::SetIpAddressTypeError)
-    pub fn set_ip_address_type(
-        &self,
-    ) -> crate::operation::set_ip_address_type::builders::SetIpAddressTypeFluentBuilder {
-        crate::operation::set_ip_address_type::builders::SetIpAddressTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_ip_address_type(&self) -> crate::operation::set_ip_address_type::builders::SetIpAddressTypeFluentBuilder {
+        crate::operation::set_ip_address_type::builders::SetIpAddressTypeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,10 +37,8 @@ impl ::aws_http::request_id::RequestId for VerifySoftwareTokenOutput {
 }
 impl VerifySoftwareTokenOutput {
     /// Creates a new builder-style object to manufacture [`VerifySoftwareTokenOutput`](crate::operation::verify_software_token::VerifySoftwareTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::verify_software_token::builders::VerifySoftwareTokenOutputBuilder {
-        crate::operation::verify_software_token::builders::VerifySoftwareTokenOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::verify_software_token::builders::VerifySoftwareTokenOutputBuilder {
+        crate::operation::verify_software_token::builders::VerifySoftwareTokenOutputBuilder::default()
     }
 }
 
@@ -59,17 +57,12 @@ impl VerifySoftwareTokenOutputBuilder {
         self
     }
     /// <p>The status of the verify software token.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifySoftwareTokenResponseType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VerifySoftwareTokenResponseType>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the verify software token.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifySoftwareTokenResponseType> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VerifySoftwareTokenResponseType> {
         &self.status
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>

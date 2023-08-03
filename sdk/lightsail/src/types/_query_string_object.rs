@@ -35,13 +35,10 @@ impl QueryStringObject {
 
 /// A builder for [`QueryStringObject`](crate::types::QueryStringObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryStringObjectBuilder {
     pub(crate) option: ::std::option::Option<bool>,
-    pub(crate) query_strings_allow_list:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) query_strings_allow_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl QueryStringObjectBuilder {
     /// <p>Indicates whether the distribution forwards and caches based on query strings.</p>
@@ -65,10 +62,7 @@ impl QueryStringObjectBuilder {
     /// <p>The specific query strings that the distribution forwards to the origin.</p>
     /// <p>Your distribution will cache content based on the specified query strings.</p>
     /// <p>If the <code>option</code> parameter is true, then your distribution forwards all query strings, regardless of what you specify using the <code>queryStringsAllowList</code> parameter.</p>
-    pub fn query_strings_allow_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_strings_allow_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.query_strings_allow_list.unwrap_or_default();
         v.push(input.into());
         self.query_strings_allow_list = ::std::option::Option::Some(v);
@@ -77,19 +71,14 @@ impl QueryStringObjectBuilder {
     /// <p>The specific query strings that the distribution forwards to the origin.</p>
     /// <p>Your distribution will cache content based on the specified query strings.</p>
     /// <p>If the <code>option</code> parameter is true, then your distribution forwards all query strings, regardless of what you specify using the <code>queryStringsAllowList</code> parameter.</p>
-    pub fn set_query_strings_allow_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_query_strings_allow_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.query_strings_allow_list = input;
         self
     }
     /// <p>The specific query strings that the distribution forwards to the origin.</p>
     /// <p>Your distribution will cache content based on the specified query strings.</p>
     /// <p>If the <code>option</code> parameter is true, then your distribution forwards all query strings, regardless of what you specify using the <code>queryStringsAllowList</code> parameter.</p>
-    pub fn get_query_strings_allow_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_query_strings_allow_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.query_strings_allow_list
     }
     /// Consumes the builder and constructs a [`QueryStringObject`](crate::types::QueryStringObject).

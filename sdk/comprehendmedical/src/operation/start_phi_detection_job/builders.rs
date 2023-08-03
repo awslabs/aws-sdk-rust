@@ -37,10 +37,7 @@ impl StartPHIDetectionJobFluentBuilder {
         }
     }
     /// Access the StartPHIDetectionJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_phi_detection_job::builders::StartPhiDetectionJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_phi_detection_job::builders::StartPhiDetectionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StartPHIDetectionJobFluentBuilder {
             crate::operation::start_phi_detection_job::StartPHIDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_phi_detection_job::StartPHIDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_phi_detection_job::StartPHIDetectionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StartPHIDetectionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StartPHIDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_phi_detection_job::StartPhiDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_phi_detection_job::StartPHIDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_phi_detection_job::StartPHIDetectionJobError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StartPHIDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_phi_detection_job::StartPhiDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_phi_detection_job::StartPHIDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_phi_detection_job::StartPHIDetectionJobError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl StartPHIDetectionJobFluentBuilder {
             crate::operation::start_phi_detection_job::StartPHIDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_phi_detection_job::StartPHIDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_phi_detection_job::StartPHIDetectionJobError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +115,7 @@ impl StartPHIDetectionJobFluentBuilder {
         self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
@@ -146,10 +129,7 @@ impl StartPHIDetectionJobFluentBuilder {
         self
     }
     /// <p>Specifies where to send the output files.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
@@ -158,18 +138,12 @@ impl StartPHIDetectionJobFluentBuilder {
         self.inner.get_output_data_config()
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
@@ -192,18 +166,12 @@ impl StartPHIDetectionJobFluentBuilder {
         self.inner.get_job_name()
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -231,10 +199,7 @@ impl StartPHIDetectionJobFluentBuilder {
         self
     }
     /// <p>The language of the input documents. All documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }

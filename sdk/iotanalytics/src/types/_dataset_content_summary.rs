@@ -51,9 +51,7 @@ impl DatasetContentSummary {
 
 /// A builder for [`DatasetContentSummary`](crate::types::DatasetContentSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatasetContentSummaryBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DatasetContentStatus>,
@@ -82,10 +80,7 @@ impl DatasetContentSummaryBuilder {
         self
     }
     /// <p>The status of the dataset contents.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetContentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatasetContentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -99,10 +94,7 @@ impl DatasetContentSummaryBuilder {
         self
     }
     /// <p>The actual time the creation of the dataset contents was started.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -116,10 +108,7 @@ impl DatasetContentSummaryBuilder {
         self
     }
     /// <p>The time the creation of the dataset contents was scheduled to start.</p>
-    pub fn set_schedule_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_schedule_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.schedule_time = input;
         self
     }
@@ -133,10 +122,7 @@ impl DatasetContentSummaryBuilder {
         self
     }
     /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
-    pub fn set_completion_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completion_time = input;
         self
     }

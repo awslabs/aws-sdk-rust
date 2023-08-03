@@ -5,16 +5,16 @@ pub use crate::operation::delete_calculated_attribute_definition::_delete_calcul
 
 impl DeleteCalculatedAttributeDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.delete_calculated_attribute_definition();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DeleteCalculatedAttributeDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteCalculatedAttributeDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_calculated_attribute_definition::builders::DeleteCalculatedAttributeDefinitionInputBuilder,
+    inner: crate::operation::delete_calculated_attribute_definition::builders::DeleteCalculatedAttributeDefinitionInputBuilder,
 }
 impl DeleteCalculatedAttributeDefinitionFluentBuilder {
     /// Creates a new `DeleteCalculatedAttributeDefinition`.
@@ -37,15 +37,20 @@ impl DeleteCalculatedAttributeDefinitionFluentBuilder {
         }
     }
     /// Access the DeleteCalculatedAttributeDefinition as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_calculated_attribute_definition::builders::DeleteCalculatedAttributeDefinitionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_calculated_attribute_definition::builders::DeleteCalculatedAttributeDefinitionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinition, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinition,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DeleteCalculatedAttributeDefinitionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl DeleteCalculatedAttributeDefinitionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinition, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinition,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The unique name of the domain.</p>
@@ -109,18 +124,12 @@ impl DeleteCalculatedAttributeDefinitionFluentBuilder {
         self.inner.get_domain_name()
     }
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn calculated_attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculated_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.calculated_attribute_name(input.into());
         self
     }
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn set_calculated_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculated_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_calculated_attribute_name(input);
         self
     }

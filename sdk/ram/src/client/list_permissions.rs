@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`permissions(Option<Vec<ResourceSharePermissionSummary>>)`](crate::operation::list_permissions::ListPermissionsOutput::permissions): <p>An array of objects with information about the permissions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_permissions::ListPermissionsOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     /// - On failure, responds with [`SdkError<ListPermissionsError>`](crate::operation::list_permissions::ListPermissionsError)
-    pub fn list_permissions(
-        &self,
-    ) -> crate::operation::list_permissions::builders::ListPermissionsFluentBuilder {
-        crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_permissions(&self) -> crate::operation::list_permissions::builders::ListPermissionsFluentBuilder {
+        crate::operation::list_permissions::builders::ListPermissionsFluentBuilder::new(self.handle.clone())
     }
 }

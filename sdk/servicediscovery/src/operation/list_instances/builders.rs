@@ -10,10 +10,7 @@ impl ListInstancesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_instances::ListInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instances::ListInstancesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instances::ListInstancesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_instances();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListInstancesFluentBuilder {
         }
     }
     /// Access the ListInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_instances::builders::ListInstancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_instances::builders::ListInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl ListInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl ListInstancesFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_instances::paginator::ListInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_instances::paginator::ListInstancesPaginator {
-        crate::operation::list_instances::paginator::ListInstancesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_instances::paginator::ListInstancesPaginator {
+        crate::operation::list_instances::paginator::ListInstancesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the service that you want to list instances for.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

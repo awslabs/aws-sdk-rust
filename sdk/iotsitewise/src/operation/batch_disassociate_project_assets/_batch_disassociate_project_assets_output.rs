@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for BatchDisassociateProjectAssetsOutput 
 }
 impl BatchDisassociateProjectAssetsOutput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateProjectAssetsOutput`](crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsOutput).
-    pub fn builder() -> crate::operation::batch_disassociate_project_assets::builders::BatchDisassociateProjectAssetsOutputBuilder{
+    pub fn builder() -> crate::operation::batch_disassociate_project_assets::builders::BatchDisassociateProjectAssetsOutputBuilder {
         crate::operation::batch_disassociate_project_assets::builders::BatchDisassociateProjectAssetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDisassociateProjectAssetsOutput`](crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDisassociateProjectAssetsOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::AssetErrorDetails>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl BatchDisassociateProjectAssetsOutputBuilder {
         self
     }
     /// <p>A list of associated error information, if any.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetErrorDetails>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetErrorDetails>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>A list of associated error information, if any.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetErrorDetails>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetErrorDetails>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,10 +64,7 @@ impl BatchDisassociateProjectAssetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDisassociateProjectAssetsOutput`](crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsOutput
-    {
+    pub fn build(self) -> crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsOutput {
         crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsOutput {
             errors: self.errors,
             _request_id: self._request_id,

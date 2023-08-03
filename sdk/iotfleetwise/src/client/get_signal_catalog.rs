@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_signal_catalog::GetSignalCatalogOutput::creation_time): <p> The time the signal catalog was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     ///   - [`last_modification_time(Option<DateTime>)`](crate::operation::get_signal_catalog::GetSignalCatalogOutput::last_modification_time): <p>The last time the signal catalog was modified.</p>
     /// - On failure, responds with [`SdkError<GetSignalCatalogError>`](crate::operation::get_signal_catalog::GetSignalCatalogError)
-    pub fn get_signal_catalog(
-        &self,
-    ) -> crate::operation::get_signal_catalog::builders::GetSignalCatalogFluentBuilder {
-        crate::operation::get_signal_catalog::builders::GetSignalCatalogFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_signal_catalog(&self) -> crate::operation::get_signal_catalog::builders::GetSignalCatalogFluentBuilder {
+        crate::operation::get_signal_catalog::builders::GetSignalCatalogFluentBuilder::new(self.handle.clone())
     }
 }

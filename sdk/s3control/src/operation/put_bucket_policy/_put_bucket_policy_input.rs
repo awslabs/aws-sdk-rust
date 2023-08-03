@@ -71,9 +71,7 @@ impl PutBucketPolicyInput {
 
 /// A builder for [`PutBucketPolicyInput`](crate::operation::put_bucket_policy::PutBucketPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBucketPolicyInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
@@ -155,10 +153,7 @@ impl PutBucketPolicyInputBuilder {
     /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn set_confirm_remove_self_bucket_access(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_confirm_remove_self_bucket_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.confirm_remove_self_bucket_access = input;
         self
     }
@@ -185,10 +180,7 @@ impl PutBucketPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutBucketPolicyInput`](crate::operation::put_bucket_policy::PutBucketPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_bucket_policy::PutBucketPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_bucket_policy::PutBucketPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_bucket_policy::PutBucketPolicyInput {
             account_id: self.account_id,
             bucket: self.bucket,

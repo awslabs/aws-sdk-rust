@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`operation(Option<String>)`](crate::operation::remove_all_backends::RemoveAllBackendsOutput::operation): <p>The name of the operation.</p>
     ///   - [`status(Option<String>)`](crate::operation::remove_all_backends::RemoveAllBackendsOutput::status): <p>The current status of the request.</p>
     /// - On failure, responds with [`SdkError<RemoveAllBackendsError>`](crate::operation::remove_all_backends::RemoveAllBackendsError)
-    pub fn remove_all_backends(
-        &self,
-    ) -> crate::operation::remove_all_backends::builders::RemoveAllBackendsFluentBuilder {
-        crate::operation::remove_all_backends::builders::RemoveAllBackendsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_all_backends(&self) -> crate::operation::remove_all_backends::builders::RemoveAllBackendsFluentBuilder {
+        crate::operation::remove_all_backends::builders::RemoveAllBackendsFluentBuilder::new(self.handle.clone())
     }
 }

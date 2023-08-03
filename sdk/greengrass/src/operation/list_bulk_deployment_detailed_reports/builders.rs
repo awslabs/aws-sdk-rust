@@ -5,16 +5,16 @@ pub use crate::operation::list_bulk_deployment_detailed_reports::_list_bulk_depl
 
 impl ListBulkDeploymentDetailedReportsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_bulk_deployment_detailed_reports();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl ListBulkDeploymentDetailedReportsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBulkDeploymentDetailedReportsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsInputBuilder,
+    inner: crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsInputBuilder,
 }
 impl ListBulkDeploymentDetailedReportsFluentBuilder {
     /// Creates a new `ListBulkDeploymentDetailedReports`.
@@ -37,15 +37,20 @@ impl ListBulkDeploymentDetailedReportsFluentBuilder {
         }
     }
     /// Access the ListBulkDeploymentDetailedReports as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReports, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReports,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl ListBulkDeploymentDetailedReportsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl ListBulkDeploymentDetailedReportsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReports, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReports,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError>,
+    > {
         self.customize_middleware().await
     }
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bulk_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bulk_deployment_id(input.into());
         self
     }
     /// The ID of the bulk deployment.
-    pub fn set_bulk_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bulk_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bulk_deployment_id(input);
         self
     }

@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`stream_arn(impl ::std::convert::Into<String>)`](crate::operation::increase_stream_retention_period::builders::IncreaseStreamRetentionPeriodFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::increase_stream_retention_period::builders::IncreaseStreamRetentionPeriodFluentBuilder::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`IncreaseStreamRetentionPeriodOutput`](crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodOutput)
     /// - On failure, responds with [`SdkError<IncreaseStreamRetentionPeriodError>`](crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError)
-    pub fn increase_stream_retention_period(&self) -> crate::operation::increase_stream_retention_period::builders::IncreaseStreamRetentionPeriodFluentBuilder{
+    pub fn increase_stream_retention_period(
+        &self,
+    ) -> crate::operation::increase_stream_retention_period::builders::IncreaseStreamRetentionPeriodFluentBuilder {
         crate::operation::increase_stream_retention_period::builders::IncreaseStreamRetentionPeriodFluentBuilder::new(self.handle.clone())
     }
 }

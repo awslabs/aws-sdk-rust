@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`terminate_env_by_force(bool)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::terminate_env_by_force) / [`set_terminate_env_by_force(Option<bool>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_terminate_env_by_force): <p>When set to true, running environments will be terminated before deleting the application.</p>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::operation::delete_application::DeleteApplicationError)
-    pub fn delete_application(
-        &self,
-    ) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {
-        crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_application(&self) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {
+        crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::new(self.handle.clone())
     }
 }

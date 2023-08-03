@@ -27,10 +27,7 @@ pub fn ser_start_task_input(
     if let Some(var_8) = &input.network_configuration {
         #[allow(unused_mut)]
         let mut object_9 = object.key("networkConfiguration").start_object();
-        crate::protocol_serde::shape_network_configuration::ser_network_configuration(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.overrides {

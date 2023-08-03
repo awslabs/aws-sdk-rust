@@ -39,13 +39,7 @@
 /// <p>Specifies how to apply changes to the S3 bucket exclusion list defined by the classification scope for an Amazon Macie account. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ClassificationScopeUpdateOperation {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for ClassificationScopeUpdateOperation {
             "ADD" => ClassificationScopeUpdateOperation::Add,
             "REMOVE" => ClassificationScopeUpdateOperation::Remove,
             "REPLACE" => ClassificationScopeUpdateOperation::Replace,
-            other => ClassificationScopeUpdateOperation::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ClassificationScopeUpdateOperation::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

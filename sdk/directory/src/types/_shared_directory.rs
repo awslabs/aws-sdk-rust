@@ -108,18 +108,12 @@ pub struct SharedDirectoryBuilder {
 }
 impl SharedDirectoryBuilder {
     /// <p>Identifier of the directory owner account, which contains the directory that has been shared to the consumer account.</p>
-    pub fn owner_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier of the directory owner account, which contains the directory that has been shared to the consumer account.</p>
-    pub fn set_owner_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account_id = input;
         self
     }
@@ -128,18 +122,12 @@ impl SharedDirectoryBuilder {
         &self.owner_account_id
     }
     /// <p>Identifier of the directory in the directory owner account. </p>
-    pub fn owner_directory_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_directory_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier of the directory in the directory owner account. </p>
-    pub fn set_owner_directory_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_directory_id = input;
         self
     }
@@ -153,10 +141,7 @@ impl SharedDirectoryBuilder {
         self
     }
     /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
-    pub fn set_share_method(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareMethod>,
-    ) -> Self {
+    pub fn set_share_method(mut self, input: ::std::option::Option<crate::types::ShareMethod>) -> Self {
         self.share_method = input;
         self
     }
@@ -165,18 +150,12 @@ impl SharedDirectoryBuilder {
         &self.share_method
     }
     /// <p>Identifier of the directory consumer account that has access to the shared directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
-    pub fn shared_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier of the directory consumer account that has access to the shared directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
-    pub fn set_shared_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shared_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_account_id = input;
         self
     }
@@ -185,18 +164,12 @@ impl SharedDirectoryBuilder {
         &self.shared_account_id
     }
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
-    pub fn shared_directory_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_directory_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
-    pub fn set_shared_directory_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shared_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_directory_id = input;
         self
     }
@@ -210,10 +183,7 @@ impl SharedDirectoryBuilder {
         self
     }
     /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
-    pub fn set_share_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareStatus>,
-    ) -> Self {
+    pub fn set_share_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
         self.share_status = input;
         self
     }
@@ -241,10 +211,7 @@ impl SharedDirectoryBuilder {
         self
     }
     /// <p>The date and time that the shared directory was created.</p>
-    pub fn set_created_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date_time = input;
         self
     }
@@ -258,17 +225,12 @@ impl SharedDirectoryBuilder {
         self
     }
     /// <p>The date and time that the shared directory was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time that the shared directory was last updated.</p>
-    pub fn get_last_updated_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`SharedDirectory`](crate::types::SharedDirectory).

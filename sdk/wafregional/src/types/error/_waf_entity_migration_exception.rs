@@ -42,10 +42,7 @@ impl WafEntityMigrationException {
 }
 impl ::std::fmt::Display for WafEntityMigrationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        ::std::write!(
-            f,
-            "WafEntityMigrationException [WAFEntityMigrationException]"
-        )?;
+        ::std::write!(f, "WafEntityMigrationException [WAFEntityMigrationException]")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
             {
                 ::std::write!(f, ": {}", inner_1)?;
@@ -75,9 +72,7 @@ impl WafEntityMigrationException {
 
 /// A builder for [`WafEntityMigrationException`](crate::types::error::WafEntityMigrationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WafEntityMigrationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) migration_error_type: ::std::option::Option<crate::types::MigrationErrorType>,
@@ -105,32 +100,21 @@ impl WafEntityMigrationExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_migration_error_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MigrationErrorType>,
-    ) -> Self {
+    pub fn set_migration_error_type(mut self, input: ::std::option::Option<crate::types::MigrationErrorType>) -> Self {
         self.migration_error_type = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_migration_error_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::MigrationErrorType> {
+    pub fn get_migration_error_type(&self) -> &::std::option::Option<crate::types::MigrationErrorType> {
         &self.migration_error_type
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn migration_error_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn migration_error_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_error_reason = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_migration_error_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_migration_error_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.migration_error_reason = input;
         self
     }
@@ -145,10 +129,7 @@ impl WafEntityMigrationExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

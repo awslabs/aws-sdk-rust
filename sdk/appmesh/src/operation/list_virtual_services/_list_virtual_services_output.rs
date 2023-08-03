@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListVirtualServicesOutput {
 }
 impl ListVirtualServicesOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualServicesOutput`](crate::operation::list_virtual_services::ListVirtualServicesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_virtual_services::builders::ListVirtualServicesOutputBuilder {
-        crate::operation::list_virtual_services::builders::ListVirtualServicesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_virtual_services::builders::ListVirtualServicesOutputBuilder {
+        crate::operation::list_virtual_services::builders::ListVirtualServicesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVirtualServicesOutput`](crate::operation::list_virtual_services::ListVirtualServicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVirtualServicesOutputBuilder {
-    pub(crate) virtual_services:
-        ::std::option::Option<::std::vec::Vec<crate::types::VirtualServiceRef>>,
+    pub(crate) virtual_services: ::std::option::Option<::std::vec::Vec<crate::types::VirtualServiceRef>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl ListVirtualServicesOutputBuilder {
         self
     }
     /// <p>The list of existing virtual services for the specified service mesh.</p>
-    pub fn set_virtual_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualServiceRef>>,
-    ) -> Self {
+    pub fn set_virtual_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualServiceRef>>) -> Self {
         self.virtual_services = input;
         self
     }
     /// <p>The list of existing virtual services for the specified service mesh.</p>
-    pub fn get_virtual_services(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualServiceRef>> {
+    pub fn get_virtual_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualServiceRef>> {
         &self.virtual_services
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>

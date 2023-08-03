@@ -41,9 +41,7 @@ impl BackupObject {
         self.object_checksum.as_deref()
     }
     /// Checksum algorithm
-    pub fn object_checksum_algorithm(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SummaryChecksumAlgorithm> {
+    pub fn object_checksum_algorithm(&self) -> ::std::option::Option<&crate::types::SummaryChecksumAlgorithm> {
         self.object_checksum_algorithm.as_ref()
     }
     /// Object token
@@ -60,16 +58,13 @@ impl BackupObject {
 
 /// A builder for [`BackupObject`](crate::types::BackupObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackupObjectBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) chunks_count: ::std::option::Option<i64>,
     pub(crate) metadata_string: ::std::option::Option<::std::string::String>,
     pub(crate) object_checksum: ::std::option::Option<::std::string::String>,
-    pub(crate) object_checksum_algorithm:
-        ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
+    pub(crate) object_checksum_algorithm: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
     pub(crate) object_token: ::std::option::Option<::std::string::String>,
 }
 impl BackupObjectBuilder {
@@ -102,18 +97,12 @@ impl BackupObjectBuilder {
         &self.chunks_count
     }
     /// Metadata string associated with the Object
-    pub fn metadata_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata_string = ::std::option::Option::Some(input.into());
         self
     }
     /// Metadata string associated with the Object
-    pub fn set_metadata_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_metadata_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata_string = input;
         self
     }
@@ -122,18 +111,12 @@ impl BackupObjectBuilder {
         &self.metadata_string
     }
     /// Object checksum
-    pub fn object_checksum(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn object_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_checksum = ::std::option::Option::Some(input.into());
         self
     }
     /// Object checksum
-    pub fn set_object_checksum(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_object_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_checksum = input;
         self
     }
@@ -142,25 +125,17 @@ impl BackupObjectBuilder {
         &self.object_checksum
     }
     /// Checksum algorithm
-    pub fn object_checksum_algorithm(
-        mut self,
-        input: crate::types::SummaryChecksumAlgorithm,
-    ) -> Self {
+    pub fn object_checksum_algorithm(mut self, input: crate::types::SummaryChecksumAlgorithm) -> Self {
         self.object_checksum_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// Checksum algorithm
-    pub fn set_object_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_object_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>) -> Self {
         self.object_checksum_algorithm = input;
         self
     }
     /// Checksum algorithm
-    pub fn get_object_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
+    pub fn get_object_checksum_algorithm(&self) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
         &self.object_checksum_algorithm
     }
     /// Object token

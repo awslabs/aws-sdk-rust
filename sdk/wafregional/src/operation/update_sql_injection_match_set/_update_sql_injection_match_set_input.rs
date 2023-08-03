@@ -40,36 +40,27 @@ impl UpdateSqlInjectionMatchSetInput {
 }
 impl UpdateSqlInjectionMatchSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateSqlInjectionMatchSetInput`](crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetInput).
-    pub fn builder() -> crate::operation::update_sql_injection_match_set::builders::UpdateSqlInjectionMatchSetInputBuilder{
+    pub fn builder() -> crate::operation::update_sql_injection_match_set::builders::UpdateSqlInjectionMatchSetInputBuilder {
         crate::operation::update_sql_injection_match_set::builders::UpdateSqlInjectionMatchSetInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSqlInjectionMatchSetInput`](crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSqlInjectionMatchSetInputBuilder {
     pub(crate) sql_injection_match_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
-    pub(crate) updates:
-        ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetUpdate>>,
+    pub(crate) updates: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetUpdate>>,
 }
 impl UpdateSqlInjectionMatchSetInputBuilder {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn sql_injection_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sql_injection_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_injection_match_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn set_sql_injection_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sql_injection_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sql_injection_match_set_id = input;
         self
     }
@@ -113,10 +104,7 @@ impl UpdateSqlInjectionMatchSetInputBuilder {
     /// <li> <p> <code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn set_updates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetUpdate>>,
-    ) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetUpdate>>) -> Self {
         self.updates = input;
         self
     }
@@ -126,9 +114,7 @@ impl UpdateSqlInjectionMatchSetInputBuilder {
     /// <li> <p> <code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn get_updates(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetUpdate>> {
         &self.updates
     }
     /// Consumes the builder and constructs a [`UpdateSqlInjectionMatchSetInput`](crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetInput).
@@ -138,12 +124,10 @@ impl UpdateSqlInjectionMatchSetInputBuilder {
         crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetInput {
-                sql_injection_match_set_id: self.sql_injection_match_set_id,
-                change_token: self.change_token,
-                updates: self.updates,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetInput {
+            sql_injection_match_set_id: self.sql_injection_match_set_id,
+            change_token: self.change_token,
+            updates: self.updates,
+        })
     }
 }

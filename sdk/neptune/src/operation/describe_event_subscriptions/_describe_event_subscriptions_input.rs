@@ -40,16 +40,14 @@ impl DescribeEventSubscriptionsInput {
 }
 impl DescribeEventSubscriptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventSubscriptionsInput`](crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsInput).
-    pub fn builder() -> crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsInputBuilder {
         crate::operation::describe_event_subscriptions::builders::DescribeEventSubscriptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventSubscriptionsInput`](crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventSubscriptionsInputBuilder {
     pub(crate) subscription_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -58,18 +56,12 @@ pub struct DescribeEventSubscriptionsInputBuilder {
 }
 impl DescribeEventSubscriptionsInputBuilder {
     /// <p>The name of the event notification subscription you want to describe.</p>
-    pub fn subscription_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event notification subscription you want to describe.</p>
-    pub fn set_subscription_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_name = input;
         self
     }
@@ -89,10 +81,7 @@ impl DescribeEventSubscriptionsInputBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -141,13 +130,11 @@ impl DescribeEventSubscriptionsInputBuilder {
         crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsInput {
-                subscription_name: self.subscription_name,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsInput {
+            subscription_name: self.subscription_name,
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

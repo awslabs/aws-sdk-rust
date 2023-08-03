@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`partition_index_descriptor_list(Option<Vec<PartitionIndexDescriptor>>)`](crate::operation::get_partition_indexes::GetPartitionIndexesOutput::partition_index_descriptor_list): <p>A list of index descriptors.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_partition_indexes::GetPartitionIndexesOutput::next_token): <p>A continuation token, present if the current list segment is not the last.</p>
     /// - On failure, responds with [`SdkError<GetPartitionIndexesError>`](crate::operation::get_partition_indexes::GetPartitionIndexesError)
-    pub fn get_partition_indexes(
-        &self,
-    ) -> crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder {
-        crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_partition_indexes(&self) -> crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder {
+        crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder::new(self.handle.clone())
     }
 }

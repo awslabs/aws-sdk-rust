@@ -6,7 +6,11 @@ impl super::Client {
     /// - On success, responds with [`DeleteVoiceMessageSpendLimitOverrideOutput`](crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideOutput) with field(s):
     ///   - [`monthly_limit(Option<i64>)`](crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideOutput::monthly_limit): <p>The current monthly limit, in US dollars.</p>
     /// - On failure, responds with [`SdkError<DeleteVoiceMessageSpendLimitOverrideError>`](crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideError)
-    pub fn delete_voice_message_spend_limit_override(&self) -> crate::operation::delete_voice_message_spend_limit_override::builders::DeleteVoiceMessageSpendLimitOverrideFluentBuilder{
-        crate::operation::delete_voice_message_spend_limit_override::builders::DeleteVoiceMessageSpendLimitOverrideFluentBuilder::new(self.handle.clone())
+    pub fn delete_voice_message_spend_limit_override(
+        &self,
+    ) -> crate::operation::delete_voice_message_spend_limit_override::builders::DeleteVoiceMessageSpendLimitOverrideFluentBuilder {
+        crate::operation::delete_voice_message_spend_limit_override::builders::DeleteVoiceMessageSpendLimitOverrideFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

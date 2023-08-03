@@ -10,9 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateSpaceOutput`](crate::operation::create_space::CreateSpaceOutput) with field(s):
     ///   - [`space_arn(Option<String>)`](crate::operation::create_space::CreateSpaceOutput::space_arn): <p>The space's Amazon Resource Name (ARN).</p>
     /// - On failure, responds with [`SdkError<CreateSpaceError>`](crate::operation::create_space::CreateSpaceError)
-    pub fn create_space(
-        &self,
-    ) -> crate::operation::create_space::builders::CreateSpaceFluentBuilder {
+    pub fn create_space(&self) -> crate::operation::create_space::builders::CreateSpaceFluentBuilder {
         crate::operation::create_space::builders::CreateSpaceFluentBuilder::new(self.handle.clone())
     }
 }

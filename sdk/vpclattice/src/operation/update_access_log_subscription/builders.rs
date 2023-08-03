@@ -26,7 +26,7 @@ impl UpdateAccessLogSubscriptionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAccessLogSubscriptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionInputBuilder,
+    inner: crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionInputBuilder,
 }
 impl UpdateAccessLogSubscriptionFluentBuilder {
     /// Creates a new `UpdateAccessLogSubscription`.
@@ -37,7 +37,7 @@ impl UpdateAccessLogSubscriptionFluentBuilder {
         }
     }
     /// Access the UpdateAccessLogSubscription as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateAccessLogSubscriptionFluentBuilder {
             crate::operation::update_access_log_subscription::UpdateAccessLogSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateAccessLogSubscriptionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateAccessLogSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateAccessLogSubscriptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionError>,
     > {
         self.send_middleware().await
     }
@@ -114,47 +105,31 @@ impl UpdateAccessLogSubscriptionFluentBuilder {
             crate::operation::update_access_log_subscription::UpdateAccessLogSubscription,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn access_log_subscription_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_log_subscription_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_log_subscription_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn set_access_log_subscription_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_log_subscription_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_log_subscription_identifier(input);
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn get_access_log_subscription_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_access_log_subscription_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_log_subscription_identifier()
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
     }

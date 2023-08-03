@@ -10,10 +10,7 @@ impl GetUsageForecastInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_usage_forecast::GetUsageForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_forecast::GetUsageForecastError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_forecast::GetUsageForecastError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_usage_forecast();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetUsageForecastFluentBuilder {
         }
     }
     /// Access the GetUsageForecast as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_usage_forecast::builders::GetUsageForecastInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_usage_forecast::builders::GetUsageForecastInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetUsageForecastFluentBuilder {
             crate::operation::get_usage_forecast::GetUsageForecast,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_forecast::GetUsageForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_forecast::GetUsageForecastError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetUsageForecastFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetUsageForecastFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_usage_forecast::GetUsageForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_forecast::GetUsageForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_forecast::GetUsageForecastError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetUsageForecastFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_usage_forecast::GetUsageForecastOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_forecast::GetUsageForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_forecast::GetUsageForecastError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetUsageForecastFluentBuilder {
             crate::operation::get_usage_forecast::GetUsageForecast,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_usage_forecast::GetUsageForecastError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_usage_forecast::GetUsageForecastError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +112,7 @@ impl GetUsageForecastFluentBuilder {
         self
     }
     /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn't included in the period. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
-    pub fn set_time_period(
-        mut self,
-        input: ::std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
+    pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
     }
@@ -176,10 +157,7 @@ impl GetUsageForecastFluentBuilder {
     }
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn set_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::Granularity>,
-    ) -> Self {
+    pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
         self.inner = self.inner.set_granularity(input);
         self
     }

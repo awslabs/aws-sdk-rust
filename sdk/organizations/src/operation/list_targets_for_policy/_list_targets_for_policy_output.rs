@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for ListTargetsForPolicyOutput {
 }
 impl ListTargetsForPolicyOutput {
     /// Creates a new builder-style object to manufacture [`ListTargetsForPolicyOutput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyOutputBuilder {
         crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTargetsForPolicyOutput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetsForPolicyOutputBuilder {
     pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTargetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl ListTargetsForPolicyOutputBuilder {
         self
     }
     /// <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
-    pub fn set_targets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTargetSummary>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTargetSummary>>) -> Self {
         self.targets = input;
         self
     }
     /// <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
-    pub fn get_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyTargetSummary>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyTargetSummary>> {
         &self.targets
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>

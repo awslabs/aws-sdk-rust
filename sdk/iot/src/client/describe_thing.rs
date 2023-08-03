@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`version(i64)`](crate::operation::describe_thing::DescribeThingOutput::version): <p>The current version of the thing record in the registry.</p> <note>   <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>  </note>
     ///   - [`billing_group_name(Option<String>)`](crate::operation::describe_thing::DescribeThingOutput::billing_group_name): <p>The name of the billing group the thing belongs to.</p>
     /// - On failure, responds with [`SdkError<DescribeThingError>`](crate::operation::describe_thing::DescribeThingError)
-    pub fn describe_thing(
-        &self,
-    ) -> crate::operation::describe_thing::builders::DescribeThingFluentBuilder {
-        crate::operation::describe_thing::builders::DescribeThingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_thing(&self) -> crate::operation::describe_thing::builders::DescribeThingFluentBuilder {
+        crate::operation::describe_thing::builders::DescribeThingFluentBuilder::new(self.handle.clone())
     }
 }

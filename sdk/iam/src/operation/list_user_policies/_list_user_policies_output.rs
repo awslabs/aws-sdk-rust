@@ -36,17 +36,14 @@ impl ::aws_http::request_id::RequestId for ListUserPoliciesOutput {
 }
 impl ListUserPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListUserPoliciesOutput`](crate::operation::list_user_policies::ListUserPoliciesOutput).
-    pub fn builder() -> crate::operation::list_user_policies::builders::ListUserPoliciesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_user_policies::builders::ListUserPoliciesOutputBuilder {
         crate::operation::list_user_policies::builders::ListUserPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListUserPoliciesOutput`](crate::operation::list_user_policies::ListUserPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserPoliciesOutputBuilder {
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
@@ -66,17 +63,12 @@ impl ListUserPoliciesOutputBuilder {
         self
     }
     /// <p>A list of policy names.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policy_names = input;
         self
     }
     /// <p>A list of policy names.</p>
-    pub fn get_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.policy_names
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>

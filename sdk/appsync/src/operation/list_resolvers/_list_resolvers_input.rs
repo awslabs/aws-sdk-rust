@@ -43,9 +43,7 @@ impl ListResolversInput {
 
 /// A builder for [`ListResolversInput`](crate::operation::list_resolvers::ListResolversInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolversInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
@@ -112,10 +110,7 @@ impl ListResolversInputBuilder {
     /// Consumes the builder and constructs a [`ListResolversInput`](crate::operation::list_resolvers::ListResolversInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resolvers::ListResolversInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_resolvers::ListResolversInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_resolvers::ListResolversInput {
             api_id: self.api_id,
             type_name: self.type_name,

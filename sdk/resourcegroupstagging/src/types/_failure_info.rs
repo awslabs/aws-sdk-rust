@@ -43,9 +43,7 @@ impl FailureInfo {
 
 /// A builder for [`FailureInfo`](crate::types::FailureInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailureInfoBuilder {
     pub(crate) status_code: ::std::option::Option<i32>,
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
@@ -81,18 +79,12 @@ impl FailureInfoBuilder {
         &self.error_code
     }
     /// <p>The message of the common error.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message of the common error.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

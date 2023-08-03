@@ -45,13 +45,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MetadataField {
     /// Unique identifier for the agent instance.
@@ -84,16 +78,10 @@ impl ::std::convert::From<&str> for MetadataField {
             "ExecutionEnvironment" => MetadataField::ExecutionEnvironment,
             "LambdaFunctionArn" => MetadataField::LambdaFunctionArn,
             "LambdaMemoryLimitInMB" => MetadataField::LambdaMemoryLimitInMb,
-            "LambdaPreviousExecutionTimeInMilliseconds" => {
-                MetadataField::LambdaPreviousExecutionTimeInMilliseconds
-            }
+            "LambdaPreviousExecutionTimeInMilliseconds" => MetadataField::LambdaPreviousExecutionTimeInMilliseconds,
             "LambdaRemainingTimeInMilliseconds" => MetadataField::LambdaRemainingTimeInMilliseconds,
-            "LambdaTimeGapBetweenInvokesInMilliseconds" => {
-                MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds
-            }
-            other => {
-                MetadataField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            "LambdaTimeGapBetweenInvokesInMilliseconds" => MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds,
+            other => MetadataField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -114,13 +102,9 @@ impl MetadataField {
             MetadataField::ExecutionEnvironment => "ExecutionEnvironment",
             MetadataField::LambdaFunctionArn => "LambdaFunctionArn",
             MetadataField::LambdaMemoryLimitInMb => "LambdaMemoryLimitInMB",
-            MetadataField::LambdaPreviousExecutionTimeInMilliseconds => {
-                "LambdaPreviousExecutionTimeInMilliseconds"
-            }
+            MetadataField::LambdaPreviousExecutionTimeInMilliseconds => "LambdaPreviousExecutionTimeInMilliseconds",
             MetadataField::LambdaRemainingTimeInMilliseconds => "LambdaRemainingTimeInMilliseconds",
-            MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds => {
-                "LambdaTimeGapBetweenInvokesInMilliseconds"
-            }
+            MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds => "LambdaTimeGapBetweenInvokesInMilliseconds",
             MetadataField::Unknown(value) => value.as_str(),
         }
     }

@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`rotation_shifts(Option<Vec<RotationShift>>)`](crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput::rotation_shifts): <p>Details about a rotation shift, including times, types, and contacts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput::next_token): <p>The token for the next set of items to return. This token is used to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListPreviewRotationShiftsError>`](crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError)
-    pub fn list_preview_rotation_shifts(&self) -> crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsFluentBuilder{
+    pub fn list_preview_rotation_shifts(&self) -> crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsFluentBuilder {
         crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsFluentBuilder::new(self.handle.clone())
     }
 }

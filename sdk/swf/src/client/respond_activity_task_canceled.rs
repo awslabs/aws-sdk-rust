@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`details(impl ::std::convert::Into<String>)`](crate::operation::respond_activity_task_canceled::builders::RespondActivityTaskCanceledFluentBuilder::details) / [`set_details(Option<String>)`](crate::operation::respond_activity_task_canceled::builders::RespondActivityTaskCanceledFluentBuilder::set_details): <p> Information about the cancellation.</p>
     /// - On success, responds with [`RespondActivityTaskCanceledOutput`](crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput)
     /// - On failure, responds with [`SdkError<RespondActivityTaskCanceledError>`](crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError)
-    pub fn respond_activity_task_canceled(&self) -> crate::operation::respond_activity_task_canceled::builders::RespondActivityTaskCanceledFluentBuilder{
+    pub fn respond_activity_task_canceled(
+        &self,
+    ) -> crate::operation::respond_activity_task_canceled::builders::RespondActivityTaskCanceledFluentBuilder {
         crate::operation::respond_activity_task_canceled::builders::RespondActivityTaskCanceledFluentBuilder::new(self.handle.clone())
     }
 }

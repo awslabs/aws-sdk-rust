@@ -10,10 +10,7 @@ impl DisableRadiusInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disable_radius::DisableRadiusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_radius::DisableRadiusError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_radius::DisableRadiusError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disable_radius();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DisableRadiusFluentBuilder {
         }
     }
     /// Access the DisableRadius as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_radius::builders::DisableRadiusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disable_radius::builders::DisableRadiusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl DisableRadiusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.

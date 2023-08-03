@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NetworkStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for NetworkStatus {
             "DELETED" => NetworkStatus::Deleted,
             "DEPROVISIONING" => NetworkStatus::Deprovisioning,
             "PROVISIONING" => NetworkStatus::Provisioning,
-            other => {
-                NetworkStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => NetworkStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl NetworkStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE",
-            "CREATED",
-            "DELETED",
-            "DEPROVISIONING",
-            "PROVISIONING",
-        ]
+        &["AVAILABLE", "CREATED", "DELETED", "DEPROVISIONING", "PROVISIONING"]
     }
 }
 impl ::std::convert::AsRef<str> for NetworkStatus {

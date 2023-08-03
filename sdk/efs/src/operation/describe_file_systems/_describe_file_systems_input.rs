@@ -37,18 +37,14 @@ impl DescribeFileSystemsInput {
 }
 impl DescribeFileSystemsInput {
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemsInput`](crate::operation::describe_file_systems::DescribeFileSystemsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_file_systems::builders::DescribeFileSystemsInputBuilder {
-        crate::operation::describe_file_systems::builders::DescribeFileSystemsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_file_systems::builders::DescribeFileSystemsInputBuilder {
+        crate::operation::describe_file_systems::builders::DescribeFileSystemsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFileSystemsInput`](crate::operation::describe_file_systems::DescribeFileSystemsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFileSystemsInputBuilder {
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -85,18 +81,12 @@ impl DescribeFileSystemsInputBuilder {
         &self.marker
     }
     /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
-    pub fn creation_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
-    pub fn set_creation_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_token = input;
         self
     }
@@ -105,18 +95,12 @@ impl DescribeFileSystemsInputBuilder {
         &self.creation_token
     }
     /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -127,17 +111,13 @@ impl DescribeFileSystemsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFileSystemsInput`](crate::operation::describe_file_systems::DescribeFileSystemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_file_systems::DescribeFileSystemsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_file_systems::DescribeFileSystemsInput {
-                max_items: self.max_items,
-                marker: self.marker,
-                creation_token: self.creation_token,
-                file_system_id: self.file_system_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_file_systems::DescribeFileSystemsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_file_systems::DescribeFileSystemsInput {
+            max_items: self.max_items,
+            marker: self.marker,
+            creation_token: self.creation_token,
+            file_system_id: self.file_system_id,
+        })
     }
 }

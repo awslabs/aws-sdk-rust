@@ -30,9 +30,7 @@ impl CurrentMetricSortCriteria {
 
 /// A builder for [`CurrentMetricSortCriteria`](crate::types::CurrentMetricSortCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CurrentMetricSortCriteriaBuilder {
     pub(crate) sort_by_metric: ::std::option::Option<crate::types::CurrentMetricName>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
@@ -44,10 +42,7 @@ impl CurrentMetricSortCriteriaBuilder {
         self
     }
     /// <p>The current metric names.</p>
-    pub fn set_sort_by_metric(
-        mut self,
-        input: ::std::option::Option<crate::types::CurrentMetricName>,
-    ) -> Self {
+    pub fn set_sort_by_metric(mut self, input: ::std::option::Option<crate::types::CurrentMetricName>) -> Self {
         self.sort_by_metric = input;
         self
     }

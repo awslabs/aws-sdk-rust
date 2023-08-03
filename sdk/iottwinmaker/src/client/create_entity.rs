@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::create_entity::CreateEntityOutput::creation_date_time): <p>The date and time when the entity was created.</p>
     ///   - [`state(Option<State>)`](crate::operation::create_entity::CreateEntityOutput::state): <p>The current state of the entity.</p>
     /// - On failure, responds with [`SdkError<CreateEntityError>`](crate::operation::create_entity::CreateEntityError)
-    pub fn create_entity(
-        &self,
-    ) -> crate::operation::create_entity::builders::CreateEntityFluentBuilder {
-        crate::operation::create_entity::builders::CreateEntityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_entity(&self) -> crate::operation::create_entity::builders::CreateEntityFluentBuilder {
+        crate::operation::create_entity::builders::CreateEntityFluentBuilder::new(self.handle.clone())
     }
 }

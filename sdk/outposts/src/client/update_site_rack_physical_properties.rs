@@ -16,7 +16,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateSiteRackPhysicalPropertiesOutput`](crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput) with field(s):
     ///   - [`site(Option<Site>)`](crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput::site): <p>Information about a site.</p>
     /// - On failure, responds with [`SdkError<UpdateSiteRackPhysicalPropertiesError>`](crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesError)
-    pub fn update_site_rack_physical_properties(&self) -> crate::operation::update_site_rack_physical_properties::builders::UpdateSiteRackPhysicalPropertiesFluentBuilder{
+    pub fn update_site_rack_physical_properties(
+        &self,
+    ) -> crate::operation::update_site_rack_physical_properties::builders::UpdateSiteRackPhysicalPropertiesFluentBuilder {
         crate::operation::update_site_rack_physical_properties::builders::UpdateSiteRackPhysicalPropertiesFluentBuilder::new(self.handle.clone())
     }
 }

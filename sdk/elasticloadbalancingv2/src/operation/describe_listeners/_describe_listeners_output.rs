@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeListenersOutput {
 }
 impl DescribeListenersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeListenersOutput`](crate::operation::describe_listeners::DescribeListenersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_listeners::builders::DescribeListenersOutputBuilder {
+    pub fn builder() -> crate::operation::describe_listeners::builders::DescribeListenersOutputBuilder {
         crate::operation::describe_listeners::builders::DescribeListenersOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeListenersOutput`](crate::operation::describe_listeners::DescribeListenersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeListenersOutputBuilder {
     pub(crate) listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl DescribeListenersOutputBuilder {
         self
     }
     /// <p>Information about the listeners.</p>
-    pub fn set_listeners(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
-    ) -> Self {
+    pub fn set_listeners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>) -> Self {
         self.listeners = input;
         self
     }

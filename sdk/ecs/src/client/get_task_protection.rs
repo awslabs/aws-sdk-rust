@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`protected_tasks(Option<Vec<ProtectedTask>>)`](crate::operation::get_task_protection::GetTaskProtectionOutput::protected_tasks): <p>A list of tasks with the following information.</p>  <ul>   <li> <p> <code>taskArn</code>: The task ARN.</p> </li>   <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>   <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>  </ul>
     ///   - [`failures(Option<Vec<Failure>>)`](crate::operation::get_task_protection::GetTaskProtectionOutput::failures): <p>Any failures associated with the call.</p>
     /// - On failure, responds with [`SdkError<GetTaskProtectionError>`](crate::operation::get_task_protection::GetTaskProtectionError)
-    pub fn get_task_protection(
-        &self,
-    ) -> crate::operation::get_task_protection::builders::GetTaskProtectionFluentBuilder {
-        crate::operation::get_task_protection::builders::GetTaskProtectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_task_protection(&self) -> crate::operation::get_task_protection::builders::GetTaskProtectionFluentBuilder {
+        crate::operation::get_task_protection::builders::GetTaskProtectionFluentBuilder::new(self.handle.clone())
     }
 }

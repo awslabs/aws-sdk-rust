@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`forecast_export_jobs(Option<Vec<ForecastExportJobSummary>>)`](crate::operation::list_forecast_export_jobs::ListForecastExportJobsOutput::forecast_export_jobs): <p>An array of objects that summarize each export job's properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_forecast_export_jobs::ListForecastExportJobsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     /// - On failure, responds with [`SdkError<ListForecastExportJobsError>`](crate::operation::list_forecast_export_jobs::ListForecastExportJobsError)
-    pub fn list_forecast_export_jobs(
-        &self,
-    ) -> crate::operation::list_forecast_export_jobs::builders::ListForecastExportJobsFluentBuilder
-    {
+    pub fn list_forecast_export_jobs(&self) -> crate::operation::list_forecast_export_jobs::builders::ListForecastExportJobsFluentBuilder {
         crate::operation::list_forecast_export_jobs::builders::ListForecastExportJobsFluentBuilder::new(self.handle.clone())
     }
 }

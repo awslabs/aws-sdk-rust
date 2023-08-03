@@ -35,9 +35,7 @@ impl GetDifferencesOutput {
 
 /// A builder for [`GetDifferencesOutput`](crate::operation::get_differences::GetDifferencesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDifferencesOutputBuilder {
     pub(crate) differences: ::std::option::Option<::std::vec::Vec<crate::types::Difference>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetDifferencesOutputBuilder {
         self
     }
     /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
-    pub fn set_differences(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Difference>>,
-    ) -> Self {
+    pub fn set_differences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Difference>>) -> Self {
         self.differences = input;
         self
     }
     /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
-    pub fn get_differences(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Difference>> {
+    pub fn get_differences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Difference>> {
         &self.differences
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>

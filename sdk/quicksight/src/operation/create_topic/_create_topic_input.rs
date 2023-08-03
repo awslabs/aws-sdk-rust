@@ -43,9 +43,7 @@ impl CreateTopicInput {
 
 /// A builder for [`CreateTopicInput`](crate::operation::create_topic::CreateTopicInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTopicInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct CreateTopicInputBuilder {
 }
 impl CreateTopicInputBuilder {
     /// <p>The ID of the Amazon Web Services account that you want to create a topic in.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that you want to create a topic in.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -113,10 +105,7 @@ impl CreateTopicInputBuilder {
         self
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags that are assigned to the dataset.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -125,12 +114,7 @@ impl CreateTopicInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTopicInput`](crate::operation::create_topic::CreateTopicInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_topic::CreateTopicInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_topic::CreateTopicInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_topic::CreateTopicInput {
             aws_account_id: self.aws_account_id,
             topic_id: self.topic_id,

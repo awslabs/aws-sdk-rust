@@ -49,16 +49,14 @@ impl ::aws_http::request_id::RequestId for DisassociateOriginationIdentityOutput
 }
 impl DisassociateOriginationIdentityOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateOriginationIdentityOutput`](crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityOutput).
-    pub fn builder() -> crate::operation::disassociate_origination_identity::builders::DisassociateOriginationIdentityOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_origination_identity::builders::DisassociateOriginationIdentityOutputBuilder {
         crate::operation::disassociate_origination_identity::builders::DisassociateOriginationIdentityOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateOriginationIdentityOutput`](crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateOriginationIdentityOutputBuilder {
     pub(crate) pool_arn: ::std::option::Option<::std::string::String>,
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
@@ -97,18 +95,12 @@ impl DisassociateOriginationIdentityOutputBuilder {
         &self.pool_id
     }
     /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
-    pub fn origination_identity_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
-    pub fn set_origination_identity_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_identity_arn = input;
         self
     }
@@ -117,18 +109,12 @@ impl DisassociateOriginationIdentityOutputBuilder {
         &self.origination_identity_arn
     }
     /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
-    pub fn origination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
-    pub fn set_origination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_identity = input;
         self
     }
@@ -137,18 +123,12 @@ impl DisassociateOriginationIdentityOutputBuilder {
         &self.origination_identity
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
-    pub fn iso_country_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
-    pub fn set_iso_country_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iso_country_code = input;
         self
     }
@@ -166,10 +146,7 @@ impl DisassociateOriginationIdentityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateOriginationIdentityOutput`](crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityOutput {
         crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityOutput {
             pool_arn: self.pool_arn,
             pool_id: self.pool_id,

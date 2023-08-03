@@ -85,17 +85,14 @@ impl ListAssociationsInput {
 }
 impl ListAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListAssociationsInput`](crate::operation::list_associations::ListAssociationsInput).
-    pub fn builder() -> crate::operation::list_associations::builders::ListAssociationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_associations::builders::ListAssociationsInputBuilder {
         crate::operation::list_associations::builders::ListAssociationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssociationsInput`](crate::operation::list_associations::ListAssociationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociationsInputBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
@@ -125,18 +122,12 @@ impl ListAssociationsInputBuilder {
         &self.source_arn
     }
     /// <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -159,18 +150,12 @@ impl ListAssociationsInputBuilder {
         &self.source_type
     }
     /// <p>A filter that returns only associations with the specified destination type.</p>
-    pub fn destination_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter that returns only associations with the specified destination type.</p>
-    pub fn set_destination_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_type = input;
         self
     }
@@ -184,17 +169,12 @@ impl ListAssociationsInputBuilder {
         self
     }
     /// <p>A filter that returns only associations of the specified type.</p>
-    pub fn set_association_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationEdgeType>,
-    ) -> Self {
+    pub fn set_association_type(mut self, input: ::std::option::Option<crate::types::AssociationEdgeType>) -> Self {
         self.association_type = input;
         self
     }
     /// <p>A filter that returns only associations of the specified type.</p>
-    pub fn get_association_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssociationEdgeType> {
+    pub fn get_association_type(&self) -> &::std::option::Option<crate::types::AssociationEdgeType> {
         &self.association_type
     }
     /// <p>A filter that returns only associations created on or after the specified time.</p>
@@ -203,10 +183,7 @@ impl ListAssociationsInputBuilder {
         self
     }
     /// <p>A filter that returns only associations created on or after the specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
@@ -220,10 +197,7 @@ impl ListAssociationsInputBuilder {
         self
     }
     /// <p>A filter that returns only associations created on or before the specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
@@ -237,10 +211,7 @@ impl ListAssociationsInputBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SortAssociationsBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortAssociationsBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -293,10 +264,7 @@ impl ListAssociationsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssociationsInput`](crate::operation::list_associations::ListAssociationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_associations::ListAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_associations::ListAssociationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_associations::ListAssociationsInput {
             source_arn: self.source_arn,
             destination_arn: self.destination_arn,

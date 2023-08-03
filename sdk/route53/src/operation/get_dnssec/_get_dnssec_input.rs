@@ -22,26 +22,18 @@ impl GetDnssecInput {
 
 /// A builder for [`GetDnssecInput`](crate::operation::get_dnssec::GetDnssecInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDnssecInputBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDnssecInputBuilder {
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub fn hosted_zone_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub fn set_hosted_zone_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hosted_zone_id = input;
         self
     }
@@ -50,12 +42,7 @@ impl GetDnssecInputBuilder {
         &self.hosted_zone_id
     }
     /// Consumes the builder and constructs a [`GetDnssecInput`](crate::operation::get_dnssec::GetDnssecInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_dnssec::GetDnssecInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_dnssec::GetDnssecInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_dnssec::GetDnssecInput {
             hosted_zone_id: self.hosted_zone_id,
         })

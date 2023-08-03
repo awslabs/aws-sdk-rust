@@ -28,9 +28,7 @@ impl ExportKeyOutput {
 
 /// A builder for [`ExportKeyOutput`](crate::operation::export_key::ExportKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportKeyOutputBuilder {
     pub(crate) wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl ExportKeyOutputBuilder {
         self
     }
     /// <p>The key material under export as a TR-34 or TR-31 wrapped key block.</p>
-    pub fn set_wrapped_key(
-        mut self,
-        input: ::std::option::Option<crate::types::WrappedKey>,
-    ) -> Self {
+    pub fn set_wrapped_key(mut self, input: ::std::option::Option<crate::types::WrappedKey>) -> Self {
         self.wrapped_key = input;
         self
     }

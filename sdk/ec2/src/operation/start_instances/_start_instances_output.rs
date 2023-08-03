@@ -5,15 +5,12 @@
 pub struct StartInstancesOutput {
     /// <p>Information about the started instances.</p>
     #[doc(hidden)]
-    pub starting_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
+    pub starting_instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
     _request_id: Option<String>,
 }
 impl StartInstancesOutput {
     /// <p>Information about the started instances.</p>
-    pub fn starting_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::InstanceStateChange]> {
+    pub fn starting_instances(&self) -> ::std::option::Option<&[crate::types::InstanceStateChange]> {
         self.starting_instances.as_deref()
     }
 }
@@ -31,12 +28,9 @@ impl StartInstancesOutput {
 
 /// A builder for [`StartInstancesOutput`](crate::operation::start_instances::StartInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartInstancesOutputBuilder {
-    pub(crate) starting_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
+    pub(crate) starting_instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
     _request_id: Option<String>,
 }
 impl StartInstancesOutputBuilder {
@@ -52,17 +46,12 @@ impl StartInstancesOutputBuilder {
         self
     }
     /// <p>Information about the started instances.</p>
-    pub fn set_starting_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
-    ) -> Self {
+    pub fn set_starting_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>) -> Self {
         self.starting_instances = input;
         self
     }
     /// <p>Information about the started instances.</p>
-    pub fn get_starting_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>> {
+    pub fn get_starting_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>> {
         &self.starting_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

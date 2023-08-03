@@ -37,9 +37,7 @@ impl ListCustomLineItemsFilter {
 
 /// A builder for [`ListCustomLineItemsFilter`](crate::types::ListCustomLineItemsFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomLineItemsFilterBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) billing_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -58,10 +56,7 @@ impl ListCustomLineItemsFilterBuilder {
         self
     }
     /// <p>A list of custom line items to retrieve information.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -74,27 +69,19 @@ impl ListCustomLineItemsFilterBuilder {
     /// To override the contents of this collection use [`set_billing_groups`](Self::set_billing_groups).
     ///
     /// <p>The billing group Amazon Resource Names (ARNs) to retrieve information.</p>
-    pub fn billing_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.billing_groups.unwrap_or_default();
         v.push(input.into());
         self.billing_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The billing group Amazon Resource Names (ARNs) to retrieve information.</p>
-    pub fn set_billing_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_billing_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.billing_groups = input;
         self
     }
     /// <p>The billing group Amazon Resource Names (ARNs) to retrieve information.</p>
-    pub fn get_billing_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_billing_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.billing_groups
     }
     /// Appends an item to `arns`.
@@ -109,10 +96,7 @@ impl ListCustomLineItemsFilterBuilder {
         self
     }
     /// <p>A list of custom line item ARNs to retrieve information.</p>
-    pub fn set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.arns = input;
         self
     }

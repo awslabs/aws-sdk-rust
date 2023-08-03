@@ -28,23 +28,17 @@ impl ::aws_http::request_id::RequestId for GetPendingJobExecutionsOutput {
 }
 impl GetPendingJobExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`GetPendingJobExecutionsOutput`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsOutputBuilder {
         crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetPendingJobExecutionsOutput`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPendingJobExecutionsOutputBuilder {
-    pub(crate) in_progress_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>,
-    pub(crate) queued_jobs:
-        ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>,
+    pub(crate) in_progress_jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>,
+    pub(crate) queued_jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>,
     _request_id: Option<String>,
 }
 impl GetPendingJobExecutionsOutputBuilder {
@@ -60,17 +54,12 @@ impl GetPendingJobExecutionsOutputBuilder {
         self
     }
     /// <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
-    pub fn set_in_progress_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>,
-    ) -> Self {
+    pub fn set_in_progress_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>) -> Self {
         self.in_progress_jobs = input;
         self
     }
     /// <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
-    pub fn get_in_progress_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>> {
+    pub fn get_in_progress_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>> {
         &self.in_progress_jobs
     }
     /// Appends an item to `queued_jobs`.
@@ -85,17 +74,12 @@ impl GetPendingJobExecutionsOutputBuilder {
         self
     }
     /// <p>A list of JobExecutionSummary objects with status QUEUED.</p>
-    pub fn set_queued_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>,
-    ) -> Self {
+    pub fn set_queued_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>) -> Self {
         self.queued_jobs = input;
         self
     }
     /// <p>A list of JobExecutionSummary objects with status QUEUED.</p>
-    pub fn get_queued_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>> {
+    pub fn get_queued_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>> {
         &self.queued_jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -108,9 +92,7 @@ impl GetPendingJobExecutionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPendingJobExecutionsOutput`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput {
+    pub fn build(self) -> crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput {
         crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput {
             in_progress_jobs: self.in_progress_jobs,
             queued_jobs: self.queued_jobs,

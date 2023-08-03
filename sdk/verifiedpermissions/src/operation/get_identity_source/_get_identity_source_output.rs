@@ -56,17 +56,14 @@ impl ::aws_http::request_id::RequestId for GetIdentitySourceOutput {
 }
 impl GetIdentitySourceOutput {
     /// Creates a new builder-style object to manufacture [`GetIdentitySourceOutput`](crate::operation::get_identity_source::GetIdentitySourceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_identity_source::builders::GetIdentitySourceOutputBuilder {
+    pub fn builder() -> crate::operation::get_identity_source::builders::GetIdentitySourceOutputBuilder {
         crate::operation::get_identity_source::builders::GetIdentitySourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentitySourceOutput`](crate::operation::get_identity_source::GetIdentitySourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentitySourceOutputBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) details: ::std::option::Option<crate::types::IdentitySourceDetails>,
@@ -83,10 +80,7 @@ impl GetIdentitySourceOutputBuilder {
         self
     }
     /// <p>The date and time that the identity source was originally created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -100,10 +94,7 @@ impl GetIdentitySourceOutputBuilder {
         self
     }
     /// <p>A structure that describes the configuration of the identity source.</p>
-    pub fn set_details(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentitySourceDetails>,
-    ) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<crate::types::IdentitySourceDetails>) -> Self {
         self.details = input;
         self
     }
@@ -112,18 +103,12 @@ impl GetIdentitySourceOutputBuilder {
         &self.details
     }
     /// <p>The ID of the identity source.</p>
-    pub fn identity_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the identity source.</p>
-    pub fn set_identity_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_source_id = input;
         self
     }
@@ -137,10 +122,7 @@ impl GetIdentitySourceOutputBuilder {
         self
     }
     /// <p>The date and time that the identity source was most recently updated.</p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }
@@ -149,18 +131,12 @@ impl GetIdentitySourceOutputBuilder {
         &self.last_updated_date
     }
     /// <p>The ID of the policy store that contains the identity source.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the policy store that contains the identity source.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -169,18 +145,12 @@ impl GetIdentitySourceOutputBuilder {
         &self.policy_store_id
     }
     /// <p>The data type of principals generated for identities authenticated by this identity source.</p>
-    pub fn principal_entity_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_entity_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data type of principals generated for identities authenticated by this identity source.</p>
-    pub fn set_principal_entity_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_entity_type = input;
         self
     }

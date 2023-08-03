@@ -15,16 +15,14 @@ impl CancelDetectMitigationActionsTaskInput {
 }
 impl CancelDetectMitigationActionsTaskInput {
     /// Creates a new builder-style object to manufacture [`CancelDetectMitigationActionsTaskInput`](crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskInput).
-    pub fn builder() -> crate::operation::cancel_detect_mitigation_actions_task::builders::CancelDetectMitigationActionsTaskInputBuilder{
+    pub fn builder() -> crate::operation::cancel_detect_mitigation_actions_task::builders::CancelDetectMitigationActionsTaskInputBuilder {
         crate::operation::cancel_detect_mitigation_actions_task::builders::CancelDetectMitigationActionsTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelDetectMitigationActionsTaskInput`](crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelDetectMitigationActionsTaskInputBuilder {
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,12 +42,14 @@ impl CancelDetectMitigationActionsTaskInputBuilder {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`CancelDetectMitigationActionsTaskInput`](crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
-            crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskInput {
-                task_id: self.task_id
-                ,
-            }
+            crate::operation::cancel_detect_mitigation_actions_task::CancelDetectMitigationActionsTaskInput { task_id: self.task_id },
         )
     }
 }

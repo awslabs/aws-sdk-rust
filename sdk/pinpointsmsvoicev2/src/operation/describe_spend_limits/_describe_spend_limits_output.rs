@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeSpendLimitsOutput {
 }
 impl DescribeSpendLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSpendLimitsOutput`](crate::operation::describe_spend_limits::DescribeSpendLimitsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_spend_limits::builders::DescribeSpendLimitsOutputBuilder {
-        crate::operation::describe_spend_limits::builders::DescribeSpendLimitsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_spend_limits::builders::DescribeSpendLimitsOutputBuilder {
+        crate::operation::describe_spend_limits::builders::DescribeSpendLimitsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSpendLimitsOutput`](crate::operation::describe_spend_limits::DescribeSpendLimitsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpendLimitsOutputBuilder {
     pub(crate) spend_limits: ::std::option::Option<::std::vec::Vec<crate::types::SpendLimit>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeSpendLimitsOutputBuilder {
         self
     }
     /// <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
-    pub fn set_spend_limits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpendLimit>>,
-    ) -> Self {
+    pub fn set_spend_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpendLimit>>) -> Self {
         self.spend_limits = input;
         self
     }
     /// <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
-    pub fn get_spend_limits(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpendLimit>> {
+    pub fn get_spend_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpendLimit>> {
         &self.spend_limits
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>

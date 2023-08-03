@@ -5,16 +5,16 @@ pub use crate::operation::allocate_connection_on_interconnect::_allocate_connect
 
 impl AllocateConnectionOnInterconnectInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.allocate_connection_on_interconnect();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -31,7 +31,7 @@ impl AllocateConnectionOnInterconnectInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AllocateConnectionOnInterconnectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectInputBuilder,
+    inner: crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectInputBuilder,
 }
 impl AllocateConnectionOnInterconnectFluentBuilder {
     /// Creates a new `AllocateConnectionOnInterconnect`.
@@ -42,15 +42,20 @@ impl AllocateConnectionOnInterconnectFluentBuilder {
         }
     }
     /// Access the AllocateConnectionOnInterconnect as a reference.
-    pub fn as_input(&self) -> &crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnect, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnect,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -59,16 +64,17 @@ impl AllocateConnectionOnInterconnectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput, ::aws_smithy_http::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError>,
+    > {
         let op = self
             .inner
             .build()
@@ -86,17 +92,26 @@ impl AllocateConnectionOnInterconnectFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput, ::aws_smithy_http::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnect, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnect,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
@@ -114,18 +129,12 @@ impl AllocateConnectionOnInterconnectFluentBuilder {
         self.inner.get_bandwidth()
     }
     /// <p>The name of the provisioned connection.</p>
-    pub fn connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_name(input.into());
         self
     }
     /// <p>The name of the provisioned connection.</p>
-    pub fn set_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_name(input);
         self
     }
@@ -134,18 +143,12 @@ impl AllocateConnectionOnInterconnectFluentBuilder {
         self.inner.get_connection_name()
     }
     /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner_account(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner_account(input);
         self
     }
@@ -154,18 +157,12 @@ impl AllocateConnectionOnInterconnectFluentBuilder {
         self.inner.get_owner_account()
     }
     /// <p>The ID of the interconnect on which the connection will be provisioned.</p>
-    pub fn interconnect_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn interconnect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.interconnect_id(input.into());
         self
     }
     /// <p>The ID of the interconnect on which the connection will be provisioned.</p>
-    pub fn set_interconnect_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_interconnect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_interconnect_id(input);
         self
     }

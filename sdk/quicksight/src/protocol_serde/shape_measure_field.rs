@@ -6,37 +6,25 @@ pub fn ser_measure_field(
     if let Some(var_1) = &input.numerical_measure_field {
         #[allow(unused_mut)]
         let mut object_2 = object.key("NumericalMeasureField").start_object();
-        crate::protocol_serde::shape_numerical_measure_field::ser_numerical_measure_field(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_numerical_measure_field::ser_numerical_measure_field(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.categorical_measure_field {
         #[allow(unused_mut)]
         let mut object_4 = object.key("CategoricalMeasureField").start_object();
-        crate::protocol_serde::shape_categorical_measure_field::ser_categorical_measure_field(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_categorical_measure_field::ser_categorical_measure_field(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.date_measure_field {
         #[allow(unused_mut)]
         let mut object_6 = object.key("DateMeasureField").start_object();
-        crate::protocol_serde::shape_date_measure_field::ser_date_measure_field(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_date_measure_field::ser_date_measure_field(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.calculated_measure_field {
         #[allow(unused_mut)]
         let mut object_8 = object.key("CalculatedMeasureField").start_object();
-        crate::protocol_serde::shape_calculated_measure_field::ser_calculated_measure_field(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_calculated_measure_field::ser_calculated_measure_field(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())
@@ -44,17 +32,9 @@ pub fn ser_measure_field(
 
 pub(crate) fn de_measure_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::MeasureField>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::MeasureField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -64,46 +44,39 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "NumericalMeasureField" => {
-                                builder = builder.set_numerical_measure_field(
-                                    crate::protocol_serde::shape_numerical_measure_field::de_numerical_measure_field(tokens)?
-                                );
-                            }
-                            "CategoricalMeasureField" => {
-                                builder = builder.set_categorical_measure_field(
-                                    crate::protocol_serde::shape_categorical_measure_field::de_categorical_measure_field(tokens)?
-                                );
-                            }
-                            "DateMeasureField" => {
-                                builder = builder.set_date_measure_field(
-                                    crate::protocol_serde::shape_date_measure_field::de_date_measure_field(tokens)?
-                                );
-                            }
-                            "CalculatedMeasureField" => {
-                                builder = builder.set_calculated_measure_field(
-                                    crate::protocol_serde::shape_calculated_measure_field::de_calculated_measure_field(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "NumericalMeasureField" => {
+                            builder = builder.set_numerical_measure_field(
+                                crate::protocol_serde::shape_numerical_measure_field::de_numerical_measure_field(tokens)?,
+                            );
                         }
-                    }
+                        "CategoricalMeasureField" => {
+                            builder = builder.set_categorical_measure_field(
+                                crate::protocol_serde::shape_categorical_measure_field::de_categorical_measure_field(tokens)?,
+                            );
+                        }
+                        "DateMeasureField" => {
+                            builder = builder.set_date_measure_field(crate::protocol_serde::shape_date_measure_field::de_date_measure_field(tokens)?);
+                        }
+                        "CalculatedMeasureField" => {
+                            builder = builder.set_calculated_measure_field(
+                                crate::protocol_serde::shape_calculated_measure_field::de_calculated_measure_field(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`StartStreamProcessorOutput`](crate::operation::start_stream_processor::StartStreamProcessorOutput) with field(s):
     ///   - [`session_id(Option<String>)`](crate::operation::start_stream_processor::StartStreamProcessorOutput::session_id): <p> A unique identifier for the stream processing session. </p>
     /// - On failure, responds with [`SdkError<StartStreamProcessorError>`](crate::operation::start_stream_processor::StartStreamProcessorError)
-    pub fn start_stream_processor(
-        &self,
-    ) -> crate::operation::start_stream_processor::builders::StartStreamProcessorFluentBuilder {
-        crate::operation::start_stream_processor::builders::StartStreamProcessorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_stream_processor(&self) -> crate::operation::start_stream_processor::builders::StartStreamProcessorFluentBuilder {
+        crate::operation::start_stream_processor::builders::StartStreamProcessorFluentBuilder::new(self.handle.clone())
     }
 }

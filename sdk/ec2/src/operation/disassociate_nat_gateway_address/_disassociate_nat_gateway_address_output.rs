@@ -8,8 +8,7 @@ pub struct DisassociateNatGatewayAddressOutput {
     pub nat_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the NAT gateway IP addresses.</p>
     #[doc(hidden)]
-    pub nat_gateway_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
+    pub nat_gateway_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
     _request_id: Option<String>,
 }
 impl DisassociateNatGatewayAddressOutput {
@@ -18,9 +17,7 @@ impl DisassociateNatGatewayAddressOutput {
         self.nat_gateway_id.as_deref()
     }
     /// <p>Information about the NAT gateway IP addresses.</p>
-    pub fn nat_gateway_addresses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NatGatewayAddress]> {
+    pub fn nat_gateway_addresses(&self) -> ::std::option::Option<&[crate::types::NatGatewayAddress]> {
         self.nat_gateway_addresses.as_deref()
     }
 }
@@ -31,36 +28,27 @@ impl ::aws_http::request_id::RequestId for DisassociateNatGatewayAddressOutput {
 }
 impl DisassociateNatGatewayAddressOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateNatGatewayAddressOutput`](crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput).
-    pub fn builder() -> crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressOutputBuilder {
         crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateNatGatewayAddressOutput`](crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateNatGatewayAddressOutputBuilder {
     pub(crate) nat_gateway_id: ::std::option::Option<::std::string::String>,
-    pub(crate) nat_gateway_addresses:
-        ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
+    pub(crate) nat_gateway_addresses: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
     _request_id: Option<String>,
 }
 impl DisassociateNatGatewayAddressOutputBuilder {
     /// <p>The ID of the NAT gateway.</p>
-    pub fn nat_gateway_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn set_nat_gateway_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_nat_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nat_gateway_id = input;
         self
     }
@@ -80,17 +68,12 @@ impl DisassociateNatGatewayAddressOutputBuilder {
         self
     }
     /// <p>Information about the NAT gateway IP addresses.</p>
-    pub fn set_nat_gateway_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>,
-    ) -> Self {
+    pub fn set_nat_gateway_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>>) -> Self {
         self.nat_gateway_addresses = input;
         self
     }
     /// <p>Information about the NAT gateway IP addresses.</p>
-    pub fn get_nat_gateway_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>> {
+    pub fn get_nat_gateway_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>> {
         &self.nat_gateway_addresses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -103,10 +86,7 @@ impl DisassociateNatGatewayAddressOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateNatGatewayAddressOutput`](crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput
-    {
+    pub fn build(self) -> crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput {
         crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput {
             nat_gateway_id: self.nat_gateway_id,
             nat_gateway_addresses: self.nat_gateway_addresses,

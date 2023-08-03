@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for DescribeKeywordsOutput {
 }
 impl DescribeKeywordsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeKeywordsOutput`](crate::operation::describe_keywords::DescribeKeywordsOutput).
-    pub fn builder() -> crate::operation::describe_keywords::builders::DescribeKeywordsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_keywords::builders::DescribeKeywordsOutputBuilder {
         crate::operation::describe_keywords::builders::DescribeKeywordsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeKeywordsOutput`](crate::operation::describe_keywords::DescribeKeywordsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeKeywordsOutputBuilder {
     pub(crate) origination_identity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) origination_identity: ::std::option::Option<::std::string::String>,
@@ -62,18 +59,12 @@ pub struct DescribeKeywordsOutputBuilder {
 }
 impl DescribeKeywordsOutputBuilder {
     /// <p>The PhoneNumberArn or PoolArn that is associated with the OriginationIdentity. </p>
-    pub fn origination_identity_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The PhoneNumberArn or PoolArn that is associated with the OriginationIdentity. </p>
-    pub fn set_origination_identity_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_identity_arn = input;
         self
     }
@@ -82,18 +73,12 @@ impl DescribeKeywordsOutputBuilder {
         &self.origination_identity_arn
     }
     /// <p>The PhoneNumberId or PoolId that is associated with the OriginationIdentity.</p>
-    pub fn origination_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The PhoneNumberId or PoolId that is associated with the OriginationIdentity.</p>
-    pub fn set_origination_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_identity = input;
         self
     }
@@ -113,17 +98,12 @@ impl DescribeKeywordsOutputBuilder {
         self
     }
     /// <p>An array of KeywordInformation objects that contain the results.</p>
-    pub fn set_keywords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeywordInformation>>,
-    ) -> Self {
+    pub fn set_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeywordInformation>>) -> Self {
         self.keywords = input;
         self
     }
     /// <p>An array of KeywordInformation objects that contain the results.</p>
-    pub fn get_keywords(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeywordInformation>> {
+    pub fn get_keywords(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeywordInformation>> {
         &self.keywords
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>

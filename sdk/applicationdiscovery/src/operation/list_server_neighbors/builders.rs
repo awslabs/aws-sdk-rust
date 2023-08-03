@@ -37,9 +37,7 @@ impl ListServerNeighborsFluentBuilder {
         }
     }
     /// Access the ListServerNeighbors as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_server_neighbors::builders::ListServerNeighborsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_server_neighbors::builders::ListServerNeighborsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListServerNeighborsFluentBuilder {
             crate::operation::list_server_neighbors::ListServerNeighbors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_server_neighbors::ListServerNeighborsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_server_neighbors::ListServerNeighborsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListServerNeighborsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListServerNeighborsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_server_neighbors::ListServerNeighborsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_server_neighbors::ListServerNeighborsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_server_neighbors::ListServerNeighborsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListServerNeighborsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_server_neighbors::ListServerNeighborsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_server_neighbors::ListServerNeighborsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_server_neighbors::ListServerNeighborsError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl ListServerNeighborsFluentBuilder {
             crate::operation::list_server_neighbors::ListServerNeighbors,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_server_neighbors::ListServerNeighborsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_server_neighbors::ListServerNeighborsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Configuration ID of the server for which neighbors are being listed.</p>
-    pub fn configuration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_id(input.into());
         self
     }
     /// <p>Configuration ID of the server for which neighbors are being listed.</p>
-    pub fn set_configuration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_id(input);
         self
     }
@@ -161,25 +142,17 @@ impl ListServerNeighborsFluentBuilder {
     /// To override the contents of this collection use [`set_neighbor_configuration_ids`](Self::set_neighbor_configuration_ids).
     ///
     /// <p>List of configuration IDs to test for one-hop-away.</p>
-    pub fn neighbor_configuration_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn neighbor_configuration_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.neighbor_configuration_ids(input.into());
         self
     }
     /// <p>List of configuration IDs to test for one-hop-away.</p>
-    pub fn set_neighbor_configuration_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_neighbor_configuration_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_neighbor_configuration_ids(input);
         self
     }
     /// <p>List of configuration IDs to test for one-hop-away.</p>
-    pub fn get_neighbor_configuration_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_neighbor_configuration_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_neighbor_configuration_ids()
     }
     /// <p>Maximum number of results to return in a single page of output.</p>

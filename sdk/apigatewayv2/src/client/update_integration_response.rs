@@ -19,7 +19,7 @@ impl super::Client {
     ///   - [`response_templates(Option<HashMap<String, String>>)`](crate::operation::update_integration_response::UpdateIntegrationResponseOutput::response_templates): <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
     ///   - [`template_selection_expression(Option<String>)`](crate::operation::update_integration_response::UpdateIntegrationResponseOutput::template_selection_expression): <p>The template selection expressions for the integration response.</p>
     /// - On failure, responds with [`SdkError<UpdateIntegrationResponseError>`](crate::operation::update_integration_response::UpdateIntegrationResponseError)
-    pub fn update_integration_response(&self) -> crate::operation::update_integration_response::builders::UpdateIntegrationResponseFluentBuilder{
+    pub fn update_integration_response(&self) -> crate::operation::update_integration_response::builders::UpdateIntegrationResponseFluentBuilder {
         crate::operation::update_integration_response::builders::UpdateIntegrationResponseFluentBuilder::new(self.handle.clone())
     }
 }

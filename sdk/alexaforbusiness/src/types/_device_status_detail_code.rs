@@ -53,13 +53,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DeviceStatusDetailCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -104,12 +98,8 @@ impl ::std::convert::From<&str> for DeviceStatusDetailCode {
         match s {
             "ASSOCIATION_REJECTION" => DeviceStatusDetailCode::AssociationRejection,
             "AUTHENTICATION_FAILURE" => DeviceStatusDetailCode::AuthenticationFailure,
-            "CERTIFICATE_AUTHORITY_ACCESS_DENIED" => {
-                DeviceStatusDetailCode::CertificateAuthorityAccessDenied
-            }
-            "CERTIFICATE_ISSUING_LIMIT_EXCEEDED" => {
-                DeviceStatusDetailCode::CertificateIssuingLimitExceeded
-            }
+            "CERTIFICATE_AUTHORITY_ACCESS_DENIED" => DeviceStatusDetailCode::CertificateAuthorityAccessDenied,
+            "CERTIFICATE_ISSUING_LIMIT_EXCEEDED" => DeviceStatusDetailCode::CertificateIssuingLimitExceeded,
             "CREDENTIALS_ACCESS_FAILURE" => DeviceStatusDetailCode::CredentialsAccessFailure,
             "DEVICE_SOFTWARE_UPDATE_NEEDED" => DeviceStatusDetailCode::DeviceSoftwareUpdateNeeded,
             "DEVICE_WAS_OFFLINE" => DeviceStatusDetailCode::DeviceWasOffline,
@@ -123,9 +113,7 @@ impl ::std::convert::From<&str> for DeviceStatusDetailCode {
             "PASSWORD_NOT_FOUND" => DeviceStatusDetailCode::PasswordNotFound,
             "TLS_VERSION_MISMATCH" => DeviceStatusDetailCode::TlsVersionMismatch,
             "UNKNOWN_FAILURE" => DeviceStatusDetailCode::UnknownFailure,
-            other => DeviceStatusDetailCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DeviceStatusDetailCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -142,12 +130,8 @@ impl DeviceStatusDetailCode {
         match self {
             DeviceStatusDetailCode::AssociationRejection => "ASSOCIATION_REJECTION",
             DeviceStatusDetailCode::AuthenticationFailure => "AUTHENTICATION_FAILURE",
-            DeviceStatusDetailCode::CertificateAuthorityAccessDenied => {
-                "CERTIFICATE_AUTHORITY_ACCESS_DENIED"
-            }
-            DeviceStatusDetailCode::CertificateIssuingLimitExceeded => {
-                "CERTIFICATE_ISSUING_LIMIT_EXCEEDED"
-            }
+            DeviceStatusDetailCode::CertificateAuthorityAccessDenied => "CERTIFICATE_AUTHORITY_ACCESS_DENIED",
+            DeviceStatusDetailCode::CertificateIssuingLimitExceeded => "CERTIFICATE_ISSUING_LIMIT_EXCEEDED",
             DeviceStatusDetailCode::CredentialsAccessFailure => "CREDENTIALS_ACCESS_FAILURE",
             DeviceStatusDetailCode::DeviceSoftwareUpdateNeeded => "DEVICE_SOFTWARE_UPDATE_NEEDED",
             DeviceStatusDetailCode::DeviceWasOffline => "DEVICE_WAS_OFFLINE",

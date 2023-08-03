@@ -30,9 +30,7 @@ impl CreateRequireCheckIn {
 
 /// A builder for [`CreateRequireCheckIn`](crate::types::CreateRequireCheckIn).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRequireCheckInBuilder {
     pub(crate) release_after_minutes: ::std::option::Option<i32>,
     pub(crate) enabled: ::std::option::Option<bool>,

@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateQuickConnectNameOutput {
 }
 impl UpdateQuickConnectNameOutput {
     /// Creates a new builder-style object to manufacture [`UpdateQuickConnectNameOutput`](crate::operation::update_quick_connect_name::UpdateQuickConnectNameOutput).
-    pub fn builder(
-    ) -> crate::operation::update_quick_connect_name::builders::UpdateQuickConnectNameOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_quick_connect_name::builders::UpdateQuickConnectNameOutputBuilder {
         crate::operation::update_quick_connect_name::builders::UpdateQuickConnectNameOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateQuickConnectNameOutput`](crate::operation::update_quick_connect_name::UpdateQuickConnectNameOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateQuickConnectNameOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl UpdateQuickConnectNameOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateQuickConnectNameOutput`](crate::operation::update_quick_connect_name::UpdateQuickConnectNameOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_quick_connect_name::UpdateQuickConnectNameOutput {
+    pub fn build(self) -> crate::operation::update_quick_connect_name::UpdateQuickConnectNameOutput {
         crate::operation::update_quick_connect_name::UpdateQuickConnectNameOutput {
             _request_id: self._request_id,
         }

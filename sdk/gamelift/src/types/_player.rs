@@ -10,17 +10,14 @@ pub struct Player {
     /// <p>A collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must match the <i>playerAttributes</i> used in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
     /// <p>You can provide up to 10 <code>PlayerAttributes</code>.</p>
     #[doc(hidden)]
-    pub player_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    >,
+    pub player_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>Name of the team that the player is assigned to in a match. Team names are defined in a matchmaking rule set.</p>
     #[doc(hidden)]
     pub team: ::std::option::Option<::std::string::String>,
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported. </p>
     /// <p>If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the ticket is not matchable. </p>
     #[doc(hidden)]
-    pub latency_in_ms:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub latency_in_ms: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl Player {
     /// <p>A unique identifier for a player</p>
@@ -29,11 +26,7 @@ impl Player {
     }
     /// <p>A collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must match the <i>playerAttributes</i> used in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
     /// <p>You can provide up to 10 <code>PlayerAttributes</code>.</p>
-    pub fn player_attributes(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    > {
+    pub fn player_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
         self.player_attributes.as_ref()
     }
     /// <p>Name of the team that the player is assigned to in a match. Team names are defined in a matchmaking rule set.</p>
@@ -42,9 +35,7 @@ impl Player {
     }
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported. </p>
     /// <p>If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the ticket is not matchable. </p>
-    pub fn latency_in_ms(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn latency_in_ms(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
         self.latency_in_ms.as_ref()
     }
 }
@@ -57,17 +48,12 @@ impl Player {
 
 /// A builder for [`Player`](crate::types::Player).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PlayerBuilder {
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
-    pub(crate) player_attributes: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    >,
+    pub(crate) player_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     pub(crate) team: ::std::option::Option<::std::string::String>,
-    pub(crate) latency_in_ms:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
+    pub(crate) latency_in_ms: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl PlayerBuilder {
     /// <p>A unique identifier for a player</p>
@@ -90,11 +76,7 @@ impl PlayerBuilder {
     ///
     /// <p>A collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must match the <i>playerAttributes</i> used in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
     /// <p>You can provide up to 10 <code>PlayerAttributes</code>.</p>
-    pub fn player_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::AttributeValue,
-    ) -> Self {
+    pub fn player_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeValue) -> Self {
         let mut hash_map = self.player_attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.player_attributes = ::std::option::Option::Some(hash_map);
@@ -104,20 +86,14 @@ impl PlayerBuilder {
     /// <p>You can provide up to 10 <code>PlayerAttributes</code>.</p>
     pub fn set_player_attributes(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     ) -> Self {
         self.player_attributes = input;
         self
     }
     /// <p>A collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must match the <i>playerAttributes</i> used in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
     /// <p>You can provide up to 10 <code>PlayerAttributes</code>.</p>
-    pub fn get_player_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-    > {
+    pub fn get_player_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
         &self.player_attributes
     }
     /// <p>Name of the team that the player is assigned to in a match. Team names are defined in a matchmaking rule set.</p>
@@ -140,11 +116,7 @@ impl PlayerBuilder {
     ///
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported. </p>
     /// <p>If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the ticket is not matchable. </p>
-    pub fn latency_in_ms(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: i32,
-    ) -> Self {
+    pub fn latency_in_ms(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i32) -> Self {
         let mut hash_map = self.latency_in_ms.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.latency_in_ms = ::std::option::Option::Some(hash_map);
@@ -152,18 +124,13 @@ impl PlayerBuilder {
     }
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported. </p>
     /// <p>If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the ticket is not matchable. </p>
-    pub fn set_latency_in_ms(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
-    ) -> Self {
+    pub fn set_latency_in_ms(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>) -> Self {
         self.latency_in_ms = input;
         self
     }
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to @aws; Regions. If this property is present, FlexMatch considers placing the match only in Regions for which latency is reported. </p>
     /// <p>If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the ticket is not matchable. </p>
-    pub fn get_latency_in_ms(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
+    pub fn get_latency_in_ms(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
         &self.latency_in_ms
     }
     /// Consumes the builder and constructs a [`Player`](crate::types::Player).

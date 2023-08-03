@@ -35,9 +35,7 @@ impl GetKeyGroupOutput {
 
 /// A builder for [`GetKeyGroupOutput`](crate::operation::get_key_group::GetKeyGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKeyGroupOutputBuilder {
     pub(crate) key_group: ::std::option::Option<crate::types::KeyGroup>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,

@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::unarchive_application::UnarchiveApplicationOutput::tags): <p>Application tags.</p>
     ///   - [`wave_id(Option<String>)`](crate::operation::unarchive_application::UnarchiveApplicationOutput::wave_id): <p>Application wave ID.</p>
     /// - On failure, responds with [`SdkError<UnarchiveApplicationError>`](crate::operation::unarchive_application::UnarchiveApplicationError)
-    pub fn unarchive_application(
-        &self,
-    ) -> crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder {
-        crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn unarchive_application(&self) -> crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder {
+        crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::new(self.handle.clone())
     }
 }

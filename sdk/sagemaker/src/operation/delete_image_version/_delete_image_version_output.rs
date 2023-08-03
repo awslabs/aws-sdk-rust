@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteImageVersionOutput {
 }
 impl DeleteImageVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteImageVersionOutput`](crate::operation::delete_image_version::DeleteImageVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_image_version::builders::DeleteImageVersionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_image_version::builders::DeleteImageVersionOutputBuilder {
         crate::operation::delete_image_version::builders::DeleteImageVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteImageVersionOutput`](crate::operation::delete_image_version::DeleteImageVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteImageVersionOutputBuilder {
     _request_id: Option<String>,
 }

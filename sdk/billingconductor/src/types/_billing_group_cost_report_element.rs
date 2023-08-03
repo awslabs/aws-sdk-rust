@@ -58,9 +58,7 @@ impl BillingGroupCostReportElement {
 
 /// A builder for [`BillingGroupCostReportElement`](crate::types::BillingGroupCostReportElement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BillingGroupCostReportElementBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) aws_cost: ::std::option::Option<::std::string::String>,
@@ -99,18 +97,12 @@ impl BillingGroupCostReportElementBuilder {
         &self.aws_cost
     }
     /// <p>The hypothetical Amazon Web Services charges based on the associated pricing plan of a billing group.</p>
-    pub fn proforma_cost(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn proforma_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proforma_cost = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hypothetical Amazon Web Services charges based on the associated pricing plan of a billing group.</p>
-    pub fn set_proforma_cost(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_proforma_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.proforma_cost = input;
         self
     }
@@ -133,18 +125,12 @@ impl BillingGroupCostReportElementBuilder {
         &self.margin
     }
     /// <p>The percentage of billing group margin.</p>
-    pub fn margin_percentage(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn margin_percentage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.margin_percentage = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The percentage of billing group margin.</p>
-    pub fn set_margin_percentage(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_margin_percentage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.margin_percentage = input;
         self
     }

@@ -10,17 +10,12 @@ pub fn ser_create_direct_connect_gateway_association_input(
         object.key("gatewayId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.add_allowed_prefixes_to_direct_connect_gateway {
-        let mut array_4 = object
-            .key("addAllowedPrefixesToDirectConnectGateway")
-            .start_array();
+        let mut array_4 = object.key("addAllowedPrefixesToDirectConnectGateway").start_array();
         for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_route_filter_prefix::ser_route_filter_prefix(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_route_filter_prefix::ser_route_filter_prefix(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

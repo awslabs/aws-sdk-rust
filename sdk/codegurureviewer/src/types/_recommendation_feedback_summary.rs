@@ -39,9 +39,7 @@ impl RecommendationFeedbackSummary {
 
 /// A builder for [`RecommendationFeedbackSummary`](crate::types::RecommendationFeedbackSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationFeedbackSummaryBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) reactions: ::std::option::Option<::std::vec::Vec<crate::types::Reaction>>,
@@ -49,18 +47,12 @@ pub struct RecommendationFeedbackSummaryBuilder {
 }
 impl RecommendationFeedbackSummaryBuilder {
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_id = input;
         self
     }
@@ -80,10 +72,7 @@ impl RecommendationFeedbackSummaryBuilder {
         self
     }
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis.</p>
-    pub fn set_reactions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Reaction>>,
-    ) -> Self {
+    pub fn set_reactions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Reaction>>) -> Self {
         self.reactions = input;
         self
     }

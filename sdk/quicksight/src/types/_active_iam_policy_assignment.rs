@@ -30,27 +30,19 @@ impl ActiveIamPolicyAssignment {
 
 /// A builder for [`ActiveIamPolicyAssignment`](crate::types::ActiveIamPolicyAssignment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActiveIamPolicyAssignmentBuilder {
     pub(crate) assignment_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
 }
 impl ActiveIamPolicyAssignmentBuilder {
     /// <p>A name for the IAM policy assignment.</p>
-    pub fn assignment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assignment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the IAM policy assignment.</p>
-    pub fn set_assignment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assignment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assignment_name = input;
         self
     }

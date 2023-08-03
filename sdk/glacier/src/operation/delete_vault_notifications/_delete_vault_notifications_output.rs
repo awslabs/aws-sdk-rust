@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVaultNotificationsOutput {
 }
 impl DeleteVaultNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVaultNotificationsOutput`](crate::operation::delete_vault_notifications::DeleteVaultNotificationsOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_vault_notifications::builders::DeleteVaultNotificationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_vault_notifications::builders::DeleteVaultNotificationsOutputBuilder {
         crate::operation::delete_vault_notifications::builders::DeleteVaultNotificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVaultNotificationsOutput`](crate::operation::delete_vault_notifications::DeleteVaultNotificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVaultNotificationsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteVaultNotificationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVaultNotificationsOutput`](crate::operation::delete_vault_notifications::DeleteVaultNotificationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_vault_notifications::DeleteVaultNotificationsOutput {
+    pub fn build(self) -> crate::operation::delete_vault_notifications::DeleteVaultNotificationsOutput {
         crate::operation::delete_vault_notifications::DeleteVaultNotificationsOutput {
             _request_id: self._request_id,
         }

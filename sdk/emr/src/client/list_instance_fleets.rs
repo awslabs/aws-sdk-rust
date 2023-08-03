@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`instance_fleets(Option<Vec<InstanceFleet>>)`](crate::operation::list_instance_fleets::ListInstanceFleetsOutput::instance_fleets): <p>The list of instance fleets for the cluster and given filters.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_instance_fleets::ListInstanceFleetsOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListInstanceFleetsError>`](crate::operation::list_instance_fleets::ListInstanceFleetsError)
-    pub fn list_instance_fleets(
-        &self,
-    ) -> crate::operation::list_instance_fleets::builders::ListInstanceFleetsFluentBuilder {
-        crate::operation::list_instance_fleets::builders::ListInstanceFleetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_instance_fleets(&self) -> crate::operation::list_instance_fleets::builders::ListInstanceFleetsFluentBuilder {
+        crate::operation::list_instance_fleets::builders::ListInstanceFleetsFluentBuilder::new(self.handle.clone())
     }
 }

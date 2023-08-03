@@ -23,18 +23,14 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder {
     pub(crate) max: ::std::option::Option<i32>,
     pub(crate) min: ::std::option::Option<i32>,
@@ -69,9 +65,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder {
         &self.min
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
+    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
             max: self.max.unwrap_or_default(),
             min: self.min.unwrap_or_default(),

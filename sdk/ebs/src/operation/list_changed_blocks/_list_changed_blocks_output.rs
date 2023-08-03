@@ -49,17 +49,14 @@ impl ::aws_http::request_id::RequestId for ListChangedBlocksOutput {
 }
 impl ListChangedBlocksOutput {
     /// Creates a new builder-style object to manufacture [`ListChangedBlocksOutput`](crate::operation::list_changed_blocks::ListChangedBlocksOutput).
-    pub fn builder(
-    ) -> crate::operation::list_changed_blocks::builders::ListChangedBlocksOutputBuilder {
+    pub fn builder() -> crate::operation::list_changed_blocks::builders::ListChangedBlocksOutputBuilder {
         crate::operation::list_changed_blocks::builders::ListChangedBlocksOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListChangedBlocksOutput`](crate::operation::list_changed_blocks::ListChangedBlocksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListChangedBlocksOutputBuilder {
     pub(crate) changed_blocks: ::std::option::Option<::std::vec::Vec<crate::types::ChangedBlock>>,
     pub(crate) expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -81,17 +78,12 @@ impl ListChangedBlocksOutputBuilder {
         self
     }
     /// <p>An array of objects containing information about the changed blocks.</p>
-    pub fn set_changed_blocks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChangedBlock>>,
-    ) -> Self {
+    pub fn set_changed_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangedBlock>>) -> Self {
         self.changed_blocks = input;
         self
     }
     /// <p>An array of objects containing information about the changed blocks.</p>
-    pub fn get_changed_blocks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangedBlock>> {
+    pub fn get_changed_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangedBlock>> {
         &self.changed_blocks
     }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
@@ -100,10 +92,7 @@ impl ListChangedBlocksOutputBuilder {
         self
     }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
-    pub fn set_expiry_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiry_time = input;
         self
     }

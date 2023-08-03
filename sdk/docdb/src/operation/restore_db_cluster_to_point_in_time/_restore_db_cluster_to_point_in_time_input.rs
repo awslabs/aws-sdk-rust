@@ -75,8 +75,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub enable_cloudwatch_logs_exports:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
@@ -162,9 +161,7 @@ impl RestoreDbClusterToPointInTimeInput {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
-    pub fn enable_cloudwatch_logs_exports(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn enable_cloudwatch_logs_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.enable_cloudwatch_logs_exports.as_deref()
     }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
@@ -174,16 +171,14 @@ impl RestoreDbClusterToPointInTimeInput {
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeInput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput).
-    pub fn builder() -> crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeInputBuilder{
+    pub fn builder() -> crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeInputBuilder {
         crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeInputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreDbClusterToPointInTimeInput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreDbClusterToPointInTimeInputBuilder {
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) restore_type: ::std::option::Option<::std::string::String>,
@@ -192,12 +187,10 @@ pub struct RestoreDbClusterToPointInTimeInputBuilder {
     pub(crate) use_latest_restorable_time: ::std::option::Option<bool>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) enable_cloudwatch_logs_exports:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
 }
 impl RestoreDbClusterToPointInTimeInputBuilder {
@@ -208,10 +201,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -222,10 +212,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
         self
     }
@@ -276,10 +263,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
-    pub fn source_db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -288,10 +272,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
-    pub fn set_source_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_db_cluster_identifier = input;
         self
     }
@@ -300,9 +281,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
-    pub fn get_source_db_cluster_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_source_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_db_cluster_identifier
     }
     /// <p>The date and time to restore the cluster to.</p>
@@ -329,10 +308,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <li> <p>Cannot be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>.</p> </li>
     /// </ul>
     /// <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
-    pub fn set_restore_to_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_restore_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.restore_to_time = input;
         self
     }
@@ -392,20 +368,14 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The subnet group name to use for the new cluster.</p>
     /// <p>Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn db_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subnet group name to use for the new cluster.</p>
     /// <p>Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn set_db_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_name = input;
         self
     }
@@ -420,27 +390,19 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>A list of VPC security groups that the new cluster belongs to.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of VPC security groups that the new cluster belongs to.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
         self
     }
     /// <p>A list of VPC security groups that the new cluster belongs to.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// Appends an item to `tags`.
@@ -455,10 +417,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
         self
     }
     /// <p>The tags to be assigned to the restored cluster.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -509,27 +468,19 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
     ///
     /// <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
-    pub fn enable_cloudwatch_logs_exports(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn enable_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
         v.push(input.into());
         self.enable_cloudwatch_logs_exports = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
-    pub fn set_enable_cloudwatch_logs_exports(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.enable_cloudwatch_logs_exports = input;
         self
     }
     /// <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
-    pub fn get_enable_cloudwatch_logs_exports(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enable_cloudwatch_logs_exports
     }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
@@ -555,32 +506,19 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput {
-                db_cluster_identifier: self.db_cluster_identifier
-                ,
-                restore_type: self.restore_type
-                ,
-                source_db_cluster_identifier: self.source_db_cluster_identifier
-                ,
-                restore_to_time: self.restore_to_time
-                ,
-                use_latest_restorable_time: self.use_latest_restorable_time
-                    .unwrap_or_default()
-                ,
-                port: self.port
-                ,
-                db_subnet_group_name: self.db_subnet_group_name
-                ,
-                vpc_security_group_ids: self.vpc_security_group_ids
-                ,
-                tags: self.tags
-                ,
-                kms_key_id: self.kms_key_id
-                ,
-                enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports
-                ,
-                deletion_protection: self.deletion_protection
-                ,
-            }
+                db_cluster_identifier: self.db_cluster_identifier,
+                restore_type: self.restore_type,
+                source_db_cluster_identifier: self.source_db_cluster_identifier,
+                restore_to_time: self.restore_to_time,
+                use_latest_restorable_time: self.use_latest_restorable_time.unwrap_or_default(),
+                port: self.port,
+                db_subnet_group_name: self.db_subnet_group_name,
+                vpc_security_group_ids: self.vpc_security_group_ids,
+                tags: self.tags,
+                kms_key_id: self.kms_key_id,
+                enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports,
+                deletion_protection: self.deletion_protection,
+            },
         )
     }
 }

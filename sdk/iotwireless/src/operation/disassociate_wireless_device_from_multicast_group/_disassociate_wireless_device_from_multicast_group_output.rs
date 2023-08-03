@@ -12,16 +12,16 @@ impl ::aws_http::request_id::RequestId for DisassociateWirelessDeviceFromMultica
 }
 impl DisassociateWirelessDeviceFromMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroupOutput).
-    pub fn builder() -> crate::operation::disassociate_wireless_device_from_multicast_group::builders::DisassociateWirelessDeviceFromMulticastGroupOutputBuilder{
+    pub fn builder(
+    ) -> crate::operation::disassociate_wireless_device_from_multicast_group::builders::DisassociateWirelessDeviceFromMulticastGroupOutputBuilder
+    {
         crate::operation::disassociate_wireless_device_from_multicast_group::builders::DisassociateWirelessDeviceFromMulticastGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateWirelessDeviceFromMulticastGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +36,7 @@ impl DisassociateWirelessDeviceFromMulticastGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroupOutput).
-    pub fn build(self) -> crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroupOutput{
+    pub fn build(self) -> crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroupOutput {
         crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroupOutput {
             _request_id: self._request_id,
         }

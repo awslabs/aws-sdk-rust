@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`state_machines(Option<Vec<StateMachineListItem>>)`](crate::operation::list_state_machines::ListStateMachinesOutput::state_machines): (undocumented)
     ///   - [`next_token(Option<String>)`](crate::operation::list_state_machines::ListStateMachinesOutput::next_token): <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     /// - On failure, responds with [`SdkError<ListStateMachinesError>`](crate::operation::list_state_machines::ListStateMachinesError)
-    pub fn list_state_machines(
-        &self,
-    ) -> crate::operation::list_state_machines::builders::ListStateMachinesFluentBuilder {
-        crate::operation::list_state_machines::builders::ListStateMachinesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_state_machines(&self) -> crate::operation::list_state_machines::builders::ListStateMachinesFluentBuilder {
+        crate::operation::list_state_machines::builders::ListStateMachinesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl ListAgentsInput {
 
 /// A builder for [`ListAgentsInput`](crate::operation::list_agents::ListAgentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAgentsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -67,12 +65,7 @@ impl ListAgentsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAgentsInput`](crate::operation::list_agents::ListAgentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_agents::ListAgentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_agents::ListAgentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_agents::ListAgentsInput {
             max_results: self.max_results,
             next_token: self.next_token,

@@ -37,9 +37,7 @@ impl StreamSelection {
 
 /// A builder for [`StreamSelection`](crate::types::StreamSelection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StreamSelectionBuilder {
     pub(crate) max_video_bits_per_second: ::std::option::Option<i32>,
     pub(crate) min_video_bits_per_second: ::std::option::Option<i32>,
@@ -80,10 +78,7 @@ impl StreamSelectionBuilder {
         self
     }
     /// A directive that determines the order of streams in the output.
-    pub fn set_stream_order(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamOrder>,
-    ) -> Self {
+    pub fn set_stream_order(mut self, input: ::std::option::Option<crate::types::StreamOrder>) -> Self {
         self.stream_order = input;
         self
     }

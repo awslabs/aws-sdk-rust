@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteTypedLinkFacetOutput {
 }
 impl DeleteTypedLinkFacetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTypedLinkFacetOutput`](crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetOutputBuilder {
         crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTypedLinkFacetOutput`](crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTypedLinkFacetOutputBuilder {
     _request_id: Option<String>,
 }

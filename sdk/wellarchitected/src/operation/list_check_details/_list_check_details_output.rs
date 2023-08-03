@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListCheckDetailsOutput {
 }
 impl ListCheckDetailsOutput {
     /// Creates a new builder-style object to manufacture [`ListCheckDetailsOutput`](crate::operation::list_check_details::ListCheckDetailsOutput).
-    pub fn builder() -> crate::operation::list_check_details::builders::ListCheckDetailsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_check_details::builders::ListCheckDetailsOutputBuilder {
         crate::operation::list_check_details::builders::ListCheckDetailsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCheckDetailsOutput`](crate::operation::list_check_details::ListCheckDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCheckDetailsOutputBuilder {
     pub(crate) check_details: ::std::option::Option<::std::vec::Vec<crate::types::CheckDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListCheckDetailsOutputBuilder {
         self
     }
     /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
-    pub fn set_check_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CheckDetail>>,
-    ) -> Self {
+    pub fn set_check_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CheckDetail>>) -> Self {
         self.check_details = input;
         self
     }
     /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
-    pub fn get_check_details(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CheckDetail>> {
+    pub fn get_check_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CheckDetail>> {
         &self.check_details
     }
     /// <p>The token to use to retrieve the next set of results.</p>

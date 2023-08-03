@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DecreaseReplicationFactorOutput`](crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput::cluster): <p>A description of the DAX cluster, after you have decreased its replication factor.</p>
     /// - On failure, responds with [`SdkError<DecreaseReplicationFactorError>`](crate::operation::decrease_replication_factor::DecreaseReplicationFactorError)
-    pub fn decrease_replication_factor(&self) -> crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorFluentBuilder{
+    pub fn decrease_replication_factor(&self) -> crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorFluentBuilder {
         crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorFluentBuilder::new(self.handle.clone())
     }
 }

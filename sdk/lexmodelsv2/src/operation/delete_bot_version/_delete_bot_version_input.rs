@@ -29,17 +29,14 @@ impl DeleteBotVersionInput {
 }
 impl DeleteBotVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteBotVersionInput`](crate::operation::delete_bot_version::DeleteBotVersionInput).
-    pub fn builder() -> crate::operation::delete_bot_version::builders::DeleteBotVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_bot_version::builders::DeleteBotVersionInputBuilder {
         crate::operation::delete_bot_version::builders::DeleteBotVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBotVersionInput`](crate::operation::delete_bot_version::DeleteBotVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBotVersionInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl DeleteBotVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBotVersionInput`](crate::operation::delete_bot_version::DeleteBotVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_bot_version::DeleteBotVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_bot_version::DeleteBotVersionInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                skip_resource_in_use_check: self.skip_resource_in_use_check,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_bot_version::DeleteBotVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_bot_version::DeleteBotVersionInput {
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            skip_resource_in_use_check: self.skip_resource_in_use_check,
+        })
     }
 }

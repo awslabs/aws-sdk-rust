@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateDomainMetadataOutput {
 }
 impl UpdateDomainMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainMetadataOutput`](crate::operation::update_domain_metadata::UpdateDomainMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::update_domain_metadata::builders::UpdateDomainMetadataOutputBuilder {
+    pub fn builder() -> crate::operation::update_domain_metadata::builders::UpdateDomainMetadataOutputBuilder {
         crate::operation::update_domain_metadata::builders::UpdateDomainMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDomainMetadataOutput`](crate::operation::update_domain_metadata::UpdateDomainMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDomainMetadataOutputBuilder {
     _request_id: Option<String>,
 }

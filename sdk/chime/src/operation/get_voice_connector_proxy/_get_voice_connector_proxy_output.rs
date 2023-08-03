@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetVoiceConnectorProxyOutput {
 }
 impl GetVoiceConnectorProxyOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorProxyOutput`](crate::operation::get_voice_connector_proxy::GetVoiceConnectorProxyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_voice_connector_proxy::builders::GetVoiceConnectorProxyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_voice_connector_proxy::builders::GetVoiceConnectorProxyOutputBuilder {
         crate::operation::get_voice_connector_proxy::builders::GetVoiceConnectorProxyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVoiceConnectorProxyOutput`](crate::operation::get_voice_connector_proxy::GetVoiceConnectorProxyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorProxyOutputBuilder {
     pub(crate) proxy: ::std::option::Option<crate::types::Proxy>,
     _request_id: Option<String>,
@@ -62,9 +58,7 @@ impl GetVoiceConnectorProxyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetVoiceConnectorProxyOutput`](crate::operation::get_voice_connector_proxy::GetVoiceConnectorProxyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_voice_connector_proxy::GetVoiceConnectorProxyOutput {
+    pub fn build(self) -> crate::operation::get_voice_connector_proxy::GetVoiceConnectorProxyOutput {
         crate::operation::get_voice_connector_proxy::GetVoiceConnectorProxyOutput {
             proxy: self.proxy,
             _request_id: self._request_id,

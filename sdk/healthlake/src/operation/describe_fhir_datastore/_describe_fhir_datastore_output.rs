@@ -10,9 +10,7 @@ pub struct DescribeFhirDatastoreOutput {
 }
 impl DescribeFhirDatastoreOutput {
     /// <p>All properties associated with a data store, including the data store ID, data store ARN, data store name, data store status, when the data store was created, data store type version, and the data store's endpoint.</p>
-    pub fn datastore_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DatastoreProperties> {
+    pub fn datastore_properties(&self) -> ::std::option::Option<&crate::types::DatastoreProperties> {
         self.datastore_properties.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeFhirDatastoreOutput {
 }
 impl DescribeFhirDatastoreOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFhirDatastoreOutput`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreOutputBuilder {
         crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFhirDatastoreOutput`](crate::operation::describe_fhir_datastore::DescribeFhirDatastoreOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFhirDatastoreOutputBuilder {
     pub(crate) datastore_properties: ::std::option::Option<crate::types::DatastoreProperties>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl DescribeFhirDatastoreOutputBuilder {
         self
     }
     /// <p>All properties associated with a data store, including the data store ID, data store ARN, data store name, data store status, when the data store was created, data store type version, and the data store's endpoint.</p>
-    pub fn set_datastore_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::DatastoreProperties>,
-    ) -> Self {
+    pub fn set_datastore_properties(mut self, input: ::std::option::Option<crate::types::DatastoreProperties>) -> Self {
         self.datastore_properties = input;
         self
     }
     /// <p>All properties associated with a data store, including the data store ID, data store ARN, data store name, data store status, when the data store was created, data store type version, and the data store's endpoint.</p>
-    pub fn get_datastore_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::DatastoreProperties> {
+    pub fn get_datastore_properties(&self) -> &::std::option::Option<crate::types::DatastoreProperties> {
         &self.datastore_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

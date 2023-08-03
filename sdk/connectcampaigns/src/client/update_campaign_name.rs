@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder::set_name): The name of an Amazon Connect Campaign name.
     /// - On success, responds with [`UpdateCampaignNameOutput`](crate::operation::update_campaign_name::UpdateCampaignNameOutput)
     /// - On failure, responds with [`SdkError<UpdateCampaignNameError>`](crate::operation::update_campaign_name::UpdateCampaignNameError)
-    pub fn update_campaign_name(
-        &self,
-    ) -> crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder {
-        crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_campaign_name(&self) -> crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder {
+        crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder::new(self.handle.clone())
     }
 }

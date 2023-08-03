@@ -7,9 +7,7 @@ pub fn ser_describe_account_assignment_deletion_status_input(
         object.key("InstanceArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.account_assignment_deletion_request_id {
-        object
-            .key("AccountAssignmentDeletionRequestId")
-            .string(var_2.as_str());
+        object.key("AccountAssignmentDeletionRequestId").string(var_2.as_str());
     }
     Ok(())
 }

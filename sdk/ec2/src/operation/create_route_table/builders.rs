@@ -10,10 +10,7 @@ impl CreateRouteTableInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_route_table::CreateRouteTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_route_table::CreateRouteTableError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_route_table::CreateRouteTableError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_route_table();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateRouteTableFluentBuilder {
         }
     }
     /// Access the CreateRouteTable as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_route_table::builders::CreateRouteTableInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_route_table::builders::CreateRouteTableInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateRouteTableFluentBuilder {
             crate::operation::create_route_table::CreateRouteTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_route_table::CreateRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_route_table::CreateRouteTableError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateRouteTableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateRouteTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_route_table::CreateRouteTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_route_table::CreateRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_route_table::CreateRouteTableError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateRouteTableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_route_table::CreateRouteTableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_route_table::CreateRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_route_table::CreateRouteTableError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateRouteTableFluentBuilder {
             crate::operation::create_route_table::CreateRouteTable,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_route_table::CreateRouteTableError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_route_table::CreateRouteTableError>,
     > {
         self.customize_middleware().await
     }
@@ -161,17 +145,12 @@ impl CreateRouteTableFluentBuilder {
         self
     }
     /// <p>The tags to assign to the route table.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to assign to the route table.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }

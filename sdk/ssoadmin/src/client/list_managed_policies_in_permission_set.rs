@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`attached_managed_policies(Option<Vec<AttachedManagedPolicy>>)`](crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetOutput::attached_managed_policies): <p>An array of the <code>AttachedManagedPolicy</code> data type object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     /// - On failure, responds with [`SdkError<ListManagedPoliciesInPermissionSetError>`](crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError)
-    pub fn list_managed_policies_in_permission_set(&self) -> crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder{
+    pub fn list_managed_policies_in_permission_set(
+        &self,
+    ) -> crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder {
         crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder::new(self.handle.clone())
     }
 }

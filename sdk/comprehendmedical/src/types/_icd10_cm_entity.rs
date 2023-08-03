@@ -86,9 +86,7 @@ impl Icd10CmEntity {
 
 /// A builder for [`Icd10CmEntity`](crate::types::Icd10CmEntity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Icd10CmEntityBuilder {
     pub(crate) id: ::std::option::Option<i32>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
@@ -99,8 +97,7 @@ pub struct Icd10CmEntityBuilder {
     pub(crate) end_offset: ::std::option::Option<i32>,
     pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmAttribute>>,
     pub(crate) traits: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>>,
-    pub(crate) icd10_cm_concepts:
-        ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmConcept>>,
+    pub(crate) icd10_cm_concepts: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmConcept>>,
 }
 impl Icd10CmEntityBuilder {
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
@@ -137,10 +134,7 @@ impl Icd10CmEntityBuilder {
         self
     }
     /// <p> The category of the entity. InferICD10CM detects entities in the <code>MEDICAL_CONDITION</code> category. </p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::Icd10CmEntityCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::Icd10CmEntityCategory>) -> Self {
         self.category = input;
         self
     }
@@ -154,10 +148,7 @@ impl Icd10CmEntityBuilder {
         self
     }
     /// <p>Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::Icd10CmEntityType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::Icd10CmEntityType>) -> Self {
         self.r#type = input;
         self
     }
@@ -219,17 +210,12 @@ impl Icd10CmEntityBuilder {
         self
     }
     /// <p>The detected attributes that relate to the entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the nature of a medical condition.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmAttribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmAttribute>>) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The detected attributes that relate to the entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the nature of a medical condition.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Icd10CmAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Icd10CmAttribute>> {
         &self.attributes
     }
     /// Appends an item to `traits`.
@@ -244,17 +230,12 @@ impl Icd10CmEntityBuilder {
         self
     }
     /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION.</code> </p>
-    pub fn set_traits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>>,
-    ) -> Self {
+    pub fn set_traits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>>) -> Self {
         self.traits = input;
         self
     }
     /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION.</code> </p>
-    pub fn get_traits(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>> {
+    pub fn get_traits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>> {
         &self.traits
     }
     /// Appends an item to `icd10_cm_concepts`.
@@ -269,17 +250,12 @@ impl Icd10CmEntityBuilder {
         self
     }
     /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
-    pub fn set_icd10_cm_concepts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmConcept>>,
-    ) -> Self {
+    pub fn set_icd10_cm_concepts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmConcept>>) -> Self {
         self.icd10_cm_concepts = input;
         self
     }
     /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
-    pub fn get_icd10_cm_concepts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Icd10CmConcept>> {
+    pub fn get_icd10_cm_concepts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Icd10CmConcept>> {
         &self.icd10_cm_concepts
     }
     /// Consumes the builder and constructs a [`Icd10CmEntity`](crate::types::Icd10CmEntity).

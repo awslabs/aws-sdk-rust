@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`inactivity_timeout_minutes(i32)`](crate::operation::update_dev_environment::UpdateDevEnvironmentOutput::inactivity_timeout_minutes): <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. </p>
     ///   - [`client_token(Option<String>)`](crate::operation::update_dev_environment::UpdateDevEnvironmentOutput::client_token): <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
     /// - On failure, responds with [`SdkError<UpdateDevEnvironmentError>`](crate::operation::update_dev_environment::UpdateDevEnvironmentError)
-    pub fn update_dev_environment(
-        &self,
-    ) -> crate::operation::update_dev_environment::builders::UpdateDevEnvironmentFluentBuilder {
-        crate::operation::update_dev_environment::builders::UpdateDevEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_dev_environment(&self) -> crate::operation::update_dev_environment::builders::UpdateDevEnvironmentFluentBuilder {
+        crate::operation::update_dev_environment::builders::UpdateDevEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

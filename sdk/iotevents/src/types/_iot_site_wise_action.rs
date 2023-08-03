@@ -60,9 +60,7 @@ impl IotSiteWiseAction {
 
 /// A builder for [`IotSiteWiseAction`](crate::types::IotSiteWiseAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IotSiteWiseActionBuilder {
     pub(crate) entry_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
@@ -114,18 +112,12 @@ impl IotSiteWiseActionBuilder {
         &self.property_id
     }
     /// <p>The alias of the asset property.</p>
-    pub fn property_alias(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias of the asset property.</p>
-    pub fn set_property_alias(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_property_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_alias = input;
         self
     }
@@ -139,10 +131,7 @@ impl IotSiteWiseActionBuilder {
         self
     }
     /// <p>The value to send to the asset property. This value contains timestamp, quality, and value (TQV) information. </p>
-    pub fn set_property_value(
-        mut self,
-        input: ::std::option::Option<crate::types::AssetPropertyValue>,
-    ) -> Self {
+    pub fn set_property_value(mut self, input: ::std::option::Option<crate::types::AssetPropertyValue>) -> Self {
         self.property_value = input;
         self
     }

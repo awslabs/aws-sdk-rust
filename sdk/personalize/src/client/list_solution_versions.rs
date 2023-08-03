@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`solution_versions(Option<Vec<SolutionVersionSummary>>)`](crate::operation::list_solution_versions::ListSolutionVersionsOutput::solution_versions): <p>A list of solution versions describing the version properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_solution_versions::ListSolutionVersionsOutput::next_token): <p>A token for getting the next set of solution versions (if they exist).</p>
     /// - On failure, responds with [`SdkError<ListSolutionVersionsError>`](crate::operation::list_solution_versions::ListSolutionVersionsError)
-    pub fn list_solution_versions(
-        &self,
-    ) -> crate::operation::list_solution_versions::builders::ListSolutionVersionsFluentBuilder {
-        crate::operation::list_solution_versions::builders::ListSolutionVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_solution_versions(&self) -> crate::operation::list_solution_versions::builders::ListSolutionVersionsFluentBuilder {
+        crate::operation::list_solution_versions::builders::ListSolutionVersionsFluentBuilder::new(self.handle.clone())
     }
 }

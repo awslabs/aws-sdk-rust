@@ -22,26 +22,18 @@ impl GetCoreDeviceInput {
 
 /// A builder for [`GetCoreDeviceInput`](crate::operation::get_core_device::GetCoreDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCoreDeviceInputBuilder {
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,
 }
 impl GetCoreDeviceInputBuilder {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn core_device_thing_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn core_device_thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_device_thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn set_core_device_thing_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_core_device_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_device_thing_name = input;
         self
     }
@@ -52,10 +44,7 @@ impl GetCoreDeviceInputBuilder {
     /// Consumes the builder and constructs a [`GetCoreDeviceInput`](crate::operation::get_core_device::GetCoreDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_core_device::GetCoreDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_core_device::GetCoreDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_core_device::GetCoreDeviceInput {
             core_device_thing_name: self.core_device_thing_name,
         })

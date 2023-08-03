@@ -30,9 +30,7 @@ impl NegativeFormat {
 
 /// A builder for [`NegativeFormat`](crate::types::NegativeFormat).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NegativeFormatBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) suffix: ::std::option::Option<::std::string::String>,

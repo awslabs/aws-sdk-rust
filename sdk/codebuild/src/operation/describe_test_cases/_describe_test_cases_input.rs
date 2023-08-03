@@ -36,17 +36,14 @@ impl DescribeTestCasesInput {
 }
 impl DescribeTestCasesInput {
     /// Creates a new builder-style object to manufacture [`DescribeTestCasesInput`](crate::operation::describe_test_cases::DescribeTestCasesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_test_cases::builders::DescribeTestCasesInputBuilder {
+    pub fn builder() -> crate::operation::describe_test_cases::builders::DescribeTestCasesInputBuilder {
         crate::operation::describe_test_cases::builders::DescribeTestCasesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTestCasesInput`](crate::operation::describe_test_cases::DescribeTestCasesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTestCasesInputBuilder {
     pub(crate) report_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -102,10 +99,7 @@ impl DescribeTestCasesInputBuilder {
         self
     }
     /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::TestCaseFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::TestCaseFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -116,17 +110,12 @@ impl DescribeTestCasesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTestCasesInput`](crate::operation::describe_test_cases::DescribeTestCasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_test_cases::DescribeTestCasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_test_cases::DescribeTestCasesInput {
-                report_arn: self.report_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filter: self.filter,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_test_cases::DescribeTestCasesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_test_cases::DescribeTestCasesInput {
+            report_arn: self.report_arn,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            filter: self.filter,
+        })
     }
 }

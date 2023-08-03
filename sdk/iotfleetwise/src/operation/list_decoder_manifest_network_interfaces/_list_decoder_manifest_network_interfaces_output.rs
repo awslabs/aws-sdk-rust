@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDecoderManifestNetworkInterfacesO
 }
 impl ListDecoderManifestNetworkInterfacesOutput {
     /// Creates a new builder-style object to manufacture [`ListDecoderManifestNetworkInterfacesOutput`](crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesOutput).
-    pub fn builder() -> crate::operation::list_decoder_manifest_network_interfaces::builders::ListDecoderManifestNetworkInterfacesOutputBuilder{
+    pub fn builder() -> crate::operation::list_decoder_manifest_network_interfaces::builders::ListDecoderManifestNetworkInterfacesOutputBuilder {
         crate::operation::list_decoder_manifest_network_interfaces::builders::ListDecoderManifestNetworkInterfacesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDecoderManifestNetworkInterfacesOutput`](crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDecoderManifestNetworkInterfacesOutputBuilder {
-    pub(crate) network_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListDecoderManifestNetworkInterfacesOutputBuilder {
         self
     }
     /// <p> A list of information about network interfaces. </p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
-    ) -> Self {
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
         self.network_interfaces = input;
         self
     }
     /// <p> A list of information about network interfaces. </p>
-    pub fn get_network_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
         &self.network_interfaces
     }
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
@@ -94,12 +86,10 @@ impl ListDecoderManifestNetworkInterfacesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDecoderManifestNetworkInterfacesOutput`](crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesOutput).
-    pub fn build(self) -> crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesOutput{
+    pub fn build(self) -> crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesOutput {
         crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesOutput {
-            network_interfaces: self.network_interfaces
-            ,
-            next_token: self.next_token
-            ,
+            network_interfaces: self.network_interfaces,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

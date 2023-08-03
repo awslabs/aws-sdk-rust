@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetSourceApiAssociationOutput`](crate::operation::get_source_api_association::GetSourceApiAssociationOutput) with field(s):
     ///   - [`source_api_association(Option<SourceApiAssociation>)`](crate::operation::get_source_api_association::GetSourceApiAssociationOutput::source_api_association): <p>The <code>SourceApiAssociation</code> object data.</p>
     /// - On failure, responds with [`SdkError<GetSourceApiAssociationError>`](crate::operation::get_source_api_association::GetSourceApiAssociationError)
-    pub fn get_source_api_association(
-        &self,
-    ) -> crate::operation::get_source_api_association::builders::GetSourceApiAssociationFluentBuilder
-    {
+    pub fn get_source_api_association(&self) -> crate::operation::get_source_api_association::builders::GetSourceApiAssociationFluentBuilder {
         crate::operation::get_source_api_association::builders::GetSourceApiAssociationFluentBuilder::new(self.handle.clone())
     }
 }

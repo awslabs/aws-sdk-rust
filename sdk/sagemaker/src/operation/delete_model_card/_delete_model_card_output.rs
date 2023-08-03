@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteModelCardOutput {
 }
 impl DeleteModelCardOutput {
     /// Creates a new builder-style object to manufacture [`DeleteModelCardOutput`](crate::operation::delete_model_card::DeleteModelCardOutput).
-    pub fn builder() -> crate::operation::delete_model_card::builders::DeleteModelCardOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_model_card::builders::DeleteModelCardOutputBuilder {
         crate::operation::delete_model_card::builders::DeleteModelCardOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteModelCardOutput`](crate::operation::delete_model_card::DeleteModelCardOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteModelCardOutputBuilder {
     _request_id: Option<String>,
 }

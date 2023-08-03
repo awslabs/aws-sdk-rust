@@ -110,9 +110,7 @@ impl BgpPeer {
 
 /// A builder for [`BgpPeer`](crate::types::BgpPeer).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BgpPeerBuilder {
     pub(crate) bgp_peer_id: ::std::option::Option<::std::string::String>,
     pub(crate) asn: ::std::option::Option<i32>,
@@ -174,10 +172,7 @@ impl BgpPeerBuilder {
         self
     }
     /// <p>The address family for the BGP peer.</p>
-    pub fn set_address_family(
-        mut self,
-        input: ::std::option::Option<crate::types::AddressFamily>,
-    ) -> Self {
+    pub fn set_address_family(mut self, input: ::std::option::Option<crate::types::AddressFamily>) -> Self {
         self.address_family = input;
         self
     }
@@ -186,18 +181,12 @@ impl BgpPeerBuilder {
         &self.address_family
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn amazon_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn amazon_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amazon_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn set_amazon_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_amazon_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amazon_address = input;
         self
     }
@@ -206,18 +195,12 @@ impl BgpPeerBuilder {
         &self.amazon_address
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn set_customer_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_address = input;
         self
     }
@@ -245,10 +228,7 @@ impl BgpPeerBuilder {
     /// <li> <p> <code>deleting</code>: The BGP peer is being deleted.</p> </li>
     /// <li> <p> <code>deleted</code>: The BGP peer is deleted and cannot be established.</p> </li>
     /// </ul>
-    pub fn set_bgp_peer_state(
-        mut self,
-        input: ::std::option::Option<crate::types::BgpPeerState>,
-    ) -> Self {
+    pub fn set_bgp_peer_state(mut self, input: ::std::option::Option<crate::types::BgpPeerState>) -> Self {
         self.bgp_peer_state = input;
         self
     }
@@ -293,18 +273,12 @@ impl BgpPeerBuilder {
         &self.bgp_status
     }
     /// <p>The Direct Connect endpoint that terminates the BGP peer.</p>
-    pub fn aws_device_v2(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_device_v2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_device_v2 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Direct Connect endpoint that terminates the BGP peer.</p>
-    pub fn set_aws_device_v2(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_device_v2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_device_v2 = input;
         self
     }
@@ -313,18 +287,12 @@ impl BgpPeerBuilder {
         &self.aws_device_v2
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_logical_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_logical_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn set_aws_logical_device_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_logical_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_logical_device_id = input;
         self
     }

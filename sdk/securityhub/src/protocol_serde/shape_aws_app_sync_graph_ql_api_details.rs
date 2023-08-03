@@ -33,7 +33,10 @@ pub fn ser_aws_app_sync_graph_ql_api_details(
     if let Some(var_9) = &input.user_pool_config {
         #[allow(unused_mut)]
         let mut object_10 = object.key("UserPoolConfig").start_object();
-        crate::protocol_serde::shape_aws_app_sync_graph_ql_api_user_pool_config_details::ser_aws_app_sync_graph_ql_api_user_pool_config_details(&mut object_10, var_9)?;
+        crate::protocol_serde::shape_aws_app_sync_graph_ql_api_user_pool_config_details::ser_aws_app_sync_graph_ql_api_user_pool_config_details(
+            &mut object_10,
+            var_9,
+        )?;
         object_10.finish();
     }
     if let Some(var_11) = &input.authentication_type {
@@ -42,13 +45,14 @@ pub fn ser_aws_app_sync_graph_ql_api_details(
     if let Some(var_12) = &input.log_config {
         #[allow(unused_mut)]
         let mut object_13 = object.key("LogConfig").start_object();
-        crate::protocol_serde::shape_aws_app_sync_graph_ql_api_log_config_details::ser_aws_app_sync_graph_ql_api_log_config_details(&mut object_13, var_12)?;
+        crate::protocol_serde::shape_aws_app_sync_graph_ql_api_log_config_details::ser_aws_app_sync_graph_ql_api_log_config_details(
+            &mut object_13,
+            var_12,
+        )?;
         object_13.finish();
     }
     if let Some(var_14) = &input.additional_authentication_providers {
-        let mut array_15 = object
-            .key("AdditionalAuthenticationProviders")
-            .start_array();
+        let mut array_15 = object.key("AdditionalAuthenticationProviders").start_array();
         for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
@@ -67,17 +71,9 @@ pub fn ser_aws_app_sync_graph_ql_api_details(
 
 pub(crate) fn de_aws_app_sync_graph_ql_api_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AwsAppSyncGraphQlApiDetails>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AwsAppSyncGraphQlApiDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -87,112 +83,91 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "ApiId" => {
-                                builder = builder.set_api_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ApiId" => {
+                            builder = builder.set_api_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "Id" => {
-                                builder = builder.set_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "Id" => {
+                            builder = builder.set_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "OpenIdConnectConfig" => {
-                                builder = builder.set_open_id_connect_config(
+                            );
+                        }
+                        "OpenIdConnectConfig" => {
+                            builder = builder.set_open_id_connect_config(
                                     crate::protocol_serde::shape_aws_app_sync_graph_ql_api_open_id_connect_config_details::de_aws_app_sync_graph_ql_api_open_id_connect_config_details(tokens)?
                                 );
-                            }
-                            "Name" => {
-                                builder = builder.set_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "Name" => {
+                            builder = builder.set_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "LambdaAuthorizerConfig" => {
-                                builder = builder.set_lambda_authorizer_config(
+                            );
+                        }
+                        "LambdaAuthorizerConfig" => {
+                            builder = builder.set_lambda_authorizer_config(
                                     crate::protocol_serde::shape_aws_app_sync_graph_ql_api_lambda_authorizer_config_details::de_aws_app_sync_graph_ql_api_lambda_authorizer_config_details(tokens)?
                                 );
-                            }
-                            "XrayEnabled" => {
-                                builder = builder.set_xray_enabled(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "Arn" => {
-                                builder = builder.set_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "XrayEnabled" => {
+                            builder = builder.set_xray_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "Arn" => {
+                            builder = builder.set_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "UserPoolConfig" => {
-                                builder = builder.set_user_pool_config(
+                            );
+                        }
+                        "UserPoolConfig" => {
+                            builder = builder.set_user_pool_config(
                                     crate::protocol_serde::shape_aws_app_sync_graph_ql_api_user_pool_config_details::de_aws_app_sync_graph_ql_api_user_pool_config_details(tokens)?
                                 );
-                            }
-                            "AuthenticationType" => {
-                                builder = builder.set_authentication_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "AuthenticationType" => {
+                            builder = builder.set_authentication_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "LogConfig" => {
-                                builder = builder.set_log_config(
+                            );
+                        }
+                        "LogConfig" => {
+                            builder = builder.set_log_config(
                                     crate::protocol_serde::shape_aws_app_sync_graph_ql_api_log_config_details::de_aws_app_sync_graph_ql_api_log_config_details(tokens)?
                                 );
-                            }
-                            "AdditionalAuthenticationProviders" => {
-                                builder = builder.set_additional_authentication_providers(
+                        }
+                        "AdditionalAuthenticationProviders" => {
+                            builder = builder.set_additional_authentication_providers(
                                     crate::protocol_serde::shape_aws_app_sync_graph_ql_api_additional_authentication_providers_list::de_aws_app_sync_graph_ql_api_additional_authentication_providers_list(tokens)?
                                 );
-                            }
-                            "WafWebAclArn" => {
-                                builder = builder.set_waf_web_acl_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                        }
+                        "WafWebAclArn" => {
+                            builder = builder.set_waf_web_acl_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

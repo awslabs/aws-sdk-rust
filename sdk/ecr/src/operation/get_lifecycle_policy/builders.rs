@@ -10,10 +10,7 @@ impl GetLifecyclePolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lifecycle_policy::GetLifecyclePolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_lifecycle_policy();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetLifecyclePolicyFluentBuilder {
         }
     }
     /// Access the GetLifecyclePolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetLifecyclePolicyFluentBuilder {
             crate::operation::get_lifecycle_policy::GetLifecyclePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lifecycle_policy::GetLifecyclePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetLifecyclePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetLifecyclePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lifecycle_policy::GetLifecyclePolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetLifecyclePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_lifecycle_policy::GetLifecyclePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lifecycle_policy::GetLifecyclePolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl GetLifecyclePolicyFluentBuilder {
             crate::operation::get_lifecycle_policy::GetLifecyclePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lifecycle_policy::GetLifecyclePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lifecycle_policy::GetLifecyclePolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl GetLifecyclePolicyFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }

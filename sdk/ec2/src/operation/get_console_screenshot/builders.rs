@@ -38,9 +38,7 @@ impl GetConsoleScreenshotFluentBuilder {
         }
     }
     /// Access the GetConsoleScreenshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_console_screenshot::builders::GetConsoleScreenshotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_console_screenshot::builders::GetConsoleScreenshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetConsoleScreenshotFluentBuilder {
             crate::operation::get_console_screenshot::GetConsoleScreenshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_console_screenshot::GetConsoleScreenshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_console_screenshot::GetConsoleScreenshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetConsoleScreenshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetConsoleScreenshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_console_screenshot::GetConsoleScreenshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_console_screenshot::GetConsoleScreenshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_console_screenshot::GetConsoleScreenshotError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetConsoleScreenshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_console_screenshot::GetConsoleScreenshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_console_screenshot::GetConsoleScreenshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_console_screenshot::GetConsoleScreenshotError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl GetConsoleScreenshotFluentBuilder {
             crate::operation::get_console_screenshot::GetConsoleScreenshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_console_screenshot::GetConsoleScreenshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_console_screenshot::GetConsoleScreenshotError>,
     > {
         self.customize_middleware().await
     }

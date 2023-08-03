@@ -19,9 +19,7 @@ impl DeletePartitionOutput {
 
 /// A builder for [`DeletePartitionOutput`](crate::operation::delete_partition::DeletePartitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePartitionOutputBuilder {
     _request_id: Option<String>,
 }

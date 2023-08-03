@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder::set_tags): <p>A collection of key and value pairs that you want to set to the assessment template.</p>
     /// - On success, responds with [`SetTagsForResourceOutput`](crate::operation::set_tags_for_resource::SetTagsForResourceOutput)
     /// - On failure, responds with [`SdkError<SetTagsForResourceError>`](crate::operation::set_tags_for_resource::SetTagsForResourceError)
-    pub fn set_tags_for_resource(
-        &self,
-    ) -> crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder {
-        crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_tags_for_resource(&self) -> crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder {
+        crate::operation::set_tags_for_resource::builders::SetTagsForResourceFluentBuilder::new(self.handle.clone())
     }
 }

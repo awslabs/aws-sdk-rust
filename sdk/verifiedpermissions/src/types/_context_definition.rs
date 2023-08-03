@@ -23,12 +23,7 @@ impl ContextDefinition {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`ContextMap`](crate::types::ContextDefinition::ContextMap), extracting the inner [`HashMap`](::std::collections::HashMap).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_context_map(
-        &self,
-    ) -> ::std::result::Result<
-        &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
-        &Self,
-    > {
+    pub fn as_context_map(&self) -> ::std::result::Result<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>, &Self> {
         if let ContextDefinition::ContextMap(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

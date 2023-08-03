@@ -58,9 +58,7 @@ impl GlobalNetwork {
 
 /// A builder for [`GlobalNetwork`](crate::types::GlobalNetwork).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GlobalNetworkBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) global_network_arn: ::std::option::Option<::std::string::String>,
@@ -71,18 +69,12 @@ pub struct GlobalNetworkBuilder {
 }
 impl GlobalNetworkBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -91,18 +83,12 @@ impl GlobalNetworkBuilder {
         &self.global_network_id
     }
     /// <p>The Amazon Resource Name (ARN) of the global network.</p>
-    pub fn global_network_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the global network.</p>
-    pub fn set_global_network_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_arn = input;
         self
     }
@@ -130,10 +116,7 @@ impl GlobalNetworkBuilder {
         self
     }
     /// <p>The date and time that the global network was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -147,10 +130,7 @@ impl GlobalNetworkBuilder {
         self
     }
     /// <p>The state of the global network.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::GlobalNetworkState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::GlobalNetworkState>) -> Self {
         self.state = input;
         self
     }
@@ -170,10 +150,7 @@ impl GlobalNetworkBuilder {
         self
     }
     /// <p>The tags for the global network.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

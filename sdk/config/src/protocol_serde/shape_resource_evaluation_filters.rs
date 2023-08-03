@@ -13,9 +13,7 @@ pub fn ser_resource_evaluation_filters(
         object_3.finish();
     }
     if let Some(var_4) = &input.evaluation_context_identifier {
-        object
-            .key("EvaluationContextIdentifier")
-            .string(var_4.as_str());
+        object.key("EvaluationContextIdentifier").string(var_4.as_str());
     }
     Ok(())
 }

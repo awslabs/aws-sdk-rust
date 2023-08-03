@@ -29,8 +29,7 @@ impl DescribeJournalS3ExportInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeJournalS3ExportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportInputBuilder,
+    inner: crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportInputBuilder,
 }
 impl DescribeJournalS3ExportFluentBuilder {
     /// Creates a new `DescribeJournalS3Export`.
@@ -41,10 +40,7 @@ impl DescribeJournalS3ExportFluentBuilder {
         }
     }
     /// Access the DescribeJournalS3Export as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl DescribeJournalS3ExportFluentBuilder {
             crate::operation::describe_journal_s3_export::DescribeJournalS3Export,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_journal_s3_export::DescribeJournalS3ExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_journal_s3_export::DescribeJournalS3ExportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl DescribeJournalS3ExportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl DescribeJournalS3ExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_journal_s3_export::DescribeJournalS3ExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_journal_s3_export::DescribeJournalS3ExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_journal_s3_export::DescribeJournalS3ExportError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl DescribeJournalS3ExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_journal_s3_export::DescribeJournalS3ExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_journal_s3_export::DescribeJournalS3ExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_journal_s3_export::DescribeJournalS3ExportError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +108,7 @@ impl DescribeJournalS3ExportFluentBuilder {
             crate::operation::describe_journal_s3_export::DescribeJournalS3Export,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_journal_s3_export::DescribeJournalS3ExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_journal_s3_export::DescribeJournalS3ExportError>,
     > {
         self.customize_middleware().await
     }

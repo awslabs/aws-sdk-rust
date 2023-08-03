@@ -28,16 +28,15 @@ impl ::aws_http::request_id::RequestId for ListRepositoriesForApprovalRuleTempla
 }
 impl ListRepositoriesForApprovalRuleTemplateOutput {
     /// Creates a new builder-style object to manufacture [`ListRepositoriesForApprovalRuleTemplateOutput`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateOutput).
-    pub fn builder() -> crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateOutputBuilder
+    {
         crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListRepositoriesForApprovalRuleTemplateOutput`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRepositoriesForApprovalRuleTemplateOutputBuilder {
     pub(crate) repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -49,27 +48,19 @@ impl ListRepositoriesForApprovalRuleTemplateOutputBuilder {
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
     ///
     /// <p>A list of repository names that are associated with the specified approval rule template.</p>
-    pub fn repository_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.repository_names.unwrap_or_default();
         v.push(input.into());
         self.repository_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of repository names that are associated with the specified approval rule template.</p>
-    pub fn set_repository_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.repository_names = input;
         self
     }
     /// <p>A list of repository names that are associated with the specified approval rule template.</p>
-    pub fn get_repository_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.repository_names
     }
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
@@ -96,12 +87,10 @@ impl ListRepositoriesForApprovalRuleTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRepositoriesForApprovalRuleTemplateOutput`](crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateOutput).
-    pub fn build(self) -> crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateOutput{
+    pub fn build(self) -> crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateOutput {
         crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateOutput {
-            repository_names: self.repository_names
-            ,
-            next_token: self.next_token
-            ,
+            repository_names: self.repository_names,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

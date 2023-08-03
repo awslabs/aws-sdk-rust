@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateImageBuilderStreamingUrlOutput 
 }
 impl CreateImageBuilderStreamingUrlOutput {
     /// Creates a new builder-style object to manufacture [`CreateImageBuilderStreamingUrlOutput`](crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlOutput).
-    pub fn builder() -> crate::operation::create_image_builder_streaming_url::builders::CreateImageBuilderStreamingUrlOutputBuilder{
+    pub fn builder() -> crate::operation::create_image_builder_streaming_url::builders::CreateImageBuilderStreamingUrlOutputBuilder {
         crate::operation::create_image_builder_streaming_url::builders::CreateImageBuilderStreamingUrlOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateImageBuilderStreamingUrlOutput`](crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateImageBuilderStreamingUrlOutputBuilder {
     pub(crate) streaming_url: ::std::option::Option<::std::string::String>,
     pub(crate) expires: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -45,18 +43,12 @@ pub struct CreateImageBuilderStreamingUrlOutputBuilder {
 }
 impl CreateImageBuilderStreamingUrlOutputBuilder {
     /// <p>The URL to start the AppStream 2.0 streaming session.</p>
-    pub fn streaming_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn streaming_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to start the AppStream 2.0 streaming session.</p>
-    pub fn set_streaming_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_streaming_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.streaming_url = input;
         self
     }
@@ -70,10 +62,7 @@ impl CreateImageBuilderStreamingUrlOutputBuilder {
         self
     }
     /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
-    pub fn set_expires(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expires(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires = input;
         self
     }
@@ -91,10 +80,7 @@ impl CreateImageBuilderStreamingUrlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateImageBuilderStreamingUrlOutput`](crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlOutput
-    {
+    pub fn build(self) -> crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlOutput {
         crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlOutput {
             streaming_url: self.streaming_url,
             expires: self.expires,

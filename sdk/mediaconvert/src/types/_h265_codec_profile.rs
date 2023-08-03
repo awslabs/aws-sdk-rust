@@ -44,13 +44,7 @@
 /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H265CodecProfile {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for H265CodecProfile {
             "MAIN_422_8BIT_MAIN" => H265CodecProfile::Main4228BitMain,
             "MAIN_HIGH" => H265CodecProfile::MainHigh,
             "MAIN_MAIN" => H265CodecProfile::MainMain,
-            other => {
-                H265CodecProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => H265CodecProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -51,16 +51,14 @@ impl DescribeInstanceTypeOfferingsInput {
 }
 impl DescribeInstanceTypeOfferingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceTypeOfferingsInput`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsInput).
-    pub fn builder() -> crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsInputBuilder {
         crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceTypeOfferingsInput`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceTypeOfferingsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) location_type: ::std::option::Option<crate::types::LocationType>,
@@ -89,10 +87,7 @@ impl DescribeInstanceTypeOfferingsInputBuilder {
         self
     }
     /// <p>The location type.</p>
-    pub fn set_location_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LocationType>,
-    ) -> Self {
+    pub fn set_location_type(mut self, input: ::std::option::Option<crate::types::LocationType>) -> Self {
         self.location_type = input;
         self
     }
@@ -120,10 +115,7 @@ impl DescribeInstanceTypeOfferingsInputBuilder {
     /// <li> <p> <code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p> </li>
     /// <li> <p> <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -170,19 +162,12 @@ impl DescribeInstanceTypeOfferingsInputBuilder {
         crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsInput {
-                dry_run: self.dry_run
-                ,
-                location_type: self.location_type
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsInput {
+            dry_run: self.dry_run,
+            location_type: self.location_type,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

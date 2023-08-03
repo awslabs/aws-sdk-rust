@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetBucketRequestPaymentOutput`](crate::operation::get_bucket_request_payment::GetBucketRequestPaymentOutput) with field(s):
     ///   - [`payer(Option<Payer>)`](crate::operation::get_bucket_request_payment::GetBucketRequestPaymentOutput::payer): <p>Specifies who pays for the download and request fees.</p>
     /// - On failure, responds with [`SdkError<GetBucketRequestPaymentError>`](crate::operation::get_bucket_request_payment::GetBucketRequestPaymentError)
-    pub fn get_bucket_request_payment(
-        &self,
-    ) -> crate::operation::get_bucket_request_payment::builders::GetBucketRequestPaymentFluentBuilder
-    {
+    pub fn get_bucket_request_payment(&self) -> crate::operation::get_bucket_request_payment::builders::GetBucketRequestPaymentFluentBuilder {
         crate::operation::get_bucket_request_payment::builders::GetBucketRequestPaymentFluentBuilder::new(self.handle.clone())
     }
 }

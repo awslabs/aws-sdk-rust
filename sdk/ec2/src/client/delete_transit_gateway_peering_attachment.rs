@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`DeleteTransitGatewayPeeringAttachmentOutput`](crate::operation::delete_transit_gateway_peering_attachment::DeleteTransitGatewayPeeringAttachmentOutput) with field(s):
     ///   - [`transit_gateway_peering_attachment(Option<TransitGatewayPeeringAttachment>)`](crate::operation::delete_transit_gateway_peering_attachment::DeleteTransitGatewayPeeringAttachmentOutput::transit_gateway_peering_attachment): <p>The transit gateway peering attachment.</p>
     /// - On failure, responds with [`SdkError<DeleteTransitGatewayPeeringAttachmentError>`](crate::operation::delete_transit_gateway_peering_attachment::DeleteTransitGatewayPeeringAttachmentError)
-    pub fn delete_transit_gateway_peering_attachment(&self) -> crate::operation::delete_transit_gateway_peering_attachment::builders::DeleteTransitGatewayPeeringAttachmentFluentBuilder{
-        crate::operation::delete_transit_gateway_peering_attachment::builders::DeleteTransitGatewayPeeringAttachmentFluentBuilder::new(self.handle.clone())
+    pub fn delete_transit_gateway_peering_attachment(
+        &self,
+    ) -> crate::operation::delete_transit_gateway_peering_attachment::builders::DeleteTransitGatewayPeeringAttachmentFluentBuilder {
+        crate::operation::delete_transit_gateway_peering_attachment::builders::DeleteTransitGatewayPeeringAttachmentFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

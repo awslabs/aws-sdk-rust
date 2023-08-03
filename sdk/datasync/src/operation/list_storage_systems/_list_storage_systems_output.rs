@@ -5,8 +5,7 @@
 pub struct ListStorageSystemsOutput {
     /// <p>The Amazon Resource Names ARNs) of the on-premises storage systems that you're using with DataSync Discovery.</p>
     #[doc(hidden)]
-    pub storage_systems:
-        ::std::option::Option<::std::vec::Vec<crate::types::StorageSystemListEntry>>,
+    pub storage_systems: ::std::option::Option<::std::vec::Vec<crate::types::StorageSystemListEntry>>,
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListStorageSystemsOutput {
 }
 impl ListStorageSystemsOutput {
     /// <p>The Amazon Resource Names ARNs) of the on-premises storage systems that you're using with DataSync Discovery.</p>
-    pub fn storage_systems(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::StorageSystemListEntry]> {
+    pub fn storage_systems(&self) -> ::std::option::Option<&[crate::types::StorageSystemListEntry]> {
         self.storage_systems.as_deref()
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListStorageSystemsOutput {
 }
 impl ListStorageSystemsOutput {
     /// Creates a new builder-style object to manufacture [`ListStorageSystemsOutput`](crate::operation::list_storage_systems::ListStorageSystemsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_storage_systems::builders::ListStorageSystemsOutputBuilder {
+    pub fn builder() -> crate::operation::list_storage_systems::builders::ListStorageSystemsOutputBuilder {
         crate::operation::list_storage_systems::builders::ListStorageSystemsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListStorageSystemsOutput`](crate::operation::list_storage_systems::ListStorageSystemsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStorageSystemsOutputBuilder {
-    pub(crate) storage_systems:
-        ::std::option::Option<::std::vec::Vec<crate::types::StorageSystemListEntry>>,
+    pub(crate) storage_systems: ::std::option::Option<::std::vec::Vec<crate::types::StorageSystemListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListStorageSystemsOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Names ARNs) of the on-premises storage systems that you're using with DataSync Discovery.</p>
-    pub fn set_storage_systems(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageSystemListEntry>>,
-    ) -> Self {
+    pub fn set_storage_systems(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageSystemListEntry>>) -> Self {
         self.storage_systems = input;
         self
     }
     /// <p>The Amazon Resource Names ARNs) of the on-premises storage systems that you're using with DataSync Discovery.</p>
-    pub fn get_storage_systems(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageSystemListEntry>> {
+    pub fn get_storage_systems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageSystemListEntry>> {
         &self.storage_systems
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>

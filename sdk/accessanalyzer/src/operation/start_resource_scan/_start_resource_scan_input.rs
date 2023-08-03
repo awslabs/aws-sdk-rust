@@ -30,17 +30,14 @@ impl StartResourceScanInput {
 }
 impl StartResourceScanInput {
     /// Creates a new builder-style object to manufacture [`StartResourceScanInput`](crate::operation::start_resource_scan::StartResourceScanInput).
-    pub fn builder(
-    ) -> crate::operation::start_resource_scan::builders::StartResourceScanInputBuilder {
+    pub fn builder() -> crate::operation::start_resource_scan::builders::StartResourceScanInputBuilder {
         crate::operation::start_resource_scan::builders::StartResourceScanInputBuilder::default()
     }
 }
 
 /// A builder for [`StartResourceScanInput`](crate::operation::start_resource_scan::StartResourceScanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartResourceScanInputBuilder {
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -76,18 +73,12 @@ impl StartResourceScanInputBuilder {
         &self.resource_arn
     }
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
-    pub fn resource_owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
-    pub fn set_resource_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_owner_account = input;
         self
     }
@@ -98,16 +89,11 @@ impl StartResourceScanInputBuilder {
     /// Consumes the builder and constructs a [`StartResourceScanInput`](crate::operation::start_resource_scan::StartResourceScanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_resource_scan::StartResourceScanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_resource_scan::StartResourceScanInput {
-                analyzer_arn: self.analyzer_arn,
-                resource_arn: self.resource_arn,
-                resource_owner_account: self.resource_owner_account,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::start_resource_scan::StartResourceScanInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_resource_scan::StartResourceScanInput {
+            analyzer_arn: self.analyzer_arn,
+            resource_arn: self.resource_arn,
+            resource_owner_account: self.resource_owner_account,
+        })
     }
 }

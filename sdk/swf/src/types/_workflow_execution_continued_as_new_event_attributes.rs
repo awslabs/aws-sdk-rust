@@ -102,17 +102,14 @@ impl WorkflowExecutionContinuedAsNewEventAttributes {
 }
 impl WorkflowExecutionContinuedAsNewEventAttributes {
     /// Creates a new builder-style object to manufacture [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::types::WorkflowExecutionContinuedAsNewEventAttributes).
-    pub fn builder() -> crate::types::builders::WorkflowExecutionContinuedAsNewEventAttributesBuilder
-    {
+    pub fn builder() -> crate::types::builders::WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         crate::types::builders::WorkflowExecutionContinuedAsNewEventAttributesBuilder::default()
     }
 }
 
 /// A builder for [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::types::WorkflowExecutionContinuedAsNewEventAttributes).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     pub(crate) input: ::std::option::Option<::std::string::String>,
     pub(crate) decision_task_completed_event_id: ::std::option::Option<i64>,
@@ -147,10 +144,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_decision_task_completed_event_id(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.decision_task_completed_event_id = input;
         self
     }
@@ -159,18 +153,12 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         &self.decision_task_completed_event_id
     }
     /// <p>The <code>runId</code> of the new workflow execution.</p>
-    pub fn new_execution_run_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_execution_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_execution_run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>runId</code> of the new workflow execution.</p>
-    pub fn set_new_execution_run_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_execution_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_execution_run_id = input;
         self
     }
@@ -180,27 +168,19 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     }
     /// <p>The total duration allowed for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn execution_start_to_close_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn execution_start_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_start_to_close_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The total duration allowed for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn set_execution_start_to_close_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_execution_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_start_to_close_timeout = input;
         self
     }
     /// <p>The total duration allowed for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn get_execution_start_to_close_timeout(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_execution_start_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_start_to_close_timeout
     }
     /// <p>The task list to use for the decisions of the new (continued) workflow execution.</p>
@@ -218,18 +198,12 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         &self.task_list
     }
     /// <p>The priority of the task to use for the decisions of the new (continued) workflow execution.</p>
-    pub fn task_priority(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_priority(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_priority = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The priority of the task to use for the decisions of the new (continued) workflow execution.</p>
-    pub fn set_task_priority(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_priority(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_priority = input;
         self
     }
@@ -239,19 +213,13 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     }
     /// <p>The maximum duration of decision tasks for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn task_start_to_close_timeout(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn task_start_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_start_to_close_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum duration of decision tasks for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn set_task_start_to_close_timeout(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_task_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_start_to_close_timeout = input;
         self
     }
@@ -278,10 +246,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    pub fn set_child_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::ChildPolicy>,
-    ) -> Self {
+    pub fn set_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
         self.child_policy = input;
         self
     }
@@ -307,10 +272,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         self
     }
     /// <p>The list of tags associated with the new workflow execution.</p>
-    pub fn set_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_list = input;
         self
     }
@@ -324,10 +286,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         self
     }
     /// <p>The workflow type of this execution.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
@@ -353,9 +312,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     pub fn build(self) -> crate::types::WorkflowExecutionContinuedAsNewEventAttributes {
         crate::types::WorkflowExecutionContinuedAsNewEventAttributes {
             input: self.input,
-            decision_task_completed_event_id: self
-                .decision_task_completed_event_id
-                .unwrap_or_default(),
+            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
             new_execution_run_id: self.new_execution_run_id,
             execution_start_to_close_timeout: self.execution_start_to_close_timeout,
             task_list: self.task_list,

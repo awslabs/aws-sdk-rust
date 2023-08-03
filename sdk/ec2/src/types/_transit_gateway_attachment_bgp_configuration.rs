@@ -51,9 +51,7 @@ impl TransitGatewayAttachmentBgpConfiguration {
 
 /// A builder for [`TransitGatewayAttachmentBgpConfiguration`](crate::types::TransitGatewayAttachmentBgpConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayAttachmentBgpConfigurationBuilder {
     pub(crate) transit_gateway_asn: ::std::option::Option<i64>,
     pub(crate) peer_asn: ::std::option::Option<i64>,
@@ -91,18 +89,12 @@ impl TransitGatewayAttachmentBgpConfigurationBuilder {
         &self.peer_asn
     }
     /// <p>The interior BGP peer IP address for the transit gateway.</p>
-    pub fn transit_gateway_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The interior BGP peer IP address for the transit gateway.</p>
-    pub fn set_transit_gateway_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_address = input;
         self
     }

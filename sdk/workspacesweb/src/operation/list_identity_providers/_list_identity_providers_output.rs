@@ -8,8 +8,7 @@ pub struct ListIdentityProvidersOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The identity providers.</p>
     #[doc(hidden)]
-    pub identity_providers:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>,
+    pub identity_providers: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>,
     _request_id: Option<String>,
 }
 impl ListIdentityProvidersOutput {
@@ -18,9 +17,7 @@ impl ListIdentityProvidersOutput {
         self.next_token.as_deref()
     }
     /// <p>The identity providers.</p>
-    pub fn identity_providers(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::IdentityProviderSummary]> {
+    pub fn identity_providers(&self) -> ::std::option::Option<&[crate::types::IdentityProviderSummary]> {
         self.identity_providers.as_deref()
     }
 }
@@ -31,22 +28,17 @@ impl ::aws_http::request_id::RequestId for ListIdentityProvidersOutput {
 }
 impl ListIdentityProvidersOutput {
     /// Creates a new builder-style object to manufacture [`ListIdentityProvidersOutput`](crate::operation::list_identity_providers::ListIdentityProvidersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder {
         crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIdentityProvidersOutput`](crate::operation::list_identity_providers::ListIdentityProvidersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityProvidersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) identity_providers:
-        ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>,
+    pub(crate) identity_providers: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>,
     _request_id: Option<String>,
 }
 impl ListIdentityProvidersOutputBuilder {
@@ -76,17 +68,12 @@ impl ListIdentityProvidersOutputBuilder {
         self
     }
     /// <p>The identity providers.</p>
-    pub fn set_identity_providers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>,
-    ) -> Self {
+    pub fn set_identity_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>) -> Self {
         self.identity_providers = input;
         self
     }
     /// <p>The identity providers.</p>
-    pub fn get_identity_providers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>> {
+    pub fn get_identity_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>> {
         &self.identity_providers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

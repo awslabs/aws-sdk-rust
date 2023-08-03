@@ -63,9 +63,7 @@ impl DescribeGroupOutput {
 
 /// A builder for [`DescribeGroupOutput`](crate::operation::describe_group::DescribeGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeGroupOutputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -138,10 +136,7 @@ impl DescribeGroupOutputBuilder {
         self
     }
     /// <p>The date and time when a user was registered to WorkMail, in UNIX epoch time format.</p>
-    pub fn set_enabled_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_enabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.enabled_date = input;
         self
     }
@@ -155,10 +150,7 @@ impl DescribeGroupOutputBuilder {
         self
     }
     /// <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.</p>
-    pub fn set_disabled_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_disabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.disabled_date = input;
         self
     }

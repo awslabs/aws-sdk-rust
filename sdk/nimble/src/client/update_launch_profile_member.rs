@@ -11,7 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateLaunchProfileMemberOutput`](crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberOutput) with field(s):
     ///   - [`member(Option<LaunchProfileMembership>)`](crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberOutput::member): <p>The updated member. </p>
     /// - On failure, responds with [`SdkError<UpdateLaunchProfileMemberError>`](crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberError)
-    pub fn update_launch_profile_member(&self) -> crate::operation::update_launch_profile_member::builders::UpdateLaunchProfileMemberFluentBuilder{
+    pub fn update_launch_profile_member(&self) -> crate::operation::update_launch_profile_member::builders::UpdateLaunchProfileMemberFluentBuilder {
         crate::operation::update_launch_profile_member::builders::UpdateLaunchProfileMemberFluentBuilder::new(self.handle.clone())
     }
 }

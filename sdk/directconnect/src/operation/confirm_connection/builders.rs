@@ -10,10 +10,7 @@ impl ConfirmConnectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::confirm_connection::ConfirmConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_connection::ConfirmConnectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_connection::ConfirmConnectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.confirm_connection();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ConfirmConnectionFluentBuilder {
         }
     }
     /// Access the ConfirmConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::confirm_connection::builders::ConfirmConnectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::confirm_connection::builders::ConfirmConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ConfirmConnectionFluentBuilder {
             crate::operation::confirm_connection::ConfirmConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_connection::ConfirmConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_connection::ConfirmConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ConfirmConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ConfirmConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::confirm_connection::ConfirmConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_connection::ConfirmConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_connection::ConfirmConnectionError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ConfirmConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::confirm_connection::ConfirmConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_connection::ConfirmConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_connection::ConfirmConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl ConfirmConnectionFluentBuilder {
             crate::operation::confirm_connection::ConfirmConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_connection::ConfirmConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_connection::ConfirmConnectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the hosted connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the hosted connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }

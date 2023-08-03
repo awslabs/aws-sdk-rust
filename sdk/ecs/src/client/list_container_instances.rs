@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`container_instance_arns(Option<Vec<String>>)`](crate::operation::list_container_instances::ListContainerInstancesOutput::container_instance_arns): <p>The list of container instances with full ARN entries for each container instance associated with the specified cluster.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_container_instances::ListContainerInstancesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListContainerInstancesError>`](crate::operation::list_container_instances::ListContainerInstancesError)
-    pub fn list_container_instances(
-        &self,
-    ) -> crate::operation::list_container_instances::builders::ListContainerInstancesFluentBuilder
-    {
+    pub fn list_container_instances(&self) -> crate::operation::list_container_instances::builders::ListContainerInstancesFluentBuilder {
         crate::operation::list_container_instances::builders::ListContainerInstancesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_access_token::builders::DeleteAccessTokenFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_access_token::builders::DeleteAccessTokenFluentBuilder::set_id): <p>The ID of the personal access token to delete. You can find the IDs of all PATs associated with your Amazon Web Services Builder ID in a space by calling <code>ListAccessTokens</code>.</p>
     /// - On success, responds with [`DeleteAccessTokenOutput`](crate::operation::delete_access_token::DeleteAccessTokenOutput)
     /// - On failure, responds with [`SdkError<DeleteAccessTokenError>`](crate::operation::delete_access_token::DeleteAccessTokenError)
-    pub fn delete_access_token(
-        &self,
-    ) -> crate::operation::delete_access_token::builders::DeleteAccessTokenFluentBuilder {
-        crate::operation::delete_access_token::builders::DeleteAccessTokenFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_access_token(&self) -> crate::operation::delete_access_token::builders::DeleteAccessTokenFluentBuilder {
+        crate::operation::delete_access_token::builders::DeleteAccessTokenFluentBuilder::new(self.handle.clone())
     }
 }

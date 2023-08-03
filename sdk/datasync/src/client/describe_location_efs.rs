@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`file_system_access_role_arn(Option<String>)`](crate::operation::describe_location_efs::DescribeLocationEfsOutput::file_system_access_role_arn): <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
     ///   - [`in_transit_encryption(Option<EfsInTransitEncryption>)`](crate::operation::describe_location_efs::DescribeLocationEfsOutput::in_transit_encryption): <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
     /// - On failure, responds with [`SdkError<DescribeLocationEfsError>`](crate::operation::describe_location_efs::DescribeLocationEfsError)
-    pub fn describe_location_efs(
-        &self,
-    ) -> crate::operation::describe_location_efs::builders::DescribeLocationEfsFluentBuilder {
-        crate::operation::describe_location_efs::builders::DescribeLocationEfsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_location_efs(&self) -> crate::operation::describe_location_efs::builders::DescribeLocationEfsFluentBuilder {
+        crate::operation::describe_location_efs::builders::DescribeLocationEfsFluentBuilder::new(self.handle.clone())
     }
 }

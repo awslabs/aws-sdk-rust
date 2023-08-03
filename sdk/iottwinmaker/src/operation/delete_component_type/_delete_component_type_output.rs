@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteComponentTypeOutput {
 }
 impl DeleteComponentTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteComponentTypeOutput`](crate::operation::delete_component_type::DeleteComponentTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_component_type::builders::DeleteComponentTypeOutputBuilder {
-        crate::operation::delete_component_type::builders::DeleteComponentTypeOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_component_type::builders::DeleteComponentTypeOutputBuilder {
+        crate::operation::delete_component_type::builders::DeleteComponentTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteComponentTypeOutput`](crate::operation::delete_component_type::DeleteComponentTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteComponentTypeOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::State>,
     _request_id: Option<String>,

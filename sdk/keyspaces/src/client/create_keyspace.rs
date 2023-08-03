@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateKeyspaceOutput`](crate::operation::create_keyspace::CreateKeyspaceOutput) with field(s):
     ///   - [`resource_arn(Option<String>)`](crate::operation::create_keyspace::CreateKeyspaceOutput::resource_arn): <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
     /// - On failure, responds with [`SdkError<CreateKeyspaceError>`](crate::operation::create_keyspace::CreateKeyspaceError)
-    pub fn create_keyspace(
-        &self,
-    ) -> crate::operation::create_keyspace::builders::CreateKeyspaceFluentBuilder {
-        crate::operation::create_keyspace::builders::CreateKeyspaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_keyspace(&self) -> crate::operation::create_keyspace::builders::CreateKeyspaceFluentBuilder {
+        crate::operation::create_keyspace::builders::CreateKeyspaceFluentBuilder::new(self.handle.clone())
     }
 }

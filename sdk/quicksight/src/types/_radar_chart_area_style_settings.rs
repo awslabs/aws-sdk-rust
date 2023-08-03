@@ -23,9 +23,7 @@ impl RadarChartAreaStyleSettings {
 
 /// A builder for [`RadarChartAreaStyleSettings`](crate::types::RadarChartAreaStyleSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RadarChartAreaStyleSettingsBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }
@@ -36,10 +34,7 @@ impl RadarChartAreaStyleSettingsBuilder {
         self
     }
     /// <p>The visibility settings of a radar chart.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
         self
     }
@@ -49,8 +44,6 @@ impl RadarChartAreaStyleSettingsBuilder {
     }
     /// Consumes the builder and constructs a [`RadarChartAreaStyleSettings`](crate::types::RadarChartAreaStyleSettings).
     pub fn build(self) -> crate::types::RadarChartAreaStyleSettings {
-        crate::types::RadarChartAreaStyleSettings {
-            visibility: self.visibility,
-        }
+        crate::types::RadarChartAreaStyleSettings { visibility: self.visibility }
     }
 }

@@ -149,9 +149,7 @@ impl LoRaWanDeviceProfile {
 
 /// A builder for [`LoRaWanDeviceProfile`](crate::types::LoRaWanDeviceProfile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoRaWanDeviceProfileBuilder {
     pub(crate) supports_class_b: ::std::option::Option<bool>,
     pub(crate) class_b_timeout: ::std::option::Option<i32>,
@@ -287,18 +285,12 @@ impl LoRaWanDeviceProfileBuilder {
         &self.mac_version
     }
     /// <p>The version of regional parameters.</p>
-    pub fn reg_params_revision(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reg_params_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reg_params_revision = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of regional parameters.</p>
-    pub fn set_reg_params_revision(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reg_params_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reg_params_revision = input;
         self
     }
@@ -374,10 +366,7 @@ impl LoRaWanDeviceProfileBuilder {
         self
     }
     /// <p>The list of values that make up the FactoryPresetFreqs value.</p>
-    pub fn set_factory_preset_freqs_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<i32>>,
-    ) -> Self {
+    pub fn set_factory_preset_freqs_list(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.factory_preset_freqs_list = input;
         self
     }

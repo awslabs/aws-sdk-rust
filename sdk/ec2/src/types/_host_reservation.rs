@@ -114,9 +114,7 @@ impl HostReservation {
 
 /// A builder for [`HostReservation`](crate::types::HostReservation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HostReservationBuilder {
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
@@ -154,10 +152,7 @@ impl HostReservationBuilder {
         self
     }
     /// <p>The currency in which the <code>upfrontPrice</code> and <code>hourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<crate::types::CurrencyCodeValues>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCodeValues>) -> Self {
         self.currency_code = input;
         self
     }
@@ -205,32 +200,21 @@ impl HostReservationBuilder {
         self
     }
     /// <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
-    pub fn set_host_id_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_host_id_set(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.host_id_set = input;
         self
     }
     /// <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
-    pub fn get_host_id_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_host_id_set(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.host_id_set
     }
     /// <p>The ID of the reservation that specifies the associated Dedicated Hosts.</p>
-    pub fn host_reservation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn host_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the reservation that specifies the associated Dedicated Hosts.</p>
-    pub fn set_host_reservation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_host_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_reservation_id = input;
         self
     }
@@ -253,18 +237,12 @@ impl HostReservationBuilder {
         &self.hourly_price
     }
     /// <p>The instance family of the Dedicated Host Reservation. The instance family on the Dedicated Host must be the same in order for it to benefit from the reservation.</p>
-    pub fn instance_family(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance family of the Dedicated Host Reservation. The instance family on the Dedicated Host must be the same in order for it to benefit from the reservation.</p>
-    pub fn set_instance_family(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_family = input;
         self
     }
@@ -292,10 +270,7 @@ impl HostReservationBuilder {
         self
     }
     /// <p>The payment option selected for this reservation.</p>
-    pub fn set_payment_option(
-        mut self,
-        input: ::std::option::Option<crate::types::PaymentOption>,
-    ) -> Self {
+    pub fn set_payment_option(mut self, input: ::std::option::Option<crate::types::PaymentOption>) -> Self {
         self.payment_option = input;
         self
     }
@@ -323,10 +298,7 @@ impl HostReservationBuilder {
         self
     }
     /// <p>The state of the reservation.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservationState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ReservationState>) -> Self {
         self.state = input;
         self
     }
@@ -335,18 +307,12 @@ impl HostReservationBuilder {
         &self.state
     }
     /// <p>The upfront price of the reservation.</p>
-    pub fn upfront_price(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn upfront_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upfront_price = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upfront price of the reservation.</p>
-    pub fn set_upfront_price(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_upfront_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upfront_price = input;
         self
     }
@@ -366,10 +332,7 @@ impl HostReservationBuilder {
         self
     }
     /// <p>Any tags assigned to the Dedicated Host Reservation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

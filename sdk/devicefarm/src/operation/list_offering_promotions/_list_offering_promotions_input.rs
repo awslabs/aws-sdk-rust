@@ -15,18 +15,14 @@ impl ListOfferingPromotionsInput {
 }
 impl ListOfferingPromotionsInput {
     /// Creates a new builder-style object to manufacture [`ListOfferingPromotionsInput`](crate::operation::list_offering_promotions::ListOfferingPromotionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_offering_promotions::builders::ListOfferingPromotionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_offering_promotions::builders::ListOfferingPromotionsInputBuilder {
         crate::operation::list_offering_promotions::builders::ListOfferingPromotionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListOfferingPromotionsInput`](crate::operation::list_offering_promotions::ListOfferingPromotionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOfferingPromotionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl ListOfferingPromotionsInputBuilder {
     /// Consumes the builder and constructs a [`ListOfferingPromotionsInput`](crate::operation::list_offering_promotions::ListOfferingPromotionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_offering_promotions::ListOfferingPromotionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_offering_promotions::ListOfferingPromotionsInput {
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_offering_promotions::ListOfferingPromotionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_offering_promotions::ListOfferingPromotionsInput { next_token: self.next_token })
     }
 }

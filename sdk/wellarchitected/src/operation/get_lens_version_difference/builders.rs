@@ -26,7 +26,7 @@ impl GetLensVersionDifferenceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLensVersionDifferenceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_lens_version_difference::builders::GetLensVersionDifferenceInputBuilder,
+    inner: crate::operation::get_lens_version_difference::builders::GetLensVersionDifferenceInputBuilder,
 }
 impl GetLensVersionDifferenceFluentBuilder {
     /// Creates a new `GetLensVersionDifference`.
@@ -37,7 +37,7 @@ impl GetLensVersionDifferenceFluentBuilder {
         }
     }
     /// Access the GetLensVersionDifference as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_lens_version_difference::builders::GetLensVersionDifferenceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_lens_version_difference::builders::GetLensVersionDifferenceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetLensVersionDifferenceFluentBuilder {
             crate::operation::get_lens_version_difference::GetLensVersionDifference,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lens_version_difference::GetLensVersionDifferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lens_version_difference::GetLensVersionDifferenceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetLensVersionDifferenceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetLensVersionDifferenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lens_version_difference::GetLensVersionDifferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lens_version_difference::GetLensVersionDifferenceError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetLensVersionDifferenceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lens_version_difference::GetLensVersionDifferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lens_version_difference::GetLensVersionDifferenceError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl GetLensVersionDifferenceFluentBuilder {
             crate::operation::get_lens_version_difference::GetLensVersionDifference,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lens_version_difference::GetLensVersionDifferenceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lens_version_difference::GetLensVersionDifferenceError>,
     > {
         self.customize_middleware().await
     }
@@ -144,18 +133,12 @@ impl GetLensVersionDifferenceFluentBuilder {
         self.inner.get_lens_alias()
     }
     /// <p>The base version of the lens.</p>
-    pub fn base_lens_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn base_lens_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.base_lens_version(input.into());
         self
     }
     /// <p>The base version of the lens.</p>
-    pub fn set_base_lens_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_base_lens_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_base_lens_version(input);
         self
     }
@@ -164,18 +147,12 @@ impl GetLensVersionDifferenceFluentBuilder {
         self.inner.get_base_lens_version()
     }
     /// <p>The lens version to target a difference for.</p>
-    pub fn target_lens_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_lens_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_lens_version(input.into());
         self
     }
     /// <p>The lens version to target a difference for.</p>
-    pub fn set_target_lens_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_lens_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_lens_version(input);
         self
     }

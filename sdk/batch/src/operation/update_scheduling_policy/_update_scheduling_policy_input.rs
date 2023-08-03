@@ -23,18 +23,14 @@ impl UpdateSchedulingPolicyInput {
 }
 impl UpdateSchedulingPolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateSchedulingPolicyInput`](crate::operation::update_scheduling_policy::UpdateSchedulingPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::update_scheduling_policy::builders::UpdateSchedulingPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_scheduling_policy::builders::UpdateSchedulingPolicyInputBuilder {
         crate::operation::update_scheduling_policy::builders::UpdateSchedulingPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSchedulingPolicyInput`](crate::operation::update_scheduling_policy::UpdateSchedulingPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSchedulingPolicyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) fairshare_policy: ::std::option::Option<crate::types::FairsharePolicy>,
@@ -60,10 +56,7 @@ impl UpdateSchedulingPolicyInputBuilder {
         self
     }
     /// <p>The fair share policy.</p>
-    pub fn set_fairshare_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::FairsharePolicy>,
-    ) -> Self {
+    pub fn set_fairshare_policy(mut self, input: ::std::option::Option<crate::types::FairsharePolicy>) -> Self {
         self.fairshare_policy = input;
         self
     }
@@ -74,15 +67,11 @@ impl UpdateSchedulingPolicyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSchedulingPolicyInput`](crate::operation::update_scheduling_policy::UpdateSchedulingPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_scheduling_policy::UpdateSchedulingPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_scheduling_policy::UpdateSchedulingPolicyInput {
-                arn: self.arn,
-                fairshare_policy: self.fairshare_policy,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_scheduling_policy::UpdateSchedulingPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_scheduling_policy::UpdateSchedulingPolicyInput {
+            arn: self.arn,
+            fairshare_policy: self.fairshare_policy,
+        })
     }
 }

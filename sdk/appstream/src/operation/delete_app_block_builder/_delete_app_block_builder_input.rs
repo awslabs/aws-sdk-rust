@@ -15,18 +15,14 @@ impl DeleteAppBlockBuilderInput {
 }
 impl DeleteAppBlockBuilderInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppBlockBuilderInput`](crate::operation::delete_app_block_builder::DeleteAppBlockBuilderInput).
-    pub fn builder(
-    ) -> crate::operation::delete_app_block_builder::builders::DeleteAppBlockBuilderInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_app_block_builder::builders::DeleteAppBlockBuilderInputBuilder {
         crate::operation::delete_app_block_builder::builders::DeleteAppBlockBuilderInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppBlockBuilderInput`](crate::operation::delete_app_block_builder::DeleteAppBlockBuilderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppBlockBuilderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl DeleteAppBlockBuilderInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAppBlockBuilderInput`](crate::operation::delete_app_block_builder::DeleteAppBlockBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_app_block_builder::DeleteAppBlockBuilderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_app_block_builder::DeleteAppBlockBuilderInput {
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_app_block_builder::DeleteAppBlockBuilderInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_app_block_builder::DeleteAppBlockBuilderInput { name: self.name })
     }
 }

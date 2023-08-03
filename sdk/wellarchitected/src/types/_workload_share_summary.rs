@@ -51,9 +51,7 @@ impl WorkloadShareSummary {
 
 /// A builder for [`WorkloadShareSummary`](crate::types::WorkloadShareSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkloadShareSummaryBuilder {
     pub(crate) share_id: ::std::option::Option<::std::string::String>,
     pub(crate) shared_with: ::std::option::Option<::std::string::String>,
@@ -96,10 +94,7 @@ impl WorkloadShareSummaryBuilder {
         self
     }
     /// <p>Permission granted on a share request.</p>
-    pub fn set_permission_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionType>,
-    ) -> Self {
+    pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::PermissionType>) -> Self {
         self.permission_type = input;
         self
     }
@@ -122,18 +117,12 @@ impl WorkloadShareSummaryBuilder {
         &self.status
     }
     /// <p>Optional message to compliment the Status field.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Optional message to compliment the Status field.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }

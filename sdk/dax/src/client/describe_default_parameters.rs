@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_default_parameters::DescribeDefaultParametersOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`parameters(Option<Vec<Parameter>>)`](crate::operation::describe_default_parameters::DescribeDefaultParametersOutput::parameters): <p>A list of parameters. Each element in the list represents one parameter.</p>
     /// - On failure, responds with [`SdkError<DescribeDefaultParametersError>`](crate::operation::describe_default_parameters::DescribeDefaultParametersError)
-    pub fn describe_default_parameters(&self) -> crate::operation::describe_default_parameters::builders::DescribeDefaultParametersFluentBuilder{
+    pub fn describe_default_parameters(&self) -> crate::operation::describe_default_parameters::builders::DescribeDefaultParametersFluentBuilder {
         crate::operation::describe_default_parameters::builders::DescribeDefaultParametersFluentBuilder::new(self.handle.clone())
     }
 }

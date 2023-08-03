@@ -22,17 +22,14 @@ impl ListKafkaVersionsInput {
 }
 impl ListKafkaVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListKafkaVersionsInput`](crate::operation::list_kafka_versions::ListKafkaVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_kafka_versions::builders::ListKafkaVersionsInputBuilder {
+    pub fn builder() -> crate::operation::list_kafka_versions::builders::ListKafkaVersionsInputBuilder {
         crate::operation::list_kafka_versions::builders::ListKafkaVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListKafkaVersionsInput`](crate::operation::list_kafka_versions::ListKafkaVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKafkaVersionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl ListKafkaVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListKafkaVersionsInput`](crate::operation::list_kafka_versions::ListKafkaVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_kafka_versions::ListKafkaVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_kafka_versions::ListKafkaVersionsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_kafka_versions::ListKafkaVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_kafka_versions::ListKafkaVersionsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

@@ -6,59 +6,40 @@
 pub struct ChangeServerLifeCycleStateSourceServerLifecycle {
     /// <p>The request to change the source server migration lifecycle state.</p>
     #[doc(hidden)]
-    pub state:
-        ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>,
+    pub state: ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>,
 }
 impl ChangeServerLifeCycleStateSourceServerLifecycle {
     /// <p>The request to change the source server migration lifecycle state.</p>
-    pub fn state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>
-    {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState> {
         self.state.as_ref()
     }
 }
 impl ChangeServerLifeCycleStateSourceServerLifecycle {
     /// Creates a new builder-style object to manufacture [`ChangeServerLifeCycleStateSourceServerLifecycle`](crate::types::ChangeServerLifeCycleStateSourceServerLifecycle).
-    pub fn builder(
-    ) -> crate::types::builders::ChangeServerLifeCycleStateSourceServerLifecycleBuilder {
+    pub fn builder() -> crate::types::builders::ChangeServerLifeCycleStateSourceServerLifecycleBuilder {
         crate::types::builders::ChangeServerLifeCycleStateSourceServerLifecycleBuilder::default()
     }
 }
 
 /// A builder for [`ChangeServerLifeCycleStateSourceServerLifecycle`](crate::types::ChangeServerLifeCycleStateSourceServerLifecycle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChangeServerLifeCycleStateSourceServerLifecycleBuilder {
-    pub(crate) state:
-        ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>,
+    pub(crate) state: ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>,
 }
 impl ChangeServerLifeCycleStateSourceServerLifecycleBuilder {
     /// <p>The request to change the source server migration lifecycle state.</p>
-    pub fn state(
-        mut self,
-        input: crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState,
-    ) -> Self {
+    pub fn state(mut self, input: crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The request to change the source server migration lifecycle state.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<
-            crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState,
-        >,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The request to change the source server migration lifecycle state.</p>
-    pub fn get_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>
-    {
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState> {
         &self.state
     }
     /// Consumes the builder and constructs a [`ChangeServerLifeCycleStateSourceServerLifecycle`](crate::types::ChangeServerLifeCycleStateSourceServerLifecycle).

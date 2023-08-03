@@ -44,9 +44,7 @@ impl CreateFleetLocationsFluentBuilder {
         }
     }
     /// Access the CreateFleetLocations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_fleet_locations::builders::CreateFleetLocationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_fleet_locations::builders::CreateFleetLocationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -58,9 +56,7 @@ impl CreateFleetLocationsFluentBuilder {
             crate::operation::create_fleet_locations::CreateFleetLocations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fleet_locations::CreateFleetLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet_locations::CreateFleetLocationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -70,10 +66,7 @@ impl CreateFleetLocationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -82,9 +75,7 @@ impl CreateFleetLocationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fleet_locations::CreateFleetLocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fleet_locations::CreateFleetLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet_locations::CreateFleetLocationsError>,
     > {
         let op = self
             .inner
@@ -107,9 +98,7 @@ impl CreateFleetLocationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_fleet_locations::CreateFleetLocationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fleet_locations::CreateFleetLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet_locations::CreateFleetLocationsError>,
     > {
         self.send_middleware().await
     }
@@ -123,9 +112,7 @@ impl CreateFleetLocationsFluentBuilder {
             crate::operation::create_fleet_locations::CreateFleetLocations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_fleet_locations::CreateFleetLocationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet_locations::CreateFleetLocationsError>,
     > {
         self.customize_middleware().await
     }
@@ -153,17 +140,12 @@ impl CreateFleetLocationsFluentBuilder {
         self
     }
     /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
-    pub fn set_locations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
-    ) -> Self {
+    pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>) -> Self {
         self.inner = self.inner.set_locations(input);
         self
     }
     /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
-    pub fn get_locations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>> {
+    pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>> {
         self.inner.get_locations()
     }
 }

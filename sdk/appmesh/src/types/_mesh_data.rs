@@ -44,9 +44,7 @@ impl MeshData {
 
 /// A builder for [`MeshData`](crate::types::MeshData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MeshDataBuilder {
     pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
     pub(crate) spec: ::std::option::Option<crate::types::MeshSpec>,
@@ -88,10 +86,7 @@ impl MeshDataBuilder {
         self
     }
     /// <p>The associated metadata for the service mesh.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ResourceMetadata>) -> Self {
         self.metadata = input;
         self
     }

@@ -13,9 +13,7 @@ impl super::Client {
     ///   - [`items(Option<HashMap<String, Vec<Vec<i64>>>>)`](crate::operation::update_usage::UpdateUsageOutput::items): <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
     ///   - [`position(Option<String>)`](crate::operation::update_usage::UpdateUsageOutput::position): <p>The current pagination position in the paged result set.</p>
     /// - On failure, responds with [`SdkError<UpdateUsageError>`](crate::operation::update_usage::UpdateUsageError)
-    pub fn update_usage(
-        &self,
-    ) -> crate::operation::update_usage::builders::UpdateUsageFluentBuilder {
+    pub fn update_usage(&self) -> crate::operation::update_usage::builders::UpdateUsageFluentBuilder {
         crate::operation::update_usage::builders::UpdateUsageFluentBuilder::new(self.handle.clone())
     }
 }

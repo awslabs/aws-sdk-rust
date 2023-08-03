@@ -22,11 +22,7 @@ impl super::Client {
     ///   - [`target_encryption_type(Option<String>)`](crate::operation::cancel_resize::CancelResizeOutput::target_encryption_type): <p>The type of encryption for the cluster after the resize is complete.</p>  <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
     ///   - [`data_transfer_progress_percent(Option<f64>)`](crate::operation::cancel_resize::CancelResizeOutput::data_transfer_progress_percent): <p>The percent of data transferred from source cluster to target cluster.</p>
     /// - On failure, responds with [`SdkError<CancelResizeError>`](crate::operation::cancel_resize::CancelResizeError)
-    pub fn cancel_resize(
-        &self,
-    ) -> crate::operation::cancel_resize::builders::CancelResizeFluentBuilder {
-        crate::operation::cancel_resize::builders::CancelResizeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_resize(&self) -> crate::operation::cancel_resize::builders::CancelResizeFluentBuilder {
+        crate::operation::cancel_resize::builders::CancelResizeFluentBuilder::new(self.handle.clone())
     }
 }

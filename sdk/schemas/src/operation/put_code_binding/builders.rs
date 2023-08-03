@@ -10,10 +10,7 @@ impl PutCodeBindingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_code_binding::PutCodeBindingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_code_binding::PutCodeBindingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_code_binding::PutCodeBindingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_code_binding();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutCodeBindingFluentBuilder {
         }
     }
     /// Access the PutCodeBinding as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_code_binding::builders::PutCodeBindingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_code_binding::builders::PutCodeBindingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutCodeBindingFluentBuilder {
             crate::operation::put_code_binding::PutCodeBinding,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_code_binding::PutCodeBindingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_code_binding::PutCodeBindingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutCodeBindingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutCodeBindingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_code_binding::PutCodeBindingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_code_binding::PutCodeBindingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_code_binding::PutCodeBindingError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutCodeBindingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_code_binding::PutCodeBindingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_code_binding::PutCodeBindingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_code_binding::PutCodeBindingError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl PutCodeBindingFluentBuilder {
             crate::operation::put_code_binding::PutCodeBinding,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_code_binding::PutCodeBindingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_code_binding::PutCodeBindingError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl PutCodeBindingFluentBuilder {
         self.inner.get_language()
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registry_name(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_registry_name(input);
         self
     }
@@ -171,18 +149,12 @@ impl PutCodeBindingFluentBuilder {
         self.inner.get_schema_name()
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn schema_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_version(input.into());
         self
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn set_schema_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_version(input);
         self
     }

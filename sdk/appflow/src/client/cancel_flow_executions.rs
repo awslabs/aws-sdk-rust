@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CancelFlowExecutionsOutput`](crate::operation::cancel_flow_executions::CancelFlowExecutionsOutput) with field(s):
     ///   - [`invalid_executions(Option<Vec<String>>)`](crate::operation::cancel_flow_executions::CancelFlowExecutionsOutput::invalid_executions): <p>The IDs of runs that Amazon AppFlow couldn't cancel. These runs might be ineligible for canceling because they haven't started yet or have already completed.</p>
     /// - On failure, responds with [`SdkError<CancelFlowExecutionsError>`](crate::operation::cancel_flow_executions::CancelFlowExecutionsError)
-    pub fn cancel_flow_executions(
-        &self,
-    ) -> crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsFluentBuilder {
-        crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_flow_executions(&self) -> crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsFluentBuilder {
+        crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

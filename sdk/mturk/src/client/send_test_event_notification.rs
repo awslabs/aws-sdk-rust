@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`test_event_type(EventType)`](crate::operation::send_test_event_notification::builders::SendTestEventNotificationFluentBuilder::test_event_type) / [`set_test_event_type(Option<EventType>)`](crate::operation::send_test_event_notification::builders::SendTestEventNotificationFluentBuilder::set_test_event_type): <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
     /// - On success, responds with [`SendTestEventNotificationOutput`](crate::operation::send_test_event_notification::SendTestEventNotificationOutput)
     /// - On failure, responds with [`SdkError<SendTestEventNotificationError>`](crate::operation::send_test_event_notification::SendTestEventNotificationError)
-    pub fn send_test_event_notification(&self) -> crate::operation::send_test_event_notification::builders::SendTestEventNotificationFluentBuilder{
+    pub fn send_test_event_notification(&self) -> crate::operation::send_test_event_notification::builders::SendTestEventNotificationFluentBuilder {
         crate::operation::send_test_event_notification::builders::SendTestEventNotificationFluentBuilder::new(self.handle.clone())
     }
 }

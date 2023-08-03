@@ -30,27 +30,19 @@ impl KnowledgeBaseAssociationData {
 
 /// A builder for [`KnowledgeBaseAssociationData`](crate::types::KnowledgeBaseAssociationData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KnowledgeBaseAssociationDataBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) knowledge_base_arn: ::std::option::Option<::std::string::String>,
 }
 impl KnowledgeBaseAssociationDataBuilder {
     /// <p>The identifier of the knowledge base.</p>
-    pub fn knowledge_base_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the knowledge base.</p>
-    pub fn set_knowledge_base_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl KnowledgeBaseAssociationDataBuilder {
         &self.knowledge_base_id
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn knowledge_base_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn set_knowledge_base_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_knowledge_base_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_arn = input;
         self
     }

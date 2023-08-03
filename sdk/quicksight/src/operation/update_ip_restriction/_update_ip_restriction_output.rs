@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for UpdateIpRestrictionOutput {
 }
 impl UpdateIpRestrictionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIpRestrictionOutput`](crate::operation::update_ip_restriction::UpdateIpRestrictionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_ip_restriction::builders::UpdateIpRestrictionOutputBuilder {
-        crate::operation::update_ip_restriction::builders::UpdateIpRestrictionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_ip_restriction::builders::UpdateIpRestrictionOutputBuilder {
+        crate::operation::update_ip_restriction::builders::UpdateIpRestrictionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateIpRestrictionOutput`](crate::operation::update_ip_restriction::UpdateIpRestrictionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateIpRestrictionOutputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +51,12 @@ pub struct UpdateIpRestrictionOutputBuilder {
 }
 impl UpdateIpRestrictionOutputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }

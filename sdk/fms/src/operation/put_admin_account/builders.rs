@@ -10,10 +10,7 @@ impl PutAdminAccountInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_admin_account::PutAdminAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_admin_account::PutAdminAccountError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_admin_account::PutAdminAccountError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_admin_account();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl PutAdminAccountFluentBuilder {
         }
     }
     /// Access the PutAdminAccount as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_admin_account::builders::PutAdminAccountInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_admin_account::builders::PutAdminAccountInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl PutAdminAccountFluentBuilder {
             crate::operation::put_admin_account::PutAdminAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_admin_account::PutAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_admin_account::PutAdminAccountError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl PutAdminAccountFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl PutAdminAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_admin_account::PutAdminAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_admin_account::PutAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_admin_account::PutAdminAccountError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl PutAdminAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_admin_account::PutAdminAccountOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_admin_account::PutAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_admin_account::PutAdminAccountError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl PutAdminAccountFluentBuilder {
             crate::operation::put_admin_account::PutAdminAccount,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_admin_account::PutAdminAccountError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_admin_account::PutAdminAccountError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID to add as an Firewall Manager administrator account. The account must be a member of the organization that was onboarded to Firewall Manager by <code>AssociateAdminAccount</code>. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.</p>
-    pub fn admin_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_account(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID to add as an Firewall Manager administrator account. The account must be a member of the organization that was onboarded to Firewall Manager by <code>AssociateAdminAccount</code>. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.</p>
-    pub fn set_admin_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_admin_account(input);
         self
     }
@@ -148,10 +126,7 @@ impl PutAdminAccountFluentBuilder {
         self
     }
     /// <p>Configures the resources that the specified Firewall Manager administrator can manage. As a best practice, set the administrative scope according to the principles of least privilege. Only grant the administrator the specific resources or permissions that they need to perform the duties of their role.</p>
-    pub fn set_admin_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::AdminScope>,
-    ) -> Self {
+    pub fn set_admin_scope(mut self, input: ::std::option::Option<crate::types::AdminScope>) -> Self {
         self.inner = self.inner.set_admin_scope(input);
         self
     }

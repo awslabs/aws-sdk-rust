@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_certificates::ListCertificatesOutput::next_token): <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
     ///   - [`certificate_summary_list(Option<Vec<CertificateSummary>>)`](crate::operation::list_certificates::ListCertificatesOutput::certificate_summary_list): <p>A list of ACM certificates.</p>
     /// - On failure, responds with [`SdkError<ListCertificatesError>`](crate::operation::list_certificates::ListCertificatesError)
-    pub fn list_certificates(
-        &self,
-    ) -> crate::operation::list_certificates::builders::ListCertificatesFluentBuilder {
-        crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_certificates(&self) -> crate::operation::list_certificates::builders::ListCertificatesFluentBuilder {
+        crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::new(self.handle.clone())
     }
 }

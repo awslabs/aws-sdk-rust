@@ -7,13 +7,8 @@ impl super::Client {
     /// - On success, responds with [`GetMediaCapturePipelineOutput`](crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineOutput) with field(s):
     ///   - [`media_capture_pipeline(Option<MediaCapturePipeline>)`](crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineOutput::media_capture_pipeline): <p>The media capture pipeline object.</p>
     /// - On failure, responds with [`SdkError<GetMediaCapturePipelineError>`](crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineError)
-    #[deprecated(
-        note = "Replaced by GetMediaCapturePipeline in the Amazon Chime SDK Media Pipelines Namespace"
-    )]
-    pub fn get_media_capture_pipeline(
-        &self,
-    ) -> crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineFluentBuilder
-    {
+    #[deprecated(note = "Replaced by GetMediaCapturePipeline in the Amazon Chime SDK Media Pipelines Namespace")]
+    pub fn get_media_capture_pipeline(&self) -> crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineFluentBuilder {
         crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineFluentBuilder::new(self.handle.clone())
     }
 }

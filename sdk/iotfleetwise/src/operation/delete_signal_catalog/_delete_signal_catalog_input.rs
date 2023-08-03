@@ -15,18 +15,14 @@ impl DeleteSignalCatalogInput {
 }
 impl DeleteSignalCatalogInput {
     /// Creates a new builder-style object to manufacture [`DeleteSignalCatalogInput`](crate::operation::delete_signal_catalog::DeleteSignalCatalogInput).
-    pub fn builder(
-    ) -> crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogInputBuilder {
-        crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogInputBuilder {
+        crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSignalCatalogInput`](crate::operation::delete_signal_catalog::DeleteSignalCatalogInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSignalCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -48,12 +44,8 @@ impl DeleteSignalCatalogInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSignalCatalogInput`](crate::operation::delete_signal_catalog::DeleteSignalCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_signal_catalog::DeleteSignalCatalogInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_signal_catalog::DeleteSignalCatalogInput { name: self.name },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_signal_catalog::DeleteSignalCatalogInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_signal_catalog::DeleteSignalCatalogInput { name: self.name })
     }
 }

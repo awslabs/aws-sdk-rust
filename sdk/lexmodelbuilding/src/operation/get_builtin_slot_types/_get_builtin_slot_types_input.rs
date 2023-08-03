@@ -36,18 +36,14 @@ impl GetBuiltinSlotTypesInput {
 }
 impl GetBuiltinSlotTypesInput {
     /// Creates a new builder-style object to manufacture [`GetBuiltinSlotTypesInput`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput).
-    pub fn builder(
-    ) -> crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesInputBuilder {
-        crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesInputBuilder {
+        crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBuiltinSlotTypesInput`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBuiltinSlotTypesInputBuilder {
     pub(crate) locale: ::std::option::Option<crate::types::Locale>,
     pub(crate) signature_contains: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl GetBuiltinSlotTypesInputBuilder {
         &self.locale
     }
     /// <p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-    pub fn signature_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signature_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signature_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-    pub fn set_signature_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signature_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signature_contains = input;
         self
     }
@@ -120,17 +110,13 @@ impl GetBuiltinSlotTypesInputBuilder {
     /// Consumes the builder and constructs a [`GetBuiltinSlotTypesInput`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput {
-                locale: self.locale,
-                signature_contains: self.signature_contains,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput {
+            locale: self.locale,
+            signature_contains: self.signature_contains,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

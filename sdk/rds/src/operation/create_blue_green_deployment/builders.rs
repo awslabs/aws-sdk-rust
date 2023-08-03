@@ -29,7 +29,7 @@ impl CreateBlueGreenDeploymentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBlueGreenDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentInputBuilder,
+    inner: crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentInputBuilder,
 }
 impl CreateBlueGreenDeploymentFluentBuilder {
     /// Creates a new `CreateBlueGreenDeployment`.
@@ -40,7 +40,7 @@ impl CreateBlueGreenDeploymentFluentBuilder {
         }
     }
     /// Access the CreateBlueGreenDeployment as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl CreateBlueGreenDeploymentFluentBuilder {
             crate::operation::create_blue_green_deployment::CreateBlueGreenDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl CreateBlueGreenDeploymentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl CreateBlueGreenDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl CreateBlueGreenDeploymentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl CreateBlueGreenDeploymentFluentBuilder {
             crate::operation::create_blue_green_deployment::CreateBlueGreenDeployment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError>,
     > {
         self.customize_middleware().await
     }
@@ -128,10 +117,7 @@ impl CreateBlueGreenDeploymentFluentBuilder {
     /// <ul>
     /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
     /// </ul>
-    pub fn blue_green_deployment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blue_green_deployment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.blue_green_deployment_name(input.into());
         self
     }
@@ -140,10 +126,7 @@ impl CreateBlueGreenDeploymentFluentBuilder {
     /// <ul>
     /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
     /// </ul>
-    pub fn set_blue_green_deployment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blue_green_deployment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_blue_green_deployment_name(input);
         self
     }
@@ -174,19 +157,13 @@ impl CreateBlueGreenDeploymentFluentBuilder {
     }
     /// <p>The engine version of the database in the green environment.</p>
     /// <p>Specify the engine version to upgrade to in the green environment.</p>
-    pub fn target_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_engine_version(input.into());
         self
     }
     /// <p>The engine version of the database in the green environment.</p>
     /// <p>Specify the engine version to upgrade to in the green environment.</p>
-    pub fn set_target_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_engine_version(input);
         self
     }
@@ -197,54 +174,36 @@ impl CreateBlueGreenDeploymentFluentBuilder {
     }
     /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
     /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
-    pub fn target_db_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_db_parameter_group_name(input.into());
         self
     }
     /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
     /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
-    pub fn set_target_db_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_db_parameter_group_name(input);
         self
     }
     /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
     /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
-    pub fn get_target_db_parameter_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_db_parameter_group_name()
     }
     /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
     /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
-    pub fn target_db_cluster_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .target_db_cluster_parameter_group_name(input.into());
+    pub fn target_db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.target_db_cluster_parameter_group_name(input.into());
         self
     }
     /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
     /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
-    pub fn set_target_db_cluster_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_db_cluster_parameter_group_name(input);
         self
     }
     /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
     /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
-    pub fn get_target_db_cluster_parameter_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_target_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_db_cluster_parameter_group_name()
     }
     /// Appends an item to `Tags`.
@@ -257,10 +216,7 @@ impl CreateBlueGreenDeploymentFluentBuilder {
         self
     }
     /// <p>Tags to assign to the blue/green deployment.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

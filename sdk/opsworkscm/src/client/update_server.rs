@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateServerOutput`](crate::operation::update_server::UpdateServerOutput) with field(s):
     ///   - [`server(Option<Server>)`](crate::operation::update_server::UpdateServerOutput::server): <p>Contains the response to a <code>UpdateServer</code> request. </p>
     /// - On failure, responds with [`SdkError<UpdateServerError>`](crate::operation::update_server::UpdateServerError)
-    pub fn update_server(
-        &self,
-    ) -> crate::operation::update_server::builders::UpdateServerFluentBuilder {
-        crate::operation::update_server::builders::UpdateServerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_server(&self) -> crate::operation::update_server::builders::UpdateServerFluentBuilder {
+        crate::operation::update_server::builders::UpdateServerFluentBuilder::new(self.handle.clone())
     }
 }

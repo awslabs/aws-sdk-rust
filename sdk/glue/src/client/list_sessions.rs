@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`sessions(Option<Vec<Session>>)`](crate::operation::list_sessions::ListSessionsOutput::sessions): <p>Returns the session object. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sessions::ListSessionsOutput::next_token): <p>The token for the next set of results, or null if there are no more result. </p>
     /// - On failure, responds with [`SdkError<ListSessionsError>`](crate::operation::list_sessions::ListSessionsError)
-    pub fn list_sessions(
-        &self,
-    ) -> crate::operation::list_sessions::builders::ListSessionsFluentBuilder {
-        crate::operation::list_sessions::builders::ListSessionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_sessions(&self) -> crate::operation::list_sessions::builders::ListSessionsFluentBuilder {
+        crate::operation::list_sessions::builders::ListSessionsFluentBuilder::new(self.handle.clone())
     }
 }

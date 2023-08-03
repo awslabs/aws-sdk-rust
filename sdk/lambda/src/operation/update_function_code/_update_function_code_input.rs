@@ -108,8 +108,7 @@ impl ::std::fmt::Debug for UpdateFunctionCodeInput {
 }
 impl UpdateFunctionCodeInput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionCodeInput`](crate::operation::update_function_code::UpdateFunctionCodeInput).
-    pub fn builder(
-    ) -> crate::operation::update_function_code::builders::UpdateFunctionCodeInputBuilder {
+    pub fn builder() -> crate::operation::update_function_code::builders::UpdateFunctionCodeInputBuilder {
         crate::operation::update_function_code::builders::UpdateFunctionCodeInputBuilder::default()
     }
 }
@@ -138,10 +137,7 @@ impl UpdateFunctionCodeInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -153,10 +149,7 @@ impl UpdateFunctionCodeInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
@@ -214,18 +207,12 @@ impl UpdateFunctionCodeInputBuilder {
         &self.s3_key
     }
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
-    pub fn s3_object_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_object_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_object_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
-    pub fn set_s3_object_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_object_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_object_version = input;
         self
     }
@@ -301,40 +288,30 @@ impl UpdateFunctionCodeInputBuilder {
         self
     }
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub fn set_architectures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
-    ) -> Self {
+    pub fn set_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>) -> Self {
         self.architectures = input;
         self
     }
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub fn get_architectures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
+    pub fn get_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
         &self.architectures
     }
     /// Consumes the builder and constructs a [`UpdateFunctionCodeInput`](crate::operation::update_function_code::UpdateFunctionCodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_function_code::UpdateFunctionCodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_function_code::UpdateFunctionCodeInput {
-                function_name: self.function_name,
-                zip_file: self.zip_file,
-                s3_bucket: self.s3_bucket,
-                s3_key: self.s3_key,
-                s3_object_version: self.s3_object_version,
-                image_uri: self.image_uri,
-                publish: self.publish,
-                dry_run: self.dry_run,
-                revision_id: self.revision_id,
-                architectures: self.architectures,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_function_code::UpdateFunctionCodeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_function_code::UpdateFunctionCodeInput {
+            function_name: self.function_name,
+            zip_file: self.zip_file,
+            s3_bucket: self.s3_bucket,
+            s3_key: self.s3_key,
+            s3_object_version: self.s3_object_version,
+            image_uri: self.image_uri,
+            publish: self.publish,
+            dry_run: self.dry_run,
+            revision_id: self.revision_id,
+            architectures: self.architectures,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateFunctionCodeInputBuilder {

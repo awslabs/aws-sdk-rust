@@ -39,9 +39,7 @@ pub struct AwsApiGatewayV2StageDetails {
     /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub stage_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Information about settings for logging access for the stage.</p>
     #[doc(hidden)]
     pub access_log_settings: ::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings>,
@@ -70,9 +68,7 @@ impl AwsApiGatewayV2StageDetails {
         self.description.as_deref()
     }
     /// <p>Default route settings for the stage.</p>
-    pub fn default_route_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsApiGatewayV2RouteSettings> {
+    pub fn default_route_settings(&self) -> ::std::option::Option<&crate::types::AwsApiGatewayV2RouteSettings> {
         self.default_route_settings.as_ref()
     }
     /// <p>The identifier of the deployment that the stage is associated with. </p>
@@ -85,9 +81,7 @@ impl AwsApiGatewayV2StageDetails {
         self.last_updated_date.as_deref()
     }
     /// <p>The route settings for the stage.</p>
-    pub fn route_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsApiGatewayV2RouteSettings> {
+    pub fn route_settings(&self) -> ::std::option::Option<&crate::types::AwsApiGatewayV2RouteSettings> {
         self.route_settings.as_ref()
     }
     /// <p>The name of the stage.</p>
@@ -102,17 +96,11 @@ impl AwsApiGatewayV2StageDetails {
     /// <li> <p>Numbers</p> </li>
     /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
     /// </ul>
-    pub fn stage_variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn stage_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.stage_variables.as_ref()
     }
     /// <p>Information about settings for logging access for the stage.</p>
-    pub fn access_log_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsApiGatewayAccessLogSettings> {
+    pub fn access_log_settings(&self) -> ::std::option::Option<&crate::types::AwsApiGatewayAccessLogSettings> {
         self.access_log_settings.as_ref()
     }
     /// <p>Indicates whether updates to an API automatically trigger a new deployment.</p>
@@ -137,42 +125,30 @@ impl AwsApiGatewayV2StageDetails {
 
 /// A builder for [`AwsApiGatewayV2StageDetails`](crate::types::AwsApiGatewayV2StageDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsApiGatewayV2StageDetailsBuilder {
     pub(crate) client_certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) default_route_settings:
-        ::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings>,
+    pub(crate) default_route_settings: ::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings>,
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_date: ::std::option::Option<::std::string::String>,
     pub(crate) route_settings: ::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
-    pub(crate) stage_variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) access_log_settings:
-        ::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings>,
+    pub(crate) stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) access_log_settings: ::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings>,
     pub(crate) auto_deploy: ::std::option::Option<bool>,
     pub(crate) last_deployment_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) api_gateway_managed: ::std::option::Option<bool>,
 }
 impl AwsApiGatewayV2StageDetailsBuilder {
     /// <p>The identifier of a client certificate for a stage. Supported only for WebSocket API calls.</p>
-    pub fn client_certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of a client certificate for a stage. Supported only for WebSocket API calls.</p>
-    pub fn set_client_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_certificate_id = input;
         self
     }
@@ -212,40 +188,26 @@ impl AwsApiGatewayV2StageDetailsBuilder {
         &self.description
     }
     /// <p>Default route settings for the stage.</p>
-    pub fn default_route_settings(
-        mut self,
-        input: crate::types::AwsApiGatewayV2RouteSettings,
-    ) -> Self {
+    pub fn default_route_settings(mut self, input: crate::types::AwsApiGatewayV2RouteSettings) -> Self {
         self.default_route_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Default route settings for the stage.</p>
-    pub fn set_default_route_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings>,
-    ) -> Self {
+    pub fn set_default_route_settings(mut self, input: ::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings>) -> Self {
         self.default_route_settings = input;
         self
     }
     /// <p>Default route settings for the stage.</p>
-    pub fn get_default_route_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings> {
+    pub fn get_default_route_settings(&self) -> &::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings> {
         &self.default_route_settings
     }
     /// <p>The identifier of the deployment that the stage is associated with. </p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the deployment that the stage is associated with. </p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -255,19 +217,13 @@ impl AwsApiGatewayV2StageDetailsBuilder {
     }
     /// <p>Indicates when the stage was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_updated_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_updated_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the stage was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_date = input;
         self
     }
@@ -282,17 +238,12 @@ impl AwsApiGatewayV2StageDetailsBuilder {
         self
     }
     /// <p>The route settings for the stage.</p>
-    pub fn set_route_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings>,
-    ) -> Self {
+    pub fn set_route_settings(mut self, input: ::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings>) -> Self {
         self.route_settings = input;
         self
     }
     /// <p>The route settings for the stage.</p>
-    pub fn get_route_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings> {
+    pub fn get_route_settings(&self) -> &::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings> {
         &self.route_settings
     }
     /// <p>The name of the stage.</p>
@@ -341,9 +292,7 @@ impl AwsApiGatewayV2StageDetailsBuilder {
     /// </ul>
     pub fn set_stage_variables(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.stage_variables = input;
         self
@@ -356,33 +305,21 @@ impl AwsApiGatewayV2StageDetailsBuilder {
     /// <li> <p>Numbers</p> </li>
     /// <li> <p>Special characters -._~:/?#&amp;=,</p> </li>
     /// </ul>
-    pub fn get_stage_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_stage_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.stage_variables
     }
     /// <p>Information about settings for logging access for the stage.</p>
-    pub fn access_log_settings(
-        mut self,
-        input: crate::types::AwsApiGatewayAccessLogSettings,
-    ) -> Self {
+    pub fn access_log_settings(mut self, input: crate::types::AwsApiGatewayAccessLogSettings) -> Self {
         self.access_log_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about settings for logging access for the stage.</p>
-    pub fn set_access_log_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings>,
-    ) -> Self {
+    pub fn set_access_log_settings(mut self, input: ::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings>) -> Self {
         self.access_log_settings = input;
         self
     }
     /// <p>Information about settings for logging access for the stage.</p>
-    pub fn get_access_log_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings> {
+    pub fn get_access_log_settings(&self) -> &::std::option::Option<crate::types::AwsApiGatewayAccessLogSettings> {
         &self.access_log_settings
     }
     /// <p>Indicates whether updates to an API automatically trigger a new deployment.</p>
@@ -400,25 +337,17 @@ impl AwsApiGatewayV2StageDetailsBuilder {
         &self.auto_deploy
     }
     /// <p>The status of the last deployment of a stage. Supported only if the stage has automatic deployment enabled.</p>
-    pub fn last_deployment_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_deployment_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_deployment_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the last deployment of a stage. Supported only if the stage has automatic deployment enabled.</p>
-    pub fn set_last_deployment_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_deployment_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_deployment_status_message = input;
         self
     }
     /// <p>The status of the last deployment of a stage. Supported only if the stage has automatic deployment enabled.</p>
-    pub fn get_last_deployment_status_message(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_last_deployment_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_deployment_status_message
     }
     /// <p>Indicates whether the stage is managed by API Gateway.</p>

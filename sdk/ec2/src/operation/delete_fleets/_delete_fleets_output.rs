@@ -5,25 +5,19 @@
 pub struct DeleteFleetsOutput {
     /// <p>Information about the EC2 Fleets that are successfully deleted.</p>
     #[doc(hidden)]
-    pub successful_fleet_deletions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetSuccessItem>>,
+    pub successful_fleet_deletions: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetSuccessItem>>,
     /// <p>Information about the EC2 Fleets that are not successfully deleted.</p>
     #[doc(hidden)]
-    pub unsuccessful_fleet_deletions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetErrorItem>>,
+    pub unsuccessful_fleet_deletions: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetErrorItem>>,
     _request_id: Option<String>,
 }
 impl DeleteFleetsOutput {
     /// <p>Information about the EC2 Fleets that are successfully deleted.</p>
-    pub fn successful_fleet_deletions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeleteFleetSuccessItem]> {
+    pub fn successful_fleet_deletions(&self) -> ::std::option::Option<&[crate::types::DeleteFleetSuccessItem]> {
         self.successful_fleet_deletions.as_deref()
     }
     /// <p>Information about the EC2 Fleets that are not successfully deleted.</p>
-    pub fn unsuccessful_fleet_deletions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DeleteFleetErrorItem]> {
+    pub fn unsuccessful_fleet_deletions(&self) -> ::std::option::Option<&[crate::types::DeleteFleetErrorItem]> {
         self.unsuccessful_fleet_deletions.as_deref()
     }
 }
@@ -41,14 +35,10 @@ impl DeleteFleetsOutput {
 
 /// A builder for [`DeleteFleetsOutput`](crate::operation::delete_fleets::DeleteFleetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFleetsOutputBuilder {
-    pub(crate) successful_fleet_deletions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetSuccessItem>>,
-    pub(crate) unsuccessful_fleet_deletions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetErrorItem>>,
+    pub(crate) successful_fleet_deletions: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetSuccessItem>>,
+    pub(crate) unsuccessful_fleet_deletions: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetErrorItem>>,
     _request_id: Option<String>,
 }
 impl DeleteFleetsOutputBuilder {
@@ -57,27 +47,19 @@ impl DeleteFleetsOutputBuilder {
     /// To override the contents of this collection use [`set_successful_fleet_deletions`](Self::set_successful_fleet_deletions).
     ///
     /// <p>Information about the EC2 Fleets that are successfully deleted.</p>
-    pub fn successful_fleet_deletions(
-        mut self,
-        input: crate::types::DeleteFleetSuccessItem,
-    ) -> Self {
+    pub fn successful_fleet_deletions(mut self, input: crate::types::DeleteFleetSuccessItem) -> Self {
         let mut v = self.successful_fleet_deletions.unwrap_or_default();
         v.push(input);
         self.successful_fleet_deletions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the EC2 Fleets that are successfully deleted.</p>
-    pub fn set_successful_fleet_deletions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetSuccessItem>>,
-    ) -> Self {
+    pub fn set_successful_fleet_deletions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetSuccessItem>>) -> Self {
         self.successful_fleet_deletions = input;
         self
     }
     /// <p>Information about the EC2 Fleets that are successfully deleted.</p>
-    pub fn get_successful_fleet_deletions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetSuccessItem>> {
+    pub fn get_successful_fleet_deletions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetSuccessItem>> {
         &self.successful_fleet_deletions
     }
     /// Appends an item to `unsuccessful_fleet_deletions`.
@@ -85,27 +67,19 @@ impl DeleteFleetsOutputBuilder {
     /// To override the contents of this collection use [`set_unsuccessful_fleet_deletions`](Self::set_unsuccessful_fleet_deletions).
     ///
     /// <p>Information about the EC2 Fleets that are not successfully deleted.</p>
-    pub fn unsuccessful_fleet_deletions(
-        mut self,
-        input: crate::types::DeleteFleetErrorItem,
-    ) -> Self {
+    pub fn unsuccessful_fleet_deletions(mut self, input: crate::types::DeleteFleetErrorItem) -> Self {
         let mut v = self.unsuccessful_fleet_deletions.unwrap_or_default();
         v.push(input);
         self.unsuccessful_fleet_deletions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the EC2 Fleets that are not successfully deleted.</p>
-    pub fn set_unsuccessful_fleet_deletions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetErrorItem>>,
-    ) -> Self {
+    pub fn set_unsuccessful_fleet_deletions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetErrorItem>>) -> Self {
         self.unsuccessful_fleet_deletions = input;
         self
     }
     /// <p>Information about the EC2 Fleets that are not successfully deleted.</p>
-    pub fn get_unsuccessful_fleet_deletions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetErrorItem>> {
+    pub fn get_unsuccessful_fleet_deletions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetErrorItem>> {
         &self.unsuccessful_fleet_deletions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`lifecycle(Option<DataRepositoryTaskLifecycle>)`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput::lifecycle): <p>The lifecycle status of the data repository task, as follows:</p>  <ul>   <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li>   <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li>   <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>   <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li>   <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>   <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>  </ul>
     ///   - [`task_id(Option<String>)`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput::task_id): <p>The ID of the task being canceled.</p>
     /// - On failure, responds with [`SdkError<CancelDataRepositoryTaskError>`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskError)
-    pub fn cancel_data_repository_task(&self) -> crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskFluentBuilder{
+    pub fn cancel_data_repository_task(&self) -> crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskFluentBuilder {
         crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetRateBasedRuleOutput`](crate::operation::get_rate_based_rule::GetRateBasedRuleOutput) with field(s):
     ///   - [`rule(Option<RateBasedRule>)`](crate::operation::get_rate_based_rule::GetRateBasedRuleOutput::rule): <p>Information about the <code>RateBasedRule</code> that you specified in the <code>GetRateBasedRule</code> request.</p>
     /// - On failure, responds with [`SdkError<GetRateBasedRuleError>`](crate::operation::get_rate_based_rule::GetRateBasedRuleError)
-    pub fn get_rate_based_rule(
-        &self,
-    ) -> crate::operation::get_rate_based_rule::builders::GetRateBasedRuleFluentBuilder {
-        crate::operation::get_rate_based_rule::builders::GetRateBasedRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_rate_based_rule(&self) -> crate::operation::get_rate_based_rule::builders::GetRateBasedRuleFluentBuilder {
+        crate::operation::get_rate_based_rule::builders::GetRateBasedRuleFluentBuilder::new(self.handle.clone())
     }
 }

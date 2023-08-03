@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteVolumeOutput`](crate::operation::delete_volume::DeleteVolumeOutput) with field(s):
     ///   - [`volume_arn(Option<String>)`](crate::operation::delete_volume::DeleteVolumeOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is the same ARN you provided in the request.</p>
     /// - On failure, responds with [`SdkError<DeleteVolumeError>`](crate::operation::delete_volume::DeleteVolumeError)
-    pub fn delete_volume(
-        &self,
-    ) -> crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder {
-        crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_volume(&self) -> crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder {
+        crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetAppMonitorOutput`](crate::operation::get_app_monitor::GetAppMonitorOutput) with field(s):
     ///   - [`app_monitor(Option<AppMonitor>)`](crate::operation::get_app_monitor::GetAppMonitorOutput::app_monitor): <p>A structure containing all the configuration information for the app monitor.</p>
     /// - On failure, responds with [`SdkError<GetAppMonitorError>`](crate::operation::get_app_monitor::GetAppMonitorError)
-    pub fn get_app_monitor(
-        &self,
-    ) -> crate::operation::get_app_monitor::builders::GetAppMonitorFluentBuilder {
-        crate::operation::get_app_monitor::builders::GetAppMonitorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_app_monitor(&self) -> crate::operation::get_app_monitor::builders::GetAppMonitorFluentBuilder {
+        crate::operation::get_app_monitor::builders::GetAppMonitorFluentBuilder::new(self.handle.clone())
     }
 }

@@ -51,15 +51,11 @@ impl GatewayDetails {
         self.last_seen_time.as_ref()
     }
     /// <p>Returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
-    pub fn maintenance_start_time(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MaintenanceStartTime> {
+    pub fn maintenance_start_time(&self) -> ::std::option::Option<&crate::types::MaintenanceStartTime> {
         self.maintenance_start_time.as_ref()
     }
     /// <p>Details showing the next update availability time of the gateway.</p>
-    pub fn next_update_availability_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn next_update_availability_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.next_update_availability_time.as_ref()
     }
     /// <p>The DNS name for the virtual private cloud (VPC) endpoint the gateway uses to connect to the cloud for backup gateway.</p>
@@ -76,9 +72,7 @@ impl GatewayDetails {
 
 /// A builder for [`GatewayDetails`](crate::types::GatewayDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GatewayDetailsBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_display_name: ::std::option::Option<::std::string::String>,
@@ -105,18 +99,12 @@ impl GatewayDetailsBuilder {
         &self.gateway_arn
     }
     /// <p>The display name of the gateway.</p>
-    pub fn gateway_display_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the gateway.</p>
-    pub fn set_gateway_display_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_display_name = input;
         self
     }
@@ -130,10 +118,7 @@ impl GatewayDetailsBuilder {
         self
     }
     /// <p>The type of the gateway type.</p>
-    pub fn set_gateway_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayType>,
-    ) -> Self {
+    pub fn set_gateway_type(mut self, input: ::std::option::Option<crate::types::GatewayType>) -> Self {
         self.gateway_type = input;
         self
     }
@@ -142,18 +127,12 @@ impl GatewayDetailsBuilder {
         &self.gateway_type
     }
     /// <p>The hypervisor ID of the gateway.</p>
-    pub fn hypervisor_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hypervisor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hypervisor ID of the gateway.</p>
-    pub fn set_hypervisor_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_hypervisor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hypervisor_id = input;
         self
     }
@@ -167,10 +146,7 @@ impl GatewayDetailsBuilder {
         self
     }
     /// <p>Details showing the last time Backup gateway communicated with the cloud, in Unix format and UTC time.</p>
-    pub fn set_last_seen_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_seen_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_seen_time = input;
         self
     }
@@ -184,17 +160,12 @@ impl GatewayDetailsBuilder {
         self
     }
     /// <p>Returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
-    pub fn set_maintenance_start_time(
-        mut self,
-        input: ::std::option::Option<crate::types::MaintenanceStartTime>,
-    ) -> Self {
+    pub fn set_maintenance_start_time(mut self, input: ::std::option::Option<crate::types::MaintenanceStartTime>) -> Self {
         self.maintenance_start_time = input;
         self
     }
     /// <p>Returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
-    pub fn get_maintenance_start_time(
-        &self,
-    ) -> &::std::option::Option<crate::types::MaintenanceStartTime> {
+    pub fn get_maintenance_start_time(&self) -> &::std::option::Option<crate::types::MaintenanceStartTime> {
         &self.maintenance_start_time
     }
     /// <p>Details showing the next update availability time of the gateway.</p>
@@ -203,17 +174,12 @@ impl GatewayDetailsBuilder {
         self
     }
     /// <p>Details showing the next update availability time of the gateway.</p>
-    pub fn set_next_update_availability_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_next_update_availability_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.next_update_availability_time = input;
         self
     }
     /// <p>Details showing the next update availability time of the gateway.</p>
-    pub fn get_next_update_availability_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_next_update_availability_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.next_update_availability_time
     }
     /// <p>The DNS name for the virtual private cloud (VPC) endpoint the gateway uses to connect to the cloud for backup gateway.</p>

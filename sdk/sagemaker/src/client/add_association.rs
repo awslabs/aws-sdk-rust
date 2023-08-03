@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`source_arn(Option<String>)`](crate::operation::add_association::AddAssociationOutput::source_arn): <p>The ARN of the source.</p>
     ///   - [`destination_arn(Option<String>)`](crate::operation::add_association::AddAssociationOutput::destination_arn): <p>The Amazon Resource Name (ARN) of the destination.</p>
     /// - On failure, responds with [`SdkError<AddAssociationError>`](crate::operation::add_association::AddAssociationError)
-    pub fn add_association(
-        &self,
-    ) -> crate::operation::add_association::builders::AddAssociationFluentBuilder {
-        crate::operation::add_association::builders::AddAssociationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_association(&self) -> crate::operation::add_association::builders::AddAssociationFluentBuilder {
+        crate::operation::add_association::builders::AddAssociationFluentBuilder::new(self.handle.clone())
     }
 }

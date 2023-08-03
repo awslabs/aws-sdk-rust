@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::create_registry::CreateRegistryOutput::description): <p>A description of the registry.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_registry::CreateRegistryOutput::tags): <p>The tags for the registry.</p>
     /// - On failure, responds with [`SdkError<CreateRegistryError>`](crate::operation::create_registry::CreateRegistryError)
-    pub fn create_registry(
-        &self,
-    ) -> crate::operation::create_registry::builders::CreateRegistryFluentBuilder {
-        crate::operation::create_registry::builders::CreateRegistryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_registry(&self) -> crate::operation::create_registry::builders::CreateRegistryFluentBuilder {
+        crate::operation::create_registry::builders::CreateRegistryFluentBuilder::new(self.handle.clone())
     }
 }

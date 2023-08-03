@@ -12,10 +12,7 @@ pub fn ser_submit_attachment_state_changes_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_attachment_state_change::ser_attachment_state_change(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_attachment_state_change::ser_attachment_state_change(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

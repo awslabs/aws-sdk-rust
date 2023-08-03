@@ -10,10 +10,7 @@ impl CreateEnvironmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_environment::CreateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_environment();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl CreateEnvironmentFluentBuilder {
         }
     }
     /// Access the CreateEnvironment as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl CreateEnvironmentFluentBuilder {
             crate::operation::create_environment::CreateEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl CreateEnvironmentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl CreateEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_environment::CreateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl CreateEnvironmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_environment::CreateEnvironmentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +108,7 @@ impl CreateEnvironmentFluentBuilder {
             crate::operation::create_environment::CreateEnvironment,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>,
     > {
         self.customize_middleware().await
     }
@@ -143,18 +127,12 @@ impl CreateEnvironmentFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -163,18 +141,12 @@ impl CreateEnvironmentFluentBuilder {
         self.inner.get_template_name()
     }
     /// <p>The major version of the environment template.</p>
-    pub fn template_major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_major_version(input.into());
         self
     }
     /// <p>The major version of the environment template.</p>
-    pub fn set_template_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_major_version(input);
         self
     }
@@ -183,18 +155,12 @@ impl CreateEnvironmentFluentBuilder {
         self.inner.get_template_major_version()
     }
     /// <p>The minor version of the environment template.</p>
-    pub fn template_minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_minor_version(input.into());
         self
     }
     /// <p>The minor version of the environment template.</p>
-    pub fn set_template_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_minor_version(input);
         self
     }
@@ -232,19 +198,13 @@ impl CreateEnvironmentFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
     /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
-    pub fn proton_service_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn proton_service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.proton_service_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
     /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
-    pub fn set_proton_service_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_proton_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_proton_service_role_arn(input);
         self
     }
@@ -255,27 +215,19 @@ impl CreateEnvironmentFluentBuilder {
     }
     /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
     /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
-    pub fn environment_account_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_account_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_account_connection_id(input.into());
         self
     }
     /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
     /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
-    pub fn set_environment_account_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_account_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_account_connection_id(input);
         self
     }
     /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
     /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
-    pub fn get_environment_account_connection_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_environment_account_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_account_connection_id()
     }
     /// Appends an item to `tags`.
@@ -290,10 +242,7 @@ impl CreateEnvironmentFluentBuilder {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -310,37 +259,26 @@ impl CreateEnvironmentFluentBuilder {
     }
     /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     /// <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
-    pub fn set_provisioning_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryBranchInput>,
-    ) -> Self {
+    pub fn set_provisioning_repository(mut self, input: ::std::option::Option<crate::types::RepositoryBranchInput>) -> Self {
         self.inner = self.inner.set_provisioning_repository(input);
         self
     }
     /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     /// <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
-    pub fn get_provisioning_repository(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryBranchInput> {
+    pub fn get_provisioning_repository(&self) -> &::std::option::Option<crate::types::RepositoryBranchInput> {
         self.inner.get_provisioning_repository()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn component_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn component_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_component_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_component_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_role_arn(input);
         self
     }
@@ -352,19 +290,13 @@ impl CreateEnvironmentFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
     /// <p>To use CodeBuild-based provisioning for the environment or for any service instance running in the environment, specify either the <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code> parameter.</p>
-    pub fn codebuild_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn codebuild_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.codebuild_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
     /// <p>To use CodeBuild-based provisioning for the environment or for any service instance running in the environment, specify either the <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code> parameter.</p>
-    pub fn set_codebuild_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_codebuild_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_codebuild_role_arn(input);
         self
     }

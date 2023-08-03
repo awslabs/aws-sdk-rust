@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateFolderMembershipOutput {
 }
 impl CreateFolderMembershipOutput {
     /// Creates a new builder-style object to manufacture [`CreateFolderMembershipOutput`](crate::operation::create_folder_membership::CreateFolderMembershipOutput).
-    pub fn builder(
-    ) -> crate::operation::create_folder_membership::builders::CreateFolderMembershipOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_folder_membership::builders::CreateFolderMembershipOutputBuilder {
         crate::operation::create_folder_membership::builders::CreateFolderMembershipOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFolderMembershipOutput`](crate::operation::create_folder_membership::CreateFolderMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFolderMembershipOutputBuilder {
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) folder_member: ::std::option::Option<crate::types::FolderMember>,
@@ -74,10 +70,7 @@ impl CreateFolderMembershipOutputBuilder {
         self
     }
     /// <p>Information about the member in the folder.</p>
-    pub fn set_folder_member(
-        mut self,
-        input: ::std::option::Option<crate::types::FolderMember>,
-    ) -> Self {
+    pub fn set_folder_member(mut self, input: ::std::option::Option<crate::types::FolderMember>) -> Self {
         self.folder_member = input;
         self
     }

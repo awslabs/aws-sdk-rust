@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`trial_component_arn(Option<String>)`](crate::operation::disassociate_trial_component::DisassociateTrialComponentOutput::trial_component_arn): <p>The Amazon Resource Name (ARN) of the trial component.</p>
     ///   - [`trial_arn(Option<String>)`](crate::operation::disassociate_trial_component::DisassociateTrialComponentOutput::trial_arn): <p>The Amazon Resource Name (ARN) of the trial.</p>
     /// - On failure, responds with [`SdkError<DisassociateTrialComponentError>`](crate::operation::disassociate_trial_component::DisassociateTrialComponentError)
-    pub fn disassociate_trial_component(&self) -> crate::operation::disassociate_trial_component::builders::DisassociateTrialComponentFluentBuilder{
+    pub fn disassociate_trial_component(&self) -> crate::operation::disassociate_trial_component::builders::DisassociateTrialComponentFluentBuilder {
         crate::operation::disassociate_trial_component::builders::DisassociateTrialComponentFluentBuilder::new(self.handle.clone())
     }
 }

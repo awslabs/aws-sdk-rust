@@ -37,13 +37,7 @@
 /// With the VP9 codec, you can use only the variable bitrate (VBR) rate control mode.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Vp9RateControlMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -55,9 +49,7 @@ impl ::std::convert::From<&str> for Vp9RateControlMode {
     fn from(s: &str) -> Self {
         match s {
             "VBR" => Vp9RateControlMode::Vbr,
-            other => Vp9RateControlMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => Vp9RateControlMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

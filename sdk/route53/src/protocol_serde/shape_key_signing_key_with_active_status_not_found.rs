@@ -3,10 +3,7 @@
 pub fn de_key_signing_key_with_active_status_not_found_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::KeySigningKeyWithActiveStatusNotFoundBuilder,
-) -> Result<
-    crate::types::error::builders::KeySigningKeyWithActiveStatusNotFoundBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::KeySigningKeyWithActiveStatusNotFoundBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

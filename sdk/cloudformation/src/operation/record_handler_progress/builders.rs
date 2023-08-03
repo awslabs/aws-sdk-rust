@@ -38,10 +38,7 @@ impl RecordHandlerProgressFluentBuilder {
         }
     }
     /// Access the RecordHandlerProgress as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::record_handler_progress::builders::RecordHandlerProgressInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::record_handler_progress::builders::RecordHandlerProgressInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl RecordHandlerProgressFluentBuilder {
             crate::operation::record_handler_progress::RecordHandlerProgress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::record_handler_progress::RecordHandlerProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::record_handler_progress::RecordHandlerProgressError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl RecordHandlerProgressFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl RecordHandlerProgressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::record_handler_progress::RecordHandlerProgressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::record_handler_progress::RecordHandlerProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::record_handler_progress::RecordHandlerProgressError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl RecordHandlerProgressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::record_handler_progress::RecordHandlerProgressOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::record_handler_progress::RecordHandlerProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::record_handler_progress::RecordHandlerProgressError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl RecordHandlerProgressFluentBuilder {
             crate::operation::record_handler_progress::RecordHandlerProgress,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::record_handler_progress::RecordHandlerProgressError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::record_handler_progress::RecordHandlerProgressError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +130,7 @@ impl RecordHandlerProgressFluentBuilder {
         self
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-    pub fn set_operation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationStatus>,
-    ) -> Self {
+    pub fn set_operation_status(mut self, input: ::std::option::Option<crate::types::OperationStatus>) -> Self {
         self.inner = self.inner.set_operation_status(input);
         self
     }
@@ -161,32 +144,21 @@ impl RecordHandlerProgressFluentBuilder {
         self
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-    pub fn set_current_operation_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OperationStatus>,
-    ) -> Self {
+    pub fn set_current_operation_status(mut self, input: ::std::option::Option<crate::types::OperationStatus>) -> Self {
         self.inner = self.inner.set_current_operation_status(input);
         self
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-    pub fn get_current_operation_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::OperationStatus> {
+    pub fn get_current_operation_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
         self.inner.get_current_operation_status()
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status_message(input.into());
         self
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status_message(input);
         self
     }
@@ -200,10 +172,7 @@ impl RecordHandlerProgressFluentBuilder {
         self
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::HandlerErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::HandlerErrorCode>) -> Self {
         self.inner = self.inner.set_error_code(input);
         self
     }
@@ -212,18 +181,12 @@ impl RecordHandlerProgressFluentBuilder {
         self.inner.get_error_code()
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-    pub fn resource_model(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_model(input.into());
         self
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-    pub fn set_resource_model(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_model(input);
         self
     }
@@ -232,18 +195,12 @@ impl RecordHandlerProgressFluentBuilder {
         self.inner.get_resource_model()
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

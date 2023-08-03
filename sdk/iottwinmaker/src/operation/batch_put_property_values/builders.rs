@@ -26,8 +26,7 @@ impl BatchPutPropertyValuesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchPutPropertyValuesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesInputBuilder,
+    inner: crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesInputBuilder,
 }
 impl BatchPutPropertyValuesFluentBuilder {
     /// Creates a new `BatchPutPropertyValues`.
@@ -38,10 +37,7 @@ impl BatchPutPropertyValuesFluentBuilder {
         }
     }
     /// Access the BatchPutPropertyValues as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl BatchPutPropertyValuesFluentBuilder {
             crate::operation::batch_put_property_values::BatchPutPropertyValues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_property_values::BatchPutPropertyValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_property_values::BatchPutPropertyValuesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl BatchPutPropertyValuesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl BatchPutPropertyValuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_property_values::BatchPutPropertyValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_property_values::BatchPutPropertyValuesError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl BatchPutPropertyValuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_property_values::BatchPutPropertyValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_property_values::BatchPutPropertyValuesError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl BatchPutPropertyValuesFluentBuilder {
             crate::operation::batch_put_property_values::BatchPutPropertyValues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_property_values::BatchPutPropertyValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_property_values::BatchPutPropertyValuesError>,
     > {
         self.customize_middleware().await
     }
@@ -148,17 +133,12 @@ impl BatchPutPropertyValuesFluentBuilder {
         self
     }
     /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValueEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValueEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
     /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyValueEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyValueEntry>> {
         self.inner.get_entries()
     }
 }

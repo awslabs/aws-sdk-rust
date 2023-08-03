@@ -15,8 +15,7 @@ pub struct Parameter {
     pub parameter_value: ::std::option::Option<::std::string::String>,
     /// <p>A list of node types, and specific parameter values for each node.</p>
     #[doc(hidden)]
-    pub node_type_specific_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::NodeTypeSpecificValue>>,
+    pub node_type_specific_values: ::std::option::Option<::std::vec::Vec<crate::types::NodeTypeSpecificValue>>,
     /// <p>A description of the parameter</p>
     #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
@@ -50,9 +49,7 @@ impl Parameter {
         self.parameter_value.as_deref()
     }
     /// <p>A list of node types, and specific parameter values for each node.</p>
-    pub fn node_type_specific_values(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NodeTypeSpecificValue]> {
+    pub fn node_type_specific_values(&self) -> ::std::option::Option<&[crate::types::NodeTypeSpecificValue]> {
         self.node_type_specific_values.as_deref()
     }
     /// <p>A description of the parameter</p>
@@ -89,15 +86,12 @@ impl Parameter {
 
 /// A builder for [`Parameter`](crate::types::Parameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterBuilder {
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_type: ::std::option::Option<crate::types::ParameterType>,
     pub(crate) parameter_value: ::std::option::Option<::std::string::String>,
-    pub(crate) node_type_specific_values:
-        ::std::option::Option<::std::vec::Vec<crate::types::NodeTypeSpecificValue>>,
+    pub(crate) node_type_specific_values: ::std::option::Option<::std::vec::Vec<crate::types::NodeTypeSpecificValue>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) data_type: ::std::option::Option<::std::string::String>,
@@ -107,18 +101,12 @@ pub struct ParameterBuilder {
 }
 impl ParameterBuilder {
     /// <p>The name of the parameter.</p>
-    pub fn parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter.</p>
-    pub fn set_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_name = input;
         self
     }
@@ -132,10 +120,7 @@ impl ParameterBuilder {
         self
     }
     /// <p>Determines whether the parameter can be applied to any nodes, or only nodes of a particular type.</p>
-    pub fn set_parameter_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ParameterType>,
-    ) -> Self {
+    pub fn set_parameter_type(mut self, input: ::std::option::Option<crate::types::ParameterType>) -> Self {
         self.parameter_type = input;
         self
     }
@@ -144,18 +129,12 @@ impl ParameterBuilder {
         &self.parameter_type
     }
     /// <p>The value for the parameter.</p>
-    pub fn parameter_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value for the parameter.</p>
-    pub fn set_parameter_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_value = input;
         self
     }
@@ -175,17 +154,12 @@ impl ParameterBuilder {
         self
     }
     /// <p>A list of node types, and specific parameter values for each node.</p>
-    pub fn set_node_type_specific_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NodeTypeSpecificValue>>,
-    ) -> Self {
+    pub fn set_node_type_specific_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeTypeSpecificValue>>) -> Self {
         self.node_type_specific_values = input;
         self
     }
     /// <p>A list of node types, and specific parameter values for each node.</p>
-    pub fn get_node_type_specific_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeTypeSpecificValue>> {
+    pub fn get_node_type_specific_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeTypeSpecificValue>> {
         &self.node_type_specific_values
     }
     /// <p>A description of the parameter</p>
@@ -231,18 +205,12 @@ impl ParameterBuilder {
         &self.data_type
     }
     /// <p>A range of values within which the parameter can be set.</p>
-    pub fn allowed_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_values = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A range of values within which the parameter can be set.</p>
-    pub fn set_allowed_values(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allowed_values = input;
         self
     }
@@ -256,10 +224,7 @@ impl ParameterBuilder {
         self
     }
     /// <p>Whether the customer is allowed to modify the parameter.</p>
-    pub fn set_is_modifiable(
-        mut self,
-        input: ::std::option::Option<crate::types::IsModifiable>,
-    ) -> Self {
+    pub fn set_is_modifiable(mut self, input: ::std::option::Option<crate::types::IsModifiable>) -> Self {
         self.is_modifiable = input;
         self
     }
@@ -273,10 +238,7 @@ impl ParameterBuilder {
         self
     }
     /// <p>The conditions under which changes to this parameter can be applied. For example, <code>requires-reboot</code> indicates that a new value for this parameter will only take effect if a node is rebooted.</p>
-    pub fn set_change_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ChangeType>,
-    ) -> Self {
+    pub fn set_change_type(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
         self.change_type = input;
         self
     }

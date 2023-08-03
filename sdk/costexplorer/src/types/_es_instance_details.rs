@@ -51,9 +51,7 @@ impl EsInstanceDetails {
 
 /// A builder for [`EsInstanceDetails`](crate::types::EsInstanceDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EsInstanceDetailsBuilder {
     pub(crate) instance_class: ::std::option::Option<::std::string::String>,
     pub(crate) instance_size: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct EsInstanceDetailsBuilder {
 }
 impl EsInstanceDetailsBuilder {
     /// <p>The class of instance that Amazon Web Services recommends.</p>
-    pub fn instance_class(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The class of instance that Amazon Web Services recommends.</p>
-    pub fn set_instance_class(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_class = input;
         self
     }
@@ -83,18 +75,12 @@ impl EsInstanceDetailsBuilder {
         &self.instance_class
     }
     /// <p>The size of instance that Amazon Web Services recommends.</p>
-    pub fn instance_size(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_size = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The size of instance that Amazon Web Services recommends.</p>
-    pub fn set_instance_size(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_size = input;
         self
     }

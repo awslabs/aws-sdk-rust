@@ -42,10 +42,7 @@ impl StartMonitoringMemberFluentBuilder {
         }
     }
     /// Access the StartMonitoringMember as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_monitoring_member::builders::StartMonitoringMemberInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_monitoring_member::builders::StartMonitoringMemberInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl StartMonitoringMemberFluentBuilder {
             crate::operation::start_monitoring_member::StartMonitoringMember,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_monitoring_member::StartMonitoringMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_monitoring_member::StartMonitoringMemberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl StartMonitoringMemberFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl StartMonitoringMemberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_monitoring_member::StartMonitoringMemberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_monitoring_member::StartMonitoringMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_monitoring_member::StartMonitoringMemberError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl StartMonitoringMemberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_monitoring_member::StartMonitoringMemberOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_monitoring_member::StartMonitoringMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_monitoring_member::StartMonitoringMemberError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +110,7 @@ impl StartMonitoringMemberFluentBuilder {
             crate::operation::start_monitoring_member::StartMonitoringMember,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_monitoring_member::StartMonitoringMemberError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_monitoring_member::StartMonitoringMemberError>,
     > {
         self.customize_middleware().await
     }

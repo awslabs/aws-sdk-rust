@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`entries(Option<Vec<ListPlaceIndexesResponseEntry>>)`](crate::operation::list_place_indexes::ListPlaceIndexesOutput::entries): <p>Lists the place index resources that exist in your Amazon Web Services account</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_place_indexes::ListPlaceIndexesOutput::next_token): <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListPlaceIndexesError>`](crate::operation::list_place_indexes::ListPlaceIndexesError)
-    pub fn list_place_indexes(
-        &self,
-    ) -> crate::operation::list_place_indexes::builders::ListPlaceIndexesFluentBuilder {
-        crate::operation::list_place_indexes::builders::ListPlaceIndexesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_place_indexes(&self) -> crate::operation::list_place_indexes::builders::ListPlaceIndexesFluentBuilder {
+        crate::operation::list_place_indexes::builders::ListPlaceIndexesFluentBuilder::new(self.handle.clone())
     }
 }

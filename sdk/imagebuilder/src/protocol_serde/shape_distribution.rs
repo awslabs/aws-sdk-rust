@@ -14,9 +14,7 @@ pub fn ser_distribution(
     }
     if let Some(var_4) = &input.container_distribution_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object
-            .key("containerDistributionConfiguration")
-            .start_object();
+        let mut object_5 = object.key("containerDistributionConfiguration").start_object();
         crate::protocol_serde::shape_container_distribution_configuration::ser_container_distribution_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
@@ -44,10 +42,7 @@ pub fn ser_distribution(
     if let Some(var_13) = &input.s3_export_configuration {
         #[allow(unused_mut)]
         let mut object_14 = object.key("s3ExportConfiguration").start_object();
-        crate::protocol_serde::shape_s3_export_configuration::ser_s3_export_configuration(
-            &mut object_14,
-            var_13,
-        )?;
+        crate::protocol_serde::shape_s3_export_configuration::ser_s3_export_configuration(&mut object_14, var_13)?;
         object_14.finish();
     }
     if let Some(var_15) = &input.fast_launch_configurations {
@@ -67,17 +62,9 @@ pub fn ser_distribution(
 
 pub(crate) fn de_distribution<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::Distribution>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::Distribution>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -87,65 +74,58 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "region" => {
-                                builder = builder.set_region(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "region" => {
+                            builder = builder.set_region(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "amiDistributionConfiguration" => {
-                                builder = builder.set_ami_distribution_configuration(
-                                    crate::protocol_serde::shape_ami_distribution_configuration::de_ami_distribution_configuration(tokens)?
-                                );
-                            }
-                            "containerDistributionConfiguration" => {
-                                builder = builder.set_container_distribution_configuration(
-                                    crate::protocol_serde::shape_container_distribution_configuration::de_container_distribution_configuration(tokens)?
-                                );
-                            }
-                            "licenseConfigurationArns" => {
-                                builder = builder.set_license_configuration_arns(
-                                    crate::protocol_serde::shape_license_configuration_arn_list::de_license_configuration_arn_list(tokens)?
-                                );
-                            }
-                            "launchTemplateConfigurations" => {
-                                builder = builder.set_launch_template_configurations(
-                                    crate::protocol_serde::shape_launch_template_configuration_list::de_launch_template_configuration_list(tokens)?
-                                );
-                            }
-                            "s3ExportConfiguration" => {
-                                builder = builder.set_s3_export_configuration(
-                                    crate::protocol_serde::shape_s3_export_configuration::de_s3_export_configuration(tokens)?
-                                );
-                            }
-                            "fastLaunchConfigurations" => {
-                                builder = builder.set_fast_launch_configurations(
-                                    crate::protocol_serde::shape_fast_launch_configuration_list::de_fast_launch_configuration_list(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "amiDistributionConfiguration" => {
+                            builder = builder.set_ami_distribution_configuration(
+                                crate::protocol_serde::shape_ami_distribution_configuration::de_ami_distribution_configuration(tokens)?,
+                            );
+                        }
+                        "containerDistributionConfiguration" => {
+                            builder = builder.set_container_distribution_configuration(
+                                crate::protocol_serde::shape_container_distribution_configuration::de_container_distribution_configuration(tokens)?,
+                            );
+                        }
+                        "licenseConfigurationArns" => {
+                            builder = builder.set_license_configuration_arns(
+                                crate::protocol_serde::shape_license_configuration_arn_list::de_license_configuration_arn_list(tokens)?,
+                            );
+                        }
+                        "launchTemplateConfigurations" => {
+                            builder = builder.set_launch_template_configurations(
+                                crate::protocol_serde::shape_launch_template_configuration_list::de_launch_template_configuration_list(tokens)?,
+                            );
+                        }
+                        "s3ExportConfiguration" => {
+                            builder = builder.set_s3_export_configuration(
+                                crate::protocol_serde::shape_s3_export_configuration::de_s3_export_configuration(tokens)?,
+                            );
+                        }
+                        "fastLaunchConfigurations" => {
+                            builder = builder.set_fast_launch_configurations(
+                                crate::protocol_serde::shape_fast_launch_configuration_list::de_fast_launch_configuration_list(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

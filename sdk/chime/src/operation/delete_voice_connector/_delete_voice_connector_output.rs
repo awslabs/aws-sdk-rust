@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteVoiceConnectorOutput {
 }
 impl DeleteVoiceConnectorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceConnectorOutput`](crate::operation::delete_voice_connector::DeleteVoiceConnectorOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_voice_connector::builders::DeleteVoiceConnectorOutputBuilder {
+    pub fn builder() -> crate::operation::delete_voice_connector::builders::DeleteVoiceConnectorOutputBuilder {
         crate::operation::delete_voice_connector::builders::DeleteVoiceConnectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVoiceConnectorOutput`](crate::operation::delete_voice_connector::DeleteVoiceConnectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorOutputBuilder {
     _request_id: Option<String>,
 }

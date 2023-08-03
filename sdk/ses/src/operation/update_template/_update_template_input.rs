@@ -22,9 +22,7 @@ impl UpdateTemplateInput {
 
 /// A builder for [`UpdateTemplateInput`](crate::operation::update_template::UpdateTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTemplateInputBuilder {
     pub(crate) template: ::std::option::Option<crate::types::Template>,
 }
@@ -46,12 +44,7 @@ impl UpdateTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTemplateInput`](crate::operation::update_template::UpdateTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_template::UpdateTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_template::UpdateTemplateInput {
-            template: self.template,
-        })
+    ) -> ::std::result::Result<crate::operation::update_template::UpdateTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_template::UpdateTemplateInput { template: self.template })
     }
 }

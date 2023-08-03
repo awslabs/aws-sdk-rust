@@ -43,18 +43,14 @@ impl ::aws_http::request_id::RequestId for UpdateRequestValidatorOutput {
 }
 impl UpdateRequestValidatorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRequestValidatorOutput`](crate::operation::update_request_validator::UpdateRequestValidatorOutput).
-    pub fn builder(
-    ) -> crate::operation::update_request_validator::builders::UpdateRequestValidatorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_request_validator::builders::UpdateRequestValidatorOutputBuilder {
         crate::operation::update_request_validator::builders::UpdateRequestValidatorOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateRequestValidatorOutput`](crate::operation::update_request_validator::UpdateRequestValidatorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRequestValidatorOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListCallAnalyticsCategoriesOutput {
 }
 impl ListCallAnalyticsCategoriesOutput {
     /// Creates a new builder-style object to manufacture [`ListCallAnalyticsCategoriesOutput`](crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesOutput).
-    pub fn builder() -> crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesOutputBuilder{
+    pub fn builder() -> crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesOutputBuilder {
         crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCallAnalyticsCategoriesOutput`](crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCallAnalyticsCategoriesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) categories: ::std::option::Option<::std::vec::Vec<crate::types::CategoryProperties>>,
@@ -70,17 +68,12 @@ impl ListCallAnalyticsCategoriesOutputBuilder {
         self
     }
     /// <p>Provides detailed information about your Call Analytics categories, including all the rules associated with each category.</p>
-    pub fn set_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CategoryProperties>>,
-    ) -> Self {
+    pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CategoryProperties>>) -> Self {
         self.categories = input;
         self
     }
     /// <p>Provides detailed information about your Call Analytics categories, including all the rules associated with each category.</p>
-    pub fn get_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CategoryProperties>> {
+    pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CategoryProperties>> {
         &self.categories
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,9 +86,7 @@ impl ListCallAnalyticsCategoriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCallAnalyticsCategoriesOutput`](crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesOutput {
+    pub fn build(self) -> crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesOutput {
         crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesOutput {
             next_token: self.next_token,
             categories: self.categories,

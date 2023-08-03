@@ -38,17 +38,14 @@ impl UpdateTaskProtectionInput {
 }
 impl UpdateTaskProtectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateTaskProtectionInput`](crate::operation::update_task_protection::UpdateTaskProtectionInput).
-    pub fn builder(
-    ) -> crate::operation::update_task_protection::builders::UpdateTaskProtectionInputBuilder {
+    pub fn builder() -> crate::operation::update_task_protection::builders::UpdateTaskProtectionInputBuilder {
         crate::operation::update_task_protection::builders::UpdateTaskProtectionInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTaskProtectionInput`](crate::operation::update_task_protection::UpdateTaskProtectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTaskProtectionInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) tasks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -82,10 +79,7 @@ impl UpdateTaskProtectionInputBuilder {
         self
     }
     /// <p>A list of up to 10 task IDs or full ARN entries.</p>
-    pub fn set_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tasks = input;
         self
     }
@@ -127,17 +121,13 @@ impl UpdateTaskProtectionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTaskProtectionInput`](crate::operation::update_task_protection::UpdateTaskProtectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_task_protection::UpdateTaskProtectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_task_protection::UpdateTaskProtectionInput {
-                cluster: self.cluster,
-                tasks: self.tasks,
-                protection_enabled: self.protection_enabled,
-                expires_in_minutes: self.expires_in_minutes,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_task_protection::UpdateTaskProtectionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_task_protection::UpdateTaskProtectionInput {
+            cluster: self.cluster,
+            tasks: self.tasks,
+            protection_enabled: self.protection_enabled,
+            expires_in_minutes: self.expires_in_minutes,
+        })
     }
 }

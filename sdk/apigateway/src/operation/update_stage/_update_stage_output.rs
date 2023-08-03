@@ -27,14 +27,10 @@ pub struct UpdateStageOutput {
     pub cache_cluster_status: ::std::option::Option<crate::types::CacheClusterStatus>,
     /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
     #[doc(hidden)]
-    pub method_settings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>,
-    >,
+    pub method_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>>,
     /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
     #[doc(hidden)]
-    pub variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The version of the associated API documentation.</p>
     #[doc(hidden)]
     pub documentation_version: ::std::option::Option<::std::string::String>,
@@ -52,9 +48,7 @@ pub struct UpdateStageOutput {
     pub web_acl_arn: ::std::option::Option<::std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The timestamp when the stage was created.</p>
     #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -93,19 +87,11 @@ impl UpdateStageOutput {
         self.cache_cluster_status.as_ref()
     }
     /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
-    pub fn method_settings(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>,
-    > {
+    pub fn method_settings(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>> {
         self.method_settings.as_ref()
     }
     /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
-    pub fn variables(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.variables.as_ref()
     }
     /// <p>The version of the associated API documentation.</p>
@@ -129,11 +115,7 @@ impl UpdateStageOutput {
         self.web_acl_arn.as_deref()
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The timestamp when the stage was created.</p>
@@ -159,9 +141,7 @@ impl UpdateStageOutput {
 
 /// A builder for [`UpdateStageOutput`](crate::operation::update_stage::UpdateStageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateStageOutputBuilder {
     pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_certificate_id: ::std::option::Option<::std::string::String>,
@@ -170,38 +150,26 @@ pub struct UpdateStageOutputBuilder {
     pub(crate) cache_cluster_enabled: ::std::option::Option<bool>,
     pub(crate) cache_cluster_size: ::std::option::Option<crate::types::CacheClusterSize>,
     pub(crate) cache_cluster_status: ::std::option::Option<crate::types::CacheClusterStatus>,
-    pub(crate) method_settings: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>,
-    >,
-    pub(crate) variables: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) method_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>>,
+    pub(crate) variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) documentation_version: ::std::option::Option<::std::string::String>,
     pub(crate) access_log_settings: ::std::option::Option<crate::types::AccessLogSettings>,
     pub(crate) canary_settings: ::std::option::Option<crate::types::CanarySettings>,
     pub(crate) tracing_enabled: ::std::option::Option<bool>,
     pub(crate) web_acl_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl UpdateStageOutputBuilder {
     /// <p>The identifier of the Deployment that the stage points to.</p>
-    pub fn deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Deployment that the stage points to.</p>
-    pub fn set_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -210,18 +178,12 @@ impl UpdateStageOutputBuilder {
         &self.deployment_id
     }
     /// <p>The identifier of a client certificate for an API stage.</p>
-    pub fn client_certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of a client certificate for an API stage.</p>
-    pub fn set_client_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_certificate_id = input;
         self
     }
@@ -277,10 +239,7 @@ impl UpdateStageOutputBuilder {
         self
     }
     /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
-    pub fn set_cache_cluster_size(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheClusterSize>,
-    ) -> Self {
+    pub fn set_cache_cluster_size(mut self, input: ::std::option::Option<crate::types::CacheClusterSize>) -> Self {
         self.cache_cluster_size = input;
         self
     }
@@ -294,17 +253,12 @@ impl UpdateStageOutputBuilder {
         self
     }
     /// <p>The status of the cache cluster for the stage, if enabled.</p>
-    pub fn set_cache_cluster_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CacheClusterStatus>,
-    ) -> Self {
+    pub fn set_cache_cluster_status(mut self, input: ::std::option::Option<crate::types::CacheClusterStatus>) -> Self {
         self.cache_cluster_status = input;
         self
     }
     /// <p>The status of the cache cluster for the stage, if enabled.</p>
-    pub fn get_cache_cluster_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::CacheClusterStatus> {
+    pub fn get_cache_cluster_status(&self) -> &::std::option::Option<crate::types::CacheClusterStatus> {
         &self.cache_cluster_status
     }
     /// Adds a key-value pair to `method_settings`.
@@ -312,11 +266,7 @@ impl UpdateStageOutputBuilder {
     /// To override the contents of this collection use [`set_method_settings`](Self::set_method_settings).
     ///
     /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
-    pub fn method_settings(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::MethodSetting,
-    ) -> Self {
+    pub fn method_settings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MethodSetting) -> Self {
         let mut hash_map = self.method_settings.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.method_settings = ::std::option::Option::Some(hash_map);
@@ -325,19 +275,13 @@ impl UpdateStageOutputBuilder {
     /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
     pub fn set_method_settings(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>>,
     ) -> Self {
         self.method_settings = input;
         self
     }
     /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
-    pub fn get_method_settings(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>,
-    > {
+    pub fn get_method_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>> {
         &self.method_settings
     }
     /// Adds a key-value pair to `variables`.
@@ -345,47 +289,28 @@ impl UpdateStageOutputBuilder {
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
     /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
-    pub fn variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.variables = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
-    pub fn set_variables(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.variables = input;
         self
     }
     /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
-    pub fn get_variables(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.variables
     }
     /// <p>The version of the associated API documentation.</p>
-    pub fn documentation_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn documentation_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.documentation_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the associated API documentation.</p>
-    pub fn set_documentation_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_documentation_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.documentation_version = input;
         self
     }
@@ -399,17 +324,12 @@ impl UpdateStageOutputBuilder {
         self
     }
     /// <p>Settings for logging access in this stage.</p>
-    pub fn set_access_log_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessLogSettings>,
-    ) -> Self {
+    pub fn set_access_log_settings(mut self, input: ::std::option::Option<crate::types::AccessLogSettings>) -> Self {
         self.access_log_settings = input;
         self
     }
     /// <p>Settings for logging access in this stage.</p>
-    pub fn get_access_log_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessLogSettings> {
+    pub fn get_access_log_settings(&self) -> &::std::option::Option<crate::types::AccessLogSettings> {
         &self.access_log_settings
     }
     /// <p>Settings for the canary deployment in this stage.</p>
@@ -418,10 +338,7 @@ impl UpdateStageOutputBuilder {
         self
     }
     /// <p>Settings for the canary deployment in this stage.</p>
-    pub fn set_canary_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::CanarySettings>,
-    ) -> Self {
+    pub fn set_canary_settings(mut self, input: ::std::option::Option<crate::types::CanarySettings>) -> Self {
         self.canary_settings = input;
         self
     }
@@ -462,32 +379,19 @@ impl UpdateStageOutputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The timestamp when the stage was created.</p>
@@ -496,10 +400,7 @@ impl UpdateStageOutputBuilder {
         self
     }
     /// <p>The timestamp when the stage was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -513,10 +414,7 @@ impl UpdateStageOutputBuilder {
         self
     }
     /// <p>The timestamp when the stage last updated.</p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }

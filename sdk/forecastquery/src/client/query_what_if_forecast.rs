@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`QueryWhatIfForecastOutput`](crate::operation::query_what_if_forecast::QueryWhatIfForecastOutput) with field(s):
     ///   - [`forecast(Option<Forecast>)`](crate::operation::query_what_if_forecast::QueryWhatIfForecastOutput::forecast): <p>Provides information about a forecast. Returned as part of the <code>QueryForecast</code> response.</p>
     /// - On failure, responds with [`SdkError<QueryWhatIfForecastError>`](crate::operation::query_what_if_forecast::QueryWhatIfForecastError)
-    pub fn query_what_if_forecast(
-        &self,
-    ) -> crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastFluentBuilder {
-        crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn query_what_if_forecast(&self) -> crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastFluentBuilder {
+        crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastFluentBuilder::new(self.handle.clone())
     }
 }

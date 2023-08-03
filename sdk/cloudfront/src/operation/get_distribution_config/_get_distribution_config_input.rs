@@ -16,18 +16,14 @@ impl GetDistributionConfigInput {
 }
 impl GetDistributionConfigInput {
     /// Creates a new builder-style object to manufacture [`GetDistributionConfigInput`](crate::operation::get_distribution_config::GetDistributionConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_distribution_config::builders::GetDistributionConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_distribution_config::builders::GetDistributionConfigInputBuilder {
         crate::operation::get_distribution_config::builders::GetDistributionConfigInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDistributionConfigInput`](crate::operation::get_distribution_config::GetDistributionConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDistributionConfigInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -49,12 +45,8 @@ impl GetDistributionConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetDistributionConfigInput`](crate::operation::get_distribution_config::GetDistributionConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_distribution_config::GetDistributionConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_distribution_config::GetDistributionConfigInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::get_distribution_config::GetDistributionConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_distribution_config::GetDistributionConfigInput { id: self.id })
     }
 }

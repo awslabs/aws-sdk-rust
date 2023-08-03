@@ -25,8 +25,7 @@ pub fn ser_accelerator_total_memory_mi_b_request(
 
 pub fn de_accelerator_total_memory_mi_b_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::AcceleratorTotalMemoryMiBRequest, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> Result<crate::types::AcceleratorTotalMemoryMiBRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::AcceleratorTotalMemoryMiBRequest::builder();
     while let Some(mut tag) = decoder.next_tag() {

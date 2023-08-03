@@ -29,17 +29,14 @@ impl ListDataSetRevisionsInput {
 }
 impl ListDataSetRevisionsInput {
     /// Creates a new builder-style object to manufacture [`ListDataSetRevisionsInput`](crate::operation::list_data_set_revisions::ListDataSetRevisionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsInputBuilder {
+    pub fn builder() -> crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsInputBuilder {
         crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataSetRevisionsInput`](crate::operation::list_data_set_revisions::ListDataSetRevisionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataSetRevisionsInputBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,16 +88,12 @@ impl ListDataSetRevisionsInputBuilder {
     /// Consumes the builder and constructs a [`ListDataSetRevisionsInput`](crate::operation::list_data_set_revisions::ListDataSetRevisionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_data_set_revisions::ListDataSetRevisionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_data_set_revisions::ListDataSetRevisionsInput {
-                data_set_id: self.data_set_id,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_data_set_revisions::ListDataSetRevisionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_data_set_revisions::ListDataSetRevisionsInput {
+            data_set_id: self.data_set_id,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }

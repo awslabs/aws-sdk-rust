@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateScriptOutput`](crate::operation::create_script::CreateScriptOutput) with field(s):
     ///   - [`script(Option<Script>)`](crate::operation::create_script::CreateScriptOutput::script): <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
     /// - On failure, responds with [`SdkError<CreateScriptError>`](crate::operation::create_script::CreateScriptError)
-    pub fn create_script(
-        &self,
-    ) -> crate::operation::create_script::builders::CreateScriptFluentBuilder {
-        crate::operation::create_script::builders::CreateScriptFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_script(&self) -> crate::operation::create_script::builders::CreateScriptFluentBuilder {
+        crate::operation::create_script::builders::CreateScriptFluentBuilder::new(self.handle.clone())
     }
 }

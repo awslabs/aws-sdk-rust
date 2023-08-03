@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::register_user::RegisterUserOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::register_user::RegisterUserOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<RegisterUserError>`](crate::operation::register_user::RegisterUserError)
-    pub fn register_user(
-        &self,
-    ) -> crate::operation::register_user::builders::RegisterUserFluentBuilder {
-        crate::operation::register_user::builders::RegisterUserFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_user(&self) -> crate::operation::register_user::builders::RegisterUserFluentBuilder {
+        crate::operation::register_user::builders::RegisterUserFluentBuilder::new(self.handle.clone())
     }
 }

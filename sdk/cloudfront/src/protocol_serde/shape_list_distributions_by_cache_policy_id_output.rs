@@ -5,14 +5,15 @@ pub(crate) fn de_distribution_id_list_payload(
     ::std::option::Option<crate::types::DistributionIdList>,
     crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError,
 > {
-    (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_list_distributions_by_cache_policy_id_output::de_distribution_id_list(body).map_err(crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError::unhandled)
-    }).transpose()
+    (!body.is_empty())
+        .then(|| {
+            crate::protocol_serde::shape_list_distributions_by_cache_policy_id_output::de_distribution_id_list(body)
+                .map_err(crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError::unhandled)
+        })
+        .transpose()
 }
 
-pub fn de_distribution_id_list(
-    inp: &[u8],
-) -> Result<crate::types::DistributionIdList, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_distribution_id_list(inp: &[u8]) -> Result<crate::types::DistributionIdList, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

@@ -65,9 +65,7 @@ impl CelebrityDetail {
 
 /// A builder for [`CelebrityDetail`](crate::types::CelebrityDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CelebrityDetailBuilder {
     pub(crate) urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl CelebrityDetailBuilder {
         self
     }
     /// <p>An array of URLs pointing to additional celebrity information. </p>
-    pub fn set_urls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.urls = input;
         self
     }
@@ -149,10 +144,7 @@ impl CelebrityDetailBuilder {
         self
     }
     /// <p>Bounding box around the body of a celebrity.</p>
-    pub fn set_bounding_box(
-        mut self,
-        input: ::std::option::Option<crate::types::BoundingBox>,
-    ) -> Self {
+    pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
         self.bounding_box = input;
         self
     }
@@ -180,10 +172,7 @@ impl CelebrityDetailBuilder {
         self
     }
     /// <p>Retrieves the known gender for the celebrity.</p>
-    pub fn set_known_gender(
-        mut self,
-        input: ::std::option::Option<crate::types::KnownGender>,
-    ) -> Self {
+    pub fn set_known_gender(mut self, input: ::std::option::Option<crate::types::KnownGender>) -> Self {
         self.known_gender = input;
         self
     }

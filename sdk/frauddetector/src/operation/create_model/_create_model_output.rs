@@ -19,9 +19,7 @@ impl CreateModelOutput {
 
 /// A builder for [`CreateModelOutput`](crate::operation::create_model::CreateModelOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateModelOutputBuilder {
     _request_id: Option<String>,
 }

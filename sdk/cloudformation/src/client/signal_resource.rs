@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`status(ResourceSignalStatus)`](crate::operation::signal_resource::builders::SignalResourceFluentBuilder::status) / [`set_status(Option<ResourceSignalStatus>)`](crate::operation::signal_resource::builders::SignalResourceFluentBuilder::set_status): <p>The status of the signal, which is either success or failure. A failure signal causes CloudFormation to immediately fail the stack creation or update.</p>
     /// - On success, responds with [`SignalResourceOutput`](crate::operation::signal_resource::SignalResourceOutput)
     /// - On failure, responds with [`SdkError<SignalResourceError>`](crate::operation::signal_resource::SignalResourceError)
-    pub fn signal_resource(
-        &self,
-    ) -> crate::operation::signal_resource::builders::SignalResourceFluentBuilder {
-        crate::operation::signal_resource::builders::SignalResourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn signal_resource(&self) -> crate::operation::signal_resource::builders::SignalResourceFluentBuilder {
+        crate::operation::signal_resource::builders::SignalResourceFluentBuilder::new(self.handle.clone())
     }
 }

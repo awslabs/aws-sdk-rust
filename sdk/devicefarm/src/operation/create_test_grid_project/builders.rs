@@ -37,10 +37,7 @@ impl CreateTestGridProjectFluentBuilder {
         }
     }
     /// Access the CreateTestGridProject as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_test_grid_project::builders::CreateTestGridProjectInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_test_grid_project::builders::CreateTestGridProjectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateTestGridProjectFluentBuilder {
             crate::operation::create_test_grid_project::CreateTestGridProject,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_test_grid_project::CreateTestGridProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_test_grid_project::CreateTestGridProjectError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateTestGridProjectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateTestGridProjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_test_grid_project::CreateTestGridProjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_test_grid_project::CreateTestGridProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_test_grid_project::CreateTestGridProjectError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateTestGridProjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_test_grid_project::CreateTestGridProjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_test_grid_project::CreateTestGridProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_test_grid_project::CreateTestGridProjectError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateTestGridProjectFluentBuilder {
             crate::operation::create_test_grid_project::CreateTestGridProject,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_test_grid_project::CreateTestGridProjectError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_test_grid_project::CreateTestGridProjectError>,
     > {
         self.customize_middleware().await
     }
@@ -157,10 +143,7 @@ impl CreateTestGridProjectFluentBuilder {
         self
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    pub fn set_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TestGridVpcConfig>,
-    ) -> Self {
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::TestGridVpcConfig>) -> Self {
         self.inner = self.inner.set_vpc_config(input);
         self
     }

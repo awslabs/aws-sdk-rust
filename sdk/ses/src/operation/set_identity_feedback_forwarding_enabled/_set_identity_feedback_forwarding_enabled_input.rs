@@ -23,16 +23,14 @@ impl SetIdentityFeedbackForwardingEnabledInput {
 }
 impl SetIdentityFeedbackForwardingEnabledInput {
     /// Creates a new builder-style object to manufacture [`SetIdentityFeedbackForwardingEnabledInput`](crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledInput).
-    pub fn builder() -> crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledInputBuilder{
+    pub fn builder() -> crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledInputBuilder {
         crate::operation::set_identity_feedback_forwarding_enabled::builders::SetIdentityFeedbackForwardingEnabledInputBuilder::default()
     }
 }
 
 /// A builder for [`SetIdentityFeedbackForwardingEnabledInput`](crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetIdentityFeedbackForwardingEnabledInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     pub(crate) forwarding_enabled: ::std::option::Option<bool>,
@@ -67,15 +65,17 @@ impl SetIdentityFeedbackForwardingEnabledInputBuilder {
         &self.forwarding_enabled
     }
     /// Consumes the builder and constructs a [`SetIdentityFeedbackForwardingEnabledInput`](crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledInput {
-                identity: self.identity
-                ,
-                forwarding_enabled: self.forwarding_enabled
-                    .unwrap_or_default()
-                ,
-            }
+                identity: self.identity,
+                forwarding_enabled: self.forwarding_enabled.unwrap_or_default(),
+            },
         )
     }
 }

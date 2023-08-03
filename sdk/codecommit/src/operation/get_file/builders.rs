@@ -10,10 +10,7 @@ impl GetFileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_file::GetFileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_file::GetFileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_file::GetFileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_file();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetFileFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_file::GetFile,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_file::GetFile, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_file::GetFileError>,
     > {
         let handle = self.handle.clone();
@@ -59,20 +53,15 @@ impl GetFileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_file::GetFileOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_file::GetFileError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_file::GetFileOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_file::GetFileError>>
+    {
         let op = self
             .inner
             .build()
@@ -92,10 +81,8 @@ impl GetFileFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_file::GetFileOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_file::GetFileError>,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_file::GetFileOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_file::GetFileError>>
+    {
         self.send_middleware().await
     }
 
@@ -104,27 +91,18 @@ impl GetFileFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_file::GetFile,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_file::GetFile, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_file::GetFileError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the repository that contains the file.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository that contains the file.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -133,18 +111,12 @@ impl GetFileFluentBuilder {
         self.inner.get_repository_name()
     }
     /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
-    pub fn commit_specifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.commit_specifier(input.into());
         self
     }
     /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
-    pub fn set_commit_specifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_commit_specifier(input);
         self
     }

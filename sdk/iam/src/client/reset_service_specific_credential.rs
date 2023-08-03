@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`ResetServiceSpecificCredentialOutput`](crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialOutput) with field(s):
     ///   - [`service_specific_credential(Option<ServiceSpecificCredential>)`](crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialOutput::service_specific_credential): <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>   <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>  </important>
     /// - On failure, responds with [`SdkError<ResetServiceSpecificCredentialError>`](crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialError)
-    pub fn reset_service_specific_credential(&self) -> crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialFluentBuilder{
+    pub fn reset_service_specific_credential(
+        &self,
+    ) -> crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialFluentBuilder {
         crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialFluentBuilder::new(self.handle.clone())
     }
 }

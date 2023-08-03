@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`quick_connect_config(QuickConnectConfig)`](crate::operation::update_quick_connect_config::builders::UpdateQuickConnectConfigFluentBuilder::quick_connect_config) / [`set_quick_connect_config(Option<QuickConnectConfig>)`](crate::operation::update_quick_connect_config::builders::UpdateQuickConnectConfigFluentBuilder::set_quick_connect_config): <p>Information about the configuration settings for the quick connect.</p>
     /// - On success, responds with [`UpdateQuickConnectConfigOutput`](crate::operation::update_quick_connect_config::UpdateQuickConnectConfigOutput)
     /// - On failure, responds with [`SdkError<UpdateQuickConnectConfigError>`](crate::operation::update_quick_connect_config::UpdateQuickConnectConfigError)
-    pub fn update_quick_connect_config(&self) -> crate::operation::update_quick_connect_config::builders::UpdateQuickConnectConfigFluentBuilder{
+    pub fn update_quick_connect_config(&self) -> crate::operation::update_quick_connect_config::builders::UpdateQuickConnectConfigFluentBuilder {
         crate::operation::update_quick_connect_config::builders::UpdateQuickConnectConfigFluentBuilder::new(self.handle.clone())
     }
 }

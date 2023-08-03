@@ -74,9 +74,7 @@ impl Resource {
     /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
     /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
     /// </ul>
-    pub fn resource_region_scope(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResourceRegionScope> {
+    pub fn resource_region_scope(&self) -> ::std::option::Option<&crate::types::ResourceRegionScope> {
         self.resource_region_scope.as_ref()
     }
 }
@@ -89,9 +87,7 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -133,18 +129,12 @@ impl ResourceBuilder {
         &self.r#type
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share this resource is associated with.</p>
-    pub fn resource_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share this resource is associated with.</p>
-    pub fn set_resource_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_share_arn = input;
         self
     }
@@ -153,18 +143,12 @@ impl ResourceBuilder {
         &self.resource_share_arn
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource group. This value is available only if the resource is part of a resource group.</p>
-    pub fn resource_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource group. This value is available only if the resource is part of a resource group.</p>
-    pub fn set_resource_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_group_arn = input;
         self
     }
@@ -178,10 +162,7 @@ impl ResourceBuilder {
         self
     }
     /// <p>The current status of the resource.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -190,18 +171,12 @@ impl ResourceBuilder {
         &self.status
     }
     /// <p>A message about the status of the resource.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message about the status of the resource.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -215,10 +190,7 @@ impl ResourceBuilder {
         self
     }
     /// <p>The date and time when the resource was associated with the resource share.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -232,10 +204,7 @@ impl ResourceBuilder {
         self
     }
     /// <p>The date an time when the association between the resource and the resource share was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -257,10 +226,7 @@ impl ResourceBuilder {
     /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
     /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
     /// </ul>
-    pub fn set_resource_region_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceRegionScope>,
-    ) -> Self {
+    pub fn set_resource_region_scope(mut self, input: ::std::option::Option<crate::types::ResourceRegionScope>) -> Self {
         self.resource_region_scope = input;
         self
     }
@@ -269,9 +235,7 @@ impl ResourceBuilder {
     /// <li> <p> <b>REGIONAL</b> – The resource can be accessed only by using requests that target the Amazon Web Services Region in which the resource exists.</p> </li>
     /// <li> <p> <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p> </li>
     /// </ul>
-    pub fn get_resource_region_scope(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResourceRegionScope> {
+    pub fn get_resource_region_scope(&self) -> &::std::option::Option<crate::types::ResourceRegionScope> {
         &self.resource_region_scope
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).

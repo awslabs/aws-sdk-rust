@@ -10,10 +10,7 @@ impl GetTriggersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_triggers::GetTriggersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_triggers::GetTriggersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_triggers::GetTriggersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_triggers();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl GetTriggersFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_triggers::GetTriggers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_triggers::GetTriggers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_triggers::GetTriggersError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl GetTriggersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl GetTriggersFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_triggers::GetTriggers,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_triggers::GetTriggers, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_triggers::GetTriggersError>,
     > {
         self.customize_middleware().await
@@ -116,10 +104,7 @@ impl GetTriggersFluentBuilder {
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_triggers::paginator::GetTriggersPaginator::send) which returns a `Stream`.
     pub fn into_paginator(self) -> crate::operation::get_triggers::paginator::GetTriggersPaginator {
-        crate::operation::get_triggers::paginator::GetTriggersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+        crate::operation::get_triggers::paginator::GetTriggersPaginator::new(self.handle, self.inner)
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -136,18 +121,12 @@ impl GetTriggersFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
-    pub fn dependent_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dependent_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dependent_job_name(input.into());
         self
     }
     /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
-    pub fn set_dependent_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dependent_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dependent_job_name(input);
         self
     }

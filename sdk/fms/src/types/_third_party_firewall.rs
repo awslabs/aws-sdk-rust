@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ThirdPartyFirewall {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for ThirdPartyFirewall {
         match s {
             "FORTIGATE_CLOUD_NATIVE_FIREWALL" => ThirdPartyFirewall::FortigateCloudNativeFirewall,
             "PALO_ALTO_NETWORKS_CLOUD_NGFW" => ThirdPartyFirewall::PaloAltoNetworksCloudNgfw,
-            other => ThirdPartyFirewall::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ThirdPartyFirewall::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -83,10 +75,7 @@ impl ThirdPartyFirewall {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "FORTIGATE_CLOUD_NATIVE_FIREWALL",
-            "PALO_ALTO_NETWORKS_CLOUD_NGFW",
-        ]
+        &["FORTIGATE_CLOUD_NATIVE_FIREWALL", "PALO_ALTO_NETWORKS_CLOUD_NGFW"]
     }
 }
 impl ::std::convert::AsRef<str> for ThirdPartyFirewall {

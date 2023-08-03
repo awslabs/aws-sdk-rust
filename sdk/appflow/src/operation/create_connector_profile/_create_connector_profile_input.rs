@@ -49,9 +49,7 @@ impl CreateConnectorProfileInput {
         self.connection_mode.as_ref()
     }
     /// <p> Defines the connector-specific configuration and credentials. </p>
-    pub fn connector_profile_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConnectorProfileConfig> {
+    pub fn connector_profile_config(&self) -> ::std::option::Option<&crate::types::ConnectorProfileConfig> {
         self.connector_profile_config.as_ref()
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>CreateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
@@ -63,42 +61,31 @@ impl CreateConnectorProfileInput {
 }
 impl CreateConnectorProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectorProfileInput`](crate::operation::create_connector_profile::CreateConnectorProfileInput).
-    pub fn builder(
-    ) -> crate::operation::create_connector_profile::builders::CreateConnectorProfileInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_connector_profile::builders::CreateConnectorProfileInputBuilder {
         crate::operation::create_connector_profile::builders::CreateConnectorProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConnectorProfileInput`](crate::operation::create_connector_profile::CreateConnectorProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectorProfileInputBuilder {
     pub(crate) connector_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_arn: ::std::option::Option<::std::string::String>,
     pub(crate) connector_type: ::std::option::Option<crate::types::ConnectorType>,
     pub(crate) connector_label: ::std::option::Option<::std::string::String>,
     pub(crate) connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
-    pub(crate) connector_profile_config:
-        ::std::option::Option<crate::types::ConnectorProfileConfig>,
+    pub(crate) connector_profile_config: ::std::option::Option<crate::types::ConnectorProfileConfig>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectorProfileInputBuilder {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
-    pub fn connector_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
-    pub fn set_connector_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_profile_name = input;
         self
     }
@@ -126,10 +113,7 @@ impl CreateConnectorProfileInputBuilder {
         self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorType>,
-    ) -> Self {
+    pub fn set_connector_type(mut self, input: ::std::option::Option<crate::types::ConnectorType>) -> Self {
         self.connector_type = input;
         self
     }
@@ -138,18 +122,12 @@ impl CreateConnectorProfileInputBuilder {
         &self.connector_type
     }
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-    pub fn connector_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connector_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-    pub fn set_connector_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connector_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_label = input;
         self
     }
@@ -163,10 +141,7 @@ impl CreateConnectorProfileInputBuilder {
         self
     }
     /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
-    pub fn set_connection_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionMode>,
-    ) -> Self {
+    pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
         self.connection_mode = input;
         self
     }
@@ -180,17 +155,12 @@ impl CreateConnectorProfileInputBuilder {
         self
     }
     /// <p> Defines the connector-specific configuration and credentials. </p>
-    pub fn set_connector_profile_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectorProfileConfig>,
-    ) -> Self {
+    pub fn set_connector_profile_config(mut self, input: ::std::option::Option<crate::types::ConnectorProfileConfig>) -> Self {
         self.connector_profile_config = input;
         self
     }
     /// <p> Defines the connector-specific configuration and credentials. </p>
-    pub fn get_connector_profile_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConnectorProfileConfig> {
+    pub fn get_connector_profile_config(&self) -> &::std::option::Option<crate::types::ConnectorProfileConfig> {
         &self.connector_profile_config
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>CreateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
@@ -216,20 +186,16 @@ impl CreateConnectorProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectorProfileInput`](crate::operation::create_connector_profile::CreateConnectorProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_connector_profile::CreateConnectorProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_connector_profile::CreateConnectorProfileInput {
-                connector_profile_name: self.connector_profile_name,
-                kms_arn: self.kms_arn,
-                connector_type: self.connector_type,
-                connector_label: self.connector_label,
-                connection_mode: self.connection_mode,
-                connector_profile_config: self.connector_profile_config,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_connector_profile::CreateConnectorProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_connector_profile::CreateConnectorProfileInput {
+            connector_profile_name: self.connector_profile_name,
+            kms_arn: self.kms_arn,
+            connector_type: self.connector_type,
+            connector_label: self.connector_label,
+            connection_mode: self.connection_mode,
+            connector_profile_config: self.connector_profile_config,
+            client_token: self.client_token,
+        })
     }
 }

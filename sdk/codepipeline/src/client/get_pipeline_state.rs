@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`created(Option<DateTime>)`](crate::operation::get_pipeline_state::GetPipelineStateOutput::created): <p>The date and time the pipeline was created, in timestamp format.</p>
     ///   - [`updated(Option<DateTime>)`](crate::operation::get_pipeline_state::GetPipelineStateOutput::updated): <p>The date and time the pipeline was last updated, in timestamp format.</p>
     /// - On failure, responds with [`SdkError<GetPipelineStateError>`](crate::operation::get_pipeline_state::GetPipelineStateError)
-    pub fn get_pipeline_state(
-        &self,
-    ) -> crate::operation::get_pipeline_state::builders::GetPipelineStateFluentBuilder {
-        crate::operation::get_pipeline_state::builders::GetPipelineStateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_pipeline_state(&self) -> crate::operation::get_pipeline_state::builders::GetPipelineStateFluentBuilder {
+        crate::operation::get_pipeline_state::builders::GetPipelineStateFluentBuilder::new(self.handle.clone())
     }
 }

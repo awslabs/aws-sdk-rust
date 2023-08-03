@@ -43,18 +43,14 @@ impl ListProductSubscriptionsInput {
 }
 impl ListProductSubscriptionsInput {
     /// Creates a new builder-style object to manufacture [`ListProductSubscriptionsInput`](crate::operation::list_product_subscriptions::ListProductSubscriptionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsInputBuilder {
         crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProductSubscriptionsInput`](crate::operation::list_product_subscriptions::ListProductSubscriptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProductSubscriptionsInputBuilder {
     pub(crate) product: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
@@ -83,10 +79,7 @@ impl ListProductSubscriptionsInputBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.identity_provider = input;
         self
     }
@@ -120,10 +113,7 @@ impl ListProductSubscriptionsInputBuilder {
         self
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -152,14 +142,12 @@ impl ListProductSubscriptionsInputBuilder {
         crate::operation::list_product_subscriptions::ListProductSubscriptionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_product_subscriptions::ListProductSubscriptionsInput {
-                product: self.product,
-                identity_provider: self.identity_provider,
-                max_results: self.max_results,
-                filters: self.filters,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_product_subscriptions::ListProductSubscriptionsInput {
+            product: self.product,
+            identity_provider: self.identity_provider,
+            max_results: self.max_results,
+            filters: self.filters,
+            next_token: self.next_token,
+        })
     }
 }

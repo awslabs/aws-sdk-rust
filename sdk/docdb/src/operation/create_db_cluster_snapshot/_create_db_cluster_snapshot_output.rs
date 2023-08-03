@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateDbClusterSnapshotOutput {
 }
 impl CreateDbClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterSnapshotOutput`](crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotOutput).
-    pub fn builder(
-    ) -> crate::operation::create_db_cluster_snapshot::builders::CreateDbClusterSnapshotOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_db_cluster_snapshot::builders::CreateDbClusterSnapshotOutputBuilder {
         crate::operation::create_db_cluster_snapshot::builders::CreateDbClusterSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDbClusterSnapshotOutput`](crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDbClusterSnapshotOutputBuilder {
     pub(crate) db_cluster_snapshot: ::std::option::Option<crate::types::DbClusterSnapshot>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl CreateDbClusterSnapshotOutputBuilder {
         self
     }
     /// <p>Detailed information about a cluster snapshot. </p>
-    pub fn set_db_cluster_snapshot(
-        mut self,
-        input: ::std::option::Option<crate::types::DbClusterSnapshot>,
-    ) -> Self {
+    pub fn set_db_cluster_snapshot(mut self, input: ::std::option::Option<crate::types::DbClusterSnapshot>) -> Self {
         self.db_cluster_snapshot = input;
         self
     }
     /// <p>Detailed information about a cluster snapshot. </p>
-    pub fn get_db_cluster_snapshot(
-        &self,
-    ) -> &::std::option::Option<crate::types::DbClusterSnapshot> {
+    pub fn get_db_cluster_snapshot(&self) -> &::std::option::Option<crate::types::DbClusterSnapshot> {
         &self.db_cluster_snapshot
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -67,9 +58,7 @@ impl CreateDbClusterSnapshotOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDbClusterSnapshotOutput`](crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotOutput {
+    pub fn build(self) -> crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotOutput {
         crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotOutput {
             db_cluster_snapshot: self.db_cluster_snapshot,
             _request_id: self._request_id,

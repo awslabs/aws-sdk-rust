@@ -26,11 +26,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::update_environment::UpdateEnvironmentOutput::arn): <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::operation::update_environment::UpdateEnvironmentError)
-    pub fn update_environment(
-        &self,
-    ) -> crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder {
-        crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_environment(&self) -> crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder {
+        crate::operation::update_environment::builders::UpdateEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

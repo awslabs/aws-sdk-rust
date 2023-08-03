@@ -58,13 +58,10 @@ impl TitleAggregation {
 
 /// A builder for [`TitleAggregation`](crate::types::TitleAggregation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TitleAggregationBuilder {
     pub(crate) titles: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) vulnerability_ids:
-        ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) vulnerability_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) resource_type: ::std::option::Option<crate::types::AggregationResourceType>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) sort_by: ::std::option::Option<crate::types::TitleSortBy>,
@@ -83,17 +80,12 @@ impl TitleAggregationBuilder {
         self
     }
     /// <p>The finding titles to aggregate on.</p>
-    pub fn set_titles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_titles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.titles = input;
         self
     }
     /// <p>The finding titles to aggregate on.</p>
-    pub fn get_titles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_titles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.titles
     }
     /// Appends an item to `vulnerability_ids`.
@@ -108,17 +100,12 @@ impl TitleAggregationBuilder {
         self
     }
     /// <p>The vulnerability IDs of the findings.</p>
-    pub fn set_vulnerability_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
+    pub fn set_vulnerability_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.vulnerability_ids = input;
         self
     }
     /// <p>The vulnerability IDs of the findings.</p>
-    pub fn get_vulnerability_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+    pub fn get_vulnerability_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.vulnerability_ids
     }
     /// <p>The resource type to aggregate on.</p>
@@ -127,17 +114,12 @@ impl TitleAggregationBuilder {
         self
     }
     /// <p>The resource type to aggregate on.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::AggregationResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The resource type to aggregate on.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregationResourceType> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::AggregationResourceType> {
         &self.resource_type
     }
     /// <p>The order to sort results by.</p>
@@ -174,10 +156,7 @@ impl TitleAggregationBuilder {
         self
     }
     /// <p>The type of finding to aggregate on.</p>
-    pub fn set_finding_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationFindingType>,
-    ) -> Self {
+    pub fn set_finding_type(mut self, input: ::std::option::Option<crate::types::AggregationFindingType>) -> Self {
         self.finding_type = input;
         self
     }

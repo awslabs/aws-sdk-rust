@@ -5,8 +5,7 @@
 pub struct ListVoiceConnectorGroupsOutput {
     /// <p>The details of the Amazon Chime Voice Connector groups.</p>
     #[doc(hidden)]
-    pub voice_connector_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorGroup>>,
+    pub voice_connector_groups: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorGroup>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListVoiceConnectorGroupsOutput {
 }
 impl ListVoiceConnectorGroupsOutput {
     /// <p>The details of the Amazon Chime Voice Connector groups.</p>
-    pub fn voice_connector_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::VoiceConnectorGroup]> {
+    pub fn voice_connector_groups(&self) -> ::std::option::Option<&[crate::types::VoiceConnectorGroup]> {
         self.voice_connector_groups.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListVoiceConnectorGroupsOutput {
 }
 impl ListVoiceConnectorGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListVoiceConnectorGroupsOutput`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput).
-    pub fn builder() -> crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsOutputBuilder {
         crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVoiceConnectorGroupsOutput`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVoiceConnectorGroupsOutputBuilder {
-    pub(crate) voice_connector_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorGroup>>,
+    pub(crate) voice_connector_groups: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListVoiceConnectorGroupsOutputBuilder {
         self
     }
     /// <p>The details of the Amazon Chime Voice Connector groups.</p>
-    pub fn set_voice_connector_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorGroup>>,
-    ) -> Self {
+    pub fn set_voice_connector_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorGroup>>) -> Self {
         self.voice_connector_groups = input;
         self
     }
     /// <p>The details of the Amazon Chime Voice Connector groups.</p>
-    pub fn get_voice_connector_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorGroup>> {
+    pub fn get_voice_connector_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorGroup>> {
         &self.voice_connector_groups
     }
     /// <p>The token to use to retrieve the next page of results.</p>
@@ -97,9 +86,7 @@ impl ListVoiceConnectorGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListVoiceConnectorGroupsOutput`](crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput {
+    pub fn build(self) -> crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput {
         crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput {
             voice_connector_groups: self.voice_connector_groups,
             next_token: self.next_token,

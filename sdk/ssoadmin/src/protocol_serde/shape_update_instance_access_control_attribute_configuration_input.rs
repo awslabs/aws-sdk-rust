@@ -8,10 +8,11 @@ pub fn ser_update_instance_access_control_attribute_configuration_input(
     }
     if let Some(var_2) = &input.instance_access_control_attribute_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object
-            .key("InstanceAccessControlAttributeConfiguration")
-            .start_object();
-        crate::protocol_serde::shape_instance_access_control_attribute_configuration::ser_instance_access_control_attribute_configuration(&mut object_3, var_2)?;
+        let mut object_3 = object.key("InstanceAccessControlAttributeConfiguration").start_object();
+        crate::protocol_serde::shape_instance_access_control_attribute_configuration::ser_instance_access_control_attribute_configuration(
+            &mut object_3,
+            var_2,
+        )?;
         object_3.finish();
     }
     Ok(())

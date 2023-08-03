@@ -18,10 +18,7 @@ pub fn ser_open_zfs_create_root_volume_configuration(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_open_zfs_nfs_export::ser_open_zfs_nfs_export(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_open_zfs_nfs_export::ser_open_zfs_nfs_export(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

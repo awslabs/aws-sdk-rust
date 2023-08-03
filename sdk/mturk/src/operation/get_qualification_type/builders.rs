@@ -37,9 +37,7 @@ impl GetQualificationTypeFluentBuilder {
         }
     }
     /// Access the GetQualificationType as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_qualification_type::builders::GetQualificationTypeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_qualification_type::builders::GetQualificationTypeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetQualificationTypeFluentBuilder {
             crate::operation::get_qualification_type::GetQualificationType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_qualification_type::GetQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_qualification_type::GetQualificationTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetQualificationTypeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetQualificationTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_qualification_type::GetQualificationTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_qualification_type::GetQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_qualification_type::GetQualificationTypeError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetQualificationTypeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_qualification_type::GetQualificationTypeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_qualification_type::GetQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_qualification_type::GetQualificationTypeError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetQualificationTypeFluentBuilder {
             crate::operation::get_qualification_type::GetQualificationType,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_qualification_type::GetQualificationTypeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_qualification_type::GetQualificationTypeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the QualificationType.</p>
-    pub fn qualification_type_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qualification_type_id(input.into());
         self
     }
     /// <p>The ID of the QualificationType.</p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qualification_type_id(input);
         self
     }

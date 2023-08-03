@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for CompleteLifecycleActionOutput {
 }
 impl CompleteLifecycleActionOutput {
     /// Creates a new builder-style object to manufacture [`CompleteLifecycleActionOutput`](crate::operation::complete_lifecycle_action::CompleteLifecycleActionOutput).
-    pub fn builder(
-    ) -> crate::operation::complete_lifecycle_action::builders::CompleteLifecycleActionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::complete_lifecycle_action::builders::CompleteLifecycleActionOutputBuilder {
         crate::operation::complete_lifecycle_action::builders::CompleteLifecycleActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CompleteLifecycleActionOutput`](crate::operation::complete_lifecycle_action::CompleteLifecycleActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteLifecycleActionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl CompleteLifecycleActionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CompleteLifecycleActionOutput`](crate::operation::complete_lifecycle_action::CompleteLifecycleActionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::complete_lifecycle_action::CompleteLifecycleActionOutput {
+    pub fn build(self) -> crate::operation::complete_lifecycle_action::CompleteLifecycleActionOutput {
         crate::operation::complete_lifecycle_action::CompleteLifecycleActionOutput {
             _request_id: self._request_id,
         }

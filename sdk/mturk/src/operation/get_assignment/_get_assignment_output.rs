@@ -35,9 +35,7 @@ impl GetAssignmentOutput {
 
 /// A builder for [`GetAssignmentOutput`](crate::operation::get_assignment::GetAssignmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssignmentOutputBuilder {
     pub(crate) assignment: ::std::option::Option<crate::types::Assignment>,
     pub(crate) hit: ::std::option::Option<crate::types::Hit>,
@@ -50,10 +48,7 @@ impl GetAssignmentOutputBuilder {
         self
     }
     /// <p> The assignment. The response includes one Assignment element. </p>
-    pub fn set_assignment(
-        mut self,
-        input: ::std::option::Option<crate::types::Assignment>,
-    ) -> Self {
+    pub fn set_assignment(mut self, input: ::std::option::Option<crate::types::Assignment>) -> Self {
         self.assignment = input;
         self
     }

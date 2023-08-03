@@ -37,9 +37,7 @@ impl ListThingTypesInput {
 
 /// A builder for [`ListThingTypesInput`](crate::operation::list_thing_types::ListThingTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThingTypesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -75,18 +73,12 @@ impl ListThingTypesInputBuilder {
         &self.max_results
     }
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn thing_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing type.</p>
-    pub fn set_thing_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_type_name = input;
         self
     }
@@ -97,10 +89,7 @@ impl ListThingTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListThingTypesInput`](crate::operation::list_thing_types::ListThingTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_thing_types::ListThingTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_thing_types::ListThingTypesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_thing_types::ListThingTypesInput {
             next_token: self.next_token,
             max_results: self.max_results,

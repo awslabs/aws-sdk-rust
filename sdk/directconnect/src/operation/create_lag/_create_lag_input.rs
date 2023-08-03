@@ -82,9 +82,7 @@ impl CreateLagInput {
 
 /// A builder for [`CreateLagInput`](crate::operation::create_lag::CreateLagInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateLagInputBuilder {
     pub(crate) number_of_connections: ::std::option::Option<i32>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -126,18 +124,12 @@ impl CreateLagInputBuilder {
         &self.location
     }
     /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-    pub fn connections_bandwidth(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connections_bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connections_bandwidth = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-    pub fn set_connections_bandwidth(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connections_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connections_bandwidth = input;
         self
     }
@@ -160,18 +152,12 @@ impl CreateLagInputBuilder {
         &self.lag_name
     }
     /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -191,10 +177,7 @@ impl CreateLagInputBuilder {
         self
     }
     /// <p>The tags to associate with the LAG.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -214,32 +197,21 @@ impl CreateLagInputBuilder {
         self
     }
     /// <p>The tags to associate with the automtically created LAGs.</p>
-    pub fn set_child_connection_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_child_connection_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.child_connection_tags = input;
         self
     }
     /// <p>The tags to associate with the automtically created LAGs.</p>
-    pub fn get_child_connection_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_child_connection_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.child_connection_tags
     }
     /// <p>The name of the service provider associated with the LAG.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service provider associated with the LAG.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_name = input;
         self
     }
@@ -268,12 +240,7 @@ impl CreateLagInputBuilder {
         &self.request_mac_sec
     }
     /// Consumes the builder and constructs a [`CreateLagInput`](crate::operation::create_lag::CreateLagInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_lag::CreateLagInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_lag::CreateLagInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_lag::CreateLagInput {
             number_of_connections: self.number_of_connections,
             location: self.location,

@@ -9,9 +9,7 @@ pub struct UnlinkIdentityInput {
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
     #[doc(hidden)]
-    pub logins: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub logins: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Provider names to unlink from this identity.</p>
     #[doc(hidden)]
     pub logins_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -22,11 +20,7 @@ impl UnlinkIdentityInput {
         self.identity_id.as_deref()
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
-    pub fn logins(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn logins(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.logins.as_ref()
     }
     /// <p>Provider names to unlink from this identity.</p>
@@ -43,14 +37,10 @@ impl UnlinkIdentityInput {
 
 /// A builder for [`UnlinkIdentityInput`](crate::operation::unlink_identity::UnlinkIdentityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnlinkIdentityInputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
-    pub(crate) logins: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) logins: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) logins_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UnlinkIdentityInputBuilder {
@@ -73,32 +63,19 @@ impl UnlinkIdentityInputBuilder {
     /// To override the contents of this collection use [`set_logins`](Self::set_logins).
     ///
     /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
-    pub fn logins(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logins(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.logins.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.logins = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
-    pub fn set_logins(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_logins(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.logins = input;
         self
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
-    pub fn get_logins(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_logins(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.logins
     }
     /// Appends an item to `logins_to_remove`.
@@ -106,36 +83,25 @@ impl UnlinkIdentityInputBuilder {
     /// To override the contents of this collection use [`set_logins_to_remove`](Self::set_logins_to_remove).
     ///
     /// <p>Provider names to unlink from this identity.</p>
-    pub fn logins_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logins_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.logins_to_remove.unwrap_or_default();
         v.push(input.into());
         self.logins_to_remove = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provider names to unlink from this identity.</p>
-    pub fn set_logins_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_logins_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.logins_to_remove = input;
         self
     }
     /// <p>Provider names to unlink from this identity.</p>
-    pub fn get_logins_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_logins_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.logins_to_remove
     }
     /// Consumes the builder and constructs a [`UnlinkIdentityInput`](crate::operation::unlink_identity::UnlinkIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::unlink_identity::UnlinkIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::unlink_identity::UnlinkIdentityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::unlink_identity::UnlinkIdentityInput {
             identity_id: self.identity_id,
             logins: self.logins,

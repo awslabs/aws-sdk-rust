@@ -6,18 +6,12 @@
 pub struct GetIdentityPoliciesOutput {
     /// <p>A map of policy names to policies.</p>
     #[doc(hidden)]
-    pub policies: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub policies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetIdentityPoliciesOutput {
     /// <p>A map of policy names to policies.</p>
-    pub fn policies(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn policies(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.policies.as_ref()
     }
 }
@@ -28,22 +22,16 @@ impl ::aws_http::request_id::RequestId for GetIdentityPoliciesOutput {
 }
 impl GetIdentityPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`GetIdentityPoliciesOutput`](crate::operation::get_identity_policies::GetIdentityPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_identity_policies::builders::GetIdentityPoliciesOutputBuilder {
-        crate::operation::get_identity_policies::builders::GetIdentityPoliciesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_identity_policies::builders::GetIdentityPoliciesOutputBuilder {
+        crate::operation::get_identity_policies::builders::GetIdentityPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetIdentityPoliciesOutput`](crate::operation::get_identity_policies::GetIdentityPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityPoliciesOutputBuilder {
-    pub(crate) policies: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) policies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetIdentityPoliciesOutputBuilder {
@@ -52,32 +40,19 @@ impl GetIdentityPoliciesOutputBuilder {
     /// To override the contents of this collection use [`set_policies`](Self::set_policies).
     ///
     /// <p>A map of policy names to policies.</p>
-    pub fn policies(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policies(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.policies.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.policies = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of policy names to policies.</p>
-    pub fn set_policies(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.policies = input;
         self
     }
     /// <p>A map of policy names to policies.</p>
-    pub fn get_policies(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_policies(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.policies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

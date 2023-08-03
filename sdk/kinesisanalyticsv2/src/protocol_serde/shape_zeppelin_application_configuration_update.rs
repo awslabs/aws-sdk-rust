@@ -17,16 +17,15 @@ pub fn ser_zeppelin_application_configuration_update(
     }
     if let Some(var_5) = &input.deploy_as_application_configuration_update {
         #[allow(unused_mut)]
-        let mut object_6 = object
-            .key("DeployAsApplicationConfigurationUpdate")
-            .start_object();
-        crate::protocol_serde::shape_deploy_as_application_configuration_update::ser_deploy_as_application_configuration_update(&mut object_6, var_5)?;
+        let mut object_6 = object.key("DeployAsApplicationConfigurationUpdate").start_object();
+        crate::protocol_serde::shape_deploy_as_application_configuration_update::ser_deploy_as_application_configuration_update(
+            &mut object_6,
+            var_5,
+        )?;
         object_6.finish();
     }
     if let Some(var_7) = &input.custom_artifacts_configuration_update {
-        let mut array_8 = object
-            .key("CustomArtifactsConfigurationUpdate")
-            .start_array();
+        let mut array_8 = object.key("CustomArtifactsConfigurationUpdate").start_array();
         for item_9 in var_7 {
             {
                 #[allow(unused_mut)]

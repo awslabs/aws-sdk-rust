@@ -38,9 +38,7 @@ pub struct StartRunInput {
     pub log_level: ::std::option::Option<crate::types::RunLogLevel>,
     /// <p>Tags for the run.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -91,11 +89,7 @@ impl StartRunInput {
         self.log_level.as_ref()
     }
     /// <p>Tags for the run.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
@@ -112,9 +106,7 @@ impl StartRunInput {
 
 /// A builder for [`StartRunInput`](crate::operation::start_run::StartRunInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartRunInputBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
@@ -127,9 +119,7 @@ pub struct StartRunInputBuilder {
     pub(crate) storage_capacity: ::std::option::Option<i32>,
     pub(crate) output_uri: ::std::option::Option<::std::string::String>,
     pub(crate) log_level: ::std::option::Option<crate::types::RunLogLevel>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
 }
 impl StartRunInputBuilder {
@@ -153,10 +143,7 @@ impl StartRunInputBuilder {
         self
     }
     /// <p>The run's workflows type.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
@@ -240,10 +227,7 @@ impl StartRunInputBuilder {
         self
     }
     /// <p>Parameters for the run.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Document>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.parameters = input;
         self
     }
@@ -285,10 +269,7 @@ impl StartRunInputBuilder {
         self
     }
     /// <p>A log level for the run.</p>
-    pub fn set_log_level(
-        mut self,
-        input: ::std::option::Option<crate::types::RunLogLevel>,
-    ) -> Self {
+    pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::RunLogLevel>) -> Self {
         self.log_level = input;
         self
     }
@@ -301,32 +282,19 @@ impl StartRunInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags for the run.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags for the run.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags for the run.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
@@ -344,12 +312,7 @@ impl StartRunInputBuilder {
         &self.request_id
     }
     /// Consumes the builder and constructs a [`StartRunInput`](crate::operation::start_run::StartRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_run::StartRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_run::StartRunInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_run::StartRunInput {
             workflow_id: self.workflow_id,
             workflow_type: self.workflow_type,

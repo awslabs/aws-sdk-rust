@@ -29,9 +29,7 @@ impl SendEmailOutput {
 
 /// A builder for [`SendEmailOutput`](crate::operation::send_email::SendEmailOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendEmailOutputBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

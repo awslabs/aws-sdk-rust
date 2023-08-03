@@ -23,9 +23,7 @@ impl ViolationEventAdditionalInfo {
 
 /// A builder for [`ViolationEventAdditionalInfo`](crate::types::ViolationEventAdditionalInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ViolationEventAdditionalInfoBuilder {
     pub(crate) confidence_level: ::std::option::Option<crate::types::ConfidenceLevel>,
 }
@@ -36,10 +34,7 @@ impl ViolationEventAdditionalInfoBuilder {
         self
     }
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
-    pub fn set_confidence_level(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfidenceLevel>,
-    ) -> Self {
+    pub fn set_confidence_level(mut self, input: ::std::option::Option<crate::types::ConfidenceLevel>) -> Self {
         self.confidence_level = input;
         self
     }

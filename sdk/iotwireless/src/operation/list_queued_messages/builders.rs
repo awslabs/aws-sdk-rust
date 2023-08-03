@@ -10,10 +10,7 @@ impl ListQueuedMessagesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_queued_messages::ListQueuedMessagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_queued_messages::ListQueuedMessagesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_queued_messages::ListQueuedMessagesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_queued_messages();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListQueuedMessagesFluentBuilder {
         }
     }
     /// Access the ListQueuedMessages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_queued_messages::builders::ListQueuedMessagesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_queued_messages::builders::ListQueuedMessagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListQueuedMessagesFluentBuilder {
             crate::operation::list_queued_messages::ListQueuedMessages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_queued_messages::ListQueuedMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_queued_messages::ListQueuedMessagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListQueuedMessagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListQueuedMessagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_queued_messages::ListQueuedMessagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_queued_messages::ListQueuedMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_queued_messages::ListQueuedMessagesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListQueuedMessagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_queued_messages::ListQueuedMessagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_queued_messages::ListQueuedMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_queued_messages::ListQueuedMessagesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListQueuedMessagesFluentBuilder {
             crate::operation::list_queued_messages::ListQueuedMessages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_queued_messages::ListQueuedMessagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_queued_messages::ListQueuedMessagesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_queued_messages::paginator::ListQueuedMessagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_queued_messages::paginator::ListQueuedMessagesPaginator {
-        crate::operation::list_queued_messages::paginator::ListQueuedMessagesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_queued_messages::paginator::ListQueuedMessagesPaginator {
+        crate::operation::list_queued_messages::paginator::ListQueuedMessagesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of a given wireless device which the downlink message packets are being sent.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,17 +160,12 @@ impl ListQueuedMessagesFluentBuilder {
         self
     }
     /// <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
-    pub fn set_wireless_device_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessDeviceType>,
-    ) -> Self {
+    pub fn set_wireless_device_type(mut self, input: ::std::option::Option<crate::types::WirelessDeviceType>) -> Self {
         self.inner = self.inner.set_wireless_device_type(input);
         self
     }
     /// <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
-    pub fn get_wireless_device_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+    pub fn get_wireless_device_type(&self) -> &::std::option::Option<crate::types::WirelessDeviceType> {
         self.inner.get_wireless_device_type()
     }
 }

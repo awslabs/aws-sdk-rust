@@ -55,13 +55,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum OpsItemStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -127,9 +121,7 @@ impl ::std::convert::From<&str> for OpsItemStatus {
             "RunbookInProgress" => OpsItemStatus::RunbookInProgress,
             "Scheduled" => OpsItemStatus::Scheduled,
             "TimedOut" => OpsItemStatus::TimedOut,
-            other => {
-                OpsItemStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => OpsItemStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`license_conversion_time(Option<DateTime>)`](crate::operation::get_license_conversion_task::GetLicenseConversionTaskOutput::license_conversion_time): <p>Amount of time to complete the license type conversion.</p>
     ///   - [`end_time(Option<DateTime>)`](crate::operation::get_license_conversion_task::GetLicenseConversionTaskOutput::end_time): <p>Time at which the license type conversion task was completed.</p>
     /// - On failure, responds with [`SdkError<GetLicenseConversionTaskError>`](crate::operation::get_license_conversion_task::GetLicenseConversionTaskError)
-    pub fn get_license_conversion_task(&self) -> crate::operation::get_license_conversion_task::builders::GetLicenseConversionTaskFluentBuilder{
+    pub fn get_license_conversion_task(&self) -> crate::operation::get_license_conversion_task::builders::GetLicenseConversionTaskFluentBuilder {
         crate::operation::get_license_conversion_task::builders::GetLicenseConversionTaskFluentBuilder::new(self.handle.clone())
     }
 }

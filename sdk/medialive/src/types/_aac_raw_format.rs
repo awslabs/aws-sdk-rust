@@ -38,13 +38,7 @@
 /// Aac Raw Format
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AacRawFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for AacRawFormat {
         match s {
             "LATM_LOAS" => AacRawFormat::LatmLoas,
             "NONE" => AacRawFormat::None,
-            other => {
-                AacRawFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => AacRawFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

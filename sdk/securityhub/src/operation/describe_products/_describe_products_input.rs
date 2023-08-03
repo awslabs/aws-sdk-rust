@@ -31,17 +31,14 @@ impl DescribeProductsInput {
 }
 impl DescribeProductsInput {
     /// Creates a new builder-style object to manufacture [`DescribeProductsInput`](crate::operation::describe_products::DescribeProductsInput).
-    pub fn builder() -> crate::operation::describe_products::builders::DescribeProductsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_products::builders::DescribeProductsInputBuilder {
         crate::operation::describe_products::builders::DescribeProductsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProductsInput`](crate::operation::describe_products::DescribeProductsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProductsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -96,10 +93,7 @@ impl DescribeProductsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeProductsInput`](crate::operation::describe_products::DescribeProductsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_products::DescribeProductsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_products::DescribeProductsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_products::DescribeProductsInput {
             next_token: self.next_token,
             max_results: self.max_results,

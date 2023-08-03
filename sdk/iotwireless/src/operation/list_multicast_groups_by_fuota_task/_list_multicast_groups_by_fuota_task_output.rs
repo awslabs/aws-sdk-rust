@@ -8,8 +8,7 @@ pub struct ListMulticastGroupsByFuotaTaskOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of multicast groups associated with a FUOTA task.</p>
     #[doc(hidden)]
-    pub multicast_group_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroupByFuotaTask>>,
+    pub multicast_group_list: ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroupByFuotaTask>>,
     _request_id: Option<String>,
 }
 impl ListMulticastGroupsByFuotaTaskOutput {
@@ -18,9 +17,7 @@ impl ListMulticastGroupsByFuotaTaskOutput {
         self.next_token.as_deref()
     }
     /// <p>List of multicast groups associated with a FUOTA task.</p>
-    pub fn multicast_group_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MulticastGroupByFuotaTask]> {
+    pub fn multicast_group_list(&self) -> ::std::option::Option<&[crate::types::MulticastGroupByFuotaTask]> {
         self.multicast_group_list.as_deref()
     }
 }
@@ -31,20 +28,17 @@ impl ::aws_http::request_id::RequestId for ListMulticastGroupsByFuotaTaskOutput 
 }
 impl ListMulticastGroupsByFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`ListMulticastGroupsByFuotaTaskOutput`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput).
-    pub fn builder() -> crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskOutputBuilder{
+    pub fn builder() -> crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskOutputBuilder {
         crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListMulticastGroupsByFuotaTaskOutput`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMulticastGroupsByFuotaTaskOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) multicast_group_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroupByFuotaTask>>,
+    pub(crate) multicast_group_list: ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroupByFuotaTask>>,
     _request_id: Option<String>,
 }
 impl ListMulticastGroupsByFuotaTaskOutputBuilder {
@@ -74,17 +68,12 @@ impl ListMulticastGroupsByFuotaTaskOutputBuilder {
         self
     }
     /// <p>List of multicast groups associated with a FUOTA task.</p>
-    pub fn set_multicast_group_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroupByFuotaTask>>,
-    ) -> Self {
+    pub fn set_multicast_group_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroupByFuotaTask>>) -> Self {
         self.multicast_group_list = input;
         self
     }
     /// <p>List of multicast groups associated with a FUOTA task.</p>
-    pub fn get_multicast_group_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MulticastGroupByFuotaTask>> {
+    pub fn get_multicast_group_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MulticastGroupByFuotaTask>> {
         &self.multicast_group_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -97,15 +86,10 @@ impl ListMulticastGroupsByFuotaTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMulticastGroupsByFuotaTaskOutput`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput
-    {
+    pub fn build(self) -> crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput {
         crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput {
-            next_token: self.next_token
-            ,
-            multicast_group_list: self.multicast_group_list
-            ,
+            next_token: self.next_token,
+            multicast_group_list: self.multicast_group_list,
             _request_id: self._request_id,
         }
     }

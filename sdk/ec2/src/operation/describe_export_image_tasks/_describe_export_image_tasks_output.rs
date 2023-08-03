@@ -28,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeExportImageTasksOutput {
 }
 impl DescribeExportImageTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExportImageTasksOutput`](crate::operation::describe_export_image_tasks::DescribeExportImageTasksOutput).
-    pub fn builder() -> crate::operation::describe_export_image_tasks::builders::DescribeExportImageTasksOutputBuilder{
+    pub fn builder() -> crate::operation::describe_export_image_tasks::builders::DescribeExportImageTasksOutputBuilder {
         crate::operation::describe_export_image_tasks::builders::DescribeExportImageTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeExportImageTasksOutput`](crate::operation::describe_export_image_tasks::DescribeExportImageTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExportImageTasksOutputBuilder {
-    pub(crate) export_image_tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExportImageTask>>,
+    pub(crate) export_image_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ExportImageTask>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl DescribeExportImageTasksOutputBuilder {
         self
     }
     /// <p>Information about the export image tasks.</p>
-    pub fn set_export_image_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportImageTask>>,
-    ) -> Self {
+    pub fn set_export_image_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportImageTask>>) -> Self {
         self.export_image_tasks = input;
         self
     }
     /// <p>Information about the export image tasks.</p>
-    pub fn get_export_image_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportImageTask>> {
+    pub fn get_export_image_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportImageTask>> {
         &self.export_image_tasks
     }
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -94,9 +86,7 @@ impl DescribeExportImageTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeExportImageTasksOutput`](crate::operation::describe_export_image_tasks::DescribeExportImageTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_export_image_tasks::DescribeExportImageTasksOutput {
+    pub fn build(self) -> crate::operation::describe_export_image_tasks::DescribeExportImageTasksOutput {
         crate::operation::describe_export_image_tasks::DescribeExportImageTasksOutput {
             export_image_tasks: self.export_image_tasks,
             next_token: self.next_token,

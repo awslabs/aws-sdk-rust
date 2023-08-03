@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`GetRandomPasswordOutput`](crate::operation::get_random_password::GetRandomPasswordOutput) with field(s):
     ///   - [`random_password(Option<String>)`](crate::operation::get_random_password::GetRandomPasswordOutput::random_password): <p>A string with the password.</p>
     /// - On failure, responds with [`SdkError<GetRandomPasswordError>`](crate::operation::get_random_password::GetRandomPasswordError)
-    pub fn get_random_password(
-        &self,
-    ) -> crate::operation::get_random_password::builders::GetRandomPasswordFluentBuilder {
-        crate::operation::get_random_password::builders::GetRandomPasswordFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_random_password(&self) -> crate::operation::get_random_password::builders::GetRandomPasswordFluentBuilder {
+        crate::operation::get_random_password::builders::GetRandomPasswordFluentBuilder::new(self.handle.clone())
     }
 }

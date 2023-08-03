@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateContactScheduleOutput {
 }
 impl UpdateContactScheduleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContactScheduleOutput`](crate::operation::update_contact_schedule::UpdateContactScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::update_contact_schedule::builders::UpdateContactScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_contact_schedule::builders::UpdateContactScheduleOutputBuilder {
         crate::operation::update_contact_schedule::builders::UpdateContactScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateContactScheduleOutput`](crate::operation::update_contact_schedule::UpdateContactScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateContactScheduleOutputBuilder {
     _request_id: Option<String>,
 }

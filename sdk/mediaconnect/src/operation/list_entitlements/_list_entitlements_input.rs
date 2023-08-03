@@ -22,17 +22,14 @@ impl ListEntitlementsInput {
 }
 impl ListEntitlementsInput {
     /// Creates a new builder-style object to manufacture [`ListEntitlementsInput`](crate::operation::list_entitlements::ListEntitlementsInput).
-    pub fn builder() -> crate::operation::list_entitlements::builders::ListEntitlementsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_entitlements::builders::ListEntitlementsInputBuilder {
         crate::operation::list_entitlements::builders::ListEntitlementsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListEntitlementsInput`](crate::operation::list_entitlements::ListEntitlementsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntitlementsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -69,10 +66,7 @@ impl ListEntitlementsInputBuilder {
     /// Consumes the builder and constructs a [`ListEntitlementsInput`](crate::operation::list_entitlements::ListEntitlementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_entitlements::ListEntitlementsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_entitlements::ListEntitlementsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_entitlements::ListEntitlementsInput {
             max_results: self.max_results,
             next_token: self.next_token,

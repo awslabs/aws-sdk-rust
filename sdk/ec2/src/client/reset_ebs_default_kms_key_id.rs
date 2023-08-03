@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ResetEbsDefaultKmsKeyIdOutput`](crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdOutput) with field(s):
     ///   - [`kms_key_id(Option<String>)`](crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdOutput::kms_key_id): <p>The Amazon Resource Name (ARN) of the default KMS key for EBS encryption by default.</p>
     /// - On failure, responds with [`SdkError<ResetEbsDefaultKmsKeyIdError>`](crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError)
-    pub fn reset_ebs_default_kms_key_id(&self) -> crate::operation::reset_ebs_default_kms_key_id::builders::ResetEbsDefaultKmsKeyIdFluentBuilder{
+    pub fn reset_ebs_default_kms_key_id(&self) -> crate::operation::reset_ebs_default_kms_key_id::builders::ResetEbsDefaultKmsKeyIdFluentBuilder {
         crate::operation::reset_ebs_default_kms_key_id::builders::ResetEbsDefaultKmsKeyIdFluentBuilder::new(self.handle.clone())
     }
 }

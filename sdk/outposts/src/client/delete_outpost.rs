@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`outpost_id(impl ::std::convert::Into<String>)`](crate::operation::delete_outpost::builders::DeleteOutpostFluentBuilder::outpost_id) / [`set_outpost_id(Option<String>)`](crate::operation::delete_outpost::builders::DeleteOutpostFluentBuilder::set_outpost_id): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     /// - On success, responds with [`DeleteOutpostOutput`](crate::operation::delete_outpost::DeleteOutpostOutput)
     /// - On failure, responds with [`SdkError<DeleteOutpostError>`](crate::operation::delete_outpost::DeleteOutpostError)
-    pub fn delete_outpost(
-        &self,
-    ) -> crate::operation::delete_outpost::builders::DeleteOutpostFluentBuilder {
-        crate::operation::delete_outpost::builders::DeleteOutpostFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_outpost(&self) -> crate::operation::delete_outpost::builders::DeleteOutpostFluentBuilder {
+        crate::operation::delete_outpost::builders::DeleteOutpostFluentBuilder::new(self.handle.clone())
     }
 }

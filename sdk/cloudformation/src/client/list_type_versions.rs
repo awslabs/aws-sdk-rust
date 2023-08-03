@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`type_version_summaries(Option<Vec<TypeVersionSummary>>)`](crate::operation::list_type_versions::ListTypeVersionsOutput::type_version_summaries): <p>A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_type_versions::ListTypeVersionsOutput::next_token): <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     /// - On failure, responds with [`SdkError<ListTypeVersionsError>`](crate::operation::list_type_versions::ListTypeVersionsError)
-    pub fn list_type_versions(
-        &self,
-    ) -> crate::operation::list_type_versions::builders::ListTypeVersionsFluentBuilder {
-        crate::operation::list_type_versions::builders::ListTypeVersionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_type_versions(&self) -> crate::operation::list_type_versions::builders::ListTypeVersionsFluentBuilder {
+        crate::operation::list_type_versions::builders::ListTypeVersionsFluentBuilder::new(self.handle.clone())
     }
 }

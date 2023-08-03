@@ -51,9 +51,7 @@ impl PutRecordOutput {
 
 /// A builder for [`PutRecordOutput`](crate::operation::put_record::PutRecordOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRecordOutputBuilder {
     pub(crate) shard_id: ::std::option::Option<::std::string::String>,
     pub(crate) sequence_number: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl PutRecordOutputBuilder {
         &self.shard_id
     }
     /// <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
-    pub fn sequence_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
-    pub fn set_sequence_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sequence_number = input;
         self
     }
@@ -109,10 +101,7 @@ impl PutRecordOutputBuilder {
     /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
     /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
     /// </ul>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionType>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.encryption_type = input;
         self
     }

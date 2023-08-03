@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`policy(impl ::std::convert::Into<String>)`](crate::operation::put_container_policy::builders::PutContainerPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_container_policy::builders::PutContainerPolicyFluentBuilder::set_policy): <p>The contents of the policy, which includes the following: </p>  <ul>   <li> <p>One <code>Version</code> tag</p> </li>   <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>  </ul>
     /// - On success, responds with [`PutContainerPolicyOutput`](crate::operation::put_container_policy::PutContainerPolicyOutput)
     /// - On failure, responds with [`SdkError<PutContainerPolicyError>`](crate::operation::put_container_policy::PutContainerPolicyError)
-    pub fn put_container_policy(
-        &self,
-    ) -> crate::operation::put_container_policy::builders::PutContainerPolicyFluentBuilder {
-        crate::operation::put_container_policy::builders::PutContainerPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_container_policy(&self) -> crate::operation::put_container_policy::builders::PutContainerPolicyFluentBuilder {
+        crate::operation::put_container_policy::builders::PutContainerPolicyFluentBuilder::new(self.handle.clone())
     }
 }

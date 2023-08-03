@@ -36,8 +36,7 @@ pub struct Channel {
     pub channel_flow_arn: ::std::option::Option<::std::string::String>,
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members.</p>
     #[doc(hidden)]
-    pub elastic_channel_configuration:
-        ::std::option::Option<crate::types::ElasticChannelConfiguration>,
+    pub elastic_channel_configuration: ::std::option::Option<crate::types::ElasticChannelConfiguration>,
     /// <p>Settings that control when a channel expires.</p>
     #[doc(hidden)]
     pub expiration_settings: ::std::option::Option<crate::types::ExpirationSettings>,
@@ -84,9 +83,7 @@ impl Channel {
         self.channel_flow_arn.as_deref()
     }
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members.</p>
-    pub fn elastic_channel_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ElasticChannelConfiguration> {
+    pub fn elastic_channel_configuration(&self) -> ::std::option::Option<&crate::types::ElasticChannelConfiguration> {
         self.elastic_channel_configuration.as_ref()
     }
     /// <p>Settings that control when a channel expires.</p>
@@ -107,10 +104,7 @@ impl ::std::fmt::Debug for Channel {
         formatter.field("last_message_timestamp", &self.last_message_timestamp);
         formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
         formatter.field("channel_flow_arn", &self.channel_flow_arn);
-        formatter.field(
-            "elastic_channel_configuration",
-            &self.elastic_channel_configuration,
-        );
+        formatter.field("elastic_channel_configuration", &self.elastic_channel_configuration);
         formatter.field("expiration_settings", &self.expiration_settings);
         formatter.finish()
     }
@@ -136,8 +130,7 @@ pub struct ChannelBuilder {
     pub(crate) last_message_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) channel_flow_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) elastic_channel_configuration:
-        ::std::option::Option<crate::types::ElasticChannelConfiguration>,
+    pub(crate) elastic_channel_configuration: ::std::option::Option<crate::types::ElasticChannelConfiguration>,
     pub(crate) expiration_settings: ::std::option::Option<crate::types::ExpirationSettings>,
 }
 impl ChannelBuilder {
@@ -189,10 +182,7 @@ impl ChannelBuilder {
         self
     }
     /// <p>The channel's privacy setting.</p>
-    pub fn set_privacy(
-        mut self,
-        input: ::std::option::Option<crate::types::ChannelPrivacy>,
-    ) -> Self {
+    pub fn set_privacy(mut self, input: ::std::option::Option<crate::types::ChannelPrivacy>) -> Self {
         self.privacy = input;
         self
     }
@@ -234,10 +224,7 @@ impl ChannelBuilder {
         self
     }
     /// <p>The time at which the <code>AppInstanceUser</code> created the channel.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -251,17 +238,12 @@ impl ChannelBuilder {
         self
     }
     /// <p>The time at which a member sent the last message in the channel.</p>
-    pub fn set_last_message_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_message_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_message_timestamp = input;
         self
     }
     /// <p>The time at which a member sent the last message in the channel.</p>
-    pub fn get_last_message_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_message_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_message_timestamp
     }
     /// <p>The time at which a channel was last updated.</p>
@@ -270,32 +252,21 @@ impl ChannelBuilder {
         self
     }
     /// <p>The time at which a channel was last updated.</p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_timestamp = input;
         self
     }
     /// <p>The time at which a channel was last updated.</p>
-    pub fn get_last_updated_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_timestamp
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn channel_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_flow_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn set_channel_flow_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_channel_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_flow_arn = input;
         self
     }
@@ -304,25 +275,17 @@ impl ChannelBuilder {
         &self.channel_flow_arn
     }
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members.</p>
-    pub fn elastic_channel_configuration(
-        mut self,
-        input: crate::types::ElasticChannelConfiguration,
-    ) -> Self {
+    pub fn elastic_channel_configuration(mut self, input: crate::types::ElasticChannelConfiguration) -> Self {
         self.elastic_channel_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members.</p>
-    pub fn set_elastic_channel_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticChannelConfiguration>,
-    ) -> Self {
+    pub fn set_elastic_channel_configuration(mut self, input: ::std::option::Option<crate::types::ElasticChannelConfiguration>) -> Self {
         self.elastic_channel_configuration = input;
         self
     }
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members.</p>
-    pub fn get_elastic_channel_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElasticChannelConfiguration> {
+    pub fn get_elastic_channel_configuration(&self) -> &::std::option::Option<crate::types::ElasticChannelConfiguration> {
         &self.elastic_channel_configuration
     }
     /// <p>Settings that control when a channel expires.</p>
@@ -331,17 +294,12 @@ impl ChannelBuilder {
         self
     }
     /// <p>Settings that control when a channel expires.</p>
-    pub fn set_expiration_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpirationSettings>,
-    ) -> Self {
+    pub fn set_expiration_settings(mut self, input: ::std::option::Option<crate::types::ExpirationSettings>) -> Self {
         self.expiration_settings = input;
         self
     }
     /// <p>Settings that control when a channel expires.</p>
-    pub fn get_expiration_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExpirationSettings> {
+    pub fn get_expiration_settings(&self) -> &::std::option::Option<crate::types::ExpirationSettings> {
         &self.expiration_settings
     }
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).
@@ -375,10 +333,7 @@ impl ::std::fmt::Debug for ChannelBuilder {
         formatter.field("last_message_timestamp", &self.last_message_timestamp);
         formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
         formatter.field("channel_flow_arn", &self.channel_flow_arn);
-        formatter.field(
-            "elastic_channel_configuration",
-            &self.elastic_channel_configuration,
-        );
+        formatter.field("elastic_channel_configuration", &self.elastic_channel_configuration);
         formatter.field("expiration_settings", &self.expiration_settings);
         formatter.finish()
     }

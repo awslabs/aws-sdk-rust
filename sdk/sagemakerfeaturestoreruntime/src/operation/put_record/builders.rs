@@ -10,10 +10,7 @@ impl PutRecordInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_record::PutRecordOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_record::PutRecordError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_record::PutRecordError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_record();
         fluent_builder.inner = self;
@@ -48,10 +45,7 @@ impl PutRecordFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_record::PutRecord,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_record::PutRecord, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_record::PutRecordError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +56,7 @@ impl PutRecordFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,27 +98,18 @@ impl PutRecordFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_record::PutRecord,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_record::PutRecord, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_record::PutRecordError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.</p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feature_group_name(input);
         self
     }
@@ -155,10 +137,7 @@ impl PutRecordFluentBuilder {
     /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
     /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
     /// </ul>
-    pub fn set_record(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>,
-    ) -> Self {
+    pub fn set_record(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>) -> Self {
         self.inner = self.inner.set_record(input);
         self
     }
@@ -168,9 +147,7 @@ impl PutRecordFluentBuilder {
     /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
     /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
     /// </ul>
-    pub fn get_record(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>> {
+    pub fn get_record(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>> {
         self.inner.get_record()
     }
     /// Appends an item to `TargetStores`.
@@ -183,17 +160,12 @@ impl PutRecordFluentBuilder {
         self
     }
     /// <p>A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the stores that you're using for the <code>FeatureGroup</code>.</p>
-    pub fn set_target_stores(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetStore>>,
-    ) -> Self {
+    pub fn set_target_stores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetStore>>) -> Self {
         self.inner = self.inner.set_target_stores(input);
         self
     }
     /// <p>A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the stores that you're using for the <code>FeatureGroup</code>.</p>
-    pub fn get_target_stores(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetStore>> {
+    pub fn get_target_stores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetStore>> {
         self.inner.get_target_stores()
     }
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
@@ -202,10 +174,7 @@ impl PutRecordFluentBuilder {
         self
     }
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
-    pub fn set_ttl_duration(
-        mut self,
-        input: ::std::option::Option<crate::types::TtlDuration>,
-    ) -> Self {
+    pub fn set_ttl_duration(mut self, input: ::std::option::Option<crate::types::TtlDuration>) -> Self {
         self.inner = self.inner.set_ttl_duration(input);
         self
     }

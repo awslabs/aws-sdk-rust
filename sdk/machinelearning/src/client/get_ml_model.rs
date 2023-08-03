@@ -28,9 +28,7 @@ impl super::Client {
     ///   - [`recipe(Option<String>)`](crate::operation::get_ml_model::GetMlModelOutput::recipe): <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code> provides detailed information about the observation data to use during training, and manipulations to perform on the observation data during training.</p>  <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
     ///   - [`schema(Option<String>)`](crate::operation::get_ml_model::GetMlModelOutput::schema): <p>The schema used by all of the data files referenced by the <code>DataSource</code>.</p>  <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
     /// - On failure, responds with [`SdkError<GetMLModelError>`](crate::operation::get_ml_model::GetMLModelError)
-    pub fn get_ml_model(
-        &self,
-    ) -> crate::operation::get_ml_model::builders::GetMLModelFluentBuilder {
+    pub fn get_ml_model(&self) -> crate::operation::get_ml_model::builders::GetMLModelFluentBuilder {
         crate::operation::get_ml_model::builders::GetMLModelFluentBuilder::new(self.handle.clone())
     }
 }

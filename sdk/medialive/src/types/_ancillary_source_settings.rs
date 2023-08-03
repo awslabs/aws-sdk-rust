@@ -23,9 +23,7 @@ impl AncillarySourceSettings {
 
 /// A builder for [`AncillarySourceSettings`](crate::types::AncillarySourceSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AncillarySourceSettingsBuilder {
     pub(crate) source_ancillary_channel_number: ::std::option::Option<i32>,
 }
@@ -36,10 +34,7 @@ impl AncillarySourceSettingsBuilder {
         self
     }
     /// Specifies the number (1 to 4) of the captions channel you want to extract from the ancillary captions. If you plan to convert the ancillary captions to another format, complete this field. If you plan to choose Embedded as the captions destination in the output (to pass through all the channels in the ancillary captions), leave this field blank because MediaLive ignores the field.
-    pub fn set_source_ancillary_channel_number(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_source_ancillary_channel_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.source_ancillary_channel_number = input;
         self
     }

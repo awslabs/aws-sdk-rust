@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`available_labels(Option<Vec<LabelSummary>>)`](crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupOutput::available_labels): <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
     ///   - [`consumed_labels(Option<Vec<LabelSummary>>)`](crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupOutput::consumed_labels): <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
     /// - On failure, responds with [`SdkError<DescribeManagedRuleGroupError>`](crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupError)
-    pub fn describe_managed_rule_group(&self) -> crate::operation::describe_managed_rule_group::builders::DescribeManagedRuleGroupFluentBuilder{
+    pub fn describe_managed_rule_group(&self) -> crate::operation::describe_managed_rule_group::builders::DescribeManagedRuleGroupFluentBuilder {
         crate::operation::describe_managed_rule_group::builders::DescribeManagedRuleGroupFluentBuilder::new(self.handle.clone())
     }
 }

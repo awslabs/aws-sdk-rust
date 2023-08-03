@@ -34,9 +34,7 @@ impl ModelVariantConfigSummary {
         self.variant_name.as_deref()
     }
     /// <p>The configuration of the infrastructure that the model has been deployed to.</p>
-    pub fn infrastructure_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ModelInfrastructureConfig> {
+    pub fn infrastructure_config(&self) -> ::std::option::Option<&crate::types::ModelInfrastructureConfig> {
         self.infrastructure_config.as_ref()
     }
     /// <p>The status of deployment for the model variant on the hosted inference endpoint.</p>
@@ -60,14 +58,11 @@ impl ModelVariantConfigSummary {
 
 /// A builder for [`ModelVariantConfigSummary`](crate::types::ModelVariantConfigSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModelVariantConfigSummaryBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) variant_name: ::std::option::Option<::std::string::String>,
-    pub(crate) infrastructure_config:
-        ::std::option::Option<crate::types::ModelInfrastructureConfig>,
+    pub(crate) infrastructure_config: ::std::option::Option<crate::types::ModelInfrastructureConfig>,
     pub(crate) status: ::std::option::Option<crate::types::ModelVariantStatus>,
 }
 impl ModelVariantConfigSummaryBuilder {
@@ -105,17 +100,12 @@ impl ModelVariantConfigSummaryBuilder {
         self
     }
     /// <p>The configuration of the infrastructure that the model has been deployed to.</p>
-    pub fn set_infrastructure_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelInfrastructureConfig>,
-    ) -> Self {
+    pub fn set_infrastructure_config(mut self, input: ::std::option::Option<crate::types::ModelInfrastructureConfig>) -> Self {
         self.infrastructure_config = input;
         self
     }
     /// <p>The configuration of the infrastructure that the model has been deployed to.</p>
-    pub fn get_infrastructure_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ModelInfrastructureConfig> {
+    pub fn get_infrastructure_config(&self) -> &::std::option::Option<crate::types::ModelInfrastructureConfig> {
         &self.infrastructure_config
     }
     /// <p>The status of deployment for the model variant on the hosted inference endpoint.</p>
@@ -138,10 +128,7 @@ impl ModelVariantConfigSummaryBuilder {
     /// <li> <p> <code>Deleting</code> - Amazon SageMaker is deleting the model variant on the hosted inference endpoint. </p> </li>
     /// <li> <p> <code>Deleted</code> - The model variant has been deleted on the hosted inference endpoint. This can only happen after stopping the experiment. </p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelVariantStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelVariantStatus>) -> Self {
         self.status = input;
         self
     }

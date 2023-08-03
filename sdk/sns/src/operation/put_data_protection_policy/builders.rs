@@ -26,8 +26,7 @@ impl PutDataProtectionPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutDataProtectionPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::put_data_protection_policy::builders::PutDataProtectionPolicyInputBuilder,
+    inner: crate::operation::put_data_protection_policy::builders::PutDataProtectionPolicyInputBuilder,
 }
 impl PutDataProtectionPolicyFluentBuilder {
     /// Creates a new `PutDataProtectionPolicy`.
@@ -38,10 +37,7 @@ impl PutDataProtectionPolicyFluentBuilder {
         }
     }
     /// Access the PutDataProtectionPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_data_protection_policy::builders::PutDataProtectionPolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::put_data_protection_policy::builders::PutDataProtectionPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl PutDataProtectionPolicyFluentBuilder {
             crate::operation::put_data_protection_policy::PutDataProtectionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_protection_policy::PutDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_protection_policy::PutDataProtectionPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl PutDataProtectionPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl PutDataProtectionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_data_protection_policy::PutDataProtectionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_protection_policy::PutDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_protection_policy::PutDataProtectionPolicyError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl PutDataProtectionPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_data_protection_policy::PutDataProtectionPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_protection_policy::PutDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_protection_policy::PutDataProtectionPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl PutDataProtectionPolicyFluentBuilder {
             crate::operation::put_data_protection_policy::PutDataProtectionPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_data_protection_policy::PutDataProtectionPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_data_protection_policy::PutDataProtectionPolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -144,20 +129,14 @@ impl PutDataProtectionPolicyFluentBuilder {
     /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>
     /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>
     /// <p>Length Constraints: Maximum length of 30,720.</p>
-    pub fn data_protection_policy(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_protection_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_protection_policy(input.into());
         self
     }
     /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>
     /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>
     /// <p>Length Constraints: Maximum length of 30,720.</p>
-    pub fn set_data_protection_policy(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_protection_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_protection_policy(input);
         self
     }

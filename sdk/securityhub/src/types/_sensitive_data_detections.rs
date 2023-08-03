@@ -37,9 +37,7 @@ impl SensitiveDataDetections {
 
 /// A builder for [`SensitiveDataDetections`](crate::types::SensitiveDataDetections).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SensitiveDataDetectionsBuilder {
     pub(crate) count: ::std::option::Option<i64>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl SensitiveDataDetectionsBuilder {
         self
     }
     /// <p>Details about the sensitive data that was detected.</p>
-    pub fn set_occurrences(
-        mut self,
-        input: ::std::option::Option<crate::types::Occurrences>,
-    ) -> Self {
+    pub fn set_occurrences(mut self, input: ::std::option::Option<crate::types::Occurrences>) -> Self {
         self.occurrences = input;
         self
     }

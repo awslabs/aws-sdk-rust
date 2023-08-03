@@ -19,19 +19,13 @@ pub fn ser_card_verification_attributes(
         crate::types::CardVerificationAttributes::CardVerificationValue1(inner) => {
             #[allow(unused_mut)]
             let mut object_3 = object_5.key("CardVerificationValue1").start_object();
-            crate::protocol_serde::shape_card_verification_value1::ser_card_verification_value1(
-                &mut object_3,
-                inner,
-            )?;
+            crate::protocol_serde::shape_card_verification_value1::ser_card_verification_value1(&mut object_3, inner)?;
             object_3.finish();
         }
         crate::types::CardVerificationAttributes::CardVerificationValue2(inner) => {
             #[allow(unused_mut)]
             let mut object_4 = object_5.key("CardVerificationValue2").start_object();
-            crate::protocol_serde::shape_card_verification_value2::ser_card_verification_value2(
-                &mut object_4,
-                inner,
-            )?;
+            crate::protocol_serde::shape_card_verification_value2::ser_card_verification_value2(&mut object_4, inner)?;
             object_4.finish();
         }
         crate::types::CardVerificationAttributes::CardHolderVerificationValue(inner) => {
@@ -54,18 +48,14 @@ pub fn ser_card_verification_attributes(
         }
         crate::types::CardVerificationAttributes::DiscoverDynamicCardVerificationCode(inner) => {
             #[allow(unused_mut)]
-            let mut object_8 = object_5
-                .key("DiscoverDynamicCardVerificationCode")
-                .start_object();
+            let mut object_8 = object_5.key("DiscoverDynamicCardVerificationCode").start_object();
             crate::protocol_serde::shape_discover_dynamic_card_verification_code::ser_discover_dynamic_card_verification_code(&mut object_8, inner)?;
             object_8.finish();
         }
         crate::types::CardVerificationAttributes::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "CardVerificationAttributes",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "CardVerificationAttributes",
+            ))
         }
     }
     Ok(())

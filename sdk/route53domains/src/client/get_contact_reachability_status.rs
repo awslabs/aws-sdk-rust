@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`domain_name(Option<String>)`](crate::operation::get_contact_reachability_status::GetContactReachabilityStatusOutput::domain_name): <p>The domain name for which you requested the reachability status.</p>
     ///   - [`status(Option<ReachabilityStatus>)`](crate::operation::get_contact_reachability_status::GetContactReachabilityStatusOutput::status): <p>Whether the registrant contact has responded. Values include the following:</p>  <dl>   <dt>   PENDING  </dt>   <dd>    <p>We sent the confirmation email and haven't received a response yet.</p>   </dd>   <dt>   DONE  </dt>   <dd>    <p>We sent the email and got confirmation from the registrant contact.</p>   </dd>   <dt>   EXPIRED  </dt>   <dd>    <p>The time limit expired before the registrant contact responded.</p>   </dd>  </dl>
     /// - On failure, responds with [`SdkError<GetContactReachabilityStatusError>`](crate::operation::get_contact_reachability_status::GetContactReachabilityStatusError)
-    pub fn get_contact_reachability_status(&self) -> crate::operation::get_contact_reachability_status::builders::GetContactReachabilityStatusFluentBuilder{
+    pub fn get_contact_reachability_status(
+        &self,
+    ) -> crate::operation::get_contact_reachability_status::builders::GetContactReachabilityStatusFluentBuilder {
         crate::operation::get_contact_reachability_status::builders::GetContactReachabilityStatusFluentBuilder::new(self.handle.clone())
     }
 }

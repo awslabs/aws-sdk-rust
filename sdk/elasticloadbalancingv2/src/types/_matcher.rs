@@ -36,9 +36,7 @@ impl Matcher {
 
 /// A builder for [`Matcher`](crate::types::Matcher).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MatcherBuilder {
     pub(crate) http_code: ::std::option::Option<::std::string::String>,
     pub(crate) grpc_code: ::std::option::Option<::std::string::String>,

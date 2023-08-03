@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`failure_message(Option<String>)`](crate::operation::start_remediation_execution::StartRemediationExecutionOutput::failure_message): <p>Returns a failure message. For example, the resource is already compliant.</p>
     ///   - [`failed_items(Option<Vec<ResourceKey>>)`](crate::operation::start_remediation_execution::StartRemediationExecutionOutput::failed_items): <p>For resources that have failed to start execution, the API returns a resource key object.</p>
     /// - On failure, responds with [`SdkError<StartRemediationExecutionError>`](crate::operation::start_remediation_execution::StartRemediationExecutionError)
-    pub fn start_remediation_execution(&self) -> crate::operation::start_remediation_execution::builders::StartRemediationExecutionFluentBuilder{
+    pub fn start_remediation_execution(&self) -> crate::operation::start_remediation_execution::builders::StartRemediationExecutionFluentBuilder {
         crate::operation::start_remediation_execution::builders::StartRemediationExecutionFluentBuilder::new(self.handle.clone())
     }
 }

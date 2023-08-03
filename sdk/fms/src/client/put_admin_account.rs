@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`admin_scope(AdminScope)`](crate::operation::put_admin_account::builders::PutAdminAccountFluentBuilder::admin_scope) / [`set_admin_scope(Option<AdminScope>)`](crate::operation::put_admin_account::builders::PutAdminAccountFluentBuilder::set_admin_scope): <p>Configures the resources that the specified Firewall Manager administrator can manage. As a best practice, set the administrative scope according to the principles of least privilege. Only grant the administrator the specific resources or permissions that they need to perform the duties of their role.</p>
     /// - On success, responds with [`PutAdminAccountOutput`](crate::operation::put_admin_account::PutAdminAccountOutput)
     /// - On failure, responds with [`SdkError<PutAdminAccountError>`](crate::operation::put_admin_account::PutAdminAccountError)
-    pub fn put_admin_account(
-        &self,
-    ) -> crate::operation::put_admin_account::builders::PutAdminAccountFluentBuilder {
-        crate::operation::put_admin_account::builders::PutAdminAccountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_admin_account(&self) -> crate::operation::put_admin_account::builders::PutAdminAccountFluentBuilder {
+        crate::operation::put_admin_account::builders::PutAdminAccountFluentBuilder::new(self.handle.clone())
     }
 }

@@ -29,9 +29,7 @@ impl DeleteDatabaseInput {
 
 /// A builder for [`DeleteDatabaseInput`](crate::operation::delete_database::DeleteDatabaseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDatabaseInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl DeleteDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDatabaseInput`](crate::operation::delete_database::DeleteDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_database::DeleteDatabaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_database::DeleteDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_database::DeleteDatabaseInput {
             catalog_id: self.catalog_id,
             name: self.name,

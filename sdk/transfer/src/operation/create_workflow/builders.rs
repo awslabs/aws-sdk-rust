@@ -10,10 +10,7 @@ impl CreateWorkflowInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_workflow::CreateWorkflowOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workflow::CreateWorkflowError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow::CreateWorkflowError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_workflow();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateWorkflowFluentBuilder {
         }
     }
     /// Access the CreateWorkflow as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_workflow::builders::CreateWorkflowInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_workflow::builders::CreateWorkflowInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateWorkflowFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -160,10 +152,7 @@ impl CreateWorkflowFluentBuilder {
     /// <p> Currently, copying and tagging are supported only on S3. </p>
     /// </note>
     /// <p> For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path. </p>
-    pub fn set_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
-    ) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>) -> Self {
         self.inner = self.inner.set_steps(input);
         self
     }
@@ -196,19 +185,14 @@ impl CreateWorkflowFluentBuilder {
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
     /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
-    pub fn set_on_exception_steps(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
-    ) -> Self {
+    pub fn set_on_exception_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>) -> Self {
         self.inner = self.inner.set_on_exception_steps(input);
         self
     }
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
     /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
-    pub fn get_on_exception_steps(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>> {
+    pub fn get_on_exception_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>> {
         self.inner.get_on_exception_steps()
     }
     /// Appends an item to `Tags`.
@@ -221,10 +205,7 @@ impl CreateWorkflowFluentBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

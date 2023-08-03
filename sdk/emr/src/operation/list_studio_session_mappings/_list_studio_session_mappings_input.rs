@@ -29,16 +29,14 @@ impl ListStudioSessionMappingsInput {
 }
 impl ListStudioSessionMappingsInput {
     /// Creates a new builder-style object to manufacture [`ListStudioSessionMappingsInput`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsInput).
-    pub fn builder() -> crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsInputBuilder{
+    pub fn builder() -> crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsInputBuilder {
         crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListStudioSessionMappingsInput`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStudioSessionMappingsInputBuilder {
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
@@ -65,10 +63,7 @@ impl ListStudioSessionMappingsInputBuilder {
         self
     }
     /// <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
+    pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.identity_type = input;
         self
     }
@@ -97,12 +92,10 @@ impl ListStudioSessionMappingsInputBuilder {
         crate::operation::list_studio_session_mappings::ListStudioSessionMappingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_studio_session_mappings::ListStudioSessionMappingsInput {
-                studio_id: self.studio_id,
-                identity_type: self.identity_type,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_studio_session_mappings::ListStudioSessionMappingsInput {
+            studio_id: self.studio_id,
+            identity_type: self.identity_type,
+            marker: self.marker,
+        })
     }
 }

@@ -24,10 +24,7 @@ pub fn ser_create_server_input(
     if let Some(var_7) = &input.identity_provider_details {
         #[allow(unused_mut)]
         let mut object_8 = object.key("IdentityProviderDetails").start_object();
-        crate::protocol_serde::shape_identity_provider_details::ser_identity_provider_details(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_identity_provider_details::ser_identity_provider_details(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.identity_provider_type {
@@ -37,14 +34,10 @@ pub fn ser_create_server_input(
         object.key("LoggingRole").string(var_10.as_str());
     }
     if let Some(var_11) = &input.post_authentication_login_banner {
-        object
-            .key("PostAuthenticationLoginBanner")
-            .string(var_11.as_str());
+        object.key("PostAuthenticationLoginBanner").string(var_11.as_str());
     }
     if let Some(var_12) = &input.pre_authentication_login_banner {
-        object
-            .key("PreAuthenticationLoginBanner")
-            .string(var_12.as_str());
+        object.key("PreAuthenticationLoginBanner").string(var_12.as_str());
     }
     if let Some(var_13) = &input.protocols {
         let mut array_14 = object.key("Protocols").start_array();
@@ -58,10 +51,7 @@ pub fn ser_create_server_input(
     if let Some(var_16) = &input.protocol_details {
         #[allow(unused_mut)]
         let mut object_17 = object.key("ProtocolDetails").start_object();
-        crate::protocol_serde::shape_protocol_details::ser_protocol_details(
-            &mut object_17,
-            var_16,
-        )?;
+        crate::protocol_serde::shape_protocol_details::ser_protocol_details(&mut object_17, var_16)?;
         object_17.finish();
     }
     if let Some(var_18) = &input.security_policy_name {
@@ -82,10 +72,7 @@ pub fn ser_create_server_input(
     if let Some(var_23) = &input.workflow_details {
         #[allow(unused_mut)]
         let mut object_24 = object.key("WorkflowDetails").start_object();
-        crate::protocol_serde::shape_workflow_details::ser_workflow_details(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_workflow_details::ser_workflow_details(&mut object_24, var_23)?;
         object_24.finish();
     }
     if let Some(var_25) = &input.structured_log_destinations {

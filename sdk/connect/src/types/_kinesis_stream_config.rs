@@ -23,9 +23,7 @@ impl KinesisStreamConfig {
 
 /// A builder for [`KinesisStreamConfig`](crate::types::KinesisStreamConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KinesisStreamConfigBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl KinesisStreamConfigBuilder {
     }
     /// Consumes the builder and constructs a [`KinesisStreamConfig`](crate::types::KinesisStreamConfig).
     pub fn build(self) -> crate::types::KinesisStreamConfig {
-        crate::types::KinesisStreamConfig {
-            stream_arn: self.stream_arn,
-        }
+        crate::types::KinesisStreamConfig { stream_arn: self.stream_arn }
     }
 }

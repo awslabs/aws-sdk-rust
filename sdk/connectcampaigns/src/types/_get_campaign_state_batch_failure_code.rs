@@ -38,13 +38,7 @@
 /// A predefined code indicating the error that caused the failure in getting state of campaigns
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum GetCampaignStateBatchFailureCode {
     /// The specified resource was not found
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for GetCampaignStateBatchFailureCode {
         match s {
             "ResourceNotFound" => GetCampaignStateBatchFailureCode::ResourceNotFound,
             "UnknownError" => GetCampaignStateBatchFailureCode::UnknownError,
-            other => GetCampaignStateBatchFailureCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => GetCampaignStateBatchFailureCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

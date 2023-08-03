@@ -23,9 +23,7 @@ impl MemberFabricLogPublishingConfiguration {
 
 /// A builder for [`MemberFabricLogPublishingConfiguration`](crate::types::MemberFabricLogPublishingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberFabricLogPublishingConfigurationBuilder {
     pub(crate) ca_logs: ::std::option::Option<crate::types::LogConfigurations>,
 }
@@ -36,10 +34,7 @@ impl MemberFabricLogPublishingConfigurationBuilder {
         self
     }
     /// <p>Configuration properties for logging events associated with a member's Certificate Authority (CA). CA logs help you determine when a member in your account joins the network, or when new peers register with a member CA.</p>
-    pub fn set_ca_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::LogConfigurations>,
-    ) -> Self {
+    pub fn set_ca_logs(mut self, input: ::std::option::Option<crate::types::LogConfigurations>) -> Self {
         self.ca_logs = input;
         self
     }
@@ -49,8 +44,6 @@ impl MemberFabricLogPublishingConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`MemberFabricLogPublishingConfiguration`](crate::types::MemberFabricLogPublishingConfiguration).
     pub fn build(self) -> crate::types::MemberFabricLogPublishingConfiguration {
-        crate::types::MemberFabricLogPublishingConfiguration {
-            ca_logs: self.ca_logs,
-        }
+        crate::types::MemberFabricLogPublishingConfiguration { ca_logs: self.ca_logs }
     }
 }

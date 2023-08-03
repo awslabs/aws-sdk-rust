@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`phone_number_id(Option<String>)`](crate::operation::update_phone_number::UpdatePhoneNumberOutput::phone_number_id): <p>A unique identifier for the phone number.</p>
     ///   - [`phone_number_arn(Option<String>)`](crate::operation::update_phone_number::UpdatePhoneNumberOutput::phone_number_arn): <p>The Amazon Resource Name (ARN) of the phone number.</p>
     /// - On failure, responds with [`SdkError<UpdatePhoneNumberError>`](crate::operation::update_phone_number::UpdatePhoneNumberError)
-    pub fn update_phone_number(
-        &self,
-    ) -> crate::operation::update_phone_number::builders::UpdatePhoneNumberFluentBuilder {
-        crate::operation::update_phone_number::builders::UpdatePhoneNumberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_phone_number(&self) -> crate::operation::update_phone_number::builders::UpdatePhoneNumberFluentBuilder {
+        crate::operation::update_phone_number::builders::UpdatePhoneNumberFluentBuilder::new(self.handle.clone())
     }
 }

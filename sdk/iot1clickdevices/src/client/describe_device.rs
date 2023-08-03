@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput) with field(s):
     ///   - [`device_description(Option<DeviceDescription>)`](crate::operation::describe_device::DescribeDeviceOutput::device_description): <p>Device details.</p>
     /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::operation::describe_device::DescribeDeviceError)
-    pub fn describe_device(
-        &self,
-    ) -> crate::operation::describe_device::builders::DescribeDeviceFluentBuilder {
-        crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_device(&self) -> crate::operation::describe_device::builders::DescribeDeviceFluentBuilder {
+        crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::new(self.handle.clone())
     }
 }

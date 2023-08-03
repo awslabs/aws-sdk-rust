@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeInstanceStorageConfigOutput`](crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigOutput) with field(s):
     ///   - [`storage_config(Option<InstanceStorageConfig>)`](crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigOutput::storage_config): <p>A valid storage type.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceStorageConfigError>`](crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigError)
-    pub fn describe_instance_storage_config(&self) -> crate::operation::describe_instance_storage_config::builders::DescribeInstanceStorageConfigFluentBuilder{
+    pub fn describe_instance_storage_config(
+        &self,
+    ) -> crate::operation::describe_instance_storage_config::builders::DescribeInstanceStorageConfigFluentBuilder {
         crate::operation::describe_instance_storage_config::builders::DescribeInstanceStorageConfigFluentBuilder::new(self.handle.clone())
     }
 }

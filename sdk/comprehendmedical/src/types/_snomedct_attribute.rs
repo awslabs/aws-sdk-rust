@@ -56,9 +56,7 @@ impl SnomedctAttribute {
         self.relationship_score
     }
     /// <p> The type of relationship that exists between the entity and the related attribute. </p>
-    pub fn relationship_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SnomedctRelationshipType> {
+    pub fn relationship_type(&self) -> ::std::option::Option<&crate::types::SnomedctRelationshipType> {
         self.relationship_type.as_ref()
     }
     /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
@@ -95,9 +93,7 @@ impl SnomedctAttribute {
 
 /// A builder for [`SnomedctAttribute`](crate::types::SnomedctAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnomedctAttributeBuilder {
     pub(crate) category: ::std::option::Option<crate::types::SnomedctEntityCategory>,
     pub(crate) r#type: ::std::option::Option<crate::types::SnomedctAttributeType>,
@@ -109,8 +105,7 @@ pub struct SnomedctAttributeBuilder {
     pub(crate) end_offset: ::std::option::Option<i32>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) traits: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>>,
-    pub(crate) snomedct_concepts:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>>,
+    pub(crate) snomedct_concepts: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>>,
 }
 impl SnomedctAttributeBuilder {
     /// <p> The category of the detected attribute. Possible categories include MEDICAL_CONDITION, ANATOMY, and TEST_TREATMENT_PROCEDURE. </p>
@@ -119,10 +114,7 @@ impl SnomedctAttributeBuilder {
         self
     }
     /// <p> The category of the detected attribute. Possible categories include MEDICAL_CONDITION, ANATOMY, and TEST_TREATMENT_PROCEDURE. </p>
-    pub fn set_category(
-        mut self,
-        input: ::std::option::Option<crate::types::SnomedctEntityCategory>,
-    ) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::SnomedctEntityCategory>) -> Self {
         self.category = input;
         self
     }
@@ -136,10 +128,7 @@ impl SnomedctAttributeBuilder {
         self
     }
     /// <p> The type of attribute. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE,TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, and TREATMENT_NAME. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SnomedctAttributeType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SnomedctAttributeType>) -> Self {
         self.r#type = input;
         self
     }
@@ -181,17 +170,12 @@ impl SnomedctAttributeBuilder {
         self
     }
     /// <p> The type of relationship that exists between the entity and the related attribute. </p>
-    pub fn set_relationship_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SnomedctRelationshipType>,
-    ) -> Self {
+    pub fn set_relationship_type(mut self, input: ::std::option::Option<crate::types::SnomedctRelationshipType>) -> Self {
         self.relationship_type = input;
         self
     }
     /// <p> The type of relationship that exists between the entity and the related attribute. </p>
-    pub fn get_relationship_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::SnomedctRelationshipType> {
+    pub fn get_relationship_type(&self) -> &::std::option::Option<crate::types::SnomedctRelationshipType> {
         &self.relationship_type
     }
     /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
@@ -262,17 +246,12 @@ impl SnomedctAttributeBuilder {
         self
     }
     /// <p> Contextual information for an attribute. Examples include signs, symptoms, diagnosis, and negation. </p>
-    pub fn set_traits(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>>,
-    ) -> Self {
+    pub fn set_traits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>>) -> Self {
         self.traits = input;
         self
     }
     /// <p> Contextual information for an attribute. Examples include signs, symptoms, diagnosis, and negation. </p>
-    pub fn get_traits(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>> {
+    pub fn get_traits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>> {
         &self.traits
     }
     /// Appends an item to `snomedct_concepts`.
@@ -287,17 +266,12 @@ impl SnomedctAttributeBuilder {
         self
     }
     /// <p> The SNOMED-CT concepts specific to an attribute, along with a score indicating the likelihood of the match. </p>
-    pub fn set_snomedct_concepts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>>,
-    ) -> Self {
+    pub fn set_snomedct_concepts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>>) -> Self {
         self.snomedct_concepts = input;
         self
     }
     /// <p> The SNOMED-CT concepts specific to an attribute, along with a score indicating the likelihood of the match. </p>
-    pub fn get_snomedct_concepts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>> {
+    pub fn get_snomedct_concepts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>> {
         &self.snomedct_concepts
     }
     /// Consumes the builder and constructs a [`SnomedctAttribute`](crate::types::SnomedctAttribute).

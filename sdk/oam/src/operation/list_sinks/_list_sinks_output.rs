@@ -35,9 +35,7 @@ impl ListSinksOutput {
 
 /// A builder for [`ListSinksOutput`](crate::operation::list_sinks::ListSinksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSinksOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListSinksItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListSinksOutputBuilder {
         self
     }
     /// <p>An array of structures that contain the information about the returned sinks.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListSinksItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListSinksItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>An array of structures that contain the information about the returned sinks.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSinksItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSinksItem>> {
         &self.items
     }
     /// <p>The token to use when requesting the next set of sinks.</p>

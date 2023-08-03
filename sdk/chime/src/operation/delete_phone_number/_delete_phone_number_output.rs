@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePhoneNumberOutput {
 }
 impl DeletePhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`DeletePhoneNumberOutput`](crate::operation::delete_phone_number::DeletePhoneNumberOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_phone_number::builders::DeletePhoneNumberOutputBuilder {
+    pub fn builder() -> crate::operation::delete_phone_number::builders::DeletePhoneNumberOutputBuilder {
         crate::operation::delete_phone_number::builders::DeletePhoneNumberOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePhoneNumberOutput`](crate::operation::delete_phone_number::DeletePhoneNumberOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePhoneNumberOutputBuilder {
     _request_id: Option<String>,
 }

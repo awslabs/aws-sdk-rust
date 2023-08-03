@@ -56,9 +56,7 @@ impl InternalException {
 
 /// A builder for [`InternalException`](crate::types::error::InternalException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InternalExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) retry_after_seconds: ::std::option::Option<i32>,
@@ -100,10 +98,7 @@ impl InternalExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

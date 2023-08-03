@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateFindingsReportOutput {
 }
 impl CreateFindingsReportOutput {
     /// Creates a new builder-style object to manufacture [`CreateFindingsReportOutput`](crate::operation::create_findings_report::CreateFindingsReportOutput).
-    pub fn builder(
-    ) -> crate::operation::create_findings_report::builders::CreateFindingsReportOutputBuilder {
+    pub fn builder() -> crate::operation::create_findings_report::builders::CreateFindingsReportOutputBuilder {
         crate::operation::create_findings_report::builders::CreateFindingsReportOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateFindingsReportOutput`](crate::operation::create_findings_report::CreateFindingsReportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateFindingsReportOutputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

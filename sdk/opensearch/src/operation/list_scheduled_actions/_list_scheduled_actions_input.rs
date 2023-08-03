@@ -29,17 +29,14 @@ impl ListScheduledActionsInput {
 }
 impl ListScheduledActionsInput {
     /// Creates a new builder-style object to manufacture [`ListScheduledActionsInput`](crate::operation::list_scheduled_actions::ListScheduledActionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_scheduled_actions::builders::ListScheduledActionsInputBuilder {
+    pub fn builder() -> crate::operation::list_scheduled_actions::builders::ListScheduledActionsInputBuilder {
         crate::operation::list_scheduled_actions::builders::ListScheduledActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListScheduledActionsInput`](crate::operation::list_scheduled_actions::ListScheduledActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScheduledActionsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -91,16 +88,12 @@ impl ListScheduledActionsInputBuilder {
     /// Consumes the builder and constructs a [`ListScheduledActionsInput`](crate::operation::list_scheduled_actions::ListScheduledActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_scheduled_actions::ListScheduledActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_scheduled_actions::ListScheduledActionsInput {
-                domain_name: self.domain_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_scheduled_actions::ListScheduledActionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_scheduled_actions::ListScheduledActionsInput {
+            domain_name: self.domain_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

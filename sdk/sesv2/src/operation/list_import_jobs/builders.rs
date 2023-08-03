@@ -10,10 +10,7 @@ impl ListImportJobsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_import_jobs::ListImportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_import_jobs::ListImportJobsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_import_jobs::ListImportJobsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_import_jobs();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListImportJobsFluentBuilder {
         }
     }
     /// Access the ListImportJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_import_jobs::builders::ListImportJobsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_import_jobs::builders::ListImportJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListImportJobsFluentBuilder {
             crate::operation::list_import_jobs::ListImportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_import_jobs::ListImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_import_jobs::ListImportJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListImportJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListImportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_import_jobs::ListImportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_import_jobs::ListImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_import_jobs::ListImportJobsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListImportJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_import_jobs::ListImportJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_import_jobs::ListImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_import_jobs::ListImportJobsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListImportJobsFluentBuilder {
             crate::operation::list_import_jobs::ListImportJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_import_jobs::ListImportJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_import_jobs::ListImportJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_import_jobs::paginator::ListImportJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_import_jobs::paginator::ListImportJobsPaginator {
-        crate::operation::list_import_jobs::paginator::ListImportJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_import_jobs::paginator::ListImportJobsPaginator {
+        crate::operation::list_import_jobs::paginator::ListImportJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
     pub fn import_destination_type(mut self, input: crate::types::ImportDestinationType) -> Self {
@@ -139,17 +118,12 @@ impl ListImportJobsFluentBuilder {
         self
     }
     /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
-    pub fn set_import_destination_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportDestinationType>,
-    ) -> Self {
+    pub fn set_import_destination_type(mut self, input: ::std::option::Option<crate::types::ImportDestinationType>) -> Self {
         self.inner = self.inner.set_import_destination_type(input);
         self
     }
     /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
-    pub fn get_import_destination_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImportDestinationType> {
+    pub fn get_import_destination_type(&self) -> &::std::option::Option<crate::types::ImportDestinationType> {
         self.inner.get_import_destination_type()
     }
     /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>

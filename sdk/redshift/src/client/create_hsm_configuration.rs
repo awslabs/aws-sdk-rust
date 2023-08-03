@@ -13,10 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateHsmConfigurationOutput`](crate::operation::create_hsm_configuration::CreateHsmConfigurationOutput) with field(s):
     ///   - [`hsm_configuration(Option<HsmConfiguration>)`](crate::operation::create_hsm_configuration::CreateHsmConfigurationOutput::hsm_configuration): <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
     /// - On failure, responds with [`SdkError<CreateHsmConfigurationError>`](crate::operation::create_hsm_configuration::CreateHsmConfigurationError)
-    pub fn create_hsm_configuration(
-        &self,
-    ) -> crate::operation::create_hsm_configuration::builders::CreateHsmConfigurationFluentBuilder
-    {
+    pub fn create_hsm_configuration(&self) -> crate::operation::create_hsm_configuration::builders::CreateHsmConfigurationFluentBuilder {
         crate::operation::create_hsm_configuration::builders::CreateHsmConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

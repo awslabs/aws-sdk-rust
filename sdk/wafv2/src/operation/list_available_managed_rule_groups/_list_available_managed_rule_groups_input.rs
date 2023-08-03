@@ -39,16 +39,14 @@ impl ListAvailableManagedRuleGroupsInput {
 }
 impl ListAvailableManagedRuleGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListAvailableManagedRuleGroupsInput`](crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsInput).
-    pub fn builder() -> crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsInputBuilder{
+    pub fn builder() -> crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsInputBuilder {
         crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAvailableManagedRuleGroupsInput`](crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupsInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -121,13 +119,10 @@ impl ListAvailableManagedRuleGroupsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsInput {
-                scope: self.scope
-                ,
-                next_marker: self.next_marker
-                ,
-                limit: self.limit
-                ,
-            }
+                scope: self.scope,
+                next_marker: self.next_marker,
+                limit: self.limit,
+            },
         )
     }
 }

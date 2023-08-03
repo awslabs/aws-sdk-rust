@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for PutScheduledUpdateGroupActionOutput {
 }
 impl PutScheduledUpdateGroupActionOutput {
     /// Creates a new builder-style object to manufacture [`PutScheduledUpdateGroupActionOutput`](crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionOutput).
-    pub fn builder() -> crate::operation::put_scheduled_update_group_action::builders::PutScheduledUpdateGroupActionOutputBuilder{
+    pub fn builder() -> crate::operation::put_scheduled_update_group_action::builders::PutScheduledUpdateGroupActionOutputBuilder {
         crate::operation::put_scheduled_update_group_action::builders::PutScheduledUpdateGroupActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutScheduledUpdateGroupActionOutput`](crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutScheduledUpdateGroupActionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl PutScheduledUpdateGroupActionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutScheduledUpdateGroupActionOutput`](crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionOutput
-    {
+    pub fn build(self) -> crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionOutput {
         crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionOutput {
             _request_id: self._request_id,
         }

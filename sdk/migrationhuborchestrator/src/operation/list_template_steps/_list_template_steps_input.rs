@@ -36,17 +36,14 @@ impl ListTemplateStepsInput {
 }
 impl ListTemplateStepsInput {
     /// Creates a new builder-style object to manufacture [`ListTemplateStepsInput`](crate::operation::list_template_steps::ListTemplateStepsInput).
-    pub fn builder(
-    ) -> crate::operation::list_template_steps::builders::ListTemplateStepsInputBuilder {
+    pub fn builder() -> crate::operation::list_template_steps::builders::ListTemplateStepsInputBuilder {
         crate::operation::list_template_steps::builders::ListTemplateStepsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTemplateStepsInput`](crate::operation::list_template_steps::ListTemplateStepsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplateStepsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -97,18 +94,12 @@ impl ListTemplateStepsInputBuilder {
         &self.template_id
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the step group.</p>
-    pub fn set_step_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_group_id = input;
         self
     }
@@ -119,17 +110,12 @@ impl ListTemplateStepsInputBuilder {
     /// Consumes the builder and constructs a [`ListTemplateStepsInput`](crate::operation::list_template_steps::ListTemplateStepsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_template_steps::ListTemplateStepsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_template_steps::ListTemplateStepsInput {
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-                template_id: self.template_id,
-                step_group_id: self.step_group_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_template_steps::ListTemplateStepsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_template_steps::ListTemplateStepsInput {
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+            template_id: self.template_id,
+            step_group_id: self.step_group_id,
+        })
     }
 }

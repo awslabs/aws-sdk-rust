@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`health_check_ids(Option<Vec<String>>)`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput::health_check_ids): <p>Identifiers for the health checks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput::next_token): <p>Next token for listing health checks.</p>
     /// - On failure, responds with [`SdkError<ListAssociatedRoute53HealthChecksError>`](crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksError)
-    pub fn list_associated_route53_health_checks(&self) -> crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksFluentBuilder{
+    pub fn list_associated_route53_health_checks(
+        &self,
+    ) -> crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksFluentBuilder {
         crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksFluentBuilder::new(self.handle.clone())
     }
 }

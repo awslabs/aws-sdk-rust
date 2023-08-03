@@ -5,8 +5,7 @@
 pub struct DescribeAcceleratorsOutput {
     /// <p> The details of the Elastic Inference Accelerators. </p>
     #[doc(hidden)]
-    pub accelerator_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>>,
+    pub accelerator_set: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>>,
     /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeAcceleratorsOutput {
 }
 impl DescribeAcceleratorsOutput {
     /// <p> The details of the Elastic Inference Accelerators. </p>
-    pub fn accelerator_set(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ElasticInferenceAccelerator]> {
+    pub fn accelerator_set(&self) -> ::std::option::Option<&[crate::types::ElasticInferenceAccelerator]> {
         self.accelerator_set.as_deref()
     }
     /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeAcceleratorsOutput {
 }
 impl DescribeAcceleratorsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAcceleratorsOutput`](crate::operation::describe_accelerators::DescribeAcceleratorsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_accelerators::builders::DescribeAcceleratorsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_accelerators::builders::DescribeAcceleratorsOutputBuilder {
         crate::operation::describe_accelerators::builders::DescribeAcceleratorsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAcceleratorsOutput`](crate::operation::describe_accelerators::DescribeAcceleratorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorsOutputBuilder {
-    pub(crate) accelerator_set:
-        ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>>,
+    pub(crate) accelerator_set: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl DescribeAcceleratorsOutputBuilder {
         self
     }
     /// <p> The details of the Elastic Inference Accelerators. </p>
-    pub fn set_accelerator_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>>,
-    ) -> Self {
+    pub fn set_accelerator_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>>) -> Self {
         self.accelerator_set = input;
         self
     }
     /// <p> The details of the Elastic Inference Accelerators. </p>
-    pub fn get_accelerator_set(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>> {
+    pub fn get_accelerator_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>> {
         &self.accelerator_set
     }
     /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>

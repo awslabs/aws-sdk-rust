@@ -5,16 +5,16 @@ pub use crate::operation::set_platform_application_attributes::_set_platform_app
 
 impl SetPlatformApplicationAttributesInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.set_platform_application_attributes();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl SetPlatformApplicationAttributesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetPlatformApplicationAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::set_platform_application_attributes::builders::SetPlatformApplicationAttributesInputBuilder,
+    inner: crate::operation::set_platform_application_attributes::builders::SetPlatformApplicationAttributesInputBuilder,
 }
 impl SetPlatformApplicationAttributesFluentBuilder {
     /// Creates a new `SetPlatformApplicationAttributes`.
@@ -37,15 +37,20 @@ impl SetPlatformApplicationAttributesFluentBuilder {
         }
     }
     /// Access the SetPlatformApplicationAttributes as a reference.
-    pub fn as_input(&self) -> &crate::operation::set_platform_application_attributes::builders::SetPlatformApplicationAttributesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::set_platform_application_attributes::builders::SetPlatformApplicationAttributesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl SetPlatformApplicationAttributesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl SetPlatformApplicationAttributesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributes,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
-    pub fn platform_application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn platform_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_application_arn(input.into());
         self
     }
     /// <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
-    pub fn set_platform_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_platform_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_application_arn(input);
         self
     }
@@ -151,11 +160,7 @@ impl SetPlatformApplicationAttributesFluentBuilder {
     /// <li> <p> <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p> </li>
     /// <li> <p> <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p> </li>
     /// </ul>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
@@ -192,12 +197,7 @@ impl SetPlatformApplicationAttributesFluentBuilder {
     /// <li> <p> <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p> </li>
     /// <li> <p> <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p> </li>
     /// </ul>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
@@ -234,11 +234,7 @@ impl SetPlatformApplicationAttributesFluentBuilder {
     /// <li> <p> <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p> </li>
     /// <li> <p> <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p> </li>
     /// </ul>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
 }

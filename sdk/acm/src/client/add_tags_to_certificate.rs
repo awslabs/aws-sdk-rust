@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`tags(Vec<Tag>)`](crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateFluentBuilder::set_tags): <p>The key-value pair that defines the tag. The tag value is optional.</p>
     /// - On success, responds with [`AddTagsToCertificateOutput`](crate::operation::add_tags_to_certificate::AddTagsToCertificateOutput)
     /// - On failure, responds with [`SdkError<AddTagsToCertificateError>`](crate::operation::add_tags_to_certificate::AddTagsToCertificateError)
-    pub fn add_tags_to_certificate(
-        &self,
-    ) -> crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateFluentBuilder
-    {
-        crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn add_tags_to_certificate(&self) -> crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateFluentBuilder {
+        crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateFluentBuilder::new(self.handle.clone())
     }
 }

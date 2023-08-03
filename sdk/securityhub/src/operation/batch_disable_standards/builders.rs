@@ -38,10 +38,7 @@ impl BatchDisableStandardsFluentBuilder {
         }
     }
     /// Access the BatchDisableStandards as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_disable_standards::builders::BatchDisableStandardsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::batch_disable_standards::builders::BatchDisableStandardsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl BatchDisableStandardsFluentBuilder {
             crate::operation::batch_disable_standards::BatchDisableStandards,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disable_standards::BatchDisableStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disable_standards::BatchDisableStandardsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl BatchDisableStandardsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl BatchDisableStandardsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disable_standards::BatchDisableStandardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disable_standards::BatchDisableStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disable_standards::BatchDisableStandardsError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl BatchDisableStandardsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disable_standards::BatchDisableStandardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disable_standards::BatchDisableStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disable_standards::BatchDisableStandardsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl BatchDisableStandardsFluentBuilder {
             crate::operation::batch_disable_standards::BatchDisableStandards,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_disable_standards::BatchDisableStandardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_disable_standards::BatchDisableStandardsError>,
     > {
         self.customize_middleware().await
     }
@@ -129,25 +115,17 @@ impl BatchDisableStandardsFluentBuilder {
     /// To override the contents of this collection use [`set_standards_subscription_arns`](Self::set_standards_subscription_arns).
     ///
     /// <p>The ARNs of the standards subscriptions to disable.</p>
-    pub fn standards_subscription_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standards_subscription_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.standards_subscription_arns(input.into());
         self
     }
     /// <p>The ARNs of the standards subscriptions to disable.</p>
-    pub fn set_standards_subscription_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_standards_subscription_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_standards_subscription_arns(input);
         self
     }
     /// <p>The ARNs of the standards subscriptions to disable.</p>
-    pub fn get_standards_subscription_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_standards_subscription_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_standards_subscription_arns()
     }
 }

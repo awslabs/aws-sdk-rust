@@ -30,9 +30,7 @@ impl PermissionEntry {
 
 /// A builder for [`PermissionEntry`](crate::types::PermissionEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PermissionEntryBuilder {
     pub(crate) user: ::std::option::Option<crate::types::User>,
     pub(crate) role: ::std::option::Option<crate::types::Role>,

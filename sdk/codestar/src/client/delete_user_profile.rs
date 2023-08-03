@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteUserProfileOutput`](crate::operation::delete_user_profile::DeleteUserProfileOutput) with field(s):
     ///   - [`user_arn(Option<String>)`](crate::operation::delete_user_profile::DeleteUserProfileOutput::user_arn): <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
     /// - On failure, responds with [`SdkError<DeleteUserProfileError>`](crate::operation::delete_user_profile::DeleteUserProfileError)
-    pub fn delete_user_profile(
-        &self,
-    ) -> crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder {
-        crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_user_profile(&self) -> crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder {
+        crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::new(self.handle.clone())
     }
 }

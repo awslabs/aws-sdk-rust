@@ -36,9 +36,7 @@ impl GetAssetInput {
 
 /// A builder for [`GetAssetInput`](crate::operation::get_asset::GetAssetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssetInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
@@ -88,12 +86,7 @@ impl GetAssetInputBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`GetAssetInput`](crate::operation::get_asset::GetAssetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_asset::GetAssetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_asset::GetAssetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_asset::GetAssetInput {
             asset_id: self.asset_id,
             data_set_id: self.data_set_id,

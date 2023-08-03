@@ -16,7 +16,9 @@ impl super::Client {
     ///   - [`message(Option<String>)`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput::message): <p>The output message from the list action, if applicable.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     /// - On failure, responds with [`SdkError<ListWorkflowStepExecutionsError>`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsError)
-    pub fn list_workflow_step_executions(&self) -> crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsFluentBuilder{
+    pub fn list_workflow_step_executions(
+        &self,
+    ) -> crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsFluentBuilder {
         crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsFluentBuilder::new(self.handle.clone())
     }
 }

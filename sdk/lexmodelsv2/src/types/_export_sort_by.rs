@@ -30,9 +30,7 @@ impl ExportSortBy {
 
 /// A builder for [`ExportSortBy`](crate::types::ExportSortBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportSortByBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::ExportSortAttribute>,
     pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
@@ -44,10 +42,7 @@ impl ExportSortByBuilder {
         self
     }
     /// <p>The export field to use for sorting.</p>
-    pub fn set_attribute(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportSortAttribute>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::ExportSortAttribute>) -> Self {
         self.attribute = input;
         self
     }

@@ -83,17 +83,14 @@ impl DescribeOptionGroupsInput {
 }
 impl DescribeOptionGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeOptionGroupsInput`](crate::operation::describe_option_groups::DescribeOptionGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_option_groups::builders::DescribeOptionGroupsInputBuilder {
+    pub fn builder() -> crate::operation::describe_option_groups::builders::DescribeOptionGroupsInputBuilder {
         crate::operation::describe_option_groups::builders::DescribeOptionGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOptionGroupsInput`](crate::operation::describe_option_groups::DescribeOptionGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOptionGroupsInputBuilder {
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -104,18 +101,12 @@ pub struct DescribeOptionGroupsInputBuilder {
 }
 impl DescribeOptionGroupsInputBuilder {
     /// <p>The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.</p>
-    pub fn option_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.</p>
-    pub fn set_option_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_group_name = input;
         self
     }
@@ -135,10 +126,7 @@ impl DescribeOptionGroupsInputBuilder {
         self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -237,18 +225,12 @@ impl DescribeOptionGroupsInputBuilder {
         &self.engine_name
     }
     /// <p>Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified.</p>
-    pub fn major_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn major_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified.</p>
-    pub fn set_major_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.major_engine_version = input;
         self
     }
@@ -259,19 +241,15 @@ impl DescribeOptionGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOptionGroupsInput`](crate::operation::describe_option_groups::DescribeOptionGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_option_groups::DescribeOptionGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_option_groups::DescribeOptionGroupsInput {
-                option_group_name: self.option_group_name,
-                filters: self.filters,
-                marker: self.marker,
-                max_records: self.max_records,
-                engine_name: self.engine_name,
-                major_engine_version: self.major_engine_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_option_groups::DescribeOptionGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_option_groups::DescribeOptionGroupsInput {
+            option_group_name: self.option_group_name,
+            filters: self.filters,
+            marker: self.marker,
+            max_records: self.max_records,
+            engine_name: self.engine_name,
+            major_engine_version: self.major_engine_version,
+        })
     }
 }

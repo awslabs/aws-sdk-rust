@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListCoreDevicesOutput {
 }
 impl ListCoreDevicesOutput {
     /// Creates a new builder-style object to manufacture [`ListCoreDevicesOutput`](crate::operation::list_core_devices::ListCoreDevicesOutput).
-    pub fn builder() -> crate::operation::list_core_devices::builders::ListCoreDevicesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_core_devices::builders::ListCoreDevicesOutputBuilder {
         crate::operation::list_core_devices::builders::ListCoreDevicesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCoreDevicesOutput`](crate::operation::list_core_devices::ListCoreDevicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCoreDevicesOutputBuilder {
     pub(crate) core_devices: ::std::option::Option<::std::vec::Vec<crate::types::CoreDevice>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListCoreDevicesOutputBuilder {
         self
     }
     /// <p>A list that summarizes each core device.</p>
-    pub fn set_core_devices(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoreDevice>>,
-    ) -> Self {
+    pub fn set_core_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoreDevice>>) -> Self {
         self.core_devices = input;
         self
     }
     /// <p>A list that summarizes each core device.</p>
-    pub fn get_core_devices(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreDevice>> {
+    pub fn get_core_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreDevice>> {
         &self.core_devices
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>

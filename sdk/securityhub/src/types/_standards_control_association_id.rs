@@ -30,27 +30,19 @@ impl StandardsControlAssociationId {
 
 /// A builder for [`StandardsControlAssociationId`](crate::types::StandardsControlAssociationId).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StandardsControlAssociationIdBuilder {
     pub(crate) security_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) standards_arn: ::std::option::Option<::std::string::String>,
 }
 impl StandardsControlAssociationIdBuilder {
     /// <p> The unique identifier (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) of a security control across standards. </p>
-    pub fn security_control_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) of a security control across standards. </p>
-    pub fn set_security_control_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_control_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl StandardsControlAssociationIdBuilder {
         &self.security_control_id
     }
     /// <p> The ARN of a standard. </p>
-    pub fn standards_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standards_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of a standard. </p>
-    pub fn set_standards_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standards_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standards_arn = input;
         self
     }

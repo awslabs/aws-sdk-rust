@@ -44,9 +44,7 @@ impl RStudioServerProDomainSettings {
 
 /// A builder for [`RStudioServerProDomainSettings`](crate::types::RStudioServerProDomainSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RStudioServerProDomainSettingsBuilder {
     pub(crate) domain_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) r_studio_connect_url: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct RStudioServerProDomainSettingsBuilder {
 }
 impl RStudioServerProDomainSettingsBuilder {
     /// <p>The ARN of the execution role for the <code>RStudioServerPro</code> Domain-level app.</p>
-    pub fn domain_execution_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the execution role for the <code>RStudioServerPro</code> Domain-level app.</p>
-    pub fn set_domain_execution_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_execution_role_arn = input;
         self
     }
@@ -75,18 +67,12 @@ impl RStudioServerProDomainSettingsBuilder {
         &self.domain_execution_role_arn
     }
     /// <p>A URL pointing to an RStudio Connect server.</p>
-    pub fn r_studio_connect_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn r_studio_connect_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r_studio_connect_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A URL pointing to an RStudio Connect server.</p>
-    pub fn set_r_studio_connect_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_r_studio_connect_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r_studio_connect_url = input;
         self
     }
@@ -95,25 +81,17 @@ impl RStudioServerProDomainSettingsBuilder {
         &self.r_studio_connect_url
     }
     /// <p>A URL pointing to an RStudio Package Manager server.</p>
-    pub fn r_studio_package_manager_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn r_studio_package_manager_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r_studio_package_manager_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A URL pointing to an RStudio Package Manager server.</p>
-    pub fn set_r_studio_package_manager_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_r_studio_package_manager_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r_studio_package_manager_url = input;
         self
     }
     /// <p>A URL pointing to an RStudio Package Manager server.</p>
-    pub fn get_r_studio_package_manager_url(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_r_studio_package_manager_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.r_studio_package_manager_url
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -122,10 +100,7 @@ impl RStudioServerProDomainSettingsBuilder {
         self
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
-    pub fn set_default_resource_spec(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSpec>,
-    ) -> Self {
+    pub fn set_default_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
         self.default_resource_spec = input;
         self
     }

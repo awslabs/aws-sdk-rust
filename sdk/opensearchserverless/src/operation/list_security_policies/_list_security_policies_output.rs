@@ -5,8 +5,7 @@
 pub struct ListSecurityPoliciesOutput {
     /// <p>Details about the security policies in your account.</p>
     #[doc(hidden)]
-    pub security_policy_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityPolicySummary>>,
+    pub security_policy_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SecurityPolicySummary>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSecurityPoliciesOutput {
 }
 impl ListSecurityPoliciesOutput {
     /// <p>Details about the security policies in your account.</p>
-    pub fn security_policy_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SecurityPolicySummary]> {
+    pub fn security_policy_summaries(&self) -> ::std::option::Option<&[crate::types::SecurityPolicySummary]> {
         self.security_policy_summaries.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSecurityPoliciesOutput {
 }
 impl ListSecurityPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityPoliciesOutput`](crate::operation::list_security_policies::ListSecurityPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_security_policies::builders::ListSecurityPoliciesOutputBuilder {
+    pub fn builder() -> crate::operation::list_security_policies::builders::ListSecurityPoliciesOutputBuilder {
         crate::operation::list_security_policies::builders::ListSecurityPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityPoliciesOutput`](crate::operation::list_security_policies::ListSecurityPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityPoliciesOutputBuilder {
-    pub(crate) security_policy_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SecurityPolicySummary>>,
+    pub(crate) security_policy_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SecurityPolicySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListSecurityPoliciesOutputBuilder {
         self
     }
     /// <p>Details about the security policies in your account.</p>
-    pub fn set_security_policy_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityPolicySummary>>,
-    ) -> Self {
+    pub fn set_security_policy_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityPolicySummary>>) -> Self {
         self.security_policy_summaries = input;
         self
     }
     /// <p>Details about the security policies in your account.</p>
-    pub fn get_security_policy_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityPolicySummary>> {
+    pub fn get_security_policy_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityPolicySummary>> {
         &self.security_policy_summaries
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>

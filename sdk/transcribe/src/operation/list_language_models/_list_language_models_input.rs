@@ -36,17 +36,14 @@ impl ListLanguageModelsInput {
 }
 impl ListLanguageModelsInput {
     /// Creates a new builder-style object to manufacture [`ListLanguageModelsInput`](crate::operation::list_language_models::ListLanguageModelsInput).
-    pub fn builder(
-    ) -> crate::operation::list_language_models::builders::ListLanguageModelsInputBuilder {
+    pub fn builder() -> crate::operation::list_language_models::builders::ListLanguageModelsInputBuilder {
         crate::operation::list_language_models::builders::ListLanguageModelsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLanguageModelsInput`](crate::operation::list_language_models::ListLanguageModelsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLanguageModelsInputBuilder {
     pub(crate) status_equals: ::std::option::Option<crate::types::ModelStatus>,
     pub(crate) name_contains: ::std::option::Option<::std::string::String>,
@@ -60,10 +57,7 @@ impl ListLanguageModelsInputBuilder {
         self
     }
     /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you don't include <code>StatusEquals</code>, all custom language models are returned.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
         self.status_equals = input;
         self
     }
@@ -72,18 +66,12 @@ impl ListLanguageModelsInputBuilder {
         &self.status_equals
     }
     /// <p>Returns only the custom language models that contain the specified string. The search is not case sensitive.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns only the custom language models that contain the specified string. The search is not case sensitive.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_contains = input;
         self
     }
@@ -122,17 +110,12 @@ impl ListLanguageModelsInputBuilder {
     /// Consumes the builder and constructs a [`ListLanguageModelsInput`](crate::operation::list_language_models::ListLanguageModelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_language_models::ListLanguageModelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_language_models::ListLanguageModelsInput {
-                status_equals: self.status_equals,
-                name_contains: self.name_contains,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_language_models::ListLanguageModelsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_language_models::ListLanguageModelsInput {
+            status_equals: self.status_equals,
+            name_contains: self.name_contains,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

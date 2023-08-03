@@ -15,17 +15,14 @@ impl PutConfigurationInput {
 }
 impl PutConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationInput`](crate::operation::put_configuration::PutConfigurationInput).
-    pub fn builder() -> crate::operation::put_configuration::builders::PutConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_configuration::builders::PutConfigurationInputBuilder {
         crate::operation::put_configuration::builders::PutConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutConfigurationInput`](crate::operation::put_configuration::PutConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutConfigurationInputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::AppRegistryConfiguration>,
 }
@@ -36,26 +33,18 @@ impl PutConfigurationInputBuilder {
         self
     }
     /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AppRegistryConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AppRegistryConfiguration>) -> Self {
         self.configuration = input;
         self
     }
     /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
-    pub fn get_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AppRegistryConfiguration> {
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AppRegistryConfiguration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`PutConfigurationInput`](crate::operation::put_configuration::PutConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_configuration::PutConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_configuration::PutConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_configuration::PutConfigurationInput {
             configuration: self.configuration,
         })

@@ -29,17 +29,14 @@ impl GetEvidenceFolderInput {
 }
 impl GetEvidenceFolderInput {
     /// Creates a new builder-style object to manufacture [`GetEvidenceFolderInput`](crate::operation::get_evidence_folder::GetEvidenceFolderInput).
-    pub fn builder(
-    ) -> crate::operation::get_evidence_folder::builders::GetEvidenceFolderInputBuilder {
+    pub fn builder() -> crate::operation::get_evidence_folder::builders::GetEvidenceFolderInputBuilder {
         crate::operation::get_evidence_folder::builders::GetEvidenceFolderInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEvidenceFolderInput`](crate::operation::get_evidence_folder::GetEvidenceFolderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEvidenceFolderInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) control_set_id: ::std::option::Option<::std::string::String>,
@@ -47,18 +44,12 @@ pub struct GetEvidenceFolderInputBuilder {
 }
 impl GetEvidenceFolderInputBuilder {
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -67,18 +58,12 @@ impl GetEvidenceFolderInputBuilder {
         &self.assessment_id
     }
     /// <p> The unique identifier for the control set. </p>
-    pub fn control_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the control set. </p>
-    pub fn set_control_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_set_id = input;
         self
     }
@@ -87,18 +72,12 @@ impl GetEvidenceFolderInputBuilder {
         &self.control_set_id
     }
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
-    pub fn evidence_folder_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evidence_folder_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
-    pub fn set_evidence_folder_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evidence_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evidence_folder_id = input;
         self
     }
@@ -109,16 +88,11 @@ impl GetEvidenceFolderInputBuilder {
     /// Consumes the builder and constructs a [`GetEvidenceFolderInput`](crate::operation::get_evidence_folder::GetEvidenceFolderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_evidence_folder::GetEvidenceFolderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_evidence_folder::GetEvidenceFolderInput {
-                assessment_id: self.assessment_id,
-                control_set_id: self.control_set_id,
-                evidence_folder_id: self.evidence_folder_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_evidence_folder::GetEvidenceFolderInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_evidence_folder::GetEvidenceFolderInput {
+            assessment_id: self.assessment_id,
+            control_set_id: self.control_set_id,
+            evidence_folder_id: self.evidence_folder_id,
+        })
     }
 }

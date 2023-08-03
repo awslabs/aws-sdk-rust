@@ -10,10 +10,7 @@ impl UpdateTrustStoreInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_trust_store::UpdateTrustStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_trust_store::UpdateTrustStoreError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_trust_store::UpdateTrustStoreError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_trust_store();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateTrustStoreFluentBuilder {
         }
     }
     /// Access the UpdateTrustStore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_trust_store::builders::UpdateTrustStoreInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_trust_store::builders::UpdateTrustStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateTrustStoreFluentBuilder {
             crate::operation::update_trust_store::UpdateTrustStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_trust_store::UpdateTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_trust_store::UpdateTrustStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateTrustStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateTrustStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_trust_store::UpdateTrustStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_trust_store::UpdateTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_trust_store::UpdateTrustStoreError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateTrustStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_trust_store::UpdateTrustStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_trust_store::UpdateTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_trust_store::UpdateTrustStoreError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl UpdateTrustStoreFluentBuilder {
             crate::operation::update_trust_store::UpdateTrustStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_trust_store::UpdateTrustStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_trust_store::UpdateTrustStoreError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_store_arn(input.into());
         self
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn set_trust_store_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_store_arn(input);
         self
     }
@@ -152,17 +130,12 @@ impl UpdateTrustStoreFluentBuilder {
         self
     }
     /// <p>A list of CA certificates to add to the trust store.</p>
-    pub fn set_certificates_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
-    ) -> Self {
+    pub fn set_certificates_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>) -> Self {
         self.inner = self.inner.set_certificates_to_add(input);
         self
     }
     /// <p>A list of CA certificates to add to the trust store.</p>
-    pub fn get_certificates_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+    pub fn get_certificates_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
         self.inner.get_certificates_to_add()
     }
     /// Appends an item to `certificatesToDelete`.
@@ -170,25 +143,17 @@ impl UpdateTrustStoreFluentBuilder {
     /// To override the contents of this collection use [`set_certificates_to_delete`](Self::set_certificates_to_delete).
     ///
     /// <p>A list of CA certificates to delete from a trust store.</p>
-    pub fn certificates_to_delete(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificates_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificates_to_delete(input.into());
         self
     }
     /// <p>A list of CA certificates to delete from a trust store.</p>
-    pub fn set_certificates_to_delete(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_certificates_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_certificates_to_delete(input);
         self
     }
     /// <p>A list of CA certificates to delete from a trust store.</p>
-    pub fn get_certificates_to_delete(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificates_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_certificates_to_delete()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>

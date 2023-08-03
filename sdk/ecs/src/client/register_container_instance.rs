@@ -15,7 +15,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterContainerInstanceOutput`](crate::operation::register_container_instance::RegisterContainerInstanceOutput) with field(s):
     ///   - [`container_instance(Option<ContainerInstance>)`](crate::operation::register_container_instance::RegisterContainerInstanceOutput::container_instance): <p>The container instance that was registered.</p>
     /// - On failure, responds with [`SdkError<RegisterContainerInstanceError>`](crate::operation::register_container_instance::RegisterContainerInstanceError)
-    pub fn register_container_instance(&self) -> crate::operation::register_container_instance::builders::RegisterContainerInstanceFluentBuilder{
+    pub fn register_container_instance(&self) -> crate::operation::register_container_instance::builders::RegisterContainerInstanceFluentBuilder {
         crate::operation::register_container_instance::builders::RegisterContainerInstanceFluentBuilder::new(self.handle.clone())
     }
 }

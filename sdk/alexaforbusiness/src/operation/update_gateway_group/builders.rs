@@ -10,10 +10,7 @@ impl UpdateGatewayGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_gateway_group::UpdateGatewayGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_group::UpdateGatewayGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_group::UpdateGatewayGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_gateway_group();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateGatewayGroupFluentBuilder {
         }
     }
     /// Access the UpdateGatewayGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_gateway_group::builders::UpdateGatewayGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_gateway_group::builders::UpdateGatewayGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateGatewayGroupFluentBuilder {
             crate::operation::update_gateway_group::UpdateGatewayGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_group::UpdateGatewayGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_group::UpdateGatewayGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateGatewayGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateGatewayGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_gateway_group::UpdateGatewayGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_group::UpdateGatewayGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_group::UpdateGatewayGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateGatewayGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_gateway_group::UpdateGatewayGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_group::UpdateGatewayGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_group::UpdateGatewayGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl UpdateGatewayGroupFluentBuilder {
             crate::operation::update_gateway_group::UpdateGatewayGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_group::UpdateGatewayGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_group::UpdateGatewayGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the gateway group to update.</p>
-    pub fn gateway_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_group_arn(input.into());
         self
     }
     /// <p>The ARN of the gateway group to update.</p>
-    pub fn set_gateway_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_group_arn(input);
         self
     }

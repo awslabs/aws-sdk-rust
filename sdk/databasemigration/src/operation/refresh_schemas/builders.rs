@@ -10,10 +10,7 @@ impl RefreshSchemasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::refresh_schemas::RefreshSchemasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::refresh_schemas::RefreshSchemasError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::refresh_schemas::RefreshSchemasError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.refresh_schemas();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl RefreshSchemasFluentBuilder {
         }
     }
     /// Access the RefreshSchemas as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::refresh_schemas::builders::RefreshSchemasInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::refresh_schemas::builders::RefreshSchemasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl RefreshSchemasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl RefreshSchemasFluentBuilder {
         self.inner.get_endpoint_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_instance_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_instance_arn(input);
         self
     }

@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum StreamProcessorParameterToDelete {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,13 +51,9 @@ pub enum StreamProcessorParameterToDelete {
 impl ::std::convert::From<&str> for StreamProcessorParameterToDelete {
     fn from(s: &str) -> Self {
         match s {
-            "ConnectedHomeMinConfidence" => {
-                StreamProcessorParameterToDelete::ConnectedHomeMinConfidence
-            }
+            "ConnectedHomeMinConfidence" => StreamProcessorParameterToDelete::ConnectedHomeMinConfidence,
             "RegionsOfInterest" => StreamProcessorParameterToDelete::RegionsOfInterest,
-            other => StreamProcessorParameterToDelete::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => StreamProcessorParameterToDelete::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -78,9 +68,7 @@ impl StreamProcessorParameterToDelete {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            StreamProcessorParameterToDelete::ConnectedHomeMinConfidence => {
-                "ConnectedHomeMinConfidence"
-            }
+            StreamProcessorParameterToDelete::ConnectedHomeMinConfidence => "ConnectedHomeMinConfidence",
             StreamProcessorParameterToDelete::RegionsOfInterest => "RegionsOfInterest",
             StreamProcessorParameterToDelete::Unknown(value) => value.as_str(),
         }

@@ -29,16 +29,14 @@ impl UpdatePullRequestApprovalStateInput {
 }
 impl UpdatePullRequestApprovalStateInput {
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestApprovalStateInput`](crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateInput).
-    pub fn builder() -> crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateInputBuilder{
+    pub fn builder() -> crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateInputBuilder {
         crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePullRequestApprovalStateInput`](crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePullRequestApprovalStateInputBuilder {
     pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct UpdatePullRequestApprovalStateInputBuilder {
 }
 impl UpdatePullRequestApprovalStateInputBuilder {
     /// <p>The system-generated ID of the pull request.</p>
-    pub fn pull_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request.</p>
-    pub fn set_pull_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pull_request_id = input;
         self
     }
@@ -85,10 +77,7 @@ impl UpdatePullRequestApprovalStateInputBuilder {
         self
     }
     /// <p>The approval state to associate with the user on the pull request.</p>
-    pub fn set_approval_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ApprovalState>,
-    ) -> Self {
+    pub fn set_approval_state(mut self, input: ::std::option::Option<crate::types::ApprovalState>) -> Self {
         self.approval_state = input;
         self
     }
@@ -105,13 +94,10 @@ impl UpdatePullRequestApprovalStateInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateInput {
-                pull_request_id: self.pull_request_id
-                ,
-                revision_id: self.revision_id
-                ,
-                approval_state: self.approval_state
-                ,
-            }
+                pull_request_id: self.pull_request_id,
+                revision_id: self.revision_id,
+                approval_state: self.approval_state,
+            },
         )
     }
 }

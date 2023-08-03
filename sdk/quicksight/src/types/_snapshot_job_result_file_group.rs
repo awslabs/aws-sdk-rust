@@ -30,13 +30,10 @@ impl SnapshotJobResultFileGroup {
 
 /// A builder for [`SnapshotJobResultFileGroup`](crate::types::SnapshotJobResultFileGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotJobResultFileGroupBuilder {
     pub(crate) files: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>>,
-    pub(crate) s3_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobS3Result>>,
+    pub(crate) s3_results: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobS3Result>>,
 }
 impl SnapshotJobResultFileGroupBuilder {
     /// Appends an item to `files`.
@@ -51,10 +48,7 @@ impl SnapshotJobResultFileGroupBuilder {
         self
     }
     /// <p> A list of <code>SnapshotFile</code> objects.</p>
-    pub fn set_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>>,
-    ) -> Self {
+    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>>) -> Self {
         self.files = input;
         self
     }
@@ -74,17 +68,12 @@ impl SnapshotJobResultFileGroupBuilder {
         self
     }
     /// <p> A list of <code>SnapshotJobS3Result</code> objects.</p>
-    pub fn set_s3_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobS3Result>>,
-    ) -> Self {
+    pub fn set_s3_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobS3Result>>) -> Self {
         self.s3_results = input;
         self
     }
     /// <p> A list of <code>SnapshotJobS3Result</code> objects.</p>
-    pub fn get_s3_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobS3Result>> {
+    pub fn get_s3_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotJobS3Result>> {
         &self.s3_results
     }
     /// Consumes the builder and constructs a [`SnapshotJobResultFileGroup`](crate::types::SnapshotJobResultFileGroup).

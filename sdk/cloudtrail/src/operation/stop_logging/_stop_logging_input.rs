@@ -25,9 +25,7 @@ impl StopLoggingInput {
 
 /// A builder for [`StopLoggingInput`](crate::operation::stop_logging::StopLoggingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopLoggingInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -50,14 +48,7 @@ impl StopLoggingInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StopLoggingInput`](crate::operation::stop_logging::StopLoggingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_logging::StopLoggingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_logging::StopLoggingInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_logging::StopLoggingInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_logging::StopLoggingInput { name: self.name })
     }
 }

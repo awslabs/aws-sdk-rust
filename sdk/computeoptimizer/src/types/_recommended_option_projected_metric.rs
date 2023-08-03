@@ -43,29 +43,20 @@ impl RecommendedOptionProjectedMetric {
 
 /// A builder for [`RecommendedOptionProjectedMetric`](crate::types::RecommendedOptionProjectedMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendedOptionProjectedMetricBuilder {
     pub(crate) recommended_instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) rank: ::std::option::Option<i32>,
-    pub(crate) projected_metrics:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProjectedMetric>>,
+    pub(crate) projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ProjectedMetric>>,
 }
 impl RecommendedOptionProjectedMetricBuilder {
     /// <p>The recommended instance type.</p>
-    pub fn recommended_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommended_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommended_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommended instance type.</p>
-    pub fn set_recommended_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommended_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommended_instance_type = input;
         self
     }
@@ -105,17 +96,12 @@ impl RecommendedOptionProjectedMetricBuilder {
         self
     }
     /// <p>An array of objects that describe a projected utilization metric.</p>
-    pub fn set_projected_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectedMetric>>,
-    ) -> Self {
+    pub fn set_projected_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectedMetric>>) -> Self {
         self.projected_metrics = input;
         self
     }
     /// <p>An array of objects that describe a projected utilization metric.</p>
-    pub fn get_projected_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectedMetric>> {
+    pub fn get_projected_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectedMetric>> {
         &self.projected_metrics
     }
     /// Consumes the builder and constructs a [`RecommendedOptionProjectedMetric`](crate::types::RecommendedOptionProjectedMetric).

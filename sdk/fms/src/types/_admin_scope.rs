@@ -23,9 +23,7 @@ impl AdminScope {
         self.account_scope.as_ref()
     }
     /// <p>Defines the Organizations organizational units that the specified Firewall Manager administrator can apply policies to. For more information about OUs in Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing organizational units (OUs) </a> in the <i>Organizations User Guide</i>.</p>
-    pub fn organizational_unit_scope(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OrganizationalUnitScope> {
+    pub fn organizational_unit_scope(&self) -> ::std::option::Option<&crate::types::OrganizationalUnitScope> {
         self.organizational_unit_scope.as_ref()
     }
     /// <p>Defines the Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
@@ -46,13 +44,10 @@ impl AdminScope {
 
 /// A builder for [`AdminScope`](crate::types::AdminScope).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdminScopeBuilder {
     pub(crate) account_scope: ::std::option::Option<crate::types::AccountScope>,
-    pub(crate) organizational_unit_scope:
-        ::std::option::Option<crate::types::OrganizationalUnitScope>,
+    pub(crate) organizational_unit_scope: ::std::option::Option<crate::types::OrganizationalUnitScope>,
     pub(crate) region_scope: ::std::option::Option<crate::types::RegionScope>,
     pub(crate) policy_type_scope: ::std::option::Option<crate::types::PolicyTypeScope>,
 }
@@ -63,10 +58,7 @@ impl AdminScopeBuilder {
         self
     }
     /// <p>Defines the accounts that the specified Firewall Manager administrator can apply policies to.</p>
-    pub fn set_account_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountScope>,
-    ) -> Self {
+    pub fn set_account_scope(mut self, input: ::std::option::Option<crate::types::AccountScope>) -> Self {
         self.account_scope = input;
         self
     }
@@ -75,25 +67,17 @@ impl AdminScopeBuilder {
         &self.account_scope
     }
     /// <p>Defines the Organizations organizational units that the specified Firewall Manager administrator can apply policies to. For more information about OUs in Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing organizational units (OUs) </a> in the <i>Organizations User Guide</i>.</p>
-    pub fn organizational_unit_scope(
-        mut self,
-        input: crate::types::OrganizationalUnitScope,
-    ) -> Self {
+    pub fn organizational_unit_scope(mut self, input: crate::types::OrganizationalUnitScope) -> Self {
         self.organizational_unit_scope = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the Organizations organizational units that the specified Firewall Manager administrator can apply policies to. For more information about OUs in Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing organizational units (OUs) </a> in the <i>Organizations User Guide</i>.</p>
-    pub fn set_organizational_unit_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationalUnitScope>,
-    ) -> Self {
+    pub fn set_organizational_unit_scope(mut self, input: ::std::option::Option<crate::types::OrganizationalUnitScope>) -> Self {
         self.organizational_unit_scope = input;
         self
     }
     /// <p>Defines the Organizations organizational units that the specified Firewall Manager administrator can apply policies to. For more information about OUs in Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing organizational units (OUs) </a> in the <i>Organizations User Guide</i>.</p>
-    pub fn get_organizational_unit_scope(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationalUnitScope> {
+    pub fn get_organizational_unit_scope(&self) -> &::std::option::Option<crate::types::OrganizationalUnitScope> {
         &self.organizational_unit_scope
     }
     /// <p>Defines the Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
@@ -102,10 +86,7 @@ impl AdminScopeBuilder {
         self
     }
     /// <p>Defines the Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
-    pub fn set_region_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::RegionScope>,
-    ) -> Self {
+    pub fn set_region_scope(mut self, input: ::std::option::Option<crate::types::RegionScope>) -> Self {
         self.region_scope = input;
         self
     }
@@ -119,10 +100,7 @@ impl AdminScopeBuilder {
         self
     }
     /// <p>Defines the Firewall Manager policy types that the specified Firewall Manager administrator can create and manage.</p>
-    pub fn set_policy_type_scope(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyTypeScope>,
-    ) -> Self {
+    pub fn set_policy_type_scope(mut self, input: ::std::option::Option<crate::types::PolicyTypeScope>) -> Self {
         self.policy_type_scope = input;
         self
     }

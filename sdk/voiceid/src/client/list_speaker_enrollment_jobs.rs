@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`job_summaries(Option<Vec<SpeakerEnrollmentJobSummary>>)`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput::job_summaries): <p>A list containing details about each specified speaker enrollment job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     /// - On failure, responds with [`SdkError<ListSpeakerEnrollmentJobsError>`](crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsError)
-    pub fn list_speaker_enrollment_jobs(&self) -> crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder{
+    pub fn list_speaker_enrollment_jobs(&self) -> crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder {
         crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsFluentBuilder::new(self.handle.clone())
     }
 }

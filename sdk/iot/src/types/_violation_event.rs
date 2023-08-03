@@ -21,8 +21,7 @@ pub struct ViolationEvent {
     pub metric_value: ::std::option::Option<crate::types::MetricValue>,
     /// <p> The details of a violation event. </p>
     #[doc(hidden)]
-    pub violation_event_additional_info:
-        ::std::option::Option<crate::types::ViolationEventAdditionalInfo>,
+    pub violation_event_additional_info: ::std::option::Option<crate::types::ViolationEventAdditionalInfo>,
     /// <p>The type of violation event.</p>
     #[doc(hidden)]
     pub violation_event_type: ::std::option::Option<crate::types::ViolationEventType>,
@@ -58,9 +57,7 @@ impl ViolationEvent {
         self.metric_value.as_ref()
     }
     /// <p> The details of a violation event. </p>
-    pub fn violation_event_additional_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ViolationEventAdditionalInfo> {
+    pub fn violation_event_additional_info(&self) -> ::std::option::Option<&crate::types::ViolationEventAdditionalInfo> {
         self.violation_event_additional_info.as_ref()
     }
     /// <p>The type of violation event.</p>
@@ -89,17 +86,14 @@ impl ViolationEvent {
 
 /// A builder for [`ViolationEvent`](crate::types::ViolationEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ViolationEventBuilder {
     pub(crate) violation_id: ::std::option::Option<::std::string::String>,
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) behavior: ::std::option::Option<crate::types::Behavior>,
     pub(crate) metric_value: ::std::option::Option<crate::types::MetricValue>,
-    pub(crate) violation_event_additional_info:
-        ::std::option::Option<crate::types::ViolationEventAdditionalInfo>,
+    pub(crate) violation_event_additional_info: ::std::option::Option<crate::types::ViolationEventAdditionalInfo>,
     pub(crate) violation_event_type: ::std::option::Option<crate::types::ViolationEventType>,
     pub(crate) verification_state: ::std::option::Option<crate::types::VerificationState>,
     pub(crate) verification_state_description: ::std::option::Option<::std::string::String>,
@@ -135,18 +129,12 @@ impl ViolationEventBuilder {
         &self.thing_name
     }
     /// <p>The name of the security profile whose behavior was violated.</p>
-    pub fn security_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the security profile whose behavior was violated.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_profile_name = input;
         self
     }
@@ -174,10 +162,7 @@ impl ViolationEventBuilder {
         self
     }
     /// <p>The value of the metric (the measurement).</p>
-    pub fn set_metric_value(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricValue>,
-    ) -> Self {
+    pub fn set_metric_value(mut self, input: ::std::option::Option<crate::types::MetricValue>) -> Self {
         self.metric_value = input;
         self
     }
@@ -186,25 +171,17 @@ impl ViolationEventBuilder {
         &self.metric_value
     }
     /// <p> The details of a violation event. </p>
-    pub fn violation_event_additional_info(
-        mut self,
-        input: crate::types::ViolationEventAdditionalInfo,
-    ) -> Self {
+    pub fn violation_event_additional_info(mut self, input: crate::types::ViolationEventAdditionalInfo) -> Self {
         self.violation_event_additional_info = ::std::option::Option::Some(input);
         self
     }
     /// <p> The details of a violation event. </p>
-    pub fn set_violation_event_additional_info(
-        mut self,
-        input: ::std::option::Option<crate::types::ViolationEventAdditionalInfo>,
-    ) -> Self {
+    pub fn set_violation_event_additional_info(mut self, input: ::std::option::Option<crate::types::ViolationEventAdditionalInfo>) -> Self {
         self.violation_event_additional_info = input;
         self
     }
     /// <p> The details of a violation event. </p>
-    pub fn get_violation_event_additional_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::ViolationEventAdditionalInfo> {
+    pub fn get_violation_event_additional_info(&self) -> &::std::option::Option<crate::types::ViolationEventAdditionalInfo> {
         &self.violation_event_additional_info
     }
     /// <p>The type of violation event.</p>
@@ -213,17 +190,12 @@ impl ViolationEventBuilder {
         self
     }
     /// <p>The type of violation event.</p>
-    pub fn set_violation_event_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ViolationEventType>,
-    ) -> Self {
+    pub fn set_violation_event_type(mut self, input: ::std::option::Option<crate::types::ViolationEventType>) -> Self {
         self.violation_event_type = input;
         self
     }
     /// <p>The type of violation event.</p>
-    pub fn get_violation_event_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ViolationEventType> {
+    pub fn get_violation_event_type(&self) -> &::std::option::Option<crate::types::ViolationEventType> {
         &self.violation_event_type
     }
     /// <p>The verification state of the violation (detect alarm).</p>
@@ -232,39 +204,26 @@ impl ViolationEventBuilder {
         self
     }
     /// <p>The verification state of the violation (detect alarm).</p>
-    pub fn set_verification_state(
-        mut self,
-        input: ::std::option::Option<crate::types::VerificationState>,
-    ) -> Self {
+    pub fn set_verification_state(mut self, input: ::std::option::Option<crate::types::VerificationState>) -> Self {
         self.verification_state = input;
         self
     }
     /// <p>The verification state of the violation (detect alarm).</p>
-    pub fn get_verification_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerificationState> {
+    pub fn get_verification_state(&self) -> &::std::option::Option<crate::types::VerificationState> {
         &self.verification_state
     }
     /// <p>The description of the verification state of the violation.</p>
-    pub fn verification_state_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn verification_state_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verification_state_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the verification state of the violation.</p>
-    pub fn set_verification_state_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_verification_state_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.verification_state_description = input;
         self
     }
     /// <p>The description of the verification state of the violation.</p>
-    pub fn get_verification_state_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_verification_state_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.verification_state_description
     }
     /// <p>The time the violation event occurred.</p>
@@ -273,10 +232,7 @@ impl ViolationEventBuilder {
         self
     }
     /// <p>The time the violation event occurred.</p>
-    pub fn set_violation_event_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_violation_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.violation_event_time = input;
         self
     }

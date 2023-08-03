@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`snomedct_details(Option<SnomedctDetails>)`](crate::operation::infer_snomedct::InferSnomedctOutput::snomedct_details): <p> The details of the SNOMED-CT revision, including the edition, language, and version date. </p>
     ///   - [`characters(Option<Characters>)`](crate::operation::infer_snomedct::InferSnomedctOutput::characters): <p> The number of characters in the input request documentation. </p>
     /// - On failure, responds with [`SdkError<InferSNOMEDCTError>`](crate::operation::infer_snomedct::InferSNOMEDCTError)
-    pub fn infer_snomedct(
-        &self,
-    ) -> crate::operation::infer_snomedct::builders::InferSNOMEDCTFluentBuilder {
-        crate::operation::infer_snomedct::builders::InferSNOMEDCTFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn infer_snomedct(&self) -> crate::operation::infer_snomedct::builders::InferSNOMEDCTFluentBuilder {
+        crate::operation::infer_snomedct::builders::InferSNOMEDCTFluentBuilder::new(self.handle.clone())
     }
 }

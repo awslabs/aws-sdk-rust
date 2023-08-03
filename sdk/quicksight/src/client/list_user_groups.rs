@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::list_user_groups::ListUserGroupsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_user_groups::ListUserGroupsOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<ListUserGroupsError>`](crate::operation::list_user_groups::ListUserGroupsError)
-    pub fn list_user_groups(
-        &self,
-    ) -> crate::operation::list_user_groups::builders::ListUserGroupsFluentBuilder {
-        crate::operation::list_user_groups::builders::ListUserGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_user_groups(&self) -> crate::operation::list_user_groups::builders::ListUserGroupsFluentBuilder {
+        crate::operation::list_user_groups::builders::ListUserGroupsFluentBuilder::new(self.handle.clone())
     }
 }

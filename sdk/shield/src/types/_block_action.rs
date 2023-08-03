@@ -15,9 +15,7 @@ impl BlockAction {
 
 /// A builder for [`BlockAction`](crate::types::BlockAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BlockActionBuilder {}
 impl BlockActionBuilder {
     /// Consumes the builder and constructs a [`BlockAction`](crate::types::BlockAction).

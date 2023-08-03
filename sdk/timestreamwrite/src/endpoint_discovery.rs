@@ -39,9 +39,7 @@ impl ReloadEndpoint {
     /// Reload the endpoint once
     pub async fn reload_once(&self) {
         match (self.loader)().await {
-            Ok((endpoint, expiry)) => {
-                *self.endpoint.lock().unwrap() = Some(ExpiringEndpoint { endpoint, expiry })
-            }
+            Ok((endpoint, expiry)) => *self.endpoint.lock().unwrap() = Some(ExpiringEndpoint { endpoint, expiry }),
             Err(err) => *self.error.lock().unwrap() = Some(err),
         }
     }
@@ -61,13 +59,7 @@ impl ReloadEndpoint {
     }
 
     async fn reload_increment(&self, now: SystemTime) {
-        let should_reload = self
-            .endpoint
-            .lock()
-            .unwrap()
-            .as_ref()
-            .map(|e| e.is_expired(now))
-            .unwrap_or(true);
+        let should_reload = self.endpoint.lock().unwrap().as_ref().map(|e| e.is_expired(now)).unwrap_or(true);
         if should_reload {
             tracing::debug!("reloading endpoint, previous endpoint was expired");
             self.reload_once().await;
@@ -138,18 +130,13 @@ where
 
 impl EndpointCache {
     fn resolve_endpoint(&self) -> aws_smithy_http::endpoint::Result {
-        self.endpoint
-            .lock()
-            .unwrap()
-            .as_ref()
-            .map(|e| e.endpoint.clone())
-            .ok_or_else(|| {
-                self.error
-                    .lock()
-                    .unwrap()
-                    .take()
-                    .unwrap_or_else(|| ResolveEndpointError::message("no endpoint loaded"))
-            })
+        self.endpoint.lock().unwrap().as_ref().map(|e| e.endpoint.clone()).ok_or_else(|| {
+            self.error
+                .lock()
+                .unwrap()
+                .take()
+                .unwrap_or_else(|| ResolveEndpointError::message("no endpoint loaded"))
+        })
     }
 }
 
@@ -173,12 +160,7 @@ mod test {
     #[allow(unused_must_use)]
     async fn check_traits() {
         let (cache, reloader) = create_cache(
-            || async {
-                Ok((
-                    Endpoint::builder().url("http://foo.com").build(),
-                    SystemTime::now(),
-                ))
-            },
+            || async { Ok((Endpoint::builder().url("http://foo.com").build(), SystemTime::now())) },
             SharedAsyncSleep::new(TokioSleep::new()),
             SharedTimeSource::new(SystemTimeSource::new()),
         )
@@ -196,38 +178,20 @@ mod test {
             move || {
                 let shared_ct = ct.clone();
                 shared_ct.fetch_add(1, Ordering::AcqRel);
-                async move {
-                    Ok((
-                        Endpoint::builder()
-                            .url(format!("http://foo.com/{shared_ct:?}"))
-                            .build(),
-                        expiry,
-                    ))
-                }
+                async move { Ok((Endpoint::builder().url(format!("http://foo.com/{shared_ct:?}")).build(), expiry)) }
             },
             SharedAsyncSleep::new(TokioSleep::new()),
             SharedTimeSource::new(SystemTimeSource::new()),
         )
         .await
         .expect("returns an endpoint");
-        assert_eq!(
-            cache.resolve_endpoint().expect("ok").url(),
-            "http://foo.com/1"
-        );
+        assert_eq!(cache.resolve_endpoint().expect("ok").url(), "http://foo.com/1");
         // 120 second buffer
-        reloader
-            .reload_increment(expiry - Duration::from_secs(240))
-            .await;
-        assert_eq!(
-            cache.resolve_endpoint().expect("ok").url(),
-            "http://foo.com/1"
-        );
+        reloader.reload_increment(expiry - Duration::from_secs(240)).await;
+        assert_eq!(cache.resolve_endpoint().expect("ok").url(), "http://foo.com/1");
 
         reloader.reload_increment(expiry).await;
-        assert_eq!(
-            cache.resolve_endpoint().expect("ok").url(),
-            "http://foo.com/2"
-        );
+        assert_eq!(cache.resolve_endpoint().expect("ok").url(), "http://foo.com/2");
     }
 
     #[tokio::test]
@@ -240,14 +204,7 @@ mod test {
             move || {
                 let shared_ct = ct.clone();
                 shared_ct.fetch_add(1, Ordering::AcqRel);
-                async move {
-                    Ok((
-                        Endpoint::builder()
-                            .url(format!("http://foo.com/{shared_ct:?}"))
-                            .build(),
-                        expiry,
-                    ))
-                }
+                async move { Ok((Endpoint::builder().url(format!("http://foo.com/{shared_ct:?}")).build(), expiry)) }
             },
             SharedAsyncSleep::new(sleep.clone()),
             SharedTimeSource::new(time.clone()),
@@ -258,10 +215,7 @@ mod test {
         assert!(!reload_task.is_finished());
         // expiry occurs after 2 sleeps
         // t = 0
-        assert_eq!(
-            gate.expect_sleep().await.duration(),
-            Duration::from_secs(60)
-        );
+        assert_eq!(gate.expect_sleep().await.duration(), Duration::from_secs(60));
         assert_eq!(cache.resolve_endpoint().unwrap().url(), "http://foo.com/1");
         // t = 60
 

@@ -64,9 +64,7 @@ impl ListWorkflowsInput {
 
 /// A builder for [`ListWorkflowsInput`](crate::operation::list_workflows::ListWorkflowsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
@@ -97,10 +95,7 @@ impl ListWorkflowsInputBuilder {
         self
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
@@ -128,10 +123,7 @@ impl ListWorkflowsInputBuilder {
         self
     }
     /// <p>Retrieve workflows started after timestamp.</p>
-    pub fn set_query_start_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_query_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.query_start_date = input;
         self
     }
@@ -145,10 +137,7 @@ impl ListWorkflowsInputBuilder {
         self
     }
     /// <p>Retrieve workflows ended after timestamp.</p>
-    pub fn set_query_end_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_query_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.query_end_date = input;
         self
     }
@@ -187,10 +176,7 @@ impl ListWorkflowsInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkflowsInput`](crate::operation::list_workflows::ListWorkflowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_workflows::ListWorkflowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workflows::ListWorkflowsInput {
             domain_name: self.domain_name,
             workflow_type: self.workflow_type,

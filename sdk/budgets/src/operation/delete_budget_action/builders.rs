@@ -10,10 +10,7 @@ impl DeleteBudgetActionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_budget_action::DeleteBudgetActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_budget_action::DeleteBudgetActionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_budget_action::DeleteBudgetActionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_budget_action();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteBudgetActionFluentBuilder {
         }
     }
     /// Access the DeleteBudgetAction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_budget_action::builders::DeleteBudgetActionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_budget_action::builders::DeleteBudgetActionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteBudgetActionFluentBuilder {
             crate::operation::delete_budget_action::DeleteBudgetAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_budget_action::DeleteBudgetActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_budget_action::DeleteBudgetActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteBudgetActionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteBudgetActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_budget_action::DeleteBudgetActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_budget_action::DeleteBudgetActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_budget_action::DeleteBudgetActionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteBudgetActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_budget_action::DeleteBudgetActionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_budget_action::DeleteBudgetActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_budget_action::DeleteBudgetActionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteBudgetActionFluentBuilder {
             crate::operation::delete_budget_action::DeleteBudgetAction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_budget_action::DeleteBudgetActionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_budget_action::DeleteBudgetActionError>,
     > {
         self.customize_middleware().await
     }

@@ -382,9 +382,7 @@ impl ResourceRecordSet {
 
 /// A builder for [`ResourceRecordSet`](crate::types::ResourceRecordSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceRecordSetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::RrType>,
@@ -395,8 +393,7 @@ pub struct ResourceRecordSetBuilder {
     pub(crate) failover: ::std::option::Option<crate::types::ResourceRecordSetFailover>,
     pub(crate) multi_value_answer: ::std::option::Option<bool>,
     pub(crate) ttl: ::std::option::Option<i64>,
-    pub(crate) resource_records:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecord>>,
+    pub(crate) resource_records: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecord>>,
     pub(crate) alias_target: ::std::option::Option<crate::types::AliasTarget>,
     pub(crate) health_check_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_policy_instance_id: ::std::option::Option<::std::string::String>,
@@ -520,19 +517,13 @@ impl ResourceRecordSetBuilder {
     }
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set. </p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    pub fn set_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.set_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set. </p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    pub fn set_set_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.set_identifier = input;
         self
     }
@@ -598,10 +589,7 @@ impl ResourceRecordSetBuilder {
     /// <li> <p>You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the region with the best latency from among the regions that you create latency resource record sets for.</p> </li>
     /// <li> <p>You can't create non-latency resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as latency resource record sets.</p> </li>
     /// </ul>
-    pub fn set_region(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceRecordSetRegion>,
-    ) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<crate::types::ResourceRecordSetRegion>) -> Self {
         self.region = input;
         self
     }
@@ -639,10 +627,7 @@ impl ResourceRecordSetBuilder {
     /// <p>Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to the resource that you specify in this record: queries that come from locations for which you haven't created geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those locations.</p>
     /// </important>
     /// <p>You can't create non-geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as geolocation resource record sets.</p>
-    pub fn set_geo_location(
-        mut self,
-        input: ::std::option::Option<crate::types::GeoLocation>,
-    ) -> Self {
+    pub fn set_geo_location(mut self, input: ::std::option::Option<crate::types::GeoLocation>) -> Self {
         self.geo_location = input;
         self
     }
@@ -692,10 +677,7 @@ impl ResourceRecordSetBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li>
     /// </ul>
-    pub fn set_failover(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceRecordSetFailover>,
-    ) -> Self {
+    pub fn set_failover(mut self, input: ::std::option::Option<crate::types::ResourceRecordSetFailover>) -> Self {
         self.failover = input;
         self
     }
@@ -806,19 +788,14 @@ impl ResourceRecordSetBuilder {
     /// <p>Information about the resource records to act upon.</p> <note>
     /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
     /// </note>
-    pub fn set_resource_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecord>>,
-    ) -> Self {
+    pub fn set_resource_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecord>>) -> Self {
         self.resource_records = input;
         self
     }
     /// <p>Information about the resource records to act upon.</p> <note>
     /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
     /// </note>
-    pub fn get_resource_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceRecord>> {
+    pub fn get_resource_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceRecord>> {
         &self.resource_records
     }
     /// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. </p>
@@ -837,10 +814,7 @@ impl ResourceRecordSetBuilder {
     /// <li> <p>You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> </li>
     /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li>
     /// </ul>
-    pub fn set_alias_target(
-        mut self,
-        input: ::std::option::Option<crate::types::AliasTarget>,
-    ) -> Self {
+    pub fn set_alias_target(mut self, input: ::std::option::Option<crate::types::AliasTarget>) -> Self {
         self.alias_target = input;
         self
     }
@@ -896,10 +870,7 @@ impl ResourceRecordSetBuilder {
     /// <li> <p>Associate that health check with the resource record set.</p> </li>
     /// </ul>
     /// </important>
-    pub fn health_check_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_id = ::std::option::Option::Some(input.into());
         self
     }
@@ -946,10 +917,7 @@ impl ResourceRecordSetBuilder {
     /// <li> <p>Associate that health check with the resource record set.</p> </li>
     /// </ul>
     /// </important>
-    pub fn set_health_check_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_id = input;
         self
     }
@@ -1002,20 +970,14 @@ impl ResourceRecordSetBuilder {
     /// <p>When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource record set for.</p> <important>
     /// <p>To delete the resource record set that is associated with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p>
     /// </important>
-    pub fn traffic_policy_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_policy_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_policy_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource record set for.</p> <important>
     /// <p>To delete the resource record set that is associated with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p>
     /// </important>
-    pub fn set_traffic_policy_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_policy_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_policy_instance_id = input;
         self
     }
@@ -1033,18 +995,13 @@ impl ResourceRecordSetBuilder {
     }
     /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
     /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
-    pub fn set_cidr_routing_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CidrRoutingConfig>,
-    ) -> Self {
+    pub fn set_cidr_routing_config(mut self, input: ::std::option::Option<crate::types::CidrRoutingConfig>) -> Self {
         self.cidr_routing_config = input;
         self
     }
     /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
     /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
-    pub fn get_cidr_routing_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CidrRoutingConfig> {
+    pub fn get_cidr_routing_config(&self) -> &::std::option::Option<crate::types::CidrRoutingConfig> {
         &self.cidr_routing_config
     }
     /// Consumes the builder and constructs a [`ResourceRecordSet`](crate::types::ResourceRecordSet).

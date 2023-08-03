@@ -51,9 +51,7 @@ impl OrganizationSummary {
 
 /// A builder for [`OrganizationSummary`](crate::types::OrganizationSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationSummaryBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct OrganizationSummaryBuilder {
 }
 impl OrganizationSummaryBuilder {
     /// <p>The identifier associated with the organization.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier associated with the organization.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_id = input;
         self
     }
@@ -97,18 +89,12 @@ impl OrganizationSummaryBuilder {
         &self.alias
     }
     /// <p>The default email domain associated with the organization.</p>
-    pub fn default_mail_domain(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_mail_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_mail_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default email domain associated with the organization.</p>
-    pub fn set_default_mail_domain(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_mail_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_mail_domain = input;
         self
     }
@@ -117,18 +103,12 @@ impl OrganizationSummaryBuilder {
         &self.default_mail_domain
     }
     /// <p>The error message associated with the organization. It is only present if unexpected behavior has occurred with regards to the organization. It provides insight or solutions regarding unexpected behavior.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message associated with the organization. It is only present if unexpected behavior has occurred with regards to the organization. It provides insight or solutions regarding unexpected behavior.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

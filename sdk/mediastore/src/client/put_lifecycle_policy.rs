@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`lifecycle_policy(impl ::std::convert::Into<String>)`](crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder::lifecycle_policy) / [`set_lifecycle_policy(Option<String>)`](crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder::set_lifecycle_policy): <p>The object lifecycle policy to apply to the container.</p>
     /// - On success, responds with [`PutLifecyclePolicyOutput`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyOutput)
     /// - On failure, responds with [`SdkError<PutLifecyclePolicyError>`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyError)
-    pub fn put_lifecycle_policy(
-        &self,
-    ) -> crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder {
-        crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_lifecycle_policy(&self) -> crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder {
+        crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder::new(self.handle.clone())
     }
 }

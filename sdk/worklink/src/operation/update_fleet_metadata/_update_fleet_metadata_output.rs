@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateFleetMetadataOutput {
 }
 impl UpdateFleetMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetMetadataOutput`](crate::operation::update_fleet_metadata::UpdateFleetMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataOutputBuilder {
-        crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataOutputBuilder {
+        crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFleetMetadataOutput`](crate::operation::update_fleet_metadata::UpdateFleetMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFleetMetadataOutputBuilder {
     _request_id: Option<String>,
 }

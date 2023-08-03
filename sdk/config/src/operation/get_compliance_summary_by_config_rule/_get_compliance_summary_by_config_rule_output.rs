@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for GetComplianceSummaryByConfigRuleOutpu
 }
 impl GetComplianceSummaryByConfigRuleOutput {
     /// Creates a new builder-style object to manufacture [`GetComplianceSummaryByConfigRuleOutput`](crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleOutput).
-    pub fn builder() -> crate::operation::get_compliance_summary_by_config_rule::builders::GetComplianceSummaryByConfigRuleOutputBuilder{
+    pub fn builder() -> crate::operation::get_compliance_summary_by_config_rule::builders::GetComplianceSummaryByConfigRuleOutputBuilder {
         crate::operation::get_compliance_summary_by_config_rule::builders::GetComplianceSummaryByConfigRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetComplianceSummaryByConfigRuleOutput`](crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComplianceSummaryByConfigRuleOutputBuilder {
     pub(crate) compliance_summary: ::std::option::Option<crate::types::ComplianceSummary>,
     _request_id: Option<String>,
@@ -43,17 +41,12 @@ impl GetComplianceSummaryByConfigRuleOutputBuilder {
         self
     }
     /// <p>The number of Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for each.</p>
-    pub fn set_compliance_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ComplianceSummary>,
-    ) -> Self {
+    pub fn set_compliance_summary(mut self, input: ::std::option::Option<crate::types::ComplianceSummary>) -> Self {
         self.compliance_summary = input;
         self
     }
     /// <p>The number of Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for each.</p>
-    pub fn get_compliance_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComplianceSummary> {
+    pub fn get_compliance_summary(&self) -> &::std::option::Option<crate::types::ComplianceSummary> {
         &self.compliance_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -66,10 +59,9 @@ impl GetComplianceSummaryByConfigRuleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetComplianceSummaryByConfigRuleOutput`](crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleOutput).
-    pub fn build(self) -> crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleOutput{
+    pub fn build(self) -> crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleOutput {
         crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleOutput {
-            compliance_summary: self.compliance_summary
-            ,
+            compliance_summary: self.compliance_summary,
             _request_id: self._request_id,
         }
     }

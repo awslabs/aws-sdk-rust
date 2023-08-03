@@ -42,16 +42,15 @@ impl ::aws_http::request_id::RequestId for DescribeCertificateAuthorityAuditRepo
 }
 impl DescribeCertificateAuthorityAuditReportOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificateAuthorityAuditReportOutput`](crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportOutput).
-    pub fn builder() -> crate::operation::describe_certificate_authority_audit_report::builders::DescribeCertificateAuthorityAuditReportOutputBuilder{
+    pub fn builder() -> crate::operation::describe_certificate_authority_audit_report::builders::DescribeCertificateAuthorityAuditReportOutputBuilder
+    {
         crate::operation::describe_certificate_authority_audit_report::builders::DescribeCertificateAuthorityAuditReportOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCertificateAuthorityAuditReportOutput`](crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCertificateAuthorityAuditReportOutputBuilder {
     pub(crate) audit_report_status: ::std::option::Option<crate::types::AuditReportStatus>,
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
@@ -66,32 +65,21 @@ impl DescribeCertificateAuthorityAuditReportOutputBuilder {
         self
     }
     /// <p>Specifies whether report creation is in progress, has succeeded, or has failed.</p>
-    pub fn set_audit_report_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditReportStatus>,
-    ) -> Self {
+    pub fn set_audit_report_status(mut self, input: ::std::option::Option<crate::types::AuditReportStatus>) -> Self {
         self.audit_report_status = input;
         self
     }
     /// <p>Specifies whether report creation is in progress, has succeeded, or has failed.</p>
-    pub fn get_audit_report_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuditReportStatus> {
+    pub fn get_audit_report_status(&self) -> &::std::option::Option<crate::types::AuditReportStatus> {
         &self.audit_report_status
     }
     /// <p>Name of the S3 bucket that contains the report.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the S3 bucket that contains the report.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
@@ -119,10 +107,7 @@ impl DescribeCertificateAuthorityAuditReportOutputBuilder {
         self
     }
     /// <p>The date and time at which the report was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -140,16 +125,12 @@ impl DescribeCertificateAuthorityAuditReportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeCertificateAuthorityAuditReportOutput`](crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportOutput).
-    pub fn build(self) -> crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportOutput{
+    pub fn build(self) -> crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportOutput {
         crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportOutput {
-            audit_report_status: self.audit_report_status
-            ,
-            s3_bucket_name: self.s3_bucket_name
-            ,
-            s3_key: self.s3_key
-            ,
-            created_at: self.created_at
-            ,
+            audit_report_status: self.audit_report_status,
+            s3_bucket_name: self.s3_bucket_name,
+            s3_key: self.s3_key,
+            created_at: self.created_at,
             _request_id: self._request_id,
         }
     }

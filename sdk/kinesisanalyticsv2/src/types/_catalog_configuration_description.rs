@@ -6,14 +6,11 @@
 pub struct CatalogConfigurationDescription {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
-    pub glue_data_catalog_configuration_description:
-        ::std::option::Option<crate::types::GlueDataCatalogConfigurationDescription>,
+    pub glue_data_catalog_configuration_description: ::std::option::Option<crate::types::GlueDataCatalogConfigurationDescription>,
 }
 impl CatalogConfigurationDescription {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
-    pub fn glue_data_catalog_configuration_description(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GlueDataCatalogConfigurationDescription> {
+    pub fn glue_data_catalog_configuration_description(&self) -> ::std::option::Option<&crate::types::GlueDataCatalogConfigurationDescription> {
         self.glue_data_catalog_configuration_description.as_ref()
     }
 }
@@ -26,19 +23,13 @@ impl CatalogConfigurationDescription {
 
 /// A builder for [`CatalogConfigurationDescription`](crate::types::CatalogConfigurationDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CatalogConfigurationDescriptionBuilder {
-    pub(crate) glue_data_catalog_configuration_description:
-        ::std::option::Option<crate::types::GlueDataCatalogConfigurationDescription>,
+    pub(crate) glue_data_catalog_configuration_description: ::std::option::Option<crate::types::GlueDataCatalogConfigurationDescription>,
 }
 impl CatalogConfigurationDescriptionBuilder {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
-    pub fn glue_data_catalog_configuration_description(
-        mut self,
-        input: crate::types::GlueDataCatalogConfigurationDescription,
-    ) -> Self {
+    pub fn glue_data_catalog_configuration_description(mut self, input: crate::types::GlueDataCatalogConfigurationDescription) -> Self {
         self.glue_data_catalog_configuration_description = ::std::option::Option::Some(input);
         self
     }
@@ -51,16 +42,13 @@ impl CatalogConfigurationDescriptionBuilder {
         self
     }
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
-    pub fn get_glue_data_catalog_configuration_description(
-        &self,
-    ) -> &::std::option::Option<crate::types::GlueDataCatalogConfigurationDescription> {
+    pub fn get_glue_data_catalog_configuration_description(&self) -> &::std::option::Option<crate::types::GlueDataCatalogConfigurationDescription> {
         &self.glue_data_catalog_configuration_description
     }
     /// Consumes the builder and constructs a [`CatalogConfigurationDescription`](crate::types::CatalogConfigurationDescription).
     pub fn build(self) -> crate::types::CatalogConfigurationDescription {
         crate::types::CatalogConfigurationDescription {
-            glue_data_catalog_configuration_description: self
-                .glue_data_catalog_configuration_description,
+            glue_data_catalog_configuration_description: self.glue_data_catalog_configuration_description,
         }
     }
 }

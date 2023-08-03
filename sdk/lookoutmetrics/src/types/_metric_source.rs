@@ -41,9 +41,7 @@ impl MetricSource {
         self.rds_source_config.as_ref()
     }
     /// <p>Details about an Amazon Redshift database datasource.</p>
-    pub fn redshift_source_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RedshiftSourceConfig> {
+    pub fn redshift_source_config(&self) -> ::std::option::Option<&crate::types::RedshiftSourceConfig> {
         self.redshift_source_config.as_ref()
     }
     /// <p>Details about an Amazon Athena datasource.</p>
@@ -60,9 +58,7 @@ impl MetricSource {
 
 /// A builder for [`MetricSource`](crate::types::MetricSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricSourceBuilder {
     pub(crate) s3_source_config: ::std::option::Option<crate::types::S3SourceConfig>,
     pub(crate) app_flow_config: ::std::option::Option<crate::types::AppFlowConfig>,
@@ -78,10 +74,7 @@ impl MetricSourceBuilder {
         self
     }
     /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
-    pub fn set_s3_source_config(
-        mut self,
-        input: ::std::option::Option<crate::types::S3SourceConfig>,
-    ) -> Self {
+    pub fn set_s3_source_config(mut self, input: ::std::option::Option<crate::types::S3SourceConfig>) -> Self {
         self.s3_source_config = input;
         self
     }
@@ -95,10 +88,7 @@ impl MetricSourceBuilder {
         self
     }
     /// <p>Details about an AppFlow datasource.</p>
-    pub fn set_app_flow_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AppFlowConfig>,
-    ) -> Self {
+    pub fn set_app_flow_config(mut self, input: ::std::option::Option<crate::types::AppFlowConfig>) -> Self {
         self.app_flow_config = input;
         self
     }
@@ -112,10 +102,7 @@ impl MetricSourceBuilder {
         self
     }
     /// <p>Details about an Amazon CloudWatch monitoring datasource.</p>
-    pub fn set_cloud_watch_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchConfig>,
-    ) -> Self {
+    pub fn set_cloud_watch_config(mut self, input: ::std::option::Option<crate::types::CloudWatchConfig>) -> Self {
         self.cloud_watch_config = input;
         self
     }
@@ -129,10 +116,7 @@ impl MetricSourceBuilder {
         self
     }
     /// <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
-    pub fn set_rds_source_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RdsSourceConfig>,
-    ) -> Self {
+    pub fn set_rds_source_config(mut self, input: ::std::option::Option<crate::types::RdsSourceConfig>) -> Self {
         self.rds_source_config = input;
         self
     }
@@ -146,17 +130,12 @@ impl MetricSourceBuilder {
         self
     }
     /// <p>Details about an Amazon Redshift database datasource.</p>
-    pub fn set_redshift_source_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RedshiftSourceConfig>,
-    ) -> Self {
+    pub fn set_redshift_source_config(mut self, input: ::std::option::Option<crate::types::RedshiftSourceConfig>) -> Self {
         self.redshift_source_config = input;
         self
     }
     /// <p>Details about an Amazon Redshift database datasource.</p>
-    pub fn get_redshift_source_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RedshiftSourceConfig> {
+    pub fn get_redshift_source_config(&self) -> &::std::option::Option<crate::types::RedshiftSourceConfig> {
         &self.redshift_source_config
     }
     /// <p>Details about an Amazon Athena datasource.</p>
@@ -165,17 +144,12 @@ impl MetricSourceBuilder {
         self
     }
     /// <p>Details about an Amazon Athena datasource.</p>
-    pub fn set_athena_source_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AthenaSourceConfig>,
-    ) -> Self {
+    pub fn set_athena_source_config(mut self, input: ::std::option::Option<crate::types::AthenaSourceConfig>) -> Self {
         self.athena_source_config = input;
         self
     }
     /// <p>Details about an Amazon Athena datasource.</p>
-    pub fn get_athena_source_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AthenaSourceConfig> {
+    pub fn get_athena_source_config(&self) -> &::std::option::Option<crate::types::AthenaSourceConfig> {
         &self.athena_source_config
     }
     /// Consumes the builder and constructs a [`MetricSource`](crate::types::MetricSource).

@@ -65,9 +65,7 @@ impl Statement {
 
 /// A builder for [`Statement`](crate::types::Statement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatementBuilder {
     pub(crate) id: ::std::option::Option<i32>,
     pub(crate) code: ::std::option::Option<::std::string::String>,
@@ -126,10 +124,7 @@ impl StatementBuilder {
         self
     }
     /// <p>The output in JSON.</p>
-    pub fn set_output(
-        mut self,
-        input: ::std::option::Option<crate::types::StatementOutput>,
-    ) -> Self {
+    pub fn set_output(mut self, input: ::std::option::Option<crate::types::StatementOutput>) -> Self {
         self.output = input;
         self
     }

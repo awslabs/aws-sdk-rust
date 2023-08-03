@@ -23,9 +23,7 @@ impl BackTestConfiguration {
 
 /// A builder for [`BackTestConfiguration`](crate::types::BackTestConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackTestConfigurationBuilder {
     pub(crate) run_back_test_mode: ::std::option::Option<bool>,
 }

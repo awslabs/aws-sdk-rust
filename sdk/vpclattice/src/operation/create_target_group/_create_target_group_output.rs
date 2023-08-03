@@ -56,17 +56,14 @@ impl ::aws_http::request_id::RequestId for CreateTargetGroupOutput {
 }
 impl CreateTargetGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateTargetGroupOutput`](crate::operation::create_target_group::CreateTargetGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_target_group::builders::CreateTargetGroupOutputBuilder {
+    pub fn builder() -> crate::operation::create_target_group::builders::CreateTargetGroupOutputBuilder {
         crate::operation::create_target_group::builders::CreateTargetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateTargetGroupOutput`](crate::operation::create_target_group::CreateTargetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTargetGroupOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -139,10 +136,7 @@ impl CreateTargetGroupOutputBuilder {
         self
     }
     /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
-    pub fn set_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupConfig>,
-    ) -> Self {
+    pub fn set_config(mut self, input: ::std::option::Option<crate::types::TargetGroupConfig>) -> Self {
         self.config = input;
         self
     }
@@ -156,10 +150,7 @@ impl CreateTargetGroupOutputBuilder {
         self
     }
     /// <p>The operation's status. You can retry the operation if the status is <code>CREATE_FAILED</code>. However, if you retry it while the status is <code>CREATE_IN_PROGRESS</code>, there is no change in the status. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TargetGroupStatus>) -> Self {
         self.status = input;
         self
     }

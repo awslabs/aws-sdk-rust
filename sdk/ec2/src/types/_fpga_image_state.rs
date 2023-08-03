@@ -42,9 +42,7 @@ impl FpgaImageState {
 
 /// A builder for [`FpgaImageState`](crate::types::FpgaImageState).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FpgaImageStateBuilder {
     pub(crate) code: ::std::option::Option<crate::types::FpgaImageStateCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl FpgaImageStateBuilder {
     /// <li> <p> <code>failed</code> - AFI bitstream generation failed.</p> </li>
     /// <li> <p> <code>unavailable</code> - The AFI is no longer available for use.</p> </li>
     /// </ul>
-    pub fn set_code(
-        mut self,
-        input: ::std::option::Option<crate::types::FpgaImageStateCode>,
-    ) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::FpgaImageStateCode>) -> Self {
         self.code = input;
         self
     }

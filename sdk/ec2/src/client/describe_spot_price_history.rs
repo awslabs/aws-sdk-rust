@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     ///   - [`spot_price_history(Option<Vec<SpotPrice>>)`](crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput::spot_price_history): <p>The historical Spot prices.</p>
     /// - On failure, responds with [`SdkError<DescribeSpotPriceHistoryError>`](crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryError)
-    pub fn describe_spot_price_history(&self) -> crate::operation::describe_spot_price_history::builders::DescribeSpotPriceHistoryFluentBuilder{
+    pub fn describe_spot_price_history(&self) -> crate::operation::describe_spot_price_history::builders::DescribeSpotPriceHistoryFluentBuilder {
         crate::operation::describe_spot_price_history::builders::DescribeSpotPriceHistoryFluentBuilder::new(self.handle.clone())
     }
 }

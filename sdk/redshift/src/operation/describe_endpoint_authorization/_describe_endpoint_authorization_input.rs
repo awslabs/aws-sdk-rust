@@ -43,16 +43,14 @@ impl DescribeEndpointAuthorizationInput {
 }
 impl DescribeEndpointAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointAuthorizationInput`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationInput).
-    pub fn builder() -> crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationInputBuilder{
+    pub fn builder() -> crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationInputBuilder {
         crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEndpointAuthorizationInput`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEndpointAuthorizationInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct DescribeEndpointAuthorizationInputBuilder {
 }
 impl DescribeEndpointAuthorizationInputBuilder {
     /// <p>The cluster identifier of the cluster to access.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier of the cluster to access.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -144,14 +136,12 @@ impl DescribeEndpointAuthorizationInputBuilder {
         crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationInput {
-                cluster_identifier: self.cluster_identifier,
-                account: self.account,
-                grantee: self.grantee,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationInput {
+            cluster_identifier: self.cluster_identifier,
+            account: self.account,
+            grantee: self.grantee,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

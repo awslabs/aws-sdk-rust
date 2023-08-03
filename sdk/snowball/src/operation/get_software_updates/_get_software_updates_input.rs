@@ -15,17 +15,14 @@ impl GetSoftwareUpdatesInput {
 }
 impl GetSoftwareUpdatesInput {
     /// Creates a new builder-style object to manufacture [`GetSoftwareUpdatesInput`](crate::operation::get_software_updates::GetSoftwareUpdatesInput).
-    pub fn builder(
-    ) -> crate::operation::get_software_updates::builders::GetSoftwareUpdatesInputBuilder {
+    pub fn builder() -> crate::operation::get_software_updates::builders::GetSoftwareUpdatesInputBuilder {
         crate::operation::get_software_updates::builders::GetSoftwareUpdatesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSoftwareUpdatesInput`](crate::operation::get_software_updates::GetSoftwareUpdatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSoftwareUpdatesInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,7 @@ impl GetSoftwareUpdatesInputBuilder {
     /// Consumes the builder and constructs a [`GetSoftwareUpdatesInput`](crate::operation::get_software_updates::GetSoftwareUpdatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_software_updates::GetSoftwareUpdatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_software_updates::GetSoftwareUpdatesInput {
-                job_id: self.job_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_software_updates::GetSoftwareUpdatesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_software_updates::GetSoftwareUpdatesInput { job_id: self.job_id })
     }
 }

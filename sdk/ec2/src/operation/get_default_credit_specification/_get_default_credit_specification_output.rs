@@ -5,15 +5,12 @@
 pub struct GetDefaultCreditSpecificationOutput {
     /// <p>The default credit option for CPU usage of the instance family.</p>
     #[doc(hidden)]
-    pub instance_family_credit_specification:
-        ::std::option::Option<crate::types::InstanceFamilyCreditSpecification>,
+    pub instance_family_credit_specification: ::std::option::Option<crate::types::InstanceFamilyCreditSpecification>,
     _request_id: Option<String>,
 }
 impl GetDefaultCreditSpecificationOutput {
     /// <p>The default credit option for CPU usage of the instance family.</p>
-    pub fn instance_family_credit_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceFamilyCreditSpecification> {
+    pub fn instance_family_credit_specification(&self) -> ::std::option::Option<&crate::types::InstanceFamilyCreditSpecification> {
         self.instance_family_credit_specification.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for GetDefaultCreditSpecificationOutput {
 }
 impl GetDefaultCreditSpecificationOutput {
     /// Creates a new builder-style object to manufacture [`GetDefaultCreditSpecificationOutput`](crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationOutput).
-    pub fn builder() -> crate::operation::get_default_credit_specification::builders::GetDefaultCreditSpecificationOutputBuilder{
+    pub fn builder() -> crate::operation::get_default_credit_specification::builders::GetDefaultCreditSpecificationOutputBuilder {
         crate::operation::get_default_credit_specification::builders::GetDefaultCreditSpecificationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetDefaultCreditSpecificationOutput`](crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDefaultCreditSpecificationOutputBuilder {
-    pub(crate) instance_family_credit_specification:
-        ::std::option::Option<crate::types::InstanceFamilyCreditSpecification>,
+    pub(crate) instance_family_credit_specification: ::std::option::Option<crate::types::InstanceFamilyCreditSpecification>,
     _request_id: Option<String>,
 }
 impl GetDefaultCreditSpecificationOutputBuilder {
     /// <p>The default credit option for CPU usage of the instance family.</p>
-    pub fn instance_family_credit_specification(
-        mut self,
-        input: crate::types::InstanceFamilyCreditSpecification,
-    ) -> Self {
+    pub fn instance_family_credit_specification(mut self, input: crate::types::InstanceFamilyCreditSpecification) -> Self {
         self.instance_family_credit_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default credit option for CPU usage of the instance family.</p>
-    pub fn set_instance_family_credit_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceFamilyCreditSpecification>,
-    ) -> Self {
+    pub fn set_instance_family_credit_specification(mut self, input: ::std::option::Option<crate::types::InstanceFamilyCreditSpecification>) -> Self {
         self.instance_family_credit_specification = input;
         self
     }
     /// <p>The default credit option for CPU usage of the instance family.</p>
-    pub fn get_instance_family_credit_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceFamilyCreditSpecification> {
+    pub fn get_instance_family_credit_specification(&self) -> &::std::option::Option<crate::types::InstanceFamilyCreditSpecification> {
         &self.instance_family_credit_specification
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,7 @@ impl GetDefaultCreditSpecificationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDefaultCreditSpecificationOutput`](crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationOutput
-    {
+    pub fn build(self) -> crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationOutput {
         crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationOutput {
             instance_family_credit_specification: self.instance_family_credit_specification,
             _request_id: self._request_id,

@@ -23,9 +23,7 @@ impl AmplitudeSourceProperties {
 
 /// A builder for [`AmplitudeSourceProperties`](crate::types::AmplitudeSourceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AmplitudeSourcePropertiesBuilder {
     pub(crate) object: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AmplitudeSourcePropertiesBuilder {
     }
     /// Consumes the builder and constructs a [`AmplitudeSourceProperties`](crate::types::AmplitudeSourceProperties).
     pub fn build(self) -> crate::types::AmplitudeSourceProperties {
-        crate::types::AmplitudeSourceProperties {
-            object: self.object,
-        }
+        crate::types::AmplitudeSourceProperties { object: self.object }
     }
 }

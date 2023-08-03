@@ -28,7 +28,7 @@ impl DescribeDbClusterEndpointsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBClusterEndpointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsInputBuilder,
+    inner: crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsInputBuilder,
 }
 impl DescribeDBClusterEndpointsFluentBuilder {
     /// Creates a new `DescribeDBClusterEndpoints`.
@@ -39,7 +39,7 @@ impl DescribeDBClusterEndpointsFluentBuilder {
         }
     }
     /// Access the DescribeDBClusterEndpoints as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeDBClusterEndpointsFluentBuilder {
             crate::operation::describe_db_cluster_endpoints::DescribeDBClusterEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_endpoints::DescribeDBClusterEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_endpoints::DescribeDBClusterEndpointsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeDBClusterEndpointsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeDBClusterEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_endpoints::DescribeDBClusterEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_endpoints::DescribeDBClusterEndpointsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeDBClusterEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_endpoints::DescribeDBClusterEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_endpoints::DescribeDBClusterEndpointsError>,
     > {
         self.send_middleware().await
     }
@@ -116,31 +107,23 @@ impl DescribeDBClusterEndpointsFluentBuilder {
             crate::operation::describe_db_cluster_endpoints::DescribeDBClusterEndpoints,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_db_cluster_endpoints::DescribeDBClusterEndpointsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_endpoints::DescribeDBClusterEndpointsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_db_cluster_endpoints::paginator::DescribeDbClusterEndpointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_db_cluster_endpoints::paginator::DescribeDbClusterEndpointsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_db_cluster_endpoints::paginator::DescribeDbClusterEndpointsPaginator {
         crate::operation::describe_db_cluster_endpoints::paginator::DescribeDbClusterEndpointsPaginator::new(self.handle, self.inner)
     }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
@@ -149,25 +132,17 @@ impl DescribeDBClusterEndpointsFluentBuilder {
         self.inner.get_db_cluster_identifier()
     }
     /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_endpoint_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_endpoint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_endpoint_identifier(input.into());
         self
     }
     /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_endpoint_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_db_cluster_endpoint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_endpoint_identifier(input);
         self
     }
     /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
-    pub fn get_db_cluster_endpoint_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_db_cluster_endpoint_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_endpoint_identifier()
     }
     /// Appends an item to `Filters`.
@@ -180,10 +155,7 @@ impl DescribeDBClusterEndpointsFluentBuilder {
         self
     }
     /// <p>A set of name-value pairs that define which endpoints to include in the output. The filters are specified as name-value pairs, in the format <code>Name=<i>endpoint_type</i>,Values=<i>endpoint_type1</i>,<i>endpoint_type2</i>,...</code>. <code>Name</code> can be one of: <code>db-cluster-endpoint-type</code>, <code>db-cluster-endpoint-custom-type</code>, <code>db-cluster-endpoint-id</code>, <code>db-cluster-endpoint-status</code>. <code>Values</code> for the <code> db-cluster-endpoint-type</code> filter can be one or more of: <code>reader</code>, <code>writer</code>, <code>custom</code>. <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>, <code>any</code>. <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

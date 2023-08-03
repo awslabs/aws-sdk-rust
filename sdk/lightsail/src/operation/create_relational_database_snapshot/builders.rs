@@ -5,16 +5,16 @@ pub use crate::operation::create_relational_database_snapshot::_create_relationa
 
 impl CreateRelationalDatabaseSnapshotInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_relational_database_snapshot();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl CreateRelationalDatabaseSnapshotInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRelationalDatabaseSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_relational_database_snapshot::builders::CreateRelationalDatabaseSnapshotInputBuilder,
+    inner: crate::operation::create_relational_database_snapshot::builders::CreateRelationalDatabaseSnapshotInputBuilder,
 }
 impl CreateRelationalDatabaseSnapshotFluentBuilder {
     /// Creates a new `CreateRelationalDatabaseSnapshot`.
@@ -38,15 +38,20 @@ impl CreateRelationalDatabaseSnapshotFluentBuilder {
         }
     }
     /// Access the CreateRelationalDatabaseSnapshot as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_relational_database_snapshot::builders::CreateRelationalDatabaseSnapshotInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_relational_database_snapshot::builders::CreateRelationalDatabaseSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshot, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshot,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl CreateRelationalDatabaseSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,32 +88,35 @@ impl CreateRelationalDatabaseSnapshotFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshot, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshot,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the database on which to base your new snapshot.</p>
-    pub fn relational_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_name(input.into());
         self
     }
     /// <p>The name of the database on which to base your new snapshot.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
@@ -121,10 +130,7 @@ impl CreateRelationalDatabaseSnapshotFluentBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn relational_database_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relational_database_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.relational_database_snapshot_name(input.into());
         self
     }
@@ -134,10 +140,7 @@ impl CreateRelationalDatabaseSnapshotFluentBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn set_relational_database_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relational_database_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_relational_database_snapshot_name(input);
         self
     }
@@ -147,9 +150,7 @@ impl CreateRelationalDatabaseSnapshotFluentBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn get_relational_database_snapshot_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_relational_database_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_relational_database_snapshot_name()
     }
     /// Appends an item to `tags`.
@@ -164,10 +165,7 @@ impl CreateRelationalDatabaseSnapshotFluentBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

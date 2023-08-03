@@ -40,13 +40,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ExperimentResultRequestType {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for ExperimentResultRequestType {
             "ConfidenceInterval" => ExperimentResultRequestType::ConfidenceInterval,
             "PValue" => ExperimentResultRequestType::PValue,
             "TreatmentEffect" => ExperimentResultRequestType::TreatmentEffect,
-            other => ExperimentResultRequestType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ExperimentResultRequestType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -93,12 +85,7 @@ impl ExperimentResultRequestType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "BaseStat",
-            "ConfidenceInterval",
-            "PValue",
-            "TreatmentEffect",
-        ]
+        &["BaseStat", "ConfidenceInterval", "PValue", "TreatmentEffect"]
     }
 }
 impl ::std::convert::AsRef<str> for ExperimentResultRequestType {

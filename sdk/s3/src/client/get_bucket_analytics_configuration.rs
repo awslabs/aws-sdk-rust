@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`GetBucketAnalyticsConfigurationOutput`](crate::operation::get_bucket_analytics_configuration::GetBucketAnalyticsConfigurationOutput) with field(s):
     ///   - [`analytics_configuration(Option<AnalyticsConfiguration>)`](crate::operation::get_bucket_analytics_configuration::GetBucketAnalyticsConfigurationOutput::analytics_configuration): <p>The configuration and any analyses for the analytics filter.</p>
     /// - On failure, responds with [`SdkError<GetBucketAnalyticsConfigurationError>`](crate::operation::get_bucket_analytics_configuration::GetBucketAnalyticsConfigurationError)
-    pub fn get_bucket_analytics_configuration(&self) -> crate::operation::get_bucket_analytics_configuration::builders::GetBucketAnalyticsConfigurationFluentBuilder{
+    pub fn get_bucket_analytics_configuration(
+        &self,
+    ) -> crate::operation::get_bucket_analytics_configuration::builders::GetBucketAnalyticsConfigurationFluentBuilder {
         crate::operation::get_bucket_analytics_configuration::builders::GetBucketAnalyticsConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -48,17 +48,14 @@ impl UpdateShardCountInput {
 }
 impl UpdateShardCountInput {
     /// Creates a new builder-style object to manufacture [`UpdateShardCountInput`](crate::operation::update_shard_count::UpdateShardCountInput).
-    pub fn builder() -> crate::operation::update_shard_count::builders::UpdateShardCountInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_shard_count::builders::UpdateShardCountInputBuilder {
         crate::operation::update_shard_count::builders::UpdateShardCountInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateShardCountInput`](crate::operation::update_shard_count::UpdateShardCountInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateShardCountInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_shard_count: ::std::option::Option<i32>,
@@ -118,10 +115,7 @@ impl UpdateShardCountInputBuilder {
         self
     }
     /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
-    pub fn set_scaling_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ScalingType>,
-    ) -> Self {
+    pub fn set_scaling_type(mut self, input: ::std::option::Option<crate::types::ScalingType>) -> Self {
         self.scaling_type = input;
         self
     }
@@ -146,17 +140,12 @@ impl UpdateShardCountInputBuilder {
     /// Consumes the builder and constructs a [`UpdateShardCountInput`](crate::operation::update_shard_count::UpdateShardCountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_shard_count::UpdateShardCountInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_shard_count::UpdateShardCountInput {
-                stream_name: self.stream_name,
-                target_shard_count: self.target_shard_count,
-                scaling_type: self.scaling_type,
-                stream_arn: self.stream_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_shard_count::UpdateShardCountInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_shard_count::UpdateShardCountInput {
+            stream_name: self.stream_name,
+            target_shard_count: self.target_shard_count,
+            scaling_type: self.scaling_type,
+            stream_arn: self.stream_arn,
+        })
     }
 }

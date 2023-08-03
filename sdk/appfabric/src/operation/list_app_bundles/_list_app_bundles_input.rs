@@ -31,9 +31,7 @@ impl ListAppBundlesInput {
 
 /// A builder for [`ListAppBundlesInput`](crate::operation::list_app_bundles::ListAppBundlesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppBundlesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -73,10 +71,7 @@ impl ListAppBundlesInputBuilder {
     /// Consumes the builder and constructs a [`ListAppBundlesInput`](crate::operation::list_app_bundles::ListAppBundlesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_app_bundles::ListAppBundlesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_app_bundles::ListAppBundlesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_app_bundles::ListAppBundlesInput {
             max_results: self.max_results,
             next_token: self.next_token,

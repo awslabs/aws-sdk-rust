@@ -51,24 +51,19 @@ impl CreateRestoreImageTaskInput {
 }
 impl CreateRestoreImageTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateRestoreImageTaskInput`](crate::operation::create_restore_image_task::CreateRestoreImageTaskInput).
-    pub fn builder(
-    ) -> crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskInputBuilder {
         crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRestoreImageTaskInput`](crate::operation::create_restore_image_task::CreateRestoreImageTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRestoreImageTaskInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) object_key: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateRestoreImageTaskInputBuilder {
@@ -134,10 +129,7 @@ impl CreateRestoreImageTaskInputBuilder {
     /// <li> <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p> </li>
     /// <li> <p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p> </li>
     /// </ul>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
@@ -146,9 +138,7 @@ impl CreateRestoreImageTaskInputBuilder {
     /// <li> <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p> </li>
     /// <li> <p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p> </li>
     /// </ul>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -172,14 +162,12 @@ impl CreateRestoreImageTaskInputBuilder {
         crate::operation::create_restore_image_task::CreateRestoreImageTaskInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_restore_image_task::CreateRestoreImageTaskInput {
-                bucket: self.bucket,
-                object_key: self.object_key,
-                name: self.name,
-                tag_specifications: self.tag_specifications,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_restore_image_task::CreateRestoreImageTaskInput {
+            bucket: self.bucket,
+            object_key: self.object_key,
+            name: self.name,
+            tag_specifications: self.tag_specifications,
+            dry_run: self.dry_run,
+        })
     }
 }

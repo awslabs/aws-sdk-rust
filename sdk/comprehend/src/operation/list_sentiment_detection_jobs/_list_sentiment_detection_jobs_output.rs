@@ -5,8 +5,7 @@
 pub struct ListSentimentDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub sentiment_detection_job_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::SentimentDetectionJobProperties>>,
+    pub sentiment_detection_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::SentimentDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSentimentDetectionJobsOutput {
 }
 impl ListSentimentDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn sentiment_detection_job_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SentimentDetectionJobProperties]> {
+    pub fn sentiment_detection_job_properties_list(&self) -> ::std::option::Option<&[crate::types::SentimentDetectionJobProperties]> {
         self.sentiment_detection_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSentimentDetectionJobsOutput {
 }
 impl ListSentimentDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListSentimentDetectionJobsOutput`](crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsOutput).
-    pub fn builder() -> crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsOutputBuilder {
         crate::operation::list_sentiment_detection_jobs::builders::ListSentimentDetectionJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSentimentDetectionJobsOutput`](crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSentimentDetectionJobsOutputBuilder {
-    pub(crate) sentiment_detection_job_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::SentimentDetectionJobProperties>>,
+    pub(crate) sentiment_detection_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::SentimentDetectionJobProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,13 +47,8 @@ impl ListSentimentDetectionJobsOutputBuilder {
     /// To override the contents of this collection use [`set_sentiment_detection_job_properties_list`](Self::set_sentiment_detection_job_properties_list).
     ///
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn sentiment_detection_job_properties_list(
-        mut self,
-        input: crate::types::SentimentDetectionJobProperties,
-    ) -> Self {
-        let mut v = self
-            .sentiment_detection_job_properties_list
-            .unwrap_or_default();
+    pub fn sentiment_detection_job_properties_list(mut self, input: crate::types::SentimentDetectionJobProperties) -> Self {
+        let mut v = self.sentiment_detection_job_properties_list.unwrap_or_default();
         v.push(input);
         self.sentiment_detection_job_properties_list = ::std::option::Option::Some(v);
         self
@@ -67,9 +56,7 @@ impl ListSentimentDetectionJobsOutputBuilder {
     /// <p>A list containing the properties of each job that is returned.</p>
     pub fn set_sentiment_detection_job_properties_list(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::SentimentDetectionJobProperties>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SentimentDetectionJobProperties>>,
     ) -> Self {
         self.sentiment_detection_job_properties_list = input;
         self
@@ -77,8 +64,7 @@ impl ListSentimentDetectionJobsOutputBuilder {
     /// <p>A list containing the properties of each job that is returned.</p>
     pub fn get_sentiment_detection_job_properties_list(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SentimentDetectionJobProperties>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SentimentDetectionJobProperties>> {
         &self.sentiment_detection_job_properties_list
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -105,9 +91,7 @@ impl ListSentimentDetectionJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSentimentDetectionJobsOutput`](crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsOutput {
+    pub fn build(self) -> crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsOutput {
         crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsOutput {
             sentiment_detection_job_properties_list: self.sentiment_detection_job_properties_list,
             next_token: self.next_token,

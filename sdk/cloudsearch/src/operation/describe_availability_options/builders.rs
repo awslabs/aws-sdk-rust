@@ -26,7 +26,7 @@ impl DescribeAvailabilityOptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAvailabilityOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_availability_options::builders::DescribeAvailabilityOptionsInputBuilder,
+    inner: crate::operation::describe_availability_options::builders::DescribeAvailabilityOptionsInputBuilder,
 }
 impl DescribeAvailabilityOptionsFluentBuilder {
     /// Creates a new `DescribeAvailabilityOptions`.
@@ -37,7 +37,7 @@ impl DescribeAvailabilityOptionsFluentBuilder {
         }
     }
     /// Access the DescribeAvailabilityOptions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_availability_options::builders::DescribeAvailabilityOptionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_availability_options::builders::DescribeAvailabilityOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeAvailabilityOptionsFluentBuilder {
             crate::operation::describe_availability_options::DescribeAvailabilityOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_availability_options::DescribeAvailabilityOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_availability_options::DescribeAvailabilityOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeAvailabilityOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeAvailabilityOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_availability_options::DescribeAvailabilityOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_availability_options::DescribeAvailabilityOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_availability_options::DescribeAvailabilityOptionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeAvailabilityOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_availability_options::DescribeAvailabilityOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_availability_options::DescribeAvailabilityOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_availability_options::DescribeAvailabilityOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeAvailabilityOptionsFluentBuilder {
             crate::operation::describe_availability_options::DescribeAvailabilityOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_availability_options::DescribeAvailabilityOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_availability_options::DescribeAvailabilityOptionsError>,
     > {
         self.customize_middleware().await
     }

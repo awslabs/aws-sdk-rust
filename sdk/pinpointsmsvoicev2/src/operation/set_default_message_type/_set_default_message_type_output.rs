@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for SetDefaultMessageTypeOutput {
 }
 impl SetDefaultMessageTypeOutput {
     /// Creates a new builder-style object to manufacture [`SetDefaultMessageTypeOutput`](crate::operation::set_default_message_type::SetDefaultMessageTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::set_default_message_type::builders::SetDefaultMessageTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_default_message_type::builders::SetDefaultMessageTypeOutputBuilder {
         crate::operation::set_default_message_type::builders::SetDefaultMessageTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetDefaultMessageTypeOutput`](crate::operation::set_default_message_type::SetDefaultMessageTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetDefaultMessageTypeOutputBuilder {
     pub(crate) configuration_set_arn: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
@@ -55,18 +51,12 @@ pub struct SetDefaultMessageTypeOutputBuilder {
 }
 impl SetDefaultMessageTypeOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the updated configuration set.</p>
-    pub fn configuration_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the updated configuration set.</p>
-    pub fn set_configuration_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_arn = input;
         self
     }
@@ -75,18 +65,12 @@ impl SetDefaultMessageTypeOutputBuilder {
         &self.configuration_set_arn
     }
     /// <p>The name of the configuration set that was updated.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set that was updated.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -100,10 +84,7 @@ impl SetDefaultMessageTypeOutputBuilder {
         self
     }
     /// <p>The new default message type of the configuration set.</p>
-    pub fn set_message_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageType>,
-    ) -> Self {
+    pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.message_type = input;
         self
     }

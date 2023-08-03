@@ -58,9 +58,7 @@ impl Event {
 
 /// A builder for [`Event`](crate::types::Event).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventBuilder {
     pub(crate) source_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
@@ -71,18 +69,12 @@ pub struct EventBuilder {
 }
 impl EventBuilder {
     /// <p>Provides the identifier for the source of the event.</p>
-    pub fn source_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the identifier for the source of the event.</p>
-    pub fn set_source_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_identifier = input;
         self
     }
@@ -96,10 +88,7 @@ impl EventBuilder {
         self
     }
     /// <p>Specifies the source type for this event.</p>
-    pub fn set_source_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.source_type = input;
         self
     }
@@ -126,27 +115,19 @@ impl EventBuilder {
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
     ///
     /// <p>Specifies the category for the event.</p>
-    pub fn event_categories(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_categories.unwrap_or_default();
         v.push(input.into());
         self.event_categories = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the category for the event.</p>
-    pub fn set_event_categories(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_categories = input;
         self
     }
     /// <p>Specifies the category for the event.</p>
-    pub fn get_event_categories(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_categories
     }
     /// <p>Specifies the date and time of the event.</p>

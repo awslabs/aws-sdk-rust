@@ -26,7 +26,7 @@ impl DisassociatePricingRulesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociatePricingRulesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_pricing_rules::builders::DisassociatePricingRulesInputBuilder,
+    inner: crate::operation::disassociate_pricing_rules::builders::DisassociatePricingRulesInputBuilder,
 }
 impl DisassociatePricingRulesFluentBuilder {
     /// Creates a new `DisassociatePricingRules`.
@@ -37,10 +37,7 @@ impl DisassociatePricingRulesFluentBuilder {
         }
     }
     /// Access the DisassociatePricingRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disassociate_pricing_rules::builders::DisassociatePricingRulesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::disassociate_pricing_rules::builders::DisassociatePricingRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DisassociatePricingRulesFluentBuilder {
             crate::operation::disassociate_pricing_rules::DisassociatePricingRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DisassociatePricingRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DisassociatePricingRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_pricing_rules::DisassociatePricingRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DisassociatePricingRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_pricing_rules::DisassociatePricingRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DisassociatePricingRulesFluentBuilder {
             crate::operation::disassociate_pricing_rules::DisassociatePricingRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError>,
     > {
         self.customize_middleware().await
     }
@@ -142,25 +128,17 @@ impl DisassociatePricingRulesFluentBuilder {
     /// To override the contents of this collection use [`set_pricing_rule_arns`](Self::set_pricing_rule_arns).
     ///
     /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
-    pub fn pricing_rule_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pricing_rule_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pricing_rule_arns(input.into());
         self
     }
     /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
-    pub fn set_pricing_rule_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pricing_rule_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_pricing_rule_arns(input);
         self
     }
     /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
-    pub fn get_pricing_rule_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pricing_rule_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_pricing_rule_arns()
     }
 }

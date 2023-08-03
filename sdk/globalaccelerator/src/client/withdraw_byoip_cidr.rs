@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`WithdrawByoipCidrOutput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput) with field(s):
     ///   - [`byoip_cidr(Option<ByoipCidr>)`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput::byoip_cidr): <p>Information about the address pool.</p>
     /// - On failure, responds with [`SdkError<WithdrawByoipCidrError>`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError)
-    pub fn withdraw_byoip_cidr(
-        &self,
-    ) -> crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder {
-        crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn withdraw_byoip_cidr(&self) -> crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder {
+        crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder::new(self.handle.clone())
     }
 }

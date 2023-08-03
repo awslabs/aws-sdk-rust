@@ -35,9 +35,7 @@ impl ListWorkteamsOutput {
 
 /// A builder for [`ListWorkteamsOutput`](crate::operation::list_workteams::ListWorkteamsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkteamsOutputBuilder {
     pub(crate) workteams: ::std::option::Option<::std::vec::Vec<crate::types::Workteam>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListWorkteamsOutputBuilder {
         self
     }
     /// <p>An array of <code>Workteam</code> objects, each describing a work team.</p>
-    pub fn set_workteams(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Workteam>>,
-    ) -> Self {
+    pub fn set_workteams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Workteam>>) -> Self {
         self.workteams = input;
         self
     }

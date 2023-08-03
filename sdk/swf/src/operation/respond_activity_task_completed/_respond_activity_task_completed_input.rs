@@ -26,16 +26,14 @@ impl RespondActivityTaskCompletedInput {
 }
 impl RespondActivityTaskCompletedInput {
     /// Creates a new builder-style object to manufacture [`RespondActivityTaskCompletedInput`](crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedInput).
-    pub fn builder() -> crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedInputBuilder{
+    pub fn builder() -> crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedInputBuilder {
         crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedInputBuilder::default()
     }
 }
 
 /// A builder for [`RespondActivityTaskCompletedInput`](crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RespondActivityTaskCompletedInputBuilder {
     pub(crate) task_token: ::std::option::Option<::std::string::String>,
     pub(crate) result: ::std::option::Option<::std::string::String>,
@@ -82,11 +80,9 @@ impl RespondActivityTaskCompletedInputBuilder {
         crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedInput {
-                task_token: self.task_token,
-                result: self.result,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedInput {
+            task_token: self.task_token,
+            result: self.result,
+        })
     }
 }

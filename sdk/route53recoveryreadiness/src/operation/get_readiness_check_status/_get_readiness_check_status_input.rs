@@ -29,18 +29,14 @@ impl GetReadinessCheckStatusInput {
 }
 impl GetReadinessCheckStatusInput {
     /// Creates a new builder-style object to manufacture [`GetReadinessCheckStatusInput`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusInputBuilder {
         crate::operation::get_readiness_check_status::builders::GetReadinessCheckStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReadinessCheckStatusInput`](crate::operation::get_readiness_check_status::GetReadinessCheckStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReadinessCheckStatusInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -76,18 +72,12 @@ impl GetReadinessCheckStatusInputBuilder {
         &self.next_token
     }
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readiness_check_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a readiness check.</p>
-    pub fn set_readiness_check_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_readiness_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.readiness_check_name = input;
         self
     }
@@ -102,12 +92,10 @@ impl GetReadinessCheckStatusInputBuilder {
         crate::operation::get_readiness_check_status::GetReadinessCheckStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_readiness_check_status::GetReadinessCheckStatusInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                readiness_check_name: self.readiness_check_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_readiness_check_status::GetReadinessCheckStatusInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            readiness_check_name: self.readiness_check_name,
+        })
     }
 }

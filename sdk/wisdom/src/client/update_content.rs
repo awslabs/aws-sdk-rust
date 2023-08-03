@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateContentOutput`](crate::operation::update_content::UpdateContentOutput) with field(s):
     ///   - [`content(Option<ContentData>)`](crate::operation::update_content::UpdateContentOutput::content): <p>The content.</p>
     /// - On failure, responds with [`SdkError<UpdateContentError>`](crate::operation::update_content::UpdateContentError)
-    pub fn update_content(
-        &self,
-    ) -> crate::operation::update_content::builders::UpdateContentFluentBuilder {
-        crate::operation::update_content::builders::UpdateContentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_content(&self) -> crate::operation::update_content::builders::UpdateContentFluentBuilder {
+        crate::operation::update_content::builders::UpdateContentFluentBuilder::new(self.handle.clone())
     }
 }

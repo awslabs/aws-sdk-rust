@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     /// - On success, responds with [`UpdateUserPhoneConfigOutput`](crate::operation::update_user_phone_config::UpdateUserPhoneConfigOutput)
     /// - On failure, responds with [`SdkError<UpdateUserPhoneConfigError>`](crate::operation::update_user_phone_config::UpdateUserPhoneConfigError)
-    pub fn update_user_phone_config(
-        &self,
-    ) -> crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigFluentBuilder
-    {
+    pub fn update_user_phone_config(&self) -> crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigFluentBuilder {
         crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigFluentBuilder::new(self.handle.clone())
     }
 }

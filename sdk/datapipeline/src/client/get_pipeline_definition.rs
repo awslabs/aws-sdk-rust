@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`parameter_objects(Option<Vec<ParameterObject>>)`](crate::operation::get_pipeline_definition::GetPipelineDefinitionOutput::parameter_objects): <p>The parameter objects used in the pipeline definition.</p>
     ///   - [`parameter_values(Option<Vec<ParameterValue>>)`](crate::operation::get_pipeline_definition::GetPipelineDefinitionOutput::parameter_values): <p>The parameter values used in the pipeline definition.</p>
     /// - On failure, responds with [`SdkError<GetPipelineDefinitionError>`](crate::operation::get_pipeline_definition::GetPipelineDefinitionError)
-    pub fn get_pipeline_definition(
-        &self,
-    ) -> crate::operation::get_pipeline_definition::builders::GetPipelineDefinitionFluentBuilder
-    {
-        crate::operation::get_pipeline_definition::builders::GetPipelineDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_pipeline_definition(&self) -> crate::operation::get_pipeline_definition::builders::GetPipelineDefinitionFluentBuilder {
+        crate::operation::get_pipeline_definition::builders::GetPipelineDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

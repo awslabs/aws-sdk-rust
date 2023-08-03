@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for AttachThingPrincipalOutput {
 }
 impl AttachThingPrincipalOutput {
     /// Creates a new builder-style object to manufacture [`AttachThingPrincipalOutput`](crate::operation::attach_thing_principal::AttachThingPrincipalOutput).
-    pub fn builder(
-    ) -> crate::operation::attach_thing_principal::builders::AttachThingPrincipalOutputBuilder {
+    pub fn builder() -> crate::operation::attach_thing_principal::builders::AttachThingPrincipalOutputBuilder {
         crate::operation::attach_thing_principal::builders::AttachThingPrincipalOutputBuilder::default()
     }
 }
 
 /// A builder for [`AttachThingPrincipalOutput`](crate::operation::attach_thing_principal::AttachThingPrincipalOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachThingPrincipalOutputBuilder {
     _request_id: Option<String>,
 }

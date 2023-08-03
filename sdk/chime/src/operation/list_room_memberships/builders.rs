@@ -37,9 +37,7 @@ impl ListRoomMembershipsFluentBuilder {
         }
     }
     /// Access the ListRoomMemberships as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_room_memberships::builders::ListRoomMembershipsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_room_memberships::builders::ListRoomMembershipsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListRoomMembershipsFluentBuilder {
             crate::operation::list_room_memberships::ListRoomMemberships,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_room_memberships::ListRoomMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_room_memberships::ListRoomMembershipsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListRoomMembershipsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListRoomMembershipsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_room_memberships::ListRoomMembershipsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_room_memberships::ListRoomMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_room_memberships::ListRoomMembershipsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListRoomMembershipsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_room_memberships::ListRoomMembershipsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_room_memberships::ListRoomMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_room_memberships::ListRoomMembershipsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +105,15 @@ impl ListRoomMembershipsFluentBuilder {
             crate::operation::list_room_memberships::ListRoomMemberships,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_room_memberships::ListRoomMembershipsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_room_memberships::ListRoomMembershipsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_room_memberships::paginator::ListRoomMembershipsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_room_memberships::paginator::ListRoomMembershipsPaginator {
-        crate::operation::list_room_memberships::paginator::ListRoomMembershipsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_room_memberships::paginator::ListRoomMembershipsPaginator {
+        crate::operation::list_room_memberships::paginator::ListRoomMembershipsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

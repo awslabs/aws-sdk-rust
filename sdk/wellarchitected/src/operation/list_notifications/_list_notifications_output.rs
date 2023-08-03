@@ -5,8 +5,7 @@
 pub struct ListNotificationsOutput {
     /// <p>List of lens notification summaries in a workload.</p>
     #[doc(hidden)]
-    pub notification_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationSummary>>,
+    pub notification_summaries: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListNotificationsOutput {
 }
 impl ListNotificationsOutput {
     /// <p>List of lens notification summaries in a workload.</p>
-    pub fn notification_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotificationSummary]> {
+    pub fn notification_summaries(&self) -> ::std::option::Option<&[crate::types::NotificationSummary]> {
         self.notification_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -31,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListNotificationsOutput {
 }
 impl ListNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`ListNotificationsOutput`](crate::operation::list_notifications::ListNotificationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_notifications::builders::ListNotificationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_notifications::builders::ListNotificationsOutputBuilder {
         crate::operation::list_notifications::builders::ListNotificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListNotificationsOutput`](crate::operation::list_notifications::ListNotificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNotificationsOutputBuilder {
-    pub(crate) notification_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationSummary>>,
+    pub(crate) notification_summaries: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -61,17 +54,12 @@ impl ListNotificationsOutputBuilder {
         self
     }
     /// <p>List of lens notification summaries in a workload.</p>
-    pub fn set_notification_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSummary>>,
-    ) -> Self {
+    pub fn set_notification_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSummary>>) -> Self {
         self.notification_summaries = input;
         self
     }
     /// <p>List of lens notification summaries in a workload.</p>
-    pub fn get_notification_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSummary>> {
+    pub fn get_notification_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSummary>> {
         &self.notification_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>

@@ -24,9 +24,7 @@ pub struct SmsMessage {
     pub sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The message variables to use in the SMS message. You can override the default variables with individual address variables.</p>
     #[doc(hidden)]
-    pub substitutions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
     #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
@@ -62,9 +60,7 @@ impl SmsMessage {
     /// <p>The message variables to use in the SMS message. You can override the default variables with individual address variables.</p>
     pub fn substitutions(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.substitutions.as_ref()
     }
     /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
@@ -85,9 +81,7 @@ impl SmsMessage {
 
 /// A builder for [`SmsMessage`](crate::types::SmsMessage).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SmsMessageBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) keyword: ::std::option::Option<::std::string::String>,
@@ -95,9 +89,7 @@ pub struct SmsMessageBuilder {
     pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,
     pub(crate) origination_number: ::std::option::Option<::std::string::String>,
     pub(crate) sender_id: ::std::option::Option<::std::string::String>,
-    pub(crate) substitutions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    >,
+    pub(crate) substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
 }
@@ -150,10 +142,7 @@ impl SmsMessageBuilder {
         self
     }
     /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
-    pub fn set_message_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageType>,
-    ) -> Self {
+    pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.message_type = input;
         self
     }
@@ -162,18 +151,12 @@ impl SmsMessageBuilder {
         &self.message_type
     }
     /// <p>The number to send the SMS message from. This value should be one of the dedicated long or short codes that's assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a random long code to the SMS message and sends the message from that code.</p>
-    pub fn origination_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origination_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number to send the SMS message from. This value should be one of the dedicated long or short codes that's assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a random long code to the SMS message and sends the message from that code.</p>
-    pub fn set_origination_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origination_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_number = input;
         self
     }
@@ -200,11 +183,7 @@ impl SmsMessageBuilder {
     /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
     ///
     /// <p>The message variables to use in the SMS message. You can override the default variables with individual address variables.</p>
-    pub fn substitutions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<::std::string::String>,
-    ) -> Self {
+    pub fn substitutions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.substitutions.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.substitutions = ::std::option::Option::Some(hash_map);
@@ -213,12 +192,7 @@ impl SmsMessageBuilder {
     /// <p>The message variables to use in the SMS message. You can override the default variables with individual address variables.</p>
     pub fn set_substitutions(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                ::std::vec::Vec<::std::string::String>,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.substitutions = input;
         self
@@ -226,9 +200,7 @@ impl SmsMessageBuilder {
     /// <p>The message variables to use in the SMS message. You can override the default variables with individual address variables.</p>
     pub fn get_substitutions(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.substitutions
     }
     /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>

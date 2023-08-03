@@ -5,16 +5,16 @@ pub use crate::operation::list_organization_portfolio_access::_list_organization
 
 impl ListOrganizationPortfolioAccessInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.list_organization_portfolio_access();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -27,7 +27,7 @@ impl ListOrganizationPortfolioAccessInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOrganizationPortfolioAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessInputBuilder,
+    inner: crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessInputBuilder,
 }
 impl ListOrganizationPortfolioAccessFluentBuilder {
     /// Creates a new `ListOrganizationPortfolioAccess`.
@@ -38,15 +38,20 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
         }
     }
     /// Access the ListOrganizationPortfolioAccess as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccess, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccess,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -55,16 +60,17 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError>,
+    > {
         let op = self
             .inner
             .build()
@@ -82,23 +88,32 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccess, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccess,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_organization_portfolio_access::paginator::ListOrganizationPortfolioAccessPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_organization_portfolio_access::paginator::ListOrganizationPortfolioAccessPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_organization_portfolio_access::paginator::ListOrganizationPortfolioAccessPaginator {
         crate::operation::list_organization_portfolio_access::paginator::ListOrganizationPortfolioAccessPaginator::new(self.handle, self.inner)
     }
     /// <p>The language code.</p>
@@ -106,10 +121,7 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -118,10 +130,7 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -163,10 +172,7 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
     /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
     /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
     /// </ul>
-    pub fn set_organization_node_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationNodeType>,
-    ) -> Self {
+    pub fn set_organization_node_type(mut self, input: ::std::option::Option<crate::types::OrganizationNodeType>) -> Self {
         self.inner = self.inner.set_organization_node_type(input);
         self
     }
@@ -176,9 +182,7 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
     /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
     /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
     /// </ul>
-    pub fn get_organization_node_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OrganizationNodeType> {
+    pub fn get_organization_node_type(&self) -> &::std::option::Option<crate::types::OrganizationNodeType> {
         self.inner.get_organization_node_type()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>

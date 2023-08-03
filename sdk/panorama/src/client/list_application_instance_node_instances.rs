@@ -11,7 +11,11 @@ impl super::Client {
     ///   - [`node_instances(Option<Vec<NodeInstance>>)`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput::node_instances): <p>A list of node instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListApplicationInstanceNodeInstancesError>`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError)
-    pub fn list_application_instance_node_instances(&self) -> crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder{
-        crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder::new(self.handle.clone())
+    pub fn list_application_instance_node_instances(
+        &self,
+    ) -> crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder {
+        crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

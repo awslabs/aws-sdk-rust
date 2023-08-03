@@ -22,16 +22,14 @@ impl ListProfileObjectTypeTemplatesInput {
 }
 impl ListProfileObjectTypeTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListProfileObjectTypeTemplatesInput`](crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesInput).
-    pub fn builder() -> crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesInputBuilder{
+    pub fn builder() -> crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesInputBuilder {
         crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfileObjectTypeTemplatesInput`](crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfileObjectTypeTemplatesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -74,11 +72,9 @@ impl ListProfileObjectTypeTemplatesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

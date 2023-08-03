@@ -9,37 +9,25 @@ pub fn ser_count_closed_workflow_executions_input(
     if let Some(var_2) = &input.start_time_filter {
         #[allow(unused_mut)]
         let mut object_3 = object.key("startTimeFilter").start_object();
-        crate::protocol_serde::shape_execution_time_filter::ser_execution_time_filter(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_execution_time_filter::ser_execution_time_filter(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.close_time_filter {
         #[allow(unused_mut)]
         let mut object_5 = object.key("closeTimeFilter").start_object();
-        crate::protocol_serde::shape_execution_time_filter::ser_execution_time_filter(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_execution_time_filter::ser_execution_time_filter(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.execution_filter {
         #[allow(unused_mut)]
         let mut object_7 = object.key("executionFilter").start_object();
-        crate::protocol_serde::shape_workflow_execution_filter::ser_workflow_execution_filter(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_workflow_execution_filter::ser_workflow_execution_filter(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.type_filter {
         #[allow(unused_mut)]
         let mut object_9 = object.key("typeFilter").start_object();
-        crate::protocol_serde::shape_workflow_type_filter::ser_workflow_type_filter(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_workflow_type_filter::ser_workflow_type_filter(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.tag_filter {
@@ -51,10 +39,7 @@ pub fn ser_count_closed_workflow_executions_input(
     if let Some(var_12) = &input.close_status_filter {
         #[allow(unused_mut)]
         let mut object_13 = object.key("closeStatusFilter").start_object();
-        crate::protocol_serde::shape_close_status_filter::ser_close_status_filter(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_close_status_filter::ser_close_status_filter(&mut object_13, var_12)?;
         object_13.finish();
     }
     Ok(())

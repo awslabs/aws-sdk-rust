@@ -27,18 +27,14 @@ impl ::aws_http::request_id::RequestId for PutObjectLegalHoldOutput {
 }
 impl PutObjectLegalHoldOutput {
     /// Creates a new builder-style object to manufacture [`PutObjectLegalHoldOutput`](crate::operation::put_object_legal_hold::PutObjectLegalHoldOutput).
-    pub fn builder(
-    ) -> crate::operation::put_object_legal_hold::builders::PutObjectLegalHoldOutputBuilder {
-        crate::operation::put_object_legal_hold::builders::PutObjectLegalHoldOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_object_legal_hold::builders::PutObjectLegalHoldOutputBuilder {
+        crate::operation::put_object_legal_hold::builders::PutObjectLegalHoldOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutObjectLegalHoldOutput`](crate::operation::put_object_legal_hold::PutObjectLegalHoldOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutObjectLegalHoldOutputBuilder {
     pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
@@ -51,10 +47,7 @@ impl PutObjectLegalHoldOutputBuilder {
         self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    pub fn set_request_charged(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestCharged>,
-    ) -> Self {
+    pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
         self.request_charged = input;
         self
     }
@@ -67,10 +60,7 @@ impl PutObjectLegalHoldOutputBuilder {
         self
     }
 
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
+    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
         self._extended_request_id = extended_request_id;
         self
     }

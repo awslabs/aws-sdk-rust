@@ -30,9 +30,7 @@ impl AccountSharingInfo {
 
 /// A builder for [`AccountSharingInfo`](crate::types::AccountSharingInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountSharingInfoBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) shared_document_version: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl AccountSharingInfoBuilder {
         &self.account_id
     }
     /// <p>The version of the current document shared with the account.</p>
-    pub fn shared_document_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the current document shared with the account.</p>
-    pub fn set_shared_document_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_shared_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_document_version = input;
         self
     }

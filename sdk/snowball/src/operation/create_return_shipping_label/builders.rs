@@ -26,7 +26,7 @@ impl CreateReturnShippingLabelInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateReturnShippingLabelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelInputBuilder,
+    inner: crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelInputBuilder,
 }
 impl CreateReturnShippingLabelFluentBuilder {
     /// Creates a new `CreateReturnShippingLabel`.
@@ -37,7 +37,7 @@ impl CreateReturnShippingLabelFluentBuilder {
         }
     }
     /// Access the CreateReturnShippingLabel as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateReturnShippingLabelFluentBuilder {
             crate::operation::create_return_shipping_label::CreateReturnShippingLabel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_return_shipping_label::CreateReturnShippingLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_return_shipping_label::CreateReturnShippingLabelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateReturnShippingLabelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateReturnShippingLabelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_return_shipping_label::CreateReturnShippingLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_return_shipping_label::CreateReturnShippingLabelError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateReturnShippingLabelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_return_shipping_label::CreateReturnShippingLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_return_shipping_label::CreateReturnShippingLabelError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateReturnShippingLabelFluentBuilder {
             crate::operation::create_return_shipping_label::CreateReturnShippingLabel,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_return_shipping_label::CreateReturnShippingLabelError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_return_shipping_label::CreateReturnShippingLabelError>,
     > {
         self.customize_middleware().await
     }
@@ -140,10 +129,7 @@ impl CreateReturnShippingLabelFluentBuilder {
         self
     }
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-    pub fn set_shipping_option(
-        mut self,
-        input: ::std::option::Option<crate::types::ShippingOption>,
-    ) -> Self {
+    pub fn set_shipping_option(mut self, input: ::std::option::Option<crate::types::ShippingOption>) -> Self {
         self.inner = self.inner.set_shipping_option(input);
         self
     }

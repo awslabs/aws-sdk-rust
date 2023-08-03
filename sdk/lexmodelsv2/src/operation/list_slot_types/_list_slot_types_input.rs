@@ -64,9 +64,7 @@ impl ListSlotTypesInput {
 
 /// A builder for [`ListSlotTypesInput`](crate::operation::list_slot_types::ListSlotTypesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSlotTypesInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -125,10 +123,7 @@ impl ListSlotTypesInputBuilder {
         self
     }
     /// <p>Determines the sort order for the response from the <code>ListSlotTypes</code> operation. You can choose to sort by the slot type name or last updated date in either ascending or descending order.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SlotTypeSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SlotTypeSortBy>) -> Self {
         self.sort_by = input;
         self
     }
@@ -148,17 +143,12 @@ impl ListSlotTypesInputBuilder {
         self
     }
     /// <p>Provides the specification of a filter used to limit the slot types in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeFilter>>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Provides the specification of a filter used to limit the slot types in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeFilter>> {
         &self.filters
     }
     /// <p>The maximum number of slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
@@ -192,10 +182,7 @@ impl ListSlotTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListSlotTypesInput`](crate::operation::list_slot_types::ListSlotTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_slot_types::ListSlotTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_slot_types::ListSlotTypesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_slot_types::ListSlotTypesInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

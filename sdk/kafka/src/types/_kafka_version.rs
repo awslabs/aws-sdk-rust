@@ -29,9 +29,7 @@ impl KafkaVersion {
 
 /// A builder for [`KafkaVersion`](crate::types::KafkaVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KafkaVersionBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::KafkaVersionStatus>,
@@ -57,10 +55,7 @@ impl KafkaVersionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::KafkaVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::KafkaVersionStatus>) -> Self {
         self.status = input;
         self
     }

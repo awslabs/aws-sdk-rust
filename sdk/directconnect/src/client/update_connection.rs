@@ -30,11 +30,7 @@ impl super::Client {
     ///   - [`encryption_mode(Option<String>)`](crate::operation::update_connection::UpdateConnectionOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::operation::update_connection::UpdateConnectionOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     /// - On failure, responds with [`SdkError<UpdateConnectionError>`](crate::operation::update_connection::UpdateConnectionError)
-    pub fn update_connection(
-        &self,
-    ) -> crate::operation::update_connection::builders::UpdateConnectionFluentBuilder {
-        crate::operation::update_connection::builders::UpdateConnectionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_connection(&self) -> crate::operation::update_connection::builders::UpdateConnectionFluentBuilder {
+        crate::operation::update_connection::builders::UpdateConnectionFluentBuilder::new(self.handle.clone())
     }
 }

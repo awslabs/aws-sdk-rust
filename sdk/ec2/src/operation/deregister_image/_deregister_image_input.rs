@@ -30,9 +30,7 @@ impl DeregisterImageInput {
 
 /// A builder for [`DeregisterImageInput`](crate::operation::deregister_image::DeregisterImageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterImageInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -69,10 +67,7 @@ impl DeregisterImageInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterImageInput`](crate::operation::deregister_image::DeregisterImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_image::DeregisterImageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::deregister_image::DeregisterImageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_image::DeregisterImageInput {
             image_id: self.image_id,
             dry_run: self.dry_run,

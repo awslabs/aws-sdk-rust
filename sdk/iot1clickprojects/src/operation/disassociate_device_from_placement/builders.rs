@@ -5,16 +5,16 @@ pub use crate::operation::disassociate_device_from_placement::_disassociate_devi
 
 impl DisassociateDeviceFromPlacementInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.disassociate_device_from_placement();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DisassociateDeviceFromPlacementInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateDeviceFromPlacementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementInputBuilder,
+    inner: crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementInputBuilder,
 }
 impl DisassociateDeviceFromPlacementFluentBuilder {
     /// Creates a new `DisassociateDeviceFromPlacement`.
@@ -37,15 +37,20 @@ impl DisassociateDeviceFromPlacementFluentBuilder {
         }
     }
     /// Access the DisassociateDeviceFromPlacement as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacement, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacement,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DisassociateDeviceFromPlacementFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl DisassociateDeviceFromPlacementFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacement, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacement,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The name of the project that contains the placement.</p>
@@ -109,18 +124,12 @@ impl DisassociateDeviceFromPlacementFluentBuilder {
         self.inner.get_project_name()
     }
     /// <p>The name of the placement that the device should be removed from.</p>
-    pub fn placement_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn placement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.placement_name(input.into());
         self
     }
     /// <p>The name of the placement that the device should be removed from.</p>
-    pub fn set_placement_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_placement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_placement_name(input);
         self
     }
@@ -129,18 +138,12 @@ impl DisassociateDeviceFromPlacementFluentBuilder {
         self.inner.get_placement_name()
     }
     /// <p>The device ID that should be removed from the placement.</p>
-    pub fn device_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_template_name(input.into());
         self
     }
     /// <p>The device ID that should be removed from the placement.</p>
-    pub fn set_device_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_template_name(input);
         self
     }

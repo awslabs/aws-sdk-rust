@@ -37,10 +37,7 @@ impl StopStackSetOperationFluentBuilder {
         }
     }
     /// Access the StopStackSetOperation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_stack_set_operation::builders::StopStackSetOperationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::stop_stack_set_operation::builders::StopStackSetOperationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StopStackSetOperationFluentBuilder {
             crate::operation::stop_stack_set_operation::StopStackSetOperation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_stack_set_operation::StopStackSetOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_stack_set_operation::StopStackSetOperationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StopStackSetOperationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StopStackSetOperationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_stack_set_operation::StopStackSetOperationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_stack_set_operation::StopStackSetOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_stack_set_operation::StopStackSetOperationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StopStackSetOperationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_stack_set_operation::StopStackSetOperationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_stack_set_operation::StopStackSetOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_stack_set_operation::StopStackSetOperationError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl StopStackSetOperationFluentBuilder {
             crate::operation::stop_stack_set_operation::StopStackSetOperation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_stack_set_operation::StopStackSetOperationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_stack_set_operation::StopStackSetOperationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name or unique ID of the stack set that you want to stop the operation for.</p>
-    pub fn stack_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set that you want to stop the operation for.</p>
-    pub fn set_stack_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }

@@ -29,18 +29,14 @@ impl DescribeImageBuildersInput {
 }
 impl DescribeImageBuildersInput {
     /// Creates a new builder-style object to manufacture [`DescribeImageBuildersInput`](crate::operation::describe_image_builders::DescribeImageBuildersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_image_builders::builders::DescribeImageBuildersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_image_builders::builders::DescribeImageBuildersInputBuilder {
         crate::operation::describe_image_builders::builders::DescribeImageBuildersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImageBuildersInput`](crate::operation::describe_image_builders::DescribeImageBuildersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImageBuildersInputBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -59,10 +55,7 @@ impl DescribeImageBuildersInputBuilder {
         self
     }
     /// <p>The names of the image builders to describe.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -101,16 +94,12 @@ impl DescribeImageBuildersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImageBuildersInput`](crate::operation::describe_image_builders::DescribeImageBuildersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_image_builders::DescribeImageBuildersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_image_builders::DescribeImageBuildersInput {
-                names: self.names,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_image_builders::DescribeImageBuildersInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_image_builders::DescribeImageBuildersInput {
+            names: self.names,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

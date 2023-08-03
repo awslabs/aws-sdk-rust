@@ -9,7 +9,8 @@ pub fn de_create_egress_only_internet_gateway_http_error(
     crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayError::generic(generic))
@@ -27,16 +28,21 @@ pub fn de_create_egress_only_internet_gateway_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_egress_only_internet_gateway::de_create_egress_only_internet_gateway(_response_body, output).map_err(crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_create_egress_only_internet_gateway::de_create_egress_only_internet_gateway(_response_body, output)
+            .map_err(crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_create_egress_only_internet_gateway(inp: &[u8], mut builder: crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayOutputBuilder) -> Result<crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_create_egress_only_internet_gateway(
+    inp: &[u8],
+    mut builder: crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayOutputBuilder,
+) -> Result<
+    crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

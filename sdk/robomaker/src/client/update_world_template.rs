@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::update_world_template::UpdateWorldTemplateOutput::created_at): <p>The time, in milliseconds since the epoch, when the world template was created.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::update_world_template::UpdateWorldTemplateOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
     /// - On failure, responds with [`SdkError<UpdateWorldTemplateError>`](crate::operation::update_world_template::UpdateWorldTemplateError)
-    pub fn update_world_template(
-        &self,
-    ) -> crate::operation::update_world_template::builders::UpdateWorldTemplateFluentBuilder {
-        crate::operation::update_world_template::builders::UpdateWorldTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_world_template(&self) -> crate::operation::update_world_template::builders::UpdateWorldTemplateFluentBuilder {
+        crate::operation::update_world_template::builders::UpdateWorldTemplateFluentBuilder::new(self.handle.clone())
     }
 }

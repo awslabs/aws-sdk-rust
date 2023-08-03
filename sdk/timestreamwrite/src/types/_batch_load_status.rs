@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BatchLoadStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for BatchLoadStatus {
             "PENDING_RESUME" => BatchLoadStatus::PendingResume,
             "PROGRESS_STOPPED" => BatchLoadStatus::ProgressStopped,
             "SUCCEEDED" => BatchLoadStatus::Succeeded,
-            other => {
-                BatchLoadStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => BatchLoadStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl BatchLoadStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED",
-            "FAILED",
-            "IN_PROGRESS",
-            "PENDING_RESUME",
-            "PROGRESS_STOPPED",
-            "SUCCEEDED",
-        ]
+        &["CREATED", "FAILED", "IN_PROGRESS", "PENDING_RESUME", "PROGRESS_STOPPED", "SUCCEEDED"]
     }
 }
 impl ::std::convert::AsRef<str> for BatchLoadStatus {

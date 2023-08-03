@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_profiles::ListDeviceProfilesOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`device_profile_list(Option<Vec<DeviceProfile>>)`](crate::operation::list_device_profiles::ListDeviceProfilesOutput::device_profile_list): <p>The list of device profiles.</p>
     /// - On failure, responds with [`SdkError<ListDeviceProfilesError>`](crate::operation::list_device_profiles::ListDeviceProfilesError)
-    pub fn list_device_profiles(
-        &self,
-    ) -> crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder {
-        crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_device_profiles(&self) -> crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder {
+        crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder::new(self.handle.clone())
     }
 }

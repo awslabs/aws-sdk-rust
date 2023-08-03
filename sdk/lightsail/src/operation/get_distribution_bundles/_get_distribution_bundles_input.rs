@@ -5,29 +5,21 @@
 pub struct GetDistributionBundlesInput {}
 impl GetDistributionBundlesInput {
     /// Creates a new builder-style object to manufacture [`GetDistributionBundlesInput`](crate::operation::get_distribution_bundles::GetDistributionBundlesInput).
-    pub fn builder(
-    ) -> crate::operation::get_distribution_bundles::builders::GetDistributionBundlesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_distribution_bundles::builders::GetDistributionBundlesInputBuilder {
         crate::operation::get_distribution_bundles::builders::GetDistributionBundlesInputBuilder::default()
     }
 }
 
 /// A builder for [`GetDistributionBundlesInput`](crate::operation::get_distribution_bundles::GetDistributionBundlesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDistributionBundlesInputBuilder {}
 impl GetDistributionBundlesInputBuilder {
     /// Consumes the builder and constructs a [`GetDistributionBundlesInput`](crate::operation::get_distribution_bundles::GetDistributionBundlesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_distribution_bundles::GetDistributionBundlesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_distribution_bundles::GetDistributionBundlesInput {},
-        )
+    ) -> ::std::result::Result<crate::operation::get_distribution_bundles::GetDistributionBundlesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_distribution_bundles::GetDistributionBundlesInput {})
     }
 }

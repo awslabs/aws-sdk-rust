@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`template_name(impl ::std::convert::Into<String>)`](crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateFluentBuilder::set_template_name): <p>The name of the configuration template to delete.</p>
     /// - On success, responds with [`DeleteConfigurationTemplateOutput`](crate::operation::delete_configuration_template::DeleteConfigurationTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteConfigurationTemplateError>`](crate::operation::delete_configuration_template::DeleteConfigurationTemplateError)
-    pub fn delete_configuration_template(&self) -> crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateFluentBuilder{
+    pub fn delete_configuration_template(
+        &self,
+    ) -> crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateFluentBuilder {
         crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateFluentBuilder::new(self.handle.clone())
     }
 }

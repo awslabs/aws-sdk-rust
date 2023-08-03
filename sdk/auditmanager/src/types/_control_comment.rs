@@ -37,9 +37,7 @@ impl ControlComment {
 
 /// A builder for [`ControlComment`](crate::types::ControlComment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ControlCommentBuilder {
     pub(crate) author_name: ::std::option::Option<::std::string::String>,
     pub(crate) comment_body: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl ControlCommentBuilder {
         self
     }
     /// <p> The time when the comment was posted. </p>
-    pub fn set_posted_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_posted_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.posted_date = input;
         self
     }

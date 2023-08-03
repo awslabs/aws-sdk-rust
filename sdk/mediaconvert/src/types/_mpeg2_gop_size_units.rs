@@ -38,13 +38,7 @@
 /// Specify the units for GOP size. If you don't specify a value here, by default the encoder measures GOP size in frames.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Mpeg2GopSizeUnits {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for Mpeg2GopSizeUnits {
         match s {
             "FRAMES" => Mpeg2GopSizeUnits::Frames,
             "SECONDS" => Mpeg2GopSizeUnits::Seconds,
-            other => {
-                Mpeg2GopSizeUnits::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Mpeg2GopSizeUnits::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -5,8 +5,7 @@
 pub struct UpdateStorageVirtualMachineInput {
     /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
     #[doc(hidden)]
-    pub active_directory_configuration:
-        ::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration>,
+    pub active_directory_configuration: ::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -19,9 +18,7 @@ pub struct UpdateStorageVirtualMachineInput {
 }
 impl UpdateStorageVirtualMachineInput {
     /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
-    pub fn active_directory_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::UpdateSvmActiveDirectoryConfiguration> {
+    pub fn active_directory_configuration(&self) -> ::std::option::Option<&crate::types::UpdateSvmActiveDirectoryConfiguration> {
         self.active_directory_configuration.as_ref()
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
@@ -40,22 +37,16 @@ impl UpdateStorageVirtualMachineInput {
 impl ::std::fmt::Debug for UpdateStorageVirtualMachineInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStorageVirtualMachineInput");
-        formatter.field(
-            "active_directory_configuration",
-            &self.active_directory_configuration,
-        );
+        formatter.field("active_directory_configuration", &self.active_directory_configuration);
         formatter.field("client_request_token", &self.client_request_token);
-        formatter.field(
-            "storage_virtual_machine_id",
-            &self.storage_virtual_machine_id,
-        );
+        formatter.field("storage_virtual_machine_id", &self.storage_virtual_machine_id);
         formatter.field("svm_admin_password", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 impl UpdateStorageVirtualMachineInput {
     /// Creates a new builder-style object to manufacture [`UpdateStorageVirtualMachineInput`](crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput).
-    pub fn builder() -> crate::operation::update_storage_virtual_machine::builders::UpdateStorageVirtualMachineInputBuilder{
+    pub fn builder() -> crate::operation::update_storage_virtual_machine::builders::UpdateStorageVirtualMachineInputBuilder {
         crate::operation::update_storage_virtual_machine::builders::UpdateStorageVirtualMachineInputBuilder::default()
     }
 }
@@ -64,48 +55,33 @@ impl UpdateStorageVirtualMachineInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdateStorageVirtualMachineInputBuilder {
-    pub(crate) active_directory_configuration:
-        ::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration>,
+    pub(crate) active_directory_configuration: ::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) storage_virtual_machine_id: ::std::option::Option<::std::string::String>,
     pub(crate) svm_admin_password: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStorageVirtualMachineInputBuilder {
     /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
-    pub fn active_directory_configuration(
-        mut self,
-        input: crate::types::UpdateSvmActiveDirectoryConfiguration,
-    ) -> Self {
+    pub fn active_directory_configuration(mut self, input: crate::types::UpdateSvmActiveDirectoryConfiguration) -> Self {
         self.active_directory_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
-    pub fn set_active_directory_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration>,
-    ) -> Self {
+    pub fn set_active_directory_configuration(mut self, input: ::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration>) -> Self {
         self.active_directory_configuration = input;
         self
     }
     /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
-    pub fn get_active_directory_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration> {
+    pub fn get_active_directory_configuration(&self) -> &::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration> {
         &self.active_directory_configuration
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -114,18 +90,12 @@ impl UpdateStorageVirtualMachineInputBuilder {
         &self.client_request_token
     }
     /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
-    pub fn storage_virtual_machine_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn storage_virtual_machine_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_virtual_machine_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
-    pub fn set_storage_virtual_machine_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_storage_virtual_machine_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_virtual_machine_id = input;
         self
     }
@@ -134,18 +104,12 @@ impl UpdateStorageVirtualMachineInputBuilder {
         &self.storage_virtual_machine_id
     }
     /// <p>Specifies a new SvmAdminPassword.</p>
-    pub fn svm_admin_password(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn svm_admin_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.svm_admin_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a new SvmAdminPassword.</p>
-    pub fn set_svm_admin_password(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_svm_admin_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.svm_admin_password = input;
         self
     }
@@ -160,28 +124,20 @@ impl UpdateStorageVirtualMachineInputBuilder {
         crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput {
-                active_directory_configuration: self.active_directory_configuration,
-                client_request_token: self.client_request_token,
-                storage_virtual_machine_id: self.storage_virtual_machine_id,
-                svm_admin_password: self.svm_admin_password,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput {
+            active_directory_configuration: self.active_directory_configuration,
+            client_request_token: self.client_request_token,
+            storage_virtual_machine_id: self.storage_virtual_machine_id,
+            svm_admin_password: self.svm_admin_password,
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateStorageVirtualMachineInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStorageVirtualMachineInputBuilder");
-        formatter.field(
-            "active_directory_configuration",
-            &self.active_directory_configuration,
-        );
+        formatter.field("active_directory_configuration", &self.active_directory_configuration);
         formatter.field("client_request_token", &self.client_request_token);
-        formatter.field(
-            "storage_virtual_machine_id",
-            &self.storage_virtual_machine_id,
-        );
+        formatter.field("storage_virtual_machine_id", &self.storage_virtual_machine_id);
         formatter.field("svm_admin_password", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

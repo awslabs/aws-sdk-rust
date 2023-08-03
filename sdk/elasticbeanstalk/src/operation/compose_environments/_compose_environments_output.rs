@@ -29,21 +29,16 @@ impl ::aws_http::request_id::RequestId for ComposeEnvironmentsOutput {
 }
 impl ComposeEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`ComposeEnvironmentsOutput`](crate::operation::compose_environments::ComposeEnvironmentsOutput).
-    pub fn builder(
-    ) -> crate::operation::compose_environments::builders::ComposeEnvironmentsOutputBuilder {
-        crate::operation::compose_environments::builders::ComposeEnvironmentsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::compose_environments::builders::ComposeEnvironmentsOutputBuilder {
+        crate::operation::compose_environments::builders::ComposeEnvironmentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ComposeEnvironmentsOutput`](crate::operation::compose_environments::ComposeEnvironmentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComposeEnvironmentsOutputBuilder {
-    pub(crate) environments:
-        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentDescription>>,
+    pub(crate) environments: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +55,12 @@ impl ComposeEnvironmentsOutputBuilder {
         self
     }
     /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
-    pub fn set_environments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentDescription>>,
-    ) -> Self {
+    pub fn set_environments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentDescription>>) -> Self {
         self.environments = input;
         self
     }
     /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
-    pub fn get_environments(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentDescription>> {
+    pub fn get_environments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentDescription>> {
         &self.environments
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>

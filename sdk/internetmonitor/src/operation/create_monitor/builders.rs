@@ -10,10 +10,7 @@ impl CreateMonitorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_monitor::CreateMonitorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_monitor::CreateMonitorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_monitor::CreateMonitorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_monitor();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateMonitorFluentBuilder {
         }
     }
     /// Access the CreateMonitor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_monitor::builders::CreateMonitorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_monitor::builders::CreateMonitorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,10 +57,7 @@ impl CreateMonitorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -145,10 +137,7 @@ impl CreateMonitorFluentBuilder {
     /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
     /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub fn set_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resources(input);
         self
     }
@@ -178,30 +167,17 @@ impl CreateMonitorFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for a monitor. You can add a maximum of 50 tags in Internet Monitor.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags for a monitor. You can add a maximum of 50 tags in Internet Monitor.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags for a monitor. You can add a maximum of 50 tags in Internet Monitor.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
@@ -222,25 +198,17 @@ impl CreateMonitorFluentBuilder {
         self.inner.get_max_city_networks_to_monitor()
     }
     /// <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in addition to CloudWatch Logs.</p>
-    pub fn internet_measurements_log_delivery(
-        mut self,
-        input: crate::types::InternetMeasurementsLogDelivery,
-    ) -> Self {
+    pub fn internet_measurements_log_delivery(mut self, input: crate::types::InternetMeasurementsLogDelivery) -> Self {
         self.inner = self.inner.internet_measurements_log_delivery(input);
         self
     }
     /// <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in addition to CloudWatch Logs.</p>
-    pub fn set_internet_measurements_log_delivery(
-        mut self,
-        input: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
-    ) -> Self {
+    pub fn set_internet_measurements_log_delivery(mut self, input: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>) -> Self {
         self.inner = self.inner.set_internet_measurements_log_delivery(input);
         self
     }
     /// <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in addition to CloudWatch Logs.</p>
-    pub fn get_internet_measurements_log_delivery(
-        &self,
-    ) -> &::std::option::Option<crate::types::InternetMeasurementsLogDelivery> {
+    pub fn get_internet_measurements_log_delivery(&self) -> &::std::option::Option<crate::types::InternetMeasurementsLogDelivery> {
         self.inner.get_internet_measurements_log_delivery()
     }
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
@@ -263,17 +231,12 @@ impl CreateMonitorFluentBuilder {
         self
     }
     /// <p>Defines the health event threshold percentages, for performance score and availability score. Internet Monitor creates a health event when there's an internet issue that affects your application end users where a health score percentage is at or below a set threshold. If you don't set a health event threshold, the default calue is 95%.</p>
-    pub fn set_health_events_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthEventsConfig>,
-    ) -> Self {
+    pub fn set_health_events_config(mut self, input: ::std::option::Option<crate::types::HealthEventsConfig>) -> Self {
         self.inner = self.inner.set_health_events_config(input);
         self
     }
     /// <p>Defines the health event threshold percentages, for performance score and availability score. Internet Monitor creates a health event when there's an internet issue that affects your application end users where a health score percentage is at or below a set threshold. If you don't set a health event threshold, the default calue is 95%.</p>
-    pub fn get_health_events_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HealthEventsConfig> {
+    pub fn get_health_events_config(&self) -> &::std::option::Option<crate::types::HealthEventsConfig> {
         self.inner.get_health_events_config()
     }
 }

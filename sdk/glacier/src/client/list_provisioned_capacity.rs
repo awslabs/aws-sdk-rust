@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`ListProvisionedCapacityOutput`](crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput) with field(s):
     ///   - [`provisioned_capacity_list(Option<Vec<ProvisionedCapacityDescription>>)`](crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput::provisioned_capacity_list): <p>The response body contains the following JSON fields.</p>
     /// - On failure, responds with [`SdkError<ListProvisionedCapacityError>`](crate::operation::list_provisioned_capacity::ListProvisionedCapacityError)
-    pub fn list_provisioned_capacity(
-        &self,
-    ) -> crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityFluentBuilder
-    {
+    pub fn list_provisioned_capacity(&self) -> crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityFluentBuilder {
         crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityFluentBuilder::new(self.handle.clone())
     }
 }

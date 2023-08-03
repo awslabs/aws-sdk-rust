@@ -4,125 +4,117 @@ pub fn de_copy_db_snapshot_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::copy_db_snapshot::CopyDbSnapshotOutput,
-    crate::operation::copy_db_snapshot::CopyDBSnapshotError,
-> {
+) -> std::result::Result<crate::operation::copy_db_snapshot::CopyDbSnapshotOutput, crate::operation::copy_db_snapshot::CopyDBSnapshotError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled(generic))
-        }
+        None => return Err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CustomAvailabilityZoneNotFound" => crate::operation::copy_db_snapshot::CopyDBSnapshotError::CustomAvailabilityZoneNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::CustomAvailabilityZoneNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_custom_availability_zone_not_found_fault::de_custom_availability_zone_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CustomAvailabilityZoneNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_custom_availability_zone_not_found_fault::de_custom_availability_zone_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "DBSnapshotAlreadyExists" => crate::operation::copy_db_snapshot::CopyDBSnapshotError::DbSnapshotAlreadyExistsFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbSnapshotAlreadyExistsFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_snapshot_already_exists_fault::de_db_snapshot_already_exists_fault_xml_err(_response_body, output).map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbSnapshotAlreadyExistsFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_snapshot_already_exists_fault::de_db_snapshot_already_exists_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "DBSnapshotNotFound" => crate::operation::copy_db_snapshot::CopyDBSnapshotError::DbSnapshotNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::DbSnapshotNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_db_snapshot_not_found_fault::de_db_snapshot_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbSnapshotNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_snapshot_not_found_fault::de_db_snapshot_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidDBSnapshotState" => crate::operation::copy_db_snapshot::CopyDBSnapshotError::InvalidDbSnapshotStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidDbSnapshotStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_db_snapshot_state_fault::de_invalid_db_snapshot_state_fault_xml_err(_response_body, output).map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbSnapshotStateFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_db_snapshot_state_fault::de_invalid_db_snapshot_state_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "KMSKeyNotAccessibleFault" => crate::operation::copy_db_snapshot::CopyDBSnapshotError::KmsKeyNotAccessibleFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
-                    output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(_response_body, output).map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
+                output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "SnapshotQuotaExceeded" => crate::operation::copy_db_snapshot::CopyDBSnapshotError::SnapshotQuotaExceededFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::SnapshotQuotaExceededFaultBuilder::default();
-                    output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SnapshotQuotaExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::copy_db_snapshot::CopyDBSnapshotError::generic(generic)
+        _ => crate::operation::copy_db_snapshot::CopyDBSnapshotError::generic(generic),
     })
 }
 
@@ -131,22 +123,13 @@ pub fn de_copy_db_snapshot_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::copy_db_snapshot::CopyDbSnapshotOutput,
-    crate::operation::copy_db_snapshot::CopyDBSnapshotError,
-> {
+) -> std::result::Result<crate::operation::copy_db_snapshot::CopyDbSnapshotOutput, crate::operation::copy_db_snapshot::CopyDBSnapshotError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::copy_db_snapshot::builders::CopyDbSnapshotOutputBuilder::default();
-        output = crate::protocol_serde::shape_copy_db_snapshot::de_copy_db_snapshot(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        let mut output = crate::operation::copy_db_snapshot::builders::CopyDbSnapshotOutputBuilder::default();
+        output = crate::protocol_serde::shape_copy_db_snapshot::de_copy_db_snapshot(_response_body, output)
+            .map_err(crate::operation::copy_db_snapshot::CopyDBSnapshotError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -155,10 +138,7 @@ pub fn de_copy_db_snapshot_http_response_with_props(
 pub fn de_copy_db_snapshot(
     inp: &[u8],
     mut builder: crate::operation::copy_db_snapshot::builders::CopyDbSnapshotOutputBuilder,
-) -> Result<
-    crate::operation::copy_db_snapshot::builders::CopyDbSnapshotOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::copy_db_snapshot::builders::CopyDbSnapshotOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -195,9 +175,7 @@ pub fn de_copy_db_snapshot(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected CopyDBSnapshotResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected CopyDBSnapshotResult tag"));
     };
     Ok(builder)
 }

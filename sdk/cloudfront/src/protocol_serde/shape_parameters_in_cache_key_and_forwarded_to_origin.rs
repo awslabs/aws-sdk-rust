@@ -15,17 +15,11 @@ pub fn ser_parameters_in_cache_key_and_forwarded_to_origin(
     }
     if let Some(var_3) = &input.headers_config {
         let inner_writer = scope.start_el("HeadersConfig");
-        crate::protocol_serde::shape_cache_policy_headers_config::ser_cache_policy_headers_config(
-            var_3,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_cache_policy_headers_config::ser_cache_policy_headers_config(var_3, inner_writer)?
     }
     if let Some(var_4) = &input.cookies_config {
         let inner_writer = scope.start_el("CookiesConfig");
-        crate::protocol_serde::shape_cache_policy_cookies_config::ser_cache_policy_cookies_config(
-            var_4,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_cache_policy_cookies_config::ser_cache_policy_cookies_config(var_4, inner_writer)?
     }
     if let Some(var_5) = &input.query_strings_config {
         let inner_writer = scope.start_el("QueryStringsConfig");
@@ -37,10 +31,7 @@ pub fn ser_parameters_in_cache_key_and_forwarded_to_origin(
 
 pub fn de_parameters_in_cache_key_and_forwarded_to_origin(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::ParametersInCacheKeyAndForwardedToOrigin,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::ParametersInCacheKeyAndForwardedToOrigin, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ParametersInCacheKeyAndForwardedToOrigin::builder();
     while let Some(mut tag) = decoder.next_tag() {

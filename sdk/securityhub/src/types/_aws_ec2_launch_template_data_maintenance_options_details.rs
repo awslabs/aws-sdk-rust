@@ -16,34 +16,25 @@ impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
 }
 impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataMaintenanceOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataMaintenanceOptionsDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataMaintenanceOptionsDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataMaintenanceOptionsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataMaintenanceOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataMaintenanceOptionsDetailsBuilder {
     pub(crate) auto_recovery: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetailsBuilder {
     /// <p> Disables the automatic recovery behavior of your instance or sets it to default. </p>
-    pub fn auto_recovery(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_recovery(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_recovery = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Disables the automatic recovery behavior of your instance or sets it to default. </p>
-    pub fn set_auto_recovery(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_recovery(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_recovery = input;
         self
     }

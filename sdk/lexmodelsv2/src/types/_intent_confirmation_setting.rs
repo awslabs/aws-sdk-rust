@@ -43,21 +43,16 @@ pub struct IntentConfirmationSetting {
     pub code_hook: ::std::option::Option<crate::types::DialogCodeHookInvocationSetting>,
     /// <p>The <code>DialogCodeHookInvocationSetting</code> used when the code hook is invoked during confirmation prompt retries.</p>
     #[doc(hidden)]
-    pub elicitation_code_hook:
-        ::std::option::Option<crate::types::ElicitationCodeHookInvocationSetting>,
+    pub elicitation_code_hook: ::std::option::Option<crate::types::ElicitationCodeHookInvocationSetting>,
 }
 impl IntentConfirmationSetting {
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
     /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p>
-    pub fn prompt_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PromptSpecification> {
+    pub fn prompt_specification(&self) -> ::std::option::Option<&crate::types::PromptSpecification> {
         self.prompt_specification.as_ref()
     }
     /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled. </p>
-    pub fn declination_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResponseSpecification> {
+    pub fn declination_response(&self) -> ::std::option::Option<&crate::types::ResponseSpecification> {
         self.declination_response.as_ref()
     }
     /// <p>Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation and declination responses aren't sent. If the <code>active</code> field isn't specified, the default is true.</p>
@@ -65,9 +60,7 @@ impl IntentConfirmationSetting {
         self.active
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn confirmation_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ResponseSpecification> {
+    pub fn confirmation_response(&self) -> ::std::option::Option<&crate::types::ResponseSpecification> {
         self.confirmation_response.as_ref()
     }
     /// <p>Specifies the next step that the bot executes when the customer confirms the intent.</p>
@@ -75,9 +68,7 @@ impl IntentConfirmationSetting {
         self.confirmation_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate after the intent is closed.</p>
-    pub fn confirmation_conditional(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
+    pub fn confirmation_conditional(&self) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
         self.confirmation_conditional.as_ref()
     }
     /// <p>Specifies the next step that the bot executes when the customer declines the intent.</p>
@@ -85,9 +76,7 @@ impl IntentConfirmationSetting {
         self.declination_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate after the intent is declined.</p>
-    pub fn declination_conditional(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
+    pub fn declination_conditional(&self) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
         self.declination_conditional.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
@@ -99,21 +88,15 @@ impl IntentConfirmationSetting {
         self.failure_next_step.as_ref()
     }
     /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
-    pub fn failure_conditional(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
+    pub fn failure_conditional(&self) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
         self.failure_conditional.as_ref()
     }
     /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
-    pub fn code_hook(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DialogCodeHookInvocationSetting> {
+    pub fn code_hook(&self) -> ::std::option::Option<&crate::types::DialogCodeHookInvocationSetting> {
         self.code_hook.as_ref()
     }
     /// <p>The <code>DialogCodeHookInvocationSetting</code> used when the code hook is invoked during confirmation prompt retries.</p>
-    pub fn elicitation_code_hook(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ElicitationCodeHookInvocationSetting> {
+    pub fn elicitation_code_hook(&self) -> ::std::option::Option<&crate::types::ElicitationCodeHookInvocationSetting> {
         self.elicitation_code_hook.as_ref()
     }
 }
@@ -126,26 +109,21 @@ impl IntentConfirmationSetting {
 
 /// A builder for [`IntentConfirmationSetting`](crate::types::IntentConfirmationSetting).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntentConfirmationSettingBuilder {
     pub(crate) prompt_specification: ::std::option::Option<crate::types::PromptSpecification>,
     pub(crate) declination_response: ::std::option::Option<crate::types::ResponseSpecification>,
     pub(crate) active: ::std::option::Option<bool>,
     pub(crate) confirmation_response: ::std::option::Option<crate::types::ResponseSpecification>,
     pub(crate) confirmation_next_step: ::std::option::Option<crate::types::DialogState>,
-    pub(crate) confirmation_conditional:
-        ::std::option::Option<crate::types::ConditionalSpecification>,
+    pub(crate) confirmation_conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
     pub(crate) declination_next_step: ::std::option::Option<crate::types::DialogState>,
-    pub(crate) declination_conditional:
-        ::std::option::Option<crate::types::ConditionalSpecification>,
+    pub(crate) declination_conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
     pub(crate) failure_response: ::std::option::Option<crate::types::ResponseSpecification>,
     pub(crate) failure_next_step: ::std::option::Option<crate::types::DialogState>,
     pub(crate) failure_conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
     pub(crate) code_hook: ::std::option::Option<crate::types::DialogCodeHookInvocationSetting>,
-    pub(crate) elicitation_code_hook:
-        ::std::option::Option<crate::types::ElicitationCodeHookInvocationSetting>,
+    pub(crate) elicitation_code_hook: ::std::option::Option<crate::types::ElicitationCodeHookInvocationSetting>,
 }
 impl IntentConfirmationSettingBuilder {
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
@@ -156,18 +134,13 @@ impl IntentConfirmationSettingBuilder {
     }
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
     /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p>
-    pub fn set_prompt_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::PromptSpecification>,
-    ) -> Self {
+    pub fn set_prompt_specification(mut self, input: ::std::option::Option<crate::types::PromptSpecification>) -> Self {
         self.prompt_specification = input;
         self
     }
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
     /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p>
-    pub fn get_prompt_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::PromptSpecification> {
+    pub fn get_prompt_specification(&self) -> &::std::option::Option<crate::types::PromptSpecification> {
         &self.prompt_specification
     }
     /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled. </p>
@@ -176,17 +149,12 @@ impl IntentConfirmationSettingBuilder {
         self
     }
     /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled. </p>
-    pub fn set_declination_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseSpecification>,
-    ) -> Self {
+    pub fn set_declination_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
         self.declination_response = input;
         self
     }
     /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled. </p>
-    pub fn get_declination_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+    pub fn get_declination_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
         &self.declination_response
     }
     /// <p>Specifies whether the intent's confirmation is sent to the user. When this field is false, confirmation and declination responses aren't sent. If the <code>active</code> field isn't specified, the default is true.</p>
@@ -209,17 +177,12 @@ impl IntentConfirmationSettingBuilder {
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn set_confirmation_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseSpecification>,
-    ) -> Self {
+    pub fn set_confirmation_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
         self.confirmation_response = input;
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn get_confirmation_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+    pub fn get_confirmation_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
         &self.confirmation_response
     }
     /// <p>Specifies the next step that the bot executes when the customer confirms the intent.</p>
@@ -228,10 +191,7 @@ impl IntentConfirmationSettingBuilder {
         self
     }
     /// <p>Specifies the next step that the bot executes when the customer confirms the intent.</p>
-    pub fn set_confirmation_next_step(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogState>,
-    ) -> Self {
+    pub fn set_confirmation_next_step(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
         self.confirmation_next_step = input;
         self
     }
@@ -240,25 +200,17 @@ impl IntentConfirmationSettingBuilder {
         &self.confirmation_next_step
     }
     /// <p>A list of conditional branches to evaluate after the intent is closed.</p>
-    pub fn confirmation_conditional(
-        mut self,
-        input: crate::types::ConditionalSpecification,
-    ) -> Self {
+    pub fn confirmation_conditional(mut self, input: crate::types::ConditionalSpecification) -> Self {
         self.confirmation_conditional = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of conditional branches to evaluate after the intent is closed.</p>
-    pub fn set_confirmation_conditional(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalSpecification>,
-    ) -> Self {
+    pub fn set_confirmation_conditional(mut self, input: ::std::option::Option<crate::types::ConditionalSpecification>) -> Self {
         self.confirmation_conditional = input;
         self
     }
     /// <p>A list of conditional branches to evaluate after the intent is closed.</p>
-    pub fn get_confirmation_conditional(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConditionalSpecification> {
+    pub fn get_confirmation_conditional(&self) -> &::std::option::Option<crate::types::ConditionalSpecification> {
         &self.confirmation_conditional
     }
     /// <p>Specifies the next step that the bot executes when the customer declines the intent.</p>
@@ -267,10 +219,7 @@ impl IntentConfirmationSettingBuilder {
         self
     }
     /// <p>Specifies the next step that the bot executes when the customer declines the intent.</p>
-    pub fn set_declination_next_step(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogState>,
-    ) -> Self {
+    pub fn set_declination_next_step(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
         self.declination_next_step = input;
         self
     }
@@ -279,25 +228,17 @@ impl IntentConfirmationSettingBuilder {
         &self.declination_next_step
     }
     /// <p>A list of conditional branches to evaluate after the intent is declined.</p>
-    pub fn declination_conditional(
-        mut self,
-        input: crate::types::ConditionalSpecification,
-    ) -> Self {
+    pub fn declination_conditional(mut self, input: crate::types::ConditionalSpecification) -> Self {
         self.declination_conditional = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of conditional branches to evaluate after the intent is declined.</p>
-    pub fn set_declination_conditional(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalSpecification>,
-    ) -> Self {
+    pub fn set_declination_conditional(mut self, input: ::std::option::Option<crate::types::ConditionalSpecification>) -> Self {
         self.declination_conditional = input;
         self
     }
     /// <p>A list of conditional branches to evaluate after the intent is declined.</p>
-    pub fn get_declination_conditional(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConditionalSpecification> {
+    pub fn get_declination_conditional(&self) -> &::std::option::Option<crate::types::ConditionalSpecification> {
         &self.declination_conditional
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
@@ -306,17 +247,12 @@ impl IntentConfirmationSettingBuilder {
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn set_failure_response(
-        mut self,
-        input: ::std::option::Option<crate::types::ResponseSpecification>,
-    ) -> Self {
+    pub fn set_failure_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
         self.failure_response = input;
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn get_failure_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+    pub fn get_failure_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
         &self.failure_response
     }
     /// <p>The next step to take in the conversation if the confirmation step fails.</p>
@@ -325,10 +261,7 @@ impl IntentConfirmationSettingBuilder {
         self
     }
     /// <p>The next step to take in the conversation if the confirmation step fails.</p>
-    pub fn set_failure_next_step(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogState>,
-    ) -> Self {
+    pub fn set_failure_next_step(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
         self.failure_next_step = input;
         self
     }
@@ -342,17 +275,12 @@ impl IntentConfirmationSettingBuilder {
         self
     }
     /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
-    pub fn set_failure_conditional(
-        mut self,
-        input: ::std::option::Option<crate::types::ConditionalSpecification>,
-    ) -> Self {
+    pub fn set_failure_conditional(mut self, input: ::std::option::Option<crate::types::ConditionalSpecification>) -> Self {
         self.failure_conditional = input;
         self
     }
     /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
-    pub fn get_failure_conditional(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConditionalSpecification> {
+    pub fn get_failure_conditional(&self) -> &::std::option::Option<crate::types::ConditionalSpecification> {
         &self.failure_conditional
     }
     /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
@@ -361,39 +289,26 @@ impl IntentConfirmationSettingBuilder {
         self
     }
     /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
-    pub fn set_code_hook(
-        mut self,
-        input: ::std::option::Option<crate::types::DialogCodeHookInvocationSetting>,
-    ) -> Self {
+    pub fn set_code_hook(mut self, input: ::std::option::Option<crate::types::DialogCodeHookInvocationSetting>) -> Self {
         self.code_hook = input;
         self
     }
     /// <p>The <code>DialogCodeHookInvocationSetting</code> object associated with intent's confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is <code>InvokeDialogCodeHook</code>. </p>
-    pub fn get_code_hook(
-        &self,
-    ) -> &::std::option::Option<crate::types::DialogCodeHookInvocationSetting> {
+    pub fn get_code_hook(&self) -> &::std::option::Option<crate::types::DialogCodeHookInvocationSetting> {
         &self.code_hook
     }
     /// <p>The <code>DialogCodeHookInvocationSetting</code> used when the code hook is invoked during confirmation prompt retries.</p>
-    pub fn elicitation_code_hook(
-        mut self,
-        input: crate::types::ElicitationCodeHookInvocationSetting,
-    ) -> Self {
+    pub fn elicitation_code_hook(mut self, input: crate::types::ElicitationCodeHookInvocationSetting) -> Self {
         self.elicitation_code_hook = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>DialogCodeHookInvocationSetting</code> used when the code hook is invoked during confirmation prompt retries.</p>
-    pub fn set_elicitation_code_hook(
-        mut self,
-        input: ::std::option::Option<crate::types::ElicitationCodeHookInvocationSetting>,
-    ) -> Self {
+    pub fn set_elicitation_code_hook(mut self, input: ::std::option::Option<crate::types::ElicitationCodeHookInvocationSetting>) -> Self {
         self.elicitation_code_hook = input;
         self
     }
     /// <p>The <code>DialogCodeHookInvocationSetting</code> used when the code hook is invoked during confirmation prompt retries.</p>
-    pub fn get_elicitation_code_hook(
-        &self,
-    ) -> &::std::option::Option<crate::types::ElicitationCodeHookInvocationSetting> {
+    pub fn get_elicitation_code_hook(&self) -> &::std::option::Option<crate::types::ElicitationCodeHookInvocationSetting> {
         &self.elicitation_code_hook
     }
     /// Consumes the builder and constructs a [`IntentConfirmationSetting`](crate::types::IntentConfirmationSetting).

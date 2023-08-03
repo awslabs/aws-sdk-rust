@@ -13,9 +13,7 @@ pub struct UpdateOriginRequestPolicyOutput {
 }
 impl UpdateOriginRequestPolicyOutput {
     /// <p>An origin request policy.</p>
-    pub fn origin_request_policy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginRequestPolicy> {
+    pub fn origin_request_policy(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicy> {
         self.origin_request_policy.as_ref()
     }
     /// <p>The current version of the origin request policy.</p>
@@ -30,16 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateOriginRequestPolicyOutput {
 }
 impl UpdateOriginRequestPolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOriginRequestPolicyOutput`](crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyOutput).
-    pub fn builder() -> crate::operation::update_origin_request_policy::builders::UpdateOriginRequestPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::update_origin_request_policy::builders::UpdateOriginRequestPolicyOutputBuilder {
         crate::operation::update_origin_request_policy::builders::UpdateOriginRequestPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateOriginRequestPolicyOutput`](crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateOriginRequestPolicyOutputBuilder {
     pub(crate) origin_request_policy: ::std::option::Option<crate::types::OriginRequestPolicy>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -52,17 +48,12 @@ impl UpdateOriginRequestPolicyOutputBuilder {
         self
     }
     /// <p>An origin request policy.</p>
-    pub fn set_origin_request_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginRequestPolicy>,
-    ) -> Self {
+    pub fn set_origin_request_policy(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicy>) -> Self {
         self.origin_request_policy = input;
         self
     }
     /// <p>An origin request policy.</p>
-    pub fn get_origin_request_policy(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginRequestPolicy> {
+    pub fn get_origin_request_policy(&self) -> &::std::option::Option<crate::types::OriginRequestPolicy> {
         &self.origin_request_policy
     }
     /// <p>The current version of the origin request policy.</p>
@@ -89,9 +80,7 @@ impl UpdateOriginRequestPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateOriginRequestPolicyOutput`](crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyOutput {
+    pub fn build(self) -> crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyOutput {
         crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyOutput {
             origin_request_policy: self.origin_request_policy,
             e_tag: self.e_tag,

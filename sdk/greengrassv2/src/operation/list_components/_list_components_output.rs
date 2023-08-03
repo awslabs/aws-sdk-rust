@@ -35,9 +35,7 @@ impl ListComponentsOutput {
 
 /// A builder for [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentsOutputBuilder {
     pub(crate) components: ::std::option::Option<::std::vec::Vec<crate::types::Component>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListComponentsOutputBuilder {
         self
     }
     /// <p>A list that summarizes each component.</p>
-    pub fn set_components(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Component>>,
-    ) -> Self {
+    pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Component>>) -> Self {
         self.components = input;
         self
     }
     /// <p>A list that summarizes each component.</p>
-    pub fn get_components(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Component>> {
+    pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Component>> {
         &self.components
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>

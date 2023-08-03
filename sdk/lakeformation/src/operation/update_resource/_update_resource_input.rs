@@ -36,9 +36,7 @@ impl UpdateResourceInput {
 
 /// A builder for [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResourceInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -90,10 +88,7 @@ impl UpdateResourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resource::UpdateResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_resource::UpdateResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_resource::UpdateResourceInput {
             role_arn: self.role_arn,
             resource_arn: self.resource_arn,

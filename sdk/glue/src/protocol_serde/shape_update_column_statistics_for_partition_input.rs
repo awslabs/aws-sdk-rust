@@ -27,10 +27,7 @@ pub fn ser_update_column_statistics_for_partition_input(
             {
                 #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_column_statistics::ser_column_statistics(
-                    &mut object_10,
-                    item_9,
-                )?;
+                crate::protocol_serde::shape_column_statistics::ser_column_statistics(&mut object_10, item_9)?;
                 object_10.finish();
             }
         }

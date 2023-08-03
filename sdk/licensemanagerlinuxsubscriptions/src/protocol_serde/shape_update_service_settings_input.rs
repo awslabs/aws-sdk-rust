@@ -7,15 +7,11 @@ pub fn ser_update_service_settings_input(
         object.key("AllowUpdate").boolean(*var_1);
     }
     if let Some(var_2) = &input.linux_subscriptions_discovery {
-        object
-            .key("LinuxSubscriptionsDiscovery")
-            .string(var_2.as_str());
+        object.key("LinuxSubscriptionsDiscovery").string(var_2.as_str());
     }
     if let Some(var_3) = &input.linux_subscriptions_discovery_settings {
         #[allow(unused_mut)]
-        let mut object_4 = object
-            .key("LinuxSubscriptionsDiscoverySettings")
-            .start_object();
+        let mut object_4 = object.key("LinuxSubscriptionsDiscoverySettings").start_object();
         crate::protocol_serde::shape_linux_subscriptions_discovery_settings::ser_linux_subscriptions_discovery_settings(&mut object_4, var_3)?;
         object_4.finish();
     }

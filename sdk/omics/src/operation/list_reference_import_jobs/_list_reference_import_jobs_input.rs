@@ -36,18 +36,14 @@ impl ListReferenceImportJobsInput {
 }
 impl ListReferenceImportJobsInput {
     /// Creates a new builder-style object to manufacture [`ListReferenceImportJobsInput`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsInputBuilder {
         crate::operation::list_reference_import_jobs::builders::ListReferenceImportJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListReferenceImportJobsInput`](crate::operation::list_reference_import_jobs::ListReferenceImportJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReferenceImportJobsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -84,18 +80,12 @@ impl ListReferenceImportJobsInputBuilder {
         &self.next_token
     }
     /// <p>The job's reference store ID.</p>
-    pub fn reference_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job's reference store ID.</p>
-    pub fn set_reference_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_store_id = input;
         self
     }
@@ -109,10 +99,7 @@ impl ListReferenceImportJobsInputBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportReferenceFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ImportReferenceFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -127,13 +114,11 @@ impl ListReferenceImportJobsInputBuilder {
         crate::operation::list_reference_import_jobs::ListReferenceImportJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_reference_import_jobs::ListReferenceImportJobsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                reference_store_id: self.reference_store_id,
-                filter: self.filter,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_reference_import_jobs::ListReferenceImportJobsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            reference_store_id: self.reference_store_id,
+            filter: self.filter,
+        })
     }
 }

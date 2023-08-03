@@ -30,9 +30,7 @@ impl MediaStorageConfiguration {
 
 /// A builder for [`MediaStorageConfiguration`](crate::types::MediaStorageConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MediaStorageConfigurationBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::MediaStorageConfigurationStatus>,
@@ -58,17 +56,12 @@ impl MediaStorageConfigurationBuilder {
         self
     }
     /// <p>The status of the media storage configuration.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaStorageConfigurationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MediaStorageConfigurationStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the media storage configuration.</p>
-    pub fn get_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::MediaStorageConfigurationStatus> {
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MediaStorageConfigurationStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`MediaStorageConfiguration`](crate::types::MediaStorageConfiguration).

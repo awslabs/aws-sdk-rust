@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for RestoreDbClusterFromSnapshotOutput {
 }
 impl RestoreDbClusterFromSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotOutput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotOutput).
-    pub fn builder() -> crate::operation::restore_db_cluster_from_snapshot::builders::RestoreDbClusterFromSnapshotOutputBuilder{
+    pub fn builder() -> crate::operation::restore_db_cluster_from_snapshot::builders::RestoreDbClusterFromSnapshotOutputBuilder {
         crate::operation::restore_db_cluster_from_snapshot::builders::RestoreDbClusterFromSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreDbClusterFromSnapshotOutput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreDbClusterFromSnapshotOutputBuilder {
     pub(crate) db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,
@@ -80,10 +78,7 @@ impl RestoreDbClusterFromSnapshotOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotOutput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotOutput
-    {
+    pub fn build(self) -> crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotOutput {
         crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotOutput {
             db_cluster: self.db_cluster,
             _request_id: self._request_id,

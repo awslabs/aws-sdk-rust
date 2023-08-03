@@ -30,7 +30,7 @@ impl CreatePresignedDomainUrlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePresignedDomainUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlInputBuilder,
+    inner: crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlInputBuilder,
 }
 impl CreatePresignedDomainUrlFluentBuilder {
     /// Creates a new `CreatePresignedDomainUrl`.
@@ -41,7 +41,7 @@ impl CreatePresignedDomainUrlFluentBuilder {
         }
     }
     /// Access the CreatePresignedDomainUrl as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl CreatePresignedDomainUrlFluentBuilder {
             crate::operation::create_presigned_domain_url::CreatePresignedDomainUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl CreatePresignedDomainUrlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl CreatePresignedDomainUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl CreatePresignedDomainUrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +109,7 @@ impl CreatePresignedDomainUrlFluentBuilder {
             crate::operation::create_presigned_domain_url::CreatePresignedDomainUrl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +128,12 @@ impl CreatePresignedDomainUrlFluentBuilder {
         self.inner.get_domain_id()
     }
     /// <p>The name of the UserProfile to sign-in as.</p>
-    pub fn user_profile_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_profile_name(input.into());
         self
     }
     /// <p>The name of the UserProfile to sign-in as.</p>
-    pub fn set_user_profile_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_profile_name(input);
         self
     }
@@ -164,10 +147,7 @@ impl CreatePresignedDomainUrlFluentBuilder {
         self
     }
     /// <p>The session expiration duration in seconds. This value defaults to 43200.</p>
-    pub fn set_session_expiration_duration_in_seconds(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_session_expiration_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_session_expiration_duration_in_seconds(input);
         self
     }

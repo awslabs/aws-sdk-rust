@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`repository_association_summaries(Option<Vec<RepositoryAssociationSummary>>)`](crate::operation::list_repository_associations::ListRepositoryAssociationsOutput::repository_association_summaries): <p>A list of repository associations that meet the criteria of the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_repository_associations::ListRepositoryAssociationsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<ListRepositoryAssociationsError>`](crate::operation::list_repository_associations::ListRepositoryAssociationsError)
-    pub fn list_repository_associations(&self) -> crate::operation::list_repository_associations::builders::ListRepositoryAssociationsFluentBuilder{
+    pub fn list_repository_associations(&self) -> crate::operation::list_repository_associations::builders::ListRepositoryAssociationsFluentBuilder {
         crate::operation::list_repository_associations::builders::ListRepositoryAssociationsFluentBuilder::new(self.handle.clone())
     }
 }

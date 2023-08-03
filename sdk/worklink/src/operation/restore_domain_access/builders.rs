@@ -23,9 +23,7 @@ impl RestoreDomainAccessInputBuilder {
 /// Fluent builder constructing a request to `RestoreDomainAccess`.
 ///
 /// <p>Moves a domain to ACTIVE status if it was in the INACTIVE status.</p>
-#[deprecated(
-    note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-)]
+#[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreDomainAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -40,9 +38,7 @@ impl RestoreDomainAccessFluentBuilder {
         }
     }
     /// Access the RestoreDomainAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::restore_domain_access::builders::RestoreDomainAccessInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::restore_domain_access::builders::RestoreDomainAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl RestoreDomainAccessFluentBuilder {
             crate::operation::restore_domain_access::RestoreDomainAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_domain_access::RestoreDomainAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_domain_access::RestoreDomainAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl RestoreDomainAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl RestoreDomainAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_domain_access::RestoreDomainAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_domain_access::RestoreDomainAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_domain_access::RestoreDomainAccessError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl RestoreDomainAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_domain_access::RestoreDomainAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_domain_access::RestoreDomainAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_domain_access::RestoreDomainAccessError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl RestoreDomainAccessFluentBuilder {
             crate::operation::restore_domain_access::RestoreDomainAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::restore_domain_access::RestoreDomainAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_domain_access::RestoreDomainAccessError>,
     > {
         self.customize_middleware().await
     }

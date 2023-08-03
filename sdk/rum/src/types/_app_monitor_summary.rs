@@ -51,9 +51,7 @@ impl AppMonitorSummary {
 
 /// A builder for [`AppMonitorSummary`](crate::types::AppMonitorSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AppMonitorSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -105,18 +103,12 @@ impl AppMonitorSummaryBuilder {
         &self.created
     }
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
-    pub fn last_modified(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_modified(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_modified(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified = input;
         self
     }

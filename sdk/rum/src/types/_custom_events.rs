@@ -23,9 +23,7 @@ impl CustomEvents {
 
 /// A builder for [`CustomEvents`](crate::types::CustomEvents).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomEventsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::CustomEventsStatus>,
 }
@@ -36,10 +34,7 @@ impl CustomEventsBuilder {
         self
     }
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be <code>DISABLED</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomEventsStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CustomEventsStatus>) -> Self {
         self.status = input;
         self
     }
@@ -49,8 +44,6 @@ impl CustomEventsBuilder {
     }
     /// Consumes the builder and constructs a [`CustomEvents`](crate::types::CustomEvents).
     pub fn build(self) -> crate::types::CustomEvents {
-        crate::types::CustomEvents {
-            status: self.status,
-        }
+        crate::types::CustomEvents { status: self.status }
     }
 }

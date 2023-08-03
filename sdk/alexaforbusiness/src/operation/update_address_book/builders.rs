@@ -10,10 +10,7 @@ impl UpdateAddressBookInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_address_book::UpdateAddressBookOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_address_book::UpdateAddressBookError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_address_book::UpdateAddressBookError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_address_book();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UpdateAddressBookFluentBuilder {
         }
     }
     /// Access the UpdateAddressBook as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_address_book::builders::UpdateAddressBookInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_address_book::builders::UpdateAddressBookInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UpdateAddressBookFluentBuilder {
             crate::operation::update_address_book::UpdateAddressBook,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_address_book::UpdateAddressBookError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_address_book::UpdateAddressBookError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UpdateAddressBookFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UpdateAddressBookFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_address_book::UpdateAddressBookOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_address_book::UpdateAddressBookError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_address_book::UpdateAddressBookError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UpdateAddressBookFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_address_book::UpdateAddressBookOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_address_book::UpdateAddressBookError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_address_book::UpdateAddressBookError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl UpdateAddressBookFluentBuilder {
             crate::operation::update_address_book::UpdateAddressBook,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_address_book::UpdateAddressBookError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_address_book::UpdateAddressBookError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the room to update.</p>
-    pub fn address_book_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn address_book_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.address_book_arn(input.into());
         self
     }
     /// <p>The ARN of the room to update.</p>
-    pub fn set_address_book_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_address_book_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_address_book_arn(input);
         self
     }

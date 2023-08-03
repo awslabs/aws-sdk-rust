@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`PutQueryDefinitionOutput`](crate::operation::put_query_definition::PutQueryDefinitionOutput) with field(s):
     ///   - [`query_definition_id(Option<String>)`](crate::operation::put_query_definition::PutQueryDefinitionOutput::query_definition_id): <p>The ID of the query definition.</p>
     /// - On failure, responds with [`SdkError<PutQueryDefinitionError>`](crate::operation::put_query_definition::PutQueryDefinitionError)
-    pub fn put_query_definition(
-        &self,
-    ) -> crate::operation::put_query_definition::builders::PutQueryDefinitionFluentBuilder {
-        crate::operation::put_query_definition::builders::PutQueryDefinitionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_query_definition(&self) -> crate::operation::put_query_definition::builders::PutQueryDefinitionFluentBuilder {
+        crate::operation::put_query_definition::builders::PutQueryDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

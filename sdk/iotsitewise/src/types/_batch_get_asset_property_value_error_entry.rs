@@ -16,9 +16,7 @@ pub struct BatchGetAssetPropertyValueErrorEntry {
 }
 impl BatchGetAssetPropertyValueErrorEntry {
     /// <p>The error code.</p>
-    pub fn error_code(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BatchGetAssetPropertyValueErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::BatchGetAssetPropertyValueErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The associated error message.</p>
@@ -39,9 +37,7 @@ impl BatchGetAssetPropertyValueErrorEntry {
 
 /// A builder for [`BatchGetAssetPropertyValueErrorEntry`](crate::types::BatchGetAssetPropertyValueErrorEntry).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueErrorEntryBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::BatchGetAssetPropertyValueErrorCode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
@@ -54,32 +50,21 @@ impl BatchGetAssetPropertyValueErrorEntryBuilder {
         self
     }
     /// <p>The error code.</p>
-    pub fn set_error_code(
-        mut self,
-        input: ::std::option::Option<crate::types::BatchGetAssetPropertyValueErrorCode>,
-    ) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::BatchGetAssetPropertyValueErrorCode>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The error code.</p>
-    pub fn get_error_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::BatchGetAssetPropertyValueErrorCode> {
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::BatchGetAssetPropertyValueErrorCode> {
         &self.error_code
     }
     /// <p>The associated error message.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The associated error message.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CriterionKey {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for CriterionKey {
             "SCAN_START_TIME" => CriterionKey::ScanStartTime,
             "SCAN_STATUS" => CriterionKey::ScanStatus,
             "SCAN_TYPE" => CriterionKey::ScanType,
-            other => {
-                CriterionKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => CriterionKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

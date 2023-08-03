@@ -5,8 +5,7 @@
 pub struct ListDomainConfigurationsOutput {
     /// <p>A list of objects that contain summary information about the user's domain configurations.</p>
     #[doc(hidden)]
-    pub domain_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DomainConfigurationSummary>>,
+    pub domain_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DomainConfigurationSummary>>,
     /// <p>The marker for the next set of results.</p>
     #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDomainConfigurationsOutput {
 }
 impl ListDomainConfigurationsOutput {
     /// <p>A list of objects that contain summary information about the user's domain configurations.</p>
-    pub fn domain_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DomainConfigurationSummary]> {
+    pub fn domain_configurations(&self) -> ::std::option::Option<&[crate::types::DomainConfigurationSummary]> {
         self.domain_configurations.as_deref()
     }
     /// <p>The marker for the next set of results.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDomainConfigurationsOutput {
 }
 impl ListDomainConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainConfigurationsOutput`](crate::operation::list_domain_configurations::ListDomainConfigurationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_domain_configurations::builders::ListDomainConfigurationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_domain_configurations::builders::ListDomainConfigurationsOutputBuilder {
         crate::operation::list_domain_configurations::builders::ListDomainConfigurationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDomainConfigurationsOutput`](crate::operation::list_domain_configurations::ListDomainConfigurationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainConfigurationsOutputBuilder {
-    pub(crate) domain_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::DomainConfigurationSummary>>,
+    pub(crate) domain_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DomainConfigurationSummary>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,27 +47,19 @@ impl ListDomainConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_domain_configurations`](Self::set_domain_configurations).
     ///
     /// <p>A list of objects that contain summary information about the user's domain configurations.</p>
-    pub fn domain_configurations(
-        mut self,
-        input: crate::types::DomainConfigurationSummary,
-    ) -> Self {
+    pub fn domain_configurations(mut self, input: crate::types::DomainConfigurationSummary) -> Self {
         let mut v = self.domain_configurations.unwrap_or_default();
         v.push(input);
         self.domain_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of objects that contain summary information about the user's domain configurations.</p>
-    pub fn set_domain_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainConfigurationSummary>>,
-    ) -> Self {
+    pub fn set_domain_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainConfigurationSummary>>) -> Self {
         self.domain_configurations = input;
         self
     }
     /// <p>A list of objects that contain summary information about the user's domain configurations.</p>
-    pub fn get_domain_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainConfigurationSummary>> {
+    pub fn get_domain_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainConfigurationSummary>> {
         &self.domain_configurations
     }
     /// <p>The marker for the next set of results.</p>
@@ -102,9 +86,7 @@ impl ListDomainConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDomainConfigurationsOutput`](crate::operation::list_domain_configurations::ListDomainConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_domain_configurations::ListDomainConfigurationsOutput {
+    pub fn build(self) -> crate::operation::list_domain_configurations::ListDomainConfigurationsOutput {
         crate::operation::list_domain_configurations::ListDomainConfigurationsOutput {
             domain_configurations: self.domain_configurations,
             next_marker: self.next_marker,

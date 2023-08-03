@@ -26,7 +26,7 @@ impl ModifyPrivateDnsNameOptionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyPrivateDnsNameOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsInputBuilder,
+    inner: crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsInputBuilder,
 }
 impl ModifyPrivateDnsNameOptionsFluentBuilder {
     /// Creates a new `ModifyPrivateDnsNameOptions`.
@@ -37,7 +37,7 @@ impl ModifyPrivateDnsNameOptionsFluentBuilder {
         }
     }
     /// Access the ModifyPrivateDnsNameOptions as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyPrivateDnsNameOptionsFluentBuilder {
             crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyPrivateDnsNameOptionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyPrivateDnsNameOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyPrivateDnsNameOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ModifyPrivateDnsNameOptionsFluentBuilder {
             crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsError>,
     > {
         self.customize_middleware().await
     }
@@ -154,17 +143,12 @@ impl ModifyPrivateDnsNameOptionsFluentBuilder {
         self
     }
     /// <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an instance DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID.</p>
-    pub fn set_private_dns_hostname_type(
-        mut self,
-        input: ::std::option::Option<crate::types::HostnameType>,
-    ) -> Self {
+    pub fn set_private_dns_hostname_type(mut self, input: ::std::option::Option<crate::types::HostnameType>) -> Self {
         self.inner = self.inner.set_private_dns_hostname_type(input);
         self
     }
     /// <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an instance DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID.</p>
-    pub fn get_private_dns_hostname_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::HostnameType> {
+    pub fn get_private_dns_hostname_type(&self) -> &::std::option::Option<crate::types::HostnameType> {
         self.inner.get_private_dns_hostname_type()
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
@@ -173,10 +157,7 @@ impl ModifyPrivateDnsNameOptionsFluentBuilder {
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
-    pub fn set_enable_resource_name_dns_a_record(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_resource_name_dns_a_record(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_resource_name_dns_a_record(input);
         self
     }
@@ -190,10 +171,7 @@ impl ModifyPrivateDnsNameOptionsFluentBuilder {
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
-    pub fn set_enable_resource_name_dns_aaaa_record(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_enable_resource_name_dns_aaaa_record(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_resource_name_dns_aaaa_record(input);
         self
     }

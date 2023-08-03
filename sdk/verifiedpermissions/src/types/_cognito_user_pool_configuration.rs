@@ -36,9 +36,7 @@ impl CognitoUserPoolConfiguration {
 
 /// A builder for [`CognitoUserPoolConfiguration`](crate::types::CognitoUserPoolConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CognitoUserPoolConfigurationBuilder {
     pub(crate) user_pool_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -46,19 +44,13 @@ pub struct CognitoUserPoolConfigurationBuilder {
 impl CognitoUserPoolConfigurationBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool that contains the identities to be authorized.</p>
     /// <p>Example: <code>"UserPoolArn": "arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5"</code> </p>
-    pub fn user_pool_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_pool_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool that contains the identities to be authorized.</p>
     /// <p>Example: <code>"UserPoolArn": "arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5"</code> </p>
-    pub fn set_user_pool_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_arn = input;
         self
     }
@@ -81,10 +73,7 @@ impl CognitoUserPoolConfigurationBuilder {
     }
     /// <p>The unique application client IDs that are associated with the specified Amazon Cognito user pool.</p>
     /// <p>Example: <code>"ClientIds": ["&amp;ExampleCogClientId;"]</code> </p>
-    pub fn set_client_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_client_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.client_ids = input;
         self
     }

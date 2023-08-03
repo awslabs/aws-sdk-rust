@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`status(Option<Ec2DeepInspectionStatus>)`](crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationOutput::status): <p>The activation status of Amazon Inspector deep inspection in your account.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationOutput::error_message): <p>An error message explaining why Amazon Inspector deep inspection configurations could not be retrieved for your account.</p>
     /// - On failure, responds with [`SdkError<GetEc2DeepInspectionConfigurationError>`](crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError)
-    pub fn get_ec2_deep_inspection_configuration(&self) -> crate::operation::get_ec2_deep_inspection_configuration::builders::GetEc2DeepInspectionConfigurationFluentBuilder{
+    pub fn get_ec2_deep_inspection_configuration(
+        &self,
+    ) -> crate::operation::get_ec2_deep_inspection_configuration::builders::GetEc2DeepInspectionConfigurationFluentBuilder {
         crate::operation::get_ec2_deep_inspection_configuration::builders::GetEc2DeepInspectionConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,35 +15,25 @@ impl DescribeDeviceFleetInput {
 }
 impl DescribeDeviceFleetInput {
     /// Creates a new builder-style object to manufacture [`DescribeDeviceFleetInput`](crate::operation::describe_device_fleet::DescribeDeviceFleetInput).
-    pub fn builder(
-    ) -> crate::operation::describe_device_fleet::builders::DescribeDeviceFleetInputBuilder {
-        crate::operation::describe_device_fleet::builders::DescribeDeviceFleetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_device_fleet::builders::DescribeDeviceFleetInputBuilder {
+        crate::operation::describe_device_fleet::builders::DescribeDeviceFleetInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDeviceFleetInput`](crate::operation::describe_device_fleet::DescribeDeviceFleetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDeviceFleetInputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDeviceFleetInputBuilder {
     /// <p>The name of the fleet.</p>
-    pub fn device_fleet_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the fleet.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_fleet_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DescribeDeviceFleetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeviceFleetInput`](crate::operation::describe_device_fleet::DescribeDeviceFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_device_fleet::DescribeDeviceFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_device_fleet::DescribeDeviceFleetInput {
-                device_fleet_name: self.device_fleet_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_device_fleet::DescribeDeviceFleetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_device_fleet::DescribeDeviceFleetInput {
+            device_fleet_name: self.device_fleet_name,
+        })
     }
 }

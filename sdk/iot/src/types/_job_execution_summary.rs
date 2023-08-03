@@ -58,9 +58,7 @@ impl JobExecutionSummary {
 
 /// A builder for [`JobExecutionSummary`](crate::types::JobExecutionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobExecutionSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::JobExecutionStatus>,
     pub(crate) queued_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -76,10 +74,7 @@ impl JobExecutionSummaryBuilder {
         self
     }
     /// <p>The status of the job execution.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -93,10 +88,7 @@ impl JobExecutionSummaryBuilder {
         self
     }
     /// <p>The time, in seconds since the epoch, when the job execution was queued.</p>
-    pub fn set_queued_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_queued_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.queued_at = input;
         self
     }
@@ -110,10 +102,7 @@ impl JobExecutionSummaryBuilder {
         self
     }
     /// <p>The time, in seconds since the epoch, when the job execution started.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -127,10 +116,7 @@ impl JobExecutionSummaryBuilder {
         self
     }
     /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }

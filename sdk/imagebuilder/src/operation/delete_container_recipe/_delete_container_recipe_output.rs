@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteContainerRecipeOutput {
 }
 impl DeleteContainerRecipeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContainerRecipeOutput`](crate::operation::delete_container_recipe::DeleteContainerRecipeOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_container_recipe::builders::DeleteContainerRecipeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_container_recipe::builders::DeleteContainerRecipeOutputBuilder {
         crate::operation::delete_container_recipe::builders::DeleteContainerRecipeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteContainerRecipeOutput`](crate::operation::delete_container_recipe::DeleteContainerRecipeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteContainerRecipeOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) container_recipe_arn: ::std::option::Option<::std::string::String>,
@@ -61,18 +57,12 @@ impl DeleteContainerRecipeOutputBuilder {
         &self.request_id
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that was deleted.</p>
-    pub fn container_recipe_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that was deleted.</p>
-    pub fn set_container_recipe_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_recipe_arn = input;
         self
     }

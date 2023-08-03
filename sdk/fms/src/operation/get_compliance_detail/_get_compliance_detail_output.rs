@@ -10,9 +10,7 @@ pub struct GetComplianceDetailOutput {
 }
 impl GetComplianceDetailOutput {
     /// <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
-    pub fn policy_compliance_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PolicyComplianceDetail> {
+    pub fn policy_compliance_detail(&self) -> ::std::option::Option<&crate::types::PolicyComplianceDetail> {
         self.policy_compliance_detail.as_ref()
     }
 }
@@ -23,21 +21,16 @@ impl ::aws_http::request_id::RequestId for GetComplianceDetailOutput {
 }
 impl GetComplianceDetailOutput {
     /// Creates a new builder-style object to manufacture [`GetComplianceDetailOutput`](crate::operation::get_compliance_detail::GetComplianceDetailOutput).
-    pub fn builder(
-    ) -> crate::operation::get_compliance_detail::builders::GetComplianceDetailOutputBuilder {
-        crate::operation::get_compliance_detail::builders::GetComplianceDetailOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_compliance_detail::builders::GetComplianceDetailOutputBuilder {
+        crate::operation::get_compliance_detail::builders::GetComplianceDetailOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetComplianceDetailOutput`](crate::operation::get_compliance_detail::GetComplianceDetailOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComplianceDetailOutputBuilder {
-    pub(crate) policy_compliance_detail:
-        ::std::option::Option<crate::types::PolicyComplianceDetail>,
+    pub(crate) policy_compliance_detail: ::std::option::Option<crate::types::PolicyComplianceDetail>,
     _request_id: Option<String>,
 }
 impl GetComplianceDetailOutputBuilder {
@@ -47,17 +40,12 @@ impl GetComplianceDetailOutputBuilder {
         self
     }
     /// <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
-    pub fn set_policy_compliance_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyComplianceDetail>,
-    ) -> Self {
+    pub fn set_policy_compliance_detail(mut self, input: ::std::option::Option<crate::types::PolicyComplianceDetail>) -> Self {
         self.policy_compliance_detail = input;
         self
     }
     /// <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
-    pub fn get_policy_compliance_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::PolicyComplianceDetail> {
+    pub fn get_policy_compliance_detail(&self) -> &::std::option::Option<crate::types::PolicyComplianceDetail> {
         &self.policy_compliance_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

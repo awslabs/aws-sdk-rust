@@ -50,18 +50,14 @@ impl CreateAccountAssignmentInput {
 }
 impl CreateAccountAssignmentInput {
     /// Creates a new builder-style object to manufacture [`CreateAccountAssignmentInput`](crate::operation::create_account_assignment::CreateAccountAssignmentInput).
-    pub fn builder(
-    ) -> crate::operation::create_account_assignment::builders::CreateAccountAssignmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_account_assignment::builders::CreateAccountAssignmentInputBuilder {
         crate::operation::create_account_assignment::builders::CreateAccountAssignmentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAccountAssignmentInput`](crate::operation::create_account_assignment::CreateAccountAssignmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAccountAssignmentInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_id: ::std::option::Option<::std::string::String>,
@@ -105,10 +101,7 @@ impl CreateAccountAssignmentInputBuilder {
         self
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetType>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::TargetType>) -> Self {
         self.target_type = input;
         self
     }
@@ -117,18 +110,12 @@ impl CreateAccountAssignmentInputBuilder {
         &self.target_type
     }
     /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission_set_arn = input;
         self
     }
@@ -142,10 +129,7 @@ impl CreateAccountAssignmentInputBuilder {
         self
     }
     /// <p>The entity type for which the assignment will be created.</p>
-    pub fn set_principal_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PrincipalType>,
-    ) -> Self {
+    pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
         self.principal_type = input;
         self
     }
@@ -174,15 +158,13 @@ impl CreateAccountAssignmentInputBuilder {
         crate::operation::create_account_assignment::CreateAccountAssignmentInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_account_assignment::CreateAccountAssignmentInput {
-                instance_arn: self.instance_arn,
-                target_id: self.target_id,
-                target_type: self.target_type,
-                permission_set_arn: self.permission_set_arn,
-                principal_type: self.principal_type,
-                principal_id: self.principal_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_account_assignment::CreateAccountAssignmentInput {
+            instance_arn: self.instance_arn,
+            target_id: self.target_id,
+            target_type: self.target_type,
+            permission_set_arn: self.permission_set_arn,
+            principal_type: self.principal_type,
+            principal_id: self.principal_id,
+        })
     }
 }

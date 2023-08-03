@@ -10,10 +10,7 @@ impl DisableTrustAnchorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disable_trust_anchor::DisableTrustAnchorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_trust_anchor::DisableTrustAnchorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_trust_anchor::DisableTrustAnchorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.disable_trust_anchor();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DisableTrustAnchorFluentBuilder {
         }
     }
     /// Access the DisableTrustAnchor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_trust_anchor::builders::DisableTrustAnchorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disable_trust_anchor::builders::DisableTrustAnchorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DisableTrustAnchorFluentBuilder {
             crate::operation::disable_trust_anchor::DisableTrustAnchor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_trust_anchor::DisableTrustAnchorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_trust_anchor::DisableTrustAnchorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DisableTrustAnchorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DisableTrustAnchorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_trust_anchor::DisableTrustAnchorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_trust_anchor::DisableTrustAnchorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_trust_anchor::DisableTrustAnchorError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DisableTrustAnchorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_trust_anchor::DisableTrustAnchorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_trust_anchor::DisableTrustAnchorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_trust_anchor::DisableTrustAnchorError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +103,17 @@ impl DisableTrustAnchorFluentBuilder {
             crate::operation::disable_trust_anchor::DisableTrustAnchor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disable_trust_anchor::DisableTrustAnchorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disable_trust_anchor::DisableTrustAnchorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn trust_anchor_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trust_anchor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_anchor_id(input.into());
         self
     }
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn set_trust_anchor_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trust_anchor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_anchor_id(input);
         self
     }

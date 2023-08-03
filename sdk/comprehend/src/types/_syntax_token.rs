@@ -51,9 +51,7 @@ impl SyntaxToken {
 
 /// A builder for [`SyntaxToken`](crate::types::SyntaxToken).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SyntaxTokenBuilder {
     pub(crate) token_id: ::std::option::Option<i32>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
@@ -124,10 +122,7 @@ impl SyntaxTokenBuilder {
         self
     }
     /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
-    pub fn set_part_of_speech(
-        mut self,
-        input: ::std::option::Option<crate::types::PartOfSpeechTag>,
-    ) -> Self {
+    pub fn set_part_of_speech(mut self, input: ::std::option::Option<crate::types::PartOfSpeechTag>) -> Self {
         self.part_of_speech = input;
         self
     }

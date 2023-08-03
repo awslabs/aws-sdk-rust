@@ -7,7 +7,11 @@ impl super::Client {
     ///   - [`partner_type(PartnerType)`](crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountFluentBuilder::partner_type) / [`set_partner_type(Option<PartnerType>)`](crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountFluentBuilder::set_partner_type): <p>The partner type.</p>
     /// - On success, responds with [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput)
     /// - On failure, responds with [`SdkError<DisassociateAwsAccountFromPartnerAccountError>`](crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError)
-    pub fn disassociate_aws_account_from_partner_account(&self) -> crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountFluentBuilder{
-        crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_aws_account_from_partner_account(
+        &self,
+    ) -> crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountFluentBuilder {
+        crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -7,9 +7,7 @@ impl super::Client {
     ///   - [`event_bus_name(impl ::std::convert::Into<String>)`](crate::operation::disable_rule::builders::DisableRuleFluentBuilder::event_bus_name) / [`set_event_bus_name(Option<String>)`](crate::operation::disable_rule::builders::DisableRuleFluentBuilder::set_event_bus_name): <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     /// - On success, responds with [`DisableRuleOutput`](crate::operation::disable_rule::DisableRuleOutput)
     /// - On failure, responds with [`SdkError<DisableRuleError>`](crate::operation::disable_rule::DisableRuleError)
-    pub fn disable_rule(
-        &self,
-    ) -> crate::operation::disable_rule::builders::DisableRuleFluentBuilder {
+    pub fn disable_rule(&self) -> crate::operation::disable_rule::builders::DisableRuleFluentBuilder {
         crate::operation::disable_rule::builders::DisableRuleFluentBuilder::new(self.handle.clone())
     }
 }

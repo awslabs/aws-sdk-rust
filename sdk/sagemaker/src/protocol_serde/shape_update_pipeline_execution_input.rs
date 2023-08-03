@@ -7,22 +7,15 @@ pub fn ser_update_pipeline_execution_input(
         object.key("PipelineExecutionArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.pipeline_execution_description {
-        object
-            .key("PipelineExecutionDescription")
-            .string(var_2.as_str());
+        object.key("PipelineExecutionDescription").string(var_2.as_str());
     }
     if let Some(var_3) = &input.pipeline_execution_display_name {
-        object
-            .key("PipelineExecutionDisplayName")
-            .string(var_3.as_str());
+        object.key("PipelineExecutionDisplayName").string(var_3.as_str());
     }
     if let Some(var_4) = &input.parallelism_configuration {
         #[allow(unused_mut)]
         let mut object_5 = object.key("ParallelismConfiguration").start_object();
-        crate::protocol_serde::shape_parallelism_configuration::ser_parallelism_configuration(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_parallelism_configuration::ser_parallelism_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
     Ok(())

@@ -29,18 +29,14 @@ impl DeleteRefreshScheduleInput {
 }
 impl DeleteRefreshScheduleInput {
     /// Creates a new builder-style object to manufacture [`DeleteRefreshScheduleInput`](crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleInputBuilder {
         crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRefreshScheduleInput`](crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRefreshScheduleInputBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl DeleteRefreshScheduleInputBuilder {
         &self.data_set_id
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -98,16 +88,12 @@ impl DeleteRefreshScheduleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRefreshScheduleInput`](crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput {
-                data_set_id: self.data_set_id,
-                aws_account_id: self.aws_account_id,
-                schedule_id: self.schedule_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput {
+            data_set_id: self.data_set_id,
+            aws_account_id: self.aws_account_id,
+            schedule_id: self.schedule_id,
+        })
     }
 }

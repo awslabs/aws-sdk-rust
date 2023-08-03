@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for RemoveThingFromThingGroupOutput {
 }
 impl RemoveThingFromThingGroupOutput {
     /// Creates a new builder-style object to manufacture [`RemoveThingFromThingGroupOutput`](crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupOutput).
-    pub fn builder() -> crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupOutputBuilder{
+    pub fn builder() -> crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupOutputBuilder {
         crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveThingFromThingGroupOutput`](crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveThingFromThingGroupOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl RemoveThingFromThingGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveThingFromThingGroupOutput`](crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupOutput {
+    pub fn build(self) -> crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupOutput {
         crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupOutput {
             _request_id: self._request_id,
         }

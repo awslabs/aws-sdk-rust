@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for StartCostEstimationOutput {
 }
 impl StartCostEstimationOutput {
     /// Creates a new builder-style object to manufacture [`StartCostEstimationOutput`](crate::operation::start_cost_estimation::StartCostEstimationOutput).
-    pub fn builder(
-    ) -> crate::operation::start_cost_estimation::builders::StartCostEstimationOutputBuilder {
-        crate::operation::start_cost_estimation::builders::StartCostEstimationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_cost_estimation::builders::StartCostEstimationOutputBuilder {
+        crate::operation::start_cost_estimation::builders::StartCostEstimationOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartCostEstimationOutput`](crate::operation::start_cost_estimation::StartCostEstimationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartCostEstimationOutputBuilder {
     _request_id: Option<String>,
 }

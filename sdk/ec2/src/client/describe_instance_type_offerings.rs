@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`instance_type_offerings(Option<Vec<InstanceTypeOffering>>)`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput::instance_type_offerings): <p>The instance types offered.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceTypeOfferingsError>`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsError)
-    pub fn describe_instance_type_offerings(&self) -> crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder{
+    pub fn describe_instance_type_offerings(
+        &self,
+    ) -> crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder {
         crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder::new(self.handle.clone())
     }
 }

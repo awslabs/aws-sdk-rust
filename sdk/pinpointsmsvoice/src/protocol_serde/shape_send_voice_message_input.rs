@@ -12,10 +12,7 @@ pub fn ser_send_voice_message_input(
     if let Some(var_3) = &input.content {
         #[allow(unused_mut)]
         let mut object_4 = object.key("Content").start_object();
-        crate::protocol_serde::shape_voice_message_content::ser_voice_message_content(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_voice_message_content::ser_voice_message_content(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.destination_phone_number {

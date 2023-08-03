@@ -40,9 +40,7 @@ impl RequestSpotInstancesFluentBuilder {
         }
     }
     /// Access the RequestSpotInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::request_spot_instances::builders::RequestSpotInstancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::request_spot_instances::builders::RequestSpotInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +52,7 @@ impl RequestSpotInstancesFluentBuilder {
             crate::operation::request_spot_instances::RequestSpotInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_spot_instances::RequestSpotInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_spot_instances::RequestSpotInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +62,7 @@ impl RequestSpotInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +71,7 @@ impl RequestSpotInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::request_spot_instances::RequestSpotInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_spot_instances::RequestSpotInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_spot_instances::RequestSpotInstancesError>,
     > {
         let op = self
             .inner
@@ -103,9 +94,7 @@ impl RequestSpotInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::request_spot_instances::RequestSpotInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_spot_instances::RequestSpotInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_spot_instances::RequestSpotInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +108,7 @@ impl RequestSpotInstancesFluentBuilder {
             crate::operation::request_spot_instances::RequestSpotInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::request_spot_instances::RequestSpotInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::request_spot_instances::RequestSpotInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +116,7 @@ impl RequestSpotInstancesFluentBuilder {
     /// <p>When you specify an Availability Zone group in a Spot Instance request, all Spot Instances in the request are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of Availability Zone is not. The group applies only to requests for Spot Instances of the same instance type. Any additional Spot Instance requests that are specified with the same Availability Zone group name are launched in that same Availability Zone, as long as at least one instance from the group is still active.</p>
     /// <p>If there is no active instance running in the Availability Zone group that you specify for a new Spot Instance request (all instances are terminated, the request is expired, or the maximum price you specified falls below current Spot price), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent set of Spot Instances could be placed in a different zone from the original request, even if you specified the same Availability Zone group.</p>
     /// <p>Default: Instances are launched in any available Availability Zone.</p>
-    pub fn availability_zone_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone_group(input.into());
         self
     }
@@ -140,10 +124,7 @@ impl RequestSpotInstancesFluentBuilder {
     /// <p>When you specify an Availability Zone group in a Spot Instance request, all Spot Instances in the request are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of Availability Zone is not. The group applies only to requests for Spot Instances of the same instance type. Any additional Spot Instance requests that are specified with the same Availability Zone group name are launched in that same Availability Zone, as long as at least one instance from the group is still active.</p>
     /// <p>If there is no active instance running in the Availability Zone group that you specify for a new Spot Instance request (all instances are terminated, the request is expired, or the maximum price you specified falls below current Spot price), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent set of Spot Instances could be placed in a different zone from the original request, even if you specified the same Availability Zone group.</p>
     /// <p>Default: Instances are launched in any available Availability Zone.</p>
-    pub fn set_availability_zone_group(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone_group(input);
         self
     }
@@ -231,25 +212,17 @@ impl RequestSpotInstancesFluentBuilder {
         self.inner.get_launch_group()
     }
     /// <p>The launch specification.</p>
-    pub fn launch_specification(
-        mut self,
-        input: crate::types::RequestSpotLaunchSpecification,
-    ) -> Self {
+    pub fn launch_specification(mut self, input: crate::types::RequestSpotLaunchSpecification) -> Self {
         self.inner = self.inner.launch_specification(input);
         self
     }
     /// <p>The launch specification.</p>
-    pub fn set_launch_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestSpotLaunchSpecification>,
-    ) -> Self {
+    pub fn set_launch_specification(mut self, input: ::std::option::Option<crate::types::RequestSpotLaunchSpecification>) -> Self {
         self.inner = self.inner.set_launch_specification(input);
         self
     }
     /// <p>The launch specification.</p>
-    pub fn get_launch_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::RequestSpotLaunchSpecification> {
+    pub fn get_launch_specification(&self) -> &::std::option::Option<crate::types::RequestSpotLaunchSpecification> {
         self.inner.get_launch_specification()
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
@@ -280,10 +253,7 @@ impl RequestSpotInstancesFluentBuilder {
     }
     /// <p>The Spot Instance request type.</p>
     /// <p>Default: <code>one-time</code> </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SpotInstanceType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SpotInstanceType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -300,10 +270,7 @@ impl RequestSpotInstancesFluentBuilder {
     }
     /// <p>The start date of the request. If this is a one-time request, the request becomes active at this date and time and remains active until all instances launch, the request expires, or the request is canceled. If the request is persistent, the request becomes active at this date and time and remains active until it expires or is canceled.</p>
     /// <p>The specified start date and time cannot be equal to the current date and time. You must specify a start date and time that occurs after the current date and time.</p>
-    pub fn set_valid_from(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_valid_from(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_valid_from(input);
         self
     }
@@ -326,10 +293,7 @@ impl RequestSpotInstancesFluentBuilder {
     /// <li> <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it. </p> </li>
     /// <li> <p>For a one-time request, the request remains active until all instances launch, the request is canceled, or the <code>ValidUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the request was created.</p> </li>
     /// </ul>
-    pub fn set_valid_until(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_valid_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_valid_until(input);
         self
     }
@@ -351,39 +315,26 @@ impl RequestSpotInstancesFluentBuilder {
         self
     }
     /// <p>The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance request after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>. </p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance request after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>. </p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
-    pub fn instance_interruption_behavior(
-        mut self,
-        input: crate::types::InstanceInterruptionBehavior,
-    ) -> Self {
+    pub fn instance_interruption_behavior(mut self, input: crate::types::InstanceInterruptionBehavior) -> Self {
         self.inner = self.inner.instance_interruption_behavior(input);
         self
     }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
-    pub fn set_instance_interruption_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
-    ) -> Self {
+    pub fn set_instance_interruption_behavior(mut self, input: ::std::option::Option<crate::types::InstanceInterruptionBehavior>) -> Self {
         self.inner = self.inner.set_instance_interruption_behavior(input);
         self
     }
     /// <p>The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.</p>
-    pub fn get_instance_interruption_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceInterruptionBehavior> {
+    pub fn get_instance_interruption_behavior(&self) -> &::std::option::Option<crate::types::InstanceInterruptionBehavior> {
         self.inner.get_instance_interruption_behavior()
     }
 }

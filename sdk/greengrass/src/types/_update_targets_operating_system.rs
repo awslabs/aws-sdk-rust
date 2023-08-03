@@ -40,13 +40,7 @@
 /// The operating system of the cores which are the targets of an update.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum UpdateTargetsOperatingSystem {
     #[allow(missing_docs)] // documentation missing in model
@@ -67,9 +61,7 @@ impl ::std::convert::From<&str> for UpdateTargetsOperatingSystem {
             "openwrt" => UpdateTargetsOperatingSystem::Openwrt,
             "raspbian" => UpdateTargetsOperatingSystem::Raspbian,
             "ubuntu" => UpdateTargetsOperatingSystem::Ubuntu,
-            other => UpdateTargetsOperatingSystem::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => UpdateTargetsOperatingSystem::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

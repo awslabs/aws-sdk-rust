@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetHypervisorOutput`](crate::operation::get_hypervisor::GetHypervisorOutput) with field(s):
     ///   - [`hypervisor(Option<HypervisorDetails>)`](crate::operation::get_hypervisor::GetHypervisorOutput::hypervisor): <p>Details about the requested hypervisor.</p>
     /// - On failure, responds with [`SdkError<GetHypervisorError>`](crate::operation::get_hypervisor::GetHypervisorError)
-    pub fn get_hypervisor(
-        &self,
-    ) -> crate::operation::get_hypervisor::builders::GetHypervisorFluentBuilder {
-        crate::operation::get_hypervisor::builders::GetHypervisorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_hypervisor(&self) -> crate::operation::get_hypervisor::builders::GetHypervisorFluentBuilder {
+        crate::operation::get_hypervisor::builders::GetHypervisorFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,9 +44,7 @@ impl Organization {
 
 /// A builder for [`Organization`](crate::types::Organization).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationBuilder {
     pub(crate) asn: ::std::option::Option<::std::string::String>,
     pub(crate) asn_org: ::std::option::Option<::std::string::String>,

@@ -5,15 +5,12 @@
 pub struct AcceptTransitGatewayPeeringAttachmentOutput {
     /// <p>The transit gateway peering attachment.</p>
     #[doc(hidden)]
-    pub transit_gateway_peering_attachment:
-        ::std::option::Option<crate::types::TransitGatewayPeeringAttachment>,
+    pub transit_gateway_peering_attachment: ::std::option::Option<crate::types::TransitGatewayPeeringAttachment>,
     _request_id: Option<String>,
 }
 impl AcceptTransitGatewayPeeringAttachmentOutput {
     /// <p>The transit gateway peering attachment.</p>
-    pub fn transit_gateway_peering_attachment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TransitGatewayPeeringAttachment> {
+    pub fn transit_gateway_peering_attachment(&self) -> ::std::option::Option<&crate::types::TransitGatewayPeeringAttachment> {
         self.transit_gateway_peering_attachment.as_ref()
     }
 }
@@ -24,42 +21,31 @@ impl ::aws_http::request_id::RequestId for AcceptTransitGatewayPeeringAttachment
 }
 impl AcceptTransitGatewayPeeringAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`AcceptTransitGatewayPeeringAttachmentOutput`](crate::operation::accept_transit_gateway_peering_attachment::AcceptTransitGatewayPeeringAttachmentOutput).
-    pub fn builder() -> crate::operation::accept_transit_gateway_peering_attachment::builders::AcceptTransitGatewayPeeringAttachmentOutputBuilder{
+    pub fn builder() -> crate::operation::accept_transit_gateway_peering_attachment::builders::AcceptTransitGatewayPeeringAttachmentOutputBuilder {
         crate::operation::accept_transit_gateway_peering_attachment::builders::AcceptTransitGatewayPeeringAttachmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptTransitGatewayPeeringAttachmentOutput`](crate::operation::accept_transit_gateway_peering_attachment::AcceptTransitGatewayPeeringAttachmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptTransitGatewayPeeringAttachmentOutputBuilder {
-    pub(crate) transit_gateway_peering_attachment:
-        ::std::option::Option<crate::types::TransitGatewayPeeringAttachment>,
+    pub(crate) transit_gateway_peering_attachment: ::std::option::Option<crate::types::TransitGatewayPeeringAttachment>,
     _request_id: Option<String>,
 }
 impl AcceptTransitGatewayPeeringAttachmentOutputBuilder {
     /// <p>The transit gateway peering attachment.</p>
-    pub fn transit_gateway_peering_attachment(
-        mut self,
-        input: crate::types::TransitGatewayPeeringAttachment,
-    ) -> Self {
+    pub fn transit_gateway_peering_attachment(mut self, input: crate::types::TransitGatewayPeeringAttachment) -> Self {
         self.transit_gateway_peering_attachment = ::std::option::Option::Some(input);
         self
     }
     /// <p>The transit gateway peering attachment.</p>
-    pub fn set_transit_gateway_peering_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayPeeringAttachment>,
-    ) -> Self {
+    pub fn set_transit_gateway_peering_attachment(mut self, input: ::std::option::Option<crate::types::TransitGatewayPeeringAttachment>) -> Self {
         self.transit_gateway_peering_attachment = input;
         self
     }
     /// <p>The transit gateway peering attachment.</p>
-    pub fn get_transit_gateway_peering_attachment(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitGatewayPeeringAttachment> {
+    pub fn get_transit_gateway_peering_attachment(&self) -> &::std::option::Option<crate::types::TransitGatewayPeeringAttachment> {
         &self.transit_gateway_peering_attachment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,10 +58,9 @@ impl AcceptTransitGatewayPeeringAttachmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AcceptTransitGatewayPeeringAttachmentOutput`](crate::operation::accept_transit_gateway_peering_attachment::AcceptTransitGatewayPeeringAttachmentOutput).
-    pub fn build(self) -> crate::operation::accept_transit_gateway_peering_attachment::AcceptTransitGatewayPeeringAttachmentOutput{
+    pub fn build(self) -> crate::operation::accept_transit_gateway_peering_attachment::AcceptTransitGatewayPeeringAttachmentOutput {
         crate::operation::accept_transit_gateway_peering_attachment::AcceptTransitGatewayPeeringAttachmentOutput {
-            transit_gateway_peering_attachment: self.transit_gateway_peering_attachment
-            ,
+            transit_gateway_peering_attachment: self.transit_gateway_peering_attachment,
             _request_id: self._request_id,
         }
     }

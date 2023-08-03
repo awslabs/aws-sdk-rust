@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DeleteVpcIngressConnectionOutput`](crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionOutput) with field(s):
     ///   - [`vpc_ingress_connection(Option<VpcIngressConnection>)`](crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionOutput::vpc_ingress_connection): <p>A description of the App Runner VPC Ingress Connection that this request just deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteVpcIngressConnectionError>`](crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionError)
-    pub fn delete_vpc_ingress_connection(&self) -> crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionFluentBuilder{
+    pub fn delete_vpc_ingress_connection(
+        &self,
+    ) -> crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionFluentBuilder {
         crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionFluentBuilder::new(self.handle.clone())
     }
 }

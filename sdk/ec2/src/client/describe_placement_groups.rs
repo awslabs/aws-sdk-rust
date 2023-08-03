@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribePlacementGroupsOutput`](crate::operation::describe_placement_groups::DescribePlacementGroupsOutput) with field(s):
     ///   - [`placement_groups(Option<Vec<PlacementGroup>>)`](crate::operation::describe_placement_groups::DescribePlacementGroupsOutput::placement_groups): <p>Information about the placement groups.</p>
     /// - On failure, responds with [`SdkError<DescribePlacementGroupsError>`](crate::operation::describe_placement_groups::DescribePlacementGroupsError)
-    pub fn describe_placement_groups(
-        &self,
-    ) -> crate::operation::describe_placement_groups::builders::DescribePlacementGroupsFluentBuilder
-    {
+    pub fn describe_placement_groups(&self) -> crate::operation::describe_placement_groups::builders::DescribePlacementGroupsFluentBuilder {
         crate::operation::describe_placement_groups::builders::DescribePlacementGroupsFluentBuilder::new(self.handle.clone())
     }
 }

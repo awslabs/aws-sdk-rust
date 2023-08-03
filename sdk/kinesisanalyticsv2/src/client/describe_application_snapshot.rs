@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeApplicationSnapshotOutput`](crate::operation::describe_application_snapshot::DescribeApplicationSnapshotOutput) with field(s):
     ///   - [`snapshot_details(Option<SnapshotDetails>)`](crate::operation::describe_application_snapshot::DescribeApplicationSnapshotOutput::snapshot_details): <p>An object containing information about the application snapshot.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationSnapshotError>`](crate::operation::describe_application_snapshot::DescribeApplicationSnapshotError)
-    pub fn describe_application_snapshot(&self) -> crate::operation::describe_application_snapshot::builders::DescribeApplicationSnapshotFluentBuilder{
+    pub fn describe_application_snapshot(
+        &self,
+    ) -> crate::operation::describe_application_snapshot::builders::DescribeApplicationSnapshotFluentBuilder {
         crate::operation::describe_application_snapshot::builders::DescribeApplicationSnapshotFluentBuilder::new(self.handle.clone())
     }
 }

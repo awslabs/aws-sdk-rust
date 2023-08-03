@@ -37,10 +37,7 @@ impl UpdateGatewayResponseFluentBuilder {
         }
     }
     /// Access the UpdateGatewayResponse as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_gateway_response::builders::UpdateGatewayResponseInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_gateway_response::builders::UpdateGatewayResponseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateGatewayResponseFluentBuilder {
             crate::operation::update_gateway_response::UpdateGatewayResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_response::UpdateGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_response::UpdateGatewayResponseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateGatewayResponseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateGatewayResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_gateway_response::UpdateGatewayResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_response::UpdateGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_response::UpdateGatewayResponseError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateGatewayResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_gateway_response::UpdateGatewayResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_response::UpdateGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_response::UpdateGatewayResponseError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateGatewayResponseFluentBuilder {
             crate::operation::update_gateway_response::UpdateGatewayResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_gateway_response::UpdateGatewayResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_gateway_response::UpdateGatewayResponseError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +129,7 @@ impl UpdateGatewayResponseFluentBuilder {
         self
     }
     /// <p>The response type of the associated GatewayResponse.</p>
-    pub fn set_response_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GatewayResponseType>,
-    ) -> Self {
+    pub fn set_response_type(mut self, input: ::std::option::Option<crate::types::GatewayResponseType>) -> Self {
         self.inner = self.inner.set_response_type(input);
         self
     }
@@ -164,17 +147,12 @@ impl UpdateGatewayResponseFluentBuilder {
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
         self.inner.get_patch_operations()
     }
 }

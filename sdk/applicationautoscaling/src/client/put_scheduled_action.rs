@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`scalable_target_action(ScalableTargetAction)`](crate::operation::put_scheduled_action::builders::PutScheduledActionFluentBuilder::scalable_target_action) / [`set_scalable_target_action(Option<ScalableTargetAction>)`](crate::operation::put_scheduled_action::builders::PutScheduledActionFluentBuilder::set_scalable_target_action): <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
     /// - On success, responds with [`PutScheduledActionOutput`](crate::operation::put_scheduled_action::PutScheduledActionOutput)
     /// - On failure, responds with [`SdkError<PutScheduledActionError>`](crate::operation::put_scheduled_action::PutScheduledActionError)
-    pub fn put_scheduled_action(
-        &self,
-    ) -> crate::operation::put_scheduled_action::builders::PutScheduledActionFluentBuilder {
-        crate::operation::put_scheduled_action::builders::PutScheduledActionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_scheduled_action(&self) -> crate::operation::put_scheduled_action::builders::PutScheduledActionFluentBuilder {
+        crate::operation::put_scheduled_action::builders::PutScheduledActionFluentBuilder::new(self.handle.clone())
     }
 }

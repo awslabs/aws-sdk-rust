@@ -23,9 +23,7 @@ impl AttributeBooleanValue {
 
 /// A builder for [`AttributeBooleanValue`](crate::types::AttributeBooleanValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributeBooleanValueBuilder {
     pub(crate) value: ::std::option::Option<bool>,
 }

@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`lo_ra_wan(LoRaWanMulticastSession)`](crate::operation::start_multicast_group_session::builders::StartMulticastGroupSessionFluentBuilder::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanMulticastSession>)`](crate::operation::start_multicast_group_session::builders::StartMulticastGroupSessionFluentBuilder::set_lo_ra_wan): <p>The LoRaWAN information used with the multicast session.</p>
     /// - On success, responds with [`StartMulticastGroupSessionOutput`](crate::operation::start_multicast_group_session::StartMulticastGroupSessionOutput)
     /// - On failure, responds with [`SdkError<StartMulticastGroupSessionError>`](crate::operation::start_multicast_group_session::StartMulticastGroupSessionError)
-    pub fn start_multicast_group_session(&self) -> crate::operation::start_multicast_group_session::builders::StartMulticastGroupSessionFluentBuilder{
+    pub fn start_multicast_group_session(
+        &self,
+    ) -> crate::operation::start_multicast_group_session::builders::StartMulticastGroupSessionFluentBuilder {
         crate::operation::start_multicast_group_session::builders::StartMulticastGroupSessionFluentBuilder::new(self.handle.clone())
     }
 }

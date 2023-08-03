@@ -10,10 +10,7 @@ impl SetInstanceHealthInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_instance_health::SetInstanceHealthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_instance_health::SetInstanceHealthError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_instance_health::SetInstanceHealthError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_instance_health();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl SetInstanceHealthFluentBuilder {
         }
     }
     /// Access the SetInstanceHealth as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_instance_health::builders::SetInstanceHealthInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_instance_health::builders::SetInstanceHealthInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl SetInstanceHealthFluentBuilder {
             crate::operation::set_instance_health::SetInstanceHealth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_instance_health::SetInstanceHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_instance_health::SetInstanceHealthError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl SetInstanceHealthFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl SetInstanceHealthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_instance_health::SetInstanceHealthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_instance_health::SetInstanceHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_instance_health::SetInstanceHealthError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl SetInstanceHealthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_instance_health::SetInstanceHealthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_instance_health::SetInstanceHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_instance_health::SetInstanceHealthError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl SetInstanceHealthFluentBuilder {
             crate::operation::set_instance_health::SetInstanceHealth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_instance_health::SetInstanceHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_instance_health::SetInstanceHealthError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +122,12 @@ impl SetInstanceHealthFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The health status of the instance. Set to <code>Healthy</code> to have the instance remain in service. Set to <code>Unhealthy</code> to have the instance be out of service. Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</p>
-    pub fn health_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn health_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.health_status(input.into());
         self
     }
     /// <p>The health status of the instance. Set to <code>Healthy</code> to have the instance remain in service. Set to <code>Unhealthy</code> to have the instance be out of service. Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</p>
-    pub fn set_health_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_health_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_health_status(input);
         self
     }

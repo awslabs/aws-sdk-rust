@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for PurchaseReservedNodesOfferingOutput {
 }
 impl PurchaseReservedNodesOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedNodesOfferingOutput`](crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingOutput).
-    pub fn builder() -> crate::operation::purchase_reserved_nodes_offering::builders::PurchaseReservedNodesOfferingOutputBuilder{
+    pub fn builder() -> crate::operation::purchase_reserved_nodes_offering::builders::PurchaseReservedNodesOfferingOutputBuilder {
         crate::operation::purchase_reserved_nodes_offering::builders::PurchaseReservedNodesOfferingOutputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseReservedNodesOfferingOutput`](crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseReservedNodesOfferingOutputBuilder {
     pub(crate) reserved_node: ::std::option::Option<crate::types::ReservedNode>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl PurchaseReservedNodesOfferingOutputBuilder {
         self
     }
     /// <p>Represents the output of a <code>PurchaseReservedNodesOffering</code> operation.</p>
-    pub fn set_reserved_node(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservedNode>,
-    ) -> Self {
+    pub fn set_reserved_node(mut self, input: ::std::option::Option<crate::types::ReservedNode>) -> Self {
         self.reserved_node = input;
         self
     }
@@ -63,10 +58,7 @@ impl PurchaseReservedNodesOfferingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PurchaseReservedNodesOfferingOutput`](crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingOutput
-    {
+    pub fn build(self) -> crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingOutput {
         crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingOutput {
             reserved_node: self.reserved_node,
             _request_id: self._request_id,

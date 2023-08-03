@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`destination_name(Option<String>)`](crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskOutput::destination_name): <p>The name of the Sidewalk destination that describes the IoT rule to route messages received from devices in an import task that are onboarded to AWS IoT Wireless.</p>
     ///   - [`imported_wireless_device_list(Option<Vec<ImportedWirelessDevice>>)`](crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskOutput::imported_wireless_device_list): <p>List of wireless devices in an import task and their onboarding status.</p>
     /// - On failure, responds with [`SdkError<ListDevicesForWirelessDeviceImportTaskError>`](crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskError)
-    pub fn list_devices_for_wireless_device_import_task(&self) -> crate::operation::list_devices_for_wireless_device_import_task::builders::ListDevicesForWirelessDeviceImportTaskFluentBuilder{
-        crate::operation::list_devices_for_wireless_device_import_task::builders::ListDevicesForWirelessDeviceImportTaskFluentBuilder::new(self.handle.clone())
+    pub fn list_devices_for_wireless_device_import_task(
+        &self,
+    ) -> crate::operation::list_devices_for_wireless_device_import_task::builders::ListDevicesForWirelessDeviceImportTaskFluentBuilder {
+        crate::operation::list_devices_for_wireless_device_import_task::builders::ListDevicesForWirelessDeviceImportTaskFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

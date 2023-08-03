@@ -27,11 +27,7 @@ impl super::Client {
     ///   - [`encoding_type(Option<EncodingType>)`](crate::operation::list_multipart_uploads::ListMultipartUploadsOutput::encoding_type): <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>  <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>  <p> <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>, <code>Key</code>.</p>
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::list_multipart_uploads::ListMultipartUploadsOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     /// - On failure, responds with [`SdkError<ListMultipartUploadsError>`](crate::operation::list_multipart_uploads::ListMultipartUploadsError)
-    pub fn list_multipart_uploads(
-        &self,
-    ) -> crate::operation::list_multipart_uploads::builders::ListMultipartUploadsFluentBuilder {
-        crate::operation::list_multipart_uploads::builders::ListMultipartUploadsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_multipart_uploads(&self) -> crate::operation::list_multipart_uploads::builders::ListMultipartUploadsFluentBuilder {
+        crate::operation::list_multipart_uploads::builders::ListMultipartUploadsFluentBuilder::new(self.handle.clone())
     }
 }

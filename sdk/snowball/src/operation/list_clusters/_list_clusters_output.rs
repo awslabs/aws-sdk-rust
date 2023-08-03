@@ -5,8 +5,7 @@
 pub struct ListClustersOutput {
     /// <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.</p>
     #[doc(hidden)]
-    pub cluster_list_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterListEntry>>,
+    pub cluster_list_entries: ::std::option::Option<::std::vec::Vec<crate::types::ClusterListEntry>>,
     /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of returned clusters will start from this point in the array.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -36,12 +35,9 @@ impl ListClustersOutput {
 
 /// A builder for [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClustersOutputBuilder {
-    pub(crate) cluster_list_entries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ClusterListEntry>>,
+    pub(crate) cluster_list_entries: ::std::option::Option<::std::vec::Vec<crate::types::ClusterListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListClustersOutputBuilder {
         self
     }
     /// <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.</p>
-    pub fn set_cluster_list_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterListEntry>>,
-    ) -> Self {
+    pub fn set_cluster_list_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterListEntry>>) -> Self {
         self.cluster_list_entries = input;
         self
     }
     /// <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.</p>
-    pub fn get_cluster_list_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterListEntry>> {
+    pub fn get_cluster_list_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterListEntry>> {
         &self.cluster_list_entries
     }
     /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of returned clusters will start from this point in the array.</p>

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeJobExecutionOutput`](crate::operation::describe_job_execution::DescribeJobExecutionOutput) with field(s):
     ///   - [`execution(Option<JobExecution>)`](crate::operation::describe_job_execution::DescribeJobExecutionOutput::execution): <p>Contains data about a job execution.</p>
     /// - On failure, responds with [`SdkError<DescribeJobExecutionError>`](crate::operation::describe_job_execution::DescribeJobExecutionError)
-    pub fn describe_job_execution(
-        &self,
-    ) -> crate::operation::describe_job_execution::builders::DescribeJobExecutionFluentBuilder {
-        crate::operation::describe_job_execution::builders::DescribeJobExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_job_execution(&self) -> crate::operation::describe_job_execution::builders::DescribeJobExecutionFluentBuilder {
+        crate::operation::describe_job_execution::builders::DescribeJobExecutionFluentBuilder::new(self.handle.clone())
     }
 }

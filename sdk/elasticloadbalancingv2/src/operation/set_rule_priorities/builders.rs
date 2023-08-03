@@ -10,10 +10,7 @@ impl SetRulePrioritiesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_rule_priorities::SetRulePrioritiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_rule_priorities::SetRulePrioritiesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_rule_priorities::SetRulePrioritiesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.set_rule_priorities();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl SetRulePrioritiesFluentBuilder {
         }
     }
     /// Access the SetRulePriorities as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::set_rule_priorities::builders::SetRulePrioritiesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::set_rule_priorities::builders::SetRulePrioritiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl SetRulePrioritiesFluentBuilder {
             crate::operation::set_rule_priorities::SetRulePriorities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_rule_priorities::SetRulePrioritiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_rule_priorities::SetRulePrioritiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl SetRulePrioritiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl SetRulePrioritiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_rule_priorities::SetRulePrioritiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_rule_priorities::SetRulePrioritiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_rule_priorities::SetRulePrioritiesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl SetRulePrioritiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_rule_priorities::SetRulePrioritiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_rule_priorities::SetRulePrioritiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_rule_priorities::SetRulePrioritiesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl SetRulePrioritiesFluentBuilder {
             crate::operation::set_rule_priorities::SetRulePriorities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::set_rule_priorities::SetRulePrioritiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_rule_priorities::SetRulePrioritiesError>,
     > {
         self.customize_middleware().await
     }
@@ -133,17 +117,12 @@ impl SetRulePrioritiesFluentBuilder {
         self
     }
     /// <p>The rule priorities.</p>
-    pub fn set_rule_priorities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>>,
-    ) -> Self {
+    pub fn set_rule_priorities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>>) -> Self {
         self.inner = self.inner.set_rule_priorities(input);
         self
     }
     /// <p>The rule priorities.</p>
-    pub fn get_rule_priorities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>> {
+    pub fn get_rule_priorities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>> {
         self.inner.get_rule_priorities()
     }
 }

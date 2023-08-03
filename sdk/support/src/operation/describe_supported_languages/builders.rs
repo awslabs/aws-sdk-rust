@@ -31,7 +31,7 @@ impl DescribeSupportedLanguagesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSupportedLanguagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_supported_languages::builders::DescribeSupportedLanguagesInputBuilder,
+    inner: crate::operation::describe_supported_languages::builders::DescribeSupportedLanguagesInputBuilder,
 }
 impl DescribeSupportedLanguagesFluentBuilder {
     /// Creates a new `DescribeSupportedLanguages`.
@@ -42,7 +42,7 @@ impl DescribeSupportedLanguagesFluentBuilder {
         }
     }
     /// Access the DescribeSupportedLanguages as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_supported_languages::builders::DescribeSupportedLanguagesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_supported_languages::builders::DescribeSupportedLanguagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +54,7 @@ impl DescribeSupportedLanguagesFluentBuilder {
             crate::operation::describe_supported_languages::DescribeSupportedLanguages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_supported_languages::DescribeSupportedLanguagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_supported_languages::DescribeSupportedLanguagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +64,7 @@ impl DescribeSupportedLanguagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +73,7 @@ impl DescribeSupportedLanguagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_supported_languages::DescribeSupportedLanguagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_supported_languages::DescribeSupportedLanguagesError>,
     > {
         let op = self
             .inner
@@ -103,9 +96,7 @@ impl DescribeSupportedLanguagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_supported_languages::DescribeSupportedLanguagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_supported_languages::DescribeSupportedLanguagesError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +110,7 @@ impl DescribeSupportedLanguagesFluentBuilder {
             crate::operation::describe_supported_languages::DescribeSupportedLanguages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_supported_languages::DescribeSupportedLanguagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_supported_languages::DescribeSupportedLanguagesError>,
     > {
         self.customize_middleware().await
     }
@@ -154,18 +143,12 @@ impl DescribeSupportedLanguagesFluentBuilder {
         self.inner.get_service_code()
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-    pub fn category_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn category_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.category_code(input.into());
         self
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-    pub fn set_category_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_category_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_category_code(input);
         self
     }

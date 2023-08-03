@@ -30,44 +30,34 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
 }
 impl DescribeReservedElasticsearchInstanceOfferingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstanceOfferingsInput`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsInput).
-    pub fn builder() -> crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsInputBuilder
+    {
         crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReservedElasticsearchInstanceOfferingsInput`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstanceOfferingsInputBuilder {
-    pub(crate) reserved_elasticsearch_instance_offering_id:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) reserved_elasticsearch_instance_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReservedElasticsearchInstanceOfferingsInputBuilder {
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
-    pub fn reserved_elasticsearch_instance_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.reserved_elasticsearch_instance_offering_id =
-            ::std::option::Option::Some(input.into());
+    pub fn reserved_elasticsearch_instance_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reserved_elasticsearch_instance_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
-    pub fn set_reserved_elasticsearch_instance_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_elasticsearch_instance_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_elasticsearch_instance_offering_id = input;
         self
     }
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
-    pub fn get_reserved_elasticsearch_instance_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reserved_elasticsearch_instance_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_elasticsearch_instance_offering_id
     }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
@@ -99,16 +89,18 @@ impl DescribeReservedElasticsearchInstanceOfferingsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeReservedElasticsearchInstanceOfferingsInput`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsInput {
-                reserved_elasticsearch_instance_offering_id: self.reserved_elasticsearch_instance_offering_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                reserved_elasticsearch_instance_offering_id: self.reserved_elasticsearch_instance_offering_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

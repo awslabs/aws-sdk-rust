@@ -5,8 +5,7 @@
 pub struct ListProvisionedConcurrencyConfigsOutput {
     /// <p>A list of provisioned concurrency configurations.</p>
     #[doc(hidden)]
-    pub provisioned_concurrency_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedConcurrencyConfigListItem>>,
+    pub provisioned_concurrency_configs: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedConcurrencyConfigListItem>>,
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListProvisionedConcurrencyConfigsOutput {
 }
 impl ListProvisionedConcurrencyConfigsOutput {
     /// <p>A list of provisioned concurrency configurations.</p>
-    pub fn provisioned_concurrency_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProvisionedConcurrencyConfigListItem]> {
+    pub fn provisioned_concurrency_configs(&self) -> ::std::option::Option<&[crate::types::ProvisionedConcurrencyConfigListItem]> {
         self.provisioned_concurrency_configs.as_deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListProvisionedConcurrencyConfigsOutp
 }
 impl ListProvisionedConcurrencyConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListProvisionedConcurrencyConfigsOutput`](crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsOutput).
-    pub fn builder() -> crate::operation::list_provisioned_concurrency_configs::builders::ListProvisionedConcurrencyConfigsOutputBuilder{
+    pub fn builder() -> crate::operation::list_provisioned_concurrency_configs::builders::ListProvisionedConcurrencyConfigsOutputBuilder {
         crate::operation::list_provisioned_concurrency_configs::builders::ListProvisionedConcurrencyConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProvisionedConcurrencyConfigsOutput`](crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProvisionedConcurrencyConfigsOutputBuilder {
-    pub(crate) provisioned_concurrency_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedConcurrencyConfigListItem>>,
+    pub(crate) provisioned_concurrency_configs: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedConcurrencyConfigListItem>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListProvisionedConcurrencyConfigsOutputBuilder {
     /// To override the contents of this collection use [`set_provisioned_concurrency_configs`](Self::set_provisioned_concurrency_configs).
     ///
     /// <p>A list of provisioned concurrency configurations.</p>
-    pub fn provisioned_concurrency_configs(
-        mut self,
-        input: crate::types::ProvisionedConcurrencyConfigListItem,
-    ) -> Self {
+    pub fn provisioned_concurrency_configs(mut self, input: crate::types::ProvisionedConcurrencyConfigListItem) -> Self {
         let mut v = self.provisioned_concurrency_configs.unwrap_or_default();
         v.push(input);
         self.provisioned_concurrency_configs = ::std::option::Option::Some(v);
@@ -65,18 +56,13 @@ impl ListProvisionedConcurrencyConfigsOutputBuilder {
     /// <p>A list of provisioned concurrency configurations.</p>
     pub fn set_provisioned_concurrency_configs(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ProvisionedConcurrencyConfigListItem>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedConcurrencyConfigListItem>>,
     ) -> Self {
         self.provisioned_concurrency_configs = input;
         self
     }
     /// <p>A list of provisioned concurrency configurations.</p>
-    pub fn get_provisioned_concurrency_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedConcurrencyConfigListItem>>
-    {
+    pub fn get_provisioned_concurrency_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedConcurrencyConfigListItem>> {
         &self.provisioned_concurrency_configs
     }
     /// <p>The pagination token that's included if more results are available.</p>
@@ -103,12 +89,10 @@ impl ListProvisionedConcurrencyConfigsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProvisionedConcurrencyConfigsOutput`](crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsOutput).
-    pub fn build(self) -> crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsOutput{
+    pub fn build(self) -> crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsOutput {
         crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsOutput {
-            provisioned_concurrency_configs: self.provisioned_concurrency_configs
-            ,
-            next_marker: self.next_marker
-            ,
+            provisioned_concurrency_configs: self.provisioned_concurrency_configs,
+            next_marker: self.next_marker,
             _request_id: self._request_id,
         }
     }

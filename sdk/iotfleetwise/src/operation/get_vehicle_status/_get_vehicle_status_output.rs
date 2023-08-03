@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetVehicleStatusOutput {
 }
 impl GetVehicleStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetVehicleStatusOutput`](crate::operation::get_vehicle_status::GetVehicleStatusOutput).
-    pub fn builder() -> crate::operation::get_vehicle_status::builders::GetVehicleStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_vehicle_status::builders::GetVehicleStatusOutputBuilder {
         crate::operation::get_vehicle_status::builders::GetVehicleStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetVehicleStatusOutput`](crate::operation::get_vehicle_status::GetVehicleStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetVehicleStatusOutputBuilder {
     pub(crate) campaigns: ::std::option::Option<::std::vec::Vec<crate::types::VehicleStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetVehicleStatusOutputBuilder {
         self
     }
     /// <p> Lists information about the state of the vehicle with deployed campaigns. </p>
-    pub fn set_campaigns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VehicleStatus>>,
-    ) -> Self {
+    pub fn set_campaigns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VehicleStatus>>) -> Self {
         self.campaigns = input;
         self
     }
     /// <p> Lists information about the state of the vehicle with deployed campaigns. </p>
-    pub fn get_campaigns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VehicleStatus>> {
+    pub fn get_campaigns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VehicleStatus>> {
         &self.campaigns
     }
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>

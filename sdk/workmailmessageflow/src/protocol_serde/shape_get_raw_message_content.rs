@@ -21,44 +21,33 @@ pub fn de_get_raw_message_content_http_error(
     crate::operation::get_raw_message_content::GetRawMessageContentError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_raw_message_content::GetRawMessageContentError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_raw_message_content::GetRawMessageContentError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::get_raw_message_content::GetRawMessageContentError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::get_raw_message_content::GetRawMessageContentError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ResourceNotFoundException" => crate::operation::get_raw_message_content::GetRawMessageContentError::ResourceNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_raw_message_content::GetRawMessageContentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_raw_message_content::GetRawMessageContentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::get_raw_message_content::GetRawMessageContentError::generic(generic)
+        _ => crate::operation::get_raw_message_content::GetRawMessageContentError::generic(generic),
     })
 }
 
@@ -80,12 +69,10 @@ pub fn de_get_raw_message_content_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_raw_message_content::builders::GetRawMessageContentOutputBuilder::default();
-        output = output.set_message_content(
-            Some(crate::protocol_serde::shape_get_raw_message_content_output::de_message_content_payload(_response_body)?)
-        );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = output.set_message_content(Some(
+            crate::protocol_serde::shape_get_raw_message_content_output::de_message_content_payload(_response_body)?,
+        ));
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

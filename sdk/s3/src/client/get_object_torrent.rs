@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`body(ByteStream)`](crate::operation::get_object_torrent::GetObjectTorrentOutput::body): <p>A Bencoded dictionary as defined by the BitTorrent specification</p>
     ///   - [`request_charged(Option<RequestCharged>)`](crate::operation::get_object_torrent::GetObjectTorrentOutput::request_charged): <p>If present, indicates that the requester was successfully charged for the request.</p>
     /// - On failure, responds with [`SdkError<GetObjectTorrentError>`](crate::operation::get_object_torrent::GetObjectTorrentError)
-    pub fn get_object_torrent(
-        &self,
-    ) -> crate::operation::get_object_torrent::builders::GetObjectTorrentFluentBuilder {
-        crate::operation::get_object_torrent::builders::GetObjectTorrentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_object_torrent(&self) -> crate::operation::get_object_torrent::builders::GetObjectTorrentFluentBuilder {
+        crate::operation::get_object_torrent::builders::GetObjectTorrentFluentBuilder::new(self.handle.clone())
     }
 }

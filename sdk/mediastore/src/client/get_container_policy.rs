@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetContainerPolicyOutput`](crate::operation::get_container_policy::GetContainerPolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_container_policy::GetContainerPolicyOutput::policy): <p>The contents of the access policy.</p>
     /// - On failure, responds with [`SdkError<GetContainerPolicyError>`](crate::operation::get_container_policy::GetContainerPolicyError)
-    pub fn get_container_policy(
-        &self,
-    ) -> crate::operation::get_container_policy::builders::GetContainerPolicyFluentBuilder {
-        crate::operation::get_container_policy::builders::GetContainerPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_container_policy(&self) -> crate::operation::get_container_policy::builders::GetContainerPolicyFluentBuilder {
+        crate::operation::get_container_policy::builders::GetContainerPolicyFluentBuilder::new(self.handle.clone())
     }
 }

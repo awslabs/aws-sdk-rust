@@ -41,9 +41,7 @@ impl AbortMultipartUploadFluentBuilder {
         }
     }
     /// Access the AbortMultipartUpload as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::abort_multipart_upload::builders::AbortMultipartUploadInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::abort_multipart_upload::builders::AbortMultipartUploadInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +53,7 @@ impl AbortMultipartUploadFluentBuilder {
             crate::operation::abort_multipart_upload::AbortMultipartUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::abort_multipart_upload::AbortMultipartUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::abort_multipart_upload::AbortMultipartUploadError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +63,7 @@ impl AbortMultipartUploadFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +72,7 @@ impl AbortMultipartUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::abort_multipart_upload::AbortMultipartUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::abort_multipart_upload::AbortMultipartUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::abort_multipart_upload::AbortMultipartUploadError>,
     > {
         let op = self
             .inner
@@ -104,9 +95,7 @@ impl AbortMultipartUploadFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::abort_multipart_upload::AbortMultipartUploadOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::abort_multipart_upload::AbortMultipartUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::abort_multipart_upload::AbortMultipartUploadError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +109,7 @@ impl AbortMultipartUploadFluentBuilder {
             crate::operation::abort_multipart_upload::AbortMultipartUpload,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::abort_multipart_upload::AbortMultipartUploadError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::abort_multipart_upload::AbortMultipartUploadError>,
     > {
         self.customize_middleware().await
     }

@@ -10,9 +10,7 @@ pub struct CreateVpcPeeringAuthorizationOutput {
 }
 impl CreateVpcPeeringAuthorizationOutput {
     /// <p>Details on the requested VPC peering authorization, including expiration.</p>
-    pub fn vpc_peering_authorization(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcPeeringAuthorization> {
+    pub fn vpc_peering_authorization(&self) -> ::std::option::Option<&crate::types::VpcPeeringAuthorization> {
         self.vpc_peering_authorization.as_ref()
     }
 }
@@ -23,42 +21,31 @@ impl ::aws_http::request_id::RequestId for CreateVpcPeeringAuthorizationOutput {
 }
 impl CreateVpcPeeringAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpcPeeringAuthorizationOutput`](crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationOutput).
-    pub fn builder() -> crate::operation::create_vpc_peering_authorization::builders::CreateVpcPeeringAuthorizationOutputBuilder{
+    pub fn builder() -> crate::operation::create_vpc_peering_authorization::builders::CreateVpcPeeringAuthorizationOutputBuilder {
         crate::operation::create_vpc_peering_authorization::builders::CreateVpcPeeringAuthorizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcPeeringAuthorizationOutput`](crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcPeeringAuthorizationOutputBuilder {
-    pub(crate) vpc_peering_authorization:
-        ::std::option::Option<crate::types::VpcPeeringAuthorization>,
+    pub(crate) vpc_peering_authorization: ::std::option::Option<crate::types::VpcPeeringAuthorization>,
     _request_id: Option<String>,
 }
 impl CreateVpcPeeringAuthorizationOutputBuilder {
     /// <p>Details on the requested VPC peering authorization, including expiration.</p>
-    pub fn vpc_peering_authorization(
-        mut self,
-        input: crate::types::VpcPeeringAuthorization,
-    ) -> Self {
+    pub fn vpc_peering_authorization(mut self, input: crate::types::VpcPeeringAuthorization) -> Self {
         self.vpc_peering_authorization = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details on the requested VPC peering authorization, including expiration.</p>
-    pub fn set_vpc_peering_authorization(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcPeeringAuthorization>,
-    ) -> Self {
+    pub fn set_vpc_peering_authorization(mut self, input: ::std::option::Option<crate::types::VpcPeeringAuthorization>) -> Self {
         self.vpc_peering_authorization = input;
         self
     }
     /// <p>Details on the requested VPC peering authorization, including expiration.</p>
-    pub fn get_vpc_peering_authorization(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcPeeringAuthorization> {
+    pub fn get_vpc_peering_authorization(&self) -> &::std::option::Option<crate::types::VpcPeeringAuthorization> {
         &self.vpc_peering_authorization
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,10 +58,7 @@ impl CreateVpcPeeringAuthorizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateVpcPeeringAuthorizationOutput`](crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationOutput
-    {
+    pub fn build(self) -> crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationOutput {
         crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationOutput {
             vpc_peering_authorization: self.vpc_peering_authorization,
             _request_id: self._request_id,

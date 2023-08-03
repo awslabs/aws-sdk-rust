@@ -30,35 +30,26 @@ impl PutContainerPolicyInput {
 }
 impl PutContainerPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutContainerPolicyInput`](crate::operation::put_container_policy::PutContainerPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_container_policy::builders::PutContainerPolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_container_policy::builders::PutContainerPolicyInputBuilder {
         crate::operation::put_container_policy::builders::PutContainerPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`PutContainerPolicyInput`](crate::operation::put_container_policy::PutContainerPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutContainerPolicyInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
 impl PutContainerPolicyInputBuilder {
     /// <p>The name of the container.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
@@ -95,15 +86,10 @@ impl PutContainerPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutContainerPolicyInput`](crate::operation::put_container_policy::PutContainerPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_container_policy::PutContainerPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_container_policy::PutContainerPolicyInput {
-                container_name: self.container_name,
-                policy: self.policy,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_container_policy::PutContainerPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_container_policy::PutContainerPolicyInput {
+            container_name: self.container_name,
+            policy: self.policy,
+        })
     }
 }

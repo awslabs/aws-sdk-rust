@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteNamespaceOutput`](crate::operation::delete_namespace::DeleteNamespaceOutput) with field(s):
     ///   - [`namespace(Option<Namespace>)`](crate::operation::delete_namespace::DeleteNamespaceOutput::namespace): <p>The deleted namespace object.</p>
     /// - On failure, responds with [`SdkError<DeleteNamespaceError>`](crate::operation::delete_namespace::DeleteNamespaceError)
-    pub fn delete_namespace(
-        &self,
-    ) -> crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder {
-        crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_namespace(&self) -> crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder {
+        crate::operation::delete_namespace::builders::DeleteNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

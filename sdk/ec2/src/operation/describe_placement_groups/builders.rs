@@ -26,8 +26,7 @@ impl DescribePlacementGroupsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePlacementGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_placement_groups::builders::DescribePlacementGroupsInputBuilder,
+    inner: crate::operation::describe_placement_groups::builders::DescribePlacementGroupsInputBuilder,
 }
 impl DescribePlacementGroupsFluentBuilder {
     /// Creates a new `DescribePlacementGroups`.
@@ -38,10 +37,7 @@ impl DescribePlacementGroupsFluentBuilder {
         }
     }
     /// Access the DescribePlacementGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_placement_groups::builders::DescribePlacementGroupsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_placement_groups::builders::DescribePlacementGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribePlacementGroupsFluentBuilder {
             crate::operation::describe_placement_groups::DescribePlacementGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_placement_groups::DescribePlacementGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_placement_groups::DescribePlacementGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribePlacementGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribePlacementGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_placement_groups::DescribePlacementGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_placement_groups::DescribePlacementGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_placement_groups::DescribePlacementGroupsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribePlacementGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_placement_groups::DescribePlacementGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_placement_groups::DescribePlacementGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_placement_groups::DescribePlacementGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DescribePlacementGroupsFluentBuilder {
             crate::operation::describe_placement_groups::DescribePlacementGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_placement_groups::DescribePlacementGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_placement_groups::DescribePlacementGroupsError>,
     > {
         self.customize_middleware().await
     }
@@ -154,10 +139,7 @@ impl DescribePlacementGroupsFluentBuilder {
     /// <key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -201,18 +183,13 @@ impl DescribePlacementGroupsFluentBuilder {
     }
     /// <p>The names of the placement groups.</p>
     /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
-    pub fn set_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_group_names(input);
         self
     }
     /// <p>The names of the placement groups.</p>
     /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
-    pub fn get_group_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_group_names()
     }
     /// Appends an item to `GroupIds`.
@@ -225,10 +202,7 @@ impl DescribePlacementGroupsFluentBuilder {
         self
     }
     /// <p>The IDs of the placement groups.</p>
-    pub fn set_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_group_ids(input);
         self
     }

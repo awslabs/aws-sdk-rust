@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`event_data_stores(Option<Vec<EventDataStore>>)`](crate::operation::list_event_data_stores::ListEventDataStoresOutput::event_data_stores): <p>Contains information about event data stores in the account, in the current Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_data_stores::ListEventDataStoresOutput::next_token): <p>A token you can use to get the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListEventDataStoresError>`](crate::operation::list_event_data_stores::ListEventDataStoresError)
-    pub fn list_event_data_stores(
-        &self,
-    ) -> crate::operation::list_event_data_stores::builders::ListEventDataStoresFluentBuilder {
-        crate::operation::list_event_data_stores::builders::ListEventDataStoresFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_event_data_stores(&self) -> crate::operation::list_event_data_stores::builders::ListEventDataStoresFluentBuilder {
+        crate::operation::list_event_data_stores::builders::ListEventDataStoresFluentBuilder::new(self.handle.clone())
     }
 }

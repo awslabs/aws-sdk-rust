@@ -30,9 +30,7 @@ impl IamInstanceProfile {
 
 /// A builder for [`IamInstanceProfile`](crate::types::IamInstanceProfile).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IamInstanceProfileBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -68,9 +66,6 @@ impl IamInstanceProfileBuilder {
     }
     /// Consumes the builder and constructs a [`IamInstanceProfile`](crate::types::IamInstanceProfile).
     pub fn build(self) -> crate::types::IamInstanceProfile {
-        crate::types::IamInstanceProfile {
-            arn: self.arn,
-            id: self.id,
-        }
+        crate::types::IamInstanceProfile { arn: self.arn, id: self.id }
     }
 }

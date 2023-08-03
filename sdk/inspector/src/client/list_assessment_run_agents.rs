@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`assessment_run_agents(Option<Vec<AssessmentRunAgent>>)`](crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput::assessment_run_agents): <p>A list of ARNs that specifies the agents returned by the action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput::next_token): <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     /// - On failure, responds with [`SdkError<ListAssessmentRunAgentsError>`](crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsError)
-    pub fn list_assessment_run_agents(
-        &self,
-    ) -> crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsFluentBuilder
-    {
+    pub fn list_assessment_run_agents(&self) -> crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsFluentBuilder {
         crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsFluentBuilder::new(self.handle.clone())
     }
 }

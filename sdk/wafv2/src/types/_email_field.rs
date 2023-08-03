@@ -34,9 +34,7 @@ impl EmailField {
 
 /// A builder for [`EmailField`](crate::types::EmailField).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EmailFieldBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
@@ -72,8 +70,6 @@ impl EmailFieldBuilder {
     }
     /// Consumes the builder and constructs a [`EmailField`](crate::types::EmailField).
     pub fn build(self) -> crate::types::EmailField {
-        crate::types::EmailField {
-            identifier: self.identifier,
-        }
+        crate::types::EmailField { identifier: self.identifier }
     }
 }

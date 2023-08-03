@@ -29,16 +29,14 @@ impl DeleteIntegrationResponseInput {
 }
 impl DeleteIntegrationResponseInput {
     /// Creates a new builder-style object to manufacture [`DeleteIntegrationResponseInput`](crate::operation::delete_integration_response::DeleteIntegrationResponseInput).
-    pub fn builder() -> crate::operation::delete_integration_response::builders::DeleteIntegrationResponseInputBuilder{
+    pub fn builder() -> crate::operation::delete_integration_response::builders::DeleteIntegrationResponseInputBuilder {
         crate::operation::delete_integration_response::builders::DeleteIntegrationResponseInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteIntegrationResponseInput`](crate::operation::delete_integration_response::DeleteIntegrationResponseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIntegrationResponseInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) integration_id: ::std::option::Option<::std::string::String>,
@@ -60,18 +58,12 @@ impl DeleteIntegrationResponseInputBuilder {
         &self.api_id
     }
     /// <p>The integration ID.</p>
-    pub fn integration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The integration ID.</p>
-    pub fn set_integration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_id = input;
         self
     }
@@ -80,18 +72,12 @@ impl DeleteIntegrationResponseInputBuilder {
         &self.integration_id
     }
     /// <p>The integration response ID.</p>
-    pub fn integration_response_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn integration_response_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_response_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The integration response ID.</p>
-    pub fn set_integration_response_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_integration_response_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_response_id = input;
         self
     }
@@ -106,12 +92,10 @@ impl DeleteIntegrationResponseInputBuilder {
         crate::operation::delete_integration_response::DeleteIntegrationResponseInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_integration_response::DeleteIntegrationResponseInput {
-                api_id: self.api_id,
-                integration_id: self.integration_id,
-                integration_response_id: self.integration_response_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_integration_response::DeleteIntegrationResponseInput {
+            api_id: self.api_id,
+            integration_id: self.integration_id,
+            integration_response_id: self.integration_response_id,
+        })
     }
 }

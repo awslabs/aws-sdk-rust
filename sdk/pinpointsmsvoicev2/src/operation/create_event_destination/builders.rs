@@ -39,10 +39,7 @@ impl CreateEventDestinationFluentBuilder {
         }
     }
     /// Access the CreateEventDestination as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_event_destination::builders::CreateEventDestinationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_event_destination::builders::CreateEventDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl CreateEventDestinationFluentBuilder {
             crate::operation::create_event_destination::CreateEventDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_destination::CreateEventDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_destination::CreateEventDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl CreateEventDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl CreateEventDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_destination::CreateEventDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_destination::CreateEventDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_destination::CreateEventDestinationError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl CreateEventDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_destination::CreateEventDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_destination::CreateEventDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_destination::CreateEventDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl CreateEventDestinationFluentBuilder {
             crate::operation::create_event_destination::CreateEventDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_event_destination::CreateEventDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_event_destination::CreateEventDestinationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
@@ -146,18 +126,12 @@ impl CreateEventDestinationFluentBuilder {
         self.inner.get_configuration_set_name()
     }
     /// <p>The name that identifies the event destination.</p>
-    pub fn event_destination_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_destination_name(input.into());
         self
     }
     /// <p>The name that identifies the event destination.</p>
-    pub fn set_event_destination_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_destination_name(input);
         self
     }
@@ -175,61 +149,40 @@ impl CreateEventDestinationFluentBuilder {
         self
     }
     /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
-    pub fn set_matching_event_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
-    ) -> Self {
+    pub fn set_matching_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>) -> Self {
         self.inner = self.inner.set_matching_event_types(input);
         self
     }
     /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
-    pub fn get_matching_event_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
+    pub fn get_matching_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
         self.inner.get_matching_event_types()
     }
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
-    pub fn cloud_watch_logs_destination(
-        mut self,
-        input: crate::types::CloudWatchLogsDestination,
-    ) -> Self {
+    pub fn cloud_watch_logs_destination(mut self, input: crate::types::CloudWatchLogsDestination) -> Self {
         self.inner = self.inner.cloud_watch_logs_destination(input);
         self
     }
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
-    pub fn set_cloud_watch_logs_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs_destination(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsDestination>) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_destination(input);
         self
     }
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
-    pub fn get_cloud_watch_logs_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::CloudWatchLogsDestination> {
+    pub fn get_cloud_watch_logs_destination(&self) -> &::std::option::Option<crate::types::CloudWatchLogsDestination> {
         self.inner.get_cloud_watch_logs_destination()
     }
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
-    pub fn kinesis_firehose_destination(
-        mut self,
-        input: crate::types::KinesisFirehoseDestination,
-    ) -> Self {
+    pub fn kinesis_firehose_destination(mut self, input: crate::types::KinesisFirehoseDestination) -> Self {
         self.inner = self.inner.kinesis_firehose_destination(input);
         self
     }
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
-    pub fn set_kinesis_firehose_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
-    ) -> Self {
+    pub fn set_kinesis_firehose_destination(mut self, input: ::std::option::Option<crate::types::KinesisFirehoseDestination>) -> Self {
         self.inner = self.inner.set_kinesis_firehose_destination(input);
         self
     }
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
-    pub fn get_kinesis_firehose_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
+    pub fn get_kinesis_firehose_destination(&self) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
         self.inner.get_kinesis_firehose_destination()
     }
     /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
@@ -238,10 +191,7 @@ impl CreateEventDestinationFluentBuilder {
         self
     }
     /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
-    pub fn set_sns_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::SnsDestination>,
-    ) -> Self {
+    pub fn set_sns_destination(mut self, input: ::std::option::Option<crate::types::SnsDestination>) -> Self {
         self.inner = self.inner.set_sns_destination(input);
         self
     }

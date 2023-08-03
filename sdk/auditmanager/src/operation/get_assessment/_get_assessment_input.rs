@@ -22,26 +22,18 @@ impl GetAssessmentInput {
 
 /// A builder for [`GetAssessmentInput`](crate::operation::get_assessment::GetAssessmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssessmentInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAssessmentInputBuilder {
     /// <p>The unique identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -52,10 +44,7 @@ impl GetAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`GetAssessmentInput`](crate::operation::get_assessment::GetAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_assessment::GetAssessmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_assessment::GetAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_assessment::GetAssessmentInput {
             assessment_id: self.assessment_id,
         })

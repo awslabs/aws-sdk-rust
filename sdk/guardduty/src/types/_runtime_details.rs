@@ -30,9 +30,7 @@ impl RuntimeDetails {
 
 /// A builder for [`RuntimeDetails`](crate::types::RuntimeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuntimeDetailsBuilder {
     pub(crate) process: ::std::option::Option<crate::types::ProcessDetails>,
     pub(crate) context: ::std::option::Option<crate::types::RuntimeContext>,
@@ -44,10 +42,7 @@ impl RuntimeDetailsBuilder {
         self
     }
     /// <p>Information about the observed process.</p>
-    pub fn set_process(
-        mut self,
-        input: ::std::option::Option<crate::types::ProcessDetails>,
-    ) -> Self {
+    pub fn set_process(mut self, input: ::std::option::Option<crate::types::ProcessDetails>) -> Self {
         self.process = input;
         self
     }
@@ -61,10 +56,7 @@ impl RuntimeDetailsBuilder {
         self
     }
     /// <p>Additional information about the suspicious activity.</p>
-    pub fn set_context(
-        mut self,
-        input: ::std::option::Option<crate::types::RuntimeContext>,
-    ) -> Self {
+    pub fn set_context(mut self, input: ::std::option::Option<crate::types::RuntimeContext>) -> Self {
         self.context = input;
         self
     }

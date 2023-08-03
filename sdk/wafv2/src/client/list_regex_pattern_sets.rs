@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::list_regex_pattern_sets::ListRegexPatternSetsOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     ///   - [`regex_pattern_sets(Option<Vec<RegexPatternSetSummary>>)`](crate::operation::list_regex_pattern_sets::ListRegexPatternSetsOutput::regex_pattern_sets): <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     /// - On failure, responds with [`SdkError<ListRegexPatternSetsError>`](crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError)
-    pub fn list_regex_pattern_sets(
-        &self,
-    ) -> crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsFluentBuilder
-    {
-        crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_regex_pattern_sets(&self) -> crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsFluentBuilder {
+        crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsFluentBuilder::new(self.handle.clone())
     }
 }

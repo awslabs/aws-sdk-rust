@@ -36,9 +36,7 @@ impl ListPipelinesOutput {
 
 /// A builder for [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPipelinesOutputBuilder {
     pub(crate) pipelines: ::std::option::Option<::std::vec::Vec<crate::types::Pipeline>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +55,7 @@ impl ListPipelinesOutputBuilder {
         self
     }
     /// <p>An array of <code>Pipeline</code> objects.</p>
-    pub fn set_pipelines(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Pipeline>>,
-    ) -> Self {
+    pub fn set_pipelines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Pipeline>>) -> Self {
         self.pipelines = input;
         self
     }
@@ -69,18 +64,12 @@ impl ListPipelinesOutputBuilder {
         &self.pipelines
     }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }

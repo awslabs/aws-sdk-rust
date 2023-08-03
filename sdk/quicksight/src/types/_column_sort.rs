@@ -24,9 +24,7 @@ impl ColumnSort {
         self.direction.as_ref()
     }
     /// <p>The aggregation function that is defined in the column sort.</p>
-    pub fn aggregation_function(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AggregationFunction> {
+    pub fn aggregation_function(&self) -> ::std::option::Option<&crate::types::AggregationFunction> {
         self.aggregation_function.as_ref()
     }
 }
@@ -39,9 +37,7 @@ impl ColumnSort {
 
 /// A builder for [`ColumnSort`](crate::types::ColumnSort).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnSortBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::ColumnIdentifier>,
     pub(crate) direction: ::std::option::Option<crate::types::SortDirection>,
@@ -54,10 +50,7 @@ impl ColumnSortBuilder {
         self
     }
     /// <p>A column of a data set.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
         self.sort_by = input;
         self
     }
@@ -71,10 +64,7 @@ impl ColumnSortBuilder {
         self
     }
     /// <p>The sort direction.</p>
-    pub fn set_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::SortDirection>,
-    ) -> Self {
+    pub fn set_direction(mut self, input: ::std::option::Option<crate::types::SortDirection>) -> Self {
         self.direction = input;
         self
     }
@@ -88,17 +78,12 @@ impl ColumnSortBuilder {
         self
     }
     /// <p>The aggregation function that is defined in the column sort.</p>
-    pub fn set_aggregation_function(
-        mut self,
-        input: ::std::option::Option<crate::types::AggregationFunction>,
-    ) -> Self {
+    pub fn set_aggregation_function(mut self, input: ::std::option::Option<crate::types::AggregationFunction>) -> Self {
         self.aggregation_function = input;
         self
     }
     /// <p>The aggregation function that is defined in the column sort.</p>
-    pub fn get_aggregation_function(
-        &self,
-    ) -> &::std::option::Option<crate::types::AggregationFunction> {
+    pub fn get_aggregation_function(&self) -> &::std::option::Option<crate::types::AggregationFunction> {
         &self.aggregation_function
     }
     /// Consumes the builder and constructs a [`ColumnSort`](crate::types::ColumnSort).

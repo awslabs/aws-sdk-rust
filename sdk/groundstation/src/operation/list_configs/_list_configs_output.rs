@@ -36,9 +36,7 @@ impl ListConfigsOutput {
 
 /// A builder for [`ListConfigsOutput`](crate::operation::list_configs::ListConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfigsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) config_list: ::std::option::Option<::std::vec::Vec<crate::types::ConfigListItem>>,
@@ -71,17 +69,12 @@ impl ListConfigsOutputBuilder {
         self
     }
     /// <p>List of <code>Config</code> items.</p>
-    pub fn set_config_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigListItem>>,
-    ) -> Self {
+    pub fn set_config_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigListItem>>) -> Self {
         self.config_list = input;
         self
     }
     /// <p>List of <code>Config</code> items.</p>
-    pub fn get_config_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigListItem>> {
+    pub fn get_config_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigListItem>> {
         &self.config_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetStoredQueryOutput`](crate::operation::get_stored_query::GetStoredQueryOutput) with field(s):
     ///   - [`stored_query(Option<StoredQuery>)`](crate::operation::get_stored_query::GetStoredQueryOutput::stored_query): <p>Returns a <code>StoredQuery</code> object.</p>
     /// - On failure, responds with [`SdkError<GetStoredQueryError>`](crate::operation::get_stored_query::GetStoredQueryError)
-    pub fn get_stored_query(
-        &self,
-    ) -> crate::operation::get_stored_query::builders::GetStoredQueryFluentBuilder {
-        crate::operation::get_stored_query::builders::GetStoredQueryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_stored_query(&self) -> crate::operation::get_stored_query::builders::GetStoredQueryFluentBuilder {
+        crate::operation::get_stored_query::builders::GetStoredQueryFluentBuilder::new(self.handle.clone())
     }
 }

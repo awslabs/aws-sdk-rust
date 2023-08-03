@@ -9,8 +9,7 @@ pub struct Specifications {
     pub slot_type_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
     #[doc(hidden)]
-    pub value_elicitation_setting:
-        ::std::option::Option<crate::types::SubSlotValueElicitationSetting>,
+    pub value_elicitation_setting: ::std::option::Option<crate::types::SubSlotValueElicitationSetting>,
 }
 impl Specifications {
     /// <p>The unique identifier assigned to the slot type.</p>
@@ -18,9 +17,7 @@ impl Specifications {
         self.slot_type_id.as_deref()
     }
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
-    pub fn value_elicitation_setting(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SubSlotValueElicitationSetting> {
+    pub fn value_elicitation_setting(&self) -> ::std::option::Option<&crate::types::SubSlotValueElicitationSetting> {
         self.value_elicitation_setting.as_ref()
     }
 }
@@ -33,13 +30,10 @@ impl Specifications {
 
 /// A builder for [`Specifications`](crate::types::Specifications).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpecificationsBuilder {
     pub(crate) slot_type_id: ::std::option::Option<::std::string::String>,
-    pub(crate) value_elicitation_setting:
-        ::std::option::Option<crate::types::SubSlotValueElicitationSetting>,
+    pub(crate) value_elicitation_setting: ::std::option::Option<crate::types::SubSlotValueElicitationSetting>,
 }
 impl SpecificationsBuilder {
     /// <p>The unique identifier assigned to the slot type.</p>
@@ -57,25 +51,17 @@ impl SpecificationsBuilder {
         &self.slot_type_id
     }
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
-    pub fn value_elicitation_setting(
-        mut self,
-        input: crate::types::SubSlotValueElicitationSetting,
-    ) -> Self {
+    pub fn value_elicitation_setting(mut self, input: crate::types::SubSlotValueElicitationSetting) -> Self {
         self.value_elicitation_setting = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
-    pub fn set_value_elicitation_setting(
-        mut self,
-        input: ::std::option::Option<crate::types::SubSlotValueElicitationSetting>,
-    ) -> Self {
+    pub fn set_value_elicitation_setting(mut self, input: ::std::option::Option<crate::types::SubSlotValueElicitationSetting>) -> Self {
         self.value_elicitation_setting = input;
         self
     }
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
-    pub fn get_value_elicitation_setting(
-        &self,
-    ) -> &::std::option::Option<crate::types::SubSlotValueElicitationSetting> {
+    pub fn get_value_elicitation_setting(&self) -> &::std::option::Option<crate::types::SubSlotValueElicitationSetting> {
         &self.value_elicitation_setting
     }
     /// Consumes the builder and constructs a [`Specifications`](crate::types::Specifications).

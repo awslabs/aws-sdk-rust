@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`workspaces_connection_status(Option<Vec<WorkspaceConnectionStatus>>)`](crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusOutput::workspaces_connection_status): <p>Information about the connection status of the WorkSpace.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<DescribeWorkspacesConnectionStatusError>`](crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusError)
-    pub fn describe_workspaces_connection_status(&self) -> crate::operation::describe_workspaces_connection_status::builders::DescribeWorkspacesConnectionStatusFluentBuilder{
+    pub fn describe_workspaces_connection_status(
+        &self,
+    ) -> crate::operation::describe_workspaces_connection_status::builders::DescribeWorkspacesConnectionStatusFluentBuilder {
         crate::operation::describe_workspaces_connection_status::builders::DescribeWorkspacesConnectionStatusFluentBuilder::new(self.handle.clone())
     }
 }

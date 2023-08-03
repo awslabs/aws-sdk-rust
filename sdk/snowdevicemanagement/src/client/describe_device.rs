@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`device_capacities(Option<Vec<Capacity>>)`](crate::operation::describe_device::DescribeDeviceOutput::device_capacities): <p>The hardware specifications of the device. </p>
     ///   - [`software(Option<SoftwareInformation>)`](crate::operation::describe_device::DescribeDeviceOutput::software): <p>The software installed on the device.</p>
     /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::operation::describe_device::DescribeDeviceError)
-    pub fn describe_device(
-        &self,
-    ) -> crate::operation::describe_device::builders::DescribeDeviceFluentBuilder {
-        crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_device(&self) -> crate::operation::describe_device::builders::DescribeDeviceFluentBuilder {
+        crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::new(self.handle.clone())
     }
 }

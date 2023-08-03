@@ -37,13 +37,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EventPublisher {
     /// Notifications for Anomaly Detection
@@ -55,9 +49,7 @@ impl ::std::convert::From<&str> for EventPublisher {
     fn from(s: &str) -> Self {
         match s {
             "AnomalyDetection" => EventPublisher::AnomalyDetection,
-            other => {
-                EventPublisher::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => EventPublisher::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

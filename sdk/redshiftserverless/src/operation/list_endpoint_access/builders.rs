@@ -10,10 +10,7 @@ impl ListEndpointAccessInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_endpoint_access::ListEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_endpoint_access::ListEndpointAccessError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_endpoint_access::ListEndpointAccessError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_endpoint_access();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListEndpointAccessFluentBuilder {
         }
     }
     /// Access the ListEndpointAccess as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_endpoint_access::builders::ListEndpointAccessInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_endpoint_access::builders::ListEndpointAccessInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListEndpointAccessFluentBuilder {
             crate::operation::list_endpoint_access::ListEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_endpoint_access::ListEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_endpoint_access::ListEndpointAccessError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListEndpointAccessFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_endpoint_access::ListEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_endpoint_access::ListEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_endpoint_access::ListEndpointAccessError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListEndpointAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_endpoint_access::ListEndpointAccessOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_endpoint_access::ListEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_endpoint_access::ListEndpointAccessError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListEndpointAccessFluentBuilder {
             crate::operation::list_endpoint_access::ListEndpointAccess,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_endpoint_access::ListEndpointAccessError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_endpoint_access::ListEndpointAccessError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_endpoint_access::paginator::ListEndpointAccessPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_endpoint_access::paginator::ListEndpointAccessPaginator {
-        crate::operation::list_endpoint_access::paginator::ListEndpointAccessPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_endpoint_access::paginator::ListEndpointAccessPaginator {
+        crate::operation::list_endpoint_access::paginator::ListEndpointAccessPaginator::new(self.handle, self.inner)
     }
     /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,18 +141,12 @@ impl ListEndpointAccessFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>The name of the workgroup associated with the VPC endpoint to return.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workgroup_name(input.into());
         self
     }
     /// <p>The name of the workgroup associated with the VPC endpoint to return.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
     }

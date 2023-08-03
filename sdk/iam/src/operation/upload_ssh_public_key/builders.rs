@@ -10,10 +10,7 @@ impl UploadSshPublicKeyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::upload_ssh_public_key::UploadSshPublicKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_ssh_public_key::UploadSSHPublicKeyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_ssh_public_key::UploadSSHPublicKeyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.upload_ssh_public_key();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl UploadSSHPublicKeyFluentBuilder {
         }
     }
     /// Access the UploadSSHPublicKey as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::upload_ssh_public_key::builders::UploadSshPublicKeyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::upload_ssh_public_key::builders::UploadSshPublicKeyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl UploadSSHPublicKeyFluentBuilder {
             crate::operation::upload_ssh_public_key::UploadSSHPublicKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_ssh_public_key::UploadSSHPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_ssh_public_key::UploadSSHPublicKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl UploadSSHPublicKeyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl UploadSSHPublicKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_ssh_public_key::UploadSshPublicKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_ssh_public_key::UploadSSHPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_ssh_public_key::UploadSSHPublicKeyError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl UploadSSHPublicKeyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_ssh_public_key::UploadSshPublicKeyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_ssh_public_key::UploadSSHPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_ssh_public_key::UploadSSHPublicKeyError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl UploadSSHPublicKeyFluentBuilder {
             crate::operation::upload_ssh_public_key::UploadSSHPublicKey,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::upload_ssh_public_key::UploadSSHPublicKeyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::upload_ssh_public_key::UploadSSHPublicKeyError>,
     > {
         self.customize_middleware().await
     }
@@ -147,10 +131,7 @@ impl UploadSSHPublicKeyFluentBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    pub fn ssh_public_key_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ssh_public_key_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ssh_public_key_body(input.into());
         self
     }
@@ -161,10 +142,7 @@ impl UploadSSHPublicKeyFluentBuilder {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    pub fn set_ssh_public_key_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ssh_public_key_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ssh_public_key_body(input);
         self
     }

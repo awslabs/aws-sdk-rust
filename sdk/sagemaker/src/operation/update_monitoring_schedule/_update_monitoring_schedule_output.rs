@@ -21,36 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateMonitoringScheduleOutput {
 }
 impl UpdateMonitoringScheduleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMonitoringScheduleOutput`](crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::update_monitoring_schedule::builders::UpdateMonitoringScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_monitoring_schedule::builders::UpdateMonitoringScheduleOutputBuilder {
         crate::operation::update_monitoring_schedule::builders::UpdateMonitoringScheduleOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMonitoringScheduleOutput`](crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMonitoringScheduleOutputBuilder {
     pub(crate) monitoring_schedule_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateMonitoringScheduleOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
-    pub fn monitoring_schedule_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitoring_schedule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
-    pub fn set_monitoring_schedule_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitoring_schedule_arn = input;
         self
     }
@@ -68,9 +58,7 @@ impl UpdateMonitoringScheduleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateMonitoringScheduleOutput`](crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleOutput {
+    pub fn build(self) -> crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleOutput {
         crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleOutput {
             monitoring_schedule_arn: self.monitoring_schedule_arn,
             _request_id: self._request_id,

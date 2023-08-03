@@ -135,9 +135,7 @@ impl PiiEntitiesDetectionJobProperties {
 
 /// A builder for [`PiiEntitiesDetectionJobProperties`](crate::types::PiiEntitiesDetectionJobProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PiiEntitiesDetectionJobPropertiesBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
@@ -269,10 +267,7 @@ impl PiiEntitiesDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The time that the PII entities detection job was submitted for processing.</p>
-    pub fn set_submit_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_submit_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.submit_time = input;
         self
     }
@@ -286,10 +281,7 @@ impl PiiEntitiesDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The time that the PII entities detection job completed.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -303,10 +295,7 @@ impl PiiEntitiesDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The input properties for a PII entities detection job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }
@@ -320,17 +309,12 @@ impl PiiEntitiesDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The output data configuration that you supplied when you created the PII entities detection job.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PiiOutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::PiiOutputDataConfig>) -> Self {
         self.output_data_config = input;
         self
     }
     /// <p>The output data configuration that you supplied when you created the PII entities detection job.</p>
-    pub fn get_output_data_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::PiiOutputDataConfig> {
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::PiiOutputDataConfig> {
         &self.output_data_config
     }
     /// <p>Provides configuration parameters for PII entity redaction.</p>
@@ -341,10 +325,7 @@ impl PiiEntitiesDetectionJobPropertiesBuilder {
     }
     /// <p>Provides configuration parameters for PII entity redaction.</p>
     /// <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
-    pub fn set_redaction_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RedactionConfig>,
-    ) -> Self {
+    pub fn set_redaction_config(mut self, input: ::std::option::Option<crate::types::RedactionConfig>) -> Self {
         self.redaction_config = input;
         self
     }
@@ -359,10 +340,7 @@ impl PiiEntitiesDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The language code of the input documents</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -371,18 +349,12 @@ impl PiiEntitiesDetectionJobPropertiesBuilder {
         &self.language_code
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
@@ -396,10 +368,7 @@ impl PiiEntitiesDetectionJobPropertiesBuilder {
         self
     }
     /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
-    pub fn set_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::PiiEntitiesDetectionMode>,
-    ) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::PiiEntitiesDetectionMode>) -> Self {
         self.mode = input;
         self
     }

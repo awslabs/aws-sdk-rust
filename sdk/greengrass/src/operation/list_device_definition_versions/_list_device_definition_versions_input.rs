@@ -29,16 +29,14 @@ impl ListDeviceDefinitionVersionsInput {
 }
 impl ListDeviceDefinitionVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListDeviceDefinitionVersionsInput`](crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsInput).
-    pub fn builder() -> crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsInputBuilder {
         crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeviceDefinitionVersionsInput`](crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeviceDefinitionVersionsInputBuilder {
     pub(crate) device_definition_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListDeviceDefinitionVersionsInputBuilder {
 }
 impl ListDeviceDefinitionVersionsInputBuilder {
     /// The ID of the device definition.
-    pub fn device_definition_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the device definition.
-    pub fn set_device_definition_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_definition_id = input;
         self
     }
@@ -100,12 +92,10 @@ impl ListDeviceDefinitionVersionsInputBuilder {
         crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsInput {
-                device_definition_id: self.device_definition_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_device_definition_versions::ListDeviceDefinitionVersionsInput {
+            device_definition_id: self.device_definition_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

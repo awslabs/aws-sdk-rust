@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`storage_system_arn(impl ::std::convert::Into<String>)`](crate::operation::remove_storage_system::builders::RemoveStorageSystemFluentBuilder::storage_system_arn) / [`set_storage_system_arn(Option<String>)`](crate::operation::remove_storage_system::builders::RemoveStorageSystemFluentBuilder::set_storage_system_arn): <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery.</p>
     /// - On success, responds with [`RemoveStorageSystemOutput`](crate::operation::remove_storage_system::RemoveStorageSystemOutput)
     /// - On failure, responds with [`SdkError<RemoveStorageSystemError>`](crate::operation::remove_storage_system::RemoveStorageSystemError)
-    pub fn remove_storage_system(
-        &self,
-    ) -> crate::operation::remove_storage_system::builders::RemoveStorageSystemFluentBuilder {
-        crate::operation::remove_storage_system::builders::RemoveStorageSystemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn remove_storage_system(&self) -> crate::operation::remove_storage_system::builders::RemoveStorageSystemFluentBuilder {
+        crate::operation::remove_storage_system::builders::RemoveStorageSystemFluentBuilder::new(self.handle.clone())
     }
 }

@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`datastore_arn(Option<String>)`](crate::operation::create_datastore::CreateDatastoreOutput::datastore_arn): <p>The ARN of the data store.</p>
     ///   - [`retention_period(Option<RetentionPeriod>)`](crate::operation::create_datastore::CreateDatastoreOutput::retention_period): <p>How long, in days, message data is kept for the data store.</p>
     /// - On failure, responds with [`SdkError<CreateDatastoreError>`](crate::operation::create_datastore::CreateDatastoreError)
-    pub fn create_datastore(
-        &self,
-    ) -> crate::operation::create_datastore::builders::CreateDatastoreFluentBuilder {
-        crate::operation::create_datastore::builders::CreateDatastoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_datastore(&self) -> crate::operation::create_datastore::builders::CreateDatastoreFluentBuilder {
+        crate::operation::create_datastore::builders::CreateDatastoreFluentBuilder::new(self.handle.clone())
     }
 }

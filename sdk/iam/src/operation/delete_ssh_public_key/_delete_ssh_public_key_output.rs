@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteSshPublicKeyOutput {
 }
 impl DeleteSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSshPublicKeyOutput`](crate::operation::delete_ssh_public_key::DeleteSshPublicKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyOutputBuilder {
-        crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyOutputBuilder {
+        crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteSshPublicKeyOutput`](crate::operation::delete_ssh_public_key::DeleteSshPublicKeyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSshPublicKeyOutputBuilder {
     _request_id: Option<String>,
 }

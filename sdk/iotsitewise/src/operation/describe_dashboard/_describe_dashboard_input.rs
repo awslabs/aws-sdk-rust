@@ -15,17 +15,14 @@ impl DescribeDashboardInput {
 }
 impl DescribeDashboardInput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardInput`](crate::operation::describe_dashboard::DescribeDashboardInput).
-    pub fn builder() -> crate::operation::describe_dashboard::builders::DescribeDashboardInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_dashboard::builders::DescribeDashboardInputBuilder {
         crate::operation::describe_dashboard::builders::DescribeDashboardInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDashboardInput`](crate::operation::describe_dashboard::DescribeDashboardInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDashboardInputBuilder {
     pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl DescribeDashboardInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDashboardInput`](crate::operation::describe_dashboard::DescribeDashboardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_dashboard::DescribeDashboardInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_dashboard::DescribeDashboardInput {
-                dashboard_id: self.dashboard_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_dashboard::DescribeDashboardInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_dashboard::DescribeDashboardInput {
+            dashboard_id: self.dashboard_id,
+        })
     }
 }

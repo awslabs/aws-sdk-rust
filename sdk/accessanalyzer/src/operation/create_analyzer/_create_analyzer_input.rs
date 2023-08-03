@@ -15,9 +15,7 @@ pub struct CreateAnalyzerInput {
     pub archive_rules: ::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>>,
     /// <p>The tags to apply to the analyzer.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A client token.</p>
     #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -36,11 +34,7 @@ impl CreateAnalyzerInput {
         self.archive_rules.as_deref()
     }
     /// <p>The tags to apply to the analyzer.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A client token.</p>
@@ -57,33 +51,22 @@ impl CreateAnalyzerInput {
 
 /// A builder for [`CreateAnalyzerInput`](crate::operation::create_analyzer::CreateAnalyzerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAnalyzerInputBuilder {
     pub(crate) analyzer_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
-    pub(crate) archive_rules:
-        ::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) archive_rules: ::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateAnalyzerInputBuilder {
     /// <p>The name of the analyzer to create.</p>
-    pub fn analyzer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the analyzer to create.</p>
-    pub fn set_analyzer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analyzer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analyzer_name = input;
         self
     }
@@ -117,17 +100,12 @@ impl CreateAnalyzerInputBuilder {
         self
     }
     /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
-    pub fn set_archive_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>>,
-    ) -> Self {
+    pub fn set_archive_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>>) -> Self {
         self.archive_rules = input;
         self
     }
     /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
-    pub fn get_archive_rules(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>> {
+    pub fn get_archive_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>> {
         &self.archive_rules
     }
     /// Adds a key-value pair to `tags`.
@@ -135,32 +113,19 @@ impl CreateAnalyzerInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to apply to the analyzer.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to apply to the analyzer.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to apply to the analyzer.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A client token.</p>
@@ -180,10 +145,7 @@ impl CreateAnalyzerInputBuilder {
     /// Consumes the builder and constructs a [`CreateAnalyzerInput`](crate::operation::create_analyzer::CreateAnalyzerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_analyzer::CreateAnalyzerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_analyzer::CreateAnalyzerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_analyzer::CreateAnalyzerInput {
             analyzer_name: self.analyzer_name,
             r#type: self.r#type,

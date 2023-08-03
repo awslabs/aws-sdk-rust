@@ -26,8 +26,7 @@ impl DeregisterFromWorkMailInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterFromWorkMailFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailInputBuilder,
+    inner: crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailInputBuilder,
 }
 impl DeregisterFromWorkMailFluentBuilder {
     /// Creates a new `DeregisterFromWorkMail`.
@@ -38,10 +37,7 @@ impl DeregisterFromWorkMailFluentBuilder {
         }
     }
     /// Access the DeregisterFromWorkMail as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeregisterFromWorkMailFluentBuilder {
             crate::operation::deregister_from_work_mail::DeregisterFromWorkMail,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeregisterFromWorkMailFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeregisterFromWorkMailFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_from_work_mail::DeregisterFromWorkMailOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeregisterFromWorkMailFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_from_work_mail::DeregisterFromWorkMailOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DeregisterFromWorkMailFluentBuilder {
             crate::operation::deregister_from_work_mail::DeregisterFromWorkMail,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
-    pub fn organization_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The identifier for the organization under which the WorkMail entity exists.</p>
-    pub fn set_organization_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }

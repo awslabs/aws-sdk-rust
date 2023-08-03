@@ -30,18 +30,14 @@ impl CreatePolicyVersionInput {
 }
 impl CreatePolicyVersionInput {
     /// Creates a new builder-style object to manufacture [`CreatePolicyVersionInput`](crate::operation::create_policy_version::CreatePolicyVersionInput).
-    pub fn builder(
-    ) -> crate::operation::create_policy_version::builders::CreatePolicyVersionInputBuilder {
-        crate::operation::create_policy_version::builders::CreatePolicyVersionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_policy_version::builders::CreatePolicyVersionInputBuilder {
+        crate::operation::create_policy_version::builders::CreatePolicyVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreatePolicyVersionInput`](crate::operation::create_policy_version::CreatePolicyVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreatePolicyVersionInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
@@ -63,18 +59,12 @@ impl CreatePolicyVersionInputBuilder {
         &self.policy_name
     }
     /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -99,16 +89,12 @@ impl CreatePolicyVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreatePolicyVersionInput`](crate::operation::create_policy_version::CreatePolicyVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_policy_version::CreatePolicyVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_policy_version::CreatePolicyVersionInput {
-                policy_name: self.policy_name,
-                policy_document: self.policy_document,
-                set_as_default: self.set_as_default,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_policy_version::CreatePolicyVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_policy_version::CreatePolicyVersionInput {
+            policy_name: self.policy_name,
+            policy_document: self.policy_document,
+            set_as_default: self.set_as_default,
+        })
     }
 }

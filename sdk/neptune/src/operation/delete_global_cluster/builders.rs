@@ -37,9 +37,7 @@ impl DeleteGlobalClusterFluentBuilder {
         }
     }
     /// Access the DeleteGlobalCluster as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_global_cluster::builders::DeleteGlobalClusterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_global_cluster::builders::DeleteGlobalClusterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteGlobalClusterFluentBuilder {
             crate::operation::delete_global_cluster::DeleteGlobalCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_global_cluster::DeleteGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_global_cluster::DeleteGlobalClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteGlobalClusterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteGlobalClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_global_cluster::DeleteGlobalClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_global_cluster::DeleteGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_global_cluster::DeleteGlobalClusterError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteGlobalClusterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_global_cluster::DeleteGlobalClusterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_global_cluster::DeleteGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_global_cluster::DeleteGlobalClusterError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteGlobalClusterFluentBuilder {
             crate::operation::delete_global_cluster::DeleteGlobalCluster,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_global_cluster::DeleteGlobalClusterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_global_cluster::DeleteGlobalClusterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The cluster identifier of the global database cluster being deleted.</p>
-    pub fn global_cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier of the global database cluster being deleted.</p>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
     }

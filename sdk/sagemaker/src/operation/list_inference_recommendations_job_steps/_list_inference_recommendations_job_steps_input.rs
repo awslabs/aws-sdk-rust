@@ -45,16 +45,14 @@ impl ListInferenceRecommendationsJobStepsInput {
 }
 impl ListInferenceRecommendationsJobStepsInput {
     /// Creates a new builder-style object to manufacture [`ListInferenceRecommendationsJobStepsInput`](crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsInput).
-    pub fn builder() -> crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsInputBuilder{
+    pub fn builder() -> crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsInputBuilder {
         crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListInferenceRecommendationsJobStepsInput`](crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInferenceRecommendationsJobStepsInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RecommendationJobStatus>,
@@ -83,10 +81,7 @@ impl ListInferenceRecommendationsJobStepsInputBuilder {
         self
     }
     /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RecommendationJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -102,10 +97,7 @@ impl ListInferenceRecommendationsJobStepsInputBuilder {
     }
     /// <p>A filter to return details about the specified type of subtask.</p>
     /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
-    pub fn set_step_type(
-        mut self,
-        input: ::std::option::Option<crate::types::RecommendationStepType>,
-    ) -> Self {
+    pub fn set_step_type(mut self, input: ::std::option::Option<crate::types::RecommendationStepType>) -> Self {
         self.step_type = input;
         self
     }
@@ -143,20 +135,20 @@ impl ListInferenceRecommendationsJobStepsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListInferenceRecommendationsJobStepsInput`](crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsInput {
-                job_name: self.job_name
-                ,
-                status: self.status
-                ,
-                step_type: self.step_type
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                job_name: self.job_name,
+                status: self.status,
+                step_type: self.step_type,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

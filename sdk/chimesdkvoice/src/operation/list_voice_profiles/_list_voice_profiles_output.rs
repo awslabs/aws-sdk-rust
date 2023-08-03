@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListVoiceProfilesOutput {
 }
 impl ListVoiceProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListVoiceProfilesOutput`](crate::operation::list_voice_profiles::ListVoiceProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_voice_profiles::builders::ListVoiceProfilesOutputBuilder {
+    pub fn builder() -> crate::operation::list_voice_profiles::builders::ListVoiceProfilesOutputBuilder {
         crate::operation::list_voice_profiles::builders::ListVoiceProfilesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListVoiceProfilesOutput`](crate::operation::list_voice_profiles::ListVoiceProfilesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVoiceProfilesOutputBuilder {
-    pub(crate) voice_profiles:
-        ::std::option::Option<::std::vec::Vec<crate::types::VoiceProfileSummary>>,
+    pub(crate) voice_profiles: ::std::option::Option<::std::vec::Vec<crate::types::VoiceProfileSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListVoiceProfilesOutputBuilder {
         self
     }
     /// <p>The list of voice profiles.</p>
-    pub fn set_voice_profiles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceProfileSummary>>,
-    ) -> Self {
+    pub fn set_voice_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceProfileSummary>>) -> Self {
         self.voice_profiles = input;
         self
     }
     /// <p>The list of voice profiles.</p>
-    pub fn get_voice_profiles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceProfileSummary>> {
+    pub fn get_voice_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceProfileSummary>> {
         &self.voice_profiles
     }
     /// <p>The token used to retrieve the next page of results.</p>

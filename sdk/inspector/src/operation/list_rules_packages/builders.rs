@@ -10,10 +10,7 @@ impl ListRulesPackagesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_rules_packages::ListRulesPackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rules_packages::ListRulesPackagesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rules_packages::ListRulesPackagesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_rules_packages();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListRulesPackagesFluentBuilder {
         }
     }
     /// Access the ListRulesPackages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_rules_packages::builders::ListRulesPackagesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_rules_packages::builders::ListRulesPackagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListRulesPackagesFluentBuilder {
             crate::operation::list_rules_packages::ListRulesPackages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rules_packages::ListRulesPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rules_packages::ListRulesPackagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListRulesPackagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListRulesPackagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rules_packages::ListRulesPackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rules_packages::ListRulesPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rules_packages::ListRulesPackagesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListRulesPackagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rules_packages::ListRulesPackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rules_packages::ListRulesPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rules_packages::ListRulesPackagesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListRulesPackagesFluentBuilder {
             crate::operation::list_rules_packages::ListRulesPackages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_rules_packages::ListRulesPackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rules_packages::ListRulesPackagesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_rules_packages::paginator::ListRulesPackagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_rules_packages::paginator::ListRulesPackagesPaginator {
-        crate::operation::list_rules_packages::paginator::ListRulesPackagesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_rules_packages::paginator::ListRulesPackagesPaginator {
+        crate::operation::list_rules_packages::paginator::ListRulesPackagesPaginator::new(self.handle, self.inner)
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -24,11 +24,7 @@ impl super::Client {
     ///   - [`horovod(bool)`](crate::operation::describe_image_version::DescribeImageVersionOutput::horovod): <p>Indicates Horovod compatibility.</p>
     ///   - [`release_notes(Option<String>)`](crate::operation::describe_image_version::DescribeImageVersionOutput::release_notes): <p>The maintainer description of the image version.</p>
     /// - On failure, responds with [`SdkError<DescribeImageVersionError>`](crate::operation::describe_image_version::DescribeImageVersionError)
-    pub fn describe_image_version(
-        &self,
-    ) -> crate::operation::describe_image_version::builders::DescribeImageVersionFluentBuilder {
-        crate::operation::describe_image_version::builders::DescribeImageVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_image_version(&self) -> crate::operation::describe_image_version::builders::DescribeImageVersionFluentBuilder {
+        crate::operation::describe_image_version::builders::DescribeImageVersionFluentBuilder::new(self.handle.clone())
     }
 }

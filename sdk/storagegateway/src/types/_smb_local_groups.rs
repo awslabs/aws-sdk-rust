@@ -25,9 +25,7 @@ impl SmbLocalGroups {
 
 /// A builder for [`SmbLocalGroups`](crate::types::SmbLocalGroups).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SmbLocalGroupsBuilder {
     pub(crate) gateway_admins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -38,10 +36,7 @@ impl SmbLocalGroupsBuilder {
     ///
     /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p>
     /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to force-close files that are open and locked.</p>
-    pub fn gateway_admins(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_admins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.gateway_admins.unwrap_or_default();
         v.push(input.into());
         self.gateway_admins = ::std::option::Option::Some(v);
@@ -49,18 +44,13 @@ impl SmbLocalGroupsBuilder {
     }
     /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p>
     /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to force-close files that are open and locked.</p>
-    pub fn set_gateway_admins(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_gateway_admins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.gateway_admins = input;
         self
     }
     /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p>
     /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to force-close files that are open and locked.</p>
-    pub fn get_gateway_admins(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_gateway_admins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.gateway_admins
     }
     /// Consumes the builder and constructs a [`SmbLocalGroups`](crate::types::SmbLocalGroups).

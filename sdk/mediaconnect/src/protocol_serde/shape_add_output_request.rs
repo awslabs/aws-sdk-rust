@@ -36,7 +36,10 @@ pub fn ser_add_output_request(
             {
                 #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_media_stream_output_configuration_request::ser_media_stream_output_configuration_request(&mut object_12, item_11)?;
+                crate::protocol_serde::shape_media_stream_output_configuration_request::ser_media_stream_output_configuration_request(
+                    &mut object_12,
+                    item_11,
+                )?;
                 object_12.finish();
             }
         }
@@ -81,10 +84,7 @@ pub fn ser_add_output_request(
     if let Some(var_21) = &input.vpc_interface_attachment {
         #[allow(unused_mut)]
         let mut object_22 = object.key("vpcInterfaceAttachment").start_object();
-        crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(
-            &mut object_22,
-            var_21,
-        )?;
+        crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(&mut object_22, var_21)?;
         object_22.finish();
     }
     Ok(())

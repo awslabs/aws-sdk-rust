@@ -36,16 +36,14 @@ impl DescribeClientAuthenticationSettingsInput {
 }
 impl DescribeClientAuthenticationSettingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeClientAuthenticationSettingsInput`](crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput).
-    pub fn builder() -> crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsInputBuilder {
         crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClientAuthenticationSettingsInput`](crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClientAuthenticationSettingsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ClientAuthenticationType>,
@@ -73,10 +71,7 @@ impl DescribeClientAuthenticationSettingsInputBuilder {
         self
     }
     /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientAuthenticationType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationType>) -> Self {
         self.r#type = input;
         self
     }
@@ -113,18 +108,19 @@ impl DescribeClientAuthenticationSettingsInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeClientAuthenticationSettingsInput`](crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput {
-                directory_id: self.directory_id
-                ,
-                r#type: self.r#type
-                ,
-                next_token: self.next_token
-                ,
-                limit: self.limit
-                ,
-            }
+                directory_id: self.directory_id,
+                r#type: self.r#type,
+                next_token: self.next_token,
+                limit: self.limit,
+            },
         )
     }
 }

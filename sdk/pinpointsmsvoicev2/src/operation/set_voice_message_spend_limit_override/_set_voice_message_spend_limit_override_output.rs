@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for SetVoiceMessageSpendLimitOverrideOutp
 }
 impl SetVoiceMessageSpendLimitOverrideOutput {
     /// Creates a new builder-style object to manufacture [`SetVoiceMessageSpendLimitOverrideOutput`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput).
-    pub fn builder() -> crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideOutputBuilder{
+    pub fn builder() -> crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideOutputBuilder {
         crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideOutputBuilder::default()
     }
 }
 
 /// A builder for [`SetVoiceMessageSpendLimitOverrideOutput`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetVoiceMessageSpendLimitOverrideOutputBuilder {
     pub(crate) monthly_limit: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -60,10 +58,9 @@ impl SetVoiceMessageSpendLimitOverrideOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SetVoiceMessageSpendLimitOverrideOutput`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput).
-    pub fn build(self) -> crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput{
+    pub fn build(self) -> crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput {
         crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput {
-            monthly_limit: self.monthly_limit
-            ,
+            monthly_limit: self.monthly_limit,
             _request_id: self._request_id,
         }
     }

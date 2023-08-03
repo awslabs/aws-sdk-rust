@@ -10,10 +10,7 @@ impl DeleteProxySessionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_proxy_session::DeleteProxySessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_proxy_session::DeleteProxySessionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_proxy_session::DeleteProxySessionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_proxy_session();
         fluent_builder.inner = self;
@@ -41,9 +38,7 @@ impl DeleteProxySessionFluentBuilder {
         }
     }
     /// Access the DeleteProxySession as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_proxy_session::builders::DeleteProxySessionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_proxy_session::builders::DeleteProxySessionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +50,7 @@ impl DeleteProxySessionFluentBuilder {
             crate::operation::delete_proxy_session::DeleteProxySession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_proxy_session::DeleteProxySessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_proxy_session::DeleteProxySessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +60,7 @@ impl DeleteProxySessionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +69,7 @@ impl DeleteProxySessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_proxy_session::DeleteProxySessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_proxy_session::DeleteProxySessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_proxy_session::DeleteProxySessionError>,
     > {
         let op = self
             .inner
@@ -104,9 +92,7 @@ impl DeleteProxySessionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_proxy_session::DeleteProxySessionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_proxy_session::DeleteProxySessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_proxy_session::DeleteProxySessionError>,
     > {
         self.send_middleware().await
     }
@@ -120,25 +106,17 @@ impl DeleteProxySessionFluentBuilder {
             crate::operation::delete_proxy_session::DeleteProxySession,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_proxy_session::DeleteProxySessionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_proxy_session::DeleteProxySessionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn voice_connector_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
@@ -147,18 +125,12 @@ impl DeleteProxySessionFluentBuilder {
         self.inner.get_voice_connector_id()
     }
     /// <p>The proxy session ID.</p>
-    pub fn proxy_session_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn proxy_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.proxy_session_id(input.into());
         self
     }
     /// <p>The proxy session ID.</p>
-    pub fn set_proxy_session_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_proxy_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_proxy_session_id(input);
         self
     }

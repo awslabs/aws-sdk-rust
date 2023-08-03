@@ -10,10 +10,7 @@ impl GetSamplingRulesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_sampling_rules::GetSamplingRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampling_rules::GetSamplingRulesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampling_rules::GetSamplingRulesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_sampling_rules();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetSamplingRulesFluentBuilder {
         }
     }
     /// Access the GetSamplingRules as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_sampling_rules::builders::GetSamplingRulesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_sampling_rules::builders::GetSamplingRulesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetSamplingRulesFluentBuilder {
             crate::operation::get_sampling_rules::GetSamplingRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampling_rules::GetSamplingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampling_rules::GetSamplingRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetSamplingRulesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetSamplingRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sampling_rules::GetSamplingRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampling_rules::GetSamplingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampling_rules::GetSamplingRulesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetSamplingRulesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sampling_rules::GetSamplingRulesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampling_rules::GetSamplingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampling_rules::GetSamplingRulesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetSamplingRulesFluentBuilder {
             crate::operation::get_sampling_rules::GetSamplingRules,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_sampling_rules::GetSamplingRulesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_sampling_rules::GetSamplingRulesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_sampling_rules::paginator::GetSamplingRulesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_sampling_rules::paginator::GetSamplingRulesPaginator {
-        crate::operation::get_sampling_rules::paginator::GetSamplingRulesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_sampling_rules::paginator::GetSamplingRulesPaginator {
+        crate::operation::get_sampling_rules::paginator::GetSamplingRulesPaginator::new(self.handle, self.inner)
     }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

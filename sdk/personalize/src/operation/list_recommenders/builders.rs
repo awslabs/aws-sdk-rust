@@ -10,10 +10,7 @@ impl ListRecommendersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_recommenders::ListRecommendersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommenders::ListRecommendersError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommenders::ListRecommendersError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_recommenders();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListRecommendersFluentBuilder {
         }
     }
     /// Access the ListRecommenders as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_recommenders::builders::ListRecommendersInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_recommenders::builders::ListRecommendersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListRecommendersFluentBuilder {
             crate::operation::list_recommenders::ListRecommenders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommenders::ListRecommendersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommenders::ListRecommendersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListRecommendersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListRecommendersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_recommenders::ListRecommendersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommenders::ListRecommendersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommenders::ListRecommendersError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListRecommendersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_recommenders::ListRecommendersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommenders::ListRecommendersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommenders::ListRecommendersError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +102,23 @@ impl ListRecommendersFluentBuilder {
             crate::operation::list_recommenders::ListRecommenders,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_recommenders::ListRecommendersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_recommenders::ListRecommendersError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_recommenders::paginator::ListRecommendersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_recommenders::paginator::ListRecommendersPaginator {
-        crate::operation::list_recommenders::paginator::ListRecommendersPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_recommenders::paginator::ListRecommendersPaginator {
+        crate::operation::list_recommenders::paginator::ListRecommendersPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
     }

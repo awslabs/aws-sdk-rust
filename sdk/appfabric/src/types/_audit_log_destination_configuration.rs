@@ -23,9 +23,7 @@ impl AuditLogDestinationConfiguration {
 
 /// A builder for [`AuditLogDestinationConfiguration`](crate::types::AuditLogDestinationConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuditLogDestinationConfigurationBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
 }
@@ -36,10 +34,7 @@ impl AuditLogDestinationConfigurationBuilder {
         self
     }
     /// <p>Contains information about an audit log destination.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.destination = input;
         self
     }

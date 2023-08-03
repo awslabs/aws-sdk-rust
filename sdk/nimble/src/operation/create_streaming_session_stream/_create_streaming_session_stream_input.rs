@@ -36,16 +36,14 @@ impl CreateStreamingSessionStreamInput {
 }
 impl CreateStreamingSessionStreamInput {
     /// Creates a new builder-style object to manufacture [`CreateStreamingSessionStreamInput`](crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamInput).
-    pub fn builder() -> crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamInputBuilder{
+    pub fn builder() -> crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamInputBuilder {
         crate::operation::create_streaming_session_stream::builders::CreateStreamingSessionStreamInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStreamingSessionStreamInput`](crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStreamingSessionStreamInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) expiration_in_seconds: ::std::option::Option<i32>,
@@ -116,13 +114,11 @@ impl CreateStreamingSessionStreamInputBuilder {
         crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamInput {
-                client_token: self.client_token,
-                expiration_in_seconds: self.expiration_in_seconds,
-                session_id: self.session_id,
-                studio_id: self.studio_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_streaming_session_stream::CreateStreamingSessionStreamInput {
+            client_token: self.client_token,
+            expiration_in_seconds: self.expiration_in_seconds,
+            session_id: self.session_id,
+            studio_id: self.studio_id,
+        })
     }
 }

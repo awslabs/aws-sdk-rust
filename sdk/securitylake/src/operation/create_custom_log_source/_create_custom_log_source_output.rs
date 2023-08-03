@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateCustomLogSourceOutput {
 }
 impl CreateCustomLogSourceOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomLogSourceOutput`](crate::operation::create_custom_log_source::CreateCustomLogSourceOutput).
-    pub fn builder(
-    ) -> crate::operation::create_custom_log_source::builders::CreateCustomLogSourceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_custom_log_source::builders::CreateCustomLogSourceOutputBuilder {
         crate::operation::create_custom_log_source::builders::CreateCustomLogSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomLogSourceOutput`](crate::operation::create_custom_log_source::CreateCustomLogSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomLogSourceOutputBuilder {
     pub(crate) source: ::std::option::Option<crate::types::CustomLogSourceResource>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateCustomLogSourceOutputBuilder {
         self
     }
     /// <p>The created third-party custom source.</p>
-    pub fn set_source(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomLogSourceResource>,
-    ) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::CustomLogSourceResource>) -> Self {
         self.source = input;
         self
     }

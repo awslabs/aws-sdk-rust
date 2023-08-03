@@ -36,16 +36,14 @@ impl SendDataToWirelessDeviceInput {
 }
 impl SendDataToWirelessDeviceInput {
     /// Creates a new builder-style object to manufacture [`SendDataToWirelessDeviceInput`](crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceInput).
-    pub fn builder() -> crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceInputBuilder{
+    pub fn builder() -> crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceInputBuilder {
         crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceInputBuilder::default()
     }
 }
 
 /// A builder for [`SendDataToWirelessDeviceInput`](crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendDataToWirelessDeviceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) transmit_mode: ::std::option::Option<i32>,
@@ -101,10 +99,7 @@ impl SendDataToWirelessDeviceInputBuilder {
         self
     }
     /// <p>Metadata about the message request.</p>
-    pub fn set_wireless_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::WirelessMetadata>,
-    ) -> Self {
+    pub fn set_wireless_metadata(mut self, input: ::std::option::Option<crate::types::WirelessMetadata>) -> Self {
         self.wireless_metadata = input;
         self
     }
@@ -119,13 +114,11 @@ impl SendDataToWirelessDeviceInputBuilder {
         crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceInput {
-                id: self.id,
-                transmit_mode: self.transmit_mode,
-                payload_data: self.payload_data,
-                wireless_metadata: self.wireless_metadata,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceInput {
+            id: self.id,
+            transmit_mode: self.transmit_mode,
+            payload_data: self.payload_data,
+            wireless_metadata: self.wireless_metadata,
+        })
     }
 }

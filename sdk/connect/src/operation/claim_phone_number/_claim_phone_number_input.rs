@@ -14,9 +14,7 @@ pub struct ClaimPhoneNumberInput {
     pub phone_number_description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     /// <p>Pattern: <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code> </p>
     #[doc(hidden)]
@@ -36,11 +34,7 @@ impl ClaimPhoneNumberInput {
         self.phone_number_description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -51,24 +45,19 @@ impl ClaimPhoneNumberInput {
 }
 impl ClaimPhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`ClaimPhoneNumberInput`](crate::operation::claim_phone_number::ClaimPhoneNumberInput).
-    pub fn builder() -> crate::operation::claim_phone_number::builders::ClaimPhoneNumberInputBuilder
-    {
+    pub fn builder() -> crate::operation::claim_phone_number::builders::ClaimPhoneNumberInputBuilder {
         crate::operation::claim_phone_number::builders::ClaimPhoneNumberInputBuilder::default()
     }
 }
 
 /// A builder for [`ClaimPhoneNumberInput`](crate::operation::claim_phone_number::ClaimPhoneNumberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClaimPhoneNumberInputBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) phone_number_description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl ClaimPhoneNumberInputBuilder {
@@ -101,18 +90,12 @@ impl ClaimPhoneNumberInputBuilder {
         &self.phone_number
     }
     /// <p>The description of the phone number.</p>
-    pub fn phone_number_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the phone number.</p>
-    pub fn set_phone_number_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_description = input;
         self
     }
@@ -125,32 +108,19 @@ impl ClaimPhoneNumberInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -173,18 +143,13 @@ impl ClaimPhoneNumberInputBuilder {
     /// Consumes the builder and constructs a [`ClaimPhoneNumberInput`](crate::operation::claim_phone_number::ClaimPhoneNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::claim_phone_number::ClaimPhoneNumberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::claim_phone_number::ClaimPhoneNumberInput {
-                target_arn: self.target_arn,
-                phone_number: self.phone_number,
-                phone_number_description: self.phone_number_description,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::claim_phone_number::ClaimPhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::claim_phone_number::ClaimPhoneNumberInput {
+            target_arn: self.target_arn,
+            phone_number: self.phone_number,
+            phone_number_description: self.phone_number_description,
+            tags: self.tags,
+            client_token: self.client_token,
+        })
     }
 }

@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`query_id(Option<String>)`](crate::operation::get_work_units::GetWorkUnitsOutput::query_id): <p>The ID of the plan query operation.</p>
     ///   - [`work_unit_ranges(Option<Vec<WorkUnitRange>>)`](crate::operation::get_work_units::GetWorkUnitsOutput::work_unit_ranges): <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
     /// - On failure, responds with [`SdkError<GetWorkUnitsError>`](crate::operation::get_work_units::GetWorkUnitsError)
-    pub fn get_work_units(
-        &self,
-    ) -> crate::operation::get_work_units::builders::GetWorkUnitsFluentBuilder {
-        crate::operation::get_work_units::builders::GetWorkUnitsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_work_units(&self) -> crate::operation::get_work_units::builders::GetWorkUnitsFluentBuilder {
+        crate::operation::get_work_units::builders::GetWorkUnitsFluentBuilder::new(self.handle.clone())
     }
 }

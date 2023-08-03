@@ -30,9 +30,7 @@ impl MatchedUser {
 
 /// A builder for [`MatchedUser`](crate::types::MatchedUser).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MatchedUserBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_status: ::std::option::Option<crate::types::UserStatus>,
@@ -58,10 +56,7 @@ impl MatchedUserBuilder {
         self
     }
     /// <p>The status of the user matched to a provided FaceID.</p>
-    pub fn set_user_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UserStatus>,
-    ) -> Self {
+    pub fn set_user_status(mut self, input: ::std::option::Option<crate::types::UserStatus>) -> Self {
         self.user_status = input;
         self
     }

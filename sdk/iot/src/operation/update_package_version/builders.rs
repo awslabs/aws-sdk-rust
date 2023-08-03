@@ -38,9 +38,7 @@ impl UpdatePackageVersionFluentBuilder {
         }
     }
     /// Access the UpdatePackageVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_package_version::builders::UpdatePackageVersionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_package_version::builders::UpdatePackageVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl UpdatePackageVersionFluentBuilder {
             crate::operation::update_package_version::UpdatePackageVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_package_version::UpdatePackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_package_version::UpdatePackageVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl UpdatePackageVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl UpdatePackageVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_package_version::UpdatePackageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_package_version::UpdatePackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_package_version::UpdatePackageVersionError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl UpdatePackageVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_package_version::UpdatePackageVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_package_version::UpdatePackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_package_version::UpdatePackageVersionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl UpdatePackageVersionFluentBuilder {
             crate::operation::update_package_version::UpdatePackageVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_package_version::UpdatePackageVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_package_version::UpdatePackageVersionError>,
     > {
         self.customize_middleware().await
     }
@@ -172,34 +159,21 @@ impl UpdatePackageVersionFluentBuilder {
     /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet. </p>
     /// <p> <b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
-    pub fn attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet. </p>
     /// <p> <b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>Metadata that can be used to define a package version’s configuration. For example, the S3 file location, configuration options that are being sent to the device or fleet. </p>
     /// <p> <b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
-    pub fn get_attributes(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
@@ -208,10 +182,7 @@ impl UpdatePackageVersionFluentBuilder {
         self
     }
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
-    pub fn set_action(
-        mut self,
-        input: ::std::option::Option<crate::types::PackageVersionAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::PackageVersionAction>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }

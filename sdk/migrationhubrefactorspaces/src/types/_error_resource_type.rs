@@ -55,13 +55,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ErrorResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -125,13 +119,9 @@ impl ::std::convert::From<&str> for ErrorResourceType {
             "TRANSIT_GATEWAY" => ErrorResourceType::TransitGateway,
             "TRANSIT_GATEWAY_ATTACHMENT" => ErrorResourceType::TransitGatewayAttachment,
             "VPC" => ErrorResourceType::Vpc,
-            "VPC_ENDPOINT_SERVICE_CONFIGURATION" => {
-                ErrorResourceType::VpcEndpointServiceConfiguration
-            }
+            "VPC_ENDPOINT_SERVICE_CONFIGURATION" => ErrorResourceType::VpcEndpointServiceConfiguration,
             "VPC_LINK" => ErrorResourceType::VpcLink,
-            other => {
-                ErrorResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ErrorResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -163,9 +153,7 @@ impl ErrorResourceType {
             ErrorResourceType::TransitGateway => "TRANSIT_GATEWAY",
             ErrorResourceType::TransitGatewayAttachment => "TRANSIT_GATEWAY_ATTACHMENT",
             ErrorResourceType::Vpc => "VPC",
-            ErrorResourceType::VpcEndpointServiceConfiguration => {
-                "VPC_ENDPOINT_SERVICE_CONFIGURATION"
-            }
+            ErrorResourceType::VpcEndpointServiceConfiguration => "VPC_ENDPOINT_SERVICE_CONFIGURATION",
             ErrorResourceType::VpcLink => "VPC_LINK",
             ErrorResourceType::Unknown(value) => value.as_str(),
         }

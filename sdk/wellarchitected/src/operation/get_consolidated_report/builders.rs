@@ -38,10 +38,7 @@ impl GetConsolidatedReportFluentBuilder {
         }
     }
     /// Access the GetConsolidatedReport as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_consolidated_report::builders::GetConsolidatedReportInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_consolidated_report::builders::GetConsolidatedReportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl GetConsolidatedReportFluentBuilder {
             crate::operation::get_consolidated_report::GetConsolidatedReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_consolidated_report::GetConsolidatedReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_consolidated_report::GetConsolidatedReportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl GetConsolidatedReportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl GetConsolidatedReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_consolidated_report::GetConsolidatedReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_consolidated_report::GetConsolidatedReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_consolidated_report::GetConsolidatedReportError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl GetConsolidatedReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_consolidated_report::GetConsolidatedReportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_consolidated_report::GetConsolidatedReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_consolidated_report::GetConsolidatedReportError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +106,15 @@ impl GetConsolidatedReportFluentBuilder {
             crate::operation::get_consolidated_report::GetConsolidatedReport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_consolidated_report::GetConsolidatedReportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_consolidated_report::GetConsolidatedReportError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_consolidated_report::paginator::GetConsolidatedReportPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_consolidated_report::paginator::GetConsolidatedReportPaginator {
-        crate::operation::get_consolidated_report::paginator::GetConsolidatedReportPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_consolidated_report::paginator::GetConsolidatedReportPaginator {
+        crate::operation::get_consolidated_report::paginator::GetConsolidatedReportPaginator::new(self.handle, self.inner)
     }
     /// <p>The format of the consolidated report.</p>
     /// <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>

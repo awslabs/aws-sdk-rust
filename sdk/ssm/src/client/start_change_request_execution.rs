@@ -17,7 +17,9 @@ impl super::Client {
     /// - On success, responds with [`StartChangeRequestExecutionOutput`](crate::operation::start_change_request_execution::StartChangeRequestExecutionOutput) with field(s):
     ///   - [`automation_execution_id(Option<String>)`](crate::operation::start_change_request_execution::StartChangeRequestExecutionOutput::automation_execution_id): <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
     /// - On failure, responds with [`SdkError<StartChangeRequestExecutionError>`](crate::operation::start_change_request_execution::StartChangeRequestExecutionError)
-    pub fn start_change_request_execution(&self) -> crate::operation::start_change_request_execution::builders::StartChangeRequestExecutionFluentBuilder{
+    pub fn start_change_request_execution(
+        &self,
+    ) -> crate::operation::start_change_request_execution::builders::StartChangeRequestExecutionFluentBuilder {
         crate::operation::start_change_request_execution::builders::StartChangeRequestExecutionFluentBuilder::new(self.handle.clone())
     }
 }

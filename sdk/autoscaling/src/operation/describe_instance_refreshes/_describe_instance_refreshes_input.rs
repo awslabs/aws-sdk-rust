@@ -36,16 +36,14 @@ impl DescribeInstanceRefreshesInput {
 }
 impl DescribeInstanceRefreshesInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceRefreshesInput`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesInput).
-    pub fn builder() -> crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesInputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesInputBuilder {
         crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceRefreshesInput`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceRefreshesInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_refresh_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -54,18 +52,12 @@ pub struct DescribeInstanceRefreshesInputBuilder {
 }
 impl DescribeInstanceRefreshesInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
@@ -78,27 +70,19 @@ impl DescribeInstanceRefreshesInputBuilder {
     /// To override the contents of this collection use [`set_instance_refresh_ids`](Self::set_instance_refresh_ids).
     ///
     /// <p>One or more instance refresh IDs.</p>
-    pub fn instance_refresh_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_refresh_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_refresh_ids.unwrap_or_default();
         v.push(input.into());
         self.instance_refresh_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more instance refresh IDs.</p>
-    pub fn set_instance_refresh_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_refresh_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_refresh_ids = input;
         self
     }
     /// <p>One or more instance refresh IDs.</p>
-    pub fn get_instance_refresh_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_refresh_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_refresh_ids
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -136,13 +120,11 @@ impl DescribeInstanceRefreshesInputBuilder {
         crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                instance_refresh_ids: self.instance_refresh_ids,
-                next_token: self.next_token,
-                max_records: self.max_records,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesInput {
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            instance_refresh_ids: self.instance_refresh_ids,
+            next_token: self.next_token,
+            max_records: self.max_records,
+        })
     }
 }

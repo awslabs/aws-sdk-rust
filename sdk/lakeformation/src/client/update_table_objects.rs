@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`write_operations(Vec<WriteOperation>)`](crate::operation::update_table_objects::builders::UpdateTableObjectsFluentBuilder::write_operations) / [`set_write_operations(Option<Vec<WriteOperation>>)`](crate::operation::update_table_objects::builders::UpdateTableObjectsFluentBuilder::set_write_operations): <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
     /// - On success, responds with [`UpdateTableObjectsOutput`](crate::operation::update_table_objects::UpdateTableObjectsOutput)
     /// - On failure, responds with [`SdkError<UpdateTableObjectsError>`](crate::operation::update_table_objects::UpdateTableObjectsError)
-    pub fn update_table_objects(
-        &self,
-    ) -> crate::operation::update_table_objects::builders::UpdateTableObjectsFluentBuilder {
-        crate::operation::update_table_objects::builders::UpdateTableObjectsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_table_objects(&self) -> crate::operation::update_table_objects::builders::UpdateTableObjectsFluentBuilder {
+        crate::operation::update_table_objects::builders::UpdateTableObjectsFluentBuilder::new(self.handle.clone())
     }
 }

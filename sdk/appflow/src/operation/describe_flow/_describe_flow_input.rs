@@ -22,9 +22,7 @@ impl DescribeFlowInput {
 
 /// A builder for [`DescribeFlowInput`](crate::operation::describe_flow::DescribeFlowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFlowInputBuilder {
     pub(crate) flow_name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DescribeFlowInputBuilder {
         &self.flow_name
     }
     /// Consumes the builder and constructs a [`DescribeFlowInput`](crate::operation::describe_flow::DescribeFlowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_flow::DescribeFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_flow::DescribeFlowInput {
-            flow_name: self.flow_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_flow::DescribeFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_flow::DescribeFlowInput { flow_name: self.flow_name })
     }
 }

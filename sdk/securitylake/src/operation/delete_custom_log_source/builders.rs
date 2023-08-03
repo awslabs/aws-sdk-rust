@@ -37,10 +37,7 @@ impl DeleteCustomLogSourceFluentBuilder {
         }
     }
     /// Access the DeleteCustomLogSource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteCustomLogSourceFluentBuilder {
             crate::operation::delete_custom_log_source::DeleteCustomLogSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_log_source::DeleteCustomLogSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_log_source::DeleteCustomLogSourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteCustomLogSourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteCustomLogSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_log_source::DeleteCustomLogSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_log_source::DeleteCustomLogSourceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteCustomLogSourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_log_source::DeleteCustomLogSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_log_source::DeleteCustomLogSourceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteCustomLogSourceFluentBuilder {
             crate::operation::delete_custom_log_source::DeleteCustomLogSource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_custom_log_source::DeleteCustomLogSourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_log_source::DeleteCustomLogSourceError>,
     > {
         self.customize_middleware().await
     }
@@ -138,18 +124,12 @@ impl DeleteCustomLogSourceFluentBuilder {
         self.inner.get_source_name()
     }
     /// <p>The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</p>
-    pub fn source_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_version(input.into());
         self
     }
     /// <p>The source version for the third-party custom source. You can limit the custom source removal to the specified source version.</p>
-    pub fn set_source_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_version(input);
         self
     }

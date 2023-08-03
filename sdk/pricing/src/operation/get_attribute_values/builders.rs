@@ -10,10 +10,7 @@ impl GetAttributeValuesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_attribute_values::GetAttributeValuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_attribute_values::GetAttributeValuesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_attribute_values::GetAttributeValuesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_attribute_values();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetAttributeValuesFluentBuilder {
         }
     }
     /// Access the GetAttributeValues as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_attribute_values::builders::GetAttributeValuesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_attribute_values::builders::GetAttributeValuesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetAttributeValuesFluentBuilder {
             crate::operation::get_attribute_values::GetAttributeValues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_attribute_values::GetAttributeValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_attribute_values::GetAttributeValuesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetAttributeValuesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetAttributeValuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_attribute_values::GetAttributeValuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_attribute_values::GetAttributeValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_attribute_values::GetAttributeValuesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetAttributeValuesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_attribute_values::GetAttributeValuesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_attribute_values::GetAttributeValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_attribute_values::GetAttributeValuesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetAttributeValuesFluentBuilder {
             crate::operation::get_attribute_values::GetAttributeValues,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_attribute_values::GetAttributeValuesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_attribute_values::GetAttributeValuesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_attribute_values::paginator::GetAttributeValuesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_attribute_values::paginator::GetAttributeValuesPaginator {
-        crate::operation::get_attribute_values::paginator::GetAttributeValuesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_attribute_values::paginator::GetAttributeValuesPaginator {
+        crate::operation::get_attribute_values::paginator::GetAttributeValuesPaginator::new(self.handle, self.inner)
     }
     /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,18 +127,12 @@ impl GetAttributeValuesFluentBuilder {
         self.inner.get_service_code()
     }
     /// <p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_name(input.into());
         self
     }
     /// <p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_name(input);
         self
     }

@@ -51,9 +51,7 @@ impl PutBotAliasInput {
         self.checksum.as_deref()
     }
     /// <p>Settings for conversation logs for the alias.</p>
-    pub fn conversation_logs(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConversationLogsRequest> {
+    pub fn conversation_logs(&self) -> ::std::option::Option<&crate::types::ConversationLogsRequest> {
         self.conversation_logs.as_ref()
     }
     /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>PutBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
@@ -70,9 +68,7 @@ impl PutBotAliasInput {
 
 /// A builder for [`PutBotAliasInput`](crate::operation::put_bot_alias::PutBotAliasInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBotAliasInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -165,17 +161,12 @@ impl PutBotAliasInputBuilder {
         self
     }
     /// <p>Settings for conversation logs for the alias.</p>
-    pub fn set_conversation_logs(
-        mut self,
-        input: ::std::option::Option<crate::types::ConversationLogsRequest>,
-    ) -> Self {
+    pub fn set_conversation_logs(mut self, input: ::std::option::Option<crate::types::ConversationLogsRequest>) -> Self {
         self.conversation_logs = input;
         self
     }
     /// <p>Settings for conversation logs for the alias.</p>
-    pub fn get_conversation_logs(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConversationLogsRequest> {
+    pub fn get_conversation_logs(&self) -> &::std::option::Option<crate::types::ConversationLogsRequest> {
         &self.conversation_logs
     }
     /// Appends an item to `tags`.
@@ -190,10 +181,7 @@ impl PutBotAliasInputBuilder {
         self
     }
     /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>PutBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -202,12 +190,7 @@ impl PutBotAliasInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutBotAliasInput`](crate::operation::put_bot_alias::PutBotAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_bot_alias::PutBotAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_bot_alias::PutBotAliasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_bot_alias::PutBotAliasInput {
             name: self.name,
             description: self.description,

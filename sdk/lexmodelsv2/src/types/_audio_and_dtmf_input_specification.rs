@@ -37,9 +37,7 @@ impl AudioAndDtmfInputSpecification {
 
 /// A builder for [`AudioAndDtmfInputSpecification`](crate::types::AudioAndDtmfInputSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioAndDtmfInputSpecificationBuilder {
     pub(crate) start_timeout_ms: ::std::option::Option<i32>,
     pub(crate) audio_specification: ::std::option::Option<crate::types::AudioSpecification>,
@@ -66,17 +64,12 @@ impl AudioAndDtmfInputSpecificationBuilder {
         self
     }
     /// <p>Specifies the settings on audio input.</p>
-    pub fn set_audio_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioSpecification>,
-    ) -> Self {
+    pub fn set_audio_specification(mut self, input: ::std::option::Option<crate::types::AudioSpecification>) -> Self {
         self.audio_specification = input;
         self
     }
     /// <p>Specifies the settings on audio input.</p>
-    pub fn get_audio_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::AudioSpecification> {
+    pub fn get_audio_specification(&self) -> &::std::option::Option<crate::types::AudioSpecification> {
         &self.audio_specification
     }
     /// <p>Specifies the settings on DTMF input.</p>
@@ -85,17 +78,12 @@ impl AudioAndDtmfInputSpecificationBuilder {
         self
     }
     /// <p>Specifies the settings on DTMF input.</p>
-    pub fn set_dtmf_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::DtmfSpecification>,
-    ) -> Self {
+    pub fn set_dtmf_specification(mut self, input: ::std::option::Option<crate::types::DtmfSpecification>) -> Self {
         self.dtmf_specification = input;
         self
     }
     /// <p>Specifies the settings on DTMF input.</p>
-    pub fn get_dtmf_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::DtmfSpecification> {
+    pub fn get_dtmf_specification(&self) -> &::std::option::Option<crate::types::DtmfSpecification> {
         &self.dtmf_specification
     }
     /// Consumes the builder and constructs a [`AudioAndDtmfInputSpecification`](crate::types::AudioAndDtmfInputSpecification).

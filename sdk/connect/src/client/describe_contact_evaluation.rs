@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`evaluation(Option<Evaluation>)`](crate::operation::describe_contact_evaluation::DescribeContactEvaluationOutput::evaluation): <p>Information about the evaluation form completed for a specific contact.</p>
     ///   - [`evaluation_form(Option<EvaluationFormContent>)`](crate::operation::describe_contact_evaluation::DescribeContactEvaluationOutput::evaluation_form): <p>Information about the evaluation form.</p>
     /// - On failure, responds with [`SdkError<DescribeContactEvaluationError>`](crate::operation::describe_contact_evaluation::DescribeContactEvaluationError)
-    pub fn describe_contact_evaluation(&self) -> crate::operation::describe_contact_evaluation::builders::DescribeContactEvaluationFluentBuilder{
+    pub fn describe_contact_evaluation(&self) -> crate::operation::describe_contact_evaluation::builders::DescribeContactEvaluationFluentBuilder {
         crate::operation::describe_contact_evaluation::builders::DescribeContactEvaluationFluentBuilder::new(self.handle.clone())
     }
 }

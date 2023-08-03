@@ -37,9 +37,7 @@ impl DescribeEnvironmentsFluentBuilder {
         }
     }
     /// Access the DescribeEnvironments as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_environments::builders::DescribeEnvironmentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_environments::builders::DescribeEnvironmentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DescribeEnvironmentsFluentBuilder {
             crate::operation::describe_environments::DescribeEnvironments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environments::DescribeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environments::DescribeEnvironmentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DescribeEnvironmentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DescribeEnvironmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_environments::DescribeEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environments::DescribeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environments::DescribeEnvironmentsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DescribeEnvironmentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_environments::DescribeEnvironmentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environments::DescribeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environments::DescribeEnvironmentsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl DescribeEnvironmentsFluentBuilder {
             crate::operation::describe_environments::DescribeEnvironments,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environments::DescribeEnvironmentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environments::DescribeEnvironmentsError>,
     > {
         self.customize_middleware().await
     }
@@ -127,25 +114,17 @@ impl DescribeEnvironmentsFluentBuilder {
     /// To override the contents of this collection use [`set_environment_ids`](Self::set_environment_ids).
     ///
     /// <p>The IDs of individual environments to get information about.</p>
-    pub fn environment_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_ids(input.into());
         self
     }
     /// <p>The IDs of individual environments to get information about.</p>
-    pub fn set_environment_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_environment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_environment_ids(input);
         self
     }
     /// <p>The IDs of individual environments to get information about.</p>
-    pub fn get_environment_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_environment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_environment_ids()
     }
 }

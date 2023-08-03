@@ -10,10 +10,7 @@ impl GetLoginProfileInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_login_profile::GetLoginProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_login_profile::GetLoginProfileError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_login_profile::GetLoginProfileError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_login_profile();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl GetLoginProfileFluentBuilder {
         }
     }
     /// Access the GetLoginProfile as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_login_profile::builders::GetLoginProfileInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_login_profile::builders::GetLoginProfileInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl GetLoginProfileFluentBuilder {
             crate::operation::get_login_profile::GetLoginProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_login_profile::GetLoginProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_login_profile::GetLoginProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl GetLoginProfileFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl GetLoginProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_login_profile::GetLoginProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_login_profile::GetLoginProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_login_profile::GetLoginProfileError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl GetLoginProfileFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_login_profile::GetLoginProfileOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_login_profile::GetLoginProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_login_profile::GetLoginProfileError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl GetLoginProfileFluentBuilder {
             crate::operation::get_login_profile::GetLoginProfile,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_login_profile::GetLoginProfileError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_login_profile::GetLoginProfileError>,
     > {
         self.customize_middleware().await
     }

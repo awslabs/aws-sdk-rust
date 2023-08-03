@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`inter_metric_impact_list(Option<Vec<InterMetricImpactDetails>>)`](crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsOutput::inter_metric_impact_list): <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListAnomalyGroupRelatedMetricsError>`](crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsError)
-    pub fn list_anomaly_group_related_metrics(&self) -> crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder{
+    pub fn list_anomaly_group_related_metrics(
+        &self,
+    ) -> crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder {
         crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl Ec2SecurityGroup {
 
 /// A builder for [`Ec2SecurityGroup`](crate::types::Ec2SecurityGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2SecurityGroupBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_security_group_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl Ec2SecurityGroupBuilder {
         &self.status
     }
     /// <p>The name of the Amazon EC2 security group.</p>
-    pub fn ec2_security_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon EC2 security group.</p>
-    pub fn set_ec2_security_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_name = input;
         self
     }
@@ -81,18 +73,12 @@ impl Ec2SecurityGroupBuilder {
         &self.ec2_security_group_name
     }
     /// <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
-    pub fn ec2_security_group_owner_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
-    pub fn set_ec2_security_group_owner_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_security_group_owner_id = input;
         self
     }

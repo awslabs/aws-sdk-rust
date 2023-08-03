@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`repository(Option<Repository>)`](crate::operation::create_repository::CreateRepositoryOutput::repository): <p>The repository that was created.</p>
     ///   - [`catalog_data(Option<RepositoryCatalogData>)`](crate::operation::create_repository::CreateRepositoryOutput::catalog_data): <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
     /// - On failure, responds with [`SdkError<CreateRepositoryError>`](crate::operation::create_repository::CreateRepositoryError)
-    pub fn create_repository(
-        &self,
-    ) -> crate::operation::create_repository::builders::CreateRepositoryFluentBuilder {
-        crate::operation::create_repository::builders::CreateRepositoryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_repository(&self) -> crate::operation::create_repository::builders::CreateRepositoryFluentBuilder {
+        crate::operation::create_repository::builders::CreateRepositoryFluentBuilder::new(self.handle.clone())
     }
 }

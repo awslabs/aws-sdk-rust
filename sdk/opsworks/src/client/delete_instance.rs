@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`delete_volumes(bool)`](crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder::delete_volumes) / [`set_delete_volumes(Option<bool>)`](crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder::set_delete_volumes): <p>Whether to delete the instance's Amazon EBS volumes.</p>
     /// - On success, responds with [`DeleteInstanceOutput`](crate::operation::delete_instance::DeleteInstanceOutput)
     /// - On failure, responds with [`SdkError<DeleteInstanceError>`](crate::operation::delete_instance::DeleteInstanceError)
-    pub fn delete_instance(
-        &self,
-    ) -> crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder {
-        crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_instance(&self) -> crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder {
+        crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder::new(self.handle.clone())
     }
 }

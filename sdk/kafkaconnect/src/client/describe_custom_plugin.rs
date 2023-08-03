@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::describe_custom_plugin::DescribeCustomPluginOutput::name): <p>The name of the custom plugin.</p>
     ///   - [`state_description(Option<StateDescription>)`](crate::operation::describe_custom_plugin::DescribeCustomPluginOutput::state_description): <p>Details about the state of a custom plugin.</p>
     /// - On failure, responds with [`SdkError<DescribeCustomPluginError>`](crate::operation::describe_custom_plugin::DescribeCustomPluginError)
-    pub fn describe_custom_plugin(
-        &self,
-    ) -> crate::operation::describe_custom_plugin::builders::DescribeCustomPluginFluentBuilder {
-        crate::operation::describe_custom_plugin::builders::DescribeCustomPluginFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_custom_plugin(&self) -> crate::operation::describe_custom_plugin::builders::DescribeCustomPluginFluentBuilder {
+        crate::operation::describe_custom_plugin::builders::DescribeCustomPluginFluentBuilder::new(self.handle.clone())
     }
 }

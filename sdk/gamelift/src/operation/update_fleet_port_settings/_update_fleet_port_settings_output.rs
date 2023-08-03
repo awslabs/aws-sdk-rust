@@ -34,18 +34,14 @@ impl ::aws_http::request_id::RequestId for UpdateFleetPortSettingsOutput {
 }
 impl UpdateFleetPortSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetPortSettingsOutput`](crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::update_fleet_port_settings::builders::UpdateFleetPortSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_fleet_port_settings::builders::UpdateFleetPortSettingsOutputBuilder {
         crate::operation::update_fleet_port_settings::builders::UpdateFleetPortSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateFleetPortSettingsOutput`](crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateFleetPortSettingsOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
@@ -99,9 +95,7 @@ impl UpdateFleetPortSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateFleetPortSettingsOutput`](crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsOutput {
+    pub fn build(self) -> crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsOutput {
         crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsOutput {
             fleet_id: self.fleet_id,
             fleet_arn: self.fleet_arn,

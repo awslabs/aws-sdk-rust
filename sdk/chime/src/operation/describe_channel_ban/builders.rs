@@ -10,10 +10,7 @@ impl DescribeChannelBanInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_channel_ban::DescribeChannelBanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_ban::DescribeChannelBanError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_ban::DescribeChannelBanError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_channel_ban();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl DescribeChannelBanFluentBuilder {
         }
     }
     /// Access the DescribeChannelBan as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_channel_ban::builders::DescribeChannelBanInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_channel_ban::builders::DescribeChannelBanInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl DescribeChannelBanFluentBuilder {
             crate::operation::describe_channel_ban::DescribeChannelBan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_ban::DescribeChannelBanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_ban::DescribeChannelBanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl DescribeChannelBanFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl DescribeChannelBanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_channel_ban::DescribeChannelBanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_ban::DescribeChannelBanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_ban::DescribeChannelBanError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl DescribeChannelBanFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_channel_ban::DescribeChannelBanOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_ban::DescribeChannelBanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_ban::DescribeChannelBanError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +108,7 @@ impl DescribeChannelBanFluentBuilder {
             crate::operation::describe_channel_ban::DescribeChannelBan,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_channel_ban::DescribeChannelBanError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_channel_ban::DescribeChannelBanError>,
     > {
         self.customize_middleware().await
     }

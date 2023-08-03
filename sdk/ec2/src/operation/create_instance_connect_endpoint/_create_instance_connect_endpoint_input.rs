@@ -60,24 +60,21 @@ impl CreateInstanceConnectEndpointInput {
 }
 impl CreateInstanceConnectEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateInstanceConnectEndpointInput`](crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointInput).
-    pub fn builder() -> crate::operation::create_instance_connect_endpoint::builders::CreateInstanceConnectEndpointInputBuilder{
+    pub fn builder() -> crate::operation::create_instance_connect_endpoint::builders::CreateInstanceConnectEndpointInputBuilder {
         crate::operation::create_instance_connect_endpoint::builders::CreateInstanceConnectEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateInstanceConnectEndpointInput`](crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInstanceConnectEndpointInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) preserve_client_ip: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateInstanceConnectEndpointInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -113,27 +110,19 @@ impl CreateInstanceConnectEndpointInputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>One or more security groups to associate with the endpoint. If you don't specify a security group, the default security group for your VPC will be associated with the endpoint.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more security groups to associate with the endpoint. If you don't specify a security group, the default security group for your VPC will be associated with the endpoint.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>One or more security groups to associate with the endpoint. If you don't specify a security group, the default security group for your VPC will be associated with the endpoint.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
@@ -191,17 +180,12 @@ impl CreateInstanceConnectEndpointInputBuilder {
         self
     }
     /// <p>The tags to apply to the EC2 Instance Connect Endpoint during creation.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>The tags to apply to the EC2 Instance Connect Endpoint during creation.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateInstanceConnectEndpointInput`](crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointInput).
@@ -211,21 +195,13 @@ impl CreateInstanceConnectEndpointInputBuilder {
         crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointInput {
-                dry_run: self.dry_run
-                ,
-                subnet_id: self.subnet_id
-                ,
-                security_group_ids: self.security_group_ids
-                ,
-                preserve_client_ip: self.preserve_client_ip
-                ,
-                client_token: self.client_token
-                ,
-                tag_specifications: self.tag_specifications
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointInput {
+            dry_run: self.dry_run,
+            subnet_id: self.subnet_id,
+            security_group_ids: self.security_group_ids,
+            preserve_client_ip: self.preserve_client_ip,
+            client_token: self.client_token,
+            tag_specifications: self.tag_specifications,
+        })
     }
 }

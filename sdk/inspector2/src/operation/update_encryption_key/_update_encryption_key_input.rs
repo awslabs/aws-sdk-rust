@@ -29,18 +29,14 @@ impl UpdateEncryptionKeyInput {
 }
 impl UpdateEncryptionKeyInput {
     /// Creates a new builder-style object to manufacture [`UpdateEncryptionKeyInput`](crate::operation::update_encryption_key::UpdateEncryptionKeyInput).
-    pub fn builder(
-    ) -> crate::operation::update_encryption_key::builders::UpdateEncryptionKeyInputBuilder {
-        crate::operation::update_encryption_key::builders::UpdateEncryptionKeyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_encryption_key::builders::UpdateEncryptionKeyInputBuilder {
+        crate::operation::update_encryption_key::builders::UpdateEncryptionKeyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEncryptionKeyInput`](crate::operation::update_encryption_key::UpdateEncryptionKeyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEncryptionKeyInputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) scan_type: ::std::option::Option<crate::types::ScanType>,
@@ -81,10 +77,7 @@ impl UpdateEncryptionKeyInputBuilder {
         self
     }
     /// <p>The resource type for the encryption key.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -95,16 +88,12 @@ impl UpdateEncryptionKeyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEncryptionKeyInput`](crate::operation::update_encryption_key::UpdateEncryptionKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_encryption_key::UpdateEncryptionKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_encryption_key::UpdateEncryptionKeyInput {
-                kms_key_id: self.kms_key_id,
-                scan_type: self.scan_type,
-                resource_type: self.resource_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_encryption_key::UpdateEncryptionKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_encryption_key::UpdateEncryptionKeyInput {
+            kms_key_id: self.kms_key_id,
+            scan_type: self.scan_type,
+            resource_type: self.resource_type,
+        })
     }
 }

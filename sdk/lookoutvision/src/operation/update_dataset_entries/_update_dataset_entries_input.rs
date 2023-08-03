@@ -40,17 +40,14 @@ impl UpdateDatasetEntriesInput {
 }
 impl UpdateDatasetEntriesInput {
     /// Creates a new builder-style object to manufacture [`UpdateDatasetEntriesInput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesInput).
-    pub fn builder(
-    ) -> crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesInputBuilder {
+    pub fn builder() -> crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesInputBuilder {
         crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDatasetEntriesInput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatasetEntriesInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_type: ::std::option::Option<::std::string::String>,
@@ -123,17 +120,13 @@ impl UpdateDatasetEntriesInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDatasetEntriesInput`](crate::operation::update_dataset_entries::UpdateDatasetEntriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_dataset_entries::UpdateDatasetEntriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_dataset_entries::UpdateDatasetEntriesInput {
-                project_name: self.project_name,
-                dataset_type: self.dataset_type,
-                changes: self.changes,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_dataset_entries::UpdateDatasetEntriesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_dataset_entries::UpdateDatasetEntriesInput {
+            project_name: self.project_name,
+            dataset_type: self.dataset_type,
+            changes: self.changes,
+            client_token: self.client_token,
+        })
     }
 }

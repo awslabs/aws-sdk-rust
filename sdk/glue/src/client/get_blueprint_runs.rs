@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`blueprint_runs(Option<Vec<BlueprintRun>>)`](crate::operation::get_blueprint_runs::GetBlueprintRunsOutput::blueprint_runs): <p>Returns a list of <code>BlueprintRun</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_blueprint_runs::GetBlueprintRunsOutput::next_token): <p>A continuation token, if not all blueprint runs have been returned.</p>
     /// - On failure, responds with [`SdkError<GetBlueprintRunsError>`](crate::operation::get_blueprint_runs::GetBlueprintRunsError)
-    pub fn get_blueprint_runs(
-        &self,
-    ) -> crate::operation::get_blueprint_runs::builders::GetBlueprintRunsFluentBuilder {
-        crate::operation::get_blueprint_runs::builders::GetBlueprintRunsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_blueprint_runs(&self) -> crate::operation::get_blueprint_runs::builders::GetBlueprintRunsFluentBuilder {
+        crate::operation::get_blueprint_runs::builders::GetBlueprintRunsFluentBuilder::new(self.handle.clone())
     }
 }

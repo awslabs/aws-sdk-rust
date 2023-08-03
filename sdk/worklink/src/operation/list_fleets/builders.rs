@@ -10,10 +10,7 @@ impl ListFleetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_fleets::ListFleetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_fleets::ListFleetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_fleets::ListFleetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_fleets();
         fluent_builder.inner = self;
@@ -23,9 +20,7 @@ impl ListFleetsInputBuilder {
 /// Fluent builder constructing a request to `ListFleets`.
 ///
 /// <p>Retrieves a list of fleets for the current account and Region.</p>
-#[deprecated(
-    note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-)]
+#[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFleetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -48,10 +43,7 @@ impl ListFleetsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_fleets::ListFleets,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_fleets::ListFleets, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_fleets::ListFleetsError>,
     > {
         let handle = self.handle.clone();
@@ -62,10 +54,7 @@ impl ListFleetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -107,10 +96,7 @@ impl ListFleetsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_fleets::ListFleets,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_fleets::ListFleets, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_fleets::ListFleetsError>,
     > {
         self.customize_middleware().await

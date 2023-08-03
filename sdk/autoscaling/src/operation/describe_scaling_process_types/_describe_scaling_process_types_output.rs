@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeScalingProcessTypesOutput {
 }
 impl DescribeScalingProcessTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingProcessTypesOutput`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput).
-    pub fn builder() -> crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesOutputBuilder {
         crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeScalingProcessTypesOutput`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalingProcessTypesOutputBuilder {
     pub(crate) processes: ::std::option::Option<::std::vec::Vec<crate::types::ProcessType>>,
     _request_id: Option<String>,
@@ -48,17 +46,12 @@ impl DescribeScalingProcessTypesOutputBuilder {
         self
     }
     /// <p>The names of the process types.</p>
-    pub fn set_processes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessType>>,
-    ) -> Self {
+    pub fn set_processes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessType>>) -> Self {
         self.processes = input;
         self
     }
     /// <p>The names of the process types.</p>
-    pub fn get_processes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessType>> {
+    pub fn get_processes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessType>> {
         &self.processes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,9 +64,7 @@ impl DescribeScalingProcessTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeScalingProcessTypesOutput`](crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput {
+    pub fn build(self) -> crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput {
         crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput {
             processes: self.processes,
             _request_id: self._request_id,

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`accounts(Option<Vec<Account>>)`](crate::operation::list_staging_accounts::ListStagingAccountsOutput::accounts): <p>An array of staging AWS Accounts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_staging_accounts::ListStagingAccountsOutput::next_token): <p>The token of the next staging Account to retrieve.</p>
     /// - On failure, responds with [`SdkError<ListStagingAccountsError>`](crate::operation::list_staging_accounts::ListStagingAccountsError)
-    pub fn list_staging_accounts(
-        &self,
-    ) -> crate::operation::list_staging_accounts::builders::ListStagingAccountsFluentBuilder {
-        crate::operation::list_staging_accounts::builders::ListStagingAccountsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_staging_accounts(&self) -> crate::operation::list_staging_accounts::builders::ListStagingAccountsFluentBuilder {
+        crate::operation::list_staging_accounts::builders::ListStagingAccountsFluentBuilder::new(self.handle.clone())
     }
 }

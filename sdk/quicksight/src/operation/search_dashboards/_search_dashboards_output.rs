@@ -5,8 +5,7 @@
 pub struct SearchDashboardsOutput {
     /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
     #[doc(hidden)]
-    pub dashboard_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>>,
+    pub dashboard_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -20,9 +19,7 @@ pub struct SearchDashboardsOutput {
 }
 impl SearchDashboardsOutput {
     /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
-    pub fn dashboard_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DashboardSummary]> {
+    pub fn dashboard_summary_list(&self) -> ::std::option::Option<&[crate::types::DashboardSummary]> {
         self.dashboard_summary_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -45,20 +42,16 @@ impl ::aws_http::request_id::RequestId for SearchDashboardsOutput {
 }
 impl SearchDashboardsOutput {
     /// Creates a new builder-style object to manufacture [`SearchDashboardsOutput`](crate::operation::search_dashboards::SearchDashboardsOutput).
-    pub fn builder() -> crate::operation::search_dashboards::builders::SearchDashboardsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::search_dashboards::builders::SearchDashboardsOutputBuilder {
         crate::operation::search_dashboards::builders::SearchDashboardsOutputBuilder::default()
     }
 }
 
 /// A builder for [`SearchDashboardsOutput`](crate::operation::search_dashboards::SearchDashboardsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchDashboardsOutputBuilder {
-    pub(crate) dashboard_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>>,
+    pub(crate) dashboard_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -77,17 +70,12 @@ impl SearchDashboardsOutputBuilder {
         self
     }
     /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
-    pub fn set_dashboard_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>>,
-    ) -> Self {
+    pub fn set_dashboard_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>>) -> Self {
         self.dashboard_summary_list = input;
         self
     }
     /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
-    pub fn get_dashboard_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>> {
+    pub fn get_dashboard_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>> {
         &self.dashboard_summary_list
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>

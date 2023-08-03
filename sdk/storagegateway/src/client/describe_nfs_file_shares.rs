@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeNfsFileSharesOutput`](crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput) with field(s):
     ///   - [`nfs_file_share_info_list(Option<Vec<NfsFileShareInfo>>)`](crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput::nfs_file_share_info_list): <p>An array containing a description for each requested file share.</p>
     /// - On failure, responds with [`SdkError<DescribeNFSFileSharesError>`](crate::operation::describe_nfs_file_shares::DescribeNFSFileSharesError)
-    pub fn describe_nfs_file_shares(
-        &self,
-    ) -> crate::operation::describe_nfs_file_shares::builders::DescribeNFSFileSharesFluentBuilder
-    {
+    pub fn describe_nfs_file_shares(&self) -> crate::operation::describe_nfs_file_shares::builders::DescribeNFSFileSharesFluentBuilder {
         crate::operation::describe_nfs_file_shares::builders::DescribeNFSFileSharesFluentBuilder::new(self.handle.clone())
     }
 }

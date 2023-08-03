@@ -86,9 +86,7 @@ impl EcsTaskDetails {
 
 /// A builder for [`EcsTaskDetails`](crate::types::EcsTaskDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcsTaskDetailsBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) definition_arn: ::std::option::Option<::std::string::String>,
@@ -117,18 +115,12 @@ impl EcsTaskDetailsBuilder {
         &self.arn
     }
     /// <p>The ARN of the task definition that creates the task.</p>
-    pub fn definition_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the task definition that creates the task.</p>
-    pub fn set_definition_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.definition_arn = input;
         self
     }
@@ -156,10 +148,7 @@ impl EcsTaskDetailsBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the task was created.</p>
-    pub fn set_task_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_task_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.task_created_at = input;
         self
     }
@@ -173,10 +162,7 @@ impl EcsTaskDetailsBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the task started.</p>
-    pub fn set_started_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
@@ -210,10 +196,7 @@ impl EcsTaskDetailsBuilder {
         self
     }
     /// <p>The tags of the ECS Task.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -233,10 +216,7 @@ impl EcsTaskDetailsBuilder {
         self
     }
     /// <p>The list of data volume definitions for the task.</p>
-    pub fn set_volumes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
-    ) -> Self {
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>) -> Self {
         self.volumes = input;
         self
     }
@@ -256,17 +236,12 @@ impl EcsTaskDetailsBuilder {
         self
     }
     /// <p>The containers that's associated with the task.</p>
-    pub fn set_containers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
-    ) -> Self {
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Container>>) -> Self {
         self.containers = input;
         self
     }
     /// <p>The containers that's associated with the task.</p>
-    pub fn get_containers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Container>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Container>> {
         &self.containers
     }
     /// <p>The name of the task group that's associated with the task.</p>

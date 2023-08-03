@@ -22,9 +22,7 @@ impl CreateCliTokenInput {
 
 /// A builder for [`CreateCliTokenInput`](crate::operation::create_cli_token::CreateCliTokenInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCliTokenInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl CreateCliTokenInputBuilder {
     /// Consumes the builder and constructs a [`CreateCliTokenInput`](crate::operation::create_cli_token::CreateCliTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cli_token::CreateCliTokenInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_cli_token::CreateCliTokenInput {
-            name: self.name,
-        })
+    ) -> ::std::result::Result<crate::operation::create_cli_token::CreateCliTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_cli_token::CreateCliTokenInput { name: self.name })
     }
 }

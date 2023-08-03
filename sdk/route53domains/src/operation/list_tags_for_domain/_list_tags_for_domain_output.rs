@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for ListTagsForDomainOutput {
 }
 impl ListTagsForDomainOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForDomainOutput`](crate::operation::list_tags_for_domain::ListTagsForDomainOutput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_domain::builders::ListTagsForDomainOutputBuilder {
+    pub fn builder() -> crate::operation::list_tags_for_domain::builders::ListTagsForDomainOutputBuilder {
         crate::operation::list_tags_for_domain::builders::ListTagsForDomainOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsForDomainOutput`](crate::operation::list_tags_for_domain::ListTagsForDomainOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForDomainOutputBuilder {
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
@@ -50,10 +47,7 @@ impl ListTagsForDomainOutputBuilder {
         self
     }
     /// <p>A list of the tags that are associated with the specified domain.</p>
-    pub fn set_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_list = input;
         self
     }

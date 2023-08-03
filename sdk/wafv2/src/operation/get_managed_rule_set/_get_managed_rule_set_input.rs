@@ -41,17 +41,14 @@ impl GetManagedRuleSetInput {
 }
 impl GetManagedRuleSetInput {
     /// Creates a new builder-style object to manufacture [`GetManagedRuleSetInput`](crate::operation::get_managed_rule_set::GetManagedRuleSetInput).
-    pub fn builder(
-    ) -> crate::operation::get_managed_rule_set::builders::GetManagedRuleSetInputBuilder {
+    pub fn builder() -> crate::operation::get_managed_rule_set::builders::GetManagedRuleSetInputBuilder {
         crate::operation::get_managed_rule_set::builders::GetManagedRuleSetInputBuilder::default()
     }
 }
 
 /// A builder for [`GetManagedRuleSetInput`](crate::operation::get_managed_rule_set::GetManagedRuleSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetManagedRuleSetInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
@@ -121,16 +118,11 @@ impl GetManagedRuleSetInputBuilder {
     /// Consumes the builder and constructs a [`GetManagedRuleSetInput`](crate::operation::get_managed_rule_set::GetManagedRuleSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_managed_rule_set::GetManagedRuleSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_managed_rule_set::GetManagedRuleSetInput {
-                name: self.name,
-                scope: self.scope,
-                id: self.id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_managed_rule_set::GetManagedRuleSetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_managed_rule_set::GetManagedRuleSetInput {
+            name: self.name,
+            scope: self.scope,
+            id: self.id,
+        })
     }
 }

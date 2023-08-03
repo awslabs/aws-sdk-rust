@@ -3,10 +3,7 @@
 pub fn de_too_many_distributions_associated_to_origin_access_control_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TooManyDistributionsAssociatedToOriginAccessControlBuilder,
-) -> Result<
-    crate::types::error::builders::TooManyDistributionsAssociatedToOriginAccessControlBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::TooManyDistributionsAssociatedToOriginAccessControlBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

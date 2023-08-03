@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePlatformApplicationOutput`](crate::operation::create_platform_application::CreatePlatformApplicationOutput) with field(s):
     ///   - [`platform_application_arn(Option<String>)`](crate::operation::create_platform_application::CreatePlatformApplicationOutput::platform_application_arn): <p>PlatformApplicationArn is returned.</p>
     /// - On failure, responds with [`SdkError<CreatePlatformApplicationError>`](crate::operation::create_platform_application::CreatePlatformApplicationError)
-    pub fn create_platform_application(&self) -> crate::operation::create_platform_application::builders::CreatePlatformApplicationFluentBuilder{
+    pub fn create_platform_application(&self) -> crate::operation::create_platform_application::builders::CreatePlatformApplicationFluentBuilder {
         crate::operation::create_platform_application::builders::CreatePlatformApplicationFluentBuilder::new(self.handle.clone())
     }
 }

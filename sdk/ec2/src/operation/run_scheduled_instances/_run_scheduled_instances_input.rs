@@ -16,8 +16,7 @@ pub struct RunScheduledInstancesInput {
     pub instance_count: ::std::option::Option<i32>,
     /// <p>The launch specification. You must match the instance type, Availability Zone, network, and platform of the schedule that you purchased.</p>
     #[doc(hidden)]
-    pub launch_specification:
-        ::std::option::Option<crate::types::ScheduledInstancesLaunchSpecification>,
+    pub launch_specification: ::std::option::Option<crate::types::ScheduledInstancesLaunchSpecification>,
     /// <p>The Scheduled Instance ID.</p>
     #[doc(hidden)]
     pub scheduled_instance_id: ::std::option::Option<::std::string::String>,
@@ -37,9 +36,7 @@ impl RunScheduledInstancesInput {
         self.instance_count
     }
     /// <p>The launch specification. You must match the instance type, Availability Zone, network, and platform of the schedule that you purchased.</p>
-    pub fn launch_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScheduledInstancesLaunchSpecification> {
+    pub fn launch_specification(&self) -> ::std::option::Option<&crate::types::ScheduledInstancesLaunchSpecification> {
         self.launch_specification.as_ref()
     }
     /// <p>The Scheduled Instance ID.</p>
@@ -60,9 +57,7 @@ impl ::std::fmt::Debug for RunScheduledInstancesInput {
 }
 impl RunScheduledInstancesInput {
     /// Creates a new builder-style object to manufacture [`RunScheduledInstancesInput`](crate::operation::run_scheduled_instances::RunScheduledInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::run_scheduled_instances::builders::RunScheduledInstancesInputBuilder
-    {
+    pub fn builder() -> crate::operation::run_scheduled_instances::builders::RunScheduledInstancesInputBuilder {
         crate::operation::run_scheduled_instances::builders::RunScheduledInstancesInputBuilder::default()
     }
 }
@@ -74,8 +69,7 @@ pub struct RunScheduledInstancesInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_count: ::std::option::Option<i32>,
-    pub(crate) launch_specification:
-        ::std::option::Option<crate::types::ScheduledInstancesLaunchSpecification>,
+    pub(crate) launch_specification: ::std::option::Option<crate::types::ScheduledInstancesLaunchSpecification>,
     pub(crate) scheduled_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl RunScheduledInstancesInputBuilder {
@@ -125,40 +119,26 @@ impl RunScheduledInstancesInputBuilder {
         &self.instance_count
     }
     /// <p>The launch specification. You must match the instance type, Availability Zone, network, and platform of the schedule that you purchased.</p>
-    pub fn launch_specification(
-        mut self,
-        input: crate::types::ScheduledInstancesLaunchSpecification,
-    ) -> Self {
+    pub fn launch_specification(mut self, input: crate::types::ScheduledInstancesLaunchSpecification) -> Self {
         self.launch_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The launch specification. You must match the instance type, Availability Zone, network, and platform of the schedule that you purchased.</p>
-    pub fn set_launch_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduledInstancesLaunchSpecification>,
-    ) -> Self {
+    pub fn set_launch_specification(mut self, input: ::std::option::Option<crate::types::ScheduledInstancesLaunchSpecification>) -> Self {
         self.launch_specification = input;
         self
     }
     /// <p>The launch specification. You must match the instance type, Availability Zone, network, and platform of the schedule that you purchased.</p>
-    pub fn get_launch_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScheduledInstancesLaunchSpecification> {
+    pub fn get_launch_specification(&self) -> &::std::option::Option<crate::types::ScheduledInstancesLaunchSpecification> {
         &self.launch_specification
     }
     /// <p>The Scheduled Instance ID.</p>
-    pub fn scheduled_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scheduled_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Scheduled Instance ID.</p>
-    pub fn set_scheduled_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_scheduled_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_instance_id = input;
         self
     }
@@ -169,19 +149,15 @@ impl RunScheduledInstancesInputBuilder {
     /// Consumes the builder and constructs a [`RunScheduledInstancesInput`](crate::operation::run_scheduled_instances::RunScheduledInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::run_scheduled_instances::RunScheduledInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::run_scheduled_instances::RunScheduledInstancesInput {
-                client_token: self.client_token,
-                dry_run: self.dry_run,
-                instance_count: self.instance_count,
-                launch_specification: self.launch_specification,
-                scheduled_instance_id: self.scheduled_instance_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::run_scheduled_instances::RunScheduledInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::run_scheduled_instances::RunScheduledInstancesInput {
+            client_token: self.client_token,
+            dry_run: self.dry_run,
+            instance_count: self.instance_count,
+            launch_specification: self.launch_specification,
+            scheduled_instance_id: self.scheduled_instance_id,
+        })
     }
 }
 impl ::std::fmt::Debug for RunScheduledInstancesInputBuilder {

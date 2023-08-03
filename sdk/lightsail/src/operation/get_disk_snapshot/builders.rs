@@ -10,10 +10,7 @@ impl GetDiskSnapshotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_disk_snapshot::GetDiskSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_disk_snapshot::GetDiskSnapshotError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_disk_snapshot::GetDiskSnapshotError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_disk_snapshot();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetDiskSnapshotFluentBuilder {
         }
     }
     /// Access the GetDiskSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_disk_snapshot::builders::GetDiskSnapshotInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_disk_snapshot::builders::GetDiskSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetDiskSnapshotFluentBuilder {
             crate::operation::get_disk_snapshot::GetDiskSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_disk_snapshot::GetDiskSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_disk_snapshot::GetDiskSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetDiskSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetDiskSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_disk_snapshot::GetDiskSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_disk_snapshot::GetDiskSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_disk_snapshot::GetDiskSnapshotError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetDiskSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_disk_snapshot::GetDiskSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_disk_snapshot::GetDiskSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_disk_snapshot::GetDiskSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetDiskSnapshotFluentBuilder {
             crate::operation::get_disk_snapshot::GetDiskSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_disk_snapshot::GetDiskSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_disk_snapshot::GetDiskSnapshotError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
-    pub fn disk_snapshot_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disk_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.disk_snapshot_name(input.into());
         self
     }
     /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
-    pub fn set_disk_snapshot_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_disk_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_disk_snapshot_name(input);
         self
     }

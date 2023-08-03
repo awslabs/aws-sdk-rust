@@ -10,10 +10,7 @@ impl LookupPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::lookup_policy::LookupPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::lookup_policy::LookupPolicyError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::lookup_policy::LookupPolicyError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.lookup_policy();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl LookupPolicyFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::lookup_policy::LookupPolicy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::lookup_policy::LookupPolicy, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::lookup_policy::LookupPolicyError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl LookupPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,10 +95,7 @@ impl LookupPolicyFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::lookup_policy::LookupPolicy,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::lookup_policy::LookupPolicy, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::lookup_policy::LookupPolicyError>,
     > {
         self.customize_middleware().await
@@ -115,27 +103,16 @@ impl LookupPolicyFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::lookup_policy::paginator::LookupPolicyPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::lookup_policy::paginator::LookupPolicyPaginator {
-        crate::operation::lookup_policy::paginator::LookupPolicyPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::lookup_policy::paginator::LookupPolicyPaginator {
+        crate::operation::lookup_policy::paginator::LookupPolicyPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -149,10 +126,7 @@ impl LookupPolicyFluentBuilder {
         self
     }
     /// <p>Reference that identifies the object whose policies will be looked up.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
     }

@@ -15,17 +15,14 @@ impl DescribeCampaignInput {
 }
 impl DescribeCampaignInput {
     /// Creates a new builder-style object to manufacture [`DescribeCampaignInput`](crate::operation::describe_campaign::DescribeCampaignInput).
-    pub fn builder() -> crate::operation::describe_campaign::builders::DescribeCampaignInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_campaign::builders::DescribeCampaignInputBuilder {
         crate::operation::describe_campaign::builders::DescribeCampaignInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCampaignInput`](crate::operation::describe_campaign::DescribeCampaignInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCampaignInputBuilder {
     pub(crate) campaign_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +44,7 @@ impl DescribeCampaignInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCampaignInput`](crate::operation::describe_campaign::DescribeCampaignInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_campaign::DescribeCampaignInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_campaign::DescribeCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_campaign::DescribeCampaignInput {
             campaign_arn: self.campaign_arn,
         })

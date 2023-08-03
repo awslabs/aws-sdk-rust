@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`status(Option<String>)`](crate::operation::get_model_version::GetModelVersionOutput::status): <p>The model version status.</p>  <p>Possible values are:</p>  <ul>   <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>   <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>   <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>   <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>   <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>   <li> <p> <code>INACTIVE</code> </p> </li>   <li> <p> <code>ERROR</code> </p> </li>  </ul>
     ///   - [`arn(Option<String>)`](crate::operation::get_model_version::GetModelVersionOutput::arn): <p>The model version ARN.</p>
     /// - On failure, responds with [`SdkError<GetModelVersionError>`](crate::operation::get_model_version::GetModelVersionError)
-    pub fn get_model_version(
-        &self,
-    ) -> crate::operation::get_model_version::builders::GetModelVersionFluentBuilder {
-        crate::operation::get_model_version::builders::GetModelVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_model_version(&self) -> crate::operation::get_model_version::builders::GetModelVersionFluentBuilder {
+        crate::operation::get_model_version::builders::GetModelVersionFluentBuilder::new(self.handle.clone())
     }
 }

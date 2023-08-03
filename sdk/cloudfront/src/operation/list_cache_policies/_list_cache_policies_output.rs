@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ListCachePoliciesOutput {
 }
 impl ListCachePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListCachePoliciesOutput`](crate::operation::list_cache_policies::ListCachePoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_cache_policies::builders::ListCachePoliciesOutputBuilder {
+    pub fn builder() -> crate::operation::list_cache_policies::builders::ListCachePoliciesOutputBuilder {
         crate::operation::list_cache_policies::builders::ListCachePoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCachePoliciesOutput`](crate::operation::list_cache_policies::ListCachePoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCachePoliciesOutputBuilder {
     pub(crate) cache_policy_list: ::std::option::Option<crate::types::CachePolicyList>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl ListCachePoliciesOutputBuilder {
         self
     }
     /// <p>A list of cache policies.</p>
-    pub fn set_cache_policy_list(
-        mut self,
-        input: ::std::option::Option<crate::types::CachePolicyList>,
-    ) -> Self {
+    pub fn set_cache_policy_list(mut self, input: ::std::option::Option<crate::types::CachePolicyList>) -> Self {
         self.cache_policy_list = input;
         self
     }

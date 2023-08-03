@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`PutApprovalResultOutput`](crate::operation::put_approval_result::PutApprovalResultOutput) with field(s):
     ///   - [`approved_at(Option<DateTime>)`](crate::operation::put_approval_result::PutApprovalResultOutput::approved_at): <p>The timestamp showing when the approval or rejection was submitted.</p>
     /// - On failure, responds with [`SdkError<PutApprovalResultError>`](crate::operation::put_approval_result::PutApprovalResultError)
-    pub fn put_approval_result(
-        &self,
-    ) -> crate::operation::put_approval_result::builders::PutApprovalResultFluentBuilder {
-        crate::operation::put_approval_result::builders::PutApprovalResultFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_approval_result(&self) -> crate::operation::put_approval_result::builders::PutApprovalResultFluentBuilder {
+        crate::operation::put_approval_result::builders::PutApprovalResultFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetResourceSharesOutput {
 }
 impl GetResourceSharesOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceSharesOutput`](crate::operation::get_resource_shares::GetResourceSharesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_shares::builders::GetResourceSharesOutputBuilder {
+    pub fn builder() -> crate::operation::get_resource_shares::builders::GetResourceSharesOutputBuilder {
         crate::operation::get_resource_shares::builders::GetResourceSharesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceSharesOutput`](crate::operation::get_resource_shares::GetResourceSharesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceSharesOutputBuilder {
     pub(crate) resource_shares: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShare>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl GetResourceSharesOutputBuilder {
         self
     }
     /// <p>An array of objects that contain the information about the resource shares.</p>
-    pub fn set_resource_shares(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShare>>,
-    ) -> Self {
+    pub fn set_resource_shares(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceShare>>) -> Self {
         self.resource_shares = input;
         self
     }
     /// <p>An array of objects that contain the information about the resource shares.</p>
-    pub fn get_resource_shares(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceShare>> {
+    pub fn get_resource_shares(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceShare>> {
         &self.resource_shares
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>

@@ -42,10 +42,7 @@ impl DeliverConfigSnapshotFluentBuilder {
         }
     }
     /// Access the DeliverConfigSnapshot as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deliver_config_snapshot::builders::DeliverConfigSnapshotInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deliver_config_snapshot::builders::DeliverConfigSnapshotInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +54,7 @@ impl DeliverConfigSnapshotFluentBuilder {
             crate::operation::deliver_config_snapshot::DeliverConfigSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +64,7 @@ impl DeliverConfigSnapshotFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +73,7 @@ impl DeliverConfigSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deliver_config_snapshot::DeliverConfigSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError>,
     > {
         let op = self
             .inner
@@ -106,9 +96,7 @@ impl DeliverConfigSnapshotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deliver_config_snapshot::DeliverConfigSnapshotOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +110,17 @@ impl DeliverConfigSnapshotFluentBuilder {
             crate::operation::deliver_config_snapshot::DeliverConfigSnapshot,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
-    pub fn delivery_channel_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_channel_name(input.into());
         self
     }
     /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
-    pub fn set_delivery_channel_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delivery_channel_name(input);
         self
     }

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeDrtAccessOutput {
 }
 impl DescribeDrtAccessOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDrtAccessOutput`](crate::operation::describe_drt_access::DescribeDrtAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_drt_access::builders::DescribeDrtAccessOutputBuilder {
+    pub fn builder() -> crate::operation::describe_drt_access::builders::DescribeDrtAccessOutputBuilder {
         crate::operation::describe_drt_access::builders::DescribeDrtAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDrtAccessOutput`](crate::operation::describe_drt_access::DescribeDrtAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDrtAccessOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_bucket_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,27 +61,19 @@ impl DescribeDrtAccessOutputBuilder {
     /// To override the contents of this collection use [`set_log_bucket_list`](Self::set_log_bucket_list).
     ///
     /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
-    pub fn log_bucket_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_bucket_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_bucket_list.unwrap_or_default();
         v.push(input.into());
         self.log_bucket_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
-    pub fn set_log_bucket_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_log_bucket_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_bucket_list = input;
         self
     }
     /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
-    pub fn get_log_bucket_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_bucket_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_bucket_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

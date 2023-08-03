@@ -30,16 +30,14 @@ impl DeleteRuleGroupsNamespaceInput {
 }
 impl DeleteRuleGroupsNamespaceInput {
     /// Creates a new builder-style object to manufacture [`DeleteRuleGroupsNamespaceInput`](crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput).
-    pub fn builder() -> crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceInputBuilder{
+    pub fn builder() -> crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceInputBuilder {
         crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRuleGroupsNamespaceInput`](crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRuleGroupsNamespaceInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -95,12 +93,10 @@ impl DeleteRuleGroupsNamespaceInputBuilder {
         crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput {
-                workspace_id: self.workspace_id,
-                name: self.name,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput {
+            workspace_id: self.workspace_id,
+            name: self.name,
+            client_token: self.client_token,
+        })
     }
 }

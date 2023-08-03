@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateThingGroupsForThingOutput {
 }
 impl UpdateThingGroupsForThingOutput {
     /// Creates a new builder-style object to manufacture [`UpdateThingGroupsForThingOutput`](crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingOutput).
-    pub fn builder() -> crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingOutputBuilder{
+    pub fn builder() -> crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingOutputBuilder {
         crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateThingGroupsForThingOutput`](crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateThingGroupsForThingOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateThingGroupsForThingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateThingGroupsForThingOutput`](crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingOutput {
+    pub fn build(self) -> crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingOutput {
         crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingOutput {
             _request_id: self._request_id,
         }

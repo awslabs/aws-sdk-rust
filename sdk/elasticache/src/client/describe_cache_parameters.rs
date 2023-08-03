@@ -13,10 +13,7 @@ impl super::Client {
     ///   - [`parameters(Option<Vec<Parameter>>)`](crate::operation::describe_cache_parameters::DescribeCacheParametersOutput::parameters): <p>A list of <code>Parameter</code> instances.</p>
     ///   - [`cache_node_type_specific_parameters(Option<Vec<CacheNodeTypeSpecificParameter>>)`](crate::operation::describe_cache_parameters::DescribeCacheParametersOutput::cache_node_type_specific_parameters): <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
     /// - On failure, responds with [`SdkError<DescribeCacheParametersError>`](crate::operation::describe_cache_parameters::DescribeCacheParametersError)
-    pub fn describe_cache_parameters(
-        &self,
-    ) -> crate::operation::describe_cache_parameters::builders::DescribeCacheParametersFluentBuilder
-    {
+    pub fn describe_cache_parameters(&self) -> crate::operation::describe_cache_parameters::builders::DescribeCacheParametersFluentBuilder {
         crate::operation::describe_cache_parameters::builders::DescribeCacheParametersFluentBuilder::new(self.handle.clone())
     }
 }

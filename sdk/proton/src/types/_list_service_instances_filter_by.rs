@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ListServiceInstancesFilterBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,23 +77,15 @@ impl ::std::convert::From<&str> for ListServiceInstancesFilterBy {
         match s {
             "createdAtAfter" => ListServiceInstancesFilterBy::CreatedAtAfter,
             "createdAtBefore" => ListServiceInstancesFilterBy::CreatedAtBefore,
-            "deployedTemplateVersionStatus" => {
-                ListServiceInstancesFilterBy::DeployedTemplateVersionStatus
-            }
+            "deployedTemplateVersionStatus" => ListServiceInstancesFilterBy::DeployedTemplateVersionStatus,
             "deploymentStatus" => ListServiceInstancesFilterBy::DeploymentStatus,
             "environmentName" => ListServiceInstancesFilterBy::EnvironmentName,
-            "lastDeploymentAttemptedAtAfter" => {
-                ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter
-            }
-            "lastDeploymentAttemptedAtBefore" => {
-                ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore
-            }
+            "lastDeploymentAttemptedAtAfter" => ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter,
+            "lastDeploymentAttemptedAtBefore" => ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore,
             "name" => ListServiceInstancesFilterBy::Name,
             "serviceName" => ListServiceInstancesFilterBy::ServiceName,
             "templateName" => ListServiceInstancesFilterBy::TemplateName,
-            other => ListServiceInstancesFilterBy::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ListServiceInstancesFilterBy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -116,17 +102,11 @@ impl ListServiceInstancesFilterBy {
         match self {
             ListServiceInstancesFilterBy::CreatedAtAfter => "createdAtAfter",
             ListServiceInstancesFilterBy::CreatedAtBefore => "createdAtBefore",
-            ListServiceInstancesFilterBy::DeployedTemplateVersionStatus => {
-                "deployedTemplateVersionStatus"
-            }
+            ListServiceInstancesFilterBy::DeployedTemplateVersionStatus => "deployedTemplateVersionStatus",
             ListServiceInstancesFilterBy::DeploymentStatus => "deploymentStatus",
             ListServiceInstancesFilterBy::EnvironmentName => "environmentName",
-            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter => {
-                "lastDeploymentAttemptedAtAfter"
-            }
-            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore => {
-                "lastDeploymentAttemptedAtBefore"
-            }
+            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter => "lastDeploymentAttemptedAtAfter",
+            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore => "lastDeploymentAttemptedAtBefore",
             ListServiceInstancesFilterBy::Name => "name",
             ListServiceInstancesFilterBy::ServiceName => "serviceName",
             ListServiceInstancesFilterBy::TemplateName => "templateName",

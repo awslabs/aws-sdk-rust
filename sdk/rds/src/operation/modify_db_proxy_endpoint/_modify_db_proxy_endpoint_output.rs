@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyDbProxyEndpointOutput {
 }
 impl ModifyDbProxyEndpointOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbProxyEndpointOutput`](crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_db_proxy_endpoint::builders::ModifyDbProxyEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_db_proxy_endpoint::builders::ModifyDbProxyEndpointOutputBuilder {
         crate::operation::modify_db_proxy_endpoint::builders::ModifyDbProxyEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyDbProxyEndpointOutput`](crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDbProxyEndpointOutputBuilder {
     pub(crate) db_proxy_endpoint: ::std::option::Option<crate::types::DbProxyEndpoint>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl ModifyDbProxyEndpointOutputBuilder {
         self
     }
     /// <p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>
-    pub fn set_db_proxy_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::DbProxyEndpoint>,
-    ) -> Self {
+    pub fn set_db_proxy_endpoint(mut self, input: ::std::option::Option<crate::types::DbProxyEndpoint>) -> Self {
         self.db_proxy_endpoint = input;
         self
     }

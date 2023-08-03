@@ -30,9 +30,7 @@ impl AgentVersion {
 
 /// A builder for [`AgentVersion`](crate::types::AgentVersion).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentVersionBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) agent_count: ::std::option::Option<i64>,

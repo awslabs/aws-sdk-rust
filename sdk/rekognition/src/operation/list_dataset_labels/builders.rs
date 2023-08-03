@@ -10,10 +10,7 @@ impl ListDatasetLabelsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_labels::ListDatasetLabelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_labels::ListDatasetLabelsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_labels::ListDatasetLabelsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_dataset_labels();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListDatasetLabelsFluentBuilder {
         }
     }
     /// Access the ListDatasetLabels as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_dataset_labels::builders::ListDatasetLabelsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_dataset_labels::builders::ListDatasetLabelsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListDatasetLabelsFluentBuilder {
             crate::operation::list_dataset_labels::ListDatasetLabels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_labels::ListDatasetLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_labels::ListDatasetLabelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListDatasetLabelsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListDatasetLabelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_labels::ListDatasetLabelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_labels::ListDatasetLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_labels::ListDatasetLabelsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListDatasetLabelsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dataset_labels::ListDatasetLabelsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_labels::ListDatasetLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_labels::ListDatasetLabelsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListDatasetLabelsFluentBuilder {
             crate::operation::list_dataset_labels::ListDatasetLabels,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_labels::ListDatasetLabelsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_dataset_labels::ListDatasetLabelsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_dataset_labels::paginator::ListDatasetLabelsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_dataset_labels::paginator::ListDatasetLabelsPaginator {
-        crate::operation::list_dataset_labels::paginator::ListDatasetLabelsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_dataset_labels::paginator::ListDatasetLabelsPaginator {
+        crate::operation::list_dataset_labels::paginator::ListDatasetLabelsPaginator::new(self.handle, self.inner)
     }
     /// <p> The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

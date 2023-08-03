@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`application_id(Option<String>)`](crate::operation::cancel_job_run::CancelJobRunOutput::application_id): <p>The output contains the application ID on which the job run is cancelled.</p>
     ///   - [`job_run_id(Option<String>)`](crate::operation::cancel_job_run::CancelJobRunOutput::job_run_id): <p>The output contains the ID of the cancelled job run.</p>
     /// - On failure, responds with [`SdkError<CancelJobRunError>`](crate::operation::cancel_job_run::CancelJobRunError)
-    pub fn cancel_job_run(
-        &self,
-    ) -> crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder {
-        crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn cancel_job_run(&self) -> crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder {
+        crate::operation::cancel_job_run::builders::CancelJobRunFluentBuilder::new(self.handle.clone())
     }
 }

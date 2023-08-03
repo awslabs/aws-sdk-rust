@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`locale_id(Option<String>)`](crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyOutput::locale_id): <p>The locale identifier for the locale that the custom vocabulary was removed from.</p>
     ///   - [`custom_vocabulary_status(Option<CustomVocabularyStatus>)`](crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyOutput::custom_vocabulary_status): <p>The status of removing the custom vocabulary.</p>
     /// - On failure, responds with [`SdkError<DeleteCustomVocabularyError>`](crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError)
-    pub fn delete_custom_vocabulary(
-        &self,
-    ) -> crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyFluentBuilder
-    {
+    pub fn delete_custom_vocabulary(&self) -> crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyFluentBuilder {
         crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyFluentBuilder::new(self.handle.clone())
     }
 }

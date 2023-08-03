@@ -35,9 +35,7 @@ impl GetBotAliasesOutput {
 
 /// A builder for [`GetBotAliasesOutput`](crate::operation::get_bot_aliases::GetBotAliasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBotAliasesOutputBuilder {
     pub(crate) bot_aliases: ::std::option::Option<::std::vec::Vec<crate::types::BotAliasMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetBotAliasesOutputBuilder {
         self
     }
     /// <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.</p>
-    pub fn set_bot_aliases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BotAliasMetadata>>,
-    ) -> Self {
+    pub fn set_bot_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotAliasMetadata>>) -> Self {
         self.bot_aliases = input;
         self
     }
     /// <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.</p>
-    pub fn get_bot_aliases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotAliasMetadata>> {
+    pub fn get_bot_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotAliasMetadata>> {
         &self.bot_aliases
     }
     /// <p>A pagination token for fetching next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>

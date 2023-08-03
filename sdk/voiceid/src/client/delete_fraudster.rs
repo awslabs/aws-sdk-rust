@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`fraudster_id(impl ::std::convert::Into<String>)`](crate::operation::delete_fraudster::builders::DeleteFraudsterFluentBuilder::fraudster_id) / [`set_fraudster_id(Option<String>)`](crate::operation::delete_fraudster::builders::DeleteFraudsterFluentBuilder::set_fraudster_id): <p>The identifier of the fraudster you want to delete.</p>
     /// - On success, responds with [`DeleteFraudsterOutput`](crate::operation::delete_fraudster::DeleteFraudsterOutput)
     /// - On failure, responds with [`SdkError<DeleteFraudsterError>`](crate::operation::delete_fraudster::DeleteFraudsterError)
-    pub fn delete_fraudster(
-        &self,
-    ) -> crate::operation::delete_fraudster::builders::DeleteFraudsterFluentBuilder {
-        crate::operation::delete_fraudster::builders::DeleteFraudsterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_fraudster(&self) -> crate::operation::delete_fraudster::builders::DeleteFraudsterFluentBuilder {
+        crate::operation::delete_fraudster::builders::DeleteFraudsterFluentBuilder::new(self.handle.clone())
     }
 }

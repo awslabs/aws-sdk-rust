@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`ops_metadata_list(Option<Vec<OpsMetadata>>)`](crate::operation::list_ops_metadata::ListOpsMetadataOutput::ops_metadata_list): <p>Returns a list of OpsMetadata objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ops_metadata::ListOpsMetadataOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListOpsMetadataError>`](crate::operation::list_ops_metadata::ListOpsMetadataError)
-    pub fn list_ops_metadata(
-        &self,
-    ) -> crate::operation::list_ops_metadata::builders::ListOpsMetadataFluentBuilder {
-        crate::operation::list_ops_metadata::builders::ListOpsMetadataFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_ops_metadata(&self) -> crate::operation::list_ops_metadata::builders::ListOpsMetadataFluentBuilder {
+        crate::operation::list_ops_metadata::builders::ListOpsMetadataFluentBuilder::new(self.handle.clone())
     }
 }

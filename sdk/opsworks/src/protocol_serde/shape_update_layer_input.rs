@@ -29,9 +29,7 @@ pub fn ser_update_layer_input(
         object_9.finish();
     }
     if let Some(var_10) = &input.custom_instance_profile_arn {
-        object
-            .key("CustomInstanceProfileArn")
-            .string(var_10.as_str());
+        object.key("CustomInstanceProfileArn").string(var_10.as_str());
     }
     if let Some(var_11) = &input.custom_json {
         object.key("CustomJson").string(var_11.as_str());
@@ -60,10 +58,7 @@ pub fn ser_update_layer_input(
             {
                 #[allow(unused_mut)]
                 let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_volume_configuration::ser_volume_configuration(
-                    &mut object_21,
-                    item_20,
-                )?;
+                crate::protocol_serde::shape_volume_configuration::ser_volume_configuration(&mut object_21, item_20)?;
                 object_21.finish();
             }
         }

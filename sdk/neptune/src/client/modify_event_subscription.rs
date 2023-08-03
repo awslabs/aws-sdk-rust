@@ -11,10 +11,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyEventSubscriptionOutput`](crate::operation::modify_event_subscription::ModifyEventSubscriptionOutput) with field(s):
     ///   - [`event_subscription(Option<EventSubscription>)`](crate::operation::modify_event_subscription::ModifyEventSubscriptionOutput::event_subscription): <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     /// - On failure, responds with [`SdkError<ModifyEventSubscriptionError>`](crate::operation::modify_event_subscription::ModifyEventSubscriptionError)
-    pub fn modify_event_subscription(
-        &self,
-    ) -> crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionFluentBuilder
-    {
+    pub fn modify_event_subscription(&self) -> crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionFluentBuilder {
         crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionFluentBuilder::new(self.handle.clone())
     }
 }

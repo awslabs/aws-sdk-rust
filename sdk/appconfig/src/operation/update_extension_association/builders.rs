@@ -26,7 +26,7 @@ impl UpdateExtensionAssociationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateExtensionAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_extension_association::builders::UpdateExtensionAssociationInputBuilder,
+    inner: crate::operation::update_extension_association::builders::UpdateExtensionAssociationInputBuilder,
 }
 impl UpdateExtensionAssociationFluentBuilder {
     /// Creates a new `UpdateExtensionAssociation`.
@@ -37,7 +37,7 @@ impl UpdateExtensionAssociationFluentBuilder {
         }
     }
     /// Access the UpdateExtensionAssociation as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_extension_association::builders::UpdateExtensionAssociationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_extension_association::builders::UpdateExtensionAssociationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateExtensionAssociationFluentBuilder {
             crate::operation::update_extension_association::UpdateExtensionAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_extension_association::UpdateExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_extension_association::UpdateExtensionAssociationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateExtensionAssociationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateExtensionAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_extension_association::UpdateExtensionAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_extension_association::UpdateExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_extension_association::UpdateExtensionAssociationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateExtensionAssociationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_extension_association::UpdateExtensionAssociationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_extension_association::UpdateExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_extension_association::UpdateExtensionAssociationError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl UpdateExtensionAssociationFluentBuilder {
             crate::operation::update_extension_association::UpdateExtensionAssociation,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_extension_association::UpdateExtensionAssociationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_extension_association::UpdateExtensionAssociationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The system-generated ID for the association.</p>
-    pub fn extension_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extension_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.extension_association_id(input.into());
         self
     }
     /// <p>The system-generated ID for the association.</p>
-    pub fn set_extension_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extension_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_extension_association_id(input);
         self
     }
@@ -145,30 +128,17 @@ impl UpdateExtensionAssociationFluentBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The parameter names and values defined in the extension.</p>
-    pub fn parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameters(k.into(), v.into());
         self
     }
     /// <p>The parameter names and values defined in the extension.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>The parameter names and values defined in the extension.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_parameters()
     }
 }

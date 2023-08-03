@@ -15,8 +15,7 @@ pub struct Pipeline {
     pub activities: ::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>>,
     /// <p>A summary of information about the pipeline reprocessing.</p>
     #[doc(hidden)]
-    pub reprocessing_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReprocessingSummary>>,
+    pub reprocessing_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReprocessingSummary>>,
     /// <p>When the pipeline was created.</p>
     #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -38,9 +37,7 @@ impl Pipeline {
         self.activities.as_deref()
     }
     /// <p>A summary of information about the pipeline reprocessing.</p>
-    pub fn reprocessing_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReprocessingSummary]> {
+    pub fn reprocessing_summaries(&self) -> ::std::option::Option<&[crate::types::ReprocessingSummary]> {
         self.reprocessing_summaries.as_deref()
     }
     /// <p>When the pipeline was created.</p>
@@ -61,15 +58,12 @@ impl Pipeline {
 
 /// A builder for [`Pipeline`](crate::types::Pipeline).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PipelineBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) activities: ::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>>,
-    pub(crate) reprocessing_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReprocessingSummary>>,
+    pub(crate) reprocessing_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReprocessingSummary>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -114,17 +108,12 @@ impl PipelineBuilder {
         self
     }
     /// <p>The activities that perform transformations on the messages.</p>
-    pub fn set_activities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>>,
-    ) -> Self {
+    pub fn set_activities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>>) -> Self {
         self.activities = input;
         self
     }
     /// <p>The activities that perform transformations on the messages.</p>
-    pub fn get_activities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>> {
+    pub fn get_activities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>> {
         &self.activities
     }
     /// Appends an item to `reprocessing_summaries`.
@@ -139,17 +128,12 @@ impl PipelineBuilder {
         self
     }
     /// <p>A summary of information about the pipeline reprocessing.</p>
-    pub fn set_reprocessing_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReprocessingSummary>>,
-    ) -> Self {
+    pub fn set_reprocessing_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReprocessingSummary>>) -> Self {
         self.reprocessing_summaries = input;
         self
     }
     /// <p>A summary of information about the pipeline reprocessing.</p>
-    pub fn get_reprocessing_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReprocessingSummary>> {
+    pub fn get_reprocessing_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReprocessingSummary>> {
         &self.reprocessing_summaries
     }
     /// <p>When the pipeline was created.</p>
@@ -158,10 +142,7 @@ impl PipelineBuilder {
         self
     }
     /// <p>When the pipeline was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -175,10 +156,7 @@ impl PipelineBuilder {
         self
     }
     /// <p>The last time the pipeline was updated.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }

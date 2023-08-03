@@ -42,18 +42,14 @@ impl ::aws_http::request_id::RequestId for ExecuteBudgetActionOutput {
 }
 impl ExecuteBudgetActionOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteBudgetActionOutput`](crate::operation::execute_budget_action::ExecuteBudgetActionOutput).
-    pub fn builder(
-    ) -> crate::operation::execute_budget_action::builders::ExecuteBudgetActionOutputBuilder {
-        crate::operation::execute_budget_action::builders::ExecuteBudgetActionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::execute_budget_action::builders::ExecuteBudgetActionOutputBuilder {
+        crate::operation::execute_budget_action::builders::ExecuteBudgetActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExecuteBudgetActionOutput`](crate::operation::execute_budget_action::ExecuteBudgetActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteBudgetActionOutputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_name: ::std::option::Option<::std::string::String>,
@@ -110,10 +106,7 @@ impl ExecuteBudgetActionOutputBuilder {
         self
     }
     /// <p> The type of execution. </p>
-    pub fn set_execution_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionType>,
-    ) -> Self {
+    pub fn set_execution_type(mut self, input: ::std::option::Option<crate::types::ExecutionType>) -> Self {
         self.execution_type = input;
         self
     }

@@ -26,8 +26,7 @@ impl ListInstanceTypeDetailsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInstanceTypeDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsInputBuilder,
+    inner: crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsInputBuilder,
 }
 impl ListInstanceTypeDetailsFluentBuilder {
     /// Creates a new `ListInstanceTypeDetails`.
@@ -38,10 +37,7 @@ impl ListInstanceTypeDetailsFluentBuilder {
         }
     }
     /// Access the ListInstanceTypeDetails as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListInstanceTypeDetailsFluentBuilder {
             crate::operation::list_instance_type_details::ListInstanceTypeDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_type_details::ListInstanceTypeDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_type_details::ListInstanceTypeDetailsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListInstanceTypeDetailsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListInstanceTypeDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_type_details::ListInstanceTypeDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_type_details::ListInstanceTypeDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_type_details::ListInstanceTypeDetailsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListInstanceTypeDetailsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_type_details::ListInstanceTypeDetailsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_type_details::ListInstanceTypeDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_type_details::ListInstanceTypeDetailsError>,
     > {
         self.send_middleware().await
     }
@@ -118,34 +105,23 @@ impl ListInstanceTypeDetailsFluentBuilder {
             crate::operation::list_instance_type_details::ListInstanceTypeDetails,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_instance_type_details::ListInstanceTypeDetailsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_instance_type_details::ListInstanceTypeDetailsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_instance_type_details::paginator::ListInstanceTypeDetailsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_instance_type_details::paginator::ListInstanceTypeDetailsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_instance_type_details::paginator::ListInstanceTypeDetailsPaginator {
         crate::operation::list_instance_type_details::paginator::ListInstanceTypeDetailsPaginator::new(self.handle, self.inner)
     }
     /// <p>The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -210,18 +186,12 @@ impl ListInstanceTypeDetailsFluentBuilder {
         self.inner.get_retrieve_a_zs()
     }
     /// <p>An optional parameter that lists information for a given instance type.</p>
-    pub fn instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_type(input.into());
         self
     }
     /// <p>An optional parameter that lists information for a given instance type.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }

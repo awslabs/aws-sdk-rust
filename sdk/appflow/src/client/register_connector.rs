@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterConnectorOutput`](crate::operation::register_connector::RegisterConnectorOutput) with field(s):
     ///   - [`connector_arn(Option<String>)`](crate::operation::register_connector::RegisterConnectorOutput::connector_arn): <p>The ARN of the connector being registered.</p>
     /// - On failure, responds with [`SdkError<RegisterConnectorError>`](crate::operation::register_connector::RegisterConnectorError)
-    pub fn register_connector(
-        &self,
-    ) -> crate::operation::register_connector::builders::RegisterConnectorFluentBuilder {
-        crate::operation::register_connector::builders::RegisterConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_connector(&self) -> crate::operation::register_connector::builders::RegisterConnectorFluentBuilder {
+        crate::operation::register_connector::builders::RegisterConnectorFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,10 +37,7 @@ impl ListTestGridSessionsFluentBuilder {
         }
     }
     /// Access the ListTestGridSessions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListTestGridSessionsFluentBuilder {
             crate::operation::list_test_grid_sessions::ListTestGridSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_sessions::ListTestGridSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_sessions::ListTestGridSessionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListTestGridSessionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListTestGridSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_grid_sessions::ListTestGridSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_sessions::ListTestGridSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_sessions::ListTestGridSessionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListTestGridSessionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_grid_sessions::ListTestGridSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_sessions::ListTestGridSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_sessions::ListTestGridSessionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +105,15 @@ impl ListTestGridSessionsFluentBuilder {
             crate::operation::list_test_grid_sessions::ListTestGridSessions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_test_grid_sessions::ListTestGridSessionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_test_grid_sessions::ListTestGridSessionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_test_grid_sessions::paginator::ListTestGridSessionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_test_grid_sessions::paginator::ListTestGridSessionsPaginator {
-        crate::operation::list_test_grid_sessions::paginator::ListTestGridSessionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_test_grid_sessions::paginator::ListTestGridSessionsPaginator {
+        crate::operation::list_test_grid_sessions::paginator::ListTestGridSessionsPaginator::new(self.handle, self.inner)
     }
     /// <p>ARN of a <code>TestGridProject</code>.</p>
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,10 +135,7 @@ impl ListTestGridSessionsFluentBuilder {
         self
     }
     /// <p>Return only sessions in this state.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TestGridSessionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TestGridSessionStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -171,10 +149,7 @@ impl ListTestGridSessionsFluentBuilder {
         self
     }
     /// <p>Return only sessions created after this time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -188,10 +163,7 @@ impl ListTestGridSessionsFluentBuilder {
         self
     }
     /// <p>Return only sessions created before this time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -205,10 +177,7 @@ impl ListTestGridSessionsFluentBuilder {
         self
     }
     /// <p>Return only sessions that ended after this time.</p>
-    pub fn set_end_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time_after(input);
         self
     }
@@ -222,10 +191,7 @@ impl ListTestGridSessionsFluentBuilder {
         self
     }
     /// <p>Return only sessions that ended before this time.</p>
-    pub fn set_end_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time_before(input);
         self
     }

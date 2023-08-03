@@ -18,16 +18,13 @@ pub struct CreateRoutingProfileInput {
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
     /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>. </p>
     #[doc(hidden)]
-    pub queue_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
+    pub queue_configs: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     #[doc(hidden)]
     pub media_concurrencies: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRoutingProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -48,9 +45,7 @@ impl CreateRoutingProfileInput {
     }
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
     /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>. </p>
-    pub fn queue_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RoutingProfileQueueConfig]> {
+    pub fn queue_configs(&self) -> ::std::option::Option<&[crate::types::RoutingProfileQueueConfig]> {
         self.queue_configs.as_deref()
     }
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
@@ -58,39 +53,28 @@ impl CreateRoutingProfileInput {
         self.media_concurrencies.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateRoutingProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateRoutingProfileInput`](crate::operation::create_routing_profile::CreateRoutingProfileInput).
-    pub fn builder(
-    ) -> crate::operation::create_routing_profile::builders::CreateRoutingProfileInputBuilder {
+    pub fn builder() -> crate::operation::create_routing_profile::builders::CreateRoutingProfileInputBuilder {
         crate::operation::create_routing_profile::builders::CreateRoutingProfileInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateRoutingProfileInput`](crate::operation::create_routing_profile::CreateRoutingProfileInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRoutingProfileInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) default_outbound_queue_id: ::std::option::Option<::std::string::String>,
-    pub(crate) queue_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
-    pub(crate) media_concurrencies:
-        ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) queue_configs: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
+    pub(crate) media_concurrencies: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRoutingProfileInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -136,18 +120,12 @@ impl CreateRoutingProfileInputBuilder {
         &self.description
     }
     /// <p>The default outbound queue for the routing profile.</p>
-    pub fn default_outbound_queue_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_outbound_queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_outbound_queue_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default outbound queue for the routing profile.</p>
-    pub fn set_default_outbound_queue_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_outbound_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_outbound_queue_id = input;
         self
     }
@@ -169,18 +147,13 @@ impl CreateRoutingProfileInputBuilder {
     }
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
     /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>. </p>
-    pub fn set_queue_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
-    ) -> Self {
+    pub fn set_queue_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>) -> Self {
         self.queue_configs = input;
         self
     }
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
     /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>. </p>
-    pub fn get_queue_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>> {
+    pub fn get_queue_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>> {
         &self.queue_configs
     }
     /// Appends an item to `media_concurrencies`.
@@ -195,17 +168,12 @@ impl CreateRoutingProfileInputBuilder {
         self
     }
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    pub fn set_media_concurrencies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
-    ) -> Self {
+    pub fn set_media_concurrencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>) -> Self {
         self.media_concurrencies = input;
         self
     }
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    pub fn get_media_concurrencies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>> {
+    pub fn get_media_concurrencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>> {
         &self.media_concurrencies
     }
     /// Adds a key-value pair to `tags`.
@@ -213,51 +181,34 @@ impl CreateRoutingProfileInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRoutingProfileInput`](crate::operation::create_routing_profile::CreateRoutingProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_routing_profile::CreateRoutingProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_routing_profile::CreateRoutingProfileInput {
-                instance_id: self.instance_id,
-                name: self.name,
-                description: self.description,
-                default_outbound_queue_id: self.default_outbound_queue_id,
-                queue_configs: self.queue_configs,
-                media_concurrencies: self.media_concurrencies,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_routing_profile::CreateRoutingProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_routing_profile::CreateRoutingProfileInput {
+            instance_id: self.instance_id,
+            name: self.name,
+            description: self.description,
+            default_outbound_queue_id: self.default_outbound_queue_id,
+            queue_configs: self.queue_configs,
+            media_concurrencies: self.media_concurrencies,
+            tags: self.tags,
+        })
     }
 }

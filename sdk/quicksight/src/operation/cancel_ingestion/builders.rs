@@ -10,10 +10,7 @@ impl CancelIngestionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_ingestion::CancelIngestionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_ingestion::CancelIngestionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_ingestion::CancelIngestionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_ingestion();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CancelIngestionFluentBuilder {
         }
     }
     /// Access the CancelIngestion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_ingestion::builders::CancelIngestionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_ingestion::builders::CancelIngestionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CancelIngestionFluentBuilder {
             crate::operation::cancel_ingestion::CancelIngestion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_ingestion::CancelIngestionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_ingestion::CancelIngestionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CancelIngestionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CancelIngestionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_ingestion::CancelIngestionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_ingestion::CancelIngestionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_ingestion::CancelIngestionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CancelIngestionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_ingestion::CancelIngestionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_ingestion::CancelIngestionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_ingestion::CancelIngestionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CancelIngestionFluentBuilder {
             crate::operation::cancel_ingestion::CancelIngestion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_ingestion::CancelIngestionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_ingestion::CancelIngestionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

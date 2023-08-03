@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::stop_dev_environment::StopDevEnvironmentOutput::id): <p>The system-generated unique ID of the Dev Environment. </p>
     ///   - [`status(Option<DevEnvironmentStatus>)`](crate::operation::stop_dev_environment::StopDevEnvironmentOutput::status): <p>The status of the Dev Environment. </p>
     /// - On failure, responds with [`SdkError<StopDevEnvironmentError>`](crate::operation::stop_dev_environment::StopDevEnvironmentError)
-    pub fn stop_dev_environment(
-        &self,
-    ) -> crate::operation::stop_dev_environment::builders::StopDevEnvironmentFluentBuilder {
-        crate::operation::stop_dev_environment::builders::StopDevEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_dev_environment(&self) -> crate::operation::stop_dev_environment::builders::StopDevEnvironmentFluentBuilder {
+        crate::operation::stop_dev_environment::builders::StopDevEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

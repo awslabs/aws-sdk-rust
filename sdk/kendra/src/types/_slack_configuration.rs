@@ -50,8 +50,7 @@ pub struct SlackConfiguration {
     pub exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Slack data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Slack fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Slack data source field names must exist in your Slack custom metadata.</p>
     #[doc(hidden)]
-    pub field_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+    pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl SlackConfiguration {
     /// <p>The identifier of the team in the Slack workspace. For example, <i>T0123456789</i>.</p>
@@ -67,9 +66,7 @@ impl SlackConfiguration {
         self.secret_arn.as_deref()
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Slack. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    pub fn vpc_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>Specify whether to index public channels, private channels, group messages, and direct messages. You can specify one or more of these options.</p>
@@ -114,9 +111,7 @@ impl SlackConfiguration {
         self.exclusion_patterns.as_deref()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Slack data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Slack fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Slack data source field names must exist in your Slack custom metadata.</p>
-    pub fn field_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
+    pub fn field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
         self.field_mappings.as_deref()
     }
 }
@@ -129,9 +124,7 @@ impl SlackConfiguration {
 
 /// A builder for [`SlackConfiguration`](crate::types::SlackConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlackConfigurationBuilder {
     pub(crate) team_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
@@ -142,13 +135,11 @@ pub struct SlackConfigurationBuilder {
     pub(crate) exclude_archived: ::std::option::Option<bool>,
     pub(crate) since_crawl_date: ::std::option::Option<::std::string::String>,
     pub(crate) look_back_period: ::std::option::Option<i32>,
-    pub(crate) private_channel_filter:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) private_channel_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) public_channel_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) field_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+    pub(crate) field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl SlackConfigurationBuilder {
     /// <p>The identifier of the team in the Slack workspace. For example, <i>T0123456789</i>.</p>
@@ -197,17 +188,12 @@ impl SlackConfigurationBuilder {
         self
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Slack. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
-    ) -> Self {
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>) -> Self {
         self.vpc_configuration = input;
         self
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Slack. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    pub fn get_vpc_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
         &self.vpc_configuration
     }
     /// Appends an item to `slack_entity_list`.
@@ -222,17 +208,12 @@ impl SlackConfigurationBuilder {
         self
     }
     /// <p>Specify whether to index public channels, private channels, group messages, and direct messages. You can specify one or more of these options.</p>
-    pub fn set_slack_entity_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SlackEntity>>,
-    ) -> Self {
+    pub fn set_slack_entity_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlackEntity>>) -> Self {
         self.slack_entity_list = input;
         self
     }
     /// <p>Specify whether to index public channels, private channels, group messages, and direct messages. You can specify one or more of these options.</p>
-    pub fn get_slack_entity_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlackEntity>> {
+    pub fn get_slack_entity_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlackEntity>> {
         &self.slack_entity_list
     }
     /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the Slack change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Slack.</p>
@@ -278,18 +259,12 @@ impl SlackConfigurationBuilder {
         &self.exclude_archived
     }
     /// <p>The date to start crawling your data from your Slack workspace team. The date must follow this format: <code>yyyy-mm-dd</code>.</p>
-    pub fn since_crawl_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn since_crawl_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.since_crawl_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date to start crawling your data from your Slack workspace team. The date must follow this format: <code>yyyy-mm-dd</code>.</p>
-    pub fn set_since_crawl_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_since_crawl_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.since_crawl_date = input;
         self
     }
@@ -319,27 +294,19 @@ impl SlackConfigurationBuilder {
     /// To override the contents of this collection use [`set_private_channel_filter`](Self::set_private_channel_filter).
     ///
     /// <p>The list of private channel names from your Slack workspace team. You use this if you want to index specific private channels, not all private channels. You can also use regular expression patterns to filter private channels.</p>
-    pub fn private_channel_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_channel_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.private_channel_filter.unwrap_or_default();
         v.push(input.into());
         self.private_channel_filter = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of private channel names from your Slack workspace team. You use this if you want to index specific private channels, not all private channels. You can also use regular expression patterns to filter private channels.</p>
-    pub fn set_private_channel_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_private_channel_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.private_channel_filter = input;
         self
     }
     /// <p>The list of private channel names from your Slack workspace team. You use this if you want to index specific private channels, not all private channels. You can also use regular expression patterns to filter private channels.</p>
-    pub fn get_private_channel_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_private_channel_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.private_channel_filter
     }
     /// Appends an item to `public_channel_filter`.
@@ -347,27 +314,19 @@ impl SlackConfigurationBuilder {
     /// To override the contents of this collection use [`set_public_channel_filter`](Self::set_public_channel_filter).
     ///
     /// <p>The list of public channel names to index from your Slack workspace team. You use this if you want to index specific public channels, not all public channels. You can also use regular expression patterns to filter public channels.</p>
-    pub fn public_channel_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_channel_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.public_channel_filter.unwrap_or_default();
         v.push(input.into());
         self.public_channel_filter = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of public channel names to index from your Slack workspace team. You use this if you want to index specific public channels, not all public channels. You can also use regular expression patterns to filter public channels.</p>
-    pub fn set_public_channel_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_public_channel_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.public_channel_filter = input;
         self
     }
     /// <p>The list of public channel names to index from your Slack workspace team. You use this if you want to index specific public channels, not all public channels. You can also use regular expression patterns to filter public channels.</p>
-    pub fn get_public_channel_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_public_channel_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.public_channel_filter
     }
     /// Appends an item to `inclusion_patterns`.
@@ -375,27 +334,19 @@ impl SlackConfigurationBuilder {
     /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
     ///
     /// <p>A list of regular expression patterns to include certain attached files in your Slack workspace team. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn inclusion_patterns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inclusion_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inclusion_patterns.unwrap_or_default();
         v.push(input.into());
         self.inclusion_patterns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of regular expression patterns to include certain attached files in your Slack workspace team. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn set_inclusion_patterns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_inclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inclusion_patterns = input;
         self
     }
     /// <p>A list of regular expression patterns to include certain attached files in your Slack workspace team. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn get_inclusion_patterns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.inclusion_patterns
     }
     /// Appends an item to `exclusion_patterns`.
@@ -403,27 +354,19 @@ impl SlackConfigurationBuilder {
     /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
     ///
     /// <p>A list of regular expression patterns to exclude certain attached files in your Slack workspace team. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn exclusion_patterns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusion_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclusion_patterns.unwrap_or_default();
         v.push(input.into());
         self.exclusion_patterns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of regular expression patterns to exclude certain attached files in your Slack workspace team. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn set_exclusion_patterns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_exclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.exclusion_patterns = input;
         self
     }
     /// <p>A list of regular expression patterns to exclude certain attached files in your Slack workspace team. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn get_exclusion_patterns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.exclusion_patterns
     }
     /// Appends an item to `field_mappings`.
@@ -438,17 +381,12 @@ impl SlackConfigurationBuilder {
         self
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Slack data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Slack fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Slack data source field names must exist in your Slack custom metadata.</p>
-    pub fn set_field_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
-    ) -> Self {
+    pub fn set_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
         self.field_mappings = input;
         self
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Slack data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Slack fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Slack data source field names must exist in your Slack custom metadata.</p>
-    pub fn get_field_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+    pub fn get_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
         &self.field_mappings
     }
     /// Consumes the builder and constructs a [`SlackConfiguration`](crate::types::SlackConfiguration).

@@ -5,12 +5,10 @@
 pub struct ListAnomaliesForInsightOutput {
     /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies </p>
     #[doc(hidden)]
-    pub proactive_anomalies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProactiveAnomalySummary>>,
+    pub proactive_anomalies: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveAnomalySummary>>,
     /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies </p>
     #[doc(hidden)]
-    pub reactive_anomalies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReactiveAnomalySummary>>,
+    pub reactive_anomalies: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveAnomalySummary>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -18,15 +16,11 @@ pub struct ListAnomaliesForInsightOutput {
 }
 impl ListAnomaliesForInsightOutput {
     /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies </p>
-    pub fn proactive_anomalies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProactiveAnomalySummary]> {
+    pub fn proactive_anomalies(&self) -> ::std::option::Option<&[crate::types::ProactiveAnomalySummary]> {
         self.proactive_anomalies.as_deref()
     }
     /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies </p>
-    pub fn reactive_anomalies(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReactiveAnomalySummary]> {
+    pub fn reactive_anomalies(&self) -> ::std::option::Option<&[crate::types::ReactiveAnomalySummary]> {
         self.reactive_anomalies.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -41,23 +35,17 @@ impl ::aws_http::request_id::RequestId for ListAnomaliesForInsightOutput {
 }
 impl ListAnomaliesForInsightOutput {
     /// Creates a new builder-style object to manufacture [`ListAnomaliesForInsightOutput`](crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightOutput).
-    pub fn builder(
-    ) -> crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightOutputBuilder {
         crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAnomaliesForInsightOutput`](crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnomaliesForInsightOutputBuilder {
-    pub(crate) proactive_anomalies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProactiveAnomalySummary>>,
-    pub(crate) reactive_anomalies:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReactiveAnomalySummary>>,
+    pub(crate) proactive_anomalies: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveAnomalySummary>>,
+    pub(crate) reactive_anomalies: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveAnomalySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -74,17 +62,12 @@ impl ListAnomaliesForInsightOutputBuilder {
         self
     }
     /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies </p>
-    pub fn set_proactive_anomalies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveAnomalySummary>>,
-    ) -> Self {
+    pub fn set_proactive_anomalies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProactiveAnomalySummary>>) -> Self {
         self.proactive_anomalies = input;
         self
     }
     /// <p> An array of <code>ProactiveAnomalySummary</code> objects that represent the requested anomalies </p>
-    pub fn get_proactive_anomalies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProactiveAnomalySummary>> {
+    pub fn get_proactive_anomalies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProactiveAnomalySummary>> {
         &self.proactive_anomalies
     }
     /// Appends an item to `reactive_anomalies`.
@@ -99,17 +82,12 @@ impl ListAnomaliesForInsightOutputBuilder {
         self
     }
     /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies </p>
-    pub fn set_reactive_anomalies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveAnomalySummary>>,
-    ) -> Self {
+    pub fn set_reactive_anomalies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReactiveAnomalySummary>>) -> Self {
         self.reactive_anomalies = input;
         self
     }
     /// <p> An array of <code>ReactiveAnomalySummary</code> objects that represent the requested anomalies </p>
-    pub fn get_reactive_anomalies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReactiveAnomalySummary>> {
+    pub fn get_reactive_anomalies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReactiveAnomalySummary>> {
         &self.reactive_anomalies
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -136,9 +114,7 @@ impl ListAnomaliesForInsightOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAnomaliesForInsightOutput`](crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightOutput {
+    pub fn build(self) -> crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightOutput {
         crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightOutput {
             proactive_anomalies: self.proactive_anomalies,
             reactive_anomalies: self.reactive_anomalies,

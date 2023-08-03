@@ -30,27 +30,19 @@ impl GetArchiveRuleInput {
 
 /// A builder for [`GetArchiveRuleInput`](crate::operation::get_archive_rule::GetArchiveRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetArchiveRuleInputBuilder {
     pub(crate) analyzer_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
 }
 impl GetArchiveRuleInputBuilder {
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub fn analyzer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub fn set_analyzer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_analyzer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analyzer_name = input;
         self
     }
@@ -75,10 +67,7 @@ impl GetArchiveRuleInputBuilder {
     /// Consumes the builder and constructs a [`GetArchiveRuleInput`](crate::operation::get_archive_rule::GetArchiveRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_archive_rule::GetArchiveRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_archive_rule::GetArchiveRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_archive_rule::GetArchiveRuleInput {
             analyzer_name: self.analyzer_name,
             rule_name: self.rule_name,

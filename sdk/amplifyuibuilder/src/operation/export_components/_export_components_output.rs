@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ExportComponentsOutput {
 }
 impl ExportComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ExportComponentsOutput`](crate::operation::export_components::ExportComponentsOutput).
-    pub fn builder() -> crate::operation::export_components::builders::ExportComponentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::export_components::builders::ExportComponentsOutputBuilder {
         crate::operation::export_components::builders::ExportComponentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ExportComponentsOutput`](crate::operation::export_components::ExportComponentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportComponentsOutputBuilder {
     pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::Component>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl ExportComponentsOutputBuilder {
         self
     }
     /// <p>Represents the configuration of the exported components.</p>
-    pub fn set_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Component>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Component>>) -> Self {
         self.entities = input;
         self
     }

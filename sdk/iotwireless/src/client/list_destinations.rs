@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_destinations::ListDestinationsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`destination_list(Option<Vec<Destinations>>)`](crate::operation::list_destinations::ListDestinationsOutput::destination_list): <p>The list of destinations.</p>
     /// - On failure, responds with [`SdkError<ListDestinationsError>`](crate::operation::list_destinations::ListDestinationsError)
-    pub fn list_destinations(
-        &self,
-    ) -> crate::operation::list_destinations::builders::ListDestinationsFluentBuilder {
-        crate::operation::list_destinations::builders::ListDestinationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_destinations(&self) -> crate::operation::list_destinations::builders::ListDestinationsFluentBuilder {
+        crate::operation::list_destinations::builders::ListDestinationsFluentBuilder::new(self.handle.clone())
     }
 }

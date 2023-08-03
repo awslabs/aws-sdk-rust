@@ -22,16 +22,14 @@ impl ListLoggingConfigurationsInput {
 }
 impl ListLoggingConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsInput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsInput).
-    pub fn builder() -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder {
         crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListLoggingConfigurationsInput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLoggingConfigurationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -72,11 +70,9 @@ impl ListLoggingConfigurationsInputBuilder {
         crate::operation::list_logging_configurations::ListLoggingConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_logging_configurations::ListLoggingConfigurationsInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_logging_configurations::ListLoggingConfigurationsInput {
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+        })
     }
 }

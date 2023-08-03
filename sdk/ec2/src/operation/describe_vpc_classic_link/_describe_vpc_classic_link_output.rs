@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeVpcClassicLinkOutput {
 }
 impl DescribeVpcClassicLinkOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcClassicLinkOutput`](crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkOutputBuilder {
         crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcClassicLinkOutput`](crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcClassicLinkOutputBuilder {
     pub(crate) vpcs: ::std::option::Option<::std::vec::Vec<crate::types::VpcClassicLink>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl DescribeVpcClassicLinkOutputBuilder {
         self
     }
     /// <p>The ClassicLink status of the VPCs.</p>
-    pub fn set_vpcs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcClassicLink>>,
-    ) -> Self {
+    pub fn set_vpcs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcClassicLink>>) -> Self {
         self.vpcs = input;
         self
     }
     /// <p>The ClassicLink status of the VPCs.</p>
-    pub fn get_vpcs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcClassicLink>> {
+    pub fn get_vpcs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcClassicLink>> {
         &self.vpcs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -73,9 +64,7 @@ impl DescribeVpcClassicLinkOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeVpcClassicLinkOutput`](crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput {
+    pub fn build(self) -> crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput {
         crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput {
             vpcs: self.vpcs,
             _request_id: self._request_id,

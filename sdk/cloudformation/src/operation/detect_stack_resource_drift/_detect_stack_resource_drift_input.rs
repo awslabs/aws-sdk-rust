@@ -22,18 +22,14 @@ impl DetectStackResourceDriftInput {
 }
 impl DetectStackResourceDriftInput {
     /// Creates a new builder-style object to manufacture [`DetectStackResourceDriftInput`](crate::operation::detect_stack_resource_drift::DetectStackResourceDriftInput).
-    pub fn builder(
-    ) -> crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftInputBuilder
-    {
+    pub fn builder() -> crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftInputBuilder {
         crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftInputBuilder::default()
     }
 }
 
 /// A builder for [`DetectStackResourceDriftInput`](crate::operation::detect_stack_resource_drift::DetectStackResourceDriftInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectStackResourceDriftInputBuilder {
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) logical_resource_id: ::std::option::Option<::std::string::String>,
@@ -54,18 +50,12 @@ impl DetectStackResourceDriftInputBuilder {
         &self.stack_name
     }
     /// <p>The logical name of the resource for which to return drift information.</p>
-    pub fn logical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The logical name of the resource for which to return drift information.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logical_resource_id = input;
         self
     }
@@ -80,11 +70,9 @@ impl DetectStackResourceDriftInputBuilder {
         crate::operation::detect_stack_resource_drift::DetectStackResourceDriftInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::detect_stack_resource_drift::DetectStackResourceDriftInput {
-                stack_name: self.stack_name,
-                logical_resource_id: self.logical_resource_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::detect_stack_resource_drift::DetectStackResourceDriftInput {
+            stack_name: self.stack_name,
+            logical_resource_id: self.logical_resource_id,
+        })
     }
 }

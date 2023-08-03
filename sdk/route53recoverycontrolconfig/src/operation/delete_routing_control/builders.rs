@@ -37,9 +37,7 @@ impl DeleteRoutingControlFluentBuilder {
         }
     }
     /// Access the DeleteRoutingControl as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_routing_control::builders::DeleteRoutingControlInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_routing_control::builders::DeleteRoutingControlInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl DeleteRoutingControlFluentBuilder {
             crate::operation::delete_routing_control::DeleteRoutingControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_routing_control::DeleteRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_routing_control::DeleteRoutingControlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl DeleteRoutingControlFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl DeleteRoutingControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_routing_control::DeleteRoutingControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_routing_control::DeleteRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_routing_control::DeleteRoutingControlError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl DeleteRoutingControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_routing_control::DeleteRoutingControlOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_routing_control::DeleteRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_routing_control::DeleteRoutingControlError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl DeleteRoutingControlFluentBuilder {
             crate::operation::delete_routing_control::DeleteRoutingControl,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_routing_control::DeleteRoutingControlError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_routing_control::DeleteRoutingControlError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
-    pub fn routing_control_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.routing_control_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
-    pub fn set_routing_control_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_routing_control_arn(input);
         self
     }

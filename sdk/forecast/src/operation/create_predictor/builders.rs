@@ -10,10 +10,7 @@ impl CreatePredictorInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_predictor::CreatePredictorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_predictor::CreatePredictorError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_predictor::CreatePredictorError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_predictor();
         fluent_builder.inner = self;
@@ -58,9 +55,7 @@ impl CreatePredictorFluentBuilder {
         }
     }
     /// Access the CreatePredictor as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_predictor::builders::CreatePredictorInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_predictor::builders::CreatePredictorInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -72,9 +67,7 @@ impl CreatePredictorFluentBuilder {
             crate::operation::create_predictor::CreatePredictor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_predictor::CreatePredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_predictor::CreatePredictorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -84,10 +77,7 @@ impl CreatePredictorFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -96,9 +86,7 @@ impl CreatePredictorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_predictor::CreatePredictorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_predictor::CreatePredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_predictor::CreatePredictorError>,
     > {
         let op = self
             .inner
@@ -121,9 +109,7 @@ impl CreatePredictorFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_predictor::CreatePredictorOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_predictor::CreatePredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_predictor::CreatePredictorError>,
     > {
         self.send_middleware().await
     }
@@ -137,25 +123,17 @@ impl CreatePredictorFluentBuilder {
             crate::operation::create_predictor::CreatePredictor,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_predictor::CreatePredictorError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_predictor::CreatePredictorError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A name for the predictor.</p>
-    pub fn predictor_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn predictor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.predictor_name(input.into());
         self
     }
     /// <p>A name for the predictor.</p>
-    pub fn set_predictor_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_predictor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_predictor_name(input);
         self
     }
@@ -173,10 +151,7 @@ impl CreatePredictorFluentBuilder {
     /// <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>
     /// <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>
     /// </ul>
-    pub fn algorithm_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn algorithm_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.algorithm_arn(input.into());
         self
     }
@@ -190,10 +165,7 @@ impl CreatePredictorFluentBuilder {
     /// <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>
     /// <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>
     /// </ul>
-    pub fn set_algorithm_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_algorithm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_algorithm_arn(input);
         self
     }
@@ -236,27 +208,19 @@ impl CreatePredictorFluentBuilder {
     ///
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
     /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
-    pub fn forecast_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.forecast_types(input.into());
         self
     }
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
     /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
-    pub fn set_forecast_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_forecast_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_forecast_types(input);
         self
     }
     /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>
     /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
-    pub fn get_forecast_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_forecast_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_forecast_types()
     }
     /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and chooses the best algorithm and configuration for your training dataset.</p>
@@ -284,10 +248,7 @@ impl CreatePredictorFluentBuilder {
     /// </note>
     /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
-    pub fn auto_ml_override_strategy(
-        mut self,
-        input: crate::types::AutoMlOverrideStrategy,
-    ) -> Self {
+    pub fn auto_ml_override_strategy(mut self, input: crate::types::AutoMlOverrideStrategy) -> Self {
         self.inner = self.inner.auto_ml_override_strategy(input);
         self
     }
@@ -296,10 +257,7 @@ impl CreatePredictorFluentBuilder {
     /// </note>
     /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
-    pub fn set_auto_ml_override_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlOverrideStrategy>,
-    ) -> Self {
+    pub fn set_auto_ml_override_strategy(mut self, input: ::std::option::Option<crate::types::AutoMlOverrideStrategy>) -> Self {
         self.inner = self.inner.set_auto_ml_override_strategy(input);
         self
     }
@@ -308,9 +266,7 @@ impl CreatePredictorFluentBuilder {
     /// </note>
     /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
-    pub fn get_auto_ml_override_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlOverrideStrategy> {
+    pub fn get_auto_ml_override_strategy(&self) -> &::std::option::Option<crate::types::AutoMlOverrideStrategy> {
         self.inner.get_auto_ml_override_strategy()
     }
     /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>
@@ -364,19 +320,13 @@ impl CreatePredictorFluentBuilder {
     /// <p>The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see <code>aws-forecast-choosing-recipes</code>.</p>
     pub fn set_training_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_training_parameters(input);
         self
     }
     /// <p>The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see <code>aws-forecast-choosing-recipes</code>.</p>
-    pub fn get_training_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_training_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_training_parameters()
     }
     /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
@@ -385,17 +335,12 @@ impl CreatePredictorFluentBuilder {
         self
     }
     /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
-    pub fn set_evaluation_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::EvaluationParameters>,
-    ) -> Self {
+    pub fn set_evaluation_parameters(mut self, input: ::std::option::Option<crate::types::EvaluationParameters>) -> Self {
         self.inner = self.inner.set_evaluation_parameters(input);
         self
     }
     /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
-    pub fn get_evaluation_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::EvaluationParameters> {
+    pub fn get_evaluation_parameters(&self) -> &::std::option::Option<crate::types::EvaluationParameters> {
         self.inner.get_evaluation_parameters()
     }
     /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
@@ -406,18 +351,13 @@ impl CreatePredictorFluentBuilder {
     }
     /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
     /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.</p>
-    pub fn set_hpo_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTuningJobConfig>,
-    ) -> Self {
+    pub fn set_hpo_config(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobConfig>) -> Self {
         self.inner = self.inner.set_hpo_config(input);
         self
     }
     /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
     /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.</p>
-    pub fn get_hpo_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobConfig> {
+    pub fn get_hpo_config(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobConfig> {
         self.inner.get_hpo_config()
     }
     /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
@@ -426,10 +366,7 @@ impl CreatePredictorFluentBuilder {
         self
     }
     /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
@@ -443,17 +380,12 @@ impl CreatePredictorFluentBuilder {
         self
     }
     /// <p>The featurization configuration.</p>
-    pub fn set_featurization_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FeaturizationConfig>,
-    ) -> Self {
+    pub fn set_featurization_config(mut self, input: ::std::option::Option<crate::types::FeaturizationConfig>) -> Self {
         self.inner = self.inner.set_featurization_config(input);
         self
     }
     /// <p>The featurization configuration.</p>
-    pub fn get_featurization_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::FeaturizationConfig> {
+    pub fn get_featurization_config(&self) -> &::std::option::Option<crate::types::FeaturizationConfig> {
         self.inner.get_featurization_config()
     }
     /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
@@ -462,10 +394,7 @@ impl CreatePredictorFluentBuilder {
         self
     }
     /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.inner = self.inner.set_encryption_config(input);
         self
     }
@@ -503,10 +432,7 @@ impl CreatePredictorFluentBuilder {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -530,17 +456,12 @@ impl CreatePredictorFluentBuilder {
         self
     }
     /// <p>The accuracy metric used to optimize the predictor.</p>
-    pub fn set_optimization_metric(
-        mut self,
-        input: ::std::option::Option<crate::types::OptimizationMetric>,
-    ) -> Self {
+    pub fn set_optimization_metric(mut self, input: ::std::option::Option<crate::types::OptimizationMetric>) -> Self {
         self.inner = self.inner.set_optimization_metric(input);
         self
     }
     /// <p>The accuracy metric used to optimize the predictor.</p>
-    pub fn get_optimization_metric(
-        &self,
-    ) -> &::std::option::Option<crate::types::OptimizationMetric> {
+    pub fn get_optimization_metric(&self) -> &::std::option::Option<crate::types::OptimizationMetric> {
         self.inner.get_optimization_metric()
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`config_rules(Option<Vec<ConfigRule>>)`](crate::operation::describe_config_rules::DescribeConfigRulesOutput::config_rules): <p>The details about your Config rules.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_config_rules::DescribeConfigRulesOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<DescribeConfigRulesError>`](crate::operation::describe_config_rules::DescribeConfigRulesError)
-    pub fn describe_config_rules(
-        &self,
-    ) -> crate::operation::describe_config_rules::builders::DescribeConfigRulesFluentBuilder {
-        crate::operation::describe_config_rules::builders::DescribeConfigRulesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_config_rules(&self) -> crate::operation::describe_config_rules::builders::DescribeConfigRulesFluentBuilder {
+        crate::operation::describe_config_rules::builders::DescribeConfigRulesFluentBuilder::new(self.handle.clone())
     }
 }

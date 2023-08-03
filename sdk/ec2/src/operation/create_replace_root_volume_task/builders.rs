@@ -27,7 +27,7 @@ impl CreateReplaceRootVolumeTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateReplaceRootVolumeTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_replace_root_volume_task::builders::CreateReplaceRootVolumeTaskInputBuilder,
+    inner: crate::operation::create_replace_root_volume_task::builders::CreateReplaceRootVolumeTaskInputBuilder,
 }
 impl CreateReplaceRootVolumeTaskFluentBuilder {
     /// Creates a new `CreateReplaceRootVolumeTask`.
@@ -38,7 +38,7 @@ impl CreateReplaceRootVolumeTaskFluentBuilder {
         }
     }
     /// Access the CreateReplaceRootVolumeTask as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_replace_root_volume_task::builders::CreateReplaceRootVolumeTaskInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_replace_root_volume_task::builders::CreateReplaceRootVolumeTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl CreateReplaceRootVolumeTaskFluentBuilder {
             crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl CreateReplaceRootVolumeTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl CreateReplaceRootVolumeTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl CreateReplaceRootVolumeTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl CreateReplaceRootVolumeTaskFluentBuilder {
             crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskError>,
     > {
         self.customize_middleware().await
     }
@@ -190,17 +179,12 @@ impl CreateReplaceRootVolumeTaskFluentBuilder {
         self
     }
     /// <p>The tags to apply to the root volume replacement task.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to apply to the root volume replacement task.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>The ID of the AMI to use to restore the root volume. The specified AMI must have the same product code, billing information, architecture type, and virtualization type as that of the instance.</p>

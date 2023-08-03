@@ -37,9 +37,7 @@ impl ListExtensionsOutput {
 
 /// A builder for [`ListExtensionsOutput`](crate::operation::list_extensions::ListExtensionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListExtensionsOutputBuilder {
     pub(crate) extensions: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +56,12 @@ impl ListExtensionsOutputBuilder {
         self
     }
     /// <p>The list of extensions.</p>
-    pub fn set_extensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionDetails>>,
-    ) -> Self {
+    pub fn set_extensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionDetails>>) -> Self {
         self.extensions = input;
         self
     }
     /// <p>The list of extensions.</p>
-    pub fn get_extensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtensionDetails>> {
+    pub fn get_extensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtensionDetails>> {
         &self.extensions
     }
     /// <p>The token that indicates the start of the next sequential page of results.</p>

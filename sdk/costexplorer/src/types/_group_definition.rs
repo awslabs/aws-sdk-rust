@@ -30,9 +30,7 @@ impl GroupDefinition {
 
 /// A builder for [`GroupDefinition`](crate::types::GroupDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupDefinitionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::GroupDefinitionType>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl GroupDefinitionBuilder {
         self
     }
     /// <p>The string that represents the type of group.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupDefinitionType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::GroupDefinitionType>) -> Self {
         self.r#type = input;
         self
     }

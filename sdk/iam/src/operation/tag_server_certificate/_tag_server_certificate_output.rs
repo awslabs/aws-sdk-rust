@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for TagServerCertificateOutput {
 }
 impl TagServerCertificateOutput {
     /// Creates a new builder-style object to manufacture [`TagServerCertificateOutput`](crate::operation::tag_server_certificate::TagServerCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::tag_server_certificate::builders::TagServerCertificateOutputBuilder {
+    pub fn builder() -> crate::operation::tag_server_certificate::builders::TagServerCertificateOutputBuilder {
         crate::operation::tag_server_certificate::builders::TagServerCertificateOutputBuilder::default()
     }
 }
 
 /// A builder for [`TagServerCertificateOutput`](crate::operation::tag_server_certificate::TagServerCertificateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagServerCertificateOutputBuilder {
     _request_id: Option<String>,
 }

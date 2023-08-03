@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetDeploymentConfigOutput`](crate::operation::get_deployment_config::GetDeploymentConfigOutput) with field(s):
     ///   - [`deployment_config_info(Option<DeploymentConfigInfo>)`](crate::operation::get_deployment_config::GetDeploymentConfigOutput::deployment_config_info): <p>Information about the deployment configuration.</p>
     /// - On failure, responds with [`SdkError<GetDeploymentConfigError>`](crate::operation::get_deployment_config::GetDeploymentConfigError)
-    pub fn get_deployment_config(
-        &self,
-    ) -> crate::operation::get_deployment_config::builders::GetDeploymentConfigFluentBuilder {
-        crate::operation::get_deployment_config::builders::GetDeploymentConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_deployment_config(&self) -> crate::operation::get_deployment_config::builders::GetDeploymentConfigFluentBuilder {
+        crate::operation::get_deployment_config::builders::GetDeploymentConfigFluentBuilder::new(self.handle.clone())
     }
 }

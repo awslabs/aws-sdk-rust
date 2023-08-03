@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`inference_scheduler_arn(Option<String>)`](crate::operation::stop_inference_scheduler::StopInferenceSchedulerOutput::inference_scheduler_arn): <p>The Amazon Resource Name (ARN) of the inference schedule being stopped. </p>
     ///   - [`status(Option<InferenceSchedulerStatus>)`](crate::operation::stop_inference_scheduler::StopInferenceSchedulerOutput::status): <p>Indicates the status of the inference scheduler. </p>
     /// - On failure, responds with [`SdkError<StopInferenceSchedulerError>`](crate::operation::stop_inference_scheduler::StopInferenceSchedulerError)
-    pub fn stop_inference_scheduler(
-        &self,
-    ) -> crate::operation::stop_inference_scheduler::builders::StopInferenceSchedulerFluentBuilder
-    {
+    pub fn stop_inference_scheduler(&self) -> crate::operation::stop_inference_scheduler::builders::StopInferenceSchedulerFluentBuilder {
         crate::operation::stop_inference_scheduler::builders::StopInferenceSchedulerFluentBuilder::new(self.handle.clone())
     }
 }

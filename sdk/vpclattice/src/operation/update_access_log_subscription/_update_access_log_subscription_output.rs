@@ -49,16 +49,14 @@ impl ::aws_http::request_id::RequestId for UpdateAccessLogSubscriptionOutput {
 }
 impl UpdateAccessLogSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccessLogSubscriptionOutput`](crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionOutput).
-    pub fn builder() -> crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionOutputBuilder{
+    pub fn builder() -> crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionOutputBuilder {
         crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateAccessLogSubscriptionOutput`](crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateAccessLogSubscriptionOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -125,18 +123,12 @@ impl UpdateAccessLogSubscriptionOutputBuilder {
         &self.resource_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_arn = input;
         self
     }
@@ -154,9 +146,7 @@ impl UpdateAccessLogSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateAccessLogSubscriptionOutput`](crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionOutput {
+    pub fn build(self) -> crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionOutput {
         crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionOutput {
             id: self.id,
             arn: self.arn,

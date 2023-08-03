@@ -28,7 +28,7 @@ impl UpdateWorkspaceAuthenticationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceAuthenticationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationInputBuilder,
+    inner: crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationInputBuilder,
 }
 impl UpdateWorkspaceAuthenticationFluentBuilder {
     /// Creates a new `UpdateWorkspaceAuthentication`.
@@ -39,7 +39,7 @@ impl UpdateWorkspaceAuthenticationFluentBuilder {
         }
     }
     /// Access the UpdateWorkspaceAuthentication as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl UpdateWorkspaceAuthenticationFluentBuilder {
             crate::operation::update_workspace_authentication::UpdateWorkspaceAuthentication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl UpdateWorkspaceAuthenticationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl UpdateWorkspaceAuthenticationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl UpdateWorkspaceAuthenticationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl UpdateWorkspaceAuthenticationFluentBuilder {
             crate::operation::update_workspace_authentication::UpdateWorkspaceAuthentication,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationError>,
     > {
         self.customize_middleware().await
     }
@@ -141,25 +130,17 @@ impl UpdateWorkspaceAuthenticationFluentBuilder {
     /// To override the contents of this collection use [`set_authentication_providers`](Self::set_authentication_providers).
     ///
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    pub fn authentication_providers(
-        mut self,
-        input: crate::types::AuthenticationProviderTypes,
-    ) -> Self {
+    pub fn authentication_providers(mut self, input: crate::types::AuthenticationProviderTypes) -> Self {
         self.inner = self.inner.authentication_providers(input);
         self
     }
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    pub fn set_authentication_providers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
-    ) -> Self {
+    pub fn set_authentication_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>) -> Self {
         self.inner = self.inner.set_authentication_providers(input);
         self
     }
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    pub fn get_authentication_providers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>> {
+    pub fn get_authentication_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>> {
         self.inner.get_authentication_providers()
     }
     /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
@@ -168,17 +149,12 @@ impl UpdateWorkspaceAuthenticationFluentBuilder {
         self
     }
     /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
-    pub fn set_saml_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SamlConfiguration>,
-    ) -> Self {
+    pub fn set_saml_configuration(mut self, input: ::std::option::Option<crate::types::SamlConfiguration>) -> Self {
         self.inner = self.inner.set_saml_configuration(input);
         self
     }
     /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
-    pub fn get_saml_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SamlConfiguration> {
+    pub fn get_saml_configuration(&self) -> &::std::option::Option<crate::types::SamlConfiguration> {
         self.inner.get_saml_configuration()
     }
 }

@@ -46,9 +46,7 @@ impl AbortCriteria {
 
 /// A builder for [`AbortCriteria`](crate::types::AbortCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AbortCriteriaBuilder {
     pub(crate) failure_type: ::std::option::Option<crate::types::JobExecutionFailureType>,
     pub(crate) action: ::std::option::Option<crate::types::AbortAction>,
@@ -62,17 +60,12 @@ impl AbortCriteriaBuilder {
         self
     }
     /// <p>The type of job execution failures that can initiate a job abort.</p>
-    pub fn set_failure_type(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionFailureType>,
-    ) -> Self {
+    pub fn set_failure_type(mut self, input: ::std::option::Option<crate::types::JobExecutionFailureType>) -> Self {
         self.failure_type = input;
         self
     }
     /// <p>The type of job execution failures that can initiate a job abort.</p>
-    pub fn get_failure_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobExecutionFailureType> {
+    pub fn get_failure_type(&self) -> &::std::option::Option<crate::types::JobExecutionFailureType> {
         &self.failure_type
     }
     /// <p>The type of job action to take to initiate the job abort.</p>

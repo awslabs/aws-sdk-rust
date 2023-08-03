@@ -22,17 +22,14 @@ impl ListBackupVaultsInput {
 }
 impl ListBackupVaultsInput {
     /// Creates a new builder-style object to manufacture [`ListBackupVaultsInput`](crate::operation::list_backup_vaults::ListBackupVaultsInput).
-    pub fn builder() -> crate::operation::list_backup_vaults::builders::ListBackupVaultsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_backup_vaults::builders::ListBackupVaultsInputBuilder {
         crate::operation::list_backup_vaults::builders::ListBackupVaultsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBackupVaultsInput`](crate::operation::list_backup_vaults::ListBackupVaultsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBackupVaultsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -69,15 +66,10 @@ impl ListBackupVaultsInputBuilder {
     /// Consumes the builder and constructs a [`ListBackupVaultsInput`](crate::operation::list_backup_vaults::ListBackupVaultsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_backup_vaults::ListBackupVaultsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_backup_vaults::ListBackupVaultsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_backup_vaults::ListBackupVaultsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_backup_vaults::ListBackupVaultsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

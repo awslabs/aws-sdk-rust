@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateReportDefinitionOutput {
 }
 impl UpdateReportDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReportDefinitionOutput`](crate::operation::update_report_definition::UpdateReportDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_report_definition::builders::UpdateReportDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_report_definition::builders::UpdateReportDefinitionOutputBuilder {
         crate::operation::update_report_definition::builders::UpdateReportDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateReportDefinitionOutput`](crate::operation::update_report_definition::UpdateReportDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateReportDefinitionOutputBuilder {
     pub(crate) report_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

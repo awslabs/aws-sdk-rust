@@ -15,8 +15,7 @@ pub struct DeleteRecommendationPreferencesInput {
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>The name of the recommendation preference to delete.</p>
     #[doc(hidden)]
-    pub recommendation_preference_names:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferenceName>>,
+    pub recommendation_preference_names: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferenceName>>,
 }
 impl DeleteRecommendationPreferencesInput {
     /// <p>The target resource type of the recommendation preference to delete.</p>
@@ -32,29 +31,24 @@ impl DeleteRecommendationPreferencesInput {
         self.scope.as_ref()
     }
     /// <p>The name of the recommendation preference to delete.</p>
-    pub fn recommendation_preference_names(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::RecommendationPreferenceName]> {
+    pub fn recommendation_preference_names(&self) -> ::std::option::Option<&[crate::types::RecommendationPreferenceName]> {
         self.recommendation_preference_names.as_deref()
     }
 }
 impl DeleteRecommendationPreferencesInput {
     /// Creates a new builder-style object to manufacture [`DeleteRecommendationPreferencesInput`](crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesInput).
-    pub fn builder() -> crate::operation::delete_recommendation_preferences::builders::DeleteRecommendationPreferencesInputBuilder{
+    pub fn builder() -> crate::operation::delete_recommendation_preferences::builders::DeleteRecommendationPreferencesInputBuilder {
         crate::operation::delete_recommendation_preferences::builders::DeleteRecommendationPreferencesInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRecommendationPreferencesInput`](crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRecommendationPreferencesInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
-    pub(crate) recommendation_preference_names:
-        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferenceName>>,
+    pub(crate) recommendation_preference_names: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferenceName>>,
 }
 impl DeleteRecommendationPreferencesInputBuilder {
     /// <p>The target resource type of the recommendation preference to delete.</p>
@@ -69,10 +63,7 @@ impl DeleteRecommendationPreferencesInputBuilder {
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -105,10 +96,7 @@ impl DeleteRecommendationPreferencesInputBuilder {
     /// To override the contents of this collection use [`set_recommendation_preference_names`](Self::set_recommendation_preference_names).
     ///
     /// <p>The name of the recommendation preference to delete.</p>
-    pub fn recommendation_preference_names(
-        mut self,
-        input: crate::types::RecommendationPreferenceName,
-    ) -> Self {
+    pub fn recommendation_preference_names(mut self, input: crate::types::RecommendationPreferenceName) -> Self {
         let mut v = self.recommendation_preference_names.unwrap_or_default();
         v.push(input);
         self.recommendation_preference_names = ::std::option::Option::Some(v);
@@ -123,9 +111,7 @@ impl DeleteRecommendationPreferencesInputBuilder {
         self
     }
     /// <p>The name of the recommendation preference to delete.</p>
-    pub fn get_recommendation_preference_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferenceName>> {
+    pub fn get_recommendation_preference_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferenceName>> {
         &self.recommendation_preference_names
     }
     /// Consumes the builder and constructs a [`DeleteRecommendationPreferencesInput`](crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesInput).
@@ -137,13 +123,10 @@ impl DeleteRecommendationPreferencesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesInput {
-                resource_type: self.resource_type
-                ,
-                scope: self.scope
-                ,
-                recommendation_preference_names: self.recommendation_preference_names
-                ,
-            }
+                resource_type: self.resource_type,
+                scope: self.scope,
+                recommendation_preference_names: self.recommendation_preference_names,
+            },
         )
     }
 }

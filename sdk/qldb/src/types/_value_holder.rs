@@ -51,9 +51,7 @@ impl ValueHolderBuilder {
     }
     /// Consumes the builder and constructs a [`ValueHolder`](crate::types::ValueHolder).
     pub fn build(self) -> crate::types::ValueHolder {
-        crate::types::ValueHolder {
-            ion_text: self.ion_text,
-        }
+        crate::types::ValueHolder { ion_text: self.ion_text }
     }
 }
 impl ::std::fmt::Debug for ValueHolderBuilder {

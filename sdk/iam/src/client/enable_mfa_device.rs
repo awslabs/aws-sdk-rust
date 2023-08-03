@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`authentication_code2(impl ::std::convert::Into<String>)`](crate::operation::enable_mfa_device::builders::EnableMFADeviceFluentBuilder::authentication_code2) / [`set_authentication_code2(Option<String>)`](crate::operation::enable_mfa_device::builders::EnableMFADeviceFluentBuilder::set_authentication_code2): <p>A subsequent authentication code emitted by the device.</p>  <p>The format for this parameter is a string of six digits.</p> <important>   <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>  </important>
     /// - On success, responds with [`EnableMfaDeviceOutput`](crate::operation::enable_mfa_device::EnableMfaDeviceOutput)
     /// - On failure, responds with [`SdkError<EnableMFADeviceError>`](crate::operation::enable_mfa_device::EnableMFADeviceError)
-    pub fn enable_mfa_device(
-        &self,
-    ) -> crate::operation::enable_mfa_device::builders::EnableMFADeviceFluentBuilder {
-        crate::operation::enable_mfa_device::builders::EnableMFADeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn enable_mfa_device(&self) -> crate::operation::enable_mfa_device::builders::EnableMFADeviceFluentBuilder {
+        crate::operation::enable_mfa_device::builders::EnableMFADeviceFluentBuilder::new(self.handle.clone())
     }
 }

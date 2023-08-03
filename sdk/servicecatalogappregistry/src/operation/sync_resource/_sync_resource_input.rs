@@ -29,9 +29,7 @@ impl SyncResourceInput {
 
 /// A builder for [`SyncResourceInput`](crate::operation::sync_resource::SyncResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SyncResourceInputBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,
@@ -43,10 +41,7 @@ impl SyncResourceInputBuilder {
         self
     }
     /// <p>The type of resource of which the application will be associated.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -69,12 +64,7 @@ impl SyncResourceInputBuilder {
         &self.resource
     }
     /// Consumes the builder and constructs a [`SyncResourceInput`](crate::operation::sync_resource::SyncResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::sync_resource::SyncResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::sync_resource::SyncResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::sync_resource::SyncResourceInput {
             resource_type: self.resource_type,
             resource: self.resource,

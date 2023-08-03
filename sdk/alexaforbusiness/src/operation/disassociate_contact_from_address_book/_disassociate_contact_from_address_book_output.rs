@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateContactFromAddressBookOut
 }
 impl DisassociateContactFromAddressBookOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateContactFromAddressBookOutput`](crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput).
-    pub fn builder() -> crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookOutputBuilder {
         crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateContactFromAddressBookOutput`](crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateContactFromAddressBookOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DisassociateContactFromAddressBookOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateContactFromAddressBookOutput`](crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput).
-    pub fn build(self) -> crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput{
+    pub fn build(self) -> crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput {
         crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput {
             _request_id: self._request_id,
         }

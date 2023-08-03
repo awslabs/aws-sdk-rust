@@ -37,13 +37,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FixedPosition {
     #[allow(missing_docs)] // documentation missing in model
@@ -55,9 +49,7 @@ impl ::std::convert::From<&str> for FixedPosition {
     fn from(s: &str) -> Self {
         match s {
             "first" => FixedPosition::First,
-            other => {
-                FixedPosition::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => FixedPosition::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -95,9 +95,7 @@ impl CommandPlugin {
         self.response_start_date_time.as_ref()
     }
     /// <p>The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent. </p>
-    pub fn response_finish_date_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn response_finish_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.response_finish_date_time.as_ref()
     }
     /// <p>Output of the plugin execution.</p>
@@ -144,9 +142,7 @@ impl CommandPlugin {
 
 /// A builder for [`CommandPlugin`](crate::types::CommandPlugin).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommandPluginBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CommandPluginStatus>,
@@ -182,10 +178,7 @@ impl CommandPluginBuilder {
         self
     }
     /// <p>The status of this plugin. You can run a document with multiple plugins.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::CommandPluginStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CommandPluginStatus>) -> Self {
         self.status = input;
         self
     }
@@ -205,10 +198,7 @@ impl CommandPluginBuilder {
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist, or it might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and they don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
-    pub fn status_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_details = ::std::option::Option::Some(input.into());
         self
     }
@@ -224,10 +214,7 @@ impl CommandPluginBuilder {
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist, or it might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and they don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
-    pub fn set_status_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_details = input;
         self
     }
@@ -266,17 +253,12 @@ impl CommandPluginBuilder {
         self
     }
     /// <p>The time the plugin started running. </p>
-    pub fn set_response_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_response_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.response_start_date_time = input;
         self
     }
     /// <p>The time the plugin started running. </p>
-    pub fn get_response_start_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_response_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.response_start_date_time
     }
     /// <p>The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent. </p>
@@ -285,17 +267,12 @@ impl CommandPluginBuilder {
         self
     }
     /// <p>The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent. </p>
-    pub fn set_response_finish_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_response_finish_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.response_finish_date_time = input;
         self
     }
     /// <p>The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent. </p>
-    pub fn get_response_finish_date_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_response_finish_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.response_finish_date_time
     }
     /// <p>Output of the plugin execution.</p>
@@ -313,18 +290,12 @@ impl CommandPluginBuilder {
         &self.output
     }
     /// <p>The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command wasn't specified, then this string is empty.</p>
-    pub fn standard_output_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standard_output_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standard_output_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command wasn't specified, then this string is empty.</p>
-    pub fn set_standard_output_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standard_output_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standard_output_url = input;
         self
     }
@@ -333,18 +304,12 @@ impl CommandPluginBuilder {
         &self.standard_output_url
     }
     /// <p>The URL for the complete text written by the plugin to stderr. If execution isn't yet complete, then this string is empty.</p>
-    pub fn standard_error_url(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standard_error_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standard_error_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL for the complete text written by the plugin to stderr. If execution isn't yet complete, then this string is empty.</p>
-    pub fn set_standard_error_url(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_standard_error_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standard_error_url = input;
         self
     }
@@ -353,18 +318,12 @@ impl CommandPluginBuilder {
         &self.standard_error_url
     }
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services Systems Manager automatically determines the S3 bucket region.</p>
-    pub fn output_s3_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services Systems Manager automatically determines the S3 bucket region.</p>
-    pub fn set_output_s3_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_region = input;
         self
     }
@@ -378,10 +337,7 @@ impl CommandPluginBuilder {
     /// <p> <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
     /// <p> <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p> <code>awsrunShellScript</code> is the name of the plugin.</p>
-    pub fn output_s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
@@ -391,10 +347,7 @@ impl CommandPluginBuilder {
     /// <p> <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
     /// <p> <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p> <code>awsrunShellScript</code> is the name of the plugin.</p>
-    pub fn set_output_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_bucket_name = input;
         self
     }
@@ -413,10 +366,7 @@ impl CommandPluginBuilder {
     /// <p> <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
     /// <p> <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p> <code>awsrunShellScript</code> is the name of the plugin.</p>
-    pub fn output_s3_key_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
@@ -426,10 +376,7 @@ impl CommandPluginBuilder {
     /// <p> <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
     /// <p> <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p> <code>awsrunShellScript</code> is the name of the plugin.</p>
-    pub fn set_output_s3_key_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_key_prefix = input;
         self
     }

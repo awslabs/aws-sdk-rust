@@ -35,21 +35,16 @@ impl ::aws_http::request_id::RequestId for ListServerNeighborsOutput {
 }
 impl ListServerNeighborsOutput {
     /// Creates a new builder-style object to manufacture [`ListServerNeighborsOutput`](crate::operation::list_server_neighbors::ListServerNeighborsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_server_neighbors::builders::ListServerNeighborsOutputBuilder {
-        crate::operation::list_server_neighbors::builders::ListServerNeighborsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_server_neighbors::builders::ListServerNeighborsOutputBuilder {
+        crate::operation::list_server_neighbors::builders::ListServerNeighborsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListServerNeighborsOutput`](crate::operation::list_server_neighbors::ListServerNeighborsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServerNeighborsOutputBuilder {
-    pub(crate) neighbors:
-        ::std::option::Option<::std::vec::Vec<crate::types::NeighborConnectionDetail>>,
+    pub(crate) neighbors: ::std::option::Option<::std::vec::Vec<crate::types::NeighborConnectionDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) known_dependency_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -67,17 +62,12 @@ impl ListServerNeighborsOutputBuilder {
         self
     }
     /// <p>List of distinct servers that are one hop away from the given server.</p>
-    pub fn set_neighbors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NeighborConnectionDetail>>,
-    ) -> Self {
+    pub fn set_neighbors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NeighborConnectionDetail>>) -> Self {
         self.neighbors = input;
         self
     }
     /// <p>List of distinct servers that are one hop away from the given server.</p>
-    pub fn get_neighbors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NeighborConnectionDetail>> {
+    pub fn get_neighbors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NeighborConnectionDetail>> {
         &self.neighbors
     }
     /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>

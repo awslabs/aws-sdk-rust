@@ -65,9 +65,7 @@ impl TransformConfigParameter {
 
 /// A builder for [`TransformConfigParameter`](crate::types::TransformConfigParameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransformConfigParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ParamType>,
@@ -107,18 +105,12 @@ impl TransformConfigParameterBuilder {
         &self.r#type
     }
     /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
-    pub fn validation_rule(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_rule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_rule = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
-    pub fn set_validation_rule(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_rule = input;
         self
     }
@@ -127,18 +119,12 @@ impl TransformConfigParameterBuilder {
         &self.validation_rule
     }
     /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
-    pub fn validation_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
-    pub fn set_validation_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_message = input;
         self
     }
@@ -158,10 +144,7 @@ impl TransformConfigParameterBuilder {
         self
     }
     /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
-    pub fn set_value(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.value = input;
         self
     }

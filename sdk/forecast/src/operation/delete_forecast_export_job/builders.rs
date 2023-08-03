@@ -26,8 +26,7 @@ impl DeleteForecastExportJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteForecastExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobInputBuilder,
+    inner: crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobInputBuilder,
 }
 impl DeleteForecastExportJobFluentBuilder {
     /// Creates a new `DeleteForecastExportJob`.
@@ -38,10 +37,7 @@ impl DeleteForecastExportJobFluentBuilder {
         }
     }
     /// Access the DeleteForecastExportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DeleteForecastExportJobFluentBuilder {
             crate::operation::delete_forecast_export_job::DeleteForecastExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_forecast_export_job::DeleteForecastExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_forecast_export_job::DeleteForecastExportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DeleteForecastExportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DeleteForecastExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_forecast_export_job::DeleteForecastExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_forecast_export_job::DeleteForecastExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_forecast_export_job::DeleteForecastExportJobError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DeleteForecastExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_forecast_export_job::DeleteForecastExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_forecast_export_job::DeleteForecastExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_forecast_export_job::DeleteForecastExportJobError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DeleteForecastExportJobFluentBuilder {
             crate::operation::delete_forecast_export_job::DeleteForecastExportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_forecast_export_job::DeleteForecastExportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_forecast_export_job::DeleteForecastExportJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
-    pub fn forecast_export_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.forecast_export_job_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
-    pub fn set_forecast_export_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forecast_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_forecast_export_job_arn(input);
         self
     }

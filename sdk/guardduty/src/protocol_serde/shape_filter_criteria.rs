@@ -9,10 +9,7 @@ pub fn ser_filter_criteria(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_filter_criterion::ser_filter_criterion(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_filter_criterion::ser_filter_criterion(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }

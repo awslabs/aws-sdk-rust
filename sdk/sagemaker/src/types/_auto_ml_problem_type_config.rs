@@ -27,9 +27,7 @@ pub enum AutoMlProblemTypeConfig {
 impl AutoMlProblemTypeConfig {
     /// Tries to convert the enum instance into [`ImageClassificationJobConfig`](crate::types::AutoMlProblemTypeConfig::ImageClassificationJobConfig), extracting the inner [`ImageClassificationJobConfig`](crate::types::ImageClassificationJobConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_image_classification_job_config(
-        &self,
-    ) -> ::std::result::Result<&crate::types::ImageClassificationJobConfig, &Self> {
+    pub fn as_image_classification_job_config(&self) -> ::std::result::Result<&crate::types::ImageClassificationJobConfig, &Self> {
         if let AutoMlProblemTypeConfig::ImageClassificationJobConfig(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -42,9 +40,7 @@ impl AutoMlProblemTypeConfig {
     }
     /// Tries to convert the enum instance into [`TabularJobConfig`](crate::types::AutoMlProblemTypeConfig::TabularJobConfig), extracting the inner [`TabularJobConfig`](crate::types::TabularJobConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_tabular_job_config(
-        &self,
-    ) -> ::std::result::Result<&crate::types::TabularJobConfig, &Self> {
+    pub fn as_tabular_job_config(&self) -> ::std::result::Result<&crate::types::TabularJobConfig, &Self> {
         if let AutoMlProblemTypeConfig::TabularJobConfig(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -57,9 +53,7 @@ impl AutoMlProblemTypeConfig {
     }
     /// Tries to convert the enum instance into [`TextClassificationJobConfig`](crate::types::AutoMlProblemTypeConfig::TextClassificationJobConfig), extracting the inner [`TextClassificationJobConfig`](crate::types::TextClassificationJobConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_text_classification_job_config(
-        &self,
-    ) -> ::std::result::Result<&crate::types::TextClassificationJobConfig, &Self> {
+    pub fn as_text_classification_job_config(&self) -> ::std::result::Result<&crate::types::TextClassificationJobConfig, &Self> {
         if let AutoMlProblemTypeConfig::TextClassificationJobConfig(val) = &self {
             ::std::result::Result::Ok(val)
         } else {
@@ -72,9 +66,7 @@ impl AutoMlProblemTypeConfig {
     }
     /// Tries to convert the enum instance into [`TimeSeriesForecastingJobConfig`](crate::types::AutoMlProblemTypeConfig::TimeSeriesForecastingJobConfig), extracting the inner [`TimeSeriesForecastingJobConfig`](crate::types::TimeSeriesForecastingJobConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_time_series_forecasting_job_config(
-        &self,
-    ) -> ::std::result::Result<&crate::types::TimeSeriesForecastingJobConfig, &Self> {
+    pub fn as_time_series_forecasting_job_config(&self) -> ::std::result::Result<&crate::types::TimeSeriesForecastingJobConfig, &Self> {
         if let AutoMlProblemTypeConfig::TimeSeriesForecastingJobConfig(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

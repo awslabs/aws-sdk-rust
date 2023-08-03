@@ -30,7 +30,7 @@ impl ListSessionAnalyticsDataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSessionAnalyticsDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_session_analytics_data::builders::ListSessionAnalyticsDataInputBuilder,
+    inner: crate::operation::list_session_analytics_data::builders::ListSessionAnalyticsDataInputBuilder,
 }
 impl ListSessionAnalyticsDataFluentBuilder {
     /// Creates a new `ListSessionAnalyticsData`.
@@ -41,7 +41,7 @@ impl ListSessionAnalyticsDataFluentBuilder {
         }
     }
     /// Access the ListSessionAnalyticsData as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_session_analytics_data::builders::ListSessionAnalyticsDataInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_session_analytics_data::builders::ListSessionAnalyticsDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +53,7 @@ impl ListSessionAnalyticsDataFluentBuilder {
             crate::operation::list_session_analytics_data::ListSessionAnalyticsData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +63,7 @@ impl ListSessionAnalyticsDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +72,7 @@ impl ListSessionAnalyticsDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_session_analytics_data::ListSessionAnalyticsDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError>,
     > {
         let op = self
             .inner
@@ -102,9 +95,7 @@ impl ListSessionAnalyticsDataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_session_analytics_data::ListSessionAnalyticsDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +109,14 @@ impl ListSessionAnalyticsDataFluentBuilder {
             crate::operation::list_session_analytics_data::ListSessionAnalyticsData,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_session_analytics_data::paginator::ListSessionAnalyticsDataPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_session_analytics_data::paginator::ListSessionAnalyticsDataPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_session_analytics_data::paginator::ListSessionAnalyticsDataPaginator {
         crate::operation::list_session_analytics_data::paginator::ListSessionAnalyticsDataPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier for the bot for which you want to retrieve session analytics.</p>
@@ -153,10 +139,7 @@ impl ListSessionAnalyticsDataFluentBuilder {
         self
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see session analytics.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_date_time(input);
         self
     }
@@ -170,10 +153,7 @@ impl ListSessionAnalyticsDataFluentBuilder {
         self
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see session analytics.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date_time(input);
         self
     }
@@ -187,10 +167,7 @@ impl ListSessionAnalyticsDataFluentBuilder {
         self
     }
     /// <p>An object specifying the measure and method by which to sort the session analytics data.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::SessionDataSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SessionDataSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -208,17 +185,12 @@ impl ListSessionAnalyticsDataFluentBuilder {
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsSessionFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>

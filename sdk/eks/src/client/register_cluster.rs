@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterClusterOutput`](crate::operation::register_cluster::RegisterClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::register_cluster::RegisterClusterOutput::cluster): <p>An object representing an Amazon EKS cluster.</p>
     /// - On failure, responds with [`SdkError<RegisterClusterError>`](crate::operation::register_cluster::RegisterClusterError)
-    pub fn register_cluster(
-        &self,
-    ) -> crate::operation::register_cluster::builders::RegisterClusterFluentBuilder {
-        crate::operation::register_cluster::builders::RegisterClusterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_cluster(&self) -> crate::operation::register_cluster::builders::RegisterClusterFluentBuilder {
+        crate::operation::register_cluster::builders::RegisterClusterFluentBuilder::new(self.handle.clone())
     }
 }

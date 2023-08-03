@@ -65,9 +65,7 @@ impl CustomerAgentlessCollectorInfo {
 
 /// A builder for [`CustomerAgentlessCollectorInfo`](crate::types::CustomerAgentlessCollectorInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomerAgentlessCollectorInfoBuilder {
     pub(crate) active_agentless_collectors: ::std::option::Option<i32>,
     pub(crate) healthy_agentless_collectors: ::std::option::Option<i32>,
@@ -112,10 +110,7 @@ impl CustomerAgentlessCollectorInfoBuilder {
         self
     }
     /// <p>The number of deny-listed Agentless Collector collectors. </p>
-    pub fn set_deny_listed_agentless_collectors(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_deny_listed_agentless_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.deny_listed_agentless_collectors = input;
         self
     }
@@ -184,9 +179,7 @@ impl CustomerAgentlessCollectorInfoBuilder {
         crate::types::CustomerAgentlessCollectorInfo {
             active_agentless_collectors: self.active_agentless_collectors.unwrap_or_default(),
             healthy_agentless_collectors: self.healthy_agentless_collectors.unwrap_or_default(),
-            deny_listed_agentless_collectors: self
-                .deny_listed_agentless_collectors
-                .unwrap_or_default(),
+            deny_listed_agentless_collectors: self.deny_listed_agentless_collectors.unwrap_or_default(),
             shutdown_agentless_collectors: self.shutdown_agentless_collectors.unwrap_or_default(),
             unhealthy_agentless_collectors: self.unhealthy_agentless_collectors.unwrap_or_default(),
             total_agentless_collectors: self.total_agentless_collectors.unwrap_or_default(),

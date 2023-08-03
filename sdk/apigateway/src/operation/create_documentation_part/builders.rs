@@ -26,8 +26,7 @@ impl CreateDocumentationPartInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDocumentationPartFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_documentation_part::builders::CreateDocumentationPartInputBuilder,
+    inner: crate::operation::create_documentation_part::builders::CreateDocumentationPartInputBuilder,
 }
 impl CreateDocumentationPartFluentBuilder {
     /// Creates a new `CreateDocumentationPart`.
@@ -38,10 +37,7 @@ impl CreateDocumentationPartFluentBuilder {
         }
     }
     /// Access the CreateDocumentationPart as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_documentation_part::builders::CreateDocumentationPartInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_documentation_part::builders::CreateDocumentationPartInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl CreateDocumentationPartFluentBuilder {
             crate::operation::create_documentation_part::CreateDocumentationPart,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_documentation_part::CreateDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_documentation_part::CreateDocumentationPartError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl CreateDocumentationPartFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl CreateDocumentationPartFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_documentation_part::CreateDocumentationPartOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_documentation_part::CreateDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_documentation_part::CreateDocumentationPartError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl CreateDocumentationPartFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_documentation_part::CreateDocumentationPartOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_documentation_part::CreateDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_documentation_part::CreateDocumentationPartError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl CreateDocumentationPartFluentBuilder {
             crate::operation::create_documentation_part::CreateDocumentationPart,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_documentation_part::CreateDocumentationPartError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_documentation_part::CreateDocumentationPartError>,
     > {
         self.customize_middleware().await
     }
@@ -144,10 +129,7 @@ impl CreateDocumentationPartFluentBuilder {
         self
     }
     /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentationPartLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::DocumentationPartLocation>) -> Self {
         self.inner = self.inner.set_location(input);
         self
     }

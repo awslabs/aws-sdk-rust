@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteConnectionOutput {
 }
 impl DeleteConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::operation::delete_connection::DeleteConnectionOutput).
-    pub fn builder() -> crate::operation::delete_connection::builders::DeleteConnectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_connection::builders::DeleteConnectionOutputBuilder {
         crate::operation::delete_connection::builders::DeleteConnectionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConnectionOutput`](crate::operation::delete_connection::DeleteConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectionOutputBuilder {
     pub(crate) connection: ::std::option::Option<crate::types::Connection>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteConnectionOutputBuilder {
         self
     }
     /// <p>A description of the App Runner connection that this request just deleted.</p>
-    pub fn set_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::Connection>,
-    ) -> Self {
+    pub fn set_connection(mut self, input: ::std::option::Option<crate::types::Connection>) -> Self {
         self.connection = input;
         self
     }

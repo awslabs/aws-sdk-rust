@@ -37,10 +37,7 @@ impl UpdateDeploymentGroupFluentBuilder {
         }
     }
     /// Access the UpdateDeploymentGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_deployment_group::builders::UpdateDeploymentGroupInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_deployment_group::builders::UpdateDeploymentGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateDeploymentGroupFluentBuilder {
             crate::operation::update_deployment_group::UpdateDeploymentGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment_group::UpdateDeploymentGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deployment_group::UpdateDeploymentGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateDeploymentGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateDeploymentGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_deployment_group::UpdateDeploymentGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment_group::UpdateDeploymentGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deployment_group::UpdateDeploymentGroupError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateDeploymentGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_deployment_group::UpdateDeploymentGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment_group::UpdateDeploymentGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deployment_group::UpdateDeploymentGroupError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl UpdateDeploymentGroupFluentBuilder {
             crate::operation::update_deployment_group::UpdateDeploymentGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_deployment_group::UpdateDeploymentGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_deployment_group::UpdateDeploymentGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The application name that corresponds to the deployment group to update.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The application name that corresponds to the deployment group to update.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -144,40 +124,26 @@ impl UpdateDeploymentGroupFluentBuilder {
         self.inner.get_application_name()
     }
     /// <p>The current name of the deployment group.</p>
-    pub fn current_deployment_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn current_deployment_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.current_deployment_group_name(input.into());
         self
     }
     /// <p>The current name of the deployment group.</p>
-    pub fn set_current_deployment_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_current_deployment_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_current_deployment_group_name(input);
         self
     }
     /// <p>The current name of the deployment group.</p>
-    pub fn get_current_deployment_group_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_current_deployment_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_current_deployment_group_name()
     }
     /// <p>The new name of the deployment group, if you want to change it.</p>
-    pub fn new_deployment_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_deployment_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_deployment_group_name(input.into());
         self
     }
     /// <p>The new name of the deployment group, if you want to change it.</p>
-    pub fn set_new_deployment_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_deployment_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_deployment_group_name(input);
         self
     }
@@ -186,18 +152,12 @@ impl UpdateDeploymentGroupFluentBuilder {
         self.inner.get_new_deployment_group_name()
     }
     /// <p>The replacement deployment configuration name to use, if you want to change it.</p>
-    pub fn deployment_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_config_name(input.into());
         self
     }
     /// <p>The replacement deployment configuration name to use, if you want to change it.</p>
-    pub fn set_deployment_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_config_name(input);
         self
     }
@@ -215,17 +175,12 @@ impl UpdateDeploymentGroupFluentBuilder {
         self
     }
     /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
-    pub fn set_ec2_tag_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2TagFilter>>,
-    ) -> Self {
+    pub fn set_ec2_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2TagFilter>>) -> Self {
         self.inner = self.inner.set_ec2_tag_filters(input);
         self
     }
     /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
-    pub fn get_ec2_tag_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2TagFilter>> {
+    pub fn get_ec2_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2TagFilter>> {
         self.inner.get_ec2_tag_filters()
     }
     /// Appends an item to `onPremisesInstanceTagFilters`.
@@ -238,17 +193,12 @@ impl UpdateDeploymentGroupFluentBuilder {
         self
     }
     /// <p>The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
-    pub fn set_on_premises_instance_tag_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
-    ) -> Self {
+    pub fn set_on_premises_instance_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>) -> Self {
         self.inner = self.inner.set_on_premises_instance_tag_filters(input);
         self
     }
     /// <p>The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
-    pub fn get_on_premises_instance_tag_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
+    pub fn get_on_premises_instance_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
         self.inner.get_on_premises_instance_tag_filters()
     }
     /// Appends an item to `autoScalingGroups`.
@@ -260,10 +210,7 @@ impl UpdateDeploymentGroupFluentBuilder {
     /// <li> <p>To keep the Auto Scaling groups, enter their names or do not specify this parameter. </p> </li>
     /// <li> <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
     /// </ul>
-    pub fn auto_scaling_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn auto_scaling_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_groups(input.into());
         self
     }
@@ -272,10 +219,7 @@ impl UpdateDeploymentGroupFluentBuilder {
     /// <li> <p>To keep the Auto Scaling groups, enter their names or do not specify this parameter. </p> </li>
     /// <li> <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
     /// </ul>
-    pub fn set_auto_scaling_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_auto_scaling_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_auto_scaling_groups(input);
         self
     }
@@ -284,24 +228,16 @@ impl UpdateDeploymentGroupFluentBuilder {
     /// <li> <p>To keep the Auto Scaling groups, enter their names or do not specify this parameter. </p> </li>
     /// <li> <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
     /// </ul>
-    pub fn get_auto_scaling_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_auto_scaling_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_auto_scaling_groups()
     }
     /// <p>A replacement ARN for the service role, if you want to change it.</p>
-    pub fn service_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_role_arn(input.into());
         self
     }
     /// <p>A replacement ARN for the service role, if you want to change it.</p>
-    pub fn set_service_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_role_arn(input);
         self
     }
@@ -319,17 +255,12 @@ impl UpdateDeploymentGroupFluentBuilder {
         self
     }
     /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.</p>
-    pub fn set_trigger_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TriggerConfig>>,
-    ) -> Self {
+    pub fn set_trigger_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TriggerConfig>>) -> Self {
         self.inner = self.inner.set_trigger_configurations(input);
         self
     }
     /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.</p>
-    pub fn get_trigger_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TriggerConfig>> {
+    pub fn get_trigger_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TriggerConfig>> {
         self.inner.get_trigger_configurations()
     }
     /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.</p>
@@ -338,67 +269,46 @@ impl UpdateDeploymentGroupFluentBuilder {
         self
     }
     /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.</p>
-    pub fn set_alarm_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmConfiguration>,
-    ) -> Self {
+    pub fn set_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
         self.inner = self.inner.set_alarm_configuration(input);
         self
     }
     /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.</p>
-    pub fn get_alarm_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+    pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         self.inner.get_alarm_configuration()
     }
     /// <p>Information for an automatic rollback configuration that is added or changed when a deployment group is updated.</p>
-    pub fn auto_rollback_configuration(
-        mut self,
-        input: crate::types::AutoRollbackConfiguration,
-    ) -> Self {
+    pub fn auto_rollback_configuration(mut self, input: crate::types::AutoRollbackConfiguration) -> Self {
         self.inner = self.inner.auto_rollback_configuration(input);
         self
     }
     /// <p>Information for an automatic rollback configuration that is added or changed when a deployment group is updated.</p>
-    pub fn set_auto_rollback_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoRollbackConfiguration>,
-    ) -> Self {
+    pub fn set_auto_rollback_configuration(mut self, input: ::std::option::Option<crate::types::AutoRollbackConfiguration>) -> Self {
         self.inner = self.inner.set_auto_rollback_configuration(input);
         self
     }
     /// <p>Information for an automatic rollback configuration that is added or changed when a deployment group is updated.</p>
-    pub fn get_auto_rollback_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoRollbackConfiguration> {
+    pub fn get_auto_rollback_configuration(&self) -> &::std::option::Option<crate::types::AutoRollbackConfiguration> {
         self.inner.get_auto_rollback_configuration()
     }
     /// <p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
     /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p>
     /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>
-    pub fn outdated_instances_strategy(
-        mut self,
-        input: crate::types::OutdatedInstancesStrategy,
-    ) -> Self {
+    pub fn outdated_instances_strategy(mut self, input: crate::types::OutdatedInstancesStrategy) -> Self {
         self.inner = self.inner.outdated_instances_strategy(input);
         self
     }
     /// <p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
     /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p>
     /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>
-    pub fn set_outdated_instances_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::OutdatedInstancesStrategy>,
-    ) -> Self {
+    pub fn set_outdated_instances_strategy(mut self, input: ::std::option::Option<crate::types::OutdatedInstancesStrategy>) -> Self {
         self.inner = self.inner.set_outdated_instances_strategy(input);
         self
     }
     /// <p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
     /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p>
     /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>
-    pub fn get_outdated_instances_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutdatedInstancesStrategy> {
+    pub fn get_outdated_instances_strategy(&self) -> &::std::option::Option<crate::types::OutdatedInstancesStrategy> {
         self.inner.get_outdated_instances_strategy()
     }
     /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
@@ -407,10 +317,7 @@ impl UpdateDeploymentGroupFluentBuilder {
         self
     }
     /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
-    pub fn set_deployment_style(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentStyle>,
-    ) -> Self {
+    pub fn set_deployment_style(mut self, input: ::std::option::Option<crate::types::DeploymentStyle>) -> Self {
         self.inner = self.inner.set_deployment_style(input);
         self
     }
@@ -419,25 +326,17 @@ impl UpdateDeploymentGroupFluentBuilder {
         self.inner.get_deployment_style()
     }
     /// <p>Information about blue/green deployment options for a deployment group.</p>
-    pub fn blue_green_deployment_configuration(
-        mut self,
-        input: crate::types::BlueGreenDeploymentConfiguration,
-    ) -> Self {
+    pub fn blue_green_deployment_configuration(mut self, input: crate::types::BlueGreenDeploymentConfiguration) -> Self {
         self.inner = self.inner.blue_green_deployment_configuration(input);
         self
     }
     /// <p>Information about blue/green deployment options for a deployment group.</p>
-    pub fn set_blue_green_deployment_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::BlueGreenDeploymentConfiguration>,
-    ) -> Self {
+    pub fn set_blue_green_deployment_configuration(mut self, input: ::std::option::Option<crate::types::BlueGreenDeploymentConfiguration>) -> Self {
         self.inner = self.inner.set_blue_green_deployment_configuration(input);
         self
     }
     /// <p>Information about blue/green deployment options for a deployment group.</p>
-    pub fn get_blue_green_deployment_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::BlueGreenDeploymentConfiguration> {
+    pub fn get_blue_green_deployment_configuration(&self) -> &::std::option::Option<crate::types::BlueGreenDeploymentConfiguration> {
         self.inner.get_blue_green_deployment_configuration()
     }
     /// <p>Information about the load balancer used in a deployment.</p>
@@ -446,10 +345,7 @@ impl UpdateDeploymentGroupFluentBuilder {
         self
     }
     /// <p>Information about the load balancer used in a deployment.</p>
-    pub fn set_load_balancer_info(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerInfo>,
-    ) -> Self {
+    pub fn set_load_balancer_info(mut self, input: ::std::option::Option<crate::types::LoadBalancerInfo>) -> Self {
         self.inner = self.inner.set_load_balancer_info(input);
         self
     }
@@ -463,10 +359,7 @@ impl UpdateDeploymentGroupFluentBuilder {
         self
     }
     /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only Amazon EC2 instances identified by all the tag groups.</p>
-    pub fn set_ec2_tag_set(
-        mut self,
-        input: ::std::option::Option<crate::types::Ec2TagSet>,
-    ) -> Self {
+    pub fn set_ec2_tag_set(mut self, input: ::std::option::Option<crate::types::Ec2TagSet>) -> Self {
         self.inner = self.inner.set_ec2_tag_set(input);
         self
     }
@@ -492,10 +385,7 @@ impl UpdateDeploymentGroupFluentBuilder {
     /// :
     /// <servicename></servicename>
     /// </clustername></code>. </p>
-    pub fn set_ecs_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsService>>,
-    ) -> Self {
+    pub fn set_ecs_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsService>>) -> Self {
         self.inner = self.inner.set_ecs_services(input);
         self
     }
@@ -504,9 +394,7 @@ impl UpdateDeploymentGroupFluentBuilder {
     /// :
     /// <servicename></servicename>
     /// </clustername></code>. </p>
-    pub fn get_ecs_services(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsService>> {
+    pub fn get_ecs_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsService>> {
         self.inner.get_ecs_services()
     }
     /// <p>Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.</p>
@@ -515,17 +403,12 @@ impl UpdateDeploymentGroupFluentBuilder {
         self
     }
     /// <p>Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.</p>
-    pub fn set_on_premises_tag_set(
-        mut self,
-        input: ::std::option::Option<crate::types::OnPremisesTagSet>,
-    ) -> Self {
+    pub fn set_on_premises_tag_set(mut self, input: ::std::option::Option<crate::types::OnPremisesTagSet>) -> Self {
         self.inner = self.inner.set_on_premises_tag_set(input);
         self
     }
     /// <p>Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.</p>
-    pub fn get_on_premises_tag_set(
-        &self,
-    ) -> &::std::option::Option<crate::types::OnPremisesTagSet> {
+    pub fn get_on_premises_tag_set(&self) -> &::std::option::Option<crate::types::OnPremisesTagSet> {
         self.inner.get_on_premises_tag_set()
     }
 }

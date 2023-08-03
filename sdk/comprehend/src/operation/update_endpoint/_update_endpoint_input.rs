@@ -50,9 +50,7 @@ impl UpdateEndpointInput {
 
 /// A builder for [`UpdateEndpointInput`](crate::operation::update_endpoint::UpdateEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEndpointInputBuilder {
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) desired_model_arn: ::std::option::Option<::std::string::String>,
@@ -76,18 +74,12 @@ impl UpdateEndpointInputBuilder {
         &self.endpoint_arn
     }
     /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
-    pub fn desired_model_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn desired_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desired_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
-    pub fn set_desired_model_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_desired_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.desired_model_arn = input;
         self
     }
@@ -110,25 +102,17 @@ impl UpdateEndpointInputBuilder {
         &self.desired_inference_units
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
-    pub fn desired_data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn desired_data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.desired_data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
-    pub fn set_desired_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_desired_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.desired_data_access_role_arn = input;
         self
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
-    pub fn get_desired_data_access_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_desired_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.desired_data_access_role_arn
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
@@ -148,10 +132,7 @@ impl UpdateEndpointInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEndpointInput`](crate::operation::update_endpoint::UpdateEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_endpoint::UpdateEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::update_endpoint::UpdateEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_endpoint::UpdateEndpointInput {
             endpoint_arn: self.endpoint_arn,
             desired_model_arn: self.desired_model_arn,

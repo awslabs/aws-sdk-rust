@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetCaseEventConfigurationOutput`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput) with field(s):
     ///   - [`event_bridge(Option<EventBridgeConfiguration>)`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput::event_bridge): <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
     /// - On failure, responds with [`SdkError<GetCaseEventConfigurationError>`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationError)
-    pub fn get_case_event_configuration(&self) -> crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationFluentBuilder{
+    pub fn get_case_event_configuration(&self) -> crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationFluentBuilder {
         crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

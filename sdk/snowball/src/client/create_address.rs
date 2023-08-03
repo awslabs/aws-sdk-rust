@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateAddressOutput`](crate::operation::create_address::CreateAddressOutput) with field(s):
     ///   - [`address_id(Option<String>)`](crate::operation::create_address::CreateAddressOutput::address_id): <p>The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.</p>
     /// - On failure, responds with [`SdkError<CreateAddressError>`](crate::operation::create_address::CreateAddressError)
-    pub fn create_address(
-        &self,
-    ) -> crate::operation::create_address::builders::CreateAddressFluentBuilder {
-        crate::operation::create_address::builders::CreateAddressFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_address(&self) -> crate::operation::create_address::builders::CreateAddressFluentBuilder {
+        crate::operation::create_address::builders::CreateAddressFluentBuilder::new(self.handle.clone())
     }
 }

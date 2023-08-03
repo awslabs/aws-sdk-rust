@@ -37,9 +37,7 @@ impl FailedRequest {
 
 /// A builder for [`FailedRequest`](crate::types::FailedRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FailedRequestBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -80,10 +78,7 @@ impl FailedRequestBuilder {
         self
     }
     /// A predefined code indicating the error that caused the failure.
-    pub fn set_failure_code(
-        mut self,
-        input: ::std::option::Option<crate::types::FailureCode>,
-    ) -> Self {
+    pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::FailureCode>) -> Self {
         self.failure_code = input;
         self
     }

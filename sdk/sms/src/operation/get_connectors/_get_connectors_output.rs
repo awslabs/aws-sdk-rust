@@ -35,9 +35,7 @@ impl GetConnectorsOutput {
 
 /// A builder for [`GetConnectorsOutput`](crate::operation::get_connectors::GetConnectorsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectorsOutputBuilder {
     pub(crate) connector_list: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetConnectorsOutputBuilder {
         self
     }
     /// <p>Information about the registered connectors.</p>
-    pub fn set_connector_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>,
-    ) -> Self {
+    pub fn set_connector_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>) -> Self {
         self.connector_list = input;
         self
     }
     /// <p>Information about the registered connectors.</p>
-    pub fn get_connector_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Connector>> {
+    pub fn get_connector_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Connector>> {
         &self.connector_list
     }
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>

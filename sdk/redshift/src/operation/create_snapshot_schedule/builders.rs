@@ -37,10 +37,7 @@ impl CreateSnapshotScheduleFluentBuilder {
         }
     }
     /// Access the CreateSnapshotSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl CreateSnapshotScheduleFluentBuilder {
             crate::operation::create_snapshot_schedule::CreateSnapshotSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl CreateSnapshotScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl CreateSnapshotScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl CreateSnapshotScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl CreateSnapshotScheduleFluentBuilder {
             crate::operation::create_snapshot_schedule::CreateSnapshotSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError>,
     > {
         self.customize_middleware().await
     }
@@ -128,40 +114,26 @@ impl CreateSnapshotScheduleFluentBuilder {
     /// To override the contents of this collection use [`set_schedule_definitions`](Self::set_schedule_definitions).
     ///
     /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
-    pub fn schedule_definitions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_definitions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_definitions(input.into());
         self
     }
     /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
-    pub fn set_schedule_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_schedule_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_schedule_definitions(input);
         self
     }
     /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
-    pub fn get_schedule_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_schedule_definitions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_schedule_definitions()
     }
     /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.</p>
-    pub fn schedule_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_identifier(input.into());
         self
     }
     /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.</p>
-    pub fn set_schedule_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_identifier(input);
         self
     }
@@ -170,18 +142,12 @@ impl CreateSnapshotScheduleFluentBuilder {
         self.inner.get_schedule_identifier()
     }
     /// <p>The description of the snapshot schedule.</p>
-    pub fn schedule_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schedule_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_description(input.into());
         self
     }
     /// <p>The description of the snapshot schedule.</p>
-    pub fn set_schedule_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schedule_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_description(input);
         self
     }
@@ -199,10 +165,7 @@ impl CreateSnapshotScheduleFluentBuilder {
         self
     }
     /// <p>An optional set of tags you can use to search for the schedule.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

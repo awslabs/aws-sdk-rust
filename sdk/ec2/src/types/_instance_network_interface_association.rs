@@ -51,9 +51,7 @@ impl InstanceNetworkInterfaceAssociation {
 
 /// A builder for [`InstanceNetworkInterfaceAssociation`](crate::types::InstanceNetworkInterfaceAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceNetworkInterfaceAssociationBuilder {
     pub(crate) carrier_ip: ::std::option::Option<::std::string::String>,
     pub(crate) customer_owned_ip: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ impl InstanceNetworkInterfaceAssociationBuilder {
         &self.carrier_ip
     }
     /// <p>The customer-owned IP address associated with the network interface.</p>
-    pub fn customer_owned_ip(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_owned_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_owned_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-owned IP address associated with the network interface.</p>
-    pub fn set_customer_owned_ip(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_owned_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_owned_ip = input;
         self
     }
@@ -111,18 +103,12 @@ impl InstanceNetworkInterfaceAssociationBuilder {
         &self.ip_owner_id
     }
     /// <p>The public DNS name.</p>
-    pub fn public_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public DNS name.</p>
-    pub fn set_public_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_dns_name = input;
         self
     }

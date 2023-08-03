@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`user_import_jobs(Option<Vec<UserImportJobType>>)`](crate::operation::list_user_import_jobs::ListUserImportJobsOutput::user_import_jobs): <p>The user import jobs.</p>
     ///   - [`pagination_token(Option<String>)`](crate::operation::list_user_import_jobs::ListUserImportJobsOutput::pagination_token): <p>An identifier that can be used to return the next set of user import jobs in the list.</p>
     /// - On failure, responds with [`SdkError<ListUserImportJobsError>`](crate::operation::list_user_import_jobs::ListUserImportJobsError)
-    pub fn list_user_import_jobs(
-        &self,
-    ) -> crate::operation::list_user_import_jobs::builders::ListUserImportJobsFluentBuilder {
-        crate::operation::list_user_import_jobs::builders::ListUserImportJobsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_user_import_jobs(&self) -> crate::operation::list_user_import_jobs::builders::ListUserImportJobsFluentBuilder {
+        crate::operation::list_user_import_jobs::builders::ListUserImportJobsFluentBuilder::new(self.handle.clone())
     }
 }

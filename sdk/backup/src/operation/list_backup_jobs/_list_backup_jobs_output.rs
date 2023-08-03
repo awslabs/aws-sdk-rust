@@ -35,9 +35,7 @@ impl ListBackupJobsOutput {
 
 /// A builder for [`ListBackupJobsOutput`](crate::operation::list_backup_jobs::ListBackupJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBackupJobsOutputBuilder {
     pub(crate) backup_jobs: ::std::option::Option<::std::vec::Vec<crate::types::BackupJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListBackupJobsOutputBuilder {
         self
     }
     /// <p>An array of structures containing metadata about your backup jobs returned in JSON format.</p>
-    pub fn set_backup_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BackupJob>>,
-    ) -> Self {
+    pub fn set_backup_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupJob>>) -> Self {
         self.backup_jobs = input;
         self
     }
     /// <p>An array of structures containing metadata about your backup jobs returned in JSON format.</p>
-    pub fn get_backup_jobs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupJob>> {
+    pub fn get_backup_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupJob>> {
         &self.backup_jobs
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>

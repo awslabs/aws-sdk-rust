@@ -6,24 +6,18 @@
 pub struct VoiceAnalyticsProcessorConfiguration {
     /// <p>The status of the speaker search task.</p>
     #[doc(hidden)]
-    pub speaker_search_status:
-        ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>,
+    pub speaker_search_status: ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>,
     /// <p>The status of the voice tone analysis task.</p>
     #[doc(hidden)]
-    pub voice_tone_analysis_status:
-        ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>,
+    pub voice_tone_analysis_status: ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>,
 }
 impl VoiceAnalyticsProcessorConfiguration {
     /// <p>The status of the speaker search task.</p>
-    pub fn speaker_search_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VoiceAnalyticsConfigurationStatus> {
+    pub fn speaker_search_status(&self) -> ::std::option::Option<&crate::types::VoiceAnalyticsConfigurationStatus> {
         self.speaker_search_status.as_ref()
     }
     /// <p>The status of the voice tone analysis task.</p>
-    pub fn voice_tone_analysis_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VoiceAnalyticsConfigurationStatus> {
+    pub fn voice_tone_analysis_status(&self) -> ::std::option::Option<&crate::types::VoiceAnalyticsConfigurationStatus> {
         self.voice_tone_analysis_status.as_ref()
     }
 }
@@ -36,58 +30,38 @@ impl VoiceAnalyticsProcessorConfiguration {
 
 /// A builder for [`VoiceAnalyticsProcessorConfiguration`](crate::types::VoiceAnalyticsProcessorConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VoiceAnalyticsProcessorConfigurationBuilder {
-    pub(crate) speaker_search_status:
-        ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>,
-    pub(crate) voice_tone_analysis_status:
-        ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>,
+    pub(crate) speaker_search_status: ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>,
+    pub(crate) voice_tone_analysis_status: ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>,
 }
 impl VoiceAnalyticsProcessorConfigurationBuilder {
     /// <p>The status of the speaker search task.</p>
-    pub fn speaker_search_status(
-        mut self,
-        input: crate::types::VoiceAnalyticsConfigurationStatus,
-    ) -> Self {
+    pub fn speaker_search_status(mut self, input: crate::types::VoiceAnalyticsConfigurationStatus) -> Self {
         self.speaker_search_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the speaker search task.</p>
-    pub fn set_speaker_search_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>,
-    ) -> Self {
+    pub fn set_speaker_search_status(mut self, input: ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>) -> Self {
         self.speaker_search_status = input;
         self
     }
     /// <p>The status of the speaker search task.</p>
-    pub fn get_speaker_search_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus> {
+    pub fn get_speaker_search_status(&self) -> &::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus> {
         &self.speaker_search_status
     }
     /// <p>The status of the voice tone analysis task.</p>
-    pub fn voice_tone_analysis_status(
-        mut self,
-        input: crate::types::VoiceAnalyticsConfigurationStatus,
-    ) -> Self {
+    pub fn voice_tone_analysis_status(mut self, input: crate::types::VoiceAnalyticsConfigurationStatus) -> Self {
         self.voice_tone_analysis_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the voice tone analysis task.</p>
-    pub fn set_voice_tone_analysis_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>,
-    ) -> Self {
+    pub fn set_voice_tone_analysis_status(mut self, input: ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>) -> Self {
         self.voice_tone_analysis_status = input;
         self
     }
     /// <p>The status of the voice tone analysis task.</p>
-    pub fn get_voice_tone_analysis_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus> {
+    pub fn get_voice_tone_analysis_status(&self) -> &::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus> {
         &self.voice_tone_analysis_status
     }
     /// Consumes the builder and constructs a [`VoiceAnalyticsProcessorConfiguration`](crate::types::VoiceAnalyticsProcessorConfiguration).

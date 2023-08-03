@@ -19,9 +19,7 @@ pub struct SocialProviderSettings {
 }
 impl SocialProviderSettings {
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn facebook(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BackendAuthSocialProviderConfig> {
+    pub fn facebook(&self) -> ::std::option::Option<&crate::types::BackendAuthSocialProviderConfig> {
         self.facebook.as_ref()
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
@@ -29,15 +27,11 @@ impl SocialProviderSettings {
         self.google.as_ref()
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn login_with_amazon(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BackendAuthSocialProviderConfig> {
+    pub fn login_with_amazon(&self) -> ::std::option::Option<&crate::types::BackendAuthSocialProviderConfig> {
         self.login_with_amazon.as_ref()
     }
     /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn sign_in_with_apple(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BackendAuthAppleProviderConfig> {
+    pub fn sign_in_with_apple(&self) -> ::std::option::Option<&crate::types::BackendAuthAppleProviderConfig> {
         self.sign_in_with_apple.as_ref()
     }
 }
@@ -50,16 +44,12 @@ impl SocialProviderSettings {
 
 /// A builder for [`SocialProviderSettings`](crate::types::SocialProviderSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SocialProviderSettingsBuilder {
     pub(crate) facebook: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,
     pub(crate) google: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,
-    pub(crate) login_with_amazon:
-        ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,
-    pub(crate) sign_in_with_apple:
-        ::std::option::Option<crate::types::BackendAuthAppleProviderConfig>,
+    pub(crate) login_with_amazon: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,
+    pub(crate) sign_in_with_apple: ::std::option::Option<crate::types::BackendAuthAppleProviderConfig>,
 }
 impl SocialProviderSettingsBuilder {
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
@@ -68,17 +58,12 @@ impl SocialProviderSettingsBuilder {
         self
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn set_facebook(
-        mut self,
-        input: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,
-    ) -> Self {
+    pub fn set_facebook(mut self, input: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>) -> Self {
         self.facebook = input;
         self
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn get_facebook(
-        &self,
-    ) -> &::std::option::Option<crate::types::BackendAuthSocialProviderConfig> {
+    pub fn get_facebook(&self) -> &::std::option::Option<crate::types::BackendAuthSocialProviderConfig> {
         &self.facebook
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
@@ -87,61 +72,40 @@ impl SocialProviderSettingsBuilder {
         self
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn set_google(
-        mut self,
-        input: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,
-    ) -> Self {
+    pub fn set_google(mut self, input: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>) -> Self {
         self.google = input;
         self
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn get_google(
-        &self,
-    ) -> &::std::option::Option<crate::types::BackendAuthSocialProviderConfig> {
+    pub fn get_google(&self) -> &::std::option::Option<crate::types::BackendAuthSocialProviderConfig> {
         &self.google
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn login_with_amazon(
-        mut self,
-        input: crate::types::BackendAuthSocialProviderConfig,
-    ) -> Self {
+    pub fn login_with_amazon(mut self, input: crate::types::BackendAuthSocialProviderConfig) -> Self {
         self.login_with_amazon = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn set_login_with_amazon(
-        mut self,
-        input: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,
-    ) -> Self {
+    pub fn set_login_with_amazon(mut self, input: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>) -> Self {
         self.login_with_amazon = input;
         self
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn get_login_with_amazon(
-        &self,
-    ) -> &::std::option::Option<crate::types::BackendAuthSocialProviderConfig> {
+    pub fn get_login_with_amazon(&self) -> &::std::option::Option<crate::types::BackendAuthSocialProviderConfig> {
         &self.login_with_amazon
     }
     /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn sign_in_with_apple(
-        mut self,
-        input: crate::types::BackendAuthAppleProviderConfig,
-    ) -> Self {
+    pub fn sign_in_with_apple(mut self, input: crate::types::BackendAuthAppleProviderConfig) -> Self {
         self.sign_in_with_apple = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn set_sign_in_with_apple(
-        mut self,
-        input: ::std::option::Option<crate::types::BackendAuthAppleProviderConfig>,
-    ) -> Self {
+    pub fn set_sign_in_with_apple(mut self, input: ::std::option::Option<crate::types::BackendAuthAppleProviderConfig>) -> Self {
         self.sign_in_with_apple = input;
         self
     }
     /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn get_sign_in_with_apple(
-        &self,
-    ) -> &::std::option::Option<crate::types::BackendAuthAppleProviderConfig> {
+    pub fn get_sign_in_with_apple(&self) -> &::std::option::Option<crate::types::BackendAuthAppleProviderConfig> {
         &self.sign_in_with_apple
     }
     /// Consumes the builder and constructs a [`SocialProviderSettings`](crate::types::SocialProviderSettings).

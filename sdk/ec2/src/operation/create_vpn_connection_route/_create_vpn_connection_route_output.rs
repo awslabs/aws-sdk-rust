@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for CreateVpnConnectionRouteOutput {
 }
 impl CreateVpnConnectionRouteOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpnConnectionRouteOutput`](crate::operation::create_vpn_connection_route::CreateVpnConnectionRouteOutput).
-    pub fn builder() -> crate::operation::create_vpn_connection_route::builders::CreateVpnConnectionRouteOutputBuilder{
+    pub fn builder() -> crate::operation::create_vpn_connection_route::builders::CreateVpnConnectionRouteOutputBuilder {
         crate::operation::create_vpn_connection_route::builders::CreateVpnConnectionRouteOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpnConnectionRouteOutput`](crate::operation::create_vpn_connection_route::CreateVpnConnectionRouteOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpnConnectionRouteOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl CreateVpnConnectionRouteOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateVpnConnectionRouteOutput`](crate::operation::create_vpn_connection_route::CreateVpnConnectionRouteOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_vpn_connection_route::CreateVpnConnectionRouteOutput {
+    pub fn build(self) -> crate::operation::create_vpn_connection_route::CreateVpnConnectionRouteOutput {
         crate::operation::create_vpn_connection_route::CreateVpnConnectionRouteOutput {
             _request_id: self._request_id,
         }

@@ -10,10 +10,7 @@ impl UpdateBridgeOutputInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_bridge_output::UpdateBridgeOutputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bridge_output::UpdateBridgeOutputError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge_output::UpdateBridgeOutputError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_bridge_output();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateBridgeOutputFluentBuilder {
         }
     }
     /// Access the UpdateBridgeOutput as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_bridge_output::builders::UpdateBridgeOutputInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_bridge_output::builders::UpdateBridgeOutputInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateBridgeOutputFluentBuilder {
             crate::operation::update_bridge_output::UpdateBridgeOutput,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bridge_output::UpdateBridgeOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge_output::UpdateBridgeOutputError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateBridgeOutputFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateBridgeOutputFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_bridge_output::UpdateBridgeOutputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bridge_output::UpdateBridgeOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge_output::UpdateBridgeOutputError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateBridgeOutputFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_bridge_output::UpdateBridgeOutputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bridge_output::UpdateBridgeOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge_output::UpdateBridgeOutputError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateBridgeOutputFluentBuilder {
             crate::operation::update_bridge_output::UpdateBridgeOutput,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bridge_output::UpdateBridgeOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bridge_output::UpdateBridgeOutputError>,
     > {
         self.customize_middleware().await
     }
@@ -142,17 +126,12 @@ impl UpdateBridgeOutputFluentBuilder {
         self
     }
     /// Update an existing network output.
-    pub fn set_network_output(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateBridgeNetworkOutputRequest>,
-    ) -> Self {
+    pub fn set_network_output(mut self, input: ::std::option::Option<crate::types::UpdateBridgeNetworkOutputRequest>) -> Self {
         self.inner = self.inner.set_network_output(input);
         self
     }
     /// Update an existing network output.
-    pub fn get_network_output(
-        &self,
-    ) -> &::std::option::Option<crate::types::UpdateBridgeNetworkOutputRequest> {
+    pub fn get_network_output(&self) -> &::std::option::Option<crate::types::UpdateBridgeNetworkOutputRequest> {
         self.inner.get_network_output()
     }
     /// The name of the bridge output that you want to update.

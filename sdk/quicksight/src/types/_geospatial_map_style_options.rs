@@ -23,9 +23,7 @@ impl GeospatialMapStyleOptions {
 
 /// A builder for [`GeospatialMapStyleOptions`](crate::types::GeospatialMapStyleOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeospatialMapStyleOptionsBuilder {
     pub(crate) base_map_style: ::std::option::Option<crate::types::BaseMapStyleType>,
 }
@@ -36,10 +34,7 @@ impl GeospatialMapStyleOptionsBuilder {
         self
     }
     /// <p>The base map style of the geospatial map.</p>
-    pub fn set_base_map_style(
-        mut self,
-        input: ::std::option::Option<crate::types::BaseMapStyleType>,
-    ) -> Self {
+    pub fn set_base_map_style(mut self, input: ::std::option::Option<crate::types::BaseMapStyleType>) -> Self {
         self.base_map_style = input;
         self
     }

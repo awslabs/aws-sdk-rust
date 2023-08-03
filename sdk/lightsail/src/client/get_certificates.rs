@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`certificates(Option<Vec<CertificateSummary>>)`](crate::operation::get_certificates::GetCertificatesOutput::certificates): <p>An object that describes certificates.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::get_certificates::GetCertificatesOutput::next_page_token): <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// - On failure, responds with [`SdkError<GetCertificatesError>`](crate::operation::get_certificates::GetCertificatesError)
-    pub fn get_certificates(
-        &self,
-    ) -> crate::operation::get_certificates::builders::GetCertificatesFluentBuilder {
-        crate::operation::get_certificates::builders::GetCertificatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_certificates(&self) -> crate::operation::get_certificates::builders::GetCertificatesFluentBuilder {
+        crate::operation::get_certificates::builders::GetCertificatesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -26,7 +26,7 @@ impl RegisterIdentityProviderInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterIdentityProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_identity_provider::builders::RegisterIdentityProviderInputBuilder,
+    inner: crate::operation::register_identity_provider::builders::RegisterIdentityProviderInputBuilder,
 }
 impl RegisterIdentityProviderFluentBuilder {
     /// Creates a new `RegisterIdentityProvider`.
@@ -37,10 +37,7 @@ impl RegisterIdentityProviderFluentBuilder {
         }
     }
     /// Access the RegisterIdentityProvider as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::register_identity_provider::builders::RegisterIdentityProviderInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::register_identity_provider::builders::RegisterIdentityProviderInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl RegisterIdentityProviderFluentBuilder {
             crate::operation::register_identity_provider::RegisterIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_identity_provider::RegisterIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_identity_provider::RegisterIdentityProviderError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl RegisterIdentityProviderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl RegisterIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_identity_provider::RegisterIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_identity_provider::RegisterIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_identity_provider::RegisterIdentityProviderError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl RegisterIdentityProviderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_identity_provider::RegisterIdentityProviderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_identity_provider::RegisterIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_identity_provider::RegisterIdentityProviderError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl RegisterIdentityProviderFluentBuilder {
             crate::operation::register_identity_provider::RegisterIdentityProvider,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_identity_provider::RegisterIdentityProviderError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_identity_provider::RegisterIdentityProviderError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +115,7 @@ impl RegisterIdentityProviderFluentBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
+    pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProvider>) -> Self {
         self.inner = self.inner.set_identity_provider(input);
         self
     }

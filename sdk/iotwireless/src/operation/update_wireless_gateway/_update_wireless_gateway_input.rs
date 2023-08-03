@@ -14,8 +14,7 @@ pub struct UpdateWirelessGatewayInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
     #[doc(hidden)]
-    pub join_eui_filters:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub join_eui_filters: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
     #[doc(hidden)]
     pub net_id_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -37,9 +36,7 @@ impl UpdateWirelessGatewayInput {
         self.description.as_deref()
     }
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    pub fn join_eui_filters(
-        &self,
-    ) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
+    pub fn join_eui_filters(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
         self.join_eui_filters.as_deref()
     }
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
@@ -53,24 +50,19 @@ impl UpdateWirelessGatewayInput {
 }
 impl UpdateWirelessGatewayInput {
     /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayInput`](crate::operation::update_wireless_gateway::UpdateWirelessGatewayInput).
-    pub fn builder(
-    ) -> crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayInputBuilder {
         crate::operation::update_wireless_gateway::builders::UpdateWirelessGatewayInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWirelessGatewayInput`](crate::operation::update_wireless_gateway::UpdateWirelessGatewayInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWirelessGatewayInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) join_eui_filters:
-        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) join_eui_filters: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     pub(crate) net_id_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_eirp: ::std::option::Option<f32>,
 }
@@ -129,17 +121,12 @@ impl UpdateWirelessGatewayInputBuilder {
         self
     }
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    pub fn set_join_eui_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
+    pub fn set_join_eui_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
         self.join_eui_filters = input;
         self
     }
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    pub fn get_join_eui_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_join_eui_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
         &self.join_eui_filters
     }
     /// Appends an item to `net_id_filters`.
@@ -147,27 +134,19 @@ impl UpdateWirelessGatewayInputBuilder {
     /// To override the contents of this collection use [`set_net_id_filters`](Self::set_net_id_filters).
     ///
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    pub fn net_id_filters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn net_id_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.net_id_filters.unwrap_or_default();
         v.push(input.into());
         self.net_id_filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    pub fn set_net_id_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_net_id_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.net_id_filters = input;
         self
     }
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    pub fn get_net_id_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_net_id_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.net_id_filters
     }
     /// <p>The MaxEIRP value.</p>
@@ -187,19 +166,15 @@ impl UpdateWirelessGatewayInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWirelessGatewayInput`](crate::operation::update_wireless_gateway::UpdateWirelessGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_wireless_gateway::UpdateWirelessGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_wireless_gateway::UpdateWirelessGatewayInput {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                join_eui_filters: self.join_eui_filters,
-                net_id_filters: self.net_id_filters,
-                max_eirp: self.max_eirp,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_wireless_gateway::UpdateWirelessGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_wireless_gateway::UpdateWirelessGatewayInput {
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            join_eui_filters: self.join_eui_filters,
+            net_id_filters: self.net_id_filters,
+            max_eirp: self.max_eirp,
+        })
     }
 }

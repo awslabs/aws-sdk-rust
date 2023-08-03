@@ -5,9 +5,7 @@
 pub struct QuerySchemaVersionMetadataOutput {
     /// <p>A map of a metadata key and associated values.</p>
     #[doc(hidden)]
-    pub metadata_info_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetadataInfo>,
-    >,
+    pub metadata_info_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataInfo>>,
     /// <p>The unique version ID of the schema version.</p>
     #[doc(hidden)]
     pub schema_version_id: ::std::option::Option<::std::string::String>,
@@ -18,11 +16,7 @@ pub struct QuerySchemaVersionMetadataOutput {
 }
 impl QuerySchemaVersionMetadataOutput {
     /// <p>A map of a metadata key and associated values.</p>
-    pub fn metadata_info_map(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::MetadataInfo>,
-    > {
+    pub fn metadata_info_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MetadataInfo>> {
         self.metadata_info_map.as_ref()
     }
     /// <p>The unique version ID of the schema version.</p>
@@ -41,20 +35,16 @@ impl ::aws_http::request_id::RequestId for QuerySchemaVersionMetadataOutput {
 }
 impl QuerySchemaVersionMetadataOutput {
     /// Creates a new builder-style object to manufacture [`QuerySchemaVersionMetadataOutput`](crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataOutput).
-    pub fn builder() -> crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataOutputBuilder{
+    pub fn builder() -> crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataOutputBuilder {
         crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataOutputBuilder::default()
     }
 }
 
 /// A builder for [`QuerySchemaVersionMetadataOutput`](crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QuerySchemaVersionMetadataOutputBuilder {
-    pub(crate) metadata_info_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetadataInfo>,
-    >,
+    pub(crate) metadata_info_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataInfo>>,
     pub(crate) schema_version_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -65,11 +55,7 @@ impl QuerySchemaVersionMetadataOutputBuilder {
     /// To override the contents of this collection use [`set_metadata_info_map`](Self::set_metadata_info_map).
     ///
     /// <p>A map of a metadata key and associated values.</p>
-    pub fn metadata_info_map(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::MetadataInfo,
-    ) -> Self {
+    pub fn metadata_info_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetadataInfo) -> Self {
         let mut hash_map = self.metadata_info_map.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.metadata_info_map = ::std::option::Option::Some(hash_map);
@@ -78,34 +64,22 @@ impl QuerySchemaVersionMetadataOutputBuilder {
     /// <p>A map of a metadata key and associated values.</p>
     pub fn set_metadata_info_map(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::MetadataInfo>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataInfo>>,
     ) -> Self {
         self.metadata_info_map = input;
         self
     }
     /// <p>A map of a metadata key and associated values.</p>
-    pub fn get_metadata_info_map(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::MetadataInfo>,
-    > {
+    pub fn get_metadata_info_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataInfo>> {
         &self.metadata_info_map
     }
     /// <p>The unique version ID of the schema version.</p>
-    pub fn schema_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique version ID of the schema version.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version_id = input;
         self
     }
@@ -137,9 +111,7 @@ impl QuerySchemaVersionMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`QuerySchemaVersionMetadataOutput`](crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataOutput {
+    pub fn build(self) -> crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataOutput {
         crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataOutput {
             metadata_info_map: self.metadata_info_map,
             schema_version_id: self.schema_version_id,

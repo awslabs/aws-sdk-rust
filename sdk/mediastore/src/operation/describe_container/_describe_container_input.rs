@@ -15,34 +15,25 @@ impl DescribeContainerInput {
 }
 impl DescribeContainerInput {
     /// Creates a new builder-style object to manufacture [`DescribeContainerInput`](crate::operation::describe_container::DescribeContainerInput).
-    pub fn builder() -> crate::operation::describe_container::builders::DescribeContainerInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_container::builders::DescribeContainerInputBuilder {
         crate::operation::describe_container::builders::DescribeContainerInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeContainerInput`](crate::operation::describe_container::DescribeContainerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeContainerInputBuilder {
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeContainerInputBuilder {
     /// <p>The name of the container to query.</p>
-    pub fn container_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container to query.</p>
-    pub fn set_container_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
@@ -53,14 +44,9 @@ impl DescribeContainerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeContainerInput`](crate::operation::describe_container::DescribeContainerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_container::DescribeContainerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_container::DescribeContainerInput {
-                container_name: self.container_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_container::DescribeContainerInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_container::DescribeContainerInput {
+            container_name: self.container_name,
+        })
     }
 }

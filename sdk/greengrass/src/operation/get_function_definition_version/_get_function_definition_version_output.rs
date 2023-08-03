@@ -56,16 +56,14 @@ impl ::aws_http::request_id::RequestId for GetFunctionDefinitionVersionOutput {
 }
 impl GetFunctionDefinitionVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionDefinitionVersionOutput`](crate::operation::get_function_definition_version::GetFunctionDefinitionVersionOutput).
-    pub fn builder() -> crate::operation::get_function_definition_version::builders::GetFunctionDefinitionVersionOutputBuilder{
+    pub fn builder() -> crate::operation::get_function_definition_version::builders::GetFunctionDefinitionVersionOutputBuilder {
         crate::operation::get_function_definition_version::builders::GetFunctionDefinitionVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFunctionDefinitionVersionOutput`](crate::operation::get_function_definition_version::GetFunctionDefinitionVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFunctionDefinitionVersionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,
@@ -91,18 +89,12 @@ impl GetFunctionDefinitionVersionOutputBuilder {
         &self.arn
     }
     /// The time, in milliseconds since the epoch, when the function definition version was created.
-    pub fn creation_timestamp(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the function definition version was created.
-    pub fn set_creation_timestamp(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_timestamp = input;
         self
     }
@@ -116,17 +108,12 @@ impl GetFunctionDefinitionVersionOutputBuilder {
         self
     }
     /// Information on the definition.
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionDefinitionVersion>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::FunctionDefinitionVersion>) -> Self {
         self.definition = input;
         self
     }
     /// Information on the definition.
-    pub fn get_definition(
-        &self,
-    ) -> &::std::option::Option<crate::types::FunctionDefinitionVersion> {
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::FunctionDefinitionVersion> {
         &self.definition
     }
     /// The ID of the function definition version.
@@ -181,9 +168,7 @@ impl GetFunctionDefinitionVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetFunctionDefinitionVersionOutput`](crate::operation::get_function_definition_version::GetFunctionDefinitionVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_function_definition_version::GetFunctionDefinitionVersionOutput {
+    pub fn build(self) -> crate::operation::get_function_definition_version::GetFunctionDefinitionVersionOutput {
         crate::operation::get_function_definition_version::GetFunctionDefinitionVersionOutput {
             arn: self.arn,
             creation_timestamp: self.creation_timestamp,

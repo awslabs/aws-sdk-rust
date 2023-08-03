@@ -14,10 +14,7 @@ pub fn ser_list_intent_paths_input(
             {
                 #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_analytics_path_filter::ser_analytics_path_filter(
-                    &mut object_5,
-                    item_4,
-                )?;
+                crate::protocol_serde::shape_analytics_path_filter::ser_analytics_path_filter(&mut object_5, item_4)?;
                 object_5.finish();
             }
         }

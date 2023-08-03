@@ -93,9 +93,7 @@ impl TestRecommendation {
 
 /// A builder for [`TestRecommendation`](crate::types::TestRecommendation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestRecommendationBuilder {
     pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) reference_id: ::std::option::Option<::std::string::String>,
@@ -111,18 +109,12 @@ pub struct TestRecommendationBuilder {
 }
 impl TestRecommendationBuilder {
     /// <p>Identifier for the test recommendation.</p>
-    pub fn recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier for the test recommendation.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommendation_id = input;
         self
     }
@@ -145,18 +137,12 @@ impl TestRecommendationBuilder {
         &self.reference_id
     }
     /// <p>The name of the Application Component.</p>
-    pub fn app_component_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Application Component.</p>
-    pub fn set_app_component_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_component_name = input;
         self
     }
@@ -246,17 +232,12 @@ impl TestRecommendationBuilder {
         self
     }
     /// <p>The test recommendation items.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The test recommendation items.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>> {
         &self.items
     }
     /// <p>The prerequisite of the test recommendation.</p>
@@ -278,27 +259,19 @@ impl TestRecommendationBuilder {
     /// To override the contents of this collection use [`set_depends_on_alarms`](Self::set_depends_on_alarms).
     ///
     /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
-    pub fn depends_on_alarms(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn depends_on_alarms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.depends_on_alarms.unwrap_or_default();
         v.push(input.into());
         self.depends_on_alarms = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
-    pub fn set_depends_on_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_depends_on_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.depends_on_alarms = input;
         self
     }
     /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
-    pub fn get_depends_on_alarms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_depends_on_alarms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.depends_on_alarms
     }
     /// Consumes the builder and constructs a [`TestRecommendation`](crate::types::TestRecommendation).

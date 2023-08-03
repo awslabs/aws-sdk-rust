@@ -44,9 +44,7 @@ impl MappingRule {
 
 /// A builder for [`MappingRule`](crate::types::MappingRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MappingRuleBuilder {
     pub(crate) claim: ::std::option::Option<::std::string::String>,
     pub(crate) match_type: ::std::option::Option<crate::types::MappingRuleMatchType>,
@@ -74,10 +72,7 @@ impl MappingRuleBuilder {
         self
     }
     /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
-    pub fn set_match_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MappingRuleMatchType>,
-    ) -> Self {
+    pub fn set_match_type(mut self, input: ::std::option::Option<crate::types::MappingRuleMatchType>) -> Self {
         self.match_type = input;
         self
     }

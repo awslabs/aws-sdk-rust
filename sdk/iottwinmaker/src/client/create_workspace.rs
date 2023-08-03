@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::create_workspace::CreateWorkspaceOutput::arn): <p>The ARN of the workspace.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::create_workspace::CreateWorkspaceOutput::creation_date_time): <p>The date and time when the workspace was created.</p>
     /// - On failure, responds with [`SdkError<CreateWorkspaceError>`](crate::operation::create_workspace::CreateWorkspaceError)
-    pub fn create_workspace(
-        &self,
-    ) -> crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder {
-        crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_workspace(&self) -> crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder {
+        crate::operation::create_workspace::builders::CreateWorkspaceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for NotifyAppValidationOutputOutput {
 }
 impl NotifyAppValidationOutputOutput {
     /// Creates a new builder-style object to manufacture [`NotifyAppValidationOutputOutput`](crate::operation::notify_app_validation_output::NotifyAppValidationOutputOutput).
-    pub fn builder() -> crate::operation::notify_app_validation_output::builders::NotifyAppValidationOutputOutputBuilder{
+    pub fn builder() -> crate::operation::notify_app_validation_output::builders::NotifyAppValidationOutputOutputBuilder {
         crate::operation::notify_app_validation_output::builders::NotifyAppValidationOutputOutputBuilder::default()
     }
 }
 
 /// A builder for [`NotifyAppValidationOutputOutput`](crate::operation::notify_app_validation_output::NotifyAppValidationOutputOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyAppValidationOutputOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl NotifyAppValidationOutputOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`NotifyAppValidationOutputOutput`](crate::operation::notify_app_validation_output::NotifyAppValidationOutputOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::notify_app_validation_output::NotifyAppValidationOutputOutput {
+    pub fn build(self) -> crate::operation::notify_app_validation_output::NotifyAppValidationOutputOutput {
         crate::operation::notify_app_validation_output::NotifyAppValidationOutputOutput {
             _request_id: self._request_id,
         }

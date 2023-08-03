@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateAppAuthorizationOutput {
 }
 impl CreateAppAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppAuthorizationOutput`](crate::operation::create_app_authorization::CreateAppAuthorizationOutput).
-    pub fn builder(
-    ) -> crate::operation::create_app_authorization::builders::CreateAppAuthorizationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_app_authorization::builders::CreateAppAuthorizationOutputBuilder {
         crate::operation::create_app_authorization::builders::CreateAppAuthorizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAppAuthorizationOutput`](crate::operation::create_app_authorization::CreateAppAuthorizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppAuthorizationOutputBuilder {
     pub(crate) app_authorization: ::std::option::Option<crate::types::AppAuthorization>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl CreateAppAuthorizationOutputBuilder {
         self
     }
     /// <p>Contains information about an app authorization.</p>
-    pub fn set_app_authorization(
-        mut self,
-        input: ::std::option::Option<crate::types::AppAuthorization>,
-    ) -> Self {
+    pub fn set_app_authorization(mut self, input: ::std::option::Option<crate::types::AppAuthorization>) -> Self {
         self.app_authorization = input;
         self
     }

@@ -105,17 +105,14 @@ impl ::aws_http::request_id::RequestId for DescribeRestoreJobOutput {
 }
 impl DescribeRestoreJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRestoreJobOutput`](crate::operation::describe_restore_job::DescribeRestoreJobOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_restore_job::builders::DescribeRestoreJobOutputBuilder {
+    pub fn builder() -> crate::operation::describe_restore_job::builders::DescribeRestoreJobOutputBuilder {
         crate::operation::describe_restore_job::builders::DescribeRestoreJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRestoreJobOutput`](crate::operation::describe_restore_job::DescribeRestoreJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRestoreJobOutputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) restore_job_id: ::std::option::Option<::std::string::String>,
@@ -148,18 +145,12 @@ impl DescribeRestoreJobOutputBuilder {
         &self.account_id
     }
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
-    pub fn restore_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn restore_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
-    pub fn set_restore_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_restore_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_job_id = input;
         self
     }
@@ -168,18 +159,12 @@ impl DescribeRestoreJobOutputBuilder {
         &self.restore_job_id
     }
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn recovery_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn set_recovery_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recovery_point_arn = input;
         self
     }
@@ -193,10 +178,7 @@ impl DescribeRestoreJobOutputBuilder {
         self
     }
     /// <p>The date and time that a restore job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -210,10 +192,7 @@ impl DescribeRestoreJobOutputBuilder {
         self
     }
     /// <p>The date and time that a job to restore a recovery point is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_completion_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_completion_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.completion_date = input;
         self
     }
@@ -227,10 +206,7 @@ impl DescribeRestoreJobOutputBuilder {
         self
     }
     /// <p>Status code specifying the state of the job that is initiated by Backup to restore a recovery point.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RestoreJobStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RestoreJobStatus>) -> Self {
         self.status = input;
         self
     }
@@ -239,18 +215,12 @@ impl DescribeRestoreJobOutputBuilder {
         &self.status
     }
     /// <p>A message showing the status of a job to restore a recovery point.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message showing the status of a job to restore a recovery point.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -306,10 +276,7 @@ impl DescribeRestoreJobOutputBuilder {
         self
     }
     /// <p>The amount of time in minutes that a job restoring a recovery point is expected to take.</p>
-    pub fn set_expected_completion_time_minutes(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_expected_completion_time_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.expected_completion_time_minutes = input;
         self
     }
@@ -318,18 +285,12 @@ impl DescribeRestoreJobOutputBuilder {
         &self.expected_completion_time_minutes
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource whose recovery point is being restored. The format of the ARN depends on the resource type of the backed-up resource.</p>
-    pub fn created_resource_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn created_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource whose recovery point is being restored. The format of the ARN depends on the resource type of the backed-up resource.</p>
-    pub fn set_created_resource_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_created_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_resource_arn = input;
         self
     }
@@ -338,18 +299,12 @@ impl DescribeRestoreJobOutputBuilder {
         &self.created_resource_arn
     }
     /// <p>Returns metadata associated with a restore job listed by resource type.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns metadata associated with a restore job listed by resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }

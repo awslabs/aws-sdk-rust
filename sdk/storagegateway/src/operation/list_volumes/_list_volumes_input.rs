@@ -41,9 +41,7 @@ impl ListVolumesInput {
 
 /// A builder for [`ListVolumesInput`](crate::operation::list_volumes::ListVolumesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVolumesInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -93,12 +91,7 @@ impl ListVolumesInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListVolumesInput`](crate::operation::list_volumes::ListVolumesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_volumes::ListVolumesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_volumes::ListVolumesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_volumes::ListVolumesInput {
             gateway_arn: self.gateway_arn,
             marker: self.marker,

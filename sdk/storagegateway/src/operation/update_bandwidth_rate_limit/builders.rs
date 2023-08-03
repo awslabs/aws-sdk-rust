@@ -28,7 +28,7 @@ impl UpdateBandwidthRateLimitInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBandwidthRateLimitFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_bandwidth_rate_limit::builders::UpdateBandwidthRateLimitInputBuilder,
+    inner: crate::operation::update_bandwidth_rate_limit::builders::UpdateBandwidthRateLimitInputBuilder,
 }
 impl UpdateBandwidthRateLimitFluentBuilder {
     /// Creates a new `UpdateBandwidthRateLimit`.
@@ -39,7 +39,7 @@ impl UpdateBandwidthRateLimitFluentBuilder {
         }
     }
     /// Access the UpdateBandwidthRateLimit as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_bandwidth_rate_limit::builders::UpdateBandwidthRateLimitInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_bandwidth_rate_limit::builders::UpdateBandwidthRateLimitInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl UpdateBandwidthRateLimitFluentBuilder {
             crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl UpdateBandwidthRateLimitFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl UpdateBandwidthRateLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl UpdateBandwidthRateLimitFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +107,7 @@ impl UpdateBandwidthRateLimitFluentBuilder {
             crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimit,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError>,
     > {
         self.customize_middleware().await
     }
@@ -142,13 +131,8 @@ impl UpdateBandwidthRateLimitFluentBuilder {
         self
     }
     /// <p>The average upload bandwidth rate limit in bits per second.</p>
-    pub fn set_average_upload_rate_limit_in_bits_per_sec(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_average_upload_rate_limit_in_bits_per_sec(input);
+    pub fn set_average_upload_rate_limit_in_bits_per_sec(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.inner = self.inner.set_average_upload_rate_limit_in_bits_per_sec(input);
         self
     }
     /// <p>The average upload bandwidth rate limit in bits per second.</p>
@@ -157,19 +141,12 @@ impl UpdateBandwidthRateLimitFluentBuilder {
     }
     /// <p>The average download bandwidth rate limit in bits per second.</p>
     pub fn average_download_rate_limit_in_bits_per_sec(mut self, input: i64) -> Self {
-        self.inner = self
-            .inner
-            .average_download_rate_limit_in_bits_per_sec(input);
+        self.inner = self.inner.average_download_rate_limit_in_bits_per_sec(input);
         self
     }
     /// <p>The average download bandwidth rate limit in bits per second.</p>
-    pub fn set_average_download_rate_limit_in_bits_per_sec(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_average_download_rate_limit_in_bits_per_sec(input);
+    pub fn set_average_download_rate_limit_in_bits_per_sec(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.inner = self.inner.set_average_download_rate_limit_in_bits_per_sec(input);
         self
     }
     /// <p>The average download bandwidth rate limit in bits per second.</p>

@@ -37,9 +37,7 @@ impl ListProtectedQueriesFluentBuilder {
         }
     }
     /// Access the ListProtectedQueries as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_protected_queries::builders::ListProtectedQueriesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_protected_queries::builders::ListProtectedQueriesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListProtectedQueriesFluentBuilder {
             crate::operation::list_protected_queries::ListProtectedQueries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protected_queries::ListProtectedQueriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protected_queries::ListProtectedQueriesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListProtectedQueriesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListProtectedQueriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_protected_queries::ListProtectedQueriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protected_queries::ListProtectedQueriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protected_queries::ListProtectedQueriesError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListProtectedQueriesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_protected_queries::ListProtectedQueriesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protected_queries::ListProtectedQueriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protected_queries::ListProtectedQueriesError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl ListProtectedQueriesFluentBuilder {
             crate::operation::list_protected_queries::ListProtectedQueries,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_protected_queries::ListProtectedQueriesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_protected_queries::ListProtectedQueriesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_protected_queries::paginator::ListProtectedQueriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_protected_queries::paginator::ListProtectedQueriesPaginator {
-        crate::operation::list_protected_queries::paginator::ListProtectedQueriesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_protected_queries::paginator::ListProtectedQueriesPaginator {
+        crate::operation::list_protected_queries::paginator::ListProtectedQueriesPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier for the membership in the collaboration.</p>
-    pub fn membership_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.membership_identifier(input.into());
         self
     }
     /// <p>The identifier for the membership in the collaboration.</p>
-    pub fn set_membership_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }
@@ -159,10 +135,7 @@ impl ListProtectedQueriesFluentBuilder {
         self
     }
     /// <p>A filter on the status of the protected query.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQueryStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProtectedQueryStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

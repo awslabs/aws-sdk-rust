@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeRxNormInferenceJobOutput`](crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobOutput) with field(s):
     ///   - [`comprehend_medical_async_job_properties(Option<ComprehendMedicalAsyncJobProperties>)`](crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobOutput::comprehend_medical_async_job_properties): <p>An object that contains the properties associated with a detection job.</p>
     /// - On failure, responds with [`SdkError<DescribeRxNormInferenceJobError>`](crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError)
-    pub fn describe_rx_norm_inference_job(&self) -> crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobFluentBuilder{
+    pub fn describe_rx_norm_inference_job(
+        &self,
+    ) -> crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobFluentBuilder {
         crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobFluentBuilder::new(self.handle.clone())
     }
 }

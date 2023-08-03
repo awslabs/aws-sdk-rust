@@ -29,17 +29,14 @@ impl ListGroupResourcesInput {
 }
 impl ListGroupResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListGroupResourcesInput`](crate::operation::list_group_resources::ListGroupResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_group_resources::builders::ListGroupResourcesInputBuilder {
+    pub fn builder() -> crate::operation::list_group_resources::builders::ListGroupResourcesInputBuilder {
         crate::operation::list_group_resources::builders::ListGroupResourcesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroupResourcesInput`](crate::operation::list_group_resources::ListGroupResourcesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupResourcesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -75,18 +72,12 @@ impl ListGroupResourcesInputBuilder {
         &self.max_results
     }
     /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    pub fn group_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    pub fn set_group_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_identifier = input;
         self
     }
@@ -97,16 +88,11 @@ impl ListGroupResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListGroupResourcesInput`](crate::operation::list_group_resources::ListGroupResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_group_resources::ListGroupResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_group_resources::ListGroupResourcesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                group_identifier: self.group_identifier,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_group_resources::ListGroupResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_group_resources::ListGroupResourcesInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            group_identifier: self.group_identifier,
+        })
     }
 }

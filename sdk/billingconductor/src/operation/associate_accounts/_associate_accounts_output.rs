@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for AssociateAccountsOutput {
 }
 impl AssociateAccountsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateAccountsOutput`](crate::operation::associate_accounts::AssociateAccountsOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_accounts::builders::AssociateAccountsOutputBuilder {
+    pub fn builder() -> crate::operation::associate_accounts::builders::AssociateAccountsOutputBuilder {
         crate::operation::associate_accounts::builders::AssociateAccountsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateAccountsOutput`](crate::operation::associate_accounts::AssociateAccountsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateAccountsOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

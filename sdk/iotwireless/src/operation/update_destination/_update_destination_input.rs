@@ -43,17 +43,14 @@ impl UpdateDestinationInput {
 }
 impl UpdateDestinationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
-    pub fn builder() -> crate::operation::update_destination::builders::UpdateDestinationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_destination::builders::UpdateDestinationInputBuilder {
         crate::operation::update_destination::builders::UpdateDestinationInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDestinationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) expression_type: ::std::option::Option<crate::types::ExpressionType>,
@@ -82,10 +79,7 @@ impl UpdateDestinationInputBuilder {
         self
     }
     /// <p>The type of value in <code>Expression</code>.</p>
-    pub fn set_expression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ExpressionType>,
-    ) -> Self {
+    pub fn set_expression_type(mut self, input: ::std::option::Option<crate::types::ExpressionType>) -> Self {
         self.expression_type = input;
         self
     }
@@ -138,18 +132,13 @@ impl UpdateDestinationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_destination::UpdateDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_destination::UpdateDestinationInput {
-                name: self.name,
-                expression_type: self.expression_type,
-                expression: self.expression,
-                description: self.description,
-                role_arn: self.role_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_destination::UpdateDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_destination::UpdateDestinationInput {
+            name: self.name,
+            expression_type: self.expression_type,
+            expression: self.expression,
+            description: self.description,
+            role_arn: self.role_arn,
+        })
     }
 }

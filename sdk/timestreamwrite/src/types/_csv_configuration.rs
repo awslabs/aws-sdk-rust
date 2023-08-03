@@ -51,9 +51,7 @@ impl CsvConfiguration {
 
 /// A builder for [`CsvConfiguration`](crate::types::CsvConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CsvConfigurationBuilder {
     pub(crate) column_separator: ::std::option::Option<::std::string::String>,
     pub(crate) escape_char: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct CsvConfigurationBuilder {
 }
 impl CsvConfigurationBuilder {
     /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' '). </p>
-    pub fn column_separator(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn column_separator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_separator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Column separator can be one of comma (','), pipe ('|), semicolon (';'), tab('/t'), or blank space (' '). </p>
-    pub fn set_column_separator(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_column_separator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_separator = input;
         self
     }

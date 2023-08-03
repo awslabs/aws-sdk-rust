@@ -26,7 +26,7 @@ impl StartServiceSoftwareUpdateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartServiceSoftwareUpdateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_service_software_update::builders::StartServiceSoftwareUpdateInputBuilder,
+    inner: crate::operation::start_service_software_update::builders::StartServiceSoftwareUpdateInputBuilder,
 }
 impl StartServiceSoftwareUpdateFluentBuilder {
     /// Creates a new `StartServiceSoftwareUpdate`.
@@ -37,7 +37,7 @@ impl StartServiceSoftwareUpdateFluentBuilder {
         }
     }
     /// Access the StartServiceSoftwareUpdate as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_service_software_update::builders::StartServiceSoftwareUpdateInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_service_software_update::builders::StartServiceSoftwareUpdateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartServiceSoftwareUpdateFluentBuilder {
             crate::operation::start_service_software_update::StartServiceSoftwareUpdate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_service_software_update::StartServiceSoftwareUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_service_software_update::StartServiceSoftwareUpdateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartServiceSoftwareUpdateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartServiceSoftwareUpdateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_service_software_update::StartServiceSoftwareUpdateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_service_software_update::StartServiceSoftwareUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_service_software_update::StartServiceSoftwareUpdateError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartServiceSoftwareUpdateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_service_software_update::StartServiceSoftwareUpdateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_service_software_update::StartServiceSoftwareUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_service_software_update::StartServiceSoftwareUpdateError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StartServiceSoftwareUpdateFluentBuilder {
             crate::operation::start_service_software_update::StartServiceSoftwareUpdate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_service_software_update::StartServiceSoftwareUpdateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_service_software_update::StartServiceSoftwareUpdateError>,
     > {
         self.customize_middleware().await
     }
@@ -152,10 +141,7 @@ impl StartServiceSoftwareUpdateFluentBuilder {
     /// <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the update to be picked up during an upcoming off-peak window. There's no guarantee that the update will happen during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li>
     /// </ul>
     /// <p>Default: <code>NOW</code> if you don't specify a value for <code>DesiredStartTime</code>, and <code>TIMESTAMP</code> if you do.</p>
-    pub fn set_schedule_at(
-        mut self,
-        input: ::std::option::Option<crate::types::ScheduleAt>,
-    ) -> Self {
+    pub fn set_schedule_at(mut self, input: ::std::option::Option<crate::types::ScheduleAt>) -> Self {
         self.inner = self.inner.set_schedule_at(input);
         self
     }

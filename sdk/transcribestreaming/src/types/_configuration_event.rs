@@ -6,12 +6,10 @@
 pub struct ConfigurationEvent {
     /// <p>Indicates which speaker is on which audio channel.</p>
     #[doc(hidden)]
-    pub channel_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
+    pub channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
     /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
     #[doc(hidden)]
-    pub post_call_analytics_settings:
-        ::std::option::Option<crate::types::PostCallAnalyticsSettings>,
+    pub post_call_analytics_settings: ::std::option::Option<crate::types::PostCallAnalyticsSettings>,
 }
 impl ConfigurationEvent {
     /// <p>Indicates which speaker is on which audio channel.</p>
@@ -19,9 +17,7 @@ impl ConfigurationEvent {
         self.channel_definitions.as_deref()
     }
     /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
-    pub fn post_call_analytics_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PostCallAnalyticsSettings> {
+    pub fn post_call_analytics_settings(&self) -> ::std::option::Option<&crate::types::PostCallAnalyticsSettings> {
         self.post_call_analytics_settings.as_ref()
     }
 }
@@ -34,14 +30,10 @@ impl ConfigurationEvent {
 
 /// A builder for [`ConfigurationEvent`](crate::types::ConfigurationEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigurationEventBuilder {
-    pub(crate) channel_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
-    pub(crate) post_call_analytics_settings:
-        ::std::option::Option<crate::types::PostCallAnalyticsSettings>,
+    pub(crate) channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
+    pub(crate) post_call_analytics_settings: ::std::option::Option<crate::types::PostCallAnalyticsSettings>,
 }
 impl ConfigurationEventBuilder {
     /// Appends an item to `channel_definitions`.
@@ -56,39 +48,26 @@ impl ConfigurationEventBuilder {
         self
     }
     /// <p>Indicates which speaker is on which audio channel.</p>
-    pub fn set_channel_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
-    ) -> Self {
+    pub fn set_channel_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>) -> Self {
         self.channel_definitions = input;
         self
     }
     /// <p>Indicates which speaker is on which audio channel.</p>
-    pub fn get_channel_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
+    pub fn get_channel_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
         &self.channel_definitions
     }
     /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
-    pub fn post_call_analytics_settings(
-        mut self,
-        input: crate::types::PostCallAnalyticsSettings,
-    ) -> Self {
+    pub fn post_call_analytics_settings(mut self, input: crate::types::PostCallAnalyticsSettings) -> Self {
         self.post_call_analytics_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
-    pub fn set_post_call_analytics_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::PostCallAnalyticsSettings>,
-    ) -> Self {
+    pub fn set_post_call_analytics_settings(mut self, input: ::std::option::Option<crate::types::PostCallAnalyticsSettings>) -> Self {
         self.post_call_analytics_settings = input;
         self
     }
     /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
-    pub fn get_post_call_analytics_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::PostCallAnalyticsSettings> {
+    pub fn get_post_call_analytics_settings(&self) -> &::std::option::Option<crate::types::PostCallAnalyticsSettings> {
         &self.post_call_analytics_settings
     }
     /// Consumes the builder and constructs a [`ConfigurationEvent`](crate::types::ConfigurationEvent).

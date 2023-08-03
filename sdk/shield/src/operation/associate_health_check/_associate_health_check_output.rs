@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateHealthCheckOutput {
 }
 impl AssociateHealthCheckOutput {
     /// Creates a new builder-style object to manufacture [`AssociateHealthCheckOutput`](crate::operation::associate_health_check::AssociateHealthCheckOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_health_check::builders::AssociateHealthCheckOutputBuilder {
+    pub fn builder() -> crate::operation::associate_health_check::builders::AssociateHealthCheckOutputBuilder {
         crate::operation::associate_health_check::builders::AssociateHealthCheckOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateHealthCheckOutput`](crate::operation::associate_health_check::AssociateHealthCheckOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateHealthCheckOutputBuilder {
     _request_id: Option<String>,
 }

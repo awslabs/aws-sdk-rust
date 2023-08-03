@@ -15,8 +15,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetInputBuilder {
                             ::aws_smithy_http::operation::Response
                         >
     >{
-        let mut fluent_builder =
-            client.detach_customer_managed_policy_reference_from_permission_set();
+        let mut fluent_builder = client.detach_customer_managed_policy_reference_from_permission_set();
         fluent_builder.inner = self;
         fluent_builder.send().await
     }
@@ -55,10 +54,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -110,18 +106,12 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetFluentBuilder {
         self.inner.get_instance_arn()
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
-    pub fn permission_set_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_set_arn(input.into());
         self
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_set_arn(input);
         self
     }
@@ -130,25 +120,17 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetFluentBuilder {
         self.inner.get_permission_set_arn()
     }
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-    pub fn customer_managed_policy_reference(
-        mut self,
-        input: crate::types::CustomerManagedPolicyReference,
-    ) -> Self {
+    pub fn customer_managed_policy_reference(mut self, input: crate::types::CustomerManagedPolicyReference) -> Self {
         self.inner = self.inner.customer_managed_policy_reference(input);
         self
     }
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-    pub fn set_customer_managed_policy_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomerManagedPolicyReference>,
-    ) -> Self {
+    pub fn set_customer_managed_policy_reference(mut self, input: ::std::option::Option<crate::types::CustomerManagedPolicyReference>) -> Self {
         self.inner = self.inner.set_customer_managed_policy_reference(input);
         self
     }
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-    pub fn get_customer_managed_policy_reference(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomerManagedPolicyReference> {
+    pub fn get_customer_managed_policy_reference(&self) -> &::std::option::Option<crate::types::CustomerManagedPolicyReference> {
         self.inner.get_customer_managed_policy_reference()
     }
 }

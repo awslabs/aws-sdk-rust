@@ -33,19 +33,16 @@ impl BatchModifyClusterSnapshotsInput {
 }
 impl BatchModifyClusterSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`BatchModifyClusterSnapshotsInput`](crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsInput).
-    pub fn builder() -> crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsInputBuilder{
+    pub fn builder() -> crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsInputBuilder {
         crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchModifyClusterSnapshotsInput`](crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchModifyClusterSnapshotsInputBuilder {
-    pub(crate) snapshot_identifier_list:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) snapshot_identifier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) manual_snapshot_retention_period: ::std::option::Option<i32>,
     pub(crate) force: ::std::option::Option<bool>,
 }
@@ -55,27 +52,19 @@ impl BatchModifyClusterSnapshotsInputBuilder {
     /// To override the contents of this collection use [`set_snapshot_identifier_list`](Self::set_snapshot_identifier_list).
     ///
     /// <p>A list of snapshot identifiers you want to modify.</p>
-    pub fn snapshot_identifier_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.snapshot_identifier_list.unwrap_or_default();
         v.push(input.into());
         self.snapshot_identifier_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of snapshot identifiers you want to modify.</p>
-    pub fn set_snapshot_identifier_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_snapshot_identifier_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.snapshot_identifier_list = input;
         self
     }
     /// <p>A list of snapshot identifiers you want to modify.</p>
-    pub fn get_snapshot_identifier_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_identifier_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.snapshot_identifier_list
     }
     /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
@@ -88,10 +77,7 @@ impl BatchModifyClusterSnapshotsInputBuilder {
     /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The number must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
-    pub fn set_manual_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.manual_snapshot_retention_period = input;
         self
     }
@@ -122,12 +108,10 @@ impl BatchModifyClusterSnapshotsInputBuilder {
         crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsInput {
-                snapshot_identifier_list: self.snapshot_identifier_list,
-                manual_snapshot_retention_period: self.manual_snapshot_retention_period,
-                force: self.force.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsInput {
+            snapshot_identifier_list: self.snapshot_identifier_list,
+            manual_snapshot_retention_period: self.manual_snapshot_retention_period,
+            force: self.force.unwrap_or_default(),
+        })
     }
 }

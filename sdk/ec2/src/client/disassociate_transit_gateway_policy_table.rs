@@ -9,7 +9,11 @@ impl super::Client {
     /// - On success, responds with [`DisassociateTransitGatewayPolicyTableOutput`](crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTableOutput) with field(s):
     ///   - [`association(Option<TransitGatewayPolicyTableAssociation>)`](crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTableOutput::association): <p>Returns details about the transit gateway policy table disassociation.</p>
     /// - On failure, responds with [`SdkError<DisassociateTransitGatewayPolicyTableError>`](crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTableError)
-    pub fn disassociate_transit_gateway_policy_table(&self) -> crate::operation::disassociate_transit_gateway_policy_table::builders::DisassociateTransitGatewayPolicyTableFluentBuilder{
-        crate::operation::disassociate_transit_gateway_policy_table::builders::DisassociateTransitGatewayPolicyTableFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_transit_gateway_policy_table(
+        &self,
+    ) -> crate::operation::disassociate_transit_gateway_policy_table::builders::DisassociateTransitGatewayPolicyTableFluentBuilder {
+        crate::operation::disassociate_transit_gateway_policy_table::builders::DisassociateTransitGatewayPolicyTableFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

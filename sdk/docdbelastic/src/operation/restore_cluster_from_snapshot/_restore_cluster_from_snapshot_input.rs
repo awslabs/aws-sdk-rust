@@ -22,9 +22,7 @@ pub struct RestoreClusterFromSnapshotInput {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the tag names to be assigned to the restored DB cluster, in the form of an array of key-value pairs in which the key is the tag name and the value is the key value.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RestoreClusterFromSnapshotInput {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
@@ -50,36 +48,27 @@ impl RestoreClusterFromSnapshotInput {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of the tag names to be assigned to the restored DB cluster, in the form of an array of key-value pairs in which the key is the tag name and the value is the key value.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl RestoreClusterFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreClusterFromSnapshotInput`](crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput).
-    pub fn builder() -> crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotInputBuilder{
+    pub fn builder() -> crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotInputBuilder {
         crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotInputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreClusterFromSnapshotInput`](crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreClusterFromSnapshotInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_security_group_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RestoreClusterFromSnapshotInputBuilder {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
@@ -115,27 +104,19 @@ impl RestoreClusterFromSnapshotInputBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>A list of EC2 VPC security groups to associate with the Elastic DocumentDB cluster.</p>
-    pub fn vpc_security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of EC2 VPC security groups to associate with the Elastic DocumentDB cluster.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
         self
     }
     /// <p>A list of EC2 VPC security groups to associate with the Elastic DocumentDB cluster.</p>
-    pub fn get_vpc_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// Appends an item to `subnet_ids`.
@@ -150,10 +131,7 @@ impl RestoreClusterFromSnapshotInputBuilder {
         self
     }
     /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -186,32 +164,19 @@ impl RestoreClusterFromSnapshotInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of the tag names to be assigned to the restored DB cluster, in the form of an array of key-value pairs in which the key is the tag name and the value is the key value.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of the tag names to be assigned to the restored DB cluster, in the form of an array of key-value pairs in which the key is the tag name and the value is the key value.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A list of the tag names to be assigned to the restored DB cluster, in the form of an array of key-value pairs in which the key is the tag name and the value is the key value.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RestoreClusterFromSnapshotInput`](crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput).
@@ -221,15 +186,13 @@ impl RestoreClusterFromSnapshotInputBuilder {
         crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput {
-                cluster_name: self.cluster_name,
-                snapshot_arn: self.snapshot_arn,
-                vpc_security_group_ids: self.vpc_security_group_ids,
-                subnet_ids: self.subnet_ids,
-                kms_key_id: self.kms_key_id,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput {
+            cluster_name: self.cluster_name,
+            snapshot_arn: self.snapshot_arn,
+            vpc_security_group_ids: self.vpc_security_group_ids,
+            subnet_ids: self.subnet_ids,
+            kms_key_id: self.kms_key_id,
+            tags: self.tags,
+        })
     }
 }

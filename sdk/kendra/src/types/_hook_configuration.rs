@@ -19,9 +19,7 @@ pub struct HookConfiguration {
 impl HookConfiguration {
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
-    pub fn invocation_condition(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentAttributeCondition> {
+    pub fn invocation_condition(&self) -> ::std::option::Option<&crate::types::DocumentAttributeCondition> {
         self.invocation_condition.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
@@ -42,12 +40,9 @@ impl HookConfiguration {
 
 /// A builder for [`HookConfiguration`](crate::types::HookConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HookConfigurationBuilder {
-    pub(crate) invocation_condition:
-        ::std::option::Option<crate::types::DocumentAttributeCondition>,
+    pub(crate) invocation_condition: ::std::option::Option<crate::types::DocumentAttributeCondition>,
     pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
 }
@@ -60,18 +55,13 @@ impl HookConfigurationBuilder {
     }
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
-    pub fn set_invocation_condition(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentAttributeCondition>,
-    ) -> Self {
+    pub fn set_invocation_condition(mut self, input: ::std::option::Option<crate::types::DocumentAttributeCondition>) -> Self {
         self.invocation_condition = input;
         self
     }
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
-    pub fn get_invocation_condition(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentAttributeCondition> {
+    pub fn get_invocation_condition(&self) -> &::std::option::Option<crate::types::DocumentAttributeCondition> {
         &self.invocation_condition
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>

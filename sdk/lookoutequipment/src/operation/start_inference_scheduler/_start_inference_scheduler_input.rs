@@ -15,35 +15,25 @@ impl StartInferenceSchedulerInput {
 }
 impl StartInferenceSchedulerInput {
     /// Creates a new builder-style object to manufacture [`StartInferenceSchedulerInput`](crate::operation::start_inference_scheduler::StartInferenceSchedulerInput).
-    pub fn builder(
-    ) -> crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerInputBuilder {
         crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerInputBuilder::default()
     }
 }
 
 /// A builder for [`StartInferenceSchedulerInput`](crate::operation::start_inference_scheduler::StartInferenceSchedulerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartInferenceSchedulerInputBuilder {
     pub(crate) inference_scheduler_name: ::std::option::Option<::std::string::String>,
 }
 impl StartInferenceSchedulerInputBuilder {
     /// <p>The name of the inference scheduler to be started. </p>
-    pub fn inference_scheduler_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the inference scheduler to be started. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inference_scheduler_name = input;
         self
     }
@@ -58,10 +48,8 @@ impl StartInferenceSchedulerInputBuilder {
         crate::operation::start_inference_scheduler::StartInferenceSchedulerInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_inference_scheduler::StartInferenceSchedulerInput {
-                inference_scheduler_name: self.inference_scheduler_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_inference_scheduler::StartInferenceSchedulerInput {
+            inference_scheduler_name: self.inference_scheduler_name,
+        })
     }
 }

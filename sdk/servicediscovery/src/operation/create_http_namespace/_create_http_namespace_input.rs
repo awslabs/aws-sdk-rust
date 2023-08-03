@@ -36,18 +36,14 @@ impl CreateHttpNamespaceInput {
 }
 impl CreateHttpNamespaceInput {
     /// Creates a new builder-style object to manufacture [`CreateHttpNamespaceInput`](crate::operation::create_http_namespace::CreateHttpNamespaceInput).
-    pub fn builder(
-    ) -> crate::operation::create_http_namespace::builders::CreateHttpNamespaceInputBuilder {
-        crate::operation::create_http_namespace::builders::CreateHttpNamespaceInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_http_namespace::builders::CreateHttpNamespaceInputBuilder {
+        crate::operation::create_http_namespace::builders::CreateHttpNamespaceInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateHttpNamespaceInput`](crate::operation::create_http_namespace::CreateHttpNamespaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateHttpNamespaceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
@@ -70,18 +66,12 @@ impl CreateHttpNamespaceInputBuilder {
         &self.name
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
-    pub fn creator_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
@@ -115,10 +105,7 @@ impl CreateHttpNamespaceInputBuilder {
         self
     }
     /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -129,17 +116,13 @@ impl CreateHttpNamespaceInputBuilder {
     /// Consumes the builder and constructs a [`CreateHttpNamespaceInput`](crate::operation::create_http_namespace::CreateHttpNamespaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_http_namespace::CreateHttpNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_http_namespace::CreateHttpNamespaceInput {
-                name: self.name,
-                creator_request_id: self.creator_request_id,
-                description: self.description,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_http_namespace::CreateHttpNamespaceInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_http_namespace::CreateHttpNamespaceInput {
+            name: self.name,
+            creator_request_id: self.creator_request_id,
+            description: self.description,
+            tags: self.tags,
+        })
     }
 }

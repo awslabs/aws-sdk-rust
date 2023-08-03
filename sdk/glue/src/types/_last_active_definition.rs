@@ -51,9 +51,7 @@ impl LastActiveDefinition {
 
 /// A builder for [`LastActiveDefinition`](crate::types::LastActiveDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LastActiveDefinitionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -82,10 +80,7 @@ impl LastActiveDefinitionBuilder {
         self
     }
     /// <p>The date and time the blueprint was last modified.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_on = input;
         self
     }
@@ -94,18 +89,12 @@ impl LastActiveDefinitionBuilder {
         &self.last_modified_on
     }
     /// <p>A JSON string specifying the parameters for the blueprint.</p>
-    pub fn parameter_spec(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_spec = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON string specifying the parameters for the blueprint.</p>
-    pub fn set_parameter_spec(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_spec = input;
         self
     }
@@ -114,18 +103,12 @@ impl LastActiveDefinitionBuilder {
         &self.parameter_spec
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.</p>
-    pub fn blueprint_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blueprint_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.</p>
-    pub fn set_blueprint_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blueprint_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blueprint_location = input;
         self
     }
@@ -134,18 +117,12 @@ impl LastActiveDefinitionBuilder {
         &self.blueprint_location
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
-    pub fn blueprint_service_location(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn blueprint_service_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_service_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
-    pub fn set_blueprint_service_location(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_blueprint_service_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blueprint_service_location = input;
         self
     }

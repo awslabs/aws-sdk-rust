@@ -28,9 +28,7 @@ impl DeleteSyncJobOutput {
 
 /// A builder for [`DeleteSyncJobOutput`](crate::operation::delete_sync_job::DeleteSyncJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSyncJobOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::SyncJobState>,
     _request_id: Option<String>,

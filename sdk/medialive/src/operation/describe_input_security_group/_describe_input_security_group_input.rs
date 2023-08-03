@@ -16,33 +16,25 @@ impl DescribeInputSecurityGroupInput {
 }
 impl DescribeInputSecurityGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeInputSecurityGroupInput`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput).
-    pub fn builder() -> crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupInputBuilder{
+    pub fn builder() -> crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupInputBuilder {
         crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInputSecurityGroupInput`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInputSecurityGroupInputBuilder {
     pub(crate) input_security_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInputSecurityGroupInputBuilder {
     /// The id of the Input Security Group to describe
-    pub fn input_security_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn input_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The id of the Input Security Group to describe
-    pub fn set_input_security_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_input_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_security_group_id = input;
         self
     }
@@ -57,10 +49,8 @@ impl DescribeInputSecurityGroupInputBuilder {
         crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput {
-                input_security_group_id: self.input_security_group_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput {
+            input_security_group_id: self.input_security_group_id,
+        })
     }
 }

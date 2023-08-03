@@ -42,16 +42,14 @@ impl ::aws_http::request_id::RequestId for DescribeProvisioningTemplateVersionOu
 }
 impl DescribeProvisioningTemplateVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProvisioningTemplateVersionOutput`](crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionOutput).
-    pub fn builder() -> crate::operation::describe_provisioning_template_version::builders::DescribeProvisioningTemplateVersionOutputBuilder{
+    pub fn builder() -> crate::operation::describe_provisioning_template_version::builders::DescribeProvisioningTemplateVersionOutputBuilder {
         crate::operation::describe_provisioning_template_version::builders::DescribeProvisioningTemplateVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeProvisioningTemplateVersionOutput`](crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProvisioningTemplateVersionOutputBuilder {
     pub(crate) version_id: ::std::option::Option<i32>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -80,10 +78,7 @@ impl DescribeProvisioningTemplateVersionOutputBuilder {
         self
     }
     /// <p>The date when the provisioning template version was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -92,18 +87,12 @@ impl DescribeProvisioningTemplateVersionOutputBuilder {
         &self.creation_date
     }
     /// <p>The JSON formatted contents of the provisioning template version.</p>
-    pub fn template_body(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON formatted contents of the provisioning template version.</p>
-    pub fn set_template_body(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_body = input;
         self
     }
@@ -135,17 +124,12 @@ impl DescribeProvisioningTemplateVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeProvisioningTemplateVersionOutput`](crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionOutput).
-    pub fn build(self) -> crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionOutput{
+    pub fn build(self) -> crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionOutput {
         crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionOutput {
-            version_id: self.version_id
-            ,
-            creation_date: self.creation_date
-            ,
-            template_body: self.template_body
-            ,
-            is_default_version: self.is_default_version
-                .unwrap_or_default()
-            ,
+            version_id: self.version_id,
+            creation_date: self.creation_date,
+            template_body: self.template_body,
+            is_default_version: self.is_default_version.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

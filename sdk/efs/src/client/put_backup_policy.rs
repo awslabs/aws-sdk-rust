@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`PutBackupPolicyOutput`](crate::operation::put_backup_policy::PutBackupPolicyOutput) with field(s):
     ///   - [`backup_policy(Option<BackupPolicy>)`](crate::operation::put_backup_policy::PutBackupPolicyOutput::backup_policy): <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off.</p>
     /// - On failure, responds with [`SdkError<PutBackupPolicyError>`](crate::operation::put_backup_policy::PutBackupPolicyError)
-    pub fn put_backup_policy(
-        &self,
-    ) -> crate::operation::put_backup_policy::builders::PutBackupPolicyFluentBuilder {
-        crate::operation::put_backup_policy::builders::PutBackupPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_backup_policy(&self) -> crate::operation::put_backup_policy::builders::PutBackupPolicyFluentBuilder {
+        crate::operation::put_backup_policy::builders::PutBackupPolicyFluentBuilder::new(self.handle.clone())
     }
 }

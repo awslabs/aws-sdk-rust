@@ -44,20 +44,17 @@ impl DescribeMaintenanceWindowExecutionsInput {
 }
 impl DescribeMaintenanceWindowExecutionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowExecutionsInput`](crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsInput).
-    pub fn builder() -> crate::operation::describe_maintenance_window_executions::builders::DescribeMaintenanceWindowExecutionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_maintenance_window_executions::builders::DescribeMaintenanceWindowExecutionsInputBuilder {
         crate::operation::describe_maintenance_window_executions::builders::DescribeMaintenanceWindowExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMaintenanceWindowExecutionsInput`](crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionsInputBuilder {
     pub(crate) window_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters:
-        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -96,10 +93,7 @@ impl DescribeMaintenanceWindowExecutionsInputBuilder {
     /// <li> <p>Key. A string between 1 and 128 characters. Supported keys include <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li>
     /// <li> <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>) -> Self {
         self.filters = input;
         self
     }
@@ -108,9 +102,7 @@ impl DescribeMaintenanceWindowExecutionsInputBuilder {
     /// <li> <p>Key. A string between 1 and 128 characters. Supported keys include <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li>
     /// <li> <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p> </li>
     /// </ul>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -142,18 +134,19 @@ impl DescribeMaintenanceWindowExecutionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowExecutionsInput`](crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsInput {
-                window_id: self.window_id
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                window_id: self.window_id,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

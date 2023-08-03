@@ -25,9 +25,7 @@ impl Layout {
 
 /// A builder for [`Layout`](crate::types::Layout).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LayoutBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::LayoutConfiguration>,
 }
@@ -38,10 +36,7 @@ impl LayoutBuilder {
         self
     }
     /// <p>The configuration that determines what the type of layout for a sheet.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::LayoutConfiguration>,
-    ) -> Self {
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::LayoutConfiguration>) -> Self {
         self.configuration = input;
         self
     }

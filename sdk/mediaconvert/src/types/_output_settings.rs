@@ -23,9 +23,7 @@ impl OutputSettings {
 
 /// A builder for [`OutputSettings`](crate::types::OutputSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputSettingsBuilder {
     pub(crate) hls_settings: ::std::option::Option<crate::types::HlsSettings>,
 }
@@ -36,10 +34,7 @@ impl OutputSettingsBuilder {
         self
     }
     /// Settings for HLS output groups
-    pub fn set_hls_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsSettings>,
-    ) -> Self {
+    pub fn set_hls_settings(mut self, input: ::std::option::Option<crate::types::HlsSettings>) -> Self {
         self.hls_settings = input;
         self
     }

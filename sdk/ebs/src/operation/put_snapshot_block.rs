@@ -27,64 +27,39 @@ impl PutSnapshotBlockInput {
             .set_use_fips(_config.use_fips)
             .set_endpoint(_config.endpoint_url.clone())
             .build()
-            .map_err(|err| {
-                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
+            .map_err(|err| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
         let (endpoint_result, params) = match params_result {
-            ::std::result::Result::Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                ::std::option::Option::Some(params),
-            ),
-            ::std::result::Result::Err(e) => {
-                (::std::result::Result::Err(e), ::std::option::Option::None)
-            }
+            ::std::result::Result::Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), ::std::option::Option::Some(params)),
+            ::std::result::Result::Err(e) => (::std::result::Result::Err(e), ::std::option::Option::None),
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::put_snapshot_block::PutSnapshotBlockInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
-            {
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.snapshot_id;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("snapshot_id", "cannot be empty or unset"))?;
+                let snapshot_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
+                if snapshot_id.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "snapshot_id",
                         "cannot be empty or unset",
-                    )
-                })?;
-                let snapshot_id = ::aws_smithy_http::label::fmt_string(
-                    input_1,
-                    ::aws_smithy_http::label::EncodingStrategy::Default,
-                );
-                if snapshot_id.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "snapshot_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    ));
                 }
                 let input_2 = &_input.block_index;
-                let input_2 = input_2.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "block_index",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let mut block_index_encoder =
-                    ::aws_smithy_types::primitive::Encoder::from(*input_2);
+                let input_2 = input_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("block_index", "cannot be empty or unset"))?;
+                let mut block_index_encoder = ::aws_smithy_types::primitive::Encoder::from(*input_2);
                 let block_index = block_index_encoder.encode();
                 if block_index.is_empty() {
-                    return ::std::result::Result::Err(
-                        ::aws_smithy_http::operation::error::BuildError::missing_field(
-                            "block_index",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "block_index",
+                        "cannot be empty or unset",
+                    ));
                 }
                 ::std::write!(
                     output,
@@ -99,37 +74,23 @@ impl PutSnapshotBlockInput {
             fn update_http_builder(
                 input: &crate::operation::put_snapshot_block::PutSnapshotBlockInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<
-                ::http::request::Builder,
-                ::aws_smithy_http::operation::error::BuildError,
-            > {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_put_snapshot_block::ser_put_snapshot_block_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
-            builder = ::aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                ::http::header::CONTENT_TYPE,
-                "application/octet-stream",
-            );
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(builder, ::http::header::CONTENT_TYPE, "application/octet-stream");
             builder
         };
         let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = ::aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_put_snapshot_block_input::ser_block_data_http_payload(
-                self.block_data,
-            )?
-            .into_inner(),
+            crate::protocol_serde::shape_put_snapshot_block_input::ser_block_data_http_payload(self.block_data)?.into_inner(),
         );
         if let ::std::option::Option::Some(content_length) = body.content_length() {
-            request = ::aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                ::http::header::CONTENT_LENGTH,
-                content_length,
-            );
+            request = ::aws_smithy_http::header::set_request_header_if_absent(request, ::http::header::CONTENT_LENGTH, content_length);
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -141,45 +102,28 @@ impl PutSnapshotBlockInput {
             .properties_mut()
             .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         request.properties_mut().insert(_config.time_source.clone());
-        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
-            ::aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
+        let mut user_agent =
+            ::aws_http::user_agent::AwsUserAgent::new_from_environment(::aws_types::os_shim_internal::Env::real(), crate::meta::API_METADATA.clone());
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
         let mut signing_config = ::aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
-        request
-            .properties_mut()
-            .insert(::aws_sig_auth::signer::SignableBody::UnsignedPayload);
+        request.properties_mut().insert(::aws_sig_auth::signer::SignableBody::UnsignedPayload);
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(::aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+            .insert(::aws_types::SigningService::from_static(_config.signing_service()));
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(::aws_types::region::SigningRegion::from(region.clone()));
+            request.properties_mut().insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        ::aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = ::aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::put_snapshot_block::PutSnapshotBlock::new(),
-        )
-        .with_metadata(::aws_smithy_http::operation::Metadata::new(
-            "PutSnapshotBlock",
-            "ebs",
-        ));
+        ::aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::put_snapshot_block::PutSnapshotBlock::new())
+            .with_metadata(::aws_smithy_http::operation::Metadata::new("PutSnapshotBlock", "ebs"));
         let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
         ::std::result::Result::Ok(op)
     }
@@ -206,9 +150,7 @@ impl ::aws_smithy_http::response::ParseStrictResponse for PutSnapshotBlock {
         let body = response.body().as_ref();
         ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
         if !success && status != 201 {
-            crate::protocol_serde::shape_put_snapshot_block::de_put_snapshot_block_http_error(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_snapshot_block::de_put_snapshot_block_http_error(status, headers, body)
         } else {
             crate::protocol_serde::shape_put_snapshot_block::de_put_snapshot_block_http_response_with_props(status, headers, body)
         }
@@ -223,9 +165,7 @@ mod put_snapshot_block_request_test {
     #[allow(unused_mut)]
     async fn lowercase_message_response() {
         let expected_output = crate::types::error::ValidationException::builder()
-            .set_message(::std::option::Option::Some(
-                "1 validation error detected".to_owned(),
-            ))
+            .set_message(::std::option::Option::Some("1 validation error detected".to_owned()))
             .build();
         let mut http_response = ::http::response::Builder::new()
             .header("content-length", "77")
@@ -246,30 +186,19 @@ mod put_snapshot_block_request_test {
         let parser = crate::operation::put_snapshot_block::PutSnapshotBlock::new();
         let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-                            let (http_response, _) = op_response.into_parts();
-                            let http_response = http_response.map(|body|::bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-                            <crate::operation::put_snapshot_block::PutSnapshotBlock as ::aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
-                        });
+            let (http_response, _) = op_response.into_parts();
+            let http_response = http_response.map(|body| ::bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+            <crate::operation::put_snapshot_block::PutSnapshotBlock as ::aws_smithy_http::response::ParseHttpResponse>::parse_loaded(
+                &parser,
+                &http_response,
+            )
+        });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::operation::put_snapshot_block::PutSnapshotBlockError::ValidationException(
-            parsed,
-        ) = parsed
-        {
-            ::pretty_assertions::assert_eq!(
-                parsed.message,
-                expected_output.message,
-                "Unexpected value for `message`"
-            );
-            ::pretty_assertions::assert_eq!(
-                parsed.reason,
-                expected_output.reason,
-                "Unexpected value for `reason`"
-            );
+        if let crate::operation::put_snapshot_block::PutSnapshotBlockError::ValidationException(parsed) = parsed {
+            ::pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            ::pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
         } else {
-            panic!(
-                "wrong variant: Got: {:?}. Expected: {:?}",
-                parsed, expected_output
-            );
+            panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
         }
     }
     /// This test case validates case insensitive parsing of `message`
@@ -278,51 +207,43 @@ mod put_snapshot_block_request_test {
     #[allow(unused_mut)]
     async fn uppercase_message_response() {
         let expected_output = crate::types::error::ValidationException::builder()
-            .set_message(::std::option::Option::Some(
-                "Invalid volume size: 99999999999".to_owned(),
-            ))
-            .set_reason(::std::option::Option::Some(
-                crate::types::ValidationExceptionReason::from("INVALID_VOLUME_SIZE"),
-            ))
+            .set_message(::std::option::Option::Some("Invalid volume size: 99999999999".to_owned()))
+            .set_reason(::std::option::Option::Some(crate::types::ValidationExceptionReason::from(
+                "INVALID_VOLUME_SIZE",
+            )))
             .build();
         let mut http_response = ::http::response::Builder::new()
-        .header("content-length", "77")
-        .header("content-type", "application/json")
-        .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
-        .header("x-amzn-errortype", "ValidationException:http://internal.amazon.com/coral/com.amazon.zeppelindataservice/")
-        .header("x-amzn-requestid", "2af8f013-250a-4f6e-88ae-6dd7f6e12807")
-        .status(400)
-                    .body(::aws_smithy_http::body::SdkBody::from("{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n"))
-                    .unwrap();
+            .header("content-length", "77")
+            .header("content-type", "application/json")
+            .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
+            .header(
+                "x-amzn-errortype",
+                "ValidationException:http://internal.amazon.com/coral/com.amazon.zeppelindataservice/",
+            )
+            .header("x-amzn-requestid", "2af8f013-250a-4f6e-88ae-6dd7f6e12807")
+            .status(400)
+            .body(::aws_smithy_http::body::SdkBody::from(
+                "{\"Message\":\"Invalid volume size: 99999999999\",\"Reason\":\"INVALID_VOLUME_SIZE\"}\n",
+            ))
+            .unwrap();
         let mut op_response = ::aws_smithy_http::operation::Response::new(http_response);
         use ::aws_smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::put_snapshot_block::PutSnapshotBlock::new();
         let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-                            let (http_response, _) = op_response.into_parts();
-                            let http_response = http_response.map(|body|::bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-                            <crate::operation::put_snapshot_block::PutSnapshotBlock as ::aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
-                        });
+            let (http_response, _) = op_response.into_parts();
+            let http_response = http_response.map(|body| ::bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+            <crate::operation::put_snapshot_block::PutSnapshotBlock as ::aws_smithy_http::response::ParseHttpResponse>::parse_loaded(
+                &parser,
+                &http_response,
+            )
+        });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::operation::put_snapshot_block::PutSnapshotBlockError::ValidationException(
-            parsed,
-        ) = parsed
-        {
-            ::pretty_assertions::assert_eq!(
-                parsed.message,
-                expected_output.message,
-                "Unexpected value for `message`"
-            );
-            ::pretty_assertions::assert_eq!(
-                parsed.reason,
-                expected_output.reason,
-                "Unexpected value for `reason`"
-            );
+        if let crate::operation::put_snapshot_block::PutSnapshotBlockError::ValidationException(parsed) = parsed {
+            ::pretty_assertions::assert_eq!(parsed.message, expected_output.message, "Unexpected value for `message`");
+            ::pretty_assertions::assert_eq!(parsed.reason, expected_output.reason, "Unexpected value for `reason`");
         } else {
-            panic!(
-                "wrong variant: Got: {:?}. Expected: {:?}",
-                parsed, expected_output
-            );
+            panic!("wrong variant: Got: {:?}. Expected: {:?}", parsed, expected_output);
         }
     }
 }
@@ -355,9 +276,7 @@ pub enum PutSnapshotBlockError {
 }
 impl ::aws_smithy_http::result::CreateUnhandledError for PutSnapshotBlockError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<
-            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-        >,
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
@@ -383,33 +302,17 @@ impl ::std::fmt::Display for PutSnapshotBlockError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutSnapshotBlockError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::AccessDeniedException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InternalServerException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::RequestThrottledException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ResourceNotFoundException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ServiceQuotaExceededException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ValidationException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Unhandled(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RequestThrottledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
         }
     }
 }
-impl ::aws_http::request_id::RequestId
-    for crate::operation::put_snapshot_block::PutSnapshotBlockError
-{
+impl ::aws_http::request_id::RequestId for crate::operation::put_snapshot_block::PutSnapshotBlockError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
@@ -425,27 +328,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for PutSnapshotBlockError {
 impl PutSnapshotBlockError {
     /// Creates the `PutSnapshotBlockError::Unhandled` variant from any error type.
     pub fn unhandled(
-        err: impl ::std::convert::Into<
-            ::std::boxed::Box<
-                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
-            >,
-        >,
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
     ) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err).build())
     }
 
     /// Creates the `PutSnapshotBlockError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
     pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            ::aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
+        Self::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
     }
     ///
     /// Returns error metadata, which includes the error code, message,

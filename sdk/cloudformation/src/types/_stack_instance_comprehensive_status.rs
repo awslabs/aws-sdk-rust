@@ -26,9 +26,7 @@ impl StackInstanceComprehensiveStatus {
     /// <li> <p> <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and Region has been skipped because the account was suspended at the time of the operation.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
     /// </ul>
-    pub fn detailed_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackInstanceDetailedStatus> {
+    pub fn detailed_status(&self) -> ::std::option::Option<&crate::types::StackInstanceDetailedStatus> {
         self.detailed_status.as_ref()
     }
 }
@@ -41,9 +39,7 @@ impl StackInstanceComprehensiveStatus {
 
 /// A builder for [`StackInstanceComprehensiveStatus`](crate::types::StackInstanceComprehensiveStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackInstanceComprehensiveStatusBuilder {
     pub(crate) detailed_status: ::std::option::Option<crate::types::StackInstanceDetailedStatus>,
 }
@@ -70,10 +66,7 @@ impl StackInstanceComprehensiveStatusBuilder {
     /// <li> <p> <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and Region has been skipped because the account was suspended at the time of the operation.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
     /// </ul>
-    pub fn set_detailed_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackInstanceDetailedStatus>,
-    ) -> Self {
+    pub fn set_detailed_status(mut self, input: ::std::option::Option<crate::types::StackInstanceDetailedStatus>) -> Self {
         self.detailed_status = input;
         self
     }
@@ -86,9 +79,7 @@ impl StackInstanceComprehensiveStatusBuilder {
     /// <li> <p> <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and Region has been skipped because the account was suspended at the time of the operation.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
     /// </ul>
-    pub fn get_detailed_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackInstanceDetailedStatus> {
+    pub fn get_detailed_status(&self) -> &::std::option::Option<crate::types::StackInstanceDetailedStatus> {
         &self.detailed_status
     }
     /// Consumes the builder and constructs a [`StackInstanceComprehensiveStatus`](crate::types::StackInstanceComprehensiveStatus).

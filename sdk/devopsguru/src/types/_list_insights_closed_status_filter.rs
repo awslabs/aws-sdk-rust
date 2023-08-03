@@ -30,9 +30,7 @@ impl ListInsightsClosedStatusFilter {
 
 /// A builder for [`ListInsightsClosedStatusFilter`](crate::types::ListInsightsClosedStatusFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInsightsClosedStatusFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::InsightType>,
     pub(crate) end_time_range: ::std::option::Option<crate::types::EndTimeRange>,
@@ -58,10 +56,7 @@ impl ListInsightsClosedStatusFilterBuilder {
         self
     }
     /// <p> A time range used to specify when the behavior of the filtered insights ended. </p>
-    pub fn set_end_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::EndTimeRange>,
-    ) -> Self {
+    pub fn set_end_time_range(mut self, input: ::std::option::Option<crate::types::EndTimeRange>) -> Self {
         self.end_time_range = input;
         self
     }

@@ -23,9 +23,7 @@ impl TimestampForCollection {
 
 /// A builder for [`TimestampForCollection`](crate::types::TimestampForCollection).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimestampForCollectionBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -36,10 +34,7 @@ impl TimestampForCollectionBuilder {
         self
     }
     /// <p>The data and time when data collection began for a source package. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
@@ -49,8 +44,6 @@ impl TimestampForCollectionBuilder {
     }
     /// Consumes the builder and constructs a [`TimestampForCollection`](crate::types::TimestampForCollection).
     pub fn build(self) -> crate::types::TimestampForCollection {
-        crate::types::TimestampForCollection {
-            timestamp: self.timestamp,
-        }
+        crate::types::TimestampForCollection { timestamp: self.timestamp }
     }
 }

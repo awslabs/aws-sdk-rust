@@ -20,9 +20,7 @@ impl VirtualGatewayAccessLog {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`File`](crate::types::VirtualGatewayAccessLog::File), extracting the inner [`VirtualGatewayFileAccessLog`](crate::types::VirtualGatewayFileAccessLog).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(
-        &self,
-    ) -> ::std::result::Result<&crate::types::VirtualGatewayFileAccessLog, &Self> {
+    pub fn as_file(&self) -> ::std::result::Result<&crate::types::VirtualGatewayFileAccessLog, &Self> {
         if let VirtualGatewayAccessLog::File(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

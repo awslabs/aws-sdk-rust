@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ipam_scopes::DescribeIpamScopesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`ipam_scopes(Option<Vec<IpamScope>>)`](crate::operation::describe_ipam_scopes::DescribeIpamScopesOutput::ipam_scopes): <p>The scopes you want information on.</p>
     /// - On failure, responds with [`SdkError<DescribeIpamScopesError>`](crate::operation::describe_ipam_scopes::DescribeIpamScopesError)
-    pub fn describe_ipam_scopes(
-        &self,
-    ) -> crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesFluentBuilder {
-        crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_ipam_scopes(&self) -> crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesFluentBuilder {
+        crate::operation::describe_ipam_scopes::builders::DescribeIpamScopesFluentBuilder::new(self.handle.clone())
     }
 }

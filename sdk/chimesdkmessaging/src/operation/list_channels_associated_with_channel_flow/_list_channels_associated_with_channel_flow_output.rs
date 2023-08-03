@@ -5,8 +5,7 @@
 pub struct ListChannelsAssociatedWithChannelFlowOutput {
     /// <p>The information about each channel.</p>
     #[doc(hidden)]
-    pub channels:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelAssociatedWithFlowSummary>>,
+    pub channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelAssociatedWithFlowSummary>>,
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListChannelsAssociatedWithChannelFlowOutput {
 }
 impl ListChannelsAssociatedWithChannelFlowOutput {
     /// <p>The information about each channel.</p>
-    pub fn channels(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ChannelAssociatedWithFlowSummary]> {
+    pub fn channels(&self) -> ::std::option::Option<&[crate::types::ChannelAssociatedWithFlowSummary]> {
         self.channels.as_deref()
     }
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
@@ -40,7 +37,7 @@ impl ::aws_http::request_id::RequestId for ListChannelsAssociatedWithChannelFlow
 }
 impl ListChannelsAssociatedWithChannelFlowOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelsAssociatedWithChannelFlowOutput`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowOutput).
-    pub fn builder() -> crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowOutputBuilder{
+    pub fn builder() -> crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowOutputBuilder {
         crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowOutputBuilder::default()
     }
 }
@@ -49,8 +46,7 @@ impl ListChannelsAssociatedWithChannelFlowOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListChannelsAssociatedWithChannelFlowOutputBuilder {
-    pub(crate) channels:
-        ::std::option::Option<::std::vec::Vec<crate::types::ChannelAssociatedWithFlowSummary>>,
+    pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelAssociatedWithFlowSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -67,20 +63,12 @@ impl ListChannelsAssociatedWithChannelFlowOutputBuilder {
         self
     }
     /// <p>The information about each channel.</p>
-    pub fn set_channels(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::ChannelAssociatedWithFlowSummary>,
-        >,
-    ) -> Self {
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelAssociatedWithFlowSummary>>) -> Self {
         self.channels = input;
         self
     }
     /// <p>The information about each channel.</p>
-    pub fn get_channels(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelAssociatedWithFlowSummary>>
-    {
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelAssociatedWithFlowSummary>> {
         &self.channels
     }
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
@@ -107,12 +95,10 @@ impl ListChannelsAssociatedWithChannelFlowOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListChannelsAssociatedWithChannelFlowOutput`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowOutput).
-    pub fn build(self) -> crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowOutput{
+    pub fn build(self) -> crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowOutput {
         crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowOutput {
-            channels: self.channels
-            ,
-            next_token: self.next_token
-            ,
+            channels: self.channels,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

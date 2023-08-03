@@ -5,8 +5,7 @@
 pub struct ListApplicationInstancesOutput {
     /// <p>A list of application instances.</p>
     #[doc(hidden)]
-    pub application_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInstance>>,
+    pub application_instances: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInstance>>,
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListApplicationInstancesOutput {
 }
 impl ListApplicationInstancesOutput {
     /// <p>A list of application instances.</p>
-    pub fn application_instances(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ApplicationInstance]> {
+    pub fn application_instances(&self) -> ::std::option::Option<&[crate::types::ApplicationInstance]> {
         self.application_instances.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListApplicationInstancesOutput {
 }
 impl ListApplicationInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationInstancesOutput`](crate::operation::list_application_instances::ListApplicationInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_application_instances::builders::ListApplicationInstancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_application_instances::builders::ListApplicationInstancesOutputBuilder {
         crate::operation::list_application_instances::builders::ListApplicationInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationInstancesOutput`](crate::operation::list_application_instances::ListApplicationInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationInstancesOutputBuilder {
-    pub(crate) application_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInstance>>,
+    pub(crate) application_instances: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListApplicationInstancesOutputBuilder {
         self
     }
     /// <p>A list of application instances.</p>
-    pub fn set_application_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInstance>>,
-    ) -> Self {
+    pub fn set_application_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInstance>>) -> Self {
         self.application_instances = input;
         self
     }
     /// <p>A list of application instances.</p>
-    pub fn get_application_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationInstance>> {
+    pub fn get_application_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationInstance>> {
         &self.application_instances
     }
     /// <p>A pagination token that's included if more results are available.</p>
@@ -99,9 +86,7 @@ impl ListApplicationInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListApplicationInstancesOutput`](crate::operation::list_application_instances::ListApplicationInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_application_instances::ListApplicationInstancesOutput {
+    pub fn build(self) -> crate::operation::list_application_instances::ListApplicationInstancesOutput {
         crate::operation::list_application_instances::ListApplicationInstancesOutput {
             application_instances: self.application_instances,
             next_token: self.next_token,

@@ -12,7 +12,10 @@ pub fn ser_detect_protective_equipment_input(
     if let Some(var_3) = &input.summarization_attributes {
         #[allow(unused_mut)]
         let mut object_4 = object.key("SummarizationAttributes").start_object();
-        crate::protocol_serde::shape_protective_equipment_summarization_attributes::ser_protective_equipment_summarization_attributes(&mut object_4, var_3)?;
+        crate::protocol_serde::shape_protective_equipment_summarization_attributes::ser_protective_equipment_summarization_attributes(
+            &mut object_4,
+            var_3,
+        )?;
         object_4.finish();
     }
     Ok(())

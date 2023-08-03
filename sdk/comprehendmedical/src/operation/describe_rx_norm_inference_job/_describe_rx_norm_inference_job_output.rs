@@ -5,15 +5,12 @@
 pub struct DescribeRxNormInferenceJobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties:
-        ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
+    pub comprehend_medical_async_job_properties: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeRxNormInferenceJobOutput {
     /// <p>An object that contains the properties associated with a detection job.</p>
-    pub fn comprehend_medical_async_job_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ComprehendMedicalAsyncJobProperties> {
+    pub fn comprehend_medical_async_job_properties(&self) -> ::std::option::Option<&crate::types::ComprehendMedicalAsyncJobProperties> {
         self.comprehend_medical_async_job_properties.as_ref()
     }
 }
@@ -24,27 +21,21 @@ impl ::aws_http::request_id::RequestId for DescribeRxNormInferenceJobOutput {
 }
 impl DescribeRxNormInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRxNormInferenceJobOutput`](crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobOutput).
-    pub fn builder() -> crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobOutputBuilder {
         crate::operation::describe_rx_norm_inference_job::builders::DescribeRxNormInferenceJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRxNormInferenceJobOutput`](crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRxNormInferenceJobOutputBuilder {
-    pub(crate) comprehend_medical_async_job_properties:
-        ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
+    pub(crate) comprehend_medical_async_job_properties: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeRxNormInferenceJobOutputBuilder {
     /// <p>An object that contains the properties associated with a detection job.</p>
-    pub fn comprehend_medical_async_job_properties(
-        mut self,
-        input: crate::types::ComprehendMedicalAsyncJobProperties,
-    ) -> Self {
+    pub fn comprehend_medical_async_job_properties(mut self, input: crate::types::ComprehendMedicalAsyncJobProperties) -> Self {
         self.comprehend_medical_async_job_properties = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +48,7 @@ impl DescribeRxNormInferenceJobOutputBuilder {
         self
     }
     /// <p>An object that contains the properties associated with a detection job.</p>
-    pub fn get_comprehend_medical_async_job_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties> {
+    pub fn get_comprehend_medical_async_job_properties(&self) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties> {
         &self.comprehend_medical_async_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +61,7 @@ impl DescribeRxNormInferenceJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRxNormInferenceJobOutput`](crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobOutput {
+    pub fn build(self) -> crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobOutput {
         crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobOutput {
             comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties,
             _request_id: self._request_id,

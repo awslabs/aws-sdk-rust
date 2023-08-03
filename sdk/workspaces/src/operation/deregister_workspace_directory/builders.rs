@@ -29,7 +29,7 @@ impl DeregisterWorkspaceDirectoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterWorkspaceDirectoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryInputBuilder,
+    inner: crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryInputBuilder,
 }
 impl DeregisterWorkspaceDirectoryFluentBuilder {
     /// Creates a new `DeregisterWorkspaceDirectory`.
@@ -40,7 +40,7 @@ impl DeregisterWorkspaceDirectoryFluentBuilder {
         }
     }
     /// Access the DeregisterWorkspaceDirectory as a reference.
-    pub fn as_input(&self) -> &crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl DeregisterWorkspaceDirectoryFluentBuilder {
             crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl DeregisterWorkspaceDirectoryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl DeregisterWorkspaceDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl DeregisterWorkspaceDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl DeregisterWorkspaceDirectoryFluentBuilder {
             crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectory,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryError>,
     > {
         self.customize_middleware().await
     }

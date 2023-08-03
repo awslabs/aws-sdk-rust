@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`entitlements(Option<Vec<Entitlement>>)`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput::entitlements): The entitlements that were just granted.
     ///   - [`flow_arn(Option<String>)`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput::flow_arn): The ARN of the flow that these entitlements were granted to.
     /// - On failure, responds with [`SdkError<GrantFlowEntitlementsError>`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError)
-    pub fn grant_flow_entitlements(
-        &self,
-    ) -> crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsFluentBuilder
-    {
-        crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn grant_flow_entitlements(&self) -> crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsFluentBuilder {
+        crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsFluentBuilder::new(self.handle.clone())
     }
 }

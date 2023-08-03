@@ -7,9 +7,7 @@
 pub struct GameConfigurationDetails {
     /// <p>Configuration data, organized by section name.</p>
     #[doc(hidden)]
-    pub sections: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Section>,
-    >,
+    pub sections: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Section>>,
     /// <p>The date when the game was created.</p>
     #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -19,11 +17,7 @@ pub struct GameConfigurationDetails {
 }
 impl GameConfigurationDetails {
     /// <p>Configuration data, organized by section name.</p>
-    pub fn sections(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::Section>,
-    > {
+    pub fn sections(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Section>> {
         self.sections.as_ref()
     }
     /// <p>The date when the game was created.</p>
@@ -44,13 +38,9 @@ impl GameConfigurationDetails {
 
 /// A builder for [`GameConfigurationDetails`](crate::types::GameConfigurationDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GameConfigurationDetailsBuilder {
-    pub(crate) sections: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Section>,
-    >,
+    pub(crate) sections: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Section>>,
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -60,32 +50,19 @@ impl GameConfigurationDetailsBuilder {
     /// To override the contents of this collection use [`set_sections`](Self::set_sections).
     ///
     /// <p>Configuration data, organized by section name.</p>
-    pub fn sections(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::Section,
-    ) -> Self {
+    pub fn sections(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Section) -> Self {
         let mut hash_map = self.sections.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.sections = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Configuration data, organized by section name.</p>
-    pub fn set_sections(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::Section>,
-        >,
-    ) -> Self {
+    pub fn set_sections(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Section>>) -> Self {
         self.sections = input;
         self
     }
     /// <p>Configuration data, organized by section name.</p>
-    pub fn get_sections(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::Section>,
-    > {
+    pub fn get_sections(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Section>> {
         &self.sections
     }
     /// <p>The date when the game was created.</p>
@@ -94,10 +71,7 @@ impl GameConfigurationDetailsBuilder {
         self
     }
     /// <p>The date when the game was created.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -111,10 +85,7 @@ impl GameConfigurationDetailsBuilder {
         self
     }
     /// <p>The date when the game was last modified.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }

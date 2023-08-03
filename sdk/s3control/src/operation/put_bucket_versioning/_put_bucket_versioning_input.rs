@@ -30,32 +30,25 @@ impl PutBucketVersioningInput {
         self.mfa.as_deref()
     }
     /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
-    pub fn versioning_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VersioningConfiguration> {
+    pub fn versioning_configuration(&self) -> ::std::option::Option<&crate::types::VersioningConfiguration> {
         self.versioning_configuration.as_ref()
     }
 }
 impl PutBucketVersioningInput {
     /// Creates a new builder-style object to manufacture [`PutBucketVersioningInput`](crate::operation::put_bucket_versioning::PutBucketVersioningInput).
-    pub fn builder(
-    ) -> crate::operation::put_bucket_versioning::builders::PutBucketVersioningInputBuilder {
-        crate::operation::put_bucket_versioning::builders::PutBucketVersioningInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::put_bucket_versioning::builders::PutBucketVersioningInputBuilder {
+        crate::operation::put_bucket_versioning::builders::PutBucketVersioningInputBuilder::default()
     }
 }
 
 /// A builder for [`PutBucketVersioningInput`](crate::operation::put_bucket_versioning::PutBucketVersioningInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutBucketVersioningInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) mfa: ::std::option::Option<::std::string::String>,
-    pub(crate) versioning_configuration:
-        ::std::option::Option<crate::types::VersioningConfiguration>,
+    pub(crate) versioning_configuration: ::std::option::Option<crate::types::VersioningConfiguration>,
 }
 impl PutBucketVersioningInputBuilder {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
@@ -101,41 +94,29 @@ impl PutBucketVersioningInputBuilder {
         &self.mfa
     }
     /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
-    pub fn versioning_configuration(
-        mut self,
-        input: crate::types::VersioningConfiguration,
-    ) -> Self {
+    pub fn versioning_configuration(mut self, input: crate::types::VersioningConfiguration) -> Self {
         self.versioning_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
-    pub fn set_versioning_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::VersioningConfiguration>,
-    ) -> Self {
+    pub fn set_versioning_configuration(mut self, input: ::std::option::Option<crate::types::VersioningConfiguration>) -> Self {
         self.versioning_configuration = input;
         self
     }
     /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
-    pub fn get_versioning_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::VersioningConfiguration> {
+    pub fn get_versioning_configuration(&self) -> &::std::option::Option<crate::types::VersioningConfiguration> {
         &self.versioning_configuration
     }
     /// Consumes the builder and constructs a [`PutBucketVersioningInput`](crate::operation::put_bucket_versioning::PutBucketVersioningInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_bucket_versioning::PutBucketVersioningInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::put_bucket_versioning::PutBucketVersioningInput {
-                account_id: self.account_id,
-                bucket: self.bucket,
-                mfa: self.mfa,
-                versioning_configuration: self.versioning_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::put_bucket_versioning::PutBucketVersioningInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::put_bucket_versioning::PutBucketVersioningInput {
+            account_id: self.account_id,
+            bucket: self.bucket,
+            mfa: self.mfa,
+            versioning_configuration: self.versioning_configuration,
+        })
     }
 }

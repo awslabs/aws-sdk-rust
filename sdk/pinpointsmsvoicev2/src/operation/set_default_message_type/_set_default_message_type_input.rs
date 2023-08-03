@@ -22,36 +22,26 @@ impl SetDefaultMessageTypeInput {
 }
 impl SetDefaultMessageTypeInput {
     /// Creates a new builder-style object to manufacture [`SetDefaultMessageTypeInput`](crate::operation::set_default_message_type::SetDefaultMessageTypeInput).
-    pub fn builder(
-    ) -> crate::operation::set_default_message_type::builders::SetDefaultMessageTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_default_message_type::builders::SetDefaultMessageTypeInputBuilder {
         crate::operation::set_default_message_type::builders::SetDefaultMessageTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`SetDefaultMessageTypeInput`](crate::operation::set_default_message_type::SetDefaultMessageTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetDefaultMessageTypeInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,
 }
 impl SetDefaultMessageTypeInputBuilder {
     /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -65,10 +55,7 @@ impl SetDefaultMessageTypeInputBuilder {
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn set_message_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageType>,
-    ) -> Self {
+    pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
         self.message_type = input;
         self
     }
@@ -79,15 +66,11 @@ impl SetDefaultMessageTypeInputBuilder {
     /// Consumes the builder and constructs a [`SetDefaultMessageTypeInput`](crate::operation::set_default_message_type::SetDefaultMessageTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::set_default_message_type::SetDefaultMessageTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::set_default_message_type::SetDefaultMessageTypeInput {
-                configuration_set_name: self.configuration_set_name,
-                message_type: self.message_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::set_default_message_type::SetDefaultMessageTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::set_default_message_type::SetDefaultMessageTypeInput {
+            configuration_set_name: self.configuration_set_name,
+            message_type: self.message_type,
+        })
     }
 }

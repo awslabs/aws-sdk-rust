@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`sessions(Option<Vec<Session>>)`](crate::operation::describe_sessions::DescribeSessionsOutput::sessions): <p>Information about the streaming sessions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_sessions::DescribeSessionsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<DescribeSessionsError>`](crate::operation::describe_sessions::DescribeSessionsError)
-    pub fn describe_sessions(
-        &self,
-    ) -> crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder {
-        crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_sessions(&self) -> crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder {
+        crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder::new(self.handle.clone())
     }
 }

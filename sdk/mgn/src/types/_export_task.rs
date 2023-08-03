@@ -79,9 +79,7 @@ impl ExportTask {
 
 /// A builder for [`ExportTask`](crate::types::ExportTask).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportTaskBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
@@ -137,18 +135,12 @@ impl ExportTaskBuilder {
         &self.s3_key
     }
     /// <p>Export task s3 bucket owner.</p>
-    pub fn s3_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Export task s3 bucket owner.</p>
-    pub fn set_s3_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_owner = input;
         self
     }
@@ -157,18 +149,12 @@ impl ExportTaskBuilder {
         &self.s3_bucket_owner
     }
     /// <p>Export task creation datetime.</p>
-    pub fn creation_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Export task creation datetime.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date_time = input;
         self
     }
@@ -177,18 +163,12 @@ impl ExportTaskBuilder {
         &self.creation_date_time
     }
     /// <p>Export task end datetime.</p>
-    pub fn end_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn end_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Export task end datetime.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_date_time = input;
         self
     }
@@ -230,10 +210,7 @@ impl ExportTaskBuilder {
         self
     }
     /// <p>Export task summary.</p>
-    pub fn set_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportTaskSummary>,
-    ) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::ExportTaskSummary>) -> Self {
         self.summary = input;
         self
     }

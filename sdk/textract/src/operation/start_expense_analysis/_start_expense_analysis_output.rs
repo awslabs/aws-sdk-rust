@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for StartExpenseAnalysisOutput {
 }
 impl StartExpenseAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`StartExpenseAnalysisOutput`](crate::operation::start_expense_analysis::StartExpenseAnalysisOutput).
-    pub fn builder(
-    ) -> crate::operation::start_expense_analysis::builders::StartExpenseAnalysisOutputBuilder {
+    pub fn builder() -> crate::operation::start_expense_analysis::builders::StartExpenseAnalysisOutputBuilder {
         crate::operation::start_expense_analysis::builders::StartExpenseAnalysisOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartExpenseAnalysisOutput`](crate::operation::start_expense_analysis::StartExpenseAnalysisOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartExpenseAnalysisOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

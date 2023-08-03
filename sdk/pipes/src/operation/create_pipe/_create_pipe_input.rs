@@ -35,9 +35,7 @@ pub struct CreatePipeInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of key-value pairs to associate with the pipe.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePipeInput {
     /// <p>The name of the pipe.</p>
@@ -65,9 +63,7 @@ impl CreatePipeInput {
         self.enrichment.as_deref()
     }
     /// <p>The parameters required to set up enrichment on your pipe.</p>
-    pub fn enrichment_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PipeEnrichmentParameters> {
+    pub fn enrichment_parameters(&self) -> ::std::option::Option<&crate::types::PipeEnrichmentParameters> {
         self.enrichment_parameters.as_ref()
     }
     /// <p>The ARN of the target resource.</p>
@@ -83,11 +79,7 @@ impl CreatePipeInput {
         self.role_arn.as_deref()
     }
     /// <p>The list of key-value pairs to associate with the pipe.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -129,9 +121,7 @@ pub struct CreatePipeInputBuilder {
     pub(crate) target: ::std::option::Option<::std::string::String>,
     pub(crate) target_parameters: ::std::option::Option<crate::types::PipeTargetParameters>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePipeInputBuilder {
     /// <p>The name of the pipe.</p>
@@ -168,10 +158,7 @@ impl CreatePipeInputBuilder {
         self
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestedPipeState>,
-    ) -> Self {
+    pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::RequestedPipeState>) -> Self {
         self.desired_state = input;
         self
     }
@@ -199,17 +186,12 @@ impl CreatePipeInputBuilder {
         self
     }
     /// <p>The parameters required to set up a source for your pipe.</p>
-    pub fn set_source_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeSourceParameters>,
-    ) -> Self {
+    pub fn set_source_parameters(mut self, input: ::std::option::Option<crate::types::PipeSourceParameters>) -> Self {
         self.source_parameters = input;
         self
     }
     /// <p>The parameters required to set up a source for your pipe.</p>
-    pub fn get_source_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipeSourceParameters> {
+    pub fn get_source_parameters(&self) -> &::std::option::Option<crate::types::PipeSourceParameters> {
         &self.source_parameters
     }
     /// <p>The ARN of the enrichment resource.</p>
@@ -232,17 +214,12 @@ impl CreatePipeInputBuilder {
         self
     }
     /// <p>The parameters required to set up enrichment on your pipe.</p>
-    pub fn set_enrichment_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeEnrichmentParameters>,
-    ) -> Self {
+    pub fn set_enrichment_parameters(mut self, input: ::std::option::Option<crate::types::PipeEnrichmentParameters>) -> Self {
         self.enrichment_parameters = input;
         self
     }
     /// <p>The parameters required to set up enrichment on your pipe.</p>
-    pub fn get_enrichment_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipeEnrichmentParameters> {
+    pub fn get_enrichment_parameters(&self) -> &::std::option::Option<crate::types::PipeEnrichmentParameters> {
         &self.enrichment_parameters
     }
     /// <p>The ARN of the target resource.</p>
@@ -265,17 +242,12 @@ impl CreatePipeInputBuilder {
         self
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
-    pub fn set_target_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::PipeTargetParameters>,
-    ) -> Self {
+    pub fn set_target_parameters(mut self, input: ::std::option::Option<crate::types::PipeTargetParameters>) -> Self {
         self.target_parameters = input;
         self
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
-    pub fn get_target_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::PipeTargetParameters> {
+    pub fn get_target_parameters(&self) -> &::std::option::Option<crate::types::PipeTargetParameters> {
         &self.target_parameters
     }
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
@@ -297,41 +269,23 @@ impl CreatePipeInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of key-value pairs to associate with the pipe.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of key-value pairs to associate with the pipe.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The list of key-value pairs to associate with the pipe.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePipeInput`](crate::operation::create_pipe::CreatePipeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_pipe::CreatePipeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_pipe::CreatePipeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pipe::CreatePipeInput {
             name: self.name,
             description: self.description,

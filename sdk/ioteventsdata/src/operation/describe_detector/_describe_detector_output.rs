@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeDetectorOutput {
 }
 impl DescribeDetectorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDetectorOutput`](crate::operation::describe_detector::DescribeDetectorOutput).
-    pub fn builder() -> crate::operation::describe_detector::builders::DescribeDetectorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_detector::builders::DescribeDetectorOutputBuilder {
         crate::operation::describe_detector::builders::DescribeDetectorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDetectorOutput`](crate::operation::describe_detector::DescribeDetectorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDetectorOutputBuilder {
     pub(crate) detector: ::std::option::Option<crate::types::Detector>,
     _request_id: Option<String>,

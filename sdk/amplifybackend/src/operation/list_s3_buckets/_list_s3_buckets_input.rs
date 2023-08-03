@@ -23,9 +23,7 @@ impl ListS3BucketsInput {
 
 /// A builder for [`ListS3BucketsInput`](crate::operation::list_s3_buckets::ListS3BucketsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListS3BucketsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl ListS3BucketsInputBuilder {
     /// Consumes the builder and constructs a [`ListS3BucketsInput`](crate::operation::list_s3_buckets::ListS3BucketsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_s3_buckets::ListS3BucketsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_s3_buckets::ListS3BucketsInput {
-            next_token: self.next_token,
-        })
+    ) -> ::std::result::Result<crate::operation::list_s3_buckets::ListS3BucketsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_s3_buckets::ListS3BucketsInput { next_token: self.next_token })
     }
 }

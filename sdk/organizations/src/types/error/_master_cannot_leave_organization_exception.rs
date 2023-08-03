@@ -27,34 +27,27 @@ impl ::std::fmt::Display for MasterCannotLeaveOrganizationException {
     }
 }
 impl ::std::error::Error for MasterCannotLeaveOrganizationException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::MasterCannotLeaveOrganizationException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::MasterCannotLeaveOrganizationException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for MasterCannotLeaveOrganizationException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MasterCannotLeaveOrganizationException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl MasterCannotLeaveOrganizationException {
     /// Creates a new builder-style object to manufacture [`MasterCannotLeaveOrganizationException`](crate::types::error::MasterCannotLeaveOrganizationException).
-    pub fn builder() -> crate::types::error::builders::MasterCannotLeaveOrganizationExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::MasterCannotLeaveOrganizationExceptionBuilder {
         crate::types::error::builders::MasterCannotLeaveOrganizationExceptionBuilder::default()
     }
 }
 
 /// A builder for [`MasterCannotLeaveOrganizationException`](crate::types::error::MasterCannotLeaveOrganizationException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MasterCannotLeaveOrganizationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl MasterCannotLeaveOrganizationExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

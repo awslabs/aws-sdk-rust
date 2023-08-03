@@ -34,8 +34,7 @@ pub struct UpdateResponsePlanInput {
     pub incident_template_dedupe_string: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     #[doc(hidden)]
-    pub incident_template_notification_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
+    pub incident_template_notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
     #[doc(hidden)]
@@ -48,9 +47,7 @@ pub struct UpdateResponsePlanInput {
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
     #[doc(hidden)]
-    pub incident_template_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub incident_template_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Information about third-party services integrated into the response plan.</p>
     #[doc(hidden)]
     pub integrations: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
@@ -93,9 +90,7 @@ impl UpdateResponsePlanInput {
         self.incident_template_dedupe_string.as_deref()
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn incident_template_notification_targets(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::NotificationTargetItem]> {
+    pub fn incident_template_notification_targets(&self) -> ::std::option::Option<&[crate::types::NotificationTargetItem]> {
         self.incident_template_notification_targets.as_deref()
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
@@ -112,11 +107,7 @@ impl UpdateResponsePlanInput {
         self.actions.as_deref()
     }
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
-    pub fn incident_template_tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn incident_template_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.incident_template_tags.as_ref()
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
@@ -126,17 +117,14 @@ impl UpdateResponsePlanInput {
 }
 impl UpdateResponsePlanInput {
     /// Creates a new builder-style object to manufacture [`UpdateResponsePlanInput`](crate::operation::update_response_plan::UpdateResponsePlanInput).
-    pub fn builder(
-    ) -> crate::operation::update_response_plan::builders::UpdateResponsePlanInputBuilder {
+    pub fn builder() -> crate::operation::update_response_plan::builders::UpdateResponsePlanInputBuilder {
         crate::operation::update_response_plan::builders::UpdateResponsePlanInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateResponsePlanInput`](crate::operation::update_response_plan::UpdateResponsePlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateResponsePlanInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -145,14 +133,11 @@ pub struct UpdateResponsePlanInputBuilder {
     pub(crate) incident_template_impact: ::std::option::Option<i32>,
     pub(crate) incident_template_summary: ::std::option::Option<::std::string::String>,
     pub(crate) incident_template_dedupe_string: ::std::option::Option<::std::string::String>,
-    pub(crate) incident_template_notification_targets:
-        ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
+    pub(crate) incident_template_notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
     pub(crate) chat_channel: ::std::option::Option<crate::types::ChatChannel>,
     pub(crate) engagements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    pub(crate) incident_template_tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) incident_template_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) integrations: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
 }
 impl UpdateResponsePlanInputBuilder {
@@ -199,18 +184,12 @@ impl UpdateResponsePlanInputBuilder {
         &self.display_name
     }
     /// <p>The short format name of the incident. The title can't contain spaces.</p>
-    pub fn incident_template_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_template_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_template_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The short format name of the incident. The title can't contain spaces.</p>
-    pub fn set_incident_template_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_template_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.incident_template_title = input;
         self
     }
@@ -257,18 +236,12 @@ impl UpdateResponsePlanInputBuilder {
         &self.incident_template_impact
     }
     /// <p>A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.</p>
-    pub fn incident_template_summary(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_template_summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_template_summary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.</p>
-    pub fn set_incident_template_summary(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_template_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.incident_template_summary = input;
         self
     }
@@ -277,25 +250,17 @@ impl UpdateResponsePlanInputBuilder {
         &self.incident_template_summary
     }
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
-    pub fn incident_template_dedupe_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn incident_template_dedupe_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_template_dedupe_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
-    pub fn set_incident_template_dedupe_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_incident_template_dedupe_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.incident_template_dedupe_string = input;
         self
     }
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
-    pub fn get_incident_template_dedupe_string(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_incident_template_dedupe_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.incident_template_dedupe_string
     }
     /// Appends an item to `incident_template_notification_targets`.
@@ -303,13 +268,8 @@ impl UpdateResponsePlanInputBuilder {
     /// To override the contents of this collection use [`set_incident_template_notification_targets`](Self::set_incident_template_notification_targets).
     ///
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn incident_template_notification_targets(
-        mut self,
-        input: crate::types::NotificationTargetItem,
-    ) -> Self {
-        let mut v = self
-            .incident_template_notification_targets
-            .unwrap_or_default();
+    pub fn incident_template_notification_targets(mut self, input: crate::types::NotificationTargetItem) -> Self {
+        let mut v = self.incident_template_notification_targets.unwrap_or_default();
         v.push(input);
         self.incident_template_notification_targets = ::std::option::Option::Some(v);
         self
@@ -323,9 +283,7 @@ impl UpdateResponsePlanInputBuilder {
         self
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn get_incident_template_notification_targets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>> {
+    pub fn get_incident_template_notification_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>> {
         &self.incident_template_notification_targets
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
@@ -336,10 +294,7 @@ impl UpdateResponsePlanInputBuilder {
     }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
-    pub fn set_chat_channel(
-        mut self,
-        input: ::std::option::Option<crate::types::ChatChannel>,
-    ) -> Self {
+    pub fn set_chat_channel(mut self, input: ::std::option::Option<crate::types::ChatChannel>) -> Self {
         self.chat_channel = input;
         self
     }
@@ -360,17 +315,12 @@ impl UpdateResponsePlanInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn set_engagements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_engagements(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.engagements = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    pub fn get_engagements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_engagements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.engagements
     }
     /// Appends an item to `actions`.
@@ -385,10 +335,7 @@ impl UpdateResponsePlanInputBuilder {
         self
     }
     /// <p>The actions that this response plan takes at the beginning of an incident.</p>
-    pub fn set_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
         self.actions = input;
         self
     }
@@ -414,19 +361,13 @@ impl UpdateResponsePlanInputBuilder {
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
     pub fn set_incident_template_tags(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.incident_template_tags = input;
         self
     }
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident. To call this action, you must also have permission to call the <code>TagResource</code> API action for the incident record resource.</p>
-    pub fn get_incident_template_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_incident_template_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.incident_template_tags
     }
     /// Appends an item to `integrations`.
@@ -441,42 +382,32 @@ impl UpdateResponsePlanInputBuilder {
         self
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
-    pub fn set_integrations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
-    ) -> Self {
+    pub fn set_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>) -> Self {
         self.integrations = input;
         self
     }
     /// <p>Information about third-party services integrated into the response plan.</p>
-    pub fn get_integrations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
+    pub fn get_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
         &self.integrations
     }
     /// Consumes the builder and constructs a [`UpdateResponsePlanInput`](crate::operation::update_response_plan::UpdateResponsePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_response_plan::UpdateResponsePlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_response_plan::UpdateResponsePlanInput {
-                client_token: self.client_token,
-                arn: self.arn,
-                display_name: self.display_name,
-                incident_template_title: self.incident_template_title,
-                incident_template_impact: self.incident_template_impact,
-                incident_template_summary: self.incident_template_summary,
-                incident_template_dedupe_string: self.incident_template_dedupe_string,
-                incident_template_notification_targets: self.incident_template_notification_targets,
-                chat_channel: self.chat_channel,
-                engagements: self.engagements,
-                actions: self.actions,
-                incident_template_tags: self.incident_template_tags,
-                integrations: self.integrations,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_response_plan::UpdateResponsePlanInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_response_plan::UpdateResponsePlanInput {
+            client_token: self.client_token,
+            arn: self.arn,
+            display_name: self.display_name,
+            incident_template_title: self.incident_template_title,
+            incident_template_impact: self.incident_template_impact,
+            incident_template_summary: self.incident_template_summary,
+            incident_template_dedupe_string: self.incident_template_dedupe_string,
+            incident_template_notification_targets: self.incident_template_notification_targets,
+            chat_channel: self.chat_channel,
+            engagements: self.engagements,
+            actions: self.actions,
+            incident_template_tags: self.incident_template_tags,
+            integrations: self.integrations,
+        })
     }
 }

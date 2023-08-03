@@ -45,9 +45,7 @@ impl NetworkInterface {
 
 /// A builder for [`NetworkInterface`](crate::types::NetworkInterface).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkInterfaceBuilder {
     pub(crate) interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::NetworkInterfaceType>,
@@ -75,10 +73,7 @@ impl NetworkInterfaceBuilder {
         self
     }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::NetworkInterfaceType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceType>) -> Self {
         self.r#type = input;
         self
     }
@@ -92,10 +87,7 @@ impl NetworkInterfaceBuilder {
         self
     }
     /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
-    pub fn set_can_interface(
-        mut self,
-        input: ::std::option::Option<crate::types::CanInterface>,
-    ) -> Self {
+    pub fn set_can_interface(mut self, input: ::std::option::Option<crate::types::CanInterface>) -> Self {
         self.can_interface = input;
         self
     }
@@ -109,10 +101,7 @@ impl NetworkInterfaceBuilder {
         self
     }
     /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
-    pub fn set_obd_interface(
-        mut self,
-        input: ::std::option::Option<crate::types::ObdInterface>,
-    ) -> Self {
+    pub fn set_obd_interface(mut self, input: ::std::option::Option<crate::types::ObdInterface>) -> Self {
         self.obd_interface = input;
         self
     }

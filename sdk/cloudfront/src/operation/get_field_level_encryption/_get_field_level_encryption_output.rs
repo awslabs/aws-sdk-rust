@@ -13,9 +13,7 @@ pub struct GetFieldLevelEncryptionOutput {
 }
 impl GetFieldLevelEncryptionOutput {
     /// <p>Return the field-level encryption configuration information.</p>
-    pub fn field_level_encryption(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FieldLevelEncryption> {
+    pub fn field_level_encryption(&self) -> ::std::option::Option<&crate::types::FieldLevelEncryption> {
         self.field_level_encryption.as_ref()
     }
     /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
@@ -30,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetFieldLevelEncryptionOutput {
 }
 impl GetFieldLevelEncryptionOutput {
     /// Creates a new builder-style object to manufacture [`GetFieldLevelEncryptionOutput`](crate::operation::get_field_level_encryption::GetFieldLevelEncryptionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_field_level_encryption::builders::GetFieldLevelEncryptionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_field_level_encryption::builders::GetFieldLevelEncryptionOutputBuilder {
         crate::operation::get_field_level_encryption::builders::GetFieldLevelEncryptionOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetFieldLevelEncryptionOutput`](crate::operation::get_field_level_encryption::GetFieldLevelEncryptionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFieldLevelEncryptionOutputBuilder {
     pub(crate) field_level_encryption: ::std::option::Option<crate::types::FieldLevelEncryption>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -54,17 +48,12 @@ impl GetFieldLevelEncryptionOutputBuilder {
         self
     }
     /// <p>Return the field-level encryption configuration information.</p>
-    pub fn set_field_level_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldLevelEncryption>,
-    ) -> Self {
+    pub fn set_field_level_encryption(mut self, input: ::std::option::Option<crate::types::FieldLevelEncryption>) -> Self {
         self.field_level_encryption = input;
         self
     }
     /// <p>Return the field-level encryption configuration information.</p>
-    pub fn get_field_level_encryption(
-        &self,
-    ) -> &::std::option::Option<crate::types::FieldLevelEncryption> {
+    pub fn get_field_level_encryption(&self) -> &::std::option::Option<crate::types::FieldLevelEncryption> {
         &self.field_level_encryption
     }
     /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
@@ -91,9 +80,7 @@ impl GetFieldLevelEncryptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetFieldLevelEncryptionOutput`](crate::operation::get_field_level_encryption::GetFieldLevelEncryptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_field_level_encryption::GetFieldLevelEncryptionOutput {
+    pub fn build(self) -> crate::operation::get_field_level_encryption::GetFieldLevelEncryptionOutput {
         crate::operation::get_field_level_encryption::GetFieldLevelEncryptionOutput {
             field_level_encryption: self.field_level_encryption,
             e_tag: self.e_tag,

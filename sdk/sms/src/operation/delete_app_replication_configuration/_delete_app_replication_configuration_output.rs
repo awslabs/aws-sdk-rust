@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAppReplicationConfigurationOutp
 }
 impl DeleteAppReplicationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppReplicationConfigurationOutput`](crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_app_replication_configuration::builders::DeleteAppReplicationConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_app_replication_configuration::builders::DeleteAppReplicationConfigurationOutputBuilder {
         crate::operation::delete_app_replication_configuration::builders::DeleteAppReplicationConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAppReplicationConfigurationOutput`](crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAppReplicationConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DeleteAppReplicationConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAppReplicationConfigurationOutput`](crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationOutput{
+    pub fn build(self) -> crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationOutput {
         crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationOutput {
             _request_id: self._request_id,
         }

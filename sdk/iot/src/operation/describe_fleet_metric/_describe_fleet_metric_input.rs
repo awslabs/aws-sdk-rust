@@ -15,18 +15,14 @@ impl DescribeFleetMetricInput {
 }
 impl DescribeFleetMetricInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetMetricInput`](crate::operation::describe_fleet_metric::DescribeFleetMetricInput).
-    pub fn builder(
-    ) -> crate::operation::describe_fleet_metric::builders::DescribeFleetMetricInputBuilder {
-        crate::operation::describe_fleet_metric::builders::DescribeFleetMetricInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_fleet_metric::builders::DescribeFleetMetricInputBuilder {
+        crate::operation::describe_fleet_metric::builders::DescribeFleetMetricInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetMetricInput`](crate::operation::describe_fleet_metric::DescribeFleetMetricInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetMetricInputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,10 @@ impl DescribeFleetMetricInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFleetMetricInput`](crate::operation::describe_fleet_metric::DescribeFleetMetricInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fleet_metric::DescribeFleetMetricInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fleet_metric::DescribeFleetMetricInput {
-                metric_name: self.metric_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_fleet_metric::DescribeFleetMetricInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_fleet_metric::DescribeFleetMetricInput {
+            metric_name: self.metric_name,
+        })
     }
 }

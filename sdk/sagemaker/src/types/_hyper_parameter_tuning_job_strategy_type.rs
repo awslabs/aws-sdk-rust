@@ -41,13 +41,7 @@
 /// hyperparameters for your model. </p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum HyperParameterTuningJobStrategyType {
     #[allow(missing_docs)] // documentation missing in model
@@ -68,9 +62,7 @@ impl ::std::convert::From<&str> for HyperParameterTuningJobStrategyType {
             "Grid" => HyperParameterTuningJobStrategyType::Grid,
             "Hyperband" => HyperParameterTuningJobStrategyType::Hyperband,
             "Random" => HyperParameterTuningJobStrategyType::Random,
-            other => HyperParameterTuningJobStrategyType::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => HyperParameterTuningJobStrategyType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

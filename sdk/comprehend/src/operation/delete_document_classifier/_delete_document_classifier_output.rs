@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteDocumentClassifierOutput {
 }
 impl DeleteDocumentClassifierOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDocumentClassifierOutput`](crate::operation::delete_document_classifier::DeleteDocumentClassifierOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_document_classifier::builders::DeleteDocumentClassifierOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_document_classifier::builders::DeleteDocumentClassifierOutputBuilder {
         crate::operation::delete_document_classifier::builders::DeleteDocumentClassifierOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDocumentClassifierOutput`](crate::operation::delete_document_classifier::DeleteDocumentClassifierOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDocumentClassifierOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,9 +34,7 @@ impl DeleteDocumentClassifierOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDocumentClassifierOutput`](crate::operation::delete_document_classifier::DeleteDocumentClassifierOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_document_classifier::DeleteDocumentClassifierOutput {
+    pub fn build(self) -> crate::operation::delete_document_classifier::DeleteDocumentClassifierOutput {
         crate::operation::delete_document_classifier::DeleteDocumentClassifierOutput {
             _request_id: self._request_id,
         }

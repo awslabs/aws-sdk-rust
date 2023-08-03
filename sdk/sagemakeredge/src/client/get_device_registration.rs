@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`device_registration(Option<String>)`](crate::operation::get_device_registration::GetDeviceRegistrationOutput::device_registration): <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
     ///   - [`cache_ttl(Option<String>)`](crate::operation::get_device_registration::GetDeviceRegistrationOutput::cache_ttl): <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
     /// - On failure, responds with [`SdkError<GetDeviceRegistrationError>`](crate::operation::get_device_registration::GetDeviceRegistrationError)
-    pub fn get_device_registration(
-        &self,
-    ) -> crate::operation::get_device_registration::builders::GetDeviceRegistrationFluentBuilder
-    {
-        crate::operation::get_device_registration::builders::GetDeviceRegistrationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_device_registration(&self) -> crate::operation::get_device_registration::builders::GetDeviceRegistrationFluentBuilder {
+        crate::operation::get_device_registration::builders::GetDeviceRegistrationFluentBuilder::new(self.handle.clone())
     }
 }

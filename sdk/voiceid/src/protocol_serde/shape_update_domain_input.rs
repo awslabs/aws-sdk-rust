@@ -14,9 +14,7 @@ pub fn ser_update_domain_input(
     }
     if let Some(var_4) = &input.server_side_encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object
-            .key("ServerSideEncryptionConfiguration")
-            .start_object();
+        let mut object_5 = object.key("ServerSideEncryptionConfiguration").start_object();
         crate::protocol_serde::shape_server_side_encryption_configuration::ser_server_side_encryption_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }

@@ -17,8 +17,7 @@ pub struct UpdateLaunchConfigurationOutput {
     pub launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
     /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
     #[doc(hidden)]
-    pub target_instance_type_right_sizing_method:
-        ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
+    pub target_instance_type_right_sizing_method: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
     #[doc(hidden)]
     pub copy_private_ip: ::std::option::Option<bool>,
@@ -48,9 +47,7 @@ impl UpdateLaunchConfigurationOutput {
         self.launch_disposition.as_ref()
     }
     /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
-    pub fn target_instance_type_right_sizing_method(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetInstanceTypeRightSizingMethod> {
+    pub fn target_instance_type_right_sizing_method(&self) -> ::std::option::Option<&crate::types::TargetInstanceTypeRightSizingMethod> {
         self.target_instance_type_right_sizing_method.as_ref()
     }
     /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
@@ -73,23 +70,20 @@ impl ::aws_http::request_id::RequestId for UpdateLaunchConfigurationOutput {
 }
 impl UpdateLaunchConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLaunchConfigurationOutput`](crate::operation::update_launch_configuration::UpdateLaunchConfigurationOutput).
-    pub fn builder() -> crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationOutputBuilder {
         crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLaunchConfigurationOutput`](crate::operation::update_launch_configuration::UpdateLaunchConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLaunchConfigurationOutputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_launch_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
-    pub(crate) target_instance_type_right_sizing_method:
-        ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
+    pub(crate) target_instance_type_right_sizing_method: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     pub(crate) copy_private_ip: ::std::option::Option<bool>,
     pub(crate) copy_tags: ::std::option::Option<bool>,
     pub(crate) licensing: ::std::option::Option<crate::types::Licensing>,
@@ -97,18 +91,12 @@ pub struct UpdateLaunchConfigurationOutputBuilder {
 }
 impl UpdateLaunchConfigurationOutputBuilder {
     /// <p>The ID of the Source Server for this launch configuration.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Source Server for this launch configuration.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -131,18 +119,12 @@ impl UpdateLaunchConfigurationOutputBuilder {
         &self.name
     }
     /// <p>The EC2 launch template ID of this launch configuration.</p>
-    pub fn ec2_launch_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ec2_launch_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_launch_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The EC2 launch template ID of this launch configuration.</p>
-    pub fn set_ec2_launch_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ec2_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_launch_template_id = input;
         self
     }
@@ -156,24 +138,16 @@ impl UpdateLaunchConfigurationOutputBuilder {
         self
     }
     /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
-    pub fn set_launch_disposition(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchDisposition>,
-    ) -> Self {
+    pub fn set_launch_disposition(mut self, input: ::std::option::Option<crate::types::LaunchDisposition>) -> Self {
         self.launch_disposition = input;
         self
     }
     /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
-    pub fn get_launch_disposition(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchDisposition> {
+    pub fn get_launch_disposition(&self) -> &::std::option::Option<crate::types::LaunchDisposition> {
         &self.launch_disposition
     }
     /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
-    pub fn target_instance_type_right_sizing_method(
-        mut self,
-        input: crate::types::TargetInstanceTypeRightSizingMethod,
-    ) -> Self {
+    pub fn target_instance_type_right_sizing_method(mut self, input: crate::types::TargetInstanceTypeRightSizingMethod) -> Self {
         self.target_instance_type_right_sizing_method = ::std::option::Option::Some(input);
         self
     }
@@ -186,9 +160,7 @@ impl UpdateLaunchConfigurationOutputBuilder {
         self
     }
     /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
-    pub fn get_target_instance_type_right_sizing_method(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
+    pub fn get_target_instance_type_right_sizing_method(&self) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
         &self.target_instance_type_right_sizing_method
     }
     /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
@@ -243,9 +215,7 @@ impl UpdateLaunchConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateLaunchConfigurationOutput`](crate::operation::update_launch_configuration::UpdateLaunchConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_launch_configuration::UpdateLaunchConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_launch_configuration::UpdateLaunchConfigurationOutput {
         crate::operation::update_launch_configuration::UpdateLaunchConfigurationOutput {
             source_server_id: self.source_server_id,
             name: self.name,

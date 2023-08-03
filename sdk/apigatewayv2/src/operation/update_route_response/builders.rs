@@ -37,9 +37,7 @@ impl UpdateRouteResponseFluentBuilder {
         }
     }
     /// Access the UpdateRouteResponse as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_route_response::builders::UpdateRouteResponseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_route_response::builders::UpdateRouteResponseInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateRouteResponseFluentBuilder {
             crate::operation::update_route_response::UpdateRouteResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_route_response::UpdateRouteResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_route_response::UpdateRouteResponseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateRouteResponseFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateRouteResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_route_response::UpdateRouteResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_route_response::UpdateRouteResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_route_response::UpdateRouteResponseError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateRouteResponseFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_route_response::UpdateRouteResponseOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_route_response::UpdateRouteResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_route_response::UpdateRouteResponseError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateRouteResponseFluentBuilder {
             crate::operation::update_route_response::UpdateRouteResponse,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_route_response::UpdateRouteResponseError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_route_response::UpdateRouteResponseError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +124,12 @@ impl UpdateRouteResponseFluentBuilder {
         self.inner.get_api_id()
     }
     /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
-    pub fn model_selection_expression(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_selection_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_selection_expression(input.into());
         self
     }
     /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
-    pub fn set_model_selection_expression(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_selection_expression(input);
         self
     }
@@ -172,19 +153,13 @@ impl UpdateRouteResponseFluentBuilder {
     /// <p>The response models for the route response.</p>
     pub fn set_response_models(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_response_models(input);
         self
     }
     /// <p>The response models for the route response.</p>
-    pub fn get_response_models(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_response_models(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_response_models()
     }
     /// Adds a key-value pair to `ResponseParameters`.
@@ -192,20 +167,14 @@ impl UpdateRouteResponseFluentBuilder {
     /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
     ///
     /// <p>The route response parameters.</p>
-    pub fn response_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ParameterConstraints,
-    ) -> Self {
+    pub fn response_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ParameterConstraints) -> Self {
         self.inner = self.inner.response_parameters(k.into(), v);
         self
     }
     /// <p>The route response parameters.</p>
     pub fn set_response_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>>,
     ) -> Self {
         self.inner = self.inner.set_response_parameters(input);
         self
@@ -213,9 +182,7 @@ impl UpdateRouteResponseFluentBuilder {
     /// <p>The route response parameters.</p>
     pub fn get_response_parameters(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>> {
         self.inner.get_response_parameters()
     }
     /// <p>The route ID.</p>
@@ -233,18 +200,12 @@ impl UpdateRouteResponseFluentBuilder {
         self.inner.get_route_id()
     }
     /// <p>The route response ID.</p>
-    pub fn route_response_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_response_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_response_id(input.into());
         self
     }
     /// <p>The route response ID.</p>
-    pub fn set_route_response_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_response_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_response_id(input);
         self
     }
@@ -253,18 +214,12 @@ impl UpdateRouteResponseFluentBuilder {
         self.inner.get_route_response_id()
     }
     /// <p>The route response key.</p>
-    pub fn route_response_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_response_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_response_key(input.into());
         self
     }
     /// <p>The route response key.</p>
-    pub fn set_route_response_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_response_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_response_key(input);
         self
     }

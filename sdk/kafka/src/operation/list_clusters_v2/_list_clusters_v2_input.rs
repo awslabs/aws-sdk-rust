@@ -43,9 +43,7 @@ impl ListClustersV2Input {
 
 /// A builder for [`ListClustersV2Input`](crate::operation::list_clusters_v2::ListClustersV2Input).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClustersV2InputBuilder {
     pub(crate) cluster_name_filter: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_type_filter: ::std::option::Option<::std::string::String>,
@@ -54,18 +52,12 @@ pub struct ListClustersV2InputBuilder {
 }
 impl ListClustersV2InputBuilder {
     /// <p>Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
-    pub fn cluster_name_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_name_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name_filter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
-    pub fn set_cluster_name_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_name_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name_filter = input;
         self
     }
@@ -74,18 +66,12 @@ impl ListClustersV2InputBuilder {
         &self.cluster_name_filter
     }
     /// <p>Specify either PROVISIONED or SERVERLESS.</p>
-    pub fn cluster_type_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_type_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_type_filter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify either PROVISIONED or SERVERLESS.</p>
-    pub fn set_cluster_type_filter(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_type_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_type_filter = input;
         self
     }
@@ -124,10 +110,7 @@ impl ListClustersV2InputBuilder {
     /// Consumes the builder and constructs a [`ListClustersV2Input`](crate::operation::list_clusters_v2::ListClustersV2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_clusters_v2::ListClustersV2Input,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_clusters_v2::ListClustersV2Input, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_clusters_v2::ListClustersV2Input {
             cluster_name_filter: self.cluster_name_filter,
             cluster_type_filter: self.cluster_type_filter,

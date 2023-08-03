@@ -22,36 +22,26 @@ impl DescribeTopicPermissionsInput {
 }
 impl DescribeTopicPermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeTopicPermissionsInput`](crate::operation::describe_topic_permissions::DescribeTopicPermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_topic_permissions::builders::DescribeTopicPermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_topic_permissions::builders::DescribeTopicPermissionsInputBuilder {
         crate::operation::describe_topic_permissions::builders::DescribeTopicPermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTopicPermissionsInput`](crate::operation::describe_topic_permissions::DescribeTopicPermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTopicPermissionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTopicPermissionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want described.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want described.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -80,11 +70,9 @@ impl DescribeTopicPermissionsInputBuilder {
         crate::operation::describe_topic_permissions::DescribeTopicPermissionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_topic_permissions::DescribeTopicPermissionsInput {
-                aws_account_id: self.aws_account_id,
-                topic_id: self.topic_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_topic_permissions::DescribeTopicPermissionsInput {
+            aws_account_id: self.aws_account_id,
+            topic_id: self.topic_id,
+        })
     }
 }

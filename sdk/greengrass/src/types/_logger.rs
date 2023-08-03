@@ -51,9 +51,7 @@ impl Logger {
 
 /// A builder for [`Logger`](crate::types::Logger).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggerBuilder {
     pub(crate) component: ::std::option::Option<crate::types::LoggerComponent>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl LoggerBuilder {
         self
     }
     /// The component that will be subject to logging.
-    pub fn set_component(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggerComponent>,
-    ) -> Self {
+    pub fn set_component(mut self, input: ::std::option::Option<crate::types::LoggerComponent>) -> Self {
         self.component = input;
         self
     }

@@ -25,34 +25,26 @@ impl PurchaseReservedNodeOfferingInput {
 }
 impl PurchaseReservedNodeOfferingInput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedNodeOfferingInput`](crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingInput).
-    pub fn builder() -> crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingInputBuilder{
+    pub fn builder() -> crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingInputBuilder {
         crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingInputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseReservedNodeOfferingInput`](crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseReservedNodeOfferingInputBuilder {
     pub(crate) reserved_node_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) node_count: ::std::option::Option<i32>,
 }
 impl PurchaseReservedNodeOfferingInputBuilder {
     /// <p>The unique identifier of the reserved node offering you want to purchase.</p>
-    pub fn reserved_node_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the reserved node offering you want to purchase.</p>
-    pub fn set_reserved_node_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_node_offering_id = input;
         self
     }
@@ -84,11 +76,9 @@ impl PurchaseReservedNodeOfferingInputBuilder {
         crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingInput {
-                reserved_node_offering_id: self.reserved_node_offering_id,
-                node_count: self.node_count,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingInput {
+            reserved_node_offering_id: self.reserved_node_offering_id,
+            node_count: self.node_count,
+        })
     }
 }

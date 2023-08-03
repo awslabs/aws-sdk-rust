@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateDataRepositoryAssociationOutput
 }
 impl CreateDataRepositoryAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataRepositoryAssociationOutput`](crate::operation::create_data_repository_association::CreateDataRepositoryAssociationOutput).
-    pub fn builder() -> crate::operation::create_data_repository_association::builders::CreateDataRepositoryAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::create_data_repository_association::builders::CreateDataRepositoryAssociationOutputBuilder {
         crate::operation::create_data_repository_association::builders::CreateDataRepositoryAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataRepositoryAssociationOutput`](crate::operation::create_data_repository_association::CreateDataRepositoryAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataRepositoryAssociationOutputBuilder {
     pub(crate) association: ::std::option::Option<crate::types::DataRepositoryAssociation>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl CreateDataRepositoryAssociationOutputBuilder {
         self
     }
     /// <p>The response object returned after the data repository association is created.</p>
-    pub fn set_association(
-        mut self,
-        input: ::std::option::Option<crate::types::DataRepositoryAssociation>,
-    ) -> Self {
+    pub fn set_association(mut self, input: ::std::option::Option<crate::types::DataRepositoryAssociation>) -> Self {
         self.association = input;
         self
     }
     /// <p>The response object returned after the data repository association is created.</p>
-    pub fn get_association(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataRepositoryAssociation> {
+    pub fn get_association(&self) -> &::std::option::Option<crate::types::DataRepositoryAssociation> {
         &self.association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,13 +58,9 @@ impl CreateDataRepositoryAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDataRepositoryAssociationOutput`](crate::operation::create_data_repository_association::CreateDataRepositoryAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_data_repository_association::CreateDataRepositoryAssociationOutput
-    {
+    pub fn build(self) -> crate::operation::create_data_repository_association::CreateDataRepositoryAssociationOutput {
         crate::operation::create_data_repository_association::CreateDataRepositoryAssociationOutput {
-            association: self.association
-            ,
+            association: self.association,
             _request_id: self._request_id,
         }
     }

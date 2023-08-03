@@ -6,16 +6,13 @@ pub struct ModifyDbSnapshotAttributeOutput {
     /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
     /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
     #[doc(hidden)]
-    pub db_snapshot_attributes_result:
-        ::std::option::Option<crate::types::DbSnapshotAttributesResult>,
+    pub db_snapshot_attributes_result: ::std::option::Option<crate::types::DbSnapshotAttributesResult>,
     _request_id: Option<String>,
 }
 impl ModifyDbSnapshotAttributeOutput {
     /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
     /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-    pub fn db_snapshot_attributes_result(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DbSnapshotAttributesResult> {
+    pub fn db_snapshot_attributes_result(&self) -> ::std::option::Option<&crate::types::DbSnapshotAttributesResult> {
         self.db_snapshot_attributes_result.as_ref()
     }
 }
@@ -26,45 +23,34 @@ impl ::aws_http::request_id::RequestId for ModifyDbSnapshotAttributeOutput {
 }
 impl ModifyDbSnapshotAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbSnapshotAttributeOutput`](crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput).
-    pub fn builder() -> crate::operation::modify_db_snapshot_attribute::builders::ModifyDbSnapshotAttributeOutputBuilder{
+    pub fn builder() -> crate::operation::modify_db_snapshot_attribute::builders::ModifyDbSnapshotAttributeOutputBuilder {
         crate::operation::modify_db_snapshot_attribute::builders::ModifyDbSnapshotAttributeOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyDbSnapshotAttributeOutput`](crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyDbSnapshotAttributeOutputBuilder {
-    pub(crate) db_snapshot_attributes_result:
-        ::std::option::Option<crate::types::DbSnapshotAttributesResult>,
+    pub(crate) db_snapshot_attributes_result: ::std::option::Option<crate::types::DbSnapshotAttributesResult>,
     _request_id: Option<String>,
 }
 impl ModifyDbSnapshotAttributeOutputBuilder {
     /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
     /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-    pub fn db_snapshot_attributes_result(
-        mut self,
-        input: crate::types::DbSnapshotAttributesResult,
-    ) -> Self {
+    pub fn db_snapshot_attributes_result(mut self, input: crate::types::DbSnapshotAttributesResult) -> Self {
         self.db_snapshot_attributes_result = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
     /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-    pub fn set_db_snapshot_attributes_result(
-        mut self,
-        input: ::std::option::Option<crate::types::DbSnapshotAttributesResult>,
-    ) -> Self {
+    pub fn set_db_snapshot_attributes_result(mut self, input: ::std::option::Option<crate::types::DbSnapshotAttributesResult>) -> Self {
         self.db_snapshot_attributes_result = input;
         self
     }
     /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
     /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-    pub fn get_db_snapshot_attributes_result(
-        &self,
-    ) -> &::std::option::Option<crate::types::DbSnapshotAttributesResult> {
+    pub fn get_db_snapshot_attributes_result(&self) -> &::std::option::Option<crate::types::DbSnapshotAttributesResult> {
         &self.db_snapshot_attributes_result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -77,9 +63,7 @@ impl ModifyDbSnapshotAttributeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ModifyDbSnapshotAttributeOutput`](crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput {
+    pub fn build(self) -> crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput {
         crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeOutput {
             db_snapshot_attributes_result: self.db_snapshot_attributes_result,
             _request_id: self._request_id,

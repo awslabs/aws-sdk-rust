@@ -30,16 +30,14 @@ impl ResetNetworkInterfaceAttributeInput {
 }
 impl ResetNetworkInterfaceAttributeInput {
     /// Creates a new builder-style object to manufacture [`ResetNetworkInterfaceAttributeInput`](crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeInput).
-    pub fn builder() -> crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeInputBuilder{
+    pub fn builder() -> crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeInputBuilder {
         crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeInputBuilder::default()
     }
 }
 
 /// A builder for [`ResetNetworkInterfaceAttributeInput`](crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResetNetworkInterfaceAttributeInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl ResetNetworkInterfaceAttributeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -81,18 +73,12 @@ impl ResetNetworkInterfaceAttributeInputBuilder {
         &self.network_interface_id
     }
     /// <p>The source/destination checking attribute. Resets the value to <code>true</code>.</p>
-    pub fn source_dest_check(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_dest_check(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_dest_check = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source/destination checking attribute. Resets the value to <code>true</code>.</p>
-    pub fn set_source_dest_check(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_dest_check(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_dest_check = input;
         self
     }
@@ -107,15 +93,10 @@ impl ResetNetworkInterfaceAttributeInputBuilder {
         crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeInput {
-                dry_run: self.dry_run
-                ,
-                network_interface_id: self.network_interface_id
-                ,
-                source_dest_check: self.source_dest_check
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeInput {
+            dry_run: self.dry_run,
+            network_interface_id: self.network_interface_id,
+            source_dest_check: self.source_dest_check,
+        })
     }
 }

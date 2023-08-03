@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`authorizer_name(Option<String>)`](crate::operation::set_default_authorizer::SetDefaultAuthorizerOutput::authorizer_name): <p>The authorizer name.</p>
     ///   - [`authorizer_arn(Option<String>)`](crate::operation::set_default_authorizer::SetDefaultAuthorizerOutput::authorizer_arn): <p>The authorizer ARN.</p>
     /// - On failure, responds with [`SdkError<SetDefaultAuthorizerError>`](crate::operation::set_default_authorizer::SetDefaultAuthorizerError)
-    pub fn set_default_authorizer(
-        &self,
-    ) -> crate::operation::set_default_authorizer::builders::SetDefaultAuthorizerFluentBuilder {
-        crate::operation::set_default_authorizer::builders::SetDefaultAuthorizerFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn set_default_authorizer(&self) -> crate::operation::set_default_authorizer::builders::SetDefaultAuthorizerFluentBuilder {
+        crate::operation::set_default_authorizer::builders::SetDefaultAuthorizerFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateRoomMembershipOutput`](crate::operation::update_room_membership::UpdateRoomMembershipOutput) with field(s):
     ///   - [`room_membership(Option<RoomMembership>)`](crate::operation::update_room_membership::UpdateRoomMembershipOutput::room_membership): <p>The room membership details.</p>
     /// - On failure, responds with [`SdkError<UpdateRoomMembershipError>`](crate::operation::update_room_membership::UpdateRoomMembershipError)
-    pub fn update_room_membership(
-        &self,
-    ) -> crate::operation::update_room_membership::builders::UpdateRoomMembershipFluentBuilder {
-        crate::operation::update_room_membership::builders::UpdateRoomMembershipFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_room_membership(&self) -> crate::operation::update_room_membership::builders::UpdateRoomMembershipFluentBuilder {
+        crate::operation::update_room_membership::builders::UpdateRoomMembershipFluentBuilder::new(self.handle.clone())
     }
 }

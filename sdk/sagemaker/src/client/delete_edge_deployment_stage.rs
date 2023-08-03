@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`stage_name(impl ::std::convert::Into<String>)`](crate::operation::delete_edge_deployment_stage::builders::DeleteEdgeDeploymentStageFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::delete_edge_deployment_stage::builders::DeleteEdgeDeploymentStageFluentBuilder::set_stage_name): <p>The name of the stage.</p>
     /// - On success, responds with [`DeleteEdgeDeploymentStageOutput`](crate::operation::delete_edge_deployment_stage::DeleteEdgeDeploymentStageOutput)
     /// - On failure, responds with [`SdkError<DeleteEdgeDeploymentStageError>`](crate::operation::delete_edge_deployment_stage::DeleteEdgeDeploymentStageError)
-    pub fn delete_edge_deployment_stage(&self) -> crate::operation::delete_edge_deployment_stage::builders::DeleteEdgeDeploymentStageFluentBuilder{
+    pub fn delete_edge_deployment_stage(&self) -> crate::operation::delete_edge_deployment_stage::builders::DeleteEdgeDeploymentStageFluentBuilder {
         crate::operation::delete_edge_deployment_stage::builders::DeleteEdgeDeploymentStageFluentBuilder::new(self.handle.clone())
     }
 }

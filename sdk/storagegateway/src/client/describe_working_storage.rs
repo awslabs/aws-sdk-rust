@@ -10,10 +10,7 @@ impl super::Client {
     ///   - [`working_storage_used_in_bytes(i64)`](crate::operation::describe_working_storage::DescribeWorkingStorageOutput::working_storage_used_in_bytes): <p>The total working storage in bytes in use by the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
     ///   - [`working_storage_allocated_in_bytes(i64)`](crate::operation::describe_working_storage::DescribeWorkingStorageOutput::working_storage_allocated_in_bytes): <p>The total working storage in bytes allocated for the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkingStorageError>`](crate::operation::describe_working_storage::DescribeWorkingStorageError)
-    pub fn describe_working_storage(
-        &self,
-    ) -> crate::operation::describe_working_storage::builders::DescribeWorkingStorageFluentBuilder
-    {
+    pub fn describe_working_storage(&self) -> crate::operation::describe_working_storage::builders::DescribeWorkingStorageFluentBuilder {
         crate::operation::describe_working_storage::builders::DescribeWorkingStorageFluentBuilder::new(self.handle.clone())
     }
 }

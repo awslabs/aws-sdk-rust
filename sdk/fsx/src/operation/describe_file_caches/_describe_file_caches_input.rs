@@ -29,17 +29,14 @@ impl DescribeFileCachesInput {
 }
 impl DescribeFileCachesInput {
     /// Creates a new builder-style object to manufacture [`DescribeFileCachesInput`](crate::operation::describe_file_caches::DescribeFileCachesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_file_caches::builders::DescribeFileCachesInputBuilder {
+    pub fn builder() -> crate::operation::describe_file_caches::builders::DescribeFileCachesInputBuilder {
         crate::operation::describe_file_caches::builders::DescribeFileCachesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFileCachesInput`](crate::operation::describe_file_caches::DescribeFileCachesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFileCachesInputBuilder {
     pub(crate) file_cache_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -51,27 +48,19 @@ impl DescribeFileCachesInputBuilder {
     /// To override the contents of this collection use [`set_file_cache_ids`](Self::set_file_cache_ids).
     ///
     /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
-    pub fn file_cache_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_cache_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.file_cache_ids.unwrap_or_default();
         v.push(input.into());
         self.file_cache_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
-    pub fn set_file_cache_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_file_cache_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.file_cache_ids = input;
         self
     }
     /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
-    pub fn get_file_cache_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_file_cache_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.file_cache_ids
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
@@ -105,16 +94,11 @@ impl DescribeFileCachesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFileCachesInput`](crate::operation::describe_file_caches::DescribeFileCachesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_file_caches::DescribeFileCachesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_file_caches::DescribeFileCachesInput {
-                file_cache_ids: self.file_cache_ids,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_file_caches::DescribeFileCachesInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_file_caches::DescribeFileCachesInput {
+            file_cache_ids: self.file_cache_ids,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

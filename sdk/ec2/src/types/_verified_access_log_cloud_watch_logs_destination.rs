@@ -20,9 +20,7 @@ impl VerifiedAccessLogCloudWatchLogsDestination {
         self.enabled
     }
     /// <p>The delivery status for access logs.</p>
-    pub fn delivery_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VerifiedAccessLogDeliveryStatus> {
+    pub fn delivery_status(&self) -> ::std::option::Option<&crate::types::VerifiedAccessLogDeliveryStatus> {
         self.delivery_status.as_ref()
     }
     /// <p>The ID of the CloudWatch Logs log group.</p>
@@ -39,13 +37,10 @@ impl VerifiedAccessLogCloudWatchLogsDestination {
 
 /// A builder for [`VerifiedAccessLogCloudWatchLogsDestination`](crate::types::VerifiedAccessLogCloudWatchLogsDestination).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogCloudWatchLogsDestinationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
-    pub(crate) delivery_status:
-        ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,
+    pub(crate) delivery_status: ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,
     pub(crate) log_group: ::std::option::Option<::std::string::String>,
 }
 impl VerifiedAccessLogCloudWatchLogsDestinationBuilder {
@@ -69,17 +64,12 @@ impl VerifiedAccessLogCloudWatchLogsDestinationBuilder {
         self
     }
     /// <p>The delivery status for access logs.</p>
-    pub fn set_delivery_status(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,
-    ) -> Self {
+    pub fn set_delivery_status(mut self, input: ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>) -> Self {
         self.delivery_status = input;
         self
     }
     /// <p>The delivery status for access logs.</p>
-    pub fn get_delivery_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus> {
+    pub fn get_delivery_status(&self) -> &::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus> {
         &self.delivery_status
     }
     /// <p>The ID of the CloudWatch Logs log group.</p>

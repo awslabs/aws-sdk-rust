@@ -28,9 +28,7 @@ impl GetCatalogItemOutput {
 
 /// A builder for [`GetCatalogItemOutput`](crate::operation::get_catalog_item::GetCatalogItemOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCatalogItemOutputBuilder {
     pub(crate) catalog_item: ::std::option::Option<crate::types::CatalogItem>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetCatalogItemOutputBuilder {
         self
     }
     /// <p>Information about this catalog item.</p>
-    pub fn set_catalog_item(
-        mut self,
-        input: ::std::option::Option<crate::types::CatalogItem>,
-    ) -> Self {
+    pub fn set_catalog_item(mut self, input: ::std::option::Option<crate::types::CatalogItem>) -> Self {
         self.catalog_item = input;
         self
     }

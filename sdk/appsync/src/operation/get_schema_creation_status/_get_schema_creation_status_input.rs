@@ -15,18 +15,14 @@ impl GetSchemaCreationStatusInput {
 }
 impl GetSchemaCreationStatusInput {
     /// Creates a new builder-style object to manufacture [`GetSchemaCreationStatusInput`](crate::operation::get_schema_creation_status::GetSchemaCreationStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusInputBuilder {
         crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSchemaCreationStatusInput`](crate::operation::get_schema_creation_status::GetSchemaCreationStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaCreationStatusInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
 }
@@ -52,10 +48,6 @@ impl GetSchemaCreationStatusInputBuilder {
         crate::operation::get_schema_creation_status::GetSchemaCreationStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_schema_creation_status::GetSchemaCreationStatusInput {
-                api_id: self.api_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_schema_creation_status::GetSchemaCreationStatusInput { api_id: self.api_id })
     }
 }

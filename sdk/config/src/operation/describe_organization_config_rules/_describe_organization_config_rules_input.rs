@@ -5,8 +5,7 @@
 pub struct DescribeOrganizationConfigRulesInput {
     /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
     #[doc(hidden)]
-    pub organization_config_rule_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub organization_config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of organization Config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
@@ -16,9 +15,7 @@ pub struct DescribeOrganizationConfigRulesInput {
 }
 impl DescribeOrganizationConfigRulesInput {
     /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
-    pub fn organization_config_rule_names(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn organization_config_rule_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.organization_config_rule_names.as_deref()
     }
     /// <p>The maximum number of organization Config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -32,19 +29,16 @@ impl DescribeOrganizationConfigRulesInput {
 }
 impl DescribeOrganizationConfigRulesInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigRulesInput`](crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesInput).
-    pub fn builder() -> crate::operation::describe_organization_config_rules::builders::DescribeOrganizationConfigRulesInputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_config_rules::builders::DescribeOrganizationConfigRulesInputBuilder {
         crate::operation::describe_organization_config_rules::builders::DescribeOrganizationConfigRulesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeOrganizationConfigRulesInput`](crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigRulesInputBuilder {
-    pub(crate) organization_config_rule_names:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) organization_config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -54,27 +48,19 @@ impl DescribeOrganizationConfigRulesInputBuilder {
     /// To override the contents of this collection use [`set_organization_config_rule_names`](Self::set_organization_config_rule_names).
     ///
     /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
-    pub fn organization_config_rule_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn organization_config_rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organization_config_rule_names.unwrap_or_default();
         v.push(input.into());
         self.organization_config_rule_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
-    pub fn set_organization_config_rule_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_organization_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.organization_config_rule_names = input;
         self
     }
     /// <p>The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
-    pub fn get_organization_config_rule_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organization_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.organization_config_rule_names
     }
     /// <p>The maximum number of organization Config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -114,13 +100,10 @@ impl DescribeOrganizationConfigRulesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesInput {
-                organization_config_rule_names: self.organization_config_rule_names
-                ,
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
+                organization_config_rule_names: self.organization_config_rule_names,
+                limit: self.limit,
+                next_token: self.next_token,
+            },
         )
     }
 }

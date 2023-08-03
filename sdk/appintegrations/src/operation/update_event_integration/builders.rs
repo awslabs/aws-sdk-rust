@@ -37,10 +37,7 @@ impl UpdateEventIntegrationFluentBuilder {
         }
     }
     /// Access the UpdateEventIntegration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_event_integration::builders::UpdateEventIntegrationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_event_integration::builders::UpdateEventIntegrationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateEventIntegrationFluentBuilder {
             crate::operation::update_event_integration::UpdateEventIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_integration::UpdateEventIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_integration::UpdateEventIntegrationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateEventIntegrationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateEventIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_event_integration::UpdateEventIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_integration::UpdateEventIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_integration::UpdateEventIntegrationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateEventIntegrationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_event_integration::UpdateEventIntegrationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_integration::UpdateEventIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_integration::UpdateEventIntegrationError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateEventIntegrationFluentBuilder {
             crate::operation::update_event_integration::UpdateEventIntegration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_integration::UpdateEventIntegrationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_integration::UpdateEventIntegrationError>,
     > {
         self.customize_middleware().await
     }

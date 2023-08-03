@@ -12,11 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVirtualRouterOutput`](crate::operation::create_virtual_router::CreateVirtualRouterOutput) with field(s):
     ///   - [`virtual_router(Option<VirtualRouterData>)`](crate::operation::create_virtual_router::CreateVirtualRouterOutput::virtual_router): <p>The full description of your virtual router following the create call.</p>
     /// - On failure, responds with [`SdkError<CreateVirtualRouterError>`](crate::operation::create_virtual_router::CreateVirtualRouterError)
-    pub fn create_virtual_router(
-        &self,
-    ) -> crate::operation::create_virtual_router::builders::CreateVirtualRouterFluentBuilder {
-        crate::operation::create_virtual_router::builders::CreateVirtualRouterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_virtual_router(&self) -> crate::operation::create_virtual_router::builders::CreateVirtualRouterFluentBuilder {
+        crate::operation::create_virtual_router::builders::CreateVirtualRouterFluentBuilder::new(self.handle.clone())
     }
 }

@@ -30,9 +30,7 @@ impl DimensionGroupDetail {
 
 /// A builder for [`DimensionGroupDetail`](crate::types::DimensionGroupDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionGroupDetailBuilder {
     pub(crate) group: ::std::option::Option<::std::string::String>,
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::DimensionDetail>>,
@@ -64,17 +62,12 @@ impl DimensionGroupDetailBuilder {
         self
     }
     /// <p>The dimensions within a dimension group.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionDetail>>,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionDetail>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The dimensions within a dimension group.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionDetail>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionDetail>> {
         &self.dimensions
     }
     /// Consumes the builder and constructs a [`DimensionGroupDetail`](crate::types::DimensionGroupDetail).

@@ -35,9 +35,7 @@ impl ListLegalHoldsOutput {
 
 /// A builder for [`ListLegalHoldsOutput`](crate::operation::list_legal_holds::ListLegalHoldsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLegalHoldsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) legal_holds: ::std::option::Option<::std::vec::Vec<crate::types::LegalHold>>,
@@ -70,17 +68,12 @@ impl ListLegalHoldsOutputBuilder {
         self
     }
     /// <p>This is an array of returned legal holds, both active and previous.</p>
-    pub fn set_legal_holds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LegalHold>>,
-    ) -> Self {
+    pub fn set_legal_holds(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LegalHold>>) -> Self {
         self.legal_holds = input;
         self
     }
     /// <p>This is an array of returned legal holds, both active and previous.</p>
-    pub fn get_legal_holds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LegalHold>> {
+    pub fn get_legal_holds(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LegalHold>> {
         &self.legal_holds
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

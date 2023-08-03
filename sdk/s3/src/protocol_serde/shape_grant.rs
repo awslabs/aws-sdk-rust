@@ -19,9 +19,7 @@ pub fn ser_grant(
     Ok(())
 }
 
-pub fn de_grant(
-    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Grant, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_grant(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Grant, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Grant::builder();
     while let Some(mut tag) = decoder.next_tag() {

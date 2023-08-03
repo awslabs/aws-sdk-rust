@@ -27,7 +27,7 @@ impl GetEbsEncryptionByDefaultInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEbsEncryptionByDefaultFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultInputBuilder,
+    inner: crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultInputBuilder,
 }
 impl GetEbsEncryptionByDefaultFluentBuilder {
     /// Creates a new `GetEbsEncryptionByDefault`.
@@ -38,7 +38,7 @@ impl GetEbsEncryptionByDefaultFluentBuilder {
         }
     }
     /// Access the GetEbsEncryptionByDefault as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl GetEbsEncryptionByDefaultFluentBuilder {
             crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefault,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl GetEbsEncryptionByDefaultFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl GetEbsEncryptionByDefaultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl GetEbsEncryptionByDefaultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl GetEbsEncryptionByDefaultFluentBuilder {
             crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefault,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultError>,
     > {
         self.customize_middleware().await
     }

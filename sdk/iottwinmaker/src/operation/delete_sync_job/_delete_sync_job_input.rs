@@ -33,9 +33,7 @@ impl DeleteSyncJobInput {
 
 /// A builder for [`DeleteSyncJobInput`](crate::operation::delete_sync_job::DeleteSyncJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSyncJobInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) sync_source: ::std::option::Option<::std::string::String>,
@@ -78,10 +76,7 @@ impl DeleteSyncJobInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSyncJobInput`](crate::operation::delete_sync_job::DeleteSyncJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_sync_job::DeleteSyncJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_sync_job::DeleteSyncJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_sync_job::DeleteSyncJobInput {
             workspace_id: self.workspace_id,
             sync_source: self.sync_source,

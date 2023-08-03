@@ -54,13 +54,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PartOfSpeechTagType {
     #[allow(missing_docs)] // documentation missing in model
@@ -123,9 +117,7 @@ impl ::std::convert::From<&str> for PartOfSpeechTagType {
             "SCONJ" => PartOfSpeechTagType::Sconj,
             "SYM" => PartOfSpeechTagType::Sym,
             "VERB" => PartOfSpeechTagType::Verb,
-            other => PartOfSpeechTagType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PartOfSpeechTagType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -164,8 +156,7 @@ impl PartOfSpeechTagType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ADJ", "ADP", "ADV", "AUX", "CCONJ", "CONJ", "DET", "INTJ", "NOUN", "NUM", "O", "PART",
-            "PRON", "PROPN", "PUNCT", "SCONJ", "SYM", "VERB",
+            "ADJ", "ADP", "ADV", "AUX", "CCONJ", "CONJ", "DET", "INTJ", "NOUN", "NUM", "O", "PART", "PRON", "PROPN", "PUNCT", "SCONJ", "SYM", "VERB",
         ]
     }
 }

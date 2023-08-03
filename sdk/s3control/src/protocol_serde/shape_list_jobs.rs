@@ -2,8 +2,7 @@
 pub fn ser_list_jobs_headers(
     input: &crate::operation::list_jobs::ListJobsInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError>
-{
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.account_id {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
@@ -11,10 +10,7 @@ pub fn ser_list_jobs_headers(
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "account_id",
-                    format!(
-                        "`{}` cannot be used as a header value: {}",
-                        &header_value, err
-                    ),
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
             })?;
             builder = builder.header("x-amz-account-id", header_value);
@@ -28,81 +24,64 @@ pub fn de_list_jobs_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::list_jobs::ListJobsOutput,
-    crate::operation::list_jobs::ListJobsError,
-> {
+) -> std::result::Result<crate::operation::list_jobs::ListJobsOutput, crate::operation::list_jobs::ListJobsError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::list_jobs::ListJobsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::list_jobs::ListJobsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::list_jobs::ListJobsError::unhandled(
-                generic,
-            ))
-        }
+        None => return Err(crate::operation::list_jobs::ListJobsError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceException" => {
-            crate::operation::list_jobs::ListJobsError::InternalServiceException({
+        "InternalServiceException" => crate::operation::list_jobs::ListJobsError::InternalServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InternalServiceExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_xml_err(_response_body, output).map_err(crate::operation::list_jobs::ListJobsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidNextTokenException" => {
-            crate::operation::list_jobs::ListJobsError::InvalidNextTokenException({
+                let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::list_jobs::ListJobsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidNextTokenException" => crate::operation::list_jobs::ListJobsError::InvalidNextTokenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidNextTokenExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_xml_err(_response_body, output).map_err(crate::operation::list_jobs::ListJobsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::operation::list_jobs::ListJobsError::InvalidRequestException({
+                let mut output = crate::types::error::builders::InvalidNextTokenExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::list_jobs::ListJobsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::list_jobs::ListJobsError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_xml_err(_response_body, output).map_err(crate::operation::list_jobs::ListJobsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::list_jobs::ListJobsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::list_jobs::ListJobsError::generic(generic),
     })
 }
@@ -112,18 +91,13 @@ pub fn de_list_jobs_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::list_jobs::ListJobsOutput,
-    crate::operation::list_jobs::ListJobsError,
-> {
+) -> std::result::Result<crate::operation::list_jobs::ListJobsOutput, crate::operation::list_jobs::ListJobsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_jobs::builders::ListJobsOutputBuilder::default();
         output = crate::protocol_serde::shape_list_jobs::de_list_jobs(_response_body, output)
             .map_err(crate::operation::list_jobs::ListJobsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -132,10 +106,7 @@ pub fn de_list_jobs_http_response_with_props(
 pub fn de_list_jobs(
     inp: &[u8],
     mut builder: crate::operation::list_jobs::builders::ListJobsOutputBuilder,
-) -> Result<
-    crate::operation::list_jobs::builders::ListJobsOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::list_jobs::builders::ListJobsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -143,11 +114,10 @@ pub fn de_list_jobs(
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !start_el.matches("ListJobsResult") {
-        return Err(
-                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
-                                    format!("encountered invalid XML root: expected ListJobsResult but got {:?}. This is likely a bug in the SDK.", start_el)
-                                )
-                            );
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            "encountered invalid XML root: expected ListJobsResult but got {:?}. This is likely a bug in the SDK.",
+            start_el
+        )));
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

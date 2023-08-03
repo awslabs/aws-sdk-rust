@@ -9,12 +9,7 @@ impl super::Client {
     ///   - [`definitions(Option<Vec<DefinitionInformation>>)`](crate::operation::list_logger_definitions::ListLoggerDefinitionsOutput::definitions): Information about a definition.
     ///   - [`next_token(Option<String>)`](crate::operation::list_logger_definitions::ListLoggerDefinitionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
     /// - On failure, responds with [`SdkError<ListLoggerDefinitionsError>`](crate::operation::list_logger_definitions::ListLoggerDefinitionsError)
-    pub fn list_logger_definitions(
-        &self,
-    ) -> crate::operation::list_logger_definitions::builders::ListLoggerDefinitionsFluentBuilder
-    {
-        crate::operation::list_logger_definitions::builders::ListLoggerDefinitionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_logger_definitions(&self) -> crate::operation::list_logger_definitions::builders::ListLoggerDefinitionsFluentBuilder {
+        crate::operation::list_logger_definitions::builders::ListLoggerDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteAccessPointOutput {
 }
 impl DeleteAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointOutput`](crate::operation::delete_access_point::DeleteAccessPointOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_access_point::builders::DeleteAccessPointOutputBuilder {
+    pub fn builder() -> crate::operation::delete_access_point::builders::DeleteAccessPointOutputBuilder {
         crate::operation::delete_access_point::builders::DeleteAccessPointOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessPointOutput`](crate::operation::delete_access_point::DeleteAccessPointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessPointOutputBuilder {
     _request_id: Option<String>,
 }

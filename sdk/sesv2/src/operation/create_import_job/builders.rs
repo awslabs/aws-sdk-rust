@@ -10,10 +10,7 @@ impl CreateImportJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_import_job::CreateImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_import_job::CreateImportJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_import_job::CreateImportJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_import_job();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateImportJobFluentBuilder {
         }
     }
     /// Access the CreateImportJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_import_job::builders::CreateImportJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_import_job::builders::CreateImportJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateImportJobFluentBuilder {
             crate::operation::create_import_job::CreateImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_import_job::CreateImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_import_job::CreateImportJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateImportJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_import_job::CreateImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_import_job::CreateImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_import_job::CreateImportJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateImportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_import_job::CreateImportJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_import_job::CreateImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_import_job::CreateImportJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateImportJobFluentBuilder {
             crate::operation::create_import_job::CreateImportJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_import_job::CreateImportJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_import_job::CreateImportJobError>,
     > {
         self.customize_middleware().await
     }
@@ -128,17 +112,12 @@ impl CreateImportJobFluentBuilder {
         self
     }
     /// <p>The destination for the import job.</p>
-    pub fn set_import_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportDestination>,
-    ) -> Self {
+    pub fn set_import_destination(mut self, input: ::std::option::Option<crate::types::ImportDestination>) -> Self {
         self.inner = self.inner.set_import_destination(input);
         self
     }
     /// <p>The destination for the import job.</p>
-    pub fn get_import_destination(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImportDestination> {
+    pub fn get_import_destination(&self) -> &::std::option::Option<crate::types::ImportDestination> {
         self.inner.get_import_destination()
     }
     /// <p>The data source for the import job.</p>
@@ -147,10 +126,7 @@ impl CreateImportJobFluentBuilder {
         self
     }
     /// <p>The data source for the import job.</p>
-    pub fn set_import_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportDataSource>,
-    ) -> Self {
+    pub fn set_import_data_source(mut self, input: ::std::option::Option<crate::types::ImportDataSource>) -> Self {
         self.inner = self.inner.set_import_data_source(input);
         self
     }

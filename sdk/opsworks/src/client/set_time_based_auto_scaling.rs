@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`auto_scaling_schedule(WeeklyAutoScalingSchedule)`](crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingFluentBuilder::auto_scaling_schedule) / [`set_auto_scaling_schedule(Option<WeeklyAutoScalingSchedule>)`](crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingFluentBuilder::set_auto_scaling_schedule): <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
     /// - On success, responds with [`SetTimeBasedAutoScalingOutput`](crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingOutput)
     /// - On failure, responds with [`SdkError<SetTimeBasedAutoScalingError>`](crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingError)
-    pub fn set_time_based_auto_scaling(
-        &self,
-    ) -> crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingFluentBuilder
-    {
+    pub fn set_time_based_auto_scaling(&self) -> crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingFluentBuilder {
         crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingFluentBuilder::new(self.handle.clone())
     }
 }

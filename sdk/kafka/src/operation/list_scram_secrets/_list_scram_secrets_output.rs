@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListScramSecretsOutput {
 }
 impl ListScramSecretsOutput {
     /// Creates a new builder-style object to manufacture [`ListScramSecretsOutput`](crate::operation::list_scram_secrets::ListScramSecretsOutput).
-    pub fn builder() -> crate::operation::list_scram_secrets::builders::ListScramSecretsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_scram_secrets::builders::ListScramSecretsOutputBuilder {
         crate::operation::list_scram_secrets::builders::ListScramSecretsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListScramSecretsOutput`](crate::operation::list_scram_secrets::ListScramSecretsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScramSecretsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,27 +61,19 @@ impl ListScramSecretsOutputBuilder {
     /// To override the contents of this collection use [`set_secret_arn_list`](Self::set_secret_arn_list).
     ///
     /// <p>The list of scram secrets associated with the cluster.</p>
-    pub fn secret_arn_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secret_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.secret_arn_list.unwrap_or_default();
         v.push(input.into());
         self.secret_arn_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of scram secrets associated with the cluster.</p>
-    pub fn set_secret_arn_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_secret_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.secret_arn_list = input;
         self
     }
     /// <p>The list of scram secrets associated with the cluster.</p>
-    pub fn get_secret_arn_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_secret_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.secret_arn_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

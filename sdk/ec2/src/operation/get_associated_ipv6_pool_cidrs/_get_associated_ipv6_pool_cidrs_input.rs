@@ -36,16 +36,14 @@ impl GetAssociatedIpv6PoolCidrsInput {
 }
 impl GetAssociatedIpv6PoolCidrsInput {
     /// Creates a new builder-style object to manufacture [`GetAssociatedIpv6PoolCidrsInput`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsInput).
-    pub fn builder() -> crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsInputBuilder{
+    pub fn builder() -> crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsInputBuilder {
         crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAssociatedIpv6PoolCidrsInput`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssociatedIpv6PoolCidrsInputBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -116,13 +114,11 @@ impl GetAssociatedIpv6PoolCidrsInputBuilder {
         crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsInput {
-                pool_id: self.pool_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                dry_run: self.dry_run,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsInput {
+            pool_id: self.pool_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            dry_run: self.dry_run,
+        })
     }
 }

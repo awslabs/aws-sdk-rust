@@ -56,9 +56,7 @@ impl UpgradeHistory {
 
 /// A builder for [`UpgradeHistory`](crate::types::UpgradeHistory).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpgradeHistoryBuilder {
     pub(crate) upgrade_name: ::std::option::Option<::std::string::String>,
     pub(crate) start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -86,10 +84,7 @@ impl UpgradeHistoryBuilder {
         self
     }
     /// <p>UTC timestamp at which the upgrade API call was made, in the format <code>yyyy-MM-ddTHH:mm:ssZ</code>.</p>
-    pub fn set_start_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_timestamp = input;
         self
     }
@@ -115,10 +110,7 @@ impl UpgradeHistoryBuilder {
     /// <li> <p>Succeeded with Issues</p> </li>
     /// <li> <p>Failed</p> </li>
     /// </ul>
-    pub fn set_upgrade_status(
-        mut self,
-        input: ::std::option::Option<crate::types::UpgradeStatus>,
-    ) -> Self {
+    pub fn set_upgrade_status(mut self, input: ::std::option::Option<crate::types::UpgradeStatus>) -> Self {
         self.upgrade_status = input;
         self
     }
@@ -144,17 +136,12 @@ impl UpgradeHistoryBuilder {
         self
     }
     /// <p>A list of each step performed as part of a specific upgrade or upgrade eligibility check.</p>
-    pub fn set_steps_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeStepItem>>,
-    ) -> Self {
+    pub fn set_steps_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeStepItem>>) -> Self {
         self.steps_list = input;
         self
     }
     /// <p>A list of each step performed as part of a specific upgrade or upgrade eligibility check.</p>
-    pub fn get_steps_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpgradeStepItem>> {
+    pub fn get_steps_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpgradeStepItem>> {
         &self.steps_list
     }
     /// Consumes the builder and constructs a [`UpgradeHistory`](crate::types::UpgradeHistory).

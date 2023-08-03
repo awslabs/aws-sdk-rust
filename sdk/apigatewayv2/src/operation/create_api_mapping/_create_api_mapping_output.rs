@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for CreateApiMappingOutput {
 }
 impl CreateApiMappingOutput {
     /// Creates a new builder-style object to manufacture [`CreateApiMappingOutput`](crate::operation::create_api_mapping::CreateApiMappingOutput).
-    pub fn builder() -> crate::operation::create_api_mapping::builders::CreateApiMappingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_api_mapping::builders::CreateApiMappingOutputBuilder {
         crate::operation::create_api_mapping::builders::CreateApiMappingOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateApiMappingOutput`](crate::operation::create_api_mapping::CreateApiMappingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateApiMappingOutputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) api_mapping_id: ::std::option::Option<::std::string::String>,
@@ -76,18 +73,12 @@ impl CreateApiMappingOutputBuilder {
         &self.api_id
     }
     /// <p>The API mapping identifier.</p>
-    pub fn api_mapping_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_mapping_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_mapping_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API mapping identifier.</p>
-    pub fn set_api_mapping_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_mapping_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_mapping_id = input;
         self
     }
@@ -96,18 +87,12 @@ impl CreateApiMappingOutputBuilder {
         &self.api_mapping_id
     }
     /// <p>The API mapping key.</p>
-    pub fn api_mapping_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_mapping_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_mapping_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API mapping key.</p>
-    pub fn set_api_mapping_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_mapping_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_mapping_key = input;
         self
     }

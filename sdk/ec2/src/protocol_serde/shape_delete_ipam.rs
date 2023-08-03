@@ -4,22 +4,13 @@ pub fn de_delete_ipam_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_ipam::DeleteIpamOutput,
-    crate::operation::delete_ipam::DeleteIpamError,
-> {
+) -> std::result::Result<crate::operation::delete_ipam::DeleteIpamOutput, crate::operation::delete_ipam::DeleteIpamError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::delete_ipam::DeleteIpamError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::delete_ipam::DeleteIpamError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::delete_ipam::DeleteIpamError::generic(
-        generic,
-    ))
+    Err(crate::operation::delete_ipam::DeleteIpamError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -27,19 +18,13 @@ pub fn de_delete_ipam_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::delete_ipam::DeleteIpamOutput,
-    crate::operation::delete_ipam::DeleteIpamError,
-> {
+) -> std::result::Result<crate::operation::delete_ipam::DeleteIpamOutput, crate::operation::delete_ipam::DeleteIpamError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::delete_ipam::builders::DeleteIpamOutputBuilder::default();
+        let mut output = crate::operation::delete_ipam::builders::DeleteIpamOutputBuilder::default();
         output = crate::protocol_serde::shape_delete_ipam::de_delete_ipam(_response_body, output)
             .map_err(crate::operation::delete_ipam::DeleteIpamError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -48,10 +33,7 @@ pub fn de_delete_ipam_http_response_with_props(
 pub fn de_delete_ipam(
     inp: &[u8],
     mut builder: crate::operation::delete_ipam::builders::DeleteIpamOutputBuilder,
-) -> Result<
-    crate::operation::delete_ipam::builders::DeleteIpamOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::delete_ipam::builders::DeleteIpamOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

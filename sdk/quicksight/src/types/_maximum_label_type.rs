@@ -23,9 +23,7 @@ impl MaximumLabelType {
 
 /// A builder for [`MaximumLabelType`](crate::types::MaximumLabelType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MaximumLabelTypeBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }
@@ -36,10 +34,7 @@ impl MaximumLabelTypeBuilder {
         self
     }
     /// <p>The visibility of the maximum label.</p>
-    pub fn set_visibility(
-        mut self,
-        input: ::std::option::Option<crate::types::Visibility>,
-    ) -> Self {
+    pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
         self.visibility = input;
         self
     }
@@ -49,8 +44,6 @@ impl MaximumLabelTypeBuilder {
     }
     /// Consumes the builder and constructs a [`MaximumLabelType`](crate::types::MaximumLabelType).
     pub fn build(self) -> crate::types::MaximumLabelType {
-        crate::types::MaximumLabelType {
-            visibility: self.visibility,
-        }
+        crate::types::MaximumLabelType { visibility: self.visibility }
     }
 }

@@ -4,9 +4,7 @@ pub fn ser_route_table_identifier(
     input: &crate::types::RouteTableIdentifier,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.transit_gateway_route_table_arn {
-        object
-            .key("TransitGatewayRouteTableArn")
-            .string(var_1.as_str());
+        object.key("TransitGatewayRouteTableArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.core_network_segment_edge {
         #[allow(unused_mut)]

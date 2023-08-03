@@ -22,34 +22,26 @@ impl DeactivateDeviceIdentifierInput {
 }
 impl DeactivateDeviceIdentifierInput {
     /// Creates a new builder-style object to manufacture [`DeactivateDeviceIdentifierInput`](crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierInput).
-    pub fn builder() -> crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierInputBuilder{
+    pub fn builder() -> crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierInputBuilder {
         crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierInputBuilder::default()
     }
 }
 
 /// A builder for [`DeactivateDeviceIdentifierInput`](crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeactivateDeviceIdentifierInputBuilder {
     pub(crate) device_identifier_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeactivateDeviceIdentifierInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub fn device_identifier_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn device_identifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_identifier_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub fn set_device_identifier_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_device_identifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_identifier_arn = input;
         self
     }
@@ -78,11 +70,9 @@ impl DeactivateDeviceIdentifierInputBuilder {
         crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierInput {
-                device_identifier_arn: self.device_identifier_arn,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierInput {
+            device_identifier_arn: self.device_identifier_arn,
+            client_token: self.client_token,
+        })
     }
 }

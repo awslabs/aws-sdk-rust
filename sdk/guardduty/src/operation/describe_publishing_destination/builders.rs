@@ -26,7 +26,7 @@ impl DescribePublishingDestinationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePublishingDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationInputBuilder,
+    inner: crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationInputBuilder,
 }
 impl DescribePublishingDestinationFluentBuilder {
     /// Creates a new `DescribePublishingDestination`.
@@ -37,7 +37,7 @@ impl DescribePublishingDestinationFluentBuilder {
         }
     }
     /// Access the DescribePublishingDestination as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribePublishingDestinationFluentBuilder {
             crate::operation::describe_publishing_destination::DescribePublishingDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_publishing_destination::DescribePublishingDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_publishing_destination::DescribePublishingDestinationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribePublishingDestinationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribePublishingDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_publishing_destination::DescribePublishingDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_publishing_destination::DescribePublishingDestinationError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribePublishingDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_publishing_destination::DescribePublishingDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_publishing_destination::DescribePublishingDestinationError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribePublishingDestinationFluentBuilder {
             crate::operation::describe_publishing_destination::DescribePublishingDestination,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_publishing_destination::DescribePublishingDestinationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_publishing_destination::DescribePublishingDestinationError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl DescribePublishingDestinationFluentBuilder {
         self.inner.get_detector_id()
     }
     /// <p>The ID of the publishing destination to retrieve.</p>
-    pub fn destination_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_id(input.into());
         self
     }
     /// <p>The ID of the publishing destination to retrieve.</p>
-    pub fn set_destination_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_id(input);
         self
     }

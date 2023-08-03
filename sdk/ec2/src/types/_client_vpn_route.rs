@@ -65,9 +65,7 @@ impl ClientVpnRoute {
 
 /// A builder for [`ClientVpnRoute`](crate::types::ClientVpnRoute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientVpnRouteBuilder {
     pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_cidr: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct ClientVpnRouteBuilder {
 }
 impl ClientVpnRouteBuilder {
     /// <p>The ID of the Client VPN endpoint with which the route is associated.</p>
-    pub fn client_vpn_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint with which the route is associated.</p>
-    pub fn set_client_vpn_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
@@ -99,18 +91,12 @@ impl ClientVpnRouteBuilder {
         &self.client_vpn_endpoint_id
     }
     /// <p>The IPv4 address range, in CIDR notation, of the route destination.</p>
-    pub fn destination_cidr(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 address range, in CIDR notation, of the route destination.</p>
-    pub fn set_destination_cidr(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_cidr = input;
         self
     }
@@ -119,18 +105,12 @@ impl ClientVpnRouteBuilder {
         &self.destination_cidr
     }
     /// <p>The ID of the subnet through which traffic is routed.</p>
-    pub fn target_subnet(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_subnet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_subnet = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subnet through which traffic is routed.</p>
-    pub fn set_target_subnet(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_subnet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_subnet = input;
         self
     }
@@ -172,10 +152,7 @@ impl ClientVpnRouteBuilder {
         self
     }
     /// <p>The current state of the route.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientVpnRouteStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClientVpnRouteStatus>) -> Self {
         self.status = input;
         self
     }

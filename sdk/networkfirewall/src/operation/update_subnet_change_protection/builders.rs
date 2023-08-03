@@ -26,7 +26,7 @@ impl UpdateSubnetChangeProtectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSubnetChangeProtectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_subnet_change_protection::builders::UpdateSubnetChangeProtectionInputBuilder,
+    inner: crate::operation::update_subnet_change_protection::builders::UpdateSubnetChangeProtectionInputBuilder,
 }
 impl UpdateSubnetChangeProtectionFluentBuilder {
     /// Creates a new `UpdateSubnetChangeProtection`.
@@ -37,7 +37,7 @@ impl UpdateSubnetChangeProtectionFluentBuilder {
         }
     }
     /// Access the UpdateSubnetChangeProtection as a reference.
-    pub fn as_input(&self) -> &crate::operation::update_subnet_change_protection::builders::UpdateSubnetChangeProtectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::update_subnet_change_protection::builders::UpdateSubnetChangeProtectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl UpdateSubnetChangeProtectionFluentBuilder {
             crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl UpdateSubnetChangeProtectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl UpdateSubnetChangeProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl UpdateSubnetChangeProtectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl UpdateSubnetChangeProtectionFluentBuilder {
             crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionError>,
     > {
         self.customize_middleware().await
     }
@@ -159,19 +148,13 @@ impl UpdateSubnetChangeProtectionFluentBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn firewall_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn firewall_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.firewall_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_firewall_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_name(input);
         self
     }

@@ -28,9 +28,7 @@ impl SendCommandOutput {
 
 /// A builder for [`SendCommandOutput`](crate::operation::send_command::SendCommandOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendCommandOutputBuilder {
     pub(crate) command: ::std::option::Option<crate::types::Command>,
     _request_id: Option<String>,

@@ -23,9 +23,7 @@ impl CustomRoutingEndpointConfiguration {
 
 /// A builder for [`CustomRoutingEndpointConfiguration`](crate::types::CustomRoutingEndpointConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomRoutingEndpointConfigurationBuilder {
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
 }

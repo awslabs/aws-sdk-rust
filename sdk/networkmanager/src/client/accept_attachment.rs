@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`AcceptAttachmentOutput`](crate::operation::accept_attachment::AcceptAttachmentOutput) with field(s):
     ///   - [`attachment(Option<Attachment>)`](crate::operation::accept_attachment::AcceptAttachmentOutput::attachment): <p>The response to the attachment request. </p>
     /// - On failure, responds with [`SdkError<AcceptAttachmentError>`](crate::operation::accept_attachment::AcceptAttachmentError)
-    pub fn accept_attachment(
-        &self,
-    ) -> crate::operation::accept_attachment::builders::AcceptAttachmentFluentBuilder {
-        crate::operation::accept_attachment::builders::AcceptAttachmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn accept_attachment(&self) -> crate::operation::accept_attachment::builders::AcceptAttachmentFluentBuilder {
+        crate::operation::accept_attachment::builders::AcceptAttachmentFluentBuilder::new(self.handle.clone())
     }
 }

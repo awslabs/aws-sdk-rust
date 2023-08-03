@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CreateJobForDevicesOutput`](crate::operation::create_job_for_devices::CreateJobForDevicesOutput) with field(s):
     ///   - [`jobs(Option<Vec<Job>>)`](crate::operation::create_job_for_devices::CreateJobForDevicesOutput::jobs): <p>A list of jobs.</p>
     /// - On failure, responds with [`SdkError<CreateJobForDevicesError>`](crate::operation::create_job_for_devices::CreateJobForDevicesError)
-    pub fn create_job_for_devices(
-        &self,
-    ) -> crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder {
-        crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_job_for_devices(&self) -> crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder {
+        crate::operation::create_job_for_devices::builders::CreateJobForDevicesFluentBuilder::new(self.handle.clone())
     }
 }

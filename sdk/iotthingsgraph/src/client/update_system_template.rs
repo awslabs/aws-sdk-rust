@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`summary(Option<SystemTemplateSummary>)`](crate::operation::update_system_template::UpdateSystemTemplateOutput::summary): <p>An object containing summary information about the updated system.</p>
     /// - On failure, responds with [`SdkError<UpdateSystemTemplateError>`](crate::operation::update_system_template::UpdateSystemTemplateError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn update_system_template(
-        &self,
-    ) -> crate::operation::update_system_template::builders::UpdateSystemTemplateFluentBuilder {
-        crate::operation::update_system_template::builders::UpdateSystemTemplateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_system_template(&self) -> crate::operation::update_system_template::builders::UpdateSystemTemplateFluentBuilder {
+        crate::operation::update_system_template::builders::UpdateSystemTemplateFluentBuilder::new(self.handle.clone())
     }
 }

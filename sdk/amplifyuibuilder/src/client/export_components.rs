@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`entities(Option<Vec<Component>>)`](crate::operation::export_components::ExportComponentsOutput::entities): <p>Represents the configuration of the exported components.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::export_components::ExportComponentsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ExportComponentsError>`](crate::operation::export_components::ExportComponentsError)
-    pub fn export_components(
-        &self,
-    ) -> crate::operation::export_components::builders::ExportComponentsFluentBuilder {
-        crate::operation::export_components::builders::ExportComponentsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn export_components(&self) -> crate::operation::export_components::builders::ExportComponentsFluentBuilder {
+        crate::operation::export_components::builders::ExportComponentsFluentBuilder::new(self.handle.clone())
     }
 }

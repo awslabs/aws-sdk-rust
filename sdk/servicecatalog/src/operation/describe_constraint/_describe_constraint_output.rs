@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeConstraintOutput {
 }
 impl DescribeConstraintOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConstraintOutput`](crate::operation::describe_constraint::DescribeConstraintOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_constraint::builders::DescribeConstraintOutputBuilder {
+    pub fn builder() -> crate::operation::describe_constraint::builders::DescribeConstraintOutputBuilder {
         crate::operation::describe_constraint::builders::DescribeConstraintOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConstraintOutput`](crate::operation::describe_constraint::DescribeConstraintOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConstraintOutputBuilder {
     pub(crate) constraint_detail: ::std::option::Option<crate::types::ConstraintDetail>,
     pub(crate) constraint_parameters: ::std::option::Option<::std::string::String>,
@@ -59,10 +56,7 @@ impl DescribeConstraintOutputBuilder {
         self
     }
     /// <p>Information about the constraint.</p>
-    pub fn set_constraint_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ConstraintDetail>,
-    ) -> Self {
+    pub fn set_constraint_detail(mut self, input: ::std::option::Option<crate::types::ConstraintDetail>) -> Self {
         self.constraint_detail = input;
         self
     }
@@ -71,18 +65,12 @@ impl DescribeConstraintOutputBuilder {
         &self.constraint_detail
     }
     /// <p>The constraint parameters.</p>
-    pub fn constraint_parameters(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn constraint_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.constraint_parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The constraint parameters.</p>
-    pub fn set_constraint_parameters(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_constraint_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.constraint_parameters = input;
         self
     }

@@ -30,9 +30,7 @@ impl NewStudioMember {
 
 /// A builder for [`NewStudioMember`](crate::types::NewStudioMember).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NewStudioMemberBuilder {
     pub(crate) persona: ::std::option::Option<crate::types::StudioPersona>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl NewStudioMemberBuilder {
         self
     }
     /// <p>The persona.</p>
-    pub fn set_persona(
-        mut self,
-        input: ::std::option::Option<crate::types::StudioPersona>,
-    ) -> Self {
+    pub fn set_persona(mut self, input: ::std::option::Option<crate::types::StudioPersona>) -> Self {
         self.persona = input;
         self
     }

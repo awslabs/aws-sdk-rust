@@ -75,9 +75,7 @@ impl ParametersInCacheKeyAndForwardedToOrigin {
         self.cookies_config.as_ref()
     }
     /// <p>An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and in requests that CloudFront sends to the origin.</p>
-    pub fn query_strings_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CachePolicyQueryStringsConfig> {
+    pub fn query_strings_config(&self) -> ::std::option::Option<&crate::types::CachePolicyQueryStringsConfig> {
         self.query_strings_config.as_ref()
     }
 }
@@ -90,16 +88,13 @@ impl ParametersInCacheKeyAndForwardedToOrigin {
 
 /// A builder for [`ParametersInCacheKeyAndForwardedToOrigin`](crate::types::ParametersInCacheKeyAndForwardedToOrigin).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParametersInCacheKeyAndForwardedToOriginBuilder {
     pub(crate) enable_accept_encoding_gzip: ::std::option::Option<bool>,
     pub(crate) enable_accept_encoding_brotli: ::std::option::Option<bool>,
     pub(crate) headers_config: ::std::option::Option<crate::types::CachePolicyHeadersConfig>,
     pub(crate) cookies_config: ::std::option::Option<crate::types::CachePolicyCookiesConfig>,
-    pub(crate) query_strings_config:
-        ::std::option::Option<crate::types::CachePolicyQueryStringsConfig>,
+    pub(crate) query_strings_config: ::std::option::Option<crate::types::CachePolicyQueryStringsConfig>,
 }
 impl ParametersInCacheKeyAndForwardedToOriginBuilder {
     /// <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header is included in the cache key and included in requests that CloudFront sends to the origin.</p>
@@ -190,17 +185,12 @@ impl ParametersInCacheKeyAndForwardedToOriginBuilder {
         self
     }
     /// <p>An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and in requests that CloudFront sends to the origin.</p>
-    pub fn set_headers_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CachePolicyHeadersConfig>,
-    ) -> Self {
+    pub fn set_headers_config(mut self, input: ::std::option::Option<crate::types::CachePolicyHeadersConfig>) -> Self {
         self.headers_config = input;
         self
     }
     /// <p>An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and in requests that CloudFront sends to the origin.</p>
-    pub fn get_headers_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CachePolicyHeadersConfig> {
+    pub fn get_headers_config(&self) -> &::std::option::Option<crate::types::CachePolicyHeadersConfig> {
         &self.headers_config
     }
     /// <p>An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache key and in requests that CloudFront sends to the origin.</p>
@@ -209,39 +199,26 @@ impl ParametersInCacheKeyAndForwardedToOriginBuilder {
         self
     }
     /// <p>An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache key and in requests that CloudFront sends to the origin.</p>
-    pub fn set_cookies_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CachePolicyCookiesConfig>,
-    ) -> Self {
+    pub fn set_cookies_config(mut self, input: ::std::option::Option<crate::types::CachePolicyCookiesConfig>) -> Self {
         self.cookies_config = input;
         self
     }
     /// <p>An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache key and in requests that CloudFront sends to the origin.</p>
-    pub fn get_cookies_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CachePolicyCookiesConfig> {
+    pub fn get_cookies_config(&self) -> &::std::option::Option<crate::types::CachePolicyCookiesConfig> {
         &self.cookies_config
     }
     /// <p>An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and in requests that CloudFront sends to the origin.</p>
-    pub fn query_strings_config(
-        mut self,
-        input: crate::types::CachePolicyQueryStringsConfig,
-    ) -> Self {
+    pub fn query_strings_config(mut self, input: crate::types::CachePolicyQueryStringsConfig) -> Self {
         self.query_strings_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and in requests that CloudFront sends to the origin.</p>
-    pub fn set_query_strings_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CachePolicyQueryStringsConfig>,
-    ) -> Self {
+    pub fn set_query_strings_config(mut self, input: ::std::option::Option<crate::types::CachePolicyQueryStringsConfig>) -> Self {
         self.query_strings_config = input;
         self
     }
     /// <p>An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and in requests that CloudFront sends to the origin.</p>
-    pub fn get_query_strings_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CachePolicyQueryStringsConfig> {
+    pub fn get_query_strings_config(&self) -> &::std::option::Option<crate::types::CachePolicyQueryStringsConfig> {
         &self.query_strings_config
     }
     /// Consumes the builder and constructs a [`ParametersInCacheKeyAndForwardedToOrigin`](crate::types::ParametersInCacheKeyAndForwardedToOrigin).

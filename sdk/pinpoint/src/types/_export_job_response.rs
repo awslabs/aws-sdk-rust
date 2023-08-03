@@ -107,9 +107,7 @@ impl ExportJobResponse {
 
 /// A builder for [`ExportJobResponse`](crate::types::ExportJobResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportJobResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) completed_pieces: ::std::option::Option<i32>,
@@ -127,18 +125,12 @@ pub struct ExportJobResponseBuilder {
 }
 impl ExportJobResponseBuilder {
     /// <p>The unique identifier for the application that's associated with the export job.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application that's associated with the export job.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -161,18 +153,12 @@ impl ExportJobResponseBuilder {
         &self.completed_pieces
     }
     /// <p>The date, in ISO 8601 format, when the export job was completed.</p>
-    pub fn completion_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn completion_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.completion_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date, in ISO 8601 format, when the export job was completed.</p>
-    pub fn set_completion_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_completion_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.completion_date = input;
         self
     }
@@ -181,18 +167,12 @@ impl ExportJobResponseBuilder {
         &self.completion_date
     }
     /// <p>The date, in ISO 8601 format, when the export job was created.</p>
-    pub fn creation_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date, in ISO 8601 format, when the export job was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date = input;
         self
     }
@@ -206,10 +186,7 @@ impl ExportJobResponseBuilder {
         self
     }
     /// <p>The resource settings that apply to the export job.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportJobResource>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::ExportJobResource>) -> Self {
         self.definition = input;
         self
     }
@@ -243,10 +220,7 @@ impl ExportJobResponseBuilder {
         self
     }
     /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the export job, if any.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.failures = input;
         self
     }

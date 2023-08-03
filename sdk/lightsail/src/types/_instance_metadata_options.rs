@@ -71,9 +71,7 @@ impl InstanceMetadataOptions {
 
 /// A builder for [`InstanceMetadataOptions`](crate::types::InstanceMetadataOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceMetadataOptionsBuilder {
     pub(crate) state: ::std::option::Option<crate::types::InstanceMetadataState>,
     pub(crate) http_tokens: ::std::option::Option<crate::types::HttpTokens>,
@@ -98,10 +96,7 @@ impl InstanceMetadataOptionsBuilder {
     /// <li> <p> <code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p> </li>
     /// <li> <p> <code>applied</code> - The metadata options have been successfully applied to the instance.</p> </li>
     /// </ul>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceMetadataState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceMetadataState>) -> Self {
         self.state = input;
         self
     }
@@ -128,10 +123,7 @@ impl InstanceMetadataOptionsBuilder {
     /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p> <important>
     /// <p>Not all instance blueprints in Lightsail support version 2.0 credentials. Use the <code>MetadataNoToken</code> instance metric to track the number of calls to the instance metadata service that are using version 1.0 credentials. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-health-metrics">Viewing instance metrics in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     /// </important>
-    pub fn set_http_tokens(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpTokens>,
-    ) -> Self {
+    pub fn set_http_tokens(mut self, input: ::std::option::Option<crate::types::HttpTokens>) -> Self {
         self.http_tokens = input;
         self
     }
@@ -151,10 +143,7 @@ impl InstanceMetadataOptionsBuilder {
     }
     /// <p>Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.</p>
     /// <p>If the value is <code>disabled</code>, you cannot access your instance metadata.</p>
-    pub fn set_http_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpEndpoint>,
-    ) -> Self {
+    pub fn set_http_endpoint(mut self, input: ::std::option::Option<crate::types::HttpEndpoint>) -> Self {
         self.http_endpoint = input;
         self
     }
@@ -183,10 +172,7 @@ impl InstanceMetadataOptionsBuilder {
         self
     }
     /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
-    pub fn set_http_protocol_ipv6(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpProtocolIpv6>,
-    ) -> Self {
+    pub fn set_http_protocol_ipv6(mut self, input: ::std::option::Option<crate::types::HttpProtocolIpv6>) -> Self {
         self.http_protocol_ipv6 = input;
         self
     }

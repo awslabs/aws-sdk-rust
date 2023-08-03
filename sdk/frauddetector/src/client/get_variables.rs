@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`variables(Option<Vec<Variable>>)`](crate::operation::get_variables::GetVariablesOutput::variables): <p>The names of the variables returned. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_variables::GetVariablesOutput::next_token): <p>The next page token to be used in subsequent requests. </p>
     /// - On failure, responds with [`SdkError<GetVariablesError>`](crate::operation::get_variables::GetVariablesError)
-    pub fn get_variables(
-        &self,
-    ) -> crate::operation::get_variables::builders::GetVariablesFluentBuilder {
-        crate::operation::get_variables::builders::GetVariablesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_variables(&self) -> crate::operation::get_variables::builders::GetVariablesFluentBuilder {
+        crate::operation::get_variables::builders::GetVariablesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,9 +11,7 @@ pub struct PutWorkflowRunPropertiesInput {
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The properties to put for the specified run.</p>
     #[doc(hidden)]
-    pub run_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutWorkflowRunPropertiesInput {
     /// <p>Name of the workflow which was run.</p>
@@ -25,34 +23,24 @@ impl PutWorkflowRunPropertiesInput {
         self.run_id.as_deref()
     }
     /// <p>The properties to put for the specified run.</p>
-    pub fn run_properties(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn run_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.run_properties.as_ref()
     }
 }
 impl PutWorkflowRunPropertiesInput {
     /// Creates a new builder-style object to manufacture [`PutWorkflowRunPropertiesInput`](crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesInput).
-    pub fn builder(
-    ) -> crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesInputBuilder {
         crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesInputBuilder::default()
     }
 }
 
 /// A builder for [`PutWorkflowRunPropertiesInput`](crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutWorkflowRunPropertiesInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
-    pub(crate) run_properties: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutWorkflowRunPropertiesInputBuilder {
     /// <p>Name of the workflow which was run.</p>
@@ -101,19 +89,13 @@ impl PutWorkflowRunPropertiesInputBuilder {
     /// <p>The properties to put for the specified run.</p>
     pub fn set_run_properties(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.run_properties = input;
         self
     }
     /// <p>The properties to put for the specified run.</p>
-    pub fn get_run_properties(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_run_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.run_properties
     }
     /// Consumes the builder and constructs a [`PutWorkflowRunPropertiesInput`](crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesInput).
@@ -123,12 +105,10 @@ impl PutWorkflowRunPropertiesInputBuilder {
         crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesInput {
-                name: self.name,
-                run_id: self.run_id,
-                run_properties: self.run_properties,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesInput {
+            name: self.name,
+            run_id: self.run_id,
+            run_properties: self.run_properties,
+        })
     }
 }

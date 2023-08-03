@@ -12,8 +12,7 @@ pub struct AnomalyGroupStatistics {
     pub total_count: i32,
     /// <p>Statistics for individual metrics within the group.</p>
     #[doc(hidden)]
-    pub itemized_metric_stats_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ItemizedMetricStats>>,
+    pub itemized_metric_stats_list: ::std::option::Option<::std::vec::Vec<crate::types::ItemizedMetricStats>>,
 }
 impl AnomalyGroupStatistics {
     /// <p>The start of the time range that was searched.</p>
@@ -25,9 +24,7 @@ impl AnomalyGroupStatistics {
         self.total_count
     }
     /// <p>Statistics for individual metrics within the group.</p>
-    pub fn itemized_metric_stats_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ItemizedMetricStats]> {
+    pub fn itemized_metric_stats_list(&self) -> ::std::option::Option<&[crate::types::ItemizedMetricStats]> {
         self.itemized_metric_stats_list.as_deref()
     }
 }
@@ -40,29 +37,20 @@ impl AnomalyGroupStatistics {
 
 /// A builder for [`AnomalyGroupStatistics`](crate::types::AnomalyGroupStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnomalyGroupStatisticsBuilder {
     pub(crate) evaluation_start_date: ::std::option::Option<::std::string::String>,
     pub(crate) total_count: ::std::option::Option<i32>,
-    pub(crate) itemized_metric_stats_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ItemizedMetricStats>>,
+    pub(crate) itemized_metric_stats_list: ::std::option::Option<::std::vec::Vec<crate::types::ItemizedMetricStats>>,
 }
 impl AnomalyGroupStatisticsBuilder {
     /// <p>The start of the time range that was searched.</p>
-    pub fn evaluation_start_date(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_start_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The start of the time range that was searched.</p>
-    pub fn set_evaluation_start_date(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_start_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_start_date = input;
         self
     }
@@ -96,17 +84,12 @@ impl AnomalyGroupStatisticsBuilder {
         self
     }
     /// <p>Statistics for individual metrics within the group.</p>
-    pub fn set_itemized_metric_stats_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ItemizedMetricStats>>,
-    ) -> Self {
+    pub fn set_itemized_metric_stats_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ItemizedMetricStats>>) -> Self {
         self.itemized_metric_stats_list = input;
         self
     }
     /// <p>Statistics for individual metrics within the group.</p>
-    pub fn get_itemized_metric_stats_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ItemizedMetricStats>> {
+    pub fn get_itemized_metric_stats_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ItemizedMetricStats>> {
         &self.itemized_metric_stats_list
     }
     /// Consumes the builder and constructs a [`AnomalyGroupStatistics`](crate::types::AnomalyGroupStatistics).

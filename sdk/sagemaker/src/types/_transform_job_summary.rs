@@ -65,9 +65,7 @@ impl TransformJobSummary {
 
 /// A builder for [`TransformJobSummary`](crate::types::TransformJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransformJobSummaryBuilder {
     pub(crate) transform_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) transform_job_arn: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct TransformJobSummaryBuilder {
 }
 impl TransformJobSummaryBuilder {
     /// <p>The name of the transform job.</p>
-    pub fn transform_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transform_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the transform job.</p>
-    pub fn set_transform_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transform_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transform_job_name = input;
         self
     }
@@ -99,18 +91,12 @@ impl TransformJobSummaryBuilder {
         &self.transform_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
-    pub fn transform_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transform_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
-    pub fn set_transform_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transform_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transform_job_arn = input;
         self
     }
@@ -124,10 +110,7 @@ impl TransformJobSummaryBuilder {
         self
     }
     /// <p>A timestamp that shows when the transform Job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -141,10 +124,7 @@ impl TransformJobSummaryBuilder {
         self
     }
     /// <p>Indicates when the transform job ends on compute instances. For successful jobs and stopped jobs, this is the exact time recorded after the results are uploaded. For failed jobs, this is when Amazon SageMaker detected that the job failed.</p>
-    pub fn set_transform_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_transform_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.transform_end_time = input;
         self
     }
@@ -158,10 +138,7 @@ impl TransformJobSummaryBuilder {
         self
     }
     /// <p>Indicates when the transform job was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -175,32 +152,21 @@ impl TransformJobSummaryBuilder {
         self
     }
     /// <p>The status of the transform job.</p>
-    pub fn set_transform_job_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TransformJobStatus>,
-    ) -> Self {
+    pub fn set_transform_job_status(mut self, input: ::std::option::Option<crate::types::TransformJobStatus>) -> Self {
         self.transform_job_status = input;
         self
     }
     /// <p>The status of the transform job.</p>
-    pub fn get_transform_job_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransformJobStatus> {
+    pub fn get_transform_job_status(&self) -> &::std::option::Option<crate::types::TransformJobStatus> {
         &self.transform_job_status
     }
     /// <p>If the transform job failed, the reason it failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the transform job failed, the reason it failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }

@@ -44,9 +44,7 @@ impl RelatedWorkspaceProperties {
 
 /// A builder for [`RelatedWorkspaceProperties`](crate::types::RelatedWorkspaceProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelatedWorkspacePropertiesBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
@@ -102,17 +100,12 @@ impl RelatedWorkspacePropertiesBuilder {
         self
     }
     /// <p>Indicates the type of WorkSpace.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::StandbyWorkspaceRelationshipType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::StandbyWorkspaceRelationshipType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Indicates the type of WorkSpace.</p>
-    pub fn get_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::StandbyWorkspaceRelationshipType> {
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::StandbyWorkspaceRelationshipType> {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`RelatedWorkspaceProperties`](crate::types::RelatedWorkspaceProperties).

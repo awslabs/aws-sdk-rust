@@ -46,27 +46,19 @@ impl SftpConnectorConfig {
 
 /// A builder for [`SftpConnectorConfig`](crate::types::SftpConnectorConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SftpConnectorConfigBuilder {
     pub(crate) user_secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) trusted_host_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SftpConnectorConfigBuilder {
     /// <p>The identifiers for the secrets (in Amazon Web Services Secrets Manager) that contain the SFTP user's private keys or passwords.</p>
-    pub fn user_secret_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_secret_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifiers for the secrets (in Amazon Web Services Secrets Manager) that contain the SFTP user's private keys or passwords.</p>
-    pub fn set_user_secret_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_secret_id = input;
         self
     }
@@ -87,10 +79,7 @@ impl SftpConnectorConfigBuilder {
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
     /// <li> <p>For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
     /// </ul>
-    pub fn trusted_host_keys(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trusted_host_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.trusted_host_keys.unwrap_or_default();
         v.push(input.into());
         self.trusted_host_keys = ::std::option::Option::Some(v);
@@ -105,10 +94,7 @@ impl SftpConnectorConfigBuilder {
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
     /// <li> <p>For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
     /// </ul>
-    pub fn set_trusted_host_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_trusted_host_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.trusted_host_keys = input;
         self
     }
@@ -121,9 +107,7 @@ impl SftpConnectorConfigBuilder {
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
     /// <li> <p>For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
     /// </ul>
-    pub fn get_trusted_host_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_trusted_host_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.trusted_host_keys
     }
     /// Consumes the builder and constructs a [`SftpConnectorConfig`](crate::types::SftpConnectorConfig).

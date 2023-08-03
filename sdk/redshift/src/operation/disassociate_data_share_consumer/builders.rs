@@ -26,7 +26,7 @@ impl DisassociateDataShareConsumerInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateDataShareConsumerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_data_share_consumer::builders::DisassociateDataShareConsumerInputBuilder,
+    inner: crate::operation::disassociate_data_share_consumer::builders::DisassociateDataShareConsumerInputBuilder,
 }
 impl DisassociateDataShareConsumerFluentBuilder {
     /// Creates a new `DisassociateDataShareConsumer`.
@@ -37,7 +37,7 @@ impl DisassociateDataShareConsumerFluentBuilder {
         }
     }
     /// Access the DisassociateDataShareConsumer as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_data_share_consumer::builders::DisassociateDataShareConsumerInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_data_share_consumer::builders::DisassociateDataShareConsumerInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DisassociateDataShareConsumerFluentBuilder {
             crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DisassociateDataShareConsumerFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DisassociateDataShareConsumerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DisassociateDataShareConsumerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DisassociateDataShareConsumerFluentBuilder {
             crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumer,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
-    pub fn data_share_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_share_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
-    pub fn set_data_share_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_share_arn(input);
         self
     }
@@ -169,18 +152,12 @@ impl DisassociateDataShareConsumerFluentBuilder {
         self.inner.get_consumer_arn()
     }
     /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
-    pub fn consumer_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn consumer_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.consumer_region(input.into());
         self
     }
     /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
-    pub fn set_consumer_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_consumer_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_consumer_region(input);
         self
     }

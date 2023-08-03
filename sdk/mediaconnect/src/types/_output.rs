@@ -27,8 +27,7 @@ pub struct Output {
     pub media_live_input_arn: ::std::option::Option<::std::string::String>,
     /// The configuration for each media stream that is associated with the output.
     #[doc(hidden)]
-    pub media_stream_output_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfiguration>>,
+    pub media_stream_output_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfiguration>>,
     /// The name of the output. This value must be unique within the current flow.
     #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
@@ -81,9 +80,7 @@ impl Output {
         self.media_live_input_arn.as_deref()
     }
     /// The configuration for each media stream that is associated with the output.
-    pub fn media_stream_output_configurations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MediaStreamOutputConfiguration]> {
+    pub fn media_stream_output_configurations(&self) -> ::std::option::Option<&[crate::types::MediaStreamOutputConfiguration]> {
         self.media_stream_output_configurations.as_deref()
     }
     /// The name of the output. This value must be unique within the current flow.
@@ -103,9 +100,7 @@ impl Output {
         self.transport.as_ref()
     }
     /// The name of the VPC interface attachment to use for this output.
-    pub fn vpc_interface_attachment(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VpcInterfaceAttachment> {
+    pub fn vpc_interface_attachment(&self) -> ::std::option::Option<&crate::types::VpcInterfaceAttachment> {
         self.vpc_interface_attachment.as_ref()
     }
     /// The ARN of the bridge that added this output.
@@ -126,9 +121,7 @@ impl Output {
 
 /// A builder for [`Output`](crate::types::Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputBuilder {
     pub(crate) data_transfer_subscriber_fee_percent: ::std::option::Option<i32>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -137,14 +130,12 @@ pub struct OutputBuilder {
     pub(crate) entitlement_arn: ::std::option::Option<::std::string::String>,
     pub(crate) listener_address: ::std::option::Option<::std::string::String>,
     pub(crate) media_live_input_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) media_stream_output_configurations:
-        ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfiguration>>,
+    pub(crate) media_stream_output_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfiguration>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) output_arn: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) transport: ::std::option::Option<crate::types::Transport>,
-    pub(crate) vpc_interface_attachment:
-        ::std::option::Option<crate::types::VpcInterfaceAttachment>,
+    pub(crate) vpc_interface_attachment: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bridge_ports: ::std::option::Option<::std::vec::Vec<i32>>,
 }
@@ -155,10 +146,7 @@ impl OutputBuilder {
         self
     }
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-    pub fn set_data_transfer_subscriber_fee_percent(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_data_transfer_subscriber_fee_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.data_transfer_subscriber_fee_percent = input;
         self
     }
@@ -200,10 +188,7 @@ impl OutputBuilder {
         self
     }
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::Encryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
         self.encryption = input;
         self
     }
@@ -212,18 +197,12 @@ impl OutputBuilder {
         &self.encryption
     }
     /// The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.
-    pub fn entitlement_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entitlement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entitlement_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.
-    pub fn set_entitlement_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entitlement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entitlement_arn = input;
         self
     }
@@ -232,18 +211,12 @@ impl OutputBuilder {
         &self.entitlement_arn
     }
     /// The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
-    pub fn listener_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn listener_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_address = ::std::option::Option::Some(input.into());
         self
     }
     /// The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
-    pub fn set_listener_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_listener_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.listener_address = input;
         self
     }
@@ -252,18 +225,12 @@ impl OutputBuilder {
         &self.listener_address
     }
     /// The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.
-    pub fn media_live_input_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_live_input_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_live_input_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.
-    pub fn set_media_live_input_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_live_input_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_live_input_arn = input;
         self
     }
@@ -276,10 +243,7 @@ impl OutputBuilder {
     /// To override the contents of this collection use [`set_media_stream_output_configurations`](Self::set_media_stream_output_configurations).
     ///
     /// The configuration for each media stream that is associated with the output.
-    pub fn media_stream_output_configurations(
-        mut self,
-        input: crate::types::MediaStreamOutputConfiguration,
-    ) -> Self {
+    pub fn media_stream_output_configurations(mut self, input: crate::types::MediaStreamOutputConfiguration) -> Self {
         let mut v = self.media_stream_output_configurations.unwrap_or_default();
         v.push(input);
         self.media_stream_output_configurations = ::std::option::Option::Some(v);
@@ -294,9 +258,7 @@ impl OutputBuilder {
         self
     }
     /// The configuration for each media stream that is associated with the output.
-    pub fn get_media_stream_output_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfiguration>> {
+    pub fn get_media_stream_output_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfiguration>> {
         &self.media_stream_output_configurations
     }
     /// The name of the output. This value must be unique within the current flow.
@@ -361,17 +323,12 @@ impl OutputBuilder {
         self
     }
     /// The name of the VPC interface attachment to use for this output.
-    pub fn set_vpc_interface_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
-    ) -> Self {
+    pub fn set_vpc_interface_attachment(mut self, input: ::std::option::Option<crate::types::VpcInterfaceAttachment>) -> Self {
         self.vpc_interface_attachment = input;
         self
     }
     /// The name of the VPC interface attachment to use for this output.
-    pub fn get_vpc_interface_attachment(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcInterfaceAttachment> {
+    pub fn get_vpc_interface_attachment(&self) -> &::std::option::Option<crate::types::VpcInterfaceAttachment> {
         &self.vpc_interface_attachment
     }
     /// The ARN of the bridge that added this output.

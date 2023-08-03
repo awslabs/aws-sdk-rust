@@ -30,9 +30,7 @@ impl ColumnInfo {
 
 /// A builder for [`ColumnInfo`](crate::types::ColumnInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnInfoBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::boxed::Box<crate::types::Type>>,
@@ -53,18 +51,12 @@ impl ColumnInfoBuilder {
         &self.name
     }
     /// <p>The data type of the result set column. The data type can be a scalar or complex. Scalar data types are integers, strings, doubles, Booleans, and others. Complex data types are types such as arrays, rows, and others. </p>
-    pub fn r#type(
-        mut self,
-        input: impl ::std::convert::Into<::std::boxed::Box<crate::types::Type>>,
-    ) -> Self {
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::boxed::Box<crate::types::Type>>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data type of the result set column. The data type can be a scalar or complex. Scalar data types are integers, strings, doubles, Booleans, and others. Complex data types are types such as arrays, rows, and others. </p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<::std::boxed::Box<crate::types::Type>>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::Type>>) -> Self {
         self.r#type = input;
         self
     }

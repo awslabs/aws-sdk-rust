@@ -10,10 +10,7 @@ impl PutSchemaInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_schema::PutSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_schema::PutSchemaError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_schema::PutSchemaError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_schema();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl PutSchemaFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_schema::PutSchema,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_schema::PutSchema, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_schema::PutSchemaError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl PutSchemaFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl PutSchemaFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_schema::PutSchema,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_schema::PutSchema, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_schema::PutSchemaError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the ID of the policy store in which to place the schema.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store in which to place the schema.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
@@ -138,10 +120,7 @@ impl PutSchemaFluentBuilder {
         self
     }
     /// <p>Specifies the definition of the schema to be stored. The schema definition must be written in Cedar schema JSON.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaDefinition>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::SchemaDefinition>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }

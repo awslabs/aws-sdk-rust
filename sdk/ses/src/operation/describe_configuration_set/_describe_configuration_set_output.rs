@@ -50,22 +50,17 @@ impl ::aws_http::request_id::RequestId for DescribeConfigurationSetOutput {
 }
 impl DescribeConfigurationSetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationSetOutput`](crate::operation::describe_configuration_set::DescribeConfigurationSetOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_configuration_set::builders::DescribeConfigurationSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_configuration_set::builders::DescribeConfigurationSetOutputBuilder {
         crate::operation::describe_configuration_set::builders::DescribeConfigurationSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationSetOutput`](crate::operation::describe_configuration_set::DescribeConfigurationSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationSetOutputBuilder {
     pub(crate) configuration_set: ::std::option::Option<crate::types::ConfigurationSet>,
-    pub(crate) event_destinations:
-        ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
+    pub(crate) event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
     pub(crate) tracking_options: ::std::option::Option<crate::types::TrackingOptions>,
     pub(crate) delivery_options: ::std::option::Option<crate::types::DeliveryOptions>,
     pub(crate) reputation_options: ::std::option::Option<crate::types::ReputationOptions>,
@@ -78,10 +73,7 @@ impl DescribeConfigurationSetOutputBuilder {
         self
     }
     /// <p>The configuration set object associated with the specified configuration set.</p>
-    pub fn set_configuration_set(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationSet>,
-    ) -> Self {
+    pub fn set_configuration_set(mut self, input: ::std::option::Option<crate::types::ConfigurationSet>) -> Self {
         self.configuration_set = input;
         self
     }
@@ -101,17 +93,12 @@ impl DescribeConfigurationSetOutputBuilder {
         self
     }
     /// <p>A list of event destinations associated with the configuration set. </p>
-    pub fn set_event_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
-    ) -> Self {
+    pub fn set_event_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>) -> Self {
         self.event_destinations = input;
         self
     }
     /// <p>A list of event destinations associated with the configuration set. </p>
-    pub fn get_event_destinations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDestination>> {
+    pub fn get_event_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventDestination>> {
         &self.event_destinations
     }
     /// <p>The name of the custom open and click tracking domain associated with the configuration set.</p>
@@ -120,10 +107,7 @@ impl DescribeConfigurationSetOutputBuilder {
         self
     }
     /// <p>The name of the custom open and click tracking domain associated with the configuration set.</p>
-    pub fn set_tracking_options(
-        mut self,
-        input: ::std::option::Option<crate::types::TrackingOptions>,
-    ) -> Self {
+    pub fn set_tracking_options(mut self, input: ::std::option::Option<crate::types::TrackingOptions>) -> Self {
         self.tracking_options = input;
         self
     }
@@ -137,10 +121,7 @@ impl DescribeConfigurationSetOutputBuilder {
         self
     }
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
-    pub fn set_delivery_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryOptions>,
-    ) -> Self {
+    pub fn set_delivery_options(mut self, input: ::std::option::Option<crate::types::DeliveryOptions>) -> Self {
         self.delivery_options = input;
         self
     }
@@ -154,17 +135,12 @@ impl DescribeConfigurationSetOutputBuilder {
         self
     }
     /// <p>An object that represents the reputation settings for the configuration set. </p>
-    pub fn set_reputation_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ReputationOptions>,
-    ) -> Self {
+    pub fn set_reputation_options(mut self, input: ::std::option::Option<crate::types::ReputationOptions>) -> Self {
         self.reputation_options = input;
         self
     }
     /// <p>An object that represents the reputation settings for the configuration set. </p>
-    pub fn get_reputation_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReputationOptions> {
+    pub fn get_reputation_options(&self) -> &::std::option::Option<crate::types::ReputationOptions> {
         &self.reputation_options
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -177,9 +153,7 @@ impl DescribeConfigurationSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationSetOutput`](crate::operation::describe_configuration_set::DescribeConfigurationSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_configuration_set::DescribeConfigurationSetOutput {
+    pub fn build(self) -> crate::operation::describe_configuration_set::DescribeConfigurationSetOutput {
         crate::operation::describe_configuration_set::DescribeConfigurationSetOutput {
             configuration_set: self.configuration_set,
             event_destinations: self.event_destinations,

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeConditionalForwardersOutput`](crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersOutput) with field(s):
     ///   - [`conditional_forwarders(Option<Vec<ConditionalForwarder>>)`](crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersOutput::conditional_forwarders): <p>The list of conditional forwarders that have been created.</p>
     /// - On failure, responds with [`SdkError<DescribeConditionalForwardersError>`](crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersError)
-    pub fn describe_conditional_forwarders(&self) -> crate::operation::describe_conditional_forwarders::builders::DescribeConditionalForwardersFluentBuilder{
+    pub fn describe_conditional_forwarders(
+        &self,
+    ) -> crate::operation::describe_conditional_forwarders::builders::DescribeConditionalForwardersFluentBuilder {
         crate::operation::describe_conditional_forwarders::builders::DescribeConditionalForwardersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::operation::get_environment::GetEnvironmentOutput::environment): <p>The detailed data of the requested environment.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::operation::get_environment::GetEnvironmentError)
-    pub fn get_environment(
-        &self,
-    ) -> crate::operation::get_environment::builders::GetEnvironmentFluentBuilder {
-        crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_environment(&self) -> crate::operation::get_environment::builders::GetEnvironmentFluentBuilder {
+        crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::new(self.handle.clone())
     }
 }

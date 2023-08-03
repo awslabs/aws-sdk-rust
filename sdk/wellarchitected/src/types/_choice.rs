@@ -24,8 +24,7 @@ pub struct Choice {
     /// <p>The additional resources for a choice in a custom lens.</p>
     /// <p>A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
     #[doc(hidden)]
-    pub additional_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResources>>,
+    pub additional_resources: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResources>>,
 }
 impl Choice {
     /// <p>The ID of a choice.</p>
@@ -52,9 +51,7 @@ impl Choice {
     }
     /// <p>The additional resources for a choice in a custom lens.</p>
     /// <p>A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
-    pub fn additional_resources(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AdditionalResources]> {
+    pub fn additional_resources(&self) -> ::std::option::Option<&[crate::types::AdditionalResources]> {
         self.additional_resources.as_deref()
     }
 }
@@ -67,17 +64,14 @@ impl Choice {
 
 /// A builder for [`Choice`](crate::types::Choice).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChoiceBuilder {
     pub(crate) choice_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) helpful_resource: ::std::option::Option<crate::types::ChoiceContent>,
     pub(crate) improvement_plan: ::std::option::Option<crate::types::ChoiceContent>,
-    pub(crate) additional_resources:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResources>>,
+    pub(crate) additional_resources: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResources>>,
 }
 impl ChoiceBuilder {
     /// <p>The ID of a choice.</p>
@@ -130,10 +124,7 @@ impl ChoiceBuilder {
     }
     /// <p>The helpful resource (both text and URL) for a particular choice.</p>
     /// <p>This field only applies to custom lenses. Each choice can have only one helpful resource.</p>
-    pub fn set_helpful_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::ChoiceContent>,
-    ) -> Self {
+    pub fn set_helpful_resource(mut self, input: ::std::option::Option<crate::types::ChoiceContent>) -> Self {
         self.helpful_resource = input;
         self
     }
@@ -150,10 +141,7 @@ impl ChoiceBuilder {
     }
     /// <p>The improvement plan (both text and URL) for a particular choice.</p>
     /// <p>This field only applies to custom lenses. Each choice can have only one improvement plan.</p>
-    pub fn set_improvement_plan(
-        mut self,
-        input: ::std::option::Option<crate::types::ChoiceContent>,
-    ) -> Self {
+    pub fn set_improvement_plan(mut self, input: ::std::option::Option<crate::types::ChoiceContent>) -> Self {
         self.improvement_plan = input;
         self
     }
@@ -176,18 +164,13 @@ impl ChoiceBuilder {
     }
     /// <p>The additional resources for a choice in a custom lens.</p>
     /// <p>A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
-    pub fn set_additional_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResources>>,
-    ) -> Self {
+    pub fn set_additional_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResources>>) -> Self {
         self.additional_resources = input;
         self
     }
     /// <p>The additional resources for a choice in a custom lens.</p>
     /// <p>A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
-    pub fn get_additional_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalResources>> {
+    pub fn get_additional_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalResources>> {
         &self.additional_resources
     }
     /// Consumes the builder and constructs a [`Choice`](crate::types::Choice).

@@ -29,9 +29,7 @@ impl StopSessionInput {
 
 /// A builder for [`StopSessionInput`](crate::operation::stop_session::StopSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopSessionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) request_origin: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl StopSessionInputBuilder {
         &self.id
     }
     /// <p>The origin of the request.</p>
-    pub fn request_origin(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_origin = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The origin of the request.</p>
-    pub fn set_request_origin(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_origin = input;
         self
     }
@@ -72,12 +64,7 @@ impl StopSessionInputBuilder {
         &self.request_origin
     }
     /// Consumes the builder and constructs a [`StopSessionInput`](crate::operation::stop_session::StopSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_session::StopSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_session::StopSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_session::StopSessionInput {
             id: self.id,
             request_origin: self.request_origin,

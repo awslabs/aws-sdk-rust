@@ -5,8 +5,7 @@
 pub struct GetAccuracyMetricsOutput {
     /// <p>An array of results from evaluating the predictor.</p>
     #[doc(hidden)]
-    pub predictor_evaluation_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
+    pub predictor_evaluation_results: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
     /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
     #[doc(hidden)]
     pub is_auto_predictor: ::std::option::Option<bool>,
@@ -24,9 +23,7 @@ pub struct GetAccuracyMetricsOutput {
 }
 impl GetAccuracyMetricsOutput {
     /// <p>An array of results from evaluating the predictor.</p>
-    pub fn predictor_evaluation_results(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::EvaluationResult]> {
+    pub fn predictor_evaluation_results(&self) -> ::std::option::Option<&[crate::types::EvaluationResult]> {
         self.predictor_evaluation_results.as_deref()
     }
     /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
@@ -38,9 +35,7 @@ impl GetAccuracyMetricsOutput {
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
-    pub fn auto_ml_override_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AutoMlOverrideStrategy> {
+    pub fn auto_ml_override_strategy(&self) -> ::std::option::Option<&crate::types::AutoMlOverrideStrategy> {
         self.auto_ml_override_strategy.as_ref()
     }
     /// <p>The accuracy metric used to optimize the predictor.</p>
@@ -55,23 +50,18 @@ impl ::aws_http::request_id::RequestId for GetAccuracyMetricsOutput {
 }
 impl GetAccuracyMetricsOutput {
     /// Creates a new builder-style object to manufacture [`GetAccuracyMetricsOutput`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsOutputBuilder {
+    pub fn builder() -> crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsOutputBuilder {
         crate::operation::get_accuracy_metrics::builders::GetAccuracyMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccuracyMetricsOutput`](crate::operation::get_accuracy_metrics::GetAccuracyMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccuracyMetricsOutputBuilder {
-    pub(crate) predictor_evaluation_results:
-        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
+    pub(crate) predictor_evaluation_results: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
     pub(crate) is_auto_predictor: ::std::option::Option<bool>,
-    pub(crate) auto_ml_override_strategy:
-        ::std::option::Option<crate::types::AutoMlOverrideStrategy>,
+    pub(crate) auto_ml_override_strategy: ::std::option::Option<crate::types::AutoMlOverrideStrategy>,
     pub(crate) optimization_metric: ::std::option::Option<crate::types::OptimizationMetric>,
     _request_id: Option<String>,
 }
@@ -88,17 +78,12 @@ impl GetAccuracyMetricsOutputBuilder {
         self
     }
     /// <p>An array of results from evaluating the predictor.</p>
-    pub fn set_predictor_evaluation_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
-    ) -> Self {
+    pub fn set_predictor_evaluation_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>) -> Self {
         self.predictor_evaluation_results = input;
         self
     }
     /// <p>An array of results from evaluating the predictor.</p>
-    pub fn get_predictor_evaluation_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>> {
+    pub fn get_predictor_evaluation_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>> {
         &self.predictor_evaluation_results
     }
     /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
@@ -120,10 +105,7 @@ impl GetAccuracyMetricsOutputBuilder {
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
-    pub fn auto_ml_override_strategy(
-        mut self,
-        input: crate::types::AutoMlOverrideStrategy,
-    ) -> Self {
+    pub fn auto_ml_override_strategy(mut self, input: crate::types::AutoMlOverrideStrategy) -> Self {
         self.auto_ml_override_strategy = ::std::option::Option::Some(input);
         self
     }
@@ -132,10 +114,7 @@ impl GetAccuracyMetricsOutputBuilder {
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
-    pub fn set_auto_ml_override_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoMlOverrideStrategy>,
-    ) -> Self {
+    pub fn set_auto_ml_override_strategy(mut self, input: ::std::option::Option<crate::types::AutoMlOverrideStrategy>) -> Self {
         self.auto_ml_override_strategy = input;
         self
     }
@@ -144,9 +123,7 @@ impl GetAccuracyMetricsOutputBuilder {
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
-    pub fn get_auto_ml_override_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoMlOverrideStrategy> {
+    pub fn get_auto_ml_override_strategy(&self) -> &::std::option::Option<crate::types::AutoMlOverrideStrategy> {
         &self.auto_ml_override_strategy
     }
     /// <p>The accuracy metric used to optimize the predictor.</p>
@@ -155,17 +132,12 @@ impl GetAccuracyMetricsOutputBuilder {
         self
     }
     /// <p>The accuracy metric used to optimize the predictor.</p>
-    pub fn set_optimization_metric(
-        mut self,
-        input: ::std::option::Option<crate::types::OptimizationMetric>,
-    ) -> Self {
+    pub fn set_optimization_metric(mut self, input: ::std::option::Option<crate::types::OptimizationMetric>) -> Self {
         self.optimization_metric = input;
         self
     }
     /// <p>The accuracy metric used to optimize the predictor.</p>
-    pub fn get_optimization_metric(
-        &self,
-    ) -> &::std::option::Option<crate::types::OptimizationMetric> {
+    pub fn get_optimization_metric(&self) -> &::std::option::Option<crate::types::OptimizationMetric> {
         &self.optimization_metric
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

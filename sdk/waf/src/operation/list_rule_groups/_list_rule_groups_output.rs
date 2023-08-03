@@ -35,9 +35,7 @@ impl ListRuleGroupsOutput {
 
 /// A builder for [`ListRuleGroupsOutput`](crate::operation::list_rule_groups::ListRuleGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRuleGroupsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSummary>>,
@@ -70,17 +68,12 @@ impl ListRuleGroupsOutputBuilder {
         self
     }
     /// <p>An array of <code>RuleGroup</code> objects.</p>
-    pub fn set_rule_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSummary>>,
-    ) -> Self {
+    pub fn set_rule_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSummary>>) -> Self {
         self.rule_groups = input;
         self
     }
     /// <p>An array of <code>RuleGroup</code> objects.</p>
-    pub fn get_rule_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSummary>> {
+    pub fn get_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSummary>> {
         &self.rule_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

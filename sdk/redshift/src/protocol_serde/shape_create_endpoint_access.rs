@@ -9,188 +9,175 @@ pub fn de_create_endpoint_access_http_error(
     crate::operation::create_endpoint_access::CreateEndpointAccessError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessToClusterDenied" => crate::operation::create_endpoint_access::CreateEndpointAccessError::AccessToClusterDeniedFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessToClusterDeniedFaultBuilder::default();
-                    output = crate::protocol_serde::shape_access_to_cluster_denied_fault::de_access_to_cluster_denied_fault_xml_err(_response_body, output).map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessToClusterDeniedFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_access_to_cluster_denied_fault::de_access_to_cluster_denied_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ClusterNotFound" => crate::operation::create_endpoint_access::CreateEndpointAccessError::ClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ClusterSubnetGroupNotFoundFault" => crate::operation::create_endpoint_access::CreateEndpointAccessError::ClusterSubnetGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ClusterSubnetGroupNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cluster_subnet_group_not_found_fault::de_cluster_subnet_group_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ClusterSubnetGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cluster_subnet_group_not_found_fault::de_cluster_subnet_group_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "EndpointAlreadyExists" => crate::operation::create_endpoint_access::CreateEndpointAccessError::EndpointAlreadyExistsFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::EndpointAlreadyExistsFaultBuilder::default();
-                    output = crate::protocol_serde::shape_endpoint_already_exists_fault::de_endpoint_already_exists_fault_xml_err(_response_body, output).map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::EndpointAlreadyExistsFaultBuilder::default();
+                output = crate::protocol_serde::shape_endpoint_already_exists_fault::de_endpoint_already_exists_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        "EndpointsPerAuthorizationLimitExceeded" => crate::operation::create_endpoint_access::CreateEndpointAccessError::EndpointsPerAuthorizationLimitExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "EndpointsPerAuthorizationLimitExceeded" => {
+            crate::operation::create_endpoint_access::CreateEndpointAccessError::EndpointsPerAuthorizationLimitExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EndpointsPerAuthorizationLimitExceededFaultBuilder::default();
                     output = crate::protocol_serde::shape_endpoints_per_authorization_limit_exceeded_fault::de_endpoints_per_authorization_limit_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "EndpointsPerClusterLimitExceeded" => crate::operation::create_endpoint_access::CreateEndpointAccessError::EndpointsPerClusterLimitExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "EndpointsPerClusterLimitExceeded" => {
+            crate::operation::create_endpoint_access::CreateEndpointAccessError::EndpointsPerClusterLimitExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EndpointsPerClusterLimitExceededFaultBuilder::default();
                     output = crate::protocol_serde::shape_endpoints_per_cluster_limit_exceeded_fault::de_endpoints_per_cluster_limit_exceeded_fault_xml_err(_response_body, output).map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "InvalidClusterSecurityGroupState" => crate::operation::create_endpoint_access::CreateEndpointAccessError::InvalidClusterSecurityGroupStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidClusterSecurityGroupState" => {
+            crate::operation::create_endpoint_access::CreateEndpointAccessError::InvalidClusterSecurityGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidClusterSecurityGroupStateFaultBuilder::default();
                     output = crate::protocol_serde::shape_invalid_cluster_security_group_state_fault::de_invalid_cluster_security_group_state_fault_xml_err(_response_body, output).map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
+                tmp
+            })
+        }
         "InvalidClusterState" => crate::operation::create_endpoint_access::CreateEndpointAccessError::InvalidClusterStateFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(_response_body, output).map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnauthorizedOperation" => crate::operation::create_endpoint_access::CreateEndpointAccessError::UnauthorizedOperation({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnauthorizedOperationBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_operation::de_unauthorized_operation_xml_err(_response_body, output).map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnauthorizedOperationBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_operation::de_unauthorized_operation_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnsupportedOperation" => crate::operation::create_endpoint_access::CreateEndpointAccessError::UnsupportedOperationFault({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
-                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(_response_body, output).map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::create_endpoint_access::CreateEndpointAccessError::generic(generic)
+        _ => crate::operation::create_endpoint_access::CreateEndpointAccessError::generic(generic),
     })
 }
 
@@ -206,14 +193,9 @@ pub fn de_create_endpoint_access_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_endpoint_access::builders::CreateEndpointAccessOutputBuilder::default();
-        output = crate::protocol_serde::shape_create_endpoint_access::de_create_endpoint_access(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_create_endpoint_access::de_create_endpoint_access(_response_body, output)
+            .map_err(crate::operation::create_endpoint_access::CreateEndpointAccessError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -222,10 +204,7 @@ pub fn de_create_endpoint_access_http_response_with_props(
 pub fn de_create_endpoint_access(
     inp: &[u8],
     mut builder: crate::operation::create_endpoint_access::builders::CreateEndpointAccessOutputBuilder,
-) -> Result<
-    crate::operation::create_endpoint_access::builders::CreateEndpointAccessOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::create_endpoint_access::builders::CreateEndpointAccessOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

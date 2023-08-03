@@ -29,9 +29,7 @@ impl PutResourceSetInput {
 
 /// A builder for [`PutResourceSetInput`](crate::operation::put_resource_set::PutResourceSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutResourceSetInputBuilder {
     pub(crate) resource_set: ::std::option::Option<crate::types::ResourceSet>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -43,10 +41,7 @@ impl PutResourceSetInputBuilder {
         self
     }
     /// <p>Details about the resource set to be created or updated.&gt;</p>
-    pub fn set_resource_set(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceSet>,
-    ) -> Self {
+    pub fn set_resource_set(mut self, input: ::std::option::Option<crate::types::ResourceSet>) -> Self {
         self.resource_set = input;
         self
     }
@@ -66,10 +61,7 @@ impl PutResourceSetInputBuilder {
         self
     }
     /// <p>Retrieves the tags associated with the specified resource set. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
-    pub fn set_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tag_list = input;
         self
     }
@@ -80,10 +72,7 @@ impl PutResourceSetInputBuilder {
     /// Consumes the builder and constructs a [`PutResourceSetInput`](crate::operation::put_resource_set::PutResourceSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_resource_set::PutResourceSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_resource_set::PutResourceSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_resource_set::PutResourceSetInput {
             resource_set: self.resource_set,
             tag_list: self.tag_list,

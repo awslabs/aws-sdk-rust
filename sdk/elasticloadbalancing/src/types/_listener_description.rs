@@ -30,9 +30,7 @@ impl ListenerDescription {
 
 /// A builder for [`ListenerDescription`](crate::types::ListenerDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListenerDescriptionBuilder {
     pub(crate) listener: ::std::option::Option<crate::types::Listener>,
     pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -64,17 +62,12 @@ impl ListenerDescriptionBuilder {
         self
     }
     /// <p>The policies. If there are no policies enabled, the list is empty.</p>
-    pub fn set_policy_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policy_names = input;
         self
     }
     /// <p>The policies. If there are no policies enabled, the list is empty.</p>
-    pub fn get_policy_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.policy_names
     }
     /// Consumes the builder and constructs a [`ListenerDescription`](crate::types::ListenerDescription).

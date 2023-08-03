@@ -13,7 +13,9 @@ impl super::Client {
     /// - On success, responds with [`ModifyVerifiedAccessEndpointOutput`](crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointOutput) with field(s):
     ///   - [`verified_access_endpoint(Option<VerifiedAccessEndpoint>)`](crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointOutput::verified_access_endpoint): <p>The Verified Access endpoint details.</p>
     /// - On failure, responds with [`SdkError<ModifyVerifiedAccessEndpointError>`](crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointError)
-    pub fn modify_verified_access_endpoint(&self) -> crate::operation::modify_verified_access_endpoint::builders::ModifyVerifiedAccessEndpointFluentBuilder{
+    pub fn modify_verified_access_endpoint(
+        &self,
+    ) -> crate::operation::modify_verified_access_endpoint::builders::ModifyVerifiedAccessEndpointFluentBuilder {
         crate::operation::modify_verified_access_endpoint::builders::ModifyVerifiedAccessEndpointFluentBuilder::new(self.handle.clone())
     }
 }

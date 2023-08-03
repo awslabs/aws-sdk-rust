@@ -35,9 +35,7 @@ impl ListLexiconsOutput {
 
 /// A builder for [`ListLexiconsOutput`](crate::operation::list_lexicons::ListLexiconsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLexiconsOutputBuilder {
     pub(crate) lexicons: ::std::option::Option<::std::vec::Vec<crate::types::LexiconDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl ListLexiconsOutputBuilder {
         self
     }
     /// <p>A list of lexicon names and attributes.</p>
-    pub fn set_lexicons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LexiconDescription>>,
-    ) -> Self {
+    pub fn set_lexicons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LexiconDescription>>) -> Self {
         self.lexicons = input;
         self
     }
     /// <p>A list of lexicon names and attributes.</p>
-    pub fn get_lexicons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LexiconDescription>> {
+    pub fn get_lexicons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LexiconDescription>> {
         &self.lexicons
     }
     /// <p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>

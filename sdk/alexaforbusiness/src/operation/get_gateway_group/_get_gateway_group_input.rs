@@ -22,26 +22,18 @@ impl GetGatewayGroupInput {
 
 /// A builder for [`GetGatewayGroupInput`](crate::operation::get_gateway_group::GetGatewayGroupInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGatewayGroupInputBuilder {
     pub(crate) gateway_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetGatewayGroupInputBuilder {
     /// <p>The ARN of the gateway group to get.</p>
-    pub fn gateway_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn gateway_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the gateway group to get.</p>
-    pub fn set_gateway_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_gateway_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_group_arn = input;
         self
     }
@@ -52,10 +44,7 @@ impl GetGatewayGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetGatewayGroupInput`](crate::operation::get_gateway_group::GetGatewayGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_gateway_group::GetGatewayGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_gateway_group::GetGatewayGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_gateway_group::GetGatewayGroupInput {
             gateway_group_arn: self.gateway_group_arn,
         })

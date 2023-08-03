@@ -5,8 +5,7 @@
 pub struct ListApplicationComponentsInput {
     /// <p> Criteria for filtering the list of application components. </p>
     #[doc(hidden)]
-    pub application_component_criteria:
-        ::std::option::Option<crate::types::ApplicationComponentCriteria>,
+    pub application_component_criteria: ::std::option::Option<crate::types::ApplicationComponentCriteria>,
     /// <p> Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <code>ListApplicationComponents</code> returns all the application components running on server1. </p>
     #[doc(hidden)]
     pub filter_value: ::std::option::Option<::std::string::String>,
@@ -25,9 +24,7 @@ pub struct ListApplicationComponentsInput {
 }
 impl ListApplicationComponentsInput {
     /// <p> Criteria for filtering the list of application components. </p>
-    pub fn application_component_criteria(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ApplicationComponentCriteria> {
+    pub fn application_component_criteria(&self) -> ::std::option::Option<&crate::types::ApplicationComponentCriteria> {
         self.application_component_criteria.as_ref()
     }
     /// <p> Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <code>ListApplicationComponents</code> returns all the application components running on server1. </p>
@@ -53,19 +50,16 @@ impl ListApplicationComponentsInput {
 }
 impl ListApplicationComponentsInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationComponentsInput`](crate::operation::list_application_components::ListApplicationComponentsInput).
-    pub fn builder() -> crate::operation::list_application_components::builders::ListApplicationComponentsInputBuilder{
+    pub fn builder() -> crate::operation::list_application_components::builders::ListApplicationComponentsInputBuilder {
         crate::operation::list_application_components::builders::ListApplicationComponentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListApplicationComponentsInput`](crate::operation::list_application_components::ListApplicationComponentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationComponentsInputBuilder {
-    pub(crate) application_component_criteria:
-        ::std::option::Option<crate::types::ApplicationComponentCriteria>,
+    pub(crate) application_component_criteria: ::std::option::Option<crate::types::ApplicationComponentCriteria>,
     pub(crate) filter_value: ::std::option::Option<::std::string::String>,
     pub(crate) sort: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) group_id_filter: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
@@ -74,25 +68,17 @@ pub struct ListApplicationComponentsInputBuilder {
 }
 impl ListApplicationComponentsInputBuilder {
     /// <p> Criteria for filtering the list of application components. </p>
-    pub fn application_component_criteria(
-        mut self,
-        input: crate::types::ApplicationComponentCriteria,
-    ) -> Self {
+    pub fn application_component_criteria(mut self, input: crate::types::ApplicationComponentCriteria) -> Self {
         self.application_component_criteria = ::std::option::Option::Some(input);
         self
     }
     /// <p> Criteria for filtering the list of application components. </p>
-    pub fn set_application_component_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationComponentCriteria>,
-    ) -> Self {
+    pub fn set_application_component_criteria(mut self, input: ::std::option::Option<crate::types::ApplicationComponentCriteria>) -> Self {
         self.application_component_criteria = input;
         self
     }
     /// <p> Criteria for filtering the list of application components. </p>
-    pub fn get_application_component_criteria(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationComponentCriteria> {
+    pub fn get_application_component_criteria(&self) -> &::std::option::Option<crate::types::ApplicationComponentCriteria> {
         &self.application_component_criteria
     }
     /// <p> Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <code>ListApplicationComponents</code> returns all the application components running on server1. </p>
@@ -135,17 +121,12 @@ impl ListApplicationComponentsInputBuilder {
         self
     }
     /// <p> The group ID specified in to filter on. </p>
-    pub fn set_group_id_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
-    ) -> Self {
+    pub fn set_group_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
         self.group_id_filter = input;
         self
     }
     /// <p> The group ID specified in to filter on. </p>
-    pub fn get_group_id_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+    pub fn get_group_id_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
         &self.group_id_filter
     }
     /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
@@ -183,15 +164,13 @@ impl ListApplicationComponentsInputBuilder {
         crate::operation::list_application_components::ListApplicationComponentsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_application_components::ListApplicationComponentsInput {
-                application_component_criteria: self.application_component_criteria,
-                filter_value: self.filter_value,
-                sort: self.sort,
-                group_id_filter: self.group_id_filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_application_components::ListApplicationComponentsInput {
+            application_component_criteria: self.application_component_criteria,
+            filter_value: self.filter_value,
+            sort: self.sort,
+            group_id_filter: self.group_id_filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

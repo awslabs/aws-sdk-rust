@@ -23,9 +23,7 @@ impl UpdateCustomLineItemFlatChargeDetails {
 
 /// A builder for [`UpdateCustomLineItemFlatChargeDetails`](crate::types::UpdateCustomLineItemFlatChargeDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCustomLineItemFlatChargeDetailsBuilder {
     pub(crate) charge_value: ::std::option::Option<f64>,
 }

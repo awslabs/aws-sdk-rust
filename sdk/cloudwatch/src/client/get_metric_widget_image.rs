@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetMetricWidgetImageOutput`](crate::operation::get_metric_widget_image::GetMetricWidgetImageOutput) with field(s):
     ///   - [`metric_widget_image(Option<Blob>)`](crate::operation::get_metric_widget_image::GetMetricWidgetImageOutput::metric_widget_image): <p>The image of the graph, in the output format specified. The output is base64-encoded.</p>
     /// - On failure, responds with [`SdkError<GetMetricWidgetImageError>`](crate::operation::get_metric_widget_image::GetMetricWidgetImageError)
-    pub fn get_metric_widget_image(
-        &self,
-    ) -> crate::operation::get_metric_widget_image::builders::GetMetricWidgetImageFluentBuilder
-    {
-        crate::operation::get_metric_widget_image::builders::GetMetricWidgetImageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_metric_widget_image(&self) -> crate::operation::get_metric_widget_image::builders::GetMetricWidgetImageFluentBuilder {
+        crate::operation::get_metric_widget_image::builders::GetMetricWidgetImageFluentBuilder::new(self.handle.clone())
     }
 }

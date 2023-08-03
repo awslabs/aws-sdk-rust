@@ -10,10 +10,7 @@ impl UpdateDatasetGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_dataset_group::UpdateDatasetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dataset_group::UpdateDatasetGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dataset_group::UpdateDatasetGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_dataset_group();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl UpdateDatasetGroupFluentBuilder {
         }
     }
     /// Access the UpdateDatasetGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_dataset_group::builders::UpdateDatasetGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_dataset_group::builders::UpdateDatasetGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl UpdateDatasetGroupFluentBuilder {
             crate::operation::update_dataset_group::UpdateDatasetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dataset_group::UpdateDatasetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dataset_group::UpdateDatasetGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl UpdateDatasetGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl UpdateDatasetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_dataset_group::UpdateDatasetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dataset_group::UpdateDatasetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dataset_group::UpdateDatasetGroupError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl UpdateDatasetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_dataset_group::UpdateDatasetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dataset_group::UpdateDatasetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dataset_group::UpdateDatasetGroupError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl UpdateDatasetGroupFluentBuilder {
             crate::operation::update_dataset_group::UpdateDatasetGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_dataset_group::UpdateDatasetGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dataset_group::UpdateDatasetGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the dataset group.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_group_arn(input.into());
         self
     }
     /// <p>The ARN of the dataset group.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
     }
@@ -154,17 +132,12 @@ impl UpdateDatasetGroupFluentBuilder {
         self
     }
     /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
-    pub fn set_dataset_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dataset_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_dataset_arns(input);
         self
     }
     /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
-    pub fn get_dataset_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dataset_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_dataset_arns()
     }
 }

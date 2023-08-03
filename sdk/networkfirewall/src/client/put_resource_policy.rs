@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`policy(impl ::std::convert::Into<String>)`](crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder::set_policy): <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>  <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>  <ul>   <li> <p>network-firewall:CreateFirewallPolicy</p> </li>   <li> <p>network-firewall:UpdateFirewallPolicy</p> </li>   <li> <p>network-firewall:ListRuleGroups</p> </li>  </ul>  <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>  <ul>   <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>   <li> <p>network-firewall:ListFirewallPolicies</p> </li>  </ul>  <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
     /// - On success, responds with [`PutResourcePolicyOutput`](crate::operation::put_resource_policy::PutResourcePolicyOutput)
     /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::operation::put_resource_policy::PutResourcePolicyError)
-    pub fn put_resource_policy(
-        &self,
-    ) -> crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder {
-        crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_resource_policy(&self) -> crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder {
+        crate::operation::put_resource_policy::builders::PutResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

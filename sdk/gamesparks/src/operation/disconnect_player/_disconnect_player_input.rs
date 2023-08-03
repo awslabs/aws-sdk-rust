@@ -29,17 +29,14 @@ impl DisconnectPlayerInput {
 }
 impl DisconnectPlayerInput {
     /// Creates a new builder-style object to manufacture [`DisconnectPlayerInput`](crate::operation::disconnect_player::DisconnectPlayerInput).
-    pub fn builder() -> crate::operation::disconnect_player::builders::DisconnectPlayerInputBuilder
-    {
+    pub fn builder() -> crate::operation::disconnect_player::builders::DisconnectPlayerInputBuilder {
         crate::operation::disconnect_player::builders::DisconnectPlayerInputBuilder::default()
     }
 }
 
 /// A builder for [`DisconnectPlayerInput`](crate::operation::disconnect_player::DisconnectPlayerInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisconnectPlayerInputBuilder {
     pub(crate) player_id: ::std::option::Option<::std::string::String>,
     pub(crate) game_name: ::std::option::Option<::std::string::String>,
@@ -91,10 +88,7 @@ impl DisconnectPlayerInputBuilder {
     /// Consumes the builder and constructs a [`DisconnectPlayerInput`](crate::operation::disconnect_player::DisconnectPlayerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disconnect_player::DisconnectPlayerInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::disconnect_player::DisconnectPlayerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::disconnect_player::DisconnectPlayerInput {
             player_id: self.player_id,
             game_name: self.game_name,

@@ -23,9 +23,7 @@ impl ActionTypePermissions {
 
 /// A builder for [`ActionTypePermissions`](crate::types::ActionTypePermissions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionTypePermissionsBuilder {
     pub(crate) allowed_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -35,27 +33,19 @@ impl ActionTypePermissionsBuilder {
     /// To override the contents of this collection use [`set_allowed_accounts`](Self::set_allowed_accounts).
     ///
     /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
-    pub fn allowed_accounts(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_accounts.unwrap_or_default();
         v.push(input.into());
         self.allowed_accounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
-    pub fn set_allowed_accounts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_allowed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.allowed_accounts = input;
         self
     }
     /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
-    pub fn get_allowed_accounts(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_accounts
     }
     /// Consumes the builder and constructs a [`ActionTypePermissions`](crate::types::ActionTypePermissions).

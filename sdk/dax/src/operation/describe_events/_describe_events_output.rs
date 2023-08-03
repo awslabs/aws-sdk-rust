@@ -35,9 +35,7 @@ impl DescribeEventsOutput {
 
 /// A builder for [`DescribeEventsOutput`](crate::operation::describe_events::DescribeEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
@@ -70,10 +68,7 @@ impl DescribeEventsOutputBuilder {
         self
     }
     /// <p>An array of events. Each element in the array represents one event.</p>
-    pub fn set_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
-    ) -> Self {
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
         self.events = input;
         self
     }

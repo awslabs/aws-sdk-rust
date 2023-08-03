@@ -10,10 +10,7 @@ impl CreateWorkgroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_workgroup::CreateWorkgroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workgroup::CreateWorkgroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workgroup::CreateWorkgroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_workgroup();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateWorkgroupFluentBuilder {
         }
     }
     /// Access the CreateWorkgroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_workgroup::builders::CreateWorkgroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_workgroup::builders::CreateWorkgroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateWorkgroupFluentBuilder {
             crate::operation::create_workgroup::CreateWorkgroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workgroup::CreateWorkgroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workgroup::CreateWorkgroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateWorkgroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateWorkgroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workgroup::CreateWorkgroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workgroup::CreateWorkgroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workgroup::CreateWorkgroupError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateWorkgroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workgroup::CreateWorkgroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workgroup::CreateWorkgroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workgroup::CreateWorkgroupError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CreateWorkgroupFluentBuilder {
             crate::operation::create_workgroup::CreateWorkgroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workgroup::CreateWorkgroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workgroup::CreateWorkgroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the created workgroup.</p>
-    pub fn workgroup_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workgroup_name(input.into());
         self
     }
     /// <p>The name of the created workgroup.</p>
-    pub fn set_workgroup_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
     }
@@ -143,18 +121,12 @@ impl CreateWorkgroupFluentBuilder {
         self.inner.get_workgroup_name()
     }
     /// <p>The name of the namespace to associate with the workgroup.</p>
-    pub fn namespace_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace_name(input.into());
         self
     }
     /// <p>The name of the namespace to associate with the workgroup.</p>
-    pub fn set_namespace_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
@@ -200,17 +172,12 @@ impl CreateWorkgroupFluentBuilder {
         self
     }
     /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
-    pub fn set_config_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>,
-    ) -> Self {
+    pub fn set_config_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>) -> Self {
         self.inner = self.inner.set_config_parameters(input);
         self
     }
     /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
-    pub fn get_config_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>> {
+    pub fn get_config_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>> {
         self.inner.get_config_parameters()
     }
     /// Appends an item to `securityGroupIds`.
@@ -218,25 +185,17 @@ impl CreateWorkgroupFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// Appends an item to `subnetIds`.
@@ -249,10 +208,7 @@ impl CreateWorkgroupFluentBuilder {
         self
     }
     /// <p>An array of VPC subnet IDs to associate with the workgroup.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -284,10 +240,7 @@ impl CreateWorkgroupFluentBuilder {
         self
     }
     /// <p>A array of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

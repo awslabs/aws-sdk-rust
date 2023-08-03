@@ -10,10 +10,7 @@ impl ListBuiltInIntentsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_built_in_intents::ListBuiltInIntentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_built_in_intents::ListBuiltInIntentsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_built_in_intents::ListBuiltInIntentsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_built_in_intents();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListBuiltInIntentsFluentBuilder {
         }
     }
     /// Access the ListBuiltInIntents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_built_in_intents::builders::ListBuiltInIntentsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_built_in_intents::builders::ListBuiltInIntentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListBuiltInIntentsFluentBuilder {
             crate::operation::list_built_in_intents::ListBuiltInIntents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_built_in_intents::ListBuiltInIntentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_built_in_intents::ListBuiltInIntentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListBuiltInIntentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListBuiltInIntentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_built_in_intents::ListBuiltInIntentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_built_in_intents::ListBuiltInIntentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_built_in_intents::ListBuiltInIntentsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListBuiltInIntentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_built_in_intents::ListBuiltInIntentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_built_in_intents::ListBuiltInIntentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_built_in_intents::ListBuiltInIntentsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListBuiltInIntentsFluentBuilder {
             crate::operation::list_built_in_intents::ListBuiltInIntents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_built_in_intents::ListBuiltInIntentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_built_in_intents::ListBuiltInIntentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_built_in_intents::paginator::ListBuiltInIntentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_built_in_intents::paginator::ListBuiltInIntentsPaginator {
-        crate::operation::list_built_in_intents::paginator::ListBuiltInIntentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_built_in_intents::paginator::ListBuiltInIntentsPaginator {
+        crate::operation::list_built_in_intents::paginator::ListBuiltInIntentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,10 +133,7 @@ impl ListBuiltInIntentsFluentBuilder {
         self
     }
     /// <p>Specifies sorting parameters for the list of built-in intents. You can specify that the list be sorted by the built-in intent signature in either ascending or descending order.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::BuiltInIntentSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::BuiltInIntentSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

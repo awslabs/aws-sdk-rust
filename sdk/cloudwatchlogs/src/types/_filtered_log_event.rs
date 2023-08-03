@@ -51,9 +51,7 @@ impl FilteredLogEvent {
 
 /// A builder for [`FilteredLogEvent`](crate::types::FilteredLogEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilteredLogEventBuilder {
     pub(crate) log_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<i64>,
@@ -63,18 +61,12 @@ pub struct FilteredLogEventBuilder {
 }
 impl FilteredLogEventBuilder {
     /// <p>The name of the log stream to which this event belongs.</p>
-    pub fn log_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log stream to which this event belongs.</p>
-    pub fn set_log_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_log_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_stream_name = input;
         self
     }

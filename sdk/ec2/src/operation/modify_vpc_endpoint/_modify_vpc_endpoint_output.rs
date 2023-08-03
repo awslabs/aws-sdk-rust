@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ModifyVpcEndpointOutput {
 }
 impl ModifyVpcEndpointOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointOutput`](crate::operation::modify_vpc_endpoint::ModifyVpcEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointOutputBuilder {
         crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointOutputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpcEndpointOutput`](crate::operation::modify_vpc_endpoint::ModifyVpcEndpointOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,

@@ -5,15 +5,12 @@
 pub struct ListProvisionedCapacityOutput {
     /// <p>The response body contains the following JSON fields.</p>
     #[doc(hidden)]
-    pub provisioned_capacity_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedCapacityDescription>>,
+    pub provisioned_capacity_list: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedCapacityDescription>>,
     _request_id: Option<String>,
 }
 impl ListProvisionedCapacityOutput {
     /// <p>The response body contains the following JSON fields.</p>
-    pub fn provisioned_capacity_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ProvisionedCapacityDescription]> {
+    pub fn provisioned_capacity_list(&self) -> ::std::option::Option<&[crate::types::ProvisionedCapacityDescription]> {
         self.provisioned_capacity_list.as_deref()
     }
 }
@@ -24,21 +21,16 @@ impl ::aws_http::request_id::RequestId for ListProvisionedCapacityOutput {
 }
 impl ListProvisionedCapacityOutput {
     /// Creates a new builder-style object to manufacture [`ListProvisionedCapacityOutput`](crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput).
-    pub fn builder(
-    ) -> crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityOutputBuilder {
         crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListProvisionedCapacityOutput`](crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProvisionedCapacityOutputBuilder {
-    pub(crate) provisioned_capacity_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedCapacityDescription>>,
+    pub(crate) provisioned_capacity_list: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedCapacityDescription>>,
     _request_id: Option<String>,
 }
 impl ListProvisionedCapacityOutputBuilder {
@@ -47,10 +39,7 @@ impl ListProvisionedCapacityOutputBuilder {
     /// To override the contents of this collection use [`set_provisioned_capacity_list`](Self::set_provisioned_capacity_list).
     ///
     /// <p>The response body contains the following JSON fields.</p>
-    pub fn provisioned_capacity_list(
-        mut self,
-        input: crate::types::ProvisionedCapacityDescription,
-    ) -> Self {
+    pub fn provisioned_capacity_list(mut self, input: crate::types::ProvisionedCapacityDescription) -> Self {
         let mut v = self.provisioned_capacity_list.unwrap_or_default();
         v.push(input);
         self.provisioned_capacity_list = ::std::option::Option::Some(v);
@@ -65,9 +54,7 @@ impl ListProvisionedCapacityOutputBuilder {
         self
     }
     /// <p>The response body contains the following JSON fields.</p>
-    pub fn get_provisioned_capacity_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedCapacityDescription>> {
+    pub fn get_provisioned_capacity_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedCapacityDescription>> {
         &self.provisioned_capacity_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -80,9 +67,7 @@ impl ListProvisionedCapacityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProvisionedCapacityOutput`](crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput {
+    pub fn build(self) -> crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput {
         crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput {
             provisioned_capacity_list: self.provisioned_capacity_list,
             _request_id: self._request_id,

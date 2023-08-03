@@ -26,7 +26,7 @@ impl DescribeSentimentDetectionJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSentimentDetectionJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_sentiment_detection_job::builders::DescribeSentimentDetectionJobInputBuilder,
+    inner: crate::operation::describe_sentiment_detection_job::builders::DescribeSentimentDetectionJobInputBuilder,
 }
 impl DescribeSentimentDetectionJobFluentBuilder {
     /// Creates a new `DescribeSentimentDetectionJob`.
@@ -37,7 +37,7 @@ impl DescribeSentimentDetectionJobFluentBuilder {
         }
     }
     /// Access the DescribeSentimentDetectionJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_sentiment_detection_job::builders::DescribeSentimentDetectionJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_sentiment_detection_job::builders::DescribeSentimentDetectionJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeSentimentDetectionJobFluentBuilder {
             crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeSentimentDetectionJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeSentimentDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeSentimentDetectionJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl DescribeSentimentDetectionJobFluentBuilder {
             crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobError>,
     > {
         self.customize_middleware().await
     }

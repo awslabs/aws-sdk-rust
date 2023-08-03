@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateDirectoryConfigOutput`](crate::operation::update_directory_config::UpdateDirectoryConfigOutput) with field(s):
     ///   - [`directory_config(Option<DirectoryConfig>)`](crate::operation::update_directory_config::UpdateDirectoryConfigOutput::directory_config): <p>Information about the Directory Config object.</p>
     /// - On failure, responds with [`SdkError<UpdateDirectoryConfigError>`](crate::operation::update_directory_config::UpdateDirectoryConfigError)
-    pub fn update_directory_config(
-        &self,
-    ) -> crate::operation::update_directory_config::builders::UpdateDirectoryConfigFluentBuilder
-    {
-        crate::operation::update_directory_config::builders::UpdateDirectoryConfigFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_directory_config(&self) -> crate::operation::update_directory_config::builders::UpdateDirectoryConfigFluentBuilder {
+        crate::operation::update_directory_config::builders::UpdateDirectoryConfigFluentBuilder::new(self.handle.clone())
     }
 }

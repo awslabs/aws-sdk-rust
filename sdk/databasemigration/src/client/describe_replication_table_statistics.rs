@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     ///   - [`replication_table_statistics(Option<Vec<TableStatistics>>)`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput::replication_table_statistics): <p>Returns table statistics on the replication, including table name, rows inserted, rows updated, and rows deleted.</p>
     /// - On failure, responds with [`SdkError<DescribeReplicationTableStatisticsError>`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsError)
-    pub fn describe_replication_table_statistics(&self) -> crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder{
+    pub fn describe_replication_table_statistics(
+        &self,
+    ) -> crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder {
         crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

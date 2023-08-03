@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`compute_arn(Option<String>)`](crate::operation::get_compute_access::GetComputeAccessOutput::compute_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>.</p>
     ///   - [`credentials(Option<AwsCredentials>)`](crate::operation::get_compute_access::GetComputeAccessOutput::credentials): <p>The access credentials for the compute resource.</p>
     /// - On failure, responds with [`SdkError<GetComputeAccessError>`](crate::operation::get_compute_access::GetComputeAccessError)
-    pub fn get_compute_access(
-        &self,
-    ) -> crate::operation::get_compute_access::builders::GetComputeAccessFluentBuilder {
-        crate::operation::get_compute_access::builders::GetComputeAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_compute_access(&self) -> crate::operation::get_compute_access::builders::GetComputeAccessFluentBuilder {
+        crate::operation::get_compute_access::builders::GetComputeAccessFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,8 +15,7 @@ pub struct PrincipalResourcePermissions {
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
     #[doc(hidden)]
-    pub permissions_with_grant_option:
-        ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
     #[doc(hidden)]
     pub additional_details: ::std::option::Option<crate::types::DetailsMap>,
@@ -35,9 +34,7 @@ impl PrincipalResourcePermissions {
         self.permissions.as_deref()
     }
     /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
-    pub fn permissions_with_grant_option(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::Permission]> {
+    pub fn permissions_with_grant_option(&self) -> ::std::option::Option<&[crate::types::Permission]> {
         self.permissions_with_grant_option.as_deref()
     }
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
@@ -54,15 +51,12 @@ impl PrincipalResourcePermissions {
 
 /// A builder for [`PrincipalResourcePermissions`](crate::types::PrincipalResourcePermissions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrincipalResourcePermissionsBuilder {
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    pub(crate) permissions_with_grant_option:
-        ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub(crate) permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     pub(crate) additional_details: ::std::option::Option<crate::types::DetailsMap>,
 }
 impl PrincipalResourcePermissionsBuilder {
@@ -72,10 +66,7 @@ impl PrincipalResourcePermissionsBuilder {
         self
     }
     /// <p>The Data Lake principal to be granted or revoked permissions.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::DataLakePrincipal>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::DataLakePrincipal>) -> Self {
         self.principal = input;
         self
     }
@@ -109,17 +100,12 @@ impl PrincipalResourcePermissionsBuilder {
         self
     }
     /// <p>The permissions to be granted or revoked on the resource.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.permissions = input;
         self
     }
     /// <p>The permissions to be granted or revoked on the resource.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions
     }
     /// Appends an item to `permissions_with_grant_option`.
@@ -134,17 +120,12 @@ impl PrincipalResourcePermissionsBuilder {
         self
     }
     /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
-    pub fn set_permissions_with_grant_option(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions_with_grant_option(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
         self.permissions_with_grant_option = input;
         self
     }
     /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
-    pub fn get_permissions_with_grant_option(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions_with_grant_option(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions_with_grant_option
     }
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
@@ -153,10 +134,7 @@ impl PrincipalResourcePermissionsBuilder {
         self
     }
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
-    pub fn set_additional_details(
-        mut self,
-        input: ::std::option::Option<crate::types::DetailsMap>,
-    ) -> Self {
+    pub fn set_additional_details(mut self, input: ::std::option::Option<crate::types::DetailsMap>) -> Self {
         self.additional_details = input;
         self
     }

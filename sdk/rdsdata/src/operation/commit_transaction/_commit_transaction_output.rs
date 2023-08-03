@@ -22,35 +22,26 @@ impl ::aws_http::request_id::RequestId for CommitTransactionOutput {
 }
 impl CommitTransactionOutput {
     /// Creates a new builder-style object to manufacture [`CommitTransactionOutput`](crate::operation::commit_transaction::CommitTransactionOutput).
-    pub fn builder(
-    ) -> crate::operation::commit_transaction::builders::CommitTransactionOutputBuilder {
+    pub fn builder() -> crate::operation::commit_transaction::builders::CommitTransactionOutputBuilder {
         crate::operation::commit_transaction::builders::CommitTransactionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CommitTransactionOutput`](crate::operation::commit_transaction::CommitTransactionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CommitTransactionOutputBuilder {
     pub(crate) transaction_status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CommitTransactionOutputBuilder {
     /// <p>The status of the commit operation.</p>
-    pub fn transaction_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the commit operation.</p>
-    pub fn set_transaction_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transaction_status = input;
         self
     }

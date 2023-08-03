@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteGraphqlApiOutput {
 }
 impl DeleteGraphqlApiOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGraphqlApiOutput`](crate::operation::delete_graphql_api::DeleteGraphqlApiOutput).
-    pub fn builder() -> crate::operation::delete_graphql_api::builders::DeleteGraphqlApiOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_graphql_api::builders::DeleteGraphqlApiOutputBuilder {
         crate::operation::delete_graphql_api::builders::DeleteGraphqlApiOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGraphqlApiOutput`](crate::operation::delete_graphql_api::DeleteGraphqlApiOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGraphqlApiOutputBuilder {
     _request_id: Option<String>,
 }

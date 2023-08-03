@@ -23,9 +23,7 @@ impl ClassificationExportConfiguration {
 
 /// A builder for [`ClassificationExportConfiguration`](crate::types::ClassificationExportConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClassificationExportConfigurationBuilder {
     pub(crate) s3_destination: ::std::option::Option<crate::types::S3Destination>,
 }
@@ -36,10 +34,7 @@ impl ClassificationExportConfigurationBuilder {
         self
     }
     /// <p>The S3 bucket to store data classification results in, and the encryption settings to use when storing results in that bucket.</p>
-    pub fn set_s3_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::S3Destination>,
-    ) -> Self {
+    pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
         self.s3_destination = input;
         self
     }

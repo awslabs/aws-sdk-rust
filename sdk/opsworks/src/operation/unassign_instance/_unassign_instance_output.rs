@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UnassignInstanceOutput {
 }
 impl UnassignInstanceOutput {
     /// Creates a new builder-style object to manufacture [`UnassignInstanceOutput`](crate::operation::unassign_instance::UnassignInstanceOutput).
-    pub fn builder() -> crate::operation::unassign_instance::builders::UnassignInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::unassign_instance::builders::UnassignInstanceOutputBuilder {
         crate::operation::unassign_instance::builders::UnassignInstanceOutputBuilder::default()
     }
 }
 
 /// A builder for [`UnassignInstanceOutput`](crate::operation::unassign_instance::UnassignInstanceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnassignInstanceOutputBuilder {
     _request_id: Option<String>,
 }

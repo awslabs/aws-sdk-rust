@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_scram_secrets::ListScramSecretsOutput::next_token): <p>Paginated results marker.</p>
     ///   - [`secret_arn_list(Option<Vec<String>>)`](crate::operation::list_scram_secrets::ListScramSecretsOutput::secret_arn_list): <p>The list of scram secrets associated with the cluster.</p>
     /// - On failure, responds with [`SdkError<ListScramSecretsError>`](crate::operation::list_scram_secrets::ListScramSecretsError)
-    pub fn list_scram_secrets(
-        &self,
-    ) -> crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder {
-        crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_scram_secrets(&self) -> crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder {
+        crate::operation::list_scram_secrets::builders::ListScramSecretsFluentBuilder::new(self.handle.clone())
     }
 }

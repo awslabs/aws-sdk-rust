@@ -38,8 +38,7 @@ pub struct DescribeQuerySuggestionsConfigOutput {
     pub total_suggestions_count: ::std::option::Option<i32>,
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
     #[doc(hidden)]
-    pub attribute_suggestions_config:
-        ::std::option::Option<crate::types::AttributeSuggestionsDescribeConfig>,
+    pub attribute_suggestions_config: ::std::option::Option<crate::types::AttributeSuggestionsDescribeConfig>,
     _request_id: Option<String>,
 }
 impl DescribeQuerySuggestionsConfigOutput {
@@ -71,9 +70,7 @@ impl DescribeQuerySuggestionsConfigOutput {
     }
     /// <p>The Unix timestamp when query suggestions for an index was last updated.</p>
     /// <p>Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you apply a <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block list</a>.</p>
-    pub fn last_suggestions_build_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_suggestions_build_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_suggestions_build_time.as_ref()
     }
     /// <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
@@ -88,9 +85,7 @@ impl DescribeQuerySuggestionsConfigOutput {
         self.total_suggestions_count
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
-    pub fn attribute_suggestions_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AttributeSuggestionsDescribeConfig> {
+    pub fn attribute_suggestions_config(&self) -> ::std::option::Option<&crate::types::AttributeSuggestionsDescribeConfig> {
         self.attribute_suggestions_config.as_ref()
     }
 }
@@ -101,16 +96,14 @@ impl ::aws_http::request_id::RequestId for DescribeQuerySuggestionsConfigOutput 
 }
 impl DescribeQuerySuggestionsConfigOutput {
     /// Creates a new builder-style object to manufacture [`DescribeQuerySuggestionsConfigOutput`](crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput).
-    pub fn builder() -> crate::operation::describe_query_suggestions_config::builders::DescribeQuerySuggestionsConfigOutputBuilder{
+    pub fn builder() -> crate::operation::describe_query_suggestions_config::builders::DescribeQuerySuggestionsConfigOutputBuilder {
         crate::operation::describe_query_suggestions_config::builders::DescribeQuerySuggestionsConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeQuerySuggestionsConfigOutput`](crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeQuerySuggestionsConfigOutputBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::Mode>,
     pub(crate) status: ::std::option::Option<crate::types::QuerySuggestionsStatus>,
@@ -121,8 +114,7 @@ pub struct DescribeQuerySuggestionsConfigOutputBuilder {
     pub(crate) last_suggestions_build_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_clear_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) total_suggestions_count: ::std::option::Option<i32>,
-    pub(crate) attribute_suggestions_config:
-        ::std::option::Option<crate::types::AttributeSuggestionsDescribeConfig>,
+    pub(crate) attribute_suggestions_config: ::std::option::Option<crate::types::AttributeSuggestionsDescribeConfig>,
     _request_id: Option<String>,
 }
 impl DescribeQuerySuggestionsConfigOutputBuilder {
@@ -151,10 +143,7 @@ impl DescribeQuerySuggestionsConfigOutputBuilder {
     }
     /// <p>Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>.</p>
     /// <p>Active means the current settings apply and Updating means your changed settings are in the process of applying.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::QuerySuggestionsStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::QuerySuggestionsStatus>) -> Self {
         self.status = input;
         self
     }
@@ -169,10 +158,7 @@ impl DescribeQuerySuggestionsConfigOutputBuilder {
         self
     }
     /// <p>How recent your queries are in your query log time window (in days).</p>
-    pub fn set_query_log_look_back_window_in_days(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_query_log_look_back_window_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.query_log_look_back_window_in_days = input;
         self
     }
@@ -186,10 +172,7 @@ impl DescribeQuerySuggestionsConfigOutputBuilder {
         self
     }
     /// <p> <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
-    pub fn set_include_queries_without_user_information(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_include_queries_without_user_information(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_queries_without_user_information = input;
         self
     }
@@ -203,10 +186,7 @@ impl DescribeQuerySuggestionsConfigOutputBuilder {
         self
     }
     /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
-    pub fn set_minimum_number_of_querying_users(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_minimum_number_of_querying_users(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minimum_number_of_querying_users = input;
         self
     }
@@ -236,18 +216,13 @@ impl DescribeQuerySuggestionsConfigOutputBuilder {
     }
     /// <p>The Unix timestamp when query suggestions for an index was last updated.</p>
     /// <p>Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you apply a <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block list</a>.</p>
-    pub fn set_last_suggestions_build_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_suggestions_build_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_suggestions_build_time = input;
         self
     }
     /// <p>The Unix timestamp when query suggestions for an index was last updated.</p>
     /// <p>Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you apply a <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block list</a>.</p>
-    pub fn get_last_suggestions_build_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_suggestions_build_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_suggestions_build_time
     }
     /// <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
@@ -258,10 +233,7 @@ impl DescribeQuerySuggestionsConfigOutputBuilder {
     }
     /// <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
     /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
-    pub fn set_last_clear_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_clear_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_clear_time = input;
         self
     }
@@ -291,25 +263,17 @@ impl DescribeQuerySuggestionsConfigOutputBuilder {
         &self.total_suggestions_count
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
-    pub fn attribute_suggestions_config(
-        mut self,
-        input: crate::types::AttributeSuggestionsDescribeConfig,
-    ) -> Self {
+    pub fn attribute_suggestions_config(mut self, input: crate::types::AttributeSuggestionsDescribeConfig) -> Self {
         self.attribute_suggestions_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
-    pub fn set_attribute_suggestions_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeSuggestionsDescribeConfig>,
-    ) -> Self {
+    pub fn set_attribute_suggestions_config(mut self, input: ::std::option::Option<crate::types::AttributeSuggestionsDescribeConfig>) -> Self {
         self.attribute_suggestions_config = input;
         self
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
-    pub fn get_attribute_suggestions_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeSuggestionsDescribeConfig> {
+    pub fn get_attribute_suggestions_config(&self) -> &::std::option::Option<crate::types::AttributeSuggestionsDescribeConfig> {
         &self.attribute_suggestions_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -322,10 +286,7 @@ impl DescribeQuerySuggestionsConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeQuerySuggestionsConfigOutput`](crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput
-    {
+    pub fn build(self) -> crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput {
         crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput {
             mode: self.mode,
             status: self.status,

@@ -44,16 +44,14 @@ impl PurchaseReservedInstancesOfferingInput {
 }
 impl PurchaseReservedInstancesOfferingInput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedInstancesOfferingInput`](crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingInput).
-    pub fn builder() -> crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingInputBuilder{
+    pub fn builder() -> crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingInputBuilder {
         crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingInputBuilder::default()
     }
 }
 
 /// A builder for [`PurchaseReservedInstancesOfferingInput`](crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PurchaseReservedInstancesOfferingInputBuilder {
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) reserved_instances_offering_id: ::std::option::Option<::std::string::String>,
@@ -77,25 +75,17 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
         &self.instance_count
     }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
-    pub fn reserved_instances_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instances_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_instances_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
-    pub fn set_reserved_instances_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_instances_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reserved_instances_offering_id = input;
         self
     }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
-    pub fn get_reserved_instances_offering_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_reserved_instances_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_instances_offering_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -118,17 +108,12 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
         self
     }
     /// <p>Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved Instances are not purchased at unexpected prices.</p>
-    pub fn set_limit_price(
-        mut self,
-        input: ::std::option::Option<crate::types::ReservedInstanceLimitPrice>,
-    ) -> Self {
+    pub fn set_limit_price(mut self, input: ::std::option::Option<crate::types::ReservedInstanceLimitPrice>) -> Self {
         self.limit_price = input;
         self
     }
     /// <p>Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved Instances are not purchased at unexpected prices.</p>
-    pub fn get_limit_price(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReservedInstanceLimitPrice> {
+    pub fn get_limit_price(&self) -> &::std::option::Option<crate::types::ReservedInstanceLimitPrice> {
         &self.limit_price
     }
     /// <p>The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
@@ -137,10 +122,7 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
         self
     }
     /// <p>The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_purchase_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_purchase_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.purchase_time = input;
         self
     }
@@ -149,20 +131,20 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
         &self.purchase_time
     }
     /// Consumes the builder and constructs a [`PurchaseReservedInstancesOfferingInput`](crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingInput {
-                instance_count: self.instance_count
-                ,
-                reserved_instances_offering_id: self.reserved_instances_offering_id
-                ,
-                dry_run: self.dry_run
-                ,
-                limit_price: self.limit_price
-                ,
-                purchase_time: self.purchase_time
-                ,
-            }
+                instance_count: self.instance_count,
+                reserved_instances_offering_id: self.reserved_instances_offering_id,
+                dry_run: self.dry_run,
+                limit_price: self.limit_price,
+                purchase_time: self.purchase_time,
+            },
         )
     }
 }

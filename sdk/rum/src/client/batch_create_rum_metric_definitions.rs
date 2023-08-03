@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`errors(Option<Vec<BatchCreateRumMetricDefinitionsError>>)`](crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsOutput::errors): <p>An array of error objects, if the operation caused any errors.</p>
     ///   - [`metric_definitions(Option<Vec<MetricDefinition>>)`](crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsOutput::metric_definitions): <p>An array of structures that define the extended metrics.</p>
     /// - On failure, responds with [`SdkError<BatchCreateRumMetricDefinitionsError>`](crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsError)
-    pub fn batch_create_rum_metric_definitions(&self) -> crate::operation::batch_create_rum_metric_definitions::builders::BatchCreateRumMetricDefinitionsFluentBuilder{
+    pub fn batch_create_rum_metric_definitions(
+        &self,
+    ) -> crate::operation::batch_create_rum_metric_definitions::builders::BatchCreateRumMetricDefinitionsFluentBuilder {
         crate::operation::batch_create_rum_metric_definitions::builders::BatchCreateRumMetricDefinitionsFluentBuilder::new(self.handle.clone())
     }
 }

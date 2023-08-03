@@ -30,9 +30,7 @@ impl SortProperty {
 
 /// A builder for [`SortProperty`](crate::types::SortProperty).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SortPropertyBuilder {
     pub(crate) field: ::std::option::Option<::std::string::String>,
     pub(crate) direction: ::std::option::Option<crate::types::SortDirection>,
@@ -58,10 +56,7 @@ impl SortPropertyBuilder {
         self
     }
     /// <p>The direction of the sort, either ascending or descending.</p>
-    pub fn set_direction(
-        mut self,
-        input: ::std::option::Option<crate::types::SortDirection>,
-    ) -> Self {
+    pub fn set_direction(mut self, input: ::std::option::Option<crate::types::SortDirection>) -> Self {
         self.direction = input;
         self
     }

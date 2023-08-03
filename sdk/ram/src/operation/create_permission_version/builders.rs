@@ -27,8 +27,7 @@ impl CreatePermissionVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePermissionVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_permission_version::builders::CreatePermissionVersionInputBuilder,
+    inner: crate::operation::create_permission_version::builders::CreatePermissionVersionInputBuilder,
 }
 impl CreatePermissionVersionFluentBuilder {
     /// Creates a new `CreatePermissionVersion`.
@@ -39,10 +38,7 @@ impl CreatePermissionVersionFluentBuilder {
         }
     }
     /// Access the CreatePermissionVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_permission_version::builders::CreatePermissionVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::create_permission_version::builders::CreatePermissionVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl CreatePermissionVersionFluentBuilder {
             crate::operation::create_permission_version::CreatePermissionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_permission_version::CreatePermissionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_permission_version::CreatePermissionVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl CreatePermissionVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl CreatePermissionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_permission_version::CreatePermissionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_permission_version::CreatePermissionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_permission_version::CreatePermissionVersionError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl CreatePermissionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_permission_version::CreatePermissionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_permission_version::CreatePermissionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_permission_version::CreatePermissionVersionError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +106,17 @@ impl CreatePermissionVersionFluentBuilder {
             crate::operation::create_permission_version::CreatePermissionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_permission_version::CreatePermissionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_permission_version::CreatePermissionVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission you're creating a new version for.</p>
-    pub fn permission_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_arn(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission you're creating a new version for.</p>
-    pub fn set_permission_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_permission_arn(input);
         self
     }
@@ -152,10 +131,7 @@ impl CreatePermissionVersionFluentBuilder {
     /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
     /// </ul>
     /// <p>This template can't include either the <code>Resource</code> or <code>Principal</code> elements. Those are both filled in by RAM when it instantiates the resource-based policy on each resource shared using this managed permission. The <code>Resource</code> comes from the ARN of the specific resource that you are sharing. The <code>Principal</code> comes from the list of identities added to the resource share.</p>
-    pub fn policy_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_template(input.into());
         self
     }
@@ -166,10 +142,7 @@ impl CreatePermissionVersionFluentBuilder {
     /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
     /// </ul>
     /// <p>This template can't include either the <code>Resource</code> or <code>Principal</code> elements. Those are both filled in by RAM when it instantiates the resource-based policy on each resource shared using this managed permission. The <code>Resource</code> comes from the ARN of the specific resource that you are sharing. The <code>Principal</code> comes from the list of identities added to the resource share.</p>
-    pub fn set_policy_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_template(input);
         self
     }

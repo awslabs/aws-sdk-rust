@@ -18,15 +18,13 @@ pub struct ServiceInstanceState {
     pub template_minor_version: ::std::option::Option<::std::string::String>,
     /// <p>The IDs for the last successful components deployed for this service instance.</p>
     #[doc(hidden)]
-    pub last_successful_component_deployment_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub last_successful_component_deployment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID for the last successful environment deployed for this service instance.</p>
     #[doc(hidden)]
     pub last_successful_environment_deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the last successful service pipeline deployed for this service instance.</p>
     #[doc(hidden)]
-    pub last_successful_service_pipeline_deployment_id:
-        ::std::option::Option<::std::string::String>,
+    pub last_successful_service_pipeline_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl ServiceInstanceState {
     /// <p>The service spec that was used to create the service instance.</p>
@@ -46,9 +44,7 @@ impl ServiceInstanceState {
         self.template_minor_version.as_deref()
     }
     /// <p>The IDs for the last successful components deployed for this service instance.</p>
-    pub fn last_successful_component_deployment_ids(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn last_successful_component_deployment_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.last_successful_component_deployment_ids.as_deref()
     }
     /// <p>The ID for the last successful environment deployed for this service instance.</p>
@@ -57,8 +53,7 @@ impl ServiceInstanceState {
     }
     /// <p>The ID for the last successful service pipeline deployed for this service instance.</p>
     pub fn last_successful_service_pipeline_deployment_id(&self) -> ::std::option::Option<&str> {
-        self.last_successful_service_pipeline_deployment_id
-            .as_deref()
+        self.last_successful_service_pipeline_deployment_id.as_deref()
     }
 }
 impl ::std::fmt::Debug for ServiceInstanceState {
@@ -68,10 +63,7 @@ impl ::std::fmt::Debug for ServiceInstanceState {
         formatter.field("template_name", &self.template_name);
         formatter.field("template_major_version", &self.template_major_version);
         formatter.field("template_minor_version", &self.template_minor_version);
-        formatter.field(
-            "last_successful_component_deployment_ids",
-            &self.last_successful_component_deployment_ids,
-        );
+        formatter.field("last_successful_component_deployment_ids", &self.last_successful_component_deployment_ids);
         formatter.field(
             "last_successful_environment_deployment_id",
             &self.last_successful_environment_deployment_id,
@@ -98,12 +90,9 @@ pub struct ServiceInstanceStateBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_major_version: ::std::option::Option<::std::string::String>,
     pub(crate) template_minor_version: ::std::option::Option<::std::string::String>,
-    pub(crate) last_successful_component_deployment_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) last_successful_environment_deployment_id:
-        ::std::option::Option<::std::string::String>,
-    pub(crate) last_successful_service_pipeline_deployment_id:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) last_successful_component_deployment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) last_successful_environment_deployment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_successful_service_pipeline_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl ServiceInstanceStateBuilder {
     /// <p>The service spec that was used to create the service instance.</p>
@@ -121,18 +110,12 @@ impl ServiceInstanceStateBuilder {
         &self.spec
     }
     /// <p>The name of the service template that was used to create the service instance.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service template that was used to create the service instance.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -141,18 +124,12 @@ impl ServiceInstanceStateBuilder {
         &self.template_name
     }
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
-    pub fn template_major_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_major_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
-    pub fn set_template_major_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_major_version = input;
         self
     }
@@ -161,18 +138,12 @@ impl ServiceInstanceStateBuilder {
         &self.template_major_version
     }
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
-    pub fn template_minor_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_minor_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
-    pub fn set_template_minor_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_minor_version = input;
         self
     }
@@ -185,74 +156,47 @@ impl ServiceInstanceStateBuilder {
     /// To override the contents of this collection use [`set_last_successful_component_deployment_ids`](Self::set_last_successful_component_deployment_ids).
     ///
     /// <p>The IDs for the last successful components deployed for this service instance.</p>
-    pub fn last_successful_component_deployment_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .last_successful_component_deployment_ids
-            .unwrap_or_default();
+    pub fn last_successful_component_deployment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.last_successful_component_deployment_ids.unwrap_or_default();
         v.push(input.into());
         self.last_successful_component_deployment_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs for the last successful components deployed for this service instance.</p>
-    pub fn set_last_successful_component_deployment_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_last_successful_component_deployment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.last_successful_component_deployment_ids = input;
         self
     }
     /// <p>The IDs for the last successful components deployed for this service instance.</p>
-    pub fn get_last_successful_component_deployment_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_last_successful_component_deployment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.last_successful_component_deployment_ids
     }
     /// <p>The ID for the last successful environment deployed for this service instance.</p>
-    pub fn last_successful_environment_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_successful_environment_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_successful_environment_deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the last successful environment deployed for this service instance.</p>
-    pub fn set_last_successful_environment_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_successful_environment_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_successful_environment_deployment_id = input;
         self
     }
     /// <p>The ID for the last successful environment deployed for this service instance.</p>
-    pub fn get_last_successful_environment_deployment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_last_successful_environment_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_successful_environment_deployment_id
     }
     /// <p>The ID for the last successful service pipeline deployed for this service instance.</p>
-    pub fn last_successful_service_pipeline_deployment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.last_successful_service_pipeline_deployment_id =
-            ::std::option::Option::Some(input.into());
+    pub fn last_successful_service_pipeline_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_successful_service_pipeline_deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the last successful service pipeline deployed for this service instance.</p>
-    pub fn set_last_successful_service_pipeline_deployment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_successful_service_pipeline_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_successful_service_pipeline_deployment_id = input;
         self
     }
     /// <p>The ID for the last successful service pipeline deployed for this service instance.</p>
-    pub fn get_last_successful_service_pipeline_deployment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_last_successful_service_pipeline_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_successful_service_pipeline_deployment_id
     }
     /// Consumes the builder and constructs a [`ServiceInstanceState`](crate::types::ServiceInstanceState).
@@ -263,10 +207,8 @@ impl ServiceInstanceStateBuilder {
             template_major_version: self.template_major_version,
             template_minor_version: self.template_minor_version,
             last_successful_component_deployment_ids: self.last_successful_component_deployment_ids,
-            last_successful_environment_deployment_id: self
-                .last_successful_environment_deployment_id,
-            last_successful_service_pipeline_deployment_id: self
-                .last_successful_service_pipeline_deployment_id,
+            last_successful_environment_deployment_id: self.last_successful_environment_deployment_id,
+            last_successful_service_pipeline_deployment_id: self.last_successful_service_pipeline_deployment_id,
         }
     }
 }
@@ -277,10 +219,7 @@ impl ::std::fmt::Debug for ServiceInstanceStateBuilder {
         formatter.field("template_name", &self.template_name);
         formatter.field("template_major_version", &self.template_major_version);
         formatter.field("template_minor_version", &self.template_minor_version);
-        formatter.field(
-            "last_successful_component_deployment_ids",
-            &self.last_successful_component_deployment_ids,
-        );
+        formatter.field("last_successful_component_deployment_ids", &self.last_successful_component_deployment_ids);
         formatter.field(
             "last_successful_environment_deployment_id",
             &self.last_successful_environment_deployment_id,

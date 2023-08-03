@@ -44,9 +44,7 @@ impl LastRecorderStatus {
 
 /// A builder for [`LastRecorderStatus`](crate::types::LastRecorderStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LastRecorderStatusBuilder {
     pub(crate) job_status_details: ::std::option::Option<::std::string::String>,
     pub(crate) last_collected_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -55,18 +53,12 @@ pub struct LastRecorderStatusBuilder {
 }
 impl LastRecorderStatusBuilder {
     /// <p>A description of a recorder job’s latest status.</p>
-    pub fn job_status_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn job_status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_status_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of a recorder job’s latest status.</p>
-    pub fn set_job_status_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_job_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_status_details = input;
         self
     }
@@ -80,10 +72,7 @@ impl LastRecorderStatusBuilder {
         self
     }
     /// <p>The timestamp at which the recorder job was last executed and media stored to local disk.</p>
-    pub fn set_last_collected_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_collected_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_collected_time = input;
         self
     }
@@ -97,10 +86,7 @@ impl LastRecorderStatusBuilder {
         self
     }
     /// <p>The timestamp at which the recorder status was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
@@ -114,10 +100,7 @@ impl LastRecorderStatusBuilder {
         self
     }
     /// <p>The status of the latest recorder job.</p>
-    pub fn set_recorder_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RecorderStatus>,
-    ) -> Self {
+    pub fn set_recorder_status(mut self, input: ::std::option::Option<crate::types::RecorderStatus>) -> Self {
         self.recorder_status = input;
         self
     }

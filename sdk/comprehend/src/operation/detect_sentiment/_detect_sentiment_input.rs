@@ -63,10 +63,7 @@ impl DetectSentimentInputBuilder {
         self
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -77,10 +74,7 @@ impl DetectSentimentInputBuilder {
     /// Consumes the builder and constructs a [`DetectSentimentInput`](crate::operation::detect_sentiment::DetectSentimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_sentiment::DetectSentimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::detect_sentiment::DetectSentimentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_sentiment::DetectSentimentInput {
             text: self.text,
             language_code: self.language_code,

@@ -35,12 +35,9 @@ impl ListSubscribersOutput {
 
 /// A builder for [`ListSubscribersOutput`](crate::operation::list_subscribers::ListSubscribersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSubscribersOutputBuilder {
-    pub(crate) subscribers:
-        ::std::option::Option<::std::vec::Vec<crate::types::SubscriberResource>>,
+    pub(crate) subscribers: ::std::option::Option<::std::vec::Vec<crate::types::SubscriberResource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListSubscribersOutputBuilder {
         self
     }
     /// <p>The subscribers available for the specified Security Lake account ID.</p>
-    pub fn set_subscribers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SubscriberResource>>,
-    ) -> Self {
+    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscriberResource>>) -> Self {
         self.subscribers = input;
         self
     }
     /// <p>The subscribers available for the specified Security Lake account ID.</p>
-    pub fn get_subscribers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscriberResource>> {
+    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscriberResource>> {
         &self.subscribers
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>

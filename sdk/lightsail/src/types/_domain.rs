@@ -30,8 +30,7 @@ pub struct Domain {
     pub domain_entries: ::std::option::Option<::std::vec::Vec<crate::types::DomainEntry>>,
     /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
     #[doc(hidden)]
-    pub registered_domain_delegation_info:
-        ::std::option::Option<crate::types::RegisteredDomainDelegationInfo>,
+    pub registered_domain_delegation_info: ::std::option::Option<crate::types::RegisteredDomainDelegationInfo>,
 }
 impl Domain {
     /// <p>The name of the domain.</p>
@@ -67,9 +66,7 @@ impl Domain {
         self.domain_entries.as_deref()
     }
     /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
-    pub fn registered_domain_delegation_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RegisteredDomainDelegationInfo> {
+    pub fn registered_domain_delegation_info(&self) -> ::std::option::Option<&crate::types::RegisteredDomainDelegationInfo> {
         self.registered_domain_delegation_info.as_ref()
     }
 }
@@ -82,9 +79,7 @@ impl Domain {
 
 /// A builder for [`Domain`](crate::types::Domain).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -94,8 +89,7 @@ pub struct DomainBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) domain_entries: ::std::option::Option<::std::vec::Vec<crate::types::DomainEntry>>,
-    pub(crate) registered_domain_delegation_info:
-        ::std::option::Option<crate::types::RegisteredDomainDelegationInfo>,
+    pub(crate) registered_domain_delegation_info: ::std::option::Option<crate::types::RegisteredDomainDelegationInfo>,
 }
 impl DomainBuilder {
     /// <p>The name of the domain.</p>
@@ -146,10 +140,7 @@ impl DomainBuilder {
         self
     }
     /// <p>The date when the domain recordset was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -163,10 +154,7 @@ impl DomainBuilder {
         self
     }
     /// <p>The AWS Region and Availability Zones where the domain recordset was created.</p>
-    pub fn set_location(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceLocation>,
-    ) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
         self.location = input;
         self
     }
@@ -180,10 +168,7 @@ impl DomainBuilder {
         self
     }
     /// <p>The resource type. </p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -203,10 +188,7 @@ impl DomainBuilder {
         self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -226,39 +208,26 @@ impl DomainBuilder {
         self
     }
     /// <p>An array of key-value pairs containing information about the domain entries.</p>
-    pub fn set_domain_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainEntry>>,
-    ) -> Self {
+    pub fn set_domain_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainEntry>>) -> Self {
         self.domain_entries = input;
         self
     }
     /// <p>An array of key-value pairs containing information about the domain entries.</p>
-    pub fn get_domain_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainEntry>> {
+    pub fn get_domain_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainEntry>> {
         &self.domain_entries
     }
     /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
-    pub fn registered_domain_delegation_info(
-        mut self,
-        input: crate::types::RegisteredDomainDelegationInfo,
-    ) -> Self {
+    pub fn registered_domain_delegation_info(mut self, input: crate::types::RegisteredDomainDelegationInfo) -> Self {
         self.registered_domain_delegation_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
-    pub fn set_registered_domain_delegation_info(
-        mut self,
-        input: ::std::option::Option<crate::types::RegisteredDomainDelegationInfo>,
-    ) -> Self {
+    pub fn set_registered_domain_delegation_info(mut self, input: ::std::option::Option<crate::types::RegisteredDomainDelegationInfo>) -> Self {
         self.registered_domain_delegation_info = input;
         self
     }
     /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
-    pub fn get_registered_domain_delegation_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegisteredDomainDelegationInfo> {
+    pub fn get_registered_domain_delegation_info(&self) -> &::std::option::Option<crate::types::RegisteredDomainDelegationInfo> {
         &self.registered_domain_delegation_info
     }
     /// Consumes the builder and constructs a [`Domain`](crate::types::Domain).

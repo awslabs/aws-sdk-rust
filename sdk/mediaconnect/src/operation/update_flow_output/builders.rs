@@ -10,10 +10,7 @@ impl UpdateFlowOutputInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_flow_output::UpdateFlowOutputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_output::UpdateFlowOutputError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_output::UpdateFlowOutputError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_flow_output();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateFlowOutputFluentBuilder {
         }
     }
     /// Access the UpdateFlowOutput as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_flow_output::builders::UpdateFlowOutputInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_flow_output::builders::UpdateFlowOutputInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateFlowOutputFluentBuilder {
             crate::operation::update_flow_output::UpdateFlowOutput,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_output::UpdateFlowOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_output::UpdateFlowOutputError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateFlowOutputFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateFlowOutputFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_flow_output::UpdateFlowOutputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_output::UpdateFlowOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_output::UpdateFlowOutputError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateFlowOutputFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_flow_output::UpdateFlowOutputOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_output::UpdateFlowOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_output::UpdateFlowOutputError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateFlowOutputFluentBuilder {
             crate::operation::update_flow_output::UpdateFlowOutput,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_output::UpdateFlowOutputError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_flow_output::UpdateFlowOutputError>,
     > {
         self.customize_middleware().await
     }
@@ -127,25 +111,17 @@ impl UpdateFlowOutputFluentBuilder {
     /// To override the contents of this collection use [`set_cidr_allow_list`](Self::set_cidr_allow_list).
     ///
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn cidr_allow_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cidr_allow_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr_allow_list(input.into());
         self
     }
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn set_cidr_allow_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cidr_allow_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cidr_allow_list(input);
         self
     }
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn get_cidr_allow_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cidr_allow_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cidr_allow_list()
     }
     /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
@@ -182,10 +158,7 @@ impl UpdateFlowOutputFluentBuilder {
         self
     }
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key). Allowable encryption types: static-key.
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::UpdateEncryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::UpdateEncryption>) -> Self {
         self.inner = self.inner.set_encryption(input);
         self
     }
@@ -226,19 +199,14 @@ impl UpdateFlowOutputFluentBuilder {
     /// To override the contents of this collection use [`set_media_stream_output_configurations`](Self::set_media_stream_output_configurations).
     ///
     /// The media streams that are associated with the output, and the parameters for those associations.
-    pub fn media_stream_output_configurations(
-        mut self,
-        input: crate::types::MediaStreamOutputConfigurationRequest,
-    ) -> Self {
+    pub fn media_stream_output_configurations(mut self, input: crate::types::MediaStreamOutputConfigurationRequest) -> Self {
         self.inner = self.inner.media_stream_output_configurations(input);
         self
     }
     /// The media streams that are associated with the output, and the parameters for those associations.
     pub fn set_media_stream_output_configurations(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>>,
     ) -> Self {
         self.inner = self.inner.set_media_stream_output_configurations(input);
         self
@@ -246,8 +214,7 @@ impl UpdateFlowOutputFluentBuilder {
     /// The media streams that are associated with the output, and the parameters for those associations.
     pub fn get_media_stream_output_configurations(
         &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>>
-    {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>> {
         self.inner.get_media_stream_output_configurations()
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
@@ -335,18 +302,12 @@ impl UpdateFlowOutputFluentBuilder {
         self.inner.get_sender_control_port()
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn sender_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sender_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sender_ip_address(input.into());
         self
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn set_sender_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sender_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sender_ip_address(input);
         self
     }
@@ -388,17 +349,12 @@ impl UpdateFlowOutputFluentBuilder {
         self
     }
     /// The name of the VPC interface attachment to use for this output.
-    pub fn set_vpc_interface_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
-    ) -> Self {
+    pub fn set_vpc_interface_attachment(mut self, input: ::std::option::Option<crate::types::VpcInterfaceAttachment>) -> Self {
         self.inner = self.inner.set_vpc_interface_attachment(input);
         self
     }
     /// The name of the VPC interface attachment to use for this output.
-    pub fn get_vpc_interface_attachment(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcInterfaceAttachment> {
+    pub fn get_vpc_interface_attachment(&self) -> &::std::option::Option<crate::types::VpcInterfaceAttachment> {
         self.inner.get_vpc_interface_attachment()
     }
 }

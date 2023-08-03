@@ -10,9 +10,7 @@ pub fn ser_create_image_input(
         object.key("containerRecipeArn").string(var_2.as_str());
     }
     if let Some(var_3) = &input.distribution_configuration_arn {
-        object
-            .key("distributionConfigurationArn")
-            .string(var_3.as_str());
+        object.key("distributionConfigurationArn").string(var_3.as_str());
     }
     if let Some(var_4) = &input.enhanced_image_metadata_enabled {
         object.key("enhancedImageMetadataEnabled").boolean(*var_4);
@@ -29,16 +27,11 @@ pub fn ser_create_image_input(
     if let Some(var_8) = &input.image_tests_configuration {
         #[allow(unused_mut)]
         let mut object_9 = object.key("imageTestsConfiguration").start_object();
-        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.infrastructure_configuration_arn {
-        object
-            .key("infrastructureConfigurationArn")
-            .string(var_10.as_str());
+        object.key("infrastructureConfigurationArn").string(var_10.as_str());
     }
     if let Some(var_11) = &input.tags {
         #[allow(unused_mut)]

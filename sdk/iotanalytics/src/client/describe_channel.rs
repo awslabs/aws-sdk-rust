@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`channel(Option<Channel>)`](crate::operation::describe_channel::DescribeChannelOutput::channel): <p>An object that contains information about the channel.</p>
     ///   - [`statistics(Option<ChannelStatistics>)`](crate::operation::describe_channel::DescribeChannelOutput::statistics): <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::operation::describe_channel::DescribeChannelError)
-    pub fn describe_channel(
-        &self,
-    ) -> crate::operation::describe_channel::builders::DescribeChannelFluentBuilder {
-        crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_channel(&self) -> crate::operation::describe_channel::builders::DescribeChannelFluentBuilder {
+        crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::new(self.handle.clone())
     }
 }

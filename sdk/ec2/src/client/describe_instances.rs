@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`reservations(Option<Vec<Reservation>>)`](crate::operation::describe_instances::DescribeInstancesOutput::reservations): <p>Information about the reservations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instances::DescribeInstancesOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeInstancesError>`](crate::operation::describe_instances::DescribeInstancesError)
-    pub fn describe_instances(
-        &self,
-    ) -> crate::operation::describe_instances::builders::DescribeInstancesFluentBuilder {
-        crate::operation::describe_instances::builders::DescribeInstancesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_instances(&self) -> crate::operation::describe_instances::builders::DescribeInstancesFluentBuilder {
+        crate::operation::describe_instances::builders::DescribeInstancesFluentBuilder::new(self.handle.clone())
     }
 }

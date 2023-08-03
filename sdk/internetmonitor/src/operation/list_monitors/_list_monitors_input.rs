@@ -38,9 +38,7 @@ impl ListMonitorsInput {
 
 /// A builder for [`ListMonitorsInput`](crate::operation::list_monitors::ListMonitorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitorsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -77,19 +75,13 @@ impl ListMonitorsInputBuilder {
     }
     /// <p>The status of a monitor. This includes the status of the data processing for the monitor and the status of the monitor itself.</p>
     /// <p>For information about the statuses for a monitor, see <a href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html"> Monitor</a>.</p>
-    pub fn monitor_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitor_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of a monitor. This includes the status of the data processing for the monitor and the status of the monitor itself.</p>
     /// <p>For information about the statuses for a monitor, see <a href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html"> Monitor</a>.</p>
-    pub fn set_monitor_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_monitor_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_status = input;
         self
     }
@@ -99,12 +91,7 @@ impl ListMonitorsInputBuilder {
         &self.monitor_status
     }
     /// Consumes the builder and constructs a [`ListMonitorsInput`](crate::operation::list_monitors::ListMonitorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_monitors::ListMonitorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_monitors::ListMonitorsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_monitors::ListMonitorsInput {
             next_token: self.next_token,
             max_results: self.max_results.unwrap_or_default(),

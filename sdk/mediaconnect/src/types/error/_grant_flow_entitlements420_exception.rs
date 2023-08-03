@@ -33,9 +33,7 @@ impl ::aws_http::request_id::RequestId for crate::types::error::GrantFlowEntitle
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for GrantFlowEntitlements420Exception
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GrantFlowEntitlements420Exception {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
@@ -49,9 +47,7 @@ impl GrantFlowEntitlements420Exception {
 
 /// A builder for [`GrantFlowEntitlements420Exception`](crate::types::error::GrantFlowEntitlements420Exception).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrantFlowEntitlements420ExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -78,10 +74,7 @@ impl GrantFlowEntitlements420ExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

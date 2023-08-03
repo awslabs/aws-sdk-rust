@@ -16,10 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateReplicationConfigOutput`](crate::operation::create_replication_config::CreateReplicationConfigOutput) with field(s):
     ///   - [`replication_config(Option<ReplicationConfig>)`](crate::operation::create_replication_config::CreateReplicationConfigOutput::replication_config): <p>Configuration parameters returned from the DMS Serverless replication after it is created.</p>
     /// - On failure, responds with [`SdkError<CreateReplicationConfigError>`](crate::operation::create_replication_config::CreateReplicationConfigError)
-    pub fn create_replication_config(
-        &self,
-    ) -> crate::operation::create_replication_config::builders::CreateReplicationConfigFluentBuilder
-    {
+    pub fn create_replication_config(&self) -> crate::operation::create_replication_config::builders::CreateReplicationConfigFluentBuilder {
         crate::operation::create_replication_config::builders::CreateReplicationConfigFluentBuilder::new(self.handle.clone())
     }
 }

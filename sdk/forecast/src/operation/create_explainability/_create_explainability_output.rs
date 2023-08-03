@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for CreateExplainabilityOutput {
 }
 impl CreateExplainabilityOutput {
     /// Creates a new builder-style object to manufacture [`CreateExplainabilityOutput`](crate::operation::create_explainability::CreateExplainabilityOutput).
-    pub fn builder(
-    ) -> crate::operation::create_explainability::builders::CreateExplainabilityOutputBuilder {
+    pub fn builder() -> crate::operation::create_explainability::builders::CreateExplainabilityOutputBuilder {
         crate::operation::create_explainability::builders::CreateExplainabilityOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateExplainabilityOutput`](crate::operation::create_explainability::CreateExplainabilityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExplainabilityOutputBuilder {
     pub(crate) explainability_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateExplainabilityOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
-    pub fn explainability_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn explainability_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
-    pub fn set_explainability_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_explainability_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.explainability_arn = input;
         self
     }

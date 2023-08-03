@@ -43,13 +43,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Icd10CmTraitName {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for Icd10CmTraitName {
             "PERTAINS_TO_FAMILY" => Icd10CmTraitName::PertainsToFamily,
             "SIGN" => Icd10CmTraitName::Sign,
             "SYMPTOM" => Icd10CmTraitName::Symptom,
-            other => {
-                Icd10CmTraitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => Icd10CmTraitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

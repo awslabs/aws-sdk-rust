@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateApplicationOutput {
 }
 impl UpdateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::operation::update_application::UpdateApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_application::builders::UpdateApplicationOutputBuilder {
+    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationOutputBuilder {
         crate::operation::update_application::builders::UpdateApplicationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateApplicationOutput`](crate::operation::update_application::UpdateApplicationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApplicationOutputBuilder {
     pub(crate) application_detail: ::std::option::Option<crate::types::ApplicationDetail>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl UpdateApplicationOutputBuilder {
         self
     }
     /// <p>Describes application updates.</p>
-    pub fn set_application_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ApplicationDetail>,
-    ) -> Self {
+    pub fn set_application_detail(mut self, input: ::std::option::Option<crate::types::ApplicationDetail>) -> Self {
         self.application_detail = input;
         self
     }
     /// <p>Describes application updates.</p>
-    pub fn get_application_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::ApplicationDetail> {
+    pub fn get_application_detail(&self) -> &::std::option::Option<crate::types::ApplicationDetail> {
         &self.application_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

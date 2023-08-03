@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEndpointAccessOutput`](crate::operation::create_endpoint_access::CreateEndpointAccessOutput) with field(s):
     ///   - [`endpoint(Option<EndpointAccess>)`](crate::operation::create_endpoint_access::CreateEndpointAccessOutput::endpoint): <p>The created VPC endpoint.</p>
     /// - On failure, responds with [`SdkError<CreateEndpointAccessError>`](crate::operation::create_endpoint_access::CreateEndpointAccessError)
-    pub fn create_endpoint_access(
-        &self,
-    ) -> crate::operation::create_endpoint_access::builders::CreateEndpointAccessFluentBuilder {
-        crate::operation::create_endpoint_access::builders::CreateEndpointAccessFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_endpoint_access(&self) -> crate::operation::create_endpoint_access::builders::CreateEndpointAccessFluentBuilder {
+        crate::operation::create_endpoint_access::builders::CreateEndpointAccessFluentBuilder::new(self.handle.clone())
     }
 }

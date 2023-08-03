@@ -65,18 +65,14 @@ impl CreateConfigurationSetInput {
 }
 impl CreateConfigurationSetInput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder {
         crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) tracking_options: ::std::option::Option<crate::types::TrackingOptions>,
@@ -89,18 +85,12 @@ pub struct CreateConfigurationSetInputBuilder {
 }
 impl CreateConfigurationSetInputBuilder {
     /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
-    pub fn configuration_set_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_set_name = input;
         self
     }
@@ -114,10 +104,7 @@ impl CreateConfigurationSetInputBuilder {
         self
     }
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
-    pub fn set_tracking_options(
-        mut self,
-        input: ::std::option::Option<crate::types::TrackingOptions>,
-    ) -> Self {
+    pub fn set_tracking_options(mut self, input: ::std::option::Option<crate::types::TrackingOptions>) -> Self {
         self.tracking_options = input;
         self
     }
@@ -131,10 +118,7 @@ impl CreateConfigurationSetInputBuilder {
         self
     }
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
-    pub fn set_delivery_options(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryOptions>,
-    ) -> Self {
+    pub fn set_delivery_options(mut self, input: ::std::option::Option<crate::types::DeliveryOptions>) -> Self {
         self.delivery_options = input;
         self
     }
@@ -148,17 +132,12 @@ impl CreateConfigurationSetInputBuilder {
         self
     }
     /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
-    pub fn set_reputation_options(
-        mut self,
-        input: ::std::option::Option<crate::types::ReputationOptions>,
-    ) -> Self {
+    pub fn set_reputation_options(mut self, input: ::std::option::Option<crate::types::ReputationOptions>) -> Self {
         self.reputation_options = input;
         self
     }
     /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
-    pub fn get_reputation_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReputationOptions> {
+    pub fn get_reputation_options(&self) -> &::std::option::Option<crate::types::ReputationOptions> {
         &self.reputation_options
     }
     /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
@@ -167,10 +146,7 @@ impl CreateConfigurationSetInputBuilder {
         self
     }
     /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
-    pub fn set_sending_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SendingOptions>,
-    ) -> Self {
+    pub fn set_sending_options(mut self, input: ::std::option::Option<crate::types::SendingOptions>) -> Self {
         self.sending_options = input;
         self
     }
@@ -190,10 +166,7 @@ impl CreateConfigurationSetInputBuilder {
         self
     }
     /// <p>An array of objects that define the tags (keys and values) to associate with the configuration set.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -207,17 +180,12 @@ impl CreateConfigurationSetInputBuilder {
         self
     }
     /// <p>An object that contains information about the suppression list preferences for your account.</p>
-    pub fn set_suppression_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SuppressionOptions>,
-    ) -> Self {
+    pub fn set_suppression_options(mut self, input: ::std::option::Option<crate::types::SuppressionOptions>) -> Self {
         self.suppression_options = input;
         self
     }
     /// <p>An object that contains information about the suppression list preferences for your account.</p>
-    pub fn get_suppression_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::SuppressionOptions> {
+    pub fn get_suppression_options(&self) -> &::std::option::Option<crate::types::SuppressionOptions> {
         &self.suppression_options
     }
     /// <p>An object that defines the VDM options for emails that you send using the configuration set.</p>
@@ -226,10 +194,7 @@ impl CreateConfigurationSetInputBuilder {
         self
     }
     /// <p>An object that defines the VDM options for emails that you send using the configuration set.</p>
-    pub fn set_vdm_options(
-        mut self,
-        input: ::std::option::Option<crate::types::VdmOptions>,
-    ) -> Self {
+    pub fn set_vdm_options(mut self, input: ::std::option::Option<crate::types::VdmOptions>) -> Self {
         self.vdm_options = input;
         self
     }
@@ -240,21 +205,17 @@ impl CreateConfigurationSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_configuration_set::CreateConfigurationSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_configuration_set::CreateConfigurationSetInput {
-                configuration_set_name: self.configuration_set_name,
-                tracking_options: self.tracking_options,
-                delivery_options: self.delivery_options,
-                reputation_options: self.reputation_options,
-                sending_options: self.sending_options,
-                tags: self.tags,
-                suppression_options: self.suppression_options,
-                vdm_options: self.vdm_options,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_configuration_set::CreateConfigurationSetInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_configuration_set::CreateConfigurationSetInput {
+            configuration_set_name: self.configuration_set_name,
+            tracking_options: self.tracking_options,
+            delivery_options: self.delivery_options,
+            reputation_options: self.reputation_options,
+            sending_options: self.sending_options,
+            tags: self.tags,
+            suppression_options: self.suppression_options,
+            vdm_options: self.vdm_options,
+        })
     }
 }

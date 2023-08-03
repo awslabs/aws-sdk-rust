@@ -10,10 +10,7 @@ impl CreateWorkforceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_workforce::CreateWorkforceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workforce::CreateWorkforceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workforce::CreateWorkforceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_workforce();
         fluent_builder.inner = self;
@@ -40,9 +37,7 @@ impl CreateWorkforceFluentBuilder {
         }
     }
     /// Access the CreateWorkforce as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_workforce::builders::CreateWorkforceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_workforce::builders::CreateWorkforceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +49,7 @@ impl CreateWorkforceFluentBuilder {
             crate::operation::create_workforce::CreateWorkforce,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workforce::CreateWorkforceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workforce::CreateWorkforceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +59,7 @@ impl CreateWorkforceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +68,7 @@ impl CreateWorkforceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workforce::CreateWorkforceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workforce::CreateWorkforceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workforce::CreateWorkforceError>,
     > {
         let op = self
             .inner
@@ -103,9 +91,7 @@ impl CreateWorkforceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workforce::CreateWorkforceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workforce::CreateWorkforceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workforce::CreateWorkforceError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +105,7 @@ impl CreateWorkforceFluentBuilder {
             crate::operation::create_workforce::CreateWorkforce,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_workforce::CreateWorkforceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workforce::CreateWorkforceError>,
     > {
         self.customize_middleware().await
     }
@@ -133,10 +117,7 @@ impl CreateWorkforceFluentBuilder {
     }
     /// <p>Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
     /// <p>Do not use <code>OidcConfig</code> if you specify values for <code>CognitoConfig</code>.</p>
-    pub fn set_cognito_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CognitoConfig>,
-    ) -> Self {
+    pub fn set_cognito_config(mut self, input: ::std::option::Option<crate::types::CognitoConfig>) -> Self {
         self.inner = self.inner.set_cognito_config(input);
         self
     }
@@ -153,10 +134,7 @@ impl CreateWorkforceFluentBuilder {
     }
     /// <p>Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>
     /// <p>Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.</p>
-    pub fn set_oidc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OidcConfig>,
-    ) -> Self {
+    pub fn set_oidc_config(mut self, input: ::std::option::Option<crate::types::OidcConfig>) -> Self {
         self.inner = self.inner.set_oidc_config(input);
         self
     }
@@ -171,10 +149,7 @@ impl CreateWorkforceFluentBuilder {
         self
     }
     /// <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
-    pub fn set_source_ip_config(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceIpConfig>,
-    ) -> Self {
+    pub fn set_source_ip_config(mut self, input: ::std::option::Option<crate::types::SourceIpConfig>) -> Self {
         self.inner = self.inner.set_source_ip_config(input);
         self
     }
@@ -183,18 +158,12 @@ impl CreateWorkforceFluentBuilder {
         self.inner.get_source_ip_config()
     }
     /// <p>The name of the private workforce.</p>
-    pub fn workforce_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workforce_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workforce_name(input.into());
         self
     }
     /// <p>The name of the private workforce.</p>
-    pub fn set_workforce_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workforce_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workforce_name(input);
         self
     }
@@ -212,10 +181,7 @@ impl CreateWorkforceFluentBuilder {
         self
     }
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize our workforce. Each tag consists of a key and a value, both of which you define.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -229,17 +195,12 @@ impl CreateWorkforceFluentBuilder {
         self
     }
     /// <p>Use this parameter to configure a workforce using VPC.</p>
-    pub fn set_workforce_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkforceVpcConfigRequest>,
-    ) -> Self {
+    pub fn set_workforce_vpc_config(mut self, input: ::std::option::Option<crate::types::WorkforceVpcConfigRequest>) -> Self {
         self.inner = self.inner.set_workforce_vpc_config(input);
         self
     }
     /// <p>Use this parameter to configure a workforce using VPC.</p>
-    pub fn get_workforce_vpc_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::WorkforceVpcConfigRequest> {
+    pub fn get_workforce_vpc_config(&self) -> &::std::option::Option<crate::types::WorkforceVpcConfigRequest> {
         self.inner.get_workforce_vpc_config()
     }
 }

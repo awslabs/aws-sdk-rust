@@ -44,9 +44,7 @@ impl PropertyType {
 
 /// A builder for [`PropertyType`](crate::types::PropertyType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyTypeBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::Attribute>,
     pub(crate) measurement: ::std::option::Option<crate::types::Measurement>,
@@ -74,10 +72,7 @@ impl PropertyTypeBuilder {
         self
     }
     /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
-    pub fn set_measurement(
-        mut self,
-        input: ::std::option::Option<crate::types::Measurement>,
-    ) -> Self {
+    pub fn set_measurement(mut self, input: ::std::option::Option<crate::types::Measurement>) -> Self {
         self.measurement = input;
         self
     }

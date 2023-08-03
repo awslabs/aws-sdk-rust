@@ -93,14 +93,11 @@ impl Database {
 
 /// A builder for [`Database`](crate::types::Database).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatabaseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_id: ::std::option::Option<::std::string::String>,
-    pub(crate) credentials:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    pub(crate) credentials: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     pub(crate) database_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_type: ::std::option::Option<crate::types::DatabaseType>,
@@ -112,18 +109,12 @@ pub struct DatabaseBuilder {
 }
 impl DatabaseBuilder {
     /// <p>The ID of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -157,17 +148,12 @@ impl DatabaseBuilder {
         self
     }
     /// <p>The credentials of the database.</p>
-    pub fn set_credentials(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
-    ) -> Self {
+    pub fn set_credentials(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>) -> Self {
         self.credentials = input;
         self
     }
     /// <p>The credentials of the database.</p>
-    pub fn get_credentials(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+    pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
         &self.credentials
     }
     /// <p>The ID of the SAP HANA database.</p>
@@ -185,18 +171,12 @@ impl DatabaseBuilder {
         &self.database_id
     }
     /// <p>The name of the database.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -210,10 +190,7 @@ impl DatabaseBuilder {
         self
     }
     /// <p>The type of the database.</p>
-    pub fn set_database_type(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabaseType>,
-    ) -> Self {
+    pub fn set_database_type(mut self, input: ::std::option::Option<crate::types::DatabaseType>) -> Self {
         self.database_type = input;
         self
     }
@@ -241,10 +218,7 @@ impl DatabaseBuilder {
         self
     }
     /// <p>The status of the database.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabaseStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatabaseStatus>) -> Self {
         self.status = input;
         self
     }
@@ -286,10 +260,7 @@ impl DatabaseBuilder {
         self
     }
     /// <p>The time at which the database was last updated.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated = input;
         self
     }

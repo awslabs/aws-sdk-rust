@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteTaskTemplateOutput {
 }
 impl DeleteTaskTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTaskTemplateOutput`](crate::operation::delete_task_template::DeleteTaskTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_task_template::builders::DeleteTaskTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::delete_task_template::builders::DeleteTaskTemplateOutputBuilder {
         crate::operation::delete_task_template::builders::DeleteTaskTemplateOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTaskTemplateOutput`](crate::operation::delete_task_template::DeleteTaskTemplateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTaskTemplateOutputBuilder {
     _request_id: Option<String>,
 }

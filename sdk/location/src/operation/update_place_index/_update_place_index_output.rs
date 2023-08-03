@@ -41,17 +41,14 @@ impl ::aws_http::request_id::RequestId for UpdatePlaceIndexOutput {
 }
 impl UpdatePlaceIndexOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePlaceIndexOutput`](crate::operation::update_place_index::UpdatePlaceIndexOutput).
-    pub fn builder() -> crate::operation::update_place_index::builders::UpdatePlaceIndexOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_place_index::builders::UpdatePlaceIndexOutputBuilder {
         crate::operation::update_place_index::builders::UpdatePlaceIndexOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePlaceIndexOutput`](crate::operation::update_place_index::UpdatePlaceIndexOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePlaceIndexOutputBuilder {
     pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) index_arn: ::std::option::Option<::std::string::String>,
@@ -102,10 +99,7 @@ impl UpdatePlaceIndexOutputBuilder {
         self
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }

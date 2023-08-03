@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`configuration_profile_id(impl ::std::convert::Into<String>)`](crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileFluentBuilder::configuration_profile_id) / [`set_configuration_profile_id(Option<String>)`](crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileFluentBuilder::set_configuration_profile_id): <p>The ID of the configuration profile you want to delete.</p>
     /// - On success, responds with [`DeleteConfigurationProfileOutput`](crate::operation::delete_configuration_profile::DeleteConfigurationProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteConfigurationProfileError>`](crate::operation::delete_configuration_profile::DeleteConfigurationProfileError)
-    pub fn delete_configuration_profile(&self) -> crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileFluentBuilder{
+    pub fn delete_configuration_profile(&self) -> crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileFluentBuilder {
         crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileFluentBuilder::new(self.handle.clone())
     }
 }

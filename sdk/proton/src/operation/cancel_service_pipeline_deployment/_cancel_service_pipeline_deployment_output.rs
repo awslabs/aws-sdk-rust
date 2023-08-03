@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CancelServicePipelineDeploymentOutput
 }
 impl CancelServicePipelineDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CancelServicePipelineDeploymentOutput`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput).
-    pub fn builder() -> crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentOutputBuilder {
         crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelServicePipelineDeploymentOutput`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelServicePipelineDeploymentOutputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::ServicePipeline>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CancelServicePipelineDeploymentOutputBuilder {
         self
     }
     /// <p>The service pipeline detail data that's returned by Proton.</p>
-    pub fn set_pipeline(
-        mut self,
-        input: ::std::option::Option<crate::types::ServicePipeline>,
-    ) -> Self {
+    pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::ServicePipeline>) -> Self {
         self.pipeline = input;
         self
     }
@@ -63,13 +58,9 @@ impl CancelServicePipelineDeploymentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelServicePipelineDeploymentOutput`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput
-    {
+    pub fn build(self) -> crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput {
         crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput {
-            pipeline: self.pipeline
-            ,
+            pipeline: self.pipeline,
             _request_id: self._request_id,
         }
     }

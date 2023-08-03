@@ -56,18 +56,14 @@ impl DescribeCertificatesInput {
 }
 impl DescribeCertificatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificatesInput`](crate::operation::describe_certificates::DescribeCertificatesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_certificates::builders::DescribeCertificatesInputBuilder {
-        crate::operation::describe_certificates::builders::DescribeCertificatesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_certificates::builders::DescribeCertificatesInputBuilder {
+        crate::operation::describe_certificates::builders::DescribeCertificatesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCertificatesInput`](crate::operation::describe_certificates::DescribeCertificatesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCertificatesInputBuilder {
     pub(crate) certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -80,10 +76,7 @@ impl DescribeCertificatesInputBuilder {
     /// <ul>
     /// <li> <p>Must match an existing <code>CertificateIdentifier</code>.</p> </li>
     /// </ul>
-    pub fn certificate_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_identifier = ::std::option::Option::Some(input.into());
         self
     }
@@ -92,10 +85,7 @@ impl DescribeCertificatesInputBuilder {
     /// <ul>
     /// <li> <p>Must match an existing <code>CertificateIdentifier</code>.</p> </li>
     /// </ul>
-    pub fn set_certificate_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_identifier = input;
         self
     }
@@ -119,10 +109,7 @@ impl DescribeCertificatesInputBuilder {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -179,17 +166,13 @@ impl DescribeCertificatesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCertificatesInput`](crate::operation::describe_certificates::DescribeCertificatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_certificates::DescribeCertificatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_certificates::DescribeCertificatesInput {
-                certificate_identifier: self.certificate_identifier,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_certificates::DescribeCertificatesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_certificates::DescribeCertificatesInput {
+            certificate_identifier: self.certificate_identifier,
+            filters: self.filters,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

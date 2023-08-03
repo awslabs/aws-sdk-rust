@@ -12,9 +12,7 @@ pub struct SemanticEntityType {
     pub sub_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The semantic entity type parameters.</p>
     #[doc(hidden)]
-    pub type_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub type_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SemanticEntityType {
     /// <p>The semantic entity type name.</p>
@@ -26,11 +24,7 @@ impl SemanticEntityType {
         self.sub_type_name.as_deref()
     }
     /// <p>The semantic entity type parameters.</p>
-    pub fn type_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn type_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.type_parameters.as_ref()
     }
 }
@@ -43,15 +37,11 @@ impl SemanticEntityType {
 
 /// A builder for [`SemanticEntityType`](crate::types::SemanticEntityType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SemanticEntityTypeBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
     pub(crate) sub_type_name: ::std::option::Option<::std::string::String>,
-    pub(crate) type_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) type_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SemanticEntityTypeBuilder {
     /// <p>The semantic entity type name.</p>
@@ -69,18 +59,12 @@ impl SemanticEntityTypeBuilder {
         &self.type_name
     }
     /// <p>The semantic entity sub type name.</p>
-    pub fn sub_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sub_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The semantic entity sub type name.</p>
-    pub fn set_sub_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sub_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_type_name = input;
         self
     }
@@ -106,19 +90,13 @@ impl SemanticEntityTypeBuilder {
     /// <p>The semantic entity type parameters.</p>
     pub fn set_type_parameters(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ) -> Self {
         self.type_parameters = input;
         self
     }
     /// <p>The semantic entity type parameters.</p>
-    pub fn get_type_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_type_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.type_parameters
     }
     /// Consumes the builder and constructs a [`SemanticEntityType`](crate::types::SemanticEntityType).

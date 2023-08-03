@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for StopContinuousExportOutput {
 }
 impl StopContinuousExportOutput {
     /// Creates a new builder-style object to manufacture [`StopContinuousExportOutput`](crate::operation::stop_continuous_export::StopContinuousExportOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_continuous_export::builders::StopContinuousExportOutputBuilder {
+    pub fn builder() -> crate::operation::stop_continuous_export::builders::StopContinuousExportOutputBuilder {
         crate::operation::stop_continuous_export::builders::StopContinuousExportOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopContinuousExportOutput`](crate::operation::stop_continuous_export::StopContinuousExportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopContinuousExportOutputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -51,10 +48,7 @@ impl StopContinuousExportOutputBuilder {
         self
     }
     /// <p>Timestamp that represents when this continuous export started collecting data.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -68,10 +62,7 @@ impl StopContinuousExportOutputBuilder {
         self
     }
     /// <p>Timestamp that represents when this continuous export was stopped.</p>
-    pub fn set_stop_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stop_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stop_time = input;
         self
     }

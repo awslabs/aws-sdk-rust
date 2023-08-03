@@ -10,10 +10,7 @@ impl PutMetricDataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_metric_data::PutMetricDataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_metric_data::PutMetricDataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_metric_data::PutMetricDataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.put_metric_data();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl PutMetricDataFluentBuilder {
         }
     }
     /// Access the PutMetricData as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_metric_data::builders::PutMetricDataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_metric_data::builders::PutMetricDataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -72,10 +67,7 @@ impl PutMetricDataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -152,17 +144,12 @@ impl PutMetricDataFluentBuilder {
         self
     }
     /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
-    pub fn set_metric_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
-    ) -> Self {
+    pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>) -> Self {
         self.inner = self.inner.set_metric_data(input);
         self
     }
     /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
-    pub fn get_metric_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
+    pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
         self.inner.get_metric_data()
     }
 }

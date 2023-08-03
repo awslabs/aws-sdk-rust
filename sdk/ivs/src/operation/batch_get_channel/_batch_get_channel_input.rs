@@ -22,9 +22,7 @@ impl BatchGetChannelInput {
 
 /// A builder for [`BatchGetChannelInput`](crate::operation::batch_get_channel::BatchGetChannelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetChannelInputBuilder {
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -41,10 +39,7 @@ impl BatchGetChannelInputBuilder {
         self
     }
     /// <p>Array of ARNs, one per channel.</p>
-    pub fn set_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.arns = input;
         self
     }
@@ -55,12 +50,7 @@ impl BatchGetChannelInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetChannelInput`](crate::operation::batch_get_channel::BatchGetChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_channel::BatchGetChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_channel::BatchGetChannelInput {
-            arns: self.arns,
-        })
+    ) -> ::std::result::Result<crate::operation::batch_get_channel::BatchGetChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_get_channel::BatchGetChannelInput { arns: self.arns })
     }
 }

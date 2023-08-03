@@ -21,11 +21,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateNfsFileShareOutput`](crate::operation::update_nfs_file_share::UpdateNfsFileShareOutput) with field(s):
     ///   - [`file_share_arn(Option<String>)`](crate::operation::update_nfs_file_share::UpdateNfsFileShareOutput::file_share_arn): <p>The Amazon Resource Name (ARN) of the updated file share.</p>
     /// - On failure, responds with [`SdkError<UpdateNFSFileShareError>`](crate::operation::update_nfs_file_share::UpdateNFSFileShareError)
-    pub fn update_nfs_file_share(
-        &self,
-    ) -> crate::operation::update_nfs_file_share::builders::UpdateNFSFileShareFluentBuilder {
-        crate::operation::update_nfs_file_share::builders::UpdateNFSFileShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_nfs_file_share(&self) -> crate::operation::update_nfs_file_share::builders::UpdateNFSFileShareFluentBuilder {
+        crate::operation::update_nfs_file_share::builders::UpdateNFSFileShareFluentBuilder::new(self.handle.clone())
     }
 }

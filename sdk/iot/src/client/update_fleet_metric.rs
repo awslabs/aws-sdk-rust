@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`expected_version(i64)`](crate::operation::update_fleet_metric::builders::UpdateFleetMetricFluentBuilder::expected_version) / [`set_expected_version(Option<i64>)`](crate::operation::update_fleet_metric::builders::UpdateFleetMetricFluentBuilder::set_expected_version): <p>The expected version of the fleet metric record in the registry.</p>
     /// - On success, responds with [`UpdateFleetMetricOutput`](crate::operation::update_fleet_metric::UpdateFleetMetricOutput)
     /// - On failure, responds with [`SdkError<UpdateFleetMetricError>`](crate::operation::update_fleet_metric::UpdateFleetMetricError)
-    pub fn update_fleet_metric(
-        &self,
-    ) -> crate::operation::update_fleet_metric::builders::UpdateFleetMetricFluentBuilder {
-        crate::operation::update_fleet_metric::builders::UpdateFleetMetricFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_fleet_metric(&self) -> crate::operation::update_fleet_metric::builders::UpdateFleetMetricFluentBuilder {
+        crate::operation::update_fleet_metric::builders::UpdateFleetMetricFluentBuilder::new(self.handle.clone())
     }
 }

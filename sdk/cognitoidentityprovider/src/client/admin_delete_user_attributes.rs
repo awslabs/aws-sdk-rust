@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`user_attribute_names(Vec<String>)`](crate::operation::admin_delete_user_attributes::builders::AdminDeleteUserAttributesFluentBuilder::user_attribute_names) / [`set_user_attribute_names(Option<Vec<String>>)`](crate::operation::admin_delete_user_attributes::builders::AdminDeleteUserAttributesFluentBuilder::set_user_attribute_names): <p>An array of strings representing the user attribute names you want to delete.</p>  <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     /// - On success, responds with [`AdminDeleteUserAttributesOutput`](crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesOutput)
     /// - On failure, responds with [`SdkError<AdminDeleteUserAttributesError>`](crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError)
-    pub fn admin_delete_user_attributes(&self) -> crate::operation::admin_delete_user_attributes::builders::AdminDeleteUserAttributesFluentBuilder{
+    pub fn admin_delete_user_attributes(&self) -> crate::operation::admin_delete_user_attributes::builders::AdminDeleteUserAttributesFluentBuilder {
         crate::operation::admin_delete_user_attributes::builders::AdminDeleteUserAttributesFluentBuilder::new(self.handle.clone())
     }
 }

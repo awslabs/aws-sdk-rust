@@ -15,17 +15,14 @@ impl DescribeSolutionInput {
 }
 impl DescribeSolutionInput {
     /// Creates a new builder-style object to manufacture [`DescribeSolutionInput`](crate::operation::describe_solution::DescribeSolutionInput).
-    pub fn builder() -> crate::operation::describe_solution::builders::DescribeSolutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_solution::builders::DescribeSolutionInputBuilder {
         crate::operation::describe_solution::builders::DescribeSolutionInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSolutionInput`](crate::operation::describe_solution::DescribeSolutionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSolutionInputBuilder {
     pub(crate) solution_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,10 +44,7 @@ impl DescribeSolutionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSolutionInput`](crate::operation::describe_solution::DescribeSolutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_solution::DescribeSolutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_solution::DescribeSolutionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_solution::DescribeSolutionInput {
             solution_arn: self.solution_arn,
         })

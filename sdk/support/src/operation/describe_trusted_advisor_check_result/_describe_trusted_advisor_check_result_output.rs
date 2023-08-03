@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for DescribeTrustedAdvisorCheckResultOutp
 }
 impl DescribeTrustedAdvisorCheckResultOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckResultOutput`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput).
-    pub fn builder() -> crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultOutputBuilder{
+    pub fn builder() -> crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultOutputBuilder {
         crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTrustedAdvisorCheckResultOutput`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckResultOutputBuilder {
     pub(crate) result: ::std::option::Option<crate::types::TrustedAdvisorCheckResult>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl DescribeTrustedAdvisorCheckResultOutputBuilder {
         self
     }
     /// <p>The detailed results of the Trusted Advisor check.</p>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustedAdvisorCheckResult>,
-    ) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<crate::types::TrustedAdvisorCheckResult>) -> Self {
         self.result = input;
         self
     }
@@ -64,10 +59,9 @@ impl DescribeTrustedAdvisorCheckResultOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckResultOutput`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput).
-    pub fn build(self) -> crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput{
+    pub fn build(self) -> crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput {
         crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput {
-            result: self.result
-            ,
+            result: self.result,
             _request_id: self._request_id,
         }
     }

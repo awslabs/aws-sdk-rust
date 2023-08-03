@@ -77,9 +77,7 @@ impl GetPolicyOutput {
 
 /// A builder for [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPolicyOutputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
@@ -93,18 +91,12 @@ pub struct GetPolicyOutputBuilder {
 }
 impl GetPolicyOutputBuilder {
     /// <p>The ID of the policy store that contains the policy that you want information about.</p>
-    pub fn policy_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the policy store that contains the policy that you want information about.</p>
-    pub fn set_policy_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
@@ -132,10 +124,7 @@ impl GetPolicyOutputBuilder {
         self
     }
     /// <p>The type of the policy.</p>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.policy_type = input;
         self
     }
@@ -149,10 +138,7 @@ impl GetPolicyOutputBuilder {
         self
     }
     /// <p>The principal specified in the policy's scope. This element isn't included in the response when <code>Principal</code> isn't present in the policy content.</p>
-    pub fn set_principal(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityIdentifier>,
-    ) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
         self.principal = input;
         self
     }
@@ -166,10 +152,7 @@ impl GetPolicyOutputBuilder {
         self
     }
     /// <p>The resource specified in the policy's scope. This element isn't included in the response when <code>Resource</code> isn't present in the policy content.</p>
-    pub fn set_resource(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityIdentifier>,
-    ) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::EntityIdentifier>) -> Self {
         self.resource = input;
         self
     }
@@ -183,10 +166,7 @@ impl GetPolicyOutputBuilder {
         self
     }
     /// <p>The definition of the requested policy.</p>
-    pub fn set_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::PolicyDefinitionDetail>,
-    ) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PolicyDefinitionDetail>) -> Self {
         self.definition = input;
         self
     }
@@ -200,10 +180,7 @@ impl GetPolicyOutputBuilder {
         self
     }
     /// <p>The date and time that the policy was originally created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_date = input;
         self
     }
@@ -217,10 +194,7 @@ impl GetPolicyOutputBuilder {
         self
     }
     /// <p>The date and time that the policy was last updated.</p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_date = input;
         self
     }

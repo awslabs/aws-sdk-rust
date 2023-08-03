@@ -26,11 +26,7 @@ impl super::Client {
     ///   - [`deletion_protection_enabled(bool)`](crate::operation::update_phone_number::UpdatePhoneNumberOutput::deletion_protection_enabled): <p>When set to true the phone number can't be deleted.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::update_phone_number::UpdatePhoneNumberOutput::created_timestamp): <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     /// - On failure, responds with [`SdkError<UpdatePhoneNumberError>`](crate::operation::update_phone_number::UpdatePhoneNumberError)
-    pub fn update_phone_number(
-        &self,
-    ) -> crate::operation::update_phone_number::builders::UpdatePhoneNumberFluentBuilder {
-        crate::operation::update_phone_number::builders::UpdatePhoneNumberFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_phone_number(&self) -> crate::operation::update_phone_number::builders::UpdatePhoneNumberFluentBuilder {
+        crate::operation::update_phone_number::builders::UpdatePhoneNumberFluentBuilder::new(self.handle.clone())
     }
 }

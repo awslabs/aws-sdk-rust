@@ -10,10 +10,7 @@ impl RunInstancesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::run_instances::RunInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::run_instances::RunInstancesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::run_instances::RunInstancesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.run_instances();
         fluent_builder.inner = self;
@@ -58,10 +55,7 @@ impl RunInstancesFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::run_instances::RunInstances,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::run_instances::RunInstances, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::run_instances::RunInstancesError>,
     > {
         let handle = self.handle.clone();
@@ -72,10 +66,7 @@ impl RunInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,10 +108,7 @@ impl RunInstancesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::run_instances::RunInstances,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::run_instances::RunInstances, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::run_instances::RunInstancesError>,
     > {
         self.customize_middleware().await
@@ -135,17 +123,12 @@ impl RunInstancesFluentBuilder {
         self
     }
     /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_block_device_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
-    ) -> Self {
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
         self.inner = self.inner.set_block_device_mappings(input);
         self
     }
     /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn get_block_device_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
         self.inner.get_block_device_mappings()
     }
     /// <p>The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch template.</p>
@@ -168,10 +151,7 @@ impl RunInstancesFluentBuilder {
         self
     }
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
+    pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
@@ -208,18 +188,13 @@ impl RunInstancesFluentBuilder {
     }
     /// <p>The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
-    pub fn set_ipv6_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>>,
-    ) -> Self {
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>>) -> Self {
         self.inner = self.inner.set_ipv6_addresses(input);
         self
     }
     /// <p>The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
-    pub fn get_ipv6_addresses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>> {
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>> {
         self.inner.get_ipv6_addresses()
     }
     /// <p>The ID of the kernel.</p> <important>
@@ -302,17 +277,12 @@ impl RunInstancesFluentBuilder {
         self
     }
     /// <p>Specifies whether detailed monitoring is enabled for the instance.</p>
-    pub fn set_monitoring(
-        mut self,
-        input: ::std::option::Option<crate::types::RunInstancesMonitoringEnabled>,
-    ) -> Self {
+    pub fn set_monitoring(mut self, input: ::std::option::Option<crate::types::RunInstancesMonitoringEnabled>) -> Self {
         self.inner = self.inner.set_monitoring(input);
         self
     }
     /// <p>Specifies whether detailed monitoring is enabled for the instance.</p>
-    pub fn get_monitoring(
-        &self,
-    ) -> &::std::option::Option<crate::types::RunInstancesMonitoringEnabled> {
+    pub fn get_monitoring(&self) -> &::std::option::Option<crate::types::RunInstancesMonitoringEnabled> {
         self.inner.get_monitoring()
     }
     /// <p>The placement for the instance.</p>
@@ -355,27 +325,19 @@ impl RunInstancesFluentBuilder {
     ///
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// Appends an item to `SecurityGroups`.
@@ -385,29 +347,21 @@ impl RunInstancesFluentBuilder {
     /// <p>[Default VPC] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_groups(input.into());
         self
     }
     /// <p>[Default VPC] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
     }
     /// <p>[Default VPC] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_groups()
     }
     /// <p>The ID of the subnet to launch the instance into.</p>
@@ -442,18 +396,12 @@ impl RunInstancesFluentBuilder {
         self.inner.get_user_data()
     }
     /// <p>Reserved.</p>
-    pub fn additional_info(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_info(input.into());
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_additional_info(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_additional_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_additional_info(input);
         self
     }
@@ -530,50 +478,34 @@ impl RunInstancesFluentBuilder {
         self.inner.get_ebs_optimized()
     }
     /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
-    pub fn iam_instance_profile(
-        mut self,
-        input: crate::types::IamInstanceProfileSpecification,
-    ) -> Self {
+    pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfileSpecification) -> Self {
         self.inner = self.inner.iam_instance_profile(input);
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
-    pub fn set_iam_instance_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
-    ) -> Self {
+    pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<crate::types::IamInstanceProfileSpecification>) -> Self {
         self.inner = self.inner.set_iam_instance_profile(input);
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
-    pub fn get_iam_instance_profile(
-        &self,
-    ) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
+    pub fn get_iam_instance_profile(&self) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
         self.inner.get_iam_instance_profile()
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     /// <p>Default: <code>stop</code> </p>
-    pub fn instance_initiated_shutdown_behavior(
-        mut self,
-        input: crate::types::ShutdownBehavior,
-    ) -> Self {
+    pub fn instance_initiated_shutdown_behavior(mut self, input: crate::types::ShutdownBehavior) -> Self {
         self.inner = self.inner.instance_initiated_shutdown_behavior(input);
         self
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     /// <p>Default: <code>stop</code> </p>
-    pub fn set_instance_initiated_shutdown_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::ShutdownBehavior>,
-    ) -> Self {
+    pub fn set_instance_initiated_shutdown_behavior(mut self, input: ::std::option::Option<crate::types::ShutdownBehavior>) -> Self {
         self.inner = self.inner.set_instance_initiated_shutdown_behavior(input);
         self
     }
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     /// <p>Default: <code>stop</code> </p>
-    pub fn get_instance_initiated_shutdown_behavior(
-        &self,
-    ) -> &::std::option::Option<crate::types::ShutdownBehavior> {
+    pub fn get_instance_initiated_shutdown_behavior(&self) -> &::std::option::Option<crate::types::ShutdownBehavior> {
         self.inner.get_instance_initiated_shutdown_behavior()
     }
     /// Appends an item to `NetworkInterfaces`.
@@ -581,47 +513,33 @@ impl RunInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
     ///
     /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
-    pub fn network_interfaces(
-        mut self,
-        input: crate::types::InstanceNetworkInterfaceSpecification,
-    ) -> Self {
+    pub fn network_interfaces(mut self, input: crate::types::InstanceNetworkInterfaceSpecification) -> Self {
         self.inner = self.inner.network_interfaces(input);
         self
     }
     /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
     pub fn set_network_interfaces(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
     ) -> Self {
         self.inner = self.inner.set_network_interfaces(input);
         self
     }
     /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
-    pub fn get_network_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>
-    {
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>> {
         self.inner.get_network_interfaces()
     }
     /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
     /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
-    pub fn private_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.private_ip_address(input.into());
         self
     }
     /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
     /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_private_ip_address(input);
         self
     }
@@ -636,25 +554,17 @@ impl RunInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_elastic_gpu_specification`](Self::set_elastic_gpu_specification).
     ///
     /// <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your Windows instance to accelerate the graphics performance of your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn elastic_gpu_specification(
-        mut self,
-        input: crate::types::ElasticGpuSpecification,
-    ) -> Self {
+    pub fn elastic_gpu_specification(mut self, input: crate::types::ElasticGpuSpecification) -> Self {
         self.inner = self.inner.elastic_gpu_specification(input);
         self
     }
     /// <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your Windows instance to accelerate the graphics performance of your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_elastic_gpu_specification(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>,
-    ) -> Self {
+    pub fn set_elastic_gpu_specification(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>) -> Self {
         self.inner = self.inner.set_elastic_gpu_specification(input);
         self
     }
     /// <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your Windows instance to accelerate the graphics performance of your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn get_elastic_gpu_specification(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>> {
+    pub fn get_elastic_gpu_specification(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>> {
         self.inner.get_elastic_gpu_specification()
     }
     /// Appends an item to `ElasticInferenceAccelerators`.
@@ -665,10 +575,7 @@ impl RunInstancesFluentBuilder {
     /// <p>You cannot specify accelerators from different generations in the same request.</p> <note>
     /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
     /// </note>
-    pub fn elastic_inference_accelerators(
-        mut self,
-        input: crate::types::ElasticInferenceAccelerator,
-    ) -> Self {
+    pub fn elastic_inference_accelerators(mut self, input: crate::types::ElasticInferenceAccelerator) -> Self {
         self.inner = self.inner.elastic_inference_accelerators(input);
         self
     }
@@ -687,9 +594,7 @@ impl RunInstancesFluentBuilder {
     /// <p>You cannot specify accelerators from different generations in the same request.</p> <note>
     /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
     /// </note>
-    pub fn get_elastic_inference_accelerators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>> {
+    pub fn get_elastic_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>> {
         self.inner.get_elastic_inference_accelerators()
     }
     /// Appends an item to `TagSpecifications`.
@@ -720,10 +625,7 @@ impl RunInstancesFluentBuilder {
     /// <li> <p>Network interfaces</p> </li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
@@ -737,9 +639,7 @@ impl RunInstancesFluentBuilder {
     /// <li> <p>Network interfaces</p> </li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>The launch template to use to launch the instances. Any parameters that you specify in <code>RunInstances</code> override the same parameters in the launch template. You can specify either the name or ID of a launch template, but not both.</p>
@@ -748,42 +648,29 @@ impl RunInstancesFluentBuilder {
         self
     }
     /// <p>The launch template to use to launch the instances. Any parameters that you specify in <code>RunInstances</code> override the same parameters in the launch template. You can specify either the name or ID of a launch template, but not both.</p>
-    pub fn set_launch_template(
-        mut self,
-        input: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
-    ) -> Self {
+    pub fn set_launch_template(mut self, input: ::std::option::Option<crate::types::LaunchTemplateSpecification>) -> Self {
         self.inner = self.inner.set_launch_template(input);
         self
     }
     /// <p>The launch template to use to launch the instances. Any parameters that you specify in <code>RunInstances</code> override the same parameters in the launch template. You can specify either the name or ID of a launch template, but not both.</p>
-    pub fn get_launch_template(
-        &self,
-    ) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
+    pub fn get_launch_template(&self) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
         self.inner.get_launch_template()
     }
     /// <p>The market (purchasing) option for the instances.</p>
     /// <p>For <code>RunInstances</code>, persistent Spot Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.</p>
-    pub fn instance_market_options(
-        mut self,
-        input: crate::types::InstanceMarketOptionsRequest,
-    ) -> Self {
+    pub fn instance_market_options(mut self, input: crate::types::InstanceMarketOptionsRequest) -> Self {
         self.inner = self.inner.instance_market_options(input);
         self
     }
     /// <p>The market (purchasing) option for the instances.</p>
     /// <p>For <code>RunInstances</code>, persistent Spot Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.</p>
-    pub fn set_instance_market_options(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceMarketOptionsRequest>,
-    ) -> Self {
+    pub fn set_instance_market_options(mut self, input: ::std::option::Option<crate::types::InstanceMarketOptionsRequest>) -> Self {
         self.inner = self.inner.set_instance_market_options(input);
         self
     }
     /// <p>The market (purchasing) option for the instances.</p>
     /// <p>For <code>RunInstances</code>, persistent Spot Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.</p>
-    pub fn get_instance_market_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceMarketOptionsRequest> {
+    pub fn get_instance_market_options(&self) -> &::std::option::Option<crate::types::InstanceMarketOptionsRequest> {
         self.inner.get_instance_market_options()
     }
     /// <p>The credit option for CPU usage of the burstable performance instance. Valid values are <code>standard</code> and <code>unlimited</code>. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html"> ModifyInstanceCreditSpecification</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -796,19 +683,14 @@ impl RunInstancesFluentBuilder {
     /// <p>The credit option for CPU usage of the burstable performance instance. Valid values are <code>standard</code> and <code>unlimited</code>. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html"> ModifyInstanceCreditSpecification</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a/T4g instances)</p>
     /// <p>For T3 instances with <code>host</code> tenancy, only <code>standard</code> is supported.</p>
-    pub fn set_credit_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::CreditSpecificationRequest>,
-    ) -> Self {
+    pub fn set_credit_specification(mut self, input: ::std::option::Option<crate::types::CreditSpecificationRequest>) -> Self {
         self.inner = self.inner.set_credit_specification(input);
         self
     }
     /// <p>The credit option for CPU usage of the burstable performance instance. Valid values are <code>standard</code> and <code>unlimited</code>. To change this attribute after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html"> ModifyInstanceCreditSpecification</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a/T4g instances)</p>
     /// <p>For T3 instances with <code>host</code> tenancy, only <code>standard</code> is supported.</p>
-    pub fn get_credit_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::CreditSpecificationRequest> {
+    pub fn get_credit_specification(&self) -> &::std::option::Option<crate::types::CreditSpecificationRequest> {
         self.inner.get_credit_specification()
     }
     /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -817,10 +699,7 @@ impl RunInstancesFluentBuilder {
         self
     }
     /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_cpu_options(
-        mut self,
-        input: ::std::option::Option<crate::types::CpuOptionsRequest>,
-    ) -> Self {
+    pub fn set_cpu_options(mut self, input: ::std::option::Option<crate::types::CpuOptionsRequest>) -> Self {
         self.inner = self.inner.set_cpu_options(input);
         self
     }
@@ -829,25 +708,17 @@ impl RunInstancesFluentBuilder {
         self.inner.get_cpu_options()
     }
     /// <p>Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p>
-    pub fn capacity_reservation_specification(
-        mut self,
-        input: crate::types::CapacityReservationSpecification,
-    ) -> Self {
+    pub fn capacity_reservation_specification(mut self, input: crate::types::CapacityReservationSpecification) -> Self {
         self.inner = self.inner.capacity_reservation_specification(input);
         self
     }
     /// <p>Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p>
-    pub fn set_capacity_reservation_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::CapacityReservationSpecification>,
-    ) -> Self {
+    pub fn set_capacity_reservation_specification(mut self, input: ::std::option::Option<crate::types::CapacityReservationSpecification>) -> Self {
         self.inner = self.inner.set_capacity_reservation_specification(input);
         self
     }
     /// <p>Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p>
-    pub fn get_capacity_reservation_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::CapacityReservationSpecification> {
+    pub fn get_capacity_reservation_specification(&self) -> &::std::option::Option<crate::types::CapacityReservationSpecification> {
         self.inner.get_capacity_reservation_specification()
     }
     /// <p>Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -858,18 +729,13 @@ impl RunInstancesFluentBuilder {
     }
     /// <p>Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>You can't enable hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
-    pub fn set_hibernation_options(
-        mut self,
-        input: ::std::option::Option<crate::types::HibernationOptionsRequest>,
-    ) -> Self {
+    pub fn set_hibernation_options(mut self, input: ::std::option::Option<crate::types::HibernationOptionsRequest>) -> Self {
         self.inner = self.inner.set_hibernation_options(input);
         self
     }
     /// <p>Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>You can't enable hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
-    pub fn get_hibernation_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::HibernationOptionsRequest> {
+    pub fn get_hibernation_options(&self) -> &::std::option::Option<crate::types::HibernationOptionsRequest> {
         self.inner.get_hibernation_options()
     }
     /// Appends an item to `LicenseSpecifications`.
@@ -877,25 +743,17 @@ impl RunInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_license_specifications`](Self::set_license_specifications).
     ///
     /// <p>The license configurations.</p>
-    pub fn license_specifications(
-        mut self,
-        input: crate::types::LicenseConfigurationRequest,
-    ) -> Self {
+    pub fn license_specifications(mut self, input: crate::types::LicenseConfigurationRequest) -> Self {
         self.inner = self.inner.license_specifications(input);
         self
     }
     /// <p>The license configurations.</p>
-    pub fn set_license_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationRequest>>,
-    ) -> Self {
+    pub fn set_license_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationRequest>>) -> Self {
         self.inner = self.inner.set_license_specifications(input);
         self
     }
     /// <p>The license configurations.</p>
-    pub fn get_license_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationRequest>> {
+    pub fn get_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationRequest>> {
         self.inner.get_license_specifications()
     }
     /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a>.</p>
@@ -904,17 +762,12 @@ impl RunInstancesFluentBuilder {
         self
     }
     /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a>.</p>
-    pub fn set_metadata_options(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceMetadataOptionsRequest>,
-    ) -> Self {
+    pub fn set_metadata_options(mut self, input: ::std::option::Option<crate::types::InstanceMetadataOptionsRequest>) -> Self {
         self.inner = self.inner.set_metadata_options(input);
         self
     }
     /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a>.</p>
-    pub fn get_metadata_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceMetadataOptionsRequest> {
+    pub fn get_metadata_options(&self) -> &::std::option::Option<crate::types::InstanceMetadataOptionsRequest> {
         self.inner.get_metadata_options()
     }
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
@@ -925,62 +778,41 @@ impl RunInstancesFluentBuilder {
     }
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
     /// <p>You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.</p>
-    pub fn set_enclave_options(
-        mut self,
-        input: ::std::option::Option<crate::types::EnclaveOptionsRequest>,
-    ) -> Self {
+    pub fn set_enclave_options(mut self, input: ::std::option::Option<crate::types::EnclaveOptionsRequest>) -> Self {
         self.inner = self.inner.set_enclave_options(input);
         self
     }
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
     /// <p>You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.</p>
-    pub fn get_enclave_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::EnclaveOptionsRequest> {
+    pub fn get_enclave_options(&self) -> &::std::option::Option<crate::types::EnclaveOptionsRequest> {
         self.inner.get_enclave_options()
     }
     /// <p>The options for the instance hostname. The default values are inherited from the subnet. Applies only if creating a network interface, not attaching an existing one.</p>
-    pub fn private_dns_name_options(
-        mut self,
-        input: crate::types::PrivateDnsNameOptionsRequest,
-    ) -> Self {
+    pub fn private_dns_name_options(mut self, input: crate::types::PrivateDnsNameOptionsRequest) -> Self {
         self.inner = self.inner.private_dns_name_options(input);
         self
     }
     /// <p>The options for the instance hostname. The default values are inherited from the subnet. Applies only if creating a network interface, not attaching an existing one.</p>
-    pub fn set_private_dns_name_options(
-        mut self,
-        input: ::std::option::Option<crate::types::PrivateDnsNameOptionsRequest>,
-    ) -> Self {
+    pub fn set_private_dns_name_options(mut self, input: ::std::option::Option<crate::types::PrivateDnsNameOptionsRequest>) -> Self {
         self.inner = self.inner.set_private_dns_name_options(input);
         self
     }
     /// <p>The options for the instance hostname. The default values are inherited from the subnet. Applies only if creating a network interface, not attaching an existing one.</p>
-    pub fn get_private_dns_name_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::PrivateDnsNameOptionsRequest> {
+    pub fn get_private_dns_name_options(&self) -> &::std::option::Option<crate::types::PrivateDnsNameOptionsRequest> {
         self.inner.get_private_dns_name_options()
     }
     /// <p>The maintenance and recovery options for the instance.</p>
-    pub fn maintenance_options(
-        mut self,
-        input: crate::types::InstanceMaintenanceOptionsRequest,
-    ) -> Self {
+    pub fn maintenance_options(mut self, input: crate::types::InstanceMaintenanceOptionsRequest) -> Self {
         self.inner = self.inner.maintenance_options(input);
         self
     }
     /// <p>The maintenance and recovery options for the instance.</p>
-    pub fn set_maintenance_options(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceMaintenanceOptionsRequest>,
-    ) -> Self {
+    pub fn set_maintenance_options(mut self, input: ::std::option::Option<crate::types::InstanceMaintenanceOptionsRequest>) -> Self {
         self.inner = self.inner.set_maintenance_options(input);
         self
     }
     /// <p>The maintenance and recovery options for the instance.</p>
-    pub fn get_maintenance_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceMaintenanceOptionsRequest> {
+    pub fn get_maintenance_options(&self) -> &::std::option::Option<crate::types::InstanceMaintenanceOptionsRequest> {
         self.inner.get_maintenance_options()
     }
     /// <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop protection</a>. </p>

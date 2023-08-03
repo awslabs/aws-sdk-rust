@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`listeners(Option<Vec<CustomRoutingListener>>)`](crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput::listeners): <p>The list of listeners for a custom routing accelerator.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
     /// - On failure, responds with [`SdkError<ListCustomRoutingListenersError>`](crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersError)
-    pub fn list_custom_routing_listeners(&self) -> crate::operation::list_custom_routing_listeners::builders::ListCustomRoutingListenersFluentBuilder{
+    pub fn list_custom_routing_listeners(
+        &self,
+    ) -> crate::operation::list_custom_routing_listeners::builders::ListCustomRoutingListenersFluentBuilder {
         crate::operation::list_custom_routing_listeners::builders::ListCustomRoutingListenersFluentBuilder::new(self.handle.clone())
     }
 }

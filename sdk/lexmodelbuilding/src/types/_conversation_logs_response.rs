@@ -30,12 +30,9 @@ impl ConversationLogsResponse {
 
 /// A builder for [`ConversationLogsResponse`](crate::types::ConversationLogsResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConversationLogsResponseBuilder {
-    pub(crate) log_settings:
-        ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsResponse>>,
+    pub(crate) log_settings: ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsResponse>>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ConversationLogsResponseBuilder {
@@ -51,17 +48,12 @@ impl ConversationLogsResponseBuilder {
         self
     }
     /// <p>The settings for your conversation logs. You can log text, audio, or both.</p>
-    pub fn set_log_settings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsResponse>>,
-    ) -> Self {
+    pub fn set_log_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsResponse>>) -> Self {
         self.log_settings = input;
         self
     }
     /// <p>The settings for your conversation logs. You can log text, audio, or both.</p>
-    pub fn get_log_settings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSettingsResponse>> {
+    pub fn get_log_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSettingsResponse>> {
         &self.log_settings
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to write your logs to CloudWatch Logs or an S3 bucket.</p>

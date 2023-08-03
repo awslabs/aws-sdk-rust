@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`image_pipeline_list(Option<Vec<ImagePipeline>>)`](crate::operation::list_image_pipelines::ListImagePipelinesOutput::image_pipeline_list): <p>The list of image pipelines.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_image_pipelines::ListImagePipelinesOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     /// - On failure, responds with [`SdkError<ListImagePipelinesError>`](crate::operation::list_image_pipelines::ListImagePipelinesError)
-    pub fn list_image_pipelines(
-        &self,
-    ) -> crate::operation::list_image_pipelines::builders::ListImagePipelinesFluentBuilder {
-        crate::operation::list_image_pipelines::builders::ListImagePipelinesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_image_pipelines(&self) -> crate::operation::list_image_pipelines::builders::ListImagePipelinesFluentBuilder {
+        crate::operation::list_image_pipelines::builders::ListImagePipelinesFluentBuilder::new(self.handle.clone())
     }
 }

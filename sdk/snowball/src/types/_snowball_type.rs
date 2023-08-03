@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SnowballType {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,9 +85,7 @@ impl ::std::convert::From<&str> for SnowballType {
             "STANDARD" => SnowballType::Standard,
             "V3_5C" => SnowballType::V35C,
             "V3_5S" => SnowballType::V35S,
-            other => {
-                SnowballType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SnowballType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

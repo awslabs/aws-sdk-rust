@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteMitigationActionOutput {
 }
 impl DeleteMitigationActionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMitigationActionOutput`](crate::operation::delete_mitigation_action::DeleteMitigationActionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_mitigation_action::builders::DeleteMitigationActionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_mitigation_action::builders::DeleteMitigationActionOutputBuilder {
         crate::operation::delete_mitigation_action::builders::DeleteMitigationActionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteMitigationActionOutput`](crate::operation::delete_mitigation_action::DeleteMitigationActionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteMitigationActionOutputBuilder {
     _request_id: Option<String>,
 }

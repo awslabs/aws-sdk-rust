@@ -10,10 +10,7 @@ impl CancelHandshakeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_handshake::CancelHandshakeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_handshake::CancelHandshakeError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_handshake::CancelHandshakeError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_handshake();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl CancelHandshakeFluentBuilder {
         }
     }
     /// Access the CancelHandshake as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_handshake::builders::CancelHandshakeInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_handshake::builders::CancelHandshakeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl CancelHandshakeFluentBuilder {
             crate::operation::cancel_handshake::CancelHandshake,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_handshake::CancelHandshakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_handshake::CancelHandshakeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl CancelHandshakeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl CancelHandshakeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_handshake::CancelHandshakeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_handshake::CancelHandshakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_handshake::CancelHandshakeError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl CancelHandshakeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_handshake::CancelHandshakeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_handshake::CancelHandshakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_handshake::CancelHandshakeError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +104,7 @@ impl CancelHandshakeFluentBuilder {
             crate::operation::cancel_handshake::CancelHandshake,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_handshake::CancelHandshakeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_handshake::CancelHandshakeError>,
     > {
         self.customize_middleware().await
     }

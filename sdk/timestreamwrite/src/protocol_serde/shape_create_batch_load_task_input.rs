@@ -9,28 +9,19 @@ pub fn ser_create_batch_load_task_input(
     if let Some(var_2) = &input.data_model_configuration {
         #[allow(unused_mut)]
         let mut object_3 = object.key("DataModelConfiguration").start_object();
-        crate::protocol_serde::shape_data_model_configuration::ser_data_model_configuration(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_data_model_configuration::ser_data_model_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.data_source_configuration {
         #[allow(unused_mut)]
         let mut object_5 = object.key("DataSourceConfiguration").start_object();
-        crate::protocol_serde::shape_data_source_configuration::ser_data_source_configuration(
-            &mut object_5,
-            var_4,
-        )?;
+        crate::protocol_serde::shape_data_source_configuration::ser_data_source_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
     if let Some(var_6) = &input.report_configuration {
         #[allow(unused_mut)]
         let mut object_7 = object.key("ReportConfiguration").start_object();
-        crate::protocol_serde::shape_report_configuration::ser_report_configuration(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_report_configuration::ser_report_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.target_database_name {

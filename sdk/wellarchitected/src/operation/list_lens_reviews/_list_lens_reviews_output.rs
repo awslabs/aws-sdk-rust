@@ -13,8 +13,7 @@ pub struct ListLensReviewsOutput {
     pub milestone_number: i32,
     /// <p>List of lens summaries of lens reviews of a workload.</p>
     #[doc(hidden)]
-    pub lens_review_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::LensReviewSummary>>,
+    pub lens_review_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LensReviewSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -31,9 +30,7 @@ impl ListLensReviewsOutput {
         self.milestone_number
     }
     /// <p>List of lens summaries of lens reviews of a workload.</p>
-    pub fn lens_review_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::LensReviewSummary]> {
+    pub fn lens_review_summaries(&self) -> ::std::option::Option<&[crate::types::LensReviewSummary]> {
         self.lens_review_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -48,22 +45,18 @@ impl ::aws_http::request_id::RequestId for ListLensReviewsOutput {
 }
 impl ListLensReviewsOutput {
     /// Creates a new builder-style object to manufacture [`ListLensReviewsOutput`](crate::operation::list_lens_reviews::ListLensReviewsOutput).
-    pub fn builder() -> crate::operation::list_lens_reviews::builders::ListLensReviewsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_lens_reviews::builders::ListLensReviewsOutputBuilder {
         crate::operation::list_lens_reviews::builders::ListLensReviewsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListLensReviewsOutput`](crate::operation::list_lens_reviews::ListLensReviewsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLensReviewsOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) milestone_number: ::std::option::Option<i32>,
-    pub(crate) lens_review_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::LensReviewSummary>>,
+    pub(crate) lens_review_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LensReviewSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -111,17 +104,12 @@ impl ListLensReviewsOutputBuilder {
         self
     }
     /// <p>List of lens summaries of lens reviews of a workload.</p>
-    pub fn set_lens_review_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LensReviewSummary>>,
-    ) -> Self {
+    pub fn set_lens_review_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LensReviewSummary>>) -> Self {
         self.lens_review_summaries = input;
         self
     }
     /// <p>List of lens summaries of lens reviews of a workload.</p>
-    pub fn get_lens_review_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LensReviewSummary>> {
+    pub fn get_lens_review_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LensReviewSummary>> {
         &self.lens_review_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`kinesis_stream_name(Option<String>)`](crate::operation::stop_activity_stream::StopActivityStreamOutput::kinesis_stream_name): <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
     ///   - [`status(Option<ActivityStreamStatus>)`](crate::operation::stop_activity_stream::StopActivityStreamOutput::status): <p>The status of the database activity stream.</p>
     /// - On failure, responds with [`SdkError<StopActivityStreamError>`](crate::operation::stop_activity_stream::StopActivityStreamError)
-    pub fn stop_activity_stream(
-        &self,
-    ) -> crate::operation::stop_activity_stream::builders::StopActivityStreamFluentBuilder {
-        crate::operation::stop_activity_stream::builders::StopActivityStreamFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_activity_stream(&self) -> crate::operation::stop_activity_stream::builders::StopActivityStreamFluentBuilder {
+        crate::operation::stop_activity_stream::builders::StopActivityStreamFluentBuilder::new(self.handle.clone())
     }
 }

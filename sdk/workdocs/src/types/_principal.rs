@@ -37,9 +37,7 @@ impl Principal {
 
 /// A builder for [`Principal`](crate::types::Principal).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrincipalBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::PrincipalType>,
@@ -86,17 +84,12 @@ impl PrincipalBuilder {
         self
     }
     /// <p>The permission information for the resource.</p>
-    pub fn set_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionInfo>>,
-    ) -> Self {
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionInfo>>) -> Self {
         self.roles = input;
         self
     }
     /// <p>The permission information for the resource.</p>
-    pub fn get_roles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionInfo>> {
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionInfo>> {
         &self.roles
     }
     /// Consumes the builder and constructs a [`Principal`](crate::types::Principal).

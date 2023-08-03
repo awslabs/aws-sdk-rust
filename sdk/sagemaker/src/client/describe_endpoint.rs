@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`explainer_config(Option<ExplainerConfig>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::explainer_config): <p>The configuration parameters for an explainer.</p>
     ///   - [`shadow_production_variants(Option<Vec<ProductionVariantSummary>>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::shadow_production_variants): <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointError>`](crate::operation::describe_endpoint::DescribeEndpointError)
-    pub fn describe_endpoint(
-        &self,
-    ) -> crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder {
-        crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_endpoint(&self) -> crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder {
+        crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::new(self.handle.clone())
     }
 }

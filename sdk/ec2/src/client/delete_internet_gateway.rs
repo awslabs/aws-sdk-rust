@@ -7,12 +7,7 @@ impl super::Client {
     ///   - [`internet_gateway_id(impl ::std::convert::Into<String>)`](crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayFluentBuilder::internet_gateway_id) / [`set_internet_gateway_id(Option<String>)`](crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayFluentBuilder::set_internet_gateway_id): <p>The ID of the internet gateway.</p>
     /// - On success, responds with [`DeleteInternetGatewayOutput`](crate::operation::delete_internet_gateway::DeleteInternetGatewayOutput)
     /// - On failure, responds with [`SdkError<DeleteInternetGatewayError>`](crate::operation::delete_internet_gateway::DeleteInternetGatewayError)
-    pub fn delete_internet_gateway(
-        &self,
-    ) -> crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayFluentBuilder
-    {
-        crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_internet_gateway(&self) -> crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayFluentBuilder {
+        crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayFluentBuilder::new(self.handle.clone())
     }
 }

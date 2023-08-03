@@ -99,9 +99,7 @@ pub struct DevEndpoint {
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     #[doc(hidden)]
-    pub arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DevEndpoint {
     /// <p>The name of the <code>DevEndpoint</code>.</p>
@@ -222,11 +220,7 @@ impl DevEndpoint {
     /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    pub fn arguments(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn arguments(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.arguments.as_ref()
     }
 }
@@ -239,9 +233,7 @@ impl DevEndpoint {
 
 /// A builder for [`DevEndpoint`](crate::types::DevEndpoint).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DevEndpointBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -267,24 +259,16 @@ pub struct DevEndpointBuilder {
     pub(crate) public_key: ::std::option::Option<::std::string::String>,
     pub(crate) public_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_configuration: ::std::option::Option<::std::string::String>,
-    pub(crate) arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DevEndpointBuilder {
     /// <p>The name of the <code>DevEndpoint</code>.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>DevEndpoint</code>.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
@@ -311,27 +295,19 @@ impl DevEndpointBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>A list of security group identifiers used in this <code>DevEndpoint</code>.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of security group identifiers used in this <code>DevEndpoint</code>.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>A list of security group identifiers used in this <code>DevEndpoint</code>.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>The subnet ID for this <code>DevEndpoint</code>.</p>
@@ -349,18 +325,12 @@ impl DevEndpointBuilder {
         &self.subnet_id
     }
     /// <p>The YARN endpoint address used by this <code>DevEndpoint</code>.</p>
-    pub fn yarn_endpoint_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn yarn_endpoint_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.yarn_endpoint_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The YARN endpoint address used by this <code>DevEndpoint</code>.</p>
-    pub fn set_yarn_endpoint_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_yarn_endpoint_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.yarn_endpoint_address = input;
         self
     }
@@ -369,18 +339,12 @@ impl DevEndpointBuilder {
         &self.yarn_endpoint_address
     }
     /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is present only when you create the <code>DevEndpoint</code> within your VPC.</p>
-    pub fn private_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn private_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is present only when you create the <code>DevEndpoint</code> within your VPC.</p>
-    pub fn set_private_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_private_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_address = input;
         self
     }
@@ -394,10 +358,7 @@ impl DevEndpointBuilder {
         self
     }
     /// <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
-    pub fn set_zeppelin_remote_spark_interpreter_port(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_zeppelin_remote_spark_interpreter_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.zeppelin_remote_spark_interpreter_port = input;
         self
     }
@@ -406,18 +367,12 @@ impl DevEndpointBuilder {
         &self.zeppelin_remote_spark_interpreter_port
     }
     /// <p>The public IP address used by this <code>DevEndpoint</code>. The <code>PublicAddress</code> field is present only when you create a non-virtual private cloud (VPC) <code>DevEndpoint</code>.</p>
-    pub fn public_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public IP address used by this <code>DevEndpoint</code>. The <code>PublicAddress</code> field is present only when you create a non-virtual private cloud (VPC) <code>DevEndpoint</code>.</p>
-    pub fn set_public_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_address = input;
         self
     }
@@ -457,10 +412,7 @@ impl DevEndpointBuilder {
     /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
     /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
-    pub fn set_worker_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkerType>,
-    ) -> Self {
+    pub fn set_worker_type(mut self, input: ::std::option::Option<crate::types::WorkerType>) -> Self {
         self.worker_type = input;
         self
     }
@@ -529,18 +481,12 @@ impl DevEndpointBuilder {
         &self.number_of_nodes
     }
     /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -565,20 +511,14 @@ impl DevEndpointBuilder {
     /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
     /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
     /// </note>
-    pub fn extra_python_libs_s3_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extra_python_libs_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extra_python_libs_s3_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
     /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
     /// </note>
-    pub fn set_extra_python_libs_s3_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extra_python_libs_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extra_python_libs_s3_path = input;
         self
     }
@@ -591,20 +531,14 @@ impl DevEndpointBuilder {
     /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
     /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
-    pub fn extra_jars_s3_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extra_jars_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extra_jars_s3_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
     /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
-    pub fn set_extra_jars_s3_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extra_jars_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extra_jars_s3_path = input;
         self
     }
@@ -615,18 +549,12 @@ impl DevEndpointBuilder {
         &self.extra_jars_s3_path
     }
     /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -635,18 +563,12 @@ impl DevEndpointBuilder {
         &self.failure_reason
     }
     /// <p>The status of the last update.</p>
-    pub fn last_update_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_update_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_update_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the last update.</p>
-    pub fn set_last_update_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_update_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_update_status = input;
         self
     }
@@ -660,10 +582,7 @@ impl DevEndpointBuilder {
         self
     }
     /// <p>The point in time at which this DevEndpoint was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -677,17 +596,12 @@ impl DevEndpointBuilder {
         self
     }
     /// <p>The point in time at which this <code>DevEndpoint</code> was last modified.</p>
-    pub fn set_last_modified_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_timestamp = input;
         self
     }
     /// <p>The point in time at which this <code>DevEndpoint</code> was last modified.</p>
-    pub fn get_last_modified_timestamp(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_timestamp
     }
     /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
@@ -720,34 +634,23 @@ impl DevEndpointBuilder {
     /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication. Using this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
     /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
     /// </note>
-    pub fn set_public_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_public_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.public_keys = input;
         self
     }
     /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication. Using this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
     /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
     /// </note>
-    pub fn get_public_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_public_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.public_keys
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
-    pub fn security_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
-    pub fn set_security_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_configuration = input;
         self
     }
@@ -765,11 +668,7 @@ impl DevEndpointBuilder {
     /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    pub fn arguments(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn arguments(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.arguments.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.arguments = ::std::option::Option::Some(hash_map);
@@ -781,12 +680,7 @@ impl DevEndpointBuilder {
     /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    pub fn set_arguments(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_arguments(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.arguments = input;
         self
     }
@@ -796,11 +690,7 @@ impl DevEndpointBuilder {
     /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    pub fn get_arguments(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.arguments
     }
     /// Consumes the builder and constructs a [`DevEndpoint`](crate::types::DevEndpoint).
@@ -812,9 +702,7 @@ impl DevEndpointBuilder {
             subnet_id: self.subnet_id,
             yarn_endpoint_address: self.yarn_endpoint_address,
             private_address: self.private_address,
-            zeppelin_remote_spark_interpreter_port: self
-                .zeppelin_remote_spark_interpreter_port
-                .unwrap_or_default(),
+            zeppelin_remote_spark_interpreter_port: self.zeppelin_remote_spark_interpreter_port.unwrap_or_default(),
             public_address: self.public_address,
             status: self.status,
             worker_type: self.worker_type,

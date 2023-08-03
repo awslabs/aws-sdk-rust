@@ -29,18 +29,14 @@ impl DescribeConnectionLoaInput {
 }
 impl DescribeConnectionLoaInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionLoaInput`](crate::operation::describe_connection_loa::DescribeConnectionLoaInput).
-    pub fn builder(
-    ) -> crate::operation::describe_connection_loa::builders::DescribeConnectionLoaInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_connection_loa::builders::DescribeConnectionLoaInputBuilder {
         crate::operation::describe_connection_loa::builders::DescribeConnectionLoaInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectionLoaInput`](crate::operation::describe_connection_loa::DescribeConnectionLoaInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectionLoaInputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
@@ -48,18 +44,12 @@ pub struct DescribeConnectionLoaInputBuilder {
 }
 impl DescribeConnectionLoaInputBuilder {
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_id = input;
         self
     }
@@ -68,18 +58,12 @@ impl DescribeConnectionLoaInputBuilder {
         &self.connection_id
     }
     /// <p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
-    pub fn provider_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
-    pub fn set_provider_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_name = input;
         self
     }
@@ -93,10 +77,7 @@ impl DescribeConnectionLoaInputBuilder {
         self
     }
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
-    pub fn set_loa_content_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LoaContentType>,
-    ) -> Self {
+    pub fn set_loa_content_type(mut self, input: ::std::option::Option<crate::types::LoaContentType>) -> Self {
         self.loa_content_type = input;
         self
     }
@@ -107,16 +88,12 @@ impl DescribeConnectionLoaInputBuilder {
     /// Consumes the builder and constructs a [`DescribeConnectionLoaInput`](crate::operation::describe_connection_loa::DescribeConnectionLoaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_connection_loa::DescribeConnectionLoaInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_connection_loa::DescribeConnectionLoaInput {
-                connection_id: self.connection_id,
-                provider_name: self.provider_name,
-                loa_content_type: self.loa_content_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_connection_loa::DescribeConnectionLoaInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_connection_loa::DescribeConnectionLoaInput {
+            connection_id: self.connection_id,
+            provider_name: self.provider_name,
+            loa_content_type: self.loa_content_type,
+        })
     }
 }

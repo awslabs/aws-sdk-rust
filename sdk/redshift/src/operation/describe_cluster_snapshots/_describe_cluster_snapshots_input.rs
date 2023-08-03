@@ -53,8 +53,7 @@ pub struct DescribeClusterSnapshotsInput {
     pub cluster_exists: ::std::option::Option<bool>,
     /// <p></p>
     #[doc(hidden)]
-    pub sorting_entities:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSortingEntity>>,
+    pub sorting_entities: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSortingEntity>>,
 }
 impl DescribeClusterSnapshotsInput {
     /// <p>The identifier of the cluster which generated the requested snapshots.</p>
@@ -117,26 +116,20 @@ impl DescribeClusterSnapshotsInput {
         self.cluster_exists
     }
     /// <p></p>
-    pub fn sorting_entities(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SnapshotSortingEntity]> {
+    pub fn sorting_entities(&self) -> ::std::option::Option<&[crate::types::SnapshotSortingEntity]> {
         self.sorting_entities.as_deref()
     }
 }
 impl DescribeClusterSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterSnapshotsInput`](crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsInputBuilder {
         crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeClusterSnapshotsInput`](crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterSnapshotsInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
@@ -150,23 +143,16 @@ pub struct DescribeClusterSnapshotsInputBuilder {
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cluster_exists: ::std::option::Option<bool>,
-    pub(crate) sorting_entities:
-        ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSortingEntity>>,
+    pub(crate) sorting_entities: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSortingEntity>>,
 }
 impl DescribeClusterSnapshotsInputBuilder {
     /// <p>The identifier of the cluster which generated the requested snapshots.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster which generated the requested snapshots.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -175,18 +161,12 @@ impl DescribeClusterSnapshotsInputBuilder {
         &self.cluster_identifier
     }
     /// <p>The snapshot identifier of the snapshot about which to return information.</p>
-    pub fn snapshot_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The snapshot identifier of the snapshot about which to return information.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_identifier = input;
         self
     }
@@ -210,19 +190,13 @@ impl DescribeClusterSnapshotsInputBuilder {
     }
     /// <p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p>
     /// <p>Valid Values: <code>automated</code> | <code>manual</code> </p>
-    pub fn snapshot_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p>
     /// <p>Valid Values: <code>automated</code> | <code>manual</code> </p>
-    pub fn set_snapshot_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_type = input;
         self
     }
@@ -239,10 +213,7 @@ impl DescribeClusterSnapshotsInputBuilder {
     }
     /// <p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -259,10 +230,7 @@ impl DescribeClusterSnapshotsInputBuilder {
     }
     /// <p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -306,18 +274,12 @@ impl DescribeClusterSnapshotsInputBuilder {
         &self.marker
     }
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.</p>
-    pub fn owner_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.</p>
-    pub fn set_owner_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account = input;
         self
     }
@@ -337,10 +299,7 @@ impl DescribeClusterSnapshotsInputBuilder {
         self
     }
     /// <p>A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
@@ -360,10 +319,7 @@ impl DescribeClusterSnapshotsInputBuilder {
         self
     }
     /// <p>A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_values = input;
         self
     }
@@ -415,17 +371,12 @@ impl DescribeClusterSnapshotsInputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_sorting_entities(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSortingEntity>>,
-    ) -> Self {
+    pub fn set_sorting_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSortingEntity>>) -> Self {
         self.sorting_entities = input;
         self
     }
     /// <p></p>
-    pub fn get_sorting_entities(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotSortingEntity>> {
+    pub fn get_sorting_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotSortingEntity>> {
         &self.sorting_entities
     }
     /// Consumes the builder and constructs a [`DescribeClusterSnapshotsInput`](crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsInput).
@@ -435,22 +386,20 @@ impl DescribeClusterSnapshotsInputBuilder {
         crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsInput {
-                cluster_identifier: self.cluster_identifier,
-                snapshot_identifier: self.snapshot_identifier,
-                snapshot_arn: self.snapshot_arn,
-                snapshot_type: self.snapshot_type,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                max_records: self.max_records,
-                marker: self.marker,
-                owner_account: self.owner_account,
-                tag_keys: self.tag_keys,
-                tag_values: self.tag_values,
-                cluster_exists: self.cluster_exists,
-                sorting_entities: self.sorting_entities,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsInput {
+            cluster_identifier: self.cluster_identifier,
+            snapshot_identifier: self.snapshot_identifier,
+            snapshot_arn: self.snapshot_arn,
+            snapshot_type: self.snapshot_type,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            max_records: self.max_records,
+            marker: self.marker,
+            owner_account: self.owner_account,
+            tag_keys: self.tag_keys,
+            tag_values: self.tag_values,
+            cluster_exists: self.cluster_exists,
+            sorting_entities: self.sorting_entities,
+        })
     }
 }

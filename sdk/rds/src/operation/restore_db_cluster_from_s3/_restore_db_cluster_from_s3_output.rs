@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for RestoreDbClusterFromS3Output {
 }
 impl RestoreDbClusterFromS3Output {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromS3Output`](crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output).
-    pub fn builder(
-    ) -> crate::operation::restore_db_cluster_from_s3::builders::RestoreDbClusterFromS3OutputBuilder
-    {
+    pub fn builder() -> crate::operation::restore_db_cluster_from_s3::builders::RestoreDbClusterFromS3OutputBuilder {
         crate::operation::restore_db_cluster_from_s3::builders::RestoreDbClusterFromS3OutputBuilder::default()
     }
 }
 
 /// A builder for [`RestoreDbClusterFromS3Output`](crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreDbClusterFromS3OutputBuilder {
     pub(crate) db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,
@@ -82,9 +78,7 @@ impl RestoreDbClusterFromS3OutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RestoreDbClusterFromS3Output`](crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output {
+    pub fn build(self) -> crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output {
         crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output {
             db_cluster: self.db_cluster,
             _request_id: self._request_id,

@@ -4,9 +4,7 @@ pub fn ser_alarm_configuration(
     input: &crate::types::AlarmConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if input.ignore_poll_alarm_failure {
-        object
-            .key("IgnorePollAlarmFailure")
-            .boolean(input.ignore_poll_alarm_failure);
+        object.key("IgnorePollAlarmFailure").boolean(input.ignore_poll_alarm_failure);
     }
     if let Some(var_1) = &input.alarms {
         let mut array_2 = object.key("Alarms").start_array();
@@ -25,17 +23,9 @@ pub fn ser_alarm_configuration(
 
 pub(crate) fn de_alarm_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AlarmConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AlarmConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -45,38 +35,28 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "IgnorePollAlarmFailure" => {
-                                builder = builder.set_ignore_poll_alarm_failure(
-                                    ::aws_smithy_json::deserialize::token::expect_bool_or_null(
-                                        tokens.next(),
-                                    )?,
-                                );
-                            }
-                            "Alarms" => {
-                                builder = builder.set_alarms(
-                                    crate::protocol_serde::shape_alarm_list::de_alarm_list(tokens)?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "IgnorePollAlarmFailure" => {
+                            builder =
+                                builder.set_ignore_poll_alarm_failure(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
-                    }
+                        "Alarms" => {
+                            builder = builder.set_alarms(crate::protocol_serde::shape_alarm_list::de_alarm_list(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

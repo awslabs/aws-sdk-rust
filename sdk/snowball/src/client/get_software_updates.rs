@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetSoftwareUpdatesOutput`](crate::operation::get_software_updates::GetSoftwareUpdatesOutput) with field(s):
     ///   - [`updates_uri(Option<String>)`](crate::operation::get_software_updates::GetSoftwareUpdatesOutput::updates_uri): <p>The Amazon S3 presigned URL for the update file associated with the specified <code>JobId</code> value. The software update will be available for 2 days after this request is made. To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
     /// - On failure, responds with [`SdkError<GetSoftwareUpdatesError>`](crate::operation::get_software_updates::GetSoftwareUpdatesError)
-    pub fn get_software_updates(
-        &self,
-    ) -> crate::operation::get_software_updates::builders::GetSoftwareUpdatesFluentBuilder {
-        crate::operation::get_software_updates::builders::GetSoftwareUpdatesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_software_updates(&self) -> crate::operation::get_software_updates::builders::GetSoftwareUpdatesFluentBuilder {
+        crate::operation::get_software_updates::builders::GetSoftwareUpdatesFluentBuilder::new(self.handle.clone())
     }
 }

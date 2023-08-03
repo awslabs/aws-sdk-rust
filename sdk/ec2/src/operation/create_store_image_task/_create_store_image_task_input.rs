@@ -36,17 +36,14 @@ impl CreateStoreImageTaskInput {
 }
 impl CreateStoreImageTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateStoreImageTaskInput`](crate::operation::create_store_image_task::CreateStoreImageTaskInput).
-    pub fn builder(
-    ) -> crate::operation::create_store_image_task::builders::CreateStoreImageTaskInputBuilder {
+    pub fn builder() -> crate::operation::create_store_image_task::builders::CreateStoreImageTaskInputBuilder {
         crate::operation::create_store_image_task::builders::CreateStoreImageTaskInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateStoreImageTaskInput`](crate::operation::create_store_image_task::CreateStoreImageTaskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateStoreImageTaskInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
@@ -94,17 +91,12 @@ impl CreateStoreImageTaskInputBuilder {
         self
     }
     /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket. </p>
-    pub fn set_s3_object_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::S3ObjectTag>>,
-    ) -> Self {
+    pub fn set_s3_object_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3ObjectTag>>) -> Self {
         self.s3_object_tags = input;
         self
     }
     /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket. </p>
-    pub fn get_s3_object_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ObjectTag>> {
+    pub fn get_s3_object_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ObjectTag>> {
         &self.s3_object_tags
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -124,17 +116,13 @@ impl CreateStoreImageTaskInputBuilder {
     /// Consumes the builder and constructs a [`CreateStoreImageTaskInput`](crate::operation::create_store_image_task::CreateStoreImageTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_store_image_task::CreateStoreImageTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_store_image_task::CreateStoreImageTaskInput {
-                image_id: self.image_id,
-                bucket: self.bucket,
-                s3_object_tags: self.s3_object_tags,
-                dry_run: self.dry_run,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_store_image_task::CreateStoreImageTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_store_image_task::CreateStoreImageTaskInput {
+            image_id: self.image_id,
+            bucket: self.bucket,
+            s3_object_tags: self.s3_object_tags,
+            dry_run: self.dry_run,
+        })
     }
 }

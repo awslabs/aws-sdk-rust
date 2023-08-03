@@ -23,9 +23,7 @@ impl LaunchTemplatesMonitoring {
 
 /// A builder for [`LaunchTemplatesMonitoring`](crate::types::LaunchTemplatesMonitoring).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplatesMonitoringBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl LaunchTemplatesMonitoringBuilder {
     }
     /// Consumes the builder and constructs a [`LaunchTemplatesMonitoring`](crate::types::LaunchTemplatesMonitoring).
     pub fn build(self) -> crate::types::LaunchTemplatesMonitoring {
-        crate::types::LaunchTemplatesMonitoring {
-            enabled: self.enabled,
-        }
+        crate::types::LaunchTemplatesMonitoring { enabled: self.enabled }
     }
 }

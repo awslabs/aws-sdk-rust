@@ -29,17 +29,14 @@ impl GetAnomalyMonitorsInput {
 }
 impl GetAnomalyMonitorsInput {
     /// Creates a new builder-style object to manufacture [`GetAnomalyMonitorsInput`](crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput).
-    pub fn builder(
-    ) -> crate::operation::get_anomaly_monitors::builders::GetAnomalyMonitorsInputBuilder {
+    pub fn builder() -> crate::operation::get_anomaly_monitors::builders::GetAnomalyMonitorsInputBuilder {
         crate::operation::get_anomaly_monitors::builders::GetAnomalyMonitorsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetAnomalyMonitorsInput`](crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAnomalyMonitorsInputBuilder {
     pub(crate) monitor_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
@@ -51,42 +48,28 @@ impl GetAnomalyMonitorsInputBuilder {
     /// To override the contents of this collection use [`set_monitor_arn_list`](Self::set_monitor_arn_list).
     ///
     /// <p>A list of cost anomaly monitor ARNs. </p>
-    pub fn monitor_arn_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn monitor_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.monitor_arn_list.unwrap_or_default();
         v.push(input.into());
         self.monitor_arn_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of cost anomaly monitor ARNs. </p>
-    pub fn set_monitor_arn_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_monitor_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.monitor_arn_list = input;
         self
     }
     /// <p>A list of cost anomaly monitor ARNs. </p>
-    pub fn get_monitor_arn_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_monitor_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.monitor_arn_list
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_page_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn set_next_page_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_page_token = input;
         self
     }
@@ -111,16 +94,11 @@ impl GetAnomalyMonitorsInputBuilder {
     /// Consumes the builder and constructs a [`GetAnomalyMonitorsInput`](crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput {
-                monitor_arn_list: self.monitor_arn_list,
-                next_page_token: self.next_page_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput {
+            monitor_arn_list: self.monitor_arn_list,
+            next_page_token: self.next_page_token,
+            max_results: self.max_results,
+        })
     }
 }

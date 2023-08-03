@@ -27,10 +27,7 @@ pub fn ser_update_bucket_input(
     if let Some(var_8) = &input.access_log_config {
         #[allow(unused_mut)]
         let mut object_9 = object.key("accessLogConfig").start_object();
-        crate::protocol_serde::shape_bucket_access_log_config::ser_bucket_access_log_config(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_bucket_access_log_config::ser_bucket_access_log_config(&mut object_9, var_8)?;
         object_9.finish();
     }
     Ok(())

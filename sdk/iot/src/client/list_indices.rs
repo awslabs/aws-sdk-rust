@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`index_names(Option<Vec<String>>)`](crate::operation::list_indices::ListIndicesOutput::index_names): <p>The index names.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_indices::ListIndicesOutput::next_token): <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListIndicesError>`](crate::operation::list_indices::ListIndicesError)
-    pub fn list_indices(
-        &self,
-    ) -> crate::operation::list_indices::builders::ListIndicesFluentBuilder {
+    pub fn list_indices(&self) -> crate::operation::list_indices::builders::ListIndicesFluentBuilder {
         crate::operation::list_indices::builders::ListIndicesFluentBuilder::new(self.handle.clone())
     }
 }

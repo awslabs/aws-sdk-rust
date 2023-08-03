@@ -9,7 +9,8 @@ pub fn de_get_traffic_policy_instance_count_http_error(
     crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountError::generic(generic))
@@ -27,16 +28,21 @@ pub fn de_get_traffic_policy_instance_count_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountOutputBuilder::default();
-        output = crate::protocol_serde::shape_get_traffic_policy_instance_count::de_get_traffic_policy_instance_count(_response_body, output).map_err(crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_get_traffic_policy_instance_count::de_get_traffic_policy_instance_count(_response_body, output)
+            .map_err(crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_get_traffic_policy_instance_count(inp: &[u8], mut builder: crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountOutputBuilder) -> Result<crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_get_traffic_policy_instance_count(
+    inp: &[u8],
+    mut builder: crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountOutputBuilder,
+) -> Result<
+    crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -44,11 +50,10 @@ pub fn de_get_traffic_policy_instance_count(inp: &[u8], mut builder: crate::oper
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !start_el.matches("GetTrafficPolicyInstanceCountResponse") {
-        return Err(
-                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
-                                    format!("encountered invalid XML root: expected GetTrafficPolicyInstanceCountResponse but got {:?}. This is likely a bug in the SDK.", start_el)
-                                )
-                            );
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            "encountered invalid XML root: expected GetTrafficPolicyInstanceCountResponse but got {:?}. This is likely a bug in the SDK.",
+            start_el
+        )));
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

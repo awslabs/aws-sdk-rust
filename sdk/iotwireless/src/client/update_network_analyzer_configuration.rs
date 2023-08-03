@@ -14,7 +14,9 @@ impl super::Client {
     ///   - [`multicast_groups_to_remove(Vec<String>)`](crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationFluentBuilder::multicast_groups_to_remove) / [`set_multicast_groups_to_remove(Option<Vec<String>>)`](crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationFluentBuilder::set_multicast_groups_to_remove): <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to remove in the input array.</p>
     /// - On success, responds with [`UpdateNetworkAnalyzerConfigurationOutput`](crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateNetworkAnalyzerConfigurationError>`](crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationError)
-    pub fn update_network_analyzer_configuration(&self) -> crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationFluentBuilder{
+    pub fn update_network_analyzer_configuration(
+        &self,
+    ) -> crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationFluentBuilder {
         crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

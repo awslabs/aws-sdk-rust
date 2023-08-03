@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteProxySessionOutput`](crate::operation::delete_proxy_session::DeleteProxySessionOutput)
     /// - On failure, responds with [`SdkError<DeleteProxySessionError>`](crate::operation::delete_proxy_session::DeleteProxySessionError)
     #[deprecated(note = "Replaced by DeleteProxySession in the Amazon Chime SDK Voice Namespace")]
-    pub fn delete_proxy_session(
-        &self,
-    ) -> crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder {
-        crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_proxy_session(&self) -> crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder {
+        crate::operation::delete_proxy_session::builders::DeleteProxySessionFluentBuilder::new(self.handle.clone())
     }
 }

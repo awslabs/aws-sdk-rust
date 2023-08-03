@@ -9,7 +9,11 @@ impl super::Client {
     ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyFluentBuilder::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     /// - On success, responds with [`DisassociateTimeSeriesFromAssetPropertyOutput`](crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput)
     /// - On failure, responds with [`SdkError<DisassociateTimeSeriesFromAssetPropertyError>`](crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError)
-    pub fn disassociate_time_series_from_asset_property(&self) -> crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyFluentBuilder{
-        crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_time_series_from_asset_property(
+        &self,
+    ) -> crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyFluentBuilder {
+        crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

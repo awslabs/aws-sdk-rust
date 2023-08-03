@@ -23,9 +23,7 @@ impl AwsService {
 
 /// A builder for [`AwsService`](crate::types::AwsService).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsServiceBuilder {
     pub(crate) invoked_by: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl AwsServiceBuilder {
     }
     /// Consumes the builder and constructs a [`AwsService`](crate::types::AwsService).
     pub fn build(self) -> crate::types::AwsService {
-        crate::types::AwsService {
-            invoked_by: self.invoked_by,
-        }
+        crate::types::AwsService { invoked_by: self.invoked_by }
     }
 }

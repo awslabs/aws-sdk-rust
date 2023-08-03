@@ -18,8 +18,7 @@ pub struct DescribeFeatureGroupOutput {
     pub event_time_feature_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the <code>Features</code> in the <code>FeatureGroup</code>. Each feature is defined by a <code>FeatureName</code> and <code>FeatureType</code>.</p>
     #[doc(hidden)]
-    pub feature_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
+    pub feature_definitions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
     /// <p>A timestamp indicating when SageMaker created the <code>FeatureGroup</code>.</p>
     #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -158,24 +157,20 @@ impl ::aws_http::request_id::RequestId for DescribeFeatureGroupOutput {
 }
 impl DescribeFeatureGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFeatureGroupOutput`](crate::operation::describe_feature_group::DescribeFeatureGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_feature_group::builders::DescribeFeatureGroupOutputBuilder {
+    pub fn builder() -> crate::operation::describe_feature_group::builders::DescribeFeatureGroupOutputBuilder {
         crate::operation::describe_feature_group::builders::DescribeFeatureGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFeatureGroupOutput`](crate::operation::describe_feature_group::DescribeFeatureGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFeatureGroupOutputBuilder {
     pub(crate) feature_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) record_identifier_feature_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_time_feature_name: ::std::option::Option<::std::string::String>,
-    pub(crate) feature_definitions:
-        ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
+    pub(crate) feature_definitions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) online_store_config: ::std::option::Option<crate::types::OnlineStoreConfig>,
@@ -192,18 +187,12 @@ pub struct DescribeFeatureGroupOutputBuilder {
 }
 impl DescribeFeatureGroupOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. </p>
-    pub fn feature_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. </p>
-    pub fn set_feature_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_arn = input;
         self
     }
@@ -212,18 +201,12 @@ impl DescribeFeatureGroupOutputBuilder {
         &self.feature_group_arn
     }
     /// <p>he name of the <code>FeatureGroup</code>.</p>
-    pub fn feature_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>he name of the <code>FeatureGroup</code>.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_group_name = input;
         self
     }
@@ -232,42 +215,28 @@ impl DescribeFeatureGroupOutputBuilder {
         &self.feature_group_name
     }
     /// <p>The name of the <code>Feature</code> used for <code>RecordIdentifier</code>, whose value uniquely identifies a record stored in the feature store.</p>
-    pub fn record_identifier_feature_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn record_identifier_feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_identifier_feature_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>Feature</code> used for <code>RecordIdentifier</code>, whose value uniquely identifies a record stored in the feature store.</p>
-    pub fn set_record_identifier_feature_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_record_identifier_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_identifier_feature_name = input;
         self
     }
     /// <p>The name of the <code>Feature</code> used for <code>RecordIdentifier</code>, whose value uniquely identifies a record stored in the feature store.</p>
-    pub fn get_record_identifier_feature_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_record_identifier_feature_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_identifier_feature_name
     }
     /// <p>The name of the feature that stores the <code>EventTime</code> of a Record in a <code>FeatureGroup</code>.</p>
     /// <p> An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
-    pub fn event_time_feature_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_time_feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_time_feature_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the feature that stores the <code>EventTime</code> of a Record in a <code>FeatureGroup</code>.</p>
     /// <p> An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> have a corresponding <code>EventTime</code>.</p>
-    pub fn set_event_time_feature_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_time_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_time_feature_name = input;
         self
     }
@@ -288,17 +257,12 @@ impl DescribeFeatureGroupOutputBuilder {
         self
     }
     /// <p>A list of the <code>Features</code> in the <code>FeatureGroup</code>. Each feature is defined by a <code>FeatureName</code> and <code>FeatureType</code>.</p>
-    pub fn set_feature_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
-    ) -> Self {
+    pub fn set_feature_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>) -> Self {
         self.feature_definitions = input;
         self
     }
     /// <p>A list of the <code>Features</code> in the <code>FeatureGroup</code>. Each feature is defined by a <code>FeatureName</code> and <code>FeatureType</code>.</p>
-    pub fn get_feature_definitions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>> {
+    pub fn get_feature_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>> {
         &self.feature_definitions
     }
     /// <p>A timestamp indicating when SageMaker created the <code>FeatureGroup</code>.</p>
@@ -307,10 +271,7 @@ impl DescribeFeatureGroupOutputBuilder {
         self
     }
     /// <p>A timestamp indicating when SageMaker created the <code>FeatureGroup</code>.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -324,10 +285,7 @@ impl DescribeFeatureGroupOutputBuilder {
         self
     }
     /// <p>A timestamp indicating when the feature group was last updated.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -341,17 +299,12 @@ impl DescribeFeatureGroupOutputBuilder {
         self
     }
     /// <p>The configuration for the <code>OnlineStore</code>.</p>
-    pub fn set_online_store_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OnlineStoreConfig>,
-    ) -> Self {
+    pub fn set_online_store_config(mut self, input: ::std::option::Option<crate::types::OnlineStoreConfig>) -> Self {
         self.online_store_config = input;
         self
     }
     /// <p>The configuration for the <code>OnlineStore</code>.</p>
-    pub fn get_online_store_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OnlineStoreConfig> {
+    pub fn get_online_store_config(&self) -> &::std::option::Option<crate::types::OnlineStoreConfig> {
         &self.online_store_config
     }
     /// <p>The configuration of the offline store. It includes the following configurations:</p>
@@ -374,10 +327,7 @@ impl DescribeFeatureGroupOutputBuilder {
     /// <li> <p>Option to disable the automatic creation of a Glue table for the offline store.</p> </li>
     /// <li> <p>Encryption configuration.</p> </li>
     /// </ul>
-    pub fn set_offline_store_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OfflineStoreConfig>,
-    ) -> Self {
+    pub fn set_offline_store_config(mut self, input: ::std::option::Option<crate::types::OfflineStoreConfig>) -> Self {
         self.offline_store_config = input;
         self
     }
@@ -389,9 +339,7 @@ impl DescribeFeatureGroupOutputBuilder {
     /// <li> <p>Option to disable the automatic creation of a Glue table for the offline store.</p> </li>
     /// <li> <p>Encryption configuration.</p> </li>
     /// </ul>
-    pub fn get_offline_store_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OfflineStoreConfig> {
+    pub fn get_offline_store_config(&self) -> &::std::option::Option<crate::types::OfflineStoreConfig> {
         &self.offline_store_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an OfflineStoreConfig is provided.</p>
@@ -414,17 +362,12 @@ impl DescribeFeatureGroupOutputBuilder {
         self
     }
     /// <p>The status of the feature group.</p>
-    pub fn set_feature_group_status(
-        mut self,
-        input: ::std::option::Option<crate::types::FeatureGroupStatus>,
-    ) -> Self {
+    pub fn set_feature_group_status(mut self, input: ::std::option::Option<crate::types::FeatureGroupStatus>) -> Self {
         self.feature_group_status = input;
         self
     }
     /// <p>The status of the feature group.</p>
-    pub fn get_feature_group_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::FeatureGroupStatus> {
+    pub fn get_feature_group_status(&self) -> &::std::option::Option<crate::types::FeatureGroupStatus> {
         &self.feature_group_status
     }
     /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code> </p>
@@ -433,17 +376,12 @@ impl DescribeFeatureGroupOutputBuilder {
         self
     }
     /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code> </p>
-    pub fn set_offline_store_status(
-        mut self,
-        input: ::std::option::Option<crate::types::OfflineStoreStatus>,
-    ) -> Self {
+    pub fn set_offline_store_status(mut self, input: ::std::option::Option<crate::types::OfflineStoreStatus>) -> Self {
         self.offline_store_status = input;
         self
     }
     /// <p>The status of the <code>OfflineStore</code>. Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code> </p>
-    pub fn get_offline_store_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::OfflineStoreStatus> {
+    pub fn get_offline_store_status(&self) -> &::std::option::Option<crate::types::OfflineStoreStatus> {
         &self.offline_store_status
     }
     /// <p>A value indicating whether the update made to the feature group was successful.</p>
@@ -452,10 +390,7 @@ impl DescribeFeatureGroupOutputBuilder {
         self
     }
     /// <p>A value indicating whether the update made to the feature group was successful.</p>
-    pub fn set_last_update_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LastUpdateStatus>,
-    ) -> Self {
+    pub fn set_last_update_status(mut self, input: ::std::option::Option<crate::types::LastUpdateStatus>) -> Self {
         self.last_update_status = input;
         self
     }
@@ -468,10 +403,7 @@ impl DescribeFeatureGroupOutputBuilder {
     /// <li> <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p> </li>
     /// <li> <p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p> </li>
     /// </ul>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
@@ -480,10 +412,7 @@ impl DescribeFeatureGroupOutputBuilder {
     /// <li> <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p> </li>
     /// <li> <p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p> </li>
     /// </ul>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }

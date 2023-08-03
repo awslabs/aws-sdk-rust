@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateLicenseSpecificationsForResourc
 }
 impl UpdateLicenseSpecificationsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLicenseSpecificationsForResourceOutput`](crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceOutput).
-    pub fn builder() -> crate::operation::update_license_specifications_for_resource::builders::UpdateLicenseSpecificationsForResourceOutputBuilder{
+    pub fn builder() -> crate::operation::update_license_specifications_for_resource::builders::UpdateLicenseSpecificationsForResourceOutputBuilder {
         crate::operation::update_license_specifications_for_resource::builders::UpdateLicenseSpecificationsForResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLicenseSpecificationsForResourceOutput`](crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLicenseSpecificationsForResourceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl UpdateLicenseSpecificationsForResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateLicenseSpecificationsForResourceOutput`](crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceOutput).
-    pub fn build(self) -> crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceOutput{
+    pub fn build(self) -> crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceOutput {
         crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceOutput {
             _request_id: self._request_id,
         }

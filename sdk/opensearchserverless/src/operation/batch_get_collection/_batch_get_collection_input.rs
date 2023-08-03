@@ -22,17 +22,14 @@ impl BatchGetCollectionInput {
 }
 impl BatchGetCollectionInput {
     /// Creates a new builder-style object to manufacture [`BatchGetCollectionInput`](crate::operation::batch_get_collection::BatchGetCollectionInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_collection::builders::BatchGetCollectionInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_collection::builders::BatchGetCollectionInputBuilder {
         crate::operation::batch_get_collection::builders::BatchGetCollectionInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetCollectionInput`](crate::operation::batch_get_collection::BatchGetCollectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCollectionInputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -50,10 +47,7 @@ impl BatchGetCollectionInputBuilder {
         self
     }
     /// <p>A list of collection IDs. You can't provide names and IDs in the same request. The ID is part of the collection endpoint. You can also retrieve it using the <a href="https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html">ListCollections</a> API.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }
@@ -73,10 +67,7 @@ impl BatchGetCollectionInputBuilder {
         self
     }
     /// <p>A list of collection names. You can't provide names and IDs in the same request.</p>
-    pub fn set_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.names = input;
         self
     }
@@ -87,15 +78,10 @@ impl BatchGetCollectionInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetCollectionInput`](crate::operation::batch_get_collection::BatchGetCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_collection::BatchGetCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_collection::BatchGetCollectionInput {
-                ids: self.ids,
-                names: self.names,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_collection::BatchGetCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_get_collection::BatchGetCollectionInput {
+            ids: self.ids,
+            names: self.names,
+        })
     }
 }

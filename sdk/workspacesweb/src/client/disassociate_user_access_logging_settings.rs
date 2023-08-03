@@ -6,7 +6,11 @@ impl super::Client {
     ///   - [`portal_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_user_access_logging_settings::builders::DisassociateUserAccessLoggingSettingsFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::disassociate_user_access_logging_settings::builders::DisassociateUserAccessLoggingSettingsFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
     /// - On success, responds with [`DisassociateUserAccessLoggingSettingsOutput`](crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsOutput)
     /// - On failure, responds with [`SdkError<DisassociateUserAccessLoggingSettingsError>`](crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsError)
-    pub fn disassociate_user_access_logging_settings(&self) -> crate::operation::disassociate_user_access_logging_settings::builders::DisassociateUserAccessLoggingSettingsFluentBuilder{
-        crate::operation::disassociate_user_access_logging_settings::builders::DisassociateUserAccessLoggingSettingsFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_user_access_logging_settings(
+        &self,
+    ) -> crate::operation::disassociate_user_access_logging_settings::builders::DisassociateUserAccessLoggingSettingsFluentBuilder {
+        crate::operation::disassociate_user_access_logging_settings::builders::DisassociateUserAccessLoggingSettingsFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

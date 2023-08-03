@@ -57,9 +57,7 @@ impl ModifyUserInput {
 
 /// A builder for [`ModifyUserInput`](crate::operation::modify_user::ModifyUserInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyUserInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) access_string: ::std::option::Option<::std::string::String>,
@@ -84,18 +82,12 @@ impl ModifyUserInputBuilder {
         &self.user_id
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn set_access_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_string = input;
         self
     }
@@ -104,18 +96,12 @@ impl ModifyUserInputBuilder {
         &self.access_string
     }
     /// <p>Adds additional user permissions to the access string.</p>
-    pub fn append_access_string(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn append_access_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.append_access_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Adds additional user permissions to the access string.</p>
-    pub fn set_append_access_string(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_append_access_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.append_access_string = input;
         self
     }
@@ -135,10 +121,7 @@ impl ModifyUserInputBuilder {
         self
     }
     /// <p>The passwords belonging to the user. You are allowed up to two.</p>
-    pub fn set_passwords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_passwords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.passwords = input;
         self
     }
@@ -166,26 +149,16 @@ impl ModifyUserInputBuilder {
         self
     }
     /// <p>Specifies how to authenticate the user.</p>
-    pub fn set_authentication_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthenticationMode>,
-    ) -> Self {
+    pub fn set_authentication_mode(mut self, input: ::std::option::Option<crate::types::AuthenticationMode>) -> Self {
         self.authentication_mode = input;
         self
     }
     /// <p>Specifies how to authenticate the user.</p>
-    pub fn get_authentication_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuthenticationMode> {
+    pub fn get_authentication_mode(&self) -> &::std::option::Option<crate::types::AuthenticationMode> {
         &self.authentication_mode
     }
     /// Consumes the builder and constructs a [`ModifyUserInput`](crate::operation::modify_user::ModifyUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_user::ModifyUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_user::ModifyUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_user::ModifyUserInput {
             user_id: self.user_id,
             access_string: self.access_string,

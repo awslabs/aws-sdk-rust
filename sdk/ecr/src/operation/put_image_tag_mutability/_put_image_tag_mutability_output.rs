@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for PutImageTagMutabilityOutput {
 }
 impl PutImageTagMutabilityOutput {
     /// Creates a new builder-style object to manufacture [`PutImageTagMutabilityOutput`](crate::operation::put_image_tag_mutability::PutImageTagMutabilityOutput).
-    pub fn builder(
-    ) -> crate::operation::put_image_tag_mutability::builders::PutImageTagMutabilityOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_image_tag_mutability::builders::PutImageTagMutabilityOutputBuilder {
         crate::operation::put_image_tag_mutability::builders::PutImageTagMutabilityOutputBuilder::default()
     }
 }
 
 /// A builder for [`PutImageTagMutabilityOutput`](crate::operation::put_image_tag_mutability::PutImageTagMutabilityOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutImageTagMutabilityOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
@@ -69,18 +65,12 @@ impl PutImageTagMutabilityOutputBuilder {
         &self.registry_id
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name associated with the request.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -94,17 +84,12 @@ impl PutImageTagMutabilityOutputBuilder {
         self
     }
     /// <p>The image tag mutability setting for the repository.</p>
-    pub fn set_image_tag_mutability(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageTagMutability>,
-    ) -> Self {
+    pub fn set_image_tag_mutability(mut self, input: ::std::option::Option<crate::types::ImageTagMutability>) -> Self {
         self.image_tag_mutability = input;
         self
     }
     /// <p>The image tag mutability setting for the repository.</p>
-    pub fn get_image_tag_mutability(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImageTagMutability> {
+    pub fn get_image_tag_mutability(&self) -> &::std::option::Option<crate::types::ImageTagMutability> {
         &self.image_tag_mutability
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

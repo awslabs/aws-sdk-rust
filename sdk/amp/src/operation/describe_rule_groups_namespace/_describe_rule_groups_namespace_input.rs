@@ -23,16 +23,14 @@ impl DescribeRuleGroupsNamespaceInput {
 }
 impl DescribeRuleGroupsNamespaceInput {
     /// Creates a new builder-style object to manufacture [`DescribeRuleGroupsNamespaceInput`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput).
-    pub fn builder() -> crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceInputBuilder{
+    pub fn builder() -> crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceInputBuilder {
         crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRuleGroupsNamespaceInput`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRuleGroupsNamespaceInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -73,11 +71,9 @@ impl DescribeRuleGroupsNamespaceInputBuilder {
         crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput {
-                workspace_id: self.workspace_id,
-                name: self.name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput {
+            workspace_id: self.workspace_id,
+            name: self.name,
+        })
     }
 }

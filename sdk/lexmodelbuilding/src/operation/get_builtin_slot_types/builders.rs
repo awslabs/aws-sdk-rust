@@ -39,9 +39,7 @@ impl GetBuiltinSlotTypesFluentBuilder {
         }
     }
     /// Access the GetBuiltinSlotTypes as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl GetBuiltinSlotTypesFluentBuilder {
             crate::operation::get_builtin_slot_types::GetBuiltinSlotTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl GetBuiltinSlotTypesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl GetBuiltinSlotTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl GetBuiltinSlotTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError>,
     > {
         self.send_middleware().await
     }
@@ -118,22 +107,15 @@ impl GetBuiltinSlotTypesFluentBuilder {
             crate::operation::get_builtin_slot_types::GetBuiltinSlotTypes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator {
-        crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator {
+        crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator::new(self.handle, self.inner)
     }
     /// <p>A list of locales that the slot type supports.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
@@ -150,18 +132,12 @@ impl GetBuiltinSlotTypesFluentBuilder {
         self.inner.get_locale()
     }
     /// <p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-    pub fn signature_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn signature_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.signature_contains(input.into());
         self
     }
     /// <p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-    pub fn set_signature_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_signature_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_signature_contains(input);
         self
     }

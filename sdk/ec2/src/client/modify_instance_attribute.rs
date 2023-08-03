@@ -22,10 +22,7 @@ impl super::Client {
     ///   - [`disable_api_stop(AttributeBooleanValue)`](crate::operation::modify_instance_attribute::builders::ModifyInstanceAttributeFluentBuilder::disable_api_stop) / [`set_disable_api_stop(Option<AttributeBooleanValue>)`](crate::operation::modify_instance_attribute::builders::ModifyInstanceAttributeFluentBuilder::set_disable_api_stop): <p>Indicates whether an instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop Protection</a>.</p>  <p></p>
     /// - On success, responds with [`ModifyInstanceAttributeOutput`](crate::operation::modify_instance_attribute::ModifyInstanceAttributeOutput)
     /// - On failure, responds with [`SdkError<ModifyInstanceAttributeError>`](crate::operation::modify_instance_attribute::ModifyInstanceAttributeError)
-    pub fn modify_instance_attribute(
-        &self,
-    ) -> crate::operation::modify_instance_attribute::builders::ModifyInstanceAttributeFluentBuilder
-    {
+    pub fn modify_instance_attribute(&self) -> crate::operation::modify_instance_attribute::builders::ModifyInstanceAttributeFluentBuilder {
         crate::operation::modify_instance_attribute::builders::ModifyInstanceAttributeFluentBuilder::new(self.handle.clone())
     }
 }

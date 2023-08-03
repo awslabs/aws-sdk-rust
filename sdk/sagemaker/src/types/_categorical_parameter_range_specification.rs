@@ -23,9 +23,7 @@ impl CategoricalParameterRangeSpecification {
 
 /// A builder for [`CategoricalParameterRangeSpecification`](crate::types::CategoricalParameterRangeSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CategoricalParameterRangeSpecificationBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -42,10 +40,7 @@ impl CategoricalParameterRangeSpecificationBuilder {
         self
     }
     /// <p>The allowed categories for the hyperparameter.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -55,8 +50,6 @@ impl CategoricalParameterRangeSpecificationBuilder {
     }
     /// Consumes the builder and constructs a [`CategoricalParameterRangeSpecification`](crate::types::CategoricalParameterRangeSpecification).
     pub fn build(self) -> crate::types::CategoricalParameterRangeSpecification {
-        crate::types::CategoricalParameterRangeSpecification {
-            values: self.values,
-        }
+        crate::types::CategoricalParameterRangeSpecification { values: self.values }
     }
 }

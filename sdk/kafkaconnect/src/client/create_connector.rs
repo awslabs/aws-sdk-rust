@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`connector_name(Option<String>)`](crate::operation::create_connector::CreateConnectorOutput::connector_name): <p>The name of the connector.</p>
     ///   - [`connector_state(Option<ConnectorState>)`](crate::operation::create_connector::CreateConnectorOutput::connector_state): <p>The state of the connector.</p>
     /// - On failure, responds with [`SdkError<CreateConnectorError>`](crate::operation::create_connector::CreateConnectorError)
-    pub fn create_connector(
-        &self,
-    ) -> crate::operation::create_connector::builders::CreateConnectorFluentBuilder {
-        crate::operation::create_connector::builders::CreateConnectorFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_connector(&self) -> crate::operation::create_connector::builders::CreateConnectorFluentBuilder {
+        crate::operation::create_connector::builders::CreateConnectorFluentBuilder::new(self.handle.clone())
     }
 }

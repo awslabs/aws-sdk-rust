@@ -29,8 +29,7 @@ impl DescribeEffectivePolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEffectivePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyInputBuilder,
+    inner: crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyInputBuilder,
 }
 impl DescribeEffectivePolicyFluentBuilder {
     /// Creates a new `DescribeEffectivePolicy`.
@@ -41,10 +40,7 @@ impl DescribeEffectivePolicyFluentBuilder {
         }
     }
     /// Access the DescribeEffectivePolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +52,7 @@ impl DescribeEffectivePolicyFluentBuilder {
             crate::operation::describe_effective_policy::DescribeEffectivePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_effective_policy::DescribeEffectivePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_effective_policy::DescribeEffectivePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +62,7 @@ impl DescribeEffectivePolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +71,7 @@ impl DescribeEffectivePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_effective_policy::DescribeEffectivePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_effective_policy::DescribeEffectivePolicyError>,
     > {
         let op = self
             .inner
@@ -105,9 +94,7 @@ impl DescribeEffectivePolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_effective_policy::DescribeEffectivePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_effective_policy::DescribeEffectivePolicyError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +108,7 @@ impl DescribeEffectivePolicyFluentBuilder {
             crate::operation::describe_effective_policy::DescribeEffectivePolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_effective_policy::DescribeEffectivePolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_effective_policy::DescribeEffectivePolicyError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +128,7 @@ impl DescribeEffectivePolicyFluentBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
-    pub fn set_policy_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EffectivePolicyType>,
-    ) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::EffectivePolicyType>) -> Self {
         self.inner = self.inner.set_policy_type(input);
         self
     }

@@ -51,9 +51,7 @@ impl SelfservicePermissions {
 
 /// A builder for [`SelfservicePermissions`](crate::types::SelfservicePermissions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelfservicePermissionsBuilder {
     pub(crate) restart_workspace: ::std::option::Option<crate::types::ReconnectEnum>,
     pub(crate) increase_volume_size: ::std::option::Option<crate::types::ReconnectEnum>,
@@ -68,10 +66,7 @@ impl SelfservicePermissionsBuilder {
         self
     }
     /// <p>Specifies whether users can restart their WorkSpace.</p>
-    pub fn set_restart_workspace(
-        mut self,
-        input: ::std::option::Option<crate::types::ReconnectEnum>,
-    ) -> Self {
+    pub fn set_restart_workspace(mut self, input: ::std::option::Option<crate::types::ReconnectEnum>) -> Self {
         self.restart_workspace = input;
         self
     }
@@ -85,10 +80,7 @@ impl SelfservicePermissionsBuilder {
         self
     }
     /// <p>Specifies whether users can increase the volume size of the drives on their WorkSpace.</p>
-    pub fn set_increase_volume_size(
-        mut self,
-        input: ::std::option::Option<crate::types::ReconnectEnum>,
-    ) -> Self {
+    pub fn set_increase_volume_size(mut self, input: ::std::option::Option<crate::types::ReconnectEnum>) -> Self {
         self.increase_volume_size = input;
         self
     }
@@ -102,10 +94,7 @@ impl SelfservicePermissionsBuilder {
         self
     }
     /// <p>Specifies whether users can change the compute type (bundle) for their WorkSpace.</p>
-    pub fn set_change_compute_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReconnectEnum>,
-    ) -> Self {
+    pub fn set_change_compute_type(mut self, input: ::std::option::Option<crate::types::ReconnectEnum>) -> Self {
         self.change_compute_type = input;
         self
     }
@@ -119,10 +108,7 @@ impl SelfservicePermissionsBuilder {
         self
     }
     /// <p>Specifies whether users can switch the running mode of their WorkSpace.</p>
-    pub fn set_switch_running_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::ReconnectEnum>,
-    ) -> Self {
+    pub fn set_switch_running_mode(mut self, input: ::std::option::Option<crate::types::ReconnectEnum>) -> Self {
         self.switch_running_mode = input;
         self
     }
@@ -136,10 +122,7 @@ impl SelfservicePermissionsBuilder {
         self
     }
     /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original state.</p>
-    pub fn set_rebuild_workspace(
-        mut self,
-        input: ::std::option::Option<crate::types::ReconnectEnum>,
-    ) -> Self {
+    pub fn set_rebuild_workspace(mut self, input: ::std::option::Option<crate::types::ReconnectEnum>) -> Self {
         self.rebuild_workspace = input;
         self
     }

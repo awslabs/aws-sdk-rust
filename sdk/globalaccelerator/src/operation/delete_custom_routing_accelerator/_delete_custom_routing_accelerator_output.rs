@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCustomRoutingAcceleratorOutput 
 }
 impl DeleteCustomRoutingAcceleratorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingAcceleratorOutput`](crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorOutput).
-    pub fn builder() -> crate::operation::delete_custom_routing_accelerator::builders::DeleteCustomRoutingAcceleratorOutputBuilder{
+    pub fn builder() -> crate::operation::delete_custom_routing_accelerator::builders::DeleteCustomRoutingAcceleratorOutputBuilder {
         crate::operation::delete_custom_routing_accelerator::builders::DeleteCustomRoutingAcceleratorOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomRoutingAcceleratorOutput`](crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomRoutingAcceleratorOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,10 +34,7 @@ impl DeleteCustomRoutingAcceleratorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteCustomRoutingAcceleratorOutput`](crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorOutput
-    {
+    pub fn build(self) -> crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorOutput {
         crate::operation::delete_custom_routing_accelerator::DeleteCustomRoutingAcceleratorOutput {
             _request_id: self._request_id,
         }

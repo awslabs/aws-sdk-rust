@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for UpdateModelCardOutput {
 }
 impl UpdateModelCardOutput {
     /// Creates a new builder-style object to manufacture [`UpdateModelCardOutput`](crate::operation::update_model_card::UpdateModelCardOutput).
-    pub fn builder() -> crate::operation::update_model_card::builders::UpdateModelCardOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_model_card::builders::UpdateModelCardOutputBuilder {
         crate::operation::update_model_card::builders::UpdateModelCardOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateModelCardOutput`](crate::operation::update_model_card::UpdateModelCardOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateModelCardOutputBuilder {
     pub(crate) model_card_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateModelCardOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the updated model card.</p>
-    pub fn model_card_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_card_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the updated model card.</p>
-    pub fn set_model_card_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_model_card_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_card_arn = input;
         self
     }

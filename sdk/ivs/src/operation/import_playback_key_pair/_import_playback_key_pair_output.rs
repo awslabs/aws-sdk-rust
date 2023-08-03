@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for ImportPlaybackKeyPairOutput {
 }
 impl ImportPlaybackKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`ImportPlaybackKeyPairOutput`](crate::operation::import_playback_key_pair::ImportPlaybackKeyPairOutput).
-    pub fn builder(
-    ) -> crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairOutputBuilder
-    {
+    pub fn builder() -> crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairOutputBuilder {
         crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportPlaybackKeyPairOutput`](crate::operation::import_playback_key_pair::ImportPlaybackKeyPairOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportPlaybackKeyPairOutputBuilder {
     pub(crate) key_pair: ::std::option::Option<crate::types::PlaybackKeyPair>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl ImportPlaybackKeyPairOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_key_pair(
-        mut self,
-        input: ::std::option::Option<crate::types::PlaybackKeyPair>,
-    ) -> Self {
+    pub fn set_key_pair(mut self, input: ::std::option::Option<crate::types::PlaybackKeyPair>) -> Self {
         self.key_pair = input;
         self
     }

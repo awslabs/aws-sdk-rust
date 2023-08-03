@@ -15,17 +15,14 @@ impl JoinStorageSessionInput {
 }
 impl JoinStorageSessionInput {
     /// Creates a new builder-style object to manufacture [`JoinStorageSessionInput`](crate::operation::join_storage_session::JoinStorageSessionInput).
-    pub fn builder(
-    ) -> crate::operation::join_storage_session::builders::JoinStorageSessionInputBuilder {
+    pub fn builder() -> crate::operation::join_storage_session::builders::JoinStorageSessionInputBuilder {
         crate::operation::join_storage_session::builders::JoinStorageSessionInputBuilder::default()
     }
 }
 
 /// A builder for [`JoinStorageSessionInput`](crate::operation::join_storage_session::JoinStorageSessionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JoinStorageSessionInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
 }
@@ -47,14 +44,9 @@ impl JoinStorageSessionInputBuilder {
     /// Consumes the builder and constructs a [`JoinStorageSessionInput`](crate::operation::join_storage_session::JoinStorageSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::join_storage_session::JoinStorageSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::join_storage_session::JoinStorageSessionInput {
-                channel_arn: self.channel_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::join_storage_session::JoinStorageSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::join_storage_session::JoinStorageSessionInput {
+            channel_arn: self.channel_arn,
+        })
     }
 }

@@ -26,7 +26,7 @@ impl DeleteResourcePermissionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourcePermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_resource_permission::builders::DeleteResourcePermissionInputBuilder,
+    inner: crate::operation::delete_resource_permission::builders::DeleteResourcePermissionInputBuilder,
 }
 impl DeleteResourcePermissionFluentBuilder {
     /// Creates a new `DeleteResourcePermission`.
@@ -37,10 +37,7 @@ impl DeleteResourcePermissionFluentBuilder {
         }
     }
     /// Access the DeleteResourcePermission as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_resource_permission::builders::DeleteResourcePermissionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_resource_permission::builders::DeleteResourcePermissionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DeleteResourcePermissionFluentBuilder {
             crate::operation::delete_resource_permission::DeleteResourcePermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_permission::DeleteResourcePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_permission::DeleteResourcePermissionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DeleteResourcePermissionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DeleteResourcePermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_permission::DeleteResourcePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_permission::DeleteResourcePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_permission::DeleteResourcePermissionError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DeleteResourcePermissionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_permission::DeleteResourcePermissionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_permission::DeleteResourcePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_permission::DeleteResourcePermissionError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DeleteResourcePermissionFluentBuilder {
             crate::operation::delete_resource_permission::DeleteResourcePermission,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_resource_permission::DeleteResourcePermissionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_permission::DeleteResourcePermissionError>,
     > {
         self.customize_middleware().await
     }
@@ -129,10 +115,7 @@ impl DeleteResourcePermissionFluentBuilder {
         self
     }
     /// <p>Delete or restore the permissions on the target database.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::PermissionActionType>) -> Self {
         self.inner = self.inner.set_action_type(input);
         self
     }
@@ -141,18 +124,12 @@ impl DeleteResourcePermissionFluentBuilder {
         self.inner.get_action_type()
     }
     /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
-    pub fn source_resource_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_resource_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
-    pub fn set_source_resource_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_resource_arn(input);
         self
     }

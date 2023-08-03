@@ -35,9 +35,7 @@ impl GetSitesOutput {
 
 /// A builder for [`GetSitesOutput`](crate::operation::get_sites::GetSitesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSitesOutputBuilder {
     pub(crate) sites: ::std::option::Option<::std::vec::Vec<crate::types::Site>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetSitesOutputBuilder {
         self
     }
     /// <p>The sites.</p>
-    pub fn set_sites(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Site>>,
-    ) -> Self {
+    pub fn set_sites(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Site>>) -> Self {
         self.sites = input;
         self
     }

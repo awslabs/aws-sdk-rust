@@ -30,9 +30,7 @@ impl MonetaryAmount {
 
 /// A builder for [`MonetaryAmount`](crate::types::MonetaryAmount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MonetaryAmountBuilder {
     pub(crate) amount: ::std::option::Option<f64>,
     pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCode>,
@@ -58,10 +56,7 @@ impl MonetaryAmountBuilder {
         self
     }
     /// <p>The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: ::std::option::Option<crate::types::CurrencyCode>,
-    ) -> Self {
+    pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCode>) -> Self {
         self.currency_code = input;
         self
     }

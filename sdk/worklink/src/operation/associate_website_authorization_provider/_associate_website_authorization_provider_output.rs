@@ -21,34 +21,26 @@ impl ::aws_http::request_id::RequestId for AssociateWebsiteAuthorizationProvider
 }
 impl AssociateWebsiteAuthorizationProviderOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWebsiteAuthorizationProviderOutput`](crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput).
-    pub fn builder() -> crate::operation::associate_website_authorization_provider::builders::AssociateWebsiteAuthorizationProviderOutputBuilder{
+    pub fn builder() -> crate::operation::associate_website_authorization_provider::builders::AssociateWebsiteAuthorizationProviderOutputBuilder {
         crate::operation::associate_website_authorization_provider::builders::AssociateWebsiteAuthorizationProviderOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateWebsiteAuthorizationProviderOutput`](crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateWebsiteAuthorizationProviderOutputBuilder {
     pub(crate) authorization_provider_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AssociateWebsiteAuthorizationProviderOutputBuilder {
     /// <p>A unique identifier for the authorization provider.</p>
-    pub fn authorization_provider_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authorization_provider_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_provider_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the authorization provider.</p>
-    pub fn set_authorization_provider_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authorization_provider_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authorization_provider_id = input;
         self
     }
@@ -66,10 +58,9 @@ impl AssociateWebsiteAuthorizationProviderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateWebsiteAuthorizationProviderOutput`](crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput).
-    pub fn build(self) -> crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput{
+    pub fn build(self) -> crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput {
         crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput {
-            authorization_provider_id: self.authorization_provider_id
-            ,
+            authorization_provider_id: self.authorization_provider_id,
             _request_id: self._request_id,
         }
     }

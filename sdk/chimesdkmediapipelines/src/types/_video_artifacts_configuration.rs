@@ -30,9 +30,7 @@ impl VideoArtifactsConfiguration {
 
 /// A builder for [`VideoArtifactsConfiguration`](crate::types::VideoArtifactsConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VideoArtifactsConfigurationBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ArtifactsState>,
     pub(crate) mux_type: ::std::option::Option<crate::types::VideoMuxType>,
@@ -58,10 +56,7 @@ impl VideoArtifactsConfigurationBuilder {
         self
     }
     /// <p>The MUX type of the video artifact configuration object.</p>
-    pub fn set_mux_type(
-        mut self,
-        input: ::std::option::Option<crate::types::VideoMuxType>,
-    ) -> Self {
+    pub fn set_mux_type(mut self, input: ::std::option::Option<crate::types::VideoMuxType>) -> Self {
         self.mux_type = input;
         self
     }

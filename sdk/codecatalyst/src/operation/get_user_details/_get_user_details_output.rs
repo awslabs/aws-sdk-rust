@@ -56,9 +56,7 @@ impl GetUserDetailsOutput {
 
 /// A builder for [`GetUserDetailsOutput`](crate::operation::get_user_details::GetUserDetailsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUserDetailsOutputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
@@ -116,10 +114,7 @@ impl GetUserDetailsOutputBuilder {
         self
     }
     /// <p>The email address provided by the user when they signed up.</p>
-    pub fn set_primary_email(
-        mut self,
-        input: ::std::option::Option<crate::types::EmailAddress>,
-    ) -> Self {
+    pub fn set_primary_email(mut self, input: ::std::option::Option<crate::types::EmailAddress>) -> Self {
         self.primary_email = input;
         self
     }

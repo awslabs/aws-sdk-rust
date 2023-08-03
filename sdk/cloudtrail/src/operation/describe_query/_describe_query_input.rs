@@ -38,9 +38,7 @@ impl DescribeQueryInput {
 
 /// A builder for [`DescribeQueryInput`](crate::operation::describe_query::DescribeQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeQueryInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
@@ -49,19 +47,13 @@ pub struct DescribeQueryInputBuilder {
 impl DescribeQueryInputBuilder {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by DescribeQueryRequest")]
-    pub fn event_data_store(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by DescribeQueryRequest")]
-    pub fn set_event_data_store(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data_store = input;
         self
     }
@@ -101,10 +93,7 @@ impl DescribeQueryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeQueryInput`](crate::operation::describe_query::DescribeQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_query::DescribeQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_query::DescribeQueryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_query::DescribeQueryInput {
             event_data_store: self.event_data_store,
             query_id: self.query_id,

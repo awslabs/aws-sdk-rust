@@ -50,41 +50,30 @@ impl ModifyLocalGatewayRouteInput {
 }
 impl ModifyLocalGatewayRouteInput {
     /// Creates a new builder-style object to manufacture [`ModifyLocalGatewayRouteInput`](crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteInput).
-    pub fn builder(
-    ) -> crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteInputBuilder {
         crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyLocalGatewayRouteInput`](crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyLocalGatewayRouteInputBuilder {
     pub(crate) destination_cidr_block: ::std::option::Option<::std::string::String>,
     pub(crate) local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
-    pub(crate) local_gateway_virtual_interface_group_id:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) local_gateway_virtual_interface_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) destination_prefix_list_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyLocalGatewayRouteInputBuilder {
     /// <p>The CIDR block used for destination matches. The value that you provide must match the CIDR of an existing route in the table.</p>
-    pub fn destination_cidr_block(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CIDR block used for destination matches. The value that you provide must match the CIDR of an existing route in the table.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_cidr_block = input;
         self
     }
@@ -93,62 +82,40 @@ impl ModifyLocalGatewayRouteInputBuilder {
         &self.destination_cidr_block
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = input;
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn get_local_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_route_table_id
     }
     /// <p> The ID of the virtual interface group. </p>
-    pub fn local_gateway_virtual_interface_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_virtual_interface_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_virtual_interface_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the virtual interface group. </p>
-    pub fn set_local_gateway_virtual_interface_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_virtual_interface_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_gateway_virtual_interface_group_id = input;
         self
     }
     /// <p> The ID of the virtual interface group. </p>
-    pub fn get_local_gateway_virtual_interface_group_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_local_gateway_virtual_interface_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.local_gateway_virtual_interface_group_id
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_interface_id = input;
         self
     }
@@ -171,18 +138,12 @@ impl ModifyLocalGatewayRouteInputBuilder {
         &self.dry_run
     }
     /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
-    pub fn destination_prefix_list_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
-    pub fn set_destination_prefix_list_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_prefix_list_id = input;
         self
     }
@@ -197,16 +158,13 @@ impl ModifyLocalGatewayRouteInputBuilder {
         crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteInput {
-                destination_cidr_block: self.destination_cidr_block,
-                local_gateway_route_table_id: self.local_gateway_route_table_id,
-                local_gateway_virtual_interface_group_id: self
-                    .local_gateway_virtual_interface_group_id,
-                network_interface_id: self.network_interface_id,
-                dry_run: self.dry_run,
-                destination_prefix_list_id: self.destination_prefix_list_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteInput {
+            destination_cidr_block: self.destination_cidr_block,
+            local_gateway_route_table_id: self.local_gateway_route_table_id,
+            local_gateway_virtual_interface_group_id: self.local_gateway_virtual_interface_group_id,
+            network_interface_id: self.network_interface_id,
+            dry_run: self.dry_run,
+            destination_prefix_list_id: self.destination_prefix_list_id,
+        })
     }
 }

@@ -38,9 +38,7 @@ impl ReportInstanceStatusFluentBuilder {
         }
     }
     /// Access the ReportInstanceStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::report_instance_status::builders::ReportInstanceStatusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::report_instance_status::builders::ReportInstanceStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ReportInstanceStatusFluentBuilder {
             crate::operation::report_instance_status::ReportInstanceStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::report_instance_status::ReportInstanceStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::report_instance_status::ReportInstanceStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ReportInstanceStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ReportInstanceStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::report_instance_status::ReportInstanceStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::report_instance_status::ReportInstanceStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::report_instance_status::ReportInstanceStatusError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ReportInstanceStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::report_instance_status::ReportInstanceStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::report_instance_status::ReportInstanceStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::report_instance_status::ReportInstanceStatusError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +106,7 @@ impl ReportInstanceStatusFluentBuilder {
             crate::operation::report_instance_status::ReportInstanceStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::report_instance_status::ReportInstanceStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::report_instance_status::ReportInstanceStatusError>,
     > {
         self.customize_middleware().await
     }
@@ -157,10 +144,7 @@ impl ReportInstanceStatusFluentBuilder {
         self
     }
     /// <p>The time at which the reported instance health state ended.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -178,10 +162,7 @@ impl ReportInstanceStatusFluentBuilder {
         self
     }
     /// <p>The instances.</p>
-    pub fn set_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instances(input);
         self
     }
@@ -221,10 +202,7 @@ impl ReportInstanceStatusFluentBuilder {
     /// <li> <p> <code>performance-other</code>: My instance is experiencing performance problems.</p> </li>
     /// <li> <p> <code>other</code>: [explain using the description parameter]</p> </li>
     /// </ul>
-    pub fn set_reason_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>>,
-    ) -> Self {
+    pub fn set_reason_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>>) -> Self {
         self.inner = self.inner.set_reason_codes(input);
         self
     }
@@ -240,9 +218,7 @@ impl ReportInstanceStatusFluentBuilder {
     /// <li> <p> <code>performance-other</code>: My instance is experiencing performance problems.</p> </li>
     /// <li> <p> <code>other</code>: [explain using the description parameter]</p> </li>
     /// </ul>
-    pub fn get_reason_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>> {
+    pub fn get_reason_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>> {
         self.inner.get_reason_codes()
     }
     /// <p>The time at which the reported instance health state began.</p>
@@ -251,10 +227,7 @@ impl ReportInstanceStatusFluentBuilder {
         self
     }
     /// <p>The time at which the reported instance health state began.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -268,10 +241,7 @@ impl ReportInstanceStatusFluentBuilder {
         self
     }
     /// <p>The status of all instances listed.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReportStatusType>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

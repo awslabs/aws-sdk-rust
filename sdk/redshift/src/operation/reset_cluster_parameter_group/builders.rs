@@ -26,7 +26,7 @@ impl ResetClusterParameterGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetClusterParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupInputBuilder,
+    inner: crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupInputBuilder,
 }
 impl ResetClusterParameterGroupFluentBuilder {
     /// Creates a new `ResetClusterParameterGroup`.
@@ -37,7 +37,7 @@ impl ResetClusterParameterGroupFluentBuilder {
         }
     }
     /// Access the ResetClusterParameterGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ResetClusterParameterGroupFluentBuilder {
             crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ResetClusterParameterGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ResetClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ResetClusterParameterGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ResetClusterParameterGroupFluentBuilder {
             crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the cluster parameter group to be reset.</p>
-    pub fn parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_name(input.into());
         self
     }
     /// <p>The name of the cluster parameter group to be reset.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }
@@ -169,18 +152,13 @@ impl ResetClusterParameterGroupFluentBuilder {
     }
     /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p>
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p>
     /// <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
         self.inner.get_parameters()
     }
 }

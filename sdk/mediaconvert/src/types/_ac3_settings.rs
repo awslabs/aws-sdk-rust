@@ -18,16 +18,13 @@ pub struct Ac3Settings {
     pub dialnorm: ::std::option::Option<i32>,
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
     #[doc(hidden)]
-    pub dynamic_range_compression_line:
-        ::std::option::Option<crate::types::Ac3DynamicRangeCompressionLine>,
+    pub dynamic_range_compression_line: ::std::option::Option<crate::types::Ac3DynamicRangeCompressionLine>,
     /// When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you use the mode-specific settings instead of Dynamic range compression profile. The mode-specific settings are Dynamic range compression profile, line mode and Dynamic range compression profile, RF mode. Note that when you specify values for all three settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use this setting instead of the mode-specific settings, choose None to leave out DRC signaling. Keep the default Film standard to set the profile to Dolby's film standard profile for all operating modes.
     #[doc(hidden)]
-    pub dynamic_range_compression_profile:
-        ::std::option::Option<crate::types::Ac3DynamicRangeCompressionProfile>,
+    pub dynamic_range_compression_profile: ::std::option::Option<crate::types::Ac3DynamicRangeCompressionProfile>,
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
     #[doc(hidden)]
-    pub dynamic_range_compression_rf:
-        ::std::option::Option<crate::types::Ac3DynamicRangeCompressionRf>,
+    pub dynamic_range_compression_rf: ::std::option::Option<crate::types::Ac3DynamicRangeCompressionRf>,
     /// Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
     #[doc(hidden)]
     pub lfe_filter: ::std::option::Option<crate::types::Ac3LfeFilter>,
@@ -56,21 +53,15 @@ impl Ac3Settings {
         self.dialnorm
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn dynamic_range_compression_line(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Ac3DynamicRangeCompressionLine> {
+    pub fn dynamic_range_compression_line(&self) -> ::std::option::Option<&crate::types::Ac3DynamicRangeCompressionLine> {
         self.dynamic_range_compression_line.as_ref()
     }
     /// When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you use the mode-specific settings instead of Dynamic range compression profile. The mode-specific settings are Dynamic range compression profile, line mode and Dynamic range compression profile, RF mode. Note that when you specify values for all three settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use this setting instead of the mode-specific settings, choose None to leave out DRC signaling. Keep the default Film standard to set the profile to Dolby's film standard profile for all operating modes.
-    pub fn dynamic_range_compression_profile(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Ac3DynamicRangeCompressionProfile> {
+    pub fn dynamic_range_compression_profile(&self) -> ::std::option::Option<&crate::types::Ac3DynamicRangeCompressionProfile> {
         self.dynamic_range_compression_profile.as_ref()
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn dynamic_range_compression_rf(
-        &self,
-    ) -> ::std::option::Option<&crate::types::Ac3DynamicRangeCompressionRf> {
+    pub fn dynamic_range_compression_rf(&self) -> ::std::option::Option<&crate::types::Ac3DynamicRangeCompressionRf> {
         self.dynamic_range_compression_rf.as_ref()
     }
     /// Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
@@ -95,20 +86,15 @@ impl Ac3Settings {
 
 /// A builder for [`Ac3Settings`](crate::types::Ac3Settings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ac3SettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<i32>,
     pub(crate) bitstream_mode: ::std::option::Option<crate::types::Ac3BitstreamMode>,
     pub(crate) coding_mode: ::std::option::Option<crate::types::Ac3CodingMode>,
     pub(crate) dialnorm: ::std::option::Option<i32>,
-    pub(crate) dynamic_range_compression_line:
-        ::std::option::Option<crate::types::Ac3DynamicRangeCompressionLine>,
-    pub(crate) dynamic_range_compression_profile:
-        ::std::option::Option<crate::types::Ac3DynamicRangeCompressionProfile>,
-    pub(crate) dynamic_range_compression_rf:
-        ::std::option::Option<crate::types::Ac3DynamicRangeCompressionRf>,
+    pub(crate) dynamic_range_compression_line: ::std::option::Option<crate::types::Ac3DynamicRangeCompressionLine>,
+    pub(crate) dynamic_range_compression_profile: ::std::option::Option<crate::types::Ac3DynamicRangeCompressionProfile>,
+    pub(crate) dynamic_range_compression_rf: ::std::option::Option<crate::types::Ac3DynamicRangeCompressionRf>,
     pub(crate) lfe_filter: ::std::option::Option<crate::types::Ac3LfeFilter>,
     pub(crate) metadata_control: ::std::option::Option<crate::types::Ac3MetadataControl>,
     pub(crate) sample_rate: ::std::option::Option<i32>,
@@ -134,10 +120,7 @@ impl Ac3SettingsBuilder {
         self
     }
     /// Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
-    pub fn set_bitstream_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Ac3BitstreamMode>,
-    ) -> Self {
+    pub fn set_bitstream_mode(mut self, input: ::std::option::Option<crate::types::Ac3BitstreamMode>) -> Self {
         self.bitstream_mode = input;
         self
     }
@@ -151,10 +134,7 @@ impl Ac3SettingsBuilder {
         self
     }
     /// Dolby Digital coding mode. Determines number of channels.
-    pub fn set_coding_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Ac3CodingMode>,
-    ) -> Self {
+    pub fn set_coding_mode(mut self, input: ::std::option::Option<crate::types::Ac3CodingMode>) -> Self {
         self.coding_mode = input;
         self
     }
@@ -177,69 +157,45 @@ impl Ac3SettingsBuilder {
         &self.dialnorm
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn dynamic_range_compression_line(
-        mut self,
-        input: crate::types::Ac3DynamicRangeCompressionLine,
-    ) -> Self {
+    pub fn dynamic_range_compression_line(mut self, input: crate::types::Ac3DynamicRangeCompressionLine) -> Self {
         self.dynamic_range_compression_line = ::std::option::Option::Some(input);
         self
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn set_dynamic_range_compression_line(
-        mut self,
-        input: ::std::option::Option<crate::types::Ac3DynamicRangeCompressionLine>,
-    ) -> Self {
+    pub fn set_dynamic_range_compression_line(mut self, input: ::std::option::Option<crate::types::Ac3DynamicRangeCompressionLine>) -> Self {
         self.dynamic_range_compression_line = input;
         self
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn get_dynamic_range_compression_line(
-        &self,
-    ) -> &::std::option::Option<crate::types::Ac3DynamicRangeCompressionLine> {
+    pub fn get_dynamic_range_compression_line(&self) -> &::std::option::Option<crate::types::Ac3DynamicRangeCompressionLine> {
         &self.dynamic_range_compression_line
     }
     /// When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you use the mode-specific settings instead of Dynamic range compression profile. The mode-specific settings are Dynamic range compression profile, line mode and Dynamic range compression profile, RF mode. Note that when you specify values for all three settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use this setting instead of the mode-specific settings, choose None to leave out DRC signaling. Keep the default Film standard to set the profile to Dolby's film standard profile for all operating modes.
-    pub fn dynamic_range_compression_profile(
-        mut self,
-        input: crate::types::Ac3DynamicRangeCompressionProfile,
-    ) -> Self {
+    pub fn dynamic_range_compression_profile(mut self, input: crate::types::Ac3DynamicRangeCompressionProfile) -> Self {
         self.dynamic_range_compression_profile = ::std::option::Option::Some(input);
         self
     }
     /// When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you use the mode-specific settings instead of Dynamic range compression profile. The mode-specific settings are Dynamic range compression profile, line mode and Dynamic range compression profile, RF mode. Note that when you specify values for all three settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use this setting instead of the mode-specific settings, choose None to leave out DRC signaling. Keep the default Film standard to set the profile to Dolby's film standard profile for all operating modes.
-    pub fn set_dynamic_range_compression_profile(
-        mut self,
-        input: ::std::option::Option<crate::types::Ac3DynamicRangeCompressionProfile>,
-    ) -> Self {
+    pub fn set_dynamic_range_compression_profile(mut self, input: ::std::option::Option<crate::types::Ac3DynamicRangeCompressionProfile>) -> Self {
         self.dynamic_range_compression_profile = input;
         self
     }
     /// When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you use the mode-specific settings instead of Dynamic range compression profile. The mode-specific settings are Dynamic range compression profile, line mode and Dynamic range compression profile, RF mode. Note that when you specify values for all three settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use this setting instead of the mode-specific settings, choose None to leave out DRC signaling. Keep the default Film standard to set the profile to Dolby's film standard profile for all operating modes.
-    pub fn get_dynamic_range_compression_profile(
-        &self,
-    ) -> &::std::option::Option<crate::types::Ac3DynamicRangeCompressionProfile> {
+    pub fn get_dynamic_range_compression_profile(&self) -> &::std::option::Option<crate::types::Ac3DynamicRangeCompressionProfile> {
         &self.dynamic_range_compression_profile
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn dynamic_range_compression_rf(
-        mut self,
-        input: crate::types::Ac3DynamicRangeCompressionRf,
-    ) -> Self {
+    pub fn dynamic_range_compression_rf(mut self, input: crate::types::Ac3DynamicRangeCompressionRf) -> Self {
         self.dynamic_range_compression_rf = ::std::option::Option::Some(input);
         self
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn set_dynamic_range_compression_rf(
-        mut self,
-        input: ::std::option::Option<crate::types::Ac3DynamicRangeCompressionRf>,
-    ) -> Self {
+    pub fn set_dynamic_range_compression_rf(mut self, input: ::std::option::Option<crate::types::Ac3DynamicRangeCompressionRf>) -> Self {
         self.dynamic_range_compression_rf = input;
         self
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
-    pub fn get_dynamic_range_compression_rf(
-        &self,
-    ) -> &::std::option::Option<crate::types::Ac3DynamicRangeCompressionRf> {
+    pub fn get_dynamic_range_compression_rf(&self) -> &::std::option::Option<crate::types::Ac3DynamicRangeCompressionRf> {
         &self.dynamic_range_compression_rf
     }
     /// Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
@@ -248,10 +204,7 @@ impl Ac3SettingsBuilder {
         self
     }
     /// Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
-    pub fn set_lfe_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::Ac3LfeFilter>,
-    ) -> Self {
+    pub fn set_lfe_filter(mut self, input: ::std::option::Option<crate::types::Ac3LfeFilter>) -> Self {
         self.lfe_filter = input;
         self
     }
@@ -265,10 +218,7 @@ impl Ac3SettingsBuilder {
         self
     }
     /// When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
-    pub fn set_metadata_control(
-        mut self,
-        input: ::std::option::Option<crate::types::Ac3MetadataControl>,
-    ) -> Self {
+    pub fn set_metadata_control(mut self, input: ::std::option::Option<crate::types::Ac3MetadataControl>) -> Self {
         self.metadata_control = input;
         self
     }

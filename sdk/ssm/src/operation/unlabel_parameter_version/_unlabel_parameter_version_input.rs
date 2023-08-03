@@ -29,18 +29,14 @@ impl UnlabelParameterVersionInput {
 }
 impl UnlabelParameterVersionInput {
     /// Creates a new builder-style object to manufacture [`UnlabelParameterVersionInput`](crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput).
-    pub fn builder(
-    ) -> crate::operation::unlabel_parameter_version::builders::UnlabelParameterVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::unlabel_parameter_version::builders::UnlabelParameterVersionInputBuilder {
         crate::operation::unlabel_parameter_version::builders::UnlabelParameterVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`UnlabelParameterVersionInput`](crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnlabelParameterVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_version: ::std::option::Option<i64>,
@@ -87,10 +83,7 @@ impl UnlabelParameterVersionInputBuilder {
         self
     }
     /// <p>One or more labels to delete from the specified parameter version.</p>
-    pub fn set_labels(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.labels = input;
         self
     }
@@ -105,12 +98,10 @@ impl UnlabelParameterVersionInputBuilder {
         crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput {
-                name: self.name,
-                parameter_version: self.parameter_version,
-                labels: self.labels,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput {
+            name: self.name,
+            parameter_version: self.parameter_version,
+            labels: self.labels,
+        })
     }
 }

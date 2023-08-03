@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteConnectionAliasOutput {
 }
 impl DeleteConnectionAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectionAliasOutput`](crate::operation::delete_connection_alias::DeleteConnectionAliasOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_connection_alias::builders::DeleteConnectionAliasOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_connection_alias::builders::DeleteConnectionAliasOutputBuilder {
         crate::operation::delete_connection_alias::builders::DeleteConnectionAliasOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConnectionAliasOutput`](crate::operation::delete_connection_alias::DeleteConnectionAliasOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConnectionAliasOutputBuilder {
     _request_id: Option<String>,
 }

@@ -37,10 +37,7 @@ impl UpdateOutpostResolverFluentBuilder {
         }
     }
     /// Access the UpdateOutpostResolver as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_outpost_resolver::builders::UpdateOutpostResolverInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_outpost_resolver::builders::UpdateOutpostResolverInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateOutpostResolverFluentBuilder {
             crate::operation::update_outpost_resolver::UpdateOutpostResolver,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_outpost_resolver::UpdateOutpostResolverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_outpost_resolver::UpdateOutpostResolverError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateOutpostResolverFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateOutpostResolverFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_outpost_resolver::UpdateOutpostResolverOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_outpost_resolver::UpdateOutpostResolverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_outpost_resolver::UpdateOutpostResolverError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateOutpostResolverFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_outpost_resolver::UpdateOutpostResolverOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_outpost_resolver::UpdateOutpostResolverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_outpost_resolver::UpdateOutpostResolverError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateOutpostResolverFluentBuilder {
             crate::operation::update_outpost_resolver::UpdateOutpostResolver,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_outpost_resolver::UpdateOutpostResolverError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_outpost_resolver::UpdateOutpostResolverError>,
     > {
         self.customize_middleware().await
     }
@@ -166,18 +152,12 @@ impl UpdateOutpostResolverFluentBuilder {
         self.inner.get_instance_count()
     }
     /// <p> Amazon EC2 instance type. </p>
-    pub fn preferred_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.preferred_instance_type(input.into());
         self
     }
     /// <p> Amazon EC2 instance type. </p>
-    pub fn set_preferred_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_instance_type(input);
         self
     }

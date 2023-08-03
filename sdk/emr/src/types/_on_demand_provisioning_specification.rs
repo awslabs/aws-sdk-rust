@@ -8,24 +8,18 @@
 pub struct OnDemandProvisioningSpecification {
     /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
     #[doc(hidden)]
-    pub allocation_strategy:
-        ::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy>,
+    pub allocation_strategy: ::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy>,
     /// <p>The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.</p>
     #[doc(hidden)]
-    pub capacity_reservation_options:
-        ::std::option::Option<crate::types::OnDemandCapacityReservationOptions>,
+    pub capacity_reservation_options: ::std::option::Option<crate::types::OnDemandCapacityReservationOptions>,
 }
 impl OnDemandProvisioningSpecification {
     /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
-    pub fn allocation_strategy(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OnDemandProvisioningAllocationStrategy> {
+    pub fn allocation_strategy(&self) -> ::std::option::Option<&crate::types::OnDemandProvisioningAllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
     /// <p>The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.</p>
-    pub fn capacity_reservation_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OnDemandCapacityReservationOptions> {
+    pub fn capacity_reservation_options(&self) -> ::std::option::Option<&crate::types::OnDemandCapacityReservationOptions> {
         self.capacity_reservation_options.as_ref()
     }
 }
@@ -38,58 +32,38 @@ impl OnDemandProvisioningSpecification {
 
 /// A builder for [`OnDemandProvisioningSpecification`](crate::types::OnDemandProvisioningSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OnDemandProvisioningSpecificationBuilder {
-    pub(crate) allocation_strategy:
-        ::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy>,
-    pub(crate) capacity_reservation_options:
-        ::std::option::Option<crate::types::OnDemandCapacityReservationOptions>,
+    pub(crate) allocation_strategy: ::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy>,
+    pub(crate) capacity_reservation_options: ::std::option::Option<crate::types::OnDemandCapacityReservationOptions>,
 }
 impl OnDemandProvisioningSpecificationBuilder {
     /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
-    pub fn allocation_strategy(
-        mut self,
-        input: crate::types::OnDemandProvisioningAllocationStrategy,
-    ) -> Self {
+    pub fn allocation_strategy(mut self, input: crate::types::OnDemandProvisioningAllocationStrategy) -> Self {
         self.allocation_strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
-    pub fn set_allocation_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy>,
-    ) -> Self {
+    pub fn set_allocation_strategy(mut self, input: ::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy>) -> Self {
         self.allocation_strategy = input;
         self
     }
     /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
-    pub fn get_allocation_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy> {
+    pub fn get_allocation_strategy(&self) -> &::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy> {
         &self.allocation_strategy
     }
     /// <p>The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.</p>
-    pub fn capacity_reservation_options(
-        mut self,
-        input: crate::types::OnDemandCapacityReservationOptions,
-    ) -> Self {
+    pub fn capacity_reservation_options(mut self, input: crate::types::OnDemandCapacityReservationOptions) -> Self {
         self.capacity_reservation_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.</p>
-    pub fn set_capacity_reservation_options(
-        mut self,
-        input: ::std::option::Option<crate::types::OnDemandCapacityReservationOptions>,
-    ) -> Self {
+    pub fn set_capacity_reservation_options(mut self, input: ::std::option::Option<crate::types::OnDemandCapacityReservationOptions>) -> Self {
         self.capacity_reservation_options = input;
         self
     }
     /// <p>The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.</p>
-    pub fn get_capacity_reservation_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::OnDemandCapacityReservationOptions> {
+    pub fn get_capacity_reservation_options(&self) -> &::std::option::Option<crate::types::OnDemandCapacityReservationOptions> {
         &self.capacity_reservation_options
     }
     /// Consumes the builder and constructs a [`OnDemandProvisioningSpecification`](crate::types::OnDemandProvisioningSpecification).

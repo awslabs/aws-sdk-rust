@@ -11,8 +11,7 @@ pub struct ListQualificationTypesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The list of QualificationType elements returned by the query. </p>
     #[doc(hidden)]
-    pub qualification_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::QualificationType>>,
+    pub qualification_types: ::std::option::Option<::std::vec::Vec<crate::types::QualificationType>>,
     _request_id: Option<String>,
 }
 impl ListQualificationTypesOutput {
@@ -36,23 +35,18 @@ impl ::aws_http::request_id::RequestId for ListQualificationTypesOutput {
 }
 impl ListQualificationTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListQualificationTypesOutput`](crate::operation::list_qualification_types::ListQualificationTypesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_qualification_types::builders::ListQualificationTypesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_qualification_types::builders::ListQualificationTypesOutputBuilder {
         crate::operation::list_qualification_types::builders::ListQualificationTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListQualificationTypesOutput`](crate::operation::list_qualification_types::ListQualificationTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQualificationTypesOutputBuilder {
     pub(crate) num_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) qualification_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::QualificationType>>,
+    pub(crate) qualification_types: ::std::option::Option<::std::vec::Vec<crate::types::QualificationType>>,
     _request_id: Option<String>,
 }
 impl ListQualificationTypesOutputBuilder {
@@ -96,17 +90,12 @@ impl ListQualificationTypesOutputBuilder {
         self
     }
     /// <p> The list of QualificationType elements returned by the query. </p>
-    pub fn set_qualification_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::QualificationType>>,
-    ) -> Self {
+    pub fn set_qualification_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QualificationType>>) -> Self {
         self.qualification_types = input;
         self
     }
     /// <p> The list of QualificationType elements returned by the query. </p>
-    pub fn get_qualification_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QualificationType>> {
+    pub fn get_qualification_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QualificationType>> {
         &self.qualification_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

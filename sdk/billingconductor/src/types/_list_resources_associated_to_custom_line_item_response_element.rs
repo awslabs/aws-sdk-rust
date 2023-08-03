@@ -30,17 +30,14 @@ impl ListResourcesAssociatedToCustomLineItemResponseElement {
 }
 impl ListResourcesAssociatedToCustomLineItemResponseElement {
     /// Creates a new builder-style object to manufacture [`ListResourcesAssociatedToCustomLineItemResponseElement`](crate::types::ListResourcesAssociatedToCustomLineItemResponseElement).
-    pub fn builder(
-    ) -> crate::types::builders::ListResourcesAssociatedToCustomLineItemResponseElementBuilder {
+    pub fn builder() -> crate::types::builders::ListResourcesAssociatedToCustomLineItemResponseElementBuilder {
         crate::types::builders::ListResourcesAssociatedToCustomLineItemResponseElementBuilder::default()
     }
 }
 
 /// A builder for [`ListResourcesAssociatedToCustomLineItemResponseElement`](crate::types::ListResourcesAssociatedToCustomLineItemResponseElement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemResponseElementBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) relationship: ::std::option::Option<crate::types::CustomLineItemRelationship>,
@@ -67,32 +64,21 @@ impl ListResourcesAssociatedToCustomLineItemResponseElementBuilder {
         self
     }
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
-    pub fn set_relationship(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomLineItemRelationship>,
-    ) -> Self {
+    pub fn set_relationship(mut self, input: ::std::option::Option<crate::types::CustomLineItemRelationship>) -> Self {
         self.relationship = input;
         self
     }
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
-    pub fn get_relationship(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomLineItemRelationship> {
+    pub fn get_relationship(&self) -> &::std::option::Option<crate::types::CustomLineItemRelationship> {
         &self.relationship
     }
     /// <p>The end billing period of the associated resource.</p>
-    pub fn end_billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn end_billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The end billing period of the associated resource.</p>
-    pub fn set_end_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_end_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_billing_period = input;
         self
     }

@@ -35,9 +35,7 @@ impl ListServersOutput {
 
 /// A builder for [`ListServersOutput`](crate::operation::list_servers::ListServersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) servers: ::std::option::Option<::std::vec::Vec<crate::types::ListedServer>>,
@@ -70,17 +68,12 @@ impl ListServersOutputBuilder {
         self
     }
     /// <p>An array of servers that were listed.</p>
-    pub fn set_servers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListedServer>>,
-    ) -> Self {
+    pub fn set_servers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedServer>>) -> Self {
         self.servers = input;
         self
     }
     /// <p>An array of servers that were listed.</p>
-    pub fn get_servers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedServer>> {
+    pub fn get_servers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedServer>> {
         &self.servers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

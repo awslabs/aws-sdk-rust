@@ -37,10 +37,7 @@ impl UpdateContactScheduleFluentBuilder {
         }
     }
     /// Access the UpdateContactSchedule as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_contact_schedule::builders::UpdateContactScheduleInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_contact_schedule::builders::UpdateContactScheduleInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl UpdateContactScheduleFluentBuilder {
             crate::operation::update_contact_schedule::UpdateContactSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_contact_schedule::UpdateContactScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contact_schedule::UpdateContactScheduleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl UpdateContactScheduleFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl UpdateContactScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_contact_schedule::UpdateContactScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_contact_schedule::UpdateContactScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contact_schedule::UpdateContactScheduleError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl UpdateContactScheduleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_contact_schedule::UpdateContactScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_contact_schedule::UpdateContactScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contact_schedule::UpdateContactScheduleError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl UpdateContactScheduleFluentBuilder {
             crate::operation::update_contact_schedule::UpdateContactSchedule,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_contact_schedule::UpdateContactScheduleError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contact_schedule::UpdateContactScheduleError>,
     > {
         self.customize_middleware().await
     }
@@ -157,10 +143,7 @@ impl UpdateContactScheduleFluentBuilder {
         self
     }
     /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
-    pub fn set_scheduled_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_scheduled_time(input);
         self
     }

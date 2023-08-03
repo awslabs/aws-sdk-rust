@@ -5,8 +5,7 @@
 pub struct ListTargetResourceTypesOutput {
     /// <p>The target resource types.</p>
     #[doc(hidden)]
-    pub target_resource_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetResourceTypeSummary>>,
+    pub target_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::TargetResourceTypeSummary>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListTargetResourceTypesOutput {
 }
 impl ListTargetResourceTypesOutput {
     /// <p>The target resource types.</p>
-    pub fn target_resource_types(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TargetResourceTypeSummary]> {
+    pub fn target_resource_types(&self) -> ::std::option::Option<&[crate::types::TargetResourceTypeSummary]> {
         self.target_resource_types.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTargetResourceTypesOutput {
 }
 impl ListTargetResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListTargetResourceTypesOutput`](crate::operation::list_target_resource_types::ListTargetResourceTypesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_target_resource_types::builders::ListTargetResourceTypesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_target_resource_types::builders::ListTargetResourceTypesOutputBuilder {
         crate::operation::list_target_resource_types::builders::ListTargetResourceTypesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTargetResourceTypesOutput`](crate::operation::list_target_resource_types::ListTargetResourceTypesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetResourceTypesOutputBuilder {
-    pub(crate) target_resource_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::TargetResourceTypeSummary>>,
+    pub(crate) target_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::TargetResourceTypeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListTargetResourceTypesOutputBuilder {
         self
     }
     /// <p>The target resource types.</p>
-    pub fn set_target_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetResourceTypeSummary>>,
-    ) -> Self {
+    pub fn set_target_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetResourceTypeSummary>>) -> Self {
         self.target_resource_types = input;
         self
     }
     /// <p>The target resource types.</p>
-    pub fn get_target_resource_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetResourceTypeSummary>> {
+    pub fn get_target_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetResourceTypeSummary>> {
         &self.target_resource_types
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -99,9 +86,7 @@ impl ListTargetResourceTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTargetResourceTypesOutput`](crate::operation::list_target_resource_types::ListTargetResourceTypesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_target_resource_types::ListTargetResourceTypesOutput {
+    pub fn build(self) -> crate::operation::list_target_resource_types::ListTargetResourceTypesOutput {
         crate::operation::list_target_resource_types::ListTargetResourceTypesOutput {
             target_resource_types: self.target_resource_types,
             next_token: self.next_token,

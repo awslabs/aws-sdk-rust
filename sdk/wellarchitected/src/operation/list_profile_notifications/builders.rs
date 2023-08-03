@@ -26,7 +26,7 @@ impl ListProfileNotificationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListProfileNotificationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_profile_notifications::builders::ListProfileNotificationsInputBuilder,
+    inner: crate::operation::list_profile_notifications::builders::ListProfileNotificationsInputBuilder,
 }
 impl ListProfileNotificationsFluentBuilder {
     /// Creates a new `ListProfileNotifications`.
@@ -37,10 +37,7 @@ impl ListProfileNotificationsFluentBuilder {
         }
     }
     /// Access the ListProfileNotifications as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_profile_notifications::builders::ListProfileNotificationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_profile_notifications::builders::ListProfileNotificationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListProfileNotificationsFluentBuilder {
             crate::operation::list_profile_notifications::ListProfileNotifications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_notifications::ListProfileNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_notifications::ListProfileNotificationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListProfileNotificationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListProfileNotificationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_profile_notifications::ListProfileNotificationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_notifications::ListProfileNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_notifications::ListProfileNotificationsError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListProfileNotificationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_profile_notifications::ListProfileNotificationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_notifications::ListProfileNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_notifications::ListProfileNotificationsError>,
     > {
         self.send_middleware().await
     }
@@ -117,19 +105,14 @@ impl ListProfileNotificationsFluentBuilder {
             crate::operation::list_profile_notifications::ListProfileNotifications,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_profile_notifications::ListProfileNotificationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_profile_notifications::ListProfileNotificationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_profile_notifications::paginator::ListProfileNotificationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_profile_notifications::paginator::ListProfileNotificationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_profile_notifications::paginator::ListProfileNotificationsPaginator {
         crate::operation::list_profile_notifications::paginator::ListProfileNotificationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`permission_set_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_permission_set::builders::DeletePermissionSetFluentBuilder::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::operation::delete_permission_set::builders::DeletePermissionSetFluentBuilder::set_permission_set_arn): <p>The ARN of the permission set that should be deleted.</p>
     /// - On success, responds with [`DeletePermissionSetOutput`](crate::operation::delete_permission_set::DeletePermissionSetOutput)
     /// - On failure, responds with [`SdkError<DeletePermissionSetError>`](crate::operation::delete_permission_set::DeletePermissionSetError)
-    pub fn delete_permission_set(
-        &self,
-    ) -> crate::operation::delete_permission_set::builders::DeletePermissionSetFluentBuilder {
-        crate::operation::delete_permission_set::builders::DeletePermissionSetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_permission_set(&self) -> crate::operation::delete_permission_set::builders::DeletePermissionSetFluentBuilder {
+        crate::operation::delete_permission_set::builders::DeletePermissionSetFluentBuilder::new(self.handle.clone())
     }
 }

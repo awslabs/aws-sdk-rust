@@ -6,10 +6,7 @@ pub fn ser_pivot_table_configuration(
     if let Some(var_1) = &input.field_wells {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FieldWells").start_object();
-        crate::protocol_serde::shape_pivot_table_field_wells::ser_pivot_table_field_wells(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_pivot_table_field_wells::ser_pivot_table_field_wells(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.sort_configuration {
@@ -21,28 +18,19 @@ pub fn ser_pivot_table_configuration(
     if let Some(var_5) = &input.table_options {
         #[allow(unused_mut)]
         let mut object_6 = object.key("TableOptions").start_object();
-        crate::protocol_serde::shape_pivot_table_options::ser_pivot_table_options(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_pivot_table_options::ser_pivot_table_options(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.total_options {
         #[allow(unused_mut)]
         let mut object_8 = object.key("TotalOptions").start_object();
-        crate::protocol_serde::shape_pivot_table_total_options::ser_pivot_table_total_options(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_pivot_table_total_options::ser_pivot_table_total_options(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.field_options {
         #[allow(unused_mut)]
         let mut object_10 = object.key("FieldOptions").start_object();
-        crate::protocol_serde::shape_pivot_table_field_options::ser_pivot_table_field_options(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_pivot_table_field_options::ser_pivot_table_field_options(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.paginated_report_options {
@@ -56,17 +44,9 @@ pub fn ser_pivot_table_configuration(
 
 pub(crate) fn de_pivot_table_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::PivotTableConfiguration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::PivotTableConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -76,56 +56,48 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "FieldWells" => {
-                                builder = builder.set_field_wells(
-                                    crate::protocol_serde::shape_pivot_table_field_wells::de_pivot_table_field_wells(tokens)?
-                                );
-                            }
-                            "SortConfiguration" => {
-                                builder = builder.set_sort_configuration(
-                                    crate::protocol_serde::shape_pivot_table_sort_configuration::de_pivot_table_sort_configuration(tokens)?
-                                );
-                            }
-                            "TableOptions" => {
-                                builder = builder.set_table_options(
-                                    crate::protocol_serde::shape_pivot_table_options::de_pivot_table_options(tokens)?
-                                );
-                            }
-                            "TotalOptions" => {
-                                builder = builder.set_total_options(
-                                    crate::protocol_serde::shape_pivot_table_total_options::de_pivot_table_total_options(tokens)?
-                                );
-                            }
-                            "FieldOptions" => {
-                                builder = builder.set_field_options(
-                                    crate::protocol_serde::shape_pivot_table_field_options::de_pivot_table_field_options(tokens)?
-                                );
-                            }
-                            "PaginatedReportOptions" => {
-                                builder = builder.set_paginated_report_options(
-                                    crate::protocol_serde::shape_pivot_table_paginated_report_options::de_pivot_table_paginated_report_options(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "FieldWells" => {
+                            builder =
+                                builder.set_field_wells(crate::protocol_serde::shape_pivot_table_field_wells::de_pivot_table_field_wells(tokens)?);
                         }
-                    }
+                        "SortConfiguration" => {
+                            builder = builder.set_sort_configuration(
+                                crate::protocol_serde::shape_pivot_table_sort_configuration::de_pivot_table_sort_configuration(tokens)?,
+                            );
+                        }
+                        "TableOptions" => {
+                            builder = builder.set_table_options(crate::protocol_serde::shape_pivot_table_options::de_pivot_table_options(tokens)?);
+                        }
+                        "TotalOptions" => {
+                            builder = builder.set_total_options(
+                                crate::protocol_serde::shape_pivot_table_total_options::de_pivot_table_total_options(tokens)?,
+                            );
+                        }
+                        "FieldOptions" => {
+                            builder = builder.set_field_options(
+                                crate::protocol_serde::shape_pivot_table_field_options::de_pivot_table_field_options(tokens)?,
+                            );
+                        }
+                        "PaginatedReportOptions" => {
+                            builder = builder.set_paginated_report_options(
+                                crate::protocol_serde::shape_pivot_table_paginated_report_options::de_pivot_table_paginated_report_options(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

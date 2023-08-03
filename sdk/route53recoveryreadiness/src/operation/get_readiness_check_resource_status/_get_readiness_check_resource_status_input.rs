@@ -36,16 +36,14 @@ impl GetReadinessCheckResourceStatusInput {
 }
 impl GetReadinessCheckResourceStatusInput {
     /// Creates a new builder-style object to manufacture [`GetReadinessCheckResourceStatusInput`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusInput).
-    pub fn builder() -> crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusInputBuilder{
+    pub fn builder() -> crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusInputBuilder {
         crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`GetReadinessCheckResourceStatusInput`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReadinessCheckResourceStatusInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -82,18 +80,12 @@ impl GetReadinessCheckResourceStatusInputBuilder {
         &self.next_token
     }
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readiness_check_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a readiness check.</p>
-    pub fn set_readiness_check_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_readiness_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.readiness_check_name = input;
         self
     }
@@ -102,18 +94,12 @@ impl GetReadinessCheckResourceStatusInputBuilder {
         &self.readiness_check_name
     }
     /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
@@ -130,15 +116,11 @@ impl GetReadinessCheckResourceStatusInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                readiness_check_name: self.readiness_check_name
-                ,
-                resource_identifier: self.resource_identifier
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+                readiness_check_name: self.readiness_check_name,
+                resource_identifier: self.resource_identifier,
+            },
         )
     }
 }

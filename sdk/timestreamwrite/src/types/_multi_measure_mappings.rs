@@ -9,8 +9,7 @@ pub struct MultiMeasureMappings {
     pub target_multi_measure_name: ::std::option::Option<::std::string::String>,
     /// <p></p>
     #[doc(hidden)]
-    pub multi_measure_attribute_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>>,
+    pub multi_measure_attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>>,
 }
 impl MultiMeasureMappings {
     /// <p></p>
@@ -18,9 +17,7 @@ impl MultiMeasureMappings {
         self.target_multi_measure_name.as_deref()
     }
     /// <p></p>
-    pub fn multi_measure_attribute_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MultiMeasureAttributeMapping]> {
+    pub fn multi_measure_attribute_mappings(&self) -> ::std::option::Option<&[crate::types::MultiMeasureAttributeMapping]> {
         self.multi_measure_attribute_mappings.as_deref()
     }
 }
@@ -33,28 +30,19 @@ impl MultiMeasureMappings {
 
 /// A builder for [`MultiMeasureMappings`](crate::types::MultiMeasureMappings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MultiMeasureMappingsBuilder {
     pub(crate) target_multi_measure_name: ::std::option::Option<::std::string::String>,
-    pub(crate) multi_measure_attribute_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>>,
+    pub(crate) multi_measure_attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>>,
 }
 impl MultiMeasureMappingsBuilder {
     /// <p></p>
-    pub fn target_multi_measure_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_multi_measure_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_multi_measure_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_target_multi_measure_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_multi_measure_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_multi_measure_name = input;
         self
     }
@@ -67,10 +55,7 @@ impl MultiMeasureMappingsBuilder {
     /// To override the contents of this collection use [`set_multi_measure_attribute_mappings`](Self::set_multi_measure_attribute_mappings).
     ///
     /// <p></p>
-    pub fn multi_measure_attribute_mappings(
-        mut self,
-        input: crate::types::MultiMeasureAttributeMapping,
-    ) -> Self {
+    pub fn multi_measure_attribute_mappings(mut self, input: crate::types::MultiMeasureAttributeMapping) -> Self {
         let mut v = self.multi_measure_attribute_mappings.unwrap_or_default();
         v.push(input);
         self.multi_measure_attribute_mappings = ::std::option::Option::Some(v);
@@ -85,9 +70,7 @@ impl MultiMeasureMappingsBuilder {
         self
     }
     /// <p></p>
-    pub fn get_multi_measure_attribute_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>> {
+    pub fn get_multi_measure_attribute_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>> {
         &self.multi_measure_attribute_mappings
     }
     /// Consumes the builder and constructs a [`MultiMeasureMappings`](crate::types::MultiMeasureMappings).

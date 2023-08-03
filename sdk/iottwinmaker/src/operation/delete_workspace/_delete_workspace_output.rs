@@ -19,9 +19,7 @@ impl DeleteWorkspaceOutput {
 
 /// A builder for [`DeleteWorkspaceOutput`](crate::operation::delete_workspace::DeleteWorkspaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceOutputBuilder {
     _request_id: Option<String>,
 }

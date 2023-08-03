@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`status_message(Option<String>)`](crate::operation::get_expense_analysis::GetExpenseAnalysisOutput::status_message): <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
     ///   - [`analyze_expense_model_version(Option<String>)`](crate::operation::get_expense_analysis::GetExpenseAnalysisOutput::analyze_expense_model_version): <p>The current model version of AnalyzeExpense.</p>
     /// - On failure, responds with [`SdkError<GetExpenseAnalysisError>`](crate::operation::get_expense_analysis::GetExpenseAnalysisError)
-    pub fn get_expense_analysis(
-        &self,
-    ) -> crate::operation::get_expense_analysis::builders::GetExpenseAnalysisFluentBuilder {
-        crate::operation::get_expense_analysis::builders::GetExpenseAnalysisFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_expense_analysis(&self) -> crate::operation::get_expense_analysis::builders::GetExpenseAnalysisFluentBuilder {
+        crate::operation::get_expense_analysis::builders::GetExpenseAnalysisFluentBuilder::new(self.handle.clone())
     }
 }

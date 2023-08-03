@@ -39,9 +39,7 @@ impl CreateEmailIdentityFluentBuilder {
         }
     }
     /// Access the CreateEmailIdentity as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_email_identity::builders::CreateEmailIdentityInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_email_identity::builders::CreateEmailIdentityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl CreateEmailIdentityFluentBuilder {
             crate::operation::create_email_identity::CreateEmailIdentity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_email_identity::CreateEmailIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_email_identity::CreateEmailIdentityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl CreateEmailIdentityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl CreateEmailIdentityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_email_identity::CreateEmailIdentityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_email_identity::CreateEmailIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_email_identity::CreateEmailIdentityError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl CreateEmailIdentityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_email_identity::CreateEmailIdentityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_email_identity::CreateEmailIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_email_identity::CreateEmailIdentityError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +107,17 @@ impl CreateEmailIdentityFluentBuilder {
             crate::operation::create_email_identity::CreateEmailIdentity,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_email_identity::CreateEmailIdentityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_email_identity::CreateEmailIdentityError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The email address or domain that you want to verify.</p>
-    pub fn email_identity(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_identity(input.into());
         self
     }
     /// <p>The email address or domain that you want to verify.</p>
-    pub fn set_email_identity(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_email_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email_identity(input);
         self
     }
@@ -154,10 +135,7 @@ impl CreateEmailIdentityFluentBuilder {
         self
     }
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the email identity.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

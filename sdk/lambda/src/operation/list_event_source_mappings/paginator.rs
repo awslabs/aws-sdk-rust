@@ -2,8 +2,7 @@
 /// Paginator for [`ListEventSourceMappings`](crate::operation::list_event_source_mappings::ListEventSourceMappings)
 pub struct ListEventSourceMappingsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
-    builder:
-        crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsInputBuilder,
+    builder: crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsInputBuilder,
     stop_on_duplicate_token: bool,
 }
 
@@ -32,7 +31,7 @@ impl ListEventSourceMappingsPaginator {
     ///
     /// This paginator automatically flattens results using `event_source_mappings`. Queries to the underlying service
     /// are dispatched lazily.
-    pub fn items(self) -> crate::operation::list_event_source_mappings::paginator::ListEventSourceMappingsPaginatorItems{
+    pub fn items(self) -> crate::operation::list_event_source_mappings::paginator::ListEventSourceMappingsPaginatorItems {
         crate::operation::list_event_source_mappings::paginator::ListEventSourceMappingsPaginatorItems(self)
     }
 
@@ -56,9 +55,7 @@ impl ListEventSourceMappingsPaginator {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::operation::list_event_source_mappings::ListEventSourceMappingsOutput,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_event_source_mappings::ListEventSourceMappingsError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_event_source_mappings::ListEventSourceMappingsError>,
         >,
     > + ::std::marker::Unpin {
         // Move individual fields out of self for the borrow checker
@@ -68,10 +65,7 @@ impl ListEventSourceMappingsPaginator {
         ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
             ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                let mut input = match builder
-                    .build()
-                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                {
+                let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
                     ::std::result::Result::Ok(input) => input,
                     ::std::result::Result::Err(e) => {
                         let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -96,15 +90,9 @@ impl ListEventSourceMappingsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_list_event_source_mappings_output_next_marker(
-                                    resp,
-                                );
+                            let new_token = crate::lens::reflens_list_event_source_mappings_output_next_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty
-                                && new_token == input.marker.as_ref()
-                                && self.stop_on_duplicate_token
-                            {
+                            if !is_empty && new_token == input.marker.as_ref() && self.stop_on_duplicate_token {
                                 true
                             } else {
                                 input.marker = new_token.cloned();
@@ -142,9 +130,7 @@ impl ListEventSourceMappingsPaginatorItems {
     ) -> impl ::tokio_stream::Stream<
         Item = ::std::result::Result<
             crate::types::EventSourceMappingConfiguration,
-            ::aws_smithy_http::result::SdkError<
-                crate::operation::list_event_source_mappings::ListEventSourceMappingsError,
-            >,
+            ::aws_smithy_http::result::SdkError<crate::operation::list_event_source_mappings::ListEventSourceMappingsError>,
         >,
     > + ::std::marker::Unpin {
         ::aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {

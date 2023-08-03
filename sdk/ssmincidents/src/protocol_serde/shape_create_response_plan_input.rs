@@ -39,10 +39,7 @@ pub fn ser_create_response_plan_input(
     if let Some(var_12) = &input.incident_template {
         #[allow(unused_mut)]
         let mut object_13 = object.key("incidentTemplate").start_object();
-        crate::protocol_serde::shape_incident_template::ser_incident_template(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_incident_template::ser_incident_template(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.integrations {

@@ -6,8 +6,7 @@
 pub struct DeploymentIoTJobConfiguration {
     /// <p>The rollout configuration for the job. This configuration defines the rate at which the job rolls out to the fleet of target devices.</p>
     #[doc(hidden)]
-    pub job_executions_rollout_config:
-        ::std::option::Option<crate::types::IoTJobExecutionsRolloutConfig>,
+    pub job_executions_rollout_config: ::std::option::Option<crate::types::IoTJobExecutionsRolloutConfig>,
     /// <p>The stop configuration for the job. This configuration defines when and how to stop a job rollout.</p>
     #[doc(hidden)]
     pub abort_config: ::std::option::Option<crate::types::IoTJobAbortConfig>,
@@ -17,9 +16,7 @@ pub struct DeploymentIoTJobConfiguration {
 }
 impl DeploymentIoTJobConfiguration {
     /// <p>The rollout configuration for the job. This configuration defines the rate at which the job rolls out to the fleet of target devices.</p>
-    pub fn job_executions_rollout_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IoTJobExecutionsRolloutConfig> {
+    pub fn job_executions_rollout_config(&self) -> ::std::option::Option<&crate::types::IoTJobExecutionsRolloutConfig> {
         self.job_executions_rollout_config.as_ref()
     }
     /// <p>The stop configuration for the job. This configuration defines when and how to stop a job rollout.</p>
@@ -40,36 +37,25 @@ impl DeploymentIoTJobConfiguration {
 
 /// A builder for [`DeploymentIoTJobConfiguration`](crate::types::DeploymentIoTJobConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentIoTJobConfigurationBuilder {
-    pub(crate) job_executions_rollout_config:
-        ::std::option::Option<crate::types::IoTJobExecutionsRolloutConfig>,
+    pub(crate) job_executions_rollout_config: ::std::option::Option<crate::types::IoTJobExecutionsRolloutConfig>,
     pub(crate) abort_config: ::std::option::Option<crate::types::IoTJobAbortConfig>,
     pub(crate) timeout_config: ::std::option::Option<crate::types::IoTJobTimeoutConfig>,
 }
 impl DeploymentIoTJobConfigurationBuilder {
     /// <p>The rollout configuration for the job. This configuration defines the rate at which the job rolls out to the fleet of target devices.</p>
-    pub fn job_executions_rollout_config(
-        mut self,
-        input: crate::types::IoTJobExecutionsRolloutConfig,
-    ) -> Self {
+    pub fn job_executions_rollout_config(mut self, input: crate::types::IoTJobExecutionsRolloutConfig) -> Self {
         self.job_executions_rollout_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The rollout configuration for the job. This configuration defines the rate at which the job rolls out to the fleet of target devices.</p>
-    pub fn set_job_executions_rollout_config(
-        mut self,
-        input: ::std::option::Option<crate::types::IoTJobExecutionsRolloutConfig>,
-    ) -> Self {
+    pub fn set_job_executions_rollout_config(mut self, input: ::std::option::Option<crate::types::IoTJobExecutionsRolloutConfig>) -> Self {
         self.job_executions_rollout_config = input;
         self
     }
     /// <p>The rollout configuration for the job. This configuration defines the rate at which the job rolls out to the fleet of target devices.</p>
-    pub fn get_job_executions_rollout_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::IoTJobExecutionsRolloutConfig> {
+    pub fn get_job_executions_rollout_config(&self) -> &::std::option::Option<crate::types::IoTJobExecutionsRolloutConfig> {
         &self.job_executions_rollout_config
     }
     /// <p>The stop configuration for the job. This configuration defines when and how to stop a job rollout.</p>
@@ -78,10 +64,7 @@ impl DeploymentIoTJobConfigurationBuilder {
         self
     }
     /// <p>The stop configuration for the job. This configuration defines when and how to stop a job rollout.</p>
-    pub fn set_abort_config(
-        mut self,
-        input: ::std::option::Option<crate::types::IoTJobAbortConfig>,
-    ) -> Self {
+    pub fn set_abort_config(mut self, input: ::std::option::Option<crate::types::IoTJobAbortConfig>) -> Self {
         self.abort_config = input;
         self
     }
@@ -95,10 +78,7 @@ impl DeploymentIoTJobConfigurationBuilder {
         self
     }
     /// <p>The timeout configuration for the job. This configuration defines the amount of time each device has to complete the job.</p>
-    pub fn set_timeout_config(
-        mut self,
-        input: ::std::option::Option<crate::types::IoTJobTimeoutConfig>,
-    ) -> Self {
+    pub fn set_timeout_config(mut self, input: ::std::option::Option<crate::types::IoTJobTimeoutConfig>) -> Self {
         self.timeout_config = input;
         self
     }

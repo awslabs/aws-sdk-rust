@@ -16,9 +16,7 @@ pub struct GetQueryStatisticsOutput {
 }
 impl GetQueryStatisticsOutput {
     /// <p>An <code>ExecutionStatistics</code> structure containing execution statistics.</p>
-    pub fn execution_statistics(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExecutionStatistics> {
+    pub fn execution_statistics(&self) -> ::std::option::Option<&crate::types::ExecutionStatistics> {
         self.execution_statistics.as_ref()
     }
     /// <p>A <code>PlanningStatistics</code> structure containing query planning statistics.</p>
@@ -37,17 +35,14 @@ impl ::aws_http::request_id::RequestId for GetQueryStatisticsOutput {
 }
 impl GetQueryStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetQueryStatisticsOutput`](crate::operation::get_query_statistics::GetQueryStatisticsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_query_statistics::builders::GetQueryStatisticsOutputBuilder {
+    pub fn builder() -> crate::operation::get_query_statistics::builders::GetQueryStatisticsOutputBuilder {
         crate::operation::get_query_statistics::builders::GetQueryStatisticsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetQueryStatisticsOutput`](crate::operation::get_query_statistics::GetQueryStatisticsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueryStatisticsOutputBuilder {
     pub(crate) execution_statistics: ::std::option::Option<crate::types::ExecutionStatistics>,
     pub(crate) planning_statistics: ::std::option::Option<crate::types::PlanningStatistics>,
@@ -61,17 +56,12 @@ impl GetQueryStatisticsOutputBuilder {
         self
     }
     /// <p>An <code>ExecutionStatistics</code> structure containing execution statistics.</p>
-    pub fn set_execution_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionStatistics>,
-    ) -> Self {
+    pub fn set_execution_statistics(mut self, input: ::std::option::Option<crate::types::ExecutionStatistics>) -> Self {
         self.execution_statistics = input;
         self
     }
     /// <p>An <code>ExecutionStatistics</code> structure containing execution statistics.</p>
-    pub fn get_execution_statistics(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExecutionStatistics> {
+    pub fn get_execution_statistics(&self) -> &::std::option::Option<crate::types::ExecutionStatistics> {
         &self.execution_statistics
     }
     /// <p>A <code>PlanningStatistics</code> structure containing query planning statistics.</p>
@@ -80,17 +70,12 @@ impl GetQueryStatisticsOutputBuilder {
         self
     }
     /// <p>A <code>PlanningStatistics</code> structure containing query planning statistics.</p>
-    pub fn set_planning_statistics(
-        mut self,
-        input: ::std::option::Option<crate::types::PlanningStatistics>,
-    ) -> Self {
+    pub fn set_planning_statistics(mut self, input: ::std::option::Option<crate::types::PlanningStatistics>) -> Self {
         self.planning_statistics = input;
         self
     }
     /// <p>A <code>PlanningStatistics</code> structure containing query planning statistics.</p>
-    pub fn get_planning_statistics(
-        &self,
-    ) -> &::std::option::Option<crate::types::PlanningStatistics> {
+    pub fn get_planning_statistics(&self) -> &::std::option::Option<crate::types::PlanningStatistics> {
         &self.planning_statistics
     }
     /// <p>The time that the query was submitted.</p>
@@ -99,17 +84,12 @@ impl GetQueryStatisticsOutputBuilder {
         self
     }
     /// <p>The time that the query was submitted.</p>
-    pub fn set_query_submission_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_query_submission_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.query_submission_time = input;
         self
     }
     /// <p>The time that the query was submitted.</p>
-    pub fn get_query_submission_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_query_submission_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.query_submission_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

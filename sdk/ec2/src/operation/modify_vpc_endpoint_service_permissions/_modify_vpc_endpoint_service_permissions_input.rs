@@ -36,23 +36,19 @@ impl ModifyVpcEndpointServicePermissionsInput {
 }
 impl ModifyVpcEndpointServicePermissionsInput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointServicePermissionsInput`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsInput).
-    pub fn builder() -> crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsInputBuilder{
+    pub fn builder() -> crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsInputBuilder {
         crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ModifyVpcEndpointServicePermissionsInput`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointServicePermissionsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
-    pub(crate) add_allowed_principals:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) remove_allowed_principals:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) add_allowed_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) remove_allowed_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyVpcEndpointServicePermissionsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -88,27 +84,19 @@ impl ModifyVpcEndpointServicePermissionsInputBuilder {
     /// To override the contents of this collection use [`set_add_allowed_principals`](Self::set_add_allowed_principals).
     ///
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list. To grant permissions to all principals, specify an asterisk (*).</p>
-    pub fn add_allowed_principals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn add_allowed_principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.add_allowed_principals.unwrap_or_default();
         v.push(input.into());
         self.add_allowed_principals = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list. To grant permissions to all principals, specify an asterisk (*).</p>
-    pub fn set_add_allowed_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_add_allowed_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.add_allowed_principals = input;
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list. To grant permissions to all principals, specify an asterisk (*).</p>
-    pub fn get_add_allowed_principals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_allowed_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.add_allowed_principals
     }
     /// Appends an item to `remove_allowed_principals`.
@@ -116,42 +104,35 @@ impl ModifyVpcEndpointServicePermissionsInputBuilder {
     /// To override the contents of this collection use [`set_remove_allowed_principals`](Self::set_remove_allowed_principals).
     ///
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.</p>
-    pub fn remove_allowed_principals(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn remove_allowed_principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_allowed_principals.unwrap_or_default();
         v.push(input.into());
         self.remove_allowed_principals = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.</p>
-    pub fn set_remove_allowed_principals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_remove_allowed_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.remove_allowed_principals = input;
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.</p>
-    pub fn get_remove_allowed_principals(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_allowed_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_allowed_principals
     }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointServicePermissionsInput`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsInput {
-                dry_run: self.dry_run
-                ,
-                service_id: self.service_id
-                ,
-                add_allowed_principals: self.add_allowed_principals
-                ,
-                remove_allowed_principals: self.remove_allowed_principals
-                ,
-            }
+                dry_run: self.dry_run,
+                service_id: self.service_id,
+                add_allowed_principals: self.add_allowed_principals,
+                remove_allowed_principals: self.remove_allowed_principals,
+            },
         )
     }
 }

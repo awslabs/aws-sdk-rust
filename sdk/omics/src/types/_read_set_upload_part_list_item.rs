@@ -58,9 +58,7 @@ impl ReadSetUploadPartListItem {
 
 /// A builder for [`ReadSetUploadPartListItem`](crate::types::ReadSetUploadPartListItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReadSetUploadPartListItemBuilder {
     pub(crate) part_number: ::std::option::Option<i32>,
     pub(crate) part_size: ::std::option::Option<i64>,
@@ -104,10 +102,7 @@ impl ReadSetUploadPartListItemBuilder {
         self
     }
     /// <p> The origin of the part being direct uploaded. </p>
-    pub fn set_part_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ReadSetPartSource>,
-    ) -> Self {
+    pub fn set_part_source(mut self, input: ::std::option::Option<crate::types::ReadSetPartSource>) -> Self {
         self.part_source = input;
         self
     }
@@ -135,10 +130,7 @@ impl ReadSetUploadPartListItemBuilder {
         self
     }
     /// <p> The time stamp for when a direct upload was created. </p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -152,10 +144,7 @@ impl ReadSetUploadPartListItemBuilder {
         self
     }
     /// <p> The time stamp for the most recent update to an uploaded part. </p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }

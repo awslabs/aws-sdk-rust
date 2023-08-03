@@ -31,16 +31,14 @@ impl ListResolverEndpointIpAddressesInput {
 }
 impl ListResolverEndpointIpAddressesInput {
     /// Creates a new builder-style object to manufacture [`ListResolverEndpointIpAddressesInput`](crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesInput).
-    pub fn builder() -> crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesInputBuilder{
+    pub fn builder() -> crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesInputBuilder {
         crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResolverEndpointIpAddressesInput`](crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolverEndpointIpAddressesInputBuilder {
     pub(crate) resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -48,18 +46,12 @@ pub struct ListResolverEndpointIpAddressesInputBuilder {
 }
 impl ListResolverEndpointIpAddressesInputBuilder {
     /// <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
-    pub fn resolver_endpoint_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
-    pub fn set_resolver_endpoint_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolver_endpoint_id = input;
         self
     }
@@ -107,13 +99,10 @@ impl ListResolverEndpointIpAddressesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesInput {
-                resolver_endpoint_id: self.resolver_endpoint_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                resolver_endpoint_id: self.resolver_endpoint_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

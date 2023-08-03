@@ -19,8 +19,7 @@ pub struct CreateClusterInput {
     pub resources_vpc_config: ::std::option::Option<crate::types::VpcConfigRequest>,
     /// <p>The Kubernetes network configuration for the cluster.</p>
     #[doc(hidden)]
-    pub kubernetes_network_config:
-        ::std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
+    pub kubernetes_network_config: ::std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
     /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
     /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
     /// </note>
@@ -31,9 +30,7 @@ pub struct CreateClusterInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The encryption configuration for the cluster.</p>
     #[doc(hidden)]
     pub encryption_config: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
@@ -61,9 +58,7 @@ impl CreateClusterInput {
         self.resources_vpc_config.as_ref()
     }
     /// <p>The Kubernetes network configuration for the cluster.</p>
-    pub fn kubernetes_network_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::KubernetesNetworkConfigRequest> {
+    pub fn kubernetes_network_config(&self) -> ::std::option::Option<&crate::types::KubernetesNetworkConfigRequest> {
         self.kubernetes_network_config.as_ref()
     }
     /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
@@ -77,11 +72,7 @@ impl CreateClusterInput {
         self.client_request_token.as_deref()
     }
     /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The encryption configuration for the cluster.</p>
@@ -102,23 +93,17 @@ impl CreateClusterInput {
 
 /// A builder for [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClusterInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resources_vpc_config: ::std::option::Option<crate::types::VpcConfigRequest>,
-    pub(crate) kubernetes_network_config:
-        ::std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
+    pub(crate) kubernetes_network_config: ::std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
     pub(crate) logging: ::std::option::Option<crate::types::Logging>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) encryption_config:
-        ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) encryption_config: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
     pub(crate) outpost_config: ::std::option::Option<crate::types::OutpostConfigRequest>,
 }
 impl CreateClusterInputBuilder {
@@ -176,39 +161,26 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five security groups. However, we recommend that you use a dedicated security group for your cluster control plane.</p>
-    pub fn set_resources_vpc_config(
-        mut self,
-        input: ::std::option::Option<crate::types::VpcConfigRequest>,
-    ) -> Self {
+    pub fn set_resources_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfigRequest>) -> Self {
         self.resources_vpc_config = input;
         self
     }
     /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five security groups. However, we recommend that you use a dedicated security group for your cluster control plane.</p>
-    pub fn get_resources_vpc_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::VpcConfigRequest> {
+    pub fn get_resources_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfigRequest> {
         &self.resources_vpc_config
     }
     /// <p>The Kubernetes network configuration for the cluster.</p>
-    pub fn kubernetes_network_config(
-        mut self,
-        input: crate::types::KubernetesNetworkConfigRequest,
-    ) -> Self {
+    pub fn kubernetes_network_config(mut self, input: crate::types::KubernetesNetworkConfigRequest) -> Self {
         self.kubernetes_network_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Kubernetes network configuration for the cluster.</p>
-    pub fn set_kubernetes_network_config(
-        mut self,
-        input: ::std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
-    ) -> Self {
+    pub fn set_kubernetes_network_config(mut self, input: ::std::option::Option<crate::types::KubernetesNetworkConfigRequest>) -> Self {
         self.kubernetes_network_config = input;
         self
     }
     /// <p>The Kubernetes network configuration for the cluster.</p>
-    pub fn get_kubernetes_network_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::KubernetesNetworkConfigRequest> {
+    pub fn get_kubernetes_network_config(&self) -> &::std::option::Option<crate::types::KubernetesNetworkConfigRequest> {
         &self.kubernetes_network_config
     }
     /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
@@ -232,18 +204,12 @@ impl CreateClusterInputBuilder {
         &self.logging
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -256,32 +222,19 @@ impl CreateClusterInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `encryption_config`.
@@ -296,17 +249,12 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>The encryption configuration for the cluster.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>) -> Self {
         self.encryption_config = input;
         self
     }
     /// <p>The encryption configuration for the cluster.</p>
-    pub fn get_encryption_config(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
+    pub fn get_encryption_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
         &self.encryption_config
     }
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
@@ -315,10 +263,7 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
-    pub fn set_outpost_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutpostConfigRequest>,
-    ) -> Self {
+    pub fn set_outpost_config(mut self, input: ::std::option::Option<crate::types::OutpostConfigRequest>) -> Self {
         self.outpost_config = input;
         self
     }
@@ -329,10 +274,7 @@ impl CreateClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cluster::CreateClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
             name: self.name,
             version: self.version,

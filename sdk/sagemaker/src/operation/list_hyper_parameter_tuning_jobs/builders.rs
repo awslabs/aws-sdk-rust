@@ -26,7 +26,7 @@ impl ListHyperParameterTuningJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListHyperParameterTuningJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsInputBuilder,
+    inner: crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsInputBuilder,
 }
 impl ListHyperParameterTuningJobsFluentBuilder {
     /// Creates a new `ListHyperParameterTuningJobs`.
@@ -37,7 +37,7 @@ impl ListHyperParameterTuningJobsFluentBuilder {
         }
     }
     /// Access the ListHyperParameterTuningJobs as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListHyperParameterTuningJobsFluentBuilder {
             crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListHyperParameterTuningJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListHyperParameterTuningJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListHyperParameterTuningJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListHyperParameterTuningJobsFluentBuilder {
             crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_hyper_parameter_tuning_jobs::paginator::ListHyperParameterTuningJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_hyper_parameter_tuning_jobs::paginator::ListHyperParameterTuningJobsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_hyper_parameter_tuning_jobs::paginator::ListHyperParameterTuningJobsPaginator {
         crate::operation::list_hyper_parameter_tuning_jobs::paginator::ListHyperParameterTuningJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
@@ -160,17 +149,12 @@ impl ListHyperParameterTuningJobsFluentBuilder {
         self
     }
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTuningJobSortByOptions>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobSortByOptions>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
-    pub fn get_sort_by(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobSortByOptions> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobSortByOptions> {
         self.inner.get_sort_by()
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
@@ -188,18 +172,12 @@ impl ListHyperParameterTuningJobsFluentBuilder {
         self.inner.get_sort_order()
     }
     /// <p>A string in the tuning job name. This filter returns only tuning jobs whose name contains the specified string.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A string in the tuning job name. This filter returns only tuning jobs whose name contains the specified string.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -213,10 +191,7 @@ impl ListHyperParameterTuningJobsFluentBuilder {
         self
     }
     /// <p>A filter that returns only tuning jobs that were created after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -230,10 +205,7 @@ impl ListHyperParameterTuningJobsFluentBuilder {
         self
     }
     /// <p>A filter that returns only tuning jobs that were created before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -247,17 +219,12 @@ impl ListHyperParameterTuningJobsFluentBuilder {
         self
     }
     /// <p>A filter that returns only tuning jobs that were modified after the specified time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
     /// <p>A filter that returns only tuning jobs that were modified after the specified time.</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_after()
     }
     /// <p>A filter that returns only tuning jobs that were modified before the specified time.</p>
@@ -266,17 +233,12 @@ impl ListHyperParameterTuningJobsFluentBuilder {
         self
     }
     /// <p>A filter that returns only tuning jobs that were modified before the specified time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
     /// <p>A filter that returns only tuning jobs that were modified before the specified time.</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_before()
     }
     /// <p>A filter that returns only tuning jobs with the specified status.</p>
@@ -285,17 +247,12 @@ impl ListHyperParameterTuningJobsFluentBuilder {
         self
     }
     /// <p>A filter that returns only tuning jobs with the specified status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTuningJobStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobStatus>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
     /// <p>A filter that returns only tuning jobs with the specified status.</p>
-    pub fn get_status_equals(
-        &self,
-    ) -> &::std::option::Option<crate::types::HyperParameterTuningJobStatus> {
+    pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobStatus> {
         self.inner.get_status_equals()
     }
 }

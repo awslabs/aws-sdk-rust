@@ -30,10 +30,7 @@ pub fn ser_get_reservation_purchase_recommendation_input(
     if let Some(var_9) = &input.service_specification {
         #[allow(unused_mut)]
         let mut object_10 = object.key("ServiceSpecification").start_object();
-        crate::protocol_serde::shape_service_specification::ser_service_specification(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_service_specification::ser_service_specification(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.page_size {

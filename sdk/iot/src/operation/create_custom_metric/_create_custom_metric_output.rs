@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateCustomMetricOutput {
 }
 impl CreateCustomMetricOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomMetricOutput`](crate::operation::create_custom_metric::CreateCustomMetricOutput).
-    pub fn builder(
-    ) -> crate::operation::create_custom_metric::builders::CreateCustomMetricOutputBuilder {
+    pub fn builder() -> crate::operation::create_custom_metric::builders::CreateCustomMetricOutputBuilder {
         crate::operation::create_custom_metric::builders::CreateCustomMetricOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCustomMetricOutput`](crate::operation::create_custom_metric::CreateCustomMetricOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCustomMetricOutputBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_arn: ::std::option::Option<::std::string::String>,

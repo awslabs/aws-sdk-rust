@@ -28,9 +28,7 @@ impl ListPublicKeysOutput {
 
 /// A builder for [`ListPublicKeysOutput`](crate::operation::list_public_keys::ListPublicKeysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPublicKeysOutputBuilder {
     pub(crate) public_key_list: ::std::option::Option<crate::types::PublicKeyList>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl ListPublicKeysOutputBuilder {
         self
     }
     /// <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
-    pub fn set_public_key_list(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicKeyList>,
-    ) -> Self {
+    pub fn set_public_key_list(mut self, input: ::std::option::Option<crate::types::PublicKeyList>) -> Self {
         self.public_key_list = input;
         self
     }

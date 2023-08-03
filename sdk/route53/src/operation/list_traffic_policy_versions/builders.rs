@@ -27,7 +27,7 @@ impl ListTrafficPolicyVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTrafficPolicyVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsInputBuilder,
+    inner: crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsInputBuilder,
 }
 impl ListTrafficPolicyVersionsFluentBuilder {
     /// Creates a new `ListTrafficPolicyVersions`.
@@ -38,7 +38,7 @@ impl ListTrafficPolicyVersionsFluentBuilder {
         }
     }
     /// Access the ListTrafficPolicyVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ListTrafficPolicyVersionsFluentBuilder {
             crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ListTrafficPolicyVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ListTrafficPolicyVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ListTrafficPolicyVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl ListTrafficPolicyVersionsFluentBuilder {
             crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsError>,
     > {
         self.customize_middleware().await
     }
@@ -137,27 +126,19 @@ impl ListTrafficPolicyVersionsFluentBuilder {
     }
     /// <p>For your first request to <code>ListTrafficPolicyVersions</code>, don't include the <code>TrafficPolicyVersionMarker</code> parameter.</p>
     /// <p>If you have more traffic policy versions than the value of <code>MaxItems</code>, <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the value of <code>TrafficPolicyVersionMarker</code>, specify the value of <code>TrafficPolicyVersionMarker</code> in the previous response.</p>
-    pub fn traffic_policy_version_marker(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_policy_version_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.traffic_policy_version_marker(input.into());
         self
     }
     /// <p>For your first request to <code>ListTrafficPolicyVersions</code>, don't include the <code>TrafficPolicyVersionMarker</code> parameter.</p>
     /// <p>If you have more traffic policy versions than the value of <code>MaxItems</code>, <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the value of <code>TrafficPolicyVersionMarker</code>, specify the value of <code>TrafficPolicyVersionMarker</code> in the previous response.</p>
-    pub fn set_traffic_policy_version_marker(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_policy_version_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_traffic_policy_version_marker(input);
         self
     }
     /// <p>For your first request to <code>ListTrafficPolicyVersions</code>, don't include the <code>TrafficPolicyVersionMarker</code> parameter.</p>
     /// <p>If you have more traffic policy versions than the value of <code>MaxItems</code>, <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the value of <code>TrafficPolicyVersionMarker</code>, specify the value of <code>TrafficPolicyVersionMarker</code> in the previous response.</p>
-    pub fn get_traffic_policy_version_marker(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_traffic_policy_version_marker(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_traffic_policy_version_marker()
     }
     /// <p>The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of the <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you submit another request.</p>

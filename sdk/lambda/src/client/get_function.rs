@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_function::GetFunctionOutput::tags): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
     ///   - [`concurrency(Option<Concurrency>)`](crate::operation::get_function::GetFunctionOutput::concurrency): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
     /// - On failure, responds with [`SdkError<GetFunctionError>`](crate::operation::get_function::GetFunctionError)
-    pub fn get_function(
-        &self,
-    ) -> crate::operation::get_function::builders::GetFunctionFluentBuilder {
+    pub fn get_function(&self) -> crate::operation::get_function::builders::GetFunctionFluentBuilder {
         crate::operation::get_function::builders::GetFunctionFluentBuilder::new(self.handle.clone())
     }
 }

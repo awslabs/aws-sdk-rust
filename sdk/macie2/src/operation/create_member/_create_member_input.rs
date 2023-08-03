@@ -9,9 +9,7 @@ pub struct CreateMemberInput {
     /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
     /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMemberInput {
     /// <p>The details of the account to associate with the administrator account.</p>
@@ -20,11 +18,7 @@ impl CreateMemberInput {
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
     /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -37,14 +31,10 @@ impl CreateMemberInput {
 
 /// A builder for [`CreateMemberInput`](crate::operation::create_member::CreateMemberInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMemberInputBuilder {
     pub(crate) account: ::std::option::Option<crate::types::AccountDetail>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMemberInputBuilder {
     /// <p>The details of the account to associate with the administrator account.</p>
@@ -53,10 +43,7 @@ impl CreateMemberInputBuilder {
         self
     }
     /// <p>The details of the account to associate with the administrator account.</p>
-    pub fn set_account(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountDetail>,
-    ) -> Self {
+    pub fn set_account(mut self, input: ::std::option::Option<crate::types::AccountDetail>) -> Self {
         self.account = input;
         self
     }
@@ -70,11 +57,7 @@ impl CreateMemberInputBuilder {
     ///
     /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
     /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -82,31 +65,17 @@ impl CreateMemberInputBuilder {
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
     /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>
     /// <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMemberInput`](crate::operation::create_member::CreateMemberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_member::CreateMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_member::CreateMemberInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_member::CreateMemberInput {
             account: self.account,
             tags: self.tags,

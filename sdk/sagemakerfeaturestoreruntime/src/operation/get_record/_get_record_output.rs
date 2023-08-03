@@ -35,9 +35,7 @@ impl GetRecordOutput {
 
 /// A builder for [`GetRecordOutput`](crate::operation::get_record::GetRecordOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecordOutputBuilder {
     pub(crate) record: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>,
     pub(crate) expires_at: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetRecordOutputBuilder {
         self
     }
     /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
-    pub fn set_record(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>,
-    ) -> Self {
+    pub fn set_record(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>) -> Self {
         self.record = input;
         self
     }
     /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
-    pub fn get_record(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>> {
+    pub fn get_record(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>> {
         &self.record
     }
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>

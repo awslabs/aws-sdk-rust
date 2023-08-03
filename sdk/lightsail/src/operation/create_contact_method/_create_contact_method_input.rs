@@ -46,18 +46,14 @@ impl CreateContactMethodInput {
 }
 impl CreateContactMethodInput {
     /// Creates a new builder-style object to manufacture [`CreateContactMethodInput`](crate::operation::create_contact_method::CreateContactMethodInput).
-    pub fn builder(
-    ) -> crate::operation::create_contact_method::builders::CreateContactMethodInputBuilder {
-        crate::operation::create_contact_method::builders::CreateContactMethodInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_contact_method::builders::CreateContactMethodInputBuilder {
+        crate::operation::create_contact_method::builders::CreateContactMethodInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateContactMethodInput`](crate::operation::create_contact_method::CreateContactMethodInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateContactMethodInputBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::ContactProtocol>,
     pub(crate) contact_endpoint: ::std::option::Option<::std::string::String>,
@@ -91,10 +87,7 @@ impl CreateContactMethodInputBuilder {
     /// </ul>
     /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
     /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
-    pub fn set_protocol(
-        mut self,
-        input: ::std::option::Option<crate::types::ContactProtocol>,
-    ) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ContactProtocol>) -> Self {
         self.protocol = input;
         self
     }
@@ -115,19 +108,13 @@ impl CreateContactMethodInputBuilder {
     }
     /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
     /// <p>Use the E.164 format when specifying a mobile phone number. E.164 is a standard for the phone number structure used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits, and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164 format would be specified as +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
-    pub fn contact_endpoint(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn contact_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
     /// <p>Use the E.164 format when specifying a mobile phone number. E.164 is a standard for the phone number structure used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits, and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164 format would be specified as +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
-    pub fn set_contact_endpoint(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_contact_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_endpoint = input;
         self
     }
@@ -139,15 +126,11 @@ impl CreateContactMethodInputBuilder {
     /// Consumes the builder and constructs a [`CreateContactMethodInput`](crate::operation::create_contact_method::CreateContactMethodInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_contact_method::CreateContactMethodInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_contact_method::CreateContactMethodInput {
-                protocol: self.protocol,
-                contact_endpoint: self.contact_endpoint,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_contact_method::CreateContactMethodInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_contact_method::CreateContactMethodInput {
+            protocol: self.protocol,
+            contact_endpoint: self.contact_endpoint,
+        })
     }
 }

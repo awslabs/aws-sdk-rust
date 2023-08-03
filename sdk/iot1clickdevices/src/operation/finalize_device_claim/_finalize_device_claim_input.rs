@@ -9,9 +9,7 @@ pub struct FinalizeDeviceClaimInput {
     /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
     /// <p> </p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FinalizeDeviceClaimInput {
     /// <p>The unique identifier of the device.</p>
@@ -20,33 +18,23 @@ impl FinalizeDeviceClaimInput {
     }
     /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
     /// <p> </p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl FinalizeDeviceClaimInput {
     /// Creates a new builder-style object to manufacture [`FinalizeDeviceClaimInput`](crate::operation::finalize_device_claim::FinalizeDeviceClaimInput).
-    pub fn builder(
-    ) -> crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimInputBuilder {
-        crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimInputBuilder {
+        crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimInputBuilder::default()
     }
 }
 
 /// A builder for [`FinalizeDeviceClaimInput`](crate::operation::finalize_device_claim::FinalizeDeviceClaimInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FinalizeDeviceClaimInputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FinalizeDeviceClaimInputBuilder {
     /// <p>The unique identifier of the device.</p>
@@ -69,11 +57,7 @@ impl FinalizeDeviceClaimInputBuilder {
     ///
     /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
     /// <p> </p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
@@ -81,36 +65,23 @@ impl FinalizeDeviceClaimInputBuilder {
     }
     /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
     /// <p> </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
     /// <p> </p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`FinalizeDeviceClaimInput`](crate::operation::finalize_device_claim::FinalizeDeviceClaimInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::finalize_device_claim::FinalizeDeviceClaimInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::finalize_device_claim::FinalizeDeviceClaimInput {
-                device_id: self.device_id,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::finalize_device_claim::FinalizeDeviceClaimInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::finalize_device_claim::FinalizeDeviceClaimInput {
+            device_id: self.device_id,
+            tags: self.tags,
+        })
     }
 }

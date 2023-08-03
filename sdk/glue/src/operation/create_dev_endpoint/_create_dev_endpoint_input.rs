@@ -58,14 +58,10 @@ pub struct CreateDevEndpointInput {
     pub security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
     #[doc(hidden)]
-    pub arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDevEndpointInput {
     /// <p>The name to be assigned to the new <code>DevEndpoint</code>.</p>
@@ -135,35 +131,24 @@ impl CreateDevEndpointInput {
         self.security_configuration.as_deref()
     }
     /// <p>The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-    pub fn arguments(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn arguments(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.arguments.as_ref()
     }
 }
 impl CreateDevEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateDevEndpointInput`](crate::operation::create_dev_endpoint::CreateDevEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::create_dev_endpoint::builders::CreateDevEndpointInputBuilder {
+    pub fn builder() -> crate::operation::create_dev_endpoint::builders::CreateDevEndpointInputBuilder {
         crate::operation::create_dev_endpoint::builders::CreateDevEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDevEndpointInput`](crate::operation::create_dev_endpoint::CreateDevEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDevEndpointInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -178,27 +163,17 @@ pub struct CreateDevEndpointInputBuilder {
     pub(crate) extra_python_libs_s3_path: ::std::option::Option<::std::string::String>,
     pub(crate) extra_jars_s3_path: ::std::option::Option<::std::string::String>,
     pub(crate) security_configuration: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) arguments: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDevEndpointInputBuilder {
     /// <p>The name to be assigned to the new <code>DevEndpoint</code>.</p>
-    pub fn endpoint_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name to be assigned to the new <code>DevEndpoint</code>.</p>
-    pub fn set_endpoint_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
@@ -225,27 +200,19 @@ impl CreateDevEndpointInputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>The subnet ID for the new <code>DevEndpoint</code> to use.</p>
@@ -292,19 +259,14 @@ impl CreateDevEndpointInputBuilder {
     /// <p>A list of public keys to be used by the development endpoints for authentication. The use of this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
     /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
     /// </note>
-    pub fn set_public_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_public_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.public_keys = input;
         self
     }
     /// <p>A list of public keys to be used by the development endpoints for authentication. The use of this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
     /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
     /// </note>
-    pub fn get_public_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_public_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.public_keys
     }
     /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.</p>
@@ -339,10 +301,7 @@ impl CreateDevEndpointInputBuilder {
     /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
     /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
-    pub fn set_worker_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkerType>,
-    ) -> Self {
+    pub fn set_worker_type(mut self, input: ::std::option::Option<crate::types::WorkerType>) -> Self {
         self.worker_type = input;
         self
     }
@@ -399,20 +358,14 @@ impl CreateDevEndpointInputBuilder {
     /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
     /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet supported.</p>
     /// </note>
-    pub fn extra_python_libs_s3_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extra_python_libs_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extra_python_libs_s3_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
     /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet supported.</p>
     /// </note>
-    pub fn set_extra_python_libs_s3_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extra_python_libs_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extra_python_libs_s3_path = input;
         self
     }
@@ -423,18 +376,12 @@ impl CreateDevEndpointInputBuilder {
         &self.extra_python_libs_s3_path
     }
     /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p>
-    pub fn extra_jars_s3_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn extra_jars_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extra_jars_s3_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p>
-    pub fn set_extra_jars_s3_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_extra_jars_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extra_jars_s3_path = input;
         self
     }
@@ -443,18 +390,12 @@ impl CreateDevEndpointInputBuilder {
         &self.extra_jars_s3_path
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
-    pub fn security_configuration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
-    pub fn set_security_configuration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.security_configuration = input;
         self
     }
@@ -467,32 +408,19 @@ impl CreateDevEndpointInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Adds a key-value pair to `arguments`.
@@ -500,59 +428,41 @@ impl CreateDevEndpointInputBuilder {
     /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
     ///
     /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-    pub fn arguments(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn arguments(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.arguments.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.arguments = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-    pub fn set_arguments(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_arguments(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.arguments = input;
         self
     }
     /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-    pub fn get_arguments(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.arguments
     }
     /// Consumes the builder and constructs a [`CreateDevEndpointInput`](crate::operation::create_dev_endpoint::CreateDevEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_dev_endpoint::CreateDevEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_dev_endpoint::CreateDevEndpointInput {
-                endpoint_name: self.endpoint_name,
-                role_arn: self.role_arn,
-                security_group_ids: self.security_group_ids,
-                subnet_id: self.subnet_id,
-                public_key: self.public_key,
-                public_keys: self.public_keys,
-                number_of_nodes: self.number_of_nodes,
-                worker_type: self.worker_type,
-                glue_version: self.glue_version,
-                number_of_workers: self.number_of_workers,
-                extra_python_libs_s3_path: self.extra_python_libs_s3_path,
-                extra_jars_s3_path: self.extra_jars_s3_path,
-                security_configuration: self.security_configuration,
-                tags: self.tags,
-                arguments: self.arguments,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_dev_endpoint::CreateDevEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_dev_endpoint::CreateDevEndpointInput {
+            endpoint_name: self.endpoint_name,
+            role_arn: self.role_arn,
+            security_group_ids: self.security_group_ids,
+            subnet_id: self.subnet_id,
+            public_key: self.public_key,
+            public_keys: self.public_keys,
+            number_of_nodes: self.number_of_nodes,
+            worker_type: self.worker_type,
+            glue_version: self.glue_version,
+            number_of_workers: self.number_of_workers,
+            extra_python_libs_s3_path: self.extra_python_libs_s3_path,
+            extra_jars_s3_path: self.extra_jars_s3_path,
+            security_configuration: self.security_configuration,
+            tags: self.tags,
+            arguments: self.arguments,
+        })
     }
 }

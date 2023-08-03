@@ -8,10 +8,10 @@ impl super::Client {
     /// - On success, responds with [`PutVoiceConnectorTerminationOutput`](crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationOutput) with field(s):
     ///   - [`termination(Option<Termination>)`](crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationOutput::termination): <p>The updated termination setting details.</p>
     /// - On failure, responds with [`SdkError<PutVoiceConnectorTerminationError>`](crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationError)
-    #[deprecated(
-        note = "Replaced by PutVoiceConnectorTermination in the Amazon Chime SDK Voice Namespace"
-    )]
-    pub fn put_voice_connector_termination(&self) -> crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationFluentBuilder{
+    #[deprecated(note = "Replaced by PutVoiceConnectorTermination in the Amazon Chime SDK Voice Namespace")]
+    pub fn put_voice_connector_termination(
+        &self,
+    ) -> crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationFluentBuilder {
         crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationFluentBuilder::new(self.handle.clone())
     }
 }

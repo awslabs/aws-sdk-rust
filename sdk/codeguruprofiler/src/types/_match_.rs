@@ -37,9 +37,7 @@ impl Match {
 
 /// A builder for [`Match`](crate::types::Match).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MatchBuilder {
     pub(crate) target_frames_index: ::std::option::Option<i32>,
     pub(crate) frame_address: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl MatchBuilder {
         &self.target_frames_index
     }
     /// <p>The location in the profiling graph that contains a recommendation found during analysis.</p>
-    pub fn frame_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn frame_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.frame_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location in the profiling graph that contains a recommendation found during analysis.</p>
-    pub fn set_frame_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_frame_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.frame_address = input;
         self
     }

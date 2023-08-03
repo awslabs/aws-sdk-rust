@@ -15,18 +15,14 @@ impl GetBucketStatisticsInput {
 }
 impl GetBucketStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetBucketStatisticsInput`](crate::operation::get_bucket_statistics::GetBucketStatisticsInput).
-    pub fn builder(
-    ) -> crate::operation::get_bucket_statistics::builders::GetBucketStatisticsInputBuilder {
-        crate::operation::get_bucket_statistics::builders::GetBucketStatisticsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_bucket_statistics::builders::GetBucketStatisticsInputBuilder {
+        crate::operation::get_bucket_statistics::builders::GetBucketStatisticsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketStatisticsInput`](crate::operation::get_bucket_statistics::GetBucketStatisticsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketStatisticsInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl GetBucketStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketStatisticsInput`](crate::operation::get_bucket_statistics::GetBucketStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bucket_statistics::GetBucketStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_bucket_statistics::GetBucketStatisticsInput {
-                account_id: self.account_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_bucket_statistics::GetBucketStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_bucket_statistics::GetBucketStatisticsInput { account_id: self.account_id })
     }
 }

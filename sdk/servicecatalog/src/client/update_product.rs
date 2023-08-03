@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`product_view_detail(Option<ProductViewDetail>)`](crate::operation::update_product::UpdateProductOutput::product_view_detail): <p>Information about the product view.</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::update_product::UpdateProductOutput::tags): <p>Information about the tags associated with the product.</p>
     /// - On failure, responds with [`SdkError<UpdateProductError>`](crate::operation::update_product::UpdateProductError)
-    pub fn update_product(
-        &self,
-    ) -> crate::operation::update_product::builders::UpdateProductFluentBuilder {
-        crate::operation::update_product::builders::UpdateProductFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_product(&self) -> crate::operation::update_product::builders::UpdateProductFluentBuilder {
+        crate::operation::update_product::builders::UpdateProductFluentBuilder::new(self.handle.clone())
     }
 }

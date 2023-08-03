@@ -13,10 +13,7 @@ pub struct SendUsersMessageResponse {
     /// <p>An object that indicates which endpoints the message was sent to, for each user. The object lists user IDs and, for each user ID, provides the endpoint IDs that the message was sent to. For each endpoint ID, it provides an EndpointMessageResult object.</p>
     #[doc(hidden)]
     pub result: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>>,
     >,
 }
 impl SendUsersMessageResponse {
@@ -32,10 +29,7 @@ impl SendUsersMessageResponse {
     pub fn result(
         &self,
     ) -> ::std::option::Option<
-        &::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>,
-        >,
+        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>>,
     > {
         self.result.as_ref()
     }
@@ -49,33 +43,22 @@ impl SendUsersMessageResponse {
 
 /// A builder for [`SendUsersMessageResponse`](crate::types::SendUsersMessageResponse).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendUsersMessageResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) result: ::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>>,
     >,
 }
 impl SendUsersMessageResponseBuilder {
     /// <p>The unique identifier for the application that was used to send the message.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application that was used to send the message.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
@@ -118,10 +101,7 @@ impl SendUsersMessageResponseBuilder {
         input: ::std::option::Option<
             ::std::collections::HashMap<
                 ::std::string::String,
-                ::std::collections::HashMap<
-                    ::std::string::String,
-                    crate::types::EndpointMessageResult,
-                >,
+                ::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>,
             >,
         >,
     ) -> Self {
@@ -132,10 +112,7 @@ impl SendUsersMessageResponseBuilder {
     pub fn get_result(
         &self,
     ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            ::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>,
-        >,
+        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>>,
     > {
         &self.result
     }

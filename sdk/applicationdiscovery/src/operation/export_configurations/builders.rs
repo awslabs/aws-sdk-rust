@@ -39,9 +39,7 @@ impl ExportConfigurationsFluentBuilder {
         }
     }
     /// Access the ExportConfigurations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::export_configurations::builders::ExportConfigurationsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::export_configurations::builders::ExportConfigurationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl ExportConfigurationsFluentBuilder {
             crate::operation::export_configurations::ExportConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_configurations::ExportConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_configurations::ExportConfigurationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl ExportConfigurationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl ExportConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_configurations::ExportConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_configurations::ExportConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_configurations::ExportConfigurationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl ExportConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_configurations::ExportConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_configurations::ExportConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_configurations::ExportConfigurationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +107,7 @@ impl ExportConfigurationsFluentBuilder {
             crate::operation::export_configurations::ExportConfigurations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::export_configurations::ExportConfigurationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::export_configurations::ExportConfigurationsError>,
     > {
         self.customize_middleware().await
     }

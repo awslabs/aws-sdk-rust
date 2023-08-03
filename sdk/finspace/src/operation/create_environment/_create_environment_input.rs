@@ -14,9 +14,7 @@ pub struct CreateEnvironmentInput {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Add tags to your FinSpace environment.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
     /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
@@ -52,11 +50,7 @@ impl CreateEnvironmentInput {
         self.kms_key_id.as_deref()
     }
     /// <p>Add tags to your FinSpace environment.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Authentication mode for the environment.</p>
@@ -68,15 +62,11 @@ impl CreateEnvironmentInput {
         self.federation_mode.as_ref()
     }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
-    pub fn federation_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::FederationParameters> {
+    pub fn federation_parameters(&self) -> ::std::option::Option<&crate::types::FederationParameters> {
         self.federation_parameters.as_ref()
     }
     /// <p>Configuration information for the superuser.</p>
-    pub fn superuser_parameters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SuperuserParameters> {
+    pub fn superuser_parameters(&self) -> ::std::option::Option<&crate::types::SuperuserParameters> {
         self.superuser_parameters.as_ref()
     }
     /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
@@ -90,24 +80,19 @@ impl CreateEnvironmentInput {
 }
 impl CreateEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
-    pub fn builder() -> crate::operation::create_environment::builders::CreateEnvironmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
         crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEnvironmentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) federation_mode: ::std::option::Option<crate::types::FederationMode>,
     pub(crate) federation_parameters: ::std::option::Option<crate::types::FederationParameters>,
     pub(crate) superuser_parameters: ::std::option::Option<crate::types::SuperuserParameters>,
@@ -161,32 +146,19 @@ impl CreateEnvironmentInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Add tags to your FinSpace environment.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Add tags to your FinSpace environment.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Add tags to your FinSpace environment.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Authentication mode for the environment.</p>
@@ -203,10 +175,7 @@ impl CreateEnvironmentInputBuilder {
     /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
     /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
     /// </ul>
-    pub fn set_federation_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::FederationMode>,
-    ) -> Self {
+    pub fn set_federation_mode(mut self, input: ::std::option::Option<crate::types::FederationMode>) -> Self {
         self.federation_mode = input;
         self
     }
@@ -224,17 +193,12 @@ impl CreateEnvironmentInputBuilder {
         self
     }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
-    pub fn set_federation_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::FederationParameters>,
-    ) -> Self {
+    pub fn set_federation_parameters(mut self, input: ::std::option::Option<crate::types::FederationParameters>) -> Self {
         self.federation_parameters = input;
         self
     }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
-    pub fn get_federation_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::FederationParameters> {
+    pub fn get_federation_parameters(&self) -> &::std::option::Option<crate::types::FederationParameters> {
         &self.federation_parameters
     }
     /// <p>Configuration information for the superuser.</p>
@@ -243,17 +207,12 @@ impl CreateEnvironmentInputBuilder {
         self
     }
     /// <p>Configuration information for the superuser.</p>
-    pub fn set_superuser_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::SuperuserParameters>,
-    ) -> Self {
+    pub fn set_superuser_parameters(mut self, input: ::std::option::Option<crate::types::SuperuserParameters>) -> Self {
         self.superuser_parameters = input;
         self
     }
     /// <p>Configuration information for the superuser.</p>
-    pub fn get_superuser_parameters(
-        &self,
-    ) -> &::std::option::Option<crate::types::SuperuserParameters> {
+    pub fn get_superuser_parameters(&self) -> &::std::option::Option<crate::types::SuperuserParameters> {
         &self.superuser_parameters
     }
     /// Appends an item to `data_bundles`.
@@ -276,10 +235,7 @@ impl CreateEnvironmentInputBuilder {
     /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
     /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
     /// </ul>
-    pub fn set_data_bundles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_data_bundles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.data_bundles = input;
         self
     }
@@ -288,29 +244,22 @@ impl CreateEnvironmentInputBuilder {
     /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
     /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
     /// </ul>
-    pub fn get_data_bundles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_bundles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.data_bundles
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_environment::CreateEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_environment::CreateEnvironmentInput {
-                name: self.name,
-                description: self.description,
-                kms_key_id: self.kms_key_id,
-                tags: self.tags,
-                federation_mode: self.federation_mode,
-                federation_parameters: self.federation_parameters,
-                superuser_parameters: self.superuser_parameters,
-                data_bundles: self.data_bundles,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
+            name: self.name,
+            description: self.description,
+            kms_key_id: self.kms_key_id,
+            tags: self.tags,
+            federation_mode: self.federation_mode,
+            federation_parameters: self.federation_parameters,
+            superuser_parameters: self.superuser_parameters,
+            data_bundles: self.data_bundles,
+        })
     }
 }

@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetOnPremisesInstanceOutput`](crate::operation::get_on_premises_instance::GetOnPremisesInstanceOutput) with field(s):
     ///   - [`instance_info(Option<InstanceInfo>)`](crate::operation::get_on_premises_instance::GetOnPremisesInstanceOutput::instance_info): <p> Information about the on-premises instance. </p>
     /// - On failure, responds with [`SdkError<GetOnPremisesInstanceError>`](crate::operation::get_on_premises_instance::GetOnPremisesInstanceError)
-    pub fn get_on_premises_instance(
-        &self,
-    ) -> crate::operation::get_on_premises_instance::builders::GetOnPremisesInstanceFluentBuilder
-    {
+    pub fn get_on_premises_instance(&self) -> crate::operation::get_on_premises_instance::builders::GetOnPremisesInstanceFluentBuilder {
         crate::operation::get_on_premises_instance::builders::GetOnPremisesInstanceFluentBuilder::new(self.handle.clone())
     }
 }

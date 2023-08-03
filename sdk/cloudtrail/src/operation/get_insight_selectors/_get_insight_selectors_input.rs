@@ -33,18 +33,14 @@ impl GetInsightSelectorsInput {
 }
 impl GetInsightSelectorsInput {
     /// Creates a new builder-style object to manufacture [`GetInsightSelectorsInput`](crate::operation::get_insight_selectors::GetInsightSelectorsInput).
-    pub fn builder(
-    ) -> crate::operation::get_insight_selectors::builders::GetInsightSelectorsInputBuilder {
-        crate::operation::get_insight_selectors::builders::GetInsightSelectorsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_insight_selectors::builders::GetInsightSelectorsInputBuilder {
+        crate::operation::get_insight_selectors::builders::GetInsightSelectorsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetInsightSelectorsInput`](crate::operation::get_insight_selectors::GetInsightSelectorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInsightSelectorsInputBuilder {
     pub(crate) trail_name: ::std::option::Option<::std::string::String>,
 }
@@ -93,14 +89,8 @@ impl GetInsightSelectorsInputBuilder {
     /// Consumes the builder and constructs a [`GetInsightSelectorsInput`](crate::operation::get_insight_selectors::GetInsightSelectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_insight_selectors::GetInsightSelectorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_insight_selectors::GetInsightSelectorsInput {
-                trail_name: self.trail_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_insight_selectors::GetInsightSelectorsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_insight_selectors::GetInsightSelectorsInput { trail_name: self.trail_name })
     }
 }

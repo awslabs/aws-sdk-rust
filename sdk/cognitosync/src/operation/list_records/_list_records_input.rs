@@ -65,9 +65,7 @@ impl ListRecordsInput {
 
 /// A builder for [`ListRecordsInput`](crate::operation::list_records::ListRecordsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecordsInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
@@ -79,18 +77,12 @@ pub struct ListRecordsInputBuilder {
 }
 impl ListRecordsInputBuilder {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn set_identity_pool_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -169,18 +161,12 @@ impl ListRecordsInputBuilder {
         &self.max_results
     }
     /// A token containing a session ID, identity ID, and expiration.
-    pub fn sync_session_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn sync_session_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_session_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A token containing a session ID, identity ID, and expiration.
-    pub fn set_sync_session_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_sync_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_session_token = input;
         self
     }
@@ -189,12 +175,7 @@ impl ListRecordsInputBuilder {
         &self.sync_session_token
     }
     /// Consumes the builder and constructs a [`ListRecordsInput`](crate::operation::list_records::ListRecordsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_records::ListRecordsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_records::ListRecordsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_records::ListRecordsInput {
             identity_pool_id: self.identity_pool_id,
             identity_id: self.identity_id,

@@ -9,10 +9,7 @@ pub fn ser_list_slot_types_input(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_slot_type_filter::ser_slot_type_filter(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_slot_type_filter::ser_slot_type_filter(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -30,10 +27,7 @@ pub fn ser_list_slot_types_input(
     if let Some(var_7) = &input.sort_by {
         #[allow(unused_mut)]
         let mut object_8 = object.key("sortBy").start_object();
-        crate::protocol_serde::shape_slot_type_sort_by::ser_slot_type_sort_by(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_slot_type_sort_by::ser_slot_type_sort_by(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())

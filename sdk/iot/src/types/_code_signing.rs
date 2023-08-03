@@ -20,9 +20,7 @@ impl CodeSigning {
         self.aws_signer_job_id.as_deref()
     }
     /// <p>Describes the code-signing job.</p>
-    pub fn start_signing_job_parameter(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StartSigningJobParameter> {
+    pub fn start_signing_job_parameter(&self) -> ::std::option::Option<&crate::types::StartSigningJobParameter> {
         self.start_signing_job_parameter.as_ref()
     }
     /// <p>A custom method for code signing a file.</p>
@@ -39,29 +37,20 @@ impl CodeSigning {
 
 /// A builder for [`CodeSigning`](crate::types::CodeSigning).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeSigningBuilder {
     pub(crate) aws_signer_job_id: ::std::option::Option<::std::string::String>,
-    pub(crate) start_signing_job_parameter:
-        ::std::option::Option<crate::types::StartSigningJobParameter>,
+    pub(crate) start_signing_job_parameter: ::std::option::Option<crate::types::StartSigningJobParameter>,
     pub(crate) custom_code_signing: ::std::option::Option<crate::types::CustomCodeSigning>,
 }
 impl CodeSigningBuilder {
     /// <p>The ID of the <code>AWSSignerJob</code> which was created to sign the file.</p>
-    pub fn aws_signer_job_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_signer_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_signer_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>AWSSignerJob</code> which was created to sign the file.</p>
-    pub fn set_aws_signer_job_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_signer_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_signer_job_id = input;
         self
     }
@@ -70,25 +59,17 @@ impl CodeSigningBuilder {
         &self.aws_signer_job_id
     }
     /// <p>Describes the code-signing job.</p>
-    pub fn start_signing_job_parameter(
-        mut self,
-        input: crate::types::StartSigningJobParameter,
-    ) -> Self {
+    pub fn start_signing_job_parameter(mut self, input: crate::types::StartSigningJobParameter) -> Self {
         self.start_signing_job_parameter = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the code-signing job.</p>
-    pub fn set_start_signing_job_parameter(
-        mut self,
-        input: ::std::option::Option<crate::types::StartSigningJobParameter>,
-    ) -> Self {
+    pub fn set_start_signing_job_parameter(mut self, input: ::std::option::Option<crate::types::StartSigningJobParameter>) -> Self {
         self.start_signing_job_parameter = input;
         self
     }
     /// <p>Describes the code-signing job.</p>
-    pub fn get_start_signing_job_parameter(
-        &self,
-    ) -> &::std::option::Option<crate::types::StartSigningJobParameter> {
+    pub fn get_start_signing_job_parameter(&self) -> &::std::option::Option<crate::types::StartSigningJobParameter> {
         &self.start_signing_job_parameter
     }
     /// <p>A custom method for code signing a file.</p>
@@ -97,17 +78,12 @@ impl CodeSigningBuilder {
         self
     }
     /// <p>A custom method for code signing a file.</p>
-    pub fn set_custom_code_signing(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomCodeSigning>,
-    ) -> Self {
+    pub fn set_custom_code_signing(mut self, input: ::std::option::Option<crate::types::CustomCodeSigning>) -> Self {
         self.custom_code_signing = input;
         self
     }
     /// <p>A custom method for code signing a file.</p>
-    pub fn get_custom_code_signing(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomCodeSigning> {
+    pub fn get_custom_code_signing(&self) -> &::std::option::Option<crate::types::CustomCodeSigning> {
         &self.custom_code_signing
     }
     /// Consumes the builder and constructs a [`CodeSigning`](crate::types::CodeSigning).

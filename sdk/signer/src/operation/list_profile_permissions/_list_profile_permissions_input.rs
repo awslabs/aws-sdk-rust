@@ -22,18 +22,14 @@ impl ListProfilePermissionsInput {
 }
 impl ListProfilePermissionsInput {
     /// Creates a new builder-style object to manufacture [`ListProfilePermissionsInput`](crate::operation::list_profile_permissions::ListProfilePermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_profile_permissions::builders::ListProfilePermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_profile_permissions::builders::ListProfilePermissionsInputBuilder {
         crate::operation::list_profile_permissions::builders::ListProfilePermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListProfilePermissionsInput`](crate::operation::list_profile_permissions::ListProfilePermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListProfilePermissionsInputBuilder {
     pub(crate) profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,15 +66,11 @@ impl ListProfilePermissionsInputBuilder {
     /// Consumes the builder and constructs a [`ListProfilePermissionsInput`](crate::operation::list_profile_permissions::ListProfilePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_profile_permissions::ListProfilePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_profile_permissions::ListProfilePermissionsInput {
-                profile_name: self.profile_name,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_profile_permissions::ListProfilePermissionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_profile_permissions::ListProfilePermissionsInput {
+            profile_name: self.profile_name,
+            next_token: self.next_token,
+        })
     }
 }

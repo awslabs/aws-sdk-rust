@@ -95,10 +95,7 @@ impl ShareDirectoryInputBuilder {
         self
     }
     /// <p>Identifier for the directory consumer account with whom the directory is to be shared.</p>
-    pub fn set_share_target(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareTarget>,
-    ) -> Self {
+    pub fn set_share_target(mut self, input: ::std::option::Option<crate::types::ShareTarget>) -> Self {
         self.share_target = input;
         self
     }
@@ -112,10 +109,7 @@ impl ShareDirectoryInputBuilder {
         self
     }
     /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a directory sharing request (<code>HANDSHAKE</code>).</p>
-    pub fn set_share_method(
-        mut self,
-        input: ::std::option::Option<crate::types::ShareMethod>,
-    ) -> Self {
+    pub fn set_share_method(mut self, input: ::std::option::Option<crate::types::ShareMethod>) -> Self {
         self.share_method = input;
         self
     }
@@ -126,10 +120,7 @@ impl ShareDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`ShareDirectoryInput`](crate::operation::share_directory::ShareDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::share_directory::ShareDirectoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::share_directory::ShareDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::share_directory::ShareDirectoryInput {
             directory_id: self.directory_id,
             share_notes: self.share_notes,

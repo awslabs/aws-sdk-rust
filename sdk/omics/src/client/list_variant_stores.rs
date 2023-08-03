@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`variant_stores(Option<Vec<VariantStoreItem>>)`](crate::operation::list_variant_stores::ListVariantStoresOutput::variant_stores): <p>A list of variant stores.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_variant_stores::ListVariantStoresOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListVariantStoresError>`](crate::operation::list_variant_stores::ListVariantStoresError)
-    pub fn list_variant_stores(
-        &self,
-    ) -> crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder {
-        crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_variant_stores(&self) -> crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder {
+        crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder::new(self.handle.clone())
     }
 }

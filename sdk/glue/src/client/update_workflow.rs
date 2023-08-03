@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateWorkflowOutput`](crate::operation::update_workflow::UpdateWorkflowOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::update_workflow::UpdateWorkflowOutput::name): <p>The name of the workflow which was specified in input.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkflowError>`](crate::operation::update_workflow::UpdateWorkflowError)
-    pub fn update_workflow(
-        &self,
-    ) -> crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder {
-        crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_workflow(&self) -> crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder {
+        crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::new(self.handle.clone())
     }
 }

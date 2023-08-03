@@ -15,35 +15,25 @@ impl GetTargetResourceTypeInput {
 }
 impl GetTargetResourceTypeInput {
     /// Creates a new builder-style object to manufacture [`GetTargetResourceTypeInput`](crate::operation::get_target_resource_type::GetTargetResourceTypeInput).
-    pub fn builder(
-    ) -> crate::operation::get_target_resource_type::builders::GetTargetResourceTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_target_resource_type::builders::GetTargetResourceTypeInputBuilder {
         crate::operation::get_target_resource_type::builders::GetTargetResourceTypeInputBuilder::default()
     }
 }
 
 /// A builder for [`GetTargetResourceTypeInput`](crate::operation::get_target_resource_type::GetTargetResourceTypeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTargetResourceTypeInputBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
 }
 impl GetTargetResourceTypeInputBuilder {
     /// <p>The resource type.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -54,14 +44,10 @@ impl GetTargetResourceTypeInputBuilder {
     /// Consumes the builder and constructs a [`GetTargetResourceTypeInput`](crate::operation::get_target_resource_type::GetTargetResourceTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_target_resource_type::GetTargetResourceTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_target_resource_type::GetTargetResourceTypeInput {
-                resource_type: self.resource_type,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_target_resource_type::GetTargetResourceTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_target_resource_type::GetTargetResourceTypeInput {
+            resource_type: self.resource_type,
+        })
     }
 }

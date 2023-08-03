@@ -5,16 +5,16 @@ pub use crate::operation::associate_configuration_items_to_application::_associa
 
 impl AssociateConfigurationItemsToApplicationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.associate_configuration_items_to_application();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl AssociateConfigurationItemsToApplicationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateConfigurationItemsToApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationInputBuilder,
+    inner: crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationInputBuilder,
 }
 impl AssociateConfigurationItemsToApplicationFluentBuilder {
     /// Creates a new `AssociateConfigurationItemsToApplication`.
@@ -37,15 +37,24 @@ impl AssociateConfigurationItemsToApplicationFluentBuilder {
         }
     }
     /// Access the AssociateConfigurationItemsToApplication as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplication, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplication,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError,
+        >,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +63,19 @@ impl AssociateConfigurationItemsToApplicationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError,
+        >,
+    > {
         let op = self
             .inner
             .build()
@@ -81,39 +93,44 @@ impl AssociateConfigurationItemsToApplicationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError,
+        >,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplication, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplication,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError,
+        >,
+    > {
         self.customize_middleware().await
     }
     /// <p>The configuration ID of an application with which items are to be associated.</p>
-    pub fn application_configuration_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_configuration_id(input.into());
         self
     }
     /// <p>The configuration ID of an application with which items are to be associated.</p>
-    pub fn set_application_configuration_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_configuration_id(input);
         self
     }
     /// <p>The configuration ID of an application with which items are to be associated.</p>
-    pub fn get_application_configuration_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_application_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_configuration_id()
     }
     /// Appends an item to `configurationIds`.
@@ -121,25 +138,17 @@ impl AssociateConfigurationItemsToApplicationFluentBuilder {
     /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
     ///
     /// <p>The ID of each configuration item to be associated with an application.</p>
-    pub fn configuration_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn configuration_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_ids(input.into());
         self
     }
     /// <p>The ID of each configuration item to be associated with an application.</p>
-    pub fn set_configuration_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_configuration_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_configuration_ids(input);
         self
     }
     /// <p>The ID of each configuration item to be associated with an application.</p>
-    pub fn get_configuration_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_configuration_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_configuration_ids()
     }
 }

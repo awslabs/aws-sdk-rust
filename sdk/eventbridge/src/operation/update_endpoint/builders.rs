@@ -10,10 +10,7 @@ impl UpdateEndpointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_endpoint::UpdateEndpointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoint::UpdateEndpointError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_endpoint();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateEndpointFluentBuilder {
         }
     }
     /// Access the UpdateEndpoint as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_endpoint::builders::UpdateEndpointInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_endpoint::builders::UpdateEndpointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateEndpointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -148,10 +140,7 @@ impl UpdateEndpointFluentBuilder {
         self
     }
     /// <p>Configure the routing policy, including the health check and secondary Region.</p>
-    pub fn set_routing_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RoutingConfig>,
-    ) -> Self {
+    pub fn set_routing_config(mut self, input: ::std::option::Option<crate::types::RoutingConfig>) -> Self {
         self.inner = self.inner.set_routing_config(input);
         self
     }
@@ -165,17 +154,12 @@ impl UpdateEndpointFluentBuilder {
         self
     }
     /// <p>Whether event replication was enabled or disabled by this request.</p>
-    pub fn set_replication_config(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfig>,
-    ) -> Self {
+    pub fn set_replication_config(mut self, input: ::std::option::Option<crate::types::ReplicationConfig>) -> Self {
         self.inner = self.inner.set_replication_config(input);
         self
     }
     /// <p>Whether event replication was enabled or disabled by this request.</p>
-    pub fn get_replication_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::ReplicationConfig> {
+    pub fn get_replication_config(&self) -> &::std::option::Option<crate::types::ReplicationConfig> {
         self.inner.get_replication_config()
     }
     /// Appends an item to `EventBuses`.
@@ -188,17 +172,12 @@ impl UpdateEndpointFluentBuilder {
         self
     }
     /// <p>Define event buses used for replication.</p>
-    pub fn set_event_buses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>,
-    ) -> Self {
+    pub fn set_event_buses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>) -> Self {
         self.inner = self.inner.set_event_buses(input);
         self
     }
     /// <p>Define event buses used for replication.</p>
-    pub fn get_event_buses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
+    pub fn get_event_buses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
         self.inner.get_event_buses()
     }
     /// <p>The ARN of the role used by event replication for this request.</p>

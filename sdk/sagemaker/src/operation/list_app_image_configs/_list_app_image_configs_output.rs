@@ -8,8 +8,7 @@ pub struct ListAppImageConfigsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of AppImageConfigs and their properties.</p>
     #[doc(hidden)]
-    pub app_image_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppImageConfigDetails>>,
+    pub app_image_configs: ::std::option::Option<::std::vec::Vec<crate::types::AppImageConfigDetails>>,
     _request_id: Option<String>,
 }
 impl ListAppImageConfigsOutput {
@@ -18,9 +17,7 @@ impl ListAppImageConfigsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of AppImageConfigs and their properties.</p>
-    pub fn app_image_configs(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AppImageConfigDetails]> {
+    pub fn app_image_configs(&self) -> ::std::option::Option<&[crate::types::AppImageConfigDetails]> {
         self.app_image_configs.as_deref()
     }
 }
@@ -31,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ListAppImageConfigsOutput {
 }
 impl ListAppImageConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppImageConfigsOutput`](crate::operation::list_app_image_configs::ListAppImageConfigsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_app_image_configs::builders::ListAppImageConfigsOutputBuilder {
+    pub fn builder() -> crate::operation::list_app_image_configs::builders::ListAppImageConfigsOutputBuilder {
         crate::operation::list_app_image_configs::builders::ListAppImageConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAppImageConfigsOutput`](crate::operation::list_app_image_configs::ListAppImageConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAppImageConfigsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) app_image_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::AppImageConfigDetails>>,
+    pub(crate) app_image_configs: ::std::option::Option<::std::vec::Vec<crate::types::AppImageConfigDetails>>,
     _request_id: Option<String>,
 }
 impl ListAppImageConfigsOutputBuilder {
@@ -75,17 +68,12 @@ impl ListAppImageConfigsOutputBuilder {
         self
     }
     /// <p>A list of AppImageConfigs and their properties.</p>
-    pub fn set_app_image_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppImageConfigDetails>>,
-    ) -> Self {
+    pub fn set_app_image_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppImageConfigDetails>>) -> Self {
         self.app_image_configs = input;
         self
     }
     /// <p>A list of AppImageConfigs and their properties.</p>
-    pub fn get_app_image_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppImageConfigDetails>> {
+    pub fn get_app_image_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppImageConfigDetails>> {
         &self.app_image_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

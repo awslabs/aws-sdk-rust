@@ -7,7 +7,12 @@ impl super::Client {
     ///   - [`configuration_ids(Vec<String>)`](crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationFluentBuilder::configuration_ids) / [`set_configuration_ids(Option<Vec<String>>)`](crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationFluentBuilder::set_configuration_ids): <p>Configuration ID of each item to be disassociated from an application.</p>
     /// - On success, responds with [`DisassociateConfigurationItemsFromApplicationOutput`](crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput)
     /// - On failure, responds with [`SdkError<DisassociateConfigurationItemsFromApplicationError>`](crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError)
-    pub fn disassociate_configuration_items_from_application(&self) -> crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationFluentBuilder{
-        crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationFluentBuilder::new(self.handle.clone())
+    pub fn disassociate_configuration_items_from_application(
+        &self,
+    ) -> crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationFluentBuilder
+    {
+        crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for CreateConfigurationSetOutput {
 }
 impl CreateConfigurationSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationSetOutput`](crate::operation::create_configuration_set::CreateConfigurationSetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_configuration_set::builders::CreateConfigurationSetOutputBuilder {
         crate::operation::create_configuration_set::builders::CreateConfigurationSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateConfigurationSetOutput`](crate::operation::create_configuration_set::CreateConfigurationSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetOutputBuilder {
     _request_id: Option<String>,
 }

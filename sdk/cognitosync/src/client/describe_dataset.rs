@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput) with field(s):
     ///   - [`dataset(Option<Dataset>)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset): Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
     /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::operation::describe_dataset::DescribeDatasetError)
-    pub fn describe_dataset(
-        &self,
-    ) -> crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder {
-        crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_dataset(&self) -> crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder {
+        crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::new(self.handle.clone())
     }
 }

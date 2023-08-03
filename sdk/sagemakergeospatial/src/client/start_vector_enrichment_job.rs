@@ -23,7 +23,7 @@ impl super::Client {
     ///   - [`execution_role_arn(Option<String>)`](crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobOutput::execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobOutput::tags): <p>Each tag consists of a key and a value.</p>
     /// - On failure, responds with [`SdkError<StartVectorEnrichmentJobError>`](crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError)
-    pub fn start_vector_enrichment_job(&self) -> crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobFluentBuilder{
+    pub fn start_vector_enrichment_job(&self) -> crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobFluentBuilder {
         crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobFluentBuilder::new(self.handle.clone())
     }
 }

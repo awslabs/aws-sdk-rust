@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`directories(Option<Vec<WorkspaceDirectory>>)`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput::directories): <p>Information about the directories.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     /// - On failure, responds with [`SdkError<DescribeWorkspaceDirectoriesError>`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesError)
-    pub fn describe_workspace_directories(&self) -> crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesFluentBuilder{
+    pub fn describe_workspace_directories(
+        &self,
+    ) -> crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesFluentBuilder {
         crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesFluentBuilder::new(self.handle.clone())
     }
 }

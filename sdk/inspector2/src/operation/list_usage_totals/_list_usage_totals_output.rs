@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListUsageTotalsOutput {
 }
 impl ListUsageTotalsOutput {
     /// Creates a new builder-style object to manufacture [`ListUsageTotalsOutput`](crate::operation::list_usage_totals::ListUsageTotalsOutput).
-    pub fn builder() -> crate::operation::list_usage_totals::builders::ListUsageTotalsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_usage_totals::builders::ListUsageTotalsOutputBuilder {
         crate::operation::list_usage_totals::builders::ListUsageTotalsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListUsageTotalsOutput`](crate::operation::list_usage_totals::ListUsageTotalsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUsageTotalsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) totals: ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>>,
@@ -71,10 +68,7 @@ impl ListUsageTotalsOutputBuilder {
         self
     }
     /// <p>An object with details on the total usage for the requested account.</p>
-    pub fn set_totals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>>,
-    ) -> Self {
+    pub fn set_totals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>>) -> Self {
         self.totals = input;
         self
     }

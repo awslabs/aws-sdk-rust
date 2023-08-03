@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateEntitlementOutput`](crate::operation::update_entitlement::UpdateEntitlementOutput) with field(s):
     ///   - [`entitlement(Option<Entitlement>)`](crate::operation::update_entitlement::UpdateEntitlementOutput::entitlement): <p>The entitlement.</p>
     /// - On failure, responds with [`SdkError<UpdateEntitlementError>`](crate::operation::update_entitlement::UpdateEntitlementError)
-    pub fn update_entitlement(
-        &self,
-    ) -> crate::operation::update_entitlement::builders::UpdateEntitlementFluentBuilder {
-        crate::operation::update_entitlement::builders::UpdateEntitlementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_entitlement(&self) -> crate::operation::update_entitlement::builders::UpdateEntitlementFluentBuilder {
+        crate::operation::update_entitlement::builders::UpdateEntitlementFluentBuilder::new(self.handle.clone())
     }
 }

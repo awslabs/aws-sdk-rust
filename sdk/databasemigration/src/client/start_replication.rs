@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`StartReplicationOutput`](crate::operation::start_replication::StartReplicationOutput) with field(s):
     ///   - [`replication(Option<Replication>)`](crate::operation::start_replication::StartReplicationOutput::replication): <p>The replication that DMS started.</p>
     /// - On failure, responds with [`SdkError<StartReplicationError>`](crate::operation::start_replication::StartReplicationError)
-    pub fn start_replication(
-        &self,
-    ) -> crate::operation::start_replication::builders::StartReplicationFluentBuilder {
-        crate::operation::start_replication::builders::StartReplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_replication(&self) -> crate::operation::start_replication::builders::StartReplicationFluentBuilder {
+        crate::operation::start_replication::builders::StartReplicationFluentBuilder::new(self.handle.clone())
     }
 }

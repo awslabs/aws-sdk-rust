@@ -31,17 +31,14 @@ impl AbortMultipartUploadInput {
 }
 impl AbortMultipartUploadInput {
     /// Creates a new builder-style object to manufacture [`AbortMultipartUploadInput`](crate::operation::abort_multipart_upload::AbortMultipartUploadInput).
-    pub fn builder(
-    ) -> crate::operation::abort_multipart_upload::builders::AbortMultipartUploadInputBuilder {
+    pub fn builder() -> crate::operation::abort_multipart_upload::builders::AbortMultipartUploadInputBuilder {
         crate::operation::abort_multipart_upload::builders::AbortMultipartUploadInputBuilder::default()
     }
 }
 
 /// A builder for [`AbortMultipartUploadInput`](crate::operation::abort_multipart_upload::AbortMultipartUploadInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AbortMultipartUploadInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
@@ -93,16 +90,12 @@ impl AbortMultipartUploadInputBuilder {
     /// Consumes the builder and constructs a [`AbortMultipartUploadInput`](crate::operation::abort_multipart_upload::AbortMultipartUploadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::abort_multipart_upload::AbortMultipartUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::abort_multipart_upload::AbortMultipartUploadInput {
-                account_id: self.account_id,
-                vault_name: self.vault_name,
-                upload_id: self.upload_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::abort_multipart_upload::AbortMultipartUploadInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::abort_multipart_upload::AbortMultipartUploadInput {
+            account_id: self.account_id,
+            vault_name: self.vault_name,
+            upload_id: self.upload_id,
+        })
     }
 }

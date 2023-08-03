@@ -10,10 +10,7 @@ impl ImportComponentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::import_component::ImportComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_component::ImportComponentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_component::ImportComponentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.import_component();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ImportComponentFluentBuilder {
         }
     }
     /// Access the ImportComponent as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::import_component::builders::ImportComponentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::import_component::builders::ImportComponentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ImportComponentFluentBuilder {
             crate::operation::import_component::ImportComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_component::ImportComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_component::ImportComponentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ImportComponentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ImportComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_component::ImportComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_component::ImportComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_component::ImportComponentError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ImportComponentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_component::ImportComponentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_component::ImportComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_component::ImportComponentError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl ImportComponentFluentBuilder {
             crate::operation::import_component::ImportComponent,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::import_component::ImportComponentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_component::ImportComponentError>,
     > {
         self.customize_middleware().await
     }
@@ -151,10 +135,7 @@ impl ImportComponentFluentBuilder {
     /// </major></p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    pub fn semantic_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
@@ -173,10 +154,7 @@ impl ImportComponentFluentBuilder {
     /// </major></p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    pub fn set_semantic_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
@@ -213,18 +191,12 @@ impl ImportComponentFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
-    pub fn change_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn change_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_description(input.into());
         self
     }
     /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
-    pub fn set_change_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_change_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_description(input);
         self
     }
@@ -252,10 +224,7 @@ impl ImportComponentFluentBuilder {
         self
     }
     /// <p>The format of the resource that you want to import as a component.</p>
-    pub fn set_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ComponentFormat>,
-    ) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::ComponentFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }
@@ -324,30 +293,17 @@ impl ImportComponentFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the component.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags of the component.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags of the component.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The idempotency token of the component.</p>

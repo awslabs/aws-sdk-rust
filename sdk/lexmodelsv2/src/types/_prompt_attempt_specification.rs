@@ -12,8 +12,7 @@ pub struct PromptAttemptSpecification {
     pub allowed_input_types: ::std::option::Option<crate::types::AllowedInputTypes>,
     /// <p>Specifies the settings on audio and DTMF input.</p>
     #[doc(hidden)]
-    pub audio_and_dtmf_input_specification:
-        ::std::option::Option<crate::types::AudioAndDtmfInputSpecification>,
+    pub audio_and_dtmf_input_specification: ::std::option::Option<crate::types::AudioAndDtmfInputSpecification>,
     /// <p>Specifies the settings on text input.</p>
     #[doc(hidden)]
     pub text_input_specification: ::std::option::Option<crate::types::TextInputSpecification>,
@@ -28,15 +27,11 @@ impl PromptAttemptSpecification {
         self.allowed_input_types.as_ref()
     }
     /// <p>Specifies the settings on audio and DTMF input.</p>
-    pub fn audio_and_dtmf_input_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AudioAndDtmfInputSpecification> {
+    pub fn audio_and_dtmf_input_specification(&self) -> ::std::option::Option<&crate::types::AudioAndDtmfInputSpecification> {
         self.audio_and_dtmf_input_specification.as_ref()
     }
     /// <p>Specifies the settings on text input.</p>
-    pub fn text_input_specification(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TextInputSpecification> {
+    pub fn text_input_specification(&self) -> ::std::option::Option<&crate::types::TextInputSpecification> {
         self.text_input_specification.as_ref()
     }
 }
@@ -49,16 +44,12 @@ impl PromptAttemptSpecification {
 
 /// A builder for [`PromptAttemptSpecification`](crate::types::PromptAttemptSpecification).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PromptAttemptSpecificationBuilder {
     pub(crate) allow_interrupt: ::std::option::Option<bool>,
     pub(crate) allowed_input_types: ::std::option::Option<crate::types::AllowedInputTypes>,
-    pub(crate) audio_and_dtmf_input_specification:
-        ::std::option::Option<crate::types::AudioAndDtmfInputSpecification>,
-    pub(crate) text_input_specification:
-        ::std::option::Option<crate::types::TextInputSpecification>,
+    pub(crate) audio_and_dtmf_input_specification: ::std::option::Option<crate::types::AudioAndDtmfInputSpecification>,
+    pub(crate) text_input_specification: ::std::option::Option<crate::types::TextInputSpecification>,
 }
 impl PromptAttemptSpecificationBuilder {
     /// <p>Indicates whether the user can interrupt a speech prompt attempt from the bot.</p>
@@ -81,39 +72,26 @@ impl PromptAttemptSpecificationBuilder {
         self
     }
     /// <p>Indicates the allowed input types of the prompt attempt.</p>
-    pub fn set_allowed_input_types(
-        mut self,
-        input: ::std::option::Option<crate::types::AllowedInputTypes>,
-    ) -> Self {
+    pub fn set_allowed_input_types(mut self, input: ::std::option::Option<crate::types::AllowedInputTypes>) -> Self {
         self.allowed_input_types = input;
         self
     }
     /// <p>Indicates the allowed input types of the prompt attempt.</p>
-    pub fn get_allowed_input_types(
-        &self,
-    ) -> &::std::option::Option<crate::types::AllowedInputTypes> {
+    pub fn get_allowed_input_types(&self) -> &::std::option::Option<crate::types::AllowedInputTypes> {
         &self.allowed_input_types
     }
     /// <p>Specifies the settings on audio and DTMF input.</p>
-    pub fn audio_and_dtmf_input_specification(
-        mut self,
-        input: crate::types::AudioAndDtmfInputSpecification,
-    ) -> Self {
+    pub fn audio_and_dtmf_input_specification(mut self, input: crate::types::AudioAndDtmfInputSpecification) -> Self {
         self.audio_and_dtmf_input_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the settings on audio and DTMF input.</p>
-    pub fn set_audio_and_dtmf_input_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::AudioAndDtmfInputSpecification>,
-    ) -> Self {
+    pub fn set_audio_and_dtmf_input_specification(mut self, input: ::std::option::Option<crate::types::AudioAndDtmfInputSpecification>) -> Self {
         self.audio_and_dtmf_input_specification = input;
         self
     }
     /// <p>Specifies the settings on audio and DTMF input.</p>
-    pub fn get_audio_and_dtmf_input_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::AudioAndDtmfInputSpecification> {
+    pub fn get_audio_and_dtmf_input_specification(&self) -> &::std::option::Option<crate::types::AudioAndDtmfInputSpecification> {
         &self.audio_and_dtmf_input_specification
     }
     /// <p>Specifies the settings on text input.</p>
@@ -122,17 +100,12 @@ impl PromptAttemptSpecificationBuilder {
         self
     }
     /// <p>Specifies the settings on text input.</p>
-    pub fn set_text_input_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::TextInputSpecification>,
-    ) -> Self {
+    pub fn set_text_input_specification(mut self, input: ::std::option::Option<crate::types::TextInputSpecification>) -> Self {
         self.text_input_specification = input;
         self
     }
     /// <p>Specifies the settings on text input.</p>
-    pub fn get_text_input_specification(
-        &self,
-    ) -> &::std::option::Option<crate::types::TextInputSpecification> {
+    pub fn get_text_input_specification(&self) -> &::std::option::Option<crate::types::TextInputSpecification> {
         &self.text_input_specification
     }
     /// Consumes the builder and constructs a [`PromptAttemptSpecification`](crate::types::PromptAttemptSpecification).

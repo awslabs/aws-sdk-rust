@@ -49,9 +49,7 @@ impl PutInsightRuleInput {
 
 /// A builder for [`PutInsightRuleInput`](crate::operation::put_insight_rule::PutInsightRuleInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutInsightRuleInputBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_state: ::std::option::Option<::std::string::String>,
@@ -88,18 +86,12 @@ impl PutInsightRuleInputBuilder {
         &self.rule_state
     }
     /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
-    pub fn rule_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
-    pub fn set_rule_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_definition = input;
         self
     }
@@ -125,10 +117,7 @@ impl PutInsightRuleInputBuilder {
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
     /// <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p>
     /// <p>If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this parameter are ignored. To change the tags of an existing rule, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -142,10 +131,7 @@ impl PutInsightRuleInputBuilder {
     /// Consumes the builder and constructs a [`PutInsightRuleInput`](crate::operation::put_insight_rule::PutInsightRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::put_insight_rule::PutInsightRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::put_insight_rule::PutInsightRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_insight_rule::PutInsightRuleInput {
             rule_name: self.rule_name,
             rule_state: self.rule_state,

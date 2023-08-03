@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`index_status(Option<IndexStatus>)`](crate::operation::describe_index::DescribeIndexOutput::index_status): <p>The index status.</p>
     ///   - [`schema(Option<String>)`](crate::operation::describe_index::DescribeIndexOutput::schema): <p>Contains a value that specifies the type of indexing performed. Valid values are:</p>  <ul>   <li> <p>REGISTRY – Your thing index contains only registry data.</p> </li>   <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p> </li>   <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.</p> </li>   <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li>   <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DescribeIndexError>`](crate::operation::describe_index::DescribeIndexError)
-    pub fn describe_index(
-        &self,
-    ) -> crate::operation::describe_index::builders::DescribeIndexFluentBuilder {
-        crate::operation::describe_index::builders::DescribeIndexFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_index(&self) -> crate::operation::describe_index::builders::DescribeIndexFluentBuilder {
+        crate::operation::describe_index::builders::DescribeIndexFluentBuilder::new(self.handle.clone())
     }
 }

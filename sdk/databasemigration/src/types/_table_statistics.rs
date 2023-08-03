@@ -207,9 +207,7 @@ impl TableStatistics {
 
 /// A builder for [`TableStatistics`](crate::types::TableStatistics).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableStatisticsBuilder {
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
@@ -396,10 +394,7 @@ impl TableStatisticsBuilder {
         self
     }
     /// <p>The number of rows that failed conditional checks during the full load operation (valid only for migrations where DynamoDB is the target).</p>
-    pub fn set_full_load_condtnl_chk_failed_rows(
-        mut self,
-        input: ::std::option::Option<i64>,
-    ) -> Self {
+    pub fn set_full_load_condtnl_chk_failed_rows(mut self, input: ::std::option::Option<i64>) -> Self {
         self.full_load_condtnl_chk_failed_rows = input;
         self
     }
@@ -427,10 +422,7 @@ impl TableStatisticsBuilder {
         self
     }
     /// <p>The time when the full load operation started.</p>
-    pub fn set_full_load_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_full_load_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.full_load_start_time = input;
         self
     }
@@ -444,10 +436,7 @@ impl TableStatisticsBuilder {
         self
     }
     /// <p>The time when the full load operation completed.</p>
-    pub fn set_full_load_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_full_load_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.full_load_end_time = input;
         self
     }
@@ -475,10 +464,7 @@ impl TableStatisticsBuilder {
         self
     }
     /// <p>The last time a table was updated.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_update_time = input;
         self
     }
@@ -560,10 +546,7 @@ impl TableStatisticsBuilder {
     /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li>
     /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
-    pub fn validation_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_state = ::std::option::Option::Some(input.into());
         self
     }
@@ -582,10 +565,7 @@ impl TableStatisticsBuilder {
     /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li>
     /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
-    pub fn set_validation_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_state = input;
         self
     }
@@ -608,18 +588,12 @@ impl TableStatisticsBuilder {
         &self.validation_state
     }
     /// <p>Additional details about the state of validation.</p>
-    pub fn validation_state_details(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn validation_state_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_state_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional details about the state of validation.</p>
-    pub fn set_validation_state_details(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_validation_state_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_state_details = input;
         self
     }
@@ -641,9 +615,7 @@ impl TableStatisticsBuilder {
             applied_updates: self.applied_updates,
             applied_ddls: self.applied_ddls,
             full_load_rows: self.full_load_rows.unwrap_or_default(),
-            full_load_condtnl_chk_failed_rows: self
-                .full_load_condtnl_chk_failed_rows
-                .unwrap_or_default(),
+            full_load_condtnl_chk_failed_rows: self.full_load_condtnl_chk_failed_rows.unwrap_or_default(),
             full_load_error_rows: self.full_load_error_rows.unwrap_or_default(),
             full_load_start_time: self.full_load_start_time,
             full_load_end_time: self.full_load_end_time,

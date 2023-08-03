@@ -37,9 +37,7 @@ impl DescribeSourceNetworksRequestFilters {
 
 /// A builder for [`DescribeSourceNetworksRequestFilters`](crate::types::DescribeSourceNetworksRequestFilters).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSourceNetworksRequestFiltersBuilder {
     pub(crate) source_network_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) origin_account_id: ::std::option::Option<::std::string::String>,
@@ -51,42 +49,28 @@ impl DescribeSourceNetworksRequestFiltersBuilder {
     /// To override the contents of this collection use [`set_source_network_i_ds`](Self::set_source_network_i_ds).
     ///
     /// <p>An array of Source Network IDs that should be returned. An empty array means all Source Networks.</p>
-    pub fn source_network_i_ds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_network_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_network_i_ds.unwrap_or_default();
         v.push(input.into());
         self.source_network_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of Source Network IDs that should be returned. An empty array means all Source Networks.</p>
-    pub fn set_source_network_i_ds(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_source_network_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_network_i_ds = input;
         self
     }
     /// <p>An array of Source Network IDs that should be returned. An empty array means all Source Networks.</p>
-    pub fn get_source_network_i_ds(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_network_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_network_i_ds
     }
     /// <p>Filter Source Networks by account ID containing the protected VPCs.</p>
-    pub fn origin_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filter Source Networks by account ID containing the protected VPCs.</p>
-    pub fn set_origin_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_account_id = input;
         self
     }
@@ -95,18 +79,12 @@ impl DescribeSourceNetworksRequestFiltersBuilder {
         &self.origin_account_id
     }
     /// <p>Filter Source Networks by the region containing the protected VPCs.</p>
-    pub fn origin_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn origin_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filter Source Networks by the region containing the protected VPCs.</p>
-    pub fn set_origin_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_origin_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_region = input;
         self
     }

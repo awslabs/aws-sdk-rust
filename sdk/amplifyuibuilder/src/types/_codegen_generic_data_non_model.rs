@@ -6,17 +6,11 @@
 pub struct CodegenGenericDataNonModel {
     /// <p>The fields in a generic data schema non model.</p>
     #[doc(hidden)]
-    pub fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>,
-    >,
+    pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>>,
 }
 impl CodegenGenericDataNonModel {
     /// <p>The fields in a generic data schema non model.</p>
-    pub fn fields(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>,
-    > {
+    pub fn fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>> {
         self.fields.as_ref()
     }
 }
@@ -29,13 +23,9 @@ impl CodegenGenericDataNonModel {
 
 /// A builder for [`CodegenGenericDataNonModel`](crate::types::CodegenGenericDataNonModel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodegenGenericDataNonModelBuilder {
-    pub(crate) fields: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>,
-    >,
+    pub(crate) fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>>,
 }
 impl CodegenGenericDataNonModelBuilder {
     /// Adds a key-value pair to `fields`.
@@ -43,11 +33,7 @@ impl CodegenGenericDataNonModelBuilder {
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
     /// <p>The fields in a generic data schema non model.</p>
-    pub fn fields(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::CodegenGenericDataField,
-    ) -> Self {
+    pub fn fields(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CodegenGenericDataField) -> Self {
         let mut hash_map = self.fields.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.fields = ::std::option::Option::Some(hash_map);
@@ -56,28 +42,17 @@ impl CodegenGenericDataNonModelBuilder {
     /// <p>The fields in a generic data schema non model.</p>
     pub fn set_fields(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::CodegenGenericDataField,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>>,
     ) -> Self {
         self.fields = input;
         self
     }
     /// <p>The fields in a generic data schema non model.</p>
-    pub fn get_fields(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>,
-    > {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>> {
         &self.fields
     }
     /// Consumes the builder and constructs a [`CodegenGenericDataNonModel`](crate::types::CodegenGenericDataNonModel).
     pub fn build(self) -> crate::types::CodegenGenericDataNonModel {
-        crate::types::CodegenGenericDataNonModel {
-            fields: self.fields,
-        }
+        crate::types::CodegenGenericDataNonModel { fields: self.fields }
     }
 }

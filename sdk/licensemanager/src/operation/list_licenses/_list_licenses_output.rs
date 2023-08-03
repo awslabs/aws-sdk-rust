@@ -35,9 +35,7 @@ impl ListLicensesOutput {
 
 /// A builder for [`ListLicensesOutput`](crate::operation::list_licenses::ListLicensesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLicensesOutputBuilder {
     pub(crate) licenses: ::std::option::Option<::std::vec::Vec<crate::types::License>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListLicensesOutputBuilder {
         self
     }
     /// <p>License details.</p>
-    pub fn set_licenses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::License>>,
-    ) -> Self {
+    pub fn set_licenses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::License>>) -> Self {
         self.licenses = input;
         self
     }

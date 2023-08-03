@@ -15,33 +15,25 @@ impl DescribeWorkerConfigurationInput {
 }
 impl DescribeWorkerConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkerConfigurationInput`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput).
-    pub fn builder() -> crate::operation::describe_worker_configuration::builders::DescribeWorkerConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_worker_configuration::builders::DescribeWorkerConfigurationInputBuilder {
         crate::operation::describe_worker_configuration::builders::DescribeWorkerConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeWorkerConfigurationInput`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkerConfigurationInputBuilder {
     pub(crate) worker_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkerConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
-    pub fn worker_configuration_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn worker_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
-    pub fn set_worker_configuration_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_worker_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_configuration_arn = input;
         self
     }
@@ -56,10 +48,8 @@ impl DescribeWorkerConfigurationInputBuilder {
         crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput {
-                worker_configuration_arn: self.worker_configuration_arn,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput {
+            worker_configuration_arn: self.worker_configuration_arn,
+        })
     }
 }

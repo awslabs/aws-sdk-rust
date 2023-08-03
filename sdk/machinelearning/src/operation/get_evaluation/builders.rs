@@ -10,10 +10,7 @@ impl GetEvaluationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_evaluation::GetEvaluationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_evaluation::GetEvaluationError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_evaluation::GetEvaluationError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_evaluation();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetEvaluationFluentBuilder {
         }
     }
     /// Access the GetEvaluation as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_evaluation::builders::GetEvaluationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_evaluation::builders::GetEvaluationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl GetEvaluationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl GetEvaluationFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
-    pub fn evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evaluation_id(input.into());
         self
     }
     /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
-    pub fn set_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_evaluation_id(input);
         self
     }

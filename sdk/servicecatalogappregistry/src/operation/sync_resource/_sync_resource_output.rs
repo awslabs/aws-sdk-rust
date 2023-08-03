@@ -42,9 +42,7 @@ impl SyncResourceOutput {
 
 /// A builder for [`SyncResourceOutput`](crate::operation::sync_resource::SyncResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SyncResourceOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ pub struct SyncResourceOutputBuilder {
 }
 impl SyncResourceOutputBuilder {
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
-    pub fn application_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon resource name (ARN) that specifies the application.</p>
-    pub fn set_application_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
@@ -92,10 +84,7 @@ impl SyncResourceOutputBuilder {
         self
     }
     /// <p>The results of the output if an application is associated with an ARN value, which could be <code>syncStarted</code> or None.</p>
-    pub fn set_action_taken(
-        mut self,
-        input: ::std::option::Option<crate::types::SyncAction>,
-    ) -> Self {
+    pub fn set_action_taken(mut self, input: ::std::option::Option<crate::types::SyncAction>) -> Self {
         self.action_taken = input;
         self
     }

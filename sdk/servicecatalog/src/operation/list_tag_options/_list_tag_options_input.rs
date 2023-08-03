@@ -36,9 +36,7 @@ impl ListTagOptionsInput {
 
 /// A builder for [`ListTagOptionsInput`](crate::operation::list_tag_options::ListTagOptionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagOptionsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ListTagOptionsFilters>,
     pub(crate) page_size: ::std::option::Option<i32>,
@@ -51,10 +49,7 @@ impl ListTagOptionsInputBuilder {
         self
     }
     /// <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListTagOptionsFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListTagOptionsFilters>) -> Self {
         self.filters = input;
         self
     }
@@ -93,10 +88,7 @@ impl ListTagOptionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTagOptionsInput`](crate::operation::list_tag_options::ListTagOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_tag_options::ListTagOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_tag_options::ListTagOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tag_options::ListTagOptionsInput {
             filters: self.filters,
             page_size: self.page_size,

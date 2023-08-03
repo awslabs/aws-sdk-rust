@@ -38,13 +38,7 @@
 /// _Note: `ResourceOwner::Self` has been renamed to `::SelfValue`._
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceOwner {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for ResourceOwner {
         match s {
             "OTHER_ACCOUNTS" => ResourceOwner::OtherAccounts,
             "SELF" => ResourceOwner::SelfValue,
-            other => {
-                ResourceOwner::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceOwner::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

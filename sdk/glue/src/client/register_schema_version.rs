@@ -10,12 +10,7 @@ impl super::Client {
     ///   - [`version_number(i64)`](crate::operation::register_schema_version::RegisterSchemaVersionOutput::version_number): <p>The version of this schema (for sync flow only, in case this is the first version).</p>
     ///   - [`status(Option<SchemaVersionStatus>)`](crate::operation::register_schema_version::RegisterSchemaVersionOutput::status): <p>The status of the schema version.</p>
     /// - On failure, responds with [`SdkError<RegisterSchemaVersionError>`](crate::operation::register_schema_version::RegisterSchemaVersionError)
-    pub fn register_schema_version(
-        &self,
-    ) -> crate::operation::register_schema_version::builders::RegisterSchemaVersionFluentBuilder
-    {
-        crate::operation::register_schema_version::builders::RegisterSchemaVersionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_schema_version(&self) -> crate::operation::register_schema_version::builders::RegisterSchemaVersionFluentBuilder {
+        crate::operation::register_schema_version::builders::RegisterSchemaVersionFluentBuilder::new(self.handle.clone())
     }
 }

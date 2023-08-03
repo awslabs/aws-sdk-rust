@@ -10,9 +10,7 @@ pub fn ser_can_dbc_definition(
         let mut array_3 = object.key("canDbcFiles").start_array();
         for item_4 in var_2 {
             {
-                array_3
-                    .value()
-                    .string_unchecked(&::aws_smithy_types::base64::encode(item_4));
+                array_3.value().string_unchecked(&::aws_smithy_types::base64::encode(item_4));
             }
         }
         array_3.finish();

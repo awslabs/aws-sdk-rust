@@ -65,9 +65,7 @@ impl Eac3AtmosSettings {
 
 /// A builder for [`Eac3AtmosSettings`](crate::types::Eac3AtmosSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Eac3AtmosSettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<f64>,
     pub(crate) coding_mode: ::std::option::Option<crate::types::Eac3AtmosCodingMode>,
@@ -98,10 +96,7 @@ impl Eac3AtmosSettingsBuilder {
         self
     }
     /// Dolby Digital Plus with Dolby Atmos coding mode. Determines number of channels.
-    pub fn set_coding_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AtmosCodingMode>,
-    ) -> Self {
+    pub fn set_coding_mode(mut self, input: ::std::option::Option<crate::types::Eac3AtmosCodingMode>) -> Self {
         self.coding_mode = input;
         self
     }
@@ -129,10 +124,7 @@ impl Eac3AtmosSettingsBuilder {
         self
     }
     /// Sets the Dolby dynamic range compression profile.
-    pub fn set_drc_line(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AtmosDrcLine>,
-    ) -> Self {
+    pub fn set_drc_line(mut self, input: ::std::option::Option<crate::types::Eac3AtmosDrcLine>) -> Self {
         self.drc_line = input;
         self
     }
@@ -146,10 +138,7 @@ impl Eac3AtmosSettingsBuilder {
         self
     }
     /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
-    pub fn set_drc_rf(
-        mut self,
-        input: ::std::option::Option<crate::types::Eac3AtmosDrcRf>,
-    ) -> Self {
+    pub fn set_drc_rf(mut self, input: ::std::option::Option<crate::types::Eac3AtmosDrcRf>) -> Self {
         self.drc_rf = input;
         self
     }

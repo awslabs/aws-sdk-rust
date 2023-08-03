@@ -29,16 +29,14 @@ impl ListTagsForDeliveryStreamInput {
 }
 impl ListTagsForDeliveryStreamInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForDeliveryStreamInput`](crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamInput).
-    pub fn builder() -> crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamInputBuilder{
+    pub fn builder() -> crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamInputBuilder {
         crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTagsForDeliveryStreamInput`](crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTagsForDeliveryStreamInputBuilder {
     pub(crate) delivery_stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) exclusive_start_tag_key: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListTagsForDeliveryStreamInputBuilder {
 }
 impl ListTagsForDeliveryStreamInputBuilder {
     /// <p>The name of the delivery stream whose tags you want to list.</p>
-    pub fn delivery_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the delivery stream whose tags you want to list.</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_stream_name = input;
         self
     }
@@ -66,18 +58,12 @@ impl ListTagsForDeliveryStreamInputBuilder {
         &self.delivery_stream_name
     }
     /// <p>The key to use as the starting point for the list of tags. If you set this parameter, <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
-    pub fn exclusive_start_tag_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn exclusive_start_tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exclusive_start_tag_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key to use as the starting point for the list of tags. If you set this parameter, <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.</p>
-    pub fn set_exclusive_start_tag_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_exclusive_start_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exclusive_start_tag_key = input;
         self
     }
@@ -106,12 +92,10 @@ impl ListTagsForDeliveryStreamInputBuilder {
         crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamInput {
-                delivery_stream_name: self.delivery_stream_name,
-                exclusive_start_tag_key: self.exclusive_start_tag_key,
-                limit: self.limit,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamInput {
+            delivery_stream_name: self.delivery_stream_name,
+            exclusive_start_tag_key: self.exclusive_start_tag_key,
+            limit: self.limit,
+        })
     }
 }

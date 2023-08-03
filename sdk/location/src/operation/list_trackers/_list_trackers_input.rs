@@ -33,9 +33,7 @@ impl ListTrackersInput {
 
 /// A builder for [`ListTrackersInput`](crate::operation::list_trackers::ListTrackersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrackersInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -76,12 +74,7 @@ impl ListTrackersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTrackersInput`](crate::operation::list_trackers::ListTrackersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_trackers::ListTrackersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_trackers::ListTrackersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_trackers::ListTrackersInput {
             max_results: self.max_results,
             next_token: self.next_token,

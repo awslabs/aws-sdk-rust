@@ -35,9 +35,7 @@ impl CreateNetworkOutput {
 
 /// A builder for [`CreateNetworkOutput`](crate::operation::create_network::CreateNetworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNetworkOutputBuilder {
     pub(crate) network_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_id: ::std::option::Option<::std::string::String>,

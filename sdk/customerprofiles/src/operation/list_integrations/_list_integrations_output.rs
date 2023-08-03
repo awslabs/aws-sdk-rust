@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListIntegrationsOutput {
 }
 impl ListIntegrationsOutput {
     /// Creates a new builder-style object to manufacture [`ListIntegrationsOutput`](crate::operation::list_integrations::ListIntegrationsOutput).
-    pub fn builder() -> crate::operation::list_integrations::builders::ListIntegrationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_integrations::builders::ListIntegrationsOutputBuilder {
         crate::operation::list_integrations::builders::ListIntegrationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListIntegrationsOutput`](crate::operation::list_integrations::ListIntegrationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIntegrationsOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ListIntegrationItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListIntegrationsOutputBuilder {
         self
     }
     /// <p>The list of ListIntegrations instances.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListIntegrationItem>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListIntegrationItem>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The list of ListIntegrations instances.</p>
-    pub fn get_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListIntegrationItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListIntegrationItem>> {
         &self.items
     }
     /// <p>The pagination token from the previous ListIntegrations API call.</p>

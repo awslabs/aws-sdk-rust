@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for AddJobFlowStepsOutput {
 }
 impl AddJobFlowStepsOutput {
     /// Creates a new builder-style object to manufacture [`AddJobFlowStepsOutput`](crate::operation::add_job_flow_steps::AddJobFlowStepsOutput).
-    pub fn builder() -> crate::operation::add_job_flow_steps::builders::AddJobFlowStepsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::add_job_flow_steps::builders::AddJobFlowStepsOutputBuilder {
         crate::operation::add_job_flow_steps::builders::AddJobFlowStepsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddJobFlowStepsOutput`](crate::operation::add_job_flow_steps::AddJobFlowStepsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddJobFlowStepsOutputBuilder {
     pub(crate) step_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -50,10 +47,7 @@ impl AddJobFlowStepsOutputBuilder {
         self
     }
     /// <p>The identifiers of the list of steps added to the job flow.</p>
-    pub fn set_step_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_step_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.step_ids = input;
         self
     }

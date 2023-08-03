@@ -36,9 +36,7 @@ impl GetRuleOutput {
 
 /// A builder for [`GetRuleOutput`](crate::operation::get_rule::GetRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRuleOutputBuilder {
     pub(crate) rule: ::std::option::Option<crate::types::Rule>,
     _request_id: Option<String>,

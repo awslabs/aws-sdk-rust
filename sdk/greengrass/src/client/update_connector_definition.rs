@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_connector_definition::builders::UpdateConnectorDefinitionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_connector_definition::builders::UpdateConnectorDefinitionFluentBuilder::set_name): The name of the definition.
     /// - On success, responds with [`UpdateConnectorDefinitionOutput`](crate::operation::update_connector_definition::UpdateConnectorDefinitionOutput)
     /// - On failure, responds with [`SdkError<UpdateConnectorDefinitionError>`](crate::operation::update_connector_definition::UpdateConnectorDefinitionError)
-    pub fn update_connector_definition(&self) -> crate::operation::update_connector_definition::builders::UpdateConnectorDefinitionFluentBuilder{
+    pub fn update_connector_definition(&self) -> crate::operation::update_connector_definition::builders::UpdateConnectorDefinitionFluentBuilder {
         crate::operation::update_connector_definition::builders::UpdateConnectorDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

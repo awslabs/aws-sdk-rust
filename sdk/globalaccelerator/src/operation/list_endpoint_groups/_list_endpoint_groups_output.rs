@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListEndpointGroupsOutput {
 }
 impl ListEndpointGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListEndpointGroupsOutput`](crate::operation::list_endpoint_groups::ListEndpointGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_endpoint_groups::builders::ListEndpointGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_endpoint_groups::builders::ListEndpointGroupsOutputBuilder {
         crate::operation::list_endpoint_groups::builders::ListEndpointGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListEndpointGroupsOutput`](crate::operation::list_endpoint_groups::ListEndpointGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEndpointGroupsOutputBuilder {
     pub(crate) endpoint_groups: ::std::option::Option<::std::vec::Vec<crate::types::EndpointGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListEndpointGroupsOutputBuilder {
         self
     }
     /// <p>The list of the endpoint groups associated with a listener.</p>
-    pub fn set_endpoint_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointGroup>>,
-    ) -> Self {
+    pub fn set_endpoint_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointGroup>>) -> Self {
         self.endpoint_groups = input;
         self
     }
     /// <p>The list of the endpoint groups associated with a listener.</p>
-    pub fn get_endpoint_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointGroup>> {
+    pub fn get_endpoint_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointGroup>> {
         &self.endpoint_groups
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>

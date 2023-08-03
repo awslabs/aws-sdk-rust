@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`entities(Option<Vec<Form>>)`](crate::operation::export_forms::ExportFormsOutput::entities): <p>Represents the configuration of the exported forms.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::export_forms::ExportFormsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ExportFormsError>`](crate::operation::export_forms::ExportFormsError)
-    pub fn export_forms(
-        &self,
-    ) -> crate::operation::export_forms::builders::ExportFormsFluentBuilder {
+    pub fn export_forms(&self) -> crate::operation::export_forms::builders::ExportFormsFluentBuilder {
         crate::operation::export_forms::builders::ExportFormsFluentBuilder::new(self.handle.clone())
     }
 }

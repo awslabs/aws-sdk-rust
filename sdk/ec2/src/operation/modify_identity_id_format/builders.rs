@@ -30,8 +30,7 @@ impl ModifyIdentityIdFormatInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyIdentityIdFormatFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_identity_id_format::builders::ModifyIdentityIdFormatInputBuilder,
+    inner: crate::operation::modify_identity_id_format::builders::ModifyIdentityIdFormatInputBuilder,
 }
 impl ModifyIdentityIdFormatFluentBuilder {
     /// Creates a new `ModifyIdentityIdFormat`.
@@ -42,10 +41,7 @@ impl ModifyIdentityIdFormatFluentBuilder {
         }
     }
     /// Access the ModifyIdentityIdFormat as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_identity_id_format::builders::ModifyIdentityIdFormatInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_identity_id_format::builders::ModifyIdentityIdFormatInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +53,7 @@ impl ModifyIdentityIdFormatFluentBuilder {
             crate::operation::modify_identity_id_format::ModifyIdentityIdFormat,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_identity_id_format::ModifyIdentityIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_identity_id_format::ModifyIdentityIdFormatError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +63,7 @@ impl ModifyIdentityIdFormatFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +72,7 @@ impl ModifyIdentityIdFormatFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_identity_id_format::ModifyIdentityIdFormatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_identity_id_format::ModifyIdentityIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_identity_id_format::ModifyIdentityIdFormatError>,
     > {
         let op = self
             .inner
@@ -106,9 +95,7 @@ impl ModifyIdentityIdFormatFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_identity_id_format::ModifyIdentityIdFormatOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_identity_id_format::ModifyIdentityIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_identity_id_format::ModifyIdentityIdFormatError>,
     > {
         self.send_middleware().await
     }
@@ -122,25 +109,17 @@ impl ModifyIdentityIdFormatFluentBuilder {
             crate::operation::modify_identity_id_format::ModifyIdentityIdFormat,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_identity_id_format::ModifyIdentityIdFormatError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_identity_id_format::ModifyIdentityIdFormatError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to modify the ID format for all IAM users, IAM roles, and the root user of the account.</p>
-    pub fn principal_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_arn(input.into());
         self
     }
     /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to modify the ID format for all IAM users, IAM roles, and the root user of the account.</p>
-    pub fn set_principal_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_arn(input);
         self
     }

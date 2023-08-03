@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateDetectorVersionOutput {
 }
 impl CreateDetectorVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateDetectorVersionOutput`](crate::operation::create_detector_version::CreateDetectorVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_detector_version::builders::CreateDetectorVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_detector_version::builders::CreateDetectorVersionOutputBuilder {
         crate::operation::create_detector_version::builders::CreateDetectorVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDetectorVersionOutput`](crate::operation::create_detector_version::CreateDetectorVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDetectorVersionOutputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_version_id: ::std::option::Option<::std::string::String>,
@@ -69,18 +65,12 @@ impl CreateDetectorVersionOutputBuilder {
         &self.detector_id
     }
     /// <p>The ID for the created detector. </p>
-    pub fn detector_version_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the created detector. </p>
-    pub fn set_detector_version_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_version_id = input;
         self
     }
@@ -94,10 +84,7 @@ impl CreateDetectorVersionOutputBuilder {
         self
     }
     /// <p>The status of the detector version.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DetectorVersionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DetectorVersionStatus>) -> Self {
         self.status = input;
         self
     }

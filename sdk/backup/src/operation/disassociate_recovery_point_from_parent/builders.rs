@@ -5,16 +5,16 @@ pub use crate::operation::disassociate_recovery_point_from_parent::_disassociate
 
 impl DisassociateRecoveryPointFromParentInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.disassociate_recovery_point_from_parent();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DisassociateRecoveryPointFromParentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateRecoveryPointFromParentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_recovery_point_from_parent::builders::DisassociateRecoveryPointFromParentInputBuilder,
+    inner: crate::operation::disassociate_recovery_point_from_parent::builders::DisassociateRecoveryPointFromParentInputBuilder,
 }
 impl DisassociateRecoveryPointFromParentFluentBuilder {
     /// Creates a new `DisassociateRecoveryPointFromParent`.
@@ -37,15 +37,20 @@ impl DisassociateRecoveryPointFromParentFluentBuilder {
         }
     }
     /// Access the DisassociateRecoveryPointFromParent as a reference.
-    pub fn as_input(&self) -> &crate::operation::disassociate_recovery_point_from_parent::builders::DisassociateRecoveryPointFromParentInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::disassociate_recovery_point_from_parent::builders::DisassociateRecoveryPointFromParentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParent, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParent,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DisassociateRecoveryPointFromParentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,32 +87,35 @@ impl DisassociateRecoveryPointFromParentFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParent, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParent,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>This is the name of a logical container where the child (nested) recovery point is stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
         self
     }
     /// <p>This is the name of a logical container where the child (nested) recovery point is stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }
@@ -115,18 +124,12 @@ impl DisassociateRecoveryPointFromParentFluentBuilder {
         self.inner.get_backup_vault_name()
     }
     /// <p>This is the Amazon Resource Name (ARN) that uniquely identifies the child (nested) recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.</code> </p>
-    pub fn recovery_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recovery_point_arn(input.into());
         self
     }
     /// <p>This is the Amazon Resource Name (ARN) that uniquely identifies the child (nested) recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.</code> </p>
-    pub fn set_recovery_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recovery_point_arn(input);
         self
     }

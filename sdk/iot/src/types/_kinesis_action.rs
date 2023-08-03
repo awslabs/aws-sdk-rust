@@ -37,9 +37,7 @@ impl KinesisAction {
 
 /// A builder for [`KinesisAction`](crate::types::KinesisAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KinesisActionBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl KinesisActionBuilder {
         &self.stream_name
     }
     /// <p>The partition key.</p>
-    pub fn partition_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partition_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The partition key.</p>
-    pub fn set_partition_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_partition_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partition_key = input;
         self
     }

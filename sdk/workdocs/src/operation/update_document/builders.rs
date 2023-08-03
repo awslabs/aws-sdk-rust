@@ -10,10 +10,7 @@ impl UpdateDocumentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_document::UpdateDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_document::UpdateDocumentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_document::UpdateDocumentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_document();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateDocumentFluentBuilder {
         }
     }
     /// Access the UpdateDocument as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_document::builders::UpdateDocumentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_document::builders::UpdateDocumentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateDocumentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -115,18 +107,12 @@ impl UpdateDocumentFluentBuilder {
         self.customize_middleware().await
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
@@ -163,18 +149,12 @@ impl UpdateDocumentFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn parent_folder_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_folder_id(input.into());
         self
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn set_parent_folder_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_folder_id(input);
         self
     }
@@ -188,10 +168,7 @@ impl UpdateDocumentFluentBuilder {
         self
     }
     /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
-    pub fn set_resource_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStateType>,
-    ) -> Self {
+    pub fn set_resource_state(mut self, input: ::std::option::Option<crate::types::ResourceStateType>) -> Self {
         self.inner = self.inner.set_resource_state(input);
         self
     }

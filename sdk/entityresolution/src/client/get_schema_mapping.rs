@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_schema_mapping::GetSchemaMappingOutput::updated_at): <p>The timestamp of when the <code>SchemaMapping</code> was last updated.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_schema_mapping::GetSchemaMappingOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On failure, responds with [`SdkError<GetSchemaMappingError>`](crate::operation::get_schema_mapping::GetSchemaMappingError)
-    pub fn get_schema_mapping(
-        &self,
-    ) -> crate::operation::get_schema_mapping::builders::GetSchemaMappingFluentBuilder {
-        crate::operation::get_schema_mapping::builders::GetSchemaMappingFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_schema_mapping(&self) -> crate::operation::get_schema_mapping::builders::GetSchemaMappingFluentBuilder {
+        crate::operation::get_schema_mapping::builders::GetSchemaMappingFluentBuilder::new(self.handle.clone())
     }
 }

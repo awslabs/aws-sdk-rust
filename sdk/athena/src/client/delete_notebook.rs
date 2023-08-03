@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`notebook_id(impl ::std::convert::Into<String>)`](crate::operation::delete_notebook::builders::DeleteNotebookFluentBuilder::notebook_id) / [`set_notebook_id(Option<String>)`](crate::operation::delete_notebook::builders::DeleteNotebookFluentBuilder::set_notebook_id): <p>The ID of the notebook to delete.</p>
     /// - On success, responds with [`DeleteNotebookOutput`](crate::operation::delete_notebook::DeleteNotebookOutput)
     /// - On failure, responds with [`SdkError<DeleteNotebookError>`](crate::operation::delete_notebook::DeleteNotebookError)
-    pub fn delete_notebook(
-        &self,
-    ) -> crate::operation::delete_notebook::builders::DeleteNotebookFluentBuilder {
-        crate::operation::delete_notebook::builders::DeleteNotebookFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_notebook(&self) -> crate::operation::delete_notebook::builders::DeleteNotebookFluentBuilder {
+        crate::operation::delete_notebook::builders::DeleteNotebookFluentBuilder::new(self.handle.clone())
     }
 }

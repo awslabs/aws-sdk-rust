@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`users(Option<Vec<UserByPermissionGroup>>)`](crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupOutput::users): <p>Lists details of all users in a specific permission group.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupOutput::next_token): <p>A token that indicates where a results page should begin.</p>
     /// - On failure, responds with [`SdkError<ListUsersByPermissionGroupError>`](crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupError)
-    pub fn list_users_by_permission_group(&self) -> crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupFluentBuilder{
+    pub fn list_users_by_permission_group(
+        &self,
+    ) -> crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupFluentBuilder {
         crate::operation::list_users_by_permission_group::builders::ListUsersByPermissionGroupFluentBuilder::new(self.handle.clone())
     }
 }

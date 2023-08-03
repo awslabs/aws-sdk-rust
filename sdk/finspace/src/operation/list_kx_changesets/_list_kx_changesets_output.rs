@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListKxChangesetsOutput {
 }
 impl ListKxChangesetsOutput {
     /// Creates a new builder-style object to manufacture [`ListKxChangesetsOutput`](crate::operation::list_kx_changesets::ListKxChangesetsOutput).
-    pub fn builder() -> crate::operation::list_kx_changesets::builders::ListKxChangesetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_kx_changesets::builders::ListKxChangesetsOutputBuilder {
         crate::operation::list_kx_changesets::builders::ListKxChangesetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListKxChangesetsOutput`](crate::operation::list_kx_changesets::ListKxChangesetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKxChangesetsOutputBuilder {
-    pub(crate) kx_changesets:
-        ::std::option::Option<::std::vec::Vec<crate::types::KxChangesetListEntry>>,
+    pub(crate) kx_changesets: ::std::option::Option<::std::vec::Vec<crate::types::KxChangesetListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListKxChangesetsOutputBuilder {
         self
     }
     /// <p>A list of changesets for a database.</p>
-    pub fn set_kx_changesets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KxChangesetListEntry>>,
-    ) -> Self {
+    pub fn set_kx_changesets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxChangesetListEntry>>) -> Self {
         self.kx_changesets = input;
         self
     }
     /// <p>A list of changesets for a database.</p>
-    pub fn get_kx_changesets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KxChangesetListEntry>> {
+    pub fn get_kx_changesets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxChangesetListEntry>> {
         &self.kx_changesets
     }
     /// <p>A token that indicates where a results page should begin.</p>

@@ -37,9 +37,7 @@ impl GetResourcePositionFluentBuilder {
         }
     }
     /// Access the GetResourcePosition as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_resource_position::builders::GetResourcePositionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_resource_position::builders::GetResourcePositionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetResourcePositionFluentBuilder {
             crate::operation::get_resource_position::GetResourcePosition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_position::GetResourcePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_position::GetResourcePositionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetResourcePositionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetResourcePositionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_position::GetResourcePositionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_position::GetResourcePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_position::GetResourcePositionError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetResourcePositionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_position::GetResourcePositionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_position::GetResourcePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_position::GetResourcePositionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl GetResourcePositionFluentBuilder {
             crate::operation::get_resource_position::GetResourcePosition,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_position::GetResourcePositionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_position::GetResourcePositionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
-    pub fn resource_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
     /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
@@ -148,10 +129,7 @@ impl GetResourcePositionFluentBuilder {
         self
     }
     /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::PositionResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::PositionResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

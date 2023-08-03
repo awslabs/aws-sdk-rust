@@ -39,10 +39,7 @@ impl DescribeClientBrandingFluentBuilder {
         }
     }
     /// Access the DescribeClientBranding as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_client_branding::builders::DescribeClientBrandingInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_client_branding::builders::DescribeClientBrandingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DescribeClientBrandingFluentBuilder {
             crate::operation::describe_client_branding::DescribeClientBranding,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_client_branding::DescribeClientBrandingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_client_branding::DescribeClientBrandingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DescribeClientBrandingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DescribeClientBrandingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_client_branding::DescribeClientBrandingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_client_branding::DescribeClientBrandingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_client_branding::DescribeClientBrandingError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DescribeClientBrandingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_client_branding::DescribeClientBrandingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_client_branding::DescribeClientBrandingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_client_branding::DescribeClientBrandingError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +107,7 @@ impl DescribeClientBrandingFluentBuilder {
             crate::operation::describe_client_branding::DescribeClientBranding,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_client_branding::DescribeClientBrandingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_client_branding::DescribeClientBrandingError>,
     > {
         self.customize_middleware().await
     }

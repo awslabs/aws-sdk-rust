@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`start_time(Option<DateTime>)`](crate::operation::describe_engagement::DescribeEngagementOutput::start_time): <p>The time that the engagement started.</p>
     ///   - [`stop_time(Option<DateTime>)`](crate::operation::describe_engagement::DescribeEngagementOutput::stop_time): <p>The time that the engagement ended.</p>
     /// - On failure, responds with [`SdkError<DescribeEngagementError>`](crate::operation::describe_engagement::DescribeEngagementError)
-    pub fn describe_engagement(
-        &self,
-    ) -> crate::operation::describe_engagement::builders::DescribeEngagementFluentBuilder {
-        crate::operation::describe_engagement::builders::DescribeEngagementFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_engagement(&self) -> crate::operation::describe_engagement::builders::DescribeEngagementFluentBuilder {
+        crate::operation::describe_engagement::builders::DescribeEngagementFluentBuilder::new(self.handle.clone())
     }
 }

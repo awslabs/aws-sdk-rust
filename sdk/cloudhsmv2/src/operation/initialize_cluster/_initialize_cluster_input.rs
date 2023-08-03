@@ -29,17 +29,14 @@ impl InitializeClusterInput {
 }
 impl InitializeClusterInput {
     /// Creates a new builder-style object to manufacture [`InitializeClusterInput`](crate::operation::initialize_cluster::InitializeClusterInput).
-    pub fn builder() -> crate::operation::initialize_cluster::builders::InitializeClusterInputBuilder
-    {
+    pub fn builder() -> crate::operation::initialize_cluster::builders::InitializeClusterInputBuilder {
         crate::operation::initialize_cluster::builders::InitializeClusterInputBuilder::default()
     }
 }
 
 /// A builder for [`InitializeClusterInput`](crate::operation::initialize_cluster::InitializeClusterInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InitializeClusterInputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) signed_cert: ::std::option::Option<::std::string::String>,
@@ -91,16 +88,11 @@ impl InitializeClusterInputBuilder {
     /// Consumes the builder and constructs a [`InitializeClusterInput`](crate::operation::initialize_cluster::InitializeClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::initialize_cluster::InitializeClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::initialize_cluster::InitializeClusterInput {
-                cluster_id: self.cluster_id,
-                signed_cert: self.signed_cert,
-                trust_anchor: self.trust_anchor,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::initialize_cluster::InitializeClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::initialize_cluster::InitializeClusterInput {
+            cluster_id: self.cluster_id,
+            signed_cert: self.signed_cert,
+            trust_anchor: self.trust_anchor,
+        })
     }
 }

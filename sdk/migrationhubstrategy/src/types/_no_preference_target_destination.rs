@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NoPreferenceTargetDestination {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,19 +65,11 @@ impl ::std::convert::From<&str> for NoPreferenceTargetDestination {
         match s {
             "AWS Elastic BeanStalk" => NoPreferenceTargetDestination::AwsElasticBeanstalk,
             "AWS Fargate" => NoPreferenceTargetDestination::AwsFargate,
-            "Amazon Elastic Cloud Compute (EC2)" => {
-                NoPreferenceTargetDestination::AmazonElasticCloudCompute
-            }
-            "Amazon Elastic Container Service (ECS)" => {
-                NoPreferenceTargetDestination::AmazonElasticContainerService
-            }
-            "Amazon Elastic Kubernetes Service (EKS)" => {
-                NoPreferenceTargetDestination::AmazonElasticKubernetesService
-            }
+            "Amazon Elastic Cloud Compute (EC2)" => NoPreferenceTargetDestination::AmazonElasticCloudCompute,
+            "Amazon Elastic Container Service (ECS)" => NoPreferenceTargetDestination::AmazonElasticContainerService,
+            "Amazon Elastic Kubernetes Service (EKS)" => NoPreferenceTargetDestination::AmazonElasticKubernetesService,
             "None specified" => NoPreferenceTargetDestination::NoneSpecified,
-            other => NoPreferenceTargetDestination::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => NoPreferenceTargetDestination::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -100,15 +86,9 @@ impl NoPreferenceTargetDestination {
         match self {
             NoPreferenceTargetDestination::AwsElasticBeanstalk => "AWS Elastic BeanStalk",
             NoPreferenceTargetDestination::AwsFargate => "AWS Fargate",
-            NoPreferenceTargetDestination::AmazonElasticCloudCompute => {
-                "Amazon Elastic Cloud Compute (EC2)"
-            }
-            NoPreferenceTargetDestination::AmazonElasticContainerService => {
-                "Amazon Elastic Container Service (ECS)"
-            }
-            NoPreferenceTargetDestination::AmazonElasticKubernetesService => {
-                "Amazon Elastic Kubernetes Service (EKS)"
-            }
+            NoPreferenceTargetDestination::AmazonElasticCloudCompute => "Amazon Elastic Cloud Compute (EC2)",
+            NoPreferenceTargetDestination::AmazonElasticContainerService => "Amazon Elastic Container Service (ECS)",
+            NoPreferenceTargetDestination::AmazonElasticKubernetesService => "Amazon Elastic Kubernetes Service (EKS)",
             NoPreferenceTargetDestination::NoneSpecified => "None specified",
             NoPreferenceTargetDestination::Unknown(value) => value.as_str(),
         }

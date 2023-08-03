@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_mission_profiles::ListMissionProfilesOutput::next_token): <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
     ///   - [`mission_profile_list(Option<Vec<MissionProfileListItem>>)`](crate::operation::list_mission_profiles::ListMissionProfilesOutput::mission_profile_list): <p>List of mission profiles.</p>
     /// - On failure, responds with [`SdkError<ListMissionProfilesError>`](crate::operation::list_mission_profiles::ListMissionProfilesError)
-    pub fn list_mission_profiles(
-        &self,
-    ) -> crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder {
-        crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_mission_profiles(&self) -> crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder {
+        crate::operation::list_mission_profiles::builders::ListMissionProfilesFluentBuilder::new(self.handle.clone())
     }
 }

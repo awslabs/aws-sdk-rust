@@ -37,17 +37,14 @@ impl CreateMountTargetInput {
 }
 impl CreateMountTargetInput {
     /// Creates a new builder-style object to manufacture [`CreateMountTargetInput`](crate::operation::create_mount_target::CreateMountTargetInput).
-    pub fn builder(
-    ) -> crate::operation::create_mount_target::builders::CreateMountTargetInputBuilder {
+    pub fn builder() -> crate::operation::create_mount_target::builders::CreateMountTargetInputBuilder {
         crate::operation::create_mount_target::builders::CreateMountTargetInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateMountTargetInput`](crate::operation::create_mount_target::CreateMountTargetInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateMountTargetInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
@@ -56,18 +53,12 @@ pub struct CreateMountTargetInputBuilder {
 }
 impl CreateMountTargetInputBuilder {
     /// <p>The ID of the file system for which to create the mount target.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the file system for which to create the mount target.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -108,43 +99,30 @@ impl CreateMountTargetInputBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
-    pub fn security_groups(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
     /// Consumes the builder and constructs a [`CreateMountTargetInput`](crate::operation::create_mount_target::CreateMountTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_mount_target::CreateMountTargetInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_mount_target::CreateMountTargetInput {
-                file_system_id: self.file_system_id,
-                subnet_id: self.subnet_id,
-                ip_address: self.ip_address,
-                security_groups: self.security_groups,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_mount_target::CreateMountTargetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_mount_target::CreateMountTargetInput {
+            file_system_id: self.file_system_id,
+            subnet_id: self.subnet_id,
+            ip_address: self.ip_address,
+            security_groups: self.security_groups,
+        })
     }
 }

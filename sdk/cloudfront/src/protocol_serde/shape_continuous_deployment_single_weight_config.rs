@@ -11,10 +11,7 @@ pub fn ser_continuous_deployment_single_weight_config(
     }
     if let Some(var_2) = &input.session_stickiness_config {
         let inner_writer = scope.start_el("SessionStickinessConfig");
-        crate::protocol_serde::shape_session_stickiness_config::ser_session_stickiness_config(
-            var_2,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_session_stickiness_config::ser_session_stickiness_config(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -22,10 +19,7 @@ pub fn ser_continuous_deployment_single_weight_config(
 
 pub fn de_continuous_deployment_single_weight_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::ContinuousDeploymentSingleWeightConfig,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::ContinuousDeploymentSingleWeightConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ContinuousDeploymentSingleWeightConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

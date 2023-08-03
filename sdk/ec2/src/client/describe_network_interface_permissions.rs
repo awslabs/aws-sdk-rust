@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`network_interface_permissions(Option<Vec<NetworkInterfacePermission>>)`](crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput::network_interface_permissions): <p>The network interface permissions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeNetworkInterfacePermissionsError>`](crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsError)
-    pub fn describe_network_interface_permissions(&self) -> crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsFluentBuilder{
+    pub fn describe_network_interface_permissions(
+        &self,
+    ) -> crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsFluentBuilder {
         crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput) with field(s):
     ///   - [`project_arn(Option<String>)`](crate::operation::create_project::CreateProjectOutput::project_arn): <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project. </p>
     /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::operation::create_project::CreateProjectError)
-    pub fn create_project(
-        &self,
-    ) -> crate::operation::create_project::builders::CreateProjectFluentBuilder {
-        crate::operation::create_project::builders::CreateProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_project(&self) -> crate::operation::create_project::builders::CreateProjectFluentBuilder {
+        crate::operation::create_project::builders::CreateProjectFluentBuilder::new(self.handle.clone())
     }
 }

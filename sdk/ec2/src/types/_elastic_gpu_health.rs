@@ -23,9 +23,7 @@ impl ElasticGpuHealth {
 
 /// A builder for [`ElasticGpuHealth`](crate::types::ElasticGpuHealth).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElasticGpuHealthBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ElasticGpuStatus>,
 }
@@ -36,10 +34,7 @@ impl ElasticGpuHealthBuilder {
         self
     }
     /// <p>The health status.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticGpuStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ElasticGpuStatus>) -> Self {
         self.status = input;
         self
     }
@@ -49,8 +44,6 @@ impl ElasticGpuHealthBuilder {
     }
     /// Consumes the builder and constructs a [`ElasticGpuHealth`](crate::types::ElasticGpuHealth).
     pub fn build(self) -> crate::types::ElasticGpuHealth {
-        crate::types::ElasticGpuHealth {
-            status: self.status,
-        }
+        crate::types::ElasticGpuHealth { status: self.status }
     }
 }

@@ -16,10 +16,7 @@ impl super::Client {
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_flow_definition::DescribeFlowDefinitionOutput::role_arn): <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) execution role for the flow definition.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::describe_flow_definition::DescribeFlowDefinitionOutput::failure_reason): <p>The reason your flow definition failed.</p>
     /// - On failure, responds with [`SdkError<DescribeFlowDefinitionError>`](crate::operation::describe_flow_definition::DescribeFlowDefinitionError)
-    pub fn describe_flow_definition(
-        &self,
-    ) -> crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionFluentBuilder
-    {
+    pub fn describe_flow_definition(&self) -> crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionFluentBuilder {
         crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionFluentBuilder::new(self.handle.clone())
     }
 }

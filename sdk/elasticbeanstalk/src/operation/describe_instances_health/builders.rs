@@ -26,8 +26,7 @@ impl DescribeInstancesHealthInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstancesHealthFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_instances_health::builders::DescribeInstancesHealthInputBuilder,
+    inner: crate::operation::describe_instances_health::builders::DescribeInstancesHealthInputBuilder,
 }
 impl DescribeInstancesHealthFluentBuilder {
     /// Creates a new `DescribeInstancesHealth`.
@@ -38,10 +37,7 @@ impl DescribeInstancesHealthFluentBuilder {
         }
     }
     /// Access the DescribeInstancesHealth as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_instances_health::builders::DescribeInstancesHealthInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_instances_health::builders::DescribeInstancesHealthInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeInstancesHealthFluentBuilder {
             crate::operation::describe_instances_health::DescribeInstancesHealth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instances_health::DescribeInstancesHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instances_health::DescribeInstancesHealthError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeInstancesHealthFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeInstancesHealthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instances_health::DescribeInstancesHealthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instances_health::DescribeInstancesHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instances_health::DescribeInstancesHealthError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeInstancesHealthFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instances_health::DescribeInstancesHealthOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instances_health::DescribeInstancesHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instances_health::DescribeInstancesHealthError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DescribeInstancesHealthFluentBuilder {
             crate::operation::describe_instances_health::DescribeInstancesHealth,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_instances_health::DescribeInstancesHealthError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_instances_health::DescribeInstancesHealthError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
@@ -145,18 +124,12 @@ impl DescribeInstancesHealthFluentBuilder {
         self.inner.get_environment_name()
     }
     /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -174,17 +147,12 @@ impl DescribeInstancesHealthFluentBuilder {
         self
     }
     /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
-    pub fn set_attribute_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>>,
-    ) -> Self {
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>>) -> Self {
         self.inner = self.inner.set_attribute_names(input);
         self
     }
     /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
-    pub fn get_attribute_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>> {
         self.inner.get_attribute_names()
     }
     /// <p>Specify the pagination token returned by a previous call.</p>

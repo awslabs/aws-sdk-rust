@@ -12,16 +12,16 @@ impl ::aws_http::request_id::RequestId for DeletePermissionsBoundaryFromPermissi
 }
 impl DeletePermissionsBoundaryFromPermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetOutput).
-    pub fn builder() -> crate::operation::delete_permissions_boundary_from_permission_set::builders::DeletePermissionsBoundaryFromPermissionSetOutputBuilder{
-        crate::operation::delete_permissions_boundary_from_permission_set::builders::DeletePermissionsBoundaryFromPermissionSetOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_permissions_boundary_from_permission_set::builders::DeletePermissionsBoundaryFromPermissionSetOutputBuilder {
+        crate::operation::delete_permissions_boundary_from_permission_set::builders::DeletePermissionsBoundaryFromPermissionSetOutputBuilder::default(
+        )
     }
 }
 
 /// A builder for [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePermissionsBoundaryFromPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +36,7 @@ impl DeletePermissionsBoundaryFromPermissionSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetOutput).
-    pub fn build(self) -> crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetOutput{
+    pub fn build(self) -> crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetOutput {
         crate::operation::delete_permissions_boundary_from_permission_set::DeletePermissionsBoundaryFromPermissionSetOutput {
             _request_id: self._request_id,
         }

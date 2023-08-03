@@ -10,9 +10,7 @@ pub struct DisassociateUserOutput {
 }
 impl DisassociateUserOutput {
     /// <p>Metadata that describes the associate user operation.</p>
-    pub fn instance_user_summary(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceUserSummary> {
+    pub fn instance_user_summary(&self) -> ::std::option::Option<&crate::types::InstanceUserSummary> {
         self.instance_user_summary.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DisassociateUserOutput {
 }
 impl DisassociateUserOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateUserOutput`](crate::operation::disassociate_user::DisassociateUserOutput).
-    pub fn builder() -> crate::operation::disassociate_user::builders::DisassociateUserOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_user::builders::DisassociateUserOutputBuilder {
         crate::operation::disassociate_user::builders::DisassociateUserOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateUserOutput`](crate::operation::disassociate_user::DisassociateUserOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateUserOutputBuilder {
     pub(crate) instance_user_summary: ::std::option::Option<crate::types::InstanceUserSummary>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl DisassociateUserOutputBuilder {
         self
     }
     /// <p>Metadata that describes the associate user operation.</p>
-    pub fn set_instance_user_summary(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceUserSummary>,
-    ) -> Self {
+    pub fn set_instance_user_summary(mut self, input: ::std::option::Option<crate::types::InstanceUserSummary>) -> Self {
         self.instance_user_summary = input;
         self
     }
     /// <p>Metadata that describes the associate user operation.</p>
-    pub fn get_instance_user_summary(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceUserSummary> {
+    pub fn get_instance_user_summary(&self) -> &::std::option::Option<crate::types::InstanceUserSummary> {
         &self.instance_user_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

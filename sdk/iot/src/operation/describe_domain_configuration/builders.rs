@@ -27,7 +27,7 @@ impl DescribeDomainConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDomainConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationInputBuilder,
+    inner: crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationInputBuilder,
 }
 impl DescribeDomainConfigurationFluentBuilder {
     /// Creates a new `DescribeDomainConfiguration`.
@@ -38,7 +38,7 @@ impl DescribeDomainConfigurationFluentBuilder {
         }
     }
     /// Access the DescribeDomainConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeDomainConfigurationFluentBuilder {
             crate::operation::describe_domain_configuration::DescribeDomainConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_configuration::DescribeDomainConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_configuration::DescribeDomainConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeDomainConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeDomainConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_configuration::DescribeDomainConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_configuration::DescribeDomainConfigurationError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeDomainConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_configuration::DescribeDomainConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_configuration::DescribeDomainConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl DescribeDomainConfigurationFluentBuilder {
             crate::operation::describe_domain_configuration::DescribeDomainConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_domain_configuration::DescribeDomainConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_domain_configuration::DescribeDomainConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the domain configuration.</p>
-    pub fn domain_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_configuration_name(input.into());
         self
     }
     /// <p>The name of the domain configuration.</p>
-    pub fn set_domain_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_configuration_name(input);
         self
     }

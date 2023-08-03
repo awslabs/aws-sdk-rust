@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`service_principal(impl ::std::convert::Into<String>)`](crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorFluentBuilder::service_principal) / [`set_service_principal(Option<String>)`](crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorFluentBuilder::set_service_principal): <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
     /// - On success, responds with [`RegisterDelegatedAdministratorOutput`](crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorOutput)
     /// - On failure, responds with [`SdkError<RegisterDelegatedAdministratorError>`](crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorError)
-    pub fn register_delegated_administrator(&self) -> crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorFluentBuilder{
+    pub fn register_delegated_administrator(
+        &self,
+    ) -> crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorFluentBuilder {
         crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorFluentBuilder::new(self.handle.clone())
     }
 }

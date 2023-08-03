@@ -30,9 +30,7 @@ impl PartitionObjects {
 
 /// A builder for [`PartitionObjects`](crate::types::PartitionObjects).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartitionObjectsBuilder {
     pub(crate) partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) objects: ::std::option::Option<::std::vec::Vec<crate::types::TableObject>>,
@@ -43,27 +41,19 @@ impl PartitionObjectsBuilder {
     /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
     ///
     /// <p>A list of partition values.</p>
-    pub fn partition_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn partition_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_values.unwrap_or_default();
         v.push(input.into());
         self.partition_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of partition values.</p>
-    pub fn set_partition_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_partition_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.partition_values = input;
         self
     }
     /// <p>A list of partition values.</p>
-    pub fn get_partition_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.partition_values
     }
     /// Appends an item to `objects`.
@@ -78,17 +68,12 @@ impl PartitionObjectsBuilder {
         self
     }
     /// <p>A list of table objects</p>
-    pub fn set_objects(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableObject>>,
-    ) -> Self {
+    pub fn set_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableObject>>) -> Self {
         self.objects = input;
         self
     }
     /// <p>A list of table objects</p>
-    pub fn get_objects(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableObject>> {
+    pub fn get_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableObject>> {
         &self.objects
     }
     /// Consumes the builder and constructs a [`PartitionObjects`](crate::types::PartitionObjects).

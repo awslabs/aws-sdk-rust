@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EphemerisStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for EphemerisStatus {
             "EXPIRED" => EphemerisStatus::Expired,
             "INVALID" => EphemerisStatus::Invalid,
             "VALIDATING" => EphemerisStatus::Validating,
-            other => {
-                EphemerisStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => EphemerisStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -103,14 +95,7 @@ impl EphemerisStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED",
-            "ENABLED",
-            "ERROR",
-            "EXPIRED",
-            "INVALID",
-            "VALIDATING",
-        ]
+        &["DISABLED", "ENABLED", "ERROR", "EXPIRED", "INVALID", "VALIDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for EphemerisStatus {

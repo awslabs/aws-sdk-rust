@@ -26,7 +26,7 @@ impl AssociatePersonasToEntitiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociatePersonasToEntitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesInputBuilder,
+    inner: crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesInputBuilder,
 }
 impl AssociatePersonasToEntitiesFluentBuilder {
     /// Creates a new `AssociatePersonasToEntities`.
@@ -37,7 +37,7 @@ impl AssociatePersonasToEntitiesFluentBuilder {
         }
     }
     /// Access the AssociatePersonasToEntities as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociatePersonasToEntitiesFluentBuilder {
             crate::operation::associate_personas_to_entities::AssociatePersonasToEntities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociatePersonasToEntitiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociatePersonasToEntitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociatePersonasToEntitiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl AssociatePersonasToEntitiesFluentBuilder {
             crate::operation::associate_personas_to_entities::AssociatePersonasToEntities,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesError>,
     > {
         self.customize_middleware().await
     }
@@ -158,17 +147,12 @@ impl AssociatePersonasToEntitiesFluentBuilder {
         self
     }
     /// <p>The personas that define the specific permissions of users or groups in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
-    pub fn set_personas(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityPersonaConfiguration>>,
-    ) -> Self {
+    pub fn set_personas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityPersonaConfiguration>>) -> Self {
         self.inner = self.inner.set_personas(input);
         self
     }
     /// <p>The personas that define the specific permissions of users or groups in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
-    pub fn get_personas(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityPersonaConfiguration>> {
+    pub fn get_personas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityPersonaConfiguration>> {
         self.inner.get_personas()
     }
 }

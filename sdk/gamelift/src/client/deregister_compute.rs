@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`compute_name(impl ::std::convert::Into<String>)`](crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder::compute_name) / [`set_compute_name(Option<String>)`](crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder::set_compute_name): <p>The name of the compute resource you want to delete.</p>
     /// - On success, responds with [`DeregisterComputeOutput`](crate::operation::deregister_compute::DeregisterComputeOutput)
     /// - On failure, responds with [`SdkError<DeregisterComputeError>`](crate::operation::deregister_compute::DeregisterComputeError)
-    pub fn deregister_compute(
-        &self,
-    ) -> crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder {
-        crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deregister_compute(&self) -> crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder {
+        crate::operation::deregister_compute::builders::DeregisterComputeFluentBuilder::new(self.handle.clone())
     }
 }

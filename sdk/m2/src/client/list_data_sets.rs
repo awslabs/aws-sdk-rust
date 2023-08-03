@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`data_sets(Option<Vec<DataSetSummary>>)`](crate::operation::list_data_sets::ListDataSetsOutput::data_sets): <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_sets::ListDataSetsOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     /// - On failure, responds with [`SdkError<ListDataSetsError>`](crate::operation::list_data_sets::ListDataSetsError)
-    pub fn list_data_sets(
-        &self,
-    ) -> crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder {
-        crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_data_sets(&self) -> crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder {
+        crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::new(self.handle.clone())
     }
 }

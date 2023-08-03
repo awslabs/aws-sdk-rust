@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateSmbLocalGroupsOutput`](crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<UpdateSMBLocalGroupsError>`](crate::operation::update_smb_local_groups::UpdateSMBLocalGroupsError)
-    pub fn update_smb_local_groups(
-        &self,
-    ) -> crate::operation::update_smb_local_groups::builders::UpdateSMBLocalGroupsFluentBuilder
-    {
-        crate::operation::update_smb_local_groups::builders::UpdateSMBLocalGroupsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_smb_local_groups(&self) -> crate::operation::update_smb_local_groups::builders::UpdateSMBLocalGroupsFluentBuilder {
+        crate::operation::update_smb_local_groups::builders::UpdateSMBLocalGroupsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateWirelessDeviceWithThingOutpu
 }
 impl AssociateWirelessDeviceWithThingOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithThingOutput`](crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingOutput).
-    pub fn builder() -> crate::operation::associate_wireless_device_with_thing::builders::AssociateWirelessDeviceWithThingOutputBuilder{
+    pub fn builder() -> crate::operation::associate_wireless_device_with_thing::builders::AssociateWirelessDeviceWithThingOutputBuilder {
         crate::operation::associate_wireless_device_with_thing::builders::AssociateWirelessDeviceWithThingOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateWirelessDeviceWithThingOutput`](crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateWirelessDeviceWithThingOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl AssociateWirelessDeviceWithThingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithThingOutput`](crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingOutput).
-    pub fn build(self) -> crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingOutput{
+    pub fn build(self) -> crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingOutput {
         crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThingOutput {
             _request_id: self._request_id,
         }

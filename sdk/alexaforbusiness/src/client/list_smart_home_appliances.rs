@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesOutput::next_token): <p>The tokens used for pagination.</p>
     /// - On failure, responds with [`SdkError<ListSmartHomeAppliancesError>`](crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn list_smart_home_appliances(
-        &self,
-    ) -> crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesFluentBuilder
-    {
+    pub fn list_smart_home_appliances(&self) -> crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesFluentBuilder {
         crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesFluentBuilder::new(self.handle.clone())
     }
 }

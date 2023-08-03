@@ -39,9 +39,7 @@ impl DescribeOptOutListsFluentBuilder {
         }
     }
     /// Access the DescribeOptOutLists as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +51,7 @@ impl DescribeOptOutListsFluentBuilder {
             crate::operation::describe_opt_out_lists::DescribeOptOutLists,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_opt_out_lists::DescribeOptOutListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_opt_out_lists::DescribeOptOutListsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +61,7 @@ impl DescribeOptOutListsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +70,7 @@ impl DescribeOptOutListsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_opt_out_lists::DescribeOptOutListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_opt_out_lists::DescribeOptOutListsError>,
     > {
         let op = self
             .inner
@@ -102,9 +93,7 @@ impl DescribeOptOutListsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_opt_out_lists::DescribeOptOutListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_opt_out_lists::DescribeOptOutListsError>,
     > {
         self.send_middleware().await
     }
@@ -118,47 +107,32 @@ impl DescribeOptOutListsFluentBuilder {
             crate::operation::describe_opt_out_lists::DescribeOptOutLists,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_opt_out_lists::DescribeOptOutListsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_opt_out_lists::DescribeOptOutListsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator {
-        crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator {
+        crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `OptOutListNames`.
     ///
     /// To override the contents of this collection use [`set_opt_out_list_names`](Self::set_opt_out_list_names).
     ///
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
-    pub fn opt_out_list_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn opt_out_list_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opt_out_list_names(input.into());
         self
     }
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
-    pub fn set_opt_out_list_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_opt_out_list_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_opt_out_list_names(input);
         self
     }
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
-    pub fn get_opt_out_list_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_opt_out_list_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_opt_out_list_names()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>

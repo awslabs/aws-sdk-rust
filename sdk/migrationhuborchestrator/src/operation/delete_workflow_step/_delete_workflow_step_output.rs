@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteWorkflowStepOutput {
 }
 impl DeleteWorkflowStepOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkflowStepOutput`](crate::operation::delete_workflow_step::DeleteWorkflowStepOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_workflow_step::builders::DeleteWorkflowStepOutputBuilder {
+    pub fn builder() -> crate::operation::delete_workflow_step::builders::DeleteWorkflowStepOutputBuilder {
         crate::operation::delete_workflow_step::builders::DeleteWorkflowStepOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteWorkflowStepOutput`](crate::operation::delete_workflow_step::DeleteWorkflowStepOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkflowStepOutputBuilder {
     _request_id: Option<String>,
 }

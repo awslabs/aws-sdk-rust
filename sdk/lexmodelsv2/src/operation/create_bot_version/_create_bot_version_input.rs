@@ -11,9 +11,8 @@ pub struct CreateBotVersionInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the locales that Amazon Lex adds to this version. You can choose the <code>Draft</code> version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.</p>
     #[doc(hidden)]
-    pub bot_version_locale_specification: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>,
-    >,
+    pub bot_version_locale_specification:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>>,
 }
 impl CreateBotVersionInput {
     /// <p>The identifier of the bot to create the version for.</p>
@@ -27,31 +26,25 @@ impl CreateBotVersionInput {
     /// <p>Specifies the locales that Amazon Lex adds to this version. You can choose the <code>Draft</code> version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.</p>
     pub fn bot_version_locale_specification(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>,
-    > {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>> {
         self.bot_version_locale_specification.as_ref()
     }
 }
 impl CreateBotVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateBotVersionInput`](crate::operation::create_bot_version::CreateBotVersionInput).
-    pub fn builder() -> crate::operation::create_bot_version::builders::CreateBotVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_bot_version::builders::CreateBotVersionInputBuilder {
         crate::operation::create_bot_version::builders::CreateBotVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBotVersionInput`](crate::operation::create_bot_version::CreateBotVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBotVersionInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) bot_version_locale_specification: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>,
-    >,
+    pub(crate) bot_version_locale_specification:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>>,
 }
 impl CreateBotVersionInputBuilder {
     /// <p>The identifier of the bot to create the version for.</p>
@@ -100,12 +93,7 @@ impl CreateBotVersionInputBuilder {
     /// <p>Specifies the locales that Amazon Lex adds to this version. You can choose the <code>Draft</code> version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.</p>
     pub fn set_bot_version_locale_specification(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::BotVersionLocaleDetails,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>>,
     ) -> Self {
         self.bot_version_locale_specification = input;
         self
@@ -113,24 +101,17 @@ impl CreateBotVersionInputBuilder {
     /// <p>Specifies the locales that Amazon Lex adds to this version. You can choose the <code>Draft</code> version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.</p>
     pub fn get_bot_version_locale_specification(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BotVersionLocaleDetails>> {
         &self.bot_version_locale_specification
     }
     /// Consumes the builder and constructs a [`CreateBotVersionInput`](crate::operation::create_bot_version::CreateBotVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_bot_version::CreateBotVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_bot_version::CreateBotVersionInput {
-                bot_id: self.bot_id,
-                description: self.description,
-                bot_version_locale_specification: self.bot_version_locale_specification,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_bot_version::CreateBotVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_bot_version::CreateBotVersionInput {
+            bot_id: self.bot_id,
+            description: self.description,
+            bot_version_locale_specification: self.bot_version_locale_specification,
+        })
     }
 }

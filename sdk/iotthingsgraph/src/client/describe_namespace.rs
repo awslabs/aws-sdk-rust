@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`namespace_version(Option<i64>)`](crate::operation::describe_namespace::DescribeNamespaceOutput::namespace_version): <p>The version of the user's namespace to describe.</p>
     /// - On failure, responds with [`SdkError<DescribeNamespaceError>`](crate::operation::describe_namespace::DescribeNamespaceError)
     #[deprecated(note = "since: 2022-08-30")]
-    pub fn describe_namespace(
-        &self,
-    ) -> crate::operation::describe_namespace::builders::DescribeNamespaceFluentBuilder {
-        crate::operation::describe_namespace::builders::DescribeNamespaceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_namespace(&self) -> crate::operation::describe_namespace::builders::DescribeNamespaceFluentBuilder {
+        crate::operation::describe_namespace::builders::DescribeNamespaceFluentBuilder::new(self.handle.clone())
     }
 }

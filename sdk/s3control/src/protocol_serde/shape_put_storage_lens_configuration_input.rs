@@ -7,20 +7,14 @@ pub fn ser_put_storage_lens_configuration_input_input(
     let mut scope = writer.finish();
     if let Some(var_1) = &input.storage_lens_configuration {
         let inner_writer = scope.start_el("StorageLensConfiguration");
-        crate::protocol_serde::shape_storage_lens_configuration::ser_storage_lens_configuration(
-            var_1,
-            inner_writer,
-        )?
+        crate::protocol_serde::shape_storage_lens_configuration::ser_storage_lens_configuration(var_1, inner_writer)?
     }
     if let Some(var_2) = &input.tags {
         let mut inner_writer = scope.start_el("Tags").finish();
         for list_item_3 in var_2 {
             {
                 let inner_writer = inner_writer.start_el("Tag");
-                crate::protocol_serde::shape_storage_lens_tag::ser_storage_lens_tag(
-                    list_item_3,
-                    inner_writer,
-                )?
+                crate::protocol_serde::shape_storage_lens_tag::ser_storage_lens_tag(list_item_3, inner_writer)?
             }
         }
     }

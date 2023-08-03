@@ -10,10 +10,7 @@ impl UpdateUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_user::UpdateUserOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_user::UpdateUserError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_user::UpdateUserError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_user();
         fluent_builder.inner = self;
@@ -49,10 +46,7 @@ impl UpdateUserFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_user::UpdateUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_user::UpdateUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_user::UpdateUserError>,
     > {
         let handle = self.handle.clone();
@@ -63,10 +57,7 @@ impl UpdateUserFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -108,10 +99,7 @@ impl UpdateUserFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_user::UpdateUser,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_user::UpdateUser, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_user::UpdateUserError>,
     > {
         self.customize_middleware().await
@@ -152,19 +140,13 @@ impl UpdateUserFluentBuilder {
     }
     /// <p>New name for the user. Include this parameter only if you're changing the user's name.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
-    pub fn new_user_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_user_name(input.into());
         self
     }
     /// <p>New name for the user. Include this parameter only if you're changing the user's name.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
-    pub fn set_new_user_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_user_name(input);
         self
     }

@@ -7,10 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeDeliveryChannelsOutput`](crate::operation::describe_delivery_channels::DescribeDeliveryChannelsOutput) with field(s):
     ///   - [`delivery_channels(Option<Vec<DeliveryChannel>>)`](crate::operation::describe_delivery_channels::DescribeDeliveryChannelsOutput::delivery_channels): <p>A list that contains the descriptions of the specified delivery channel.</p>
     /// - On failure, responds with [`SdkError<DescribeDeliveryChannelsError>`](crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError)
-    pub fn describe_delivery_channels(
-        &self,
-    ) -> crate::operation::describe_delivery_channels::builders::DescribeDeliveryChannelsFluentBuilder
-    {
+    pub fn describe_delivery_channels(&self) -> crate::operation::describe_delivery_channels::builders::DescribeDeliveryChannelsFluentBuilder {
         crate::operation::describe_delivery_channels::builders::DescribeDeliveryChannelsFluentBuilder::new(self.handle.clone())
     }
 }

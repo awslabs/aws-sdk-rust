@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteModelVersionOutput {
 }
 impl DeleteModelVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteModelVersionOutput`](crate::operation::delete_model_version::DeleteModelVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_model_version::builders::DeleteModelVersionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_model_version::builders::DeleteModelVersionOutputBuilder {
         crate::operation::delete_model_version::builders::DeleteModelVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteModelVersionOutput`](crate::operation::delete_model_version::DeleteModelVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteModelVersionOutputBuilder {
     _request_id: Option<String>,
 }

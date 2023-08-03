@@ -29,18 +29,14 @@ impl ActivateEvaluationFormInput {
 }
 impl ActivateEvaluationFormInput {
     /// Creates a new builder-style object to manufacture [`ActivateEvaluationFormInput`](crate::operation::activate_evaluation_form::ActivateEvaluationFormInput).
-    pub fn builder(
-    ) -> crate::operation::activate_evaluation_form::builders::ActivateEvaluationFormInputBuilder
-    {
+    pub fn builder() -> crate::operation::activate_evaluation_form::builders::ActivateEvaluationFormInputBuilder {
         crate::operation::activate_evaluation_form::builders::ActivateEvaluationFormInputBuilder::default()
     }
 }
 
 /// A builder for [`ActivateEvaluationFormInput`](crate::operation::activate_evaluation_form::ActivateEvaluationFormInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivateEvaluationFormInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_form_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +58,12 @@ impl ActivateEvaluationFormInputBuilder {
         &self.instance_id
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_form_id = input;
         self
     }
@@ -98,16 +88,12 @@ impl ActivateEvaluationFormInputBuilder {
     /// Consumes the builder and constructs a [`ActivateEvaluationFormInput`](crate::operation::activate_evaluation_form::ActivateEvaluationFormInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::activate_evaluation_form::ActivateEvaluationFormInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::activate_evaluation_form::ActivateEvaluationFormInput {
-                instance_id: self.instance_id,
-                evaluation_form_id: self.evaluation_form_id,
-                evaluation_form_version: self.evaluation_form_version,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::activate_evaluation_form::ActivateEvaluationFormInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::activate_evaluation_form::ActivateEvaluationFormInput {
+            instance_id: self.instance_id,
+            evaluation_form_id: self.evaluation_form_id,
+            evaluation_form_version: self.evaluation_form_version,
+        })
     }
 }

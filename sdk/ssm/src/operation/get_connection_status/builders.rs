@@ -37,9 +37,7 @@ impl GetConnectionStatusFluentBuilder {
         }
     }
     /// Access the GetConnectionStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_connection_status::builders::GetConnectionStatusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_connection_status::builders::GetConnectionStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetConnectionStatusFluentBuilder {
             crate::operation::get_connection_status::GetConnectionStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connection_status::GetConnectionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connection_status::GetConnectionStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetConnectionStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetConnectionStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_connection_status::GetConnectionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connection_status::GetConnectionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connection_status::GetConnectionStatusError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetConnectionStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_connection_status::GetConnectionStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connection_status::GetConnectionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connection_status::GetConnectionStatusError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetConnectionStatusFluentBuilder {
             crate::operation::get_connection_status::GetConnectionStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_connection_status::GetConnectionStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_connection_status::GetConnectionStatusError>,
     > {
         self.customize_middleware().await
     }

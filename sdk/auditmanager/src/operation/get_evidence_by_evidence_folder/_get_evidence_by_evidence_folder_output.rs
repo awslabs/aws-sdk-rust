@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetEvidenceByEvidenceFolderOutput {
 }
 impl GetEvidenceByEvidenceFolderOutput {
     /// Creates a new builder-style object to manufacture [`GetEvidenceByEvidenceFolderOutput`](crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderOutput).
-    pub fn builder() -> crate::operation::get_evidence_by_evidence_folder::builders::GetEvidenceByEvidenceFolderOutputBuilder{
+    pub fn builder() -> crate::operation::get_evidence_by_evidence_folder::builders::GetEvidenceByEvidenceFolderOutputBuilder {
         crate::operation::get_evidence_by_evidence_folder::builders::GetEvidenceByEvidenceFolderOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetEvidenceByEvidenceFolderOutput`](crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEvidenceByEvidenceFolderOutputBuilder {
     pub(crate) evidence: ::std::option::Option<::std::vec::Vec<crate::types::Evidence>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl GetEvidenceByEvidenceFolderOutputBuilder {
         self
     }
     /// <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned. </p>
-    pub fn set_evidence(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Evidence>>,
-    ) -> Self {
+    pub fn set_evidence(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Evidence>>) -> Self {
         self.evidence = input;
         self
     }
@@ -91,9 +86,7 @@ impl GetEvidenceByEvidenceFolderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEvidenceByEvidenceFolderOutput`](crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderOutput {
+    pub fn build(self) -> crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderOutput {
         crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderOutput {
             evidence: self.evidence,
             next_token: self.next_token,

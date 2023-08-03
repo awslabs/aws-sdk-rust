@@ -43,9 +43,7 @@ impl NotifyProvisionProductEngineWorkflowResultInput {
         self.failure_reason.as_deref()
     }
     /// <p> The ID for the provisioned product resources that are part of a resource group. </p>
-    pub fn resource_identifier(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EngineWorkflowResourceIdentifier> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<&crate::types::EngineWorkflowResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
     /// <p> The output of the provisioning engine execution. </p>
@@ -59,40 +57,32 @@ impl NotifyProvisionProductEngineWorkflowResultInput {
 }
 impl NotifyProvisionProductEngineWorkflowResultInput {
     /// Creates a new builder-style object to manufacture [`NotifyProvisionProductEngineWorkflowResultInput`](crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultInput).
-    pub fn builder() -> crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultInputBuilder{
+    pub fn builder(
+    ) -> crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultInputBuilder {
         crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultInputBuilder::default()
     }
 }
 
 /// A builder for [`NotifyProvisionProductEngineWorkflowResultInput`](crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotifyProvisionProductEngineWorkflowResultInputBuilder {
     pub(crate) workflow_token: ::std::option::Option<::std::string::String>,
     pub(crate) record_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::EngineWorkflowStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_identifier:
-        ::std::option::Option<crate::types::EngineWorkflowResourceIdentifier>,
+    pub(crate) resource_identifier: ::std::option::Option<crate::types::EngineWorkflowResourceIdentifier>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl NotifyProvisionProductEngineWorkflowResultInputBuilder {
     /// <p> The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts. </p>
-    pub fn workflow_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn workflow_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts. </p>
-    pub fn set_workflow_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_workflow_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_token = input;
         self
     }
@@ -120,10 +110,7 @@ impl NotifyProvisionProductEngineWorkflowResultInputBuilder {
         self
     }
     /// <p> The status of the provisioning engine execution. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineWorkflowStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EngineWorkflowStatus>) -> Self {
         self.status = input;
         self
     }
@@ -132,18 +119,12 @@ impl NotifyProvisionProductEngineWorkflowResultInputBuilder {
         &self.status
     }
     /// <p> The reason why the provisioning engine execution failed. </p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The reason why the provisioning engine execution failed. </p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -152,25 +133,17 @@ impl NotifyProvisionProductEngineWorkflowResultInputBuilder {
         &self.failure_reason
     }
     /// <p> The ID for the provisioned product resources that are part of a resource group. </p>
-    pub fn resource_identifier(
-        mut self,
-        input: crate::types::EngineWorkflowResourceIdentifier,
-    ) -> Self {
+    pub fn resource_identifier(mut self, input: crate::types::EngineWorkflowResourceIdentifier) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input);
         self
     }
     /// <p> The ID for the provisioned product resources that are part of a resource group. </p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::EngineWorkflowResourceIdentifier>,
-    ) -> Self {
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::EngineWorkflowResourceIdentifier>) -> Self {
         self.resource_identifier = input;
         self
     }
     /// <p> The ID for the provisioned product resources that are part of a resource group. </p>
-    pub fn get_resource_identifier(
-        &self,
-    ) -> &::std::option::Option<crate::types::EngineWorkflowResourceIdentifier> {
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::EngineWorkflowResourceIdentifier> {
         &self.resource_identifier
     }
     /// Appends an item to `outputs`.
@@ -185,32 +158,21 @@ impl NotifyProvisionProductEngineWorkflowResultInputBuilder {
         self
     }
     /// <p> The output of the provisioning engine execution. </p>
-    pub fn set_outputs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>>) -> Self {
         self.outputs = input;
         self
     }
     /// <p> The output of the provisioning engine execution. </p>
-    pub fn get_outputs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>> {
         &self.outputs
     }
     /// <p> The idempotency token that identifies the provisioning engine execution. </p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The idempotency token that identifies the provisioning engine execution. </p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idempotency_token = input;
         self
     }
@@ -219,24 +181,22 @@ impl NotifyProvisionProductEngineWorkflowResultInputBuilder {
         &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`NotifyProvisionProductEngineWorkflowResultInput`](crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultInput {
-                workflow_token: self.workflow_token
-                ,
-                record_id: self.record_id
-                ,
-                status: self.status
-                ,
-                failure_reason: self.failure_reason
-                ,
-                resource_identifier: self.resource_identifier
-                ,
-                outputs: self.outputs
-                ,
-                idempotency_token: self.idempotency_token
-                ,
-            }
+                workflow_token: self.workflow_token,
+                record_id: self.record_id,
+                status: self.status,
+                failure_reason: self.failure_reason,
+                resource_identifier: self.resource_identifier,
+                outputs: self.outputs,
+                idempotency_token: self.idempotency_token,
+            },
         )
     }
 }

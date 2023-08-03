@@ -36,18 +36,14 @@ impl ListDefaultVocabulariesInput {
 }
 impl ListDefaultVocabulariesInput {
     /// Creates a new builder-style object to manufacture [`ListDefaultVocabulariesInput`](crate::operation::list_default_vocabularies::ListDefaultVocabulariesInput).
-    pub fn builder(
-    ) -> crate::operation::list_default_vocabularies::builders::ListDefaultVocabulariesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_default_vocabularies::builders::ListDefaultVocabulariesInputBuilder {
         crate::operation::list_default_vocabularies::builders::ListDefaultVocabulariesInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDefaultVocabulariesInput`](crate::operation::list_default_vocabularies::ListDefaultVocabulariesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDefaultVocabulariesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::VocabularyLanguageCode>,
@@ -75,17 +71,12 @@ impl ListDefaultVocabulariesInputBuilder {
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::VocabularyLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::VocabularyLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn get_language_code(
-        &self,
-    ) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
         &self.language_code
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -123,13 +114,11 @@ impl ListDefaultVocabulariesInputBuilder {
         crate::operation::list_default_vocabularies::ListDefaultVocabulariesInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_default_vocabularies::ListDefaultVocabulariesInput {
-                instance_id: self.instance_id,
-                language_code: self.language_code,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_default_vocabularies::ListDefaultVocabulariesInput {
+            instance_id: self.instance_id,
+            language_code: self.language_code,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

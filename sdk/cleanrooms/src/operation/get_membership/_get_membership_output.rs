@@ -28,9 +28,7 @@ impl GetMembershipOutput {
 
 /// A builder for [`GetMembershipOutput`](crate::operation::get_membership::GetMembershipOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMembershipOutputBuilder {
     pub(crate) membership: ::std::option::Option<crate::types::Membership>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl GetMembershipOutputBuilder {
         self
     }
     /// <p>The membership retrieved for the provided identifier.</p>
-    pub fn set_membership(
-        mut self,
-        input: ::std::option::Option<crate::types::Membership>,
-    ) -> Self {
+    pub fn set_membership(mut self, input: ::std::option::Option<crate::types::Membership>) -> Self {
         self.membership = input;
         self
     }

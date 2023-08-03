@@ -35,12 +35,9 @@ impl ListPromptsOutput {
 
 /// A builder for [`ListPromptsOutput`](crate::operation::list_prompts::ListPromptsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPromptsOutputBuilder {
-    pub(crate) prompt_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::PromptSummary>>,
+    pub(crate) prompt_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::PromptSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,17 +54,12 @@ impl ListPromptsOutputBuilder {
         self
     }
     /// <p>Information about the prompts.</p>
-    pub fn set_prompt_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PromptSummary>>,
-    ) -> Self {
+    pub fn set_prompt_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PromptSummary>>) -> Self {
         self.prompt_summary_list = input;
         self
     }
     /// <p>Information about the prompts.</p>
-    pub fn get_prompt_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PromptSummary>> {
+    pub fn get_prompt_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PromptSummary>> {
         &self.prompt_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>

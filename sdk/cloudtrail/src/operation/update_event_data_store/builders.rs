@@ -39,10 +39,7 @@ impl UpdateEventDataStoreFluentBuilder {
         }
     }
     /// Access the UpdateEventDataStore as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_event_data_store::builders::UpdateEventDataStoreInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::update_event_data_store::builders::UpdateEventDataStoreInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl UpdateEventDataStoreFluentBuilder {
             crate::operation::update_event_data_store::UpdateEventDataStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_data_store::UpdateEventDataStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_data_store::UpdateEventDataStoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl UpdateEventDataStoreFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl UpdateEventDataStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_event_data_store::UpdateEventDataStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_data_store::UpdateEventDataStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_data_store::UpdateEventDataStoreError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl UpdateEventDataStoreFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_event_data_store::UpdateEventDataStoreOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_data_store::UpdateEventDataStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_data_store::UpdateEventDataStoreError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl UpdateEventDataStoreFluentBuilder {
             crate::operation::update_event_data_store::UpdateEventDataStore,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_event_data_store::UpdateEventDataStoreError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_event_data_store::UpdateEventDataStoreError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
-    pub fn event_data_store(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_data_store(input.into());
         self
     }
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
-    pub fn set_event_data_store(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_data_store(input);
         self
     }
@@ -169,17 +149,12 @@ impl UpdateEventDataStoreFluentBuilder {
         self
     }
     /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
-    pub fn set_advanced_event_selectors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
-    ) -> Self {
+    pub fn set_advanced_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>) -> Self {
         self.inner = self.inner.set_advanced_event_selectors(input);
         self
     }
     /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
-    pub fn get_advanced_event_selectors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+    pub fn get_advanced_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
         self.inner.get_advanced_event_selectors()
     }
     /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
@@ -230,10 +205,7 @@ impl UpdateEventDataStoreFluentBuilder {
         self
     }
     /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
-    pub fn set_termination_protection_enabled(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_termination_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_termination_protection_enabled(input);
         self
     }

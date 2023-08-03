@@ -39,9 +39,7 @@ impl JobWatermark {
 
 /// A builder for [`JobWatermark`](crate::types::JobWatermark).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobWatermarkBuilder {
     pub(crate) preset_watermark_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_key: ::std::option::Option<::std::string::String>,
@@ -49,18 +47,12 @@ pub struct JobWatermarkBuilder {
 }
 impl JobWatermarkBuilder {
     /// <p>The ID of the watermark settings that Elastic Transcoder uses to add watermarks to the video during transcoding. The settings are in the preset specified by Preset for the current output. In that preset, the value of Watermarks Id tells Elastic Transcoder which settings to use.</p>
-    pub fn preset_watermark_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preset_watermark_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preset_watermark_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the watermark settings that Elastic Transcoder uses to add watermarks to the video during transcoding. The settings are in the preset specified by Preset for the current output. In that preset, the value of Watermarks Id tells Elastic Transcoder which settings to use.</p>
-    pub fn set_preset_watermark_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preset_watermark_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preset_watermark_id = input;
         self
     }
@@ -91,10 +83,7 @@ impl JobWatermarkBuilder {
         self
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your watermarks.</p>
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::Encryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
         self.encryption = input;
         self
     }

@@ -64,13 +64,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum LimitName {
     #[allow(missing_docs)] // documentation missing in model
@@ -135,36 +129,44 @@ pub enum LimitName {
 impl ::std::convert::From<&str> for LimitName {
     fn from(s: &str) -> Self {
         match s {
-                        "AWS Lake Formation data permission assets per revision" => LimitName::AwsLakeFormationDataPermissionAssetsPerRevision,
-"Amazon API Gateway API assets per revision" => LimitName::AmazonApiGatewayApiAssetsPerRevision,
-"Amazon Redshift datashare assets per import job from Redshift" => LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift,
-"Amazon Redshift datashare assets per revision" => LimitName::AmazonRedshiftDatashareAssetsPerRevision,
-"Amazon S3 data access assets per revision" => LimitName::AmazonS3DataAccessAssetsPerRevision,
-"Asset per export job from Amazon S3" => LimitName::AssetPerExportJobFromAmazonS3,
-"Asset size in GB" => LimitName::AssetSizeInGb,
-"Assets per import job from Amazon S3" => LimitName::AssetsPerImportJobFromAmazonS3,
-"Assets per revision" => LimitName::AssetsPerRevision,
-"Auto export event actions per data set" => LimitName::AutoExportEventActionsPerDataSet,
-"Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets" => LimitName::ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets,
-"Concurrent in progress jobs to export assets to Amazon S3" => LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3,
-"Concurrent in progress jobs to export assets to a signed URL" => LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl,
-"Concurrent in progress jobs to export revisions to Amazon S3" => LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3,
-"Concurrent in progress jobs to import assets from Amazon Redshift datashares" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares,
-"Concurrent in progress jobs to import assets from Amazon S3" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3,
-"Concurrent in progress jobs to import assets from a signed URL" => LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl,
-"Concurrent in progress jobs to import assets from an API Gateway API" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi,
-"Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAnAwsLakeFormationTagPolicy,
-"Data sets per account" => LimitName::DataSetsPerAccount,
-"Data sets per product" => LimitName::DataSetsPerProduct,
-"Event actions per account" => LimitName::EventActionsPerAccount,
-"Products per account" => LimitName::ProductsPerAccount,
-"Revisions per AWS Lake Formation data permission data set" => LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet,
-"Revisions per Amazon API Gateway API data set" => LimitName::RevisionsPerAmazonApiGatewayApiDataSet,
-"Revisions per Amazon Redshift datashare data set" => LimitName::RevisionsPerAmazonRedshiftDatashareDataSet,
-"Revisions per Amazon S3 data access data set" => LimitName::RevisionsPerAmazonS3DataAccessDataSet,
-"Revisions per data set" => LimitName::RevisionsPerDataSet,
-other => LimitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
+            "AWS Lake Formation data permission assets per revision" => LimitName::AwsLakeFormationDataPermissionAssetsPerRevision,
+            "Amazon API Gateway API assets per revision" => LimitName::AmazonApiGatewayApiAssetsPerRevision,
+            "Amazon Redshift datashare assets per import job from Redshift" => LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift,
+            "Amazon Redshift datashare assets per revision" => LimitName::AmazonRedshiftDatashareAssetsPerRevision,
+            "Amazon S3 data access assets per revision" => LimitName::AmazonS3DataAccessAssetsPerRevision,
+            "Asset per export job from Amazon S3" => LimitName::AssetPerExportJobFromAmazonS3,
+            "Asset size in GB" => LimitName::AssetSizeInGb,
+            "Assets per import job from Amazon S3" => LimitName::AssetsPerImportJobFromAmazonS3,
+            "Assets per revision" => LimitName::AssetsPerRevision,
+            "Auto export event actions per data set" => LimitName::AutoExportEventActionsPerDataSet,
+            "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets" => {
+                LimitName::ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets
+            }
+            "Concurrent in progress jobs to export assets to Amazon S3" => LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3,
+            "Concurrent in progress jobs to export assets to a signed URL" => LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl,
+            "Concurrent in progress jobs to export revisions to Amazon S3" => LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3,
+            "Concurrent in progress jobs to import assets from Amazon Redshift datashares" => {
+                LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares
+            }
+            "Concurrent in progress jobs to import assets from Amazon S3" => LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3,
+            "Concurrent in progress jobs to import assets from a signed URL" => LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl,
+            "Concurrent in progress jobs to import assets from an API Gateway API" => {
+                LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi
+            }
+            "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy" => {
+                LimitName::ConcurrentInProgressJobsToImportAssetsFromAnAwsLakeFormationTagPolicy
+            }
+            "Data sets per account" => LimitName::DataSetsPerAccount,
+            "Data sets per product" => LimitName::DataSetsPerProduct,
+            "Event actions per account" => LimitName::EventActionsPerAccount,
+            "Products per account" => LimitName::ProductsPerAccount,
+            "Revisions per AWS Lake Formation data permission data set" => LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet,
+            "Revisions per Amazon API Gateway API data set" => LimitName::RevisionsPerAmazonApiGatewayApiDataSet,
+            "Revisions per Amazon Redshift datashare data set" => LimitName::RevisionsPerAmazonRedshiftDatashareDataSet,
+            "Revisions per Amazon S3 data access data set" => LimitName::RevisionsPerAmazonS3DataAccessDataSet,
+            "Revisions per data set" => LimitName::RevisionsPerDataSet,
+            other => LimitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
     }
 }
 impl ::std::str::FromStr for LimitName {
@@ -178,21 +180,11 @@ impl LimitName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            LimitName::AwsLakeFormationDataPermissionAssetsPerRevision => {
-                "AWS Lake Formation data permission assets per revision"
-            }
-            LimitName::AmazonApiGatewayApiAssetsPerRevision => {
-                "Amazon API Gateway API assets per revision"
-            }
-            LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift => {
-                "Amazon Redshift datashare assets per import job from Redshift"
-            }
-            LimitName::AmazonRedshiftDatashareAssetsPerRevision => {
-                "Amazon Redshift datashare assets per revision"
-            }
-            LimitName::AmazonS3DataAccessAssetsPerRevision => {
-                "Amazon S3 data access assets per revision"
-            }
+            LimitName::AwsLakeFormationDataPermissionAssetsPerRevision => "AWS Lake Formation data permission assets per revision",
+            LimitName::AmazonApiGatewayApiAssetsPerRevision => "Amazon API Gateway API assets per revision",
+            LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift => "Amazon Redshift datashare assets per import job from Redshift",
+            LimitName::AmazonRedshiftDatashareAssetsPerRevision => "Amazon Redshift datashare assets per revision",
+            LimitName::AmazonS3DataAccessAssetsPerRevision => "Amazon S3 data access assets per revision",
             LimitName::AssetPerExportJobFromAmazonS3 => "Asset per export job from Amazon S3",
             LimitName::AssetSizeInGb => "Asset size in GB",
             LimitName::AssetsPerImportJobFromAmazonS3 => "Assets per import job from Amazon S3",
@@ -201,24 +193,14 @@ impl LimitName {
             LimitName::ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets => {
                 "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets"
             }
-            LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3 => {
-                "Concurrent in progress jobs to export assets to Amazon S3"
-            }
-            LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl => {
-                "Concurrent in progress jobs to export assets to a signed URL"
-            }
-            LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3 => {
-                "Concurrent in progress jobs to export revisions to Amazon S3"
-            }
+            LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3 => "Concurrent in progress jobs to export assets to Amazon S3",
+            LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl => "Concurrent in progress jobs to export assets to a signed URL",
+            LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3 => "Concurrent in progress jobs to export revisions to Amazon S3",
             LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares => {
                 "Concurrent in progress jobs to import assets from Amazon Redshift datashares"
             }
-            LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3 => {
-                "Concurrent in progress jobs to import assets from Amazon S3"
-            }
-            LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl => {
-                "Concurrent in progress jobs to import assets from a signed URL"
-            }
+            LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3 => "Concurrent in progress jobs to import assets from Amazon S3",
+            LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl => "Concurrent in progress jobs to import assets from a signed URL",
             LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi => {
                 "Concurrent in progress jobs to import assets from an API Gateway API"
             }
@@ -229,18 +211,10 @@ impl LimitName {
             LimitName::DataSetsPerProduct => "Data sets per product",
             LimitName::EventActionsPerAccount => "Event actions per account",
             LimitName::ProductsPerAccount => "Products per account",
-            LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet => {
-                "Revisions per AWS Lake Formation data permission data set"
-            }
-            LimitName::RevisionsPerAmazonApiGatewayApiDataSet => {
-                "Revisions per Amazon API Gateway API data set"
-            }
-            LimitName::RevisionsPerAmazonRedshiftDatashareDataSet => {
-                "Revisions per Amazon Redshift datashare data set"
-            }
-            LimitName::RevisionsPerAmazonS3DataAccessDataSet => {
-                "Revisions per Amazon S3 data access data set"
-            }
+            LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet => "Revisions per AWS Lake Formation data permission data set",
+            LimitName::RevisionsPerAmazonApiGatewayApiDataSet => "Revisions per Amazon API Gateway API data set",
+            LimitName::RevisionsPerAmazonRedshiftDatashareDataSet => "Revisions per Amazon Redshift datashare data set",
+            LimitName::RevisionsPerAmazonS3DataAccessDataSet => "Revisions per Amazon S3 data access data set",
             LimitName::RevisionsPerDataSet => "Revisions per data set",
             LimitName::Unknown(value) => value.as_str(),
         }

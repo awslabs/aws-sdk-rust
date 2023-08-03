@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetAccountConfigurationOutput {
 }
 impl GetAccountConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountConfigurationOutput`](crate::operation::get_account_configuration::GetAccountConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_account_configuration::builders::GetAccountConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_account_configuration::builders::GetAccountConfigurationOutputBuilder {
         crate::operation::get_account_configuration::builders::GetAccountConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAccountConfigurationOutput`](crate::operation::get_account_configuration::GetAccountConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAccountConfigurationOutputBuilder {
     pub(crate) encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetAccountConfigurationOutputBuilder {
         self
     }
     /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption. By default, CodeGuru Security uses an AWS-managed key for encryption. To specify your own key, call <code>UpdateAccountConfiguration</code>.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
         self.encryption_config = input;
         self
     }
@@ -65,9 +58,7 @@ impl GetAccountConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAccountConfigurationOutput`](crate::operation::get_account_configuration::GetAccountConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_account_configuration::GetAccountConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_account_configuration::GetAccountConfigurationOutput {
         crate::operation::get_account_configuration::GetAccountConfigurationOutput {
             encryption_config: self.encryption_config,
             _request_id: self._request_id,

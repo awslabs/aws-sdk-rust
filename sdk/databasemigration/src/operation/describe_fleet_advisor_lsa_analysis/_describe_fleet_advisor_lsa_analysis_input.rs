@@ -22,16 +22,14 @@ impl DescribeFleetAdvisorLsaAnalysisInput {
 }
 impl DescribeFleetAdvisorLsaAnalysisInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorLsaAnalysisInput`](crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisInput).
-    pub fn builder() -> crate::operation::describe_fleet_advisor_lsa_analysis::builders::DescribeFleetAdvisorLsaAnalysisInputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_advisor_lsa_analysis::builders::DescribeFleetAdvisorLsaAnalysisInputBuilder {
         crate::operation::describe_fleet_advisor_lsa_analysis::builders::DescribeFleetAdvisorLsaAnalysisInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetAdvisorLsaAnalysisInput`](crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorLsaAnalysisInputBuilder {
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -74,11 +72,9 @@ impl DescribeFleetAdvisorLsaAnalysisInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisInput {
-                max_records: self.max_records
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_records: self.max_records,
+                next_token: self.next_token,
+            },
         )
     }
 }

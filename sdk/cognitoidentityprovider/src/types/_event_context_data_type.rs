@@ -51,9 +51,7 @@ impl EventContextDataType {
 
 /// A builder for [`EventContextDataType`](crate::types::EventContextDataType).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventContextDataTypeBuilder {
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) device_name: ::std::option::Option<::std::string::String>,

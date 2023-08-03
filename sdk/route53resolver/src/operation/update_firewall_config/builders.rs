@@ -37,9 +37,7 @@ impl UpdateFirewallConfigFluentBuilder {
         }
     }
     /// Access the UpdateFirewallConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_firewall_config::builders::UpdateFirewallConfigInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_firewall_config::builders::UpdateFirewallConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl UpdateFirewallConfigFluentBuilder {
             crate::operation::update_firewall_config::UpdateFirewallConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_config::UpdateFirewallConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_config::UpdateFirewallConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl UpdateFirewallConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl UpdateFirewallConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_firewall_config::UpdateFirewallConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_config::UpdateFirewallConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_config::UpdateFirewallConfigError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl UpdateFirewallConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_firewall_config::UpdateFirewallConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_config::UpdateFirewallConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_config::UpdateFirewallConfigError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl UpdateFirewallConfigFluentBuilder {
             crate::operation::update_firewall_config::UpdateFirewallConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_firewall_config::UpdateFirewallConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_config::UpdateFirewallConfigError>,
     > {
         self.customize_middleware().await
     }
@@ -152,10 +139,7 @@ impl UpdateFirewallConfigFluentBuilder {
     /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
-    pub fn set_firewall_fail_open(
-        mut self,
-        input: ::std::option::Option<crate::types::FirewallFailOpenStatus>,
-    ) -> Self {
+    pub fn set_firewall_fail_open(mut self, input: ::std::option::Option<crate::types::FirewallFailOpenStatus>) -> Self {
         self.inner = self.inner.set_firewall_fail_open(input);
         self
     }
@@ -165,9 +149,7 @@ impl UpdateFirewallConfigFluentBuilder {
     /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
-    pub fn get_firewall_fail_open(
-        &self,
-    ) -> &::std::option::Option<crate::types::FirewallFailOpenStatus> {
+    pub fn get_firewall_fail_open(&self) -> &::std::option::Option<crate::types::FirewallFailOpenStatus> {
         self.inner.get_firewall_fail_open()
     }
 }

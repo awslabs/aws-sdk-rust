@@ -21,41 +21,31 @@ impl ::aws_http::request_id::RequestId for DeleteTrafficMirrorFilterRuleOutput {
 }
 impl DeleteTrafficMirrorFilterRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTrafficMirrorFilterRuleOutput`](crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleOutput).
-    pub fn builder() -> crate::operation::delete_traffic_mirror_filter_rule::builders::DeleteTrafficMirrorFilterRuleOutputBuilder{
+    pub fn builder() -> crate::operation::delete_traffic_mirror_filter_rule::builders::DeleteTrafficMirrorFilterRuleOutputBuilder {
         crate::operation::delete_traffic_mirror_filter_rule::builders::DeleteTrafficMirrorFilterRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTrafficMirrorFilterRuleOutput`](crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTrafficMirrorFilterRuleOutputBuilder {
     pub(crate) traffic_mirror_filter_rule_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteTrafficMirrorFilterRuleOutputBuilder {
     /// <p>The ID of the deleted Traffic Mirror rule.</p>
-    pub fn traffic_mirror_filter_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn traffic_mirror_filter_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_filter_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deleted Traffic Mirror rule.</p>
-    pub fn set_traffic_mirror_filter_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_traffic_mirror_filter_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_mirror_filter_rule_id = input;
         self
     }
     /// <p>The ID of the deleted Traffic Mirror rule.</p>
-    pub fn get_traffic_mirror_filter_rule_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_traffic_mirror_filter_rule_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.traffic_mirror_filter_rule_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -68,10 +58,7 @@ impl DeleteTrafficMirrorFilterRuleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteTrafficMirrorFilterRuleOutput`](crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleOutput
-    {
+    pub fn build(self) -> crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleOutput {
         crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleOutput {
             traffic_mirror_filter_rule_id: self.traffic_mirror_filter_rule_id,
             _request_id: self._request_id,

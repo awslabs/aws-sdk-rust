@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`sub_channel_id(impl ::std::convert::Into<String>)`](crate::operation::delete_channel_message::builders::DeleteChannelMessageFluentBuilder::sub_channel_id) / [`set_sub_channel_id(Option<String>)`](crate::operation::delete_channel_message::builders::DeleteChannelMessageFluentBuilder::set_sub_channel_id): <p>The ID of the SubChannel in the request.</p> <note>   <p>Only required when deleting messages in a SubChannel that the user belongs to.</p>  </note>
     /// - On success, responds with [`DeleteChannelMessageOutput`](crate::operation::delete_channel_message::DeleteChannelMessageOutput)
     /// - On failure, responds with [`SdkError<DeleteChannelMessageError>`](crate::operation::delete_channel_message::DeleteChannelMessageError)
-    pub fn delete_channel_message(
-        &self,
-    ) -> crate::operation::delete_channel_message::builders::DeleteChannelMessageFluentBuilder {
-        crate::operation::delete_channel_message::builders::DeleteChannelMessageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_channel_message(&self) -> crate::operation::delete_channel_message::builders::DeleteChannelMessageFluentBuilder {
+        crate::operation::delete_channel_message::builders::DeleteChannelMessageFluentBuilder::new(self.handle.clone())
     }
 }

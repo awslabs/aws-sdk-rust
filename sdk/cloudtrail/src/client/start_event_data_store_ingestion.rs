@@ -6,7 +6,9 @@ impl super::Client {
     ///   - [`event_data_store(impl ::std::convert::Into<String>)`](crate::operation::start_event_data_store_ingestion::builders::StartEventDataStoreIngestionFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::start_event_data_store_ingestion::builders::StartEventDataStoreIngestionFluentBuilder::set_event_data_store): <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to start ingestion.</p>
     /// - On success, responds with [`StartEventDataStoreIngestionOutput`](crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionOutput)
     /// - On failure, responds with [`SdkError<StartEventDataStoreIngestionError>`](crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError)
-    pub fn start_event_data_store_ingestion(&self) -> crate::operation::start_event_data_store_ingestion::builders::StartEventDataStoreIngestionFluentBuilder{
+    pub fn start_event_data_store_ingestion(
+        &self,
+    ) -> crate::operation::start_event_data_store_ingestion::builders::StartEventDataStoreIngestionFluentBuilder {
         crate::operation::start_event_data_store_ingestion::builders::StartEventDataStoreIngestionFluentBuilder::new(self.handle.clone())
     }
 }

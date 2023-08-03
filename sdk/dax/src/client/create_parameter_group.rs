@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateParameterGroupOutput`](crate::operation::create_parameter_group::CreateParameterGroupOutput) with field(s):
     ///   - [`parameter_group(Option<ParameterGroup>)`](crate::operation::create_parameter_group::CreateParameterGroupOutput::parameter_group): <p>Represents the output of a <i>CreateParameterGroup</i> action.</p>
     /// - On failure, responds with [`SdkError<CreateParameterGroupError>`](crate::operation::create_parameter_group::CreateParameterGroupError)
-    pub fn create_parameter_group(
-        &self,
-    ) -> crate::operation::create_parameter_group::builders::CreateParameterGroupFluentBuilder {
-        crate::operation::create_parameter_group::builders::CreateParameterGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_parameter_group(&self) -> crate::operation::create_parameter_group::builders::CreateParameterGroupFluentBuilder {
+        crate::operation::create_parameter_group::builders::CreateParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl IngressConfiguration {
 
 /// A builder for [`IngressConfiguration`](crate::types::IngressConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IngressConfigurationBuilder {
     pub(crate) is_publicly_accessible: ::std::option::Option<bool>,
 }

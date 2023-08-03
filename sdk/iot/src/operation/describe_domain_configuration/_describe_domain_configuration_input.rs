@@ -15,33 +15,25 @@ impl DescribeDomainConfigurationInput {
 }
 impl DescribeDomainConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainConfigurationInput`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationInput).
-    pub fn builder() -> crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationInputBuilder {
         crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDomainConfigurationInput`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainConfigurationInputBuilder {
     pub(crate) domain_configuration_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDomainConfigurationInputBuilder {
     /// <p>The name of the domain configuration.</p>
-    pub fn domain_configuration_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn domain_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the domain configuration.</p>
-    pub fn set_domain_configuration_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_domain_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_configuration_name = input;
         self
     }
@@ -56,10 +48,8 @@ impl DescribeDomainConfigurationInputBuilder {
         crate::operation::describe_domain_configuration::DescribeDomainConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_domain_configuration::DescribeDomainConfigurationInput {
-                domain_configuration_name: self.domain_configuration_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_domain_configuration::DescribeDomainConfigurationInput {
+            domain_configuration_name: self.domain_configuration_name,
+        })
     }
 }

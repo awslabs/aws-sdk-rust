@@ -5,8 +5,7 @@
 pub struct UpdateOriginRequestPolicyInput {
     /// <p>An origin request policy configuration.</p>
     #[doc(hidden)]
-    pub origin_request_policy_config:
-        ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
+    pub origin_request_policy_config: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
     /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
     #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,9 +15,7 @@ pub struct UpdateOriginRequestPolicyInput {
 }
 impl UpdateOriginRequestPolicyInput {
     /// <p>An origin request policy configuration.</p>
-    pub fn origin_request_policy_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::OriginRequestPolicyConfig> {
+    pub fn origin_request_policy_config(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyConfig> {
         self.origin_request_policy_config.as_ref()
     }
     /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
@@ -32,43 +29,32 @@ impl UpdateOriginRequestPolicyInput {
 }
 impl UpdateOriginRequestPolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateOriginRequestPolicyInput`](crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyInput).
-    pub fn builder() -> crate::operation::update_origin_request_policy::builders::UpdateOriginRequestPolicyInputBuilder{
+    pub fn builder() -> crate::operation::update_origin_request_policy::builders::UpdateOriginRequestPolicyInputBuilder {
         crate::operation::update_origin_request_policy::builders::UpdateOriginRequestPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateOriginRequestPolicyInput`](crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateOriginRequestPolicyInputBuilder {
-    pub(crate) origin_request_policy_config:
-        ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
+    pub(crate) origin_request_policy_config: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateOriginRequestPolicyInputBuilder {
     /// <p>An origin request policy configuration.</p>
-    pub fn origin_request_policy_config(
-        mut self,
-        input: crate::types::OriginRequestPolicyConfig,
-    ) -> Self {
+    pub fn origin_request_policy_config(mut self, input: crate::types::OriginRequestPolicyConfig) -> Self {
         self.origin_request_policy_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>An origin request policy configuration.</p>
-    pub fn set_origin_request_policy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
-    ) -> Self {
+    pub fn set_origin_request_policy_config(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyConfig>) -> Self {
         self.origin_request_policy_config = input;
         self
     }
     /// <p>An origin request policy configuration.</p>
-    pub fn get_origin_request_policy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::OriginRequestPolicyConfig> {
+    pub fn get_origin_request_policy_config(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyConfig> {
         &self.origin_request_policy_config
     }
     /// <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
@@ -106,12 +92,10 @@ impl UpdateOriginRequestPolicyInputBuilder {
         crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyInput {
-                origin_request_policy_config: self.origin_request_policy_config,
-                id: self.id,
-                if_match: self.if_match,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyInput {
+            origin_request_policy_config: self.origin_request_policy_config,
+            id: self.id,
+            if_match: self.if_match,
+        })
     }
 }

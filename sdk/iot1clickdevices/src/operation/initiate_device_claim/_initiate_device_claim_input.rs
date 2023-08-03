@@ -15,18 +15,14 @@ impl InitiateDeviceClaimInput {
 }
 impl InitiateDeviceClaimInput {
     /// Creates a new builder-style object to manufacture [`InitiateDeviceClaimInput`](crate::operation::initiate_device_claim::InitiateDeviceClaimInput).
-    pub fn builder(
-    ) -> crate::operation::initiate_device_claim::builders::InitiateDeviceClaimInputBuilder {
-        crate::operation::initiate_device_claim::builders::InitiateDeviceClaimInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::initiate_device_claim::builders::InitiateDeviceClaimInputBuilder {
+        crate::operation::initiate_device_claim::builders::InitiateDeviceClaimInputBuilder::default()
     }
 }
 
 /// A builder for [`InitiateDeviceClaimInput`](crate::operation::initiate_device_claim::InitiateDeviceClaimInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InitiateDeviceClaimInputBuilder {
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl InitiateDeviceClaimInputBuilder {
     /// Consumes the builder and constructs a [`InitiateDeviceClaimInput`](crate::operation::initiate_device_claim::InitiateDeviceClaimInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::initiate_device_claim::InitiateDeviceClaimInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::initiate_device_claim::InitiateDeviceClaimInput {
-                device_id: self.device_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::initiate_device_claim::InitiateDeviceClaimInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::initiate_device_claim::InitiateDeviceClaimInput { device_id: self.device_id })
     }
 }

@@ -30,9 +30,7 @@ impl AuthenticationMode {
 
 /// A builder for [`AuthenticationMode`](crate::types::AuthenticationMode).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthenticationModeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::InputAuthenticationType>,
     pub(crate) passwords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,10 +42,7 @@ impl AuthenticationModeBuilder {
         self
     }
     /// <p>Indicates whether the user requires a password to authenticate. All newly-created users require a password.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::InputAuthenticationType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::InputAuthenticationType>) -> Self {
         self.r#type = input;
         self
     }
@@ -67,10 +62,7 @@ impl AuthenticationModeBuilder {
         self
     }
     /// <p>The password(s) used for authentication</p>
-    pub fn set_passwords(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_passwords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.passwords = input;
         self
     }

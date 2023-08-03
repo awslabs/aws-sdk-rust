@@ -51,16 +51,14 @@ impl DescribeSpotFleetRequestHistoryInput {
 }
 impl DescribeSpotFleetRequestHistoryInput {
     /// Creates a new builder-style object to manufacture [`DescribeSpotFleetRequestHistoryInput`](crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryInput).
-    pub fn builder() -> crate::operation::describe_spot_fleet_request_history::builders::DescribeSpotFleetRequestHistoryInputBuilder{
+    pub fn builder() -> crate::operation::describe_spot_fleet_request_history::builders::DescribeSpotFleetRequestHistoryInputBuilder {
         crate::operation::describe_spot_fleet_request_history::builders::DescribeSpotFleetRequestHistoryInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSpotFleetRequestHistoryInput`](crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpotFleetRequestHistoryInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) event_type: ::std::option::Option<crate::types::EventType>,
@@ -127,18 +125,12 @@ impl DescribeSpotFleetRequestHistoryInputBuilder {
         &self.next_token
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_fleet_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_fleet_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn set_spot_fleet_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spot_fleet_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spot_fleet_request_id = input;
         self
     }
@@ -152,10 +144,7 @@ impl DescribeSpotFleetRequestHistoryInputBuilder {
         self
     }
     /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -172,19 +161,13 @@ impl DescribeSpotFleetRequestHistoryInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryInput {
-                dry_run: self.dry_run
-                ,
-                event_type: self.event_type
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                spot_fleet_request_id: self.spot_fleet_request_id
-                ,
-                start_time: self.start_time
-                ,
-            }
+                dry_run: self.dry_run,
+                event_type: self.event_type,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                spot_fleet_request_id: self.spot_fleet_request_id,
+                start_time: self.start_time,
+            },
         )
     }
 }

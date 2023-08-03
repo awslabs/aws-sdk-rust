@@ -22,16 +22,14 @@ impl PutCaseEventConfigurationInput {
 }
 impl PutCaseEventConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutCaseEventConfigurationInput`](crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput).
-    pub fn builder() -> crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationInputBuilder {
         crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`PutCaseEventConfigurationInput`](crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutCaseEventConfigurationInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_bridge: ::std::option::Option<crate::types::EventBridgeConfiguration>,
@@ -57,17 +55,12 @@ impl PutCaseEventConfigurationInputBuilder {
         self
     }
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
-    pub fn set_event_bridge(
-        mut self,
-        input: ::std::option::Option<crate::types::EventBridgeConfiguration>,
-    ) -> Self {
+    pub fn set_event_bridge(mut self, input: ::std::option::Option<crate::types::EventBridgeConfiguration>) -> Self {
         self.event_bridge = input;
         self
     }
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
-    pub fn get_event_bridge(
-        &self,
-    ) -> &::std::option::Option<crate::types::EventBridgeConfiguration> {
+    pub fn get_event_bridge(&self) -> &::std::option::Option<crate::types::EventBridgeConfiguration> {
         &self.event_bridge
     }
     /// Consumes the builder and constructs a [`PutCaseEventConfigurationInput`](crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput).
@@ -77,11 +70,9 @@ impl PutCaseEventConfigurationInputBuilder {
         crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput {
-                domain_id: self.domain_id,
-                event_bridge: self.event_bridge,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput {
+            domain_id: self.domain_id,
+            event_bridge: self.event_bridge,
+        })
     }
 }

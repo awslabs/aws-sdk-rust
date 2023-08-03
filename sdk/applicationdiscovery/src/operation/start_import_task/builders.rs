@@ -10,10 +10,7 @@ impl StartImportTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_import_task::StartImportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_import_task::StartImportTaskError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import_task::StartImportTaskError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_import_task();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl StartImportTaskFluentBuilder {
         }
     }
     /// Access the StartImportTask as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_import_task::builders::StartImportTaskInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_import_task::builders::StartImportTaskInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl StartImportTaskFluentBuilder {
             crate::operation::start_import_task::StartImportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_import_task::StartImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import_task::StartImportTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl StartImportTaskFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl StartImportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_import_task::StartImportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_import_task::StartImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import_task::StartImportTaskError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl StartImportTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_import_task::StartImportTaskOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_import_task::StartImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import_task::StartImportTaskError>,
     > {
         self.send_middleware().await
     }
@@ -126,27 +112,19 @@ impl StartImportTaskFluentBuilder {
             crate::operation::start_import_task::StartImportTask,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_import_task::StartImportTaskError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import_task::StartImportTaskError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>
     /// <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>
     /// <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }

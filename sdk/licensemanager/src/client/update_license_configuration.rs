@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`disassociate_when_not_found(bool)`](crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationFluentBuilder::disassociate_when_not_found) / [`set_disassociate_when_not_found(Option<bool>)`](crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationFluentBuilder::set_disassociate_when_not_found): <p>When true, disassociates a resource when software is uninstalled.</p>
     /// - On success, responds with [`UpdateLicenseConfigurationOutput`](crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput)
     /// - On failure, responds with [`SdkError<UpdateLicenseConfigurationError>`](crate::operation::update_license_configuration::UpdateLicenseConfigurationError)
-    pub fn update_license_configuration(&self) -> crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationFluentBuilder{
+    pub fn update_license_configuration(&self) -> crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationFluentBuilder {
         crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

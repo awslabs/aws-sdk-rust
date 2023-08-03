@@ -26,7 +26,7 @@ impl DescribeEnvironmentResourcesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesInputBuilder,
+    inner: crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesInputBuilder,
 }
 impl DescribeEnvironmentResourcesFluentBuilder {
     /// Creates a new `DescribeEnvironmentResources`.
@@ -37,7 +37,7 @@ impl DescribeEnvironmentResourcesFluentBuilder {
         }
     }
     /// Access the DescribeEnvironmentResources as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeEnvironmentResourcesFluentBuilder {
             crate::operation::describe_environment_resources::DescribeEnvironmentResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeEnvironmentResourcesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeEnvironmentResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_environment_resources::DescribeEnvironmentResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeEnvironmentResourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_environment_resources::DescribeEnvironmentResourcesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -114,27 +105,19 @@ impl DescribeEnvironmentResourcesFluentBuilder {
             crate::operation::describe_environment_resources::DescribeEnvironmentResources,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the environment to retrieve AWS resource usage data.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>The ID of the environment to retrieve AWS resource usage data.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -145,19 +128,13 @@ impl DescribeEnvironmentResourcesFluentBuilder {
     }
     /// <p>The name of the environment to retrieve AWS resource usage data.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the environment to retrieve AWS resource usage data.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }

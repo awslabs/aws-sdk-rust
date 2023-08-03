@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::detach_vpn_gateway::builders::DetachVpnGatewayFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::detach_vpn_gateway::builders::DetachVpnGatewayFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`DetachVpnGatewayOutput`](crate::operation::detach_vpn_gateway::DetachVpnGatewayOutput)
     /// - On failure, responds with [`SdkError<DetachVpnGatewayError>`](crate::operation::detach_vpn_gateway::DetachVpnGatewayError)
-    pub fn detach_vpn_gateway(
-        &self,
-    ) -> crate::operation::detach_vpn_gateway::builders::DetachVpnGatewayFluentBuilder {
-        crate::operation::detach_vpn_gateway::builders::DetachVpnGatewayFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detach_vpn_gateway(&self) -> crate::operation::detach_vpn_gateway::builders::DetachVpnGatewayFluentBuilder {
+        crate::operation::detach_vpn_gateway::builders::DetachVpnGatewayFluentBuilder::new(self.handle.clone())
     }
 }

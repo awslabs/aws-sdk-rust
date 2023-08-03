@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`origin(impl ::std::convert::Into<String>)`](crate::operation::associate_approved_origin::builders::AssociateApprovedOriginFluentBuilder::origin) / [`set_origin(Option<String>)`](crate::operation::associate_approved_origin::builders::AssociateApprovedOriginFluentBuilder::set_origin): <p>The domain to add to your allow list.</p>
     /// - On success, responds with [`AssociateApprovedOriginOutput`](crate::operation::associate_approved_origin::AssociateApprovedOriginOutput)
     /// - On failure, responds with [`SdkError<AssociateApprovedOriginError>`](crate::operation::associate_approved_origin::AssociateApprovedOriginError)
-    pub fn associate_approved_origin(
-        &self,
-    ) -> crate::operation::associate_approved_origin::builders::AssociateApprovedOriginFluentBuilder
-    {
+    pub fn associate_approved_origin(&self) -> crate::operation::associate_approved_origin::builders::AssociateApprovedOriginFluentBuilder {
         crate::operation::associate_approved_origin::builders::AssociateApprovedOriginFluentBuilder::new(self.handle.clone())
     }
 }

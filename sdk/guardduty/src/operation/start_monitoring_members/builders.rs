@@ -37,10 +37,7 @@ impl StartMonitoringMembersFluentBuilder {
         }
     }
     /// Access the StartMonitoringMembers as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_monitoring_members::builders::StartMonitoringMembersInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::start_monitoring_members::builders::StartMonitoringMembersInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl StartMonitoringMembersFluentBuilder {
             crate::operation::start_monitoring_members::StartMonitoringMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_monitoring_members::StartMonitoringMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_monitoring_members::StartMonitoringMembersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl StartMonitoringMembersFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl StartMonitoringMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_monitoring_members::StartMonitoringMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_monitoring_members::StartMonitoringMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_monitoring_members::StartMonitoringMembersError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl StartMonitoringMembersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_monitoring_members::StartMonitoringMembersOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_monitoring_members::StartMonitoringMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_monitoring_members::StartMonitoringMembersError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl StartMonitoringMembersFluentBuilder {
             crate::operation::start_monitoring_members::StartMonitoringMembers,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_monitoring_members::StartMonitoringMembersError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_monitoring_members::StartMonitoringMembersError>,
     > {
         self.customize_middleware().await
     }
@@ -147,17 +133,12 @@ impl StartMonitoringMembersFluentBuilder {
         self
     }
     /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
 }

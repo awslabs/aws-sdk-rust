@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`resource_counts(Option<Vec<ResourceCount>>)`](crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput::resource_counts): <p>The list of <code>ResourceCount</code> objects. Each object is listed in descending order by the number of resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<GetDiscoveredResourceCountsError>`](crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError)
-    pub fn get_discovered_resource_counts(&self) -> crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsFluentBuilder{
+    pub fn get_discovered_resource_counts(
+        &self,
+    ) -> crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsFluentBuilder {
         crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsFluentBuilder::new(self.handle.clone())
     }
 }

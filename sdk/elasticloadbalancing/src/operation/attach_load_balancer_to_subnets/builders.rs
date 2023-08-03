@@ -27,7 +27,7 @@ impl AttachLoadBalancerToSubnetsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AttachLoadBalancerToSubnetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsInputBuilder,
+    inner: crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsInputBuilder,
 }
 impl AttachLoadBalancerToSubnetsFluentBuilder {
     /// Creates a new `AttachLoadBalancerToSubnets`.
@@ -38,7 +38,7 @@ impl AttachLoadBalancerToSubnetsFluentBuilder {
         }
     }
     /// Access the AttachLoadBalancerToSubnets as a reference.
-    pub fn as_input(&self) -> &crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl AttachLoadBalancerToSubnetsFluentBuilder {
             crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl AttachLoadBalancerToSubnetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl AttachLoadBalancerToSubnetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl AttachLoadBalancerToSubnetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl AttachLoadBalancerToSubnetsFluentBuilder {
             crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
@@ -151,10 +134,7 @@ impl AttachLoadBalancerToSubnetsFluentBuilder {
         self
     }
     /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnets(input);
         self
     }

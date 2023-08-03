@@ -26,7 +26,7 @@ impl ListAssetModelPropertiesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssetModelPropertiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesInputBuilder,
+    inner: crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesInputBuilder,
 }
 impl ListAssetModelPropertiesFluentBuilder {
     /// Creates a new `ListAssetModelProperties`.
@@ -37,7 +37,7 @@ impl ListAssetModelPropertiesFluentBuilder {
         }
     }
     /// Access the ListAssetModelProperties as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListAssetModelPropertiesFluentBuilder {
             crate::operation::list_asset_model_properties::ListAssetModelProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_asset_model_properties::ListAssetModelPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_asset_model_properties::ListAssetModelPropertiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListAssetModelPropertiesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListAssetModelPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_asset_model_properties::ListAssetModelPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_asset_model_properties::ListAssetModelPropertiesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListAssetModelPropertiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_asset_model_properties::ListAssetModelPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_asset_model_properties::ListAssetModelPropertiesError>,
     > {
         self.send_middleware().await
     }
@@ -114,34 +105,23 @@ impl ListAssetModelPropertiesFluentBuilder {
             crate::operation::list_asset_model_properties::ListAssetModelProperties,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_asset_model_properties::ListAssetModelPropertiesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_asset_model_properties::ListAssetModelPropertiesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_asset_model_properties::paginator::ListAssetModelPropertiesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_asset_model_properties::paginator::ListAssetModelPropertiesPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_asset_model_properties::paginator::ListAssetModelPropertiesPaginator {
         crate::operation::list_asset_model_properties::paginator::ListAssetModelPropertiesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the asset model.</p>
-    pub fn asset_model_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_model_id(input.into());
         self
     }
     /// <p>The ID of the asset model.</p>
-    pub fn set_asset_model_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_model_id(input);
         self
     }
@@ -193,10 +173,7 @@ impl ListAssetModelPropertiesFluentBuilder {
     /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
     /// </ul>
     /// <p>Default: <code>BASE</code> </p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListAssetModelPropertiesFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListAssetModelPropertiesFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -206,9 +183,7 @@ impl ListAssetModelPropertiesFluentBuilder {
     /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
     /// </ul>
     /// <p>Default: <code>BASE</code> </p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListAssetModelPropertiesFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListAssetModelPropertiesFilter> {
         self.inner.get_filter()
     }
 }

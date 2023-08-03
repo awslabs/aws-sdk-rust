@@ -22,16 +22,14 @@ impl ListTopicRuleDestinationsInput {
 }
 impl ListTopicRuleDestinationsInput {
     /// Creates a new builder-style object to manufacture [`ListTopicRuleDestinationsInput`](crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsInput).
-    pub fn builder() -> crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsInputBuilder{
+    pub fn builder() -> crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsInputBuilder {
         crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListTopicRuleDestinationsInput`](crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTopicRuleDestinationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl ListTopicRuleDestinationsInputBuilder {
         crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

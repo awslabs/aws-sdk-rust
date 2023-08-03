@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for UpgradeLensReviewOutput {
 }
 impl UpgradeLensReviewOutput {
     /// Creates a new builder-style object to manufacture [`UpgradeLensReviewOutput`](crate::operation::upgrade_lens_review::UpgradeLensReviewOutput).
-    pub fn builder(
-    ) -> crate::operation::upgrade_lens_review::builders::UpgradeLensReviewOutputBuilder {
+    pub fn builder() -> crate::operation::upgrade_lens_review::builders::UpgradeLensReviewOutputBuilder {
         crate::operation::upgrade_lens_review::builders::UpgradeLensReviewOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpgradeLensReviewOutput`](crate::operation::upgrade_lens_review::UpgradeLensReviewOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpgradeLensReviewOutputBuilder {
     _request_id: Option<String>,
 }

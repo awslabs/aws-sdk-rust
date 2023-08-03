@@ -103,9 +103,7 @@ impl LanguageModel {
 
 /// A builder for [`LanguageModel`](crate::types::LanguageModel).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LanguageModelBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -143,10 +141,7 @@ impl LanguageModelBuilder {
     }
     /// <p>The date and time the specified custom language model was created.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -163,10 +158,7 @@ impl LanguageModelBuilder {
     }
     /// <p>The date and time the specified custom language model was last modified.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -183,10 +175,7 @@ impl LanguageModelBuilder {
     }
     /// <p>The language code used to create your custom language model. Each custom language model must contain terms in only one language, and the language you select for your custom language model must match the language of your training and tuning data.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::ClmLanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::ClmLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -201,10 +190,7 @@ impl LanguageModelBuilder {
         self
     }
     /// <p>The Amazon Transcribe standard language model, or base model, used to create your custom language model.</p>
-    pub fn set_base_model_name(
-        mut self,
-        input: ::std::option::Option<crate::types::BaseModelName>,
-    ) -> Self {
+    pub fn set_base_model_name(mut self, input: ::std::option::Option<crate::types::BaseModelName>) -> Self {
         self.base_model_name = input;
         self
     }
@@ -218,10 +204,7 @@ impl LanguageModelBuilder {
         self
     }
     /// <p>The status of the specified custom language model. When the status displays as <code>COMPLETED</code> the model is ready for use.</p>
-    pub fn set_model_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelStatus>,
-    ) -> Self {
+    pub fn set_model_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
         self.model_status = input;
         self
     }
@@ -253,18 +236,12 @@ impl LanguageModelBuilder {
         &self.upgrade_availability
     }
     /// <p>If <code>ModelStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the custom language model request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>ModelStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the custom language model request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -278,10 +255,7 @@ impl LanguageModelBuilder {
         self
     }
     /// <p>The Amazon S3 location of the input files used to train and tune your custom language model, in addition to the data access role ARN (Amazon Resource Name) that has permissions to access these data.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.input_data_config = input;
         self
     }

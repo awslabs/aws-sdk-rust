@@ -6,10 +6,7 @@ pub fn ser_merge_profiles_input(
     if let Some(var_1) = &input.field_source_profile_ids {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FieldSourceProfileIds").start_object();
-        crate::protocol_serde::shape_field_source_profile_ids::ser_field_source_profile_ids(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_field_source_profile_ids::ser_field_source_profile_ids(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.main_profile_id {

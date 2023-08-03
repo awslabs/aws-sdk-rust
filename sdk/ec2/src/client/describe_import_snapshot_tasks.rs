@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`import_snapshot_tasks(Option<Vec<ImportSnapshotTask>>)`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput::import_snapshot_tasks): <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput::next_token): <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeImportSnapshotTasksError>`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksError)
-    pub fn describe_import_snapshot_tasks(&self) -> crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder{
+    pub fn describe_import_snapshot_tasks(
+        &self,
+    ) -> crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder {
         crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder::new(self.handle.clone())
     }
 }

@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DeleteEventsByEventTypeOutput {
 }
 impl DeleteEventsByEventTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventsByEventTypeOutput`](crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeOutputBuilder {
         crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEventsByEventTypeOutput`](crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEventsByEventTypeOutputBuilder {
     pub(crate) event_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) events_deletion_status: ::std::option::Option<::std::string::String>,
@@ -47,18 +43,12 @@ pub struct DeleteEventsByEventTypeOutputBuilder {
 }
 impl DeleteEventsByEventTypeOutputBuilder {
     /// <p>Name of event type for which to delete the events.</p>
-    pub fn event_type_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of event type for which to delete the events.</p>
-    pub fn set_event_type_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type_name = input;
         self
     }
@@ -67,18 +57,12 @@ impl DeleteEventsByEventTypeOutputBuilder {
         &self.event_type_name
     }
     /// <p>The status of the delete request.</p>
-    pub fn events_deletion_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn events_deletion_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.events_deletion_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the delete request.</p>
-    pub fn set_events_deletion_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_events_deletion_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.events_deletion_status = input;
         self
     }
@@ -96,9 +80,7 @@ impl DeleteEventsByEventTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteEventsByEventTypeOutput`](crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput {
+    pub fn build(self) -> crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput {
         crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput {
             event_type_name: self.event_type_name,
             events_deletion_status: self.events_deletion_status,

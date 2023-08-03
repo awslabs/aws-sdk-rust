@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`portal_arn(Option<String>)`](crate::operation::associate_trust_store::AssociateTrustStoreOutput::portal_arn): <p>The ARN of the web portal.</p>
     ///   - [`trust_store_arn(Option<String>)`](crate::operation::associate_trust_store::AssociateTrustStoreOutput::trust_store_arn): <p>The ARN of the trust store.</p>
     /// - On failure, responds with [`SdkError<AssociateTrustStoreError>`](crate::operation::associate_trust_store::AssociateTrustStoreError)
-    pub fn associate_trust_store(
-        &self,
-    ) -> crate::operation::associate_trust_store::builders::AssociateTrustStoreFluentBuilder {
-        crate::operation::associate_trust_store::builders::AssociateTrustStoreFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn associate_trust_store(&self) -> crate::operation::associate_trust_store::builders::AssociateTrustStoreFluentBuilder {
+        crate::operation::associate_trust_store::builders::AssociateTrustStoreFluentBuilder::new(self.handle.clone())
     }
 }

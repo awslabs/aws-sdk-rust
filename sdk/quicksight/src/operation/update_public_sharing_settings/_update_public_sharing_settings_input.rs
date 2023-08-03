@@ -22,34 +22,26 @@ impl UpdatePublicSharingSettingsInput {
 }
 impl UpdatePublicSharingSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdatePublicSharingSettingsInput`](crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput).
-    pub fn builder() -> crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsInputBuilder{
+    pub fn builder() -> crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsInputBuilder {
         crate::operation::update_public_sharing_settings::builders::UpdatePublicSharingSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdatePublicSharingSettingsInput`](crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePublicSharingSettingsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) public_sharing_enabled: ::std::option::Option<bool>,
 }
 impl UpdatePublicSharingSettingsInputBuilder {
     /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -78,11 +70,9 @@ impl UpdatePublicSharingSettingsInputBuilder {
         crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput {
-                aws_account_id: self.aws_account_id,
-                public_sharing_enabled: self.public_sharing_enabled,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsInput {
+            aws_account_id: self.aws_account_id,
+            public_sharing_enabled: self.public_sharing_enabled,
+        })
     }
 }

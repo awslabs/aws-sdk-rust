@@ -29,11 +29,7 @@ impl super::Client {
     ///   - [`external_source_setting(Option<ExternalSourceSetting>)`](crate::operation::update_slot_type::UpdateSlotTypeOutput::external_source_setting): <p>Provides information about the external source of the slot type's definition.</p>
     ///   - [`composite_slot_type_setting(Option<CompositeSlotTypeSetting>)`](crate::operation::update_slot_type::UpdateSlotTypeOutput::composite_slot_type_setting): <p>Specifications for a composite slot type.</p>
     /// - On failure, responds with [`SdkError<UpdateSlotTypeError>`](crate::operation::update_slot_type::UpdateSlotTypeError)
-    pub fn update_slot_type(
-        &self,
-    ) -> crate::operation::update_slot_type::builders::UpdateSlotTypeFluentBuilder {
-        crate::operation::update_slot_type::builders::UpdateSlotTypeFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_slot_type(&self) -> crate::operation::update_slot_type::builders::UpdateSlotTypeFluentBuilder {
+        crate::operation::update_slot_type::builders::UpdateSlotTypeFluentBuilder::new(self.handle.clone())
     }
 }

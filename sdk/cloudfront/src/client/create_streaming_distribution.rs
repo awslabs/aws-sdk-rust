@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`location(Option<String>)`](crate::operation::create_streaming_distribution::CreateStreamingDistributionOutput::location): <p>The fully qualified URI of the new streaming distribution resource just created.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::create_streaming_distribution::CreateStreamingDistributionOutput::e_tag): <p>The current version of the streaming distribution created.</p>
     /// - On failure, responds with [`SdkError<CreateStreamingDistributionError>`](crate::operation::create_streaming_distribution::CreateStreamingDistributionError)
-    pub fn create_streaming_distribution(&self) -> crate::operation::create_streaming_distribution::builders::CreateStreamingDistributionFluentBuilder{
+    pub fn create_streaming_distribution(
+        &self,
+    ) -> crate::operation::create_streaming_distribution::builders::CreateStreamingDistributionFluentBuilder {
         crate::operation::create_streaming_distribution::builders::CreateStreamingDistributionFluentBuilder::new(self.handle.clone())
     }
 }

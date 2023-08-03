@@ -30,9 +30,7 @@ impl SelfManagedKafkaAccessConfigurationVpc {
 
 /// A builder for [`SelfManagedKafkaAccessConfigurationVpc`](crate::types::SelfManagedKafkaAccessConfigurationVpc).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelfManagedKafkaAccessConfigurationVpcBuilder {
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -50,10 +48,7 @@ impl SelfManagedKafkaAccessConfigurationVpcBuilder {
         self
     }
     /// <p>Specifies the subnets associated with the stream. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
-    pub fn set_subnets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnets = input;
         self
     }
@@ -66,27 +61,19 @@ impl SelfManagedKafkaAccessConfigurationVpcBuilder {
     /// To override the contents of this collection use [`set_security_group`](Self::set_security_group).
     ///
     /// <p>Specifies the security groups associated with the stream. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-    pub fn security_group(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group.unwrap_or_default();
         v.push(input.into());
         self.security_group = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the security groups associated with the stream. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-    pub fn set_security_group(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group = input;
         self
     }
     /// <p>Specifies the security groups associated with the stream. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-    pub fn get_security_group(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group
     }
     /// Consumes the builder and constructs a [`SelfManagedKafkaAccessConfigurationVpc`](crate::types::SelfManagedKafkaAccessConfigurationVpc).

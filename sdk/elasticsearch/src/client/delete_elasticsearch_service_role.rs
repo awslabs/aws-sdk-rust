@@ -5,7 +5,9 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::delete_elasticsearch_service_role::builders::DeleteElasticsearchServiceRoleFluentBuilder::send) it.
     /// - On success, responds with [`DeleteElasticsearchServiceRoleOutput`](crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleOutput)
     /// - On failure, responds with [`SdkError<DeleteElasticsearchServiceRoleError>`](crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleError)
-    pub fn delete_elasticsearch_service_role(&self) -> crate::operation::delete_elasticsearch_service_role::builders::DeleteElasticsearchServiceRoleFluentBuilder{
+    pub fn delete_elasticsearch_service_role(
+        &self,
+    ) -> crate::operation::delete_elasticsearch_service_role::builders::DeleteElasticsearchServiceRoleFluentBuilder {
         crate::operation::delete_elasticsearch_service_role::builders::DeleteElasticsearchServiceRoleFluentBuilder::new(self.handle.clone())
     }
 }

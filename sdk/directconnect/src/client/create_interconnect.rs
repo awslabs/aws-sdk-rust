@@ -26,11 +26,7 @@ impl super::Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_interconnect::CreateInterconnectOutput::tags): <p>The tags associated with the interconnect.</p>
     ///   - [`provider_name(Option<String>)`](crate::operation::create_interconnect::CreateInterconnectOutput::provider_name): <p>The name of the service provider associated with the interconnect.</p>
     /// - On failure, responds with [`SdkError<CreateInterconnectError>`](crate::operation::create_interconnect::CreateInterconnectError)
-    pub fn create_interconnect(
-        &self,
-    ) -> crate::operation::create_interconnect::builders::CreateInterconnectFluentBuilder {
-        crate::operation::create_interconnect::builders::CreateInterconnectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_interconnect(&self) -> crate::operation::create_interconnect::builders::CreateInterconnectFluentBuilder {
+        crate::operation::create_interconnect::builders::CreateInterconnectFluentBuilder::new(self.handle.clone())
     }
 }

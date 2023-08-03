@@ -6,14 +6,11 @@
 pub struct ChatParticipantRoleConfig {
     /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
     #[doc(hidden)]
-    pub participant_timer_config_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTimerConfiguration>>,
+    pub participant_timer_config_list: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTimerConfiguration>>,
 }
 impl ChatParticipantRoleConfig {
     /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
-    pub fn participant_timer_config_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ParticipantTimerConfiguration]> {
+    pub fn participant_timer_config_list(&self) -> ::std::option::Option<&[crate::types::ParticipantTimerConfiguration]> {
         self.participant_timer_config_list.as_deref()
     }
 }
@@ -26,12 +23,9 @@ impl ChatParticipantRoleConfig {
 
 /// A builder for [`ChatParticipantRoleConfig`](crate::types::ChatParticipantRoleConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ChatParticipantRoleConfigBuilder {
-    pub(crate) participant_timer_config_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTimerConfiguration>>,
+    pub(crate) participant_timer_config_list: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTimerConfiguration>>,
 }
 impl ChatParticipantRoleConfigBuilder {
     /// Appends an item to `participant_timer_config_list`.
@@ -39,10 +33,7 @@ impl ChatParticipantRoleConfigBuilder {
     /// To override the contents of this collection use [`set_participant_timer_config_list`](Self::set_participant_timer_config_list).
     ///
     /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
-    pub fn participant_timer_config_list(
-        mut self,
-        input: crate::types::ParticipantTimerConfiguration,
-    ) -> Self {
+    pub fn participant_timer_config_list(mut self, input: crate::types::ParticipantTimerConfiguration) -> Self {
         let mut v = self.participant_timer_config_list.unwrap_or_default();
         v.push(input);
         self.participant_timer_config_list = ::std::option::Option::Some(v);
@@ -57,9 +48,7 @@ impl ChatParticipantRoleConfigBuilder {
         self
     }
     /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
-    pub fn get_participant_timer_config_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTimerConfiguration>> {
+    pub fn get_participant_timer_config_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTimerConfiguration>> {
         &self.participant_timer_config_list
     }
     /// Consumes the builder and constructs a [`ChatParticipantRoleConfig`](crate::types::ChatParticipantRoleConfig).

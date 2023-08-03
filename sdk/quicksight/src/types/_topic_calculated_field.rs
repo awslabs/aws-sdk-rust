@@ -42,12 +42,10 @@ pub struct TopicCalculatedField {
     pub semantic_type: ::std::option::Option<crate::types::SemanticType>,
     /// <p>The list of aggregation types that are allowed for the calculated field. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
     #[doc(hidden)]
-    pub allowed_aggregations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
+    pub allowed_aggregations: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
     /// <p>The list of aggregation types that are not allowed for the calculated field. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
     #[doc(hidden)]
-    pub not_allowed_aggregations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
+    pub not_allowed_aggregations: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
     /// <p>A Boolean value that indicates whether to never aggregate calculated field in filters.</p>
     #[doc(hidden)]
     pub never_aggregate_in_filter: bool,
@@ -105,15 +103,11 @@ impl TopicCalculatedField {
         self.semantic_type.as_ref()
     }
     /// <p>The list of aggregation types that are allowed for the calculated field. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn allowed_aggregations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AuthorSpecifiedAggregation]> {
+    pub fn allowed_aggregations(&self) -> ::std::option::Option<&[crate::types::AuthorSpecifiedAggregation]> {
         self.allowed_aggregations.as_deref()
     }
     /// <p>The list of aggregation types that are not allowed for the calculated field. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn not_allowed_aggregations(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AuthorSpecifiedAggregation]> {
+    pub fn not_allowed_aggregations(&self) -> ::std::option::Option<&[crate::types::AuthorSpecifiedAggregation]> {
         self.not_allowed_aggregations.as_deref()
     }
     /// <p>A Boolean value that indicates whether to never aggregate calculated field in filters.</p>
@@ -129,10 +123,7 @@ impl ::std::fmt::Debug for TopicCalculatedField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TopicCalculatedField");
         formatter.field("calculated_field_name", &self.calculated_field_name);
-        formatter.field(
-            "calculated_field_description",
-            &self.calculated_field_description,
-        );
+        formatter.field("calculated_field_description", &self.calculated_field_description);
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
         formatter.field("calculated_field_synonyms", &self.calculated_field_synonyms);
         formatter.field("is_included_in_topic", &self.is_included_in_topic);
@@ -164,8 +155,7 @@ pub struct TopicCalculatedFieldBuilder {
     pub(crate) calculated_field_name: ::std::option::Option<::std::string::String>,
     pub(crate) calculated_field_description: ::std::option::Option<::std::string::String>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,
-    pub(crate) calculated_field_synonyms:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) calculated_field_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) is_included_in_topic: ::std::option::Option<bool>,
     pub(crate) disable_indexing: ::std::option::Option<bool>,
     pub(crate) column_data_role: ::std::option::Option<crate::types::ColumnDataRole>,
@@ -174,28 +164,19 @@ pub struct TopicCalculatedFieldBuilder {
     pub(crate) aggregation: ::std::option::Option<crate::types::DefaultAggregation>,
     pub(crate) comparative_order: ::std::option::Option<crate::types::ComparativeOrder>,
     pub(crate) semantic_type: ::std::option::Option<crate::types::SemanticType>,
-    pub(crate) allowed_aggregations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
-    pub(crate) not_allowed_aggregations:
-        ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
+    pub(crate) allowed_aggregations: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
+    pub(crate) not_allowed_aggregations: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
     pub(crate) never_aggregate_in_filter: ::std::option::Option<bool>,
-    pub(crate) cell_value_synonyms:
-        ::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>>,
+    pub(crate) cell_value_synonyms: ::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>>,
 }
 impl TopicCalculatedFieldBuilder {
     /// <p>The calculated field name.</p>
-    pub fn calculated_field_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculated_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculated_field_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The calculated field name.</p>
-    pub fn set_calculated_field_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculated_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculated_field_name = input;
         self
     }
@@ -204,25 +185,17 @@ impl TopicCalculatedFieldBuilder {
         &self.calculated_field_name
     }
     /// <p>The calculated field description.</p>
-    pub fn calculated_field_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculated_field_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculated_field_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The calculated field description.</p>
-    pub fn set_calculated_field_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_calculated_field_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculated_field_description = input;
         self
     }
     /// <p>The calculated field description.</p>
-    pub fn get_calculated_field_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_calculated_field_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.calculated_field_description
     }
     /// <p>The calculated field expression.</p>
@@ -244,27 +217,19 @@ impl TopicCalculatedFieldBuilder {
     /// To override the contents of this collection use [`set_calculated_field_synonyms`](Self::set_calculated_field_synonyms).
     ///
     /// <p>The other names or aliases for the calculated field.</p>
-    pub fn calculated_field_synonyms(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calculated_field_synonyms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.calculated_field_synonyms.unwrap_or_default();
         v.push(input.into());
         self.calculated_field_synonyms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The other names or aliases for the calculated field.</p>
-    pub fn set_calculated_field_synonyms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_calculated_field_synonyms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.calculated_field_synonyms = input;
         self
     }
     /// <p>The other names or aliases for the calculated field.</p>
-    pub fn get_calculated_field_synonyms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_calculated_field_synonyms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.calculated_field_synonyms
     }
     /// <p>A boolean value that indicates if a calculated field is included in the topic.</p>
@@ -301,10 +266,7 @@ impl TopicCalculatedFieldBuilder {
         self
     }
     /// <p>The column data role for a calculated field. Valid values for this structure are <code>DIMENSION</code> and <code>MEASURE</code>.</p>
-    pub fn set_column_data_role(
-        mut self,
-        input: ::std::option::Option<crate::types::ColumnDataRole>,
-    ) -> Self {
+    pub fn set_column_data_role(mut self, input: ::std::option::Option<crate::types::ColumnDataRole>) -> Self {
         self.column_data_role = input;
         self
     }
@@ -318,17 +280,12 @@ impl TopicCalculatedFieldBuilder {
         self
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn set_time_granularity(
-        mut self,
-        input: ::std::option::Option<crate::types::TopicTimeGranularity>,
-    ) -> Self {
+    pub fn set_time_granularity(mut self, input: ::std::option::Option<crate::types::TopicTimeGranularity>) -> Self {
         self.time_granularity = input;
         self
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn get_time_granularity(
-        &self,
-    ) -> &::std::option::Option<crate::types::TopicTimeGranularity> {
+    pub fn get_time_granularity(&self) -> &::std::option::Option<crate::types::TopicTimeGranularity> {
         &self.time_granularity
     }
     /// <p>The default formatting definition.</p>
@@ -337,17 +294,12 @@ impl TopicCalculatedFieldBuilder {
         self
     }
     /// <p>The default formatting definition.</p>
-    pub fn set_default_formatting(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultFormatting>,
-    ) -> Self {
+    pub fn set_default_formatting(mut self, input: ::std::option::Option<crate::types::DefaultFormatting>) -> Self {
         self.default_formatting = input;
         self
     }
     /// <p>The default formatting definition.</p>
-    pub fn get_default_formatting(
-        &self,
-    ) -> &::std::option::Option<crate::types::DefaultFormatting> {
+    pub fn get_default_formatting(&self) -> &::std::option::Option<crate::types::DefaultFormatting> {
         &self.default_formatting
     }
     /// <p>The default aggregation. Valid values for this structure are <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.</p>
@@ -356,10 +308,7 @@ impl TopicCalculatedFieldBuilder {
         self
     }
     /// <p>The default aggregation. Valid values for this structure are <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.</p>
-    pub fn set_aggregation(
-        mut self,
-        input: ::std::option::Option<crate::types::DefaultAggregation>,
-    ) -> Self {
+    pub fn set_aggregation(mut self, input: ::std::option::Option<crate::types::DefaultAggregation>) -> Self {
         self.aggregation = input;
         self
     }
@@ -373,10 +322,7 @@ impl TopicCalculatedFieldBuilder {
         self
     }
     /// <p>The order in which data is displayed for the calculated field when it's used in a comparative context.</p>
-    pub fn set_comparative_order(
-        mut self,
-        input: ::std::option::Option<crate::types::ComparativeOrder>,
-    ) -> Self {
+    pub fn set_comparative_order(mut self, input: ::std::option::Option<crate::types::ComparativeOrder>) -> Self {
         self.comparative_order = input;
         self
     }
@@ -390,10 +336,7 @@ impl TopicCalculatedFieldBuilder {
         self
     }
     /// <p>The semantic type.</p>
-    pub fn set_semantic_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SemanticType>,
-    ) -> Self {
+    pub fn set_semantic_type(mut self, input: ::std::option::Option<crate::types::SemanticType>) -> Self {
         self.semantic_type = input;
         self
     }
@@ -413,17 +356,12 @@ impl TopicCalculatedFieldBuilder {
         self
     }
     /// <p>The list of aggregation types that are allowed for the calculated field. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn set_allowed_aggregations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
-    ) -> Self {
+    pub fn set_allowed_aggregations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>) -> Self {
         self.allowed_aggregations = input;
         self
     }
     /// <p>The list of aggregation types that are allowed for the calculated field. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn get_allowed_aggregations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>> {
+    pub fn get_allowed_aggregations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>> {
         &self.allowed_aggregations
     }
     /// Appends an item to `not_allowed_aggregations`.
@@ -431,27 +369,19 @@ impl TopicCalculatedFieldBuilder {
     /// To override the contents of this collection use [`set_not_allowed_aggregations`](Self::set_not_allowed_aggregations).
     ///
     /// <p>The list of aggregation types that are not allowed for the calculated field. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn not_allowed_aggregations(
-        mut self,
-        input: crate::types::AuthorSpecifiedAggregation,
-    ) -> Self {
+    pub fn not_allowed_aggregations(mut self, input: crate::types::AuthorSpecifiedAggregation) -> Self {
         let mut v = self.not_allowed_aggregations.unwrap_or_default();
         v.push(input);
         self.not_allowed_aggregations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of aggregation types that are not allowed for the calculated field. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn set_not_allowed_aggregations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
-    ) -> Self {
+    pub fn set_not_allowed_aggregations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>) -> Self {
         self.not_allowed_aggregations = input;
         self
     }
     /// <p>The list of aggregation types that are not allowed for the calculated field. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn get_not_allowed_aggregations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>> {
+    pub fn get_not_allowed_aggregations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>> {
         &self.not_allowed_aggregations
     }
     /// <p>A Boolean value that indicates whether to never aggregate calculated field in filters.</p>
@@ -480,17 +410,12 @@ impl TopicCalculatedFieldBuilder {
         self
     }
     /// <p>The other names or aliases for the calculated field cell value.</p>
-    pub fn set_cell_value_synonyms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>>,
-    ) -> Self {
+    pub fn set_cell_value_synonyms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>>) -> Self {
         self.cell_value_synonyms = input;
         self
     }
     /// <p>The other names or aliases for the calculated field cell value.</p>
-    pub fn get_cell_value_synonyms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>> {
+    pub fn get_cell_value_synonyms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>> {
         &self.cell_value_synonyms
     }
     /// Consumes the builder and constructs a [`TopicCalculatedField`](crate::types::TopicCalculatedField).
@@ -519,10 +444,7 @@ impl ::std::fmt::Debug for TopicCalculatedFieldBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TopicCalculatedFieldBuilder");
         formatter.field("calculated_field_name", &self.calculated_field_name);
-        formatter.field(
-            "calculated_field_description",
-            &self.calculated_field_description,
-        );
+        formatter.field("calculated_field_description", &self.calculated_field_description);
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
         formatter.field("calculated_field_synonyms", &self.calculated_field_synonyms);
         formatter.field("is_included_in_topic", &self.is_included_in_topic);

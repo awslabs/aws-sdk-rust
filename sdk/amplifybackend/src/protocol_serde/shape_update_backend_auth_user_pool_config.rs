@@ -6,7 +6,10 @@ pub fn ser_update_backend_auth_user_pool_config(
     if let Some(var_1) = &input.forgot_password {
         #[allow(unused_mut)]
         let mut object_2 = object.key("forgotPassword").start_object();
-        crate::protocol_serde::shape_update_backend_auth_forgot_password_config::ser_update_backend_auth_forgot_password_config(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_update_backend_auth_forgot_password_config::ser_update_backend_auth_forgot_password_config(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
     if let Some(var_3) = &input.mfa {
@@ -24,13 +27,19 @@ pub fn ser_update_backend_auth_user_pool_config(
     if let Some(var_7) = &input.password_policy {
         #[allow(unused_mut)]
         let mut object_8 = object.key("passwordPolicy").start_object();
-        crate::protocol_serde::shape_update_backend_auth_password_policy_config::ser_update_backend_auth_password_policy_config(&mut object_8, var_7)?;
+        crate::protocol_serde::shape_update_backend_auth_password_policy_config::ser_update_backend_auth_password_policy_config(
+            &mut object_8,
+            var_7,
+        )?;
         object_8.finish();
     }
     if let Some(var_9) = &input.verification_message {
         #[allow(unused_mut)]
         let mut object_10 = object.key("verificationMessage").start_object();
-        crate::protocol_serde::shape_update_backend_auth_verification_message_config::ser_update_backend_auth_verification_message_config(&mut object_10, var_9)?;
+        crate::protocol_serde::shape_update_backend_auth_verification_message_config::ser_update_backend_auth_verification_message_config(
+            &mut object_10,
+            var_9,
+        )?;
         object_10.finish();
     }
     Ok(())

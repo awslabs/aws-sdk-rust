@@ -12,10 +12,7 @@ pub fn ser_integer_parameter_declaration(
     if let Some(var_3) = &input.default_values {
         #[allow(unused_mut)]
         let mut object_4 = object.key("DefaultValues").start_object();
-        crate::protocol_serde::shape_integer_default_values::ser_integer_default_values(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_integer_default_values::ser_integer_default_values(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.value_when_unset {
@@ -41,17 +38,9 @@ pub fn ser_integer_parameter_declaration(
 
 pub(crate) fn de_integer_parameter_declaration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::IntegerParameterDeclaration>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::IntegerParameterDeclaration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -61,63 +50,51 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "ParameterValueType" => {
-                                builder = builder.set_parameter_value_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::ParameterValueType::from(u.as_ref())
-                                        })
-                                    })
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "ParameterValueType" => {
+                            builder = builder.set_parameter_value_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ParameterValueType::from(u.as_ref())))
                                     .transpose()?,
-                                );
-                            }
-                            "Name" => {
-                                builder = builder.set_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "Name" => {
+                            builder = builder.set_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "DefaultValues" => {
-                                builder = builder.set_default_values(
-                                    crate::protocol_serde::shape_integer_default_values::de_integer_default_values(tokens)?
-                                );
-                            }
-                            "ValueWhenUnset" => {
-                                builder = builder.set_value_when_unset(
-                                    crate::protocol_serde::shape_integer_value_when_unset_configuration::de_integer_value_when_unset_configuration(tokens)?
-                                );
-                            }
-                            "MappedDataSetParameters" => {
-                                builder = builder.set_mapped_data_set_parameters(
-                                    crate::protocol_serde::shape_mapped_data_set_parameters::de_mapped_data_set_parameters(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "DefaultValues" => {
+                            builder =
+                                builder.set_default_values(crate::protocol_serde::shape_integer_default_values::de_integer_default_values(tokens)?);
+                        }
+                        "ValueWhenUnset" => {
+                            builder = builder.set_value_when_unset(
+                                crate::protocol_serde::shape_integer_value_when_unset_configuration::de_integer_value_when_unset_configuration(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "MappedDataSetParameters" => {
+                            builder = builder.set_mapped_data_set_parameters(
+                                crate::protocol_serde::shape_mapped_data_set_parameters::de_mapped_data_set_parameters(tokens)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

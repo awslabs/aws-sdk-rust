@@ -12,8 +12,7 @@ pub struct DataConfig {
     pub attribute_configs: ::std::option::Option<::std::vec::Vec<crate::types::AttributeConfig>>,
     /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
     #[doc(hidden)]
-    pub additional_datasets:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDataset>>,
+    pub additional_datasets: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDataset>>,
 }
 impl DataConfig {
     /// <p>The ARN of the dataset group used to train the predictor.</p>
@@ -38,30 +37,20 @@ impl DataConfig {
 
 /// A builder for [`DataConfig`](crate::types::DataConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataConfigBuilder {
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) attribute_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::AttributeConfig>>,
-    pub(crate) additional_datasets:
-        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDataset>>,
+    pub(crate) attribute_configs: ::std::option::Option<::std::vec::Vec<crate::types::AttributeConfig>>,
+    pub(crate) additional_datasets: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDataset>>,
 }
 impl DataConfigBuilder {
     /// <p>The ARN of the dataset group used to train the predictor.</p>
-    pub fn dataset_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the dataset group used to train the predictor.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_group_arn = input;
         self
     }
@@ -81,17 +70,12 @@ impl DataConfigBuilder {
         self
     }
     /// <p>Aggregation and filling options for attributes in your dataset group.</p>
-    pub fn set_attribute_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeConfig>>,
-    ) -> Self {
+    pub fn set_attribute_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeConfig>>) -> Self {
         self.attribute_configs = input;
         self
     }
     /// <p>Aggregation and filling options for attributes in your dataset group.</p>
-    pub fn get_attribute_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeConfig>> {
+    pub fn get_attribute_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeConfig>> {
         &self.attribute_configs
     }
     /// Appends an item to `additional_datasets`.
@@ -106,17 +90,12 @@ impl DataConfigBuilder {
         self
     }
     /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
-    pub fn set_additional_datasets(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDataset>>,
-    ) -> Self {
+    pub fn set_additional_datasets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDataset>>) -> Self {
         self.additional_datasets = input;
         self
     }
     /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
-    pub fn get_additional_datasets(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalDataset>> {
+    pub fn get_additional_datasets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalDataset>> {
         &self.additional_datasets
     }
     /// Consumes the builder and constructs a [`DataConfig`](crate::types::DataConfig).

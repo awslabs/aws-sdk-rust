@@ -37,9 +37,7 @@ impl DatetimeOptions {
 
 /// A builder for [`DatetimeOptions`](crate::types::DatetimeOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatetimeOptionsBuilder {
     pub(crate) format: ::std::option::Option<::std::string::String>,
     pub(crate) timezone_offset: ::std::option::Option<::std::string::String>,
@@ -61,18 +59,12 @@ impl DatetimeOptionsBuilder {
         &self.format
     }
     /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
-    pub fn timezone_offset(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn timezone_offset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone_offset = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
-    pub fn set_timezone_offset(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_timezone_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone_offset = input;
         self
     }

@@ -5,15 +5,12 @@
 pub struct BatchDeleteFeaturedResultsSetOutput {
     /// <p>The list of errors for the featured results set IDs, explaining why they couldn't be removed from the index.</p>
     #[doc(hidden)]
-    pub errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteFeaturedResultsSetOutput {
     /// <p>The list of errors for the featured results set IDs, explaining why they couldn't be removed from the index.</p>
-    pub fn errors(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BatchDeleteFeaturedResultsSetError]> {
+    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchDeleteFeaturedResultsSetError]> {
         self.errors.as_deref()
     }
 }
@@ -24,19 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchDeleteFeaturedResultsSetOutput {
 }
 impl BatchDeleteFeaturedResultsSetOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteFeaturedResultsSetOutput`](crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput).
-    pub fn builder() -> crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetOutputBuilder{
+    pub fn builder() -> crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetOutputBuilder {
         crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteFeaturedResultsSetOutput`](crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteFeaturedResultsSetOutputBuilder {
-    pub(crate) errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteFeaturedResultsSetOutputBuilder {
@@ -52,20 +46,12 @@ impl BatchDeleteFeaturedResultsSetOutputBuilder {
         self
     }
     /// <p>The list of errors for the featured results set IDs, explaining why they couldn't be removed from the index.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>,
-        >,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>The list of errors for the featured results set IDs, explaining why they couldn't be removed from the index.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>>
-    {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteFeaturedResultsSetError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -78,10 +64,7 @@ impl BatchDeleteFeaturedResultsSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDeleteFeaturedResultsSetOutput`](crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput
-    {
+    pub fn build(self) -> crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput {
         crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput {
             errors: self.errors,
             _request_id: self._request_id,

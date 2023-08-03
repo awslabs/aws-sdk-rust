@@ -58,18 +58,12 @@ impl UnsubscribeInputBuilder {
         &self.arn
     }
     /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
-    pub fn target_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn target_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
-    pub fn set_target_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_target_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_address = input;
         self
     }
@@ -78,12 +72,7 @@ impl UnsubscribeInputBuilder {
         &self.target_address
     }
     /// Consumes the builder and constructs a [`UnsubscribeInput`](crate::operation::unsubscribe::UnsubscribeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::unsubscribe::UnsubscribeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::unsubscribe::UnsubscribeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::unsubscribe::UnsubscribeInput {
             arn: self.arn,
             target_address: self.target_address,

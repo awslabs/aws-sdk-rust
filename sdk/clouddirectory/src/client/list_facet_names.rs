@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`facet_names(Option<Vec<String>>)`](crate::operation::list_facet_names::ListFacetNamesOutput::facet_names): <p>The names of facets that exist within the schema.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_facet_names::ListFacetNamesOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListFacetNamesError>`](crate::operation::list_facet_names::ListFacetNamesError)
-    pub fn list_facet_names(
-        &self,
-    ) -> crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder {
-        crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_facet_names(&self) -> crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder {
+        crate::operation::list_facet_names::builders::ListFacetNamesFluentBuilder::new(self.handle.clone())
     }
 }

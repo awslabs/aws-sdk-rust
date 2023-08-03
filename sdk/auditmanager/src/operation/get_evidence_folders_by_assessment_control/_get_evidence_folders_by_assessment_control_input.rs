@@ -43,16 +43,14 @@ impl GetEvidenceFoldersByAssessmentControlInput {
 }
 impl GetEvidenceFoldersByAssessmentControlInput {
     /// Creates a new builder-style object to manufacture [`GetEvidenceFoldersByAssessmentControlInput`](crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlInput).
-    pub fn builder() -> crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlInputBuilder{
+    pub fn builder() -> crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlInputBuilder {
         crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlInputBuilder::default()
     }
 }
 
 /// A builder for [`GetEvidenceFoldersByAssessmentControlInput`](crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEvidenceFoldersByAssessmentControlInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) control_set_id: ::std::option::Option<::std::string::String>,
@@ -62,18 +60,12 @@ pub struct GetEvidenceFoldersByAssessmentControlInputBuilder {
 }
 impl GetEvidenceFoldersByAssessmentControlInputBuilder {
     /// <p> The identifier for the assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -82,18 +74,12 @@ impl GetEvidenceFoldersByAssessmentControlInputBuilder {
         &self.assessment_id
     }
     /// <p> The identifier for the control set. </p>
-    pub fn control_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the control set. </p>
-    pub fn set_control_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_set_id = input;
         self
     }
@@ -144,20 +130,20 @@ impl GetEvidenceFoldersByAssessmentControlInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetEvidenceFoldersByAssessmentControlInput`](crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlInput {
-                assessment_id: self.assessment_id
-                ,
-                control_set_id: self.control_set_id
-                ,
-                control_id: self.control_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                assessment_id: self.assessment_id,
+                control_set_id: self.control_set_id,
+                control_id: self.control_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

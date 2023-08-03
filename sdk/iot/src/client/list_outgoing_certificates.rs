@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`outgoing_certificates(Option<Vec<OutgoingCertificate>>)`](crate::operation::list_outgoing_certificates::ListOutgoingCertificatesOutput::outgoing_certificates): <p>The certificates that are being transferred but not yet accepted.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_outgoing_certificates::ListOutgoingCertificatesOutput::next_marker): <p>The marker for the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListOutgoingCertificatesError>`](crate::operation::list_outgoing_certificates::ListOutgoingCertificatesError)
-    pub fn list_outgoing_certificates(
-        &self,
-    ) -> crate::operation::list_outgoing_certificates::builders::ListOutgoingCertificatesFluentBuilder
-    {
+    pub fn list_outgoing_certificates(&self) -> crate::operation::list_outgoing_certificates::builders::ListOutgoingCertificatesFluentBuilder {
         crate::operation::list_outgoing_certificates::builders::ListOutgoingCertificatesFluentBuilder::new(self.handle.clone())
     }
 }

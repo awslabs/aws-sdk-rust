@@ -17,9 +17,7 @@ impl ReplaceRouteTableAssociationOutput {
         self.new_association_id.as_deref()
     }
     /// <p>The state of the association.</p>
-    pub fn association_state(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RouteTableAssociationState> {
+    pub fn association_state(&self) -> ::std::option::Option<&crate::types::RouteTableAssociationState> {
         self.association_state.as_ref()
     }
 }
@@ -30,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ReplaceRouteTableAssociationOutput {
 }
 impl ReplaceRouteTableAssociationOutput {
     /// Creates a new builder-style object to manufacture [`ReplaceRouteTableAssociationOutput`](crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput).
-    pub fn builder() -> crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationOutputBuilder {
         crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationOutputBuilder::default()
     }
 }
 
 /// A builder for [`ReplaceRouteTableAssociationOutput`](crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplaceRouteTableAssociationOutputBuilder {
     pub(crate) new_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_state: ::std::option::Option<crate::types::RouteTableAssociationState>,
@@ -47,18 +43,12 @@ pub struct ReplaceRouteTableAssociationOutputBuilder {
 }
 impl ReplaceRouteTableAssociationOutputBuilder {
     /// <p>The ID of the new association.</p>
-    pub fn new_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn new_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the new association.</p>
-    pub fn set_new_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_new_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_association_id = input;
         self
     }
@@ -72,17 +62,12 @@ impl ReplaceRouteTableAssociationOutputBuilder {
         self
     }
     /// <p>The state of the association.</p>
-    pub fn set_association_state(
-        mut self,
-        input: ::std::option::Option<crate::types::RouteTableAssociationState>,
-    ) -> Self {
+    pub fn set_association_state(mut self, input: ::std::option::Option<crate::types::RouteTableAssociationState>) -> Self {
         self.association_state = input;
         self
     }
     /// <p>The state of the association.</p>
-    pub fn get_association_state(
-        &self,
-    ) -> &::std::option::Option<crate::types::RouteTableAssociationState> {
+    pub fn get_association_state(&self) -> &::std::option::Option<crate::types::RouteTableAssociationState> {
         &self.association_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -95,9 +80,7 @@ impl ReplaceRouteTableAssociationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ReplaceRouteTableAssociationOutput`](crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput {
+    pub fn build(self) -> crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput {
         crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput {
             new_association_id: self.new_association_id,
             association_state: self.association_state,

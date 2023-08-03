@@ -27,8 +27,7 @@ impl DescribeTableStatisticsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTableStatisticsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_table_statistics::builders::DescribeTableStatisticsInputBuilder,
+    inner: crate::operation::describe_table_statistics::builders::DescribeTableStatisticsInputBuilder,
 }
 impl DescribeTableStatisticsFluentBuilder {
     /// Creates a new `DescribeTableStatistics`.
@@ -39,10 +38,7 @@ impl DescribeTableStatisticsFluentBuilder {
         }
     }
     /// Access the DescribeTableStatistics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_table_statistics::builders::DescribeTableStatisticsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_table_statistics::builders::DescribeTableStatisticsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DescribeTableStatisticsFluentBuilder {
             crate::operation::describe_table_statistics::DescribeTableStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_table_statistics::DescribeTableStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_table_statistics::DescribeTableStatisticsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DescribeTableStatisticsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DescribeTableStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_table_statistics::DescribeTableStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_table_statistics::DescribeTableStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_table_statistics::DescribeTableStatisticsError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DescribeTableStatisticsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_table_statistics::DescribeTableStatisticsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_table_statistics::DescribeTableStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_table_statistics::DescribeTableStatisticsError>,
     > {
         self.send_middleware().await
     }
@@ -119,34 +106,23 @@ impl DescribeTableStatisticsFluentBuilder {
             crate::operation::describe_table_statistics::DescribeTableStatistics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_table_statistics::DescribeTableStatisticsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_table_statistics::DescribeTableStatisticsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_table_statistics::paginator::DescribeTableStatisticsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_table_statistics::paginator::DescribeTableStatisticsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_table_statistics::paginator::DescribeTableStatisticsPaginator {
         crate::operation::describe_table_statistics::paginator::DescribeTableStatisticsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    pub fn replication_task_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_task_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_replication_task_arn(input);
         self
     }
@@ -202,10 +178,7 @@ impl DescribeTableStatisticsFluentBuilder {
     /// <p>Filters applied to table statistics.</p>
     /// <p>Valid filter names: schema-name | table-name | table-state</p>
     /// <p>A combination of filters creates an AND condition where each record matches all specified filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

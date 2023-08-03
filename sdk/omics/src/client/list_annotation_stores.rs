@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`annotation_stores(Option<Vec<AnnotationStoreItem>>)`](crate::operation::list_annotation_stores::ListAnnotationStoresOutput::annotation_stores): <p>A list of stores.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_annotation_stores::ListAnnotationStoresOutput::next_token): <p>A pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ListAnnotationStoresError>`](crate::operation::list_annotation_stores::ListAnnotationStoresError)
-    pub fn list_annotation_stores(
-        &self,
-    ) -> crate::operation::list_annotation_stores::builders::ListAnnotationStoresFluentBuilder {
-        crate::operation::list_annotation_stores::builders::ListAnnotationStoresFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_annotation_stores(&self) -> crate::operation::list_annotation_stores::builders::ListAnnotationStoresFluentBuilder {
+        crate::operation::list_annotation_stores::builders::ListAnnotationStoresFluentBuilder::new(self.handle.clone())
     }
 }

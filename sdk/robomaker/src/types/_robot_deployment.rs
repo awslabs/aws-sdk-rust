@@ -65,9 +65,7 @@ impl RobotDeployment {
 
 /// A builder for [`RobotDeployment`](crate::types::RobotDeployment).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RobotDeploymentBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -98,17 +96,12 @@ impl RobotDeploymentBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the deployment was started.</p>
-    pub fn set_deployment_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deployment_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deployment_start_time = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the deployment was started.</p>
-    pub fn get_deployment_start_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_deployment_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.deployment_start_time
     }
     /// <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
@@ -117,17 +110,12 @@ impl RobotDeploymentBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
-    pub fn set_deployment_finish_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deployment_finish_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deployment_finish_time = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
-    pub fn get_deployment_finish_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_deployment_finish_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.deployment_finish_time
     }
     /// <p>The status of the robot deployment.</p>
@@ -150,10 +138,7 @@ impl RobotDeploymentBuilder {
         self
     }
     /// <p>Information about how the deployment is progressing.</p>
-    pub fn set_progress_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ProgressDetail>,
-    ) -> Self {
+    pub fn set_progress_detail(mut self, input: ::std::option::Option<crate::types::ProgressDetail>) -> Self {
         self.progress_detail = input;
         self
     }
@@ -162,18 +147,12 @@ impl RobotDeploymentBuilder {
         &self.progress_detail
     }
     /// <p>A short description of the reason why the robot deployment failed.</p>
-    pub fn failure_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short description of the reason why the robot deployment failed.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
         self
     }
@@ -187,10 +166,7 @@ impl RobotDeploymentBuilder {
         self
     }
     /// <p>The robot deployment failure code.</p>
-    pub fn set_failure_code(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentJobErrorCode>,
-    ) -> Self {
+    pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::DeploymentJobErrorCode>) -> Self {
         self.failure_code = input;
         self
     }

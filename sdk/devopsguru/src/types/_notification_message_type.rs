@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum NotificationMessageType {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for NotificationMessageType {
             "NEW_INSIGHT" => NotificationMessageType::NewInsight,
             "NEW_RECOMMENDATION" => NotificationMessageType::NewRecommendation,
             "SEVERITY_UPGRADED" => NotificationMessageType::SeverityUpgraded,
-            other => NotificationMessageType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => NotificationMessageType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

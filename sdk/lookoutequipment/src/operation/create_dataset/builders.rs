@@ -10,10 +10,7 @@ impl CreateDatasetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_dataset::CreateDatasetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset::CreateDatasetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_dataset();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateDatasetFluentBuilder {
         }
     }
     /// Access the CreateDataset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateDatasetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -134,10 +126,7 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
-    pub fn set_dataset_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetSchema>,
-    ) -> Self {
+    pub fn set_dataset_schema(mut self, input: ::std::option::Option<crate::types::DatasetSchema>) -> Self {
         self.inner = self.inner.set_dataset_schema(input);
         self
     }
@@ -146,18 +135,12 @@ impl CreateDatasetFluentBuilder {
         self.inner.get_dataset_schema()
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-    pub fn server_side_kms_key_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_side_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_side_kms_key_id(input.into());
         self
     }
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-    pub fn set_server_side_kms_key_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_side_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_side_kms_key_id(input);
         self
     }
@@ -189,10 +172,7 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>Any tags associated with the ingested data described in the dataset. </p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

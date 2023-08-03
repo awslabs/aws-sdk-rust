@@ -15,16 +15,14 @@ impl DescribeSnomedctInferenceJobInput {
 }
 impl DescribeSnomedctInferenceJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeSnomedctInferenceJobInput`](crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobInput).
-    pub fn builder() -> crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobInputBuilder {
         crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSnomedctInferenceJobInput`](crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnomedctInferenceJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl DescribeSnomedctInferenceJobInputBuilder {
         crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobInput { job_id: self.job_id })
     }
 }

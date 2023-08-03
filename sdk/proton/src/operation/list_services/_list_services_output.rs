@@ -35,9 +35,7 @@ impl ListServicesOutput {
 
 /// A builder for [`ListServicesOutput`](crate::operation::list_services::ListServicesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServicesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>,
@@ -70,17 +68,12 @@ impl ListServicesOutputBuilder {
         self
     }
     /// <p>An array of services with summaries of detail data.</p>
-    pub fn set_services(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>,
-    ) -> Self {
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>) -> Self {
         self.services = input;
         self
     }
     /// <p>An array of services with summaries of detail data.</p>
-    pub fn get_services(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>> {
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>> {
         &self.services
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

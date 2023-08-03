@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeIngestionOutput {
 }
 impl DescribeIngestionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIngestionOutput`](crate::operation::describe_ingestion::DescribeIngestionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_ingestion::builders::DescribeIngestionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_ingestion::builders::DescribeIngestionOutputBuilder {
         crate::operation::describe_ingestion::builders::DescribeIngestionOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeIngestionOutput`](crate::operation::describe_ingestion::DescribeIngestionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIngestionOutputBuilder {
     pub(crate) ingestion: ::std::option::Option<crate::types::Ingestion>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,

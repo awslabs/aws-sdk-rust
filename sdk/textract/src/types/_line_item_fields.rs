@@ -6,8 +6,7 @@
 pub struct LineItemFields {
     /// <p>ExpenseFields used to show information from detected lines on a table.</p>
     #[doc(hidden)]
-    pub line_item_expense_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>>,
+    pub line_item_expense_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>>,
 }
 impl LineItemFields {
     /// <p>ExpenseFields used to show information from detected lines on a table.</p>
@@ -24,12 +23,9 @@ impl LineItemFields {
 
 /// A builder for [`LineItemFields`](crate::types::LineItemFields).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LineItemFieldsBuilder {
-    pub(crate) line_item_expense_fields:
-        ::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>>,
+    pub(crate) line_item_expense_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>>,
 }
 impl LineItemFieldsBuilder {
     /// Appends an item to `line_item_expense_fields`.
@@ -44,17 +40,12 @@ impl LineItemFieldsBuilder {
         self
     }
     /// <p>ExpenseFields used to show information from detected lines on a table.</p>
-    pub fn set_line_item_expense_fields(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>>,
-    ) -> Self {
+    pub fn set_line_item_expense_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>>) -> Self {
         self.line_item_expense_fields = input;
         self
     }
     /// <p>ExpenseFields used to show information from detected lines on a table.</p>
-    pub fn get_line_item_expense_fields(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>> {
+    pub fn get_line_item_expense_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>> {
         &self.line_item_expense_fields
     }
     /// Consumes the builder and constructs a [`LineItemFields`](crate::types::LineItemFields).

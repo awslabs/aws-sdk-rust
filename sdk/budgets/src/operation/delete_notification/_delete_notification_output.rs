@@ -13,17 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteNotificationOutput {
 }
 impl DeleteNotificationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNotificationOutput`](crate::operation::delete_notification::DeleteNotificationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_notification::builders::DeleteNotificationOutputBuilder {
+    pub fn builder() -> crate::operation::delete_notification::builders::DeleteNotificationOutputBuilder {
         crate::operation::delete_notification::builders::DeleteNotificationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteNotificationOutput`](crate::operation::delete_notification::DeleteNotificationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteNotificationOutputBuilder {
     _request_id: Option<String>,
 }

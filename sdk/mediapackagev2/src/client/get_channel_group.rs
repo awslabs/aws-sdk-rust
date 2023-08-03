@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_channel_group::GetChannelGroupOutput::description): <p>The description for your channel group.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_channel_group::GetChannelGroupOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the channel group.</p>
     /// - On failure, responds with [`SdkError<GetChannelGroupError>`](crate::operation::get_channel_group::GetChannelGroupError)
-    pub fn get_channel_group(
-        &self,
-    ) -> crate::operation::get_channel_group::builders::GetChannelGroupFluentBuilder {
-        crate::operation::get_channel_group::builders::GetChannelGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_channel_group(&self) -> crate::operation::get_channel_group::builders::GetChannelGroupFluentBuilder {
+        crate::operation::get_channel_group::builders::GetChannelGroupFluentBuilder::new(self.handle.clone())
     }
 }

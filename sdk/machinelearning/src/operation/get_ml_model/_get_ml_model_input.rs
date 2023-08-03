@@ -33,9 +33,7 @@ impl GetMlModelInput {
 
 /// A builder for [`GetMlModelInput`](crate::operation::get_ml_model::GetMlModelInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMlModelInputBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) verbose: ::std::option::Option<bool>,
@@ -76,12 +74,7 @@ impl GetMlModelInputBuilder {
         &self.verbose
     }
     /// Consumes the builder and constructs a [`GetMlModelInput`](crate::operation::get_ml_model::GetMlModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ml_model::GetMlModelInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ml_model::GetMlModelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ml_model::GetMlModelInput {
             ml_model_id: self.ml_model_id,
             verbose: self.verbose.unwrap_or_default(),

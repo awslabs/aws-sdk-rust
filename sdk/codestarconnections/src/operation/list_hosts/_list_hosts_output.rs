@@ -35,9 +35,7 @@ impl ListHostsOutput {
 
 /// A builder for [`ListHostsOutput`](crate::operation::list_hosts::ListHostsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHostsOutputBuilder {
     pub(crate) hosts: ::std::option::Option<::std::vec::Vec<crate::types::Host>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListHostsOutputBuilder {
         self
     }
     /// <p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>
-    pub fn set_hosts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Host>>,
-    ) -> Self {
+    pub fn set_hosts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Host>>) -> Self {
         self.hosts = input;
         self
     }

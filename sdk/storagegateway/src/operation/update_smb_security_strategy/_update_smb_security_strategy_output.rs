@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateSmbSecurityStrategyOutput {
 }
 impl UpdateSmbSecurityStrategyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSmbSecurityStrategyOutput`](crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyOutput).
-    pub fn builder() -> crate::operation::update_smb_security_strategy::builders::UpdateSmbSecurityStrategyOutputBuilder{
+    pub fn builder() -> crate::operation::update_smb_security_strategy::builders::UpdateSmbSecurityStrategyOutputBuilder {
         crate::operation::update_smb_security_strategy::builders::UpdateSmbSecurityStrategyOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateSmbSecurityStrategyOutput`](crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateSmbSecurityStrategyOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,9 +58,7 @@ impl UpdateSmbSecurityStrategyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSmbSecurityStrategyOutput`](crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyOutput {
+    pub fn build(self) -> crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyOutput {
         crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyOutput {
             gateway_arn: self.gateway_arn,
             _request_id: self._request_id,

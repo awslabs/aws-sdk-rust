@@ -5,15 +5,12 @@
 pub struct BatchGetUserAccessTasksOutput {
     /// <p>Contains a list of user access results.</p>
     #[doc(hidden)]
-    pub user_access_results_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserAccessResultItem>>,
+    pub user_access_results_list: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessResultItem>>,
     _request_id: Option<String>,
 }
 impl BatchGetUserAccessTasksOutput {
     /// <p>Contains a list of user access results.</p>
-    pub fn user_access_results_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::UserAccessResultItem]> {
+    pub fn user_access_results_list(&self) -> ::std::option::Option<&[crate::types::UserAccessResultItem]> {
         self.user_access_results_list.as_deref()
     }
 }
@@ -24,21 +21,16 @@ impl ::aws_http::request_id::RequestId for BatchGetUserAccessTasksOutput {
 }
 impl BatchGetUserAccessTasksOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetUserAccessTasksOutput`](crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksOutputBuilder {
         crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetUserAccessTasksOutput`](crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetUserAccessTasksOutputBuilder {
-    pub(crate) user_access_results_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::UserAccessResultItem>>,
+    pub(crate) user_access_results_list: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessResultItem>>,
     _request_id: Option<String>,
 }
 impl BatchGetUserAccessTasksOutputBuilder {
@@ -54,17 +46,12 @@ impl BatchGetUserAccessTasksOutputBuilder {
         self
     }
     /// <p>Contains a list of user access results.</p>
-    pub fn set_user_access_results_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessResultItem>>,
-    ) -> Self {
+    pub fn set_user_access_results_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserAccessResultItem>>) -> Self {
         self.user_access_results_list = input;
         self
     }
     /// <p>Contains a list of user access results.</p>
-    pub fn get_user_access_results_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAccessResultItem>> {
+    pub fn get_user_access_results_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAccessResultItem>> {
         &self.user_access_results_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -77,9 +64,7 @@ impl BatchGetUserAccessTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetUserAccessTasksOutput`](crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput {
+    pub fn build(self) -> crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput {
         crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput {
             user_access_results_list: self.user_access_results_list,
             _request_id: self._request_id,

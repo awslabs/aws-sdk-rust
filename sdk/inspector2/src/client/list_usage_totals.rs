@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_usage_totals::ListUsageTotalsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     ///   - [`totals(Option<Vec<UsageTotal>>)`](crate::operation::list_usage_totals::ListUsageTotalsOutput::totals): <p>An object with details on the total usage for the requested account.</p>
     /// - On failure, responds with [`SdkError<ListUsageTotalsError>`](crate::operation::list_usage_totals::ListUsageTotalsError)
-    pub fn list_usage_totals(
-        &self,
-    ) -> crate::operation::list_usage_totals::builders::ListUsageTotalsFluentBuilder {
-        crate::operation::list_usage_totals::builders::ListUsageTotalsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_usage_totals(&self) -> crate::operation::list_usage_totals::builders::ListUsageTotalsFluentBuilder {
+        crate::operation::list_usage_totals::builders::ListUsageTotalsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -24,8 +24,7 @@ pub struct GetSpotPlacementScoresInput {
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
     /// <p>If you specify <code>InstanceRequirementsWithMetadata</code>, you can't specify <code>InstanceTypes</code>.</p>
     #[doc(hidden)]
-    pub instance_requirements_with_metadata:
-        ::std::option::Option<crate::types::InstanceRequirementsWithMetadataRequest>,
+    pub instance_requirements_with_metadata: ::std::option::Option<crate::types::InstanceRequirementsWithMetadataRequest>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
@@ -48,9 +47,7 @@ impl GetSpotPlacementScoresInput {
     }
     /// <p>The unit for the target capacity.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    pub fn target_capacity_unit_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetCapacityUnitType> {
+    pub fn target_capacity_unit_type(&self) -> ::std::option::Option<&crate::types::TargetCapacityUnitType> {
         self.target_capacity_unit_type.as_ref()
     }
     /// <p>Specify <code>true</code> so that the response returns a list of scored Availability Zones. Otherwise, the response returns a list of scored Regions.</p>
@@ -64,9 +61,7 @@ impl GetSpotPlacementScoresInput {
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
     /// <p>If you specify <code>InstanceRequirementsWithMetadata</code>, you can't specify <code>InstanceTypes</code>.</p>
-    pub fn instance_requirements_with_metadata(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceRequirementsWithMetadataRequest> {
+    pub fn instance_requirements_with_metadata(&self) -> ::std::option::Option<&crate::types::InstanceRequirementsWithMetadataRequest> {
         self.instance_requirements_with_metadata.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -84,27 +79,21 @@ impl GetSpotPlacementScoresInput {
 }
 impl GetSpotPlacementScoresInput {
     /// Creates a new builder-style object to manufacture [`GetSpotPlacementScoresInput`](crate::operation::get_spot_placement_scores::GetSpotPlacementScoresInput).
-    pub fn builder(
-    ) -> crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresInputBuilder {
         crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresInputBuilder::default()
     }
 }
 
 /// A builder for [`GetSpotPlacementScoresInput`](crate::operation::get_spot_placement_scores::GetSpotPlacementScoresInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSpotPlacementScoresInputBuilder {
     pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) target_capacity: ::std::option::Option<i32>,
-    pub(crate) target_capacity_unit_type:
-        ::std::option::Option<crate::types::TargetCapacityUnitType>,
+    pub(crate) target_capacity_unit_type: ::std::option::Option<crate::types::TargetCapacityUnitType>,
     pub(crate) single_availability_zone: ::std::option::Option<bool>,
     pub(crate) region_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) instance_requirements_with_metadata:
-        ::std::option::Option<crate::types::InstanceRequirementsWithMetadataRequest>,
+    pub(crate) instance_requirements_with_metadata: ::std::option::Option<crate::types::InstanceRequirementsWithMetadataRequest>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -116,10 +105,7 @@ impl GetSpotPlacementScoresInputBuilder {
     ///
     /// <p>The instance types. We recommend that you specify at least three instance types. If you specify one or two instance types, or specify variations of a single instance type (for example, an <code>m3.xlarge</code> with and without instance storage), the returned placement score will always be low. </p>
     /// <p>If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirementsWithMetadata</code>.</p>
-    pub fn instance_types(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_types.unwrap_or_default();
         v.push(input.into());
         self.instance_types = ::std::option::Option::Some(v);
@@ -127,18 +113,13 @@ impl GetSpotPlacementScoresInputBuilder {
     }
     /// <p>The instance types. We recommend that you specify at least three instance types. If you specify one or two instance types, or specify variations of a single instance type (for example, an <code>m3.xlarge</code> with and without instance storage), the returned placement score will always be low. </p>
     /// <p>If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirementsWithMetadata</code>.</p>
-    pub fn set_instance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_types = input;
         self
     }
     /// <p>The instance types. We recommend that you specify at least three instance types. If you specify one or two instance types, or specify variations of a single instance type (for example, an <code>m3.xlarge</code> with and without instance storage), the returned placement score will always be low. </p>
     /// <p>If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirementsWithMetadata</code>.</p>
-    pub fn get_instance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_types
     }
     /// <p>The target capacity.</p>
@@ -157,27 +138,19 @@ impl GetSpotPlacementScoresInputBuilder {
     }
     /// <p>The unit for the target capacity.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    pub fn target_capacity_unit_type(
-        mut self,
-        input: crate::types::TargetCapacityUnitType,
-    ) -> Self {
+    pub fn target_capacity_unit_type(mut self, input: crate::types::TargetCapacityUnitType) -> Self {
         self.target_capacity_unit_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unit for the target capacity.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    pub fn set_target_capacity_unit_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetCapacityUnitType>,
-    ) -> Self {
+    pub fn set_target_capacity_unit_type(mut self, input: ::std::option::Option<crate::types::TargetCapacityUnitType>) -> Self {
         self.target_capacity_unit_type = input;
         self
     }
     /// <p>The unit for the target capacity.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    pub fn get_target_capacity_unit_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetCapacityUnitType> {
+    pub fn get_target_capacity_unit_type(&self) -> &::std::option::Option<crate::types::TargetCapacityUnitType> {
         &self.target_capacity_unit_type
     }
     /// <p>Specify <code>true</code> so that the response returns a list of scored Availability Zones. Otherwise, the response returns a list of scored Regions.</p>
@@ -209,25 +182,17 @@ impl GetSpotPlacementScoresInputBuilder {
         self
     }
     /// <p>The Regions used to narrow down the list of Regions to be scored. Enter the Region code, for example, <code>us-east-1</code>.</p>
-    pub fn set_region_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_region_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.region_names = input;
         self
     }
     /// <p>The Regions used to narrow down the list of Regions to be scored. Enter the Region code, for example, <code>us-east-1</code>.</p>
-    pub fn get_region_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_region_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.region_names
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
     /// <p>If you specify <code>InstanceRequirementsWithMetadata</code>, you can't specify <code>InstanceTypes</code>.</p>
-    pub fn instance_requirements_with_metadata(
-        mut self,
-        input: crate::types::InstanceRequirementsWithMetadataRequest,
-    ) -> Self {
+    pub fn instance_requirements_with_metadata(mut self, input: crate::types::InstanceRequirementsWithMetadataRequest) -> Self {
         self.instance_requirements_with_metadata = ::std::option::Option::Some(input);
         self
     }
@@ -242,9 +207,7 @@ impl GetSpotPlacementScoresInputBuilder {
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
     /// <p>If you specify <code>InstanceRequirementsWithMetadata</code>, you can't specify <code>InstanceTypes</code>.</p>
-    pub fn get_instance_requirements_with_metadata(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceRequirementsWithMetadataRequest> {
+    pub fn get_instance_requirements_with_metadata(&self) -> &::std::option::Option<crate::types::InstanceRequirementsWithMetadataRequest> {
         &self.instance_requirements_with_metadata
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -296,18 +259,16 @@ impl GetSpotPlacementScoresInputBuilder {
         crate::operation::get_spot_placement_scores::GetSpotPlacementScoresInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::get_spot_placement_scores::GetSpotPlacementScoresInput {
-                instance_types: self.instance_types,
-                target_capacity: self.target_capacity,
-                target_capacity_unit_type: self.target_capacity_unit_type,
-                single_availability_zone: self.single_availability_zone,
-                region_names: self.region_names,
-                instance_requirements_with_metadata: self.instance_requirements_with_metadata,
-                dry_run: self.dry_run,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::get_spot_placement_scores::GetSpotPlacementScoresInput {
+            instance_types: self.instance_types,
+            target_capacity: self.target_capacity,
+            target_capacity_unit_type: self.target_capacity_unit_type,
+            single_availability_zone: self.single_availability_zone,
+            region_names: self.region_names,
+            instance_requirements_with_metadata: self.instance_requirements_with_metadata,
+            dry_run: self.dry_run,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

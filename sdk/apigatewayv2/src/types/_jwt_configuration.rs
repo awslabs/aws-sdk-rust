@@ -38,9 +38,7 @@ impl JwtConfiguration {
 
 /// A builder for [`JwtConfiguration`](crate::types::JwtConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JwtConfigurationBuilder {
     pub(crate) audience: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) issuer: ::std::option::Option<::std::string::String>,
@@ -58,10 +56,7 @@ impl JwtConfigurationBuilder {
         self
     }
     /// <p>A list of the intended recipients of the JWT. A valid JWT must provide an aud that matches at least one entry in this list. See <a href="https://tools.ietf.org/html/rfc7519#section-4.1.3">RFC 7519</a>. Supported only for HTTP APIs.</p>
-    pub fn set_audience(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_audience(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.audience = input;
         self
     }

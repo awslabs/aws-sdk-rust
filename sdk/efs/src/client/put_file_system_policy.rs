@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`file_system_id(Option<String>)`](crate::operation::put_file_system_policy::PutFileSystemPolicyOutput::file_system_id): <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
     ///   - [`policy(Option<String>)`](crate::operation::put_file_system_policy::PutFileSystemPolicyOutput::policy): <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
     /// - On failure, responds with [`SdkError<PutFileSystemPolicyError>`](crate::operation::put_file_system_policy::PutFileSystemPolicyError)
-    pub fn put_file_system_policy(
-        &self,
-    ) -> crate::operation::put_file_system_policy::builders::PutFileSystemPolicyFluentBuilder {
-        crate::operation::put_file_system_policy::builders::PutFileSystemPolicyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_file_system_policy(&self) -> crate::operation::put_file_system_policy::builders::PutFileSystemPolicyFluentBuilder {
+        crate::operation::put_file_system_policy::builders::PutFileSystemPolicyFluentBuilder::new(self.handle.clone())
     }
 }

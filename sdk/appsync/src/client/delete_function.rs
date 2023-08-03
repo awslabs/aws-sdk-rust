@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`function_id(impl ::std::convert::Into<String>)`](crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::function_id) / [`set_function_id(Option<String>)`](crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::set_function_id): <p>The <code>Function</code> ID.</p>
     /// - On success, responds with [`DeleteFunctionOutput`](crate::operation::delete_function::DeleteFunctionOutput)
     /// - On failure, responds with [`SdkError<DeleteFunctionError>`](crate::operation::delete_function::DeleteFunctionError)
-    pub fn delete_function(
-        &self,
-    ) -> crate::operation::delete_function::builders::DeleteFunctionFluentBuilder {
-        crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_function(&self) -> crate::operation::delete_function::builders::DeleteFunctionFluentBuilder {
+        crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::new(self.handle.clone())
     }
 }

@@ -11,8 +11,7 @@ pub struct CreateIpamResourceDiscoveryInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Operating Regions for the IPAM resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     #[doc(hidden)]
-    pub operating_regions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
+    pub operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
     /// <p>Tag specifications for the IPAM resource discovery.</p>
     #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
@@ -30,9 +29,7 @@ impl CreateIpamResourceDiscoveryInput {
         self.description.as_deref()
     }
     /// <p>Operating Regions for the IPAM resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub fn operating_regions(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AddIpamOperatingRegion]> {
+    pub fn operating_regions(&self) -> ::std::option::Option<&[crate::types::AddIpamOperatingRegion]> {
         self.operating_regions.as_deref()
     }
     /// <p>Tag specifications for the IPAM resource discovery.</p>
@@ -46,23 +43,19 @@ impl CreateIpamResourceDiscoveryInput {
 }
 impl CreateIpamResourceDiscoveryInput {
     /// Creates a new builder-style object to manufacture [`CreateIpamResourceDiscoveryInput`](crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryInput).
-    pub fn builder() -> crate::operation::create_ipam_resource_discovery::builders::CreateIpamResourceDiscoveryInputBuilder{
+    pub fn builder() -> crate::operation::create_ipam_resource_discovery::builders::CreateIpamResourceDiscoveryInputBuilder {
         crate::operation::create_ipam_resource_discovery::builders::CreateIpamResourceDiscoveryInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateIpamResourceDiscoveryInput`](crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateIpamResourceDiscoveryInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) operating_regions:
-        ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
-    pub(crate) tag_specifications:
-        ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateIpamResourceDiscoveryInputBuilder {
@@ -106,17 +99,12 @@ impl CreateIpamResourceDiscoveryInputBuilder {
         self
     }
     /// <p>Operating Regions for the IPAM resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub fn set_operating_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
-    ) -> Self {
+    pub fn set_operating_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>) -> Self {
         self.operating_regions = input;
         self
     }
     /// <p>Operating Regions for the IPAM resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    pub fn get_operating_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
+    pub fn get_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
         &self.operating_regions
     }
     /// Appends an item to `tag_specifications`.
@@ -131,17 +119,12 @@ impl CreateIpamResourceDiscoveryInputBuilder {
         self
     }
     /// <p>Tag specifications for the IPAM resource discovery.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.tag_specifications = input;
         self
     }
     /// <p>Tag specifications for the IPAM resource discovery.</p>
-    pub fn get_tag_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>A client token for the IPAM resource discovery.</p>
@@ -165,14 +148,12 @@ impl CreateIpamResourceDiscoveryInputBuilder {
         crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryInput {
-                dry_run: self.dry_run,
-                description: self.description,
-                operating_regions: self.operating_regions,
-                tag_specifications: self.tag_specifications,
-                client_token: self.client_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryInput {
+            dry_run: self.dry_run,
+            description: self.description,
+            operating_regions: self.operating_regions,
+            tag_specifications: self.tag_specifications,
+            client_token: self.client_token,
+        })
     }
 }

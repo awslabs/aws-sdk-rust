@@ -20,11 +20,7 @@ impl super::Client {
     ///   - [`owner_id(Option<String>)`](crate::operation::create_access_point::CreateAccessPointOutput::owner_id): <p>Identifies the Amazon Web Services account that owns the access point resource.</p>
     ///   - [`life_cycle_state(Option<LifeCycleState>)`](crate::operation::create_access_point::CreateAccessPointOutput::life_cycle_state): <p>Identifies the lifecycle phase of the access point.</p>
     /// - On failure, responds with [`SdkError<CreateAccessPointError>`](crate::operation::create_access_point::CreateAccessPointError)
-    pub fn create_access_point(
-        &self,
-    ) -> crate::operation::create_access_point::builders::CreateAccessPointFluentBuilder {
-        crate::operation::create_access_point::builders::CreateAccessPointFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_access_point(&self) -> crate::operation::create_access_point::builders::CreateAccessPointFluentBuilder {
+        crate::operation::create_access_point::builders::CreateAccessPointFluentBuilder::new(self.handle.clone())
     }
 }

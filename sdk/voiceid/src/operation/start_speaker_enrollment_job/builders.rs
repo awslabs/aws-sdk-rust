@@ -26,7 +26,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartSpeakerEnrollmentJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobInputBuilder,
+    inner: crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobInputBuilder,
 }
 impl StartSpeakerEnrollmentJobFluentBuilder {
     /// Creates a new `StartSpeakerEnrollmentJob`.
@@ -37,7 +37,7 @@ impl StartSpeakerEnrollmentJobFluentBuilder {
         }
     }
     /// Access the StartSpeakerEnrollmentJob as a reference.
-    pub fn as_input(&self) -> &crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl StartSpeakerEnrollmentJobFluentBuilder {
             crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl StartSpeakerEnrollmentJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl StartSpeakerEnrollmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl StartSpeakerEnrollmentJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl StartSpeakerEnrollmentJobFluentBuilder {
             crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobError>,
     > {
         self.customize_middleware().await
     }
@@ -163,18 +152,12 @@ impl StartSpeakerEnrollmentJobFluentBuilder {
         self.inner.get_domain_id()
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
-    pub fn data_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
@@ -188,10 +171,7 @@ impl StartSpeakerEnrollmentJobFluentBuilder {
         self
     }
     /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.</p>
-    pub fn set_enrollment_config(
-        mut self,
-        input: ::std::option::Option<crate::types::EnrollmentConfig>,
-    ) -> Self {
+    pub fn set_enrollment_config(mut self, input: ::std::option::Option<crate::types::EnrollmentConfig>) -> Self {
         self.inner = self.inner.set_enrollment_config(input);
         self
     }
@@ -205,10 +185,7 @@ impl StartSpeakerEnrollmentJobFluentBuilder {
         self
     }
     /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
+    pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
@@ -222,10 +199,7 @@ impl StartSpeakerEnrollmentJobFluentBuilder {
         self
     }
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
+    pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }

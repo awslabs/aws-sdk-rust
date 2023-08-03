@@ -10,9 +10,7 @@ pub struct VerifyOtpMessageOutput {
 }
 impl VerifyOtpMessageOutput {
     /// <p>Verify OTP Message Response.</p>
-    pub fn verification_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::VerificationResponse> {
+    pub fn verification_response(&self) -> ::std::option::Option<&crate::types::VerificationResponse> {
         self.verification_response.as_ref()
     }
 }
@@ -23,17 +21,14 @@ impl ::aws_http::request_id::RequestId for VerifyOtpMessageOutput {
 }
 impl VerifyOtpMessageOutput {
     /// Creates a new builder-style object to manufacture [`VerifyOtpMessageOutput`](crate::operation::verify_otp_message::VerifyOtpMessageOutput).
-    pub fn builder() -> crate::operation::verify_otp_message::builders::VerifyOtpMessageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::verify_otp_message::builders::VerifyOtpMessageOutputBuilder {
         crate::operation::verify_otp_message::builders::VerifyOtpMessageOutputBuilder::default()
     }
 }
 
 /// A builder for [`VerifyOtpMessageOutput`](crate::operation::verify_otp_message::VerifyOtpMessageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VerifyOtpMessageOutputBuilder {
     pub(crate) verification_response: ::std::option::Option<crate::types::VerificationResponse>,
     _request_id: Option<String>,
@@ -45,17 +40,12 @@ impl VerifyOtpMessageOutputBuilder {
         self
     }
     /// <p>Verify OTP Message Response.</p>
-    pub fn set_verification_response(
-        mut self,
-        input: ::std::option::Option<crate::types::VerificationResponse>,
-    ) -> Self {
+    pub fn set_verification_response(mut self, input: ::std::option::Option<crate::types::VerificationResponse>) -> Self {
         self.verification_response = input;
         self
     }
     /// <p>Verify OTP Message Response.</p>
-    pub fn get_verification_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::VerificationResponse> {
+    pub fn get_verification_response(&self) -> &::std::option::Option<crate::types::VerificationResponse> {
         &self.verification_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

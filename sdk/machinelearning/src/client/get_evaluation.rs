@@ -21,11 +21,7 @@ impl super::Client {
     ///   - [`finished_at(Option<DateTime>)`](crate::operation::get_evaluation::GetEvaluationOutput::finished_at): <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
     ///   - [`started_at(Option<DateTime>)`](crate::operation::get_evaluation::GetEvaluationOutput::started_at): <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>Evaluation</code> is in the <code>PENDING</code> state.</p>
     /// - On failure, responds with [`SdkError<GetEvaluationError>`](crate::operation::get_evaluation::GetEvaluationError)
-    pub fn get_evaluation(
-        &self,
-    ) -> crate::operation::get_evaluation::builders::GetEvaluationFluentBuilder {
-        crate::operation::get_evaluation::builders::GetEvaluationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_evaluation(&self) -> crate::operation::get_evaluation::builders::GetEvaluationFluentBuilder {
+        crate::operation::get_evaluation::builders::GetEvaluationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -46,13 +46,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DisplayLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -91,9 +85,7 @@ impl ::std::convert::From<&str> for DisplayLanguageCode {
             "pt" => DisplayLanguageCode::Pt,
             "zh" => DisplayLanguageCode::Zh,
             "zh-TW" => DisplayLanguageCode::ZhTw,
-            other => DisplayLanguageCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DisplayLanguageCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -123,9 +115,7 @@ impl DisplayLanguageCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "de", "en", "es", "fr", "it", "ja", "ko", "pt", "zh", "zh-TW",
-        ]
+        &["de", "en", "es", "fr", "it", "ja", "ko", "pt", "zh", "zh-TW"]
     }
 }
 impl ::std::convert::AsRef<str> for DisplayLanguageCode {

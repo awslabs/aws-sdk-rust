@@ -29,9 +29,7 @@ impl TestConnectionOutput {
 
 /// A builder for [`TestConnectionOutput`](crate::operation::test_connection::TestConnectionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestConnectionOutputBuilder {
     pub(crate) connection: ::std::option::Option<crate::types::Connection>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl TestConnectionOutputBuilder {
         self
     }
     /// <p>The connection tested.</p>
-    pub fn set_connection(
-        mut self,
-        input: ::std::option::Option<crate::types::Connection>,
-    ) -> Self {
+    pub fn set_connection(mut self, input: ::std::option::Option<crate::types::Connection>) -> Self {
         self.connection = input;
         self
     }

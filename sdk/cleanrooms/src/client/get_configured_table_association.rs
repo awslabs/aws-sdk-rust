@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`GetConfiguredTableAssociationOutput`](crate::operation::get_configured_table_association::GetConfiguredTableAssociationOutput) with field(s):
     ///   - [`configured_table_association(Option<ConfiguredTableAssociation>)`](crate::operation::get_configured_table_association::GetConfiguredTableAssociationOutput::configured_table_association): <p>The entire configured table association object.</p>
     /// - On failure, responds with [`SdkError<GetConfiguredTableAssociationError>`](crate::operation::get_configured_table_association::GetConfiguredTableAssociationError)
-    pub fn get_configured_table_association(&self) -> crate::operation::get_configured_table_association::builders::GetConfiguredTableAssociationFluentBuilder{
+    pub fn get_configured_table_association(
+        &self,
+    ) -> crate::operation::get_configured_table_association::builders::GetConfiguredTableAssociationFluentBuilder {
         crate::operation::get_configured_table_association::builders::GetConfiguredTableAssociationFluentBuilder::new(self.handle.clone())
     }
 }

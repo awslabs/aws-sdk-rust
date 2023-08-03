@@ -10,10 +10,7 @@ impl DeleteDashboardsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_dashboards::DeleteDashboardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dashboards::DeleteDashboardsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dashboards::DeleteDashboardsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_dashboards();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DeleteDashboardsFluentBuilder {
         }
     }
     /// Access the DeleteDashboards as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_dashboards::builders::DeleteDashboardsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_dashboards::builders::DeleteDashboardsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DeleteDashboardsFluentBuilder {
             crate::operation::delete_dashboards::DeleteDashboards,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dashboards::DeleteDashboardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dashboards::DeleteDashboardsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DeleteDashboardsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DeleteDashboardsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dashboards::DeleteDashboardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dashboards::DeleteDashboardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dashboards::DeleteDashboardsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DeleteDashboardsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dashboards::DeleteDashboardsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dashboards::DeleteDashboardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dashboards::DeleteDashboardsError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl DeleteDashboardsFluentBuilder {
             crate::operation::delete_dashboards::DeleteDashboards,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_dashboards::DeleteDashboardsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_dashboards::DeleteDashboardsError>,
     > {
         self.customize_middleware().await
     }
@@ -127,25 +111,17 @@ impl DeleteDashboardsFluentBuilder {
     /// To override the contents of this collection use [`set_dashboard_names`](Self::set_dashboard_names).
     ///
     /// <p>The dashboards to be deleted. This parameter is required.</p>
-    pub fn dashboard_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dashboard_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dashboard_names(input.into());
         self
     }
     /// <p>The dashboards to be deleted. This parameter is required.</p>
-    pub fn set_dashboard_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dashboard_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_dashboard_names(input);
         self
     }
     /// <p>The dashboards to be deleted. This parameter is required.</p>
-    pub fn get_dashboard_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dashboard_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_dashboard_names()
     }
 }

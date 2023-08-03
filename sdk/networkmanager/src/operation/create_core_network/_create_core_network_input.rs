@@ -43,17 +43,14 @@ impl CreateCoreNetworkInput {
 }
 impl CreateCoreNetworkInput {
     /// Creates a new builder-style object to manufacture [`CreateCoreNetworkInput`](crate::operation::create_core_network::CreateCoreNetworkInput).
-    pub fn builder(
-    ) -> crate::operation::create_core_network::builders::CreateCoreNetworkInputBuilder {
+    pub fn builder() -> crate::operation::create_core_network::builders::CreateCoreNetworkInputBuilder {
         crate::operation::create_core_network::builders::CreateCoreNetworkInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateCoreNetworkInput`](crate::operation::create_core_network::CreateCoreNetworkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCoreNetworkInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -63,18 +60,12 @@ pub struct CreateCoreNetworkInputBuilder {
 }
 impl CreateCoreNetworkInputBuilder {
     /// <p>The ID of the global network that a core network will be a part of. </p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network that a core network will be a part of. </p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_network_id = input;
         self
     }
@@ -108,10 +99,7 @@ impl CreateCoreNetworkInputBuilder {
         self
     }
     /// <p>Key-value tags associated with a core network request.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -120,18 +108,12 @@ impl CreateCoreNetworkInputBuilder {
         &self.tags
     }
     /// <p>The policy document for creating a core network.</p>
-    pub fn policy_document(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy document for creating a core network.</p>
-    pub fn set_policy_document(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
@@ -156,18 +138,13 @@ impl CreateCoreNetworkInputBuilder {
     /// Consumes the builder and constructs a [`CreateCoreNetworkInput`](crate::operation::create_core_network::CreateCoreNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_core_network::CreateCoreNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_core_network::CreateCoreNetworkInput {
-                global_network_id: self.global_network_id,
-                description: self.description,
-                tags: self.tags,
-                policy_document: self.policy_document,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_core_network::CreateCoreNetworkInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_core_network::CreateCoreNetworkInput {
+            global_network_id: self.global_network_id,
+            description: self.description,
+            tags: self.tags,
+            policy_document: self.policy_document,
+            client_token: self.client_token,
+        })
     }
 }

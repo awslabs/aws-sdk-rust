@@ -9,108 +9,93 @@ pub fn de_list_tags_for_resource_http_error(
     crate::operation::list_tags_for_resource::ListTagsForResourceError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidInput" => crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidInput({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidInputBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(_response_body, output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidInputBuilder::default();
+                output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NoSuchHealthCheck" => crate::operation::list_tags_for_resource::ListTagsForResourceError::NoSuchHealthCheck({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchHealthCheckBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_health_check::de_no_such_health_check_xml_err(_response_body, output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchHealthCheckBuilder::default();
+                output = crate::protocol_serde::shape_no_such_health_check::de_no_such_health_check_xml_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NoSuchHostedZone" => crate::operation::list_tags_for_resource::ListTagsForResourceError::NoSuchHostedZone({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchHostedZoneBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_hosted_zone::de_no_such_hosted_zone_xml_err(_response_body, output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchHostedZoneBuilder::default();
+                output = crate::protocol_serde::shape_no_such_hosted_zone::de_no_such_hosted_zone_xml_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "PriorRequestNotComplete" => crate::operation::list_tags_for_resource::ListTagsForResourceError::PriorRequestNotComplete({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::PriorRequestNotCompleteBuilder::default();
-                    output = crate::protocol_serde::shape_prior_request_not_complete::de_prior_request_not_complete_xml_err(_response_body, output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::PriorRequestNotCompleteBuilder::default();
+                output = crate::protocol_serde::shape_prior_request_not_complete::de_prior_request_not_complete_xml_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ThrottlingException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_xml_err(_response_body, output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::list_tags_for_resource::ListTagsForResourceError::generic(generic)
+        _ => crate::operation::list_tags_for_resource::ListTagsForResourceError::generic(generic),
     })
 }
 
@@ -126,14 +111,9 @@ pub fn de_list_tags_for_resource_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder::default();
-        output = crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource(_response_body, output)
+            .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -142,10 +122,7 @@ pub fn de_list_tags_for_resource_http_response_with_props(
 pub fn de_list_tags_for_resource(
     inp: &[u8],
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
-) -> Result<
-    crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -153,11 +130,10 @@ pub fn de_list_tags_for_resource(
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !start_el.matches("ListTagsForResourceResponse") {
-        return Err(
-                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
-                                    format!("encountered invalid XML root: expected ListTagsForResourceResponse but got {:?}. This is likely a bug in the SDK.", start_el)
-                                )
-                            );
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            "encountered invalid XML root: expected ListTagsForResourceResponse but got {:?}. This is likely a bug in the SDK.",
+            start_el
+        )));
     }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

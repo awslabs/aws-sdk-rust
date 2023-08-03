@@ -10,10 +10,7 @@ impl UpdateConnectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_connection::UpdateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connection::UpdateConnectionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection::UpdateConnectionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_connection();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateConnectionFluentBuilder {
         }
     }
     /// Access the UpdateConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_connection::builders::UpdateConnectionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_connection::builders::UpdateConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl UpdateConnectionFluentBuilder {
             crate::operation::update_connection::UpdateConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connection::UpdateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection::UpdateConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl UpdateConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl UpdateConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connection::UpdateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connection::UpdateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection::UpdateConnectionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl UpdateConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connection::UpdateConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connection::UpdateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection::UpdateConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl UpdateConnectionFluentBuilder {
             crate::operation::update_connection::UpdateConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_connection::UpdateConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_connection::UpdateConnectionError>,
     > {
         self.customize_middleware().await
     }
@@ -156,10 +140,7 @@ impl UpdateConnectionFluentBuilder {
         self
     }
     /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
-    pub fn set_connection_input(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionInput>,
-    ) -> Self {
+    pub fn set_connection_input(mut self, input: ::std::option::Option<crate::types::ConnectionInput>) -> Self {
         self.inner = self.inner.set_connection_input(input);
         self
     }

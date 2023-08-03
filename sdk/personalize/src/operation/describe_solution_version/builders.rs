@@ -26,8 +26,7 @@ impl DescribeSolutionVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSolutionVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_solution_version::builders::DescribeSolutionVersionInputBuilder,
+    inner: crate::operation::describe_solution_version::builders::DescribeSolutionVersionInputBuilder,
 }
 impl DescribeSolutionVersionFluentBuilder {
     /// Creates a new `DescribeSolutionVersion`.
@@ -38,10 +37,7 @@ impl DescribeSolutionVersionFluentBuilder {
         }
     }
     /// Access the DescribeSolutionVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_solution_version::builders::DescribeSolutionVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_solution_version::builders::DescribeSolutionVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeSolutionVersionFluentBuilder {
             crate::operation::describe_solution_version::DescribeSolutionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_solution_version::DescribeSolutionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_solution_version::DescribeSolutionVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeSolutionVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeSolutionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_solution_version::DescribeSolutionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_solution_version::DescribeSolutionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_solution_version::DescribeSolutionVersionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeSolutionVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_solution_version::DescribeSolutionVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_solution_version::DescribeSolutionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_solution_version::DescribeSolutionVersionError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl DescribeSolutionVersionFluentBuilder {
             crate::operation::describe_solution_version::DescribeSolutionVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_solution_version::DescribeSolutionVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_solution_version::DescribeSolutionVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
-    pub fn solution_version_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.solution_version_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
-    pub fn set_solution_version_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_solution_version_arn(input);
         self
     }

@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DeletePartnerEventSourceOutput {
 }
 impl DeletePartnerEventSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeletePartnerEventSourceOutput`](crate::operation::delete_partner_event_source::DeletePartnerEventSourceOutput).
-    pub fn builder() -> crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceOutputBuilder{
+    pub fn builder() -> crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceOutputBuilder {
         crate::operation::delete_partner_event_source::builders::DeletePartnerEventSourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePartnerEventSourceOutput`](crate::operation::delete_partner_event_source::DeletePartnerEventSourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePartnerEventSourceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DeletePartnerEventSourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeletePartnerEventSourceOutput`](crate::operation::delete_partner_event_source::DeletePartnerEventSourceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_partner_event_source::DeletePartnerEventSourceOutput {
+    pub fn build(self) -> crate::operation::delete_partner_event_source::DeletePartnerEventSourceOutput {
         crate::operation::delete_partner_event_source::DeletePartnerEventSourceOutput {
             _request_id: self._request_id,
         }

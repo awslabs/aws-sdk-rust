@@ -26,7 +26,7 @@ impl DescribeNetworkInsightsPathsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeNetworkInsightsPathsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsInputBuilder,
+    inner: crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsInputBuilder,
 }
 impl DescribeNetworkInsightsPathsFluentBuilder {
     /// Creates a new `DescribeNetworkInsightsPaths`.
@@ -37,7 +37,7 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
         }
     }
     /// Access the DescribeNetworkInsightsPaths as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
             crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPaths,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
             crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPaths,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_network_insights_paths::paginator::DescribeNetworkInsightsPathsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_network_insights_paths::paginator::DescribeNetworkInsightsPathsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_network_insights_paths::paginator::DescribeNetworkInsightsPathsPaginator {
         crate::operation::describe_network_insights_paths::paginator::DescribeNetworkInsightsPathsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `NetworkInsightsPathIds`.
@@ -131,25 +120,17 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
     /// To override the contents of this collection use [`set_network_insights_path_ids`](Self::set_network_insights_path_ids).
     ///
     /// <p>The IDs of the paths.</p>
-    pub fn network_insights_path_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_insights_path_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_insights_path_ids(input.into());
         self
     }
     /// <p>The IDs of the paths.</p>
-    pub fn set_network_insights_path_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_network_insights_path_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_network_insights_path_ids(input);
         self
     }
     /// <p>The IDs of the paths.</p>
-    pub fn get_network_insights_path_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_insights_path_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_network_insights_path_ids()
     }
     /// Appends an item to `Filters`.
@@ -188,10 +169,7 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
     /// <li> <p>protocol - The protocol.</p> </li>
     /// <li> <p>source - The ID of the resource.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

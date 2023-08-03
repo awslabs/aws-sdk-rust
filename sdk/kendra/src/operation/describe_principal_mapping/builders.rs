@@ -27,7 +27,7 @@ impl DescribePrincipalMappingInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePrincipalMappingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_principal_mapping::builders::DescribePrincipalMappingInputBuilder,
+    inner: crate::operation::describe_principal_mapping::builders::DescribePrincipalMappingInputBuilder,
 }
 impl DescribePrincipalMappingFluentBuilder {
     /// Creates a new `DescribePrincipalMapping`.
@@ -38,10 +38,7 @@ impl DescribePrincipalMappingFluentBuilder {
         }
     }
     /// Access the DescribePrincipalMapping as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_principal_mapping::builders::DescribePrincipalMappingInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_principal_mapping::builders::DescribePrincipalMappingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl DescribePrincipalMappingFluentBuilder {
             crate::operation::describe_principal_mapping::DescribePrincipalMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_principal_mapping::DescribePrincipalMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_principal_mapping::DescribePrincipalMappingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl DescribePrincipalMappingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl DescribePrincipalMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_principal_mapping::DescribePrincipalMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_principal_mapping::DescribePrincipalMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_principal_mapping::DescribePrincipalMappingError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl DescribePrincipalMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_principal_mapping::DescribePrincipalMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_principal_mapping::DescribePrincipalMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_principal_mapping::DescribePrincipalMappingError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl DescribePrincipalMappingFluentBuilder {
             crate::operation::describe_principal_mapping::DescribePrincipalMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_principal_mapping::DescribePrincipalMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_principal_mapping::DescribePrincipalMappingError>,
     > {
         self.customize_middleware().await
     }
@@ -139,18 +125,12 @@ impl DescribePrincipalMappingFluentBuilder {
         self.inner.get_index_id()
     }
     /// <p>The identifier of the data source to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    pub fn data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
     /// <p>The identifier of the data source to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    pub fn set_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }

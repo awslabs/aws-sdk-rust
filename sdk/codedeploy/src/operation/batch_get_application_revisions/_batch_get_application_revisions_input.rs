@@ -23,34 +23,26 @@ impl BatchGetApplicationRevisionsInput {
 }
 impl BatchGetApplicationRevisionsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetApplicationRevisionsInput`](crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsInput).
-    pub fn builder() -> crate::operation::batch_get_application_revisions::builders::BatchGetApplicationRevisionsInputBuilder{
+    pub fn builder() -> crate::operation::batch_get_application_revisions::builders::BatchGetApplicationRevisionsInputBuilder {
         crate::operation::batch_get_application_revisions::builders::BatchGetApplicationRevisionsInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetApplicationRevisionsInput`](crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetApplicationRevisionsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) revisions: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>,
 }
 impl BatchGetApplicationRevisionsInputBuilder {
     /// <p>The name of an CodeDeploy application about which to get revision information.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an CodeDeploy application about which to get revision information.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -70,17 +62,12 @@ impl BatchGetApplicationRevisionsInputBuilder {
         self
     }
     /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
-    pub fn set_revisions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>,
-    ) -> Self {
+    pub fn set_revisions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>) -> Self {
         self.revisions = input;
         self
     }
     /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
-    pub fn get_revisions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>> {
+    pub fn get_revisions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>> {
         &self.revisions
     }
     /// Consumes the builder and constructs a [`BatchGetApplicationRevisionsInput`](crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsInput).
@@ -90,11 +77,9 @@ impl BatchGetApplicationRevisionsInputBuilder {
         crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsInput {
-                application_name: self.application_name,
-                revisions: self.revisions,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsInput {
+            application_name: self.application_name,
+            revisions: self.revisions,
+        })
     }
 }

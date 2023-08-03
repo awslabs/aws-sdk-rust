@@ -15,11 +15,7 @@ impl super::Client {
     ///   - [`custom_document_enrichment_configuration(CustomDocumentEnrichmentConfiguration)`](crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::custom_document_enrichment_configuration) / [`set_custom_document_enrichment_configuration(Option<CustomDocumentEnrichmentConfiguration>)`](crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::set_custom_document_enrichment_configuration): <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>  <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
     /// - On success, responds with [`UpdateDataSourceOutput`](crate::operation::update_data_source::UpdateDataSourceOutput)
     /// - On failure, responds with [`SdkError<UpdateDataSourceError>`](crate::operation::update_data_source::UpdateDataSourceError)
-    pub fn update_data_source(
-        &self,
-    ) -> crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder {
-        crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_data_source(&self) -> crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder {
+        crate::operation::update_data_source::builders::UpdateDataSourceFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,9 +23,7 @@ impl OpsResultAttribute {
 
 /// A builder for [`OpsResultAttribute`](crate::types::OpsResultAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsResultAttributeBuilder {
     pub(crate) type_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl OpsResultAttributeBuilder {
     }
     /// Consumes the builder and constructs a [`OpsResultAttribute`](crate::types::OpsResultAttribute).
     pub fn build(self) -> crate::types::OpsResultAttribute {
-        crate::types::OpsResultAttribute {
-            type_name: self.type_name,
-        }
+        crate::types::OpsResultAttribute { type_name: self.type_name }
     }
 }

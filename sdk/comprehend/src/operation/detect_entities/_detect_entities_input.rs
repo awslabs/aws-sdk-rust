@@ -53,9 +53,7 @@ impl DetectEntitiesInput {
         self.bytes.as_ref()
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn document_reader_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DocumentReaderConfig> {
+    pub fn document_reader_config(&self) -> ::std::option::Option<&crate::types::DocumentReaderConfig> {
         self.document_reader_config.as_ref()
     }
 }
@@ -110,10 +108,7 @@ impl DetectEntitiesInputBuilder {
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
     /// <p>All input documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: ::std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
+    pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
@@ -177,26 +172,18 @@ impl DetectEntitiesInputBuilder {
         self
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn set_document_reader_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DocumentReaderConfig>,
-    ) -> Self {
+    pub fn set_document_reader_config(mut self, input: ::std::option::Option<crate::types::DocumentReaderConfig>) -> Self {
         self.document_reader_config = input;
         self
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn get_document_reader_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DocumentReaderConfig> {
+    pub fn get_document_reader_config(&self) -> &::std::option::Option<crate::types::DocumentReaderConfig> {
         &self.document_reader_config
     }
     /// Consumes the builder and constructs a [`DetectEntitiesInput`](crate::operation::detect_entities::DetectEntitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_entities::DetectEntitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::detect_entities::DetectEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_entities::DetectEntitiesInput {
             text: self.text,
             language_code: self.language_code,

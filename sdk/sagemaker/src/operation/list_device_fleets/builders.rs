@@ -10,10 +10,7 @@ impl ListDeviceFleetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_device_fleets::ListDeviceFleetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_fleets::ListDeviceFleetsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_fleets::ListDeviceFleetsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_device_fleets();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListDeviceFleetsFluentBuilder {
         }
     }
     /// Access the ListDeviceFleets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_device_fleets::builders::ListDeviceFleetsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_device_fleets::builders::ListDeviceFleetsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListDeviceFleetsFluentBuilder {
             crate::operation::list_device_fleets::ListDeviceFleets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_fleets::ListDeviceFleetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_fleets::ListDeviceFleetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListDeviceFleetsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListDeviceFleetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_device_fleets::ListDeviceFleetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_fleets::ListDeviceFleetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_fleets::ListDeviceFleetsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListDeviceFleetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_device_fleets::ListDeviceFleetsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_fleets::ListDeviceFleetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_fleets::ListDeviceFleetsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListDeviceFleetsFluentBuilder {
             crate::operation::list_device_fleets::ListDeviceFleets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_device_fleets::ListDeviceFleetsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_device_fleets::ListDeviceFleetsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_device_fleets::paginator::ListDeviceFleetsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_device_fleets::paginator::ListDeviceFleetsPaginator {
-        crate::operation::list_device_fleets::paginator::ListDeviceFleetsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_device_fleets::paginator::ListDeviceFleetsPaginator {
+        crate::operation::list_device_fleets::paginator::ListDeviceFleetsPaginator::new(self.handle, self.inner)
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,10 +146,7 @@ impl ListDeviceFleetsFluentBuilder {
         self
     }
     /// <p>Filter fleets where packaging job was created after specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -184,10 +160,7 @@ impl ListDeviceFleetsFluentBuilder {
         self
     }
     /// <p>Filter fleets where the edge packaging job was created before specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -201,17 +174,12 @@ impl ListDeviceFleetsFluentBuilder {
         self
     }
     /// <p>Select fleets where the job was updated after X</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
     /// <p>Select fleets where the job was updated after X</p>
-    pub fn get_last_modified_time_after(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_after()
     }
     /// <p>Select fleets where the job was updated before X</p>
@@ -220,32 +188,21 @@ impl ListDeviceFleetsFluentBuilder {
         self
     }
     /// <p>Select fleets where the job was updated before X</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
     /// <p>Select fleets where the job was updated before X</p>
-    pub fn get_last_modified_time_before(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_last_modified_time_before()
     }
     /// <p>Filter for fleets containing this name in their fleet device name.</p>
-    pub fn name_contains(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>Filter for fleets containing this name in their fleet device name.</p>
-    pub fn set_name_contains(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -259,10 +216,7 @@ impl ListDeviceFleetsFluentBuilder {
         self
     }
     /// <p>The column to sort by.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ListDeviceFleetsSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListDeviceFleetsSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

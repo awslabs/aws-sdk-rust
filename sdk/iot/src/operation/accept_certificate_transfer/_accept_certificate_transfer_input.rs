@@ -23,34 +23,26 @@ impl AcceptCertificateTransferInput {
 }
 impl AcceptCertificateTransferInput {
     /// Creates a new builder-style object to manufacture [`AcceptCertificateTransferInput`](crate::operation::accept_certificate_transfer::AcceptCertificateTransferInput).
-    pub fn builder() -> crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferInputBuilder{
+    pub fn builder() -> crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferInputBuilder {
         crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferInputBuilder::default()
     }
 }
 
 /// A builder for [`AcceptCertificateTransferInput`](crate::operation::accept_certificate_transfer::AcceptCertificateTransferInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceptCertificateTransferInputBuilder {
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) set_as_active: ::std::option::Option<bool>,
 }
 impl AcceptCertificateTransferInputBuilder {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn set_certificate_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_id = input;
         self
     }
@@ -79,11 +71,9 @@ impl AcceptCertificateTransferInputBuilder {
         crate::operation::accept_certificate_transfer::AcceptCertificateTransferInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::accept_certificate_transfer::AcceptCertificateTransferInput {
-                certificate_id: self.certificate_id,
-                set_as_active: self.set_as_active,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::accept_certificate_transfer::AcceptCertificateTransferInput {
+            certificate_id: self.certificate_id,
+            set_as_active: self.set_as_active,
+        })
     }
 }

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::describe_group::DescribeGroupOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::describe_group::DescribeGroupOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<DescribeGroupError>`](crate::operation::describe_group::DescribeGroupError)
-    pub fn describe_group(
-        &self,
-    ) -> crate::operation::describe_group::builders::DescribeGroupFluentBuilder {
-        crate::operation::describe_group::builders::DescribeGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_group(&self) -> crate::operation::describe_group::builders::DescribeGroupFluentBuilder {
+        crate::operation::describe_group::builders::DescribeGroupFluentBuilder::new(self.handle.clone())
     }
 }

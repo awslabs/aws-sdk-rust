@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateAppMonitorOutput {
 }
 impl CreateAppMonitorOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppMonitorOutput`](crate::operation::create_app_monitor::CreateAppMonitorOutput).
-    pub fn builder() -> crate::operation::create_app_monitor::builders::CreateAppMonitorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_app_monitor::builders::CreateAppMonitorOutputBuilder {
         crate::operation::create_app_monitor::builders::CreateAppMonitorOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAppMonitorOutput`](crate::operation::create_app_monitor::CreateAppMonitorOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppMonitorOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,

@@ -10,10 +10,7 @@ impl DescribeBucketsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_buckets::DescribeBucketsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_buckets::DescribeBucketsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_buckets::DescribeBucketsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_buckets();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeBucketsFluentBuilder {
         }
     }
     /// Access the DescribeBuckets as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_buckets::builders::DescribeBucketsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_buckets::builders::DescribeBucketsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeBucketsFluentBuilder {
             crate::operation::describe_buckets::DescribeBuckets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_buckets::DescribeBucketsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_buckets::DescribeBucketsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeBucketsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeBucketsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_buckets::DescribeBucketsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_buckets::DescribeBucketsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_buckets::DescribeBucketsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeBucketsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_buckets::DescribeBucketsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_buckets::DescribeBucketsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_buckets::DescribeBucketsError>,
     > {
         self.send_middleware().await
     }
@@ -116,45 +102,29 @@ impl DescribeBucketsFluentBuilder {
             crate::operation::describe_buckets::DescribeBuckets,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_buckets::DescribeBucketsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_buckets::DescribeBucketsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_buckets::paginator::DescribeBucketsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_buckets::paginator::DescribeBucketsPaginator {
-        crate::operation::describe_buckets::paginator::DescribeBucketsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_buckets::paginator::DescribeBucketsPaginator {
+        crate::operation::describe_buckets::paginator::DescribeBucketsPaginator::new(self.handle, self.inner)
     }
     /// Adds a key-value pair to `criteria`.
     ///
     /// To override the contents of this collection use [`set_criteria`](Self::set_criteria).
     ///
     /// <p>The criteria to use to filter the query results.</p>
-    pub fn criteria(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::BucketCriteriaAdditionalProperties,
-    ) -> Self {
+    pub fn criteria(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::BucketCriteriaAdditionalProperties) -> Self {
         self.inner = self.inner.criteria(k.into(), v);
         self
     }
     /// <p>The criteria to use to filter the query results.</p>
     pub fn set_criteria(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<
-                ::std::string::String,
-                crate::types::BucketCriteriaAdditionalProperties,
-            >,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>>,
     ) -> Self {
         self.inner = self.inner.set_criteria(input);
         self
@@ -162,12 +132,7 @@ impl DescribeBucketsFluentBuilder {
     /// <p>The criteria to use to filter the query results.</p>
     pub fn get_criteria(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<
-            ::std::string::String,
-            crate::types::BucketCriteriaAdditionalProperties,
-        >,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>> {
         self.inner.get_criteria()
     }
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
@@ -204,10 +169,7 @@ impl DescribeBucketsFluentBuilder {
         self
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketSortCriteria>,
-    ) -> Self {
+    pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::BucketSortCriteria>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }

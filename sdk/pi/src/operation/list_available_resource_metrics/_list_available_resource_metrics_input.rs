@@ -55,16 +55,14 @@ impl ListAvailableResourceMetricsInput {
 }
 impl ListAvailableResourceMetricsInput {
     /// Creates a new builder-style object to manufacture [`ListAvailableResourceMetricsInput`](crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsInput).
-    pub fn builder() -> crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsInputBuilder{
+    pub fn builder() -> crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsInputBuilder {
         crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListAvailableResourceMetricsInput`](crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAvailableResourceMetricsInputBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
@@ -79,10 +77,7 @@ impl ListAvailableResourceMetricsInputBuilder {
         self
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.service_type = input;
         self
     }
@@ -128,10 +123,7 @@ impl ListAvailableResourceMetricsInputBuilder {
     /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// </ul>
-    pub fn set_metric_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metric_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metric_types = input;
         self
     }
@@ -142,9 +134,7 @@ impl ListAvailableResourceMetricsInputBuilder {
     /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// </ul>
-    pub fn get_metric_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metric_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metric_types
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
@@ -182,14 +172,12 @@ impl ListAvailableResourceMetricsInputBuilder {
         crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsInput {
-                service_type: self.service_type,
-                identifier: self.identifier,
-                metric_types: self.metric_types,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsInput {
+            service_type: self.service_type,
+            identifier: self.identifier,
+            metric_types: self.metric_types,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

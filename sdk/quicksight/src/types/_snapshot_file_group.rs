@@ -23,9 +23,7 @@ impl SnapshotFileGroup {
 
 /// A builder for [`SnapshotFileGroup`](crate::types::SnapshotFileGroup).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotFileGroupBuilder {
     pub(crate) files: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>>,
 }
@@ -42,10 +40,7 @@ impl SnapshotFileGroupBuilder {
         self
     }
     /// <p>A list of <code>SnapshotFile</code> objects that contain the information on the snapshot files that need to be generated. This structure can hold 1 configuration at a time.</p>
-    pub fn set_files(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>>,
-    ) -> Self {
+    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>>) -> Self {
         self.files = input;
         self
     }

@@ -30,9 +30,7 @@ impl TeletextSourceSettings {
 
 /// A builder for [`TeletextSourceSettings`](crate::types::TeletextSourceSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TeletextSourceSettingsBuilder {
     pub(crate) output_rectangle: ::std::option::Option<crate::types::CaptionRectangle>,
     pub(crate) page_number: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl TeletextSourceSettingsBuilder {
         self
     }
     /// Optionally defines a region where TTML style captions will be displayed
-    pub fn set_output_rectangle(
-        mut self,
-        input: ::std::option::Option<crate::types::CaptionRectangle>,
-    ) -> Self {
+    pub fn set_output_rectangle(mut self, input: ::std::option::Option<crate::types::CaptionRectangle>) -> Self {
         self.output_rectangle = input;
         self
     }

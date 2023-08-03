@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCustomerGatewayOutput {
 }
 impl DeleteCustomerGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomerGatewayOutput`](crate::operation::delete_customer_gateway::DeleteCustomerGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_customer_gateway::builders::DeleteCustomerGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_customer_gateway::builders::DeleteCustomerGatewayOutputBuilder {
         crate::operation::delete_customer_gateway::builders::DeleteCustomerGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCustomerGatewayOutput`](crate::operation::delete_customer_gateway::DeleteCustomerGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCustomerGatewayOutputBuilder {
     _request_id: Option<String>,
 }

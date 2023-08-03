@@ -12,10 +12,7 @@ impl super::Client {
     ///   - [`delivery_options(Option<DeliveryOptions>)`](crate::operation::describe_configuration_set::DescribeConfigurationSetOutput::delivery_options): <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     ///   - [`reputation_options(Option<ReputationOptions>)`](crate::operation::describe_configuration_set::DescribeConfigurationSetOutput::reputation_options): <p>An object that represents the reputation settings for the configuration set. </p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationSetError>`](crate::operation::describe_configuration_set::DescribeConfigurationSetError)
-    pub fn describe_configuration_set(
-        &self,
-    ) -> crate::operation::describe_configuration_set::builders::DescribeConfigurationSetFluentBuilder
-    {
+    pub fn describe_configuration_set(&self) -> crate::operation::describe_configuration_set::builders::DescribeConfigurationSetFluentBuilder {
         crate::operation::describe_configuration_set::builders::DescribeConfigurationSetFluentBuilder::new(self.handle.clone())
     }
 }

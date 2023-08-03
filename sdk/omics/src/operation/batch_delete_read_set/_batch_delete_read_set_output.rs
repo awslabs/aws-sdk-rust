@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for BatchDeleteReadSetOutput {
 }
 impl BatchDeleteReadSetOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteReadSetOutput`](crate::operation::batch_delete_read_set::BatchDeleteReadSetOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetOutputBuilder {
-        crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetOutputBuilder {
+        crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`BatchDeleteReadSetOutput`](crate::operation::batch_delete_read_set::BatchDeleteReadSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteReadSetOutputBuilder {
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetBatchError>>,
     _request_id: Option<String>,
@@ -50,17 +46,12 @@ impl BatchDeleteReadSetOutputBuilder {
         self
     }
     /// <p>Errors returned by individual delete operations.</p>
-    pub fn set_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetBatchError>>,
-    ) -> Self {
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetBatchError>>) -> Self {
         self.errors = input;
         self
     }
     /// <p>Errors returned by individual delete operations.</p>
-    pub fn get_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadSetBatchError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadSetBatchError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

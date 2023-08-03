@@ -19,11 +19,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::update_application::UpdateApplicationOutput::tags): <p>Application tags.</p>
     ///   - [`wave_id(Option<String>)`](crate::operation::update_application::UpdateApplicationOutput::wave_id): <p>Application wave ID.</p>
     /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::operation::update_application::UpdateApplicationError)
-    pub fn update_application(
-        &self,
-    ) -> crate::operation::update_application::builders::UpdateApplicationFluentBuilder {
-        crate::operation::update_application::builders::UpdateApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_application(&self) -> crate::operation::update_application::builders::UpdateApplicationFluentBuilder {
+        crate::operation::update_application::builders::UpdateApplicationFluentBuilder::new(self.handle.clone())
     }
 }

@@ -69,9 +69,7 @@ impl PublishInput {
         self.user_properties.as_deref()
     }
     /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
-    pub fn payload_format_indicator(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PayloadFormatIndicator> {
+    pub fn payload_format_indicator(&self) -> ::std::option::Option<&crate::types::PayloadFormatIndicator> {
         self.payload_format_indicator.as_ref()
     }
     /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
@@ -100,17 +98,14 @@ impl PublishInput {
 
 /// A builder for [`PublishInput`](crate::operation::publish::PublishInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishInputBuilder {
     pub(crate) topic: ::std::option::Option<::std::string::String>,
     pub(crate) qos: ::std::option::Option<i32>,
     pub(crate) retain: ::std::option::Option<bool>,
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) user_properties: ::std::option::Option<::std::string::String>,
-    pub(crate) payload_format_indicator:
-        ::std::option::Option<crate::types::PayloadFormatIndicator>,
+    pub(crate) payload_format_indicator: ::std::option::Option<crate::types::PayloadFormatIndicator>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) response_topic: ::std::option::Option<::std::string::String>,
     pub(crate) correlation_data: ::std::option::Option<::std::string::String>,
@@ -188,20 +183,14 @@ impl PublishInputBuilder {
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    pub fn user_properties(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_properties = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    pub fn set_user_properties(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_user_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_properties = input;
         self
     }
@@ -217,17 +206,12 @@ impl PublishInputBuilder {
         self
     }
     /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
-    pub fn set_payload_format_indicator(
-        mut self,
-        input: ::std::option::Option<crate::types::PayloadFormatIndicator>,
-    ) -> Self {
+    pub fn set_payload_format_indicator(mut self, input: ::std::option::Option<crate::types::PayloadFormatIndicator>) -> Self {
         self.payload_format_indicator = input;
         self
     }
     /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
-    pub fn get_payload_format_indicator(
-        &self,
-    ) -> &::std::option::Option<crate::types::PayloadFormatIndicator> {
+    pub fn get_payload_format_indicator(&self) -> &::std::option::Option<crate::types::PayloadFormatIndicator> {
         &self.payload_format_indicator
     }
     /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
@@ -245,18 +229,12 @@ impl PublishInputBuilder {
         &self.content_type
     }
     /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-    pub fn response_topic(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_topic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-    pub fn set_response_topic(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_response_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_topic = input;
         self
     }
@@ -265,18 +243,12 @@ impl PublishInputBuilder {
         &self.response_topic
     }
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-    pub fn correlation_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn correlation_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.correlation_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-    pub fn set_correlation_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_correlation_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.correlation_data = input;
         self
     }
@@ -299,12 +271,7 @@ impl PublishInputBuilder {
         &self.message_expiry
     }
     /// Consumes the builder and constructs a [`PublishInput`](crate::operation::publish::PublishInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::publish::PublishInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::publish::PublishInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish::PublishInput {
             topic: self.topic,
             qos: self.qos,

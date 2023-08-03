@@ -9,8 +9,7 @@ pub struct ValidatePipelineDefinitionOutput {
     pub validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
     /// <p>Any validation warnings that were found.</p>
     #[doc(hidden)]
-    pub validation_warnings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
+    pub validation_warnings: ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
     /// <p>Indicates whether there were validation errors.</p>
     #[doc(hidden)]
     pub errored: bool,
@@ -37,21 +36,17 @@ impl ::aws_http::request_id::RequestId for ValidatePipelineDefinitionOutput {
 }
 impl ValidatePipelineDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`ValidatePipelineDefinitionOutput`](crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput).
-    pub fn builder() -> crate::operation::validate_pipeline_definition::builders::ValidatePipelineDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::validate_pipeline_definition::builders::ValidatePipelineDefinitionOutputBuilder {
         crate::operation::validate_pipeline_definition::builders::ValidatePipelineDefinitionOutputBuilder::default()
     }
 }
 
 /// A builder for [`ValidatePipelineDefinitionOutput`](crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidatePipelineDefinitionOutputBuilder {
-    pub(crate) validation_errors:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
-    pub(crate) validation_warnings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
+    pub(crate) validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
+    pub(crate) validation_warnings: ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
     pub(crate) errored: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -68,17 +63,12 @@ impl ValidatePipelineDefinitionOutputBuilder {
         self
     }
     /// <p>Any validation errors that were found.</p>
-    pub fn set_validation_errors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
-    ) -> Self {
+    pub fn set_validation_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>) -> Self {
         self.validation_errors = input;
         self
     }
     /// <p>Any validation errors that were found.</p>
-    pub fn get_validation_errors(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationError>> {
+    pub fn get_validation_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationError>> {
         &self.validation_errors
     }
     /// Appends an item to `validation_warnings`.
@@ -93,17 +83,12 @@ impl ValidatePipelineDefinitionOutputBuilder {
         self
     }
     /// <p>Any validation warnings that were found.</p>
-    pub fn set_validation_warnings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
-    ) -> Self {
+    pub fn set_validation_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>) -> Self {
         self.validation_warnings = input;
         self
     }
     /// <p>Any validation warnings that were found.</p>
-    pub fn get_validation_warnings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>> {
+    pub fn get_validation_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>> {
         &self.validation_warnings
     }
     /// <p>Indicates whether there were validation errors.</p>
@@ -130,9 +115,7 @@ impl ValidatePipelineDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ValidatePipelineDefinitionOutput`](crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput {
+    pub fn build(self) -> crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput {
         crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput {
             validation_errors: self.validation_errors,
             validation_warnings: self.validation_warnings,

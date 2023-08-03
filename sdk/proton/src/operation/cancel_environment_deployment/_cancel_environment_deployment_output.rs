@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for CancelEnvironmentDeploymentOutput {
 }
 impl CancelEnvironmentDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CancelEnvironmentDeploymentOutput`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentOutput).
-    pub fn builder() -> crate::operation::cancel_environment_deployment::builders::CancelEnvironmentDeploymentOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_environment_deployment::builders::CancelEnvironmentDeploymentOutputBuilder {
         crate::operation::cancel_environment_deployment::builders::CancelEnvironmentDeploymentOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelEnvironmentDeploymentOutput`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelEnvironmentDeploymentOutputBuilder {
     pub(crate) environment: ::std::option::Option<crate::types::Environment>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl CancelEnvironmentDeploymentOutputBuilder {
         self
     }
     /// <p>The environment summary data that's returned by Proton.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<crate::types::Environment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
         self.environment = input;
         self
     }
@@ -63,9 +58,7 @@ impl CancelEnvironmentDeploymentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelEnvironmentDeploymentOutput`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentOutput {
+    pub fn build(self) -> crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentOutput {
         crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentOutput {
             environment: self.environment,
             _request_id: self._request_id,

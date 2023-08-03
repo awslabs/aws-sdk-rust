@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetRegionOptStatusOutput {
 }
 impl GetRegionOptStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetRegionOptStatusOutput`](crate::operation::get_region_opt_status::GetRegionOptStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_region_opt_status::builders::GetRegionOptStatusOutputBuilder {
-        crate::operation::get_region_opt_status::builders::GetRegionOptStatusOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_region_opt_status::builders::GetRegionOptStatusOutputBuilder {
+        crate::operation::get_region_opt_status::builders::GetRegionOptStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRegionOptStatusOutput`](crate::operation::get_region_opt_status::GetRegionOptStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRegionOptStatusOutputBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) region_opt_status: ::std::option::Option<crate::types::RegionOptStatus>,
@@ -66,10 +62,7 @@ impl GetRegionOptStatusOutputBuilder {
         self
     }
     /// <p>One of the potential statuses a Region can undergo (Enabled, Enabling, Disabled, Disabling, Enabled_By_Default).</p>
-    pub fn set_region_opt_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegionOptStatus>,
-    ) -> Self {
+    pub fn set_region_opt_status(mut self, input: ::std::option::Option<crate::types::RegionOptStatus>) -> Self {
         self.region_opt_status = input;
         self
     }

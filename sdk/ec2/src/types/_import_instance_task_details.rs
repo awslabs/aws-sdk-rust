@@ -15,8 +15,7 @@ pub struct ImportInstanceTaskDetails {
     pub platform: ::std::option::Option<crate::types::PlatformValues>,
     /// <p>The volumes.</p>
     #[doc(hidden)]
-    pub volumes:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImportInstanceVolumeDetailItem>>,
+    pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::ImportInstanceVolumeDetailItem>>,
 }
 impl ImportInstanceTaskDetails {
     /// <p>A description of the task.</p>
@@ -32,9 +31,7 @@ impl ImportInstanceTaskDetails {
         self.platform.as_ref()
     }
     /// <p>The volumes.</p>
-    pub fn volumes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ImportInstanceVolumeDetailItem]> {
+    pub fn volumes(&self) -> ::std::option::Option<&[crate::types::ImportInstanceVolumeDetailItem]> {
         self.volumes.as_deref()
     }
 }
@@ -47,15 +44,12 @@ impl ImportInstanceTaskDetails {
 
 /// A builder for [`ImportInstanceTaskDetails`](crate::types::ImportInstanceTaskDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportInstanceTaskDetailsBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<crate::types::PlatformValues>,
-    pub(crate) volumes:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImportInstanceVolumeDetailItem>>,
+    pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::ImportInstanceVolumeDetailItem>>,
 }
 impl ImportInstanceTaskDetailsBuilder {
     /// <p>A description of the task.</p>
@@ -92,10 +86,7 @@ impl ImportInstanceTaskDetailsBuilder {
         self
     }
     /// <p>The instance operating system.</p>
-    pub fn set_platform(
-        mut self,
-        input: ::std::option::Option<crate::types::PlatformValues>,
-    ) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformValues>) -> Self {
         self.platform = input;
         self
     }
@@ -115,17 +106,12 @@ impl ImportInstanceTaskDetailsBuilder {
         self
     }
     /// <p>The volumes.</p>
-    pub fn set_volumes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportInstanceVolumeDetailItem>>,
-    ) -> Self {
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportInstanceVolumeDetailItem>>) -> Self {
         self.volumes = input;
         self
     }
     /// <p>The volumes.</p>
-    pub fn get_volumes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportInstanceVolumeDetailItem>> {
+    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportInstanceVolumeDetailItem>> {
         &self.volumes
     }
     /// Consumes the builder and constructs a [`ImportInstanceTaskDetails`](crate::types::ImportInstanceTaskDetails).

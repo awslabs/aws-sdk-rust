@@ -10,10 +10,7 @@ impl CreateApiMappingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_api_mapping::CreateApiMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_api_mapping::CreateApiMappingError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_api_mapping::CreateApiMappingError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_api_mapping();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateApiMappingFluentBuilder {
         }
     }
     /// Access the CreateApiMapping as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_api_mapping::builders::CreateApiMappingInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_api_mapping::builders::CreateApiMappingInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CreateApiMappingFluentBuilder {
             crate::operation::create_api_mapping::CreateApiMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_api_mapping::CreateApiMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_api_mapping::CreateApiMappingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CreateApiMappingFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CreateApiMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_api_mapping::CreateApiMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_api_mapping::CreateApiMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_api_mapping::CreateApiMappingError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CreateApiMappingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_api_mapping::CreateApiMappingOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_api_mapping::CreateApiMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_api_mapping::CreateApiMappingError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl CreateApiMappingFluentBuilder {
             crate::operation::create_api_mapping::CreateApiMapping,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_api_mapping::CreateApiMappingError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_api_mapping::CreateApiMappingError>,
     > {
         self.customize_middleware().await
     }
@@ -137,18 +121,12 @@ impl CreateApiMappingFluentBuilder {
         self.inner.get_api_id()
     }
     /// The API mapping key.
-    pub fn api_mapping_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn api_mapping_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_mapping_key(input.into());
         self
     }
     /// The API mapping key.
-    pub fn set_api_mapping_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_api_mapping_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_api_mapping_key(input);
         self
     }

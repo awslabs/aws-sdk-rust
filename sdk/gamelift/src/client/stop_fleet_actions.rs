@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`fleet_id(Option<String>)`](crate::operation::stop_fleet_actions::StopFleetActionsOutput::fleet_id): <p>A unique identifier for the fleet to stop actions on.</p>
     ///   - [`fleet_arn(Option<String>)`](crate::operation::stop_fleet_actions::StopFleetActionsOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>.</p>
     /// - On failure, responds with [`SdkError<StopFleetActionsError>`](crate::operation::stop_fleet_actions::StopFleetActionsError)
-    pub fn stop_fleet_actions(
-        &self,
-    ) -> crate::operation::stop_fleet_actions::builders::StopFleetActionsFluentBuilder {
-        crate::operation::stop_fleet_actions::builders::StopFleetActionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn stop_fleet_actions(&self) -> crate::operation::stop_fleet_actions::builders::StopFleetActionsFluentBuilder {
+        crate::operation::stop_fleet_actions::builders::StopFleetActionsFluentBuilder::new(self.handle.clone())
     }
 }

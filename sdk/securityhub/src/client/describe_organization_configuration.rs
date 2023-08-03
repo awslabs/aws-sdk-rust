@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`member_account_limit_reached(bool)`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput::member_account_limit_reached): <p>Whether the maximum number of allowed member accounts are already associated with the Security Hub administrator account.</p>
     ///   - [`auto_enable_standards(Option<AutoEnableStandards>)`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput::auto_enable_standards): <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>  <p>The default value of this parameter is equal to <code>DEFAULT</code>.</p>  <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
     /// - On failure, responds with [`SdkError<DescribeOrganizationConfigurationError>`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationError)
-    pub fn describe_organization_configuration(&self) -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder{
+    pub fn describe_organization_configuration(
+        &self,
+    ) -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder {
         crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

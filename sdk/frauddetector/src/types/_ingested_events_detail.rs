@@ -10,9 +10,7 @@ pub struct IngestedEventsDetail {
 }
 impl IngestedEventsDetail {
     /// <p>The start and stop time of the ingested events.</p>
-    pub fn ingested_events_time_window(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IngestedEventsTimeWindow> {
+    pub fn ingested_events_time_window(&self) -> ::std::option::Option<&crate::types::IngestedEventsTimeWindow> {
         self.ingested_events_time_window.as_ref()
     }
 }
@@ -25,34 +23,23 @@ impl IngestedEventsDetail {
 
 /// A builder for [`IngestedEventsDetail`](crate::types::IngestedEventsDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IngestedEventsDetailBuilder {
-    pub(crate) ingested_events_time_window:
-        ::std::option::Option<crate::types::IngestedEventsTimeWindow>,
+    pub(crate) ingested_events_time_window: ::std::option::Option<crate::types::IngestedEventsTimeWindow>,
 }
 impl IngestedEventsDetailBuilder {
     /// <p>The start and stop time of the ingested events.</p>
-    pub fn ingested_events_time_window(
-        mut self,
-        input: crate::types::IngestedEventsTimeWindow,
-    ) -> Self {
+    pub fn ingested_events_time_window(mut self, input: crate::types::IngestedEventsTimeWindow) -> Self {
         self.ingested_events_time_window = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start and stop time of the ingested events.</p>
-    pub fn set_ingested_events_time_window(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestedEventsTimeWindow>,
-    ) -> Self {
+    pub fn set_ingested_events_time_window(mut self, input: ::std::option::Option<crate::types::IngestedEventsTimeWindow>) -> Self {
         self.ingested_events_time_window = input;
         self
     }
     /// <p>The start and stop time of the ingested events.</p>
-    pub fn get_ingested_events_time_window(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngestedEventsTimeWindow> {
+    pub fn get_ingested_events_time_window(&self) -> &::std::option::Option<crate::types::IngestedEventsTimeWindow> {
         &self.ingested_events_time_window
     }
     /// Consumes the builder and constructs a [`IngestedEventsDetail`](crate::types::IngestedEventsDetail).

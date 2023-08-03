@@ -10,10 +10,7 @@ impl DeleteGeoMatchSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_geo_match_set::DeleteGeoMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_geo_match_set::DeleteGeoMatchSetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_geo_match_set::DeleteGeoMatchSetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.delete_geo_match_set();
         fluent_builder.inner = self;
@@ -48,9 +45,7 @@ impl DeleteGeoMatchSetFluentBuilder {
         }
     }
     /// Access the DeleteGeoMatchSet as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_geo_match_set::builders::DeleteGeoMatchSetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_geo_match_set::builders::DeleteGeoMatchSetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -62,9 +57,7 @@ impl DeleteGeoMatchSetFluentBuilder {
             crate::operation::delete_geo_match_set::DeleteGeoMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_geo_match_set::DeleteGeoMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_geo_match_set::DeleteGeoMatchSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -74,10 +67,7 @@ impl DeleteGeoMatchSetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -86,9 +76,7 @@ impl DeleteGeoMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_geo_match_set::DeleteGeoMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_geo_match_set::DeleteGeoMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_geo_match_set::DeleteGeoMatchSetError>,
     > {
         let op = self
             .inner
@@ -111,9 +99,7 @@ impl DeleteGeoMatchSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_geo_match_set::DeleteGeoMatchSetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_geo_match_set::DeleteGeoMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_geo_match_set::DeleteGeoMatchSetError>,
     > {
         self.send_middleware().await
     }
@@ -127,25 +113,17 @@ impl DeleteGeoMatchSetFluentBuilder {
             crate::operation::delete_geo_match_set::DeleteGeoMatchSet,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_geo_match_set::DeleteGeoMatchSetError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_geo_match_set::DeleteGeoMatchSetError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The <code>GeoMatchSetID</code> of the <code>GeoMatchSet</code> that you want to delete. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    pub fn geo_match_set_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn geo_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.geo_match_set_id(input.into());
         self
     }
     /// <p>The <code>GeoMatchSetID</code> of the <code>GeoMatchSet</code> that you want to delete. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    pub fn set_geo_match_set_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_geo_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_geo_match_set_id(input);
         self
     }

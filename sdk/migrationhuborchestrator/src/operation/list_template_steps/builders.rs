@@ -10,10 +10,7 @@ impl ListTemplateStepsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_template_steps::ListTemplateStepsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_template_steps::ListTemplateStepsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_template_steps::ListTemplateStepsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_template_steps();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListTemplateStepsFluentBuilder {
         }
     }
     /// Access the ListTemplateSteps as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_template_steps::builders::ListTemplateStepsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_template_steps::builders::ListTemplateStepsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListTemplateStepsFluentBuilder {
             crate::operation::list_template_steps::ListTemplateSteps,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_template_steps::ListTemplateStepsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_template_steps::ListTemplateStepsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListTemplateStepsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListTemplateStepsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_template_steps::ListTemplateStepsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_template_steps::ListTemplateStepsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_template_steps::ListTemplateStepsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListTemplateStepsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_template_steps::ListTemplateStepsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_template_steps::ListTemplateStepsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_template_steps::ListTemplateStepsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListTemplateStepsFluentBuilder {
             crate::operation::list_template_steps::ListTemplateSteps,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_template_steps::ListTemplateStepsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_template_steps::ListTemplateStepsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_template_steps::paginator::ListTemplateStepsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_template_steps::paginator::ListTemplateStepsPaginator {
-        crate::operation::list_template_steps::paginator::ListTemplateStepsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_template_steps::paginator::ListTemplateStepsPaginator {
+        crate::operation::list_template_steps::paginator::ListTemplateStepsPaginator::new(self.handle, self.inner)
     }
     /// <p>The maximum number of results that can be returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -176,18 +155,12 @@ impl ListTemplateStepsFluentBuilder {
         self.inner.get_template_id()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.step_group_id(input.into());
         self
     }
     /// <p>The ID of the step group.</p>
-    pub fn set_step_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_step_group_id(input);
         self
     }

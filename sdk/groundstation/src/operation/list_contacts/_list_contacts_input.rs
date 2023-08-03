@@ -72,9 +72,7 @@ impl ListContactsInput {
 
 /// A builder for [`ListContactsInput`](crate::operation::list_contacts::ListContactsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -126,17 +124,12 @@ impl ListContactsInputBuilder {
         self
     }
     /// <p>Status of a contact reservation.</p>
-    pub fn set_status_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContactStatus>>,
-    ) -> Self {
+    pub fn set_status_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactStatus>>) -> Self {
         self.status_list = input;
         self
     }
     /// <p>Status of a contact reservation.</p>
-    pub fn get_status_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactStatus>> {
+    pub fn get_status_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactStatus>> {
         &self.status_list
     }
     /// <p>Start time of a contact in UTC.</p>
@@ -145,10 +138,7 @@ impl ListContactsInputBuilder {
         self
     }
     /// <p>Start time of a contact in UTC.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
@@ -162,10 +152,7 @@ impl ListContactsInputBuilder {
         self
     }
     /// <p>End time of a contact in UTC.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
@@ -174,18 +161,12 @@ impl ListContactsInputBuilder {
         &self.end_time
     }
     /// <p>Name of a ground station.</p>
-    pub fn ground_station(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ground_station(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ground_station = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a ground station.</p>
-    pub fn set_ground_station(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ground_station(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ground_station = input;
         self
     }
@@ -194,18 +175,12 @@ impl ListContactsInputBuilder {
         &self.ground_station
     }
     /// <p>ARN of a satellite.</p>
-    pub fn satellite_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn satellite_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.satellite_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a satellite.</p>
-    pub fn set_satellite_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_satellite_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.satellite_arn = input;
         self
     }
@@ -214,18 +189,12 @@ impl ListContactsInputBuilder {
         &self.satellite_arn
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn mission_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn mission_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mission_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn set_mission_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_mission_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mission_profile_arn = input;
         self
     }
@@ -234,12 +203,7 @@ impl ListContactsInputBuilder {
         &self.mission_profile_arn
     }
     /// Consumes the builder and constructs a [`ListContactsInput`](crate::operation::list_contacts::ListContactsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_contacts::ListContactsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_contacts::ListContactsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_contacts::ListContactsInput {
             max_results: self.max_results,
             next_token: self.next_token,

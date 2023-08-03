@@ -10,9 +10,7 @@ pub struct GetJourneyRunsOutput {
 }
 impl GetJourneyRunsOutput {
     /// <p>Provides information from all runs of a journey.</p>
-    pub fn journey_runs_response(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JourneyRunsResponse> {
+    pub fn journey_runs_response(&self) -> ::std::option::Option<&crate::types::JourneyRunsResponse> {
         self.journey_runs_response.as_ref()
     }
 }
@@ -30,9 +28,7 @@ impl GetJourneyRunsOutput {
 
 /// A builder for [`GetJourneyRunsOutput`](crate::operation::get_journey_runs::GetJourneyRunsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJourneyRunsOutputBuilder {
     pub(crate) journey_runs_response: ::std::option::Option<crate::types::JourneyRunsResponse>,
     _request_id: Option<String>,
@@ -44,17 +40,12 @@ impl GetJourneyRunsOutputBuilder {
         self
     }
     /// <p>Provides information from all runs of a journey.</p>
-    pub fn set_journey_runs_response(
-        mut self,
-        input: ::std::option::Option<crate::types::JourneyRunsResponse>,
-    ) -> Self {
+    pub fn set_journey_runs_response(mut self, input: ::std::option::Option<crate::types::JourneyRunsResponse>) -> Self {
         self.journey_runs_response = input;
         self
     }
     /// <p>Provides information from all runs of a journey.</p>
-    pub fn get_journey_runs_response(
-        &self,
-    ) -> &::std::option::Option<crate::types::JourneyRunsResponse> {
+    pub fn get_journey_runs_response(&self) -> &::std::option::Option<crate::types::JourneyRunsResponse> {
         &self.journey_runs_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

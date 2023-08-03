@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`key_state(Option<KeyState>)`](crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput::key_state): <p>The current status of the KMS key.</p>  <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     ///   - [`pending_window_in_days(Option<i32>)`](crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput::pending_window_in_days): <p>The waiting period before the KMS key is deleted. </p>  <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
     /// - On failure, responds with [`SdkError<ScheduleKeyDeletionError>`](crate::operation::schedule_key_deletion::ScheduleKeyDeletionError)
-    pub fn schedule_key_deletion(
-        &self,
-    ) -> crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionFluentBuilder {
-        crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn schedule_key_deletion(&self) -> crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionFluentBuilder {
+        crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionFluentBuilder::new(self.handle.clone())
     }
 }

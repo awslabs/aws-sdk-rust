@@ -38,9 +38,7 @@ impl ListPrincipalThingsFluentBuilder {
         }
     }
     /// Access the ListPrincipalThings as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_principal_things::builders::ListPrincipalThingsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_principal_things::builders::ListPrincipalThingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl ListPrincipalThingsFluentBuilder {
             crate::operation::list_principal_things::ListPrincipalThings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_principal_things::ListPrincipalThingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_principal_things::ListPrincipalThingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl ListPrincipalThingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl ListPrincipalThingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_principal_things::ListPrincipalThingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_principal_things::ListPrincipalThingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_principal_things::ListPrincipalThingsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl ListPrincipalThingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_principal_things::ListPrincipalThingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_principal_things::ListPrincipalThingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_principal_things::ListPrincipalThingsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl ListPrincipalThingsFluentBuilder {
             crate::operation::list_principal_things::ListPrincipalThings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_principal_things::ListPrincipalThingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_principal_things::ListPrincipalThingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_principal_things::paginator::ListPrincipalThingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_principal_things::paginator::ListPrincipalThingsPaginator {
-        crate::operation::list_principal_things::paginator::ListPrincipalThingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_principal_things::paginator::ListPrincipalThingsPaginator {
+        crate::operation::list_principal_things::paginator::ListPrincipalThingsPaginator::new(self.handle, self.inner)
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -6,28 +6,19 @@ pub fn ser_batch_write_operation(
     if let Some(var_1) = &input.create_object {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CreateObject").start_object();
-        crate::protocol_serde::shape_batch_create_object::ser_batch_create_object(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_batch_create_object::ser_batch_create_object(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.attach_object {
         #[allow(unused_mut)]
         let mut object_4 = object.key("AttachObject").start_object();
-        crate::protocol_serde::shape_batch_attach_object::ser_batch_attach_object(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_batch_attach_object::ser_batch_attach_object(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.detach_object {
         #[allow(unused_mut)]
         let mut object_6 = object.key("DetachObject").start_object();
-        crate::protocol_serde::shape_batch_detach_object::ser_batch_detach_object(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_batch_detach_object::ser_batch_detach_object(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.update_object_attributes {
@@ -39,19 +30,13 @@ pub fn ser_batch_write_operation(
     if let Some(var_9) = &input.delete_object {
         #[allow(unused_mut)]
         let mut object_10 = object.key("DeleteObject").start_object();
-        crate::protocol_serde::shape_batch_delete_object::ser_batch_delete_object(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_batch_delete_object::ser_batch_delete_object(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.add_facet_to_object {
         #[allow(unused_mut)]
         let mut object_12 = object.key("AddFacetToObject").start_object();
-        crate::protocol_serde::shape_batch_add_facet_to_object::ser_batch_add_facet_to_object(
-            &mut object_12,
-            var_11,
-        )?;
+        crate::protocol_serde::shape_batch_add_facet_to_object::ser_batch_add_facet_to_object(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.remove_facet_from_object {
@@ -63,64 +48,43 @@ pub fn ser_batch_write_operation(
     if let Some(var_15) = &input.attach_policy {
         #[allow(unused_mut)]
         let mut object_16 = object.key("AttachPolicy").start_object();
-        crate::protocol_serde::shape_batch_attach_policy::ser_batch_attach_policy(
-            &mut object_16,
-            var_15,
-        )?;
+        crate::protocol_serde::shape_batch_attach_policy::ser_batch_attach_policy(&mut object_16, var_15)?;
         object_16.finish();
     }
     if let Some(var_17) = &input.detach_policy {
         #[allow(unused_mut)]
         let mut object_18 = object.key("DetachPolicy").start_object();
-        crate::protocol_serde::shape_batch_detach_policy::ser_batch_detach_policy(
-            &mut object_18,
-            var_17,
-        )?;
+        crate::protocol_serde::shape_batch_detach_policy::ser_batch_detach_policy(&mut object_18, var_17)?;
         object_18.finish();
     }
     if let Some(var_19) = &input.create_index {
         #[allow(unused_mut)]
         let mut object_20 = object.key("CreateIndex").start_object();
-        crate::protocol_serde::shape_batch_create_index::ser_batch_create_index(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_batch_create_index::ser_batch_create_index(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.attach_to_index {
         #[allow(unused_mut)]
         let mut object_22 = object.key("AttachToIndex").start_object();
-        crate::protocol_serde::shape_batch_attach_to_index::ser_batch_attach_to_index(
-            &mut object_22,
-            var_21,
-        )?;
+        crate::protocol_serde::shape_batch_attach_to_index::ser_batch_attach_to_index(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.detach_from_index {
         #[allow(unused_mut)]
         let mut object_24 = object.key("DetachFromIndex").start_object();
-        crate::protocol_serde::shape_batch_detach_from_index::ser_batch_detach_from_index(
-            &mut object_24,
-            var_23,
-        )?;
+        crate::protocol_serde::shape_batch_detach_from_index::ser_batch_detach_from_index(&mut object_24, var_23)?;
         object_24.finish();
     }
     if let Some(var_25) = &input.attach_typed_link {
         #[allow(unused_mut)]
         let mut object_26 = object.key("AttachTypedLink").start_object();
-        crate::protocol_serde::shape_batch_attach_typed_link::ser_batch_attach_typed_link(
-            &mut object_26,
-            var_25,
-        )?;
+        crate::protocol_serde::shape_batch_attach_typed_link::ser_batch_attach_typed_link(&mut object_26, var_25)?;
         object_26.finish();
     }
     if let Some(var_27) = &input.detach_typed_link {
         #[allow(unused_mut)]
         let mut object_28 = object.key("DetachTypedLink").start_object();
-        crate::protocol_serde::shape_batch_detach_typed_link::ser_batch_detach_typed_link(
-            &mut object_28,
-            var_27,
-        )?;
+        crate::protocol_serde::shape_batch_detach_typed_link::ser_batch_detach_typed_link(&mut object_28, var_27)?;
         object_28.finish();
     }
     if let Some(var_29) = &input.update_link_attributes {

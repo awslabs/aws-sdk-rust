@@ -5,9 +5,7 @@
 pub struct AttachCustomerManagedPolicyReferenceToPermissionSetOutput {
     _request_id: Option<String>,
 }
-impl ::aws_http::request_id::RequestId
-    for AttachCustomerManagedPolicyReferenceToPermissionSetOutput
-{
+impl ::aws_http::request_id::RequestId for AttachCustomerManagedPolicyReferenceToPermissionSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,9 +19,7 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetOutput {
 
 /// A builder for [`AttachCustomerManagedPolicyReferenceToPermissionSetOutput`](crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachCustomerManagedPolicyReferenceToPermissionSetOutputBuilder {
     _request_id: Option<String>,
 }
@@ -38,7 +34,9 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AttachCustomerManagedPolicyReferenceToPermissionSetOutput`](crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetOutput).
-    pub fn build(self) -> crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetOutput{
+    pub fn build(
+        self,
+    ) -> crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetOutput {
         crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetOutput {
             _request_id: self._request_id,
         }

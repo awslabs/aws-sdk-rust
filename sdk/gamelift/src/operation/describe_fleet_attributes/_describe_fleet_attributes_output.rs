@@ -28,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeFleetAttributesOutput {
 }
 impl DescribeFleetAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAttributesOutput`](crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesOutputBuilder {
         crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetAttributesOutput`](crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetAttributesOutputBuilder {
-    pub(crate) fleet_attributes:
-        ::std::option::Option<::std::vec::Vec<crate::types::FleetAttributes>>,
+    pub(crate) fleet_attributes: ::std::option::Option<::std::vec::Vec<crate::types::FleetAttributes>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +54,12 @@ impl DescribeFleetAttributesOutputBuilder {
         self
     }
     /// <p>A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned only for fleets that currently exist.</p>
-    pub fn set_fleet_attributes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAttributes>>,
-    ) -> Self {
+    pub fn set_fleet_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAttributes>>) -> Self {
         self.fleet_attributes = input;
         self
     }
     /// <p>A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned only for fleets that currently exist.</p>
-    pub fn get_fleet_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAttributes>> {
+    pub fn get_fleet_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAttributes>> {
         &self.fleet_attributes
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
@@ -96,9 +86,7 @@ impl DescribeFleetAttributesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeFleetAttributesOutput`](crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput {
+    pub fn build(self) -> crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput {
         crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput {
             fleet_attributes: self.fleet_attributes,
             next_token: self.next_token,

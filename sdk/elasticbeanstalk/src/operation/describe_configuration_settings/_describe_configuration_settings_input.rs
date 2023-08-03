@@ -34,16 +34,14 @@ impl DescribeConfigurationSettingsInput {
 }
 impl DescribeConfigurationSettingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationSettingsInput`](crate::operation::describe_configuration_settings::DescribeConfigurationSettingsInput).
-    pub fn builder() -> crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsInputBuilder {
         crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConfigurationSettingsInput`](crate::operation::describe_configuration_settings::DescribeConfigurationSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigurationSettingsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
@@ -51,18 +49,12 @@ pub struct DescribeConfigurationSettingsInputBuilder {
 }
 impl DescribeConfigurationSettingsInputBuilder {
     /// <p>The application for the environment or configuration template.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application for the environment or configuration template.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -72,19 +64,13 @@ impl DescribeConfigurationSettingsInputBuilder {
     }
     /// <p>The name of the configuration template to describe.</p>
     /// <p> Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error. </p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration template to describe.</p>
     /// <p> Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -95,19 +81,13 @@ impl DescribeConfigurationSettingsInputBuilder {
     }
     /// <p>The name of the environment to describe.</p>
     /// <p> Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment to describe.</p>
     /// <p> Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -123,12 +103,10 @@ impl DescribeConfigurationSettingsInputBuilder {
         crate::operation::describe_configuration_settings::DescribeConfigurationSettingsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_configuration_settings::DescribeConfigurationSettingsInput {
-                application_name: self.application_name,
-                template_name: self.template_name,
-                environment_name: self.environment_name,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_configuration_settings::DescribeConfigurationSettingsInput {
+            application_name: self.application_name,
+            template_name: self.template_name,
+            environment_name: self.environment_name,
+        })
     }
 }

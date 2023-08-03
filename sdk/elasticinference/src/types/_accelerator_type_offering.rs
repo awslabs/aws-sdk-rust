@@ -37,9 +37,7 @@ impl AcceleratorTypeOffering {
 
 /// A builder for [`AcceleratorTypeOffering`](crate::types::AcceleratorTypeOffering).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AcceleratorTypeOfferingBuilder {
     pub(crate) accelerator_type: ::std::option::Option<::std::string::String>,
     pub(crate) location_type: ::std::option::Option<crate::types::LocationType>,
@@ -47,18 +45,12 @@ pub struct AcceleratorTypeOfferingBuilder {
 }
 impl AcceleratorTypeOfferingBuilder {
     /// <p> The name of the Elastic Inference Accelerator type. </p>
-    pub fn accelerator_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accelerator_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the Elastic Inference Accelerator type. </p>
-    pub fn set_accelerator_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accelerator_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accelerator_type = input;
         self
     }
@@ -72,10 +64,7 @@ impl AcceleratorTypeOfferingBuilder {
         self
     }
     /// <p> The location type for the offering. It can assume the following values: region: defines that the offering is at the regional level. availability-zone: defines that the offering is at the availability zone level. availability-zone-id: defines that the offering is at the availability zone level, defined by the availability zone id. </p>
-    pub fn set_location_type(
-        mut self,
-        input: ::std::option::Option<crate::types::LocationType>,
-    ) -> Self {
+    pub fn set_location_type(mut self, input: ::std::option::Option<crate::types::LocationType>) -> Self {
         self.location_type = input;
         self
     }

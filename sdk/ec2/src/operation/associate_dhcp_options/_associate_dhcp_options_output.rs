@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for AssociateDhcpOptionsOutput {
 }
 impl AssociateDhcpOptionsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDhcpOptionsOutput`](crate::operation::associate_dhcp_options::AssociateDhcpOptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_dhcp_options::builders::AssociateDhcpOptionsOutputBuilder {
+    pub fn builder() -> crate::operation::associate_dhcp_options::builders::AssociateDhcpOptionsOutputBuilder {
         crate::operation::associate_dhcp_options::builders::AssociateDhcpOptionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateDhcpOptionsOutput`](crate::operation::associate_dhcp_options::AssociateDhcpOptionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateDhcpOptionsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -73,9 +73,7 @@ impl RepositoryCatalogData {
 
 /// A builder for [`RepositoryCatalogData`](crate::types::RepositoryCatalogData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryCatalogDataBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) architectures: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -107,10 +105,7 @@ impl RepositoryCatalogDataBuilder {
     /// <p>The architecture tags that are associated with the repository.</p> <note>
     /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
     /// </note>
-    pub fn architectures(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn architectures(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.architectures.unwrap_or_default();
         v.push(input.into());
         self.architectures = ::std::option::Option::Some(v);
@@ -119,19 +114,14 @@ impl RepositoryCatalogDataBuilder {
     /// <p>The architecture tags that are associated with the repository.</p> <note>
     /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
     /// </note>
-    pub fn set_architectures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.architectures = input;
         self
     }
     /// <p>The architecture tags that are associated with the repository.</p> <note>
     /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
     /// </note>
-    pub fn get_architectures(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_architectures(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.architectures
     }
     /// Appends an item to `operating_systems`.
@@ -141,10 +131,7 @@ impl RepositoryCatalogDataBuilder {
     /// <p>The operating system tags that are associated with the repository.</p> <note>
     /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
     /// </note>
-    pub fn operating_systems(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn operating_systems(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.operating_systems.unwrap_or_default();
         v.push(input.into());
         self.operating_systems = ::std::option::Option::Some(v);
@@ -153,19 +140,14 @@ impl RepositoryCatalogDataBuilder {
     /// <p>The operating system tags that are associated with the repository.</p> <note>
     /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
     /// </note>
-    pub fn set_operating_systems(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_operating_systems(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.operating_systems = input;
         self
     }
     /// <p>The operating system tags that are associated with the repository.</p> <note>
     /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
     /// </note>
-    pub fn get_operating_systems(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.operating_systems
     }
     /// <p>The URL that contains the logo that's associated with the repository.</p>

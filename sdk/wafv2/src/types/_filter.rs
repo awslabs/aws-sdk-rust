@@ -37,9 +37,7 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) behavior: ::std::option::Option<crate::types::FilterBehavior>,
     pub(crate) requirement: ::std::option::Option<crate::types::FilterRequirement>,
@@ -52,10 +50,7 @@ impl FilterBuilder {
         self
     }
     /// <p>How to handle logs that satisfy the filter's conditions and requirement. </p>
-    pub fn set_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterBehavior>,
-    ) -> Self {
+    pub fn set_behavior(mut self, input: ::std::option::Option<crate::types::FilterBehavior>) -> Self {
         self.behavior = input;
         self
     }
@@ -69,10 +64,7 @@ impl FilterBuilder {
         self
     }
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
-    pub fn set_requirement(
-        mut self,
-        input: ::std::option::Option<crate::types::FilterRequirement>,
-    ) -> Self {
+    pub fn set_requirement(mut self, input: ::std::option::Option<crate::types::FilterRequirement>) -> Self {
         self.requirement = input;
         self
     }
@@ -92,17 +84,12 @@ impl FilterBuilder {
         self
     }
     /// <p>Match conditions for the filter.</p>
-    pub fn set_conditions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
-    ) -> Self {
+    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>) -> Self {
         self.conditions = input;
         self
     }
     /// <p>Match conditions for the filter.</p>
-    pub fn get_conditions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Condition>> {
+    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Condition>> {
         &self.conditions
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).

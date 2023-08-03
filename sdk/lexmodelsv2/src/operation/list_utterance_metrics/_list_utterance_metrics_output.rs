@@ -37,21 +37,17 @@ impl ::aws_http::request_id::RequestId for ListUtteranceMetricsOutput {
 }
 impl ListUtteranceMetricsOutput {
     /// Creates a new builder-style object to manufacture [`ListUtteranceMetricsOutput`](crate::operation::list_utterance_metrics::ListUtteranceMetricsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_utterance_metrics::builders::ListUtteranceMetricsOutputBuilder {
+    pub fn builder() -> crate::operation::list_utterance_metrics::builders::ListUtteranceMetricsOutputBuilder {
         crate::operation::list_utterance_metrics::builders::ListUtteranceMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListUtteranceMetricsOutput`](crate::operation::list_utterance_metrics::ListUtteranceMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUtteranceMetricsOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
-    pub(crate) results:
-        ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceResult>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -82,17 +78,12 @@ impl ListUtteranceMetricsOutputBuilder {
         self
     }
     /// <p>The results for the utterance metrics.</p>
-    pub fn set_results(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceResult>>,
-    ) -> Self {
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceResult>>) -> Self {
         self.results = input;
         self
     }
     /// <p>The results for the utterance metrics.</p>
-    pub fn get_results(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceResult>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceResult>> {
         &self.results
     }
     /// <p>If the response from the ListUtteranceMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>

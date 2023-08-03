@@ -5,8 +5,7 @@
 pub struct ListFhirImportJobsOutput {
     /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
     #[doc(hidden)]
-    pub import_job_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImportJobProperties>>,
+    pub import_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobProperties>>,
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListFhirImportJobsOutput {
 }
 impl ListFhirImportJobsOutput {
     /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
-    pub fn import_job_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ImportJobProperties]> {
+    pub fn import_job_properties_list(&self) -> ::std::option::Option<&[crate::types::ImportJobProperties]> {
         self.import_job_properties_list.as_deref()
     }
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for ListFhirImportJobsOutput {
 }
 impl ListFhirImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListFhirImportJobsOutput`](crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_fhir_import_jobs::builders::ListFhirImportJobsOutputBuilder {
-        crate::operation::list_fhir_import_jobs::builders::ListFhirImportJobsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_fhir_import_jobs::builders::ListFhirImportJobsOutputBuilder {
+        crate::operation::list_fhir_import_jobs::builders::ListFhirImportJobsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListFhirImportJobsOutput`](crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFhirImportJobsOutputBuilder {
-    pub(crate) import_job_properties_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::ImportJobProperties>>,
+    pub(crate) import_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl ListFhirImportJobsOutputBuilder {
         self
     }
     /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
-    pub fn set_import_job_properties_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobProperties>>,
-    ) -> Self {
+    pub fn set_import_job_properties_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobProperties>>) -> Self {
         self.import_job_properties_list = input;
         self
     }
     /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
-    pub fn get_import_job_properties_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportJobProperties>> {
+    pub fn get_import_job_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportJobProperties>> {
         &self.import_job_properties_list
     }
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>

@@ -37,9 +37,7 @@ impl BatchDetachObject {
 
 /// A builder for [`BatchDetachObject`](crate::types::BatchDetachObject).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDetachObjectBuilder {
     pub(crate) parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) link_name: ::std::option::Option<::std::string::String>,
@@ -52,10 +50,7 @@ impl BatchDetachObjectBuilder {
         self
     }
     /// <p>Parent reference from which the object with the specified link name is detached.</p>
-    pub fn set_parent_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
+    pub fn set_parent_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
         self.parent_reference = input;
         self
     }
@@ -78,18 +73,12 @@ impl BatchDetachObjectBuilder {
         &self.link_name
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    pub fn batch_reference_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn batch_reference_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_reference_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    pub fn set_batch_reference_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_batch_reference_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.batch_reference_name = input;
         self
     }

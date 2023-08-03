@@ -3,10 +3,7 @@
 pub fn de_invalid_user_type_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidUserTypeExceptionBuilder,
-) -> Result<
-    crate::types::error::builders::InvalidUserTypeExceptionBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::InvalidUserTypeExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

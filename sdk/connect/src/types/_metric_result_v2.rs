@@ -6,20 +6,14 @@
 pub struct MetricResultV2 {
     /// <p>The dimension for the metrics.</p>
     #[doc(hidden)]
-    pub dimensions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The set of metrics.</p>
     #[doc(hidden)]
     pub collections: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataV2>>,
 }
 impl MetricResultV2 {
     /// <p>The dimension for the metrics.</p>
-    pub fn dimensions(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn dimensions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.dimensions.as_ref()
     }
     /// <p>The set of metrics.</p>
@@ -36,13 +30,9 @@ impl MetricResultV2 {
 
 /// A builder for [`MetricResultV2`](crate::types::MetricResultV2).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricResultV2Builder {
-    pub(crate) dimensions: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) collections: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataV2>>,
 }
 impl MetricResultV2Builder {
@@ -51,32 +41,19 @@ impl MetricResultV2Builder {
     /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
     ///
     /// <p>The dimension for the metrics.</p>
-    pub fn dimensions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimensions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.dimensions.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.dimensions = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The dimension for the metrics.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The dimension for the metrics.</p>
-    pub fn get_dimensions(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.dimensions
     }
     /// Appends an item to `collections`.
@@ -91,17 +68,12 @@ impl MetricResultV2Builder {
         self
     }
     /// <p>The set of metrics.</p>
-    pub fn set_collections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataV2>>,
-    ) -> Self {
+    pub fn set_collections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataV2>>) -> Self {
         self.collections = input;
         self
     }
     /// <p>The set of metrics.</p>
-    pub fn get_collections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataV2>> {
+    pub fn get_collections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataV2>> {
         &self.collections
     }
     /// Consumes the builder and constructs a [`MetricResultV2`](crate::types::MetricResultV2).

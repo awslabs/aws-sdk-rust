@@ -15,17 +15,14 @@ impl DeleteBuildBatchInput {
 }
 impl DeleteBuildBatchInput {
     /// Creates a new builder-style object to manufacture [`DeleteBuildBatchInput`](crate::operation::delete_build_batch::DeleteBuildBatchInput).
-    pub fn builder() -> crate::operation::delete_build_batch::builders::DeleteBuildBatchInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_build_batch::builders::DeleteBuildBatchInputBuilder {
         crate::operation::delete_build_batch::builders::DeleteBuildBatchInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBuildBatchInput`](crate::operation::delete_build_batch::DeleteBuildBatchInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBuildBatchInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +44,7 @@ impl DeleteBuildBatchInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBuildBatchInput`](crate::operation::delete_build_batch::DeleteBuildBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_build_batch::DeleteBuildBatchInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_build_batch::DeleteBuildBatchInput { id: self.id },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_build_batch::DeleteBuildBatchInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_build_batch::DeleteBuildBatchInput { id: self.id })
     }
 }

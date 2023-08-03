@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`status(Option<ShareStatus>)`](crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusOutput::status): <p>Status of the portfolio share operation.</p>
     ///   - [`share_details(Option<ShareDetails>)`](crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusOutput::share_details): <p>Information about the portfolio share operation.</p>
     /// - On failure, responds with [`SdkError<DescribePortfolioShareStatusError>`](crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusError)
-    pub fn describe_portfolio_share_status(&self) -> crate::operation::describe_portfolio_share_status::builders::DescribePortfolioShareStatusFluentBuilder{
+    pub fn describe_portfolio_share_status(
+        &self,
+    ) -> crate::operation::describe_portfolio_share_status::builders::DescribePortfolioShareStatusFluentBuilder {
         crate::operation::describe_portfolio_share_status::builders::DescribePortfolioShareStatusFluentBuilder::new(self.handle.clone())
     }
 }

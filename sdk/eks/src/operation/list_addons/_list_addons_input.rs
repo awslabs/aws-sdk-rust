@@ -40,9 +40,7 @@ impl ListAddonsInput {
 
 /// A builder for [`ListAddonsInput`](crate::operation::list_addons::ListAddonsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAddonsInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -98,12 +96,7 @@ impl ListAddonsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAddonsInput`](crate::operation::list_addons::ListAddonsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_addons::ListAddonsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_addons::ListAddonsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_addons::ListAddonsInput {
             cluster_name: self.cluster_name,
             max_results: self.max_results,

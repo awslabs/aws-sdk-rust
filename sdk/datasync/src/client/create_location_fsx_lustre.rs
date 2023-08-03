@@ -10,10 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLocationFsxLustreOutput`](crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreOutput::location_arn): <p>The Amazon Resource Name (ARN) of the FSx for Lustre file system location that's created. </p>
     /// - On failure, responds with [`SdkError<CreateLocationFsxLustreError>`](crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreError)
-    pub fn create_location_fsx_lustre(
-        &self,
-    ) -> crate::operation::create_location_fsx_lustre::builders::CreateLocationFsxLustreFluentBuilder
-    {
+    pub fn create_location_fsx_lustre(&self) -> crate::operation::create_location_fsx_lustre::builders::CreateLocationFsxLustreFluentBuilder {
         crate::operation::create_location_fsx_lustre::builders::CreateLocationFsxLustreFluentBuilder::new(self.handle.clone())
     }
 }

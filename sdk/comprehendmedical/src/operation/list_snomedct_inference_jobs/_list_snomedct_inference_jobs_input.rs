@@ -29,16 +29,14 @@ impl ListSnomedctInferenceJobsInput {
 }
 impl ListSnomedctInferenceJobsInput {
     /// Creates a new builder-style object to manufacture [`ListSnomedctInferenceJobsInput`](crate::operation::list_snomedct_inference_jobs::ListSnomedctInferenceJobsInput).
-    pub fn builder() -> crate::operation::list_snomedct_inference_jobs::builders::ListSnomedctInferenceJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_snomedct_inference_jobs::builders::ListSnomedctInferenceJobsInputBuilder {
         crate::operation::list_snomedct_inference_jobs::builders::ListSnomedctInferenceJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSnomedctInferenceJobsInput`](crate::operation::list_snomedct_inference_jobs::ListSnomedctInferenceJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSnomedctInferenceJobsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -51,17 +49,12 @@ impl ListSnomedctInferenceJobsInputBuilder {
         self
     }
     /// <p>Provides information for filtering a list of detection jobs.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>) -> Self {
         self.filter = input;
         self
     }
     /// <p>Provides information for filtering a list of detection jobs.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter> {
         &self.filter
     }
     /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
@@ -99,12 +92,10 @@ impl ListSnomedctInferenceJobsInputBuilder {
         crate::operation::list_snomedct_inference_jobs::ListSnomedctInferenceJobsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_snomedct_inference_jobs::ListSnomedctInferenceJobsInput {
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_snomedct_inference_jobs::ListSnomedctInferenceJobsInput {
+            filter: self.filter,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

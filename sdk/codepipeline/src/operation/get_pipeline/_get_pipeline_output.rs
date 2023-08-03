@@ -36,9 +36,7 @@ impl GetPipelineOutput {
 
 /// A builder for [`GetPipelineOutput`](crate::operation::get_pipeline::GetPipelineOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPipelineOutputBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
     pub(crate) metadata: ::std::option::Option<crate::types::PipelineMetadata>,
@@ -51,10 +49,7 @@ impl GetPipelineOutputBuilder {
         self
     }
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
-    pub fn set_pipeline(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineDeclaration>,
-    ) -> Self {
+    pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::PipelineDeclaration>) -> Self {
         self.pipeline = input;
         self
     }
@@ -68,10 +63,7 @@ impl GetPipelineOutputBuilder {
         self
     }
     /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::PipelineMetadata>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::PipelineMetadata>) -> Self {
         self.metadata = input;
         self
     }

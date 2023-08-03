@@ -37,9 +37,7 @@ impl WeightedTarget {
 
 /// A builder for [`WeightedTarget`](crate::types::WeightedTarget).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WeightedTargetBuilder {
     pub(crate) virtual_node: ::std::option::Option<::std::string::String>,
     pub(crate) weight: ::std::option::Option<i32>,

@@ -26,8 +26,7 @@ impl AcceptInboundConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptInboundConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::accept_inbound_connection::builders::AcceptInboundConnectionInputBuilder,
+    inner: crate::operation::accept_inbound_connection::builders::AcceptInboundConnectionInputBuilder,
 }
 impl AcceptInboundConnectionFluentBuilder {
     /// Creates a new `AcceptInboundConnection`.
@@ -38,10 +37,7 @@ impl AcceptInboundConnectionFluentBuilder {
         }
     }
     /// Access the AcceptInboundConnection as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::accept_inbound_connection::builders::AcceptInboundConnectionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::accept_inbound_connection::builders::AcceptInboundConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl AcceptInboundConnectionFluentBuilder {
             crate::operation::accept_inbound_connection::AcceptInboundConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_inbound_connection::AcceptInboundConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_inbound_connection::AcceptInboundConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl AcceptInboundConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl AcceptInboundConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_inbound_connection::AcceptInboundConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_inbound_connection::AcceptInboundConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_inbound_connection::AcceptInboundConnectionError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl AcceptInboundConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_inbound_connection::AcceptInboundConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_inbound_connection::AcceptInboundConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_inbound_connection::AcceptInboundConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +105,17 @@ impl AcceptInboundConnectionFluentBuilder {
             crate::operation::accept_inbound_connection::AcceptInboundConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::accept_inbound_connection::AcceptInboundConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_inbound_connection::AcceptInboundConnectionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the inbound connection to accept.</p>
-    pub fn connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
         self
     }
     /// <p>The ID of the inbound connection to accept.</p>
-    pub fn set_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connection_id(input);
         self
     }

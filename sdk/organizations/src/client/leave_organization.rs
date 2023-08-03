@@ -5,11 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::leave_organization::builders::LeaveOrganizationFluentBuilder::send) it.
     /// - On success, responds with [`LeaveOrganizationOutput`](crate::operation::leave_organization::LeaveOrganizationOutput)
     /// - On failure, responds with [`SdkError<LeaveOrganizationError>`](crate::operation::leave_organization::LeaveOrganizationError)
-    pub fn leave_organization(
-        &self,
-    ) -> crate::operation::leave_organization::builders::LeaveOrganizationFluentBuilder {
-        crate::operation::leave_organization::builders::LeaveOrganizationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn leave_organization(&self) -> crate::operation::leave_organization::builders::LeaveOrganizationFluentBuilder {
+        crate::operation::leave_organization::builders::LeaveOrganizationFluentBuilder::new(self.handle.clone())
     }
 }

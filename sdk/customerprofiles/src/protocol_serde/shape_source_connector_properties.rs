@@ -6,19 +6,13 @@ pub fn ser_source_connector_properties(
     if let Some(var_1) = &input.marketo {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Marketo").start_object();
-        crate::protocol_serde::shape_marketo_source_properties::ser_marketo_source_properties(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_marketo_source_properties::ser_marketo_source_properties(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.s3 {
         #[allow(unused_mut)]
         let mut object_4 = object.key("S3").start_object();
-        crate::protocol_serde::shape_s3_source_properties::ser_s3_source_properties(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_s3_source_properties::ser_s3_source_properties(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.salesforce {
@@ -36,10 +30,7 @@ pub fn ser_source_connector_properties(
     if let Some(var_9) = &input.zendesk {
         #[allow(unused_mut)]
         let mut object_10 = object.key("Zendesk").start_object();
-        crate::protocol_serde::shape_zendesk_source_properties::ser_zendesk_source_properties(
-            &mut object_10,
-            var_9,
-        )?;
+        crate::protocol_serde::shape_zendesk_source_properties::ser_zendesk_source_properties(&mut object_10, var_9)?;
         object_10.finish();
     }
     Ok(())

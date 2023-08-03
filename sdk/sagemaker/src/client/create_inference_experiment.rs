@@ -17,7 +17,7 @@ impl super::Client {
     /// - On success, responds with [`CreateInferenceExperimentOutput`](crate::operation::create_inference_experiment::CreateInferenceExperimentOutput) with field(s):
     ///   - [`inference_experiment_arn(Option<String>)`](crate::operation::create_inference_experiment::CreateInferenceExperimentOutput::inference_experiment_arn): <p>The ARN for your inference experiment.</p>
     /// - On failure, responds with [`SdkError<CreateInferenceExperimentError>`](crate::operation::create_inference_experiment::CreateInferenceExperimentError)
-    pub fn create_inference_experiment(&self) -> crate::operation::create_inference_experiment::builders::CreateInferenceExperimentFluentBuilder{
+    pub fn create_inference_experiment(&self) -> crate::operation::create_inference_experiment::builders::CreateInferenceExperimentFluentBuilder {
         crate::operation::create_inference_experiment::builders::CreateInferenceExperimentFluentBuilder::new(self.handle.clone())
     }
 }

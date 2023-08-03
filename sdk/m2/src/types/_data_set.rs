@@ -51,9 +51,7 @@ impl DataSet {
 
 /// A builder for [`DataSet`](crate::types::DataSet).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSetBuilder {
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
@@ -96,10 +94,7 @@ impl DataSetBuilder {
         self
     }
     /// <p>The type of dataset. The only supported value is VSAM.</p>
-    pub fn set_dataset_org(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetOrgAttributes>,
-    ) -> Self {
+    pub fn set_dataset_org(mut self, input: ::std::option::Option<crate::types::DatasetOrgAttributes>) -> Self {
         self.dataset_org = input;
         self
     }
@@ -108,18 +103,12 @@ impl DataSetBuilder {
         &self.dataset_org
     }
     /// <p>The relative location of the data set in the database or file system. </p>
-    pub fn relative_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn relative_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relative_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The relative location of the data set in the database or file system. </p>
-    pub fn set_relative_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_relative_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relative_path = input;
         self
     }
@@ -133,10 +122,7 @@ impl DataSetBuilder {
         self
     }
     /// <p>The length of a record.</p>
-    pub fn set_record_length(
-        mut self,
-        input: ::std::option::Option<crate::types::RecordLength>,
-    ) -> Self {
+    pub fn set_record_length(mut self, input: ::std::option::Option<crate::types::RecordLength>) -> Self {
         self.record_length = input;
         self
     }

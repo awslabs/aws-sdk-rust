@@ -30,9 +30,7 @@ impl Bucket {
 
 /// A builder for [`Bucket`](crate::types::Bucket).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BucketBuilder {
     pub(crate) key_value: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,

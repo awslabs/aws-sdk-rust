@@ -16,9 +16,7 @@ pub fn ser_list_stage_devices_input(
         object.key("EdgeDeploymentPlanName").string(var_3.as_str());
     }
     if let Some(var_4) = &input.exclude_devices_deployed_in_other_stage {
-        object
-            .key("ExcludeDevicesDeployedInOtherStage")
-            .boolean(*var_4);
+        object.key("ExcludeDevicesDeployedInOtherStage").boolean(*var_4);
     }
     if let Some(var_5) = &input.stage_name {
         object.key("StageName").string(var_5.as_str());

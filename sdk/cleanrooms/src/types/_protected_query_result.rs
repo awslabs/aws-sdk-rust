@@ -23,9 +23,7 @@ impl ProtectedQueryResult {
 
 /// A builder for [`ProtectedQueryResult`](crate::types::ProtectedQueryResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProtectedQueryResultBuilder {
     pub(crate) output: ::std::option::Option<crate::types::ProtectedQueryOutput>,
 }
@@ -36,10 +34,7 @@ impl ProtectedQueryResultBuilder {
         self
     }
     /// <p>The output of the protected query.</p>
-    pub fn set_output(
-        mut self,
-        input: ::std::option::Option<crate::types::ProtectedQueryOutput>,
-    ) -> Self {
+    pub fn set_output(mut self, input: ::std::option::Option<crate::types::ProtectedQueryOutput>) -> Self {
         self.output = input;
         self
     }
@@ -49,8 +44,6 @@ impl ProtectedQueryResultBuilder {
     }
     /// Consumes the builder and constructs a [`ProtectedQueryResult`](crate::types::ProtectedQueryResult).
     pub fn build(self) -> crate::types::ProtectedQueryResult {
-        crate::types::ProtectedQueryResult {
-            output: self.output,
-        }
+        crate::types::ProtectedQueryResult { output: self.output }
     }
 }

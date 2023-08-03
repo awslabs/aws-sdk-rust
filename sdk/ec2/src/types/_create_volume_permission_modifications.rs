@@ -30,9 +30,7 @@ impl CreateVolumePermissionModifications {
 
 /// A builder for [`CreateVolumePermissionModifications`](crate::types::CreateVolumePermissionModifications).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVolumePermissionModificationsBuilder {
     pub(crate) add: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
     pub(crate) remove: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
@@ -50,17 +48,12 @@ impl CreateVolumePermissionModificationsBuilder {
         self
     }
     /// <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
-    pub fn set_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
-    ) -> Self {
+    pub fn set_add(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>) -> Self {
         self.add = input;
         self
     }
     /// <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
-    pub fn get_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>> {
+    pub fn get_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>> {
         &self.add
     }
     /// Appends an item to `remove`.
@@ -75,17 +68,12 @@ impl CreateVolumePermissionModificationsBuilder {
         self
     }
     /// <p>Removes the specified Amazon Web Services account ID or group from the list.</p>
-    pub fn set_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
-    ) -> Self {
+    pub fn set_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>) -> Self {
         self.remove = input;
         self
     }
     /// <p>Removes the specified Amazon Web Services account ID or group from the list.</p>
-    pub fn get_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>> {
+    pub fn get_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>> {
         &self.remove
     }
     /// Consumes the builder and constructs a [`CreateVolumePermissionModifications`](crate::types::CreateVolumePermissionModifications).

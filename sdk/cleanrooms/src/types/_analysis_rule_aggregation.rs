@@ -24,8 +24,7 @@ pub struct AnalysisRuleAggregation {
     pub scalar_functions: ::std::option::Option<::std::vec::Vec<crate::types::ScalarFunctions>>,
     /// <p>Columns that must meet a specific threshold value (after an aggregation function is applied to it) for each output row to be returned.</p>
     #[doc(hidden)]
-    pub output_constraints:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregationConstraint>>,
+    pub output_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConstraint>>,
 }
 impl AnalysisRuleAggregation {
     /// <p>The columns that query runners are allowed to use in aggregation queries.</p>
@@ -53,9 +52,7 @@ impl AnalysisRuleAggregation {
         self.scalar_functions.as_deref()
     }
     /// <p>Columns that must meet a specific threshold value (after an aggregation function is applied to it) for each output row to be returned.</p>
-    pub fn output_constraints(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AggregationConstraint]> {
+    pub fn output_constraints(&self) -> ::std::option::Option<&[crate::types::AggregationConstraint]> {
         self.output_constraints.as_deref()
     }
 }
@@ -68,21 +65,15 @@ impl AnalysisRuleAggregation {
 
 /// A builder for [`AnalysisRuleAggregation`](crate::types::AnalysisRuleAggregation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisRuleAggregationBuilder {
-    pub(crate) aggregate_columns:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregateColumn>>,
+    pub(crate) aggregate_columns: ::std::option::Option<::std::vec::Vec<crate::types::AggregateColumn>>,
     pub(crate) join_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) join_required: ::std::option::Option<crate::types::JoinRequiredOption>,
-    pub(crate) allowed_join_operators:
-        ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>,
+    pub(crate) allowed_join_operators: ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>,
     pub(crate) dimension_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) scalar_functions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScalarFunctions>>,
-    pub(crate) output_constraints:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregationConstraint>>,
+    pub(crate) scalar_functions: ::std::option::Option<::std::vec::Vec<crate::types::ScalarFunctions>>,
+    pub(crate) output_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConstraint>>,
 }
 impl AnalysisRuleAggregationBuilder {
     /// Appends an item to `aggregate_columns`.
@@ -97,17 +88,12 @@ impl AnalysisRuleAggregationBuilder {
         self
     }
     /// <p>The columns that query runners are allowed to use in aggregation queries.</p>
-    pub fn set_aggregate_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateColumn>>,
-    ) -> Self {
+    pub fn set_aggregate_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateColumn>>) -> Self {
         self.aggregate_columns = input;
         self
     }
     /// <p>The columns that query runners are allowed to use in aggregation queries.</p>
-    pub fn get_aggregate_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateColumn>> {
+    pub fn get_aggregate_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateColumn>> {
         &self.aggregate_columns
     }
     /// Appends an item to `join_columns`.
@@ -122,17 +108,12 @@ impl AnalysisRuleAggregationBuilder {
         self
     }
     /// <p>Columns in configured table that can be used in join statements and/or as aggregate columns. They can never be outputted directly.</p>
-    pub fn set_join_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_join_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.join_columns = input;
         self
     }
     /// <p>Columns in configured table that can be used in join statements and/or as aggregate columns. They can never be outputted directly.</p>
-    pub fn get_join_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_join_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.join_columns
     }
     /// <p>Control that requires member who runs query to do a join with their configured table and/or other configured table in query.</p>
@@ -141,10 +122,7 @@ impl AnalysisRuleAggregationBuilder {
         self
     }
     /// <p>Control that requires member who runs query to do a join with their configured table and/or other configured table in query.</p>
-    pub fn set_join_required(
-        mut self,
-        input: ::std::option::Option<crate::types::JoinRequiredOption>,
-    ) -> Self {
+    pub fn set_join_required(mut self, input: ::std::option::Option<crate::types::JoinRequiredOption>) -> Self {
         self.join_required = input;
         self
     }
@@ -164,17 +142,12 @@ impl AnalysisRuleAggregationBuilder {
         self
     }
     /// <p>Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
-    pub fn set_allowed_join_operators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>,
-    ) -> Self {
+    pub fn set_allowed_join_operators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>) -> Self {
         self.allowed_join_operators = input;
         self
     }
     /// <p>Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
-    pub fn get_allowed_join_operators(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>> {
+    pub fn get_allowed_join_operators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>> {
         &self.allowed_join_operators
     }
     /// Appends an item to `dimension_columns`.
@@ -182,27 +155,19 @@ impl AnalysisRuleAggregationBuilder {
     /// To override the contents of this collection use [`set_dimension_columns`](Self::set_dimension_columns).
     ///
     /// <p>The columns that query runners are allowed to select, group by, or filter by.</p>
-    pub fn dimension_columns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dimension_columns.unwrap_or_default();
         v.push(input.into());
         self.dimension_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The columns that query runners are allowed to select, group by, or filter by.</p>
-    pub fn set_dimension_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dimension_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dimension_columns = input;
         self
     }
     /// <p>The columns that query runners are allowed to select, group by, or filter by.</p>
-    pub fn get_dimension_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dimension_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dimension_columns
     }
     /// Appends an item to `scalar_functions`.
@@ -217,17 +182,12 @@ impl AnalysisRuleAggregationBuilder {
         self
     }
     /// <p>Set of scalar functions that are allowed to be used on dimension columns and the output of aggregation of metrics.</p>
-    pub fn set_scalar_functions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScalarFunctions>>,
-    ) -> Self {
+    pub fn set_scalar_functions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScalarFunctions>>) -> Self {
         self.scalar_functions = input;
         self
     }
     /// <p>Set of scalar functions that are allowed to be used on dimension columns and the output of aggregation of metrics.</p>
-    pub fn get_scalar_functions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalarFunctions>> {
+    pub fn get_scalar_functions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalarFunctions>> {
         &self.scalar_functions
     }
     /// Appends an item to `output_constraints`.
@@ -242,17 +202,12 @@ impl AnalysisRuleAggregationBuilder {
         self
     }
     /// <p>Columns that must meet a specific threshold value (after an aggregation function is applied to it) for each output row to be returned.</p>
-    pub fn set_output_constraints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConstraint>>,
-    ) -> Self {
+    pub fn set_output_constraints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConstraint>>) -> Self {
         self.output_constraints = input;
         self
     }
     /// <p>Columns that must meet a specific threshold value (after an aggregation function is applied to it) for each output row to be returned.</p>
-    pub fn get_output_constraints(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationConstraint>> {
+    pub fn get_output_constraints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationConstraint>> {
         &self.output_constraints
     }
     /// Consumes the builder and constructs a [`AnalysisRuleAggregation`](crate::types::AnalysisRuleAggregation).

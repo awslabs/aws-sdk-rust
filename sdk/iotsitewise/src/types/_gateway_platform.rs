@@ -30,9 +30,7 @@ impl GatewayPlatform {
 
 /// A builder for [`GatewayPlatform`](crate::types::GatewayPlatform).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GatewayPlatformBuilder {
     pub(crate) greengrass: ::std::option::Option<crate::types::Greengrass>,
     pub(crate) greengrass_v2: ::std::option::Option<crate::types::GreengrassV2>,
@@ -44,10 +42,7 @@ impl GatewayPlatformBuilder {
         self
     }
     /// <p>A gateway that runs on IoT Greengrass.</p>
-    pub fn set_greengrass(
-        mut self,
-        input: ::std::option::Option<crate::types::Greengrass>,
-    ) -> Self {
+    pub fn set_greengrass(mut self, input: ::std::option::Option<crate::types::Greengrass>) -> Self {
         self.greengrass = input;
         self
     }
@@ -61,10 +56,7 @@ impl GatewayPlatformBuilder {
         self
     }
     /// <p>A gateway that runs on IoT Greengrass V2.</p>
-    pub fn set_greengrass_v2(
-        mut self,
-        input: ::std::option::Option<crate::types::GreengrassV2>,
-    ) -> Self {
+    pub fn set_greengrass_v2(mut self, input: ::std::option::Option<crate::types::GreengrassV2>) -> Self {
         self.greengrass_v2 = input;
         self
     }

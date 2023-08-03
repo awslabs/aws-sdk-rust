@@ -10,10 +10,7 @@ impl ListOutpostsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_outposts::ListOutpostsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_outposts::ListOutpostsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_outposts::ListOutpostsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_outposts();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl ListOutpostsFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_outposts::ListOutposts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_outposts::ListOutposts, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_outposts::ListOutpostsError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl ListOutpostsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl ListOutpostsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_outposts::ListOutposts,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::list_outposts::ListOutposts, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::list_outposts::ListOutpostsError>,
     > {
         self.customize_middleware().await
@@ -116,13 +104,8 @@ impl ListOutpostsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_outposts::paginator::ListOutpostsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_outposts::paginator::ListOutpostsPaginator {
-        crate::operation::list_outposts::paginator::ListOutpostsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_outposts::paginator::ListOutpostsPaginator {
+        crate::operation::list_outposts::paginator::ListOutpostsPaginator::new(self.handle, self.inner)
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,25 +140,17 @@ impl ListOutpostsFluentBuilder {
     /// To override the contents of this collection use [`set_life_cycle_status_filter`](Self::set_life_cycle_status_filter).
     ///
     /// <p>Filters the results by the lifecycle status.</p>
-    pub fn life_cycle_status_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn life_cycle_status_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.life_cycle_status_filter(input.into());
         self
     }
     /// <p>Filters the results by the lifecycle status.</p>
-    pub fn set_life_cycle_status_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_life_cycle_status_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_life_cycle_status_filter(input);
         self
     }
     /// <p>Filters the results by the lifecycle status.</p>
-    pub fn get_life_cycle_status_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_life_cycle_status_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_life_cycle_status_filter()
     }
     /// Appends an item to `AvailabilityZoneFilter`.
@@ -183,25 +158,17 @@ impl ListOutpostsFluentBuilder {
     /// To override the contents of this collection use [`set_availability_zone_filter`](Self::set_availability_zone_filter).
     ///
     /// <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
-    pub fn availability_zone_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone_filter(input.into());
         self
     }
     /// <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
-    pub fn set_availability_zone_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zone_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_availability_zone_filter(input);
         self
     }
     /// <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
-    pub fn get_availability_zone_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zone_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_availability_zone_filter()
     }
     /// Appends an item to `AvailabilityZoneIdFilter`.
@@ -209,25 +176,17 @@ impl ListOutpostsFluentBuilder {
     /// To override the contents of this collection use [`set_availability_zone_id_filter`](Self::set_availability_zone_id_filter).
     ///
     /// <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
-    pub fn availability_zone_id_filter(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone_id_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone_id_filter(input.into());
         self
     }
     /// <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
-    pub fn set_availability_zone_id_filter(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zone_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_availability_zone_id_filter(input);
         self
     }
     /// <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
-    pub fn get_availability_zone_id_filter(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zone_id_filter(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_availability_zone_id_filter()
     }
 }

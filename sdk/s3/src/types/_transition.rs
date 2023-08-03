@@ -37,9 +37,7 @@ impl Transition {
 
 /// A builder for [`Transition`](crate::types::Transition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitionBuilder {
     pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) days: ::std::option::Option<i32>,
@@ -80,17 +78,12 @@ impl TransitionBuilder {
         self
     }
     /// <p>The storage class to which you want the object to transition.</p>
-    pub fn set_storage_class(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitionStorageClass>,
-    ) -> Self {
+    pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::TransitionStorageClass>) -> Self {
         self.storage_class = input;
         self
     }
     /// <p>The storage class to which you want the object to transition.</p>
-    pub fn get_storage_class(
-        &self,
-    ) -> &::std::option::Option<crate::types::TransitionStorageClass> {
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::TransitionStorageClass> {
         &self.storage_class
     }
     /// Consumes the builder and constructs a [`Transition`](crate::types::Transition).

@@ -33,8 +33,7 @@ pub struct AssociationExecution {
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarms that were invoked by the association.</p>
     #[doc(hidden)]
-    pub triggered_alarms:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
 }
 impl AssociationExecution {
     /// <p>The association ID.</p>
@@ -74,9 +73,7 @@ impl AssociationExecution {
         self.alarm_configuration.as_ref()
     }
     /// <p>The CloudWatch alarms that were invoked by the association.</p>
-    pub fn triggered_alarms(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
+    pub fn triggered_alarms(&self) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
         self.triggered_alarms.as_deref()
     }
 }
@@ -89,9 +86,7 @@ impl AssociationExecution {
 
 /// A builder for [`AssociationExecution`](crate::types::AssociationExecution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociationExecutionBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_version: ::std::option::Option<::std::string::String>,
@@ -102,23 +97,16 @@ pub struct AssociationExecutionBuilder {
     pub(crate) last_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) resource_count_by_status: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
-    pub(crate) triggered_alarms:
-        ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub(crate) triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
 }
 impl AssociationExecutionBuilder {
     /// <p>The association ID.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association ID.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -127,18 +115,12 @@ impl AssociationExecutionBuilder {
         &self.association_id
     }
     /// <p>The association version.</p>
-    pub fn association_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association version.</p>
-    pub fn set_association_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_version = input;
         self
     }
@@ -175,18 +157,12 @@ impl AssociationExecutionBuilder {
         &self.status
     }
     /// <p>Detailed status information about the execution.</p>
-    pub fn detailed_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn detailed_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detailed_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Detailed status information about the execution.</p>
-    pub fn set_detailed_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_detailed_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detailed_status = input;
         self
     }
@@ -200,10 +176,7 @@ impl AssociationExecutionBuilder {
         self
     }
     /// <p>The time the execution started.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -217,10 +190,7 @@ impl AssociationExecutionBuilder {
         self
     }
     /// <p>The date of the last execution.</p>
-    pub fn set_last_execution_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_execution_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_execution_date = input;
         self
     }
@@ -229,18 +199,12 @@ impl AssociationExecutionBuilder {
         &self.last_execution_date
     }
     /// <p>An aggregate status of the resources in the execution based on the status type.</p>
-    pub fn resource_count_by_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_count_by_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_count_by_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An aggregate status of the resources in the execution based on the status type.</p>
-    pub fn set_resource_count_by_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_count_by_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_count_by_status = input;
         self
     }
@@ -254,17 +218,12 @@ impl AssociationExecutionBuilder {
         self
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
-    pub fn set_alarm_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AlarmConfiguration>,
-    ) -> Self {
+    pub fn set_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
         self.alarm_configuration = input;
         self
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
-    pub fn get_alarm_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+    pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.alarm_configuration
     }
     /// Appends an item to `triggered_alarms`.
@@ -279,17 +238,12 @@ impl AssociationExecutionBuilder {
         self
     }
     /// <p>The CloudWatch alarms that were invoked by the association.</p>
-    pub fn set_triggered_alarms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
-    ) -> Self {
+    pub fn set_triggered_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>) -> Self {
         self.triggered_alarms = input;
         self
     }
     /// <p>The CloudWatch alarms that were invoked by the association.</p>
-    pub fn get_triggered_alarms(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
+    pub fn get_triggered_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
         &self.triggered_alarms
     }
     /// Consumes the builder and constructs a [`AssociationExecution`](crate::types::AssociationExecution).

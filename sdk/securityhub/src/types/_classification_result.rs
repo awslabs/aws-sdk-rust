@@ -45,9 +45,7 @@ impl ClassificationResult {
         self.sensitive_data.as_deref()
     }
     /// <p>Provides details about sensitive data that was identified based on customer-defined configuration.</p>
-    pub fn custom_data_identifiers(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CustomDataIdentifiersResult> {
+    pub fn custom_data_identifiers(&self) -> ::std::option::Option<&crate::types::CustomDataIdentifiersResult> {
         self.custom_data_identifiers.as_ref()
     }
 }
@@ -60,18 +58,14 @@ impl ClassificationResult {
 
 /// A builder for [`ClassificationResult`](crate::types::ClassificationResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClassificationResultBuilder {
     pub(crate) mime_type: ::std::option::Option<::std::string::String>,
     pub(crate) size_classified: ::std::option::Option<i64>,
     pub(crate) additional_occurrences: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<crate::types::ClassificationStatus>,
-    pub(crate) sensitive_data:
-        ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataResult>>,
-    pub(crate) custom_data_identifiers:
-        ::std::option::Option<crate::types::CustomDataIdentifiersResult>,
+    pub(crate) sensitive_data: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataResult>>,
+    pub(crate) custom_data_identifiers: ::std::option::Option<crate::types::CustomDataIdentifiersResult>,
 }
 impl ClassificationResultBuilder {
     /// <p>The type of content that the finding applies to.</p>
@@ -122,10 +116,7 @@ impl ClassificationResultBuilder {
         self
     }
     /// <p>The current status of the sensitive data detection.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ClassificationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClassificationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -145,39 +136,26 @@ impl ClassificationResultBuilder {
         self
     }
     /// <p>Provides details about sensitive data that was identified based on built-in configuration.</p>
-    pub fn set_sensitive_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataResult>>,
-    ) -> Self {
+    pub fn set_sensitive_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataResult>>) -> Self {
         self.sensitive_data = input;
         self
     }
     /// <p>Provides details about sensitive data that was identified based on built-in configuration.</p>
-    pub fn get_sensitive_data(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataResult>> {
+    pub fn get_sensitive_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataResult>> {
         &self.sensitive_data
     }
     /// <p>Provides details about sensitive data that was identified based on customer-defined configuration.</p>
-    pub fn custom_data_identifiers(
-        mut self,
-        input: crate::types::CustomDataIdentifiersResult,
-    ) -> Self {
+    pub fn custom_data_identifiers(mut self, input: crate::types::CustomDataIdentifiersResult) -> Self {
         self.custom_data_identifiers = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides details about sensitive data that was identified based on customer-defined configuration.</p>
-    pub fn set_custom_data_identifiers(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomDataIdentifiersResult>,
-    ) -> Self {
+    pub fn set_custom_data_identifiers(mut self, input: ::std::option::Option<crate::types::CustomDataIdentifiersResult>) -> Self {
         self.custom_data_identifiers = input;
         self
     }
     /// <p>Provides details about sensitive data that was identified based on customer-defined configuration.</p>
-    pub fn get_custom_data_identifiers(
-        &self,
-    ) -> &::std::option::Option<crate::types::CustomDataIdentifiersResult> {
+    pub fn get_custom_data_identifiers(&self) -> &::std::option::Option<crate::types::CustomDataIdentifiersResult> {
         &self.custom_data_identifiers
     }
     /// Consumes the builder and constructs a [`ClassificationResult`](crate::types::ClassificationResult).

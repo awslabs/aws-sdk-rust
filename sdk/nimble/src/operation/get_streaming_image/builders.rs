@@ -10,10 +10,7 @@ impl GetStreamingImageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_streaming_image::GetStreamingImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_streaming_image::GetStreamingImageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_streaming_image::GetStreamingImageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_streaming_image();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetStreamingImageFluentBuilder {
         }
     }
     /// Access the GetStreamingImage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_streaming_image::builders::GetStreamingImageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_streaming_image::builders::GetStreamingImageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetStreamingImageFluentBuilder {
             crate::operation::get_streaming_image::GetStreamingImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_streaming_image::GetStreamingImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_streaming_image::GetStreamingImageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetStreamingImageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetStreamingImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_streaming_image::GetStreamingImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_streaming_image::GetStreamingImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_streaming_image::GetStreamingImageError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetStreamingImageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_streaming_image::GetStreamingImageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_streaming_image::GetStreamingImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_streaming_image::GetStreamingImageError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetStreamingImageFluentBuilder {
             crate::operation::get_streaming_image::GetStreamingImage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_streaming_image::GetStreamingImageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_streaming_image::GetStreamingImageError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The streaming image ID.</p>
-    pub fn streaming_image_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn streaming_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.streaming_image_id(input.into());
         self
     }
     /// <p>The streaming image ID.</p>
-    pub fn set_streaming_image_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_streaming_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_streaming_image_id(input);
         self
     }

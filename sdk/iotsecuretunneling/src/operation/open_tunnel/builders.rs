@@ -10,10 +10,7 @@ impl OpenTunnelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::open_tunnel::OpenTunnelOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::open_tunnel::OpenTunnelError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::open_tunnel::OpenTunnelError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.open_tunnel();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl OpenTunnelFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::open_tunnel::OpenTunnel,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::open_tunnel::OpenTunnel, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::open_tunnel::OpenTunnelError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl OpenTunnelFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl OpenTunnelFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::open_tunnel::OpenTunnel,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::open_tunnel::OpenTunnel, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::open_tunnel::OpenTunnelError>,
     > {
         self.customize_middleware().await
@@ -137,10 +125,7 @@ impl OpenTunnelFluentBuilder {
         self
     }
     /// <p>A collection of tag metadata.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -154,17 +139,12 @@ impl OpenTunnelFluentBuilder {
         self
     }
     /// <p>The destination configuration for the OpenTunnel request.</p>
-    pub fn set_destination_config(
-        mut self,
-        input: ::std::option::Option<crate::types::DestinationConfig>,
-    ) -> Self {
+    pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
         self.inner = self.inner.set_destination_config(input);
         self
     }
     /// <p>The destination configuration for the OpenTunnel request.</p>
-    pub fn get_destination_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::DestinationConfig> {
+    pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::DestinationConfig> {
         self.inner.get_destination_config()
     }
     /// <p>Timeout configuration for a tunnel.</p>
@@ -173,10 +153,7 @@ impl OpenTunnelFluentBuilder {
         self
     }
     /// <p>Timeout configuration for a tunnel.</p>
-    pub fn set_timeout_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeoutConfig>,
-    ) -> Self {
+    pub fn set_timeout_config(mut self, input: ::std::option::Option<crate::types::TimeoutConfig>) -> Self {
         self.inner = self.inner.set_timeout_config(input);
         self
     }

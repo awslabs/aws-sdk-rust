@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetResourceLogLevelOutput`](crate::operation::get_resource_log_level::GetResourceLogLevelOutput) with field(s):
     ///   - [`log_level(Option<LogLevel>)`](crate::operation::get_resource_log_level::GetResourceLogLevelOutput::log_level): <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     /// - On failure, responds with [`SdkError<GetResourceLogLevelError>`](crate::operation::get_resource_log_level::GetResourceLogLevelError)
-    pub fn get_resource_log_level(
-        &self,
-    ) -> crate::operation::get_resource_log_level::builders::GetResourceLogLevelFluentBuilder {
-        crate::operation::get_resource_log_level::builders::GetResourceLogLevelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_resource_log_level(&self) -> crate::operation::get_resource_log_level::builders::GetResourceLogLevelFluentBuilder {
+        crate::operation::get_resource_log_level::builders::GetResourceLogLevelFluentBuilder::new(self.handle.clone())
     }
 }

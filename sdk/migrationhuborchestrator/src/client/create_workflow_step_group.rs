@@ -18,10 +18,7 @@ impl super::Client {
     ///   - [`previous(Option<Vec<String>>)`](crate::operation::create_workflow_step_group::CreateWorkflowStepGroupOutput::previous): <p>The previous step group.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::create_workflow_step_group::CreateWorkflowStepGroupOutput::creation_time): <p>The time at which the step group is created.</p>
     /// - On failure, responds with [`SdkError<CreateWorkflowStepGroupError>`](crate::operation::create_workflow_step_group::CreateWorkflowStepGroupError)
-    pub fn create_workflow_step_group(
-        &self,
-    ) -> crate::operation::create_workflow_step_group::builders::CreateWorkflowStepGroupFluentBuilder
-    {
+    pub fn create_workflow_step_group(&self) -> crate::operation::create_workflow_step_group::builders::CreateWorkflowStepGroupFluentBuilder {
         crate::operation::create_workflow_step_group::builders::CreateWorkflowStepGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -27,8 +27,7 @@ impl DeprecateSystemTemplateInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeprecateSystemTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateInputBuilder,
+    inner: crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateInputBuilder,
 }
 impl DeprecateSystemTemplateFluentBuilder {
     /// Creates a new `DeprecateSystemTemplate`.
@@ -39,10 +38,7 @@ impl DeprecateSystemTemplateFluentBuilder {
         }
     }
     /// Access the DeprecateSystemTemplate as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::deprecate_system_template::builders::DeprecateSystemTemplateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +50,7 @@ impl DeprecateSystemTemplateFluentBuilder {
             crate::operation::deprecate_system_template::DeprecateSystemTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_system_template::DeprecateSystemTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_system_template::DeprecateSystemTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +60,7 @@ impl DeprecateSystemTemplateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +69,7 @@ impl DeprecateSystemTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_system_template::DeprecateSystemTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_system_template::DeprecateSystemTemplateError>,
     > {
         let op = self
             .inner
@@ -103,9 +92,7 @@ impl DeprecateSystemTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprecate_system_template::DeprecateSystemTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_system_template::DeprecateSystemTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_system_template::DeprecateSystemTemplateError>,
     > {
         self.send_middleware().await
     }
@@ -119,9 +106,7 @@ impl DeprecateSystemTemplateFluentBuilder {
             crate::operation::deprecate_system_template::DeprecateSystemTemplate,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::deprecate_system_template::DeprecateSystemTemplateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::deprecate_system_template::DeprecateSystemTemplateError>,
     > {
         self.customize_middleware().await
     }

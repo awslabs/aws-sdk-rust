@@ -9,60 +9,52 @@ pub fn de_compose_environments_http_error(
     crate::operation::compose_environments::ComposeEnvironmentsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::compose_environments::ComposeEnvironmentsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::compose_environments::ComposeEnvironmentsError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::compose_environments::ComposeEnvironmentsError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::compose_environments::ComposeEnvironmentsError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InsufficientPrivilegesException" => crate::operation::compose_environments::ComposeEnvironmentsError::InsufficientPrivilegesException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InsufficientPrivilegesExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(_response_body, output).map_err(crate::operation::compose_environments::ComposeEnvironmentsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InsufficientPrivilegesExceptionBuilder::default();
+                output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::compose_environments::ComposeEnvironmentsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyEnvironmentsException" => crate::operation::compose_environments::ComposeEnvironmentsError::TooManyEnvironmentsException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyEnvironmentsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_environments_exception::de_too_many_environments_exception_xml_err(_response_body, output).map_err(crate::operation::compose_environments::ComposeEnvironmentsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyEnvironmentsExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_too_many_environments_exception::de_too_many_environments_exception_xml_err(_response_body, output)
+                        .map_err(crate::operation::compose_environments::ComposeEnvironmentsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::compose_environments::ComposeEnvironmentsError::generic(generic)
+        _ => crate::operation::compose_environments::ComposeEnvironmentsError::generic(generic),
     })
 }
 
@@ -78,14 +70,9 @@ pub fn de_compose_environments_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::compose_environments::builders::ComposeEnvironmentsOutputBuilder::default();
-        output = crate::protocol_serde::shape_compose_environments::de_compose_environments(
-            _response_body,
-            output,
-        )
-        .map_err(crate::operation::compose_environments::ComposeEnvironmentsError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output = crate::protocol_serde::shape_compose_environments::de_compose_environments(_response_body, output)
+            .map_err(crate::operation::compose_environments::ComposeEnvironmentsError::unhandled)?;
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -94,10 +81,7 @@ pub fn de_compose_environments_http_response_with_props(
 pub fn de_compose_environments(
     inp: &[u8],
     mut builder: crate::operation::compose_environments::builders::ComposeEnvironmentsOutputBuilder,
-) -> Result<
-    crate::operation::compose_environments::builders::ComposeEnvironmentsOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::compose_environments::builders::ComposeEnvironmentsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -147,9 +131,7 @@ pub fn de_compose_environments(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected ComposeEnvironmentsResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected ComposeEnvironmentsResult tag"));
     };
     Ok(builder)
 }

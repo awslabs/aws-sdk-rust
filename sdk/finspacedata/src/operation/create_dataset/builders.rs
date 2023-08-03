@@ -10,10 +10,7 @@ impl CreateDatasetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_dataset::CreateDatasetOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_dataset::CreateDatasetError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_dataset();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateDatasetFluentBuilder {
         }
     }
     /// Access the CreateDataset as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateDatasetFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl CreateDatasetFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>Display title for a FinSpace Dataset.</p>
-    pub fn dataset_title(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_title(input.into());
         self
     }
     /// <p>Display title for a FinSpace Dataset.</p>
-    pub fn set_dataset_title(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_title(input);
         self
     }
@@ -175,18 +161,12 @@ impl CreateDatasetFluentBuilder {
         self.inner.get_kind()
     }
     /// <p>Description of a Dataset.</p>
-    pub fn dataset_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dataset_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_description(input.into());
         self
     }
     /// <p>Description of a Dataset.</p>
-    pub fn set_dataset_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dataset_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_description(input);
         self
     }
@@ -200,10 +180,7 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>Contact information for a Dataset owner.</p>
-    pub fn set_owner_info(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetOwnerInfo>,
-    ) -> Self {
+    pub fn set_owner_info(mut self, input: ::std::option::Option<crate::types::DatasetOwnerInfo>) -> Self {
         self.inner = self.inner.set_owner_info(input);
         self
     }
@@ -217,17 +194,12 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>Permission group parameters for Dataset permissions.</p>
-    pub fn set_permission_group_params(
-        mut self,
-        input: ::std::option::Option<crate::types::PermissionGroupParams>,
-    ) -> Self {
+    pub fn set_permission_group_params(mut self, input: ::std::option::Option<crate::types::PermissionGroupParams>) -> Self {
         self.inner = self.inner.set_permission_group_params(input);
         self
     }
     /// <p>Permission group parameters for Dataset permissions.</p>
-    pub fn get_permission_group_params(
-        &self,
-    ) -> &::std::option::Option<crate::types::PermissionGroupParams> {
+    pub fn get_permission_group_params(&self) -> &::std::option::Option<crate::types::PermissionGroupParams> {
         self.inner.get_permission_group_params()
     }
     /// <p>The unique resource identifier for a Dataset.</p>
@@ -250,10 +222,7 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>Definition for a schema on a tabular Dataset.</p>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<crate::types::SchemaUnion>,
-    ) -> Self {
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<crate::types::SchemaUnion>) -> Self {
         self.inner = self.inner.set_schema_definition(input);
         self
     }

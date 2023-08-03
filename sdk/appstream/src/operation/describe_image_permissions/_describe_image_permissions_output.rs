@@ -8,8 +8,7 @@ pub struct DescribeImagePermissionsOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The permissions for a private image that you own. </p>
     #[doc(hidden)]
-    pub shared_image_permissions_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::SharedImagePermissions>>,
+    pub shared_image_permissions_list: ::std::option::Option<::std::vec::Vec<crate::types::SharedImagePermissions>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,9 +20,7 @@ impl DescribeImagePermissionsOutput {
         self.name.as_deref()
     }
     /// <p>The permissions for a private image that you own. </p>
-    pub fn shared_image_permissions_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SharedImagePermissions]> {
+    pub fn shared_image_permissions_list(&self) -> ::std::option::Option<&[crate::types::SharedImagePermissions]> {
         self.shared_image_permissions_list.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -38,22 +35,17 @@ impl ::aws_http::request_id::RequestId for DescribeImagePermissionsOutput {
 }
 impl DescribeImagePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImagePermissionsOutput`](crate::operation::describe_image_permissions::DescribeImagePermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_image_permissions::builders::DescribeImagePermissionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_image_permissions::builders::DescribeImagePermissionsOutputBuilder {
         crate::operation::describe_image_permissions::builders::DescribeImagePermissionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImagePermissionsOutput`](crate::operation::describe_image_permissions::DescribeImagePermissionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImagePermissionsOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) shared_image_permissions_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::SharedImagePermissions>>,
+    pub(crate) shared_image_permissions_list: ::std::option::Option<::std::vec::Vec<crate::types::SharedImagePermissions>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -77,27 +69,19 @@ impl DescribeImagePermissionsOutputBuilder {
     /// To override the contents of this collection use [`set_shared_image_permissions_list`](Self::set_shared_image_permissions_list).
     ///
     /// <p>The permissions for a private image that you own. </p>
-    pub fn shared_image_permissions_list(
-        mut self,
-        input: crate::types::SharedImagePermissions,
-    ) -> Self {
+    pub fn shared_image_permissions_list(mut self, input: crate::types::SharedImagePermissions) -> Self {
         let mut v = self.shared_image_permissions_list.unwrap_or_default();
         v.push(input);
         self.shared_image_permissions_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The permissions for a private image that you own. </p>
-    pub fn set_shared_image_permissions_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SharedImagePermissions>>,
-    ) -> Self {
+    pub fn set_shared_image_permissions_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SharedImagePermissions>>) -> Self {
         self.shared_image_permissions_list = input;
         self
     }
     /// <p>The permissions for a private image that you own. </p>
-    pub fn get_shared_image_permissions_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SharedImagePermissions>> {
+    pub fn get_shared_image_permissions_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SharedImagePermissions>> {
         &self.shared_image_permissions_list
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -124,9 +108,7 @@ impl DescribeImagePermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeImagePermissionsOutput`](crate::operation::describe_image_permissions::DescribeImagePermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_image_permissions::DescribeImagePermissionsOutput {
+    pub fn build(self) -> crate::operation::describe_image_permissions::DescribeImagePermissionsOutput {
         crate::operation::describe_image_permissions::DescribeImagePermissionsOutput {
             name: self.name,
             shared_image_permissions_list: self.shared_image_permissions_list,

@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`credentials(Credentials)`](crate::operation::update_storage_system::builders::UpdateStorageSystemFluentBuilder::credentials) / [`set_credentials(Option<Credentials>)`](crate::operation::update_storage_system::builders::UpdateStorageSystemFluentBuilder::set_credentials): <p>Specifies the user name and password for accessing your on-premises storage system's management interface.</p>
     /// - On success, responds with [`UpdateStorageSystemOutput`](crate::operation::update_storage_system::UpdateStorageSystemOutput)
     /// - On failure, responds with [`SdkError<UpdateStorageSystemError>`](crate::operation::update_storage_system::UpdateStorageSystemError)
-    pub fn update_storage_system(
-        &self,
-    ) -> crate::operation::update_storage_system::builders::UpdateStorageSystemFluentBuilder {
-        crate::operation::update_storage_system::builders::UpdateStorageSystemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_storage_system(&self) -> crate::operation::update_storage_system::builders::UpdateStorageSystemFluentBuilder {
+        crate::operation::update_storage_system::builders::UpdateStorageSystemFluentBuilder::new(self.handle.clone())
     }
 }

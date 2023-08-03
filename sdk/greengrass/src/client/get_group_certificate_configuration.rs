@@ -9,7 +9,9 @@ impl super::Client {
     ///   - [`certificate_expiry_in_milliseconds(Option<String>)`](crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationOutput::certificate_expiry_in_milliseconds): The amount of time remaining before the certificate expires, in milliseconds.
     ///   - [`group_id(Option<String>)`](crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationOutput::group_id): The ID of the group certificate configuration.
     /// - On failure, responds with [`SdkError<GetGroupCertificateConfigurationError>`](crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationError)
-    pub fn get_group_certificate_configuration(&self) -> crate::operation::get_group_certificate_configuration::builders::GetGroupCertificateConfigurationFluentBuilder{
+    pub fn get_group_certificate_configuration(
+        &self,
+    ) -> crate::operation::get_group_certificate_configuration::builders::GetGroupCertificateConfigurationFluentBuilder {
         crate::operation::get_group_certificate_configuration::builders::GetGroupCertificateConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

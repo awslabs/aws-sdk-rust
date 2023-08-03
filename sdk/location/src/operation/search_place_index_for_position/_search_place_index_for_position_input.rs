@@ -68,7 +68,7 @@ impl ::std::fmt::Debug for SearchPlaceIndexForPositionInput {
 }
 impl SearchPlaceIndexForPositionInput {
     /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForPositionInput`](crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput).
-    pub fn builder() -> crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionInputBuilder{
+    pub fn builder() -> crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionInputBuilder {
         crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionInputBuilder::default()
     }
 }
@@ -188,15 +188,13 @@ impl SearchPlaceIndexForPositionInputBuilder {
         crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput {
-                index_name: self.index_name,
-                position: self.position,
-                max_results: self.max_results.unwrap_or_default(),
-                language: self.language,
-                key: self.key,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput {
+            index_name: self.index_name,
+            position: self.position,
+            max_results: self.max_results.unwrap_or_default(),
+            language: self.language,
+            key: self.key,
+        })
     }
 }
 impl ::std::fmt::Debug for SearchPlaceIndexForPositionInputBuilder {

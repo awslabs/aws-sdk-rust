@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`expiration_date(Option<DateTime>)`](crate::operation::get_client_certificate::GetClientCertificateOutput::expiration_date): <p>The timestamp when the client certificate will expire.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_client_certificate::GetClientCertificateOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     /// - On failure, responds with [`SdkError<GetClientCertificateError>`](crate::operation::get_client_certificate::GetClientCertificateError)
-    pub fn get_client_certificate(
-        &self,
-    ) -> crate::operation::get_client_certificate::builders::GetClientCertificateFluentBuilder {
-        crate::operation::get_client_certificate::builders::GetClientCertificateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_client_certificate(&self) -> crate::operation::get_client_certificate::builders::GetClientCertificateFluentBuilder {
+        crate::operation::get_client_certificate::builders::GetClientCertificateFluentBuilder::new(self.handle.clone())
     }
 }

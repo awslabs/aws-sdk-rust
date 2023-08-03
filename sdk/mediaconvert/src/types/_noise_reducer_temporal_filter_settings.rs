@@ -9,12 +9,10 @@ pub struct NoiseReducerTemporalFilterSettings {
     pub aggressive_mode: ::std::option::Option<i32>,
     /// When you set Noise reducer to Temporal, the bandwidth and sharpness of your output is reduced. You can optionally use Post temporal sharpening to apply sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto, allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled, specify how much sharpening is applied using Post temporal sharpening strength. Set Post temporal sharpening to Disabled to not apply sharpening.
     #[doc(hidden)]
-    pub post_temporal_sharpening:
-        ::std::option::Option<crate::types::NoiseFilterPostTemporalSharpening>,
+    pub post_temporal_sharpening: ::std::option::Option<crate::types::NoiseFilterPostTemporalSharpening>,
     /// Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount of sharpening.
     #[doc(hidden)]
-    pub post_temporal_sharpening_strength:
-        ::std::option::Option<crate::types::NoiseFilterPostTemporalSharpeningStrength>,
+    pub post_temporal_sharpening_strength: ::std::option::Option<crate::types::NoiseFilterPostTemporalSharpeningStrength>,
     /// The speed of the filter (higher number is faster). Low setting reduces bit rate at the cost of transcode time, high setting improves transcode time at the cost of bit rate.
     #[doc(hidden)]
     pub speed: ::std::option::Option<i32>,
@@ -28,15 +26,11 @@ impl NoiseReducerTemporalFilterSettings {
         self.aggressive_mode
     }
     /// When you set Noise reducer to Temporal, the bandwidth and sharpness of your output is reduced. You can optionally use Post temporal sharpening to apply sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto, allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled, specify how much sharpening is applied using Post temporal sharpening strength. Set Post temporal sharpening to Disabled to not apply sharpening.
-    pub fn post_temporal_sharpening(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NoiseFilterPostTemporalSharpening> {
+    pub fn post_temporal_sharpening(&self) -> ::std::option::Option<&crate::types::NoiseFilterPostTemporalSharpening> {
         self.post_temporal_sharpening.as_ref()
     }
     /// Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount of sharpening.
-    pub fn post_temporal_sharpening_strength(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NoiseFilterPostTemporalSharpeningStrength> {
+    pub fn post_temporal_sharpening_strength(&self) -> ::std::option::Option<&crate::types::NoiseFilterPostTemporalSharpeningStrength> {
         self.post_temporal_sharpening_strength.as_ref()
     }
     /// The speed of the filter (higher number is faster). Low setting reduces bit rate at the cost of transcode time, high setting improves transcode time at the cost of bit rate.
@@ -57,15 +51,11 @@ impl NoiseReducerTemporalFilterSettings {
 
 /// A builder for [`NoiseReducerTemporalFilterSettings`](crate::types::NoiseReducerTemporalFilterSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NoiseReducerTemporalFilterSettingsBuilder {
     pub(crate) aggressive_mode: ::std::option::Option<i32>,
-    pub(crate) post_temporal_sharpening:
-        ::std::option::Option<crate::types::NoiseFilterPostTemporalSharpening>,
-    pub(crate) post_temporal_sharpening_strength:
-        ::std::option::Option<crate::types::NoiseFilterPostTemporalSharpeningStrength>,
+    pub(crate) post_temporal_sharpening: ::std::option::Option<crate::types::NoiseFilterPostTemporalSharpening>,
+    pub(crate) post_temporal_sharpening_strength: ::std::option::Option<crate::types::NoiseFilterPostTemporalSharpeningStrength>,
     pub(crate) speed: ::std::option::Option<i32>,
     pub(crate) strength: ::std::option::Option<i32>,
 }
@@ -85,32 +75,21 @@ impl NoiseReducerTemporalFilterSettingsBuilder {
         &self.aggressive_mode
     }
     /// When you set Noise reducer to Temporal, the bandwidth and sharpness of your output is reduced. You can optionally use Post temporal sharpening to apply sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto, allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled, specify how much sharpening is applied using Post temporal sharpening strength. Set Post temporal sharpening to Disabled to not apply sharpening.
-    pub fn post_temporal_sharpening(
-        mut self,
-        input: crate::types::NoiseFilterPostTemporalSharpening,
-    ) -> Self {
+    pub fn post_temporal_sharpening(mut self, input: crate::types::NoiseFilterPostTemporalSharpening) -> Self {
         self.post_temporal_sharpening = ::std::option::Option::Some(input);
         self
     }
     /// When you set Noise reducer to Temporal, the bandwidth and sharpness of your output is reduced. You can optionally use Post temporal sharpening to apply sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto, allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled, specify how much sharpening is applied using Post temporal sharpening strength. Set Post temporal sharpening to Disabled to not apply sharpening.
-    pub fn set_post_temporal_sharpening(
-        mut self,
-        input: ::std::option::Option<crate::types::NoiseFilterPostTemporalSharpening>,
-    ) -> Self {
+    pub fn set_post_temporal_sharpening(mut self, input: ::std::option::Option<crate::types::NoiseFilterPostTemporalSharpening>) -> Self {
         self.post_temporal_sharpening = input;
         self
     }
     /// When you set Noise reducer to Temporal, the bandwidth and sharpness of your output is reduced. You can optionally use Post temporal sharpening to apply sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto, allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled, specify how much sharpening is applied using Post temporal sharpening strength. Set Post temporal sharpening to Disabled to not apply sharpening.
-    pub fn get_post_temporal_sharpening(
-        &self,
-    ) -> &::std::option::Option<crate::types::NoiseFilterPostTemporalSharpening> {
+    pub fn get_post_temporal_sharpening(&self) -> &::std::option::Option<crate::types::NoiseFilterPostTemporalSharpening> {
         &self.post_temporal_sharpening
     }
     /// Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount of sharpening.
-    pub fn post_temporal_sharpening_strength(
-        mut self,
-        input: crate::types::NoiseFilterPostTemporalSharpeningStrength,
-    ) -> Self {
+    pub fn post_temporal_sharpening_strength(mut self, input: crate::types::NoiseFilterPostTemporalSharpeningStrength) -> Self {
         self.post_temporal_sharpening_strength = ::std::option::Option::Some(input);
         self
     }
@@ -123,9 +102,7 @@ impl NoiseReducerTemporalFilterSettingsBuilder {
         self
     }
     /// Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount of sharpening.
-    pub fn get_post_temporal_sharpening_strength(
-        &self,
-    ) -> &::std::option::Option<crate::types::NoiseFilterPostTemporalSharpeningStrength> {
+    pub fn get_post_temporal_sharpening_strength(&self) -> &::std::option::Option<crate::types::NoiseFilterPostTemporalSharpeningStrength> {
         &self.post_temporal_sharpening_strength
     }
     /// The speed of the filter (higher number is faster). Low setting reduces bit rate at the cost of transcode time, high setting improves transcode time at the cost of bit rate.

@@ -15,34 +15,25 @@ impl DeleteDiscovererInput {
 }
 impl DeleteDiscovererInput {
     /// Creates a new builder-style object to manufacture [`DeleteDiscovererInput`](crate::operation::delete_discoverer::DeleteDiscovererInput).
-    pub fn builder() -> crate::operation::delete_discoverer::builders::DeleteDiscovererInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_discoverer::builders::DeleteDiscovererInputBuilder {
         crate::operation::delete_discoverer::builders::DeleteDiscovererInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteDiscovererInput`](crate::operation::delete_discoverer::DeleteDiscovererInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDiscovererInputBuilder {
     pub(crate) discoverer_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDiscovererInputBuilder {
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn discoverer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discoverer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn set_discoverer_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_discoverer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.discoverer_id = input;
         self
     }
@@ -53,10 +44,7 @@ impl DeleteDiscovererInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDiscovererInput`](crate::operation::delete_discoverer::DeleteDiscovererInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_discoverer::DeleteDiscovererInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_discoverer::DeleteDiscovererInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_discoverer::DeleteDiscovererInput {
             discoverer_id: self.discoverer_id,
         })

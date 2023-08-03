@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`ipv6_cidr_block_association(Option<SubnetIpv6CidrBlockAssociation>)`](crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockOutput::ipv6_cidr_block_association): <p>Information about the IPv6 CIDR block association.</p>
     ///   - [`subnet_id(Option<String>)`](crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockOutput::subnet_id): <p>The ID of the subnet.</p>
     /// - On failure, responds with [`SdkError<DisassociateSubnetCidrBlockError>`](crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockError)
-    pub fn disassociate_subnet_cidr_block(&self) -> crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockFluentBuilder{
+    pub fn disassociate_subnet_cidr_block(
+        &self,
+    ) -> crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockFluentBuilder {
         crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockFluentBuilder::new(self.handle.clone())
     }
 }

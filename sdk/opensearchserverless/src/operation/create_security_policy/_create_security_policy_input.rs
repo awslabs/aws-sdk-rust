@@ -43,17 +43,14 @@ impl CreateSecurityPolicyInput {
 }
 impl CreateSecurityPolicyInput {
     /// Creates a new builder-style object to manufacture [`CreateSecurityPolicyInput`](crate::operation::create_security_policy::CreateSecurityPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::create_security_policy::builders::CreateSecurityPolicyInputBuilder {
+    pub fn builder() -> crate::operation::create_security_policy::builders::CreateSecurityPolicyInputBuilder {
         crate::operation::create_security_policy::builders::CreateSecurityPolicyInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSecurityPolicyInput`](crate::operation::create_security_policy::CreateSecurityPolicyInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSecurityPolicyInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -68,10 +65,7 @@ impl CreateSecurityPolicyInputBuilder {
         self
     }
     /// <p>The type of security policy.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::SecurityPolicyType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityPolicyType>) -> Self {
         self.r#type = input;
         self
     }
@@ -138,18 +132,14 @@ impl CreateSecurityPolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateSecurityPolicyInput`](crate::operation::create_security_policy::CreateSecurityPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_security_policy::CreateSecurityPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_security_policy::CreateSecurityPolicyInput {
-                r#type: self.r#type,
-                name: self.name,
-                description: self.description,
-                policy: self.policy,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_security_policy::CreateSecurityPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_security_policy::CreateSecurityPolicyInput {
+            r#type: self.r#type,
+            name: self.name,
+            description: self.description,
+            policy: self.policy,
+            client_token: self.client_token,
+        })
     }
 }

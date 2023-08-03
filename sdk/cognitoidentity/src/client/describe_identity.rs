@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::describe_identity::DescribeIdentityOutput::creation_date): <p>Date on which the identity was created.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::describe_identity::DescribeIdentityOutput::last_modified_date): <p>Date on which the identity was last modified.</p>
     /// - On failure, responds with [`SdkError<DescribeIdentityError>`](crate::operation::describe_identity::DescribeIdentityError)
-    pub fn describe_identity(
-        &self,
-    ) -> crate::operation::describe_identity::builders::DescribeIdentityFluentBuilder {
-        crate::operation::describe_identity::builders::DescribeIdentityFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_identity(&self) -> crate::operation::describe_identity::builders::DescribeIdentityFluentBuilder {
+        crate::operation::describe_identity::builders::DescribeIdentityFluentBuilder::new(self.handle.clone())
     }
 }

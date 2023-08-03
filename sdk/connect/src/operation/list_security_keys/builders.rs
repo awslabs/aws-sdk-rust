@@ -10,10 +10,7 @@ impl ListSecurityKeysInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_security_keys::ListSecurityKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_keys::ListSecurityKeysError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_keys::ListSecurityKeysError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_security_keys();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl ListSecurityKeysFluentBuilder {
         }
     }
     /// Access the ListSecurityKeys as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_security_keys::builders::ListSecurityKeysInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_security_keys::builders::ListSecurityKeysInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl ListSecurityKeysFluentBuilder {
             crate::operation::list_security_keys::ListSecurityKeys,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_keys::ListSecurityKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_keys::ListSecurityKeysError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl ListSecurityKeysFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl ListSecurityKeysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_security_keys::ListSecurityKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_keys::ListSecurityKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_keys::ListSecurityKeysError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl ListSecurityKeysFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_security_keys::ListSecurityKeysOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_keys::ListSecurityKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_keys::ListSecurityKeysError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl ListSecurityKeysFluentBuilder {
             crate::operation::list_security_keys::ListSecurityKeys,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_security_keys::ListSecurityKeysError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_security_keys::ListSecurityKeysError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_security_keys::paginator::ListSecurityKeysPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_security_keys::paginator::ListSecurityKeysPaginator {
-        crate::operation::list_security_keys::paginator::ListSecurityKeysPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_security_keys::paginator::ListSecurityKeysPaginator {
+        crate::operation::list_security_keys::paginator::ListSecurityKeysPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

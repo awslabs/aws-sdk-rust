@@ -5,8 +5,7 @@
 pub struct DescribeHomeRegionControlsOutput {
     /// <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
     #[doc(hidden)]
-    pub home_region_controls:
-        ::std::option::Option<::std::vec::Vec<crate::types::HomeRegionControl>>,
+    pub home_region_controls: ::std::option::Option<::std::vec::Vec<crate::types::HomeRegionControl>>,
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeHomeRegionControlsOutput {
 }
 impl DescribeHomeRegionControlsOutput {
     /// <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
-    pub fn home_region_controls(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HomeRegionControl]> {
+    pub fn home_region_controls(&self) -> ::std::option::Option<&[crate::types::HomeRegionControl]> {
         self.home_region_controls.as_deref()
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeHomeRegionControlsOutput {
 }
 impl DescribeHomeRegionControlsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHomeRegionControlsOutput`](crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput).
-    pub fn builder() -> crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsOutputBuilder {
         crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeHomeRegionControlsOutput`](crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeHomeRegionControlsOutputBuilder {
-    pub(crate) home_region_controls:
-        ::std::option::Option<::std::vec::Vec<crate::types::HomeRegionControl>>,
+    pub(crate) home_region_controls: ::std::option::Option<::std::vec::Vec<crate::types::HomeRegionControl>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl DescribeHomeRegionControlsOutputBuilder {
         self
     }
     /// <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
-    pub fn set_home_region_controls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HomeRegionControl>>,
-    ) -> Self {
+    pub fn set_home_region_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HomeRegionControl>>) -> Self {
         self.home_region_controls = input;
         self
     }
     /// <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
-    pub fn get_home_region_controls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HomeRegionControl>> {
+    pub fn get_home_region_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HomeRegionControl>> {
         &self.home_region_controls
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
@@ -97,9 +86,7 @@ impl DescribeHomeRegionControlsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeHomeRegionControlsOutput`](crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput {
+    pub fn build(self) -> crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput {
         crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput {
             home_region_controls: self.home_region_controls,
             next_token: self.next_token,

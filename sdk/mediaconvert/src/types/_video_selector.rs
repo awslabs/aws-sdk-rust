@@ -49,9 +49,7 @@ impl VideoSelector {
         self.color_space_usage.as_ref()
     }
     /// Set Embedded timecode override to Use MDPM when your AVCHD input contains timecode tag data in the Modified Digital Video Pack Metadata. When you do, we recommend you also set Timecode source to Embedded. Leave Embedded timecode override blank, or set to None, when your input does not contain MDPM timecode.
-    pub fn embedded_timecode_override(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EmbeddedTimecodeOverride> {
+    pub fn embedded_timecode_override(&self) -> ::std::option::Option<&crate::types::EmbeddedTimecodeOverride> {
         self.embedded_timecode_override.as_ref()
     }
     /// Use these settings to provide HDR 10 metadata that is missing or inaccurate in your input video. Appropriate values vary depending on the input video and must be provided by a color grader. The color grader generates these values during the HDR 10 mastering process. The valid range for each of these settings is 0 to 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related settings - When you specify these values, you must also set Color space to HDR 10. To specify whether the the values you specify here take precedence over the values in the metadata of your input file, set Color space usage. To specify whether color metadata is included in an output, set Color metadata. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
@@ -88,15 +86,12 @@ impl VideoSelector {
 
 /// A builder for [`VideoSelector`](crate::types::VideoSelector).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VideoSelectorBuilder {
     pub(crate) alpha_behavior: ::std::option::Option<crate::types::AlphaBehavior>,
     pub(crate) color_space: ::std::option::Option<crate::types::ColorSpace>,
     pub(crate) color_space_usage: ::std::option::Option<crate::types::ColorSpaceUsage>,
-    pub(crate) embedded_timecode_override:
-        ::std::option::Option<crate::types::EmbeddedTimecodeOverride>,
+    pub(crate) embedded_timecode_override: ::std::option::Option<crate::types::EmbeddedTimecodeOverride>,
     pub(crate) hdr10_metadata: ::std::option::Option<crate::types::Hdr10Metadata>,
     pub(crate) pad_video: ::std::option::Option<crate::types::PadVideo>,
     pub(crate) pid: ::std::option::Option<i32>,
@@ -111,10 +106,7 @@ impl VideoSelectorBuilder {
         self
     }
     /// Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses. Leave this setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the luma channel of your outputs.
-    pub fn set_alpha_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::AlphaBehavior>,
-    ) -> Self {
+    pub fn set_alpha_behavior(mut self, input: ::std::option::Option<crate::types::AlphaBehavior>) -> Self {
         self.alpha_behavior = input;
         self
     }
@@ -128,10 +120,7 @@ impl VideoSelectorBuilder {
         self
     }
     /// If your input video has accurate color space metadata, or if you don't know about color space: Keep the default value, Follow. MediaConvert will automatically detect your input color space. If your input video has metadata indicating the wrong color space, or has missing metadata: Specify the accurate color space here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display Color Volume static metadata isn't present in your video stream, or if that metadata is present but not accurate: Choose Force HDR 10. Specify correct values in the input HDR 10 metadata settings. For more information about HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr. When you specify an input color space, MediaConvert uses the following color space metadata, which includes color primaries, transfer characteristics, and matrix coefficients: * HDR 10: BT.2020, PQ, BT.2020 non-constant * HLG 2020: BT.2020, HLG, BT.2020 non-constant * P3DCI (Theater): DCIP3, SMPTE 428M, BT.709 * P3D65 (SDR): Display P3, sRGB, BT.709 * P3D65 (HDR): Display P3, PQ, BT.709
-    pub fn set_color_space(
-        mut self,
-        input: ::std::option::Option<crate::types::ColorSpace>,
-    ) -> Self {
+    pub fn set_color_space(mut self, input: ::std::option::Option<crate::types::ColorSpace>) -> Self {
         self.color_space = input;
         self
     }
@@ -145,10 +134,7 @@ impl VideoSelectorBuilder {
         self
     }
     /// There are two sources for color metadata, the input file and the job input settings Color space and HDR master display information settings. The Color space usage setting determines which takes precedence. Choose Force to use color metadata from the input job settings. If you don't specify values for those settings, the service defaults to using metadata from your input. FALLBACK - Choose Fallback to use color metadata from the source when it is present. If there's no color metadata in your input file, the service defaults to using values you specify in the input settings.
-    pub fn set_color_space_usage(
-        mut self,
-        input: ::std::option::Option<crate::types::ColorSpaceUsage>,
-    ) -> Self {
+    pub fn set_color_space_usage(mut self, input: ::std::option::Option<crate::types::ColorSpaceUsage>) -> Self {
         self.color_space_usage = input;
         self
     }
@@ -157,25 +143,17 @@ impl VideoSelectorBuilder {
         &self.color_space_usage
     }
     /// Set Embedded timecode override to Use MDPM when your AVCHD input contains timecode tag data in the Modified Digital Video Pack Metadata. When you do, we recommend you also set Timecode source to Embedded. Leave Embedded timecode override blank, or set to None, when your input does not contain MDPM timecode.
-    pub fn embedded_timecode_override(
-        mut self,
-        input: crate::types::EmbeddedTimecodeOverride,
-    ) -> Self {
+    pub fn embedded_timecode_override(mut self, input: crate::types::EmbeddedTimecodeOverride) -> Self {
         self.embedded_timecode_override = ::std::option::Option::Some(input);
         self
     }
     /// Set Embedded timecode override to Use MDPM when your AVCHD input contains timecode tag data in the Modified Digital Video Pack Metadata. When you do, we recommend you also set Timecode source to Embedded. Leave Embedded timecode override blank, or set to None, when your input does not contain MDPM timecode.
-    pub fn set_embedded_timecode_override(
-        mut self,
-        input: ::std::option::Option<crate::types::EmbeddedTimecodeOverride>,
-    ) -> Self {
+    pub fn set_embedded_timecode_override(mut self, input: ::std::option::Option<crate::types::EmbeddedTimecodeOverride>) -> Self {
         self.embedded_timecode_override = input;
         self
     }
     /// Set Embedded timecode override to Use MDPM when your AVCHD input contains timecode tag data in the Modified Digital Video Pack Metadata. When you do, we recommend you also set Timecode source to Embedded. Leave Embedded timecode override blank, or set to None, when your input does not contain MDPM timecode.
-    pub fn get_embedded_timecode_override(
-        &self,
-    ) -> &::std::option::Option<crate::types::EmbeddedTimecodeOverride> {
+    pub fn get_embedded_timecode_override(&self) -> &::std::option::Option<crate::types::EmbeddedTimecodeOverride> {
         &self.embedded_timecode_override
     }
     /// Use these settings to provide HDR 10 metadata that is missing or inaccurate in your input video. Appropriate values vary depending on the input video and must be provided by a color grader. The color grader generates these values during the HDR 10 mastering process. The valid range for each of these settings is 0 to 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related settings - When you specify these values, you must also set Color space to HDR 10. To specify whether the the values you specify here take precedence over the values in the metadata of your input file, set Color space usage. To specify whether color metadata is included in an output, set Color metadata. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
@@ -184,10 +162,7 @@ impl VideoSelectorBuilder {
         self
     }
     /// Use these settings to provide HDR 10 metadata that is missing or inaccurate in your input video. Appropriate values vary depending on the input video and must be provided by a color grader. The color grader generates these values during the HDR 10 mastering process. The valid range for each of these settings is 0 to 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related settings - When you specify these values, you must also set Color space to HDR 10. To specify whether the the values you specify here take precedence over the values in the metadata of your input file, set Color space usage. To specify whether color metadata is included in an output, set Color metadata. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
-    pub fn set_hdr10_metadata(
-        mut self,
-        input: ::std::option::Option<crate::types::Hdr10Metadata>,
-    ) -> Self {
+    pub fn set_hdr10_metadata(mut self, input: ::std::option::Option<crate::types::Hdr10Metadata>) -> Self {
         self.hdr10_metadata = input;
         self
     }
@@ -257,10 +232,7 @@ impl VideoSelectorBuilder {
         self
     }
     /// If the sample range metadata in your input video is accurate, or if you don't know about sample range, keep the default value, Follow, for this setting. When you do, the service automatically detects your input sample range. If your input video has metadata indicating the wrong sample range, specify the accurate sample range here. When you do, MediaConvert ignores any sample range information in the input metadata. Regardless of whether MediaConvert uses the input sample range or the sample range that you specify, MediaConvert uses the sample range for transcoding and also writes it to the output metadata.
-    pub fn set_sample_range(
-        mut self,
-        input: ::std::option::Option<crate::types::InputSampleRange>,
-    ) -> Self {
+    pub fn set_sample_range(mut self, input: ::std::option::Option<crate::types::InputSampleRange>) -> Self {
         self.sample_range = input;
         self
     }

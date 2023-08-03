@@ -26,7 +26,7 @@ impl DescribeDocumentClassifierInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDocumentClassifierFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_document_classifier::builders::DescribeDocumentClassifierInputBuilder,
+    inner: crate::operation::describe_document_classifier::builders::DescribeDocumentClassifierInputBuilder,
 }
 impl DescribeDocumentClassifierFluentBuilder {
     /// Creates a new `DescribeDocumentClassifier`.
@@ -37,7 +37,7 @@ impl DescribeDocumentClassifierFluentBuilder {
         }
     }
     /// Access the DescribeDocumentClassifier as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_document_classifier::builders::DescribeDocumentClassifierInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_document_classifier::builders::DescribeDocumentClassifierInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeDocumentClassifierFluentBuilder {
             crate::operation::describe_document_classifier::DescribeDocumentClassifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document_classifier::DescribeDocumentClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document_classifier::DescribeDocumentClassifierError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeDocumentClassifierFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeDocumentClassifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_document_classifier::DescribeDocumentClassifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document_classifier::DescribeDocumentClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document_classifier::DescribeDocumentClassifierError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeDocumentClassifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_document_classifier::DescribeDocumentClassifierOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document_classifier::DescribeDocumentClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document_classifier::DescribeDocumentClassifierError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl DescribeDocumentClassifierFluentBuilder {
             crate::operation::describe_document_classifier::DescribeDocumentClassifier,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_document_classifier::DescribeDocumentClassifierError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_document_classifier::DescribeDocumentClassifierError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code> operation returns this identifier in its response.</p>
-    pub fn document_classifier_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_classifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_classifier_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code> operation returns this identifier in its response.</p>
-    pub fn set_document_classifier_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_classifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_classifier_arn(input);
         self
     }

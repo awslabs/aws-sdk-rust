@@ -23,12 +23,9 @@ impl BatchScheduleActionDeleteResult {
 
 /// A builder for [`BatchScheduleActionDeleteResult`](crate::types::BatchScheduleActionDeleteResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchScheduleActionDeleteResultBuilder {
-    pub(crate) schedule_actions:
-        ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
+    pub(crate) schedule_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
 }
 impl BatchScheduleActionDeleteResultBuilder {
     /// Appends an item to `schedule_actions`.
@@ -43,17 +40,12 @@ impl BatchScheduleActionDeleteResultBuilder {
         self
     }
     /// List of actions that have been deleted from the schedule.
-    pub fn set_schedule_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
-    ) -> Self {
+    pub fn set_schedule_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>) -> Self {
         self.schedule_actions = input;
         self
     }
     /// List of actions that have been deleted from the schedule.
-    pub fn get_schedule_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>> {
+    pub fn get_schedule_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>> {
         &self.schedule_actions
     }
     /// Consumes the builder and constructs a [`BatchScheduleActionDeleteResult`](crate::types::BatchScheduleActionDeleteResult).

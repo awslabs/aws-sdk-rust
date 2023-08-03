@@ -10,10 +10,7 @@ impl ActivatePipelineInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::activate_pipeline::ActivatePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_pipeline::ActivatePipelineError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_pipeline::ActivatePipelineError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.activate_pipeline();
         fluent_builder.inner = self;
@@ -46,9 +43,7 @@ impl ActivatePipelineFluentBuilder {
         }
     }
     /// Access the ActivatePipeline as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::activate_pipeline::builders::ActivatePipelineInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::activate_pipeline::builders::ActivatePipelineInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -60,9 +55,7 @@ impl ActivatePipelineFluentBuilder {
             crate::operation::activate_pipeline::ActivatePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_pipeline::ActivatePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_pipeline::ActivatePipelineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -72,10 +65,7 @@ impl ActivatePipelineFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -84,9 +74,7 @@ impl ActivatePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::activate_pipeline::ActivatePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_pipeline::ActivatePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_pipeline::ActivatePipelineError>,
     > {
         let op = self
             .inner
@@ -109,9 +97,7 @@ impl ActivatePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::activate_pipeline::ActivatePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_pipeline::ActivatePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_pipeline::ActivatePipelineError>,
     > {
         self.send_middleware().await
     }
@@ -125,9 +111,7 @@ impl ActivatePipelineFluentBuilder {
             crate::operation::activate_pipeline::ActivatePipeline,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::activate_pipeline::ActivatePipelineError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::activate_pipeline::ActivatePipelineError>,
     > {
         self.customize_middleware().await
     }
@@ -155,17 +139,12 @@ impl ActivatePipelineFluentBuilder {
         self
     }
     /// <p>A list of parameter values to pass to the pipeline at activation.</p>
-    pub fn set_parameter_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
-    ) -> Self {
+    pub fn set_parameter_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>) -> Self {
         self.inner = self.inner.set_parameter_values(input);
         self
     }
     /// <p>A list of parameter values to pass to the pipeline at activation.</p>
-    pub fn get_parameter_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
+    pub fn get_parameter_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
         self.inner.get_parameter_values()
     }
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
@@ -174,10 +153,7 @@ impl ActivatePipelineFluentBuilder {
         self
     }
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
-    pub fn set_start_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_timestamp(input);
         self
     }

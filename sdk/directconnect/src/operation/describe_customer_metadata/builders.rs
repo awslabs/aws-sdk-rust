@@ -26,7 +26,7 @@ impl DescribeCustomerMetadataInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCustomerMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_customer_metadata::builders::DescribeCustomerMetadataInputBuilder,
+    inner: crate::operation::describe_customer_metadata::builders::DescribeCustomerMetadataInputBuilder,
 }
 impl DescribeCustomerMetadataFluentBuilder {
     /// Creates a new `DescribeCustomerMetadata`.
@@ -37,10 +37,7 @@ impl DescribeCustomerMetadataFluentBuilder {
         }
     }
     /// Access the DescribeCustomerMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_customer_metadata::builders::DescribeCustomerMetadataInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_customer_metadata::builders::DescribeCustomerMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl DescribeCustomerMetadataFluentBuilder {
             crate::operation::describe_customer_metadata::DescribeCustomerMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_customer_metadata::DescribeCustomerMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_customer_metadata::DescribeCustomerMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl DescribeCustomerMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl DescribeCustomerMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_customer_metadata::DescribeCustomerMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_customer_metadata::DescribeCustomerMetadataError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl DescribeCustomerMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_customer_metadata::DescribeCustomerMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_customer_metadata::DescribeCustomerMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl DescribeCustomerMetadataFluentBuilder {
             crate::operation::describe_customer_metadata::DescribeCustomerMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_customer_metadata::DescribeCustomerMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_customer_metadata::DescribeCustomerMetadataError>,
     > {
         self.customize_middleware().await
     }

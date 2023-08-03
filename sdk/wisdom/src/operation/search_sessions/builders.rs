@@ -10,10 +10,7 @@ impl SearchSessionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_sessions::SearchSessionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_sessions::SearchSessionsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_sessions::SearchSessionsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.search_sessions();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl SearchSessionsFluentBuilder {
         }
     }
     /// Access the SearchSessions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_sessions::builders::SearchSessionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_sessions::builders::SearchSessionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl SearchSessionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -117,13 +109,8 @@ impl SearchSessionsFluentBuilder {
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_sessions::paginator::SearchSessionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_sessions::paginator::SearchSessionsPaginator {
-        crate::operation::search_sessions::paginator::SearchSessionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_sessions::paginator::SearchSessionsPaginator {
+        crate::operation::search_sessions::paginator::SearchSessionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,10 +160,7 @@ impl SearchSessionsFluentBuilder {
         self
     }
     /// <p>The search expression to filter results.</p>
-    pub fn set_search_expression(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchExpression>,
-    ) -> Self {
+    pub fn set_search_expression(mut self, input: ::std::option::Option<crate::types::SearchExpression>) -> Self {
         self.inner = self.inner.set_search_expression(input);
         self
     }

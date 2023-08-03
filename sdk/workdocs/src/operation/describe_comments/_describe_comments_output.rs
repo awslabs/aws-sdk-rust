@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeCommentsOutput {
 }
 impl DescribeCommentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCommentsOutput`](crate::operation::describe_comments::DescribeCommentsOutput).
-    pub fn builder() -> crate::operation::describe_comments::builders::DescribeCommentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_comments::builders::DescribeCommentsOutputBuilder {
         crate::operation::describe_comments::builders::DescribeCommentsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeCommentsOutput`](crate::operation::describe_comments::DescribeCommentsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCommentsOutputBuilder {
     pub(crate) comments: ::std::option::Option<::std::vec::Vec<crate::types::Comment>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -57,10 +54,7 @@ impl DescribeCommentsOutputBuilder {
         self
     }
     /// <p>The list of comments for the specified document version.</p>
-    pub fn set_comments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Comment>>,
-    ) -> Self {
+    pub fn set_comments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Comment>>) -> Self {
         self.comments = input;
         self
     }

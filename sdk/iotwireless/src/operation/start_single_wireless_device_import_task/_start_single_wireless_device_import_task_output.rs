@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for StartSingleWirelessDeviceImportTaskOu
 }
 impl StartSingleWirelessDeviceImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartSingleWirelessDeviceImportTaskOutput`](crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput).
-    pub fn builder() -> crate::operation::start_single_wireless_device_import_task::builders::StartSingleWirelessDeviceImportTaskOutputBuilder{
+    pub fn builder() -> crate::operation::start_single_wireless_device_import_task::builders::StartSingleWirelessDeviceImportTaskOutputBuilder {
         crate::operation::start_single_wireless_device_import_task::builders::StartSingleWirelessDeviceImportTaskOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartSingleWirelessDeviceImportTaskOutput`](crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartSingleWirelessDeviceImportTaskOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -82,12 +80,10 @@ impl StartSingleWirelessDeviceImportTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartSingleWirelessDeviceImportTaskOutput`](crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput).
-    pub fn build(self) -> crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput{
+    pub fn build(self) -> crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput {
         crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
+            id: self.id,
+            arn: self.arn,
             _request_id: self._request_id,
         }
     }

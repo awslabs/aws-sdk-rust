@@ -26,8 +26,7 @@ impl ListAssessmentRunAgentsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssessmentRunAgentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsInputBuilder,
+    inner: crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsInputBuilder,
 }
 impl ListAssessmentRunAgentsFluentBuilder {
     /// Creates a new `ListAssessmentRunAgents`.
@@ -38,10 +37,7 @@ impl ListAssessmentRunAgentsFluentBuilder {
         }
     }
     /// Access the ListAssessmentRunAgents as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListAssessmentRunAgentsFluentBuilder {
             crate::operation::list_assessment_run_agents::ListAssessmentRunAgents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListAssessmentRunAgentsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListAssessmentRunAgentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListAssessmentRunAgentsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsError>,
     > {
         self.send_middleware().await
     }
@@ -118,34 +105,23 @@ impl ListAssessmentRunAgentsFluentBuilder {
             crate::operation::list_assessment_run_agents::ListAssessmentRunAgents,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_assessment_run_agents::paginator::ListAssessmentRunAgentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_assessment_run_agents::paginator::ListAssessmentRunAgentsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_assessment_run_agents::paginator::ListAssessmentRunAgentsPaginator {
         crate::operation::list_assessment_run_agents::paginator::ListAssessmentRunAgentsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
-    pub fn assessment_run_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_run_arn(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
-    pub fn set_assessment_run_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_run_arn(input);
         self
     }

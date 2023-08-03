@@ -35,18 +35,14 @@ impl ::aws_http::request_id::RequestId for ListCoverageStatisticsOutput {
 }
 impl ListCoverageStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`ListCoverageStatisticsOutput`](crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsOutputBuilder {
         crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCoverageStatisticsOutput`](crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCoverageStatisticsOutputBuilder {
     pub(crate) counts_by_group: ::std::option::Option<::std::vec::Vec<crate::types::Counts>>,
     pub(crate) total_counts: ::std::option::Option<i64>,
@@ -66,17 +62,12 @@ impl ListCoverageStatisticsOutputBuilder {
         self
     }
     /// <p>An array with the number for each group.</p>
-    pub fn set_counts_by_group(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Counts>>,
-    ) -> Self {
+    pub fn set_counts_by_group(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Counts>>) -> Self {
         self.counts_by_group = input;
         self
     }
     /// <p>An array with the number for each group.</p>
-    pub fn get_counts_by_group(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Counts>> {
+    pub fn get_counts_by_group(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Counts>> {
         &self.counts_by_group
     }
     /// <p>The total number for all groups.</p>

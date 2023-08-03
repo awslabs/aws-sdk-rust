@@ -20,9 +20,7 @@ impl AreaOfInterest {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AreaOfInterestGeometry`](crate::types::AreaOfInterest::AreaOfInterestGeometry), extracting the inner [`AreaOfInterestGeometry`](crate::types::AreaOfInterestGeometry).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_area_of_interest_geometry(
-        &self,
-    ) -> ::std::result::Result<&crate::types::AreaOfInterestGeometry, &Self> {
+    pub fn as_area_of_interest_geometry(&self) -> ::std::result::Result<&crate::types::AreaOfInterestGeometry, &Self> {
         if let AreaOfInterest::AreaOfInterestGeometry(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

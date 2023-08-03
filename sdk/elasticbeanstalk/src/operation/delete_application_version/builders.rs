@@ -28,7 +28,7 @@ impl DeleteApplicationVersionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApplicationVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_application_version::builders::DeleteApplicationVersionInputBuilder,
+    inner: crate::operation::delete_application_version::builders::DeleteApplicationVersionInputBuilder,
 }
 impl DeleteApplicationVersionFluentBuilder {
     /// Creates a new `DeleteApplicationVersion`.
@@ -39,10 +39,7 @@ impl DeleteApplicationVersionFluentBuilder {
         }
     }
     /// Access the DeleteApplicationVersion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_application_version::builders::DeleteApplicationVersionInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_application_version::builders::DeleteApplicationVersionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -54,9 +51,7 @@ impl DeleteApplicationVersionFluentBuilder {
             crate::operation::delete_application_version::DeleteApplicationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application_version::DeleteApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application_version::DeleteApplicationVersionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -66,10 +61,7 @@ impl DeleteApplicationVersionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -78,9 +70,7 @@ impl DeleteApplicationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application_version::DeleteApplicationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application_version::DeleteApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application_version::DeleteApplicationVersionError>,
     > {
         let op = self
             .inner
@@ -103,9 +93,7 @@ impl DeleteApplicationVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application_version::DeleteApplicationVersionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application_version::DeleteApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application_version::DeleteApplicationVersionError>,
     > {
         self.send_middleware().await
     }
@@ -119,25 +107,17 @@ impl DeleteApplicationVersionFluentBuilder {
             crate::operation::delete_application_version::DeleteApplicationVersion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_application_version::DeleteApplicationVersionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_application_version::DeleteApplicationVersionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the application to which the version belongs.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of the application to which the version belongs.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -146,18 +126,12 @@ impl DeleteApplicationVersionFluentBuilder {
         self.inner.get_application_name()
     }
     /// <p>The label of the version to delete.</p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_label(input.into());
         self
     }
     /// <p>The label of the version to delete.</p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_label(input);
         self
     }

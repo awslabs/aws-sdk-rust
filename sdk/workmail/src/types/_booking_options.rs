@@ -37,9 +37,7 @@ impl BookingOptions {
 
 /// A builder for [`BookingOptions`](crate::types::BookingOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BookingOptionsBuilder {
     pub(crate) auto_accept_requests: ::std::option::Option<bool>,
     pub(crate) auto_decline_recurring_requests: ::std::option::Option<bool>,
@@ -66,10 +64,7 @@ impl BookingOptionsBuilder {
         self
     }
     /// <p>The resource's ability to automatically decline any recurring requests.</p>
-    pub fn set_auto_decline_recurring_requests(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_auto_decline_recurring_requests(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_decline_recurring_requests = input;
         self
     }
@@ -83,10 +78,7 @@ impl BookingOptionsBuilder {
         self
     }
     /// <p>The resource's ability to automatically decline any conflicting requests.</p>
-    pub fn set_auto_decline_conflicting_requests(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_auto_decline_conflicting_requests(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_decline_conflicting_requests = input;
         self
     }
@@ -98,12 +90,8 @@ impl BookingOptionsBuilder {
     pub fn build(self) -> crate::types::BookingOptions {
         crate::types::BookingOptions {
             auto_accept_requests: self.auto_accept_requests.unwrap_or_default(),
-            auto_decline_recurring_requests: self
-                .auto_decline_recurring_requests
-                .unwrap_or_default(),
-            auto_decline_conflicting_requests: self
-                .auto_decline_conflicting_requests
-                .unwrap_or_default(),
+            auto_decline_recurring_requests: self.auto_decline_recurring_requests.unwrap_or_default(),
+            auto_decline_conflicting_requests: self.auto_decline_conflicting_requests.unwrap_or_default(),
         }
     }
 }

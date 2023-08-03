@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetGlobalSettingsOutput {
 }
 impl GetGlobalSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetGlobalSettingsOutput`](crate::operation::get_global_settings::GetGlobalSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_global_settings::builders::GetGlobalSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::get_global_settings::builders::GetGlobalSettingsOutputBuilder {
         crate::operation::get_global_settings::builders::GetGlobalSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetGlobalSettingsOutput`](crate::operation::get_global_settings::GetGlobalSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetGlobalSettingsOutputBuilder {
     pub(crate) voice_connector: ::std::option::Option<crate::types::VoiceConnectorSettings>,
     _request_id: Option<String>,
@@ -43,17 +40,12 @@ impl GetGlobalSettingsOutputBuilder {
         self
     }
     /// <p>The Voice Connector settings.</p>
-    pub fn set_voice_connector(
-        mut self,
-        input: ::std::option::Option<crate::types::VoiceConnectorSettings>,
-    ) -> Self {
+    pub fn set_voice_connector(mut self, input: ::std::option::Option<crate::types::VoiceConnectorSettings>) -> Self {
         self.voice_connector = input;
         self
     }
     /// <p>The Voice Connector settings.</p>
-    pub fn get_voice_connector(
-        &self,
-    ) -> &::std::option::Option<crate::types::VoiceConnectorSettings> {
+    pub fn get_voice_connector(&self) -> &::std::option::Option<crate::types::VoiceConnectorSettings> {
         &self.voice_connector
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

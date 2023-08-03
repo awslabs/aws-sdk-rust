@@ -5,8 +5,7 @@
 pub struct DescribeMovingAddressesOutput {
     /// <p>The status for each Elastic IP address.</p>
     #[doc(hidden)]
-    pub moving_address_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::MovingAddressStatus>>,
+    pub moving_address_statuses: ::std::option::Option<::std::vec::Vec<crate::types::MovingAddressStatus>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct DescribeMovingAddressesOutput {
 }
 impl DescribeMovingAddressesOutput {
     /// <p>The status for each Elastic IP address.</p>
-    pub fn moving_address_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::MovingAddressStatus]> {
+    pub fn moving_address_statuses(&self) -> ::std::option::Option<&[crate::types::MovingAddressStatus]> {
         self.moving_address_statuses.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -31,21 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeMovingAddressesOutput {
 }
 impl DescribeMovingAddressesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMovingAddressesOutput`](crate::operation::describe_moving_addresses::DescribeMovingAddressesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesOutputBuilder {
         crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeMovingAddressesOutput`](crate::operation::describe_moving_addresses::DescribeMovingAddressesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMovingAddressesOutputBuilder {
-    pub(crate) moving_address_statuses:
-        ::std::option::Option<::std::vec::Vec<crate::types::MovingAddressStatus>>,
+    pub(crate) moving_address_statuses: ::std::option::Option<::std::vec::Vec<crate::types::MovingAddressStatus>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -62,17 +54,12 @@ impl DescribeMovingAddressesOutputBuilder {
         self
     }
     /// <p>The status for each Elastic IP address.</p>
-    pub fn set_moving_address_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MovingAddressStatus>>,
-    ) -> Self {
+    pub fn set_moving_address_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MovingAddressStatus>>) -> Self {
         self.moving_address_statuses = input;
         self
     }
     /// <p>The status for each Elastic IP address.</p>
-    pub fn get_moving_address_statuses(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MovingAddressStatus>> {
+    pub fn get_moving_address_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MovingAddressStatus>> {
         &self.moving_address_statuses
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -99,9 +86,7 @@ impl DescribeMovingAddressesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMovingAddressesOutput`](crate::operation::describe_moving_addresses::DescribeMovingAddressesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_moving_addresses::DescribeMovingAddressesOutput {
+    pub fn build(self) -> crate::operation::describe_moving_addresses::DescribeMovingAddressesOutput {
         crate::operation::describe_moving_addresses::DescribeMovingAddressesOutput {
             moving_address_statuses: self.moving_address_statuses,
             next_token: self.next_token,

@@ -17,9 +17,7 @@ impl TimeBasedAutoScalingConfiguration {
         self.instance_id.as_deref()
     }
     /// <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance schedule.</p>
-    pub fn auto_scaling_schedule(
-        &self,
-    ) -> ::std::option::Option<&crate::types::WeeklyAutoScalingSchedule> {
+    pub fn auto_scaling_schedule(&self) -> ::std::option::Option<&crate::types::WeeklyAutoScalingSchedule> {
         self.auto_scaling_schedule.as_ref()
     }
 }
@@ -32,13 +30,10 @@ impl TimeBasedAutoScalingConfiguration {
 
 /// A builder for [`TimeBasedAutoScalingConfiguration`](crate::types::TimeBasedAutoScalingConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeBasedAutoScalingConfigurationBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) auto_scaling_schedule:
-        ::std::option::Option<crate::types::WeeklyAutoScalingSchedule>,
+    pub(crate) auto_scaling_schedule: ::std::option::Option<crate::types::WeeklyAutoScalingSchedule>,
 }
 impl TimeBasedAutoScalingConfigurationBuilder {
     /// <p>The instance ID.</p>
@@ -61,17 +56,12 @@ impl TimeBasedAutoScalingConfigurationBuilder {
         self
     }
     /// <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance schedule.</p>
-    pub fn set_auto_scaling_schedule(
-        mut self,
-        input: ::std::option::Option<crate::types::WeeklyAutoScalingSchedule>,
-    ) -> Self {
+    pub fn set_auto_scaling_schedule(mut self, input: ::std::option::Option<crate::types::WeeklyAutoScalingSchedule>) -> Self {
         self.auto_scaling_schedule = input;
         self
     }
     /// <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance schedule.</p>
-    pub fn get_auto_scaling_schedule(
-        &self,
-    ) -> &::std::option::Option<crate::types::WeeklyAutoScalingSchedule> {
+    pub fn get_auto_scaling_schedule(&self) -> &::std::option::Option<crate::types::WeeklyAutoScalingSchedule> {
         &self.auto_scaling_schedule
     }
     /// Consumes the builder and constructs a [`TimeBasedAutoScalingConfiguration`](crate::types::TimeBasedAutoScalingConfiguration).

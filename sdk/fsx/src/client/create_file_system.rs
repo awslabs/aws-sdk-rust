@@ -19,11 +19,7 @@ impl super::Client {
     /// - On success, responds with [`CreateFileSystemOutput`](crate::operation::create_file_system::CreateFileSystemOutput) with field(s):
     ///   - [`file_system(Option<FileSystem>)`](crate::operation::create_file_system::CreateFileSystemOutput::file_system): <p>The configuration of the file system that was created.</p>
     /// - On failure, responds with [`SdkError<CreateFileSystemError>`](crate::operation::create_file_system::CreateFileSystemError)
-    pub fn create_file_system(
-        &self,
-    ) -> crate::operation::create_file_system::builders::CreateFileSystemFluentBuilder {
-        crate::operation::create_file_system::builders::CreateFileSystemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_file_system(&self) -> crate::operation::create_file_system::builders::CreateFileSystemFluentBuilder {
+        crate::operation::create_file_system::builders::CreateFileSystemFluentBuilder::new(self.handle.clone())
     }
 }

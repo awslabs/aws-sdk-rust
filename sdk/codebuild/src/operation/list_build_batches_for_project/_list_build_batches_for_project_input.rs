@@ -51,16 +51,14 @@ impl ListBuildBatchesForProjectInput {
 }
 impl ListBuildBatchesForProjectInput {
     /// Creates a new builder-style object to manufacture [`ListBuildBatchesForProjectInput`](crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectInput).
-    pub fn builder() -> crate::operation::list_build_batches_for_project::builders::ListBuildBatchesForProjectInputBuilder{
+    pub fn builder() -> crate::operation::list_build_batches_for_project::builders::ListBuildBatchesForProjectInputBuilder {
         crate::operation::list_build_batches_for_project::builders::ListBuildBatchesForProjectInputBuilder::default()
     }
 }
 
 /// A builder for [`ListBuildBatchesForProjectInput`](crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBuildBatchesForProjectInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::BuildBatchFilter>,
@@ -89,10 +87,7 @@ impl ListBuildBatchesForProjectInputBuilder {
         self
     }
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::BuildBatchFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::BuildBatchFilter>) -> Self {
         self.filter = input;
         self
     }
@@ -128,10 +123,7 @@ impl ListBuildBatchesForProjectInputBuilder {
     /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
     /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
     /// </ul>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
         self
     }
@@ -164,14 +156,12 @@ impl ListBuildBatchesForProjectInputBuilder {
         crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectInput {
-                project_name: self.project_name,
-                filter: self.filter,
-                max_results: self.max_results,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectInput {
+            project_name: self.project_name,
+            filter: self.filter,
+            max_results: self.max_results,
+            sort_order: self.sort_order,
+            next_token: self.next_token,
+        })
     }
 }

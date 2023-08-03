@@ -37,16 +37,14 @@ impl DescribeTableRestoreStatusInput {
 }
 impl DescribeTableRestoreStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeTableRestoreStatusInput`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusInput).
-    pub fn builder() -> crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusInputBuilder {
         crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTableRestoreStatusInput`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTableRestoreStatusInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) table_restore_request_id: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct DescribeTableRestoreStatusInputBuilder {
 }
 impl DescribeTableRestoreStatusInputBuilder {
     /// <p>The Amazon Redshift cluster that the table is being restored to.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Redshift cluster that the table is being restored to.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -75,18 +67,12 @@ impl DescribeTableRestoreStatusInputBuilder {
         &self.cluster_identifier
     }
     /// <p>The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.</p>
-    pub fn table_restore_request_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn table_restore_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_restore_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.</p>
-    pub fn set_table_restore_request_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_table_restore_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_restore_request_id = input;
         self
     }
@@ -129,13 +115,11 @@ impl DescribeTableRestoreStatusInputBuilder {
         crate::operation::describe_table_restore_status::DescribeTableRestoreStatusInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_table_restore_status::DescribeTableRestoreStatusInput {
-                cluster_identifier: self.cluster_identifier,
-                table_restore_request_id: self.table_restore_request_id,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_table_restore_status::DescribeTableRestoreStatusInput {
+            cluster_identifier: self.cluster_identifier,
+            table_restore_request_id: self.table_restore_request_id,
+            max_records: self.max_records,
+            marker: self.marker,
+        })
     }
 }

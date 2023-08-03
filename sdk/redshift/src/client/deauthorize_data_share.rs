@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::operation::deauthorize_data_share::DeauthorizeDataShareOutput::data_share_associations): <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
     ///   - [`managed_by(Option<String>)`](crate::operation::deauthorize_data_share::DeauthorizeDataShareOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
     /// - On failure, responds with [`SdkError<DeauthorizeDataShareError>`](crate::operation::deauthorize_data_share::DeauthorizeDataShareError)
-    pub fn deauthorize_data_share(
-        &self,
-    ) -> crate::operation::deauthorize_data_share::builders::DeauthorizeDataShareFluentBuilder {
-        crate::operation::deauthorize_data_share::builders::DeauthorizeDataShareFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn deauthorize_data_share(&self) -> crate::operation::deauthorize_data_share::builders::DeauthorizeDataShareFluentBuilder {
+        crate::operation::deauthorize_data_share::builders::DeauthorizeDataShareFluentBuilder::new(self.handle.clone())
     }
 }

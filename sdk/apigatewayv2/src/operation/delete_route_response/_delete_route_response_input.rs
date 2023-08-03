@@ -29,18 +29,14 @@ impl DeleteRouteResponseInput {
 }
 impl DeleteRouteResponseInput {
     /// Creates a new builder-style object to manufacture [`DeleteRouteResponseInput`](crate::operation::delete_route_response::DeleteRouteResponseInput).
-    pub fn builder(
-    ) -> crate::operation::delete_route_response::builders::DeleteRouteResponseInputBuilder {
-        crate::operation::delete_route_response::builders::DeleteRouteResponseInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_route_response::builders::DeleteRouteResponseInputBuilder {
+        crate::operation::delete_route_response::builders::DeleteRouteResponseInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteRouteResponseInput`](crate::operation::delete_route_response::DeleteRouteResponseInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteRouteResponseInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
     pub(crate) route_id: ::std::option::Option<::std::string::String>,
@@ -76,18 +72,12 @@ impl DeleteRouteResponseInputBuilder {
         &self.route_id
     }
     /// <p>The route response ID.</p>
-    pub fn route_response_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn route_response_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_response_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The route response ID.</p>
-    pub fn set_route_response_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_route_response_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_response_id = input;
         self
     }
@@ -98,16 +88,12 @@ impl DeleteRouteResponseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRouteResponseInput`](crate::operation::delete_route_response::DeleteRouteResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_route_response::DeleteRouteResponseInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_route_response::DeleteRouteResponseInput {
-                api_id: self.api_id,
-                route_id: self.route_id,
-                route_response_id: self.route_response_id,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_route_response::DeleteRouteResponseInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_route_response::DeleteRouteResponseInput {
+            api_id: self.api_id,
+            route_id: self.route_id,
+            route_response_id: self.route_response_id,
+        })
     }
 }

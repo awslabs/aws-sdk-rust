@@ -10,10 +10,7 @@ impl UpdateProjectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_project::UpdateProjectOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_project::UpdateProjectError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_project::UpdateProjectError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_project();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl UpdateProjectFluentBuilder {
         }
     }
     /// Access the UpdateProject as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_project::builders::UpdateProjectInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_project::builders::UpdateProjectInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -63,10 +58,7 @@ impl UpdateProjectFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -131,18 +123,12 @@ impl UpdateProjectFluentBuilder {
         self.inner.get_project_name()
     }
     /// <p>The description for the project.</p>
-    pub fn project_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn project_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_description(input.into());
         self
     }
     /// <p>The description for the project.</p>
-    pub fn set_project_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_project_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_description(input);
         self
     }
@@ -151,13 +137,8 @@ impl UpdateProjectFluentBuilder {
         self.inner.get_project_description()
     }
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
-    pub fn service_catalog_provisioning_update_details(
-        mut self,
-        input: crate::types::ServiceCatalogProvisioningUpdateDetails,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .service_catalog_provisioning_update_details(input);
+    pub fn service_catalog_provisioning_update_details(mut self, input: crate::types::ServiceCatalogProvisioningUpdateDetails) -> Self {
+        self.inner = self.inner.service_catalog_provisioning_update_details(input);
         self
     }
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
@@ -165,15 +146,11 @@ impl UpdateProjectFluentBuilder {
         mut self,
         input: ::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails>,
     ) -> Self {
-        self.inner = self
-            .inner
-            .set_service_catalog_provisioning_update_details(input);
+        self.inner = self.inner.set_service_catalog_provisioning_update_details(input);
         self
     }
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
-    pub fn get_service_catalog_provisioning_update_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails> {
+    pub fn get_service_catalog_provisioning_update_details(&self) -> &::std::option::Option<crate::types::ServiceCatalogProvisioningUpdateDetails> {
         self.inner.get_service_catalog_provisioning_update_details()
     }
     /// Appends an item to `Tags`.
@@ -186,10 +163,7 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>. In addition, the project must have tag update constraints set in order to include this parameter in the request. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints-resourceupdate.html">Amazon Web Services Service Catalog Tag Update Constraints</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

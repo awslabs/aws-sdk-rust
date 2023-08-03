@@ -9,8 +9,7 @@ pub struct DescribeReplicationConfigsOutput {
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Returned configuration parameters that describe each provisioned DMS Serverless replication.</p>
     #[doc(hidden)]
-    pub replication_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfig>>,
+    pub replication_configs: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfig>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationConfigsOutput {
@@ -30,20 +29,17 @@ impl ::aws_http::request_id::RequestId for DescribeReplicationConfigsOutput {
 }
 impl DescribeReplicationConfigsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationConfigsOutput`](crate::operation::describe_replication_configs::DescribeReplicationConfigsOutput).
-    pub fn builder() -> crate::operation::describe_replication_configs::builders::DescribeReplicationConfigsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_configs::builders::DescribeReplicationConfigsOutputBuilder {
         crate::operation::describe_replication_configs::builders::DescribeReplicationConfigsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeReplicationConfigsOutput`](crate::operation::describe_replication_configs::DescribeReplicationConfigsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationConfigsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_configs:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfig>>,
+    pub(crate) replication_configs: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfig>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationConfigsOutputBuilder {
@@ -73,17 +69,12 @@ impl DescribeReplicationConfigsOutputBuilder {
         self
     }
     /// <p>Returned configuration parameters that describe each provisioned DMS Serverless replication.</p>
-    pub fn set_replication_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfig>>,
-    ) -> Self {
+    pub fn set_replication_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfig>>) -> Self {
         self.replication_configs = input;
         self
     }
     /// <p>Returned configuration parameters that describe each provisioned DMS Serverless replication.</p>
-    pub fn get_replication_configs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfig>> {
+    pub fn get_replication_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfig>> {
         &self.replication_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -96,9 +87,7 @@ impl DescribeReplicationConfigsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeReplicationConfigsOutput`](crate::operation::describe_replication_configs::DescribeReplicationConfigsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_replication_configs::DescribeReplicationConfigsOutput {
+    pub fn build(self) -> crate::operation::describe_replication_configs::DescribeReplicationConfigsOutput {
         crate::operation::describe_replication_configs::DescribeReplicationConfigsOutput {
             marker: self.marker,
             replication_configs: self.replication_configs,

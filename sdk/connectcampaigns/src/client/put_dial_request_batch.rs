@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`successful_requests(Option<Vec<SuccessfulRequest>>)`](crate::operation::put_dial_request_batch::PutDialRequestBatchOutput::successful_requests): A list of successful requests identified by the unique client token.
     ///   - [`failed_requests(Option<Vec<FailedRequest>>)`](crate::operation::put_dial_request_batch::PutDialRequestBatchOutput::failed_requests): A list of failed requests.
     /// - On failure, responds with [`SdkError<PutDialRequestBatchError>`](crate::operation::put_dial_request_batch::PutDialRequestBatchError)
-    pub fn put_dial_request_batch(
-        &self,
-    ) -> crate::operation::put_dial_request_batch::builders::PutDialRequestBatchFluentBuilder {
-        crate::operation::put_dial_request_batch::builders::PutDialRequestBatchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn put_dial_request_batch(&self) -> crate::operation::put_dial_request_batch::builders::PutDialRequestBatchFluentBuilder {
+        crate::operation::put_dial_request_batch::builders::PutDialRequestBatchFluentBuilder::new(self.handle.clone())
     }
 }

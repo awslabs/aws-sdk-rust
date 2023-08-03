@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_agent_statuses::ListAgentStatusesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`agent_status_summary_list(Option<Vec<AgentStatusSummary>>)`](crate::operation::list_agent_statuses::ListAgentStatusesOutput::agent_status_summary_list): <p>A summary of agent statuses.</p>
     /// - On failure, responds with [`SdkError<ListAgentStatusesError>`](crate::operation::list_agent_statuses::ListAgentStatusesError)
-    pub fn list_agent_statuses(
-        &self,
-    ) -> crate::operation::list_agent_statuses::builders::ListAgentStatusesFluentBuilder {
-        crate::operation::list_agent_statuses::builders::ListAgentStatusesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_agent_statuses(&self) -> crate::operation::list_agent_statuses::builders::ListAgentStatusesFluentBuilder {
+        crate::operation::list_agent_statuses::builders::ListAgentStatusesFluentBuilder::new(self.handle.clone())
     }
 }

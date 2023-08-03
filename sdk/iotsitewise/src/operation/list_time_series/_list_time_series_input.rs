@@ -58,9 +58,7 @@ impl ListTimeSeriesInput {
 
 /// A builder for [`ListTimeSeriesInput`](crate::operation::list_time_series::ListTimeSeriesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTimeSeriesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -139,10 +137,7 @@ impl ListTimeSeriesInputBuilder {
     /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
     /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
     /// </ul>
-    pub fn set_time_series_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ListTimeSeriesType>,
-    ) -> Self {
+    pub fn set_time_series_type(mut self, input: ::std::option::Option<crate::types::ListTimeSeriesType>) -> Self {
         self.time_series_type = input;
         self
     }
@@ -157,10 +152,7 @@ impl ListTimeSeriesInputBuilder {
     /// Consumes the builder and constructs a [`ListTimeSeriesInput`](crate::operation::list_time_series::ListTimeSeriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_time_series::ListTimeSeriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_time_series::ListTimeSeriesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_time_series::ListTimeSeriesInput {
             next_token: self.next_token,
             max_results: self.max_results,

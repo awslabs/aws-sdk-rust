@@ -37,10 +37,7 @@ impl GetAssociatedResourceFluentBuilder {
         }
     }
     /// Access the GetAssociatedResource as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_associated_resource::builders::GetAssociatedResourceInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_associated_resource::builders::GetAssociatedResourceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetAssociatedResourceFluentBuilder {
             crate::operation::get_associated_resource::GetAssociatedResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_associated_resource::GetAssociatedResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_associated_resource::GetAssociatedResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetAssociatedResourceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetAssociatedResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_associated_resource::GetAssociatedResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_associated_resource::GetAssociatedResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_associated_resource::GetAssociatedResourceError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetAssociatedResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_associated_resource::GetAssociatedResourceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_associated_resource::GetAssociatedResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_associated_resource::GetAssociatedResourceError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +105,7 @@ impl GetAssociatedResourceFluentBuilder {
             crate::operation::get_associated_resource::GetAssociatedResource,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_associated_resource::GetAssociatedResourceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_associated_resource::GetAssociatedResourceError>,
     > {
         self.customize_middleware().await
     }
@@ -143,10 +129,7 @@ impl GetAssociatedResourceFluentBuilder {
         self
     }
     /// <p>The type of resource associated with the application.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

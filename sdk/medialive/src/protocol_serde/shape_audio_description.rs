@@ -21,19 +21,13 @@ pub fn ser_audio_description(
     if let Some(var_6) = &input.audio_watermarking_settings {
         #[allow(unused_mut)]
         let mut object_7 = object.key("audioWatermarkingSettings").start_object();
-        crate::protocol_serde::shape_audio_watermark_settings::ser_audio_watermark_settings(
-            &mut object_7,
-            var_6,
-        )?;
+        crate::protocol_serde::shape_audio_watermark_settings::ser_audio_watermark_settings(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.codec_settings {
         #[allow(unused_mut)]
         let mut object_9 = object.key("codecSettings").start_object();
-        crate::protocol_serde::shape_audio_codec_settings::ser_audio_codec_settings(
-            &mut object_9,
-            var_8,
-        )?;
+        crate::protocol_serde::shape_audio_codec_settings::ser_audio_codec_settings(&mut object_9, var_8)?;
         object_9.finish();
     }
     if let Some(var_10) = &input.language_code {
@@ -59,17 +53,9 @@ pub fn ser_audio_description(
 
 pub(crate) fn de_audio_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AudioDescription>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AudioDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -79,126 +65,89 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "audioNormalizationSettings" => {
-                                builder = builder.set_audio_normalization_settings(
-                                    crate::protocol_serde::shape_audio_normalization_settings::de_audio_normalization_settings(tokens)?
-                                );
-                            }
-                            "audioSelectorName" => {
-                                builder = builder.set_audio_selector_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "audioNormalizationSettings" => {
+                            builder = builder.set_audio_normalization_settings(
+                                crate::protocol_serde::shape_audio_normalization_settings::de_audio_normalization_settings(tokens)?,
+                            );
+                        }
+                        "audioSelectorName" => {
+                            builder = builder.set_audio_selector_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "audioType" => {
-                                builder = builder.set_audio_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "audioType" => {
+                            builder = builder.set_audio_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AudioType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "audioTypeControl" => {
+                            builder = builder.set_audio_type_control(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AudioDescriptionAudioTypeControl::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "audioWatermarkingSettings" => {
+                            builder = builder.set_audio_watermarking_settings(
+                                crate::protocol_serde::shape_audio_watermark_settings::de_audio_watermark_settings(tokens)?,
+                            );
+                        }
+                        "codecSettings" => {
+                            builder = builder.set_codec_settings(crate::protocol_serde::shape_audio_codec_settings::de_audio_codec_settings(tokens)?);
+                        }
+                        "languageCode" => {
+                            builder = builder.set_language_code(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "languageCodeControl" => {
+                            builder = builder.set_language_code_control(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::types::AudioType::from(u.as_ref()))
+                                            .map(|u| crate::types::AudioDescriptionLanguageCodeControl::from(u.as_ref()))
                                     })
                                     .transpose()?,
-                                );
-                            }
-                            "audioTypeControl" => {
-                                builder = builder.set_audio_type_control(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::AudioDescriptionAudioTypeControl::from(
-                                                u.as_ref(),
-                                            )
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "audioWatermarkingSettings" => {
-                                builder = builder.set_audio_watermarking_settings(
-                                    crate::protocol_serde::shape_audio_watermark_settings::de_audio_watermark_settings(tokens)?
-                                );
-                            }
-                            "codecSettings" => {
-                                builder = builder.set_codec_settings(
-                                    crate::protocol_serde::shape_audio_codec_settings::de_audio_codec_settings(tokens)?
-                                );
-                            }
-                            "languageCode" => {
-                                builder = builder.set_language_code(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "languageCodeControl" => {
-                                builder = builder.set_language_code_control(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::AudioDescriptionLanguageCodeControl::from(
-                                                u.as_ref(),
-                                            )
-                                        })
-                                    })
-                                    .transpose()?,
-                                );
-                            }
-                            "name" => {
-                                builder = builder.set_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "remixSettings" => {
-                                builder = builder.set_remix_settings(
-                                    crate::protocol_serde::shape_remix_settings::de_remix_settings(
-                                        tokens,
-                                    )?,
-                                );
-                            }
-                            "streamName" => {
-                                builder = builder.set_stream_name(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "name" => {
+                            builder = builder.set_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "remixSettings" => {
+                            builder = builder.set_remix_settings(crate::protocol_serde::shape_remix_settings::de_remix_settings(tokens)?);
+                        }
+                        "streamName" => {
+                            builder = builder.set_stream_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

@@ -8,11 +8,7 @@ impl super::Client {
     ///   - [`status(QueueStatus)`](crate::operation::update_queue_status::builders::UpdateQueueStatusFluentBuilder::status) / [`set_status(Option<QueueStatus>)`](crate::operation::update_queue_status::builders::UpdateQueueStatusFluentBuilder::set_status): <p>The status of the queue.</p>
     /// - On success, responds with [`UpdateQueueStatusOutput`](crate::operation::update_queue_status::UpdateQueueStatusOutput)
     /// - On failure, responds with [`SdkError<UpdateQueueStatusError>`](crate::operation::update_queue_status::UpdateQueueStatusError)
-    pub fn update_queue_status(
-        &self,
-    ) -> crate::operation::update_queue_status::builders::UpdateQueueStatusFluentBuilder {
-        crate::operation::update_queue_status::builders::UpdateQueueStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_queue_status(&self) -> crate::operation::update_queue_status::builders::UpdateQueueStatusFluentBuilder {
+        crate::operation::update_queue_status::builders::UpdateQueueStatusFluentBuilder::new(self.handle.clone())
     }
 }

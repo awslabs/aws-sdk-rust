@@ -23,7 +23,9 @@ impl super::Client {
     ///   - [`reserved_instances_offerings(Option<Vec<ReservedInstancesOffering>>)`](crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput::reserved_instances_offerings): <p>A list of Reserved Instances offerings.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeReservedInstancesOfferingsError>`](crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError)
-    pub fn describe_reserved_instances_offerings(&self) -> crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsFluentBuilder{
+    pub fn describe_reserved_instances_offerings(
+        &self,
+    ) -> crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsFluentBuilder {
         crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsFluentBuilder::new(self.handle.clone())
     }
 }

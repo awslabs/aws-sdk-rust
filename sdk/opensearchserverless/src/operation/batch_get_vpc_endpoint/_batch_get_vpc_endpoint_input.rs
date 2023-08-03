@@ -15,18 +15,14 @@ impl BatchGetVpcEndpointInput {
 }
 impl BatchGetVpcEndpointInput {
     /// Creates a new builder-style object to manufacture [`BatchGetVpcEndpointInput`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointInputBuilder {
-        crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointInputBuilder {
+        crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetVpcEndpointInput`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetVpcEndpointInputBuilder {
     pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -43,10 +39,7 @@ impl BatchGetVpcEndpointInputBuilder {
         self
     }
     /// <p>A list of VPC endpoint identifiers.</p>
-    pub fn set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ids = input;
         self
     }
@@ -57,12 +50,8 @@ impl BatchGetVpcEndpointInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetVpcEndpointInput`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput { ids: self.ids },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput { ids: self.ids })
     }
 }

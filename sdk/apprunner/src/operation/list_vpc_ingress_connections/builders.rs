@@ -26,7 +26,7 @@ impl ListVpcIngressConnectionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListVpcIngressConnectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsInputBuilder,
+    inner: crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsInputBuilder,
 }
 impl ListVpcIngressConnectionsFluentBuilder {
     /// Creates a new `ListVpcIngressConnections`.
@@ -37,7 +37,7 @@ impl ListVpcIngressConnectionsFluentBuilder {
         }
     }
     /// Access the ListVpcIngressConnections as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListVpcIngressConnectionsFluentBuilder {
             crate::operation::list_vpc_ingress_connections::ListVpcIngressConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListVpcIngressConnectionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListVpcIngressConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListVpcIngressConnectionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl ListVpcIngressConnectionsFluentBuilder {
             crate::operation::list_vpc_ingress_connections::ListVpcIngressConnections,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_vpc_ingress_connections::paginator::ListVpcIngressConnectionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_vpc_ingress_connections::paginator::ListVpcIngressConnectionsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_vpc_ingress_connections::paginator::ListVpcIngressConnectionsPaginator {
         crate::operation::list_vpc_ingress_connections::paginator::ListVpcIngressConnectionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The VPC Ingress Connections to be listed based on either the Service Arn or Vpc Endpoint Id, or both.</p>
@@ -135,17 +121,12 @@ impl ListVpcIngressConnectionsFluentBuilder {
         self
     }
     /// <p>The VPC Ingress Connections to be listed based on either the Service Arn or Vpc Endpoint Id, or both.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::ListVpcIngressConnectionsFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListVpcIngressConnectionsFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
     /// <p>The VPC Ingress Connections to be listed based on either the Service Arn or Vpc Endpoint Id, or both.</p>
-    pub fn get_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListVpcIngressConnectionsFilter> {
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListVpcIngressConnectionsFilter> {
         self.inner.get_filter()
     }
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>

@@ -22,16 +22,14 @@ impl CheckSchemaVersionValidityInput {
 }
 impl CheckSchemaVersionValidityInput {
     /// Creates a new builder-style object to manufacture [`CheckSchemaVersionValidityInput`](crate::operation::check_schema_version_validity::CheckSchemaVersionValidityInput).
-    pub fn builder() -> crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityInputBuilder{
+    pub fn builder() -> crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityInputBuilder {
         crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityInputBuilder::default()
     }
 }
 
 /// A builder for [`CheckSchemaVersionValidityInput`](crate::operation::check_schema_version_validity::CheckSchemaVersionValidityInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CheckSchemaVersionValidityInputBuilder {
     pub(crate) data_format: ::std::option::Option<crate::types::DataFormat>,
     pub(crate) schema_definition: ::std::option::Option<::std::string::String>,
@@ -43,10 +41,7 @@ impl CheckSchemaVersionValidityInputBuilder {
         self
     }
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
-    pub fn set_data_format(
-        mut self,
-        input: ::std::option::Option<crate::types::DataFormat>,
-    ) -> Self {
+    pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormat>) -> Self {
         self.data_format = input;
         self
     }
@@ -55,18 +50,12 @@ impl CheckSchemaVersionValidityInputBuilder {
         &self.data_format
     }
     /// <p>The definition of the schema that has to be validated.</p>
-    pub fn schema_definition(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The definition of the schema that has to be validated.</p>
-    pub fn set_schema_definition(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_schema_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_definition = input;
         self
     }
@@ -81,11 +70,9 @@ impl CheckSchemaVersionValidityInputBuilder {
         crate::operation::check_schema_version_validity::CheckSchemaVersionValidityInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::check_schema_version_validity::CheckSchemaVersionValidityInput {
-                data_format: self.data_format,
-                schema_definition: self.schema_definition,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::check_schema_version_validity::CheckSchemaVersionValidityInput {
+            data_format: self.data_format,
+            schema_definition: self.schema_definition,
+        })
     }
 }

@@ -5,16 +5,16 @@ pub use crate::operation::create_certificate_authority_audit_report::_create_cer
 
 impl CreateCertificateAuthorityAuditReportInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.create_certificate_authority_audit_report();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -31,7 +31,7 @@ impl CreateCertificateAuthorityAuditReportInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCertificateAuthorityAuditReportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_certificate_authority_audit_report::builders::CreateCertificateAuthorityAuditReportInputBuilder,
+    inner: crate::operation::create_certificate_authority_audit_report::builders::CreateCertificateAuthorityAuditReportInputBuilder,
 }
 impl CreateCertificateAuthorityAuditReportFluentBuilder {
     /// Creates a new `CreateCertificateAuthorityAuditReport`.
@@ -42,15 +42,22 @@ impl CreateCertificateAuthorityAuditReportFluentBuilder {
         }
     }
     /// Access the CreateCertificateAuthorityAuditReport as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_certificate_authority_audit_report::builders::CreateCertificateAuthorityAuditReportInputBuilder{
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_certificate_authority_audit_report::builders::CreateCertificateAuthorityAuditReportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReport, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReport,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -59,16 +66,17 @@ impl CreateCertificateAuthorityAuditReportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError>,
+    > {
         let op = self
             .inner
             .build()
@@ -86,34 +94,37 @@ impl CreateCertificateAuthorityAuditReportFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReport, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReport,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
-    pub fn certificate_authority_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_authority_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
     }
@@ -123,18 +134,12 @@ impl CreateCertificateAuthorityAuditReportFluentBuilder {
         self.inner.get_certificate_authority_arn()
     }
     /// <p>The name of the S3 bucket that will contain the audit report.</p>
-    pub fn s3_bucket_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket_name(input.into());
         self
     }
     /// <p>The name of the S3 bucket that will contain the audit report.</p>
-    pub fn set_s3_bucket_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
     }
@@ -143,25 +148,17 @@ impl CreateCertificateAuthorityAuditReportFluentBuilder {
         self.inner.get_s3_bucket_name()
     }
     /// <p>The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.</p>
-    pub fn audit_report_response_format(
-        mut self,
-        input: crate::types::AuditReportResponseFormat,
-    ) -> Self {
+    pub fn audit_report_response_format(mut self, input: crate::types::AuditReportResponseFormat) -> Self {
         self.inner = self.inner.audit_report_response_format(input);
         self
     }
     /// <p>The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.</p>
-    pub fn set_audit_report_response_format(
-        mut self,
-        input: ::std::option::Option<crate::types::AuditReportResponseFormat>,
-    ) -> Self {
+    pub fn set_audit_report_response_format(mut self, input: ::std::option::Option<crate::types::AuditReportResponseFormat>) -> Self {
         self.inner = self.inner.set_audit_report_response_format(input);
         self
     }
     /// <p>The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.</p>
-    pub fn get_audit_report_response_format(
-        &self,
-    ) -> &::std::option::Option<crate::types::AuditReportResponseFormat> {
+    pub fn get_audit_report_response_format(&self) -> &::std::option::Option<crate::types::AuditReportResponseFormat> {
         self.inner.get_audit_report_response_format()
     }
 }

@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`ExportClientVpnClientConfigurationOutput`](crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput) with field(s):
     ///   - [`client_configuration(Option<String>)`](crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput::client_configuration): <p>The contents of the Client VPN endpoint configuration file.</p>
     /// - On failure, responds with [`SdkError<ExportClientVpnClientConfigurationError>`](crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationError)
-    pub fn export_client_vpn_client_configuration(&self) -> crate::operation::export_client_vpn_client_configuration::builders::ExportClientVpnClientConfigurationFluentBuilder{
+    pub fn export_client_vpn_client_configuration(
+        &self,
+    ) -> crate::operation::export_client_vpn_client_configuration::builders::ExportClientVpnClientConfigurationFluentBuilder {
         crate::operation::export_client_vpn_client_configuration::builders::ExportClientVpnClientConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

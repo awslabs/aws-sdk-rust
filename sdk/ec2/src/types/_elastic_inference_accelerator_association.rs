@@ -12,12 +12,10 @@ pub struct ElasticInferenceAcceleratorAssociation {
     pub elastic_inference_accelerator_association_id: ::std::option::Option<::std::string::String>,
     /// <p> The state of the elastic inference accelerator. </p>
     #[doc(hidden)]
-    pub elastic_inference_accelerator_association_state:
-        ::std::option::Option<::std::string::String>,
+    pub elastic_inference_accelerator_association_state: ::std::option::Option<::std::string::String>,
     /// <p> The time at which the elastic inference accelerator is associated with an instance. </p>
     #[doc(hidden)]
-    pub elastic_inference_accelerator_association_time:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub elastic_inference_accelerator_association_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ElasticInferenceAcceleratorAssociation {
     /// <p> The Amazon Resource Name (ARN) of the elastic inference accelerator. </p>
@@ -30,13 +28,10 @@ impl ElasticInferenceAcceleratorAssociation {
     }
     /// <p> The state of the elastic inference accelerator. </p>
     pub fn elastic_inference_accelerator_association_state(&self) -> ::std::option::Option<&str> {
-        self.elastic_inference_accelerator_association_state
-            .as_deref()
+        self.elastic_inference_accelerator_association_state.as_deref()
     }
     /// <p> The time at which the elastic inference accelerator is associated with an instance. </p>
-    pub fn elastic_inference_accelerator_association_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn elastic_inference_accelerator_association_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.elastic_inference_accelerator_association_time.as_ref()
     }
 }
@@ -49,119 +44,77 @@ impl ElasticInferenceAcceleratorAssociation {
 
 /// A builder for [`ElasticInferenceAcceleratorAssociation`](crate::types::ElasticInferenceAcceleratorAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ElasticInferenceAcceleratorAssociationBuilder {
     pub(crate) elastic_inference_accelerator_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) elastic_inference_accelerator_association_id:
-        ::std::option::Option<::std::string::String>,
-    pub(crate) elastic_inference_accelerator_association_state:
-        ::std::option::Option<::std::string::String>,
-    pub(crate) elastic_inference_accelerator_association_time:
-        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) elastic_inference_accelerator_association_id: ::std::option::Option<::std::string::String>,
+    pub(crate) elastic_inference_accelerator_association_state: ::std::option::Option<::std::string::String>,
+    pub(crate) elastic_inference_accelerator_association_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ElasticInferenceAcceleratorAssociationBuilder {
     /// <p> The Amazon Resource Name (ARN) of the elastic inference accelerator. </p>
-    pub fn elastic_inference_accelerator_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn elastic_inference_accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elastic_inference_accelerator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the elastic inference accelerator. </p>
-    pub fn set_elastic_inference_accelerator_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_elastic_inference_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elastic_inference_accelerator_arn = input;
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the elastic inference accelerator. </p>
-    pub fn get_elastic_inference_accelerator_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_elastic_inference_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.elastic_inference_accelerator_arn
     }
     /// <p> The ID of the association. </p>
-    pub fn elastic_inference_accelerator_association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.elastic_inference_accelerator_association_id =
-            ::std::option::Option::Some(input.into());
+    pub fn elastic_inference_accelerator_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.elastic_inference_accelerator_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the association. </p>
-    pub fn set_elastic_inference_accelerator_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_elastic_inference_accelerator_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elastic_inference_accelerator_association_id = input;
         self
     }
     /// <p> The ID of the association. </p>
-    pub fn get_elastic_inference_accelerator_association_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_elastic_inference_accelerator_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.elastic_inference_accelerator_association_id
     }
     /// <p> The state of the elastic inference accelerator. </p>
-    pub fn elastic_inference_accelerator_association_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.elastic_inference_accelerator_association_state =
-            ::std::option::Option::Some(input.into());
+    pub fn elastic_inference_accelerator_association_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.elastic_inference_accelerator_association_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The state of the elastic inference accelerator. </p>
-    pub fn set_elastic_inference_accelerator_association_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_elastic_inference_accelerator_association_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elastic_inference_accelerator_association_state = input;
         self
     }
     /// <p> The state of the elastic inference accelerator. </p>
-    pub fn get_elastic_inference_accelerator_association_state(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_elastic_inference_accelerator_association_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.elastic_inference_accelerator_association_state
     }
     /// <p> The time at which the elastic inference accelerator is associated with an instance. </p>
-    pub fn elastic_inference_accelerator_association_time(
-        mut self,
-        input: ::aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn elastic_inference_accelerator_association_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.elastic_inference_accelerator_association_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time at which the elastic inference accelerator is associated with an instance. </p>
-    pub fn set_elastic_inference_accelerator_association_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_elastic_inference_accelerator_association_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.elastic_inference_accelerator_association_time = input;
         self
     }
     /// <p> The time at which the elastic inference accelerator is associated with an instance. </p>
-    pub fn get_elastic_inference_accelerator_association_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_elastic_inference_accelerator_association_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.elastic_inference_accelerator_association_time
     }
     /// Consumes the builder and constructs a [`ElasticInferenceAcceleratorAssociation`](crate::types::ElasticInferenceAcceleratorAssociation).
     pub fn build(self) -> crate::types::ElasticInferenceAcceleratorAssociation {
         crate::types::ElasticInferenceAcceleratorAssociation {
             elastic_inference_accelerator_arn: self.elastic_inference_accelerator_arn,
-            elastic_inference_accelerator_association_id: self
-                .elastic_inference_accelerator_association_id,
-            elastic_inference_accelerator_association_state: self
-                .elastic_inference_accelerator_association_state,
-            elastic_inference_accelerator_association_time: self
-                .elastic_inference_accelerator_association_time,
+            elastic_inference_accelerator_association_id: self.elastic_inference_accelerator_association_id,
+            elastic_inference_accelerator_association_state: self.elastic_inference_accelerator_association_state,
+            elastic_inference_accelerator_association_time: self.elastic_inference_accelerator_association_time,
         }
     }
 }

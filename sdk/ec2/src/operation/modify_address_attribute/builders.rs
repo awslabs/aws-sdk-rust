@@ -37,10 +37,7 @@ impl ModifyAddressAttributeFluentBuilder {
         }
     }
     /// Access the ModifyAddressAttribute as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::modify_address_attribute::builders::ModifyAddressAttributeInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::modify_address_attribute::builders::ModifyAddressAttributeInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ModifyAddressAttributeFluentBuilder {
             crate::operation::modify_address_attribute::ModifyAddressAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_address_attribute::ModifyAddressAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_address_attribute::ModifyAddressAttributeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ModifyAddressAttributeFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ModifyAddressAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_address_attribute::ModifyAddressAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_address_attribute::ModifyAddressAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_address_attribute::ModifyAddressAttributeError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ModifyAddressAttributeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_address_attribute::ModifyAddressAttributeOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_address_attribute::ModifyAddressAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_address_attribute::ModifyAddressAttributeError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl ModifyAddressAttributeFluentBuilder {
             crate::operation::modify_address_attribute::ModifyAddressAttribute,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_address_attribute::ModifyAddressAttributeError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_address_attribute::ModifyAddressAttributeError>,
     > {
         self.customize_middleware().await
     }
     /// <p>[EC2-VPC] The allocation ID.</p>
-    pub fn allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.allocation_id(input.into());
         self
     }
     /// <p>[EC2-VPC] The allocation ID.</p>
-    pub fn set_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_allocation_id(input);
         self
     }

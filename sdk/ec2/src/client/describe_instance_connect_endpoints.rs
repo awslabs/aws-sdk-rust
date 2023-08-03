@@ -13,7 +13,9 @@ impl super::Client {
     ///   - [`instance_connect_endpoints(Option<Vec<Ec2InstanceConnectEndpoint>>)`](crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput::instance_connect_endpoints): <p>Information about the EC2 Instance Connect Endpoints.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeInstanceConnectEndpointsError>`](crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsError)
-    pub fn describe_instance_connect_endpoints(&self) -> crate::operation::describe_instance_connect_endpoints::builders::DescribeInstanceConnectEndpointsFluentBuilder{
+    pub fn describe_instance_connect_endpoints(
+        &self,
+    ) -> crate::operation::describe_instance_connect_endpoints::builders::DescribeInstanceConnectEndpointsFluentBuilder {
         crate::operation::describe_instance_connect_endpoints::builders::DescribeInstanceConnectEndpointsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for CreateGrantVersionOutput {
 }
 impl CreateGrantVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateGrantVersionOutput`](crate::operation::create_grant_version::CreateGrantVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_grant_version::builders::CreateGrantVersionOutputBuilder {
+    pub fn builder() -> crate::operation::create_grant_version::builders::CreateGrantVersionOutputBuilder {
         crate::operation::create_grant_version::builders::CreateGrantVersionOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateGrantVersionOutput`](crate::operation::create_grant_version::CreateGrantVersionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGrantVersionOutputBuilder {
     pub(crate) grant_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::GrantStatus>,

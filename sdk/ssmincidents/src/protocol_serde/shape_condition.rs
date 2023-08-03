@@ -17,19 +17,10 @@ pub fn ser_condition(
         crate::types::Condition::Equals(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_3.key("equals").start_object();
-            crate::protocol_serde::shape_attribute_value_list::ser_attribute_value_list(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_attribute_value_list::ser_attribute_value_list(&mut object_1, inner)?;
             object_1.finish();
         }
-        crate::types::Condition::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "Condition",
-                ),
-            )
-        }
+        crate::types::Condition::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Condition")),
     }
     Ok(())
 }

@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`upgraded_schema_arn(Option<String>)`](crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaOutput::upgraded_schema_arn): <p>The ARN of the upgraded schema that is returned as part of the response.</p>
     ///   - [`directory_arn(Option<String>)`](crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaOutput::directory_arn): <p>The ARN of the directory that is returned as part of the response.</p>
     /// - On failure, responds with [`SdkError<UpgradeAppliedSchemaError>`](crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaError)
-    pub fn upgrade_applied_schema(
-        &self,
-    ) -> crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaFluentBuilder {
-        crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn upgrade_applied_schema(&self) -> crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaFluentBuilder {
+        crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaFluentBuilder::new(self.handle.clone())
     }
 }

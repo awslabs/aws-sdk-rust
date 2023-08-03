@@ -6,37 +6,25 @@ pub fn ser_hls_settings(
     if let Some(var_1) = &input.audio_only_hls_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("audioOnlyHlsSettings").start_object();
-        crate::protocol_serde::shape_audio_only_hls_settings::ser_audio_only_hls_settings(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_audio_only_hls_settings::ser_audio_only_hls_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.fmp4_hls_settings {
         #[allow(unused_mut)]
         let mut object_4 = object.key("fmp4HlsSettings").start_object();
-        crate::protocol_serde::shape_fmp4_hls_settings::ser_fmp4_hls_settings(
-            &mut object_4,
-            var_3,
-        )?;
+        crate::protocol_serde::shape_fmp4_hls_settings::ser_fmp4_hls_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.frame_capture_hls_settings {
         #[allow(unused_mut)]
         let mut object_6 = object.key("frameCaptureHlsSettings").start_object();
-        crate::protocol_serde::shape_frame_capture_hls_settings::ser_frame_capture_hls_settings(
-            &mut object_6,
-            var_5,
-        )?;
+        crate::protocol_serde::shape_frame_capture_hls_settings::ser_frame_capture_hls_settings(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.standard_hls_settings {
         #[allow(unused_mut)]
         let mut object_8 = object.key("standardHlsSettings").start_object();
-        crate::protocol_serde::shape_standard_hls_settings::ser_standard_hls_settings(
-            &mut object_8,
-            var_7,
-        )?;
+        crate::protocol_serde::shape_standard_hls_settings::ser_standard_hls_settings(&mut object_8, var_7)?;
         object_8.finish();
     }
     Ok(())
@@ -44,17 +32,9 @@ pub fn ser_hls_settings(
 
 pub(crate) fn de_hls_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::HlsSettings>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::HlsSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -64,46 +44,38 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "audioOnlyHlsSettings" => {
-                                builder = builder.set_audio_only_hls_settings(
-                                    crate::protocol_serde::shape_audio_only_hls_settings::de_audio_only_hls_settings(tokens)?
-                                );
-                            }
-                            "fmp4HlsSettings" => {
-                                builder = builder.set_fmp4_hls_settings(
-                                    crate::protocol_serde::shape_fmp4_hls_settings::de_fmp4_hls_settings(tokens)?
-                                );
-                            }
-                            "frameCaptureHlsSettings" => {
-                                builder = builder.set_frame_capture_hls_settings(
-                                    crate::protocol_serde::shape_frame_capture_hls_settings::de_frame_capture_hls_settings(tokens)?
-                                );
-                            }
-                            "standardHlsSettings" => {
-                                builder = builder.set_standard_hls_settings(
-                                    crate::protocol_serde::shape_standard_hls_settings::de_standard_hls_settings(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "audioOnlyHlsSettings" => {
+                            builder = builder.set_audio_only_hls_settings(
+                                crate::protocol_serde::shape_audio_only_hls_settings::de_audio_only_hls_settings(tokens)?,
+                            );
                         }
-                    }
+                        "fmp4HlsSettings" => {
+                            builder = builder.set_fmp4_hls_settings(crate::protocol_serde::shape_fmp4_hls_settings::de_fmp4_hls_settings(tokens)?);
+                        }
+                        "frameCaptureHlsSettings" => {
+                            builder = builder.set_frame_capture_hls_settings(
+                                crate::protocol_serde::shape_frame_capture_hls_settings::de_frame_capture_hls_settings(tokens)?,
+                            );
+                        }
+                        "standardHlsSettings" => {
+                            builder = builder
+                                .set_standard_hls_settings(crate::protocol_serde::shape_standard_hls_settings::de_standard_hls_settings(tokens)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

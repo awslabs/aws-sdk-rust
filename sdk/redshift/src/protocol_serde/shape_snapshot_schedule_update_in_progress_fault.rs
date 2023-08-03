@@ -3,10 +3,7 @@
 pub fn de_snapshot_schedule_update_in_progress_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::SnapshotScheduleUpdateInProgressFaultBuilder,
-) -> Result<
-    crate::types::error::builders::SnapshotScheduleUpdateInProgressFaultBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::error::builders::SnapshotScheduleUpdateInProgressFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

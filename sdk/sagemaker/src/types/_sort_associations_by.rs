@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SortAssociationsBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for SortAssociationsBy {
             "DestinationType" => SortAssociationsBy::DestinationType,
             "SourceArn" => SortAssociationsBy::SourceArn,
             "SourceType" => SortAssociationsBy::SourceType,
-            other => SortAssociationsBy::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SortAssociationsBy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl SortAssociationsBy {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CreationTime",
-            "DestinationArn",
-            "DestinationType",
-            "SourceArn",
-            "SourceType",
-        ]
+        &["CreationTime", "DestinationArn", "DestinationType", "SourceArn", "SourceType"]
     }
 }
 impl ::std::convert::AsRef<str> for SortAssociationsBy {

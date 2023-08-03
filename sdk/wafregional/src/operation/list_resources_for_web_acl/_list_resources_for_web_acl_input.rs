@@ -22,18 +22,14 @@ impl ListResourcesForWebAclInput {
 }
 impl ListResourcesForWebAclInput {
     /// Creates a new builder-style object to manufacture [`ListResourcesForWebAclInput`](crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput).
-    pub fn builder(
-    ) -> crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclInputBuilder {
         crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourcesForWebAclInput`](crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourcesForWebAclInputBuilder {
     pub(crate) web_acl_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -59,10 +55,7 @@ impl ListResourcesForWebAclInputBuilder {
         self
     }
     /// <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -77,11 +70,9 @@ impl ListResourcesForWebAclInputBuilder {
         crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput {
-                web_acl_id: self.web_acl_id,
-                resource_type: self.resource_type,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput {
+            web_acl_id: self.web_acl_id,
+            resource_type: self.resource_type,
+        })
     }
 }

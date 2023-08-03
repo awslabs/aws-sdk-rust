@@ -30,9 +30,7 @@ impl SpeakerSearchResult {
 
 /// A builder for [`SpeakerSearchResult`](crate::types::SpeakerSearchResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpeakerSearchResultBuilder {
     pub(crate) confidence_score: ::std::option::Option<f32>,
     pub(crate) voice_profile_id: ::std::option::Option<::std::string::String>,
@@ -53,18 +51,12 @@ impl SpeakerSearchResultBuilder {
         &self.confidence_score
     }
     /// <p>The voice profile ID.</p>
-    pub fn voice_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The voice profile ID.</p>
-    pub fn set_voice_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_profile_id = input;
         self
     }

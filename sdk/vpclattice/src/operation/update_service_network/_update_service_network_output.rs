@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for UpdateServiceNetworkOutput {
 }
 impl UpdateServiceNetworkOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceNetworkOutput`](crate::operation::update_service_network::UpdateServiceNetworkOutput).
-    pub fn builder(
-    ) -> crate::operation::update_service_network::builders::UpdateServiceNetworkOutputBuilder {
+    pub fn builder() -> crate::operation::update_service_network::builders::UpdateServiceNetworkOutputBuilder {
         crate::operation::update_service_network::builders::UpdateServiceNetworkOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServiceNetworkOutput`](crate::operation::update_service_network::UpdateServiceNetworkOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceNetworkOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,

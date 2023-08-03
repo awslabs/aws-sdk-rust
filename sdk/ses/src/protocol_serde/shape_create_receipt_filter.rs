@@ -9,60 +9,48 @@ pub fn de_create_receipt_filter_http_error(
     crate::operation::create_receipt_filter::CreateReceiptFilterError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_receipt_filter::CreateReceiptFilterError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_receipt_filter::CreateReceiptFilterError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::create_receipt_filter::CreateReceiptFilterError::unhandled(
-                    generic,
-                ),
-            )
-        }
+        None => return Err(crate::operation::create_receipt_filter::CreateReceiptFilterError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AlreadyExists" => crate::operation::create_receipt_filter::CreateReceiptFilterError::AlreadyExistsException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AlreadyExistsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_already_exists_exception::de_already_exists_exception_xml_err(_response_body, output).map_err(crate::operation::create_receipt_filter::CreateReceiptFilterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AlreadyExistsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_already_exists_exception::de_already_exists_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_receipt_filter::CreateReceiptFilterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "LimitExceeded" => crate::operation::create_receipt_filter::CreateReceiptFilterError::LimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output).map_err(crate::operation::create_receipt_filter::CreateReceiptFilterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_receipt_filter::CreateReceiptFilterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::create_receipt_filter::CreateReceiptFilterError::generic(generic)
+        _ => crate::operation::create_receipt_filter::CreateReceiptFilterError::generic(generic),
     })
 }
 
@@ -78,9 +66,7 @@ pub fn de_create_receipt_filter_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_receipt_filter::builders::CreateReceiptFilterOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

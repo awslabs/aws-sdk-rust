@@ -44,9 +44,7 @@ impl PersonasSummary {
 
 /// A builder for [`PersonasSummary`](crate::types::PersonasSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PersonasSummaryBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) persona: ::std::option::Option<crate::types::Persona>,
@@ -88,10 +86,7 @@ impl PersonasSummaryBuilder {
         self
     }
     /// <p>The Unix timestamp when the summary information was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -105,10 +100,7 @@ impl PersonasSummaryBuilder {
         self
     }
     /// <p>The Unix timestamp when the summary information was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

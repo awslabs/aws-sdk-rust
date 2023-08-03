@@ -25,9 +25,7 @@ impl super::Client {
     ///   - [`version(Option<String>)`](crate::operation::reimport_api::ReimportApiOutput::version): <p>A version identifier for the API.</p>
     ///   - [`warnings(Option<Vec<String>>)`](crate::operation::reimport_api::ReimportApiOutput::warnings): <p>The warning messages reported when failonwarnings is turned on during API import.</p>
     /// - On failure, responds with [`SdkError<ReimportApiError>`](crate::operation::reimport_api::ReimportApiError)
-    pub fn reimport_api(
-        &self,
-    ) -> crate::operation::reimport_api::builders::ReimportApiFluentBuilder {
+    pub fn reimport_api(&self) -> crate::operation::reimport_api::builders::ReimportApiFluentBuilder {
         crate::operation::reimport_api::builders::ReimportApiFluentBuilder::new(self.handle.clone())
     }
 }

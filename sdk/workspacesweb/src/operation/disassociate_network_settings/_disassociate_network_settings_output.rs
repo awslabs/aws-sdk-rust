@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateNetworkSettingsOutput {
 }
 impl DisassociateNetworkSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateNetworkSettingsOutput`](crate::operation::disassociate_network_settings::DisassociateNetworkSettingsOutput).
-    pub fn builder() -> crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsOutputBuilder {
         crate::operation::disassociate_network_settings::builders::DisassociateNetworkSettingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateNetworkSettingsOutput`](crate::operation::disassociate_network_settings::DisassociateNetworkSettingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateNetworkSettingsOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl DisassociateNetworkSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateNetworkSettingsOutput`](crate::operation::disassociate_network_settings::DisassociateNetworkSettingsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_network_settings::DisassociateNetworkSettingsOutput {
+    pub fn build(self) -> crate::operation::disassociate_network_settings::DisassociateNetworkSettingsOutput {
         crate::operation::disassociate_network_settings::DisassociateNetworkSettingsOutput {
             _request_id: self._request_id,
         }

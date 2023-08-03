@@ -47,9 +47,7 @@ impl AttachDiskInput {
 
 /// A builder for [`AttachDiskInput`](crate::operation::attach_disk::AttachDiskInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachDiskInputBuilder {
     pub(crate) disk_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
@@ -72,18 +70,12 @@ impl AttachDiskInputBuilder {
         &self.disk_name
     }
     /// <p>The name of the Lightsail instance where you want to utilize the storage disk.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Lightsail instance where you want to utilize the storage disk.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -126,12 +118,7 @@ impl AttachDiskInputBuilder {
         &self.auto_mounting
     }
     /// Consumes the builder and constructs a [`AttachDiskInput`](crate::operation::attach_disk::AttachDiskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::attach_disk::AttachDiskInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::attach_disk::AttachDiskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_disk::AttachDiskInput {
             disk_name: self.disk_name,
             instance_name: self.instance_name,

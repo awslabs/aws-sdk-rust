@@ -15,16 +15,14 @@ impl StopPiiEntitiesDetectionJobInput {
 }
 impl StopPiiEntitiesDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StopPiiEntitiesDetectionJobInput`](crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput).
-    pub fn builder() -> crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobInputBuilder {
         crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobInputBuilder::default()
     }
 }
 
 /// A builder for [`StopPiiEntitiesDetectionJobInput`](crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopPiiEntitiesDetectionJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl StopPiiEntitiesDetectionJobInputBuilder {
         crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput {
-                job_id: self.job_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput { job_id: self.job_id })
     }
 }

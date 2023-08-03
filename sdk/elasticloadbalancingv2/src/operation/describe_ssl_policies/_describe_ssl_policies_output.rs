@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeSslPoliciesOutput {
 }
 impl DescribeSslPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSslPoliciesOutput`](crate::operation::describe_ssl_policies::DescribeSslPoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_ssl_policies::builders::DescribeSslPoliciesOutputBuilder {
-        crate::operation::describe_ssl_policies::builders::DescribeSslPoliciesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_ssl_policies::builders::DescribeSslPoliciesOutputBuilder {
+        crate::operation::describe_ssl_policies::builders::DescribeSslPoliciesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSslPoliciesOutput`](crate::operation::describe_ssl_policies::DescribeSslPoliciesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSslPoliciesOutputBuilder {
     pub(crate) ssl_policies: ::std::option::Option<::std::vec::Vec<crate::types::SslPolicy>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeSslPoliciesOutputBuilder {
         self
     }
     /// <p>Information about the security policies.</p>
-    pub fn set_ssl_policies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SslPolicy>>,
-    ) -> Self {
+    pub fn set_ssl_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SslPolicy>>) -> Self {
         self.ssl_policies = input;
         self
     }
     /// <p>Information about the security policies.</p>
-    pub fn get_ssl_policies(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SslPolicy>> {
+    pub fn get_ssl_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SslPolicy>> {
         &self.ssl_policies
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>

@@ -42,13 +42,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DistributionMetricName {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,9 +69,7 @@ impl ::std::convert::From<&str> for DistributionMetricName {
             "Http5xxErrorRate" => DistributionMetricName::Http5xxErrorRate,
             "Requests" => DistributionMetricName::Requests,
             "TotalErrorRate" => DistributionMetricName::TotalErrorRate,
-            other => DistributionMetricName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DistributionMetricName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

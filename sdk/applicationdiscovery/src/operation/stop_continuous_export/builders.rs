@@ -37,9 +37,7 @@ impl StopContinuousExportFluentBuilder {
         }
     }
     /// Access the StopContinuousExport as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::stop_continuous_export::builders::StopContinuousExportInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::stop_continuous_export::builders::StopContinuousExportInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl StopContinuousExportFluentBuilder {
             crate::operation::stop_continuous_export::StopContinuousExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_continuous_export::StopContinuousExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_continuous_export::StopContinuousExportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl StopContinuousExportFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl StopContinuousExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_continuous_export::StopContinuousExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_continuous_export::StopContinuousExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_continuous_export::StopContinuousExportError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl StopContinuousExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_continuous_export::StopContinuousExportOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_continuous_export::StopContinuousExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_continuous_export::StopContinuousExportError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl StopContinuousExportFluentBuilder {
             crate::operation::stop_continuous_export::StopContinuousExport,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::stop_continuous_export::StopContinuousExportError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_continuous_export::StopContinuousExportError>,
     > {
         self.customize_middleware().await
     }

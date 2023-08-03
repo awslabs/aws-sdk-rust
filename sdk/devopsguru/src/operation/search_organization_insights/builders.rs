@@ -27,7 +27,7 @@ impl SearchOrganizationInsightsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchOrganizationInsightsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::search_organization_insights::builders::SearchOrganizationInsightsInputBuilder,
+    inner: crate::operation::search_organization_insights::builders::SearchOrganizationInsightsInputBuilder,
 }
 impl SearchOrganizationInsightsFluentBuilder {
     /// Creates a new `SearchOrganizationInsights`.
@@ -38,7 +38,7 @@ impl SearchOrganizationInsightsFluentBuilder {
         }
     }
     /// Access the SearchOrganizationInsights as a reference.
-    pub fn as_input(&self) -> &crate::operation::search_organization_insights::builders::SearchOrganizationInsightsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::search_organization_insights::builders::SearchOrganizationInsightsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl SearchOrganizationInsightsFluentBuilder {
             crate::operation::search_organization_insights::SearchOrganizationInsights,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_organization_insights::SearchOrganizationInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_organization_insights::SearchOrganizationInsightsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl SearchOrganizationInsightsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl SearchOrganizationInsightsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_organization_insights::SearchOrganizationInsightsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_organization_insights::SearchOrganizationInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_organization_insights::SearchOrganizationInsightsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl SearchOrganizationInsightsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_organization_insights::SearchOrganizationInsightsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_organization_insights::SearchOrganizationInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_organization_insights::SearchOrganizationInsightsError>,
     > {
         self.send_middleware().await
     }
@@ -115,16 +106,14 @@ impl SearchOrganizationInsightsFluentBuilder {
             crate::operation::search_organization_insights::SearchOrganizationInsights,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_organization_insights::SearchOrganizationInsightsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_organization_insights::SearchOrganizationInsightsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator{
+    pub fn into_paginator(self) -> crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator {
         crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `AccountIds`.
@@ -137,17 +126,12 @@ impl SearchOrganizationInsightsFluentBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services account. </p>
-    pub fn set_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The ID of the Amazon Web Services account. </p>
-    pub fn get_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
     /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
@@ -156,10 +140,7 @@ impl SearchOrganizationInsightsFluentBuilder {
         self
     }
     /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
-    pub fn set_start_time_range(
-        mut self,
-        input: ::std::option::Option<crate::types::StartTimeRange>,
-    ) -> Self {
+    pub fn set_start_time_range(mut self, input: ::std::option::Option<crate::types::StartTimeRange>) -> Self {
         self.inner = self.inner.set_start_time_range(input);
         self
     }
@@ -173,17 +154,12 @@ impl SearchOrganizationInsightsFluentBuilder {
         self
     }
     /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::SearchOrganizationInsightsFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::SearchOrganizationInsightsFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::SearchOrganizationInsightsFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::SearchOrganizationInsightsFilters> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>

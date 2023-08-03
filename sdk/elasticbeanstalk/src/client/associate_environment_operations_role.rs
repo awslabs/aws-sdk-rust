@@ -7,7 +7,9 @@ impl super::Client {
     ///   - [`operations_role(impl ::std::convert::Into<String>)`](crate::operation::associate_environment_operations_role::builders::AssociateEnvironmentOperationsRoleFluentBuilder::operations_role) / [`set_operations_role(Option<String>)`](crate::operation::associate_environment_operations_role::builders::AssociateEnvironmentOperationsRoleFluentBuilder::set_operations_role): <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role.</p>
     /// - On success, responds with [`AssociateEnvironmentOperationsRoleOutput`](crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleOutput)
     /// - On failure, responds with [`SdkError<AssociateEnvironmentOperationsRoleError>`](crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleError)
-    pub fn associate_environment_operations_role(&self) -> crate::operation::associate_environment_operations_role::builders::AssociateEnvironmentOperationsRoleFluentBuilder{
+    pub fn associate_environment_operations_role(
+        &self,
+    ) -> crate::operation::associate_environment_operations_role::builders::AssociateEnvironmentOperationsRoleFluentBuilder {
         crate::operation::associate_environment_operations_role::builders::AssociateEnvironmentOperationsRoleFluentBuilder::new(self.handle.clone())
     }
 }

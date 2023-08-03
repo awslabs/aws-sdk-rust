@@ -54,17 +54,14 @@ impl ::aws_http::request_id::RequestId for GetRetainedMessageOutput {
 }
 impl GetRetainedMessageOutput {
     /// Creates a new builder-style object to manufacture [`GetRetainedMessageOutput`](crate::operation::get_retained_message::GetRetainedMessageOutput).
-    pub fn builder(
-    ) -> crate::operation::get_retained_message::builders::GetRetainedMessageOutputBuilder {
+    pub fn builder() -> crate::operation::get_retained_message::builders::GetRetainedMessageOutputBuilder {
         crate::operation::get_retained_message::builders::GetRetainedMessageOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRetainedMessageOutput`](crate::operation::get_retained_message::GetRetainedMessageOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRetainedMessageOutputBuilder {
     pub(crate) topic: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -140,10 +137,7 @@ impl GetRetainedMessageOutputBuilder {
     /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    pub fn set_user_properties(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_user_properties(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.user_properties = input;
         self
     }

@@ -13,12 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateWorkspaceBundleOutput`](crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput) with field(s):
     ///   - [`workspace_bundle(Option<WorkspaceBundle>)`](crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput::workspace_bundle): <p>Describes a WorkSpace bundle.</p>
     /// - On failure, responds with [`SdkError<CreateWorkspaceBundleError>`](crate::operation::create_workspace_bundle::CreateWorkspaceBundleError)
-    pub fn create_workspace_bundle(
-        &self,
-    ) -> crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleFluentBuilder
-    {
-        crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_workspace_bundle(&self) -> crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleFluentBuilder {
+        crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleFluentBuilder::new(self.handle.clone())
     }
 }

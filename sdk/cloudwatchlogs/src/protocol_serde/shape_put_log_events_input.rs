@@ -15,10 +15,7 @@ pub fn ser_put_log_events_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_input_log_event::ser_input_log_event(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_input_log_event::ser_input_log_event(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }

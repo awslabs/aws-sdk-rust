@@ -6,10 +6,7 @@ pub fn ser_custom_code_signing(
     if let Some(var_1) = &input.signature {
         #[allow(unused_mut)]
         let mut object_2 = object.key("signature").start_object();
-        crate::protocol_serde::shape_code_signing_signature::ser_code_signing_signature(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_code_signing_signature::ser_code_signing_signature(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.certificate_chain {
@@ -29,17 +26,9 @@ pub fn ser_custom_code_signing(
 
 pub(crate) fn de_custom_code_signing<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::CustomCodeSigning>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::CustomCodeSigning>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
@@ -49,54 +38,43 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "signature" => {
-                                builder = builder.set_signature(
-                                    crate::protocol_serde::shape_code_signing_signature::de_code_signing_signature(tokens)?
-                                );
-                            }
-                            "certificateChain" => {
-                                builder = builder.set_certificate_chain(
-                                    crate::protocol_serde::shape_code_signing_certificate_chain::de_code_signing_certificate_chain(tokens)?
-                                );
-                            }
-                            "hashAlgorithm" => {
-                                builder = builder.set_hash_algorithm(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            "signatureAlgorithm" => {
-                                builder = builder.set_signature_algorithm(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "signature" => {
+                            builder = builder.set_signature(crate::protocol_serde::shape_code_signing_signature::de_code_signing_signature(tokens)?);
                         }
-                    }
+                        "certificateChain" => {
+                            builder = builder.set_certificate_chain(
+                                crate::protocol_serde::shape_code_signing_certificate_chain::de_code_signing_certificate_chain(tokens)?,
+                            );
+                        }
+                        "hashAlgorithm" => {
+                            builder = builder.set_hash_algorithm(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "signatureAlgorithm" => {
+                            builder = builder.set_signature_algorithm(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

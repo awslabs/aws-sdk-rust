@@ -4,80 +4,67 @@ pub fn de_add_partner_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::add_partner::AddPartnerOutput,
-    crate::operation::add_partner::AddPartnerError,
-> {
+) -> std::result::Result<crate::operation::add_partner::AddPartnerOutput, crate::operation::add_partner::AddPartnerError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::add_partner::AddPartnerError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::add_partner::AddPartnerError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::operation::add_partner::AddPartnerError::unhandled(
-                generic,
-            ))
-        }
+        None => return Err(crate::operation::add_partner::AddPartnerError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => {
-            crate::operation::add_partner::AddPartnerError::ClusterNotFoundFault({
+        "ClusterNotFound" => crate::operation::add_partner::AddPartnerError::ClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::add_partner::AddPartnerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "PartnerNotFound" => {
-            crate::operation::add_partner::AddPartnerError::PartnerNotFoundFault({
+                let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::add_partner::AddPartnerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "PartnerNotFound" => crate::operation::add_partner::AddPartnerError::PartnerNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::PartnerNotFoundFaultBuilder::default();
-                    output = crate::protocol_serde::shape_partner_not_found_fault::de_partner_not_found_fault_xml_err(_response_body, output).map_err(crate::operation::add_partner::AddPartnerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "UnauthorizedPartnerIntegration" => {
-            crate::operation::add_partner::AddPartnerError::UnauthorizedPartnerIntegrationFault({
+                let mut output = crate::types::error::builders::PartnerNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_partner_not_found_fault::de_partner_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::add_partner::AddPartnerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedPartnerIntegration" => crate::operation::add_partner::AddPartnerError::UnauthorizedPartnerIntegrationFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::UnauthorizedPartnerIntegrationFaultBuilder::default();
-                    output = crate::protocol_serde::shape_unauthorized_partner_integration_fault::de_unauthorized_partner_integration_fault_xml_err(_response_body, output).map_err(crate::operation::add_partner::AddPartnerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::UnauthorizedPartnerIntegrationFaultBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_partner_integration_fault::de_unauthorized_partner_integration_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::add_partner::AddPartnerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::add_partner::AddPartnerError::generic(generic),
     })
 }
@@ -87,19 +74,13 @@ pub fn de_add_partner_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::add_partner::AddPartnerOutput,
-    crate::operation::add_partner::AddPartnerError,
-> {
+) -> std::result::Result<crate::operation::add_partner::AddPartnerOutput, crate::operation::add_partner::AddPartnerError> {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::operation::add_partner::builders::AddPartnerOutputBuilder::default();
+        let mut output = crate::operation::add_partner::builders::AddPartnerOutputBuilder::default();
         output = crate::protocol_serde::shape_add_partner::de_add_partner(_response_body, output)
             .map_err(crate::operation::add_partner::AddPartnerError::unhandled)?;
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }
@@ -108,10 +89,7 @@ pub fn de_add_partner_http_response_with_props(
 pub fn de_add_partner(
     inp: &[u8],
     mut builder: crate::operation::add_partner::builders::AddPartnerOutputBuilder,
-) -> Result<
-    crate::operation::add_partner::builders::AddPartnerOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::operation::add_partner::builders::AddPartnerOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -164,9 +142,7 @@ pub fn de_add_partner(
         }
         }
     } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected AddPartnerResult tag",
-        ));
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected AddPartnerResult tag"));
     };
     Ok(builder)
 }

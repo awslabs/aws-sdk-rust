@@ -66,9 +66,7 @@ impl RedshiftDatasetDefinition {
         self.output_format.as_ref()
     }
     /// <p>The compression used for Redshift query results.</p>
-    pub fn output_compression(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RedshiftResultCompressionType> {
+    pub fn output_compression(&self) -> ::std::option::Option<&crate::types::RedshiftResultCompressionType> {
         self.output_compression.as_ref()
     }
 }
@@ -81,9 +79,7 @@ impl RedshiftDatasetDefinition {
 
 /// A builder for [`RedshiftDatasetDefinition`](crate::types::RedshiftDatasetDefinition).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RedshiftDatasetDefinitionBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
@@ -93,8 +89,7 @@ pub struct RedshiftDatasetDefinitionBuilder {
     pub(crate) output_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) output_format: ::std::option::Option<crate::types::RedshiftResultFormat>,
-    pub(crate) output_compression:
-        ::std::option::Option<crate::types::RedshiftResultCompressionType>,
+    pub(crate) output_compression: ::std::option::Option<crate::types::RedshiftResultCompressionType>,
 }
 impl RedshiftDatasetDefinitionBuilder {
     /// <p>The Redshift cluster Identifier.</p>
@@ -154,18 +149,12 @@ impl RedshiftDatasetDefinitionBuilder {
         &self.query_string
     }
     /// <p>The IAM role attached to your Redshift cluster that Amazon SageMaker uses to generate datasets.</p>
-    pub fn cluster_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role attached to your Redshift cluster that Amazon SageMaker uses to generate datasets.</p>
-    pub fn set_cluster_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_role_arn = input;
         self
     }
@@ -174,18 +163,12 @@ impl RedshiftDatasetDefinitionBuilder {
         &self.cluster_role_arn
     }
     /// <p>The location in Amazon S3 where the Redshift query results are stored.</p>
-    pub fn output_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location in Amazon S3 where the Redshift query results are stored.</p>
-    pub fn set_output_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_output_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_s3_uri = input;
         self
     }
@@ -213,10 +196,7 @@ impl RedshiftDatasetDefinitionBuilder {
         self
     }
     /// <p>The data storage format for Redshift query results.</p>
-    pub fn set_output_format(
-        mut self,
-        input: ::std::option::Option<crate::types::RedshiftResultFormat>,
-    ) -> Self {
+    pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::RedshiftResultFormat>) -> Self {
         self.output_format = input;
         self
     }
@@ -225,25 +205,17 @@ impl RedshiftDatasetDefinitionBuilder {
         &self.output_format
     }
     /// <p>The compression used for Redshift query results.</p>
-    pub fn output_compression(
-        mut self,
-        input: crate::types::RedshiftResultCompressionType,
-    ) -> Self {
+    pub fn output_compression(mut self, input: crate::types::RedshiftResultCompressionType) -> Self {
         self.output_compression = ::std::option::Option::Some(input);
         self
     }
     /// <p>The compression used for Redshift query results.</p>
-    pub fn set_output_compression(
-        mut self,
-        input: ::std::option::Option<crate::types::RedshiftResultCompressionType>,
-    ) -> Self {
+    pub fn set_output_compression(mut self, input: ::std::option::Option<crate::types::RedshiftResultCompressionType>) -> Self {
         self.output_compression = input;
         self
     }
     /// <p>The compression used for Redshift query results.</p>
-    pub fn get_output_compression(
-        &self,
-    ) -> &::std::option::Option<crate::types::RedshiftResultCompressionType> {
+    pub fn get_output_compression(&self) -> &::std::option::Option<crate::types::RedshiftResultCompressionType> {
         &self.output_compression
     }
     /// Consumes the builder and constructs a [`RedshiftDatasetDefinition`](crate::types::RedshiftDatasetDefinition).

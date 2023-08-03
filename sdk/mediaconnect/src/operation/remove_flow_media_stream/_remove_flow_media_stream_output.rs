@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for RemoveFlowMediaStreamOutput {
 }
 impl RemoveFlowMediaStreamOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFlowMediaStreamOutput`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamOutputBuilder {
         crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamOutputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveFlowMediaStreamOutput`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveFlowMediaStreamOutputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) media_stream_name: ::std::option::Option<::std::string::String>,
@@ -61,18 +57,12 @@ impl RemoveFlowMediaStreamOutputBuilder {
         &self.flow_arn
     }
     /// The name of the media stream that was removed.
-    pub fn media_stream_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn media_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the media stream that was removed.
-    pub fn set_media_stream_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_media_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_stream_name = input;
         self
     }

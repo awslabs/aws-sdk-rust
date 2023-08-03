@@ -10,10 +10,7 @@ impl UpdateJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_job::UpdateJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_job::UpdateJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_job();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl UpdateJobFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_job::UpdateJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_job::UpdateJob, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl UpdateJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl UpdateJobFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_job::UpdateJob,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_job::UpdateJob, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError>,
     > {
         self.customize_middleware().await
@@ -147,39 +135,26 @@ impl UpdateJobFluentBuilder {
         self
     }
     /// <p>Configuration information for pre-signed S3 URLs.</p>
-    pub fn set_presigned_url_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PresignedUrlConfig>,
-    ) -> Self {
+    pub fn set_presigned_url_config(mut self, input: ::std::option::Option<crate::types::PresignedUrlConfig>) -> Self {
         self.inner = self.inner.set_presigned_url_config(input);
         self
     }
     /// <p>Configuration information for pre-signed S3 URLs.</p>
-    pub fn get_presigned_url_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::PresignedUrlConfig> {
+    pub fn get_presigned_url_config(&self) -> &::std::option::Option<crate::types::PresignedUrlConfig> {
         self.inner.get_presigned_url_config()
     }
     /// <p>Allows you to create a staged rollout of the job.</p>
-    pub fn job_executions_rollout_config(
-        mut self,
-        input: crate::types::JobExecutionsRolloutConfig,
-    ) -> Self {
+    pub fn job_executions_rollout_config(mut self, input: crate::types::JobExecutionsRolloutConfig) -> Self {
         self.inner = self.inner.job_executions_rollout_config(input);
         self
     }
     /// <p>Allows you to create a staged rollout of the job.</p>
-    pub fn set_job_executions_rollout_config(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
-    ) -> Self {
+    pub fn set_job_executions_rollout_config(mut self, input: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>) -> Self {
         self.inner = self.inner.set_job_executions_rollout_config(input);
         self
     }
     /// <p>Allows you to create a staged rollout of the job.</p>
-    pub fn get_job_executions_rollout_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobExecutionsRolloutConfig> {
+    pub fn get_job_executions_rollout_config(&self) -> &::std::option::Option<crate::types::JobExecutionsRolloutConfig> {
         self.inner.get_job_executions_rollout_config()
     }
     /// <p>Allows you to create criteria to abort a job.</p>
@@ -188,10 +163,7 @@ impl UpdateJobFluentBuilder {
         self
     }
     /// <p>Allows you to create criteria to abort a job.</p>
-    pub fn set_abort_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AbortConfig>,
-    ) -> Self {
+    pub fn set_abort_config(mut self, input: ::std::option::Option<crate::types::AbortConfig>) -> Self {
         self.inner = self.inner.set_abort_config(input);
         self
     }
@@ -205,10 +177,7 @@ impl UpdateJobFluentBuilder {
         self
     }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
-    pub fn set_timeout_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeoutConfig>,
-    ) -> Self {
+    pub fn set_timeout_config(mut self, input: ::std::option::Option<crate::types::TimeoutConfig>) -> Self {
         self.inner = self.inner.set_timeout_config(input);
         self
     }
@@ -243,25 +212,17 @@ impl UpdateJobFluentBuilder {
         self.inner.get_namespace_id()
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn job_executions_retry_config(
-        mut self,
-        input: crate::types::JobExecutionsRetryConfig,
-    ) -> Self {
+    pub fn job_executions_retry_config(mut self, input: crate::types::JobExecutionsRetryConfig) -> Self {
         self.inner = self.inner.job_executions_retry_config(input);
         self
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn set_job_executions_retry_config(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
-    ) -> Self {
+    pub fn set_job_executions_retry_config(mut self, input: ::std::option::Option<crate::types::JobExecutionsRetryConfig>) -> Self {
         self.inner = self.inner.set_job_executions_retry_config(input);
         self
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn get_job_executions_retry_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobExecutionsRetryConfig> {
+    pub fn get_job_executions_retry_config(&self) -> &::std::option::Option<crate::types::JobExecutionsRetryConfig> {
         self.inner.get_job_executions_retry_config()
     }
 }

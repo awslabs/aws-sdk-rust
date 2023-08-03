@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::update_vocabulary::UpdateVocabularyOutput::last_modified_time): <p>The date and time the specified custom vocabulary was last updated.</p>  <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     ///   - [`vocabulary_state(Option<VocabularyState>)`](crate::operation::update_vocabulary::UpdateVocabularyOutput::vocabulary_state): <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
     /// - On failure, responds with [`SdkError<UpdateVocabularyError>`](crate::operation::update_vocabulary::UpdateVocabularyError)
-    pub fn update_vocabulary(
-        &self,
-    ) -> crate::operation::update_vocabulary::builders::UpdateVocabularyFluentBuilder {
-        crate::operation::update_vocabulary::builders::UpdateVocabularyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_vocabulary(&self) -> crate::operation::update_vocabulary::builders::UpdateVocabularyFluentBuilder {
+        crate::operation::update_vocabulary::builders::UpdateVocabularyFluentBuilder::new(self.handle.clone())
     }
 }

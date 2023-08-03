@@ -23,17 +23,13 @@ pub struct CreateWorkflowInput {
     pub main: ::std::option::Option<::std::string::String>,
     /// <p>A parameter template for the workflow.</p>
     #[doc(hidden)]
-    pub parameter_template: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>,
-    >,
+    pub parameter_template: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
     /// <p>A storage capacity for the workflow in gigabytes.</p>
     #[doc(hidden)]
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>Tags for the workflow.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -67,11 +63,7 @@ impl CreateWorkflowInput {
         self.main.as_deref()
     }
     /// <p>A parameter template for the workflow.</p>
-    pub fn parameter_template(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>,
-    > {
+    pub fn parameter_template(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>> {
         self.parameter_template.as_ref()
     }
     /// <p>A storage capacity for the workflow in gigabytes.</p>
@@ -79,11 +71,7 @@ impl CreateWorkflowInput {
         self.storage_capacity
     }
     /// <p>Tags for the workflow.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
@@ -104,9 +92,7 @@ impl CreateWorkflowInput {
 
 /// A builder for [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorkflowInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -114,13 +100,9 @@ pub struct CreateWorkflowInputBuilder {
     pub(crate) definition_zip: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) definition_uri: ::std::option::Option<::std::string::String>,
     pub(crate) main: ::std::option::Option<::std::string::String>,
-    pub(crate) parameter_template: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>,
-    >,
+    pub(crate) parameter_template: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
     pub(crate) storage_capacity: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) accelerators: ::std::option::Option<crate::types::Accelerators>,
 }
@@ -159,10 +141,7 @@ impl CreateWorkflowInputBuilder {
         self
     }
     /// <p>An engine for the workflow.</p>
-    pub fn set_engine(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowEngine>,
-    ) -> Self {
+    pub fn set_engine(mut self, input: ::std::option::Option<crate::types::WorkflowEngine>) -> Self {
         self.engine = input;
         self
     }
@@ -176,10 +155,7 @@ impl CreateWorkflowInputBuilder {
         self
     }
     /// <p>A ZIP archive for the workflow.</p>
-    pub fn set_definition_zip(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_definition_zip(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.definition_zip = input;
         self
     }
@@ -188,18 +164,12 @@ impl CreateWorkflowInputBuilder {
         &self.definition_zip
     }
     /// <p>The URI of a definition for the workflow.</p>
-    pub fn definition_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn definition_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI of a definition for the workflow.</p>
-    pub fn set_definition_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_definition_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.definition_uri = input;
         self
     }
@@ -226,11 +196,7 @@ impl CreateWorkflowInputBuilder {
     /// To override the contents of this collection use [`set_parameter_template`](Self::set_parameter_template).
     ///
     /// <p>A parameter template for the workflow.</p>
-    pub fn parameter_template(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::WorkflowParameter,
-    ) -> Self {
+    pub fn parameter_template(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::WorkflowParameter) -> Self {
         let mut hash_map = self.parameter_template.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.parameter_template = ::std::option::Option::Some(hash_map);
@@ -239,9 +205,7 @@ impl CreateWorkflowInputBuilder {
     /// <p>A parameter template for the workflow.</p>
     pub fn set_parameter_template(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
     ) -> Self {
         self.parameter_template = input;
         self
@@ -249,9 +213,7 @@ impl CreateWorkflowInputBuilder {
     /// <p>A parameter template for the workflow.</p>
     pub fn get_parameter_template(
         &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>,
-    > {
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>> {
         &self.parameter_template
     }
     /// <p>A storage capacity for the workflow in gigabytes.</p>
@@ -273,32 +235,19 @@ impl CreateWorkflowInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags for the workflow.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags for the workflow.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags for the workflow.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
@@ -321,10 +270,7 @@ impl CreateWorkflowInputBuilder {
         self
     }
     /// <p> The computational accelerator specified to run the workflow. </p>
-    pub fn set_accelerators(
-        mut self,
-        input: ::std::option::Option<crate::types::Accelerators>,
-    ) -> Self {
+    pub fn set_accelerators(mut self, input: ::std::option::Option<crate::types::Accelerators>) -> Self {
         self.accelerators = input;
         self
     }
@@ -335,10 +281,7 @@ impl CreateWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_workflow::CreateWorkflowInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_workflow::CreateWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workflow::CreateWorkflowInput {
             name: self.name,
             description: self.description,

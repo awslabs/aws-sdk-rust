@@ -10,9 +10,7 @@ pub struct DescribeFhirImportJobOutput {
 }
 impl DescribeFhirImportJobOutput {
     /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
-    pub fn import_job_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ImportJobProperties> {
+    pub fn import_job_properties(&self) -> ::std::option::Option<&crate::types::ImportJobProperties> {
         self.import_job_properties.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DescribeFhirImportJobOutput {
 }
 impl DescribeFhirImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFhirImportJobOutput`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_fhir_import_job::builders::DescribeFhirImportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fhir_import_job::builders::DescribeFhirImportJobOutputBuilder {
         crate::operation::describe_fhir_import_job::builders::DescribeFhirImportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFhirImportJobOutput`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFhirImportJobOutputBuilder {
     pub(crate) import_job_properties: ::std::option::Option<crate::types::ImportJobProperties>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl DescribeFhirImportJobOutputBuilder {
         self
     }
     /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
-    pub fn set_import_job_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::ImportJobProperties>,
-    ) -> Self {
+    pub fn set_import_job_properties(mut self, input: ::std::option::Option<crate::types::ImportJobProperties>) -> Self {
         self.import_job_properties = input;
         self
     }
     /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
-    pub fn get_import_job_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ImportJobProperties> {
+    pub fn get_import_job_properties(&self) -> &::std::option::Option<crate::types::ImportJobProperties> {
         &self.import_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

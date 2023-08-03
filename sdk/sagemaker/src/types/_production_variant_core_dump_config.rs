@@ -46,27 +46,19 @@ impl ProductionVariantCoreDumpConfig {
 
 /// A builder for [`ProductionVariantCoreDumpConfig`](crate::types::ProductionVariantCoreDumpConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProductionVariantCoreDumpConfigBuilder {
     pub(crate) destination_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ProductionVariantCoreDumpConfigBuilder {
     /// <p>The Amazon S3 bucket to send the core dump to.</p>
-    pub fn destination_s3_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket to send the core dump to.</p>
-    pub fn set_destination_s3_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_s3_uri = input;
         self
     }

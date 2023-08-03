@@ -49,9 +49,7 @@ impl QueryTableRowsOutput {
 
 /// A builder for [`QueryTableRowsOutput`](crate::operation::query_table_rows::QueryTableRowsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryTableRowsOutputBuilder {
     pub(crate) column_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>,
@@ -72,10 +70,7 @@ impl QueryTableRowsOutputBuilder {
         self
     }
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
-    pub fn set_column_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_column_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.column_ids = input;
         self
     }
@@ -95,10 +90,7 @@ impl QueryTableRowsOutputBuilder {
         self
     }
     /// <p> The list of rows in the table that match the query filter. </p>
-    pub fn set_rows(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>,
-    ) -> Self {
+    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>) -> Self {
         self.rows = input;
         self
     }

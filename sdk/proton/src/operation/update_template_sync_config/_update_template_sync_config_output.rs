@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateTemplateSyncConfigOutput {
 }
 impl UpdateTemplateSyncConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTemplateSyncConfigOutput`](crate::operation::update_template_sync_config::UpdateTemplateSyncConfigOutput).
-    pub fn builder() -> crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigOutputBuilder{
+    pub fn builder() -> crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigOutputBuilder {
         crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateTemplateSyncConfigOutput`](crate::operation::update_template_sync_config::UpdateTemplateSyncConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateTemplateSyncConfigOutputBuilder {
     pub(crate) template_sync_config: ::std::option::Option<crate::types::TemplateSyncConfig>,
     _request_id: Option<String>,
@@ -42,17 +40,12 @@ impl UpdateTemplateSyncConfigOutputBuilder {
         self
     }
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
-    pub fn set_template_sync_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TemplateSyncConfig>,
-    ) -> Self {
+    pub fn set_template_sync_config(mut self, input: ::std::option::Option<crate::types::TemplateSyncConfig>) -> Self {
         self.template_sync_config = input;
         self
     }
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
-    pub fn get_template_sync_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemplateSyncConfig> {
+    pub fn get_template_sync_config(&self) -> &::std::option::Option<crate::types::TemplateSyncConfig> {
         &self.template_sync_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -65,9 +58,7 @@ impl UpdateTemplateSyncConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateTemplateSyncConfigOutput`](crate::operation::update_template_sync_config::UpdateTemplateSyncConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_template_sync_config::UpdateTemplateSyncConfigOutput {
+    pub fn build(self) -> crate::operation::update_template_sync_config::UpdateTemplateSyncConfigOutput {
         crate::operation::update_template_sync_config::UpdateTemplateSyncConfigOutput {
             template_sync_config: self.template_sync_config,
             _request_id: self._request_id,

@@ -30,9 +30,7 @@ impl DeleteThingInput {
 
 /// A builder for [`DeleteThingInput`](crate::operation::delete_thing::DeleteThingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteThingInputBuilder {
     pub(crate) thing_name: ::std::option::Option<::std::string::String>,
     pub(crate) expected_version: ::std::option::Option<i64>,
@@ -67,12 +65,7 @@ impl DeleteThingInputBuilder {
         &self.expected_version
     }
     /// Consumes the builder and constructs a [`DeleteThingInput`](crate::operation::delete_thing::DeleteThingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_thing::DeleteThingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_thing::DeleteThingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_thing::DeleteThingInput {
             thing_name: self.thing_name,
             expected_version: self.expected_version,

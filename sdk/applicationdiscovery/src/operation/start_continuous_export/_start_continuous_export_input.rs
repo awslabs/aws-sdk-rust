@@ -5,29 +5,21 @@
 pub struct StartContinuousExportInput {}
 impl StartContinuousExportInput {
     /// Creates a new builder-style object to manufacture [`StartContinuousExportInput`](crate::operation::start_continuous_export::StartContinuousExportInput).
-    pub fn builder(
-    ) -> crate::operation::start_continuous_export::builders::StartContinuousExportInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_continuous_export::builders::StartContinuousExportInputBuilder {
         crate::operation::start_continuous_export::builders::StartContinuousExportInputBuilder::default()
     }
 }
 
 /// A builder for [`StartContinuousExportInput`](crate::operation::start_continuous_export::StartContinuousExportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartContinuousExportInputBuilder {}
 impl StartContinuousExportInputBuilder {
     /// Consumes the builder and constructs a [`StartContinuousExportInput`](crate::operation::start_continuous_export::StartContinuousExportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::start_continuous_export::StartContinuousExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_continuous_export::StartContinuousExportInput {},
-        )
+    ) -> ::std::result::Result<crate::operation::start_continuous_export::StartContinuousExportInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_continuous_export::StartContinuousExportInput {})
     }
 }

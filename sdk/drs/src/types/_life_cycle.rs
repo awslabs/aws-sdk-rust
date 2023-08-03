@@ -51,9 +51,7 @@ impl LifeCycle {
 
 /// A builder for [`LifeCycle`](crate::types::LifeCycle).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LifeCycleBuilder {
     pub(crate) added_to_service_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) first_byte_date_time: ::std::option::Option<::std::string::String>,
@@ -63,18 +61,12 @@ pub struct LifeCycleBuilder {
 }
 impl LifeCycleBuilder {
     /// <p>The date and time of when the Source Server was added to the service.</p>
-    pub fn added_to_service_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn added_to_service_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.added_to_service_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time of when the Source Server was added to the service.</p>
-    pub fn set_added_to_service_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_added_to_service_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.added_to_service_date_time = input;
         self
     }
@@ -83,18 +75,12 @@ impl LifeCycleBuilder {
         &self.added_to_service_date_time
     }
     /// <p>The date and time of the first byte that was replicated from the Source Server.</p>
-    pub fn first_byte_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn first_byte_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_byte_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time of the first byte that was replicated from the Source Server.</p>
-    pub fn set_first_byte_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_first_byte_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_byte_date_time = input;
         self
     }
@@ -103,47 +89,31 @@ impl LifeCycleBuilder {
         &self.first_byte_date_time
     }
     /// <p>The amount of time that the Source Server has been replicating for.</p>
-    pub fn elapsed_replication_duration(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn elapsed_replication_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elapsed_replication_duration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The amount of time that the Source Server has been replicating for.</p>
-    pub fn set_elapsed_replication_duration(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_elapsed_replication_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elapsed_replication_duration = input;
         self
     }
     /// <p>The amount of time that the Source Server has been replicating for.</p>
-    pub fn get_elapsed_replication_duration(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_elapsed_replication_duration(&self) -> &::std::option::Option<::std::string::String> {
         &self.elapsed_replication_duration
     }
     /// <p>The date and time this Source Server was last seen by the service.</p>
-    pub fn last_seen_by_service_date_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_seen_by_service_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_seen_by_service_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time this Source Server was last seen by the service.</p>
-    pub fn set_last_seen_by_service_date_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_seen_by_service_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_seen_by_service_date_time = input;
         self
     }
     /// <p>The date and time this Source Server was last seen by the service.</p>
-    pub fn get_last_seen_by_service_date_time(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_last_seen_by_service_date_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_seen_by_service_date_time
     }
     /// <p>An object containing information regarding the last launch of the Source Server.</p>
@@ -152,10 +122,7 @@ impl LifeCycleBuilder {
         self
     }
     /// <p>An object containing information regarding the last launch of the Source Server.</p>
-    pub fn set_last_launch(
-        mut self,
-        input: ::std::option::Option<crate::types::LifeCycleLastLaunch>,
-    ) -> Self {
+    pub fn set_last_launch(mut self, input: ::std::option::Option<crate::types::LifeCycleLastLaunch>) -> Self {
         self.last_launch = input;
         self
     }

@@ -23,9 +23,7 @@ impl PagerDutyIncidentConfiguration {
 
 /// A builder for [`PagerDutyIncidentConfiguration`](crate::types::PagerDutyIncidentConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PagerDutyIncidentConfigurationBuilder {
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl PagerDutyIncidentConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`PagerDutyIncidentConfiguration`](crate::types::PagerDutyIncidentConfiguration).
     pub fn build(self) -> crate::types::PagerDutyIncidentConfiguration {
-        crate::types::PagerDutyIncidentConfiguration {
-            service_id: self.service_id,
-        }
+        crate::types::PagerDutyIncidentConfiguration { service_id: self.service_id }
     }
 }

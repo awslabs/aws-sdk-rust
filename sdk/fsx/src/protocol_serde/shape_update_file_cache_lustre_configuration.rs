@@ -4,9 +4,7 @@ pub fn ser_update_file_cache_lustre_configuration(
     input: &crate::types::UpdateFileCacheLustreConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.weekly_maintenance_start_time {
-        object
-            .key("WeeklyMaintenanceStartTime")
-            .string(var_1.as_str());
+        object.key("WeeklyMaintenanceStartTime").string(var_1.as_str());
     }
     Ok(())
 }

@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`RemoveNotificationChannelOutput`](crate::operation::remove_notification_channel::RemoveNotificationChannelOutput) with field(s):
     ///   - [`notification_configuration(Option<NotificationConfiguration>)`](crate::operation::remove_notification_channel::RemoveNotificationChannelOutput::notification_configuration): <p>The new notification configuration for this profiling group.</p>
     /// - On failure, responds with [`SdkError<RemoveNotificationChannelError>`](crate::operation::remove_notification_channel::RemoveNotificationChannelError)
-    pub fn remove_notification_channel(&self) -> crate::operation::remove_notification_channel::builders::RemoveNotificationChannelFluentBuilder{
+    pub fn remove_notification_channel(&self) -> crate::operation::remove_notification_channel::builders::RemoveNotificationChannelFluentBuilder {
         crate::operation::remove_notification_channel::builders::RemoveNotificationChannelFluentBuilder::new(self.handle.clone())
     }
 }

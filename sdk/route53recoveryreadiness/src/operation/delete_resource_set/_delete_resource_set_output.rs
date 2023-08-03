@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteResourceSetOutput {
 }
 impl DeleteResourceSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceSetOutput`](crate::operation::delete_resource_set::DeleteResourceSetOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_set::builders::DeleteResourceSetOutputBuilder {
+    pub fn builder() -> crate::operation::delete_resource_set::builders::DeleteResourceSetOutputBuilder {
         crate::operation::delete_resource_set::builders::DeleteResourceSetOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteResourceSetOutput`](crate::operation::delete_resource_set::DeleteResourceSetOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteResourceSetOutputBuilder {
     _request_id: Option<String>,
 }

@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`resources(Option<Vec<String>>)`](crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsOutput::resources): <p>A list of the snapshots that were modified.</p>
     ///   - [`errors(Option<Vec<SnapshotErrorMessage>>)`](crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsOutput::errors): <p>A list of any errors returned.</p>
     /// - On failure, responds with [`SdkError<BatchModifyClusterSnapshotsError>`](crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError)
-    pub fn batch_modify_cluster_snapshots(&self) -> crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsFluentBuilder{
+    pub fn batch_modify_cluster_snapshots(
+        &self,
+    ) -> crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsFluentBuilder {
         crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

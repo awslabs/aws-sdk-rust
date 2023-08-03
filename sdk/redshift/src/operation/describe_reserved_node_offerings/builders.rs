@@ -27,7 +27,7 @@ impl DescribeReservedNodeOfferingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReservedNodeOfferingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsInputBuilder,
+    inner: crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsInputBuilder,
 }
 impl DescribeReservedNodeOfferingsFluentBuilder {
     /// Creates a new `DescribeReservedNodeOfferings`.
@@ -38,7 +38,7 @@ impl DescribeReservedNodeOfferingsFluentBuilder {
         }
     }
     /// Access the DescribeReservedNodeOfferings as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeReservedNodeOfferingsFluentBuilder {
             crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeReservedNodeOfferingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeReservedNodeOfferingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeReservedNodeOfferingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError>,
     > {
         self.send_middleware().await
     }
@@ -115,31 +106,23 @@ impl DescribeReservedNodeOfferingsFluentBuilder {
             crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator {
         crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier for the offering.</p>
-    pub fn reserved_node_offering_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_node_offering_id(input.into());
         self
     }
     /// <p>The unique identifier for the offering.</p>
-    pub fn set_reserved_node_offering_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_node_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_node_offering_id(input);
         self
     }

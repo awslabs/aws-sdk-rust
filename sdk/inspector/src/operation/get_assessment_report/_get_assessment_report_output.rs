@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetAssessmentReportOutput {
 }
 impl GetAssessmentReportOutput {
     /// Creates a new builder-style object to manufacture [`GetAssessmentReportOutput`](crate::operation::get_assessment_report::GetAssessmentReportOutput).
-    pub fn builder(
-    ) -> crate::operation::get_assessment_report::builders::GetAssessmentReportOutputBuilder {
-        crate::operation::get_assessment_report::builders::GetAssessmentReportOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_assessment_report::builders::GetAssessmentReportOutputBuilder {
+        crate::operation::get_assessment_report::builders::GetAssessmentReportOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetAssessmentReportOutput`](crate::operation::get_assessment_report::GetAssessmentReportOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssessmentReportOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ReportStatus>,
     pub(crate) url: ::std::option::Option<::std::string::String>,

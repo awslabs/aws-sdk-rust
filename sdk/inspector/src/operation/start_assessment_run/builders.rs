@@ -10,10 +10,7 @@ impl StartAssessmentRunInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_assessment_run::StartAssessmentRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_assessment_run::StartAssessmentRunError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_assessment_run::StartAssessmentRunError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_assessment_run();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartAssessmentRunFluentBuilder {
         }
     }
     /// Access the StartAssessmentRun as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_assessment_run::builders::StartAssessmentRunInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_assessment_run::builders::StartAssessmentRunInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartAssessmentRunFluentBuilder {
             crate::operation::start_assessment_run::StartAssessmentRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_assessment_run::StartAssessmentRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_assessment_run::StartAssessmentRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartAssessmentRunFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartAssessmentRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_assessment_run::StartAssessmentRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_assessment_run::StartAssessmentRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_assessment_run::StartAssessmentRunError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartAssessmentRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_assessment_run::StartAssessmentRunOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_assessment_run::StartAssessmentRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_assessment_run::StartAssessmentRunError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StartAssessmentRunFluentBuilder {
             crate::operation::start_assessment_run::StartAssessmentRun,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_assessment_run::StartAssessmentRunError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_assessment_run::StartAssessmentRunError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
-    pub fn assessment_template_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_template_arn(input.into());
         self
     }
     /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
-    pub fn set_assessment_template_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_template_arn(input);
         self
     }
@@ -143,18 +121,12 @@ impl StartAssessmentRunFluentBuilder {
         self.inner.get_assessment_template_arn()
     }
     /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
-    pub fn assessment_run_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_run_name(input.into());
         self
     }
     /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
-    pub fn set_assessment_run_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_run_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_run_name(input);
         self
     }

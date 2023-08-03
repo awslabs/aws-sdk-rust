@@ -19,9 +19,7 @@ impl RejectSkillOutput {
 
 /// A builder for [`RejectSkillOutput`](crate::operation::reject_skill::RejectSkillOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RejectSkillOutputBuilder {
     _request_id: Option<String>,
 }

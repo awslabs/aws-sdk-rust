@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_bot_locales::ListBotLocalesOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListBotLocales</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotLocales</code> operation request to get the next page of results.</p>
     ///   - [`bot_locale_summaries(Option<Vec<BotLocaleSummary>>)`](crate::operation::list_bot_locales::ListBotLocalesOutput::bot_locale_summaries): <p>Summary information for the locales that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more locales available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListBotLocalesError>`](crate::operation::list_bot_locales::ListBotLocalesError)
-    pub fn list_bot_locales(
-        &self,
-    ) -> crate::operation::list_bot_locales::builders::ListBotLocalesFluentBuilder {
-        crate::operation::list_bot_locales::builders::ListBotLocalesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_bot_locales(&self) -> crate::operation::list_bot_locales::builders::ListBotLocalesFluentBuilder {
+        crate::operation::list_bot_locales::builders::ListBotLocalesFluentBuilder::new(self.handle.clone())
     }
 }

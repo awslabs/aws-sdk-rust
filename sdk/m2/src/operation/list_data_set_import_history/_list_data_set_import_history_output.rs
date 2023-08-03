@@ -5,8 +5,7 @@
 pub struct ListDataSetImportHistoryOutput {
     /// <p>The data set import tasks.</p>
     #[doc(hidden)]
-    pub data_set_import_tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataSetImportTask>>,
+    pub data_set_import_tasks: ::std::option::Option<::std::vec::Vec<crate::types::DataSetImportTask>>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListDataSetImportHistoryOutput {
 }
 impl ListDataSetImportHistoryOutput {
     /// <p>The data set import tasks.</p>
-    pub fn data_set_import_tasks(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataSetImportTask]> {
+    pub fn data_set_import_tasks(&self) -> ::std::option::Option<&[crate::types::DataSetImportTask]> {
         self.data_set_import_tasks.as_deref()
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListDataSetImportHistoryOutput {
 }
 impl ListDataSetImportHistoryOutput {
     /// Creates a new builder-style object to manufacture [`ListDataSetImportHistoryOutput`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput).
-    pub fn builder() -> crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryOutputBuilder{
+    pub fn builder() -> crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryOutputBuilder {
         crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListDataSetImportHistoryOutput`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataSetImportHistoryOutputBuilder {
-    pub(crate) data_set_import_tasks:
-        ::std::option::Option<::std::vec::Vec<crate::types::DataSetImportTask>>,
+    pub(crate) data_set_import_tasks: ::std::option::Option<::std::vec::Vec<crate::types::DataSetImportTask>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -60,17 +54,12 @@ impl ListDataSetImportHistoryOutputBuilder {
         self
     }
     /// <p>The data set import tasks.</p>
-    pub fn set_data_set_import_tasks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetImportTask>>,
-    ) -> Self {
+    pub fn set_data_set_import_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetImportTask>>) -> Self {
         self.data_set_import_tasks = input;
         self
     }
     /// <p>The data set import tasks.</p>
-    pub fn get_data_set_import_tasks(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetImportTask>> {
+    pub fn get_data_set_import_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetImportTask>> {
         &self.data_set_import_tasks
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
@@ -97,9 +86,7 @@ impl ListDataSetImportHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDataSetImportHistoryOutput`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput {
+    pub fn build(self) -> crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput {
         crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput {
             data_set_import_tasks: self.data_set_import_tasks,
             next_token: self.next_token,

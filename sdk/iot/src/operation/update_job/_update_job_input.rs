@@ -14,8 +14,7 @@ pub struct UpdateJobInput {
     pub presigned_url_config: ::std::option::Option<crate::types::PresignedUrlConfig>,
     /// <p>Allows you to create a staged rollout of the job.</p>
     #[doc(hidden)]
-    pub job_executions_rollout_config:
-        ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
+    pub job_executions_rollout_config: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
     /// <p>Allows you to create criteria to abort a job.</p>
     #[doc(hidden)]
     pub abort_config: ::std::option::Option<crate::types::AbortConfig>,
@@ -47,9 +46,7 @@ impl UpdateJobInput {
         self.presigned_url_config.as_ref()
     }
     /// <p>Allows you to create a staged rollout of the job.</p>
-    pub fn job_executions_rollout_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JobExecutionsRolloutConfig> {
+    pub fn job_executions_rollout_config(&self) -> ::std::option::Option<&crate::types::JobExecutionsRolloutConfig> {
         self.job_executions_rollout_config.as_ref()
     }
     /// <p>Allows you to create criteria to abort a job.</p>
@@ -69,9 +66,7 @@ impl UpdateJobInput {
         self.namespace_id.as_deref()
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn job_executions_retry_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::JobExecutionsRetryConfig> {
+    pub fn job_executions_retry_config(&self) -> ::std::option::Option<&crate::types::JobExecutionsRetryConfig> {
         self.job_executions_retry_config.as_ref()
     }
 }
@@ -84,20 +79,16 @@ impl UpdateJobInput {
 
 /// A builder for [`UpdateJobInput`](crate::operation::update_job::UpdateJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) presigned_url_config: ::std::option::Option<crate::types::PresignedUrlConfig>,
-    pub(crate) job_executions_rollout_config:
-        ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
+    pub(crate) job_executions_rollout_config: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
     pub(crate) abort_config: ::std::option::Option<crate::types::AbortConfig>,
     pub(crate) timeout_config: ::std::option::Option<crate::types::TimeoutConfig>,
     pub(crate) namespace_id: ::std::option::Option<::std::string::String>,
-    pub(crate) job_executions_retry_config:
-        ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
+    pub(crate) job_executions_retry_config: ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
 }
 impl UpdateJobInputBuilder {
     /// <p>The ID of the job to be updated.</p>
@@ -134,39 +125,26 @@ impl UpdateJobInputBuilder {
         self
     }
     /// <p>Configuration information for pre-signed S3 URLs.</p>
-    pub fn set_presigned_url_config(
-        mut self,
-        input: ::std::option::Option<crate::types::PresignedUrlConfig>,
-    ) -> Self {
+    pub fn set_presigned_url_config(mut self, input: ::std::option::Option<crate::types::PresignedUrlConfig>) -> Self {
         self.presigned_url_config = input;
         self
     }
     /// <p>Configuration information for pre-signed S3 URLs.</p>
-    pub fn get_presigned_url_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::PresignedUrlConfig> {
+    pub fn get_presigned_url_config(&self) -> &::std::option::Option<crate::types::PresignedUrlConfig> {
         &self.presigned_url_config
     }
     /// <p>Allows you to create a staged rollout of the job.</p>
-    pub fn job_executions_rollout_config(
-        mut self,
-        input: crate::types::JobExecutionsRolloutConfig,
-    ) -> Self {
+    pub fn job_executions_rollout_config(mut self, input: crate::types::JobExecutionsRolloutConfig) -> Self {
         self.job_executions_rollout_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Allows you to create a staged rollout of the job.</p>
-    pub fn set_job_executions_rollout_config(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
-    ) -> Self {
+    pub fn set_job_executions_rollout_config(mut self, input: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>) -> Self {
         self.job_executions_rollout_config = input;
         self
     }
     /// <p>Allows you to create a staged rollout of the job.</p>
-    pub fn get_job_executions_rollout_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobExecutionsRolloutConfig> {
+    pub fn get_job_executions_rollout_config(&self) -> &::std::option::Option<crate::types::JobExecutionsRolloutConfig> {
         &self.job_executions_rollout_config
     }
     /// <p>Allows you to create criteria to abort a job.</p>
@@ -175,10 +153,7 @@ impl UpdateJobInputBuilder {
         self
     }
     /// <p>Allows you to create criteria to abort a job.</p>
-    pub fn set_abort_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AbortConfig>,
-    ) -> Self {
+    pub fn set_abort_config(mut self, input: ::std::option::Option<crate::types::AbortConfig>) -> Self {
         self.abort_config = input;
         self
     }
@@ -192,10 +167,7 @@ impl UpdateJobInputBuilder {
         self
     }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
-    pub fn set_timeout_config(
-        mut self,
-        input: ::std::option::Option<crate::types::TimeoutConfig>,
-    ) -> Self {
+    pub fn set_timeout_config(mut self, input: ::std::option::Option<crate::types::TimeoutConfig>) -> Self {
         self.timeout_config = input;
         self
     }
@@ -230,34 +202,21 @@ impl UpdateJobInputBuilder {
         &self.namespace_id
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn job_executions_retry_config(
-        mut self,
-        input: crate::types::JobExecutionsRetryConfig,
-    ) -> Self {
+    pub fn job_executions_retry_config(mut self, input: crate::types::JobExecutionsRetryConfig) -> Self {
         self.job_executions_retry_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn set_job_executions_retry_config(
-        mut self,
-        input: ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
-    ) -> Self {
+    pub fn set_job_executions_retry_config(mut self, input: ::std::option::Option<crate::types::JobExecutionsRetryConfig>) -> Self {
         self.job_executions_retry_config = input;
         self
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn get_job_executions_retry_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::JobExecutionsRetryConfig> {
+    pub fn get_job_executions_retry_config(&self) -> &::std::option::Option<crate::types::JobExecutionsRetryConfig> {
         &self.job_executions_retry_config
     }
     /// Consumes the builder and constructs a [`UpdateJobInput`](crate::operation::update_job::UpdateJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_job::UpdateJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_job::UpdateJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_job::UpdateJobInput {
             job_id: self.job_id,
             description: self.description,

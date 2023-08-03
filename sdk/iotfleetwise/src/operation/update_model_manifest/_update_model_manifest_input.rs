@@ -43,18 +43,14 @@ impl UpdateModelManifestInput {
 }
 impl UpdateModelManifestInput {
     /// Creates a new builder-style object to manufacture [`UpdateModelManifestInput`](crate::operation::update_model_manifest::UpdateModelManifestInput).
-    pub fn builder(
-    ) -> crate::operation::update_model_manifest::builders::UpdateModelManifestInputBuilder {
-        crate::operation::update_model_manifest::builders::UpdateModelManifestInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_model_manifest::builders::UpdateModelManifestInputBuilder {
+        crate::operation::update_model_manifest::builders::UpdateModelManifestInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateModelManifestInput`](crate::operation::update_model_manifest::UpdateModelManifestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateModelManifestInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -103,17 +99,12 @@ impl UpdateModelManifestInputBuilder {
         self
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model. </p>
-    pub fn set_nodes_to_add(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_nodes_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.nodes_to_add = input;
         self
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model. </p>
-    pub fn get_nodes_to_add(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_nodes_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.nodes_to_add
     }
     /// Appends an item to `nodes_to_remove`.
@@ -121,27 +112,19 @@ impl UpdateModelManifestInputBuilder {
     /// To override the contents of this collection use [`set_nodes_to_remove`](Self::set_nodes_to_remove).
     ///
     /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model. </p>
-    pub fn nodes_to_remove(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn nodes_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.nodes_to_remove.unwrap_or_default();
         v.push(input.into());
         self.nodes_to_remove = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model. </p>
-    pub fn set_nodes_to_remove(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_nodes_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.nodes_to_remove = input;
         self
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model. </p>
-    pub fn get_nodes_to_remove(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_nodes_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.nodes_to_remove
     }
     /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model. </p>
@@ -150,10 +133,7 @@ impl UpdateModelManifestInputBuilder {
         self
     }
     /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ManifestStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ManifestStatus>) -> Self {
         self.status = input;
         self
     }
@@ -164,18 +144,14 @@ impl UpdateModelManifestInputBuilder {
     /// Consumes the builder and constructs a [`UpdateModelManifestInput`](crate::operation::update_model_manifest::UpdateModelManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_model_manifest::UpdateModelManifestInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_model_manifest::UpdateModelManifestInput {
-                name: self.name,
-                description: self.description,
-                nodes_to_add: self.nodes_to_add,
-                nodes_to_remove: self.nodes_to_remove,
-                status: self.status,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_model_manifest::UpdateModelManifestInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_model_manifest::UpdateModelManifestInput {
+            name: self.name,
+            description: self.description,
+            nodes_to_add: self.nodes_to_add,
+            nodes_to_remove: self.nodes_to_remove,
+            status: self.status,
+        })
     }
 }

@@ -32,13 +32,10 @@ pub struct AwsRedshiftClusterDetails {
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The nodes in the cluster.</p>
     #[doc(hidden)]
-    pub cluster_nodes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterNode>>,
+    pub cluster_nodes: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterNode>>,
     /// <p>The list of cluster parameter groups that are associated with this cluster.</p>
     #[doc(hidden)]
-    pub cluster_parameter_groups: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterGroup>,
-    >,
+    pub cluster_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterGroup>>,
     /// <p>The public key for the cluster.</p>
     #[doc(hidden)]
     pub cluster_public_key: ::std::option::Option<::std::string::String>,
@@ -47,13 +44,10 @@ pub struct AwsRedshiftClusterDetails {
     pub cluster_revision_number: ::std::option::Option<::std::string::String>,
     /// <p>A list of cluster security groups that are associated with the cluster.</p>
     #[doc(hidden)]
-    pub cluster_security_groups: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsRedshiftClusterClusterSecurityGroup>,
-    >,
+    pub cluster_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterSecurityGroup>>,
     /// <p>Information about the destination Region and retention period for the cross-Region snapshot copy.</p>
     #[doc(hidden)]
-    pub cluster_snapshot_copy_status:
-        ::std::option::Option<crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus>,
+    pub cluster_snapshot_copy_status: ::std::option::Option<crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus>,
     /// <p>The current status of the cluster.</p>
     /// <p>Valid values: <code>available</code> | <code>available, prep-for-resize</code> | <code>available, resize-cleanup</code> |<code> cancelling-resize</code> | <code>creating</code> | <code>deleting</code> | <code>final-snapshot</code> | <code>hardware-failure</code> | <code>incompatible-hsm</code> |<code> incompatible-network</code> | <code>incompatible-parameters</code> | <code>incompatible-restore</code> | <code>modifying</code> | <code>paused</code> | <code>rebooting</code> | <code>renaming</code> | <code>resizing</code> | <code>rotating-keys</code> | <code>storage-full</code> | <code>updating-hsm</code> </p>
     #[doc(hidden)]
@@ -71,9 +65,7 @@ pub struct AwsRedshiftClusterDetails {
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>List of time windows during which maintenance was deferred.</p>
     #[doc(hidden)]
-    pub deferred_maintenance_windows: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsRedshiftClusterDeferredMaintenanceWindow>,
-    >,
+    pub deferred_maintenance_windows: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterDeferredMaintenanceWindow>>,
     /// <p>Information about the status of the Elastic IP (EIP) address.</p>
     #[doc(hidden)]
     pub elastic_ip_status: ::std::option::Option<crate::types::AwsRedshiftClusterElasticIpStatus>,
@@ -133,8 +125,7 @@ pub struct AwsRedshiftClusterDetails {
     pub pending_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of changes to the cluster that are currently pending.</p>
     #[doc(hidden)]
-    pub pending_modified_values:
-        ::std::option::Option<crate::types::AwsRedshiftClusterPendingModifiedValues>,
+    pub pending_modified_values: ::std::option::Option<crate::types::AwsRedshiftClusterPendingModifiedValues>,
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
     /// <p>Format: <code> <i>
     /// <day></day></i>:HH:MM-<i>
@@ -164,8 +155,7 @@ pub struct AwsRedshiftClusterDetails {
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of VPC security groups that the cluster belongs to, if the cluster is in a VPC.</p>
     #[doc(hidden)]
-    pub vpc_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterVpcSecurityGroup>>,
+    pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterVpcSecurityGroup>>,
     /// <p>Information about the logging status of the cluster.</p>
     #[doc(hidden)]
     pub logging_status: ::std::option::Option<crate::types::AwsRedshiftClusterLoggingStatus>,
@@ -204,15 +194,11 @@ impl AwsRedshiftClusterDetails {
         self.cluster_identifier.as_deref()
     }
     /// <p>The nodes in the cluster.</p>
-    pub fn cluster_nodes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterClusterNode]> {
+    pub fn cluster_nodes(&self) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterClusterNode]> {
         self.cluster_nodes.as_deref()
     }
     /// <p>The list of cluster parameter groups that are associated with this cluster.</p>
-    pub fn cluster_parameter_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterClusterParameterGroup]> {
+    pub fn cluster_parameter_groups(&self) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterClusterParameterGroup]> {
         self.cluster_parameter_groups.as_deref()
     }
     /// <p>The public key for the cluster.</p>
@@ -224,15 +210,11 @@ impl AwsRedshiftClusterDetails {
         self.cluster_revision_number.as_deref()
     }
     /// <p>A list of cluster security groups that are associated with the cluster.</p>
-    pub fn cluster_security_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterClusterSecurityGroup]> {
+    pub fn cluster_security_groups(&self) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterClusterSecurityGroup]> {
         self.cluster_security_groups.as_deref()
     }
     /// <p>Information about the destination Region and retention period for the cross-Region snapshot copy.</p>
-    pub fn cluster_snapshot_copy_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus> {
+    pub fn cluster_snapshot_copy_status(&self) -> ::std::option::Option<&crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus> {
         self.cluster_snapshot_copy_status.as_ref()
     }
     /// <p>The current status of the cluster.</p>
@@ -255,15 +237,11 @@ impl AwsRedshiftClusterDetails {
         self.db_name.as_deref()
     }
     /// <p>List of time windows during which maintenance was deferred.</p>
-    pub fn deferred_maintenance_windows(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterDeferredMaintenanceWindow]> {
+    pub fn deferred_maintenance_windows(&self) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterDeferredMaintenanceWindow]> {
         self.deferred_maintenance_windows.as_deref()
     }
     /// <p>Information about the status of the Elastic IP (EIP) address.</p>
-    pub fn elastic_ip_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsRedshiftClusterElasticIpStatus> {
+    pub fn elastic_ip_status(&self) -> ::std::option::Option<&crate::types::AwsRedshiftClusterElasticIpStatus> {
         self.elastic_ip_status.as_ref()
     }
     /// <p>The number of nodes that you can use the elastic resize method to resize the cluster to.</p>
@@ -337,9 +315,7 @@ impl AwsRedshiftClusterDetails {
         self.pending_actions.as_deref()
     }
     /// <p>A list of changes to the cluster that are currently pending.</p>
-    pub fn pending_modified_values(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsRedshiftClusterPendingModifiedValues> {
+    pub fn pending_modified_values(&self) -> ::std::option::Option<&crate::types::AwsRedshiftClusterPendingModifiedValues> {
         self.pending_modified_values.as_ref()
     }
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
@@ -356,15 +332,11 @@ impl AwsRedshiftClusterDetails {
         self.publicly_accessible
     }
     /// <p>Information about the resize operation for the cluster.</p>
-    pub fn resize_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsRedshiftClusterResizeInfo> {
+    pub fn resize_info(&self) -> ::std::option::Option<&crate::types::AwsRedshiftClusterResizeInfo> {
         self.resize_info.as_ref()
     }
     /// <p>Information about the status of a cluster restore action. Only applies to a cluster that was created by restoring a snapshot.</p>
-    pub fn restore_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsRedshiftClusterRestoreStatus> {
+    pub fn restore_status(&self) -> ::std::option::Option<&crate::types::AwsRedshiftClusterRestoreStatus> {
         self.restore_status.as_ref()
     }
     /// <p>A unique identifier for the cluster snapshot schedule.</p>
@@ -381,15 +353,11 @@ impl AwsRedshiftClusterDetails {
         self.vpc_id.as_deref()
     }
     /// <p>The list of VPC security groups that the cluster belongs to, if the cluster is in a VPC.</p>
-    pub fn vpc_security_groups(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterVpcSecurityGroup]> {
+    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[crate::types::AwsRedshiftClusterVpcSecurityGroup]> {
         self.vpc_security_groups.as_deref()
     }
     /// <p>Information about the logging status of the cluster.</p>
-    pub fn logging_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsRedshiftClusterLoggingStatus> {
+    pub fn logging_status(&self) -> ::std::option::Option<&crate::types::AwsRedshiftClusterLoggingStatus> {
         self.logging_status.as_ref()
     }
 }
@@ -402,9 +370,7 @@ impl AwsRedshiftClusterDetails {
 
 /// A builder for [`AwsRedshiftClusterDetails`](crate::types::AwsRedshiftClusterDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterDetailsBuilder {
     pub(crate) allow_version_upgrade: ::std::option::Option<bool>,
     pub(crate) automated_snapshot_retention_period: ::std::option::Option<i32>,
@@ -412,37 +378,26 @@ pub struct AwsRedshiftClusterDetailsBuilder {
     pub(crate) cluster_availability_status: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_create_time: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) cluster_nodes:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterNode>>,
-    pub(crate) cluster_parameter_groups: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterGroup>,
-    >,
+    pub(crate) cluster_nodes: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterNode>>,
+    pub(crate) cluster_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterGroup>>,
     pub(crate) cluster_public_key: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_revision_number: ::std::option::Option<::std::string::String>,
-    pub(crate) cluster_security_groups: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsRedshiftClusterClusterSecurityGroup>,
-    >,
-    pub(crate) cluster_snapshot_copy_status:
-        ::std::option::Option<crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus>,
+    pub(crate) cluster_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterSecurityGroup>>,
+    pub(crate) cluster_snapshot_copy_status: ::std::option::Option<crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus>,
     pub(crate) cluster_status: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_version: ::std::option::Option<::std::string::String>,
     pub(crate) db_name: ::std::option::Option<::std::string::String>,
-    pub(crate) deferred_maintenance_windows: ::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsRedshiftClusterDeferredMaintenanceWindow>,
-    >,
-    pub(crate) elastic_ip_status:
-        ::std::option::Option<crate::types::AwsRedshiftClusterElasticIpStatus>,
+    pub(crate) deferred_maintenance_windows: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterDeferredMaintenanceWindow>>,
+    pub(crate) elastic_ip_status: ::std::option::Option<crate::types::AwsRedshiftClusterElasticIpStatus>,
     pub(crate) elastic_resize_number_of_node_options: ::std::option::Option<::std::string::String>,
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) endpoint: ::std::option::Option<crate::types::AwsRedshiftClusterEndpoint>,
     pub(crate) enhanced_vpc_routing: ::std::option::Option<bool>,
     pub(crate) expected_next_snapshot_schedule_time: ::std::option::Option<::std::string::String>,
-    pub(crate) expected_next_snapshot_schedule_time_status:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) expected_next_snapshot_schedule_time_status: ::std::option::Option<::std::string::String>,
     pub(crate) hsm_status: ::std::option::Option<crate::types::AwsRedshiftClusterHsmStatus>,
-    pub(crate) iam_roles:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterIamRole>>,
+    pub(crate) iam_roles: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterIamRole>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) maintenance_track_name: ::std::option::Option<::std::string::String>,
     pub(crate) manual_snapshot_retention_period: ::std::option::Option<i32>,
@@ -451,8 +406,7 @@ pub struct AwsRedshiftClusterDetailsBuilder {
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_nodes: ::std::option::Option<i32>,
     pub(crate) pending_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) pending_modified_values:
-        ::std::option::Option<crate::types::AwsRedshiftClusterPendingModifiedValues>,
+    pub(crate) pending_modified_values: ::std::option::Option<crate::types::AwsRedshiftClusterPendingModifiedValues>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) resize_info: ::std::option::Option<crate::types::AwsRedshiftClusterResizeInfo>,
@@ -460,8 +414,7 @@ pub struct AwsRedshiftClusterDetailsBuilder {
     pub(crate) snapshot_schedule_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_schedule_state: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_security_groups:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterVpcSecurityGroup>>,
+    pub(crate) vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterVpcSecurityGroup>>,
     pub(crate) logging_status: ::std::option::Option<crate::types::AwsRedshiftClusterLoggingStatus>,
 }
 impl AwsRedshiftClusterDetailsBuilder {
@@ -485,10 +438,7 @@ impl AwsRedshiftClusterDetailsBuilder {
         self
     }
     /// <p>The number of days that automatic cluster snapshots are retained.</p>
-    pub fn set_automated_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_automated_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.automated_snapshot_retention_period = input;
         self
     }
@@ -497,18 +447,12 @@ impl AwsRedshiftClusterDetailsBuilder {
         &self.automated_snapshot_retention_period
     }
     /// <p>The name of the Availability Zone in which the cluster is located.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Availability Zone in which the cluster is located.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
@@ -524,10 +468,7 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// <li> <p> <code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
     /// <li> <p> <code>Failed</code> - The cluster failed and is not available for queries.</p> </li>
     /// </ul>
-    pub fn cluster_availability_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_availability_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_availability_status = ::std::option::Option::Some(input.into());
         self
     }
@@ -539,10 +480,7 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// <li> <p> <code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
     /// <li> <p> <code>Failed</code> - The cluster failed and is not available for queries.</p> </li>
     /// </ul>
-    pub fn set_cluster_availability_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_availability_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_availability_status = input;
         self
     }
@@ -559,19 +497,13 @@ impl AwsRedshiftClusterDetailsBuilder {
     }
     /// <p>Indicates when the cluster was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn cluster_create_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_create_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_create_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the cluster was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_cluster_create_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_create_time = input;
         self
     }
@@ -581,18 +513,12 @@ impl AwsRedshiftClusterDetailsBuilder {
         &self.cluster_create_time
     }
     /// <p>The unique identifier of the cluster.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the cluster.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -612,17 +538,12 @@ impl AwsRedshiftClusterDetailsBuilder {
         self
     }
     /// <p>The nodes in the cluster.</p>
-    pub fn set_cluster_nodes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterNode>>,
-    ) -> Self {
+    pub fn set_cluster_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterNode>>) -> Self {
         self.cluster_nodes = input;
         self
     }
     /// <p>The nodes in the cluster.</p>
-    pub fn get_cluster_nodes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterNode>> {
+    pub fn get_cluster_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterNode>> {
         &self.cluster_nodes
     }
     /// Appends an item to `cluster_parameter_groups`.
@@ -630,10 +551,7 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// To override the contents of this collection use [`set_cluster_parameter_groups`](Self::set_cluster_parameter_groups).
     ///
     /// <p>The list of cluster parameter groups that are associated with this cluster.</p>
-    pub fn cluster_parameter_groups(
-        mut self,
-        input: crate::types::AwsRedshiftClusterClusterParameterGroup,
-    ) -> Self {
+    pub fn cluster_parameter_groups(mut self, input: crate::types::AwsRedshiftClusterClusterParameterGroup) -> Self {
         let mut v = self.cluster_parameter_groups.unwrap_or_default();
         v.push(input);
         self.cluster_parameter_groups = ::std::option::Option::Some(v);
@@ -642,34 +560,22 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// <p>The list of cluster parameter groups that are associated with this cluster.</p>
     pub fn set_cluster_parameter_groups(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterGroup>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterGroup>>,
     ) -> Self {
         self.cluster_parameter_groups = input;
         self
     }
     /// <p>The list of cluster parameter groups that are associated with this cluster.</p>
-    pub fn get_cluster_parameter_groups(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterGroup>,
-    > {
+    pub fn get_cluster_parameter_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterGroup>> {
         &self.cluster_parameter_groups
     }
     /// <p>The public key for the cluster.</p>
-    pub fn cluster_public_key(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public key for the cluster.</p>
-    pub fn set_cluster_public_key(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_public_key = input;
         self
     }
@@ -678,18 +584,12 @@ impl AwsRedshiftClusterDetailsBuilder {
         &self.cluster_public_key
     }
     /// <p>The specific revision number of the database in the cluster.</p>
-    pub fn cluster_revision_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_revision_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_revision_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specific revision number of the database in the cluster.</p>
-    pub fn set_cluster_revision_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_revision_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_revision_number = input;
         self
     }
@@ -702,10 +602,7 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// To override the contents of this collection use [`set_cluster_security_groups`](Self::set_cluster_security_groups).
     ///
     /// <p>A list of cluster security groups that are associated with the cluster.</p>
-    pub fn cluster_security_groups(
-        mut self,
-        input: crate::types::AwsRedshiftClusterClusterSecurityGroup,
-    ) -> Self {
+    pub fn cluster_security_groups(mut self, input: crate::types::AwsRedshiftClusterClusterSecurityGroup) -> Self {
         let mut v = self.cluster_security_groups.unwrap_or_default();
         v.push(input);
         self.cluster_security_groups = ::std::option::Option::Some(v);
@@ -714,25 +611,17 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// <p>A list of cluster security groups that are associated with the cluster.</p>
     pub fn set_cluster_security_groups(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsRedshiftClusterClusterSecurityGroup>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterSecurityGroup>>,
     ) -> Self {
         self.cluster_security_groups = input;
         self
     }
     /// <p>A list of cluster security groups that are associated with the cluster.</p>
-    pub fn get_cluster_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterSecurityGroup>>
-    {
+    pub fn get_cluster_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterSecurityGroup>> {
         &self.cluster_security_groups
     }
     /// <p>Information about the destination Region and retention period for the cross-Region snapshot copy.</p>
-    pub fn cluster_snapshot_copy_status(
-        mut self,
-        input: crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus,
-    ) -> Self {
+    pub fn cluster_snapshot_copy_status(mut self, input: crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus) -> Self {
         self.cluster_snapshot_copy_status = ::std::option::Option::Some(input);
         self
     }
@@ -745,26 +634,18 @@ impl AwsRedshiftClusterDetailsBuilder {
         self
     }
     /// <p>Information about the destination Region and retention period for the cross-Region snapshot copy.</p>
-    pub fn get_cluster_snapshot_copy_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus> {
+    pub fn get_cluster_snapshot_copy_status(&self) -> &::std::option::Option<crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus> {
         &self.cluster_snapshot_copy_status
     }
     /// <p>The current status of the cluster.</p>
     /// <p>Valid values: <code>available</code> | <code>available, prep-for-resize</code> | <code>available, resize-cleanup</code> |<code> cancelling-resize</code> | <code>creating</code> | <code>deleting</code> | <code>final-snapshot</code> | <code>hardware-failure</code> | <code>incompatible-hsm</code> |<code> incompatible-network</code> | <code>incompatible-parameters</code> | <code>incompatible-restore</code> | <code>modifying</code> | <code>paused</code> | <code>rebooting</code> | <code>renaming</code> | <code>resizing</code> | <code>rotating-keys</code> | <code>storage-full</code> | <code>updating-hsm</code> </p>
-    pub fn cluster_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current status of the cluster.</p>
     /// <p>Valid values: <code>available</code> | <code>available, prep-for-resize</code> | <code>available, resize-cleanup</code> |<code> cancelling-resize</code> | <code>creating</code> | <code>deleting</code> | <code>final-snapshot</code> | <code>hardware-failure</code> | <code>incompatible-hsm</code> |<code> incompatible-network</code> | <code>incompatible-parameters</code> | <code>incompatible-restore</code> | <code>modifying</code> | <code>paused</code> | <code>rebooting</code> | <code>renaming</code> | <code>resizing</code> | <code>rotating-keys</code> | <code>storage-full</code> | <code>updating-hsm</code> </p>
-    pub fn set_cluster_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_status = input;
         self
     }
@@ -774,18 +655,12 @@ impl AwsRedshiftClusterDetailsBuilder {
         &self.cluster_status
     }
     /// <p>The name of the subnet group that is associated with the cluster. This parameter is valid only when the cluster is in a VPC.</p>
-    pub fn cluster_subnet_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the subnet group that is associated with the cluster. This parameter is valid only when the cluster is in a VPC.</p>
-    pub fn set_cluster_subnet_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_subnet_group_name = input;
         self
     }
@@ -794,18 +669,12 @@ impl AwsRedshiftClusterDetailsBuilder {
         &self.cluster_subnet_group_name
     }
     /// <p>The version ID of the Amazon Redshift engine that runs on the cluster.</p>
-    pub fn cluster_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version ID of the Amazon Redshift engine that runs on the cluster.</p>
-    pub fn set_cluster_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_version = input;
         self
     }
@@ -838,10 +707,7 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// To override the contents of this collection use [`set_deferred_maintenance_windows`](Self::set_deferred_maintenance_windows).
     ///
     /// <p>List of time windows during which maintenance was deferred.</p>
-    pub fn deferred_maintenance_windows(
-        mut self,
-        input: crate::types::AwsRedshiftClusterDeferredMaintenanceWindow,
-    ) -> Self {
+    pub fn deferred_maintenance_windows(mut self, input: crate::types::AwsRedshiftClusterDeferredMaintenanceWindow) -> Self {
         let mut v = self.deferred_maintenance_windows.unwrap_or_default();
         v.push(input);
         self.deferred_maintenance_windows = ::std::option::Option::Some(v);
@@ -850,9 +716,7 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// <p>List of time windows during which maintenance was deferred.</p>
     pub fn set_deferred_maintenance_windows(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsRedshiftClusterDeferredMaintenanceWindow>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterDeferredMaintenanceWindow>>,
     ) -> Self {
         self.deferred_maintenance_windows = input;
         self
@@ -860,53 +724,35 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// <p>List of time windows during which maintenance was deferred.</p>
     pub fn get_deferred_maintenance_windows(
         &self,
-    ) -> &::std::option::Option<
-        ::std::vec::Vec<crate::types::AwsRedshiftClusterDeferredMaintenanceWindow>,
-    > {
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterDeferredMaintenanceWindow>> {
         &self.deferred_maintenance_windows
     }
     /// <p>Information about the status of the Elastic IP (EIP) address.</p>
-    pub fn elastic_ip_status(
-        mut self,
-        input: crate::types::AwsRedshiftClusterElasticIpStatus,
-    ) -> Self {
+    pub fn elastic_ip_status(mut self, input: crate::types::AwsRedshiftClusterElasticIpStatus) -> Self {
         self.elastic_ip_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the status of the Elastic IP (EIP) address.</p>
-    pub fn set_elastic_ip_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsRedshiftClusterElasticIpStatus>,
-    ) -> Self {
+    pub fn set_elastic_ip_status(mut self, input: ::std::option::Option<crate::types::AwsRedshiftClusterElasticIpStatus>) -> Self {
         self.elastic_ip_status = input;
         self
     }
     /// <p>Information about the status of the Elastic IP (EIP) address.</p>
-    pub fn get_elastic_ip_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsRedshiftClusterElasticIpStatus> {
+    pub fn get_elastic_ip_status(&self) -> &::std::option::Option<crate::types::AwsRedshiftClusterElasticIpStatus> {
         &self.elastic_ip_status
     }
     /// <p>The number of nodes that you can use the elastic resize method to resize the cluster to.</p>
-    pub fn elastic_resize_number_of_node_options(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn elastic_resize_number_of_node_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elastic_resize_number_of_node_options = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of nodes that you can use the elastic resize method to resize the cluster to.</p>
-    pub fn set_elastic_resize_number_of_node_options(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_elastic_resize_number_of_node_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elastic_resize_number_of_node_options = input;
         self
     }
     /// <p>The number of nodes that you can use the elastic resize method to resize the cluster to.</p>
-    pub fn get_elastic_resize_number_of_node_options(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_elastic_resize_number_of_node_options(&self) -> &::std::option::Option<::std::string::String> {
         &self.elastic_resize_number_of_node_options
     }
     /// <p>Indicates whether the data in the cluster is encrypted at rest.</p>
@@ -929,10 +775,7 @@ impl AwsRedshiftClusterDetailsBuilder {
         self
     }
     /// <p>The connection endpoint.</p>
-    pub fn set_endpoint(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsRedshiftClusterEndpoint>,
-    ) -> Self {
+    pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::AwsRedshiftClusterEndpoint>) -> Self {
         self.endpoint = input;
         self
     }
@@ -956,53 +799,36 @@ impl AwsRedshiftClusterDetailsBuilder {
     }
     /// <p>Indicates when the next snapshot is expected to be taken. The cluster must have a valid snapshot schedule and have backups enabled.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn expected_next_snapshot_schedule_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_next_snapshot_schedule_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_next_snapshot_schedule_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the next snapshot is expected to be taken. The cluster must have a valid snapshot schedule and have backups enabled.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_expected_next_snapshot_schedule_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_next_snapshot_schedule_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_next_snapshot_schedule_time = input;
         self
     }
     /// <p>Indicates when the next snapshot is expected to be taken. The cluster must have a valid snapshot schedule and have backups enabled.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn get_expected_next_snapshot_schedule_time(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_expected_next_snapshot_schedule_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_next_snapshot_schedule_time
     }
     /// <p>The status of the next expected snapshot.</p>
     /// <p>Valid values: <code>OnTrack</code> | <code>Pending</code> </p>
-    pub fn expected_next_snapshot_schedule_time_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.expected_next_snapshot_schedule_time_status =
-            ::std::option::Option::Some(input.into());
+    pub fn expected_next_snapshot_schedule_time_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expected_next_snapshot_schedule_time_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the next expected snapshot.</p>
     /// <p>Valid values: <code>OnTrack</code> | <code>Pending</code> </p>
-    pub fn set_expected_next_snapshot_schedule_time_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_next_snapshot_schedule_time_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_next_snapshot_schedule_time_status = input;
         self
     }
     /// <p>The status of the next expected snapshot.</p>
     /// <p>Valid values: <code>OnTrack</code> | <code>Pending</code> </p>
-    pub fn get_expected_next_snapshot_schedule_time_status(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_expected_next_snapshot_schedule_time_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_next_snapshot_schedule_time_status
     }
     /// <p>Information about whether the Amazon Redshift cluster finished applying any changes to hardware security module (HSM) settings that were specified in a modify cluster command.</p>
@@ -1011,17 +837,12 @@ impl AwsRedshiftClusterDetailsBuilder {
         self
     }
     /// <p>Information about whether the Amazon Redshift cluster finished applying any changes to hardware security module (HSM) settings that were specified in a modify cluster command.</p>
-    pub fn set_hsm_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsRedshiftClusterHsmStatus>,
-    ) -> Self {
+    pub fn set_hsm_status(mut self, input: ::std::option::Option<crate::types::AwsRedshiftClusterHsmStatus>) -> Self {
         self.hsm_status = input;
         self
     }
     /// <p>Information about whether the Amazon Redshift cluster finished applying any changes to hardware security module (HSM) settings that were specified in a modify cluster command.</p>
-    pub fn get_hsm_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsRedshiftClusterHsmStatus> {
+    pub fn get_hsm_status(&self) -> &::std::option::Option<crate::types::AwsRedshiftClusterHsmStatus> {
         &self.hsm_status
     }
     /// Appends an item to `iam_roles`.
@@ -1036,17 +857,12 @@ impl AwsRedshiftClusterDetailsBuilder {
         self
     }
     /// <p>A list of IAM roles that the cluster can use to access other Amazon Web Services services.</p>
-    pub fn set_iam_roles(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterIamRole>>,
-    ) -> Self {
+    pub fn set_iam_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterIamRole>>) -> Self {
         self.iam_roles = input;
         self
     }
     /// <p>A list of IAM roles that the cluster can use to access other Amazon Web Services services.</p>
-    pub fn get_iam_roles(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterIamRole>> {
+    pub fn get_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterIamRole>> {
         &self.iam_roles
     }
     /// <p>The identifier of the KMS encryption key that is used to encrypt data in the cluster.</p>
@@ -1064,18 +880,12 @@ impl AwsRedshiftClusterDetailsBuilder {
         &self.kms_key_id
     }
     /// <p>The name of the maintenance track for the cluster.</p>
-    pub fn maintenance_track_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn maintenance_track_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_track_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the maintenance track for the cluster.</p>
-    pub fn set_maintenance_track_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_maintenance_track_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_track_name = input;
         self
     }
@@ -1095,10 +905,7 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// <p>If the value is <code>-1</code>, the snapshot is retained indefinitely.</p>
     /// <p>This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>Valid values: Either <code>-1</code> or an integer between 1 and 3,653</p>
-    pub fn set_manual_snapshot_retention_period(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.manual_snapshot_retention_period = input;
         self
     }
@@ -1110,18 +917,12 @@ impl AwsRedshiftClusterDetailsBuilder {
         &self.manual_snapshot_retention_period
     }
     /// <p>The master user name for the cluster. This name is used to connect to the database that is specified in as the value of <code>DBName</code>.</p>
-    pub fn master_username(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The master user name for the cluster. This name is used to connect to the database that is specified in as the value of <code>DBName</code>.</p>
-    pub fn set_master_username(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_username = input;
         self
     }
@@ -1131,27 +932,19 @@ impl AwsRedshiftClusterDetailsBuilder {
     }
     /// <p>Indicates the start of the next maintenance window.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn next_maintenance_window_start_time(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn next_maintenance_window_start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_maintenance_window_start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the start of the next maintenance window.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_next_maintenance_window_start_time(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_next_maintenance_window_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_maintenance_window_start_time = input;
         self
     }
     /// <p>Indicates the start of the next maintenance window.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn get_next_maintenance_window_start_time(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_next_maintenance_window_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_maintenance_window_start_time
     }
     /// <p>The node type for the nodes in the cluster.</p>
@@ -1187,49 +980,33 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// To override the contents of this collection use [`set_pending_actions`](Self::set_pending_actions).
     ///
     /// <p>A list of cluster operations that are waiting to start.</p>
-    pub fn pending_actions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pending_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pending_actions.unwrap_or_default();
         v.push(input.into());
         self.pending_actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of cluster operations that are waiting to start.</p>
-    pub fn set_pending_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_pending_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pending_actions = input;
         self
     }
     /// <p>A list of cluster operations that are waiting to start.</p>
-    pub fn get_pending_actions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_pending_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.pending_actions
     }
     /// <p>A list of changes to the cluster that are currently pending.</p>
-    pub fn pending_modified_values(
-        mut self,
-        input: crate::types::AwsRedshiftClusterPendingModifiedValues,
-    ) -> Self {
+    pub fn pending_modified_values(mut self, input: crate::types::AwsRedshiftClusterPendingModifiedValues) -> Self {
         self.pending_modified_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of changes to the cluster that are currently pending.</p>
-    pub fn set_pending_modified_values(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsRedshiftClusterPendingModifiedValues>,
-    ) -> Self {
+    pub fn set_pending_modified_values(mut self, input: ::std::option::Option<crate::types::AwsRedshiftClusterPendingModifiedValues>) -> Self {
         self.pending_modified_values = input;
         self
     }
     /// <p>A list of changes to the cluster that are currently pending.</p>
-    pub fn get_pending_modified_values(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsRedshiftClusterPendingModifiedValues> {
+    pub fn get_pending_modified_values(&self) -> &::std::option::Option<crate::types::AwsRedshiftClusterPendingModifiedValues> {
         &self.pending_modified_values
     }
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
@@ -1238,10 +1015,7 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// <day></day></i>:HH:MM</code> </p>
     /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code> </p>
     /// <p>For example, <code>sun:09:32-sun:10:02</code> </p>
-    pub fn preferred_maintenance_window(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
@@ -1251,10 +1025,7 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// <day></day></i>:HH:MM</code> </p>
     /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code> </p>
     /// <p>For example, <code>sun:09:32-sun:10:02</code> </p>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
@@ -1264,9 +1035,7 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// <day></day></i>:HH:MM</code> </p>
     /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code> </p>
     /// <p>For example, <code>sun:09:32-sun:10:02</code> </p>
-    pub fn get_preferred_maintenance_window(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
     /// <p>Whether the cluster can be accessed from a public network.</p>
@@ -1289,17 +1058,12 @@ impl AwsRedshiftClusterDetailsBuilder {
         self
     }
     /// <p>Information about the resize operation for the cluster.</p>
-    pub fn set_resize_info(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsRedshiftClusterResizeInfo>,
-    ) -> Self {
+    pub fn set_resize_info(mut self, input: ::std::option::Option<crate::types::AwsRedshiftClusterResizeInfo>) -> Self {
         self.resize_info = input;
         self
     }
     /// <p>Information about the resize operation for the cluster.</p>
-    pub fn get_resize_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsRedshiftClusterResizeInfo> {
+    pub fn get_resize_info(&self) -> &::std::option::Option<crate::types::AwsRedshiftClusterResizeInfo> {
         &self.resize_info
     }
     /// <p>Information about the status of a cluster restore action. Only applies to a cluster that was created by restoring a snapshot.</p>
@@ -1308,56 +1072,37 @@ impl AwsRedshiftClusterDetailsBuilder {
         self
     }
     /// <p>Information about the status of a cluster restore action. Only applies to a cluster that was created by restoring a snapshot.</p>
-    pub fn set_restore_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsRedshiftClusterRestoreStatus>,
-    ) -> Self {
+    pub fn set_restore_status(mut self, input: ::std::option::Option<crate::types::AwsRedshiftClusterRestoreStatus>) -> Self {
         self.restore_status = input;
         self
     }
     /// <p>Information about the status of a cluster restore action. Only applies to a cluster that was created by restoring a snapshot.</p>
-    pub fn get_restore_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsRedshiftClusterRestoreStatus> {
+    pub fn get_restore_status(&self) -> &::std::option::Option<crate::types::AwsRedshiftClusterRestoreStatus> {
         &self.restore_status
     }
     /// <p>A unique identifier for the cluster snapshot schedule.</p>
-    pub fn snapshot_schedule_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_schedule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_schedule_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the cluster snapshot schedule.</p>
-    pub fn set_snapshot_schedule_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_schedule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_schedule_identifier = input;
         self
     }
     /// <p>A unique identifier for the cluster snapshot schedule.</p>
-    pub fn get_snapshot_schedule_identifier(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_snapshot_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_schedule_identifier
     }
     /// <p>The current state of the cluster snapshot schedule.</p>
     /// <p>Valid values: <code>MODIFYING</code> | <code>ACTIVE</code> | <code>FAILED</code> </p>
-    pub fn snapshot_schedule_state(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn snapshot_schedule_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_schedule_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current state of the cluster snapshot schedule.</p>
     /// <p>Valid values: <code>MODIFYING</code> | <code>ACTIVE</code> | <code>FAILED</code> </p>
-    pub fn set_snapshot_schedule_state(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_schedule_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_schedule_state = input;
         self
     }
@@ -1385,10 +1130,7 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// To override the contents of this collection use [`set_vpc_security_groups`](Self::set_vpc_security_groups).
     ///
     /// <p>The list of VPC security groups that the cluster belongs to, if the cluster is in a VPC.</p>
-    pub fn vpc_security_groups(
-        mut self,
-        input: crate::types::AwsRedshiftClusterVpcSecurityGroup,
-    ) -> Self {
+    pub fn vpc_security_groups(mut self, input: crate::types::AwsRedshiftClusterVpcSecurityGroup) -> Self {
         let mut v = self.vpc_security_groups.unwrap_or_default();
         v.push(input);
         self.vpc_security_groups = ::std::option::Option::Some(v);
@@ -1397,18 +1139,13 @@ impl AwsRedshiftClusterDetailsBuilder {
     /// <p>The list of VPC security groups that the cluster belongs to, if the cluster is in a VPC.</p>
     pub fn set_vpc_security_groups(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AwsRedshiftClusterVpcSecurityGroup>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterVpcSecurityGroup>>,
     ) -> Self {
         self.vpc_security_groups = input;
         self
     }
     /// <p>The list of VPC security groups that the cluster belongs to, if the cluster is in a VPC.</p>
-    pub fn get_vpc_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterVpcSecurityGroup>>
-    {
+    pub fn get_vpc_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterVpcSecurityGroup>> {
         &self.vpc_security_groups
     }
     /// <p>Information about the logging status of the cluster.</p>
@@ -1417,26 +1154,19 @@ impl AwsRedshiftClusterDetailsBuilder {
         self
     }
     /// <p>Information about the logging status of the cluster.</p>
-    pub fn set_logging_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsRedshiftClusterLoggingStatus>,
-    ) -> Self {
+    pub fn set_logging_status(mut self, input: ::std::option::Option<crate::types::AwsRedshiftClusterLoggingStatus>) -> Self {
         self.logging_status = input;
         self
     }
     /// <p>Information about the logging status of the cluster.</p>
-    pub fn get_logging_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsRedshiftClusterLoggingStatus> {
+    pub fn get_logging_status(&self) -> &::std::option::Option<crate::types::AwsRedshiftClusterLoggingStatus> {
         &self.logging_status
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterDetails`](crate::types::AwsRedshiftClusterDetails).
     pub fn build(self) -> crate::types::AwsRedshiftClusterDetails {
         crate::types::AwsRedshiftClusterDetails {
             allow_version_upgrade: self.allow_version_upgrade.unwrap_or_default(),
-            automated_snapshot_retention_period: self
-                .automated_snapshot_retention_period
-                .unwrap_or_default(),
+            automated_snapshot_retention_period: self.automated_snapshot_retention_period.unwrap_or_default(),
             availability_zone: self.availability_zone,
             cluster_availability_status: self.cluster_availability_status,
             cluster_create_time: self.cluster_create_time,
@@ -1458,15 +1188,12 @@ impl AwsRedshiftClusterDetailsBuilder {
             endpoint: self.endpoint,
             enhanced_vpc_routing: self.enhanced_vpc_routing.unwrap_or_default(),
             expected_next_snapshot_schedule_time: self.expected_next_snapshot_schedule_time,
-            expected_next_snapshot_schedule_time_status: self
-                .expected_next_snapshot_schedule_time_status,
+            expected_next_snapshot_schedule_time_status: self.expected_next_snapshot_schedule_time_status,
             hsm_status: self.hsm_status,
             iam_roles: self.iam_roles,
             kms_key_id: self.kms_key_id,
             maintenance_track_name: self.maintenance_track_name,
-            manual_snapshot_retention_period: self
-                .manual_snapshot_retention_period
-                .unwrap_or_default(),
+            manual_snapshot_retention_period: self.manual_snapshot_retention_period.unwrap_or_default(),
             master_username: self.master_username,
             next_maintenance_window_start_time: self.next_maintenance_window_start_time,
             node_type: self.node_type,

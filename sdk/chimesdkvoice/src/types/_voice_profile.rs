@@ -81,18 +81,12 @@ pub struct VoiceProfileBuilder {
 }
 impl VoiceProfileBuilder {
     /// <p>The ID of the voice profile.</p>
-    pub fn voice_profile_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the voice profile.</p>
-    pub fn set_voice_profile_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_profile_id = input;
         self
     }
@@ -101,18 +95,12 @@ impl VoiceProfileBuilder {
         &self.voice_profile_id
     }
     /// <p>The ARN of the voice profile.</p>
-    pub fn voice_profile_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the voice profile.</p>
-    pub fn set_voice_profile_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_profile_arn = input;
         self
     }
@@ -121,18 +109,12 @@ impl VoiceProfileBuilder {
         &self.voice_profile_arn
     }
     /// <p>The ID of the domain that contains the voice profile.</p>
-    pub fn voice_profile_domain_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn voice_profile_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the domain that contains the voice profile.</p>
-    pub fn set_voice_profile_domain_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_voice_profile_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_profile_domain_id = input;
         self
     }
@@ -146,10 +128,7 @@ impl VoiceProfileBuilder {
         self
     }
     /// <p>The time at which the voice profile was created and enrolled.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_timestamp = input;
         self
     }
@@ -163,10 +142,7 @@ impl VoiceProfileBuilder {
         self
     }
     /// <p>The time at which the voice profile was last updated.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_timestamp = input;
         self
     }
@@ -180,10 +156,7 @@ impl VoiceProfileBuilder {
         self
     }
     /// <p>The time at which a voice profile expires unless you re-enroll the caller via the <code>UpdateVoiceProfile</code> API.</p>
-    pub fn set_expiration_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_timestamp = input;
         self
     }

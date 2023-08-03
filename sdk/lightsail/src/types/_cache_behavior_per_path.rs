@@ -55,9 +55,7 @@ impl CacheBehaviorPerPath {
 
 /// A builder for [`CacheBehaviorPerPath`](crate::types::CacheBehaviorPerPath).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CacheBehaviorPerPathBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) behavior: ::std::option::Option<crate::types::BehaviorEnum>,
@@ -114,10 +112,7 @@ impl CacheBehaviorPerPathBuilder {
     /// <li> <p> <b> <code>cache</code> </b> - This behavior caches the specified path. </p> </li>
     /// <li> <p> <b> <code>dont-cache</code> </b> - This behavior doesn't cache the specified path. </p> </li>
     /// </ul>
-    pub fn set_behavior(
-        mut self,
-        input: ::std::option::Option<crate::types::BehaviorEnum>,
-    ) -> Self {
+    pub fn set_behavior(mut self, input: ::std::option::Option<crate::types::BehaviorEnum>) -> Self {
         self.behavior = input;
         self
     }

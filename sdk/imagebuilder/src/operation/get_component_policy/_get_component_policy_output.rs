@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for GetComponentPolicyOutput {
 }
 impl GetComponentPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetComponentPolicyOutput`](crate::operation::get_component_policy::GetComponentPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::get_component_policy::builders::GetComponentPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::get_component_policy::builders::GetComponentPolicyOutputBuilder {
         crate::operation::get_component_policy::builders::GetComponentPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetComponentPolicyOutput`](crate::operation::get_component_policy::GetComponentPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetComponentPolicyOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,

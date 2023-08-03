@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for ListCoreDefinitionVersionsOutput {
 }
 impl ListCoreDefinitionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListCoreDefinitionVersionsOutput`](crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsOutput).
-    pub fn builder() -> crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsOutputBuilder {
         crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCoreDefinitionVersionsOutput`](crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCoreDefinitionVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>,
@@ -70,17 +68,12 @@ impl ListCoreDefinitionVersionsOutputBuilder {
         self
     }
     /// Information about a version.
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>>) -> Self {
         self.versions = input;
         self
     }
     /// Information about a version.
-    pub fn get_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionInformation>> {
         &self.versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -93,9 +86,7 @@ impl ListCoreDefinitionVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCoreDefinitionVersionsOutput`](crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsOutput {
+    pub fn build(self) -> crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsOutput {
         crate::operation::list_core_definition_versions::ListCoreDefinitionVersionsOutput {
             next_token: self.next_token,
             versions: self.versions,

@@ -35,9 +35,7 @@ impl ListAttendeesOutput {
 
 /// A builder for [`ListAttendeesOutput`](crate::operation::list_attendees::ListAttendeesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttendeesOutputBuilder {
     pub(crate) attendees: ::std::option::Option<::std::vec::Vec<crate::types::Attendee>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListAttendeesOutputBuilder {
         self
     }
     /// <p>The Amazon Chime SDK attendee information.</p>
-    pub fn set_attendees(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Attendee>>,
-    ) -> Self {
+    pub fn set_attendees(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attendee>>) -> Self {
         self.attendees = input;
         self
     }

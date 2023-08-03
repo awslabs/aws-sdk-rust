@@ -23,26 +23,18 @@ impl DeleteUsagePlanInput {
 
 /// A builder for [`DeleteUsagePlanInput`](crate::operation::delete_usage_plan::DeleteUsagePlanInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteUsagePlanInputBuilder {
     pub(crate) usage_plan_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUsagePlanInputBuilder {
     /// <p>The Id of the to-be-deleted usage plan.</p>
-    pub fn usage_plan_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Id of the to-be-deleted usage plan.</p>
-    pub fn set_usage_plan_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_usage_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.usage_plan_id = input;
         self
     }
@@ -53,10 +45,7 @@ impl DeleteUsagePlanInputBuilder {
     /// Consumes the builder and constructs a [`DeleteUsagePlanInput`](crate::operation::delete_usage_plan::DeleteUsagePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_usage_plan::DeleteUsagePlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_usage_plan::DeleteUsagePlanInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_usage_plan::DeleteUsagePlanInput {
             usage_plan_id: self.usage_plan_id,
         })

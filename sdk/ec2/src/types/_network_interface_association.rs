@@ -67,9 +67,7 @@ impl NetworkInterfaceAssociation {
 
 /// A builder for [`NetworkInterfaceAssociation`](crate::types::NetworkInterfaceAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkInterfaceAssociationBuilder {
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
@@ -81,18 +79,12 @@ pub struct NetworkInterfaceAssociationBuilder {
 }
 impl NetworkInterfaceAssociationBuilder {
     /// <p>The allocation ID.</p>
-    pub fn allocation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The allocation ID.</p>
-    pub fn set_allocation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allocation_id = input;
         self
     }
@@ -101,18 +93,12 @@ impl NetworkInterfaceAssociationBuilder {
         &self.allocation_id
     }
     /// <p>The association ID.</p>
-    pub fn association_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association ID.</p>
-    pub fn set_association_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association_id = input;
         self
     }
@@ -135,18 +121,12 @@ impl NetworkInterfaceAssociationBuilder {
         &self.ip_owner_id
     }
     /// <p>The public DNS name.</p>
-    pub fn public_dns_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn public_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public DNS name.</p>
-    pub fn set_public_dns_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_public_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_dns_name = input;
         self
     }
@@ -169,18 +149,12 @@ impl NetworkInterfaceAssociationBuilder {
         &self.public_ip
     }
     /// <p>The customer-owned IP address associated with the network interface.</p>
-    pub fn customer_owned_ip(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_owned_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_owned_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-owned IP address associated with the network interface.</p>
-    pub fn set_customer_owned_ip(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_customer_owned_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_owned_ip = input;
         self
     }

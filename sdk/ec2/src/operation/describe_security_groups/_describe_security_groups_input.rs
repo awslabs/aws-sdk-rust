@@ -120,18 +120,14 @@ impl DescribeSecurityGroupsInput {
 }
 impl DescribeSecurityGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityGroupsInput`](crate::operation::describe_security_groups::DescribeSecurityGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_security_groups::builders::DescribeSecurityGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_security_groups::builders::DescribeSecurityGroupsInputBuilder {
         crate::operation::describe_security_groups::builders::DescribeSecurityGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSecurityGroupsInput`](crate::operation::describe_security_groups::DescribeSecurityGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSecurityGroupsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -219,10 +215,7 @@ impl DescribeSecurityGroupsInputBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC specified when the security group was created.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -277,10 +270,7 @@ impl DescribeSecurityGroupsInputBuilder {
     }
     /// <p>The IDs of the security groups. Required for security groups in a nondefault VPC.</p>
     /// <p>Default: Describes all of your security groups.</p>
-    pub fn set_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.group_ids = input;
         self
     }
@@ -303,18 +293,13 @@ impl DescribeSecurityGroupsInputBuilder {
     }
     /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
-    pub fn set_group_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.group_names = input;
         self
     }
     /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
-    pub fn get_group_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.group_names
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -362,19 +347,15 @@ impl DescribeSecurityGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSecurityGroupsInput`](crate::operation::describe_security_groups::DescribeSecurityGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_security_groups::DescribeSecurityGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_security_groups::DescribeSecurityGroupsInput {
-                filters: self.filters,
-                group_ids: self.group_ids,
-                group_names: self.group_names,
-                dry_run: self.dry_run,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_security_groups::DescribeSecurityGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_security_groups::DescribeSecurityGroupsInput {
+            filters: self.filters,
+            group_ids: self.group_ids,
+            group_names: self.group_names,
+            dry_run: self.dry_run,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

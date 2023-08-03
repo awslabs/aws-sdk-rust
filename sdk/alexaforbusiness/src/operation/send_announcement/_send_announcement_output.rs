@@ -21,35 +21,26 @@ impl ::aws_http::request_id::RequestId for SendAnnouncementOutput {
 }
 impl SendAnnouncementOutput {
     /// Creates a new builder-style object to manufacture [`SendAnnouncementOutput`](crate::operation::send_announcement::SendAnnouncementOutput).
-    pub fn builder() -> crate::operation::send_announcement::builders::SendAnnouncementOutputBuilder
-    {
+    pub fn builder() -> crate::operation::send_announcement::builders::SendAnnouncementOutputBuilder {
         crate::operation::send_announcement::builders::SendAnnouncementOutputBuilder::default()
     }
 }
 
 /// A builder for [`SendAnnouncementOutput`](crate::operation::send_announcement::SendAnnouncementOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendAnnouncementOutputBuilder {
     pub(crate) announcement_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SendAnnouncementOutputBuilder {
     /// <p>The identifier of the announcement.</p>
-    pub fn announcement_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn announcement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.announcement_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the announcement.</p>
-    pub fn set_announcement_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_announcement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.announcement_arn = input;
         self
     }

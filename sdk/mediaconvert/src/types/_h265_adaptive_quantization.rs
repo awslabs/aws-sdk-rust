@@ -43,13 +43,7 @@
 /// When you set Adaptive Quantization to Auto, or leave blank, MediaConvert automatically applies quantization to improve the video quality of your output. Set Adaptive Quantization to Low, Medium, High, Higher, or Max to manually control the strength of the quantization filter. When you do, you can specify a value for Spatial Adaptive Quantization, Temporal Adaptive Quantization, and Flicker Adaptive Quantization, to further control the quantization filter. Set Adaptive Quantization to Off to apply no quantization to your output.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum H265AdaptiveQuantization {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,9 +73,7 @@ impl ::std::convert::From<&str> for H265AdaptiveQuantization {
             "MAX" => H265AdaptiveQuantization::Max,
             "MEDIUM" => H265AdaptiveQuantization::Medium,
             "OFF" => H265AdaptiveQuantization::Off,
-            other => H265AdaptiveQuantization::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => H265AdaptiveQuantization::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

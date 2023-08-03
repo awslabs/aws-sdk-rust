@@ -30,9 +30,7 @@ impl DateRange {
 
 /// A builder for [`DateRange`](crate::types::DateRange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DateRangeBuilder {
     pub(crate) value: ::std::option::Option<i32>,
     pub(crate) unit: ::std::option::Option<crate::types::DateRangeUnit>,

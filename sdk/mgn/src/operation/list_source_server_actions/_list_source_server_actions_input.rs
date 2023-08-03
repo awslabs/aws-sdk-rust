@@ -25,9 +25,7 @@ impl ListSourceServerActionsInput {
         self.source_server_id.as_deref()
     }
     /// <p>Filters to apply when listing source server post migration custom actions.</p>
-    pub fn filters(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SourceServerActionsRequestFilters> {
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::SourceServerActionsRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>Maximum amount of items to return when listing source server post migration custom actions.</p>
@@ -45,18 +43,14 @@ impl ListSourceServerActionsInput {
 }
 impl ListSourceServerActionsInput {
     /// Creates a new builder-style object to manufacture [`ListSourceServerActionsInput`](crate::operation::list_source_server_actions::ListSourceServerActionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_source_server_actions::builders::ListSourceServerActionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_source_server_actions::builders::ListSourceServerActionsInputBuilder {
         crate::operation::list_source_server_actions::builders::ListSourceServerActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSourceServerActionsInput`](crate::operation::list_source_server_actions::ListSourceServerActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSourceServerActionsInputBuilder {
     pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::SourceServerActionsRequestFilters>,
@@ -66,18 +60,12 @@ pub struct ListSourceServerActionsInputBuilder {
 }
 impl ListSourceServerActionsInputBuilder {
     /// <p>Source server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_server_id = input;
         self
     }
@@ -91,17 +79,12 @@ impl ListSourceServerActionsInputBuilder {
         self
     }
     /// <p>Filters to apply when listing source server post migration custom actions.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::SourceServerActionsRequestFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::SourceServerActionsRequestFilters>) -> Self {
         self.filters = input;
         self
     }
     /// <p>Filters to apply when listing source server post migration custom actions.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::SourceServerActionsRequestFilters> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::SourceServerActionsRequestFilters> {
         &self.filters
     }
     /// <p>Maximum amount of items to return when listing source server post migration custom actions.</p>
@@ -153,14 +136,12 @@ impl ListSourceServerActionsInputBuilder {
         crate::operation::list_source_server_actions::ListSourceServerActionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_source_server_actions::ListSourceServerActionsInput {
-                source_server_id: self.source_server_id,
-                filters: self.filters,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-                account_id: self.account_id,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_source_server_actions::ListSourceServerActionsInput {
+            source_server_id: self.source_server_id,
+            filters: self.filters,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+            account_id: self.account_id,
+        })
     }
 }

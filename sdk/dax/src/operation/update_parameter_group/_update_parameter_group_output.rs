@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateParameterGroupOutput {
 }
 impl UpdateParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateParameterGroupOutput`](crate::operation::update_parameter_group::UpdateParameterGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_parameter_group::builders::UpdateParameterGroupOutputBuilder {
+    pub fn builder() -> crate::operation::update_parameter_group::builders::UpdateParameterGroupOutputBuilder {
         crate::operation::update_parameter_group::builders::UpdateParameterGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateParameterGroupOutput`](crate::operation::update_parameter_group::UpdateParameterGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateParameterGroupOutputBuilder {
     pub(crate) parameter_group: ::std::option::Option<crate::types::ParameterGroup>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateParameterGroupOutputBuilder {
         self
     }
     /// <p>The parameter group that has been modified.</p>
-    pub fn set_parameter_group(
-        mut self,
-        input: ::std::option::Option<crate::types::ParameterGroup>,
-    ) -> Self {
+    pub fn set_parameter_group(mut self, input: ::std::option::Option<crate::types::ParameterGroup>) -> Self {
         self.parameter_group = input;
         self
     }

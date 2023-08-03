@@ -44,47 +44,34 @@ impl ActivateNetworkSiteInput {
     /// </ul>
     /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
     /// <p>If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is set to 60-days.</p>
-    pub fn commitment_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CommitmentConfiguration> {
+    pub fn commitment_configuration(&self) -> ::std::option::Option<&crate::types::CommitmentConfiguration> {
         self.commitment_configuration.as_ref()
     }
 }
 impl ActivateNetworkSiteInput {
     /// Creates a new builder-style object to manufacture [`ActivateNetworkSiteInput`](crate::operation::activate_network_site::ActivateNetworkSiteInput).
-    pub fn builder(
-    ) -> crate::operation::activate_network_site::builders::ActivateNetworkSiteInputBuilder {
-        crate::operation::activate_network_site::builders::ActivateNetworkSiteInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::activate_network_site::builders::ActivateNetworkSiteInputBuilder {
+        crate::operation::activate_network_site::builders::ActivateNetworkSiteInputBuilder::default()
     }
 }
 
 /// A builder for [`ActivateNetworkSiteInput`](crate::operation::activate_network_site::ActivateNetworkSiteInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActivateNetworkSiteInputBuilder {
     pub(crate) network_site_arn: ::std::option::Option<::std::string::String>,
     pub(crate) shipping_address: ::std::option::Option<crate::types::Address>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) commitment_configuration:
-        ::std::option::Option<crate::types::CommitmentConfiguration>,
+    pub(crate) commitment_configuration: ::std::option::Option<crate::types::CommitmentConfiguration>,
 }
 impl ActivateNetworkSiteInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn set_network_site_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_site_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_site_arn = input;
         self
     }
@@ -98,10 +85,7 @@ impl ActivateNetworkSiteInputBuilder {
         self
     }
     /// <p>The shipping address of the network site.</p>
-    pub fn set_shipping_address(
-        mut self,
-        input: ::std::option::Option<crate::types::Address>,
-    ) -> Self {
+    pub fn set_shipping_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.shipping_address = input;
         self
     }
@@ -131,10 +115,7 @@ impl ActivateNetworkSiteInputBuilder {
     /// </ul>
     /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
     /// <p>If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is set to 60-days.</p>
-    pub fn commitment_configuration(
-        mut self,
-        input: crate::types::CommitmentConfiguration,
-    ) -> Self {
+    pub fn commitment_configuration(mut self, input: crate::types::CommitmentConfiguration) -> Self {
         self.commitment_configuration = ::std::option::Option::Some(input);
         self
     }
@@ -146,10 +127,7 @@ impl ActivateNetworkSiteInputBuilder {
     /// </ul>
     /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
     /// <p>If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is set to 60-days.</p>
-    pub fn set_commitment_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::CommitmentConfiguration>,
-    ) -> Self {
+    pub fn set_commitment_configuration(mut self, input: ::std::option::Option<crate::types::CommitmentConfiguration>) -> Self {
         self.commitment_configuration = input;
         self
     }
@@ -161,25 +139,19 @@ impl ActivateNetworkSiteInputBuilder {
     /// </ul>
     /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
     /// <p>If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is set to 60-days.</p>
-    pub fn get_commitment_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::CommitmentConfiguration> {
+    pub fn get_commitment_configuration(&self) -> &::std::option::Option<crate::types::CommitmentConfiguration> {
         &self.commitment_configuration
     }
     /// Consumes the builder and constructs a [`ActivateNetworkSiteInput`](crate::operation::activate_network_site::ActivateNetworkSiteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::activate_network_site::ActivateNetworkSiteInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::activate_network_site::ActivateNetworkSiteInput {
-                network_site_arn: self.network_site_arn,
-                shipping_address: self.shipping_address,
-                client_token: self.client_token,
-                commitment_configuration: self.commitment_configuration,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::activate_network_site::ActivateNetworkSiteInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::activate_network_site::ActivateNetworkSiteInput {
+            network_site_arn: self.network_site_arn,
+            shipping_address: self.shipping_address,
+            client_token: self.client_token,
+            commitment_configuration: self.commitment_configuration,
+        })
     }
 }

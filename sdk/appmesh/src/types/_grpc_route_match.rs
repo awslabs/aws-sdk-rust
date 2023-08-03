@@ -44,9 +44,7 @@ impl GrpcRouteMatch {
 
 /// A builder for [`GrpcRouteMatch`](crate::types::GrpcRouteMatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GrpcRouteMatchBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) method_name: ::std::option::Option<::std::string::String>,
@@ -94,17 +92,12 @@ impl GrpcRouteMatchBuilder {
         self
     }
     /// <p>An object that represents the data to match from the request.</p>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GrpcRouteMetadata>>,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GrpcRouteMetadata>>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>An object that represents the data to match from the request.</p>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GrpcRouteMetadata>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GrpcRouteMetadata>> {
         &self.metadata
     }
     /// <p>The port number to match on.</p>

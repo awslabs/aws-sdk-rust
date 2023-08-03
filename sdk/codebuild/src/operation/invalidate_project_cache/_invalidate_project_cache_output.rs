@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for InvalidateProjectCacheOutput {
 }
 impl InvalidateProjectCacheOutput {
     /// Creates a new builder-style object to manufacture [`InvalidateProjectCacheOutput`](crate::operation::invalidate_project_cache::InvalidateProjectCacheOutput).
-    pub fn builder(
-    ) -> crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheOutputBuilder
-    {
+    pub fn builder() -> crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheOutputBuilder {
         crate::operation::invalidate_project_cache::builders::InvalidateProjectCacheOutputBuilder::default()
     }
 }
 
 /// A builder for [`InvalidateProjectCacheOutput`](crate::operation::invalidate_project_cache::InvalidateProjectCacheOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidateProjectCacheOutputBuilder {
     _request_id: Option<String>,
 }

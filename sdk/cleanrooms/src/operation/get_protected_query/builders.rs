@@ -10,10 +10,7 @@ impl GetProtectedQueryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_protected_query::GetProtectedQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_protected_query::GetProtectedQueryError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_protected_query::GetProtectedQueryError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_protected_query();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetProtectedQueryFluentBuilder {
         }
     }
     /// Access the GetProtectedQuery as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_protected_query::builders::GetProtectedQueryInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_protected_query::builders::GetProtectedQueryInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetProtectedQueryFluentBuilder {
             crate::operation::get_protected_query::GetProtectedQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_protected_query::GetProtectedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_protected_query::GetProtectedQueryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetProtectedQueryFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetProtectedQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_protected_query::GetProtectedQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_protected_query::GetProtectedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_protected_query::GetProtectedQueryError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetProtectedQueryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_protected_query::GetProtectedQueryOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_protected_query::GetProtectedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_protected_query::GetProtectedQueryError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl GetProtectedQueryFluentBuilder {
             crate::operation::get_protected_query::GetProtectedQuery,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_protected_query::GetProtectedQueryError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_protected_query::GetProtectedQueryError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier for a membership in a protected query instance.</p>
-    pub fn membership_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.membership_identifier(input.into());
         self
     }
     /// <p>The identifier for a membership in a protected query instance.</p>
-    pub fn set_membership_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }
@@ -143,18 +121,12 @@ impl GetProtectedQueryFluentBuilder {
         self.inner.get_membership_identifier()
     }
     /// <p>The identifier for a protected query instance.</p>
-    pub fn protected_query_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn protected_query_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protected_query_identifier(input.into());
         self
     }
     /// <p>The identifier for a protected query instance.</p>
-    pub fn set_protected_query_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_protected_query_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protected_query_identifier(input);
         self
     }

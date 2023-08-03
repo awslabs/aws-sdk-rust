@@ -8,10 +8,7 @@ impl super::Client {
     ///   - [`baseline_id(Option<String>)`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput::baseline_id): <p>The ID of the default patch baseline.</p>
     ///   - [`operating_system(Option<OperatingSystem>)`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput::operating_system): <p>The operating system for the returned patch baseline. </p>
     /// - On failure, responds with [`SdkError<GetDefaultPatchBaselineError>`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineError)
-    pub fn get_default_patch_baseline(
-        &self,
-    ) -> crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineFluentBuilder
-    {
+    pub fn get_default_patch_baseline(&self) -> crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineFluentBuilder {
         crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineFluentBuilder::new(self.handle.clone())
     }
 }

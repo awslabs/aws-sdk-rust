@@ -26,7 +26,7 @@ impl DescribeSnapshotTierStatusInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSnapshotTierStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusInputBuilder,
+    inner: crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusInputBuilder,
 }
 impl DescribeSnapshotTierStatusFluentBuilder {
     /// Creates a new `DescribeSnapshotTierStatus`.
@@ -37,7 +37,7 @@ impl DescribeSnapshotTierStatusFluentBuilder {
         }
     }
     /// Access the DescribeSnapshotTierStatus as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeSnapshotTierStatusFluentBuilder {
             crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeSnapshotTierStatusFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeSnapshotTierStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeSnapshotTierStatusFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeSnapshotTierStatusFluentBuilder {
             crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatus,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_snapshot_tier_status::paginator::DescribeSnapshotTierStatusPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_snapshot_tier_status::paginator::DescribeSnapshotTierStatusPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_snapshot_tier_status::paginator::DescribeSnapshotTierStatusPaginator {
         crate::operation::describe_snapshot_tier_status::paginator::DescribeSnapshotTierStatusPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -146,10 +135,7 @@ impl DescribeSnapshotTierStatusFluentBuilder {
     /// <li> <p> <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
     /// <li> <p> <code>last-tiering-operation</code> - The state of the last archive or restore action. (<code>archival-in-progress</code> | <code>archival-completed</code> | <code>archival-failed</code> | <code>permanent-restore-in-progress</code> | <code>permanent-restore-completed</code> | <code>permanent-restore-failed</code> | <code>temporary-restore-in-progress</code> | <code>temporary-restore-completed</code> | <code>temporary-restore-failed</code>)</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

@@ -10,10 +10,7 @@ impl AnalyzeDocumentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::analyze_document::AnalyzeDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::analyze_document::AnalyzeDocumentError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::analyze_document::AnalyzeDocumentError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.analyze_document();
         fluent_builder.inner = self;
@@ -51,9 +48,7 @@ impl AnalyzeDocumentFluentBuilder {
         }
     }
     /// Access the AnalyzeDocument as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::analyze_document::builders::AnalyzeDocumentInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::analyze_document::builders::AnalyzeDocumentInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -65,9 +60,7 @@ impl AnalyzeDocumentFluentBuilder {
             crate::operation::analyze_document::AnalyzeDocument,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::analyze_document::AnalyzeDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::analyze_document::AnalyzeDocumentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -77,10 +70,7 @@ impl AnalyzeDocumentFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -89,9 +79,7 @@ impl AnalyzeDocumentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::analyze_document::AnalyzeDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::analyze_document::AnalyzeDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::analyze_document::AnalyzeDocumentError>,
     > {
         let op = self
             .inner
@@ -114,9 +102,7 @@ impl AnalyzeDocumentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::analyze_document::AnalyzeDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::analyze_document::AnalyzeDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::analyze_document::AnalyzeDocumentError>,
     > {
         self.send_middleware().await
     }
@@ -130,9 +116,7 @@ impl AnalyzeDocumentFluentBuilder {
             crate::operation::analyze_document::AnalyzeDocument,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::analyze_document::AnalyzeDocumentError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::analyze_document::AnalyzeDocumentError>,
     > {
         self.customize_middleware().await
     }
@@ -163,17 +147,12 @@ impl AnalyzeDocumentFluentBuilder {
         self
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. To perform both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect signatures within form data and table data, add SIGNATURES to either TABLES or FORMS. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    pub fn set_feature_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
-    ) -> Self {
+    pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>) -> Self {
         self.inner = self.inner.set_feature_types(input);
         self
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. To perform both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect signatures within form data and table data, add SIGNATURES to either TABLES or FORMS. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    pub fn get_feature_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
+    pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
         self.inner.get_feature_types()
     }
     /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
@@ -182,10 +161,7 @@ impl AnalyzeDocumentFluentBuilder {
         self
     }
     /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
-    pub fn set_human_loop_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HumanLoopConfig>,
-    ) -> Self {
+    pub fn set_human_loop_config(mut self, input: ::std::option::Option<crate::types::HumanLoopConfig>) -> Self {
         self.inner = self.inner.set_human_loop_config(input);
         self
     }
@@ -199,10 +175,7 @@ impl AnalyzeDocumentFluentBuilder {
         self
     }
     /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
-    pub fn set_queries_config(
-        mut self,
-        input: ::std::option::Option<crate::types::QueriesConfig>,
-    ) -> Self {
+    pub fn set_queries_config(mut self, input: ::std::option::Option<crate::types::QueriesConfig>) -> Self {
         self.inner = self.inner.set_queries_config(input);
         self
     }

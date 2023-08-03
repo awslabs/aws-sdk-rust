@@ -50,18 +50,14 @@ impl ListRecommendedIntentsInput {
 }
 impl ListRecommendedIntentsInput {
     /// Creates a new builder-style object to manufacture [`ListRecommendedIntentsInput`](crate::operation::list_recommended_intents::ListRecommendedIntentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_recommended_intents::builders::ListRecommendedIntentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_recommended_intents::builders::ListRecommendedIntentsInputBuilder {
         crate::operation::list_recommended_intents::builders::ListRecommendedIntentsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecommendedIntentsInput`](crate::operation::list_recommended_intents::ListRecommendedIntentsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecommendedIntentsInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
@@ -114,18 +110,12 @@ impl ListRecommendedIntentsInputBuilder {
         &self.locale_id
     }
     /// <p>The identifier of the bot recommendation that contains the recommended intents.</p>
-    pub fn bot_recommendation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the bot recommendation that contains the recommended intents.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_recommendation_id = input;
         self
     }
@@ -164,19 +154,15 @@ impl ListRecommendedIntentsInputBuilder {
     /// Consumes the builder and constructs a [`ListRecommendedIntentsInput`](crate::operation::list_recommended_intents::ListRecommendedIntentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_recommended_intents::ListRecommendedIntentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_recommended_intents::ListRecommendedIntentsInput {
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-                bot_recommendation_id: self.bot_recommendation_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_recommended_intents::ListRecommendedIntentsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_recommended_intents::ListRecommendedIntentsInput {
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+            bot_recommendation_id: self.bot_recommendation_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

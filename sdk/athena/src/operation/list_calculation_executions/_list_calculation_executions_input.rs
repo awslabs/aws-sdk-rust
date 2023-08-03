@@ -52,16 +52,14 @@ impl ListCalculationExecutionsInput {
 }
 impl ListCalculationExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListCalculationExecutionsInput`](crate::operation::list_calculation_executions::ListCalculationExecutionsInput).
-    pub fn builder() -> crate::operation::list_calculation_executions::builders::ListCalculationExecutionsInputBuilder{
+    pub fn builder() -> crate::operation::list_calculation_executions::builders::ListCalculationExecutionsInputBuilder {
         crate::operation::list_calculation_executions::builders::ListCalculationExecutionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListCalculationExecutionsInput`](crate::operation::list_calculation_executions::ListCalculationExecutionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCalculationExecutionsInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) state_filter: ::std::option::Option<crate::types::CalculationExecutionState>,
@@ -105,10 +103,7 @@ impl ListCalculationExecutionsInputBuilder {
     /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
     /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
     /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
-    pub fn set_state_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::CalculationExecutionState>,
-    ) -> Self {
+    pub fn set_state_filter(mut self, input: ::std::option::Option<crate::types::CalculationExecutionState>) -> Self {
         self.state_filter = input;
         self
     }
@@ -121,9 +116,7 @@ impl ListCalculationExecutionsInputBuilder {
     /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
     /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
     /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
-    pub fn get_state_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::CalculationExecutionState> {
+    pub fn get_state_filter(&self) -> &::std::option::Option<crate::types::CalculationExecutionState> {
         &self.state_filter
     }
     /// <p>The maximum number of calculation executions to return.</p>
@@ -161,13 +154,11 @@ impl ListCalculationExecutionsInputBuilder {
         crate::operation::list_calculation_executions::ListCalculationExecutionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_calculation_executions::ListCalculationExecutionsInput {
-                session_id: self.session_id,
-                state_filter: self.state_filter,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_calculation_executions::ListCalculationExecutionsInput {
+            session_id: self.session_id,
+            state_filter: self.state_filter,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

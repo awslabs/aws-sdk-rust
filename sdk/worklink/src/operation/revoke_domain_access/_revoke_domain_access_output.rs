@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for RevokeDomainAccessOutput {
 }
 impl RevokeDomainAccessOutput {
     /// Creates a new builder-style object to manufacture [`RevokeDomainAccessOutput`](crate::operation::revoke_domain_access::RevokeDomainAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::revoke_domain_access::builders::RevokeDomainAccessOutputBuilder {
+    pub fn builder() -> crate::operation::revoke_domain_access::builders::RevokeDomainAccessOutputBuilder {
         crate::operation::revoke_domain_access::builders::RevokeDomainAccessOutputBuilder::default()
     }
 }
 
 /// A builder for [`RevokeDomainAccessOutput`](crate::operation::revoke_domain_access::RevokeDomainAccessOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RevokeDomainAccessOutputBuilder {
     _request_id: Option<String>,
 }

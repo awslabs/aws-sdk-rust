@@ -28,18 +28,14 @@ impl BatchGetDevicePositionInput {
 }
 impl BatchGetDevicePositionInput {
     /// Creates a new builder-style object to manufacture [`BatchGetDevicePositionInput`](crate::operation::batch_get_device_position::BatchGetDevicePositionInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_device_position::builders::BatchGetDevicePositionInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_device_position::builders::BatchGetDevicePositionInputBuilder {
         crate::operation::batch_get_device_position::builders::BatchGetDevicePositionInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetDevicePositionInput`](crate::operation::batch_get_device_position::BatchGetDevicePositionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDevicePositionInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -77,10 +73,7 @@ impl BatchGetDevicePositionInputBuilder {
     /// <ul>
     /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
     /// </ul>
-    pub fn set_device_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_device_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.device_ids = input;
         self
     }
@@ -98,11 +91,9 @@ impl BatchGetDevicePositionInputBuilder {
         crate::operation::batch_get_device_position::BatchGetDevicePositionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_device_position::BatchGetDevicePositionInput {
-                tracker_name: self.tracker_name,
-                device_ids: self.device_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::batch_get_device_position::BatchGetDevicePositionInput {
+            tracker_name: self.tracker_name,
+            device_ids: self.device_ids,
+        })
     }
 }

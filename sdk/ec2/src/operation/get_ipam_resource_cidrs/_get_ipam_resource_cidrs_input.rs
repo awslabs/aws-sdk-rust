@@ -78,17 +78,14 @@ impl GetIpamResourceCidrsInput {
 }
 impl GetIpamResourceCidrsInput {
     /// Creates a new builder-style object to manufacture [`GetIpamResourceCidrsInput`](crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsInput).
-    pub fn builder(
-    ) -> crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsInputBuilder {
+    pub fn builder() -> crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsInputBuilder {
         crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsInputBuilder::default()
     }
 }
 
 /// A builder for [`GetIpamResourceCidrsInput`](crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpamResourceCidrsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -128,10 +125,7 @@ impl GetIpamResourceCidrsInputBuilder {
         self
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -168,18 +162,12 @@ impl GetIpamResourceCidrsInputBuilder {
         &self.next_token
     }
     /// <p>The ID of the scope that the resource is in.</p>
-    pub fn ipam_scope_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_scope_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the scope that the resource is in.</p>
-    pub fn set_ipam_scope_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_scope_id = input;
         self
     }
@@ -221,10 +209,7 @@ impl GetIpamResourceCidrsInputBuilder {
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpamResourceType>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::IpamResourceType>) -> Self {
         self.resource_type = input;
         self
     }
@@ -238,10 +223,7 @@ impl GetIpamResourceCidrsInputBuilder {
         self
     }
     /// <p>The resource tag.</p>
-    pub fn set_resource_tag(
-        mut self,
-        input: ::std::option::Option<crate::types::RequestIpamResourceTag>,
-    ) -> Self {
+    pub fn set_resource_tag(mut self, input: ::std::option::Option<crate::types::RequestIpamResourceTag>) -> Self {
         self.resource_tag = input;
         self
     }
@@ -250,18 +232,12 @@ impl GetIpamResourceCidrsInputBuilder {
         &self.resource_tag
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
-    pub fn resource_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
-    pub fn set_resource_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_owner = input;
         self
     }
@@ -272,23 +248,19 @@ impl GetIpamResourceCidrsInputBuilder {
     /// Consumes the builder and constructs a [`GetIpamResourceCidrsInput`](crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsInput {
-                dry_run: self.dry_run,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                ipam_scope_id: self.ipam_scope_id,
-                ipam_pool_id: self.ipam_pool_id,
-                resource_id: self.resource_id,
-                resource_type: self.resource_type,
-                resource_tag: self.resource_tag,
-                resource_owner: self.resource_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsInput {
+            dry_run: self.dry_run,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            ipam_scope_id: self.ipam_scope_id,
+            ipam_pool_id: self.ipam_pool_id,
+            resource_id: self.resource_id,
+            resource_type: self.resource_type,
+            resource_tag: self.resource_tag,
+            resource_owner: self.resource_owner,
+        })
     }
 }

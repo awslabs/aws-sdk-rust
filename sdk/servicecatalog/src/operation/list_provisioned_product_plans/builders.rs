@@ -26,7 +26,7 @@ impl ListProvisionedProductPlansInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListProvisionedProductPlansFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_provisioned_product_plans::builders::ListProvisionedProductPlansInputBuilder,
+    inner: crate::operation::list_provisioned_product_plans::builders::ListProvisionedProductPlansInputBuilder,
 }
 impl ListProvisionedProductPlansFluentBuilder {
     /// Creates a new `ListProvisionedProductPlans`.
@@ -37,7 +37,7 @@ impl ListProvisionedProductPlansFluentBuilder {
         }
     }
     /// Access the ListProvisionedProductPlans as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_provisioned_product_plans::builders::ListProvisionedProductPlansInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_provisioned_product_plans::builders::ListProvisionedProductPlansInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListProvisionedProductPlansFluentBuilder {
             crate::operation::list_provisioned_product_plans::ListProvisionedProductPlans,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListProvisionedProductPlansFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListProvisionedProductPlansFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListProvisionedProductPlansFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl ListProvisionedProductPlansFluentBuilder {
             crate::operation::list_provisioned_product_plans::ListProvisionedProductPlans,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansError>,
     > {
         self.customize_middleware().await
     }
@@ -125,10 +114,7 @@ impl ListProvisionedProductPlansFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -137,10 +123,7 @@ impl ListProvisionedProductPlansFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
@@ -153,18 +136,12 @@ impl ListProvisionedProductPlansFluentBuilder {
         self.inner.get_accept_language()
     }
     /// <p>The product identifier.</p>
-    pub fn provision_product_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provision_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provision_product_id(input.into());
         self
     }
     /// <p>The product identifier.</p>
-    pub fn set_provision_product_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_provision_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provision_product_id(input);
         self
     }
@@ -206,17 +183,12 @@ impl ListProvisionedProductPlansFluentBuilder {
         self
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    pub fn set_access_level_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::AccessLevelFilter>,
-    ) -> Self {
+    pub fn set_access_level_filter(mut self, input: ::std::option::Option<crate::types::AccessLevelFilter>) -> Self {
         self.inner = self.inner.set_access_level_filter(input);
         self
     }
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    pub fn get_access_level_filter(
-        &self,
-    ) -> &::std::option::Option<crate::types::AccessLevelFilter> {
+    pub fn get_access_level_filter(&self) -> &::std::option::Option<crate::types::AccessLevelFilter> {
         self.inner.get_access_level_filter()
     }
 }

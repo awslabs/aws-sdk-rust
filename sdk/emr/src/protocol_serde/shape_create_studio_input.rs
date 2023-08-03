@@ -31,9 +31,7 @@ pub fn ser_create_studio_input(
         object.key("UserRole").string(var_9.as_str());
     }
     if let Some(var_10) = &input.workspace_security_group_id {
-        object
-            .key("WorkspaceSecurityGroupId")
-            .string(var_10.as_str());
+        object.key("WorkspaceSecurityGroupId").string(var_10.as_str());
     }
     if let Some(var_11) = &input.engine_security_group_id {
         object.key("EngineSecurityGroupId").string(var_11.as_str());
@@ -45,9 +43,7 @@ pub fn ser_create_studio_input(
         object.key("IdpAuthUrl").string(var_13.as_str());
     }
     if let Some(var_14) = &input.idp_relay_state_parameter_name {
-        object
-            .key("IdpRelayStateParameterName")
-            .string(var_14.as_str());
+        object.key("IdpRelayStateParameterName").string(var_14.as_str());
     }
     if let Some(var_15) = &input.tags {
         let mut array_16 = object.key("Tags").start_array();

@@ -35,67 +35,47 @@ impl ::aws_http::request_id::RequestId for UpdateGroupCertificateConfigurationOu
 }
 impl UpdateGroupCertificateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupCertificateConfigurationOutput`](crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationOutput).
-    pub fn builder() -> crate::operation::update_group_certificate_configuration::builders::UpdateGroupCertificateConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_group_certificate_configuration::builders::UpdateGroupCertificateConfigurationOutputBuilder {
         crate::operation::update_group_certificate_configuration::builders::UpdateGroupCertificateConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateGroupCertificateConfigurationOutput`](crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGroupCertificateConfigurationOutputBuilder {
-    pub(crate) certificate_authority_expiry_in_milliseconds:
-        ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_authority_expiry_in_milliseconds: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_expiry_in_milliseconds: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateGroupCertificateConfigurationOutputBuilder {
     /// The amount of time remaining before the certificate authority expires, in milliseconds.
-    pub fn certificate_authority_expiry_in_milliseconds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.certificate_authority_expiry_in_milliseconds =
-            ::std::option::Option::Some(input.into());
+    pub fn certificate_authority_expiry_in_milliseconds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.certificate_authority_expiry_in_milliseconds = ::std::option::Option::Some(input.into());
         self
     }
     /// The amount of time remaining before the certificate authority expires, in milliseconds.
-    pub fn set_certificate_authority_expiry_in_milliseconds(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_authority_expiry_in_milliseconds(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_authority_expiry_in_milliseconds = input;
         self
     }
     /// The amount of time remaining before the certificate authority expires, in milliseconds.
-    pub fn get_certificate_authority_expiry_in_milliseconds(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_certificate_authority_expiry_in_milliseconds(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_authority_expiry_in_milliseconds
     }
     /// The amount of time remaining before the certificate expires, in milliseconds.
-    pub fn certificate_expiry_in_milliseconds(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_expiry_in_milliseconds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_expiry_in_milliseconds = ::std::option::Option::Some(input.into());
         self
     }
     /// The amount of time remaining before the certificate expires, in milliseconds.
-    pub fn set_certificate_expiry_in_milliseconds(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_expiry_in_milliseconds(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_expiry_in_milliseconds = input;
         self
     }
     /// The amount of time remaining before the certificate expires, in milliseconds.
-    pub fn get_certificate_expiry_in_milliseconds(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_certificate_expiry_in_milliseconds(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_expiry_in_milliseconds
     }
     /// The ID of the group certificate configuration.
@@ -122,14 +102,11 @@ impl UpdateGroupCertificateConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateGroupCertificateConfigurationOutput`](crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationOutput).
-    pub fn build(self) -> crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationOutput{
+    pub fn build(self) -> crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationOutput {
         crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationOutput {
-            certificate_authority_expiry_in_milliseconds: self.certificate_authority_expiry_in_milliseconds
-            ,
-            certificate_expiry_in_milliseconds: self.certificate_expiry_in_milliseconds
-            ,
-            group_id: self.group_id
-            ,
+            certificate_authority_expiry_in_milliseconds: self.certificate_authority_expiry_in_milliseconds,
+            certificate_expiry_in_milliseconds: self.certificate_expiry_in_milliseconds,
+            group_id: self.group_id,
             _request_id: self._request_id,
         }
     }

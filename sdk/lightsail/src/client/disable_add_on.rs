@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DisableAddOnOutput`](crate::operation::disable_add_on::DisableAddOnOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::disable_add_on::DisableAddOnOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DisableAddOnError>`](crate::operation::disable_add_on::DisableAddOnError)
-    pub fn disable_add_on(
-        &self,
-    ) -> crate::operation::disable_add_on::builders::DisableAddOnFluentBuilder {
-        crate::operation::disable_add_on::builders::DisableAddOnFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disable_add_on(&self) -> crate::operation::disable_add_on::builders::DisableAddOnFluentBuilder {
+        crate::operation::disable_add_on::builders::DisableAddOnFluentBuilder::new(self.handle.clone())
     }
 }

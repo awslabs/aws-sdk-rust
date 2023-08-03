@@ -5,10 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::delete_registration_code::builders::DeleteRegistrationCodeFluentBuilder::send) it.
     /// - On success, responds with [`DeleteRegistrationCodeOutput`](crate::operation::delete_registration_code::DeleteRegistrationCodeOutput)
     /// - On failure, responds with [`SdkError<DeleteRegistrationCodeError>`](crate::operation::delete_registration_code::DeleteRegistrationCodeError)
-    pub fn delete_registration_code(
-        &self,
-    ) -> crate::operation::delete_registration_code::builders::DeleteRegistrationCodeFluentBuilder
-    {
+    pub fn delete_registration_code(&self) -> crate::operation::delete_registration_code::builders::DeleteRegistrationCodeFluentBuilder {
         crate::operation::delete_registration_code::builders::DeleteRegistrationCodeFluentBuilder::new(self.handle.clone())
     }
 }

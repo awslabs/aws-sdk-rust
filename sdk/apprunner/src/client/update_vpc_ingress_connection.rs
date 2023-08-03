@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateVpcIngressConnectionOutput`](crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionOutput) with field(s):
     ///   - [`vpc_ingress_connection(Option<VpcIngressConnection>)`](crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionOutput::vpc_ingress_connection): <p>A description of the App Runner VPC Ingress Connection resource that's updated by this request.</p>
     /// - On failure, responds with [`SdkError<UpdateVpcIngressConnectionError>`](crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionError)
-    pub fn update_vpc_ingress_connection(&self) -> crate::operation::update_vpc_ingress_connection::builders::UpdateVpcIngressConnectionFluentBuilder{
+    pub fn update_vpc_ingress_connection(
+        &self,
+    ) -> crate::operation::update_vpc_ingress_connection::builders::UpdateVpcIngressConnectionFluentBuilder {
         crate::operation::update_vpc_ingress_connection::builders::UpdateVpcIngressConnectionFluentBuilder::new(self.handle.clone())
     }
 }

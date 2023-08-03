@@ -79,9 +79,7 @@ impl Parameter {
 
 /// A builder for [`Parameter`](crate::types::Parameter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterBuilder {
     pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_value: ::std::option::Option<::std::string::String>,
@@ -95,18 +93,12 @@ pub struct ParameterBuilder {
 }
 impl ParameterBuilder {
     /// <p>The name of the parameter.</p>
-    pub fn parameter_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter.</p>
-    pub fn set_parameter_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_name = input;
         self
     }
@@ -115,18 +107,12 @@ impl ParameterBuilder {
         &self.parameter_name
     }
     /// <p>The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the maximum size of <code>ParameterValue</code> is 8000 characters.</p>
-    pub fn parameter_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parameter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the maximum size of <code>ParameterValue</code> is 8000 characters.</p>
-    pub fn set_parameter_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_value = input;
         self
     }
@@ -177,18 +163,12 @@ impl ParameterBuilder {
         &self.data_type
     }
     /// <p>The valid range of values for the parameter.</p>
-    pub fn allowed_values(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn allowed_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allowed_values = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The valid range of values for the parameter.</p>
-    pub fn set_allowed_values(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.allowed_values = input;
         self
     }
@@ -202,10 +182,7 @@ impl ParameterBuilder {
         self
     }
     /// <p>Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other properties require that any associated clusters be rebooted for the configuration changes to be applied. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn set_apply_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ParameterApplyType>,
-    ) -> Self {
+    pub fn set_apply_type(mut self, input: ::std::option::Option<crate::types::ParameterApplyType>) -> Self {
         self.apply_type = input;
         self
     }
@@ -228,18 +205,12 @@ impl ParameterBuilder {
         &self.is_modifiable
     }
     /// <p>The earliest engine version to which the parameter can apply.</p>
-    pub fn minimum_engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn minimum_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minimum_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The earliest engine version to which the parameter can apply.</p>
-    pub fn set_minimum_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_minimum_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minimum_engine_version = input;
         self
     }

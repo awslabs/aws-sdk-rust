@@ -42,9 +42,7 @@ impl ListGrantsOutput {
 
 /// A builder for [`ListGrantsOutput`](crate::operation::list_grants::ListGrantsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGrantsOutputBuilder {
     pub(crate) grants: ::std::option::Option<::std::vec::Vec<crate::types::GrantListEntry>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -64,17 +62,12 @@ impl ListGrantsOutputBuilder {
         self
     }
     /// <p>A list of grants.</p>
-    pub fn set_grants(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GrantListEntry>>,
-    ) -> Self {
+    pub fn set_grants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GrantListEntry>>) -> Self {
         self.grants = input;
         self
     }
     /// <p>A list of grants.</p>
-    pub fn get_grants(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantListEntry>> {
+    pub fn get_grants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantListEntry>> {
         &self.grants
     }
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>

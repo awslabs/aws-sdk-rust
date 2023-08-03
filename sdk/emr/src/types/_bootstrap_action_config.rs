@@ -17,9 +17,7 @@ impl BootstrapActionConfig {
         self.name.as_deref()
     }
     /// <p>The script run by the bootstrap action.</p>
-    pub fn script_bootstrap_action(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ScriptBootstrapActionConfig> {
+    pub fn script_bootstrap_action(&self) -> ::std::option::Option<&crate::types::ScriptBootstrapActionConfig> {
         self.script_bootstrap_action.as_ref()
     }
 }
@@ -32,13 +30,10 @@ impl BootstrapActionConfig {
 
 /// A builder for [`BootstrapActionConfig`](crate::types::BootstrapActionConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BootstrapActionConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) script_bootstrap_action:
-        ::std::option::Option<crate::types::ScriptBootstrapActionConfig>,
+    pub(crate) script_bootstrap_action: ::std::option::Option<crate::types::ScriptBootstrapActionConfig>,
 }
 impl BootstrapActionConfigBuilder {
     /// <p>The name of the bootstrap action.</p>
@@ -56,25 +51,17 @@ impl BootstrapActionConfigBuilder {
         &self.name
     }
     /// <p>The script run by the bootstrap action.</p>
-    pub fn script_bootstrap_action(
-        mut self,
-        input: crate::types::ScriptBootstrapActionConfig,
-    ) -> Self {
+    pub fn script_bootstrap_action(mut self, input: crate::types::ScriptBootstrapActionConfig) -> Self {
         self.script_bootstrap_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The script run by the bootstrap action.</p>
-    pub fn set_script_bootstrap_action(
-        mut self,
-        input: ::std::option::Option<crate::types::ScriptBootstrapActionConfig>,
-    ) -> Self {
+    pub fn set_script_bootstrap_action(mut self, input: ::std::option::Option<crate::types::ScriptBootstrapActionConfig>) -> Self {
         self.script_bootstrap_action = input;
         self
     }
     /// <p>The script run by the bootstrap action.</p>
-    pub fn get_script_bootstrap_action(
-        &self,
-    ) -> &::std::option::Option<crate::types::ScriptBootstrapActionConfig> {
+    pub fn get_script_bootstrap_action(&self) -> &::std::option::Option<crate::types::ScriptBootstrapActionConfig> {
         &self.script_bootstrap_action
     }
     /// Consumes the builder and constructs a [`BootstrapActionConfig`](crate::types::BootstrapActionConfig).

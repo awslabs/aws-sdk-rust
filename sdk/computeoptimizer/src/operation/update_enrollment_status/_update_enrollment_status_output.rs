@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for UpdateEnrollmentStatusOutput {
 }
 impl UpdateEnrollmentStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEnrollmentStatusOutput`](crate::operation::update_enrollment_status::UpdateEnrollmentStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::update_enrollment_status::builders::UpdateEnrollmentStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_enrollment_status::builders::UpdateEnrollmentStatusOutputBuilder {
         crate::operation::update_enrollment_status::builders::UpdateEnrollmentStatusOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEnrollmentStatusOutput`](crate::operation::update_enrollment_status::UpdateEnrollmentStatusOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEnrollmentStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
@@ -61,18 +57,12 @@ impl UpdateEnrollmentStatusOutputBuilder {
         &self.status
     }
     /// <p>The reason for the enrollment status of the account. For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
-    pub fn status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the enrollment status of the account. For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
-    pub fn set_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }

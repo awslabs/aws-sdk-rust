@@ -30,27 +30,19 @@ impl AssetHierarchyInfo {
 
 /// A builder for [`AssetHierarchyInfo`](crate::types::AssetHierarchyInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetHierarchyInfoBuilder {
     pub(crate) parent_asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) child_asset_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetHierarchyInfoBuilder {
     /// <p>The ID of the parent asset in this asset relationship.</p>
-    pub fn parent_asset_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_asset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the parent asset in this asset relationship.</p>
-    pub fn set_parent_asset_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_asset_id = input;
         self
     }
@@ -59,18 +51,12 @@ impl AssetHierarchyInfoBuilder {
         &self.parent_asset_id
     }
     /// <p>The ID of the child asset in this asset relationship.</p>
-    pub fn child_asset_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn child_asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.child_asset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the child asset in this asset relationship.</p>
-    pub fn set_child_asset_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_child_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.child_asset_id = input;
         self
     }

@@ -10,10 +10,7 @@ impl TestMetricFilterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::test_metric_filter::TestMetricFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_metric_filter::TestMetricFilterError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_metric_filter::TestMetricFilterError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.test_metric_filter();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl TestMetricFilterFluentBuilder {
         }
     }
     /// Access the TestMetricFilter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::test_metric_filter::builders::TestMetricFilterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::test_metric_filter::builders::TestMetricFilterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl TestMetricFilterFluentBuilder {
             crate::operation::test_metric_filter::TestMetricFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_metric_filter::TestMetricFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_metric_filter::TestMetricFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl TestMetricFilterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl TestMetricFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_metric_filter::TestMetricFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_metric_filter::TestMetricFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_metric_filter::TestMetricFilterError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl TestMetricFilterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_metric_filter::TestMetricFilterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_metric_filter::TestMetricFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_metric_filter::TestMetricFilterError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl TestMetricFilterFluentBuilder {
             crate::operation::test_metric_filter::TestMetricFilter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::test_metric_filter::TestMetricFilterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_metric_filter::TestMetricFilterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
-    pub fn filter_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn filter_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_pattern(input.into());
         self
     }
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
-    pub fn set_filter_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_filter_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_pattern(input);
         self
     }
@@ -147,25 +125,17 @@ impl TestMetricFilterFluentBuilder {
     /// To override the contents of this collection use [`set_log_event_messages`](Self::set_log_event_messages).
     ///
     /// <p>The log event messages to test.</p>
-    pub fn log_event_messages(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn log_event_messages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_event_messages(input.into());
         self
     }
     /// <p>The log event messages to test.</p>
-    pub fn set_log_event_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_log_event_messages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_log_event_messages(input);
         self
     }
     /// <p>The log event messages to test.</p>
-    pub fn get_log_event_messages(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_event_messages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_log_event_messages()
     }
 }

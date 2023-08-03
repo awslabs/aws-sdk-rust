@@ -65,9 +65,7 @@ impl AssertionRule {
 
 /// A builder for [`AssertionRule`](crate::types::AssertionRule).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssertionRuleBuilder {
     pub(crate) asserted_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,
@@ -83,42 +81,28 @@ impl AssertionRuleBuilder {
     /// To override the contents of this collection use [`set_asserted_controls`](Self::set_asserted_controls).
     ///
     /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
-    pub fn asserted_controls(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn asserted_controls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.asserted_controls.unwrap_or_default();
         v.push(input.into());
         self.asserted_controls = ::std::option::Option::Some(v);
         self
     }
     /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
-    pub fn set_asserted_controls(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_asserted_controls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.asserted_controls = input;
         self
     }
     /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
-    pub fn get_asserted_controls(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_asserted_controls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.asserted_controls
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn set_control_panel_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_panel_arn = input;
         self
     }
@@ -146,10 +130,7 @@ impl AssertionRuleBuilder {
         self
     }
     /// <p>The criteria that you set for specific assertion routing controls (AssertedControls) that designate how many routing control states must be ON as the result of a transaction. For example, if you have three assertion routing controls, you might specify ATLEAST 2 for your rule configuration. This means that at least two assertion routing control states must be ON, so that at least two Amazon Web Services Regions have traffic flowing to them.</p>
-    pub fn set_rule_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleConfig>,
-    ) -> Self {
+    pub fn set_rule_config(mut self, input: ::std::option::Option<crate::types::RuleConfig>) -> Self {
         self.rule_config = input;
         self
     }
@@ -158,18 +139,12 @@ impl AssertionRuleBuilder {
         &self.rule_config
     }
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
-    pub fn safety_rule_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn safety_rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.safety_rule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
-    pub fn set_safety_rule_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_safety_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.safety_rule_arn = input;
         self
     }

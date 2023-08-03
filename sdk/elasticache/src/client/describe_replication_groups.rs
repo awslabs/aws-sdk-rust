@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`marker(Option<String>)`](crate::operation::describe_replication_groups::DescribeReplicationGroupsOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
     ///   - [`replication_groups(Option<Vec<ReplicationGroup>>)`](crate::operation::describe_replication_groups::DescribeReplicationGroupsOutput::replication_groups): <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
     /// - On failure, responds with [`SdkError<DescribeReplicationGroupsError>`](crate::operation::describe_replication_groups::DescribeReplicationGroupsError)
-    pub fn describe_replication_groups(&self) -> crate::operation::describe_replication_groups::builders::DescribeReplicationGroupsFluentBuilder{
+    pub fn describe_replication_groups(&self) -> crate::operation::describe_replication_groups::builders::DescribeReplicationGroupsFluentBuilder {
         crate::operation::describe_replication_groups::builders::DescribeReplicationGroupsFluentBuilder::new(self.handle.clone())
     }
 }

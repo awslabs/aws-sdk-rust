@@ -64,18 +64,14 @@ impl CreateVpcConnectionInput {
 }
 impl CreateVpcConnectionInput {
     /// Creates a new builder-style object to manufacture [`CreateVpcConnectionInput`](crate::operation::create_vpc_connection::CreateVpcConnectionInput).
-    pub fn builder(
-    ) -> crate::operation::create_vpc_connection::builders::CreateVpcConnectionInputBuilder {
-        crate::operation::create_vpc_connection::builders::CreateVpcConnectionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_vpc_connection::builders::CreateVpcConnectionInputBuilder {
+        crate::operation::create_vpc_connection::builders::CreateVpcConnectionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateVpcConnectionInput`](crate::operation::create_vpc_connection::CreateVpcConnectionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateVpcConnectionInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_connection_id: ::std::option::Option<::std::string::String>,
@@ -88,18 +84,12 @@ pub struct CreateVpcConnectionInputBuilder {
 }
 impl CreateVpcConnectionInputBuilder {
     /// <p>The Amazon Web Services account ID of the account where you want to create a new VPC connection.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the account where you want to create a new VPC connection.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -108,18 +98,12 @@ impl CreateVpcConnectionInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    pub fn vpc_connection_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    pub fn set_vpc_connection_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_connection_id = input;
         self
     }
@@ -153,10 +137,7 @@ impl CreateVpcConnectionInputBuilder {
         self
     }
     /// <p>A list of subnet IDs for the VPC connection.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
@@ -169,27 +150,19 @@ impl CreateVpcConnectionInputBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>A list of security group IDs for the VPC connection.</p>
-    pub fn security_group_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of security group IDs for the VPC connection.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>A list of security group IDs for the VPC connection.</p>
-    pub fn get_security_group_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
     /// Appends an item to `dns_resolvers`.
@@ -197,27 +170,19 @@ impl CreateVpcConnectionInputBuilder {
     /// To override the contents of this collection use [`set_dns_resolvers`](Self::set_dns_resolvers).
     ///
     /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
-    pub fn dns_resolvers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dns_resolvers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_resolvers.unwrap_or_default();
         v.push(input.into());
         self.dns_resolvers = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
-    pub fn set_dns_resolvers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_dns_resolvers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_resolvers = input;
         self
     }
     /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
-    pub fn get_dns_resolvers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_resolvers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_resolvers
     }
     /// <p>The IAM role to associate with the VPC connection.</p>
@@ -246,10 +211,7 @@ impl CreateVpcConnectionInputBuilder {
         self
     }
     /// <p>A map of the key-value pairs for the resource tag or tags assigned to the VPC connection.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -260,21 +222,17 @@ impl CreateVpcConnectionInputBuilder {
     /// Consumes the builder and constructs a [`CreateVpcConnectionInput`](crate::operation::create_vpc_connection::CreateVpcConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_vpc_connection::CreateVpcConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_vpc_connection::CreateVpcConnectionInput {
-                aws_account_id: self.aws_account_id,
-                vpc_connection_id: self.vpc_connection_id,
-                name: self.name,
-                subnet_ids: self.subnet_ids,
-                security_group_ids: self.security_group_ids,
-                dns_resolvers: self.dns_resolvers,
-                role_arn: self.role_arn,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_vpc_connection::CreateVpcConnectionInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_vpc_connection::CreateVpcConnectionInput {
+            aws_account_id: self.aws_account_id,
+            vpc_connection_id: self.vpc_connection_id,
+            name: self.name,
+            subnet_ids: self.subnet_ids,
+            security_group_ids: self.security_group_ids,
+            dns_resolvers: self.dns_resolvers,
+            role_arn: self.role_arn,
+            tags: self.tags,
+        })
     }
 }

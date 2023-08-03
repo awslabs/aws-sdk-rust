@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetResourcesSummaryOutput {
 }
 impl GetResourcesSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcesSummaryOutput`](crate::operation::get_resources_summary::GetResourcesSummaryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resources_summary::builders::GetResourcesSummaryOutputBuilder {
-        crate::operation::get_resources_summary::builders::GetResourcesSummaryOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_resources_summary::builders::GetResourcesSummaryOutputBuilder {
+        crate::operation::get_resources_summary::builders::GetResourcesSummaryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourcesSummaryOutput`](crate::operation::get_resources_summary::GetResourcesSummaryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourcesSummaryOutputBuilder {
     pub(crate) counts: ::std::option::Option<crate::types::CountsSummary>,
     _request_id: Option<String>,

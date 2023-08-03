@@ -26,7 +26,7 @@ impl RegisterApplicationRevisionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterApplicationRevisionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_application_revision::builders::RegisterApplicationRevisionInputBuilder,
+    inner: crate::operation::register_application_revision::builders::RegisterApplicationRevisionInputBuilder,
 }
 impl RegisterApplicationRevisionFluentBuilder {
     /// Creates a new `RegisterApplicationRevision`.
@@ -37,7 +37,7 @@ impl RegisterApplicationRevisionFluentBuilder {
         }
     }
     /// Access the RegisterApplicationRevision as a reference.
-    pub fn as_input(&self) -> &crate::operation::register_application_revision::builders::RegisterApplicationRevisionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::register_application_revision::builders::RegisterApplicationRevisionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl RegisterApplicationRevisionFluentBuilder {
             crate::operation::register_application_revision::RegisterApplicationRevision,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_application_revision::RegisterApplicationRevisionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_application_revision::RegisterApplicationRevisionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl RegisterApplicationRevisionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl RegisterApplicationRevisionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_application_revision::RegisterApplicationRevisionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_application_revision::RegisterApplicationRevisionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_application_revision::RegisterApplicationRevisionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl RegisterApplicationRevisionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_application_revision::RegisterApplicationRevisionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_application_revision::RegisterApplicationRevisionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_application_revision::RegisterApplicationRevisionError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl RegisterApplicationRevisionFluentBuilder {
             crate::operation::register_application_revision::RegisterApplicationRevision,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::register_application_revision::RegisterApplicationRevisionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_application_revision::RegisterApplicationRevisionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -160,10 +143,7 @@ impl RegisterApplicationRevisionFluentBuilder {
         self
     }
     /// <p>Information about the application revision to register, including type and location.</p>
-    pub fn set_revision(
-        mut self,
-        input: ::std::option::Option<crate::types::RevisionLocation>,
-    ) -> Self {
+    pub fn set_revision(mut self, input: ::std::option::Option<crate::types::RevisionLocation>) -> Self {
         self.inner = self.inner.set_revision(input);
         self
     }

@@ -15,10 +15,7 @@ pub fn ser_update_location_hdfs_input(
             {
                 #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_hdfs_name_node::ser_hdfs_name_node(
-                    &mut object_6,
-                    item_5,
-                )?;
+                crate::protocol_serde::shape_hdfs_name_node::ser_hdfs_name_node(&mut object_6, item_5)?;
                 object_6.finish();
             }
         }
@@ -42,10 +39,7 @@ pub fn ser_update_location_hdfs_input(
     if let Some(var_10) = &input.qop_configuration {
         #[allow(unused_mut)]
         let mut object_11 = object.key("QopConfiguration").start_object();
-        crate::protocol_serde::shape_qop_configuration::ser_qop_configuration(
-            &mut object_11,
-            var_10,
-        )?;
+        crate::protocol_serde::shape_qop_configuration::ser_qop_configuration(&mut object_11, var_10)?;
         object_11.finish();
     }
     if let Some(var_12) = &input.authentication_type {
@@ -58,9 +52,7 @@ pub fn ser_update_location_hdfs_input(
         object.key("KerberosPrincipal").string(var_14.as_str());
     }
     if let Some(var_15) = &input.kerberos_keytab {
-        object
-            .key("KerberosKeytab")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_15));
+        object.key("KerberosKeytab").string_unchecked(&::aws_smithy_types::base64::encode(var_15));
     }
     if let Some(var_16) = &input.kerberos_krb5_conf {
         object

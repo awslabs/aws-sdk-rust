@@ -5,15 +5,12 @@
 pub struct DescribeSnomedctInferenceJobOutput {
     /// <p>Provides information about a detection job.</p>
     #[doc(hidden)]
-    pub comprehend_medical_async_job_properties:
-        ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
+    pub comprehend_medical_async_job_properties: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeSnomedctInferenceJobOutput {
     /// <p>Provides information about a detection job.</p>
-    pub fn comprehend_medical_async_job_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ComprehendMedicalAsyncJobProperties> {
+    pub fn comprehend_medical_async_job_properties(&self) -> ::std::option::Option<&crate::types::ComprehendMedicalAsyncJobProperties> {
         self.comprehend_medical_async_job_properties.as_ref()
     }
 }
@@ -24,27 +21,21 @@ impl ::aws_http::request_id::RequestId for DescribeSnomedctInferenceJobOutput {
 }
 impl DescribeSnomedctInferenceJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSnomedctInferenceJobOutput`](crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobOutput).
-    pub fn builder() -> crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobOutputBuilder {
         crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSnomedctInferenceJobOutput`](crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnomedctInferenceJobOutputBuilder {
-    pub(crate) comprehend_medical_async_job_properties:
-        ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
+    pub(crate) comprehend_medical_async_job_properties: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeSnomedctInferenceJobOutputBuilder {
     /// <p>Provides information about a detection job.</p>
-    pub fn comprehend_medical_async_job_properties(
-        mut self,
-        input: crate::types::ComprehendMedicalAsyncJobProperties,
-    ) -> Self {
+    pub fn comprehend_medical_async_job_properties(mut self, input: crate::types::ComprehendMedicalAsyncJobProperties) -> Self {
         self.comprehend_medical_async_job_properties = ::std::option::Option::Some(input);
         self
     }
@@ -57,9 +48,7 @@ impl DescribeSnomedctInferenceJobOutputBuilder {
         self
     }
     /// <p>Provides information about a detection job.</p>
-    pub fn get_comprehend_medical_async_job_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties> {
+    pub fn get_comprehend_medical_async_job_properties(&self) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobProperties> {
         &self.comprehend_medical_async_job_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -72,9 +61,7 @@ impl DescribeSnomedctInferenceJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSnomedctInferenceJobOutput`](crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobOutput {
+    pub fn build(self) -> crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobOutput {
         crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobOutput {
             comprehend_medical_async_job_properties: self.comprehend_medical_async_job_properties,
             _request_id: self._request_id,

@@ -55,16 +55,14 @@ impl DescribeInstanceCreditSpecificationsInput {
 }
 impl DescribeInstanceCreditSpecificationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceCreditSpecificationsInput`](crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsInput).
-    pub fn builder() -> crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsInputBuilder {
         crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeInstanceCreditSpecificationsInput`](crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceCreditSpecificationsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -105,10 +103,7 @@ impl DescribeInstanceCreditSpecificationsInputBuilder {
     /// <ul>
     /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -135,19 +130,14 @@ impl DescribeInstanceCreditSpecificationsInputBuilder {
     /// <p>The instance IDs.</p>
     /// <p>Default: Describes all your instances.</p>
     /// <p>Constraints: Maximum 1000 explicitly specified instance IDs.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.instance_ids = input;
         self
     }
     /// <p>The instance IDs.</p>
     /// <p>Default: Describes all your instances.</p>
     /// <p>Constraints: Maximum 1000 explicitly specified instance IDs.</p>
-    pub fn get_instance_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -182,20 +172,20 @@ impl DescribeInstanceCreditSpecificationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeInstanceCreditSpecificationsInput`](crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsInput {
-                dry_run: self.dry_run
-                ,
-                filters: self.filters
-                ,
-                instance_ids: self.instance_ids
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                dry_run: self.dry_run,
+                filters: self.filters,
+                instance_ids: self.instance_ids,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }

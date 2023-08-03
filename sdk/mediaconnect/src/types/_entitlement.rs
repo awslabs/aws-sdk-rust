@@ -65,9 +65,7 @@ impl Entitlement {
 
 /// A builder for [`Entitlement`](crate::types::Entitlement).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntitlementBuilder {
     pub(crate) data_transfer_subscriber_fee_percent: ::std::option::Option<i32>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -84,10 +82,7 @@ impl EntitlementBuilder {
         self
     }
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-    pub fn set_data_transfer_subscriber_fee_percent(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_data_transfer_subscriber_fee_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.data_transfer_subscriber_fee_percent = input;
         self
     }
@@ -115,10 +110,7 @@ impl EntitlementBuilder {
         self
     }
     /// The type of encryption that will be used on the output that is associated with this entitlement.
-    pub fn set_encryption(
-        mut self,
-        input: ::std::option::Option<crate::types::Encryption>,
-    ) -> Self {
+    pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
         self.encryption = input;
         self
     }
@@ -127,18 +119,12 @@ impl EntitlementBuilder {
         &self.encryption
     }
     /// The ARN of the entitlement.
-    pub fn entitlement_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entitlement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entitlement_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the entitlement.
-    pub fn set_entitlement_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_entitlement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entitlement_arn = input;
         self
     }
@@ -152,17 +138,12 @@ impl EntitlementBuilder {
         self
     }
     /// An indication of whether the entitlement is enabled.
-    pub fn set_entitlement_status(
-        mut self,
-        input: ::std::option::Option<crate::types::EntitlementStatus>,
-    ) -> Self {
+    pub fn set_entitlement_status(mut self, input: ::std::option::Option<crate::types::EntitlementStatus>) -> Self {
         self.entitlement_status = input;
         self
     }
     /// An indication of whether the entitlement is enabled.
-    pub fn get_entitlement_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::EntitlementStatus> {
+    pub fn get_entitlement_status(&self) -> &::std::option::Option<crate::types::EntitlementStatus> {
         &self.entitlement_status
     }
     /// The name of the entitlement.
@@ -191,17 +172,12 @@ impl EntitlementBuilder {
         self
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    pub fn set_subscribers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subscribers = input;
         self
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    pub fn get_subscribers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subscribers
     }
     /// Consumes the builder and constructs a [`Entitlement`](crate::types::Entitlement).

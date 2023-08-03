@@ -55,16 +55,14 @@ impl DescribeEnvironmentMembershipsInput {
 }
 impl DescribeEnvironmentMembershipsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentMembershipsInput`](crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsInput).
-    pub fn builder() -> crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsInputBuilder{
+    pub fn builder() -> crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsInputBuilder {
         crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEnvironmentMembershipsInput`](crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentMembershipsInputBuilder {
     pub(crate) user_arn: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
@@ -88,18 +86,12 @@ impl DescribeEnvironmentMembershipsInputBuilder {
         &self.user_arn
     }
     /// <p>The ID of the environment to get environment member information about.</p>
-    pub fn environment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the environment to get environment member information about.</p>
-    pub fn set_environment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
@@ -131,10 +123,7 @@ impl DescribeEnvironmentMembershipsInputBuilder {
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
     /// <p>If no value is specified, information about all environment members are returned.</p>
-    pub fn set_permissions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Permissions>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permissions>>) -> Self {
         self.permissions = input;
         self
     }
@@ -145,9 +134,7 @@ impl DescribeEnvironmentMembershipsInputBuilder {
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
     /// <p>If no value is specified, information about all environment members are returned.</p>
-    pub fn get_permissions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permissions>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permissions>> {
         &self.permissions
     }
     /// <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
@@ -185,19 +172,12 @@ impl DescribeEnvironmentMembershipsInputBuilder {
         crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsInput {
-                user_arn: self.user_arn
-                ,
-                environment_id: self.environment_id
-                ,
-                permissions: self.permissions
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsInput {
+            user_arn: self.user_arn,
+            environment_id: self.environment_id,
+            permissions: self.permissions,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

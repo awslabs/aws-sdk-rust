@@ -23,18 +23,14 @@ impl SetIdentityDkimEnabledInput {
 }
 impl SetIdentityDkimEnabledInput {
     /// Creates a new builder-style object to manufacture [`SetIdentityDkimEnabledInput`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledInput).
-    pub fn builder(
-    ) -> crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder {
         crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder::default()
     }
 }
 
 /// A builder for [`SetIdentityDkimEnabledInput`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetIdentityDkimEnabledInputBuilder {
     pub(crate) identity: ::std::option::Option<::std::string::String>,
     pub(crate) dkim_enabled: ::std::option::Option<bool>,
@@ -75,11 +71,9 @@ impl SetIdentityDkimEnabledInputBuilder {
         crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledInput {
-                identity: self.identity,
-                dkim_enabled: self.dkim_enabled.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledInput {
+            identity: self.identity,
+            dkim_enabled: self.dkim_enabled.unwrap_or_default(),
+        })
     }
 }

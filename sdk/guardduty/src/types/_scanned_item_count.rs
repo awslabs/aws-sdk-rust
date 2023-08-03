@@ -37,9 +37,7 @@ impl ScannedItemCount {
 
 /// A builder for [`ScannedItemCount`](crate::types::ScannedItemCount).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScannedItemCountBuilder {
     pub(crate) total_gb: ::std::option::Option<i32>,
     pub(crate) files: ::std::option::Option<i32>,

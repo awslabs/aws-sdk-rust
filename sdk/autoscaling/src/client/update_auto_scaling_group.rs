@@ -26,10 +26,7 @@ impl super::Client {
     ///   - [`default_instance_warmup(i32)`](crate::operation::update_auto_scaling_group::builders::UpdateAutoScalingGroupFluentBuilder::default_instance_warmup) / [`set_default_instance_warmup(Option<i32>)`](crate::operation::update_auto_scaling_group::builders::UpdateAutoScalingGroupFluentBuilder::set_default_instance_warmup): <p>The amount of time, in seconds, until a new instance is considered to have finished initializing and resource consumption to become stable after it enters the <code>InService</code> state. </p>  <p>During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that are used for scaling, resulting in more reliable usage data. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>   <p>To manage various warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a value of <code>0</code> or other nominal value.</p>  </important>
     /// - On success, responds with [`UpdateAutoScalingGroupOutput`](crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateAutoScalingGroupError>`](crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupError)
-    pub fn update_auto_scaling_group(
-        &self,
-    ) -> crate::operation::update_auto_scaling_group::builders::UpdateAutoScalingGroupFluentBuilder
-    {
+    pub fn update_auto_scaling_group(&self) -> crate::operation::update_auto_scaling_group::builders::UpdateAutoScalingGroupFluentBuilder {
         crate::operation::update_auto_scaling_group::builders::UpdateAutoScalingGroupFluentBuilder::new(self.handle.clone())
     }
 }

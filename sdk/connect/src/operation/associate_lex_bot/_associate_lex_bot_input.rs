@@ -29,9 +29,7 @@ impl AssociateLexBotInput {
 
 /// A builder for [`AssociateLexBotInput`](crate::operation::associate_lex_bot::AssociateLexBotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateLexBotInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) lex_bot: ::std::option::Option<crate::types::LexBot>,
@@ -68,10 +66,7 @@ impl AssociateLexBotInputBuilder {
     /// Consumes the builder and constructs a [`AssociateLexBotInput`](crate::operation::associate_lex_bot::AssociateLexBotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_lex_bot::AssociateLexBotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::associate_lex_bot::AssociateLexBotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_lex_bot::AssociateLexBotInput {
             instance_id: self.instance_id,
             lex_bot: self.lex_bot,

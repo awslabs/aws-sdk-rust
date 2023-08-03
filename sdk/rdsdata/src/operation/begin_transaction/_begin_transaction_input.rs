@@ -37,17 +37,14 @@ impl BeginTransactionInput {
 }
 impl BeginTransactionInput {
     /// Creates a new builder-style object to manufacture [`BeginTransactionInput`](crate::operation::begin_transaction::BeginTransactionInput).
-    pub fn builder() -> crate::operation::begin_transaction::builders::BeginTransactionInputBuilder
-    {
+    pub fn builder() -> crate::operation::begin_transaction::builders::BeginTransactionInputBuilder {
         crate::operation::begin_transaction::builders::BeginTransactionInputBuilder::default()
     }
 }
 
 /// A builder for [`BeginTransactionInput`](crate::operation::begin_transaction::BeginTransactionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BeginTransactionInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
@@ -114,10 +111,7 @@ impl BeginTransactionInputBuilder {
     /// Consumes the builder and constructs a [`BeginTransactionInput`](crate::operation::begin_transaction::BeginTransactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::begin_transaction::BeginTransactionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::begin_transaction::BeginTransactionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::begin_transaction::BeginTransactionInput {
             resource_arn: self.resource_arn,
             secret_arn: self.secret_arn,

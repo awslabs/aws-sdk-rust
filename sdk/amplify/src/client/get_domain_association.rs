@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetDomainAssociationOutput`](crate::operation::get_domain_association::GetDomainAssociationOutput) with field(s):
     ///   - [`domain_association(Option<DomainAssociation>)`](crate::operation::get_domain_association::GetDomainAssociationOutput::domain_association): <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     /// - On failure, responds with [`SdkError<GetDomainAssociationError>`](crate::operation::get_domain_association::GetDomainAssociationError)
-    pub fn get_domain_association(
-        &self,
-    ) -> crate::operation::get_domain_association::builders::GetDomainAssociationFluentBuilder {
-        crate::operation::get_domain_association::builders::GetDomainAssociationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_domain_association(&self) -> crate::operation::get_domain_association::builders::GetDomainAssociationFluentBuilder {
+        crate::operation::get_domain_association::builders::GetDomainAssociationFluentBuilder::new(self.handle.clone())
     }
 }

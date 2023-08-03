@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`elastic_ip(impl ::std::convert::Into<String>)`](crate::operation::disassociate_elastic_ip::builders::DisassociateElasticIpFluentBuilder::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::operation::disassociate_elastic_ip::builders::DisassociateElasticIpFluentBuilder::set_elastic_ip): <p>The Elastic IP address.</p>
     /// - On success, responds with [`DisassociateElasticIpOutput`](crate::operation::disassociate_elastic_ip::DisassociateElasticIpOutput)
     /// - On failure, responds with [`SdkError<DisassociateElasticIpError>`](crate::operation::disassociate_elastic_ip::DisassociateElasticIpError)
-    pub fn disassociate_elastic_ip(
-        &self,
-    ) -> crate::operation::disassociate_elastic_ip::builders::DisassociateElasticIpFluentBuilder
-    {
-        crate::operation::disassociate_elastic_ip::builders::DisassociateElasticIpFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn disassociate_elastic_ip(&self) -> crate::operation::disassociate_elastic_ip::builders::DisassociateElasticIpFluentBuilder {
+        crate::operation::disassociate_elastic_ip::builders::DisassociateElasticIpFluentBuilder::new(self.handle.clone())
     }
 }

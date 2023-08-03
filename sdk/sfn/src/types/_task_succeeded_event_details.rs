@@ -31,9 +31,7 @@ impl TaskSucceededEventDetails {
         self.output.as_deref()
     }
     /// <p>Contains details about the output of an execution history event.</p>
-    pub fn output_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    pub fn output_details(&self) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
         self.output_details.as_ref()
     }
 }
@@ -61,23 +59,16 @@ pub struct TaskSucceededEventDetailsBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,
     pub(crate) output: ::std::option::Option<::std::string::String>,
-    pub(crate) output_details:
-        ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+    pub(crate) output_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
 }
 impl TaskSucceededEventDetailsBuilder {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service name of the resource in a task state.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -119,17 +110,12 @@ impl TaskSucceededEventDetailsBuilder {
         self
     }
     /// <p>Contains details about the output of an execution history event.</p>
-    pub fn set_output_details(
-        mut self,
-        input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
-    ) -> Self {
+    pub fn set_output_details(mut self, input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>) -> Self {
         self.output_details = input;
         self
     }
     /// <p>Contains details about the output of an execution history event.</p>
-    pub fn get_output_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
+    pub fn get_output_details(&self) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
         &self.output_details
     }
     /// Consumes the builder and constructs a [`TaskSucceededEventDetails`](crate::types::TaskSucceededEventDetails).

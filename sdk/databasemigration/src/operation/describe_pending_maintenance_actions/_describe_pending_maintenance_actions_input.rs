@@ -41,16 +41,14 @@ impl DescribePendingMaintenanceActionsInput {
 }
 impl DescribePendingMaintenanceActionsInput {
     /// Creates a new builder-style object to manufacture [`DescribePendingMaintenanceActionsInput`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput).
-    pub fn builder() -> crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsInputBuilder {
         crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePendingMaintenanceActionsInput`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePendingMaintenanceActionsInputBuilder {
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -59,18 +57,12 @@ pub struct DescribePendingMaintenanceActionsInputBuilder {
 }
 impl DescribePendingMaintenanceActionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn replication_instance_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_replication_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_arn = input;
         self
     }
@@ -90,10 +82,7 @@ impl DescribePendingMaintenanceActionsInputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -136,18 +125,19 @@ impl DescribePendingMaintenanceActionsInputBuilder {
         &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribePendingMaintenanceActionsInput`](crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_pending_maintenance_actions::DescribePendingMaintenanceActionsInput {
-                replication_instance_arn: self.replication_instance_arn
-                ,
-                filters: self.filters
-                ,
-                marker: self.marker
-                ,
-                max_records: self.max_records
-                ,
-            }
+                replication_instance_arn: self.replication_instance_arn,
+                filters: self.filters,
+                marker: self.marker,
+                max_records: self.max_records,
+            },
         )
     }
 }

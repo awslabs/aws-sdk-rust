@@ -17,11 +17,7 @@ impl super::Client {
     ///   - [`network_telemetry(Option<Vec<NetworkTelemetry>>)`](crate::operation::get_network_telemetry::GetNetworkTelemetryOutput::network_telemetry): <p>The network telemetry.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_network_telemetry::GetNetworkTelemetryOutput::next_token): <p>The token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetNetworkTelemetryError>`](crate::operation::get_network_telemetry::GetNetworkTelemetryError)
-    pub fn get_network_telemetry(
-        &self,
-    ) -> crate::operation::get_network_telemetry::builders::GetNetworkTelemetryFluentBuilder {
-        crate::operation::get_network_telemetry::builders::GetNetworkTelemetryFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_network_telemetry(&self) -> crate::operation::get_network_telemetry::builders::GetNetworkTelemetryFluentBuilder {
+        crate::operation::get_network_telemetry::builders::GetNetworkTelemetryFluentBuilder::new(self.handle.clone())
     }
 }

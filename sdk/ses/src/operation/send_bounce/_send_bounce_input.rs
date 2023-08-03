@@ -18,8 +18,7 @@ pub struct SendBounceInput {
     pub message_dsn: ::std::option::Option<crate::types::MessageDsn>,
     /// <p>A list of recipients of the bounced message, including the information required to create the Delivery Status Notifications (DSNs) for the recipients. You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
     #[doc(hidden)]
-    pub bounced_recipient_info_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::BouncedRecipientInfo>>,
+    pub bounced_recipient_info_list: ::std::option::Option<::std::vec::Vec<crate::types::BouncedRecipientInfo>>,
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     #[doc(hidden)]
     pub bounce_sender_arn: ::std::option::Option<::std::string::String>,
@@ -42,9 +41,7 @@ impl SendBounceInput {
         self.message_dsn.as_ref()
     }
     /// <p>A list of recipients of the bounced message, including the information required to create the Delivery Status Notifications (DSNs) for the recipients. You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
-    pub fn bounced_recipient_info_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BouncedRecipientInfo]> {
+    pub fn bounced_recipient_info_list(&self) -> ::std::option::Option<&[crate::types::BouncedRecipientInfo]> {
         self.bounced_recipient_info_list.as_deref()
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
@@ -61,32 +58,23 @@ impl SendBounceInput {
 
 /// A builder for [`SendBounceInput`](crate::operation::send_bounce::SendBounceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendBounceInputBuilder {
     pub(crate) original_message_id: ::std::option::Option<::std::string::String>,
     pub(crate) bounce_sender: ::std::option::Option<::std::string::String>,
     pub(crate) explanation: ::std::option::Option<::std::string::String>,
     pub(crate) message_dsn: ::std::option::Option<crate::types::MessageDsn>,
-    pub(crate) bounced_recipient_info_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::BouncedRecipientInfo>>,
+    pub(crate) bounced_recipient_info_list: ::std::option::Option<::std::vec::Vec<crate::types::BouncedRecipientInfo>>,
     pub(crate) bounce_sender_arn: ::std::option::Option<::std::string::String>,
 }
 impl SendBounceInputBuilder {
     /// <p>The message ID of the message to be bounced.</p>
-    pub fn original_message_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn original_message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original_message_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message ID of the message to be bounced.</p>
-    pub fn set_original_message_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_original_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original_message_id = input;
         self
     }
@@ -95,18 +83,12 @@ impl SendBounceInputBuilder {
         &self.original_message_id
     }
     /// <p>The address to use in the "From" header of the bounce message. This must be an identity that you have verified with Amazon SES.</p>
-    pub fn bounce_sender(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bounce_sender(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bounce_sender = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The address to use in the "From" header of the bounce message. This must be an identity that you have verified with Amazon SES.</p>
-    pub fn set_bounce_sender(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bounce_sender(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bounce_sender = input;
         self
     }
@@ -134,10 +116,7 @@ impl SendBounceInputBuilder {
         self
     }
     /// <p>Message-related DSN fields. If not specified, Amazon SES will choose the values.</p>
-    pub fn set_message_dsn(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageDsn>,
-    ) -> Self {
+    pub fn set_message_dsn(mut self, input: ::std::option::Option<crate::types::MessageDsn>) -> Self {
         self.message_dsn = input;
         self
     }
@@ -150,42 +129,28 @@ impl SendBounceInputBuilder {
     /// To override the contents of this collection use [`set_bounced_recipient_info_list`](Self::set_bounced_recipient_info_list).
     ///
     /// <p>A list of recipients of the bounced message, including the information required to create the Delivery Status Notifications (DSNs) for the recipients. You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
-    pub fn bounced_recipient_info_list(
-        mut self,
-        input: crate::types::BouncedRecipientInfo,
-    ) -> Self {
+    pub fn bounced_recipient_info_list(mut self, input: crate::types::BouncedRecipientInfo) -> Self {
         let mut v = self.bounced_recipient_info_list.unwrap_or_default();
         v.push(input);
         self.bounced_recipient_info_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of recipients of the bounced message, including the information required to create the Delivery Status Notifications (DSNs) for the recipients. You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
-    pub fn set_bounced_recipient_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BouncedRecipientInfo>>,
-    ) -> Self {
+    pub fn set_bounced_recipient_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BouncedRecipientInfo>>) -> Self {
         self.bounced_recipient_info_list = input;
         self
     }
     /// <p>A list of recipients of the bounced message, including the information required to create the Delivery Status Notifications (DSNs) for the recipients. You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
-    pub fn get_bounced_recipient_info_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BouncedRecipientInfo>> {
+    pub fn get_bounced_recipient_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BouncedRecipientInfo>> {
         &self.bounced_recipient_info_list
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    pub fn bounce_sender_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn bounce_sender_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bounce_sender_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    pub fn set_bounce_sender_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_bounce_sender_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bounce_sender_arn = input;
         self
     }
@@ -194,12 +159,7 @@ impl SendBounceInputBuilder {
         &self.bounce_sender_arn
     }
     /// Consumes the builder and constructs a [`SendBounceInput`](crate::operation::send_bounce::SendBounceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_bounce::SendBounceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_bounce::SendBounceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_bounce::SendBounceInput {
             original_message_id: self.original_message_id,
             bounce_sender: self.bounce_sender,

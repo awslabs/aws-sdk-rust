@@ -13,9 +13,7 @@ pub struct SigningPlatformOverrides {
 }
 impl SigningPlatformOverrides {
     /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
-    pub fn signing_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SigningConfigurationOverrides> {
+    pub fn signing_configuration(&self) -> ::std::option::Option<&crate::types::SigningConfigurationOverrides> {
         self.signing_configuration.as_ref()
     }
     /// <p>A signed image is a JSON object. When overriding the default signing platform configuration, a customer can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.</p>
@@ -32,35 +30,24 @@ impl SigningPlatformOverrides {
 
 /// A builder for [`SigningPlatformOverrides`](crate::types::SigningPlatformOverrides).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SigningPlatformOverridesBuilder {
-    pub(crate) signing_configuration:
-        ::std::option::Option<crate::types::SigningConfigurationOverrides>,
+    pub(crate) signing_configuration: ::std::option::Option<crate::types::SigningConfigurationOverrides>,
     pub(crate) signing_image_format: ::std::option::Option<crate::types::ImageFormat>,
 }
 impl SigningPlatformOverridesBuilder {
     /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
-    pub fn signing_configuration(
-        mut self,
-        input: crate::types::SigningConfigurationOverrides,
-    ) -> Self {
+    pub fn signing_configuration(mut self, input: crate::types::SigningConfigurationOverrides) -> Self {
         self.signing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
-    pub fn set_signing_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SigningConfigurationOverrides>,
-    ) -> Self {
+    pub fn set_signing_configuration(mut self, input: ::std::option::Option<crate::types::SigningConfigurationOverrides>) -> Self {
         self.signing_configuration = input;
         self
     }
     /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
-    pub fn get_signing_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::SigningConfigurationOverrides> {
+    pub fn get_signing_configuration(&self) -> &::std::option::Option<crate::types::SigningConfigurationOverrides> {
         &self.signing_configuration
     }
     /// <p>A signed image is a JSON object. When overriding the default signing platform configuration, a customer can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.</p>
@@ -69,10 +56,7 @@ impl SigningPlatformOverridesBuilder {
         self
     }
     /// <p>A signed image is a JSON object. When overriding the default signing platform configuration, a customer can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.</p>
-    pub fn set_signing_image_format(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageFormat>,
-    ) -> Self {
+    pub fn set_signing_image_format(mut self, input: ::std::option::Option<crate::types::ImageFormat>) -> Self {
         self.signing_image_format = input;
         self
     }

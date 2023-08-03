@@ -29,16 +29,14 @@ impl DescribeConnectionAliasPermissionsInput {
 }
 impl DescribeConnectionAliasPermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionAliasPermissionsInput`](crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsInput).
-    pub fn builder() -> crate::operation::describe_connection_alias_permissions::builders::DescribeConnectionAliasPermissionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_connection_alias_permissions::builders::DescribeConnectionAliasPermissionsInputBuilder {
         crate::operation::describe_connection_alias_permissions::builders::DescribeConnectionAliasPermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeConnectionAliasPermissionsInput`](crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectionAliasPermissionsInputBuilder {
     pub(crate) alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -88,16 +86,18 @@ impl DescribeConnectionAliasPermissionsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeConnectionAliasPermissionsInput`](crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsInput {
-                alias_id: self.alias_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                alias_id: self.alias_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

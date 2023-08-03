@@ -37,9 +37,7 @@ impl BatchDetectSentimentItemResult {
 
 /// A builder for [`BatchDetectSentimentItemResult`](crate::types::BatchDetectSentimentItemResult).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDetectSentimentItemResultBuilder {
     pub(crate) index: ::std::option::Option<i32>,
     pub(crate) sentiment: ::std::option::Option<crate::types::SentimentType>,
@@ -66,10 +64,7 @@ impl BatchDetectSentimentItemResultBuilder {
         self
     }
     /// <p>The sentiment detected in the document.</p>
-    pub fn set_sentiment(
-        mut self,
-        input: ::std::option::Option<crate::types::SentimentType>,
-    ) -> Self {
+    pub fn set_sentiment(mut self, input: ::std::option::Option<crate::types::SentimentType>) -> Self {
         self.sentiment = input;
         self
     }
@@ -83,10 +78,7 @@ impl BatchDetectSentimentItemResultBuilder {
         self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its sentiment detection.</p>
-    pub fn set_sentiment_score(
-        mut self,
-        input: ::std::option::Option<crate::types::SentimentScore>,
-    ) -> Self {
+    pub fn set_sentiment_score(mut self, input: ::std::option::Option<crate::types::SentimentScore>) -> Self {
         self.sentiment_score = input;
         self
     }

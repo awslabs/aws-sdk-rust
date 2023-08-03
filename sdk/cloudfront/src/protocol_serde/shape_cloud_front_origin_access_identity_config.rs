@@ -19,10 +19,7 @@ pub fn ser_cloud_front_origin_access_identity_config(
 
 pub fn de_cloud_front_origin_access_identity_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<
-    crate::types::CloudFrontOriginAccessIdentityConfig,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
+) -> Result<crate::types::CloudFrontOriginAccessIdentityConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CloudFrontOriginAccessIdentityConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

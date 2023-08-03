@@ -9,10 +9,7 @@ pub fn ser_create_backend_api_input(
     if let Some(var_2) = &input.resource_config {
         #[allow(unused_mut)]
         let mut object_3 = object.key("resourceConfig").start_object();
-        crate::protocol_serde::shape_backend_api_resource_config::ser_backend_api_resource_config(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_backend_api_resource_config::ser_backend_api_resource_config(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.resource_name {

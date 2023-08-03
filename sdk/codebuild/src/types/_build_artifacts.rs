@@ -133,9 +133,7 @@ impl BuildArtifacts {
 
 /// A builder for [`BuildArtifacts`](crate::types::BuildArtifacts).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuildArtifactsBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) sha256sum: ::std::option::Option<::std::string::String>,
@@ -235,18 +233,12 @@ impl BuildArtifactsBuilder {
         &self.encryption_disabled
     }
     /// <p> An identifier for this artifact definition. </p>
-    pub fn artifact_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn artifact_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An identifier for this artifact definition. </p>
-    pub fn set_artifact_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_artifact_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_identifier = input;
         self
     }
@@ -316,10 +308,7 @@ impl BuildArtifactsBuilder {
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
     /// </dl>
-    pub fn set_bucket_owner_access(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketOwnerAccess>,
-    ) -> Self {
+    pub fn set_bucket_owner_access(mut self, input: ::std::option::Option<crate::types::BucketOwnerAccess>) -> Self {
         self.bucket_owner_access = input;
         self
     }
@@ -352,9 +341,7 @@ impl BuildArtifactsBuilder {
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
     /// </dl>
-    pub fn get_bucket_owner_access(
-        &self,
-    ) -> &::std::option::Option<crate::types::BucketOwnerAccess> {
+    pub fn get_bucket_owner_access(&self) -> &::std::option::Option<crate::types::BucketOwnerAccess> {
         &self.bucket_owner_access
     }
     /// Consumes the builder and constructs a [`BuildArtifacts`](crate::types::BuildArtifacts).

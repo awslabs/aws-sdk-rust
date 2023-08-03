@@ -24,9 +24,7 @@ impl AudioEvent {
 
 /// A builder for [`AudioEvent`](crate::types::AudioEvent).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioEventBuilder {
     pub(crate) audio_chunk: ::std::option::Option<::aws_smithy_types::Blob>,
 }
@@ -37,10 +35,7 @@ impl AudioEventBuilder {
         self
     }
     /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
-    pub fn set_audio_chunk(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_audio_chunk(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.audio_chunk = input;
         self
     }

@@ -11,9 +11,7 @@ impl super::Client {
     ///   - [`database(Option<Database>)`](crate::operation::get_database::GetDatabaseOutput::database): <p>The SAP HANA database of an application registered with AWS Systems Manager for SAP.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_database::GetDatabaseOutput::tags): <p>The tags of a database.</p>
     /// - On failure, responds with [`SdkError<GetDatabaseError>`](crate::operation::get_database::GetDatabaseError)
-    pub fn get_database(
-        &self,
-    ) -> crate::operation::get_database::builders::GetDatabaseFluentBuilder {
+    pub fn get_database(&self) -> crate::operation::get_database::builders::GetDatabaseFluentBuilder {
         crate::operation::get_database::builders::GetDatabaseFluentBuilder::new(self.handle.clone())
     }
 }

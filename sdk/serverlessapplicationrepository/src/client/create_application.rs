@@ -33,11 +33,7 @@ impl super::Client {
     ///   - [`verified_author_url(Option<String>)`](crate::operation::create_application::CreateApplicationOutput::verified_author_url): <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
     ///   - [`version(Option<Version>)`](crate::operation::create_application::CreateApplicationOutput::version): <p>Version information about the application.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::operation::create_application::CreateApplicationError)
-    pub fn create_application(
-        &self,
-    ) -> crate::operation::create_application::builders::CreateApplicationFluentBuilder {
-        crate::operation::create_application::builders::CreateApplicationFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_application(&self) -> crate::operation::create_application::builders::CreateApplicationFluentBuilder {
+        crate::operation::create_application::builders::CreateApplicationFluentBuilder::new(self.handle.clone())
     }
 }

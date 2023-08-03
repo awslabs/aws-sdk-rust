@@ -26,7 +26,7 @@ impl DescribeImageScanFindingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeImageScanFindingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsInputBuilder,
+    inner: crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsInputBuilder,
 }
 impl DescribeImageScanFindingsFluentBuilder {
     /// Creates a new `DescribeImageScanFindings`.
@@ -37,7 +37,7 @@ impl DescribeImageScanFindingsFluentBuilder {
         }
     }
     /// Access the DescribeImageScanFindings as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeImageScanFindingsFluentBuilder {
             crate::operation::describe_image_scan_findings::DescribeImageScanFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_scan_findings::DescribeImageScanFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_scan_findings::DescribeImageScanFindingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeImageScanFindingsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeImageScanFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_scan_findings::DescribeImageScanFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_scan_findings::DescribeImageScanFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_scan_findings::DescribeImageScanFindingsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeImageScanFindingsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_scan_findings::DescribeImageScanFindingsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_scan_findings::DescribeImageScanFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_scan_findings::DescribeImageScanFindingsError>,
     > {
         self.send_middleware().await
     }
@@ -114,19 +105,14 @@ impl DescribeImageScanFindingsFluentBuilder {
             crate::operation::describe_image_scan_findings::DescribeImageScanFindings,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_scan_findings::DescribeImageScanFindingsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_image_scan_findings::DescribeImageScanFindingsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator {
         crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
@@ -144,18 +130,12 @@ impl DescribeImageScanFindingsFluentBuilder {
         self.inner.get_registry_id()
     }
     /// <p>The repository for the image for which to describe the scan findings.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The repository for the image for which to describe the scan findings.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
@@ -169,10 +149,7 @@ impl DescribeImageScanFindingsFluentBuilder {
         self
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    pub fn set_image_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ImageIdentifier>,
-    ) -> Self {
+    pub fn set_image_id(mut self, input: ::std::option::Option<crate::types::ImageIdentifier>) -> Self {
         self.inner = self.inner.set_image_id(input);
         self
     }

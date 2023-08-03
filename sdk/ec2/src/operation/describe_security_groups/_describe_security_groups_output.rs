@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeSecurityGroupsOutput {
 }
 impl DescribeSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityGroupsOutput`](crate::operation::describe_security_groups::DescribeSecurityGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_security_groups::builders::DescribeSecurityGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_security_groups::builders::DescribeSecurityGroupsOutputBuilder {
         crate::operation::describe_security_groups::builders::DescribeSecurityGroupsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSecurityGroupsOutput`](crate::operation::describe_security_groups::DescribeSecurityGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSecurityGroupsOutputBuilder {
     pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -58,17 +54,12 @@ impl DescribeSecurityGroupsOutputBuilder {
         self
     }
     /// <p>Information about the security groups.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroup>>,
-    ) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroup>>) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>Information about the security groups.</p>
-    pub fn get_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroup>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroup>> {
         &self.security_groups
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>

@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for DeleteTargetGroupOutput {
 }
 impl DeleteTargetGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTargetGroupOutput`](crate::operation::delete_target_group::DeleteTargetGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_target_group::builders::DeleteTargetGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_target_group::builders::DeleteTargetGroupOutputBuilder {
         crate::operation::delete_target_group::builders::DeleteTargetGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTargetGroupOutput`](crate::operation::delete_target_group::DeleteTargetGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTargetGroupOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -87,10 +84,7 @@ impl DeleteTargetGroupOutputBuilder {
         self
     }
     /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, the status doesn't change.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetGroupStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TargetGroupStatus>) -> Self {
         self.status = input;
         self
     }

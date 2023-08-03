@@ -33,27 +33,19 @@ impl StopInstanceInput {
 
 /// A builder for [`StopInstanceInput`](crate::operation::stop_instance::StopInstanceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopInstanceInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,
 }
 impl StopInstanceInputBuilder {
     /// <p>The name of the instance (a virtual private server) to stop.</p>
-    pub fn instance_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the instance (a virtual private server) to stop.</p>
-    pub fn set_instance_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
@@ -82,12 +74,7 @@ impl StopInstanceInputBuilder {
         &self.force
     }
     /// Consumes the builder and constructs a [`StopInstanceInput`](crate::operation::stop_instance::StopInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_instance::StopInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_instance::StopInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_instance::StopInstanceInput {
             instance_name: self.instance_name,
             force: self.force,

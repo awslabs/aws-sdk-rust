@@ -26,7 +26,7 @@ impl AssociateSourceNetworkStackInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateSourceNetworkStackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackInputBuilder,
+    inner: crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackInputBuilder,
 }
 impl AssociateSourceNetworkStackFluentBuilder {
     /// Creates a new `AssociateSourceNetworkStack`.
@@ -37,7 +37,7 @@ impl AssociateSourceNetworkStackFluentBuilder {
         }
     }
     /// Access the AssociateSourceNetworkStack as a reference.
-    pub fn as_input(&self) -> &crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl AssociateSourceNetworkStackFluentBuilder {
             crate::operation::associate_source_network_stack::AssociateSourceNetworkStack,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl AssociateSourceNetworkStackFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl AssociateSourceNetworkStackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_source_network_stack::AssociateSourceNetworkStackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl AssociateSourceNetworkStackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_source_network_stack::AssociateSourceNetworkStackOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl AssociateSourceNetworkStackFluentBuilder {
             crate::operation::associate_source_network_stack::AssociateSourceNetworkStack,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Source Network ID to associate with CloudFormation template.</p>
-    pub fn source_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_network_id(input.into());
         self
     }
     /// <p>The Source Network ID to associate with CloudFormation template.</p>
-    pub fn set_source_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_network_id(input);
         self
     }
@@ -141,18 +124,12 @@ impl AssociateSourceNetworkStackFluentBuilder {
         self.inner.get_source_network_id()
     }
     /// <p>CloudFormation template to associate with a Source Network.</p>
-    pub fn cfn_stack_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cfn_stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cfn_stack_name(input.into());
         self
     }
     /// <p>CloudFormation template to associate with a Source Network.</p>
-    pub fn set_cfn_stack_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cfn_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cfn_stack_name(input);
         self
     }

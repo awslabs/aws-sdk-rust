@@ -10,10 +10,7 @@ impl DescribeOpsItemsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_ops_items::DescribeOpsItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ops_items::DescribeOpsItemsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ops_items::DescribeOpsItemsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_ops_items();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl DescribeOpsItemsFluentBuilder {
         }
     }
     /// Access the DescribeOpsItems as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_ops_items::builders::DescribeOpsItemsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_ops_items::builders::DescribeOpsItemsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl DescribeOpsItemsFluentBuilder {
             crate::operation::describe_ops_items::DescribeOpsItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ops_items::DescribeOpsItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ops_items::DescribeOpsItemsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl DescribeOpsItemsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl DescribeOpsItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ops_items::DescribeOpsItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ops_items::DescribeOpsItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ops_items::DescribeOpsItemsError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl DescribeOpsItemsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ops_items::DescribeOpsItemsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ops_items::DescribeOpsItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ops_items::DescribeOpsItemsError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +103,15 @@ impl DescribeOpsItemsFluentBuilder {
             crate::operation::describe_ops_items::DescribeOpsItems,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ops_items::DescribeOpsItemsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ops_items::DescribeOpsItemsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator {
-        crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator {
+        crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `OpsItemFilters`.
     ///
@@ -180,10 +159,7 @@ impl DescribeOpsItemsFluentBuilder {
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
-    pub fn set_ops_item_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>>,
-    ) -> Self {
+    pub fn set_ops_item_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>>) -> Self {
         self.inner = self.inner.set_ops_item_filters(input);
         self
     }
@@ -206,9 +182,7 @@ impl DescribeOpsItemsFluentBuilder {
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
-    pub fn get_ops_item_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>> {
+    pub fn get_ops_item_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>> {
         self.inner.get_ops_item_filters()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>

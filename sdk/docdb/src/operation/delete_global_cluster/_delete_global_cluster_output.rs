@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteGlobalClusterOutput {
 }
 impl DeleteGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGlobalClusterOutput`](crate::operation::delete_global_cluster::DeleteGlobalClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_global_cluster::builders::DeleteGlobalClusterOutputBuilder {
-        crate::operation::delete_global_cluster::builders::DeleteGlobalClusterOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_global_cluster::builders::DeleteGlobalClusterOutputBuilder {
+        crate::operation::delete_global_cluster::builders::DeleteGlobalClusterOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteGlobalClusterOutput`](crate::operation::delete_global_cluster::DeleteGlobalClusterOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteGlobalClusterOutputBuilder {
     pub(crate) global_cluster: ::std::option::Option<crate::types::GlobalCluster>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl DeleteGlobalClusterOutputBuilder {
         self
     }
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
-    pub fn set_global_cluster(
-        mut self,
-        input: ::std::option::Option<crate::types::GlobalCluster>,
-    ) -> Self {
+    pub fn set_global_cluster(mut self, input: ::std::option::Option<crate::types::GlobalCluster>) -> Self {
         self.global_cluster = input;
         self
     }

@@ -29,18 +29,14 @@ impl ListMitigationActionsInput {
 }
 impl ListMitigationActionsInput {
     /// Creates a new builder-style object to manufacture [`ListMitigationActionsInput`](crate::operation::list_mitigation_actions::ListMitigationActionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_mitigation_actions::builders::ListMitigationActionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_mitigation_actions::builders::ListMitigationActionsInputBuilder {
         crate::operation::list_mitigation_actions::builders::ListMitigationActionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListMitigationActionsInput`](crate::operation::list_mitigation_actions::ListMitigationActionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMitigationActionsInputBuilder {
     pub(crate) action_type: ::std::option::Option<crate::types::MitigationActionType>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -53,10 +49,7 @@ impl ListMitigationActionsInputBuilder {
         self
     }
     /// <p>Specify a value to limit the result to mitigation actions with a specific action type.</p>
-    pub fn set_action_type(
-        mut self,
-        input: ::std::option::Option<crate::types::MitigationActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::MitigationActionType>) -> Self {
         self.action_type = input;
         self
     }
@@ -95,16 +88,12 @@ impl ListMitigationActionsInputBuilder {
     /// Consumes the builder and constructs a [`ListMitigationActionsInput`](crate::operation::list_mitigation_actions::ListMitigationActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_mitigation_actions::ListMitigationActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_mitigation_actions::ListMitigationActionsInput {
-                action_type: self.action_type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_mitigation_actions::ListMitigationActionsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_mitigation_actions::ListMitigationActionsInput {
+            action_type: self.action_type,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }

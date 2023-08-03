@@ -65,9 +65,7 @@ impl PolicyAttributeTypeDescription {
 
 /// A builder for [`PolicyAttributeTypeDescription`](crate::types::PolicyAttributeTypeDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyAttributeTypeDescriptionBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_type: ::std::option::Option<::std::string::String>,
@@ -77,18 +75,12 @@ pub struct PolicyAttributeTypeDescriptionBuilder {
 }
 impl PolicyAttributeTypeDescriptionBuilder {
     /// <p>The name of the attribute.</p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the attribute.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }
@@ -97,18 +89,12 @@ impl PolicyAttributeTypeDescriptionBuilder {
         &self.attribute_name
     }
     /// <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
-    pub fn attribute_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
-    pub fn set_attribute_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_type = input;
         self
     }
@@ -131,18 +117,12 @@ impl PolicyAttributeTypeDescriptionBuilder {
         &self.description
     }
     /// <p>The default value of the attribute, if applicable.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value of the attribute, if applicable.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }

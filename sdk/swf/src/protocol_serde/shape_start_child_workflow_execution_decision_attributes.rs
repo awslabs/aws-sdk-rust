@@ -19,9 +19,7 @@ pub fn ser_start_child_workflow_execution_decision_attributes(
         object.key("input").string(var_5.as_str());
     }
     if let Some(var_6) = &input.execution_start_to_close_timeout {
-        object
-            .key("executionStartToCloseTimeout")
-            .string(var_6.as_str());
+        object.key("executionStartToCloseTimeout").string(var_6.as_str());
     }
     if let Some(var_7) = &input.task_list {
         #[allow(unused_mut)]
@@ -33,9 +31,7 @@ pub fn ser_start_child_workflow_execution_decision_attributes(
         object.key("taskPriority").string(var_9.as_str());
     }
     if let Some(var_10) = &input.task_start_to_close_timeout {
-        object
-            .key("taskStartToCloseTimeout")
-            .string(var_10.as_str());
+        object.key("taskStartToCloseTimeout").string(var_10.as_str());
     }
     if let Some(var_11) = &input.child_policy {
         object.key("childPolicy").string(var_11.as_str());

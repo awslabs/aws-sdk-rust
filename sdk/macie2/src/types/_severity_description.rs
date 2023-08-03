@@ -39,13 +39,7 @@
 /// <p>The qualitative representation of the finding's severity. Possible values are:</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SeverityDescription {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for SeverityDescription {
             "High" => SeverityDescription::High,
             "Low" => SeverityDescription::Low,
             "Medium" => SeverityDescription::Medium,
-            other => SeverityDescription::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SeverityDescription::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

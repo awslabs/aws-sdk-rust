@@ -6,12 +6,10 @@
 pub struct CoverageFilterCriteria {
     /// <p>The scan status code to filter on.</p>
     #[doc(hidden)]
-    pub scan_status_code:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub scan_status_code: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>The scan status reason to filter on.</p>
     #[doc(hidden)]
-    pub scan_status_reason:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub scan_status_reason: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>An array of Amazon Web Services account IDs to return coverage statistics for.</p>
     #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
@@ -26,8 +24,7 @@ pub struct CoverageFilterCriteria {
     pub scan_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>The Amazon ECR repository name to filter on.</p>
     #[doc(hidden)]
-    pub ecr_repository_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub ecr_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>The Amazon ECR image tags to filter on.</p>
     #[doc(hidden)]
     pub ecr_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
@@ -36,16 +33,13 @@ pub struct CoverageFilterCriteria {
     pub ec2_instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by function names.</p>
     #[doc(hidden)]
-    pub lambda_function_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub lambda_function_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
     #[doc(hidden)]
-    pub lambda_function_tags:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
+    pub lambda_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
     #[doc(hidden)]
-    pub lambda_function_runtime:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub lambda_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
     #[doc(hidden)]
     pub last_scanned_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
@@ -56,9 +50,7 @@ impl CoverageFilterCriteria {
         self.scan_status_code.as_deref()
     }
     /// <p>The scan status reason to filter on.</p>
-    pub fn scan_status_reason(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
+    pub fn scan_status_reason(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
         self.scan_status_reason.as_deref()
     }
     /// <p>An array of Amazon Web Services account IDs to return coverage statistics for.</p>
@@ -78,9 +70,7 @@ impl CoverageFilterCriteria {
         self.scan_type.as_deref()
     }
     /// <p>The Amazon ECR repository name to filter on.</p>
-    pub fn ecr_repository_name(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
+    pub fn ecr_repository_name(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
         self.ecr_repository_name.as_deref()
     }
     /// <p>The Amazon ECR image tags to filter on.</p>
@@ -92,21 +82,15 @@ impl CoverageFilterCriteria {
         self.ec2_instance_tags.as_deref()
     }
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by function names.</p>
-    pub fn lambda_function_name(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
+    pub fn lambda_function_name(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
         self.lambda_function_name.as_deref()
     }
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
-    pub fn lambda_function_tags(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CoverageMapFilter]> {
+    pub fn lambda_function_tags(&self) -> ::std::option::Option<&[crate::types::CoverageMapFilter]> {
         self.lambda_function_tags.as_deref()
     }
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
-    pub fn lambda_function_runtime(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
+    pub fn lambda_function_runtime(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
         self.lambda_function_runtime.as_deref()
     }
     /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
@@ -123,36 +107,21 @@ impl CoverageFilterCriteria {
 
 /// A builder for [`CoverageFilterCriteria`](crate::types::CoverageFilterCriteria).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoverageFilterCriteriaBuilder {
-    pub(crate) scan_status_code:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    pub(crate) scan_status_reason:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    pub(crate) account_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    pub(crate) resource_id:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    pub(crate) resource_type:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    pub(crate) scan_type:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    pub(crate) ecr_repository_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    pub(crate) ecr_image_tags:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    pub(crate) ec2_instance_tags:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
-    pub(crate) lambda_function_name:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    pub(crate) lambda_function_tags:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
-    pub(crate) lambda_function_runtime:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    pub(crate) last_scanned_at:
-        ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
+    pub(crate) scan_status_code: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) scan_status_reason: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) account_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) resource_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) resource_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) scan_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) ecr_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) ecr_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) ec2_instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
+    pub(crate) lambda_function_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) lambda_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
+    pub(crate) lambda_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
+    pub(crate) last_scanned_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
 }
 impl CoverageFilterCriteriaBuilder {
     /// Appends an item to `scan_status_code`.
@@ -167,17 +136,12 @@ impl CoverageFilterCriteriaBuilder {
         self
     }
     /// <p>The scan status code to filter on.</p>
-    pub fn set_scan_status_code(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    ) -> Self {
+    pub fn set_scan_status_code(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.scan_status_code = input;
         self
     }
     /// <p>The scan status code to filter on.</p>
-    pub fn get_scan_status_code(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+    pub fn get_scan_status_code(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.scan_status_code
     }
     /// Appends an item to `scan_status_reason`.
@@ -192,17 +156,12 @@ impl CoverageFilterCriteriaBuilder {
         self
     }
     /// <p>The scan status reason to filter on.</p>
-    pub fn set_scan_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    ) -> Self {
+    pub fn set_scan_status_reason(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.scan_status_reason = input;
         self
     }
     /// <p>The scan status reason to filter on.</p>
-    pub fn get_scan_status_reason(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+    pub fn get_scan_status_reason(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.scan_status_reason
     }
     /// Appends an item to `account_id`.
@@ -217,17 +176,12 @@ impl CoverageFilterCriteriaBuilder {
         self
     }
     /// <p>An array of Amazon Web Services account IDs to return coverage statistics for.</p>
-    pub fn set_account_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    ) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>An array of Amazon Web Services account IDs to return coverage statistics for.</p>
-    pub fn get_account_id(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.account_id
     }
     /// Appends an item to `resource_id`.
@@ -242,17 +196,12 @@ impl CoverageFilterCriteriaBuilder {
         self
     }
     /// <p>An array of Amazon Web Services resource IDs to return coverage statistics for.</p>
-    pub fn set_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    ) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p>An array of Amazon Web Services resource IDs to return coverage statistics for.</p>
-    pub fn get_resource_id(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.resource_id
     }
     /// Appends an item to `resource_type`.
@@ -267,17 +216,12 @@ impl CoverageFilterCriteriaBuilder {
         self
     }
     /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
-    pub fn get_resource_type(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.resource_type
     }
     /// Appends an item to `scan_type`.
@@ -292,17 +236,12 @@ impl CoverageFilterCriteriaBuilder {
         self
     }
     /// <p>An array of Amazon Inspector scan types to return coverage statistics for.</p>
-    pub fn set_scan_type(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    ) -> Self {
+    pub fn set_scan_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.scan_type = input;
         self
     }
     /// <p>An array of Amazon Inspector scan types to return coverage statistics for.</p>
-    pub fn get_scan_type(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+    pub fn get_scan_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.scan_type
     }
     /// Appends an item to `ecr_repository_name`.
@@ -317,17 +256,12 @@ impl CoverageFilterCriteriaBuilder {
         self
     }
     /// <p>The Amazon ECR repository name to filter on.</p>
-    pub fn set_ecr_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    ) -> Self {
+    pub fn set_ecr_repository_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.ecr_repository_name = input;
         self
     }
     /// <p>The Amazon ECR repository name to filter on.</p>
-    pub fn get_ecr_repository_name(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+    pub fn get_ecr_repository_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.ecr_repository_name
     }
     /// Appends an item to `ecr_image_tags`.
@@ -342,17 +276,12 @@ impl CoverageFilterCriteriaBuilder {
         self
     }
     /// <p>The Amazon ECR image tags to filter on.</p>
-    pub fn set_ecr_image_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    ) -> Self {
+    pub fn set_ecr_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.ecr_image_tags = input;
         self
     }
     /// <p>The Amazon ECR image tags to filter on.</p>
-    pub fn get_ecr_image_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+    pub fn get_ecr_image_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.ecr_image_tags
     }
     /// Appends an item to `ec2_instance_tags`.
@@ -367,17 +296,12 @@ impl CoverageFilterCriteriaBuilder {
         self
     }
     /// <p>The Amazon EC2 instance tags to filter on.</p>
-    pub fn set_ec2_instance_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
-    ) -> Self {
+    pub fn set_ec2_instance_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>) -> Self {
         self.ec2_instance_tags = input;
         self
     }
     /// <p>The Amazon EC2 instance tags to filter on.</p>
-    pub fn get_ec2_instance_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>> {
+    pub fn get_ec2_instance_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>> {
         &self.ec2_instance_tags
     }
     /// Appends an item to `lambda_function_name`.
@@ -392,17 +316,12 @@ impl CoverageFilterCriteriaBuilder {
         self
     }
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by function names.</p>
-    pub fn set_lambda_function_name(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    ) -> Self {
+    pub fn set_lambda_function_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.lambda_function_name = input;
         self
     }
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by function names.</p>
-    pub fn get_lambda_function_name(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+    pub fn get_lambda_function_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.lambda_function_name
     }
     /// Appends an item to `lambda_function_tags`.
@@ -417,17 +336,12 @@ impl CoverageFilterCriteriaBuilder {
         self
     }
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
-    pub fn set_lambda_function_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
-    ) -> Self {
+    pub fn set_lambda_function_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>) -> Self {
         self.lambda_function_tags = input;
         self
     }
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
-    pub fn get_lambda_function_tags(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>> {
+    pub fn get_lambda_function_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>> {
         &self.lambda_function_tags
     }
     /// Appends an item to `lambda_function_runtime`.
@@ -442,17 +356,12 @@ impl CoverageFilterCriteriaBuilder {
         self
     }
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
-    pub fn set_lambda_function_runtime(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    ) -> Self {
+    pub fn set_lambda_function_runtime(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.lambda_function_runtime = input;
         self
     }
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
-    pub fn get_lambda_function_runtime(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+    pub fn get_lambda_function_runtime(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.lambda_function_runtime
     }
     /// Appends an item to `last_scanned_at`.
@@ -467,17 +376,12 @@ impl CoverageFilterCriteriaBuilder {
         self
     }
     /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
-    pub fn set_last_scanned_at(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
-    ) -> Self {
+    pub fn set_last_scanned_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>) -> Self {
         self.last_scanned_at = input;
         self
     }
     /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
-    pub fn get_last_scanned_at(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>> {
+    pub fn get_last_scanned_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>> {
         &self.last_scanned_at
     }
     /// Consumes the builder and constructs a [`CoverageFilterCriteria`](crate::types::CoverageFilterCriteria).

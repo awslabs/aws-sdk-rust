@@ -73,17 +73,14 @@ impl CreateUserSettingsInput {
 }
 impl CreateUserSettingsInput {
     /// Creates a new builder-style object to manufacture [`CreateUserSettingsInput`](crate::operation::create_user_settings::CreateUserSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::create_user_settings::builders::CreateUserSettingsInputBuilder {
+    pub fn builder() -> crate::operation::create_user_settings::builders::CreateUserSettingsInputBuilder {
         crate::operation::create_user_settings::builders::CreateUserSettingsInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateUserSettingsInput`](crate::operation::create_user_settings::CreateUserSettingsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateUserSettingsInputBuilder {
     pub(crate) copy_allowed: ::std::option::Option<crate::types::EnabledType>,
     pub(crate) paste_allowed: ::std::option::Option<crate::types::EnabledType>,
@@ -102,10 +99,7 @@ impl CreateUserSettingsInputBuilder {
         self
     }
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
-    pub fn set_copy_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_copy_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.copy_allowed = input;
         self
     }
@@ -119,10 +113,7 @@ impl CreateUserSettingsInputBuilder {
         self
     }
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
-    pub fn set_paste_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_paste_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.paste_allowed = input;
         self
     }
@@ -136,10 +127,7 @@ impl CreateUserSettingsInputBuilder {
         self
     }
     /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
-    pub fn set_download_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_download_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.download_allowed = input;
         self
     }
@@ -153,10 +141,7 @@ impl CreateUserSettingsInputBuilder {
         self
     }
     /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
-    pub fn set_upload_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_upload_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.upload_allowed = input;
         self
     }
@@ -170,10 +155,7 @@ impl CreateUserSettingsInputBuilder {
         self
     }
     /// <p>Specifies whether the user can print to the local device.</p>
-    pub fn set_print_allowed(
-        mut self,
-        input: ::std::option::Option<crate::types::EnabledType>,
-    ) -> Self {
+    pub fn set_print_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
         self.print_allowed = input;
         self
     }
@@ -193,10 +175,7 @@ impl CreateUserSettingsInputBuilder {
         self
     }
     /// <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -224,10 +203,7 @@ impl CreateUserSettingsInputBuilder {
         self
     }
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
-    pub fn set_idle_disconnect_timeout_in_minutes(
-        mut self,
-        input: ::std::option::Option<i32>,
-    ) -> Self {
+    pub fn set_idle_disconnect_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.idle_disconnect_timeout_in_minutes = input;
         self
     }
@@ -255,22 +231,17 @@ impl CreateUserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`CreateUserSettingsInput`](crate::operation::create_user_settings::CreateUserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_user_settings::CreateUserSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_user_settings::CreateUserSettingsInput {
-                copy_allowed: self.copy_allowed,
-                paste_allowed: self.paste_allowed,
-                download_allowed: self.download_allowed,
-                upload_allowed: self.upload_allowed,
-                print_allowed: self.print_allowed,
-                tags: self.tags,
-                disconnect_timeout_in_minutes: self.disconnect_timeout_in_minutes,
-                idle_disconnect_timeout_in_minutes: self.idle_disconnect_timeout_in_minutes,
-                client_token: self.client_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_user_settings::CreateUserSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_user_settings::CreateUserSettingsInput {
+            copy_allowed: self.copy_allowed,
+            paste_allowed: self.paste_allowed,
+            download_allowed: self.download_allowed,
+            upload_allowed: self.upload_allowed,
+            print_allowed: self.print_allowed,
+            tags: self.tags,
+            disconnect_timeout_in_minutes: self.disconnect_timeout_in_minutes,
+            idle_disconnect_timeout_in_minutes: self.idle_disconnect_timeout_in_minutes,
+            client_token: self.client_token,
+        })
     }
 }

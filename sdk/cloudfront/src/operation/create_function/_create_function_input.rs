@@ -72,10 +72,7 @@ impl CreateFunctionInputBuilder {
         self
     }
     /// <p>Configuration information about the function, including an optional comment and the function's runtime.</p>
-    pub fn set_function_config(
-        mut self,
-        input: ::std::option::Option<crate::types::FunctionConfig>,
-    ) -> Self {
+    pub fn set_function_config(mut self, input: ::std::option::Option<crate::types::FunctionConfig>) -> Self {
         self.function_config = input;
         self
     }
@@ -89,10 +86,7 @@ impl CreateFunctionInputBuilder {
         self
     }
     /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_function_code(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::Blob>,
-    ) -> Self {
+    pub fn set_function_code(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.function_code = input;
         self
     }
@@ -103,10 +97,7 @@ impl CreateFunctionInputBuilder {
     /// Consumes the builder and constructs a [`CreateFunctionInput`](crate::operation::create_function::CreateFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_function::CreateFunctionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_function::CreateFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_function::CreateFunctionInput {
             name: self.name,
             function_config: self.function_config,

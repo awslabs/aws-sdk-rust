@@ -7,10 +7,7 @@ pub fn ser_area_of_interest_geometry(
         crate::types::AreaOfInterestGeometry::PolygonGeometry(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_1.key("PolygonGeometry").start_object();
-            crate::protocol_serde::shape_polygon_geometry_input::ser_polygon_geometry_input(
-                &mut object_1,
-                inner,
-            )?;
+            crate::protocol_serde::shape_polygon_geometry_input::ser_polygon_geometry_input(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::AreaOfInterestGeometry::MultiPolygonGeometry(inner) => {
@@ -20,11 +17,9 @@ pub fn ser_area_of_interest_geometry(
             object_2.finish();
         }
         crate::types::AreaOfInterestGeometry::Unknown => {
-            return Err(
-                ::aws_smithy_http::operation::error::SerializationError::unknown_variant(
-                    "AreaOfInterestGeometry",
-                ),
-            )
+            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+                "AreaOfInterestGeometry",
+            ))
         }
     }
     Ok(())
@@ -32,17 +27,9 @@ pub fn ser_area_of_interest_geometry(
 
 pub(crate) fn de_area_of_interest_geometry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::AreaOfInterestGeometry>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::AreaOfInterestGeometry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     let mut variant = None;
     match tokens.next().transpose()? {
@@ -52,47 +39,39 @@ where
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                     if variant.is_some() {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                "encountered mixed variants in union",
-                            ),
-                        );
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                            "encountered mixed variants in union",
+                        ));
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                            "PolygonGeometry" => {
-                                Some(crate::types::AreaOfInterestGeometry::PolygonGeometry(
-                                    crate::protocol_serde::shape_polygon_geometry_input::de_polygon_geometry_input(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PolygonGeometry' cannot be null"))?
-                                ))
-                            }
-                            "MultiPolygonGeometry" => {
-                                Some(crate::types::AreaOfInterestGeometry::MultiPolygonGeometry(
-                                    crate::protocol_serde::shape_multi_polygon_geometry_input::de_multi_polygon_geometry_input(tokens)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MultiPolygonGeometry' cannot be null"))?
-                                ))
-                            }
-                            _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::AreaOfInterestGeometry::Unknown)
-                                                                    }
-                        };
+                        "PolygonGeometry" => Some(crate::types::AreaOfInterestGeometry::PolygonGeometry(
+                            crate::protocol_serde::shape_polygon_geometry_input::de_polygon_geometry_input(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PolygonGeometry' cannot be null")
+                            })?,
+                        )),
+                        "MultiPolygonGeometry" => Some(crate::types::AreaOfInterestGeometry::MultiPolygonGeometry(
+                            crate::protocol_serde::shape_multi_polygon_geometry_input::de_multi_polygon_geometry_input(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MultiPolygonGeometry' cannot be null")
+                            })?,
+                        )),
+                        _ => {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            Some(crate::types::AreaOfInterestGeometry::Unknown)
+                        }
+                    };
                 }
                 other => {
-                    return Err(
-                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                            "expected object key or end object, found: {:?}",
-                            other
-                        )),
-                    )
+                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                        "expected object key or end object, found: {:?}",
+                        other
+                    )))
                 }
             }
         },
         _ => {
-            return Err(
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                    "expected start object or null",
-                ),
-            )
+            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                "expected start object or null",
+            ))
         }
     }
     Ok(variant)

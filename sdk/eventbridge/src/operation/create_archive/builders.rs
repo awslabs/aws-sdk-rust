@@ -10,10 +10,7 @@ impl CreateArchiveInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_archive::CreateArchiveOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_archive::CreateArchiveError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_archive::CreateArchiveError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_archive();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CreateArchiveFluentBuilder {
         }
     }
     /// Access the CreateArchive as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_archive::builders::CreateArchiveInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_archive::builders::CreateArchiveInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl CreateArchiveFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl CreateArchiveFluentBuilder {
         self.inner.get_archive_name()
     }
     /// <p>The ARN of the event bus that sends events to the archive.</p>
-    pub fn event_source_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_source_arn(input.into());
         self
     }
     /// <p>The ARN of the event bus that sends events to the archive.</p>
-    pub fn set_event_source_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_source_arn(input);
         self
     }
@@ -163,18 +149,12 @@ impl CreateArchiveFluentBuilder {
         self.inner.get_description()
     }
     /// <p>An event pattern to use to filter events sent to the archive.</p>
-    pub fn event_pattern(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn event_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_pattern(input.into());
         self
     }
     /// <p>An event pattern to use to filter events sent to the archive.</p>
-    pub fn set_event_pattern(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_pattern(input);
         self
     }

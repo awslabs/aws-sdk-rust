@@ -26,8 +26,7 @@ impl ListAccountAssociationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAccountAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_account_associations::builders::ListAccountAssociationsInputBuilder,
+    inner: crate::operation::list_account_associations::builders::ListAccountAssociationsInputBuilder,
 }
 impl ListAccountAssociationsFluentBuilder {
     /// Creates a new `ListAccountAssociations`.
@@ -38,10 +37,7 @@ impl ListAccountAssociationsFluentBuilder {
         }
     }
     /// Access the ListAccountAssociations as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_account_associations::builders::ListAccountAssociationsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_account_associations::builders::ListAccountAssociationsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListAccountAssociationsFluentBuilder {
             crate::operation::list_account_associations::ListAccountAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_associations::ListAccountAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_associations::ListAccountAssociationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListAccountAssociationsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListAccountAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_account_associations::ListAccountAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_associations::ListAccountAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_associations::ListAccountAssociationsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListAccountAssociationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_account_associations::ListAccountAssociationsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_associations::ListAccountAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_associations::ListAccountAssociationsError>,
     > {
         self.send_middleware().await
     }
@@ -118,34 +105,23 @@ impl ListAccountAssociationsFluentBuilder {
             crate::operation::list_account_associations::ListAccountAssociations,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_account_associations::ListAccountAssociationsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_account_associations::ListAccountAssociationsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_account_associations::paginator::ListAccountAssociationsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_account_associations::paginator::ListAccountAssociationsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_account_associations::paginator::ListAccountAssociationsPaginator {
         crate::operation::list_account_associations::paginator::ListAccountAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p> The preferred billing period to get account associations. </p>
-    pub fn billing_period(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn billing_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_period(input.into());
         self
     }
     /// <p> The preferred billing period to get account associations. </p>
-    pub fn set_billing_period(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_billing_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_period(input);
         self
     }
@@ -165,10 +141,7 @@ impl ListAccountAssociationsFluentBuilder {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<crate::types::ListAccountAssociationsFilter>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListAccountAssociationsFilter>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -176,9 +149,7 @@ impl ListAccountAssociationsFluentBuilder {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<crate::types::ListAccountAssociationsFilter> {
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListAccountAssociationsFilter> {
         self.inner.get_filters()
     }
     /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>

@@ -10,10 +10,7 @@ impl StartRestoreJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_restore_job::StartRestoreJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_restore_job::StartRestoreJobError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_restore_job::StartRestoreJobError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.start_restore_job();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl StartRestoreJobFluentBuilder {
         }
     }
     /// Access the StartRestoreJob as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::start_restore_job::builders::StartRestoreJobInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::start_restore_job::builders::StartRestoreJobInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl StartRestoreJobFluentBuilder {
             crate::operation::start_restore_job::StartRestoreJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_restore_job::StartRestoreJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_restore_job::StartRestoreJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl StartRestoreJobFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl StartRestoreJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_restore_job::StartRestoreJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_restore_job::StartRestoreJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_restore_job::StartRestoreJobError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl StartRestoreJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_restore_job::StartRestoreJobOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_restore_job::StartRestoreJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_restore_job::StartRestoreJobError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl StartRestoreJobFluentBuilder {
             crate::operation::start_restore_job::StartRestoreJob,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::start_restore_job::StartRestoreJobError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_restore_job::StartRestoreJobError>,
     > {
         self.customize_middleware().await
     }
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn recovery_point_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recovery_point_arn(input.into());
         self
     }
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn set_recovery_point_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recovery_point_arn(input);
         self
     }
@@ -158,11 +136,7 @@ impl StartRestoreJobFluentBuilder {
     /// <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>
     /// <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>
     /// </ul>
-    pub fn metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(k.into(), v.into());
         self
     }
@@ -178,12 +152,7 @@ impl StartRestoreJobFluentBuilder {
     /// <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>
     /// <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>
     /// </ul>
-    pub fn set_metadata(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
     }
@@ -199,11 +168,7 @@ impl StartRestoreJobFluentBuilder {
     /// <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>
     /// <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>
     /// </ul>
-    pub fn get_metadata(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_metadata()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
@@ -221,18 +186,12 @@ impl StartRestoreJobFluentBuilder {
         self.inner.get_iam_role_arn()
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartRestoreJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn idempotency_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartRestoreJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
@@ -258,10 +217,7 @@ impl StartRestoreJobFluentBuilder {
     /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
@@ -283,10 +239,7 @@ impl StartRestoreJobFluentBuilder {
     /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -319,10 +272,7 @@ impl StartRestoreJobFluentBuilder {
     }
     /// <p>This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be copied to the restored resource.</p>
     /// <p>This can only be applied to backups created through Backup.</p>
-    pub fn set_copy_source_tags_to_restored_resource(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_copy_source_tags_to_restored_resource(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_source_tags_to_restored_resource(input);
         self
     }

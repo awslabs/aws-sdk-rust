@@ -54,10 +54,7 @@ pub fn ser_create_instance_input(
             {
                 #[allow(unused_mut)]
                 let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(
-                    &mut object_19,
-                    item_18,
-                )?;
+                crate::protocol_serde::shape_block_device_mapping::ser_block_device_mapping(&mut object_19, item_18)?;
                 object_19.finish();
             }
         }

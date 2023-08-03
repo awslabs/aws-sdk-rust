@@ -26,16 +26,14 @@ impl RemoveTagsFromCertificateInput {
 }
 impl RemoveTagsFromCertificateInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromCertificateInput`](crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateInput).
-    pub fn builder() -> crate::operation::remove_tags_from_certificate::builders::RemoveTagsFromCertificateInputBuilder{
+    pub fn builder() -> crate::operation::remove_tags_from_certificate::builders::RemoveTagsFromCertificateInputBuilder {
         crate::operation::remove_tags_from_certificate::builders::RemoveTagsFromCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`RemoveTagsFromCertificateInput`](crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveTagsFromCertificateInputBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -44,20 +42,14 @@ impl RemoveTagsFromCertificateInputBuilder {
     /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn certificate_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_certificate_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_arn = input;
         self
     }
@@ -79,10 +71,7 @@ impl RemoveTagsFromCertificateInputBuilder {
         self
     }
     /// <p>The key-value pair that defines the tag to remove.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -97,11 +86,9 @@ impl RemoveTagsFromCertificateInputBuilder {
         crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateInput {
-                certificate_arn: self.certificate_arn,
-                tags: self.tags,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateInput {
+            certificate_arn: self.certificate_arn,
+            tags: self.tags,
+        })
     }
 }

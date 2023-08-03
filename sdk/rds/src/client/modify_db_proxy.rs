@@ -14,11 +14,7 @@ impl super::Client {
     /// - On success, responds with [`ModifyDbProxyOutput`](crate::operation::modify_db_proxy::ModifyDbProxyOutput) with field(s):
     ///   - [`db_proxy(Option<DbProxy>)`](crate::operation::modify_db_proxy::ModifyDbProxyOutput::db_proxy): <p>The <code>DBProxy</code> object representing the new settings for the proxy.</p>
     /// - On failure, responds with [`SdkError<ModifyDBProxyError>`](crate::operation::modify_db_proxy::ModifyDBProxyError)
-    pub fn modify_db_proxy(
-        &self,
-    ) -> crate::operation::modify_db_proxy::builders::ModifyDBProxyFluentBuilder {
-        crate::operation::modify_db_proxy::builders::ModifyDBProxyFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn modify_db_proxy(&self) -> crate::operation::modify_db_proxy::builders::ModifyDBProxyFluentBuilder {
+        crate::operation::modify_db_proxy::builders::ModifyDBProxyFluentBuilder::new(self.handle.clone())
     }
 }

@@ -12,9 +12,7 @@ impl super::Client {
     ///   - [`lf_tags(Option<Vec<LfTagPair>>)`](crate::operation::list_lf_tags::ListLfTagsOutput::lf_tags): <p>A list of LF-tags that the requested has permission to view.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_lf_tags::ListLfTagsOutput::next_token): <p>A continuation token, present if the current list segment is not the last.</p>
     /// - On failure, responds with [`SdkError<ListLFTagsError>`](crate::operation::list_lf_tags::ListLFTagsError)
-    pub fn list_lf_tags(
-        &self,
-    ) -> crate::operation::list_lf_tags::builders::ListLFTagsFluentBuilder {
+    pub fn list_lf_tags(&self) -> crate::operation::list_lf_tags::builders::ListLFTagsFluentBuilder {
         crate::operation::list_lf_tags::builders::ListLFTagsFluentBuilder::new(self.handle.clone())
     }
 }

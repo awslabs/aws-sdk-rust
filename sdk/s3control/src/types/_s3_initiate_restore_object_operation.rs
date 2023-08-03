@@ -34,9 +34,7 @@ impl S3InitiateRestoreObjectOperation {
 
 /// A builder for [`S3InitiateRestoreObjectOperation`](crate::types::S3InitiateRestoreObjectOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3InitiateRestoreObjectOperationBuilder {
     pub(crate) expiration_in_days: ::std::option::Option<i32>,
     pub(crate) glacier_job_tier: ::std::option::Option<crate::types::S3GlacierJobTier>,
@@ -68,10 +66,7 @@ impl S3InitiateRestoreObjectOperationBuilder {
         self
     }
     /// <p>S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the <code>EXPEDITED</code> retrieval tier.</p>
-    pub fn set_glacier_job_tier(
-        mut self,
-        input: ::std::option::Option<crate::types::S3GlacierJobTier>,
-    ) -> Self {
+    pub fn set_glacier_job_tier(mut self, input: ::std::option::Option<crate::types::S3GlacierJobTier>) -> Self {
         self.glacier_job_tier = input;
         self
     }

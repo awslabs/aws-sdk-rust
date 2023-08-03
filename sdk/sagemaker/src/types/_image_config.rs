@@ -21,15 +21,11 @@ impl ImageConfig {
     /// <li> <p> <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li>
     /// <li> <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.</p> </li>
     /// </ul>
-    pub fn repository_access_mode(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RepositoryAccessMode> {
+    pub fn repository_access_mode(&self) -> ::std::option::Option<&crate::types::RepositoryAccessMode> {
         self.repository_access_mode.as_ref()
     }
     /// <p>(Optional) Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for the <code>RepositoryAccessMode</code> field, and the private Docker registry where the model image is hosted requires authentication.</p>
-    pub fn repository_auth_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RepositoryAuthConfig> {
+    pub fn repository_auth_config(&self) -> ::std::option::Option<&crate::types::RepositoryAuthConfig> {
         self.repository_auth_config.as_ref()
     }
 }
@@ -42,9 +38,7 @@ impl ImageConfig {
 
 /// A builder for [`ImageConfig`](crate::types::ImageConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImageConfigBuilder {
     pub(crate) repository_access_mode: ::std::option::Option<crate::types::RepositoryAccessMode>,
     pub(crate) repository_auth_config: ::std::option::Option<crate::types::RepositoryAuthConfig>,
@@ -64,10 +58,7 @@ impl ImageConfigBuilder {
     /// <li> <p> <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li>
     /// <li> <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.</p> </li>
     /// </ul>
-    pub fn set_repository_access_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryAccessMode>,
-    ) -> Self {
+    pub fn set_repository_access_mode(mut self, input: ::std::option::Option<crate::types::RepositoryAccessMode>) -> Self {
         self.repository_access_mode = input;
         self
     }
@@ -76,9 +67,7 @@ impl ImageConfigBuilder {
     /// <li> <p> <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li>
     /// <li> <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.</p> </li>
     /// </ul>
-    pub fn get_repository_access_mode(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryAccessMode> {
+    pub fn get_repository_access_mode(&self) -> &::std::option::Option<crate::types::RepositoryAccessMode> {
         &self.repository_access_mode
     }
     /// <p>(Optional) Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for the <code>RepositoryAccessMode</code> field, and the private Docker registry where the model image is hosted requires authentication.</p>
@@ -87,17 +76,12 @@ impl ImageConfigBuilder {
         self
     }
     /// <p>(Optional) Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for the <code>RepositoryAccessMode</code> field, and the private Docker registry where the model image is hosted requires authentication.</p>
-    pub fn set_repository_auth_config(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryAuthConfig>,
-    ) -> Self {
+    pub fn set_repository_auth_config(mut self, input: ::std::option::Option<crate::types::RepositoryAuthConfig>) -> Self {
         self.repository_auth_config = input;
         self
     }
     /// <p>(Optional) Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for the <code>RepositoryAccessMode</code> field, and the private Docker registry where the model image is hosted requires authentication.</p>
-    pub fn get_repository_auth_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryAuthConfig> {
+    pub fn get_repository_auth_config(&self) -> &::std::option::Option<crate::types::RepositoryAuthConfig> {
         &self.repository_auth_config
     }
     /// Consumes the builder and constructs a [`ImageConfig`](crate::types::ImageConfig).

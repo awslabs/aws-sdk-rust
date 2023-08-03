@@ -8,7 +8,11 @@ impl super::Client {
     ///   - [`cloud_front_origin_access_identity_config(Option<CloudFrontOriginAccessIdentityConfig>)`](crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigOutput::cloud_front_origin_access_identity_config): <p>The origin access identity's configuration information.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     /// - On failure, responds with [`SdkError<GetCloudFrontOriginAccessIdentityConfigError>`](crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigError)
-    pub fn get_cloud_front_origin_access_identity_config(&self) -> crate::operation::get_cloud_front_origin_access_identity_config::builders::GetCloudFrontOriginAccessIdentityConfigFluentBuilder{
-        crate::operation::get_cloud_front_origin_access_identity_config::builders::GetCloudFrontOriginAccessIdentityConfigFluentBuilder::new(self.handle.clone())
+    pub fn get_cloud_front_origin_access_identity_config(
+        &self,
+    ) -> crate::operation::get_cloud_front_origin_access_identity_config::builders::GetCloudFrontOriginAccessIdentityConfigFluentBuilder {
+        crate::operation::get_cloud_front_origin_access_identity_config::builders::GetCloudFrontOriginAccessIdentityConfigFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

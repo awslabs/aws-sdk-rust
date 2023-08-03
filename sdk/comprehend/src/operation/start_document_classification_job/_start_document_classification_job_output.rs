@@ -84,16 +84,14 @@ impl ::aws_http::request_id::RequestId for StartDocumentClassificationJobOutput 
 }
 impl StartDocumentClassificationJobOutput {
     /// Creates a new builder-style object to manufacture [`StartDocumentClassificationJobOutput`](crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput).
-    pub fn builder() -> crate::operation::start_document_classification_job::builders::StartDocumentClassificationJobOutputBuilder{
+    pub fn builder() -> crate::operation::start_document_classification_job::builders::StartDocumentClassificationJobOutputBuilder {
         crate::operation::start_document_classification_job::builders::StartDocumentClassificationJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartDocumentClassificationJobOutput`](crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartDocumentClassificationJobOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
@@ -208,18 +206,12 @@ impl StartDocumentClassificationJobOutputBuilder {
         &self.job_status
     }
     /// <p>The ARN of the custom classification model.</p>
-    pub fn document_classifier_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn document_classifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_classifier_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the custom classification model.</p>
-    pub fn set_document_classifier_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_document_classifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_classifier_arn = input;
         self
     }
@@ -237,10 +229,7 @@ impl StartDocumentClassificationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDocumentClassificationJobOutput`](crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput
-    {
+    pub fn build(self) -> crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput {
         crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput {
             job_id: self.job_id,
             job_arn: self.job_arn,

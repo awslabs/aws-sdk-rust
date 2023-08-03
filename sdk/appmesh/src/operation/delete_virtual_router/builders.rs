@@ -38,9 +38,7 @@ impl DeleteVirtualRouterFluentBuilder {
         }
     }
     /// Access the DeleteVirtualRouter as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_virtual_router::builders::DeleteVirtualRouterInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::delete_virtual_router::builders::DeleteVirtualRouterInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl DeleteVirtualRouterFluentBuilder {
             crate::operation::delete_virtual_router::DeleteVirtualRouter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_router::DeleteVirtualRouterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_router::DeleteVirtualRouterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl DeleteVirtualRouterFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl DeleteVirtualRouterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_virtual_router::DeleteVirtualRouterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_router::DeleteVirtualRouterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_router::DeleteVirtualRouterError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl DeleteVirtualRouterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_virtual_router::DeleteVirtualRouterOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_router::DeleteVirtualRouterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_router::DeleteVirtualRouterError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +106,17 @@ impl DeleteVirtualRouterFluentBuilder {
             crate::operation::delete_virtual_router::DeleteVirtualRouter,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_virtual_router::DeleteVirtualRouterError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_virtual_router::DeleteVirtualRouterError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the virtual router to delete.</p>
-    pub fn virtual_router_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_router_name(input.into());
         self
     }
     /// <p>The name of the virtual router to delete.</p>
-    pub fn set_virtual_router_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_router_name(input);
         self
     }

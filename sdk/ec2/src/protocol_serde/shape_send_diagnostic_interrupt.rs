@@ -9,17 +9,13 @@ pub fn de_send_diagnostic_interrupt_http_error(
     crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(
-        crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError::unhandled,
-    )?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError::generic(generic))
+    Err(crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -34,9 +30,7 @@ pub fn de_send_diagnostic_interrupt_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptOutputBuilder::default();
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

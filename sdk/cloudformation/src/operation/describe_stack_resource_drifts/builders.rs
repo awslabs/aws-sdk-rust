@@ -28,7 +28,7 @@ impl DescribeStackResourceDriftsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStackResourceDriftsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsInputBuilder,
+    inner: crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsInputBuilder,
 }
 impl DescribeStackResourceDriftsFluentBuilder {
     /// Creates a new `DescribeStackResourceDrifts`.
@@ -39,7 +39,7 @@ impl DescribeStackResourceDriftsFluentBuilder {
         }
     }
     /// Access the DescribeStackResourceDrifts as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +51,7 @@ impl DescribeStackResourceDriftsFluentBuilder {
             crate::operation::describe_stack_resource_drifts::DescribeStackResourceDrifts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +61,7 @@ impl DescribeStackResourceDriftsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +70,7 @@ impl DescribeStackResourceDriftsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsError>,
     > {
         let op = self
             .inner
@@ -100,9 +93,7 @@ impl DescribeStackResourceDriftsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsError>,
     > {
         self.send_middleware().await
     }
@@ -116,16 +107,14 @@ impl DescribeStackResourceDriftsFluentBuilder {
             crate::operation::describe_stack_resource_drifts::DescribeStackResourceDrifts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator {
         crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the stack for which you want drift information.</p>
@@ -153,10 +142,7 @@ impl DescribeStackResourceDriftsFluentBuilder {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    pub fn stack_resource_drift_status_filters(
-        mut self,
-        input: crate::types::StackResourceDriftStatus,
-    ) -> Self {
+    pub fn stack_resource_drift_status_filters(mut self, input: crate::types::StackResourceDriftStatus) -> Self {
         self.inner = self.inner.stack_resource_drift_status_filters(input);
         self
     }
@@ -181,9 +167,7 @@ impl DescribeStackResourceDriftsFluentBuilder {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    pub fn get_stack_resource_drift_status_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>> {
+    pub fn get_stack_resource_drift_status_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>> {
         self.inner.get_stack_resource_drift_status_filters()
     }
     /// <p>A string that identifies the next page of stack resource drift results.</p>

@@ -17,20 +17,14 @@ pub(crate) fn de_delete_marker_header(
 
 pub(crate) fn de_request_charged_header(
     header_map: &::http::HeaderMap,
-) -> std::result::Result<
-    ::std::option::Option<crate::types::RequestCharged>,
-    ::aws_smithy_http::header::ParseError,
-> {
+) -> std::result::Result<::std::option::Option<crate::types::RequestCharged>, ::aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-request-charged").iter();
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_version_id_header(
     header_map: &::http::HeaderMap,
-) -> std::result::Result<
-    ::std::option::Option<::std::string::String>,
-    ::aws_smithy_http::header::ParseError,
-> {
+) -> std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amz-version-id").iter();
     ::aws_smithy_http::header::one_or_none(headers)
 }

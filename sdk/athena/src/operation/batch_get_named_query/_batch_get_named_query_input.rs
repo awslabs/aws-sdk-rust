@@ -16,17 +16,14 @@ impl BatchGetNamedQueryInput {
 }
 impl BatchGetNamedQueryInput {
     /// Creates a new builder-style object to manufacture [`BatchGetNamedQueryInput`](crate::operation::batch_get_named_query::BatchGetNamedQueryInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_named_query::builders::BatchGetNamedQueryInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_named_query::builders::BatchGetNamedQueryInputBuilder {
         crate::operation::batch_get_named_query::builders::BatchGetNamedQueryInputBuilder::default()
     }
 }
 
 /// A builder for [`BatchGetNamedQueryInput`](crate::operation::batch_get_named_query::BatchGetNamedQueryInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetNamedQueryInputBuilder {
     pub(crate) named_query_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -36,40 +33,28 @@ impl BatchGetNamedQueryInputBuilder {
     /// To override the contents of this collection use [`set_named_query_ids`](Self::set_named_query_ids).
     ///
     /// <p>An array of query IDs.</p>
-    pub fn named_query_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn named_query_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.named_query_ids.unwrap_or_default();
         v.push(input.into());
         self.named_query_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of query IDs.</p>
-    pub fn set_named_query_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_named_query_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.named_query_ids = input;
         self
     }
     /// <p>An array of query IDs.</p>
-    pub fn get_named_query_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_named_query_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.named_query_ids
     }
     /// Consumes the builder and constructs a [`BatchGetNamedQueryInput`](crate::operation::batch_get_named_query::BatchGetNamedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_named_query::BatchGetNamedQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::batch_get_named_query::BatchGetNamedQueryInput {
-                named_query_ids: self.named_query_ids,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::batch_get_named_query::BatchGetNamedQueryInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_get_named_query::BatchGetNamedQueryInput {
+            named_query_ids: self.named_query_ids,
+        })
     }
 }

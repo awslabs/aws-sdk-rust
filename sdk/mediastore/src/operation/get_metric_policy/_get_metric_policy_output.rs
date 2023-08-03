@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetMetricPolicyOutput {
 }
 impl GetMetricPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetMetricPolicyOutput`](crate::operation::get_metric_policy::GetMetricPolicyOutput).
-    pub fn builder() -> crate::operation::get_metric_policy::builders::GetMetricPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_metric_policy::builders::GetMetricPolicyOutputBuilder {
         crate::operation::get_metric_policy::builders::GetMetricPolicyOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMetricPolicyOutput`](crate::operation::get_metric_policy::GetMetricPolicyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMetricPolicyOutputBuilder {
     pub(crate) metric_policy: ::std::option::Option<crate::types::MetricPolicy>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl GetMetricPolicyOutputBuilder {
         self
     }
     /// <p>The metric policy that is associated with the specific container.</p>
-    pub fn set_metric_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricPolicy>,
-    ) -> Self {
+    pub fn set_metric_policy(mut self, input: ::std::option::Option<crate::types::MetricPolicy>) -> Self {
         self.metric_policy = input;
         self
     }

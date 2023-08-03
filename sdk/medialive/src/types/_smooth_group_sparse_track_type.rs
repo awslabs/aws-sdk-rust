@@ -39,13 +39,7 @@
 /// Smooth Group Sparse Track Type
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SmoothGroupSparseTrackType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for SmoothGroupSparseTrackType {
             "NONE" => SmoothGroupSparseTrackType::None,
             "SCTE_35" => SmoothGroupSparseTrackType::Scte35,
             "SCTE_35_WITHOUT_SEGMENTATION" => SmoothGroupSparseTrackType::Scte35WithoutSegmentation,
-            other => SmoothGroupSparseTrackType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SmoothGroupSparseTrackType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

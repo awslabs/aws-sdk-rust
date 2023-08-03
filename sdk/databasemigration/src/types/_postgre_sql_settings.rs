@@ -187,9 +187,7 @@ impl PostgreSqlSettings {
         self.map_jsonb_as_clob
     }
     /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
-    pub fn map_long_varchar_as(
-        &self,
-    ) -> ::std::option::Option<&crate::types::LongVarcharMappingType> {
+    pub fn map_long_varchar_as(&self) -> ::std::option::Option<&crate::types::LongVarcharMappingType> {
         self.map_long_varchar_as.as_ref()
     }
     /// <p>Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use this setting to specify replication behavior for endpoints that require additional configuration, such as Babelfish endpoints.</p>
@@ -210,10 +208,7 @@ impl ::std::fmt::Debug for PostgreSqlSettings {
         formatter.field("database_name", &self.database_name);
         formatter.field("ddl_artifacts_schema", &self.ddl_artifacts_schema);
         formatter.field("execute_timeout", &self.execute_timeout);
-        formatter.field(
-            "fail_tasks_on_lob_truncation",
-            &self.fail_tasks_on_lob_truncation,
-        );
+        formatter.field("fail_tasks_on_lob_truncation", &self.fail_tasks_on_lob_truncation);
         formatter.field("heartbeat_enable", &self.heartbeat_enable);
         formatter.field("heartbeat_schema", &self.heartbeat_schema);
         formatter.field("heartbeat_frequency", &self.heartbeat_frequency);
@@ -223,10 +218,7 @@ impl ::std::fmt::Debug for PostgreSqlSettings {
         formatter.field("username", &self.username);
         formatter.field("slot_name", &self.slot_name);
         formatter.field("plugin_name", &self.plugin_name);
-        formatter.field(
-            "secrets_manager_access_role_arn",
-            &self.secrets_manager_access_role_arn,
-        );
+        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
         formatter.field("map_boolean_as_boolean", &self.map_boolean_as_boolean);
@@ -276,19 +268,13 @@ pub struct PostgreSqlSettingsBuilder {
 impl PostgreSqlSettingsBuilder {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
     /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code> </p>
-    pub fn after_connect_script(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn after_connect_script(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_connect_script = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
     /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code> </p>
-    pub fn set_after_connect_script(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_after_connect_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_connect_script = input;
         self
     }
@@ -332,18 +318,12 @@ impl PostgreSqlSettingsBuilder {
         &self.max_file_size
     }
     /// <p>Database name for the endpoint.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Database name for the endpoint.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -353,19 +333,13 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
     /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code> </p>
-    pub fn ddl_artifacts_schema(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ddl_artifacts_schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ddl_artifacts_schema = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
     /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code> </p>
-    pub fn set_ddl_artifacts_schema(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ddl_artifacts_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ddl_artifacts_schema = input;
         self
     }
@@ -423,18 +397,12 @@ impl PostgreSqlSettingsBuilder {
         &self.heartbeat_enable
     }
     /// <p>Sets the schema in which the heartbeat artifacts are created.</p>
-    pub fn heartbeat_schema(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn heartbeat_schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.heartbeat_schema = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sets the schema in which the heartbeat artifacts are created.</p>
-    pub fn set_heartbeat_schema(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_heartbeat_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.heartbeat_schema = input;
         self
     }
@@ -544,10 +512,7 @@ impl PostgreSqlSettingsBuilder {
         self
     }
     /// <p>Specifies the plugin to use to create a replication slot.</p>
-    pub fn set_plugin_name(
-        mut self,
-        input: ::std::option::Option<crate::types::PluginNameValue>,
-    ) -> Self {
+    pub fn set_plugin_name(mut self, input: ::std::option::Option<crate::types::PluginNameValue>) -> Self {
         self.plugin_name = input;
         self
     }
@@ -558,44 +523,30 @@ impl PostgreSqlSettingsBuilder {
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the PostgreSQL endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn secrets_manager_access_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secrets_manager_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secrets_manager_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the PostgreSQL endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn set_secrets_manager_access_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secrets_manager_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secrets_manager_access_role_arn = input;
         self
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the PostgreSQL endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn get_secrets_manager_access_role_arn(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_secrets_manager_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secrets_manager_access_role_arn
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint connection details.</p>
-    pub fn secrets_manager_secret_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn secrets_manager_secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secrets_manager_secret_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint connection details.</p>
-    pub fn set_secrets_manager_secret_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_secrets_manager_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secrets_manager_secret_id = input;
         self
     }
@@ -651,17 +602,12 @@ impl PostgreSqlSettingsBuilder {
         self
     }
     /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
-    pub fn set_map_long_varchar_as(
-        mut self,
-        input: ::std::option::Option<crate::types::LongVarcharMappingType>,
-    ) -> Self {
+    pub fn set_map_long_varchar_as(mut self, input: ::std::option::Option<crate::types::LongVarcharMappingType>) -> Self {
         self.map_long_varchar_as = input;
         self
     }
     /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
-    pub fn get_map_long_varchar_as(
-        &self,
-    ) -> &::std::option::Option<crate::types::LongVarcharMappingType> {
+    pub fn get_map_long_varchar_as(&self) -> &::std::option::Option<crate::types::LongVarcharMappingType> {
         &self.map_long_varchar_as
     }
     /// <p>Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use this setting to specify replication behavior for endpoints that require additional configuration, such as Babelfish endpoints.</p>
@@ -670,10 +616,7 @@ impl PostgreSqlSettingsBuilder {
         self
     }
     /// <p>Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use this setting to specify replication behavior for endpoints that require additional configuration, such as Babelfish endpoints.</p>
-    pub fn set_database_mode(
-        mut self,
-        input: ::std::option::Option<crate::types::DatabaseMode>,
-    ) -> Self {
+    pub fn set_database_mode(mut self, input: ::std::option::Option<crate::types::DatabaseMode>) -> Self {
         self.database_mode = input;
         self
     }
@@ -682,18 +625,12 @@ impl PostgreSqlSettingsBuilder {
         &self.database_mode
     }
     /// <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
-    pub fn babelfish_database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn babelfish_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.babelfish_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
-    pub fn set_babelfish_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_babelfish_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.babelfish_database_name = input;
         self
     }
@@ -740,10 +677,7 @@ impl ::std::fmt::Debug for PostgreSqlSettingsBuilder {
         formatter.field("database_name", &self.database_name);
         formatter.field("ddl_artifacts_schema", &self.ddl_artifacts_schema);
         formatter.field("execute_timeout", &self.execute_timeout);
-        formatter.field(
-            "fail_tasks_on_lob_truncation",
-            &self.fail_tasks_on_lob_truncation,
-        );
+        formatter.field("fail_tasks_on_lob_truncation", &self.fail_tasks_on_lob_truncation);
         formatter.field("heartbeat_enable", &self.heartbeat_enable);
         formatter.field("heartbeat_schema", &self.heartbeat_schema);
         formatter.field("heartbeat_frequency", &self.heartbeat_frequency);
@@ -753,10 +687,7 @@ impl ::std::fmt::Debug for PostgreSqlSettingsBuilder {
         formatter.field("username", &self.username);
         formatter.field("slot_name", &self.slot_name);
         formatter.field("plugin_name", &self.plugin_name);
-        formatter.field(
-            "secrets_manager_access_role_arn",
-            &self.secrets_manager_access_role_arn,
-        );
+        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
         formatter.field("map_boolean_as_boolean", &self.map_boolean_as_boolean);

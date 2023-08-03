@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for ListAvailableZonesOutput {
 }
 impl ListAvailableZonesOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailableZonesOutput`](crate::operation::list_available_zones::ListAvailableZonesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_available_zones::builders::ListAvailableZonesOutputBuilder {
+    pub fn builder() -> crate::operation::list_available_zones::builders::ListAvailableZonesOutputBuilder {
         crate::operation::list_available_zones::builders::ListAvailableZonesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAvailableZonesOutput`](crate::operation::list_available_zones::ListAvailableZonesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAvailableZonesOutputBuilder {
     pub(crate) az_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -49,10 +46,7 @@ impl ListAvailableZonesOutputBuilder {
         self
     }
     /// <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
-    pub fn set_az_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_az_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.az_list = input;
         self
     }

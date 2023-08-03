@@ -40,10 +40,7 @@ impl AllocateIpamPoolCidrFluentBuilder {
         }
     }
     /// Access the AllocateIpamPoolCidr as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +52,7 @@ impl AllocateIpamPoolCidrFluentBuilder {
             crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +62,7 @@ impl AllocateIpamPoolCidrFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +71,7 @@ impl AllocateIpamPoolCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrError>,
     > {
         let op = self
             .inner
@@ -104,9 +94,7 @@ impl AllocateIpamPoolCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +108,7 @@ impl AllocateIpamPoolCidrFluentBuilder {
             crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidr,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrError>,
     > {
         self.customize_middleware().await
     }
@@ -259,25 +245,17 @@ impl AllocateIpamPoolCidrFluentBuilder {
     /// To override the contents of this collection use [`set_disallowed_cidrs`](Self::set_disallowed_cidrs).
     ///
     /// <p>Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using netmask length for allocation.</p>
-    pub fn disallowed_cidrs(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn disallowed_cidrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.disallowed_cidrs(input.into());
         self
     }
     /// <p>Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using netmask length for allocation.</p>
-    pub fn set_disallowed_cidrs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_disallowed_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_disallowed_cidrs(input);
         self
     }
     /// <p>Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using netmask length for allocation.</p>
-    pub fn get_disallowed_cidrs(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_disallowed_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_disallowed_cidrs()
     }
 }

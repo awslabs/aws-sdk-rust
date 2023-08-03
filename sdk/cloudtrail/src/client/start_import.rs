@@ -18,9 +18,7 @@ impl super::Client {
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::start_import::StartImportOutput::created_timestamp): <p> The timestamp for the import's creation. </p>
     ///   - [`updated_timestamp(Option<DateTime>)`](crate::operation::start_import::StartImportOutput::updated_timestamp): <p> The timestamp of the import's last update, if applicable. </p>
     /// - On failure, responds with [`SdkError<StartImportError>`](crate::operation::start_import::StartImportError)
-    pub fn start_import(
-        &self,
-    ) -> crate::operation::start_import::builders::StartImportFluentBuilder {
+    pub fn start_import(&self) -> crate::operation::start_import::builders::StartImportFluentBuilder {
         crate::operation::start_import::builders::StartImportFluentBuilder::new(self.handle.clone())
     }
 }

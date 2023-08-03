@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<PutDataSetRefreshPropertiesError>`](crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError)
-    pub fn put_data_set_refresh_properties(&self) -> crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesFluentBuilder{
+    pub fn put_data_set_refresh_properties(
+        &self,
+    ) -> crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesFluentBuilder {
         crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesFluentBuilder::new(self.handle.clone())
     }
 }

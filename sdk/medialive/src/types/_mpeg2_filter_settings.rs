@@ -10,9 +10,7 @@ pub struct Mpeg2FilterSettings {
 }
 impl Mpeg2FilterSettings {
     /// Temporal Filter Settings
-    pub fn temporal_filter_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TemporalFilterSettings> {
+    pub fn temporal_filter_settings(&self) -> ::std::option::Option<&crate::types::TemporalFilterSettings> {
         self.temporal_filter_settings.as_ref()
     }
 }
@@ -25,12 +23,9 @@ impl Mpeg2FilterSettings {
 
 /// A builder for [`Mpeg2FilterSettings`](crate::types::Mpeg2FilterSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Mpeg2FilterSettingsBuilder {
-    pub(crate) temporal_filter_settings:
-        ::std::option::Option<crate::types::TemporalFilterSettings>,
+    pub(crate) temporal_filter_settings: ::std::option::Option<crate::types::TemporalFilterSettings>,
 }
 impl Mpeg2FilterSettingsBuilder {
     /// Temporal Filter Settings
@@ -39,17 +34,12 @@ impl Mpeg2FilterSettingsBuilder {
         self
     }
     /// Temporal Filter Settings
-    pub fn set_temporal_filter_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::TemporalFilterSettings>,
-    ) -> Self {
+    pub fn set_temporal_filter_settings(mut self, input: ::std::option::Option<crate::types::TemporalFilterSettings>) -> Self {
         self.temporal_filter_settings = input;
         self
     }
     /// Temporal Filter Settings
-    pub fn get_temporal_filter_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::TemporalFilterSettings> {
+    pub fn get_temporal_filter_settings(&self) -> &::std::option::Option<crate::types::TemporalFilterSettings> {
         &self.temporal_filter_settings
     }
     /// Consumes the builder and constructs a [`Mpeg2FilterSettings`](crate::types::Mpeg2FilterSettings).

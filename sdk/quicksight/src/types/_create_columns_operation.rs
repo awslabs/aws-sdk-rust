@@ -23,9 +23,7 @@ impl CreateColumnsOperation {
 
 /// A builder for [`CreateColumnsOperation`](crate::types::CreateColumnsOperation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateColumnsOperationBuilder {
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::CalculatedColumn>>,
 }
@@ -42,23 +40,16 @@ impl CreateColumnsOperationBuilder {
         self
     }
     /// <p>Calculated columns to create.</p>
-    pub fn set_columns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CalculatedColumn>>,
-    ) -> Self {
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CalculatedColumn>>) -> Self {
         self.columns = input;
         self
     }
     /// <p>Calculated columns to create.</p>
-    pub fn get_columns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CalculatedColumn>> {
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CalculatedColumn>> {
         &self.columns
     }
     /// Consumes the builder and constructs a [`CreateColumnsOperation`](crate::types::CreateColumnsOperation).
     pub fn build(self) -> crate::types::CreateColumnsOperation {
-        crate::types::CreateColumnsOperation {
-            columns: self.columns,
-        }
+        crate::types::CreateColumnsOperation { columns: self.columns }
     }
 }

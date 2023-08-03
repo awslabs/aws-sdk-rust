@@ -30,9 +30,7 @@ impl EventSubscription {
 
 /// A builder for [`EventSubscription`](crate::types::EventSubscription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventSubscriptionBuilder {
     pub(crate) event: ::std::option::Option<crate::types::InspectorEvent>,
     pub(crate) subscribed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -58,10 +56,7 @@ impl EventSubscriptionBuilder {
         self
     }
     /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
-    pub fn set_subscribed_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_subscribed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.subscribed_at = input;
         self
     }

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`coip_pools(Option<Vec<CoipPool>>)`](crate::operation::describe_coip_pools::DescribeCoipPoolsOutput::coip_pools): <p>Information about the address pools.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_coip_pools::DescribeCoipPoolsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeCoipPoolsError>`](crate::operation::describe_coip_pools::DescribeCoipPoolsError)
-    pub fn describe_coip_pools(
-        &self,
-    ) -> crate::operation::describe_coip_pools::builders::DescribeCoipPoolsFluentBuilder {
-        crate::operation::describe_coip_pools::builders::DescribeCoipPoolsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_coip_pools(&self) -> crate::operation::describe_coip_pools::builders::DescribeCoipPoolsFluentBuilder {
+        crate::operation::describe_coip_pools::builders::DescribeCoipPoolsFluentBuilder::new(self.handle.clone())
     }
 }

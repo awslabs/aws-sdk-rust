@@ -22,41 +22,31 @@ impl DeleteTransitGatewayVpcAttachmentInput {
 }
 impl DeleteTransitGatewayVpcAttachmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayVpcAttachmentInput`](crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentInput).
-    pub fn builder() -> crate::operation::delete_transit_gateway_vpc_attachment::builders::DeleteTransitGatewayVpcAttachmentInputBuilder{
+    pub fn builder() -> crate::operation::delete_transit_gateway_vpc_attachment::builders::DeleteTransitGatewayVpcAttachmentInputBuilder {
         crate::operation::delete_transit_gateway_vpc_attachment::builders::DeleteTransitGatewayVpcAttachmentInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTransitGatewayVpcAttachmentInput`](crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayVpcAttachmentInputBuilder {
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DeleteTransitGatewayVpcAttachmentInputBuilder {
     /// <p>The ID of the attachment.</p>
-    pub fn transit_gateway_attachment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_transit_gateway_attachment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = input;
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn get_transit_gateway_attachment_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_attachment_id
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -74,14 +64,17 @@ impl DeleteTransitGatewayVpcAttachmentInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteTransitGatewayVpcAttachmentInput`](crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentInput {
-                transit_gateway_attachment_id: self.transit_gateway_attachment_id
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transit_gateway_attachment_id: self.transit_gateway_attachment_id,
+                dry_run: self.dry_run,
+            },
         )
     }
 }

@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetTestGridProjectOutput`](crate::operation::get_test_grid_project::GetTestGridProjectOutput) with field(s):
     ///   - [`test_grid_project(Option<TestGridProject>)`](crate::operation::get_test_grid_project::GetTestGridProjectOutput::test_grid_project): <p>A <code>TestGridProject</code>.</p>
     /// - On failure, responds with [`SdkError<GetTestGridProjectError>`](crate::operation::get_test_grid_project::GetTestGridProjectError)
-    pub fn get_test_grid_project(
-        &self,
-    ) -> crate::operation::get_test_grid_project::builders::GetTestGridProjectFluentBuilder {
-        crate::operation::get_test_grid_project::builders::GetTestGridProjectFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_test_grid_project(&self) -> crate::operation::get_test_grid_project::builders::GetTestGridProjectFluentBuilder {
+        crate::operation::get_test_grid_project::builders::GetTestGridProjectFluentBuilder::new(self.handle.clone())
     }
 }

@@ -24,13 +24,10 @@ pub struct RoomSummary {
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>List of logging-configuration identifiers attached to the room.</p>
     #[doc(hidden)]
-    pub logging_configuration_identifiers:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub logging_configuration_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RoomSummary {
     /// <p>Room ARN.</p>
@@ -46,9 +43,7 @@ impl RoomSummary {
         self.name.as_deref()
     }
     /// <p>Configuration information for optional review of messages.</p>
-    pub fn message_review_handler(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MessageReviewHandler> {
+    pub fn message_review_handler(&self) -> ::std::option::Option<&crate::types::MessageReviewHandler> {
         self.message_review_handler.as_ref()
     }
     /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
@@ -60,17 +55,11 @@ impl RoomSummary {
         self.update_time.as_ref()
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>List of logging-configuration identifiers attached to the room.</p>
-    pub fn logging_configuration_identifiers(
-        &self,
-    ) -> ::std::option::Option<&[::std::string::String]> {
+    pub fn logging_configuration_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.logging_configuration_identifiers.as_deref()
     }
 }
@@ -83,9 +72,7 @@ impl RoomSummary {
 
 /// A builder for [`RoomSummary`](crate::types::RoomSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoomSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -93,11 +80,8 @@ pub struct RoomSummaryBuilder {
     pub(crate) message_review_handler: ::std::option::Option<crate::types::MessageReviewHandler>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
-    pub(crate) logging_configuration_identifiers:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) logging_configuration_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RoomSummaryBuilder {
     /// <p>Room ARN.</p>
@@ -148,17 +132,12 @@ impl RoomSummaryBuilder {
         self
     }
     /// <p>Configuration information for optional review of messages.</p>
-    pub fn set_message_review_handler(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageReviewHandler>,
-    ) -> Self {
+    pub fn set_message_review_handler(mut self, input: ::std::option::Option<crate::types::MessageReviewHandler>) -> Self {
         self.message_review_handler = input;
         self
     }
     /// <p>Configuration information for optional review of messages.</p>
-    pub fn get_message_review_handler(
-        &self,
-    ) -> &::std::option::Option<crate::types::MessageReviewHandler> {
+    pub fn get_message_review_handler(&self) -> &::std::option::Option<crate::types::MessageReviewHandler> {
         &self.message_review_handler
     }
     /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
@@ -167,10 +146,7 @@ impl RoomSummaryBuilder {
         self
     }
     /// <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
-    pub fn set_create_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
@@ -184,10 +160,7 @@ impl RoomSummaryBuilder {
         self
     }
     /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. </p>
-    pub fn set_update_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
@@ -200,32 +173,19 @@ impl RoomSummaryBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `logging_configuration_identifiers`.
@@ -233,27 +193,19 @@ impl RoomSummaryBuilder {
     /// To override the contents of this collection use [`set_logging_configuration_identifiers`](Self::set_logging_configuration_identifiers).
     ///
     /// <p>List of logging-configuration identifiers attached to the room.</p>
-    pub fn logging_configuration_identifiers(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logging_configuration_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.logging_configuration_identifiers.unwrap_or_default();
         v.push(input.into());
         self.logging_configuration_identifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of logging-configuration identifiers attached to the room.</p>
-    pub fn set_logging_configuration_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_logging_configuration_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.logging_configuration_identifiers = input;
         self
     }
     /// <p>List of logging-configuration identifiers attached to the room.</p>
-    pub fn get_logging_configuration_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_logging_configuration_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.logging_configuration_identifiers
     }
     /// Consumes the builder and constructs a [`RoomSummary`](crate::types::RoomSummary).

@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`GetVpnConnectionDeviceSampleConfigurationOutput`](crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput) with field(s):
     ///   - [`vpn_connection_device_sample_configuration(Option<String>)`](crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput::vpn_connection_device_sample_configuration): <p>Sample configuration file for the specified customer gateway device.</p>
     /// - On failure, responds with [`SdkError<GetVpnConnectionDeviceSampleConfigurationError>`](crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationError)
-    pub fn get_vpn_connection_device_sample_configuration(&self) -> crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationFluentBuilder{
-        crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationFluentBuilder::new(self.handle.clone())
+    pub fn get_vpn_connection_device_sample_configuration(
+        &self,
+    ) -> crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationFluentBuilder {
+        crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

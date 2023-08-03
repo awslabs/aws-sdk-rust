@@ -22,17 +22,14 @@ impl CreateBotVersionInput {
 }
 impl CreateBotVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateBotVersionInput`](crate::operation::create_bot_version::CreateBotVersionInput).
-    pub fn builder() -> crate::operation::create_bot_version::builders::CreateBotVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_bot_version::builders::CreateBotVersionInputBuilder {
         crate::operation::create_bot_version::builders::CreateBotVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateBotVersionInput`](crate::operation::create_bot_version::CreateBotVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateBotVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl CreateBotVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateBotVersionInput`](crate::operation::create_bot_version::CreateBotVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_bot_version::CreateBotVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_bot_version::CreateBotVersionInput {
-                name: self.name,
-                checksum: self.checksum,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_bot_version::CreateBotVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_bot_version::CreateBotVersionInput {
+            name: self.name,
+            checksum: self.checksum,
+        })
     }
 }

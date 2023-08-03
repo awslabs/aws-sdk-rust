@@ -45,9 +45,7 @@ impl UserAuthConfig {
         self.iam_auth.as_ref()
     }
     /// <p>The type of authentication the proxy uses for connections from clients.</p>
-    pub fn client_password_auth_type(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ClientPasswordAuthType> {
+    pub fn client_password_auth_type(&self) -> ::std::option::Option<&crate::types::ClientPasswordAuthType> {
         self.client_password_auth_type.as_ref()
     }
 }
@@ -60,17 +58,14 @@ impl UserAuthConfig {
 
 /// A builder for [`UserAuthConfig`](crate::types::UserAuthConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserAuthConfigBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) auth_scheme: ::std::option::Option<crate::types::AuthScheme>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) iam_auth: ::std::option::Option<crate::types::IamAuthMode>,
-    pub(crate) client_password_auth_type:
-        ::std::option::Option<crate::types::ClientPasswordAuthType>,
+    pub(crate) client_password_auth_type: ::std::option::Option<crate::types::ClientPasswordAuthType>,
 }
 impl UserAuthConfigBuilder {
     /// <p>A user-specified description about the authentication used by a proxy to log in as a specific database user.</p>
@@ -107,10 +102,7 @@ impl UserAuthConfigBuilder {
         self
     }
     /// <p>The type of authentication that the proxy uses for connections from the proxy to the underlying database.</p>
-    pub fn set_auth_scheme(
-        mut self,
-        input: ::std::option::Option<crate::types::AuthScheme>,
-    ) -> Self {
+    pub fn set_auth_scheme(mut self, input: ::std::option::Option<crate::types::AuthScheme>) -> Self {
         self.auth_scheme = input;
         self
     }
@@ -147,25 +139,17 @@ impl UserAuthConfigBuilder {
         &self.iam_auth
     }
     /// <p>The type of authentication the proxy uses for connections from clients.</p>
-    pub fn client_password_auth_type(
-        mut self,
-        input: crate::types::ClientPasswordAuthType,
-    ) -> Self {
+    pub fn client_password_auth_type(mut self, input: crate::types::ClientPasswordAuthType) -> Self {
         self.client_password_auth_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of authentication the proxy uses for connections from clients.</p>
-    pub fn set_client_password_auth_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ClientPasswordAuthType>,
-    ) -> Self {
+    pub fn set_client_password_auth_type(mut self, input: ::std::option::Option<crate::types::ClientPasswordAuthType>) -> Self {
         self.client_password_auth_type = input;
         self
     }
     /// <p>The type of authentication the proxy uses for connections from clients.</p>
-    pub fn get_client_password_auth_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::ClientPasswordAuthType> {
+    pub fn get_client_password_auth_type(&self) -> &::std::option::Option<crate::types::ClientPasswordAuthType> {
         &self.client_password_auth_type
     }
     /// Consumes the builder and constructs a [`UserAuthConfig`](crate::types::UserAuthConfig).

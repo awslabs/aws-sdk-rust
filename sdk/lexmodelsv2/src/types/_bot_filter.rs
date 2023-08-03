@@ -37,9 +37,7 @@ impl BotFilter {
 
 /// A builder for [`BotFilter`](crate::types::BotFilter).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BotFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::BotFilterName>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,10 +70,7 @@ impl BotFilterBuilder {
         self
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
@@ -89,10 +84,7 @@ impl BotFilterBuilder {
         self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBots</code> operation should return aliases that contain the specified value.</p>
-    pub fn set_operator(
-        mut self,
-        input: ::std::option::Option<crate::types::BotFilterOperator>,
-    ) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::BotFilterOperator>) -> Self {
         self.operator = input;
         self
     }

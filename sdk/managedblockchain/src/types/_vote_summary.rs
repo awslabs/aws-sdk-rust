@@ -38,9 +38,7 @@ impl VoteSummary {
 
 /// A builder for [`VoteSummary`](crate::types::VoteSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VoteSummaryBuilder {
     pub(crate) vote: ::std::option::Option<crate::types::VoteValue>,
     pub(crate) member_name: ::std::option::Option<::std::string::String>,

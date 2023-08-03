@@ -38,13 +38,7 @@
 /// Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum MsSmoothFragmentLengthControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for MsSmoothFragmentLengthControl {
         match s {
             "EXACT" => MsSmoothFragmentLengthControl::Exact,
             "GOP_MULTIPLE" => MsSmoothFragmentLengthControl::GopMultiple,
-            other => MsSmoothFragmentLengthControl::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => MsSmoothFragmentLengthControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

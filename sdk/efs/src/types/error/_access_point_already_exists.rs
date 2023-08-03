@@ -63,9 +63,7 @@ impl AccessPointAlreadyExists {
 
 /// A builder for [`AccessPointAlreadyExists`](crate::types::error::AccessPointAlreadyExists).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccessPointAlreadyExistsBuilder {
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -102,18 +100,12 @@ impl AccessPointAlreadyExistsBuilder {
         &self.message
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn access_point_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn access_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_id = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_access_point_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_access_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_point_id = input;
         self
     }
@@ -128,10 +120,7 @@ impl AccessPointAlreadyExistsBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

@@ -37,9 +37,7 @@ impl TestSetSlotDiscrepancyItem {
 
 /// A builder for [`TestSetSlotDiscrepancyItem`](crate::types::TestSetSlotDiscrepancyItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestSetSlotDiscrepancyItemBuilder {
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
     pub(crate) slot_name: ::std::option::Option<::std::string::String>,
@@ -75,18 +73,12 @@ impl TestSetSlotDiscrepancyItemBuilder {
         &self.slot_name
     }
     /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
-    pub fn error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
-    pub fn set_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_message = input;
         self
     }

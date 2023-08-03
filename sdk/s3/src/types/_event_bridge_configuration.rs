@@ -13,9 +13,7 @@ impl EventBridgeConfiguration {
 
 /// A builder for [`EventBridgeConfiguration`](crate::types::EventBridgeConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventBridgeConfigurationBuilder {}
 impl EventBridgeConfigurationBuilder {
     /// Consumes the builder and constructs a [`EventBridgeConfiguration`](crate::types::EventBridgeConfiguration).

@@ -26,8 +26,7 @@ impl DescribeGroupMembershipInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGroupMembershipFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_group_membership::builders::DescribeGroupMembershipInputBuilder,
+    inner: crate::operation::describe_group_membership::builders::DescribeGroupMembershipInputBuilder,
 }
 impl DescribeGroupMembershipFluentBuilder {
     /// Creates a new `DescribeGroupMembership`.
@@ -38,10 +37,7 @@ impl DescribeGroupMembershipFluentBuilder {
         }
     }
     /// Access the DescribeGroupMembership as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_group_membership::builders::DescribeGroupMembershipInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::describe_group_membership::builders::DescribeGroupMembershipInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl DescribeGroupMembershipFluentBuilder {
             crate::operation::describe_group_membership::DescribeGroupMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_group_membership::DescribeGroupMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_group_membership::DescribeGroupMembershipError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl DescribeGroupMembershipFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl DescribeGroupMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_group_membership::DescribeGroupMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_group_membership::DescribeGroupMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_group_membership::DescribeGroupMembershipError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl DescribeGroupMembershipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_group_membership::DescribeGroupMembershipOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_group_membership::DescribeGroupMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_group_membership::DescribeGroupMembershipError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +105,7 @@ impl DescribeGroupMembershipFluentBuilder {
             crate::operation::describe_group_membership::DescribeGroupMembership,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_group_membership::DescribeGroupMembershipError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_group_membership::DescribeGroupMembershipError>,
     > {
         self.customize_middleware().await
     }
@@ -153,18 +138,12 @@ impl DescribeGroupMembershipFluentBuilder {
         self.inner.get_group_name()
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }

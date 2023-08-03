@@ -18,11 +18,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::tags): <p>The tags that belong to this task.</p>
     ///   - [`job_arn(Option<String>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::job_arn): <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
     /// - On failure, responds with [`SdkError<GetQuantumTaskError>`](crate::operation::get_quantum_task::GetQuantumTaskError)
-    pub fn get_quantum_task(
-        &self,
-    ) -> crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder {
-        crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_quantum_task(&self) -> crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder {
+        crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::new(self.handle.clone())
     }
 }

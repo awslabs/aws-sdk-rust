@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`iam_role_arn(impl ::std::convert::Into<String>)`](crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationFluentBuilder::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationFluentBuilder::set_iam_role_arn): <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>  <p>This parameter specifies the ARN of an IAM role that RUM will assume to write to the Evidently experiment that you are sending metrics to. This role must have permission to write to that experiment.</p>
     /// - On success, responds with [`PutRumMetricsDestinationOutput`](crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationOutput)
     /// - On failure, responds with [`SdkError<PutRumMetricsDestinationError>`](crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationError)
-    pub fn put_rum_metrics_destination(&self) -> crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationFluentBuilder{
+    pub fn put_rum_metrics_destination(&self) -> crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationFluentBuilder {
         crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationFluentBuilder::new(self.handle.clone())
     }
 }

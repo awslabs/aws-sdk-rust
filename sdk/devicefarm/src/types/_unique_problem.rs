@@ -30,9 +30,7 @@ impl UniqueProblem {
 
 /// A builder for [`UniqueProblem`](crate::types::UniqueProblem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UniqueProblemBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) problems: ::std::option::Option<::std::vec::Vec<crate::types::Problem>>,
@@ -64,10 +62,7 @@ impl UniqueProblemBuilder {
         self
     }
     /// <p>Information about the problems.</p>
-    pub fn set_problems(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Problem>>,
-    ) -> Self {
+    pub fn set_problems(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Problem>>) -> Self {
         self.problems = input;
         self
     }

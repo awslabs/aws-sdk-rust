@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListAssessmentRunsOutput {
 }
 impl ListAssessmentRunsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentRunsOutput`](crate::operation::list_assessment_runs::ListAssessmentRunsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_assessment_runs::builders::ListAssessmentRunsOutputBuilder {
+    pub fn builder() -> crate::operation::list_assessment_runs::builders::ListAssessmentRunsOutputBuilder {
         crate::operation::list_assessment_runs::builders::ListAssessmentRunsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListAssessmentRunsOutput`](crate::operation::list_assessment_runs::ListAssessmentRunsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentRunsOutputBuilder {
     pub(crate) assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,27 +47,19 @@ impl ListAssessmentRunsOutputBuilder {
     /// To override the contents of this collection use [`set_assessment_run_arns`](Self::set_assessment_run_arns).
     ///
     /// <p>A list of ARNs that specifies the assessment runs that are returned by the action.</p>
-    pub fn assessment_run_arns(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_run_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assessment_run_arns.unwrap_or_default();
         v.push(input.into());
         self.assessment_run_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of ARNs that specifies the assessment runs that are returned by the action.</p>
-    pub fn set_assessment_run_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_assessment_run_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.assessment_run_arns = input;
         self
     }
     /// <p>A list of ARNs that specifies the assessment runs that are returned by the action.</p>
-    pub fn get_assessment_run_arns(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_run_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.assessment_run_arns
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>

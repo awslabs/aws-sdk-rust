@@ -98,9 +98,7 @@ impl Build {
 
 /// A builder for [`Build`](crate::types::Build).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BuildBuilder {
     pub(crate) build_id: ::std::option::Option<::std::string::String>,
     pub(crate) build_arn: ::std::option::Option<::std::string::String>,
@@ -230,10 +228,7 @@ impl BuildBuilder {
         self
     }
     /// <p>Operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: ::std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
+    pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
         self.operating_system = input;
         self
     }
@@ -247,10 +242,7 @@ impl BuildBuilder {
         self
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -259,18 +251,12 @@ impl BuildBuilder {
         &self.creation_time
     }
     /// <p>The Amazon GameLift Server SDK version used to develop your game server.</p>
-    pub fn server_sdk_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn server_sdk_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_sdk_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon GameLift Server SDK version used to develop your game server.</p>
-    pub fn set_server_sdk_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_server_sdk_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_sdk_version = input;
         self
     }

@@ -13,18 +13,14 @@ impl ::aws_http::request_id::RequestId for DeleteConfiguredTableOutput {
 }
 impl DeleteConfiguredTableOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfiguredTableOutput`](crate::operation::delete_configured_table::DeleteConfiguredTableOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_configured_table::builders::DeleteConfiguredTableOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_configured_table::builders::DeleteConfiguredTableOutputBuilder {
         crate::operation::delete_configured_table::builders::DeleteConfiguredTableOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteConfiguredTableOutput`](crate::operation::delete_configured_table::DeleteConfiguredTableOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConfiguredTableOutputBuilder {
     _request_id: Option<String>,
 }

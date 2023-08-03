@@ -26,7 +26,7 @@ impl ModifyGlobalReplicationGroupInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyGlobalReplicationGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_global_replication_group::builders::ModifyGlobalReplicationGroupInputBuilder,
+    inner: crate::operation::modify_global_replication_group::builders::ModifyGlobalReplicationGroupInputBuilder,
 }
 impl ModifyGlobalReplicationGroupFluentBuilder {
     /// Creates a new `ModifyGlobalReplicationGroup`.
@@ -37,7 +37,7 @@ impl ModifyGlobalReplicationGroupFluentBuilder {
         }
     }
     /// Access the ModifyGlobalReplicationGroup as a reference.
-    pub fn as_input(&self) -> &crate::operation::modify_global_replication_group::builders::ModifyGlobalReplicationGroupInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::modify_global_replication_group::builders::ModifyGlobalReplicationGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ModifyGlobalReplicationGroupFluentBuilder {
             crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ModifyGlobalReplicationGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ModifyGlobalReplicationGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ModifyGlobalReplicationGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError>,
     > {
         self.send_middleware().await
     }
@@ -114,25 +105,17 @@ impl ModifyGlobalReplicationGroupFluentBuilder {
             crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_replication_group_id(input.into());
         self
     }
     /// <p>The name of the Global datastore</p>
-    pub fn set_global_replication_group_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_replication_group_id(input);
         self
     }
@@ -155,18 +138,12 @@ impl ModifyGlobalReplicationGroupFluentBuilder {
         self.inner.get_apply_immediately()
     }
     /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
-    pub fn cache_node_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_node_type(input.into());
         self
     }
     /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
-    pub fn set_cache_node_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_node_type(input);
         self
     }
@@ -175,18 +152,12 @@ impl ModifyGlobalReplicationGroupFluentBuilder {
         self.inner.get_cache_node_type()
     }
     /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
-    pub fn engine_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
-    pub fn set_engine_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -195,18 +166,12 @@ impl ModifyGlobalReplicationGroupFluentBuilder {
         self.inner.get_engine_version()
     }
     /// <p>The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.</p>
-    pub fn cache_parameter_group_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_parameter_group_name(input.into());
         self
     }
     /// <p>The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.</p>
-    pub fn set_cache_parameter_group_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_parameter_group_name(input);
         self
     }
@@ -215,27 +180,17 @@ impl ModifyGlobalReplicationGroupFluentBuilder {
         self.inner.get_cache_parameter_group_name()
     }
     /// <p>A description of the Global datastore</p>
-    pub fn global_replication_group_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .global_replication_group_description(input.into());
+    pub fn global_replication_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.global_replication_group_description(input.into());
         self
     }
     /// <p>A description of the Global datastore</p>
-    pub fn set_global_replication_group_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_replication_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_replication_group_description(input);
         self
     }
     /// <p>A description of the Global datastore</p>
-    pub fn get_global_replication_group_description(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_global_replication_group_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_replication_group_description()
     }
     /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>

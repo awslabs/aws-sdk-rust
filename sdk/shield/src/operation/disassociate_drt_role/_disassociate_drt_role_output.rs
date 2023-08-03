@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateDrtRoleOutput {
 }
 impl DisassociateDrtRoleOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateDrtRoleOutput`](crate::operation::disassociate_drt_role::DisassociateDrtRoleOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_drt_role::builders::DisassociateDrtRoleOutputBuilder {
-        crate::operation::disassociate_drt_role::builders::DisassociateDrtRoleOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::disassociate_drt_role::builders::DisassociateDrtRoleOutputBuilder {
+        crate::operation::disassociate_drt_role::builders::DisassociateDrtRoleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDrtRoleOutput`](crate::operation::disassociate_drt_role::DisassociateDrtRoleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDrtRoleOutputBuilder {
     _request_id: Option<String>,
 }

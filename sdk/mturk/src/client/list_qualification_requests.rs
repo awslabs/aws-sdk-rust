@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_qualification_requests::ListQualificationRequestsOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     ///   - [`qualification_requests(Option<Vec<QualificationRequest>>)`](crate::operation::list_qualification_requests::ListQualificationRequestsOutput::qualification_requests): <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
     /// - On failure, responds with [`SdkError<ListQualificationRequestsError>`](crate::operation::list_qualification_requests::ListQualificationRequestsError)
-    pub fn list_qualification_requests(&self) -> crate::operation::list_qualification_requests::builders::ListQualificationRequestsFluentBuilder{
+    pub fn list_qualification_requests(&self) -> crate::operation::list_qualification_requests::builders::ListQualificationRequestsFluentBuilder {
         crate::operation::list_qualification_requests::builders::ListQualificationRequestsFluentBuilder::new(self.handle.clone())
     }
 }

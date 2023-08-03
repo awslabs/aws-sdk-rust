@@ -26,7 +26,7 @@ impl BatchDescribeModelPackageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDescribeModelPackageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_describe_model_package::builders::BatchDescribeModelPackageInputBuilder,
+    inner: crate::operation::batch_describe_model_package::builders::BatchDescribeModelPackageInputBuilder,
 }
 impl BatchDescribeModelPackageFluentBuilder {
     /// Creates a new `BatchDescribeModelPackage`.
@@ -37,7 +37,7 @@ impl BatchDescribeModelPackageFluentBuilder {
         }
     }
     /// Access the BatchDescribeModelPackage as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_describe_model_package::builders::BatchDescribeModelPackageInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_describe_model_package::builders::BatchDescribeModelPackageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchDescribeModelPackageFluentBuilder {
             crate::operation::batch_describe_model_package::BatchDescribeModelPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_describe_model_package::BatchDescribeModelPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_model_package::BatchDescribeModelPackageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchDescribeModelPackageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchDescribeModelPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_describe_model_package::BatchDescribeModelPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_describe_model_package::BatchDescribeModelPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_model_package::BatchDescribeModelPackageError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchDescribeModelPackageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_describe_model_package::BatchDescribeModelPackageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_describe_model_package::BatchDescribeModelPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_model_package::BatchDescribeModelPackageError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl BatchDescribeModelPackageFluentBuilder {
             crate::operation::batch_describe_model_package::BatchDescribeModelPackage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_describe_model_package::BatchDescribeModelPackageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_describe_model_package::BatchDescribeModelPackageError>,
     > {
         self.customize_middleware().await
     }
@@ -125,25 +114,17 @@ impl BatchDescribeModelPackageFluentBuilder {
     /// To override the contents of this collection use [`set_model_package_arn_list`](Self::set_model_package_arn_list).
     ///
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
-    pub fn model_package_arn_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn model_package_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_package_arn_list(input.into());
         self
     }
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
-    pub fn set_model_package_arn_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_model_package_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_model_package_arn_list(input);
         self
     }
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
-    pub fn get_model_package_arn_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_model_package_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_model_package_arn_list()
     }
 }

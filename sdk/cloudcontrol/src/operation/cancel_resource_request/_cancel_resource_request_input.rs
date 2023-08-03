@@ -15,35 +15,25 @@ impl CancelResourceRequestInput {
 }
 impl CancelResourceRequestInput {
     /// Creates a new builder-style object to manufacture [`CancelResourceRequestInput`](crate::operation::cancel_resource_request::CancelResourceRequestInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_resource_request::builders::CancelResourceRequestInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_resource_request::builders::CancelResourceRequestInputBuilder {
         crate::operation::cancel_resource_request::builders::CancelResourceRequestInputBuilder::default()
     }
 }
 
 /// A builder for [`CancelResourceRequestInput`](crate::operation::cancel_resource_request::CancelResourceRequestInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelResourceRequestInputBuilder {
     pub(crate) request_token: ::std::option::Option<::std::string::String>,
 }
 impl CancelResourceRequestInputBuilder {
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
-    pub fn request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
-    pub fn set_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_token = input;
         self
     }
@@ -54,14 +44,10 @@ impl CancelResourceRequestInputBuilder {
     /// Consumes the builder and constructs a [`CancelResourceRequestInput`](crate::operation::cancel_resource_request::CancelResourceRequestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_resource_request::CancelResourceRequestInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::cancel_resource_request::CancelResourceRequestInput {
-                request_token: self.request_token,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::cancel_resource_request::CancelResourceRequestInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::cancel_resource_request::CancelResourceRequestInput {
+            request_token: self.request_token,
+        })
     }
 }

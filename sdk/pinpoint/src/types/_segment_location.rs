@@ -30,9 +30,7 @@ impl SegmentLocation {
 
 /// A builder for [`SegmentLocation`](crate::types::SegmentLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentLocationBuilder {
     pub(crate) country: ::std::option::Option<crate::types::SetDimension>,
     pub(crate) gps_point: ::std::option::Option<crate::types::GpsPointDimension>,
@@ -58,10 +56,7 @@ impl SegmentLocationBuilder {
         self
     }
     /// <p>The GPS location and range for the segment.</p>
-    pub fn set_gps_point(
-        mut self,
-        input: ::std::option::Option<crate::types::GpsPointDimension>,
-    ) -> Self {
+    pub fn set_gps_point(mut self, input: ::std::option::Option<crate::types::GpsPointDimension>) -> Self {
         self.gps_point = input;
         self
     }

@@ -27,7 +27,7 @@ impl DescribeReservedInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesInputBuilder,
+    inner: crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesInputBuilder,
 }
 impl DescribeReservedInstancesFluentBuilder {
     /// Creates a new `DescribeReservedInstances`.
@@ -38,7 +38,7 @@ impl DescribeReservedInstancesFluentBuilder {
         }
     }
     /// Access the DescribeReservedInstances as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl DescribeReservedInstancesFluentBuilder {
             crate::operation::describe_reserved_instances::DescribeReservedInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_instances::DescribeReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances::DescribeReservedInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl DescribeReservedInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl DescribeReservedInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_instances::DescribeReservedInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_instances::DescribeReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances::DescribeReservedInstancesError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl DescribeReservedInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_instances::DescribeReservedInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_instances::DescribeReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances::DescribeReservedInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -115,9 +106,7 @@ impl DescribeReservedInstancesFluentBuilder {
             crate::operation::describe_reserved_instances::DescribeReservedInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_reserved_instances::DescribeReservedInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances::DescribeReservedInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -163,10 +152,7 @@ impl DescribeReservedInstancesFluentBuilder {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -196,10 +182,7 @@ impl DescribeReservedInstancesFluentBuilder {
         self
     }
     /// <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
-    pub fn set_offering_class(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingClassType>,
-    ) -> Self {
+    pub fn set_offering_class(mut self, input: ::std::option::Option<crate::types::OfferingClassType>) -> Self {
         self.inner = self.inner.set_offering_class(input);
         self
     }
@@ -213,27 +196,19 @@ impl DescribeReservedInstancesFluentBuilder {
     ///
     /// <p>One or more Reserved Instance IDs.</p>
     /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
-    pub fn reserved_instances_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reserved_instances_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reserved_instances_ids(input.into());
         self
     }
     /// <p>One or more Reserved Instance IDs.</p>
     /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
-    pub fn set_reserved_instances_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_reserved_instances_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_reserved_instances_ids(input);
         self
     }
     /// <p>One or more Reserved Instance IDs.</p>
     /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
-    pub fn get_reserved_instances_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reserved_instances_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_reserved_instances_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -256,10 +231,7 @@ impl DescribeReservedInstancesFluentBuilder {
         self
     }
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type.</p>
-    pub fn set_offering_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OfferingTypeValues>,
-    ) -> Self {
+    pub fn set_offering_type(mut self, input: ::std::option::Option<crate::types::OfferingTypeValues>) -> Self {
         self.inner = self.inner.set_offering_type(input);
         self
     }

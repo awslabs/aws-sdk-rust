@@ -10,10 +10,7 @@ impl ListDeploymentJobsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_deployment_jobs::ListDeploymentJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_jobs::ListDeploymentJobsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_jobs::ListDeploymentJobsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_deployment_jobs();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl ListDeploymentJobsFluentBuilder {
         }
     }
     /// Access the ListDeploymentJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_deployment_jobs::builders::ListDeploymentJobsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_deployment_jobs::builders::ListDeploymentJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl ListDeploymentJobsFluentBuilder {
             crate::operation::list_deployment_jobs::ListDeploymentJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_jobs::ListDeploymentJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_jobs::ListDeploymentJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl ListDeploymentJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl ListDeploymentJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployment_jobs::ListDeploymentJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_jobs::ListDeploymentJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_jobs::ListDeploymentJobsError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl ListDeploymentJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployment_jobs::ListDeploymentJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_jobs::ListDeploymentJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_jobs::ListDeploymentJobsError>,
     > {
         self.send_middleware().await
     }
@@ -121,22 +107,15 @@ impl ListDeploymentJobsFluentBuilder {
             crate::operation::list_deployment_jobs::ListDeploymentJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_jobs::ListDeploymentJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_jobs::ListDeploymentJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_deployment_jobs::paginator::ListDeploymentJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_deployment_jobs::paginator::ListDeploymentJobsPaginator {
-        crate::operation::list_deployment_jobs::paginator::ListDeploymentJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_deployment_jobs::paginator::ListDeploymentJobsPaginator {
+        crate::operation::list_deployment_jobs::paginator::ListDeploymentJobsPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `filters`.
     ///
@@ -150,10 +129,7 @@ impl ListDeploymentJobsFluentBuilder {
     }
     /// <p>Optional filters to limit results.</p>
     /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

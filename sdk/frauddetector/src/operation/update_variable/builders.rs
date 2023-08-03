@@ -10,10 +10,7 @@ impl UpdateVariableInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_variable::UpdateVariableOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_variable::UpdateVariableError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_variable::UpdateVariableError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_variable();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl UpdateVariableFluentBuilder {
         }
     }
     /// Access the UpdateVariable as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_variable::builders::UpdateVariableInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_variable::builders::UpdateVariableInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,10 +56,7 @@ impl UpdateVariableFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -129,18 +121,12 @@ impl UpdateVariableFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The new default value of the variable.</p>
-    pub fn default_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_value(input.into());
         self
     }
     /// <p>The new default value of the variable.</p>
-    pub fn set_default_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_value(input);
         self
     }
@@ -163,18 +149,12 @@ impl UpdateVariableFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
-    pub fn variable_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn variable_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.variable_type(input.into());
         self
     }
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
-    pub fn set_variable_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_variable_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_variable_type(input);
         self
     }

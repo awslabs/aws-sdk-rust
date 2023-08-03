@@ -14,8 +14,7 @@ pub struct ListPhoneNumbersV2Input {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ISO country code.</p>
     #[doc(hidden)]
-    pub phone_number_country_codes:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>>,
+    pub phone_number_country_codes: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>>,
     /// <p>The type of phone number.</p>
     #[doc(hidden)]
     pub phone_number_types: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
@@ -37,9 +36,7 @@ impl ListPhoneNumbersV2Input {
         self.next_token.as_deref()
     }
     /// <p>The ISO country code.</p>
-    pub fn phone_number_country_codes(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PhoneNumberCountryCode]> {
+    pub fn phone_number_country_codes(&self) -> ::std::option::Option<&[crate::types::PhoneNumberCountryCode]> {
         self.phone_number_country_codes.as_deref()
     }
     /// <p>The type of phone number.</p>
@@ -53,25 +50,20 @@ impl ListPhoneNumbersV2Input {
 }
 impl ListPhoneNumbersV2Input {
     /// Creates a new builder-style object to manufacture [`ListPhoneNumbersV2Input`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Input).
-    pub fn builder(
-    ) -> crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2InputBuilder {
+    pub fn builder() -> crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2InputBuilder {
         crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2InputBuilder::default()
     }
 }
 
 /// A builder for [`ListPhoneNumbersV2Input`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Input).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPhoneNumbersV2InputBuilder {
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) phone_number_country_codes:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>>,
-    pub(crate) phone_number_types:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
+    pub(crate) phone_number_country_codes: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>>,
+    pub(crate) phone_number_types: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
     pub(crate) phone_number_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ListPhoneNumbersV2InputBuilder {
@@ -122,27 +114,19 @@ impl ListPhoneNumbersV2InputBuilder {
     /// To override the contents of this collection use [`set_phone_number_country_codes`](Self::set_phone_number_country_codes).
     ///
     /// <p>The ISO country code.</p>
-    pub fn phone_number_country_codes(
-        mut self,
-        input: crate::types::PhoneNumberCountryCode,
-    ) -> Self {
+    pub fn phone_number_country_codes(mut self, input: crate::types::PhoneNumberCountryCode) -> Self {
         let mut v = self.phone_number_country_codes.unwrap_or_default();
         v.push(input);
         self.phone_number_country_codes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ISO country code.</p>
-    pub fn set_phone_number_country_codes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>>,
-    ) -> Self {
+    pub fn set_phone_number_country_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>>) -> Self {
         self.phone_number_country_codes = input;
         self
     }
     /// <p>The ISO country code.</p>
-    pub fn get_phone_number_country_codes(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>> {
+    pub fn get_phone_number_country_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>> {
         &self.phone_number_country_codes
     }
     /// Appends an item to `phone_number_types`.
@@ -157,32 +141,21 @@ impl ListPhoneNumbersV2InputBuilder {
         self
     }
     /// <p>The type of phone number.</p>
-    pub fn set_phone_number_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
-    ) -> Self {
+    pub fn set_phone_number_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>) -> Self {
         self.phone_number_types = input;
         self
     }
     /// <p>The type of phone number.</p>
-    pub fn get_phone_number_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>> {
+    pub fn get_phone_number_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>> {
         &self.phone_number_types
     }
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
-    pub fn phone_number_prefix(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn phone_number_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
-    pub fn set_phone_number_prefix(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_phone_number_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number_prefix = input;
         self
     }
@@ -193,19 +166,15 @@ impl ListPhoneNumbersV2InputBuilder {
     /// Consumes the builder and constructs a [`ListPhoneNumbersV2Input`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Input,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Input {
-                target_arn: self.target_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                phone_number_country_codes: self.phone_number_country_codes,
-                phone_number_types: self.phone_number_types,
-                phone_number_prefix: self.phone_number_prefix,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Input, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Input {
+            target_arn: self.target_arn,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            phone_number_country_codes: self.phone_number_country_codes,
+            phone_number_types: self.phone_number_types,
+            phone_number_prefix: self.phone_number_prefix,
+        })
     }
 }

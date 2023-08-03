@@ -6,27 +6,21 @@
 pub struct AccountSettings {
     /// <p>The desired target status of the group lifecycle events feature. If</p>
     #[doc(hidden)]
-    pub group_lifecycle_events_desired_status:
-        ::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus>,
+    pub group_lifecycle_events_desired_status: ::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus>,
     /// <p>The current status of the group lifecycle events feature.</p>
     #[doc(hidden)]
-    pub group_lifecycle_events_status:
-        ::std::option::Option<crate::types::GroupLifecycleEventsStatus>,
+    pub group_lifecycle_events_status: ::std::option::Option<crate::types::GroupLifecycleEventsStatus>,
     /// <p>The text of any error message occurs during an attempt to turn group lifecycle events on or off.</p>
     #[doc(hidden)]
     pub group_lifecycle_events_status_message: ::std::option::Option<::std::string::String>,
 }
 impl AccountSettings {
     /// <p>The desired target status of the group lifecycle events feature. If</p>
-    pub fn group_lifecycle_events_desired_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GroupLifecycleEventsDesiredStatus> {
+    pub fn group_lifecycle_events_desired_status(&self) -> ::std::option::Option<&crate::types::GroupLifecycleEventsDesiredStatus> {
         self.group_lifecycle_events_desired_status.as_ref()
     }
     /// <p>The current status of the group lifecycle events feature.</p>
-    pub fn group_lifecycle_events_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::GroupLifecycleEventsStatus> {
+    pub fn group_lifecycle_events_status(&self) -> ::std::option::Option<&crate::types::GroupLifecycleEventsStatus> {
         self.group_lifecycle_events_status.as_ref()
     }
     /// <p>The text of any error message occurs during an attempt to turn group lifecycle events on or off.</p>
@@ -43,22 +37,15 @@ impl AccountSettings {
 
 /// A builder for [`AccountSettings`](crate::types::AccountSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountSettingsBuilder {
-    pub(crate) group_lifecycle_events_desired_status:
-        ::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus>,
-    pub(crate) group_lifecycle_events_status:
-        ::std::option::Option<crate::types::GroupLifecycleEventsStatus>,
+    pub(crate) group_lifecycle_events_desired_status: ::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus>,
+    pub(crate) group_lifecycle_events_status: ::std::option::Option<crate::types::GroupLifecycleEventsStatus>,
     pub(crate) group_lifecycle_events_status_message: ::std::option::Option<::std::string::String>,
 }
 impl AccountSettingsBuilder {
     /// <p>The desired target status of the group lifecycle events feature. If</p>
-    pub fn group_lifecycle_events_desired_status(
-        mut self,
-        input: crate::types::GroupLifecycleEventsDesiredStatus,
-    ) -> Self {
+    pub fn group_lifecycle_events_desired_status(mut self, input: crate::types::GroupLifecycleEventsDesiredStatus) -> Self {
         self.group_lifecycle_events_desired_status = ::std::option::Option::Some(input);
         self
     }
@@ -71,53 +58,35 @@ impl AccountSettingsBuilder {
         self
     }
     /// <p>The desired target status of the group lifecycle events feature. If</p>
-    pub fn get_group_lifecycle_events_desired_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus> {
+    pub fn get_group_lifecycle_events_desired_status(&self) -> &::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus> {
         &self.group_lifecycle_events_desired_status
     }
     /// <p>The current status of the group lifecycle events feature.</p>
-    pub fn group_lifecycle_events_status(
-        mut self,
-        input: crate::types::GroupLifecycleEventsStatus,
-    ) -> Self {
+    pub fn group_lifecycle_events_status(mut self, input: crate::types::GroupLifecycleEventsStatus) -> Self {
         self.group_lifecycle_events_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the group lifecycle events feature.</p>
-    pub fn set_group_lifecycle_events_status(
-        mut self,
-        input: ::std::option::Option<crate::types::GroupLifecycleEventsStatus>,
-    ) -> Self {
+    pub fn set_group_lifecycle_events_status(mut self, input: ::std::option::Option<crate::types::GroupLifecycleEventsStatus>) -> Self {
         self.group_lifecycle_events_status = input;
         self
     }
     /// <p>The current status of the group lifecycle events feature.</p>
-    pub fn get_group_lifecycle_events_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::GroupLifecycleEventsStatus> {
+    pub fn get_group_lifecycle_events_status(&self) -> &::std::option::Option<crate::types::GroupLifecycleEventsStatus> {
         &self.group_lifecycle_events_status
     }
     /// <p>The text of any error message occurs during an attempt to turn group lifecycle events on or off.</p>
-    pub fn group_lifecycle_events_status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn group_lifecycle_events_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_lifecycle_events_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of any error message occurs during an attempt to turn group lifecycle events on or off.</p>
-    pub fn set_group_lifecycle_events_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_group_lifecycle_events_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_lifecycle_events_status_message = input;
         self
     }
     /// <p>The text of any error message occurs during an attempt to turn group lifecycle events on or off.</p>
-    pub fn get_group_lifecycle_events_status_message(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_group_lifecycle_events_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_lifecycle_events_status_message
     }
     /// Consumes the builder and constructs a [`AccountSettings`](crate::types::AccountSettings).

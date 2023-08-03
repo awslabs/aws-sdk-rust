@@ -9,10 +9,7 @@ impl super::Client {
     ///   - [`policy_validation_passed(bool)`](crate::operation::validate_resource_policy::ValidateResourcePolicyOutput::policy_validation_passed): <p>True if your policy passes validation, otherwise false.</p>
     ///   - [`validation_errors(Option<Vec<ValidationErrorsEntry>>)`](crate::operation::validate_resource_policy::ValidateResourcePolicyOutput::validation_errors): <p>Validation errors if your policy didn't pass validation.</p>
     /// - On failure, responds with [`SdkError<ValidateResourcePolicyError>`](crate::operation::validate_resource_policy::ValidateResourcePolicyError)
-    pub fn validate_resource_policy(
-        &self,
-    ) -> crate::operation::validate_resource_policy::builders::ValidateResourcePolicyFluentBuilder
-    {
+    pub fn validate_resource_policy(&self) -> crate::operation::validate_resource_policy::builders::ValidateResourcePolicyFluentBuilder {
         crate::operation::validate_resource_policy::builders::ValidateResourcePolicyFluentBuilder::new(self.handle.clone())
     }
 }

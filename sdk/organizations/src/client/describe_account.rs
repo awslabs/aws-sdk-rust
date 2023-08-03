@@ -7,11 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeAccountOutput`](crate::operation::describe_account::DescribeAccountOutput) with field(s):
     ///   - [`account(Option<Account>)`](crate::operation::describe_account::DescribeAccountOutput::account): <p>A structure that contains information about the requested account.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountError>`](crate::operation::describe_account::DescribeAccountError)
-    pub fn describe_account(
-        &self,
-    ) -> crate::operation::describe_account::builders::DescribeAccountFluentBuilder {
-        crate::operation::describe_account::builders::DescribeAccountFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_account(&self) -> crate::operation::describe_account::builders::DescribeAccountFluentBuilder {
+        crate::operation::describe_account::builders::DescribeAccountFluentBuilder::new(self.handle.clone())
     }
 }

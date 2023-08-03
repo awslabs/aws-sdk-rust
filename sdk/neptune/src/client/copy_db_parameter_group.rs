@@ -10,12 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CopyDbParameterGroupOutput`](crate::operation::copy_db_parameter_group::CopyDbParameterGroupOutput) with field(s):
     ///   - [`db_parameter_group(Option<DbParameterGroup>)`](crate::operation::copy_db_parameter_group::CopyDbParameterGroupOutput::db_parameter_group): <p>Contains the details of an Amazon Neptune DB parameter group.</p>  <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
     /// - On failure, responds with [`SdkError<CopyDBParameterGroupError>`](crate::operation::copy_db_parameter_group::CopyDBParameterGroupError)
-    pub fn copy_db_parameter_group(
-        &self,
-    ) -> crate::operation::copy_db_parameter_group::builders::CopyDBParameterGroupFluentBuilder
-    {
-        crate::operation::copy_db_parameter_group::builders::CopyDBParameterGroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn copy_db_parameter_group(&self) -> crate::operation::copy_db_parameter_group::builders::CopyDBParameterGroupFluentBuilder {
+        crate::operation::copy_db_parameter_group::builders::CopyDBParameterGroupFluentBuilder::new(self.handle.clone())
     }
 }

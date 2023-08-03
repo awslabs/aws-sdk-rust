@@ -10,9 +10,7 @@ pub struct GetRegistryCatalogDataOutput {
 }
 impl GetRegistryCatalogDataOutput {
     /// <p>The catalog metadata for the public registry.</p>
-    pub fn registry_catalog_data(
-        &self,
-    ) -> ::std::option::Option<&crate::types::RegistryCatalogData> {
+    pub fn registry_catalog_data(&self) -> ::std::option::Option<&crate::types::RegistryCatalogData> {
         self.registry_catalog_data.as_ref()
     }
 }
@@ -23,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetRegistryCatalogDataOutput {
 }
 impl GetRegistryCatalogDataOutput {
     /// Creates a new builder-style object to manufacture [`GetRegistryCatalogDataOutput`](crate::operation::get_registry_catalog_data::GetRegistryCatalogDataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataOutputBuilder {
         crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetRegistryCatalogDataOutput`](crate::operation::get_registry_catalog_data::GetRegistryCatalogDataOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRegistryCatalogDataOutputBuilder {
     pub(crate) registry_catalog_data: ::std::option::Option<crate::types::RegistryCatalogData>,
     _request_id: Option<String>,
@@ -46,17 +40,12 @@ impl GetRegistryCatalogDataOutputBuilder {
         self
     }
     /// <p>The catalog metadata for the public registry.</p>
-    pub fn set_registry_catalog_data(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistryCatalogData>,
-    ) -> Self {
+    pub fn set_registry_catalog_data(mut self, input: ::std::option::Option<crate::types::RegistryCatalogData>) -> Self {
         self.registry_catalog_data = input;
         self
     }
     /// <p>The catalog metadata for the public registry.</p>
-    pub fn get_registry_catalog_data(
-        &self,
-    ) -> &::std::option::Option<crate::types::RegistryCatalogData> {
+    pub fn get_registry_catalog_data(&self) -> &::std::option::Option<crate::types::RegistryCatalogData> {
         &self.registry_catalog_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -69,9 +58,7 @@ impl GetRegistryCatalogDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetRegistryCatalogDataOutput`](crate::operation::get_registry_catalog_data::GetRegistryCatalogDataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_registry_catalog_data::GetRegistryCatalogDataOutput {
+    pub fn build(self) -> crate::operation::get_registry_catalog_data::GetRegistryCatalogDataOutput {
         crate::operation::get_registry_catalog_data::GetRegistryCatalogDataOutput {
             registry_catalog_data: self.registry_catalog_data,
             _request_id: self._request_id,

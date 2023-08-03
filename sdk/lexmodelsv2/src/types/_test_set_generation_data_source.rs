@@ -6,14 +6,11 @@
 pub struct TestSetGenerationDataSource {
     /// <p>Contains information about the bot from which the conversation logs are sourced.</p>
     #[doc(hidden)]
-    pub conversation_logs_data_source:
-        ::std::option::Option<crate::types::ConversationLogsDataSource>,
+    pub conversation_logs_data_source: ::std::option::Option<crate::types::ConversationLogsDataSource>,
 }
 impl TestSetGenerationDataSource {
     /// <p>Contains information about the bot from which the conversation logs are sourced.</p>
-    pub fn conversation_logs_data_source(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ConversationLogsDataSource> {
+    pub fn conversation_logs_data_source(&self) -> ::std::option::Option<&crate::types::ConversationLogsDataSource> {
         self.conversation_logs_data_source.as_ref()
     }
 }
@@ -26,34 +23,23 @@ impl TestSetGenerationDataSource {
 
 /// A builder for [`TestSetGenerationDataSource`](crate::types::TestSetGenerationDataSource).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestSetGenerationDataSourceBuilder {
-    pub(crate) conversation_logs_data_source:
-        ::std::option::Option<crate::types::ConversationLogsDataSource>,
+    pub(crate) conversation_logs_data_source: ::std::option::Option<crate::types::ConversationLogsDataSource>,
 }
 impl TestSetGenerationDataSourceBuilder {
     /// <p>Contains information about the bot from which the conversation logs are sourced.</p>
-    pub fn conversation_logs_data_source(
-        mut self,
-        input: crate::types::ConversationLogsDataSource,
-    ) -> Self {
+    pub fn conversation_logs_data_source(mut self, input: crate::types::ConversationLogsDataSource) -> Self {
         self.conversation_logs_data_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the bot from which the conversation logs are sourced.</p>
-    pub fn set_conversation_logs_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::ConversationLogsDataSource>,
-    ) -> Self {
+    pub fn set_conversation_logs_data_source(mut self, input: ::std::option::Option<crate::types::ConversationLogsDataSource>) -> Self {
         self.conversation_logs_data_source = input;
         self
     }
     /// <p>Contains information about the bot from which the conversation logs are sourced.</p>
-    pub fn get_conversation_logs_data_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::ConversationLogsDataSource> {
+    pub fn get_conversation_logs_data_source(&self) -> &::std::option::Option<crate::types::ConversationLogsDataSource> {
         &self.conversation_logs_data_source
     }
     /// Consumes the builder and constructs a [`TestSetGenerationDataSource`](crate::types::TestSetGenerationDataSource).

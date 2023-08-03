@@ -10,10 +10,7 @@ impl CopyBackupToRegionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::copy_backup_to_region::CopyBackupToRegionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_backup_to_region::CopyBackupToRegionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_backup_to_region::CopyBackupToRegionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.copy_backup_to_region();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl CopyBackupToRegionFluentBuilder {
         }
     }
     /// Access the CopyBackupToRegion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::copy_backup_to_region::builders::CopyBackupToRegionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::copy_backup_to_region::builders::CopyBackupToRegionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl CopyBackupToRegionFluentBuilder {
             crate::operation::copy_backup_to_region::CopyBackupToRegion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_backup_to_region::CopyBackupToRegionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_backup_to_region::CopyBackupToRegionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl CopyBackupToRegionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl CopyBackupToRegionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_backup_to_region::CopyBackupToRegionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_backup_to_region::CopyBackupToRegionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_backup_to_region::CopyBackupToRegionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl CopyBackupToRegionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_backup_to_region::CopyBackupToRegionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_backup_to_region::CopyBackupToRegionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_backup_to_region::CopyBackupToRegionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl CopyBackupToRegionFluentBuilder {
             crate::operation::copy_backup_to_region::CopyBackupToRegion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::copy_backup_to_region::CopyBackupToRegionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::copy_backup_to_region::CopyBackupToRegionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
-    pub fn destination_region(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_region(input.into());
         self
     }
     /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
-    pub fn set_destination_region(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_region(input);
         self
     }
@@ -166,10 +144,7 @@ impl CopyBackupToRegionFluentBuilder {
         self
     }
     /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
-    pub fn set_tag_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tag_list(input);
         self
     }

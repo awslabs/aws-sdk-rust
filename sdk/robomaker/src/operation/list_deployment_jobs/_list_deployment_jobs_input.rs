@@ -34,17 +34,14 @@ impl ListDeploymentJobsInput {
 }
 impl ListDeploymentJobsInput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentJobsInput`](crate::operation::list_deployment_jobs::ListDeploymentJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_deployment_jobs::builders::ListDeploymentJobsInputBuilder {
+    pub fn builder() -> crate::operation::list_deployment_jobs::builders::ListDeploymentJobsInputBuilder {
         crate::operation::list_deployment_jobs::builders::ListDeploymentJobsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListDeploymentJobsInput`](crate::operation::list_deployment_jobs::ListDeploymentJobsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDeploymentJobsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -65,10 +62,7 @@ impl ListDeploymentJobsInputBuilder {
     }
     /// <p>Optional filters to limit results.</p>
     /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -108,16 +102,11 @@ impl ListDeploymentJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeploymentJobsInput`](crate::operation::list_deployment_jobs::ListDeploymentJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_deployment_jobs::ListDeploymentJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_deployment_jobs::ListDeploymentJobsInput {
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_deployment_jobs::ListDeploymentJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_deployment_jobs::ListDeploymentJobsInput {
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }

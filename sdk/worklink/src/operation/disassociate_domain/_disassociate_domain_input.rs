@@ -22,17 +22,14 @@ impl DisassociateDomainInput {
 }
 impl DisassociateDomainInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDomainInput`](crate::operation::disassociate_domain::DisassociateDomainInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_domain::builders::DisassociateDomainInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_domain::builders::DisassociateDomainInputBuilder {
         crate::operation::disassociate_domain::builders::DisassociateDomainInputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateDomainInput`](crate::operation::disassociate_domain::DisassociateDomainInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateDomainInputBuilder {
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl DisassociateDomainInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateDomainInput`](crate::operation::disassociate_domain::DisassociateDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_domain::DisassociateDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::disassociate_domain::DisassociateDomainInput {
-                fleet_arn: self.fleet_arn,
-                domain_name: self.domain_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::disassociate_domain::DisassociateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::disassociate_domain::DisassociateDomainInput {
+            fleet_arn: self.fleet_arn,
+            domain_name: self.domain_name,
+        })
     }
 }

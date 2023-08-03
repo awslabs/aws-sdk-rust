@@ -16,11 +16,7 @@ impl super::Client {
     ///   - [`content_type(Option<String>)`](crate::operation::get_job_output::GetJobOutputOutput::content_type): <p>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</p>
     ///   - [`archive_description(Option<String>)`](crate::operation::get_job_output::GetJobOutputOutput::archive_description): <p>The description of an archive.</p>
     /// - On failure, responds with [`SdkError<GetJobOutputError>`](crate::operation::get_job_output::GetJobOutputError)
-    pub fn get_job_output(
-        &self,
-    ) -> crate::operation::get_job_output::builders::GetJobOutputFluentBuilder {
-        crate::operation::get_job_output::builders::GetJobOutputFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_job_output(&self) -> crate::operation::get_job_output::builders::GetJobOutputFluentBuilder {
+        crate::operation::get_job_output::builders::GetJobOutputFluentBuilder::new(self.handle.clone())
     }
 }

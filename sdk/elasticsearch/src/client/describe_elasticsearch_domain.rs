@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeElasticsearchDomainOutput`](crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainOutput) with field(s):
     ///   - [`domain_status(Option<ElasticsearchDomainStatus>)`](crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainOutput::domain_status): <p>The current status of the Elasticsearch domain.</p>
     /// - On failure, responds with [`SdkError<DescribeElasticsearchDomainError>`](crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainError)
-    pub fn describe_elasticsearch_domain(&self) -> crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainFluentBuilder{
+    pub fn describe_elasticsearch_domain(
+        &self,
+    ) -> crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainFluentBuilder {
         crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainFluentBuilder::new(self.handle.clone())
     }
 }

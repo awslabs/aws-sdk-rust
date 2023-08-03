@@ -8,9 +8,7 @@ pub struct DescribeFindingsOutput {
     pub findings: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>,
     /// <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
     #[doc(hidden)]
-    pub failed_items: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    >,
+    pub failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }
 impl DescribeFindingsOutput {
@@ -19,11 +17,7 @@ impl DescribeFindingsOutput {
         self.findings.as_deref()
     }
     /// <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    > {
+    pub fn failed_items(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
         self.failed_items.as_ref()
     }
 }
@@ -34,22 +28,17 @@ impl ::aws_http::request_id::RequestId for DescribeFindingsOutput {
 }
 impl DescribeFindingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFindingsOutput`](crate::operation::describe_findings::DescribeFindingsOutput).
-    pub fn builder() -> crate::operation::describe_findings::builders::DescribeFindingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_findings::builders::DescribeFindingsOutputBuilder {
         crate::operation::describe_findings::builders::DescribeFindingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFindingsOutput`](crate::operation::describe_findings::DescribeFindingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFindingsOutputBuilder {
     pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>,
-    pub(crate) failed_items: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    >,
+    pub(crate) failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }
 impl DescribeFindingsOutputBuilder {
@@ -65,10 +54,7 @@ impl DescribeFindingsOutputBuilder {
         self
     }
     /// <p>Information about the finding.</p>
-    pub fn set_findings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>,
-    ) -> Self {
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>) -> Self {
         self.findings = input;
         self
     }
@@ -81,11 +67,7 @@ impl DescribeFindingsOutputBuilder {
     /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
     ///
     /// <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::FailedItemDetails,
-    ) -> Self {
+    pub fn failed_items(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FailedItemDetails) -> Self {
         let mut hash_map = self.failed_items.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.failed_items = ::std::option::Option::Some(hash_map);
@@ -94,19 +76,13 @@ impl DescribeFindingsOutputBuilder {
     /// <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
     pub fn set_failed_items(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
     ) -> Self {
         self.failed_items = input;
         self
     }
     /// <p>Finding details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn get_failed_items(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
-    > {
+    pub fn get_failed_items(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
         &self.failed_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -58,9 +58,7 @@ impl DashboardVersionSummary {
 
 /// A builder for [`DashboardVersionSummary`](crate::types::DashboardVersionSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DashboardVersionSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -90,10 +88,7 @@ impl DashboardVersionSummaryBuilder {
         self
     }
     /// <p>The time that this dashboard version was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
@@ -121,10 +116,7 @@ impl DashboardVersionSummaryBuilder {
         self
     }
     /// <p>The HTTP status of the request.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
         self.status = input;
         self
     }
@@ -133,18 +125,12 @@ impl DashboardVersionSummaryBuilder {
         &self.status
     }
     /// <p>Source entity ARN.</p>
-    pub fn source_entity_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_entity_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_entity_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source entity ARN.</p>
-    pub fn set_source_entity_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_entity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_entity_arn = input;
         self
     }

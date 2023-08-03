@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteRateBasedRuleOutput`](crate::operation::delete_rate_based_rule::DeleteRateBasedRuleOutput) with field(s):
     ///   - [`change_token(Option<String>)`](crate::operation::delete_rate_based_rule::DeleteRateBasedRuleOutput::change_token): <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     /// - On failure, responds with [`SdkError<DeleteRateBasedRuleError>`](crate::operation::delete_rate_based_rule::DeleteRateBasedRuleError)
-    pub fn delete_rate_based_rule(
-        &self,
-    ) -> crate::operation::delete_rate_based_rule::builders::DeleteRateBasedRuleFluentBuilder {
-        crate::operation::delete_rate_based_rule::builders::DeleteRateBasedRuleFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_rate_based_rule(&self) -> crate::operation::delete_rate_based_rule::builders::DeleteRateBasedRuleFluentBuilder {
+        crate::operation::delete_rate_based_rule::builders::DeleteRateBasedRuleFluentBuilder::new(self.handle.clone())
     }
 }

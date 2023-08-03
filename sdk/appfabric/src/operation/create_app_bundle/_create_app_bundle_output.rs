@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for CreateAppBundleOutput {
 }
 impl CreateAppBundleOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppBundleOutput`](crate::operation::create_app_bundle::CreateAppBundleOutput).
-    pub fn builder() -> crate::operation::create_app_bundle::builders::CreateAppBundleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_app_bundle::builders::CreateAppBundleOutputBuilder {
         crate::operation::create_app_bundle::builders::CreateAppBundleOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateAppBundleOutput`](crate::operation::create_app_bundle::CreateAppBundleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateAppBundleOutputBuilder {
     pub(crate) app_bundle: ::std::option::Option<crate::types::AppBundle>,
     _request_id: Option<String>,

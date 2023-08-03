@@ -22,34 +22,26 @@ impl AttachLoadBalancerTlsCertificateInput {
 }
 impl AttachLoadBalancerTlsCertificateInput {
     /// Creates a new builder-style object to manufacture [`AttachLoadBalancerTlsCertificateInput`](crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateInput).
-    pub fn builder() -> crate::operation::attach_load_balancer_tls_certificate::builders::AttachLoadBalancerTlsCertificateInputBuilder{
+    pub fn builder() -> crate::operation::attach_load_balancer_tls_certificate::builders::AttachLoadBalancerTlsCertificateInputBuilder {
         crate::operation::attach_load_balancer_tls_certificate::builders::AttachLoadBalancerTlsCertificateInputBuilder::default()
     }
 }
 
 /// A builder for [`AttachLoadBalancerTlsCertificateInput`](crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttachLoadBalancerTlsCertificateInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_name: ::std::option::Option<::std::string::String>,
 }
 impl AttachLoadBalancerTlsCertificateInputBuilder {
     /// <p>The name of the load balancer to which you want to associate the SSL/TLS certificate.</p>
-    pub fn load_balancer_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer to which you want to associate the SSL/TLS certificate.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
@@ -58,18 +50,12 @@ impl AttachLoadBalancerTlsCertificateInputBuilder {
         &self.load_balancer_name
     }
     /// <p>The name of your SSL/TLS certificate.</p>
-    pub fn certificate_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your SSL/TLS certificate.</p>
-    pub fn set_certificate_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_name = input;
         self
     }
@@ -78,14 +64,17 @@ impl AttachLoadBalancerTlsCertificateInputBuilder {
         &self.certificate_name
     }
     /// Consumes the builder and constructs a [`AttachLoadBalancerTlsCertificateInput`](crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateInput {
-                load_balancer_name: self.load_balancer_name
-                ,
-                certificate_name: self.certificate_name
-                ,
-            }
+                load_balancer_name: self.load_balancer_name,
+                certificate_name: self.certificate_name,
+            },
         )
     }
 }

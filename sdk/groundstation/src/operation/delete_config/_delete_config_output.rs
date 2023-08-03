@@ -43,9 +43,7 @@ impl DeleteConfigOutput {
 
 /// A builder for [`DeleteConfigOutput`](crate::operation::delete_config::DeleteConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteConfigOutputBuilder {
     pub(crate) config_id: ::std::option::Option<::std::string::String>,
     pub(crate) config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
@@ -73,10 +71,7 @@ impl DeleteConfigOutputBuilder {
         self
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn set_config_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigCapabilityType>,
-    ) -> Self {
+    pub fn set_config_type(mut self, input: ::std::option::Option<crate::types::ConfigCapabilityType>) -> Self {
         self.config_type = input;
         self
     }

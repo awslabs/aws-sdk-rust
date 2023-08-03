@@ -10,10 +10,7 @@ impl GetListsMetadataInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_lists_metadata::GetListsMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lists_metadata::GetListsMetadataError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lists_metadata::GetListsMetadataError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_lists_metadata();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl GetListsMetadataFluentBuilder {
         }
     }
     /// Access the GetListsMetadata as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_lists_metadata::builders::GetListsMetadataInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_lists_metadata::builders::GetListsMetadataInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl GetListsMetadataFluentBuilder {
             crate::operation::get_lists_metadata::GetListsMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lists_metadata::GetListsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lists_metadata::GetListsMetadataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl GetListsMetadataFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl GetListsMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_lists_metadata::GetListsMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lists_metadata::GetListsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lists_metadata::GetListsMetadataError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl GetListsMetadataFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_lists_metadata::GetListsMetadataOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lists_metadata::GetListsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lists_metadata::GetListsMetadataError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl GetListsMetadataFluentBuilder {
             crate::operation::get_lists_metadata::GetListsMetadata,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_lists_metadata::GetListsMetadataError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_lists_metadata::GetListsMetadataError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_lists_metadata::paginator::GetListsMetadataPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_lists_metadata::paginator::GetListsMetadataPaginator {
-        crate::operation::get_lists_metadata::paginator::GetListsMetadataPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_lists_metadata::paginator::GetListsMetadataPaginator {
+        crate::operation::get_lists_metadata::paginator::GetListsMetadataPaginator::new(self.handle, self.inner)
     }
     /// <p> The name of the list. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

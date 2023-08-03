@@ -21,16 +21,14 @@ impl ::aws_http::request_id::RequestId for ConvertRecoveryPointToSnapshotOutput 
 }
 impl ConvertRecoveryPointToSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`ConvertRecoveryPointToSnapshotOutput`](crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotOutput).
-    pub fn builder() -> crate::operation::convert_recovery_point_to_snapshot::builders::ConvertRecoveryPointToSnapshotOutputBuilder{
+    pub fn builder() -> crate::operation::convert_recovery_point_to_snapshot::builders::ConvertRecoveryPointToSnapshotOutputBuilder {
         crate::operation::convert_recovery_point_to_snapshot::builders::ConvertRecoveryPointToSnapshotOutputBuilder::default()
     }
 }
 
 /// A builder for [`ConvertRecoveryPointToSnapshotOutput`](crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConvertRecoveryPointToSnapshotOutputBuilder {
     pub(crate) snapshot: ::std::option::Option<crate::types::Snapshot>,
     _request_id: Option<String>,
@@ -60,10 +58,7 @@ impl ConvertRecoveryPointToSnapshotOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ConvertRecoveryPointToSnapshotOutput`](crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotOutput
-    {
+    pub fn build(self) -> crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotOutput {
         crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotOutput {
             snapshot: self.snapshot,
             _request_id: self._request_id,

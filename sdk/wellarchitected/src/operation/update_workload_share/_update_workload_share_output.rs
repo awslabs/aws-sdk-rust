@@ -29,18 +29,14 @@ impl ::aws_http::request_id::RequestId for UpdateWorkloadShareOutput {
 }
 impl UpdateWorkloadShareOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkloadShareOutput`](crate::operation::update_workload_share::UpdateWorkloadShareOutput).
-    pub fn builder(
-    ) -> crate::operation::update_workload_share::builders::UpdateWorkloadShareOutputBuilder {
-        crate::operation::update_workload_share::builders::UpdateWorkloadShareOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_workload_share::builders::UpdateWorkloadShareOutputBuilder {
+        crate::operation::update_workload_share::builders::UpdateWorkloadShareOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateWorkloadShareOutput`](crate::operation::update_workload_share::UpdateWorkloadShareOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkloadShareOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) workload_share: ::std::option::Option<crate::types::WorkloadShare>,
@@ -67,10 +63,7 @@ impl UpdateWorkloadShareOutputBuilder {
         self
     }
     /// <p>A workload share return object.</p>
-    pub fn set_workload_share(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkloadShare>,
-    ) -> Self {
+    pub fn set_workload_share(mut self, input: ::std::option::Option<crate::types::WorkloadShare>) -> Self {
         self.workload_share = input;
         self
     }

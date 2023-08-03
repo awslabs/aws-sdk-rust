@@ -12,17 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateWebAclOutput {
 }
 impl DisassociateWebAclOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateWebAclOutput`](crate::operation::disassociate_web_acl::DisassociateWebAclOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_web_acl::builders::DisassociateWebAclOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_web_acl::builders::DisassociateWebAclOutputBuilder {
         crate::operation::disassociate_web_acl::builders::DisassociateWebAclOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateWebAclOutput`](crate::operation::disassociate_web_acl::DisassociateWebAclOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateWebAclOutputBuilder {
     _request_id: Option<String>,
 }

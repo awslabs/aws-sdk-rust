@@ -4,17 +4,10 @@ pub fn de_get_sdk_http_error(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_sdk::GetSdkOutput,
-    crate::operation::get_sdk::GetSdkError,
-> {
+) -> std::result::Result<crate::operation::get_sdk::GetSdkOutput, crate::operation::get_sdk::GetSdkError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::get_sdk::GetSdkError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::get_sdk::GetSdkError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
@@ -28,9 +21,9 @@ pub fn de_get_sdk_http_error(
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output =
-                    crate::types::error::builders::BadRequestExceptionBuilder::default();
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output).map_err(crate::operation::get_sdk::GetSdkError::unhandled)?;
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_sdk::GetSdkError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -44,7 +37,8 @@ pub fn de_get_sdk_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::get_sdk::GetSdkError::unhandled)?;
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_sdk::GetSdkError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -53,33 +47,33 @@ pub fn de_get_sdk_http_error(
             }
             tmp
         }),
-        "LimitExceededException" => {
-            crate::operation::get_sdk::GetSdkError::LimitExceededException({
+        "LimitExceededException" => crate::operation::get_sdk::GetSdkError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::get_sdk::GetSdkError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_limit_exceeded_exception::de_retry_after_seconds_header(_response_headers)
-                                                .map_err(|_|crate::operation::get_sdk::GetSdkError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_sdk::GetSdkError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_limit_exceeded_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::get_sdk::GetSdkError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After")
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "NotFoundException" => crate::operation::get_sdk::GetSdkError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output).map_err(crate::operation::get_sdk::GetSdkError::unhandled)?;
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_sdk::GetSdkError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -88,34 +82,33 @@ pub fn de_get_sdk_http_error(
             }
             tmp
         }),
-        "TooManyRequestsException" => {
-            crate::operation::get_sdk::GetSdkError::TooManyRequestsException({
+        "TooManyRequestsException" => crate::operation::get_sdk::GetSdkError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output).map_err(crate::operation::get_sdk::GetSdkError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers)
-                                                .map_err(|_|crate::operation::get_sdk::GetSdkError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
+                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_sdk::GetSdkError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::get_sdk::GetSdkError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After")
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "UnauthorizedException" => crate::operation::get_sdk::GetSdkError::UnauthorizedException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output =
-                    crate::types::error::builders::UnauthorizedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output).map_err(crate::operation::get_sdk::GetSdkError::unhandled)?;
+                let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_sdk::GetSdkError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -133,37 +126,21 @@ pub fn de_get_sdk_http_response_with_props(
     _response_status: u16,
     _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
-) -> std::result::Result<
-    crate::operation::get_sdk::GetSdkOutput,
-    crate::operation::get_sdk::GetSdkError,
-> {
+) -> std::result::Result<crate::operation::get_sdk::GetSdkOutput, crate::operation::get_sdk::GetSdkError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_sdk::builders::GetSdkOutputBuilder::default();
-        output = output.set_body(
-            crate::protocol_serde::shape_get_sdk_output::de_body_payload(_response_body)?,
-        );
+        output = output.set_body(crate::protocol_serde::shape_get_sdk_output::de_body_payload(_response_body)?);
         output = output.set_content_disposition(
-            crate::protocol_serde::shape_get_sdk_output::de_content_disposition_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::get_sdk::GetSdkError::unhandled(
-                    "Failed to parse contentDisposition from header `Content-Disposition",
-                )
+            crate::protocol_serde::shape_get_sdk_output::de_content_disposition_header(_response_headers).map_err(|_| {
+                crate::operation::get_sdk::GetSdkError::unhandled("Failed to parse contentDisposition from header `Content-Disposition")
             })?,
         );
         output = output.set_content_type(
             crate::protocol_serde::shape_get_sdk_output::de_content_type_header(_response_headers)
-                .map_err(|_| {
-                    crate::operation::get_sdk::GetSdkError::unhandled(
-                        "Failed to parse contentType from header `Content-Type",
-                    )
-                })?,
+                .map_err(|_| crate::operation::get_sdk::GetSdkError::unhandled("Failed to parse contentType from header `Content-Type"))?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

@@ -35,21 +35,18 @@ impl ::aws_http::request_id::RequestId for AddDraftAppVersionResourceMappingsOut
 }
 impl AddDraftAppVersionResourceMappingsOutput {
     /// Creates a new builder-style object to manufacture [`AddDraftAppVersionResourceMappingsOutput`](crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput).
-    pub fn builder() -> crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsOutputBuilder{
+    pub fn builder() -> crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsOutputBuilder {
         crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsOutputBuilder::default()
     }
 }
 
 /// A builder for [`AddDraftAppVersionResourceMappingsOutput`](crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddDraftAppVersionResourceMappingsOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_mappings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,
+    pub(crate) resource_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,
     _request_id: Option<String>,
 }
 impl AddDraftAppVersionResourceMappingsOutputBuilder {
@@ -93,17 +90,12 @@ impl AddDraftAppVersionResourceMappingsOutputBuilder {
         self
     }
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub fn set_resource_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,
-    ) -> Self {
+    pub fn set_resource_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>) -> Self {
         self.resource_mappings = input;
         self
     }
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub fn get_resource_mappings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>> {
+    pub fn get_resource_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>> {
         &self.resource_mappings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -116,14 +108,11 @@ impl AddDraftAppVersionResourceMappingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddDraftAppVersionResourceMappingsOutput`](crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput).
-    pub fn build(self) -> crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput{
+    pub fn build(self) -> crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput {
         crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput {
-            app_arn: self.app_arn
-            ,
-            app_version: self.app_version
-            ,
-            resource_mappings: self.resource_mappings
-            ,
+            app_arn: self.app_arn,
+            app_version: self.app_version,
+            resource_mappings: self.resource_mappings,
             _request_id: self._request_id,
         }
     }

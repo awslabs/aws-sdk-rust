@@ -22,18 +22,14 @@ impl ListSubscribedRuleGroupsInput {
 }
 impl ListSubscribedRuleGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListSubscribedRuleGroupsInput`](crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsInputBuilder {
         crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSubscribedRuleGroupsInput`](crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSubscribedRuleGroupsInputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
@@ -74,11 +70,9 @@ impl ListSubscribedRuleGroupsInputBuilder {
         crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsInput {
-                next_marker: self.next_marker,
-                limit: self.limit.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsInput {
+            next_marker: self.next_marker,
+            limit: self.limit.unwrap_or_default(),
+        })
     }
 }

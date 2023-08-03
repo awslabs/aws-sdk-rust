@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`dns_ip_addrs(Vec<String>)`](crate::operation::create_conditional_forwarder::builders::CreateConditionalForwarderFluentBuilder::dns_ip_addrs) / [`set_dns_ip_addrs(Option<Vec<String>>)`](crate::operation::create_conditional_forwarder::builders::CreateConditionalForwarderFluentBuilder::set_dns_ip_addrs): <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
     /// - On success, responds with [`CreateConditionalForwarderOutput`](crate::operation::create_conditional_forwarder::CreateConditionalForwarderOutput)
     /// - On failure, responds with [`SdkError<CreateConditionalForwarderError>`](crate::operation::create_conditional_forwarder::CreateConditionalForwarderError)
-    pub fn create_conditional_forwarder(&self) -> crate::operation::create_conditional_forwarder::builders::CreateConditionalForwarderFluentBuilder{
+    pub fn create_conditional_forwarder(&self) -> crate::operation::create_conditional_forwarder::builders::CreateConditionalForwarderFluentBuilder {
         crate::operation::create_conditional_forwarder::builders::CreateConditionalForwarderFluentBuilder::new(self.handle.clone())
     }
 }

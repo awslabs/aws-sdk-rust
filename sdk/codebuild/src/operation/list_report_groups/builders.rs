@@ -10,10 +10,7 @@ impl ListReportGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_report_groups::ListReportGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_report_groups::ListReportGroupsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_report_groups::ListReportGroupsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_report_groups();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl ListReportGroupsFluentBuilder {
         }
     }
     /// Access the ListReportGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_report_groups::builders::ListReportGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_report_groups::builders::ListReportGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl ListReportGroupsFluentBuilder {
             crate::operation::list_report_groups::ListReportGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_report_groups::ListReportGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_report_groups::ListReportGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl ListReportGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl ListReportGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_report_groups::ListReportGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_report_groups::ListReportGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_report_groups::ListReportGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl ListReportGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_report_groups::ListReportGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_report_groups::ListReportGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_report_groups::ListReportGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl ListReportGroupsFluentBuilder {
             crate::operation::list_report_groups::ListReportGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_report_groups::ListReportGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_report_groups::ListReportGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_report_groups::paginator::ListReportGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_report_groups::paginator::ListReportGroupsPaginator {
-        crate::operation::list_report_groups::paginator::ListReportGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_report_groups::paginator::ListReportGroupsPaginator {
+        crate::operation::list_report_groups::paginator::ListReportGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p> Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>. </p>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
@@ -139,10 +118,7 @@ impl ListReportGroupsFluentBuilder {
         self
     }
     /// <p> Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>. </p>
-    pub fn set_sort_order(
-        mut self,
-        input: ::std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
@@ -166,10 +142,7 @@ impl ListReportGroupsFluentBuilder {
     /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li>
     /// <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li>
     /// </ul>
-    pub fn set_sort_by(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportGroupSortByType>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ReportGroupSortByType>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }

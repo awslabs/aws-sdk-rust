@@ -11,11 +11,7 @@ impl super::Client {
     /// - On success, responds with [`StartTaskExecutionOutput`](crate::operation::start_task_execution::StartTaskExecutionOutput) with field(s):
     ///   - [`task_execution_arn(Option<String>)`](crate::operation::start_task_execution::StartTaskExecutionOutput::task_execution_arn): <p>The ARN of the running task execution.</p>
     /// - On failure, responds with [`SdkError<StartTaskExecutionError>`](crate::operation::start_task_execution::StartTaskExecutionError)
-    pub fn start_task_execution(
-        &self,
-    ) -> crate::operation::start_task_execution::builders::StartTaskExecutionFluentBuilder {
-        crate::operation::start_task_execution::builders::StartTaskExecutionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_task_execution(&self) -> crate::operation::start_task_execution::builders::StartTaskExecutionFluentBuilder {
+        crate::operation::start_task_execution::builders::StartTaskExecutionFluentBuilder::new(self.handle.clone())
     }
 }

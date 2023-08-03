@@ -37,9 +37,7 @@ impl OcspConfiguration {
 
 /// A builder for [`OcspConfiguration`](crate::types::OcspConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OcspConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) ocsp_custom_cname: ::std::option::Option<::std::string::String>,
@@ -63,10 +61,7 @@ impl OcspConfigurationBuilder {
     /// <p>The content of a Canonical Name (CNAME) record must conform to <a href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use of special characters in URIs. Additionally, the value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>Amazon Web Services Private Certificate Authority User Guide</i>.</p>
-    pub fn ocsp_custom_cname(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ocsp_custom_cname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ocsp_custom_cname = ::std::option::Option::Some(input.into());
         self
     }
@@ -74,10 +69,7 @@ impl OcspConfigurationBuilder {
     /// <p>The content of a Canonical Name (CNAME) record must conform to <a href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use of special characters in URIs. Additionally, the value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/ocsp-customize.html">Customizing Online Certificate Status Protocol (OCSP) </a> in the <i>Amazon Web Services Private Certificate Authority User Guide</i>.</p>
-    pub fn set_ocsp_custom_cname(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_ocsp_custom_cname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ocsp_custom_cname = input;
         self
     }

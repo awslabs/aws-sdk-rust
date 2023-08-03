@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for RegisterSlackWorkspaceForOrganization
 }
 impl RegisterSlackWorkspaceForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`RegisterSlackWorkspaceForOrganizationOutput`](crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationOutput).
-    pub fn builder() -> crate::operation::register_slack_workspace_for_organization::builders::RegisterSlackWorkspaceForOrganizationOutputBuilder{
+    pub fn builder() -> crate::operation::register_slack_workspace_for_organization::builders::RegisterSlackWorkspaceForOrganizationOutputBuilder {
         crate::operation::register_slack_workspace_for_organization::builders::RegisterSlackWorkspaceForOrganizationOutputBuilder::default()
     }
 }
 
 /// A builder for [`RegisterSlackWorkspaceForOrganizationOutput`](crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegisterSlackWorkspaceForOrganizationOutputBuilder {
     pub(crate) team_id: ::std::option::Option<::std::string::String>,
     pub(crate) team_name: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl RegisterSlackWorkspaceForOrganizationOutputBuilder {
         self
     }
     /// <p>Whether the Amazon Web Services account is a management or member account that's part of an organization in Organizations.</p>
-    pub fn set_account_type(
-        mut self,
-        input: ::std::option::Option<crate::types::AccountType>,
-    ) -> Self {
+    pub fn set_account_type(mut self, input: ::std::option::Option<crate::types::AccountType>) -> Self {
         self.account_type = input;
         self
     }
@@ -107,14 +102,11 @@ impl RegisterSlackWorkspaceForOrganizationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RegisterSlackWorkspaceForOrganizationOutput`](crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationOutput).
-    pub fn build(self) -> crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationOutput{
+    pub fn build(self) -> crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationOutput {
         crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationOutput {
-            team_id: self.team_id
-            ,
-            team_name: self.team_name
-            ,
-            account_type: self.account_type
-            ,
+            team_id: self.team_id,
+            team_name: self.team_name,
+            account_type: self.account_type,
             _request_id: self._request_id,
         }
     }

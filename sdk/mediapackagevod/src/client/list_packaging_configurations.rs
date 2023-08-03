@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`packaging_configurations(Option<Vec<PackagingConfiguration>>)`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput::packaging_configurations): A list of MediaPackage VOD PackagingConfiguration resources.
     /// - On failure, responds with [`SdkError<ListPackagingConfigurationsError>`](crate::operation::list_packaging_configurations::ListPackagingConfigurationsError)
-    pub fn list_packaging_configurations(&self) -> crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder{
+    pub fn list_packaging_configurations(
+        &self,
+    ) -> crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder {
         crate::operation::list_packaging_configurations::builders::ListPackagingConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

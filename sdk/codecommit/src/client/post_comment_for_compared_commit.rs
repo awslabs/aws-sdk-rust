@@ -18,7 +18,9 @@ impl super::Client {
     ///   - [`location(Option<Location>)`](crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput::location): <p>The location of the comment in the comparison between the two commits.</p>
     ///   - [`comment(Option<Comment>)`](crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput::comment): <p>The content of the comment you posted.</p>
     /// - On failure, responds with [`SdkError<PostCommentForComparedCommitError>`](crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError)
-    pub fn post_comment_for_compared_commit(&self) -> crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitFluentBuilder{
+    pub fn post_comment_for_compared_commit(
+        &self,
+    ) -> crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitFluentBuilder {
         crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitFluentBuilder::new(self.handle.clone())
     }
 }

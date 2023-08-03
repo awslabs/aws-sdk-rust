@@ -22,9 +22,7 @@ impl DescribePackageInput {
 
 /// A builder for [`DescribePackageInput`](crate::operation::describe_package::DescribePackageInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePackageInputBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,12 +44,7 @@ impl DescribePackageInputBuilder {
     /// Consumes the builder and constructs a [`DescribePackageInput`](crate::operation::describe_package::DescribePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_package::DescribePackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_package::DescribePackageInput {
-            package_id: self.package_id,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_package::DescribePackageInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_package::DescribePackageInput { package_id: self.package_id })
     }
 }

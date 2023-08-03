@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for ListTestExecutionsOutput {
 }
 impl ListTestExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListTestExecutionsOutput`](crate::operation::list_test_executions::ListTestExecutionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_test_executions::builders::ListTestExecutionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_test_executions::builders::ListTestExecutionsOutputBuilder {
         crate::operation::list_test_executions::builders::ListTestExecutionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListTestExecutionsOutput`](crate::operation::list_test_executions::ListTestExecutionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTestExecutionsOutputBuilder {
-    pub(crate) test_executions:
-        ::std::option::Option<::std::vec::Vec<crate::types::TestExecutionSummary>>,
+    pub(crate) test_executions: ::std::option::Option<::std::vec::Vec<crate::types::TestExecutionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListTestExecutionsOutputBuilder {
         self
     }
     /// <p>The list of test executions.</p>
-    pub fn set_test_executions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TestExecutionSummary>>,
-    ) -> Self {
+    pub fn set_test_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TestExecutionSummary>>) -> Self {
         self.test_executions = input;
         self
     }
     /// <p>The list of test executions.</p>
-    pub fn get_test_executions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestExecutionSummary>> {
+    pub fn get_test_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestExecutionSummary>> {
         &self.test_executions
     }
     /// <p>A token that indicates whether there are more results to return in a response to the ListTestExecutions operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestExecutions operation request to get the next page of results.</p>

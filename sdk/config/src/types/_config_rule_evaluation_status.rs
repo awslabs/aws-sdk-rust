@@ -69,27 +69,19 @@ impl ConfigRuleEvaluationStatus {
         self.config_rule_id.as_deref()
     }
     /// <p>The time that Config last successfully invoked the Config rule to evaluate your Amazon Web Services resources.</p>
-    pub fn last_successful_invocation_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_successful_invocation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_successful_invocation_time.as_ref()
     }
     /// <p>The time that Config last failed to invoke the Config rule to evaluate your Amazon Web Services resources.</p>
-    pub fn last_failed_invocation_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_failed_invocation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_failed_invocation_time.as_ref()
     }
     /// <p>The time that Config last successfully evaluated your Amazon Web Services resources against the rule.</p>
-    pub fn last_successful_evaluation_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_successful_evaluation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_successful_evaluation_time.as_ref()
     }
     /// <p>The time that Config last failed to evaluate your Amazon Web Services resources against the rule.</p>
-    pub fn last_failed_evaluation_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_failed_evaluation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_failed_evaluation_time.as_ref()
     }
     /// <p>The time that you first activated the Config rule.</p>
@@ -125,9 +117,7 @@ impl ConfigRuleEvaluationStatus {
         self.last_debug_log_delivery_status_reason.as_deref()
     }
     /// <p>The time Config last attempted to deliver a debug log for your Config Custom Policy rules.</p>
-    pub fn last_debug_log_delivery_time(
-        &self,
-    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_debug_log_delivery_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_debug_log_delivery_time.as_ref()
     }
 }
@@ -140,9 +130,7 @@ impl ConfigRuleEvaluationStatus {
 
 /// A builder for [`ConfigRuleEvaluationStatus`](crate::types::ConfigRuleEvaluationStatus).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfigRuleEvaluationStatusBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) config_rule_arn: ::std::option::Option<::std::string::String>,
@@ -162,18 +150,12 @@ pub struct ConfigRuleEvaluationStatusBuilder {
 }
 impl ConfigRuleEvaluationStatusBuilder {
     /// <p>The name of the Config rule.</p>
-    pub fn config_rule_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Config rule.</p>
-    pub fn set_config_rule_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_rule_name = input;
         self
     }
@@ -182,18 +164,12 @@ impl ConfigRuleEvaluationStatusBuilder {
         &self.config_rule_name
     }
     /// <p>The Amazon Resource Name (ARN) of the Config rule.</p>
-    pub fn config_rule_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Config rule.</p>
-    pub fn set_config_rule_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_rule_arn = input;
         self
     }
@@ -202,18 +178,12 @@ impl ConfigRuleEvaluationStatusBuilder {
         &self.config_rule_arn
     }
     /// <p>The ID of the Config rule.</p>
-    pub fn config_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn config_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Config rule.</p>
-    pub fn set_config_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_config_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_rule_id = input;
         self
     }
@@ -227,17 +197,12 @@ impl ConfigRuleEvaluationStatusBuilder {
         self
     }
     /// <p>The time that Config last successfully invoked the Config rule to evaluate your Amazon Web Services resources.</p>
-    pub fn set_last_successful_invocation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_successful_invocation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_successful_invocation_time = input;
         self
     }
     /// <p>The time that Config last successfully invoked the Config rule to evaluate your Amazon Web Services resources.</p>
-    pub fn get_last_successful_invocation_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_successful_invocation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_successful_invocation_time
     }
     /// <p>The time that Config last failed to invoke the Config rule to evaluate your Amazon Web Services resources.</p>
@@ -246,17 +211,12 @@ impl ConfigRuleEvaluationStatusBuilder {
         self
     }
     /// <p>The time that Config last failed to invoke the Config rule to evaluate your Amazon Web Services resources.</p>
-    pub fn set_last_failed_invocation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_failed_invocation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_failed_invocation_time = input;
         self
     }
     /// <p>The time that Config last failed to invoke the Config rule to evaluate your Amazon Web Services resources.</p>
-    pub fn get_last_failed_invocation_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_failed_invocation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_failed_invocation_time
     }
     /// <p>The time that Config last successfully evaluated your Amazon Web Services resources against the rule.</p>
@@ -265,17 +225,12 @@ impl ConfigRuleEvaluationStatusBuilder {
         self
     }
     /// <p>The time that Config last successfully evaluated your Amazon Web Services resources against the rule.</p>
-    pub fn set_last_successful_evaluation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_successful_evaluation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_successful_evaluation_time = input;
         self
     }
     /// <p>The time that Config last successfully evaluated your Amazon Web Services resources against the rule.</p>
-    pub fn get_last_successful_evaluation_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_successful_evaluation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_successful_evaluation_time
     }
     /// <p>The time that Config last failed to evaluate your Amazon Web Services resources against the rule.</p>
@@ -284,17 +239,12 @@ impl ConfigRuleEvaluationStatusBuilder {
         self
     }
     /// <p>The time that Config last failed to evaluate your Amazon Web Services resources against the rule.</p>
-    pub fn set_last_failed_evaluation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_failed_evaluation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_failed_evaluation_time = input;
         self
     }
     /// <p>The time that Config last failed to evaluate your Amazon Web Services resources against the rule.</p>
-    pub fn get_last_failed_evaluation_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_failed_evaluation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_failed_evaluation_time
     }
     /// <p>The time that you first activated the Config rule.</p>
@@ -303,10 +253,7 @@ impl ConfigRuleEvaluationStatusBuilder {
         self
     }
     /// <p>The time that you first activated the Config rule.</p>
-    pub fn set_first_activated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_first_activated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.first_activated_time = input;
         self
     }
@@ -320,32 +267,21 @@ impl ConfigRuleEvaluationStatusBuilder {
         self
     }
     /// <p>The time that you last turned off the Config rule.</p>
-    pub fn set_last_deactivated_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_deactivated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_deactivated_time = input;
         self
     }
     /// <p>The time that you last turned off the Config rule.</p>
-    pub fn get_last_deactivated_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_deactivated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_deactivated_time
     }
     /// <p>The error code that Config returned when the rule last failed.</p>
-    pub fn last_error_code(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error code that Config returned when the rule last failed.</p>
-    pub fn set_last_error_code(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_error_code = input;
         self
     }
@@ -354,18 +290,12 @@ impl ConfigRuleEvaluationStatusBuilder {
         &self.last_error_code
     }
     /// <p>The error message that Config returned when the rule last failed.</p>
-    pub fn last_error_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message that Config returned when the rule last failed.</p>
-    pub fn set_last_error_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_error_message = input;
         self
     }
@@ -400,47 +330,31 @@ impl ConfigRuleEvaluationStatusBuilder {
         &self.first_evaluation_started
     }
     /// <p>The status of the last attempted delivery of a debug log for your Config Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
-    pub fn last_debug_log_delivery_status(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_debug_log_delivery_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_debug_log_delivery_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the last attempted delivery of a debug log for your Config Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
-    pub fn set_last_debug_log_delivery_status(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_debug_log_delivery_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_debug_log_delivery_status = input;
         self
     }
     /// <p>The status of the last attempted delivery of a debug log for your Config Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
-    pub fn get_last_debug_log_delivery_status(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_last_debug_log_delivery_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_debug_log_delivery_status
     }
     /// <p>The reason Config was not able to deliver a debug log. This is for the last failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
-    pub fn last_debug_log_delivery_status_reason(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn last_debug_log_delivery_status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_debug_log_delivery_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason Config was not able to deliver a debug log. This is for the last failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
-    pub fn set_last_debug_log_delivery_status_reason(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_last_debug_log_delivery_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_debug_log_delivery_status_reason = input;
         self
     }
     /// <p>The reason Config was not able to deliver a debug log. This is for the last failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
-    pub fn get_last_debug_log_delivery_status_reason(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_last_debug_log_delivery_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_debug_log_delivery_status_reason
     }
     /// <p>The time Config last attempted to deliver a debug log for your Config Custom Policy rules.</p>
@@ -449,17 +363,12 @@ impl ConfigRuleEvaluationStatusBuilder {
         self
     }
     /// <p>The time Config last attempted to deliver a debug log for your Config Custom Policy rules.</p>
-    pub fn set_last_debug_log_delivery_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_debug_log_delivery_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_debug_log_delivery_time = input;
         self
     }
     /// <p>The time Config last attempted to deliver a debug log for your Config Custom Policy rules.</p>
-    pub fn get_last_debug_log_delivery_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_debug_log_delivery_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_debug_log_delivery_time
     }
     /// Consumes the builder and constructs a [`ConfigRuleEvaluationStatus`](crate::types::ConfigRuleEvaluationStatus).

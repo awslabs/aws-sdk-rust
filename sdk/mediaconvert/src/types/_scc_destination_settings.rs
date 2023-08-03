@@ -23,9 +23,7 @@ impl SccDestinationSettings {
 
 /// A builder for [`SccDestinationSettings`](crate::types::SccDestinationSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SccDestinationSettingsBuilder {
     pub(crate) framerate: ::std::option::Option<crate::types::SccDestinationFramerate>,
 }
@@ -36,10 +34,7 @@ impl SccDestinationSettingsBuilder {
         self
     }
     /// Set Framerate to make sure that the captions and the video are synchronized in the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe.
-    pub fn set_framerate(
-        mut self,
-        input: ::std::option::Option<crate::types::SccDestinationFramerate>,
-    ) -> Self {
+    pub fn set_framerate(mut self, input: ::std::option::Option<crate::types::SccDestinationFramerate>) -> Self {
         self.framerate = input;
         self
     }
@@ -49,8 +44,6 @@ impl SccDestinationSettingsBuilder {
     }
     /// Consumes the builder and constructs a [`SccDestinationSettings`](crate::types::SccDestinationSettings).
     pub fn build(self) -> crate::types::SccDestinationSettings {
-        crate::types::SccDestinationSettings {
-            framerate: self.framerate,
-        }
+        crate::types::SccDestinationSettings { framerate: self.framerate }
     }
 }

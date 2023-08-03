@@ -23,9 +23,7 @@ pub fn ser_provisioning_artifact_properties(
         object.key("Type").string(var_7.as_str());
     }
     if input.disable_template_validation {
-        object
-            .key("DisableTemplateValidation")
-            .boolean(input.disable_template_validation);
+        object.key("DisableTemplateValidation").boolean(input.disable_template_validation);
     }
     Ok(())
 }

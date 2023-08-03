@@ -40,10 +40,7 @@ pub fn ser_create_pricing_rule_input(
     if let Some(var_12) = &input.tiering {
         #[allow(unused_mut)]
         let mut object_13 = object.key("Tiering").start_object();
-        crate::protocol_serde::shape_create_tiering_input::ser_create_tiering_input(
-            &mut object_13,
-            var_12,
-        )?;
+        crate::protocol_serde::shape_create_tiering_input::ser_create_tiering_input(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.r#type {

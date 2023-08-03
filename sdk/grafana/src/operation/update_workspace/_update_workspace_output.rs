@@ -28,9 +28,7 @@ impl UpdateWorkspaceOutput {
 
 /// A builder for [`UpdateWorkspaceOutput`](crate::operation::update_workspace::UpdateWorkspaceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceOutputBuilder {
     pub(crate) workspace: ::std::option::Option<crate::types::WorkspaceDescription>,
     _request_id: Option<String>,
@@ -42,10 +40,7 @@ impl UpdateWorkspaceOutputBuilder {
         self
     }
     /// <p>A structure containing data about the workspace that was created.</p>
-    pub fn set_workspace(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkspaceDescription>,
-    ) -> Self {
+    pub fn set_workspace(mut self, input: ::std::option::Option<crate::types::WorkspaceDescription>) -> Self {
         self.workspace = input;
         self
     }

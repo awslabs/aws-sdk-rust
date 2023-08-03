@@ -17,35 +17,27 @@ impl DetachCertificateFromDistributionInput {
 }
 impl DetachCertificateFromDistributionInput {
     /// Creates a new builder-style object to manufacture [`DetachCertificateFromDistributionInput`](crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionInput).
-    pub fn builder() -> crate::operation::detach_certificate_from_distribution::builders::DetachCertificateFromDistributionInputBuilder{
+    pub fn builder() -> crate::operation::detach_certificate_from_distribution::builders::DetachCertificateFromDistributionInputBuilder {
         crate::operation::detach_certificate_from_distribution::builders::DetachCertificateFromDistributionInputBuilder::default()
     }
 }
 
 /// A builder for [`DetachCertificateFromDistributionInput`](crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachCertificateFromDistributionInputBuilder {
     pub(crate) distribution_name: ::std::option::Option<::std::string::String>,
 }
 impl DetachCertificateFromDistributionInputBuilder {
     /// <p>The name of the distribution from which to detach the certificate.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn distribution_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the distribution from which to detach the certificate.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn set_distribution_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_name = input;
         self
     }
@@ -55,12 +47,16 @@ impl DetachCertificateFromDistributionInputBuilder {
         &self.distribution_name
     }
     /// Consumes the builder and constructs a [`DetachCertificateFromDistributionInput`](crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionInput {
-                distribution_name: self.distribution_name
-                ,
-            }
+                distribution_name: self.distribution_name,
+            },
         )
     }
 }

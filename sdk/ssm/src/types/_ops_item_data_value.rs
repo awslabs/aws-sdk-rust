@@ -30,9 +30,7 @@ impl OpsItemDataValue {
 
 /// A builder for [`OpsItemDataValue`](crate::types::OpsItemDataValue).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpsItemDataValueBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::OpsItemDataType>,

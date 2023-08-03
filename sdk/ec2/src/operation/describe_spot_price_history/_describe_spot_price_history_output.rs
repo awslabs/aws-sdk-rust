@@ -29,16 +29,14 @@ impl ::aws_http::request_id::RequestId for DescribeSpotPriceHistoryOutput {
 }
 impl DescribeSpotPriceHistoryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSpotPriceHistoryOutput`](crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput).
-    pub fn builder() -> crate::operation::describe_spot_price_history::builders::DescribeSpotPriceHistoryOutputBuilder{
+    pub fn builder() -> crate::operation::describe_spot_price_history::builders::DescribeSpotPriceHistoryOutputBuilder {
         crate::operation::describe_spot_price_history::builders::DescribeSpotPriceHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeSpotPriceHistoryOutput`](crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSpotPriceHistoryOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) spot_price_history: ::std::option::Option<::std::vec::Vec<crate::types::SpotPrice>>,
@@ -71,17 +69,12 @@ impl DescribeSpotPriceHistoryOutputBuilder {
         self
     }
     /// <p>The historical Spot prices.</p>
-    pub fn set_spot_price_history(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SpotPrice>>,
-    ) -> Self {
+    pub fn set_spot_price_history(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpotPrice>>) -> Self {
         self.spot_price_history = input;
         self
     }
     /// <p>The historical Spot prices.</p>
-    pub fn get_spot_price_history(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotPrice>> {
+    pub fn get_spot_price_history(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotPrice>> {
         &self.spot_price_history
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -94,9 +87,7 @@ impl DescribeSpotPriceHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSpotPriceHistoryOutput`](crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput {
+    pub fn build(self) -> crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput {
         crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput {
             next_token: self.next_token,
             spot_price_history: self.spot_price_history,

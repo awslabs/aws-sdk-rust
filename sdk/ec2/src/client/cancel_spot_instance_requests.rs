@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`CancelSpotInstanceRequestsOutput`](crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsOutput) with field(s):
     ///   - [`cancelled_spot_instance_requests(Option<Vec<CancelledSpotInstanceRequest>>)`](crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsOutput::cancelled_spot_instance_requests): <p>The Spot Instance requests.</p>
     /// - On failure, responds with [`SdkError<CancelSpotInstanceRequestsError>`](crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsError)
-    pub fn cancel_spot_instance_requests(&self) -> crate::operation::cancel_spot_instance_requests::builders::CancelSpotInstanceRequestsFluentBuilder{
+    pub fn cancel_spot_instance_requests(
+        &self,
+    ) -> crate::operation::cancel_spot_instance_requests::builders::CancelSpotInstanceRequestsFluentBuilder {
         crate::operation::cancel_spot_instance_requests::builders::CancelSpotInstanceRequestsFluentBuilder::new(self.handle.clone())
     }
 }

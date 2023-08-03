@@ -22,26 +22,18 @@ impl GetAdminScopeInput {
 
 /// A builder for [`GetAdminScopeInput`](crate::operation::get_admin_scope::GetAdminScopeInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAdminScopeInputBuilder {
     pub(crate) admin_account: ::std::option::Option<::std::string::String>,
 }
 impl GetAdminScopeInputBuilder {
     /// <p>The administator account that you want to get the details for.</p>
-    pub fn admin_account(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn admin_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The administator account that you want to get the details for.</p>
-    pub fn set_admin_account(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_admin_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_account = input;
         self
     }
@@ -52,10 +44,7 @@ impl GetAdminScopeInputBuilder {
     /// Consumes the builder and constructs a [`GetAdminScopeInput`](crate::operation::get_admin_scope::GetAdminScopeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_admin_scope::GetAdminScopeInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::get_admin_scope::GetAdminScopeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_admin_scope::GetAdminScopeInput {
             admin_account: self.admin_account,
         })

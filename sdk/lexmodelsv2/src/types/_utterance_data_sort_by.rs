@@ -38,9 +38,7 @@ impl UtteranceDataSortBy {
 
 /// A builder for [`UtteranceDataSortBy`](crate::types::UtteranceDataSortBy).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UtteranceDataSortByBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsUtteranceSortByName>,
     pub(crate) order: ::std::option::Option<crate::types::AnalyticsSortOrder>,
@@ -60,10 +58,7 @@ impl UtteranceDataSortByBuilder {
     /// <li> <p> <code>Count</code> – The number of utterances.</p> </li>
     /// <li> <p> <code>UtteranceTimestamp</code> – The date and time of the utterance.</p> </li>
     /// </ul>
-    pub fn set_name(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsUtteranceSortByName>,
-    ) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsUtteranceSortByName>) -> Self {
         self.name = input;
         self
     }
@@ -81,10 +76,7 @@ impl UtteranceDataSortByBuilder {
         self
     }
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
-    pub fn set_order(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalyticsSortOrder>,
-    ) -> Self {
+    pub fn set_order(mut self, input: ::std::option::Option<crate::types::AnalyticsSortOrder>) -> Self {
         self.order = input;
         self
     }

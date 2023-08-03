@@ -33,27 +33,19 @@ impl VersionToPublish {
 
 /// A builder for [`VersionToPublish`](crate::types::VersionToPublish).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VersionToPublishBuilder {
     pub(crate) associated_rule_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) forecasted_lifetime: ::std::option::Option<i32>,
 }
 impl VersionToPublishBuilder {
     /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version. </p>
-    pub fn associated_rule_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn associated_rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_rule_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version. </p>
-    pub fn set_associated_rule_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_associated_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_rule_group_arn = input;
         self
     }

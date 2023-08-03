@@ -4,9 +4,7 @@ pub fn ser_update_crl_input(
     input: &crate::operation::update_crl::UpdateCrlInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.crl_data {
-        object
-            .key("crlData")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+        object.key("crlData").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
     if let Some(var_2) = &input.name {
         object.key("name").string(var_2.as_str());

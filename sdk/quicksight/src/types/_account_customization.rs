@@ -30,27 +30,19 @@ impl AccountCustomization {
 
 /// A builder for [`AccountCustomization`](crate::types::AccountCustomization).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountCustomizationBuilder {
     pub(crate) default_theme: ::std::option::Option<::std::string::String>,
     pub(crate) default_email_customization_template: ::std::option::Option<::std::string::String>,
 }
 impl AccountCustomizationBuilder {
     /// <p>The default theme for this Amazon QuickSight subscription.</p>
-    pub fn default_theme(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_theme(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_theme = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default theme for this Amazon QuickSight subscription.</p>
-    pub fn set_default_theme(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_theme(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_theme = input;
         self
     }
@@ -59,25 +51,17 @@ impl AccountCustomizationBuilder {
         &self.default_theme
     }
     /// <p>The default email customization template.</p>
-    pub fn default_email_customization_template(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_email_customization_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_email_customization_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default email customization template.</p>
-    pub fn set_default_email_customization_template(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_email_customization_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_email_customization_template = input;
         self
     }
     /// <p>The default email customization template.</p>
-    pub fn get_default_email_customization_template(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_default_email_customization_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_email_customization_template
     }
     /// Consumes the builder and constructs a [`AccountCustomization`](crate::types::AccountCustomization).

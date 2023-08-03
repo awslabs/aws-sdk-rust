@@ -38,9 +38,7 @@ impl GetResourcePoliciesFluentBuilder {
         }
     }
     /// Access the GetResourcePolicies as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_resource_policies::builders::GetResourcePoliciesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_resource_policies::builders::GetResourcePoliciesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl GetResourcePoliciesFluentBuilder {
             crate::operation::get_resource_policies::GetResourcePolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_policies::GetResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_policies::GetResourcePoliciesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl GetResourcePoliciesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl GetResourcePoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_policies::GetResourcePoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_policies::GetResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_policies::GetResourcePoliciesError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl GetResourcePoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_policies::GetResourcePoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_policies::GetResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_policies::GetResourcePoliciesError>,
     > {
         self.send_middleware().await
     }
@@ -117,22 +106,15 @@ impl GetResourcePoliciesFluentBuilder {
             crate::operation::get_resource_policies::GetResourcePolicies,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_policies::GetResourcePoliciesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resource_policies::GetResourcePoliciesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_resource_policies::paginator::GetResourcePoliciesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_resource_policies::paginator::GetResourcePoliciesPaginator {
-        crate::operation::get_resource_policies::paginator::GetResourcePoliciesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::get_resource_policies::paginator::GetResourcePoliciesPaginator {
+        crate::operation::get_resource_policies::paginator::GetResourcePoliciesPaginator::new(self.handle, self.inner)
     }
     /// <p>A continuation token, if this is a continuation request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

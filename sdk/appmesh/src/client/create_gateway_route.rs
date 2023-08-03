@@ -13,11 +13,7 @@ impl super::Client {
     /// - On success, responds with [`CreateGatewayRouteOutput`](crate::operation::create_gateway_route::CreateGatewayRouteOutput) with field(s):
     ///   - [`gateway_route(Option<GatewayRouteData>)`](crate::operation::create_gateway_route::CreateGatewayRouteOutput::gateway_route): <p>The full description of your gateway route following the create call.</p>
     /// - On failure, responds with [`SdkError<CreateGatewayRouteError>`](crate::operation::create_gateway_route::CreateGatewayRouteError)
-    pub fn create_gateway_route(
-        &self,
-    ) -> crate::operation::create_gateway_route::builders::CreateGatewayRouteFluentBuilder {
-        crate::operation::create_gateway_route::builders::CreateGatewayRouteFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_gateway_route(&self) -> crate::operation::create_gateway_route::builders::CreateGatewayRouteFluentBuilder {
+        crate::operation::create_gateway_route::builders::CreateGatewayRouteFluentBuilder::new(self.handle.clone())
     }
 }

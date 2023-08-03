@@ -22,16 +22,14 @@ impl DeleteAccessControlConfigurationInput {
 }
 impl DeleteAccessControlConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessControlConfigurationInput`](crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationInput).
-    pub fn builder() -> crate::operation::delete_access_control_configuration::builders::DeleteAccessControlConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_access_control_configuration::builders::DeleteAccessControlConfigurationInputBuilder {
         crate::operation::delete_access_control_configuration::builders::DeleteAccessControlConfigurationInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAccessControlConfigurationInput`](crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAccessControlConfigurationInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -66,14 +64,17 @@ impl DeleteAccessControlConfigurationInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteAccessControlConfigurationInput`](crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationInput {
-                index_id: self.index_id
-                ,
-                id: self.id
-                ,
-            }
+                index_id: self.index_id,
+                id: self.id,
+            },
         )
     }
 }

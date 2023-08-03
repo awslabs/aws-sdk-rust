@@ -72,16 +72,14 @@ impl CreateDataRepositoryAssociationInput {
 }
 impl CreateDataRepositoryAssociationInput {
     /// Creates a new builder-style object to manufacture [`CreateDataRepositoryAssociationInput`](crate::operation::create_data_repository_association::CreateDataRepositoryAssociationInput).
-    pub fn builder() -> crate::operation::create_data_repository_association::builders::CreateDataRepositoryAssociationInputBuilder{
+    pub fn builder() -> crate::operation::create_data_repository_association::builders::CreateDataRepositoryAssociationInputBuilder {
         crate::operation::create_data_repository_association::builders::CreateDataRepositoryAssociationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateDataRepositoryAssociationInput`](crate::operation::create_data_repository_association::CreateDataRepositoryAssociationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDataRepositoryAssociationInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_path: ::std::option::Option<::std::string::String>,
@@ -94,18 +92,12 @@ pub struct CreateDataRepositoryAssociationInputBuilder {
 }
 impl CreateDataRepositoryAssociationInputBuilder {
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn file_system_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn set_file_system_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
@@ -117,10 +109,7 @@ impl CreateDataRepositoryAssociationInputBuilder {
     /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
     /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
     /// </note>
-    pub fn file_system_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_system_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_path = ::std::option::Option::Some(input.into());
         self
     }
@@ -128,10 +117,7 @@ impl CreateDataRepositoryAssociationInputBuilder {
     /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
     /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
     /// </note>
-    pub fn set_file_system_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_file_system_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_path = input;
         self
     }
@@ -143,18 +129,12 @@ impl CreateDataRepositoryAssociationInputBuilder {
         &self.file_system_path
     }
     /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
-    pub fn data_repository_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn data_repository_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_repository_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
-    pub fn set_data_repository_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_data_repository_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_repository_path = input;
         self
     }
@@ -168,10 +148,7 @@ impl CreateDataRepositoryAssociationInputBuilder {
         self
     }
     /// <p>Set to <code>true</code> to run an import data repository task to import metadata from the data repository to the file system after the data repository association is created. Default is <code>false</code>.</p>
-    pub fn set_batch_import_meta_data_on_create(
-        mut self,
-        input: ::std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_batch_import_meta_data_on_create(mut self, input: ::std::option::Option<bool>) -> Self {
         self.batch_import_meta_data_on_create = input;
         self
     }
@@ -202,10 +179,7 @@ impl CreateDataRepositoryAssociationInputBuilder {
         self
     }
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
-    pub fn set_s3(
-        mut self,
-        input: ::std::option::Option<crate::types::S3DataRepositoryConfiguration>,
-    ) -> Self {
+    pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3DataRepositoryConfiguration>) -> Self {
         self.s3 = input;
         self
     }
@@ -214,18 +188,12 @@ impl CreateDataRepositoryAssociationInputBuilder {
         &self.s3
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
@@ -245,10 +213,7 @@ impl CreateDataRepositoryAssociationInputBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -265,23 +230,15 @@ impl CreateDataRepositoryAssociationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_data_repository_association::CreateDataRepositoryAssociationInput {
-                file_system_id: self.file_system_id
-                ,
-                file_system_path: self.file_system_path
-                ,
-                data_repository_path: self.data_repository_path
-                ,
-                batch_import_meta_data_on_create: self.batch_import_meta_data_on_create
-                ,
-                imported_file_chunk_size: self.imported_file_chunk_size
-                ,
-                s3: self.s3
-                ,
-                client_request_token: self.client_request_token
-                ,
-                tags: self.tags
-                ,
-            }
+                file_system_id: self.file_system_id,
+                file_system_path: self.file_system_path,
+                data_repository_path: self.data_repository_path,
+                batch_import_meta_data_on_create: self.batch_import_meta_data_on_create,
+                imported_file_chunk_size: self.imported_file_chunk_size,
+                s3: self.s3,
+                client_request_token: self.client_request_token,
+                tags: self.tags,
+            },
         )
     }
 }

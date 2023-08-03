@@ -12,7 +12,11 @@ impl super::Client {
     ///   - [`application_version_id(Option<i64>)`](crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionOutput::application_version_id): <p>The version ID of the application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
     ///   - [`cloud_watch_logging_option_descriptions(Option<Vec<CloudWatchLoggingOptionDescription>>)`](crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionOutput::cloud_watch_logging_option_descriptions): <p>The descriptions of the remaining CloudWatch logging options for the application.</p>
     /// - On failure, responds with [`SdkError<DeleteApplicationCloudWatchLoggingOptionError>`](crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionError)
-    pub fn delete_application_cloud_watch_logging_option(&self) -> crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionFluentBuilder{
-        crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionFluentBuilder::new(self.handle.clone())
+    pub fn delete_application_cloud_watch_logging_option(
+        &self,
+    ) -> crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionFluentBuilder {
+        crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

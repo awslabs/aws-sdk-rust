@@ -40,9 +40,7 @@ impl ExportTask {
         self.export_to_s3_task.as_ref()
     }
     /// <p>Information about the instance to export.</p>
-    pub fn instance_export_details(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceExportDetails> {
+    pub fn instance_export_details(&self) -> ::std::option::Option<&crate::types::InstanceExportDetails> {
         self.instance_export_details.as_ref()
     }
     /// <p>The state of the export task.</p>
@@ -67,9 +65,7 @@ impl ExportTask {
 
 /// A builder for [`ExportTask`](crate::types::ExportTask).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExportTaskBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) export_task_id: ::std::option::Option<::std::string::String>,
@@ -95,18 +91,12 @@ impl ExportTaskBuilder {
         &self.description
     }
     /// <p>The ID of the export task.</p>
-    pub fn export_task_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn export_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the export task.</p>
-    pub fn set_export_task_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_export_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_task_id = input;
         self
     }
@@ -120,10 +110,7 @@ impl ExportTaskBuilder {
         self
     }
     /// <p>Information about the export task.</p>
-    pub fn set_export_to_s3_task(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportToS3Task>,
-    ) -> Self {
+    pub fn set_export_to_s3_task(mut self, input: ::std::option::Option<crate::types::ExportToS3Task>) -> Self {
         self.export_to_s3_task = input;
         self
     }
@@ -137,17 +124,12 @@ impl ExportTaskBuilder {
         self
     }
     /// <p>Information about the instance to export.</p>
-    pub fn set_instance_export_details(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceExportDetails>,
-    ) -> Self {
+    pub fn set_instance_export_details(mut self, input: ::std::option::Option<crate::types::InstanceExportDetails>) -> Self {
         self.instance_export_details = input;
         self
     }
     /// <p>Information about the instance to export.</p>
-    pub fn get_instance_export_details(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceExportDetails> {
+    pub fn get_instance_export_details(&self) -> &::std::option::Option<crate::types::InstanceExportDetails> {
         &self.instance_export_details
     }
     /// <p>The state of the export task.</p>
@@ -156,10 +138,7 @@ impl ExportTaskBuilder {
         self
     }
     /// <p>The state of the export task.</p>
-    pub fn set_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportTaskState>,
-    ) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ExportTaskState>) -> Self {
         self.state = input;
         self
     }
@@ -168,18 +147,12 @@ impl ExportTaskBuilder {
         &self.state
     }
     /// <p>The status message related to the export task.</p>
-    pub fn status_message(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message related to the export task.</p>
-    pub fn set_status_message(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
         self
     }
@@ -199,10 +172,7 @@ impl ExportTaskBuilder {
         self
     }
     /// <p>The tags for the export task.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }

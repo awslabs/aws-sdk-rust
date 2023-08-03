@@ -41,13 +41,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RepositorySyncStatus {
     /// The repository sync attempt has failed.
@@ -76,9 +70,7 @@ impl ::std::convert::From<&str> for RepositorySyncStatus {
             "IN_PROGRESS" => RepositorySyncStatus::InProgress,
             "QUEUED" => RepositorySyncStatus::Queued,
             "SUCCEEDED" => RepositorySyncStatus::Succeeded,
-            other => RepositorySyncStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RepositorySyncStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

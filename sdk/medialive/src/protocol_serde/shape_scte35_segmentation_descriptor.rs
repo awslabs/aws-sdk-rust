@@ -16,9 +16,7 @@ pub fn ser_scte35_segmentation_descriptor(
         );
     }
     if let Some(var_4) = &input.segmentation_cancel_indicator {
-        object
-            .key("segmentationCancelIndicator")
-            .string(var_4.as_str());
+        object.key("segmentationCancelIndicator").string(var_4.as_str());
     }
     if let Some(var_5) = &input.segmentation_duration {
         object.key("segmentationDuration").number(
@@ -70,148 +68,111 @@ pub fn ser_scte35_segmentation_descriptor(
 
 pub(crate) fn de_scte35_segmentation_descriptor<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::Scte35SegmentationDescriptor>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::Scte35SegmentationDescriptor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::Scte35SegmentationDescriptorBuilder::default();
+            let mut builder = crate::types::builders::Scte35SegmentationDescriptorBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "deliveryRestrictions" => {
-                                builder = builder.set_delivery_restrictions(
-                                    crate::protocol_serde::shape_scte35_delivery_restrictions::de_scte35_delivery_restrictions(tokens)?
-                                );
-                            }
-                            "segmentNum" => {
-                                builder = builder.set_segment_num(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "deliveryRestrictions" => {
+                            builder = builder.set_delivery_restrictions(
+                                crate::protocol_serde::shape_scte35_delivery_restrictions::de_scte35_delivery_restrictions(tokens)?,
+                            );
+                        }
+                        "segmentNum" => {
+                            builder = builder.set_segment_num(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "segmentationCancelIndicator" => {
-                                builder = builder.set_segmentation_cancel_indicator(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "segmentationCancelIndicator" => {
+                            builder = builder.set_segmentation_cancel_indicator(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| {
-                                        s.to_unescaped().map(|u| {
-                                            crate::types::Scte35SegmentationCancelIndicator::from(
-                                                u.as_ref(),
-                                            )
-                                        })
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::Scte35SegmentationCancelIndicator::from(u.as_ref()))
                                     })
                                     .transpose()?,
-                                );
-                            }
-                            "segmentationDuration" => {
-                                builder = builder.set_segmentation_duration(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "segmentationDuration" => {
+                            builder = builder.set_segmentation_duration(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "segmentationEventId" => {
-                                builder = builder.set_segmentation_event_id(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "segmentationEventId" => {
+                            builder = builder.set_segmentation_event_id(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "segmentationTypeId" => {
-                                builder = builder.set_segmentation_type_id(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "segmentationTypeId" => {
+                            builder = builder.set_segmentation_type_id(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
-                                );
-                            }
-                            "segmentationUpid" => {
-                                builder = builder.set_segmentation_upid(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
+                            );
+                        }
+                        "segmentationUpid" => {
+                            builder = builder.set_segmentation_upid(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
-                                );
-                            }
-                            "segmentationUpidType" => {
-                                builder = builder.set_segmentation_upid_type(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "segmentsExpected" => {
-                                builder = builder.set_segments_expected(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "subSegmentNum" => {
-                                builder = builder.set_sub_segment_num(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            "subSegmentsExpected" => {
-                                builder = builder.set_sub_segments_expected(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            );
                         }
-                    }
+                        "segmentationUpidType" => {
+                            builder = builder.set_segmentation_upid_type(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "segmentsExpected" => {
+                            builder = builder.set_segments_expected(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "subSegmentNum" => {
+                            builder = builder.set_sub_segment_num(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "subSegmentsExpected" => {
+                            builder = builder.set_sub_segments_expected(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

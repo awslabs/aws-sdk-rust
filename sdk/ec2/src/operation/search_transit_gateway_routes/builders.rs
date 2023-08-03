@@ -26,7 +26,7 @@ impl SearchTransitGatewayRoutesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchTransitGatewayRoutesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesInputBuilder,
+    inner: crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesInputBuilder,
 }
 impl SearchTransitGatewayRoutesFluentBuilder {
     /// Creates a new `SearchTransitGatewayRoutes`.
@@ -37,7 +37,7 @@ impl SearchTransitGatewayRoutesFluentBuilder {
         }
     }
     /// Access the SearchTransitGatewayRoutes as a reference.
-    pub fn as_input(&self) -> &crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl SearchTransitGatewayRoutesFluentBuilder {
             crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl SearchTransitGatewayRoutesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl SearchTransitGatewayRoutesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl SearchTransitGatewayRoutesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl SearchTransitGatewayRoutesFluentBuilder {
             crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutes,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_route_table_id(input.into());
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn set_transit_gateway_route_table_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_route_table_id(input);
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn get_transit_gateway_route_table_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transit_gateway_route_table_id()
     }
     /// Appends an item to `Filters`.
@@ -176,10 +157,7 @@ impl SearchTransitGatewayRoutesFluentBuilder {
     /// <li> <p> <code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).</p> </li>
     /// <li> <p> <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

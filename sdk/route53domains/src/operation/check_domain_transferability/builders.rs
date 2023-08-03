@@ -26,7 +26,7 @@ impl CheckDomainTransferabilityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CheckDomainTransferabilityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityInputBuilder,
+    inner: crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityInputBuilder,
 }
 impl CheckDomainTransferabilityFluentBuilder {
     /// Creates a new `CheckDomainTransferability`.
@@ -37,7 +37,7 @@ impl CheckDomainTransferabilityFluentBuilder {
         }
     }
     /// Access the CheckDomainTransferability as a reference.
-    pub fn as_input(&self) -> &crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CheckDomainTransferabilityFluentBuilder {
             crate::operation::check_domain_transferability::CheckDomainTransferability,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::check_domain_transferability::CheckDomainTransferabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::check_domain_transferability::CheckDomainTransferabilityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CheckDomainTransferabilityFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CheckDomainTransferabilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::check_domain_transferability::CheckDomainTransferabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::check_domain_transferability::CheckDomainTransferabilityError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CheckDomainTransferabilityFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::check_domain_transferability::CheckDomainTransferabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::check_domain_transferability::CheckDomainTransferabilityError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CheckDomainTransferabilityFluentBuilder {
             crate::operation::check_domain_transferability::CheckDomainTransferability,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::check_domain_transferability::CheckDomainTransferabilityError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::check_domain_transferability::CheckDomainTransferabilityError>,
     > {
         self.customize_middleware().await
     }

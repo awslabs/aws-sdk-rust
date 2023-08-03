@@ -28,9 +28,7 @@ impl UpdateProjectOutput {
 
 /// A builder for [`UpdateProjectOutput`](crate::operation::update_project::UpdateProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateProjectOutputBuilder {
     pub(crate) project: ::std::option::Option<crate::types::Project>,
     _request_id: Option<String>,

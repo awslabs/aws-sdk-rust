@@ -7,7 +7,9 @@ impl super::Client {
     /// - On success, responds with [`GetCompatibleKafkaVersionsOutput`](crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsOutput) with field(s):
     ///   - [`compatible_kafka_versions(Option<Vec<CompatibleKafkaVersion>>)`](crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsOutput::compatible_kafka_versions): <p>A list of CompatibleKafkaVersion objects.</p>
     /// - On failure, responds with [`SdkError<GetCompatibleKafkaVersionsError>`](crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError)
-    pub fn get_compatible_kafka_versions(&self) -> crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsFluentBuilder{
+    pub fn get_compatible_kafka_versions(
+        &self,
+    ) -> crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsFluentBuilder {
         crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsFluentBuilder::new(self.handle.clone())
     }
 }

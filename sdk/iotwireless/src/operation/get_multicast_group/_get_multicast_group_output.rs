@@ -63,17 +63,14 @@ impl ::aws_http::request_id::RequestId for GetMulticastGroupOutput {
 }
 impl GetMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetMulticastGroupOutput`](crate::operation::get_multicast_group::GetMulticastGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::get_multicast_group::builders::GetMulticastGroupOutputBuilder {
+    pub fn builder() -> crate::operation::get_multicast_group::builders::GetMulticastGroupOutputBuilder {
         crate::operation::get_multicast_group::builders::GetMulticastGroupOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetMulticastGroupOutput`](crate::operation::get_multicast_group::GetMulticastGroupOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMulticastGroupOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -161,10 +158,7 @@ impl GetMulticastGroupOutputBuilder {
         self
     }
     /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: ::std::option::Option<crate::types::LoRaWanMulticastGet>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanMulticastGet>) -> Self {
         self.lo_ra_wan = input;
         self
     }
@@ -178,10 +172,7 @@ impl GetMulticastGroupOutputBuilder {
         self
     }
     /// <p>Created at timestamp for the resource.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }

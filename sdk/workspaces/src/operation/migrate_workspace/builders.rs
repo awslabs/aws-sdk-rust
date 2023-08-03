@@ -10,10 +10,7 @@ impl MigrateWorkspaceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::migrate_workspace::MigrateWorkspaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::migrate_workspace::MigrateWorkspaceError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::migrate_workspace::MigrateWorkspaceError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.migrate_workspace();
         fluent_builder.inner = self;
@@ -39,9 +36,7 @@ impl MigrateWorkspaceFluentBuilder {
         }
     }
     /// Access the MigrateWorkspace as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::migrate_workspace::builders::MigrateWorkspaceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::migrate_workspace::builders::MigrateWorkspaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +48,7 @@ impl MigrateWorkspaceFluentBuilder {
             crate::operation::migrate_workspace::MigrateWorkspace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::migrate_workspace::MigrateWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::migrate_workspace::MigrateWorkspaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +58,7 @@ impl MigrateWorkspaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +67,7 @@ impl MigrateWorkspaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::migrate_workspace::MigrateWorkspaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::migrate_workspace::MigrateWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::migrate_workspace::MigrateWorkspaceError>,
     > {
         let op = self
             .inner
@@ -102,9 +90,7 @@ impl MigrateWorkspaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::migrate_workspace::MigrateWorkspaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::migrate_workspace::MigrateWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::migrate_workspace::MigrateWorkspaceError>,
     > {
         self.send_middleware().await
     }
@@ -118,25 +104,17 @@ impl MigrateWorkspaceFluentBuilder {
             crate::operation::migrate_workspace::MigrateWorkspace,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::migrate_workspace::MigrateWorkspaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::migrate_workspace::MigrateWorkspaceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The identifier of the WorkSpace to migrate from.</p>
-    pub fn source_workspace_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_workspace_id(input.into());
         self
     }
     /// <p>The identifier of the WorkSpace to migrate from.</p>
-    pub fn set_source_workspace_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_workspace_id(input);
         self
     }

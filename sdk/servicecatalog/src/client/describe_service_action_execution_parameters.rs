@@ -9,7 +9,11 @@ impl super::Client {
     /// - On success, responds with [`DescribeServiceActionExecutionParametersOutput`](crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersOutput) with field(s):
     ///   - [`service_action_parameters(Option<Vec<ExecutionParameter>>)`](crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersOutput::service_action_parameters): <p>The parameters of the self-service action.</p>
     /// - On failure, responds with [`SdkError<DescribeServiceActionExecutionParametersError>`](crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersError)
-    pub fn describe_service_action_execution_parameters(&self) -> crate::operation::describe_service_action_execution_parameters::builders::DescribeServiceActionExecutionParametersFluentBuilder{
-        crate::operation::describe_service_action_execution_parameters::builders::DescribeServiceActionExecutionParametersFluentBuilder::new(self.handle.clone())
+    pub fn describe_service_action_execution_parameters(
+        &self,
+    ) -> crate::operation::describe_service_action_execution_parameters::builders::DescribeServiceActionExecutionParametersFluentBuilder {
+        crate::operation::describe_service_action_execution_parameters::builders::DescribeServiceActionExecutionParametersFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

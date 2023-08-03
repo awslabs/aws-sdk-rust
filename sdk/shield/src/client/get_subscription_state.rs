@@ -6,11 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetSubscriptionStateOutput`](crate::operation::get_subscription_state::GetSubscriptionStateOutput) with field(s):
     ///   - [`subscription_state(Option<SubscriptionState>)`](crate::operation::get_subscription_state::GetSubscriptionStateOutput::subscription_state): <p>The status of the subscription.</p>
     /// - On failure, responds with [`SdkError<GetSubscriptionStateError>`](crate::operation::get_subscription_state::GetSubscriptionStateError)
-    pub fn get_subscription_state(
-        &self,
-    ) -> crate::operation::get_subscription_state::builders::GetSubscriptionStateFluentBuilder {
-        crate::operation::get_subscription_state::builders::GetSubscriptionStateFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_subscription_state(&self) -> crate::operation::get_subscription_state::builders::GetSubscriptionStateFluentBuilder {
+        crate::operation::get_subscription_state::builders::GetSubscriptionStateFluentBuilder::new(self.handle.clone())
     }
 }

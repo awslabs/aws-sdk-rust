@@ -26,7 +26,7 @@ impl GetNetworkResourceCountsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetNetworkResourceCountsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsInputBuilder,
+    inner: crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsInputBuilder,
 }
 impl GetNetworkResourceCountsFluentBuilder {
     /// Creates a new `GetNetworkResourceCounts`.
@@ -37,7 +37,7 @@ impl GetNetworkResourceCountsFluentBuilder {
         }
     }
     /// Access the GetNetworkResourceCounts as a reference.
-    pub fn as_input(&self) -> &crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl GetNetworkResourceCountsFluentBuilder {
             crate::operation::get_network_resource_counts::GetNetworkResourceCounts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_resource_counts::GetNetworkResourceCountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_resource_counts::GetNetworkResourceCountsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl GetNetworkResourceCountsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl GetNetworkResourceCountsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_network_resource_counts::GetNetworkResourceCountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_resource_counts::GetNetworkResourceCountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_resource_counts::GetNetworkResourceCountsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl GetNetworkResourceCountsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_network_resource_counts::GetNetworkResourceCountsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_resource_counts::GetNetworkResourceCountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_resource_counts::GetNetworkResourceCountsError>,
     > {
         self.send_middleware().await
     }
@@ -114,34 +105,23 @@ impl GetNetworkResourceCountsFluentBuilder {
             crate::operation::get_network_resource_counts::GetNetworkResourceCounts,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_network_resource_counts::GetNetworkResourceCountsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_network_resource_counts::GetNetworkResourceCountsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::get_network_resource_counts::paginator::GetNetworkResourceCountsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_network_resource_counts::paginator::GetNetworkResourceCountsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::get_network_resource_counts::paginator::GetNetworkResourceCountsPaginator {
         crate::operation::get_network_resource_counts::paginator::GetNetworkResourceCountsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -172,10 +152,7 @@ impl GetNetworkResourceCountsFluentBuilder {
     /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
     /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
@@ -202,10 +179,7 @@ impl GetNetworkResourceCountsFluentBuilder {
     /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
     /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }

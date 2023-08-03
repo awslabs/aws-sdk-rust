@@ -22,9 +22,7 @@ impl DeleteSpaceInput {
 
 /// A builder for [`DeleteSpaceInput`](crate::operation::delete_space::DeleteSpaceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteSpaceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl DeleteSpaceInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteSpaceInput`](crate::operation::delete_space::DeleteSpaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_space::DeleteSpaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_space::DeleteSpaceInput {
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_space::DeleteSpaceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_space::DeleteSpaceInput { name: self.name })
     }
 }

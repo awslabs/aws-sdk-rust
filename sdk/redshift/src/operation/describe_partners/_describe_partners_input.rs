@@ -36,17 +36,14 @@ impl DescribePartnersInput {
 }
 impl DescribePartnersInput {
     /// Creates a new builder-style object to manufacture [`DescribePartnersInput`](crate::operation::describe_partners::DescribePartnersInput).
-    pub fn builder() -> crate::operation::describe_partners::builders::DescribePartnersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_partners::builders::DescribePartnersInputBuilder {
         crate::operation::describe_partners::builders::DescribePartnersInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribePartnersInput`](crate::operation::describe_partners::DescribePartnersInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePartnersInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -69,18 +66,12 @@ impl DescribePartnersInputBuilder {
         &self.account_id
     }
     /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
-    pub fn cluster_identifier(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_identifier = input;
         self
     }
@@ -89,18 +80,12 @@ impl DescribePartnersInputBuilder {
         &self.cluster_identifier
     }
     /// <p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>
-    pub fn database_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>
-    pub fn set_database_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
@@ -125,10 +110,7 @@ impl DescribePartnersInputBuilder {
     /// Consumes the builder and constructs a [`DescribePartnersInput`](crate::operation::describe_partners::DescribePartnersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_partners::DescribePartnersInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::describe_partners::DescribePartnersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_partners::DescribePartnersInput {
             account_id: self.account_id,
             cluster_identifier: self.cluster_identifier,

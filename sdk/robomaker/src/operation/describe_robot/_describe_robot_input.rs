@@ -25,9 +25,7 @@ impl DescribeRobotInput {
 
 /// A builder for [`DescribeRobotInput`](crate::operation::describe_robot::DescribeRobotInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRobotInputBuilder {
     pub(crate) robot: ::std::option::Option<::std::string::String>,
 }
@@ -49,12 +47,7 @@ impl DescribeRobotInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRobotInput`](crate::operation::describe_robot::DescribeRobotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_robot::DescribeRobotInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_robot::DescribeRobotInput {
-            robot: self.robot,
-        })
+    ) -> ::std::result::Result<crate::operation::describe_robot::DescribeRobotInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_robot::DescribeRobotInput { robot: self.robot })
     }
 }

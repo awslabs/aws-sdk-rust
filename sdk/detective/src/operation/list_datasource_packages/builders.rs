@@ -37,10 +37,7 @@ impl ListDatasourcePackagesFluentBuilder {
         }
     }
     /// Access the ListDatasourcePackages as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_datasource_packages::builders::ListDatasourcePackagesInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_datasource_packages::builders::ListDatasourcePackagesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl ListDatasourcePackagesFluentBuilder {
             crate::operation::list_datasource_packages::ListDatasourcePackages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_datasource_packages::ListDatasourcePackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_datasource_packages::ListDatasourcePackagesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl ListDatasourcePackagesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl ListDatasourcePackagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_datasource_packages::ListDatasourcePackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_datasource_packages::ListDatasourcePackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_datasource_packages::ListDatasourcePackagesError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl ListDatasourcePackagesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_datasource_packages::ListDatasourcePackagesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_datasource_packages::ListDatasourcePackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_datasource_packages::ListDatasourcePackagesError>,
     > {
         self.send_middleware().await
     }
@@ -117,23 +105,15 @@ impl ListDatasourcePackagesFluentBuilder {
             crate::operation::list_datasource_packages::ListDatasourcePackages,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_datasource_packages::ListDatasourcePackagesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_datasource_packages::ListDatasourcePackagesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_datasource_packages::paginator::ListDatasourcePackagesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_datasource_packages::paginator::ListDatasourcePackagesPaginator
-    {
-        crate::operation::list_datasource_packages::paginator::ListDatasourcePackagesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_datasource_packages::paginator::ListDatasourcePackagesPaginator {
+        crate::operation::list_datasource_packages::paginator::ListDatasourcePackagesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ARN of the behavior graph.</p>
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

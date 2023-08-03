@@ -51,8 +51,7 @@ impl ::aws_http::request_id::RequestId for GetSnapshotBlockOutput {
 }
 impl GetSnapshotBlockOutput {
     /// Creates a new builder-style object to manufacture [`GetSnapshotBlockOutput`](crate::operation::get_snapshot_block::GetSnapshotBlockOutput).
-    pub fn builder() -> crate::operation::get_snapshot_block::builders::GetSnapshotBlockOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_snapshot_block::builders::GetSnapshotBlockOutputBuilder {
         crate::operation::get_snapshot_block::builders::GetSnapshotBlockOutputBuilder::default()
     }
 }
@@ -88,17 +87,12 @@ impl GetSnapshotBlockOutputBuilder {
         self
     }
     /// <p>The data content of the block.</p>
-    pub fn set_block_data(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_block_data(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.block_data = input;
         self
     }
     /// <p>The data content of the block.</p>
-    pub fn get_block_data(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_block_data(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
         &self.block_data
     }
     /// <p>The checksum generated for the block, which is Base64 encoded.</p>
@@ -121,17 +115,12 @@ impl GetSnapshotBlockOutputBuilder {
         self
     }
     /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::ChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
         self.checksum_algorithm = input;
         self
     }
     /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
-    pub fn get_checksum_algorithm(
-        &self,
-    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+    pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
         &self.checksum_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

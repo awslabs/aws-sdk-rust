@@ -26,7 +26,7 @@ impl ListAvailableResourceMetricsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAvailableResourceMetricsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsInputBuilder,
+    inner: crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsInputBuilder,
 }
 impl ListAvailableResourceMetricsFluentBuilder {
     /// Creates a new `ListAvailableResourceMetrics`.
@@ -37,7 +37,7 @@ impl ListAvailableResourceMetricsFluentBuilder {
         }
     }
     /// Access the ListAvailableResourceMetrics as a reference.
-    pub fn as_input(&self) -> &crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl ListAvailableResourceMetricsFluentBuilder {
             crate::operation::list_available_resource_metrics::ListAvailableResourceMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl ListAvailableResourceMetricsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl ListAvailableResourceMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl ListAvailableResourceMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl ListAvailableResourceMetricsFluentBuilder {
             crate::operation::list_available_resource_metrics::ListAvailableResourceMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator{
+    pub fn into_paginator(self) -> crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator {
         crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
@@ -132,10 +121,7 @@ impl ListAvailableResourceMetricsFluentBuilder {
         self
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-    pub fn set_service_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceType>,
-    ) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
         self.inner = self.inner.set_service_type(input);
         self
     }
@@ -179,10 +165,7 @@ impl ListAvailableResourceMetricsFluentBuilder {
     /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// </ul>
-    pub fn set_metric_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_metric_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_metric_types(input);
         self
     }
@@ -193,9 +176,7 @@ impl ListAvailableResourceMetricsFluentBuilder {
     /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// </ul>
-    pub fn get_metric_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metric_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_metric_types()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>

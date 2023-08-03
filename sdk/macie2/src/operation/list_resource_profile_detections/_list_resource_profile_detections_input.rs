@@ -29,16 +29,14 @@ impl ListResourceProfileDetectionsInput {
 }
 impl ListResourceProfileDetectionsInput {
     /// Creates a new builder-style object to manufacture [`ListResourceProfileDetectionsInput`](crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsInput).
-    pub fn builder() -> crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsInputBuilder{
+    pub fn builder() -> crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsInputBuilder {
         crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListResourceProfileDetectionsInput`](crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceProfileDetectionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -94,15 +92,10 @@ impl ListResourceProfileDetectionsInputBuilder {
         crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                resource_arn: self.resource_arn
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            resource_arn: self.resource_arn,
+        })
     }
 }

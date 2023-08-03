@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`snapshots(Option<Vec<Snapshot>>)`](crate::operation::describe_snapshots::DescribeSnapshotsOutput::snapshots): <p>An array of snapshots.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_snapshots::DescribeSnapshotsOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     /// - On failure, responds with [`SdkError<DescribeSnapshotsError>`](crate::operation::describe_snapshots::DescribeSnapshotsError)
-    pub fn describe_snapshots(
-        &self,
-    ) -> crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder {
-        crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_snapshots(&self) -> crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder {
+        crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::new(self.handle.clone())
     }
 }

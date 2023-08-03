@@ -13,9 +13,7 @@ pub struct PropertyValueHistory {
 }
 impl PropertyValueHistory {
     /// <p>An object that uniquely identifies an entity property.</p>
-    pub fn entity_property_reference(
-        &self,
-    ) -> ::std::option::Option<&crate::types::EntityPropertyReference> {
+    pub fn entity_property_reference(&self) -> ::std::option::Option<&crate::types::EntityPropertyReference> {
         self.entity_property_reference.as_ref()
     }
     /// <p>A list of objects that contain information about the values in the history of a time series property.</p>
@@ -32,35 +30,24 @@ impl PropertyValueHistory {
 
 /// A builder for [`PropertyValueHistory`](crate::types::PropertyValueHistory).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyValueHistoryBuilder {
-    pub(crate) entity_property_reference:
-        ::std::option::Option<crate::types::EntityPropertyReference>,
+    pub(crate) entity_property_reference: ::std::option::Option<crate::types::EntityPropertyReference>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValue>>,
 }
 impl PropertyValueHistoryBuilder {
     /// <p>An object that uniquely identifies an entity property.</p>
-    pub fn entity_property_reference(
-        mut self,
-        input: crate::types::EntityPropertyReference,
-    ) -> Self {
+    pub fn entity_property_reference(mut self, input: crate::types::EntityPropertyReference) -> Self {
         self.entity_property_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that uniquely identifies an entity property.</p>
-    pub fn set_entity_property_reference(
-        mut self,
-        input: ::std::option::Option<crate::types::EntityPropertyReference>,
-    ) -> Self {
+    pub fn set_entity_property_reference(mut self, input: ::std::option::Option<crate::types::EntityPropertyReference>) -> Self {
         self.entity_property_reference = input;
         self
     }
     /// <p>An object that uniquely identifies an entity property.</p>
-    pub fn get_entity_property_reference(
-        &self,
-    ) -> &::std::option::Option<crate::types::EntityPropertyReference> {
+    pub fn get_entity_property_reference(&self) -> &::std::option::Option<crate::types::EntityPropertyReference> {
         &self.entity_property_reference
     }
     /// Appends an item to `values`.
@@ -75,17 +62,12 @@ impl PropertyValueHistoryBuilder {
         self
     }
     /// <p>A list of objects that contain information about the values in the history of a time series property.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValue>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValue>>) -> Self {
         self.values = input;
         self
     }
     /// <p>A list of objects that contain information about the values in the history of a time series property.</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyValue>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyValue>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`PropertyValueHistory`](crate::types::PropertyValueHistory).

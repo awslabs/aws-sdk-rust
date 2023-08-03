@@ -9,10 +9,7 @@ pub fn ser_pivot_table_cell_conditional_formatting(
     if let Some(var_2) = &input.text_format {
         #[allow(unused_mut)]
         let mut object_3 = object.key("TextFormat").start_object();
-        crate::protocol_serde::shape_text_conditional_format::ser_text_conditional_format(
-            &mut object_3,
-            var_2,
-        )?;
+        crate::protocol_serde::shape_text_conditional_format::ser_text_conditional_format(&mut object_3, var_2)?;
         object_3.finish();
     }
     if let Some(var_4) = &input.scope {
@@ -27,7 +24,10 @@ pub fn ser_pivot_table_cell_conditional_formatting(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_pivot_table_conditional_formatting_scope::ser_pivot_table_conditional_formatting_scope(&mut object_9, item_8)?;
+                crate::protocol_serde::shape_pivot_table_conditional_formatting_scope::ser_pivot_table_conditional_formatting_scope(
+                    &mut object_9,
+                    item_8,
+                )?;
                 object_9.finish();
             }
         }
@@ -38,24 +38,15 @@ pub fn ser_pivot_table_cell_conditional_formatting(
 
 pub(crate) fn de_pivot_table_cell_conditional_formatting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
-    Option<crate::types::PivotTableCellConditionalFormatting>,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
->
+) -> Result<Option<crate::types::PivotTableCellConditionalFormatting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
-    I: Iterator<
-        Item = Result<
-            ::aws_smithy_json::deserialize::Token<'a>,
-            ::aws_smithy_json::deserialize::error::DeserializeError,
-        >,
-    >,
+    I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::types::builders::PivotTableCellConditionalFormattingBuilder::default();
+            let mut builder = crate::types::builders::PivotTableCellConditionalFormattingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -63,17 +54,14 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "FieldId" => {
                                 builder = builder.set_field_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
-                                        tokens.next(),
-                                    )?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             "TextFormat" => {
-                                builder = builder.set_text_format(
-                                    crate::protocol_serde::shape_text_conditional_format::de_text_conditional_format(tokens)?
-                                );
+                                builder = builder
+                                    .set_text_format(crate::protocol_serde::shape_text_conditional_format::de_text_conditional_format(tokens)?);
                             }
                             "Scope" => {
                                 builder = builder.set_scope(
@@ -89,20 +77,17 @@ where
                         }
                     }
                     other => {
-                        return Err(
-                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                format!("expected object key or end object, found: {:?}", other),
-                            ),
-                        )
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
                     }
                 }
             }
             Ok(Some(builder.build()))
         }
-        _ => Err(
-            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                "expected start object or null",
-            ),
-        ),
+        _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "expected start object or null",
+        )),
     }
 }

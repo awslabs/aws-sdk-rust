@@ -6,10 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetRevealConfigurationOutput`](crate::operation::get_reveal_configuration::GetRevealConfigurationOutput) with field(s):
     ///   - [`configuration(Option<RevealConfiguration>)`](crate::operation::get_reveal_configuration::GetRevealConfigurationOutput::configuration): <p>The current configuration settings and the status of the configuration for the account.</p>
     /// - On failure, responds with [`SdkError<GetRevealConfigurationError>`](crate::operation::get_reveal_configuration::GetRevealConfigurationError)
-    pub fn get_reveal_configuration(
-        &self,
-    ) -> crate::operation::get_reveal_configuration::builders::GetRevealConfigurationFluentBuilder
-    {
+    pub fn get_reveal_configuration(&self) -> crate::operation::get_reveal_configuration::builders::GetRevealConfigurationFluentBuilder {
         crate::operation::get_reveal_configuration::builders::GetRevealConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

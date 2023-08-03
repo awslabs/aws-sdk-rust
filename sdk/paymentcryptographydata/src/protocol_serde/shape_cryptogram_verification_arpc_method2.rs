@@ -7,9 +7,7 @@ pub fn ser_cryptogram_verification_arpc_method2(
         object.key("CardStatusUpdate").string(var_1.as_str());
     }
     if let Some(var_2) = &input.proprietary_authentication_data {
-        object
-            .key("ProprietaryAuthenticationData")
-            .string(var_2.as_str());
+        object.key("ProprietaryAuthenticationData").string(var_2.as_str());
     }
     Ok(())
 }

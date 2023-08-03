@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`entities(Option<Vec<Theme>>)`](crate::operation::export_themes::ExportThemesOutput::entities): <p>Represents the configuration of the exported themes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::export_themes::ExportThemesOutput::next_token): <p>The pagination token that's included if more results are available.</p>
     /// - On failure, responds with [`SdkError<ExportThemesError>`](crate::operation::export_themes::ExportThemesError)
-    pub fn export_themes(
-        &self,
-    ) -> crate::operation::export_themes::builders::ExportThemesFluentBuilder {
-        crate::operation::export_themes::builders::ExportThemesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn export_themes(&self) -> crate::operation::export_themes::builders::ExportThemesFluentBuilder {
+        crate::operation::export_themes::builders::ExportThemesFluentBuilder::new(self.handle.clone())
     }
 }

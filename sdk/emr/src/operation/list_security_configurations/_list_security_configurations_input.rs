@@ -15,16 +15,14 @@ impl ListSecurityConfigurationsInput {
 }
 impl ListSecurityConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListSecurityConfigurationsInput`](crate::operation::list_security_configurations::ListSecurityConfigurationsInput).
-    pub fn builder() -> crate::operation::list_security_configurations::builders::ListSecurityConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_security_configurations::builders::ListSecurityConfigurationsInputBuilder {
         crate::operation::list_security_configurations::builders::ListSecurityConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListSecurityConfigurationsInput`](crate::operation::list_security_configurations::ListSecurityConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityConfigurationsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
@@ -50,10 +48,6 @@ impl ListSecurityConfigurationsInputBuilder {
         crate::operation::list_security_configurations::ListSecurityConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_security_configurations::ListSecurityConfigurationsInput {
-                marker: self.marker,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_security_configurations::ListSecurityConfigurationsInput { marker: self.marker })
     }
 }

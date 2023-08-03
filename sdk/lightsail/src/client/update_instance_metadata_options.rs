@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`UpdateInstanceMetadataOptionsOutput`](crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<UpdateInstanceMetadataOptionsError>`](crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError)
-    pub fn update_instance_metadata_options(&self) -> crate::operation::update_instance_metadata_options::builders::UpdateInstanceMetadataOptionsFluentBuilder{
+    pub fn update_instance_metadata_options(
+        &self,
+    ) -> crate::operation::update_instance_metadata_options::builders::UpdateInstanceMetadataOptionsFluentBuilder {
         crate::operation::update_instance_metadata_options::builders::UpdateInstanceMetadataOptionsFluentBuilder::new(self.handle.clone())
     }
 }

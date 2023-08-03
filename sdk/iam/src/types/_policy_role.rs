@@ -32,9 +32,7 @@ impl PolicyRole {
 
 /// A builder for [`PolicyRole`](crate::types::PolicyRole).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PolicyRoleBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_id: ::std::option::Option<::std::string::String>,

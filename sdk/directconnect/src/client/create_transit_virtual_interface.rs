@@ -8,7 +8,9 @@ impl super::Client {
     /// - On success, responds with [`CreateTransitVirtualInterfaceOutput`](crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput) with field(s):
     ///   - [`virtual_interface(Option<VirtualInterface>)`](crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput::virtual_interface): <p>Information about a virtual interface.</p>
     /// - On failure, responds with [`SdkError<CreateTransitVirtualInterfaceError>`](crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError)
-    pub fn create_transit_virtual_interface(&self) -> crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceFluentBuilder{
+    pub fn create_transit_virtual_interface(
+        &self,
+    ) -> crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceFluentBuilder {
         crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceFluentBuilder::new(self.handle.clone())
     }
 }

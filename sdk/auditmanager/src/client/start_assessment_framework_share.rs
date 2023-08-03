@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`StartAssessmentFrameworkShareOutput`](crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareOutput) with field(s):
     ///   - [`assessment_framework_share_request(Option<AssessmentFrameworkShareRequest>)`](crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareOutput::assessment_framework_share_request): <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API. </p>
     /// - On failure, responds with [`SdkError<StartAssessmentFrameworkShareError>`](crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError)
-    pub fn start_assessment_framework_share(&self) -> crate::operation::start_assessment_framework_share::builders::StartAssessmentFrameworkShareFluentBuilder{
+    pub fn start_assessment_framework_share(
+        &self,
+    ) -> crate::operation::start_assessment_framework_share::builders::StartAssessmentFrameworkShareFluentBuilder {
         crate::operation::start_assessment_framework_share::builders::StartAssessmentFrameworkShareFluentBuilder::new(self.handle.clone())
     }
 }

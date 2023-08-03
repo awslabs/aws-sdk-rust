@@ -35,17 +35,14 @@ impl ::aws_http::request_id::RequestId for GetConsoleOutputOutput {
 }
 impl GetConsoleOutputOutput {
     /// Creates a new builder-style object to manufacture [`GetConsoleOutputOutput`](crate::operation::get_console_output::GetConsoleOutputOutput).
-    pub fn builder() -> crate::operation::get_console_output::builders::GetConsoleOutputOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_console_output::builders::GetConsoleOutputOutputBuilder {
         crate::operation::get_console_output::builders::GetConsoleOutputOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetConsoleOutputOutput`](crate::operation::get_console_output::GetConsoleOutputOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConsoleOutputOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) output: ::std::option::Option<::std::string::String>,
@@ -87,10 +84,7 @@ impl GetConsoleOutputOutputBuilder {
         self
     }
     /// <p>The time at which the output was last updated.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }

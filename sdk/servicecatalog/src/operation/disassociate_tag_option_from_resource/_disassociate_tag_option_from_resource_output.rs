@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for DisassociateTagOptionFromResourceOutp
 }
 impl DisassociateTagOptionFromResourceOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateTagOptionFromResourceOutput`](crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceOutput).
-    pub fn builder() -> crate::operation::disassociate_tag_option_from_resource::builders::DisassociateTagOptionFromResourceOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_tag_option_from_resource::builders::DisassociateTagOptionFromResourceOutputBuilder {
         crate::operation::disassociate_tag_option_from_resource::builders::DisassociateTagOptionFromResourceOutputBuilder::default()
     }
 }
 
 /// A builder for [`DisassociateTagOptionFromResourceOutput`](crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateTagOptionFromResourceOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,7 +34,7 @@ impl DisassociateTagOptionFromResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateTagOptionFromResourceOutput`](crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceOutput).
-    pub fn build(self) -> crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceOutput{
+    pub fn build(self) -> crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceOutput {
         crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceOutput {
             _request_id: self._request_id,
         }

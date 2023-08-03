@@ -26,7 +26,7 @@ impl CreateVpcIngressConnectionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateVpcIngressConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_vpc_ingress_connection::builders::CreateVpcIngressConnectionInputBuilder,
+    inner: crate::operation::create_vpc_ingress_connection::builders::CreateVpcIngressConnectionInputBuilder,
 }
 impl CreateVpcIngressConnectionFluentBuilder {
     /// Creates a new `CreateVpcIngressConnection`.
@@ -37,7 +37,7 @@ impl CreateVpcIngressConnectionFluentBuilder {
         }
     }
     /// Access the CreateVpcIngressConnection as a reference.
-    pub fn as_input(&self) -> &crate::operation::create_vpc_ingress_connection::builders::CreateVpcIngressConnectionInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::create_vpc_ingress_connection::builders::CreateVpcIngressConnectionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl CreateVpcIngressConnectionFluentBuilder {
             crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl CreateVpcIngressConnectionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl CreateVpcIngressConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl CreateVpcIngressConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionError>,
     > {
         self.send_middleware().await
     }
@@ -114,9 +105,7 @@ impl CreateVpcIngressConnectionFluentBuilder {
             crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnection,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionError>,
     > {
         self.customize_middleware().await
     }
@@ -135,18 +124,12 @@ impl CreateVpcIngressConnectionFluentBuilder {
         self.inner.get_service_arn()
     }
     /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region. </p>
-    pub fn vpc_ingress_connection_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn vpc_ingress_connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_ingress_connection_name(input.into());
         self
     }
     /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region. </p>
-    pub fn set_vpc_ingress_connection_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_vpc_ingress_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_ingress_connection_name(input);
         self
     }
@@ -155,25 +138,17 @@ impl CreateVpcIngressConnectionFluentBuilder {
         self.inner.get_vpc_ingress_connection_name()
     }
     /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource.</p>
-    pub fn ingress_vpc_configuration(
-        mut self,
-        input: crate::types::IngressVpcConfiguration,
-    ) -> Self {
+    pub fn ingress_vpc_configuration(mut self, input: crate::types::IngressVpcConfiguration) -> Self {
         self.inner = self.inner.ingress_vpc_configuration(input);
         self
     }
     /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource.</p>
-    pub fn set_ingress_vpc_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::IngressVpcConfiguration>,
-    ) -> Self {
+    pub fn set_ingress_vpc_configuration(mut self, input: ::std::option::Option<crate::types::IngressVpcConfiguration>) -> Self {
         self.inner = self.inner.set_ingress_vpc_configuration(input);
         self
     }
     /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource.</p>
-    pub fn get_ingress_vpc_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngressVpcConfiguration> {
+    pub fn get_ingress_vpc_configuration(&self) -> &::std::option::Option<crate::types::IngressVpcConfiguration> {
         self.inner.get_ingress_vpc_configuration()
     }
     /// Appends an item to `Tags`.
@@ -186,10 +161,7 @@ impl CreateVpcIngressConnectionFluentBuilder {
         self
     }
     /// <p>An optional list of metadata items that you can associate with the VPC Ingress Connection resource. A tag is a key-value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }

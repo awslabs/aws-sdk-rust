@@ -108,9 +108,7 @@ impl S3LogsConfig {
 
 /// A builder for [`S3LogsConfig`](crate::types::S3LogsConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3LogsConfigBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LogsConfigStatusType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -132,10 +130,7 @@ impl S3LogsConfigBuilder {
     /// <li> <p> <code>ENABLED</code>: S3 build logs are enabled for this build project.</p> </li>
     /// <li> <p> <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LogsConfigStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::LogsConfigStatusType>) -> Self {
         self.status = input;
         self
     }
@@ -237,10 +232,7 @@ impl S3LogsConfigBuilder {
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
     /// </dl>
-    pub fn set_bucket_owner_access(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketOwnerAccess>,
-    ) -> Self {
+    pub fn set_bucket_owner_access(mut self, input: ::std::option::Option<crate::types::BucketOwnerAccess>) -> Self {
         self.bucket_owner_access = input;
         self
     }
@@ -273,9 +265,7 @@ impl S3LogsConfigBuilder {
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
     /// </dl>
-    pub fn get_bucket_owner_access(
-        &self,
-    ) -> &::std::option::Option<crate::types::BucketOwnerAccess> {
+    pub fn get_bucket_owner_access(&self) -> &::std::option::Option<crate::types::BucketOwnerAccess> {
         &self.bucket_owner_access
     }
     /// Consumes the builder and constructs a [`S3LogsConfig`](crate::types::S3LogsConfig).

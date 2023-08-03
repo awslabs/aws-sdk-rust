@@ -15,34 +15,25 @@ impl GetNetworkResourceInput {
 }
 impl GetNetworkResourceInput {
     /// Creates a new builder-style object to manufacture [`GetNetworkResourceInput`](crate::operation::get_network_resource::GetNetworkResourceInput).
-    pub fn builder(
-    ) -> crate::operation::get_network_resource::builders::GetNetworkResourceInputBuilder {
+    pub fn builder() -> crate::operation::get_network_resource::builders::GetNetworkResourceInputBuilder {
         crate::operation::get_network_resource::builders::GetNetworkResourceInputBuilder::default()
     }
 }
 
 /// A builder for [`GetNetworkResourceInput`](crate::operation::get_network_resource::GetNetworkResourceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNetworkResourceInputBuilder {
     pub(crate) network_resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetNetworkResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn network_resource_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn network_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn set_network_resource_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_network_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_resource_arn = input;
         self
     }
@@ -53,14 +44,9 @@ impl GetNetworkResourceInputBuilder {
     /// Consumes the builder and constructs a [`GetNetworkResourceInput`](crate::operation::get_network_resource::GetNetworkResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_network_resource::GetNetworkResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_network_resource::GetNetworkResourceInput {
-                network_resource_arn: self.network_resource_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_network_resource::GetNetworkResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_network_resource::GetNetworkResourceInput {
+            network_resource_arn: self.network_resource_arn,
+        })
     }
 }

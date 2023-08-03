@@ -29,17 +29,14 @@ impl SubscribeToEventInput {
 }
 impl SubscribeToEventInput {
     /// Creates a new builder-style object to manufacture [`SubscribeToEventInput`](crate::operation::subscribe_to_event::SubscribeToEventInput).
-    pub fn builder() -> crate::operation::subscribe_to_event::builders::SubscribeToEventInputBuilder
-    {
+    pub fn builder() -> crate::operation::subscribe_to_event::builders::SubscribeToEventInputBuilder {
         crate::operation::subscribe_to_event::builders::SubscribeToEventInputBuilder::default()
     }
 }
 
 /// A builder for [`SubscribeToEventInput`](crate::operation::subscribe_to_event::SubscribeToEventInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubscribeToEventInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event: ::std::option::Option<crate::types::InspectorEvent>,
@@ -91,16 +88,11 @@ impl SubscribeToEventInputBuilder {
     /// Consumes the builder and constructs a [`SubscribeToEventInput`](crate::operation::subscribe_to_event::SubscribeToEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::subscribe_to_event::SubscribeToEventInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::subscribe_to_event::SubscribeToEventInput {
-                resource_arn: self.resource_arn,
-                event: self.event,
-                topic_arn: self.topic_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::subscribe_to_event::SubscribeToEventInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::subscribe_to_event::SubscribeToEventInput {
+            resource_arn: self.resource_arn,
+            event: self.event,
+            topic_arn: self.topic_arn,
+        })
     }
 }

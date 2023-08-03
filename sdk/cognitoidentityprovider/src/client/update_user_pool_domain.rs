@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateUserPoolDomainOutput`](crate::operation::update_user_pool_domain::UpdateUserPoolDomainOutput) with field(s):
     ///   - [`cloud_front_domain(Option<String>)`](crate::operation::update_user_pool_domain::UpdateUserPoolDomainOutput::cloud_front_domain): <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom domain to your user pool.</p>
     /// - On failure, responds with [`SdkError<UpdateUserPoolDomainError>`](crate::operation::update_user_pool_domain::UpdateUserPoolDomainError)
-    pub fn update_user_pool_domain(
-        &self,
-    ) -> crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainFluentBuilder
-    {
-        crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_user_pool_domain(&self) -> crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainFluentBuilder {
+        crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,10 +7,7 @@ impl super::Client {
     ///   - [`consumer_arn(impl ::std::convert::Into<String>)`](crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerFluentBuilder::consumer_arn) / [`set_consumer_arn(Option<String>)`](crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerFluentBuilder::set_consumer_arn): <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>  </ul>
     /// - On success, responds with [`AssociateTrackerConsumerOutput`](crate::operation::associate_tracker_consumer::AssociateTrackerConsumerOutput)
     /// - On failure, responds with [`SdkError<AssociateTrackerConsumerError>`](crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError)
-    pub fn associate_tracker_consumer(
-        &self,
-    ) -> crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerFluentBuilder
-    {
+    pub fn associate_tracker_consumer(&self) -> crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerFluentBuilder {
         crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerFluentBuilder::new(self.handle.clone())
     }
 }

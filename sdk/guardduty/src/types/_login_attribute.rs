@@ -44,9 +44,7 @@ impl LoginAttribute {
 
 /// A builder for [`LoginAttribute`](crate::types::LoginAttribute).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoginAttributeBuilder {
     pub(crate) user: ::std::option::Option<::std::string::String>,
     pub(crate) application: ::std::option::Option<::std::string::String>,

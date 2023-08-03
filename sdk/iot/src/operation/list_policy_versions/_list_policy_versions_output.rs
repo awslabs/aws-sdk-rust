@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for ListPolicyVersionsOutput {
 }
 impl ListPolicyVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListPolicyVersionsOutput`](crate::operation::list_policy_versions::ListPolicyVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_policy_versions::builders::ListPolicyVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_policy_versions::builders::ListPolicyVersionsOutputBuilder {
         crate::operation::list_policy_versions::builders::ListPolicyVersionsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPolicyVersionsOutput`](crate::operation::list_policy_versions::ListPolicyVersionsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPolicyVersionsOutputBuilder {
     pub(crate) policy_versions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>,
     _request_id: Option<String>,
@@ -50,17 +47,12 @@ impl ListPolicyVersionsOutputBuilder {
         self
     }
     /// <p>The policy versions.</p>
-    pub fn set_policy_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>,
-    ) -> Self {
+    pub fn set_policy_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>) -> Self {
         self.policy_versions = input;
         self
     }
     /// <p>The policy versions.</p>
-    pub fn get_policy_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>> {
+    pub fn get_policy_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>> {
         &self.policy_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

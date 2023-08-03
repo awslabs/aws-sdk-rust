@@ -36,9 +36,7 @@ impl DeleteProjectOutput {
 
 /// A builder for [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProjectOutputBuilder {
     pub(crate) deleted_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     pub(crate) orphaned_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
@@ -57,17 +55,12 @@ impl DeleteProjectOutputBuilder {
         self
     }
     /// <p> Resources which were deleted. </p>
-    pub fn set_deleted_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_deleted_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.deleted_resources = input;
         self
     }
     /// <p> Resources which were deleted. </p>
-    pub fn get_deleted_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_deleted_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
         &self.deleted_resources
     }
     /// Appends an item to `orphaned_resources`.
@@ -82,17 +75,12 @@ impl DeleteProjectOutputBuilder {
         self
     }
     /// <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>
-    pub fn set_orphaned_resources(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
+    pub fn set_orphaned_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
         self.orphaned_resources = input;
         self
     }
     /// <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>
-    pub fn get_orphaned_resources(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_orphaned_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
         &self.orphaned_resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

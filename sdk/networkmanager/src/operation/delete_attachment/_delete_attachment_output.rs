@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteAttachmentOutput {
 }
 impl DeleteAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAttachmentOutput`](crate::operation::delete_attachment::DeleteAttachmentOutput).
-    pub fn builder() -> crate::operation::delete_attachment::builders::DeleteAttachmentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_attachment::builders::DeleteAttachmentOutputBuilder {
         crate::operation::delete_attachment::builders::DeleteAttachmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteAttachmentOutput`](crate::operation::delete_attachment::DeleteAttachmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteAttachmentOutputBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteAttachmentOutputBuilder {
         self
     }
     /// <p>Information about the deleted attachment.</p>
-    pub fn set_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::Attachment>,
-    ) -> Self {
+    pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::Attachment>) -> Self {
         self.attachment = input;
         self
     }

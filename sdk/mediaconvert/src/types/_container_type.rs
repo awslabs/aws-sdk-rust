@@ -47,13 +47,7 @@
 /// Container for this output. Some containers require a container settings object. If not specified, the default object will be created.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ContainerType {
     #[allow(missing_docs)] // documentation missing in model
@@ -95,9 +89,7 @@ impl ::std::convert::From<&str> for ContainerType {
             "MXF" => ContainerType::Mxf,
             "RAW" => ContainerType::Raw,
             "WEBM" => ContainerType::Webm,
-            other => {
-                ContainerType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => ContainerType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -128,9 +120,7 @@ impl ContainerType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "CMFC", "F4V", "ISMV", "M2TS", "M3U8", "MOV", "MP4", "MPD", "MXF", "RAW", "WEBM",
-        ]
+        &["CMFC", "F4V", "ISMV", "M2TS", "M3U8", "MOV", "MP4", "MPD", "MXF", "RAW", "WEBM"]
     }
 }
 impl ::std::convert::AsRef<str> for ContainerType {

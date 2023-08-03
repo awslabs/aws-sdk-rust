@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for GetCachePolicyConfigOutput {
 }
 impl GetCachePolicyConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetCachePolicyConfigOutput`](crate::operation::get_cache_policy_config::GetCachePolicyConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::get_cache_policy_config::builders::GetCachePolicyConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_cache_policy_config::builders::GetCachePolicyConfigOutputBuilder {
         crate::operation::get_cache_policy_config::builders::GetCachePolicyConfigOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCachePolicyConfigOutput`](crate::operation::get_cache_policy_config::GetCachePolicyConfigOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCachePolicyConfigOutputBuilder {
     pub(crate) cache_policy_config: ::std::option::Option<crate::types::CachePolicyConfig>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -52,17 +48,12 @@ impl GetCachePolicyConfigOutputBuilder {
         self
     }
     /// <p>The cache policy configuration.</p>
-    pub fn set_cache_policy_config(
-        mut self,
-        input: ::std::option::Option<crate::types::CachePolicyConfig>,
-    ) -> Self {
+    pub fn set_cache_policy_config(mut self, input: ::std::option::Option<crate::types::CachePolicyConfig>) -> Self {
         self.cache_policy_config = input;
         self
     }
     /// <p>The cache policy configuration.</p>
-    pub fn get_cache_policy_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::CachePolicyConfig> {
+    pub fn get_cache_policy_config(&self) -> &::std::option::Option<crate::types::CachePolicyConfig> {
         &self.cache_policy_config
     }
     /// <p>The current version of the cache policy.</p>

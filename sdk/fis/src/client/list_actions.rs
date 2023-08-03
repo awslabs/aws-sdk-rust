@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`actions(Option<Vec<ActionSummary>>)`](crate::operation::list_actions::ListActionsOutput::actions): <p>The actions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_actions::ListActionsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<ListActionsError>`](crate::operation::list_actions::ListActionsError)
-    pub fn list_actions(
-        &self,
-    ) -> crate::operation::list_actions::builders::ListActionsFluentBuilder {
+    pub fn list_actions(&self) -> crate::operation::list_actions::builders::ListActionsFluentBuilder {
         crate::operation::list_actions::builders::ListActionsFluentBuilder::new(self.handle.clone())
     }
 }

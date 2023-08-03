@@ -38,13 +38,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AuthenticationProviderTypes {
     /// Indicates that AMG workspace has AWS SSO enabled as its authentication provider.
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for AuthenticationProviderTypes {
         match s {
             "AWS_SSO" => AuthenticationProviderTypes::AwsSso,
             "SAML" => AuthenticationProviderTypes::Saml,
-            other => AuthenticationProviderTypes::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AuthenticationProviderTypes::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

@@ -9,9 +9,7 @@ impl super::Client {
     /// - On success, responds with [`CancelStepsOutput`](crate::operation::cancel_steps::CancelStepsOutput) with field(s):
     ///   - [`cancel_steps_info_list(Option<Vec<CancelStepsInfo>>)`](crate::operation::cancel_steps::CancelStepsOutput::cancel_steps_info_list): <p>A list of <code>CancelStepsInfo</code>, which shows the status of specified cancel requests for each <code>StepID</code> specified.</p>
     /// - On failure, responds with [`SdkError<CancelStepsError>`](crate::operation::cancel_steps::CancelStepsError)
-    pub fn cancel_steps(
-        &self,
-    ) -> crate::operation::cancel_steps::builders::CancelStepsFluentBuilder {
+    pub fn cancel_steps(&self) -> crate::operation::cancel_steps::builders::CancelStepsFluentBuilder {
         crate::operation::cancel_steps::builders::CancelStepsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -44,9 +44,7 @@ impl Ec2AssociateRouteTableAction {
 
 /// A builder for [`Ec2AssociateRouteTableAction`](crate::types::Ec2AssociateRouteTableAction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct Ec2AssociateRouteTableActionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) route_table_id: ::std::option::Option<crate::types::ActionTarget>,
@@ -74,10 +72,7 @@ impl Ec2AssociateRouteTableActionBuilder {
         self
     }
     /// <p>The ID of the EC2 route table that is associated with the remediation action.</p>
-    pub fn set_route_table_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTarget>,
-    ) -> Self {
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<crate::types::ActionTarget>) -> Self {
         self.route_table_id = input;
         self
     }
@@ -91,10 +86,7 @@ impl Ec2AssociateRouteTableActionBuilder {
         self
     }
     /// <p>The ID of the subnet for the EC2 route table that is associated with the remediation action.</p>
-    pub fn set_subnet_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTarget>,
-    ) -> Self {
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<crate::types::ActionTarget>) -> Self {
         self.subnet_id = input;
         self
     }
@@ -108,10 +100,7 @@ impl Ec2AssociateRouteTableActionBuilder {
         self
     }
     /// <p>The ID of the gateway to be used with the EC2 route table that is associated with the remediation action.</p>
-    pub fn set_gateway_id(
-        mut self,
-        input: ::std::option::Option<crate::types::ActionTarget>,
-    ) -> Self {
+    pub fn set_gateway_id(mut self, input: ::std::option::Option<crate::types::ActionTarget>) -> Self {
         self.gateway_id = input;
         self
     }

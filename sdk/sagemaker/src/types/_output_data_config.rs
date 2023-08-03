@@ -53,9 +53,7 @@ impl OutputDataConfig {
 
 /// A builder for [`OutputDataConfig`](crate::types::OutputDataConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputDataConfigBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_output_path: ::std::option::Option<::std::string::String>,
@@ -101,18 +99,12 @@ impl OutputDataConfigBuilder {
         &self.kms_key_id
     }
     /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
-    pub fn s3_output_path(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn s3_output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_output_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies the S3 path where you want SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>. </p>
-    pub fn set_s3_output_path(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_s3_output_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_output_path = input;
         self
     }
@@ -126,17 +118,12 @@ impl OutputDataConfigBuilder {
         self
     }
     /// <p>The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
-    pub fn set_compression_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OutputCompressionType>,
-    ) -> Self {
+    pub fn set_compression_type(mut self, input: ::std::option::Option<crate::types::OutputCompressionType>) -> Self {
         self.compression_type = input;
         self
     }
     /// <p>The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
-    pub fn get_compression_type(
-        &self,
-    ) -> &::std::option::Option<crate::types::OutputCompressionType> {
+    pub fn get_compression_type(&self) -> &::std::option::Option<crate::types::OutputCompressionType> {
         &self.compression_type
     }
     /// Consumes the builder and constructs a [`OutputDataConfig`](crate::types::OutputDataConfig).

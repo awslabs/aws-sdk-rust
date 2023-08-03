@@ -30,9 +30,7 @@ impl ::std::fmt::Debug for GetMapStyleDescriptorInput {
 }
 impl GetMapStyleDescriptorInput {
     /// Creates a new builder-style object to manufacture [`GetMapStyleDescriptorInput`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput).
-    pub fn builder(
-    ) -> crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorInputBuilder {
         crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorInputBuilder::default()
     }
 }
@@ -76,16 +74,12 @@ impl GetMapStyleDescriptorInputBuilder {
     /// Consumes the builder and constructs a [`GetMapStyleDescriptorInput`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput {
-                map_name: self.map_name,
-                key: self.key,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput {
+            map_name: self.map_name,
+            key: self.key,
+        })
     }
 }
 impl ::std::fmt::Debug for GetMapStyleDescriptorInputBuilder {

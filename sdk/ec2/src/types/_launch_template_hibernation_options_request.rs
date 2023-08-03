@@ -25,9 +25,7 @@ impl LaunchTemplateHibernationOptionsRequest {
 
 /// A builder for [`LaunchTemplateHibernationOptionsRequest`](crate::types::LaunchTemplateHibernationOptionsRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchTemplateHibernationOptionsRequestBuilder {
     pub(crate) configured: ::std::option::Option<bool>,
 }
@@ -51,8 +49,6 @@ impl LaunchTemplateHibernationOptionsRequestBuilder {
     }
     /// Consumes the builder and constructs a [`LaunchTemplateHibernationOptionsRequest`](crate::types::LaunchTemplateHibernationOptionsRequest).
     pub fn build(self) -> crate::types::LaunchTemplateHibernationOptionsRequest {
-        crate::types::LaunchTemplateHibernationOptionsRequest {
-            configured: self.configured,
-        }
+        crate::types::LaunchTemplateHibernationOptionsRequest { configured: self.configured }
     }
 }

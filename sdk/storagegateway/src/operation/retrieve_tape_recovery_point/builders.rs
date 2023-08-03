@@ -29,7 +29,7 @@ impl RetrieveTapeRecoveryPointInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetrieveTapeRecoveryPointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::retrieve_tape_recovery_point::builders::RetrieveTapeRecoveryPointInputBuilder,
+    inner: crate::operation::retrieve_tape_recovery_point::builders::RetrieveTapeRecoveryPointInputBuilder,
 }
 impl RetrieveTapeRecoveryPointFluentBuilder {
     /// Creates a new `RetrieveTapeRecoveryPoint`.
@@ -40,7 +40,7 @@ impl RetrieveTapeRecoveryPointFluentBuilder {
         }
     }
     /// Access the RetrieveTapeRecoveryPoint as a reference.
-    pub fn as_input(&self) -> &crate::operation::retrieve_tape_recovery_point::builders::RetrieveTapeRecoveryPointInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::retrieve_tape_recovery_point::builders::RetrieveTapeRecoveryPointInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +52,7 @@ impl RetrieveTapeRecoveryPointFluentBuilder {
             crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +62,7 @@ impl RetrieveTapeRecoveryPointFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +71,7 @@ impl RetrieveTapeRecoveryPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointError>,
     > {
         let op = self
             .inner
@@ -101,9 +94,7 @@ impl RetrieveTapeRecoveryPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +108,7 @@ impl RetrieveTapeRecoveryPointFluentBuilder {
             crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPoint,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointError>,
     > {
         self.customize_middleware().await
     }

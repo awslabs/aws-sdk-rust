@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`pagination_token(Option<String>)`](crate::operation::detect_entities_v2::DetectEntitiesV2Output::pagination_token): <p>If the result to the <code>DetectEntitiesV2</code> operation was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
     ///   - [`model_version(Option<String>)`](crate::operation::detect_entities_v2::DetectEntitiesV2Output::model_version): <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     /// - On failure, responds with [`SdkError<DetectEntitiesV2Error>`](crate::operation::detect_entities_v2::DetectEntitiesV2Error)
-    pub fn detect_entities_v2(
-        &self,
-    ) -> crate::operation::detect_entities_v2::builders::DetectEntitiesV2FluentBuilder {
-        crate::operation::detect_entities_v2::builders::DetectEntitiesV2FluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn detect_entities_v2(&self) -> crate::operation::detect_entities_v2::builders::DetectEntitiesV2FluentBuilder {
+        crate::operation::detect_entities_v2::builders::DetectEntitiesV2FluentBuilder::new(self.handle.clone())
     }
 }

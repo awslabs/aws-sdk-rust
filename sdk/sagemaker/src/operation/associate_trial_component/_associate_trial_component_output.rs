@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for AssociateTrialComponentOutput {
 }
 impl AssociateTrialComponentOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTrialComponentOutput`](crate::operation::associate_trial_component::AssociateTrialComponentOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_trial_component::builders::AssociateTrialComponentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_trial_component::builders::AssociateTrialComponentOutputBuilder {
         crate::operation::associate_trial_component::builders::AssociateTrialComponentOutputBuilder::default()
     }
 }
 
 /// A builder for [`AssociateTrialComponentOutput`](crate::operation::associate_trial_component::AssociateTrialComponentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateTrialComponentOutputBuilder {
     pub(crate) trial_component_arn: ::std::option::Option<::std::string::String>,
     pub(crate) trial_arn: ::std::option::Option<::std::string::String>,
@@ -47,18 +43,12 @@ pub struct AssociateTrialComponentOutputBuilder {
 }
 impl AssociateTrialComponentOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn trial_component_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn trial_component_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn set_trial_component_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_trial_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trial_component_arn = input;
         self
     }
@@ -90,9 +80,7 @@ impl AssociateTrialComponentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateTrialComponentOutput`](crate::operation::associate_trial_component::AssociateTrialComponentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_trial_component::AssociateTrialComponentOutput {
+    pub fn build(self) -> crate::operation::associate_trial_component::AssociateTrialComponentOutput {
         crate::operation::associate_trial_component::AssociateTrialComponentOutput {
             trial_component_arn: self.trial_component_arn,
             trial_arn: self.trial_arn,

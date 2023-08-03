@@ -22,17 +22,14 @@ impl DeleteEntitlementInput {
 }
 impl DeleteEntitlementInput {
     /// Creates a new builder-style object to manufacture [`DeleteEntitlementInput`](crate::operation::delete_entitlement::DeleteEntitlementInput).
-    pub fn builder() -> crate::operation::delete_entitlement::builders::DeleteEntitlementInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_entitlement::builders::DeleteEntitlementInputBuilder {
         crate::operation::delete_entitlement::builders::DeleteEntitlementInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteEntitlementInput`](crate::operation::delete_entitlement::DeleteEntitlementInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteEntitlementInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
@@ -69,15 +66,10 @@ impl DeleteEntitlementInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEntitlementInput`](crate::operation::delete_entitlement::DeleteEntitlementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_entitlement::DeleteEntitlementInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_entitlement::DeleteEntitlementInput {
-                name: self.name,
-                stack_name: self.stack_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_entitlement::DeleteEntitlementInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_entitlement::DeleteEntitlementInput {
+            name: self.name,
+            stack_name: self.stack_name,
+        })
     }
 }

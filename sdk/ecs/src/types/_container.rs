@@ -135,9 +135,7 @@ impl Container {
 
 /// A builder for [`Container`](crate::types::Container).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerBuilder {
     pub(crate) container_arn: ::std::option::Option<::std::string::String>,
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
@@ -148,10 +146,8 @@ pub struct ContainerBuilder {
     pub(crate) last_status: ::std::option::Option<::std::string::String>,
     pub(crate) exit_code: ::std::option::Option<i32>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
-    pub(crate) network_bindings:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
-    pub(crate) network_interfaces:
-        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub(crate) network_bindings: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
+    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     pub(crate) health_status: ::std::option::Option<crate::types::HealthStatus>,
     pub(crate) managed_agents: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAgent>>,
     pub(crate) cpu: ::std::option::Option<::std::string::String>,
@@ -161,18 +157,12 @@ pub struct ContainerBuilder {
 }
 impl ContainerBuilder {
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
-    pub fn container_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn container_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
-    pub fn set_container_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_container_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_arn = input;
         self
     }
@@ -304,17 +294,12 @@ impl ContainerBuilder {
         self
     }
     /// <p>The network bindings associated with the container.</p>
-    pub fn set_network_bindings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
-    ) -> Self {
+    pub fn set_network_bindings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>) -> Self {
         self.network_bindings = input;
         self
     }
     /// <p>The network bindings associated with the container.</p>
-    pub fn get_network_bindings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>> {
+    pub fn get_network_bindings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>> {
         &self.network_bindings
     }
     /// Appends an item to `network_interfaces`.
@@ -329,17 +314,12 @@ impl ContainerBuilder {
         self
     }
     /// <p>The network interfaces associated with the container.</p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
-    ) -> Self {
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
         self.network_interfaces = input;
         self
     }
     /// <p>The network interfaces associated with the container.</p>
-    pub fn get_network_interfaces(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
         &self.network_interfaces
     }
     /// <p>The health status of the container. If health checks aren't configured for this container in its task definition, then it reports the health status as <code>UNKNOWN</code>.</p>
@@ -348,10 +328,7 @@ impl ContainerBuilder {
         self
     }
     /// <p>The health status of the container. If health checks aren't configured for this container in its task definition, then it reports the health status as <code>UNKNOWN</code>.</p>
-    pub fn set_health_status(
-        mut self,
-        input: ::std::option::Option<crate::types::HealthStatus>,
-    ) -> Self {
+    pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::HealthStatus>) -> Self {
         self.health_status = input;
         self
     }
@@ -371,17 +348,12 @@ impl ContainerBuilder {
         self
     }
     /// <p>The details of any Amazon ECS managed agents associated with the container.</p>
-    pub fn set_managed_agents(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAgent>>,
-    ) -> Self {
+    pub fn set_managed_agents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAgent>>) -> Self {
         self.managed_agents = input;
         self
     }
     /// <p>The details of any Amazon ECS managed agents associated with the container.</p>
-    pub fn get_managed_agents(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedAgent>> {
+    pub fn get_managed_agents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedAgent>> {
         &self.managed_agents
     }
     /// <p>The number of CPU units set for the container. The value is <code>0</code> if no value was specified in the container definition when the task definition was registered.</p>
@@ -413,18 +385,12 @@ impl ContainerBuilder {
         &self.memory
     }
     /// <p>The soft limit (in MiB) of memory set for the container.</p>
-    pub fn memory_reservation(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn memory_reservation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.memory_reservation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The soft limit (in MiB) of memory set for the container.</p>
-    pub fn set_memory_reservation(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_memory_reservation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.memory_reservation = input;
         self
     }
@@ -444,10 +410,7 @@ impl ContainerBuilder {
         self
     }
     /// <p>The IDs of each GPU assigned to the container.</p>
-    pub fn set_gpu_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_gpu_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.gpu_ids = input;
         self
     }

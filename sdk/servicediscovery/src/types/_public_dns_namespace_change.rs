@@ -17,9 +17,7 @@ impl PublicDnsNamespaceChange {
         self.description.as_deref()
     }
     /// <p>Properties to be updated in the public DNS namespace.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PublicDnsNamespacePropertiesChange> {
+    pub fn properties(&self) -> ::std::option::Option<&crate::types::PublicDnsNamespacePropertiesChange> {
         self.properties.as_ref()
     }
 }
@@ -32,9 +30,7 @@ impl PublicDnsNamespaceChange {
 
 /// A builder for [`PublicDnsNamespaceChange`](crate::types::PublicDnsNamespaceChange).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublicDnsNamespaceChangeBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) properties: ::std::option::Option<crate::types::PublicDnsNamespacePropertiesChange>,
@@ -60,17 +56,12 @@ impl PublicDnsNamespaceChangeBuilder {
         self
     }
     /// <p>Properties to be updated in the public DNS namespace.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::PublicDnsNamespacePropertiesChange>,
-    ) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<crate::types::PublicDnsNamespacePropertiesChange>) -> Self {
         self.properties = input;
         self
     }
     /// <p>Properties to be updated in the public DNS namespace.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::PublicDnsNamespacePropertiesChange> {
+    pub fn get_properties(&self) -> &::std::option::Option<crate::types::PublicDnsNamespacePropertiesChange> {
         &self.properties
     }
     /// Consumes the builder and constructs a [`PublicDnsNamespaceChange`](crate::types::PublicDnsNamespaceChange).

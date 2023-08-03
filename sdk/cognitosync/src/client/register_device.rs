@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`RegisterDeviceOutput`](crate::operation::register_device::RegisterDeviceOutput) with field(s):
     ///   - [`device_id(Option<String>)`](crate::operation::register_device::RegisterDeviceOutput::device_id): <p>The unique ID generated for this device by Cognito.</p>
     /// - On failure, responds with [`SdkError<RegisterDeviceError>`](crate::operation::register_device::RegisterDeviceError)
-    pub fn register_device(
-        &self,
-    ) -> crate::operation::register_device::builders::RegisterDeviceFluentBuilder {
-        crate::operation::register_device::builders::RegisterDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn register_device(&self) -> crate::operation::register_device::builders::RegisterDeviceFluentBuilder {
+        crate::operation::register_device::builders::RegisterDeviceFluentBuilder::new(self.handle.clone())
     }
 }

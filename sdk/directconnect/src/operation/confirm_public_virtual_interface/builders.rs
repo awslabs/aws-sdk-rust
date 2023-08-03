@@ -27,7 +27,7 @@ impl ConfirmPublicVirtualInterfaceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConfirmPublicVirtualInterfaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::confirm_public_virtual_interface::builders::ConfirmPublicVirtualInterfaceInputBuilder,
+    inner: crate::operation::confirm_public_virtual_interface::builders::ConfirmPublicVirtualInterfaceInputBuilder,
 }
 impl ConfirmPublicVirtualInterfaceFluentBuilder {
     /// Creates a new `ConfirmPublicVirtualInterface`.
@@ -38,7 +38,7 @@ impl ConfirmPublicVirtualInterfaceFluentBuilder {
         }
     }
     /// Access the ConfirmPublicVirtualInterface as a reference.
-    pub fn as_input(&self) -> &crate::operation::confirm_public_virtual_interface::builders::ConfirmPublicVirtualInterfaceInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::confirm_public_virtual_interface::builders::ConfirmPublicVirtualInterfaceInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -50,9 +50,7 @@ impl ConfirmPublicVirtualInterfaceFluentBuilder {
             crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -62,10 +60,7 @@ impl ConfirmPublicVirtualInterfaceFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -74,9 +69,7 @@ impl ConfirmPublicVirtualInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceError>,
     > {
         let op = self
             .inner
@@ -99,9 +92,7 @@ impl ConfirmPublicVirtualInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceError>,
     > {
         self.send_middleware().await
     }
@@ -115,25 +106,17 @@ impl ConfirmPublicVirtualInterfaceFluentBuilder {
             crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterface,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.virtual_interface_id(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
     }

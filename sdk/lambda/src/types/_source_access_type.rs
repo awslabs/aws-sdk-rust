@@ -44,13 +44,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SourceAccessType {
     #[allow(missing_docs)] // documentation missing in model
@@ -83,9 +77,7 @@ impl ::std::convert::From<&str> for SourceAccessType {
             "VIRTUAL_HOST" => SourceAccessType::VirtualHost,
             "VPC_SECURITY_GROUP" => SourceAccessType::VpcSecurityGroup,
             "VPC_SUBNET" => SourceAccessType::VpcSubnet,
-            other => {
-                SourceAccessType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => SourceAccessType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

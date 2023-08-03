@@ -30,27 +30,19 @@ impl AwsAmazonMqBrokerUsersDetails {
 
 /// A builder for [`AwsAmazonMqBrokerUsersDetails`](crate::types::AwsAmazonMqBrokerUsersDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsAmazonMqBrokerUsersDetailsBuilder {
     pub(crate) pending_change: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
 }
 impl AwsAmazonMqBrokerUsersDetailsBuilder {
     /// <p> The type of change pending for the broker user. </p>
-    pub fn pending_change(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn pending_change(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pending_change = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The type of change pending for the broker user. </p>
-    pub fn set_pending_change(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_pending_change(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pending_change = input;
         self
     }

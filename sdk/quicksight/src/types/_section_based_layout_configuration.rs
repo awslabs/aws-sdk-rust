@@ -6,44 +6,32 @@
 pub struct SectionBasedLayoutConfiguration {
     /// <p>A list of header section configurations.</p>
     #[doc(hidden)]
-    pub header_sections:
-        ::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>,
+    pub header_sections: ::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>,
     /// <p>A list of body section configurations.</p>
     #[doc(hidden)]
-    pub body_sections:
-        ::std::option::Option<::std::vec::Vec<crate::types::BodySectionConfiguration>>,
+    pub body_sections: ::std::option::Option<::std::vec::Vec<crate::types::BodySectionConfiguration>>,
     /// <p>A list of footer section configurations.</p>
     #[doc(hidden)]
-    pub footer_sections:
-        ::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>,
+    pub footer_sections: ::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>,
     /// <p>The options for the canvas of a section-based layout.</p>
     #[doc(hidden)]
-    pub canvas_size_options:
-        ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>,
+    pub canvas_size_options: ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>,
 }
 impl SectionBasedLayoutConfiguration {
     /// <p>A list of header section configurations.</p>
-    pub fn header_sections(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HeaderFooterSectionConfiguration]> {
+    pub fn header_sections(&self) -> ::std::option::Option<&[crate::types::HeaderFooterSectionConfiguration]> {
         self.header_sections.as_deref()
     }
     /// <p>A list of body section configurations.</p>
-    pub fn body_sections(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::BodySectionConfiguration]> {
+    pub fn body_sections(&self) -> ::std::option::Option<&[crate::types::BodySectionConfiguration]> {
         self.body_sections.as_deref()
     }
     /// <p>A list of footer section configurations.</p>
-    pub fn footer_sections(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::HeaderFooterSectionConfiguration]> {
+    pub fn footer_sections(&self) -> ::std::option::Option<&[crate::types::HeaderFooterSectionConfiguration]> {
         self.footer_sections.as_deref()
     }
     /// <p>The options for the canvas of a section-based layout.</p>
-    pub fn canvas_size_options(
-        &self,
-    ) -> ::std::option::Option<&crate::types::SectionBasedLayoutCanvasSizeOptions> {
+    pub fn canvas_size_options(&self) -> ::std::option::Option<&crate::types::SectionBasedLayoutCanvasSizeOptions> {
         self.canvas_size_options.as_ref()
     }
 }
@@ -56,18 +44,12 @@ impl SectionBasedLayoutConfiguration {
 
 /// A builder for [`SectionBasedLayoutConfiguration`](crate::types::SectionBasedLayoutConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SectionBasedLayoutConfigurationBuilder {
-    pub(crate) header_sections:
-        ::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>,
-    pub(crate) body_sections:
-        ::std::option::Option<::std::vec::Vec<crate::types::BodySectionConfiguration>>,
-    pub(crate) footer_sections:
-        ::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>,
-    pub(crate) canvas_size_options:
-        ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>,
+    pub(crate) header_sections: ::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>,
+    pub(crate) body_sections: ::std::option::Option<::std::vec::Vec<crate::types::BodySectionConfiguration>>,
+    pub(crate) footer_sections: ::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>,
+    pub(crate) canvas_size_options: ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>,
 }
 impl SectionBasedLayoutConfigurationBuilder {
     /// Appends an item to `header_sections`.
@@ -75,30 +57,19 @@ impl SectionBasedLayoutConfigurationBuilder {
     /// To override the contents of this collection use [`set_header_sections`](Self::set_header_sections).
     ///
     /// <p>A list of header section configurations.</p>
-    pub fn header_sections(
-        mut self,
-        input: crate::types::HeaderFooterSectionConfiguration,
-    ) -> Self {
+    pub fn header_sections(mut self, input: crate::types::HeaderFooterSectionConfiguration) -> Self {
         let mut v = self.header_sections.unwrap_or_default();
         v.push(input);
         self.header_sections = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of header section configurations.</p>
-    pub fn set_header_sections(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>,
-        >,
-    ) -> Self {
+    pub fn set_header_sections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>) -> Self {
         self.header_sections = input;
         self
     }
     /// <p>A list of header section configurations.</p>
-    pub fn get_header_sections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>
-    {
+    pub fn get_header_sections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>> {
         &self.header_sections
     }
     /// Appends an item to `body_sections`.
@@ -113,17 +84,12 @@ impl SectionBasedLayoutConfigurationBuilder {
         self
     }
     /// <p>A list of body section configurations.</p>
-    pub fn set_body_sections(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BodySectionConfiguration>>,
-    ) -> Self {
+    pub fn set_body_sections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BodySectionConfiguration>>) -> Self {
         self.body_sections = input;
         self
     }
     /// <p>A list of body section configurations.</p>
-    pub fn get_body_sections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BodySectionConfiguration>> {
+    pub fn get_body_sections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BodySectionConfiguration>> {
         &self.body_sections
     }
     /// Appends an item to `footer_sections`.
@@ -131,52 +97,33 @@ impl SectionBasedLayoutConfigurationBuilder {
     /// To override the contents of this collection use [`set_footer_sections`](Self::set_footer_sections).
     ///
     /// <p>A list of footer section configurations.</p>
-    pub fn footer_sections(
-        mut self,
-        input: crate::types::HeaderFooterSectionConfiguration,
-    ) -> Self {
+    pub fn footer_sections(mut self, input: crate::types::HeaderFooterSectionConfiguration) -> Self {
         let mut v = self.footer_sections.unwrap_or_default();
         v.push(input);
         self.footer_sections = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of footer section configurations.</p>
-    pub fn set_footer_sections(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>,
-        >,
-    ) -> Self {
+    pub fn set_footer_sections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>) -> Self {
         self.footer_sections = input;
         self
     }
     /// <p>A list of footer section configurations.</p>
-    pub fn get_footer_sections(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>
-    {
+    pub fn get_footer_sections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>> {
         &self.footer_sections
     }
     /// <p>The options for the canvas of a section-based layout.</p>
-    pub fn canvas_size_options(
-        mut self,
-        input: crate::types::SectionBasedLayoutCanvasSizeOptions,
-    ) -> Self {
+    pub fn canvas_size_options(mut self, input: crate::types::SectionBasedLayoutCanvasSizeOptions) -> Self {
         self.canvas_size_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options for the canvas of a section-based layout.</p>
-    pub fn set_canvas_size_options(
-        mut self,
-        input: ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>,
-    ) -> Self {
+    pub fn set_canvas_size_options(mut self, input: ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>) -> Self {
         self.canvas_size_options = input;
         self
     }
     /// <p>The options for the canvas of a section-based layout.</p>
-    pub fn get_canvas_size_options(
-        &self,
-    ) -> &::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions> {
+    pub fn get_canvas_size_options(&self) -> &::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions> {
         &self.canvas_size_options
     }
     /// Consumes the builder and constructs a [`SectionBasedLayoutConfiguration`](crate::types::SectionBasedLayoutConfiguration).

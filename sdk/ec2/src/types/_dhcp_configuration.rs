@@ -30,9 +30,7 @@ impl DhcpConfiguration {
 
 /// A builder for [`DhcpConfiguration`](crate::types::DhcpConfiguration).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DhcpConfigurationBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
@@ -64,17 +62,12 @@ impl DhcpConfigurationBuilder {
         self
     }
     /// <p>The values for the DHCP option.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>) -> Self {
         self.values = input;
         self
     }
     /// <p>The values for the DHCP option.</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`DhcpConfiguration`](crate::types::DhcpConfiguration).

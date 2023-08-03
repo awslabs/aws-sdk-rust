@@ -42,17 +42,14 @@ impl ::aws_http::request_id::RequestId for StopDevEnvironmentOutput {
 }
 impl StopDevEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`StopDevEnvironmentOutput`](crate::operation::stop_dev_environment::StopDevEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_dev_environment::builders::StopDevEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::stop_dev_environment::builders::StopDevEnvironmentOutputBuilder {
         crate::operation::stop_dev_environment::builders::StopDevEnvironmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopDevEnvironmentOutput`](crate::operation::stop_dev_environment::StopDevEnvironmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopDevEnvironmentOutputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
@@ -109,10 +106,7 @@ impl StopDevEnvironmentOutputBuilder {
         self
     }
     /// <p>The status of the Dev Environment. </p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::DevEnvironmentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DevEnvironmentStatus>) -> Self {
         self.status = input;
         self
     }

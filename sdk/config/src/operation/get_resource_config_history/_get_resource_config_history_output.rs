@@ -6,8 +6,7 @@
 pub struct GetResourceConfigHistoryOutput {
     /// <p>A list that contains the configuration history of one or more resources.</p>
     #[doc(hidden)]
-    pub configuration_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>>,
+    pub configuration_items: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -30,19 +29,16 @@ impl ::aws_http::request_id::RequestId for GetResourceConfigHistoryOutput {
 }
 impl GetResourceConfigHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceConfigHistoryOutput`](crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput).
-    pub fn builder() -> crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryOutputBuilder{
+    pub fn builder() -> crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryOutputBuilder {
         crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetResourceConfigHistoryOutput`](crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceConfigHistoryOutputBuilder {
-    pub(crate) configuration_items:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>>,
+    pub(crate) configuration_items: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,17 +55,12 @@ impl GetResourceConfigHistoryOutputBuilder {
         self
     }
     /// <p>A list that contains the configuration history of one or more resources.</p>
-    pub fn set_configuration_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>>,
-    ) -> Self {
+    pub fn set_configuration_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>>) -> Self {
         self.configuration_items = input;
         self
     }
     /// <p>A list that contains the configuration history of one or more resources.</p>
-    pub fn get_configuration_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>> {
+    pub fn get_configuration_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>> {
         &self.configuration_items
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
@@ -96,9 +87,7 @@ impl GetResourceConfigHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetResourceConfigHistoryOutput`](crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput {
+    pub fn build(self) -> crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput {
         crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput {
             configuration_items: self.configuration_items,
             next_token: self.next_token,

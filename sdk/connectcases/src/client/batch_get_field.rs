@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`fields(Option<Vec<GetFieldResponse>>)`](crate::operation::batch_get_field::BatchGetFieldOutput::fields): <p>A list of detailed field information. </p>
     ///   - [`errors(Option<Vec<FieldError>>)`](crate::operation::batch_get_field::BatchGetFieldOutput::errors): <p>A list of field errors. </p>
     /// - On failure, responds with [`SdkError<BatchGetFieldError>`](crate::operation::batch_get_field::BatchGetFieldError)
-    pub fn batch_get_field(
-        &self,
-    ) -> crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder {
-        crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn batch_get_field(&self) -> crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder {
+        crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::new(self.handle.clone())
     }
 }

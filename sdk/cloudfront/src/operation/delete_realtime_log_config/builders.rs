@@ -28,8 +28,7 @@ impl DeleteRealtimeLogConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRealtimeLogConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigInputBuilder,
+    inner: crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigInputBuilder,
 }
 impl DeleteRealtimeLogConfigFluentBuilder {
     /// Creates a new `DeleteRealtimeLogConfig`.
@@ -40,10 +39,7 @@ impl DeleteRealtimeLogConfigFluentBuilder {
         }
     }
     /// Access the DeleteRealtimeLogConfig as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -55,9 +51,7 @@ impl DeleteRealtimeLogConfigFluentBuilder {
             crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -67,10 +61,7 @@ impl DeleteRealtimeLogConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -79,9 +70,7 @@ impl DeleteRealtimeLogConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError>,
     > {
         let op = self
             .inner
@@ -104,9 +93,7 @@ impl DeleteRealtimeLogConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError>,
     > {
         self.send_middleware().await
     }
@@ -120,9 +107,7 @@ impl DeleteRealtimeLogConfigFluentBuilder {
             crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError>,
     > {
         self.customize_middleware().await
     }

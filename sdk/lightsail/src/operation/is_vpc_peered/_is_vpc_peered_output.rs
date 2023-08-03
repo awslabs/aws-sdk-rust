@@ -28,9 +28,7 @@ impl IsVpcPeeredOutput {
 
 /// A builder for [`IsVpcPeeredOutput`](crate::operation::is_vpc_peered::IsVpcPeeredOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IsVpcPeeredOutputBuilder {
     pub(crate) is_peered: ::std::option::Option<bool>,
     _request_id: Option<String>,

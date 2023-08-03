@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_findings_filter::builders::DeleteFindingsFilterFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_findings_filter::builders::DeleteFindingsFilterFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`DeleteFindingsFilterOutput`](crate::operation::delete_findings_filter::DeleteFindingsFilterOutput)
     /// - On failure, responds with [`SdkError<DeleteFindingsFilterError>`](crate::operation::delete_findings_filter::DeleteFindingsFilterError)
-    pub fn delete_findings_filter(
-        &self,
-    ) -> crate::operation::delete_findings_filter::builders::DeleteFindingsFilterFluentBuilder {
-        crate::operation::delete_findings_filter::builders::DeleteFindingsFilterFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_findings_filter(&self) -> crate::operation::delete_findings_filter::builders::DeleteFindingsFilterFluentBuilder {
+        crate::operation::delete_findings_filter::builders::DeleteFindingsFilterFluentBuilder::new(self.handle.clone())
     }
 }

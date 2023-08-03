@@ -18,9 +18,7 @@ impl SeriesItem {
         self.field_series_item.as_ref()
     }
     /// <p>The data field series item configuration of a line chart.</p>
-    pub fn data_field_series_item(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DataFieldSeriesItem> {
+    pub fn data_field_series_item(&self) -> ::std::option::Option<&crate::types::DataFieldSeriesItem> {
         self.data_field_series_item.as_ref()
     }
 }
@@ -33,9 +31,7 @@ impl SeriesItem {
 
 /// A builder for [`SeriesItem`](crate::types::SeriesItem).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SeriesItemBuilder {
     pub(crate) field_series_item: ::std::option::Option<crate::types::FieldSeriesItem>,
     pub(crate) data_field_series_item: ::std::option::Option<crate::types::DataFieldSeriesItem>,
@@ -47,10 +43,7 @@ impl SeriesItemBuilder {
         self
     }
     /// <p>The field series item configuration of a line chart.</p>
-    pub fn set_field_series_item(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldSeriesItem>,
-    ) -> Self {
+    pub fn set_field_series_item(mut self, input: ::std::option::Option<crate::types::FieldSeriesItem>) -> Self {
         self.field_series_item = input;
         self
     }
@@ -64,17 +57,12 @@ impl SeriesItemBuilder {
         self
     }
     /// <p>The data field series item configuration of a line chart.</p>
-    pub fn set_data_field_series_item(
-        mut self,
-        input: ::std::option::Option<crate::types::DataFieldSeriesItem>,
-    ) -> Self {
+    pub fn set_data_field_series_item(mut self, input: ::std::option::Option<crate::types::DataFieldSeriesItem>) -> Self {
         self.data_field_series_item = input;
         self
     }
     /// <p>The data field series item configuration of a line chart.</p>
-    pub fn get_data_field_series_item(
-        &self,
-    ) -> &::std::option::Option<crate::types::DataFieldSeriesItem> {
+    pub fn get_data_field_series_item(&self) -> &::std::option::Option<crate::types::DataFieldSeriesItem> {
         &self.data_field_series_item
     }
     /// Consumes the builder and constructs a [`SeriesItem`](crate::types::SeriesItem).

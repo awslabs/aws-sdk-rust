@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateBatchPredictionOutput`](crate::operation::update_batch_prediction::UpdateBatchPredictionOutput) with field(s):
     ///   - [`batch_prediction_id(Option<String>)`](crate::operation::update_batch_prediction::UpdateBatchPredictionOutput::batch_prediction_id): <p>The ID assigned to the <code>BatchPrediction</code> during creation. This value should be identical to the value of the <code>BatchPredictionId</code> in the request.</p>
     /// - On failure, responds with [`SdkError<UpdateBatchPredictionError>`](crate::operation::update_batch_prediction::UpdateBatchPredictionError)
-    pub fn update_batch_prediction(
-        &self,
-    ) -> crate::operation::update_batch_prediction::builders::UpdateBatchPredictionFluentBuilder
-    {
-        crate::operation::update_batch_prediction::builders::UpdateBatchPredictionFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_batch_prediction(&self) -> crate::operation::update_batch_prediction::builders::UpdateBatchPredictionFluentBuilder {
+        crate::operation::update_batch_prediction::builders::UpdateBatchPredictionFluentBuilder::new(self.handle.clone())
     }
 }

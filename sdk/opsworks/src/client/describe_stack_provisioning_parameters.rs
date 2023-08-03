@@ -8,7 +8,9 @@ impl super::Client {
     ///   - [`agent_installer_url(Option<String>)`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput::agent_installer_url): <p>The AWS OpsWorks Stacks agent installer's URL.</p>
     ///   - [`parameters(Option<HashMap<String, String>>)`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput::parameters): <p>An embedded object that contains the provisioning parameters.</p>
     /// - On failure, responds with [`SdkError<DescribeStackProvisioningParametersError>`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersError)
-    pub fn describe_stack_provisioning_parameters(&self) -> crate::operation::describe_stack_provisioning_parameters::builders::DescribeStackProvisioningParametersFluentBuilder{
+    pub fn describe_stack_provisioning_parameters(
+        &self,
+    ) -> crate::operation::describe_stack_provisioning_parameters::builders::DescribeStackProvisioningParametersFluentBuilder {
         crate::operation::describe_stack_provisioning_parameters::builders::DescribeStackProvisioningParametersFluentBuilder::new(self.handle.clone())
     }
 }

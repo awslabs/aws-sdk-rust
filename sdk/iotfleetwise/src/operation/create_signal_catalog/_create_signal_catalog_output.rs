@@ -28,18 +28,14 @@ impl ::aws_http::request_id::RequestId for CreateSignalCatalogOutput {
 }
 impl CreateSignalCatalogOutput {
     /// Creates a new builder-style object to manufacture [`CreateSignalCatalogOutput`](crate::operation::create_signal_catalog::CreateSignalCatalogOutput).
-    pub fn builder(
-    ) -> crate::operation::create_signal_catalog::builders::CreateSignalCatalogOutputBuilder {
-        crate::operation::create_signal_catalog::builders::CreateSignalCatalogOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_signal_catalog::builders::CreateSignalCatalogOutputBuilder {
+        crate::operation::create_signal_catalog::builders::CreateSignalCatalogOutputBuilder::default()
     }
 }
 
 /// A builder for [`CreateSignalCatalogOutput`](crate::operation::create_signal_catalog::CreateSignalCatalogOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSignalCatalogOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,

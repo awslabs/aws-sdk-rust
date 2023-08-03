@@ -22,17 +22,14 @@ impl DescribeEventDetailsInput {
 }
 impl DescribeEventDetailsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventDetailsInput`](crate::operation::describe_event_details::DescribeEventDetailsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_details::builders::DescribeEventDetailsInputBuilder {
+    pub fn builder() -> crate::operation::describe_event_details::builders::DescribeEventDetailsInputBuilder {
         crate::operation::describe_event_details::builders::DescribeEventDetailsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeEventDetailsInput`](crate::operation::describe_event_details::DescribeEventDetailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventDetailsInputBuilder {
     pub(crate) event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,
@@ -50,10 +47,7 @@ impl DescribeEventDetailsInputBuilder {
         self
     }
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
-    pub fn set_event_arns(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_event_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.event_arns = input;
         self
     }
@@ -78,15 +72,11 @@ impl DescribeEventDetailsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventDetailsInput`](crate::operation::describe_event_details::DescribeEventDetailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_event_details::DescribeEventDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_event_details::DescribeEventDetailsInput {
-                event_arns: self.event_arns,
-                locale: self.locale,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_event_details::DescribeEventDetailsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_event_details::DescribeEventDetailsInput {
+            event_arns: self.event_arns,
+            locale: self.locale,
+        })
     }
 }

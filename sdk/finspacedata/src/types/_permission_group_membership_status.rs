@@ -39,13 +39,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PermissionGroupMembershipStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,9 +57,7 @@ impl ::std::convert::From<&str> for PermissionGroupMembershipStatus {
             "ADDITION_IN_PROGRESS" => PermissionGroupMembershipStatus::AdditionInProgress,
             "ADDITION_SUCCESS" => PermissionGroupMembershipStatus::AdditionSuccess,
             "REMOVAL_IN_PROGRESS" => PermissionGroupMembershipStatus::RemovalInProgress,
-            other => PermissionGroupMembershipStatus::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
+            other => PermissionGroupMembershipStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -88,11 +80,7 @@ impl PermissionGroupMembershipStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION_IN_PROGRESS",
-            "ADDITION_SUCCESS",
-            "REMOVAL_IN_PROGRESS",
-        ]
+        &["ADDITION_IN_PROGRESS", "ADDITION_SUCCESS", "REMOVAL_IN_PROGRESS"]
     }
 }
 impl ::std::convert::AsRef<str> for PermissionGroupMembershipStatus {

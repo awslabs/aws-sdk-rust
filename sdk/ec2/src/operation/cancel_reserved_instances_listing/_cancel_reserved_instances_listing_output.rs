@@ -6,15 +6,12 @@
 pub struct CancelReservedInstancesListingOutput {
     /// <p>The Reserved Instance listing.</p>
     #[doc(hidden)]
-    pub reserved_instances_listings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesListing>>,
+    pub reserved_instances_listings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesListing>>,
     _request_id: Option<String>,
 }
 impl CancelReservedInstancesListingOutput {
     /// <p>The Reserved Instance listing.</p>
-    pub fn reserved_instances_listings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReservedInstancesListing]> {
+    pub fn reserved_instances_listings(&self) -> ::std::option::Option<&[crate::types::ReservedInstancesListing]> {
         self.reserved_instances_listings.as_deref()
     }
 }
@@ -25,19 +22,16 @@ impl ::aws_http::request_id::RequestId for CancelReservedInstancesListingOutput 
 }
 impl CancelReservedInstancesListingOutput {
     /// Creates a new builder-style object to manufacture [`CancelReservedInstancesListingOutput`](crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput).
-    pub fn builder() -> crate::operation::cancel_reserved_instances_listing::builders::CancelReservedInstancesListingOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_reserved_instances_listing::builders::CancelReservedInstancesListingOutputBuilder {
         crate::operation::cancel_reserved_instances_listing::builders::CancelReservedInstancesListingOutputBuilder::default()
     }
 }
 
 /// A builder for [`CancelReservedInstancesListingOutput`](crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelReservedInstancesListingOutputBuilder {
-    pub(crate) reserved_instances_listings:
-        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesListing>>,
+    pub(crate) reserved_instances_listings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesListing>>,
     _request_id: Option<String>,
 }
 impl CancelReservedInstancesListingOutputBuilder {
@@ -46,27 +40,19 @@ impl CancelReservedInstancesListingOutputBuilder {
     /// To override the contents of this collection use [`set_reserved_instances_listings`](Self::set_reserved_instances_listings).
     ///
     /// <p>The Reserved Instance listing.</p>
-    pub fn reserved_instances_listings(
-        mut self,
-        input: crate::types::ReservedInstancesListing,
-    ) -> Self {
+    pub fn reserved_instances_listings(mut self, input: crate::types::ReservedInstancesListing) -> Self {
         let mut v = self.reserved_instances_listings.unwrap_or_default();
         v.push(input);
         self.reserved_instances_listings = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Reserved Instance listing.</p>
-    pub fn set_reserved_instances_listings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesListing>>,
-    ) -> Self {
+    pub fn set_reserved_instances_listings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesListing>>) -> Self {
         self.reserved_instances_listings = input;
         self
     }
     /// <p>The Reserved Instance listing.</p>
-    pub fn get_reserved_instances_listings(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesListing>> {
+    pub fn get_reserved_instances_listings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesListing>> {
         &self.reserved_instances_listings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -79,10 +65,7 @@ impl CancelReservedInstancesListingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelReservedInstancesListingOutput`](crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput
-    {
+    pub fn build(self) -> crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput {
         crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput {
             reserved_instances_listings: self.reserved_instances_listings,
             _request_id: self._request_id,

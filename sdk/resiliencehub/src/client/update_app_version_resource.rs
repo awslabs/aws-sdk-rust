@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`app_version(Option<String>)`](crate::operation::update_app_version_resource::UpdateAppVersionResourceOutput::app_version): <p>The Resilience Hub application version.</p>
     ///   - [`physical_resource(Option<PhysicalResource>)`](crate::operation::update_app_version_resource::UpdateAppVersionResourceOutput::physical_resource): <p>Defines a physical resource. A physical resource is a resource that exists in your account. It can be identified using an Amazon Resource Name (ARN) or a Resilience Hub-native identifier.</p>
     /// - On failure, responds with [`SdkError<UpdateAppVersionResourceError>`](crate::operation::update_app_version_resource::UpdateAppVersionResourceError)
-    pub fn update_app_version_resource(&self) -> crate::operation::update_app_version_resource::builders::UpdateAppVersionResourceFluentBuilder{
+    pub fn update_app_version_resource(&self) -> crate::operation::update_app_version_resource::builders::UpdateAppVersionResourceFluentBuilder {
         crate::operation::update_app_version_resource::builders::UpdateAppVersionResourceFluentBuilder::new(self.handle.clone())
     }
 }

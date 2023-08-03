@@ -10,10 +10,7 @@ impl CancelKeyDeletionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_key_deletion::CancelKeyDeletionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_key_deletion::CancelKeyDeletionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_key_deletion::CancelKeyDeletionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.cancel_key_deletion();
         fluent_builder.inner = self;
@@ -42,9 +39,7 @@ impl CancelKeyDeletionFluentBuilder {
         }
     }
     /// Access the CancelKeyDeletion as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::cancel_key_deletion::builders::CancelKeyDeletionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::cancel_key_deletion::builders::CancelKeyDeletionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -56,9 +51,7 @@ impl CancelKeyDeletionFluentBuilder {
             crate::operation::cancel_key_deletion::CancelKeyDeletion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_key_deletion::CancelKeyDeletionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_key_deletion::CancelKeyDeletionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -68,10 +61,7 @@ impl CancelKeyDeletionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -80,9 +70,7 @@ impl CancelKeyDeletionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_key_deletion::CancelKeyDeletionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_key_deletion::CancelKeyDeletionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_key_deletion::CancelKeyDeletionError>,
     > {
         let op = self
             .inner
@@ -105,9 +93,7 @@ impl CancelKeyDeletionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_key_deletion::CancelKeyDeletionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_key_deletion::CancelKeyDeletionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_key_deletion::CancelKeyDeletionError>,
     > {
         self.send_middleware().await
     }
@@ -121,9 +107,7 @@ impl CancelKeyDeletionFluentBuilder {
             crate::operation::cancel_key_deletion::CancelKeyDeletion,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::cancel_key_deletion::CancelKeyDeletionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::cancel_key_deletion::CancelKeyDeletionError>,
     > {
         self.customize_middleware().await
     }

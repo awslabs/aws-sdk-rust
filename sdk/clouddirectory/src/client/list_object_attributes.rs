@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`attributes(Option<Vec<AttributeKeyAndValue>>)`](crate::operation::list_object_attributes::ListObjectAttributesOutput::attributes): <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_object_attributes::ListObjectAttributesOutput::next_token): <p>The pagination token.</p>
     /// - On failure, responds with [`SdkError<ListObjectAttributesError>`](crate::operation::list_object_attributes::ListObjectAttributesError)
-    pub fn list_object_attributes(
-        &self,
-    ) -> crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder {
-        crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_object_attributes(&self) -> crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder {
+        crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -95,9 +95,7 @@ impl ForecastExportJobSummary {
 
 /// A builder for [`ForecastExportJobSummary`](crate::types::ForecastExportJobSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ForecastExportJobSummaryBuilder {
     pub(crate) forecast_export_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) forecast_export_job_name: ::std::option::Option<::std::string::String>,
@@ -109,18 +107,12 @@ pub struct ForecastExportJobSummaryBuilder {
 }
 impl ForecastExportJobSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-    pub fn forecast_export_job_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_export_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-    pub fn set_forecast_export_job_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forecast_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forecast_export_job_arn = input;
         self
     }
@@ -129,18 +121,12 @@ impl ForecastExportJobSummaryBuilder {
         &self.forecast_export_job_arn
     }
     /// <p>The name of the forecast export job.</p>
-    pub fn forecast_export_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn forecast_export_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_export_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the forecast export job.</p>
-    pub fn set_forecast_export_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_forecast_export_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forecast_export_job_name = input;
         self
     }
@@ -154,10 +140,7 @@ impl ForecastExportJobSummaryBuilder {
         self
     }
     /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::DataDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DataDestination>) -> Self {
         self.destination = input;
         self
     }
@@ -223,10 +206,7 @@ impl ForecastExportJobSummaryBuilder {
         self
     }
     /// <p>When the forecast export job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
@@ -254,10 +234,7 @@ impl ForecastExportJobSummaryBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn set_last_modification_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
         self
     }
@@ -269,9 +246,7 @@ impl ForecastExportJobSummaryBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn get_last_modification_time(
-        &self,
-    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     /// Consumes the builder and constructs a [`ForecastExportJobSummary`](crate::types::ForecastExportJobSummary).

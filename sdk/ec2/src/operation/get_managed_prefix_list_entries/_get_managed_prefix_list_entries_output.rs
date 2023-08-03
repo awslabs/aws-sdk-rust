@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for GetManagedPrefixListEntriesOutput {
 }
 impl GetManagedPrefixListEntriesOutput {
     /// Creates a new builder-style object to manufacture [`GetManagedPrefixListEntriesOutput`](crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesOutput).
-    pub fn builder() -> crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesOutputBuilder{
+    pub fn builder() -> crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesOutputBuilder {
         crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetManagedPrefixListEntriesOutput`](crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetManagedPrefixListEntriesOutputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl GetManagedPrefixListEntriesOutputBuilder {
         self
     }
     /// <p>Information about the prefix list entries.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListEntry>>,
-    ) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListEntry>>) -> Self {
         self.entries = input;
         self
     }
     /// <p>Information about the prefix list entries.</p>
-    pub fn get_entries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrefixListEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrefixListEntry>> {
         &self.entries
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -93,9 +86,7 @@ impl GetManagedPrefixListEntriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetManagedPrefixListEntriesOutput`](crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesOutput {
+    pub fn build(self) -> crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesOutput {
         crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesOutput {
             entries: self.entries,
             next_token: self.next_token,

@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListThreatIntelSetsOutput {
 }
 impl ListThreatIntelSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListThreatIntelSetsOutput`](crate::operation::list_threat_intel_sets::ListThreatIntelSetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsOutputBuilder {
+    pub fn builder() -> crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsOutputBuilder {
         crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListThreatIntelSetsOutput`](crate::operation::list_threat_intel_sets::ListThreatIntelSetsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThreatIntelSetsOutputBuilder {
     pub(crate) threat_intel_set_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -50,27 +47,19 @@ impl ListThreatIntelSetsOutputBuilder {
     /// To override the contents of this collection use [`set_threat_intel_set_ids`](Self::set_threat_intel_set_ids).
     ///
     /// <p>The IDs of the ThreatIntelSet resources.</p>
-    pub fn threat_intel_set_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn threat_intel_set_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.threat_intel_set_ids.unwrap_or_default();
         v.push(input.into());
         self.threat_intel_set_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the ThreatIntelSet resources.</p>
-    pub fn set_threat_intel_set_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_threat_intel_set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.threat_intel_set_ids = input;
         self
     }
     /// <p>The IDs of the ThreatIntelSet resources.</p>
-    pub fn get_threat_intel_set_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_threat_intel_set_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.threat_intel_set_ids
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>

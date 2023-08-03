@@ -15,18 +15,14 @@ impl DeleteServiceTemplateInput {
 }
 impl DeleteServiceTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceTemplateInput`](crate::operation::delete_service_template::DeleteServiceTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_service_template::builders::DeleteServiceTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_service_template::builders::DeleteServiceTemplateInputBuilder {
         crate::operation::delete_service_template::builders::DeleteServiceTemplateInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteServiceTemplateInput`](crate::operation::delete_service_template::DeleteServiceTemplateInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteServiceTemplateInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -48,14 +44,8 @@ impl DeleteServiceTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteServiceTemplateInput`](crate::operation::delete_service_template::DeleteServiceTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_service_template::DeleteServiceTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_service_template::DeleteServiceTemplateInput {
-                name: self.name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_service_template::DeleteServiceTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_service_template::DeleteServiceTemplateInput { name: self.name })
     }
 }

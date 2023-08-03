@@ -10,10 +10,7 @@ impl CreateInstancesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_instances::CreateInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instances::CreateInstancesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instances::CreateInstancesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.create_instances();
         fluent_builder.inner = self;
@@ -38,9 +35,7 @@ impl CreateInstancesFluentBuilder {
         }
     }
     /// Access the CreateInstances as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_instances::builders::CreateInstancesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_instances::builders::CreateInstancesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +47,7 @@ impl CreateInstancesFluentBuilder {
             crate::operation::create_instances::CreateInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instances::CreateInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instances::CreateInstancesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +57,7 @@ impl CreateInstancesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +66,7 @@ impl CreateInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instances::CreateInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instances::CreateInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instances::CreateInstancesError>,
     > {
         let op = self
             .inner
@@ -101,9 +89,7 @@ impl CreateInstancesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instances::CreateInstancesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instances::CreateInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instances::CreateInstancesError>,
     > {
         self.send_middleware().await
     }
@@ -117,9 +103,7 @@ impl CreateInstancesFluentBuilder {
             crate::operation::create_instances::CreateInstances,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::create_instances::CreateInstancesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_instances::CreateInstancesError>,
     > {
         self.customize_middleware().await
     }
@@ -128,40 +112,26 @@ impl CreateInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
     ///
     /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code> </p>
-    pub fn instance_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_names(input.into());
         self
     }
     /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code> </p>
-    pub fn set_instance_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_instance_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_names(input);
         self
     }
     /// <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code> </p>
-    pub fn get_instance_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_names()
     }
     /// <p>The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
-    pub fn availability_zone(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// <p>The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
@@ -173,10 +143,7 @@ impl CreateInstancesFluentBuilder {
     /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
     /// </note>
     #[deprecated]
-    pub fn custom_image_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_image_name(input.into());
         self
     }
@@ -184,10 +151,7 @@ impl CreateInstancesFluentBuilder {
     /// <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>
     /// </note>
     #[deprecated]
-    pub fn set_custom_image_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_custom_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_image_name(input);
         self
     }
@@ -253,18 +217,12 @@ impl CreateInstancesFluentBuilder {
         self.inner.get_user_data()
     }
     /// <p>The name of your key pair.</p>
-    pub fn key_pair_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn key_pair_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_pair_name(input.into());
         self
     }
     /// <p>The name of your key pair.</p>
-    pub fn set_key_pair_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_key_pair_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_pair_name(input);
         self
     }
@@ -284,10 +242,7 @@ impl CreateInstancesFluentBuilder {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -306,17 +261,12 @@ impl CreateInstancesFluentBuilder {
         self
     }
     /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
-    pub fn set_add_ons(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>>,
-    ) -> Self {
+    pub fn set_add_ons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>>) -> Self {
         self.inner = self.inner.set_add_ons(input);
         self
     }
     /// <p>An array of objects representing the add-ons to enable for the new instance.</p>
-    pub fn get_add_ons(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>> {
+    pub fn get_add_ons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOnRequest>> {
         self.inner.get_add_ons()
     }
     /// <p>The IP address type for the instance.</p>
@@ -329,10 +279,7 @@ impl CreateInstancesFluentBuilder {
     /// <p>The IP address type for the instance.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: ::std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
     }

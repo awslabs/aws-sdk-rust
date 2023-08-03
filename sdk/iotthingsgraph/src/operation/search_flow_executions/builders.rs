@@ -38,9 +38,7 @@ impl SearchFlowExecutionsFluentBuilder {
         }
     }
     /// Access the SearchFlowExecutions as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::search_flow_executions::builders::SearchFlowExecutionsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::search_flow_executions::builders::SearchFlowExecutionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +50,7 @@ impl SearchFlowExecutionsFluentBuilder {
             crate::operation::search_flow_executions::SearchFlowExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_flow_executions::SearchFlowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_flow_executions::SearchFlowExecutionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +60,7 @@ impl SearchFlowExecutionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +69,7 @@ impl SearchFlowExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_flow_executions::SearchFlowExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_flow_executions::SearchFlowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_flow_executions::SearchFlowExecutionsError>,
     > {
         let op = self
             .inner
@@ -101,9 +92,7 @@ impl SearchFlowExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_flow_executions::SearchFlowExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_flow_executions::SearchFlowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_flow_executions::SearchFlowExecutionsError>,
     > {
         self.send_middleware().await
     }
@@ -117,36 +106,23 @@ impl SearchFlowExecutionsFluentBuilder {
             crate::operation::search_flow_executions::SearchFlowExecutions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::search_flow_executions::SearchFlowExecutionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_flow_executions::SearchFlowExecutionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::search_flow_executions::paginator::SearchFlowExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_flow_executions::paginator::SearchFlowExecutionsPaginator {
-        crate::operation::search_flow_executions::paginator::SearchFlowExecutionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::search_flow_executions::paginator::SearchFlowExecutionsPaginator {
+        crate::operation::search_flow_executions::paginator::SearchFlowExecutionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the system instance that contains the flow.</p>
-    pub fn system_instance_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn system_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.system_instance_id(input.into());
         self
     }
     /// <p>The ID of the system instance that contains the flow.</p>
-    pub fn set_system_instance_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_system_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_system_instance_id(input);
         self
     }
@@ -155,18 +131,12 @@ impl SearchFlowExecutionsFluentBuilder {
         self.inner.get_system_instance_id()
     }
     /// <p>The ID of a flow execution.</p>
-    pub fn flow_execution_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn flow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_execution_id(input.into());
         self
     }
     /// <p>The ID of a flow execution.</p>
-    pub fn set_flow_execution_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_flow_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_execution_id(input);
         self
     }
@@ -180,10 +150,7 @@ impl SearchFlowExecutionsFluentBuilder {
         self
     }
     /// <p>The date and time of the earliest flow execution to return.</p>
-    pub fn set_start_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -197,10 +164,7 @@ impl SearchFlowExecutionsFluentBuilder {
         self
     }
     /// <p>The date and time of the latest flow execution to return.</p>
-    pub fn set_end_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

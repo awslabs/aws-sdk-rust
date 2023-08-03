@@ -30,27 +30,19 @@ impl RuleGroupRuleOptionsPair {
 
 /// A builder for [`RuleGroupRuleOptionsPair`](crate::types::RuleGroupRuleOptionsPair).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupRuleOptionsPairBuilder {
     pub(crate) rule_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) rule_options: ::std::option::Option<::std::vec::Vec<crate::types::RuleOption>>,
 }
 impl RuleGroupRuleOptionsPairBuilder {
     /// <p>The ARN of the rule group.</p>
-    pub fn rule_group_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the rule group.</p>
-    pub fn set_rule_group_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_arn = input;
         self
     }
@@ -70,17 +62,12 @@ impl RuleGroupRuleOptionsPairBuilder {
         self
     }
     /// <p>The rule options.</p>
-    pub fn set_rule_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleOption>>,
-    ) -> Self {
+    pub fn set_rule_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleOption>>) -> Self {
         self.rule_options = input;
         self
     }
     /// <p>The rule options.</p>
-    pub fn get_rule_options(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleOption>> {
+    pub fn get_rule_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleOption>> {
         &self.rule_options
     }
     /// Consumes the builder and constructs a [`RuleGroupRuleOptionsPair`](crate::types::RuleGroupRuleOptionsPair).

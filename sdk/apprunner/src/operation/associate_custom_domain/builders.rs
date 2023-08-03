@@ -38,10 +38,7 @@ impl AssociateCustomDomainFluentBuilder {
         }
     }
     /// Access the AssociateCustomDomain as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::associate_custom_domain::builders::AssociateCustomDomainInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::associate_custom_domain::builders::AssociateCustomDomainInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +50,7 @@ impl AssociateCustomDomainFluentBuilder {
             crate::operation::associate_custom_domain::AssociateCustomDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_custom_domain::AssociateCustomDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_custom_domain::AssociateCustomDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +60,7 @@ impl AssociateCustomDomainFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +69,7 @@ impl AssociateCustomDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_custom_domain::AssociateCustomDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_custom_domain::AssociateCustomDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_custom_domain::AssociateCustomDomainError>,
     > {
         let op = self
             .inner
@@ -102,9 +92,7 @@ impl AssociateCustomDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_custom_domain::AssociateCustomDomainOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_custom_domain::AssociateCustomDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_custom_domain::AssociateCustomDomainError>,
     > {
         self.send_middleware().await
     }
@@ -118,9 +106,7 @@ impl AssociateCustomDomainFluentBuilder {
             crate::operation::associate_custom_domain::AssociateCustomDomain,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::associate_custom_domain::AssociateCustomDomainError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::associate_custom_domain::AssociateCustomDomainError>,
     > {
         self.customize_middleware().await
     }

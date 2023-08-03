@@ -5,16 +5,16 @@ pub use crate::operation::describe_launch_template_versions::_describe_launch_te
 
 impl DescribeLaunchTemplateVersionsInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.describe_launch_template_versions();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl DescribeLaunchTemplateVersionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLaunchTemplateVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsInputBuilder,
+    inner: crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsInputBuilder,
 }
 impl DescribeLaunchTemplateVersionsFluentBuilder {
     /// Creates a new `DescribeLaunchTemplateVersions`.
@@ -37,15 +37,20 @@ impl DescribeLaunchTemplateVersionsFluentBuilder {
         }
     }
     /// Access the DescribeLaunchTemplateVersions as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl DescribeLaunchTemplateVersionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,23 +87,32 @@ impl DescribeLaunchTemplateVersionsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersions, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersions,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsError>,
+    > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_launch_template_versions::paginator::DescribeLaunchTemplateVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_launch_template_versions::paginator::DescribeLaunchTemplateVersionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_launch_template_versions::paginator::DescribeLaunchTemplateVersionsPaginator {
         crate::operation::describe_launch_template_versions::paginator::DescribeLaunchTemplateVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -117,20 +132,14 @@ impl DescribeLaunchTemplateVersionsFluentBuilder {
     /// <p>The ID of the launch template.</p>
     /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
-    pub fn launch_template_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_template_id(input.into());
         self
     }
     /// <p>The ID of the launch template.</p>
     /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
-    pub fn set_launch_template_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_template_id(input);
         self
     }
@@ -143,20 +152,14 @@ impl DescribeLaunchTemplateVersionsFluentBuilder {
     /// <p>The name of the launch template.</p>
     /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
-    pub fn launch_template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn launch_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_template_name(input.into());
         self
     }
     /// <p>The name of the launch template.</p>
     /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
-    pub fn set_launch_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_launch_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_template_name(input);
         self
     }
@@ -180,10 +183,7 @@ impl DescribeLaunchTemplateVersionsFluentBuilder {
     /// <p>One or more versions of the launch template. Valid values depend on whether you are describing a specified launch template (by ID or name) or all launch templates in your account.</p>
     /// <p>To describe one or more versions of a specified launch template, valid values are <code>$Latest</code>, <code>$Default</code>, and numbers.</p>
     /// <p>To describe all launch templates in your account that are defined as the latest version, the valid value is <code>$Latest</code>. To describe all launch templates in your account that are defined as the default version, the valid value is <code>$Default</code>. You can specify <code>$Latest</code> and <code>$Default</code> in the same request. You cannot specify numbers.</p>
-    pub fn set_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_versions(input);
         self
     }
@@ -291,10 +291,7 @@ impl DescribeLaunchTemplateVersionsFluentBuilder {
     /// <li> <p> <code>network-card-index</code> - The index of the network card.</p> </li>
     /// <li> <p> <code>ram-disk-id</code> - The RAM disk ID.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

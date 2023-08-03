@@ -13,15 +13,11 @@ pub struct ImportTerminologyOutput {
 }
 impl ImportTerminologyOutput {
     /// <p>The properties of the custom terminology being imported.</p>
-    pub fn terminology_properties(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TerminologyProperties> {
+    pub fn terminology_properties(&self) -> ::std::option::Option<&crate::types::TerminologyProperties> {
         self.terminology_properties.as_ref()
     }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
-    pub fn auxiliary_data_location(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TerminologyDataLocation> {
+    pub fn auxiliary_data_location(&self) -> ::std::option::Option<&crate::types::TerminologyDataLocation> {
         self.auxiliary_data_location.as_ref()
     }
 }
@@ -32,21 +28,17 @@ impl ::aws_http::request_id::RequestId for ImportTerminologyOutput {
 }
 impl ImportTerminologyOutput {
     /// Creates a new builder-style object to manufacture [`ImportTerminologyOutput`](crate::operation::import_terminology::ImportTerminologyOutput).
-    pub fn builder(
-    ) -> crate::operation::import_terminology::builders::ImportTerminologyOutputBuilder {
+    pub fn builder() -> crate::operation::import_terminology::builders::ImportTerminologyOutputBuilder {
         crate::operation::import_terminology::builders::ImportTerminologyOutputBuilder::default()
     }
 }
 
 /// A builder for [`ImportTerminologyOutput`](crate::operation::import_terminology::ImportTerminologyOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportTerminologyOutputBuilder {
     pub(crate) terminology_properties: ::std::option::Option<crate::types::TerminologyProperties>,
-    pub(crate) auxiliary_data_location:
-        ::std::option::Option<crate::types::TerminologyDataLocation>,
+    pub(crate) auxiliary_data_location: ::std::option::Option<crate::types::TerminologyDataLocation>,
     _request_id: Option<String>,
 }
 impl ImportTerminologyOutputBuilder {
@@ -56,17 +48,12 @@ impl ImportTerminologyOutputBuilder {
         self
     }
     /// <p>The properties of the custom terminology being imported.</p>
-    pub fn set_terminology_properties(
-        mut self,
-        input: ::std::option::Option<crate::types::TerminologyProperties>,
-    ) -> Self {
+    pub fn set_terminology_properties(mut self, input: ::std::option::Option<crate::types::TerminologyProperties>) -> Self {
         self.terminology_properties = input;
         self
     }
     /// <p>The properties of the custom terminology being imported.</p>
-    pub fn get_terminology_properties(
-        &self,
-    ) -> &::std::option::Option<crate::types::TerminologyProperties> {
+    pub fn get_terminology_properties(&self) -> &::std::option::Option<crate::types::TerminologyProperties> {
         &self.terminology_properties
     }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
@@ -75,17 +62,12 @@ impl ImportTerminologyOutputBuilder {
         self
     }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
-    pub fn set_auxiliary_data_location(
-        mut self,
-        input: ::std::option::Option<crate::types::TerminologyDataLocation>,
-    ) -> Self {
+    pub fn set_auxiliary_data_location(mut self, input: ::std::option::Option<crate::types::TerminologyDataLocation>) -> Self {
         self.auxiliary_data_location = input;
         self
     }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
-    pub fn get_auxiliary_data_location(
-        &self,
-    ) -> &::std::option::Option<crate::types::TerminologyDataLocation> {
+    pub fn get_auxiliary_data_location(&self) -> &::std::option::Option<crate::types::TerminologyDataLocation> {
         &self.auxiliary_data_location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

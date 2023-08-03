@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StartInstanceRefreshOutput`](crate::operation::start_instance_refresh::StartInstanceRefreshOutput) with field(s):
     ///   - [`instance_refresh_id(Option<String>)`](crate::operation::start_instance_refresh::StartInstanceRefreshOutput::instance_refresh_id): <p>A unique ID for tracking the progress of the instance refresh.</p>
     /// - On failure, responds with [`SdkError<StartInstanceRefreshError>`](crate::operation::start_instance_refresh::StartInstanceRefreshError)
-    pub fn start_instance_refresh(
-        &self,
-    ) -> crate::operation::start_instance_refresh::builders::StartInstanceRefreshFluentBuilder {
-        crate::operation::start_instance_refresh::builders::StartInstanceRefreshFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_instance_refresh(&self) -> crate::operation::start_instance_refresh::builders::StartInstanceRefreshFluentBuilder {
+        crate::operation::start_instance_refresh::builders::StartInstanceRefreshFluentBuilder::new(self.handle.clone())
     }
 }

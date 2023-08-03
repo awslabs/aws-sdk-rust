@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`bot_name(impl ::std::convert::Into<String>)`](crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder::bot_name) / [`set_bot_name(Option<String>)`](crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder::set_bot_name): <p>The name of the bot that the alias points to.</p>
     /// - On success, responds with [`DeleteBotAliasOutput`](crate::operation::delete_bot_alias::DeleteBotAliasOutput)
     /// - On failure, responds with [`SdkError<DeleteBotAliasError>`](crate::operation::delete_bot_alias::DeleteBotAliasError)
-    pub fn delete_bot_alias(
-        &self,
-    ) -> crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder {
-        crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_bot_alias(&self) -> crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder {
+        crate::operation::delete_bot_alias::builders::DeleteBotAliasFluentBuilder::new(self.handle.clone())
     }
 }

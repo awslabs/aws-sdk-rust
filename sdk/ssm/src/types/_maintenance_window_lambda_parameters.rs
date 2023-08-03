@@ -59,18 +59,12 @@ pub struct MaintenanceWindowLambdaParametersBuilder {
 }
 impl MaintenanceWindowLambdaParametersBuilder {
     /// <p>Pass client-specific information to the Lambda function that you are invoking. You can then process the client information in your Lambda function as you choose through the context variable.</p>
-    pub fn client_context(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Pass client-specific information to the Lambda function that you are invoking. You can then process the client information in your Lambda function as you choose through the context variable.</p>
-    pub fn set_client_context(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_context = input;
         self
     }

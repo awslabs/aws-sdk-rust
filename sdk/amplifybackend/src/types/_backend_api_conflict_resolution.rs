@@ -23,9 +23,7 @@ impl BackendApiConflictResolution {
 
 /// A builder for [`BackendApiConflictResolution`](crate::types::BackendApiConflictResolution).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BackendApiConflictResolutionBuilder {
     pub(crate) resolution_strategy: ::std::option::Option<crate::types::ResolutionStrategy>,
 }
@@ -36,17 +34,12 @@ impl BackendApiConflictResolutionBuilder {
         self
     }
     /// <p>The strategy for conflict resolution.</p>
-    pub fn set_resolution_strategy(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolutionStrategy>,
-    ) -> Self {
+    pub fn set_resolution_strategy(mut self, input: ::std::option::Option<crate::types::ResolutionStrategy>) -> Self {
         self.resolution_strategy = input;
         self
     }
     /// <p>The strategy for conflict resolution.</p>
-    pub fn get_resolution_strategy(
-        &self,
-    ) -> &::std::option::Option<crate::types::ResolutionStrategy> {
+    pub fn get_resolution_strategy(&self) -> &::std::option::Option<crate::types::ResolutionStrategy> {
         &self.resolution_strategy
     }
     /// Consumes the builder and constructs a [`BackendApiConflictResolution`](crate::types::BackendApiConflictResolution).

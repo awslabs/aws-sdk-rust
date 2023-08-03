@@ -15,10 +15,7 @@ impl super::Client {
     ///   - [`rule_number(i32)`](crate::operation::create_network_acl_entry::builders::CreateNetworkAclEntryFluentBuilder::rule_number) / [`set_rule_number(Option<i32>)`](crate::operation::create_network_acl_entry::builders::CreateNetworkAclEntryFluentBuilder::set_rule_number): <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>  <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
     /// - On success, responds with [`CreateNetworkAclEntryOutput`](crate::operation::create_network_acl_entry::CreateNetworkAclEntryOutput)
     /// - On failure, responds with [`SdkError<CreateNetworkAclEntryError>`](crate::operation::create_network_acl_entry::CreateNetworkAclEntryError)
-    pub fn create_network_acl_entry(
-        &self,
-    ) -> crate::operation::create_network_acl_entry::builders::CreateNetworkAclEntryFluentBuilder
-    {
+    pub fn create_network_acl_entry(&self) -> crate::operation::create_network_acl_entry::builders::CreateNetworkAclEntryFluentBuilder {
         crate::operation::create_network_acl_entry::builders::CreateNetworkAclEntryFluentBuilder::new(self.handle.clone())
     }
 }

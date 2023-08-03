@@ -12,18 +12,14 @@ impl ::aws_http::request_id::RequestId for DeleteCollaborationOutput {
 }
 impl DeleteCollaborationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCollaborationOutput`](crate::operation::delete_collaboration::DeleteCollaborationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_collaboration::builders::DeleteCollaborationOutputBuilder {
-        crate::operation::delete_collaboration::builders::DeleteCollaborationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_collaboration::builders::DeleteCollaborationOutputBuilder {
+        crate::operation::delete_collaboration::builders::DeleteCollaborationOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteCollaborationOutput`](crate::operation::delete_collaboration::DeleteCollaborationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteCollaborationOutputBuilder {
     _request_id: Option<String>,
 }

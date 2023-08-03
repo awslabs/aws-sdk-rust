@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for UpdateEndpointsBatchOutput {
 }
 impl UpdateEndpointsBatchOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEndpointsBatchOutput`](crate::operation::update_endpoints_batch::UpdateEndpointsBatchOutput).
-    pub fn builder(
-    ) -> crate::operation::update_endpoints_batch::builders::UpdateEndpointsBatchOutputBuilder {
+    pub fn builder() -> crate::operation::update_endpoints_batch::builders::UpdateEndpointsBatchOutputBuilder {
         crate::operation::update_endpoints_batch::builders::UpdateEndpointsBatchOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateEndpointsBatchOutput`](crate::operation::update_endpoints_batch::UpdateEndpointsBatchOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEndpointsBatchOutputBuilder {
     pub(crate) message_body: ::std::option::Option<crate::types::MessageBody>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl UpdateEndpointsBatchOutputBuilder {
         self
     }
     /// <p>Provides information about an API request or response.</p>
-    pub fn set_message_body(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageBody>,
-    ) -> Self {
+    pub fn set_message_body(mut self, input: ::std::option::Option<crate::types::MessageBody>) -> Self {
         self.message_body = input;
         self
     }

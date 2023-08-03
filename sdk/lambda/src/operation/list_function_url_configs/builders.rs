@@ -26,8 +26,7 @@ impl ListFunctionUrlConfigsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFunctionUrlConfigsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_function_url_configs::builders::ListFunctionUrlConfigsInputBuilder,
+    inner: crate::operation::list_function_url_configs::builders::ListFunctionUrlConfigsInputBuilder,
 }
 impl ListFunctionUrlConfigsFluentBuilder {
     /// Creates a new `ListFunctionUrlConfigs`.
@@ -38,10 +37,7 @@ impl ListFunctionUrlConfigsFluentBuilder {
         }
     }
     /// Access the ListFunctionUrlConfigs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_function_url_configs::builders::ListFunctionUrlConfigsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_function_url_configs::builders::ListFunctionUrlConfigsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListFunctionUrlConfigsFluentBuilder {
             crate::operation::list_function_url_configs::ListFunctionUrlConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_function_url_configs::ListFunctionUrlConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_function_url_configs::ListFunctionUrlConfigsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListFunctionUrlConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListFunctionUrlConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_function_url_configs::ListFunctionUrlConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_function_url_configs::ListFunctionUrlConfigsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListFunctionUrlConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_function_url_configs::ListFunctionUrlConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_function_url_configs::ListFunctionUrlConfigsError>,
     > {
         self.send_middleware().await
     }
@@ -118,23 +105,15 @@ impl ListFunctionUrlConfigsFluentBuilder {
             crate::operation::list_function_url_configs::ListFunctionUrlConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_function_url_configs::ListFunctionUrlConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_function_url_configs::ListFunctionUrlConfigsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_function_url_configs::paginator::ListFunctionUrlConfigsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_function_url_configs::paginator::ListFunctionUrlConfigsPaginator
-    {
-        crate::operation::list_function_url_configs::paginator::ListFunctionUrlConfigsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_function_url_configs::paginator::ListFunctionUrlConfigsPaginator {
+        crate::operation::list_function_url_configs::paginator::ListFunctionUrlConfigsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -144,10 +123,7 @@ impl ListFunctionUrlConfigsFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -159,10 +135,7 @@ impl ListFunctionUrlConfigsFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }

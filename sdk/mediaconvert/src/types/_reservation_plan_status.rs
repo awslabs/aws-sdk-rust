@@ -38,13 +38,7 @@
 /// Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ReservationPlanStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,9 +53,7 @@ impl ::std::convert::From<&str> for ReservationPlanStatus {
         match s {
             "ACTIVE" => ReservationPlanStatus::Active,
             "EXPIRED" => ReservationPlanStatus::Expired,
-            other => ReservationPlanStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ReservationPlanStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }

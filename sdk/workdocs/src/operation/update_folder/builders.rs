@@ -10,10 +10,7 @@ impl UpdateFolderInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_folder::UpdateFolderOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_folder::UpdateFolderError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_folder::UpdateFolderError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_folder();
         fluent_builder.inner = self;
@@ -45,10 +42,7 @@ impl UpdateFolderFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_folder::UpdateFolder,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_folder::UpdateFolder, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_folder::UpdateFolderError>,
     > {
         let handle = self.handle.clone();
@@ -59,10 +53,7 @@ impl UpdateFolderFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -104,27 +95,18 @@ impl UpdateFolderFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_folder::UpdateFolder,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::update_folder::UpdateFolder, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::update_folder::UpdateFolderError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
@@ -161,18 +143,12 @@ impl UpdateFolderFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn parent_folder_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn parent_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_folder_id(input.into());
         self
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn set_parent_folder_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_parent_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_folder_id(input);
         self
     }
@@ -186,10 +162,7 @@ impl UpdateFolderFluentBuilder {
         self
     }
     /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
-    pub fn set_resource_state(
-        mut self,
-        input: ::std::option::Option<crate::types::ResourceStateType>,
-    ) -> Self {
+    pub fn set_resource_state(mut self, input: ::std::option::Option<crate::types::ResourceStateType>) -> Self {
         self.inner = self.inner.set_resource_state(input);
         self
     }

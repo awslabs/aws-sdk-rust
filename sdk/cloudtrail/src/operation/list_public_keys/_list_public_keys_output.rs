@@ -40,9 +40,7 @@ impl ListPublicKeysOutput {
 
 /// A builder for [`ListPublicKeysOutput`](crate::operation::list_public_keys::ListPublicKeysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPublicKeysOutputBuilder {
     pub(crate) public_key_list: ::std::option::Option<::std::vec::Vec<crate::types::PublicKey>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -65,19 +63,14 @@ impl ListPublicKeysOutputBuilder {
     /// <p>Contains an array of PublicKey objects.</p> <note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
     /// </note>
-    pub fn set_public_key_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PublicKey>>,
-    ) -> Self {
+    pub fn set_public_key_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PublicKey>>) -> Self {
         self.public_key_list = input;
         self
     }
     /// <p>Contains an array of PublicKey objects.</p> <note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
     /// </note>
-    pub fn get_public_key_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PublicKey>> {
+    pub fn get_public_key_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PublicKey>> {
         &self.public_key_list
     }
     /// <p>Reserved for future use.</p>

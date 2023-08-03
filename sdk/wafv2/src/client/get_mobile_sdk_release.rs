@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetMobileSdkReleaseOutput`](crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseOutput) with field(s):
     ///   - [`mobile_sdk_release(Option<MobileSdkRelease>)`](crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseOutput::mobile_sdk_release): <p>Information for a specified SDK release, including release notes and tags.</p>
     /// - On failure, responds with [`SdkError<GetMobileSdkReleaseError>`](crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseError)
-    pub fn get_mobile_sdk_release(
-        &self,
-    ) -> crate::operation::get_mobile_sdk_release::builders::GetMobileSdkReleaseFluentBuilder {
-        crate::operation::get_mobile_sdk_release::builders::GetMobileSdkReleaseFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_mobile_sdk_release(&self) -> crate::operation::get_mobile_sdk_release::builders::GetMobileSdkReleaseFluentBuilder {
+        crate::operation::get_mobile_sdk_release::builders::GetMobileSdkReleaseFluentBuilder::new(self.handle.clone())
     }
 }

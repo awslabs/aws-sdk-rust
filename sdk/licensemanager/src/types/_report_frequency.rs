@@ -30,9 +30,7 @@ impl ReportFrequency {
 
 /// A builder for [`ReportFrequency`](crate::types::ReportFrequency).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportFrequencyBuilder {
     pub(crate) value: ::std::option::Option<i32>,
     pub(crate) period: ::std::option::Option<crate::types::ReportFrequencyType>,
@@ -58,10 +56,7 @@ impl ReportFrequencyBuilder {
         self
     }
     /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
-    pub fn set_period(
-        mut self,
-        input: ::std::option::Option<crate::types::ReportFrequencyType>,
-    ) -> Self {
+    pub fn set_period(mut self, input: ::std::option::Option<crate::types::ReportFrequencyType>) -> Self {
         self.period = input;
         self
     }

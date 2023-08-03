@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationOutput::endpoints): <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationOutput::next_token): <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
     /// - On failure, responds with [`SdkError<ListEndpointsByPlatformApplicationError>`](crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationError)
-    pub fn list_endpoints_by_platform_application(&self) -> crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationFluentBuilder{
+    pub fn list_endpoints_by_platform_application(
+        &self,
+    ) -> crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationFluentBuilder {
         crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationFluentBuilder::new(self.handle.clone())
     }
 }

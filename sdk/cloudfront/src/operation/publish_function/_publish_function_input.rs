@@ -29,9 +29,7 @@ impl PublishFunctionInput {
 
 /// A builder for [`PublishFunctionInput`](crate::operation::publish_function::PublishFunctionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PublishFunctionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
@@ -68,10 +66,7 @@ impl PublishFunctionInputBuilder {
     /// Consumes the builder and constructs a [`PublishFunctionInput`](crate::operation::publish_function::PublishFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::publish_function::PublishFunctionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::publish_function::PublishFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish_function::PublishFunctionInput {
             name: self.name,
             if_match: self.if_match,

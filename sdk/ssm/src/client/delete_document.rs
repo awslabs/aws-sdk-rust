@@ -9,11 +9,7 @@ impl super::Client {
     ///   - [`force(bool)`](crate::operation::delete_document::builders::DeleteDocumentFluentBuilder::force) / [`set_force(Option<bool>)`](crate::operation::delete_document::builders::DeleteDocumentFluentBuilder::set_force): <p>Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document. For example, you must specify a <code>Force</code> flag to delete a document of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
     /// - On success, responds with [`DeleteDocumentOutput`](crate::operation::delete_document::DeleteDocumentOutput)
     /// - On failure, responds with [`SdkError<DeleteDocumentError>`](crate::operation::delete_document::DeleteDocumentError)
-    pub fn delete_document(
-        &self,
-    ) -> crate::operation::delete_document::builders::DeleteDocumentFluentBuilder {
-        crate::operation::delete_document::builders::DeleteDocumentFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_document(&self) -> crate::operation::delete_document::builders::DeleteDocumentFluentBuilder {
+        crate::operation::delete_document::builders::DeleteDocumentFluentBuilder::new(self.handle.clone())
     }
 }

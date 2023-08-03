@@ -13,9 +13,7 @@ pub fn ser_create_file_cache_lustre_configuration(
         object.key("DeploymentType").string(var_2.as_str());
     }
     if let Some(var_3) = &input.weekly_maintenance_start_time {
-        object
-            .key("WeeklyMaintenanceStartTime")
-            .string(var_3.as_str());
+        object.key("WeeklyMaintenanceStartTime").string(var_3.as_str());
     }
     if let Some(var_4) = &input.metadata_configuration {
         #[allow(unused_mut)]

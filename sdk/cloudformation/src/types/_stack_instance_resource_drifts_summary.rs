@@ -15,15 +15,13 @@ pub struct StackInstanceResourceDriftsSummary {
     pub physical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs aren't enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
     #[doc(hidden)]
-    pub physical_resource_id_context:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>>,
+    pub physical_resource_id_context: ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>>,
     /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
     #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
     #[doc(hidden)]
-    pub property_differences:
-        ::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>>,
+    pub property_differences: ::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>>,
     /// <p>The drift status of the resource in a stack instance.</p>
     /// <ul>
     /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
@@ -51,9 +49,7 @@ impl StackInstanceResourceDriftsSummary {
         self.physical_resource_id.as_deref()
     }
     /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs aren't enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
-    pub fn physical_resource_id_context(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PhysicalResourceIdContextKeyValuePair]> {
+    pub fn physical_resource_id_context(&self) -> ::std::option::Option<&[crate::types::PhysicalResourceIdContextKeyValuePair]> {
         self.physical_resource_id_context.as_deref()
     }
     /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
@@ -61,9 +57,7 @@ impl StackInstanceResourceDriftsSummary {
         self.resource_type.as_deref()
     }
     /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
-    pub fn property_differences(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::PropertyDifference]> {
+    pub fn property_differences(&self) -> ::std::option::Option<&[crate::types::PropertyDifference]> {
         self.property_differences.as_deref()
     }
     /// <p>The drift status of the resource in a stack instance.</p>
@@ -73,9 +67,7 @@ impl StackInstanceResourceDriftsSummary {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    pub fn stack_resource_drift_status(
-        &self,
-    ) -> ::std::option::Option<&crate::types::StackResourceDriftStatus> {
+    pub fn stack_resource_drift_status(&self) -> ::std::option::Option<&crate::types::StackResourceDriftStatus> {
         self.stack_resource_drift_status.as_ref()
     }
     /// <p>Time at which the stack instance drift detection operation was initiated.</p>
@@ -92,20 +84,15 @@ impl StackInstanceResourceDriftsSummary {
 
 /// A builder for [`StackInstanceResourceDriftsSummary`](crate::types::StackInstanceResourceDriftsSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackInstanceResourceDriftsSummaryBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) logical_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) physical_resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) physical_resource_id_context:
-        ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>>,
+    pub(crate) physical_resource_id_context: ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
-    pub(crate) property_differences:
-        ::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>>,
-    pub(crate) stack_resource_drift_status:
-        ::std::option::Option<crate::types::StackResourceDriftStatus>,
+    pub(crate) property_differences: ::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>>,
+    pub(crate) stack_resource_drift_status: ::std::option::Option<crate::types::StackResourceDriftStatus>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StackInstanceResourceDriftsSummaryBuilder {
@@ -124,18 +111,12 @@ impl StackInstanceResourceDriftsSummaryBuilder {
         &self.stack_id
     }
     /// <p>The logical name of the resource specified in the template.</p>
-    pub fn logical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The logical name of the resource specified in the template.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logical_resource_id = input;
         self
     }
@@ -144,18 +125,12 @@ impl StackInstanceResourceDriftsSummaryBuilder {
         &self.logical_resource_id
     }
     /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
-    pub fn physical_resource_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn physical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.physical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
-    pub fn set_physical_resource_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_physical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.physical_resource_id = input;
         self
     }
@@ -168,10 +143,7 @@ impl StackInstanceResourceDriftsSummaryBuilder {
     /// To override the contents of this collection use [`set_physical_resource_id_context`](Self::set_physical_resource_id_context).
     ///
     /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs aren't enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
-    pub fn physical_resource_id_context(
-        mut self,
-        input: crate::types::PhysicalResourceIdContextKeyValuePair,
-    ) -> Self {
+    pub fn physical_resource_id_context(mut self, input: crate::types::PhysicalResourceIdContextKeyValuePair) -> Self {
         let mut v = self.physical_resource_id_context.unwrap_or_default();
         v.push(input);
         self.physical_resource_id_context = ::std::option::Option::Some(v);
@@ -180,33 +152,22 @@ impl StackInstanceResourceDriftsSummaryBuilder {
     /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs aren't enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
     pub fn set_physical_resource_id_context(
         mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>,
-        >,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>>,
     ) -> Self {
         self.physical_resource_id_context = input;
         self
     }
     /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs aren't enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
-    pub fn get_physical_resource_id_context(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>>
-    {
+    pub fn get_physical_resource_id_context(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>> {
         &self.physical_resource_id_context
     }
     /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
-    pub fn resource_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
@@ -226,17 +187,12 @@ impl StackInstanceResourceDriftsSummaryBuilder {
         self
     }
     /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
-    pub fn set_property_differences(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>>,
-    ) -> Self {
+    pub fn set_property_differences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>>) -> Self {
         self.property_differences = input;
         self
     }
     /// <p>Status of the actual configuration of the resource compared to its expected configuration. These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
-    pub fn get_property_differences(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>> {
+    pub fn get_property_differences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>> {
         &self.property_differences
     }
     /// <p>The drift status of the resource in a stack instance.</p>
@@ -246,10 +202,7 @@ impl StackInstanceResourceDriftsSummaryBuilder {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    pub fn stack_resource_drift_status(
-        mut self,
-        input: crate::types::StackResourceDriftStatus,
-    ) -> Self {
+    pub fn stack_resource_drift_status(mut self, input: crate::types::StackResourceDriftStatus) -> Self {
         self.stack_resource_drift_status = ::std::option::Option::Some(input);
         self
     }
@@ -260,10 +213,7 @@ impl StackInstanceResourceDriftsSummaryBuilder {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    pub fn set_stack_resource_drift_status(
-        mut self,
-        input: ::std::option::Option<crate::types::StackResourceDriftStatus>,
-    ) -> Self {
+    pub fn set_stack_resource_drift_status(mut self, input: ::std::option::Option<crate::types::StackResourceDriftStatus>) -> Self {
         self.stack_resource_drift_status = input;
         self
     }
@@ -274,9 +224,7 @@ impl StackInstanceResourceDriftsSummaryBuilder {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    pub fn get_stack_resource_drift_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::StackResourceDriftStatus> {
+    pub fn get_stack_resource_drift_status(&self) -> &::std::option::Option<crate::types::StackResourceDriftStatus> {
         &self.stack_resource_drift_status
     }
     /// <p>Time at which the stack instance drift detection operation was initiated.</p>
@@ -285,10 +233,7 @@ impl StackInstanceResourceDriftsSummaryBuilder {
         self
     }
     /// <p>Time at which the stack instance drift detection operation was initiated.</p>
-    pub fn set_timestamp(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }

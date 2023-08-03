@@ -22,16 +22,14 @@ impl ListRecordingConfigurationsInput {
 }
 impl ListRecordingConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListRecordingConfigurationsInput`](crate::operation::list_recording_configurations::ListRecordingConfigurationsInput).
-    pub fn builder() -> crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsInputBuilder {
         crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRecordingConfigurationsInput`](crate::operation::list_recording_configurations::ListRecordingConfigurationsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecordingConfigurationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -72,11 +70,9 @@ impl ListRecordingConfigurationsInputBuilder {
         crate::operation::list_recording_configurations::ListRecordingConfigurationsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_recording_configurations::ListRecordingConfigurationsInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::list_recording_configurations::ListRecordingConfigurationsInput {
+            next_token: self.next_token,
+            max_results: self.max_results.unwrap_or_default(),
+        })
     }
 }

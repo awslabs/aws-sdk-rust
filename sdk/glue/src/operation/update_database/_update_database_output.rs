@@ -19,9 +19,7 @@ impl UpdateDatabaseOutput {
 
 /// A builder for [`UpdateDatabaseOutput`](crate::operation::update_database::UpdateDatabaseOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateDatabaseOutputBuilder {
     _request_id: Option<String>,
 }

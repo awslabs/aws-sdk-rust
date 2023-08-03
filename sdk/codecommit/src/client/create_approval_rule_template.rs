@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`CreateApprovalRuleTemplateOutput`](crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateOutput) with field(s):
     ///   - [`approval_rule_template(Option<ApprovalRuleTemplate>)`](crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateOutput::approval_rule_template): <p>The content and structure of the created approval rule template.</p>
     /// - On failure, responds with [`SdkError<CreateApprovalRuleTemplateError>`](crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError)
-    pub fn create_approval_rule_template(&self) -> crate::operation::create_approval_rule_template::builders::CreateApprovalRuleTemplateFluentBuilder{
+    pub fn create_approval_rule_template(
+        &self,
+    ) -> crate::operation::create_approval_rule_template::builders::CreateApprovalRuleTemplateFluentBuilder {
         crate::operation::create_approval_rule_template::builders::CreateApprovalRuleTemplateFluentBuilder::new(self.handle.clone())
     }
 }

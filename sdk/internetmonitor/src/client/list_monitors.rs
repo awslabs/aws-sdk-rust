@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`monitors(Option<Vec<Monitor>>)`](crate::operation::list_monitors::ListMonitorsOutput::monitors): <p>A list of monitors.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_monitors::ListMonitorsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
     /// - On failure, responds with [`SdkError<ListMonitorsError>`](crate::operation::list_monitors::ListMonitorsError)
-    pub fn list_monitors(
-        &self,
-    ) -> crate::operation::list_monitors::builders::ListMonitorsFluentBuilder {
-        crate::operation::list_monitors::builders::ListMonitorsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_monitors(&self) -> crate::operation::list_monitors::builders::ListMonitorsFluentBuilder {
+        crate::operation::list_monitors::builders::ListMonitorsFluentBuilder::new(self.handle.clone())
     }
 }

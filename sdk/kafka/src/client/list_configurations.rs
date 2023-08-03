@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`configurations(Option<Vec<Configuration>>)`](crate::operation::list_configurations::ListConfigurationsOutput::configurations): <p>An array of MSK configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_configurations::ListConfigurationsOutput::next_token): <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
     /// - On failure, responds with [`SdkError<ListConfigurationsError>`](crate::operation::list_configurations::ListConfigurationsError)
-    pub fn list_configurations(
-        &self,
-    ) -> crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder {
-        crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_configurations(&self) -> crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder {
+        crate::operation::list_configurations::builders::ListConfigurationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl DescribeIpamPoolsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_ipam_pools::DescribeIpamPoolsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ipam_pools::DescribeIpamPoolsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ipam_pools::DescribeIpamPoolsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_ipam_pools();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeIpamPoolsFluentBuilder {
         }
     }
     /// Access the DescribeIpamPools as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_ipam_pools::builders::DescribeIpamPoolsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeIpamPoolsFluentBuilder {
             crate::operation::describe_ipam_pools::DescribeIpamPools,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ipam_pools::DescribeIpamPoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ipam_pools::DescribeIpamPoolsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeIpamPoolsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeIpamPoolsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ipam_pools::DescribeIpamPoolsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ipam_pools::DescribeIpamPoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ipam_pools::DescribeIpamPoolsError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeIpamPoolsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ipam_pools::DescribeIpamPoolsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ipam_pools::DescribeIpamPoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ipam_pools::DescribeIpamPoolsError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeIpamPoolsFluentBuilder {
             crate::operation::describe_ipam_pools::DescribeIpamPools,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_ipam_pools::DescribeIpamPoolsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_ipam_pools::DescribeIpamPoolsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_ipam_pools::paginator::DescribeIpamPoolsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_ipam_pools::paginator::DescribeIpamPoolsPaginator {
-        crate::operation::describe_ipam_pools::paginator::DescribeIpamPoolsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_ipam_pools::paginator::DescribeIpamPoolsPaginator {
+        crate::operation::describe_ipam_pools::paginator::DescribeIpamPoolsPaginator::new(self.handle, self.inner)
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -157,10 +136,7 @@ impl DescribeIpamPoolsFluentBuilder {
         self
     }
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -201,25 +177,17 @@ impl DescribeIpamPoolsFluentBuilder {
     /// To override the contents of this collection use [`set_ipam_pool_ids`](Self::set_ipam_pool_ids).
     ///
     /// <p>The IDs of the IPAM pools you would like information on.</p>
-    pub fn ipam_pool_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ipam_pool_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_pool_ids(input.into());
         self
     }
     /// <p>The IDs of the IPAM pools you would like information on.</p>
-    pub fn set_ipam_pool_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_ipam_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ipam_pool_ids(input);
         self
     }
     /// <p>The IDs of the IPAM pools you would like information on.</p>
-    pub fn get_ipam_pool_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ipam_pool_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_ipam_pool_ids()
     }
 }

@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for DeleteTransitGatewayOutput {
 }
 impl DeleteTransitGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayOutput`](crate::operation::delete_transit_gateway::DeleteTransitGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_transit_gateway::builders::DeleteTransitGatewayOutputBuilder {
+    pub fn builder() -> crate::operation::delete_transit_gateway::builders::DeleteTransitGatewayOutputBuilder {
         crate::operation::delete_transit_gateway::builders::DeleteTransitGatewayOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteTransitGatewayOutput`](crate::operation::delete_transit_gateway::DeleteTransitGatewayOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayOutputBuilder {
     pub(crate) transit_gateway: ::std::option::Option<crate::types::TransitGateway>,
     _request_id: Option<String>,
@@ -43,10 +40,7 @@ impl DeleteTransitGatewayOutputBuilder {
         self
     }
     /// <p>Information about the deleted transit gateway.</p>
-    pub fn set_transit_gateway(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGateway>,
-    ) -> Self {
+    pub fn set_transit_gateway(mut self, input: ::std::option::Option<crate::types::TransitGateway>) -> Self {
         self.transit_gateway = input;
         self
     }

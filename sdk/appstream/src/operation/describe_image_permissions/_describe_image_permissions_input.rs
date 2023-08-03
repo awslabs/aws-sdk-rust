@@ -36,23 +36,18 @@ impl DescribeImagePermissionsInput {
 }
 impl DescribeImagePermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeImagePermissionsInput`](crate::operation::describe_image_permissions::DescribeImagePermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_image_permissions::builders::DescribeImagePermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_image_permissions::builders::DescribeImagePermissionsInputBuilder {
         crate::operation::describe_image_permissions::builders::DescribeImagePermissionsInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeImagePermissionsInput`](crate::operation::describe_image_permissions::DescribeImagePermissionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImagePermissionsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) shared_aws_account_ids:
-        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) shared_aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeImagePermissionsInputBuilder {
@@ -89,27 +84,19 @@ impl DescribeImagePermissionsInputBuilder {
     /// To override the contents of this collection use [`set_shared_aws_account_ids`](Self::set_shared_aws_account_ids).
     ///
     /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
-    pub fn shared_aws_account_ids(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn shared_aws_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.shared_aws_account_ids.unwrap_or_default();
         v.push(input.into());
         self.shared_aws_account_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
-    pub fn set_shared_aws_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_shared_aws_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.shared_aws_account_ids = input;
         self
     }
     /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
-    pub fn get_shared_aws_account_ids(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_shared_aws_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.shared_aws_account_ids
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -133,13 +120,11 @@ impl DescribeImagePermissionsInputBuilder {
         crate::operation::describe_image_permissions::DescribeImagePermissionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_image_permissions::DescribeImagePermissionsInput {
-                name: self.name,
-                max_results: self.max_results,
-                shared_aws_account_ids: self.shared_aws_account_ids,
-                next_token: self.next_token,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_image_permissions::DescribeImagePermissionsInput {
+            name: self.name,
+            max_results: self.max_results,
+            shared_aws_account_ids: self.shared_aws_account_ids,
+            next_token: self.next_token,
+        })
     }
 }

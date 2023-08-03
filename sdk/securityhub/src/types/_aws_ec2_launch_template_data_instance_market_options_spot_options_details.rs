@@ -44,16 +44,14 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
 }
 impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails).
-    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder::default()
     }
 }
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
     pub(crate) block_duration_minutes: ::std::option::Option<i32>,
     pub(crate) instance_interruption_behavior: ::std::option::Option<::std::string::String>,
@@ -77,25 +75,17 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
         &self.block_duration_minutes
     }
     /// <p> The behavior when a Spot Instance is interrupted. </p>
-    pub fn instance_interruption_behavior(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn instance_interruption_behavior(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_interruption_behavior = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The behavior when a Spot Instance is interrupted. </p>
-    pub fn set_instance_interruption_behavior(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_instance_interruption_behavior(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_interruption_behavior = input;
         self
     }
     /// <p> The behavior when a Spot Instance is interrupted. </p>
-    pub fn get_instance_interruption_behavior(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_instance_interruption_behavior(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_interruption_behavior
     }
     /// <p> The maximum hourly price you're willing to pay for the Spot Instances. </p>
@@ -113,18 +103,12 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
         &self.max_price
     }
     /// <p> The Spot Instance request type. </p>
-    pub fn spot_instance_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn spot_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Spot Instance request type. </p>
-    pub fn set_spot_instance_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_spot_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spot_instance_type = input;
         self
     }
@@ -147,9 +131,7 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
         &self.valid_until
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
+    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
             block_duration_minutes: self.block_duration_minutes.unwrap_or_default(),
             instance_interruption_behavior: self.instance_interruption_behavior,

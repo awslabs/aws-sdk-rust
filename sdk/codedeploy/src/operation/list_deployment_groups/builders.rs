@@ -37,9 +37,7 @@ impl ListDeploymentGroupsFluentBuilder {
         }
     }
     /// Access the ListDeploymentGroups as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_deployment_groups::builders::ListDeploymentGroupsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_deployment_groups::builders::ListDeploymentGroupsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl ListDeploymentGroupsFluentBuilder {
             crate::operation::list_deployment_groups::ListDeploymentGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_groups::ListDeploymentGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_groups::ListDeploymentGroupsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl ListDeploymentGroupsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl ListDeploymentGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployment_groups::ListDeploymentGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_groups::ListDeploymentGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_groups::ListDeploymentGroupsError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl ListDeploymentGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deployment_groups::ListDeploymentGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_groups::ListDeploymentGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_groups::ListDeploymentGroupsError>,
     > {
         self.send_middleware().await
     }
@@ -116,36 +105,23 @@ impl ListDeploymentGroupsFluentBuilder {
             crate::operation::list_deployment_groups::ListDeploymentGroups,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_groups::ListDeploymentGroupsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_deployment_groups::ListDeploymentGroupsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_deployment_groups::paginator::ListDeploymentGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_deployment_groups::paginator::ListDeploymentGroupsPaginator {
-        crate::operation::list_deployment_groups::paginator::ListDeploymentGroupsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_deployment_groups::paginator::ListDeploymentGroupsPaginator {
+        crate::operation::list_deployment_groups::paginator::ListDeploymentGroupsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }

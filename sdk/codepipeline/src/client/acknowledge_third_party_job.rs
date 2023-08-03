@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`AcknowledgeThirdPartyJobOutput`](crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput) with field(s):
     ///   - [`status(Option<JobStatus>)`](crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput::status): <p>The status information for the third party job, if any.</p>
     /// - On failure, responds with [`SdkError<AcknowledgeThirdPartyJobError>`](crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobError)
-    pub fn acknowledge_third_party_job(&self) -> crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobFluentBuilder{
+    pub fn acknowledge_third_party_job(&self) -> crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobFluentBuilder {
         crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobFluentBuilder::new(self.handle.clone())
     }
 }

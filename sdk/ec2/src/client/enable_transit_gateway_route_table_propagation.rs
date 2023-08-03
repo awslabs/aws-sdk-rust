@@ -10,7 +10,11 @@ impl super::Client {
     /// - On success, responds with [`EnableTransitGatewayRouteTablePropagationOutput`](crate::operation::enable_transit_gateway_route_table_propagation::EnableTransitGatewayRouteTablePropagationOutput) with field(s):
     ///   - [`propagation(Option<TransitGatewayPropagation>)`](crate::operation::enable_transit_gateway_route_table_propagation::EnableTransitGatewayRouteTablePropagationOutput::propagation): <p>Information about route propagation.</p>
     /// - On failure, responds with [`SdkError<EnableTransitGatewayRouteTablePropagationError>`](crate::operation::enable_transit_gateway_route_table_propagation::EnableTransitGatewayRouteTablePropagationError)
-    pub fn enable_transit_gateway_route_table_propagation(&self) -> crate::operation::enable_transit_gateway_route_table_propagation::builders::EnableTransitGatewayRouteTablePropagationFluentBuilder{
-        crate::operation::enable_transit_gateway_route_table_propagation::builders::EnableTransitGatewayRouteTablePropagationFluentBuilder::new(self.handle.clone())
+    pub fn enable_transit_gateway_route_table_propagation(
+        &self,
+    ) -> crate::operation::enable_transit_gateway_route_table_propagation::builders::EnableTransitGatewayRouteTablePropagationFluentBuilder {
+        crate::operation::enable_transit_gateway_route_table_propagation::builders::EnableTransitGatewayRouteTablePropagationFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

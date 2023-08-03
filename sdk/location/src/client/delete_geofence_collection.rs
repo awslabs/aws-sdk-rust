@@ -6,10 +6,7 @@ impl super::Client {
     ///   - [`collection_name(impl ::std::convert::Into<String>)`](crate::operation::delete_geofence_collection::builders::DeleteGeofenceCollectionFluentBuilder::collection_name) / [`set_collection_name(Option<String>)`](crate::operation::delete_geofence_collection::builders::DeleteGeofenceCollectionFluentBuilder::set_collection_name): <p>The name of the geofence collection to be deleted.</p>
     /// - On success, responds with [`DeleteGeofenceCollectionOutput`](crate::operation::delete_geofence_collection::DeleteGeofenceCollectionOutput)
     /// - On failure, responds with [`SdkError<DeleteGeofenceCollectionError>`](crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError)
-    pub fn delete_geofence_collection(
-        &self,
-    ) -> crate::operation::delete_geofence_collection::builders::DeleteGeofenceCollectionFluentBuilder
-    {
+    pub fn delete_geofence_collection(&self) -> crate::operation::delete_geofence_collection::builders::DeleteGeofenceCollectionFluentBuilder {
         crate::operation::delete_geofence_collection::builders::DeleteGeofenceCollectionFluentBuilder::new(self.handle.clone())
     }
 }

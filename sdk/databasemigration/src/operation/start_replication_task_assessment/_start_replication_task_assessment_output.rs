@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for StartReplicationTaskAssessmentOutput 
 }
 impl StartReplicationTaskAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`StartReplicationTaskAssessmentOutput`](crate::operation::start_replication_task_assessment::StartReplicationTaskAssessmentOutput).
-    pub fn builder() -> crate::operation::start_replication_task_assessment::builders::StartReplicationTaskAssessmentOutputBuilder{
+    pub fn builder() -> crate::operation::start_replication_task_assessment::builders::StartReplicationTaskAssessmentOutputBuilder {
         crate::operation::start_replication_task_assessment::builders::StartReplicationTaskAssessmentOutputBuilder::default()
     }
 }
 
 /// A builder for [`StartReplicationTaskAssessmentOutput`](crate::operation::start_replication_task_assessment::StartReplicationTaskAssessmentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartReplicationTaskAssessmentOutputBuilder {
     pub(crate) replication_task: ::std::option::Option<crate::types::ReplicationTask>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl StartReplicationTaskAssessmentOutputBuilder {
         self
     }
     /// <p> The assessed replication task. </p>
-    pub fn set_replication_task(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationTask>,
-    ) -> Self {
+    pub fn set_replication_task(mut self, input: ::std::option::Option<crate::types::ReplicationTask>) -> Self {
         self.replication_task = input;
         self
     }
@@ -64,10 +59,7 @@ impl StartReplicationTaskAssessmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartReplicationTaskAssessmentOutput`](crate::operation::start_replication_task_assessment::StartReplicationTaskAssessmentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_replication_task_assessment::StartReplicationTaskAssessmentOutput
-    {
+    pub fn build(self) -> crate::operation::start_replication_task_assessment::StartReplicationTaskAssessmentOutput {
         crate::operation::start_replication_task_assessment::StartReplicationTaskAssessmentOutput {
             replication_task: self.replication_task,
             _request_id: self._request_id,

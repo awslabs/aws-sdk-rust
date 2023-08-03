@@ -26,7 +26,7 @@ impl DescribeFleetAdvisorSchemasInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetAdvisorSchemasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_fleet_advisor_schemas::builders::DescribeFleetAdvisorSchemasInputBuilder,
+    inner: crate::operation::describe_fleet_advisor_schemas::builders::DescribeFleetAdvisorSchemasInputBuilder,
 }
 impl DescribeFleetAdvisorSchemasFluentBuilder {
     /// Creates a new `DescribeFleetAdvisorSchemas`.
@@ -37,7 +37,7 @@ impl DescribeFleetAdvisorSchemasFluentBuilder {
         }
     }
     /// Access the DescribeFleetAdvisorSchemas as a reference.
-    pub fn as_input(&self) -> &crate::operation::describe_fleet_advisor_schemas::builders::DescribeFleetAdvisorSchemasInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_advisor_schemas::builders::DescribeFleetAdvisorSchemasInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DescribeFleetAdvisorSchemasFluentBuilder {
             crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemas,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DescribeFleetAdvisorSchemasFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DescribeFleetAdvisorSchemasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DescribeFleetAdvisorSchemasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasError>,
     > {
         self.send_middleware().await
     }
@@ -114,16 +105,14 @@ impl DescribeFleetAdvisorSchemasFluentBuilder {
             crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemas,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_advisor_schemas::paginator::DescribeFleetAdvisorSchemasPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_fleet_advisor_schemas::paginator::DescribeFleetAdvisorSchemasPaginator{
+    pub fn into_paginator(self) -> crate::operation::describe_fleet_advisor_schemas::paginator::DescribeFleetAdvisorSchemasPaginator {
         crate::operation::describe_fleet_advisor_schemas::paginator::DescribeFleetAdvisorSchemasPaginator::new(self.handle, self.inner)
     }
     /// Appends an item to `Filters`.
@@ -160,10 +149,7 @@ impl DescribeFleetAdvisorSchemasFluentBuilder {
     /// <li> <p> <code>server-ip-address</code> – The IP address of the schema database's server.</p> </li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }

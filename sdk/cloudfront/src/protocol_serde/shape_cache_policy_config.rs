@@ -27,7 +27,10 @@ pub fn ser_cache_policy_config(
     }
     if let Some(var_6) = &input.parameters_in_cache_key_and_forwarded_to_origin {
         let inner_writer = scope.start_el("ParametersInCacheKeyAndForwardedToOrigin");
-        crate::protocol_serde::shape_parameters_in_cache_key_and_forwarded_to_origin::ser_parameters_in_cache_key_and_forwarded_to_origin(var_6, inner_writer)?
+        crate::protocol_serde::shape_parameters_in_cache_key_and_forwarded_to_origin::ser_parameters_in_cache_key_and_forwarded_to_origin(
+            var_6,
+            inner_writer,
+        )?
     }
     scope.finish();
     Ok(())

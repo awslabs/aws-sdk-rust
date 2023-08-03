@@ -8,11 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteNodegroupOutput`](crate::operation::delete_nodegroup::DeleteNodegroupOutput) with field(s):
     ///   - [`nodegroup(Option<Nodegroup>)`](crate::operation::delete_nodegroup::DeleteNodegroupOutput::nodegroup): <p>The full description of your deleted node group.</p>
     /// - On failure, responds with [`SdkError<DeleteNodegroupError>`](crate::operation::delete_nodegroup::DeleteNodegroupError)
-    pub fn delete_nodegroup(
-        &self,
-    ) -> crate::operation::delete_nodegroup::builders::DeleteNodegroupFluentBuilder {
-        crate::operation::delete_nodegroup::builders::DeleteNodegroupFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_nodegroup(&self) -> crate::operation::delete_nodegroup::builders::DeleteNodegroupFluentBuilder {
+        crate::operation::delete_nodegroup::builders::DeleteNodegroupFluentBuilder::new(self.handle.clone())
     }
 }

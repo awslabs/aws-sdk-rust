@@ -5,8 +5,7 @@
 pub struct DescribeContainerInstancesOutput {
     /// <p>The list of container instances.</p>
     #[doc(hidden)]
-    pub container_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstance>>,
+    pub container_instances: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstance>>,
     /// <p>Any failures associated with the call.</p>
     #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
@@ -29,19 +28,16 @@ impl ::aws_http::request_id::RequestId for DescribeContainerInstancesOutput {
 }
 impl DescribeContainerInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeContainerInstancesOutput`](crate::operation::describe_container_instances::DescribeContainerInstancesOutput).
-    pub fn builder() -> crate::operation::describe_container_instances::builders::DescribeContainerInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_container_instances::builders::DescribeContainerInstancesOutputBuilder {
         crate::operation::describe_container_instances::builders::DescribeContainerInstancesOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeContainerInstancesOutput`](crate::operation::describe_container_instances::DescribeContainerInstancesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeContainerInstancesOutputBuilder {
-    pub(crate) container_instances:
-        ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstance>>,
+    pub(crate) container_instances: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstance>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl DescribeContainerInstancesOutputBuilder {
         self
     }
     /// <p>The list of container instances.</p>
-    pub fn set_container_instances(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstance>>,
-    ) -> Self {
+    pub fn set_container_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstance>>) -> Self {
         self.container_instances = input;
         self
     }
     /// <p>The list of container instances.</p>
-    pub fn get_container_instances(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerInstance>> {
+    pub fn get_container_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerInstance>> {
         &self.container_instances
     }
     /// Appends an item to `failures`.
@@ -83,10 +74,7 @@ impl DescribeContainerInstancesOutputBuilder {
         self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
-    ) -> Self {
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
         self.failures = input;
         self
     }
@@ -104,9 +92,7 @@ impl DescribeContainerInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeContainerInstancesOutput`](crate::operation::describe_container_instances::DescribeContainerInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_container_instances::DescribeContainerInstancesOutput {
+    pub fn build(self) -> crate::operation::describe_container_instances::DescribeContainerInstancesOutput {
         crate::operation::describe_container_instances::DescribeContainerInstancesOutput {
             container_instances: self.container_instances,
             failures: self.failures,

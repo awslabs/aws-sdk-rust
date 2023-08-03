@@ -26,7 +26,7 @@ impl BatchGetRumMetricDefinitionsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetRumMetricDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsInputBuilder,
+    inner: crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsInputBuilder,
 }
 impl BatchGetRumMetricDefinitionsFluentBuilder {
     /// Creates a new `BatchGetRumMetricDefinitions`.
@@ -37,7 +37,7 @@ impl BatchGetRumMetricDefinitionsFluentBuilder {
         }
     }
     /// Access the BatchGetRumMetricDefinitions as a reference.
-    pub fn as_input(&self) -> &crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl BatchGetRumMetricDefinitionsFluentBuilder {
             crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl BatchGetRumMetricDefinitionsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl BatchGetRumMetricDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl BatchGetRumMetricDefinitionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsError>,
     > {
         self.send_middleware().await
     }
@@ -114,31 +105,23 @@ impl BatchGetRumMetricDefinitionsFluentBuilder {
             crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitions,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::batch_get_rum_metric_definitions::paginator::BatchGetRumMetricDefinitionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::batch_get_rum_metric_definitions::paginator::BatchGetRumMetricDefinitionsPaginator{
+    pub fn into_paginator(self) -> crate::operation::batch_get_rum_metric_definitions::paginator::BatchGetRumMetricDefinitionsPaginator {
         crate::operation::batch_get_rum_metric_definitions::paginator::BatchGetRumMetricDefinitionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
-    pub fn app_monitor_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn app_monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_monitor_name(input.into());
         self
     }
     /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
-    pub fn set_app_monitor_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_app_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_monitor_name(input);
         self
     }
@@ -152,10 +135,7 @@ impl BatchGetRumMetricDefinitionsFluentBuilder {
         self
     }
     /// <p>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
-    pub fn set_destination(
-        mut self,
-        input: ::std::option::Option<crate::types::MetricDestination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<crate::types::MetricDestination>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }
@@ -165,19 +145,13 @@ impl BatchGetRumMetricDefinitionsFluentBuilder {
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
-    pub fn destination_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_arn(input.into());
         self
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
-    pub fn set_destination_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
     }

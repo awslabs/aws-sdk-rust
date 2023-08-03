@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeAppVersionAppComponentOutput 
 }
 impl DescribeAppVersionAppComponentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppVersionAppComponentOutput`](crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentOutput).
-    pub fn builder() -> crate::operation::describe_app_version_app_component::builders::DescribeAppVersionAppComponentOutputBuilder{
+    pub fn builder() -> crate::operation::describe_app_version_app_component::builders::DescribeAppVersionAppComponentOutputBuilder {
         crate::operation::describe_app_version_app_component::builders::DescribeAppVersionAppComponentOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeAppVersionAppComponentOutput`](crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppVersionAppComponentOutputBuilder {
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
@@ -86,10 +84,7 @@ impl DescribeAppVersionAppComponentOutputBuilder {
         self
     }
     /// <p>The list of Application Components that belong to this resource.</p>
-    pub fn set_app_component(
-        mut self,
-        input: ::std::option::Option<crate::types::AppComponent>,
-    ) -> Self {
+    pub fn set_app_component(mut self, input: ::std::option::Option<crate::types::AppComponent>) -> Self {
         self.app_component = input;
         self
     }
@@ -107,10 +102,7 @@ impl DescribeAppVersionAppComponentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAppVersionAppComponentOutput`](crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentOutput
-    {
+    pub fn build(self) -> crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentOutput {
         crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentOutput {
             app_arn: self.app_arn,
             app_version: self.app_version,

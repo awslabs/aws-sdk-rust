@@ -30,9 +30,7 @@ impl PropertyGroupRequest {
 
 /// A builder for [`PropertyGroupRequest`](crate::types::PropertyGroupRequest).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PropertyGroupRequestBuilder {
     pub(crate) group_type: ::std::option::Option<crate::types::GroupType>,
     pub(crate) property_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,27 +55,19 @@ impl PropertyGroupRequestBuilder {
     /// To override the contents of this collection use [`set_property_names`](Self::set_property_names).
     ///
     /// <p>The names of properties.</p>
-    pub fn property_names(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn property_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.property_names.unwrap_or_default();
         v.push(input.into());
         self.property_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of properties.</p>
-    pub fn set_property_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_property_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.property_names = input;
         self
     }
     /// <p>The names of properties.</p>
-    pub fn get_property_names(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_property_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.property_names
     }
     /// Consumes the builder and constructs a [`PropertyGroupRequest`](crate::types::PropertyGroupRequest).

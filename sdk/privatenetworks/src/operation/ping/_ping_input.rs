@@ -12,18 +12,11 @@ impl PingInput {
 
 /// A builder for [`PingInput`](crate::operation::ping::PingInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PingInputBuilder {}
 impl PingInputBuilder {
     /// Consumes the builder and constructs a [`PingInput`](crate::operation::ping::PingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::ping::PingInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::ping::PingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::ping::PingInput {})
     }
 }

@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`compliance_by_config_rules(Option<Vec<ComplianceByConfigRule>>)`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput::compliance_by_config_rules): <p>Indicates whether each of the specified Config rules is compliant.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     /// - On failure, responds with [`SdkError<DescribeComplianceByConfigRuleError>`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError)
-    pub fn describe_compliance_by_config_rule(&self) -> crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleFluentBuilder{
+    pub fn describe_compliance_by_config_rule(
+        &self,
+    ) -> crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleFluentBuilder {
         crate::operation::describe_compliance_by_config_rule::builders::DescribeComplianceByConfigRuleFluentBuilder::new(self.handle.clone())
     }
 }

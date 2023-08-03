@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`auto_scaling_instances(Option<Vec<AutoScalingInstanceDetails>>)`](crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesOutput::auto_scaling_instances): <p>The instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     /// - On failure, responds with [`SdkError<DescribeAutoScalingInstancesError>`](crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesError)
-    pub fn describe_auto_scaling_instances(&self) -> crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesFluentBuilder{
+    pub fn describe_auto_scaling_instances(
+        &self,
+    ) -> crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesFluentBuilder {
         crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesFluentBuilder::new(self.handle.clone())
     }
 }

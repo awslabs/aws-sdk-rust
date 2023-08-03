@@ -19,9 +19,7 @@ impl StopHumanLoopOutput {
 
 /// A builder for [`StopHumanLoopOutput`](crate::operation::stop_human_loop::StopHumanLoopOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopHumanLoopOutputBuilder {
     _request_id: Option<String>,
 }

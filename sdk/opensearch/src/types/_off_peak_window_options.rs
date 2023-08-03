@@ -32,9 +32,7 @@ impl OffPeakWindowOptions {
 
 /// A builder for [`OffPeakWindowOptions`](crate::types::OffPeakWindowOptions).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OffPeakWindowOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) off_peak_window: ::std::option::Option<crate::types::OffPeakWindow>,
@@ -63,10 +61,7 @@ impl OffPeakWindowOptionsBuilder {
         self
     }
     /// <p>Off-peak window settings for the domain.</p>
-    pub fn set_off_peak_window(
-        mut self,
-        input: ::std::option::Option<crate::types::OffPeakWindow>,
-    ) -> Self {
+    pub fn set_off_peak_window(mut self, input: ::std::option::Option<crate::types::OffPeakWindow>) -> Self {
         self.off_peak_window = input;
         self
     }

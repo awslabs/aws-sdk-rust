@@ -23,9 +23,7 @@ impl OutputConfigInput {
 
 /// A builder for [`OutputConfigInput`](crate::types::OutputConfigInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputConfigInputBuilder {
     pub(crate) s3_data: ::std::option::Option<crate::types::ExportS3DataInput>,
 }
@@ -36,10 +34,7 @@ impl OutputConfigInputBuilder {
         self
     }
     /// <p>Path to Amazon S3 storage location for the output configuration file.</p>
-    pub fn set_s3_data(
-        mut self,
-        input: ::std::option::Option<crate::types::ExportS3DataInput>,
-    ) -> Self {
+    pub fn set_s3_data(mut self, input: ::std::option::Option<crate::types::ExportS3DataInput>) -> Self {
         self.s3_data = input;
         self
     }
@@ -49,8 +44,6 @@ impl OutputConfigInputBuilder {
     }
     /// Consumes the builder and constructs a [`OutputConfigInput`](crate::types::OutputConfigInput).
     pub fn build(self) -> crate::types::OutputConfigInput {
-        crate::types::OutputConfigInput {
-            s3_data: self.s3_data,
-        }
+        crate::types::OutputConfigInput { s3_data: self.s3_data }
     }
 }

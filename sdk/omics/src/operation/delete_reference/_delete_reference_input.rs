@@ -29,9 +29,7 @@ impl DeleteReferenceInput {
 
 /// A builder for [`DeleteReferenceInput`](crate::operation::delete_reference::DeleteReferenceInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteReferenceInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) reference_store_id: ::std::option::Option<::std::string::String>,
@@ -52,18 +50,12 @@ impl DeleteReferenceInputBuilder {
         &self.id
     }
     /// <p>The reference's store ID.</p>
-    pub fn reference_store_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reference's store ID.</p>
-    pub fn set_reference_store_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_store_id = input;
         self
     }
@@ -74,10 +66,7 @@ impl DeleteReferenceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReferenceInput`](crate::operation::delete_reference::DeleteReferenceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_reference::DeleteReferenceInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::delete_reference::DeleteReferenceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_reference::DeleteReferenceInput {
             id: self.id,
             reference_store_id: self.reference_store_id,

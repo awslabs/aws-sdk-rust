@@ -43,9 +43,7 @@ impl UpdateLayoutInput {
 
 /// A builder for [`UpdateLayoutInput`](crate::operation::update_layout::UpdateLayoutInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLayoutInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) layout_id: ::std::option::Option<::std::string::String>,
@@ -101,10 +99,7 @@ impl UpdateLayoutInputBuilder {
         self
     }
     /// <p>Information about which fields will be present in the layout, the order of the fields, and a read-only attribute of the field. </p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<crate::types::LayoutContent>,
-    ) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::LayoutContent>) -> Self {
         self.content = input;
         self
     }
@@ -113,12 +108,7 @@ impl UpdateLayoutInputBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`UpdateLayoutInput`](crate::operation::update_layout::UpdateLayoutInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_layout::UpdateLayoutInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_layout::UpdateLayoutInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_layout::UpdateLayoutInput {
             domain_id: self.domain_id,
             layout_id: self.layout_id,

@@ -23,9 +23,7 @@ impl JoinKeyProperties {
 
 /// A builder for [`JoinKeyProperties`](crate::types::JoinKeyProperties).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JoinKeyPropertiesBuilder {
     pub(crate) unique_key: ::std::option::Option<bool>,
 }
@@ -46,8 +44,6 @@ impl JoinKeyPropertiesBuilder {
     }
     /// Consumes the builder and constructs a [`JoinKeyProperties`](crate::types::JoinKeyProperties).
     pub fn build(self) -> crate::types::JoinKeyProperties {
-        crate::types::JoinKeyProperties {
-            unique_key: self.unique_key,
-        }
+        crate::types::JoinKeyProperties { unique_key: self.unique_key }
     }
 }

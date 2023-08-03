@@ -37,9 +37,7 @@ impl BasePathMapping {
 
 /// A builder for [`BasePathMapping`](crate::types::BasePathMapping).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BasePathMappingBuilder {
     pub(crate) base_path: ::std::option::Option<::std::string::String>,
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,

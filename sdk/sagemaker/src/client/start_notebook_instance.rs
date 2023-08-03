@@ -6,12 +6,7 @@ impl super::Client {
     ///   - [`notebook_instance_name(impl ::std::convert::Into<String>)`](crate::operation::start_notebook_instance::builders::StartNotebookInstanceFluentBuilder::notebook_instance_name) / [`set_notebook_instance_name(Option<String>)`](crate::operation::start_notebook_instance::builders::StartNotebookInstanceFluentBuilder::set_notebook_instance_name): <p>The name of the notebook instance to start.</p>
     /// - On success, responds with [`StartNotebookInstanceOutput`](crate::operation::start_notebook_instance::StartNotebookInstanceOutput)
     /// - On failure, responds with [`SdkError<StartNotebookInstanceError>`](crate::operation::start_notebook_instance::StartNotebookInstanceError)
-    pub fn start_notebook_instance(
-        &self,
-    ) -> crate::operation::start_notebook_instance::builders::StartNotebookInstanceFluentBuilder
-    {
-        crate::operation::start_notebook_instance::builders::StartNotebookInstanceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn start_notebook_instance(&self) -> crate::operation::start_notebook_instance::builders::StartNotebookInstanceFluentBuilder {
+        crate::operation::start_notebook_instance::builders::StartNotebookInstanceFluentBuilder::new(self.handle.clone())
     }
 }

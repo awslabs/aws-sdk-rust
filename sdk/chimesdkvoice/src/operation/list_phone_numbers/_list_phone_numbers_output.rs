@@ -28,17 +28,14 @@ impl ::aws_http::request_id::RequestId for ListPhoneNumbersOutput {
 }
 impl ListPhoneNumbersOutput {
     /// Creates a new builder-style object to manufacture [`ListPhoneNumbersOutput`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput).
-    pub fn builder() -> crate::operation::list_phone_numbers::builders::ListPhoneNumbersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_phone_numbers::builders::ListPhoneNumbersOutputBuilder {
         crate::operation::list_phone_numbers::builders::ListPhoneNumbersOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListPhoneNumbersOutput`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPhoneNumbersOutputBuilder {
     pub(crate) phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -57,17 +54,12 @@ impl ListPhoneNumbersOutputBuilder {
         self
     }
     /// <p>The phone number details.</p>
-    pub fn set_phone_numbers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
-    ) -> Self {
+    pub fn set_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>) -> Self {
         self.phone_numbers = input;
         self
     }
     /// <p>The phone number details.</p>
-    pub fn get_phone_numbers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
+    pub fn get_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
         &self.phone_numbers
     }
     /// <p>The token used to return the next page of results.</p>

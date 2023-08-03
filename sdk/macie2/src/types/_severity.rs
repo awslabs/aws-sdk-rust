@@ -30,9 +30,7 @@ impl Severity {
 
 /// A builder for [`Severity`](crate::types::Severity).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SeverityBuilder {
     pub(crate) description: ::std::option::Option<crate::types::SeverityDescription>,
     pub(crate) score: ::std::option::Option<i64>,
@@ -44,10 +42,7 @@ impl SeverityBuilder {
         self
     }
     /// <p>The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).</p>
-    pub fn set_description(
-        mut self,
-        input: ::std::option::Option<crate::types::SeverityDescription>,
-    ) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<crate::types::SeverityDescription>) -> Self {
         self.description = input;
         self
     }

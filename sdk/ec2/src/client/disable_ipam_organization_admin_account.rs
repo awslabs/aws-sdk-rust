@@ -8,7 +8,11 @@ impl super::Client {
     /// - On success, responds with [`DisableIpamOrganizationAdminAccountOutput`](crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountOutput) with field(s):
     ///   - [`success(Option<bool>)`](crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountOutput::success): <p>The result of disabling the IPAM account.</p>
     /// - On failure, responds with [`SdkError<DisableIpamOrganizationAdminAccountError>`](crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountError)
-    pub fn disable_ipam_organization_admin_account(&self) -> crate::operation::disable_ipam_organization_admin_account::builders::DisableIpamOrganizationAdminAccountFluentBuilder{
-        crate::operation::disable_ipam_organization_admin_account::builders::DisableIpamOrganizationAdminAccountFluentBuilder::new(self.handle.clone())
+    pub fn disable_ipam_organization_admin_account(
+        &self,
+    ) -> crate::operation::disable_ipam_organization_admin_account::builders::DisableIpamOrganizationAdminAccountFluentBuilder {
+        crate::operation::disable_ipam_organization_admin_account::builders::DisableIpamOrganizationAdminAccountFluentBuilder::new(
+            self.handle.clone(),
+        )
     }
 }

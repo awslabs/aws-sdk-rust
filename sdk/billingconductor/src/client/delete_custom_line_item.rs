@@ -8,12 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteCustomLineItemOutput`](crate::operation::delete_custom_line_item::DeleteCustomLineItemOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_custom_line_item::DeleteCustomLineItemOutput::arn): <p> Then ARN of the deleted custom line item. </p>
     /// - On failure, responds with [`SdkError<DeleteCustomLineItemError>`](crate::operation::delete_custom_line_item::DeleteCustomLineItemError)
-    pub fn delete_custom_line_item(
-        &self,
-    ) -> crate::operation::delete_custom_line_item::builders::DeleteCustomLineItemFluentBuilder
-    {
-        crate::operation::delete_custom_line_item::builders::DeleteCustomLineItemFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_custom_line_item(&self) -> crate::operation::delete_custom_line_item::builders::DeleteCustomLineItemFluentBuilder {
+        crate::operation::delete_custom_line_item::builders::DeleteCustomLineItemFluentBuilder::new(self.handle.clone())
     }
 }

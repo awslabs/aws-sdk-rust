@@ -35,9 +35,7 @@ impl DescribeEventsOutput {
 
 /// A builder for [`DescribeEventsOutput`](crate::operation::describe_events::DescribeEventsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventsOutputBuilder {
     pub(crate) server_events: ::std::option::Option<::std::vec::Vec<crate::types::ServerEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeEventsOutputBuilder {
         self
     }
     /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
-    pub fn set_server_events(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerEvent>>,
-    ) -> Self {
+    pub fn set_server_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServerEvent>>) -> Self {
         self.server_events = input;
         self
     }
     /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
-    pub fn get_server_events(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerEvent>> {
+    pub fn get_server_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerEvent>> {
         &self.server_events
     }
     /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>

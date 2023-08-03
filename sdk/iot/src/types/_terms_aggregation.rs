@@ -23,9 +23,7 @@ impl TermsAggregation {
 
 /// A builder for [`TermsAggregation`](crate::types::TermsAggregation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TermsAggregationBuilder {
     pub(crate) max_buckets: ::std::option::Option<i32>,
 }

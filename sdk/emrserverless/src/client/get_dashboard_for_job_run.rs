@@ -8,10 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetDashboardForJobRunOutput`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunOutput) with field(s):
     ///   - [`url(Option<String>)`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunOutput::url): <p>The URL to view job run's dashboard.</p>
     /// - On failure, responds with [`SdkError<GetDashboardForJobRunError>`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunError)
-    pub fn get_dashboard_for_job_run(
-        &self,
-    ) -> crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunFluentBuilder
-    {
+    pub fn get_dashboard_for_job_run(&self) -> crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunFluentBuilder {
         crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunFluentBuilder::new(self.handle.clone())
     }
 }

@@ -10,10 +10,7 @@ impl GetConfigInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_config::GetConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_config::GetConfigError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_config::GetConfigError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.get_config();
         fluent_builder.inner = self;
@@ -46,10 +43,7 @@ impl GetConfigFluentBuilder {
     pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_config::GetConfig,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_config::GetConfig, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_config::GetConfigError>,
     > {
         let handle = self.handle.clone();
@@ -60,10 +54,7 @@ impl GetConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -105,10 +96,7 @@ impl GetConfigFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_config::GetConfig,
-            ::aws_http::retry::AwsResponseRetryClassifier,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::get_config::GetConfig, ::aws_http::retry::AwsResponseRetryClassifier>,
         ::aws_smithy_http::result::SdkError<crate::operation::get_config::GetConfigError>,
     > {
         self.customize_middleware().await
@@ -133,10 +121,7 @@ impl GetConfigFluentBuilder {
         self
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn set_config_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigCapabilityType>,
-    ) -> Self {
+    pub fn set_config_type(mut self, input: ::std::option::Option<crate::types::ConfigCapabilityType>) -> Self {
         self.inner = self.inner.set_config_type(input);
         self
     }

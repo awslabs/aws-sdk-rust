@@ -22,16 +22,14 @@ impl ::aws_http::request_id::RequestId for UpdateLoggingConfigurationOutput {
 }
 impl UpdateLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLoggingConfigurationOutput`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput).
-    pub fn builder() -> crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationOutputBuilder {
         crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateLoggingConfigurationOutput`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLoggingConfigurationOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::LoggingConfigurationStatus>,
     _request_id: Option<String>,
@@ -43,10 +41,7 @@ impl UpdateLoggingConfigurationOutputBuilder {
         self
     }
     /// The status of the logging configuration.
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::LoggingConfigurationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::LoggingConfigurationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -64,9 +59,7 @@ impl UpdateLoggingConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateLoggingConfigurationOutput`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput {
         crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput {
             status: self.status,
             _request_id: self._request_id,

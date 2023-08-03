@@ -19,9 +19,7 @@ impl DeleteContainerOutput {
 
 /// A builder for [`DeleteContainerOutput`](crate::operation::delete_container::DeleteContainerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteContainerOutputBuilder {
     _request_id: Option<String>,
 }

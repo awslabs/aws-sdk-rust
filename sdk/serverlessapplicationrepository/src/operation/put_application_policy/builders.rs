@@ -37,9 +37,7 @@ impl PutApplicationPolicyFluentBuilder {
         }
     }
     /// Access the PutApplicationPolicy as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_application_policy::builders::PutApplicationPolicyInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_application_policy::builders::PutApplicationPolicyInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl PutApplicationPolicyFluentBuilder {
             crate::operation::put_application_policy::PutApplicationPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_application_policy::PutApplicationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_application_policy::PutApplicationPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl PutApplicationPolicyFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl PutApplicationPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_application_policy::PutApplicationPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_application_policy::PutApplicationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_application_policy::PutApplicationPolicyError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl PutApplicationPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_application_policy::PutApplicationPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_application_policy::PutApplicationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_application_policy::PutApplicationPolicyError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +105,17 @@ impl PutApplicationPolicyFluentBuilder {
             crate::operation::put_application_policy::PutApplicationPolicy,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::put_application_policy::PutApplicationPolicyError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_application_policy::PutApplicationPolicyError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_application_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -152,17 +133,12 @@ impl PutApplicationPolicyFluentBuilder {
         self
     }
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn set_statements(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
-    ) -> Self {
+    pub fn set_statements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>) -> Self {
         self.inner = self.inner.set_statements(input);
         self
     }
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn get_statements(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>> {
+    pub fn get_statements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>> {
         self.inner.get_statements()
     }
 }

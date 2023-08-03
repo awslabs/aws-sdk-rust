@@ -41,9 +41,7 @@ impl BrokerNodeInfo {
         self.client_vpc_ip_address.as_deref()
     }
     /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
-    pub fn current_broker_software_info(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BrokerSoftwareInfo> {
+    pub fn current_broker_software_info(&self) -> ::std::option::Option<&crate::types::BrokerSoftwareInfo> {
         self.current_broker_software_info.as_ref()
     }
     /// <p>Endpoints for accessing the broker.</p>
@@ -60,32 +58,23 @@ impl BrokerNodeInfo {
 
 /// A builder for [`BrokerNodeInfo`](crate::types::BrokerNodeInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BrokerNodeInfoBuilder {
     pub(crate) attached_eni_id: ::std::option::Option<::std::string::String>,
     pub(crate) broker_id: ::std::option::Option<f64>,
     pub(crate) client_subnet: ::std::option::Option<::std::string::String>,
     pub(crate) client_vpc_ip_address: ::std::option::Option<::std::string::String>,
-    pub(crate) current_broker_software_info:
-        ::std::option::Option<crate::types::BrokerSoftwareInfo>,
+    pub(crate) current_broker_software_info: ::std::option::Option<crate::types::BrokerSoftwareInfo>,
     pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BrokerNodeInfoBuilder {
     /// <p>The attached elastic network interface of the broker.</p>
-    pub fn attached_eni_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attached_eni_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attached_eni_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The attached elastic network interface of the broker.</p>
-    pub fn set_attached_eni_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attached_eni_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attached_eni_id = input;
         self
     }
@@ -108,18 +97,12 @@ impl BrokerNodeInfoBuilder {
         &self.broker_id
     }
     /// <p>The client subnet to which this broker node belongs.</p>
-    pub fn client_subnet(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_subnet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_subnet = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The client subnet to which this broker node belongs.</p>
-    pub fn set_client_subnet(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_subnet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_subnet = input;
         self
     }
@@ -128,18 +111,12 @@ impl BrokerNodeInfoBuilder {
         &self.client_subnet
     }
     /// <p>The virtual private cloud (VPC) of the client.</p>
-    pub fn client_vpc_ip_address(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_vpc_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpc_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The virtual private cloud (VPC) of the client.</p>
-    pub fn set_client_vpc_ip_address(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_client_vpc_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_vpc_ip_address = input;
         self
     }
@@ -153,17 +130,12 @@ impl BrokerNodeInfoBuilder {
         self
     }
     /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
-    pub fn set_current_broker_software_info(
-        mut self,
-        input: ::std::option::Option<crate::types::BrokerSoftwareInfo>,
-    ) -> Self {
+    pub fn set_current_broker_software_info(mut self, input: ::std::option::Option<crate::types::BrokerSoftwareInfo>) -> Self {
         self.current_broker_software_info = input;
         self
     }
     /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
-    pub fn get_current_broker_software_info(
-        &self,
-    ) -> &::std::option::Option<crate::types::BrokerSoftwareInfo> {
+    pub fn get_current_broker_software_info(&self) -> &::std::option::Option<crate::types::BrokerSoftwareInfo> {
         &self.current_broker_software_info
     }
     /// Appends an item to `endpoints`.
@@ -178,10 +150,7 @@ impl BrokerNodeInfoBuilder {
         self
     }
     /// <p>Endpoints for accessing the broker.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.endpoints = input;
         self
     }

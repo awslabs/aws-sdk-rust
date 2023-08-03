@@ -20,9 +20,7 @@ impl UpdateMultiplexProgramInput {
         self.multiplex_id.as_deref()
     }
     /// The new settings for a multiplex program.
-    pub fn multiplex_program_settings(
-        &self,
-    ) -> ::std::option::Option<&crate::types::MultiplexProgramSettings> {
+    pub fn multiplex_program_settings(&self) -> ::std::option::Option<&crate::types::MultiplexProgramSettings> {
         self.multiplex_program_settings.as_ref()
     }
     /// The name of the program to update.
@@ -32,22 +30,17 @@ impl UpdateMultiplexProgramInput {
 }
 impl UpdateMultiplexProgramInput {
     /// Creates a new builder-style object to manufacture [`UpdateMultiplexProgramInput`](crate::operation::update_multiplex_program::UpdateMultiplexProgramInput).
-    pub fn builder(
-    ) -> crate::operation::update_multiplex_program::builders::UpdateMultiplexProgramInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_multiplex_program::builders::UpdateMultiplexProgramInputBuilder {
         crate::operation::update_multiplex_program::builders::UpdateMultiplexProgramInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateMultiplexProgramInput`](crate::operation::update_multiplex_program::UpdateMultiplexProgramInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateMultiplexProgramInputBuilder {
     pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
-    pub(crate) multiplex_program_settings:
-        ::std::option::Option<crate::types::MultiplexProgramSettings>,
+    pub(crate) multiplex_program_settings: ::std::option::Option<crate::types::MultiplexProgramSettings>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMultiplexProgramInputBuilder {
@@ -66,25 +59,17 @@ impl UpdateMultiplexProgramInputBuilder {
         &self.multiplex_id
     }
     /// The new settings for a multiplex program.
-    pub fn multiplex_program_settings(
-        mut self,
-        input: crate::types::MultiplexProgramSettings,
-    ) -> Self {
+    pub fn multiplex_program_settings(mut self, input: crate::types::MultiplexProgramSettings) -> Self {
         self.multiplex_program_settings = ::std::option::Option::Some(input);
         self
     }
     /// The new settings for a multiplex program.
-    pub fn set_multiplex_program_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MultiplexProgramSettings>,
-    ) -> Self {
+    pub fn set_multiplex_program_settings(mut self, input: ::std::option::Option<crate::types::MultiplexProgramSettings>) -> Self {
         self.multiplex_program_settings = input;
         self
     }
     /// The new settings for a multiplex program.
-    pub fn get_multiplex_program_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MultiplexProgramSettings> {
+    pub fn get_multiplex_program_settings(&self) -> &::std::option::Option<crate::types::MultiplexProgramSettings> {
         &self.multiplex_program_settings
     }
     /// The name of the program to update.
@@ -104,16 +89,12 @@ impl UpdateMultiplexProgramInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMultiplexProgramInput`](crate::operation::update_multiplex_program::UpdateMultiplexProgramInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::update_multiplex_program::UpdateMultiplexProgramInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::update_multiplex_program::UpdateMultiplexProgramInput {
-                multiplex_id: self.multiplex_id,
-                multiplex_program_settings: self.multiplex_program_settings,
-                program_name: self.program_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::update_multiplex_program::UpdateMultiplexProgramInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_multiplex_program::UpdateMultiplexProgramInput {
+            multiplex_id: self.multiplex_id,
+            multiplex_program_settings: self.multiplex_program_settings,
+            program_name: self.program_name,
+        })
     }
 }

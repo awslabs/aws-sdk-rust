@@ -10,9 +10,7 @@ impl super::Client {
     ///   - [`schemas(Option<Vec<DatasetSchemaSummary>>)`](crate::operation::list_schemas::ListSchemasOutput::schemas): <p>A list of schemas.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_schemas::ListSchemasOutput::next_token): <p>A token used to get the next set of schemas (if they exist).</p>
     /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::operation::list_schemas::ListSchemasError)
-    pub fn list_schemas(
-        &self,
-    ) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {
+    pub fn list_schemas(&self) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {
         crate::operation::list_schemas::builders::ListSchemasFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,16 +21,15 @@ impl ::aws_http::request_id::RequestId for DeleteVpcEndpointConnectionNotificati
 }
 impl DeleteVpcEndpointConnectionNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointConnectionNotificationsOutput`](crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsOutput).
-    pub fn builder() -> crate::operation::delete_vpc_endpoint_connection_notifications::builders::DeleteVpcEndpointConnectionNotificationsOutputBuilder{
+    pub fn builder() -> crate::operation::delete_vpc_endpoint_connection_notifications::builders::DeleteVpcEndpointConnectionNotificationsOutputBuilder
+    {
         crate::operation::delete_vpc_endpoint_connection_notifications::builders::DeleteVpcEndpointConnectionNotificationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteVpcEndpointConnectionNotificationsOutput`](crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVpcEndpointConnectionNotificationsOutputBuilder {
     pub(crate) unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
     _request_id: Option<String>,
@@ -48,17 +47,12 @@ impl DeleteVpcEndpointConnectionNotificationsOutputBuilder {
         self
     }
     /// <p>Information about the notifications that could not be deleted successfully.</p>
-    pub fn set_unsuccessful(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
-    ) -> Self {
+    pub fn set_unsuccessful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>) -> Self {
         self.unsuccessful = input;
         self
     }
     /// <p>Information about the notifications that could not be deleted successfully.</p>
-    pub fn get_unsuccessful(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>> {
+    pub fn get_unsuccessful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>> {
         &self.unsuccessful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -71,10 +65,9 @@ impl DeleteVpcEndpointConnectionNotificationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVpcEndpointConnectionNotificationsOutput`](crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsOutput).
-    pub fn build(self) -> crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsOutput{
+    pub fn build(self) -> crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsOutput {
         crate::operation::delete_vpc_endpoint_connection_notifications::DeleteVpcEndpointConnectionNotificationsOutput {
-            unsuccessful: self.unsuccessful
-            ,
+            unsuccessful: self.unsuccessful,
             _request_id: self._request_id,
         }
     }

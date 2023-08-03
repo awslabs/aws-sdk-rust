@@ -10,7 +10,9 @@ impl super::Client {
     /// - On success, responds with [`DescribeEngineDefaultParametersOutput`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput) with field(s):
     ///   - [`engine_defaults(Option<EngineDefaults>)`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput::engine_defaults): <p>Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.</p>
     /// - On failure, responds with [`SdkError<DescribeEngineDefaultParametersError>`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersError)
-    pub fn describe_engine_default_parameters(&self) -> crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersFluentBuilder{
+    pub fn describe_engine_default_parameters(
+        &self,
+    ) -> crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersFluentBuilder {
         crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersFluentBuilder::new(self.handle.clone())
     }
 }

@@ -15,34 +15,25 @@ impl DescribeRecommenderInput {
 }
 impl DescribeRecommenderInput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommenderInput`](crate::operation::describe_recommender::DescribeRecommenderInput).
-    pub fn builder(
-    ) -> crate::operation::describe_recommender::builders::DescribeRecommenderInputBuilder {
+    pub fn builder() -> crate::operation::describe_recommender::builders::DescribeRecommenderInputBuilder {
         crate::operation::describe_recommender::builders::DescribeRecommenderInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeRecommenderInput`](crate::operation::describe_recommender::DescribeRecommenderInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRecommenderInputBuilder {
     pub(crate) recommender_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRecommenderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the recommender to describe.</p>
-    pub fn recommender_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn recommender_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommender_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to describe.</p>
-    pub fn set_recommender_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_recommender_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recommender_arn = input;
         self
     }
@@ -53,14 +44,10 @@ impl DescribeRecommenderInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRecommenderInput`](crate::operation::describe_recommender::DescribeRecommenderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_recommender::DescribeRecommenderInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_recommender::DescribeRecommenderInput {
-                recommender_arn: self.recommender_arn,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_recommender::DescribeRecommenderInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_recommender::DescribeRecommenderInput {
+            recommender_arn: self.recommender_arn,
+        })
     }
 }

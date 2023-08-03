@@ -23,9 +23,7 @@ impl UdpContainerSettings {
 
 /// A builder for [`UdpContainerSettings`](crate::types::UdpContainerSettings).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UdpContainerSettingsBuilder {
     pub(crate) m2ts_settings: ::std::option::Option<crate::types::M2tsSettings>,
 }
@@ -36,10 +34,7 @@ impl UdpContainerSettingsBuilder {
         self
     }
     /// M2ts Settings
-    pub fn set_m2ts_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::M2tsSettings>,
-    ) -> Self {
+    pub fn set_m2ts_settings(mut self, input: ::std::option::Option<crate::types::M2tsSettings>) -> Self {
         self.m2ts_settings = input;
         self
     }

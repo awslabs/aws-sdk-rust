@@ -51,18 +51,14 @@ impl DescribeVpcClassicLinkInput {
 }
 impl DescribeVpcClassicLinkInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcClassicLinkInput`](crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkInput).
-    pub fn builder(
-    ) -> crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkInputBuilder {
         crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeVpcClassicLinkInput`](crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcClassicLinkInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -103,10 +99,7 @@ impl DescribeVpcClassicLinkInputBuilder {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -151,10 +144,7 @@ impl DescribeVpcClassicLinkInputBuilder {
         self
     }
     /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
-    pub fn set_vpc_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_ids = input;
         self
     }
@@ -169,12 +159,10 @@ impl DescribeVpcClassicLinkInputBuilder {
         crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkInput {
-                filters: self.filters,
-                dry_run: self.dry_run,
-                vpc_ids: self.vpc_ids,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkInput {
+            filters: self.filters,
+            dry_run: self.dry_run,
+            vpc_ids: self.vpc_ids,
+        })
     }
 }

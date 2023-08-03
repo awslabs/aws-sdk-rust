@@ -30,9 +30,7 @@ impl OrganizationNode {
 
 /// A builder for [`OrganizationNode`](crate::types::OrganizationNode).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationNodeBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::OrganizationNodeType>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
@@ -44,10 +42,7 @@ impl OrganizationNodeBuilder {
         self
     }
     /// <p>The organization node type.</p>
-    pub fn set_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationNodeType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::OrganizationNodeType>) -> Self {
         self.r#type = input;
         self
     }

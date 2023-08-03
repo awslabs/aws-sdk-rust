@@ -87,10 +87,7 @@ impl GetRevisionInputBuilder {
     }
     /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
-    pub fn set_block_address(
-        mut self,
-        input: ::std::option::Option<crate::types::ValueHolder>,
-    ) -> Self {
+    pub fn set_block_address(mut self, input: ::std::option::Option<crate::types::ValueHolder>) -> Self {
         self.block_address = input;
         self
     }
@@ -121,10 +118,7 @@ impl GetRevisionInputBuilder {
     }
     /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
-    pub fn set_digest_tip_address(
-        mut self,
-        input: ::std::option::Option<crate::types::ValueHolder>,
-    ) -> Self {
+    pub fn set_digest_tip_address(mut self, input: ::std::option::Option<crate::types::ValueHolder>) -> Self {
         self.digest_tip_address = input;
         self
     }
@@ -134,12 +128,7 @@ impl GetRevisionInputBuilder {
         &self.digest_tip_address
     }
     /// Consumes the builder and constructs a [`GetRevisionInput`](crate::operation::get_revision::GetRevisionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_revision::GetRevisionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_revision::GetRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_revision::GetRevisionInput {
             name: self.name,
             block_address: self.block_address,

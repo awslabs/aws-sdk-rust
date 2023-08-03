@@ -12,8 +12,7 @@ pub struct ListCodeRepositoriesOutput {
     /// <li> <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub code_repository_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>>,
+    pub code_repository_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>>,
     /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -28,9 +27,7 @@ impl ListCodeRepositoriesOutput {
     /// <li> <p>Last modified time</p> </li>
     /// <li> <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p> </li>
     /// </ul>
-    pub fn code_repository_summary_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::CodeRepositorySummary]> {
+    pub fn code_repository_summary_list(&self) -> ::std::option::Option<&[crate::types::CodeRepositorySummary]> {
         self.code_repository_summary_list.as_deref()
     }
     /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
@@ -45,20 +42,16 @@ impl ::aws_http::request_id::RequestId for ListCodeRepositoriesOutput {
 }
 impl ListCodeRepositoriesOutput {
     /// Creates a new builder-style object to manufacture [`ListCodeRepositoriesOutput`](crate::operation::list_code_repositories::ListCodeRepositoriesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_code_repositories::builders::ListCodeRepositoriesOutputBuilder {
+    pub fn builder() -> crate::operation::list_code_repositories::builders::ListCodeRepositoriesOutputBuilder {
         crate::operation::list_code_repositories::builders::ListCodeRepositoriesOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListCodeRepositoriesOutput`](crate::operation::list_code_repositories::ListCodeRepositoriesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCodeRepositoriesOutputBuilder {
-    pub(crate) code_repository_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>>,
+    pub(crate) code_repository_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -75,10 +68,7 @@ impl ListCodeRepositoriesOutputBuilder {
     /// <li> <p>Last modified time</p> </li>
     /// <li> <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p> </li>
     /// </ul>
-    pub fn code_repository_summary_list(
-        mut self,
-        input: crate::types::CodeRepositorySummary,
-    ) -> Self {
+    pub fn code_repository_summary_list(mut self, input: crate::types::CodeRepositorySummary) -> Self {
         let mut v = self.code_repository_summary_list.unwrap_or_default();
         v.push(input);
         self.code_repository_summary_list = ::std::option::Option::Some(v);
@@ -92,10 +82,7 @@ impl ListCodeRepositoriesOutputBuilder {
     /// <li> <p>Last modified time</p> </li>
     /// <li> <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p> </li>
     /// </ul>
-    pub fn set_code_repository_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>>,
-    ) -> Self {
+    pub fn set_code_repository_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>>) -> Self {
         self.code_repository_summary_list = input;
         self
     }
@@ -107,9 +94,7 @@ impl ListCodeRepositoriesOutputBuilder {
     /// <li> <p>Last modified time</p> </li>
     /// <li> <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p> </li>
     /// </ul>
-    pub fn get_code_repository_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>> {
+    pub fn get_code_repository_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>> {
         &self.code_repository_summary_list
     }
     /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>

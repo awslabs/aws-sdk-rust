@@ -24,16 +24,14 @@ impl CreateServiceSpecificCredentialInput {
 }
 impl CreateServiceSpecificCredentialInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceSpecificCredentialInput`](crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialInput).
-    pub fn builder() -> crate::operation::create_service_specific_credential::builders::CreateServiceSpecificCredentialInputBuilder{
+    pub fn builder() -> crate::operation::create_service_specific_credential::builders::CreateServiceSpecificCredentialInputBuilder {
         crate::operation::create_service_specific_credential::builders::CreateServiceSpecificCredentialInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateServiceSpecificCredentialInput`](crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateServiceSpecificCredentialInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
@@ -79,11 +77,9 @@ impl CreateServiceSpecificCredentialInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialInput {
-                user_name: self.user_name
-                ,
-                service_name: self.service_name
-                ,
-            }
+                user_name: self.user_name,
+                service_name: self.service_name,
+            },
         )
     }
 }

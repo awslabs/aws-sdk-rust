@@ -44,9 +44,7 @@ impl FunctionCodeLocation {
 
 /// A builder for [`FunctionCodeLocation`](crate::types::FunctionCodeLocation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunctionCodeLocationBuilder {
     pub(crate) repository_type: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
@@ -55,18 +53,12 @@ pub struct FunctionCodeLocationBuilder {
 }
 impl FunctionCodeLocationBuilder {
     /// <p>The service that's hosting the file.</p>
-    pub fn repository_type(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service that's hosting the file.</p>
-    pub fn set_repository_type(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_type = input;
         self
     }
@@ -103,18 +95,12 @@ impl FunctionCodeLocationBuilder {
         &self.image_uri
     }
     /// <p>The resolved URI for the image.</p>
-    pub fn resolved_image_uri(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn resolved_image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolved_image_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resolved URI for the image.</p>
-    pub fn set_resolved_image_uri(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_resolved_image_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolved_image_uri = input;
         self
     }

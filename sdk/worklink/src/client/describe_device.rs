@@ -16,14 +16,8 @@ impl super::Client {
     ///   - [`last_accessed_time(Option<DateTime>)`](crate::operation::describe_device::DescribeDeviceOutput::last_accessed_time): <p>The date that the device last accessed Amazon WorkLink.</p>
     ///   - [`username(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::username): <p>The user name associated with the device.</p>
     /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::operation::describe_device::DescribeDeviceError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_device(
-        &self,
-    ) -> crate::operation::describe_device::builders::DescribeDeviceFluentBuilder {
-        crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
+    #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
+    pub fn describe_device(&self) -> crate::operation::describe_device::builders::DescribeDeviceFluentBuilder {
+        crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::new(self.handle.clone())
     }
 }

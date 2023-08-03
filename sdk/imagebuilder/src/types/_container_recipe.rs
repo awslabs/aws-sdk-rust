@@ -77,9 +77,7 @@ pub struct ContainerRecipe {
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are attached to the container recipe.</p>
     #[doc(hidden)]
-    pub tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The working directory for use during build and test workflows.</p>
     #[doc(hidden)]
     pub working_directory: ::std::option::Option<::std::string::String>,
@@ -150,9 +148,7 @@ impl ContainerRecipe {
         self.components.as_deref()
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-    pub fn instance_configuration(
-        &self,
-    ) -> ::std::option::Option<&crate::types::InstanceConfiguration> {
+    pub fn instance_configuration(&self) -> ::std::option::Option<&crate::types::InstanceConfiguration> {
         self.instance_configuration.as_ref()
     }
     /// <p>Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the elements required by the application running inside. The template data consists of contextual variables where Image Builder places build information or scripts, based on your container image recipe.</p>
@@ -176,11 +172,7 @@ impl ContainerRecipe {
         self.date_created.as_deref()
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn tags(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The working directory for use during build and test workflows.</p>
@@ -188,9 +180,7 @@ impl ContainerRecipe {
         self.working_directory.as_deref()
     }
     /// <p>The destination repository for the container image.</p>
-    pub fn target_repository(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TargetContainerRepository> {
+    pub fn target_repository(&self) -> ::std::option::Option<&crate::types::TargetContainerRepository> {
         self.target_repository.as_ref()
     }
 }
@@ -203,9 +193,7 @@ impl ContainerRecipe {
 
 /// A builder for [`ContainerRecipe`](crate::types::ContainerRecipe).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerRecipeBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) container_type: ::std::option::Option<crate::types::ContainerType>,
@@ -214,17 +202,14 @@ pub struct ContainerRecipeBuilder {
     pub(crate) platform: ::std::option::Option<crate::types::Platform>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
-    pub(crate) components:
-        ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
+    pub(crate) components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
     pub(crate) instance_configuration: ::std::option::Option<crate::types::InstanceConfiguration>,
     pub(crate) dockerfile_template_data: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) parent_image: ::std::option::Option<::std::string::String>,
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    >,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) working_directory: ::std::option::Option<::std::string::String>,
     pub(crate) target_repository: ::std::option::Option<crate::types::TargetContainerRepository>,
 }
@@ -288,10 +273,7 @@ impl ContainerRecipeBuilder {
         self
     }
     /// <p>Specifies the type of container, such as Docker.</p>
-    pub fn set_container_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerType>,
-    ) -> Self {
+    pub fn set_container_type(mut self, input: ::std::option::Option<crate::types::ContainerType>) -> Self {
         self.container_type = input;
         self
     }
@@ -429,17 +411,12 @@ impl ContainerRecipeBuilder {
         self
     }
     /// <p>Build and test components that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn set_components(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
-    ) -> Self {
+    pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>) -> Self {
         self.components = input;
         self
     }
     /// <p>Build and test components that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn get_components(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
+    pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
         &self.components
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
@@ -448,32 +425,21 @@ impl ContainerRecipeBuilder {
         self
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-    pub fn set_instance_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InstanceConfiguration>,
-    ) -> Self {
+    pub fn set_instance_configuration(mut self, input: ::std::option::Option<crate::types::InstanceConfiguration>) -> Self {
         self.instance_configuration = input;
         self
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-    pub fn get_instance_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::InstanceConfiguration> {
+    pub fn get_instance_configuration(&self) -> &::std::option::Option<crate::types::InstanceConfiguration> {
         &self.instance_configuration
     }
     /// <p>Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the elements required by the application running inside. The template data consists of contextual variables where Image Builder places build information or scripts, based on your container image recipe.</p>
-    pub fn dockerfile_template_data(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dockerfile_template_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dockerfile_template_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the elements required by the application running inside. The template data consists of contextual variables where Image Builder places build information or scripts, based on your container image recipe.</p>
-    pub fn set_dockerfile_template_data(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_dockerfile_template_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dockerfile_template_data = input;
         self
     }
@@ -542,47 +508,28 @@ impl ContainerRecipeBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    > {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The working directory for use during build and test workflows.</p>
-    pub fn working_directory(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn working_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.working_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The working directory for use during build and test workflows.</p>
-    pub fn set_working_directory(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.working_directory = input;
         self
     }
@@ -596,17 +543,12 @@ impl ContainerRecipeBuilder {
         self
     }
     /// <p>The destination repository for the container image.</p>
-    pub fn set_target_repository(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetContainerRepository>,
-    ) -> Self {
+    pub fn set_target_repository(mut self, input: ::std::option::Option<crate::types::TargetContainerRepository>) -> Self {
         self.target_repository = input;
         self
     }
     /// <p>The destination repository for the container image.</p>
-    pub fn get_target_repository(
-        &self,
-    ) -> &::std::option::Option<crate::types::TargetContainerRepository> {
+    pub fn get_target_repository(&self) -> &::std::option::Option<crate::types::TargetContainerRepository> {
         &self.target_repository
     }
     /// Consumes the builder and constructs a [`ContainerRecipe`](crate::types::ContainerRecipe).

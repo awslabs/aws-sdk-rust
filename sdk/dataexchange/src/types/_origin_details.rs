@@ -23,9 +23,7 @@ impl OriginDetails {
 
 /// A builder for [`OriginDetails`](crate::types::OriginDetails).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OriginDetailsBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
 }
@@ -46,8 +44,6 @@ impl OriginDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`OriginDetails`](crate::types::OriginDetails).
     pub fn build(self) -> crate::types::OriginDetails {
-        crate::types::OriginDetails {
-            product_id: self.product_id,
-        }
+        crate::types::OriginDetails { product_id: self.product_id }
     }
 }

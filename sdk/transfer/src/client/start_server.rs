@@ -6,9 +6,7 @@ impl super::Client {
     ///   - [`server_id(impl ::std::convert::Into<String>)`](crate::operation::start_server::builders::StartServerFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::start_server::builders::StartServerFluentBuilder::set_server_id): <p>A system-assigned unique identifier for a server that you start.</p>
     /// - On success, responds with [`StartServerOutput`](crate::operation::start_server::StartServerOutput)
     /// - On failure, responds with [`SdkError<StartServerError>`](crate::operation::start_server::StartServerError)
-    pub fn start_server(
-        &self,
-    ) -> crate::operation::start_server::builders::StartServerFluentBuilder {
+    pub fn start_server(&self) -> crate::operation::start_server::builders::StartServerFluentBuilder {
         crate::operation::start_server::builders::StartServerFluentBuilder::new(self.handle.clone())
     }
 }

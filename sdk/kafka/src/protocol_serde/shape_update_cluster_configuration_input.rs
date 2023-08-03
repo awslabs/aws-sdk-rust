@@ -6,10 +6,7 @@ pub fn ser_update_cluster_configuration_input(
     if let Some(var_1) = &input.configuration_info {
         #[allow(unused_mut)]
         let mut object_2 = object.key("configurationInfo").start_object();
-        crate::protocol_serde::shape_configuration_info::ser_configuration_info(
-            &mut object_2,
-            var_1,
-        )?;
+        crate::protocol_serde::shape_configuration_info::ser_configuration_info(&mut object_2, var_1)?;
         object_2.finish();
     }
     if let Some(var_3) = &input.current_version {

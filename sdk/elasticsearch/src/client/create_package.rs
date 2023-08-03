@@ -10,11 +10,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePackageOutput`](crate::operation::create_package::CreatePackageOutput) with field(s):
     ///   - [`package_details(Option<PackageDetails>)`](crate::operation::create_package::CreatePackageOutput::package_details): <p>Information about the package <code>PackageDetails</code>.</p>
     /// - On failure, responds with [`SdkError<CreatePackageError>`](crate::operation::create_package::CreatePackageError)
-    pub fn create_package(
-        &self,
-    ) -> crate::operation::create_package::builders::CreatePackageFluentBuilder {
-        crate::operation::create_package::builders::CreatePackageFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn create_package(&self) -> crate::operation::create_package::builders::CreatePackageFluentBuilder {
+        crate::operation::create_package::builders::CreatePackageFluentBuilder::new(self.handle.clone())
     }
 }

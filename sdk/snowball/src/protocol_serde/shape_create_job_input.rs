@@ -31,9 +31,7 @@ pub fn ser_create_job_input(
         object.key("RoleARN").string(var_9.as_str());
     }
     if let Some(var_10) = &input.snowball_capacity_preference {
-        object
-            .key("SnowballCapacityPreference")
-            .string(var_10.as_str());
+        object.key("SnowballCapacityPreference").string(var_10.as_str());
     }
     if let Some(var_11) = &input.shipping_option {
         object.key("ShippingOption").string(var_11.as_str());
@@ -62,10 +60,7 @@ pub fn ser_create_job_input(
     if let Some(var_19) = &input.device_configuration {
         #[allow(unused_mut)]
         let mut object_20 = object.key("DeviceConfiguration").start_object();
-        crate::protocol_serde::shape_device_configuration::ser_device_configuration(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_device_configuration::ser_device_configuration(&mut object_20, var_19)?;
         object_20.finish();
     }
     if let Some(var_21) = &input.remote_management {

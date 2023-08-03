@@ -38,17 +38,14 @@ impl CreateEvaluationInput {
 }
 impl CreateEvaluationInput {
     /// Creates a new builder-style object to manufacture [`CreateEvaluationInput`](crate::operation::create_evaluation::CreateEvaluationInput).
-    pub fn builder() -> crate::operation::create_evaluation::builders::CreateEvaluationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_evaluation::builders::CreateEvaluationInputBuilder {
         crate::operation::create_evaluation::builders::CreateEvaluationInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateEvaluationInput`](crate::operation::create_evaluation::CreateEvaluationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEvaluationInputBuilder {
     pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_name: ::std::option::Option<::std::string::String>,
@@ -57,18 +54,12 @@ pub struct CreateEvaluationInputBuilder {
 }
 impl CreateEvaluationInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
-    pub fn evaluation_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
-    pub fn set_evaluation_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_id = input;
         self
     }
@@ -77,18 +68,12 @@ impl CreateEvaluationInputBuilder {
         &self.evaluation_id
     }
     /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
-    pub fn evaluation_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
-    pub fn set_evaluation_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_name = input;
         self
     }
@@ -114,18 +99,12 @@ impl CreateEvaluationInputBuilder {
         &self.ml_model_id
     }
     /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
-    pub fn evaluation_data_source_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn evaluation_data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
-    pub fn set_evaluation_data_source_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_evaluation_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluation_data_source_id = input;
         self
     }
@@ -136,10 +115,7 @@ impl CreateEvaluationInputBuilder {
     /// Consumes the builder and constructs a [`CreateEvaluationInput`](crate::operation::create_evaluation::CreateEvaluationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_evaluation::CreateEvaluationInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::create_evaluation::CreateEvaluationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_evaluation::CreateEvaluationInput {
             evaluation_id: self.evaluation_id,
             evaluation_name: self.evaluation_name,

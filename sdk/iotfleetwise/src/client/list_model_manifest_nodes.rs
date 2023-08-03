@@ -11,10 +11,7 @@ impl super::Client {
     ///   - [`nodes(Option<Vec<Node>>)`](crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput::nodes): <p> A list of information about nodes. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput::next_token): <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     /// - On failure, responds with [`SdkError<ListModelManifestNodesError>`](crate::operation::list_model_manifest_nodes::ListModelManifestNodesError)
-    pub fn list_model_manifest_nodes(
-        &self,
-    ) -> crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesFluentBuilder
-    {
+    pub fn list_model_manifest_nodes(&self) -> crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesFluentBuilder {
         crate::operation::list_model_manifest_nodes::builders::ListModelManifestNodesFluentBuilder::new(self.handle.clone())
     }
 }

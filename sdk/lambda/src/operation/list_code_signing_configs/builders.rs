@@ -26,8 +26,7 @@ impl ListCodeSigningConfigsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCodeSigningConfigsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsInputBuilder,
+    inner: crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsInputBuilder,
 }
 impl ListCodeSigningConfigsFluentBuilder {
     /// Creates a new `ListCodeSigningConfigs`.
@@ -38,10 +37,7 @@ impl ListCodeSigningConfigsFluentBuilder {
         }
     }
     /// Access the ListCodeSigningConfigs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListCodeSigningConfigsFluentBuilder {
             crate::operation::list_code_signing_configs::ListCodeSigningConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_code_signing_configs::ListCodeSigningConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_code_signing_configs::ListCodeSigningConfigsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListCodeSigningConfigsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListCodeSigningConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_code_signing_configs::ListCodeSigningConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_code_signing_configs::ListCodeSigningConfigsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListCodeSigningConfigsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_code_signing_configs::ListCodeSigningConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_code_signing_configs::ListCodeSigningConfigsError>,
     > {
         self.send_middleware().await
     }
@@ -118,23 +105,15 @@ impl ListCodeSigningConfigsFluentBuilder {
             crate::operation::list_code_signing_configs::ListCodeSigningConfigs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_code_signing_configs::ListCodeSigningConfigsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_code_signing_configs::ListCodeSigningConfigsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_code_signing_configs::paginator::ListCodeSigningConfigsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_code_signing_configs::paginator::ListCodeSigningConfigsPaginator
-    {
-        crate::operation::list_code_signing_configs::paginator::ListCodeSigningConfigsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_code_signing_configs::paginator::ListCodeSigningConfigsPaginator {
+        crate::operation::list_code_signing_configs::paginator::ListCodeSigningConfigsPaginator::new(self.handle, self.inner)
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

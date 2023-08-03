@@ -49,9 +49,7 @@ impl LambdaFunctionAssociation {
 
 /// A builder for [`LambdaFunctionAssociation`](crate::types::LambdaFunctionAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaFunctionAssociationBuilder {
     pub(crate) lambda_function_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_type: ::std::option::Option<crate::types::EventType>,
@@ -59,18 +57,12 @@ pub struct LambdaFunctionAssociationBuilder {
 }
 impl LambdaFunctionAssociationBuilder {
     /// <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias or $LATEST.</p>
-    pub fn lambda_function_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn lambda_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias or $LATEST.</p>
-    pub fn set_lambda_function_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_function_arn = input;
         self
     }

@@ -9,10 +9,7 @@ pub fn ser_lambda_execution_parameters(
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_lambda_event_source::ser_lambda_event_source(
-                    &mut object_4,
-                    item_3,
-                )?;
+                crate::protocol_serde::shape_lambda_event_source::ser_lambda_event_source(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
@@ -52,9 +49,7 @@ pub fn ser_lambda_execution_parameters(
         object.key("pinned").boolean(*var_10);
     }
     if let Some(var_11) = &input.input_payload_encoding_type {
-        object
-            .key("inputPayloadEncodingType")
-            .string(var_11.as_str());
+        object.key("inputPayloadEncodingType").string(var_11.as_str());
     }
     if let Some(var_12) = &input.exec_args {
         let mut array_13 = object.key("execArgs").start_array();
@@ -78,10 +73,7 @@ pub fn ser_lambda_execution_parameters(
     if let Some(var_19) = &input.linux_process_params {
         #[allow(unused_mut)]
         let mut object_20 = object.key("linuxProcessParams").start_object();
-        crate::protocol_serde::shape_lambda_linux_process_params::ser_lambda_linux_process_params(
-            &mut object_20,
-            var_19,
-        )?;
+        crate::protocol_serde::shape_lambda_linux_process_params::ser_lambda_linux_process_params(&mut object_20, var_19)?;
         object_20.finish();
     }
     Ok(())

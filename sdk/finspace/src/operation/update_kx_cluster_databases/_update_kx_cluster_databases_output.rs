@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for UpdateKxClusterDatabasesOutput {
 }
 impl UpdateKxClusterDatabasesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateKxClusterDatabasesOutput`](crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesOutput).
-    pub fn builder() -> crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesOutputBuilder{
+    pub fn builder() -> crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesOutputBuilder {
         crate::operation::update_kx_cluster_databases::builders::UpdateKxClusterDatabasesOutputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateKxClusterDatabasesOutput`](crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateKxClusterDatabasesOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl UpdateKxClusterDatabasesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateKxClusterDatabasesOutput`](crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesOutput {
+    pub fn build(self) -> crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesOutput {
         crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesOutput {
             _request_id: self._request_id,
         }

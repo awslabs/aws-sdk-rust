@@ -29,8 +29,7 @@ impl ::aws_http::request_id::RequestId for DetectKeyPhrasesOutput {
 }
 impl DetectKeyPhrasesOutput {
     /// Creates a new builder-style object to manufacture [`DetectKeyPhrasesOutput`](crate::operation::detect_key_phrases::DetectKeyPhrasesOutput).
-    pub fn builder() -> crate::operation::detect_key_phrases::builders::DetectKeyPhrasesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::detect_key_phrases::builders::DetectKeyPhrasesOutputBuilder {
         crate::operation::detect_key_phrases::builders::DetectKeyPhrasesOutputBuilder::default()
     }
 }
@@ -55,17 +54,12 @@ impl DetectKeyPhrasesOutputBuilder {
         self
     }
     /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
-    pub fn set_key_phrases(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>,
-    ) -> Self {
+    pub fn set_key_phrases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>) -> Self {
         self.key_phrases = input;
         self
     }
     /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
-    pub fn get_key_phrases(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>> {
+    pub fn get_key_phrases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>> {
         &self.key_phrases
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -13,11 +13,7 @@ impl super::Client {
     ///   - [`next_marker(Option<String>)`](crate::operation::describe_tags::DescribeTagsOutput::next_marker): <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
     /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::operation::describe_tags::DescribeTagsError)
     #[deprecated(note = "Use ListTagsForResource.")]
-    pub fn describe_tags(
-        &self,
-    ) -> crate::operation::describe_tags::builders::DescribeTagsFluentBuilder {
-        crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_tags(&self) -> crate::operation::describe_tags::builders::DescribeTagsFluentBuilder {
+        crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::new(self.handle.clone())
     }
 }

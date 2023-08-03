@@ -12,7 +12,9 @@ impl super::Client {
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::tags): A collection of key-value pairs.
     ///   - [`whitelist_rules(Option<Vec<InputWhitelistRule>>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::whitelist_rules): Whitelist rules and their sync status
     /// - On failure, responds with [`SdkError<DescribeInputSecurityGroupError>`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupError)
-    pub fn describe_input_security_group(&self) -> crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupFluentBuilder{
+    pub fn describe_input_security_group(
+        &self,
+    ) -> crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupFluentBuilder {
         crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupFluentBuilder::new(self.handle.clone())
     }
 }

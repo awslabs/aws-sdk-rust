@@ -26,7 +26,7 @@ impl DeleteStudioLifecycleConfigInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteStudioLifecycleConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLifecycleConfigInputBuilder,
+    inner: crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLifecycleConfigInputBuilder,
 }
 impl DeleteStudioLifecycleConfigFluentBuilder {
     /// Creates a new `DeleteStudioLifecycleConfig`.
@@ -37,7 +37,7 @@ impl DeleteStudioLifecycleConfigFluentBuilder {
         }
     }
     /// Access the DeleteStudioLifecycleConfig as a reference.
-    pub fn as_input(&self) -> &crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLifecycleConfigInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLifecycleConfigInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -49,9 +49,7 @@ impl DeleteStudioLifecycleConfigFluentBuilder {
             crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -61,10 +59,7 @@ impl DeleteStudioLifecycleConfigFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -73,9 +68,7 @@ impl DeleteStudioLifecycleConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigError>,
     > {
         let op = self
             .inner
@@ -98,9 +91,7 @@ impl DeleteStudioLifecycleConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigError>,
     > {
         self.send_middleware().await
     }
@@ -114,32 +105,22 @@ impl DeleteStudioLifecycleConfigFluentBuilder {
             crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfig,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
-    pub fn studio_lifecycle_config_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn studio_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_lifecycle_config_name(input.into());
         self
     }
     /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
-    pub fn set_studio_lifecycle_config_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_studio_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_lifecycle_config_name(input);
         self
     }
     /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
-    pub fn get_studio_lifecycle_config_name(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_studio_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_studio_lifecycle_config_name()
     }
 }

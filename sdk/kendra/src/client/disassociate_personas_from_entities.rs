@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`DisassociatePersonasFromEntitiesOutput`](crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesOutput) with field(s):
     ///   - [`failed_entity_list(Option<Vec<FailedEntity>>)`](crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesOutput::failed_entity_list): <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
     /// - On failure, responds with [`SdkError<DisassociatePersonasFromEntitiesError>`](crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesError)
-    pub fn disassociate_personas_from_entities(&self) -> crate::operation::disassociate_personas_from_entities::builders::DisassociatePersonasFromEntitiesFluentBuilder{
+    pub fn disassociate_personas_from_entities(
+        &self,
+    ) -> crate::operation::disassociate_personas_from_entities::builders::DisassociatePersonasFromEntitiesFluentBuilder {
         crate::operation::disassociate_personas_from_entities::builders::DisassociatePersonasFromEntitiesFluentBuilder::new(self.handle.clone())
     }
 }

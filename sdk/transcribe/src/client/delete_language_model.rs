@@ -6,11 +6,7 @@ impl super::Client {
     ///   - [`model_name(impl ::std::convert::Into<String>)`](crate::operation::delete_language_model::builders::DeleteLanguageModelFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::delete_language_model::builders::DeleteLanguageModelFluentBuilder::set_model_name): <p>The name of the custom language model you want to delete. Model names are case sensitive.</p>
     /// - On success, responds with [`DeleteLanguageModelOutput`](crate::operation::delete_language_model::DeleteLanguageModelOutput)
     /// - On failure, responds with [`SdkError<DeleteLanguageModelError>`](crate::operation::delete_language_model::DeleteLanguageModelError)
-    pub fn delete_language_model(
-        &self,
-    ) -> crate::operation::delete_language_model::builders::DeleteLanguageModelFluentBuilder {
-        crate::operation::delete_language_model::builders::DeleteLanguageModelFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_language_model(&self) -> crate::operation::delete_language_model::builders::DeleteLanguageModelFluentBuilder {
+        crate::operation::delete_language_model::builders::DeleteLanguageModelFluentBuilder::new(self.handle.clone())
     }
 }

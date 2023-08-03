@@ -5,8 +5,7 @@
 pub struct ListFlywheelsOutput {
     /// <p>A list of flywheel properties retrieved by the service in response to the request. </p>
     #[doc(hidden)]
-    pub flywheel_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::FlywheelSummary>>,
+    pub flywheel_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::FlywheelSummary>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -36,12 +35,9 @@ impl ListFlywheelsOutput {
 
 /// A builder for [`ListFlywheelsOutput`](crate::operation::list_flywheels::ListFlywheelsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFlywheelsOutputBuilder {
-    pub(crate) flywheel_summary_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::FlywheelSummary>>,
+    pub(crate) flywheel_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::FlywheelSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl ListFlywheelsOutputBuilder {
         self
     }
     /// <p>A list of flywheel properties retrieved by the service in response to the request. </p>
-    pub fn set_flywheel_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FlywheelSummary>>,
-    ) -> Self {
+    pub fn set_flywheel_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlywheelSummary>>) -> Self {
         self.flywheel_summary_list = input;
         self
     }
     /// <p>A list of flywheel properties retrieved by the service in response to the request. </p>
-    pub fn get_flywheel_summary_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FlywheelSummary>> {
+    pub fn get_flywheel_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlywheelSummary>> {
         &self.flywheel_summary_list
     }
     /// <p>Identifies the next page of results to return.</p>

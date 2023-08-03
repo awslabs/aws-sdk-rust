@@ -10,10 +10,7 @@ impl DescribeAddressesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_addresses::DescribeAddressesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addresses::DescribeAddressesError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addresses::DescribeAddressesError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_addresses();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeAddressesFluentBuilder {
         }
     }
     /// Access the DescribeAddresses as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeAddressesFluentBuilder {
             crate::operation::describe_addresses::DescribeAddresses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addresses::DescribeAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addresses::DescribeAddressesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeAddressesFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeAddressesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_addresses::DescribeAddressesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addresses::DescribeAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addresses::DescribeAddressesError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeAddressesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_addresses::DescribeAddressesOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addresses::DescribeAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addresses::DescribeAddressesError>,
     > {
         self.send_middleware().await
     }
@@ -116,22 +102,15 @@ impl DescribeAddressesFluentBuilder {
             crate::operation::describe_addresses::DescribeAddresses,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_addresses::DescribeAddressesError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_addresses::DescribeAddressesError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::describe_addresses::paginator::DescribeAddressesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_addresses::paginator::DescribeAddressesPaginator {
-        crate::operation::describe_addresses::paginator::DescribeAddressesPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::describe_addresses::paginator::DescribeAddressesPaginator {
+        crate::operation::describe_addresses::paginator::DescribeAddressesPaginator::new(self.handle, self.inner)
     }
     /// <p>The number of <code>ADDRESS</code> objects to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {

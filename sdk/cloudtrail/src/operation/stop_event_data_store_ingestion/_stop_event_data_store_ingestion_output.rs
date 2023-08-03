@@ -12,16 +12,14 @@ impl ::aws_http::request_id::RequestId for StopEventDataStoreIngestionOutput {
 }
 impl StopEventDataStoreIngestionOutput {
     /// Creates a new builder-style object to manufacture [`StopEventDataStoreIngestionOutput`](crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionOutput).
-    pub fn builder() -> crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionOutputBuilder{
+    pub fn builder() -> crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionOutputBuilder {
         crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionOutputBuilder::default()
     }
 }
 
 /// A builder for [`StopEventDataStoreIngestionOutput`](crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopEventDataStoreIngestionOutputBuilder {
     _request_id: Option<String>,
 }
@@ -36,9 +34,7 @@ impl StopEventDataStoreIngestionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopEventDataStoreIngestionOutput`](crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionOutput {
+    pub fn build(self) -> crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionOutput {
         crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionOutput {
             _request_id: self._request_id,
         }

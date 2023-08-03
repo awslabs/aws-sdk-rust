@@ -28,20 +28,16 @@ impl ::aws_http::request_id::RequestId for GetCrawlerMetricsOutput {
 }
 impl GetCrawlerMetricsOutput {
     /// Creates a new builder-style object to manufacture [`GetCrawlerMetricsOutput`](crate::operation::get_crawler_metrics::GetCrawlerMetricsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsOutputBuilder {
+    pub fn builder() -> crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsOutputBuilder {
         crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCrawlerMetricsOutput`](crate::operation::get_crawler_metrics::GetCrawlerMetricsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCrawlerMetricsOutputBuilder {
-    pub(crate) crawler_metrics_list:
-        ::std::option::Option<::std::vec::Vec<crate::types::CrawlerMetrics>>,
+    pub(crate) crawler_metrics_list: ::std::option::Option<::std::vec::Vec<crate::types::CrawlerMetrics>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +54,12 @@ impl GetCrawlerMetricsOutputBuilder {
         self
     }
     /// <p>A list of metrics for the specified crawler.</p>
-    pub fn set_crawler_metrics_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CrawlerMetrics>>,
-    ) -> Self {
+    pub fn set_crawler_metrics_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrawlerMetrics>>) -> Self {
         self.crawler_metrics_list = input;
         self
     }
     /// <p>A list of metrics for the specified crawler.</p>
-    pub fn get_crawler_metrics_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CrawlerMetrics>> {
+    pub fn get_crawler_metrics_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrawlerMetrics>> {
         &self.crawler_metrics_list
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>

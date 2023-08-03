@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`recommendations(Option<Vec<Recommendation>>)`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsOutput::recommendations): <p>A list of the recommendations for the customer's application.</p>
     /// - On failure, responds with [`SdkError<GetArchitectureRecommendationsError>`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError)
-    pub fn get_architecture_recommendations(&self) -> crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsFluentBuilder{
+    pub fn get_architecture_recommendations(
+        &self,
+    ) -> crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsFluentBuilder {
         crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsFluentBuilder::new(self.handle.clone())
     }
 }

@@ -23,11 +23,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateBranchOutput`](crate::operation::update_branch::UpdateBranchOutput) with field(s):
     ///   - [`branch(Option<Branch>)`](crate::operation::update_branch::UpdateBranchOutput::branch): <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     /// - On failure, responds with [`SdkError<UpdateBranchError>`](crate::operation::update_branch::UpdateBranchError)
-    pub fn update_branch(
-        &self,
-    ) -> crate::operation::update_branch::builders::UpdateBranchFluentBuilder {
-        crate::operation::update_branch::builders::UpdateBranchFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn update_branch(&self) -> crate::operation::update_branch::builders::UpdateBranchFluentBuilder {
+        crate::operation::update_branch::builders::UpdateBranchFluentBuilder::new(self.handle.clone())
     }
 }

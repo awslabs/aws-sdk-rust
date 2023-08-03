@@ -23,9 +23,7 @@ impl GetJobDetailsInput {
 
 /// A builder for [`GetJobDetailsInput`](crate::operation::get_job_details::GetJobDetailsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobDetailsInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
@@ -47,12 +45,7 @@ impl GetJobDetailsInputBuilder {
     /// Consumes the builder and constructs a [`GetJobDetailsInput`](crate::operation::get_job_details::GetJobDetailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::get_job_details::GetJobDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_job_details::GetJobDetailsInput {
-            job_id: self.job_id,
-        })
+    ) -> ::std::result::Result<crate::operation::get_job_details::GetJobDetailsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_job_details::GetJobDetailsInput { job_id: self.job_id })
     }
 }

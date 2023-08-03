@@ -21,17 +21,14 @@ impl ::aws_http::request_id::RequestId for GetBucketAccessKeysOutput {
 }
 impl GetBucketAccessKeysOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketAccessKeysOutput`](crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput).
-    pub fn builder(
-    ) -> crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysOutputBuilder {
+    pub fn builder() -> crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysOutputBuilder {
         crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetBucketAccessKeysOutput`](crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketAccessKeysOutputBuilder {
     pub(crate) access_keys: ::std::option::Option<::std::vec::Vec<crate::types::AccessKey>>,
     _request_id: Option<String>,
@@ -49,17 +46,12 @@ impl GetBucketAccessKeysOutputBuilder {
         self
     }
     /// <p>An object that describes the access keys for the specified bucket.</p>
-    pub fn set_access_keys(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessKey>>,
-    ) -> Self {
+    pub fn set_access_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessKey>>) -> Self {
         self.access_keys = input;
         self
     }
     /// <p>An object that describes the access keys for the specified bucket.</p>
-    pub fn get_access_keys(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessKey>> {
+    pub fn get_access_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessKey>> {
         &self.access_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

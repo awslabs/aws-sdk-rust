@@ -22,16 +22,14 @@ impl StartOnDemandAppReplicationInput {
 }
 impl StartOnDemandAppReplicationInput {
     /// Creates a new builder-style object to manufacture [`StartOnDemandAppReplicationInput`](crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationInput).
-    pub fn builder() -> crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationInputBuilder{
+    pub fn builder() -> crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationInputBuilder {
         crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationInputBuilder::default()
     }
 }
 
 /// A builder for [`StartOnDemandAppReplicationInput`](crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartOnDemandAppReplicationInputBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -72,11 +70,9 @@ impl StartOnDemandAppReplicationInputBuilder {
         crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationInput {
-                app_id: self.app_id,
-                description: self.description,
-            },
-        )
+        ::std::result::Result::Ok(crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationInput {
+            app_id: self.app_id,
+            description: self.description,
+        })
     }
 }

@@ -35,9 +35,7 @@ impl ListRuleGroupsOutput {
 
 /// A builder for [`ListRuleGroupsOutput`](crate::operation::list_rule_groups::ListRuleGroupsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRuleGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupMetadata>>,
@@ -70,17 +68,12 @@ impl ListRuleGroupsOutputBuilder {
         self
     }
     /// <p>The rule group metadata objects that you've defined. Depending on your setting for max results and the number of rule groups, this might not be the full list. </p>
-    pub fn set_rule_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupMetadata>>,
-    ) -> Self {
+    pub fn set_rule_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupMetadata>>) -> Self {
         self.rule_groups = input;
         self
     }
     /// <p>The rule group metadata objects that you've defined. Depending on your setting for max results and the number of rule groups, this might not be the full list. </p>
-    pub fn get_rule_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupMetadata>> {
+    pub fn get_rule_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupMetadata>> {
         &self.rule_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

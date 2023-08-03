@@ -9,11 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetWorkflowRunOutput`](crate::operation::get_workflow_run::GetWorkflowRunOutput) with field(s):
     ///   - [`run(Option<WorkflowRun>)`](crate::operation::get_workflow_run::GetWorkflowRunOutput::run): <p>The requested workflow run metadata.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowRunError>`](crate::operation::get_workflow_run::GetWorkflowRunError)
-    pub fn get_workflow_run(
-        &self,
-    ) -> crate::operation::get_workflow_run::builders::GetWorkflowRunFluentBuilder {
-        crate::operation::get_workflow_run::builders::GetWorkflowRunFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_workflow_run(&self) -> crate::operation::get_workflow_run::builders::GetWorkflowRunFluentBuilder {
+        crate::operation::get_workflow_run::builders::GetWorkflowRunFluentBuilder::new(self.handle.clone())
     }
 }

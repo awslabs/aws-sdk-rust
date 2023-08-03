@@ -10,7 +10,9 @@ impl super::Client {
     ///   - [`tier(Option<Tier>)`](crate::operation::describe_component_configuration::DescribeComponentConfigurationOutput::tier): <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code> </p>
     ///   - [`component_configuration(Option<String>)`](crate::operation::describe_component_configuration::DescribeComponentConfigurationOutput::component_configuration): <p>The configuration settings of the component. The value is the escaped JSON of the configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeComponentConfigurationError>`](crate::operation::describe_component_configuration::DescribeComponentConfigurationError)
-    pub fn describe_component_configuration(&self) -> crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationFluentBuilder{
+    pub fn describe_component_configuration(
+        &self,
+    ) -> crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationFluentBuilder {
         crate::operation::describe_component_configuration::builders::DescribeComponentConfigurationFluentBuilder::new(self.handle.clone())
     }
 }

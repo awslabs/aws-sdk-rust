@@ -51,16 +51,13 @@ impl FPorts {
 
 /// A builder for [`FPorts`](crate::types::FPorts).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FPortsBuilder {
     pub(crate) fuota: ::std::option::Option<i32>,
     pub(crate) multicast: ::std::option::Option<i32>,
     pub(crate) clock_sync: ::std::option::Option<i32>,
     pub(crate) positioning: ::std::option::Option<crate::types::Positioning>,
-    pub(crate) applications:
-        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
+    pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
 }
 impl FPortsBuilder {
     /// <p>The Fport value.</p>
@@ -111,10 +108,7 @@ impl FPortsBuilder {
         self
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-    pub fn set_positioning(
-        mut self,
-        input: ::std::option::Option<crate::types::Positioning>,
-    ) -> Self {
+    pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::Positioning>) -> Self {
         self.positioning = input;
         self
     }
@@ -134,17 +128,12 @@ impl FPortsBuilder {
         self
     }
     /// <p>Optional LoRaWAN application information, which can be used for geolocation.</p>
-    pub fn set_applications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
-    ) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>) -> Self {
         self.applications = input;
         self
     }
     /// <p>Optional LoRaWAN application information, which can be used for geolocation.</p>
-    pub fn get_applications(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>> {
         &self.applications
     }
     /// Consumes the builder and constructs a [`FPorts`](crate::types::FPorts).

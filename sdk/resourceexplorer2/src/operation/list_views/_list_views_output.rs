@@ -35,9 +35,7 @@ impl ListViewsOutput {
 
 /// A builder for [`ListViewsOutput`](crate::operation::list_views::ListViewsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListViewsOutputBuilder {
     pub(crate) views: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -56,10 +54,7 @@ impl ListViewsOutputBuilder {
         self
     }
     /// <p>The list of views available in the Amazon Web Services Region in which you called this operation.</p>
-    pub fn set_views(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_views(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.views = input;
         self
     }

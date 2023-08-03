@@ -22,17 +22,14 @@ impl ::aws_http::request_id::RequestId for GetCampaignStateOutput {
 }
 impl GetCampaignStateOutput {
     /// Creates a new builder-style object to manufacture [`GetCampaignStateOutput`](crate::operation::get_campaign_state::GetCampaignStateOutput).
-    pub fn builder() -> crate::operation::get_campaign_state::builders::GetCampaignStateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_campaign_state::builders::GetCampaignStateOutputBuilder {
         crate::operation::get_campaign_state::builders::GetCampaignStateOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetCampaignStateOutput`](crate::operation::get_campaign_state::GetCampaignStateOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCampaignStateOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::CampaignState>,
     _request_id: Option<String>,

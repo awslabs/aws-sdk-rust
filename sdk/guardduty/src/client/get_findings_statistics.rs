@@ -9,12 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetFindingsStatisticsOutput`](crate::operation::get_findings_statistics::GetFindingsStatisticsOutput) with field(s):
     ///   - [`finding_statistics(Option<FindingStatistics>)`](crate::operation::get_findings_statistics::GetFindingsStatisticsOutput::finding_statistics): <p>The finding statistics object.</p>
     /// - On failure, responds with [`SdkError<GetFindingsStatisticsError>`](crate::operation::get_findings_statistics::GetFindingsStatisticsError)
-    pub fn get_findings_statistics(
-        &self,
-    ) -> crate::operation::get_findings_statistics::builders::GetFindingsStatisticsFluentBuilder
-    {
-        crate::operation::get_findings_statistics::builders::GetFindingsStatisticsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_findings_statistics(&self) -> crate::operation::get_findings_statistics::builders::GetFindingsStatisticsFluentBuilder {
+        crate::operation::get_findings_statistics::builders::GetFindingsStatisticsFluentBuilder::new(self.handle.clone())
     }
 }

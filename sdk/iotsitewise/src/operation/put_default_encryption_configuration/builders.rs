@@ -5,16 +5,16 @@ pub use crate::operation::put_default_encryption_configuration::_put_default_enc
 
 impl PutDefaultEncryptionConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
-                        crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput,
-                        ::aws_smithy_http::result::SdkError<
-                            crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError,
-                            ::aws_smithy_http::operation::Response
-                        >
-    >{
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
         let mut fluent_builder = client.put_default_encryption_configuration();
         fluent_builder.inner = self;
         fluent_builder.send().await
@@ -26,7 +26,7 @@ impl PutDefaultEncryptionConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutDefaultEncryptionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationInputBuilder,
+    inner: crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationInputBuilder,
 }
 impl PutDefaultEncryptionConfigurationFluentBuilder {
     /// Creates a new `PutDefaultEncryptionConfiguration`.
@@ -37,15 +37,20 @@ impl PutDefaultEncryptionConfigurationFluentBuilder {
         }
     }
     /// Access the PutDefaultEncryptionConfiguration as a reference.
-    pub fn as_input(&self) -> &crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationInputBuilder{
+    pub fn as_input(&self) -> &crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn customize_middleware(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError>
-    >{
+    pub async fn customize_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError>,
+    > {
         let handle = self.handle.clone();
         let operation = self
             .inner
@@ -54,16 +59,17 @@ impl PutDefaultEncryptionConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError>>
-                         {
+    pub async fn send_middleware(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError>,
+    > {
         let op = self
             .inner
             .build()
@@ -81,17 +87,26 @@ impl PutDefaultEncryptionConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                            pub async fn send(self) -> ::std::result::Result<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError>>
-                             {
+    pub async fn send(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError>,
+    > {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                            pub async fn customize(self) -> ::std::result::Result<
-                                crate::client::customize::CustomizableOperation<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                                ::aws_smithy_http::result::SdkError<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError>
-    >{
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfiguration,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError>,
+    > {
         self.customize_middleware().await
     }
     /// <p>The type of encryption used for the encryption configuration.</p>
@@ -100,10 +115,7 @@ impl PutDefaultEncryptionConfigurationFluentBuilder {
         self
     }
     /// <p>The type of encryption used for the encryption configuration.</p>
-    pub fn set_encryption_type(
-        mut self,
-        input: ::std::option::Option<crate::types::EncryptionType>,
-    ) -> Self {
+    pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.inner = self.inner.set_encryption_type(input);
         self
     }

@@ -65,9 +65,7 @@ impl LogConfig {
 
 /// A builder for [`LogConfig`](crate::types::LogConfig).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogConfigBuilder {
     pub(crate) field_log_level: ::std::option::Option<crate::types::FieldLogLevel>,
     pub(crate) cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
@@ -108,10 +106,7 @@ impl LogConfigBuilder {
     /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_field_log_level(
-        mut self,
-        input: ::std::option::Option<crate::types::FieldLogLevel>,
-    ) -> Self {
+    pub fn set_field_log_level(mut self, input: ::std::option::Option<crate::types::FieldLogLevel>) -> Self {
         self.field_log_level = input;
         self
     }
@@ -134,18 +129,12 @@ impl LogConfigBuilder {
         &self.field_log_level
     }
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
-    pub fn cloud_watch_logs_role_arn(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cloud_watch_logs_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logs_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
-    pub fn set_cloud_watch_logs_role_arn(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_cloud_watch_logs_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_logs_role_arn = input;
         self
     }

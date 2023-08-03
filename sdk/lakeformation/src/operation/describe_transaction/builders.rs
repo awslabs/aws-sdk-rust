@@ -10,10 +10,7 @@ impl DescribeTransactionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_transaction::DescribeTransactionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_transaction::DescribeTransactionError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_transaction::DescribeTransactionError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.describe_transaction();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl DescribeTransactionFluentBuilder {
         }
     }
     /// Access the DescribeTransaction as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_transaction::builders::DescribeTransactionInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_transaction::builders::DescribeTransactionInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl DescribeTransactionFluentBuilder {
             crate::operation::describe_transaction::DescribeTransaction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_transaction::DescribeTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_transaction::DescribeTransactionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl DescribeTransactionFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl DescribeTransactionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_transaction::DescribeTransactionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_transaction::DescribeTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_transaction::DescribeTransactionError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl DescribeTransactionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_transaction::DescribeTransactionOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_transaction::DescribeTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_transaction::DescribeTransactionError>,
     > {
         self.send_middleware().await
     }
@@ -116,25 +102,17 @@ impl DescribeTransactionFluentBuilder {
             crate::operation::describe_transaction::DescribeTransaction,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::describe_transaction::DescribeTransactionError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_transaction::DescribeTransactionError>,
     > {
         self.customize_middleware().await
     }
     /// <p>The transaction for which to return status.</p>
-    pub fn transaction_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
     /// <p>The transaction for which to return status.</p>
-    pub fn set_transaction_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }

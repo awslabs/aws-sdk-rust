@@ -27,34 +27,27 @@ impl ::std::fmt::Display for ReturnShippingLabelAlreadyExistsException {
     }
 }
 impl ::std::error::Error for ReturnShippingLabelAlreadyExistsException {}
-impl ::aws_http::request_id::RequestId
-    for crate::types::error::ReturnShippingLabelAlreadyExistsException
-{
+impl ::aws_http::request_id::RequestId for crate::types::error::ReturnShippingLabelAlreadyExistsException {
     fn request_id(&self) -> Option<&str> {
         use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ReturnShippingLabelAlreadyExistsException
-{
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ReturnShippingLabelAlreadyExistsException {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
 impl ReturnShippingLabelAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`ReturnShippingLabelAlreadyExistsException`](crate::types::error::ReturnShippingLabelAlreadyExistsException).
-    pub fn builder(
-    ) -> crate::types::error::builders::ReturnShippingLabelAlreadyExistsExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::ReturnShippingLabelAlreadyExistsExceptionBuilder {
         crate::types::error::builders::ReturnShippingLabelAlreadyExistsExceptionBuilder::default()
     }
 }
 
 /// A builder for [`ReturnShippingLabelAlreadyExistsException`](crate::types::error::ReturnShippingLabelAlreadyExistsException).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReturnShippingLabelAlreadyExistsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -81,10 +74,7 @@ impl ReturnShippingLabelAlreadyExistsExceptionBuilder {
     }
 
     /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
+    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
         self.meta = meta;
         self
     }

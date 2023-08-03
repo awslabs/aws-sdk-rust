@@ -22,17 +22,14 @@ impl DeleteBucketCorsInput {
 }
 impl DeleteBucketCorsInput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketCorsInput`](crate::operation::delete_bucket_cors::DeleteBucketCorsInput).
-    pub fn builder() -> crate::operation::delete_bucket_cors::builders::DeleteBucketCorsInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_bucket_cors::builders::DeleteBucketCorsInputBuilder {
         crate::operation::delete_bucket_cors::builders::DeleteBucketCorsInputBuilder::default()
     }
 }
 
 /// A builder for [`DeleteBucketCorsInput`](crate::operation::delete_bucket_cors::DeleteBucketCorsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteBucketCorsInputBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
@@ -53,18 +50,12 @@ impl DeleteBucketCorsInputBuilder {
         &self.bucket
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn expected_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_bucket_owner = input;
         self
     }
@@ -75,15 +66,10 @@ impl DeleteBucketCorsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBucketCorsInput`](crate::operation::delete_bucket_cors::DeleteBucketCorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_bucket_cors::DeleteBucketCorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::delete_bucket_cors::DeleteBucketCorsInput {
-                bucket: self.bucket,
-                expected_bucket_owner: self.expected_bucket_owner,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::delete_bucket_cors::DeleteBucketCorsInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_bucket_cors::DeleteBucketCorsInput {
+            bucket: self.bucket,
+            expected_bucket_owner: self.expected_bucket_owner,
+        })
     }
 }

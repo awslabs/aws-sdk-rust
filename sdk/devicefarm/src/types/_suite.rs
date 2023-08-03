@@ -183,9 +183,7 @@ impl Suite {
 
 /// A builder for [`Suite`](crate::types::Suite).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuiteBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -317,10 +315,7 @@ impl SuiteBuilder {
         self
     }
     /// <p>When the suite was created.</p>
-    pub fn set_created(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created = input;
         self
     }
@@ -358,10 +353,7 @@ impl SuiteBuilder {
     /// <li> <p>COMPLETED</p> </li>
     /// <li> <p>STOPPING</p> </li>
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.status = input;
         self
     }
@@ -407,10 +399,7 @@ impl SuiteBuilder {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
-    pub fn set_result(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecutionResult>,
-    ) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<crate::types::ExecutionResult>) -> Self {
         self.result = input;
         self
     }
@@ -434,10 +423,7 @@ impl SuiteBuilder {
         self
     }
     /// <p>The suite's start time.</p>
-    pub fn set_started(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_started(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started = input;
         self
     }
@@ -451,10 +437,7 @@ impl SuiteBuilder {
         self
     }
     /// <p>The suite's stop time.</p>
-    pub fn set_stopped(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_stopped(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.stopped = input;
         self
     }
@@ -496,10 +479,7 @@ impl SuiteBuilder {
         self
     }
     /// <p>Represents the total (metered or unmetered) minutes used by the test suite.</p>
-    pub fn set_device_minutes(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceMinutes>,
-    ) -> Self {
+    pub fn set_device_minutes(mut self, input: ::std::option::Option<crate::types::DeviceMinutes>) -> Self {
         self.device_minutes = input;
         self
     }

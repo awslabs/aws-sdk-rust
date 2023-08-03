@@ -14,11 +14,7 @@ impl super::Client {
     ///   - [`health_events(Option<Vec<HealthEvent>>)`](crate::operation::list_health_events::ListHealthEventsOutput::health_events): <p>A list of health events.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_health_events::ListHealthEventsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
     /// - On failure, responds with [`SdkError<ListHealthEventsError>`](crate::operation::list_health_events::ListHealthEventsError)
-    pub fn list_health_events(
-        &self,
-    ) -> crate::operation::list_health_events::builders::ListHealthEventsFluentBuilder {
-        crate::operation::list_health_events::builders::ListHealthEventsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_health_events(&self) -> crate::operation::list_health_events::builders::ListHealthEventsFluentBuilder {
+        crate::operation::list_health_events::builders::ListHealthEventsFluentBuilder::new(self.handle.clone())
     }
 }

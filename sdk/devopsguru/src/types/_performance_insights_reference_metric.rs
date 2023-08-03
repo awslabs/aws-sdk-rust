@@ -10,9 +10,7 @@ pub struct PerformanceInsightsReferenceMetric {
 }
 impl PerformanceInsightsReferenceMetric {
     /// <p>A query to be processed on the metric.</p>
-    pub fn metric_query(
-        &self,
-    ) -> ::std::option::Option<&crate::types::PerformanceInsightsMetricQuery> {
+    pub fn metric_query(&self) -> ::std::option::Option<&crate::types::PerformanceInsightsMetricQuery> {
         self.metric_query.as_ref()
     }
 }
@@ -25,9 +23,7 @@ impl PerformanceInsightsReferenceMetric {
 
 /// A builder for [`PerformanceInsightsReferenceMetric`](crate::types::PerformanceInsightsReferenceMetric).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PerformanceInsightsReferenceMetricBuilder {
     pub(crate) metric_query: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
 }
@@ -38,17 +34,12 @@ impl PerformanceInsightsReferenceMetricBuilder {
         self
     }
     /// <p>A query to be processed on the metric.</p>
-    pub fn set_metric_query(
-        mut self,
-        input: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
-    ) -> Self {
+    pub fn set_metric_query(mut self, input: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>) -> Self {
         self.metric_query = input;
         self
     }
     /// <p>A query to be processed on the metric.</p>
-    pub fn get_metric_query(
-        &self,
-    ) -> &::std::option::Option<crate::types::PerformanceInsightsMetricQuery> {
+    pub fn get_metric_query(&self) -> &::std::option::Option<crate::types::PerformanceInsightsMetricQuery> {
         &self.metric_query
     }
     /// Consumes the builder and constructs a [`PerformanceInsightsReferenceMetric`](crate::types::PerformanceInsightsReferenceMetric).

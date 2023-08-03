@@ -29,16 +29,14 @@ impl ListControlDomainInsightsByAssessmentInput {
 }
 impl ListControlDomainInsightsByAssessmentInput {
     /// Creates a new builder-style object to manufacture [`ListControlDomainInsightsByAssessmentInput`](crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentInput).
-    pub fn builder() -> crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentInputBuilder{
+    pub fn builder() -> crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentInputBuilder {
         crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentInputBuilder::default()
     }
 }
 
 /// A builder for [`ListControlDomainInsightsByAssessmentInput`](crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListControlDomainInsightsByAssessmentInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -46,18 +44,12 @@ pub struct ListControlDomainInsightsByAssessmentInputBuilder {
 }
 impl ListControlDomainInsightsByAssessmentInputBuilder {
     /// <p>The unique identifier for the active assessment. </p>
-    pub fn assessment_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the active assessment. </p>
-    pub fn set_assessment_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_id = input;
         self
     }
@@ -94,16 +86,18 @@ impl ListControlDomainInsightsByAssessmentInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListControlDomainInsightsByAssessmentInput`](crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentInput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
         ::std::result::Result::Ok(
             crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentInput {
-                assessment_id: self.assessment_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                assessment_id: self.assessment_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }

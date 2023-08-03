@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`protocols_lists(Option<Vec<ProtocolsListDataSummary>>)`](crate::operation::list_protocols_lists::ListProtocolsListsOutput::protocols_lists): <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_protocols_lists::ListProtocolsListsOutput::next_token): <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
     /// - On failure, responds with [`SdkError<ListProtocolsListsError>`](crate::operation::list_protocols_lists::ListProtocolsListsError)
-    pub fn list_protocols_lists(
-        &self,
-    ) -> crate::operation::list_protocols_lists::builders::ListProtocolsListsFluentBuilder {
-        crate::operation::list_protocols_lists::builders::ListProtocolsListsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_protocols_lists(&self) -> crate::operation::list_protocols_lists::builders::ListProtocolsListsFluentBuilder {
+        crate::operation::list_protocols_lists::builders::ListProtocolsListsFluentBuilder::new(self.handle.clone())
     }
 }

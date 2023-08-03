@@ -36,16 +36,14 @@ impl ListRepositorySyncDefinitionsInput {
 }
 impl ListRepositorySyncDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListRepositorySyncDefinitionsInput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput).
-    pub fn builder() -> crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsInputBuilder{
+    pub fn builder() -> crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsInputBuilder {
         crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListRepositorySyncDefinitionsInput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRepositorySyncDefinitionsInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
@@ -54,18 +52,12 @@ pub struct ListRepositorySyncDefinitionsInputBuilder {
 }
 impl ListRepositorySyncDefinitionsInputBuilder {
     /// <p>The repository name.</p>
-    pub fn repository_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name.</p>
-    pub fn set_repository_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
@@ -79,17 +71,12 @@ impl ListRepositorySyncDefinitionsInputBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_repository_provider(
-        mut self,
-        input: ::std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
+    pub fn set_repository_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
         self.repository_provider = input;
         self
     }
     /// <p>The repository provider.</p>
-    pub fn get_repository_provider(
-        &self,
-    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+    pub fn get_repository_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
         &self.repository_provider
     }
     /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
@@ -127,17 +114,11 @@ impl ListRepositorySyncDefinitionsInputBuilder {
         crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(
-            crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput {
-                repository_name: self.repository_name
-                ,
-                repository_provider: self.repository_provider
-                ,
-                sync_type: self.sync_type
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+        ::std::result::Result::Ok(crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput {
+            repository_name: self.repository_name,
+            repository_provider: self.repository_provider,
+            sync_type: self.sync_type,
+            next_token: self.next_token,
+        })
     }
 }

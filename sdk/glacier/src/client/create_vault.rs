@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CreateVaultOutput`](crate::operation::create_vault::CreateVaultOutput) with field(s):
     ///   - [`location(Option<String>)`](crate::operation::create_vault::CreateVaultOutput::location): <p>The URI of the vault that was created.</p>
     /// - On failure, responds with [`SdkError<CreateVaultError>`](crate::operation::create_vault::CreateVaultError)
-    pub fn create_vault(
-        &self,
-    ) -> crate::operation::create_vault::builders::CreateVaultFluentBuilder {
+    pub fn create_vault(&self) -> crate::operation::create_vault::builders::CreateVaultFluentBuilder {
         crate::operation::create_vault::builders::CreateVaultFluentBuilder::new(self.handle.clone())
     }
 }

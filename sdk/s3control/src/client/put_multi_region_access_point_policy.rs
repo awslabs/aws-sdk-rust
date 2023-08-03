@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`PutMultiRegionAccessPointPolicyOutput`](crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyOutput) with field(s):
     ///   - [`request_token_arn(Option<String>)`](crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyOutput::request_token_arn): <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
     /// - On failure, responds with [`SdkError<PutMultiRegionAccessPointPolicyError>`](crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyError)
-    pub fn put_multi_region_access_point_policy(&self) -> crate::operation::put_multi_region_access_point_policy::builders::PutMultiRegionAccessPointPolicyFluentBuilder{
+    pub fn put_multi_region_access_point_policy(
+        &self,
+    ) -> crate::operation::put_multi_region_access_point_policy::builders::PutMultiRegionAccessPointPolicyFluentBuilder {
         crate::operation::put_multi_region_access_point_policy::builders::PutMultiRegionAccessPointPolicyFluentBuilder::new(self.handle.clone())
     }
 }

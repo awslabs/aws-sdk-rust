@@ -23,9 +23,7 @@ impl HierarchyLevelUpdate {
 
 /// A builder for [`HierarchyLevelUpdate`](crate::types::HierarchyLevelUpdate).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HierarchyLevelUpdateBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }

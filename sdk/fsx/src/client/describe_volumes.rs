@@ -12,11 +12,7 @@ impl super::Client {
     ///   - [`volumes(Option<Vec<Volume>>)`](crate::operation::describe_volumes::DescribeVolumesOutput::volumes): <p>Returned after a successful <code>DescribeVolumes</code> operation, describing each volume.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_volumes::DescribeVolumesOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     /// - On failure, responds with [`SdkError<DescribeVolumesError>`](crate::operation::describe_volumes::DescribeVolumesError)
-    pub fn describe_volumes(
-        &self,
-    ) -> crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder {
-        crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_volumes(&self) -> crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder {
+        crate::operation::describe_volumes::builders::DescribeVolumesFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,9 +37,7 @@ impl PersonDetail {
 
 /// A builder for [`PersonDetail`](crate::types::PersonDetail).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PersonDetailBuilder {
     pub(crate) index: ::std::option::Option<i64>,
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
@@ -66,10 +64,7 @@ impl PersonDetailBuilder {
         self
     }
     /// <p>Bounding box around the detected person.</p>
-    pub fn set_bounding_box(
-        mut self,
-        input: ::std::option::Option<crate::types::BoundingBox>,
-    ) -> Self {
+    pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
         self.bounding_box = input;
         self
     }

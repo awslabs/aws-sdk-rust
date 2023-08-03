@@ -7,16 +7,14 @@
 pub struct AggregationFunction {
     /// <p>Aggregation for numerical values.</p>
     #[doc(hidden)]
-    pub numerical_aggregation_function:
-        ::std::option::Option<crate::types::NumericalAggregationFunction>,
+    pub numerical_aggregation_function: ::std::option::Option<crate::types::NumericalAggregationFunction>,
     /// <p>Aggregation for categorical values.</p>
     /// <ul>
     /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
     /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub categorical_aggregation_function:
-        ::std::option::Option<crate::types::CategoricalAggregationFunction>,
+    pub categorical_aggregation_function: ::std::option::Option<crate::types::CategoricalAggregationFunction>,
     /// <p>Aggregation for date values.</p>
     /// <ul>
     /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
@@ -28,14 +26,11 @@ pub struct AggregationFunction {
     pub date_aggregation_function: ::std::option::Option<crate::types::DateAggregationFunction>,
     /// <p>Aggregation for attributes.</p>
     #[doc(hidden)]
-    pub attribute_aggregation_function:
-        ::std::option::Option<crate::types::AttributeAggregationFunction>,
+    pub attribute_aggregation_function: ::std::option::Option<crate::types::AttributeAggregationFunction>,
 }
 impl AggregationFunction {
     /// <p>Aggregation for numerical values.</p>
-    pub fn numerical_aggregation_function(
-        &self,
-    ) -> ::std::option::Option<&crate::types::NumericalAggregationFunction> {
+    pub fn numerical_aggregation_function(&self) -> ::std::option::Option<&crate::types::NumericalAggregationFunction> {
         self.numerical_aggregation_function.as_ref()
     }
     /// <p>Aggregation for categorical values.</p>
@@ -43,9 +38,7 @@ impl AggregationFunction {
     /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
     /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
     /// </ul>
-    pub fn categorical_aggregation_function(
-        &self,
-    ) -> ::std::option::Option<&crate::types::CategoricalAggregationFunction> {
+    pub fn categorical_aggregation_function(&self) -> ::std::option::Option<&crate::types::CategoricalAggregationFunction> {
         self.categorical_aggregation_function.as_ref()
     }
     /// <p>Aggregation for date values.</p>
@@ -55,15 +48,11 @@ impl AggregationFunction {
     /// <li> <p> <code>MIN</code>: Select the smallest date value.</p> </li>
     /// <li> <p> <code>MAX</code>: Select the largest date value.</p> </li>
     /// </ul>
-    pub fn date_aggregation_function(
-        &self,
-    ) -> ::std::option::Option<&crate::types::DateAggregationFunction> {
+    pub fn date_aggregation_function(&self) -> ::std::option::Option<&crate::types::DateAggregationFunction> {
         self.date_aggregation_function.as_ref()
     }
     /// <p>Aggregation for attributes.</p>
-    pub fn attribute_aggregation_function(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AttributeAggregationFunction> {
+    pub fn attribute_aggregation_function(&self) -> ::std::option::Option<&crate::types::AttributeAggregationFunction> {
         self.attribute_aggregation_function.as_ref()
     }
 }
@@ -76,40 +65,26 @@ impl AggregationFunction {
 
 /// A builder for [`AggregationFunction`](crate::types::AggregationFunction).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregationFunctionBuilder {
-    pub(crate) numerical_aggregation_function:
-        ::std::option::Option<crate::types::NumericalAggregationFunction>,
-    pub(crate) categorical_aggregation_function:
-        ::std::option::Option<crate::types::CategoricalAggregationFunction>,
-    pub(crate) date_aggregation_function:
-        ::std::option::Option<crate::types::DateAggregationFunction>,
-    pub(crate) attribute_aggregation_function:
-        ::std::option::Option<crate::types::AttributeAggregationFunction>,
+    pub(crate) numerical_aggregation_function: ::std::option::Option<crate::types::NumericalAggregationFunction>,
+    pub(crate) categorical_aggregation_function: ::std::option::Option<crate::types::CategoricalAggregationFunction>,
+    pub(crate) date_aggregation_function: ::std::option::Option<crate::types::DateAggregationFunction>,
+    pub(crate) attribute_aggregation_function: ::std::option::Option<crate::types::AttributeAggregationFunction>,
 }
 impl AggregationFunctionBuilder {
     /// <p>Aggregation for numerical values.</p>
-    pub fn numerical_aggregation_function(
-        mut self,
-        input: crate::types::NumericalAggregationFunction,
-    ) -> Self {
+    pub fn numerical_aggregation_function(mut self, input: crate::types::NumericalAggregationFunction) -> Self {
         self.numerical_aggregation_function = ::std::option::Option::Some(input);
         self
     }
     /// <p>Aggregation for numerical values.</p>
-    pub fn set_numerical_aggregation_function(
-        mut self,
-        input: ::std::option::Option<crate::types::NumericalAggregationFunction>,
-    ) -> Self {
+    pub fn set_numerical_aggregation_function(mut self, input: ::std::option::Option<crate::types::NumericalAggregationFunction>) -> Self {
         self.numerical_aggregation_function = input;
         self
     }
     /// <p>Aggregation for numerical values.</p>
-    pub fn get_numerical_aggregation_function(
-        &self,
-    ) -> &::std::option::Option<crate::types::NumericalAggregationFunction> {
+    pub fn get_numerical_aggregation_function(&self) -> &::std::option::Option<crate::types::NumericalAggregationFunction> {
         &self.numerical_aggregation_function
     }
     /// <p>Aggregation for categorical values.</p>
@@ -117,10 +92,7 @@ impl AggregationFunctionBuilder {
     /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
     /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
     /// </ul>
-    pub fn categorical_aggregation_function(
-        mut self,
-        input: crate::types::CategoricalAggregationFunction,
-    ) -> Self {
+    pub fn categorical_aggregation_function(mut self, input: crate::types::CategoricalAggregationFunction) -> Self {
         self.categorical_aggregation_function = ::std::option::Option::Some(input);
         self
     }
@@ -129,10 +101,7 @@ impl AggregationFunctionBuilder {
     /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
     /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
     /// </ul>
-    pub fn set_categorical_aggregation_function(
-        mut self,
-        input: ::std::option::Option<crate::types::CategoricalAggregationFunction>,
-    ) -> Self {
+    pub fn set_categorical_aggregation_function(mut self, input: ::std::option::Option<crate::types::CategoricalAggregationFunction>) -> Self {
         self.categorical_aggregation_function = input;
         self
     }
@@ -141,9 +110,7 @@ impl AggregationFunctionBuilder {
     /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
     /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
     /// </ul>
-    pub fn get_categorical_aggregation_function(
-        &self,
-    ) -> &::std::option::Option<crate::types::CategoricalAggregationFunction> {
+    pub fn get_categorical_aggregation_function(&self) -> &::std::option::Option<crate::types::CategoricalAggregationFunction> {
         &self.categorical_aggregation_function
     }
     /// <p>Aggregation for date values.</p>
@@ -153,10 +120,7 @@ impl AggregationFunctionBuilder {
     /// <li> <p> <code>MIN</code>: Select the smallest date value.</p> </li>
     /// <li> <p> <code>MAX</code>: Select the largest date value.</p> </li>
     /// </ul>
-    pub fn date_aggregation_function(
-        mut self,
-        input: crate::types::DateAggregationFunction,
-    ) -> Self {
+    pub fn date_aggregation_function(mut self, input: crate::types::DateAggregationFunction) -> Self {
         self.date_aggregation_function = ::std::option::Option::Some(input);
         self
     }
@@ -167,10 +131,7 @@ impl AggregationFunctionBuilder {
     /// <li> <p> <code>MIN</code>: Select the smallest date value.</p> </li>
     /// <li> <p> <code>MAX</code>: Select the largest date value.</p> </li>
     /// </ul>
-    pub fn set_date_aggregation_function(
-        mut self,
-        input: ::std::option::Option<crate::types::DateAggregationFunction>,
-    ) -> Self {
+    pub fn set_date_aggregation_function(mut self, input: ::std::option::Option<crate::types::DateAggregationFunction>) -> Self {
         self.date_aggregation_function = input;
         self
     }
@@ -181,31 +142,21 @@ impl AggregationFunctionBuilder {
     /// <li> <p> <code>MIN</code>: Select the smallest date value.</p> </li>
     /// <li> <p> <code>MAX</code>: Select the largest date value.</p> </li>
     /// </ul>
-    pub fn get_date_aggregation_function(
-        &self,
-    ) -> &::std::option::Option<crate::types::DateAggregationFunction> {
+    pub fn get_date_aggregation_function(&self) -> &::std::option::Option<crate::types::DateAggregationFunction> {
         &self.date_aggregation_function
     }
     /// <p>Aggregation for attributes.</p>
-    pub fn attribute_aggregation_function(
-        mut self,
-        input: crate::types::AttributeAggregationFunction,
-    ) -> Self {
+    pub fn attribute_aggregation_function(mut self, input: crate::types::AttributeAggregationFunction) -> Self {
         self.attribute_aggregation_function = ::std::option::Option::Some(input);
         self
     }
     /// <p>Aggregation for attributes.</p>
-    pub fn set_attribute_aggregation_function(
-        mut self,
-        input: ::std::option::Option<crate::types::AttributeAggregationFunction>,
-    ) -> Self {
+    pub fn set_attribute_aggregation_function(mut self, input: ::std::option::Option<crate::types::AttributeAggregationFunction>) -> Self {
         self.attribute_aggregation_function = input;
         self
     }
     /// <p>Aggregation for attributes.</p>
-    pub fn get_attribute_aggregation_function(
-        &self,
-    ) -> &::std::option::Option<crate::types::AttributeAggregationFunction> {
+    pub fn get_attribute_aggregation_function(&self) -> &::std::option::Option<crate::types::AttributeAggregationFunction> {
         &self.attribute_aggregation_function
     }
     /// Consumes the builder and constructs a [`AggregationFunction`](crate::types::AggregationFunction).

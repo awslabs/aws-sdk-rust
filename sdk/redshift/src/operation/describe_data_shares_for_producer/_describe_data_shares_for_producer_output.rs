@@ -28,16 +28,14 @@ impl ::aws_http::request_id::RequestId for DescribeDataSharesForProducerOutput {
 }
 impl DescribeDataSharesForProducerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSharesForProducerOutput`](crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerOutput).
-    pub fn builder() -> crate::operation::describe_data_shares_for_producer::builders::DescribeDataSharesForProducerOutputBuilder{
+    pub fn builder() -> crate::operation::describe_data_shares_for_producer::builders::DescribeDataSharesForProducerOutputBuilder {
         crate::operation::describe_data_shares_for_producer::builders::DescribeDataSharesForProducerOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDataSharesForProducerOutput`](crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDataSharesForProducerOutputBuilder {
     pub(crate) data_shares: ::std::option::Option<::std::vec::Vec<crate::types::DataShare>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
@@ -56,17 +54,12 @@ impl DescribeDataSharesForProducerOutputBuilder {
         self
     }
     /// <p>Shows the results of datashares available for producers.</p>
-    pub fn set_data_shares(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataShare>>,
-    ) -> Self {
+    pub fn set_data_shares(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataShare>>) -> Self {
         self.data_shares = input;
         self
     }
     /// <p>Shows the results of datashares available for producers.</p>
-    pub fn get_data_shares(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataShare>> {
+    pub fn get_data_shares(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataShare>> {
         &self.data_shares
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForProducer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
@@ -93,10 +86,7 @@ impl DescribeDataSharesForProducerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDataSharesForProducerOutput`](crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerOutput
-    {
+    pub fn build(self) -> crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerOutput {
         crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerOutput {
             data_shares: self.data_shares,
             marker: self.marker,

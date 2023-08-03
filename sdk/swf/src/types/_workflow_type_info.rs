@@ -51,9 +51,7 @@ impl WorkflowTypeInfo {
 
 /// A builder for [`WorkflowTypeInfo`](crate::types::WorkflowTypeInfo).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkflowTypeInfoBuilder {
     pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     pub(crate) status: ::std::option::Option<crate::types::RegistrationStatus>,
@@ -68,10 +66,7 @@ impl WorkflowTypeInfoBuilder {
         self
     }
     /// <p>The workflow type this information is about.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: ::std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
+    pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.workflow_type = input;
         self
     }
@@ -85,10 +80,7 @@ impl WorkflowTypeInfoBuilder {
         self
     }
     /// <p>The current status of the workflow type.</p>
-    pub fn set_status(
-        mut self,
-        input: ::std::option::Option<crate::types::RegistrationStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
         self.status = input;
         self
     }
@@ -116,10 +108,7 @@ impl WorkflowTypeInfoBuilder {
         self
     }
     /// <p>The date when this type was registered.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_date = input;
         self
     }
@@ -133,10 +122,7 @@ impl WorkflowTypeInfoBuilder {
         self
     }
     /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
-    pub fn set_deprecation_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_deprecation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.deprecation_date = input;
         self
     }

@@ -7,11 +7,7 @@ impl super::Client {
     ///   - [`dry_run(bool)`](crate::operation::delete_dhcp_options::builders::DeleteDhcpOptionsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::delete_dhcp_options::builders::DeleteDhcpOptionsFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`DeleteDhcpOptionsOutput`](crate::operation::delete_dhcp_options::DeleteDhcpOptionsOutput)
     /// - On failure, responds with [`SdkError<DeleteDhcpOptionsError>`](crate::operation::delete_dhcp_options::DeleteDhcpOptionsError)
-    pub fn delete_dhcp_options(
-        &self,
-    ) -> crate::operation::delete_dhcp_options::builders::DeleteDhcpOptionsFluentBuilder {
-        crate::operation::delete_dhcp_options::builders::DeleteDhcpOptionsFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn delete_dhcp_options(&self) -> crate::operation::delete_dhcp_options::builders::DeleteDhcpOptionsFluentBuilder {
+        crate::operation::delete_dhcp_options::builders::DeleteDhcpOptionsFluentBuilder::new(self.handle.clone())
     }
 }

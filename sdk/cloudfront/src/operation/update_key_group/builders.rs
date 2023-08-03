@@ -10,10 +10,7 @@ impl UpdateKeyGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_key_group::UpdateKeyGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_key_group::UpdateKeyGroupError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_key_group::UpdateKeyGroupError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.update_key_group();
         fluent_builder.inner = self;
@@ -43,9 +40,7 @@ impl UpdateKeyGroupFluentBuilder {
         }
     }
     /// Access the UpdateKeyGroup as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_key_group::builders::UpdateKeyGroupInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_key_group::builders::UpdateKeyGroupInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -57,9 +52,7 @@ impl UpdateKeyGroupFluentBuilder {
             crate::operation::update_key_group::UpdateKeyGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_key_group::UpdateKeyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_key_group::UpdateKeyGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -69,10 +62,7 @@ impl UpdateKeyGroupFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -81,9 +71,7 @@ impl UpdateKeyGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_key_group::UpdateKeyGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_key_group::UpdateKeyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_key_group::UpdateKeyGroupError>,
     > {
         let op = self
             .inner
@@ -106,9 +94,7 @@ impl UpdateKeyGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_key_group::UpdateKeyGroupOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_key_group::UpdateKeyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_key_group::UpdateKeyGroupError>,
     > {
         self.send_middleware().await
     }
@@ -122,9 +108,7 @@ impl UpdateKeyGroupFluentBuilder {
             crate::operation::update_key_group::UpdateKeyGroup,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::update_key_group::UpdateKeyGroupError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_key_group::UpdateKeyGroupError>,
     > {
         self.customize_middleware().await
     }
@@ -134,10 +118,7 @@ impl UpdateKeyGroupFluentBuilder {
         self
     }
     /// <p>The key group configuration.</p>
-    pub fn set_key_group_config(
-        mut self,
-        input: ::std::option::Option<crate::types::KeyGroupConfig>,
-    ) -> Self {
+    pub fn set_key_group_config(mut self, input: ::std::option::Option<crate::types::KeyGroupConfig>) -> Self {
         self.inner = self.inner.set_key_group_config(input);
         self
     }

@@ -30,9 +30,7 @@ impl CompareFacesMatch {
 
 /// A builder for [`CompareFacesMatch`](crate::types::CompareFacesMatch).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompareFacesMatchBuilder {
     pub(crate) similarity: ::std::option::Option<f32>,
     pub(crate) face: ::std::option::Option<crate::types::ComparedFace>,

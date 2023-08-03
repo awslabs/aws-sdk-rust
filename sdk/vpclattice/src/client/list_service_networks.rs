@@ -10,11 +10,7 @@ impl super::Client {
     ///   - [`items(Option<Vec<ServiceNetworkSummary>>)`](crate::operation::list_service_networks::ListServiceNetworksOutput::items): <p>Information about the service networks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_networks::ListServiceNetworksOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
     /// - On failure, responds with [`SdkError<ListServiceNetworksError>`](crate::operation::list_service_networks::ListServiceNetworksError)
-    pub fn list_service_networks(
-        &self,
-    ) -> crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder {
-        crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn list_service_networks(&self) -> crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder {
+        crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::new(self.handle.clone())
     }
 }

@@ -21,18 +21,14 @@ impl ::aws_http::request_id::RequestId for GetSchemaAnalysisRuleOutput {
 }
 impl GetSchemaAnalysisRuleOutput {
     /// Creates a new builder-style object to manufacture [`GetSchemaAnalysisRuleOutput`](crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleOutputBuilder {
         crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`GetSchemaAnalysisRuleOutput`](crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSchemaAnalysisRuleOutputBuilder {
     pub(crate) analysis_rule: ::std::option::Option<crate::types::AnalysisRule>,
     _request_id: Option<String>,
@@ -44,10 +40,7 @@ impl GetSchemaAnalysisRuleOutputBuilder {
         self
     }
     /// <p>A specification about how data from the configured table can be used.</p>
-    pub fn set_analysis_rule(
-        mut self,
-        input: ::std::option::Option<crate::types::AnalysisRule>,
-    ) -> Self {
+    pub fn set_analysis_rule(mut self, input: ::std::option::Option<crate::types::AnalysisRule>) -> Self {
         self.analysis_rule = input;
         self
     }

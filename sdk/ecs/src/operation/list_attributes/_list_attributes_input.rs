@@ -61,9 +61,7 @@ impl ListAttributesInput {
 
 /// A builder for [`ListAttributesInput`](crate::operation::list_attributes::ListAttributesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAttributesInputBuilder {
     pub(crate) cluster: ::std::option::Option<::std::string::String>,
     pub(crate) target_type: ::std::option::Option<crate::types::TargetType>,
@@ -93,10 +91,7 @@ impl ListAttributesInputBuilder {
         self
     }
     /// <p>The type of the target to list attributes with.</p>
-    pub fn set_target_type(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetType>,
-    ) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::TargetType>) -> Self {
         self.target_type = input;
         self
     }
@@ -105,18 +100,12 @@ impl ListAttributesInputBuilder {
         &self.target_type
     }
     /// <p>The name of the attribute to filter the results with. </p>
-    pub fn attribute_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the attribute to filter the results with. </p>
-    pub fn set_attribute_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }
@@ -125,18 +114,12 @@ impl ListAttributesInputBuilder {
         &self.attribute_name
     }
     /// <p>The value of the attribute to filter results with. You must also specify an attribute name to use this parameter.</p>
-    pub fn attribute_value(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the attribute to filter results with. You must also specify an attribute name to use this parameter.</p>
-    pub fn set_attribute_value(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_value = input;
         self
     }
@@ -181,10 +164,7 @@ impl ListAttributesInputBuilder {
     /// Consumes the builder and constructs a [`ListAttributesInput`](crate::operation::list_attributes::ListAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_attributes::ListAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
+    ) -> ::std::result::Result<crate::operation::list_attributes::ListAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_attributes::ListAttributesInput {
             cluster: self.cluster,
             target_type: self.target_type,

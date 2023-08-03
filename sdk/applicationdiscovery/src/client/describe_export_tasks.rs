@@ -11,11 +11,7 @@ impl super::Client {
     ///   - [`exports_info(Option<Vec<ExportInfo>>)`](crate::operation::describe_export_tasks::DescribeExportTasksOutput::exports_info): <p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_export_tasks::DescribeExportTasksOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     /// - On failure, responds with [`SdkError<DescribeExportTasksError>`](crate::operation::describe_export_tasks::DescribeExportTasksError)
-    pub fn describe_export_tasks(
-        &self,
-    ) -> crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder {
-        crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn describe_export_tasks(&self) -> crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder {
+        crate::operation::describe_export_tasks::builders::DescribeExportTasksFluentBuilder::new(self.handle.clone())
     }
 }

@@ -37,10 +37,7 @@ impl GetLaunchConfigurationFluentBuilder {
         }
     }
     /// Access the GetLaunchConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_launch_configuration::builders::GetLaunchConfigurationInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::get_launch_configuration::builders::GetLaunchConfigurationInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -52,9 +49,7 @@ impl GetLaunchConfigurationFluentBuilder {
             crate::operation::get_launch_configuration::GetLaunchConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_launch_configuration::GetLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_launch_configuration::GetLaunchConfigurationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -64,10 +59,7 @@ impl GetLaunchConfigurationFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -76,9 +68,7 @@ impl GetLaunchConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_launch_configuration::GetLaunchConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_launch_configuration::GetLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_launch_configuration::GetLaunchConfigurationError>,
     > {
         let op = self
             .inner
@@ -101,9 +91,7 @@ impl GetLaunchConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_launch_configuration::GetLaunchConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_launch_configuration::GetLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_launch_configuration::GetLaunchConfigurationError>,
     > {
         self.send_middleware().await
     }
@@ -117,25 +105,17 @@ impl GetLaunchConfigurationFluentBuilder {
             crate::operation::get_launch_configuration::GetLaunchConfiguration,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_launch_configuration::GetLaunchConfigurationError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_launch_configuration::GetLaunchConfigurationError>,
     > {
         self.customize_middleware().await
     }
     /// <p>Request to get Launch Configuration information by Source Server ID.</p>
-    pub fn source_server_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>Request to get Launch Configuration information by Source Server ID.</p>
-    pub fn set_source_server_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
     }

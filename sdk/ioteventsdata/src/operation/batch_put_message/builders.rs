@@ -10,10 +10,7 @@ impl BatchPutMessageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_put_message::BatchPutMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_message::BatchPutMessageError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_message::BatchPutMessageError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.batch_put_message();
         fluent_builder.inner = self;
@@ -37,9 +34,7 @@ impl BatchPutMessageFluentBuilder {
         }
     }
     /// Access the BatchPutMessage as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_put_message::builders::BatchPutMessageInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_put_message::builders::BatchPutMessageInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +46,7 @@ impl BatchPutMessageFluentBuilder {
             crate::operation::batch_put_message::BatchPutMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_message::BatchPutMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_message::BatchPutMessageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +56,7 @@ impl BatchPutMessageFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +65,7 @@ impl BatchPutMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_put_message::BatchPutMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_message::BatchPutMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_message::BatchPutMessageError>,
     > {
         let op = self
             .inner
@@ -100,9 +88,7 @@ impl BatchPutMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_put_message::BatchPutMessageOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_message::BatchPutMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_message::BatchPutMessageError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +102,7 @@ impl BatchPutMessageFluentBuilder {
             crate::operation::batch_put_message::BatchPutMessage,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::batch_put_message::BatchPutMessageError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_put_message::BatchPutMessageError>,
     > {
         self.customize_middleware().await
     }
@@ -132,10 +116,7 @@ impl BatchPutMessageFluentBuilder {
         self
     }
     /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
-    pub fn set_messages(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
-    ) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
         self.inner = self.inner.set_messages(input);
         self
     }

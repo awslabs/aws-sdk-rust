@@ -86,18 +86,12 @@ impl TerminationBuilder {
         &self.cps_limit
     }
     /// <p>The default outbound calling number.</p>
-    pub fn default_phone_number(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn default_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default outbound calling number.</p>
-    pub fn set_default_phone_number(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_default_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_phone_number = input;
         self
     }
@@ -110,27 +104,19 @@ impl TerminationBuilder {
     /// To override the contents of this collection use [`set_calling_regions`](Self::set_calling_regions).
     ///
     /// <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.</p>
-    pub fn calling_regions(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn calling_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.calling_regions.unwrap_or_default();
         v.push(input.into());
         self.calling_regions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.</p>
-    pub fn set_calling_regions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_calling_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.calling_regions = input;
         self
     }
     /// <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.</p>
-    pub fn get_calling_regions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_calling_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.calling_regions
     }
     /// Appends an item to `cidr_allowed_list`.
@@ -138,27 +124,19 @@ impl TerminationBuilder {
     /// To override the contents of this collection use [`set_cidr_allowed_list`](Self::set_cidr_allowed_list).
     ///
     /// <p>The IP addresses allowed to make calls, in CIDR format.</p>
-    pub fn cidr_allowed_list(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn cidr_allowed_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cidr_allowed_list.unwrap_or_default();
         v.push(input.into());
         self.cidr_allowed_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IP addresses allowed to make calls, in CIDR format.</p>
-    pub fn set_cidr_allowed_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    ) -> Self {
+    pub fn set_cidr_allowed_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cidr_allowed_list = input;
         self
     }
     /// <p>The IP addresses allowed to make calls, in CIDR format.</p>
-    pub fn get_cidr_allowed_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cidr_allowed_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cidr_allowed_list
     }
     /// <p>When termination is disabled, outbound calls cannot be made.</p>

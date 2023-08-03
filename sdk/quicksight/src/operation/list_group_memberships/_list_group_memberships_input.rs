@@ -43,17 +43,14 @@ impl ListGroupMembershipsInput {
 }
 impl ListGroupMembershipsInput {
     /// Creates a new builder-style object to manufacture [`ListGroupMembershipsInput`](crate::operation::list_group_memberships::ListGroupMembershipsInput).
-    pub fn builder(
-    ) -> crate::operation::list_group_memberships::builders::ListGroupMembershipsInputBuilder {
+    pub fn builder() -> crate::operation::list_group_memberships::builders::ListGroupMembershipsInputBuilder {
         crate::operation::list_group_memberships::builders::ListGroupMembershipsInputBuilder::default()
     }
 }
 
 /// A builder for [`ListGroupMembershipsInput`](crate::operation::list_group_memberships::ListGroupMembershipsInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupMembershipsInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -105,18 +102,12 @@ impl ListGroupMembershipsInputBuilder {
         &self.max_results
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn set_aws_account_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
@@ -141,18 +132,14 @@ impl ListGroupMembershipsInputBuilder {
     /// Consumes the builder and constructs a [`ListGroupMembershipsInput`](crate::operation::list_group_memberships::ListGroupMembershipsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::list_group_memberships::ListGroupMembershipsInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::list_group_memberships::ListGroupMembershipsInput {
-                group_name: self.group_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                aws_account_id: self.aws_account_id,
-                namespace: self.namespace,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::list_group_memberships::ListGroupMembershipsInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_group_memberships::ListGroupMembershipsInput {
+            group_name: self.group_name,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            aws_account_id: self.aws_account_id,
+            namespace: self.namespace,
+        })
     }
 }

@@ -25,16 +25,14 @@ impl ::aws_http::request_id::RequestId for DeletePullRequestApprovalRuleOutput {
 }
 impl DeletePullRequestApprovalRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeletePullRequestApprovalRuleOutput`](crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput).
-    pub fn builder() -> crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleOutputBuilder{
+    pub fn builder() -> crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleOutputBuilder {
         crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleOutputBuilder::default()
     }
 }
 
 /// A builder for [`DeletePullRequestApprovalRuleOutput`](crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletePullRequestApprovalRuleOutputBuilder {
     pub(crate) approval_rule_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -43,20 +41,14 @@ impl DeletePullRequestApprovalRuleOutputBuilder {
     /// <p>The ID of the deleted approval rule. </p> <note>
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
-    pub fn approval_rule_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deleted approval rule. </p> <note>
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
-    pub fn set_approval_rule_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_approval_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.approval_rule_id = input;
         self
     }
@@ -76,10 +68,7 @@ impl DeletePullRequestApprovalRuleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeletePullRequestApprovalRuleOutput`](crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput
-    {
+    pub fn build(self) -> crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput {
         crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput {
             approval_rule_id: self.approval_rule_id,
             _request_id: self._request_id,

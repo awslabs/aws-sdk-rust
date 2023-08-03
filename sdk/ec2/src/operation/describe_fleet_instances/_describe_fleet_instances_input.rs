@@ -49,18 +49,14 @@ impl DescribeFleetInstancesInput {
 }
 impl DescribeFleetInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetInstancesInput`](crate::operation::describe_fleet_instances::DescribeFleetInstancesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_fleet_instances::builders::DescribeFleetInstancesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fleet_instances::builders::DescribeFleetInstancesInputBuilder {
         crate::operation::describe_fleet_instances::builders::DescribeFleetInstancesInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeFleetInstancesInput`](crate::operation::describe_fleet_instances::DescribeFleetInstancesInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFleetInstancesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -143,10 +139,7 @@ impl DescribeFleetInstancesInputBuilder {
     /// <ul>
     /// <li> <p> <code>instance-type</code> - The instance type.</p> </li>
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
@@ -160,18 +153,14 @@ impl DescribeFleetInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFleetInstancesInput`](crate::operation::describe_fleet_instances::DescribeFleetInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fleet_instances::DescribeFleetInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_fleet_instances::DescribeFleetInstancesInput {
-                dry_run: self.dry_run,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                fleet_id: self.fleet_id,
-                filters: self.filters,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_fleet_instances::DescribeFleetInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_fleet_instances::DescribeFleetInstancesInput {
+            dry_run: self.dry_run,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            fleet_id: self.fleet_id,
+            filters: self.filters,
+        })
     }
 }

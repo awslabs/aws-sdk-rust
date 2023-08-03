@@ -12,9 +12,7 @@ pub struct UserTurnSlotOutput {
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::UserTurnSlotOutput>>,
     /// <p>A list of items mapping the name of the subslots to information about those subslots.</p>
     #[doc(hidden)]
-    pub sub_slots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>,
-    >,
+    pub sub_slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>>,
 }
 impl UserTurnSlotOutput {
     /// <p>The value output by the slot recognition.</p>
@@ -26,11 +24,7 @@ impl UserTurnSlotOutput {
         self.values.as_deref()
     }
     /// <p>A list of items mapping the name of the subslots to information about those subslots.</p>
-    pub fn sub_slots(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>,
-    > {
+    pub fn sub_slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>> {
         self.sub_slots.as_ref()
     }
 }
@@ -43,15 +37,11 @@ impl UserTurnSlotOutput {
 
 /// A builder for [`UserTurnSlotOutput`](crate::types::UserTurnSlotOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserTurnSlotOutputBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::UserTurnSlotOutput>>,
-    pub(crate) sub_slots: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>,
-    >,
+    pub(crate) sub_slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>>,
 }
 impl UserTurnSlotOutputBuilder {
     /// <p>The value output by the slot recognition.</p>
@@ -80,17 +70,12 @@ impl UserTurnSlotOutputBuilder {
         self
     }
     /// <p>Values that are output by the slot recognition.</p>
-    pub fn set_values(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UserTurnSlotOutput>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserTurnSlotOutput>>) -> Self {
         self.values = input;
         self
     }
     /// <p>Values that are output by the slot recognition.</p>
-    pub fn get_values(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserTurnSlotOutput>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserTurnSlotOutput>> {
         &self.values
     }
     /// Adds a key-value pair to `sub_slots`.
@@ -98,11 +83,7 @@ impl UserTurnSlotOutputBuilder {
     /// To override the contents of this collection use [`set_sub_slots`](Self::set_sub_slots).
     ///
     /// <p>A list of items mapping the name of the subslots to information about those subslots.</p>
-    pub fn sub_slots(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::UserTurnSlotOutput,
-    ) -> Self {
+    pub fn sub_slots(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::UserTurnSlotOutput) -> Self {
         let mut hash_map = self.sub_slots.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.sub_slots = ::std::option::Option::Some(hash_map);
@@ -111,19 +92,13 @@ impl UserTurnSlotOutputBuilder {
     /// <p>A list of items mapping the name of the subslots to information about those subslots.</p>
     pub fn set_sub_slots(
         mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>,
-        >,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>>,
     ) -> Self {
         self.sub_slots = input;
         self
     }
     /// <p>A list of items mapping the name of the subslots to information about those subslots.</p>
-    pub fn get_sub_slots(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>,
-    > {
+    pub fn get_sub_slots(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>> {
         &self.sub_slots
     }
     /// Consumes the builder and constructs a [`UserTurnSlotOutput`](crate::types::UserTurnSlotOutput).

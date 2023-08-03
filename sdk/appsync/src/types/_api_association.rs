@@ -54,9 +54,7 @@ impl ApiAssociation {
 
 /// A builder for [`ApiAssociation`](crate::types::ApiAssociation).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApiAssociationBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
@@ -108,10 +106,7 @@ impl ApiAssociationBuilder {
     /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li>
     /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li>
     /// </ul>
-    pub fn set_association_status(
-        mut self,
-        input: ::std::option::Option<crate::types::AssociationStatus>,
-    ) -> Self {
+    pub fn set_association_status(mut self, input: ::std::option::Option<crate::types::AssociationStatus>) -> Self {
         self.association_status = input;
         self
     }
@@ -121,24 +116,16 @@ impl ApiAssociationBuilder {
     /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li>
     /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li>
     /// </ul>
-    pub fn get_association_status(
-        &self,
-    ) -> &::std::option::Option<crate::types::AssociationStatus> {
+    pub fn get_association_status(&self) -> &::std::option::Option<crate::types::AssociationStatus> {
         &self.association_status
     }
     /// <p>Details about the last deployment status.</p>
-    pub fn deployment_detail(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn deployment_detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_detail = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details about the last deployment status.</p>
-    pub fn set_deployment_detail(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_deployment_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deployment_detail = input;
         self
     }

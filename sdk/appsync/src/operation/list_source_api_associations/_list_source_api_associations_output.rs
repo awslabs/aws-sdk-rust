@@ -5,8 +5,7 @@
 pub struct ListSourceApiAssociationsOutput {
     /// <p>The <code>SourceApiAssociationSummary</code> object data.</p>
     #[doc(hidden)]
-    pub source_api_association_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SourceApiAssociationSummary>>,
+    pub source_api_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SourceApiAssociationSummary>>,
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,9 +13,7 @@ pub struct ListSourceApiAssociationsOutput {
 }
 impl ListSourceApiAssociationsOutput {
     /// <p>The <code>SourceApiAssociationSummary</code> object data.</p>
-    pub fn source_api_association_summaries(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::SourceApiAssociationSummary]> {
+    pub fn source_api_association_summaries(&self) -> ::std::option::Option<&[crate::types::SourceApiAssociationSummary]> {
         self.source_api_association_summaries.as_deref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
@@ -31,19 +28,16 @@ impl ::aws_http::request_id::RequestId for ListSourceApiAssociationsOutput {
 }
 impl ListSourceApiAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSourceApiAssociationsOutput`](crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput).
-    pub fn builder() -> crate::operation::list_source_api_associations::builders::ListSourceApiAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_source_api_associations::builders::ListSourceApiAssociationsOutputBuilder {
         crate::operation::list_source_api_associations::builders::ListSourceApiAssociationsOutputBuilder::default()
     }
 }
 
 /// A builder for [`ListSourceApiAssociationsOutput`](crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSourceApiAssociationsOutputBuilder {
-    pub(crate) source_api_association_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::SourceApiAssociationSummary>>,
+    pub(crate) source_api_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SourceApiAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,10 +47,7 @@ impl ListSourceApiAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_source_api_association_summaries`](Self::set_source_api_association_summaries).
     ///
     /// <p>The <code>SourceApiAssociationSummary</code> object data.</p>
-    pub fn source_api_association_summaries(
-        mut self,
-        input: crate::types::SourceApiAssociationSummary,
-    ) -> Self {
+    pub fn source_api_association_summaries(mut self, input: crate::types::SourceApiAssociationSummary) -> Self {
         let mut v = self.source_api_association_summaries.unwrap_or_default();
         v.push(input);
         self.source_api_association_summaries = ::std::option::Option::Some(v);
@@ -71,9 +62,7 @@ impl ListSourceApiAssociationsOutputBuilder {
         self
     }
     /// <p>The <code>SourceApiAssociationSummary</code> object data.</p>
-    pub fn get_source_api_association_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceApiAssociationSummary>> {
+    pub fn get_source_api_association_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceApiAssociationSummary>> {
         &self.source_api_association_summaries
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
@@ -100,9 +89,7 @@ impl ListSourceApiAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSourceApiAssociationsOutput`](crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput {
+    pub fn build(self) -> crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput {
         crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput {
             source_api_association_summaries: self.source_api_association_summaries,
             next_token: self.next_token,

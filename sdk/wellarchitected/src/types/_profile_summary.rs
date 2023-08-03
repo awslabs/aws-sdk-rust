@@ -65,9 +65,7 @@ impl ProfileSummary {
 
 /// A builder for [`ProfileSummary`](crate::types::ProfileSummary).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProfileSummaryBuilder {
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_version: ::std::option::Option<::std::string::String>,
@@ -93,18 +91,12 @@ impl ProfileSummaryBuilder {
         &self.profile_arn
     }
     /// <p>The profile version.</p>
-    pub fn profile_version(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The profile version.</p>
-    pub fn set_profile_version(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_version = input;
         self
     }
@@ -127,18 +119,12 @@ impl ProfileSummaryBuilder {
         &self.profile_name
     }
     /// <p>The profile description.</p>
-    pub fn profile_description(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn profile_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The profile description.</p>
-    pub fn set_profile_description(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_profile_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_description = input;
         self
     }
@@ -166,10 +152,7 @@ impl ProfileSummaryBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_created_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
@@ -183,10 +166,7 @@ impl ProfileSummaryBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }

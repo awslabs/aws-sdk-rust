@@ -8,9 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetMetadataOutput`](crate::operation::get_metadata::GetMetadataOutput) with field(s):
     ///   - [`features(Option<HashMap<String, String>>)`](crate::operation::get_metadata::GetMetadataOutput::features): <p>Represents the configuration settings for the features metadata.</p>
     /// - On failure, responds with [`SdkError<GetMetadataError>`](crate::operation::get_metadata::GetMetadataError)
-    pub fn get_metadata(
-        &self,
-    ) -> crate::operation::get_metadata::builders::GetMetadataFluentBuilder {
+    pub fn get_metadata(&self) -> crate::operation::get_metadata::builders::GetMetadataFluentBuilder {
         crate::operation::get_metadata::builders::GetMetadataFluentBuilder::new(self.handle.clone())
     }
 }

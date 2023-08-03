@@ -41,13 +41,7 @@
 /// <p>The status of a FUOTA task.</p>
 #[non_exhaustive]
 #[derive(
-    ::std::clone::Clone,
-    ::std::cmp::Eq,
-    ::std::cmp::Ord,
-    ::std::cmp::PartialEq,
-    ::std::cmp::PartialOrd,
-    ::std::fmt::Debug,
-    ::std::hash::Hash,
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum FuotaTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -71,9 +65,7 @@ impl ::std::convert::From<&str> for FuotaTaskStatus {
             "FuotaSession_Waiting" => FuotaTaskStatus::FuotaSessionWaiting,
             "In_FuotaSession" => FuotaTaskStatus::InFuotaSession,
             "Pending" => FuotaTaskStatus::Pending,
-            other => {
-                FuotaTaskStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
+            other => FuotaTaskStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
 }
@@ -98,13 +90,7 @@ impl FuotaTaskStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &[
-            "Delete_Waiting",
-            "FuotaDone",
-            "FuotaSession_Waiting",
-            "In_FuotaSession",
-            "Pending",
-        ]
+        &["Delete_Waiting", "FuotaDone", "FuotaSession_Waiting", "In_FuotaSession", "Pending"]
     }
 }
 impl ::std::convert::AsRef<str> for FuotaTaskStatus {

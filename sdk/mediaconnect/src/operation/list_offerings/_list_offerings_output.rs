@@ -35,9 +35,7 @@ impl ListOfferingsOutput {
 
 /// A builder for [`ListOfferingsOutput`](crate::operation::list_offerings::ListOfferingsOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOfferingsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) offerings: ::std::option::Option<::std::vec::Vec<crate::types::Offering>>,
@@ -70,10 +68,7 @@ impl ListOfferingsOutputBuilder {
         self
     }
     /// A list of offerings that are available to this account in the current AWS Region.
-    pub fn set_offerings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Offering>>,
-    ) -> Self {
+    pub fn set_offerings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Offering>>) -> Self {
         self.offerings = input;
         self
     }

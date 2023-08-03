@@ -26,8 +26,7 @@ impl ListEventsDetectionJobsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEventsDetectionJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsInputBuilder,
+    inner: crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsInputBuilder,
 }
 impl ListEventsDetectionJobsFluentBuilder {
     /// Creates a new `ListEventsDetectionJobs`.
@@ -38,10 +37,7 @@ impl ListEventsDetectionJobsFluentBuilder {
         }
     }
     /// Access the ListEventsDetectionJobs as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsInputBuilder
-    {
+    pub fn as_input(&self) -> &crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -53,9 +49,7 @@ impl ListEventsDetectionJobsFluentBuilder {
             crate::operation::list_events_detection_jobs::ListEventsDetectionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_events_detection_jobs::ListEventsDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_events_detection_jobs::ListEventsDetectionJobsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -65,10 +59,7 @@ impl ListEventsDetectionJobsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -77,9 +68,7 @@ impl ListEventsDetectionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_events_detection_jobs::ListEventsDetectionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_events_detection_jobs::ListEventsDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_events_detection_jobs::ListEventsDetectionJobsError>,
     > {
         let op = self
             .inner
@@ -102,9 +91,7 @@ impl ListEventsDetectionJobsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_events_detection_jobs::ListEventsDetectionJobsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_events_detection_jobs::ListEventsDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_events_detection_jobs::ListEventsDetectionJobsError>,
     > {
         self.send_middleware().await
     }
@@ -118,19 +105,14 @@ impl ListEventsDetectionJobsFluentBuilder {
             crate::operation::list_events_detection_jobs::ListEventsDetectionJobs,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_events_detection_jobs::ListEventsDetectionJobsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_events_detection_jobs::ListEventsDetectionJobsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_events_detection_jobs::paginator::ListEventsDetectionJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_events_detection_jobs::paginator::ListEventsDetectionJobsPaginator
-    {
+    pub fn into_paginator(self) -> crate::operation::list_events_detection_jobs::paginator::ListEventsDetectionJobsPaginator {
         crate::operation::list_events_detection_jobs::paginator::ListEventsDetectionJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
@@ -139,10 +121,7 @@ impl ListEventsDetectionJobsFluentBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(
-        mut self,
-        input: ::std::option::Option<crate::types::EventsDetectionJobFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EventsDetectionJobFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

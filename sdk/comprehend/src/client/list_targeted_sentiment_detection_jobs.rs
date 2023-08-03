@@ -11,7 +11,9 @@ impl super::Client {
     ///   - [`targeted_sentiment_detection_job_properties_list(Option<Vec<TargetedSentimentDetectionJobProperties>>)`](crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsOutput::targeted_sentiment_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListTargetedSentimentDetectionJobsError>`](crate::operation::list_targeted_sentiment_detection_jobs::ListTargetedSentimentDetectionJobsError)
-    pub fn list_targeted_sentiment_detection_jobs(&self) -> crate::operation::list_targeted_sentiment_detection_jobs::builders::ListTargetedSentimentDetectionJobsFluentBuilder{
+    pub fn list_targeted_sentiment_detection_jobs(
+        &self,
+    ) -> crate::operation::list_targeted_sentiment_detection_jobs::builders::ListTargetedSentimentDetectionJobsFluentBuilder {
         crate::operation::list_targeted_sentiment_detection_jobs::builders::ListTargetedSentimentDetectionJobsFluentBuilder::new(self.handle.clone())
     }
 }

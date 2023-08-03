@@ -9,138 +9,126 @@ pub fn de_create_invalidation_http_error(
     crate::operation::create_invalidation::CreateInvalidationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(
-        _response_status,
-        _response_headers,
-        _response_body,
-    )
-    .map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+        .map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
     generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(
-                crate::operation::create_invalidation::CreateInvalidationError::unhandled(generic),
-            )
-        }
+        None => return Err(crate::operation::create_invalidation::CreateInvalidationError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessDenied" => crate::operation::create_invalidation::CreateInvalidationError::AccessDenied({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
-                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output).map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
+                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "BatchTooLarge" => crate::operation::create_invalidation::CreateInvalidationError::BatchTooLarge({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::BatchTooLargeBuilder::default();
-                    output = crate::protocol_serde::shape_batch_too_large::de_batch_too_large_xml_err(_response_body, output).map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BatchTooLargeBuilder::default();
+                output = crate::protocol_serde::shape_batch_too_large::de_batch_too_large_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InconsistentQuantities" => crate::operation::create_invalidation::CreateInvalidationError::InconsistentQuantities({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InconsistentQuantitiesBuilder::default();
-                    output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(_response_body, output).map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InconsistentQuantitiesBuilder::default();
+                output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InvalidArgument" => crate::operation::create_invalidation::CreateInvalidationError::InvalidArgument({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(_response_body, output).map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
+                output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "MissingBody" => crate::operation::create_invalidation::CreateInvalidationError::MissingBody({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::MissingBodyBuilder::default();
-                    output = crate::protocol_serde::shape_missing_body::de_missing_body_xml_err(_response_body, output).map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::MissingBodyBuilder::default();
+                output = crate::protocol_serde::shape_missing_body::de_missing_body_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NoSuchDistribution" => crate::operation::create_invalidation::CreateInvalidationError::NoSuchDistribution({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchDistributionBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(_response_body, output).map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchDistributionBuilder::default();
+                output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyInvalidationsInProgress" => crate::operation::create_invalidation::CreateInvalidationError::TooManyInvalidationsInProgress({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyInvalidationsInProgressBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_invalidations_in_progress::de_too_many_invalidations_in_progress_xml_err(_response_body, output).map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyInvalidationsInProgressBuilder::default();
+                output = crate::protocol_serde::shape_too_many_invalidations_in_progress::de_too_many_invalidations_in_progress_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_invalidation::CreateInvalidationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
         }),
-        _ => crate::operation::create_invalidation::CreateInvalidationError::generic(generic)
+        _ => crate::operation::create_invalidation::CreateInvalidationError::generic(generic),
     })
 }
 
@@ -156,24 +144,15 @@ pub fn de_create_invalidation_http_response_with_props(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_invalidation::builders::CreateInvalidationOutputBuilder::default();
-        output = output.set_invalidation(
-            crate::protocol_serde::shape_create_invalidation_output::de_invalidation_payload(
-                _response_body,
-            )?,
-        );
+        output = output.set_invalidation(crate::protocol_serde::shape_create_invalidation_output::de_invalidation_payload(
+            _response_body,
+        )?);
         output = output.set_location(
-            crate::protocol_serde::shape_create_invalidation_output::de_location_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::create_invalidation::CreateInvalidationError::unhandled(
-                    "Failed to parse Location from header `Location",
-                )
+            crate::protocol_serde::shape_create_invalidation_output::de_location_header(_response_headers).map_err(|_| {
+                crate::operation::create_invalidation::CreateInvalidationError::unhandled("Failed to parse Location from header `Location")
             })?,
         );
-        output._set_request_id(
-            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
-        );
+        output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
 }

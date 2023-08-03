@@ -10,10 +10,7 @@ impl ListIntentMetricsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_intent_metrics::ListIntentMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_intent_metrics::ListIntentMetricsError,
-            ::aws_smithy_http::operation::Response,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_intent_metrics::ListIntentMetricsError, ::aws_smithy_http::operation::Response>,
     > {
         let mut fluent_builder = client.list_intent_metrics();
         fluent_builder.inner = self;
@@ -47,9 +44,7 @@ impl ListIntentMetricsFluentBuilder {
         }
     }
     /// Access the ListIntentMetrics as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_intent_metrics::builders::ListIntentMetricsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_intent_metrics::builders::ListIntentMetricsInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -61,9 +56,7 @@ impl ListIntentMetricsFluentBuilder {
             crate::operation::list_intent_metrics::ListIntentMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_intent_metrics::ListIntentMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_intent_metrics::ListIntentMetricsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -73,10 +66,7 @@ impl ListIntentMetricsFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -85,9 +75,7 @@ impl ListIntentMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_intent_metrics::ListIntentMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_intent_metrics::ListIntentMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_intent_metrics::ListIntentMetricsError>,
     > {
         let op = self
             .inner
@@ -110,9 +98,7 @@ impl ListIntentMetricsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_intent_metrics::ListIntentMetricsOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_intent_metrics::ListIntentMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_intent_metrics::ListIntentMetricsError>,
     > {
         self.send_middleware().await
     }
@@ -126,22 +112,15 @@ impl ListIntentMetricsFluentBuilder {
             crate::operation::list_intent_metrics::ListIntentMetrics,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::list_intent_metrics::ListIntentMetricsError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_intent_metrics::ListIntentMetricsError>,
     > {
         self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///
     /// Paginators are used by calling [`send().await`](crate::operation::list_intent_metrics::paginator::ListIntentMetricsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_intent_metrics::paginator::ListIntentMetricsPaginator {
-        crate::operation::list_intent_metrics::paginator::ListIntentMetricsPaginator::new(
-            self.handle,
-            self.inner,
-        )
+    pub fn into_paginator(self) -> crate::operation::list_intent_metrics::paginator::ListIntentMetricsPaginator {
+        crate::operation::list_intent_metrics::paginator::ListIntentMetricsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier for the bot for which you want to retrieve intent metrics.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -163,10 +142,7 @@ impl ListIntentMetricsFluentBuilder {
         self
     }
     /// <p>The timestamp that marks the beginning of the range of time for which you want to see intent metrics.</p>
-    pub fn set_start_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_date_time(input);
         self
     }
@@ -180,10 +156,7 @@ impl ListIntentMetricsFluentBuilder {
         self
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see intent metrics.</p>
-    pub fn set_end_date_time(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_date_time(input);
         self
     }
@@ -201,17 +174,12 @@ impl ListIntentMetricsFluentBuilder {
         self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the order by which to organize the results.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentMetric>>,
-    ) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentMetric>>) -> Self {
         self.inner = self.inner.set_metrics(input);
         self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the order by which to organize the results.</p>
-    pub fn get_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentMetric>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentMetric>> {
         self.inner.get_metrics()
     }
     /// Appends an item to `binBy`.
@@ -224,17 +192,12 @@ impl ListIntentMetricsFluentBuilder {
         self
     }
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    pub fn set_bin_by(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>,
-    ) -> Self {
+    pub fn set_bin_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>) -> Self {
         self.inner = self.inner.set_bin_by(input);
         self
     }
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    pub fn get_bin_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>> {
+    pub fn get_bin_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>> {
         self.inner.get_bin_by()
     }
     /// Appends an item to `groupBy`.
@@ -255,12 +218,7 @@ impl ListIntentMetricsFluentBuilder {
     /// <li> <p> <code>IntentName</code> – The name of the intent.</p> </li>
     /// <li> <p> <code>IntentEndState</code> – The final state of the intent. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-intents">Key definitions</a> in the user guide.</p> </li>
     /// </ul>
-    pub fn set_group_by(
-        mut self,
-        input: ::std::option::Option<
-            ::std::vec::Vec<crate::types::AnalyticsIntentGroupBySpecification>,
-        >,
-    ) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentGroupBySpecification>>) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
     }
@@ -269,10 +227,7 @@ impl ListIntentMetricsFluentBuilder {
     /// <li> <p> <code>IntentName</code> – The name of the intent.</p> </li>
     /// <li> <p> <code>IntentEndState</code> – The final state of the intent. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-intents">Key definitions</a> in the user guide.</p> </li>
     /// </ul>
-    pub fn get_group_by(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentGroupBySpecification>>
-    {
+    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentGroupBySpecification>> {
         self.inner.get_group_by()
     }
     /// Appends an item to `filters`.
@@ -285,17 +240,12 @@ impl ListIntentMetricsFluentBuilder {
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn get_filters(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>

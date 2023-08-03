@@ -9,7 +9,9 @@ impl super::Client {
     /// - On success, responds with [`ModifyReplicationSubnetGroupOutput`](crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupOutput) with field(s):
     ///   - [`replication_subnet_group(Option<ReplicationSubnetGroup>)`](crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupOutput::replication_subnet_group): <p>The modified replication subnet group.</p>
     /// - On failure, responds with [`SdkError<ModifyReplicationSubnetGroupError>`](crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupError)
-    pub fn modify_replication_subnet_group(&self) -> crate::operation::modify_replication_subnet_group::builders::ModifyReplicationSubnetGroupFluentBuilder{
+    pub fn modify_replication_subnet_group(
+        &self,
+    ) -> crate::operation::modify_replication_subnet_group::builders::ModifyReplicationSubnetGroupFluentBuilder {
         crate::operation::modify_replication_subnet_group::builders::ModifyReplicationSubnetGroupFluentBuilder::new(self.handle.clone())
     }
 }

@@ -7,12 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetKeyRotationStatusOutput`](crate::operation::get_key_rotation_status::GetKeyRotationStatusOutput) with field(s):
     ///   - [`key_rotation_enabled(bool)`](crate::operation::get_key_rotation_status::GetKeyRotationStatusOutput::key_rotation_enabled): <p>A Boolean value that specifies whether key rotation is enabled.</p>
     /// - On failure, responds with [`SdkError<GetKeyRotationStatusError>`](crate::operation::get_key_rotation_status::GetKeyRotationStatusError)
-    pub fn get_key_rotation_status(
-        &self,
-    ) -> crate::operation::get_key_rotation_status::builders::GetKeyRotationStatusFluentBuilder
-    {
-        crate::operation::get_key_rotation_status::builders::GetKeyRotationStatusFluentBuilder::new(
-            self.handle.clone(),
-        )
+    pub fn get_key_rotation_status(&self) -> crate::operation::get_key_rotation_status::builders::GetKeyRotationStatusFluentBuilder {
+        crate::operation::get_key_rotation_status::builders::GetKeyRotationStatusFluentBuilder::new(self.handle.clone())
     }
 }

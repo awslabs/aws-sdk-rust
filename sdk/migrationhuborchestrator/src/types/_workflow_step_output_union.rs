@@ -36,9 +36,7 @@ impl WorkflowStepOutputUnion {
     }
     /// Tries to convert the enum instance into [`ListOfStringValue`](crate::types::WorkflowStepOutputUnion::ListOfStringValue), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_list_of_string_value(
-        &self,
-    ) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
+    pub fn as_list_of_string_value(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
         if let WorkflowStepOutputUnion::ListOfStringValue(val) = &self {
             ::std::result::Result::Ok(val)
         } else {

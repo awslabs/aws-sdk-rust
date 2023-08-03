@@ -15,35 +15,25 @@ impl DescribeTrainingJobInput {
 }
 impl DescribeTrainingJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeTrainingJobInput`](crate::operation::describe_training_job::DescribeTrainingJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_training_job::builders::DescribeTrainingJobInputBuilder {
-        crate::operation::describe_training_job::builders::DescribeTrainingJobInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_training_job::builders::DescribeTrainingJobInputBuilder {
+        crate::operation::describe_training_job::builders::DescribeTrainingJobInputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeTrainingJobInput`](crate::operation::describe_training_job::DescribeTrainingJobInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrainingJobInputBuilder {
     pub(crate) training_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTrainingJobInputBuilder {
     /// <p>The name of the training job.</p>
-    pub fn training_job_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn training_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the training job.</p>
-    pub fn set_training_job_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_training_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.training_job_name = input;
         self
     }
@@ -54,14 +44,10 @@ impl DescribeTrainingJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTrainingJobInput`](crate::operation::describe_training_job::DescribeTrainingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_training_job::DescribeTrainingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::describe_training_job::DescribeTrainingJobInput {
-                training_job_name: self.training_job_name,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::describe_training_job::DescribeTrainingJobInput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_training_job::DescribeTrainingJobInput {
+            training_job_name: self.training_job_name,
+        })
     }
 }

@@ -6,23 +6,17 @@ pub fn ser_codegen_job_to_create_http_payload(
         Some(t) => t,
         None => return Ok(crate::protocol_serde::rest_json_unsetpayload()),
     };
-    Ok(
-        crate::protocol_serde::shape_start_codegen_job_input::ser_codegen_job_to_create_payload(
-            payload,
-        )?,
-    )
+    Ok(crate::protocol_serde::shape_start_codegen_job_input::ser_codegen_job_to_create_payload(
+        payload,
+    )?)
 }
 
 pub fn ser_codegen_job_to_create_payload(
     input: &crate::types::StartCodegenJobData,
-) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError>
-{
+) -> std::result::Result<::std::vec::Vec<u8>, ::aws_smithy_http::operation::error::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_start_codegen_job_data::ser_start_codegen_job_data(
-        &mut object,
-        input,
-    )?;
+    crate::protocol_serde::shape_start_codegen_job_data::ser_start_codegen_job_data(&mut object, input)?;
     object.finish();
     Ok(out.into_bytes())
 }

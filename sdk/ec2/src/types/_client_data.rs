@@ -44,9 +44,7 @@ impl ClientData {
 
 /// A builder for [`ClientData`](crate::types::ClientData).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClientDataBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) upload_end: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -74,10 +72,7 @@ impl ClientDataBuilder {
         self
     }
     /// <p>The time that the disk upload ends.</p>
-    pub fn set_upload_end(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_upload_end(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.upload_end = input;
         self
     }
@@ -105,10 +100,7 @@ impl ClientDataBuilder {
         self
     }
     /// <p>The time that the disk upload starts.</p>
-    pub fn set_upload_start(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_upload_start(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.upload_start = input;
         self
     }

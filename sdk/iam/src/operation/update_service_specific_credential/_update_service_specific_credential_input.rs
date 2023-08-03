@@ -33,16 +33,14 @@ impl UpdateServiceSpecificCredentialInput {
 }
 impl UpdateServiceSpecificCredentialInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceSpecificCredentialInput`](crate::operation::update_service_specific_credential::UpdateServiceSpecificCredentialInput).
-    pub fn builder() -> crate::operation::update_service_specific_credential::builders::UpdateServiceSpecificCredentialInputBuilder{
+    pub fn builder() -> crate::operation::update_service_specific_credential::builders::UpdateServiceSpecificCredentialInputBuilder {
         crate::operation::update_service_specific_credential::builders::UpdateServiceSpecificCredentialInputBuilder::default()
     }
 }
 
 /// A builder for [`UpdateServiceSpecificCredentialInput`](crate::operation::update_service_specific_credential::UpdateServiceSpecificCredentialInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateServiceSpecificCredentialInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_specific_credential_id: ::std::option::Option<::std::string::String>,
@@ -68,27 +66,19 @@ impl UpdateServiceSpecificCredentialInputBuilder {
     }
     /// <p>The unique identifier of the service-specific credential.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn service_specific_credential_id(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn service_specific_credential_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_specific_credential_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the service-specific credential.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn set_service_specific_credential_id(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_service_specific_credential_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_specific_credential_id = input;
         self
     }
     /// <p>The unique identifier of the service-specific credential.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn get_service_specific_credential_id(
-        &self,
-    ) -> &::std::option::Option<::std::string::String> {
+    pub fn get_service_specific_credential_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_specific_credential_id
     }
     /// <p>The status to be assigned to the service-specific credential.</p>
@@ -114,13 +104,10 @@ impl UpdateServiceSpecificCredentialInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_service_specific_credential::UpdateServiceSpecificCredentialInput {
-                user_name: self.user_name
-                ,
-                service_specific_credential_id: self.service_specific_credential_id
-                ,
-                status: self.status
-                ,
-            }
+                user_name: self.user_name,
+                service_specific_credential_id: self.service_specific_credential_id,
+                status: self.status,
+            },
         )
     }
 }

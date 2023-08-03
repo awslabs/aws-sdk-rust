@@ -79,9 +79,7 @@ impl EventDescription {
 
 /// A builder for [`EventDescription`](crate::types::EventDescription).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventDescriptionBuilder {
     pub(crate) event_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
@@ -100,10 +98,7 @@ impl EventDescriptionBuilder {
         self
     }
     /// <p>The date when the event occurred.</p>
-    pub fn set_event_date(
-        mut self,
-        input: ::std::option::Option<::aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_event_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.event_date = input;
         self
     }
@@ -126,18 +121,12 @@ impl EventDescriptionBuilder {
         &self.message
     }
     /// <p>The application associated with the event.</p>
-    pub fn application_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application associated with the event.</p>
-    pub fn set_application_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
@@ -146,18 +135,12 @@ impl EventDescriptionBuilder {
         &self.application_name
     }
     /// <p>The release label for the application version associated with this event.</p>
-    pub fn version_label(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The release label for the application version associated with this event.</p>
-    pub fn set_version_label(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_label = input;
         self
     }
@@ -166,18 +149,12 @@ impl EventDescriptionBuilder {
         &self.version_label
     }
     /// <p>The name of the configuration associated with this event.</p>
-    pub fn template_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration associated with this event.</p>
-    pub fn set_template_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
@@ -186,18 +163,12 @@ impl EventDescriptionBuilder {
         &self.template_name
     }
     /// <p>The name of the environment associated with this event.</p>
-    pub fn environment_name(
-        mut self,
-        input: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment associated with this event.</p>
-    pub fn set_environment_name(
-        mut self,
-        input: ::std::option::Option<::std::string::String>,
-    ) -> Self {
+    pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
@@ -239,10 +210,7 @@ impl EventDescriptionBuilder {
         self
     }
     /// <p>The severity level of this event.</p>
-    pub fn set_severity(
-        mut self,
-        input: ::std::option::Option<crate::types::EventSeverity>,
-    ) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::EventSeverity>) -> Self {
         self.severity = input;
         self
     }

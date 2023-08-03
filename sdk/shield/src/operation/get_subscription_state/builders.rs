@@ -37,9 +37,7 @@ impl GetSubscriptionStateFluentBuilder {
         }
     }
     /// Access the GetSubscriptionState as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_subscription_state::builders::GetSubscriptionStateInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_subscription_state::builders::GetSubscriptionStateInputBuilder {
         &self.inner
     }
     // This function will go away in the near future. Do not rely on it.
@@ -51,9 +49,7 @@ impl GetSubscriptionStateFluentBuilder {
             crate::operation::get_subscription_state::GetSubscriptionState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subscription_state::GetSubscriptionStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subscription_state::GetSubscriptionStateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
@@ -63,10 +59,7 @@ impl GetSubscriptionStateFluentBuilder {
             .make_operation(&handle.conf)
             .await
             .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
-            handle,
-            operation,
-        })
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
     // This function will go away in the near future. Do not rely on it.
@@ -75,9 +68,7 @@ impl GetSubscriptionStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_subscription_state::GetSubscriptionStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subscription_state::GetSubscriptionStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subscription_state::GetSubscriptionStateError>,
     > {
         let op = self
             .inner
@@ -100,9 +91,7 @@ impl GetSubscriptionStateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_subscription_state::GetSubscriptionStateOutput,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subscription_state::GetSubscriptionStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subscription_state::GetSubscriptionStateError>,
     > {
         self.send_middleware().await
     }
@@ -116,9 +105,7 @@ impl GetSubscriptionStateFluentBuilder {
             crate::operation::get_subscription_state::GetSubscriptionState,
             ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        ::aws_smithy_http::result::SdkError<
-            crate::operation::get_subscription_state::GetSubscriptionStateError,
-        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_subscription_state::GetSubscriptionStateError>,
     > {
         self.customize_middleware().await
     }

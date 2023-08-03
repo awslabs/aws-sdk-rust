@@ -22,9 +22,7 @@ impl GetImportInput {
 
 /// A builder for [`GetImportInput`](crate::operation::get_import::GetImportInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetImportInputBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
 }
@@ -44,14 +42,7 @@ impl GetImportInputBuilder {
         &self.import_id
     }
     /// Consumes the builder and constructs a [`GetImportInput`](crate::operation::get_import::GetImportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_import::GetImportInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_import::GetImportInput {
-            import_id: self.import_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_import::GetImportInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_import::GetImportInput { import_id: self.import_id })
     }
 }

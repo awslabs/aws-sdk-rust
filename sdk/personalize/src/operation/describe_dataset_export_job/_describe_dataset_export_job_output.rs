@@ -35,16 +35,14 @@ impl ::aws_http::request_id::RequestId for DescribeDatasetExportJobOutput {
 }
 impl DescribeDatasetExportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetExportJobOutput`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput).
-    pub fn builder() -> crate::operation::describe_dataset_export_job::builders::DescribeDatasetExportJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_dataset_export_job::builders::DescribeDatasetExportJobOutputBuilder {
         crate::operation::describe_dataset_export_job::builders::DescribeDatasetExportJobOutputBuilder::default()
     }
 }
 
 /// A builder for [`DescribeDatasetExportJobOutput`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDatasetExportJobOutputBuilder {
     pub(crate) dataset_export_job: ::std::option::Option<crate::types::DatasetExportJob>,
     _request_id: Option<String>,
@@ -70,10 +68,7 @@ impl DescribeDatasetExportJobOutputBuilder {
     /// <li> <p>ACTIVE</p> </li>
     /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
-    pub fn set_dataset_export_job(
-        mut self,
-        input: ::std::option::Option<crate::types::DatasetExportJob>,
-    ) -> Self {
+    pub fn set_dataset_export_job(mut self, input: ::std::option::Option<crate::types::DatasetExportJob>) -> Self {
         self.dataset_export_job = input;
         self
     }
@@ -98,9 +93,7 @@ impl DescribeDatasetExportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDatasetExportJobOutput`](crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput {
+    pub fn build(self) -> crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput {
         crate::operation::describe_dataset_export_job::DescribeDatasetExportJobOutput {
             dataset_export_job: self.dataset_export_job,
             _request_id: self._request_id,

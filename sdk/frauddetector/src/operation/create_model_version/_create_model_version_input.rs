@@ -35,9 +35,7 @@ impl CreateModelVersionInput {
         self.model_type.as_ref()
     }
     /// <p>The training data source location in Amazon S3. </p>
-    pub fn training_data_source(
-        &self,
-    ) -> ::std::option::Option<&crate::types::TrainingDataSourceEnum> {
+    pub fn training_data_source(&self) -> ::std::option::Option<&crate::types::TrainingDataSourceEnum> {
         self.training_data_source.as_ref()
     }
     /// <p>The training data schema.</p>
@@ -45,15 +43,11 @@ impl CreateModelVersionInput {
         self.training_data_schema.as_ref()
     }
     /// <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
-    pub fn external_events_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::ExternalEventsDetail> {
+    pub fn external_events_detail(&self) -> ::std::option::Option<&crate::types::ExternalEventsDetail> {
         self.external_events_detail.as_ref()
     }
     /// <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
-    pub fn ingested_events_detail(
-        &self,
-    ) -> ::std::option::Option<&crate::types::IngestedEventsDetail> {
+    pub fn ingested_events_detail(&self) -> ::std::option::Option<&crate::types::IngestedEventsDetail> {
         self.ingested_events_detail.as_ref()
     }
     /// <p>A collection of key and value pairs.</p>
@@ -63,17 +57,14 @@ impl CreateModelVersionInput {
 }
 impl CreateModelVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateModelVersionInput`](crate::operation::create_model_version::CreateModelVersionInput).
-    pub fn builder(
-    ) -> crate::operation::create_model_version::builders::CreateModelVersionInputBuilder {
+    pub fn builder() -> crate::operation::create_model_version::builders::CreateModelVersionInputBuilder {
         crate::operation::create_model_version::builders::CreateModelVersionInputBuilder::default()
     }
 }
 
 /// A builder for [`CreateModelVersionInput`](crate::operation::create_model_version::CreateModelVersionInput).
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateModelVersionInputBuilder {
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
@@ -104,10 +95,7 @@ impl CreateModelVersionInputBuilder {
         self
     }
     /// <p>The model type.</p>
-    pub fn set_model_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelTypeEnum>,
-    ) -> Self {
+    pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelTypeEnum>) -> Self {
         self.model_type = input;
         self
     }
@@ -121,17 +109,12 @@ impl CreateModelVersionInputBuilder {
         self
     }
     /// <p>The training data source location in Amazon S3. </p>
-    pub fn set_training_data_source(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingDataSourceEnum>,
-    ) -> Self {
+    pub fn set_training_data_source(mut self, input: ::std::option::Option<crate::types::TrainingDataSourceEnum>) -> Self {
         self.training_data_source = input;
         self
     }
     /// <p>The training data source location in Amazon S3. </p>
-    pub fn get_training_data_source(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrainingDataSourceEnum> {
+    pub fn get_training_data_source(&self) -> &::std::option::Option<crate::types::TrainingDataSourceEnum> {
         &self.training_data_source
     }
     /// <p>The training data schema.</p>
@@ -140,17 +123,12 @@ impl CreateModelVersionInputBuilder {
         self
     }
     /// <p>The training data schema.</p>
-    pub fn set_training_data_schema(
-        mut self,
-        input: ::std::option::Option<crate::types::TrainingDataSchema>,
-    ) -> Self {
+    pub fn set_training_data_schema(mut self, input: ::std::option::Option<crate::types::TrainingDataSchema>) -> Self {
         self.training_data_schema = input;
         self
     }
     /// <p>The training data schema.</p>
-    pub fn get_training_data_schema(
-        &self,
-    ) -> &::std::option::Option<crate::types::TrainingDataSchema> {
+    pub fn get_training_data_schema(&self) -> &::std::option::Option<crate::types::TrainingDataSchema> {
         &self.training_data_schema
     }
     /// <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
@@ -159,17 +137,12 @@ impl CreateModelVersionInputBuilder {
         self
     }
     /// <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
-    pub fn set_external_events_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::ExternalEventsDetail>,
-    ) -> Self {
+    pub fn set_external_events_detail(mut self, input: ::std::option::Option<crate::types::ExternalEventsDetail>) -> Self {
         self.external_events_detail = input;
         self
     }
     /// <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
-    pub fn get_external_events_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::ExternalEventsDetail> {
+    pub fn get_external_events_detail(&self) -> &::std::option::Option<crate::types::ExternalEventsDetail> {
         &self.external_events_detail
     }
     /// <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
@@ -178,17 +151,12 @@ impl CreateModelVersionInputBuilder {
         self
     }
     /// <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
-    pub fn set_ingested_events_detail(
-        mut self,
-        input: ::std::option::Option<crate::types::IngestedEventsDetail>,
-    ) -> Self {
+    pub fn set_ingested_events_detail(mut self, input: ::std::option::Option<crate::types::IngestedEventsDetail>) -> Self {
         self.ingested_events_detail = input;
         self
     }
     /// <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
-    pub fn get_ingested_events_detail(
-        &self,
-    ) -> &::std::option::Option<crate::types::IngestedEventsDetail> {
+    pub fn get_ingested_events_detail(&self) -> &::std::option::Option<crate::types::IngestedEventsDetail> {
         &self.ingested_events_detail
     }
     /// Appends an item to `tags`.
@@ -203,10 +171,7 @@ impl CreateModelVersionInputBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
@@ -217,20 +182,15 @@ impl CreateModelVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateModelVersionInput`](crate::operation::create_model_version::CreateModelVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<
-        crate::operation::create_model_version::CreateModelVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::create_model_version::CreateModelVersionInput {
-                model_id: self.model_id,
-                model_type: self.model_type,
-                training_data_source: self.training_data_source,
-                training_data_schema: self.training_data_schema,
-                external_events_detail: self.external_events_detail,
-                ingested_events_detail: self.ingested_events_detail,
-                tags: self.tags,
-            },
-        )
+    ) -> ::std::result::Result<crate::operation::create_model_version::CreateModelVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_model_version::CreateModelVersionInput {
+            model_id: self.model_id,
+            model_type: self.model_type,
+            training_data_source: self.training_data_source,
+            training_data_schema: self.training_data_schema,
+            external_events_detail: self.external_events_detail,
+            ingested_events_detail: self.ingested_events_detail,
+            tags: self.tags,
+        })
     }
 }
